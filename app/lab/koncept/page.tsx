@@ -1,7 +1,7 @@
 // /lab/koncept — step 03 concept frames for the „Rendgen“ design direction (noindex).
 // Hero composition at mid fidelity (static X-ray drawing where the 3D goes), product cards,
 // and the admin orders table. Step 04 redirects this route to /styleguide.
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import {
   ArrowRight,
   Bell,
@@ -39,6 +39,11 @@ import { BrandMark, PartArt } from "./Art";
 import { XrayCar } from "./XrayCar";
 import { demoVehicle, orders, products, rsd, type DemoOrder, type DemoProduct } from "./data";
 
+export const viewport: Viewport = {
+  themeColor: "#0D0F11",
+  colorScheme: "dark",
+};
+
 export const metadata: Metadata = {
   title: "Koncept „Rendgen“ — SKLOP",
   robots: { index: false, follow: false },
@@ -57,7 +62,7 @@ const STAGES = [
 
 /** Global helpers the CSS module cannot express (pure-mode modules need a local class). */
 const GLOBAL_CSS = `
-html { scroll-padding-top: 80px; }
+html { scroll-padding-top: 80px; background: #0d0f11; color-scheme: dark; }
 .sr-only-concept { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 `;
 
@@ -154,6 +159,7 @@ function ProductCard({ product }: { product: DemoProduct }) {
               <span className={styles.priceYoursLabel}>Vaša cena</span>
               <span className={`${styles.priceValue} ${styles.priceYours}`}>
                 {rsd(product.yours)}
+                {" "}
                 <span className={styles.priceUnit}>RSD</span>
               </span>
               <span className={styles.priceNote}>sa PDV-om</span>
@@ -162,6 +168,7 @@ function ProductCard({ product }: { product: DemoProduct }) {
             <div className={styles.price}>
               <span className={styles.priceValue}>
                 {rsd(product.retail)}
+                {" "}
                 <span className={styles.priceUnit}>RSD</span>
               </span>
               <span className={styles.priceNote}>sa PDV-om</span>
@@ -197,31 +204,31 @@ function AdminFrame() {
       <nav className={styles.sidebar} aria-label="Administracija">
         <div className={styles.sidebarBrand}>
           <BrandMark className={styles.markIcon} />
-          SKLOP <span className={styles.sidebarTag}>ADMIN</span>
+          <span className={styles.sideLabel}>SKLOP</span> <span className={`${styles.sidebarTag} ${styles.sideLabel}`}>ADMIN</span>
         </div>
         <a className={styles.sideLink} href="#admin">
-          <Gauge size={18} aria-hidden="true" /> Pregled
+          <Gauge size={18} aria-hidden="true" /> <span className={styles.sideLabel}>Pregled</span>
         </a>
         <a className={`${styles.sideLink} ${styles.sideLinkActive}`} href="#admin" aria-current="page">
-          <Tray size={18} aria-hidden="true" /> Porudžbine
+          <Tray size={18} aria-hidden="true" /> <span className={styles.sideLabel}>Porudžbine</span>
           <span className={`${styles.sideCount} ${styles.sideCountHot}`} aria-label="1 nova">
             1
           </span>
         </a>
         <a className={styles.sideLink} href="#admin">
-          <ChatCircleText size={18} aria-hidden="true" /> Upiti
+          <ChatCircleText size={18} aria-hidden="true" /> <span className={styles.sideLabel}>Upiti</span>
           <span className={styles.sideCount} aria-label="2 bez odgovora">
             2
           </span>
         </a>
         <a className={styles.sideLink} href="#admin">
-          <Cube size={18} aria-hidden="true" /> Proizvodi
+          <Cube size={18} aria-hidden="true" /> <span className={styles.sideLabel}>Proizvodi</span>
         </a>
         <a className={styles.sideLink} href="#admin">
-          <DownloadSimple size={18} aria-hidden="true" /> Uvoz iz Excela
+          <DownloadSimple size={18} aria-hidden="true" /> <span className={styles.sideLabel}>Uvoz iz Excela</span>
         </a>
         <a className={styles.sideLink} href="#admin">
-          <Users size={18} aria-hidden="true" /> Majstori
+          <Users size={18} aria-hidden="true" /> <span className={styles.sideLabel}>Majstori</span>
           <span className={styles.sideCount} aria-label="1 čeka odobrenje">
             1
           </span>
@@ -286,8 +293,10 @@ function AdminFrame() {
                 </th>
                 <th scope="col">Plaćanje · dostava</th>
                 <th scope="col">Status</th>
-                <th scope="col">Izvor</th>
-                <th scope="col">
+                <th scope="col" className={styles.colSource}>
+                  Izvor
+                </th>
+                <th scope="col" className={styles.colActions}>
                   <span className="sr-only-concept">Radnje</span>
                 </th>
               </tr>
@@ -334,8 +343,8 @@ function AdminFrame() {
                         {status.label}
                       </span>
                     </td>
-                    <td className={styles.dim}>{order.source}</td>
-                    <td>
+                    <td className={`${styles.dim} ${styles.colSource}`}>{order.source}</td>
+                    <td className={styles.colActions}>
                       <button type="button" className={styles.rowAction} aria-label={`Radnje za ${number}`}>
                         <DotsThree size={20} weight="bold" aria-hidden="true" />
                       </button>
@@ -379,11 +388,17 @@ export default function KonceptPage() {
           </a>
         </nav>
         <div className={styles.headerTools}>
-          <a className={`${styles.contactLink} ${styles.wideOnly}`} href="#kontakt">
-            <Phone size={18} aria-hidden="true" /> Pozovite
+          <a className={styles.contactLink} href="#kontakt" aria-label="Pozovite nas">
+            <Phone size={20} aria-hidden="true" />
+            <span className={styles.contactText} aria-hidden="true">
+              Pozovite
+            </span>
           </a>
-          <a className={`${styles.contactLink} ${styles.wideOnly}`} href="#kontakt">
-            <ChatCircleText size={18} aria-hidden="true" /> Viber
+          <a className={`${styles.contactLink} ${styles.contactViber}`} href="#kontakt" aria-label="Pišite nam na Viber">
+            <ChatCircleText size={20} aria-hidden="true" />
+            <span className={styles.contactText} aria-hidden="true">
+              Viber
+            </span>
           </a>
           <button type="button" className={styles.iconButton} aria-label="Nalog">
             <UserCircle size={22} aria-hidden="true" />
@@ -407,7 +422,7 @@ export default function KonceptPage() {
               <span className={styles.displayLine}>Rasklopi</span>
               <span className={styles.displayLine}>auto.</span>
               <span className={styles.displayLine}>Nađi deo.</span>
-              <span className={styles.displaySub}>Delovi za VW, Audi, Škoda, SEAT i&nbsp;Cupra&nbsp;— po OEM broju, vozilu ili na&nbsp;modelu.</span>
+              <span className={styles.displaySub}>Delovi za VW, Audi, Škoda, SEAT i&nbsp;Cupra&nbsp;— tražite po OEM broju, po vozilu ili klikom na&nbsp;deo.</span>
             </h1>
             <form className={styles.search} action="/pretraga" role="search">
               <label className={styles.fieldLabel} htmlFor="q">
@@ -474,7 +489,7 @@ export default function KonceptPage() {
                 <dd className={styles.titleValueMono}>00 / 07</dd>
               </div>
               <div className={styles.titleCell}>
-                <dt className={styles.titleKey}>Kategorija</dt>
+                <dt className={styles.titleKey}>Kategorije</dt>
                 <dd className={styles.titleValueMono}>44</dd>
               </div>
               <div className={styles.titleCell}>
@@ -483,7 +498,7 @@ export default function KonceptPage() {
               </div>
             </dl>
             <XrayCar />
-            <p className={styles.stageNote}>Generički kompaktni hečbek, nije konkretan model · mere u mm</p>
+            <p className={styles.stageNote}>Generički kompaktni hečbek, nije konkretan model · mere u&nbsp;mm</p>
           </div>
 
           <div className={styles.stageStrip}>

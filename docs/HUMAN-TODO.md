@@ -64,8 +64,8 @@ Oznake: **[P0]** potrebno pre puštanja uživo · **[P1]** potrebno u prvim nede
 - [ ] **[P1]** Raspored backupa baze (Convex export).
 
 ## 8. Dizajn i brend (korak 03)
-- [ ] **[P1]** Pogledati vizuelni pravac „Rendgen" na `/lab/koncept` (od koraka 04 na `/styleguide`) i potvrditi: tamna prodavnica, jedna narandžasta boja (#FF6B1A) za akcije i izbor, svetla radna površina u adminu. Obrazloženje je u `docs/design/DESIGN-SYSTEM.md`.
-- [ ] **[P1]** Konačan naziv prodavnice: tipografski logo se menja iz podešavanja; znak „izvučen deo" (osnova sa ležištem i narandžasti deo izvučen iz nje) ne zavisi od naziva — javiti ako želite drugačiji znak.
-- [ ] **[P2]** Kratki saveti u oblačićima 3D prikaza, po kategoriji (primer: „Pre zamene proverite broj na kućištu turbine.") — pregledati i dopuniti iskustvom iz radnje.
-- [ ] **[P2]** Rok slanja za poruku „Šaljemo danas ako poručite do …" — prikazuje se samo ako se unese u podešavanjima; potvrditi da li to želite i do kog sata.
+- [ ] **[P1]** Pogledati vizuelni pravac „Rendgen“ na `/lab/koncept` (od koraka 04 na `/styleguide`) i potvrditi: tamna prodavnica, jedna narandžasta boja (#FF6B1A) za akcije i izbor, svetla radna površina u adminu. Obrazloženje je u `docs/design/DESIGN-SYSTEM.md`.
+- [ ] **[P1]** Konačan naziv prodavnice: tipografski logo se menja iz podešavanja; znak „izvučen deo“ (osnova sa ležištem i narandžasti deo izvučen iz nje) ne zavisi od naziva — javiti ako želite drugačiji znak.
+- [ ] **[P2]** Kratki saveti u oblačićima 3D prikaza, po kategoriji (primer: „Pre zamene proverite broj na kućištu turbine.“) — pregledati i dopuniti iskustvom iz radnje.
+- [ ] **[P2]** Rok slanja za poruku „Šaljemo danas ako poručite do …“ — prikazuje se samo ako se unese u podešavanjima; potvrditi da li to želite i do kog sata.
 - [ ] **[P2]** Fotografije proizvoda (kad ih bude): tamnosiva ili srednje siva pozadina, ugao 3/4, deo zauzima oko 70 % kadra, bez ruku, rekvizita i znakova proizvođača vozila, najmanje 2000 px po dužoj strani.

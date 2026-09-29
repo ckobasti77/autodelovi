@@ -10,14 +10,14 @@ web
 
 ## Users
 - **Majstor (mechanic, B2B, repeat buyer)** — usually on a phone in the workshop, hands dirty, customer car on the lift. Job: find the exact part fast by OEM/catalog number, by vehicle (brand → model → generation → engine) or visually; see stock and his own price (rabat); order in seconds, reorder, paste a list of OEM numbers. Likes phone and Viber.
-- **Retail driver (B2C)** — arrives from Google/Meta ads or search with one question: „Imate li X za moj auto, koliko košta, kada mogu da ga dobijem?" Needs a clear price, stock, delivery or pickup, trust, and an easy way to ask (VIN inquiry, call, Viber, WhatsApp).
+- **Retail driver (B2C)** — arrives from Google/Meta ads or search with one question: „Imate li X za moj auto, koliko košta, kada mogu da ga dobijem?“ Needs a clear price, stock, delivery or pickup, trust, and an easy way to ask (VIN inquiry, call, Viber, WhatsApp).
 - **Staff (owner + 1–3 employees)** — manage catalog, stock, prices, orders, inquiries and mechanics; import Excel exports from the accounting program; see what people searched for and did not find; get notified instantly. Long daylight sessions at a counter PC, often printing predračun / otpremnica.
 
 ## Product Purpose
 Online shop, B2B portal and back office for a Serbian dealer of Volkswagen Group parts (VW, Audi, Škoda, SEAT, Cupra). It replaces phone/Viber/spreadsheet work with a catalog that stays current through Excel import, orders and inquiries in one place, automatic e-mails and a record of everything. Success: paid-ad visitors convert to orders or inquiries, mechanics reorder without calling, staff answer faster and keep stock correct.
 
 ## Positioning
-A visual catalog navigator no other Serbian parts shop has: a 3D car in „X-ray" style that explodes into its systems on scroll; every part is clickable and opens the in-stock parts of that category for the visitor's selected vehicle, with role-aware price. Underneath it: OEM-number-aware search that normalizes messy numbers, and mechanic pricing computed server-side.
+A visual catalog navigator no other Serbian parts shop has: a 3D car in „X-ray“ style that explodes into its systems on scroll; every part is clickable and opens the in-stock parts of that category for the visitor's selected vehicle, with role-aware price. Underneath it: OEM-number-aware search that normalizes messy numbers, and mechanic pricing computed server-side.
 
 ## Operating Context
 - No online payment: order (porudžbina) then pay on delivery (pouzeće), at pickup, or by bank transfer against a predračun. Deferred payment only for approved mechanics with credit.
@@ -34,9 +34,9 @@ A visual catalog navigator no other Serbian parts shop has: a 3D car in „X-ray
 - Undecided: final brand name (working name SKLOP), company data, contact data, legal texts — all read from config/settings and hidden while empty.
 
 ## Brand Commitments
-- Working name **SKLOP**, tagline **„Rasklopi auto. Nađi deo."** — renamable from one config + admin settings.
-- Voice: an experienced mechanic talking to a colleague — calm, precise, short sentences, zero fluff; „vi" forms; no exclamation-mark marketing; no emojis in the UI.
-- Binding visual north star from the brief (§8): „Rendgen" — an engineering X-ray at night; dark graphite base, warm off-white text, exactly one signal accent, a cool rim tone reserved for the X-ray glass; technical ornament with purpose (hairlines, ticks, coordinates, mono part codes, leader lines); a characterful grotesk/condensed display + legible UI sans + monospace, all with latin-ext. Not a tuning shop, not generic e-commerce, not gaming UI.
+- Working name **SKLOP**, tagline **„Rasklopi auto. Nađi deo.“** — renamable from one config + admin settings.
+- Voice: an experienced mechanic talking to a colleague — calm, precise, short sentences, zero fluff; „vi“ forms; no exclamation-mark marketing; no emojis in the UI.
+- Binding visual north star from the brief (§8): „Rendgen“ — an engineering X-ray at night; dark graphite base, warm off-white text, exactly one signal accent, a cool rim tone reserved for the X-ray glass; technical ornament with purpose (hairlines, ticks, coordinates, mono part codes, leader lines); a characterful grotesk/condensed display + legible UI sans + monospace, all with latin-ext. Not a tuning shop, not generic e-commerce, not gaming UI.
 - Never use VW blue, Škoda green, SEAT copper or Audi red as a brand color. No VW/Audi/Škoda/SEAT/Cupra logos; brand names only as plain text with a nominative-use disclaimer.
 
 ## Evidence on Hand

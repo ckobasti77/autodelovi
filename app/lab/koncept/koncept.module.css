@@ -164,6 +164,21 @@
   color: var(--ink-1);
   background: var(--surface-2);
 }
+@media (max-width: 1439px) {
+  .contactLink {
+    width: 44px;
+    padding: 0;
+    justify-content: center;
+  }
+  .contactText {
+    display: none;
+  }
+}
+@media (max-width: 639px) {
+  .contactViber {
+    display: none;
+  }
+}
 .iconButton {
   position: relative;
   display: inline-grid;
@@ -202,7 +217,7 @@
 /* ---------- hero ---------- */
 .hero {
   position: relative;
-  min-height: calc(100dvh - var(--header-h));
+  min-height: min(calc(100dvh - var(--header-h)), 960px);
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   grid-template-rows: auto 1fr auto;
@@ -302,7 +317,7 @@
   min-height: 44px;
   padding-inline: 20px;
   border: 0;
-  border-radius: 0 1px 1px 0;
+  border-radius: 0;
   background: var(--accent);
   color: var(--on-accent);
   font: 600 15px/1 var(--font-ui-stack);
@@ -360,7 +375,7 @@
   cursor: pointer;
 }
 .vehicleButton svg:first-child {
-  color: var(--accent);
+  color: var(--ink-2);
   flex: none;
 }
 .vehicleName {
@@ -519,11 +534,11 @@
   font-weight: 600;
   color: var(--ink-1);
   text-decoration: underline;
-  text-decoration-color: var(--accent);
+  text-decoration-color: var(--control);
   text-underline-offset: 4px;
 }
 .calloutLink:hover {
-  color: var(--accent-hover);
+  text-decoration-color: var(--accent);
 }
 
 /* title block (drawing sheet), part of the stage */
@@ -573,6 +588,8 @@
 }
 .stageNote {
   display: none;
+  position: relative;
+  z-index: 1;
   margin: 12px 0 0;
   font-size: 12.5px;
   line-height: 1.4;
@@ -910,7 +927,6 @@
   font-family: var(--font-ui-stack);
   font-size: 13px;
   font-weight: 600;
-  margin-left: 4px;
   color: var(--ink-2);
 }
 .priceNote {
@@ -1065,6 +1081,7 @@
 }
 .workspace {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   align-content: start;
   gap: 16px;
   padding: 20px 24px 24px;
@@ -1150,7 +1167,7 @@
   gap: 2px;
   padding: 3px;
   border: 1px solid var(--p-line);
-  border-radius: 3px;
+  border-radius: 4px;
   background: var(--p-surface);
   max-width: 100%;
   overflow-x: auto;
@@ -1231,7 +1248,7 @@
   position: sticky;
   top: 0;
   height: 36px;
-  padding: 0 10px;
+  padding: 0 8px;
   background: var(--p-surface-2);
   border-bottom: 1px solid var(--p-line-strong);
   text-align: left;
@@ -1243,7 +1260,7 @@
 }
 .table td {
   height: 48px;
-  padding: 0 10px;
+  padding: 0 8px;
   border-bottom: 1px solid var(--p-line-faint);
   white-space: nowrap;
   vertical-align: middle;
@@ -1339,6 +1356,63 @@
   background: var(--p-danger-subtle);
   color: var(--p-danger);
 }
+.colActions {
+  position: sticky;
+  right: 0;
+  width: 40px;
+  background: var(--p-surface);
+  box-shadow: -1px 0 0 var(--p-line-faint);
+}
+.table th.colActions {
+  background: var(--p-surface-2);
+}
+.table tbody tr:hover td.colActions {
+  background: var(--p-surface-2);
+}
+.table tbody tr.rowSelected td.colActions {
+  background: var(--p-selected);
+}
+@media (max-width: 1439px) {
+  .colSource {
+    display: none;
+  }
+}
+.sideLabel {
+  display: inline;
+}
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .paper {
+    grid-template-columns: 64px minmax(0, 1fr);
+  }
+  .sidebar {
+    padding-inline: 10px;
+  }
+  .sidebarBrand {
+    justify-content: center;
+    padding-inline: 0;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .sideLink {
+    position: relative;
+    justify-content: center;
+    padding: 0;
+  }
+  .sideLabel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+  .sideCount {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 10.5px;
+  }
+}
 .rowAction {
   display: inline-grid;
   place-items: center;
@@ -1415,21 +1489,23 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
   }
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 1439px) {
   .titleBlock {
     display: none;
   }
   .stageNote {
     display: block;
   }
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 @media (max-width: 1023px) {
   .hero {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto auto auto auto;
-    grid-template-areas: "copy" "stage" "aside" "strip";
+    grid-template-areas: "copy" "aside" "stage" "strip";
     min-height: auto;
   }
   .heroCopy {
@@ -1438,7 +1514,7 @@
   }
   .heroAside {
     max-width: 560px;
-    padding-bottom: 24px;
+    padding-bottom: 8px;
   }
   .stage {
     align-self: start;
@@ -1485,13 +1561,26 @@
     padding-inline: 16px;
   }
   .stage {
-    padding-top: 96px;
+    padding-top: 16px;
+  }
+  .callout {
+    display: none;
+  }
+  .drawing {
+    margin-top: -9%;
+  }
+  .textLink,
+  .altLink {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-block: 0;
   }
   .stageFrame {
     display: none;
   }
   .dimLabel {
-    font-size: 10px;
+    font-size: 11px;
   }
   .dimWheelbase {
     display: none;

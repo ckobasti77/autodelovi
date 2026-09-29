@@ -105,7 +105,7 @@ export function XrayCar() {
     <div className={styles.drawing}>
       <svg viewBox={`${VB.x} ${VB.y} ${VB.w} ${VB.h}`} role="img" aria-labelledby="xray-title" focusable="false">
         <title id="xray-title">
-          Rendgenski prikaz automobila sa strane: providna karoserija, delovi unutra i istaknuta turbina. Dužina 4280 mm, međuosovinsko rastojanje 2620 mm, visina 1450 mm.
+          Rendgenski prikaz automobila sa strane: providna karoserija i delovi unutra. Dužina 4280 mm, međuosovinsko rastojanje 2620 mm, visina 1450 mm.
         </title>
         <defs>
           <linearGradient id="shellFill" x1="0" y1="0" x2="0" y2="1">
@@ -150,6 +150,12 @@ export function XrayCar() {
           .xr-ext { stroke: #434a52; stroke-width: 0.7; stroke-dasharray: 3 3; vector-effect: non-scaling-stroke; }
           .xr-leader { stroke: #ff6b1a; stroke-width: 1; fill: none; vector-effect: non-scaling-stroke; }
           .xr-anchor { fill: #ff6b1a; stroke: #0d0f11; stroke-width: 2; vector-effect: non-scaling-stroke; }
+          @media (max-width: 639px) {
+            .xr-leader, .xr-anchor { display: none; }
+            .xr-selected { fill: #343b43; stroke: #b0aaa1; stroke-width: 0.9; }
+            .xr-selectedCore { fill: #262b31; stroke: #8f949a; }
+            .xr-selectedPipe { stroke: #8f949a; stroke-width: 1.2; }
+          }
         `}</style>
 
         {/* floor with a true-scale ruler (ticks every 100 mm) */}

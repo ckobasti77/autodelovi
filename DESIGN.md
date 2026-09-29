@@ -1,6 +1,6 @@
 ---
 name: SKLOP
-description: „Rasklopi auto. Nađi deo." — VAG parts shop, mechanic portal and back office in the „Rendgen" world
+description: „Rasklopi auto. Nađi deo.“ — VAG parts shop, mechanic portal and back office in the „Rendgen“ world
 colors:
   night-field: "#0D0F11"
   night-raised: "#121518"
@@ -33,6 +33,13 @@ colors:
   paper-selected: "#EEF1F4"
   paper-ink: "#121518"
   paper-ink-meta: "#5D6570"
+  xray-part-fill: "#262B31"
+  xray-part-fill-light: "#343B43"
+  xray-part-stroke: "#8F949A"
+  xray-part-stroke-light: "#B0AAA1"
+  xray-part-fin: "#4F565E"
+  xray-selected-fill: "#3A2012"
+  xray-selected-highlight: "#FFB38A"
 typography:
   display:
     fontFamily: "Archivo Expanded (static 125/700), Arial, sans-serif"
@@ -52,12 +59,67 @@ typography:
     fontWeight: 650
     lineHeight: 1.15
     letterSpacing: "-0.015em"
+  display-m:
+    fontFamily: "Archivo Expanded (static 125/600), Arial, sans-serif"
+    fontSize: "clamp(1.25rem, 1.125rem + 0.556vw, 1.625rem)"
+    fontWeight: 600
+    lineHeight: 1.1
+    letterSpacing: "0.02em"
+  wordmark:
+    fontFamily: "Archivo Expanded (static 125/700), Arial, sans-serif"
+    fontSize: "18px"
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: "0.08em"
+  wordmark-compact:
+    fontFamily: "Archivo Expanded (static 125/700), Arial, sans-serif"
+    fontSize: "17px"
+    fontWeight: 700
+    lineHeight: 1
+    letterSpacing: "0.08em"
+  h2:
+    fontFamily: "Public Sans, system-ui, sans-serif"
+    fontSize: "clamp(1.375rem, 1.25rem + 0.556vw, 1.75rem)"
+    fontWeight: 650
+    lineHeight: 1.2
+    letterSpacing: "-0.01em"
+  h3:
+    fontFamily: "Public Sans, system-ui, sans-serif"
+    fontSize: "clamp(1.125rem, 1.083rem + 0.185vw, 1.25rem)"
+    fontWeight: 600
+    lineHeight: 1.3
+    letterSpacing: "-0.005em"
+  lead:
+    fontFamily: "Public Sans, system-ui, sans-serif"
+    fontSize: "clamp(1.125rem, 1.083rem + 0.185vw, 1.25rem)"
+    fontWeight: 400
+    lineHeight: 1.5
   body:
     fontFamily: "Public Sans, system-ui, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.55
     letterSpacing: "0"
+  button:
+    fontFamily: "Public Sans, system-ui, sans-serif"
+    fontSize: "15px"
+    fontWeight: 600
+    lineHeight: 1
+  body-small:
+    fontFamily: "Public Sans, system-ui, sans-serif"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: 1.5
+  caption:
+    fontFamily: "Public Sans, system-ui, sans-serif"
+    fontSize: "13px"
+    fontWeight: 500
+    lineHeight: 1.4
+  caption-small:
+    fontFamily: "Public Sans, system-ui, sans-serif"
+    fontSize: "12px"
+    fontWeight: 500
+    lineHeight: 1.35
   label:
     fontFamily: "Public Sans, system-ui, sans-serif"
     fontSize: "0.6875rem"
@@ -70,13 +132,37 @@ typography:
     fontWeight: 600
     lineHeight: 1
     fontFeature: "tnum"
+  numeral-large:
+    fontFamily: "Archivo Condensed (static 75/600), Arial Narrow, sans-serif"
+    fontSize: "clamp(1.875rem, 1.667rem + 0.926vw, 2.5rem)"
+    fontWeight: 600
+    lineHeight: 1
+    fontFeature: "tnum"
+  numeral-small:
+    fontFamily: "Archivo Condensed (static 75/600), Arial Narrow, sans-serif"
+    fontSize: "clamp(1.125rem, 1.083rem + 0.185vw, 1.25rem)"
+    fontWeight: 600
+    lineHeight: 1
+    fontFeature: "tnum"
   code:
     fontFamily: "Martian Mono, ui-monospace, monospace"
     fontSize: "0.8125rem"
     fontWeight: 400
     lineHeight: 1.5
     letterSpacing: "0.01em"
+  code-table:
+    fontFamily: "Martian Mono, ui-monospace, monospace"
+    fontSize: "12.5px"
+    fontWeight: 400
+    lineHeight: 1
+  code-small:
+    fontFamily: "Martian Mono, ui-monospace, monospace"
+    fontSize: "11px"
+    fontWeight: 400
+    lineHeight: 1.3
+    letterSpacing: "0.04em"
 rounded:
+  none: "0"
   xs: "2px"
   sm: "4px"
   md: "6px"
@@ -145,14 +231,14 @@ Density is comfortable on persuasion surfaces (home, mechanics landing) and dens
 - Wide uppercase statements (Archivo Expanded), a sturdy UI sans (Public Sans), a monospace only for codes and measurements (Martian Mono).
 - Ornament that measures: dimension lines in real millimetres, ruler floor, leader-line callouts, title block with honest facts.
 - Squared forms (2 px controls, 4 px cards), hairlines everywhere, no decorative shadows.
-- Light „paper" workspace for staff, with the night sidebar keeping the brand.
+- Light „paper“ workspace for staff, with the night sidebar keeping the brand.
 
 ## Colors
 
 One accent against cool graphite neutrals; a cyan rim reserved for the X-ray art.
 
 ### Primary
-- **Safety Orange** (#FF6B1A): primary action (one per view region), selection, focus ring, active stage/tab, the chosen vehicle, „Vaša cena", unread counts. On light surfaces text uses **#B8470A**.
+- **Safety Orange** (#FF6B1A): primary action (one per view region), selection, focus ring, active stage/tab, the chosen vehicle, „Vaša cena“, unread counts. On light surfaces text uses **#B8470A**.
 
 ### Tertiary
 - **X-ray Rim** (#9FE9FF, soft #4DB5D6, deep #123642): the car's glass shell and X-ray illustrations only — never UI.
@@ -187,7 +273,7 @@ One accent against cool graphite neutrals; a cyan rim reserved for the X-ray art
 
 ### Named Rules
 **The Mono-Is-Data Rule.** Monospace only for codes and measurements, never for prose or headings.
-**The Serbian Type Rule.** č ć ž š đ in every font file; „…" quotes; no line starts with a dash; money grouped (12.990 RSD), drawing measurements ungrouped (4280).
+**The Serbian Type Rule.** č ć ž š đ in every font file; „…“ quotes; no line starts with a dash; money grouped (12.990 RSD), drawing measurements ungrouped (4280).
 
 ## Layout
 
@@ -217,10 +303,10 @@ Squared drawing-sheet geometry: 2 px radius on controls and chips, 4 px on cards
 - **Focus:** orange border + 1 px inner ring. **Error:** danger border, icon + message below.
 
 ### Cards
-- Graphite card, 1 px hairline, 4 px radius, 16 px padding; 4:3 render; maker → name (whole-card link) → OEM (mono) → fitment line → stock line → price (condensed, „sa PDV-om") + quiet action.
+- Graphite card, 1 px hairline, 4 px radius, 16 px padding; 4:3 render; maker → name (whole-card link) → OEM (mono) → fitment line → stock line → price (condensed, „sa PDV-om“) + quiet action.
 
 ### Navigation
-- 64 px sticky header: wordmark (the lifted-part mark + name in Archivo Expanded), four text links, „Pozovite"/„Viber" (from settings), account, cart with an orange count.
+- 64 px sticky header: wordmark (the lifted-part mark + name in Archivo Expanded), four text links, „Pozovite“/„Viber“ (from settings), account, cart with an orange count.
 
 ### X-ray Callout (signature)
 - Orange 1 px leader from the part straight up to an annotation lane, then a shelf; label box graphite-overlay with a 1 px strong hairline, category name, one mechanic note, a live count link with an arrow icon.

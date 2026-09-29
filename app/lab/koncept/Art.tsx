@@ -1,16 +1,16 @@
-// Concept-only vector art: the brand mark (drafting centre mark) and part thumbnails drawn in the
+// Concept-only vector art: the brand mark (lifted part) and part thumbnails drawn in the
 // X-ray language. Real thumbnails are Blender renders from step 08 (public/images/parts/*).
 import type { DemoProduct } from "./data";
 
-/** Brand mark: the drafting centre mark — a circle crossed by centre lines, the symbol a drawing
- *  uses to locate the centre of a disc, bore or wheel. Ink in currentColor; the only orange is the
- *  centre point ("you are here"). Independent of the (renamable) brand name. */
+/** Brand mark „izvučen deo" (lifted part): a slotted base with one part lifted out along a dashed
+ *  exploded-view axis. Ink in currentColor; the lifted part is the only orange ("the part you find").
+ *  Independent of the (renamable) brand name. Source: docs/design/brand/mark.svg. */
 export function BrandMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true" focusable="false">
-      <circle cx="12" cy="12" r="6.25" fill="none" stroke="currentColor" strokeWidth="2" />
-      <path d="M12 1.5v6M12 16.5v6M1.5 12h6M16.5 12h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
-      <circle cx="12" cy="12" r="2" fill="#FF6B1A" />
+      <rect x="7" y="2.5" width="10" height="5" rx="0.75" fill="#FF6B1A" />
+      <path d="M12 8.5v4.5" stroke="currentColor" strokeWidth="1.25" strokeDasharray="1.3 1.1" />
+      <path d="M3 14h4v2.5h10V14h4v7H3z" fill="currentColor" />
     </svg>
   );
 }

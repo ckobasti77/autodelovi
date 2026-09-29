@@ -70,7 +70,7 @@ export const products: DemoProduct[] = [
     art: "filter",
     quality: "Aftermarket",
     maker: "Mann-Filter",
-    name: "Filter ulja, uložak sa zaptivkom",
+    name: "Filter ulja, uložak sa dihtungom",
     sku: "DEMO-12044",
     oem: "03N 115 562 B",
     fitment: "fits",
