@@ -726,3 +726,39 @@ def superellipse2d(a: float, b: float, n_exp: float, samples: int) -> list[tuple
         y = b * math.copysign(abs(s) ** (2 / n_exp), s)
         pts.append((x, y))
     return pts
+
+
+def belt_path(circles: Sequence[tuple[float, float, float]], samples_per_rad: float = 10.0) -> list[tuple[float, float]]:
+    """Closed 2D path wrapping circles (cx, cy, r) given in CCW order around the loop (outer tangents)."""
+    n = len(circles)
+    tangents = []
+    for i in range(n):
+        (x1, y1, r1), (x2, y2, r2) = circles[i], circles[(i + 1) % n]
+        dx, dy = x2 - x1, y2 - y1
+        d = math.hypot(dx, dy)
+        a = math.atan2(dy, dx)
+        b = math.asin(max(-1.0, min(1.0, (r1 - r2) / d)))
+        ang = a - math.pi / 2 + b  # right-hand (outer) normal for a CCW loop
+        p1 = (x1 + r1 * math.cos(ang), y1 + r1 * math.sin(ang))
+        p2 = (x2 + r2 * math.cos(ang), y2 + r2 * math.sin(ang))
+        tangents.append((p1, p2, ang))
+    pts: list[tuple[float, float]] = []
+    for i in range(n):
+        p1, p2, ang_out = tangents[i]
+        nxt = tangents[(i + 1) % n]
+        pts.append(p1)
+        pts.append(p2)
+        # arc on circle i+1 from ang_out to the next tangent's start angle (going CW for outer side)
+        cx, cy, r = circles[(i + 1) % n]
+        a0 = ang_out
+        a1 = nxt[2]
+        da = a1 - a0
+        while da <= 0:
+            da += 2 * math.pi
+        while da > 2 * math.pi:
+            da -= 2 * math.pi
+        steps = max(2, int(abs(da) * samples_per_rad) + 2)
+        for k in range(1, steps):
+            t = a0 + da * k / steps
+            pts.append((cx + r * math.cos(t), cy + r * math.sin(t)))
+    return pts

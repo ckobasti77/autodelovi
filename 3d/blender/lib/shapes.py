@@ -102,3 +102,53 @@ def hex_nut(af: float, h: float, mat: str) -> Geo:
     outline = circle2d(af / math.sqrt(3), 6, phase=math.pi / 6)
     g = extrude(outline, h, mat, hard=True, z0=-h / 2)
     return g.transform(R("x", -90))
+
+
+def resample_closed(pts2d, ds: float):
+    """Resample a closed 2D polyline at spacing ds; returns (points, arc-length params)."""
+    P = [Vector((p[0], p[1])) for p in pts2d]
+    seglen = [(P[(i + 1) % len(P)] - P[i]).length for i in range(len(P))]
+    total = sum(seglen)
+    n = max(8, int(total / ds))
+    out, params = [], []
+    i, acc = 0, 0.0
+    for k in range(n):
+        s = total * k / n
+        while acc + seglen[i] < s and i < len(P) - 1:
+            acc += seglen[i]
+            i += 1
+        t = (s - acc) / seglen[i] if seglen[i] > 1e-9 else 0.0
+        out.append(P[i].lerp(P[(i + 1) % len(P)], t))
+        params.append(s)
+    return out, params, total
+
+
+def belt_mesh(path_uv, to3d, width: float, thickness: float, mat: str, tooth_h: float = 0.0, pitch: float = 0.0, ds: float = 0.006) -> Geo:
+    """Closed belt along a CCW 2D path (u, v); outer side = right of travel. `to3d(u, v, w)` maps
+    in-plane coordinates plus the width offset w to 3D. Optional inner teeth (timing belt)."""
+    step = pitch / 4 if pitch else ds
+    pts, params, total = resample_closed(path_uv, step)
+    n = len(pts)
+    g = Geo()
+    rings = []
+    for k, p in enumerate(pts):
+        t = (pts[(k + 1) % n] - pts[k - 1]).normalized()
+        nout = Vector((t.y, -t.x))  # right of travel = outer side
+        inner = 0.0
+        if tooth_h and pitch:
+            ph = (params[k] % pitch) / pitch
+            inner = tooth_h if 0.15 < ph < 0.60 else 0.0
+        o = p + nout * thickness
+        i_ = p - nout * inner
+        rings.append([
+            g.v(to3d(o.x, o.y, -width / 2)),
+            g.v(to3d(o.x, o.y, width / 2)),
+            g.v(to3d(i_.x, i_.y, width / 2)),
+            g.v(to3d(i_.x, i_.y, -width / 2)),
+        ])
+    for k in range(n):
+        A, B = rings[k], rings[(k + 1) % n]
+        for j in range(4):
+            j1 = (j + 1) % 4
+            g.f((A[j], B[j], B[j1], A[j1]), mat, None, False)
+    return g

@@ -142,3 +142,15 @@ def report() -> None:
     static = [o for o in bpy.data.objects if o.type == "MESH" and (o.name.startswith("body__") or o.name.startswith("chassis__"))]
     total += sum(triangle_count(o) for o in static)
     log(f"parts: {len(part_nodes())}  triangles (rendered): {total}")
+
+
+def add_centered(ctx: "BuildContext", category: str, instance: str, geo_abs: Geo, pivot=None, **kw) -> bpy.types.Object:
+    """Add a part from absolute vehicle-space geometry; pivot = bbox centre unless given."""
+    from mathutils import Vector as _V
+
+    if pivot is None:
+        mn, mx = geo_abs.bbox()
+        pivot = (mn + mx) / 2
+    p = _V(pivot)
+    g = geo_abs.copy().moved(-p.x, -p.y, -p.z)
+    return ctx.add_part(category, instance, (p.x, p.y, p.z), g, **kw)
