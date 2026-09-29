@@ -27,7 +27,11 @@ export type TaxonomyInstance = {
   instance: string;
   /** Explode stage for this node when it differs from the category stage (senzori). */
   stage?: number;
+  /** Node label (Serbian) — becomes `labelSr` in the GLB extras and the 3D manifest. */
+  labelSr: string;
 };
+
+type RawInstance = Omit<TaxonomyInstance, "labelSr">;
 
 export type TaxonomyCategory = {
   slug: string;
@@ -69,10 +73,12 @@ export const SYSTEMS: readonly TaxonomySystem[] = [
   { slug: "servis", labelSr: "Servis i održavanje", order: 10 },
 ];
 
-const one = (...names: string[]): TaxonomyInstance[] => names.map((instance) => ({ instance }));
+type RawCategory = Omit<TaxonomyCategory, "instances"> & { instances: RawInstance[] };
+
+const one = (...names: string[]): RawInstance[] => names.map((instance) => ({ instance }));
 const CORNERS = one("fl", "fr", "rl", "rr");
 
-export const CATEGORIES: readonly TaxonomyCategory[] = [
+const RAW_CATEGORIES: readonly RawCategory[] = [
   // Motor i usis
   {
     slug: "motor",
@@ -445,6 +451,112 @@ export const CATEGORIES: readonly TaxonomyCategory[] = [
     relatedSlugs: ["filteri", "karter-dihtunzi", "menjac"],
   },
 ];
+
+/**
+ * Per-node labels (`<category>__<instance>` → Serbian label with the position in plain words,
+ * adjectives agreeing with the noun). Used by the 3D extras, the manifest and accessible names.
+ */
+const INSTANCE_LABELS: Readonly<Record<string, string>> = {
+  motor__block: "Blok motora",
+  motor__head: "Glava motora",
+  turbina__main: "Turbina (turbopunjač)",
+  interkuler__main: "Interkuler",
+  interkuler__pipes: "Creva i cevi interkulera",
+  "usisna-grana__manifold": "Usisna grana",
+  "usisna-grana__airbox": "Kućište filtera vazduha",
+  "brizgaljke-pumpa-goriva__injectors": "Brizgaljke i razvodna cev",
+  "brizgaljke-pumpa-goriva__pump": "Pumpa visokog pritiska",
+  "zupcasti-kais-vodena-pumpa__belt": "Zupčasti kaiš i zatezač",
+  "zupcasti-kais-vodena-pumpa__water-pump": "Vodena pumpa",
+  "kais-alternatora__belt": "Kaiš alternatora i zatezač",
+  alternator__main: "Alternator",
+  anlaser__main: "Anlaser",
+  "paljenje-grejaci__coils": "Bobine i svećice",
+  "karter-dihtunzi__sump": "Karter",
+  "egr-ventil__main": "EGR ventil",
+  "nosaci-motora__l": "Nosač menjača — levi",
+  "nosaci-motora__r": "Nosač motora — desni",
+  "nosaci-motora__rear": "Zadnji nosač motora",
+  "dpf-katalizator__main": "DPF i katalizator",
+  auspuh__mid: "Srednji lonac auspuha",
+  auspuh__rear: "Zadnji lonac auspuha",
+  "hladnjak-ventilator__radiator": "Hladnjak motora",
+  "hladnjak-ventilator__fan": "Ventilator hladnjaka",
+  "termostat-creva__thermostat": "Termostat",
+  "termostat-creva__hoses": "Creva hlađenja",
+  klima__compressor: "Kompresor klime",
+  klima__condenser: "Kondenzator klime",
+  "kvacilo-zamajac__main": "Kvačilo i zamajac",
+  menjac__main: "Menjač (DSG)",
+  poluosovine__l: "Poluosovina — leva",
+  poluosovine__r: "Poluosovina — desna",
+  "amortizeri-opruge__fl": "Amortizer i opruga — prednji levi",
+  "amortizeri-opruge__fr": "Amortizer i opruga — prednji desni",
+  "amortizeri-opruge__rl": "Amortizer i opruga — zadnji levi",
+  "amortizeri-opruge__rr": "Amortizer i opruga — zadnji desni",
+  "ramena-selen-blokovi__fl": "Rame — prednje levo",
+  "ramena-selen-blokovi__fr": "Rame — prednje desno",
+  "ramena-selen-blokovi__rear-axle": "Zadnja torziona greda i selen blokovi",
+  "spone-stabilizatori__tie-rod-l": "Spona — leva",
+  "spone-stabilizatori__tie-rod-r": "Spona — desna",
+  "spone-stabilizatori__stabilizer": "Prednji stabilizator i štangle",
+  "letva-volana__main": "Letva volana",
+  "lezaj-glavcina__fl": "Ležaj točka i glavčina — prednji levi",
+  "lezaj-glavcina__fr": "Ležaj točka i glavčina — prednji desni",
+  "lezaj-glavcina__rl": "Ležaj točka i glavčina — zadnji levi",
+  "lezaj-glavcina__rr": "Ležaj točka i glavčina — zadnji desni",
+  "kocioni-diskovi__fl": "Kočioni disk — prednji levi",
+  "kocioni-diskovi__fr": "Kočioni disk — prednji desni",
+  "kocioni-diskovi__rl": "Kočioni disk — zadnji levi",
+  "kocioni-diskovi__rr": "Kočioni disk — zadnji desni",
+  "kocione-plocice__fl": "Kočione pločice — prednje leve",
+  "kocione-plocice__fr": "Kočione pločice — prednje desne",
+  "kocione-plocice__rl": "Kočione pločice — zadnje leve",
+  "kocione-plocice__rr": "Kočione pločice — zadnje desne",
+  "kocione-celjusti__fl": "Kočiona čeljust — prednja leva",
+  "kocione-celjusti__fr": "Kočiona čeljust — prednja desna",
+  "kocione-celjusti__rl": "Kočiona čeljust — zadnja leva",
+  "kocione-celjusti__rr": "Kočiona čeljust — zadnja desna",
+  "abs-senzori__fl": "ABS senzor — prednji levi",
+  "abs-senzori__fr": "ABS senzor — prednji desni",
+  "abs-senzori__rl": "ABS senzor — zadnji levi",
+  "abs-senzori__rr": "ABS senzor — zadnji desni",
+  akumulator__main: "Akumulator",
+  farovi__l: "Far — levi",
+  farovi__r: "Far — desni",
+  "stop-svetla__l": "Stop svetlo — levo",
+  "stop-svetla__r": "Stop svetlo — desno",
+  senzori__lambda: "Lambda sonda",
+  "senzori__park-front": "Senzori za parkiranje — prednji",
+  "senzori__coolant-temp": "Senzor temperature rashladne tečnosti",
+  hauba__main: "Hauba",
+  branici__front: "Prednji branik",
+  branici__rear: "Zadnji branik",
+  blatobrani__l: "Blatobran — levi",
+  blatobrani__r: "Blatobran — desni",
+  vrata__fl: "Vrata — prednja leva",
+  vrata__fr: "Vrata — prednja desna",
+  vrata__rl: "Vrata — zadnja leva",
+  vrata__rr: "Vrata — zadnja desna",
+  retrovizori__l: "Retrovizor — levi",
+  retrovizori__r: "Retrovizor — desni",
+  stakla__windshield: "Vetrobransko staklo",
+  stakla__rear: "Zadnje staklo",
+  stakla__side: "Bočna stakla",
+  brisaci__main: "Brisači",
+  "felne-gume__fl": "Felna i guma — prednja leva",
+  "felne-gume__fr": "Felna i guma — prednja desna",
+  "felne-gume__rl": "Felna i guma — zadnja leva",
+  "felne-gume__rr": "Felna i guma — zadnja desna",
+};
+
+export const CATEGORIES: readonly TaxonomyCategory[] = RAW_CATEGORIES.map((c) => ({
+  ...c,
+  instances: c.instances.map((i) => ({
+    ...i,
+    labelSr: INSTANCE_LABELS[`${c.slug}__${i.instance}`] ?? "",
+  })),
+}));
 
 export const SUBCATEGORIES: readonly TaxonomySubcategory[] = [
   {

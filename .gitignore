@@ -59,3 +59,10 @@ coverage/
 # Blender build output is reproducible from 3d/blender/*.py (DECISIONS D23)
 3d/build/*.blend
 backups/
+# 3D build intermediates (reproducible from 3d/blender/*.py + 3d/scripts/*.mjs)
+3d/build/*
+!3d/build/.gitkeep
+3d/assets/hdri/*.hdr
+3d/assets/hdri/*.exr
+3d/assets/textures/*.png
+__pycache__/
