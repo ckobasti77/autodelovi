@@ -419,6 +419,7 @@ def lathe(
     phase: float = 0.0,
     close_start: bool = False,
     close_end: bool = False,
+    v_list: Sequence[float] | None = None,
 ) -> Geo:
     """Revolve a (radius, height) profile around the local Y axis, then orient to `axis`.
 
@@ -444,7 +445,10 @@ def lathe(
         rings.append(ring)
     for j in range(len(profile) - 1):
         A, B = rings[j], rings[j + 1]
-        v0, v1 = lens[j] * uv_v, lens[j + 1] * uv_v
+        if v_list is not None:
+            v0, v1 = v_list[j], v_list[j + 1]
+        else:
+            v0, v1 = lens[j] * uv_v, lens[j + 1] * uv_v
         for i in range(seg):
             i1 = (i + 1) % steps if full else i + 1
             u0, u1 = i / seg * uv_u, (i + 1) / seg * uv_u
@@ -567,6 +571,7 @@ def sweep(
     up_hint=None,
     uv_around: float = 1.0,
     uv_along: float = 1.0,
+    cap_cdt: bool = False,
 ) -> Geo:
     """Sweep a 2D profile (normal, binormal) along a 3D path with rotation-minimising frames."""
     g = Geo()
@@ -590,12 +595,32 @@ def sweep(
             u0, u1 = j / m * uv_around, (j + 1) / m * uv_around
             g.f((A[j], A[j1], B[j1], B[j]), mat, ((u0, v0), (u1, v0), (u1, v1), (u0, v1)), hard)
     if caps and not closed_path and closed_profile:
-        c0 = g.v(sum((g.verts[i] for i in rings[0]), Vector()) / m)
-        c1 = g.v(sum((g.verts[i] for i in rings[-1]), Vector()) / m)
-        for j in range(m):
-            j1 = (j + 1) % m
-            g.f((c0, rings[0][j1], rings[0][j]), mat, None, True)
-            g.f((c1, rings[-1][j], rings[-1][j1]), mat, None, True)
+        if cap_cdt:
+            prof2 = [tuple(p) for p in profile]
+            flip = polygon_area(prof2) < 0
+            out = delaunay_2d_cdt(prof2, [], [list(range(m))], 3, 1e-9)
+            vco, tris, orig = out[0], out[2], out[3]
+            # map CDT output verts back to profile indices (CDT keeps input verts first)
+            idx_map = []
+            for k, o in enumerate(orig):
+                idx_map.append(o[0] if o else None)
+            for t in tris:
+                a, b, c = (idx_map[i] for i in t[:3])
+                if a is None or b is None or c is None:
+                    continue
+                if not flip:
+                    g.f((rings[0][c], rings[0][b], rings[0][a]), mat, None, True)
+                    g.f((rings[-1][a], rings[-1][b], rings[-1][c]), mat, None, True)
+                else:
+                    g.f((rings[0][a], rings[0][b], rings[0][c]), mat, None, True)
+                    g.f((rings[-1][c], rings[-1][b], rings[-1][a]), mat, None, True)
+        else:
+            c0 = g.v(sum((g.verts[i] for i in rings[0]), Vector()) / m)
+            c1 = g.v(sum((g.verts[i] for i in rings[-1]), Vector()) / m)
+            for j in range(m):
+                j1 = (j + 1) % m
+                g.f((c0, rings[0][j1], rings[0][j]), mat, None, True)
+                g.f((c1, rings[-1][j], rings[-1][j1]), mat, None, True)
     return g
 
 

@@ -249,6 +249,7 @@ def main() -> None:
             mn, mx = bbox(node_points(n))
             pts.extend(corners(mn, mx))
         set_output("", w, h, False)
+        add_sun("fill", "#FFFFFF", 1.0, args.az, min(args.el + 12, 80), shadow=False)
         pos, tgt, _ = solve_camera(pts, args.az, args.el, 30, w / h, width=args.fill, cx=0.5, cy=0.5)
         make_camera("qa_cam", pos, tgt, 30)
         label = args.tag or args.focus.replace(",", "+") or "nodes"

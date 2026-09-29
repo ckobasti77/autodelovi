@@ -82,7 +82,7 @@ def build_library() -> dict[str, bpy.types.Material]:
         bsdf.inputs["Roughness"].default_value = rough
         if "coat" in extra:
             bsdf.inputs["Coat Weight"].default_value = extra["coat"]
-            bsdf.inputs["Coat Roughness"].default_value = 0.15
+            bsdf.inputs["Coat Roughness"].default_value = 0.25
         if "emission" in extra:
             ehx, strength = extra["emission"]
             er, eg, eb = hex_rgb(ehx)
