@@ -42,6 +42,7 @@ QA helpers (renders go to the git-ignored `3d/renders/qa/<tag>/`):
 ```bash
 blender -b 3d/build/car.blend -P 3d/blender/render.py -- --set qa --views front34,rear34,side,top,front,exploded,exploded_m [--paint] [--noshell] --tag name
 blender -b 3d/build/car.blend -P 3d/blender/render.py -- --set closeup --nodes part__turbina__main --az 150 --el 20 --solo --tag turbo
+node 3d/scripts/qa-closeups.mjs [--only f04,f08] [--prefix final]   # the 18 QA close-ups f01–f18 + sheets in 3d/renders/preview/
 blender -b 3d/build/car.blend -P 3d/blender/check_shell.py      # opaque parts poking through the body
 blender -b 3d/build/car.blend -P 3d/blender/stats.py            # triangles per part
 node 3d/scripts/contact-sheet.mjs out.png 6 motor turbina …    # thumbnail sheet on the card colour
@@ -102,13 +103,19 @@ pivot, extras) — the geometry below it is free to change.
 ## 5. Tuning the exploded layout
 
 `config/explode.py` holds the intent (directions in vehicle space, distances in meters, `order` 0–1
-inside the stage) and `STAGE_SPREAD` (distance multipliers per stage). `explode.py --solve` grows the
-distance of the later node of every pair that still overlaps at p = 1 (6 % steps, up to 1.6×, then
-tilts toward +Y) and writes `3d/build/explode.tuned.json`; `--check` reports assembled contacts,
-final overlaps and pass-throughs on the desktop and mobile timelines; `--audit` renders Workbench ID
-passes from both exploded cameras and requires visible/solo ≥ 0.40 per part (0.25 for buried parts;
-right-hand twins may hide when the left twin passes). Delete `explode.tuned.json` to return to the
-intent table.
+inside the stage) and `STAGE_SPREAD` (distance multipliers per stage). `explode.py --solve` runs a
+local search on every opaque part that still overlaps or sits closer than 20 mm to another part at
+p = 1 (the later part of the pair moves; candidates: direction rotated ±12°/±24° about each axis or
+distance × 0.85/1.15/1.3; fewest conflicts wins, then the smallest change) and writes only the
+changed nodes to `3d/build/explode.tuned.json` (D92); `--check` reports assembled contacts, final
+overlaps, clearances (< 20 mm = error, < 35 mm = „tight“) and pass-throughs on the desktop and mobile
+timelines; `--audit` renders Workbench ID passes from both exploded cameras and requires visible/solo
+≥ 0.40 per part (0.25 for buried parts; right-hand twins may hide when the left twin passes). Delete
+`explode.tuned.json` to return to the intent table.
+
+Budget notes: small hardware in the categories listed in `DETAIL_MERGE` (`lib/parts.py`) reuses a
+material slot the part already has, so new bolts and plugs add no draw calls (desktop 213 of 220,
+D91). Fine casting texture comes from the tiling `tex_cast_n` normal map (D90), not from geometry.
 
 ## 6. Known limits (v1)
 

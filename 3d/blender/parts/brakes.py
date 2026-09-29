@@ -101,64 +101,87 @@ def pad_pair(front: bool) -> Geo:
 # --------------------------------------------------------------------------- calipers
 
 
+def _slab(r0: float, r1: float, a0: float, a1: float, y0: float, y1: float, mat: str, n: int = 8, holes=()) -> Geo:
+    """Arc band in the radial plane (r0..r1, a0..a1 deg) extruded along the axle from y0 to y1."""
+    return from_extrude(extrude(band2d(r0, r1, a0, a1, n), y1 - y0, mat, z0=y0, holes=list(holes)))
+
+
+def _axial(profile, seg: int, mat: str, x: float, z: float, y: float, inboard: bool = True) -> Geo:
+    """Lathe along the axle at radial-plane point (x, z), starting at axial y, growing in/outboard."""
+    return lathe(profile, seg, mat, axis="-y" if inboard else "y", hard=False).moved(x, y, z)
+
+
 def caliper(front: bool, lite: bool) -> Geo:
-    """Floating caliper: one C-section casting swept along the disc arc + piston boss, carrier, pins."""
+    """Floating caliper + carrier: inboard piston bore (piston and dust boot visible through the
+    pad window), two bridge arms over the disc edge, outboard fingers, carrier bracket straddling
+    the disc, guide pins with boots and bolt heads, bleed nipple with cap, banjo hose fitting."""
+    from lib.shapes import hex_nut
+
     g = Geo()
     th = THETA_CAL
     t_disc = (VH.DISC_F_T if front else VH.DISC_R_T) / 2
     r_disc = VH.DISC_F_R if front else VH.DISC_R_R
     r_pad = 0.121 if front else 0.114
     pr = 0.034 if front else 0.029
-    ib = -(t_disc + 0.0165)  # inboard pad backing face
-    ob = t_disc + 0.0165  # outboard pad backing face
-    top = (r_disc + 0.034) - r_pad  # bridge top (radial, relative to r_pad)
-    und = (r_disc + 0.006) - r_pad  # bridge underside clearance over the disc edge
-    back = ib - 0.046
-    # C cross-section in (axial h, radial dr); CCW
-    prof = [
-        (ib, -0.032), (ib, und - 0.002), (ib + 0.006, und + 0.004), (ob - 0.006, und + 0.004), (ob, und - 0.002),
-        (ob, -0.026), (ob + 0.003, -0.030), (ob + 0.009, -0.030), (ob + 0.012, -0.024), (ob + 0.012, top - 0.010),
-        (ob + 0.008, top - 0.002), (ob, top), (back + 0.012, top), (back + 0.002, top - 0.012), (back, top - 0.030),
-        (back, -0.018), (back + 0.006, -0.032), (back + 0.016, -0.036),
-    ]
     span = 25 if front else 23
-    n = 8 if lite else 12
-    path = []
-    for i in range(n + 1):
-        a = th - span + 2 * span * i / n
-        x, z = polar(r_pad, a)
-        path.append((x, 0.0, z))
-    body = sweep(path, [(h, dr) for h, dr in prof], CAL, up_hint=(0, 1, 0), hard=True, cap_cdt=True)
-    # sweep frames: normal = +Y (axis), binormal = t x n -> make sure dr points outward
-    probe = body.verts[len(prof) * (n // 2) + 11]
-    mid = Vector(polar(r_pad, th) + (0.0,))
-    g += body
-    # piston boss on the inboard back
+    ib = -(t_disc + 0.0165)
+    ob = t_disc + 0.0165
+    top = r_disc + 0.028
+    seg = 24 if lite else 40
     px, pz = polar(r_pad, th)
-    boss = lathe([(0.0, 0.0), (pr + 0.004, 0.0), (pr + 0.004, -0.012), (pr, -0.020), (pr - 0.012, -0.026), (0.0, -0.027)], 20 if lite else 32, CAL, hard=False)
-    g += boss.moved(px, back + 0.004, pz)
-    # carrier arms at both ends, reaching over the disc edge
-    for a in (th - span - 4, th + span + 4):
-        arm = band2d(r_pad - 0.012, r_disc + 0.014, a - 3.0, a + 3.0, 3)
-        g += from_extrude(extrude(arm, (ob + 0.006) - (ib - 0.012), CAL, z0=ib - 0.012))
-    # guide pins with rubber boots (inboard)
-    for a in (th - span - 5, th + span + 5):
-        cx, cz = polar(r_disc + 0.012, a)
-        boot = lathe([(0.0, 0.0), (0.0090, 0.0), (0.0110, -0.006), (0.0088, -0.012), (0.0110, -0.018), (0.0080, -0.024), (0.0, -0.025)], 14, RUBBER, hard=False)
-        g += boot.moved(cx, ib - 0.018, cz)
-    # bleed nipple (radially outward, top of the housing) + banjo fitting
-    bx, bz = polar(r_pad + 0.036, th + 9)
-    nip = cylinder(0.0042, 0.020, 10, CAL, axis="x", hard=False)
-    g += nip.transform(R("y", -math.degrees(math.atan2(bz, bx)))).moved(bx, back + 0.018, bz)
-    jx, jz = polar(r_pad + 0.030, th - 10)
-    g += box(0.016, 0.020, 0.016, CAL, center=(jx, back + 0.014, jz))
+    # inboard housing slab with the piston bore, piston cylinder with a domed back
+    g += _slab(r_pad - 0.030, top, th - span - 3, th + span + 3, ib - 0.022, ib, CAL, holes=[circle2d(pr + 0.0015, 28, px, -pz)])
+    g += _axial([(0.0, 0.0), (pr + 0.011, 0.0), (pr + 0.011, 0.020), (pr + 0.007, 0.028), (pr - 0.006, 0.032), (0.0, 0.033)], seg, CAL, px, pz, ib - 0.022)
+    # piston face and dust boot, recessed in the bore (seen through the pad window)
+    g += _axial([(0.0, 0.0), (pr - 0.001, 0.0), (pr - 0.001, 0.004), (0.0, 0.004)], seg, STEEL, px, pz, ib - 0.0055, inboard=False)
+    g += _axial([(pr - 0.001, 0.0), (pr + 0.0015, 0.0), (pr + 0.0015, 0.004), (pr - 0.001, 0.004), (pr - 0.001, 0.0)], seg, RUBBER, px, pz, ib - 0.0055, inboard=False)
+    # bridge arms over the disc edge (window between them shows the pads)
+    for a0, a1 in ((th - span - 3, th - span + 6), (th + span - 6, th + span + 3)):
+        g += _slab(r_disc + 0.004, top, a0, a1, ib - 0.004, ob + 0.004, CAL, n=5)
+    # outboard fingers: a top band and two lobes behind the outboard pad
+    g += _slab(r_disc - 0.006, top, th - span - 3, th + span + 3, ob, ob + 0.013, CAL)
+    for a0, a1 in ((th - span - 1, th - 5), (th + 5, th + span + 1)):
+        g += _slab(r_pad - 0.024, r_disc - 0.004, a0, a1, ob, ob + 0.013, CAL, n=5)
+    # guide-pin lugs on the inboard side: arm, lug, boot, bolt head
+    for sgn in (-1, 1):
+        a_lug = th + sgn * (span + 10)
+        g += _slab(r_disc - 0.004, top - 0.004, *sorted((th + sgn * (span + 3), a_lug + sgn * 2)), ib - 0.020, ib - 0.002, CAL, n=4)
+        lx, lz = polar(r_disc + 0.010, a_lug)
+        g += _axial([(0.0, 0.0), (0.012, 0.0), (0.012, 0.024), (0.0, 0.024)], 20, CAL, lx, lz, ib - 0.000)
+        g += _axial([(0.0085, 0.0), (0.0105, 0.002), (0.0090, 0.005), (0.0105, 0.008), (0.0085, 0.011), (0.0, 0.011)], 16, RUBBER, lx, lz, ib, inboard=False)
+        if not lite:
+            nut = hex_nut(0.013, 0.007, STEEL)
+            g += nut.transform(R("x", 180)).moved(lx, ib - 0.0275, lz)
+    # carrier bracket (steel): arms straddling the disc edge + inboard mounting web with bolts
+    for sgn in (-1, 1):
+        a0, a1 = sorted((th + sgn * (span + 3.5), th + sgn * (span + 7.5)))
+        g += _slab(r_disc + 0.004, r_disc + 0.017, a0, a1, ib - 0.010, ob + 0.006, DARK, n=3)
+        g += _slab(r_pad - 0.016, r_disc + 0.004, a0, a1, ib - 0.010, -t_disc - 0.0015, DARK, n=3)
+        g += _slab(r_pad - 0.016, r_disc + 0.004, a0, a1, t_disc + 0.0015, ob + 0.006, DARK, n=3)
+    g += _slab(r_pad - 0.046, r_pad - 0.016, th - span - 7.5, th + span + 7.5, ib - 0.018, ib - 0.010, DARK, n=10)
+    for sgn in (-1, 1):
+        bx_, bz_ = polar(r_pad - 0.031, th + sgn * (span + 3))
+        g += _axial([(0.0, 0.0), (0.0095, 0.0), (0.0095, 0.012), (0.0, 0.012)], 16, DARK, bx_, bz_, ib - 0.018)
+        if not lite:
+            g += hex_nut(0.015, 0.008, STEEL).transform(R("x", 180)).moved(bx_, ib - 0.034, bz_)
+    # bleed nipple with rubber cap (radially outward on top of the bore) and banjo + hose stub
+    nx, nz = polar(r_pad + pr * 0.62, th + 10)
+    y_back = ib - 0.050
+    g += _axial([(0.0, 0.0), (0.0060, 0.0), (0.0060, 0.006), (0.0, 0.006)], 6, STEEL, nx, nz, y_back)
+    g += _axial([(0.0, 0.0), (0.0035, 0.0), (0.0035, 0.010), (0.0, 0.010)], 10, STEEL, nx, nz, y_back - 0.006)
+    g += _axial([(0.0, 0.0), (0.0050, 0.0), (0.0050, 0.007), (0.0030, 0.009), (0.0, 0.009)], 12, RUBBER, nx, nz, y_back - 0.014)
+    jx, jz = polar(r_pad + 0.026, th - 12)
+    g += box(0.016, 0.018, 0.016, STEEL, center=(jx, ib - 0.040, jz))
+    g += _axial([(0.0, 0.0), (0.0075, 0.0), (0.0075, 0.006), (0.0, 0.006)], 6, STEEL, jx, jz, ib - 0.049)
+    hose = catmull([(jx, ib - 0.046, jz), (jx - 0.010, ib - 0.070, jz - 0.020), (jx - 0.030, ib - 0.090, jz - 0.050)], 6)
+    g += tube(hose, 0.0055, 10, RUBBER)
     if not front:
-        # EPB actuator: motor can + gear housing behind the piston
+        # EPB actuator: motor can + gear housing on the inboard back
         mot = lathe([(0.0, 0.0), (0.021, 0.0), (0.021, -0.032), (0.017, -0.038), (0.0, -0.040)], 20, CAL, hard=False)
         mx, mz = polar(r_pad - 0.020, th + 14)
-        g += mot.moved(mx, back - 0.004, mz)
-        g += box(0.040, 0.020, 0.050, CAL, center=(px - 0.004, back - 0.010, pz + 0.004))
-    _ = (probe, mid)
+        g += mot.moved(mx, ib - 0.058, mz)
+        g += box(0.040, 0.020, 0.050, CAL, center=(px - 0.004, ib - 0.066, pz + 0.004))
+        g += box(0.016, 0.012, 0.020, PLASTIC, center=(mx + 0.012, ib - 0.084, mz))
     return g
 
 

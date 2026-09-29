@@ -44,10 +44,12 @@ def parse():
 
 
 def thumb_materials() -> None:
-    """Render-only look for x-ray slots: primed replacement panel and clear glass."""
+    """Render-only look for x-ray slots: primed replacement panel and clear glass. Lamp lenses
+    also render as clear glass so reflectors, projectors and light guides read through them."""
     body = bpy.data.materials["mat_body_xray"]
     glass = bpy.data.materials["mat_glass_xray"]
-    for mat, kind in ((body, "primer"), (glass, "glass")):
+    lens = bpy.data.materials["mat_glass_lens"]
+    for mat, kind in ((body, "primer"), (glass, "glass"), (lens, "glass")):
         nt = mat.node_tree
         for n in list(nt.nodes):
             nt.nodes.remove(n)
@@ -211,6 +213,9 @@ def main() -> None:
         empties = [part_node(k) for k in keys]
         objs = [c for e in empties for c in e.children_recursive if c.type == "MESH"]
         pts = [p for e in empties for p in node_points(e)]
+        if "focus_x" in spec:
+            lo, hi = spec["focus_x"]
+            pts = [p for p in pts if lo <= p.x <= hi] or pts
         render_set(slug, objs, pts, spec.get("az", 35.0), spec.get("el", 20.0), args.res)
         restore(saved)
     log(f"thumbs done in {time.time() - t0:.1f}s")

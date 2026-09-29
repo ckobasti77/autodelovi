@@ -1,26 +1,26 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-09-29T19:28:21Z",
+ "generatedAt": "2026-09-29T20:36:01Z",
  "source": {
   "blender": "5.1.1",
-  "scriptsHash": "026f36c2168a0951665ecb17228b012136b921d84ea7bf715fde8ab5aef14fa1"
+  "scriptsHash": "5f56bf378022286137d8259132987b6d1f382a0e004f9746ad20bd67b4bbfd8a"
  },
  "models": {
   "desktop": {
    "url": "/models/car.glb",
-   "bytes": 2183672,
-   "sha256": "4c6acfd5df662cbc1923cdfebbf99b78229239e866989bcc2a4eb045a8db6ccc",
-   "triangles": 260262,
-   "drawCalls": 204,
-   "textures": 4
+   "bytes": 3638264,
+   "sha256": "6d94654fbe165ffa1a39d3e74b105c80e0d778132c178988fa835d7610cd272a",
+   "triangles": 343982,
+   "drawCalls": 213,
+   "textures": 5
   },
   "lite": {
    "url": "/models/car-lite.glb",
-   "bytes": 1619544,
-   "sha256": "9b6fa2b26bc961df5ce4957d8a7f082e491730295dbd01c8fba6f15c8dba452d",
-   "triangles": 206470,
+   "bytes": 2628980,
+   "sha256": "1ec65e5f98d1145004512b3d805a350074f506c8e74149cabd65293a637426bc",
+   "triangles": 233664,
    "drawCalls": 149,
-   "textures": 4
+   "textures": 5
   }
  },
  "units": "meters",
@@ -228,11 +228,11 @@
    "thumbnail": "/images/parts/motor.webp",
    "focus": {
     "dir": [
-     0.3822,
-     0.7881,
-     0.4825
+     0.3851,
+     0.7844,
+     0.4861
     ],
-    "minDistance": 1.492,
+    "minDistance": 1.546,
     "fov": 30
    }
   },
@@ -247,11 +247,11 @@
    "thumbnail": "/images/parts/turbina.webp",
    "focus": {
     "dir": [
-     0.4018,
-     0.7608,
-     0.5097
+     0.4755,
+     0.7604,
+     0.4423
     ],
-    "minDistance": 0.547,
+    "minDistance": 0.549,
     "fov": 30
    }
   },
@@ -267,9 +267,9 @@
    "thumbnail": "/images/parts/interkuler.webp",
    "focus": {
     "dir": [
-     0.4288,
-     0.5626,
-     0.7068
+     0.4324,
+     0.5595,
+     0.7071
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -287,11 +287,11 @@
    "thumbnail": "/images/parts/usisna-grana.webp",
    "focus": {
     "dir": [
-     0.3854,
-     0.7287,
-     0.5661
+     0.3904,
+     0.7209,
+     0.5726
     ],
-    "minDistance": 1.924,
+    "minDistance": 2.147,
     "fov": 30
    }
   },
@@ -307,11 +307,11 @@
    "thumbnail": "/images/parts/brizgaljke-pumpa-goriva.webp",
    "focus": {
     "dir": [
-     0.3699,
-     0.6602,
-     0.6536
+     0.3729,
+     0.6554,
+     0.6568
     ],
-    "minDistance": 1.772,
+    "minDistance": 1.91,
     "fov": 30
    }
   },
@@ -331,7 +331,7 @@
      0.4508,
      0.6411
     ],
-    "minDistance": 0.76,
+    "minDistance": 0.79,
     "fov": 30
    }
   },
@@ -350,7 +350,7 @@
      0.4508,
      0.6411
     ],
-    "minDistance": 0.718,
+    "minDistance": 0.703,
     "fov": 30
    }
   },
@@ -384,9 +384,9 @@
    "thumbnail": "/images/parts/anlaser.webp",
    "focus": {
     "dir": [
-     0.4643,
-     0.3586,
-     0.8098
+     0.4657,
+     0.3587,
+     0.809
     ],
     "minDistance": 0.45,
     "fov": 30
@@ -403,9 +403,9 @@
    "thumbnail": "/images/parts/paljenje-grejaci.webp",
    "focus": {
     "dir": [
-     0.4143,
-     0.7892,
-     0.4533
+     0.4187,
+     0.7828,
+     0.4603
     ],
     "minDistance": 0.461,
     "fov": 30
@@ -422,11 +422,11 @@
    "thumbnail": "/images/parts/karter-dihtunzi.webp",
    "focus": {
     "dir": [
-     0.3634,
-     0.8118,
-     0.457
+     0.3652,
+     0.8096,
+     0.4595
     ],
-    "minDistance": 0.67,
+    "minDistance": 0.692,
     "fov": 30
    }
   },
@@ -441,9 +441,9 @@
    "thumbnail": "/images/parts/egr-ventil.webp",
    "focus": {
     "dir": [
-     0.5167,
-     0.6636,
-     0.541
+     0.5185,
+     0.6606,
+     0.5429
     ],
     "minDistance": 0.45,
     "fov": 30
@@ -462,11 +462,11 @@
    "thumbnail": "/images/parts/nosaci-motora.webp",
    "focus": {
     "dir": [
-     0.4033,
-     0.4166,
-     0.8148
+     0.4011,
+     0.4378,
+     0.8046
     ],
-    "minDistance": 2.917,
+    "minDistance": 2.931,
     "fov": 30
    }
   },
@@ -521,11 +521,11 @@
    "thumbnail": "/images/parts/hladnjak-ventilator.webp",
    "focus": {
     "dir": [
-     0.3726,
-     0.6291,
-     0.6822
+     0.3779,
+     0.625,
+     0.6831
     ],
-    "minDistance": 1.338,
+    "minDistance": 1.37,
     "fov": 30
    }
   },
@@ -541,11 +541,11 @@
    "thumbnail": "/images/parts/termostat-creva.webp",
    "focus": {
     "dir": [
-     0.4708,
-     0.7471,
-     0.4692
+     0.531,
+     0.663,
+     0.5276
     ],
-    "minDistance": 1.381,
+    "minDistance": 1.584,
     "fov": 30
    }
   },
@@ -565,7 +565,7 @@
      0.3505,
      0.8211
     ],
-    "minDistance": 1.941,
+    "minDistance": 2.01,
     "fov": 30
    }
   },
@@ -584,7 +584,7 @@
      0.4505,
      0.2703
     ],
-    "minDistance": 0.515,
+    "minDistance": 0.514,
     "fov": 30
    }
   },
@@ -603,7 +603,7 @@
      0.4505,
      0.2703
     ],
-    "minDistance": 0.995,
+    "minDistance": 1.059,
     "fov": 30
    }
   },
@@ -619,11 +619,11 @@
    "thumbnail": "/images/parts/poluosovine.webp",
    "focus": {
     "dir": [
-     0.5904,
-     0.1534,
-     0.7924
+     0.5308,
+     0.2781,
+     0.8006
     ],
-    "minDistance": 1.653,
+    "minDistance": 1.735,
     "fov": 30
    }
   },
@@ -641,9 +641,9 @@
    "thumbnail": "/images/parts/amortizeri-opruge.webp",
    "focus": {
     "dir": [
-     0.3325,
-     0.7791,
-     0.5315
+     0.3335,
+     0.7778,
+     0.5328
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -662,9 +662,9 @@
    "thumbnail": "/images/parts/ramena-selen-blokovi.webp",
    "focus": {
     "dir": [
-     0.415,
+     0.4153,
      0.0798,
-     0.9063
+     0.9062
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -683,11 +683,11 @@
    "thumbnail": "/images/parts/spone-stabilizatori.webp",
    "focus": {
     "dir": [
-     0.8177,
-     0.5197,
-     0.2476
+     0.7605,
+     0.6245,
+     0.1776
     ],
-    "minDistance": 1.827,
+    "minDistance": 1.811,
     "fov": 30
    }
   },
@@ -702,9 +702,9 @@
    "thumbnail": "/images/parts/letva-volana.webp",
    "focus": {
     "dir": [
-     0.6917,
-     0.5513,
-     0.4664
+     0.7259,
+     0.5244,
+     0.445
     ],
     "minDistance": 1.005,
     "fov": 30
@@ -724,9 +724,9 @@
    "thumbnail": "/images/parts/lezaj-glavcina.webp",
    "focus": {
     "dir": [
-     0.3187,
-     0.8011,
-     0.5065
+     0.3197,
+     0.7999,
+     0.5078
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -746,9 +746,9 @@
    "thumbnail": "/images/parts/kocioni-diskovi.webp",
    "focus": {
     "dir": [
-     0.3188,
-     0.8012,
-     0.5064
+     0.3198,
+     0.8,
+     0.5077
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -768,9 +768,9 @@
    "thumbnail": "/images/parts/kocione-plocice.webp",
    "focus": {
     "dir": [
-     0.5311,
-     0.8237,
-     0.1985
+     0.5333,
+     0.8219,
+     0.2
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -790,9 +790,9 @@
    "thumbnail": "/images/parts/kocione-celjusti.webp",
    "focus": {
     "dir": [
-     0.5418,
-     0.8159,
-     0.2019
+     0.5438,
+     0.8141,
+     0.2039
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -812,9 +812,9 @@
    "thumbnail": "/images/parts/abs-senzori.webp",
    "focus": {
     "dir": [
-     0.3733,
-     0.852,
-     0.367
+     0.3746,
+     0.8509,
+     0.3684
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -831,11 +831,11 @@
    "thumbnail": "/images/parts/akumulator.webp",
    "focus": {
     "dir": [
-     0.4605,
-     0.6831,
-     0.5668
+     0.4625,
+     0.678,
+     0.5712
     ],
-    "minDistance": 0.474,
+    "minDistance": 0.484,
     "fov": 30
    }
   },
@@ -851,9 +851,9 @@
    "thumbnail": "/images/parts/farovi.webp",
    "focus": {
     "dir": [
-     0.3626,
-     0.5525,
-     0.7505
+     0.3635,
+     0.5503,
+     0.7517
     ],
     "minDistance": 2.576,
     "fov": 30
@@ -871,9 +871,9 @@
    "thumbnail": "/images/parts/stop-svetla.webp",
    "focus": {
     "dir": [
-     0.4693,
-     0.8261,
-     0.3119
+     0.4711,
+     0.8246,
+     0.3133
     ],
     "minDistance": 2.416,
     "fov": 30
@@ -892,9 +892,9 @@
    "thumbnail": "/images/parts/senzori.webp",
    "focus": {
     "dir": [
-     0.5056,
-     0.6669,
-     0.5474
+     0.5067,
+     0.665,
+     0.5486
     ],
     "minDistance": 2.369,
     "fov": 30
@@ -911,9 +911,9 @@
    "thumbnail": "/images/parts/hauba.webp",
    "focus": {
     "dir": [
-     0.3748,
-     0.6319,
-     0.6784
+     0.3757,
+     0.6299,
+     0.6797
     ],
     "minDistance": 2.471,
     "fov": 30
@@ -931,9 +931,9 @@
    "thumbnail": "/images/parts/branici.webp",
    "focus": {
     "dir": [
-     0.3343,
-     0.8025,
-     0.4942
+     0.3354,
+     0.8012,
+     0.4955
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -951,9 +951,9 @@
    "thumbnail": "/images/parts/blatobrani.webp",
    "focus": {
     "dir": [
-     0.3421,
-     0.6564,
-     0.6724
+     0.343,
+     0.6546,
+     0.6737
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -973,9 +973,9 @@
    "thumbnail": "/images/parts/vrata.webp",
    "focus": {
     "dir": [
-     0.3288,
-     0.7819,
-     0.5296
+     0.3337,
+     0.7747,
+     0.5371
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -993,9 +993,9 @@
    "thumbnail": "/images/parts/retrovizori.webp",
    "focus": {
     "dir": [
-     0.3369,
-     0.6608,
-     0.6707
+     0.3378,
+     0.6591,
+     0.6719
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -1014,9 +1014,9 @@
    "thumbnail": "/images/parts/stakla.webp",
    "focus": {
     "dir": [
-     0.3367,
-     0.7624,
-     0.5526
+     0.3377,
+     0.7611,
+     0.5538
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -1033,11 +1033,11 @@
    "thumbnail": "/images/parts/brisaci.webp",
    "focus": {
     "dir": [
-     0.3253,
-     0.5566,
-     0.7644
+     0.326,
+     0.5546,
+     0.7656
     ],
-    "minDistance": 1.438,
+    "minDistance": 1.443,
     "fov": 30
    }
   },
@@ -1055,9 +1055,9 @@
    "thumbnail": "/images/parts/felne-gume.webp",
    "focus": {
     "dir": [
-     0.3187,
-     0.8011,
-     0.5065
+     0.3197,
+     0.7999,
+     0.5078
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -1072,9 +1072,9 @@
    "thumbnail": "/images/parts/filteri.webp",
    "focus": {
     "dir": [
-     0.4962,
-     0.3739,
-     0.7836
+     0.4971,
+     0.3705,
+     0.7846
     ],
     "minDistance": 0,
     "fov": 30
@@ -1089,9 +1089,9 @@
    "thumbnail": "/images/parts/ulja-tecnosti.webp",
    "focus": {
     "dir": [
-     0.4962,
-     0.3739,
-     0.7836
+     0.4971,
+     0.3705,
+     0.7846
     ],
     "minDistance": 0,
     "fov": 30
@@ -1141,7 +1141,7 @@
    ],
    "triangles": {
     "desktop": 940,
-    "lite": 940
+    "lite": 798
    },
    "materials": [
     "mat_plastic_black"
@@ -1189,7 +1189,7 @@
    ],
    "triangles": {
     "desktop": 940,
-    "lite": 940
+    "lite": 798
    },
    "materials": [
     "mat_plastic_black"
@@ -1237,7 +1237,7 @@
    ],
    "triangles": {
     "desktop": 940,
-    "lite": 940
+    "lite": 798
    },
    "materials": [
     "mat_plastic_black"
@@ -1285,7 +1285,7 @@
    ],
    "triangles": {
     "desktop": 940,
-    "lite": 940
+    "lite": 798
    },
    "materials": [
     "mat_plastic_black"
@@ -1305,35 +1305,35 @@
      0.87537,
      0.28848
     ],
-    "distance": 0.8775,
+    "distance": 0.975,
     "stage": 4,
     "order": 0.2
    },
    "pivot": [
     0.58,
-    0.6055,
+    0.607,
     1.745
    ],
    "bbox": {
     "min": [
      0.439,
      0.5,
-     1.6555
+     1.6485
     ],
     "max": [
      0.721,
-     0.711,
-     1.8345
+     0.7139,
+     1.8415
     ]
    },
    "labelAnchor": [
     0,
-    0.1355,
+    0.137,
     0
    ],
    "triangles": {
-    "desktop": 1032,
-    "lite": 1032
+    "desktop": 1600,
+    "lite": 1530
    },
    "materials": [
     "mat_battery",
@@ -1350,27 +1350,27 @@
    "lod": "core",
    "explode": {
     "dir": [
-     -0.40092,
-     0.55127,
-     0.73168
+     -0.25043,
+     0.85145,
+     0.46078
     ],
-    "distance": 0.7425,
+    "distance": 0.9,
     "stage": 4,
     "order": 0.5
    },
    "pivot": [
-    -0.35,
+    -0.3391,
     0.474,
-    1.725
+    1.715
    ],
    "bbox": {
     "min": [
      -0.476,
      0.39,
-     1.652
+     1.6321
     ],
     "max": [
-     -0.224,
+     -0.2023,
      0.558,
      1.798
     ]
@@ -1381,12 +1381,13 @@
     0
    ],
    "triangles": {
-    "desktop": 3272,
-    "lite": 2600
+    "desktop": 3588,
+    "lite": 2762
    },
    "materials": [
     "mat_cast_alu",
     "mat_copper",
+    "mat_plastic_black",
     "mat_steel_dark"
    ]
   },
@@ -1432,7 +1433,7 @@
    ],
    "triangles": {
     "desktop": 5492,
-    "lite": 3448
+    "lite": 3358
    },
    "materials": [
     "mat_machined_steel",
@@ -1483,7 +1484,7 @@
    ],
    "triangles": {
     "desktop": 5492,
-    "lite": 3448
+    "lite": 3354
    },
    "materials": [
     "mat_machined_steel",
@@ -1534,7 +1535,7 @@
    ],
    "triangles": {
     "desktop": 4344,
-    "lite": 3120
+    "lite": 3098
    },
    "materials": [
     "mat_machined_steel",
@@ -1585,7 +1586,7 @@
    ],
    "triangles": {
     "desktop": 4344,
-    "lite": 3120
+    "lite": 3096
    },
    "materials": [
     "mat_machined_steel",
@@ -1608,35 +1609,35 @@
      -0.15958,
      0.93752
     ],
-    "distance": 0.432,
+    "distance": 0.48,
     "stage": 4,
     "order": 0.55
    },
    "pivot": [
-    0.206,
-    0.3185,
-    1.6535
+    0.2032,
+    0.3092,
+    1.661
    ],
    "bbox": {
     "min": [
-     0.1,
-     0.26,
-     1.602
+     0.094,
+     0.2393,
+     1.615
     ],
     "max": [
-     0.312,
-     0.377,
-     1.705
+     0.3124,
+     0.379,
+     1.707
     ]
    },
    "labelAnchor": [
     0,
-    0.0885,
+    0.0998,
     0
    ],
    "triangles": {
-    "desktop": 3388,
-    "lite": 3212
+    "desktop": 9928,
+    "lite": 7730
    },
    "materials": [
     "mat_cast_alu",
@@ -1686,7 +1687,7 @@
    ],
    "triangles": {
     "desktop": 592,
-    "lite": 572
+    "lite": 564
    },
    "materials": [
     "mat_rubber",
@@ -1735,7 +1736,7 @@
    ],
    "triangles": {
     "desktop": 1888,
-    "lite": 1736
+    "lite": 1510
    },
    "materials": [
     "mat_chrome",
@@ -1785,7 +1786,7 @@
    ],
    "triangles": {
     "desktop": 1942,
-    "lite": 1542
+    "lite": 1310
    },
    "materials": [
     "mat_body_xray"
@@ -1833,7 +1834,7 @@
    ],
    "triangles": {
     "desktop": 1942,
-    "lite": 1542
+    "lite": 1310
    },
    "materials": [
     "mat_body_xray"
@@ -1881,7 +1882,7 @@
    ],
    "triangles": {
     "desktop": 4232,
-    "lite": 4156
+    "lite": 3532
    },
    "materials": [
     "mat_body_xray"
@@ -1929,7 +1930,7 @@
    ],
    "triangles": {
     "desktop": 1800,
-    "lite": 1800
+    "lite": 1530
    },
    "materials": [
     "mat_body_xray"
@@ -1954,30 +1955,30 @@
     "order": 0
    },
    "pivot": [
-    0.0198,
-    1.0382,
-    0.7742
+    0.0218,
+    1.0394,
+    0.7745
    ],
    "bbox": {
     "min": [
-     -0.5773,
+     -0.5774,
      1.01,
-     0.7352
+     0.7336
     ],
     "max": [
-     0.617,
-     1.0664,
-     0.8133
+     0.621,
+     1.0689,
+     0.8155
     ]
    },
    "labelAnchor": [
     0,
-    0.0582,
+    0.0594,
     0
    ],
    "triangles": {
-    "desktop": 832,
-    "lite": 832
+    "desktop": 1440,
+    "lite": 1222
    },
    "materials": [
     "mat_painted_black",
@@ -1998,7 +1999,7 @@
      0.39873,
      0.91707
     ],
-    "distance": 0.455,
+    "distance": 0.5075,
     "stage": 5,
     "order": 0.05
    },
@@ -2026,7 +2027,7 @@
    ],
    "triangles": {
     "desktop": 1336,
-    "lite": 1336
+    "lite": 1142
    },
    "materials": [
     "mat_plastic_black",
@@ -2047,7 +2048,7 @@
      0.99554,
      -0.07996
     ],
-    "distance": 1.105,
+    "distance": 1.2325,
     "stage": 5,
     "order": 0.1
    },
@@ -2075,7 +2076,7 @@
    ],
    "triangles": {
     "desktop": 932,
-    "lite": 932
+    "lite": 792
    },
    "materials": [
     "mat_cast_alu",
@@ -2124,7 +2125,7 @@
    ],
    "triangles": {
     "desktop": 2244,
-    "lite": 1996
+    "lite": 1714
    },
    "materials": [
     "mat_heat_shield",
@@ -2145,35 +2146,35 @@
      0.8427,
      0.24077
     ],
-    "distance": 0.546,
+    "distance": 0.609,
     "stage": 5,
     "order": 0.15
    },
    "pivot": [
-    0.095,
-    0.8213,
-    1.5779
+    0.096,
+    0.8147,
+    1.6051
    ],
    "bbox": {
     "min": [
-     0.06,
-     0.7515,
-     1.5146
+     0.045,
+     0.7648,
+     1.5544
     ],
     "max": [
-     0.13,
-     0.8908,
-     1.6408
+     0.147,
+     0.8643,
+     1.6558
     ]
    },
    "labelAnchor": [
     0,
-    0.0995,
-    -0.0002
+    0.0796,
+    0
    ],
    "triangles": {
-    "desktop": 572,
-    "lite": 572
+    "desktop": 6448,
+    "lite": 4580
    },
    "materials": [
     "mat_cast_alu",
@@ -2221,8 +2222,8 @@
     0
    ],
    "triangles": {
-    "desktop": 3198,
-    "lite": 2482
+    "desktop": 3534,
+    "lite": 2326
    },
    "materials": [
     "mat_brushed_alu",
@@ -2272,8 +2273,8 @@
     0
    ],
    "triangles": {
-    "desktop": 3198,
-    "lite": 2482
+    "desktop": 3534,
+    "lite": 2324
    },
    "materials": [
     "mat_brushed_alu",
@@ -2324,7 +2325,7 @@
    ],
    "triangles": {
     "desktop": 12776,
-    "lite": 8360
+    "lite": 7820
    },
    "materials": [
     "mat_brushed_alu",
@@ -2374,7 +2375,7 @@
    ],
    "triangles": {
     "desktop": 12776,
-    "lite": 8360
+    "lite": 7820
    },
    "materials": [
     "mat_brushed_alu",
@@ -2424,7 +2425,7 @@
    ],
    "triangles": {
     "desktop": 12776,
-    "lite": 8360
+    "lite": 7820
    },
    "materials": [
     "mat_brushed_alu",
@@ -2474,7 +2475,7 @@
    ],
    "triangles": {
     "desktop": 12776,
-    "lite": 8360
+    "lite": 7820
    },
    "materials": [
     "mat_brushed_alu",
@@ -2524,7 +2525,7 @@
    ],
    "triangles": {
     "desktop": 3564,
-    "lite": 2728
+    "lite": 2318
    },
    "materials": [
     "mat_body_xray"
@@ -2544,7 +2545,7 @@
      0.8,
      0.6
     ],
-    "distance": 0.945,
+    "distance": 1.05,
     "stage": 4,
     "order": 0.45
    },
@@ -2572,7 +2573,7 @@
    ],
    "triangles": {
     "desktop": 1108,
-    "lite": 916
+    "lite": 906
    },
    "materials": [
     "mat_plastic_black",
@@ -2593,25 +2594,25 @@
      0.6,
      0.8
     ],
-    "distance": 0.945,
+    "distance": 1.05,
     "stage": 4,
     "order": 0.3
    },
    "pivot": [
-    0.013,
+    0.0095,
     0.555,
-    1.9285
+    1.9295
    ],
    "bbox": {
     "min": [
-     -0.364,
+     -0.371,
      0.28,
      1.882
     ],
     "max": [
      0.39,
      0.83,
-     1.975
+     1.977
     ]
    },
    "labelAnchor": [
@@ -2620,8 +2621,8 @@
     0
    ],
    "triangles": {
-    "desktop": 1484,
-    "lite": 1516
+    "desktop": 3832,
+    "lite": 3256
    },
    "materials": [
     "mat_core_fins",
@@ -2642,7 +2643,7 @@
      -0.04994,
      0.99875
     ],
-    "distance": 1.2825,
+    "distance": 1.425,
     "stage": 4,
     "order": 0
    },
@@ -2670,7 +2671,7 @@
    ],
    "triangles": {
     "desktop": 892,
-    "lite": 892
+    "lite": 764
    },
    "materials": [
     "mat_cast_alu",
@@ -2691,7 +2692,7 @@
      0.90226,
      0.25063
     ],
-    "distance": 1.2825,
+    "distance": 1.425,
     "stage": 4,
     "order": 0.1
    },
@@ -2719,7 +2720,7 @@
    ],
    "triangles": {
     "desktop": 2688,
-    "lite": 2016
+    "lite": 1726
    },
    "materials": [
     "mat_brushed_alu",
@@ -2740,35 +2741,35 @@
      0.15038,
      0.50125
     ],
-    "distance": 0.837,
+    "distance": 0.93,
     "stage": 4,
     "order": 0.35
    },
    "pivot": [
-    -0.4475,
-    0.4473,
+    -0.4555,
+    0.437,
     1.58
    ],
    "bbox": {
     "min": [
-     -0.486,
+     -0.502,
      0.229,
      1.3791
     ],
     "max": [
      -0.409,
-     0.6656,
+     0.6449,
      1.781
     ]
    },
    "labelAnchor": [
     0,
-    0.2483,
+    0.2379,
     0
    ],
    "triangles": {
-    "desktop": 3856,
-    "lite": 3312
+    "desktop": 5696,
+    "lite": 3998
    },
    "materials": [
     "mat_cast_alu",
@@ -2789,38 +2790,39 @@
      1,
      0
     ],
-    "distance": 0.234,
+    "distance": 0.261,
     "stage": 5,
     "order": 0.9
    },
    "pivot": [
     -0.175,
-    0.2477,
-    1.4919
+    0.2468,
+    1.4876
    ],
    "bbox": {
     "min": [
-     -0.39,
-     0.128,
-     1.3597
+     -0.396,
+     0.1211,
+     1.3512
     ],
     "max": [
-     0.04,
-     0.3672,
-     1.6238
+     0.046,
+     0.3724,
+     1.6239
     ]
    },
    "labelAnchor": [
     0,
-    0.1495,
-    -0.0001
+    0.1557,
+    0
    ],
    "triangles": {
-    "desktop": 760,
-    "lite": 760
+    "desktop": 4384,
+    "lite": 1502
    },
    "materials": [
     "mat_cast_alu",
+    "mat_plastic_black",
     "mat_steel_dark"
    ]
   },
@@ -2838,7 +2840,7 @@
      -0.09977,
      0.88796
     ],
-    "distance": 0.7425,
+    "distance": 0.825,
     "stage": 4,
     "order": 0.6
    },
@@ -2866,7 +2868,7 @@
    ],
    "triangles": {
     "desktop": 2680,
-    "lite": 1912
+    "lite": 1836
    },
    "materials": [
     "mat_cast_alu",
@@ -2887,7 +2889,7 @@
      0.1005,
      0.99494
     ],
-    "distance": 1.053,
+    "distance": 1.17,
     "stage": 4,
     "order": 0.15
    },
@@ -2915,7 +2917,7 @@
    ],
    "triangles": {
     "desktop": 720,
-    "lite": 720
+    "lite": 610
    },
    "materials": [
     "mat_core_fins",
@@ -2947,28 +2949,29 @@
    ],
    "bbox": {
     "min": [
-     0.673,
-     0.2646,
-     1.1435
+     0.6471,
+     0.2514,
+     1.1254
     ],
     "max": [
-     0.812,
-     0.4373,
-     1.2619
+     0.813,
+     0.448,
+     1.259
     ]
    },
    "labelAnchor": [
-    -0.0165,
-    0.108,
-    0.0096
+    -0.0289,
+    0.1187,
+    -0.0009
    ],
    "triangles": {
-    "desktop": 2356,
-    "lite": 1924
+    "desktop": 5952,
+    "lite": 4286
    },
    "materials": [
     "mat_caliper",
-    "mat_rubber"
+    "mat_rubber",
+    "mat_steel_dark"
    ]
   },
   {
@@ -2996,28 +2999,29 @@
    ],
    "bbox": {
     "min": [
-     -0.812,
-     0.2646,
-     1.1435
+     -0.813,
+     0.2514,
+     1.1254
     ],
     "max": [
-     -0.673,
-     0.4373,
-     1.2619
+     -0.6471,
+     0.448,
+     1.259
     ]
    },
    "labelAnchor": [
-    0.0165,
-    0.108,
-    0.0096
+    0.0289,
+    0.1187,
+    -0.0009
    ],
    "triangles": {
-    "desktop": 2356,
-    "lite": 1924
+    "desktop": 5952,
+    "lite": 4278
    },
    "materials": [
     "mat_caliper",
-    "mat_rubber"
+    "mat_rubber",
+    "mat_steel_dark"
    ]
   },
   {
@@ -3045,28 +3049,30 @@
    ],
    "bbox": {
     "min": [
-     0.6445,
-     0.2717,
-     -1.4695
+     0.6365,
+     0.2589,
+     -1.4884
     ],
     "max": [
-     0.7895,
-     0.428,
-     -1.3549
+     0.7905,
+     0.4382,
+     -1.358
     ]
    },
    "labelAnchor": [
-    -0.027,
-    0.1004,
-    0.0079
+    -0.0305,
+    0.1107,
+    -0.0031
    ],
    "triangles": {
-    "desktop": 2584,
-    "lite": 2152
+    "desktop": 6240,
+    "lite": 4628
    },
    "materials": [
     "mat_caliper",
-    "mat_rubber"
+    "mat_plastic_black",
+    "mat_rubber",
+    "mat_steel_dark"
    ]
   },
   {
@@ -3094,28 +3100,30 @@
    ],
    "bbox": {
     "min": [
-     -0.7895,
-     0.2717,
-     -1.4695
+     -0.7905,
+     0.2589,
+     -1.4884
     ],
     "max": [
-     -0.6445,
-     0.428,
-     -1.3549
+     -0.6365,
+     0.4382,
+     -1.358
     ]
    },
    "labelAnchor": [
-    0.027,
-    0.1004,
-    0.0079
+    0.0305,
+    0.1107,
+    -0.0031
    ],
    "triangles": {
-    "desktop": 2584,
-    "lite": 2152
+    "desktop": 6240,
+    "lite": 4622
    },
    "materials": [
     "mat_caliper",
-    "mat_rubber"
+    "mat_plastic_black",
+    "mat_rubber",
+    "mat_steel_dark"
    ]
   },
   {
@@ -3160,7 +3168,7 @@
    ],
    "triangles": {
     "desktop": 1752,
-    "lite": 1752
+    "lite": 1556
    },
    "materials": [
     "mat_rubber",
@@ -3209,7 +3217,7 @@
    ],
    "triangles": {
     "desktop": 1752,
-    "lite": 1752
+    "lite": 1556
    },
    "materials": [
     "mat_rubber",
@@ -3258,7 +3266,7 @@
    ],
    "triangles": {
     "desktop": 1752,
-    "lite": 1752
+    "lite": 1556
    },
    "materials": [
     "mat_rubber",
@@ -3307,7 +3315,7 @@
    ],
    "triangles": {
     "desktop": 1752,
-    "lite": 1752
+    "lite": 1556
    },
    "materials": [
     "mat_rubber",
@@ -3520,16 +3528,16 @@
    "lod": "core",
    "explode": {
     "dir": [
-     1,
-     0,
-     0
+     0.94995,
+     0.19999,
+     -0.23999
     ],
-    "distance": 0.36,
+    "distance": 0.442,
     "stage": 6,
     "order": 0.25
    },
    "pivot": [
-    0.1185,
+    0.1168,
     0.43,
     1.46
    ],
@@ -3540,7 +3548,7 @@
      1.3122
     ],
     "max": [
-     0.167,
+     0.1635,
      0.5778,
      1.6078
     ]
@@ -3551,8 +3559,8 @@
     0
    ],
    "triangles": {
-    "desktop": 5544,
-    "lite": 3600
+    "desktop": 10088,
+    "lite": 6768
    },
    "materials": [
     "mat_cast_iron",
@@ -3571,11 +3579,11 @@
    "lod": "core",
    "explode": {
     "dir": [
-     0.91381,
-     0.40614,
-     0
+     0.94881,
+     0.29963,
+     -0.09988
     ],
-    "distance": 0.22,
+    "distance": 0.3,
     "stage": 3,
     "order": 0.95
    },
@@ -3603,7 +3611,7 @@
    ],
    "triangles": {
     "desktop": 3348,
-    "lite": 2652
+    "lite": 2354
    },
    "materials": [
     "mat_cast_alu",
@@ -3653,7 +3661,7 @@
    ],
    "triangles": {
     "desktop": 2704,
-    "lite": 2256
+    "lite": 2110
    },
    "materials": [
     "mat_machined_steel"
@@ -3701,7 +3709,7 @@
    ],
    "triangles": {
     "desktop": 2704,
-    "lite": 2256
+    "lite": 2110
    },
    "materials": [
     "mat_machined_steel"
@@ -3749,7 +3757,7 @@
    ],
    "triangles": {
     "desktop": 2704,
-    "lite": 2256
+    "lite": 2110
    },
    "materials": [
     "mat_machined_steel"
@@ -3797,7 +3805,7 @@
    ],
    "triangles": {
     "desktop": 2704,
-    "lite": 2256
+    "lite": 2110
    },
    "materials": [
     "mat_machined_steel"
@@ -3817,35 +3825,35 @@
      0.69913,
      0.29963
     ],
-    "distance": 0.72,
+    "distance": 0.78,
     "stage": 6,
     "order": 0
    },
    "pivot": [
-    0.326,
-    0.4315,
-    1.436
+    0.316,
+    0.43,
+    1.4479
    ],
    "bbox": {
     "min": [
-     0.06,
-     0.218,
-     1.2
+     0.04,
+     0.198,
+     1.1938
     ],
     "max": [
      0.592,
-     0.645,
-     1.672
+     0.662,
+     1.702
     ]
    },
    "labelAnchor": [
     0,
-    0.2435,
+    0.262,
     0
    ],
    "triangles": {
-    "desktop": 2408,
-    "lite": 1904
+    "desktop": 20844,
+    "lite": 8658
    },
    "materials": [
     "mat_cast_alu",
@@ -3867,39 +3875,40 @@
      1,
      0
     ],
-    "distance": 0.325,
+    "distance": 0.3625,
     "stage": 5,
     "order": 0.8
    },
    "pivot": [
     -0.191,
-    0.5153,
-    1.4745
+    0.5999,
+    1.4726
    ],
    "bbox": {
     "min": [
      -0.45,
      0.3161,
-     1.3073
+     1.3034
     ],
     "max": [
      0.068,
-     0.7144,
+     0.8838,
      1.6421
     ]
    },
    "labelAnchor": [
     0,
-    0.2291,
+    0.3139,
     0.0001
    ],
    "triangles": {
-    "desktop": 5488,
-    "lite": 5488
+    "desktop": 8040,
+    "lite": 6552
    },
    "materials": [
     "mat_cast_alu",
     "mat_cast_iron",
+    "mat_plastic_black",
     "mat_steel_dark"
    ]
   },
@@ -3917,20 +3926,20 @@
      1,
      0
     ],
-    "distance": 0.78,
+    "distance": 0.87,
     "stage": 5,
     "order": 0.3
    },
    "pivot": [
     -0.191,
     0.7838,
-    1.3914
+    1.3907
    ],
    "bbox": {
     "min": [
      -0.442,
      0.6478,
-     1.2479
+     1.2465
     ],
     "max": [
      0.06,
@@ -3944,8 +3953,8 @@
     0
    ],
    "triangles": {
-    "desktop": 11196,
-    "lite": 11196
+    "desktop": 27036,
+    "lite": 15752
    },
    "materials": [
     "mat_cast_alu",
@@ -3967,13 +3976,13 @@
      0.30036,
      0.74089
     ],
-    "distance": 0.7425,
+    "distance": 0.7012,
     "stage": 4,
     "order": 0.9
    },
    "pivot": [
     0.515,
-    0.762,
+    0.766,
     1.5
    ],
    "bbox": {
@@ -3984,17 +3993,17 @@
     ],
     "max": [
      0.565,
-     0.809,
+     0.817,
      1.56
     ]
    },
    "labelAnchor": [
     0,
-    0.077,
+    0.081,
     0
    ],
    "triangles": {
-    "desktop": 324,
+    "desktop": 652,
     "lite": 324
    },
    "materials": [
@@ -4016,13 +4025,13 @@
      0.55039,
      0.81057
     ],
-    "distance": 0.81,
+    "distance": 0.9,
     "stage": 4,
     "order": 0.3
    },
    "pivot": [
     -0.463,
-    0.7885,
+    0.7945,
     1.6
    ],
    "bbox": {
@@ -4033,17 +4042,17 @@
     ],
     "max": [
      -0.35,
-     0.882,
+     0.894,
      1.646
     ]
    },
    "labelAnchor": [
     0,
-    0.1235,
+    0.1295,
     0
    ],
    "triangles": {
-    "desktop": 488,
+    "desktop": 1308,
     "lite": 488
    },
    "materials": [
@@ -4062,10 +4071,10 @@
    "explode": {
     "dir": [
      0,
-     -0.6,
-     0.8
+     -0.39873,
+     0.91707
     ],
-    "distance": 0.27,
+    "distance": 0.3,
     "stage": 4,
     "order": 1
    },
@@ -4114,7 +4123,7 @@
      0.97812,
      -0.20803
     ],
-    "distance": 1.105,
+    "distance": 1.2325,
     "stage": 5,
     "order": 0
    },
@@ -4142,7 +4151,7 @@
    ],
    "triangles": {
     "desktop": 2360,
-    "lite": 2360
+    "lite": 2006
    },
    "materials": [
     "mat_ceramic",
@@ -4160,11 +4169,11 @@
    "lod": "core",
    "explode": {
     "dir": [
-     0.20014,
-     -0.55039,
-     0.81057
+     0.10046,
+     0.20092,
+     0.97444
     ],
-    "distance": 0.3,
+    "distance": 0.442,
     "stage": 6,
     "order": 0.5
    },
@@ -4192,7 +4201,7 @@
    ],
    "triangles": {
     "desktop": 1960,
-    "lite": 1416
+    "lite": 1392
    },
    "materials": [
     "mat_machined_steel",
@@ -4211,10 +4220,10 @@
    "explode": {
     "dir": [
      0.59973,
-     -0.74966,
-     0.27987
+     -0.71968,
+     0.34984
     ],
-    "distance": 0.24,
+    "distance": 0.2431,
     "stage": 6,
     "order": 0.5
    },
@@ -4242,7 +4251,7 @@
    ],
    "triangles": {
     "desktop": 2068,
-    "lite": 1524
+    "lite": 1416
    },
    "materials": [
     "mat_machined_steel",
@@ -4292,7 +4301,7 @@
    ],
    "triangles": {
     "desktop": 1554,
-    "lite": 1410
+    "lite": 1334
    },
    "materials": [
     "mat_rubber",
@@ -4341,7 +4350,7 @@
    ],
    "triangles": {
     "desktop": 1554,
-    "lite": 1410
+    "lite": 1338
    },
    "materials": [
     "mat_rubber",
@@ -4390,7 +4399,7 @@
    ],
    "triangles": {
     "desktop": 2932,
-    "lite": 2788
+    "lite": 2368
    },
    "materials": [
     "mat_painted_black",
@@ -4440,7 +4449,7 @@
    ],
    "triangles": {
     "desktop": 728,
-    "lite": 632
+    "lite": 624
    },
    "materials": [
     "mat_body_xray",
@@ -4490,7 +4499,7 @@
    ],
    "triangles": {
     "desktop": 728,
-    "lite": 632
+    "lite": 622
    },
    "materials": [
     "mat_body_xray",
@@ -4512,7 +4521,7 @@
      0.799,
      0.3995
     ],
-    "distance": 0.585,
+    "distance": 0.6525,
     "stage": 5,
     "order": 0.2
    },
@@ -4540,7 +4549,7 @@
    ],
    "triangles": {
     "desktop": 144,
-    "lite": 144
+    "lite": 142
    },
    "materials": [
     "mat_plastic_grey"
@@ -4588,7 +4597,7 @@
    ],
    "triangles": {
     "desktop": 414,
-    "lite": 414
+    "lite": 364
    },
    "materials": [
     "mat_machined_steel",
@@ -4637,7 +4646,7 @@
    ],
    "triangles": {
     "desktop": 432,
-    "lite": 432
+    "lite": 366
    },
    "materials": [
     "mat_plastic_black"
@@ -4654,10 +4663,10 @@
    "explode": {
     "dir": [
      0,
-     -1,
-     0
+     -0.8,
+     -0.6
     ],
-    "distance": 0.16,
+    "distance": 0.2,
     "stage": 3,
     "order": 0.85
    },
@@ -4685,7 +4694,7 @@
    ],
    "triangles": {
     "desktop": 2856,
-    "lite": 2704
+    "lite": 2298
    },
    "materials": [
     "mat_rubber",
@@ -4734,7 +4743,7 @@
    ],
    "triangles": {
     "desktop": 874,
-    "lite": 874
+    "lite": 742
    },
    "materials": [
     "mat_rubber",
@@ -4783,7 +4792,7 @@
    ],
    "triangles": {
     "desktop": 874,
-    "lite": 874
+    "lite": 742
    },
    "materials": [
     "mat_rubber",
@@ -4832,7 +4841,7 @@
    ],
    "triangles": {
     "desktop": 784,
-    "lite": 564
+    "lite": 478
    },
    "materials": [
     "mat_glass_xray"
@@ -4880,7 +4889,7 @@
    ],
    "triangles": {
     "desktop": 3224,
-    "lite": 1884
+    "lite": 1600
    },
    "materials": [
     "mat_glass_xray"
@@ -4928,7 +4937,7 @@
    ],
    "triangles": {
     "desktop": 1092,
-    "lite": 608
+    "lite": 516
    },
    "materials": [
     "mat_glass_xray"
@@ -4976,7 +4985,7 @@
    ],
    "triangles": {
     "desktop": 298,
-    "lite": 206
+    "lite": 190
    },
    "materials": [
     "mat_emissive_tail",
@@ -5026,7 +5035,7 @@
    ],
    "triangles": {
     "desktop": 298,
-    "lite": 206
+    "lite": 188
    },
    "materials": [
     "mat_emissive_tail",
@@ -5044,11 +5053,11 @@
    "lod": "core",
    "explode": {
     "dir": [
-     0.09999,
-     0.98995,
-     0.09999
+     0.55138,
+     0.70176,
+     0.45113
     ],
-    "distance": 0.405,
+    "distance": 0.75,
     "stage": 4,
     "order": 0.8
    },
@@ -5076,7 +5085,7 @@
    ],
    "triangles": {
     "desktop": 1848,
-    "lite": 1320
+    "lite": 1122
    },
    "materials": [
     "mat_hose",
@@ -5097,35 +5106,35 @@
      0.89241,
      0
     ],
-    "distance": 0.459,
+    "distance": 0.51,
     "stage": 4,
     "order": 0.75
    },
    "pivot": [
-    0.129,
-    0.723,
-    1.4685
+    0.124,
+    0.7205,
+    1.465
    ],
    "bbox": {
     "min": [
-     0.065,
-     0.67,
-     1.414
+     0.06,
+     0.665,
+     1.412
     ],
     "max": [
-     0.193,
+     0.188,
      0.776,
-     1.523
+     1.518
     ]
    },
    "labelAnchor": [
     0,
-    0.083,
+    0.0855,
     0
    ],
    "triangles": {
-    "desktop": 564,
-    "lite": 564
+    "desktop": 1560,
+    "lite": 1058
    },
    "materials": [
     "mat_plastic_grey"
@@ -5141,11 +5150,11 @@
    "lod": "core",
    "explode": {
     "dir": [
-     0.09997,
-     0.99373,
-     0.04999
+     0.24938,
+     0.94763,
+     -0.1995
     ],
-    "distance": 0.65,
+    "distance": 0.899,
     "stage": 5,
     "order": 0.5
    },
@@ -5156,9 +5165,9 @@
    ],
    "bbox": {
     "min": [
-     -0.195,
+     -0.201,
      0.5242,
-     1.058
+     1.0621
     ],
     "max": [
      0.082,
@@ -5167,13 +5176,13 @@
     ]
    },
    "labelAnchor": [
-    0.0035,
+    0.0005,
     0.1834,
-    0.019
+    0.021
    ],
    "triangles": {
-    "desktop": 6568,
-    "lite": 4300
+    "desktop": 7584,
+    "lite": 4634
    },
    "materials": [
     "mat_cast_alu",
@@ -5197,13 +5206,13 @@
      0.99368,
      -0.05019
     ],
-    "distance": 1.161,
+    "distance": 1.425,
     "stage": 4,
     "order": 0.25
    },
    "pivot": [
-    0.2509,
-    0.7701,
+    0.2529,
+    0.7706,
     1.4836
    ],
    "bbox": {
@@ -5213,19 +5222,19 @@
      1.1277
     ],
     "max": [
-     0.445,
-     0.927,
+     0.449,
+     0.928,
      1.8396
     ]
    },
    "labelAnchor": [
     0,
-    0.1869,
+    0.1874,
     0
    ],
    "triangles": {
-    "desktop": 1636,
-    "lite": 1636
+    "desktop": 2248,
+    "lite": 2006
    },
    "materials": [
     "mat_plastic_black",
@@ -5246,25 +5255,25 @@
      0.88836,
      0.45915
     ],
-    "distance": 0.5265,
+    "distance": 0.585,
     "stage": 4,
     "order": 0.7
    },
    "pivot": [
     -0.17,
     0.7887,
-    1.6168
+    1.6325
    ],
    "bbox": {
     "min": [
      -0.385,
      0.6829,
-     1.5065
+     1.5052
     ],
     "max": [
      0.045,
      0.8945,
-     1.7271
+     1.7598
     ]
    },
    "labelAnchor": [
@@ -5273,8 +5282,8 @@
     0
    ],
    "triangles": {
-    "desktop": 2032,
-    "lite": 1520
+    "desktop": 2800,
+    "lite": 2258
    },
    "materials": [
     "mat_cast_alu",
@@ -5300,30 +5309,30 @@
     "order": 0.7
    },
    "pivot": [
-    0.8692,
-    0.5849,
-    0.31
+    0.7811,
+    0.7733,
+    0.3101
    ],
    "bbox": {
     "min": [
-     0.8413,
+     0.6562,
      0.1658,
      -0.178
     ],
     "max": [
-     0.897,
-     1.004,
-     0.7981
+     0.9059,
+     1.3809,
+     0.7982
     ]
    },
    "labelAnchor": [
     0,
-    0.4491,
+    0.6376,
     0
    ],
    "triangles": {
-    "desktop": 1462,
-    "lite": 832
+    "desktop": 2178,
+    "lite": 1162
    },
    "materials": [
     "mat_body_xray"
@@ -5348,30 +5357,30 @@
     "order": 0.7
    },
    "pivot": [
-    -0.8692,
-    0.5849,
-    0.31
+    -0.7811,
+    0.7733,
+    0.3101
    ],
    "bbox": {
     "min": [
-     -0.897,
+     -0.9059,
      0.1658,
      -0.178
     ],
     "max": [
-     -0.8413,
-     1.004,
-     0.7981
+     -0.6562,
+     1.3809,
+     0.7982
     ]
    },
    "labelAnchor": [
     0,
-    0.4491,
+    0.6376,
     0
    ],
    "triangles": {
-    "desktop": 1462,
-    "lite": 832
+    "desktop": 2178,
+    "lite": 1162
    },
    "materials": [
     "mat_body_xray"
@@ -5396,30 +5405,30 @@
     "order": 0.75
    },
    "pivot": [
-    0.8708,
-    0.6,
-    -0.6005
+    0.7699,
+    0.7812,
+    -0.6004
    ],
    "bbox": {
     "min": [
-     0.8446,
+     0.6346,
      0.1819,
      -1.019
     ],
     "max": [
-     0.8969,
-     1.0181,
-     -0.182
+     0.9053,
+     1.3804,
+     -0.1818
     ]
    },
    "labelAnchor": [
     0,
-    0.4481,
+    0.6293,
     0
    ],
    "triangles": {
-    "desktop": 1252,
-    "lite": 706
+    "desktop": 1844,
+    "lite": 956
    },
    "materials": [
     "mat_body_xray"
@@ -5444,30 +5453,30 @@
     "order": 0.75
    },
    "pivot": [
-    -0.8708,
-    0.6,
-    -0.6005
+    -0.7699,
+    0.7812,
+    -0.6004
    ],
    "bbox": {
     "min": [
-     -0.8969,
+     -0.9053,
      0.1819,
      -1.019
     ],
     "max": [
-     -0.8446,
-     1.0181,
-     -0.182
+     -0.6346,
+     1.3804,
+     -0.1818
     ]
    },
    "labelAnchor": [
     0,
-    0.4481,
+    0.6293,
     0
    ],
    "triangles": {
-    "desktop": 1252,
-    "lite": 706
+    "desktop": 1844,
+    "lite": 956
    },
    "materials": [
     "mat_body_xray"
@@ -5487,18 +5496,18 @@
      0.75098,
      0.43056
     ],
-    "distance": 0.91,
+    "distance": 1.015,
     "stage": 5,
     "order": 0.2
    },
    "pivot": [
-    -0.4245,
+    -0.43,
     0.6316,
     1.3977
    ],
    "bbox": {
     "min": [
-     -0.443,
+     -0.454,
      0.3992,
      1.2679
     ],
@@ -5514,8 +5523,8 @@
     0
    ],
    "triangles": {
-    "desktop": 4160,
-    "lite": 4160
+    "desktop": 4272,
+    "lite": 3682
    },
    "materials": [
     "mat_machined_steel",
@@ -5537,7 +5546,7 @@
      0.799,
      0.3995
     ],
-    "distance": 0.715,
+    "distance": 0.7975,
     "stage": 5,
     "order": 0.25
    },
@@ -5565,7 +5574,7 @@
    ],
    "triangles": {
     "desktop": 3364,
-    "lite": 3364
+    "lite": 3358
    },
    "materials": [
     "mat_cast_alu",
@@ -5606,27 +5615,27 @@
   "exploded": {
    "desktop": {
     "position": [
-     5.1576,
-     4.6116,
-     8.1968
+     5.1687,
+     4.5778,
+     8.2097
     ],
     "target": [
-     -0.9937,
-     0.5959,
-     1.6004
+     -0.9207,
+     0.6025,
+     1.6797
     ],
     "fov": 28
    },
    "mobile": {
     "position": [
-     5.7842,
-     4.2344,
-     8.6799
+     5.7916,
+     4.1995,
+     8.6901
     ],
     "target": [
-     -0.0592,
-     0.616,
-     0.6371
+     0.003,
+     0.615,
+     0.7228
     ],
     "fov": 38
    }

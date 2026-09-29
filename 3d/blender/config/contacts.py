@@ -105,4 +105,11 @@ CONTACTS: list[tuple[str, str]] = [
     ("interkuler__pipes", "turbina__main"),  # charge pipe ends in their connections / routed tight
     ("chassis__knuckle__fl", "spone-stabilizatori__stabilizer"),  # pressed / bolted into the knuckle
     ("chassis__knuckle__fr", "spone-stabilizatori__stabilizer"),  # pressed / bolted into the knuckle
+    ("brizgaljke-pumpa-goriva__injectors", "motor__block"),  # injector tips seated at the head/deck
+    ("brizgaljke-pumpa-goriva__injectors", "motor__head"),  # injectors seated in the head ports
+    ("motor__block", "termostat-creva__thermostat"),  # thermostat housing bolted to the block end
+    ("motor__head", "termostat-creva__thermostat"),  # thermostat housing flange against the head
+    ("menjac__main", "nosaci-motora__rear"),  # torque rod bolted to the gearbox lug
+    ("egr-ventil__main", "usisna-grana__manifold"),  # EGR flange bolted to the manifold
+    ("karter-dihtunzi__sump", "poluosovine__r"),  # right shaft runs close under the sump rail
 ]

@@ -159,10 +159,12 @@ def ortho_view(name: str, pts, axis: str, res):
     cam = make_camera(name, pos, c, 30, ortho_scale=scale)
     cam.data.sensor_fit = "HORIZONTAL"
     if axis == "top":
-        # keep the car horizontal on screen (front to the left)
-        target = scene.V(*c)
-        p = scene.V(*pos)
-        cam.rotation_quaternion = (target - p).to_track_quat("-Z", "X")
+        # plan view with the car horizontal on screen: look straight down, camera +X = vehicle
+        # rear (Blender +Y), so the front sits on the left
+        from mathutils import Euler
+
+        cam.rotation_mode = "XYZ"
+        cam.rotation_euler = Euler((0.0, 0.0, math.radians(90.0)))
     return cam
 
 

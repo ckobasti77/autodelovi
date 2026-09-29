@@ -21,32 +21,71 @@ DARK = "mat_steel_dark"
 
 
 def manifold(lite: bool) -> Geo:
+    """Plastic intake manifold: rounded plenum with ribs, four oval runners into a bolted head
+    flange, electronic throttle body with its actuator and connector, MAP sensor, flap actuator."""
+    from lib.shapes import box_tube, hex_nut
+
     g = Geo()
-    # plenum: rounded section extruded along x (upright frame)
     sec = [(0.205, 0.215), (0.300, 0.205), (0.322, 0.230), (0.325, 0.345), (0.300, 0.380), (0.230, 0.388), (0.205, 0.360)]
     g += along_x([(z, y) for z, y in sec], -0.335, 0.045, PLASTIC, hard=False)
-    # four runners from the plenum to the head intake flange (swept, oval-ish)
-    from lib.parts import Geo as _G  # noqa: F401
-
+    # moulded ribs across the plenum front and top
+    for x in (-0.290, -0.200, -0.110, -0.020):
+        g += box(0.006, 0.120, 0.008, PLASTIC, center=(x, 0.290, 0.327))
+        g += box(0.006, 0.008, 0.080, PLASTIC, center=(x, 0.388, 0.265))
+    # four oval runners (rounded-rectangle section) from the plenum to the head flange
     for x in (-0.302, -0.214, -0.126, -0.038):
-        path = catmull([(x, 0.300, 0.215), (x, 0.338, 0.180), (x, 0.362, 0.150), (x, 0.366, 0.128)], 5)
-        g += tube(path, 0.020, 10 if lite else 14, PLASTIC, hard=False)
-    # throttle body at the right end + actuator housing
+        path = [Vector((x, 0.300, 0.215)), Vector((x, 0.340, 0.178)), Vector((x, 0.362, 0.150)), Vector((x, 0.366, 0.136))]
+        g += box_tube(path, 0.040, 0.028, PLASTIC, r=0.010, fillet=0.03, up=(1, 0, 0))
+    # head flange: one plate along the four ports with bolts above and below
+    fl = extrude(rounded_rect(0.360, 0.056, 0.012, 3), 0.008, PLASTIC, z0=0.0)
+    g += fl.moved(-0.170, 0.366, 0.130)
+    if not lite:
+        for x in (-0.346, -0.258, -0.170, -0.082, 0.006):
+            for y in (0.341, 0.391):
+                g += hex_nut(0.010, 0.006, "mat_machined_steel").transform(R("x", 90)).moved(x, y, 0.141)
+    # electronic throttle body at the right end: bore, flange, motor housing, connector
     tb = lathe([(0.030, 0.0), (0.040, 0.0), (0.040, 0.050), (0.030, 0.050), (0.030, 0.0)], 24, ALU, axis="-x", hard=False)
     g += tb.moved(-0.335, 0.300, 0.265)
     g += box(0.040, 0.060, 0.060, ALU, center=(-0.360, 0.335, 0.300))
-    # flap actuator + MAP sensor
+    g += lathe([(0.0, 0.0), (0.022, 0.0), (0.022, 0.040), (0.018, 0.046), (0.0, 0.047)], 20, ALU, axis="z", hard=False).moved(-0.360, 0.345, 0.330)
+    g += box(0.020, 0.018, 0.026, PLASTIC, center=(-0.360, 0.372, 0.286))
+    # MAP sensor with connector on the plenum top, flap actuator
+    g += box(0.030, 0.018, 0.024, PLASTIC, center=(-0.250, 0.397, 0.260))
+    g += box(0.014, 0.012, 0.016, PLASTIC, center=(-0.232, 0.402, 0.260))
     g += box(0.040, 0.030, 0.030, PLASTIC, center=(-0.10, 0.395, 0.290))
     return g.transform(ENGINE_M)
 
 
 def egr(lite: bool) -> Geo:
+    """EGR valve: round alu casting on the gas passage (axis z), two 3-bolt flanges with bolts,
+    plastic actuator housing with ribs and a connector, two coolant nipples."""
+    from lib.shapes import hex_nut
+
     g = Geo()
-    g += box(0.060, 0.050, 0.060, ALU, center=(0.0, 0.0, 0.0))
-    g += lathe([(0.0, 0.0), (0.026, 0.0), (0.026, 0.050), (0.020, 0.058), (0.0, 0.060)], 20, PLASTIC, hard=False).moved(0.0, 0.025, 0.0)
-    g += box(0.020, 0.020, 0.024, PLASTIC, center=(0.020, 0.080, 0.010))
-    g += lathe([(0.018, 0.0), (0.024, 0.0), (0.024, 0.060), (0.018, 0.060), (0.018, 0.0)], 16, ALU, axis="-z", hard=False).moved(0.0, -0.005, -0.030)
-    g += box(0.070, 0.008, 0.050, ALU, center=(0.0, -0.028, 0.000))
+    seg = 20 if lite else 28
+    g += lathe([(0.0, -0.034), (0.024, -0.034), (0.029, -0.026), (0.030, 0.0), (0.029, 0.026), (0.024, 0.034), (0.0, 0.034)], seg, ALU, axis="z", hard=False)
+    lobes = []
+    for k in range(60):
+        phi = 2 * math.pi * k / 60
+        r = 0.024 + 0.010 * max(0.0, math.cos(3 * (phi - math.pi / 2))) ** 3
+        lobes.append((r * math.cos(phi), r * math.sin(phi)))
+    for s in (1, -1):
+        holes = [circle2d(0.015, 20)] + [circle2d(0.0040, 10, 0.028 * math.cos(math.pi / 2 + 2 * math.pi * j / 3), 0.028 * math.sin(math.pi / 2 + 2 * math.pi * j / 3)) for j in range(3)]
+        fl = extrude(lobes, 0.008, ALU, holes=holes, z0=0.0 if s > 0 else -0.008)
+        g += fl.moved(0, 0, s * 0.034)
+        if not lite:
+            for j in range(3):
+                a = math.pi / 2 + 2 * math.pi * j / 3
+                g += hex_nut(0.009, 0.005, "mat_machined_steel").transform(R("x", 90)).moved(0.028 * math.cos(a), 0.028 * math.sin(a), s * 0.044)
+    # actuator housing (plastic) on top with ribs, connector and a small vent
+    g += extrude(rounded_rect(0.060, 0.046, 0.010, 3), 0.034, PLASTIC, z0=0.0).transform(R("x", -90)).moved(0.0, 0.026, 0.0)
+    for k in range(3):
+        g += box(0.056, 0.004, 0.005, PLASTIC, center=(0.0, 0.062, -0.014 + k * 0.014))
+    g += box(0.020, 0.018, 0.018, PLASTIC, center=(0.036, 0.046, 0.008))
+    g += box(0.008, 0.010, 0.012, PLASTIC, center=(0.048, 0.046, 0.008))
+    # coolant nipples on the casting
+    for sx in (1, -1):
+        g += lathe([(0.0, 0.0), (0.006, 0.0), (0.006, 0.018), (0.0075, 0.021), (0.006, 0.024), (0.0, 0.024)], 12, ALU, axis="x" if sx > 0 else "-x", hard=False).moved(sx * 0.026, -0.010, 0.0)
     return g.transform(ENGINE_M @ __import__("lib.geo", fromlist=["T"]).T(0.095, 0.330, 0.220))
 
 
@@ -66,6 +105,14 @@ def airbox(lite: bool) -> Geo:
     # outlet bellows down to the turbo compressor inlet
     out_path = catmull([(-0.09, -0.060, -0.115), (-0.12, -0.110, -0.170), (-0.17, -0.165, -0.220), (-0.21, -0.200, -0.240)], 6)
     g += tube(out_path, 0.034, 14, RUBBER, hard=False)
+    # MAF sensor housing (plastic ring) at the outlet with its connector, lid clips
+    p0, p1 = out_path[0], out_path[1]
+    dvec = (p1 - p0).normalized()
+    g += tube([p0 - dvec * 0.010, p0 + dvec * 0.050], 0.040, 18, PLASTIC, hard=False)
+    g += box(0.030, 0.026, 0.034, PLASTIC, center=tuple(p0 + dvec * 0.020 + Vector((0.0, 0.046, 0.0))))
+    for x in (-0.150, 0.150):
+        for z in (-0.060, 0.060):
+            g += box(0.010, 0.036, 0.022, PLASTIC, center=(x + (0.004 if x > 0 else -0.004), 0.070, z))
     return g.moved(0.29, 0.84, 1.40)
 
 

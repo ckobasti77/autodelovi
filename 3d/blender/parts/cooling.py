@@ -23,11 +23,17 @@ def radiator(lite: bool) -> Geo:
         tank = extrude(rounded_rect(0.040, 0.520, 0.012, 3), 0.050, PLASTIC, z0=-0.025)
         g += tank.moved(s * 0.340, 0.0, 0.0)
         g += box(0.020, 0.040, 0.020, PLASTIC, center=(s * 0.350, -0.270, 0.0))
+        # moulded ribs on the tank, alu crimp strips, rubber mounting pins top and bottom
+        for k in range(7):
+            g += box(0.006, 0.006, 0.054, PLASTIC, center=(s * 0.3625, -0.210 + k * 0.070, 0.0))
+        g += box(0.006, 0.500, 0.034, "mat_cast_alu", center=(s * 0.3205, 0.0, 0.0))
+        g += cylinder(0.008, 0.020, 12, "mat_rubber", axis="y").moved(s * 0.300, -0.272, 0.0)
     # nozzles: top-left (upper hose) and bottom-right (lower hose), pointing back
     for x, y in ((0.345, 0.205), (-0.345, -0.205)):
         nz = lathe([(0.013, 0.0), (0.017, 0.0), (0.017, 0.040), (0.019, 0.044), (0.017, 0.048), (0.013, 0.048), (0.013, 0.0)], 16, PLASTIC, axis="z", hard=False)
         g += nz.transform(S(1, 1, -1)).moved(x, y, -0.020)
     g += cylinder(0.014, 0.030, 16, PLASTIC, axis="x").moved(0.375, 0.200, 0.0)
+    g += box(0.014, 0.018, 0.018, PLASTIC, center=(-0.364, -0.232, 0.018))  # drain cock
     g.transform(R("x", 0))
     return g.moved(0.0, 0.570, 1.950)
 
@@ -85,12 +91,22 @@ def compressor(lite: bool) -> Geo:
 
 
 def thermostat(lite: bool) -> Geo:
+    """Thermostat housing: rounded plastic body on a 3-bolt flange (bolts), upper outlet toward the
+    radiator hose, side outlet, bleed screw."""
+    from lib.shapes import hex_nut
+
     g = Geo()
-    g += box(0.090, 0.080, 0.070, GREY, center=(0.0, 0.0, 0.0))
+    g += lathe([(0.0, -0.030), (0.036, -0.030), (0.040, -0.022), (0.040, 0.040), (0.034, 0.050), (0.0, 0.052)], 24, GREY, axis="z", hard=False)
+    fl = extrude(rounded_rect(0.100, 0.090, 0.018, 3), 0.008, GREY, z0=-0.038)
+    g += fl
+    if not lite:
+        for x, y in ((-0.038, -0.032), (0.038, -0.032), (0.0, 0.036)):
+            g += hex_nut(0.010, 0.007, "mat_machined_steel").transform(R("x", 90)).moved(x, y, -0.026)
     g += lathe([(0.0, 0.0), (0.036, 0.0), (0.036, 0.020), (0.030, 0.026), (0.0, 0.026)], 20, GREY, hard=False).moved(0.0, 0.040, 0.0)
-    for d, (x, y, z) in ((("z"), (0.020, 0.020, 0.035)), (("x"), (0.045, -0.010, 0.0))):
+    for d, (x, y, z) in (("z", (0.020, 0.020, 0.030)), ("x", (0.040, -0.010, 0.0))):
         n = lathe([(0.013, 0.0), (0.017, 0.0), (0.017, 0.030), (0.019, 0.034), (0.017, 0.038), (0.013, 0.038), (0.013, 0.0)], 14, GREY, axis=d, hard=False)
         g += n.moved(x, y, z)
+    g += cylinder(0.005, 0.010, 6, "mat_machined_steel", axis="y").moved(-0.020, 0.036, 0.018)
     return g.moved(0.110, 0.710, 1.450)
 
 

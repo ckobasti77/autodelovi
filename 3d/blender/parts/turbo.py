@@ -57,8 +57,23 @@ def turbo(lite: bool) -> Geo:
     inlet = catmull([(-0.050, 0.05, 0.02), (-0.050, 0.09, 0.05), (-0.055, 0.12, 0.10)], 6)
     g += tube(inlet, 0.024, sides, IRON, hard=False)
     g += box(0.070, 0.012, 0.070, IRON, center=(-0.055, 0.125, 0.105))
+    # inlet flange studs + nuts (4) and a V-band clamp on the turbine outlet
+    from lib.shapes import hex_nut
+
+    for dx in (-0.026, 0.026):
+        for dz in (-0.026, 0.026):
+            g += cylinder(0.0035, 0.018, 8, STEEL, axis="y", center=False).moved(-0.055 + dx, 0.131, 0.105 + dz)
+            if not lite:
+                g += hex_nut(0.010, 0.006, STEEL).moved(-0.055 + dx, 0.137, 0.105 + dz)
+    g += lathe([(0.044, 0.0), (0.049, 0.0), (0.049, 0.014), (0.044, 0.014), (0.044, 0.0)], seg, STEEL, axis="-x", hard=False).moved(-0.127, 0, 0)
+    g += box(0.012, 0.020, 0.016, STEEL, center=(-0.134, 0.052, 0.0))
     # centre housing (CHRA)
     g += lathe([(0.0, -0.022), (0.034, -0.022), (0.038, -0.010), (0.038, 0.010), (0.034, 0.022), (0.0, 0.022)], seg, STEEL, axis="x", hard=False)
+    # CHRA oil inlet banjo (top) and drain flange (bottom), coolant ports
+    g += cylinder(0.011, 0.010, 6, STEEL, axis="y").moved(0.0, 0.041, 0.0)
+    g += box(0.030, 0.008, 0.024, STEEL, center=(0.0, -0.041, 0.0))
+    for dz in (-0.030, 0.030):
+        g += cylinder(0.007, 0.012, 8, STEEL, axis="z").moved(0.006, 0.0, dz)
     # compressor side (+x): volute + inlet with bead lip + visible wheel
     cv = volute(0.050, 0.046, 0.058, 0.012, 0.026, ALU, sides, steps, 0.070, -1.0, start_deg=160)
     g += cv
@@ -81,14 +96,18 @@ def turbo(lite: bool) -> Geo:
     cool = catmull([(0.012, 0.0, -0.036), (0.02, 0.03, -0.070), (0.04, 0.09, -0.080)], 6)
     g += tube(cool, 0.0045, 8, DARK, hard=False)
     # wastegate actuator: pressure can on a bracket at the compressor + rod to the turbine lever
-    can = lathe([(0.0, 0.0), (0.030, 0.0), (0.032, 0.006), (0.032, 0.024), (0.028, 0.032), (0.0, 0.034)], 24, DARK, hard=False)
+    can = lathe([(0.0, 0.0), (0.034, 0.0), (0.036, 0.004), (0.036, 0.012), (0.038, 0.014), (0.036, 0.016), (0.036, 0.026), (0.030, 0.034), (0.008, 0.036), (0.008, 0.050), (0.0, 0.050)], 28, DARK, hard=False)
     can.transform(R("x", 90))
     g += can.moved(0.050, -0.030, 0.072)
     g += box(0.020, 0.040, 0.006, DARK, center=(0.050, -0.030, 0.064))
     g += along(cylinder(0.003, 0.10, 8, STEEL, center=False), Vector((0.050, -0.030, 0.070)), Vector((-0.050, -0.012, 0.062)))
     g += box(0.008, 0.028, 0.006, DARK, center=(-0.052, -0.012, 0.060))
+    # wastegate lever pivot + rod-end ball and the adjuster nut on the rod
+    g += cylinder(0.006, 0.014, 12, STEEL, axis="x").moved(-0.052, -0.024, 0.060)
+    g += lathe([(0.0, -0.006), (0.005, -0.004), (0.006, 0.0), (0.005, 0.004), (0.0, 0.006)], 12, STEEL, hard=False).moved(-0.050, -0.012, 0.062)
+    g += cylinder(0.005, 0.010, 6, STEEL, axis="x").moved(0.000, -0.021, 0.066)
     # heat-shield half shell over the turbine volute (top half, embossed)
-    shield = lathe([(0.100, -0.050), (0.102, -0.046), (0.102, 0.036), (0.100, 0.040)], 28, SHIELD, axis="x", hard=False, angle=170.0, phase=5.0, uv_u=6, uv_v=12)
+    shield = lathe([(0.096, -0.034), (0.098, -0.030), (0.098, 0.030), (0.096, 0.034)], 20, SHIELD, axis="x", hard=False, angle=95.0, phase=40.0, uv_u=4, uv_v=10)
     shield.transform(R("x", 0))
     g += shield.moved(-0.050, 0, 0)
     return g.moved(C.x, C.y, C.z)

@@ -11,6 +11,7 @@ Run: "$BLENDER_EXE" -b --factory-startup 3d/build/car.blend --python-exit-code 1
 from __future__ import annotations
 
 import argparse
+import math
 import json
 import sys
 import time
@@ -28,6 +29,8 @@ from lib.scene import V, log  # noqa: E402
 from lib.views import STAGE_WINDOWS, local_progress, power2_inout  # noqa: E402
 
 REPORTS = scene.BUILD / "reports"
+CLEAR_MIN = 0.020  # opaque parts closer than this at p = 1 are an error (not clearly separated)
+CLEAR_TARGET = 0.035  # closer than this is reported as tight
 SEE_THROUGH = {"mat_body_xray", "mat_glass_xray", "mat_glass_lens"}
 STATIC_OPAQUE = ("chassis__",)
 BURIED = {"zupcasti-kais-vodena-pumpa__water-pump", "lezaj-glavcina", "kocione-plocice", "karter-dihtunzi__sump", "senzori__coolant-temp", "letva-volana", "spone-stabilizatori__stabilizer", "termostat-creva__hoses"}
@@ -155,6 +158,38 @@ def overlapping(bodies, timing, p: float, timeline: str, cls_a="opaque", cls_b="
     return hits
 
 
+def clearances(bodies, timing, p: float, timeline: str, threshold: float, only=None) -> dict[tuple[str, str], float]:
+    """Opaque pairs whose surfaces come closer than `threshold` at progress p (0 = overlapping).
+    Distances are measured from sampled vertices of each body to the other's BVH (both ways)."""
+    offs = {k: timing.offset(k, p, timeline) for k in bodies}
+    keys = [k for k in bodies if bodies[k].has("opaque")]
+    out: dict[tuple[str, str], float] = {}
+    for i, a in enumerate(keys):
+        for b in keys[i + 1 :]:
+            if only is not None and a not in only and b not in only:
+                continue
+            A, B = bodies[a], bodies[b]
+            if not (A.moving or B.moving):
+                continue
+            if not aabb_hit(A.aabb("opaque", offs[a]), B.aabb("opaque", offs[b]), pad=threshold):
+                continue
+            ta, tb = A.tree("opaque", offs[a]), B.tree("opaque", offs[b])
+            if ta.overlap(tb):
+                out[(a, b)] = 0.0
+                continue
+            best = threshold
+            for src, oo, tree in ((A, offs[a], tb), (B, offs[b], ta)):
+                vs = src.verts["opaque"]
+                step = max(1, len(vs) // 700)
+                for v in vs[::step]:
+                    hit = tree.find_nearest(v + oo, best)
+                    if hit[0] is not None and hit[3] < best:
+                        best = hit[3]
+            if best < threshold:
+                out[(a, b)] = round(best, 4)
+    return out
+
+
 def contacts() -> set[frozenset]:
     try:
         from config.contacts import CONTACTS
@@ -180,6 +215,15 @@ def check(bodies, samples: int) -> dict:
     final = overlapping(bodies, timing, 1.0, "desktop")
     final_err = [f"{a} x {b}: {n} pairs at p=1" for (a, b), n in sorted(final.items(), key=lambda kv: -kv[1])]
     xray_final = overlapping(bodies, timing, 1.0, "desktop", "xray", "xray")
+    # clean technical drawing: every opaque part clearly separated at p = 1 (>= 12 mm, 20 mm target)
+    clear = clearances(bodies, timing, 1.0, "desktop", CLEAR_TARGET)
+    for (a, b), dmin in sorted(clear.items(), key=lambda kv: kv[1]):
+        if (a, b) in final:
+            continue
+        if dmin < CLEAR_MIN:
+            final_err.append(f"{a} x {b}: only {dmin * 1000:.0f} mm apart at p=1 (min {CLEAR_MIN * 1000:.0f} mm)")
+    tight = [f"{a} x {b}: {dmin * 1000:.0f} mm apart at p=1" for (a, b), dmin in sorted(clear.items(), key=lambda kv: kv[1]) if CLEAR_MIN <= dmin < CLEAR_TARGET]
+    log(f"clearance at p=1: {sum(1 for d in clear.values() if d < CLEAR_MIN)} pairs < {CLEAR_MIN * 1000:.0f} mm, {len(tight)} tight")
     motion_warn = []
     passes = {}
     for timeline in ("desktop", "mobile"):
@@ -207,7 +251,8 @@ def check(bodies, samples: int) -> dict:
     motion = {
         "scriptsHash": h,
         "errors": final_err,
-        "warnings": motion_warn + [f"x-ray panels overlap at p=1: {a} x {b}" for (a, b) in sorted(xray_final)],
+        "warnings": tight + motion_warn + [f"x-ray panels overlap at p=1: {a} x {b}" for (a, b) in sorted(xray_final)],
+        "clearance": {"min": CLEAR_MIN, "target": CLEAR_TARGET, "closest": sorted(([a, b, d] for (a, b), d in clear.items()), key=lambda r: r[2])[:12]},
         "timelines": {k: {str(s): list(w) for s, w in v.items()} for k, v in STAGE_WINDOWS.items()},
         "samples": samples,
     }
@@ -229,42 +274,64 @@ def order_key(timing, table, key):
 
 
 def solve(bodies) -> None:
-    """Grow the distance of the later node (stage, order) of every pair still overlapping at p=1
-    in 6 % steps (max 1.6x the intent); rotate toward +y as a second resort (max 10 degrees)."""
+    """Local search on the explode intent: for every part still overlapping or closer than
+    CLEAR_MIN to another part at p = 1, try its direction rotated by +-12/24 deg about the three
+    axes and its distance scaled 0.85/1.15/1.3, keep the candidate with the fewest conflicts
+    (ties: the smallest change). The later part of a pair (stage, order) moves first; static
+    anchors never move. Writes the changed nodes to explode.tuned.json."""
+    from mathutils import Matrix
+
     base = explode_table(use_tuned=False)
     table = dict(base)
     timing = Timing(table)
-    grow = {k: 1.0 for k in table}
-    tilt = {k: 0 for k in table}
-    for it in range(40):
+
+    def conflicts(only=None) -> set:
         timing.table = table
-        final = overlapping(bodies, timing, 1.0, "desktop")
-        if not final:
-            log(f"solve: clean after {it} iterations")
+        pairs = set(overlapping(bodies, timing, 1.0, "desktop", only=only))
+        pairs |= set(clearances(bodies, timing, 1.0, "desktop", CLEAR_MIN, only=only))
+        return pairs
+
+    def candidates(key):
+        d, dist, order = table[key]
+        v = Vector(d)
+        out = [(d, dist, order)]
+        for f in (0.85, 1.15, 1.3):
+            out.append((d, round(dist * f, 4), order))
+        for axis in ("X", "Y", "Z"):
+            for ang in (-24, -12, 12, 24):
+                w = (Matrix.Rotation(math.radians(ang), 3, axis) @ v).normalized()
+                out.append(((round(w.x, 5), round(w.y, 5), round(w.z, 5)), dist, order))
+        return out
+
+    def change(key, cand) -> float:
+        d0, dist0, _ = base[key]
+        d1, dist1, _ = cand
+        return (Vector(d0) - Vector(d1)).length + abs(dist1 - dist0)
+
+    for rnd in range(8):
+        conf = conflicts()
+        if not conf:
+            log(f"solve: clean after {rnd} rounds")
             break
-        movers = set()
-        for a, b in final:
+        movers = []
+        for a, b in sorted(conf):
             cand = [k for k in (a, b) if k in table]
-            if not cand:
-                continue
-            movers.add(max(cand, key=lambda k: order_key(timing, table, k)))
-        changed = False
-        for k in movers:
-            d, dist, order = table[k]
-            if grow[k] < 1.6:
-                grow[k] = min(1.6, grow[k] * 1.06)
-                table[k] = (d, round(base[k][1] * grow[k], 4), order)
-                changed = True
-            elif tilt[k] < 10:
-                tilt[k] += 2
-                v = Vector(d)
-                v = (v + Vector((0, 1, 0)) * 0.035).normalized()
-                table[k] = ((round(v.x, 5), round(v.y, 5), round(v.z, 5)), dist, order)
-                changed = True
-        log(f"solve it {it}: {len(final)} overlaps, adjusted {len(movers)}")
-        if not changed:
-            log("solve: trapped parts remain: " + ", ".join(sorted({x for pair in final for x in pair})))
-            break
+            if cand:
+                movers.append(max(cand, key=lambda k: order_key(timing, table, k)))
+        for key in dict.fromkeys(movers):
+            best = None
+            for cand in candidates(key):
+                saved = table[key]
+                table[key] = cand
+                n = len(conflicts(only={key}))
+                score = (n, change(key, cand))
+                if best is None or score < best[0]:
+                    best = (score, cand)
+                table[key] = saved
+            table[key] = best[1]
+        log(f"solve round {rnd}: {len(conf)} conflicts, moved {len(set(movers))} parts")
+    else:
+        log("solve: conflicts remain: " + "; ".join(f"{a} x {b}" for a, b in sorted(conflicts())))
     tuned = {}
     for k, (d, dist, order) in table.items():
         bd, bdist, border = base[k]

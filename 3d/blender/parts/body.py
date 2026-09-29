@@ -31,6 +31,32 @@ def master(lite: bool) -> Master:
     return Master(step=0.06 if lite else 0.03)
 
 
+def surface_x(z: float, y: float) -> float:
+    """Body side x at station z and height y (left half), interpolated on the master section."""
+    from lib.bodyshell import section
+
+    prof = section(z)
+    best = prof[0][0]
+    for (x0, y0), (x1, y1) in zip(prof[:-1], prof[1:]):
+        if (y0 - y) * (y1 - y) <= 0 and abs(y1 - y0) > 1e-9:
+            t = (y - y0) / (y1 - y0)
+            best = x0 + (x1 - x0) * t
+            break
+    return best
+
+
+def door_handle(z: float, y: float, lock: bool) -> Geo:
+    g = Geo()
+    xs = surface_x(z, y)
+    plate = extrude(rounded_rect(0.160, 0.052, 0.020, 3), 0.004, XRAY, z0=0.0).transform(R("y", 90))
+    g += plate.moved(xs - 0.001, y, z)
+    bar = extrude(rounded_rect(0.130, 0.024, 0.011, 3), 0.016, XRAY, z0=0.0).transform(R("y", 90))
+    g += bar.moved(xs + 0.004, y + 0.004, z - 0.004)
+    if lock:
+        g += cylinder(0.010, 0.012, 16, XRAY, axis="x", center=False).moved(xs + 0.002, y + 0.004, z + 0.090)
+    return g
+
+
 def glass_inset(g: Geo, d: float = 0.003) -> Geo:
     """Push glass slightly inward (toward the car centre) to avoid coplanar faces."""
     for v in g.verts:
@@ -215,11 +241,13 @@ def wipers(lite: bool) -> Geo:
         base = Vector((px, 1.014, 0.792))
         dirv = (Vector((-math.cos(math.radians(ang)), 0.0, 0.0)) + ug * math.sin(math.radians(ang))).normalized()
         pts = [base + dirv * (length * t) + ng * (0.030 - 0.014 * t) for t in (0.0, 0.30, 0.65, 1.0)]
-        g += cylinder(0.017, 0.024, 16, PAINT, axis="y").moved(base.x, base.y + 0.008, base.z)
-        g += box_tube(pts, 0.012, 0.009, PAINT, r=0.003, fillet=0.03, up=tuple(ng))
+        g += cylinder(0.021, 0.028, 20, PAINT, axis="y").moved(base.x, base.y + 0.010, base.z)
+        g += cylinder(0.012, 0.010, 16, PAINT, axis="y").moved(base.x, base.y + 0.029, base.z)
+        g += box_tube(pts, 0.017, 0.012, PAINT, r=0.004, fillet=0.03, up=tuple(ng))
         b0 = base + dirv * (length * 0.14) + ng * 0.010
         b1 = base + dirv * (length * 1.0) + ng * 0.008
-        g += box_tube([b0, b1], 0.014, 0.011, RUBBER, r=0.003, up=tuple(ng))
+        g += box_tube([b0, b1], 0.020, 0.012, RUBBER, r=0.004, up=tuple(ng))
+        g += box_tube([b0 + ng * 0.010, b1 + ng * 0.009], 0.006, 0.010, PAINT, r=0.002, up=tuple(ng))
     return g
 
 
@@ -244,7 +272,11 @@ def build(ctx) -> None:
     add_centered(ctx, "blatobrani", "l", fender.copy(), bevel=0.0)
     add_centered(ctx, "blatobrani", "r", fender.mirrored_x(), bevel=0.0)
     fdoor = m.region(ZF, ZB, K0, K4, XRAY)
+    fdoor += door_handle(ZB + 0.150, 0.905, True)
+    fdoor += frame(m, ZF, ZB, K4, K6, [WINDOWS[0]], XRAY)  # the window sash belongs to the door
     rdoor = m.region(ZB, ZR, K0, K4, XRAY)
+    rdoor += door_handle(ZR + 0.150, 0.915, False)
+    rdoor += frame(m, ZB, ZR, K4, K6, [WINDOWS[1]], XRAY)
     for inst, g0 in (("fl", fdoor), ("rl", rdoor)):
         add_centered(ctx, "vrata", inst, g0.copy(), bevel=0.0)
         add_centered(ctx, "vrata", inst.replace("l", "r"), g0.mirrored_x(), bevel=0.0)
@@ -268,7 +300,7 @@ def build(ctx) -> None:
     add_centered(ctx, "brisaci", "main", wipers(lite), bevel=0.0)
     # --- non-clickable structure (x-ray): roof + greenhouse frame (upper), quarters, tail
     upper = m.region(0.12, -1.42, K6, K7, XRAY, mirror=True)
-    gh = frame(m, ZF, -1.86, K4, K6, WINDOWS, XRAY)
+    gh = frame(m, ZR, -1.86, K4, K6, [WINDOWS[2]], XRAY)
     upper += gh
     upper += gh.mirrored_x()
     ctx.add_static_empty("body__structure", "karoserija")

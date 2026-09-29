@@ -134,12 +134,30 @@ def emboss(size: int = 512) -> str:
     return _save("tex_emboss_n", _normal_from_height(h * 6.0, 1.6))
 
 
+def cast(size: int = 512) -> str:
+    """Sand-cast surface: periodic band-limited noise (fine grain + soft blotches), seeded."""
+    rng = np.random.default_rng(1998)
+    fy = np.fft.fftfreq(size)[:, None]
+    fx = np.fft.fftfreq(size)[None, :]
+    f2 = fx * fx + fy * fy
+
+    def band(sigma: float, amp: float) -> np.ndarray:
+        noise = rng.normal(0.0, 1.0, (size, size))
+        spec = np.fft.fft2(noise) * np.exp(-f2 / (2 * sigma * sigma))
+        field = np.real(np.fft.ifft2(spec))
+        return amp * field / (np.abs(field).max() + 1e-9)
+
+    h = band(0.12, 1.0) + band(0.05, 0.35) + band(0.02, 0.10)
+    return _save("tex_cast_n", _normal_from_height(h * 2.0, 1.0))
+
+
 def generate_all() -> dict[str, str]:
     out = {
         "tex_tyre_n": tyre(),
         "tex_fins_n": fins(),
         "tex_machined_n": machined(),
         "tex_emboss_n": emboss(),
+        "tex_cast_n": cast(),
     }
     log("textures", ", ".join(out))
     return out

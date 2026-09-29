@@ -37,6 +37,31 @@ _FAMILY = {
 }
 
 
+# Desktop: small hardware (bolts, nuts, studs, plugs) takes the colour of a slot the part already
+# uses, so detail adds no draw calls (desktop budget <= 220).
+DETAIL_MERGE: dict[str, dict[str, str]] = {
+    "kocione-celjusti": {"mat_machined_steel": "mat_steel_dark"},
+    "hladnjak-ventilator": {"mat_cast_alu": "mat_core_fins", "mat_rubber": "mat_plastic_black"},
+    "alternator": {"mat_machined_steel": "mat_steel_dark", "mat_rubber": "mat_plastic_black"},
+    "motor": {"mat_machined_steel": "mat_steel_dark"},
+    "menjac": {"mat_machined_steel": "mat_steel_dark"},
+    "egr-ventil": {"mat_machined_steel": "mat_cast_alu"},
+    "termostat-creva": {"mat_machined_steel": "mat_plastic_grey"},
+    "usisna-grana": {"mat_machined_steel": "mat_cast_alu"},
+    "karter-dihtunzi": {"mat_machined_steel": "mat_steel_dark"},
+    "nosaci-motora": {"mat_machined_steel": "mat_cast_alu"},
+}
+
+
+def merge_detail(geo: Geo, category: str) -> Geo:
+    remap = DETAIL_MERGE.get(category)
+    if not remap:
+        return geo
+    g = geo.copy()
+    g.mats = [remap.get(m, m) for m in g.mats]
+    return g
+
+
 def lite_materials(geo: Geo, category: str) -> Geo:
     cap = 3 if category in LITE_CAP_3 else 2 if category in LITE_CAP_2 else 1
     counts: dict[str, int] = {}
@@ -135,6 +160,7 @@ class BuildContext:
         else:
             if geo is None:
                 raise ValueError(f"{node}: no geometry")
+            geo = merge_detail(geo, category)
             if self.lite:
                 geo = lite_materials(geo, category)
             obj = geo_to_object(geo, child_name, empty, coll, bevel=bevel, segments=segments, profile=profile, sharp_angle=sharp_angle)

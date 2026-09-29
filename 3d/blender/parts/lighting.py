@@ -83,6 +83,13 @@ def headlamp_left(lite: bool) -> Geo:
     rows = m.rows(*Z_LAMP_F, K0, K5)
     g = lens_geo(rows)
     g += housing(rows, Vector((-0.015, 0.012, -0.105)), 0.72)
+    # brushed inner bezel 18 mm behind the lens: the projector and the reflector bowl sit in it
+    from lib.bodyshell import _normal
+
+    nr, nc = len(rows), len(rows[0])
+    bezel = [[rows[i][j] - _normal(rows, i, j) * 0.018 for j in range(1, nc - 1)] for i in range(1, nr - 1)]
+    if len(bezel) > 1 and len(bezel[0]) > 1:
+        g += surface(bezel, ALU)
     seg = 28 if lite else 40
     # projector (inner) and high-beam reflector (outer), both facing +z behind the lens
     for (x, y, r, kind) in ((0.585, 0.700, 0.029, "proj"), (0.700, 0.690, 0.031, "refl")):
