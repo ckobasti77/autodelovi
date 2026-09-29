@@ -9,6 +9,7 @@ Business intent: [`pipeline/BRIEF.md`](../pipeline/BRIEF.md) (wins for intent). 
 | [ROUTES.md](ROUTES.md) | Every route, rendering/caching, indexability, canonical rules, route handlers | §B |
 | [3D-CONTRACT.md](3D-CONTRACT.md) | Frozen taxonomy, node naming, axes, manifest schema, budgets, choreography, loading, interactions | §F |
 | [DESIGN-BRIEF.md](DESIGN-BRIEF.md) | Constraints and north star for the design system | §H |
+| [design/DESIGN-SYSTEM.md](design/DESIGN-SYSTEM.md) | **Design system „Rendgen“** (step 03): concept, brand, colour tokens + computed contrast table, typography, layout, icons/imagery, 3D art direction, motion + text reveal, components, page blueprints, Serbian microcopy, a11y checklist. Companions: [design/tokens.json](design/tokens.json), [design/design-dna.json](design/design-dna.json), [design/CRITIQUE.md](design/CRITIQUE.md); repo-root `PRODUCT.md` / `DESIGN.md` (impeccable records) | — |
 | [NOTIFICATIONS.md](NOTIFICATIONS.md) | Outbox → dispatcher → channels, e-mail modes, event matrix, crons | §I |
 | [SEO-ADS.md](SEO-ADS.md) | Metadata, JSON-LD, sitemaps, landings guard, consent, event map, attribution, feeds, CWV budgets | §J |
 | [IMPORT.md](IMPORT.md) | Excel/CSV import pipeline, synonyms, validation, rollback, templates, exports | §K |
@@ -19,4 +20,4 @@ Business intent: [`pipeline/BRIEF.md`](../pipeline/BRIEF.md) (wins for intent). 
 | [PROGRESS.md](PROGRESS.md) | Dated log per step | — |
 | [HUMAN-TODO.md](HUMAN-TODO.md) | (sr) What only the owner/client can provide; „potvrditi sa klijentom" | — |
 
-Created later: `docs/design/*` (step 03), `docs/3d/*` (steps 07–11), `docs/qa/*` (steps 12–22), `docs/progress/<step>.md` (checklists), `docs/ADS-PLAYBOOK.md` (19), `docs/SECURITY-AUDIT.md`, `docs/GO-LIVE-ENV.md`, `docs/PRIVACY-PROCESS.md`, `docs/BACKUPS.md` (20), `docs/PREDAJA.md`, `docs/GO-LIVE.md`, `docs/showcase/` (23).
+Created later: `docs/3d/*` (steps 07–11), `docs/qa/*` (steps 12–22), `docs/progress/<step>.md` (checklists), `docs/ADS-PLAYBOOK.md` (19), `docs/SECURITY-AUDIT.md`, `docs/GO-LIVE-ENV.md`, `docs/PRIVACY-PROCESS.md`, `docs/BACKUPS.md` (20), `docs/PREDAJA.md`, `docs/GO-LIVE.md`, `docs/showcase/` (23).

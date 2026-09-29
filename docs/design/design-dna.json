@@ -1,0 +1,430 @@
+{
+  "meta": {
+    "name": "SKLOP — Rendgen",
+    "description": "Design DNA for SKLOP, a Serbian Volkswagen Group (VW, Audi, Škoda, SEAT, Cupra) auto-parts shop, B2B mechanic portal and back office. Concept „Rendgen“: an engineering X-ray at night — graphite field, warm drawing ink, one safety-orange signal for what is yours or next, a cold cyan rim that only the X-ray car wears, and technical ornament that always measures something real. Defined (not extracted) in pipeline step 03; human-readable spec in docs/design/DESIGN-SYSTEM.md, color tokens in docs/design/tokens.json.",
+    "source_references": [
+      "pipeline/BRIEF.md §4 (3D exploded X-ray car), §8 (design north star), §9 (quality bars)",
+      "docs/DESIGN-BRIEF.md (constraints)",
+      "docs/3D-CONTRACT.md (axes, stages, materials, budgets)",
+      "Technical drawing conventions: ISO 128 lines, dimension lines with oblique ticks, drawing-sheet title block, exploded-view assembly axes",
+      "Workshop parts catalogues (exploded diagrams with position numbers → parts tables)",
+      "Premium engineering exhibitions (dark halls, single spot-lit object, small precise captions)",
+      "impeccable concept seed 9fc882b6 (persuade): assigned roll = precision measuring instruments; challengers orienteering map, oscilloscope bench, cyclorama cue list, title card, ebru, alphabet storm → donated raises",
+      "ui-ux-pro-max design-system searches (automotive e-commerce + B2B dashboard)",
+      "Rendered specimens: docs/design/screens/fonts-*.png; concept frames: /lab/koncept, docs/design/screens/round-*"
+    ],
+    "created_at": "2026-09-29"
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "monochromatic graphite neutrals with a single complementary accent (warm orange against cool graphite) and one reserved cool tone for 3D X-ray art only",
+      "primary": {
+        "hex": "#0D0F11",
+        "role": "Night field (page background of the storefront); graphite, never pure black. Surfaces step up #121518 → #16191D → #1C2025 → #23282E → #2B3138."
+      },
+      "secondary": {
+        "hex": "#F1ECE3",
+        "role": "Warm off-white drawing ink for primary text (16.32:1 on the field); tiers #C4BEB4 (10.40:1), #969088 (6.07:1), #6B6760 disabled only."
+      },
+      "accent": {
+        "hex": "#FF6B1A",
+        "role": "Safety orange — the only signal: primary action (one per region), selection, focus ring, active stage/tab, the chosen vehicle, „Vaša cena“, unread counts. 6.74:1 on the field; dark label on it 6.74:1. On light surfaces text uses #B8470A (5.32:1)."
+      },
+      "neutral": {
+        "scale": [
+          "#0D0F11",
+          "#121518",
+          "#16191D",
+          "#1C2025",
+          "#1E2227",
+          "#23282E",
+          "#2B3138",
+          "#2C3238",
+          "#434A52",
+          "#6E767F",
+          "#969088",
+          "#C4BEB4",
+          "#F1ECE3"
+        ],
+        "usage": "Cool graphite (hue ≈ 215°, very low chroma) for surfaces and lines: bg #0D0F11, bg-raised #121518, surface-1 #16191D (cards), surface-2 #1C2025 (inputs, table headers), surface-3 #23282E (popovers, drawers), surface-4 #2B3138 (hover on raised); lines #1E2227 faint / #2C3238 default / #434A52 strong; #6E767F control borders (≥ 3:1 on every surface). Warm ink (hue ≈ 40°) for text: #F1ECE3 / #C4BEB4 / #969088 / #6B6760. Admin paper theme mirrors it: #F3F4F5 page, #FFFFFF panels, lines #E8EAED/#DADDE1/#BEC3C9, control #838B94, ink #121518/#3D444C/#5D6570."
+      },
+      "semantic": {
+        "success": "#4FD18B (night) / #1D7A4A (paper) — na stanju, isporučena; always with a filled-square or check icon and a word",
+        "warning": "#F4C04A (night) / #8C5B00 (paper) — malo na stanju, čeka deo, proverite motor; amber, deliberately not orange",
+        "error": "#FF6166 (night) / #C4303A (paper) — validation errors, otkazana, destructive actions",
+        "info": "#9DB8D0 (night) / #3A5F80 (paper) — po porudžbini, potvrđena, poslata; steel blue-grey, never VW blue"
+      },
+      "surface": {
+        "background": "#0D0F11",
+        "card": "#16191D with 1px #2C3238 border, radius 4px",
+        "elevated": "#23282E with a 1px #434A52 edge and no shadow (commit to an edge on night); drawers/dialogs add a #07080A scrim at 72%; paper popovers use soft elevation without a border"
+      },
+      "contrast_strategy": "High contrast by construction and measured: every text pair ≥ 4.5:1 (meta #969088 is 4.70–6.07:1 on all night surfaces), every control border and focus indicator ≥ 3:1; 60 pairs computed by scripts/design/contrast.mjs from tokens.json, 0 failing. Depth comes from surface lightness steps and hairlines, not shadows. Light „paper“ theme for the admin (daylight counter PC, print parity, dense tables at 18:1)."
+    },
+    "typography": {
+      "type_scale": {
+        "display": {
+          "size": "clamp(2.25rem, 1.833rem + 1.852vw, 4rem) — 36px @360 → 56px @1440 → 64px @1872+",
+          "weight": "700 (Archivo Expanded, wdth 125 static instance)",
+          "line_height": "1.0",
+          "tracking": "0.005em, uppercase via CSS"
+        },
+        "heading_1": {
+          "size": "clamp(1.625rem, 1.417rem + 0.926vw, 2.25rem) — 26 → 36px (task/product titles, Public Sans); marketing section titles use display-l clamp(1.75rem, 1.5rem + 1.111vw, 2.75rem) Archivo Expanded 600 caps",
+          "weight": "650",
+          "line_height": "1.15",
+          "tracking": "-0.015em"
+        },
+        "heading_2": {
+          "size": "clamp(1.375rem, 1.25rem + 0.556vw, 1.75rem) — 22 → 28px",
+          "weight": "650",
+          "line_height": "1.2",
+          "tracking": "-0.01em"
+        },
+        "heading_3": {
+          "size": "clamp(1.125rem, 1.083rem + 0.185vw, 1.25rem) — 18 → 20px",
+          "weight": "600",
+          "line_height": "1.3",
+          "tracking": "-0.005em"
+        },
+        "body": {
+          "size": "1rem (16px), measure 65–72ch",
+          "weight": "400",
+          "line_height": "1.55",
+          "tracking": "0"
+        },
+        "body_small": {
+          "size": "0.875rem (14px) — admin default",
+          "weight": "400",
+          "line_height": "1.5",
+          "tracking": "0.003em"
+        },
+        "caption": {
+          "size": "0.8125rem (13px)",
+          "weight": "500",
+          "line_height": "1.4",
+          "tracking": "0.005em"
+        },
+        "overline": {
+          "size": "0.6875–0.75rem (11–12px), uppercase — table headers and badges only, never above a heading",
+          "weight": "600",
+          "line_height": "1.2",
+          "tracking": "0.06em"
+        }
+      },
+      "font_families": {
+        "heading": "Archivo (Omnibus-Type, OFL) as static instances: Expanded 125/700 and 125/600 for statements and short titles, Condensed 75/600 with tabular figures for prices, stage numbers and KPI figures; self-hosted via next/font/local (15–16 KB each, Latin + Latin-1 + Latin Extended-A)",
+        "body": "Public Sans (USWDS, OFL), variable weight 100–900, next/font/google subsets latin + latin-ext (44 KB)",
+        "mono": "Martian Mono (Evil Martians, OFL), weight 100–800, next/font/google latin + latin-ext, preload false — OEM/cross numbers, SKU, VIN, order numbers, dimensions, coordinates only"
+      },
+      "font_style_notes": "Wide grotesk capitals read like model badges and drawing title blocks (the automotive vernacular without costume); a sturdy Franklin-lineage UI sans for everything task-related; an engraved-plate monospace with a dotted zero so 0 and O never get confused in part numbers. Size-specific tracking (caps +0.005–0.06em, large UI headings negative), tabular figures for all money and quantities, Serbian typography (č ć ž š đ verified 10/10 in every file, „…“ quotes, en-dash ranges, non-breaking spaces before units)."
+    },
+    "spacing": {
+      "base_unit": "4px",
+      "scale": [
+        0,
+        1,
+        2,
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        32,
+        40,
+        48,
+        64,
+        80,
+        96,
+        128,
+        160
+      ],
+      "content_density": "comfortable on Persuade surfaces (density 4), dense-but-calm on catalog (6), compact on mechanic portal (7) and admin (8, 44px rows, 36px compact)",
+      "section_rhythm": "Storefront sections padding-block clamp(4rem, 2.667rem + 5.926vw, 8rem) (64 → 128px); heading → content 32px; more space above headings than below; dense surfaces step 16/24px"
+    },
+    "layout": {
+      "grid_system": "12-column grid ≥ 1024px, 8 columns 768–1023px, 4 columns below; hero full-bleed with copy on columns 1–5 and the X-ray object on 6–12",
+      "max_content_width": "1440px inner content (storefront), 720px reading measure, admin fluid up to 1680px",
+      "columns": "4 / 8 / 12",
+      "gutter": "clamp(16px, 1.7vw, 24px) (32px ≥ 1920px); outer margin clamp(16px, 4vw, 48px)",
+      "breakpoints": {
+        "sm": "480px",
+        "md": "768px",
+        "lg": "1024px",
+        "xl": "1280px",
+        "2xl": "1536px",
+        "3xl": "1920px",
+        "tested": "360, 390, 768, 1024, 1440, 1920, 2560"
+      },
+      "alignment_tendency": "asymmetric on Persuade surfaces (never a centred hero), strict grid on Operate surfaces; single column in reading order below 1024px"
+    },
+    "shape": {
+      "border_radius": {
+        "small": "2px (buttons, inputs, badges, chips)",
+        "medium": "4px (cards, panels, tables, toasts); 6px for dialogs, popovers and admin frames",
+        "large": "10px — mobile bottom-sheet top corners only",
+        "pill": "999px — count badges only"
+      },
+      "border_usage": "1px hairlines everywhere (#2C3238 default, #434A52 strong, #6E767F controls); 2px only for focus rings and active indicators; never a coloured side border above 1px",
+      "divider_style": "1px solid hairlines, full-bleed within their container; dashed 3/3 only for dimension extension lines"
+    },
+    "elevation": {
+      "shadow_style": "Commit to one per surface: edges on the night field (surface steps + hairlines, no shadows), soft elevation without hairlines for floating paper overlays; never a hairline plus a wide diffuse shadow",
+      "levels": {
+        "low": "surface-1 + 1px #2C3238 border (cards at rest); paper: 0 1px 2px rgb(18 21 24 / .06)",
+        "medium": "night: surface-3 + 1px #434A52, no shadow (popovers, callouts, menus); paper: #FFF, no border, 0 1px 2px rgb(18 21 24 / .10), 0 8px 24px -6px rgb(18 21 24 / .18)",
+        "high": "night: surface-3 + 1px #434A52 on the open edge + scrim rgb(7 8 10 / .72) (cart, dialogs) or no scrim (3D part panel); paper: 0 24px 64px -16px rgb(18 21 24 / .28) + scrim rgb(18 21 24 / .4)"
+      },
+      "depth_cues": "surface lightness steps, hairline borders, the translucent header (88% + 12px blur) over the moving 3D stage, the X-ray shell's fresnel rim"
+    },
+    "iconography": {
+      "style": "Outline line icons on a 256-unit grid with round caps; fill only for on-states; custom part glyphs drawn on the same grid from X-ray silhouettes (discs, pads, calipers, struts, turbo snail, filters…)",
+      "stroke_weight": "Phosphor regular: 1/16 of the size (1.5px @24, 1.25px @20, 1px @16)",
+      "size_scale": "16 / 20 / 24 / 32px",
+      "preferred_set": "Phosphor Icons (@phosphor-icons/react 2.1.10, imported from /dist/ssr in Server Components) + custom part glyphs in components/icons/parts"
+    },
+    "motion": {
+      "easing": "sk.out cubic-bezier(0.16, 1, 0.3, 1) signature for ~80% of UI; sk.inOut (0.65, 0, 0.35, 1) on-screen moves and crossfades; sk.in (0.55, 0, 1, 0.45) exits; sk.snap (0.2, 0, 0, 1) press/toggles; power2.inOut per node for the explode; power3.inOut for camera glides; scrubbed timelines use ease none",
+      "duration_scale": {
+        "micro": "80ms hover · 140ms press/toggle",
+        "normal": "220ms popovers/toasts/tabs · 360ms panels in (240ms out)",
+        "macro": "600ms poster→3D crossfade · 900ms camera glide · 620ms per word text reveal · explode bound to 320vh (desktop) / 200vh (mobile) of scroll"
+      },
+      "entrance_pattern": "Copy arrives word by word in random order (opacity 0→1, blur 8→0px, lift 0.35em, 620ms sk.out, stagger min(28ms, 520ms/words)); above the fold an LCP-safe CSS variant starts at opacity .35 and completes ≤ 900ms; panels slide 24px + fade from their own edge; nothing else enters",
+      "exit_pattern": "Same path out as in, ~⅔ of the entry duration, sk.in; toasts and dialogs fade; reduced motion → opacity only",
+      "philosophy": "Instrument: rigid metal physics — zero overshoot, decisive deceleration, interruptible from the on-screen value; motion explains assembly (the explode) and state (panels, feedback) and nothing else; one authored moment per page"
+    },
+    "components": {
+      "button_style": "Squared (2px radius) 44px buttons; primary = orange fill with graphite label (one per region), secondary = 1px #6E767F outline with ink label, quiet = surface-2 fill; press = translateY(1px) + darker fill; loading keeps width with an inline spinner",
+      "input_style": "Surface-2 fields with a 1px #6E767F border (3.56:1), label always above (13px), 16px text, focus = orange border + 1px inner ring, error = pink-red border + icon + message below, hero search 56px with an attached orange „Pretraži“ button and a normalisation hint; the vehicle picker is a field-like control (label „Vaše vozilo“, orange car icon, name, „Promeni ▾“, separate clear button), not an outline button",
+      "card_style": "Surface-1, 1px hairline, 4px radius; 4:3 render on a radial graphite ground with a quality chip; maker → name (whole-card link, focus ring around the card) → OEM in mono → fitment line for the chosen vehicle → stock line with icon → „Zamena na stanju: 2 →“ when out of stock → hairline → condensed tabular price with „sa PDV-om“ + quiet add button whose accessible name includes the product; mobile list variant with a full-width labelled 44px button",
+      "navigation_pattern": "Sticky translucent 64px header (wordmark with the lifted-part mark, 4 text links, account, cart with orange count); mobile: wordmark + cart + menu, bottom contact bar on scroll-up; admin: dark 232px sidebar + light workspace with a top bar and ⌘K palette",
+      "modal_style": "Right drawers (part panel without scrim so the car stays visible; cart with scrim), bottom sheets with drag + inertia snap points on mobile, centred dialogs 480/640px for confirmations",
+      "list_style": "Dense rows with 1px dividers, tabular right-aligned numbers, mono codes with a dimmed prefix (SK-2026- in ink-3), status chips with icon + word; admin tables 48px rows with sticky header, neutral selected tint #EEF1F4 (accent tint reserved for „Nova“), row-actions button, compact dates „29.09. 11:42“",
+      "component_notes": "Radix primitives + own ARIA 1.2 combobox + GSAP Draggable sheet; every component ships default/hover/focus-visible/active/disabled/loading/empty/error states; icon-only buttons carry aria-labels; live values (price, stock, counters) are excluded from the text reveal"
+    }
+  },
+  "design_style": {
+    "aesthetic": {
+      "mood": [
+        "precise",
+        "calm",
+        "nocturnal",
+        "confident",
+        "technical"
+      ],
+      "visual_metaphor": "An engineering X-ray at night: the car as a rim-lit glass shell with solid parts inside, laid out on a measured drawing sheet — title block, dimension lines, ruler floor, part codes — where the only colour is the signal that marks your part and your next step.",
+      "era_influence": "Contemporary engineering exhibition graphics crossed with mid-century drafting standards (ISO lettering spirit, title blocks, exploded parts catalogues)",
+      "genre": "premium technical e-commerce / engineering exhibition",
+      "personality_traits": [
+        "meticulous",
+        "honest",
+        "unhurried",
+        "expert",
+        "helpful without selling"
+      ],
+      "adjectives": [
+        "measured",
+        "graphite",
+        "rim-lit",
+        "exact",
+        "quiet",
+        "industrial",
+        "trustworthy"
+      ]
+    },
+    "visual_language": {
+      "complexity": "moderate — rich only inside the 3D object and its measured ornaments; the chrome stays minimal",
+      "ornamentation": "subtle accents with purpose: dimension lines, ruler ticks, coordinates, corner ticks, a title block, leader-line callouts — each measures or identifies something real",
+      "whitespace_usage": "generous around the object on Persuade surfaces; disciplined grid spacing on catalog and admin",
+      "visual_weight_distribution": "Asymmetric: heavy uppercase statement and primary action on the left, the luminous X-ray object on the right, a quiet horizontal stage index anchoring the bottom",
+      "focal_strategy": "single hero element (the X-ray car) with progressive reveal through the scroll-driven explode",
+      "contrast_level": "high for text and controls (ink 16:1, controls ≥ 3:1), low for structure (hairlines 1.3–2.1:1)",
+      "texture_usage": "none on UI; only the rendered materials of the parts (cast iron, machined steel, rubber) and the X-ray shell's rim and sheen"
+    },
+    "composition": {
+      "hierarchy_method": "typographic hierarchy (expanded caps statements vs sentence-case task headings) + colour weight (orange only for yours/next) + spatial isolation of the object",
+      "balance_type": "asymmetric",
+      "flow_direction": "Left to right then top to bottom: statement → search (the CTA) → vehicle → the object → stage index; scroll drives the explode, then categories, ordering steps, mechanics band, contact",
+      "grouping_strategy": "Proximity and hairlines; cards only where the object is a clickable product; no nested cards; admin metrics separated by rules, not boxes",
+      "negative_space_role": "The dark field is the X-ray viewing box — negative space lets the rim light read and gives the explode room to unfold"
+    },
+    "imagery": {
+      "photo_treatment": "No stock photography, no AI people or cars. Blender renders only (posters and category thumbnails): three-quarter angle, warm key from upper left, cool #9FE9FF rim from behind right, graphite radial ground, contact shadow, part at 70% of the frame. Later client product photos on a dark graphite sweep, same framing.",
+      "illustration_style": "Technical line drawings in the X-ray language: rim-cyan hairline shells, graphite solid parts, orange for the selected part, true dimension lines in millimetres",
+      "graphic_elements": "The lifted-part brand mark (slotted ink base, orange part raised on a dashed exploded-view axis), corner ticks, dimension lines with oblique ticks and ungrouped millimetre values (4280, 2620, 1450), ruler floor without numbers, title-block grid, leader-line callouts into an annotation lane above the object, stage index 00–07 as buttons",
+      "pattern_usage": "none (no background patterns, no noise, no scan lines)",
+      "image_shape": "Rectangular: 4:3 cards, 1:1 thumbnails, 16:9 desktop and 4:5 mobile posters; 4px radius on cards only"
+    },
+    "interaction_feel": {
+      "feedback_style": "Immediate and physical: press on pointer-down (1px travel), colour changes in 80ms, explicit confirmations in words („Dodato u korpu“, „OEM broj kopiran“), live stock/price updates flagged briefly",
+      "hover_behavior": "Colour/border shifts only (no scale on controls); cards brighten their hairline and the render drifts to 1.03 inside its frame; 3D parts glow orange at the rim with a callout",
+      "transition_personality": "smooth glide with decisive stop (expo-like ease-out, zero overshoot)",
+      "loading_style": "Skeletons with the exact final geometry; a 2px orange progress hairline for the 3D; poster-first so nothing waits for WebGL",
+      "microinteraction_density": "low — only where a state changes (press, add, copy, select, open/close)"
+    },
+    "brand_voice_in_ui": {
+      "tone": "An experienced mechanic talking to a colleague: calm, precise, short sentences, numbers instead of adjectives",
+      "formality": "semi-formal: „vi“ forms in lowercase, no slang, no exclamation marks, no emojis",
+      "cta_style": "direct imperative naming the object („Pošalji porudžbinu“, „Dodaj u korpu“, „Pošaljite upit“)",
+      "empty_state_approach": "One plain sentence stating the situation + one next step, usually the inquiry; a drawing frame with a part glyph; never a joke or an illustration of people",
+      "error_tone": "What went wrong + how to fix it + an escape hatch (call, Viber, inquiry); never blaming the user"
+    }
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "subtle-accent on UI, heavy-immersive in the single hero object",
+      "performance_tier": "heavy (WebGL/three.js hero), everything else lightweight (CSS + GSAP)",
+      "fallback_strategy": "Poster first (SSR image, LCP-safe headline); 3D loads on intent or ≥ 4 s idle after load, tier-gated (high: desktop GLB; mid: lite GLB, simplified shader, tap-only; low: no WebGL → GSAP crossfade between assembled/exploded posters); reduced motion → no scrub, instant „Rasklopi / Sklopi“ states; context loss → poster",
+      "primary_technology": "WebGL/Three.js (React Three Fiber + drei) with GSAP ScrollTrigger; GSAP for all UI motion"
+    },
+    "background_effects": {
+      "type": "none",
+      "description": "Flat graphite night field; the only atmosphere is a faint radial floor glow and the ruler-floor decal under the car inside the hero stage",
+      "technology": "CSS background colour; the floor is part of the 3D scene / poster render",
+      "params": {
+        "color_palette": [
+          "#0D0F11",
+          "#15191D",
+          "#9FE9FF at 6–10% for floor lines"
+        ],
+        "speed": "static",
+        "density": "n/a",
+        "opacity": "floor glow 55%, floor lines 6–10%",
+        "blend_mode": "normal"
+      }
+    },
+    "particle_systems": {
+      "enabled": false,
+      "type": "custom",
+      "description": "Not used — particles would read as sci-fi decoration and break the calm principle",
+      "technology": "n/a",
+      "params": {
+        "count": "0",
+        "shape": "n/a",
+        "size_range": "n/a",
+        "movement_pattern": "n/a",
+        "color_behavior": "n/a",
+        "interaction": "none",
+        "spawn_area": "n/a"
+      }
+    },
+    "3d_elements": {
+      "enabled": true,
+      "type": "hero-model",
+      "description": "A generic compact hatchback (MQB-like proportions, 4.28 × 1.79 × 1.45 m, LHD, transverse turbo engine, DSG) built in Blender by scripts: the body is an X-ray glass shell with a fresnel rim, the 91 clickable part nodes inside are solid and realistic; on scroll the car explodes into 7 stages of systems; hover highlights a category with an orange rim and a leader-line callout; click opens a panel with the in-stock parts of that category for the selected vehicle.",
+      "technology": "three 0.186 + @react-three/fiber 9 + @react-three/drei 10, meshopt-compressed GLB (desktop ≤ 8 MB / lite ≤ 3 MB), three-mesh-bvh raycasting, frameloop demand",
+      "params": {
+        "renderer": "WebGL2, DPR clamp [1, 2] desktop / [1, 1.5] mid tier with adaptive drop below 50 fps, NeutralToneMapping exposure 1.0, sRGB output, transparent canvas over the page field",
+        "lighting": "RoomEnvironment PMREM (0.9 for parts, 0.35 in the shell shader) + key directional az 35° el 40° #FFF4E8 × 1.6 + rim directional az 200° el 25° #CFEFFF × 1.2 + hemisphere fill #1C2530/#0D0F11 × 0.35; no real-time shadows, baked contact shadow",
+        "camera": "Perspective; hero FOV 28° (≥1280), 30° (1024–1279), 32° (tablet), 38° (mobile portrait); dolly-out + ~12° orbit (6° mobile) to the exploded camera across scroll 0.08–0.92; part focus glide 0.9 s power3.inOut",
+        "materials": "X-ray shell: custom fresnel shader (rim #9FE9FF, power 2.6, tint #123642, alpha 0.22 → 0.10, back-face pass at 0.5×, env sheen 0.35, edge lines 28° at 0.35 opacity on desktop); parts: glTF metallic-roughness palette (cast iron #5A5C5E m1 r0.72, machined steel #A9ADB1 m1 r0.28, cast alu #A7A9AB m1 r0.55, rubber #1A1A1B m0 r0.85, tyre #1C1C1D r0.90 + normal, graphite caliper #2E3136 …); hover = orange rim × 0.6 + emissive 0.12; selected = rim × 1.0, others dimmed to 55%",
+        "geometry": "450–600k triangles desktop (hard < 800k), ≤ 250k lite; ≤ 220 draw calls; nodes named part__<category>__<instance> with explode vectors in glTF extras",
+        "post_processing": [],
+        "interaction_model": "Scroll-scrubbed explode (pinned 320vh desktop / 200vh mobile, scrub 0.6), fine-pointer hover raycast with callout, click/tap select → camera focus + part panel (drawer desktop / bottom sheet mobile) + ?deo= deep link; accessible „Lista delova“ dialog mirrors the 3D; canvas role=img, not a tab stop"
+      }
+    },
+    "shader_effects": {
+      "enabled": true,
+      "type": "custom-GLSL",
+      "description": "Fresnel X-ray glass on the body shell and windows (rim-lit edges, transparent faces, faint back faces, environment sheen) plus a rim/emissive highlight injected into part materials for hover/selection. Explicitly no scan lines, flicker, noise, bloom or chromatic aberration.",
+      "technology": "THREE.ShaderMaterial for the shell; onBeforeCompile injection into MeshStandardMaterial for part highlights",
+      "params": {
+        "uniforms": "uRimColor #9FE9FF, uRimPower 2.6 (2.2 mid tier), uTint #123642, uBaseAlpha 0.22→0.10→0.06 (selected), uEnvIntensity 0.35, uHighlight 0–1, uHighlightColor #FF6B1A",
+        "vertex_manipulation": "none (explode moves node transforms on the CPU via GSAP, not vertices)",
+        "fragment_output": "rgb = mix(uTint, uRimColor, rim) + env × 0.35; alpha = mix(uBaseAlpha, 0.92, rim) where rim = pow(1 − saturate(dot(N, V)), uRimPower)",
+        "noise_type": "none",
+        "distortion": "none"
+      }
+    },
+    "scroll_effects": {
+      "parallax": {
+        "enabled": false,
+        "layers": "0",
+        "depth_range": "n/a",
+        "speed_curve": "n/a"
+      },
+      "scroll_triggered_animations": {
+        "enabled": true,
+        "trigger_points": "Hero section top at viewport top → +320% (desktop) / +200% (mobile); stage windows from 3D-CONTRACT §F6 (0.08–0.24 karoserija … 0.80–0.92 izduvni, hold 0.92–1.00); text reveal fires once per element at 15% into the viewport",
+        "animation_type": "scrubbed 3D explode + camera dolly/orbit; stage captions by hard cut; word-by-word text reveal elsewhere",
+        "scrub_behavior": "scrub 0.6 s catch-up, no snapping; detented control via the stage index and the „Rasklopi / Sklopi“ toggle; reduced motion disables pin and scrub"
+      },
+      "scroll_morphing": {
+        "enabled": true,
+        "description": "The assembled car morphs into an exploded technical drawing: parts travel along their manifest vectors per stage (power2.inOut, staggered by explode order) while the shell fades from 0.22 to 0.10 alpha and the camera dollies out; at p = 1 the layout reads as a clean exploded diagram with no overlaps."
+      }
+    },
+    "text_effects": {
+      "type": "split-letter-animate",
+      "description": "Site-wide word-by-word reveal: every headline, paragraph, list item and standalone label arrives word by word in random order, blurred and lifted, as it crosses into the viewport; above-the-fold copy uses a server-split CSS variant that is readable in its first painted frame (LCP-safe).",
+      "technology": "Own system: constants/textRevealConfig.ts + lib/textReveal.ts (moves text nodes, never clones) + components/TextRevealGlobal.tsx (one IntersectionObserver + MutationObserver); RevealText server component with CSS keyframes above the fold",
+      "params": {
+        "split_strategy": "by-word",
+        "animation_per_unit": "opacity 0→1, blur 8px→0, translateY 0.35em→0, 620ms sk.out; LCP-safe: from opacity .35 / blur 10px / 0.3em, 540ms, delay (i/n) × 360ms, done ≤ 900ms",
+        "stagger": "min(28ms, 520ms / wordCount) in shuffled order; > 60 words fade as one block",
+        "effect_style": "Soft focus-pull: words sharpen and settle into place like a drawing coming into focus; failsafe reveals everything after 3.5 s; reduced motion shows text immediately"
+      }
+    },
+    "cursor_effects": {
+      "enabled": false,
+      "type": "none",
+      "description": "Native cursors only (pointer on interactive parts of the 3D); custom cursors hurt accessibility and performance",
+      "params": {
+        "shape": "n/a",
+        "size": "n/a",
+        "blend_mode": "n/a",
+        "trail": "n/a",
+        "interaction_zone": "n/a"
+      }
+    },
+    "image_effects": {
+      "type": "none",
+      "description": "Renders are shown as they are; the only image motion is a 1.03 drift inside the card frame on hover (600ms sk.out) and the 600ms poster → 3D crossfade",
+      "technology": "CSS transform / GSAP opacity",
+      "params": {
+        "filter_pipeline": "none",
+        "hover_transform": "scale(1.03) inside an overflow-hidden 4:3 frame",
+        "reveal_animation": "none (images are visible by default; LCP poster preloaded)",
+        "distortion_type": "none"
+      }
+    },
+    "glassmorphism_neumorphism": {
+      "enabled": true,
+      "style": "frosted-layers",
+      "params": {
+        "blur_radius": "12px (sticky header only, functional over the moving 3D stage); none elsewhere",
+        "transparency": "88% opaque header only; callouts are opaque surface-3",
+        "border_treatment": "1px #2C3238 bottom hairline on the header; 1px #434A52 edge on callouts",
+        "shadow_type": "none on the header and on callouts (edge-defined surfaces)",
+        "light_source_angle": "n/a (flat UI); in 3D the key light comes from front-left 35°/40°"
+      }
+    },
+    "canvas_drawings": {
+      "enabled": false,
+      "type": "none",
+      "description": "No 2D canvas drawings; technical ornaments are SVG/HTML so they stay crisp, accessible and cheap",
+      "technology": "n/a",
+      "params": {
+        "draw_method": "n/a",
+        "animation_loop": "n/a",
+        "color_scheme": "n/a",
+        "responsiveness": "n/a",
+        "interaction": "n/a"
+      }
+    },
+    "svg_animations": {
+      "enabled": true,
+      "type": "path-draw",
+      "description": "Leader lines of 3D callouts draw from the part anchor to the label (stroke-dashoffset, 220ms sk.out) and the 2px progress hairline fills with real loading progress; dimension lines and ruler are static.",
+      "params": {
+        "animation_method": "GSAP (strokeDashoffset / scaleX), never SMIL",
+        "path_morphing": "none",
+        "stroke_animation": "leader line draw-on 220ms; progress hairline scaleX linear to real progress",
+        "filter_effects": "none on UI; a 16-unit gaussian rim glow exists only in the static X-ray placeholder drawing"
+      }
+    },
+    "composite_notes": "One spectacle, everything else calm: the WebGL car carries all the visual richness (rim-lit glass shell, PBR parts, explode choreography, orange part highlights), while HTML overlays carry every word, control and measurement (headline, search, callouts, stage index, title block) so copy stays accessible, indexable and LCP-safe. The poster render uses the same camera as the first 3D frame so the 600ms crossfade is invisible. Performance budget: 3D chunk ≤ 350 KB gz, GLB ≤ 8 MB desktop / 3 MB lite, X-ray pass ≤ 1.5 ms/frame on the mid tier, no post-processing unless it costs < 2 ms/frame. Fonts preloaded ≤ 76 KB. Reduced motion and the low tier get the same information through posters, the parts list and instant state changes."
+  }
+}

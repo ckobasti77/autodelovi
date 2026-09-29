@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="sr-Latn-RS">
+<head>
+<meta charset="utf-8">
+<title>SKLOP font specimen (step 03)</title>
+<!-- Step 03 font evaluation. Rendered with: node scripts/design/shoot.mjs file:///…/font-specimen.html docs/design/screens/fonts --vp 1440x900 --full -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Barlow+Semi+Condensed:wght@600&family=Barlow:wght@400;500;600&family=Sofia+Sans+Extra+Condensed:wght@600;700&family=Sofia+Sans+Condensed:wght@600;700&family=Sofia+Sans:wght@400..700&family=Archivo:wdth,wght@62..125,100..900&family=Hubot+Sans:wdth,wght@75..125,200..900&family=Mona+Sans:wdth,wght@75..125,200..900&family=Saira:wdth,wght@50..125,100..900&family=Pathway+Extreme:opsz,wdth,wght@8..72,75..100,100..900&family=Chivo:wght@100..900&family=Geologica:CRSV,SHRP,wght@0..1,0..100,100..900&family=Big+Shoulders:wght@100..900&family=Tektur:wdth,wght@75..100,400..900&family=Encode+Sans:wdth,wght@75..125,100..900&family=Schibsted+Grotesk:wght@400..900&family=Public+Sans:wght@100..900&family=Atkinson+Hyperlegible+Next:wght@200..800&family=Hanken+Grotesk:wght@100..900&family=Onest:wght@100..900&family=Host+Grotesk:wght@300..800&family=Wix+Madefor+Text:wght@400..800&family=JetBrains+Mono:wght@100..800&family=Martian+Mono:wdth,wght@75..112.5,100..800&family=Atkinson+Hyperlegible+Mono:wght@200..800&family=Chivo+Mono:wght@100..900&family=Azeret+Mono:wght@100..900&family=Red+Hat+Mono:wght@300..700&family=Reddit+Mono:wght@200..900&family=Fragment+Mono&family=Spline+Sans+Mono:wght@300..700&family=Google+Sans+Code:wght@300..800&display=swap">
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; background: #101113; color: #ECE7DF; font-family: system-ui, sans-serif; }
+  section { padding: 40px 48px; border-bottom: 1px solid #2a2c30; }
+  h2 { font: 600 13px/1 ui-monospace, monospace; letter-spacing: .12em; text-transform: uppercase; color: #FF7A1A; margin: 0 0 24px; }
+  .row { display: grid; grid-template-columns: 260px 1fr; gap: 24px; align-items: baseline; padding: 14px 0; border-top: 1px solid #1d1f22; }
+  .lbl { font: 12px/1.3 ui-monospace, monospace; color: #8d8a85; }
+  .d1 { font-size: 72px; line-height: 1; letter-spacing: -0.01em; }
+  .d2 { font-size: 22px; line-height: 1.2; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 10px; color: #b9b4ab; }
+  .ui p { margin: 0 0 6px; font-size: 16px; line-height: 1.55; max-width: 62ch; }
+  .ui .meta { font-size: 13px; color: #a9a49b; }
+  .ui .num { font-size: 20px; font-variant-numeric: tabular-nums; }
+  .mono { font-size: 17px; line-height: 1.6; }
+  .mono .z { font-feature-settings: "zero" 1; }
+</style>
+</head>
+<body>
+<section id="display"></section>
+<section id="ui"></section>
+<section id="mono"></section>
+<script>
+  const display = [
+    ["Barlow Condensed 600", "font-family:'Barlow Condensed';font-weight:600"],
+    ["Barlow Semi Condensed 600", "font-family:'Barlow Semi Condensed';font-weight:600"],
+    ["Sofia Sans Extra Condensed 700", "font-family:'Sofia Sans Extra Condensed';font-weight:700"],
+    ["Sofia Sans Condensed 700", "font-family:'Sofia Sans Condensed';font-weight:700"],
+    ["Archivo wdth 62 · 700", "font-family:'Archivo';font-variation-settings:'wdth' 62;font-weight:700"],
+    ["Archivo wdth 125 · 700", "font-family:'Archivo';font-variation-settings:'wdth' 125;font-weight:700"],
+    ["Hubot Sans wdth 75 · 700", "font-family:'Hubot Sans';font-variation-settings:'wdth' 75;font-weight:700"],
+    ["Hubot Sans wdth 125 · 700", "font-family:'Hubot Sans';font-variation-settings:'wdth' 125;font-weight:700"],
+    ["Mona Sans wdth 125 · 800", "font-family:'Mona Sans';font-variation-settings:'wdth' 125;font-weight:800"],
+    ["Saira wdth 75 · 600", "font-family:'Saira';font-variation-settings:'wdth' 75;font-weight:600"],
+    ["Pathway Extreme wdth 75 · 700", "font-family:'Pathway Extreme';font-variation-settings:'wdth' 75,'opsz' 72;font-weight:700"],
+    ["Chivo 800", "font-family:'Chivo';font-weight:800"],
+    ["Geologica SHRP 100 · 700", "font-family:'Geologica';font-variation-settings:'SHRP' 100;font-weight:700"],
+    ["Big Shoulders 700", "font-family:'Big Shoulders';font-weight:700"],
+    ["Tektur 700", "font-family:'Tektur';font-weight:700"],
+    ["Encode Sans wdth 75 · 700", "font-family:'Encode Sans';font-variation-settings:'wdth' 75;font-weight:700"],
+    ["Schibsted Grotesk 800", "font-family:'Schibsted Grotesk';font-weight:800"],
+  ];
+  const ui = [
+    ["Public Sans", "font-family:'Public Sans'"],
+    ["Atkinson Hyperlegible Next", "font-family:'Atkinson Hyperlegible Next'"],
+    ["Barlow", "font-family:'Barlow'"],
+    ["Sofia Sans", "font-family:'Sofia Sans'"],
+    ["Hanken Grotesk", "font-family:'Hanken Grotesk'"],
+    ["Onest", "font-family:'Onest'"],
+    ["Archivo wdth 100", "font-family:'Archivo'"],
+    ["Hubot Sans wdth 100", "font-family:'Hubot Sans'"],
+    ["Mona Sans wdth 100", "font-family:'Mona Sans'"],
+    ["Host Grotesk", "font-family:'Host Grotesk'"],
+    ["Wix Madefor Text", "font-family:'Wix Madefor Text'"],
+  ];
+  const mono = [
+    ["JetBrains Mono", "font-family:'JetBrains Mono'"],
+    ["Martian Mono wdth 87.5", "font-family:'Martian Mono';font-variation-settings:'wdth' 87.5"],
+    ["Atkinson Hyperlegible Mono", "font-family:'Atkinson Hyperlegible Mono'"],
+    ["Chivo Mono", "font-family:'Chivo Mono'"],
+    ["Azeret Mono", "font-family:'Azeret Mono'"],
+    ["Red Hat Mono", "font-family:'Red Hat Mono'"],
+    ["Reddit Mono", "font-family:'Reddit Mono'"],
+    ["Fragment Mono", "font-family:'Fragment Mono'"],
+    ["Spline Sans Mono", "font-family:'Spline Sans Mono'"],
+    ["Google Sans Code", "font-family:'Google Sans Code'"],
+  ];
+  const row = (label, style, inner, cls = "") =>
+    `<div class="row ${cls}"><div class="lbl">${label}</div><div style="${style}">${inner}</div></div>`;
+  document.getElementById("display").innerHTML =
+    "<h2>Display candidates</h2>" +
+    display.map(([l, s]) => row(l, s, `<div class="d1">Rasklopi auto. Nađi deo.</div><div class="d2">Kočione čeljusti · Škoda · Đak · 12.990</div>`)).join("");
+  const body = `<p>Kočione pločice za VW Golf VII i Škoda Octavia III. Proverite kompatibilnost pre porudžbine; ako niste sigurni, pošaljite broj šasije i javićemo vam se u toku radnog dana.</p><p class="meta">Na stanju 4 kom. · Isporuka 1–2 radna dana · Đurđevdanska 12, Čačak</p><p class="num">12.990 RSD · 1.111 RSD · 8.476,50 RSD · 0O 1lI</p>`;
+  document.getElementById("ui").innerHTML =
+    "<h2>UI sans candidates</h2>" + ui.map(([l, s]) => row(l, s, body, "ui")).join("");
+  const codes = `1K0 615 301 AA · 5Q0 698 151 · 03L 115 562 · SK-2026-000123 · 0O 1lI 8B<br><span class="z">zero: 1K0 615 301 AA · 0O</span> · Šifra č ć ž š đ`;
+  document.getElementById("mono").innerHTML =
+    "<h2>Mono candidates</h2>" + mono.map(([l, s]) => row(l, s, `<div class="mono">${codes}</div>`)).join("");
+</script>
+</body>
+</html>

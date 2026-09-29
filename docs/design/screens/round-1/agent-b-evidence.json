@@ -1,0 +1,3363 @@
+{
+  "url": "http://localhost:3000/lab/koncept",
+  "when": "2026-09-29T11:40:28.925Z",
+  "viewports": {
+    "390": {
+      "devToolsText": ":host { all: initial; /* the direction property is not reset by 'all' */ direction: ltr; } /*! * Bootstrap Reboot v4.4.1 (https://getbootstrap.com/) * Copyright 2011-2019 The Bootstrap Authors * Copyright 2011-2019 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LIC",
+      "main": {
+        "viewport": {
+          "innerWidth": 390,
+          "innerHeight": 844,
+          "clientWidth": 390,
+          "scrollWidth": 390,
+          "bodyScrollWidth": 390,
+          "scrollHeight": 2834,
+          "dpr": 2
+        },
+        "horizontalOverflow": false,
+        "beyondViewport": [
+          {
+            "el": "div.stageFrame",
+            "text": "",
+            "rect": {
+              "x": -8,
+              "y": 544.1,
+              "w": 390,
+              "h": 172.3,
+              "r": 382,
+              "b": 716.4
+            },
+            "clippedBy": "section.hero (overflow-x:hidden)",
+            "descendantsAlsoBeyond": 2
+          },
+          {
+            "el": "table.table",
+            "text": "BROJ PRIMLJENA KUPAC STAVKE IZNOS PLAĆA…",
+            "rect": {
+              "x": 34,
+              "y": 2373.2,
+              "w": 1221.7,
+              "h": 344,
+              "r": 1255.7,
+              "b": 2717.2
+            },
+            "clippedBy": "div.tableWrap (overflow-x:auto)",
+            "descendantsAlsoBeyond": 105
+          }
+        ],
+        "contrast": {
+          "checked": 158,
+          "fails": [],
+          "lowestPassing": [
+            {
+              "el": "span.status.stDanger",
+              "text": "Otkazana",
+              "size": 12.5,
+              "weight": 600,
+              "color": "#c4303a",
+              "textAlpha": 1,
+              "bg": "#fbe4e5",
+              "bgFrom": "span.status.stDanger",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 4.52,
+              "need": 4.5,
+              "pass": true,
+              "ariaHidden": false
+            },
+            {
+              "el": "span.status.stNew",
+              "text": "Nova",
+              "size": 12.5,
+              "weight": 600,
+              "color": "#b8470a",
+              "textAlpha": 1,
+              "bg": "#ffeadd",
+              "bgFrom": "span.status.stNew",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 4.58,
+              "need": 4.5,
+              "pass": true,
+              "ariaHidden": false
+            },
+            {
+              "el": "span.status.stSuccess",
+              "text": "Isporučena",
+              "size": 12.5,
+              "weight": 600,
+              "color": "#1d7a4a",
+              "textAlpha": 1,
+              "bg": "#e3f4ea",
+              "bgFrom": "span.status.stSuccess",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 4.67,
+              "need": 4.5,
+              "pass": true,
+              "ariaHidden": false
+            },
+            {
+              "el": "span.dim",
+              "text": "11:42",
+              "size": 13.5,
+              "weight": 400,
+              "color": "#5d6570",
+              "textAlpha": 1,
+              "bg": "#ffeadd",
+              "bgFrom": "td.num",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 5.07,
+              "need": 4.5,
+              "pass": true,
+              "ariaHidden": false
+            },
+            {
+              "el": "span.customerSub",
+              "text": "Auto servis Stanković",
+              "size": 12,
+              "weight": 400,
+              "color": "#5d6570",
+              "textAlpha": 1,
+              "bg": "#ffeadd",
+              "bgFrom": "td",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 5.07,
+              "need": 4.5,
+              "pass": true,
+              "ariaHidden": false
+            },
+            {
+              "el": "td.dim",
+              "text": "Kurir",
+              "size": 13.5,
+              "weight": 400,
+              "color": "#5d6570",
+              "textAlpha": 1,
+              "bg": "#ffeadd",
+              "bgFrom": "td.dim",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 5.07,
+              "need": 4.5,
+              "pass": true,
+              "ariaHidden": false
+            },
+            {
+              "el": "td.dim",
+              "text": "Google Ads",
+              "size": 13.5,
+              "weight": 400,
+              "color": "#5d6570",
+              "textAlpha": 1,
+              "bg": "#ffeadd",
+              "bgFrom": "td.dim",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 5.07,
+              "need": 4.5,
+              "pass": true,
+              "ariaHidden": false
+            },
+            {
+              "el": "span.status.stWarning",
+              "text": "Čeka deo",
+              "size": 12.5,
+              "weight": 600,
+              "color": "#8c5b00",
+              "textAlpha": 1,
+              "bg": "#fbf0d9",
+              "bgFrom": "span.status.stWarning",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 5.14,
+              "need": 4.5,
+              "pass": true,
+              "ariaHidden": false
+            }
+          ],
+          "approxBgImage": []
+        },
+        "placeholders": [
+          {
+            "el": "input#q.searchInput",
+            "placeholder": "npr. 1K0 615 301 AA ili kočione pločice",
+            "phColor": "#969088",
+            "inputColor": "#f1ece3",
+            "bg": "#1c2025",
+            "size": 16,
+            "ratio": 5.18,
+            "pass": true
+          },
+          {
+            "el": "input",
+            "placeholder": "Broj, kupac, telefon, PIB",
+            "phColor": "#5d6570",
+            "inputColor": "#121518",
+            "bg": "#ffffff",
+            "size": 14,
+            "ratio": 5.9,
+            "pass": true
+          }
+        ],
+        "targets": {
+          "total": 40,
+          "under24": [
+            {
+              "el": "a.textLink",
+              "name": "Nemate broj? Pošaljite broj šasije",
+              "w": 230.9,
+              "h": 23.3,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.calloutLink",
+              "name": "48 artikala na stanju →",
+              "w": 168.5,
+              "h": 20.1,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a",
+              "name": "Turbina 2.0 TDI, sa dihtunzima",
+              "w": 209.5,
+              "h": 17,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": "358x182 via li.card",
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a",
+              "name": "Filter ulja, uložak sa zaptivkom",
+              "w": 213.8,
+              "h": 17,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": "358x182 via li.card",
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input[search]",
+              "name": "Pretraga porudžbina",
+              "w": 278,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": "324x36",
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi sve",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000187",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000187",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000186",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000186",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000185",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000185",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000184",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000184",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000183",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000183",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000182",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000182",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000181",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000181",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            }
+          ],
+          "under44": [
+            {
+              "el": "a.wordmark",
+              "name": "SKLOP — početna",
+              "w": 117.3,
+              "h": 27.9,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "a.textLink",
+              "name": "Nemate broj? Pošaljite broj šasije",
+              "w": 230.9,
+              "h": 23.3,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.calloutLink",
+              "name": "48 artikala na stanju →",
+              "w": 168.5,
+              "h": 20.1,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a",
+              "name": "Kočioni disk prednji, Ø 312 mm, ven…",
+              "w": 216.7,
+              "h": 36.5,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": "358x202 via li.card",
+              "wrappingLabel": null
+            },
+            {
+              "el": "a",
+              "name": "Kočione pločice prednje, set za 2 t…",
+              "w": 214.9,
+              "h": 36.5,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": "358x221 via li.card",
+              "wrappingLabel": null
+            },
+            {
+              "el": "a",
+              "name": "Turbina 2.0 TDI, sa dihtunzima",
+              "w": 209.5,
+              "h": 17,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": "358x182 via li.card",
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a",
+              "name": "Filter ulja, uložak sa zaptivkom",
+              "w": 213.8,
+              "h": 17,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": "358x182 via li.card",
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "button.pButton.pButtonPrimary",
+              "name": "Potvrdi izabrane",
+              "w": 132.7,
+              "h": 36,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "button.tab.tabActive",
+              "name": "Sve 187",
+              "w": 76,
+              "h": 28,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "button.tab",
+              "name": "Nove 1",
+              "w": 66,
+              "h": 28,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "button.tab",
+              "name": "Za slanje 2",
+              "w": 83.4,
+              "h": 28,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "button.tab",
+              "name": "Čeka deo 1",
+              "w": 84.5,
+              "h": 28,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "input[search]",
+              "name": "Pretraga porudžbina",
+              "w": 278,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": "324x36",
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi sve",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000187",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000187",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000186",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000186",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000185",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000185",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000184",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000184",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000183",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000183",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000182",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000182",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000181",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000181",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            }
+          ]
+        },
+        "smallText": [
+          {
+            "el": "span.count",
+            "size": 11,
+            "count": 1,
+            "samples": [
+              "2"
+            ],
+            "ariaHidden": true
+          },
+          {
+            "el": "span.dimLabel",
+            "size": 10,
+            "count": 2,
+            "samples": [
+              "2.620",
+              "4.280"
+            ],
+            "ariaHidden": true
+          },
+          {
+            "el": "span.dimLabel.dimLabelVertical",
+            "size": 10,
+            "count": 1,
+            "samples": [
+              "1.450"
+            ],
+            "ariaHidden": true
+          },
+          {
+            "el": "span.demoNote",
+            "size": 11,
+            "count": 2,
+            "samples": [
+              "Primer podataka · demo",
+              "Primer podataka · demo"
+            ],
+            "ariaHidden": false
+          },
+          {
+            "el": "th",
+            "size": 11,
+            "count": 7,
+            "samples": [
+              "Broj",
+              "Primljena",
+              "Kupac",
+              "Plaćanje"
+            ],
+            "ariaHidden": false
+          },
+          {
+            "el": "th.num",
+            "size": 11,
+            "count": 2,
+            "samples": [
+              "Stavke",
+              "Iznos"
+            ],
+            "ariaHidden": false
+          },
+          {
+            "el": "span.tag",
+            "size": 10.5,
+            "count": 2,
+            "samples": [
+              "Majstor",
+              "Majstor"
+            ],
+            "ariaHidden": false
+          }
+        ],
+        "callout": {
+          "el": "div.callout",
+          "rect": {
+            "x": 59.4,
+            "y": 530.2,
+            "w": 190.5,
+            "h": 65.3,
+            "r": 249.8,
+            "b": 595.5
+          },
+          "heroRect": {
+            "x": 0,
+            "y": 64,
+            "w": 390,
+            "h": 737.4,
+            "r": 390,
+            "b": 801.4
+          },
+          "overlapsText": [],
+          "blocks": [
+            {
+              "sel": "[class*=heroCopy]",
+              "rect": {
+                "x": 16,
+                "y": 64,
+                "w": 358,
+                "h": 464.1,
+                "r": 374,
+                "b": 528.1
+              },
+              "inter": null
+            },
+            {
+              "sel": "h1",
+              "rect": {
+                "x": 16,
+                "y": 92,
+                "w": 358,
+                "h": 169,
+                "r": 374,
+                "b": 261
+              },
+              "inter": null
+            },
+            {
+              "sel": "form[role=search]",
+              "rect": {
+                "x": 16,
+                "y": 293,
+                "w": 358,
+                "h": 127.8,
+                "r": 374,
+                "b": 420.8
+              },
+              "inter": null
+            },
+            {
+              "sel": "[class*=searchField]",
+              "rect": {
+                "x": 16,
+                "y": 321.1,
+                "w": 358,
+                "h": 52,
+                "r": 374,
+                "b": 373.1
+              },
+              "inter": null
+            },
+            {
+              "sel": "[class*=hint]",
+              "rect": {
+                "x": 16,
+                "y": 383.1,
+                "w": 358,
+                "h": 37.7,
+                "r": 374,
+                "b": 420.8
+              },
+              "inter": null
+            },
+            {
+              "sel": "[class*=vehicleRow]",
+              "rect": {
+                "x": 16,
+                "y": 444.8,
+                "w": 358,
+                "h": 83.3,
+                "r": 374,
+                "b": 528.1
+              },
+              "inter": null
+            },
+            {
+              "sel": "[class*=titleBlock]",
+              "rendered": false
+            },
+            {
+              "sel": "[class*=stageStrip]",
+              "rect": {
+                "x": 16,
+                "y": 716.4,
+                "w": 358,
+                "h": 85,
+                "r": 374,
+                "b": 801.4
+              },
+              "inter": null
+            },
+            {
+              "sel": "header",
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "w": 390,
+                "h": 64,
+                "r": 390,
+                "b": 64
+              },
+              "inter": null
+            }
+          ],
+          "overlapsInteractive": []
+        },
+        "lang": "sr-Latn-RS",
+        "fontsLoaded": [
+          "displayExpanded 700 normal",
+          "displayCondensed 600 normal",
+          "Public Sans 100 900 normal",
+          "Public Sans 100 900 normal",
+          "Public Sans Fallback normal normal",
+          "Martian Mono 100 800 normal"
+        ],
+        "fontsNotLoaded": [
+          "Geist 100 900 normal [unloaded]",
+          "Geist 100 900 normal [unloaded]",
+          "Geist 100 900 normal [unloaded]",
+          "Geist 100 900 normal [unloaded]",
+          "Geist 100 900 normal [unloaded]",
+          "Geist Fallback normal normal [unloaded]",
+          "Geist Mono 100 900 normal [unloaded]",
+          "Geist Mono 100 900 normal [unloaded]",
+          "Geist Mono 100 900 normal [unloaded]",
+          "Geist Mono 100 900 normal [unloaded]",
+          "Geist Mono 100 900 normal [unloaded]",
+          "Geist Mono 100 900 normal [unloaded]",
+          "Geist Mono Fallback normal normal [unloaded]",
+          "displayExpanded 600 normal [unloaded]",
+          "displayExpanded Fallback normal normal [unloaded]",
+          "displayCondensed Fallback normal normal [unloaded]",
+          "Public Sans 100 900 normal [unloaded]",
+          "Martian Mono 100 800 normal [unloaded]",
+          "Martian Mono 100 800 normal [unloaded]",
+          "Martian Mono 100 800 normal [unloaded]",
+          "Martian Mono Fallback normal normal [unloaded]",
+          "__nextjs-Geist 400 600 normal [unloaded]",
+          "__nextjs-Geist Mono 400 600 normal [unloaded]",
+          "__nextjs-Geist 400 600 normal [unloaded]",
+          "__nextjs-Geist Mono 400 600 normal [unloaded]"
+        ],
+        "computedFamilies": {
+          "displayLine": "displayExpanded, \"displayExpanded Fallback\", Arial, sans-serif, Arial, sans-serif",
+          "displaySub": "\"Public Sans\", \"Public Sans Fallback\", system-ui, sans-serif",
+          "stageNum": "displayCondensed, \"displayCondensed Fallback\", \"Arial Narrow\", Arial, sans-serif, \"Arial Narrow\", sans-serif",
+          "calloutMeta": "\"Martian Mono\", \"Martian Mono Fallback\", ui-monospace, \"Cascadia Mono\", monospace",
+          "body": "Arial, Helvetica, sans-serif"
+        }
+      },
+      "platformFonts": {
+        "Archivo Expanded (web font)": {
+          "glyphs": 48,
+          "elements": 6
+        },
+        "Public Sans Thin (web font)": {
+          "glyphs": 1644,
+          "elements": 135
+        },
+        "Martian Mono SemiExpanded (web font)": {
+          "glyphs": 277,
+          "elements": 20
+        },
+        "Arial (SYSTEM)": {
+          "glyphs": 2,
+          "elements": 2
+        },
+        "Archivo Condensed SemiBold (web font)": {
+          "glyphs": 19,
+          "elements": 4
+        }
+      },
+      "systemFontGlyphs": [
+        {
+          "el": "a.calloutLink",
+          "text": "48 artikala na stanju",
+          "family": "Arial",
+          "glyphs": 1
+        },
+        {
+          "el": "span",
+          "text": "→",
+          "family": "Arial",
+          "glyphs": 1
+        }
+      ],
+      "stripBadgeAtTop": {
+        "scrollY": 0,
+        "strip": {
+          "x": 16,
+          "y": 716.4,
+          "w": 358,
+          "h": 85,
+          "r": 374,
+          "b": 801.4
+        },
+        "portalFound": true,
+        "fixed": [
+          {
+            "el": "div#devtools-indicator.nextjs-toast",
+            "data": "data-nextjs-toast=true",
+            "rect": {
+              "x": 20,
+              "y": 788,
+              "w": 36,
+              "h": 36,
+              "r": 56,
+              "b": 824
+            },
+            "text": "[data-next-badge-root]{--timing:cubic-b…"
+          }
+        ],
+        "intersections": [
+          {
+            "fixed": "div#devtools-indicator.nextjs-toast",
+            "data": "data-nextjs-toast=true",
+            "badgeRect": {
+              "x": 20,
+              "y": 788,
+              "w": 36,
+              "h": 36,
+              "r": 56,
+              "b": 824
+            },
+            "withStrip": {
+              "w": 36,
+              "h": 13.4,
+              "area": 482
+            },
+            "withParts": [],
+            "horizontalOverlapPx": 36
+          }
+        ]
+      },
+      "calloutShot": {
+        "scrollY": 0,
+        "clip": {
+          "x0": 0,
+          "y0": 269,
+          "x1": 390,
+          "y1": 655.5
+        }
+      },
+      "stripBadgeScrolled": {
+        "scrollY": 0,
+        "strip": {
+          "x": 16,
+          "y": 716.4,
+          "w": 358,
+          "h": 85,
+          "r": 374,
+          "b": 801.4
+        },
+        "portalFound": true,
+        "fixed": [
+          {
+            "el": "div#devtools-indicator.nextjs-toast",
+            "data": "data-nextjs-toast=true",
+            "rect": {
+              "x": 20,
+              "y": 788,
+              "w": 36,
+              "h": 36,
+              "r": 56,
+              "b": 824
+            },
+            "text": "[data-next-badge-root]{--timing:cubic-b…"
+          }
+        ],
+        "intersections": [
+          {
+            "fixed": "div#devtools-indicator.nextjs-toast",
+            "data": "data-nextjs-toast=true",
+            "badgeRect": {
+              "x": 20,
+              "y": 788,
+              "w": 36,
+              "h": 36,
+              "r": 56,
+              "b": 824
+            },
+            "withStrip": {
+              "w": 36,
+              "h": 13.4,
+              "area": 482
+            },
+            "withParts": [],
+            "horizontalOverlapPx": 36
+          }
+        ]
+      },
+      "console": [],
+      "liveDetector": [
+        {
+          "selector": "div.koncept-module__-kYEDq__vehicleRow > button.koncept-module__-kYEDq__secondaryButton",
+          "tag": "button",
+          "hidden": false,
+          "type": "cramped-padding",
+          "severity": "warning",
+          "advisory": false,
+          "detail": "0px vertical padding (need ≥4.5px for 15px text)"
+        },
+        {
+          "selector": "div.koncept-module__-kYEDq__callout",
+          "tag": "div",
+          "hidden": false,
+          "type": "gpt-thin-border-wide-shadow",
+          "severity": "advisory",
+          "advisory": false,
+          "detail": "1px border + 32px shadow blur"
+        },
+        {
+          "selector": "span.koncept-module__-kYEDq__sidebarTag",
+          "tag": "span",
+          "hidden": true,
+          "type": "undersized-ui-text",
+          "severity": "warning",
+          "advisory": false,
+          "detail": "10px functional text \"ADMIN\" (below 11px floor)"
+        },
+        {
+          "selector": "div.koncept-module__-kYEDq__tableWrap",
+          "tag": "div",
+          "hidden": false,
+          "type": "cramped-padding",
+          "severity": "warning",
+          "advisory": false,
+          "detail": "<div> \"koncept-module__-kYEDq__tableWrap\": children flush against border+bg on top/right/bottom (no inset)"
+        },
+        {
+          "selector": "tr.koncept-module__-kYEDq__rowSelected > td:nth-of-type(4) > div.koncept-module__-kYEDq__customer > span:nth-of-type(1) > span.koncept-module__-kYEDq__tag",
+          "tag": "span",
+          "hidden": false,
+          "type": "undersized-ui-text",
+          "severity": "warning",
+          "advisory": false,
+          "detail": "10.5px functional text \"Majstor\" (below 11px floor)"
+        },
+        {
+          "selector": "tr:nth-of-type(4) > td:nth-of-type(4) > div.koncept-module__-kYEDq__customer > span:nth-of-type(1) > span.koncept-module__-kYEDq__tag",
+          "tag": "span",
+          "hidden": false,
+          "type": "undersized-ui-text",
+          "severity": "warning",
+          "advisory": false,
+          "detail": "10.5px functional text \"Majstor\" (below 11px floor)"
+        },
+        {
+          "selector": "body",
+          "tag": "body",
+          "hidden": false,
+          "type": "gradient-text",
+          "severity": "warning",
+          "advisory": false,
+          "detail": "background-clip: text + gradient"
+        },
+        {
+          "selector": "body",
+          "tag": "body",
+          "hidden": false,
+          "type": "shape-assembled-illustration",
+          "severity": "advisory",
+          "advisory": false,
+          "detail": "inline <svg> scene: 28 primitive shapes, ~4950x1940px, 13 fill colors"
+        }
+      ]
+    },
+    "1440": {
+      "devToolsText": ":host { all: initial; /* the direction property is not reset by 'all' */ direction: ltr; } /*! * Bootstrap Reboot v4.4.1 (https://getbootstrap.com/) * Copyright 2011-2019 The Bootstrap Authors * Copyright 2011-2019 Twitter, Inc. * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LIC",
+      "main": {
+        "viewport": {
+          "innerWidth": 1440,
+          "innerHeight": 900,
+          "clientWidth": 1440,
+          "scrollWidth": 1440,
+          "bodyScrollWidth": 1440,
+          "scrollHeight": 2628,
+          "dpr": 1
+        },
+        "horizontalOverflow": false,
+        "beyondViewport": [
+          {
+            "el": "table.table",
+            "text": "BROJ PRIMLJENA KUPAC STAVKE IZNOS PLAĆA…",
+            "rect": {
+              "x": 290,
+              "y": 2110.8,
+              "w": 1221.7,
+              "h": 344,
+              "r": 1511.7,
+              "b": 2454.8
+            },
+            "clippedBy": "div.tableWrap (overflow-x:auto)",
+            "descendantsAlsoBeyond": 18
+          }
+        ],
+        "contrast": {
+          "checked": 212,
+          "fails": [
+            {
+              "el": "span.titleKey",
+              "text": "Prikaz",
+              "size": 10,
+              "weight": 400,
+              "color": "#6b6760",
+              "textAlpha": 1,
+              "bg": "#0d0f11",
+              "bgFrom": "div.variable.variable.variable",
+              "translucentLayers": 1,
+              "bgImageOn": null,
+              "ratio": 3.41,
+              "need": 4.5,
+              "pass": false,
+              "ariaHidden": true
+            },
+            {
+              "el": "span.titleKey",
+              "text": "Sistema",
+              "size": 10,
+              "weight": 400,
+              "color": "#6b6760",
+              "textAlpha": 1,
+              "bg": "#0d0f11",
+              "bgFrom": "div.variable.variable.variable",
+              "translucentLayers": 1,
+              "bgImageOn": null,
+              "ratio": 3.41,
+              "need": 4.5,
+              "pass": false,
+              "ariaHidden": true
+            },
+            {
+              "el": "span.titleKey",
+              "text": "Kategorija",
+              "size": 10,
+              "weight": 400,
+              "color": "#6b6760",
+              "textAlpha": 1,
+              "bg": "#0d0f11",
+              "bgFrom": "div.variable.variable.variable",
+              "translucentLayers": 1,
+              "bgImageOn": null,
+              "ratio": 3.41,
+              "need": 4.5,
+              "pass": false,
+              "ariaHidden": true
+            },
+            {
+              "el": "span.titleKey",
+              "text": "Mere",
+              "size": 10,
+              "weight": 400,
+              "color": "#6b6760",
+              "textAlpha": 1,
+              "bg": "#0d0f11",
+              "bgFrom": "div.variable.variable.variable",
+              "translucentLayers": 1,
+              "bgImageOn": null,
+              "ratio": 3.41,
+              "need": 4.5,
+              "pass": false,
+              "ariaHidden": true
+            },
+            {
+              "el": "span.tickLabel",
+              "text": "0",
+              "size": 10,
+              "weight": 400,
+              "color": "#6b6760",
+              "textAlpha": 1,
+              "bg": "#0d0f11",
+              "bgFrom": "div.variable.variable.variable",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 3.41,
+              "need": 4.5,
+              "pass": false,
+              "ariaHidden": true
+            },
+            {
+              "el": "span.tickLabel",
+              "text": "1.000",
+              "size": 10,
+              "weight": 400,
+              "color": "#6b6760",
+              "textAlpha": 1,
+              "bg": "#0d0f11",
+              "bgFrom": "div.variable.variable.variable",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 3.41,
+              "need": 4.5,
+              "pass": false,
+              "ariaHidden": true
+            },
+            {
+              "el": "span.tickLabel",
+              "text": "2.000",
+              "size": 10,
+              "weight": 400,
+              "color": "#6b6760",
+              "textAlpha": 1,
+              "bg": "#0d0f11",
+              "bgFrom": "div.variable.variable.variable",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 3.41,
+              "need": 4.5,
+              "pass": false,
+              "ariaHidden": true
+            },
+            {
+              "el": "span.tickLabel",
+              "text": "3.000",
+              "size": 10,
+              "weight": 400,
+              "color": "#6b6760",
+              "textAlpha": 1,
+              "bg": "#0d0f11",
+              "bgFrom": "div.variable.variable.variable",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 3.41,
+              "need": 4.5,
+              "pass": false,
+              "ariaHidden": true
+            },
+            {
+              "el": "span.tickLabel",
+              "text": "4.000",
+              "size": 10,
+              "weight": 400,
+              "color": "#6b6760",
+              "textAlpha": 1,
+              "bg": "#0d0f11",
+              "bgFrom": "div.variable.variable.variable",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 3.41,
+              "need": 4.5,
+              "pass": false,
+              "ariaHidden": true
+            }
+          ],
+          "lowestPassing": [
+            {
+              "el": "span.status.stDanger",
+              "text": "Otkazana",
+              "size": 12.5,
+              "weight": 600,
+              "color": "#c4303a",
+              "textAlpha": 1,
+              "bg": "#fbe4e5",
+              "bgFrom": "span.status.stDanger",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 4.52,
+              "need": 4.5,
+              "pass": true,
+              "ariaHidden": false
+            },
+            {
+              "el": "span.status.stNew",
+              "text": "Nova",
+              "size": 12.5,
+              "weight": 600,
+              "color": "#b8470a",
+              "textAlpha": 1,
+              "bg": "#ffeadd",
+              "bgFrom": "span.status.stNew",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 4.58,
+              "need": 4.5,
+              "pass": true,
+              "ariaHidden": false
+            },
+            {
+              "el": "span.status.stSuccess",
+              "text": "Isporučena",
+              "size": 12.5,
+              "weight": 600,
+              "color": "#1d7a4a",
+              "textAlpha": 1,
+              "bg": "#e3f4ea",
+              "bgFrom": "span.status.stSuccess",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 4.67,
+              "need": 4.5,
+              "pass": true,
+              "ariaHidden": false
+            },
+            {
+              "el": "span.calloutMeta",
+              "text": "Ø 312 × 25 mm · x 0,74 y 0,32 z 1,31",
+              "size": 11,
+              "weight": 400,
+              "color": "#969088",
+              "textAlpha": 1,
+              "bg": "#22272c",
+              "bgFrom": "div.variable.variable.variable",
+              "translucentLayers": 1,
+              "bgImageOn": null,
+              "ratio": 4.79,
+              "need": 4.5,
+              "pass": true,
+              "ariaHidden": false
+            },
+            {
+              "el": "span.dim",
+              "text": "11:42",
+              "size": 13.5,
+              "weight": 400,
+              "color": "#5d6570",
+              "textAlpha": 1,
+              "bg": "#ffeadd",
+              "bgFrom": "td.num",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 5.07,
+              "need": 4.5,
+              "pass": true,
+              "ariaHidden": false
+            },
+            {
+              "el": "span.customerSub",
+              "text": "Auto servis Stanković",
+              "size": 12,
+              "weight": 400,
+              "color": "#5d6570",
+              "textAlpha": 1,
+              "bg": "#ffeadd",
+              "bgFrom": "td",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 5.07,
+              "need": 4.5,
+              "pass": true,
+              "ariaHidden": false
+            },
+            {
+              "el": "td.dim",
+              "text": "Kurir",
+              "size": 13.5,
+              "weight": 400,
+              "color": "#5d6570",
+              "textAlpha": 1,
+              "bg": "#ffeadd",
+              "bgFrom": "td.dim",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 5.07,
+              "need": 4.5,
+              "pass": true,
+              "ariaHidden": false
+            },
+            {
+              "el": "td.dim",
+              "text": "Google Ads",
+              "size": 13.5,
+              "weight": 400,
+              "color": "#5d6570",
+              "textAlpha": 1,
+              "bg": "#ffeadd",
+              "bgFrom": "td.dim",
+              "translucentLayers": 0,
+              "bgImageOn": null,
+              "ratio": 5.07,
+              "need": 4.5,
+              "pass": true,
+              "ariaHidden": false
+            }
+          ],
+          "approxBgImage": [
+            "span.quality \"OEM kvalitet\" bgImageOn=div.thumb ratio=10.17",
+            "span.quality \"OEM kvalitet\" bgImageOn=div.thumb ratio=10.17",
+            "span.quality \"Original VAG\" bgImageOn=div.thumb ratio=10.17",
+            "span.quality \"Aftermarket\" bgImageOn=div.thumb ratio=10.17"
+          ]
+        },
+        "placeholders": [
+          {
+            "el": "input#q.searchInput",
+            "placeholder": "npr. 1K0 615 301 AA ili kočione pločice",
+            "phColor": "#969088",
+            "inputColor": "#f1ece3",
+            "bg": "#1c2025",
+            "size": 16,
+            "ratio": 5.18,
+            "pass": true
+          },
+          {
+            "el": "input",
+            "placeholder": "Broj, kupac, telefon, PIB",
+            "phColor": "#5d6570",
+            "inputColor": "#121518",
+            "bg": "#ffffff",
+            "size": 14,
+            "ratio": 5.9,
+            "pass": true
+          }
+        ],
+        "targets": {
+          "total": 50,
+          "under24": [
+            {
+              "el": "a.textLink",
+              "name": "Nemate broj? Pošaljite broj šasije",
+              "w": 230.9,
+              "h": 23.3,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.calloutLink",
+              "name": "48 artikala na stanju →",
+              "w": 285.1,
+              "h": 20.1,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a",
+              "name": "Turbina 2.0 TDI, sa dihtunzima",
+              "w": 223.5,
+              "h": 19,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": "318x491 via li.card",
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a",
+              "name": "Filter ulja, uložak sa zaptivkom",
+              "w": 228.1,
+              "h": 19,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": "318x491 via li.card",
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input[search]",
+              "name": "Pretraga porudžbina",
+              "w": 214,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": "260x36",
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi sve",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000187",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000187",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000186",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000186",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000185",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000185",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000184",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000184",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000183",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000183",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000182",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000182",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000181",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000181",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            }
+          ],
+          "under44": [
+            {
+              "el": "a.wordmark",
+              "name": "SKLOP — početna",
+              "w": 117.3,
+              "h": 27.9,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "a.navLink",
+              "name": "Delovi",
+              "w": 64.2,
+              "h": 40,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "a.navLink",
+              "name": "Vozila",
+              "w": 63.1,
+              "h": 40,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "a.navLink",
+              "name": "Za majstore",
+              "w": 101.8,
+              "h": 40,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "a.navLink",
+              "name": "Upit po broju šasije",
+              "w": 148.7,
+              "h": 40,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "a.textLink",
+              "name": "Nemate broj? Pošaljite broj šasije",
+              "w": 230.9,
+              "h": 23.3,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.calloutLink",
+              "name": "48 artikala na stanju →",
+              "w": 285.1,
+              "h": 20.1,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a",
+              "name": "Kočioni disk prednji, Ø 312 mm, ven…",
+              "w": 231.1,
+              "h": 39.8,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": "318x491 via li.card",
+              "wrappingLabel": null
+            },
+            {
+              "el": "a",
+              "name": "Kočione pločice prednje, set za 2 t…",
+              "w": 242.7,
+              "h": 39.8,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": "318x491 via li.card",
+              "wrappingLabel": null
+            },
+            {
+              "el": "a",
+              "name": "Turbina 2.0 TDI, sa dihtunzima",
+              "w": 223.5,
+              "h": 19,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": "318x491 via li.card",
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a",
+              "name": "Filter ulja, uložak sa zaptivkom",
+              "w": 228.1,
+              "h": 19,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": "318x491 via li.card",
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.sideLink",
+              "name": "Pregled",
+              "w": 191,
+              "h": 36,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "a.sideLink.sideLinkActive",
+              "name": "Porudžbine 1",
+              "w": 191,
+              "h": 36,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "a.sideLink",
+              "name": "Upiti 2",
+              "w": 191,
+              "h": 36,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "a.sideLink",
+              "name": "Proizvodi",
+              "w": 191,
+              "h": 36,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "a.sideLink",
+              "name": "Uvoz iz Excela",
+              "w": 191,
+              "h": 36,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "a.sideLink",
+              "name": "Majstori 1",
+              "w": 191,
+              "h": 36,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "button.pButton",
+              "name": "Izvoz CSV",
+              "w": 114.1,
+              "h": 36,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "button.pButton.pButtonPrimary",
+              "name": "Potvrdi izabrane",
+              "w": 132.7,
+              "h": 36,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "button.tab.tabActive",
+              "name": "Sve 187",
+              "w": 76,
+              "h": 28,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "button.tab",
+              "name": "Nove 1",
+              "w": 66,
+              "h": 28,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "button.tab",
+              "name": "Za slanje 2",
+              "w": 90.3,
+              "h": 28,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "button.tab",
+              "name": "Čeka deo 1",
+              "w": 91.5,
+              "h": 28,
+              "under24": false,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null
+            },
+            {
+              "el": "input[search]",
+              "name": "Pretraga porudžbina",
+              "w": 214,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": "260x36",
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi sve",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000187",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000187",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000186",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000186",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000185",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000185",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000184",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000184",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000183",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000183",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000182",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000182",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "input.checkbox[checkbox]",
+              "name": "Izaberi SK-2026-000181",
+              "w": 16,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            },
+            {
+              "el": "a.orderNo",
+              "name": "SK-2026-000181",
+              "w": 124.3,
+              "h": 16,
+              "under24": true,
+              "under44": true,
+              "afterOverlay": null,
+              "wrappingLabel": null,
+              "spacingException": "passes (24px circle clear)"
+            }
+          ]
+        },
+        "smallText": [
+          {
+            "el": "span.count",
+            "size": 11,
+            "count": 1,
+            "samples": [
+              "2"
+            ],
+            "ariaHidden": true
+          },
+          {
+            "el": "span.titleKey",
+            "size": 10,
+            "count": 4,
+            "samples": [
+              "Prikaz",
+              "Sistema",
+              "Kategorija",
+              "Mere"
+            ],
+            "ariaHidden": true
+          },
+          {
+            "el": "span.dimLabel",
+            "size": 11,
+            "count": 2,
+            "samples": [
+              "2.620",
+              "4.280"
+            ],
+            "ariaHidden": true
+          },
+          {
+            "el": "span.dimLabel.dimLabelVertical",
+            "size": 11,
+            "count": 1,
+            "samples": [
+              "1.450"
+            ],
+            "ariaHidden": true
+          },
+          {
+            "el": "span.tickLabel",
+            "size": 10,
+            "count": 5,
+            "samples": [
+              "0",
+              "1.000",
+              "2.000",
+              "3.000"
+            ],
+            "ariaHidden": true
+          },
+          {
+            "el": "span.calloutMeta",
+            "size": 11,
+            "count": 1,
+            "samples": [
+              "Ø 312 × 25 mm · x 0,74 y 0,…"
+            ],
+            "ariaHidden": false
+          },
+          {
+            "el": "span.demoNote",
+            "size": 11,
+            "count": 2,
+            "samples": [
+              "Primer podataka · demo",
+              "Primer podataka · demo"
+            ],
+            "ariaHidden": false
+          },
+          {
+            "el": "span.sidebarTag",
+            "size": 10,
+            "count": 1,
+            "samples": [
+              "ADMIN"
+            ],
+            "ariaHidden": false
+          },
+          {
+            "el": "th",
+            "size": 11,
+            "count": 7,
+            "samples": [
+              "Broj",
+              "Primljena",
+              "Kupac",
+              "Plaćanje"
+            ],
+            "ariaHidden": false
+          },
+          {
+            "el": "th.num",
+            "size": 11,
+            "count": 2,
+            "samples": [
+              "Stavke",
+              "Iznos"
+            ],
+            "ariaHidden": false
+          },
+          {
+            "el": "span.tag",
+            "size": 10.5,
+            "count": 2,
+            "samples": [
+              "Majstor",
+              "Majstor"
+            ],
+            "ariaHidden": false
+          }
+        ],
+        "callout": {
+          "el": "div.callout",
+          "rect": {
+            "x": 511.5,
+            "y": 255.5,
+            "w": 311.1,
+            "h": 87.8,
+            "r": 822.6,
+            "b": 343.3
+          },
+          "heroRect": {
+            "x": 0,
+            "y": 64,
+            "w": 1440,
+            "h": 836,
+            "r": 1440,
+            "b": 900
+          },
+          "overlapsText": [
+            {
+              "el": "span.displayLine",
+              "text": "Nađi deo.",
+              "inter": {
+                "w": 56.5,
+                "h": 39.5,
+                "area": 2232
+              }
+            }
+          ],
+          "blocks": [
+            {
+              "sel": "[class*=heroCopy]",
+              "rect": {
+                "x": 48,
+                "y": 64,
+                "w": 520,
+                "h": 561.2,
+                "r": 568,
+                "b": 625.2
+              },
+              "inter": {
+                "w": 56.5,
+                "h": 87.8,
+                "area": 4961
+              }
+            },
+            {
+              "sel": "h1",
+              "rect": {
+                "x": 48,
+                "y": 127,
+                "w": 520,
+                "h": 246,
+                "r": 568,
+                "b": 373
+              },
+              "inter": {
+                "w": 56.5,
+                "h": 87.8,
+                "area": 4961
+              }
+            },
+            {
+              "sel": "form[role=search]",
+              "rect": {
+                "x": 48,
+                "y": 405,
+                "w": 520,
+                "h": 113,
+                "r": 568,
+                "b": 518
+              },
+              "inter": null
+            },
+            {
+              "sel": "[class*=searchField]",
+              "rect": {
+                "x": 48,
+                "y": 433.1,
+                "w": 520,
+                "h": 56,
+                "r": 568,
+                "b": 489.1
+              },
+              "inter": null
+            },
+            {
+              "sel": "[class*=hint]",
+              "rect": {
+                "x": 48,
+                "y": 499.1,
+                "w": 520,
+                "h": 18.8,
+                "r": 568,
+                "b": 518
+              },
+              "inter": null
+            },
+            {
+              "sel": "[class*=vehicleRow]",
+              "rect": {
+                "x": 48,
+                "y": 542,
+                "w": 520,
+                "h": 83.3,
+                "r": 568,
+                "b": 625.2
+              },
+              "inter": null
+            },
+            {
+              "sel": "[class*=titleBlock]",
+              "rect": {
+                "x": 1085.3,
+                "y": 96,
+                "w": 306.7,
+                "h": 95.4,
+                "r": 1392,
+                "b": 191.4
+              },
+              "inter": null
+            },
+            {
+              "sel": "[class*=stageStrip]",
+              "rect": {
+                "x": 48,
+                "y": 807.5,
+                "w": 1344,
+                "h": 92.5,
+                "r": 1392,
+                "b": 900
+              },
+              "inter": null
+            },
+            {
+              "sel": "header",
+              "rect": {
+                "x": 0,
+                "y": 0,
+                "w": 1440,
+                "h": 64,
+                "r": 1440,
+                "b": 64
+              },
+              "inter": null
+            }
+          ],
+          "overlapsInteractive": []
+        },
+        "lang": "sr-Latn-RS",
+        "fontsLoaded": [
+          "displayExpanded 700 normal",
+          "displayCondensed 600 normal",
+          "Public Sans 100 900 normal",
+          "Public Sans 100 900 normal",
+          "Public Sans Fallback normal normal",
+          "Martian Mono 100 800 normal"
+        ],
+        "fontsNotLoaded": [
+          "Geist 100 900 normal [unloaded]",
+          "Geist 100 900 normal [unloaded]",
+          "Geist 100 900 normal [unloaded]",
+          "Geist 100 900 normal [unloaded]",
+          "Geist 100 900 normal [unloaded]",
+          "Geist Fallback normal normal [unloaded]",
+          "Geist Mono 100 900 normal [unloaded]",
+          "Geist Mono 100 900 normal [unloaded]",
+          "Geist Mono 100 900 normal [unloaded]",
+          "Geist Mono 100 900 normal [unloaded]",
+          "Geist Mono 100 900 normal [unloaded]",
+          "Geist Mono 100 900 normal [unloaded]",
+          "Geist Mono Fallback normal normal [unloaded]",
+          "displayExpanded 600 normal [unloaded]",
+          "displayExpanded Fallback normal normal [unloaded]",
+          "displayCondensed Fallback normal normal [unloaded]",
+          "Public Sans 100 900 normal [unloaded]",
+          "Martian Mono 100 800 normal [unloaded]",
+          "Martian Mono 100 800 normal [unloaded]",
+          "Martian Mono 100 800 normal [unloaded]",
+          "Martian Mono Fallback normal normal [unloaded]",
+          "__nextjs-Geist 400 600 normal [unloaded]",
+          "__nextjs-Geist Mono 400 600 normal [unloaded]",
+          "__nextjs-Geist 400 600 normal [unloaded]",
+          "__nextjs-Geist Mono 400 600 normal [unloaded]"
+        ],
+        "computedFamilies": {
+          "displayLine": "displayExpanded, \"displayExpanded Fallback\", Arial, sans-serif, Arial, sans-serif",
+          "displaySub": "\"Public Sans\", \"Public Sans Fallback\", system-ui, sans-serif",
+          "stageNum": "displayCondensed, \"displayCondensed Fallback\", \"Arial Narrow\", Arial, sans-serif, \"Arial Narrow\", sans-serif",
+          "calloutMeta": "\"Martian Mono\", \"Martian Mono Fallback\", ui-monospace, \"Cascadia Mono\", monospace",
+          "body": "Arial, Helvetica, sans-serif"
+        }
+      },
+      "platformFonts": {
+        "Archivo Expanded (web font)": {
+          "glyphs": 53,
+          "elements": 7
+        },
+        "Public Sans Thin (web font)": {
+          "glyphs": 1999,
+          "elements": 169
+        },
+        "Martian Mono SemiExpanded (web font)": {
+          "glyphs": 377,
+          "elements": 35
+        },
+        "Arial (SYSTEM)": {
+          "glyphs": 2,
+          "elements": 2
+        },
+        "Archivo Condensed SemiBold (web font)": {
+          "glyphs": 51,
+          "elements": 20
+        }
+      },
+      "systemFontGlyphs": [
+        {
+          "el": "a.calloutLink",
+          "text": "48 artikala na stanju",
+          "family": "Arial",
+          "glyphs": 1
+        },
+        {
+          "el": "span",
+          "text": "→",
+          "family": "Arial",
+          "glyphs": 1
+        }
+      ],
+      "stripBadgeAtTop": {
+        "scrollY": 0,
+        "strip": {
+          "x": 48,
+          "y": 807.5,
+          "w": 1344,
+          "h": 92.5,
+          "r": 1392,
+          "b": 900
+        },
+        "portalFound": true,
+        "fixed": [
+          {
+            "el": "div#devtools-indicator.nextjs-toast",
+            "data": "data-nextjs-toast=true",
+            "rect": {
+              "x": 20,
+              "y": 844,
+              "w": 36,
+              "h": 36,
+              "r": 56,
+              "b": 880
+            },
+            "text": "[data-next-badge-root]{--timing:cubic-b…"
+          }
+        ],
+        "intersections": [
+          {
+            "fixed": "div#devtools-indicator.nextjs-toast",
+            "data": "data-nextjs-toast=true",
+            "badgeRect": {
+              "x": 20,
+              "y": 844,
+              "w": 36,
+              "h": 36,
+              "r": 56,
+              "b": 880
+            },
+            "withStrip": {
+              "w": 8,
+              "h": 36,
+              "area": 288
+            },
+            "withParts": [
+              {
+                "el": "li.stageItem.stageItemActive",
+                "text": "00 Sklopljeno",
+                "inter": {
+                  "w": 8,
+                  "h": 36,
+                  "area": 288
+                }
+              }
+            ],
+            "horizontalOverlapPx": 8
+          }
+        ]
+      },
+      "calloutShot": {
+        "scrollY": 0,
+        "clip": {
+          "x0": 24,
+          "y0": 231.5,
+          "x1": 846.6,
+          "y1": 578
+        }
+      },
+      "stripBadgeScrolled": {
+        "scrollY": 0,
+        "strip": {
+          "x": 48,
+          "y": 807.5,
+          "w": 1344,
+          "h": 92.5,
+          "r": 1392,
+          "b": 900
+        },
+        "portalFound": true,
+        "fixed": [
+          {
+            "el": "div#devtools-indicator.nextjs-toast",
+            "data": "data-nextjs-toast=true",
+            "rect": {
+              "x": 20,
+              "y": 844,
+              "w": 36,
+              "h": 36,
+              "r": 56,
+              "b": 880
+            },
+            "text": "[data-next-badge-root]{--timing:cubic-b…"
+          }
+        ],
+        "intersections": [
+          {
+            "fixed": "div#devtools-indicator.nextjs-toast",
+            "data": "data-nextjs-toast=true",
+            "badgeRect": {
+              "x": 20,
+              "y": 844,
+              "w": 36,
+              "h": 36,
+              "r": 56,
+              "b": 880
+            },
+            "withStrip": {
+              "w": 8,
+              "h": 36,
+              "area": 288
+            },
+            "withParts": [
+              {
+                "el": "li.stageItem.stageItemActive",
+                "text": "00 Sklopljeno",
+                "inter": {
+                  "w": 8,
+                  "h": 36,
+                  "area": 288
+                }
+              }
+            ],
+            "horizontalOverlapPx": 8
+          }
+        ]
+      },
+      "keyboard": [
+        {
+          "step": 1,
+          "role": "link",
+          "name": "SKLOP — početna",
+          "el": "a.wordmark",
+          "hosts": [],
+          "text": "SKLOP",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.74,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 48,
+            "y": 17.5,
+            "w": 117.3,
+            "h": 27.9,
+            "r": 165.3,
+            "b": 45.4
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 2,
+          "role": "link",
+          "name": "Delovi",
+          "el": "a.navLink",
+          "hosts": [],
+          "text": "Delovi",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.74,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 197.3,
+            "y": 11.5,
+            "w": 64.2,
+            "h": 40,
+            "r": 261.5,
+            "b": 51.5
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 3,
+          "role": "link",
+          "name": "Vozila",
+          "el": "a.navLink",
+          "hosts": [],
+          "text": "Vozila",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.74,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 265.5,
+            "y": 11.5,
+            "w": 63.1,
+            "h": 40,
+            "r": 328.6,
+            "b": 51.5
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 4,
+          "role": "link",
+          "name": "Za majstore",
+          "el": "a.navLink",
+          "hosts": [],
+          "text": "Za majstore",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.74,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 332.6,
+            "y": 11.5,
+            "w": 101.8,
+            "h": 40,
+            "r": 434.4,
+            "b": 51.5
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 5,
+          "role": "link",
+          "name": "Upit po broju šasije",
+          "el": "a.navLink",
+          "hosts": [],
+          "text": "Upit po broju šasije",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.74,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 438.4,
+            "y": 11.5,
+            "w": 148.7,
+            "h": 40,
+            "r": 587.1,
+            "b": 51.5
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 6,
+          "role": "button",
+          "name": "Nalog",
+          "el": "button.iconButton",
+          "hosts": [],
+          "text": "",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.74,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 1296,
+            "y": 9.5,
+            "w": 44,
+            "h": 44,
+            "r": 1340,
+            "b": 53.5
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 7,
+          "role": "button",
+          "name": "Korpa, 2 artikla",
+          "el": "button.iconButton",
+          "hosts": [],
+          "text": "2",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.74,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 1348,
+            "y": 9.5,
+            "w": 44,
+            "h": 44,
+            "r": 1392,
+            "b": 53.5
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 8,
+          "role": "searchbox",
+          "name": "Broj dela ili naziv",
+          "el": "input#q.searchInput",
+          "hosts": [],
+          "text": "",
+          "outline": "none 3px #f1ece3 off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": false,
+          "indicatorContrastVsParentBg": null,
+          "focusWithinAncestors": [
+            {
+              "el": "div.searchField",
+              "boxShadow": "rgb(255, 107, 26) 0px 0px 0px 1px",
+              "outline": "none 3px",
+              "borderColor": "#ff6b1a"
+            }
+          ],
+          "rect": {
+            "x": 85,
+            "y": 434.1,
+            "w": 386.6,
+            "h": 54,
+            "r": 471.6,
+            "b": 488.1
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 9,
+          "role": "button",
+          "name": "Pretraži",
+          "el": "button.primaryButton",
+          "hosts": [],
+          "text": "Pretraži",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 5.75,
+          "focusWithinAncestors": [
+            {
+              "el": "div.searchField",
+              "boxShadow": "rgb(255, 107, 26) 0px 0px 0px 1px",
+              "outline": "none 3px",
+              "borderColor": "#ff6b1a"
+            }
+          ],
+          "rect": {
+            "x": 471.6,
+            "y": 434.1,
+            "w": 95.4,
+            "h": 54,
+            "r": 567,
+            "b": 488.1
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 10,
+          "role": "button",
+          "name": "Izaberite vozilo marka, model, motor",
+          "el": "button.secondaryButton",
+          "hosts": [],
+          "text": "Izaberite vozilo marka, model, motor",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.74,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 48,
+            "y": 542,
+            "w": 343.3,
+            "h": 48,
+            "r": 391.3,
+            "b": 590
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 11,
+          "role": "link",
+          "name": "Nemate broj? Pošaljite broj šasije",
+          "el": "a.textLink",
+          "hosts": [],
+          "text": "Nemate broj? Pošaljite broj šasije",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.74,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 48,
+            "y": 602,
+            "w": 230.9,
+            "h": 23.3,
+            "r": 278.9,
+            "b": 625.2
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 12,
+          "role": "link",
+          "name": "48 artikala na stanju",
+          "el": "a.calloutLink",
+          "hosts": [],
+          "text": "48 artikala na stanju →",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 5.31,
+          "focusWithinAncestors": [
+            {
+              "el": "div.callout",
+              "boxShadow": "rgba(0, 0, 0, 0.8) 0px 12px 32px -16px",
+              "outline": "none 3px",
+              "borderColor": "#434a52"
+            }
+          ],
+          "rect": {
+            "x": 524.5,
+            "y": 311.1,
+            "w": 285.1,
+            "h": 20.1,
+            "r": 809.6,
+            "b": 331.3
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 13,
+          "role": "button",
+          "name": "Rasklopi",
+          "el": "button.secondaryButton",
+          "hosts": [],
+          "text": "Rasklopi",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.74,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 1116.4,
+            "y": 828.2,
+            "w": 122.1,
+            "h": 48,
+            "r": 1238.4,
+            "b": 876.2
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 14,
+          "role": "button",
+          "name": "Lista delova",
+          "el": "button.secondaryButton",
+          "hosts": [],
+          "text": "Lista delova",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.74,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 1246.4,
+            "y": 828.2,
+            "w": 145.6,
+            "h": 48,
+            "r": 1392,
+            "b": 876.2
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 15,
+          "role": "link",
+          "name": "Kočioni disk prednji, Ø 312 mm, ventilirani",
+          "el": "a",
+          "hosts": [],
+          "text": "Kočioni disk prednji, Ø 312 mm, ven…",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.19,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 65,
+            "y": 430,
+            "w": 231.1,
+            "h": 39.8,
+            "r": 296.1,
+            "b": 469.8
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 16,
+          "role": "button",
+          "name": "U korpu",
+          "el": "button.cardButton",
+          "hosts": [],
+          "text": "U korpu",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.19,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 241.8,
+            "y": 582.7,
+            "w": 107.2,
+            "h": 44,
+            "r": 349,
+            "b": 626.7
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 17,
+          "role": "link",
+          "name": "Kočione pločice prednje, set za 2 točka",
+          "el": "a",
+          "hosts": [],
+          "text": "Kočione pločice prednje, set za 2 t…",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.19,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 407,
+            "y": 430,
+            "w": 242.7,
+            "h": 39.8,
+            "r": 649.7,
+            "b": 469.8
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 18,
+          "role": "button",
+          "name": "U korpu",
+          "el": "button.cardButton",
+          "hosts": [],
+          "text": "U korpu",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.19,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 583.8,
+            "y": 582.7,
+            "w": 107.2,
+            "h": 44,
+            "r": 691,
+            "b": 626.7
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 19,
+          "role": "link",
+          "name": "Turbina 2.0 TDI, sa dihtunzima",
+          "el": "a",
+          "hosts": [],
+          "text": "Turbina 2.0 TDI, sa dihtunzima",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.19,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 749,
+            "y": 430,
+            "w": 223.5,
+            "h": 19,
+            "r": 972.5,
+            "b": 449
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 20,
+          "role": "button",
+          "name": "Poruči",
+          "el": "button.cardButton",
+          "hosts": [],
+          "text": "Poruči",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.19,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 935,
+            "y": 582.7,
+            "w": 98,
+            "h": 44,
+            "r": 1033,
+            "b": 626.7
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 21,
+          "role": "link",
+          "name": "Filter ulja, uložak sa zaptivkom",
+          "el": "a",
+          "hosts": [],
+          "text": "Filter ulja, uložak sa zaptivkom",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.19,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 1091,
+            "y": 430,
+            "w": 228.1,
+            "h": 19,
+            "r": 1319.1,
+            "b": 449
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 22,
+          "role": "button",
+          "name": "Javi mi kad stigne",
+          "el": "button.cardButton.cardButtonGhost",
+          "hosts": [],
+          "text": "Javi mi kad stigne",
+          "outline": "solid 2px #ff6b1a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 6.19,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 1275.8,
+            "y": 582.7,
+            "w": 99.2,
+            "h": 44,
+            "r": 1375,
+            "b": 626.7
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 23,
+          "role": "link",
+          "name": "Pregled",
+          "el": "a.sideLink",
+          "hosts": [],
+          "text": "Pregled",
+          "outline": "solid 2px #b8470a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 3.61,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 61,
+            "y": 431.8,
+            "w": 191,
+            "h": 36,
+            "r": 252,
+            "b": 467.8
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 24,
+          "role": "link",
+          "name": "Porudžbine 1",
+          "el": "a.sideLink.sideLinkActive",
+          "hosts": [],
+          "text": "Porudžbine 1",
+          "outline": "solid 2px #b8470a off 2px",
+          "boxShadow": "rgb(255, 107, 26) 2px 0px 0px 0px inset",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 3.61,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 61,
+            "y": 469.8,
+            "w": 191,
+            "h": 36,
+            "r": 252,
+            "b": 505.8
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        },
+        {
+          "step": 25,
+          "role": "link",
+          "name": "Upiti 2",
+          "el": "a.sideLink",
+          "hosts": [],
+          "text": "Upiti 2",
+          "outline": "solid 2px #b8470a off 2px",
+          "boxShadow": "none",
+          "focusVisible": true,
+          "indicatorOnElement": true,
+          "indicatorContrastVsParentBg": 3.61,
+          "focusWithinAncestors": [],
+          "rect": {
+            "x": 61,
+            "y": 507.8,
+            "w": 191,
+            "h": 36,
+            "r": 252,
+            "b": 543.8
+          },
+          "inViewport": true,
+          "underStickyHeader": false,
+          "coveredAtCenterBy": null
+        }
+      ],
+      "console": [],
+      "liveDetector": [
+        {
+          "selector": "div.koncept-module__-kYEDq__vehicleRow > button.koncept-module__-kYEDq__secondaryButton",
+          "tag": "button",
+          "hidden": false,
+          "type": "cramped-padding",
+          "severity": "warning",
+          "advisory": false,
+          "detail": "0px vertical padding (need ≥4.5px for 15px text)"
+        },
+        {
+          "selector": "div.koncept-module__-kYEDq__callout",
+          "tag": "div",
+          "hidden": false,
+          "type": "gpt-thin-border-wide-shadow",
+          "severity": "advisory",
+          "advisory": false,
+          "detail": "1px border + 32px shadow blur"
+        },
+        {
+          "selector": "span.koncept-module__-kYEDq__sidebarTag",
+          "tag": "span",
+          "hidden": false,
+          "type": "undersized-ui-text",
+          "severity": "warning",
+          "advisory": false,
+          "detail": "10px functional text \"ADMIN\" (below 11px floor)"
+        },
+        {
+          "selector": "div.koncept-module__-kYEDq__tableWrap",
+          "tag": "div",
+          "hidden": false,
+          "type": "cramped-padding",
+          "severity": "warning",
+          "advisory": false,
+          "detail": "<div> \"koncept-module__-kYEDq__tableWrap\": children flush against border+bg on top/right/bottom (no inset)"
+        },
+        {
+          "selector": "tr.koncept-module__-kYEDq__rowSelected > td:nth-of-type(4) > div.koncept-module__-kYEDq__customer > span:nth-of-type(1) > span.koncept-module__-kYEDq__tag",
+          "tag": "span",
+          "hidden": false,
+          "type": "undersized-ui-text",
+          "severity": "warning",
+          "advisory": false,
+          "detail": "10.5px functional text \"Majstor\" (below 11px floor)"
+        },
+        {
+          "selector": "tr:nth-of-type(4) > td:nth-of-type(4) > div.koncept-module__-kYEDq__customer > span:nth-of-type(1) > span.koncept-module__-kYEDq__tag",
+          "tag": "span",
+          "hidden": false,
+          "type": "undersized-ui-text",
+          "severity": "warning",
+          "advisory": false,
+          "detail": "10.5px functional text \"Majstor\" (below 11px floor)"
+        },
+        {
+          "selector": "span.koncept-module__-kYEDq__displayLine:nth-of-type(3)",
+          "tag": "span",
+          "hidden": false,
+          "type": "text-occlusion",
+          "severity": "warning",
+          "advisory": false,
+          "detail": "span.koncept-module__-kYEDq__displayLine \"Nađi deo.\" overhangs div.koncept-module__-kYEDq__callout by 57px — the headline and the card collide"
+        },
+        {
+          "selector": "body",
+          "tag": "body",
+          "hidden": false,
+          "type": "gradient-text",
+          "severity": "warning",
+          "advisory": false,
+          "detail": "background-clip: text + gradient"
+        },
+        {
+          "selector": "body",
+          "tag": "body",
+          "hidden": false,
+          "type": "shape-assembled-illustration",
+          "severity": "advisory",
+          "advisory": false,
+          "detail": "inline <svg> scene: 28 primitive shapes, ~4950x1940px, 13 fill colors"
+        }
+      ]
+    }
+  }
+}

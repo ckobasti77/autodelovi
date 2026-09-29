@@ -12,6 +12,11 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendored agent tooling and generated code (not project source).
+    ".claude/**",
+    ".agents/**",
+    "pipeline/**",
+    "convex/_generated/**",
   ]),
 ]);
 
