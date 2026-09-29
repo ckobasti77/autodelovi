@@ -1,0 +1,11 @@
+/* Styleguide-only helpers. */
+
+/* Shows the focus ring statically so it can be reviewed in screenshots. */
+.forceFocus :is(button, a, input) {
+  outline: var(--focus-width) solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.forceFocus :global(.focus-ring-inverse) {
+  outline-color: var(--color-focus-inverse);
+}

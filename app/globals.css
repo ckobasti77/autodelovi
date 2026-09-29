@@ -1,26 +1,780 @@
+/*
+ * SKLOP design tokens — Tailwind v4.
+ * Source of truth: docs/design/DESIGN-SYSTEM.md (§3 colour, §4 type, §5 layout, §8 motion) and
+ * docs/design/tokens.json. Components use these tokens only; Tailwind's default palette, type
+ * scale, radii, shadows and eases are reset below so a raw colour cannot sneak in.
+ *
+ * Themes: night (storefront) on :root, paper (admin, e-mail previews) on [data-theme="paper"].
+ * Utilities reference the variables (`bg-surface-1` → var(--color-surface-1)), so a subtree
+ * switches theme by setting data-theme.
+ */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@source not "../docs";
+@source not "../pipeline";
+@source not "../.claude";
+@source not "../.agents";
+@source not "../3d";
+@source not "../scripts";
+@source not "../tests";
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@custom-variant paper (&:where([data-theme="paper"], [data-theme="paper"] *));
+@custom-variant reduced-transparency (@media (prefers-reduced-transparency: reduce));
+@custom-variant hover-hover (@media (hover: hover) and (pointer: fine));
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme {
+  --color-*: initial;
+  --font-*: initial;
+  --text-*: initial;
+  --radius-*: initial;
+  --shadow-*: initial;
+  --inset-shadow-*: initial;
+  --drop-shadow-*: initial;
+  --text-shadow-*: initial;
+  --ease-*: initial;
+  --animate-*: initial;
+  --breakpoint-*: initial;
+  --blur-*: initial;
+
+  /* ── Colour: night (storefront) ─────────────────────────────── */
+  --color-bg: #0d0f11;
+  --color-bg-raised: #121518;
+  --color-surface-1: #16191d;
+  --color-surface-2: #1c2025;
+  --color-surface-3: #23282e;
+  --color-surface-4: #2b3138;
+  --color-selected: #2a1a12;
+  --color-line-faint: #1e2227;
+  --color-line: #2c3238;
+  --color-line-strong: #434a52;
+  --color-control: #6e767f;
+  --color-ink-1: #f1ece3;
+  --color-ink-2: #c4beb4;
+  --color-ink-3: #969088;
+  --color-ink-4: #6b6760;
+  --color-accent: #ff6b1a;
+  --color-accent-hover: #ff8a4a;
+  --color-accent-active: #e95e0e;
+  --color-accent-text: #ff6b1a;
+  --color-on-accent: #0d0f11;
+  --color-accent-subtle: #2a1a12;
+  /* Edge of accent-filled controls: ≥ 3:1 against the surface in both themes. */
+  --color-accent-edge: #ff6b1a;
+  --color-success: #4fd18b;
+  --color-success-subtle: #152620;
+  --color-warning: #f4c04a;
+  --color-warning-subtle: #292418;
+  --color-danger: #ff6166;
+  --color-danger-subtle: #2a191b;
+  --color-info: #9db8d0;
+  --color-info-subtle: #1e2328;
+  --color-rim: #9fe9ff;
+  --color-rim-soft: #4db5d6;
+  --color-rim-deep: #123642;
+  --color-scrim: rgb(7 8 10 / 0.72);
+  /* Semantic helpers (theme-dependent): focus ring, ring on accent fills, overlay edge. */
+  --color-focus: #ff6b1a;
+  --color-focus-inverse: #f1ece3;
+  --color-edge-overlay: #434a52;
+
+  /* ── Fonts (next/font variables are --nf-*; see lib/fonts.ts) ── */
+  --font-sans: var(--nf-ui), "Public Sans", Arial, sans-serif;
+  --font-ui: var(--nf-ui), "Public Sans", Arial, sans-serif;
+  --font-display: var(--nf-display), Arial, sans-serif;
+  --font-display-600: var(--nf-display-600), Arial, sans-serif;
+  --font-condensed: var(--nf-condensed), "Arial Narrow", Arial, sans-serif;
+  --font-mono: var(--nf-mono), ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  /* ── Type scale (fluid 360 → 1440 px; §4.3) ───────────────── */
+  --text-display-xl: clamp(2.25rem, 1.833rem + 1.852vw, 4rem);
+  --text-display-xl--line-height: 1;
+  --text-display-xl--letter-spacing: 0.005em;
+  --text-display-l: clamp(1.75rem, 1.5rem + 1.111vw, 2.75rem);
+  --text-display-l--line-height: 1.04;
+  --text-display-l--letter-spacing: 0.005em;
+  --text-display-m: clamp(1.25rem, 1.125rem + 0.556vw, 1.625rem);
+  --text-display-m--line-height: 1.1;
+  --text-display-m--letter-spacing: 0.02em;
+  --text-numeral-xl: clamp(2.5rem, 2rem + 2.222vw, 4rem);
+  --text-numeral-xl--line-height: 0.9;
+  --text-numeral-xl--letter-spacing: 0.005em;
+  --text-numeral-l: clamp(1.875rem, 1.667rem + 0.926vw, 2.5rem);
+  --text-numeral-l--line-height: 1;
+  --text-numeral-l--letter-spacing: 0.005em;
+  --text-numeral-m: clamp(1.375rem, 1.292rem + 0.37vw, 1.625rem);
+  --text-numeral-m--line-height: 1;
+  --text-numeral-m--letter-spacing: 0.005em;
+  --text-numeral-s: clamp(1.125rem, 1.083rem + 0.185vw, 1.25rem);
+  --text-numeral-s--line-height: 1;
+  --text-numeral-s--letter-spacing: 0.01em;
+  --text-h1: clamp(1.625rem, 1.417rem + 0.926vw, 2.25rem);
+  --text-h1--line-height: 1.15;
+  --text-h1--letter-spacing: -0.015em;
+  --text-h1--font-weight: 650;
+  --text-h2: clamp(1.375rem, 1.25rem + 0.556vw, 1.75rem);
+  --text-h2--line-height: 1.2;
+  --text-h2--letter-spacing: -0.01em;
+  --text-h2--font-weight: 650;
+  --text-h3: clamp(1.125rem, 1.083rem + 0.185vw, 1.25rem);
+  --text-h3--line-height: 1.3;
+  --text-h3--letter-spacing: -0.005em;
+  --text-h3--font-weight: 600;
+  --text-h4: 1rem;
+  --text-h4--line-height: 1.35;
+  --text-h4--font-weight: 600;
+  --text-lead: clamp(1.125rem, 1.083rem + 0.185vw, 1.25rem);
+  --text-lead--line-height: 1.5;
+  --text-body: 1rem;
+  --text-body--line-height: 1.55;
+  --text-body-s: 0.875rem;
+  --text-body-s--line-height: 1.5;
+  --text-body-s--letter-spacing: 0.003em;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.4;
+  --text-caption--letter-spacing: 0.005em;
+  --text-caption--font-weight: 500;
+  --text-caption-s: 0.75rem;
+  --text-caption-s--line-height: 1.35;
+  --text-caption-s--letter-spacing: 0.005em;
+  --text-caption-s--font-weight: 500;
+  --text-button: 0.9375rem;
+  --text-button--line-height: 1;
+  --text-button--font-weight: 600;
+  --text-button-s: 0.875rem;
+  --text-button-s--line-height: 1;
+  --text-button-s--font-weight: 600;
+  --text-label: 0.6875rem;
+  --text-label--line-height: 1.2;
+  --text-label--letter-spacing: 0.06em;
+  --text-label--font-weight: 600;
+  --text-label-l: 0.75rem;
+  --text-label-l--line-height: 1.2;
+  --text-label-l--letter-spacing: 0.06em;
+  --text-label-l--font-weight: 600;
+  --text-code-l: 1rem;
+  --text-code-l--line-height: 1.5;
+  --text-code-l--letter-spacing: 0.01em;
+  --text-code-l--font-weight: 500;
+  --text-code: 0.8125rem;
+  --text-code--line-height: 1.5;
+  --text-code--letter-spacing: 0.01em;
+  --text-code-s: 0.6875rem;
+  --text-code-s--line-height: 1.3;
+  --text-code-s--letter-spacing: 0.04em;
+  --text-cell: 0.84375rem;
+  --text-cell--line-height: 1.4;
+
+  /* ── Layout ──────────────────────────────────────────────── */
+  --breakpoint-sm: 30rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+  --breakpoint-3xl: 120rem;
+  --container-content: 1440px;
+  --container-reading: 720px;
+  --container-admin: 1680px;
+
+  /* ── Shape and elevation (§5.3, §5.5) ─────────────────────── */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-full: 999px;
+  /* Night commits to edges: overlay shadows resolve to nothing; paper overrides them. */
+  --shadow-overlay: 0 0 #0000;
+  --shadow-drawer: 0 0 #0000;
+  --shadow-paper-3: 0 1px 2px rgb(18 21 24 / 0.1), 0 8px 24px -6px rgb(18 21 24 / 0.18);
+  --shadow-paper-4: 0 24px 64px -16px rgb(18 21 24 / 0.28);
+  --blur-header: 12px;
+
+  /* ── Motion (§8.2–8.3, mirrored in constants/motion.ts) ────── */
+  --ease-sk-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-sk-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-sk-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-sk-snap: cubic-bezier(0.2, 0, 0, 1);
+  --ease-linear: linear;
+  --default-transition-duration: 80ms;
+  --default-transition-timing-function: linear;
+
+  --animate-spin: sk-spin 800ms linear infinite;
+  --animate-shimmer: sk-shimmer 1.6s linear infinite;
+
+  @keyframes sk-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes sk-shimmer {
+    from {
+      background-position: 130% 0;
+    }
+    to {
+      background-position: -30% 0;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Non-theme variables (layout rhythm, z-index, durations) ─── */
+:root {
+  --margin: clamp(16px, 4vw, 48px);
+  --gutter: clamp(16px, 1.7vw, 24px);
+  --pad: max(var(--margin), calc((100% - 1440px) / 2));
+  --space-section: clamp(4rem, 2.667rem + 5.926vw, 8rem);
+  --header-h: 56px;
+  --focus-width: 2px;
+
+  --z-base: 0;
+  --z-raised: 10;
+  --z-sticky: 20;
+  --z-header: 30;
+  --z-dropdown: 40;
+  --z-overlay: 50;
+  --z-drawer: 60;
+  --z-dialog: 70;
+  --z-toast: 80;
+  --z-tooltip: 90;
+  --z-skip: 100;
+
+  --dur-instant: 80ms;
+  --dur-quick: 140ms;
+  --dur-base: 220ms;
+  --dur-panel: 360ms;
+  --dur-panel-exit: 240ms;
+  --dur-stage: 600ms;
+  --dur-camera: 900ms;
+  --dur-reveal: 620ms;
+}
+
+@media (width >= 64rem) {
+  :root {
+    --header-h: 64px;
+  }
+}
+
+@media (width >= 120rem) {
+  :root {
+    --gutter: 32px;
+  }
+}
+
+/* ── Paper theme (admin work area, e-mail previews) ──────────── */
+[data-theme="paper"] {
+  color-scheme: light;
+  --color-bg: #f3f4f5;
+  --color-bg-raised: #ffffff;
+  --color-surface-1: #ffffff;
+  --color-surface-2: #f7f8f9;
+  --color-surface-3: #ffffff;
+  --color-surface-4: #eef1f4;
+  --color-selected: #eef1f4;
+  --color-line-faint: #e8eaed;
+  --color-line: #dadde1;
+  --color-line-strong: #bec3c9;
+  --color-control: #838b94;
+  --color-ink-1: #121518;
+  --color-ink-2: #3d444c;
+  --color-ink-3: #5d6570;
+  --color-ink-4: #9aa1aa;
+  --color-accent: #ff6b1a;
+  --color-accent-hover: #ff8a4a;
+  --color-accent-active: #e95e0e;
+  --color-accent-text: #b8470a;
+  --color-on-accent: #121518;
+  --color-accent-subtle: #ffeadd;
+  --color-accent-edge: #b8470a;
+  --color-success: #1d7a4a;
+  --color-success-subtle: #e3f4ea;
+  --color-warning: #8c5b00;
+  --color-warning-subtle: #fbf0d9;
+  --color-danger: #c4303a;
+  --color-danger-subtle: #fbe4e5;
+  --color-info: #3a5f80;
+  --color-info-subtle: #e5edf4;
+  --color-scrim: rgb(18 21 24 / 0.4);
+  --color-focus: #b8470a;
+  --color-focus-inverse: #121518;
+  --color-edge-overlay: transparent;
+  --shadow-overlay: var(--shadow-paper-3);
+  --shadow-drawer: var(--shadow-paper-4);
+  background-color: var(--color-bg);
+  color: var(--color-ink-1);
+}
+
+/* Night subtree inside paper (admin sidebar). */
+[data-theme="night"] {
+  color-scheme: dark;
+  --color-bg: #0d0f11;
+  --color-bg-raised: #121518;
+  --color-surface-1: #16191d;
+  --color-surface-2: #1c2025;
+  --color-surface-3: #23282e;
+  --color-surface-4: #2b3138;
+  --color-selected: #2a1a12;
+  --color-line-faint: #1e2227;
+  --color-line: #2c3238;
+  --color-line-strong: #434a52;
+  --color-control: #6e767f;
+  --color-ink-1: #f1ece3;
+  --color-ink-2: #c4beb4;
+  --color-ink-3: #969088;
+  --color-ink-4: #6b6760;
+  --color-accent-text: #ff6b1a;
+  --color-on-accent: #0d0f11;
+  --color-accent-subtle: #2a1a12;
+  --color-accent-edge: #ff6b1a;
+  --color-success: #4fd18b;
+  --color-success-subtle: #152620;
+  --color-warning: #f4c04a;
+  --color-warning-subtle: #292418;
+  --color-danger: #ff6166;
+  --color-danger-subtle: #2a191b;
+  --color-info: #9db8d0;
+  --color-info-subtle: #1e2328;
+  --color-scrim: rgb(7 8 10 / 0.72);
+  --color-focus: #ff6b1a;
+  --color-focus-inverse: #f1ece3;
+  --color-edge-overlay: #434a52;
+  --shadow-overlay: 0 0 #0000;
+  --shadow-drawer: 0 0 #0000;
+  color: var(--color-ink-1);
+}
+
+/* ── Accessibility preferences (§8.7) ────────────────────────── */
+@media (prefers-contrast: more) {
+  :root,
+  [data-theme="night"] {
+    --color-line: #434a52;
+    --color-ink-3: #c4beb4;
+    --focus-width: 3px;
+  }
+  [data-theme="paper"] {
+    --color-line: #bec3c9;
+    --color-ink-3: #3d444c;
+    --focus-width: 3px;
+  }
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    background-color: var(--color-bg);
+    color: var(--color-ink-1);
+    font-family: var(--font-sans);
+    scroll-padding-top: 80px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    scrollbar-color: var(--color-line-strong) transparent;
+    accent-color: var(--color-accent);
+  }
+
+  body {
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    caret-color: var(--color-accent);
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+  [data-theme="paper"] ::selection {
+    background-color: var(--color-accent-subtle);
+    color: var(--color-ink-1);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+  p,
+  li,
+  dd,
+  figcaption,
+  blockquote {
+    text-wrap: pretty;
+  }
+  body {
+    hyphens: manual;
+  }
+
+  :focus-visible {
+    outline: var(--focus-width) solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+  }
+
+  input,
+  textarea,
+  select {
+    caret-color: var(--color-accent);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-ink-3);
+    opacity: 1;
+  }
+
+  [hidden]:where(:not([hidden="until-found"])) {
+    display: none !important;
+  }
+
+  code,
+  kbd,
+  samp {
+    font-family: var(--font-mono);
+  }
+
+  @media print {
+    :root,
+    [data-theme] {
+      color-scheme: light;
+      --color-bg: #ffffff;
+      --color-surface-1: #ffffff;
+      --color-ink-1: #141414;
+      --color-ink-2: #4a4a4a;
+      --color-ink-3: #4a4a4a;
+      --color-line: #bdbdbd;
+    }
+  }
+}
+
+/* ── Type styles (family + size + weight + case together; §4.3–4.4) ── */
+@utility type-display-xl {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-display-xl);
+  line-height: var(--text-display-xl--line-height);
+  letter-spacing: var(--text-display-xl--letter-spacing);
+  text-transform: uppercase;
+}
+@utility type-display-l {
+  font-family: var(--font-display-600);
+  font-weight: 600;
+  font-size: var(--text-display-l);
+  line-height: var(--text-display-l--line-height);
+  letter-spacing: var(--text-display-l--letter-spacing);
+  text-transform: uppercase;
+}
+@utility type-display-m {
+  font-family: var(--font-display-600);
+  font-weight: 600;
+  font-size: var(--text-display-m);
+  line-height: var(--text-display-m--line-height);
+  letter-spacing: var(--text-display-m--letter-spacing);
+  text-transform: uppercase;
+}
+@utility type-numeral-xl {
+  font-family: var(--font-condensed);
+  font-weight: 600;
+  font-size: var(--text-numeral-xl);
+  line-height: var(--text-numeral-xl--line-height);
+  letter-spacing: var(--text-numeral-xl--letter-spacing);
+  font-variant-numeric: tabular-nums;
+}
+@utility type-numeral-l {
+  font-family: var(--font-condensed);
+  font-weight: 600;
+  font-size: var(--text-numeral-l);
+  line-height: var(--text-numeral-l--line-height);
+  letter-spacing: var(--text-numeral-l--letter-spacing);
+  font-variant-numeric: tabular-nums;
+}
+@utility type-numeral-m {
+  font-family: var(--font-condensed);
+  font-weight: 600;
+  font-size: var(--text-numeral-m);
+  line-height: var(--text-numeral-m--line-height);
+  letter-spacing: var(--text-numeral-m--letter-spacing);
+  font-variant-numeric: tabular-nums;
+}
+@utility type-numeral-s {
+  font-family: var(--font-condensed);
+  font-weight: 600;
+  font-size: var(--text-numeral-s);
+  line-height: var(--text-numeral-s--line-height);
+  letter-spacing: var(--text-numeral-s--letter-spacing);
+  font-variant-numeric: tabular-nums;
+}
+@utility type-h1 {
+  font-family: var(--font-ui);
+  font-size: var(--text-h1);
+  font-weight: 650;
+  line-height: var(--text-h1--line-height);
+  letter-spacing: var(--text-h1--letter-spacing);
+}
+@utility type-h2 {
+  font-family: var(--font-ui);
+  font-size: var(--text-h2);
+  font-weight: 650;
+  line-height: var(--text-h2--line-height);
+  letter-spacing: var(--text-h2--letter-spacing);
+}
+@utility type-h3 {
+  font-family: var(--font-ui);
+  font-size: var(--text-h3);
+  font-weight: 600;
+  line-height: var(--text-h3--line-height);
+  letter-spacing: var(--text-h3--letter-spacing);
+}
+@utility type-h4 {
+  font-family: var(--font-ui);
+  font-size: var(--text-h4);
+  font-weight: 600;
+  line-height: var(--text-h4--line-height);
+}
+@utility type-lead {
+  font-family: var(--font-ui);
+  font-size: var(--text-lead);
+  font-weight: 400;
+  line-height: var(--text-lead--line-height);
+}
+@utility type-body {
+  font-family: var(--font-ui);
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: var(--text-body--line-height);
+}
+@utility type-body-s {
+  font-family: var(--font-ui);
+  font-size: var(--text-body-s);
+  font-weight: 400;
+  line-height: var(--text-body-s--line-height);
+  letter-spacing: var(--text-body-s--letter-spacing);
+}
+@utility type-caption {
+  font-family: var(--font-ui);
+  font-size: var(--text-caption);
+  font-weight: 500;
+  line-height: var(--text-caption--line-height);
+  letter-spacing: var(--text-caption--letter-spacing);
+}
+@utility type-caption-s {
+  font-family: var(--font-ui);
+  font-size: var(--text-caption-s);
+  font-weight: 500;
+  line-height: var(--text-caption-s--line-height);
+  letter-spacing: var(--text-caption-s--letter-spacing);
+}
+@utility type-button {
+  font-family: var(--font-ui);
+  font-size: var(--text-button);
+  font-weight: 600;
+  line-height: 1;
+}
+@utility type-button-s {
+  font-family: var(--font-ui);
+  font-size: var(--text-button-s);
+  font-weight: 600;
+  line-height: 1;
+}
+@utility type-label {
+  font-family: var(--font-ui);
+  font-size: var(--text-label);
+  font-weight: 600;
+  line-height: var(--text-label--line-height);
+  letter-spacing: var(--text-label--letter-spacing);
+  text-transform: uppercase;
+}
+@utility type-label-l {
+  font-family: var(--font-ui);
+  font-size: var(--text-label-l);
+  font-weight: 600;
+  line-height: var(--text-label-l--line-height);
+  letter-spacing: var(--text-label-l--letter-spacing);
+  text-transform: uppercase;
+}
+@utility type-code-l {
+  font-family: var(--font-mono);
+  font-size: var(--text-code-l);
+  font-weight: 500;
+  line-height: var(--text-code-l--line-height);
+  letter-spacing: var(--text-code-l--letter-spacing);
+}
+@utility type-code {
+  font-family: var(--font-mono);
+  font-size: var(--text-code);
+  font-weight: 400;
+  line-height: var(--text-code--line-height);
+  letter-spacing: var(--text-code--letter-spacing);
+}
+@utility type-code-s {
+  font-family: var(--font-mono);
+  font-size: var(--text-code-s);
+  font-weight: 400;
+  line-height: var(--text-code-s--line-height);
+  letter-spacing: var(--text-code-s--letter-spacing);
+  text-transform: uppercase;
+}
+@utility type-wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* ── Layout utilities ────────────────────────────────────────── */
+@utility px-page {
+  padding-inline: var(--pad);
+}
+@utility py-section {
+  padding-block: var(--space-section);
+}
+@utility gap-gutter {
+  gap: var(--gutter);
+}
+@utility h-header {
+  height: var(--header-h);
+}
+@utility top-header {
+  top: var(--header-h);
+}
+
+/* ── Z-index scale (§5.6) ───────────────────────────────────── */
+@utility z-raised {
+  z-index: var(--z-raised);
+}
+@utility z-sticky {
+  z-index: var(--z-sticky);
+}
+@utility z-header {
+  z-index: var(--z-header);
+}
+@utility z-dropdown {
+  z-index: var(--z-dropdown);
+}
+@utility z-overlay {
+  z-index: var(--z-overlay);
+}
+@utility z-drawer {
+  z-index: var(--z-drawer);
+}
+@utility z-dialog {
+  z-index: var(--z-dialog);
+}
+@utility z-toast {
+  z-index: var(--z-toast);
+}
+@utility z-tooltip {
+  z-index: var(--z-tooltip);
+}
+@utility z-skip {
+  z-index: var(--z-skip);
+}
+
+/* ── Durations (§8.2) for CSS state transitions (hover/press only) ── */
+@utility dur-instant {
+  transition-duration: var(--dur-instant);
+}
+@utility dur-quick {
+  transition-duration: var(--dur-quick);
+}
+@utility dur-base {
+  transition-duration: var(--dur-base);
+}
+
+/* Focus ring variants: on accent fills the ring is ink (§9 conventions); inside tables it is inset. */
+@utility focus-ring-inverse {
+  &:focus-visible {
+    outline-color: var(--color-focus-inverse);
+  }
+}
+@utility focus-ring-inset {
+  &:focus-visible {
+    outline-offset: calc(var(--focus-width) * -1);
+  }
+}
+
+/* Skeleton block with the §8.5 shimmer (static under reduced motion). */
+@utility skeleton {
+  background-color: var(--color-surface-2);
+  background-image: linear-gradient(
+    90deg,
+    var(--color-surface-2) 0%,
+    var(--color-surface-3) 50%,
+    var(--color-surface-2) 100%
+  );
+  background-size: 30% 100%;
+  background-repeat: no-repeat;
+  animation: var(--animate-shimmer);
+  border-radius: var(--radius-xs);
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    background-image: none;
+  }
+}
+
+/* Corner ticks — 14 px L-shapes marking a drawing area (§5.7). */
+@utility corner-ticks {
+  --tick: 14px;
+  --tick-color: var(--color-line-strong);
+  background:
+    linear-gradient(var(--tick-color), var(--tick-color)) top left / var(--tick) 1px no-repeat,
+    linear-gradient(var(--tick-color), var(--tick-color)) top left / 1px var(--tick) no-repeat,
+    linear-gradient(var(--tick-color), var(--tick-color)) top right / var(--tick) 1px no-repeat,
+    linear-gradient(var(--tick-color), var(--tick-color)) top right / 1px var(--tick) no-repeat,
+    linear-gradient(var(--tick-color), var(--tick-color)) bottom left / var(--tick) 1px no-repeat,
+    linear-gradient(var(--tick-color), var(--tick-color)) bottom left / 1px var(--tick) no-repeat,
+    linear-gradient(var(--tick-color), var(--tick-color)) bottom right / var(--tick) 1px no-repeat,
+    linear-gradient(var(--tick-color), var(--tick-color)) bottom right / 1px var(--tick) no-repeat;
+}
+
+/* Links in running text (§8.5): underline line-strong → accent. */
+@utility link-underline {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--color-line-strong);
+  transition:
+    text-decoration-color var(--dur-instant) linear,
+    color var(--dur-instant) linear;
+  &:hover {
+    text-decoration-color: var(--color-accent);
+  }
+}
+
+/* Control transitions (§8.5): colours 80 ms linear, press 140 ms sk.snap. CSS handles these
+   state changes; entrances/exits and anything choreographed use GSAP. */
+@utility transition-control {
+  transition:
+    color var(--dur-instant) linear,
+    background-color var(--dur-instant) linear,
+    border-color var(--dur-instant) linear,
+    box-shadow var(--dur-instant) linear,
+    text-decoration-color var(--dur-instant) linear,
+    transform var(--dur-quick) var(--ease-sk-snap);
+}
+
+/* Horizontal scroller with edge fade (tabs, segmented filters). */
+@utility scroll-fade-x {
+  overflow-x: auto;
+  scrollbar-width: none;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 16px,
+    #000 calc(100% - 16px),
+    transparent 100%
+  );
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

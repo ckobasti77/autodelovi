@@ -37,7 +37,7 @@ Oznake: **[P0]** potrebno pre puštanja uživo · **[P1]** potrebno u prvim nede
 - [ ] **[P0]** Obrazac za odustanak od ugovora (14 dana od prijema robe).
 - [ ] **[P1]** Rokovi čuvanja podataka (porudžbine 10 godina, upiti 2 godine, logovi pretrage 180 dana…) — potvrditi sa računovođom i pravnikom.
 - [ ] **[P1]** Da li je potrebna evidencija radnji obrade (izuzetak za < 250 zaposlenih ima izuzetke).
-- [ ] **[P2]** Tekst odricanja o korišćenju naziva VW/Audi/Škoda/SEAT/Cupra (nominativna upotreba).
+- [ ] **[P1]** Tekst odricanja o korišćenju naziva VW/Audi/Škoda/SEAT/Cupra (nominativna upotreba) — nacrt je od koraka 04 u podnožju sajta: „Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.“ Pravnik da potvrdi ili izmeni.
 
 ## 4. E-mail (Resend)
 - [ ] **[P0]** Nalog na Resend-u, verifikovan domen (SPF, DKIM, DMARC), `RESEND_API_KEY`, `RESEND_WEBHOOK_SECRET`, adresa pošiljaoca (`EMAIL_FROM`).
@@ -60,11 +60,13 @@ Oznake: **[P0]** potrebno pre puštanja uživo · **[P1]** potrebno u prvim nede
 
 ## 7. Puštanje uživo (detalji u `docs/GO-LIVE.md`, korak 23)
 - [ ] **[P0]** Domen i DNS; Vercel projekat; Convex produkcija i promenljive okruženja.
+- [ ] **[P0]** Upisati adresu sajta u `NEXT_PUBLIC_SITE_URL` (npr. `https://www.domen.rs`) — koristi se za kanonske adrese i slike za deljenje; do tada sajt koristi `http://localhost:3000`.
+- [ ] **[P1]** Dok podešavanja u adminu ne postoje, kontakt se može privremeno upisati kao promenljive okruženja: `NEXT_PUBLIC_CONTACT_PHONE`, `NEXT_PUBLIC_CONTACT_VIBER`, `NEXT_PUBLIC_CONTACT_WHATSAPP`, `NEXT_PUBLIC_CONTACT_EMAIL`. Prazno polje = kanal se ne prikazuje (Viber se prikazuje samo ako je upisan poseban Viber broj).
 - [ ] **[P0]** Nalog vlasnika (lozinka iz `pipeline/env/ADMIN-CREDENTIALS.txt` se menja pri prvoj prijavi).
 - [ ] **[P1]** Raspored backupa baze (Convex export).
 
 ## 8. Dizajn i brend (korak 03)
-- [ ] **[P1]** Pogledati vizuelni pravac „Rendgen“ na `/lab/koncept` (od koraka 04 na `/styleguide`) i potvrditi: tamna prodavnica, jedna narandžasta boja (#FF6B1A) za akcije i izbor, svetla radna površina u adminu. Obrazloženje je u `docs/design/DESIGN-SYSTEM.md`.
+- [ ] **[P1]** Pogledati vizuelni pravac „Rendgen“ na `/styleguide` (stara adresa `/lab/koncept` preusmerava tamo) i potvrditi: tamna prodavnica, jedna narandžasta boja (#FF6B1A) za akcije i izbor, svetla radna površina u adminu. Obrazloženje je u `docs/design/DESIGN-SYSTEM.md`.
 - [ ] **[P1]** Konačan naziv prodavnice: tipografski logo se menja iz podešavanja; znak „izvučen deo“ (osnova sa ležištem i narandžasti deo izvučen iz nje) ne zavisi od naziva — javiti ako želite drugačiji znak.
 - [ ] **[P2]** Kratki saveti u oblačićima 3D prikaza, po kategoriji (primer: „Pre zamene proverite broj na kućištu turbine.“) — pregledati i dopuniti iskustvom iz radnje.
 - [ ] **[P2]** Rok slanja za poruku „Šaljemo danas ako poručite do …“ — prikazuje se samo ako se unese u podešavanjima; potvrditi da li to želite i do kog sata.

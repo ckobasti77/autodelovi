@@ -10,6 +10,7 @@ Business intent: [`pipeline/BRIEF.md`](../pipeline/BRIEF.md) (wins for intent). 
 | [3D-CONTRACT.md](3D-CONTRACT.md) | Frozen taxonomy, node naming, axes, manifest schema, budgets, choreography, loading, interactions | §F |
 | [DESIGN-BRIEF.md](DESIGN-BRIEF.md) | Constraints and north star for the design system | §H |
 | [design/DESIGN-SYSTEM.md](design/DESIGN-SYSTEM.md) | **Design system „Rendgen“** (step 03): concept, brand, colour tokens + computed contrast table, typography, layout, icons/imagery, 3D art direction, motion + text reveal, components, page blueprints, Serbian microcopy, a11y checklist. Companions: [design/tokens.json](design/tokens.json), [design/design-dna.json](design/design-dna.json), [design/CRITIQUE.md](design/CRITIQUE.md); repo-root `PRODUCT.md` / `DESIGN.md` (impeccable records) | — |
+| [../.claude/rules/architecture.md](../.claude/rules/architecture.md) | **Rules that are easy to break** (step 04): the site-wide Text Reveal contract (files, selectors, hydration guard, fallbacks, acceptance checks), GSAP import/motion rules, token rules. Live reference: `/styleguide` (noindex). Foundation inventory: [ARCHITECTURE §G12](ARCHITECTURE.md) | — |
 | [NOTIFICATIONS.md](NOTIFICATIONS.md) | Outbox → dispatcher → channels, e-mail modes, event matrix, crons | §I |
 | [SEO-ADS.md](SEO-ADS.md) | Metadata, JSON-LD, sitemaps, landings guard, consent, event map, attribution, feeds, CWV budgets | §J |
 | [IMPORT.md](IMPORT.md) | Excel/CSV import pipeline, synonyms, validation, rollback, templates, exports | §K |
