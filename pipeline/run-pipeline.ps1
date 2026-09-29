@@ -417,7 +417,7 @@ function New-RunResult {
     ResultObj = $null; ResultText = ''; PlanText = ''; LastText = ''
     IsError = $false; Subtype = ''; NumTurns = 0; CostUsd = 0.0; DurationMs = 0; Denials = 0
     ToolCalls = 0; Lines = 0; Killed = $false; KillReason = ''; ExitCode = $null; Stderr = ''
-    SlashCommands = @(); Skills = @(); RequestedMode = ''
+    SlashCommands = @(); Skills = @(); RequestedMode = ''; PlanFile = ''
   }
 }
 
@@ -476,6 +476,10 @@ function Invoke-StreamLine {
         if ($tn -eq 'ExitPlanMode') {
           $plan = [string](Get-Prop (Get-Prop $b 'input' $null) 'plan' '')
           if ($plan.Length -gt $Res.PlanText.Length) { $Res.PlanText = $plan }
+        }
+        if ($tn -eq 'Write' -or $tn -eq 'Edit' -or $tn -eq 'MultiEdit') {
+          $fp = [string](Get-Prop (Get-Prop $b 'input' $null) 'file_path' '')
+          if ($fp -match '[\\/]\.claude[\\/]plans[\\/][^\\/]+\.md$') { $Res.PlanFile = $fp }
         }
         Write-Activity ('> ' + (Get-ToolSummary $b))
       } elseif ($bt -eq 'text') {
@@ -875,6 +879,13 @@ function Complete-Step {
   $id = [string]$Step.id
   $st = Get-StepState $id
   $text = [string]$Run.ResultText
+  if ($Run.PlanFile -and (Test-Path $Run.PlanFile)) {
+    # plan mode keeps the plan in its own plan file; prefer it when it is longer than what came back in the final message
+    try {
+      $pf = Read-TextFile $Run.PlanFile
+      if ($pf.Length -gt $Run.PlanText.Length) { $Run.PlanText = $pf }
+    } catch { }
+  }
   if ($Run.PlanText -and ($Run.PlanText.Length -gt 200) -and -not $text.Contains($Run.PlanText.Substring(0, 200))) {
     $text = $Run.PlanText + [Environment]::NewLine + [Environment]::NewLine + '---' + [Environment]::NewLine + [Environment]::NewLine + $text
   }
