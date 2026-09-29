@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# SKLOP pipeline
+pipeline/logs/
+pipeline/state.json
+pipeline/env/
+pipeline/STATUS.md
+*.blend1
+test-results/
+playwright-report/
+3d/renders/

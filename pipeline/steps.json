@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "project": "SKLOP auto delovi",
+  "model": "opus",
+  "modelLabel": "Opus 5.5",
+  "defaults": {
+    "timeoutMinutes": 360,
+    "stallMinutes": 90,
+    "maxRetries": 3
+  },
+  "steps": [
+    { "id": "01", "slug": "master-plan",       "title": "Master plan (arhitektura, baza, rute, 3D ugovor, SEO/oglasi)", "mode": "plan", "effort": "max",       "session": "new",        "prompt": "prompts/01-master-plan.md",          "saveResultTo": "docs/plans/01-master-plan.md", "timeoutMinutes": 180 },
+    { "id": "02", "slug": "docs",              "title": "Plan u docs/ + pravila projekta u CLAUDE.md",                  "mode": "auto", "effort": "high",      "session": "resume:01",  "prompt": "prompts/02-docs-and-conventions.md", "timeoutMinutes": 120 },
+    { "id": "03", "slug": "design-system",     "title": "Dizajn pravac i design system",                                "mode": "auto", "effort": "max",       "session": "new",        "prompt": "prompts/03-design-direction.md",     "timeoutMinutes": 300 },
+    { "id": "04", "slug": "frontend-foundation","title": "Frontend temelj: tokeni, fontovi, UI kit, Text Reveal, GSAP", "mode": "auto", "effort": "xhigh",     "session": "resume:03",  "prompt": "prompts/04-frontend-foundation.md" },
+    { "id": "05", "slug": "backend",           "title": "Convex backend: šema, uloge, katalog, porudžbine, seed",        "mode": "auto", "effort": "xhigh",     "session": "new",        "prompt": "prompts/05-backend-foundation.md" },
+    { "id": "06", "slug": "backend-goal",      "title": "Backend mora da prođe sve provere",                            "mode": "goal", "effort": "xhigh",     "session": "resume:05",  "goal": "prompts/06-backend.goal.txt" },
+    { "id": "07", "slug": "3d-plan",           "title": "3D plan za Blender",                                           "mode": "plan", "effort": "max",       "session": "new",        "prompt": "prompts/07-3d-plan.md",              "saveResultTo": "docs/plans/07-3d-plan.md", "timeoutMinutes": 180 },
+    { "id": "08", "slug": "3d-build",          "title": "3D auto u Blenderu + GLB + posteri + thumbnailovi",            "mode": "auto", "effort": "max",       "session": "resume:07",  "prompt": "prompts/08-3d-build.md",             "timeoutMinutes": 540, "stallMinutes": 120 },
+    { "id": "09", "slug": "3d-quality-goal",   "title": "3D kvalitet do kraja",                                         "mode": "goal", "effort": "max",       "session": "resume:08",  "goal": "prompts/09-3d-quality.goal.txt",       "timeoutMinutes": 420, "stallMinutes": 120 },
+    { "id": "10", "slug": "3d-web",            "title": "3D na sajtu: rasklapanje na skrol, klik na deo",               "mode": "auto", "effort": "max",       "session": "new",        "prompt": "prompts/10-3d-web.md",               "timeoutMinutes": 420 },
+    { "id": "11", "slug": "3d-web-goal",       "title": "3D na sajtu mora da prođe testove i Lighthouse",               "mode": "goal", "effort": "xhigh",     "session": "resume:10",  "goal": "prompts/11-3d-web.goal.txt" },
+    { "id": "12", "slug": "storefront",        "title": "Prodavnica: stranice, pretraga, korpa, porudžbina, VIN upit",  "mode": "auto", "effort": "xhigh",     "session": "new",        "prompt": "prompts/12-storefront.md",           "timeoutMinutes": 480 },
+    { "id": "13", "slug": "storefront-goal",   "title": "Prodavnica mora da prođe testove",                             "mode": "goal", "effort": "xhigh",     "session": "resume:12",  "goal": "prompts/13-storefront.goal.txt" },
+    { "id": "14", "slug": "mechanics",         "title": "Portal za majstore (rabat, brza porudžbina)",                  "mode": "auto", "effort": "xhigh",     "session": "new",        "prompt": "prompts/14-mechanics-portal.md" },
+    { "id": "15", "slug": "admin",             "title": "Admin panel",                                                  "mode": "auto", "effort": "xhigh",     "session": "new",        "prompt": "prompts/15-admin-panel.md",          "timeoutMinutes": 480 },
+    { "id": "16", "slug": "excel-import",      "title": "Excel uvoz i izvoz",                                           "mode": "auto", "effort": "xhigh",     "session": "resume:15",  "prompt": "prompts/16-excel-import.md" },
+    { "id": "17", "slug": "admin-import-goal", "title": "Admin + uvoz moraju da prođu testove",                          "mode": "goal", "effort": "xhigh",     "session": "resume:16",  "goal": "prompts/17-admin-import.goal.txt" },
+    { "id": "18", "slug": "notifications",     "title": "Obaveštenja, mejlovi, automatizacija",                         "mode": "auto", "effort": "xhigh",     "session": "new",        "prompt": "prompts/18-notifications.md" },
+    { "id": "19", "slug": "seo-ads",           "title": "SEO + Google/Meta oglasi + analitika + feedovi",               "mode": "auto", "effort": "xhigh",     "session": "new",        "prompt": "prompts/19-seo-ads.md" },
+    { "id": "20", "slug": "security",          "title": "Bezbednost i Convex audit",                                    "mode": "auto", "effort": "xhigh",     "session": "new",        "prompt": "prompts/20-security.md" },
+    { "id": "21", "slug": "qa-audit",          "title": "Veliki QA audit (više agenata paralelno)",                     "mode": "auto", "effort": "ultracode", "session": "new",        "prompt": "prompts/21-qa-audit.md",             "timeoutMinutes": 420, "stallMinutes": 150 },
+    { "id": "22", "slug": "qa-fix-goal",       "title": "Popravi sve iz audita",                                        "mode": "goal", "effort": "xhigh",     "session": "resume:21",  "goal": "prompts/22-qa-fix.goal.txt",           "timeoutMinutes": 540 },
+    { "id": "23", "slug": "handoff",           "title": "Predaja: README, GO-LIVE, showcase, izveštaj",                 "mode": "auto", "effort": "high",      "session": "new",        "prompt": "prompts/23-handoff.md",              "timeoutMinutes": 180 }
+  ]
+}
