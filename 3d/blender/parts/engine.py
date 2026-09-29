@@ -141,9 +141,10 @@ def mounts(lite: bool) -> dict[str, Geo]:
     r = Geo()
     r += lathe([(0.0, -0.030), (0.040, -0.030), (0.046, -0.010), (0.046, 0.020), (0.036, 0.034), (0.0, 0.036)], 24, ALU, hard=False)
     r += lathe([(0.0, 0.036), (0.030, 0.036), (0.032, 0.050), (0.0, 0.052)], 20, RUBBER, hard=False)
-    r += box(0.060, 0.022, 0.090, ALU, center=(0.050, -0.040, -0.010))
-    r += box(0.030, 0.090, 0.040, ALU, center=(0.080, -0.080, -0.020))
-    out["r"] = r.moved(-0.52, 0.82, 1.52)
+    # bracket: arm inboard at the mount base, ahead of the timing belt, down onto the block front
+    r += box(0.150, 0.030, 0.050, ALU, center=(0.090, -0.040, -0.012))
+    r += box(0.040, 0.090, 0.022, ALU, center=(0.160, -0.090, -0.026))
+    out["r"] = r.moved(-0.53, 0.83, 1.60)
     # left: gearbox mount — rubber block in an alu bracket
     l = Geo()
     l += box(0.090, 0.050, 0.100, ALU, center=(0.0, 0.0, 0.0))

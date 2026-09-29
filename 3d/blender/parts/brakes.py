@@ -117,8 +117,8 @@ def caliper(front: bool, lite: bool) -> Geo:
     # C cross-section in (axial h, radial dr); CCW
     prof = [
         (ib, -0.032), (ib, und - 0.002), (ib + 0.006, und + 0.004), (ob - 0.006, und + 0.004), (ob, und - 0.002),
-        (ob, -0.026), (ob + 0.004, -0.030), (ob + 0.014, -0.030), (ob + 0.018, -0.024), (ob + 0.018, top - 0.012),
-        (ob + 0.012, top - 0.003), (ob, top), (back + 0.012, top), (back + 0.002, top - 0.012), (back, top - 0.030),
+        (ob, -0.026), (ob + 0.003, -0.030), (ob + 0.009, -0.030), (ob + 0.012, -0.024), (ob + 0.012, top - 0.010),
+        (ob + 0.008, top - 0.002), (ob, top), (back + 0.012, top), (back + 0.002, top - 0.012), (back, top - 0.030),
         (back, -0.018), (back + 0.006, -0.032), (back + 0.016, -0.036),
     ]
     span = 25 if front else 23
@@ -154,7 +154,7 @@ def caliper(front: bool, lite: bool) -> Geo:
     g += box(0.016, 0.020, 0.016, CAL, center=(jx, back + 0.014, jz))
     if not front:
         # EPB actuator: motor can + gear housing behind the piston
-        mot = lathe([(0.0, 0.0), (0.021, 0.0), (0.021, -0.058), (0.017, -0.066), (0.0, -0.068)], 20, CAL, hard=False)
+        mot = lathe([(0.0, 0.0), (0.021, 0.0), (0.021, -0.032), (0.017, -0.038), (0.0, -0.040)], 20, CAL, hard=False)
         mx, mz = polar(r_pad - 0.020, th + 14)
         g += mot.moved(mx, back - 0.004, mz)
         g += box(0.040, 0.020, 0.050, CAL, center=(px - 0.004, back - 0.010, pz + 0.004))

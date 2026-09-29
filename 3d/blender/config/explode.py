@@ -31,11 +31,11 @@ def corners(cat, d_front, d_rear, dist_f, dist_r, order_f, order_r=None):
 # stage 1 — karoserija, stakla, svetla
 e("brisaci__main", (0, 0.60, 0.80), 0.24, 0.00)
 e("hauba__main", (0, 0.80, 0.60), 1.10, 0.10)
-e("branici__front", (0, 0.10, 0.99), 0.55, 0.20)
+e("branici__front", (0, 0.20, 0.98), 0.90, 0.20)
 e("branici__rear", (0, 0.10, -0.99), 0.50, 0.20)
 e("stakla__windshield", (0, 0.84, 0.54), 0.36, 0.30)
 e("stakla__rear", (0, 0.76, -0.65), 0.36, 0.30)
-e("senzori__park-front", (0, 0.90, 0.44), 0.60, 0.35)
+e("senzori__park-front", (0, 0.90, 0.44), 1.00, 0.35)
 lr("farovi", (0.35, 0.45, 0.82), 0.50, 0.40)
 lr("stop-svetla", (0.35, 0.40, -0.85), 0.45, 0.45)
 lr("blatobrani", (0.62, 0.62, 0.48), 0.60, 0.55)
@@ -46,7 +46,7 @@ e("stakla__side", (0, 1, 0), 0.55, 1.00)
 corners("felne-gume", (1, 0, 0), (1, 0, 0), 0.72, 0.70, 0.00, 0.40)
 # stage 3 — kocnice, vesanje, upravljanje
 corners("kocione-celjusti", (0.50, 0.20, -0.84), (0.50, 0.20, -0.84), 0.46, 0.46, 0.00)
-corners("kocione-plocice", (0.55, 0.15, -0.82), (0.55, 0.15, -0.82), 0.28, 0.28, 0.10)
+corners("kocione-plocice", (0.20, 0.26, -0.94), (0.20, 0.26, -0.94), 0.30, 0.30, 0.10)
 corners("abs-senzori", (0.40, 0.80, -0.45), (0.40, 0.80, -0.45), 0.30, 0.30, 0.20)
 corners("kocioni-diskovi", (1, 0, 0), (1, 0, 0), 0.21, 0.21, 0.35)
 corners("lezaj-glavcina", (1, 0, 0), (1, 0, 0), 0.09, 0.09, 0.50)
@@ -57,45 +57,70 @@ lr("spone-stabilizatori", (0.30, 0, -0.95), 0.22, 0.80, names=("tie-rod-l", "tie
 e("spone-stabilizatori__stabilizer", (0, -1, 0), 0.16, 0.85)
 e("letva-volana__main", (0.90, 0.40, 0), 0.22, 0.95)
 # stage 4 — agregati, hladjenje, usis
-e("interkuler__main", (0, -0.13, 0.99), 0.45, 0.00)
-e("interkuler__pipes", (0.30, 0.20, 0.93), 0.40, 0.10)
-e("klima__condenser", (0, 0.12, 0.99), 0.40, 0.15)
-e("akumulator__main", (0.39, 0.88, 0.29), 0.51, 0.20)
+e("interkuler__main", (0, -0.05, 1.0), 0.95, 0.00)
+e("interkuler__pipes", (0.35, 0.90, 0.25), 0.95, 0.10)
+e("klima__condenser", (0, 0.10, 0.99), 0.78, 0.15)
+e("akumulator__main", (0.39, 0.88, 0.29), 0.65, 0.20)
 e("usisna-grana__airbox", (0.10, 0.99, -0.05), 0.72, 0.25)
-e("hladnjak-ventilator__radiator", (0, 0.16, 0.99), 0.30, 0.30)
-e("nosaci-motora__r", (-0.35, 0.50, 0.79), 0.60, 0.30)
-e("kais-alternatora__belt", (-0.78, 0.58, 0.24), 0.51, 0.35)
-e("hladnjak-ventilator__fan", (0, 0.27, 0.96), 0.26, 0.45)
-e("alternator__main", (-0.69, 0.45, 0.57), 0.42, 0.50)
+e("hladnjak-ventilator__radiator", (0, 0.60, 0.80), 0.70, 0.30)
+e("nosaci-motora__r", (-0.20, 0.55, 0.81), 0.60, 0.30)
+e("kais-alternatora__belt", (-0.85, 0.15, 0.50), 0.62, 0.35)
+e("hladnjak-ventilator__fan", (0, 0.80, 0.60), 0.70, 0.45)
+e("alternator__main", (-0.40, 0.55, 0.73), 0.55, 0.50)
 e("anlaser__main", (0.31, -0.16, 0.94), 0.32, 0.55)
-e("klima__compressor", (-0.72, -0.05, 0.69), 0.44, 0.60)
+e("klima__compressor", (-0.45, -0.10, 0.89), 0.55, 0.60)
 e("usisna-grana__manifold", (0, 0.89, 0.46), 0.39, 0.70)
 e("termostat-creva__thermostat", (0.45, 0.89, 0), 0.34, 0.75)
-e("termostat-creva__hoses", (0, 0.62, 0.78), 0.32, 0.80)
+e("termostat-creva__hoses", (0.10, 0.99, 0.10), 0.30, 0.80)
 e("nosaci-motora__l", (0.60, 0.30, 0.74), 0.55, 0.90)
-e("nosaci-motora__rear", (0, -1, 0), 0.14, 1.00)
+e("nosaci-motora__rear", (0, -0.6, 0.8), 0.20, 1.00)
 # stage 5 — motor, turbina, gorivo, paljenje
 e("paljenje-grejaci__coils", (0, 0.978, -0.208), 0.85, 0.00)
 e("brizgaljke-pumpa-goriva__injectors", (0, 0.40, 0.92), 0.35, 0.05)
 e("brizgaljke-pumpa-goriva__pump", (0.05, 0.996, -0.08), 0.85, 0.10)
 e("egr-ventil__main", (0.48, 0.84, 0.24), 0.42, 0.15)
 e("senzori__coolant-temp", (0.45, 0.80, 0.40), 0.45, 0.20)
-e("zupcasti-kais-vodena-pumpa__belt", (-0.55, 0.45, 0.70), 0.42, 0.20)
-e("zupcasti-kais-vodena-pumpa__water-pump", (-0.30, 0.95, 0.10), 0.30, 0.25)
+e("zupcasti-kais-vodena-pumpa__belt", (-0.50, 0.75, 0.43), 0.70, 0.20)
+e("zupcasti-kais-vodena-pumpa__water-pump", (-0.45, 0.80, 0.40), 0.55, 0.25)
 e("motor__head", (0, 1, 0), 0.60, 0.30)
 e("turbina__main", (0.10, 0.994, 0.05), 0.50, 0.50)
 e("motor__block", (0, 1, 0), 0.25, 0.80)
-e("karter-dihtunzi__sump", (0, -1, 0), 0.03, 0.90)
+e("karter-dihtunzi__sump", (0, 1, 0), 0.18, 0.90)
 # stage 6 — transmisija
-e("menjac__main", (0.30, 0.35, 0.89), 0.45, 0.00)
-e("kvacilo-zamajac__main", (0.55, 0.80, -0.25), 0.32, 0.25)
-e("poluosovine__l", (-0.93, 0.15, 0.33), 0.24, 0.50)
-e("poluosovine__r", (0.94, -0.03, -0.33), 0.22, 0.50)
+e("menjac__main", (0.65, 0.70, 0.30), 0.60, 0.00)
+e("kvacilo-zamajac__main", (1.0, 0.0, 0.0), 0.30, 0.25)
+e("poluosovine__l", (0.20, -0.55, 0.81), 0.25, 0.50)
+e("poluosovine__r", (0.60, -0.75, 0.28), 0.20, 0.50)
 # stage 7 — izduvni
-e("senzori__lambda", (0.50, 0.87, 0), 0.35, 0.00)
+e("senzori__lambda", (0.70, 0.71, 0), 0.75, 0.00)
 e("auspuh__mid", (0.97, -0.24, 0), 0.50, 0.15)
 e("dpf-katalizator__main", (0.93, 0.33, -0.16), 0.55, 0.35)
 e("auspuh__rear", (0.85, -0.10, -0.52), 0.50, 0.60)
+
+# art-direction spread: engine-bay stages get more air between parts at p = 1 so the exploded
+# state reads as a technical plate from the exploded camera (distances scaled per stage)
+STAGE_SPREAD = {4: 1.35, 5: 1.30, 6: 1.20}
+
+
+def _stage_of(node: str) -> int:
+    import json
+    from pathlib import Path
+
+    tax = json.loads((Path(__file__).resolve().parents[2] / "build" / "taxonomy.json").read_text(encoding="utf-8"))
+    cat, inst = node.split("__", 1)
+    for c in tax["categories"]:
+        if c["slug"] == cat:
+            for i in c["instances"]:
+                if i["instance"] == inst:
+                    return int(i.get("stage") or c["stage"])
+            return int(c["stage"])
+    return 0
+
+
+for _k, (_d, _dist, _o) in list(E.items()):
+    _f = STAGE_SPREAD.get(_stage_of(_k), 1.0)
+    if _f != 1.0:
+        E[_k] = (_d, round(_dist * _f, 4), _o)
 
 # label-anchor overrides (local offset in glTF space from the pivot) — computed by default
 ANCHOR_OVERRIDES: dict[str, tuple[float, float, float]] = {}

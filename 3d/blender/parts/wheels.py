@@ -87,7 +87,7 @@ def spoke_bar(a_hub: float, a_rim: float, w_hub: float, w_rim: float, r0: float 
 
 def spokes(lite: bool) -> Geo:
     g = Geo()
-    f = dish(0.044, 0.058, 0.09, 0.20)
+    f = dish(0.044, 0.058, 0.088, 0.138)
     for k in range(5):
         c = 72.0 * k + 36.0
         for side in (-1, 1):

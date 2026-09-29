@@ -56,8 +56,8 @@ def condenser(lite: bool) -> Geo:
     for s in (1, -1):
         g += box(0.018, 0.470, 0.026, DARK, center=(s * 0.328, 0.0, 0.0))
     drier = lathe([(0.0, -0.130), (0.024, -0.130), (0.026, -0.120), (0.026, 0.110), (0.020, 0.124), (0.0, 0.126)], 18, DARK, hard=False)
-    g += drier.moved(0.360, 0.0, -0.012)
-    pipe = polyline_fillet([(0.328, 0.200, -0.010), (0.300, 0.250, -0.060), (0.200, 0.260, -0.200)], 0.04, 6)
+    g += drier.moved(0.352, 0.0, 0.014)
+    pipe = polyline_fillet([(0.328, 0.200, -0.010), (0.320, 0.215, -0.030), (0.300, 0.225, -0.034)], 0.01, 4)
     g += tube(pipe, 0.007, 10, DARK, hard=False)
     return g.moved(0.0, 0.565, 2.010)
 
@@ -97,7 +97,7 @@ def thermostat(lite: bool) -> Geo:
 def hoses(lite: bool) -> Geo:
     g = Geo()
     sides = 10 if lite else 14
-    upper = polyline_fillet([(0.130, 0.730, 1.523), (0.160, 0.760, 1.640), (0.260, 0.780, 1.820), (0.345, 0.775, 1.905)], 0.08, 8)
+    upper = polyline_fillet([(0.130, 0.730, 1.523), (0.160, 0.760, 1.640), (0.300, 0.790, 1.800), (0.345, 0.785, 1.850), (0.345, 0.775, 1.905)], 0.05, 8)
     g += tube(upper, 0.016, sides, HOSE, hard=False)
     lower = polyline_fillet([(-0.345, 0.365, 1.905), (-0.470, 0.360, 1.880), (-0.520, 0.370, 1.760), (-0.520, 0.390, 1.520), (-0.500, 0.400, 1.400)], 0.07, 8)
     g += tube(lower, 0.017, sides, HOSE, hard=False)

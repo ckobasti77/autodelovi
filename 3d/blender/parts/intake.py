@@ -61,12 +61,12 @@ def airbox(lite: bool) -> Geo:
     for x in (-0.12, 0.0, 0.12):
         g += box(0.024, 0.030, 0.010, PLASTIC, center=(x, 0.068, 0.152))
     # snorkel forward to the grille area
-    snork = polyline_fillet([(0.02, 0.030, 0.140), (0.02, 0.020, 0.320), (0.00, -0.040, 0.470)], 0.10, 8)
+    snork = polyline_fillet([(-0.10, 0.030, 0.140), (-0.10, 0.015, 0.320), (-0.11, -0.050, 0.420)], 0.10, 8)
     g += tube(snork, 0.036, 14, PLASTIC, hard=False)
     # outlet bellows down to the turbo compressor inlet
-    out_path = catmull([(-0.09, -0.060, -0.120), (-0.14, -0.120, -0.180), (-0.24, -0.180, -0.210), (-0.30, -0.200, -0.200)], 6)
+    out_path = catmull([(-0.09, -0.060, -0.115), (-0.12, -0.110, -0.170), (-0.17, -0.165, -0.220), (-0.21, -0.200, -0.240)], 6)
     g += tube(out_path, 0.034, 14, RUBBER, hard=False)
-    return g.moved(0.38, 0.84, 1.36)
+    return g.moved(0.29, 0.84, 1.40)
 
 
 def intercooler(lite: bool) -> Geo:
@@ -87,7 +87,7 @@ def intercooler(lite: bool) -> Geo:
 def charge_pipes(lite: bool) -> Geo:
     g = Geo()
     sides = 12 if lite else 16
-    hot = polyline_fillet([(0.030, 0.700, 1.120), (0.200, 0.705, 1.150), (0.340, 0.680, 1.300), (0.340, 0.680, 1.850), (0.360, 0.420, 1.960), (0.380, 0.270, 2.010)], 0.08, 8)
+    hot = polyline_fillet([(0.030, 0.700, 1.120), (0.200, 0.705, 1.150), (0.340, 0.680, 1.300), (0.345, 0.675, 1.600), (0.408, 0.620, 1.720), (0.410, 0.420, 1.900), (0.392, 0.285, 1.990), (0.380, 0.270, 2.010)], 0.07, 8)
     g += tube(hot, 0.027, sides, BRUSHED, hard=False)
     cold = polyline_fillet([(-0.380, 0.270, 2.010), (-0.385, 0.550, 1.975), (-0.385, 0.720, 1.860), (-0.395, 0.770, 1.700)], 0.08, 8)
     g += tube(cold, 0.026, sides, BRUSHED, hard=False)

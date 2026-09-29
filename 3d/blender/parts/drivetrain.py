@@ -67,7 +67,7 @@ def gearbox(lite: bool) -> Geo:
         secs.append([(x, cy + py, cz + pz) for pz, py in pts])
     g += loft(secs, ALU, closed=True, caps=True, hard=False)
     # ribs, diff bulge with output flanges, mechatronic unit, breather
-    g += lathe([(0.0, 0.220), (0.100, 0.220), (0.106, 0.240), (0.106, 0.420), (0.098, 0.440), (0.0, 0.440)], seg, ALU, axis="x", hard=False).moved(0.0, 0.330, 1.310)
+    g += lathe([(0.0, 0.220), (0.092, 0.220), (0.098, 0.240), (0.098, 0.420), (0.090, 0.440), (0.0, 0.440)], seg, ALU, axis="x", hard=False).moved(0.0, 0.330, 1.310)
     for x, sgn in ((0.440, 1), (0.090, -1)):
         fl = lathe([(0.0, 0.0), (0.040, 0.0), (0.045, 0.008), (0.045, 0.018), (0.0, 0.020)], 24, DARK, axis="x" if sgn > 0 else "-x", hard=False)
         g += fl.moved(x, 0.330, 1.310)

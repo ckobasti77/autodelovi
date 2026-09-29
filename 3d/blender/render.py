@@ -201,6 +201,8 @@ def main() -> None:
         else:
             apply_xray(exploded=False)
         xr = apply_xray if not args.paint else (lambda exploded=False: apply_paint())
+        if args.noshell:
+            set_visible(lambda top: not is_shell(top))
         for view in [v for v in args.views.split(",") if v]:
             exploded = view.startswith("exploded")
             if exploded:

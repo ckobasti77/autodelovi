@@ -164,8 +164,8 @@ def bumper(front: bool, lite: bool) -> Geo:
         # lower grille: horizontal x-ray slats inside the opening + steel crash beam behind
         for y in (0.30, 0.345, 0.39, 0.435):
             g += box(0.64, 0.006, 0.014, XRAY, center=(0.0, y, 2.150))
-        beam = [Vector((x, 0.46, 2.07 - 0.20 * (abs(x) / 0.72) ** 2.2)) for x in [i / 10 * 1.44 - 0.72 for i in range(11)]]
-        g += box_tube(beam, 0.090, 0.040, DARK, r=0.008, fillet=0.02, hard=False)
+        beam = [Vector((x, 0.46, 2.098 - 0.080 * (abs(x) / 0.72) ** 2)) for x in [i / 10 * 1.44 - 0.72 for i in range(11)]]
+        g += box_tube(beam, 0.090, 0.040, XRAY, r=0.008, fillet=0.02, hard=False)  # reinforcement, drawn as part of the x-ray fascia
     return g
 
 

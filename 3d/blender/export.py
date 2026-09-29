@@ -54,14 +54,7 @@ def parse():
 
 
 def scripts_hash() -> str:
-    h = hashlib.sha256()
-    base = scene.ROOT / "3d" / "blender"
-    files = sorted(p for p in base.rglob("*.py") if "__pycache__" not in p.parts)
-    files.append(scene.BUILD / "taxonomy.json")
-    for p in files:
-        h.update(str(p.relative_to(scene.ROOT)).replace("\\", "/").encode())
-        h.update(p.read_bytes())
-    return h.hexdigest()
+    return scene.scripts_hash()
 
 
 def vec(v) -> Vector:

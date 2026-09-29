@@ -145,3 +145,17 @@ def delete_by_builder(module: str) -> int:
 def rot_y_deg(deg: float) -> Matrix:
     """Rotation about the vehicle up axis (Blender Z)."""
     return Matrix.Rotation(math.radians(deg), 4, "Z")
+
+
+def scripts_hash() -> str:
+    """sha256 over every 3d/blender/**/*.py (sorted, path-tagged) plus 3d/build/taxonomy.json."""
+    import hashlib
+
+    h = hashlib.sha256()
+    base = ROOT / "3d" / "blender"
+    files = sorted(p for p in base.rglob("*.py") if "__pycache__" not in p.parts)
+    files.append(BUILD / "taxonomy.json")
+    for p in files:
+        h.update(str(p.relative_to(ROOT)).replace("\\", "/").encode())
+        h.update(p.read_bytes())
+    return h.hexdigest()

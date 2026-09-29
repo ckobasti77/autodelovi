@@ -25,9 +25,28 @@ CAMERAS = {
     },
 }
 
-STAGE_WINDOWS = {
-    "desktop": {1: (0.08, 0.24), 2: (0.18, 0.32), 3: (0.28, 0.46), 4: (0.42, 0.58), 5: (0.54, 0.72), 6: (0.68, 0.84), 7: (0.80, 0.92)},
-}
+def _stage_windows() -> dict[str, dict[int, tuple[float, float]]]:
+    """Desktop windows from the taxonomy; mobile runs grouped stages sequentially inside their
+    shared window (first stage over [0, 0.55], second over [0.45, 1]) — PLAN §6.2."""
+    import json
+
+    with open(scene.BUILD / "taxonomy.json", encoding="utf-8") as f:
+        stages = [s for s in json.load(f)["stages"] if s["stage"] > 0]
+    out = {"desktop": {s["stage"]: tuple(s["scroll"]["desktop"]) for s in stages}, "mobile": {}}
+    groups: dict[tuple[float, float], list[int]] = {}
+    for s in stages:
+        groups.setdefault(tuple(s["scroll"]["mobile"]), []).append(s["stage"])
+    for (a, b), members in groups.items():
+        members.sort()
+        if len(members) == 1:
+            out["mobile"][members[0]] = (a, b)
+        else:
+            out["mobile"][members[0]] = (a, a + 0.55 * (b - a))
+            out["mobile"][members[1]] = (a + 0.45 * (b - a), b)
+    return out
+
+
+STAGE_WINDOWS = _stage_windows()
 
 
 def power2_inout(t: float) -> float:

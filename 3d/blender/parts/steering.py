@@ -57,8 +57,8 @@ def tie_rod(lite: bool) -> Geo:
 
 def stabilizer(lite: bool) -> Geo:
     g = Geo()
-    y0, zc = 0.262, 1.045
-    pts = [(-0.565, 0.300, 1.288), (-0.485, 0.282, 1.120), (-0.36, y0, zc), (0.36, y0, zc), (0.485, 0.282, 1.120), (0.565, 0.300, 1.288)]
+    y0, zc = 0.262, 1.022
+    pts = [(-0.560, 0.292, 1.212), (-0.485, 0.280, 1.110), (-0.36, y0, zc), (0.36, y0, zc), (0.485, 0.280, 1.110), (0.560, 0.292, 1.212)]
     path = polyline_fillet(pts, 0.07, 8)
     g += tube(path, 0.0115, 10 if lite else 12, DARK, hard=False, caps=True)
     for x in (-0.30, 0.30):
@@ -66,8 +66,10 @@ def stabilizer(lite: bool) -> Geo:
         g += box(0.040, 0.010, 0.060, DARK, center=(x, y0 + 0.024, zc))
     # drop links up to the strut brackets
     for s in (1, -1):
-        a = Vector((s * 0.565, 0.300, 1.288))
-        b = Vector((s * 0.612, 0.505, 1.292))
+        a = Vector((s * 0.560, 0.292, 1.212))
+        b = Vector((s * 0.605, 0.505, 1.222))
+        # strut-side bracket tab reaching forward to the damper body
+        g += box(0.012, 0.024, 0.062, DARK, center=(s * 0.618, 0.505, 1.255))
         g += along(cylinder(0.0055, (b - a).length - 0.03, 10, DARK, center=False), a + (b - a).normalized() * 0.015, b)
         g += ball_joint(0.011, DARK, RUBBER, (0, -1, 0)).moved(*b)
         g += ball_joint(0.011, DARK, RUBBER, (0, 1, 0)).moved(*a)

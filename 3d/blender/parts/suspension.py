@@ -59,8 +59,8 @@ def rear_spring_damper(lite: bool) -> tuple[Geo, Vector]:
     g += lathe([(0.030, 0.0), (0.066, 0.0), (0.066, 0.008), (0.030, 0.008), (0.030, 0.0)], seg, RUBBER, hard=False).moved(sp_c.x, sp_c.y - 0.008, sp_c.z)
     g += lathe([(0.030, 0.0), (0.066, 0.0), (0.066, 0.008), (0.030, 0.008), (0.030, 0.0)], seg, RUBBER, hard=False).moved(sp_c.x, sp_c.y + 0.225, sp_c.z)
     # damper with eyes
-    d0 = Vector((0.62, 0.30, -1.40))
-    d1 = Vector((0.605, 0.76, -1.44))
+    d0 = Vector((0.600, 0.30, -1.40))
+    d1 = Vector((0.585, 0.76, -1.44))
     L = (d1 - d0).length
     dm = Geo()
     dm += lathe([(0.0, 0.020), (0.022, 0.020), (0.022, 0.265), (0.019, 0.275), (0.0, 0.278)], seg, BLACK, hard=False)
@@ -106,17 +106,17 @@ def torsion_beam(lite: bool) -> tuple[Geo, Vector]:
     g += sweep(path, [(a, b) for a, b in u], BLACK, up_hint=(0, 1, 0), hard=True, cap_cdt=True)
     for s in (1, -1):
         # trailing arm: pivot bushing -> beam end -> wheel carrier, tapering box section
-        p0 = Vector((s * 0.62, 0.350, -0.75))
-        p1 = Vector((s * 0.64, 0.315, -1.18))
-        p2 = Vector((s * 0.70, 0.316, -1.31))
-        g += box_tube([p0, p1, p2], 0.060, 0.050, BLACK, r=0.012, fillet=0.12, hard=False, scales=(0.8, 1.15))
+        p0 = Vector((s * 0.600, 0.350, -0.75))
+        p1 = Vector((s * 0.612, 0.315, -1.20))
+        p2 = Vector((s * 0.690, 0.316, -1.31))
+        g += box_tube([p0, p1, p2], 0.055, 0.050, BLACK, r=0.012, fillet=0.10, hard=False, scales=(0.8, 1.15))
         g += bushing("x", 0.032, 0.060, RUBBER, DARK, seg=18 if lite else 22).moved(p0.x, p0.y, p0.z)
         # wheel carrier flange (the hub bolts here)
         fl = lathe([(0.0, 0.0), (0.058, 0.0), (0.058, 0.010), (0.0, 0.010)], 24, BLACK, axis="x", hard=False)
         g += fl.moved(s * 0.715 if s > 0 else -0.725, 0.316, -1.31)
         # spring pad and damper bracket
         g += cylinder(0.068, 0.010, 24, BLACK, axis="y").moved(s * 0.52, 0.240, -1.24)
-        g += box(0.040, 0.060, 0.050, BLACK, center=(s * 0.62, 0.285, -1.395))
+        g += box(0.040, 0.060, 0.050, BLACK, center=(s * 0.60, 0.285, -1.395))
     pivot = Vector((0.0, 0.30, -1.12))
     return g, pivot
 
