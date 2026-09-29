@@ -307,6 +307,33 @@ def apply_xray(exploded: bool = False, mobile: bool = False) -> None:
         xray_material(glass, 3.2, 0.7, 0.06, "#9FE9FF", "#9FE9FF")
 
 
+def paint_material(mat: bpy.types.Material, hex_col: str, metallic: float, rough: float, coat: float, alpha: float = 1.0) -> None:
+    """Study material for shell smoothness checks (reflections expose lumps); never exported."""
+    nt = mat.node_tree
+    for n in list(nt.nodes):
+        nt.nodes.remove(n)
+    out = nt.nodes.new("ShaderNodeOutputMaterial")
+    b = nt.nodes.new("ShaderNodeBsdfPrincipled")
+    b.inputs["Base Color"].default_value = (*hex_rgb(hex_col), 1)
+    b.inputs["Metallic"].default_value = metallic
+    b.inputs["Roughness"].default_value = rough
+    b.inputs["Coat Weight"].default_value = coat
+    b.inputs["Coat Roughness"].default_value = 0.03
+    b.inputs["Alpha"].default_value = alpha
+    nt.links.new(b.outputs[0], out.inputs["Surface"])
+    mat.surface_render_method = "BLENDED" if alpha < 1 else "DITHERED"
+    mat.use_backface_culling = False
+
+
+def apply_paint() -> None:
+    body = bpy.data.materials.get("mat_body_xray")
+    glass = bpy.data.materials.get("mat_glass_xray")
+    if body:
+        paint_material(body, "#7D858C", 0.0, 0.22, 1.0)
+    if glass:
+        paint_material(glass, "#0B0E10", 0.0, 0.02, 0.0, 0.85)
+
+
 def color_management() -> None:
     s = bpy.context.scene
     s.view_settings.view_transform = "Khronos PBR Neutral"

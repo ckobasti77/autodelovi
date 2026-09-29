@@ -61,7 +61,7 @@ def airbox(lite: bool) -> Geo:
     for x in (-0.12, 0.0, 0.12):
         g += box(0.024, 0.030, 0.010, PLASTIC, center=(x, 0.068, 0.152))
     # snorkel forward to the grille area
-    snork = polyline_fillet([(0.02, 0.040, 0.140), (0.02, 0.060, 0.330), (0.00, 0.050, 0.560)], 0.10, 8)
+    snork = polyline_fillet([(0.02, 0.030, 0.140), (0.02, 0.020, 0.320), (0.00, -0.040, 0.470)], 0.10, 8)
     g += tube(snork, 0.036, 14, PLASTIC, hard=False)
     # outlet bellows down to the turbo compressor inlet
     out_path = catmull([(-0.09, -0.060, -0.120), (-0.14, -0.120, -0.180), (-0.24, -0.180, -0.210), (-0.30, -0.200, -0.200)], 6)

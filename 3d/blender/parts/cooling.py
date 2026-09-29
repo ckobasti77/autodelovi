@@ -27,7 +27,7 @@ def radiator(lite: bool) -> Geo:
     for x, y in ((0.345, 0.205), (-0.345, -0.205)):
         nz = lathe([(0.013, 0.0), (0.017, 0.0), (0.017, 0.040), (0.019, 0.044), (0.017, 0.048), (0.013, 0.048), (0.013, 0.0)], 16, PLASTIC, axis="z", hard=False)
         g += nz.transform(S(1, 1, -1)).moved(x, y, -0.020)
-    g += cylinder(0.014, 0.030, 16, PLASTIC, axis="y").moved(0.30, 0.260, 0.0)
+    g += cylinder(0.014, 0.030, 16, PLASTIC, axis="x").moved(0.375, 0.200, 0.0)
     g.transform(R("x", 0))
     return g.moved(0.0, 0.570, 1.950)
 

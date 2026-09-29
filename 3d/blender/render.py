@@ -26,6 +26,7 @@ from lib.layout import bbox, corners, node_points, solve_camera  # noqa: E402
 from lib.views import (  # noqa: E402
     Exploder,
     add_sun,
+    apply_paint,
     apply_xray,
     color_management,
     eevee,
@@ -68,6 +69,7 @@ def parse():
     ap.add_argument("--el", type=float, default=22.0)
     ap.add_argument("--fill", type=float, default=0.72)
     ap.add_argument("--noshell", action="store_true")
+    ap.add_argument("--paint", action="store_true", help="glossy paint on the shell (smoothness study)")
     ap.add_argument("--solo", action="store_true", help="hide every other part")
     ap.add_argument("--tag", default="")
     ap.add_argument("--res", default="1600x1000")
@@ -198,14 +200,15 @@ def main() -> None:
             s.display.render_aa = "16"
         else:
             apply_xray(exploded=False)
+        xr = apply_xray if not args.paint else (lambda exploded=False: apply_paint())
         for view in [v for v in args.views.split(",") if v]:
             exploded = view.startswith("exploded")
             if exploded:
                 exploder.apply(1.0)
-                apply_xray(exploded=True) if args.set == "qa" else None
+                xr(exploded=True) if args.set == "qa" else None
             else:
                 exploder.reset()
-                apply_xray(exploded=False) if args.set == "qa" else None
+                xr(exploded=False) if args.set == "qa" else None
             pts = scene_points()
             if view in ("front34", "exploded"):
                 set_output("", w, int(w * 9 / 16), False)

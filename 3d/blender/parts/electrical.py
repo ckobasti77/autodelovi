@@ -115,13 +115,16 @@ def lambda_sensor(lite: bool) -> Geo:
 
 
 def pdc(lite: bool) -> Geo:
+    from parts.body import front_face_z
+
     g = Geo()
     for x in (-0.52, -0.18, 0.18, 0.52):
         s = Geo()
         s += lathe([(0.0, 0.0), (0.0090, 0.0), (0.0092, 0.004), (0.0092, 0.024), (0.0, 0.025)], 16, PLASTIC, hard=False)
         s += box(0.024, 0.018, 0.016, PLASTIC, center=(0.0, 0.030, 0.0))
         s.transform(R("x", -90))  # axis pointing forward (+z)
-        g += s.moved(x, 0.450, 2.150 - (0.03 if abs(x) > 0.3 else 0.0))
+        y = 0.520
+        g += s.moved(x, y, front_face_z(x, y, lite) + 0.0015)
     return g
 
 
