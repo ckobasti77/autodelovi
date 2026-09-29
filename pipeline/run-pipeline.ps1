@@ -321,7 +321,10 @@ function Write-Status {
   if ($script:Current) {
     $c = $script:Current
     $line = '**Sada:** korak {0}/{1} — {2} · {3} · effort {4} · {5} · radi {6}' -f $c.Id, $steps.Count, $c.Title, $script:Manifest.modelLabel, $c.Effort, $c.Mode, (Format-Duration ($now - $c.StartedAt).TotalSeconds)
-    if ($c.WaitUntil) { $line += (' · **čeka reset limita do {0}**' -f $c.WaitUntil.ToString('dd.MM. HH:mm')) }
+    if ($c.WaitUntil) {
+      if ($c.WaitReason -eq 'internet') { $line += (' · **nema interneta, sledeća provera u {0}**' -f $c.WaitUntil.ToString('HH:mm')) }
+      else { $line += (' · **čeka reset limita do {0}**' -f $c.WaitUntil.ToString('dd.MM. HH:mm')) }
+    }
     [void]$sb.AppendLine($line)
     if ($script:LastActivity) { [void]$sb.AppendLine(('Poslednja aktivnost: `{0}`' -f ($script:LastActivity -replace '`', "'"))) }
   } else {
@@ -498,7 +501,7 @@ function Invoke-StreamLine {
 }
 
 function Invoke-ClaudeRun {
-  param([string[]]$ArgList, [string]$StdinText, [string]$LogBase, [int]$TimeoutMin = 360, [int]$StallMin = 90, [string]$RequestedMode = '', [string]$StepId = '')
+  param([string[]]$ArgList, [string]$StdinText, [string]$LogBase, [int]$TimeoutMin = 360, [int]$StallMin = 90, [string]$RequestedMode = '', [string]$StepId = '', [string]$SessionField = 'sessionId')
   $res = New-RunResult
   $sessionSaved = $false
   $res.RequestedMode = $RequestedMode
@@ -560,7 +563,7 @@ function Invoke-ClaudeRun {
       if (-not $sessionSaved -and $StepId -and $res.SessionId) {
         # persist the session id immediately, so a crash or restart can resume this exact session
         $stSave = Get-StepState $StepId
-        $stSave.sessionId = $res.SessionId
+        $stSave[$SessionField] = $res.SessionId
         Save-State
         $sessionSaved = $true
       }
@@ -598,6 +601,7 @@ $LimitStrict = "(?i)(hit your [a-z ]{0,30}limit|usage limit|limit reached|out of
 $LimitLoose = '(?i)(rate.?limit|too many requests|\b429\b|temporarily limiting)'
 $TransientRx = '(?i)(overloaded|\b529\b|\b50[0234]\b|internal server error|econnreset|etimedout|socket hang up|fetch failed|network error|connection (lost|reset|error)|stalled before a response|went to sleep before a response)'
 $AuthRx = '(?i)(not logged in|please run /login|invalid api key|authentication_failed|authentication failed|oauth token (has )?expired|account_on_hold|oauth_org_not_allowed)'
+$NetworkRx = "(?i)(ENOTFOUND|EAI_AGAIN|ECONNREFUSED|ENETUNREACH|EHOSTUNREACH|getaddrinfo|can.t reach the api server|check your internet|network is unreachable|unable to connect|connection refused|no internet)"
 
 function Get-RunOutcome {
   param([hashtable]$Run, [bool]$IsPlan = $false)
@@ -610,6 +614,7 @@ function Get-RunOutcome {
   if ($errorish -or $text.Length -lt 800) { $probe = $text + "`n" + $err }
   if ($Run.KillReason -eq 'modemismatch') { return 'modemismatch' }
   if ($probe -match $LimitStrict) { return 'limit' }
+  if ($errorish -and ($probe -match $NetworkRx)) { return 'network' }
   if ($errorish -and ($probe -match $AuthRx)) { return 'auth' }
   if ($errorish -and ($probe -match $LimitLoose)) { return 'transient' }
   if ($Run.Killed) { return [string]$Run.KillReason }
@@ -732,6 +737,33 @@ function Wait-ForLimit {
   }
 }
 
+function Wait-ForNetwork {
+  # Internet / DNS is down on this PC: wait (without counting failures) until Claude answers again.
+  $waitStart = Get-Date
+  $delayMin = 3
+  while ($true) {
+    $until = (Get-Date).AddMinutes($delayMin)
+    if ($script:Current) { $script:Current.WaitUntil = $until; $script:Current.WaitReason = 'internet' }
+    Write-PLog ('Nema interneta / API nije dostupan — čekam i proveravam ponovo u {0}.' -f $until.ToString('HH:mm')) 'WARN'
+    Write-Status -Force
+    Wait-Until $until
+    $probe = Test-ClaudeReady
+    if ($probe.Ready) {
+      if ($script:Current) { $script:Current.WaitUntil = $null; $script:Current.WaitReason = '' }
+      Write-PLog ('Internet je ponovo tu (čekanje {0}) — nastavljam istu sesiju.' -f (Format-Duration ((Get-Date) - $waitStart).TotalSeconds)) 'OK'
+      Write-Status -Force
+      return
+    }
+    if ([string]$probe.Text -match $LimitStrict) {
+      if ($script:Current) { $script:Current.WaitReason = '' }
+      Wait-ForLimit ([string]$probe.Text)
+      return
+    }
+    if (((Get-Date) - $waitStart).TotalHours -gt 48) { throw 'Internet nije dostupan duže od 48h — zaustavljam pipeline.' }
+    $delayMin = [math]::Min(10, $delayMin + 2)
+  }
+}
+
 # Runs one task (a step or a recovery) with retries, limit waits and session continuation.
 function Invoke-ClaudeTask {
   param(
@@ -769,8 +801,10 @@ function Invoke-ClaudeTask {
     if ($positional) { $a = @($a) + @($positional) }
     $logBase = '{0}{1}-{2:00}' -f $StepId, $LogTag, [int]$st.attempts
     Write-PLog ('Korak {0}{1} · pokušaj {2} · {3} · effort {4} · {5}{6}' -f $StepId, $LogTag, $st.attempts, $Mode, $Effort, $PermMode, $(if ($sessionForRun) { ' · nastavak sesije ' + $sessionForRun } else { ' · nova sesija' })) 'STEP'
-    $run = Invoke-ClaudeRun -ArgList $a -StdinText $stdin -LogBase $logBase -TimeoutMin $TimeoutMin -StallMin $StallMin -RequestedMode $PermMode -StepId $StepId
-    if ($run.SessionId) { $currentSession = $run.SessionId; $st.sessionId = $run.SessionId }
+    $sessionField = 'sessionId'
+    if ($LogTag) { $sessionField = 'recoverySessionId' }
+    $run = Invoke-ClaudeRun -ArgList $a -StdinText $stdin -LogBase $logBase -TimeoutMin $TimeoutMin -StallMin $StallMin -RequestedMode $PermMode -StepId $StepId -SessionField $sessionField
+    if ($run.SessionId) { $currentSession = $run.SessionId; $st[$sessionField] = $run.SessionId }
     $costTotal += [double]$run.CostUsd
     $st.turns = [int]$st.turns + [int]$run.NumTurns
     if ($run.CostUsd) { $st.costUsd = [math]::Round([double]$run.CostUsd, 2) }
@@ -787,6 +821,12 @@ function Invoke-ClaudeTask {
       Wait-ForLimit ($run.ResultText + "`n" + $run.Stderr)
       $continuation = $true
       $lastReason = 'a usage limit was reached; it has reset now'
+      continue
+    }
+    if ($outcome -eq 'network') {
+      Wait-ForNetwork
+      $continuation = $true
+      $lastReason = 'the internet connection of this PC dropped; it is back now'
       continue
     }
     if ($outcome -eq 'auth') {
@@ -1172,6 +1212,7 @@ function Invoke-Preflight {
     $ready = Test-ClaudeReady
     if (-not $ready.Ready) {
       if ($ready.Text -match $LimitStrict) { Wait-ForLimit $ready.Text }
+      elseif ($ready.Text -match $NetworkRx) { Wait-ForNetwork }
       else { throw ('Claude ne odgovara kako treba: ' + (($ready.Text -replace '\s+', ' ').Trim())) }
     }
     Write-PLog ('Claude odgovara ({0}).' -f $Model) 'OK'
@@ -1316,7 +1357,7 @@ try {
     $st.effort = $effort
     $st.mode = $mode
     Save-State
-    $script:Current = @{ Id = $id; Title = [string]$step.title; Effort = $effort; Mode = $mode; StartedAt = (Get-Date); WaitUntil = $null }
+    $script:Current = @{ Id = $id; Title = [string]$step.title; Effort = $effort; Mode = $mode; StartedAt = (Get-Date); WaitUntil = $null; WaitReason = '' }
     Write-Host ''
     Write-PLog ('━━━ Korak {0}: {1} · {2} · effort {3} · {4} · {5}' -f $id, $step.title, $script:Manifest.modelLabel, $effort, (Get-SessionLabel $step), $mode) 'STEP'
     Write-Status -Force
