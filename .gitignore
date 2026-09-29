@@ -66,3 +66,6 @@ backups/
 3d/assets/hdri/*.exr
 3d/assets/textures/*.png
 __pycache__/
+
+# Local dev server logs
+.next-dev.log

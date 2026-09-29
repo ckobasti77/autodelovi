@@ -10,10 +10,12 @@ export const ROUTES = {
   cart: "/korpa",
   checkout: "/porudzbina",
   inquiry: "/upit",
-  inquiryWith: (params: { q?: string; kodovi?: string[] }) => {
+  inquiryWith: (params: { q?: string; kodovi?: string[]; deo?: string; proizvod?: string }) => {
     const search = new URLSearchParams();
     if (params.q) search.set("q", params.q);
     if (params.kodovi?.length) search.set("kodovi", params.kodovi.join(","));
+    if (params.deo) search.set("deo", params.deo);
+    if (params.proizvod) search.set("proizvod", params.proizvod);
     const query = search.toString();
     return query ? `/upit?${query}` : "/upit";
   },

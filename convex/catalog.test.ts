@@ -155,6 +155,16 @@ describe("normalized OEM lookup and search", () => {
       vehicle: { generationId: w.golf7, engineId: w.tdi110 },
     });
     expect(exact!.items[0].fit).toBe("fits");
+    // Unconfirmed parts go last and are counted for the panel notice.
+    const firstUnknown = exact!.items.findIndex((i) => i.fit === "unknown");
+    if (firstUnknown >= 0) {
+      expect(exact!.items.slice(firstUnknown).every((i) => i.fit === "unknown")).toBe(true);
+    }
+    expect(exact!.unmatched).toBe(exact!.items.filter((i) => i.fit === "unknown").length);
+    const noVehicle = await w.anon.query(api.catalog.products.partPanel, {
+      categorySlug: "kocione-plocice",
+    });
+    expect(noVehicle!.unmatched).toBe(0);
   });
 
   test("vehicle picker queries resolve slugs", async () => {

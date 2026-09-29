@@ -21,6 +21,8 @@
 @custom-variant paper (&:where([data-theme="paper"], [data-theme="paper"] *));
 @custom-variant reduced-transparency (@media (prefers-reduced-transparency: reduce));
 @custom-variant hover-hover (@media (hover: hover) and (pointer: fine));
+/* Short desktop viewports (laptops at 1366 × 768 and below): the hero copy compacts. */
+@custom-variant hero-short (@media (width >= 64rem) and (height < 48rem));
 
 @theme {
   --color-*: initial;
@@ -776,5 +778,25 @@
   );
   &::-webkit-scrollbar {
     display: none;
+  }
+}
+
+/* ── 3D hero (docs/3D-CONTRACT.md §F7.1, DESIGN-SYSTEM §10.1) ─────────────────────────────
+   The scroll track is reserved by CSS from the first paint, so nothing shifts when the 3D
+   arrives: the sticky frame is one screen under the header; the track adds the explode
+   distance (200 vh below 1024 px, 320 vh above; none under reduced motion). */
+@utility hero-frame {
+  height: calc(100svh - var(--header-h));
+  min-height: 26rem;
+}
+
+@utility hero-track {
+  height: calc(100svh - var(--header-h));
+  min-height: 26rem;
+  @media (prefers-reduced-motion: no-preference) {
+    height: calc(100svh - var(--header-h) + 200vh);
+  }
+  @media (prefers-reduced-motion: no-preference) and (width >= 64rem) {
+    height: calc(100svh - var(--header-h) + 320vh);
   }
 }

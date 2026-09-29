@@ -453,7 +453,12 @@ const pricedCardV = v.object({
   fit: v.union(fitStatusV, v.null()),
 });
 
-/** 3D part panel: in stock first, fits-the-vehicle first, popularity; role-aware price. */
+/**
+ * 3D part panel (contract F8, DESIGN-SYSTEM §9.10). With a vehicle generation: parts that fit
+ * (exact, universal or generation-only) come first, unconfirmed ones last (`unmatched` counts
+ * them for the notice); inside each group in stock first, then fit rank, then popularity.
+ * Role-aware price for the viewer.
+ */
 export const partPanel = publicQuery({
   args: {
     categorySlug: v.string(),
@@ -466,6 +471,7 @@ export const partPanel = publicQuery({
       category: categorySummaryV,
       items: v.array(pricedCardV),
       total: v.number(),
+      unmatched: v.number(),
     }),
   ),
   handler: async (ctx, args) => {
@@ -501,12 +507,15 @@ export const partPanel = publicQuery({
       p,
       fit: generationId ? fitStatus(fitRows.get(p._id) ?? [], selected, p.universal) : null,
     }));
+    const unconfirmed = (fit: FitStatus | null) => (fit === "unknown" ? 1 : 0);
     withFit.sort(
       (a, b) =>
+        unconfirmed(a.fit) - unconfirmed(b.fit) ||
         Number(isAvailableNow(b.p.stockState)) - Number(isAvailableNow(a.p.stockState)) ||
         (a.fit && b.fit ? FIT_RANK[a.fit] - FIT_RANK[b.fit] : 0) ||
         b.p.popularity - a.p.popularity,
     );
+    const unmatched = withFit.filter((row) => row.fit === "unknown").length;
     const pc = await loadPricingContext(ctx, ctx.viewer);
     const cache: CategoryPathCache = new Map();
     const items = [];
@@ -518,7 +527,7 @@ export const partPanel = publicQuery({
         fit,
       });
     }
-    return { category: toCategorySummary(category), items, total: products.length };
+    return { category: toCategorySummary(category), items, total: products.length, unmatched };
   },
 });
 

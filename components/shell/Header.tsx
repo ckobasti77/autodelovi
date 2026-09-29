@@ -7,6 +7,7 @@ import { ROUTES } from "@/constants/routes";
 import { TEST_IDS } from "@/constants/testIds";
 import { Wordmark } from "@/components/shell/BrandMark";
 import { CartButton } from "@/components/shell/CartButton";
+import { CartButtonLive } from "@/components/shell/CartButtonLive";
 import { HeaderSearch } from "@/components/shell/HeaderSearch";
 import { MobileNav } from "@/components/shell/MobileNav";
 import { NavLinks } from "@/components/shell/NavLinks";
@@ -14,6 +15,7 @@ import { NavLinks } from "@/components/shell/NavLinks";
 export type HeaderProps = {
   /** Vehicle picker chip (≥ 1280 px); the picker owns its state. */
   vehicleSlot?: ReactNode;
+  /** Fixed count (styleguide); omitted → live count from the cart. */
   cartCount?: number;
   /** Settings override for contact data (config fallback otherwise). */
   contact?: Partial<Contact> | null;
@@ -30,7 +32,7 @@ const textLink =
  * Contact: text links ≥ 1440 px, icon buttons below; Viber moves into the menu below 640 px.
  * Excluded from the text reveal: chrome must be readable at once.
  */
-export function Header({ vehicleSlot, cartCount = 0, contact }: HeaderProps) {
+export function Header({ vehicleSlot, cartCount, contact }: HeaderProps) {
   const resolved = resolveContact(contact);
   const phone = contactLinks.tel(resolved.phone);
   const viber = contactLinks.viber(resolved.viber);
@@ -87,7 +89,7 @@ export function Header({ vehicleSlot, cartCount = 0, contact }: HeaderProps) {
           >
             <UserCircleIcon size={24} aria-hidden="true" />
           </NextLink>
-          <CartButton count={cartCount} />
+          {cartCount === undefined ? <CartButtonLive /> : <CartButton count={cartCount} />}
           <MobileNav contacts={contactLinkList(resolved)} className="lg:hidden" />
         </div>
       </div>

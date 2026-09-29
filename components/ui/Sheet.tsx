@@ -49,6 +49,10 @@ export type SheetProps = {
   initialSnap?: "peek" | "full";
   /** Drawer sits under the sticky header instead of covering it (non-modal panels). */
   belowHeader?: boolean;
+  /** Focus handling (Radix): e.g. return focus to a custom element when the panel closes. */
+  onOpenAutoFocus?: (event: Event) => void;
+  onCloseAutoFocus?: (event: Event) => void;
+  testId?: string;
   className?: string;
 };
 
@@ -67,6 +71,9 @@ export function Sheet({
   modal = true,
   initialSnap = "full",
   belowHeader = false,
+  onOpenAutoFocus,
+  onCloseAutoFocus,
+  testId,
   className,
 }: SheetProps) {
   const [isOpen, setOpen] = useControllableOpen(open, defaultOpen, onOpenChange);
@@ -91,6 +98,7 @@ export function Sheet({
               header={header}
               description={description}
               footer={footer}
+              focus={{ onOpenAutoFocus, onCloseAutoFocus, testId }}
               className={className}
             >
               {children}
@@ -107,6 +115,7 @@ export function Sheet({
               header={header}
               description={description}
               footer={footer}
+              focus={{ onOpenAutoFocus, onCloseAutoFocus, testId }}
               className={className}
             >
               {children}
@@ -118,7 +127,14 @@ export function Sheet({
   );
 }
 
+type FocusProps = {
+  onOpenAutoFocus?: (event: Event) => void;
+  onCloseAutoFocus?: (event: Event) => void;
+  testId?: string;
+};
+
 type PanelProps = {
+  focus?: FocusProps;
   open: boolean;
   present: boolean;
   onExited: () => void;
@@ -166,6 +182,7 @@ function outsideGuard(modal: boolean) {
 }
 
 function Drawer({
+  focus,
   open,
   present,
   onExited,
@@ -206,6 +223,9 @@ function Drawer({
         forceMount
         ref={panelRef}
         onInteractOutside={outsideGuard(modal)}
+        onOpenAutoFocus={focus?.onOpenAutoFocus}
+        onCloseAutoFocus={focus?.onCloseAutoFocus}
+        data-testid={focus?.testId}
         {...(description ? {} : { "aria-describedby": undefined })}
         className={cn(
           "fixed right-0 z-drawer flex w-full flex-col border-l border-edge-overlay bg-surface-3 text-ink-1 shadow-drawer outline-none",
@@ -229,6 +249,7 @@ function Drawer({
 }
 
 function BottomSheet({
+  focus,
   open,
   present,
   onExited,
@@ -344,6 +365,9 @@ function BottomSheet({
         forceMount
         ref={panelRef}
         onInteractOutside={outsideGuard(modal)}
+        onOpenAutoFocus={focus?.onOpenAutoFocus}
+        onCloseAutoFocus={focus?.onCloseAutoFocus}
+        data-testid={focus?.testId}
         {...(description ? {} : { "aria-describedby": undefined })}
         style={{ height: `${SHEET.full * 100}dvh` }}
         className={cn(
