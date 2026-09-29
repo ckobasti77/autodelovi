@@ -244,7 +244,7 @@ def add_area(name: str, hexcol: str, power: float, az: float, el: float, dist: f
 # --------------------------------------------------------------------------- x-ray shader (render only)
 
 
-def xray_material(mat: bpy.types.Material, rim_power: float, rim_scale: float, base_alpha: float, tint_hex: str, rim_hex: str) -> None:
+def xray_material(mat: bpy.types.Material, rim_power: float, rim_scale: float, base_alpha: float, tint_hex: str, rim_hex: str, env: float = 0.35) -> None:
     nt = mat.node_tree
     for n in list(nt.nodes):
         nt.nodes.remove(n)
@@ -284,7 +284,7 @@ def xray_material(mat: bpy.types.Material, rim_power: float, rim_scale: float, b
     gl = nt.nodes.new("ShaderNodeBsdfGlossy")
     gl.inputs["Roughness"].default_value = 0.05
     glm = nt.nodes.new("ShaderNodeMixShader")
-    glm.inputs["Fac"].default_value = 0.35
+    glm.inputs["Fac"].default_value = env
     tr0 = nt.nodes.new("ShaderNodeBsdfTransparent")
     nt.links.new(tr0.outputs[0], glm.inputs[1])
     nt.links.new(gl.outputs[0], glm.inputs[2])
@@ -317,13 +317,19 @@ def xray_material(mat: bpy.types.Material, rim_power: float, rim_scale: float, b
     mat.show_transparent_back = True
 
 
-def apply_xray(exploded: bool = False, mobile: bool = False) -> None:
+def apply_xray(exploded: bool = False, mobile: bool = False, values: dict | None = None) -> None:
+    """X-ray shell/glass look from config/xray.py (optionally overridden for studies)."""
+    from config.xray import XRAY
+
+    v = values or XRAY
+    b, g = v["body"], v["glass"]
     body = bpy.data.materials.get("mat_body_xray")
     glass = bpy.data.materials.get("mat_glass_xray")
     if body:
-        xray_material(body, 2.2 if mobile else 2.6, 1.0, 0.10 if exploded else 0.22, "#123642", "#9FE9FF")
+        xray_material(body, b["rim_power_mobile"] if mobile else b["rim_power"], b["rim_scale"],
+                      b["base_alpha_exploded"] if exploded else b["base_alpha"], b["tint"], b["rim"], v.get("env", 0.35))
     if glass:
-        xray_material(glass, 3.2, 0.7, 0.06, "#9FE9FF", "#9FE9FF")
+        xray_material(glass, g["rim_power"], g["rim_scale"], g["base_alpha"], g["tint"], g["rim"], v.get("env", 0.35))
 
 
 def paint_material(mat: bpy.types.Material, hex_col: str, metallic: float, rough: float, coat: float, alpha: float = 1.0) -> None:

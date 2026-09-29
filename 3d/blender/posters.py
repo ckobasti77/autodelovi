@@ -52,6 +52,8 @@ def parse():
     ap.add_argument("--scale", type=float, default=1.0, help="resolution scale for quick previews")
     ap.add_argument("--only", default="", help="e.g. assembled-desktop")
     ap.add_argument("--opaque-shell", action="store_true", help="debug: shell layer over the page colour")
+    ap.add_argument("--xray", default="", help="JSON override of config/xray.py for look studies")
+    ap.add_argument("--out", default="", help="output folder for the layers (default 3d/renders/posters)")
     return ap.parse_args(argv)
 
 
@@ -225,13 +227,16 @@ def freestyle(enable: bool, alpha: float) -> None:
     st.thickness = 1.0
 
 
+XRAY_OVERRIDE: dict | None = None
+
+
 def shell_layer(path: Path, w: int, h: int, samples: int, exploded: bool, mobile: bool, transparent: bool = True) -> None:
     reset_visibility()
     eevee(samples)
     s = bpy.context.scene
     s.eevee.use_shadows = False
     studio_rig()
-    apply_xray(exploded=exploded, mobile=mobile)
+    apply_xray(exploded=exploded, mobile=mobile, values=XRAY_OVERRIDE)
     for o in mesh_objects():
         if kind(o) == "opaque":
             o.is_holdout = True
@@ -283,8 +288,16 @@ def env() -> None:
 
 
 def main() -> None:
+    global OUT, XRAY_OVERRIDE
     scene.check_version()
     args = parse()
+    if args.xray:
+        from config.xray import XRAY
+
+        over = json.loads(args.xray)
+        XRAY_OVERRIDE = {k: ({**XRAY[k], **over[k]} if isinstance(XRAY[k], dict) and k in over else over.get(k, XRAY[k])) for k in XRAY}
+    if args.out:
+        OUT = Path(args.out) if Path(args.out).is_absolute() else scene.ROOT / args.out
     t0 = time.time()
     if args.set in ("posters", "all"):
         posters(args)
