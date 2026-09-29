@@ -49,3 +49,13 @@ pipeline/STATUS.md
 test-results/
 playwright-report/
 3d/renders/
+pipeline/logs/
+pipeline/state.json
+pipeline/env/
+pipeline/STATUS.md
+blob-report/
+.lighthouse/
+coverage/
+# Blender build output is reproducible from 3d/blender/*.py (DECISIONS D23)
+3d/build/*.blend
+backups/

@@ -1,0 +1,80 @@
+# SKLOP — Decisions log
+
+> Part of the SKLOP docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md).
+
+Every step appends new decisions at the bottom in the format: **date · step · decision · reason · alternatives**. Never delete an entry; supersede it with a new one that references the old ID.
+
+## Master-plan decisions (step 01, 2026-09-29)
+
+| # | Decision | Why |
+|---|---|---|
+| D1 | **Auth = Convex Auth** (`@convex-dev/auth` 0.0.95, `Password` provider) with its Next.js integration (`convexAuthNextjsMiddleware` in `proxy.ts`, `ConvexAuthNextjsServerProvider` in the root layout, `convexAuthNextjsToken()` on the server). Keys generated headlessly with `jose` (skill procedure). | Brief delegates to the `convex-auth` skill; the served Convex capability doc confirms `@convex-dev/auth`. Email+password, roles in our `users` table, server-side checks — all unattended. |
+| D2 | **Rendering = dynamic SSR for every page; `cacheComponents` stays OFF.** The root layout must read auth cookies (`ConvexAuthNextjsServerProvider` → `cookies()`), which prevents static shells anyway. Catalog data is cached across requests in ONE module (`lib/server/catalog-cache.ts`, `unstable_cache` + tags + revalidate); live price/stock come from Convex client subscriptions. | Cache Components with a cookie-reading root layout gives no static shell and adds build-time traps; the previous model is supported and predictable. One module isolates the (replaced-but-supported) `unstable_cache`, so switching to `'use cache'` later is local. Revisit if auth ever stops needing cookies in the root layout (DECISIONS: "static shells"). |
+| D3 | **Price secrecy by construction**: server-rendered/cached HTML contains only anonymous retail data. Role-specific prices only via authenticated Convex queries; purchase cost lives in a separate staff-only table; every public query has a `returns` validator. | "Prices never leak to other roles." |
+| D4 | **Public writes call public Convex mutations directly from the browser** (order, inquiry, mechanic registration, back-in-stock, consent log, search log). Each derives `clientKey = SHA-256(IP_HASH_SALT + ip + userAgent)` from `ctx.meta.getRequestMetadata()` (Convex 1.46) for rate limits; raw IP/UA are kept only inside the outbox event for Meta CAPI and deleted after sending. Attribution, consent and `_fbp`/`_fbc` travel as validated args. No shared "BFF" secret; Server Actions are used only to set server-side cookies (consent/attribution). | Fewer moving parts, realtime UX, real client IP (a Next server hop would hide it). Step 05 verifies `ip` is populated for websocket calls; fallback = client session id + global limits. |
+| D5 | Money = integer **para**; enums from the brief stay Serbian (`nova`, `potvrdjena`, `nov`, `u_obradi` …), technical enums English; all labels from the Serbian dictionary. | Brief §6; stable URLs/exports. |
+| D6 | **Codes table** (`productCodes`: normalized OEM / cross / MPN / SKU / EAN → product) for exact and prefix lookups; Convex full-text search only for names. | Arrays cannot be indexed; OEM search must be exact and instant. |
+| D7 | **Taxonomy refined** (§F.1): 10 systems, 44 categories (42 with 3D nodes) + 4 filter subcategories; renamed `usis-filter-vazduha`→`usisna-grana`, `ulje-karter`→`karter-dihtunzi` (all filters live in `filteri`); added `kais-alternatora`, `nosaci-motora`, `termostat-creva`, `brisaci`. Slugs are frozen from here on. | Removes overlapping filter categories (import ambiguity); adds high-frequency mechanic purchases. |
+| D8 | **3D**: glTF, meters, **Y-up, +Z = vehicle front, +X = vehicle left (driver side, LHD)**, origin on the ground at the wheelbase centre; nodes `part__<category>__<instance>`; manifest generated from Blender custom props; two GLBs (`car.glb` desktop, `car-lite.glb` mobile) with identical node names; meshopt; no post-processing by default; `RoomEnvironment` for web reflections. | Contract stability, performance, swap-ability. |
+| D9 | **3D never blocks**: SSR poster (preloaded) + LCP-safe headline; CSS-reserved scroll track; 3D chunk loads on first user intent or after ≥ 4 s idle post-load, tier-gated. | LCP/TBT budgets. |
+| D10 | **Text reveal** = skill contract (`constants/textRevealConfig.ts`, `lib/textReveal.ts`, `components/TextRevealGlobal.tsx`, generated inline stylesheet) + LCP-safe server-split hero variant whose first frame is visibly painted. | Mandatory site-wide system; LCP. |
+| D11 | UI primitives: **`radix-ui`** (headless, accessible) + **GSAP for all motion** (custom Sheet with Draggable, Radix Toast animated with GSAP; no vaul / framer-motion / CSS transition libraries). Tables: `@tanstack/react-table` **v8** (pin `^8.21`). Command palette: `cmdk`. Charts: hand-rolled accessible SVG. | Brief: GSAP only; fewer deps; v9 table API too new for reliable unattended use. |
+| D12 | Forms: `react-hook-form` + `zod` 4 (shared schemas in `lib/validation`); Convex args use `v` validators + shared pure validators (PIB, MB, VIN, phone) imported from `lib/domain`. | One truth for rules, native Convex validation. |
+| D13 | Excel: **SheetJS CE from the official CDN tarball**, parsed in a Web Worker; CSV encoding detected with `TextDecoder` (`utf-8` fatal → fallback `windows-1250`). exceljs not used. | Brief; no codepage tables needed. |
+| D14 | E-mail: **`@convex-dev/resend`**, React Email templates rendered in a `"use node"` internal action; `EMAIL_MODE=log` default (render + store in `emailLog`, never send). | Brief §5 notifications. |
+| D15 | Consent: **basic Consent Mode v2** — `gtag('consent','default', all denied)`; Google/Meta scripts are not loaded before an explicit grant. | "No tracking requests before consent." |
+| D16 | Attribution: captured from the landing URL + `document.referrer` into **memory only** (no cookie/storage) until consent; after an analytics or ads grant, a Server Action sets a server-side first-party cookie `sk_attr` (90 days, first + last touch). Leads carry attribution as args; click IDs are used for ad platforms only when `consent.ads` is true. | ZEK („Sl. glasnik RS" 35/2023) čl. 160: non-essential device storage needs prior consent; server-set cookie survives Safari ITP. |
+| D17 | Programmatic SEO: category×brand and category×model landings only; generation handled by on-page sections (anchors) and vehicle pages; thresholds + hard cap on indexable landings. | Thin-content guard, crawl budget. |
+| D18 | CSP: **nonce-based** (`'strict-dynamic'`) generated in `proxy.ts` — affordable because pages are dynamic anyway; `style-src 'self' 'unsafe-inline'`. | Strong XSS posture without breaking SSR styles. |
+| D19 | `experimental.authInterrupts: true` (use `forbidden()` / `unauthorized()` + `forbidden.tsx`/`unauthorized.tsx`). React Compiler off in v1. | Clean admin guards; build speed. |
+| D20 | Tests: Vitest 5 (unit, jsdom) + convex-test (edge-runtime), Playwright 1.63, @axe-core/playwright 4.13, Lighthouse 13 CLI. | Brief §7, §9. |
+| D21 | **Google Merchant feed is built but dormant**: Serbia is not a supported Shopping/free-listings country (Google removed the announced RS expansion on 2026-08-18). The Meta catalog CSV is the live catalog feed. | Brief requires feeds; ADS-PLAYBOOK states the status and how to switch on. |
+| D22 | **No consumer „stara cena" promotions in v1** (`compareAtPrice` not implemented); every retail price change is logged in `priceChanges` so the new consumer law's 30-day-lowest-price rule can be met when promotions are added. The mechanic view (MP cena crossed out + „Vaša cena") is a B2B rabat, not a promotion. | Zakon o zaštiti potrošača („Sl. glasnik RS" 35/2026, applied from 2 Aug 2026). |
+
+## Top risks (step 01)
+| # | Risk | Mitigation |
+|---|---|---|
+| R1 | Convex Auth's (experimental) Next.js SSR integration misbehaves on Next 16 `proxy.ts` (issue #271: `isAuthenticated()` false without both providers) | Mount both providers; matcher includes `/api/auth`; step 05 proves the round-trip before anything else. Fallback A: client-only `ConvexAuthProvider` (Convex enforces everything; admin pages become fully client-guarded; proxy guard dropped — record in DECISIONS). Fallback B: `@convex-dev/better-auth` 0.12.5 + `better-auth@~1.6` (documented Next integration, client token fetch). |
+| R2 | Dynamic SSR on every page costs TTFB/LCP | Anonymous catalog data cached in `catalog-cache.ts`; streaming with Suspense around slow parts; LCP-safe text; poster preload; measured in steps 10–13 and 22. |
+| R3 | Procedural Blender car looks cheap | X-ray concept (stylized shell), detail budget on high-search parts, render-critique loop (steps 08–09), stable node names allow swapping in a purchased model later. |
+| R4 | 3D hurts TBT/INP on mobile | Tiers, lite GLB, intent/idle loading, `compileAsync`, BVH, `frameloop="demand"`, Lighthouse gate in step 11. |
+| R5 | Text reveal hides content or delays LCP | Failsafe class, no-JS CSS, LCP-safe server variant above the fold, check snippet in e2e. |
+| R6 | Convex transaction limits during 50 k-row imports | Staged 500-row chunks, metrics-guarded commit chunks, resumable cursor, idempotent rows. |
+| R7 | Search misses (no diacritic folding, messy OEM formats, Cyrillic input) | Folded `searchText` + folded queries, Cyrillic→Latin transliteration, codes table exact/prefix, zero-result log feeding the dashboard. |
+| R8 | Role prices or cost leak | Separate `productPrivate`, `returns` validators, SSR retail-only rule, payload tests per role, step 20 review. |
+| R9 | Missing company data / legal texts | Settings-driven empty-safe UI, templates flagged `needsLegalReview`, HUMAN-TODO, never visible TODO text. |
+| R10 | Ad platforms: Merchant Center unsupported in RS; CAPI/consent correctness | Dormant Google feed, Meta catalog, Search-first playbook; consent tests; CAPI test events. |
+| R11 | Unattended interruptions (network, limits) | Per-step checklists in docs/progress, idempotent seeds/scripts, frequent commits, resumable jobs. |
+| R12 | `getRequestMetadata().ip` null for websocket calls | Verified in step 05; fallback key = client session id + e-mail/phone limits + global circuit breaker. |
+| R13 | E-mail not live (no Resend key/domain) | `log` mode with full admin outbox and previews; HUMAN-TODO go-live steps. |
+| R14 | Windows paths with spaces, Blender headless quirks | Quote every path; blender-pipeline skill rules; `--python-exit-code 1`. |
+| R15 | Next 16 API drift vs. model knowledge | §0.3 rules in CLAUDE.md; always read `node_modules/next/dist/docs` first. |
+
+## Open questions and chosen defaults (all editable; „potvrditi sa klijentom" in HUMAN-TODO)
+Final brand name → „SKLOP" from `config/site.ts` + settings. Company data, bank accounts, address, hours → empty-safe (placeholder hours Mon–Fri 08–17, Sat 08–14 shown only when set). Delivery → lično 0 RSD, kurir pouzećem 450 RSD, free over 10.000 RSD. Couriers → D Express, BEX, AKS, Post Express as editable list with tracking URL templates. Tiers → Majstor 10 %, Majstor Plus 15 %, Partner 20 %. Stock decrement → on confirmation; restock on cancel → yes. Auto-complete → 15 days after pickup/delivery. Quote validity → 7 days. Minimum margin → 8 % over net cost when cost is known. Guest checkout → on. Public prices → on. Orders require phone + e-mail. Deferred payment → only approved mechanics with the credit flag; terms 15 days; credit limit blocks deferred payment when exceeded. Price rounding → whole dinars. Consumer promos with „stara cena" → not in v1 (D22). Reklamacija deadlines → per the 2026 law (lawyer to confirm whether parts count as technical goods). Retention → §L5 (accountant/lawyer to confirm). Google Merchant → dormant (D21). Admin theme → decided in step 03. E-mail sender/domain → HUMAN-TODO; `log` mode until then. Seeded vehicles/engines/VIN model codes → „seed – proveriti". Staff seeing cost → yes. Language → Serbian Latin only, copy centralized.
+
+## Further step-01 decisions
+Guest cart token in localStorage (strictly necessary) · vehicle filter carried in URL params, never auto-redirect · no ScrollSmoother · TanStack Table v8 · custom SVG charts · custom GSAP Sheet (vaul is unmaintained) · no postprocessing by default · `RoomEnvironment` on the web, Poly Haven HDRI only for Blender renders · Draco disabled in `useGLTF` (no gstatic dependency) · single `lib/catalog/taxonomy.ts` shared by seed, manifest validation and UI · `productWriter` as the only product write path · Belgrade time via the EU DST rule (no `Intl` dependency in Convex) · e-mails rendered in a Node action · OG fonts from `@fontsource` · orders CSV with BOM + `;` · `/lab/koncept` redirected to `/styleguide` after step 04 · React Compiler off in v1.
+
+---
+
+## Alternatives considered for the key step-01 decisions
+| ID | Alternatives rejected | Why rejected |
+|---|---|---|
+| D1 | Better Auth (`@convex-dev/better-auth`); Clerk/Auth0 | Brief delegates to the convex-auth skill (Convex Auth); hosted providers need dashboards. Better Auth stays the documented fallback (R1). |
+| D2 | `cacheComponents: true` with root `instant = false`; client-only auth to keep static shells | Cookie-reading root layout gives no static shell; client-only auth loses server-side guards. |
+| D4 | Next Server Actions → Convex with a shared "BFF" secret | Hides the real client IP behind the Next server, adds a secret; Convex 1.46 exposes IP/UA itself. |
+| D7 | Keep the brief's `usis-filter-vazduha` / `ulje-karter` | Filters would live in two categories → ambiguous import and duplicate listings. |
+| D11 | vaul, sonner, framer-motion, React Aria, Base UI, TanStack Table v9 | GSAP-only motion rule; vaul unmaintained; v9 table API too new for unattended work. |
+| D13 | exceljs; npm `xlsx`; SheetJS cptable | Brief mandates SheetJS CDN; TextDecoder handles Windows-1250 without cptable. |
+| D15 | Advanced Consent Mode (cookieless pings) | Requirement "no tracking requests before consent". |
+| D16 | Proxy-set session cookie on landing | ZEK čl. 160 requires consent for non-essential storage. |
+| D17 | Category × generation landings | Index bloat / thin content; generation served by sections and vehicle pages. |
+| D18 | `'unsafe-inline'` scripts; SRI hashes | Pages are dynamic anyway, so nonces cost nothing extra. |
+
+## Step 02 decisions (2026-09-29)
+| Date | Step | Decision | Reason | Alternatives |
+|---|---|---|---|---|
+| 2026-09-29 | 02 | D23 — `3d/build/*.blend` is **git-ignored by default**; the car is rebuilt from `3d/blender/*.py`. Step 08 may un-ignore it only if the file is < 50 MB (check with `du`) and log that here. | The orchestrator commits with `git add -A` before any size check could run; a > 50 MB binary in history is irreversible, and the scripts make the .blend reproducible. | Commit always; Git LFS (not available unattended). |
+| 2026-09-29 | 02 | D24 — Baseline tooling only: Prettier config (no pre-commit hooks), npm scripts `typecheck`, `test`, `e2e`, `format`. `test`/`e2e` are wired to Vitest/Playwright when steps 04/05 install them (`--passWithNoTests` until then). | Step 02 must not add feature code; scripts give later steps stable command names. | Installing Vitest/Playwright now (belongs to steps 04/05/12). |
+| 2026-09-29 | 02 | D25 — Docs are split from the master plan by section with verbatim copies; `docs/plans/01-master-plan.md` stays the unabridged reference. | Nothing lost; later steps update topic docs, not the plan. | Rewriting/summarizing (risk of drift). |

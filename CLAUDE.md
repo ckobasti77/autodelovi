@@ -13,3 +13,25 @@ Convex agent skills for common tasks can be installed by running
 `npx convex ai-files install`.
 
 <!-- convex-ai-end -->
+
+## Project conventions (SKLOP)
+
+**Read first:** `pipeline/BRIEF.md` (intent) → `docs/README.md` (index) → the topic doc for your task. `docs/` wins for implementation details. Log new decisions in `docs/DECISIONS.md` (date · step · decision · reason · alternatives), progress in `docs/PROGRESS.md`, owner-only items (in Serbian) in `docs/HUMAN-TODO.md`.
+
+**Stack:** Next 16.3.6 App Router (Turbopack) · React 19.2 · TS strict · Tailwind v4 · Convex ^1.46 + Convex Auth 0.0.95 (Password) · three 0.186 / R3F 9 / drei 10 · GSAP 3.15 + @gsap/react · radix-ui · RHF + zod 4 · SheetJS 0.20.3 (CDN tarball) · Vitest 5 + convex-test · Playwright 1.63 · axe · Lighthouse 13. Versions: `docs/ARCHITECTURE.md` §0.2.
+
+**Folders:** `app/` (`(shop)/`, `admin/`, route handlers) · `components/{ui,shell,catalog,three,…}` · `lib/{domain,validation,format,server,seo,analytics,three,gsap,i18n,excel}` · `constants/` · `config/site.ts` · `convex/` · `3d/{blender,scripts,assets,build}` · `tests/{unit,e2e,fixtures,lighthouse}`. Pure business logic lives in `lib/domain` (shared by Next and Convex).
+
+**Next 16 (read `node_modules/next/dist/docs/` before using an API):** async `params`/`searchParams`/`cookies()`/`headers()`; `proxy.ts` not middleware (Node runtime); `revalidateTag(tag, 'max'|{expire:0})`; `next/image` `preload` not `priority`; no `next lint`; `cacheComponents` is OFF — pages are dynamic (auth cookies in root layout), catalog data cached only in `lib/server/catalog-cache.ts`. Full list: ARCHITECTURE §0.3.
+
+**Convex:** read `convex/_generated/ai/guidelines.md` first. Every function has `args` + `returns` validators and authorizes via the builders in `convex/lib/functions.ts` (`publicQuery/publicMutation/userMutation/staffMutation/ownerMutation`); identity never from args; indexes, never unbounded `.collect()`; products only via `productWriter`; staff writes via `audit()`; business events via `emitEvent`. Never return cost or another role's price from public queries. Push with `npx convex dev --once` (never `convex deploy`).
+
+**Copy:** Serbian Latin, ekavian, correct č ć ž š đ; voice = experienced mechanic to a colleague; no emojis, no exclamation marketing, no lorem, no visible TODO, no invented company facts (read settings). Formats: `12.990 RSD`, `29.09.2026.`, `+381 64 123 4567`. Code/comments/tech docs in English. Shared strings in `lib/i18n/sr/`.
+
+**Motion:** GSAP only (`useGSAP` with scope, `gsap.matchMedia` for reduced motion). Never write your own text entrance — the site-wide text reveal covers copy; above-the-fold copy uses `RevealText` (LCP-safe). Opt out only with `data-reveal="off"` (see `.claude/rules/architecture.md` / text-reveal skill).
+
+**3D:** follow `docs/3D-CONTRACT.md` (frozen slugs, `part__<category>__<instance>`, glTF +Y up / +Z front / +X left, manifest schema, budgets). Blender only via scripts (blender-pipeline skill).
+
+**Commands:** `npm run dev` (port 3000, background only) · `npm run build` · `npm run typecheck` · `npm run lint` · `npm test` · `npm run e2e` (port 3100) · `npm run format`. Paths contain spaces — quote them.
+
+**Definition of Done:** `npx tsc --noEmit` ✓ · `npm run lint` ✓ · relevant unit/convex tests ✓ · e2e for touched flows ✓ · UI changes screenshotted at 390 + 1440 and reviewed · no console errors · WCAG 2.2 AA · docs + PROGRESS updated · committed.
