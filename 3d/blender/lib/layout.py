@@ -14,11 +14,13 @@ from .scene import to_vehicle
 TUNED = scene.BUILD / "explode.tuned.json"
 
 
-def explode_table() -> dict[str, tuple[tuple[float, float, float], float, float]]:
+def explode_table(use_tuned: bool = True) -> dict[str, tuple[tuple[float, float, float], float, float]]:
+    """Explode intent (config/explode.py), overridden by 3d/build/explode.tuned.json unless
+    use_tuned is False (the solver always starts from the intent)."""
     from config.explode import E
 
     table = {k: (v[0], v[1], v[2]) for k, v in E.items()}
-    if TUNED.exists():
+    if use_tuned and TUNED.exists():
         with open(TUNED, encoding="utf-8") as f:
             tuned = json.load(f)
         for k, v in tuned.items():

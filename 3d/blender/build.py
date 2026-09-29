@@ -22,7 +22,7 @@ import bpy  # noqa: E402
 
 from lib import scene  # noqa: E402
 from lib.materials import build_library  # noqa: E402
-from lib.parts import BuildContext, report  # noqa: E402
+from lib.parts import BuildContext, report, write_pivots  # noqa: E402
 from lib.textures import generate_all  # noqa: E402
 
 MODULES = [
@@ -91,6 +91,9 @@ def main() -> None:
     ctx.module = "proxy"
     importlib.import_module("parts.proxy").build(ctx)
     report()
+    if args.quality == "desktop":
+        bpy.context.view_layer.update()
+        write_pivots()
     out.parent.mkdir(parents=True, exist_ok=True)
     bpy.ops.wm.save_as_mainfile(filepath=str(out), compress=True)
     scene.log(f"saved {out} in {time.time() - t0:.1f}s")

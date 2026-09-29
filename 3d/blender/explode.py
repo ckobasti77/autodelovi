@@ -231,9 +231,7 @@ def order_key(timing, table, key):
 def solve(bodies) -> None:
     """Grow the distance of the later node (stage, order) of every pair still overlapping at p=1
     in 6 % steps (max 1.6x the intent); rotate toward +y as a second resort (max 10 degrees)."""
-    from config.explode import E
-
-    base = explode_table()
+    base = explode_table(use_tuned=False)
     table = dict(base)
     timing = Timing(table)
     grow = {k: 1.0 for k in table}
@@ -272,7 +270,6 @@ def solve(bodies) -> None:
         bd, bdist, border = base[k]
         if abs(dist - bdist) > 1e-6 or tuple(d) != tuple(bd):
             tuned[k] = {"dir": list(d), "dist": dist, "order": order}
-    # keep previously tuned values of nodes not touched this run
     with open(TUNED, "w", encoding="utf-8") as f:
         json.dump(dict(sorted(tuned.items())), f, indent=2)
     log(f"solve: {len(tuned)} tuned nodes -> {TUNED}")

@@ -15,7 +15,10 @@
     "test:convex": "vitest run --project convex",
     "convex:push": "convex dev --once",
     "seed": "convex run seed:run && convex run seed:createOwner",
-    "seed:stats": "convex run seed:stats"
+    "seed:stats": "convex run seed:stats",
+    "3d": "node 3d/scripts/run.mjs",
+    "3d:validate": "node 3d/scripts/validate.mjs",
+    "3d:preview": "node 3d/scripts/preview.mjs"
   },
   "dependencies": {
     "@auth/core": "^0.41.3",

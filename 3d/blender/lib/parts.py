@@ -21,6 +21,45 @@ from .scene import V, log
 
 TAXONOMY_JSON = scene.BUILD / "taxonomy.json"
 
+# Lite build: materials per part are capped so the lite GLB stays within 150 draw calls
+# (PLAN §3.9 / §9). Dropped slots merge into a kept slot of the same family.
+LITE_CAP_3 = {"farovi", "stop-svetla"}
+LITE_CAP_2 = {
+    "turbina", "kocioni-diskovi", "kocione-celjusti", "amortizeri-opruge", "kvacilo-zamajac", "zupcasti-kais-vodena-pumpa",
+    "hladnjak-ventilator", "alternator", "anlaser", "akumulator", "felne-gume", "motor", "menjac", "interkuler",
+    "usisna-grana", "klima", "retrovizori", "brisaci", "auspuh", "dpf-katalizator", "poluosovine", "letva-volana",
+}
+_FAMILY = {
+    **{m: "metal" for m in ("mat_machined_steel", "mat_steel_dark", "mat_cast_iron", "mat_cast_alu", "mat_brushed_alu", "mat_chrome", "mat_copper", "mat_heat_shield", "mat_caliper", "mat_core_fins")},
+    **{m: "dark" for m in ("mat_plastic_black", "mat_rubber", "mat_hose", "mat_tyre", "mat_battery", "mat_painted_black", "mat_plastic_grey", "mat_ceramic", "mat_wire")},
+    **{m: "see" for m in ("mat_glass_lens", "mat_glass_xray", "mat_body_xray")},
+    **{m: "light" for m in ("mat_emissive_led", "mat_emissive_tail")},
+}
+
+
+def lite_materials(geo: Geo, category: str) -> Geo:
+    cap = 3 if category in LITE_CAP_3 else 2 if category in LITE_CAP_2 else 1
+    counts: dict[str, int] = {}
+    for m in geo.mats:
+        counts[m] = counts.get(m, 0) + 1
+    if len(counts) <= cap:
+        return geo
+    order = sorted(counts, key=lambda m: -counts[m])
+    keep = order[:cap]
+    if cap >= 3:  # lamps keep lens, housing and light source
+        want = [m for m in order if _FAMILY.get(m) in ("see", "light")] + [m for m in order if _FAMILY.get(m) == "dark"]
+        keep = list(dict.fromkeys(want + order))[:cap]
+    solid = [m for m in keep if _FAMILY.get(m) not in ("see", "light")] or keep
+    remap = {}
+    for m in counts:
+        if m in keep:
+            continue
+        same = [k for k in keep if _FAMILY.get(k) == _FAMILY.get(m)]
+        remap[m] = same[0] if same else solid[0]
+    g = geo.copy()
+    g.mats = [remap.get(m, m) for m in g.mats]
+    return g
+
 
 def load_taxonomy() -> dict:
     with open(TAXONOMY_JSON, encoding="utf-8") as f:
@@ -96,6 +135,8 @@ class BuildContext:
         else:
             if geo is None:
                 raise ValueError(f"{node}: no geometry")
+            if self.lite:
+                geo = lite_materials(geo, category)
             obj = geo_to_object(geo, child_name, empty, coll, bevel=bevel, segments=segments, profile=profile, sharp_angle=sharp_angle)
             if shared_key:
                 self.shared[shared_key] = obj.data
@@ -144,10 +185,33 @@ def report() -> None:
     log(f"parts: {len(part_nodes())}  triangles (rendered): {total}")
 
 
+PIVOTS_JSON = scene.BUILD / "pivots.json"
+_DESKTOP_PIVOTS: dict | None = None
+
+
+def desktop_pivots() -> dict:
+    """Pivots written by the desktop build; the lite build reuses them so both GLBs share
+    identical node transforms (the manifest is generated from the desktop scene)."""
+    global _DESKTOP_PIVOTS
+    if _DESKTOP_PIVOTS is None:
+        _DESKTOP_PIVOTS = json.loads(PIVOTS_JSON.read_text(encoding="utf-8")) if PIVOTS_JSON.exists() else {}
+    return _DESKTOP_PIVOTS
+
+
+def write_pivots() -> None:
+    from .scene import to_vehicle
+
+    data = {o.name: [round(c, 6) for c in to_vehicle(o.matrix_world.translation)] for o in part_nodes()}
+    PIVOTS_JSON.write_text(json.dumps(data, indent=1), encoding="utf-8")
+
+
 def add_centered(ctx: "BuildContext", category: str, instance: str, geo_abs: Geo, pivot=None, **kw) -> bpy.types.Object:
-    """Add a part from absolute vehicle-space geometry; pivot = bbox centre unless given."""
+    """Add a part from absolute vehicle-space geometry; pivot = bbox centre unless given
+    (lite builds take the desktop pivot so both GLBs match)."""
     from mathutils import Vector as _V
 
+    if pivot is None and ctx.lite and f"part__{category}__{instance}" in desktop_pivots():
+        pivot = desktop_pivots()[f"part__{category}__{instance}"]
     if pivot is None:
         mn, mx = geo_abs.bbox()
         pivot = (mn + mx) / 2

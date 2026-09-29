@@ -255,7 +255,8 @@ def main() -> None:
             pts.extend(corners(mn, mx))
         set_output("", w, h, False)
         add_sun("fill", "#FFFFFF", 1.0, args.az, min(args.el + 12, 80), shadow=False)
-        pos, tgt, _ = solve_camera(pts, args.az, args.el, 30, w / h, width=args.fill, cx=0.5, cy=0.5)
+        m = (1.0 - args.fill) / 2  # fit the subject inside a centred box (width and height)
+        pos, tgt, _ = solve_camera(pts, args.az, args.el, 30, w / h, box=(m, 1.0 - m, m * 0.8, 1.0 - m * 0.8))
         make_camera("qa_cam", pos, tgt, 30)
         label = args.tag or args.focus.replace(",", "+") or "nodes"
         render(d / f"closeup-{label}-p{int(args.p)}.png")

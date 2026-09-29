@@ -1,20 +1,27 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-09-29T17:21:07Z",
+ "generatedAt": "2026-09-29T19:22:04Z",
  "source": {
   "blender": "5.1.1",
-  "scriptsHash": "2b0d3057ca9305cce319df35bdc829cedd775f4dae32c9368d750ce59a7c465d"
+  "scriptsHash": "66c30b8cd1d83effdb0a905032545170830a771fd715e77c8bf76a98188798a1"
  },
  "models": {
   "desktop": {
    "url": "/models/car.glb",
-   "bytes": 479136,
-   "sha256": "b3650ad40781d81d7f94eccede9130a3386aabbf6b637e79a57440a6b2c2eba7",
-   "triangles": 1128,
-   "drawCalls": 197,
+   "bytes": 2183672,
+   "sha256": "4c6acfd5df662cbc1923cdfebbf99b78229239e866989bcc2a4eb045a8db6ccc",
+   "triangles": 260262,
+   "drawCalls": 204,
    "textures": 4
   },
-  "lite": null
+  "lite": {
+   "url": "/models/car-lite.glb",
+   "bytes": 1619544,
+   "sha256": "9b6fa2b26bc961df5ce4957d8a7f082e491730295dbd01c8fba6f15c8dba452d",
+   "triangles": 206470,
+   "drawCalls": 149,
+   "textures": 4
+  }
  },
  "units": "meters",
  "axes": {
@@ -24,14 +31,14 @@
  },
  "bbox": {
   "min": [
-   -1.03,
-   0,
-   -2.09
+   -1.084,
+   0.0001,
+   -2.082
   ],
   "max": [
-   1.03,
-   1.41,
-   2.19
+   1.084,
+   1.4514,
+   2.187
   ]
  },
  "systems": [
@@ -221,11 +228,11 @@
    "thumbnail": "/images/parts/motor.webp",
    "focus": {
     "dir": [
-     0.3826,
-     0.7985,
-     0.4647
+     0.3822,
+     0.7881,
+     0.4825
     ],
-    "minDistance": 1.456,
+    "minDistance": 1.492,
     "fov": 30
    }
   },
@@ -240,11 +247,11 @@
    "thumbnail": "/images/parts/turbina.webp",
    "focus": {
     "dir": [
-     0.4036,
-     0.7698,
-     0.4944
+     0.4018,
+     0.7608,
+     0.5097
     ],
-    "minDistance": 0.474,
+    "minDistance": 0.547,
     "fov": 30
    }
   },
@@ -260,11 +267,11 @@
    "thumbnail": "/images/parts/interkuler.webp",
    "focus": {
     "dir": [
-     0.4197,
-     0.425,
-     0.802
+     0.4288,
+     0.5626,
+     0.7068
     ],
-    "minDistance": 1.766,
+    "minDistance": 3.2,
     "fov": 30
    }
   },
@@ -280,11 +287,11 @@
    "thumbnail": "/images/parts/usisna-grana.webp",
    "focus": {
     "dir": [
-     0.3835,
-     0.7464,
-     0.5438
+     0.3854,
+     0.7287,
+     0.5661
     ],
-    "minDistance": 1.685,
+    "minDistance": 1.924,
     "fov": 30
    }
   },
@@ -300,11 +307,11 @@
    "thumbnail": "/images/parts/brizgaljke-pumpa-goriva.webp",
    "focus": {
     "dir": [
-     0.3722,
-     0.6744,
-     0.6377
+     0.3699,
+     0.6602,
+     0.6536
     ],
-    "minDistance": 1.661,
+    "minDistance": 1.772,
     "fov": 30
    }
   },
@@ -324,7 +331,7 @@
      0.4508,
      0.6411
     ],
-    "minDistance": 1.052,
+    "minDistance": 0.76,
     "fov": 30
    }
   },
@@ -343,7 +350,7 @@
      0.4508,
      0.6411
     ],
-    "minDistance": 0.714,
+    "minDistance": 0.718,
     "fov": 30
    }
   },
@@ -377,9 +384,9 @@
    "thumbnail": "/images/parts/anlaser.webp",
    "focus": {
     "dir": [
-     0.4681,
-     0.3672,
-     0.8038
+     0.4643,
+     0.3586,
+     0.8098
     ],
     "minDistance": 0.45,
     "fov": 30
@@ -396,11 +403,11 @@
    "thumbnail": "/images/parts/paljenje-grejaci.webp",
    "focus": {
     "dir": [
-     0.4228,
-     0.7935,
-     0.4377
+     0.4143,
+     0.7892,
+     0.4533
     ],
-    "minDistance": 0.45,
+    "minDistance": 0.461,
     "fov": 30
    }
   },
@@ -415,11 +422,11 @@
    "thumbnail": "/images/parts/karter-dihtunzi.webp",
    "focus": {
     "dir": [
-     0.6349,
-     0.0798,
-     0.7684
+     0.3634,
+     0.8118,
+     0.457
     ],
-    "minDistance": 0.681,
+    "minDistance": 0.67,
     "fov": 30
    }
   },
@@ -434,9 +441,9 @@
    "thumbnail": "/images/parts/egr-ventil.webp",
    "focus": {
     "dir": [
-     0.5232,
-     0.6733,
-     0.5224
+     0.5167,
+     0.6636,
+     0.541
     ],
     "minDistance": 0.45,
     "fov": 30
@@ -455,11 +462,11 @@
    "thumbnail": "/images/parts/nosaci-motora.webp",
    "focus": {
     "dir": [
-     0.4188,
-     0.3448,
-     0.8401
+     0.4033,
+     0.4166,
+     0.8148
     ],
-    "minDistance": 2.752,
+    "minDistance": 2.917,
     "fov": 30
    }
   },
@@ -478,7 +485,7 @@
      0.1003,
      -0.6516
     ],
-    "minDistance": 1.007,
+    "minDistance": 1.25,
     "fov": 30
    }
   },
@@ -498,7 +505,7 @@
      0.0798,
      -0.7098
     ],
-    "minDistance": 3.07,
+    "minDistance": 3.2,
     "fov": 30
    }
   },
@@ -514,11 +521,11 @@
    "thumbnail": "/images/parts/hladnjak-ventilator.webp",
    "focus": {
     "dir": [
-     0.3675,
-     0.4844,
-     0.7939
+     0.3726,
+     0.6291,
+     0.6822
     ],
-    "minDistance": 1.07,
+    "minDistance": 1.338,
     "fov": 30
    }
   },
@@ -534,11 +541,11 @@
    "thumbnail": "/images/parts/termostat-creva.webp",
    "focus": {
     "dir": [
-     0.4452,
-     0.688,
-     0.5732
+     0.4708,
+     0.7471,
+     0.4692
     ],
-    "minDistance": 1.528,
+    "minDistance": 1.381,
     "fov": 30
    }
   },
@@ -558,7 +565,7 @@
      0.3505,
      0.8211
     ],
-    "minDistance": 1.627,
+    "minDistance": 1.941,
     "fov": 30
    }
   },
@@ -577,7 +584,7 @@
      0.4505,
      0.2703
     ],
-    "minDistance": 0.529,
+    "minDistance": 0.515,
     "fov": 30
    }
   },
@@ -596,7 +603,7 @@
      0.4505,
      0.2703
     ],
-    "minDistance": 0.923,
+    "minDistance": 0.995,
     "fov": 30
    }
   },
@@ -612,11 +619,11 @@
    "thumbnail": "/images/parts/poluosovine.webp",
    "focus": {
     "dir": [
-     0.385,
-     0.8091,
-     0.4441
+     0.5904,
+     0.1534,
+     0.7924
     ],
-    "minDistance": 1.238,
+    "minDistance": 1.653,
     "fov": 30
    }
   },
@@ -634,9 +641,9 @@
    "thumbnail": "/images/parts/amortizeri-opruge.webp",
    "focus": {
     "dir": [
-     0.337,
-     0.7815,
-     0.525
+     0.3325,
+     0.7791,
+     0.5315
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -655,9 +662,9 @@
    "thumbnail": "/images/parts/ramena-selen-blokovi.webp",
    "focus": {
     "dir": [
-     0.4225,
+     0.415,
      0.0798,
-     0.9029
+     0.9063
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -676,11 +683,11 @@
    "thumbnail": "/images/parts/spone-stabilizatori.webp",
    "focus": {
     "dir": [
-     0.8169,
-     0.5329,
-     0.2205
+     0.8177,
+     0.5197,
+     0.2476
     ],
-    "minDistance": 1.824,
+    "minDistance": 1.827,
     "fov": 30
    }
   },
@@ -695,11 +702,11 @@
    "thumbnail": "/images/parts/letva-volana.webp",
    "focus": {
     "dir": [
-     0.6941,
-     0.5593,
-     0.4531
+     0.6917,
+     0.5513,
+     0.4664
     ],
-    "minDistance": 0.978,
+    "minDistance": 1.005,
     "fov": 30
    }
   },
@@ -717,9 +724,9 @@
    "thumbnail": "/images/parts/lezaj-glavcina.webp",
    "focus": {
     "dir": [
-     0.3218,
-     0.8049,
-     0.4986
+     0.3187,
+     0.8011,
+     0.5065
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -739,9 +746,9 @@
    "thumbnail": "/images/parts/kocioni-diskovi.webp",
    "focus": {
     "dir": [
-     0.3219,
-     0.8049,
-     0.4985
+     0.3188,
+     0.8012,
+     0.5064
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -761,9 +768,9 @@
    "thumbnail": "/images/parts/kocione-plocice.webp",
    "focus": {
     "dir": [
-     0.5601,
-     0.8088,
-     0.179
+     0.5311,
+     0.8237,
+     0.1985
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -783,9 +790,9 @@
    "thumbnail": "/images/parts/kocione-celjusti.webp",
    "focus": {
     "dir": [
-     0.5419,
-     0.8182,
-     0.1922
+     0.5418,
+     0.8159,
+     0.2019
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -805,9 +812,9 @@
    "thumbnail": "/images/parts/abs-senzori.webp",
    "focus": {
     "dir": [
-     0.3772,
-     0.8547,
-     0.3567
+     0.3733,
+     0.852,
+     0.367
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -824,11 +831,11 @@
    "thumbnail": "/images/parts/akumulator.webp",
    "focus": {
     "dir": [
-     0.4616,
-     0.7001,
-     0.5447
+     0.4605,
+     0.6831,
+     0.5668
     ],
-    "minDistance": 0.455,
+    "minDistance": 0.474,
     "fov": 30
    }
   },
@@ -844,11 +851,11 @@
    "thumbnail": "/images/parts/farovi.webp",
    "focus": {
     "dir": [
-     0.3748,
-     0.5642,
-     0.7356
+     0.3626,
+     0.5525,
+     0.7505
     ],
-    "minDistance": 2.452,
+    "minDistance": 2.576,
     "fov": 30
    }
   },
@@ -864,11 +871,11 @@
    "thumbnail": "/images/parts/stop-svetla.webp",
    "focus": {
     "dir": [
-     0.4738,
-     0.8236,
-     0.3117
+     0.4693,
+     0.8261,
+     0.3119
     ],
-    "minDistance": 2.476,
+    "minDistance": 2.416,
     "fov": 30
    }
   },
@@ -885,11 +892,11 @@
    "thumbnail": "/images/parts/senzori.webp",
    "focus": {
     "dir": [
-     0.4761,
-     0.7004,
-     0.5317
+     0.5056,
+     0.6669,
+     0.5474
     ],
-    "minDistance": 2.145,
+    "minDistance": 2.369,
     "fov": 30
    }
   },
@@ -904,11 +911,11 @@
    "thumbnail": "/images/parts/hauba.webp",
    "focus": {
     "dir": [
-     0.3853,
-     0.6365,
-     0.6681
+     0.3748,
+     0.6319,
+     0.6784
     ],
-    "minDistance": 2.195,
+    "minDistance": 2.471,
     "fov": 30
    }
   },
@@ -924,9 +931,9 @@
    "thumbnail": "/images/parts/branici.webp",
    "focus": {
     "dir": [
-     0.3272,
-     0.8006,
-     0.502
+     0.3343,
+     0.8025,
+     0.4942
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -944,9 +951,9 @@
    "thumbnail": "/images/parts/blatobrani.webp",
    "focus": {
     "dir": [
-     0.3531,
-     0.6574,
-     0.6657
+     0.3421,
+     0.6564,
+     0.6724
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -966,9 +973,9 @@
    "thumbnail": "/images/parts/vrata.webp",
    "focus": {
     "dir": [
-     0.3387,
-     0.776,
-     0.5322
+     0.3288,
+     0.7819,
+     0.5296
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -986,9 +993,9 @@
    "thumbnail": "/images/parts/retrovizori.webp",
    "focus": {
     "dir": [
-     0.3435,
-     0.6654,
-     0.6628
+     0.3369,
+     0.6608,
+     0.6707
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -1007,9 +1014,9 @@
    "thumbnail": "/images/parts/stakla.webp",
    "focus": {
     "dir": [
-     0.3414,
-     0.7631,
-     0.5487
+     0.3367,
+     0.7624,
+     0.5526
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -1026,11 +1033,11 @@
    "thumbnail": "/images/parts/brisaci.webp",
    "focus": {
     "dir": [
-     0.3289,
-     0.5623,
-     0.7587
+     0.3253,
+     0.5566,
+     0.7644
     ],
-    "minDistance": 1.329,
+    "minDistance": 1.438,
     "fov": 30
    }
   },
@@ -1048,9 +1055,9 @@
    "thumbnail": "/images/parts/felne-gume.webp",
    "focus": {
     "dir": [
-     0.3218,
-     0.8049,
-     0.4986
+     0.3187,
+     0.8011,
+     0.5065
     ],
     "minDistance": 3.2,
     "fov": 30
@@ -1065,9 +1072,9 @@
    "thumbnail": "/images/parts/filteri.webp",
    "focus": {
     "dir": [
-     0.503,
-     0.3841,
-     0.7742
+     0.4962,
+     0.3739,
+     0.7836
     ],
     "minDistance": 0,
     "fov": 30
@@ -1082,9 +1089,9 @@
    "thumbnail": "/images/parts/ulja-tecnosti.webp",
    "focus": {
     "dir": [
-     0.503,
-     0.3841,
-     0.7742
+     0.4962,
+     0.3739,
+     0.7836
     ],
     "minDistance": 0,
     "fov": 30
@@ -1111,30 +1118,30 @@
     "order": 0.2
    },
    "pivot": [
-    0.7,
-    0.4,
-    1.25
+    0.7395,
+    0.3447,
+    1.2667
    ],
    "bbox": {
     "min": [
-     0.685,
-     0.385,
-     1.22
+     0.6174,
+     0.3169,
+     1.2433
     ],
     "max": [
-     0.715,
-     0.415,
-     1.28
+     0.7395,
+     0.5065,
+     1.2786
     ]
    },
    "labelAnchor": [
-    0,
-    0.045,
-    0
+    -0.0611,
+    0.1918,
+    -0.0057
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 940,
+    "lite": 940
    },
    "materials": [
     "mat_plastic_black"
@@ -1159,30 +1166,30 @@
     "order": 0.2
    },
    "pivot": [
-    -0.7,
-    0.4,
-    1.25
+    -0.7395,
+    0.3447,
+    1.2667
    ],
    "bbox": {
     "min": [
-     -0.715,
-     0.385,
-     1.22
+     -0.7395,
+     0.3169,
+     1.2433
     ],
     "max": [
-     -0.685,
-     0.415,
-     1.28
+     -0.6174,
+     0.5065,
+     1.2786
     ]
    },
    "labelAnchor": [
-    0,
-    0.045,
-    0
+    0.0611,
+    0.1918,
+    -0.0057
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 940,
+    "lite": 940
    },
    "materials": [
     "mat_plastic_black"
@@ -1207,30 +1214,30 @@
     "order": 0.2
    },
    "pivot": [
-    0.7,
-    0.4,
-    -1.25
+    0.7245,
+    0.3447,
+    -1.3533
    ],
    "bbox": {
     "min": [
-     0.685,
-     0.385,
-     -1.28
+     0.6024,
+     0.3169,
+     -1.3767
     ],
     "max": [
-     0.715,
-     0.415,
-     -1.22
+     0.7245,
+     0.5065,
+     -1.3414
     ]
    },
    "labelAnchor": [
-    0,
-    0.045,
-    0
+    -0.0611,
+    0.1918,
+    -0.0057
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 940,
+    "lite": 940
    },
    "materials": [
     "mat_plastic_black"
@@ -1255,30 +1262,30 @@
     "order": 0.2
    },
    "pivot": [
-    -0.7,
-    0.4,
-    -1.25
+    -0.7245,
+    0.3447,
+    -1.3533
    ],
    "bbox": {
     "min": [
-     -0.715,
-     0.385,
-     -1.28
+     -0.7245,
+     0.3169,
+     -1.3767
     ],
     "max": [
-     -0.685,
-     0.415,
-     -1.22
+     -0.6024,
+     0.5065,
+     -1.3414
     ]
    },
    "labelAnchor": [
-    0,
-    0.045,
-    0
+    0.0611,
+    0.1918,
+    -0.0057
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 940,
+    "lite": 940
    },
    "materials": [
     "mat_plastic_black"
@@ -1298,35 +1305,35 @@
      0.87537,
      0.28848
     ],
-    "distance": 0.51,
+    "distance": 0.8775,
     "stage": 4,
     "order": 0.2
    },
    "pivot": [
     0.58,
-    0.595,
+    0.6055,
     1.745
    ],
    "bbox": {
     "min": [
-     0.441,
+     0.439,
      0.5,
-     1.6575
+     1.6555
     ],
     "max": [
-     0.719,
-     0.69,
-     1.8325
+     0.721,
+     0.711,
+     1.8345
     ]
    },
    "labelAnchor": [
     0,
-    0.125,
+    0.1355,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1032,
+    "lite": 1032
    },
    "materials": [
     "mat_battery",
@@ -1343,39 +1350,39 @@
    "lod": "core",
    "explode": {
     "dir": [
-     -0.6888,
-     0.44921,
-     0.56901
+     -0.40092,
+     0.55127,
+     0.73168
     ],
-    "distance": 0.42,
+    "distance": 0.7425,
     "stage": 4,
     "order": 0.5
    },
    "pivot": [
-    -0.34,
-    0.48,
-    1.72
+    -0.35,
+    0.474,
+    1.725
    ],
    "bbox": {
     "min": [
-     -0.44,
-     0.405,
-     1.645
+     -0.476,
+     0.39,
+     1.652
     ],
     "max": [
-     -0.24,
-     0.555,
-     1.795
+     -0.224,
+     0.558,
+     1.798
     ]
    },
    "labelAnchor": [
     0,
-    0.105,
+    0.114,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 3272,
+    "lite": 2600
    },
    "materials": [
     "mat_cast_alu",
@@ -1403,29 +1410,29 @@
    },
    "pivot": [
     0.615,
-    0.68,
+    0.67,
     1.275
    ],
    "bbox": {
     "min": [
-     0.535,
-     0.46,
-     1.195
+     0.501,
+     0.4344,
+     1.1748
     ],
     "max": [
-     0.695,
-     0.9,
-     1.355
+     0.7053,
+     0.9021,
+     1.3611
     ]
    },
    "labelAnchor": [
-    0,
-    0.25,
-    0
+    -0.0119,
+    0.2621,
+    -0.007
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 5492,
+    "lite": 3448
    },
    "materials": [
     "mat_machined_steel",
@@ -1454,29 +1461,29 @@
    },
    "pivot": [
     -0.615,
-    0.68,
+    0.67,
     1.275
    ],
    "bbox": {
     "min": [
-     -0.695,
-     0.46,
-     1.195
+     -0.7053,
+     0.4344,
+     1.1748
     ],
     "max": [
-     -0.535,
-     0.9,
-     1.355
+     -0.501,
+     0.9021,
+     1.3611
     ]
    },
    "labelAnchor": [
-    0,
-    0.25,
-    0
+    0.0119,
+    0.2621,
+    -0.007
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 5492,
+    "lite": 3448
    },
    "materials": [
     "mat_machined_steel",
@@ -1504,30 +1511,30 @@
     "order": 0.6
    },
    "pivot": [
-    0.57,
-    0.5,
-    -1.32
+    0.5562,
+    0.4425,
+    -1.33
    ],
    "bbox": {
     "min": [
-     0.47,
-     0.26,
-     -1.44
+     0.4494,
+     0.237,
+     -1.458
     ],
     "max": [
-     0.67,
-     0.74,
-     -1.2
+     0.6213,
+     0.7784,
+     -1.1693
     ]
    },
    "labelAnchor": [
-    0,
-    0.27,
-    0
+    -0.0209,
+    0.3659,
+    0.0164
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 4344,
+    "lite": 3120
    },
    "materials": [
     "mat_machined_steel",
@@ -1555,30 +1562,30 @@
     "order": 0.6
    },
    "pivot": [
-    -0.57,
-    0.5,
-    -1.32
+    -0.5562,
+    0.4425,
+    -1.33
    ],
    "bbox": {
     "min": [
-     -0.67,
-     0.26,
-     -1.44
+     -0.6213,
+     0.237,
+     -1.458
     ],
     "max": [
-     -0.47,
-     0.74,
-     -1.2
+     -0.4494,
+     0.7784,
+     -1.1693
     ]
    },
    "labelAnchor": [
-    0,
-    0.27,
-    0
+    0.0209,
+    0.3659,
+    0.0164
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 4344,
+    "lite": 3120
    },
    "materials": [
     "mat_machined_steel",
@@ -1601,35 +1608,35 @@
      -0.15958,
      0.93752
     ],
-    "distance": 0.32,
+    "distance": 0.432,
     "stage": 4,
     "order": 0.55
    },
    "pivot": [
-    0.25,
-    0.3,
-    1.66
+    0.206,
+    0.3185,
+    1.6535
    ],
    "bbox": {
     "min": [
-     0.14,
-     0.25,
-     1.61
+     0.1,
+     0.26,
+     1.602
     ],
     "max": [
-     0.36,
-     0.35,
-     1.71
+     0.312,
+     0.377,
+     1.705
     ]
    },
    "labelAnchor": [
     0,
-    0.08,
+    0.0885,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 3388,
+    "lite": 3212
    },
    "materials": [
     "mat_cast_alu",
@@ -1657,29 +1664,29 @@
    },
    "pivot": [
     0.02,
-    0.22,
-    -0.5
+    0.2254,
+    -0.2939
    ],
    "bbox": {
     "min": [
      -0.08,
-     0.16,
-     -1.05
+     0.162,
+     -0.9503
     ],
     "max": [
      0.12,
-     0.28,
-     0.05
+     0.2889,
+     0.3625
     ]
    },
    "labelAnchor": [
     0,
-    0.09,
+    0.0934,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 592,
+    "lite": 572
    },
    "materials": [
     "mat_rubber",
@@ -1705,30 +1712,30 @@
     "order": 0.6
    },
    "pivot": [
-    0.02,
-    0.26,
-    -1.8
+    0.0455,
+    0.28,
+    -1.5032
    ],
    "bbox": {
     "min": [
-     -0.455,
-     0.16,
-     -2.05
+     -0.4,
+     0.175,
+     -2.074
     ],
     "max": [
-     0.495,
-     0.36,
-     -1.55
+     0.491,
+     0.3849,
+     -0.9325
     ]
    },
    "labelAnchor": [
     0,
-    0.13,
+    0.135,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1888,
+    "lite": 1736
    },
    "materials": [
     "mat_chrome",
@@ -1755,30 +1762,30 @@
     "order": 0.55
    },
    "pivot": [
-    0.85,
-    0.72,
-    1.36
+    0.7714,
+    0.5933,
+    1.3242
    ],
    "bbox": {
     "min": [
-     0.8,
-     0.46,
-     0.81
+     0.6455,
+     0.1833,
+     0.8
     ],
     "max": [
-     0.9,
-     0.98,
-     1.91
+     0.8974,
+     1.0033,
+     1.8484
     ]
    },
    "labelAnchor": [
     0,
-    0.29,
+    0.44,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1942,
+    "lite": 1542
    },
    "materials": [
     "mat_body_xray"
@@ -1803,30 +1810,30 @@
     "order": 0.55
    },
    "pivot": [
-    -0.85,
-    0.72,
-    1.36
+    -0.7714,
+    0.5933,
+    1.3242
    ],
    "bbox": {
     "min": [
-     -0.9,
-     0.46,
-     0.81
+     -0.8974,
+     0.1833,
+     0.8
     ],
     "max": [
-     -0.8,
-     0.98,
-     1.91
+     -0.6455,
+     1.0033,
+     1.8484
     ]
    },
    "labelAnchor": [
     0,
-    0.29,
+    0.44,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1942,
+    "lite": 1542
    },
    "materials": [
     "mat_body_xray"
@@ -1843,42 +1850,41 @@
    "explode": {
     "dir": [
      0,
-     0.1005,
-     0.99494
+     0.19996,
+     0.9798
     ],
-    "distance": 0.55,
+    "distance": 0.9,
     "stage": 1,
     "order": 0.2
    },
    "pivot": [
     0,
-    0.42,
-    2.03
+    0.4941,
+    1.8585
    ],
    "bbox": {
     "min": [
-     -0.88,
-     0.2,
-     1.87
+     -0.8863,
+     0.205,
+     1.53
     ],
     "max": [
-     0.88,
-     0.64,
-     2.19
+     0.8863,
+     0.7831,
+     2.187
     ]
    },
    "labelAnchor": [
     0,
-    0.25,
+    0.3191,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 4232,
+    "lite": 4156
    },
    "materials": [
-    "mat_body_xray",
-    "mat_steel_dark"
+    "mat_body_xray"
    ]
   },
   {
@@ -1901,29 +1907,29 @@
    },
    "pivot": [
     0,
-    0.45,
-    -1.94
+    0.459,
+    -1.8065
    ],
    "bbox": {
     "min": [
-     -0.87,
-     0.24,
-     -2.09
+     -0.8708,
+     0.255,
+     -2.082
     ],
     "max": [
-     0.87,
-     0.66,
-     -1.79
+     0.8708,
+     0.663,
+     -1.531
     ]
    },
    "labelAnchor": [
     0,
-    0.24,
+    0.234,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1800,
+    "lite": 1800
    },
    "materials": [
     "mat_body_xray"
@@ -1948,30 +1954,30 @@
     "order": 0
    },
    "pivot": [
-    0.05,
-    1.02,
-    0.74
+    0.0198,
+    1.0382,
+    0.7742
    ],
    "bbox": {
     "min": [
-     -0.5,
-     0.995,
-     0.68
+     -0.5773,
+     1.01,
+     0.7352
     ],
     "max": [
-     0.6,
-     1.045,
-     0.8
+     0.617,
+     1.0664,
+     0.8133
     ]
    },
    "labelAnchor": [
     0,
-    0.055,
+    0.0582,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 832,
+    "lite": 832
    },
    "materials": [
     "mat_painted_black",
@@ -1992,35 +1998,35 @@
      0.39873,
      0.91707
     ],
-    "distance": 0.35,
+    "distance": 0.455,
     "stage": 5,
     "order": 0.05
    },
    "pivot": [
-    -0.17,
-    0.66,
-    1.62
+    -0.1495,
+    0.7904,
+    1.5408
    ],
    "bbox": {
     "min": [
-     -0.31,
-     0.63,
-     1.595
+     -0.342,
+     0.76,
+     1.5071
     ],
     "max": [
-     -0.03,
-     0.69,
-     1.645
+     0.043,
+     0.8208,
+     1.5745
     ]
    },
    "labelAnchor": [
     0,
-    0.06,
+    0.0604,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1336,
+    "lite": 1336
    },
    "materials": [
     "mat_plastic_black",
@@ -2041,35 +2047,35 @@
      0.99554,
      -0.07996
     ],
-    "distance": 0.85,
+    "distance": 1.105,
     "stage": 5,
     "order": 0.1
    },
    "pivot": [
-    0.1,
-    0.9,
-    1.3
+    0.0189,
+    0.9041,
+    1.4156
    ],
    "bbox": {
     "min": [
-     0.06,
-     0.84,
-     1.26
+     -0.1022,
+     0.8562,
+     1.268
     ],
     "max": [
      0.14,
-     0.96,
-     1.34
+     0.952,
+     1.5633
     ]
    },
    "labelAnchor": [
     0,
-    0.09,
+    0.0779,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 932,
+    "lite": 932
    },
    "materials": [
     "mat_cast_alu",
@@ -2095,30 +2101,30 @@
     "order": 0.35
    },
    "pivot": [
-    0,
-    0.34,
-    0.8
+    -0.0518,
+    0.4233,
+    0.7811
    ],
    "bbox": {
     "min": [
-     -0.08,
-     0.14,
-     0.44
+     -0.2076,
+     0.1626,
+     0.3581
     ],
     "max": [
-     0.08,
-     0.54,
-     1.16
+     0.104,
+     0.684,
+     1.204
     ]
    },
    "labelAnchor": [
     0,
-    0.23,
+    0.2907,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2244,
+    "lite": 1996
    },
    "materials": [
     "mat_heat_shield",
@@ -2139,35 +2145,35 @@
      0.8427,
      0.24077
     ],
-    "distance": 0.42,
+    "distance": 0.546,
     "stage": 5,
     "order": 0.15
    },
    "pivot": [
-    0.09,
-    0.8,
-    1.66
+    0.095,
+    0.8213,
+    1.5779
    ],
    "bbox": {
     "min": [
-     0.04,
-     0.76,
-     1.62
+     0.06,
+     0.7515,
+     1.5146
     ],
     "max": [
-     0.14,
-     0.84,
-     1.7
+     0.13,
+     0.8908,
+     1.6408
     ]
    },
    "labelAnchor": [
     0,
-    0.07,
-    0
+    0.0995,
+    -0.0002
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 572,
+    "lite": 572
    },
    "materials": [
     "mat_cast_alu",
@@ -2193,30 +2199,30 @@
     "order": 0.4
    },
    "pivot": [
-    0.66,
-    0.725,
-    2.02
+    0.7005,
+    0.7354,
+    1.9211
    ],
    "bbox": {
     "min": [
-     0.48,
-     0.655,
-     1.93
+     0.5219,
+     0.6171,
+     1.7595
     ],
     "max": [
-     0.84,
-     0.795,
-     2.11
+     0.8791,
+     0.8537,
+     2.0826
     ]
    },
    "labelAnchor": [
     0,
-    0.1,
+    0.1483,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 3198,
+    "lite": 2482
    },
    "materials": [
     "mat_brushed_alu",
@@ -2244,30 +2250,30 @@
     "order": 0.4
    },
    "pivot": [
-    -0.66,
-    0.725,
-    2.02
+    -0.7005,
+    0.7354,
+    1.9211
    ],
    "bbox": {
     "min": [
-     -0.84,
-     0.655,
-     1.93
+     -0.8791,
+     0.6171,
+     1.7595
     ],
     "max": [
-     -0.48,
-     0.795,
-     2.11
+     -0.5219,
+     0.8537,
+     2.0826
     ]
    },
    "labelAnchor": [
     0,
-    0.1,
+    0.1483,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 3198,
+    "lite": 2482
    },
    "materials": [
     "mat_brushed_alu",
@@ -2302,23 +2308,23 @@
    "bbox": {
     "min": [
      0.6675,
-     0,
+     0.0001,
      0.994
     ],
     "max": [
      0.8725,
      0.632,
-     1.626
+     1.6259
     ]
    },
    "labelAnchor": [
     0,
-    0.346,
+    0.3459,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 12776,
+    "lite": 8360
    },
    "materials": [
     "mat_brushed_alu",
@@ -2352,23 +2358,23 @@
    "bbox": {
     "min": [
      -0.8725,
-     0,
+     0.0001,
      0.994
     ],
     "max": [
      -0.6675,
      0.632,
-     1.626
+     1.6259
     ]
    },
    "labelAnchor": [
     0,
-    0.346,
+    0.3459,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 12776,
+    "lite": 8360
    },
    "materials": [
     "mat_brushed_alu",
@@ -2402,8 +2408,8 @@
    "bbox": {
     "min": [
      0.6525,
-     0,
-     -1.626
+     0.0001,
+     -1.6259
     ],
     "max": [
      0.8575,
@@ -2413,12 +2419,12 @@
    },
    "labelAnchor": [
     0,
-    0.346,
+    0.3459,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 12776,
+    "lite": 8360
    },
    "materials": [
     "mat_brushed_alu",
@@ -2452,8 +2458,8 @@
    "bbox": {
     "min": [
      -0.8575,
-     0,
-     -1.626
+     0.0001,
+     -1.6259
     ],
     "max": [
      -0.6525,
@@ -2463,12 +2469,12 @@
    },
    "labelAnchor": [
     0,
-    0.346,
+    0.3459,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 12776,
+    "lite": 8360
    },
    "materials": [
     "mat_brushed_alu",
@@ -2496,29 +2502,29 @@
    },
    "pivot": [
     0,
-    0.9,
-    1.45
+    0.8922,
+    1.4381
    ],
    "bbox": {
     "min": [
-     -0.68,
-     0.86,
-     0.84
+     -0.7973,
+     0.7713,
+     0.7978
     ],
     "max": [
-     0.68,
-     0.94,
-     2.06
+     0.7973,
+     1.0131,
+     2.0784
     ]
    },
    "labelAnchor": [
     0,
-    0.07,
+    0.1509,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 3564,
+    "lite": 2728
    },
    "materials": [
     "mat_body_xray"
@@ -2535,38 +2541,38 @@
    "explode": {
     "dir": [
      0,
-     0.27075,
-     0.96265
+     0.8,
+     0.6
     ],
-    "distance": 0.26,
+    "distance": 0.945,
     "stage": 4,
     "order": 0.45
    },
    "pivot": [
     0,
     0.57,
-    1.86
+    1.833
    ],
    "bbox": {
     "min": [
-     -0.3,
-     0.33,
-     1.81
+     -0.31,
+     0.32,
+     1.785
     ],
     "max": [
-     0.3,
-     0.81,
-     1.91
+     0.31,
+     0.82,
+     1.881
     ]
    },
    "labelAnchor": [
     0,
-    0.27,
+    0.28,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1108,
+    "lite": 916
    },
    "materials": [
     "mat_plastic_black",
@@ -2584,38 +2590,38 @@
    "explode": {
     "dir": [
      0,
-     0.15955,
-     0.98719
+     0.6,
+     0.8
     ],
-    "distance": 0.3,
+    "distance": 0.945,
     "stage": 4,
     "order": 0.3
    },
    "pivot": [
-    0,
-    0.57,
-    1.95
+    0.013,
+    0.555,
+    1.9285
    ],
    "bbox": {
     "min": [
-     -0.35,
-     0.32,
-     1.93
+     -0.364,
+     0.28,
+     1.882
     ],
     "max": [
-     0.35,
-     0.82,
-     1.97
+     0.39,
+     0.83,
+     1.975
     ]
    },
    "labelAnchor": [
     0,
-    0.28,
+    0.305,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1484,
+    "lite": 1516
    },
    "materials": [
     "mat_core_fins",
@@ -2633,38 +2639,38 @@
    "explode": {
     "dir": [
      0,
-     -0.1302,
-     0.99149
+     -0.04994,
+     0.99875
     ],
-    "distance": 0.45,
+    "distance": 1.2825,
     "stage": 4,
     "order": 0
    },
    "pivot": [
     0,
     0.27,
-    2.07
+    2.0485
    ],
    "bbox": {
     "min": [
-     -0.4,
-     0.18,
-     2.04
+     -0.411,
+     0.1755,
+     1.992
     ],
     "max": [
-     0.4,
-     0.36,
-     2.1
+     0.411,
+     0.3645,
+     2.105
     ]
    },
    "labelAnchor": [
     0,
-    0.12,
+    0.1245,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 892,
+    "lite": 892
    },
    "materials": [
     "mat_cast_alu",
@@ -2681,39 +2687,39 @@
    "lod": "core",
    "explode": {
     "dir": [
-     0.30077,
-     0.20051,
-     0.93238
+     0.35088,
+     0.90226,
+     0.25063
     ],
-    "distance": 0.4,
+    "distance": 1.2825,
     "stage": 4,
     "order": 0.1
    },
    "pivot": [
-    0,
-    0.45,
-    1.6
+    0.0053,
+    0.5212,
+    1.565
    ],
    "bbox": {
     "min": [
-     -0.4,
-     0.25,
-     1.2
+     -0.4262,
+     0.2412,
+     1.0886
     ],
     "max": [
-     0.4,
-     0.65,
-     2
+     0.4368,
+     0.8011,
+     2.0414
     ]
    },
    "labelAnchor": [
     0,
-    0.23,
+    0.3099,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2688,
+    "lite": 2016
    },
    "materials": [
     "mat_brushed_alu",
@@ -2730,39 +2736,39 @@
    "lod": "core",
    "explode": {
     "dir": [
-     -0.77907,
-     0.57931,
-     0.23971
+     -0.85213,
+     0.15038,
+     0.50125
     ],
-    "distance": 0.51,
+    "distance": 0.837,
     "stage": 4,
     "order": 0.35
    },
    "pivot": [
-    -0.47,
-    0.46,
-    1.6
+    -0.4475,
+    0.4473,
+    1.58
    ],
    "bbox": {
     "min": [
-     -0.485,
-     0.25,
-     1.39
+     -0.486,
+     0.229,
+     1.3791
     ],
     "max": [
-     -0.455,
-     0.67,
-     1.81
+     -0.409,
+     0.6656,
+     1.781
     ]
    },
    "labelAnchor": [
     0,
-    0.24,
+    0.2483,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 3856,
+    "lite": 3312
    },
    "materials": [
     "mat_cast_alu",
@@ -2780,38 +2786,38 @@
    "explode": {
     "dir": [
      0,
-     -1,
+     1,
      0
     ],
-    "distance": 0.03,
+    "distance": 0.234,
     "stage": 5,
     "order": 0.9
    },
    "pivot": [
-    -0.18,
-    0.22,
-    1.46
+    -0.175,
+    0.2477,
+    1.4919
    ],
    "bbox": {
     "min": [
-     -0.4,
-     0.14,
-     1.3
+     -0.39,
+     0.128,
+     1.3597
     ],
     "max": [
      0.04,
-     0.3,
-     1.62
+     0.3672,
+     1.6238
     ]
    },
    "labelAnchor": [
     0,
-    0.11,
-    0
+    0.1495,
+    -0.0001
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 760,
+    "lite": 760
    },
    "materials": [
     "mat_cast_alu",
@@ -2828,39 +2834,39 @@
    "lod": "core",
    "explode": {
     "dir": [
-     -0.72108,
-     -0.05008,
-     0.69104
+     -0.44897,
+     -0.09977,
+     0.88796
     ],
-    "distance": 0.44,
+    "distance": 0.7425,
     "stage": 4,
     "order": 0.6
    },
    "pivot": [
-    -0.33,
-    0.29,
+    -0.356,
+    0.2925,
     1.72
    ],
    "bbox": {
     "min": [
-     -0.44,
-     0.225,
-     1.655
+     -0.474,
+     0.21,
+     1.652
     ],
     "max": [
-     -0.22,
-     0.355,
-     1.785
+     -0.238,
+     0.375,
+     1.788
     ]
    },
    "labelAnchor": [
     0,
-    0.095,
+    0.1125,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2680,
+    "lite": 1912
    },
    "materials": [
     "mat_cast_alu",
@@ -2878,38 +2884,38 @@
    "explode": {
     "dir": [
      0,
-     0.12033,
-     0.99273
+     0.1005,
+     0.99494
     ],
-    "distance": 0.4,
+    "distance": 1.053,
     "stage": 4,
     "order": 0.15
    },
    "pivot": [
-    0,
-    0.56,
-    2.01
+    0.0205,
+    0.565,
+    2.0095
    ],
    "bbox": {
     "min": [
-     -0.35,
+     -0.337,
      0.33,
-     2
+     1.9694
     ],
     "max": [
-     0.35,
-     0.79,
-     2.02
+     0.378,
+     0.8,
+     2.0496
     ]
    },
    "labelAnchor": [
     0,
-    0.26,
+    0.265,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 720,
+    "lite": 720
    },
    "materials": [
     "mat_core_fins",
@@ -2935,30 +2941,30 @@
     "order": 0
    },
    "pivot": [
-    0.77,
-    0.34,
-    1.18
+    0.759,
+    0.3593,
+    1.1931
    ],
    "bbox": {
     "min": [
-     0.71,
-     0.26,
-     1.13
+     0.673,
+     0.2646,
+     1.1435
     ],
     "max": [
-     0.83,
-     0.42,
-     1.23
+     0.812,
+     0.4373,
+     1.2619
     ]
    },
    "labelAnchor": [
-    0,
-    0.11,
-    0
+    -0.0165,
+    0.108,
+    0.0096
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2356,
+    "lite": 1924
    },
    "materials": [
     "mat_caliper",
@@ -2984,30 +2990,30 @@
     "order": 0
    },
    "pivot": [
-    -0.77,
-    0.34,
-    1.18
+    -0.759,
+    0.3593,
+    1.1931
    ],
    "bbox": {
     "min": [
-     -0.83,
-     0.26,
-     1.13
+     -0.812,
+     0.2646,
+     1.1435
     ],
     "max": [
-     -0.71,
-     0.42,
-     1.23
+     -0.673,
+     0.4373,
+     1.2619
     ]
    },
    "labelAnchor": [
-    0,
-    0.11,
-    0
+    0.0165,
+    0.108,
+    0.0096
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2356,
+    "lite": 1924
    },
    "materials": [
     "mat_caliper",
@@ -3033,30 +3039,30 @@
     "order": 0
    },
    "pivot": [
-    0.755,
-    0.34,
-    -1.435
+    0.744,
+    0.3575,
+    -1.4201
    ],
    "bbox": {
     "min": [
-     0.69,
-     0.26,
-     -1.495
+     0.6445,
+     0.2717,
+     -1.4695
     ],
     "max": [
-     0.82,
-     0.42,
-     -1.375
+     0.7895,
+     0.428,
+     -1.3549
     ]
    },
    "labelAnchor": [
-    0,
-    0.11,
-    0
+    -0.027,
+    0.1004,
+    0.0079
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2584,
+    "lite": 2152
    },
    "materials": [
     "mat_caliper",
@@ -3082,30 +3088,30 @@
     "order": 0
    },
    "pivot": [
-    -0.755,
-    0.34,
-    -1.435
+    -0.744,
+    0.3575,
+    -1.4201
    ],
    "bbox": {
     "min": [
-     -0.82,
-     0.26,
-     -1.495
+     -0.7895,
+     0.2717,
+     -1.4695
     ],
     "max": [
-     -0.69,
-     0.42,
-     -1.375
+     -0.6445,
+     0.428,
+     -1.3549
     ]
    },
    "labelAnchor": [
-    0,
-    0.11,
-    0
+    0.027,
+    0.1004,
+    0.0079
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2584,
+    "lite": 2152
    },
    "materials": [
     "mat_caliper",
@@ -3122,39 +3128,39 @@
    "lod": "core",
    "explode": {
     "dir": [
-     0.55072,
-     0.1502,
-     -0.82107
+     0.20089,
+     0.26115,
+     -0.94416
     ],
-    "distance": 0.28,
+    "distance": 0.3,
     "stage": 3,
     "order": 0.1
    },
    "pivot": [
     0.771,
-    0.34,
-    1.19
+    0.3473,
+    1.1931
    ],
    "bbox": {
     "min": [
-     0.736,
-     0.31,
-     1.135
+     0.7424,
+     0.2864,
+     1.167
     ],
     "max": [
-     0.806,
-     0.37,
-     1.245
+     0.7996,
+     0.4115,
+     1.237
     ]
    },
    "labelAnchor": [
     0,
-    0.06,
-    0
+    0.0942,
+    0.0089
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1752,
+    "lite": 1752
    },
    "materials": [
     "mat_rubber",
@@ -3171,39 +3177,39 @@
    "lod": "core",
    "explode": {
     "dir": [
-     -0.55072,
-     0.1502,
-     -0.82107
+     -0.20089,
+     0.26115,
+     -0.94416
     ],
-    "distance": 0.28,
+    "distance": 0.3,
     "stage": 3,
     "order": 0.1
    },
    "pivot": [
     -0.771,
-    0.34,
-    1.19
+    0.3473,
+    1.1931
    ],
    "bbox": {
     "min": [
-     -0.806,
-     0.31,
-     1.135
+     -0.7996,
+     0.2864,
+     1.167
     ],
     "max": [
-     -0.736,
-     0.37,
-     1.245
+     -0.7424,
+     0.4115,
+     1.237
     ]
    },
    "labelAnchor": [
     0,
-    0.06,
-    0
+    0.0942,
+    0.0089
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1752,
+    "lite": 1752
    },
    "materials": [
     "mat_rubber",
@@ -3220,39 +3226,39 @@
    "lod": "core",
    "explode": {
     "dir": [
-     0.55072,
-     0.1502,
-     -0.82107
+     0.20089,
+     0.26115,
+     -0.94416
     ],
-    "distance": 0.28,
+    "distance": 0.3,
     "stage": 3,
     "order": 0.1
    },
    "pivot": [
     0.756,
-    0.34,
-    -1.425
+    0.3455,
+    -1.4201
    ],
    "bbox": {
     "min": [
-     0.726,
-     0.315,
-     -1.475
+     0.7349,
+     0.295,
+     -1.445
     ],
     "max": [
-     0.786,
-     0.365,
-     -1.375
+     0.7771,
+     0.4008,
+     -1.3817
     ]
    },
    "labelAnchor": [
     0,
-    0.055,
-    0
+    0.0852,
+    0.0068
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1752,
+    "lite": 1752
    },
    "materials": [
     "mat_rubber",
@@ -3269,39 +3275,39 @@
    "lod": "core",
    "explode": {
     "dir": [
-     -0.55072,
-     0.1502,
-     -0.82107
+     -0.20089,
+     0.26115,
+     -0.94416
     ],
-    "distance": 0.28,
+    "distance": 0.3,
     "stage": 3,
     "order": 0.1
    },
    "pivot": [
     -0.756,
-    0.34,
-    -1.425
+    0.3455,
+    -1.4201
    ],
    "bbox": {
     "min": [
-     -0.786,
-     0.315,
-     -1.475
+     -0.7771,
+     0.295,
+     -1.445
     ],
     "max": [
-     -0.726,
-     0.365,
-     -1.375
+     -0.7349,
+     0.4008,
+     -1.3817
     ]
    },
    "labelAnchor": [
     0,
-    0.055,
-    0
+    0.0852,
+    0.0068
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1752,
+    "lite": 1752
    },
    "materials": [
     "mat_rubber",
@@ -3333,24 +3339,24 @@
    ],
    "bbox": {
     "min": [
-     0.756,
+     0.7585,
      0.172,
      1.166
     ],
     "max": [
-     0.786,
+     0.816,
      0.46,
      1.454
     ]
    },
    "labelAnchor": [
-    0,
+    0.0162,
     0.174,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 3988,
+    "lite": 2844
    },
    "materials": [
     "mat_cast_iron",
@@ -3382,24 +3388,24 @@
    ],
    "bbox": {
     "min": [
-     -0.786,
+     -0.816,
      0.172,
      1.166
     ],
     "max": [
-     -0.756,
+     -0.7585,
      0.46,
      1.454
     ]
    },
    "labelAnchor": [
-    0,
+    -0.0162,
     0.174,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 3988,
+    "lite": 2844
    },
    "materials": [
     "mat_cast_iron",
@@ -3431,24 +3437,24 @@
    ],
    "bbox": {
     "min": [
-     0.746,
+     0.751,
      0.18,
      -1.446
     ],
     "max": [
-     0.766,
+     0.801,
      0.452,
      -1.174
     ]
    },
    "labelAnchor": [
-    0,
+    0.02,
     0.166,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2732,
+    "lite": 2012
    },
    "materials": [
     "mat_cast_iron",
@@ -3480,24 +3486,24 @@
    ],
    "bbox": {
     "min": [
-     -0.766,
+     -0.801,
      0.18,
      -1.446
     ],
     "max": [
-     -0.746,
+     -0.751,
      0.452,
      -1.174
     ]
    },
    "labelAnchor": [
-    0,
+    -0.02,
     0.166,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2732,
+    "lite": 2012
    },
    "materials": [
     "mat_cast_iron",
@@ -3514,39 +3520,39 @@
    "lod": "core",
    "explode": {
     "dir": [
-     0.54863,
-     0.79801,
-     -0.24938
+     1,
+     0,
+     0
     ],
-    "distance": 0.32,
+    "distance": 0.36,
     "stage": 6,
     "order": 0.25
    },
    "pivot": [
-    0.13,
+    0.1185,
     0.43,
     1.46
    ],
    "bbox": {
     "min": [
      0.07,
-     0.28,
-     1.31
+     0.2822,
+     1.3122
     ],
     "max": [
-     0.19,
-     0.58,
-     1.61
+     0.167,
+     0.5778,
+     1.6078
     ]
    },
    "labelAnchor": [
     0,
-    0.18,
+    0.1778,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 5544,
+    "lite": 3600
    },
    "materials": [
     "mat_cast_iron",
@@ -3580,24 +3586,24 @@
    ],
    "bbox": {
     "min": [
-     -0.38,
-     0.28,
-     1.1
+     -0.365,
+     0.225,
+     1.0239
     ],
     "max": [
-     0.42,
-     0.38,
-     1.22
+     0.405,
+     0.5058,
+     1.195
     ]
    },
    "labelAnchor": [
     0,
-    0.08,
-    0
+    0.2058,
+    -0.0505
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 3348,
+    "lite": 2652
    },
    "materials": [
     "mat_cast_alu",
@@ -3624,30 +3630,30 @@
     "order": 0.5
    },
    "pivot": [
-    0.79,
+    0.775,
     0.316,
     1.31
    ],
    "bbox": {
     "min": [
-     0.755,
-     0.246,
-     1.24
+     0.7415,
+     0.249,
+     1.2421
     ],
     "max": [
-     0.825,
-     0.386,
-     1.38
+     0.821,
+     0.383,
+     1.377
     ]
    },
    "labelAnchor": [
-    0,
-    0.1,
-    0
+    0.0063,
+    0.097,
+    -0.0005
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2704,
+    "lite": 2256
    },
    "materials": [
     "mat_machined_steel"
@@ -3672,30 +3678,30 @@
     "order": 0.5
    },
    "pivot": [
-    -0.79,
+    -0.775,
     0.316,
     1.31
    ],
    "bbox": {
     "min": [
-     -0.825,
-     0.246,
-     1.24
+     -0.821,
+     0.249,
+     1.243
     ],
     "max": [
-     -0.755,
-     0.386,
-     1.38
+     -0.7415,
+     0.383,
+     1.3779
     ]
    },
    "labelAnchor": [
-    0,
-    0.1,
-    0
+    -0.0063,
+    0.097,
+    0.0005
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2704,
+    "lite": 2256
    },
    "materials": [
     "mat_machined_steel"
@@ -3720,30 +3726,30 @@
     "order": 0.5
    },
    "pivot": [
-    0.775,
+    0.76,
     0.316,
     -1.31
    ],
    "bbox": {
     "min": [
-     0.74,
-     0.246,
-     -1.38
+     0.7265,
+     0.249,
+     -1.3779
     ],
     "max": [
-     0.81,
-     0.386,
-     -1.24
+     0.806,
+     0.383,
+     -1.243
     ]
    },
    "labelAnchor": [
-    0,
-    0.1,
-    0
+    0.0063,
+    0.097,
+    -0.0005
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2704,
+    "lite": 2256
    },
    "materials": [
     "mat_machined_steel"
@@ -3768,30 +3774,30 @@
     "order": 0.5
    },
    "pivot": [
-    -0.775,
+    -0.76,
     0.316,
     -1.31
    ],
    "bbox": {
     "min": [
-     -0.81,
-     0.246,
-     -1.38
+     -0.806,
+     0.249,
+     -1.377
     ],
     "max": [
-     -0.74,
-     0.386,
-     -1.24
+     -0.7265,
+     0.383,
+     -1.2421
     ]
    },
    "labelAnchor": [
-    0,
-    0.1,
-    0
+    -0.0063,
+    0.097,
+    0.0005
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2704,
+    "lite": 2256
    },
    "materials": [
     "mat_machined_steel"
@@ -3807,39 +3813,39 @@
    "lod": "core",
    "explode": {
     "dir": [
-     0.29931,
-     0.3492,
-     0.88796
+     0.64919,
+     0.69913,
+     0.29963
     ],
-    "distance": 0.45,
+    "distance": 0.72,
     "stage": 6,
     "order": 0
    },
    "pivot": [
-    0.32,
-    0.41,
-    1.41
+    0.326,
+    0.4315,
+    1.436
    ],
    "bbox": {
     "min": [
      0.06,
-     0.22,
+     0.218,
      1.2
     ],
     "max": [
-     0.58,
-     0.6,
-     1.62
+     0.592,
+     0.645,
+     1.672
     ]
    },
    "labelAnchor": [
     0,
-    0.22,
+    0.2435,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2408,
+    "lite": 1904
    },
    "materials": [
     "mat_cast_alu",
@@ -3861,39 +3867,40 @@
      1,
      0
     ],
-    "distance": 0.25,
+    "distance": 0.325,
     "stage": 5,
     "order": 0.8
    },
    "pivot": [
-    -0.17,
-    0.45,
-    1.46
+    -0.191,
+    0.5153,
+    1.4745
    ],
    "bbox": {
     "min": [
-     -0.4,
-     0.2,
-     1.3
+     -0.45,
+     0.3161,
+     1.3073
     ],
     "max": [
-     0.06,
-     0.7,
-     1.62
+     0.068,
+     0.7144,
+     1.6421
     ]
    },
    "labelAnchor": [
     0,
-    0.28,
-    0
+    0.2291,
+    0.0001
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 5488,
+    "lite": 5488
    },
    "materials": [
     "mat_cast_alu",
-    "mat_cast_iron"
+    "mat_cast_iron",
+    "mat_steel_dark"
    ]
   },
   {
@@ -3910,35 +3917,35 @@
      1,
      0
     ],
-    "distance": 0.6,
+    "distance": 0.78,
     "stage": 5,
     "order": 0.3
    },
    "pivot": [
-    -0.17,
-    0.81,
-    1.43
+    -0.191,
+    0.7838,
+    1.3914
    ],
    "bbox": {
     "min": [
-     -0.4,
-     0.7,
-     1.28
+     -0.442,
+     0.6478,
+     1.2479
     ],
     "max": [
      0.06,
-     0.92,
-     1.58
+     0.9201,
+     1.5349
     ]
    },
    "labelAnchor": [
     0,
-    0.14,
+    0.1663,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 11196,
+    "lite": 11196
    },
    "materials": [
     "mat_cast_alu",
@@ -3960,35 +3967,35 @@
      0.30036,
      0.74089
     ],
-    "distance": 0.55,
+    "distance": 0.7425,
     "stage": 4,
     "order": 0.9
    },
    "pivot": [
-    0.52,
-    0.74,
+    0.515,
+    0.762,
     1.5
    ],
    "bbox": {
     "min": [
-     0.46,
-     0.69,
+     0.465,
+     0.715,
      1.44
     ],
     "max": [
-     0.58,
-     0.79,
+     0.565,
+     0.809,
      1.56
     ]
    },
    "labelAnchor": [
     0,
-    0.08,
+    0.077,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 324,
+    "lite": 324
    },
    "materials": [
     "mat_cast_alu",
@@ -4005,39 +4012,39 @@
    "lod": "core",
    "explode": {
     "dir": [
-     -0.3506,
-     0.50085,
-     0.79135
+     -0.20014,
+     0.55039,
+     0.81057
     ],
-    "distance": 0.6,
+    "distance": 0.81,
     "stage": 4,
     "order": 0.3
    },
    "pivot": [
-    -0.52,
-    0.82,
-    1.52
+    -0.463,
+    0.7885,
+    1.6
    ],
    "bbox": {
     "min": [
-     -0.58,
-     0.77,
-     1.46
+     -0.576,
+     0.695,
+     1.554
     ],
     "max": [
-     -0.46,
-     0.87,
-     1.58
+     -0.35,
+     0.882,
+     1.646
     ]
    },
    "labelAnchor": [
     0,
-    0.08,
+    0.1235,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 488,
+    "lite": 488
    },
    "materials": [
     "mat_cast_alu",
@@ -4055,38 +4062,38 @@
    "explode": {
     "dir": [
      0,
-     -1,
-     0
+     -0.6,
+     0.8
     ],
-    "distance": 0.14,
+    "distance": 0.27,
     "stage": 4,
     "order": 1
    },
    "pivot": [
     0.05,
     0.22,
-    1.1
+    1.1028
    ],
    "bbox": {
     "min": [
-     0.02,
-     0.19,
-     1
+     0.03,
+     0.196,
+     1.002
     ],
     "max": [
-     0.08,
-     0.25,
-     1.2
+     0.07,
+     0.244,
+     1.2036
     ]
    },
    "labelAnchor": [
     0,
-    0.06,
+    0.054,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 720,
+    "lite": 720
    },
    "materials": [
     "mat_cast_alu",
@@ -4107,35 +4114,35 @@
      0.97812,
      -0.20803
     ],
-    "distance": 0.85,
+    "distance": 1.105,
     "stage": 5,
     "order": 0
    },
    "pivot": [
     -0.17,
-    1,
-    1.4
+    0.819,
+    1.374
    ],
    "bbox": {
     "min": [
-     -0.32,
-     0.95,
-     1.375
+     -0.317,
+     0.6998,
+     1.3408
     ],
     "max": [
-     -0.02,
-     1.05,
-     1.425
+     -0.023,
+     0.9381,
+     1.4073
     ]
    },
    "labelAnchor": [
     0,
-    0.08,
-    0
+    0.1491,
+    0.0001
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2360,
+    "lite": 2360
    },
    "materials": [
     "mat_ceramic",
@@ -4153,39 +4160,39 @@
    "lod": "core",
    "explode": {
     "dir": [
-     -0.93173,
-     0.15028,
-     0.33061
+     0.20014,
+     -0.55039,
+     0.81057
     ],
-    "distance": 0.24,
+    "distance": 0.3,
     "stage": 6,
     "order": 0.5
    },
    "pivot": [
-    0.56,
-    0.32,
+    0.5825,
+    0.33,
     1.31
    ],
    "bbox": {
     "min": [
-     0.395,
-     0.275,
-     1.265
+     0.45,
+     0.282,
+     1.262
     ],
     "max": [
-     0.725,
-     0.365,
-     1.355
+     0.715,
+     0.378,
+     1.358
     ]
    },
    "labelAnchor": [
     0,
-    0.075,
+    0.078,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1960,
+    "lite": 1416
    },
    "materials": [
     "mat_machined_steel",
@@ -4203,39 +4210,39 @@
    "lod": "core",
    "explode": {
     "dir": [
-     0.94312,
-     -0.0301,
-     -0.33109
+     0.59973,
+     -0.74966,
+     0.27987
     ],
-    "distance": 0.22,
+    "distance": 0.24,
     "stage": 6,
     "order": 0.5
    },
    "pivot": [
-    -0.32,
-    0.32,
+    -0.3125,
+    0.33,
     1.31
    ],
    "bbox": {
     "min": [
-     -0.7,
-     0.275,
-     1.265
+     -0.715,
+     0.282,
+     1.262
     ],
     "max": [
-     0.06,
-     0.365,
-     1.355
+     0.09,
+     0.378,
+     1.358
     ]
    },
    "labelAnchor": [
     0,
-    0.075,
+    0.078,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2068,
+    "lite": 1524
    },
    "materials": [
     "mat_machined_steel",
@@ -4262,30 +4269,30 @@
     "order": 0.7
    },
    "pivot": [
-    0.55,
-    0.21,
+    0.56,
+    0.2,
     1.18
    ],
    "bbox": {
     "min": [
-     0.35,
-     0.18,
-     1.01
+     0.354,
+     0.1723,
+     0.9684
     ],
     "max": [
-     0.75,
-     0.24,
-     1.35
+     0.7414,
+     0.263,
+     1.3458
     ]
    },
    "labelAnchor": [
-    0,
-    0.06,
-    0
+    -0.0123,
+    0.093,
+    -0.0229
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1554,
+    "lite": 1410
    },
    "materials": [
     "mat_rubber",
@@ -4311,30 +4318,30 @@
     "order": 0.7
    },
    "pivot": [
-    -0.55,
-    0.21,
+    -0.56,
+    0.2,
     1.18
    ],
    "bbox": {
     "min": [
-     -0.75,
-     0.18,
-     1.01
+     -0.7414,
+     0.1723,
+     0.9684
     ],
     "max": [
-     -0.35,
-     0.24,
-     1.35
+     -0.354,
+     0.263,
+     1.3458
     ]
    },
    "labelAnchor": [
-    0,
-    0.06,
-    0
+    0.0123,
+    0.093,
+    -0.0229
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1554,
+    "lite": 1410
    },
    "materials": [
     "mat_rubber",
@@ -4361,33 +4368,34 @@
    },
    "pivot": [
     0,
-    0.28,
+    0.3,
     -1.12
    ],
    "bbox": {
     "min": [
-     -0.7,
-     0.205,
+     -0.725,
+     0.235,
      -1.42
     ],
     "max": [
-     0.7,
-     0.355,
-     -0.82
+     0.725,
+     0.382,
+     -0.7183
     ]
    },
    "labelAnchor": [
     0,
-    0.105,
-    0
+    0.112,
+    0.0508
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2932,
+    "lite": 2788
    },
    "materials": [
     "mat_painted_black",
-    "mat_rubber"
+    "mat_rubber",
+    "mat_steel_dark"
    ]
   },
   {
@@ -4409,30 +4417,30 @@
     "order": 0.6
    },
    "pivot": [
-    0.95,
-    1.02,
-    0.66
+    0.9585,
+    1.035,
+    0.6482
    ],
    "bbox": {
     "min": [
-     0.87,
-     0.96,
-     0.56
+     0.833,
+     0.969,
+     0.5909
     ],
     "max": [
-     1.03,
-     1.08,
-     0.76
+     1.084,
+     1.101,
+     0.7055
     ]
    },
    "labelAnchor": [
     0,
-    0.09,
+    0.096,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 728,
+    "lite": 632
    },
    "materials": [
     "mat_body_xray",
@@ -4459,30 +4467,30 @@
     "order": 0.6
    },
    "pivot": [
-    -0.95,
-    1.02,
-    0.66
+    -0.9585,
+    1.035,
+    0.6482
    ],
    "bbox": {
     "min": [
-     -1.03,
-     0.96,
-     0.56
+     -1.084,
+     0.969,
+     0.5909
     ],
     "max": [
-     -0.87,
-     1.08,
-     0.76
+     -0.833,
+     1.101,
+     0.7055
     ]
    },
    "labelAnchor": [
     0,
-    0.09,
+    0.096,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 728,
+    "lite": 632
    },
    "materials": [
     "mat_body_xray",
@@ -4504,35 +4512,35 @@
      0.799,
      0.3995
     ],
-    "distance": 0.45,
+    "distance": 0.585,
     "stage": 5,
     "order": 0.2
    },
    "pivot": [
     0.11,
-    0.71,
-    1.52
+    0.7064,
+    1.5285
    ],
    "bbox": {
     "min": [
-     0.095,
-     0.695,
-     1.495
+     0.1,
+     0.694,
+     1.505
     ],
     "max": [
-     0.125,
-     0.725,
-     1.545
+     0.12,
+     0.7188,
+     1.552
     ]
    },
    "labelAnchor": [
     0,
-    0.045,
+    0.0424,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 144,
+    "lite": 144
    },
    "materials": [
     "mat_plastic_grey"
@@ -4548,39 +4556,39 @@
    "lod": "core",
    "explode": {
     "dir": [
-     0.49828,
-     0.86701,
+     0.70207,
+     0.7121,
      0
     ],
-    "distance": 0.35,
+    "distance": 0.75,
     "stage": 7,
     "order": 0
    },
    "pivot": [
-    -0.02,
-    0.55,
-    1.06
+    0.022,
+    0.6442,
+    1.0651
    ],
    "bbox": {
     "min": [
-     -0.035,
-     0.535,
-     1.015
+     -0.031,
+     0.54,
+     1.0427
     ],
     "max": [
-     -0.005,
-     0.565,
-     1.105
+     0.075,
+     0.7485,
+     1.0875
     ]
    },
    "labelAnchor": [
     0,
-    0.045,
+    0.1343,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 414,
+    "lite": 414
    },
    "materials": [
     "mat_machined_steel",
@@ -4601,35 +4609,35 @@
      0.89838,
      0.43921
     ],
-    "distance": 0.6,
+    "distance": 1,
     "stage": 1,
     "order": 0.35
    },
    "pivot": [
     0,
-    0.45,
-    2.15
+    0.52,
+    2.1424
    ],
    "bbox": {
     "min": [
-     -0.53,
-     0.435,
-     2.13
+     -0.532,
+     0.5108,
+     2.1046
     ],
     "max": [
-     0.53,
-     0.465,
-     2.17
+     0.532,
+     0.5292,
+     2.1801
     ]
    },
    "labelAnchor": [
     0,
-    0.045,
+    0.0392,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 432,
+    "lite": 432
    },
    "materials": [
     "mat_plastic_black"
@@ -4655,29 +4663,29 @@
    },
    "pivot": [
     0,
-    0.27,
+    0.28,
     1.14
    ],
    "bbox": {
     "min": [
-     -0.6,
-     0.23,
-     0.99
+     -0.624,
+     0.24,
+     0.992
     ],
     "max": [
-     0.6,
-     0.31,
-     1.29
+     0.624,
+     0.517,
+     1.286
     ]
    },
    "labelAnchor": [
     0,
-    0.07,
-    0
+    0.267,
+    -0.001
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2856,
+    "lite": 2704
    },
    "materials": [
     "mat_rubber",
@@ -4704,29 +4712,29 @@
    },
    "pivot": [
     0.51,
-    0.315,
+    0.326,
     1.16
    ],
    "bbox": {
     "min": [
-     0.36,
+     0.372,
      0.295,
-     1.14
+     1.142
     ],
     "max": [
-     0.66,
-     0.335,
-     1.18
+     0.661,
+     0.3498,
+     1.178
     ]
    },
    "labelAnchor": [
-    0,
-    0.05,
+    0.0065,
+    0.0538,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 874,
+    "lite": 874
    },
    "materials": [
     "mat_rubber",
@@ -4753,29 +4761,29 @@
    },
    "pivot": [
     -0.51,
-    0.315,
+    0.326,
     1.16
    ],
    "bbox": {
     "min": [
-     -0.66,
+     -0.661,
      0.295,
-     1.14
+     1.142
     ],
     "max": [
-     -0.36,
-     0.335,
-     1.18
+     -0.372,
+     0.3498,
+     1.178
     ]
    },
    "labelAnchor": [
-    0,
-    0.05,
+    -0.0065,
+    0.0538,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 874,
+    "lite": 874
    },
    "materials": [
     "mat_rubber",
@@ -4802,29 +4810,29 @@
    },
    "pivot": [
     0,
-    1.21,
-    -1.64
+    1.2062,
+    -1.6395
    ],
    "bbox": {
     "min": [
-     -0.59,
-     1.03,
-     -1.85
+     -0.5949,
+     1.0099,
+     -1.8586
     ],
     "max": [
-     0.59,
-     1.39,
-     -1.43
+     0.5949,
+     1.4026,
+     -1.4203
     ]
    },
    "labelAnchor": [
     0,
-    0.21,
+    0.2263,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 784,
+    "lite": 564
    },
    "materials": [
     "mat_glass_xray"
@@ -4850,29 +4858,29 @@
    },
    "pivot": [
     0,
-    1.18,
-    -0.3
+    1.177,
+    -0.2749
    ],
    "bbox": {
     "min": [
-     -0.83,
-     0.99,
-     -1.35
+     -0.8354,
+     0.9974,
+     -1.298
     ],
     "max": [
-     0.83,
-     1.37,
-     0.75
+     0.8354,
+     1.3567,
+     0.7483
     ]
    },
    "labelAnchor": [
     0,
-    0.22,
+    0.2097,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 3224,
+    "lite": 1884
    },
    "materials": [
     "mat_glass_xray"
@@ -4898,29 +4906,29 @@
    },
    "pivot": [
     0,
-    1.21,
-    0.45
+    1.2008,
+    0.4594
    ],
    "bbox": {
     "min": [
-     -0.68,
-     1.01,
-     0.12
+     -0.7188,
+     1.0062,
+     0.1206
     ],
     "max": [
-     0.68,
-     1.41,
-     0.78
+     0.7188,
+     1.3954,
+     0.7982
     ]
    },
    "labelAnchor": [
     0,
-    0.23,
+    0.2246,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1092,
+    "lite": 608
    },
    "materials": [
     "mat_glass_xray"
@@ -4945,30 +4953,30 @@
     "order": 0.45
    },
    "pivot": [
-    0.72,
-    0.95,
-    -1.88
+    0.7235,
+    0.8672,
+    -1.8617
    ],
    "bbox": {
     "min": [
-     0.57,
-     0.88,
-     -1.95
+     0.6103,
+     0.7333,
+     -1.9485
     ],
     "max": [
-     0.87,
-     1.02,
-     -1.81
+     0.8368,
+     1.0012,
+     -1.7748
     ]
    },
    "labelAnchor": [
     0,
-    0.1,
+    0.1639,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 298,
+    "lite": 206
    },
    "materials": [
     "mat_emissive_tail",
@@ -4995,30 +5003,30 @@
     "order": 0.45
    },
    "pivot": [
-    -0.72,
-    0.95,
-    -1.88
+    -0.7235,
+    0.8672,
+    -1.8617
    ],
    "bbox": {
     "min": [
-     -0.87,
-     0.88,
-     -1.95
+     -0.8368,
+     0.7333,
+     -1.9485
     ],
     "max": [
-     -0.57,
-     1.02,
-     -1.81
+     -0.6103,
+     1.0012,
+     -1.7748
     ]
    },
    "labelAnchor": [
     0,
-    0.1,
+    0.1639,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 298,
+    "lite": 206
    },
    "materials": [
     "mat_emissive_tail",
@@ -5036,39 +5044,39 @@
    "lod": "core",
    "explode": {
     "dir": [
-     0,
-     0.62224,
-     0.78282
+     0.09999,
+     0.98995,
+     0.09999
     ],
-    "distance": 0.32,
+    "distance": 0.405,
     "stage": 4,
     "order": 0.8
    },
    "pivot": [
-    -0.1,
-    0.55,
-    1.7
+    -0.0864,
+    0.5749,
+    1.6591
    ],
    "bbox": {
     "min": [
-     -0.5,
-     0.3,
-     1.45
+     -0.5367,
+     0.3441,
+     1.3969
     ],
     "max": [
-     0.3,
-     0.8,
-     1.95
+     0.364,
+     0.8056,
+     1.9213
     ]
    },
    "labelAnchor": [
     0,
-    0.28,
+    0.2608,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1848,
+    "lite": 1320
    },
    "materials": [
     "mat_hose",
@@ -5089,35 +5097,35 @@
      0.89241,
      0
     ],
-    "distance": 0.34,
+    "distance": 0.459,
     "stage": 4,
     "order": 0.75
    },
    "pivot": [
-    0.11,
-    0.71,
-    1.45
+    0.129,
+    0.723,
+    1.4685
    ],
    "bbox": {
     "min": [
-     0.06,
-     0.66,
-     1.4
+     0.065,
+     0.67,
+     1.414
     ],
     "max": [
-     0.16,
-     0.76,
-     1.5
+     0.193,
+     0.776,
+     1.523
     ]
    },
    "labelAnchor": [
     0,
-    0.08,
+    0.083,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 564,
+    "lite": 564
    },
    "materials": [
     "mat_plastic_grey"
@@ -5137,7 +5145,7 @@
      0.99373,
      0.04999
     ],
-    "distance": 0.5,
+    "distance": 0.65,
     "stage": 5,
     "order": 0.5
    },
@@ -5148,24 +5156,24 @@
    ],
    "bbox": {
     "min": [
-     -0.19,
-     0.53,
-     1.06
+     -0.195,
+     0.5242,
+     1.058
     ],
     "max": [
-     0.07,
-     0.75,
-     1.26
+     0.082,
+     0.7934,
+     1.3
     ]
    },
    "labelAnchor": [
-    0,
-    0.14,
-    0
+    0.0035,
+    0.1834,
+    0.019
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 6568,
+    "lite": 4300
    },
    "materials": [
     "mat_cast_alu",
@@ -5189,35 +5197,35 @@
      0.99368,
      -0.05019
     ],
-    "distance": 0.72,
+    "distance": 1.161,
     "stage": 4,
     "order": 0.25
    },
    "pivot": [
-    0.38,
-    0.84,
-    1.36
+    0.2509,
+    0.7701,
+    1.4836
    ],
    "bbox": {
     "min": [
-     0.23,
-     0.76,
-     1.21
+     0.0569,
+     0.6131,
+     1.1277
     ],
     "max": [
-     0.53,
-     0.92,
-     1.51
+     0.445,
+     0.927,
+     1.8396
     ]
    },
    "labelAnchor": [
     0,
-    0.11,
+    0.1869,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1636,
+    "lite": 1636
    },
    "materials": [
     "mat_plastic_black",
@@ -5238,35 +5246,35 @@
      0.88836,
      0.45915
     ],
-    "distance": 0.39,
+    "distance": 0.5265,
     "stage": 4,
     "order": 0.7
    },
    "pivot": [
-    -0.15,
-    0.75,
-    1.71
+    -0.17,
+    0.7887,
+    1.6168
    ],
    "bbox": {
     "min": [
-     -0.35,
-     0.62,
-     1.64
+     -0.385,
+     0.6829,
+     1.5065
     ],
     "max": [
-     0.05,
-     0.88,
-     1.78
+     0.045,
+     0.8945,
+     1.7271
     ]
    },
    "labelAnchor": [
     0,
-    0.16,
+    0.1358,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 2032,
+    "lite": 1520
    },
    "materials": [
     "mat_cast_alu",
@@ -5292,30 +5300,30 @@
     "order": 0.7
    },
    "pivot": [
-    0.87,
-    0.85,
+    0.8692,
+    0.5849,
     0.31
    ],
    "bbox": {
     "min": [
-     0.83,
-     0.31,
-     -0.17
+     0.8413,
+     0.1658,
+     -0.178
     ],
     "max": [
-     0.91,
-     1.39,
-     0.79
+     0.897,
+     1.004,
+     0.7981
     ]
    },
    "labelAnchor": [
     0,
-    0.57,
+    0.4491,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1462,
+    "lite": 832
    },
    "materials": [
     "mat_body_xray"
@@ -5340,30 +5348,30 @@
     "order": 0.7
    },
    "pivot": [
-    -0.87,
-    0.85,
+    -0.8692,
+    0.5849,
     0.31
    ],
    "bbox": {
     "min": [
-     -0.91,
-     0.31,
-     -0.17
+     -0.897,
+     0.1658,
+     -0.178
     ],
     "max": [
-     -0.83,
-     1.39,
-     0.79
+     -0.8413,
+     1.004,
+     0.7981
     ]
    },
    "labelAnchor": [
     0,
-    0.57,
+    0.4491,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1462,
+    "lite": 832
    },
    "materials": [
     "mat_body_xray"
@@ -5388,30 +5396,30 @@
     "order": 0.75
    },
    "pivot": [
-    0.87,
-    0.85,
-    -0.6
+    0.8708,
+    0.6,
+    -0.6005
    ],
    "bbox": {
     "min": [
-     0.83,
-     0.34,
-     -1.01
+     0.8446,
+     0.1819,
+     -1.019
     ],
     "max": [
-     0.91,
-     1.36,
-     -0.19
+     0.8969,
+     1.0181,
+     -0.182
     ]
    },
    "labelAnchor": [
     0,
-    0.54,
+    0.4481,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1252,
+    "lite": 706
    },
    "materials": [
     "mat_body_xray"
@@ -5436,30 +5444,30 @@
     "order": 0.75
    },
    "pivot": [
-    -0.87,
-    0.85,
-    -0.6
+    -0.8708,
+    0.6,
+    -0.6005
    ],
    "bbox": {
     "min": [
-     -0.91,
-     0.34,
-     -1.01
+     -0.8969,
+     0.1819,
+     -1.019
     ],
     "max": [
-     -0.83,
-     1.36,
-     -0.19
+     -0.8446,
+     1.0181,
+     -0.182
     ]
    },
    "labelAnchor": [
     0,
-    0.54,
+    0.4481,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 1252,
+    "lite": 706
    },
    "materials": [
     "mat_body_xray"
@@ -5475,41 +5483,42 @@
    "lod": "core",
    "explode": {
     "dir": [
-     -0.55138,
-     0.45113,
-     0.70176
+     -0.50065,
+     0.75098,
+     0.43056
     ],
-    "distance": 0.42,
+    "distance": 0.91,
     "stage": 5,
     "order": 0.2
    },
    "pivot": [
-    -0.43,
-    0.65,
-    1.4
+    -0.4245,
+    0.6316,
+    1.3977
    ],
    "bbox": {
     "min": [
-     -0.445,
-     0.34,
-     1.21
+     -0.443,
+     0.3992,
+     1.2679
     ],
     "max": [
-     -0.415,
-     0.96,
-     1.59
+     -0.406,
+     0.864,
+     1.5275
     ]
    },
    "labelAnchor": [
     0,
-    0.34,
+    0.2624,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 4160,
+    "lite": 4160
    },
    "materials": [
+    "mat_machined_steel",
     "mat_rubber",
     "mat_steel_dark"
    ]
@@ -5524,42 +5533,43 @@
    "lod": "core",
    "explode": {
     "dir": [
-     -0.29963,
-     0.94881,
-     0.09988
+     -0.44944,
+     0.799,
+     0.3995
     ],
-    "distance": 0.3,
+    "distance": 0.715,
     "stage": 5,
     "order": 0.25
    },
    "pivot": [
-    -0.41,
-    0.52,
-    1.32
+    -0.42,
+    0.5409,
+    1.3535
    ],
    "bbox": {
     "min": [
-     -0.44,
-     0.47,
-     1.27
+     -0.458,
+     0.4775,
+     1.2958
     ],
     "max": [
-     -0.38,
-     0.57,
-     1.37
+     -0.382,
+     0.6045,
+     1.4112
     ]
    },
    "labelAnchor": [
     0,
-    0.08,
+    0.0936,
     0
    ],
    "triangles": {
-    "desktop": 12,
-    "lite": 0
+    "desktop": 3364,
+    "lite": 3364
    },
    "materials": [
     "mat_cast_alu",
+    "mat_machined_steel",
     "mat_steel_dark"
    ]
   }
@@ -5568,27 +5578,27 @@
   "hero": {
    "desktop": {
     "position": [
-     3.2201,
-     2.3063,
-     6.5344
+     3.2178,
+     2.3385,
+     6.5405
     ],
     "target": [
-     -0.9513,
-     0.5369,
-     0.793
+     -0.956,
+     0.568,
+     0.7957
     ],
     "fov": 28
    },
    "mobile": {
     "position": [
      3.1441,
-     2.772,
-     6.1929
+     2.8111,
+     6.2066
     ],
     "target": [
-     -0.3139,
-     0.7888,
-     0.2034
+     -0.3208,
+     0.824,
+     0.2052
     ],
     "fov": 38
    }
@@ -5596,27 +5606,27 @@
   "exploded": {
    "desktop": {
     "position": [
-     4.9495,
-     4.4848,
-     7.6678
+     5.1576,
+     4.6116,
+     8.1968
     ],
     "target": [
-     -1.0257,
-     0.5841,
-     1.2602
+     -0.9937,
+     0.5959,
+     1.6004
     ],
     "fov": 28
    },
    "mobile": {
     "position": [
-     5.5364,
-     4.1587,
-     8.1018
+     5.7842,
+     4.2344,
+     8.6799
     ],
     "target": [
-     -0.1274,
-     0.6515,
-     0.3062
+     -0.0592,
+     0.616,
+     0.6371
     ],
     "fov": 38
    }
