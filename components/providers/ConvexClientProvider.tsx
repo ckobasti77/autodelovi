@@ -1,14 +1,17 @@
 "use client";
 
 /**
- * Convex client for Client Components (useQuery / useMutation).
+ * Convex client for Client Components (useQuery / useMutation / useAuthActions).
  *
  * One ConvexReactClient per browser tab, created at module scope (it connects lazily on the
- * first subscription, so SSR never opens a socket). Step 05 replaces ConvexProvider with
- * ConvexAuthNextjsProvider and adds ConvexAuthNextjsServerProvider in the root layout —
- * keep this file the single place that constructs the client.
+ * first subscription, so SSR never opens a socket). `ConvexAuthNextjsProvider` sends the
+ * Convex Auth token (issued through the `/api/auth` proxy route; the refresh token stays in
+ * an httpOnly cookie). The root layout also mounts `ConvexAuthNextjsServerProvider` — both
+ * are required on Next 16 (docs/DECISIONS.md R1). Keep this file the single place that
+ * constructs the client.
  */
-import { ConvexProvider, ConvexReactClient } from "convex/react";
+import { ConvexAuthNextjsProvider } from "@convex-dev/auth/nextjs";
+import { ConvexReactClient } from "convex/react";
 import type { ReactNode } from "react";
 
 const url = process.env.NEXT_PUBLIC_CONVEX_URL;
@@ -22,5 +25,5 @@ if (!convexClient && process.env.NODE_ENV !== "production") {
 export function ConvexClientProvider({ children }: { children: ReactNode }) {
   // Without a deployment URL the static shell still renders; live islands show their fallbacks.
   if (!convexClient) return <>{children}</>;
-  return <ConvexProvider client={convexClient}>{children}</ConvexProvider>;
+  return <ConvexAuthNextjsProvider client={convexClient}>{children}</ConvexAuthNextjsProvider>;
 }

@@ -45,7 +45,11 @@ export const PRIMARY_NAV = [
  * not prefetch (a prefetch of a missing route is a 404 in production and a console error).
  * Add a path here in the step that ships its page.
  */
-export const LIVE_ROUTES: ReadonlySet<string> = new Set<string>([ROUTES.home, ROUTES.styleguide]);
+export const LIVE_ROUTES: ReadonlySet<string> = new Set<string>([
+  ROUTES.home,
+  ROUTES.styleguide,
+  ROUTES.signIn,
+]);
 
 /** True when the path (query and hash ignored) belongs to a shipped page. */
 export function isLiveRoute(href: string): boolean {

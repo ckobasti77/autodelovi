@@ -8,8 +8,10 @@ const root = fileURLToPath(new URL(".", import.meta.url));
  *
  * - `unit`: pure logic (`lib/domain`, `lib/format`, `config`, …). Runs in `node` by default;
  *   a test file that needs the DOM opts in with a `// @vitest-environment jsdom` docblock.
- * - `convex` (step 05): `environment: "edge-runtime"`, `server.deps.inline: ["convex-test"]`,
- *   include `convex/**\/*.test.ts`. Add it to `projects` below.
+ * - `convex`: convex-test against the real schema/functions (`environment: "edge-runtime"`,
+ *   component packages inlined so their `import.meta.glob` test helpers resolve). Test files
+ *   are `convex/**\/*.test.ts`; shared setup is `convex/test.setup.ts` (the Convex bundler
+ *   skips file names with several dots, so neither is ever deployed).
  *
  * `npm test` runs every project with `--passWithNoTests`; `npm run test:unit` runs only `unit`.
  */
@@ -29,7 +31,24 @@ export default defineConfig({
           environment: "node",
         },
       },
-      // { extends: true, test: { name: "convex", environment: "edge-runtime", … } } — step 05
+      {
+        extends: true,
+        test: {
+          name: "convex",
+          include: ["convex/**/*.test.ts"],
+          environment: "edge-runtime",
+          server: {
+            deps: {
+              inline: [
+                "convex-test",
+                "@convex-dev/rate-limiter",
+                "@convex-dev/resend",
+                "@convex-dev/batch-worker",
+              ],
+            },
+          },
+        },
+      },
     ],
   },
 });

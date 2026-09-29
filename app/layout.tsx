@@ -1,3 +1,4 @@
+import { ConvexAuthNextjsServerProvider } from "@convex-dev/auth/nextjs/server";
 import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
 
@@ -49,23 +50,30 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   const nonce = (await headers()).get("x-nonce") ?? undefined;
 
   return (
-    // The boot script adds `tr-js` to <html> before hydration — hence suppressHydrationWarning.
-    <html lang={site.locale} className={fontVariables} suppressHydrationWarning>
-      <head>
-        <style id="text-reveal-css" nonce={nonce} dangerouslySetInnerHTML={{ __html: revealCss }} />
-        <script
-          id="text-reveal-boot"
-          nonce={nonce}
-          dangerouslySetInnerHTML={{ __html: revealBoot }}
-        />
-        <noscript dangerouslySetInnerHTML={{ __html: `<style>${revealNoscriptCss}</style>` }} />
-      </head>
-      <body>
-        <SkipLink />
-        <Providers>{children}</Providers>
-        <TextRevealGlobal />
-        <ScrollTriggerRefresher />
-      </body>
-    </html>
+    // Convex Auth reads the session cookies here and hands the token to the client provider.
+    <ConvexAuthNextjsServerProvider>
+      {/* The boot script adds `tr-js` to <html> before hydration — hence suppressHydrationWarning. */}
+      <html lang={site.locale} className={fontVariables} suppressHydrationWarning>
+        <head>
+          <style
+            id="text-reveal-css"
+            nonce={nonce}
+            dangerouslySetInnerHTML={{ __html: revealCss }}
+          />
+          <script
+            id="text-reveal-boot"
+            nonce={nonce}
+            dangerouslySetInnerHTML={{ __html: revealBoot }}
+          />
+          <noscript dangerouslySetInnerHTML={{ __html: `<style>${revealNoscriptCss}</style>` }} />
+        </head>
+        <body>
+          <SkipLink />
+          <Providers>{children}</Providers>
+          <TextRevealGlobal />
+          <ScrollTriggerRefresher />
+        </body>
+      </html>
+    </ConvexAuthNextjsServerProvider>
   );
 }

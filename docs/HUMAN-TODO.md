@@ -71,3 +71,36 @@ Oznake: **[P0]** potrebno pre puštanja uživo · **[P1]** potrebno u prvim nede
 - [ ] **[P2]** Kratki saveti u oblačićima 3D prikaza, po kategoriji (primer: „Pre zamene proverite broj na kućištu turbine.“) — pregledati i dopuniti iskustvom iz radnje.
 - [ ] **[P2]** Rok slanja za poruku „Šaljemo danas ako poručite do …“ — prikazuje se samo ako se unese u podešavanjima; potvrditi da li to želite i do kog sata.
 - [ ] **[P2]** Fotografije proizvoda (kad ih bude): tamnosiva ili srednje siva pozadina, ugao 3/4, deo zauzima oko 70 % kadra, bez ruku, rekvizita i znakova proizvođača vozila, najmanje 2000 px po dužoj strani.
+
+## 9. Seed podaci — proveriti (korak 05)
+Oznaka: **seed – proveriti**. Podaci su uneti po opšte poznatim podacima o vozilima prodavanim u Srbiji, ali ih pre puštanja uživo treba proveriti (Admin → Vozila, od koraka 15).
+
+- [ ] **[P1] seed – proveriti: modeli, generacije, godine i VIN kodovi modela** (pozicije 7–8 VIN-a):
+  - Volkswagen Golf: Golf IV (1997–2006, VIN kod 1J); Golf V (2003–2009, VIN kod 1K); Golf VI (2008–2013, VIN kod 1K,5K); Golf VII (2012–2020, VIN kod 5G,AU); Golf VIII (2019–danas, VIN kod CD)
+  - Volkswagen Passat: Passat B5 (1996–2005, VIN kod 3B); Passat B6 (2005–2010, VIN kod 3C); Passat B7 (2010–2014, VIN kod 3C,36); Passat B8 (2014–2023, VIN kod 3G)
+  - Volkswagen Polo: Polo IV (2001–2009, VIN kod 9N); Polo V (2009–2017, VIN kod 6R,6C); Polo VI (2017–danas, VIN kod AW)
+  - Volkswagen Caddy: Caddy III (2003–2020, VIN kod 2K); Caddy V (2020–danas, VIN kod SB)
+  - Volkswagen Touran: Touran I (2003–2015, VIN kod 1T); Touran II (2015–danas, VIN kod 5T)
+  - Volkswagen Tiguan: Tiguan I (2007–2016, VIN kod 5N); Tiguan II (2016–2024, VIN kod AD,BW)
+  - Audi A3: A3 (8L) (1996–2003, VIN kod 8L); A3 (8P) (2003–2013, VIN kod 8P); A3 (8V) (2012–2020, VIN kod 8V); A3 (8Y) (2020–danas, VIN kod 8Y,GY)
+  - Audi A4: A4 B5 (1994–2001, VIN kod 8D); A4 B6 (2000–2004, VIN kod 8E); A4 B7 (2004–2008, VIN kod 8E,8H); A4 B8 (2007–2015, VIN kod 8K); A4 B9 (2015–danas, VIN kod 8W)
+  - Audi A6: A6 C5 (1997–2004, VIN kod 4B); A6 C6 (2004–2011, VIN kod 4F); A6 C7 (2011–2018, VIN kod 4G); A6 C8 (2018–danas, VIN kod 4A)
+  - Škoda Octavia: Octavia I (1996–2010, VIN kod 1U); Octavia II (2004–2013, VIN kod 1Z); Octavia III (2012–2020, VIN kod 5E,NE); Octavia IV (2019–danas, VIN kod NX)
+  - Škoda Fabia: Fabia I (1999–2007, VIN kod 6Y); Fabia II (2007–2014, VIN kod 5J); Fabia III (2014–2021, VIN kod NJ); Fabia IV (2021–danas, VIN kod PJ)
+  - Škoda Superb: Superb I (2001–2008, VIN kod 3U); Superb II (2008–2015, VIN kod 3T); Superb III (2015–2024, VIN kod 3V)
+  - Škoda Rapid: Rapid (2012–2019, VIN kod NH)
+  - Škoda Kodiaq: Kodiaq I (2016–2024, VIN kod NS)
+  - Škoda Karoq: Karoq (2017–danas, VIN kod NU)
+  - SEAT Leon: Leon I (1999–2005, VIN kod 1M); Leon II (2005–2012, VIN kod 1P); Leon III (2012–2020, VIN kod 5F); Leon IV (2020–danas, VIN kod KL)
+  - SEAT Ibiza: Ibiza III (2002–2008, VIN kod 6L); Ibiza IV (2008–2017, VIN kod 6J,6P); Ibiza V (2017–danas, VIN kod KJ)
+  - SEAT Ateca: Ateca (2016–danas, VIN kod KH)
+  - Cupra Formentor: Formentor (2020–danas, VIN kod KM)
+  - Cupra Leon: Leon (KL) (2020–danas, VIN kod KL)
+  - Cupra Ateca: Ateca (2018–danas, VIN kod KH)
+- [ ] **[P1] seed – proveriti: kodovi motora, snaga i gorivo** — 1.4 16V 55 kW (AXP,BCA; benzin; 55 kW / 75 KS) · 1.6 8V 75 kW (AKL,AVU,BFQ,BSE; benzin; 75 kW / 102 KS) · 1.8 T 110 kW (AGU,ARZ,AUM; benzin; 110 kW / 150 KS) · 1.2 HTP 44 kW (AWY,BMD; benzin; 44 kW / 60 KS) · 1.2 TSI 77 kW (CBZB; benzin; 77 kW / 105 KS) · 1.4 TSI 90 kW (CAXA; benzin; 90 kW / 122 KS) · 1.4 TSI 110 kW (CZDA; benzin; 110 kW / 150 KS) · 1.0 TSI 81 kW (CHZD,DKLA; benzin; 81 kW / 110 KS) · 1.5 TSI 110 kW (DADA,DPCA; benzin; 110 kW / 150 KS) · 2.0 TFSI 147 kW (BWA,AXX; benzin; 147 kW / 200 KS) · 2.0 TSI 162 kW (CHHB; benzin; 162 kW / 220 KS) · 1.4 TDI 55 kW (AMF,BNM; dizel; 55 kW / 75 KS) · 1.9 TDI 66 kW (ALH; dizel; 66 kW / 90 KS) · 1.9 TDI 74 kW (ATD,AXR; dizel; 74 kW / 100 KS) · 1.9 TDI 77 kW (BKC,BXE,BLS; dizel; 77 kW / 105 KS) · 1.9 TDI 96 kW (ASZ,AVF; dizel; 96 kW / 130 KS) · 2.0 TDI 103 kW (PD) (BKD,AZV,BMM; dizel; 103 kW / 140 KS) · 1.2 TDI 55 kW (CFWA; dizel; 55 kW / 75 KS) · 1.6 TDI 77 kW (CAYC,CLHA; dizel; 77 kW / 105 KS) · 2.0 TDI 103 kW (CR) (CBAB,CFFB; dizel; 103 kW / 140 KS) · 2.0 TDI 110 kW (CRLB,DFGA; dizel; 110 kW / 150 KS) · 2.0 TDI 140 kW (CUAA,DFHA; dizel; 140 kW / 190 KS) · 2.5 TDI V6 132 kW (AKE,BDH; dizel; 132 kW / 180 KS) · 2.7 TDI 132 kW (BPP,CANK; dizel; 132 kW / 180 KS) · 3.0 TDI 171 kW (ASB,BMK; dizel; 171 kW / 233 KS).
+- [ ] **[P1] seed – proveriti: koji motor ide u koju generaciju** (tabela `generationEngines`, 345 veza) — trenutno po platformi (PQ34, PQ35, MQB, MQB Evo, PQ46, B5, PQ25, MQB A0, B6/B7, MLB, C6).
+- [ ] **[P1] seed – proveriti: spisak proizvođača delova i nivo kvaliteta** (Original VAG = original; Bosch, Valeo, LuK, Sachs, TRW, ATE, Brembo, Lemförder, Mann-Filter, Mahle, Garrett, NGK, Gates, ContiTech, INA, SKF, Hella, Pierburg, KYB, Bilstein, Varta, Continental, BorgWarner, Denso = OEM; Febi Bilstein, Meyle, Nissens, Castrol, Walker = aftermarket).
+- [ ] **[P0] Demo artikli (šifre `DEMO-0001` … `DEMO-0150`), demo majstor, 8 demo porudžbina i 4 demo upita** — kataloški (OEM) i zamenski brojevi su izmišljeni i označeni „VAG (demo)“; obrisati pre puštanja uživo (Admin → Podešavanja → Obriši demo podatke, potvrda „OBRIŠI DEMO“).
+- [ ] **[P0] Linkovi za praćenje pošiljke** za D Express, BEX, AKS i Post Express — polja su prazna dok ih ne potvrdite (Admin → Podešavanja → Kuriri); broj pošiljke se do tada prikazuje bez linka.
+- [ ] **[P1] Prijava vlasnika**: nalog `SEED_ADMIN_EMAIL` je napravljen; lozinku iz `pipeline/env/ADMIN-CREDENTIALS.txt` promenite posle prve prijave (stranica za promenu lozinke stiže u koraku 12).
+- [ ] **[P1] Kod za novu lozinku** se do povezivanja Resend-a (korak 18) ne šalje mejlom — vidi se samo u Admin → Mejlovi (tabela `emailLog`).
