@@ -573,7 +573,7 @@ export const sendQuote = staffMutation({
       inquiry._id,
       "quote_sent",
       actor,
-      `Ponuda v${quote.version} poslata`,
+      `Ponuda br. ${quote.version} poslata`,
       false,
     );
     await emitEvent(ctx, {
@@ -595,7 +595,7 @@ export const sendQuote = staffMutation({
       action: "quote.send",
       entityType: "inquiry",
       entityId: inquiry._id,
-      summary: `${inquiry.number}: poslata ponuda v${quote.version}`,
+      summary: `${inquiry.number}: poslata ponuda br. ${quote.version}`,
     });
     return { validUntil };
   },
@@ -690,7 +690,7 @@ export const convertToOrder = staffMutation({
       action: "quote.convert",
       entityType: "inquiry",
       entityId: inquiry._id,
-      summary: `${inquiry.number}: ponuda v${quote.version} → porudžbina ${order.number}`,
+      summary: `${inquiry.number}: ponuda br. ${quote.version} → porudžbina ${order.number}`,
     });
     return { orderNumber: order.number };
   },

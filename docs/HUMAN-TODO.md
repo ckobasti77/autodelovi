@@ -120,6 +120,7 @@ Oznaka: **seed – proveriti**. Podaci su uneti po opšte poznatim podacima o vo
 
 ## 10. Administracija (korak 15)
 - [ ] **[P0] Zaposleni**: Admin → Korisnici → „Pozovi zaposlenog“ → pošaljite prikazani link zaposlenom (Viber, SMS). Link važi 7 dana i radi samo za e-mail adresu na koju je napravljen; zaposleni se registruje ili prijavi tom adresom i klikne „Prihvati pozivnicu“. Dok e-pošta nije povezana (korak 18), link se ne šalje sam.
+- [ ] **[P0] Podaci o firmi**: dok pun naziv, PIB, adresa sedišta, telefon i tekući račun nisu uneti (Admin → Podešavanja → Firma), pregled i predračun/otpremnica prikazuju žuto upozorenje sa spiskom onoga što nedostaje; upozorenje se ne štampa.
 - [ ] **[P0] Rok za odgovor na upite (SLA)**: podrazumevano 120 minuta radnog vremena (Admin → Podešavanja → Obaveštenja → „Podsetnik posle“). Potvrdite ili promenite; tajmeri na pregledu i u listi upita računaju samo radno vreme iz podešavanja.
 - [ ] **[P1] Moja obaveštenja**: svaki zaposleni u Admin → Podešavanja → Obaveštenja bira šta dobija u aplikaciji i e-poštom.
 - [ ] **[P1] Pravni tekstovi**: posle pregleda pravnika uključite „Pravnik je pregledao ovu verziju“ za svaku stranicu (Admin → Podešavanja → Pravni tekstovi) i ažurirajte datume verzija.

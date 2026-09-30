@@ -49,6 +49,8 @@ export type FieldProps = {
   required?: boolean;
   /** Marks the field „nije obavezno“ next to the label (we mark optional, not required). */
   optional?: boolean;
+  /** Marks the field „(obavezno)“ (admin forms, where most fields are optional — DS §12.1.4). */
+  markRequired?: boolean;
   disabled?: boolean;
   /** Visually hide the label (it stays the accessible name). Use rarely — labels stay visible. */
   hideLabel?: boolean;
@@ -68,6 +70,7 @@ export function Field({
   success,
   required = false,
   optional = false,
+  markRequired = false,
   disabled = false,
   hideLabel = false,
   id: idProp,
@@ -93,6 +96,7 @@ export function Field({
         <label htmlFor={id} className={cn("type-caption text-ink-2", hideLabel && "sr-only")}>
           {label}
           {optional ? <span className="font-normal text-ink-3"> (nije obavezno)</span> : null}
+          {markRequired ? <span className="font-normal text-ink-3"> (obavezno)</span> : null}
         </label>
         {children}
         {error ? (

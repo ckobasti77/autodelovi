@@ -22,7 +22,7 @@ export default async function AdminBulkDeliveryNotesPage({
   ).filter((d): d is NonNullable<typeof d> => d !== null);
   if (docs.length === 0)
     return <p className="type-body text-ink-2">Nije izabrana nijedna porudžbina.</p>;
-  return docs.map((data) => (
-    <DeliveryNoteDocument key={data.order._id} data={data} settings={settings} />
+  return docs.map((data, i) => (
+    <DeliveryNoteDocument key={data.order._id} data={data} settings={settings} notice={i === 0} />
   ));
 }

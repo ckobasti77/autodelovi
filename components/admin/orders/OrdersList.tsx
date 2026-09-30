@@ -70,9 +70,10 @@ import { useUrlFilters } from "../useUrlFilters";
 
 type Row = FunctionReturnType<typeof api.ordersAdmin.list>["page"][number];
 
-const STATUS_TABS: { value: OrderStatus | ""; label: string }[] = [
-  { value: "", label: "Sve" },
+// „Nove“ is the default view (no `status` in the URL); „Sve“ is the explicit `status=sve`.
+const STATUS_TABS: { value: OrderStatus | "sve"; label: string }[] = [
   { value: "nova", label: "Nove" },
+  { value: "sve", label: "Sve" },
   { value: "potvrdjena", label: "Potvrđene" },
   { value: "ceka_deo", label: "Čeka deo" },
   { value: "spremna_za_preuzimanje", label: "Za preuzimanje" },
@@ -108,10 +109,13 @@ export function OrdersList() {
     if (debounced !== f.q) setF({ q: debounced });
   }, [debounced, f.q, setF]);
 
+  // A search from the default tab looks through every status (finding a number is the point).
+  const tab = f.status || (f.q ? "sve" : "nova");
+  const statusArg = tab === "sve" ? undefined : (tab as OrderStatus);
   const from = f.od ? dayStart(f.od) : undefined;
   const toStart = f.do ? dayStart(f.do) : undefined;
   const args = {
-    ...(f.status ? { status: f.status as OrderStatus } : {}),
+    ...(statusArg ? { status: statusArg } : {}),
     ...(f.q ? { search: f.q } : {}),
     ...(from !== undefined ? { from } : {}),
     ...(toStart !== undefined ? { to: toStart + 86_400_000 - 1 } : {}),
@@ -132,8 +136,16 @@ export function OrdersList() {
   const [density, setDensity] = useState<"default" | "compact">("default");
   // „Izvor“ fits without horizontal scrolling only on wide screens (DS §9.15); the chooser shows it anywhere.
   const wide = useMediaQuery("(min-width: 1600px)");
+  // Below 1280 px the date folds under the number and „Kom.“ hides, so nothing scrolls sideways.
+  const roomy = useMediaQuery("(min-width: 1280px)");
   const [chosen, setVisibility] = useState<VisibilityState>({});
-  const visibility: VisibilityState = { source: wide, ...chosen };
+  const visibility: VisibilityState = {
+    source: wide,
+    createdAt: roomy,
+    items: roomy,
+    ...chosen,
+  };
+  const dateFolded = visibility.createdAt === false;
   const activeFilters = [f.od, f.do, f.dostava, f.placanje, f.kupac, f.izvor, f.kampanja].filter(
     Boolean,
   ).length;
@@ -147,9 +159,16 @@ export function OrdersList() {
         header: "Broj",
         meta: { sticky: "left" },
         cell: ({ row }) => (
-          <span className="flex items-center gap-2" data-testid={TEST_IDS.adminOrderRow}>
-            <DocNumber number={row.original.number} />
-            {row.original.isDemo ? <DemoTag /> : null}
+          <span className="flex flex-col" data-testid={TEST_IDS.adminOrderRow}>
+            <span className="flex items-center gap-2">
+              <DocNumber number={row.original.number} />
+              {row.original.isDemo ? <DemoTag /> : null}
+            </span>
+            {dateFolded ? (
+              <span className="whitespace-nowrap type-caption tabular-nums text-ink-3">
+                {compactDateTime(row.original.createdAt, nowMinute)}
+              </span>
+            ) : null}
           </span>
         ),
       },
@@ -185,7 +204,7 @@ export function OrdersList() {
         accessorKey: "status",
         header: "Status",
         cell: ({ row }) => (
-          <span className="flex items-center gap-1.5">
+          <span className="flex flex-col items-start gap-1 min-[1280px]:flex-row min-[1280px]:items-center min-[1280px]:gap-1.5">
             <OrderStatusBadge status={row.original.status} />
             {row.original.hasBackorder && row.original.status === "nova" ? (
               <Badge tone="warning">Ima po porudžbini</Badge>
@@ -286,7 +305,7 @@ export function OrdersList() {
         ),
       },
     ],
-    [nowMinute, router],
+    [dateFolded, nowMinute, router],
   );
 
   const exportCsv = () => {
@@ -364,7 +383,7 @@ export function OrdersList() {
   };
 
   const empty =
-    f.status === "nova" && !f.q && activeFilters === 0
+    tab === "nova" && !f.q && activeFilters === 0
       ? "Nema novih porudžbina."
       : f.q || activeFilters
         ? "Nema porudžbina za ovu pretragu i filtere."
@@ -378,17 +397,14 @@ export function OrdersList() {
       />
       <SegmentedFilter
         label="Status porudžbine"
-        value={f.status}
+        value={tab}
         onChange={(status) => {
           setSelection({});
-          setF({ status });
+          setF({ status: status === "nova" ? "" : status });
         }}
         options={STATUS_TABS.map((t) => ({
           ...t,
-          count:
-            t.value && counts && t.value in counts
-              ? counts[t.value as keyof typeof counts]
-              : undefined,
+          count: counts && t.value in counts ? counts[t.value as keyof typeof counts] : undefined,
         }))}
       />
       {selected.length > 0 ? (
@@ -578,7 +594,12 @@ export function OrdersList() {
         onRowOpen={(r) => router.push(ADMIN.order(r.number))}
         empty={<p className="py-10 text-center type-body-s text-ink-2">{empty}</p>}
       />
-      <LoadMoreFooter shown={results.length} status={status} onMore={loadMore} noun="porudžbina" />
+      <LoadMoreFooter
+        shown={results.length}
+        status={status}
+        onMore={loadMore}
+        forms={["porudžbina", "porudžbine", "porudžbina"]}
+      />
       <ConfirmDialog {...confirm.props} />
     </div>
   );

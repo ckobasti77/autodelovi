@@ -468,7 +468,6 @@ function DetailView({
                 </Field>
                 <Field
                   label="Lični osnovni rabat"
-                  optional
                   help="Menja osnovni rabat nivoa samo za ovaj servis."
                 >
                   <Input
@@ -502,7 +501,7 @@ function DetailView({
                 />
                 {terms.creditEnabled ? (
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <Field label="Limit" optional help="Prazno = bez limita.">
+                    <Field label="Limit" help="Prazno = bez limita.">
                       <Input
                         inputMode="decimal"
                         suffix="RSD"

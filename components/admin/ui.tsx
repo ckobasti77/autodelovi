@@ -8,6 +8,9 @@
 import type { ReactNode } from "react";
 import {
   CheckCircleIcon,
+  ClockIcon,
+  SquareHalfBottomIcon,
+  SquareIcon,
   ClockCounterClockwiseIcon,
   HourglassIcon,
   PackageIcon,
@@ -22,12 +25,23 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 
 import { cn } from "@/lib/cn";
+import { countSr } from "@/lib/format/plural";
 import { compactDateTime, splitDocNumber } from "@/lib/admin/format";
-import { ACTOR_TYPE_LABEL, ADMIN_INQUIRY_STATUS, ADMIN_ORDER_STATUS } from "@/lib/i18n/sr/admin";
+import type { CompanyField } from "@/lib/domain/company";
+import {
+  ACTOR_TYPE_LABEL,
+  ADMIN_INQUIRY_STATUS,
+  COMPANY_FIELD_LABEL,
+  ADMIN_ORDER_STATUS,
+  STOCK_STATE_LABEL,
+  STOCK_STATE_TONE,
+} from "@/lib/i18n/sr/admin";
 import type { InquiryStatus, OrderStatus } from "@/lib/i18n/sr/shop";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Kbd } from "@/components/ui/Kbd";
+import { RouteLink } from "@/components/ui/RouteLink";
+import { ADMIN } from "@/constants/routes";
 
 export function PageHeader({
   title,
@@ -296,20 +310,21 @@ export function LoadMoreFooter({
   status,
   onMore,
   pageSize = 50,
-  noun = "redova",
+  forms = ["red", "reda", "redova"],
 }: {
   shown: number;
   status: "LoadingFirstPage" | "CanLoadMore" | "LoadingMore" | "Exhausted";
   onMore: (n: number) => void;
   pageSize?: number;
-  noun?: string;
+  /** Serbian plural forms: one, few, many („porudžbina“, „porudžbine“, „porudžbina“). */
+  forms?: readonly [string, string, string];
 }) {
-  if (status === "LoadingFirstPage") return null;
+  if (status === "LoadingFirstPage" || shown === 0) return null;
   return (
     <div className="mt-3 flex flex-wrap items-center justify-between gap-3 type-body-s text-ink-3">
       <span className="tabular-nums">
-        Prikazano: {shown} {noun}
-        {status === "Exhausted" ? " — to su svi." : ""}
+        Prikazano: {countSr(shown, forms)}
+        {status === "Exhausted" ? " — kraj liste." : ""}
       </span>
       {status !== "Exhausted" ? (
         <Button
@@ -347,6 +362,73 @@ export function ErrorBanner({ children, onRetry }: { children: ReactNode; onRetr
   );
 }
 
+/** „52 / 60“ — characters used of the visible limit; over the limit turns warning. */
+export function CharCount({ value, max }: { value: string; max: number }) {
+  return (
+    <span
+      className={cn(
+        "whitespace-nowrap type-caption tabular-nums",
+        value.length > max ? "font-semibold text-warning" : "text-ink-3",
+      )}
+    >
+      {value.length}&nbsp;/&nbsp;{max}
+    </span>
+  );
+}
+
+/** Call / Viber / WhatsApp for a customer phone number (E.164 or formatted). */
+export function ContactActions({ phone }: { phone: string | undefined }) {
+  const tel = phone?.replace(/s/g, "");
+  const digits = phone?.replace(/D/g, "");
+  if (!tel || !digits) return null;
+  return (
+    <div className="mt-4 flex flex-wrap gap-2">
+      <Button asChild variant="secondary" size="sm">
+        <a href={`tel:${tel}`}>Pozovi</a>
+      </Button>
+      <Button asChild variant="secondary" size="sm">
+        <a href={`viber://chat?number=%2B${digits}`}>Viber</a>
+      </Button>
+      <Button asChild variant="secondary" size="sm">
+        <a href={`https://wa.me/${digits}`} target="_blank" rel="noopener noreferrer">
+          WhatsApp
+        </a>
+      </Button>
+    </div>
+  );
+}
+
+/** Missing seller data (legal name, PIB, address, phone, account) with a link to fix it. */
+export function CompanySetupNotice({
+  missing,
+  className,
+}: {
+  missing: readonly CompanyField[];
+  className?: string;
+}) {
+  if (missing.length === 0) return null;
+  return (
+    <div
+      className={cn(
+        "flex items-start gap-3 rounded-sm border border-warning bg-warning-subtle px-4 py-3 type-body-s text-ink-1",
+        className,
+      )}
+    >
+      <WarningIcon size={18} className="mt-0.5 shrink-0 text-warning" aria-hidden="true" />
+      <p className="flex-1">
+        Podaci o firmi nisu popunjeni: {missing.map((f) => COMPANY_FIELD_LABEL[f]).join(", ")}.
+        Predračun, otpremnica i podnožje sajta ih prikazuju.{" "}
+        <RouteLink
+          href={ADMIN.settingsTab("firma")}
+          className="font-semibold text-accent-text underline underline-offset-2"
+        >
+          Popuni u podešavanjima
+        </RouteLink>
+      </p>
+    </div>
+  );
+}
+
 /** Sticky bar at the bottom of editors while there are unsaved changes (§10.12). */
 export function SaveBar({
   dirty,
@@ -365,7 +447,7 @@ export function SaveBar({
 }) {
   if (!dirty) return null;
   return (
-    <div className="sticky bottom-0 z-sticky -mx-4 mt-6 border-t border-line bg-surface-1/95 px-4 py-3 backdrop-blur-sm lg:-mx-6 lg:px-6 print:hidden">
+    <div className="sticky bottom-0 z-sticky -mx-4 mt-6 border-t border-line bg-surface-1 px-4 py-3 shadow-[0_-1px_2px_rgb(18_21_24/0.06)] lg:-mx-6 lg:px-6 print:hidden">
       <div className="mx-auto flex max-w-[1680px] flex-wrap items-center justify-between gap-3">
         <p className="type-body-s text-ink-2" role="status">
           {message}
@@ -380,6 +462,22 @@ export function SaveBar({
         </div>
       </div>
     </div>
+  );
+}
+
+const STOCK_ICON: Record<keyof typeof STOCK_STATE_LABEL, ReactNode> = {
+  in_stock: <SquareIcon size={12} weight="fill" />,
+  low_stock: <SquareHalfBottomIcon size={12} weight="fill" />,
+  out_of_stock: <SquareIcon size={12} />,
+  on_order: <ClockIcon size={12} weight="bold" />,
+};
+
+/** Stock chip with the DS §3.6 icon + word (status never by colour alone). */
+export function StockStateBadge({ state }: { state: keyof typeof STOCK_STATE_LABEL }) {
+  return (
+    <Badge tone={STOCK_STATE_TONE[state]} icon={STOCK_ICON[state]}>
+      {STOCK_STATE_LABEL[state]}
+    </Badge>
   );
 }
 

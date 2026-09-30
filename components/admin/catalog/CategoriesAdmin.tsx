@@ -12,7 +12,6 @@ import { useState } from "react";
 import {
   ArrowDownIcon,
   ArrowUpIcon,
-  CubeIcon,
   PlusIcon,
   UploadSimpleIcon,
 } from "@phosphor-icons/react/dist/ssr";
@@ -34,7 +33,7 @@ import { Switch } from "@/components/ui/Switch";
 import { Textarea } from "@/components/ui/Textarea";
 import { toast } from "@/components/ui/Toast";
 
-import { PageHeader, SaveBar, Section } from "../ui";
+import { CharCount, PageHeader, SaveBar, Section } from "../ui";
 
 type Node = FunctionReturnType<typeof api.catalog.categoriesAdmin.tree>[number];
 
@@ -99,13 +98,6 @@ export function CategoriesAdmin() {
                         >
                           {n.name}
                         </span>
-                        {n.partKey ? (
-                          <CubeIcon
-                            size={14}
-                            className="shrink-0 text-ink-3"
-                            aria-label="povezano sa 3D delom"
-                          />
-                        ) : null}
                         <span className="ml-auto shrink-0 type-caption tabular-nums text-ink-3">
                           {n.productCount}
                         </span>
@@ -265,7 +257,6 @@ function CategoryForm({ node }: { node: Node }) {
           </div>
           <Field
             label="Uvodni tekst"
-            optional
             help="80–180 reči: šta deo radi, kada se menja, savet iz radionice."
             className="md:col-span-2"
           >
@@ -276,14 +267,22 @@ function CategoryForm({ node }: { node: Node }) {
               onChange={(e) => setForm({ ...form, intro: e.target.value })}
             />
           </Field>
-          <Field label="Naslov za pretraživače" optional help={`${form.seoTitle.length}/60`}>
+          <Field label="Naslov za pretraživače" help="Do 60 znakova se vidi ceo.">
             <Input
               value={form.seoTitle}
               onChange={(e) => setForm({ ...form, seoTitle: e.target.value })}
               maxLength={70}
+              suffix={<CharCount value={form.seoTitle} max={60} />}
             />
           </Field>
-          <Field label="Opis za pretraživače" optional help={`${form.seoDescription.length}/155`}>
+          <Field
+            label="Opis za pretraživače"
+            help={
+              <>
+                Do 155 znakova se vidi ceo. <CharCount value={form.seoDescription} max={155} />
+              </>
+            }
+          >
             <Textarea
               rows={2}
               maxLength={170}

@@ -121,7 +121,7 @@ export function StockDialog({
             }))}
           />
         </Field>
-        <Field label="Napomena" optional help="npr. broj prijemnice ili dobavljač">
+        <Field label="Napomena" help="npr. broj prijemnice ili dobavljač">
           <Input value={note} onChange={(e) => setNote(e.target.value)} maxLength={300} />
         </Field>
         {after !== null && after >= 0 && delta !== 0 ? (

@@ -101,31 +101,32 @@ export function UsersAdmin() {
                       {u.isSelf ? (
                         ROLE_LABEL[u.role]
                       ) : (
-                        <Select
-                          size="sm"
-                          aria-label={`Uloga, ${u.name}`}
-                          value={u.role}
-                          className="w-40"
-                          onChange={(e) => {
-                            const role = e.target.value as "owner" | "staff" | "customer";
-                            confirm.ask({
-                              title: `Promeniti ulogu za ${u.name}?`,
-                              description:
-                                role === "customer"
-                                  ? "Nalog gubi pristup administraciji i postaje običan kupac."
-                                  : role === "owner"
-                                    ? "Vlasnik menja podešavanja, cenovne razrede, korisnike i briše demo podatke."
-                                    : "Zaposleni radi porudžbine, upite i katalog, bez podešavanja.",
-                              confirmLabel: "Promeni ulogu",
-                              onConfirm: () => setRole({ userId: u._id, role }),
-                            });
-                          }}
-                          options={[
-                            { value: "staff", label: ROLE_LABEL.staff },
-                            { value: "owner", label: ROLE_LABEL.owner },
-                            { value: "customer", label: "Bez pristupa (kupac)" },
-                          ]}
-                        />
+                        <div className="w-40">
+                          <Select
+                            size="sm"
+                            aria-label={`Uloga, ${u.name}`}
+                            value={u.role}
+                            onChange={(e) => {
+                              const role = e.target.value as "owner" | "staff" | "customer";
+                              confirm.ask({
+                                title: `Promeniti ulogu za ${u.name}?`,
+                                description:
+                                  role === "customer"
+                                    ? "Nalog gubi pristup administraciji i postaje običan kupac."
+                                    : role === "owner"
+                                      ? "Vlasnik menja podešavanja, cenovne razrede, korisnike i briše demo podatke."
+                                      : "Zaposleni radi porudžbine, upite i katalog, bez podešavanja.",
+                                confirmLabel: "Promeni ulogu",
+                                onConfirm: () => setRole({ userId: u._id, role }),
+                              });
+                            }}
+                            options={[
+                              { value: "staff", label: ROLE_LABEL.staff },
+                              { value: "owner", label: ROLE_LABEL.owner },
+                              { value: "customer", label: "Bez pristupa (kupac)" },
+                            ]}
+                          />
+                        </div>
                       )}
                     </td>
                     <td className="px-2 py-2 tabular-nums text-ink-2">

@@ -92,18 +92,19 @@ export function EmailsAdmin() {
         title="E-pošta"
         description="Sve poruke koje sistem šalje kupcima i osoblju. Dok slanje nije podešeno (ključ i domen — vidi listu za vlasnika), poruke se samo beleže ovde."
       />
-      <Select
-        size="sm"
-        aria-label="Status poruke"
-        placeholder="Svi statusi"
-        value={status}
-        onChange={(e) => setStatus(e.target.value)}
-        options={Object.entries(EMAIL_STATUS_LABEL).map(([value, s]) => ({
-          value,
-          label: s.label,
-        }))}
-        className="w-52"
-      />
+      <div className="w-52">
+        <Select
+          size="sm"
+          aria-label="Status poruke"
+          placeholder="Svi statusi"
+          value={status}
+          onChange={(e) => setStatus(e.target.value)}
+          options={Object.entries(EMAIL_STATUS_LABEL).map(([value, s]) => ({
+            value,
+            label: s.label,
+          }))}
+        />
+      </div>
       <DataTable
         caption="Poslate i zabeležene poruke"
         columns={columns}
@@ -113,7 +114,12 @@ export function EmailsAdmin() {
         onRowOpen={(r) => setOpenId(r._id)}
         empty={<p className="py-10 text-center type-body-s text-ink-2">Još nema poruka.</p>}
       />
-      <LoadMoreFooter shown={results.length} status={loadStatus} onMore={loadMore} noun="poruka" />
+      <LoadMoreFooter
+        shown={results.length}
+        status={loadStatus}
+        onMore={loadMore}
+        forms={["poruka", "poruke", "poruka"]}
+      />
       <Sheet
         open={openId !== null}
         onOpenChange={(v) => !v && setOpenId(null)}

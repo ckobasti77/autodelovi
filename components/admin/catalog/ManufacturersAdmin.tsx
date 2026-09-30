@@ -172,7 +172,7 @@ function ManufacturerDialog({ row, onClose }: { row: Row | null; onClose: () => 
         <Field label="Naziv">
           <Input value={f.name} onChange={(e) => setF({ ...f, name: e.target.value })} autoFocus />
         </Field>
-        <Field label="Drugi nazivi" optional help="Razdvojte zarezom.">
+        <Field label="Drugi nazivi" help="Razdvojte zarezom.">
           <Input value={f.aliases} onChange={(e) => setF({ ...f, aliases: e.target.value })} />
         </Field>
         <div className="grid grid-cols-2 gap-3">
@@ -185,7 +185,7 @@ function ManufacturerDialog({ row, onClose }: { row: Row | null; onClose: () => 
               options={Object.entries(QUALITY_LABEL).map(([value, label]) => ({ value, label }))}
             />
           </Field>
-          <Field label="Zemlja" optional>
+          <Field label="Zemlja">
             <Input value={f.country} onChange={(e) => setF({ ...f, country: e.target.value })} />
           </Field>
         </div>

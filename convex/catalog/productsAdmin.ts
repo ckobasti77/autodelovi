@@ -9,6 +9,7 @@ import type { Doc, Id } from "../_generated/dataModel";
 import type { QueryCtx } from "../_generated/server";
 import { normalizeCode } from "../../lib/domain/codes";
 import { foldForSearch } from "../../lib/domain/search";
+import { productFieldsLabel } from "../../lib/i18n/sr/auditLabels";
 import { audit } from "../lib/audit";
 import { actorOf } from "../lib/authz";
 import { invalid, notFound } from "../lib/errors";
@@ -389,7 +390,7 @@ export const update = staffMutation({
         action: "product.update",
         entityType: "product",
         entityId: productId,
-        summary: `${before.sku}: ${changed.join(", ")}${note ? ` — ${note.slice(0, 200)}` : ""}`,
+        summary: `${before.sku}: ${productFieldsLabel(changed)}${note ? ` — ${note.slice(0, 200)}` : ""}`,
         diff: changed.map((field) => ({ field })),
       });
     }

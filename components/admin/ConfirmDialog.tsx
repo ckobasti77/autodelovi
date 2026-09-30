@@ -58,6 +58,7 @@ function Body({ options, close }: { options: ConfirmOptions; close: () => void }
   const reasonOk = !options.reasonLabel || reason.trim().length >= 3;
   const phraseOk = !options.phrase || phrase.trim() === options.phrase;
 
+  const hasInputs = Boolean(options.reasonLabel || options.phrase);
   const run = async () => {
     setBusy(true);
     setError(null);
@@ -83,7 +84,7 @@ function Body({ options, close }: { options: ConfirmOptions; close: () => void }
         <div className="type-body-s text-ink-2">{options.description}</div>
       ) : null}
       {options.reasonLabel ? (
-        <Field label={options.reasonLabel} required>
+        <Field label={options.reasonLabel} required markRequired>
           <Textarea
             rows={3}
             maxLength={300}
@@ -116,7 +117,14 @@ function Body({ options, close }: { options: ConfirmOptions; close: () => void }
         </p>
       ) : null}
       <div className="flex flex-col-reverse gap-3 border-t border-line pt-4 sm:flex-row sm:justify-end">
-        <Button type="button" variant="secondary" onClick={close} disabled={busy}>
+        {/* Without inputs, Enter confirms a safe action; a destructive one starts on „Odustani“. */}
+        <Button
+          type="button"
+          variant="secondary"
+          onClick={close}
+          disabled={busy}
+          autoFocus={!hasInputs && options.danger}
+        >
           Odustani
         </Button>
         <Button
@@ -124,6 +132,7 @@ function Body({ options, close }: { options: ConfirmOptions; close: () => void }
           variant={options.danger ? "danger" : "primary"}
           loading={busy}
           disabled={!reasonOk || !phraseOk}
+          autoFocus={!hasInputs && !options.danger}
         >
           {options.confirmLabel}
         </Button>

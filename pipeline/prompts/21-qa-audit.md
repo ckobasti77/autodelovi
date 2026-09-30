@@ -4,7 +4,14 @@
 Run a rigorous, adversarial, multi-agent quality audit of the whole product, as if a demanding client, a design-award jury, an accessibility auditor, a performance engineer and an SEO lead were all reviewing it tomorrow. **Use a dynamic workflow**: fan out specialized reviewers in parallel, then have independent agents verify every finding (reproduce it) before it is recorded. This step audits — it does not fix, except trivial blockers that prevent auditing.
 
 ## Read first
-pipeline/BRIEF.md §9 (quality bars) · docs/ROADMAP.md (acceptance criteria) · docs/design/DESIGN-SYSTEM.md · docs/qa/*.md · docs/PROGRESS.md.
+pipeline/BRIEF.md §9 (quality bars) · docs/ROADMAP.md (acceptance criteria) · docs/design/DESIGN-SYSTEM.md · docs/qa/*.md · docs/3d/QA.md · docs/3d/WEB-QA.md · docs/PROGRESS.md · the "Open issues" section of every pipeline/logs/NN-result.md.
+
+## Known open items (verify each, then record it as a finding)
+- **Mobile hero framing (treat as P1):** at 360–430 px the 3D stage shows a large empty band above the car; the car fills well under half of the stage. Most ad traffic will be mobile, so this is the first impression. Fix direction: a tighter mobile camera in the manifest cameras, then new mobile posters via `npm run 3d` so poster and canvas still match.
+- **Performance:** the shared site shell ships about 303 KB gzip of first-load JS. Lighthouse default simulated throttling reports mobile LCP of about 4.2 s on home (D112 chose applied throttling). Measure both methods, and treat shell JS weight, font preloads and globally registered GSAP plugins as performance findings. Category TBT on phones is about 397 ms.
+- Search is not narrowed by the selected vehicle. The mobile filter row is not sticky, and the mobile sticky contact bar is not built.
+- Mechanics quick order at 1440: the results list clips the last visible row behind the summary bar. Check that it reads as intentional scrolling and that every row is reachable.
+- **Screenshot gotcha, not a defect:** below-the-fold home sections use `content-visibility: auto` (D121). Scroll the page through before taking full-page screenshots, otherwise those sections render blank.
 
 ## Skills reviewers must use (invoke by name)
 impeccable (audit / critique) · design-taste-frontend · ui-ux-pro-max · seo-audit · seo-technical · text-reveal · gsap-performance · threejs-interaction · convex-reviewer.

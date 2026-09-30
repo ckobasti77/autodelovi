@@ -2,13 +2,14 @@
 
 /**
  * `/admin/upiti`: status tabs (+ „Moji“), search, kind filter, „samo majstori“ (priority),
- * live SLA timers for unanswered inquiries.
+ * live SLA timers for unanswered inquiries (a zero timer
+ * after more than a minute means it arrived outside working hours).
  */
 import { usePaginatedQuery, useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { ImageIcon } from "@phosphor-icons/react/dist/ssr";
+import { ImageIcon, WarningIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/cn";
@@ -20,6 +21,7 @@ import { PREFERRED_CHANNEL_LABEL, type InquiryStatus } from "@/lib/i18n/sr/shop"
 import { Badge } from "@/components/ui/Badge";
 import { DataTable, type ColumnDef } from "@/components/ui/DataTable";
 import { Select } from "@/components/ui/Select";
+import { useMediaQuery } from "@/components/ui/motion";
 import { Switch } from "@/components/ui/Switch";
 import { ADMIN } from "@/constants/routes";
 
@@ -71,6 +73,8 @@ export function InquiriesList() {
   );
   const counts = useQuery(api.inquiriesAdmin.statusCounts, {});
   const kpis = useQuery(api.dashboard.kpis, { nowMinute });
+  // Below 1280 px the tags stack under the number and „Preuzeo“ hides (no sideways scroll).
+  const roomy = useMediaQuery("(min-width: 1280px)");
 
   const columns = useMemo<ColumnDef<Row, unknown>[]>(
     () => [
@@ -80,12 +84,18 @@ export function InquiriesList() {
         header: "Broj",
         meta: { sticky: "left" },
         cell: ({ row }) => (
-          <span className="flex items-center gap-2">
+          <span className="flex flex-col items-start gap-1 min-[1280px]:flex-row min-[1280px]:items-center min-[1280px]:gap-2">
             <DocNumber number={row.original.number} />
             {row.original.isMechanic ? <Badge tone="info">Majstor</Badge> : null}
             {row.original.isDemo ? <DemoTag /> : null}
           </span>
         ),
+      },
+      {
+        id: "status",
+        accessorKey: "status",
+        header: "Status",
+        cell: ({ row }) => <InquiryStatusBadge status={row.original.status} />,
       },
       {
         id: "createdAt",
@@ -107,7 +117,7 @@ export function InquiriesList() {
               {minutes !== null ? (
                 <span
                   className={cn(
-                    "type-caption tabular-nums",
+                    "inline-flex items-center gap-1 type-caption tabular-nums",
                     level === "late"
                       ? "font-semibold text-danger"
                       : level === "soon"
@@ -115,7 +125,15 @@ export function InquiriesList() {
                         : "text-ink-3",
                   )}
                 >
-                  čeka {minutes < 1 ? "od otvaranja" : formatElapsed(minutes)}
+                  {level === "late" ? (
+                    <WarningIcon size={12} weight="bold" aria-hidden="true" />
+                  ) : null}
+                  {minutes >= 1
+                    ? `čeka ${formatElapsed(minutes)}`
+                    : nowMinute - r.createdAt < 120_000
+                      ? "upravo stigao"
+                      : "van radnog vremena"}
+                  {level === "late" ? <span className="sr-only"> — kasni</span> : null}
                 </span>
               ) : null}
             </span>
@@ -143,11 +161,23 @@ export function InquiriesList() {
         header: "Traži",
         enableSorting: false,
         cell: ({ row }) => (
-          <span className="flex max-w-[26rem] flex-col">
-            <span className="truncate text-ink-1">
-              {row.original.vehicleLabel ?? INQUIRY_KIND_LABEL[row.original.kind]}
-              {row.original.vin ? (
-                <span className="type-code-s text-ink-3"> · {row.original.vin}</span>
+          <span className="flex max-w-[14rem] flex-col xl:max-w-[24rem]">
+            <span className="flex min-w-0 items-center gap-2">
+              <span className="truncate text-ink-1">
+                {row.original.vehicleLabel ?? INQUIRY_KIND_LABEL[row.original.kind]}
+                {row.original.vin ? (
+                  <span className="type-code-s text-ink-3"> · {row.original.vin}</span>
+                ) : null}
+              </span>
+              {row.original.photoCount > 0 ? (
+                <span
+                  className="inline-flex shrink-0 items-center gap-0.5 type-caption tabular-nums text-ink-2"
+                  title={`Fotografija: ${row.original.photoCount}`}
+                >
+                  <ImageIcon size={14} aria-hidden="true" />
+                  {row.original.photoCount}
+                  <span className="sr-only"> fotografija</span>
+                </span>
               ) : null}
             </span>
             <span className="truncate type-caption text-ink-3">{row.original.message}</span>
@@ -155,33 +185,12 @@ export function InquiriesList() {
         ),
       },
       {
-        id: "photos",
-        accessorKey: "photoCount",
-        header: "Foto",
-        meta: { align: "right" },
-        cell: ({ getValue }) =>
-          Number(getValue()) > 0 ? (
-            <span className="inline-flex items-center gap-1 text-ink-2">
-              <ImageIcon size={14} aria-hidden="true" />
-              {String(getValue())}
-            </span>
-          ) : (
-            <span className="text-ink-4">—</span>
-          ),
-      },
-      {
         id: "assignee",
         accessorKey: "assigneeName",
-        header: "Radi",
+        header: "Preuzeo",
         cell: ({ row }) => (
           <span className="whitespace-nowrap text-ink-2">{row.original.assigneeName ?? "—"}</span>
         ),
-      },
-      {
-        id: "status",
-        accessorKey: "status",
-        header: "Status",
-        cell: ({ row }) => <InquiryStatusBadge status={row.original.status} />,
       },
     ],
     [kpis, nowMinute],
@@ -215,15 +224,16 @@ export function InquiriesList() {
           label="Pretraga upita"
           placeholder="Broj, ime, telefon, VIN, OEM…"
         />
-        <Select
-          size="sm"
-          aria-label="Vrsta upita"
-          placeholder="Sve vrste"
-          value={f.vrsta}
-          onChange={(e) => setF({ vrsta: e.target.value })}
-          options={Object.entries(INQUIRY_KIND_LABEL).map(([value, label]) => ({ value, label }))}
-          className="w-48"
-        />
+        <div className="w-48">
+          <Select
+            size="sm"
+            aria-label="Vrsta upita"
+            placeholder="Sve vrste"
+            value={f.vrsta}
+            onChange={(e) => setF({ vrsta: e.target.value })}
+            options={Object.entries(INQUIRY_KIND_LABEL).map(([value, label]) => ({ value, label }))}
+          />
+        </div>
         <Switch
           label="Samo majstori"
           checked={Boolean(f.majstori)}
@@ -233,6 +243,7 @@ export function InquiriesList() {
       <DataTable
         caption="Upiti"
         columns={columns}
+        columnVisibility={{ assignee: roomy }}
         data={results}
         getRowId={(r) => r._id}
         rowLabel={(r) => r.number}
@@ -244,7 +255,12 @@ export function InquiriesList() {
           </p>
         }
       />
-      <LoadMoreFooter shown={results.length} status={status} onMore={loadMore} noun="upita" />
+      <LoadMoreFooter
+        shown={results.length}
+        status={status}
+        onMore={loadMore}
+        forms={["upit", "upita", "upita"]}
+      />
     </div>
   );
 }

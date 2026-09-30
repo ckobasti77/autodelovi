@@ -7,10 +7,12 @@
 import type { FunctionReturnType } from "convex/server";
 
 import type { api } from "@/convex/_generated/api";
+import { missingCompanyFields } from "@/lib/domain/company";
 import { formatDate } from "@/lib/format/date";
 import { formatRSD } from "@/lib/format/money";
 import { formatPhone } from "@/lib/format/phone";
 import { DELIVERY_LABEL, PAYMENT_LABEL } from "@/lib/i18n/sr/shop";
+import { CompanySetupNotice } from "@/components/admin/ui";
 
 type Detail = NonNullable<FunctionReturnType<typeof api.ordersAdmin.get>>;
 type Settings = FunctionReturnType<typeof api.settings.getAdmin>;
@@ -71,6 +73,10 @@ export function ProformaDocument({ data, settings }: { data: Detail; settings: S
   const account = settings.company.bankAccounts[0];
   return (
     <article className="print-sheet flex flex-col gap-6">
+      <CompanySetupNotice
+        missing={missingCompanyFields(settings.company)}
+        className="print:hidden"
+      />
       <Header title="Predračun" o={o} s={settings} />
       <div className="grid gap-4 type-body-s sm:grid-cols-2">
         <div>
@@ -171,11 +177,26 @@ export function ProformaDocument({ data, settings }: { data: Detail; settings: S
   );
 }
 
-export function DeliveryNoteDocument({ data, settings }: { data: Detail; settings: Settings }) {
+export function DeliveryNoteDocument({
+  data,
+  settings,
+  notice = true,
+}: {
+  data: Detail;
+  settings: Settings;
+  /** Batch printing shows the missing-data notice once, above the first sheet. */
+  notice?: boolean;
+}) {
   const o = data.order;
   const address = o.deliveryAddress;
   return (
     <article className="print-sheet flex flex-col gap-6">
+      <CompanySetupNotice
+        missing={
+          notice ? missingCompanyFields(settings.company).filter((f) => f !== "bankAccount") : []
+        }
+        className="print:hidden"
+      />
       <Header title="Otpremnica" o={o} s={settings} />
       <div className="grid gap-4 type-body-s sm:grid-cols-2">
         <div>

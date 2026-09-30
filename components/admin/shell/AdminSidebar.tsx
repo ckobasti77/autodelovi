@@ -12,7 +12,9 @@ import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/cn";
 import { BrandMark, Wordmark } from "@/components/shell/BrandMark";
 import { CountBadge } from "@/components/ui/Badge";
+import { useMediaQuery } from "@/components/ui/motion";
 import { RouteLink } from "@/components/ui/RouteLink";
+import { Tooltip } from "@/components/ui/Tooltip";
 import { ADMIN } from "@/constants/routes";
 
 import { ADMIN_NAV, isActive } from "./nav";
@@ -30,6 +32,9 @@ export function AdminSidebar({
   const pathname = usePathname();
   const counts = useQuery(api.dashboard.navCounts, {});
   const rail = variant === "auto";
+  // Icon-only rail: labels are sr-only, so sighted users get them as tooltips (hover and focus).
+  const narrow = useMediaQuery("(max-width: 1365px)");
+  const railShown = rail && narrow;
   return (
     <nav aria-label="Administracija" className="flex h-full flex-col" data-reveal="off">
       <div
@@ -78,63 +83,71 @@ export function AdminSidebar({
                       : item.count === "mechanics"
                         ? "na čekanju"
                         : "novih";
+                  const link = (
+                    <RouteLink
+                      href={item.href}
+                      onClick={onNavigate}
+                      aria-current={active ? "page" : undefined}
+                      className={cn(
+                        "relative mx-2 flex h-10 items-center gap-3 rounded-xs px-3 type-body-s transition-control focus-ring-inset",
+                        active
+                          ? "bg-surface-2 font-semibold text-ink-1"
+                          : "text-ink-2 hover:bg-surface-1 hover:text-ink-1",
+                        rail && "max-[1365px]:justify-center max-[1365px]:px-0",
+                      )}
+                    >
+                      {active ? (
+                        <span
+                          aria-hidden="true"
+                          className="absolute inset-y-2 left-0 w-0.5 bg-accent"
+                        />
+                      ) : null}
+                      <Icon
+                        size={20}
+                        weight={active ? "fill" : "regular"}
+                        aria-hidden="true"
+                        className="shrink-0"
+                      />
+                      <span className={cn("flex-1 truncate", rail && "max-[1365px]:sr-only")}>
+                        {item.label}
+                      </span>
+                      {count > 0 ? (
+                        item.count === "lowStock" ? (
+                          <span
+                            className={cn(
+                              "type-caption tabular-nums text-ink-3",
+                              rail &&
+                                "max-[1365px]:absolute max-[1365px]:right-1.5 max-[1365px]:top-0.5 max-[1365px]:text-[0.6875rem]",
+                            )}
+                          >
+                            {count > 99 ? "99+" : count}
+                            <span className="sr-only"> {countLabel}</span>
+                          </span>
+                        ) : (
+                          <>
+                            <CountBadge
+                              count={count}
+                              max={99}
+                              className={cn(
+                                rail &&
+                                  "max-[1365px]:absolute max-[1365px]:right-1 max-[1365px]:top-0.5 max-[1365px]:h-[18px] max-[1365px]:min-w-[18px] max-[1365px]:px-1 max-[1365px]:text-[0.6875rem]",
+                              )}
+                            />
+                            <span className="sr-only"> {countLabel}</span>
+                          </>
+                        )
+                      ) : null}
+                    </RouteLink>
+                  );
                   return (
                     <li key={item.href}>
-                      <RouteLink
-                        href={item.href}
-                        onClick={onNavigate}
-                        aria-current={active ? "page" : undefined}
-                        title={rail ? item.label : undefined}
-                        className={cn(
-                          "relative mx-2 flex h-10 items-center gap-3 rounded-xs px-3 type-body-s transition-control focus-ring-inset",
-                          active
-                            ? "bg-surface-2 font-semibold text-ink-1"
-                            : "text-ink-2 hover:bg-surface-1 hover:text-ink-1",
-                          rail && "max-[1365px]:justify-center max-[1365px]:px-0",
-                        )}
-                      >
-                        {active ? (
-                          <span
-                            aria-hidden="true"
-                            className="absolute inset-y-2 left-0 w-0.5 bg-accent"
-                          />
-                        ) : null}
-                        <Icon
-                          size={20}
-                          weight={active ? "fill" : "regular"}
-                          aria-hidden="true"
-                          className="shrink-0"
-                        />
-                        <span className={cn("flex-1 truncate", rail && "max-[1365px]:sr-only")}>
-                          {item.label}
-                        </span>
-                        {count > 0 ? (
-                          item.count === "lowStock" ? (
-                            <span
-                              className={cn(
-                                "type-caption tabular-nums text-ink-3",
-                                rail &&
-                                  "max-[1365px]:absolute max-[1365px]:right-1.5 max-[1365px]:top-0.5 max-[1365px]:text-[0.6875rem]",
-                              )}
-                            >
-                              {count > 99 ? "99+" : count}
-                              <span className="sr-only"> {countLabel}</span>
-                            </span>
-                          ) : (
-                            <>
-                              <CountBadge
-                                count={count}
-                                max={99}
-                                className={cn(
-                                  rail &&
-                                    "max-[1365px]:absolute max-[1365px]:right-1 max-[1365px]:top-0.5 max-[1365px]:h-[18px] max-[1365px]:min-w-[18px] max-[1365px]:px-1 max-[1365px]:text-[0.6875rem]",
-                                )}
-                              />
-                              <span className="sr-only"> {countLabel}</span>
-                            </>
-                          )
-                        ) : null}
-                      </RouteLink>
+                      {railShown ? (
+                        <Tooltip content={item.label} side="right" delayDuration={150}>
+                          {link}
+                        </Tooltip>
+                      ) : (
+                        link
+                      )}
                     </li>
                   );
                 })}

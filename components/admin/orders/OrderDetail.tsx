@@ -58,7 +58,15 @@ import { AttributionView } from "../Attribution";
 import { useNowMinute } from "../hooks";
 import { ProductPicker, type PickedProduct } from "../ProductPicker";
 import { useAdminCrumb } from "../shell/context";
-import { ActorLabel, DefinitionList, DemoTag, DocNumber, OrderStatusBadge, Section } from "../ui";
+import {
+  ActorLabel,
+  ContactActions,
+  DefinitionList,
+  DemoTag,
+  DocNumber,
+  OrderStatusBadge,
+  Section,
+} from "../ui";
 
 type Detail = NonNullable<FunctionReturnType<typeof api.ordersAdmin.get>>;
 type Order = Detail["order"];
@@ -141,7 +149,7 @@ function OrderView({ data }: { data: Detail }) {
         </p>
       ) : null}
 
-      <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_380px]">
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_380px]">
         <div className="flex min-w-0 flex-col gap-6">
           <ItemsSection data={data} />
           <NotesSection orderId={o._id} />
@@ -331,6 +339,7 @@ function TransitionBar({ order, itemCount }: { order: Order; itemCount: number }
             <Field
               label="Razlog otkazivanja"
               required
+              markRequired
               help="Kupac vidi razlog u obaveštenju i na stranici porudžbine."
             >
               <Textarea
@@ -344,7 +353,7 @@ function TransitionBar({ order, itemCount }: { order: Order; itemCount: number }
           ) : null}
           {to === "poslata" ? (
             <>
-              <Field label="Kurirska služba" required>
+              <Field label="Kurirska služba" required markRequired>
                 <Select
                   value={courier}
                   onChange={(e) => setCourier(e.target.value)}
@@ -354,7 +363,7 @@ function TransitionBar({ order, itemCount }: { order: Order; itemCount: number }
                   }))}
                 />
               </Field>
-              <Field label="Broj pošiljke" required>
+              <Field label="Broj pošiljke" required markRequired>
                 <Input
                   value={tracking}
                   onChange={(e) => setTracking(e.target.value)}
@@ -848,6 +857,7 @@ function CustomerSection({ order: o }: { order: Order }) {
           },
         ]}
       />
+      <ContactActions phone={o.contact.phone} />
       {o.customerNote ? (
         <div className="mt-4 rounded-xs bg-surface-2 px-3 py-2">
           <p className="type-label uppercase text-ink-3">Napomena kupca</p>

@@ -79,7 +79,7 @@ export async function changeMechanicStatus(
     action: `mechanic.${input.to}`,
     entityType: "mechanicProfile",
     entityId: input.profileId,
-    summary: `${profile.companyName}: ${MECHANIC_STATUS_LABEL_SR[profile.status]} → ${MECHANIC_STATUS_LABEL_SR[input.to]}${input.tierName ? ` (${input.tierName})` : ""}`,
+    summary: `${profile.companyName}: ${MECHANIC_STATUS_LABEL_SR[profile.status]} → ${MECHANIC_STATUS_LABEL_SR[input.to]}${input.tierName ? ` · razred ${input.tierName}` : ""}`,
     diff: [{ field: "status", before: profile.status, after: input.to }],
   });
 }

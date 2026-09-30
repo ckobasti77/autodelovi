@@ -25,7 +25,14 @@ import {
   type SortingState,
   type VisibilityState,
 } from "@tanstack/react-table";
-import { useRef, useState, type KeyboardEvent, type MouseEvent, type ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type KeyboardEvent,
+  type MouseEvent,
+  type ReactNode,
+} from "react";
 import { ArrowDownIcon, ArrowUpIcon, ArrowsDownUpIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { cn } from "@/lib/cn";
@@ -92,6 +99,27 @@ export function DataTable<T>({
   const [focusIndex, setFocusIndex] = useState(0);
   const lastClicked = useRef<number | null>(null);
   const bodyRef = useRef<HTMLTableSectionElement>(null);
+  // Edge hints: columns hidden to the right/left of a horizontally scrolling table.
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [overflow, setOverflow] = useState({ start: false, end: false });
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const update = () => {
+      const start = el.scrollLeft > 1;
+      const end = el.scrollLeft + el.clientWidth < el.scrollWidth - 1;
+      setOverflow((o) => (o.start === start && o.end === end ? o : { start, end }));
+    };
+    update();
+    el.addEventListener("scroll", update, { passive: true });
+    const ro = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(update);
+    ro?.observe(el);
+    if (el.firstElementChild) ro?.observe(el.firstElementChild);
+    return () => {
+      el.removeEventListener("scroll", update);
+      ro?.disconnect();
+    };
+  }, []);
 
   const selectionColumn: ColumnDef<T, unknown> = {
     id: "__select",
@@ -219,155 +247,166 @@ export function DataTable<T>({
 
   return (
     <div
-      className={cn(
-        "relative overflow-x-auto rounded-sm border border-line bg-surface-1",
-        className,
-      )}
+      className={cn("relative rounded-sm border border-line bg-surface-1", className)}
       data-reveal="off"
     >
-      <table className="w-max min-w-full border-collapse text-left text-cell text-ink-1">
-        <caption className="sr-only">{caption}</caption>
-        <thead className="sticky top-0 z-raised">
-          {table.getHeaderGroups().map((group) => (
-            <tr key={group.id}>
-              {group.headers.map((header) => {
-                const meta = header.column.columnDef.meta;
-                const sorted = header.column.getIsSorted();
-                const canSort = header.column.getCanSort();
-                return (
-                  <th
-                    key={header.id}
-                    scope="col"
-                    aria-sort={
-                      sorted === "asc"
-                        ? "ascending"
-                        : sorted === "desc"
-                          ? "descending"
-                          : canSort
-                            ? "none"
-                            : undefined
-                    }
-                    className={cn(
-                      "h-9 whitespace-nowrap border-b border-line-strong bg-surface-2 px-2 type-label text-ink-3 first:pl-3 last:pr-3",
-                      meta?.align === "right" && "text-right",
-                      meta?.widthClass,
-                      stickyClass(meta?.sticky),
-                    )}
-                  >
-                    {header.isPlaceholder ? null : canSort ? (
-                      <button
-                        type="button"
-                        onClick={header.column.getToggleSortingHandler()}
-                        className={cn(
-                          "inline-flex h-8 cursor-pointer items-center gap-1 rounded-xs uppercase transition-control hover:text-ink-1 focus-ring-inset",
-                          meta?.align === "right" && "flex-row-reverse",
-                        )}
-                      >
-                        {flexRender(header.column.columnDef.header, header.getContext())}
-                        <span aria-hidden="true" className="inline-flex">
-                          {sorted === "asc" ? (
-                            <ArrowUpIcon size={12} weight="bold" />
-                          ) : sorted === "desc" ? (
-                            <ArrowDownIcon size={12} weight="bold" />
-                          ) : (
-                            <ArrowsDownUpIcon size={12} className="opacity-60" />
-                          )}
-                        </span>
-                      </button>
-                    ) : (
-                      flexRender(header.column.columnDef.header, header.getContext())
-                    )}
-                  </th>
-                );
-              })}
-            </tr>
-          ))}
-        </thead>
-        <tbody ref={bodyRef} aria-busy={loading || undefined}>
-          {loading ? (
-            Array.from({ length: loadingRows }, (_, i) => (
-              <tr key={`sk-${i}`} className="border-b border-line-faint last:border-b-0">
-                {visibleColumns.map((column) => (
-                  <td
-                    key={column.id}
-                    className={cn(
-                      cellPad,
-                      "px-2 first:pl-3 last:pr-3",
-                      column.columnDef.meta?.widthClass,
-                    )}
-                  >
-                    <Skeleton
+      <div ref={scrollRef} className="overflow-x-auto rounded-sm">
+        <table className="w-max min-w-full border-collapse text-left text-cell text-ink-1">
+          <caption className="sr-only">{caption}</caption>
+          <thead className="sticky top-0 z-raised">
+            {table.getHeaderGroups().map((group) => (
+              <tr key={group.id}>
+                {group.headers.map((header) => {
+                  const meta = header.column.columnDef.meta;
+                  const sorted = header.column.getIsSorted();
+                  const canSort = header.column.getCanSort();
+                  return (
+                    <th
+                      key={header.id}
+                      scope="col"
+                      aria-sort={
+                        sorted === "asc"
+                          ? "ascending"
+                          : sorted === "desc"
+                            ? "descending"
+                            : canSort
+                              ? "none"
+                              : undefined
+                      }
                       className={cn(
-                        "h-3",
-                        column.columnDef.meta?.align === "right" ? "ml-auto w-16" : "w-[70%]",
+                        "h-9 whitespace-nowrap border-b border-line-strong bg-surface-2 px-2 type-label text-ink-3 first:pl-3 last:pr-3",
+                        meta?.align === "right" && "text-right",
+                        meta?.widthClass,
+                        stickyClass(meta?.sticky),
                       )}
-                    />
-                  </td>
-                ))}
+                    >
+                      {header.isPlaceholder ? null : canSort ? (
+                        <button
+                          type="button"
+                          onClick={header.column.getToggleSortingHandler()}
+                          className={cn(
+                            "inline-flex h-8 cursor-pointer items-center gap-1 rounded-xs uppercase transition-control hover:text-ink-1 focus-ring-inset",
+                            meta?.align === "right" && "flex-row-reverse",
+                          )}
+                        >
+                          {flexRender(header.column.columnDef.header, header.getContext())}
+                          <span aria-hidden="true" className="inline-flex">
+                            {sorted === "asc" ? (
+                              <ArrowUpIcon size={12} weight="bold" />
+                            ) : sorted === "desc" ? (
+                              <ArrowDownIcon size={12} weight="bold" />
+                            ) : (
+                              <ArrowsDownUpIcon size={12} className="opacity-60" />
+                            )}
+                          </span>
+                        </button>
+                      ) : (
+                        flexRender(header.column.columnDef.header, header.getContext())
+                      )}
+                    </th>
+                  );
+                })}
               </tr>
-            ))
-          ) : rows.length === 0 ? (
-            <tr>
-              <td colSpan={visibleColumns.length} className="px-3 py-2">
-                {empty ?? (
-                  <p className="py-10 text-center type-body-s text-ink-2">Nema podataka.</p>
-                )}
-              </td>
-            </tr>
-          ) : (
-            rows.map((row, index) => {
-              const selected = row.getIsSelected();
-              return (
-                <tr
-                  key={row.id}
-                  data-row=""
-                  data-state={selected ? "selected" : undefined}
-                  aria-selected={enableRowSelection ? selected : undefined}
-                  tabIndex={index === focusIndex ? 0 : -1}
-                  onFocus={() => setFocusIndex(index)}
-                  onKeyDown={(event) => onRowKeyDown(event, row, index)}
-                  onClick={(event) => {
-                    if (!onRowOpen) return;
-                    const target = event.target as HTMLElement;
-                    if (target.closest("a, button, input, [role=checkbox], [role=menuitem]"))
-                      return;
-                    onRowOpen(row.original);
-                  }}
-                  className={cn(
-                    "group/row border-b border-line-faint last:border-b-0 focus-ring-inset",
-                    onRowOpen && "cursor-pointer",
-                    selected ? "bg-selected" : "hover:bg-surface-2",
-                  )}
-                >
-                  {row.getVisibleCells().map((cell) => {
-                    const meta = cell.column.columnDef.meta;
-                    return (
-                      <td
-                        key={cell.id}
+            ))}
+          </thead>
+          <tbody ref={bodyRef} aria-busy={loading || undefined}>
+            {loading ? (
+              Array.from({ length: loadingRows }, (_, i) => (
+                <tr key={`sk-${i}`} className="border-b border-line-faint last:border-b-0">
+                  {visibleColumns.map((column) => (
+                    <td
+                      key={column.id}
+                      className={cn(
+                        cellPad,
+                        "px-2 first:pl-3 last:pr-3",
+                        column.columnDef.meta?.widthClass,
+                      )}
+                    >
+                      <Skeleton
                         className={cn(
-                          cellPad,
-                          "px-2 align-middle first:pl-3 last:pr-3",
-                          meta?.align === "right" && "text-right tabular-nums",
-                          meta?.widthClass,
-                          meta?.sticky &&
-                            cn(
-                              stickyClass(meta.sticky),
-                              selected
-                                ? "bg-selected"
-                                : "bg-surface-1 group-hover/row:bg-surface-2",
-                            ),
+                          "h-3",
+                          column.columnDef.meta?.align === "right" ? "ml-auto w-16" : "w-[70%]",
                         )}
-                      >
-                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                      </td>
-                    );
-                  })}
+                      />
+                    </td>
+                  ))}
                 </tr>
-              );
-            })
-          )}
-        </tbody>
-      </table>
+              ))
+            ) : rows.length === 0 ? (
+              <tr>
+                <td colSpan={visibleColumns.length} className="px-3 py-2">
+                  {empty ?? (
+                    <p className="py-10 text-center type-body-s text-ink-2">Nema podataka.</p>
+                  )}
+                </td>
+              </tr>
+            ) : (
+              rows.map((row, index) => {
+                const selected = row.getIsSelected();
+                return (
+                  <tr
+                    key={row.id}
+                    data-row=""
+                    data-state={selected ? "selected" : undefined}
+                    aria-selected={enableRowSelection ? selected : undefined}
+                    tabIndex={index === focusIndex ? 0 : -1}
+                    onFocus={() => setFocusIndex(index)}
+                    onKeyDown={(event) => onRowKeyDown(event, row, index)}
+                    onClick={(event) => {
+                      if (!onRowOpen) return;
+                      const target = event.target as HTMLElement;
+                      if (target.closest("a, button, input, [role=checkbox], [role=menuitem]"))
+                        return;
+                      onRowOpen(row.original);
+                    }}
+                    className={cn(
+                      "group/row border-b border-line-faint last:border-b-0 focus-ring-inset",
+                      onRowOpen && "cursor-pointer",
+                      selected ? "bg-selected" : "hover:bg-surface-2",
+                    )}
+                  >
+                    {row.getVisibleCells().map((cell) => {
+                      const meta = cell.column.columnDef.meta;
+                      return (
+                        <td
+                          key={cell.id}
+                          className={cn(
+                            cellPad,
+                            "px-2 align-middle first:pl-3 last:pr-3",
+                            meta?.align === "right" && "text-right tabular-nums",
+                            meta?.widthClass,
+                            meta?.sticky &&
+                              cn(
+                                stickyClass(meta.sticky),
+                                selected
+                                  ? "bg-selected"
+                                  : "bg-surface-1 group-hover/row:bg-surface-2",
+                              ),
+                          )}
+                        >
+                          {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                );
+              })
+            )}
+          </tbody>
+        </table>
+      </div>
+      {overflow.end ? (
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-0 w-8 rounded-r-sm bg-linear-to-l from-ink-1/12 to-transparent"
+        />
+      ) : null}
+      {overflow.start ? (
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 left-0 w-8 rounded-l-sm bg-linear-to-r from-ink-1/8 to-transparent"
+        />
+      ) : null}
     </div>
   );
 }

@@ -10,6 +10,8 @@ import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { site } from "@/config/site";
 
+import { CharCount } from "../ui";
+
 export function SeoFields({
   title,
   description,
@@ -37,20 +39,23 @@ export function SeoFields({
       <div className="flex flex-col gap-4">
         <Field
           label="Naslov za pretraživače"
-          optional
           help={`Prazno: „${fallbackTitle}“. Do 60 znakova se vidi ceo.`}
         >
           <Input
             value={title}
             onChange={(e) => onTitle(e.target.value)}
             maxLength={70}
-            suffix={<span className="type-caption tabular-nums text-ink-3">{title.length}/60</span>}
+            suffix={<CharCount value={title} max={60} />}
           />
         </Field>
         <Field
           label="Opis za pretraživače"
-          optional
-          help="Do 155 znakova: šta je deo, za koja vozila, cena i stanje."
+          help={
+            <>
+              Do 155 znakova: šta je deo, za koja vozila, cena i stanje.{" "}
+              <CharCount value={description} max={155} />
+            </>
+          }
         >
           <Textarea
             rows={3}

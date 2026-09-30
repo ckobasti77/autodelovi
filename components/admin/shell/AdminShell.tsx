@@ -6,11 +6,13 @@
  * is mounted; the sidebar pins the night theme on its own subtree. The whole shell is
  * `data-reveal="off"` (no text entrances in a working tool).
  */
+import { useMutation } from "convex/react";
 import { Dialog as DialogPrimitive } from "radix-ui";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { XIcon } from "@phosphor-icons/react/dist/ssr";
 
+import { api } from "@/convex/_generated/api";
 import { IconButton } from "@/components/ui/IconButton";
 import { useControllableOpen, useOverlayMotion, usePresence } from "@/components/ui/motion";
 import { DISTANCE, DUR } from "@/constants/motion";
@@ -92,6 +94,10 @@ export function AdminShell({ viewer, children }: { viewer: AdminViewer; children
   const openShortcuts = useCallback(() => setShortcutsOpen(true), []);
   const setCrumb = useCallback((label: string | null) => setCrumbState(label), []);
   useAdminHotkeys({ items, openPalette, openShortcuts });
+  const touch = useMutation(api.staff.touchStaffActivity);
+  useEffect(() => {
+    void touch({}).catch(() => undefined);
+  }, [touch]);
 
   useEffect(() => {
     const body = document.body;

@@ -149,7 +149,12 @@ export function CustomersList() {
           </p>
         }
       />
-      <LoadMoreFooter shown={results.length} status={status} onMore={loadMore} noun="kupaca" />
+      <LoadMoreFooter
+        shown={results.length}
+        status={status}
+        onMore={loadMore}
+        forms={["kupac", "kupca", "kupaca"]}
+      />
     </div>
   );
 }
@@ -230,7 +235,7 @@ export function CustomerDetail({ userId }: { userId: Id<"users"> }) {
           ) : null
         }
       />
-      <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_380px]">
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_380px]">
         <div className="flex min-w-0 flex-col gap-6">
           <div className="grid grid-cols-3 gap-px border-y border-line bg-line">
             {[

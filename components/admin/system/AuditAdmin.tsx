@@ -14,6 +14,7 @@ import type { Id } from "@/convex/_generated/dataModel";
 import { compactDateTime } from "@/lib/admin/format";
 import { belgradeLocalToUtc } from "@/lib/domain/time";
 import { ENTITY_TYPE_LABEL } from "@/lib/i18n/sr/admin";
+import { AUDIT_ACTION_LABEL, PRODUCT_FIELD_LABEL } from "@/lib/i18n/sr/auditLabels";
 import { Field } from "@/components/ui/Field";
 import { Input } from "@/components/ui/Input";
 import { RouteLink } from "@/components/ui/RouteLink";
@@ -53,6 +54,10 @@ const day = (d: string, end = false) => {
   return end ? start + 86_400_000 - 1 : start;
 };
 
+const ACTION_OPTIONS = Object.entries(AUDIT_ACTION_LABEL)
+  .map(([value, label]) => ({ value, label }))
+  .sort((a, b) => a.label.localeCompare(b.label, "sr"));
+
 export function AuditAdmin() {
   const nowMinute = useNowMinute();
   const staff = useQuery(api.staff.listUsers, {});
@@ -64,7 +69,7 @@ export function AuditAdmin() {
     {
       ...(f.ko ? { actorUserId: f.ko as Id<"users"> } : {}),
       ...(f.vrsta ? { entityType: f.vrsta } : {}),
-      ...(f.radnja ? { action: f.radnja.trim() } : {}),
+      ...(f.radnja ? { action: f.radnja } : {}),
       ...(from !== undefined ? { from } : {}),
       ...(to !== undefined ? { to } : {}),
     },
@@ -99,12 +104,13 @@ export function AuditAdmin() {
               .map(([value, label]) => ({ value, label }))}
           />
         </Field>
-        <Field label="Radnja" help="npr. order.status, product.update">
-          <Input
+        <Field label="Radnja">
+          <Select
+            size="sm"
+            placeholder="Sve"
             value={f.radnja}
             onChange={(e) => setF({ radnja: e.target.value })}
-            className="h-9"
-            inputClassName="font-mono"
+            options={ACTION_OPTIONS}
           />
         </Field>
         <Field label="Od">
@@ -154,8 +160,9 @@ export function AuditAdmin() {
                       </span>
                       <span className="type-caption text-ink-3">
                         <ActorLabel actor={r.actor} /> ·{" "}
-                        {ENTITY_TYPE_LABEL[r.entityType] ?? r.entityType} ·{" "}
-                        <span className="type-code-s normal-case">{r.action}</span>
+                        {AUDIT_ACTION_LABEL[r.action] ??
+                          ENTITY_TYPE_LABEL[r.entityType] ??
+                          r.entityType}
                       </span>
                     </span>
                     {r.diff && r.diff.length > 0 ? (
@@ -176,7 +183,9 @@ export function AuditAdmin() {
                   </div>
                   {expanded && r.diff ? (
                     <table className="mt-2 w-full border-collapse type-caption">
-                      <caption className="sr-only">Izmenjena polja</caption>
+                      <caption className="py-1 text-left text-ink-3">
+                        Radnja <span className="type-code-s normal-case">{r.action}</span>
+                      </caption>
                       <thead>
                         <tr className="text-left text-ink-3">
                           <th scope="col" className="w-48 py-1 pr-2 font-medium">
@@ -193,8 +202,12 @@ export function AuditAdmin() {
                       <tbody>
                         {r.diff.map((d, i) => (
                           <tr key={i} className="border-t border-line-faint align-top">
-                            <td className="py-1 pr-2 type-code-s normal-case text-ink-2">
-                              {d.field}
+                            <td className="py-1 pr-2 text-ink-2">
+                              {r.entityType === "product" && PRODUCT_FIELD_LABEL[d.field] ? (
+                                PRODUCT_FIELD_LABEL[d.field]
+                              ) : (
+                                <span className="type-code-s normal-case">{d.field}</span>
+                              )}
                             </td>
                             <td className="break-all py-1 pr-2 text-ink-3">{d.before ?? "—"}</td>
                             <td className="break-all py-1 text-ink-1">{d.after ?? "—"}</td>
@@ -209,7 +222,12 @@ export function AuditAdmin() {
           </ol>
         )}
       </div>
-      <LoadMoreFooter shown={results.length} status={status} onMore={loadMore} noun="izmena" />
+      <LoadMoreFooter
+        shown={results.length}
+        status={status}
+        onMore={loadMore}
+        forms={["izmena", "izmene", "izmena"]}
+      />
     </div>
   );
 }

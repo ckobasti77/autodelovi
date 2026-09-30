@@ -7,12 +7,20 @@ import { v } from "convex/values";
 
 import type { Doc } from "./_generated/dataModel";
 import type { QueryCtx } from "./_generated/server";
+import { missingCompanyFields } from "../lib/domain/company";
 import { belgradeDay, DAY_MS } from "../lib/domain/time";
 import { staffQuery } from "./lib/functions";
 import { getSettings } from "./lib/settings";
 import { actorV, inquiryKindV, inquiryStatusV, orderStatusV } from "./lib/validators";
 
 const OPEN_INQUIRY: Doc<"inquiries">["status"][] = ["nov", "u_obradi"];
+const companyFieldV = v.union(
+  v.literal("legalName"),
+  v.literal("pib"),
+  v.literal("address"),
+  v.literal("phone"),
+  v.literal("bankAccount"),
+);
 
 async function statsRange(ctx: QueryCtx, nowMs: number, days: number) {
   const rows: {
@@ -61,6 +69,7 @@ export const kpis = staffQuery({
       v.object({ day: v.number(), open: v.string(), close: v.string(), closed: v.boolean() }),
     ),
     holidays: v.array(v.string()),
+    missingCompany: v.array(companyFieldV),
   }),
   handler: async (ctx, { nowMinute }) => {
     const days = await statsRange(ctx, nowMinute, 14);
@@ -121,6 +130,7 @@ export const kpis = staffQuery({
       slaTargetMinutes: settings.notifications.reminderAfterWorkingMinutes,
       hours: settings.hours,
       holidays: settings.holidays.map((h) => h.date),
+      missingCompany: missingCompanyFields(settings.company),
     };
   },
 });

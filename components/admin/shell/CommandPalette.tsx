@@ -59,6 +59,16 @@ function useDebounced(value: string, ms: number): string {
   return debounced;
 }
 
+// Results are grouped by kind, in the order staff look for things.
+const KIND_SECTION = {
+  order: "Porudžbine",
+  inquiry: "Upiti",
+  product: "Artikli",
+  customer: "Kupci",
+  mechanic: "Majstori",
+} as const;
+const KIND_ORDER = Object.keys(KIND_SECTION) as (keyof typeof KIND_SECTION)[];
+
 export function CommandPalette({
   open,
   onOpenChange,
@@ -108,7 +118,10 @@ function PaletteBody({
       router.push(href);
     };
     const out: Option[] = [];
-    for (const h of hits ?? []) {
+    const sorted = [...(hits ?? [])].sort(
+      (a, b) => KIND_ORDER.indexOf(a.kind) - KIND_ORDER.indexOf(b.kind),
+    );
+    for (const h of sorted) {
       const status = h.orderStatus
         ? ADMIN_ORDER_STATUS[h.orderStatus]
         : h.inquiryStatus
@@ -116,7 +129,7 @@ function PaletteBody({
           : null;
       out.push({
         id: `hit:${h.kind}:${h.id}`,
-        section: "Rezultati",
+        section: KIND_SECTION[h.kind],
         label: h.title,
         meta: h.meta,
         mono: h.kind === "order" || h.kind === "inquiry",

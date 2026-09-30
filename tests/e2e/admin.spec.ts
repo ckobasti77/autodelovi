@@ -30,7 +30,8 @@ function convexRun<T>(fn: string, args: Record<string, unknown> = {}): T {
     [path.resolve("node_modules/convex/bin/main.js"), "run", `testing:${fn}`, JSON.stringify(args)],
     { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"], timeout: 120_000 },
   );
-  const start = out.search(/[[{]|^null/m);
+  // The CLI prints the JSON value last: an object, array, number or null.
+  const start = out.search(/[[{]|^-?\d|^null/m);
   return JSON.parse(out.slice(start)) as T;
 }
 

@@ -101,7 +101,7 @@ export function NotificationsAdmin() {
         status={status}
         onMore={loadMore}
         pageSize={30}
-        noun="obaveštenja"
+        forms={["obaveštenje", "obaveštenja", "obaveštenja"]}
       />
     </div>
   );

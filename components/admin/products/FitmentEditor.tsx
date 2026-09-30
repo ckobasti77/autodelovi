@@ -229,7 +229,7 @@ export function FitmentEditor({
               }))}
             />
           </Field>
-          <Field label="Motor" optional>
+          <Field label="Motor">
             <Select
               size="sm"
               placeholder="Svi motori"
@@ -244,7 +244,7 @@ export function FitmentEditor({
           </Field>
         </div>
         <div className="grid gap-3 sm:grid-cols-[8rem_8rem_minmax(0,1fr)]">
-          <Field label="Od godine" optional>
+          <Field label="Od godine">
             <Input
               value={yearFrom}
               onChange={(e) => setYearFrom(e.target.value)}
@@ -252,7 +252,7 @@ export function FitmentEditor({
               className="h-9"
             />
           </Field>
-          <Field label="Do godine" optional>
+          <Field label="Do godine">
             <Input
               value={yearTo}
               onChange={(e) => setYearTo(e.target.value)}
@@ -260,7 +260,7 @@ export function FitmentEditor({
               className="h-9"
             />
           </Field>
-          <Field label="Napomena" optional>
+          <Field label="Napomena">
             <Input
               value={note}
               onChange={(e) => setNote(e.target.value)}

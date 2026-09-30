@@ -72,9 +72,20 @@ export function Button({
   const classes = cn(base, variants[variant], sizes[size], fullWidth && "w-full", className);
 
   if (asChild) {
+    // Slottable places the icons inside the child element (e.g. a link), around its label.
     return (
       <Slot.Root className={classes} {...rest}>
-        {children}
+        {icon ? (
+          <span aria-hidden="true" className="inline-flex shrink-0">
+            {icon}
+          </span>
+        ) : null}
+        <Slot.Slottable>{children}</Slot.Slottable>
+        {trailingIcon ? (
+          <span aria-hidden="true" className="inline-flex shrink-0">
+            {trailingIcon}
+          </span>
+        ) : null}
       </Slot.Root>
     );
   }

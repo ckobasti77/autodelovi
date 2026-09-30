@@ -386,11 +386,7 @@ function TierEditor({
                 inputClassName="text-right tabular-nums"
               />
             </Field>
-            <Field
-              label="Minimalna marža"
-              optional
-              help={`Prazno: ${formatBp(globalMin)} iz podešavanja`}
-            >
+            <Field label="Minimalna marža" help={`Prazno: ${formatBp(globalMin)} iz podešavanja`}>
               <Input
                 value={form.minMargin}
                 onChange={(e) => setForm({ ...form, minMargin: e.target.value })}
@@ -408,7 +404,7 @@ function TierEditor({
               />
             </div>
           </div>
-          <Field label="Opis za stranicu „Za majstore“" optional>
+          <Field label="Opis za stranicu „Za majstore“">
             <Textarea
               rows={2}
               maxLength={200}
@@ -448,7 +444,7 @@ function TierEditor({
               className="h-9"
             />
           </Field>
-          <Field label="Nabavna bez PDV-a" optional>
+          <Field label="Nabavna bez PDV-a">
             <Input
               value={example.cost}
               onChange={(e) => setExample({ ...example, cost: e.target.value })}
@@ -458,7 +454,7 @@ function TierEditor({
               className="h-9"
             />
           </Field>
-          <Field label="Kategorija" optional>
+          <Field label="Kategorija">
             <Select
               size="sm"
               placeholder="Bilo koja"
@@ -467,7 +463,7 @@ function TierEditor({
               options={catOptions}
             />
           </Field>
-          <Field label="Proizvođač" optional>
+          <Field label="Proizvođač">
             <Select
               size="sm"
               placeholder="Bilo koji"

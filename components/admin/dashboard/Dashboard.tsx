@@ -2,16 +2,16 @@
 
 /**
  * `/admin` (DESIGN-SYSTEM §10.10): KPI row as links separated by rules (no cards), orders
- * per day (30 d, today in accent), „Traženo, a nemamo“ with a 7-day trend, the SLA queue of
+ * per day (30 d, today in accent), „Traženo, a nemamo“ with a 7-day trend; the SLA queue of
  * unanswered inquiries and new orders with live timers, recent activity, orders by system.
  */
 import { useQuery } from "convex/react";
 import type { ReactNode } from "react";
-import { ArrowDownIcon, ArrowUpIcon, MinusIcon } from "@phosphor-icons/react/dist/ssr";
+import { ArrowDownIcon, ArrowUpIcon, MinusIcon, WarningIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/cn";
-import { formatAgo, formatElapsed } from "@/lib/admin/format";
+import { compactDateTime, formatAgo, formatElapsed } from "@/lib/admin/format";
 import { slaLevel, workingMinutesBetween } from "@/lib/domain/sla";
 import { formatDate } from "@/lib/format/date";
 import { formatRSD } from "@/lib/format/money";
@@ -23,7 +23,7 @@ import { ADMIN } from "@/constants/routes";
 
 import { BarList, ColumnChart } from "../charts";
 import { useNowMinute } from "../hooks";
-import { ActorLabel, DocNumber, PageHeader, Section } from "../ui";
+import { ActorLabel, CompanySetupNotice, DocNumber, PageHeader, Section } from "../ui";
 
 function Kpi({
   href,
@@ -100,6 +100,8 @@ export function Dashboard() {
         description={`Danas ${formatDate(nowMinute)} — stanje u realnom vremenu.`}
       />
 
+      {kpis ? <CompanySetupNotice missing={kpis.missingCompany} /> : null}
+
       <div className="grid grid-cols-2 gap-px border-y border-line bg-line md:grid-cols-3 xl:grid-cols-6">
         {kpis ? (
           <>
@@ -144,10 +146,12 @@ export function Dashboard() {
             />
             <Kpi
               href={ADMIN.stock}
-              label="Malo na stanju"
-              value={kpis.lowStock}
+              label="Bez zaliha"
+              value={kpis.outOfStock}
               sub={
-                kpis.outOfStock > 0 ? `${kpis.outOfStock} bez zaliha` : "nijedan artikal bez zaliha"
+                kpis.lowStock > 0
+                  ? `još ${kpis.lowStock} sa malo zaliha`
+                  : "nijedan artikal sa malo zaliha"
               }
             />
           </>
@@ -160,6 +164,140 @@ export function Dashboard() {
             </div>
           ))
         )}
+      </div>
+
+      <div className="grid gap-6 xl:grid-cols-2">
+        <Section
+          title="Red čekanja"
+          actions={
+            kpis ? (
+              <span className="type-caption text-ink-3">
+                cilj: odgovor za {formatElapsed(kpis.slaTargetMinutes)}
+              </span>
+            ) : null
+          }
+        >
+          {queue === undefined || kpis === undefined ? (
+            <Skeleton className="h-48 w-full" />
+          ) : queue.inquiries.length === 0 && queue.orders.length === 0 ? (
+            <p className="py-6 type-body-s text-ink-2">
+              Ništa ne čeka. Svi upiti imaju odgovor, sve porudžbine su potvrđene.
+            </p>
+          ) : (
+            <ul className="flex flex-col divide-y divide-line-faint">
+              {[
+                ...queue.inquiries.map((i) => ({
+                  key: `i:${i.number}`,
+                  href: ADMIN.inquiry(i.number),
+                  number: i.number,
+                  kind: "Upit",
+                  who: i.contactName,
+                  what: `${INQUIRY_KIND_LABEL[i.kind]} · ${i.summary}`,
+                  priority: i.isMechanic,
+                  at: i.createdAt,
+                })),
+                ...queue.orders.map((o) => ({
+                  key: `o:${o.number}`,
+                  href: ADMIN.order(o.number),
+                  number: o.number,
+                  kind: "Porudžbina",
+                  who: o.customerName,
+                  what: formatRSD(o.totalPara),
+                  priority: false,
+                  at: o.createdAt,
+                })),
+              ]
+                .sort((a, b) => a.at - b.at)
+                .slice(0, 10)
+                .map((row) => {
+                  const minutes = elapsed(row.at);
+                  const level = slaLevel(minutes, kpis.slaTargetMinutes);
+                  // Zero working minutes after more than a minute of wall time: it arrived
+                  // outside working hours and the SLA clock has not started yet.
+                  const waiting =
+                    minutes >= 1
+                      ? formatElapsed(minutes)
+                      : nowMinute - row.at < 120_000
+                        ? "upravo"
+                        : "van radnog vremena";
+                  return (
+                    <li key={row.key}>
+                      <RouteLink
+                        href={row.href}
+                        className="flex items-center gap-3 px-1 py-2.5 transition-control hover:bg-surface-2 focus-ring-inset"
+                      >
+                        <span className="flex min-w-0 flex-1 flex-col">
+                          <span className="flex items-center gap-2">
+                            <DocNumber number={row.number} />
+                            <span className="type-caption text-ink-3">{row.kind}</span>
+                            {row.priority ? <Badge tone="info">Majstor</Badge> : null}
+                          </span>
+                          <span className="truncate type-caption text-ink-2">
+                            {row.who} · {row.what}
+                          </span>
+                        </span>
+                        <span className="flex shrink-0 flex-col items-end">
+                          <span
+                            className={cn(
+                              "inline-flex items-center gap-1 whitespace-nowrap type-body-s tabular-nums",
+                              level === "late"
+                                ? "font-semibold text-danger"
+                                : level === "soon"
+                                  ? "text-warning"
+                                  : "text-ink-2",
+                            )}
+                          >
+                            {level === "late" ? (
+                              <WarningIcon size={14} weight="bold" aria-hidden="true" />
+                            ) : null}
+                            {waiting}
+                            <span className="sr-only">{level === "late" ? " — kasni" : ""}</span>
+                          </span>
+                          <span className="whitespace-nowrap type-caption tabular-nums text-ink-3">
+                            primljeno {compactDateTime(row.at, nowMinute)}
+                          </span>
+                        </span>
+                      </RouteLink>
+                    </li>
+                  );
+                })}
+            </ul>
+          )}
+        </Section>
+
+        <Section
+          title="Aktivnost"
+          actions={
+            <RouteLink
+              href={ADMIN.audit}
+              className="type-caption text-accent-text underline-offset-2 hover:underline"
+            >
+              Cela revizija
+            </RouteLink>
+          }
+        >
+          {activity === undefined ? (
+            <Skeleton className="h-48 w-full" />
+          ) : activity.length === 0 ? (
+            <p className="py-6 type-body-s text-ink-2">Još nema zabeleženih izmena.</p>
+          ) : (
+            <ul className="flex flex-col divide-y divide-line-faint">
+              {activity.slice(0, 10).map((a) => (
+                <li key={a._id} className="flex items-start gap-3 py-2 type-body-s">
+                  <span className="w-20 shrink-0 whitespace-nowrap type-caption tabular-nums text-ink-3">
+                    {formatAgo(a.at, nowMinute)}
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate text-ink-1">{a.summary}</span>
+                    <span className="type-caption">
+                      <ActorLabel actor={a.actor} />
+                    </span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </Section>
       </div>
 
       <div className="grid gap-6 xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
@@ -259,124 +397,6 @@ export function Dashboard() {
                 );
               })}
             </ol>
-          )}
-        </Section>
-      </div>
-
-      <div className="grid gap-6 xl:grid-cols-2">
-        <Section
-          title="Red čekanja"
-          actions={
-            kpis ? (
-              <span className="type-caption text-ink-3">
-                cilj: odgovor za {formatElapsed(kpis.slaTargetMinutes)}
-              </span>
-            ) : null
-          }
-        >
-          {queue === undefined || kpis === undefined ? (
-            <Skeleton className="h-48 w-full" />
-          ) : queue.inquiries.length === 0 && queue.orders.length === 0 ? (
-            <p className="py-6 type-body-s text-ink-2">
-              Ništa ne čeka. Svi upiti imaju odgovor, sve porudžbine su potvrđene.
-            </p>
-          ) : (
-            <ul className="flex flex-col divide-y divide-line-faint">
-              {[
-                ...queue.inquiries.map((i) => ({
-                  key: `i:${i.number}`,
-                  href: ADMIN.inquiry(i.number),
-                  number: i.number,
-                  kind: "Upit",
-                  who: i.contactName,
-                  what: `${INQUIRY_KIND_LABEL[i.kind]} · ${i.summary}`,
-                  priority: i.isMechanic,
-                  at: i.createdAt,
-                })),
-                ...queue.orders.map((o) => ({
-                  key: `o:${o.number}`,
-                  href: ADMIN.order(o.number),
-                  number: o.number,
-                  kind: "Porudžbina",
-                  who: o.customerName,
-                  what: formatRSD(o.totalPara),
-                  priority: false,
-                  at: o.createdAt,
-                })),
-              ]
-                .sort((a, b) => a.at - b.at)
-                .slice(0, 10)
-                .map((row) => {
-                  const minutes = elapsed(row.at);
-                  const level = slaLevel(minutes, kpis.slaTargetMinutes);
-                  return (
-                    <li key={row.key}>
-                      <RouteLink
-                        href={row.href}
-                        className="flex items-center gap-3 py-2.5 transition-control hover:bg-surface-2 focus-ring-inset"
-                      >
-                        <span className="flex min-w-0 flex-1 flex-col">
-                          <span className="flex items-center gap-2">
-                            <DocNumber number={row.number} />
-                            <span className="type-caption text-ink-3">{row.kind}</span>
-                            {row.priority ? <Badge tone="info">Majstor</Badge> : null}
-                          </span>
-                          <span className="truncate type-caption text-ink-2">
-                            {row.who} · {row.what}
-                          </span>
-                        </span>
-                        <span
-                          className={cn(
-                            "whitespace-nowrap type-body-s tabular-nums",
-                            level === "late"
-                              ? "font-semibold text-danger"
-                              : level === "soon"
-                                ? "text-warning"
-                                : "text-ink-2",
-                          )}
-                        >
-                          {minutes < 1 ? "novo" : formatElapsed(minutes)}
-                          <span className="sr-only">{level === "late" ? " — kasni" : ""}</span>
-                        </span>
-                      </RouteLink>
-                    </li>
-                  );
-                })}
-            </ul>
-          )}
-        </Section>
-
-        <Section
-          title="Aktivnost"
-          actions={
-            <RouteLink
-              href={ADMIN.audit}
-              className="type-caption text-accent-text underline-offset-2 hover:underline"
-            >
-              Cela revizija
-            </RouteLink>
-          }
-        >
-          {activity === undefined ? (
-            <Skeleton className="h-48 w-full" />
-          ) : activity.length === 0 ? (
-            <p className="py-6 type-body-s text-ink-2">Još nema zabeleženih izmena.</p>
-          ) : (
-            <ul className="flex flex-col divide-y divide-line-faint">
-              {activity.slice(0, 10).map((a) => (
-                <li key={a._id} className="flex items-start gap-3 py-2 type-body-s">
-                  <span className="w-20 shrink-0 whitespace-nowrap type-caption tabular-nums text-ink-3">
-                    {formatAgo(a.at, nowMinute)}
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block truncate text-ink-1">{a.summary}</span>
-                    <span className="type-caption">
-                      <ActorLabel actor={a.actor} />
-                    </span>
-                  </span>
-                </li>
-              ))}
-            </ul>
           )}
         </Section>
       </div>

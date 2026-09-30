@@ -14,7 +14,10 @@ export default async function AdminMechanicsPage() {
   await requireStaffPage(ROUTES.adminMechanics);
   return (
     <div className="flex flex-col gap-6">
-      <PageHeader title="Majstori" description="Registracije servisa, nivoi rabata i odloženo plaćanje." />
+      <PageHeader
+        title="Majstori"
+        description="Registracije servisa, nivoi rabata i odloženo plaćanje."
+      />
       <MechanicsAdminList />
     </div>
   );

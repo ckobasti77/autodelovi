@@ -358,20 +358,21 @@ function GenerationRow({
           </span>
         ))}
         <span className="ml-auto flex items-center gap-1.5">
-          <Select
-            size="sm"
-            aria-label={`Dodaj motor u ${g.name}`}
-            placeholder="Dodaj motor…"
-            value={adding}
-            onChange={(e) => setAdding(e.target.value)}
-            options={engines
-              .filter((e) => !linked.has(e._id))
-              .map((e) => ({
-                value: e._id,
-                label: `${engineLabel(e.name, e.powerKw)} · ${FUEL_LABEL[e.fuel]}`,
-              }))}
-            className="w-60"
-          />
+          <div className="w-60">
+            <Select
+              size="sm"
+              aria-label={`Dodaj motor u ${g.name}`}
+              placeholder="Dodaj motor…"
+              value={adding}
+              onChange={(e) => setAdding(e.target.value)}
+              options={engines
+                .filter((e) => !linked.has(e._id))
+                .map((e) => ({
+                  value: e._id,
+                  label: `${engineLabel(e.name, e.powerKw)} · ${FUEL_LABEL[e.fuel]}`,
+                }))}
+            />
+          </div>
           <Button
             size="sm"
             variant="secondary"
@@ -520,7 +521,7 @@ function VehicleDialog({
         ) : null}
         {state.kind === "generation" ? (
           <>
-            <Field label="Kod generacije" optional>
+            <Field label="Kod generacije">
               <Input
                 value={f.code}
                 onChange={(ev) => set({ code: ev.target.value })}
@@ -528,7 +529,7 @@ function VehicleDialog({
                 inputClassName="font-mono"
               />
             </Field>
-            <Field label="Platforma" optional>
+            <Field label="Platforma">
               <Input
                 value={f.platform}
                 onChange={(ev) => set({ platform: ev.target.value })}
@@ -542,14 +543,14 @@ function VehicleDialog({
                 inputMode="numeric"
               />
             </Field>
-            <Field label="Do godine" optional help="Prazno: proizvodi se i danas.">
+            <Field label="Do godine" help="Prazno: proizvodi se i danas.">
               <Input
                 value={f.yearTo}
                 onChange={(ev) => set({ yearTo: ev.target.value })}
                 inputMode="numeric"
               />
             </Field>
-            <Field label="Kodovi modela u VIN-u (pozicije 7–8)" optional className="sm:col-span-2">
+            <Field label="Kodovi modela u VIN-u (pozicije 7–8)" className="sm:col-span-2">
               <Input
                 value={f.vinModelCodes}
                 onChange={(ev) => set({ vinModelCodes: ev.target.value })}
@@ -563,7 +564,6 @@ function VehicleDialog({
           <>
             <Field
               label="Kodovi motora"
-              optional
               help="Razdvojte zarezom: CFFB, CRLB"
               className="sm:col-span-2"
             >
@@ -580,7 +580,7 @@ function VehicleDialog({
                 options={Object.entries(FUEL_LABEL).map(([value, label]) => ({ value, label }))}
               />
             </Field>
-            <Field label="Zapremina" optional>
+            <Field label="Zapremina">
               <Input
                 value={f.displacementCc}
                 onChange={(ev) => set({ displacementCc: ev.target.value })}
@@ -609,7 +609,6 @@ function VehicleDialog({
           <>
             <Field
               label="Drugi nazivi"
-              optional
               help="Za pretragu i uvoz: npr. „Golf 7, Golf VII“"
               className="sm:col-span-2"
             >

@@ -29,7 +29,7 @@ export type MenuItem =
   | { type: "label"; label: ReactNode };
 
 const itemClasses =
-  "flex min-h-10 cursor-pointer select-none items-center gap-2.5 rounded-xs px-2.5 type-body-s text-ink-1 outline-none data-[highlighted]:bg-surface-4 data-[disabled]:cursor-not-allowed data-[disabled]:text-ink-4";
+  "flex min-h-10 cursor-pointer select-none items-center gap-2.5 rounded-xs px-2.5 type-body-s outline-none data-[highlighted]:bg-surface-4 data-[disabled]:cursor-not-allowed data-[disabled]:text-ink-4";
 
 function MenuContent({ children, align }: { children: ReactNode; align: "start" | "end" }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -92,7 +92,7 @@ export function Menu({
                   onCheckedChange={item.onCheckedChange}
                   disabled={item.disabled}
                   onSelect={(event) => event.preventDefault()}
-                  className={itemClasses}
+                  className={cn(itemClasses, "text-ink-1")}
                 >
                   <span className="inline-flex size-4 items-center justify-center text-accent-text">
                     <DropdownMenu.ItemIndicator>
@@ -117,7 +117,7 @@ export function Menu({
                 key={index}
                 asChild
                 disabled={item.disabled}
-                className={cn(itemClasses, item.danger && "text-danger")}
+                className={cn(itemClasses, item.danger ? "text-danger" : "text-ink-1")}
               >
                 <a href={item.href}>{content}</a>
               </DropdownMenu.Item>
@@ -126,7 +126,7 @@ export function Menu({
                 key={index}
                 disabled={item.disabled}
                 onSelect={item.onSelect}
-                className={cn(itemClasses, item.danger && "text-danger")}
+                className={cn(itemClasses, item.danger ? "text-danger" : "text-ink-1")}
               >
                 {content}
               </DropdownMenu.Item>

@@ -12,7 +12,14 @@ import { isValidEmail, normalizeEmail } from "../lib/domain/identifiers";
 import { audit } from "./lib/audit";
 import { actorOf } from "./lib/authz";
 import { fail, invalid, notFound } from "./lib/errors";
-import { ownerMutation, ownerQuery, publicQuery, staffQuery, userMutation } from "./lib/functions";
+import {
+  ownerMutation,
+  ownerQuery,
+  publicQuery,
+  staffMutation,
+  staffQuery,
+  userMutation,
+} from "./lib/functions";
 import { enforceRateLimit } from "./lib/rateLimits";
 import { hashToken, isTokenShape, randomToken } from "./lib/tokens";
 import { roleV } from "./lib/validators";
@@ -300,9 +307,25 @@ export const acceptInvite = userMutation({
       action: "staff.invite_accept",
       entityType: "user",
       entityId: ctx.viewer.userId,
-      summary: `${email} je prihvatio pozivnicu (${role === "owner" ? "vlasnik" : "zaposleni"})`,
+      summary: `${email}: prihvaćena pozivnica (${role === "owner" ? "vlasnik" : "zaposleni"})`,
       diff: [{ field: "role", before: current, after: role }],
     });
     return { role };
+  },
+});
+
+/**
+ * Staff activity stamp for Admin → Korisnici („poslednja aktivnost“): the admin shell calls
+ * it on load; writes at most once per 10 minutes per account. An activity stamp, not a
+ * business write, so it is not audited (it would flood the log).
+ */
+export const touchStaffActivity = staffMutation({
+  args: {},
+  returns: v.null(),
+  handler: async (ctx) => {
+    const now = Date.now();
+    if (ctx.viewer.user.lastSeenAt && now - ctx.viewer.user.lastSeenAt < 10 * 60_000) return null;
+    await ctx.db.patch("users", ctx.viewer.userId, { lastSeenAt: now });
+    return null;
   },
 });

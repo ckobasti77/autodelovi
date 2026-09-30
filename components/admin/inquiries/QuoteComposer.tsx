@@ -196,7 +196,7 @@ export function QuoteComposer({
                   className="h-9"
                 />
               </Field>
-              <Field label="Šifra / OEM" optional>
+              <Field label="Šifra / OEM">
                 <Input
                   value={l.sku}
                   onChange={(e) => set(l.key, { sku: e.target.value })}
@@ -204,7 +204,7 @@ export function QuoteComposer({
                   inputClassName="font-mono"
                 />
               </Field>
-              <Field label="Proizvođač" optional>
+              <Field label="Proizvođač">
                 <Input
                   value={l.manufacturer}
                   onChange={(e) => set(l.key, { manufacturer: e.target.value })}
@@ -213,7 +213,7 @@ export function QuoteComposer({
               </Field>
             </div>
             <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-[repeat(5,minmax(0,1fr))]">
-              <Field label="Kvalitet" optional>
+              <Field label="Kvalitet">
                 <Select
                   size="sm"
                   value={l.quality}
@@ -257,7 +257,7 @@ export function QuoteComposer({
                   ]}
                 />
               </Field>
-              <Field label="Rok (dana)" optional>
+              <Field label="Rok (dana)">
                 <Input
                   value={l.leadTimeDays}
                   inputMode="numeric"
@@ -267,7 +267,7 @@ export function QuoteComposer({
                 />
               </Field>
             </div>
-            <Field label="Napomena uz stavku" optional className="mt-3">
+            <Field label="Napomena uz stavku" className="mt-3">
               <Input
                 value={l.note}
                 onChange={(e) => set(l.key, { note: e.target.value })}
@@ -307,11 +307,7 @@ export function QuoteComposer({
           Slobodna stavka
         </Button>
       </div>
-      <Field
-        label="Napomena o isporuci"
-        optional
-        help="Npr. „Deo stiže za 3 radna dana od potvrde.“"
-      >
+      <Field label="Napomena o isporuci" help="Npr. „Deo stiže za 3 radna dana od potvrde.“">
         <Textarea
           rows={2}
           maxLength={500}

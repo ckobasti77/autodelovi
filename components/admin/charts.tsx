@@ -142,9 +142,9 @@ export function ColumnChart({
                   {(i % labelEvery === 0 && data.length - 1 - i >= labelEvery) ||
                   i === data.length - 1 ? (
                     <text
-                      x={x + barW / 2}
+                      x={i === data.length - 1 ? x + barW : x + barW / 2}
                       y={height - 6}
-                      textAnchor="middle"
+                      textAnchor={i === data.length - 1 ? "end" : "middle"}
                       className="fill-ink-3 text-[0.75rem] tabular-nums"
                     >
                       {d.label}

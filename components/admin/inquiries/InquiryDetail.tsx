@@ -41,7 +41,15 @@ import { AttributionView } from "../Attribution";
 import { ConfirmDialog, useConfirm } from "../ConfirmDialog";
 import { useNowMinute } from "../hooks";
 import { useAdminCrumb, useAdminShell } from "../shell/context";
-import { ActorLabel, DefinitionList, DemoTag, DocNumber, InquiryStatusBadge, Section } from "../ui";
+import {
+  ActorLabel,
+  ContactActions,
+  DefinitionList,
+  DemoTag,
+  DocNumber,
+  InquiryStatusBadge,
+  Section,
+} from "../ui";
 import { QuoteComposer } from "./QuoteComposer";
 
 type Detail = NonNullable<FunctionReturnType<typeof api.inquiriesAdmin.get>>;
@@ -105,7 +113,6 @@ function InquiryView({ data }: { data: Detail }) {
         )
       : null;
   const phone = i.contact.phone?.replace(/\s/g, "");
-  const digits = phone?.replace(/\D/g, "");
 
   return (
     <div className="flex flex-col gap-6">
@@ -190,7 +197,7 @@ function InquiryView({ data }: { data: Detail }) {
         ) : null}
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_380px]">
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_380px]">
         <div className="flex min-w-0 flex-col gap-6">
           <Section title="Upit">
             <div className="flex flex-col gap-4">
@@ -284,7 +291,7 @@ function InquiryView({ data }: { data: Detail }) {
 
           {composing && !closed ? (
             <Section
-              title={draft ? `Ponuda — nacrt v${draft.version}` : "Nova ponuda"}
+              title={draft ? `Ponuda br. ${draft.version} — nacrt` : "Nova ponuda"}
               actions={
                 <Button variant="ghost" size="sm" onClick={() => setComposing(false)}>
                   Zatvori
@@ -416,7 +423,7 @@ function InquiryView({ data }: { data: Detail }) {
                   hidden: !i.contact.email,
                 },
                 {
-                  label: "Odgovor",
+                  label: "Želi odgovor",
                   value:
                     PREFERRED_CHANNEL_LABEL[
                       i.contact.preferredChannel as keyof typeof PREFERRED_CHANNEL_LABEL
@@ -437,21 +444,7 @@ function InquiryView({ data }: { data: Detail }) {
                 },
               ]}
             />
-            {digits ? (
-              <div className="mt-4 flex flex-wrap gap-2">
-                <Button asChild variant="secondary" size="sm">
-                  <a href={`tel:${phone}`}>Pozovi</a>
-                </Button>
-                <Button asChild variant="secondary" size="sm">
-                  <a href={`viber://chat?number=%2B${digits}`}>Viber</a>
-                </Button>
-                <Button asChild variant="secondary" size="sm">
-                  <a href={`https://wa.me/${digits}`} target="_blank" rel="noopener noreferrer">
-                    WhatsApp
-                  </a>
-                </Button>
-              </div>
-            ) : null}
+            <ContactActions phone={i.contact.phone} />
           </Section>
 
           <Section title="Dodela">
@@ -630,20 +623,20 @@ function ConvertDialog({
           sve stavke iz ponude; upit se zatvara kao prihvaćen.
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
-          <Field label="Ime" required>
+          <Field label="Ime" required markRequired>
             <Input value={form.firstName} onChange={(e) => set({ firstName: e.target.value })} />
           </Field>
-          <Field label="Prezime" required>
+          <Field label="Prezime" required markRequired>
             <Input value={form.lastName} onChange={(e) => set({ lastName: e.target.value })} />
           </Field>
-          <Field label="Telefon" required>
+          <Field label="Telefon" required markRequired>
             <Input
               value={form.phone}
               onChange={(e) => set({ phone: e.target.value })}
               inputMode="tel"
             />
           </Field>
-          <Field label="E-pošta" required>
+          <Field label="E-pošta" required markRequired>
             <Input
               value={form.email}
               onChange={(e) => set({ email: e.target.value })}
@@ -663,13 +656,13 @@ function ConvertDialog({
         </Field>
         {form.delivery === "courier" ? (
           <div className="grid gap-3 sm:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_7rem]">
-            <Field label="Ulica i broj" required>
+            <Field label="Ulica i broj" required markRequired>
               <Input value={form.street} onChange={(e) => set({ street: e.target.value })} />
             </Field>
-            <Field label="Mesto" required>
+            <Field label="Mesto" required markRequired>
               <Input value={form.city} onChange={(e) => set({ city: e.target.value })} />
             </Field>
-            <Field label="Poštanski broj" required>
+            <Field label="Poštanski broj" required markRequired>
               <Input
                 value={form.postalCode}
                 onChange={(e) => set({ postalCode: e.target.value })}

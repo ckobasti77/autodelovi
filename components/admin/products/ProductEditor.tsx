@@ -24,7 +24,6 @@ import type { Id } from "@/convex/_generated/dataModel";
 import { marginBp, moneyInputValue, parseMoneyInput } from "@/lib/admin/format";
 import { slugifySr } from "@/lib/domain/slug";
 import { formatRSD } from "@/lib/format/money";
-import { STOCK_STATE_LABEL, STOCK_STATE_TONE } from "@/lib/i18n/sr/admin";
 import { QUALITY_LABEL } from "@/lib/i18n/sr/catalog";
 import { convexErrorField, convexErrorMessage } from "@/lib/i18n/sr/shop";
 import { Badge } from "@/components/ui/Badge";
@@ -42,7 +41,7 @@ import { ADMIN, ROUTES } from "@/constants/routes";
 
 import { useNowMinute } from "../hooks";
 import { useAdminCrumb } from "../shell/context";
-import { DemoTag, PageHeader, SaveBar, Section } from "../ui";
+import { DemoTag, PageHeader, SaveBar, Section, StockStateBadge } from "../ui";
 import { CodesEditor, type CrossRow, type OemRow } from "./CodesEditor";
 import { FitmentEditor, type FitmentRow } from "./FitmentEditor";
 import { ImagesEditor } from "./ImagesEditor";
@@ -420,9 +419,7 @@ function EditorForm({ full }: { full: Full | null }) {
               <Badge tone={full.active ? "success" : "neutral"}>
                 {full.active ? "Aktivan" : "Neaktivan"}
               </Badge>
-              <Badge tone={STOCK_STATE_TONE[full.stockState]}>
-                {STOCK_STATE_LABEL[full.stockState]}
-              </Badge>
+              <StockStateBadge state={full.stockState} />
               {full.isDemo ? <DemoTag /> : null}
             </>
           ) : null
@@ -496,11 +493,17 @@ function EditorForm({ full }: { full: Full | null }) {
         </div>
       ) : null}
 
-      <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_360px]">
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_300px] xl:grid-cols-[minmax(0,1fr)_360px]">
         <div className="flex min-w-0 flex-col gap-6">
           <Section title="Osnovno" id="osnovno">
             <div className="grid gap-4 md:grid-cols-2">
-              <Field label="Naziv" required error={errors.name} className="md:col-span-2">
+              <Field
+                label="Naziv"
+                required
+                markRequired
+                error={errors.name}
+                className="md:col-span-2"
+              >
                 <Input
                   value={form.name}
                   onChange={(e) => set("name", e.target.value)}
@@ -511,6 +514,7 @@ function EditorForm({ full }: { full: Full | null }) {
               <Field
                 label="Šifra artikla"
                 required
+                markRequired
                 error={errors.sku}
                 help="Interna šifra; mora biti jedinstvena."
               >
@@ -524,7 +528,6 @@ function EditorForm({ full }: { full: Full | null }) {
               </Field>
               <Field
                 label="Adresa na sajtu (slug)"
-                optional
                 help={
                   isNew
                     ? "Prazno: pravi se iz naziva."
@@ -538,7 +541,7 @@ function EditorForm({ full }: { full: Full | null }) {
                   inputClassName="font-mono"
                 />
               </Field>
-              <Field label="Kategorija" required error={errors.categoryId}>
+              <Field label="Kategorija" required markRequired error={errors.categoryId}>
                 <Select
                   placeholder="Izaberite"
                   value={form.categoryId}
@@ -547,7 +550,7 @@ function EditorForm({ full }: { full: Full | null }) {
                   data-testid="admin-product-category"
                 />
               </Field>
-              <Field label="Proizvođač" required error={errors.manufacturerId}>
+              <Field label="Proizvođač" required markRequired error={errors.manufacturerId}>
                 <Select
                   placeholder="Izaberite"
                   value={form.manufacturerId}
@@ -560,7 +563,6 @@ function EditorForm({ full }: { full: Full | null }) {
               </Field>
               <Field
                 label="Kvalitet"
-                optional
                 help={
                   manufacturer
                     ? `Prazno: ${QUALITY_LABEL[manufacturer.defaultQuality]} (podrazumevano za proizvođača).`
@@ -578,14 +580,14 @@ function EditorForm({ full }: { full: Full | null }) {
                 />
               </Field>
               <div className="grid grid-cols-2 gap-4">
-                <Field label="Kataloški broj (MPN)" optional>
+                <Field label="Kataloški broj (MPN)">
                   <Input
                     value={form.mpn}
                     onChange={(e) => set("mpn", e.target.value)}
                     inputClassName="font-mono"
                   />
                 </Field>
-                <Field label="EAN" optional>
+                <Field label="EAN">
                   <Input
                     value={form.ean}
                     onChange={(e) => set("ean", e.target.value)}
@@ -628,11 +630,7 @@ function EditorForm({ full }: { full: Full | null }) {
 
           <Section title="Opis i tehnički podaci" id="opis">
             <div className="flex flex-col gap-4">
-              <Field
-                label="Opis"
-                optional
-                help="Kratko: šta je deo, na šta treba paziti pri ugradnji."
-              >
+              <Field label="Opis" help="Kratko: šta je deo, na šta treba paziti pri ugradnji.">
                 <Textarea
                   rows={5}
                   maxLength={5000}
@@ -707,7 +705,7 @@ function EditorForm({ full }: { full: Full | null }) {
                 </Button>
               </fieldset>
               <div className="grid gap-4 md:grid-cols-3">
-                <Field label="Masa" optional error={errors.weightGrams}>
+                <Field label="Masa" error={errors.weightGrams}>
                   <Input
                     value={form.weightGrams}
                     onChange={(e) => set("weightGrams", e.target.value)}
@@ -715,7 +713,7 @@ function EditorForm({ full }: { full: Full | null }) {
                     suffix="g"
                   />
                 </Field>
-                <Field label="Garancija" optional error={errors.warrantyMonths}>
+                <Field label="Garancija" error={errors.warrantyMonths}>
                   <Input
                     value={form.warrantyMonths}
                     onChange={(e) => set("warrantyMonths", e.target.value)}
@@ -723,7 +721,7 @@ function EditorForm({ full }: { full: Full | null }) {
                     suffix="mes."
                   />
                 </Field>
-                <Field label="Napomena za kupce" optional>
+                <Field label="Napomena za kupce">
                   <Input
                     value={form.notes}
                     onChange={(e) => set("notes", e.target.value)}
@@ -773,7 +771,7 @@ function EditorForm({ full }: { full: Full | null }) {
         <aside className="flex flex-col gap-6" aria-label="Cena, stanje i status">
           <Section title="Cena">
             <div className="flex flex-col gap-4">
-              <Field label="Maloprodajna cena sa PDV-om" required error={errors.price}>
+              <Field label="Maloprodajna cena sa PDV-om" required markRequired error={errors.price}>
                 <Input
                   value={form.price}
                   onChange={(e) => set("price", e.target.value)}
@@ -785,7 +783,6 @@ function EditorForm({ full }: { full: Full | null }) {
               </Field>
               <Field
                 label="Nabavna cena bez PDV-a"
-                optional
                 error={errors.cost}
                 help="Vidi je samo osoblje; čuva minimalnu maržu kod rabata majstora."
               >
@@ -854,7 +851,6 @@ function EditorForm({ full }: { full: Full | null }) {
               <div className="grid grid-cols-2 gap-3">
                 <Field
                   label="Prag „malo“"
-                  optional
                   error={errors.lowStockThreshold}
                   help={`Prazno: ${settings?.commerce.lowStockDefault ?? 3}`}
                 >
@@ -865,7 +861,7 @@ function EditorForm({ full }: { full: Full | null }) {
                     inputClassName="text-right tabular-nums"
                   />
                 </Field>
-                <Field label="Rok nabavke" optional error={errors.leadTimeDays}>
+                <Field label="Rok nabavke" error={errors.leadTimeDays}>
                   <Input
                     value={form.leadTimeDays}
                     onChange={(e) => set("leadTimeDays", e.target.value)}
@@ -887,13 +883,13 @@ function EditorForm({ full }: { full: Full | null }) {
           <Section title="Interno">
             <div className="flex flex-col gap-4">
               <div className="grid grid-cols-2 gap-3">
-                <Field label="Dobavljač" optional>
+                <Field label="Dobavljač">
                   <Input
                     value={form.supplierName}
                     onChange={(e) => set("supplierName", e.target.value)}
                   />
                 </Field>
-                <Field label="Šifra kod dobavljača" optional>
+                <Field label="Šifra kod dobavljača">
                   <Input
                     value={form.supplierSku}
                     onChange={(e) => set("supplierSku", e.target.value)}
@@ -901,7 +897,7 @@ function EditorForm({ full }: { full: Full | null }) {
                   />
                 </Field>
               </div>
-              <Field label="Interna beleška" optional>
+              <Field label="Interna beleška">
                 <Textarea
                   rows={3}
                   maxLength={1000}

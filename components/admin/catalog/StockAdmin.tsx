@@ -1,21 +1,21 @@
 "use client";
 
 /**
- * `/admin/lager` — „Malo na stanju“ (out of stock first, per-product threshold editable,
- * stock change with a reason) and „Kretanje zaliha“ (every change with reason, reference
- * and actor, filterable by reason). The default threshold lives in settings.
+ * `/admin/lager` — „Bez zaliha“ and „Malo na stanju“ (quantity and per-product threshold
+ * edited in the row: the quantity opens the stock dialog with a reason, the threshold saves
+ * on blur) and „Kretanje zaliha“ (every change with reason, reference and actor, filterable
+ * by reason). The default threshold lives in settings.
  */
 import { useMutation, usePaginatedQuery, useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
 import { useMemo, useState } from "react";
+import { PencilSimpleIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
 import type { Id } from "@/convex/_generated/dataModel";
 import { compactDateTime } from "@/lib/admin/format";
-import { STOCK_REASON_LABEL, STOCK_STATE_LABEL, STOCK_STATE_TONE } from "@/lib/i18n/sr/admin";
+import { STOCK_REASON_LABEL } from "@/lib/i18n/sr/admin";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
-import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
 import { DataTable, type ColumnDef } from "@/components/ui/DataTable";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { Select } from "@/components/ui/Select";
@@ -25,7 +25,7 @@ import { ADMIN } from "@/constants/routes";
 
 import { useNowMinute } from "../hooks";
 import { StockDialog } from "../products/StockDialog";
-import { ActorLabel, LoadMoreFooter, PageHeader } from "../ui";
+import { ActorLabel, LoadMoreFooter, PageHeader, StockStateBadge } from "../ui";
 
 type Low = FunctionReturnType<typeof api.stock.lowStock>[number];
 type Movement = FunctionReturnType<typeof api.stock.movements>["page"][number];
@@ -72,6 +72,8 @@ export function StockAdmin() {
   );
   const [adjusting, setAdjusting] = useState<Low | null>(null);
   const fallback = settings?.commerce.lowStockDefault ?? 3;
+  const out = low?.filter((r) => r.stockState === "out_of_stock");
+  const few = low?.filter((r) => r.stockState !== "out_of_stock");
 
   const lowColumns = useMemo<ColumnDef<Low, unknown>[]>(
     () => [
@@ -91,13 +93,28 @@ export function StockAdmin() {
       {
         accessorKey: "stockState",
         header: "Stanje",
+        cell: ({ row }) => <StockStateBadge state={row.original.stockState} />,
+      },
+      {
+        accessorKey: "stockQty",
+        header: "Kom.",
+        meta: { align: "right" },
         cell: ({ row }) => (
-          <Badge tone={STOCK_STATE_TONE[row.original.stockState]}>
-            {STOCK_STATE_LABEL[row.original.stockState]}
-          </Badge>
+          <button
+            type="button"
+            onClick={() => setAdjusting(row.original)}
+            aria-label={`Promeni stanje za ${row.original.sku}, trenutno ${row.original.stockQty} kom.`}
+            className="group inline-flex h-8 min-w-16 items-center justify-end gap-1.5 rounded-xs border border-transparent px-2 tabular-nums text-ink-1 transition-control hover:border-control focus-ring"
+          >
+            <PencilSimpleIcon
+              size={14}
+              aria-hidden="true"
+              className="text-ink-3 opacity-0 transition-control group-hover:opacity-100 group-focus-visible:opacity-100"
+            />
+            {row.original.stockQty}
+          </button>
         ),
       },
-      { accessorKey: "stockQty", header: "Kom.", meta: { align: "right" } },
       {
         id: "threshold",
         header: "Prag",
@@ -105,18 +122,20 @@ export function StockAdmin() {
         meta: { align: "right" },
         cell: ({ row }) => <ThresholdCell row={row.original} fallback={fallback} />,
       },
-      {
-        id: "actions",
-        header: () => <span className="sr-only">Radnje</span>,
-        enableSorting: false,
-        cell: ({ row }) => (
-          <Button size="sm" variant="secondary" onClick={() => setAdjusting(row.original)}>
-            Promeni stanje
-          </Button>
-        ),
-      },
     ],
     [fallback],
+  );
+
+  const lowTable = (rows: Low[] | undefined, caption: string, empty: string) => (
+    <DataTable
+      className="mt-4"
+      caption={caption}
+      columns={lowColumns}
+      data={rows ?? []}
+      getRowId={(r) => r.productId}
+      loading={rows === undefined}
+      empty={<p className="py-10 text-center type-body-s text-ink-2">{empty}</p>}
+    />
   );
 
   const moveColumns = useMemo<ColumnDef<Movement, unknown>[]>(
@@ -190,28 +209,27 @@ export function StockAdmin() {
     <div className="flex flex-col gap-4">
       <PageHeader
         title="Lager"
-        description={`Artikli bez zaliha i sa malo zaliha (prag ${fallback} kom. ako artikal nema svoj) i svaka promena stanja sa razlogom.`}
+        description={`Artikli bez zaliha i sa malo zaliha (prag ${fallback} kom. ako artikal nema svoj) i svaka promena stanja sa razlogom. Količinu i prag menjate direktno u redu.`}
       />
       <Tabs
         label="Lager"
         items={[
           {
+            value: "bez",
+            label: `Bez zaliha${out ? ` (${out.length})` : ""}`,
+            content: lowTable(
+              out,
+              "Aktivni artikli bez zaliha",
+              "Nijedan aktivan artikal nije bez zaliha.",
+            ),
+          },
+          {
             value: "malo",
-            label: `Malo na stanju${low ? ` (${low.length})` : ""}`,
-            content: (
-              <DataTable
-                className="mt-4"
-                caption="Artikli sa malo ili bez zaliha"
-                columns={lowColumns}
-                data={low ?? []}
-                getRowId={(r) => r.productId}
-                loading={low === undefined}
-                empty={
-                  <p className="py-10 text-center type-body-s text-ink-2">
-                    Svi aktivni artikli imaju dovoljno zaliha.
-                  </p>
-                }
-              />
+            label: `Malo na stanju${few ? ` (${few.length})` : ""}`,
+            content: lowTable(
+              few,
+              "Aktivni artikli sa malo zaliha",
+              "Svi aktivni artikli imaju zalihe iznad praga.",
             ),
           },
           {
@@ -219,18 +237,19 @@ export function StockAdmin() {
             label: "Kretanje zaliha",
             content: (
               <div className="mt-4 flex flex-col gap-3">
-                <Select
-                  size="sm"
-                  aria-label="Razlog promene"
-                  placeholder="Svi razlozi"
-                  value={reason}
-                  onChange={(e) => setReason(e.target.value)}
-                  options={Object.entries(STOCK_REASON_LABEL).map(([value, label]) => ({
-                    value,
-                    label,
-                  }))}
-                  className="w-60"
-                />
+                <div className="w-60">
+                  <Select
+                    size="sm"
+                    aria-label="Razlog promene"
+                    placeholder="Svi razlozi"
+                    value={reason}
+                    onChange={(e) => setReason(e.target.value)}
+                    options={Object.entries(STOCK_REASON_LABEL).map(([value, label]) => ({
+                      value,
+                      label,
+                    }))}
+                  />
+                </div>
                 <DataTable
                   caption="Kretanje zaliha"
                   columns={moveColumns}
@@ -247,7 +266,7 @@ export function StockAdmin() {
                   shown={results.length}
                   status={status}
                   onMore={loadMore}
-                  noun="promena"
+                  forms={["promena", "promene", "promena"]}
                 />
               </div>
             ),

@@ -90,7 +90,7 @@ export const STOCK_STATE_LABEL = {
 export const STOCK_STATE_TONE: Readonly<Record<keyof typeof STOCK_STATE_LABEL, BadgeTone>> = {
   in_stock: "success",
   low_stock: "warning",
-  out_of_stock: "danger",
+  out_of_stock: "neutral",
   on_order: "info",
 };
 
@@ -105,6 +105,14 @@ export const STOCK_REASON_LABEL = {
   correction: "Korekcija (popis)",
   receipt: "Prijem robe",
   return: "Povrat",
+} as const;
+
+export const COMPANY_FIELD_LABEL = {
+  legalName: "pun naziv firme",
+  pib: "PIB",
+  address: "adresa sedišta",
+  phone: "telefon",
+  bankAccount: "tekući račun",
 } as const;
 
 export const ACTOR_TYPE_LABEL = {

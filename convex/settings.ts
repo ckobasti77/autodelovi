@@ -4,6 +4,7 @@
  */
 import { v } from "convex/values";
 
+import { SETTINGS_SECTION_LABEL } from "../lib/i18n/sr/auditLabels";
 import { audit, diffFields } from "./lib/audit";
 import { actorOf } from "./lib/authz";
 import { emitEvent } from "./lib/events";
@@ -162,7 +163,7 @@ export const updateSection = ownerMutation({
       action: "settings.update",
       entityType: "settings",
       entityId: update.section,
-      summary: `Izmenjena podešavanja: ${update.section}`,
+      summary: `Izmenjena podešavanja: ${SETTINGS_SECTION_LABEL[update.section] ?? update.section}`,
       diff,
     });
     await emitEvent(ctx, {

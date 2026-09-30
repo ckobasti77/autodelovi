@@ -15,7 +15,7 @@ import { api } from "@/convex/_generated/api";
 import type { Id } from "@/convex/_generated/dataModel";
 import { compactDate, parsePercent } from "@/lib/admin/format";
 import { formatRSD } from "@/lib/format/money";
-import { STOCK_STATE_LABEL, STOCK_STATE_TONE } from "@/lib/i18n/sr/admin";
+import { STOCK_STATE_LABEL } from "@/lib/i18n/sr/admin";
 import { QUALITY_LABEL } from "@/lib/i18n/sr/catalog";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
 import { Badge } from "@/components/ui/Badge";
@@ -38,7 +38,14 @@ import { ADMIN, ROUTES } from "@/constants/routes";
 
 import { FiltersPopover } from "../FiltersPopover";
 import { useDebouncedValue, useNowMinute } from "../hooks";
-import { DemoTag, LoadMoreFooter, PageHeader, SearchField, SegmentedFilter } from "../ui";
+import {
+  DemoTag,
+  LoadMoreFooter,
+  PageHeader,
+  SearchField,
+  SegmentedFilter,
+  StockStateBadge,
+} from "../ui";
 import { useUrlFilters } from "../useUrlFilters";
 
 type Row = FunctionReturnType<typeof api.catalog.productsAdmin.list>["page"][number];
@@ -146,7 +153,10 @@ export function ProductsList() {
   const bulkRestore = useMutation(api.catalog.productsAdmin.bulkRestore);
   const duplicate = useMutation(api.catalog.productsAdmin.duplicate);
   const [selection, setSelection] = useState<RowSelectionState>({});
-  const [visibility, setVisibility] = useState<VisibilityState>({ updatedAt: false });
+  const [visibility, setVisibility] = useState<VisibilityState>({
+    fitments: false,
+    updatedAt: false,
+  });
   const [density, setDensity] = useState<"default" | "compact">("default");
   const [dialog, setDialog] = useState<"category" | "price" | null>(null);
   const [bulkCategoryId, setBulkCategoryId] = useState("");
@@ -215,6 +225,29 @@ export function ProductsList() {
         },
       },
       {
+        id: "stock",
+        accessorKey: "stockQty",
+        header: "Stanje",
+        meta: { align: "right" },
+        cell: ({ row }) => (
+          <span className="flex items-center justify-end gap-2">
+            {row.original.stockState !== "in_stock" ? (
+              <StockStateBadge state={row.original.stockState} />
+            ) : null}
+            <StockCell row={row.original} />
+          </span>
+        ),
+      },
+      {
+        id: "price",
+        accessorKey: "retailPricePara",
+        header: "Cena",
+        meta: { align: "right" },
+        cell: ({ getValue }) => (
+          <span className="whitespace-nowrap font-medium">{formatRSD(Number(getValue()))}</span>
+        ),
+      },
+      {
         id: "oem",
         accessorKey: "oemPrimary",
         header: "OEM",
@@ -230,7 +263,12 @@ export function ProductsList() {
         accessorKey: "categoryName",
         header: "Kategorija",
         cell: ({ row }) => (
-          <span className="whitespace-nowrap text-ink-2">{row.original.categoryName}</span>
+          <span
+            className="block max-w-[11rem] truncate text-ink-2"
+            title={row.original.categoryName}
+          >
+            {row.original.categoryName}
+          </span>
         ),
       },
       {
@@ -242,31 +280,6 @@ export function ProductsList() {
             <span className="text-ink-1">{row.original.manufacturerName}</span>
             <span className="type-caption text-ink-3">{QUALITY_LABEL[row.original.quality]}</span>
           </span>
-        ),
-      },
-      {
-        id: "stock",
-        accessorKey: "stockQty",
-        header: "Stanje",
-        meta: { align: "right" },
-        cell: ({ row }) => (
-          <span className="flex items-center justify-end gap-2">
-            {row.original.stockState !== "in_stock" ? (
-              <Badge tone={STOCK_STATE_TONE[row.original.stockState]}>
-                {STOCK_STATE_LABEL[row.original.stockState]}
-              </Badge>
-            ) : null}
-            <StockCell row={row.original} />
-          </span>
-        ),
-      },
-      {
-        id: "price",
-        accessorKey: "retailPricePara",
-        header: "Cena",
-        meta: { align: "right" },
-        cell: ({ getValue }) => (
-          <span className="whitespace-nowrap font-medium">{formatRSD(Number(getValue()))}</span>
         ),
       },
       {
@@ -525,7 +538,12 @@ export function ProductsList() {
           </p>
         }
       />
-      <LoadMoreFooter shown={results.length} status={status} onMore={loadMore} noun="artikala" />
+      <LoadMoreFooter
+        shown={results.length}
+        status={status}
+        onMore={loadMore}
+        forms={["artikal", "artikla", "artikala"]}
+      />
 
       <Dialog
         open={dialog === "category"}

@@ -256,8 +256,8 @@ export async function completeQuoteAcceptance(
     "quote_accepted",
     actor,
     staff
-      ? `Ponuda v${quote.version} pretvorena u porudžbinu ${order.number}`
-      : `Prihvaćena ponuda v${quote.version}`,
+      ? `Ponuda br. ${quote.version} pretvorena u porudžbinu ${order.number}`
+      : `Prihvaćena ponuda br. ${quote.version}`,
     false,
   );
   await emitEvent(ctx, {

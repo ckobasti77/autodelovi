@@ -160,13 +160,13 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
               data-testid="admin-settings-legal-name"
             />
           </Field>
-          <Field label="Kratak naziv" optional>
+          <Field label="Kratak naziv">
             <Input
               value={c.displayName ?? ""}
               onChange={(e) => setC({ displayName: opt(e.target.value) })}
             />
           </Field>
-          <Field label="PIB" optional>
+          <Field label="PIB">
             <Input
               value={c.pib ?? ""}
               onChange={(e) => setC({ pib: opt(e.target.value) })}
@@ -174,7 +174,7 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
               inputClassName="font-mono"
             />
           </Field>
-          <Field label="Matični broj" optional>
+          <Field label="Matični broj">
             <Input
               value={c.mb ?? ""}
               onChange={(e) => setC({ mb: opt(e.target.value) })}
@@ -203,24 +203,24 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
               />
             </Field>
           </div>
-          <Field label="E-pošta" optional>
+          <Field label="E-pošta">
             <Input
               type="email"
               value={c.email ?? ""}
               onChange={(e) => setC({ email: opt(e.target.value) })}
             />
           </Field>
-          <Field label="Link ka mapi" optional help="Google Maps link radnje.">
+          <Field label="Link ka mapi" help="Google Maps link radnje.">
             <Input value={c.mapUrl ?? ""} onChange={(e) => setC({ mapUrl: opt(e.target.value) })} />
           </Field>
-          <Field label="Viber broj" optional>
+          <Field label="Viber broj">
             <Input
               value={c.viber ?? ""}
               onChange={(e) => setC({ viber: opt(e.target.value) })}
               inputMode="tel"
             />
           </Field>
-          <Field label="WhatsApp broj" optional>
+          <Field label="WhatsApp broj">
             <Input
               value={c.whatsapp ?? ""}
               onChange={(e) => setC({ whatsapp: opt(e.target.value) })}
@@ -229,7 +229,6 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
           </Field>
           <Field
             label="Napomena o registraciji"
-            optional
             help="npr. „Registrovano u APR, BD 12345/2020“"
             className="md:col-span-2"
           >
@@ -797,7 +796,7 @@ function CommerceTab({ s, can }: { s: Settings; can: boolean }) {
                     className="h-9"
                   />
                 </Field>
-                <Field label="Besplatno preko" optional>
+                <Field label="Besplatno preko">
                   <Input
                     value={moneyInputValue(d.freeOverPara ?? null)}
                     onChange={(e) => {
@@ -1194,7 +1193,7 @@ function TrackingTab({ s, can }: { s: Settings; can: boolean }) {
         description="Sve je isključeno dok je polje prazno. Kodovi se učitavaju tek kad posetilac pristane na kolačiće."
       >
         <div className="grid gap-4 md:grid-cols-2">
-          <Field label="Google Analytics 4 (Measurement ID)" optional error={errors.ga4Id}>
+          <Field label="Google Analytics 4 (Measurement ID)" error={errors.ga4Id}>
             <Input
               value={d.ga4Id ?? ""}
               onChange={(e) => t.setDraft({ ...d, ga4Id: opt(e.target.value) })}
@@ -1203,7 +1202,7 @@ function TrackingTab({ s, can }: { s: Settings; can: boolean }) {
               data-testid="admin-settings-ga4"
             />
           </Field>
-          <Field label="Google Ads (Conversion ID)" optional error={errors.gadsId}>
+          <Field label="Google Ads (Conversion ID)" error={errors.gadsId}>
             <Input
               value={d.gadsId ?? ""}
               onChange={(e) => t.setDraft({ ...d, gadsId: opt(e.target.value) })}
@@ -1215,7 +1214,6 @@ function TrackingTab({ s, can }: { s: Settings; can: boolean }) {
             <Field
               key={k}
               label={`Google Ads oznaka: ${{ purchase: "porudžbina", lead: "upit", mechanicSignup: "registracija majstora" }[k]}`}
-              optional
             >
               <Input
                 value={d.gadsLabels[k] ?? ""}
@@ -1226,13 +1224,13 @@ function TrackingTab({ s, can }: { s: Settings; can: boolean }) {
               />
             </Field>
           ))}
-          <Field label="Naziv konverzije za offline uvoz" optional>
+          <Field label="Naziv konverzije za offline uvoz">
             <Input
               value={d.gadsOfflineConversionName ?? ""}
               onChange={(e) => t.setDraft({ ...d, gadsOfflineConversionName: opt(e.target.value) })}
             />
           </Field>
-          <Field label="Meta Pixel ID" optional error={errors.metaPixelId}>
+          <Field label="Meta Pixel ID" error={errors.metaPixelId}>
             <Input
               value={d.metaPixelId ?? ""}
               onChange={(e) => t.setDraft({ ...d, metaPixelId: opt(e.target.value) })}
@@ -1242,7 +1240,6 @@ function TrackingTab({ s, can }: { s: Settings; can: boolean }) {
           </Field>
           <Field
             label="Meta test event kod"
-            optional
             help="Samo za proveru u Events Manageru; obrišite posle testa."
           >
             <Input
@@ -1451,7 +1448,7 @@ function PageEditor({
               showCount={false}
               value={f.bodyMd}
               onChange={(e) => setF({ ...f, bodyMd: e.target.value })}
-              className="font-mono text-[0.8125rem]"
+              className="font-mono [&_textarea]:text-[0.8125rem] [&_textarea]:leading-relaxed"
             />
           </Field>
           <div className="flex flex-col gap-1">
