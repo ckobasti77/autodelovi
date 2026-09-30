@@ -1,7 +1,7 @@
 /**
  * Demo data lifecycle (docs/DATA-MODEL.md demo invariant, ARCHITECTURE §E8): every seeded
- * product, user, mechanic profile, order, inquiry, cart, subscription and notification is
- * `isDemo`; reference data (vehicles, categories, manufacturers, tiers) stays.
+ * product, user, mechanic profile, order, inquiry, cart, subscription, notification and
+ * logged e-mail is `isDemo`; reference data (vehicles, categories, manufacturers, tiers) stays.
  * Removal runs in self-rescheduling chunks so it never hits transaction limits.
  */
 import { v } from "convex/values";
@@ -24,6 +24,7 @@ const PHASES = [
   "carts",
   "subscriptions",
   "notifications",
+  "emails",
   "mechanics",
   "users",
   "products",
@@ -36,6 +37,7 @@ const phaseV = v.union(
   v.literal("carts"),
   v.literal("subscriptions"),
   v.literal("notifications"),
+  v.literal("emails"),
   v.literal("mechanics"),
   v.literal("users"),
   v.literal("products"),
@@ -203,6 +205,14 @@ async function runPhase(ctx: MutationCtx, phase: Phase): Promise<boolean> {
         .withIndex("by_isDemo", (q) => q.eq("isDemo", true))
         .take(CHUNK * 10);
       for (const r of rows) await ctx.db.delete("notifications", r._id);
+      return rows.length < CHUNK * 10;
+    }
+    case "emails": {
+      const rows = await ctx.db
+        .query("emailLog")
+        .withIndex("by_isDemo", (q) => q.eq("isDemo", true))
+        .take(CHUNK * 10);
+      for (const r of rows) await ctx.db.delete("emailLog", r._id);
       return rows.length < CHUNK * 10;
     }
     case "mechanics": {

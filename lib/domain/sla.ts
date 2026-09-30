@@ -61,3 +61,35 @@ export function slaLevel(elapsedMinutes: number, targetMinutes: number): SlaLeve
   if (elapsedMinutes >= targetMinutes * 0.75) return "soon";
   return "ok";
 }
+
+/** True when `ms` falls inside the Belgrade opening hours (not a holiday, day open). */
+export function isWithinOpeningHours(
+  ms: number,
+  hours: OpeningHours,
+  holidays: readonly string[] = [],
+): boolean {
+  const p = belgradeParts(ms);
+  const dayKey = `${p.year}-${String(p.month).padStart(2, "0")}-${String(p.day).padStart(2, "0")}`;
+  if (holidays.includes(dayKey)) return false;
+  const rule = hours.find((h) => h.day === p.weekday && !h.closed);
+  if (!rule) return false;
+  const o = hm(rule.open);
+  const c = hm(rule.close);
+  if (!o || !c) return false;
+  const minute = p.hour * 60 + p.minute;
+  return minute >= o.h * 60 + o.m && minute < c.h * 60 + c.m;
+}
+
+/** Extra working minutes after the first reminder before the second (escalation) one. */
+export const REMINDER_ESCALATION_MINUTES = 120;
+
+/**
+ * Reminder level owed for an item waiting `workingMinutes`: 0 none, 1 at the target,
+ * 2 at target + 120 working minutes (NOTIFICATIONS §I2 „reminders“).
+ */
+export function reminderLevelFor(workingMinutes: number, targetMinutes: number): 0 | 1 | 2 {
+  if (targetMinutes <= 0) return 0;
+  if (workingMinutes >= targetMinutes + REMINDER_ESCALATION_MINUTES) return 2;
+  if (workingMinutes >= targetMinutes) return 1;
+  return 0;
+}

@@ -265,6 +265,13 @@ export const eventTypeV = v.union(
   v.literal("content.changed"),
   v.literal("user.registered"),
   v.literal("import.completed"),
+  // Step 18: automations and delivery feedback.
+  v.literal("quote.expiring"),
+  v.literal("reminder.due"),
+  v.literal("digest.daily"),
+  v.literal("stock.low_digest"),
+  v.literal("email.bounced"),
+  v.literal("email.complained"),
 );
 export type EventType = Infer<typeof eventTypeV>;
 
@@ -352,6 +359,50 @@ export const importEventPayloadV = v.object({
   deactivated: v.number(),
 });
 
+/** Staff reminder for an order in `nova` or an inquiry in `nov` (reminders cron). */
+export const reminderEventPayloadV = v.object({
+  kind: v.literal("reminder"),
+  target: v.union(v.literal("order"), v.literal("inquiry")),
+  orderId: v.optional(v.id("orders")),
+  inquiryId: v.optional(v.id("inquiries")),
+  number: v.string(),
+  level: v.number(),
+  workingMinutes: v.number(),
+});
+
+/** Daily staff digest for a Belgrade day (`YYYY-MM-DD`, the day being summarised). */
+export const digestEventPayloadV = v.object({
+  kind: v.literal("digest"),
+  day: v.string(),
+});
+
+/** Batched low-stock e-mail (≤ 1 per hour). */
+export const stockBatchEventPayloadV = v.object({
+  kind: v.literal("stock_batch"),
+  items: v.array(
+    v.object({
+      productId: v.id("products"),
+      sku: v.string(),
+      name: v.string(),
+      qty: v.number(),
+    }),
+  ),
+  total: v.number(),
+});
+
+/** Delivery feedback from the Resend webhook. */
+export const emailEventPayloadV = v.object({
+  kind: v.literal("email"),
+  emailLogId: v.id("emailLog"),
+  to: v.string(),
+  subject: v.string(),
+  relatedType: v.optional(v.string()),
+  relatedId: v.optional(v.string()),
+  /** Admin page of the related order / inquiry / mechanic. */
+  href: v.optional(v.string()),
+  reason: v.optional(v.string()),
+});
+
 export const eventPayloadV = v.union(
   orderEventPayloadV,
   inquiryEventPayloadV,
@@ -360,5 +411,9 @@ export const eventPayloadV = v.union(
   catalogEventPayloadV,
   userEventPayloadV,
   importEventPayloadV,
+  reminderEventPayloadV,
+  digestEventPayloadV,
+  stockBatchEventPayloadV,
+  emailEventPayloadV,
 );
 export type EventPayload = Infer<typeof eventPayloadV>;

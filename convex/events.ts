@@ -1,7 +1,12 @@
 /**
- * Outbox dispatcher (docs/NOTIFICATIONS.md §I1). Step 05 scope: in-app notifications only;
- * e-mail, Meta CAPI and cache revalidation channels are added in steps 18–19 on top of the
- * same idempotency ledger (`notificationDeliveries`).
+ * Outbox dispatcher (docs/NOTIFICATIONS.md §I1–I2).
+ *
+ * `dispatch` resolves recipients (settings + staff preferences) for one event, writes the
+ * idempotency ledger `notificationDeliveries` (unique per event × channel × recipient),
+ * creates in-app notifications inline and schedules one `notify.deliverEmail` per e-mail
+ * recipient (rendering, sending and per-recipient retries live there). A failed dispatch
+ * retries with backoff (1 min, 5 min, 30 min, 2 h, 12 h) and is `dead` after 5 attempts;
+ * `sweep` (every minute) re-dispatches due `pending`/`failed` events.
  */
 import { v } from "convex/values";
 
@@ -9,12 +14,23 @@ import { internal } from "./_generated/api";
 import type { Doc, Id } from "./_generated/dataModel";
 import { internalMutation, type MutationCtx } from "./_generated/server";
 import { formatRsdPlain } from "../lib/domain/money";
+import { normalizeEmail, isValidEmail } from "../lib/domain/identifiers";
+import type { TemplateKey } from "../lib/email/registry";
+import { getSettings } from "./lib/settings";
+import type { Settings } from "./lib/settingsSchema";
 
-const RETRY_DELAYS_MS = [60_000, 5 * 60_000, 30 * 60_000, 2 * 3_600_000, 12 * 3_600_000];
-const MAX_ATTEMPTS = RETRY_DELAYS_MS.length;
+export const RETRY_DELAYS_MS = [60_000, 5 * 60_000, 30 * 60_000, 2 * 3_600_000, 12 * 3_600_000];
+export const MAX_ATTEMPTS = RETRY_DELAYS_MS.length;
 const MAX_STAFF_RECIPIENTS = 50;
+const MAX_BACK_IN_STOCK_PER_EVENT = 200;
 
-type StaffPrefKey = "orderNew" | "inquiryNew" | "mechanicNew" | "lowStock" | "reminders";
+/** Delay before retry number `attempts` (1-based count of failed attempts so far). */
+export function retryDelayMs(attempts: number): number {
+  return RETRY_DELAYS_MS[Math.min(Math.max(attempts, 1) - 1, RETRY_DELAYS_MS.length - 1)]!;
+}
+
+export type StaffPrefKey = "orderNew" | "inquiryNew" | "mechanicNew" | "lowStock" | "reminders";
+export type EmailPrefKey = StaffPrefKey | "digest";
 
 type InAppMessage = {
   kind: string;
@@ -25,7 +41,7 @@ type InAppMessage = {
   pref?: StaffPrefKey;
 };
 
-/** Staff-facing in-app message for an event, or null when staff are not notified. */
+/** Staff-facing in-app message for an event, or null when staff are not notified in-app. */
 export function staffMessage(event: Doc<"domainEvents">): InAppMessage | null {
   const p = event.payload;
   switch (event.type) {
@@ -104,6 +120,28 @@ export function staffMessage(event: Doc<"domainEvents">): InAppMessage | null {
         href: `/admin/proizvodi/${p.productId}`,
         pref: "lowStock",
       };
+    case "reminder.due": {
+      if (p.kind !== "reminder") return null;
+      const isOrder = p.target === "order";
+      return {
+        kind: "reminder",
+        title: `${p.level >= 2 ? "Drugi podsetnik" : "Podsetnik"}: ${isOrder ? `porudžbina ${p.number} čeka potvrdu` : `upit ${p.number} čeka odgovor`}`,
+        body: `Čeka ${Math.floor(p.workingMinutes / 60)} h ${p.workingMinutes % 60} min radnog vremena.`,
+        href: isOrder ? `/admin/porudzbine/${p.number}` : `/admin/upiti/${p.number}`,
+        pref: "reminders",
+      };
+    }
+    case "email.bounced":
+    case "email.complained": {
+      if (p.kind !== "email") return null;
+      const bounced = event.type === "email.bounced";
+      return {
+        kind: bounced ? "email_bounced" : "email_complained",
+        title: bounced ? `E-pošta nije isporučena: ${p.to}` : `Prijava neželjene pošte: ${p.to}`,
+        body: `${p.subject}${p.reason ? ` — ${p.reason}` : ""}. Kontaktirajte kupca telefonom.`,
+        href: p.href ?? "/admin/mejlovi",
+      };
+    }
     case "import.completed": {
       if (p.kind !== "import") return null;
       const extra = [
@@ -160,22 +198,70 @@ export function mechanicMessage(
   }
 }
 
-/** Notifications about demo records are flagged so „Obriši demo podatke“ removes them. */
-async function aggregateIsDemo(ctx: MutationCtx, event: Doc<"domainEvents">): Promise<boolean> {
+const ORDER_STATUS_TEMPLATE: Partial<Record<string, TemplateKey>> = {
+  potvrdjena: "order_confirmed",
+  ceka_deo: "order_backordered",
+  spremna_za_preuzimanje: "order_ready_pickup",
+  poslata: "order_shipped",
+  isporucena: "order_delivered",
+  preuzeta: "order_delivered",
+  otkazana: "order_cancelled",
+};
+
+/** Staff e-mail template for an event and the preference that gates it. */
+export function staffEmailFor(
+  event: Doc<"domainEvents">,
+): { templateKey: TemplateKey; pref: EmailPrefKey } | null {
+  switch (event.type) {
+    case "order.created":
+      return { templateKey: "staff_order_new", pref: "orderNew" };
+    case "inquiry.created":
+      return { templateKey: "staff_inquiry_new", pref: "inquiryNew" };
+    case "mechanic.registered":
+      return { templateKey: "staff_mechanic_new", pref: "mechanicNew" };
+    case "quote.accepted":
+      return { templateKey: "staff_quote_accepted", pref: "orderNew" };
+    case "quote.renewal_requested":
+      return { templateKey: "staff_quote_renewal", pref: "inquiryNew" };
+    case "stock.low_digest":
+      return { templateKey: "staff_low_stock", pref: "lowStock" };
+    case "digest.daily":
+      return { templateKey: "staff_daily_digest", pref: "digest" };
+    case "reminder.due":
+      return { templateKey: "staff_reminder", pref: "reminders" };
+    default:
+      return null;
+  }
+}
+
+type AggregateFlags = { isDemo: boolean; isTest: boolean };
+
+/** Demo notifications are removable; demo and e2e aggregates are only ever logged. */
+async function aggregateFlags(ctx: MutationCtx, event: Doc<"domainEvents">): Promise<AggregateFlags> {
   const p = event.payload;
+  const flags = (doc: { isDemo?: boolean; isTest?: boolean } | null | undefined) => ({
+    isDemo: doc?.isDemo ?? false,
+    isTest: doc?.isTest ?? false,
+  });
   switch (p.kind) {
     case "order":
-      return (await ctx.db.get("orders", p.orderId))?.isDemo ?? false;
+      return flags(await ctx.db.get("orders", p.orderId));
     case "inquiry":
-      return (await ctx.db.get("inquiries", p.inquiryId))?.isDemo ?? false;
+      return flags(await ctx.db.get("inquiries", p.inquiryId));
     case "mechanic":
-      return (await ctx.db.get("mechanicProfiles", p.profileId))?.isDemo ?? false;
+      return flags(await ctx.db.get("mechanicProfiles", p.profileId));
     case "stock":
-      return (await ctx.db.get("products", p.productId))?.isDemo ?? false;
+      return flags(await ctx.db.get("products", p.productId));
     case "catalog":
-      return p.productId ? ((await ctx.db.get("products", p.productId))?.isDemo ?? false) : false;
+      return p.productId ? flags(await ctx.db.get("products", p.productId)) : flags(null);
+    case "reminder":
+      return p.orderId
+        ? flags(await ctx.db.get("orders", p.orderId))
+        : p.inquiryId
+          ? flags(await ctx.db.get("inquiries", p.inquiryId))
+          : flags(null);
     default:
-      return false;
+      return flags(null);
   }
 }
 
@@ -214,7 +300,33 @@ async function deliverInApp(
   });
 }
 
-async function staffRecipients(ctx: MutationCtx): Promise<Doc<"users">[]> {
+/** Queues one e-mail delivery (idempotent per event × recipient). */
+async function queueEmail(
+  ctx: MutationCtx,
+  eventId: Id<"domainEvents">,
+  recipient: string,
+  templateKey: TemplateKey,
+): Promise<boolean> {
+  const existing = await ctx.db
+    .query("notificationDeliveries")
+    .withIndex("by_eventId_and_channel_and_recipient", (q) =>
+      q.eq("eventId", eventId).eq("channel", "email").eq("recipient", recipient),
+    )
+    .unique();
+  if (existing) return false;
+  const deliveryId = await ctx.db.insert("notificationDeliveries", {
+    eventId,
+    channel: "email",
+    recipient,
+    templateKey,
+    status: "pending",
+    attempts: 0,
+  });
+  await ctx.scheduler.runAfter(0, internal.notify.deliverEmail, { deliveryId });
+  return true;
+}
+
+export async function staffRecipients(ctx: MutationCtx): Promise<Doc<"users">[]> {
   const owners = await ctx.db
     .query("users")
     .withIndex("by_role", (q) => q.eq("role", "owner"))
@@ -226,32 +338,151 @@ async function staffRecipients(ctx: MutationCtx): Promise<Doc<"users">[]> {
   return [...owners, ...staff].filter((u) => u.status !== "blocked");
 }
 
+async function staffPrefs(ctx: MutationCtx, userId: Id<"users">) {
+  return await ctx.db
+    .query("staffPreferences")
+    .withIndex("by_userId", (q) => q.eq("userId", userId))
+    .unique();
+}
+
+/**
+ * Staff e-mail addresses for a preference: every active owner/staff account whose own
+ * preference is on, plus the shared addresses from settings (deduplicated; an address that
+ * belongs to a staff account follows that account's preference). Global switches: the digest
+ * (`digestEnabled`) and low-stock e-mails (`lowStockEmail`).
+ */
+export async function staffEmailRecipients(
+  ctx: MutationCtx,
+  pref: EmailPrefKey,
+  settings: Settings,
+): Promise<string[]> {
+  if (pref === "digest" && !settings.notifications.digestEnabled) return [];
+  if (pref === "lowStock" && !settings.notifications.lowStockEmail) return [];
+  const wanted = new Map<string, boolean>();
+  for (const user of await staffRecipients(ctx)) {
+    if (!user.email) continue;
+    const email = normalizeEmail(user.email);
+    if (!isValidEmail(email)) continue;
+    const prefs = await staffPrefs(ctx, user._id);
+    wanted.set(email, prefs ? prefs.email[pref] : true);
+  }
+  for (const raw of settings.notifications.staffEmails) {
+    const email = normalizeEmail(raw);
+    if (isValidEmail(email) && !wanted.has(email)) wanted.set(email, true);
+  }
+  return [...wanted].filter(([, on]) => on).map(([email]) => email);
+}
+
 async function staffWantsInApp(
   ctx: MutationCtx,
   userId: Id<"users">,
   pref: StaffPrefKey | undefined,
 ): Promise<boolean> {
   if (!pref) return true;
-  const prefs = await ctx.db
-    .query("staffPreferences")
-    .withIndex("by_userId", (q) => q.eq("userId", userId))
-    .unique();
+  const prefs = await staffPrefs(ctx, userId);
   return prefs ? prefs.inApp[pref] : true;
 }
 
+/** Customer / applicant / subscriber e-mails for an event. */
+async function customerEmails(
+  ctx: MutationCtx,
+  event: Doc<"domainEvents">,
+): Promise<{ recipient: string; templateKey: TemplateKey }[]> {
+  const p = event.payload;
+  switch (event.type) {
+    case "order.created":
+    case "order.status_changed": {
+      if (p.kind !== "order") return [];
+      const templateKey =
+        event.type === "order.created" ? "order_received" : p.to ? ORDER_STATUS_TEMPLATE[p.to] : undefined;
+      if (!templateKey) return [];
+      const order = await ctx.db.get("orders", p.orderId);
+      return order ? [{ recipient: normalizeEmail(order.contact.email), templateKey }] : [];
+    }
+    case "inquiry.created":
+    case "quote.sent":
+    case "quote.expiring": {
+      if (p.kind !== "inquiry") return [];
+      const inquiry = await ctx.db.get("inquiries", p.inquiryId);
+      if (!inquiry?.contact.email) return [];
+      const templateKey: TemplateKey =
+        event.type === "inquiry.created"
+          ? "inquiry_received"
+          : event.type === "quote.sent"
+            ? "quote_ready"
+            : "quote_expiring";
+      return [{ recipient: normalizeEmail(inquiry.contact.email), templateKey }];
+    }
+    case "mechanic.registered":
+    case "mechanic.approved":
+    case "mechanic.rejected":
+    case "mechanic.suspended": {
+      if (p.kind !== "mechanic") return [];
+      const profile = await ctx.db.get("mechanicProfiles", p.profileId);
+      if (!profile) return [];
+      const templateKey: TemplateKey =
+        event.type === "mechanic.registered"
+          ? "mechanic_registration_received"
+          : event.type === "mechanic.approved"
+            ? "mechanic_approved"
+            : event.type === "mechanic.rejected"
+              ? "mechanic_rejected"
+              : "mechanic_suspended";
+      return [{ recipient: normalizeEmail(profile.email), templateKey }];
+    }
+    case "stock.back_in_stock": {
+      if (p.kind !== "stock") return [];
+      const subs = await ctx.db
+        .query("backInStockSubscriptions")
+        .withIndex("by_productId_and_status", (q) =>
+          q.eq("productId", p.productId).eq("status", "active"),
+        )
+        .take(MAX_BACK_IN_STOCK_PER_EVENT);
+      // One delivery per subscription; the recipient key carries the subscription id.
+      return subs.map((s) => ({ recipient: `sub:${s._id}`, templateKey: "back_in_stock" as const }));
+    }
+    default:
+      return [];
+  }
+}
+
 async function processEvent(ctx: MutationCtx, event: Doc<"domainEvents">): Promise<void> {
+  const flags = await aggregateFlags(ctx, event);
+  const settings = await getSettings(ctx);
+
+  // In-app: staff (with preferences) and the mechanic whose profile changed.
   const staff = staffMessage(event);
-  const mechanic = mechanicMessage(event);
-  if (!staff && !mechanic) return;
-  const isDemo = await aggregateIsDemo(ctx, event);
   if (staff) {
+    const initiator = event.type === "import.completed" ? event.actor?.userId : undefined;
     for (const user of await staffRecipients(ctx)) {
+      if (initiator && user._id !== initiator) continue;
       if (await staffWantsInApp(ctx, user._id, staff.pref)) {
-        await deliverInApp(ctx, event, user._id, staff, isDemo);
+        await deliverInApp(ctx, event, user._id, staff, flags.isDemo);
       }
     }
   }
-  if (mechanic) await deliverInApp(ctx, event, mechanic.userId, mechanic, isDemo);
+  const mechanic = mechanicMessage(event);
+  if (mechanic) await deliverInApp(ctx, event, mechanic.userId, mechanic, flags.isDemo);
+
+  // E-mail: customers / applicants / subscribers.
+  for (const target of await customerEmails(ctx, event)) {
+    if (target.recipient.startsWith("sub:") || isValidEmail(target.recipient)) {
+      await queueEmail(ctx, event._id, target.recipient, target.templateKey);
+    }
+  }
+
+  // E-mail: staff.
+  const staffEmail = staffEmailFor(event);
+  if (staffEmail) {
+    // An accepted quote already e-mails staff („Ponuda prihvaćena“) for the order it creates.
+    if (event.type === "order.created" && event.payload.kind === "order") {
+      const order = await ctx.db.get("orders", event.payload.orderId);
+      if (order?.source === "inquiry") return;
+    }
+    for (const email of await staffEmailRecipients(ctx, staffEmail.pref, settings)) {
+      await queueEmail(ctx, event._id, email, staffEmail.templateKey);
+    }
+  }
 }
 
 export const dispatch = internalMutation({
@@ -277,8 +508,7 @@ export const dispatch = internalMutation({
         status: dead ? "dead" : "failed",
         attempts,
         lastError: message.slice(0, 500),
-        nextAttemptAt:
-          Date.now() + RETRY_DELAYS_MS[Math.min(attempts - 1, RETRY_DELAYS_MS.length - 1)],
+        nextAttemptAt: Date.now() + retryDelayMs(attempts),
       });
     }
     return null;

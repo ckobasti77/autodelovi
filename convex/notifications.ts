@@ -7,7 +7,16 @@ import { v } from "convex/values";
 import { notFound } from "./lib/errors";
 import { audit } from "./lib/audit";
 import { actorOf } from "./lib/authz";
-import { staffMutation, staffQuery, userMutation, userQuery } from "./lib/functions";
+import {
+  ownerMutation,
+  ownerQuery,
+  staffMutation,
+  staffQuery,
+  userMutation,
+  userQuery,
+} from "./lib/functions";
+import type { MutationCtx } from "./_generated/server";
+import type { Id } from "./_generated/dataModel";
 
 const notificationV = v.object({
   _id: v.id("notifications"),
@@ -124,28 +133,63 @@ export const preferences = staffQuery({
   },
 });
 
+type Prefs = { email: typeof DEFAULT_PREFS.email; inApp: typeof DEFAULT_PREFS.inApp };
+
+async function writePrefs(ctx: MutationCtx, userId: Id<"users">, prefs: Prefs) {
+  const row = await ctx.db
+    .query("staffPreferences")
+    .withIndex("by_userId", (q) => q.eq("userId", userId))
+    .unique();
+  const now = Date.now();
+  if (row) await ctx.db.patch("staffPreferences", row._id, { ...prefs, updatedAt: now });
+  else await ctx.db.insert("staffPreferences", { userId, ...prefs, updatedAt: now });
+}
+
 export const setPreferences = staffMutation({
   args: prefsV.fields,
   returns: v.null(),
   handler: async (ctx, prefs) => {
-    const row = await ctx.db
-      .query("staffPreferences")
-      .withIndex("by_userId", (q) => q.eq("userId", ctx.viewer.userId))
-      .unique();
-    const now = Date.now();
-    if (row) await ctx.db.patch("staffPreferences", row._id, { ...prefs, updatedAt: now });
-    else
-      await ctx.db.insert("staffPreferences", {
-        userId: ctx.viewer.userId,
-        ...prefs,
-        updatedAt: now,
-      });
+    await writePrefs(ctx, ctx.viewer.userId, prefs);
     await audit(ctx, {
       actor: actorOf(ctx.viewer),
       action: "notifications.preferences",
       entityType: "user",
       entityId: ctx.viewer.userId,
       summary: "Izmenjena podešavanja obaveštenja",
+    });
+    return null;
+  },
+});
+
+/** Owner: another staff member's preferences (Korisnici → Obaveštenja). */
+export const preferencesFor = ownerQuery({
+  args: { userId: v.id("users") },
+  returns: v.union(v.null(), prefsV),
+  handler: async (ctx, { userId }) => {
+    const user = await ctx.db.get("users", userId);
+    if (!user || (user.role !== "staff" && user.role !== "owner")) return null;
+    const row = await ctx.db
+      .query("staffPreferences")
+      .withIndex("by_userId", (q) => q.eq("userId", userId))
+      .unique();
+    return row ? { email: row.email, inApp: row.inApp } : DEFAULT_PREFS;
+  },
+});
+
+export const setPreferencesFor = ownerMutation({
+  args: { userId: v.id("users"), ...prefsV.fields },
+  returns: v.null(),
+  handler: async (ctx, { userId, ...prefs }) => {
+    const user = await ctx.db.get("users", userId);
+    if (!user || (user.role !== "staff" && user.role !== "owner"))
+      return notFound("Zaposleni ne postoji.");
+    await writePrefs(ctx, userId, prefs);
+    await audit(ctx, {
+      actor: actorOf(ctx.viewer),
+      action: "notifications.preferences_for",
+      entityType: "user",
+      entityId: userId,
+      summary: `Izmenjena obaveštenja za ${user.email ?? user.name ?? "zaposlenog"}`,
     });
     return null;
   },

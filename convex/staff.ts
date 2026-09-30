@@ -20,7 +20,12 @@ import {
   staffQuery,
   userMutation,
 } from "./lib/functions";
+import { emailContext, siteLink } from "../lib/email/context";
+import { sendTemplateNow } from "./lib/directEmail";
+import { resolveEmailConfig } from "./lib/emailConfig";
+import { siteUrl } from "./lib/env";
 import { enforceRateLimit } from "./lib/rateLimits";
+import { getSettings } from "./lib/settings";
 import { hashToken, isTokenShape, randomToken } from "./lib/tokens";
 import { roleV } from "./lib/validators";
 
@@ -127,7 +132,7 @@ export const listInvites = ownerQuery({
  */
 export const createInvite = ownerMutation({
   args: { email: v.string(), role: v.union(v.literal("staff"), v.literal("owner")) },
-  returns: v.object({ token: v.string(), expiresAt: v.number() }),
+  returns: v.object({ token: v.string(), expiresAt: v.number(), emailed: v.boolean() }),
   handler: async (ctx, { email, role }) => {
     const emailLower = normalizeEmail(email);
     if (!isValidEmail(emailLower)) invalid("Upišite ispravnu e-mail adresu.", "email");
@@ -164,7 +169,27 @@ export const createInvite = ownerMutation({
       entityId: inviteId,
       summary: `Pozivnica za ${emailLower} (${role === "owner" ? "vlasnik" : "zaposleni"})`,
     });
-    return { token, expiresAt };
+    // E-mailed only when delivery is live; the link is always shown once in the admin.
+    const settings = await getSettings(ctx);
+    let emailed = false;
+    if (resolveEmailConfig(settings).effective === "live") {
+      const ectx = emailContext(settings, siteUrl());
+      const invitedBy = actorOf(ctx.viewer).name;
+      const result = await sendTemplateNow(
+        ctx,
+        "staff_invite",
+        {
+          inviteUrl: siteLink(ectx, `/admin/pozivnica/${token}`),
+          role,
+          expiresAt,
+          ...(invitedBy ? { invitedBy } : {}),
+        },
+        [emailLower],
+        { related: { type: "user", id: inviteId } },
+      );
+      emailed = result.ok;
+    }
+    return { token, expiresAt, emailed };
   },
 });
 

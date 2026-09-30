@@ -1,13 +1,15 @@
 /**
- * Scheduled maintenance (docs/NOTIFICATIONS.md §I3). Step 05 ships quote expiry and order
- * auto-completion; step 18 adds reminders, digest, pruning and reconciliation.
+ * Scheduled maintenance (docs/NOTIFICATIONS.md §I3): quote expiry and order auto-completion.
+ * Reminders, the digest, stock e-mails and retention pruning live in `automations.ts`.
  */
 import { v } from "convex/values";
 
+import { internal } from "./_generated/api";
 import { SYSTEM_ACTOR } from "./lib/authz";
 import { emitEvent } from "./lib/events";
 import { setInquiryStatus } from "./lib/inquiries";
 import { transitionOrder } from "./lib/orders";
+import { issueStatusLink } from "./lib/linkTokens";
 import { getSettings } from "./lib/settings";
 import { internalMutation } from "./_generated/server";
 
@@ -76,5 +78,38 @@ export const autoCompleteOrders = internalMutation({
       }
     }
     return { completed };
+  },
+});
+
+/**
+ * One-off / after rotating LINK_TOKEN_SECRET: re-derives `publicTokenHash` of orders and
+ * inquiries so e-mailed status links match (lib/linkTokens). Links issued before stop working.
+ * Run: `npx convex run maintenance:rekeyStatusLinks '{"table":"orders"}'` (self-continuing).
+ */
+export const rekeyStatusLinks = internalMutation({
+  args: {
+    table: v.union(v.literal("orders"), v.literal("inquiries")),
+    cursor: v.optional(v.union(v.string(), v.null())),
+  },
+  returns: v.object({ updated: v.number(), done: v.boolean() }),
+  handler: async (ctx, { table, cursor }) => {
+    const page = await ctx.db
+      .query(table)
+      .paginate({ numItems: BATCH, cursor: cursor ?? null });
+    let updated = 0;
+    for (const doc of page.page) {
+      const { tokenHash } = await issueStatusLink(table === "orders" ? "order" : "inquiry", doc.number);
+      if (doc.publicTokenHash !== tokenHash) {
+        await ctx.db.patch(table, doc._id, { publicTokenHash: tokenHash });
+        updated++;
+      }
+    }
+    if (!page.isDone) {
+      await ctx.scheduler.runAfter(0, internal.maintenance.rekeyStatusLinks, {
+        table,
+        cursor: page.continueCursor,
+      });
+    }
+    return { updated, done: page.isDone };
   },
 });

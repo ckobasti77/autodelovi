@@ -84,6 +84,20 @@ export const notificationsSettingsV = v.object({
   lowStockEmail: v.boolean(),
 });
 
+/**
+ * E-mail delivery (step 18, owner). Optional so settings stored before step 18 validate;
+ * missing ⇒ `EMAIL_MODE` from the deployment environment (default `log`).
+ */
+export const emailModeV = v.union(v.literal("log"), v.literal("test"), v.literal("live"));
+
+export const emailSettingsV = v.object({
+  mode: emailModeV,
+  /** Sender display name; the address comes from `EMAIL_FROM` (verified domain). */
+  fromName: v.optional(v.string()),
+  /** Reply-To for customer e-mails; empty ⇒ company e-mail from settings. */
+  replyTo: v.optional(v.string()),
+});
+
 export const seoSettingsV = v.object({
   titleSuffix: v.string(),
   defaultDescription: v.string(),
@@ -134,6 +148,7 @@ export const settingsFields = {
   paymentMethods: paymentMethodsSettingsV,
   couriers: couriersSettingsV,
   notifications: notificationsSettingsV,
+  email: v.optional(emailSettingsV),
   seo: seoSettingsV,
   tracking: trackingSettingsV,
   flags: flagsSettingsV,

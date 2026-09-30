@@ -48,7 +48,7 @@ const PasswordResetCode = Email({
     ctx?: GenericActionCtx<DataModel>,
   ) {
     if (!ctx) throw new Error("Password reset needs the Convex action context.");
-    await ctx.runMutation(internal.authEmails.logPasswordResetCode, {
+    await ctx.runMutation(internal.authEmails.sendPasswordResetCode, {
       email: params.identifier,
       code: params.token,
       expiresAt: params.expires.getTime(),

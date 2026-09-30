@@ -1,5 +1,6 @@
 /**
- * „Javi mi kad stigne“ subscriptions (the e-mail is sent in step 18 on `stock.back_in_stock`).
+ * „Javi mi kad stigne“ subscriptions. The e-mail goes out once on `stock.back_in_stock`
+ * (notify.deliverEmail) with a fresh unsubscribe token; the hourly sweep is the safety net.
  */
 import { v } from "convex/values";
 
@@ -45,7 +46,7 @@ export const subscribe = publicMutation({
       email,
       ...(ctx.viewer ? { userId: ctx.viewer.userId } : {}),
       status: "active",
-      // Step 18 issues a fresh unsubscribe token with the notification e-mail.
+      // Placeholder hash; the notification e-mail issues the real unsubscribe token.
       unsubscribeTokenHash: await hashToken(randomToken()),
       consentAt: Date.now(),
     });
@@ -65,8 +66,17 @@ export const unsubscribe = publicMutation({
       .withIndex("by_unsubscribeTokenHash", (q) => q.eq("unsubscribeTokenHash", tokenHash))
       .unique();
     if (!sub) return { ok: false };
+    // „Odjavite sva obaveštenja“: this subscription and every other active one of the address.
     if (sub.status === "active") {
       await ctx.db.patch("backInStockSubscriptions", sub._id, { status: "cancelled" });
+    }
+    const others = await ctx.db
+      .query("backInStockSubscriptions")
+      .withIndex("by_email", (q) => q.eq("email", sub.email))
+      .take(200);
+    for (const other of others) {
+      if (other.status === "active")
+        await ctx.db.patch("backInStockSubscriptions", other._id, { status: "cancelled" });
     }
     return { ok: true };
   },

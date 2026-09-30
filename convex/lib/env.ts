@@ -17,9 +17,34 @@ export function seedAdminCredentials(): { email: string; password: string } | nu
 
 export type EmailMode = "log" | "test" | "live";
 
-export function emailMode(): EmailMode {
-  const mode = process.env.EMAIL_MODE;
-  return mode === "test" || mode === "live" ? mode : "log";
+/** `EMAIL_MODE` from the deployment (default `log`); settings may override (lib/emailConfig). */
+export function emailModeFromEnv(): EmailMode | null {
+  const mode = process.env.EMAIL_MODE?.trim();
+  return mode === "log" || mode === "test" || mode === "live" ? mode : null;
+}
+
+/** Resend API key and webhook secret presence (values never leave this module). */
+export function resendConfigured(): { apiKey: boolean; webhookSecret: boolean } {
+  return {
+    apiKey: Boolean(process.env.RESEND_API_KEY?.trim()),
+    webhookSecret: Boolean(process.env.RESEND_WEBHOOK_SECRET?.trim()),
+  };
+}
+
+/** Verified sender, e.g. `prodaja@domen.rs` or `SKLOP <prodaja@domen.rs>`; empty until live. */
+export function emailFrom(): string {
+  return process.env.EMAIL_FROM?.trim() ?? "";
+}
+
+const DEV_LINK_SECRET = "sklop-dev-link-secret-change-me";
+
+/** Secret for status-link tokens (lib/linkTokens). Missing ⇒ a dev value, flagged in admin. */
+export function linkTokenSecret(): string {
+  return process.env.LINK_TOKEN_SECRET?.trim() || DEV_LINK_SECRET;
+}
+
+export function linkTokenSecretIsSet(): boolean {
+  return Boolean(process.env.LINK_TOKEN_SECRET?.trim());
 }
 
 /** Public site origin used in links (status pages, e-mails). */

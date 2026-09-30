@@ -776,7 +776,8 @@ export default defineSchema({
     .index("by_productId_and_status", ["productId", "status"])
     .index("by_email", ["email"])
     .index("by_unsubscribeTokenHash", ["unsubscribeTokenHash"])
-    .index("by_isDemo", ["isDemo"]),
+    .index("by_isDemo", ["isDemo"])
+    .index("by_status", ["status"]),
 
   searchLogs: defineTable({
     query: v.string(),
@@ -840,7 +841,8 @@ export default defineSchema({
   })
     .index("by_status_and_nextAttemptAt", ["status", "nextAttemptAt"])
     .index("by_dedupeKey", ["dedupeKey"])
-    .index("by_aggregateType_and_aggregateId", ["aggregateType", "aggregateId"]),
+    .index("by_aggregateType_and_aggregateId", ["aggregateType", "aggregateId"])
+    .index("by_type", ["type"]),
 
   notifications: defineTable({
     userId: v.id("users"),
@@ -877,6 +879,9 @@ export default defineSchema({
     lastError: v.optional(v.string()),
     providerRef: v.optional(v.string()),
     sentAt: v.optional(v.number()),
+    /** Step 18: the rendered message (e-mail channel) and the next retry time. */
+    emailLogId: v.optional(v.id("emailLog")),
+    nextAttemptAt: v.optional(v.number()),
   })
     .index("by_eventId_and_channel_and_recipient", ["eventId", "channel", "recipient"])
     .index("by_status", ["status"]),
@@ -937,11 +942,19 @@ export default defineSchema({
       ),
     ),
     relatedId: v.optional(v.string()),
+    /** Step 18: demo aggregates are always logged, never sent, and removed with demo data. */
+    isDemo: v.optional(v.boolean()),
+    /** Recipient address before test-mode rewriting (test mode sends to delivered@resend.dev). */
+    originalTo: v.optional(v.array(v.string())),
+    resentFrom: v.optional(v.id("emailLog")),
     updatedAt: v.number(),
   })
     .index("by_status", ["status"])
     .index("by_relatedType_and_relatedId", ["relatedType", "relatedId"])
-    .index("by_resendEmailId", ["resendEmailId"]),
+    .index("by_resendEmailId", ["resendEmailId"])
+    .index("by_templateKey", ["templateKey"])
+    .index("by_eventId", ["eventId"])
+    .index("by_isDemo", ["isDemo"]),
 
   // §C10 Import ------------------------------------------------------------------------
   importBatches: defineTable({

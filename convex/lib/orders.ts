@@ -35,7 +35,7 @@ import { applyStockDelta } from "./productWriter";
 import type { Settings } from "./settingsSchema";
 import { getSettings } from "./settings";
 import { bumpStatsDaily } from "./stats";
-import { hashToken, randomToken } from "./tokens";
+import { issueStatusLink } from "./linkTokens";
 import type {
   Actor,
   Address,
@@ -215,7 +215,7 @@ export async function createOrder(
   const year = belgradeYear(now);
   const seq = await nextCounter(ctx, `order:${year}`);
   const number = formatDocumentNumber(settings.brand.orderPrefix, year, seq);
-  const token = randomToken();
+  const { token, tokenHash } = await issueStatusLink("order", number);
   const c = input.checkout;
   const itemCount = input.lines.reduce((sum, l) => sum + l.quantity, 0);
   const hasBackorder = input.lines.some(
@@ -226,7 +226,7 @@ export async function createOrder(
     number,
     year,
     seq,
-    publicTokenHash: await hashToken(token),
+    publicTokenHash: tokenHash,
     status: "nova",
     customerType: input.customerType,
     ...(input.userId ? { userId: input.userId } : {}),

@@ -1,6 +1,11 @@
-import { describe, expect, test } from "vitest";
+import { describe, expect, it, test } from "vitest";
 
-import { slaLevel, workingMinutesBetween } from "@/lib/domain/sla";
+import {
+  isWithinOpeningHours,
+  reminderLevelFor,
+  slaLevel,
+  workingMinutesBetween,
+} from "@/lib/domain/sla";
 import { belgradeLocalToUtc } from "@/lib/domain/time";
 
 const HOURS = [
@@ -51,5 +56,33 @@ describe("slaLevel", () => {
     expect(slaLevel(90, 120)).toBe("soon");
     expect(slaLevel(120, 120)).toBe("late");
     expect(slaLevel(500, 0)).toBe("ok");
+  });
+});
+
+describe("isWithinOpeningHours / reminderLevelFor (step 18)", () => {
+  it("follows Belgrade wall time in summer and winter", () => {
+    // Wed 30.09.2026 (CEST) and Wed 28.10.2026 (CET).
+    expect(isWithinOpeningHours(at(2026, 9, 30, 7, 59), HOURS)).toBe(false);
+    expect(isWithinOpeningHours(at(2026, 9, 30, 8, 0), HOURS)).toBe(true);
+    expect(isWithinOpeningHours(at(2026, 9, 30, 16, 59), HOURS)).toBe(true);
+    expect(isWithinOpeningHours(at(2026, 9, 30, 17, 0), HOURS)).toBe(false);
+    expect(isWithinOpeningHours(at(2026, 10, 28, 8, 0), HOURS)).toBe(true);
+    expect(isWithinOpeningHours(Date.UTC(2026, 9, 28, 6, 30), HOURS)).toBe(false); // 07:30 CET
+    expect(isWithinOpeningHours(Date.UTC(2026, 9, 28, 7, 30), HOURS)).toBe(true); // 08:30 CET
+  });
+
+  it("closed days and holidays are never working time", () => {
+    expect(isWithinOpeningHours(at(2026, 10, 4, 10), HOURS)).toBe(false); // Sunday
+    expect(isWithinOpeningHours(at(2026, 10, 3, 13, 59), HOURS)).toBe(true); // Saturday
+    expect(isWithinOpeningHours(at(2026, 10, 3, 14, 0), HOURS)).toBe(false);
+    expect(isWithinOpeningHours(at(2026, 11, 11, 10), HOURS, ["2026-11-11"])).toBe(false);
+  });
+
+  it("reminder levels: none, first at the target, second 120 working minutes later", () => {
+    expect(reminderLevelFor(119, 120)).toBe(0);
+    expect(reminderLevelFor(120, 120)).toBe(1);
+    expect(reminderLevelFor(239, 120)).toBe(1);
+    expect(reminderLevelFor(240, 120)).toBe(2);
+    expect(reminderLevelFor(500, 0)).toBe(0);
   });
 });

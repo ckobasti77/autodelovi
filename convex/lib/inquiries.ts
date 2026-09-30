@@ -18,7 +18,7 @@ import { emitEvent } from "./events";
 import type { NewOrderLine } from "./orders";
 import { getSettings } from "./settings";
 import { bumpStatsDaily } from "./stats";
-import { hashToken, randomToken } from "./tokens";
+import { issueStatusLink } from "./linkTokens";
 import type { Actor } from "./validators";
 
 export const INQUIRY_STATUS_LABEL_SR: Record<InquiryStatus, string> = {
@@ -133,13 +133,13 @@ export async function insertInquiry(
   const year = belgradeYear(now);
   const seq = await nextCounter(ctx, `inquiry:${year}`);
   const number = formatDocumentNumber(settings.brand.inquiryPrefix, year, seq);
-  const token = randomToken();
+  const { token, tokenHash } = await issueStatusLink("inquiry", number);
   const inquiryId = await ctx.db.insert("inquiries", {
     ...fields,
     number,
     year,
     seq,
-    publicTokenHash: await hashToken(token),
+    publicTokenHash: tokenHash,
     status: "nov",
     reminderLevel: 0,
     searchText: buildSearchText([

@@ -32,7 +32,7 @@ import {
 } from "./lib/orders";
 import { createProduct, updateProduct } from "./lib/productWriter";
 import { DEFAULT_SETTINGS, getSettings, getSettingsDoc } from "./lib/settings";
-import { hashToken, randomToken } from "./lib/tokens";
+import { issueStatusLink } from "./lib/linkTokens";
 import { buildIntro, seoDescription, seoTitle } from "./seedData/categories";
 import { MANUFACTURERS } from "./seedData/manufacturers";
 import { buildEquivalentSeeds, buildProductSeeds, type ProductSeed } from "./seedData/products";
@@ -885,7 +885,7 @@ export const seedDemoInquiries = internalMutation({
         number,
         year,
         seq,
-        publicTokenHash: await hashToken(randomToken()),
+        publicTokenHash: (await issueStatusLink("inquiry", number)).tokenHash,
         status: plan.status,
         kind: plan.kind,
         ...(plan.vin
