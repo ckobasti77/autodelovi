@@ -11,6 +11,7 @@ import { SYSTEM_ACTOR } from "./lib/authz";
 import { approveMechanic as approveMechanicProfile } from "./lib/mechanics";
 import { insertInquiry } from "./lib/inquiries";
 import { createOrder, validateCheckout } from "./lib/orders";
+import { updateProduct } from "./lib/productWriter";
 import { getSettings } from "./lib/settings";
 import { hashToken, randomToken } from "./lib/tokens";
 import { isAvailableNow } from "../lib/domain/stock";
@@ -540,5 +541,25 @@ export const adminProbe = internalQuery({
       quoteTotalPara: quote?.totalPara ?? null,
       legalName: settings.company.legalName,
     };
+  },
+});
+
+/** E2E cleanup (step 15): deactivates products created by the admin spec (SKU `E2E-…`). */
+export const deactivateE2EProducts = internalMutation({
+  args: {},
+  returns: v.number(),
+  handler: async (ctx) => {
+    const rows = await ctx.db
+      .query("products")
+      .withIndex("by_active_and_contentUpdatedAt", (q) => q.eq("active", true))
+      .order("desc")
+      .take(200);
+    let count = 0;
+    for (const p of rows) {
+      if (!p.sku.startsWith("E2E-")) continue;
+      await updateProduct(ctx, p._id, { active: false }, { actor: SYSTEM_ACTOR, emit: true });
+      count++;
+    }
+    return count;
   },
 });

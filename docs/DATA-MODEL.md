@@ -25,6 +25,8 @@ Notation: `str` `num` `int` (v.number(), integer asserted in code) `bool` `id<t>
 
 **staffInvites** — `emailLower`, `role: lit(staff|owner)`, `tokenHash`, `expiresAt`, `createdBy: id<users>`, `acceptedAt?`, `acceptedBy?`, `revokedAt?`. Idx `by_tokenHash`, `by_emailLower`.
 
+**customerNotes** (step 15, D148) — `userId: id<users>`, `message` (≤ 1 000), `actor`, `at`. Append-only staff notes on a customer account (block/unblock reasons land here too). Idx `by_userId_and_at`.
+
 ### C2. Settings and content
 **settings** (singleton, `key: lit("global")`, idx `by_key`):
 - `company{ legalName, displayName?, pib?, mb?, address{street, city, postalCode}, phones: arr≤5<{label, e164}>, viber?, whatsapp?, email?, bankAccounts: arr≤3<{bank, account}>, mapUrl?, registryNote? }` — empty by default; the UI hides empty parts (HUMAN-TODO).

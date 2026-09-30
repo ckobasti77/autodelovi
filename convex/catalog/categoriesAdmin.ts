@@ -6,6 +6,7 @@
  */
 import { v } from "convex/values";
 
+import { internal } from "../_generated/api";
 import type { Doc } from "../_generated/dataModel";
 import type { MutationCtx } from "../_generated/server";
 import { CATEGORIES } from "../../lib/catalog/taxonomy";
@@ -301,6 +302,11 @@ export const setThumbnail = staffMutation({
       if (meta.size > 5 * 1024 * 1024) invalid("Slika je veća od 5 MB.", "storageId");
       if (meta.contentType && !CATEGORY_IMAGE_TYPES.includes(meta.contentType))
         invalid("Dozvoljene su slike JPG, PNG, WebP ili AVIF.", "storageId");
+      const used = await ctx.db
+        .query("uploads")
+        .withIndex("by_storageId", (q) => q.eq("storageId", storageId))
+        .first();
+      if (used) invalid("Slika je već iskorišćena.", "storageId");
     }
     const previous = category.thumbnailStorageId;
     await ctx.db.patch("categories", categoryId, {
@@ -316,6 +322,7 @@ export const setThumbnail = staffMutation({
         status: "attached",
         attachedTo: { type: "category", id: categoryId },
       });
+      await ctx.scheduler.runAfter(0, internal.files.sniff, { storageId });
     }
     const actor = actorOf(ctx.viewer);
     await audit(ctx, {

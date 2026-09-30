@@ -86,6 +86,15 @@ export const recordSniff = internalMutation({
         await setProductImages(ctx, productId, images, { actor: SYSTEM_ACTOR, emit: true });
       }
     }
+    if (upload.attachedTo?.type === "category") {
+      const category = await ctx.db.get("categories", upload.attachedTo.id as Id<"categories">);
+      if (category?.thumbnailStorageId === storageId) {
+        await ctx.db.patch("categories", category._id, {
+          thumbnailStorageId: undefined,
+          updatedAt: now,
+        });
+      }
+    }
     await ctx.storage.delete(storageId);
     return null;
   },

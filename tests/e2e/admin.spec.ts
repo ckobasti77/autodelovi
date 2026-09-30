@@ -20,6 +20,9 @@ const password = process.env.SEED_ADMIN_PASSWORD;
 test.skip(!email || !password, "SEED_ADMIN_EMAIL / SEED_ADMIN_PASSWORD not set");
 test.skip(({ viewport }) => (viewport?.width ?? 0) < 1024, "admin runs at desktop widths");
 test.describe.configure({ mode: "serial" });
+test.afterAll(() => {
+  convexRun<number>("deactivateE2EProducts");
+});
 
 function convexRun<T>(fn: string, args: Record<string, unknown> = {}): T {
   const out = execFileSync(
@@ -105,6 +108,8 @@ test("create a product with an image, then edit it", async ({ page }) => {
     .selectOption({ label: "Kočnice › Kočioni diskovi" });
   await page.getByTestId("admin-product-manufacturer").selectOption({ label: "ATE" });
   await page.getByTestId("admin-product-price").fill("12990");
+  // Test products stay off the storefront.
+  await page.getByRole("switch", { name: /Aktivan/ }).click();
   await page.getByRole("button", { name: "Sačuvaj artikal" }).click();
   await expect(page).toHaveURL(/\/admin\/proizvodi\/[a-z0-9]{20,}$/, { timeout: 30_000 });
   await expect(page.getByRole("heading", { level: 1, name })).toBeVisible({ timeout: 20_000 });

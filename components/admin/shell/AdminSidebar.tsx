@@ -127,7 +127,7 @@ export function AdminSidebar({
                                 max={99}
                                 className={cn(
                                   rail &&
-                                    "max-[1365px]:absolute max-[1365px]:right-1 max-[1365px]:top-0.5 max-[1365px]:h-4 max-[1365px]:min-w-4 max-[1365px]:px-1 max-[1365px]:text-[0.625rem]",
+                                    "max-[1365px]:absolute max-[1365px]:right-1 max-[1365px]:top-0.5 max-[1365px]:h-[18px] max-[1365px]:min-w-[18px] max-[1365px]:px-1 max-[1365px]:text-[0.6875rem]",
                                 )}
                               />
                               <span className="sr-only"> {countLabel}</span>

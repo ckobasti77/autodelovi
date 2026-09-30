@@ -482,7 +482,7 @@ function TierEditor({
             </p>
             {editing ? (
               <p className="flex items-baseline gap-2">
-                <span className="font-condensed text-[2rem] font-semibold tabular-nums leading-none">
+                <span className="type-numeral-l leading-none">
                   {formatRSD(editing.unitPricePara)}
                 </span>
                 <span className="type-body-s text-ink-2">−{formatBp(editing.discountBp)}</span>

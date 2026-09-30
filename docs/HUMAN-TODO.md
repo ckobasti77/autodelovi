@@ -117,3 +117,11 @@ Oznaka: **seed – proveriti**. Podaci su uneti po opšte poznatim podacima o vo
 - [ ] **[P2] 3D automobil – pregled izgleda**: pogledajte slike `public/images/hero/car-assembled.webp` i `car-exploded.webp` (sklopljen i rasklopljen automobil) i sličice delova u `public/images/parts/` i javite ako neki deo treba da izgleda drugačije. Automobil je namerno generički (bez oznaka bilo koje marke). Ako kasnije kupite 3D model nekog dela, može da zameni generisani deo (uputstvo za programera: `docs/3d/BUILD-NOTES.md`, odeljak 3; proverite licencu za komercijalnu upotrebu na sajtu).
 - [ ] **[P2] Brzina početne strane posle objavljivanja** — kada sajt bude na pravoj adresi, otvorite https://pagespeed.web.dev, unesite adresu početne strane i pogledajte ocenu za mobilni telefon (cilj: 85 ili više, LCP ispod 2,5 s). Lokalna merenja iz koraka 10 su u `docs/3d/WEB-QA.md`; programer tamo ima objašnjenje zašto se lokalni „simulirani“ broj razlikuje.
 
+
+## 10. Administracija (korak 15)
+- [ ] **[P0] Zaposleni**: Admin → Korisnici → „Pozovi zaposlenog“ → pošaljite prikazani link zaposlenom (Viber, SMS). Link važi 7 dana i radi samo za e-mail adresu na koju je napravljen; zaposleni se registruje ili prijavi tom adresom i klikne „Prihvati pozivnicu“. Dok e-pošta nije povezana (korak 18), link se ne šalje sam.
+- [ ] **[P0] Rok za odgovor na upite (SLA)**: podrazumevano 120 minuta radnog vremena (Admin → Podešavanja → Obaveštenja → „Podsetnik posle“). Potvrdite ili promenite; tajmeri na pregledu i u listi upita računaju samo radno vreme iz podešavanja.
+- [ ] **[P1] Moja obaveštenja**: svaki zaposleni u Admin → Podešavanja → Obaveštenja bira šta dobija u aplikaciji i e-poštom.
+- [ ] **[P1] Pravni tekstovi**: posle pregleda pravnika uključite „Pravnik je pregledao ovu verziju“ za svaku stranicu (Admin → Podešavanja → Pravni tekstovi) i ažurirajte datume verzija.
+- [ ] **[P1] Predračun i otpremnica**: pogledajte izgled (Porudžbina → „Predračun“ / „Otpremnica“) sa knjigovođom — naziv dokumenta, obavezni podaci i napomena „Predračun nije fiskalni račun“.
+- [ ] **[P2] Majstor sa odloženim plaćanjem i porudžbina telefonom**: ponudu koju kupac prihvati telefonom pretvarate u porudžbinu dugmetom „Pretvori u porudžbinu“ na upitu; odloženo plaćanje je tada dostupno samo ako je upit poslao odobreni majstor sa tom opcijom.

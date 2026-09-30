@@ -347,6 +347,8 @@ export const mono = Martian_Mono({ subsets: ["latin", "latin-ext"], variable: "-
 
 Admin (paper) scale: base `body-s` 14 px; table cells 13.5 px; page title 22 px Public Sans 650; section titles 16 px 600; KPI figures `numeral-xl` capped at 40 px.
 
+Print ramp (predračun, otpremnica — fixed sizes, because the fluid clamps depend on the viewport and mean nothing on A4; step 15): document title 24 px Public Sans 700 caps, 0.04em; seller name 17 px 700; totals row 16 px 700; body `body-s` 14 px; codes `code`/`code-l`; margins 14 × 12 mm (`@page`), one document per sheet.
+
 ### 4.4 Rules
 - Hierarchy is built from weight + size + case together (apple-design): expanded caps for brand statements, Public Sans 650 for task headings. Never two display lines of different families side by side.
 - Tracking is size-specific: display caps 0.005–0.02em; caps labels 0.06em; body 0; large UI headings negative (−0.015em max; floor −0.04em).
