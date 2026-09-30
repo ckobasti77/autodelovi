@@ -19,6 +19,7 @@ import { EASE } from "@/constants/motion";
 import { Button } from "@/components/ui/Button";
 import { Link } from "@/components/ui/Link";
 import { Switch } from "@/components/ui/Switch";
+import { MAIN_ID } from "@/components/shell/SkipLink";
 import { ROUTES } from "@/constants/routes";
 
 export function ConsentBanner({ serverOpen }: { serverOpen: boolean }) {
@@ -79,7 +80,10 @@ export function ConsentBanner({ serverOpen }: { serverOpen: boolean }) {
     setError(null);
     try {
       const saved = await saveConsent(choice);
+      // The banner is about to disappear: hand focus to the page instead of losing it.
+      const hadFocus = panel.current?.contains(document.activeElement) ?? false;
       setRecord(saved);
+      if (hadFocus) document.getElementById(MAIN_ID)?.focus({ preventScroll: true });
       void recordConsent({ consentId: saved.id, analytics: saved.analytics, ads: saved.ads }).catch(
         () => {
           // The cookie holds the decision; the log entry is best effort.
@@ -177,7 +181,7 @@ export function ConsentBanner({ serverOpen }: { serverOpen: boolean }) {
               variant="quiet"
               disabled={pending}
               data-consent-focus
-              className="min-w-40 flex-1"
+              className="min-w-40 flex-1 lg:flex-none"
             >
               Sačuvaj izbor
             </Button>
@@ -189,7 +193,7 @@ export function ConsentBanner({ serverOpen }: { serverOpen: boolean }) {
             variant="quiet"
             disabled={pending}
             data-consent-focus={detailed ? undefined : true}
-            className="min-w-40 flex-1"
+            className="min-w-40 flex-1 lg:flex-none"
           >
             Prihvati sve
           </Button>
@@ -199,7 +203,7 @@ export function ConsentBanner({ serverOpen }: { serverOpen: boolean }) {
             value="none"
             variant="quiet"
             disabled={pending}
-            className="min-w-40 flex-1"
+            className="min-w-40 flex-1 lg:flex-none"
           >
             Odbij sve
           </Button>
@@ -208,7 +212,7 @@ export function ConsentBanner({ serverOpen }: { serverOpen: boolean }) {
               type="button"
               variant="ghost"
               onClick={() => setDetailed(true)}
-              className="min-w-40 flex-1"
+              className="min-w-40 flex-1 lg:flex-none"
             >
               Podešavanja
             </Button>

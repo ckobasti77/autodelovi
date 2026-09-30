@@ -1235,7 +1235,9 @@ function SeoTab({ s, can }: { s: Settings; can: boolean }) {
           />
         ) : null}
       </Group>
-      <LandingOverview />
+      <div className="mt-6">
+        <LandingOverview />
+      </div>
     </fieldset>
   );
 }
@@ -1360,7 +1362,9 @@ function TrackingTab({ s, can }: { s: Settings; can: boolean }) {
           />
         ) : null}
       </Group>
-      <TrackingStatus />
+      <div className="mt-6">
+        <TrackingStatus />
+      </div>
     </fieldset>
   );
 }

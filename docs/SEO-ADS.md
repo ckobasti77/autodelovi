@@ -90,3 +90,23 @@ Also: accessibility ≥ 95, SEO ≥ 95, best practices ≥ 95; 3D chunk ≤ 350 
 
 ### J12. ADS-PLAYBOOK.md (Serbian, step 19)
 Account structure (Search per brand × high-intent category, brand-protection campaign, DSA on categories later; Performance Max/Shopping blocked while RS is unsupported by Merchant Center), keyword themes with and without diacritics (kočione pločice / kocione plocice, turbina golf 7, zamajac passat b6 …), match types, negatives (polovni, otpad, besplatno, šema, uputstvo, servis cena, posao …), RSA copy examples in the brand voice, assets (sitelinks, call, location, callouts: „Plaćanje pouzećem", „Preuzimanje u radnji"), conversion actions + enhanced conversions, offline import routine, Meta (Pixel + CAPI test events, catalog from CSV, Advantage+ catalog — verify RSD/country in Commerce Manager), GA4 setup, UTM conventions (`utm_source=google|meta|viber|email`, `utm_medium=cpc|paid_social|referral|transactional`), first-30-days checklist, Google Business Profile checklist, Search Console + sitemap submission.
+
+### J13. Implementation map (step 19)
+| Area | Code | Tests |
+|---|---|---|
+| Metadata builder + templates (titles ≤ 60 with suffix, descriptions ≤ 155, OEM kept in product titles, `ogFile`) | `lib/seo/metadata.ts`, `lib/seo/templates.ts` | `tests/unit/seo/metadata.test.ts`, e2e `seo.spec.ts` |
+| JSON-LD builders (+ `extractJsonLd`) | `lib/seo/jsonld.ts`, `lib/seo/store.ts`, `components/seo/JsonLd.tsx` | `tests/unit/seo/jsonld.test.ts`, e2e parses home/category/landing/product/vehicle |
+| OG images (frame, fonts in `assets/fonts/og/`) | `lib/og/frame.tsx`, `lib/og/landing.ts`, `app/**/opengraph-image.tsx` | e2e (PNG 1200 × 630) |
+| Sitemaps + robots | `lib/seo/sitemap.ts`, `app/sitemap.xml/route.ts`, `app/sitemaps/[file]/route.ts`, `app/robots.ts`, `convex/seo.ts#sitemapData/sitemapProducts` | `tests/unit/seo/sitemapFeeds.test.ts`, e2e |
+| Landing guard + content + links | `convex/landings.ts`, `lib/seo/landingGuard.ts`, `lib/seo/landingCopy.ts`, `lib/seo/landingLinks.ts`, `components/catalog/LandingPage.tsx`, `components/seo/LandingLinks.tsx` | `convex/seo.test.ts`, `tests/unit/seo/landing.test.ts` |
+| Image SEO | `lib/seo/images.ts`, `app/slike/deo/[file]/route.ts` | `tests/unit/seo/landing.test.ts` |
+| Feeds | `lib/seo/feeds.ts`, `lib/seo/googleCategories.ts`, `lib/server/feeds.ts`, `app/feeds/*`, `convex/seo.ts#feedProducts` | unit (XML/CSV validity, required fields), convex, e2e |
+| Consent Mode v2 | `lib/analytics/consent.ts`, `lib/analytics/consentStore.ts`, `components/consent/*`, `app/actions/consent.ts`, `convex/consent.ts` | unit, e2e (network log before consent, dataLayer after) |
+| Tags + event map | `lib/analytics/tags.ts`, `lib/analytics/mapping.ts`, `lib/analytics/track.ts` (named adapters, per-page replay) | unit, e2e |
+| Enhanced conversions / CAPI hashing | `lib/analytics/hash.ts`, `lib/analytics/leadUserData.ts`, `lib/analytics/capi.ts`, `convex/capi.ts` | unit, convex (mocked fetch, retries, skip without consent) |
+| Attribution | `lib/analytics/attribution.ts`, `lib/analytics/attributionCookie.ts`, `lib/server/trackingCookies.ts`, `app/api/atribucija/route.ts`, `lib/domain/attribution.ts` | unit, convex (report) |
+| Admin | `convex/seoAdmin.ts`, `components/admin/system/SourcesAdmin.tsx`, `components/admin/settings/{AdLandingsTab,SeoPanels}.tsx`, offline CSV `lib/seo/offlineConversions.ts` | convex, unit |
+| Ads landing | `app/(landing)/layout.tsx`, `app/(landing)/ponuda/[slug]/page.tsx`, `convex/seo.ts#adLanding` | convex, e2e |
+| Cache purge | `convex/revalidate.ts`, `app/api/revalidate/route.ts` | — (disabled on localhost) |
+
+Deviations from J1–J12 (all in DECISIONS D182–D200): sitemaps are route handlers with a data cache (not `revalidate` exports); the consent choice is a Server Action and the 90-day attribution cookie a route handler; ads landings are managed in Podešavanja → Oglasne strane instead of `/admin/sadrzaj`; feeds exclude demo products; the Graph API version is v26.0 (current on 2026-09-30).

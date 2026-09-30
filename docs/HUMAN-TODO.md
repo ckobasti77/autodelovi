@@ -65,13 +65,18 @@ Do kraja ovih koraka sajt radi u režimu **„Samo zapis“**: svaka poruka (i k
 - [ ] **[P1]** Pravni pregled rečenice u mejlu „Porudžbina je isporučena“ o pravu potrošača da odustane u roku od 14 dana i o reklamacijama (šablon: E-pošta → Šabloni → „Isporučena / preuzeta“).
 - [ ] **[P2]** SMS i Telegram nisu deo prve verzije; ako zatrebaju, dodaju se kao novi kanal obaveštenja (plaćeni SMS servis).
 
-## 5. Oglasi i analitika
-- [ ] **[P1]** GA4 ID, Google Ads ID i oznake konverzija (porudžbina, upit, registracija majstora).
-- [ ] **[P1]** Meta Pixel ID i Conversions API token (`META_CAPI_TOKEN`), test event kod za proveru.
-- [ ] **[P1]** Google Merchant Center: **Srbija trenutno nije podržana** za Shopping oglase/besplatne listinge (Google je 18.8.2026. povukao najavljeno proširenje) — feed je spreman, uključiti kada Srbija bude podržana.
-- [ ] **[P1]** Meta katalog: proveriti u Commerce Manager-u podršku za RSD i Srbiju.
-- [ ] **[P2]** Google Ads offline konverzije: preuzeti aktuelni CSV šablon iz naloga (GBRAID/WBRAID kolone nisu potvrđene) ili koristiti Data Manager.
-- [ ] **[P1]** Google Business Profile i Search Console (prijava sitemape).
+## 5. Oglasi i analitika (korak 19 — ceo postupak: `docs/ADS-PLAYBOOK.md`)
+- [ ] **[P1]** GA4 Measurement ID, Google Ads Conversion ID i oznake konverzija (porudžbina, upit, registracija majstora) → Admin → Podešavanja → Praćenje. Dok su polja prazna, sajt ne učitava nijedan kod.
+- [ ] **[P1]** Meta Pixel ID (Praćenje) i **Conversions API token** na serveru: `npx convex env set META_CAPI_TOKEN <token>` (produkcija: `--prod`), pa uključiti „Meta Conversions API“. Test event kod upisati samo za proveru i obrisati posle testa.
+- [ ] **[P1]** Naziv offline konverzije (Praćenje → „Naziv konverzije za offline uvoz“) — tačno kao akcija u Google Ads; nedeljni uvoz CSV-a iz Admin → Izvori.
+- [ ] **[P1]** `REVALIDATE_SECRET` — ista tajna vrednost u Vercel promenljivim i `npx convex env set REVALIDATE_SECRET <vrednost>` (trenutno osvežavanje sajta posle izmena kataloga; bez nje strane se osvežavaju same za 5–60 min).
+- [ ] **[P1]** Google Merchant Center: **Srbija trenutno nije podržana** za Shopping oglase i besplatne oglase (najava od 14.07.2026. povučena 18.08.2026; proveravano 30.09.2026) — feed `/feeds/google-merchant.xml` je spreman, uključiti kada Srbija bude podržana.
+- [ ] **[P1]** Meta katalog: pri pravljenju kataloga proveriti da li Commerce Manager nudi RSD za Srbiju; ako ne, katalog ne koristiti (ne prevoditi cene u evre).
+- [ ] **[P2]** Google Ads offline konverzije: ako ekran za uvoz traži novi šablon ili Data Manager, preuzmite aktuelni šablon; porudžbine sa GBRAID/WBRAID uvoze se kroz Data Manager.
+- [ ] **[P1]** Google Business Profile (kategorija „Prodavnica auto-delova“, isti naziv/adresa/telefon kao na sajtu) i Search Console (svojstvo za domen, prijava `/sitemap.xml`).
+- [ ] **[P1]** Pravnik: politika privatnosti i stranica „Kolačići“ pominju Google Analytics, Google Ads, Metu, heširane podatke za merenje oglasa i kolačiće `_ga`, `_gcl_*`, `_fbp`, `_fbc`, `sk_consent`, `sk_attr` — potvrditi tekst i trajanja.
+- [ ] **[P2]** Oglasna strana `/ponuda/kocione-plocice-golf` je primer (demo) — izmenite ili obrišite u Podešavanja → Oglasne strane pre prvih oglasa.
+- [ ] **[P2]** Ograničenje broja strana „kategorija × vozilo“ u indeksu (Podešavanja → SEO, sada 300): povećati tek kada Search Console pokaže da su postojeće indeksirane.
 
 ## 6. Katalog i podaci
 - [ ] **[P0]** Primer izvoza iz knjigovodstvenog programa (xlsx/csv) da se proveri mapiranje kolona.

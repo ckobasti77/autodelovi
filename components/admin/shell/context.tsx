@@ -54,6 +54,7 @@ const SEGMENTS: Record<string, string> = {
   mejlovi: "E-pošta",
   sabloni: "Šabloni",
   pretrage: "Pretrage",
+  izvori: "Izvori",
   obavestenja: "Obaveštenja",
   uvoz: "Uvoz iz Excela",
   istorija: "Istorija",

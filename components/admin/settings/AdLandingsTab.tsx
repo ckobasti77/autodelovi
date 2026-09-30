@@ -245,7 +245,7 @@ function Editor({ initial, onClose }: { initial: Draft; onClose: () => void }) {
         </Field>
         <Field
           label="Podnaslov"
-          help={`${d.subhead.length}/220`}
+         
           error={errors.subhead}
           className="md:col-span-2"
         >
@@ -333,7 +333,7 @@ function Editor({ initial, onClose }: { initial: Draft; onClose: () => void }) {
         </div>
         <Field
           label="Dodatni tekst (Markdown, nije obavezan)"
-          help={`${d.bodyMd.length}/3000`}
+         
           className="md:col-span-2"
         >
           <Textarea
