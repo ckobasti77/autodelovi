@@ -66,7 +66,10 @@ export const TITLE_ROWS = 4;
 
 const COL = { retail: 6, yours: 7, rabat: 8, link: 11 } as const;
 
-export function buildPriceListWorkbook(meta: PriceListMeta, rows: readonly PriceListRow[]): Uint8Array {
+export function buildPriceListWorkbook(
+  meta: PriceListMeta,
+  rows: readonly PriceListRow[],
+): Uint8Array {
   const tier = [
     meta.tierName ? `Nivo: ${meta.tierName}` : null,
     meta.discountBp !== null ? `osnovni rabat ${meta.discountBp / 100} %` : null,
@@ -99,7 +102,8 @@ export function buildPriceListWorkbook(meta: PriceListMeta, rows: readonly Price
   // Number formats and links on the table cells (Excel shows them with the user's separators).
   rows.forEach((r, i) => {
     const row = TITLE_ROWS + 1 + i;
-    const at = (c: number) => sheet[XLSX.utils.encode_cell({ r: row, c })] as XLSX.CellObject | undefined;
+    const at = (c: number) =>
+      sheet[XLSX.utils.encode_cell({ r: row, c })] as XLSX.CellObject | undefined;
     const retail = at(COL.retail);
     if (retail) retail.z = r.retailPricePara % 100 === 0 ? "#,##0" : "#,##0.00";
     const yours = at(COL.yours);
@@ -117,7 +121,11 @@ export function buildPriceListWorkbook(meta: PriceListMeta, rows: readonly Price
   const book = XLSX.utils.book_new();
   book.Props = { Title: `Cenovnik — ${meta.companyName}`, Author: "SKLOP" };
   XLSX.utils.book_append_sheet(book, sheet, "Cenovnik");
-  const out = XLSX.write(book, { type: "array", bookType: "xlsx", compression: true }) as ArrayBuffer;
+  const out = XLSX.write(book, {
+    type: "array",
+    bookType: "xlsx",
+    compression: true,
+  }) as ArrayBuffer;
   return new Uint8Array(out);
 }
 

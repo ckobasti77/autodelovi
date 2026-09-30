@@ -11,7 +11,8 @@ import { normalizeCode } from "../../lib/domain/codes";
 import { foldForSearch } from "../../lib/domain/search";
 import { productFieldsLabel } from "../../lib/i18n/sr/auditLabels";
 import { audit } from "../lib/audit";
-import { actorOf } from "../lib/authz";
+import { actorOf, SYSTEM_ACTOR } from "../lib/authz";
+import { importHistorySummary } from "../lib/importModel";
 import { invalid, notFound } from "../lib/errors";
 import { staffMutation, staffQuery } from "../lib/functions";
 import { internal } from "../_generated/api";
@@ -506,13 +507,34 @@ export const history = staffQuery({
       .withIndex("by_productId_and_at", (q) => q.eq("productId", productId))
       .order("desc")
       .take(50);
+    // Imports write per-row change records instead of audit entries (docs/IMPORT.md §K4).
+    const imported = await ctx.db
+      .query("importChanges")
+      .withIndex("by_productId", (q) => q.eq("productId", productId))
+      .order("desc")
+      .take(20);
+    const importEntries = [];
+    for (const change of imported) {
+      const batch = await ctx.db.get("importBatches", change.batchId);
+      importEntries.push({
+        action: `import.${change.action}`,
+        summary: importHistorySummary(change, batch),
+        actor: batch?.actor ?? SYSTEM_ACTOR,
+        at: change._creationTime,
+      });
+    }
     return {
-      audit: auditRows.map((a) => ({
-        action: a.action,
-        summary: a.summary,
-        actor: a.actor,
-        at: a.at,
-      })),
+      audit: [
+        ...auditRows.map((a) => ({
+          action: a.action,
+          summary: a.summary,
+          actor: a.actor,
+          at: a.at,
+        })),
+        ...importEntries,
+      ]
+        .sort((a, b) => b.at - a.at)
+        .slice(0, 60),
       prices: prices.map((p) => ({
         oldRetailPara: p.oldRetailPara,
         newRetailPara: p.newRetailPara,

@@ -264,6 +264,7 @@ export const eventTypeV = v.union(
   v.literal("settings.changed"),
   v.literal("content.changed"),
   v.literal("user.registered"),
+  v.literal("import.completed"),
 );
 export type EventType = Infer<typeof eventTypeV>;
 
@@ -341,6 +342,16 @@ export const userEventPayloadV = v.object({
   userId: v.id("users"),
 });
 
+export const importEventPayloadV = v.object({
+  kind: v.literal("import"),
+  batchId: v.id("importBatches"),
+  fileName: v.string(),
+  created: v.number(),
+  updated: v.number(),
+  failed: v.number(),
+  deactivated: v.number(),
+});
+
 export const eventPayloadV = v.union(
   orderEventPayloadV,
   inquiryEventPayloadV,
@@ -348,5 +359,6 @@ export const eventPayloadV = v.union(
   stockEventPayloadV,
   catalogEventPayloadV,
   userEventPayloadV,
+  importEventPayloadV,
 );
 export type EventPayload = Infer<typeof eventPayloadV>;

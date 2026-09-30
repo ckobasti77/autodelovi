@@ -6,6 +6,7 @@ import { authTables } from "@convex-dev/auth/server";
 import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 
+import { importRowDataV } from "./lib/importValidators";
 import { settingsFields } from "./lib/settingsSchema";
 import {
   actorV,
@@ -979,6 +980,9 @@ export default defineSchema({
       committed: v.number(),
       failed: v.number(),
       deactivated: v.number(),
+      created: v.optional(v.number()),
+      updated: v.optional(v.number()),
+      rollbackSkipped: v.optional(v.number()),
     }),
     progress: v.object({
       stagedRows: v.number(),
@@ -992,6 +996,31 @@ export default defineSchema({
     rolledBackBy: v.optional(v.id("users")),
     cursor: v.optional(v.string()),
     note: v.optional(v.string()),
+    // Step 16 (docs/IMPORT.md §K4): who started it, value maps from the wizard, commit phase,
+    // deactivate-missing count, image progress and the failure reason.
+    actor: v.optional(actorV),
+    rollbackActor: v.optional(actorV),
+    warnAmbiguous: v.optional(v.boolean()),
+    valueMaps: v.optional(
+      v.object({
+        category: v.record(v.string(), v.id("categories")),
+        manufacturer: v.record(v.string(), v.union(v.id("manufacturers"), v.literal("new"))),
+      }),
+    ),
+    phase: v.optional(
+      v.union(v.literal("rows"), v.literal("deactivate"), v.literal("finalize"), v.literal("done")),
+    ),
+    missing: v.optional(
+      v.object({
+        scanned: v.number(),
+        count: v.number(),
+        done: v.boolean(),
+        cursor: v.optional(v.string()),
+      }),
+    ),
+    images: v.optional(v.object({ total: v.number(), done: v.number(), failed: v.number() })),
+    failureReason: v.optional(v.string()),
+    updatedAt: v.optional(v.number()),
   })
     .index("by_status", ["status"])
     .index("by_createdBy", ["createdBy"]),
@@ -1000,8 +1029,10 @@ export default defineSchema({
     batchId: v.id("importBatches"),
     rowNumber: v.number(),
     sku: v.optional(v.string()),
-    // Normalised optional fields; the shape is defined by the import mapping (step 16).
-    data: v.record(v.string(), v.union(v.string(), v.number(), v.boolean(), v.null())),
+    // Normalised fields present in the file (lib/import/row.ts); empty cells are absent.
+    data: importRowDataV,
+    /** Original mapped cells, kept for rows with errors or warnings (error report). */
+    raw: v.optional(v.record(v.string(), v.union(v.string(), v.number(), v.boolean(), v.null()))),
     action: v.union(
       v.literal("create"),
       v.literal("update"),
@@ -1019,10 +1050,12 @@ export default defineSchema({
     matchKey: v.optional(v.union(v.literal("sku"), v.literal("oem_manufacturer"))),
     changedFields: v.array(v.string()),
     committed: v.boolean(),
+    commitError: v.optional(v.string()),
   })
     .index("by_batchId_and_rowNumber", ["batchId", "rowNumber"])
     .index("by_batchId_and_action", ["batchId", "action"])
-    .index("by_batchId_and_sku", ["batchId", "sku"]),
+    .index("by_batchId_and_sku", ["batchId", "sku"])
+    .index("by_batchId_and_productId", ["batchId", "productId"]),
 
   importChanges: defineTable({
     batchId: v.id("importBatches"),
@@ -1060,9 +1093,13 @@ export default defineSchema({
     attempts: v.number(),
     error: v.optional(v.string()),
     storageId: v.optional(v.id("_storage")),
+    position: v.optional(v.number()),
+    updatedAt: v.optional(v.number()),
   })
     .index("by_status", ["status"])
-    .index("by_batchId", ["batchId"]),
+    .index("by_batchId", ["batchId"])
+    .index("by_batchId_and_status", ["batchId", "status"])
+    .index("by_batchId_and_productId", ["batchId", "productId"]),
 
   // §C11 Records, files, analytics -----------------------------------------------------
   auditLog: defineTable({

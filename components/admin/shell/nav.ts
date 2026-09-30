@@ -10,6 +10,8 @@ import {
   ClockCounterClockwiseIcon,
   EnvelopeIcon,
   FactoryIcon,
+  FileArrowDownIcon,
+  FileArrowUpIcon,
   GaugeIcon,
   GearIcon,
   MagnifyingGlassIcon,
@@ -103,6 +105,13 @@ export const ADMIN_NAV: AdminNavGroup[] = [
         keywords: "artikli delovi oem",
       },
       {
+        href: ADMIN.imports,
+        label: "Uvoz iz Excela",
+        icon: FileArrowUpIcon,
+        key: "i",
+        keywords: "uvoz excel xlsx csv cenovnik lager import",
+      },
+      {
         href: ADMIN.categories,
         label: "Kategorije",
         icon: TreeStructureIcon,
@@ -144,6 +153,12 @@ export const ADMIN_NAV: AdminNavGroup[] = [
         label: "E-pošta",
         icon: EnvelopeIcon,
         keywords: "mejlovi outbox posta",
+      },
+      {
+        href: ADMIN.exports,
+        label: "Izvoz",
+        icon: FileArrowDownIcon,
+        keywords: "izvoz excel csv preuzmi export",
       },
       {
         href: ADMIN.audit,

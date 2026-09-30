@@ -10,6 +10,7 @@
 import type { Doc, Id } from "../_generated/dataModel";
 import type { MutationCtx } from "../_generated/server";
 import { normalizeCode } from "../../lib/domain/codes";
+import { PRODUCT_LIMITS, productFieldIssues } from "../../lib/domain/productRules";
 import { buildSearchText } from "../../lib/domain/search";
 import { slugifySr } from "../../lib/domain/slug";
 import { deriveStockState, isAvailableNow, type StockState } from "../../lib/domain/stock";
@@ -133,42 +134,31 @@ export type WriteMeta = {
   importBatchId?: Id<"importBatches">;
 };
 
-export const LIMITS = {
-  sku: 64,
-  name: 160,
-  oem: 50,
-  cross: 100,
-  specs: 40,
-  fitments: 200,
-  description: 5_000,
-  maxQty: 1_000_000,
-} as const;
+/** Kept for existing imports; the rules live in lib/domain/productRules.ts. */
+export const LIMITS = PRODUCT_LIMITS;
 
-function assertInt(value: number, name: string, min = 0, max = Number.MAX_SAFE_INTEGER): void {
-  if (!Number.isInteger(value) || value < min || value > max) {
-    invalid(`Neispravna vrednost: ${name}.`, name);
-  }
-}
-
+/** Throws the first field-rule violation (shared with the import validator). */
 function validate(input: ProductInput): void {
-  const sku = input.sku.trim();
-  if (!sku || sku.length > LIMITS.sku) invalid("Šifra artikla je obavezna (do 64 znaka).", "sku");
-  const name = input.name.trim();
-  if (!name || name.length > LIMITS.name) invalid("Naziv je obavezan (do 160 znakova).", "name");
-  assertInt(input.retailPricePara, "retailPricePara");
-  assertInt(input.stockQty, "stockQty", 0, LIMITS.maxQty);
-  if (input.lowStockThreshold !== undefined)
-    assertInt(input.lowStockThreshold, "lowStockThreshold", 0, 10_000);
-  if (input.leadTimeDays !== undefined) assertInt(input.leadTimeDays, "leadTimeDays", 0, 365);
-  if (input.costNetPara !== undefined) assertInt(input.costNetPara, "costNetPara");
-  if (input.oemNumbers.length > LIMITS.oem) invalid("Najviše 50 OEM brojeva.", "oemNumbers");
-  if (input.crossNumbers.length > LIMITS.cross)
-    invalid("Najviše 100 zamenskih brojeva.", "crossNumbers");
-  if (input.specs.length > LIMITS.specs) invalid("Najviše 40 tehničkih podataka.", "specs");
-  if (input.fitments.length > LIMITS.fitments)
-    invalid("Najviše 200 vozila po artiklu.", "fitments");
-  if ((input.description?.length ?? 0) > LIMITS.description)
-    invalid("Opis je predugačak.", "description");
+  const issue = productFieldIssues({
+    sku: input.sku,
+    name: input.name,
+    retailPricePara: input.retailPricePara,
+    stockQty: input.stockQty,
+    ...(input.lowStockThreshold !== undefined
+      ? { lowStockThreshold: input.lowStockThreshold }
+      : {}),
+    ...(input.leadTimeDays !== undefined ? { leadTimeDays: input.leadTimeDays } : {}),
+    ...(input.costNetPara !== undefined ? { costNetPara: input.costNetPara } : {}),
+    ...(input.weightGrams !== undefined ? { weightGrams: input.weightGrams } : {}),
+    oemCount: input.oemNumbers.length,
+    crossCount: input.crossNumbers.length,
+    specsCount: input.specs.length,
+    fitmentCount: input.fitments.length,
+    ...(input.description !== undefined ? { description: input.description } : {}),
+    ...(input.ean !== undefined ? { ean: input.ean } : {}),
+    ...(input.mpn !== undefined ? { mpn: input.mpn } : {}),
+  })[0];
+  if (issue) invalid(issue.message, issue.field);
 }
 
 type CodeRow = { code: string; kind: Doc<"productCodes">["kind"]; raw: string; label?: string };

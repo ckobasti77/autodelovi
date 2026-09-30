@@ -104,6 +104,19 @@ export function staffMessage(event: Doc<"domainEvents">): InAppMessage | null {
         href: `/admin/proizvodi/${p.productId}`,
         pref: "lowStock",
       };
+    case "import.completed": {
+      if (p.kind !== "import") return null;
+      const extra = [
+        p.failed ? `${p.failed} neuspelih` : "",
+        p.deactivated ? `${p.deactivated} deaktiviranih` : "",
+      ].filter(Boolean);
+      return {
+        kind: "import_done",
+        title: `Uvoz završen: ${p.fileName}`,
+        body: `${p.created} novih, ${p.updated} izmenjenih${extra.length ? `, ${extra.join(", ")}` : ""}.`,
+        href: `/admin/uvoz/${p.batchId}`,
+      };
+    }
     default:
       return null;
   }

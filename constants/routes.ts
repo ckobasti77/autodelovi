@@ -94,6 +94,15 @@ export const ADMIN = {
   emails: "/admin/mejlovi",
   searches: "/admin/pretrage",
   notifications: "/admin/obavestenja",
+  imports: "/admin/uvoz",
+  importHistory: "/admin/uvoz/istorija",
+  importBatch: (id: string) => `/admin/uvoz/${id}`,
+  /** Route handlers (downloads) — plain links, never prefetched. */
+  importTemplate: "/admin/uvoz/sablon",
+  importReport: (id: string) => `/admin/uvoz/${id}/izvestaj`,
+  exports: "/admin/izvoz",
+  exportFile: (kind: "proizvodi.xlsx" | "porudzbine.csv" | "kupci.csv" | "majstori.csv") =>
+    `/admin/izvoz/${kind}`,
   invite: (token: string) => `/admin/pozivnica/${token}`,
 } as const;
 
