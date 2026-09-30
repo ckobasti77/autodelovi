@@ -61,7 +61,8 @@ function convexOrigins(convexUrl: string | undefined, convexSiteUrl: string | un
 /**
  * Nonce-based strict CSP. Scripts: only nonced ones and what they load (`strict-dynamic`
  * covers gtag.js, fbevents.js and the Next chunks); `wasm-unsafe-eval` for the meshopt
- * decoder of the 3D model; workers from blob: (meshopt) and self (Excel import).
+ * decoder of the 3D model; workers from blob: (meshopt) and self (Excel import); connect to
+ * blob:/data: for the textures embedded in the GLB.
  * Styles allow inline (`style` attributes carry the text-reveal custom properties).
  */
 export function buildCsp(opts: CspOptions): string {
@@ -92,6 +93,9 @@ export function buildCsp(opts: CspOptions): string {
     [
       "connect-src",
       "'self'",
+      // GLTFLoader fetches the GLB's embedded textures through blob: URLs (ImageBitmapLoader).
+      "blob:",
+      "data:",
       ...convex.http,
       ...convex.ws,
       ...convex.site,

@@ -363,8 +363,17 @@ test.describe("Consent Mode v2 and tags", () => {
       "update",
       { ad_storage: "granted", ad_user_data: "granted", ad_personalization: "granted", analytics_storage: "granted" },
     ]);
-    expect(layer).toContainEqual(["config", "G-E2ETEST01"]);
-    expect(layer).toContainEqual(["config", "AW-123456789", { allow_enhanced_conversions: true }]);
+    // Config carries the page location (capability tokens redacted, lib/analytics/redact).
+    expect(layer).toContainEqual([
+      "config",
+      "G-E2ETEST01",
+      expect.objectContaining({ page_location: expect.stringContaining("/deo/") }),
+    ]);
+    expect(layer).toContainEqual([
+      "config",
+      "AW-123456789",
+      expect.objectContaining({ allow_enhanced_conversions: true }),
+    ]);
     // view_item happened before the click and is replayed once to the new adapters.
     const viewItems = layer.filter((e) => e[0] === "event" && e[1] === "view_item");
     expect(viewItems).toHaveLength(1);
