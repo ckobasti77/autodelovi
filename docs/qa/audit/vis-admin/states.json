@@ -1,0 +1,94 @@
+{
+  "skeleton": {
+    "busy": 1,
+    "sk": 48,
+    "f": "docs/qa/audit/vis-admin/states/skeleton-proizvodi.webp"
+  },
+  "palette": "ERR Error: frame.evaluate: Error: No elements found for include in page Context\n    at validateContext (eval at evaluate (:311:30), <anonymous>:19556:15)\n    at new Context (eval at evaluate (:311:30), <a",
+  "bell": {
+    "f": "docs/qa/audit/vis-admin/states/bell.webp",
+    "axe": []
+  },
+  "shortcuts": "docs/qa/audit/vis-admin/states/shortcuts.webp",
+  "order-cancel-dialog-axe": [],
+  "order-menu-dialog": {
+    "m": "docs/qa/audit/vis-admin/states/order-status-menu.webp",
+    "d": "docs/qa/audit/vis-admin/states/order-cancel-dialog.webp"
+  },
+  "tracking-inline": "docs/qa/audit/vis-admin/states/order-tracking.webp",
+  "bulk-bar": {
+    "n": 50,
+    "f": "docs/qa/audit/vis-admin/states/products-bulk-bar.webp",
+    "bar": {
+      "top": 227,
+      "h": 54,
+      "text": "1 izabranoAktivirajDeaktivirajPromeni kategorijuPromeni cene %Poništi izbor"
+    }
+  },
+  "orders-bulk-bar": {
+    "n": 50,
+    "f": "docs/qa/audit/vis-admin/states/orders-bulk-bar.webp"
+  },
+  "empty-filter": "ERR TimeoutError: page.screenshot: Timeout 30000ms exceeded.\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n  - fonts loaded\n",
+  "editor-dirty": "ERR Error: page.$$eval: Execution context was destroyed, most likely because of a navigation",
+  "quote-composer": {
+    "f": "docs/qa/audit/vis-admin/states/quote-composer.webp",
+    "v": "docs/qa/audit/vis-admin/states/quote-composer-view.webp"
+  },
+  "category-tree": {
+    "scrollers": [
+      {
+        "tag": "UL",
+        "sh": 2338,
+        "ch": 676,
+        "text": "Motor i usisBlok motora i glava3Turbina (turbopunjač)4Interkuler2Usisna grana i "
+      },
+      {
+        "tag": "TEXTAREA",
+        "sh": 192,
+        "ch": 144,
+        "text": "Blok motora i glava nose sve ostale delove motora: klipove, bregaste osovine, ve"
+      }
+    ]
+  },
+  "log": {
+    "console": [
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_NAME_NOT_RESOLVED",
+      "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    ],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [
+      "500 http://localhost:3100/prijava?next=%2Fadmin%2Fproizvodi"
+    ]
+  }
+}

@@ -1,0 +1,231 @@
+[
+  {
+    "k": "idle 6.5 s on touch",
+    "v": {
+      "state": {
+        "ready": false,
+        "tier": null,
+        "status": "idle",
+        "progress": 0,
+        "stage": 0,
+        "selected": null,
+        "hovered": null,
+        "timeline": "mobile",
+        "reducedMotion": false
+      },
+      "glb": 0,
+      "canvases": 0
+    }
+  },
+  {
+    "k": "after first swipe",
+    "v": {
+      "scrollY": 0,
+      "status": "loading"
+    }
+  },
+  {
+    "k": "ready at trackTop",
+    "v": {
+      "trackTop": 607,
+      "state": {
+        "ready": true,
+        "tier": "mid",
+        "status": "ready",
+        "progress": 0,
+        "stage": 0,
+        "selected": null,
+        "hovered": null,
+        "timeline": "mobile",
+        "reducedMotion": false
+      }
+    }
+  },
+  {
+    "k": "canvas box",
+    "v": {
+      "x": 0,
+      "y": 56.1875,
+      "width": 390,
+      "height": 672
+    }
+  },
+  {
+    "k": "swipe on canvas",
+    "v": {
+      "before": 607,
+      "after": 607,
+      "moved": 0,
+      "state": {
+        "ready": true,
+        "tier": "mid",
+        "status": "ready",
+        "progress": 0,
+        "stage": 0,
+        "selected": null,
+        "hovered": null,
+        "timeline": "mobile",
+        "reducedMotion": false
+      }
+    }
+  },
+  {
+    "k": "tap select",
+    "v": {
+      "x": 195,
+      "y": 523,
+      "selected": "usisna-grana"
+    }
+  },
+  {
+    "k": "sheet at open",
+    "v": {
+      "top": 490,
+      "height": 776,
+      "vh": 844,
+      "visiblePct": 42
+    }
+  },
+  {
+    "k": "products in sheet",
+    "v": 2
+  },
+  {
+    "k": "swipe above non-modal sheet",
+    "v": {
+      "before": 607,
+      "after": 607,
+      "selected": "usisna-grana"
+    }
+  },
+  {
+    "k": "handle box",
+    "v": {
+      "x": 163,
+      "y": 494.53125,
+      "width": 64,
+      "height": 24
+    }
+  },
+  {
+    "k": "after drag up",
+    "v": {
+      "top": 68,
+      "label": "Smanji panel"
+    }
+  },
+  {
+    "k": "after flick down",
+    "v": {
+      "selected": null,
+      "panelVisible": true,
+      "url": "/",
+      "active": "BODY null undefined"
+    }
+  },
+  {
+    "k": "parts list open (tap)",
+    "v": true
+  },
+  {
+    "k": "picked Akumulator from list",
+    "v": {
+      "selected": "akumulator",
+      "stage": 5,
+      "progress": 0.632,
+      "scrollY": 1674
+    }
+  },
+  {
+    "k": "after close button",
+    "v": {
+      "selected": null,
+      "active": "BUTTON parts-list-trigger"
+    }
+  },
+  {
+    "k": "toggle label before",
+    "v": "Rasklopi"
+  },
+  {
+    "k": "after Rasklopi tap",
+    "v": {
+      "state": {
+        "ready": true,
+        "tier": "mid",
+        "status": "ready",
+        "progress": 1,
+        "stage": 7,
+        "selected": null,
+        "hovered": null,
+        "timeline": "mobile",
+        "reducedMotion": false
+      },
+      "scrollY": 2295,
+      "label": "Sklopi"
+    }
+  },
+  {
+    "k": "landscape 844x390",
+    "v": {
+      "canvasCss": [
+        844,
+        300
+      ],
+      "canvasBuf": [
+        844,
+        300
+      ],
+      "media": [
+        844,
+        300
+      ],
+      "frameH": 416,
+      "state": {
+        "ready": true,
+        "tier": "mid",
+        "status": "ready",
+        "progress": 0.09359,
+        "stage": 0,
+        "selected": null,
+        "hovered": null,
+        "timeline": "mobile",
+        "reducedMotion": false
+      },
+      "scrollY": 607
+    }
+  },
+  {
+    "k": "back to portrait",
+    "v": {
+      "canvasCss": [
+        390,
+        672
+      ],
+      "canvasBuf": [
+        390,
+        672
+      ],
+      "state": {
+        "ready": true,
+        "tier": "mid",
+        "status": "ready",
+        "progress": 0,
+        "stage": 0,
+        "selected": null,
+        "hovered": null,
+        "timeline": "mobile",
+        "reducedMotion": false
+      }
+    }
+  },
+  {
+    "k": "errors",
+    "v": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+]

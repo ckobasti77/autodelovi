@@ -1,0 +1,795 @@
+{
+  "pages": {
+    "360": {
+      "majstor": {
+        "probe": {
+          "vw": 360,
+          "over": 9,
+          "offenders": [
+            "div.ml-auto.flex.items-center",
+            "div.lg:hidden",
+            "button.relative.inline-flex.shrink-0",
+            "ul.flex.gap-6",
+            "li.",
+            "a.inline-flex.h-11.items-center"
+          ],
+          "tiny": [
+            "input 1x1 \"Otpremi CSV\"",
+            "a 129x20 \"SK-2026-000122\"",
+            "a 129x20 \"SK-2026-000121\"",
+            "a 129x20 \"SK-2026-000120\"",
+            "a 129x20 \"SK-2026-000119\"",
+            "a 129x20 \"SK-2026-000103\""
+          ],
+          "tinyCount": 6,
+          "under44": [
+            "button 141x36 \"Poruči ponovo\"",
+            "button 141x36 \"Poruči ponovo\"",
+            "button 141x36 \"Poruči ponovo\"",
+            "button 141x36 \"Poruči ponovo\"",
+            "button 141x36 \"Poruči ponovo\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 6,
+          "smallInputs": [
+            "qo-input 15px"
+          ]
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "majstor_porudzbine": {
+        "probe": {
+          "vw": 360,
+          "over": 9,
+          "offenders": [
+            "div.ml-auto.flex.items-center",
+            "div.lg:hidden",
+            "button.relative.inline-flex.shrink-0",
+            "ul.flex.gap-6",
+            "li.",
+            "a.inline-flex.h-11.items-center"
+          ],
+          "tiny": [
+            "a 169x20 \"SK-2026-000122\"",
+            "a 169x20 \"SK-2026-000121\"",
+            "a 169x20 \"SK-2026-000120\"",
+            "a 169x20 \"SK-2026-000119\"",
+            "a 169x20 \"SK-2026-000103\"",
+            "a 169x20 \"SK-2026-000101\"",
+            "a 169x20 \"SK-2026-000100\""
+          ],
+          "tinyCount": 7,
+          "under44": [
+            "button 143x36 \"Poruči ponovo\"",
+            "button 143x36 \"Poruči ponovo\"",
+            "button 143x36 \"Poruči ponovo\"",
+            "button 143x36 \"Poruči ponovo\"",
+            "button 143x36 \"Poruči ponovo\"",
+            "button 143x36 \"Poruči ponovo\"",
+            "button 143x36 \"Poruči ponovo\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 8,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "majstor_omiljeno": {
+        "probe": {
+          "vw": 360,
+          "over": 9,
+          "offenders": [
+            "div.ml-auto.flex.items-center",
+            "div.lg:hidden",
+            "button.relative.inline-flex.shrink-0",
+            "ul.flex.gap-6",
+            "li.",
+            "a.inline-flex.h-11.items-center"
+          ],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 1,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "majstor_vozila": {
+        "probe": {
+          "vw": 360,
+          "over": 9,
+          "offenders": [
+            "div.ml-auto.flex.items-center",
+            "div.lg:hidden",
+            "button.relative.inline-flex.shrink-0",
+            "ul.flex.gap-6",
+            "li.",
+            "a.inline-flex.h-11.items-center"
+          ],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 1,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "majstor_cenovnik": {
+        "probe": {
+          "vw": 360,
+          "over": 9,
+          "offenders": [
+            "div.ml-auto.flex.items-center",
+            "div.lg:hidden",
+            "button.relative.inline-flex.shrink-0",
+            "ul.flex.gap-6",
+            "li.",
+            "a.inline-flex.h-11.items-center"
+          ],
+          "tiny": [
+            "button 20x20 \"Motor i usis — sve kategorije\"",
+            "button 20x20 \"Blok motora i glava\"",
+            "button 20x20 \"Turbina (turbopunjač)\"",
+            "button 20x20 \"Interkuler\"",
+            "button 20x20 \"Usisna grana i kućište filtera\"",
+            "button 20x20 \"Brizgaljke i pumpa goriva\"",
+            "button 20x20 \"Set zupčastog kaiša i vodena pumpa\"",
+            "button 20x20 \"Kaiš alternatora i zatezači\"",
+            "button 20x20 \"Alternator\"",
+            "button 20x20 \"Anlaser\"",
+            "button 20x20 \"Svećice, bobine i grejači\"",
+            "button 20x20 \"Karter, pumpa ulja i dihtunzi\"",
+            "button 20x20 \"EGR ventil\"",
+            "button 20x20 \"Nosači motora i menjača\"",
+            "button 20x20 \"Izduvni sistem — sve kategorije\""
+          ],
+          "tinyCount": 54,
+          "under44": [
+            "button 166x36 \"Izaberi sve kategorije\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 2,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "majstor_upiti": {
+        "probe": {
+          "vw": 360,
+          "over": 9,
+          "offenders": [
+            "div.ml-auto.flex.items-center",
+            "div.lg:hidden",
+            "button.relative.inline-flex.shrink-0",
+            "ul.flex.gap-6",
+            "li.",
+            "a.inline-flex.h-11.items-center"
+          ],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 1,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "majstor_profil": {
+        "probe": {
+          "vw": 360,
+          "over": 9,
+          "offenders": [
+            "div.ml-auto.flex.items-center",
+            "div.lg:hidden",
+            "button.relative.inline-flex.shrink-0",
+            "ul.flex.gap-6",
+            "li.",
+            "a.inline-flex.h-11.items-center"
+          ],
+          "tiny": [
+            "button 20x20 \"Mehanika\"",
+            "button 20x20 \"Autoelektrika\"",
+            "button 20x20 \"Dijagnostika\"",
+            "button 20x20 \"Klima\"",
+            "button 20x20 \"Limarija i farbanje\"",
+            "button 20x20 \"Vulkanizer\"",
+            "button 20x20 \"Ostalo\"",
+            "button 20x20 \"Volkswagen\"",
+            "button 20x20 \"Audi\"",
+            "button 20x20 \"Škoda\"",
+            "button 20x20 \"SEAT\"",
+            "button 20x20 \"Cupra\""
+          ],
+          "tinyCount": 12,
+          "under44": [
+            "input 302x42 \"INPUT\"",
+            "input 302x42 \"INPUT\"",
+            "input 302x42 \"INPUT\"",
+            "input 302x42 \"INPUT\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "orderDetail": {
+        "href": "/majstor/porudzbine/SK-2026-000122",
+        "probe": {
+          "vw": 360,
+          "over": 9,
+          "offenders": [
+            "div.ml-auto.flex.items-center",
+            "div.lg:hidden",
+            "button.relative.inline-flex.shrink-0",
+            "ul.flex.gap-6",
+            "li.",
+            "a.inline-flex.h-11.items-center"
+          ],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 1,
+          "smallInputs": []
+        }
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "768": {
+      "majstor": {
+        "probe": {
+          "vw": 768,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 3,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "majstor_porudzbine": {
+        "probe": {
+          "vw": 768,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 3,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "majstor_omiljeno": {
+        "probe": {
+          "vw": 768,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 3,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "majstor_vozila": {
+        "probe": {
+          "vw": 768,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 3,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "majstor_cenovnik": {
+        "probe": {
+          "vw": 768,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 3,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "majstor_upiti": {
+        "probe": {
+          "vw": 768,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 3,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "majstor_profil": {
+        "probe": {
+          "vw": 768,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 3,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "1440": {
+      "majstor": {
+        "probe": {
+          "vw": 1440,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 256x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "majstor_porudzbine": {
+        "probe": {
+          "vw": 1440,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 256x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "majstor_omiljeno": {
+        "probe": {
+          "vw": 1440,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 256x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "majstor_vozila": {
+        "probe": {
+          "vw": 1440,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 256x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "majstor_cenovnik": {
+        "probe": {
+          "vw": 1440,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 256x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "majstor_upiti": {
+        "probe": {
+          "vw": 1440,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 256x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "majstor_profil": {
+        "probe": {
+          "vw": 1440,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 256x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "2560": {
+      "majstor": {
+        "probe": {
+          "vw": 2560,
+          "over": 0,
+          "offenders": [],
+          "tiny": [
+            "input 1x1 \"Otpremi CSV\""
+          ],
+          "tinyCount": 1,
+          "under44": [
+            "button 288x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 3,
+          "smallInputs": [
+            "qo-input 15px"
+          ]
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "majstor_porudzbine": {
+        "probe": {
+          "vw": 2560,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 288x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "majstor_omiljeno": {
+        "probe": {
+          "vw": 2560,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 288x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "majstor_vozila": {
+        "probe": {
+          "vw": 2560,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 288x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "majstor_cenovnik": {
+        "probe": {
+          "vw": 2560,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 288x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "majstor_upiti": {
+        "probe": {
+          "vw": 2560,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 288x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "majstor_profil": {
+        "probe": {
+          "vw": 2560,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 288x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "log": {
+        "console": [
+          "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+          "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": [
+          "500 http://localhost:3100/majstor/porudzbine"
+        ]
+      }
+    }
+  },
+  "quick": {}
+}

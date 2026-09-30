@@ -1,0 +1,44 @@
+[
+  {
+    "role": "admin",
+    "width": 1024,
+    "route": "/admin/upiti/UP-2026-000054",
+    "status": 200,
+    "finalUrl": "/admin/upiti/UP-2026-000054",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "UP-2026-000054 · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Upit UP-2026-000054"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "a \"Upiti\" 31x21",
+        "a \"+381 64 333 4455\" 136x16"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1024-admin_upiti_UP-2026-000054.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  }
+]

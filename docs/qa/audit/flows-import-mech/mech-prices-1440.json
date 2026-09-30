@@ -1,0 +1,368 @@
+{
+  "width": 1440,
+  "pages": {
+    "product": {
+      "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+      "count": 6,
+      "mismatches": [
+        {
+          "sku": "DEMO-0007",
+          "shownRetail": 4690,
+          "shown": 3987,
+          "rabat": "15",
+          "expected": {
+            "retail": 7490,
+            "price": 6367,
+            "guard": false
+          },
+          "ok": false,
+          "raw": "MP Maloprodajna cena: 4.690 RSD Vaša cena · rabat 15 % 3.987 RSD sa PDV-om"
+        },
+        {
+          "sku": "DEMO-0007",
+          "shownRetail": 4690,
+          "shown": 3987,
+          "rabat": null,
+          "expected": {
+            "retail": 7490,
+            "price": 6367,
+            "guard": false
+          },
+          "ok": false,
+          "raw": "MPMaloprodajna cena: 4.690 RSDVaša cena3.987RSDsa PDV-om"
+        }
+      ],
+      "sample": [
+        {
+          "sku": "DEMO-0007",
+          "shownRetail": 4690,
+          "shown": 3987,
+          "rabat": "15",
+          "expected": {
+            "retail": 7490,
+            "price": 6367,
+            "guard": false
+          },
+          "ok": false,
+          "raw": "MP Maloprodajna cena: 4.690 RSD Vaša cena · rabat 15 % 3.987 RSD sa PDV-om"
+        },
+        {
+          "sku": "DEMO-0007",
+          "shownRetail": 7490,
+          "shown": 6367,
+          "rabat": null,
+          "expected": {
+            "retail": 7490,
+            "price": 6367,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 7.490 RSD Vaša cena 6.367 RSD sa PDV-om"
+        },
+        {
+          "sku": "DEMO-0001",
+          "shownRetail": 5490,
+          "shown": 4667,
+          "rabat": null,
+          "expected": {
+            "retail": 5490,
+            "price": 4667,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 5.490 RSD Vaša cena 4.667 RSD sa PDV-om"
+        },
+        {
+          "sku": "DEMO-0003",
+          "shownRetail": 3890,
+          "shown": 3307,
+          "rabat": null,
+          "expected": {
+            "retail": 3890,
+            "price": 3307,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 3.890 RSD Vaša cena 3.307 RSD sa PDV-om"
+        }
+      ]
+    },
+    "product-oos": {
+      "url": "/deo/kocione-plocice-prednje-demo-0012",
+      "count": 5,
+      "mismatches": [
+        {
+          "sku": "DEMO-0013",
+          "shownRetail": 2990,
+          "shown": 2542,
+          "rabat": "15",
+          "expected": {
+            "retail": 3490,
+            "price": 2967,
+            "guard": false
+          },
+          "ok": false,
+          "raw": "MP Maloprodajna cena: 2.990 RSD Vaša cena · rabat 15 % 2.542 RSD sa PDV-om"
+        }
+      ],
+      "sample": [
+        {
+          "sku": "DEMO-0013",
+          "shownRetail": 2990,
+          "shown": 2542,
+          "rabat": "15",
+          "expected": {
+            "retail": 3490,
+            "price": 2967,
+            "guard": false
+          },
+          "ok": false,
+          "raw": "MP Maloprodajna cena: 2.990 RSD Vaša cena · rabat 15 % 2.542 RSD sa PDV-om"
+        },
+        {
+          "sku": "DEMO-0013",
+          "shownRetail": 3490,
+          "shown": 2967,
+          "rabat": null,
+          "expected": {
+            "retail": 3490,
+            "price": 2967,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 3.490 RSD Vaša cena 2.967 RSD sa PDV-om"
+        },
+        {
+          "sku": "DEMO-0011",
+          "shownRetail": 3190,
+          "shown": 2712,
+          "rabat": null,
+          "expected": {
+            "retail": 3190,
+            "price": 2712,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 3.190 RSD Vaša cena 2.712 RSD sa PDV-om"
+        },
+        {
+          "sku": "DEMO-0009",
+          "shownRetail": 4290,
+          "shown": 3647,
+          "rabat": null,
+          "expected": {
+            "retail": 4290,
+            "price": 3647,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 4.290 RSD Vaša cena 3.647 RSD sa PDV-om"
+        }
+      ]
+    },
+    "category": {
+      "url": "/delovi/kocioni-diskovi",
+      "count": 9,
+      "mismatches": [],
+      "sample": [
+        {
+          "sku": "DEMO-0007",
+          "shownRetail": 7490,
+          "shown": 6367,
+          "rabat": null,
+          "expected": {
+            "retail": 7490,
+            "price": 6367,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 7.490 RSD Vaša cena 6.367 RSD sa PDV-om"
+        },
+        {
+          "sku": "DEMO-0003",
+          "shownRetail": 3890,
+          "shown": 3307,
+          "rabat": null,
+          "expected": {
+            "retail": 3890,
+            "price": 3307,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 3.890 RSD Vaša cena 3.307 RSD sa PDV-om"
+        },
+        {
+          "sku": "DEMO-0006",
+          "shownRetail": 3990,
+          "shown": 3392,
+          "rabat": null,
+          "expected": {
+            "retail": 3990,
+            "price": 3392,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 3.990 RSD Vaša cena 3.392 RSD sa PDV-om"
+        },
+        {
+          "sku": "DEMO-0002",
+          "shownRetail": 7290,
+          "shown": 6197,
+          "rabat": null,
+          "expected": {
+            "retail": 7290,
+            "price": 6197,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 7.290 RSD Vaša cena 6.197 RSD sa PDV-om"
+        }
+      ]
+    },
+    "landing": {
+      "url": "/delovi/kocioni-diskovi/volkswagen/golf",
+      "count": 6,
+      "mismatches": [],
+      "sample": [
+        {
+          "sku": "DEMO-0003",
+          "shownRetail": 3890,
+          "shown": 3307,
+          "rabat": null,
+          "expected": {
+            "retail": 3890,
+            "price": 3307,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 3.890 RSD Vaša cena 3.307 RSD sa PDV-om"
+        },
+        {
+          "sku": "DEMO-0002",
+          "shownRetail": 7290,
+          "shown": 6197,
+          "rabat": null,
+          "expected": {
+            "retail": 7290,
+            "price": 6197,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 7.290 RSD Vaša cena 6.197 RSD sa PDV-om"
+        },
+        {
+          "sku": "DEMO-0004",
+          "shownRetail": 4690,
+          "shown": 3987,
+          "rabat": null,
+          "expected": {
+            "retail": 4690,
+            "price": 3987,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 4.690 RSD Vaša cena 3.987 RSD sa PDV-om"
+        },
+        {
+          "sku": "DEMO-E001",
+          "shownRetail": 6700,
+          "shown": 5695,
+          "rabat": null,
+          "expected": {
+            "retail": 6700,
+            "price": 5695,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 6.700 RSD Vaša cena 5.695 RSD sa PDV-om"
+        }
+      ]
+    },
+    "search-oem": {
+      "url": "/pretraga?q=5Q0615505R",
+      "count": 1,
+      "mismatches": [],
+      "sample": [
+        {
+          "sku": "DEMO-0004",
+          "shownRetail": 4690,
+          "shown": 3987,
+          "rabat": null,
+          "expected": {
+            "retail": 4690,
+            "price": 3987,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 4.690 RSD Vaša cena 3.987 RSD sa PDV-om"
+        }
+      ]
+    },
+    "search-disk": {
+      "url": "/pretraga?q=disk",
+      "count": 9,
+      "mismatches": [],
+      "sample": [
+        {
+          "sku": "DEMO-0008",
+          "shownRetail": 9890,
+          "shown": 8407,
+          "rabat": null,
+          "expected": {
+            "retail": 9890,
+            "price": 8407,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 9.890 RSD Vaša cena 8.407 RSD sa PDV-om"
+        },
+        {
+          "sku": "DEMO-0007",
+          "shownRetail": 7490,
+          "shown": 6367,
+          "rabat": null,
+          "expected": {
+            "retail": 7490,
+            "price": 6367,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 7.490 RSD Vaša cena 6.367 RSD sa PDV-om"
+        },
+        {
+          "sku": "DEMO-0006",
+          "shownRetail": 3990,
+          "shown": 3392,
+          "rabat": null,
+          "expected": {
+            "retail": 3990,
+            "price": 3392,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 3.990 RSD Vaša cena 3.392 RSD sa PDV-om"
+        },
+        {
+          "sku": "DEMO-0004",
+          "shownRetail": 4690,
+          "shown": 3987,
+          "rabat": null,
+          "expected": {
+            "retail": 4690,
+            "price": 3987,
+            "guard": false
+          },
+          "ok": true,
+          "raw": "MP Maloprodajna cena: 4.690 RSD Vaša cena 3.987 RSD sa PDV-om"
+        }
+      ]
+    }
+  },
+  "cart": "Korpa\nKočioni disk prednji 276 × 24 mm\n\nFebi Bilstein · OEM 5Q0 615 505 R\n\n3.987 RSD × 1 · Vaša cena\n\n3.987 RSD\nMaloprodajna vrednost\n4.690 RSD\nVaš rabat\n−703 RSD\nMeđuzbir\n3.987 RSD\nDostava\nPreuzimanje 0 RSD · kurir 450 RSD\n\nJoš 6.013 RSD do besplatne dostave.\n\nU cenu je uračunat PDV 20 %: 664,50 RSD\n\nNastavi na porudžbinu\n\nBez plaćanja karticom na sajtu. Plaćate pouzećem, pri preuzimanju ili virmanom.\n\nNastavi kupovinu",
+  "log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

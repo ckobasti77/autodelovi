@@ -1,0 +1,14 @@
+empty save {"errors":["Upišite šifru artikla.Upišite naziv.Izaberite kategoriju.Izaberite proizvođača.Upišite cenu sa PDV-om.","Upišite naziv.","Upišite šifru artikla.","Izaberite kategoriju.","Izaberite proizvođača.","Upišite cenu sa PDV-om."],"invalid":5,"focus":"BODY "}
+oem preview {"row":"5Q0615301F"}
+oem dup {"row":"duplikat"}
+seo preview {"text":"Pregled u pretrazilocalhost:3000 › deo › audit-disk-prednji-852021Audit disk prednji 852021 — ATE | SKLOPAudit disk prednji 852021, ATE — Kočioni diskovi. Cena sa PDV-om, stanje i dostava."}
+created {"url":"http://localhost:3100/admin/proizvodi/qh7cqja340240s4jq1fsawnc3s8fctej","toasts":[]}
+image uploaded {"imgs":1,"toasts":[]}
+tab B saved price {"priceB":"5990","toasts":[]}
+tab A sees {"priceA":"4990"}
+after tab A save {"priceServer":"4990","nameServer":"Audit disk prednji 852021 (tab A)"}
+history {"text":""}
+duplicate {"dupId":"qh727wgvrhbnrc8x6mjx5k76bs8fd084","h1":"Audit disk prednji 852021 (tab A)","sku":"AUDIT-FA-852021-KOPIJA","slug":"audit-disk-prednji-852021-tab-a-audit-fa-852021-kopija","badges":"ProizvodiAudit disk prednji 852021 (tab A)NeaktivanNema na stanjuDuplirajAktivirajOsnovnoNaziv (obavezno)Šifra artikla (obavezno)Interna šifra; mora biti jedinstvena.Adresa na sajtu (slug)Promena prav"}
+deactivate button {"visible":true}
+after deactivate (no confirm?) {"dialog":false,"toasts":[]}
+errors {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}

@@ -1,0 +1,83 @@
+[
+  {
+    "file": "prazan.csv",
+    "rowCount": "0 redova",
+    "nextDisabled": true,
+    "alerts": [
+      "Ispod reda sa nazivima kolona nema podataka. Izaberite drugi red ili list.",
+      ""
+    ],
+    "snippet": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\n1\nKorak 1:\nDatoteka\n2\nKorak 2:\nKolone\n3\nKorak 3:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\nprazan.csv\nDrugi fajl\n\nCSV · 0 KB · 0 redova · razdvajanje „;“\n\nRed sa nazivima kolona\nKodna strana\nUTF-8\nWindows-1250\nPrvi redovi fajla\nRed\nDalje: kolone\nIspod reda sa nazivima kolona nema podataka. Izaberite drugi red ili list."
+  },
+  {
+    "file": "prazan.xlsx",
+    "rowCount": "0 redova",
+    "nextDisabled": true,
+    "alerts": [
+      "Ispod reda sa nazivima kolona nema podataka. Izaberite drugi red ili list.",
+      ""
+    ],
+    "snippet": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\n1\nKorak 1:\nDatoteka\n2\nKorak 2:\nKolone\n3\nKorak 3:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\nprazan.xlsx\nDrugi fajl\n\nXLSX · 16 KB · 0 redova\n\nRed sa nazivima kolona\nPrvi redovi fajla\nRed\nDalje: kolone\nIspod reda sa nazivima kolona nema podataka. Izaberite drugi red ili list."
+  },
+  {
+    "file": "samo-zaglavlje.xlsx",
+    "rowCount": "0 redova",
+    "nextDisabled": true,
+    "alerts": [
+      "Ispod reda sa nazivima kolona nema podataka. Izaberite drugi red ili list.",
+      ""
+    ],
+    "snippet": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\n1\nKorak 1:\nDatoteka\n2\nKorak 2:\nKolone\n3\nKorak 3:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\nsamo-zaglavlje.xlsx\nDrugi fajl\n\nXLSX · 16 KB · 0 redova\n\nRed sa nazivima kolona\nRed 1 — Šifra, Naziv\nPrvi redovi fajla\nRed\tŠifra\tNaziv\tKategorija\tProizvođač\tMP cena\tKoličina\nDalje: kolone\nIspod reda sa nazivima kolona nema podataka. Izaberite drugi red ili list."
+  },
+  {
+    "file": "ostecen.xlsx",
+    "rowCount": null,
+    "nextDisabled": null,
+    "alerts": [
+      "Fajl je zaštićen lozinkom — sačuvajte ga bez lozinke.",
+      ""
+    ],
+    "snippet": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\n1\nKorak 1:\nDatoteka\n2\nKorak 2:\nKolone\n3\nKorak 3:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\n\nPrevucite fajl ovde\n\nxlsx, xls ili csv · do 25 MB i 50.000 redova\n\nIzaberi fajl\nFajl je zaštićen lozinkom — sačuvajte ga bez lozinke.\n\nNemate fajl u pravom obliku? \nPreuzmite šablon sa uputstvom i listama kategorija, proizvođača i vozila.\n\nKako teče uvoz\n1\nDatoteka\nxlsx, xls ili csv iz knjigovodstvenog programa ili iz šablona.\n2\nKolone\nKolone se prepoznaju same; proverite ih i sačuvajte raspored za sledeći put.\n3\nProvera\nGreške, ponovljene šifre i nepoznate kategorije vidite pre slanja.\n4\nProbni uvoz\nŠta je novo, šta se menja i šta se preskače — ništa se još ne upisuje.\n5\nUpis\nSvaka izmena ostaje zapisana, a ceo uvoz može da se poništi.\nPoslednji uvozi\nI"
+  },
+  {
+    "file": "beleske.txt",
+    "rowCount": null,
+    "nextDisabled": null,
+    "alerts": [
+      "Izaberite xlsx, xls ili csv fajl.",
+      ""
+    ],
+    "snippet": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\n1\nKorak 1:\nDatoteka\n2\nKorak 2:\nKolone\n3\nKorak 3:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\n\nPrevucite fajl ovde\n\nxlsx, xls ili csv · do 25 MB i 50.000 redova\n\nIzaberi fajl\nIzaberite xlsx, xls ili csv fajl.\n\nNemate fajl u pravom obliku? \nPreuzmite šablon sa uputstvom i listama kategorija, proizvođača i vozila.\n\nKako teče uvoz\n1\nDatoteka\nxlsx, xls ili csv iz knjigovodstvenog programa ili iz šablona.\n2\nKolone\nKolone se prepoznaju same; proverite ih i sačuvajte raspored za sledeći put.\n3\nProvera\nGreške, ponovljene šifre i nepoznate kategorije vidite pre slanja.\n4\nProbni uvoz\nŠta je novo, šta se menja i šta se preskače — ništa se još ne upisuje.\n5\nUpis\nSvaka izmena ostaje zapisana, a ceo uvoz može da se poništi.\nPoslednji uvozi\nIstorija uvoza\nproizv"
+  },
+  {
+    "file": "cenovnik.pdf",
+    "rowCount": null,
+    "nextDisabled": null,
+    "alerts": [
+      "Izaberite xlsx, xls ili csv fajl.",
+      ""
+    ],
+    "snippet": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\n1\nKorak 1:\nDatoteka\n2\nKorak 2:\nKolone\n3\nKorak 3:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\n\nPrevucite fajl ovde\n\nxlsx, xls ili csv · do 25 MB i 50.000 redova\n\nIzaberi fajl\nIzaberite xlsx, xls ili csv fajl.\n\nNemate fajl u pravom obliku? \nPreuzmite šablon sa uputstvom i listama kategorija, proizvođača i vozila.\n\nKako teče uvoz\n1\nDatoteka\nxlsx, xls ili csv iz knjigovodstvenog programa ili iz šablona.\n2\nKolone\nKolone se prepoznaju same; proverite ih i sačuvajte raspored za sledeći put.\n3\nProvera\nGreške, ponovljene šifre i nepoznate kategorije vidite pre slanja.\n4\nProbni uvoz\nŠta je novo, šta se menja i šta se preskače — ništa se još ne upisuje.\n5\nUpis\nSvaka izmena ostaje zapisana, a ceo uvoz može da se poništi.\nPoslednji uvozi\nIstorija uvoza\nproizv"
+  },
+  {
+    "file": "bez-zaglavlja.csv",
+    "rowCount": "2 redova",
+    "nextDisabled": false,
+    "alerts": [
+      ""
+    ],
+    "snippet": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\n1\nKorak 1:\nDatoteka\n2\nKorak 2:\nKolone\n3\nKorak 3:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\nbez-zaglavlja.csv\nDrugi fajl\n\nCSV · 1 KB · 2 redova · razdvajanje „;“\n\nRed sa nazivima kolona\nRed 1 — a, b\nRed 2 — 1, 2\nRed 3 — 4, 5\nKodna strana\nUTF-8\nWindows-1250\nPrvi redovi fajla\nRed\ta\tb\tc\n2\t1\t2\t3\n3\t4\t5\t6\nDalje: kolone"
+  },
+  {
+    "file": "bez-zaglavlja.csv (mapping)",
+    "snippet": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\nKorak 1, završen:\nDatoteka\nIzmeni\n: Datoteka\n2\nKorak 2:\nKolone\n3\nKorak 3:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\nŠta uvozite\nRežim uvoza\nPun uvoz\nNovi artikli se prave, postojeći se menjaju u kolonama koje ste izabrali.\nSamo lager i cene\nMenja samo količinu, cene, rok isporuke i status postojećih artikala. Nepoznate šifre se preskaču.\nBrojevi\nSrpski zapis: 1.234,56\nEngleski zapis: 1,234.56\n\nFajl ne pokazuje jasno format brojeva — proverite primer.\n\nKolone\nMapiranje kolona fajla na polja artikla\nKOLONA U FAJLU\tPRIMERI\tPOLJE\tPREPOZNATO\na\t1 · 4\t\nNe uvozi\nŠifra artikla\nNaziv\nKategorija\nProizvođač\nKvalitet\nOEM brojevi\nBroj proizvođača\nZamenski brojevi\nMP cena (sa PDV)\nVP cena (bez PDV)\nNabavna cena\nKoličina\nRok isporuke (dana)\nPrimena (vozila)\nOpis\nSlike (URL)\nTežina (kg)\nEAN (bar kod)\nAktivan\nMinimalna zaliha\n\t—\nb\t2 · 5\t\nNe uvozi\nŠifra artikla\nNaziv\nKategorija\nProizvođač\nKvalitet\nOEM brojevi\nBroj proizvođača\nZamenski brojevi\nMP cena (sa PDV)\nVP cena (bez PDV)\nNabavna cena\nKoličina\nRok isporuke (dana)\nPrimena (vozila)\nOpis\nSlike (URL)\nTežina (kg)\nEAN (bar kod)\nAktivan\nMinimalna zaliha\n\t—\nc\t3 · 6\t\nNe uvozi\nŠifra artikla\nNaziv\nKategorija\nProizvođač\nKvalitet\nOEM brojevi\nBroj proizvođača\nZamenski brojevi\nMP cena (sa PDV)\nVP cena (bez PDV)\nNabavna cena\nKoličina\nRok isporuke (dana)\nPrimena (vozila)\nOpis\nSlike (URL)\nTežina (kg)\nEAN (bar kod)"
+  },
+  {
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+]

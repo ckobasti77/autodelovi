@@ -1,0 +1,80 @@
+{
+ "card focused": {
+  "name": "Kočioni disk prednji 312 × 25 mm",
+  "box": [
+   352,
+   404.71875,
+   242,
+   454.046875
+  ]
+ },
+ "card shot": "docs/qa/audit/a11y-store/card-focus-1440.webp",
+ "product title": "Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP",
+ "placeholder home": [
+  "cbx_R_1b95fd9fclb_-input \"npr. 1K0 615 301 AA ili kočion\" rgb(150, 144, 136) on rgb(28,32,37) = 5.18:1"
+ ],
+ "placeholder upit": [
+  "iq-vin \"WVWZZZ1KZ8W000001\" rgb(150, 144, 136) on rgb(28,32,37) = 5.18:1",
+  "iq-year \"2016\" rgb(150, 144, 136) on rgb(28,32,37) = 5.18:1",
+  "iq-phone \"064 123 4567\" rgb(150, 144, 136) on rgb(28,32,37) = 5.18:1"
+ ],
+ "filter390 tab seq": [
+  "button[button] Zatvori",
+  "button[button] Vozilo",
+  "button[button] Izaberite vozilo",
+  "button[button] Dostupnost",
+  "button[checkbox] Samo na stanju7",
+  "button[button] Proizvođač",
+  "button[checkbox] ATE3",
+  "button[checkbox] Brembo2",
+  "button[checkbox] Bosch1",
+  "button[checkbox] Febi Bilstein1",
+  "button[checkbox] Original VAG1",
+  "button[checkbox] TRW1",
+  "button[button] Kvalitet",
+  "button[checkbox] Original VAG1Deo u pakovanju proizvođača",
+  "button[checkbox] OEM kvalitet7Proizvođač koji isti deo is",
+  "button[checkbox] Aftermarket1Zamenski deo drugog proizvođ",
+  "button[button] Cena",
+  "button[button] Prikaži 9 rezultata",
+  "button[button] Smanji panel",
+  "button[button] Zatvori",
+  "button[button] Vozilo",
+  "button[button] Izaberite vozilo",
+  "button[button] Dostupnost",
+  "button[checkbox] Samo na stanju7"
+ ],
+ "filter390 checkboxes": [
+  "BUTTON tabindex=0 hidden=false 20x20",
+  "BUTTON tabindex=0 hidden=false 20x20",
+  "BUTTON tabindex=0 hidden=false 20x20",
+  "BUTTON tabindex=0 hidden=false 20x20",
+  "BUTTON tabindex=0 hidden=false 20x20",
+  "BUTTON tabindex=0 hidden=false 20x20",
+  "BUTTON tabindex=0 hidden=false 20x20",
+  "BUTTON tabindex=0 hidden=false 20x20",
+  "BUTTON tabindex=0 hidden=false 20x20",
+  "BUTTON tabindex=0 hidden=false 20x20"
+ ],
+ "axe390 /kolacici": [
+  "scrollable-region-focusable x3 .my-6.overflow-x-auto.rounded-sm:nth-child(3) | .my-6.overflow-x-auto.rounded-sm:nth-child(5) | .my-6.overflow-x-auto.rounded-sm:nth-child(7)"
+ ],
+ "scrollers390 /kolacici": [
+  "sw512/cw356 tabindex=null role=null label=null",
+  "sw512/cw356 tabindex=null role=null label=null",
+  "sw512/cw356 tabindex=null role=null label=null"
+ ],
+ "axe390 /dostava-i-placanje": [
+  "scrollable-region-focusable x1 .overflow-x-auto"
+ ],
+ "scrollers390 /dostava-i-placanje": [
+  "sw480/cw356 tabindex=null role=null label=null"
+ ],
+ "axe390 /politika-privatnosti": [
+  "scrollable-region-focusable x1 .my-6"
+ ],
+ "scrollers390 /politika-privatnosti": [
+  "sw512/cw356 tabindex=null role=null label=null"
+ ],
+ "table shot": "docs/qa/audit/a11y-store/legal-table-390.webp"
+}

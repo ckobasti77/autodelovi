@@ -1,0 +1,133 @@
+[
+  {
+    "k": "pinSpacers home initial",
+    "v": 0
+  },
+  {
+    "k": "1 open",
+    "v": true
+  },
+  {
+    "k": "1 focus inside",
+    "v": "button[] \"Zatvori\""
+  },
+  {
+    "k": "1 after Escape open",
+    "v": false
+  },
+  {
+    "k": "1 after Escape focus",
+    "v": "BODY"
+  },
+  {
+    "k": "2 open",
+    "v": true
+  },
+  {
+    "k": "2 after close button focus",
+    "v": "BODY"
+  },
+  {
+    "k": "3 open",
+    "v": true
+  },
+  {
+    "k": "3 focused item",
+    "v": "button[] \"Blok motora i glava3 artikla\""
+  },
+  {
+    "k": "3 state after pick",
+    "v": {
+      "ready": false,
+      "tier": "high",
+      "status": "loading",
+      "progress": 0.720139,
+      "stage": 6,
+      "selected": "motor",
+      "hovered": null,
+      "timeline": "desktop",
+      "reducedMotion": false
+    }
+  },
+  {
+    "k": "3 focus in panel",
+    "v": "button[] \"Izaberite vozilo za tačno poklapanje\""
+  },
+  {
+    "k": "3 after panel Escape",
+    "v": {
+      "state": {
+        "ready": false,
+        "tier": "high",
+        "status": "loading",
+        "progress": 0.720139,
+        "stage": 6,
+        "selected": null,
+        "hovered": null,
+        "timeline": "desktop",
+        "reducedMotion": false
+      },
+      "focus": "button[parts-list-trigger] \"Lista delova\""
+    }
+  },
+  {
+    "k": "4 select via hook",
+    "v": {
+      "ok": true,
+      "state": {
+        "ready": false,
+        "tier": "high",
+        "status": "loading",
+        "progress": 0.46,
+        "stage": 3,
+        "selected": "kocioni-diskovi",
+        "hovered": null,
+        "timeline": "desktop",
+        "reducedMotion": false
+      },
+      "focus": "div[part-panel] \"Kočioni diskoviDiskove menjajte u paru, \""
+    }
+  },
+  {
+    "k": "4 after panel close button",
+    "v": {
+      "state": {
+        "ready": false,
+        "tier": "high",
+        "status": "loading",
+        "progress": 0.46,
+        "stage": 3,
+        "selected": null,
+        "hovered": null,
+        "timeline": "desktop",
+        "reducedMotion": false
+      },
+      "focus": "div[img] \"Interaktivni 3D prikaz automobila u rend\""
+    }
+  },
+  {
+    "k": "5 /delovi pinSpacers + body style",
+    "v": {
+      "pinSpacers": 0,
+      "bodyStyle": "",
+      "htmlStyle": null,
+      "docH": 5770
+    }
+  },
+  {
+    "k": "5 back home pinSpacers",
+    "v": {
+      "pinSpacers": 0,
+      "docH": 13394
+    }
+  },
+  {
+    "k": "errors",
+    "v": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+]

@@ -1,0 +1,116 @@
+[
+  {
+    "w": 360,
+    "stage": {
+      "w": 360,
+      "h": 608,
+      "top": 56
+    },
+    "poster": {
+      "w": 360,
+      "h": 450,
+      "src": "car-assembled-m-640.avif"
+    },
+    "contain": {
+      "w": 360,
+      "h": 450,
+      "top": 158
+    },
+    "captionBottomInStage": 38
+  },
+  {
+    "w": 390,
+    "stage": {
+      "w": 390,
+      "h": 672,
+      "top": 56
+    },
+    "poster": {
+      "w": 390,
+      "h": 487,
+      "src": "car-assembled-m-640.avif"
+    },
+    "contain": {
+      "w": 390,
+      "h": 487,
+      "top": 185
+    },
+    "captionBottomInStage": 38
+  },
+  {
+    "w": 412,
+    "stage": {
+      "w": 412,
+      "h": 743,
+      "top": 56
+    },
+    "poster": {
+      "w": 412,
+      "h": 515,
+      "src": "car-assembled-m-640.avif"
+    },
+    "contain": {
+      "w": 412,
+      "h": 515,
+      "top": 228
+    },
+    "captionBottomInStage": 38
+  },
+  {
+    "w": 430,
+    "stage": {
+      "w": 430,
+      "h": 760,
+      "top": 56
+    },
+    "poster": {
+      "w": 430,
+      "h": 537,
+      "src": "car-assembled-m-640.avif"
+    },
+    "contain": {
+      "w": 430,
+      "h": 537,
+      "top": 223
+    },
+    "captionBottomInStage": 38
+  },
+  {
+    "w": 768,
+    "stage": {
+      "w": 768,
+      "h": 852,
+      "top": 56
+    },
+    "poster": {
+      "w": 768,
+      "h": 432,
+      "src": "car-assembled-1080.avif"
+    },
+    "contain": {
+      "w": 768,
+      "h": 432,
+      "top": 420
+    },
+    "captionBottomInStage": 40
+  },
+  {
+    "w": 1440,
+    "stage": {
+      "w": 1440,
+      "h": 836,
+      "top": 65
+    },
+    "poster": {
+      "w": 1440,
+      "h": 810,
+      "src": "car-assembled-1440.avif"
+    },
+    "contain": {
+      "w": 1325,
+      "h": 745,
+      "top": 91
+    },
+    "captionBottomInStage": null
+  }
+]

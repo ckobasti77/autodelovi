@@ -1,0 +1,19 @@
+quick 360 {"vh":800,"scrollY":630,"barTop":581.8125,"barH":218.1875,"rows":13,"partlyBehindBar":1,"fullyBehindBar":1,"docH":5318,"scrollPaddingBottom":"auto"} {"vh":800,"scrollY":4518,"barTop":-525.703125,"barH":218.1875,"rows":13,"partlyBehindBar":0,"fullyBehindBar":0,"docH":5318,"scrollPaddingBottom":"auto"} obscured undefined
+quick 390 {"vh":844,"scrollY":632,"barTop":646.8125,"barH":197.1875,"rows":13,"partlyBehindBar":1,"fullyBehindBar":0,"docH":5239,"scrollPaddingBottom":"auto"} {"vh":844,"scrollY":4395,"barTop":-462.421875,"barH":197.1875,"rows":13,"partlyBehindBar":0,"fullyBehindBar":0,"docH":5239,"scrollPaddingBottom":"auto"} obscured 30
+quick 768 {"vh":1024,"scrollY":620,"barTop":910,"barH":114,"rows":13,"partlyBehindBar":1,"fullyBehindBar":1,"docH":3831,"scrollPaddingBottom":"auto"} {"vh":1024,"scrollY":2807,"barTop":160.921875,"barH":114,"rows":13,"partlyBehindBar":0,"fullyBehindBar":0,"docH":3831,"scrollPaddingBottom":"auto"} obscured undefined
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.goto: Timeout 90000ms exceeded.
+Call log:
+  - navigating to "http://localhost:3100/majstor/brza-porudzbina", waiting until "load"
+
+    at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\audit\vis-commerce-mechanic.mjs:89:16 {
+  log: [
+    '  - navigating to "http://localhost:3100/majstor/brza-porudzbina", waiting until "load"'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.23.2

@@ -1,0 +1,92 @@
+[
+  {
+    "role": "anon",
+    "w": "1440",
+    "route": "/porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw",
+    "status": 200,
+    "finalUrl": "/porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "anon",
+    "w": "1440",
+    "route": "/porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw/predracun",
+    "status": 200,
+    "finalUrl": "/porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw/predracun",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "anon",
+    "w": "1440",
+    "route": "/porudzbina/hvala/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw",
+    "status": 200,
+    "finalUrl": "/porudzbina/hvala/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 8
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "anon",
+    "w": "1440",
+    "route": "/upit/3UMmrdzw1RNGw5ToQh06cANjxl8c_-Ajvp7eBwA1ayI",
+    "status": 200,
+    "finalUrl": "/upit/3UMmrdzw1RNGw5ToQh06cANjxl8c_-Ajvp7eBwA1ayI",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "anon",
+    "w": "1440",
+    "route": "/upit/hvala/3UMmrdzw1RNGw5ToQh06cANjxl8c_-Ajvp7eBwA1ayI",
+    "status": 200,
+    "finalUrl": "/upit/hvala/3UMmrdzw1RNGw5ToQh06cANjxl8c_-Ajvp7eBwA1ayI",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 7
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "anon",
+    "w": "1440",
+    "route": "/obavestenja/odjava/invalid-token",
+    "status": 200,
+    "finalUrl": "/obavestenja/odjava/invalid-token",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 7
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "route": "/admin/upiti",
+    "i": 0,
+    "statuses": [
+      "200 /admin/upiti"
+    ],
+    "finalUrl": "/admin/upiti",
+    "h1": "Upiti",
+    "errs": [],
+    "ev": "docs/qa/audit/a11y-app/stale-session-_admin_upiti.webp"
+  },
+  {
+    "route": "/admin/upiti",
+    "i": 1,
+    "statuses": [
+      "200 /admin/upiti"
+    ],
+    "finalUrl": "/admin/upiti",
+    "h1": "Upiti",
+    "errs": [],
+    "ev": null
+  },
+  {
+    "route": "/admin/upiti/UP-2026-000054",
+    "i": 0,
+    "statuses": [
+      "200 /admin/upiti/UP-2026-000054"
+    ],
+    "finalUrl": "/admin/upiti/UP-2026-000054",
+    "h1": "Upit UP-2026-000054",
+    "errs": [],
+    "ev": "docs/qa/audit/a11y-app/stale-session-_admin_upiti_UP-2026-000054.webp"
+  },
+  {
+    "route": "/admin/upiti/UP-2026-000054",
+    "i": 1,
+    "statuses": [
+      "200 /admin/upiti/UP-2026-000054"
+    ],
+    "finalUrl": "/admin/upiti/UP-2026-000054",
+    "h1": "Upit UP-2026-000054",
+    "errs": [],
+    "ev": null
+  },
+  {
+    "route": "/admin",
+    "i": 0,
+    "statuses": [
+      "200 /admin"
+    ],
+    "finalUrl": "/admin",
+    "h1": "Pregled",
+    "errs": [],
+    "ev": "docs/qa/audit/a11y-app/stale-session-_admin.webp"
+  },
+  {
+    "route": "/admin",
+    "i": 1,
+    "statuses": [
+      "200 /admin"
+    ],
+    "finalUrl": "/admin",
+    "h1": "Pregled",
+    "errs": [],
+    "ev": null
+  },
+  {
+    "route": "/nalog",
+    "i": 0,
+    "statuses": [
+      "200 /nalog"
+    ],
+    "finalUrl": "/nalog",
+    "h1": "Moj nalog",
+    "errs": [],
+    "ev": "docs/qa/audit/a11y-app/stale-session-_nalog.webp"
+  },
+  {
+    "route": "/nalog",
+    "i": 1,
+    "statuses": [
+      "200 /nalog"
+    ],
+    "finalUrl": "/nalog",
+    "h1": "Moj nalog",
+    "errs": [],
+    "ev": null
+  }
+]

@@ -1,0 +1,482 @@
+[
+ {
+  "file": "dpf-katalizator.webp",
+  "size": "768x768",
+  "bboxMaxSide": 54,
+  "bboxArea": 27,
+  "filled": 10.2,
+  "meanLum": 0.063,
+  "contrastVsGround": 1.75,
+  "centreY": 61
+ },
+ {
+  "file": "filteri.webp",
+  "size": "768x768",
+  "bboxMaxSide": 54,
+  "bboxArea": 19,
+  "filled": 11.4,
+  "meanLum": 0.133,
+  "contrastVsGround": 2.85,
+  "centreY": 57
+ },
+ {
+  "file": "ramena-selen-blokovi.webp",
+  "size": "768x768",
+  "bboxMaxSide": 55,
+  "bboxArea": 23,
+  "filled": 12.3,
+  "meanLum": 0.035,
+  "contrastVsGround": 1.33,
+  "centreY": 61
+ },
+ {
+  "file": "senzori.webp",
+  "size": "768x768",
+  "bboxMaxSide": 55,
+  "bboxArea": 28,
+  "filled": 3.1,
+  "meanLum": 0.083,
+  "contrastVsGround": 2.08,
+  "centreY": 58
+ },
+ {
+  "file": "auspuh.webp",
+  "size": "768x768",
+  "bboxMaxSide": 60,
+  "bboxArea": 18,
+  "filled": 9.3,
+  "meanLum": 0.023,
+  "contrastVsGround": 1.14,
+  "centreY": 57
+ },
+ {
+  "file": "hauba.webp",
+  "size": "768x768",
+  "bboxMaxSide": 60,
+  "bboxArea": 18,
+  "filled": 11.7,
+  "meanLum": 0.098,
+  "contrastVsGround": 2.31,
+  "centreY": 52
+ },
+ {
+  "file": "letva-volana.webp",
+  "size": "768x768",
+  "bboxMaxSide": 61,
+  "bboxArea": 29,
+  "filled": 12.6,
+  "meanLum": 0.073,
+  "contrastVsGround": 1.91,
+  "centreY": 64
+ },
+ {
+  "file": "blatobrani.webp",
+  "size": "768x768",
+  "bboxMaxSide": 62,
+  "bboxArea": 27,
+  "filled": 13.7,
+  "meanLum": 0.051,
+  "contrastVsGround": 1.57,
+  "centreY": 50
+ },
+ {
+  "file": "stakla.webp",
+  "size": "768x768",
+  "bboxMaxSide": 62,
+  "bboxArea": 22,
+  "filled": 13.5,
+  "meanLum": 0.696,
+  "contrastVsGround": 11.63,
+  "centreY": 51
+ },
+ {
+  "file": "brizgaljke-pumpa-goriva.webp",
+  "size": "768x768",
+  "bboxMaxSide": 64,
+  "bboxArea": 24,
+  "filled": 11.1,
+  "meanLum": 0.009,
+  "contrastVsGround": 1.08,
+  "centreY": 55
+ },
+ {
+  "file": "poluosovine.webp",
+  "size": "768x768",
+  "bboxMaxSide": 65,
+  "bboxArea": 20,
+  "filled": 7.5,
+  "meanLum": 0.033,
+  "contrastVsGround": 1.3,
+  "centreY": 55
+ },
+ {
+  "file": "spone-stabilizatori.webp",
+  "size": "768x768",
+  "bboxMaxSide": 66,
+  "bboxArea": 27,
+  "filled": 10.3,
+  "meanLum": 0.011,
+  "contrastVsGround": 1.06,
+  "centreY": 57
+ },
+ {
+  "file": "farovi.webp",
+  "size": "768x768",
+  "bboxMaxSide": 70,
+  "bboxArea": 48,
+  "filled": 34.7,
+  "meanLum": 0.106,
+  "contrastVsGround": 2.43,
+  "centreY": 67
+ },
+ {
+  "file": "filter-goriva.webp",
+  "size": "768x768",
+  "bboxMaxSide": 70,
+  "bboxArea": 47,
+  "filled": 31.3,
+  "meanLum": 0.162,
+  "contrastVsGround": 3.3,
+  "centreY": 66
+ },
+ {
+  "file": "klima.webp",
+  "size": "768x768",
+  "bboxMaxSide": 71,
+  "bboxArea": 50,
+  "filled": 32,
+  "meanLum": 0.025,
+  "contrastVsGround": 1.17,
+  "centreY": 65
+ },
+ {
+  "file": "alternator.webp",
+  "size": "768x768",
+  "bboxMaxSide": 73,
+  "bboxArea": 52,
+  "filled": 38.8,
+  "meanLum": 0.066,
+  "contrastVsGround": 1.81,
+  "centreY": 69
+ },
+ {
+  "file": "nosaci-motora.webp",
+  "size": "768x768",
+  "bboxMaxSide": 73,
+  "bboxArea": 45,
+  "filled": 19.5,
+  "meanLum": 0.139,
+  "contrastVsGround": 2.95,
+  "centreY": 64
+ },
+ {
+  "file": "abs-senzori.webp",
+  "size": "768x768",
+  "bboxMaxSide": 74,
+  "bboxArea": 21,
+  "filled": 3.6,
+  "meanLum": 0.02,
+  "contrastVsGround": 1.09,
+  "centreY": 69
+ },
+ {
+  "file": "branici.webp",
+  "size": "768x768",
+  "bboxMaxSide": 74,
+  "bboxArea": 43,
+  "filled": 28,
+  "meanLum": 0.02,
+  "contrastVsGround": 1.08,
+  "centreY": 66
+ },
+ {
+  "file": "interkuler.webp",
+  "size": "768x768",
+  "bboxMaxSide": 74,
+  "bboxArea": 38,
+  "filled": 23.5,
+  "meanLum": 0.047,
+  "contrastVsGround": 1.51,
+  "centreY": 61
+ },
+ {
+  "file": "termostat-creva.webp",
+  "size": "768x768",
+  "bboxMaxSide": 74,
+  "bboxArea": 53,
+  "filled": 36.1,
+  "meanLum": 0.028,
+  "contrastVsGround": 1.21,
+  "centreY": 69
+ },
+ {
+  "file": "anlaser.webp",
+  "size": "768x768",
+  "bboxMaxSide": 75,
+  "bboxArea": 55,
+  "filled": 39,
+  "meanLum": 0.07,
+  "contrastVsGround": 1.87,
+  "centreY": 68
+ },
+ {
+  "file": "paljenje-grejaci.webp",
+  "size": "768x768",
+  "bboxMaxSide": 75,
+  "bboxArea": 48,
+  "filled": 17.4,
+  "meanLum": 0.032,
+  "contrastVsGround": 1.28,
+  "centreY": 59
+ },
+ {
+  "file": "turbina.webp",
+  "size": "768x768",
+  "bboxMaxSide": 75,
+  "bboxArea": 55,
+  "filled": 32.9,
+  "meanLum": 0.058,
+  "contrastVsGround": 1.68,
+  "centreY": 70
+ },
+ {
+  "file": "hladnjak-ventilator.webp",
+  "size": "768x768",
+  "bboxMaxSide": 76,
+  "bboxArea": 56,
+  "filled": 41,
+  "meanLum": 0.021,
+  "contrastVsGround": 1.1,
+  "centreY": 68
+ },
+ {
+  "file": "retrovizori.webp",
+  "size": "768x768",
+  "bboxMaxSide": 76,
+  "bboxArea": 51,
+  "filled": 39.9,
+  "meanLum": 0.026,
+  "contrastVsGround": 1.18,
+  "centreY": 69
+ },
+ {
+  "file": "ulja-tecnosti.webp",
+  "size": "768x768",
+  "bboxMaxSide": 76,
+  "bboxArea": 51,
+  "filled": 31.4,
+  "meanLum": 0.029,
+  "contrastVsGround": 1.24,
+  "centreY": 71
+ },
+ {
+  "file": "filter-kabine.webp",
+  "size": "768x768",
+  "bboxMaxSide": 78,
+  "bboxArea": 37,
+  "filled": 24.1,
+  "meanLum": 0.008,
+  "contrastVsGround": 1.1,
+  "centreY": 58
+ },
+ {
+  "file": "motor.webp",
+  "size": "768x768",
+  "bboxMaxSide": 78,
+  "bboxArea": 57,
+  "filled": 38.7,
+  "meanLum": 0.056,
+  "contrastVsGround": 1.65,
+  "centreY": 65
+ },
+ {
+  "file": "egr-ventil.webp",
+  "size": "768x768",
+  "bboxMaxSide": 79,
+  "bboxArea": 58,
+  "filled": 36.6,
+  "meanLum": 0.102,
+  "contrastVsGround": 2.37,
+  "centreY": 65
+ },
+ {
+  "file": "kais-alternatora.webp",
+  "size": "768x768",
+  "bboxMaxSide": 79,
+  "bboxArea": 28,
+  "filled": 10.2,
+  "meanLum": 0.089,
+  "contrastVsGround": 2.17,
+  "centreY": 59
+ },
+ {
+  "file": "kocione-celjusti.webp",
+  "size": "768x768",
+  "bboxMaxSide": 80,
+  "bboxArea": 52,
+  "filled": 32.3,
+  "meanLum": 0.018,
+  "contrastVsGround": 1.07,
+  "centreY": 65
+ },
+ {
+  "file": "vrata.webp",
+  "size": "768x768",
+  "bboxMaxSide": 80,
+  "bboxArea": 28,
+  "filled": 17.9,
+  "meanLum": 0.031,
+  "contrastVsGround": 1.26,
+  "centreY": 67
+ },
+ {
+  "file": "kocione-plocice.webp",
+  "size": "768x768",
+  "bboxMaxSide": 81,
+  "bboxArea": 45,
+  "filled": 28.5,
+  "meanLum": 0.007,
+  "contrastVsGround": 1.12,
+  "centreY": 65
+ },
+ {
+  "file": "filter-vazduha.webp",
+  "size": "768x768",
+  "bboxMaxSide": 82,
+  "bboxArea": 44,
+  "filled": 28.5,
+  "meanLum": 0.156,
+  "contrastVsGround": 3.21,
+  "centreY": 60
+ },
+ {
+  "file": "menjac.webp",
+  "size": "768x768",
+  "bboxMaxSide": 82,
+  "bboxArea": 62,
+  "filled": 46.6,
+  "meanLum": 0.137,
+  "contrastVsGround": 2.91,
+  "centreY": 67
+ },
+ {
+  "file": "usisna-grana.webp",
+  "size": "768x768",
+  "bboxMaxSide": 83,
+  "bboxArea": 57,
+  "filled": 42.5,
+  "meanLum": 0.02,
+  "contrastVsGround": 1.1,
+  "centreY": 69
+ },
+ {
+  "file": "filter-ulja.webp",
+  "size": "768x768",
+  "bboxMaxSide": 84,
+  "bboxArea": 55,
+  "filled": 38.5,
+  "meanLum": 0.039,
+  "contrastVsGround": 1.39,
+  "centreY": 61
+ },
+ {
+  "file": "lezaj-glavcina.webp",
+  "size": "768x768",
+  "bboxMaxSide": 84,
+  "bboxArea": 59,
+  "filled": 39.1,
+  "meanLum": 0.188,
+  "contrastVsGround": 3.72,
+  "centreY": 62
+ },
+ {
+  "file": "brisaci.webp",
+  "size": "768x768",
+  "bboxMaxSide": 85,
+  "bboxArea": 26,
+  "filled": 8.1,
+  "meanLum": 0.013,
+  "contrastVsGround": 1.01,
+  "centreY": 50
+ },
+ {
+  "file": "karter-dihtunzi.webp",
+  "size": "768x768",
+  "bboxMaxSide": 85,
+  "bboxArea": 57,
+  "filled": 44.2,
+  "meanLum": 0.065,
+  "contrastVsGround": 1.8,
+  "centreY": 70
+ },
+ {
+  "file": "akumulator.webp",
+  "size": "768x768",
+  "bboxMaxSide": 86,
+  "bboxArea": 62,
+  "filled": 46.7,
+  "meanLum": 0.033,
+  "contrastVsGround": 1.29,
+  "centreY": 69
+ },
+ {
+  "file": "amortizeri-opruge.webp",
+  "size": "768x768",
+  "bboxMaxSide": 86,
+  "bboxArea": 29,
+  "filled": 15.5,
+  "meanLum": 0.018,
+  "contrastVsGround": 1.06,
+  "centreY": 58
+ },
+ {
+  "file": "kocioni-diskovi.webp",
+  "size": "768x768",
+  "bboxMaxSide": 86,
+  "bboxArea": 41,
+  "filled": 32.6,
+  "meanLum": 0.118,
+  "contrastVsGround": 2.62,
+  "centreY": 58
+ },
+ {
+  "file": "kvacilo-zamajac.webp",
+  "size": "768x768",
+  "bboxMaxSide": 86,
+  "bboxArea": 47,
+  "filled": 36.5,
+  "meanLum": 0.062,
+  "contrastVsGround": 1.75,
+  "centreY": 59
+ },
+ {
+  "file": "zupcasti-kais-vodena-pumpa.webp",
+  "size": "768x768",
+  "bboxMaxSide": 86,
+  "bboxArea": 28,
+  "filled": 11.2,
+  "meanLum": 0.036,
+  "contrastVsGround": 1.35,
+  "centreY": 64
+ },
+ {
+  "file": "felne-gume.webp",
+  "size": "768x768",
+  "bboxMaxSide": 87,
+  "bboxArea": 73,
+  "filled": 47.3,
+  "meanLum": 0.089,
+  "contrastVsGround": 2.16,
+  "centreY": 60
+ },
+ {
+  "file": "stop-svetla.webp",
+  "size": "768x768",
+  "bboxMaxSide": 92,
+  "bboxArea": 71,
+  "filled": 37.9,
+  "meanLum": 0.095,
+  "contrastVsGround": 2.26,
+  "centreY": 63
+ }
+]

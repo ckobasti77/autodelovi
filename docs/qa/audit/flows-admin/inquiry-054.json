@@ -1,0 +1,51 @@
+{
+  "NUM": "UP-2026-000054",
+  "steps": [
+    {
+      "name": "open",
+      "at": "2026-09-30T18:41:16.839Z",
+      "head": "UpitiUpit UP-2026-000054U obradiTraži deo · primljen 30.09. 15:38Preuzmi upitZatvori upitNapravi ponuduUpitTreba mi set kvačila za Golf 7 2.0 TDI (test audit21).Istorija30.09. 16:17U obradiVlasnik30.09. 15:38Upit je primljen.Upit Test audit21 · KupacKontaktImeUpit Test audit21Telefon+381 64 333 4455Želi odgovorTelefonomPozoviViberWhatsAppDodelaRadi na upituNikoVlasnikInterna beleška0 / 1.000Dodaj "
+    },
+    {
+      "name": "empty composer",
+      "at": "2026-09-30T18:41:17.871Z",
+      "sendDisabled": true
+    },
+    {
+      "name": "empty draft save",
+      "at": "2026-09-30T18:41:18.593Z",
+      "alert": "Dodajte bar jednu stavku."
+    },
+    {
+      "name": "picker options",
+      "at": "2026-09-30T18:41:21.262Z",
+      "opts": [
+        "Kočioni disk prednji 276 × 24 mmDEMO-0004 · OEM 5Q0 615 505 R · Febi Bilstein4.690 RSDMalo na stanju · 3 kom.",
+        "Niko",
+        "Vlasnik"
+      ]
+    },
+    {
+      "name": "send dialog (invalid qty)",
+      "at": "2026-09-30T18:41:23.763Z",
+      "text": "Poslati ponudu kupcu?Upit Test audit21 dobija ponudu na 4.690 RSD sa linkom za prihvatanje. Ponuda važi 7 dana.OdustaniPošalji ponudu"
+    },
+    {
+      "name": "invalid qty result",
+      "at": "2026-09-30T18:43:25.749Z",
+      "alert": "",
+      "dialogOpen": true,
+      "invalidFields": 0
+    },
+    {
+      "name": "composer total",
+      "at": "2026-09-30T18:43:32.426Z",
+      "total": "Ukupno: 4.690 RSD · važi 7 dana od slanja"
+    },
+    {
+      "name": "FAILED",
+      "at": "2026-09-30T18:45:36.721Z",
+      "error": "TimeoutError: locator.click: Timeout 120000ms exceeded.\nCall log:\n  - waiting for getByTestId('admin-quote-send')\n    - locator resolved to <button type=\"button\" data-testid=\"admin-quote-send\" class=\"relative inline-flex select-none items-center justify-center gap-2 whitespace-nowrap rounded-xs transition-control cursor-pointer active:translate-y-px disabled:cursor-not-allowed disabled:active:translate-y-0 aria-disabled:cursor-not-allowed aria-disabled:active:translate-y-0 bg-accent text-on-accent hover:bg-accent-hover active:bg-accent-active focus-ring-inverse disabled:bg-surface-2 disabled:text-ink-4 aria-disabled:bg-surface-2 aria-disa…>…</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n    "
+    }
+  ]
+}

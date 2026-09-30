@@ -1,0 +1,32 @@
+before-intent {"state":{"ready":false,"tier":null,"status":"idle","progress":0,"stage":0,"selected":null,"hovered":null,"timeline":"desktop","reducedMotion":false},"canvases":0,"glbRequests":0,"gsapGlobal":"undefined"}
+tab-order ["- a \"Preskoči na sadržaj\" vis=true solid 2px rgb(241, 236, 227)","- a \"SKLOP — početna\" vis=true solid 2px rgb(255, 107, 26)","- a \"Delovi\" vis=true solid 2px rgb(255, 107, 26)","- a \"Vozila\" vis=true solid 2px rgb(255, 107, 26)","- a \"Za majstore\" vis=true solid 2px rgb(255, 107, 26)","- a \"Upit po broju šasije\" vis=true solid 2px rgb(255, 107, 26)","- button \"Broj dela ili naziv/\" vis=true solid 2px rgb(255, 107, 26)","- button \"Izaberite vozilo\" vis=true solid 2px rgb(255, 107, 26)","- a \"Moj nalog\" vis=true solid 2px rgb(255, 107, 26)","- a \"Korpa\" vis=true solid 2px rgb(255, 107, 26)","H input \"Broj dela ili naziv\" vis=true none 2px rgb(255, 107, 26)","H button \"Pretraži\" vis=true solid 2px rgb(241, 236, 227)","H button \"Izaberite vozilomarka, model, motorIzabe\" vis=true solid 2px rgb(255, 107, 26)","H a \"Nemate broj? Pošaljite broj šasije\" vis=true solid 2px rgb(255, 107, 26)","H button \"00 Sklopljen automobil\" vis=true solid 2px rgb(255, 107, 26)","H button \"01 Karoserija, stakla i svetla\" vis=true solid 2px rgb(255, 107, 26)","H button \"02 Točkovi\" vis=true solid 2px rgb(255, 107, 26)","H button \"03 Kočnice, vešanje, upravljanje\" vis=true solid 2px rgb(255, 107, 26)","H button \"04 Pomoćni agregati, hlađenje, usis\" vis=true solid 2px rgb(255, 107, 26)","H button \"05 Motor, turbina, gorivo, paljenje\" vis=true solid 2px rgb(255, 107, 26)","H button \"06 Menjač, kvačilo, poluosovine\" vis=true solid 2px rgb(255, 107, 26)","H button \"07 Izduvni sistem\" vis=true solid 2px rgb(255, 107, 26)","H button \"Rasklopi\" vis=true solid 2px rgb(255, 107, 26)","H button \"Lista delova\" vis=true solid 2px rgb(255, 107, 26)","- a \"Dostava i plaćanje\" vis=true solid 2px rgb(255, 107, 26)"]
+after-focus-status {"ready":false,"tier":"high","status":"loading","progress":0.403012,"stage":3,"selected":null,"hovered":null,"timeline":"desktop","reducedMotion":false}
+intent→ready ms (SwiftShader, shared machine) 33156
+crossfade {"poster":"0","canvas":"1"}
+glb requests [{"t":1790784767654,"url":"/models/car.glb"},{"t":1790784771467,"url":"/models/car.glb"},{"t":1790784776252,"url":"/models/env/studio-512.hdr"}]
+hover hits {"stakla":10,"vrata":3,"retrovizori":2,"stop-svetla":1,"hauba":5,"felne-gume":8,"branici":3,"farovi":3,"usisna-grana":3,"blatobrani":1,"ramena-selen-blokovi":2,"interkuler":3,"klima":4,"menjac":1}
+first hover {"x":936.0000000000002,"y":357.59999999999997,"hovered":"stakla","el":"CANVAS","cursor":"pointer"}
+callout null
+after click {"selected":"stakla","url":"/?deo=stakla"}
+panel visible true
+panel products 1
+focus in panel DIV StaklaProverite senzor kiše i grejanje s inPanel=true
+after Escape {"selected":null,"url":"/","active":"DIV role=img label=Interaktivni 3D prikaz automobila u rend outline=solid 2px shadow=none"}
+wheel explode [scrollY, progress, stage] [[300,0.104,1],[600,0.207,1],[900,0.307,2],[1200,0.412,3],[1500,0.519,4],[1500,0.52,4],[2100,0.726,6],[2100,0.728,6],[2400,0.792,6],[2700,0.931,7],[3000,0.999,7],[3300,1,7],[3900,1,7],[4200,1,7]]
+caption at end Kliknite na deo
+after hero {"progress":1,"inView":-50}
+parts list open true
+parts list focus BUTTON 
+parts list Escape focus BODY null Preskoči na sadržajSKLOPDeloviVozilaZa m
+picked via keyboard {"picked":"SKLOP","selected":null,"active":"A inPanel=false"}
+panel Escape focus (opened from list) A null null SKLOP
+gsap on home {"triggers":null,"tweens":null}
+gsap after client nav to /delovi {"triggers":null,"tweens":null}
+after back: state {"ready":true,"tier":"high","status":"ready","progress":0,"stage":0,"selected":null,"hovered":null,"timeline":"desktop","reducedMotion":false}
+gsap after back {"triggers":null,"tweens":null}
+after back + scroll 900: progress 0.312153
+forward ok /delovi
+deep link akumulator {"status":"ready","selected":"akumulator","stage":4,"progress":0.58,"url":"/?deo=akumulator","scrollY":1671,"panel":true}
+deep link nepostoji-deo {"status":"ready","selected":null,"stage":0,"progress":0,"url":"/?deo=nepostoji-deo","scrollY":0,"panel":false}
+deep link kocioni-diskovi {"status":"ready","selected":"kocioni-diskovi","stage":4,"progress":0.46,"url":"/?deo=kocioni-diskovi","scrollY":1326,"panel":true}
+errors {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}

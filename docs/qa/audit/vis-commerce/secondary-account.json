@@ -1,0 +1,484 @@
+{
+  "account": {
+    "360": {
+      "nalog": {
+        "probe": {
+          "vw": 360,
+          "over": 0,
+          "offenders": [],
+          "tiny": [
+            "a 45x21 \"Sve\""
+          ],
+          "tinyCount": 1,
+          "under44": [
+            "button 125x36 \"Izaberite vozilo\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 2,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "nalog_porudzbine": {
+        "probe": {
+          "vw": 360,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 1,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "nalog_upiti": {
+        "probe": {
+          "vw": 360,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 1,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "nalog_vozila": {
+        "probe": {
+          "vw": 360,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 125x36 \"Izaberite vozilo\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 2,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "nalog_profil": {
+        "probe": {
+          "vw": 360,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "input 302x42 \"INPUT\"",
+            "input 302x42 \"INPUT\"",
+            "input 302x42 \"INPUT\"",
+            "input 302x42 \"INPUT\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "768": {
+      "nalog": {
+        "probe": {
+          "vw": 768,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 3,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "nalog_porudzbine": {
+        "probe": {
+          "vw": 768,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 3,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "nalog_upiti": {
+        "probe": {
+          "vw": 768,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 3,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "nalog_vozila": {
+        "probe": {
+          "vw": 768,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 3,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "nalog_profil": {
+        "probe": {
+          "vw": 768,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 3,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "1440": {
+      "nalog": {
+        "probe": {
+          "vw": 1440,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 256x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "nalog_porudzbine": {
+        "probe": {
+          "vw": 1440,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 256x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "nalog_upiti": {
+        "probe": {
+          "vw": 1440,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 256x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "nalog_vozila": {
+        "probe": {
+          "vw": 1440,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 256x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "nalog_profil": {
+        "probe": {
+          "vw": 1440,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 256x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "2560": {
+      "nalog": {
+        "probe": {
+          "vw": 2560,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 288x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "nalog_porudzbine": {
+        "probe": {
+          "vw": 2560,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 288x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "nalog_upiti": {
+        "probe": {
+          "vw": 2560,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 288x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "nalog_vozila": {
+        "probe": {
+          "vw": 2560,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 288x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "nalog_profil": {
+        "probe": {
+          "vw": 2560,
+          "over": 0,
+          "offenders": [],
+          "tiny": [],
+          "tinyCount": 0,
+          "under44": [
+            "button 288x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 422x42 \"email\"",
+            "input 422x42 \"password\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 5,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    }
+  }
+}

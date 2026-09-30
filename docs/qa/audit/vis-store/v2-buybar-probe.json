@@ -1,0 +1,119 @@
+[
+ {
+  "w": 390,
+  "before": {
+   "scrollY": 0,
+   "buyBox": {
+    "top": 749,
+    "bottom": 1005
+   },
+   "mobileMq": true,
+   "bars": [
+    {
+     "cls": "fixed inset-x-0 bottom-0 z-sticky border-t border-line-strong bg-bg-raised px-pa",
+     "text": "4.690RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm",
+     "visibility": "hidden",
+     "transform": "matrix(1, 0, 0, 1, 0, 143)",
+     "top": 922,
+     "ariaHidden": "true"
+    }
+   ]
+  },
+  "after": {
+   "scrollY": 2240,
+   "buyBox": {
+    "top": -1491,
+    "bottom": -1235
+   },
+   "mobileMq": true,
+   "bars": [
+    {
+     "cls": "fixed inset-x-0 bottom-0 z-sticky border-t border-line-strong bg-bg-raised px-pa",
+     "text": "4.690RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm",
+     "visibility": "visible",
+     "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+     "top": 851,
+     "ariaHidden": "false"
+    }
+   ]
+  }
+ },
+ {
+  "w": 360,
+  "before": {
+   "scrollY": 0,
+   "buyBox": {
+    "top": 726,
+    "bottom": 1060
+   },
+   "mobileMq": true,
+   "bars": [
+    {
+     "cls": "fixed inset-x-0 bottom-0 z-sticky border-t border-line-strong bg-bg-raised px-pa",
+     "text": "4.690RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm",
+     "visibility": "hidden",
+     "transform": "matrix(1, 0, 0, 1, 0, 143)",
+     "top": 858,
+     "ariaHidden": "true"
+    }
+   ]
+  },
+  "after": {
+   "scrollY": 2240,
+   "buyBox": {
+    "top": -1514,
+    "bottom": -1180
+   },
+   "mobileMq": true,
+   "bars": [
+    {
+     "cls": "fixed inset-x-0 bottom-0 z-sticky border-t border-line-strong bg-bg-raised px-pa",
+     "text": "4.690RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm",
+     "visibility": "visible",
+     "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+     "top": 787,
+     "ariaHidden": "false"
+    }
+   ]
+  }
+ },
+ {
+  "w": 768,
+  "before": {
+   "scrollY": 0,
+   "buyBox": {
+    "top": 1473,
+    "bottom": 1731
+   },
+   "mobileMq": true,
+   "bars": [
+    {
+     "cls": "fixed inset-x-0 bottom-0 z-sticky border-t border-line-strong bg-bg-raised px-pa",
+     "text": "4.690RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm",
+     "visibility": "hidden",
+     "transform": "matrix(1, 0, 0, 1, 0, 143)",
+     "top": 1102,
+     "ariaHidden": "true"
+    }
+   ]
+  },
+  "after": {
+   "scrollY": 2240,
+   "buyBox": {
+    "top": -767,
+    "bottom": -509
+   },
+   "mobileMq": true,
+   "bars": [
+    {
+     "cls": "fixed inset-x-0 bottom-0 z-sticky border-t border-line-strong bg-bg-raised px-pa",
+     "text": "4.690RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm",
+     "visibility": "visible",
+     "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+     "top": 1031,
+     "ariaHidden": "false"
+    }
+   ]
+  }
+ }
+]

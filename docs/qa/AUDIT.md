@@ -6,25 +6,25 @@ Step 22 works through this list in priority order: change **Status** from `OPEN`
 
 ## 1. Summary
 
-**72 confirmed findings** — P0 0 · P1 6 · P2 33 · P3 33. 86 findings were reported; 5 did not survive verification (Appendix A) and 9 were merged into duplicates.
+**72 confirmed findings** — P0 0 · P1 6 · P2 33 · P3 33. 86 findings were reported; 5 did not survive verification (Appendix A), 9 were merged into duplicates.
 
 SKLOP is not ready for handoff yet, but the base is solid. The six tracks that completed confirmed 81 findings (72 unique after merging 9 duplicates): no P0, 6 unique P1, 33 unique P2 and 33 P3. tsc and lint are clean, the e2e suite passed 91 of 91 tests that ran, the authz probe found 0 violations and JSON-LD has 0 errors. Ten of sixteen reviews failed (visual, motion, a11y, cross-browser, flows), so step 21's „every track covered“ is not met. Their raw evidence in docs/qa/audit/ is unverified but points to WCAG 2.2 AA risks (the consent banner covers focused links at 390 px, and closing a dialog drops focus to BODY) and to stuck reveal words in WebKit. Step 22 should re-run a11y-store, a11y-app and xbrowser first. The P1s fall into three themes. Money and abuse controls in Convex: accepting a quote ignores the mechanic's credit limit (backend-01), and rate limits keyed on the User-Agent let one client trip the global order cap (backend-02). Public correctness: a /s+/ regex strips every „s“ from up to 87 product titles (copy-01), and the home FAQ contradicts the statutory 14-day withdrawal right (copy-03). Mobile performance: TBT is 246–1019 ms against 200 ms on every template (perf-lh-01), and CLS is 0.08–0.10 on vehicle generation pages (perf-lh-03). Performance is the step 22 gate most at risk: mobile Lighthouse is 83 on home, 77 on category and 76–80 on product against ≥ 85, and the shell ships 325–355 KB gzip of JS against 160–200 KB budgets. Fix in this order. (1) The one-hour items: copy-01, copy-03, perf-lh-03, copy-04 and backend-05, which unblocks „all suites green“. (2) backend-02 and backend-01 with convex-test regressions, then backend-03, -06 and -07. (3) Repair the Lighthouse gate (perf-lh-10) so the numbers are trustworthy, then the perf program, re-measuring home, category and product after each step: zod and the Tooltip, GSAP, overlay and icon deferrals; one client island per ProductGrid; a CSS-keyframe text reveal with the failsafe fix; per-template font preloads. (4) The SEO and copy P2 batch: pagination, category titles, brand declension, thin hubs, slug redirects, the 404 body, and copy that points to company data that is not filled in yet. (5) The 3D start freeze, the renderer leak and MSAA; P3s last. Step 22 needs at least 24 of the 33 unique P2s: the 19 non-performance P2s plus five small perf fixes (perf-bundle-01, perf-bundle-02, perf-lh-02, perf-3d-02, perf-3d-05) reach that. The owner must fill in the company settings and confirm the dispatch cut-off and the return wording before these copy fixes can be final.
 
 - Evidence paths are relative to `docs/qa/`. Reviewer scripts in `scripts/qa/audit/` re-create most measurements (`kit.mjs` is the shared helper).
 - Lab numbers come from localhost on a Windows desktop; PageSpeed Insights on the deployed site remains the owner's check (HUMAN-TODO).
 
-| Track | P0 | P1 | P2 | P3 | Total |
-|---|---|---|---|---|---|
-| 1. Visual design & consistency | 0 | 0 | 0 | 0 | 0 |
-| 2. Interaction & motion | 0 | 0 | 0 | 0 | 0 |
-| 3. Accessibility | 0 | 0 | 0 | 0 | 0 |
-| 4. Cross-browser | 0 | 0 | 0 | 0 | 0 |
-| 5. Performance | 0 | 2 | 14 | 10 | 26 |
-| 6. SEO | 0 | 0 | 8 | 9 | 17 |
-| 7. Copy | 0 | 2 | 6 | 9 | 17 |
-| 8. Flows & edge cases | 0 | 0 | 0 | 0 | 0 |
-| 9. Backend & reliability | 0 | 2 | 5 | 5 | 12 |
-| **All** | **0** | **6** | **33** | **33** | **72** |
+| Track | P0 | P1 | P2 | P3 | Total | Unverified |
+|---|---|---|---|---|---|---|
+| 1. Visual design & consistency | 0 | 0 | 0 | 0 | 0 | 0 |
+| 2. Interaction & motion | 0 | 0 | 0 | 0 | 0 | 0 |
+| 3. Accessibility | 0 | 0 | 0 | 0 | 0 | 0 |
+| 4. Cross-browser | 0 | 0 | 0 | 0 | 0 | 0 |
+| 5. Performance | 0 | 2 | 14 | 10 | 26 | 0 |
+| 6. SEO | 0 | 0 | 8 | 9 | 17 | 0 |
+| 7. Copy | 0 | 2 | 6 | 9 | 17 | 0 |
+| 8. Flows & edge cases | 0 | 0 | 0 | 0 | 0 | 0 |
+| 9. Backend & reliability | 0 | 2 | 5 | 5 | 12 | 0 |
+| **All** | **0** | **6** | **33** | **33** | **72** | **0** |
 
 ### Setup and baseline
 

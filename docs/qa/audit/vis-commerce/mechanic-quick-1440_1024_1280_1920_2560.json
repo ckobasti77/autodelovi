@@ -1,0 +1,641 @@
+{
+  "pages": {},
+  "quick": {
+    "1024": {
+      "emptyProbe": {
+        "vw": 1024,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "input 1x1 \"Otpremi CSV\""
+        ],
+        "tinyCount": 1,
+        "under44": [
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 1,
+        "smallInputs": [
+          "qo-input 15px"
+        ]
+      },
+      "resultsProbe": {
+        "vw": 1024,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "input 1x1 \"Otpremi CSV\"",
+          "a 219x21 \"Kočioni disk prednji 276 × 24 mm\"",
+          "a 182x21 \"Set zupčastog kaiša 1.4 16V\"",
+          "input 16x16 \"qo-3\"",
+          "input 16x16 \"qo-3\"",
+          "a 293x21 \"Kočioni disk prednji 288 × 25 mm, ventilirani\"",
+          "a 244x21 \"Kočioni disk zadnji 272 × 10 mm, puni\"",
+          "input 16x16 \"qo-6\"",
+          "a 158x21 \"Amortizer prednji, gasni\"",
+          "input 16x16 \"qo-6\"",
+          "a 158x21 \"Amortizer prednji, gasni\"",
+          "input 16x16 \"qo-7\"",
+          "input 16x16 \"qo-7\"",
+          "a 116x21 \"Amortizer prednji\"",
+          "a 110x21 \"Hladnjak motora\""
+        ],
+        "tinyCount": 18,
+        "under44": [
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\""
+        ],
+        "under44Count": 40,
+        "smallInputs": [
+          "qo-input 15px"
+        ]
+      },
+      "geoTop": {
+        "vh": 768,
+        "scrollY": 0,
+        "barTop": 653,
+        "barH": 115,
+        "rows": 13,
+        "partlyBehindBar": 1,
+        "fullyBehindBar": 0,
+        "docH": 3304,
+        "scrollPaddingBottom": "auto"
+      },
+      "geoEnd": {
+        "vh": 768,
+        "scrollY": 2536,
+        "barTop": 141.53125,
+        "barH": 115,
+        "rows": 13,
+        "partlyBehindBar": 0,
+        "fullyBehindBar": 0,
+        "docH": 3304,
+        "scrollPaddingBottom": "auto"
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "1280": {
+      "emptyProbe": {
+        "vw": 1280,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "input 1x1 \"Otpremi CSV\""
+        ],
+        "tinyCount": 1,
+        "under44": [
+          "button 256x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 3,
+        "smallInputs": [
+          "qo-input 15px"
+        ]
+      },
+      "resultsProbe": {
+        "vw": 1280,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "input 1x1 \"Otpremi CSV\"",
+          "a 219x21 \"Kočioni disk prednji 276 × 24 mm\"",
+          "a 182x21 \"Set zupčastog kaiša 1.4 16V\"",
+          "input 16x16 \"qo-3\"",
+          "a 324x21 \"Set zupčastog kaiša sa vodenom pumpom 1.9 TDI\"",
+          "input 16x16 \"qo-3\"",
+          "a 324x21 \"Set zupčastog kaiša sa vodenom pumpom 1.9 TDI\"",
+          "a 293x21 \"Kočioni disk prednji 288 × 25 mm, ventilirani\"",
+          "a 244x21 \"Kočioni disk zadnji 272 × 10 mm, puni\"",
+          "input 16x16 \"qo-6\"",
+          "a 158x21 \"Amortizer prednji, gasni\"",
+          "input 16x16 \"qo-6\"",
+          "a 158x21 \"Amortizer prednji, gasni\"",
+          "input 16x16 \"qo-7\"",
+          "a 248x21 \"Kočione pločice prednje, sa senzorom\""
+        ],
+        "tinyCount": 22,
+        "under44": [
+          "button 256x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\""
+        ],
+        "under44Count": 42,
+        "smallInputs": [
+          "qo-input 15px"
+        ]
+      },
+      "geoTop": {
+        "vh": 800,
+        "scrollY": 0,
+        "barTop": 684,
+        "barH": 116,
+        "rows": 13,
+        "partlyBehindBar": 1,
+        "fullyBehindBar": 0,
+        "docH": 3108,
+        "scrollPaddingBottom": "auto"
+      },
+      "geoEnd": {
+        "vh": 800,
+        "scrollY": 2308,
+        "barTop": 157.96875,
+        "barH": 116,
+        "rows": 13,
+        "partlyBehindBar": 0,
+        "fullyBehindBar": 0,
+        "docH": 3108,
+        "scrollPaddingBottom": "auto"
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "1440": {
+      "emptyProbe": {
+        "vw": 1440,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "input 1x1 \"Otpremi CSV\""
+        ],
+        "tinyCount": 1,
+        "under44": [
+          "button 256x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 3,
+        "smallInputs": [
+          "qo-input 15px"
+        ]
+      },
+      "resultsProbe": {
+        "vw": 1440,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "input 1x1 \"Otpremi CSV\"",
+          "a 219x21 \"Kočioni disk prednji 276 × 24 mm\"",
+          "a 182x21 \"Set zupčastog kaiša 1.4 16V\"",
+          "input 16x16 \"qo-3\"",
+          "a 324x21 \"Set zupčastog kaiša sa vodenom pumpom 1.9 TDI\"",
+          "input 16x16 \"qo-3\"",
+          "a 324x21 \"Set zupčastog kaiša sa vodenom pumpom 1.9 TDI\"",
+          "a 293x21 \"Kočioni disk prednji 288 × 25 mm, ventilirani\"",
+          "a 244x21 \"Kočioni disk zadnji 272 × 10 mm, puni\"",
+          "input 16x16 \"qo-6\"",
+          "a 158x21 \"Amortizer prednji, gasni\"",
+          "input 16x16 \"qo-6\"",
+          "a 158x21 \"Amortizer prednji, gasni\"",
+          "input 16x16 \"qo-7\"",
+          "a 248x21 \"Kočione pločice prednje, sa senzorom\""
+        ],
+        "tinyCount": 22,
+        "under44": [
+          "button 256x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\""
+        ],
+        "under44Count": 42,
+        "smallInputs": [
+          "qo-input 15px"
+        ]
+      },
+      "axe": [],
+      "geoTop": {
+        "vh": 900,
+        "scrollY": 0,
+        "barTop": 783,
+        "barH": 117,
+        "rows": 13,
+        "partlyBehindBar": 1,
+        "fullyBehindBar": 1,
+        "docH": 3121,
+        "scrollPaddingBottom": "auto"
+      },
+      "geoEnd": {
+        "vh": 900,
+        "scrollY": 2221,
+        "barTop": 246.9375,
+        "barH": 117,
+        "rows": 13,
+        "partlyBehindBar": 0,
+        "fullyBehindBar": 0,
+        "docH": 3121,
+        "scrollPaddingBottom": "auto"
+      },
+      "focusObscured": [
+        {
+          "label": "INPUT",
+          "inRow": true,
+          "top": 805,
+          "bottom": 821,
+          "barTop": 783,
+          "coveredByBar": true,
+          "partlyByBar": false,
+          "coveredByHeader": false,
+          "inFooter": false
+        },
+        {
+          "label": "Amortizer prednji, gasni",
+          "inRow": true,
+          "top": 801,
+          "bottom": 822,
+          "barTop": 783,
+          "coveredByBar": true,
+          "partlyByBar": false,
+          "coveredByHeader": false,
+          "inFooter": false
+        },
+        {
+          "label": "Smanji količinu",
+          "inRow": true,
+          "top": 864,
+          "bottom": 900,
+          "barTop": 783,
+          "coveredByBar": true,
+          "partlyByBar": false,
+          "coveredByHeader": false,
+          "inFooter": false
+        },
+        {
+          "label": "Količina",
+          "inRow": true,
+          "top": 864,
+          "bottom": 898,
+          "barTop": 783,
+          "coveredByBar": true,
+          "partlyByBar": false,
+          "coveredByHeader": false,
+          "inFooter": false
+        },
+        {
+          "label": "Povećaj količinu",
+          "inRow": true,
+          "top": 864,
+          "bottom": 900,
+          "barTop": 783,
+          "coveredByBar": true,
+          "partlyByBar": false,
+          "coveredByHeader": false,
+          "inFooter": false
+        },
+        {
+          "label": "Ukloni red ZZ9999999",
+          "inRow": true,
+          "top": 856,
+          "bottom": 900,
+          "barTop": 783,
+          "coveredByBar": true,
+          "partlyByBar": false,
+          "coveredByHeader": false,
+          "inFooter": false
+        }
+      ],
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "1920": {
+      "emptyProbe": {
+        "vw": 1920,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "input 1x1 \"Otpremi CSV\""
+        ],
+        "tinyCount": 1,
+        "under44": [
+          "button 288x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 3,
+        "smallInputs": [
+          "qo-input 15px"
+        ]
+      },
+      "resultsProbe": {
+        "vw": 1920,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "input 1x1 \"Otpremi CSV\"",
+          "a 219x21 \"Kočioni disk prednji 276 × 24 mm\"",
+          "a 182x21 \"Set zupčastog kaiša 1.4 16V\"",
+          "input 16x16 \"qo-3\"",
+          "a 324x21 \"Set zupčastog kaiša sa vodenom pumpom 1.9 TDI\"",
+          "input 16x16 \"qo-3\"",
+          "a 324x21 \"Set zupčastog kaiša sa vodenom pumpom 1.9 TDI\"",
+          "a 293x21 \"Kočioni disk prednji 288 × 25 mm, ventilirani\"",
+          "a 244x21 \"Kočioni disk zadnji 272 × 10 mm, puni\"",
+          "input 16x16 \"qo-6\"",
+          "a 158x21 \"Amortizer prednji, gasni\"",
+          "input 16x16 \"qo-6\"",
+          "a 158x21 \"Amortizer prednji, gasni\"",
+          "input 16x16 \"qo-7\"",
+          "a 248x21 \"Kočione pločice prednje, sa senzorom\""
+        ],
+        "tinyCount": 22,
+        "under44": [
+          "button 288x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\""
+        ],
+        "under44Count": 42,
+        "smallInputs": [
+          "qo-input 15px"
+        ]
+      },
+      "geoTop": {
+        "vh": 1080,
+        "scrollY": 0,
+        "barTop": 963,
+        "barH": 117,
+        "rows": 13,
+        "partlyBehindBar": 1,
+        "fullyBehindBar": 1,
+        "docH": 3121,
+        "scrollPaddingBottom": "auto"
+      },
+      "geoEnd": {
+        "vh": 1080,
+        "scrollY": 2041,
+        "barTop": 426.953125,
+        "barH": 117,
+        "rows": 13,
+        "partlyBehindBar": 0,
+        "fullyBehindBar": 0,
+        "docH": 3121,
+        "scrollPaddingBottom": "auto"
+      },
+      "focusObscured": [
+        {
+          "label": "Kočioni disk zadnji 272 × 10 mm, puni",
+          "inRow": true,
+          "top": 1059,
+          "bottom": 1080,
+          "barTop": 963,
+          "coveredByBar": true,
+          "partlyByBar": false,
+          "coveredByHeader": false,
+          "inFooter": false
+        },
+        {
+          "label": "Količina",
+          "inRow": true,
+          "top": 1032,
+          "bottom": 1066,
+          "barTop": 963,
+          "coveredByBar": true,
+          "partlyByBar": false,
+          "coveredByHeader": false,
+          "inFooter": false
+        },
+        {
+          "label": "Ukloni red 1K0 615 540 Q",
+          "inRow": true,
+          "top": 1027,
+          "bottom": 1071,
+          "barTop": 963,
+          "coveredByBar": true,
+          "partlyByBar": false,
+          "coveredByHeader": false,
+          "inFooter": false
+        },
+        {
+          "label": "Kočione pločice prednje, sa senzorom",
+          "inRow": true,
+          "top": 946,
+          "bottom": 967,
+          "barTop": 963,
+          "coveredByBar": false,
+          "partlyByBar": true,
+          "coveredByHeader": false,
+          "inFooter": false
+        },
+        {
+          "label": "Smanji količinu",
+          "inRow": true,
+          "top": 960,
+          "bottom": 996,
+          "barTop": 963,
+          "coveredByBar": false,
+          "partlyByBar": true,
+          "coveredByHeader": false,
+          "inFooter": false
+        },
+        {
+          "label": "Količina",
+          "inRow": true,
+          "top": 960,
+          "bottom": 994,
+          "barTop": 963,
+          "coveredByBar": false,
+          "partlyByBar": true,
+          "coveredByHeader": false,
+          "inFooter": false
+        },
+        {
+          "label": "Povećaj količinu",
+          "inRow": true,
+          "top": 960,
+          "bottom": 996,
+          "barTop": 963,
+          "coveredByBar": false,
+          "partlyByBar": true,
+          "coveredByHeader": false,
+          "inFooter": false
+        },
+        {
+          "label": "Ukloni red ZZ9999999",
+          "inRow": true,
+          "top": 955,
+          "bottom": 999,
+          "barTop": 963,
+          "coveredByBar": false,
+          "partlyByBar": true,
+          "coveredByHeader": false,
+          "inFooter": false
+        },
+        {
+          "label": "Hladnjak motora",
+          "inRow": true,
+          "top": 1059,
+          "bottom": 1080,
+          "barTop": 963,
+          "coveredByBar": true,
+          "partlyByBar": false,
+          "coveredByHeader": false,
+          "inFooter": false
+        },
+        {
+          "label": "Količina",
+          "inRow": true,
+          "top": 1032,
+          "bottom": 1066,
+          "barTop": 963,
+          "coveredByBar": true,
+          "partlyByBar": false,
+          "coveredByHeader": false,
+          "inFooter": false
+        },
+        {
+          "label": "Povećaj količinu",
+          "inRow": true,
+          "top": 1032,
+          "bottom": 1068,
+          "barTop": 963,
+          "coveredByBar": true,
+          "partlyByBar": false,
+          "coveredByHeader": false,
+          "inFooter": false
+        },
+        {
+          "label": "Ukloni red 1K0 121 753 QN",
+          "inRow": true,
+          "top": 1027,
+          "bottom": 1071,
+          "barTop": 963,
+          "coveredByBar": true,
+          "partlyByBar": false,
+          "coveredByHeader": false,
+          "inFooter": false
+        }
+      ],
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "2560": {
+      "emptyProbe": {
+        "vw": 2560,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "input 1x1 \"Otpremi CSV\""
+        ],
+        "tinyCount": 1,
+        "under44": [
+          "button 288x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 3,
+        "smallInputs": [
+          "qo-input 15px"
+        ]
+      },
+      "resultsProbe": {
+        "vw": 2560,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "input 1x1 \"Otpremi CSV\"",
+          "a 219x21 \"Kočioni disk prednji 276 × 24 mm\"",
+          "a 182x21 \"Set zupčastog kaiša 1.4 16V\"",
+          "input 16x16 \"qo-3\"",
+          "a 324x21 \"Set zupčastog kaiša sa vodenom pumpom 1.9 TDI\"",
+          "input 16x16 \"qo-3\"",
+          "a 324x21 \"Set zupčastog kaiša sa vodenom pumpom 1.9 TDI\"",
+          "a 293x21 \"Kočioni disk prednji 288 × 25 mm, ventilirani\"",
+          "a 244x21 \"Kočioni disk zadnji 272 × 10 mm, puni\"",
+          "input 16x16 \"qo-6\"",
+          "a 158x21 \"Amortizer prednji, gasni\"",
+          "input 16x16 \"qo-6\"",
+          "a 158x21 \"Amortizer prednji, gasni\"",
+          "input 16x16 \"qo-7\"",
+          "a 248x21 \"Kočione pločice prednje, sa senzorom\""
+        ],
+        "tinyCount": 22,
+        "under44": [
+          "button 288x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\""
+        ],
+        "under44Count": 42,
+        "smallInputs": [
+          "qo-input 15px"
+        ]
+      },
+      "geoTop": {
+        "vh": 1440,
+        "scrollY": 0,
+        "barTop": 1323,
+        "barH": 117,
+        "rows": 13,
+        "partlyBehindBar": 1,
+        "fullyBehindBar": 1,
+        "docH": 3121,
+        "scrollPaddingBottom": "auto"
+      },
+      "geoEnd": {
+        "vh": 1440,
+        "scrollY": 1681,
+        "barTop": 786.953125,
+        "barH": 117,
+        "rows": 13,
+        "partlyBehindBar": 0,
+        "fullyBehindBar": 0,
+        "docH": 3121,
+        "scrollPaddingBottom": "auto"
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    }
+  }
+}

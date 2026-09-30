@@ -1,0 +1,71 @@
+{
+  "empty": {
+    "invalid": [
+      "iq-message: Napišite šta vam treba — naziv dela ili kvar. 0 / 2.000",
+      "iq-name: Upišite ime.",
+      "iq-phone: Za odgovor telefonom ili porukom upišite broj telefona.",
+      "cb_R_clinpfd9fclb_: "
+    ],
+    "alerts": [
+      "Proverite označena polja: Napišite šta vam treba — naziv dela ili kvar. Upišite ime. Za odgovor telefonom ili porukom upišite broj telefona. Potrebna je saglasnost da podatke koristimo za odgovor na upit."
+    ]
+  },
+  "vin16": {
+    "errs": {
+      "invalid": [
+        "iq-vin: Broj šasije ima 17 znakova (bez slova I, O i Q).",
+        "iq-message: Napišite šta vam treba — naziv dela ili kvar. 0 / 2.000",
+        "iq-name: Upišite ime.",
+        "iq-phone: Za odgovor telefonom ili porukom upišite broj telefona.",
+        "cb_R_clinpfd9fclb_: "
+      ],
+      "alerts": [
+        "Proverite označena polja: Napišite šta vam treba — naziv dela ili kvar. Upišite ime. Za odgovor telefonom ili porukom upišite broj telefona. Potrebna je saglasnost da podatke koristimo za odgovor na upit. Broj šasije ima 17 znakova (bez slova I, O i Q)."
+      ]
+    },
+    "text": "Veb sajt Proverite označena polja: Napišite šta vam treba — naziv dela ili kvar. Upišite ime. Za odgovor telefonom ili porukom upišite broj telefona. Potrebna je saglasnost da podatke koristimo za odgovor na upit. Broj šasije ima 17 znakova (bez slova I, O i Q). Vozilo Broj šasije (VIN) (nije obavezno) Broj šasije ima 17 znakova (bez slova I, O i Q). Marka Izaberite Volkswagen Audi Škoda SEAT "
+  },
+  "vinValid": {
+    "brand": "volkswagen",
+    "model": "IzaberiteGolfPassatPoloCaddyTouranTiguan",
+    "generation": "IzaberiteGolf IV · 1997–2006Golf V · 2003–2009Golf VI · 2008–2013Golf VII · 2012–2020Golf VIII · 2019–",
+    "year": "2016",
+    "decodeText": "Veb sajt Proverite označena polja: Napišite šta vam treba — naziv dela ili kvar. Upišite ime. Za odgovor telefonom ili porukom upišite broj telefona. Potrebna je saglasnost da podatke koristimo za odgovor na upit. Vozilo Broj šasije (VIN) (nije obavezno) Volkswagen · Golf VII · model 2016? Marka Izaberite Volkswagen Audi Škoda SEAT Cupra Model Izaberite Golf Passat Polo Caddy Touran Tiguan Generacija Izaberite Golf IV · 1997–2006 Golf V · 2003–2009 Golf VI · 2008–2013 Golf VII · 2012–2020 Go"
+  },
+  "wrongType": [
+    "Fotografija je prevelika ili nije JPG, PNG ili WebP. Najviše 8 MB po fotografiji."
+  ],
+  "tooBig": [
+    "Fotografija je prevelika ili nije JPG, PNG ili WebP. Najviše 8 MB po fotografiji."
+  ],
+  "six": {
+    "notice": [
+      "Najviše 5 fotografija — višak nije dodat."
+    ],
+    "thumbs": 5,
+    "uploading": 0
+  },
+  "photosDone": 5,
+  "thanksUrl": "http://localhost:3100/upit/hvala/TCKI3u8d7NiTEMMTsKAqTWXFgZ9gEerN9LLq9kklD5w",
+  "thanksText": "UPIT JE PRIMLJEN. Broj upita je UP-2026-000067. Odgovaramo u toku radnog dana. Ponudu vidite i na stranici upita — sačuvajte link.",
+  "number": "UP-2026-000067",
+  "probe": {
+    "eventTypes": [
+      "inquiry.created"
+    ],
+    "kind": "vin",
+    "photoCount": 5,
+    "status": "nov",
+    "vin": "WVWZZZAUZGW123456"
+  },
+  "statusLinks": [
+    "/upit/TCKI3u8d7NiTEMMTsKAqTWXFgZ9gEerN9LLq9kklD5w"
+  ],
+  "statusText": "Upit i ponuda UP-2026-000067 Primljen 30.09.2026. 20:43 Ponuda još nije spremna Proveravamo kod dobavljača. Odgovor stiže kanalom koji ste izabrali (telefonom), a ponuda će se pojaviti i ovde. Vaš upit Volkswagen Golf VII (2016) WVWZZZAUZGW123456 Treba mi set kočionih diskova i pločica napred za Golf 7 (audit flows-shop). Fotografija: 5 Tok upita Upit je primljen. 30.09.2026. 20:43 Ponudu i svaku promenu vidite na ovoj stranici — osvežava se sama.",
+  "log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

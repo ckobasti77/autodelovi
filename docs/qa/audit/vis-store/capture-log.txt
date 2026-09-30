@@ -1,0 +1,181 @@
+home@360 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=19 clip=0 up=0 13002ms
+home@390 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=19 clip=0 up=0 13557ms
+home@768 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=60 clip=0 up=12 13860ms
+home@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=57 clip=0 up=0 24783ms
+home@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=62 clip=3 up=12 24354ms
+home@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=62 clip=0 up=12 25013ms
+delovi@360 200 ov=0 stuck=0 pend=0 cons=0 s24=10 s44=13 clip=0 up=0 12839ms
+home@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=61 clip=0 up=0 15245ms
+home@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=61 clip=0 up=0 23756ms
+delovi@390 200 ov=0 stuck=0 pend=0 cons=0 s24=10 s44=13 clip=0 up=0 19695ms
+delovi@768 200 ov=0 stuck=0 pend=0 cons=0 s24=11 s44=13 clip=0 up=20 16332ms
+delovi@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=11 s44=13 clip=0 up=0 17144ms
+delovi@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=11 s44=15 clip=0 up=20 12843ms
+delovi@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=11 s44=15 clip=0 up=20 17835ms
+delovi@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=11 s44=15 clip=0 up=0 18459ms
+delovi@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=11 s44=15 clip=0 up=0 18601ms
+hub@360 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=13 clip=0 up=0 10459ms
+hub@390 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=13 clip=0 up=0 11824ms
+hub@768 200 ov=0 stuck=0 pend=0 cons=0 s24=2 s44=13 clip=0 up=0 7126ms
+hub@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=2 s44=13 clip=0 up=0 8160ms
+hub@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=2 s44=15 clip=0 up=0 8842ms
+hub@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=2 s44=15 clip=0 up=0 10151ms
+hub@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=2 s44=15 clip=0 up=0 8913ms
+hub@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=2 s44=15 clip=0 up=0 7828ms
+cat@360 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=37 clip=1 up=0 9778ms
+cat@390 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=37 clip=0 up=0 10158ms
+cat@768 200 ov=0 stuck=0 pend=0 cons=0 s24=9 s44=31 clip=0 up=9 9432ms
+cat@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=13 s44=37 clip=3 up=0 7240ms
+cat@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=13 s44=39 clip=3 up=0 8423ms
+cat@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=13 s44=39 clip=0 up=0 9811ms
+cat@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=13 s44=39 clip=3 up=0 11569ms
+cat@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=13 s44=39 clip=3 up=0 11134ms
+catf@360 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=36 clip=1 up=0 12410ms
+catf@390 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=36 clip=0 up=0 10520ms
+catf@768 200 ov=0 stuck=0 pend=0 cons=0 s24=6 s44=33 clip=0 up=5 12246ms
+catf@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=12 s44=37 clip=2 up=0 8304ms
+catf@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=12 s44=39 clip=2 up=0 8194ms
+catf@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=12 s44=39 clip=2 up=0 9524ms
+catf@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=12 s44=39 clip=0 up=0 10195ms
+catf@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=12 s44=39 clip=2 up=0 11628ms
+landb@360 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=58 clip=1 up=0 10521ms
+landb@390 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=58 clip=0 up=0 11143ms
+landb@768 200 ov=0 stuck=0 pend=0 cons=0 s24=8 s44=53 clip=0 up=8 12648ms
+landb@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=13 s44=59 clip=3 up=0 12378ms
+landb@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=13 s44=61 clip=3 up=0 12145ms
+landb@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=13 s44=61 clip=0 up=0 10888ms
+landb@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=13 s44=61 clip=3 up=0 9680ms
+landb@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=13 s44=61 clip=3 up=0 14582ms
+landm@360 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=48 clip=1 up=0 11424ms
+landm@390 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=48 clip=0 up=0 8301ms
+landm@768 200 ov=0 stuck=0 pend=0 cons=0 s24=7 s44=45 clip=0 up=6 9833ms
+landm@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=13 s44=49 clip=3 up=0 12126ms
+landm@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=13 s44=51 clip=3 up=0 12376ms
+landm@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=13 s44=51 clip=0 up=0 8449ms
+landm@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=13 s44=51 clip=3 up=0 10081ms
+landm@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=13 s44=51 clip=3 up=0 11712ms
+pin@360 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=27 clip=0 up=0 12813ms
+pin@390 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=27 clip=0 up=0 9762ms
+pin@768 200 ov=0 stuck=0 pend=0 cons=0 s24=6 s44=25 clip=0 up=4 10473ms
+pin@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=5 s44=26 clip=0 up=0 8725ms
+pin@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=3 s44=30 clip=0 up=0 9338ms
+pin@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=6 s44=27 clip=0 up=1 9202ms
+pin@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=3 s44=30 clip=0 up=1 9650ms
+pin@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=3 s44=30 clip=0 up=5 9875ms
+pout@360 200 ov=0 stuck=0 pend=0 cons=0 s24=3 s44=20 clip=0 up=0 12560ms
+pout@390 200 ov=0 stuck=0 pend=0 cons=0 s24=3 s44=20 clip=0 up=0 10984ms
+pout@768 200 ov=0 stuck=0 pend=0 cons=0 s24=7 s44=20 clip=0 up=4 10747ms
+pout@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=6 s44=23 clip=0 up=0 9576ms
+pout@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=6 s44=21 clip=0 up=0 10277ms
+pout@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=7 s44=22 clip=0 up=1 8856ms
+pout@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=6 s44=23 clip=0 up=1 8542ms
+pout@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=6 s44=23 clip=0 up=5 10869ms
+porder@360 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=19 clip=3 up=0 13298ms
+porder@390 200 ov=0 stuck=0 pend=0 cons=0 s24=2 s44=18 clip=0 up=0 10490ms
+porder@768 200 ov=0 stuck=0 pend=0 cons=0 s24=5 s44=23 clip=0 up=5 9439ms
+porder@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=5 s44=23 clip=0 up=0 10757ms
+porder@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=5 s44=25 clip=0 up=0 9402ms
+porder@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=5 s44=25 clip=0 up=1 10144ms
+porder@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=5 s44=25 clip=0 up=5 10319ms
+porder@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=5 s44=25 clip=0 up=1 11158ms
+plong@360 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=18 clip=1 up=0 12556ms
+plong@768 200 ov=0 stuck=0 pend=0 cons=0 s24=6 s44=17 clip=0 up=4 8932ms
+plong@390 200 ov=0 stuck=0 pend=0 cons=0 s24=2 s44=17 clip=0 up=0 9522ms
+plong@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=5 s44=18 clip=0 up=0 9061ms
+plong@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=5 s44=20 clip=0 up=1 15869ms
+plong@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=5 s44=20 clip=0 up=0 16803ms
+plong@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=5 s44=20 clip=0 up=1 15998ms
+soem@360 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=15 clip=0 up=0 11857ms
+plong@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=5 s44=20 clip=0 up=3 14396ms
+soem@390 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=15 clip=0 up=0 18502ms
+soem@768 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=14 clip=0 up=1 13804ms
+soem@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=14 clip=0 up=0 11636ms
+soem@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=17 clip=0 up=0 10259ms
+soem@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=16 clip=0 up=0 8751ms
+soem@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=17 clip=0 up=0 8737ms
+soem@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=17 clip=0 up=0 8539ms
+sname@390 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=24 clip=0 up=0 9809ms
+sname@360 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=24 clip=1 up=0 10017ms
+sname@768 200 ov=0 stuck=0 pend=0 cons=0 s24=6 s44=18 clip=0 up=9 14964ms
+sname@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=26 clip=0 up=0 14213ms
+sname@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=4 s44=20 clip=0 up=0 15446ms
+sname@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=6 s44=20 clip=0 up=0 18487ms
+sname@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=26 clip=0 up=0 17922ms
+sname@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=26 clip=0 up=0 19504ms
+szero@360 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=24 clip=1 up=0 13831ms
+szero@390 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=24 clip=0 up=0 14302ms
+szero@768 200 ov=0 stuck=0 pend=0 cons=0 s24=9 s44=16 clip=0 up=11 34261ms
+szero@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=5 s44=20 clip=0 up=0 47966ms
+szero@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=26 clip=0 up=0 49697ms
+szero@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=9 s44=18 clip=0 up=0 50929ms
+szero@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=26 clip=0 up=0 38645ms
+szero@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=26 clip=0 up=0 41958ms
+voz@360 200 ov=0 stuck=0 pend=0 cons=0 s24=5 s44=13 clip=0 up=0 41847ms
+voz@768 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=18 clip=0 up=0 35078ms
+voz@390 200 ov=0 stuck=0 pend=0 cons=0 s24=5 s44=13 clip=0 up=0 38701ms
+voz@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=18 clip=0 up=0 22755ms
+voz@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=20 clip=0 up=0 19795ms
+voz@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=20 clip=0 up=0 19807ms
+voz@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=20 clip=0 up=0 26791ms
+voz@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=1 s44=20 clip=0 up=0 17858ms
+vozb@360 200 ov=0 stuck=0 pend=0 cons=0 s24=6 s44=16 clip=0 up=0 21884ms
+vozb@390 200 ov=0 stuck=0 pend=0 cons=0 s24=6 s44=16 clip=0 up=0 18214ms
+vozb@768 200 ov=0 stuck=0 pend=0 cons=0 s24=8 s44=16 clip=0 up=0 16877ms
+vozb@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=8 s44=16 clip=0 up=0 18030ms
+vozb@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=8 s44=18 clip=0 up=0 23789ms
+vozb@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=8 s44=18 clip=0 up=0 28349ms
+vozb@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=2 s44=24 clip=0 up=0 26774ms
+vozb@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=2 s44=24 clip=0 up=0 17244ms
+vozm@360 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=18 clip=0 up=0 15136ms
+vozm@390 200 ov=0 stuck=0 pend=0 cons=0 s24=0 s44=18 clip=0 up=0 14470ms
+vozm@768 200 ov=0 stuck=0 pend=0 cons=0 s24=3 s44=18 clip=0 up=0 12048ms
+vozm@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=3 s44=18 clip=0 up=0 20281ms
+vozm@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=3 s44=20 clip=0 up=0 19248ms
+vozm@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=3 s44=20 clip=0 up=0 22205ms
+vozm@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=3 s44=20 clip=0 up=0 16619ms
+vozm@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=3 s44=20 clip=0 up=0 16359ms
+vozg@360 200 ov=0 stuck=0 pend=0 cons=0 s24=3 s44=32 clip=3 up=0 19546ms
+vozg@390 200 ov=0 stuck=0 pend=0 cons=0 s24=3 s44=32 clip=0 up=0 19135ms
+vozg@768 200 ov=0 stuck=0 pend=0 cons=0 s24=10 s44=29 clip=0 up=20 21491ms
+vozg@1024 200 ov=0 stuck=0 pend=0 cons=0 s24=7 s44=32 clip=0 up=0 28357ms
+vozg@1280 200 ov=0 stuck=0 pend=0 cons=0 s24=7 s44=34 clip=0 up=20 25868ms
+vozg@1440 200 ov=0 stuck=0 pend=0 cons=0 s24=8 s44=33 clip=0 up=20 26744ms
+nf@360 404 ov=0 stuck=0 pend=0 cons=1 s24=0 s44=15 clip=0 up=0 15657ms
+vozg@1920 200 ov=0 stuck=0 pend=0 cons=0 s24=7 s44=34 clip=0 up=0 26743ms
+vozg@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=7 s44=34 clip=0 up=0 26334ms
+nf@390 404 ov=0 stuck=0 pend=0 cons=1 s24=0 s44=15 clip=0 up=0 14734ms
+nf@768 404 ov=0 stuck=0 pend=0 cons=1 s24=0 s44=15 clip=0 up=0 14028ms
+nf@1024 404 ov=0 stuck=0 pend=0 cons=1 s24=0 s44=15 clip=0 up=0 13796ms
+nf@1280 404 ov=0 stuck=0 pend=0 cons=1 s24=0 s44=17 clip=0 up=0 13175ms
+nf@1440 404 ov=0 stuck=0 pend=0 cons=1 s24=0 s44=17 clip=0 up=0 18401ms
+nf@1920 404 ov=0 stuck=0 pend=0 cons=1 s24=0 s44=17 clip=0 up=0 42574ms
+nf@2560 404 ov=0 stuck=0 pend=0 cons=1 s24=0 s44=17 clip=0 up=0 44011ms
+sg@360 ERROR TimeoutError: page.goto: Timeout 90000ms exceeded.
+Call log:
+  - navigating to "http://localhost:3100/styleguide", waiting until "load"
+
+sg@390 ERROR TimeoutError: page.goto: Timeout 90000ms exceeded.
+Call log:
+  - navigating to "http://localhost:3100/styleguide", waiting until "load"
+
+sg@768 ERROR TimeoutError: page.goto: Timeout 90000ms exceeded.
+Call log:
+  - navigating to "http://localhost:3100/styleguide", waiting until "load"
+
+sg@1024 ERROR TimeoutError: page.goto: Timeout 90000ms exceeded.
+Call log:
+  - navigating to "http://localhost:3100/styleguide", waiting until "load"
+
+sg@1280 ERROR TimeoutError: page.goto: Timeout 90000ms exceeded.
+Call log:
+  - navigating to "http://localhost:3100/styleguide", waiting until "load"
+
+sg@1440 ERROR TimeoutError: page.goto: Timeout 90000ms exceeded.
+Call log:
+  - navigating to "http://localhost:3100/styleguide", waiting until "load"
+
+sg@1920 ERROR TimeoutError: page.goto: Timeout 90000ms exceeded.
+Call log:
+  - navigating to "http://localhost:3100/styleguide", waiting until "load"
+
+sg@2560 200 ov=0 stuck=0 pend=0 cons=0 s24=18 s44=76 clip=3 up=0 161025ms

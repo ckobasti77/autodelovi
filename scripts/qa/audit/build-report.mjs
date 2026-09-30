@@ -57,7 +57,15 @@ for (const d of synthesis.duplicates ?? []) {
   }
 }
 const confirmed = results.filter((r) => r.status === "confirmed" && !mergedInto.has(r.key));
-const rejected = results.filter((r) => r.status !== "confirmed");
+const rejected = results.filter((r) => r.status === "rejected");
+const pending = results.filter((r) => r.status === "unverified" || r.status === "disputed");
+const pendCounters = {};
+pending
+  .sort((a, b) => sevIdx(a.severity) - sevIdx(b.severity) || trackRank(a.track) - trackRank(b.track) || a.key.localeCompare(b.key))
+  .forEach((f) => {
+    pendCounters[f.prefix] = (pendCounters[f.prefix] ?? 0) + 1;
+    f.id = `${f.prefix}-U${String(pendCounters[f.prefix]).padStart(2, "0")}`;
+  });
 
 // ---- stable IDs per prefix: severity, then track order, then key
 const counters = {};
@@ -100,7 +108,7 @@ const count = (arr, s) => arr.filter((f) => f.severity === s).length;
 out.push("## 1. Summary");
 out.push("");
 out.push(
-  `**${confirmed.length} confirmed findings** — P0 ${count(confirmed, "P0")} · P1 ${count(confirmed, "P1")} · P2 ${count(confirmed, "P2")} · P3 ${count(confirmed, "P3")}. ${results.length} findings were reported; ${rejected.length} did not survive verification (Appendix A)${mergedInto.size ? ` and ${mergedInto.size} were merged into duplicates` : ""}.`,
+  `**${confirmed.length} confirmed findings** — P0 ${count(confirmed, "P0")} · P1 ${count(confirmed, "P1")} · P2 ${count(confirmed, "P2")} · P3 ${count(confirmed, "P3")}. ${results.length} findings were reported; ${rejected.length} did not survive verification (Appendix A)${mergedInto.size ? `, ${mergedInto.size} were merged into duplicates` : ""}${pending.length ? ` and **${pending.length} could not be independently verified before the step's time limit** (section 6 — verify before fixing)` : ""}.`,
 );
 out.push("");
 if (synthesis.executive_summary) {
@@ -111,13 +119,13 @@ if (extra.notes?.length) {
   out.push(bullet(extra.notes));
   out.push("");
 }
-out.push("| Track | P0 | P1 | P2 | P3 | Total |");
-out.push("|---|---|---|---|---|---|");
+out.push("| Track | P0 | P1 | P2 | P3 | Total | Unverified |");
+out.push("|---|---|---|---|---|---|---|");
 for (const g of GROUPS) {
   const fs = confirmed.filter((f) => f.group === g.group);
-  out.push(`| ${g.name} | ${count(fs, "P0")} | ${count(fs, "P1")} | ${count(fs, "P2")} | ${count(fs, "P3")} | ${fs.length} |`);
+  out.push(`| ${g.name} | ${count(fs, "P0")} | ${count(fs, "P1")} | ${count(fs, "P2")} | ${count(fs, "P3")} | ${fs.length} | ${pending.filter((f) => f.group === g.group).length} |`);
 }
-out.push(`| **All** | **${count(confirmed, "P0")}** | **${count(confirmed, "P1")}** | **${count(confirmed, "P2")}** | **${count(confirmed, "P3")}** | **${confirmed.length}** |`);
+out.push(`| **All** | **${count(confirmed, "P0")}** | **${count(confirmed, "P1")}** | **${count(confirmed, "P2")}** | **${count(confirmed, "P3")}** | **${confirmed.length}** | **${pending.length}** |`);
 out.push("");
 
 if (extra.environment?.length) {
@@ -186,7 +194,9 @@ if (extra.knownItems?.length) {
         ? `[${m.id}](#${m.id.toLowerCase()}) ${m.severity} — ${esc(m.title)}`
         : m.status === "confirmed"
           ? `merged into ${idOf(m.key)}`
-          : `not confirmed (${m.key}, Appendix A)`,
+          : m.status === "unverified" || m.status === "disputed"
+            ? `[${m.id}](#${m.id.toLowerCase()}) ${m.severity} — ${esc(m.title)} (${m.status}, section 6)`
+            : `not confirmed (${m.key}, Appendix A)`,
     );
     out.push(`| ${esc(k.item)} | ${cells.length ? cells.join("<br>") : esc(k.fallback ?? "see findings")} |`);
   }
@@ -231,6 +241,34 @@ for (const s of SEV) {
     if (f.alsoReported?.length) {
       out.push(`- **Also reported as:** ${f.alsoReported.map((a) => `${a.key} (${a.title} @ ${a.route})`).join("; ")}`);
     }
+    out.push(`- _Reviewer key: ${f.key}_`);
+    out.push("");
+  }
+}
+
+// Unverified / disputed
+if (pending.length) {
+  out.push(`## 6. Reported but not independently verified (${pending.length})`);
+  out.push("");
+  out.push("Reviewers reported these with evidence, but no independent verifier reproduced them before the step's time limit (`unverified`), or two verifiers disagreed (`disputed`). Step 22: reproduce each one first (steps and evidence below); fix it if it reproduces, otherwise mark it `NOT REPRODUCED`. Severity is the reviewer's.");
+  out.push("");
+  for (const f of pending) {
+    out.push(`#### ${f.id}`);
+    out.push("");
+    out.push(`**${f.title}**`);
+    out.push("");
+    out.push(`- **Severity (reported):** ${f.severity} · **Area:** ${groupName(f.group)} — ${f.area} · **Verification:** ${f.status} · **Status:** OPEN`);
+    out.push(`- **Route:** ${f.route}`);
+    out.push(`- **Context:** ${f.context}`);
+    if (f.standard) out.push(`- **Standard:** ${f.standard}`);
+    if (f.known_item) out.push(`- **Known item:** ${f.known_item}`);
+    out.push(`- **Reproduction:**`);
+    (f.steps ?? []).forEach((st, i) => out.push(`  ${i + 1}. ${st}`));
+    out.push(`- **Expected:** ${f.expected}`);
+    out.push(`- **Actual:** ${f.actual}`);
+    out.push(`- **Evidence:** ${(f.evidence ?? []).map(link).join(" · ")}`);
+    out.push(`- **Suggested fix:** ${f.suggested_fix}`);
+    if (f.votes?.length) out.push(`- **Votes:** ${f.votes.map((v) => `${v.lens} → ${v.verdict} (${v.severity}): ${short(v.notes, 320)}`).join(" — ")}`);
     out.push(`- _Reviewer key: ${f.key}_`);
     out.push("");
   }
@@ -301,12 +339,14 @@ writeFileSync(
         confirmed: confirmed.length,
         bySeverity: Object.fromEntries(SEV.map((s) => [s, count(confirmed, s)])),
         notConfirmed: rejected.length,
+        unverified: pending.length,
         merged: mergedInto.size,
       },
       findings: confirmed
         .sort((a, b) => sevIdx(a.severity) - sevIdx(b.severity) || a.id.localeCompare(b.id))
         .map(({ votes, ...f }) => ({ ...f, status: "OPEN", verification: votes })),
       notConfirmed: rejected,
+      unverified: pending.map(({ votes, ...f }) => ({ ...f, status: "OPEN", verificationStatus: f.status, verification: votes })),
       merged: Object.fromEntries(mergedInto),
     },
     null,

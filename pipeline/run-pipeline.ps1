@@ -939,8 +939,16 @@ function Clear-DevPorts {
         if ($null -eq $c) { continue }
         $proc = Get-Process -Id $c.OwningProcess -ErrorAction SilentlyContinue
         if ($proc -and ($proc.ProcessName -match '^(node|bun)$')) {
-          Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
-          Write-PLog ('Ugašen zaostali server na portu {0} (PID {1}).' -f $port, $proc.Id)
+          # Only stop servers started from this project: another project's pipeline may run on this PC.
+          $cmd = ''
+          try { $cmd = [string](Get-CimInstance Win32_Process -Filter ('ProcessId=' + $proc.Id) -ErrorAction Stop).CommandLine } catch { $cmd = '' }
+          $cmd = $cmd.Replace('/', '\')
+          if ($cmd -and ($cmd.IndexOf($ProjectDir, [StringComparison]::OrdinalIgnoreCase) -ge 0)) {
+            Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
+            Write-PLog ('Ugašen zaostali server na portu {0} (PID {1}).' -f $port, $proc.Id)
+          } else {
+            Write-PLog ('Port {0} drži proces koji nije iz ovog projekta (PID {1}) — ne diram ga.' -f $port, $proc.Id) 'WARN'
+          }
         }
       }
     } catch { }

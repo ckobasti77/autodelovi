@@ -1,0 +1,5 @@
+ok   anon 390 C:/Program Files/Git/delovi → blank [-1] stuck=0 pending=0 words=0 states={} console=0 pageErr=0
+ok   anon 390 /delovi/kocnice → /delovi/kocnice [200] stuck=0 pending=0 words=0 states={"done":14} console=0 pageErr=0
+ok   anon 390 /delovi/kocioni-diskovi → /delovi/kocioni-diskovi [200] stuck=0 pending=0 words=0 states={"done":36} console=0 pageErr=0
+ok   anon 390 /delovi/kocioni-diskovi/volkswagen → /delovi/kocioni-diskovi/volkswagen [200] stuck=0 pending=0 words=0 states={"done":38} console=0 pageErr=0
+ok   anon 390 /delovi/kocioni-diskovi/volkswagen/golf → /delovi/kocioni-diskovi/volkswagen/golf [200] stuck=0 pending=0 words=0 states={"done":32} console=0 pageErr=0

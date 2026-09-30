@@ -1,0 +1,215 @@
+{
+ "wrap": {
+  "/delovi/kocioni-diskovi@1440": [
+   {
+    "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "lineStartsWith": "× 25 mm,",
+    "top": 649
+   },
+   {
+    "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "lineStartsWith": "× 25 mm,",
+    "top": 1127
+   },
+   {
+    "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+    "lineStartsWith": "× 25 mm,",
+    "top": 1127
+   }
+  ],
+  "/delovi/kocioni-diskovi@1280": [],
+  "/delovi/kocioni-diskovi@1024": [],
+  "/delovi/kocioni-diskovi@390": [
+   {
+    "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "lineStartsWith": "× 25 mm,",
+    "top": 1221
+   },
+   {
+    "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "lineStartsWith": "× 25 mm,",
+    "top": 1657
+   },
+   {
+    "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+    "lineStartsWith": "× 25 mm,",
+    "top": 2093
+   }
+  ],
+  "/delovi/kocioni-diskovi@360": [
+   {
+    "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "lineStartsWith": "× 25 mm,",
+    "top": 1247
+   },
+   {
+    "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "lineStartsWith": "× 25 mm,",
+    "top": 1683
+   },
+   {
+    "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+    "lineStartsWith": "× 25 mm,",
+    "top": 2119
+   }
+  ],
+  "/pretraga?q=disk@1440": [
+   {
+    "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+    "lineStartsWith": "× 25 mm,",
+    "top": 1187
+   },
+   {
+    "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "lineStartsWith": "× 25 mm,",
+    "top": 1187
+   },
+   {
+    "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "lineStartsWith": "× 25 mm,",
+    "top": 1666
+   }
+  ],
+  "/pretraga?q=disk@1920": [
+   {
+    "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+    "lineStartsWith": "× 25 mm,",
+    "top": 688
+   },
+   {
+    "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "lineStartsWith": "× 25 mm,",
+    "top": 1189
+   },
+   {
+    "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "lineStartsWith": "× 25 mm,",
+    "top": 1189
+   }
+  ]
+ },
+ "stage": {
+  "1024": [],
+  "1280": [
+   {
+    "text": "Karoserija i svetla",
+    "sw": 107,
+    "cw": 98,
+    "y": 768
+   },
+   {
+    "text": "Kočnice i vešanje",
+    "sw": 103,
+    "cw": 98,
+    "y": 768
+   },
+   {
+    "text": "Agregati i hlađenje",
+    "sw": 114,
+    "cw": 98,
+    "y": 768
+   }
+  ],
+  "1366": [
+   {
+    "text": "Agregati i hlađenje",
+    "sw": 114,
+    "cw": 109,
+    "y": 768
+   }
+  ],
+  "1440": [],
+  "1920": []
+ },
+ "cardclip": {
+  "card": {
+   "left": 16,
+   "right": 344,
+   "sw": 326,
+   "cw": 326
+  },
+  "offenders": []
+ },
+ "tinybtn": [
+  {
+   "name": "",
+   "html": "<button type=\"button\" role=\"checkbox\" aria-checked=\"false\" data-state=\"unchecked\" value=\"on\" id=\"cb_R_96hbsnpfd9fclb_\" class=\"peer mt-3 inline-flex size-5 shrink-0 cursor-pointer items-center justify-center rounded-xs bo",
+   "x": 48,
+   "y": 526,
+   "w": 20,
+   "h": 20
+  },
+  {
+   "name": "",
+   "html": "<button type=\"button\" role=\"checkbox\" aria-checked=\"false\" data-state=\"unchecked\" value=\"on\" id=\"cb_R_2pmhbsnpfd9fclb_\" class=\"peer mt-3 inline-flex size-5 shrink-0 cursor-pointer items-center justify-center rounded-xs b",
+   "x": 48,
+   "y": 639,
+   "w": 20,
+   "h": 20
+  },
+  {
+   "name": "",
+   "html": "<button type=\"button\" role=\"checkbox\" aria-checked=\"false\" data-state=\"unchecked\" value=\"on\" id=\"cb_R_4pmhbsnpfd9fclb_\" class=\"peer mt-3 inline-flex size-5 shrink-0 cursor-pointer items-center justify-center rounded-xs b",
+   "x": 48,
+   "y": 683,
+   "w": 20,
+   "h": 20
+  },
+  {
+   "name": "",
+   "html": "<button type=\"button\" role=\"checkbox\" aria-checked=\"false\" data-state=\"unchecked\" value=\"on\" id=\"cb_R_6pmhbsnpfd9fclb_\" class=\"peer mt-3 inline-flex size-5 shrink-0 cursor-pointer items-center justify-center rounded-xs b",
+   "x": 48,
+   "y": 727,
+   "w": 20,
+   "h": 20
+  },
+  {
+   "name": "",
+   "html": "<button type=\"button\" role=\"checkbox\" aria-checked=\"false\" data-state=\"unchecked\" value=\"on\" id=\"cb_R_8pmhbsnpfd9fclb_\" class=\"peer mt-3 inline-flex size-5 shrink-0 cursor-pointer items-center justify-center rounded-xs b",
+   "x": 48,
+   "y": 771,
+   "w": 20,
+   "h": 20
+  },
+  {
+   "name": "",
+   "html": "<button type=\"button\" role=\"checkbox\" aria-checked=\"false\" data-state=\"unchecked\" value=\"on\" id=\"cb_R_apmhbsnpfd9fclb_\" class=\"peer mt-3 inline-flex size-5 shrink-0 cursor-pointer items-center justify-center rounded-xs b",
+   "x": 48,
+   "y": 815,
+   "w": 20,
+   "h": 20
+  },
+  {
+   "name": "",
+   "html": "<button type=\"button\" role=\"checkbox\" aria-checked=\"false\" data-state=\"unchecked\" value=\"on\" id=\"cb_R_cpmhbsnpfd9fclb_\" class=\"peer mt-3 inline-flex size-5 shrink-0 cursor-pointer items-center justify-center rounded-xs b",
+   "x": 48,
+   "y": 859,
+   "w": 20,
+   "h": 20
+  },
+  {
+   "name": "",
+   "html": "<button type=\"button\" role=\"checkbox\" aria-checked=\"false\" data-state=\"unchecked\" value=\"on\" id=\"cb_R_q6hbsnpfd9fclb_\" aria-describedby=\"cb_R_q6hbsnpfd9fclb_-desc\" class=\"peer mt-3 inline-flex size-5 shrink-0 cursor-poin",
+   "x": 48,
+   "y": 972,
+   "w": 20,
+   "h": 20
+  },
+  {
+   "name": "",
+   "html": "<button type=\"button\" role=\"checkbox\" aria-checked=\"false\" data-state=\"unchecked\" value=\"on\" id=\"cb_R_1a6hbsnpfd9fclb_\" aria-describedby=\"cb_R_1a6hbsnpfd9fclb_-desc\" class=\"peer mt-3 inline-flex size-5 shrink-0 cursor-po",
+   "x": 48,
+   "y": 1027,
+   "w": 20,
+   "h": 20
+  },
+  {
+   "name": "",
+   "html": "<button type=\"button\" role=\"checkbox\" aria-checked=\"false\" data-state=\"unchecked\" value=\"on\" id=\"cb_R_1q6hbsnpfd9fclb_\" aria-describedby=\"cb_R_1q6hbsnpfd9fclb_-desc\" class=\"peer mt-3 inline-flex size-5 shrink-0 cursor-po",
+   "x": 48,
+   "y": 1100,
+   "w": 20,
+   "h": 20
+  }
+ ]
+}

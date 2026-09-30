@@ -1,0 +1,24 @@
+A /delovi/kocioni-diskovi {"stuck":[],"pending":0,"words":0} states 36
+A /deo/kocioni-disk-prednji-312-25-mm-demo-0007 {"stuck":[],"pending":0,"words":0} states 41
+A / {"stuck":[],"pending":0,"words":0} states 124
+A /za-majstore {"stuck":[],"pending":0,"words":0} states 36
+A /vozila {"stuck":[],"pending":0,"words":0} states 32
+A /vozila/volkswagen {"stuck":[],"pending":0,"words":0} states 30
+B / {"early":0,"late":0,"trackH":788}
+B /delovi/kocioni-diskovi {"early":0,"late":0,"trackH":null}
+B /za-majstore {"early":0,"late":0,"trackH":null}
+B /deo/kocioni-disk-prednji-276-24-mm-demo-0004 {"early":0,"late":0,"trackH":null}
+B rasklopi {"y0":955,"y1":955,"samples":[{"t":120,"progress":1,"status":"ready"},{"t":240,"progress":1,"status":"ready"},{"t":360,"progress":1,"status":"ready"},{"t":480,"progress":1,"status":"ready"},{"t":600,"progress":1,"status":"ready"},{"t":720,"progress":1,"status":"ready"},{"t":840,"progress":1,"status":"ready"},{"t":960,"progress":1,"status":"ready"}]}
+C / {"n":0,"sample":[],"trjs":"display_57a2f1e9-module__yAkwwW__variable displaysemibold_66077e30-module__u41IVa__variable condensed_ac4bd985-module__SOzDNq__variable public_sans_cf90169f-module__aFbQTG__variable martian_mono_b35e5d72-module__bZkIpW__variable"}
+C /delovi/kocioni-diskovi {"n":0,"sample":[],"trjs":"display_57a2f1e9-module__yAkwwW__variable displaysemibold_66077e30-module__u41IVa__variable condensed_ac4bd985-module__SOzDNq__variable public_sans_cf90169f-module__aFbQTG__variable martian_mono_b35e5d72-module__bZkIpW__variable"}
+C /deo/kocioni-disk-prednji-276-24-mm-demo-0004 {"n":0,"sample":[],"trjs":"display_57a2f1e9-module__yAkwwW__variable displaysemibold_66077e30-module__u41IVa__variable condensed_ac4bd985-module__SOzDNq__variable public_sans_cf90169f-module__aFbQTG__variable martian_mono_b35e5d72-module__bZkIpW__variable"}
+C /za-majstore {"n":0,"sample":[],"trjs":"display_57a2f1e9-module__yAkwwW__variable displaysemibold_66077e30-module__u41IVa__variable condensed_ac4bd985-module__SOzDNq__variable public_sans_cf90169f-module__aFbQTG__variable martian_mono_b35e5d72-module__bZkIpW__variable"}
+D /deo/kocioni-disk-prednji-276-24-mm-demo-0004 pending on screen 32 hidden in print 0
+D /uslovi-koriscenja pending on screen 20 hidden in print 0
+D /porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw pending on screen 6 hidden in print 0
+E /delovi/kocioni-diskovi/volkswagen/golf#golf-7 {"scrollY":0,"hash":"#golf-7","target":false,"pendingAbove":0,"inViewStates":{"done":2}}
+E /vozila/volkswagen#m-tiguan {"scrollY":1266,"hash":"#m-tiguan","target":true,"pendingAbove":0,"inViewStates":{"done":4}}
+E /politika-privatnosti#kolacici {"scrollY":0,"hash":"#kolacici","target":false,"pendingAbove":0,"inViewStates":{"done":4}}
+F 0 {"stuck":[],"pending":0,"words":0} []
+F 1 {"stuck":[],"pending":0,"words":0} []
+F 2 {"stuck":[],"pending":0,"words":0} []

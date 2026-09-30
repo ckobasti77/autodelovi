@@ -1,0 +1,51 @@
+[
+  {
+    "id": "G1",
+    "width": 390,
+    "number": "SK-2026-000104",
+    "token": "Ske3kOy01Zjk_j1MUxVYs2Z6bIihm55G1T_RPlPzT50",
+    "url": "http://localhost:3100/porudzbina/hvala/Ske3kOy01Zjk_j1MUxVYs2Z6bIihm55G1T_RPlPzT50",
+    "total": "1.490 RSD",
+    "paymentOptions": [
+      {
+        "name": "Gotovinom pri preuzimanjuPlaćate u radnji kada preuzimate deo.",
+        "checked": true,
+        "disabled": false
+      },
+      {
+        "name": "Karticom pri preuzimanjuPlaćate karticom u radnji kada preuzimate deo.",
+        "checked": false,
+        "disabled": false
+      },
+      {
+        "name": "Virmanom uz predračunŠaljemo predračun; deo rezervišemo do uplate. Samo za firme — u koraku Kontakt uključite „Kupujem kao firma“.",
+        "checked": false,
+        "disabled": true
+      }
+    ],
+    "shippingOnDelivery": "1.490 RSD",
+    "thanksText": "PORUDŽBINA JE PRIMLJENA.\n\nBroj porudžbine je SK-2026-000104. Poslali smo potvrdu na audit-flows-g1-1790784529613@primer.rs; javićemo se kad je potvrdimo.\n\nPlaćate gotovinom u radnji kada preuzimate deo.\n\nStatus pratite na stranici porudžbine — sačuvajte link.\n\nSK-2026-000104\nPrimljena\n30.09.2026. 18:09\nTok porudžbine\nPrimljena\n— trenutno\n30.09.2026. 18:09\nPotvrđena\n— čeka\nSpremna za preuzimanje\n— čeka\nPreuzeta\n— čeka\nStavke\nSet za reparaciju kočione čeljusti, prednji\nFebi Bilstein · OEM 1K0 615 324 H · 1 × 1.490 RSD\n1.490 RSD\nArtikli\n1.490 RSD\nDostava\n0 RSD\nUkupno\n1.490 RSD\n\nUračunat PDV: 248,33 RSD\n\nDostava\n\nLično preuzimanje\n\nPlaćanje\n\nGotovinom pri preuzimanju\n\nObaveštenja\n\nSvaku promenu vidite na ovoj stranici — osvežava se sama, bez ponovnog učitavanja.\n\nKupac\n\nMarko Petrović\n+381 64 123 4567\naudit-flows-g1-1790784529613@primer.rs",
+    "probe": {
+      "customerType": "guest",
+      "deliveryMethod": "pickup",
+      "eventTypes": [
+        "order.created"
+      ],
+      "hasAttribution": true,
+      "itemCount": 1,
+      "paymentMethod": "pickup_cash",
+      "source": "web",
+      "status": "nova",
+      "totalPara": 149000
+    },
+    "statusText": "Porudžbina\nSK-2026-000104\nPrimljena\n30.09.2026. 18:09\n\nPitanje o porudžbini? Navedite njen broj.\n\nTok porudžbine\nPrimljena\n— trenutno\n30.09.2026. 18:09\nPotvrđena\n— čeka\nSpremna za preuzimanje\n— čeka\nPreuzeta\n— čeka\nStavke\nSet za reparaciju kočione čeljusti, prednji\nFebi Bilstein · OEM 1K0 615 324 H · 1 × 1.490 RSD\n1.490 RSD\nArtikli\n1.490 RSD\nDostava\n0 RSD\nUkupno\n1.490 RSD\n\nUračunat PDV: 248,33 RSD\n\nDostava\n\nLično preuzimanje\n\nPlaćanje\n\nGotovinom pri preuzimanju\n\nObaveštenja\n\nSvaku promenu vidite na ovoj stranici — osvežava se sama, bez ponovnog učitavanja.\n\nKupac\n\nMarko Petrović\n+381 64 123 4567\naudit-flows-g1-1790784529613@primer.rs",
+    "proformaStatus": 200,
+    "proformaText": "Preskoči na sadržaj\nSKLOP\nSKLOP\nPredračun\n\nSK-2026-000104\n\nDatum: 30.09.2026.\n\nKUPAC\n\nMarko Petrović\n+381 64 123 4567 · audit-flows-g1-1790784529613@primer.rs\n\nUPLATA\n\nPodatke za uplatu šaljemo uz potvrdu porudžbine. Poziv na broj: 2026000104\n\nARTIKAL\tKOL.\tCENA SA PDV\tIZNOS\nSet za reparaciju kočione čeljusti, prednji\nDEMO-0019 · OEM 1K0 615 324 H\n\t1\t1.490 RSD\t1.490 RSD\nDostava\t0 RSD\nOsnovica\n1.241,67 RSD\nPDV 20 %\n248,33 RSD\nZa uplatu\n1.490 RSD\n\nPredračun nije fiskalni račun. Robu rezervišemo do uplate; račun izdajemo pri isporuci.\n\nŠtampaj predračun\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–14\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.\n\nUslovi korišćenja\nPolitika privatnosti\nKolačići\nPodešavanja kolačića",
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+]

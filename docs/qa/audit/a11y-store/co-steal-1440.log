@@ -1,0 +1,16 @@
+-- step1 form aria "- navigation \"Koraci porudžbine\":\n  - list:\n    - listitem: \"Korak 1: Kontakt\"\n    - listitem: \"Korak 2: Dostava\"\n    - listitem: \"Korak 3: Plaćanje\"\n    - listitem: \"Korak 4: Pregled\"\n- region \"Kontakt\":\n  - heading \"Kontakt\" [level=2]\n  - text: Ime\n  - textbox \"Ime\"\n  - text: Prezime\n  - textbox \"Prezime\"\n  - text: Telefon\n  - textbox \"Telefon\":\n    - /placeholder: 064 123 4567\n  - paragraph: Zovemo samo zbog ove porudžbine.\n  - text: E-pošta\n  - textbox \"E-pošta\":\n    - /placeholder: ime@primer.rs\n  - paragraph: Na nju šaljemo potvrdu i status.\n  - checkbox \"Kupujem kao firma Unesite podatke firme za račun i predračun (virman).\"\n  - text: Kupujem kao firma Unesite podatke firme za račun i predračun (virman).\n  - link \"Korpa\":\n    - /url: /korpa\n  - button \"Dalje\"\n- complementary \"Pregled porudžbine\":\n  - heading \"Vaša porudžbina\" [level=2]\n  - list:\n    - listitem: Kočioni disk prednji 276 × 24 mm × 1 4.690 RSD\n  - term: Međuzbir\n  - definition: 4.690 RSD\n  - term: Dostava · lično preuzimanje\n  - definition: 0 RSD\n  - term: Ukupno\n  - definition: 4.690 RSD\n  - paragraph: \"U cenu je uračunat PDV 20 %: 781,67 RSD\""
+-- honeypot {"name":"website","tabIndex":-1,"ariaHiddenAncestor":true,"inert":false,"rect":[-9951,270,193,25]}
+-- A after Dalje "div[alert]# \"Proverite 4 polja:Upišite ime.Upišite pr\""
+-- A while typing Ime (focus) "input#co-firstName \"\""
+-- A after Tab from fixed Ime (expected co-lastName) "div[alert]# \"Proverite 3 polja:Upišite prezime.Upišit\""
+-- A values after typing Prezime blindly ["co-firstName=Petarć","co-lastName=","co-phone=","co-email="]
+-- B after click into Telefon (expected co-phone) "div[alert]# \"Proverite 2 polja:Upišite broj telefona.\""
+-- B values after typing Telefon ["co-firstName=Petarć","co-lastName=Petrović","co-phone=","co-email="]
+-- step4 heading focus "h2#step-title \"Pregled\""
+-- C after submit without terms "div[alert]# \"Proverite jedno polje:Potrebna je saglas\""
+-- C terms state {"role":"checkbox","invalid":"true","desc":""}
+-- C axe []
+-- D thanks url "http://localhost:3100/porudzbina/hvala/AdGmo4s7cKsI0NRLS6gVcMQ0_IRQfP_3VTFvzOTez9A"
+-- D thanks focus "BODY"
+-- D thanks h1 "Porudžbina je primljena."
+-- D axe thanks []

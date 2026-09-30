@@ -3,7 +3,8 @@
  * journal.jsonl, applying the same verification rules as the workflow script. Used when the
  * workflow's own return value is unavailable (stopped early or truncated).
  *
- *   node scripts/qa/audit/from-journal.mjs <journal.jsonl> > result.json
+ *   node scripts/qa/audit/from-journal.mjs <journal.jsonl> [more journals…] > result.json
+ * Reviews and votes are merged across journals (a later journal wins for a re-run review).
  */
 import { readFileSync } from "node:fs";
 
@@ -33,9 +34,12 @@ const sevIdx = (s) => (SEV.indexOf(s) < 0 ? 2 : SEV.indexOf(s));
 const medianSev = (list) => SEV[list.map(sevIdx).sort((a, b) => a - b)[Math.floor(list.length / 2)]];
 const trim = (s, n) => (s && s.length > n ? `${s.slice(0, n)}…` : s || "");
 
-const lines = readFileSync(process.argv[2], "utf8").trim().split("\n").map((l) => JSON.parse(l));
-const label = Object.fromEntries(lines.filter((l) => l.type === "started").map((l) => [l.agentId, l.label]));
-const res = lines.filter((l) => l.type === "result" && l.result).map((l) => ({ label: label[l.agentId] ?? "", r: l.result }));
+const res = [];
+for (const file of process.argv.slice(2)) {
+  const lines = readFileSync(file, "utf8").trim().split("\n").map((l) => JSON.parse(l));
+  const label = Object.fromEntries(lines.filter((l) => l.type === "started").map((l) => [l.agentId, l.label]));
+  for (const l of lines) if (l.type === "result" && l.result) res.push({ label: label[l.agentId] ?? "", r: l.result });
+}
 
 // Reviews (a retry replaces a failed first attempt).
 const reviewByTrack = new Map();
@@ -77,12 +81,12 @@ for (const [track, r] of reviewByTrack) {
     const vs = votes.get(f.key) ?? [];
     const yes = vs.filter((v) => v.reproduced);
     const no = vs.filter((v) => !v.reproduced);
-    const status = vs.length === 0 ? "unverified" : yes.length > no.length ? "confirmed" : "rejected";
+    const status = vs.length === 0 ? "unverified" : yes.length > no.length ? "confirmed" : yes.length === no.length ? "disputed" : "rejected";
     let severity = f.severity;
     if (status === "confirmed") severity = yes.length === 1 ? yes[0].severity : medianSev([f.severity, ...yes.map((v) => v.severity)]);
     results.push({ ...f, track, group, prefix, status, reported_severity: f.severity, severity, votes: vs });
   }
 }
-const critic = res.find((x) => x.label === "critic")?.r ?? null;
-const synthesis = res.find((x) => x.label === "synthesis")?.r ?? null;
+const critic = res.findLast((x) => x.label === "critic")?.r ?? null;
+const synthesis = res.findLast((x) => x.label === "synthesis")?.r ?? null;
 process.stdout.write(JSON.stringify({ results, reviews, critic, synthesis }, null, 1));

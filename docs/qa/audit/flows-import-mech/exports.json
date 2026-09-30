@@ -1,0 +1,219 @@
+{
+  "hrefs": [
+    [
+      "export-products",
+      "/admin/izvoz/proizvodi.xlsx"
+    ],
+    [
+      "export-orders",
+      "/admin/izvoz/porudzbine.csv"
+    ],
+    [
+      "export-customers",
+      "/admin/izvoz/kupci.csv"
+    ],
+    [
+      "export-mechanics",
+      "/admin/izvoz/majstori.csv"
+    ]
+  ],
+  "export-products": {
+    "url": "http://localhost:3100/admin/izvoz/proizvodi.xlsx?demo=1",
+    "status": 200,
+    "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "disposition": "attachment; filename=\"proizvodi-2026-09-30.xlsx\"; filename*=UTF-8''proizvodi-2026-09-30.xlsx",
+    "sheets": [
+      "Proizvodi"
+    ],
+    "header": [
+      "Šifra",
+      "Naziv",
+      "Kategorija",
+      "Proizvođač",
+      "Kvalitet",
+      "OEM brojevi",
+      "Broj proizvođača",
+      "Zamenski brojevi",
+      "MP cena (sa PDV)",
+      "Nabavna cena (bez PDV)",
+      "Količina",
+      "Rok isporuke (dana)",
+      "Primena (vozila)",
+      "Opis",
+      "Slike (URL)",
+      "Težina (kg)",
+      "EAN",
+      "Aktivan",
+      "Minimalna zaliha"
+    ],
+    "rows": 169,
+    "sample": [
+      [
+        "DEMO-0001",
+        "Kočioni disk prednji 288 × 25 mm, ventilirani",
+        "Kočioni diskovi",
+        "ATE",
+        "oem",
+        "1K0 615 868 F; 1K0 615 177",
+        "24.0183-1118.1",
+        "Meyle 855 023 5823",
+        5490,
+        3012.45,
+        0,
+        6,
+        "VW Golf IV; VW Golf V; VW Golf VI; VW Caddy III; VW Touran I; VW Tiguan I; Audi A3 (8L); Audi A3 (8P); Škoda Octavia I; Škoda Octavia II; SEAT Leon I; SEAT Leon II",
+        "Kočioni disk prednji 288 × 25 mm, ventilirani. Demo artikal: kataloški brojevi i cene služe samo za prikaz rada prodavnice.",
+        null,
+        null,
+        null,
+        "da"
+      ],
+      [
+        "DEMO-0002",
+        "Kočioni disk prednji 312 × 25 mm, ventilirani",
+        "Kočioni diskovi",
+        "Brembo",
+        "oem",
+        "1K0 615 591 E; 1K0 615 164 GG",
+        "09.E131.79",
+        "Mahle OX 696D",
+        7290,
+        3708.19,
+        3,
+        null,
+        "VW Golf V; VW Golf VI; VW Golf VII; VW Passat B8; VW Caddy III; VW Touran I; VW Touran II; VW Tiguan I; VW Tiguan II; Audi A3 (8P); Audi A3 (8V); Škoda Octavia II; Škoda Octavia III; Škoda Superb III; Škoda Kodiaq I; Škoda Karoq; SEAT Leon II; SEAT Leon III; SEAT Ateca; Cupra Ateca",
+        "Kočioni disk prednji 312 × 25 mm, ventilirani. Demo artikal: kataloški brojevi i cene služe samo za prikaz rada prodavnice.",
+        null,
+        null,
+        null,
+        "da"
+      ]
+    ],
+    "formulas": 0,
+    "types": {
+      "Šifra": "s",
+      "Naziv": "s",
+      "Kategorija": "s",
+      "Proizvođač": "s",
+      "Kvalitet": "s",
+      "OEM brojevi": "s",
+      "Broj proizvođača": "s",
+      "Zamenski brojevi": "s",
+      "MP cena (sa PDV)": "n",
+      "Nabavna cena (bez PDV)": "n",
+      "Količina": "n",
+      "Rok isporuke (dana)": "n",
+      "Primena (vozila)": "s",
+      "Opis": "s",
+      "Aktivan": "s"
+    }
+  },
+  "export-orders": {
+    "url": "http://localhost:3100/admin/izvoz/porudzbine.csv",
+    "status": 200,
+    "type": "text/csv; charset=utf-8",
+    "disposition": "attachment; filename=\"porudzbine-2026-09-30.csv\"; filename*=UTF-8''porudzbine-2026-09-30.csv",
+    "bytes": 76383,
+    "bom": true,
+    "crlf": true,
+    "header": "Broj;Datum;Status;Tip kupca;Ime;Prezime;Telefon;E-pošta;Firma;PIB;Komada;Artikli (RSD);Popust (RSD);Dostava (RSD);PDV (RSD);Ukupno (RSD);Plaćanje;Plaćeno;Isporuka;Grad;Broj pošiljke;Izvor;Kampanja;Demo",
+    "rows": 117,
+    "sample": [
+      "SK-2026-000117;30.09.2026. 18:53;Nova;Kupac;Marko;Petrović;+381 64 555 0101;audit-kupac-5455287@primer.rs;;;1;3990,00;0,00;450,00;740,00;4440,00;Pouzećem;Nije plaćeno;Kurirska služba;Beograd;;Sajt;;",
+      "SK-2026-000116;30.09.2026. 18:48;Nova;Kupac;Marko;Petrović;+381 64 555 0101;audit-kupac-5455287@primer.rs;;;2;2980,00;0,00;0,00;496,67;2980,00;Gotovinom pri preuzimanju;Nije plaćeno;Lično preuzimanje;;;Sajt;;",
+      "SK-2026-000115;30.09.2026. 18:45;Nova;Gost;Admin;Test fa4-86712;+381 64 333 4455;admin-e2e-fa4-86712@primer.rs;;;1;4690,00;0,00;450,00;856,67;5140,00;Pouzećem;Nije plaćeno;Kurirska služba;Beograd;;Sajt;;"
+    ],
+    "letters": [
+      "č",
+      "ć",
+      "ž",
+      "š",
+      "đ",
+      "Č"
+    ],
+    "cellsStartingWithFormulaChar": [
+      "+381 64 555 0101",
+      "+381 64 333 4455",
+      "+381 64 123 4567",
+      "+381 64 555 1234",
+      "+381 64 222 3344",
+      "+381 63 555 1234",
+      "+381 64 100 0005",
+      "+381 64 000 0001",
+      "+381 64 100 0004",
+      "+381 64 000 0002",
+      "+381 64 100 0003",
+      "+381 64 100 0002",
+      "+381 64 100 0001"
+    ]
+  },
+  "export-customers": {
+    "url": "http://localhost:3100/admin/izvoz/kupci.csv",
+    "status": 200,
+    "type": "text/csv; charset=utf-8",
+    "disposition": "attachment; filename=\"kupci-2026-09-30.csv\"; filename*=UTF-8''kupci-2026-09-30.csv",
+    "bytes": 1551,
+    "bom": true,
+    "crlf": true,
+    "header": "Ime;Prezime;E-pošta;Telefon;Registrovan;Majstor;Pristanak na obaveštenja;Blokiran;Porudžbina;Demo",
+    "rows": 17,
+    "sample": [
+      ";;marko2024-8687026@primer.rs;;30.09.2026. 16:31;;ne;;0;",
+      ";;audit-verify-b11-8687026@primer.rs;;30.09.2026. 16:31;;ne;;0;",
+      ";;e2e-servis-1790775538854@primer.rs;+381 64 555 1234;30.09.2026. 15:39;odobren;ne;;0;"
+    ],
+    "letters": [
+      "ć",
+      "ž",
+      "š"
+    ],
+    "cellsStartingWithFormulaChar": [
+      "+381 64 555 1234",
+      "+381 64 222 3344",
+      "+381 64 000 0002",
+      "+381 64 000 0001"
+    ]
+  },
+  "export-mechanics": {
+    "url": "http://localhost:3100/admin/izvoz/majstori.csv",
+    "status": 200,
+    "type": "text/csv; charset=utf-8",
+    "disposition": "attachment; filename=\"majstori-2026-09-30.csv\"; filename*=UTF-8''majstori-2026-09-30.csv",
+    "bytes": 7550,
+    "bom": true,
+    "crlf": true,
+    "header": "Firma;PIB;MB;Kontakt;Telefon;E-pošta;Grad;Adresa;Status;Razred;Odloženo plaćanje;Limit (RSD);Rok plaćanja (dana);Registrovan;Demo",
+    "rows": 41,
+    "sample": [
+      "Servis Admin v11-8687026;286870265;76870268;Majstor v11-8687026;+381 64 333 4456;majstor-admin-v11-8687026@primer.rs;Novi Sad;Radionička 1;odbijen;;ne;;15;30.09.2026. 16:31;",
+      "Auto servis E2E;158213057;68213053;Dragan Jović;+381 64 555 1234;e2e-majstor-1790775820963@primer.rs;Kragujevac;Kralja Petra I 12;odobren;Majstor Plus;da;;15;30.09.2026. 15:43;",
+      "Servis Odobrenje 38854;155388542;65388545;Dragan Jović;+381 64 555 1234;e2e-servis-1790775538854@primer.rs;Kragujevac;Kralja Petra I 12;odobren;Partner;da;;15;30.09.2026. 15:39;"
+    ],
+    "letters": [
+      "č",
+      "ć",
+      "ž",
+      "š"
+    ],
+    "cellsStartingWithFormulaChar": [
+      "+381 64 333 4456",
+      "+381 64 555 1234",
+      "+381 64 000 0001"
+    ]
+  },
+  "roundtripRowCount": "169 redova",
+  "roundtripMappingProblems": [],
+  "roundtripCheck": "\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\nRedova u fajlu\n169\nIspravnih\n169\nSa upozorenjem\n0\nuvoze se\nSa greškom\n0\npreskaču se\nPonovljenih šifara\n0\nRedovi sa napomenama\n\nSvi redovi su ispravni.\n\nNazad na kolone\nNišta se još ne upisuje. Upisaće se najviše 169 redova.\nPokreni probni uvoz",
+  "roundtripDry": "Novi artikli\n0\nIzmene\n0\nBez promena\n169\nPreskočeni\n0\nGreške\n0\nProbni rezultat\nIzveštaj\nSvi redovi\nNovi (0)\nIzmene (0)\nGreške (0)\nPreskočeni (0)\n\nNema redova ove vrste.\n\nArtikli kojih nema u fajlu\nDeaktiviraj aktivne artikle kojih nema u ovom fajlu\nBiće deaktivirano 0 artikala. Demo artikli se ne diraju; poništavanje uvoza ih vraća.\nOtkaži uvoz\n0 artikala se upisuje; redovi sa greškom se preskaču.\nUpiši u katalog",
+  "roundtripTab Izmene (0)": "Nema redova ove vrste.",
+  "roundtripTab Greške (0)": "Nema redova ove vrste.",
+  "roundtripTab Preskočeni (0)": "Nema redova ove vrste.",
+  "roundtripBatch": "n57a3024zrkpk7bzqdg00r7nyn8fdcef",
+  "cancelled": "http://localhost:3100/admin/uvoz?uvoz=n57a3024zrkpk7bzqdg00r7nyn8fdcef",
+  "log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

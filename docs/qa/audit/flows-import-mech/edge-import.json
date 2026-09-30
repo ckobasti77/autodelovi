@@ -1,0 +1,278 @@
+{
+  "steps": [
+    {
+      "k": "edge:mapping",
+      "v": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\nKorak 1, završen:\nDatoteka\nIzmeni\n: Datoteka\n2\nKorak 2:\nKolone\n3\nKorak 3:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\nŠta uvozite\nRežim uvoza\nPun uvoz\nNovi artikli se prave, postojeći se menjaju u kolonama koje ste izabrali.\nSamo lager i cene\nMenja samo količinu, cene, rok isporuke i status postojećih artikala. Nepoznate šifre se preskaču.\nBrojevi\nSrpski zapis: 1.234,56\nEngleski zapis: 1,234.56\n\nPrepoznato iz fajla: srpski zapis (10 ćelija).\n\nPrimer iz fajla: 4.990,00 → 4.990 RSD\n\nKolone\nMapiranje kolona fajla na polja artikla\nKOLONA U FAJLU\tPRIMERI\tPOLJE\tPREPOZNATO\nŠifra\tIMP-T-9001 · IMP-T-9002 · IMP-T-9003\t\nNe uvozi\nŠifra artikla\nNaziv\nKategorija\nProizvođač\nKvalitet\nOEM brojevi\nBroj proizvođača\nZamenski brojevi\nMP cena (sa PDV)\nVP cena (bez PDV)\nNabavna cena\nKoličina\nRok isporuke (dana)\nPrimena (vozila)\nOpis\nSlike (URL)\nTežina (kg)\nEAN (bar kod)\nAktivan\nMinimalna zaliha\n\tTAČNO\nNaziv\tAudit disk 9001 prednji · =HYPERLINK(\"http://evil.example/x\",\"Klikni\") · +cmd|' /C calc'!A0\t\nNe uvozi\nŠifra artikla\nNaziv\nKategorija\nProizvođač\nKvalitet\nOEM brojevi\nBroj proizvođača\nZamenski brojevi\nMP cena (sa PDV)\nVP cena (bez PDV)\nNabavna cena\nKoličina\nRok isporuke (dana)\nPrimena (vozila)\nOpis\nSlike (URL)\nTežina (kg)\nEAN (bar kod)\nAktivan\nMinimalna zaliha\n\tTAČNO\nKategorija\tKočioni diskovi · Kočione pločice\t\nNe uvozi\nŠifra artikla\nNaziv\nKategorija\nProizvođač\nKvalitet\nOEM brojevi\nBroj proizvođača\nZamenski brojevi\nMP cena (sa PDV)\nVP cena (bez PDV)\nNabavna cena\nKoličina\nRok isporuke (dana)\nPrimena (vozila)\nOpis\nSlike (URL)\nTežina (kg)\nEAN (bar kod)\nAktivan\nMinimalna zaliha\n\tTAČNO\nProizvođač\tATE · Nepoznati Proizvođač Audit\t\nNe uvozi\nŠifra artikla\nNaziv\nKategorija\nProizvođač\nKvalitet\nOEM brojevi\nBroj proizvođača\nZamenski brojevi\nMP cena (sa PDV)\nVP cena (bez PDV)\nNabavna cena\nKoličina\nRok isporuke (dana)\nPrimena (vozila)\nOpis\nSlike (URL)\nTežina (kg)\nEAN (bar kod)\nAktivan\nMinimalna zaliha\n\tTAČNO\nOEM brojevi\t5Q0 615 301 F\t\nNe uvozi\nŠifra artikla\nNaziv\nKategorija\nProizvođač\nKvalitet\nOEM brojevi\nBroj proizvođača\nZamenski brojevi\nMP cena (sa PDV)\nVP cena (bez PDV)\nNabavna cena\nKoličina\nRok isporuke (dana)\nPrimena (vozila)\nOpis\nSlike (URL)\nTežina (kg)\nEAN (bar kod)\nAktivan\nMinimalna zaliha\n\tTAČNO\nMP cena (sa PDV)\t4.990,00 · 5.990,00 · 3.990,00\t\nNe uvozi\nŠifra artikla\nNaziv\nKategorija\nProizvođač\nKvalitet\nOEM brojevi\nBroj proizvođača\nZamenski brojevi\nMP cena (sa PDV)\nVP cena (bez PDV)\nNabavna cena\nKoličina\nRok isporuke (dana)\nPrimena (vozila)\nOpis\nSlike (URL)\nTežina (kg)\nEAN (bar kod)\nAktivan\nMinimalna zaliha\n\tTAČNO\nKoličina\t3 · 2 · 1\t\nNe uvozi\nŠifra artikla\nNaziv\nKategorija\nProizvođač\nKvalitet\nOEM brojevi\nBroj proizvođača\nZamenski brojevi\nMP cena (sa PDV)\nVP cena (bez PDV)\nNabavna cena\nKoličina\nRok isporuke (dana)\nPrimena (vozila)\nOpis\nSlike (URL)\nTežina (kg)\nEAN (bar kod)\nAktivan\nMinimalna zaliha\n\tTAČNO\nOpis\tObičan red · =1+1 · @SUM(1+1)\t\nNe uvozi\nŠifra artikla\nNaziv\nKategorija\nProizvođač\nKvalitet\nOEM brojevi\nBroj proizvođača\nZamenski brojevi\nMP cena (sa PDV)\nVP cena (bez PDV)\nNabavna cena\nKoličina\nRok isporuke (dana)\nPrimena (vozila)\nOpis\nSlike (URL)\nTežina (kg)\nEAN (bar kod)\nAktivan\nMinimalna zaliha\n\tTAČNO\nAktivan\tne\t\nNe uvozi\nŠifra artikla\nNaziv\nKategorija\nProizvođač\nKvalitet\nOEM brojevi\nBroj proizvođača\nZamenski brojevi\nMP cena (sa PDV)\nVP cena (bez PDV)\nNabavna cena\nKoličina\nRok isporuke (dana)\nPrimena (vozila)\nOpis\nSlike (URL)\nTežina (kg)\nEAN (bar kod)\nAktivan\nMinimalna zaliha\n\tTAČNO\nSačuvaj mapiranje\nSledeći put se isti raspored kolona prepozna sam.\nNazad\nDalje: provera"
+    },
+    {
+      "k": "edge:check",
+      "v": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\nKorak 1, završen:\nDatoteka\nIzmeni\n: Datoteka\nKorak 2, završen:\nKolone\nIzmeni\n: Kolone\n3\nKorak 3:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\nRedova u fajlu\n12\nIspravnih\n8\nSa upozorenjem\n1\nuvoze se\nSa greškom\n3\npreskaču se\nPonovljenih šifara\n1\nRedovi sa napomenama\nIzveštaj (.xlsx)\nSve\n4\nGreške\n3\nUpozorenja\n1\nRedovi sa greškama i upozorenjima\nRED\tŠIFRA\tNAPOMENE\n6\tIMP-T-9001\t\nGreška:\nŠifra IMP-T-9001 se ponavlja u fajlu (prvi put u redu 2).\n\n8\tIMP-T-9006\t\nGreška:\nKoličina: „2,5“ nije ceo broj.\n\n10\tIMP-T-9008\t\nGreška:\nNaziv je obavezan (do 160 znakova).\n\n12\tIMP-T-9010\t\nUpozorenje:\nCena je 0 RSD — kupci će videti „cena na upit“.\nNazad na kolone\nNišta se još ne upisuje. Upisaće se najviše 9 redova.\nPokreni probni uvoz"
+    },
+    {
+      "k": "edge:dryrun",
+      "v": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\nKorak 1, završen:\nDatoteka\nKorak 2, završen:\nKolone\nKorak 3, završen:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\nNovi artikli\n9\nIzmene\n0\nBez promena\n0\nPreskočeni\n0\nGreške\n3\n1 redova sa upozorenjem\nProbni rezultat\nIzveštaj\nSvi redovi\nNovi (9)\nIzmene (0)\nGreške (3)\nPreskočeni (0)\nPrimeri: Novi\nRED\tŠIFRA\tNAZIV\tKATEGORIJA · CENA · STANJE\n2\tIMP-T-9001\tAudit disk 9001 prednji\t\nKočioni diskovi · 4.990 RSD · 3 kom.\n\n3\tIMP-T-9002\t=HYPERLINK(\"http://evil.example/x\",\"Klikni\")\t\nKočioni diskovi · 5.990 RSD · 2 kom.\n\n4\tIMP-T-9003\t+cmd|' /C calc'!A0\t\nKočioni diskovi · 3.990 RSD · 1 kom.\n\n5\tIMP-T-9004\t-2+3 test naziv\t\nKočioni diskovi · 2.990 RSD · 1 kom.\n\n7\tIMP-T-9005\tAudit formula cena\t\nKočioni diskovi · 1.234 RSD · 4 kom.\n\nPrvih 5 od 9.\n\nArtikli kojih nema u fajlu\nDeaktiviraj aktivne artikle kojih nema u ovom fajlu\nBiće deaktivirano 0 artikala. Demo artikli se ne diraju; poništavanje uvoza ih vraća.\nOtkaži uvoz\n9 artikala se upisuje; redovi sa greškom se preskaču.\nUpiši u katalog"
+    },
+    {
+      "k": "edge:tab Novi (9)",
+      "v": "Primeri: Novi\nRED\tŠIFRA\tNAZIV\tKATEGORIJA · CENA · STANJE\n2\tIMP-T-9001\tAudit disk 9001 prednji\t\nKočioni diskovi · 4.990 RSD · 3 kom.\n\n3\tIMP-T-9002\t=HYPERLINK(\"http://evil.example/x\",\"Klikni\")\t\nKočioni diskovi · 5.990 RSD · 2 kom.\n\n4\tIMP-T-9003\t+cmd|' /C calc'!A0\t\nKočioni diskovi · 3.990 RSD · 1 kom.\n\n5\tIMP-T-9004\t-2+3 test naziv\t\nKočioni diskovi · 2.990 RSD · 1 kom.\n\n7\tIMP-T-9005\tAudit formula cena\t\nKočioni diskovi · 1.234 RSD · 4 kom.\n\nPrvih 5 od 9."
+    },
+    {
+      "k": "edge:tab Greške (3)",
+      "v": "Primeri: Greške\nRED\tŠIFRA\tNAZIV\tNAPOMENE\n6\tIMP-T-9001\tDuplikat šifre\t\nGreška:\nŠifra IMP-T-9001 se ponavlja u fajlu (prvi put u redu 2).\n\n8\tIMP-T-9006\tAudit razlomljena količina\t\nGreška:\nKoličina: „2,5“ nije ceo broj.\n\n10\tIMP-T-9008\tXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\t\nGreška:\nNaziv je obavezan (do 160 znakova)."
+    },
+    {
+      "k": "edge:tab Preskočeni (0)",
+      "v": "Nema redova ove vrste."
+    },
+    {
+      "k": "edge:batchId",
+      "v": "n575byq3j13gymqxcat223hq058fc8af"
+    },
+    {
+      "k": "edge:committed",
+      "v": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\nKorak 1, završen:\nDatoteka\nKorak 2, završen:\nKolone\nKorak 3, završen:\nProvera\nKorak 4, završen:\nProbni uvoz\n5\nKorak 5:\nUpis\n\nUvoz je upisan u katalog.\n\nNovih artikala\n9\nIzmenjenih\n0\nBez promena\n0\nNeuspelih\n3\ngreške i neuspeli upisi\nDeaktiviranih\n0\nZapis uvoza\nIzveštaj\nPoništi uvoz\nNovi uvoz"
+    },
+    {
+      "k": "edge:probe-after-commit",
+      "v": {
+        "IMP-T-9001": {
+          "active": false,
+          "name": "Audit disk 9001 prednji",
+          "retailPricePara": 499000,
+          "source": "import",
+          "stockQty": 3
+        },
+        "IMP-T-9002": {
+          "active": false,
+          "name": "=HYPERLINK(\"http://evil.example/x\",\"Klikni\")",
+          "retailPricePara": 599000,
+          "source": "import",
+          "stockQty": 2
+        },
+        "IMP-T-9003": {
+          "active": false,
+          "name": "+cmd|' /C calc'!A0",
+          "retailPricePara": 399000,
+          "source": "import",
+          "stockQty": 1
+        },
+        "IMP-T-9004": {
+          "active": false,
+          "name": "-2+3 test naziv",
+          "retailPricePara": 299000,
+          "source": "import",
+          "stockQty": 1
+        },
+        "IMP-T-9005": {
+          "active": false,
+          "name": "Audit formula cena",
+          "retailPricePara": 123400,
+          "source": "import",
+          "stockQty": 4
+        },
+        "IMP-T-9006": "",
+        "IMP-T-9007": {
+          "active": false,
+          "name": "Audit dvosmislen broj",
+          "retailPricePara": 1299000,
+          "source": "import",
+          "stockQty": 1
+        },
+        "IMP-T-9008": "",
+        "IMP-T-9009": {
+          "active": false,
+          "name": "Audit šifra sa razmacima",
+          "retailPricePara": 99000,
+          "source": "import",
+          "stockQty": 1
+        },
+        "  IMP-T-9009  ": "",
+        "IMP-T-9010": {
+          "active": false,
+          "name": "Audit nula cena",
+          "retailPricePara": 0,
+          "source": "import",
+          "stockQty": 1
+        },
+        "IMP-T-9011": {
+          "active": false,
+          "name": "Audit čćžšđ ČĆŽŠĐ",
+          "retailPricePara": 110000,
+          "source": "import",
+          "stockQty": 1
+        }
+      }
+    },
+    {
+      "k": "edge:record",
+      "v": "ivicni-slucajevi.xlsx\nUVEZEN\n\nPun uvoz · 12 redova · 30.09. 18:16\n\nIzveštaj\nOriginalni fajl\nNovi\n9\nIzmene\n0\nBez promena\n0\nPreskočeni\n0\nGreške\n3\n\nUvoz je upisan u katalog.\n\nNovih artikala\n9\nIzmenjenih\n0\nBez promena\n0\nNeuspelih\n3\ngreške i neuspeli upisi\nDeaktiviranih\n0\nZapis uvoza\nIzveštaj\nPoništi uvoz\nPodaci o uvozu\nPokrenuo\nVlasnik\nRežim\nPun uvoz\nBrojevi\nsrpski zapis\nList\nProizvodi\nProvereno\n30.09. 18:16\nUpisano\n30.09. 18:16\nKolone\n9 od 9\nRedovi (12)\nIzmene artikala\nSvi\nNovi\nIzmene\nBez promena\nPreskočeni\nGreške\nRedovi uvoza\nRED\tŠIFRA\tNAZIV\tSTATUS\tIZMENE I NAPOMENE\n2\tIMP-T-9001\tAudit disk 9001 prednji\t\nNOV\nupisano\n\t\n\n3\tIMP-T-9002\t=HYPERLINK(\"http://evil.example/x\",\"Klikni\")\t\nNOV\nupisano\n\t\n\n4\tIMP-T-9003\t+cmd|' /C calc'!A0\t\nNOV\nupisano\n\t\n\n5\tIMP-T-9004\t-2+3 test naziv\t\nNOV\nupisano\n\t\n\n6\tIMP-T-9001\tDuplikat šifre\t\nGREŠKA\n\t\nGreška:\nŠifra IMP-T-9001 se ponavlja u fajlu (prvi put u redu 2).\n\n7\tIMP-T-9005\tAudit formula cena\t\nNOV\nupisano\n\t\n\n8\tIMP-T-9006\tAudit razlomljena količina\t\nGREŠKA\n\t\nGreška:\nKoličina: „2,5“ nije ceo broj.\n\n9\tIMP-T-9007\tAudit dvosmislen broj\t\nNOV\nupisano\n\t\n\n10\tIMP-T-9008\tXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\t\nGREŠKA\n\t\nGreška:\nNaziv je obavezan (do 160 znakova).\n\n11\tIMP-T-9009\tAudit šifra sa razmacima\t\nNOV\nupisano\n\t\n\n12\tIMP-T-9010\tAudit nula cena\t\nNOV\nupisano\n\t\nUpozorenje:\nCena je 0 RSD — kupci će videti „cena na upit“.\n\n13\tIMP-T-9011\tAudit čćžšđ ČĆŽŠĐ\t\nNOV\nupisano\n\t\nPrikazano: 12 redova — kraj liste."
+    },
+    {
+      "k": "edge:report-status",
+      "v": "200 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet attachment; filename=\"izvestaj-ivicni-slucajevi.xlsx\"; filename*=UTF-8''izvestaj-ivicni-slucajevi.xlsx"
+    },
+    {
+      "k": "edge:report",
+      "v": {
+        "Greške i upozorenja": {
+          "rows": [
+            [
+              "Red u fajlu",
+              "Šifra",
+              "Status reda",
+              "Vrsta",
+              "Kolona",
+              "Opis"
+            ],
+            [
+              6,
+              "IMP-T-9001",
+              "Greška",
+              "Greška",
+              "Šifra artikla",
+              "Šifra IMP-T-9001 se ponavlja u fajlu (prvi put u redu 2)."
+            ],
+            [
+              8,
+              "IMP-T-9006",
+              "Greška",
+              "Greška",
+              "Količina",
+              "Količina: „2,5“ nije ceo broj."
+            ],
+            [
+              10,
+              "IMP-T-9008",
+              "Greška",
+              "Greška",
+              "Naziv",
+              "Naziv je obavezan (do 160 znakova)."
+            ],
+            [
+              12,
+              "IMP-T-9010",
+              "Nov artikal",
+              "Upozorenje",
+              "MP cena (sa PDV)",
+              "Cena je 0 RSD — kupci će videti „cena na upit“."
+            ]
+          ],
+          "formulas": []
+        }
+      }
+    },
+    {
+      "k": "lager:mapping",
+      "v": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\nKorak 1, završen:\nDatoteka\nIzmeni\n: Datoteka\n2\nKorak 2:\nKolone\n3\nKorak 3:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\nŠta uvozite\nRežim uvoza\nPun uvoz\nNovi artikli se prave, postojeći se menjaju u kolonama koje ste izabrali.\nSamo lager i cene\nMenja samo količinu, cene, rok isporuke i status postojećih artikala. Nepoznate šifre se preskaču.\nBrojevi\nSrpski zapis: 1.234,56\nEngleski zapis: 1,234.56\n\nPrepoznato iz fajla: srpski zapis (3 ćelija).\n\nPrimer iz fajla: 5.490,00 → 5.490 RSD\n\nKolone\nMapiranje kolona fajla na polja artikla\nKOLONA U FAJLU\tPRIMERI\tPOLJE\tPREPOZNATO\nŠifra\tIMP-T-9001 · IMP-T-9004 · IMP-T-NEMA-1\t\nNe uvozi\nŠifra artikla\nMP cena (sa PDV)\nVP cena (bez PDV)\nNabavna cena\nKoličina\nRok isporuke (dana)\nAktivan\n\tTAČNO\nKoličina\t11 · 0 · 5\t\nNe uvozi\nŠifra artikla\nMP cena (sa PDV)\nVP cena (bez PDV)\nNabavna cena\nKoličina\nRok isporuke (dana)\nAktivan\n\tTAČNO\nMP cena\t5.490,00 · 3.100,00 · 1.000,00\t\nNe uvozi\nŠifra artikla\nMP cena (sa PDV)\nVP cena (bez PDV)\nNabavna cena\nKoličina\nRok isporuke (dana)\nAktivan\n\tSINONIM\nSačuvaj mapiranje\nSledeći put se isti raspored kolona prepozna sam.\nNazad\nDalje: provera"
+    },
+    {
+      "k": "lager:check",
+      "v": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\nKorak 1, završen:\nDatoteka\nIzmeni\n: Datoteka\nKorak 2, završen:\nKolone\nIzmeni\n: Kolone\n3\nKorak 3:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\nRedova u fajlu\n3\nIspravnih\n3\nSa upozorenjem\n0\nuvoze se\nSa greškom\n0\npreskaču se\nPonovljenih šifara\n0\nRedovi sa napomenama\n\nSvi redovi su ispravni.\n\nNazad na kolone\nNišta se još ne upisuje. Upisaće se najviše 3 redova.\nPokreni probni uvoz"
+    },
+    {
+      "k": "lager:dryrun",
+      "v": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\nKorak 1, završen:\nDatoteka\nKorak 2, završen:\nKolone\nKorak 3, završen:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\nNovi artikli\n0\nIzmene\n2\nBez promena\n0\nPreskočeni\n1\nGreške\n0\n1 redova sa upozorenjem\nProbni rezultat\nIzveštaj\nSvi redovi\nNovi (0)\nIzmene (2)\nGreške (0)\nPreskočeni (1)\n\nNema redova ove vrste.\n\nOtkaži uvoz\n2 artikala se upisuje; redovi sa greškom se preskaču.\nUpiši u katalog"
+    },
+    {
+      "k": "lager:tab Novi (0)",
+      "v": "Nema redova ove vrste."
+    },
+    {
+      "k": "lager:tab Greške (0)",
+      "v": "Nema redova ove vrste."
+    },
+    {
+      "k": "lager:tab Preskočeni (1)",
+      "v": "Primeri: Preskočeni\nRED\tŠIFRA\tNAZIV\tNAPOMENE\n4\tIMP-T-NEMA-1\t—\t\nUpozorenje:\nŠifra IMP-T-NEMA-1 ne postoji — u režimu „samo lager i cene“ red se preskače."
+    },
+    {
+      "k": "lager:batchId",
+      "v": "n576eqz0dnes098yrt04hj3dz18fcev0"
+    },
+    {
+      "k": "lager:committed",
+      "v": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\nKorak 1, završen:\nDatoteka\nKorak 2, završen:\nKolone\nKorak 3, završen:\nProvera\nKorak 4, završen:\nProbni uvoz\n5\nKorak 5:\nUpis\n\nUvoz je upisan u katalog.\n\nNovih artikala\n0\nIzmenjenih\n2\nBez promena\n0\nNeuspelih\n0\ngreške i neuspeli upisi\nDeaktiviranih\n0\nZapis uvoza\nIzveštaj\nPoništi uvoz\nNovi uvoz"
+    },
+    {
+      "k": "lager:probe",
+      "v": {
+        "IMP-T-9001": {
+          "active": false,
+          "name": "Audit disk 9001 prednji",
+          "retailPricePara": 549000,
+          "source": "import",
+          "stockQty": 11
+        },
+        "IMP-T-9004": {
+          "active": false,
+          "name": "-2+3 test naziv",
+          "retailPricePara": 310000,
+          "source": "import",
+          "stockQty": 0
+        }
+      }
+    },
+    {
+      "k": "lager:rolledback",
+      "v": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\nKorak 1, završen:\nDatoteka\nKorak 2, završen:\nKolone\nKorak 3, završen:\nProvera\nKorak 4, završen:\nProbni uvoz\n5\nKorak 5:\nUpis\n\nUvoz je poništen. Sve vrednosti su vraćene.\n\nZapis uvoza\nIzveštaj\nNovi uvoz"
+    },
+    {
+      "k": "lager:probe-after-rollback",
+      "v": {
+        "IMP-T-9001": {
+          "active": false,
+          "name": "Audit disk 9001 prednji",
+          "retailPricePara": 499000,
+          "source": "import",
+          "stockQty": 3
+        },
+        "IMP-T-9004": {
+          "active": false,
+          "name": "-2+3 test naziv",
+          "retailPricePara": 299000,
+          "source": "import",
+          "stockQty": 1
+        }
+      }
+    },
+    {
+      "k": "edge:rolledback",
+      "v": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\nKorak 1, završen:\nDatoteka\nKorak 2, završen:\nKolone\nKorak 3, završen:\nProvera\nKorak 4, završen:\nProbni uvoz\n5\nKorak 5:\nUpis\n\nUvoz je poništen. 2 artikala nije vraćeno jer su menjani posle uvoza — spisak je u zapisu uvoza.\n\nZapis uvoza\nIzveštaj\nNovi uvoz"
+    },
+    {
+      "k": "edge:probe-after-rollback",
+      "v": {
+        "IMP-T-9001": {
+          "active": false,
+          "name": "Audit disk 9001 prednji",
+          "retailPricePara": 499000,
+          "source": "import",
+          "stockQty": 3
+        },
+        "IMP-T-9002": "",
+        "IMP-T-9003": "",
+        "IMP-T-9004": {
+          "active": false,
+          "name": "-2+3 test naziv",
+          "retailPricePara": 299000,
+          "source": "import",
+          "stockQty": 1
+        },
+        "IMP-T-9005": "",
+        "IMP-T-9006": "",
+        "IMP-T-9007": "",
+        "IMP-T-9008": "",
+        "IMP-T-9009": "",
+        "  IMP-T-9009  ": "",
+        "IMP-T-9010": "",
+        "IMP-T-9011": ""
+      }
+    }
+  ],
+  "log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

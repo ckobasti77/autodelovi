@@ -1,0 +1,338 @@
+{
+  "anon": {
+    "status": 307,
+    "location": "/prijava?next=%2Fmajstor%2Fcenovnik%2Fpreuzmi%3Fkategorije%3Dkocioni-diskovi"
+  },
+  "two": {
+    "status": 200,
+    "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "disp": "attachment; filename=\"cenovnik-audit-servis-d-o-o-2026-09-30.xlsx\"; filename*=UTF-8''cenovnik-audit-servis-d-o-o-2026-09-30.xlsx",
+    "cache": "private, no-store",
+    "ref": "A1:L24",
+    "cols": [
+      {
+        "width": 16.83203125,
+        "customwidth": "1",
+        "wpx": 101,
+        "wch": 16,
+        "MDW": 6
+      },
+      {
+        "width": 44.83203125,
+        "customwidth": "1",
+        "wpx": 269,
+        "wch": 44,
+        "MDW": 6
+      },
+      {
+        "width": 18.83203125,
+        "customwidth": "1",
+        "wpx": 113,
+        "wch": 18,
+        "MDW": 6
+      },
+      {
+        "width": 14.83203125,
+        "customwidth": "1",
+        "wpx": 89,
+        "wch": 14,
+        "MDW": 6
+      },
+      {
+        "width": 18.83203125,
+        "customwidth": "1",
+        "wpx": 113,
+        "wch": 18,
+        "MDW": 6
+      },
+      {
+        "width": 26.83203125,
+        "customwidth": "1",
+        "wpx": 161,
+        "wch": 26,
+        "MDW": 6
+      },
+      {
+        "width": 14.83203125,
+        "customwidth": "1",
+        "wpx": 89,
+        "wch": 14,
+        "MDW": 6
+      },
+      {
+        "width": 15.83203125,
+        "customwidth": "1",
+        "wpx": 95,
+        "wch": 15,
+        "MDW": 6
+      },
+      {
+        "width": 8.83203125,
+        "customwidth": "1",
+        "wpx": 53,
+        "wch": 8,
+        "MDW": 6
+      },
+      {
+        "width": 16.83203125,
+        "customwidth": "1",
+        "wpx": 101,
+        "wch": 16,
+        "MDW": 6
+      },
+      {
+        "width": 10.83203125,
+        "customwidth": "1",
+        "wpx": 65,
+        "wch": 10,
+        "MDW": 6
+      },
+      {
+        "width": 40.83203125,
+        "customwidth": "1",
+        "wpx": 245,
+        "wch": 40,
+        "MDW": 6
+      }
+    ],
+    "merges": [
+      {
+        "s": {
+          "c": 0,
+          "r": 0
+        },
+        "e": {
+          "c": 7,
+          "r": 0
+        }
+      },
+      {
+        "s": {
+          "c": 0,
+          "r": 1
+        },
+        "e": {
+          "c": 7,
+          "r": 1
+        }
+      },
+      {
+        "s": {
+          "c": 0,
+          "r": 2
+        },
+        "e": {
+          "c": 7,
+          "r": 2
+        }
+      }
+    ],
+    "cells": {
+      "A1": {
+        "t": "s",
+        "v": "Cenovnik — Audit servis d.o.o.",
+        "z": "General",
+        "w": "Cenovnik — Audit servis d.o.o.",
+        "l": null
+      },
+      "A5": {
+        "t": "s",
+        "v": "Šifra",
+        "z": "General",
+        "w": "Šifra",
+        "l": null
+      },
+      "B6": {
+        "t": "s",
+        "v": "Kočioni disk prednji 312 × 25 mm",
+        "z": "General",
+        "w": "Kočioni disk prednji 312 × 25 mm",
+        "l": null
+      },
+      "G6": {
+        "t": "n",
+        "v": 7490,
+        "z": "#,##0",
+        "w": "7,490",
+        "l": null
+      },
+      "H6": {
+        "t": "n",
+        "v": 6367,
+        "z": "#,##0",
+        "w": "6,367",
+        "l": null
+      },
+      "I6": {
+        "t": "n",
+        "v": 0.15,
+        "z": "0%",
+        "w": "15%",
+        "l": null
+      },
+      "J6": {
+        "t": "s",
+        "v": "Na stanju",
+        "z": "General",
+        "w": "Na stanju",
+        "l": null
+      },
+      "L6": {
+        "t": "s",
+        "v": "http://localhost:3000/deo/kocioni-disk-prednji-312-25-mm-demo-0007",
+        "z": "General",
+        "w": "http://localhost:3000/deo/kocioni-disk-prednji-312-25-mm-demo-0007",
+        "l": "http://localhost:3000/deo/kocioni-disk-prednji-312-25-mm-demo-0007"
+      }
+    },
+    "rows": 24
+  },
+  "none": {
+    "status": 400,
+    "type": "text/plain; charset=utf-8",
+    "cache": "private, no-store",
+    "body": "Izaberite bar jednu kategoriju."
+  },
+  "bogus": {
+    "status": 200,
+    "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "disp": "attachment; filename=\"cenovnik-audit-servis-d-o-o-2026-09-30.xlsx\"; filename*=UTF-8''cenovnik-audit-servis-d-o-o-2026-09-30.xlsx",
+    "cache": "private, no-store",
+    "ref": "A1:L5",
+    "cols": [
+      {
+        "width": 16.83203125,
+        "customwidth": "1",
+        "wpx": 101,
+        "wch": 16,
+        "MDW": 6
+      },
+      {
+        "width": 44.83203125,
+        "customwidth": "1",
+        "wpx": 269,
+        "wch": 44,
+        "MDW": 6
+      },
+      {
+        "width": 18.83203125,
+        "customwidth": "1",
+        "wpx": 113,
+        "wch": 18,
+        "MDW": 6
+      },
+      {
+        "width": 14.83203125,
+        "customwidth": "1",
+        "wpx": 89,
+        "wch": 14,
+        "MDW": 6
+      },
+      {
+        "width": 18.83203125,
+        "customwidth": "1",
+        "wpx": 113,
+        "wch": 18,
+        "MDW": 6
+      },
+      {
+        "width": 26.83203125,
+        "customwidth": "1",
+        "wpx": 161,
+        "wch": 26,
+        "MDW": 6
+      },
+      {
+        "width": 14.83203125,
+        "customwidth": "1",
+        "wpx": 89,
+        "wch": 14,
+        "MDW": 6
+      },
+      {
+        "width": 15.83203125,
+        "customwidth": "1",
+        "wpx": 95,
+        "wch": 15,
+        "MDW": 6
+      },
+      {
+        "width": 8.83203125,
+        "customwidth": "1",
+        "wpx": 53,
+        "wch": 8,
+        "MDW": 6
+      },
+      {
+        "width": 16.83203125,
+        "customwidth": "1",
+        "wpx": 101,
+        "wch": 16,
+        "MDW": 6
+      },
+      {
+        "width": 10.83203125,
+        "customwidth": "1",
+        "wpx": 65,
+        "wch": 10,
+        "MDW": 6
+      },
+      {
+        "width": 40.83203125,
+        "customwidth": "1",
+        "wpx": 245,
+        "wch": 40,
+        "MDW": 6
+      }
+    ],
+    "merges": [
+      {
+        "s": {
+          "c": 0,
+          "r": 0
+        },
+        "e": {
+          "c": 7,
+          "r": 0
+        }
+      },
+      {
+        "s": {
+          "c": 0,
+          "r": 1
+        },
+        "e": {
+          "c": 7,
+          "r": 1
+        }
+      },
+      {
+        "s": {
+          "c": 0,
+          "r": 2
+        },
+        "e": {
+          "c": 7,
+          "r": 2
+        }
+      }
+    ],
+    "cells": {
+      "A1": {
+        "t": "s",
+        "v": "Cenovnik — Audit servis d.o.o.",
+        "z": "General",
+        "w": "Cenovnik — Audit servis d.o.o.",
+        "l": null
+      },
+      "A5": {
+        "t": "s",
+        "v": "Šifra",
+        "z": "General",
+        "w": "Šifra",
+        "l": null
+      }
+    },
+    "rows": 5
+  }
+}

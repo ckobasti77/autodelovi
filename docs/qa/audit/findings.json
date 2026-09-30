@@ -9,6 +9,7 @@
       "P3": 33
     },
     "notConfirmed": 5,
+    "unverified": 0,
     "merged": 9
   },
   "findings": [
@@ -3963,6 +3964,7 @@
       ]
     }
   ],
+  "unverified": [],
   "merged": {
     "seo-01": "copy-01",
     "perf-lh-08": "perf-bundle-01",

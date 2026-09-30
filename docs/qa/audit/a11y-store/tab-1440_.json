@@ -1,0 +1,1326 @@
+{
+ "width": 1440,
+ "route": "/",
+ "consent": true,
+ "stops": [
+  {
+   "i": 1,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "#sadrzaj",
+   "name": "Preskoči na sadržaj",
+   "rect": [
+    12,
+    12,
+    168,
+    39
+   ],
+   "outline": "solid 2px rgb(241, 236, 227) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(13, 15, 17)",
+   "bg": "rgb(255, 107, 26)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": "skip-link"
+  },
+  {
+   "i": 2,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/",
+   "name": "SKLOP — početna",
+   "rect": [
+    48,
+    10,
+    117,
+    44
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(241, 236, 227)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "oklab(0.167059 -0.00197043 -0.00492857 / 0.88)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": ""
+  },
+  {
+   "i": 3,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi",
+   "name": "Delovi",
+   "rect": [
+    193,
+    10,
+    67,
+    44
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(196, 190, 180)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "oklab(0.167059 -0.00197043 -0.00492857 / 0.88)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": ""
+  },
+  {
+   "i": 4,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/vozila",
+   "name": "Vozila",
+   "rect": [
+    264,
+    10,
+    66,
+    44
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(196, 190, 180)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "oklab(0.167059 -0.00197043 -0.00492857 / 0.88)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": ""
+  },
+  {
+   "i": 5,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/za-majstore",
+   "name": "Za majstore",
+   "rect": [
+    334,
+    10,
+    107,
+    44
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(196, 190, 180)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "oklab(0.167059 -0.00197043 -0.00492857 / 0.88)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": ""
+  },
+  {
+   "i": 6,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/upit",
+   "name": "Upit po broju šasije",
+   "rect": [
+    446,
+    10,
+    158,
+    44
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(196, 190, 180)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "oklab(0.167059 -0.00197043 -0.00492857 / 0.88)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": ""
+  },
+  {
+   "i": 7,
+   "tag": "button",
+   "role": "",
+   "type": "button",
+   "href": "",
+   "name": "Broj dela ili naziv/",
+   "rect": [
+    873,
+    12,
+    256,
+    40
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "1px rgb(110, 118, 127)",
+   "bg": "rgb(28, 32, 37)",
+   "behind": "oklab(0.167059 -0.00197043 -0.00492857 / 0.88)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": "header-search-trigger"
+  },
+  {
+   "i": 8,
+   "tag": "button",
+   "role": "",
+   "type": "button",
+   "href": "",
+   "name": "Izaberite vozilo",
+   "rect": [
+    1137,
+    14,
+    151,
+    36
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "1px rgb(110, 118, 127)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "oklab(0.167059 -0.00197043 -0.00492857 / 0.88)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": "vehicle-picker-trigger"
+  },
+  {
+   "i": 9,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/nalog",
+   "name": "Moj nalog",
+   "rect": [
+    1296,
+    10,
+    44,
+    44
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(196, 190, 180)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "oklab(0.167059 -0.00197043 -0.00492857 / 0.88)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": "account-button"
+  },
+  {
+   "i": 10,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/korpa",
+   "name": "Korpa",
+   "rect": [
+    1348,
+    10,
+    44,
+    44
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(196, 190, 180)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "oklab(0.167059 -0.00197043 -0.00492857 / 0.88)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": "cart-button"
+  },
+  {
+   "i": 11,
+   "tag": "input",
+   "role": "combobox",
+   "type": "search",
+   "href": "",
+   "name": "Broj dela ili naziv",
+   "rect": [
+    89,
+    392,
+    347,
+    54
+   ],
+   "outline": "none 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(241, 236, 227)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(28, 32, 37)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": ""
+  },
+  {
+   "i": 12,
+   "tag": "button",
+   "role": "",
+   "type": "submit",
+   "href": "",
+   "name": "Pretraži",
+   "rect": [
+    457,
+    391,
+    103,
+    56
+   ],
+   "outline": "solid 2px rgb(241, 236, 227) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(13, 15, 17)",
+   "bg": "rgb(255, 107, 26)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": ""
+  },
+  {
+   "i": 13,
+   "tag": "button",
+   "role": "",
+   "type": "button",
+   "href": "",
+   "name": "Izaberite vozilomarka, model, motorIzaberi",
+   "rect": [
+    49,
+    520,
+    510,
+    50
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(241, 236, 227)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(28, 32, 37)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": "vehicle-picker-trigger"
+  },
+  {
+   "i": 14,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/upit",
+   "name": "Nemate broj? Pošaljite broj šasije",
+   "rect": [
+    48,
+    591,
+    270,
+    25
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(241, 236, 227)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": ""
+  },
+  {
+   "i": 15,
+   "tag": "button",
+   "role": "",
+   "type": "button",
+   "href": "",
+   "name": "00 Sklopljen automobil",
+   "rect": [
+    48,
+    829,
+    130,
+    64
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off -2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(241, 236, 227)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": ""
+  },
+  {
+   "i": 16,
+   "tag": "button",
+   "role": "",
+   "type": "button",
+   "href": "",
+   "name": "01 Karoserija, stakla i svetla",
+   "rect": [
+    178,
+    829,
+    130,
+    64
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off -2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(150, 144, 136)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": ""
+  },
+  {
+   "i": 17,
+   "tag": "button",
+   "role": "",
+   "type": "button",
+   "href": "",
+   "name": "02 Točkovi",
+   "rect": [
+    308,
+    829,
+    130,
+    64
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off -2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(150, 144, 136)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": ""
+  },
+  {
+   "i": 18,
+   "tag": "button",
+   "role": "",
+   "type": "button",
+   "href": "",
+   "name": "03 Kočnice, vešanje, upravljanje",
+   "rect": [
+    438,
+    829,
+    130,
+    64
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off -2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(150, 144, 136)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": ""
+  },
+  {
+   "i": 19,
+   "tag": "button",
+   "role": "",
+   "type": "button",
+   "href": "",
+   "name": "04 Pomoćni agregati, hlađenje, usis",
+   "rect": [
+    568,
+    829,
+    130,
+    64
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off -2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(150, 144, 136)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": ""
+  },
+  {
+   "i": 20,
+   "tag": "button",
+   "role": "",
+   "type": "button",
+   "href": "",
+   "name": "05 Motor, turbina, gorivo, paljenje",
+   "rect": [
+    697,
+    829,
+    130,
+    64
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off -2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(150, 144, 136)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": ""
+  },
+  {
+   "i": 21,
+   "tag": "button",
+   "role": "",
+   "type": "button",
+   "href": "",
+   "name": "06 Menjač, kvačilo, poluosovine",
+   "rect": [
+    827,
+    829,
+    130,
+    64
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off -2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(150, 144, 136)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": ""
+  },
+  {
+   "i": 22,
+   "tag": "button",
+   "role": "",
+   "type": "button",
+   "href": "",
+   "name": "07 Izduvni sistem",
+   "rect": [
+    957,
+    829,
+    130,
+    64
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off -2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(150, 144, 136)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": ""
+  },
+  {
+   "i": 23,
+   "tag": "button",
+   "role": "",
+   "type": "button",
+   "href": "",
+   "name": "Rasklopi",
+   "rect": [
+    1111,
+    839,
+    123,
+    44
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "1px rgb(110, 118, 127)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": "explode-toggle"
+  },
+  {
+   "i": 24,
+   "tag": "button",
+   "role": "",
+   "type": "button",
+   "href": "",
+   "name": "Lista delova",
+   "rect": [
+    1246,
+    839,
+    146,
+    44
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "1px rgb(110, 118, 127)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 0,
+   "testid": "parts-list-trigger"
+  },
+  {
+   "i": 25,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/dostava-i-placanje",
+   "name": "Dostava i plaćanje",
+   "rect": [
+    48,
+    478,
+    156,
+    25
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(241, 236, 227)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 3630,
+   "testid": ""
+  },
+  {
+   "i": 26,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi",
+   "name": "Svih 44 kategorija · 157 artikala",
+   "rect": [
+    1136,
+    478,
+    256,
+    25
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(241, 236, 227)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 4102,
+   "testid": ""
+  },
+  {
+   "i": 27,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/kocione-plocice",
+   "name": "Kočione pločice10 artikala",
+   "rect": [
+    48,
+    542,
+    318,
+    332
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "1px rgb(44, 50, 56)",
+   "bg": "rgb(22, 25, 29)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 4102,
+   "testid": ""
+  },
+  {
+   "i": 28,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/kocioni-diskovi",
+   "name": "Kočioni diskovi9 artikala",
+   "rect": [
+    390,
+    542,
+    318,
+    332
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "1px rgb(44, 50, 56)",
+   "bg": "rgb(22, 25, 29)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 4102,
+   "testid": ""
+  },
+  {
+   "i": 29,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/amortizeri-opruge",
+   "name": "Amortizeri i opruge7 artikala",
+   "rect": [
+    732,
+    542,
+    318,
+    332
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "1px rgb(44, 50, 56)",
+   "bg": "rgb(22, 25, 29)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 4102,
+   "testid": ""
+  },
+  {
+   "i": 30,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/ramena-selen-blokovi",
+   "name": "Ramena i selen blokovi5 artikala",
+   "rect": [
+    1074,
+    542,
+    318,
+    332
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "1px rgb(44, 50, 56)",
+   "bg": "rgb(22, 25, 29)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 4102,
+   "testid": ""
+  },
+  {
+   "i": 31,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/zupcasti-kais-vodena-pumpa",
+   "name": "Set zupčastog kaiša i vodena pumpa6 artikala",
+   "rect": [
+    48,
+    569,
+    318,
+    332
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "1px rgb(44, 50, 56)",
+   "bg": "rgb(22, 25, 29)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 4431,
+   "testid": ""
+  },
+  {
+   "i": 32,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/kvacilo-zamajac",
+   "name": "Kvačilo i zamajac3 artikla",
+   "rect": [
+    390,
+    569,
+    318,
+    332
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "1px rgb(44, 50, 56)",
+   "bg": "rgb(22, 25, 29)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 4431,
+   "testid": ""
+  },
+  {
+   "i": 33,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/turbina",
+   "name": "Turbina (turbopunjač)4 artikla",
+   "rect": [
+    732,
+    569,
+    318,
+    332
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "1px rgb(44, 50, 56)",
+   "bg": "rgb(22, 25, 29)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 4431,
+   "testid": ""
+  },
+  {
+   "i": 34,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/filteri",
+   "name": "Filteri16 artikala",
+   "rect": [
+    1074,
+    569,
+    318,
+    332
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "1px rgb(44, 50, 56)",
+   "bg": "rgb(22, 25, 29)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 4431,
+   "testid": ""
+  },
+  {
+   "i": 35,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/akumulator",
+   "name": "Akumulator3 artikla",
+   "rect": [
+    48,
+    325,
+    318,
+    332
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "1px rgb(44, 50, 56)",
+   "bg": "rgb(22, 25, 29)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 5031,
+   "testid": ""
+  },
+  {
+   "i": 36,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/farovi",
+   "name": "Farovi2 artikla",
+   "rect": [
+    390,
+    325,
+    318,
+    332
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "1px rgb(44, 50, 56)",
+   "bg": "rgb(22, 25, 29)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 5031,
+   "testid": ""
+  },
+  {
+   "i": 37,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/hladnjak-ventilator",
+   "name": "Hladnjak i ventilator3 artikla",
+   "rect": [
+    732,
+    325,
+    318,
+    332
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "1px rgb(44, 50, 56)",
+   "bg": "rgb(22, 25, 29)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 5031,
+   "testid": ""
+  },
+  {
+   "i": 38,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/brizgaljke-pumpa-goriva",
+   "name": "Brizgaljke i pumpa goriva3 artikla",
+   "rect": [
+    1074,
+    325,
+    318,
+    332
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "1px rgb(44, 50, 56)",
+   "bg": "rgb(22, 25, 29)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 5031,
+   "testid": ""
+  },
+  {
+   "i": 39,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/motor",
+   "name": "Blok motora i glava",
+   "rect": [
+    48,
+    472,
+    132,
+    36
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(196, 190, 180)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 5588,
+   "testid": ""
+  },
+  {
+   "i": 40,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/turbina",
+   "name": "Turbina (turbopunjač)",
+   "rect": [
+    48,
+    508,
+    150,
+    36
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(196, 190, 180)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 5588,
+   "testid": ""
+  },
+  {
+   "i": 41,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/interkuler",
+   "name": "Interkuler",
+   "rect": [
+    48,
+    544,
+    68,
+    36
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(196, 190, 180)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 5588,
+   "testid": ""
+  },
+  {
+   "i": 42,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/usisna-grana",
+   "name": "Usisna grana i kućište filtera",
+   "rect": [
+    48,
+    580,
+    197,
+    36
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(196, 190, 180)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 5588,
+   "testid": ""
+  },
+  {
+   "i": 43,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/brizgaljke-pumpa-goriva",
+   "name": "Brizgaljke i pumpa goriva",
+   "rect": [
+    48,
+    616,
+    175,
+    36
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(196, 190, 180)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 5588,
+   "testid": ""
+  },
+  {
+   "i": 44,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/zupcasti-kais-vodena-pumpa",
+   "name": "Set zupčastog kaiša i vodena pumpa",
+   "rect": [
+    48,
+    652,
+    252,
+    36
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(196, 190, 180)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 5588,
+   "testid": ""
+  },
+  {
+   "i": 45,
+   "tag": "a",
+   "role": "",
+   "type": "",
+   "href": "/delovi/kais-alternatora",
+   "name": "Kaiš alternatora i zatezači",
+   "rect": [
+    48,
+    688,
+    178,
+    36
+   ],
+   "outline": "solid 2px rgb(255, 107, 26) off 2px",
+   "boxShadow": "",
+   "afterOutline": "",
+   "border": "0px rgb(196, 190, 180)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "behind": "rgb(13, 15, 17)",
+   "focusVisible": true,
+   "covered": [
+    "self",
+    "self",
+    "self"
+   ],
+   "inViewport": true,
+   "scrollY": 5588,
+   "testid": ""
+  }
+ ],
+ "probs": [
+  "#11 no outline/box-shadow: input \"Broj dela ili naziv\" (none 2px rgb(255, 107, 26) off 2px)"
+ ],
+ "shots": [
+  "docs/qa/audit/a11y-store/tab-1440_-1.webp",
+  "docs/qa/audit/a11y-store/tab-1440_-2.webp",
+  "docs/qa/audit/a11y-store/tab-1440_-3.webp",
+  "docs/qa/audit/a11y-store/tab-1440_-11.webp",
+  "docs/qa/audit/a11y-store/tab-1440_-21.webp",
+  "docs/qa/audit/a11y-store/tab-1440_-31.webp",
+  "docs/qa/audit/a11y-store/tab-1440_-41.webp"
+ ],
+ "console": [],
+ "pageErrors": []
+}

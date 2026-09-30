@@ -1,0 +1,98 @@
+{
+  "ts": "852021",
+  "steps": [
+    {
+      "name": "empty save",
+      "at": "2026-09-30T18:46:35.294Z",
+      "errors": [
+        "Upišite šifru artikla.Upišite naziv.Izaberite kategoriju.Izaberite proizvođača.Upišite cenu sa PDV-om.",
+        "Upišite naziv.",
+        "Upišite šifru artikla.",
+        "Izaberite kategoriju.",
+        "Izaberite proizvođača.",
+        "Upišite cenu sa PDV-om."
+      ],
+      "invalid": 5,
+      "focus": "BODY "
+    },
+    {
+      "name": "oem preview",
+      "at": "2026-09-30T18:46:36.063Z",
+      "row": "5Q0615301F"
+    },
+    {
+      "name": "oem dup",
+      "at": "2026-09-30T18:46:36.533Z",
+      "row": "duplikat"
+    },
+    {
+      "name": "seo preview",
+      "at": "2026-09-30T18:46:36.678Z",
+      "text": "Pregled u pretrazilocalhost:3000 › deo › audit-disk-prednji-852021Audit disk prednji 852021 — ATE | SKLOPAudit disk prednji 852021, ATE — Kočioni diskovi. Cena sa PDV-om, stanje i dostava."
+    },
+    {
+      "name": "created",
+      "at": "2026-09-30T18:46:40.242Z",
+      "url": "http://localhost:3100/admin/proizvodi/qh7cqja340240s4jq1fsawnc3s8fctej",
+      "toasts": []
+    },
+    {
+      "name": "image uploaded",
+      "at": "2026-09-30T18:46:48.269Z",
+      "imgs": 1,
+      "toasts": []
+    },
+    {
+      "name": "tab B saved price",
+      "at": "2026-09-30T18:46:57.730Z",
+      "priceB": "5990",
+      "toasts": []
+    },
+    {
+      "name": "tab A sees",
+      "at": "2026-09-30T18:46:57.732Z",
+      "priceA": "4990"
+    },
+    {
+      "name": "after tab A save",
+      "at": "2026-09-30T18:47:06.733Z",
+      "priceServer": "4990",
+      "nameServer": "Audit disk prednji 852021 (tab A)"
+    },
+    {
+      "name": "history",
+      "at": "2026-09-30T18:49:07.598Z",
+      "text": ""
+    },
+    {
+      "name": "duplicate",
+      "at": "2026-09-30T18:49:12.489Z",
+      "dupId": "qh727wgvrhbnrc8x6mjx5k76bs8fd084",
+      "h1": "Audit disk prednji 852021 (tab A)",
+      "sku": "AUDIT-FA-852021-KOPIJA",
+      "slug": "audit-disk-prednji-852021-tab-a-audit-fa-852021-kopija",
+      "badges": "ProizvodiAudit disk prednji 852021 (tab A)NeaktivanNema na stanjuDuplirajAktivirajOsnovnoNaziv (obavezno)Šifra artikla (obavezno)Interna šifra; mora biti jedinstvena.Adresa na sajtu (slug)Promena prav"
+    },
+    {
+      "name": "deactivate button",
+      "at": "2026-09-30T18:49:16.013Z",
+      "visible": true
+    },
+    {
+      "name": "after deactivate (no confirm?)",
+      "at": "2026-09-30T18:49:17.568Z",
+      "dialog": false,
+      "toasts": []
+    },
+    {
+      "name": "errors",
+      "at": "2026-09-30T18:49:17.768Z",
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  ],
+  "productId": "qh7cqja340240s4jq1fsawnc3s8fctej",
+  "dupId": "qh727wgvrhbnrc8x6mjx5k76bs8fd084"
+}

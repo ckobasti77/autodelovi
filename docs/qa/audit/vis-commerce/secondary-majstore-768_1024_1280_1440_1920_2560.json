@@ -1,0 +1,554 @@
+{
+  "majstore": {
+    "768": {
+      "landing": {
+        "probe": {
+          "vw": 768,
+          "over": 0,
+          "offenders": [],
+          "tiny": [
+            "a 50x18 \"Početna\"",
+            "a 107x21 \"Pošaljite upit\""
+          ],
+          "tinyCount": 2,
+          "under44": [
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 1,
+          "smallInputs": [
+            "qod-input 15px"
+          ]
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "reg": {
+        "probe": {
+          "vw": 768,
+          "over": 0,
+          "offenders": [],
+          "tiny": [
+            "a 50x18 \"Početna\"",
+            "a 72x18 \"Za majstore\"",
+            "button 20x20 \"Mehanika\"",
+            "button 20x20 \"Autoelektrika\"",
+            "button 20x20 \"Dijagnostika\"",
+            "button 20x20 \"Klima\"",
+            "button 20x20 \"Limarija i farbanje\"",
+            "button 20x20 \"Vulkanizer\"",
+            "button 20x20 \"Ostalo\"",
+            "button 20x20 \"Volkswagen\"",
+            "button 20x20 \"Audi\"",
+            "button 20x20 \"Škoda\"",
+            "button 20x20 \"SEAT\"",
+            "button 20x20 \"Cupra\"",
+            "button 20x20 \"BUTTON\""
+          ],
+          "tinyCount": 15,
+          "under44": [
+            "input 317x42 \"email\"",
+            "input 317x42 \"password\"",
+            "input 681x42 \"companyName\"",
+            "input 317x42 \"pib\"",
+            "input 317x42 \"mb\"",
+            "input 317x42 \"contactPerson\"",
+            "input 317x42 \"phone\"",
+            "input 203x42 \"city\"",
+            "input 432x42 \"address\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 10,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "regErrors": {
+        "active": "<input type=\"email\" inputmode=\"email\" autocomplete=\"email\" data-testid=\"mechanic-reg-email\" id=\"mr-email\" class=\"h-full min-w-0 flex-1 bg-transparent text-[1rem",
+        "invalid": [
+          "mr-email",
+          "mr-password",
+          "mr-companyName",
+          "mr-pib",
+          "mr-mb",
+          "mr-contactPerson",
+          "mr-phone",
+          "mr-city",
+          "mr-address"
+        ]
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "1024": {
+      "landing": {
+        "probe": {
+          "vw": 1024,
+          "over": 0,
+          "offenders": [],
+          "tiny": [
+            "a 50x18 \"Početna\"",
+            "a 107x21 \"Pošaljite upit\""
+          ],
+          "tinyCount": 2,
+          "under44": [
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 1,
+          "smallInputs": [
+            "qod-input 15px"
+          ]
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "reg": {
+        "probe": {
+          "vw": 1024,
+          "over": 0,
+          "offenders": [],
+          "tiny": [
+            "a 50x18 \"Početna\"",
+            "a 72x18 \"Za majstore\"",
+            "button 20x20 \"Mehanika\"",
+            "button 20x20 \"Autoelektrika\"",
+            "button 20x20 \"Dijagnostika\"",
+            "button 20x20 \"Klima\"",
+            "button 20x20 \"Limarija i farbanje\"",
+            "button 20x20 \"Vulkanizer\"",
+            "button 20x20 \"Ostalo\"",
+            "button 20x20 \"Volkswagen\"",
+            "button 20x20 \"Audi\"",
+            "button 20x20 \"Škoda\"",
+            "button 20x20 \"SEAT\"",
+            "button 20x20 \"Cupra\"",
+            "button 20x20 \"BUTTON\""
+          ],
+          "tinyCount": 15,
+          "under44": [
+            "input 154x42 \"email\"",
+            "input 154x42 \"password\"",
+            "input 355x42 \"companyName\"",
+            "input 154x42 \"pib\"",
+            "input 154x42 \"mb\"",
+            "input 154x42 \"contactPerson\"",
+            "input 154x42 \"phone\"",
+            "input 94x42 \"city\"",
+            "input 215x42 \"address\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 10,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "regErrors": {
+        "active": "<input type=\"email\" inputmode=\"email\" autocomplete=\"email\" data-testid=\"mechanic-reg-email\" id=\"mr-email\" class=\"h-full min-w-0 flex-1 bg-transparent text-[1rem",
+        "invalid": [
+          "mr-email",
+          "mr-password",
+          "mr-companyName",
+          "mr-pib",
+          "mr-mb",
+          "mr-contactPerson",
+          "mr-phone",
+          "mr-city",
+          "mr-address"
+        ]
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "1280": {
+      "landing": {
+        "probe": {
+          "vw": 1280,
+          "over": 0,
+          "offenders": [],
+          "tiny": [
+            "a 50x18 \"Početna\"",
+            "a 107x21 \"Pošaljite upit\""
+          ],
+          "tinyCount": 2,
+          "under44": [
+            "button 256x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 3,
+          "smallInputs": [
+            "qod-input 15px"
+          ]
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "reg": {
+        "probe": {
+          "vw": 1280,
+          "over": 0,
+          "offenders": [],
+          "tiny": [
+            "a 50x18 \"Početna\"",
+            "a 72x18 \"Za majstore\"",
+            "button 20x20 \"Mehanika\"",
+            "button 20x20 \"Autoelektrika\"",
+            "button 20x20 \"Dijagnostika\"",
+            "button 20x20 \"Klima\"",
+            "button 20x20 \"Limarija i farbanje\"",
+            "button 20x20 \"Vulkanizer\"",
+            "button 20x20 \"Ostalo\"",
+            "button 20x20 \"Volkswagen\"",
+            "button 20x20 \"Audi\"",
+            "button 20x20 \"Škoda\"",
+            "button 20x20 \"SEAT\"",
+            "button 20x20 \"Cupra\"",
+            "button 20x20 \"BUTTON\""
+          ],
+          "tinyCount": 15,
+          "under44": [
+            "button 256x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 232x42 \"email\"",
+            "input 232x42 \"password\"",
+            "input 510x42 \"companyName\"",
+            "input 232x42 \"pib\"",
+            "input 232x42 \"mb\"",
+            "input 232x42 \"contactPerson\"",
+            "input 232x42 \"phone\"",
+            "input 146x42 \"city\""
+          ],
+          "under44Count": 12,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "regErrors": {
+        "active": "<input type=\"email\" inputmode=\"email\" autocomplete=\"email\" data-testid=\"mechanic-reg-email\" id=\"mr-email\" class=\"h-full min-w-0 flex-1 bg-transparent text-[1rem",
+        "invalid": [
+          "mr-email",
+          "mr-password",
+          "mr-companyName",
+          "mr-pib",
+          "mr-mb",
+          "mr-contactPerson",
+          "mr-phone",
+          "mr-city",
+          "mr-address"
+        ]
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "1440": {
+      "landing": {
+        "probe": {
+          "vw": 1440,
+          "over": 0,
+          "offenders": [],
+          "tiny": [
+            "a 50x18 \"Početna\"",
+            "a 107x21 \"Pošaljite upit\""
+          ],
+          "tinyCount": 2,
+          "under44": [
+            "button 256x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 3,
+          "smallInputs": [
+            "qod-input 15px"
+          ]
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "reg": {
+        "probe": {
+          "vw": 1440,
+          "over": 0,
+          "offenders": [],
+          "tiny": [
+            "a 50x18 \"Početna\"",
+            "a 72x18 \"Za majstore\"",
+            "button 20x20 \"Mehanika\"",
+            "button 20x20 \"Autoelektrika\"",
+            "button 20x20 \"Dijagnostika\"",
+            "button 20x20 \"Klima\"",
+            "button 20x20 \"Limarija i farbanje\"",
+            "button 20x20 \"Vulkanizer\"",
+            "button 20x20 \"Ostalo\"",
+            "button 20x20 \"Volkswagen\"",
+            "button 20x20 \"Audi\"",
+            "button 20x20 \"Škoda\"",
+            "button 20x20 \"SEAT\"",
+            "button 20x20 \"Cupra\"",
+            "button 20x20 \"BUTTON\""
+          ],
+          "tinyCount": 15,
+          "under44": [
+            "button 256x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 284x42 \"email\"",
+            "input 284x42 \"password\"",
+            "input 614x42 \"companyName\"",
+            "input 284x42 \"pib\"",
+            "input 284x42 \"mb\"",
+            "input 284x42 \"contactPerson\"",
+            "input 284x42 \"phone\"",
+            "input 181x42 \"city\""
+          ],
+          "under44Count": 12,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        },
+        "axe": []
+      },
+      "regErrors": {
+        "active": "<input type=\"email\" inputmode=\"email\" autocomplete=\"email\" data-testid=\"mechanic-reg-email\" id=\"mr-email\" class=\"h-full min-w-0 flex-1 bg-transparent text-[1rem",
+        "invalid": [
+          "mr-email",
+          "mr-password",
+          "mr-companyName",
+          "mr-pib",
+          "mr-mb",
+          "mr-contactPerson",
+          "mr-phone",
+          "mr-city",
+          "mr-address"
+        ]
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "1920": {
+      "landing": {
+        "probe": {
+          "vw": 1920,
+          "over": 0,
+          "offenders": [],
+          "tiny": [
+            "a 50x18 \"Početna\"",
+            "a 107x21 \"Pošaljite upit\""
+          ],
+          "tinyCount": 2,
+          "under44": [
+            "button 288x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 3,
+          "smallInputs": [
+            "qod-input 15px"
+          ]
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "reg": {
+        "probe": {
+          "vw": 1920,
+          "over": 0,
+          "offenders": [],
+          "tiny": [
+            "a 50x18 \"Početna\"",
+            "a 72x18 \"Za majstore\"",
+            "button 20x20 \"Mehanika\"",
+            "button 20x20 \"Autoelektrika\"",
+            "button 20x20 \"Dijagnostika\"",
+            "button 20x20 \"Klima\"",
+            "button 20x20 \"Limarija i farbanje\"",
+            "button 20x20 \"Vulkanizer\"",
+            "button 20x20 \"Ostalo\"",
+            "button 20x20 \"Volkswagen\"",
+            "button 20x20 \"Audi\"",
+            "button 20x20 \"Škoda\"",
+            "button 20x20 \"SEAT\"",
+            "button 20x20 \"Cupra\"",
+            "button 20x20 \"BUTTON\""
+          ],
+          "tinyCount": 15,
+          "under44": [
+            "button 288x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 311x42 \"email\"",
+            "input 311x42 \"password\"",
+            "input 667x42 \"companyName\"",
+            "input 311x42 \"pib\"",
+            "input 311x42 \"mb\"",
+            "input 311x42 \"contactPerson\"",
+            "input 311x42 \"phone\"",
+            "input 198x42 \"city\""
+          ],
+          "under44Count": 12,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "regErrors": {
+        "active": "<input type=\"email\" inputmode=\"email\" autocomplete=\"email\" data-testid=\"mechanic-reg-email\" id=\"mr-email\" class=\"h-full min-w-0 flex-1 bg-transparent text-[1rem",
+        "invalid": [
+          "mr-email",
+          "mr-password",
+          "mr-companyName",
+          "mr-pib",
+          "mr-mb",
+          "mr-contactPerson",
+          "mr-phone",
+          "mr-city",
+          "mr-address"
+        ]
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "2560": {
+      "landing": {
+        "probe": {
+          "vw": 2560,
+          "over": 0,
+          "offenders": [],
+          "tiny": [
+            "a 50x18 \"Početna\"",
+            "a 107x21 \"Pošaljite upit\""
+          ],
+          "tinyCount": 2,
+          "under44": [
+            "button 288x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "button 130x32 \"Podešavanja kolačića\""
+          ],
+          "under44Count": 3,
+          "smallInputs": [
+            "qod-input 15px"
+          ]
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "reg": {
+        "probe": {
+          "vw": 2560,
+          "over": 0,
+          "offenders": [],
+          "tiny": [
+            "a 50x18 \"Početna\"",
+            "a 72x18 \"Za majstore\"",
+            "button 20x20 \"Mehanika\"",
+            "button 20x20 \"Autoelektrika\"",
+            "button 20x20 \"Dijagnostika\"",
+            "button 20x20 \"Klima\"",
+            "button 20x20 \"Limarija i farbanje\"",
+            "button 20x20 \"Vulkanizer\"",
+            "button 20x20 \"Ostalo\"",
+            "button 20x20 \"Volkswagen\"",
+            "button 20x20 \"Audi\"",
+            "button 20x20 \"Škoda\"",
+            "button 20x20 \"SEAT\"",
+            "button 20x20 \"Cupra\"",
+            "button 20x20 \"BUTTON\""
+          ],
+          "tinyCount": 15,
+          "under44": [
+            "button 288x40 \"Broj dela ili naziv/\"",
+            "button 151x36 \"Izaberite vozilo\"",
+            "input 311x42 \"email\"",
+            "input 311x42 \"password\"",
+            "input 667x42 \"companyName\"",
+            "input 311x42 \"pib\"",
+            "input 311x42 \"mb\"",
+            "input 311x42 \"contactPerson\"",
+            "input 311x42 \"phone\"",
+            "input 198x42 \"city\""
+          ],
+          "under44Count": 12,
+          "smallInputs": []
+        },
+        "reveal": {
+          "stuck": [],
+          "pending": 0,
+          "words": 0
+        }
+      },
+      "regErrors": {
+        "active": "<input type=\"email\" inputmode=\"email\" autocomplete=\"email\" data-testid=\"mechanic-reg-email\" id=\"mr-email\" class=\"h-full min-w-0 flex-1 bg-transparent text-[1rem",
+        "invalid": [
+          "mr-email",
+          "mr-password",
+          "mr-companyName",
+          "mr-pib",
+          "mr-mb",
+          "mr-contactPerson",
+          "mr-phone",
+          "mr-city",
+          "mr-address"
+        ]
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    }
+  }
+}

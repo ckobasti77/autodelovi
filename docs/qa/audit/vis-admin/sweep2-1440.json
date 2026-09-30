@@ -1,0 +1,1199 @@
+{
+  "/admin": {
+    "ms": 4986,
+    "h1": "Pregled",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 1205,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/pregled.webp"
+  },
+  "/admin/porudzbine": {
+    "ms": 12178,
+    "h1": "Porudžbine",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 2805,
+    "numericCells": 100,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja",
+      "11px button: Broj",
+      "11px button: Primljena",
+      "11px button: Kupac",
+      "11px button: Status",
+      "11px button: Kom.",
+      "11px button: Ukupno"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/porudzbine.webp"
+  },
+  "/admin/porudzbine?status=sve": {
+    "ms": 8111,
+    "h1": "Porudžbine",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 2805,
+    "numericCells": 100,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja",
+      "11px button: Broj",
+      "11px button: Primljena",
+      "11px button: Kupac",
+      "11px button: Status",
+      "11px button: Kom.",
+      "11px button: Ukupno"
+    ],
+    "scrollers": [
+      "div.overflow-x-auto.rounded-sm 1186/1158"
+    ],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/porudzbine_status_sve.webp"
+  },
+  "/admin/porudzbine/SK-2026-000092": {
+    "ms": 10832,
+    "h1": "Porudžbina\nSK-2026-000092",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 1289,
+    "numericCells": 3,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja",
+      "11px span: Nova",
+      "11px th: Artikal",
+      "11px th: Kol.",
+      "11px th: Cena",
+      "11px th: Rabat",
+      "11px th: Iznos"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/porudzbine_SK-2026-000092.webp"
+  },
+  "/admin/upiti": {
+    "ms": 10714,
+    "h1": "Upiti",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 2813,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [
+      "span(…): QA audit (verify backend-01) — test upit, ponuda i title=n",
+      "span(…): QA audit (verify backend-01 C) — provera ponuđenih title=n",
+      "span(…): QA verify (backend-03/04) — provera zapisa saglasn title=n",
+      "span(…): YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY title=n",
+      "span(…): QA audit (verify backend-01 B) — test upit za prov title=n",
+      "span(…): QA audit (verify backend-01 A) — test upit za prov title=n",
+      "span(…): QA audit (backend) — provera zapisa saglasnosti. N title=n",
+      "span(…): XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX title=n",
+      "span(…): QA audit (backend) — test upit za proveru limita o title=n",
+      "span(…): Brza porudžbina — ove brojeve nismo našli u katalo title=n",
+      "span(…): Brza porudžbina — ove brojeve nismo našli u katalo title=n",
+      "span(…): Brza porudžbina — ove brojeve nismo našli u katalo title=n",
+      "span(…): Brza porudžbina — ove brojeve nismo našli u katalo title=n",
+      "span(…): Brza porudžbina — ove brojeve nismo našli u katalo title=n",
+      "span(…): Brza porudžbina — ove brojeve nismo našli u katalo title=n",
+      "span(…): Brza porudžbina — ove brojeve nismo našli u katalo title=n",
+      "span(…): Brza porudžbina — ove brojeve nismo našli u katalo title=n",
+      "span(…): Brza porudžbina — ove brojeve nismo našli u katalo title=n",
+      "span(…): Brza porudžbina — ove brojeve nismo našli u katalo title=n",
+      "span(…): Brza porudžbina — ove brojeve nismo našli u katalo title=n"
+    ],
+    "clippedCount": 25,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja",
+      "11px button: Broj",
+      "11px button: Status",
+      "11px button: Primljen",
+      "11px button: Kontakt",
+      "11px th: Traži",
+      "11px th: Izvor"
+    ],
+    "scrollers": [
+      "div.overflow-x-auto.rounded-sm 1395/1158"
+    ],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/upiti.webp"
+  },
+  "/admin/upiti/UP-2026-000054": {
+    "ms": 9912,
+    "h1": "Upit\nUP-2026-000054",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 1068,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja",
+      "11px span: U obradi"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/upiti_UP-2026-000054.webp"
+  },
+  "/admin/upiti/UP-2026-000003": {
+    "ms": 6866,
+    "h1": "Upit\nUP-2026-000003",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 1097,
+    "numericCells": 2,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja",
+      "11px span: Ponuda poslata",
+      "11px span: Demo"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/upiti_UP-2026-000003.webp"
+  },
+  "/admin/proizvodi": {
+    "ms": 9111,
+    "h1": "Proizvodi",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 2805,
+    "numericCells": 53,
+    "misaligned": [
+      "OEM: \"038 121 662\" align=left tabular=false",
+      "OEM: \"030 115 446\" align=left tabular=false",
+      "OEM: \"045 115 278\" align=left tabular=false"
+    ],
+    "misalignedCount": 3,
+    "clipped": [
+      "span(…): Set zupčastog kaiša i vodena pumpa title=y"
+    ],
+    "clippedCount": 1,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja",
+      "11px button: Artikal",
+      "11px button: Stanje",
+      "11px button: Cena",
+      "11px th: OEM",
+      "11px button: Kategorija",
+      "11px button: Proizvođač"
+    ],
+    "scrollers": [
+      "div.overflow-x-auto.rounded-sm 1231/1158"
+    ],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/proizvodi.webp"
+  },
+  "/admin/proizvodi/novi": {
+    "ms": 5651,
+    "h1": "Novi artikal",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 2594,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja",
+      "11px p: Pregled u pretrazi"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/proizvodi_novi.webp"
+  },
+  "/admin/kategorije": {
+    "ms": 14675,
+    "h1": "Kategorije",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/kategorije.webp"
+  },
+  "/admin/vozila": {
+    "ms": 6366,
+    "h1": "Vozila",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/vozila.webp"
+  },
+  "/admin/proizvodjaci": {
+    "ms": 11121,
+    "h1": "Proizvođači",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 1727,
+    "numericCells": 30,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja",
+      "11px button: Proizvođač",
+      "11px button: Kvalitet",
+      "11px th: Drugi nazivi",
+      "11px button: Zemlja",
+      "11px button: Artikala",
+      "11px span: Original VAG"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/proizvodjaci.webp"
+  },
+  "/admin/lager": {
+    "ms": 7032,
+    "h1": "Lager",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 1032,
+    "numericCells": 15,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja",
+      "11px button: Artikal",
+      "11px button: Stanje",
+      "11px button: Kom.",
+      "11px th: Prag",
+      "11px span: DEMO-0012",
+      "11px span: Nema na stanju"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/lager.webp"
+  },
+  "/admin/kupci": {
+    "ms": 11980,
+    "h1": "Kupci",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 2690,
+    "numericCells": 131,
+    "misaligned": [
+      "REGISTROVAN: \"30.09.\" align=left tabular=true",
+      "REGISTROVAN: \"30.09.\" align=left tabular=true",
+      "REGISTROVAN: \"30.09.\" align=left tabular=true",
+      "TELEFON: \"+381 64 555 1234\" align=left tabular=true",
+      "REGISTROVAN: \"30.09.\" align=left tabular=true",
+      "TELEFON: \"+381 64 555 1234\" align=left tabular=true",
+      "REGISTROVAN: \"30.09.\" align=left tabular=true",
+      "TELEFON: \"+381 64 555 1234\" align=left tabular=true",
+      "REGISTROVAN: \"30.09.\" align=left tabular=true",
+      "REGISTROVAN: \"30.09.\" align=left tabular=true",
+      "TELEFON: \"+381 64 555 1234\" align=left tabular=true",
+      "REGISTROVAN: \"30.09.\" align=left tabular=true",
+      "REGISTROVAN: \"30.09.\" align=left tabular=true",
+      "TELEFON: \"+381 64 555 1234\" align=left tabular=true",
+      "REGISTROVAN: \"30.09.\" align=left tabular=true"
+    ],
+    "misalignedCount": 82,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja",
+      "11px button: Kupac",
+      "11px th: Telefon",
+      "11px th: Nalog",
+      "11px button: Porudžbine",
+      "11px button: Registrovan",
+      "11px span: Majstor · Odbijen"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/kupci.webp"
+  },
+  "/admin/majstori": {
+    "ms": 15472,
+    "h1": "Majstori",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja",
+      "11px button: Servis",
+      "11px button: PIB",
+      "11px th: Kontakt",
+      "11px button: Registrovan",
+      "11px th: Nivo",
+      "11px th: Izvor"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/majstori.webp"
+  },
+  "/admin/cenovni-razredi": {
+    "ms": 5334,
+    "h1": "Cenovni razredi",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/cenovni-razredi.webp"
+  },
+  "/admin/uvoz": {
+    "ms": 13375,
+    "h1": "Uvoz iz Excela",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/uvoz.webp"
+  },
+  "/admin/uvoz/istorija": {
+    "ms": 23813,
+    "h1": "Stranica se nije učitala",
+    "mainWidth": 1440,
+    "mainLeft": 0,
+    "navWidth": null,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [
+      "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    ],
+    "pageErrors": [],
+    "bad": [
+      "500 http://localhost:3100/admin/uvoz/istorija"
+    ],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/uvoz_istorija.webp"
+  },
+  "/admin/uvoz/n571yqf64h6nfr4j3894281q6n8fdmmv": {
+    "ms": 3524,
+    "h1": null,
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/uvoz_n571yqf64h6nfr4j3894281q6n8fdmmv.webp"
+  },
+  "/admin/izvoz": {
+    "ms": 15378,
+    "h1": "Prijavljeni ste",
+    "mainWidth": 1440,
+    "mainLeft": 0,
+    "navWidth": 410,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px h2: Delovi",
+      "11px h2: Kupovina",
+      "11px h2: Kontakt"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/izvoz.webp"
+  },
+  "/admin/pretrage": {
+    "ms": 6335,
+    "h1": "Pretrage",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [
+      "div.scroll-fade-x.-mx-1 244/236"
+    ],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/pretrage.webp"
+  },
+  "/admin/izvori": {
+    "ms": 6224,
+    "h1": "Izvori",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [
+      "div.scroll-fade-x.-mx-1 244/236"
+    ],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/izvori.webp"
+  },
+  "/admin/mejlovi": {
+    "ms": 12546,
+    "h1": "E-pošta",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 2923,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [
+      "span(…): audit-xbrowser-firefox-390-1790788646327@primer.rs title=n",
+      "span(…): audit-xbrowser-firefox-1440-1790788602270@primer.r title=n",
+      "span(…): audit-xbrowser-chromium-390-1790785105461@primer.r title=n",
+      "span(…): audit-xbrowser-chromium-1440-1790785002024@primer. title=n",
+      "span(…): audit-flows-g6-1790784601978@primer.rs title=n",
+      "span(…): audit-flows-g5-1790784601978@primer.rs title=n",
+      "span(…): audit-flows-g4-1790784601978@primer.rs title=n",
+      "span(…): audit-flows-g3-1790784601978@primer.rs title=n",
+      "span(…): audit-flows-g2-1790784601978@primer.rs title=n",
+      "span(…): audit-flows-g1-1790784529613@primer.rs title=n"
+    ],
+    "clippedCount": 10,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja",
+      "11px button: Vreme",
+      "11px th: Prima",
+      "11px button: Naslov",
+      "11px button: Način",
+      "11px button: Status",
+      "11px span: Zabeleženo"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/mejlovi.webp"
+  },
+  "/admin/mejlovi/sabloni": {
+    "ms": 7804,
+    "h1": "E-pošta",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 1335,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja",
+      "11px h2: Porudžbine",
+      "11px h2: Upiti i ponude",
+      "11px h2: Majstori",
+      "11px h2: Nalog",
+      "11px h2: Osoblje"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/mejlovi_sabloni.webp"
+  },
+  "/admin/obavestenja": {
+    "ms": 8329,
+    "h1": "Obaveštenja",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/obavestenja.webp"
+  },
+  "/admin/korisnici": {
+    "ms": 6814,
+    "h1": "Korisnici",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/korisnici.webp"
+  },
+  "/admin/revizija": {
+    "ms": 9005,
+    "h1": "Revizija",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/revizija.webp"
+  },
+  "/admin/privatnost": {
+    "ms": 3149,
+    "h1": "Privatnost",
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/privatnost.webp"
+  },
+  "/admin/podesavanja?tab=firma": {
+    "ms": 6026,
+    "h1": null,
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/podesavanja_tab_firma.webp"
+  },
+  "/admin/podesavanja?tab=radno-vreme": {
+    "ms": 23726,
+    "h1": null,
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/podesavanja_tab_radno-vreme.webp"
+  },
+  "/admin/podesavanja?tab=prodaja": {
+    "ms": 22916,
+    "h1": "Prijavljeni ste",
+    "mainWidth": 1440,
+    "mainLeft": 0,
+    "navWidth": 410,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px h2: Delovi",
+      "11px h2: Kupovina",
+      "11px h2: Kontakt"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/podesavanja_tab_prodaja.webp"
+  },
+  "/admin/podesavanja?tab=obavestenja": {
+    "ms": 6112,
+    "h1": null,
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/podesavanja_tab_obavestenja.webp"
+  },
+  "/admin/podesavanja?tab=seo": {
+    "ms": 39397,
+    "h1": "Prijavljeni ste",
+    "mainWidth": 1440,
+    "mainLeft": 0,
+    "navWidth": 410,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px h2: Delovi",
+      "11px h2: Kupovina",
+      "11px h2: Kontakt"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/podesavanja_tab_seo.webp"
+  },
+  "/admin/podesavanja?tab=pracenje": {
+    "ms": 3953,
+    "h1": null,
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/podesavanja_tab_pracenje.webp"
+  },
+  "/admin/podesavanja?tab=pravni-tekstovi": {
+    "ms": 12349,
+    "h1": "Stranica se nije učitala",
+    "mainWidth": 1440,
+    "mainLeft": 0,
+    "navWidth": null,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [
+      "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    ],
+    "pageErrors": [],
+    "bad": [
+      "500 http://localhost:3100/admin/podesavanja?tab=pravni-tekstovi"
+    ],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/podesavanja_tab_pravni-tekstovi.webp"
+  },
+  "/admin/podesavanja?tab=funkcije": {
+    "ms": 4259,
+    "h1": null,
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/podesavanja_tab_funkcije.webp"
+  },
+  "/admin/podesavanja?tab=oglasne-strane": {
+    "ms": 15858,
+    "h1": null,
+    "mainWidth": 1208,
+    "mainLeft": 232,
+    "navWidth": 232,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [
+      "11px p: Prodaja",
+      "11px p: Katalog",
+      "11px p: Evidencija",
+      "11px p: Podešavanja"
+    ],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [],
+    "pageErrors": [],
+    "bad": [],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/podesavanja_tab_oglasne-strane.webp"
+  },
+  "/admin/podesavanja?tab=opasna-zona": {
+    "ms": 20135,
+    "h1": "Stranica se nije učitala",
+    "mainWidth": 1440,
+    "mainLeft": 0,
+    "navWidth": null,
+    "docHeight": 900,
+    "numericCells": 0,
+    "misaligned": [],
+    "misalignedCount": 0,
+    "clipped": [],
+    "clippedCount": 0,
+    "tiny": [],
+    "scrollers": [],
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "console": [
+      "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    ],
+    "pageErrors": [],
+    "bad": [
+      "500 http://localhost:3100/admin/podesavanja?tab=opasna-zona"
+    ],
+    "file": "docs/qa/audit/vis-admin/sweep2/1440/podesavanja_tab_opasna-zona.webp"
+  }
+}

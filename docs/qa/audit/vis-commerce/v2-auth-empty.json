@@ -1,0 +1,136 @@
+{
+  "prijava": {
+    "states": [
+      {
+        "invalid": [],
+        "alerts": [],
+        "busy": "true",
+        "btnText": "Prijavi sePrijavi se",
+        "focused": "BUTTON"
+      },
+      {
+        "invalid": [
+          "f_R_2inpfd9fclb_"
+        ],
+        "alerts": [
+          "Pogrešan e-mail ili lozinka. Proverite podatke i pokušajte ponovo.",
+          "Pogrešan e-mail ili lozinka. Proverite podatke i pokušajte ponovo."
+        ],
+        "busy": null,
+        "btnText": "Prijavi se",
+        "focused": "BUTTON"
+      },
+      {
+        "invalid": [
+          "f_R_2inpfd9fclb_"
+        ],
+        "alerts": [
+          "Pogrešan e-mail ili lozinka. Proverite podatke i pokušajte ponovo.",
+          "Pogrešan e-mail ili lozinka. Proverite podatke i pokušajte ponovo."
+        ],
+        "busy": null,
+        "btnText": "Prijavi se",
+        "focused": "BUTTON"
+      }
+    ],
+    "badResponses": [
+      "400 http://localhost:3100/api/auth"
+    ],
+    "console": [
+      "Failed to load resource: the server responded with a status of 400 (Bad Request)"
+    ]
+  },
+  "registracija": {
+    "states": [
+      {
+        "invalid": [
+          "f_R_1inpfd9fclb_",
+          "f_R_2inpfd9fclb_",
+          "f_R_3inpfd9fclb_"
+        ],
+        "alerts": [
+          "Upišite ime i prezime.",
+          "E-mail adresa nije ispravna. Primer: ime@primer.rs.",
+          "Lozinka mora imati najmanje 10 znakova.",
+          "Potrebna je saglasnost sa uslovima korišćenja."
+        ],
+        "busy": null,
+        "btnText": "Napravi nalog",
+        "focused": "BUTTON"
+      },
+      {
+        "invalid": [
+          "f_R_1inpfd9fclb_",
+          "f_R_2inpfd9fclb_",
+          "f_R_3inpfd9fclb_"
+        ],
+        "alerts": [
+          "Upišite ime i prezime.",
+          "E-mail adresa nije ispravna. Primer: ime@primer.rs.",
+          "Lozinka mora imati najmanje 10 znakova.",
+          "Potrebna je saglasnost sa uslovima korišćenja."
+        ],
+        "busy": null,
+        "btnText": "Napravi nalog",
+        "focused": "BUTTON"
+      },
+      {
+        "invalid": [
+          "f_R_1inpfd9fclb_",
+          "f_R_2inpfd9fclb_",
+          "f_R_3inpfd9fclb_"
+        ],
+        "alerts": [
+          "Upišite ime i prezime.",
+          "E-mail adresa nije ispravna. Primer: ime@primer.rs.",
+          "Lozinka mora imati najmanje 10 znakova.",
+          "Potrebna je saglasnost sa uslovima korišćenja."
+        ],
+        "busy": null,
+        "btnText": "Napravi nalog",
+        "focused": "BUTTON"
+      }
+    ],
+    "badResponses": [],
+    "console": []
+  },
+  "zaboravljena": {
+    "states": [
+      {
+        "invalid": [
+          "f_R_2inpfd9fclb_"
+        ],
+        "alerts": [
+          "E-mail adresa nije ispravna. Primer: ime@primer.rs."
+        ],
+        "busy": null,
+        "btnText": "Pošalji kod",
+        "focused": "BUTTON"
+      },
+      {
+        "invalid": [
+          "f_R_2inpfd9fclb_"
+        ],
+        "alerts": [
+          "E-mail adresa nije ispravna. Primer: ime@primer.rs."
+        ],
+        "busy": null,
+        "btnText": "Pošalji kod",
+        "focused": "BUTTON"
+      },
+      {
+        "invalid": [
+          "f_R_2inpfd9fclb_"
+        ],
+        "alerts": [
+          "E-mail adresa nije ispravna. Primer: ime@primer.rs."
+        ],
+        "busy": null,
+        "btnText": "Pošalji kod",
+        "focused": "BUTTON"
+      }
+    ],
+    "badResponses": [],
+    "console": []
+  }
+}

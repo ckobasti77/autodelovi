@@ -1,0 +1,919 @@
+{
+  "chromium-1440": {
+    "loadMs": 254,
+    "support": {
+      "webgl2": true,
+      "webgl": true,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "backdrop": true,
+      "webkitBackdrop": false,
+      "contentVisibility": true,
+      "has": true,
+      "textWrapBalance": true,
+      "textWrapPretty": true,
+      "popover": true,
+      "dialog": true,
+      "scrollbarGutter": true,
+      "fieldSizing": true,
+      "interpolateSize": true,
+      "anchor": true,
+      "colorMix": true,
+      "oklch": true,
+      "dvh": true,
+      "subgrid": true,
+      "scrollTimeline": true,
+      "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36 SklopAudit-xb-chromium-home1440/1790784198558-0",
+      "cores": 16,
+      "deviceMemory": 16,
+      "htmlClass": "display_57a2f1e9-module__yAkwwW__variable displaysemibold_66077e30-module__u41IVa__variable condensed_ac4bd985-module__SOzDNq__variable public_sans_cf90169f-module__aFbQTG__variable martian_mono_b35e5d72-module__bZkIpW__variable tr-js"
+    },
+    "fonts": [
+      "display|700|normal|loaded",
+      "display Fallback|normal|normal|unloaded",
+      "displaySemibold|600|normal|loaded",
+      "displaySemibold Fallback|normal|normal|unloaded",
+      "condensed|600|normal|loaded",
+      "condensed Fallback|normal|normal|unloaded",
+      "Public Sans|100 900|normal|unloaded",
+      "Public Sans|100 900|normal|loaded",
+      "Public Sans|100 900|normal|loaded",
+      "Public Sans Fallback|normal|normal|loaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|loaded",
+      "Martian Mono Fallback|normal|normal|unloaded"
+    ],
+    "fontFamilies": [
+      {
+        "sel": "h1",
+        "font": "display, \"display Fallback\", Arial, sans-serif, Arial, sans-serif",
+        "size": "55.9968px",
+        "lh": "55.9968px",
+        "w": 512,
+        "h": 168
+      },
+      {
+        "sel": "header nav",
+        "font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial, sans-serif",
+        "size": "16px",
+        "lh": "24.8px",
+        "w": 410,
+        "h": 44
+      },
+      {
+        "sel": "main p",
+        "font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial, sans-serif",
+        "size": "19.992px",
+        "lh": "29.988px",
+        "w": 512,
+        "h": 60
+      },
+      {
+        "sel": "[data-testid=hero-search-input] input",
+        "font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial, sans-serif",
+        "size": "16px",
+        "lh": "24px",
+        "w": 347,
+        "h": 54
+      },
+      {
+        "sel": "footer",
+        "font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial, sans-serif",
+        "size": "16px",
+        "lh": "24.8px",
+        "w": 1440,
+        "h": 521
+      }
+    ],
+    "hookState0": {
+      "ready": false,
+      "tier": null,
+      "status": "idle",
+      "progress": 0,
+      "stage": 0,
+      "selected": null,
+      "hovered": null,
+      "timeline": "desktop",
+      "reducedMotion": false
+    },
+    "readyMs": 1777,
+    "hookState1": {
+      "ready": true,
+      "tier": "high",
+      "status": "ready",
+      "progress": 0.027431,
+      "stage": 0,
+      "selected": null,
+      "hovered": null,
+      "timeline": "desktop",
+      "reducedMotion": false
+    },
+    "canvasCount": 1,
+    "canvasOpacity": {
+      "canvas": "1",
+      "poster": "0"
+    },
+    "hookState2": {
+      "ready": true,
+      "tier": "high",
+      "status": "ready",
+      "progress": 0.780903,
+      "stage": 6,
+      "selected": null,
+      "hovered": null,
+      "timeline": "desktop",
+      "reducedMotion": false
+    },
+    "header": {
+      "top": 0,
+      "height": 65,
+      "position": "sticky",
+      "backdrop": "blur(12px)",
+      "bg": "oklab(0.167059 -0.00197043 -0.00492857 / 0.88)"
+    },
+    "reveal": {
+      "stuck": [
+        "span: stakla",
+        "span: i",
+        "span: svetla",
+        "span: 01",
+        "span: 10 kategorija",
+        "span: ·",
+        "span: se",
+        "span: skidaju",
+        "span: i",
+        "span: svetla."
+      ],
+      "pending": 0,
+      "words": 16
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "scrollHeight": 9581,
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "chromium-390": {
+    "loadMs": 354,
+    "support": {
+      "webgl2": true,
+      "webgl": true,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "backdrop": true,
+      "webkitBackdrop": false,
+      "contentVisibility": true,
+      "has": true,
+      "textWrapBalance": true,
+      "textWrapPretty": true,
+      "popover": true,
+      "dialog": true,
+      "scrollbarGutter": true,
+      "fieldSizing": true,
+      "interpolateSize": true,
+      "anchor": true,
+      "colorMix": true,
+      "oklch": true,
+      "dvh": true,
+      "subgrid": true,
+      "scrollTimeline": true,
+      "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36 SklopAudit-xb-chromium-home390/1790784256297-1",
+      "cores": 16,
+      "deviceMemory": 16,
+      "htmlClass": "display_57a2f1e9-module__yAkwwW__variable displaysemibold_66077e30-module__u41IVa__variable condensed_ac4bd985-module__SOzDNq__variable public_sans_cf90169f-module__aFbQTG__variable martian_mono_b35e5d72-module__bZkIpW__variable tr-js"
+    },
+    "fonts": [
+      "display|700|normal|loaded",
+      "display Fallback|normal|normal|unloaded",
+      "displaySemibold|600|normal|loaded",
+      "displaySemibold Fallback|normal|normal|loaded",
+      "condensed|600|normal|loaded",
+      "condensed Fallback|normal|normal|unloaded",
+      "Public Sans|100 900|normal|unloaded",
+      "Public Sans|100 900|normal|loaded",
+      "Public Sans|100 900|normal|loaded",
+      "Public Sans Fallback|normal|normal|unloaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|loaded",
+      "Martian Mono Fallback|normal|normal|loaded"
+    ],
+    "fontFamilies": [
+      {
+        "sel": "h1",
+        "font": "display, \"display Fallback\", Arial, sans-serif, Arial, sans-serif",
+        "size": "36.5508px",
+        "lh": "36.5508px",
+        "w": 358,
+        "h": 110
+      },
+      {
+        "sel": "header nav",
+        "font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial, sans-serif",
+        "size": "16px",
+        "lh": "24.8px",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "sel": "main p",
+        "font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial, sans-serif",
+        "size": "18.0495px",
+        "lh": "27.0742px",
+        "w": 358,
+        "h": 81
+      },
+      {
+        "sel": "[data-testid=hero-search-input] input",
+        "font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial, sans-serif",
+        "size": "16px",
+        "lh": "24px",
+        "w": 304,
+        "h": 54
+      },
+      {
+        "sel": "footer",
+        "font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial, sans-serif",
+        "size": "16px",
+        "lh": "24.8px",
+        "w": 390,
+        "h": 521
+      }
+    ],
+    "hookState0": {
+      "ready": false,
+      "tier": null,
+      "status": "idle",
+      "progress": 0,
+      "stage": 0,
+      "selected": null,
+      "hovered": null,
+      "timeline": "mobile",
+      "reducedMotion": false
+    },
+    "readyMs": 1213,
+    "hookState1": {
+      "ready": true,
+      "tier": "mid",
+      "status": "ready",
+      "progress": 0,
+      "stage": 0,
+      "selected": null,
+      "hovered": null,
+      "timeline": "mobile",
+      "reducedMotion": false
+    },
+    "canvasCount": 1,
+    "canvasOpacity": {
+      "canvas": "1",
+      "poster": "0"
+    },
+    "hookState2": {
+      "ready": true,
+      "tier": "mid",
+      "status": "ready",
+      "progress": 0.890403,
+      "stage": 7,
+      "selected": null,
+      "hovered": null,
+      "timeline": "mobile",
+      "reducedMotion": false
+    },
+    "header": {
+      "top": 0,
+      "height": 57,
+      "position": "sticky",
+      "backdrop": "blur(12px)",
+      "bg": "oklab(0.167059 -0.00197043 -0.00492857 / 0.88)"
+    },
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "scrollHeight": 12213,
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "firefox-1440": {
+    "loadMs": 12383,
+    "support": {
+      "webgl2": true,
+      "webgl": true,
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 980 Direct3D11 vs_5_0 ps_5_0), or similar",
+      "backdrop": true,
+      "webkitBackdrop": false,
+      "contentVisibility": true,
+      "has": true,
+      "textWrapBalance": true,
+      "textWrapPretty": false,
+      "popover": true,
+      "dialog": true,
+      "scrollbarGutter": true,
+      "fieldSizing": true,
+      "interpolateSize": false,
+      "anchor": true,
+      "colorMix": true,
+      "oklch": true,
+      "dvh": true,
+      "subgrid": true,
+      "scrollTimeline": false,
+      "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:155.0) Gecko/20100101 Firefox/155.0 SklopAudit-xb-firefox-home1440/1790784279839-2",
+      "cores": 16,
+      "deviceMemory": null,
+      "htmlClass": "display_57a2f1e9-module__yAkwwW__variable displaysemibold_66077e30-module__u41IVa__variable condensed_ac4bd985-module__SOzDNq__variable public_sans_cf90169f-module__aFbQTG__variable martian_mono_b35e5d72-module__bZkIpW__variable tr-js tr-failsafe"
+    },
+    "fonts": [
+      "display|700|normal|loaded",
+      "display Fallback|normal|normal|unloaded",
+      "displaySemibold|600|normal|loaded",
+      "displaySemibold Fallback|normal|normal|unloaded",
+      "condensed|600|normal|loaded",
+      "condensed Fallback|normal|normal|unloaded",
+      "Public Sans|100 900|normal|unloaded",
+      "Public Sans|100 900|normal|loaded",
+      "Public Sans|100 900|normal|loaded",
+      "Public Sans Fallback|normal|normal|unloaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|loaded",
+      "Martian Mono Fallback|normal|normal|unloaded"
+    ],
+    "fontFamilies": [
+      {
+        "sel": "h1",
+        "font": "\"display\", \"display Fallback\", Arial, sans-serif, Arial, sans-serif",
+        "size": "56px",
+        "lh": "56px",
+        "w": 512,
+        "h": 168
+      },
+      {
+        "sel": "header nav",
+        "font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial, sans-serif",
+        "size": "16px",
+        "lh": "24.8px",
+        "w": 410,
+        "h": 44
+      },
+      {
+        "sel": "main p",
+        "font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial, sans-serif",
+        "size": "19.9688px",
+        "lh": "29.95px",
+        "w": 512,
+        "h": 60
+      },
+      {
+        "sel": "[data-testid=hero-search-input] input",
+        "font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial, sans-serif",
+        "size": "16px",
+        "lh": "24px",
+        "w": 347,
+        "h": 54
+      },
+      {
+        "sel": "footer",
+        "font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial, sans-serif",
+        "size": "16px",
+        "lh": "24.8px",
+        "w": 1440,
+        "h": 521
+      }
+    ],
+    "hookState0": {
+      "ready": false,
+      "tier": null,
+      "status": "idle",
+      "progress": 0,
+      "stage": 0,
+      "selected": null,
+      "hovered": null,
+      "timeline": "desktop",
+      "reducedMotion": false
+    },
+    "readyMs": 12218,
+    "hookState1": {
+      "ready": true,
+      "tier": "high",
+      "status": "ready",
+      "progress": 0.027431,
+      "stage": 0,
+      "selected": null,
+      "hovered": null,
+      "timeline": "desktop",
+      "reducedMotion": false
+    },
+    "canvasCount": 1,
+    "canvasOpacity": {
+      "canvas": "1",
+      "poster": "0"
+    },
+    "hookState2": {
+      "ready": true,
+      "tier": "high",
+      "status": "ready",
+      "progress": 0.780903,
+      "stage": 6,
+      "selected": null,
+      "hovered": null,
+      "timeline": "desktop",
+      "reducedMotion": false
+    },
+    "header": {
+      "top": 0,
+      "height": 65,
+      "position": "sticky",
+      "backdrop": "blur(12px)",
+      "bg": "oklab(0.167061 -0.00197805 -0.00493199 / 0.88)"
+    },
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "scrollHeight": 9579,
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "firefox-390": {
+    "loadMs": 9532,
+    "support": {
+      "webgl2": true,
+      "webgl": true,
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 980 Direct3D11 vs_5_0 ps_5_0), or similar",
+      "backdrop": true,
+      "webkitBackdrop": false,
+      "contentVisibility": true,
+      "has": true,
+      "textWrapBalance": true,
+      "textWrapPretty": false,
+      "popover": true,
+      "dialog": true,
+      "scrollbarGutter": true,
+      "fieldSizing": true,
+      "interpolateSize": false,
+      "anchor": true,
+      "colorMix": true,
+      "oklch": true,
+      "dvh": true,
+      "subgrid": true,
+      "scrollTimeline": false,
+      "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:155.0) Gecko/20100101 Firefox/155.0 SklopAudit-xb-firefox-home390/1790784331429-3",
+      "cores": 16,
+      "deviceMemory": null,
+      "htmlClass": "display_57a2f1e9-module__yAkwwW__variable displaysemibold_66077e30-module__u41IVa__variable condensed_ac4bd985-module__SOzDNq__variable public_sans_cf90169f-module__aFbQTG__variable martian_mono_b35e5d72-module__bZkIpW__variable tr-js tr-failsafe"
+    },
+    "fonts": [
+      "display|700|normal|loaded",
+      "display Fallback|normal|normal|unloaded",
+      "displaySemibold|600|normal|loaded",
+      "displaySemibold Fallback|normal|normal|unloaded",
+      "condensed|600|normal|loaded",
+      "condensed Fallback|normal|normal|unloaded",
+      "Public Sans|100 900|normal|unloaded",
+      "Public Sans|100 900|normal|loaded",
+      "Public Sans|100 900|normal|loaded",
+      "Public Sans Fallback|normal|normal|unloaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|loaded",
+      "Martian Mono Fallback|normal|normal|unloaded"
+    ],
+    "fontFamilies": [
+      {
+        "sel": "h1",
+        "font": "\"display\", \"display Fallback\", Arial, sans-serif, Arial, sans-serif",
+        "size": "36.5625px",
+        "lh": "36.5667px",
+        "w": 358,
+        "h": 110
+      },
+      {
+        "sel": "header nav",
+        "font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial, sans-serif",
+        "size": "16px",
+        "lh": "24.8px",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "sel": "main p",
+        "font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial, sans-serif",
+        "size": "18.0313px",
+        "lh": "27.05px",
+        "w": 358,
+        "h": 81
+      },
+      {
+        "sel": "[data-testid=hero-search-input] input",
+        "font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial, sans-serif",
+        "size": "16px",
+        "lh": "24px",
+        "w": 304,
+        "h": 54
+      },
+      {
+        "sel": "footer",
+        "font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial, sans-serif",
+        "size": "16px",
+        "lh": "24.8px",
+        "w": 390,
+        "h": 521
+      }
+    ],
+    "hookState0": {
+      "ready": false,
+      "tier": null,
+      "status": "idle",
+      "progress": 0,
+      "stage": 0,
+      "selected": null,
+      "hovered": null,
+      "timeline": "mobile",
+      "reducedMotion": false
+    },
+    "readyMs": 8074,
+    "hookState1": {
+      "ready": true,
+      "tier": "mid",
+      "status": "ready",
+      "progress": 0,
+      "stage": 0,
+      "selected": null,
+      "hovered": null,
+      "timeline": "mobile",
+      "reducedMotion": false
+    },
+    "canvasCount": 1,
+    "canvasOpacity": {
+      "canvas": "1",
+      "poster": "0"
+    },
+    "hookState2": {
+      "ready": true,
+      "tier": "mid",
+      "status": "ready",
+      "progress": 0.890403,
+      "stage": 7,
+      "selected": null,
+      "hovered": null,
+      "timeline": "mobile",
+      "reducedMotion": false
+    },
+    "header": {
+      "top": 0,
+      "height": 57,
+      "position": "sticky",
+      "backdrop": "blur(12px)",
+      "bg": "oklab(0.167061 -0.00197805 -0.00493199 / 0.88)"
+    },
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "scrollHeight": 12214,
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "webkit-1440": {
+    "loadMs": 1612,
+    "support": {
+      "webgl2": true,
+      "webgl": true,
+      "renderer": "Apple GPU",
+      "backdrop": true,
+      "webkitBackdrop": true,
+      "contentVisibility": true,
+      "has": true,
+      "textWrapBalance": true,
+      "textWrapPretty": true,
+      "popover": true,
+      "dialog": true,
+      "scrollbarGutter": true,
+      "fieldSizing": true,
+      "interpolateSize": false,
+      "anchor": true,
+      "colorMix": true,
+      "oklch": true,
+      "dvh": true,
+      "subgrid": true,
+      "scrollTimeline": true,
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15 SklopAudit-xb-webkit-home1440/1790784379856-4",
+      "cores": 8,
+      "deviceMemory": null,
+      "htmlClass": "display_57a2f1e9-module__yAkwwW__variable displaysemibold_66077e30-module__u41IVa__variable condensed_ac4bd985-module__SOzDNq__variable public_sans_cf90169f-module__aFbQTG__variable martian_mono_b35e5d72-module__bZkIpW__variable tr-js"
+    },
+    "fonts": [
+      "display|700|normal|loaded",
+      "display Fallback|normal|normal|unloaded",
+      "displaySemibold|600|normal|loaded",
+      "displaySemibold Fallback|normal|normal|loaded",
+      "condensed|600|normal|loaded",
+      "condensed Fallback|normal|normal|unloaded",
+      "Public Sans|100 900|normal|unloaded",
+      "Public Sans|100 900|normal|loaded",
+      "Public Sans|100 900|normal|loaded",
+      "Public Sans Fallback|normal|normal|unloaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|loaded",
+      "Martian Mono Fallback|normal|normal|loaded"
+    ],
+    "fontFamilies": [
+      {
+        "sel": "h1",
+        "font": "display, display Fallback, Arial, sans-serif, Arial, sans-serif",
+        "size": "55.996799px",
+        "lh": "55.996799px",
+        "w": 512,
+        "h": 168
+      },
+      {
+        "sel": "header nav",
+        "font": "Public Sans, Public Sans Fallback, Public Sans, Arial, sans-serif",
+        "size": "16px",
+        "lh": "24.799999px",
+        "w": 410,
+        "h": 44
+      },
+      {
+        "sel": "main p",
+        "font": "Public Sans, Public Sans Fallback, Public Sans, Arial, sans-serif",
+        "size": "19.992001px",
+        "lh": "29.988001px",
+        "w": 512,
+        "h": 60
+      },
+      {
+        "sel": "[data-testid=hero-search-input] input",
+        "font": "Public Sans, Public Sans Fallback, Public Sans, Arial, sans-serif",
+        "size": "16px",
+        "lh": "24px",
+        "w": 347,
+        "h": 54
+      },
+      {
+        "sel": "footer",
+        "font": "Public Sans, Public Sans Fallback, Public Sans, Arial, sans-serif",
+        "size": "16px",
+        "lh": "24.799999px",
+        "w": 1440,
+        "h": 521
+      }
+    ],
+    "hookState0": {
+      "ready": false,
+      "tier": null,
+      "status": "idle",
+      "progress": 0,
+      "stage": 0,
+      "selected": null,
+      "hovered": null,
+      "timeline": "desktop",
+      "reducedMotion": false
+    },
+    "readyMs": 13705,
+    "hookState1": {
+      "ready": true,
+      "tier": "high",
+      "status": "ready",
+      "progress": 0.027431,
+      "stage": 0,
+      "selected": null,
+      "hovered": null,
+      "timeline": "desktop",
+      "reducedMotion": false
+    },
+    "canvasCount": 1,
+    "canvasOpacity": {
+      "canvas": "1",
+      "poster": "0"
+    },
+    "hookState2": {
+      "ready": true,
+      "tier": "high",
+      "status": "ready",
+      "progress": 0.780903,
+      "stage": 6,
+      "selected": null,
+      "hovered": null,
+      "timeline": "desktop",
+      "reducedMotion": false
+    },
+    "header": {
+      "top": 0,
+      "height": 65,
+      "position": "sticky",
+      "backdrop": "blur(12px)",
+      "bg": "oklab(0.167061 -0.001978 -0.004932 / 0.88)"
+    },
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 183
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "scrollHeight": 9597,
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "webkit-390": {
+    "loadMs": 4673,
+    "support": {
+      "webgl2": true,
+      "webgl": true,
+      "renderer": "Apple GPU",
+      "backdrop": true,
+      "webkitBackdrop": true,
+      "contentVisibility": true,
+      "has": true,
+      "textWrapBalance": true,
+      "textWrapPretty": true,
+      "popover": true,
+      "dialog": true,
+      "scrollbarGutter": true,
+      "fieldSizing": true,
+      "interpolateSize": false,
+      "anchor": true,
+      "colorMix": true,
+      "oklch": true,
+      "dvh": true,
+      "subgrid": true,
+      "scrollTimeline": true,
+      "ua": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15 SklopAudit-xb-webkit-home390/1790784436211-5",
+      "cores": 8,
+      "deviceMemory": null,
+      "htmlClass": "display_57a2f1e9-module__yAkwwW__variable displaysemibold_66077e30-module__u41IVa__variable condensed_ac4bd985-module__SOzDNq__variable public_sans_cf90169f-module__aFbQTG__variable martian_mono_b35e5d72-module__bZkIpW__variable tr-js"
+    },
+    "fonts": [
+      "display|700|normal|loaded",
+      "display Fallback|normal|normal|unloaded",
+      "displaySemibold|600|normal|loaded",
+      "displaySemibold Fallback|normal|normal|loaded",
+      "condensed|600|normal|loaded",
+      "condensed Fallback|normal|normal|unloaded",
+      "Public Sans|100 900|normal|unloaded",
+      "Public Sans|100 900|normal|loaded",
+      "Public Sans|100 900|normal|loaded",
+      "Public Sans Fallback|normal|normal|unloaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|unloaded",
+      "Martian Mono|100 800|normal|loaded",
+      "Martian Mono Fallback|normal|normal|loaded"
+    ],
+    "fontFamilies": [
+      {
+        "sel": "h1",
+        "font": "display, display Fallback, Arial, sans-serif, Arial, sans-serif",
+        "size": "36.5508px",
+        "lh": "36.5508px",
+        "w": 358,
+        "h": 110
+      },
+      {
+        "sel": "header nav",
+        "font": "Public Sans, Public Sans Fallback, Public Sans, Arial, sans-serif",
+        "size": "16px",
+        "lh": "24.799999px",
+        "w": 0,
+        "h": 0
+      },
+      {
+        "sel": "main p",
+        "font": "Public Sans, Public Sans Fallback, Public Sans, Arial, sans-serif",
+        "size": "18.0495px",
+        "lh": "27.074249px",
+        "w": 358,
+        "h": 81
+      },
+      {
+        "sel": "[data-testid=hero-search-input] input",
+        "font": "Public Sans, Public Sans Fallback, Public Sans, Arial, sans-serif",
+        "size": "16px",
+        "lh": "24px",
+        "w": 304,
+        "h": 54
+      },
+      {
+        "sel": "footer",
+        "font": "Public Sans, Public Sans Fallback, Public Sans, Arial, sans-serif",
+        "size": "16px",
+        "lh": "24.799999px",
+        "w": 390,
+        "h": 521
+      }
+    ],
+    "hookState0": {
+      "ready": false,
+      "tier": null,
+      "status": "idle",
+      "progress": 0,
+      "stage": 0,
+      "selected": null,
+      "hovered": null,
+      "timeline": "mobile",
+      "reducedMotion": false
+    },
+    "readyMs": 21194,
+    "hookState1": {
+      "ready": true,
+      "tier": "mid",
+      "status": "ready",
+      "progress": 0,
+      "stage": 0,
+      "selected": null,
+      "hovered": null,
+      "timeline": "mobile",
+      "reducedMotion": false
+    },
+    "canvasCount": 1,
+    "canvasOpacity": {
+      "canvas": "1",
+      "poster": "0"
+    },
+    "hookState2": {
+      "ready": true,
+      "tier": "mid",
+      "status": "ready",
+      "progress": 0.890403,
+      "stage": 7,
+      "selected": null,
+      "hovered": null,
+      "timeline": "mobile",
+      "reducedMotion": false
+    },
+    "header": {
+      "top": 0,
+      "height": 57,
+      "position": "sticky",
+      "backdrop": "blur(12px)",
+      "bg": "oklab(0.167061 -0.001978 -0.004932 / 0.88)"
+    },
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "scrollHeight": 12213,
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+ "product": {
+  "focused": "INPUT Količina",
+  "input": {
+   "outline": "none 2px rgb(255, 107, 26)",
+   "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0",
+   "border": "0px rgb(110, 118, 127)",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "group": {
+   "outline": "none 3px rgb(241, 236, 227)",
+   "shadow": "none",
+   "border": "1px rgb(110, 118, 127)",
+   "bg": "rgb(28, 32, 37)"
+  },
+  "focusVisible": true
+ }
+}

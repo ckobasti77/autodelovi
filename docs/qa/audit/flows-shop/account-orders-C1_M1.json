@@ -1,0 +1,26 @@
+[
+  {
+    "id": "C1",
+    "who": "customer",
+    "width": 390,
+    "error": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded.",
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "id": "M1",
+    "who": "mechanic",
+    "width": 390,
+    "error": "TimeoutError: page.waitForURL: Timeout 60000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until \"load\"\n============================================================",
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+]

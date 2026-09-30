@@ -1,0 +1,97 @@
+{
+ "product404": {
+  "status": 404,
+  "samples": [
+   {
+    "at": 4681,
+    "text": "",
+    "h1": 0
+   },
+   {
+    "at": 6257,
+    "text": "",
+    "h1": 0
+   },
+   {
+    "at": 11317,
+    "text": "",
+    "h1": 0
+   }
+  ],
+  "title": "SKLOP — Rasklopi auto. Nađi deo."
+ },
+ "global404": {
+  "status": 404,
+  "samples": [
+   {
+    "at": 3511,
+    "text": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po",
+    "h1": 1
+   },
+   {
+    "at": 5146,
+    "text": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po",
+    "h1": 1
+   },
+   {
+    "at": 10168,
+    "text": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po",
+    "h1": 1
+   }
+  ],
+  "title": "Stranica nije pronađena · SKLOP"
+ },
+ "cat404": {
+  "status": 404,
+  "samples": [
+   {
+    "at": 178,
+    "text": "",
+    "h1": 0
+   },
+   {
+    "at": 1834,
+    "text": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po",
+    "h1": 1
+   },
+   {
+    "at": 6864,
+    "text": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po",
+    "h1": 1
+   }
+  ],
+  "title": "SKLOP — Rasklopi auto. Nađi deo."
+ },
+ "overStock": {
+  "buyBox": "3.890 RSD sa PDV-om Malo na stanju · 1 kom. · Isporuka za 1–2 radna dana Dodaj u korpu : Kočioni disk zadnji 272 × 10 mm, puni Pošaljite upit",
+  "live": [
+   "Dodato u korpu: Kočioni disk zadnji 272 × 10 mm, puni."
+  ],
+  "cartCount": "1"
+ },
+ "bisValid": "2.990 RSD sa PDV-om Nema na stanju Javićemo vam na audit-flows-bis2-1790793974508@primer.rs kad stigne. Pošaljite upit",
+ "bisDuplicate": "2.990 RSD sa PDV-om Nema na stanju Već ste prijavljeni. Javićemo vam na audit-flows-bis2-1790793974508@primer.rs kad stigne. Pošaljite upit",
+ "bisProbe": [
+  {
+   "productSlug": "kocione-plocice-prednje-demo-0012",
+   "status": "active"
+  }
+ ],
+ "unsubAfterClick": "Odjava obaveštenja Link nije ispravan ili je već iskorišćen. Ako i dalje dobijate poruke, javite nam se. Kontakt",
+ "unsubRobots": "noindex, follow",
+ "log": {
+  "console": [
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "[CONVEX M(carts:addItem)] [Request ID: 756ef7879172b8d4] Server Error\nUncaught ConvexError: {\"available\":1,\"code\":\"OUT_OF_STOCK\",\"message\":\"Na stanju je još 1 kom.\"}\n    at loadOrderableProduct (../convex/carts.ts:123:6)\n    at async upsertLine (../convex/carts.ts:157:37)\n    at async handler (../convex/carts.ts:194:11)\n"
+  ],
+  "pageErrors": [],
+  "failedRequests": [],
+  "badResponses": [
+   "404 http://localhost:3100/deo/ne-postoji-demo-9999",
+   "404 http://localhost:3100/ovo-ne-postoji",
+   "404 http://localhost:3100/delovi/ne-postoji-kategorija"
+  ]
+ }
+}

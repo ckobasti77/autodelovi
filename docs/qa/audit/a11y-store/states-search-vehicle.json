@@ -1,0 +1,116 @@
+{
+ "search": {
+  "scenario": "search 1440 /",
+  "afterSlash": {
+   "tag": "input",
+   "role": "combobox",
+   "name": "Broj dela ili naziv",
+   "testid": "",
+   "inDialog": "Pretraga delova",
+   "rect": [
+    466,
+    158,
+    536,
+    42
+   ],
+   "outline": "none 2px"
+  },
+  "combobox": {
+   "expanded": "true",
+   "options": [
+    "Kočioni disk prednji 276 × 24 mmFebi Bilstein5Q0 615 505 R"
+   ],
+   "groups": [],
+   "lives": [
+    "polite:Učitava se 3D prikaz",
+    "polite:1 rezultat."
+   ]
+  },
+  "axeOpen": [],
+  "shotOpen": "docs/qa/audit/a11y-store/state-search-suggestions-1440.webp",
+  "afterDown": {
+   "activedescendant": "cbx_r_0_-opt-code-qh7033xy6e93dgf2w60ny831td8fam3k",
+   "option": "Kočioni disk prednji 276 × 24 mmFebi Bilstein5Q0 615 505 R",
+   "selected": "true"
+  },
+  "urlAfterEnter": "http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "focusAfterNav": {
+   "body": true
+  },
+  "title": "Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP"
+ },
+ "vehicle": {
+  "scenario": "vehicle picker 1440 /",
+  "trigger": {
+   "tag": "button",
+   "role": "",
+   "name": "Izaberite vozilo",
+   "testid": "vehicle-picker-trigger",
+   "inDialog": "",
+   "rect": [
+    1137,
+    14,
+    151,
+    36
+   ],
+   "outline": "solid 2px"
+  },
+  "snapshot": "- dialog \"Izaberite vozilo\":\n  - heading \"Izaberite vozilo\" [level=2]\n  - button \"Zatvori\"\n  - paragraph: 1/4 · Marka\n  - button \"Volkswagen\"\n  - button \"Audi\"\n  - button \"Škoda\"\n  - button \"SEAT\"\n  - button \"Cupra\"\n  - link \"Ne nalazim svoje vozilo\":\n    - /url: /upit",
+  "initialFocus": {
+   "tag": "button",
+   "role": "",
+   "name": "Zatvori",
+   "testid": "",
+   "inDialog": "Izaberite vozilo",
+   "rect": [
+    979,
+    306,
+    44,
+    44
+   ],
+   "outline": "solid 2px"
+  },
+  "dialogs": [
+   {
+    "name": "Izaberite vozilo",
+    "modal": null,
+    "desc": null
+   }
+  ],
+  "axe": [],
+  "shot": "docs/qa/audit/a11y-store/state-vehicle-dialog-1440.webp",
+  "tabSequence": [
+   "button:Volkswagen",
+   "button:Audi",
+   "button:Škoda",
+   "button:SEAT",
+   "button:Cupra",
+   "a:Ne nalazim svoje vozilo",
+   "button:Zatvori"
+  ],
+  "tabsOutside": 0,
+  "pick": [
+   "vw role button",
+   {
+    "tag": "div",
+    "role": "dialog",
+    "name": "Izaberite vozilo2/4 · ModelVolkswagenGolfPassatPoloCaddyTour",
+    "testid": "",
+    "inDialog": "Izaberite vozilo",
+    "rect": [
+     400,
+     216,
+     640,
+     468
+    ],
+    "outline": "none 2px"
+   }
+  ],
+  "snapshotStep2": "- dialog \"Izaberite vozilo\":\n  - heading \"Izaberite vozilo\" [level=2]\n  - button \"Zatvori\"\n  - button \"Nazad\"\n  - paragraph: 2/4 · ModelVolkswagen\n  - list \"Modeli\":\n    - listitem:\n      - button \"Golf\"\n    - listitem:\n      - button \"Passat\"\n    - listitem:\n      - button \"Polo\"\n    - listitem:\n      - button \"Caddy\"\n    - listitem:\n      - button \"Touran\"\n    - listitem:\n      - button \"Tiguan\"\n  - link \"Ne nalazim svoje vozilo\":\n    - /url: /upit",
+  "shotStep2": "docs/qa/audit/a11y-store/state-vehicle-step2-1440.webp",
+  "afterEscapeDialogs": [],
+  "afterEscapeFocus": {
+   "body": true
+  }
+ }
+}

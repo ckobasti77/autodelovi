@@ -1,0 +1,281 @@
+[
+  {
+    "role": "mechanic",
+    "w": "1440",
+    "route": "/majstor",
+    "status": 200,
+    "finalUrl": "/majstor",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "mechanic",
+    "w": "1440",
+    "route": "/majstor/brza-porudzbina",
+    "status": 200,
+    "finalUrl": "/majstor/brza-porudzbina",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "mechanic",
+    "w": "1440",
+    "route": "/majstor/porudzbine",
+    "status": 200,
+    "finalUrl": "/majstor/porudzbine",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "mechanic",
+    "w": "1440",
+    "route": "/majstor/omiljeno",
+    "status": 200,
+    "finalUrl": "/majstor/omiljeno",
+    "stuck": [],
+    "pending": 0,
+    "words": 13,
+    "states": {
+      "running": 1,
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "mechanic",
+    "w": "1440",
+    "route": "/majstor/vozila",
+    "status": 200,
+    "finalUrl": "/majstor/vozila",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "mechanic",
+    "w": "1440",
+    "route": "/majstor/cenovnik",
+    "status": 200,
+    "finalUrl": "/majstor/cenovnik",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "mechanic",
+    "w": "1440",
+    "route": "/majstor/upiti",
+    "status": 200,
+    "finalUrl": "/majstor/upiti",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "mechanic",
+    "w": "1440",
+    "route": "/majstor/profil",
+    "status": 200,
+    "finalUrl": "/majstor/profil",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "mechanic",
+    "w": "1440",
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "status": 200,
+    "finalUrl": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 41
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "mechanic",
+    "w": "390",
+    "route": "/majstor",
+    "status": 200,
+    "finalUrl": "/majstor",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "mechanic",
+    "w": "390",
+    "route": "/majstor/brza-porudzbina",
+    "status": 500,
+    "finalUrl": "/majstor/brza-porudzbina",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {},
+    "newConsole": [
+      "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    ],
+    "newPageErrors": []
+  },
+  {
+    "role": "mechanic",
+    "w": "390",
+    "route": "/majstor/porudzbine",
+    "status": 500,
+    "finalUrl": "/prijava?next=%2Fmajstor%2Fporudzbine",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {},
+    "newConsole": [
+      "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    ],
+    "newPageErrors": []
+  },
+  {
+    "role": "mechanic",
+    "w": "390",
+    "route": "/majstor/omiljeno",
+    "status": 500,
+    "finalUrl": "/prijava?next=%2Fmajstor%2Fomiljeno",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {},
+    "newConsole": [
+      "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    ],
+    "newPageErrors": []
+  },
+  {
+    "role": "mechanic",
+    "w": "390",
+    "route": "/majstor/vozila",
+    "status": 500,
+    "finalUrl": "/prijava?next=%2Fmajstor%2Fvozila",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {},
+    "newConsole": [
+      "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    ],
+    "newPageErrors": []
+  },
+  {
+    "role": "mechanic",
+    "w": "390",
+    "route": "/majstor/cenovnik",
+    "status": 200,
+    "finalUrl": "/majstor/cenovnik",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "mechanic",
+    "w": "390",
+    "route": "/majstor/upiti",
+    "status": 200,
+    "finalUrl": "/majstor/upiti",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "mechanic",
+    "w": "390",
+    "route": "/majstor/profil",
+    "status": 200,
+    "finalUrl": "/prijava?next=%2Fmajstor%2Fprofil",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 7
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "mechanic",
+    "w": "390",
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "status": 200,
+    "finalUrl": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 41
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  }
+]

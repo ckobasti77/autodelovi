@@ -1,0 +1,190 @@
+{
+  "390": {
+    "cartEmpty": {
+      "probe": {
+        "vw": 390,
+        "over": 0,
+        "offenders": [],
+        "tiny": [],
+        "tinyCount": 0,
+        "under44": [
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 1,
+        "smallInputs": []
+      },
+      "reveal": {
+        "stuck": [
+          "h2: Kontakt",
+          "li: Pon–pet 8–17, sub 8–14",
+          "li: Pošaljite upit — javljamo se u toku radnog dana",
+          "p: © 2026 SKLOP",
+          "p: Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi"
+        ],
+        "pending": 5,
+        "words": 0
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "cart": {
+      "probe": {
+        "vw": 390,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "a 282x21 \"Kočioni disk prednji 276 × 24 mm\"",
+          "a 282x21 \"Kočioni disk zadnji 272 × 10 mm, puni\"",
+          "a 316x21 \"Nastavi kupovinu\""
+        ],
+        "tinyCount": 3,
+        "under44": [
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 10,
+        "smallInputs": []
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "axe": []
+    },
+    "drawer": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "scrollH": 844,
+      "clientH": 844,
+      "probe": {
+        "vw": 390,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "a 265x21 \"Kočioni disk prednji 276 × 24 mm\"",
+          "a 265x21 \"Kočioni disk zadnji 272 × 10 mm, puni\""
+        ],
+        "tinyCount": 2,
+        "under44": [
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\""
+        ],
+        "under44Count": 9,
+        "smallInputs": []
+      },
+      "axe": []
+    },
+    "contact": {
+      "probe": {
+        "vw": 390,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 1,
+        "under44": [
+          "input 332x42 \"firstName\"",
+          "input 332x42 \"lastName\"",
+          "input 332x42 \"phone\"",
+          "input 332x42 \"email\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 5,
+        "smallInputs": []
+      },
+      "axe": []
+    },
+    "contactErrors": {
+      "active": "<div tabindex=\"-1\" role=\"alert\" data-reveal=\"off\" class=\"rounded-sm border border-danger bg-danger-subtle p-4 outline-none\"><p class=\"flex items-center gap-2 ty",
+      "invalid": [
+        "co-firstName",
+        "co-lastName",
+        "co-phone",
+        "co-email"
+      ]
+    },
+    "delivery": {
+      "probe": {
+        "vw": 390,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "button 20x20 \"BUTTON\"",
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 2,
+        "under44": [
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 1,
+        "smallInputs": []
+      },
+      "axeErrors": []
+    },
+    "payment": {
+      "probe": {
+        "vw": 390,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "button 20x20 \"BUTTON\"",
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 2,
+        "under44": [
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 1,
+        "smallInputs": []
+      },
+      "axe": []
+    },
+    "review": {
+      "probe": {
+        "vw": 390,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 1,
+        "under44": [
+          "input 332x42 \"vin\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 2,
+        "smallInputs": []
+      },
+      "axe": []
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+}

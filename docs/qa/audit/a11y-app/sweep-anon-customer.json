@@ -1,0 +1,1038 @@
+[
+  {
+    "role": "anon",
+    "width": 390,
+    "route": "/prijava",
+    "status": 200,
+    "finalUrl": "/prijava",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Prijava | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Prijava"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Napravite nalog\" 103x16",
+        "a \"Zaboravljena lozinka\" 134x16"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/anon-390-prijava.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "anon",
+    "width": 390,
+    "route": "/registracija",
+    "status": 200,
+    "finalUrl": "/registracija",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Registracija | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Novi nalog"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 1,
+      "clickableNonInteractive": 0,
+      "small": [
+        "button \"\" 20x20",
+        "input \"\" 20x20",
+        "a \"uslove korišćenja\" 112x16",
+        "a \"politiku privatnosti\" 122x16",
+        "a \"Prijavite se\" 72x16"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/anon-390-registracija.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "anon",
+    "width": 390,
+    "route": "/zaboravljena-lozinka",
+    "status": 200,
+    "finalUrl": "/zaboravljena-lozinka",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Zaboravljena lozinka | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Nova lozinka"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Prijava\" 44x16"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/anon-390-zaboravljena-lozinka.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "anon",
+    "width": 390,
+    "route": "/nova-lozinka",
+    "status": 404,
+    "finalUrl": "/nova-lozinka",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Stranica nije pronađena · SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Stranica nije pronađena"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "(no label)",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/anon-390-nova-lozinka.webp",
+    "console": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ],
+    "pageErrors": [],
+    "bad": [
+      "404 http://localhost:3100/nova-lozinka"
+    ]
+  },
+  {
+    "role": "anon",
+    "width": 390,
+    "route": "/za-majstore/registracija",
+    "status": 200,
+    "finalUrl": "/za-majstore/registracija",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Registracija servisa | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Registrujte servis"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Putanja",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 1,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Prijavite se\" 72x16",
+        "button \"Mehanika\" 20x20",
+        "input \"\" 20x20",
+        "button \"Autoelektrika\" 20x20",
+        "input \"\" 20x20",
+        "button \"Dijagnostika\" 20x20",
+        "input \"\" 20x20",
+        "button \"Klima\" 20x20"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/anon-390-za-majstore_registracija.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "anon",
+    "width": 390,
+    "route": "/za-majstore/hvala",
+    "status": 200,
+    "finalUrl": "/za-majstore/hvala",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Registracija primljena | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Registracija je primljena"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/anon-390-za-majstore_hvala.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "anon",
+    "width": 1440,
+    "route": "/prijava",
+    "status": 200,
+    "finalUrl": "/prijava",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Prijava | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Prijava"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Napravite nalog\" 103x16",
+        "a \"Zaboravljena lozinka\" 134x16"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/anon-1440-prijava.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "anon",
+    "width": 1440,
+    "route": "/registracija",
+    "status": 200,
+    "finalUrl": "/registracija",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Registracija | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Novi nalog"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 1,
+      "clickableNonInteractive": 0,
+      "small": [
+        "button \"\" 20x20",
+        "input \"\" 20x20",
+        "a \"uslove korišćenja\" 112x16",
+        "a \"politiku privatnosti\" 122x16",
+        "a \"Prijavite se\" 72x16"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/anon-1440-registracija.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "anon",
+    "width": 1440,
+    "route": "/zaboravljena-lozinka",
+    "status": 200,
+    "finalUrl": "/zaboravljena-lozinka",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Zaboravljena lozinka | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Nova lozinka"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Prijava\" 44x16"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/anon-1440-zaboravljena-lozinka.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "anon",
+    "width": 1440,
+    "route": "/nova-lozinka",
+    "status": 404,
+    "finalUrl": "/nova-lozinka",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Stranica nije pronađena · SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Stranica nije pronađena"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "(no label)",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/anon-1440-nova-lozinka.webp",
+    "console": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ],
+    "pageErrors": [],
+    "bad": [
+      "404 http://localhost:3100/nova-lozinka"
+    ]
+  },
+  {
+    "role": "anon",
+    "width": 1440,
+    "route": "/za-majstore/registracija",
+    "status": 200,
+    "finalUrl": "/za-majstore/registracija",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Registracija servisa | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Registrujte servis"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Putanja",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 1,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Početna\" 50x18",
+        "a \"Za majstore\" 72x18",
+        "a \"Prijavite se\" 72x16",
+        "button \"Mehanika\" 20x20",
+        "input \"\" 20x20",
+        "button \"Autoelektrika\" 20x20",
+        "input \"\" 20x20",
+        "button \"Dijagnostika\" 20x20"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/anon-1440-za-majstore_registracija.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "anon",
+    "width": 1440,
+    "route": "/za-majstore/hvala",
+    "status": 200,
+    "finalUrl": "/za-majstore/hvala",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Registracija primljena | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Registracija je primljena"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/anon-1440-za-majstore_hvala.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "customer",
+    "width": 390,
+    "route": "/nalog",
+    "status": 200,
+    "finalUrl": "/nalog",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Moj nalog | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Moj nalog"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Nalog",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Sve\" 45x21"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/customer-390-nalog.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "customer",
+    "width": 390,
+    "route": "/nalog/porudzbine",
+    "status": 200,
+    "finalUrl": "/nalog/porudzbine",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Porudžbine | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Moj nalog"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Nalog",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/customer-390-nalog_porudzbine.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "customer",
+    "width": 390,
+    "route": "/nalog/upiti",
+    "status": 200,
+    "finalUrl": "/nalog/upiti",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Upiti | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Moj nalog"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Nalog",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/customer-390-nalog_upiti.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "customer",
+    "width": 390,
+    "route": "/nalog/vozila",
+    "status": 200,
+    "finalUrl": "/nalog/vozila",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Vozila | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Moj nalog"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Nalog",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/customer-390-nalog_vozila.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "customer",
+    "width": 390,
+    "route": "/nalog/omiljeno",
+    "status": 404,
+    "finalUrl": "/nalog/omiljeno",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Stranica nije pronađena · SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Stranica nije pronađena"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "(no label)",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/customer-390-nalog_omiljeno.webp",
+    "console": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ],
+    "pageErrors": [],
+    "bad": [
+      "404 http://localhost:3100/nalog/omiljeno"
+    ]
+  },
+  {
+    "role": "customer",
+    "width": 390,
+    "route": "/nalog/profil",
+    "status": 200,
+    "finalUrl": "/nalog/profil",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Profil | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Moj nalog"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Nalog",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/customer-390-nalog_profil.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "customer",
+    "width": 1440,
+    "route": "/nalog",
+    "status": 200,
+    "finalUrl": "/nalog",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Moj nalog | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Moj nalog"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Nalog",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Sve\" 45x21"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/customer-1440-nalog.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "customer",
+    "width": 1440,
+    "route": "/nalog/porudzbine",
+    "status": 200,
+    "finalUrl": "/nalog/porudzbine",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Porudžbine | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Moj nalog"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Nalog",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/customer-1440-nalog_porudzbine.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "customer",
+    "width": 1440,
+    "route": "/nalog/upiti",
+    "status": 200,
+    "finalUrl": "/nalog/upiti",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Upiti | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Moj nalog"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Nalog",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/customer-1440-nalog_upiti.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "customer",
+    "width": 1440,
+    "route": "/nalog/vozila",
+    "status": 200,
+    "finalUrl": "/nalog/vozila",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Vozila | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Moj nalog"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Nalog",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/customer-1440-nalog_vozila.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "customer",
+    "width": 1440,
+    "route": "/nalog/omiljeno",
+    "status": 404,
+    "finalUrl": "/nalog/omiljeno",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Stranica nije pronađena · SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Stranica nije pronađena"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "(no label)",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/customer-1440-nalog_omiljeno.webp",
+    "console": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ],
+    "pageErrors": [],
+    "bad": [
+      "404 http://localhost:3100/nalog/omiljeno"
+    ]
+  },
+  {
+    "role": "customer",
+    "width": 1440,
+    "route": "/nalog/profil",
+    "status": 200,
+    "finalUrl": "/nalog/profil",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Profil | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Moj nalog"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Nalog",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/customer-1440-nalog_profil.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  }
+]

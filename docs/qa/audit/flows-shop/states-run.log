@@ -1,0 +1,78 @@
+{
+ "emptyCart": [],
+ "emptyCartText": "Korpa Korpa je prazna Dodajte delove iz kataloga ili pretražite po OEM broju. Pretražite po broju dela",
+ "emptyCheckoutText": "Porudžbina Bez plaćanja na sajtu. Potvrdu šaljemo e-poštom, a pre slanja vas zovemo ako nešto treba proveriti. Korpa je prazna Dodajte delove u korpu, pa se vratite na porudžbinu. Pretražite delove",
+ "product404": {
+  "status": 404,
+  "text": "",
+  "robots": "noindex"
+ },
+ "zero": {
+  "zero0001": "5.490 RSD sa PDV-om Po porudžbini · 6 dana Poruči : Kočioni disk prednji 288 × 25 mm, ventilirani Pošaljite upit",
+  "zero0012": "2.990 RSD sa PDV-om Nema na stanju Javi mi kad stigne E-pošta Pošaljite mi jedno obaveštenje kad artikal stigne. Veb sajt Obavesti me Pošaljite upit",
+  "zero0026": "4.990 RSD sa PDV-om Po porudžbini · 7 dana Poruči : Opruga prednja Pošaljite upit",
+  "zero0008": "9.890 RSD sa PDV-om Po porudžbini · 2 dana Poruči : Kočioni disk prednji 320 × 30 mm Pošaljite upit"
+ },
+ "low1": {
+  "buyBox": "3.890 RSD sa PDV-om Malo na stanju · 1 kom. · Isporuka za 1–2 radna dana Dodaj u korpu : Kočioni disk zadnji 272 × 10 mm, puni Pošaljite upit",
+  "max": "1",
+  "valueAfter5": "1",
+  "afterAdd": "3.890 RSD sa PDV-om Malo na stanju · 1 kom. · Isporuka za 1–2 radna dana Dodato : Kočioni disk zadnji 272 × 10 mm, puni Pošaljite upit",
+  "secondAddErr": "TimeoutError: locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#buy-box').getByText('Dodato').first() to be visible\n",
+  "cart": [
+   "Kočioni disk zadnji 272 × 10 mm, puni TRW · OEM 1K0 615 540 Q 3.890 RSD × 1 3.890 RSD"
+  ],
+  "cartText": "Korpa Kočioni disk zadnji 272 × 10 mm, puni TRW · OEM 1K0 615 540 Q 3.890 RSD × 1 3.890 RSD Međuzbir 3.890 RSD Dostava Preuzimanje 0 RSD · kurir 450 RSD Još 6.110 RSD do besplatne dostave. U cenu je uračunat PDV 20 %: 648,33 RSD Nastavi na porudžbinu Bez plaćanja karticom na sajtu. Plaćate pouzećem, pri preuzimanju ili virmanom. Nastavi kupovinu",
+  "incDisabled": true
+ },
+ "bis": {
+  "present": 1,
+  "invalid": "2.990 RSD sa PDV-om Nema na stanju Javi mi kad stigne E-pošta E-mail adresa nije ispravna. Primer: ime@primer.rs. Pošaljite mi jedno obaveštenje kad artikal stigne. Veb sajt Obavesti me Pošaljite upit",
+  "valid": "2.990 RSD sa PDV-om Nema na stanju Javi mi kad stigne E-pošta Pošaljite mi jedno obaveštenje kad artikal stigne. Potrebna je saglasnost da vam pošaljemo obaveštenje. Veb sajt Obavesti me Pošaljite upit",
+  "duplicate": "2.990 RSD sa PDV-om Nema na stanju Javi mi kad stigne E-pošta Pošaljite mi jedno obaveštenje kad artikal stigne. Potrebna je saglasnost da vam pošaljemo obaveštenje. Veb sajt Obavesti me Pošaljite upit",
+  "probe": []
+ },
+ "unsubscribeBad": {
+  "status": 200,
+  "text": "Odjava obaveštenja Posle odjave više vam ne šaljemo poruke „Stiglo je“ za artikle koje pratite na ovoj e-adresi. Porudžbine i upiti ovo ne menja. Odjavi me"
+ },
+ "orderBad": {
+  "status": 404,
+  "h1": "Stranica nije pronađena",
+  "text": "Stranica nije pronađena Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas. Pretraži Broj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju. Vaše vozilo Izaberite vozilo marka, model, motor Izaberi"
+ },
+ "thanksBad": {
+  "status": 404,
+  "h1": "Stranica nije pronađena",
+  "text": "Stranica nije pronađena Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas. Pretraži Broj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju. Vaše vozilo Izaberite vozilo marka, model, motor Izaberi"
+ },
+ "proformaBad": {
+  "status": 404,
+  "h1": "Stranica nije pronađena",
+  "text": "Stranica nije pronađena Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas. Pretraži Broj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju. Vaše vozilo Izaberite vozilo marka, model, motor Izaberi"
+ },
+ "inquiryBad": {
+  "status": 404,
+  "h1": "Stranica nije pronađena",
+  "text": "Stranica nije pronađena Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas. Pretraži Broj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju. Vaše vozilo Izaberite vozilo marka, model, motor Izaberi"
+ },
+ "log": {
+  "console": [
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "[CONVEX M(carts:addItem)] [Request ID: 8d2cce0cb74de027] Server Error\nUncaught ConvexError: {\"available\":1,\"code\":\"OUT_OF_STOCK\",\"message\":\"Na stanju je još 1 kom.\"}\n    at loadOrderableProduct (../convex/carts.ts:123:6)\n    at async upsertLine (../convex/carts.ts:157:37)\n    at async handler (../convex/carts.ts:194:11)\n",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)",
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "pageErrors": [],
+  "failedRequests": [],
+  "badResponses": [
+   "404 http://localhost:3100/deo/ne-postoji-demo-9999",
+   "404 http://localhost:3100/porudzbina/nevazeci-token",
+   "404 http://localhost:3100/porudzbina/hvala/nevazeci-token",
+   "404 http://localhost:3100/porudzbina/nevazeci-token/predracun",
+   "404 http://localhost:3100/upit/nevazeci-token"
+  ]
+ }
+}

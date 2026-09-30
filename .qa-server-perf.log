@@ -1,0 +1,5 @@
+[1m[38;2;173;127;168m▲ Next.js 16.3.6[39m[22m
+- Local:         http://localhost:3200
+- Network:       http://192.168.0.6:3200
+[32m[1m✓[22m[39m Ready in 6.6s
+[32m[1m✓[22m[39m Running next.config.ts took 231ms

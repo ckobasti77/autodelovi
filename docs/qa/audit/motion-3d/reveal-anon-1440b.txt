@@ -1,0 +1,6 @@
+ok   anon 1440 /porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw → /porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   anon 1440 /porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw/predracun → /porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw/predracun [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   anon 1440 /porudzbina/hvala/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw → /porudzbina/hvala/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw [200] stuck=0 pending=0 words=0 states={"done":8} console=0 pageErr=0
+ok   anon 1440 /upit/3UMmrdzw1RNGw5ToQh06cANjxl8c_-Ajvp7eBwA1ayI → /upit/3UMmrdzw1RNGw5ToQh06cANjxl8c_-Ajvp7eBwA1ayI [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   anon 1440 /upit/hvala/3UMmrdzw1RNGw5ToQh06cANjxl8c_-Ajvp7eBwA1ayI → /upit/hvala/3UMmrdzw1RNGw5ToQh06cANjxl8c_-Ajvp7eBwA1ayI [200] stuck=0 pending=0 words=0 states={"done":7} console=0 pageErr=0
+ok   anon 1440 /obavestenja/odjava/invalid-token → /obavestenja/odjava/invalid-token [200] stuck=0 pending=0 words=0 states={"done":7} console=0 pageErr=0

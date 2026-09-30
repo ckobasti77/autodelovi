@@ -1,0 +1,96 @@
+-- after / input[combobox]#cbx_r_0_-input "Broj dela ili naziv" @158 vis:none
+-- product url http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004
+-- focus after nav BODY
+-- buybox aria - text: 4.690 RSD sa PDV-om Malo na stanju · 3 kom. · Isporuka za 1–2 radna dana
+- 'group "Količina: Kočioni disk prednji 276 × 24 mm"':
+  - button "Smanji količinu" [disabled]
+  - spinbutton "Količina": "1"
+  - button "Povećaj količinu"
+- 'button "Dodaj u korpu : Kočioni disk prednji 276 × 24 mm"'
+- link "Pošaljite upit":
+  - /url: /upit?proizvod=kocioni-disk-prednji-276-24-mm-demo-0004
+-- tabs to quantity 6
+-- quantity el input# "Količina" @571 vis:none
+-- quantity attrs {"role":null,"type":"number","min":"1","max":"3","now":"1","label":"Količina"}
+-- quantity after ArrowUp 2
+-- tabs quantity→add 2
+-- cart-live Dodato u korpu: Kočioni disk prednji 276 × 24 mm.
+-- live regions ["polite:Dodato u korpu: Kočioni disk prednji 276 × 24 mm."]
+-- cart button name Korpa, 2 artikla
+-- focus after add button# "Dodaj u korpu: Kočioni disk prednji 276 × 24 mm" @570 vis:solid
+-- axe product after add []
+-- shift-tabs to cart 9
+-- drawer focus a# "Korpa, 2 artikla" @10 vis:solid
+-- drawer aria - dialog "Korpa (2)":
+  - heading "Korpa (2)" [level=2]
+  - button "Zatvori"
+  - list "Stavke u korpi":
+    - listitem:
+      - link "Kočioni disk prednji 276 × 24 mm":
+        - /url: /deo/kocioni-disk-prednji-276-24-mm-demo-0004
+      - paragraph: Febi Bilstein · OEM 5Q0 615 505 R
+      - paragraph: 4.690 RSD × 2
+      - 'group "Količina: Kočioni disk prednji 276 × 24 mm"':
+        - button "Smanji količinu"
+        - spinbutton "Količina": "2"
+        - button "Povećaj količinu"
+      - text: 9.380 RSD
+      - button "Ukloni Kočioni disk prednji 276 × 24 mm"
+  - term: Međuzbir
+  - definition: 9.380 RSD
+  - term: Dostava
+  - definition: Preuzimanje 0 RSD · kurir 450 RSD
+  - paragraph: Još 620 RSD do besplatne dostave.
+  - paragraph: "U cenu je uračunat PDV 20 %: 1.563,33 RSD"
+  - link "Nastavi na porudžbinu":
+    - /url: /porudzbina
+  - button "Nastavi kupovinu"
+-- axe drawer []
+-- drawer tab seq ["a# \"Kočioni disk prednji 276 × 24 mm\" @105 vis:solid","button# \"Smanji količinu\" @181 vis:solid","input# \"Količina\" @181 vis:none","button# \"Povećaj količinu\" @181 vis:solid","button# \"Ukloni Kočioni disk prednji 276 × 24 mm\" @224 vis:solid","a# \"Nastavi na porudžbinu\" @780 vis:solid","button# \"Nastavi kupovinu\" @840 vis:solid","button# \"Zatvori\" @12 vis:solid","a# \"Kočioni disk prednji 276 × 24 mm\" @105 vis:solid","button# \"Smanji količinu\" @181 vis:solid","input# \"Količina\" @181 vis:none","button# \"Povećaj količinu\" @181 vis:solid","button# \"Ukloni Kočioni disk prednji 276 × 24 mm\" @224 vis:solid","a# \"Nastavi na porudžbinu\" @780 vis:solid"]
+-- tabs to checkout 8
+-- checkout focus BODY
+-- stepper aria - navigation "Koraci porudžbine":
+  - list:
+    - listitem: "Korak 1: Kontakt"
+    - listitem: "Korak 2: Dostava"
+    - listitem: "Korak 3: Plaćanje"
+    - listitem: "Korak 4: Pregled"
+-- tabs to Dalje (empty) 31
+-- focus after empty submit step1 button# "Dalje" @848 vis:solid
+-- fields step1 ["co-firstName: label=\"Ime\" req= invalid=true ac=given-name desc=\"Upišite ime.\"","co-lastName: label=\"Prezime\" req= invalid=true ac=family-name desc=\"Upišite prezime.\"","co-phone: label=\"Telefon\" req= invalid=true ac=tel desc=\"Upišite broj telefona.\"","co-email: label=\"E-pošta\" req= invalid=true ac=email desc=\"Upišite e-mail adresu.\"","co-isCompany: label=\"Kupujem kao firmaUnesite podatke firme z\" req= invalid= ac= desc=\"Unesite podatke firme za račun i predračun (virman).\""]
+-- summary aria - alert:
+  - paragraph: "Proverite 4 polja:"
+  - list:
+    - listitem:
+      - link "Upišite ime.":
+        - /url: "#co-firstName"
+    - listitem:
+      - link "Upišite prezime.":
+        - /url: "#co-lastName"
+    - listitem:
+      - link "Upišite broj telefona.":
+        - /url: "#co-phone"
+    - listitem:
+      - link "Upišite e-mail adresu.":
+        - /url: "#co-email"
+-- axe step1 errors []
+-- focus after summary link a# "SKLOP — početna" @549 vis:solid
+-- focus step2 input#co-phone "" @126 vis:none
+-- fields step2 ["co-firstName: label=\"Ime\" req= invalid= ac=given-name desc=\"\"","co-lastName: label=\"Prezime\" req= invalid= ac=family-name desc=\"\"","co-phone: label=\"Telefon\" req= invalid=true ac=tel desc=\"Upišite broj telefona.\"","co-email: label=\"E-pošta\" req= invalid=true ac=email desc=\"Upišite e-mail adresu.\"","co-isCompany: label=\"Kupujem kao firmaUnesite podatke firme z\" req= invalid= ac= desc=\"Unesite podatke firme za račun i predračun (virman).\""]
+-- focus after empty submit step2 button# "Dalje" @312 vis:solid
+-- fields step2 errors ["co-firstName: label=\"Ime\" req= invalid= ac=given-name desc=\"\"","co-lastName: label=\"Prezime\" req= invalid= ac=family-name desc=\"\"","co-phone: label=\"Telefon\" req= invalid=true ac=tel desc=\"Upišite broj telefona.\"","co-email: label=\"E-pošta\" req= invalid=true ac=email desc=\"Upišite e-mail adresu.\"","co-isCompany: label=\"Kupujem kao firmaUnesite podatke firme z\" req= invalid= ac= desc=\"Unesite podatke firme za račun i predračun (virman).\""]
+-- axe step2 errors []
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.focus: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('#co-street')
+
+    at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\audit\a11y-store-buyflow.mjs:163:34 {
+  log: [ "  - waiting for locator('#co-street')" ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.23.2

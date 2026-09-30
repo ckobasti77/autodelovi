@@ -1,0 +1,48 @@
+1440 0 {"el":"a \"Preskoči na sadržaj\"","scrollY":0,"progress":0,"stage":0,"status":"idle","rectY":12,"inViewport":true}
+1440 1 {"el":"a \"SKLOP — početna\"","scrollY":0,"progress":0,"stage":0,"status":"idle","rectY":10,"inViewport":true}
+1440 2 {"el":"a \"Delovi\"","scrollY":0,"progress":0,"stage":0,"status":"idle","rectY":10,"inViewport":true}
+1440 3 {"el":"a \"Vozila\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":10,"inViewport":true}
+1440 4 {"el":"a \"Za majstore\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":10,"inViewport":true}
+1440 5 {"el":"a \"Upit po broju šasije\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":10,"inViewport":true}
+1440 6 {"el":"button \"Broj dela ili naziv/\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":12,"inViewport":true}
+1440 7 {"el":"button \"Izaberite vozilo\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":14,"inViewport":true}
+1440 8 {"el":"a \"Moj nalog\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":10,"inViewport":true}
+1440 9 {"el":"a \"Korpa\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":10,"inViewport":true}
+1440 10 {"el":"input \"Broj dela ili naziv\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":392,"inViewport":true}
+1440 11 {"el":"button \"Pretraži\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":391,"inViewport":true}
+1440 12 {"el":"button \"Izaberite vozilomarka, model, mo\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":520,"inViewport":true}
+1440 13 {"el":"a \"Nemate broj? Pošaljite broj šasi\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":591,"inViewport":true}
+1440 14 {"el":"button \"00 Sklopljen automobil\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":829,"inViewport":true}
+1440 15 {"el":"button \"01 Karoserija, stakla i svetla\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":829,"inViewport":true}
+1440 16 {"el":"button \"02 Točkovi\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":829,"inViewport":true}
+1440 17 {"el":"button \"03 Kočnice, vešanje, upravljanje\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":829,"inViewport":true}
+1440 18 {"el":"button \"04 Pomoćni agregati, hlađenje, u\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":829,"inViewport":true}
+1440 19 {"el":"button \"05 Motor, turbina, gorivo, palje\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":829,"inViewport":true}
+1440 20 {"el":"button \"06 Menjač, kvačilo, poluosovine\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":829,"inViewport":true}
+1440 21 {"el":"button \"07 Izduvni sistem\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":829,"inViewport":true}
+1440 22 {"el":"button \"Rasklopi\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":839,"inViewport":true}
+1440 23 {"el":"button \"Lista delova\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":839,"inViewport":true}
+1280 0 {"el":"a \"Preskoči na sadržaj\"","scrollY":0,"progress":0,"stage":0,"status":"idle","rectY":12,"inViewport":true}
+1280 1 {"el":"a \"SKLOP — početna\"","scrollY":0,"progress":0,"stage":0,"status":"idle","rectY":10,"inViewport":true}
+1280 2 {"el":"a \"Delovi\"","scrollY":0,"progress":0,"stage":0,"status":"idle","rectY":10,"inViewport":true}
+1280 3 {"el":"a \"Vozila\"","scrollY":0,"progress":0,"stage":0,"status":"idle","rectY":10,"inViewport":true}
+1280 4 {"el":"a \"Za majstore\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":10,"inViewport":true}
+1280 5 {"el":"a \"Upit po broju šasije\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":10,"inViewport":true}
+1280 6 {"el":"button \"Broj dela ili naziv/\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":12,"inViewport":true}
+1280 7 {"el":"button \"Izaberite vozilo\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":14,"inViewport":true}
+1280 8 {"el":"a \"Moj nalog\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":10,"inViewport":true}
+1280 9 {"el":"a \"Korpa\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":10,"inViewport":true}
+1280 10 {"el":"input \"Broj dela ili naziv\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":376,"inViewport":true}
+1280 11 {"el":"button \"Pretraži\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":375,"inViewport":true}
+1280 12 {"el":"button \"Izaberite vozilomarka, model, mo\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":505,"inViewport":true}
+1280 13 {"el":"a \"Nemate broj? Pošaljite broj šasi\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":576,"inViewport":true}
+1280 14 {"el":"button \"00 Sklopljen automobil\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":729,"inViewport":true}
+1280 15 {"el":"button \"01 Karoserija, stakla i svetla\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":729,"inViewport":true}
+1280 16 {"el":"button \"02 Točkovi\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":729,"inViewport":true}
+1280 17 {"el":"button \"03 Kočnice, vešanje, upravljanje\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":729,"inViewport":true}
+1280 18 {"el":"button \"04 Pomoćni agregati, hlađenje, u\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":729,"inViewport":true}
+1280 19 {"el":"button \"05 Motor, turbina, gorivo, palje\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":729,"inViewport":true}
+1280 20 {"el":"button \"06 Menjač, kvačilo, poluosovine\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":729,"inViewport":true}
+1280 21 {"el":"button \"07 Izduvni sistem\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":729,"inViewport":true}
+1280 22 {"el":"button \"Rasklopi\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":739,"inViewport":true}
+1280 23 {"el":"button \"Lista delova\"","scrollY":0,"progress":0,"stage":0,"status":"loading","rectY":739,"inViewport":true}

@@ -1,0 +1,220 @@
+{
+  "width": 1440,
+  "skipShot": "docs/qa/audit/a11y-app/kbd-1440-01-skip-link.webp",
+  "tabOrder": [
+    "1. a \"Pretrage\" /admin/pretrage | solid 2px rgb(255, 107, 26) off -2px  ",
+    "2. a \"Izvori\" /admin/izvori | solid 2px rgb(255, 107, 26) off -2px  ",
+    "3. a \"E-pošta\" /admin/mejlovi | solid 2px rgb(255, 107, 26) off -2px  ",
+    "4. a \"Izvoz\" /admin/izvoz | solid 2px rgb(255, 107, 26) off -2px  ",
+    "5. a \"Revizija\" /admin/revizija | solid 2px rgb(255, 107, 26) off -2px  ",
+    "6. a \"Privatnost\" /admin/privatnost | solid 2px rgb(255, 107, 26) off -2px  ",
+    "7. a \"Cenovni razredi\" /admin/cenovni-razredi | solid 2px rgb(255, 107, 26) off -2px  ",
+    "8. a \"Korisnici\" /admin/korisnici | solid 2px rgb(255, 107, 26) off -2px  ",
+    "9. a \"Podešavanja\" /admin/podesavanja | solid 2px rgb(255, 107, 26) off -2px  ",
+    "10. button \"Broj porudžbine, OEM, telefon…Ctrl K\"  | solid 2px rgb(184, 71, 10) off -2px  ",
+    "11. button \"Obaveštenja, nepročitano: 100\"  | solid 2px rgb(184, 71, 10) off -2px  ",
+    "12. button \"Nalog: Vlasnik\"  | solid 2px rgb(184, 71, 10) off -2px  ",
+    "13. a \"Popuni u podešavanjima\" /admin/podesavanja?tab=firma | solid 2px rgb(184, 71, 10) off 2px  ",
+    "14. a \"Porudžbine danas7393 čeka potvrdu\" /admin/porudzbine | solid 2px rgb(184, 71, 10) off -2px  ",
+    "15. a \"Vrednost danas1.797.330RSD sa PDV-om\" /admin/porudzbine | solid 2px rgb(184, 71, 10) off -2px  ",
+    "16. a \"Poslednjih 7 dana73više nego prethodnih 7 dana (0)\" /admin/porudzbine | solid 2px rgb(184, 71, 10) off -2px  ",
+    "17. a \"Upiti bez odgovora45najstariji čeka 9 h 28 min rad\" /admin/upiti | solid 2px rgb(184, 71, 10) off -2px  ",
+    "18. a \"Majstori na čekanju0registracije za odobrenje\" /admin/majstori | solid 2px rgb(184, 71, 10) off -2px  ",
+    "19. a \"Bez zaliha15još 29 sa malo zaliha\" /admin/lager | solid 2px rgb(184, 71, 10) off -2px  ",
+    "20. a \"SK-2026-000001PorudžbinaPetar Demo · 15.270 RSD9 h\" /admin/porudzbine/SK-2026-000001 | solid 2px rgb(184, 71, 10) off -2px  ",
+    "21. a \"UP-2026-000002UpitDemo Kupac · Traži deo · Pumpa z\" /admin/upiti/UP-2026-000002 | solid 2px rgb(184, 71, 10) off -2px  ",
+    "22. a \"SK-2026-000009PorudžbinaNikola Stanković · 7.740 R\" /admin/porudzbine/SK-2026-000009 | solid 2px rgb(184, 71, 10) off -2px  ",
+    "23. a \"UP-2026-000005UpitMarko Jovanović · Po broju šasij\" /admin/upiti/UP-2026-000005 | solid 2px rgb(184, 71, 10) off -2px  ",
+    "24. a \"SK-2026-000010PorudžbinaNikola Stanković · 7.740 R\" /admin/porudzbine/SK-2026-000010 | solid 2px rgb(184, 71, 10) off -2px  ",
+    "25. a \"UP-2026-000006UpitMarko Jovanović · Po broju šasij\" /admin/upiti/UP-2026-000006 | solid 2px rgb(184, 71, 10) off -2px  ",
+    "26. a \"SK-2026-000011PorudžbinaAuto servis Petrović · 7.2\" /admin/porudzbine/SK-2026-000011 | solid 2px rgb(184, 71, 10) off -2px  ",
+    "27. a \"UP-2026-000007UpitAna Petrović · Po broju šasije ·\" /admin/upiti/UP-2026-000007 | solid 2px rgb(184, 71, 10) off -2px  ",
+    "28. a \"SK-2026-000012PorudžbinaNikola Stanković · 7.740 R\" /admin/porudzbine/SK-2026-000012 | solid 2px rgb(184, 71, 10) off -2px  ",
+    "29. a \"UP-2026-000008UpitMarko Jovanović · Po broju šasij\" /admin/upiti/UP-2026-000008 | solid 2px rgb(184, 71, 10) off -2px  ",
+    "30. a \"Cela revizija\" /admin/revizija | solid 2px rgb(184, 71, 10) off 2px  ",
+    "31. button \"Prikaži tabelu\"  | solid 2px rgb(184, 71, 10) off -2px  ",
+    "32. a \"Sve pretrage\" /admin/pretrage | solid 2px rgb(184, 71, 10) off 2px  ",
+    "33. body \"undefined\" undefined | undefined undefined OFFSCREEN",
+    "34. a \"Preskoči na sadržaj\" #sadrzaj | solid 2px rgb(18, 21, 24) off 2px  ",
+    "35. a \"SKLOP — početna\" /admin | solid 2px rgb(255, 107, 26) off 2px  ",
+    "36. a \"Pregled\" /admin | solid 2px rgb(255, 107, 26) off -2px  ",
+    "37. a \"Porudžbine93 novih\" /admin/porudzbine | solid 2px rgb(255, 107, 26) off -2px  ",
+    "38. a \"Upiti41 novih\" /admin/upiti | solid 2px rgb(255, 107, 26) off -2px  ",
+    "39. a \"Kupci\" /admin/kupci | solid 2px rgb(255, 107, 26) off -2px  ",
+    "40. a \"Majstori\" /admin/majstori | solid 2px rgb(255, 107, 26) off -2px  ",
+    "41. a \"Proizvodi\" /admin/proizvodi | solid 2px rgb(255, 107, 26) off -2px  ",
+    "42. a \"Uvoz iz Excela\" /admin/uvoz | solid 2px rgb(255, 107, 26) off -2px  ",
+    "43. a \"Kategorije\" /admin/kategorije | solid 2px rgb(255, 107, 26) off -2px  ",
+    "44. a \"Vozila\" /admin/vozila | solid 2px rgb(255, 107, 26) off -2px  ",
+    "45. a \"Proizvođači\" /admin/proizvodjaci | solid 2px rgb(255, 107, 26) off -2px  "
+  ],
+  "afterSkip": {
+    "tag": "a",
+    "role": "",
+    "name": "Lager15 bez zaliha",
+    "id": "",
+    "href": "/admin/lager",
+    "outline": "solid 2px rgb(255, 107, 26) off -2px",
+    "shadow": "",
+    "rect": [
+      8,
+      542,
+      215,
+      40
+    ],
+    "inViewport": true
+  },
+  "afterSkipNextTab": {
+    "tag": "a",
+    "role": "",
+    "name": "Pretrage",
+    "id": "",
+    "href": "/admin/pretrage",
+    "outline": "solid 2px rgb(255, 107, 26) off -2px",
+    "shadow": "",
+    "rect": [
+      8,
+      620,
+      215,
+      40
+    ],
+    "inViewport": true
+  },
+  "paletteOpenFocus": {
+    "tag": "input",
+    "role": "combobox",
+    "name": "Pretraga: broj porudžbine, OEM, šifra, telefon, e-",
+    "id": "",
+    "href": "",
+    "outline": "none 2px rgb(184, 71, 10) off 2px",
+    "shadow": "",
+    "rect": [
+      457,
+      153,
+      558,
+      40
+    ],
+    "inViewport": true
+  },
+  "paletteDialog": {
+    "name": "Pretraga i komande",
+    "modal": null,
+    "describedby": null
+  },
+  "paletteState": {
+    "activedescendant": "_r_1_-0",
+    "options": 11,
+    "firstOptionName": "SK-2026-000009Nikola StankovićNova",
+    "lbChildrenRoles": [
+      "presentation",
+      "presentation",
+      "presentation",
+      "presentation"
+    ]
+  },
+  "paletteLive": [
+    {
+      "tag": "span",
+      "role": "",
+      "live": "polite",
+      "text": ""
+    }
+  ],
+  "paletteAfterArrows": {
+    "id": "_r_1_-2",
+    "text": "SK-2026-000097Nikola Stanković · +381641234567Nova",
+    "selected": "true",
+    "visible": true
+  },
+  "paletteShot": "docs/qa/audit/a11y-app/kbd-1440-02-palette-results.webp",
+  "paletteAxe": [],
+  "paletteNoResults": {
+    "listboxText": "Nema rezultata za „qqqzzzxx“.",
+    "liveTexts": []
+  },
+  "paletteNoResultsShot": "docs/qa/audit/a11y-app/kbd-1440-03-palette-noresults.webp",
+  "afterPaletteEsc": {
+    "tag": "body"
+  },
+  "shortcuts": {
+    "title": "Prečice na tastaturi",
+    "text": "Prečice na tastaturiCtrl+KPretraga i komande (na Macu ⌘ K)/Pretraga na stranici?Ova listagzatimdIdi na: PregledgzatimpIdi na: PorudžbinegzatimuIdi na: UpitigzatimkIdi na: KupcigzatimmIdi na: MajstorigzatimaIdi na: ProizvodigzatimiIdi na: Uvoz iz ExcelagzatimlIdi na: LagergzatimsIdi na: PodešavanjanzatimaNovi artikal↑zatim↓Kretanje kroz redove tabeleEnterOtvori izabrani redRazmakIzaberi red (grupne"
+  },
+  "shortcutsFocus": {
+    "tag": "button",
+    "role": "",
+    "name": "Zatvori",
+    "id": "",
+    "href": "",
+    "outline": "solid 2px rgb(184, 71, 10) off 2px",
+    "shadow": "",
+    "rect": [
+      979,
+      173,
+      44,
+      44
+    ],
+    "inViewport": true
+  },
+  "shortcutsShot": "docs/qa/audit/a11y-app/kbd-1440-04-shortcuts.webp",
+  "bellButton": {
+    "tag": "button",
+    "role": "",
+    "name": "Obaveštenja, nepročitano: 100",
+    "id": "",
+    "href": "",
+    "outline": "solid 2px rgb(184, 71, 10) off -2px",
+    "shadow": "",
+    "rect": [
+      1270,
+      8,
+      40,
+      40
+    ],
+    "inViewport": true
+  },
+  "bellOpenFocus": {
+    "tag": "button",
+    "role": "",
+    "name": "Označi sve kao pročitano",
+    "id": "",
+    "href": "",
+    "outline": "solid 2px rgb(184, 71, 10) off -2px",
+    "shadow": "",
+    "rect": [
+      1142,
+      69,
+      152,
+      18
+    ],
+    "inViewport": true
+  },
+  "bellPopover": {
+    "role": "dialog",
+    "labelledby": null,
+    "label": null,
+    "unreadDots": 8,
+    "items": 8,
+    "text": "ObaveštenjaOznači sve kao pročitanoMalo na stanju: DEMO-0004pre 2 min · Kočioni disk prednji 276 × 24 mm — ostalo 3 kom.Nova porudžbina SK-2026-000122pre 6 min · Ukupno 1.267 RSDNova porudžbina SK-202"
+  },
+  "bellAxe": [],
+  "bellShot": "docs/qa/audit/a11y-app/kbd-1440-05-bell-open.webp",
+  "afterBellEsc": {
+    "tag": "button",
+    "role": "",
+    "name": "Obaveštenja, nepročitano: 100",
+    "id": "",
+    "href": "",
+    "outline": "solid 2px rgb(184, 71, 10) off -2px",
+    "shadow": "",
+    "rect": [
+      1270,
+      8,
+      40,
+      40
+    ],
+    "inViewport": true
+  },
+  "charts": [],
+  "dashboardAxe": []
+}

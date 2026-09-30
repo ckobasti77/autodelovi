@@ -1,0 +1,186 @@
+[
+  {
+    "role": "customer",
+    "w": "1440",
+    "route": "/nalog",
+    "status": 200,
+    "finalUrl": "/nalog",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 8
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "customer",
+    "w": "1440",
+    "route": "/nalog/porudzbine",
+    "status": 200,
+    "finalUrl": "/nalog/porudzbine",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "customer",
+    "w": "1440",
+    "route": "/nalog/upiti",
+    "status": 200,
+    "finalUrl": "/nalog/upiti",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 7
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "customer",
+    "w": "1440",
+    "route": "/nalog/vozila",
+    "status": 200,
+    "finalUrl": "/nalog/vozila",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "customer",
+    "w": "1440",
+    "route": "/nalog/omiljeno",
+    "status": 404,
+    "finalUrl": "/nalog/omiljeno",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 7
+    },
+    "newConsole": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ],
+    "newPageErrors": []
+  },
+  {
+    "role": "customer",
+    "w": "1440",
+    "route": "/nalog/profil",
+    "status": 200,
+    "finalUrl": "/nalog/profil",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "customer",
+    "w": "390",
+    "route": "/nalog",
+    "status": 200,
+    "finalUrl": "/nalog",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 8
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "customer",
+    "w": "390",
+    "route": "/nalog/porudzbine",
+    "status": 200,
+    "finalUrl": "/nalog/porudzbine",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "customer",
+    "w": "390",
+    "route": "/nalog/upiti",
+    "status": 200,
+    "finalUrl": "/nalog/upiti",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "customer",
+    "w": "390",
+    "route": "/nalog/vozila",
+    "status": 200,
+    "finalUrl": "/nalog/vozila",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "customer",
+    "w": "390",
+    "route": "/nalog/omiljeno",
+    "status": 404,
+    "finalUrl": "/nalog/omiljeno",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 7
+    },
+    "newConsole": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ],
+    "newPageErrors": []
+  },
+  {
+    "role": "customer",
+    "w": "390",
+    "route": "/nalog/profil",
+    "status": 200,
+    "finalUrl": "/nalog/profil",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 6
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  }
+]

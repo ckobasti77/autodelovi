@@ -1,0 +1,3529 @@
+[
+ {
+  "route": "/delovi/kocnice",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kočnice za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "h1s": [
+    "Kočnice"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [
+    "span: Delovi",
+    "span: Volkswagen,",
+    "span: Cupra",
+    "span: vozila.",
+    "span: Pretraga",
+    "span: broju,",
+    "span: i",
+    "span: bez",
+    "span: plaćanja",
+    "span: Volkswagen,",
+    "span: SEAT",
+    "span: Cupra",
+    "span: su",
+    "span: žigovi",
+    "span: svojih",
+    "span: samo",
+    "span: označili",
+    "span: vozila",
+    "span: su",
+    "span: nije"
+   ],
+   "pending": 0,
+   "words": 58
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "help": "Elements must meet minimum color contrast ratio thresholds",
+    "nodes": 13,
+    "targets": [
+     ".max-w-\\[36ch\\] > .reveal-word:nth-child(3)",
+     ".max-w-\\[36ch\\] > .reveal-word:nth-child(6)",
+     ".max-w-\\[36ch\\] > .reveal-word:nth-child(12)",
+     ".max-w-\\[80ch\\] > .reveal-word:nth-child(4)",
+     ".max-w-\\[80ch\\] > .reveal-word:nth-child(7)"
+    ],
+    "summary": "Fix any of the following:\n  Element has insufficient color contrast of 1.51 (foreground color: #353637, background color: #121518, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+   }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Auto delovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "h1s": [
+    "Rasklopiauto.Nađi deo."
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Faze rasklapanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 14
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/delovi",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Svi delovi po sistemima vozila | SKLOP",
+   "h1s": [
+    "Delovi po sistemima"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/delovi/kocioni-diskovi",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "h1s": [
+    "Kočioni diskovi"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "landings-title",
+    "related-title",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/delovi/kocioni-diskovi/volkswagen/golf",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kočioni diskovi za VW Golf | SKLOP",
+   "h1s": [
+    "Kočioni diskovi za VW Golf"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Srodne strane",
+    "related-title",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/delovi/kocioni-diskovi/volkswagen",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kočioni diskovi za Volkswagen — cene i stanje | SKLOP",
+   "h1s": [
+    "Kočioni diskovi za Volkswagen"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Srodne strane",
+    "related-title",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP",
+   "h1s": [
+    "Kočioni disk prednji 276 × 24 mm"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "landings-title",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [
+    "Kočioni disk prednji 276 × 24 mm — ilustracija kategorije kočioni diskovi"
+   ],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/vozila",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Delovi po vozilu — VW, Audi, Škoda, SEAT, Cupra | SKLOP",
+   "h1s": [
+    "Delovi po vozilu"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/deo/kocione-plocice-prednje-demo-0012",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kočione pločice prednje Bosch 6R0 698 000 MK | SKLOP",
+   "h1s": [
+    "Kočione pločice prednje"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "landings-title",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [
+    "Kočione pločice prednje — ilustracija kategorije kočione pločice"
+   ],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/vozila/volkswagen",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Delovi za Volkswagen — svi modeli | SKLOP",
+   "h1s": [
+    "Delovi za Volkswagen"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "brand-landings-title",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/vozila/volkswagen/golf",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Delovi za VW Golf — sve generacije | SKLOP",
+   "h1s": [
+    "Delovi za Volkswagen Golf"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "model-landings-title",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/pretraga?q=5Q0615505R",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Pretraga: 5Q0615505R | SKLOP",
+   "h1s": [
+    "Rezultati za „5Q0615505R“"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/vozila/volkswagen/golf/golf-7",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Delovi za VW Golf VII (2012–2020) | SKLOP",
+   "h1s": [
+    "Delovi za VW Golf VII"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Motor",
+    "generation-landings-title",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/pretraga?q=disk",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Pretraga: disk | SKLOP",
+   "h1s": [
+    "Rezultati za „disk“"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Kategorije",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/pretraga?q=qqqzzz999",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Pretraga: qqqzzz999 | SKLOP",
+   "h1s": [
+    "Nema rezultata za „qqqzzz999“"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/ponuda/kocione-plocice-golf",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kočione pločice za VW Golf | SKLOP",
+   "h1s": [
+    "Kočione pločice za VW Golf — proverene po OEM broju"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/korpa",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Korpa | SKLOP",
+   "h1s": [
+    "Korpa"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/porudzbina",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Porudžbina | SKLOP",
+   "h1s": [
+    "Porudžbina"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Status porudžbine | SKLOP",
+   "h1s": [
+    "Porudžbina"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw/predracun",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Predračun | SKLOP",
+   "h1s": [
+    "Predračun"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/porudzbina/hvala/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Porudžbina je primljena | SKLOP",
+   "h1s": [
+    "Porudžbina je primljena."
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/upit",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Upit za deo po broju šasije (VIN) | SKLOP",
+   "h1s": [
+    "Ne nalazite deo?"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/upit/3UMmrdzw1RNGw5ToQh06cANjxl8c_-Ajvp7eBwA1ayI",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Upit i ponuda | SKLOP",
+   "h1s": [
+    "Upit i ponuda"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/za-majstore",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Delovi za auto servise — rabat i brza porudžbina | SKLOP",
+   "h1s": [
+    "Za majstore"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/za-majstore/registracija",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Registracija servisa | SKLOP",
+   "h1s": [
+    "Registrujte servis"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/prijava",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Prijava | SKLOP",
+   "h1s": [
+    "Prijava"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/registracija",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Registracija | SKLOP",
+   "h1s": [
+    "Novi nalog"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/zaboravljena-lozinka",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Zaboravljena lozinka | SKLOP",
+   "h1s": [
+    "Nova lozinka"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/o-nama",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "O nama | SKLOP",
+   "h1s": [
+    "O nama"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/kontakt",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kontakt | SKLOP",
+   "h1s": [
+    "Kontakt"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/dostava-i-placanje",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Dostava i plaćanje | SKLOP",
+   "h1s": [
+    "Dostava i plaćanje"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/reklamacije-i-povrat",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Reklamacije i povrat | SKLOP",
+   "h1s": [
+    "Reklamacije i povrat"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/uslovi-koriscenja",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Uslovi korišćenja i kupovine | SKLOP",
+   "h1s": [
+    "Uslovi korišćenja i kupovine"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/politika-privatnosti",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Politika privatnosti | SKLOP",
+   "h1s": [
+    "Politika privatnosti"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/kolacici",
+  "width": "1440",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kolačići | SKLOP",
+   "h1s": [
+    "Kolačići"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/ovo-ne-postoji",
+  "width": "1440",
+  "status": 404,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Stranica nije pronađena · SKLOP",
+   "h1s": [
+    "Stranica nije pronađena"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "nf-popular",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/delovi/kocnice",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kočnice za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "h1s": [
+    "Kočnice"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Auto delovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "h1s": [
+    "Rasklopiauto.Nađi deo."
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Faze rasklapanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/delovi",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Svi delovi po sistemima vozila | SKLOP",
+   "h1s": [
+    "Delovi po sistemima"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/delovi/kocioni-diskovi",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "h1s": [
+    "Kočioni diskovi"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "landings-title",
+    "related-title",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/delovi/kocioni-diskovi/volkswagen/golf",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kočioni diskovi za VW Golf | SKLOP",
+   "h1s": [
+    "Kočioni diskovi za VW Golf"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Srodne strane",
+    "related-title",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/delovi/kocioni-diskovi/volkswagen",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kočioni diskovi za Volkswagen — cene i stanje | SKLOP",
+   "h1s": [
+    "Kočioni diskovi za Volkswagen"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Srodne strane",
+    "related-title",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP",
+   "h1s": [
+    "Kočioni disk prednji 276 × 24 mm"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "landings-title",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [
+    "Kočioni disk prednji 276 × 24 mm — ilustracija kategorije kočioni diskovi"
+   ],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/vozila",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Delovi po vozilu — VW, Audi, Škoda, SEAT, Cupra | SKLOP",
+   "h1s": [
+    "Delovi po vozilu"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/deo/kocione-plocice-prednje-demo-0012",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kočione pločice prednje Bosch 6R0 698 000 MK | SKLOP",
+   "h1s": [
+    "Kočione pločice prednje"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "landings-title",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [
+    "Kočione pločice prednje — ilustracija kategorije kočione pločice"
+   ],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/vozila/volkswagen",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Delovi za Volkswagen — svi modeli | SKLOP",
+   "h1s": [
+    "Delovi za Volkswagen"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "brand-landings-title",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/vozila/volkswagen/golf",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Delovi za VW Golf — sve generacije | SKLOP",
+   "h1s": [
+    "Delovi za Volkswagen Golf"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "model-landings-title",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/pretraga?q=5Q0615505R",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Pretraga: 5Q0615505R | SKLOP",
+   "h1s": [
+    "Rezultati za „5Q0615505R“"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/vozila/volkswagen/golf/golf-7",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Delovi za VW Golf VII (2012–2020) | SKLOP",
+   "h1s": [
+    "Delovi za VW Golf VII"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Motor",
+    "generation-landings-title",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/pretraga?q=disk",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Pretraga: disk | SKLOP",
+   "h1s": [
+    "Rezultati za „disk“"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Kategorije",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/pretraga?q=qqqzzz999",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Pretraga: qqqzzz999 | SKLOP",
+   "h1s": [
+    "Nema rezultata za „qqqzzz999“"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/ponuda/kocione-plocice-golf",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kočione pločice za VW Golf | SKLOP",
+   "h1s": [
+    "Kočione pločice za VW Golf — proverene po OEM broju"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/korpa",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Korpa | SKLOP",
+   "h1s": [
+    "Korpa"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Status porudžbine | SKLOP",
+   "h1s": [
+    "Porudžbina"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/porudzbina",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Porudžbina | SKLOP",
+   "h1s": [
+    "Porudžbina"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw/predracun",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Predračun | SKLOP",
+   "h1s": [
+    "Predračun"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/porudzbina/hvala/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Porudžbina je primljena | SKLOP",
+   "h1s": [
+    "Porudžbina je primljena."
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/upit/3UMmrdzw1RNGw5ToQh06cANjxl8c_-Ajvp7eBwA1ayI",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Upit i ponuda | SKLOP",
+   "h1s": [
+    "Upit i ponuda"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/upit",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Upit za deo po broju šasije (VIN) | SKLOP",
+   "h1s": [
+    "Ne nalazite deo?"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/za-majstore",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Delovi za auto servise — rabat i brza porudžbina | SKLOP",
+   "h1s": [
+    "Za majstore"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/prijava",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Prijava | SKLOP",
+   "h1s": [
+    "Prijava"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/za-majstore/registracija",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Registracija servisa | SKLOP",
+   "h1s": [
+    "Registrujte servis"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/registracija",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Registracija | SKLOP",
+   "h1s": [
+    "Novi nalog"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/o-nama",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "O nama | SKLOP",
+   "h1s": [
+    "O nama"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/zaboravljena-lozinka",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Zaboravljena lozinka | SKLOP",
+   "h1s": [
+    "Nova lozinka"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/kontakt",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kontakt | SKLOP",
+   "h1s": [
+    "Kontakt"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/dostava-i-placanje",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Dostava i plaćanje | SKLOP",
+   "h1s": [
+    "Dostava i plaćanje"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [
+   {
+    "id": "scrollable-region-focusable",
+    "impact": "serious",
+    "help": "Scrollable region must have keyboard access",
+    "nodes": 1,
+    "targets": [
+     ".overflow-x-auto"
+    ],
+    "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+   }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/reklamacije-i-povrat",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Reklamacije i povrat | SKLOP",
+   "h1s": [
+    "Reklamacije i povrat"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/uslovi-koriscenja",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Uslovi korišćenja i kupovine | SKLOP",
+   "h1s": [
+    "Uslovi korišćenja i kupovine"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/kolacici",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Kolačići | SKLOP",
+   "h1s": [
+    "Kolačići"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [
+   {
+    "id": "scrollable-region-focusable",
+    "impact": "serious",
+    "help": "Scrollable region must have keyboard access",
+    "nodes": 3,
+    "targets": [
+     ".my-6.overflow-x-auto.rounded-sm:nth-child(3)",
+     ".my-6.overflow-x-auto.rounded-sm:nth-child(5)",
+     ".my-6.overflow-x-auto.rounded-sm:nth-child(7)"
+    ],
+    "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+   }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/politika-privatnosti",
+  "width": "390",
+  "status": 200,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Politika privatnosti | SKLOP",
+   "h1s": [
+    "Politika privatnosti"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "Putanja",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [
+   {
+    "id": "scrollable-region-focusable",
+    "impact": "serious",
+    "help": "Scrollable region must have keyboard access",
+    "nodes": 1,
+    "targets": [
+     ".my-6"
+    ],
+    "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+   }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "bad": []
+ },
+ {
+  "route": "/ovo-ne-postoji",
+  "width": "390",
+  "status": 404,
+  "structure": {
+   "lang": "sr-Latn-RS",
+   "title": "Stranica nije pronađena · SKLOP",
+   "h1s": [
+    "Stranica nije pronađena"
+   ],
+   "firstHeading": 1,
+   "headingSkips": [],
+   "mains": 1,
+   "navs": [
+    "Glavna navigacija",
+    "nf-popular",
+    "Delovi",
+    "Kupovina",
+    "Pravne informacije"
+   ],
+   "banners": 1,
+   "footers": 1,
+   "skip": {
+    "text": "Preskoči na sadržaj",
+    "href": "#sadrzaj",
+    "targetExists": true,
+    "targetTag": "MAIN",
+    "targetTabIndex": "-1"
+   },
+   "imgsNoAlt": [],
+   "imgAlts": [],
+   "emptyLinks": [],
+   "dupIds": []
+  },
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "axe": [],
+  "console": [
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "pageErrors": [],
+  "bad": []
+ }
+]

@@ -1,0 +1,188 @@
+{
+  "chromium-1440": {
+    "steps": [
+      {
+        "name": "home",
+        "ok": true,
+        "ms": 31692
+      },
+      {
+        "name": "header-search",
+        "ok": true,
+        "ms": 10983,
+        "focused": "combobox",
+        "url": "/pretraga?q=5q0-615-505-r"
+      },
+      {
+        "name": "search-results",
+        "ok": true,
+        "ms": 34608,
+        "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004"
+      },
+      {
+        "name": "product",
+        "ok": true,
+        "ms": 4669,
+        "qtyFound": true,
+        "qtyType": "number",
+        "qtyBox": {
+          "x": 891,
+          "y": 571.140625,
+          "width": 56,
+          "height": 42
+        },
+        "qtyStyle": {
+          "appearance": "textfield",
+          "h": 42,
+          "w": 56,
+          "font": "16px"
+        },
+        "qtyAfter": "2",
+        "overflow": {
+          "over": 0,
+          "offenders": []
+        }
+      },
+      {
+        "name": "add-to-cart",
+        "ok": true,
+        "ms": 4372,
+        "count": "1"
+      },
+      {
+        "name": "category-vehicle-filter",
+        "ok": true,
+        "ms": 26590,
+        "cards": 5,
+        "url": "/delovi/kocioni-diskovi?marka=volkswagen&model=golf&generacija=golf-7"
+      },
+      {
+        "name": "cart-drawer",
+        "ok": true,
+        "ms": 11705
+      },
+      {
+        "name": "checkout",
+        "ok": true,
+        "ms": 24075,
+        "codChecked": true,
+        "number": "SK-2026-000110"
+      }
+    ],
+    "email": "audit-xbrowser-chromium-1440-1790785002024@primer.rs",
+    "number": "SK-2026-000110",
+    "probe": {
+      "customerType": "guest",
+      "deliveryMethod": "courier",
+      "eventTypes": [
+        "order.created"
+      ],
+      "hasAttribution": true,
+      "itemCount": 1,
+      "paymentMethod": "cod",
+      "source": "web",
+      "status": "nova",
+      "totalPara": 514000
+    },
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "chromium-390": {
+    "steps": [
+      {
+        "name": "home",
+        "ok": true,
+        "ms": 12906
+      },
+      {
+        "name": "header-search",
+        "ok": true,
+        "ms": 3587,
+        "focused": "combobox",
+        "url": "/pretraga?q=5q0-615-505-r"
+      },
+      {
+        "name": "search-results",
+        "ok": true,
+        "ms": 23340,
+        "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004"
+      },
+      {
+        "name": "product",
+        "ok": true,
+        "ms": 2877,
+        "qtyFound": true,
+        "qtyType": "number",
+        "qtyBox": {
+          "x": 61,
+          "y": 872.609375,
+          "width": 56,
+          "height": 42
+        },
+        "qtyStyle": {
+          "appearance": "textfield",
+          "h": 42,
+          "w": 56,
+          "font": "16px"
+        },
+        "qtyAfter": "2",
+        "overflow": {
+          "over": 0,
+          "offenders": []
+        }
+      },
+      {
+        "name": "add-to-cart",
+        "ok": true,
+        "ms": 1611,
+        "count": "1"
+      },
+      {
+        "name": "category-vehicle-filter",
+        "ok": true,
+        "ms": 16714,
+        "cards": 5,
+        "url": "/delovi/kocioni-diskovi?marka=volkswagen&model=golf&generacija=golf-7"
+      },
+      {
+        "name": "cart-drawer",
+        "ok": true,
+        "ms": 14017
+      },
+      {
+        "name": "checkout",
+        "ok": true,
+        "ms": 12702,
+        "codChecked": true,
+        "number": "SK-2026-000111"
+      }
+    ],
+    "email": "audit-xbrowser-chromium-390-1790785105461@primer.rs",
+    "number": "SK-2026-000111",
+    "probe": {
+      "customerType": "guest",
+      "deliveryMethod": "courier",
+      "eventTypes": [
+        "order.created"
+      ],
+      "hasAttribution": true,
+      "itemCount": 1,
+      "paymentMethod": "cod",
+      "source": "web",
+      "status": "nova",
+      "totalPara": 514000
+    },
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+}

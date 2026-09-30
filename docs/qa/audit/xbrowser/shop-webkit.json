@@ -1,0 +1,187 @@
+{
+  "webkit-1440": {
+    "steps": [
+      {
+        "name": "home",
+        "ok": true,
+        "ms": 68610
+      },
+      {
+        "name": "header-search",
+        "ok": true,
+        "ms": 28888,
+        "focused": "combobox",
+        "url": "/pretraga?q=5q0-615-505-r"
+      },
+      {
+        "name": "search-results",
+        "ok": true,
+        "ms": 7628,
+        "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004"
+      },
+      {
+        "name": "product",
+        "ok": true,
+        "ms": 5978,
+        "qtyFound": true,
+        "qtyType": "number",
+        "qtyBox": {
+          "x": 891,
+          "y": 570.75,
+          "width": 56,
+          "height": 42
+        },
+        "qtyStyle": {
+          "appearance": "textfield",
+          "h": 42,
+          "w": 56,
+          "font": "16px"
+        },
+        "qtyAfter": "2",
+        "overflow": {
+          "over": 0,
+          "offenders": []
+        }
+      },
+      {
+        "name": "add-to-cart",
+        "ok": true,
+        "ms": 3291,
+        "count": "1"
+      },
+      {
+        "name": "category-vehicle-filter",
+        "ok": true,
+        "ms": 50419,
+        "cards": 5,
+        "url": "/delovi/kocioni-diskovi?marka=volkswagen&model=golf&generacija=golf-7"
+      },
+      {
+        "name": "cart-drawer",
+        "ok": true,
+        "ms": 12557
+      },
+      {
+        "name": "checkout",
+        "ok": true,
+        "ms": 53894,
+        "codChecked": true,
+        "number": "SK-2026-000128"
+      }
+    ],
+    "email": "audit-xbrowser-webkit-1440-1790793107148@primer.rs",
+    "number": "SK-2026-000128",
+    "probe": {
+      "customerType": "guest",
+      "deliveryMethod": "courier",
+      "eventTypes": [
+        "order.created"
+      ],
+      "hasAttribution": true,
+      "itemCount": 1,
+      "paymentMethod": "cod",
+      "source": "web",
+      "status": "nova",
+      "totalPara": 514000
+    },
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "webkit-390": {
+    "steps": [
+      {
+        "name": "home",
+        "ok": true,
+        "ms": 20355
+      },
+      {
+        "name": "header-search",
+        "ok": true,
+        "ms": 32381,
+        "focused": "combobox",
+        "url": "/pretraga?q=5q0-615-505-r"
+      },
+      {
+        "name": "search-results",
+        "ok": false,
+        "ms": 41480,
+        "error": "TimeoutError: page.waitForURL: Timeout 30000ms exceeded. | =========================== logs =========================== | waiting for navigation until \"load\""
+      },
+      {
+        "name": "fallback-goto-product",
+        "ok": true
+      },
+      {
+        "name": "product",
+        "ok": true,
+        "ms": 8826,
+        "qtyFound": true,
+        "qtyType": "number",
+        "qtyBox": {
+          "x": 61,
+          "y": 872.34375,
+          "width": 56,
+          "height": 42
+        },
+        "qtyStyle": {
+          "appearance": "textfield",
+          "h": 42,
+          "w": 56,
+          "font": "16px"
+        },
+        "qtyAfter": "2",
+        "overflow": {
+          "over": 0,
+          "offenders": []
+        }
+      },
+      {
+        "name": "add-to-cart",
+        "ok": true,
+        "ms": 8648,
+        "count": "1"
+      },
+      {
+        "name": "category-vehicle-filter",
+        "ok": true,
+        "ms": 105737,
+        "cards": 5,
+        "url": "/delovi/kocioni-diskovi?marka=volkswagen&model=golf&generacija=golf-7"
+      },
+      {
+        "name": "cart-drawer",
+        "ok": false,
+        "ms": 63803,
+        "error": "TimeoutError: page.waitForURL: Timeout 30000ms exceeded. | =========================== logs =========================== | waiting for navigation until \"load\""
+      },
+      {
+        "name": "checkout",
+        "ok": false,
+        "ms": 30834,
+        "error": "TimeoutError: locator.waitFor: Timeout 30000ms exceeded. | Call log: |   - waiting for getByTestId('checkout-step-contact') to be visible"
+      }
+    ],
+    "email": "audit-xbrowser-webkit-390-1790793467840@primer.rs",
+    "csp": [],
+    "log": {
+      "console": [
+        "TypeError: Load failed",
+        "TypeError: Load failed",
+        "TypeError: Load failed",
+        "TypeError: Load failed"
+      ],
+      "pageErrors": [
+        "Fetch API cannot load http: /localhost:3100/delovi/kocioni-diskovi?_rsc=-xlHsezuCG0QR-fE due to access control checks.",
+        "Fetch API cannot load http: /localhost:3100/upit?proizvod=kocioni-disk-prednji-276-24-mm-demo-0004&_rsc=-xlHsezuCG0QR-fE due to access control checks.",
+        "Fetch API cannot load http: /localhost:3100/upit?_rsc=pN8bX5vSYyFj_sQa due to access control checks."
+      ],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "label": "category-to-product",
+    "run": 1,
+    "t0": 23619,
+    "url": null,
+    "h1": null,
+    "busy": 0,
+    "progress": 0
+  },
+  {
+    "label": "category-to-product",
+    "run": 2,
+    "t0": 19655.79999999702,
+    "url": null,
+    "h1": null,
+    "busy": 0,
+    "progress": 0
+  },
+  {
+    "label": "category-to-product",
+    "run": 3,
+    "t0": 32034.70000000298,
+    "url": null,
+    "h1": null,
+    "busy": 0,
+    "progress": 0
+  },
+  {
+    "label": "product-to-category",
+    "run": 1,
+    "t0": 22241.5,
+    "url": null,
+    "h1": null,
+    "busy": 0,
+    "progress": 0
+  },
+  {
+    "label": "product-to-category",
+    "run": 2,
+    "t0": 23628.20000000298,
+    "url": null,
+    "h1": null,
+    "busy": 0,
+    "progress": 0
+  },
+  {
+    "label": "product-to-category",
+    "run": 3,
+    "t0": 21084.79999999702,
+    "url": 11157,
+    "h1": 11157,
+    "busy": 0,
+    "progress": 0
+  }
+]

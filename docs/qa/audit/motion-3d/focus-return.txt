@@ -1,0 +1,22 @@
+FAIL 1440 header search (Escape) open=true inside=input[] "Broj dela ili naziv" after=BODY
+FAIL 1440 header vehicle picker (Escape) open=true inside=button[] "Zatvori" after=BODY
+FAIL 1440 hero vehicle field (Escape) open=true inside=button[] "Zatvori" after=BODY
+ok   1440 parts list (Escape) open=false inside=button[parts-list-trigger] "Lista delova" after=button[parts-list-trigger] "Lista delova"
+FAIL 1440 parts list (close button) (button) open=true inside=button[] "Zatvori" after=BODY
+FAIL 1440 header search (catalog page) (Escape) open=true inside=input[] "Broj dela ili naziv" after=BODY
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.goto: Timeout 90000ms exceeded.
+Call log:
+  - navigating to "http://localhost:3100/", waiting until "load"
+
+    at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\audit\motion-3d-focus.mjs:51:14 {
+  log: [
+    '  - navigating to "http://localhost:3100/", waiting until "load"'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.23.2

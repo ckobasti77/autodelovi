@@ -1,0 +1,242 @@
+{
+  "1440 /admin": {
+    "url": "http://localhost:3100/admin",
+    "ms": 15752,
+    "title": "Pregled · Administracija",
+    "h1": "Pregled",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-pregled.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/porudzbine": {
+    "url": "http://localhost:3100/admin/porudzbine",
+    "ms": 5938,
+    "title": "Porudžbine · Administracija",
+    "h1": "Porudžbine",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-porudzbine.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/porudzbine?status=sve": {
+    "url": "http://localhost:3100/admin/porudzbine?status=sve",
+    "ms": 15147,
+    "title": "Porudžbine · Administracija",
+    "h1": "Porudžbine",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-porudzbine_status_sve.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/upiti": {
+    "url": "http://localhost:3100/admin/upiti",
+    "ms": 20751,
+    "title": "Upiti · Administracija",
+    "h1": "Upiti",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-upiti.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/proizvodi": {
+    "url": "http://localhost:3100/admin/proizvodi",
+    "ms": 31930,
+    "title": "Proizvodi · Administracija",
+    "h1": "Proizvodi",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-proizvodi.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/proizvodi/novi": {
+    "url": "http://localhost:3100/admin/proizvodi/novi",
+    "ms": 32245,
+    "title": "Novi artikal · Administracija",
+    "h1": "Novi artikal",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-proizvodi_novi.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/kategorije": {
+    "url": "http://localhost:3100/admin/kategorije",
+    "ms": 45812,
+    "title": "Kategorije · Administracija",
+    "h1": "Kategorije",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-kategorije.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/vozila": {
+    "url": "http://localhost:3100/admin/vozila",
+    "ms": 13304,
+    "title": "Vozila · Administracija",
+    "h1": "Vozila",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-vozila.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/proizvodjaci": {
+    "url": "http://localhost:3100/admin/proizvodjaci",
+    "ms": 39519,
+    "title": "Proizvođači · Administracija",
+    "h1": "Proizvođači",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-proizvodjaci.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/lager": {
+    "url": "http://localhost:3100/admin/lager",
+    "ms": 39175,
+    "title": "Lager · Administracija",
+    "h1": "Lager",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-lager.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/kupci": {
+    "url": "http://localhost:3100/admin/kupci",
+    "ms": 27963,
+    "title": "Kupci · Administracija",
+    "h1": "Kupci",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-kupci.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/majstori": {
+    "url": "http://localhost:3100/admin/majstori",
+    "ms": 34276,
+    "title": "Majstori · Administracija",
+    "h1": "Majstori",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-majstori.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/cenovni-razredi": {
+    "url": "http://localhost:3100/admin/cenovni-razredi",
+    "ms": 38774,
+    "title": "Cenovni razredi · Administracija",
+    "h1": "Cenovni razredi",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-cenovni-razredi.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/uvoz": {
+    "url": "http://localhost:3100/admin/uvoz",
+    "ms": 33948,
+    "title": "Uvoz iz Excela · Administracija",
+    "h1": "Uvoz iz Excela",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-uvoz.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/uvoz/istorija": {
+    "url": "http://localhost:3100/admin/uvoz/istorija",
+    "ms": 45910,
+    "title": "Istorija uvoza · Administracija",
+    "h1": "Istorija uvoza",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-uvoz_istorija.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  }
+}

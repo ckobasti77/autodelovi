@@ -1,0 +1,44 @@
+{
+  "chromium": {
+    "var(--font-ui)|100": 249.4,
+    "var(--font-ui)|300": 260.4,
+    "var(--font-ui)|400": 262.5,
+    "var(--font-ui)|600": 266.1,
+    "var(--font-ui)|700": 268.4,
+    "var(--font-ui)|900": 276.1,
+    "var(--font-mono)|100": 372.4,
+    "var(--font-mono)|300": 372.4,
+    "var(--font-mono)|400": 372.4,
+    "var(--font-mono)|600": 372.4,
+    "var(--font-mono)|700": 372.4,
+    "var(--font-mono)|900": 372.4
+  },
+  "firefox": {
+    "var(--font-ui)|100": 249.3,
+    "var(--font-ui)|300": 260.3,
+    "var(--font-ui)|400": 262.5,
+    "var(--font-ui)|600": 266.1,
+    "var(--font-ui)|700": 268.4,
+    "var(--font-ui)|900": 276.1,
+    "var(--font-mono)|100": 372.4,
+    "var(--font-mono)|300": 372.4,
+    "var(--font-mono)|400": 372.4,
+    "var(--font-mono)|600": 372.4,
+    "var(--font-mono)|700": 372.4,
+    "var(--font-mono)|900": 372.4
+  },
+  "webkit": {
+    "var(--font-ui)|100": 249.4,
+    "var(--font-ui)|300": 260.4,
+    "var(--font-ui)|400": 262.5,
+    "var(--font-ui)|600": 266.1,
+    "var(--font-ui)|700": 268.4,
+    "var(--font-ui)|900": 276.1,
+    "var(--font-mono)|100": 372.4,
+    "var(--font-mono)|300": 372.4,
+    "var(--font-mono)|400": 372.4,
+    "var(--font-mono)|600": 372.4,
+    "var(--font-mono)|700": 372.4,
+    "var(--font-mono)|900": 372.4
+  }
+}

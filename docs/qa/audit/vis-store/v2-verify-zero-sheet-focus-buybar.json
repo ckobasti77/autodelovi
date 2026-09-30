@@ -1,0 +1,43 @@
+{
+ "zero390": {
+  "h1": "Nema rezultata za „qqzzvvkk“",
+  "text": "Pretraži\n\nBroj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju.\n\nNema rezultata za „qqzzvvkk“\n\nOvaj deo nije u katalogu\n\nZa „qqzzvvkk“ nemamo artikal u katalogu. Pošaljite upit — proverićemo kod dobavljača i javiti vam se u toku radnog dana.\n\nPošaljite upit"
+ },
+ "zero1440": {
+  "h1": "Nema rezultata za „qqzzvvkk“",
+  "text": "Pretraži\n\nBroj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju.\n\nNema rezultata za „qqzzvvkk“\n\nOvaj deo nije u katalogu\n\nZa „qqzzvvkk“ nemamo artikal u katalogu. Pošaljite upit — proverićemo kod dobavljača i javiti vam se u toku radnog dana.\n\nPošaljite upit"
+ },
+ "sheet": {
+  "top": 68,
+  "h": 776,
+  "vh": 844,
+  "btns": [
+   "Smanji panel 64x24 @73",
+   "Zatvori 44x44 @97",
+   "Vozilo 358x44 @182",
+   "Izaberite vozilo 358x44 @230",
+   "Dostupnost 358x44 @299",
+   "null 20x20 @355",
+   "Proizvođač 358x44 @412",
+   "null 20x20 @468",
+   "null 20x20 @512",
+   "null 20x20 @556",
+   "null 20x20 @600",
+   "null 20x20 @644",
+   "null 20x20 @688",
+   "Kvalitet 358x44 @745",
+   "null 20x20 @801",
+   "null 20x20 @856",
+   "null 20x20 @929",
+   "Cena 358x44 @997",
+   "Primeni cenu 0x0 @0",
+   "Poništi 82x44 @784",
+   "Prikaži 9 rezultata 264x44 @784"
+  ]
+ },
+ "buybar": {
+  "scrollY": 1800,
+  "buyBoxBottom": -795,
+  "bars": []
+ }
+}

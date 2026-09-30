@@ -11,7 +11,9 @@ let state;
 {
   const ctx = await newContext(browser, { width: 1440, height: 900, tag: "viscom2-login" });
   const page = harden(await ctx.newPage());
-  await login(page, BASE, acc.email, acc.password, "/majstor");
+  for (let i = 0; i < 3; i++) {
+    try { await login(page, BASE, acc.email, acc.password, "/majstor"); break; } catch (e) { console.log("login retry", String(e).slice(0, 80)); }
+  }
   state = await ctx.storageState();
   await ctx.close();
 }
@@ -53,9 +55,12 @@ const ctxFor = (w, h, mobile) =>
     }
   }
   res.overflow360.log = log;
+  writeFileSync(`${OUT}/v2-verify.json`, JSON.stringify(res, null, 2));
+  console.log("A", JSON.stringify(res.overflow360).slice(0, 2500));
   await ctx.close();
 }
 
+if (process.env.SKIP_AB) { /* skip */ } else {}
 // B. /majstor/porudzbine at 2560 (previous run: 500 + React #441)
 {
   res.porudzbine = [];
@@ -66,6 +71,8 @@ const ctxFor = (w, h, mobile) =>
     const r = await page.goto(`${BASE}/majstor/porudzbine`);
     await settle(page, 2500);
     res.porudzbine.push({ w, status: r?.status(), h1: await page.locator("h1").first().textContent().catch(() => null), log });
+    console.log("B", JSON.stringify(res.porudzbine.at(-1)).slice(0, 600));
+    if (!/2dd/.test(String(res.porudzbine.at(-1).status))) await shot(page, `vis-commerce/v2/${w}-majstor-porudzbine-error`);
     await ctx.close();
   }
 }

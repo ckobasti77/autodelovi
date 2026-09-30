@@ -1,0 +1,11 @@
+file:///C:/Users/admin/Desktop/Web%20Dev%20Projects/autodelovi/node_modules/@axe-core/playwright/dist/index.mjs:218
+      throw new Error(
+            ^
+
+Error: browserContext.newPage: Target crashed 
+ Please check out https://github.com/dequelabs/axe-core-npm/blob/develop/packages/playwright/error-handling.md
+    at AxeBuilder.analyze (file:///C:/Users/admin/Desktop/Web%20Dev%20Projects/autodelovi/node_modules/@axe-core/playwright/dist/index.mjs:218:13)
+    at async axe (file:///C:/Users/admin/Desktop/Web%20Dev%20Projects/autodelovi/scripts/qa/audit/kit.mjs:179:15)
+    at async file:///C:/Users/admin/Desktop/Web%20Dev%20Projects/autodelovi/scripts/qa/audit/flows-import-mech-emails.mjs:28:17
+
+Node.js v22.23.2

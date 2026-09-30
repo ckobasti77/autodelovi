@@ -1,0 +1,103 @@
+{
+  "1440 /admin/izvoz": {
+    "url": "http://localhost:3100/admin/izvoz",
+    "ms": 117691,
+    "title": "Prijava | SKLOP",
+    "h1": "Prijava",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-izvoz.webp",
+    "console": [],
+    "pageErrors": [
+      "ConvexError: [CONVEX Q(dashboard:navCounts)] [Request ID: bf02b754bc3ce569] Server Error\nUncaught ConvexError: {\"code\":\"UNAUTHENTICATED\",\"message\":\"Prijavite se da biste nastavili.\"}\n\n  Called by client",
+      "ConvexError: [CONVEX Q(dashboard:navCounts)] [Request ID: bf02b754bc3ce569] Server Error\nUncaught ConvexError: {\"code\":\"UNAUTHENTICATED\",\"message\":\"Prijavite se da biste nastavili.\"}\n\n  Called by client",
+      "ConvexError: [CONVEX Q(dashboard:navCounts)] [Request ID: bf02b754bc3ce569] Server Error\nUncaught ConvexError: {\"code\":\"UNAUTHENTICATED\",\"message\":\"Prijavite se da biste nastavili.\"}\n\n  Called by client",
+      "ConvexError: [CONVEX Q(dashboard:navCounts)] [Request ID: bf02b754bc3ce569] Server Error\nUncaught ConvexError: {\"code\":\"UNAUTHENTICATED\",\"message\":\"Prijavite se da biste nastavili.\"}\n\n  Called by client"
+    ],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/izvori": {
+    "url": "http://localhost:3100/prijava?next=%2Fadmin%2Fizvori",
+    "ms": 57179,
+    "title": "Prijava | SKLOP",
+    "h1": "Prijava",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-izvori.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/pretrage": {
+    "url": "http://localhost:3100/prijava?next=%2Fadmin%2Fpretrage",
+    "ms": 138683,
+    "title": "Prijava | SKLOP",
+    "h1": "Prijava",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-pretrage.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/mejlovi": {
+    "url": "http://localhost:3100/prijava?next=%2Fadmin%2Fmejlovi",
+    "ms": 101679,
+    "title": "Prijava | SKLOP",
+    "h1": "Prijava",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-mejlovi.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/revizija": {
+    "url": "http://localhost:3100/prijava?next=%2Fadmin%2Frevizija",
+    "ms": 144517,
+    "title": "Prijava | SKLOP",
+    "h1": "Prijava",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-revizija.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  },
+  "1440 /admin/privatnost": {
+    "url": "http://localhost:3100/prijava?next=%2Fadmin%2Fprivatnost",
+    "ms": 126916,
+    "title": "Prijava | SKLOP",
+    "h1": "Prijava",
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "shot": "docs/qa/audit/flows-admin/crawl/1440-privatnost.webp",
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [],
+    "axe": []
+  }
+}

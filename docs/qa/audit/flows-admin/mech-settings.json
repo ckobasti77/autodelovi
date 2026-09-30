@@ -1,0 +1,39 @@
+{
+  "A": "p5719p5rtqxhwj4jta5g42tzah8fdkgq",
+  "R": "p57ebhht71h3cekvbc42nc30vx8fcasy",
+  "steps": [
+    {
+      "name": "reject empty reason",
+      "at": "2026-09-30T18:45:45.698Z",
+      "dialog": false,
+      "alerts": [
+        "Upišite razlog.",
+        ""
+      ],
+      "toasts": [],
+      "invalid": 0
+    },
+    {
+      "name": "rejected (no confirm dialog?)",
+      "at": "2026-09-30T18:45:50.908Z",
+      "dialog": false,
+      "toasts": [],
+      "status": "Svi majstoriServis Admin fa2r93676OdbijenPodaci servisaPIB1193676123Matični broj21936761AdresaRadionička 1, Novi SadKontaktMajstor fa2r93676 · +381 64 333 4456E-poštamajstor-admin-fa2r93676@primer.rsVrsta servisaMehanikaMarke—Registrovan30.09.2026. 20:41Poslednja odluka30.09.2026.Porudžbine0Razlog o"
+    },
+    {
+      "name": "errors R",
+      "at": "2026-09-30T18:45:50.909Z",
+      "console": [
+        "[CONVEX M(mechanicsAdmin:reject)] [Request ID: 8e337a5c9f6144a5] Server Error\nUncaught ConvexError: {\"field\":\"reason\",\"code\":\"INVALID\",\"message\":\"Upišite razlog.\"}\n    at handler (../convex/mechanicsAdmin.ts:213:31)\n"
+      ],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "name": "FAILED",
+      "at": "2026-09-30T18:45:51.217Z",
+      "error": "Error: browserContext.newPage: Target crashed "
+    }
+  ]
+}

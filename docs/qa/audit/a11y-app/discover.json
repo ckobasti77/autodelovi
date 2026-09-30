@@ -1,0 +1,186 @@
+{
+  "nav": [
+    {
+      "href": "/admin",
+      "text": "SKLOP"
+    },
+    {
+      "href": "/admin",
+      "text": ""
+    },
+    {
+      "href": "/admin",
+      "text": "Pregled"
+    },
+    {
+      "href": "/admin/porudzbine",
+      "text": "Porudžbine75 novih"
+    },
+    {
+      "href": "/admin/upiti",
+      "text": "Upiti41 novih"
+    },
+    {
+      "href": "/admin/kupci",
+      "text": "Kupci"
+    },
+    {
+      "href": "/admin/majstori",
+      "text": "Majstori"
+    },
+    {
+      "href": "/admin/proizvodi",
+      "text": "Proizvodi"
+    },
+    {
+      "href": "/admin/uvoz",
+      "text": "Uvoz iz Excela"
+    },
+    {
+      "href": "/admin/kategorije",
+      "text": "Kategorije"
+    },
+    {
+      "href": "/admin/vozila",
+      "text": "Vozila"
+    },
+    {
+      "href": "/admin/proizvodjaci",
+      "text": "Proizvođači"
+    },
+    {
+      "href": "/admin/lager",
+      "text": "Lager15 bez zaliha"
+    },
+    {
+      "href": "/admin/pretrage",
+      "text": "Pretrage"
+    },
+    {
+      "href": "/admin/izvori",
+      "text": "Izvori"
+    },
+    {
+      "href": "/admin/mejlovi",
+      "text": "E-pošta"
+    },
+    {
+      "href": "/admin/izvoz",
+      "text": "Izvoz"
+    },
+    {
+      "href": "/admin/revizija",
+      "text": "Revizija"
+    },
+    {
+      "href": "/admin/privatnost",
+      "text": "Privatnost"
+    },
+    {
+      "href": "/admin/cenovni-razredi",
+      "text": "Cenovni razredi"
+    },
+    {
+      "href": "/admin/korisnici",
+      "text": "Korisnici"
+    },
+    {
+      "href": "/admin/podesavanja",
+      "text": "Podešavanja"
+    },
+    {
+      "href": "/admin/podesavanja?tab=firma",
+      "text": "Popuni u podešavanjima"
+    },
+    {
+      "href": "/admin/porudzbine",
+      "text": "Porudžbine danas5875 čeka potvrdu"
+    },
+    {
+      "href": "/admin/porudzbine",
+      "text": "Vrednost danas1.728.672RSD sa PDV-om"
+    },
+    {
+      "href": "/admin/porudzbine",
+      "text": "Poslednjih 7 dana58više nego prethodnih "
+    },
+    {
+      "href": "/admin/upiti",
+      "text": "Upiti bez odgovora45najstariji čeka 9 h "
+    },
+    {
+      "href": "/admin/majstori",
+      "text": "Majstori na čekanju0registracije za odob"
+    },
+    {
+      "href": "/admin/lager",
+      "text": "Bez zaliha15još 28 sa malo zaliha"
+    },
+    {
+      "href": "/admin/porudzbine/SK-2026-000001",
+      "text": "SK-2026-000001PorudžbinaPetar Demo · 15."
+    },
+    {
+      "href": "/admin/upiti/UP-2026-000002",
+      "text": "UP-2026-000002UpitDemo Kupac · Traži deo"
+    },
+    {
+      "href": "/admin/porudzbine/SK-2026-000009",
+      "text": "SK-2026-000009PorudžbinaNikola Stanković"
+    },
+    {
+      "href": "/admin/upiti/UP-2026-000005",
+      "text": "UP-2026-000005UpitMarko Jovanović · Po b"
+    },
+    {
+      "href": "/admin/porudzbine/SK-2026-000010",
+      "text": "SK-2026-000010PorudžbinaNikola Stanković"
+    },
+    {
+      "href": "/admin/upiti/UP-2026-000006",
+      "text": "UP-2026-000006UpitMarko Jovanović · Po b"
+    },
+    {
+      "href": "/admin/porudzbine/SK-2026-000011",
+      "text": "SK-2026-000011PorudžbinaAuto servis Petr"
+    },
+    {
+      "href": "/admin/upiti/UP-2026-000007",
+      "text": "UP-2026-000007UpitAna Petrović · Po broj"
+    },
+    {
+      "href": "/admin/porudzbine/SK-2026-000012",
+      "text": "SK-2026-000012PorudžbinaNikola Stanković"
+    },
+    {
+      "href": "/admin/upiti/UP-2026-000008",
+      "text": "UP-2026-000008UpitMarko Jovanović · Po b"
+    },
+    {
+      "href": "/admin/revizija",
+      "text": "Cela revizija"
+    },
+    {
+      "href": "/admin/pretrage",
+      "text": "Sve pretrage"
+    }
+  ],
+  "/admin/porudzbine": [],
+  "/admin/upiti": [],
+  "/admin/proizvodi": [
+    "/admin/proizvodi/novi"
+  ],
+  "/admin/kupci": [],
+  "/admin/majstori": [],
+  "/admin/uvoz/istorija": [
+    "/admin/uvoz/n571yqf64h6nfr4j3894281q6n8fdmmv",
+    "/admin/uvoz/n57ba08a6fke0bx4dk3e2snct58fdftv",
+    "/admin/uvoz/n57cvg2125p7993a73btm7nr098fd6v8",
+    "/admin/uvoz/n57f0zrv3729pgfjxq4mqt6n418fcm50",
+    "/admin/uvoz/n57amedf7j74g0st1ypzmm4fmd8fcnq7",
+    "/admin/uvoz/n573c0gk7g3qtg6rhegd8jrpgn8fch8k"
+  ],
+  "/admin/mejlovi": [
+    "/admin/mejlovi/sabloni"
+  ]
+}

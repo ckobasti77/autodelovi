@@ -1,0 +1,209 @@
+{
+ "menu": {
+  "scenario": "mobile menu 390 /",
+  "trigger": {
+   "tag": "button",
+   "role": "",
+   "name": "Otvori meni",
+   "testid": "mobile-menu-trigger",
+   "inDialog": "",
+   "rect": [
+    330,
+    6,
+    44,
+    44
+   ],
+   "outline": "solid 2px"
+  },
+  "snapshot": "- dialog \"Meni\":\n  - heading \"Meni\" [level=2]\n  - button \"Zatvori\"\n  - navigation \"Glavna navigacija\":\n    - list:\n      - listitem:\n        - link \"Delovi\":\n          - /url: /delovi\n      - listitem:\n        - link \"Vozila\":\n          - /url: /vozila\n      - listitem:\n        - link \"Za majstore\":\n          - /url: /za-majstore\n      - listitem:\n        - link \"Upit po broju šasije\":\n          - /url: /upit\n  - link \"Moj nalog\":\n    - /url: /nalog\n  - paragraph: Kontakt\n  - link \"Pošaljite upit po broju šasije\":\n    - /url: /upit",
+  "handle": null,
+  "initialFocus": {
+   "tag": "button",
+   "role": "",
+   "name": "Zatvori",
+   "testid": "",
+   "inDialog": "Meni",
+   "rect": [
+    330,
+    12,
+    44,
+    44
+   ],
+   "outline": "solid 2px"
+  },
+  "dialogs": [
+   {
+    "name": "Meni",
+    "modal": null,
+    "desc": null
+   }
+  ],
+  "axe": [],
+  "shot": "docs/qa/audit/a11y-store/state-menu-390.webp",
+  "tabSequence": [
+   "a:Delovi",
+   "a:Vozila",
+   "a:Za majstore",
+   "a:Upit po broju šasije",
+   "a:Moj nalog",
+   "a:Pošaljite upit po broju šasije",
+   "button:Zatvori"
+  ],
+  "tabsOutside": 0,
+  "afterEscapeDialogs": [],
+  "afterEscapeFocus": {
+   "tag": "button",
+   "role": "",
+   "name": "Otvori meni",
+   "testid": "mobile-menu-trigger",
+   "inDialog": "",
+   "rect": [
+    330,
+    6,
+    44,
+    44
+   ],
+   "outline": "solid 2px"
+  }
+ },
+ "filters": {
+  "scenario": "filter sheet 390 /delovi/kocioni-diskovi",
+  "trigger": {
+   "tag": "button",
+   "role": "",
+   "name": "Filteri",
+   "testid": "",
+   "inDialog": "",
+   "rect": [
+    270,
+    387,
+    104,
+    44
+   ],
+   "outline": "solid 2px"
+  },
+  "snapshot": "- dialog \"Filteri\":\n  - button \"Smanji panel\"\n  - heading \"Filteri\" [level=2]\n  - button \"Zatvori\"\n  - heading \"Vozilo\" [level=2]:\n    - button \"Vozilo\" [expanded]\n  - button \"Izaberite vozilo\"\n  - heading \"Dostupnost\" [level=2]:\n    - button \"Dostupnost\" [expanded]\n  - checkbox \"Samo na stanju 7\"\n  - text: Samo na stanju 7\n  - heading \"Proizvođač\" [level=2]:\n    - button \"Proizvođač\" [expanded]\n  - checkbox \"ATE 3\"\n  - text: ATE 3\n  - checkbox \"Brembo 2\"\n  - text: Brembo 2\n  - checkbox \"Bosch 1\"\n  - text: Bosch 1\n  - checkbox \"Febi Bilstein 1\"\n  - text: Febi Bilstein 1\n  - checkbox \"Original VAG 1\"\n  - text: Original VAG 1\n  - checkbox \"TRW 1\"\n  - text: TRW 1\n  - heading \"Kvalitet\" [level=2]:\n    - button \"Kvalitet\" [expanded]\n  - checkbox \"Original VAG 1 Deo u pakovanju proizvođača vozila.\"\n  - text: Original VAG 1 Deo u pakovanju proizvođača vozila.\n  - checkbox \"OEM kvalitet 7 Proizvođač koji isti deo isporučuje fabrici, u svom pakovanju.\"\n  - text: OEM kvalitet 7 Proizvođač koji isti deo isporučuje fabrici, u svom pakovanju.\n  - checkbox \"Aftermarket 1 Zamenski deo drugog proizvođača, obično povoljniji.\"\n  - text: Aftermarket 1 Zamenski deo drugog proizvođača, obično povoljniji.\n  - heading \"Cena\" [level=2]:\n    - button \"Cena\"\n  - button \"Poništi\" [disabled]\n  - button \"Prikaži 9 rezultata\"",
+  "initialFocus": {
+   "tag": "button",
+   "role": "",
+   "name": "Smanji panel",
+   "testid": "",
+   "inDialog": "Filteri",
+   "rect": [
+    163,
+    73,
+    64,
+    24
+   ],
+   "outline": "solid 2px"
+  },
+  "dialogs": [
+   {
+    "name": "Filteri",
+    "modal": null,
+    "desc": null
+   }
+  ],
+  "axe": [],
+  "shot": "docs/qa/audit/a11y-store/state-filters-390.webp",
+  "tabSequence": [
+   "button:Zatvori",
+   "button:Vozilo",
+   "button:Izaberite vozilo",
+   "button:Dostupnost",
+   "button[checkbox]:",
+   "button:Proizvođač",
+   "button:Kvalitet",
+   "button:Cena",
+   "button:Prikaži 9 rezultata",
+   "button:Smanji panel"
+  ],
+  "tabsOutside": 0,
+  "afterEscapeDialogs": [],
+  "afterEscapeFocus": {
+   "tag": "button",
+   "role": "",
+   "name": "Filteri",
+   "testid": "",
+   "inDialog": "",
+   "rect": [
+    270,
+    387,
+    104,
+    44
+   ],
+   "outline": "solid 2px"
+  }
+ },
+ "vehicle390": {
+  "scenario": "vehicle picker 390 /",
+  "trigger": {
+   "body": true
+  },
+  "handle": null,
+  "initialFocus": {
+   "body": true
+  },
+  "dialogs": [],
+  "axe": [
+   {
+    "id": "target-size",
+    "impact": "serious",
+    "help": "All touch targets must be 24px large, or leave sufficient space",
+    "nodes": 5,
+    "targets": [
+     "a[href$=\"usisna-grana\"]",
+     ".flex-col:nth-child(1) > ul > li[data-reveal-state=\"pending\"]:nth-child(5) > .sm\\:min-h-9.py-1.min-h-11",
+     ".flex-col:nth-child(1) > ul > li[data-reveal-state=\"pending\"]:nth-child(6) > .sm\\:min-h-9.py-1.min-h-11",
+     "a[href$=\"kais-alternatora\"]",
+     "a[href$=\"anlaser\"]"
+    ],
+    "summary": "Fix any of the following:\n  Target has insufficient size because it is partially obscured (smallest space is 197px by 12px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 12px instead of at least 24px."
+   }
+  ],
+  "shot": "docs/qa/audit/a11y-store/state-vehicle-sheet-390.webp",
+  "tabSequence": [
+   "a:Preskoči na sadržaj <OUTSIDE>",
+   "a:SKLOP — početna <OUTSIDE>",
+   "button:Pretraga delova <OUTSIDE>",
+   "a:Moj nalog <OUTSIDE>",
+   "a:Korpa <OUTSIDE>",
+   "button:Otvori meni <OUTSIDE>",
+   "input[combobox]:Broj dela ili naziv <OUTSIDE>",
+   "button:Pretraži <OUTSIDE>",
+   "button:Izaberite vozilomarka, model, motorIzaberi <OUTSIDE>",
+   "a:Nemate broj? Pošaljite broj šasije <OUTSIDE>",
+   "button:Sledeća faza <OUTSIDE>",
+   "button:Rasklopi <OUTSIDE>",
+   "button:Lista delova <OUTSIDE>",
+   "a:Dostava i plaćanje <OUTSIDE>",
+   "a:Svih 44 kategorija · 157 artikala <OUTSIDE>",
+   "a:Kočione pločice10 artikala <OUTSIDE>",
+   "a:Kočioni diskovi9 artikala <OUTSIDE>",
+   "a:Amortizeri i opruge7 artikala <OUTSIDE>",
+   "a:Ramena i selen blokovi5 artikala <OUTSIDE>",
+   "a:Set zupčastog kaiša i vodena pumpa6 artikala <OUTSIDE>",
+   "a:Kvačilo i zamajac3 artikla <OUTSIDE>",
+   "a:Turbina (turbopunjač)4 artikla <OUTSIDE>",
+   "a:Filteri16 artikala <OUTSIDE>",
+   "a:Akumulator3 artikla <OUTSIDE>",
+   "a:Farovi2 artikla <OUTSIDE>"
+  ],
+  "tabsOutside": 25,
+  "afterEscapeDialogs": [],
+  "afterEscapeFocus": {
+   "tag": "a",
+   "role": "",
+   "name": "Farovi2 artikla",
+   "testid": "",
+   "inDialog": "",
+   "rect": [
+    201,
+    637,
+    173,
+    208
+   ],
+   "outline": "solid 2px"
+  }
+ }
+}

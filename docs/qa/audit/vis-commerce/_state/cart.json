@@ -1,0 +1,33 @@
+{
+  "cookies": [
+    {
+      "name": "sk_consent",
+      "value": "%7B%22v%22%3A1%2C%22analytics%22%3Afalse%2C%22ads%22%3Afalse%2C%22at%22%3A1790784183786%2C%22id%22%3A%22audit-viscom-setup-0001%22%7D",
+      "domain": "localhost",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "http://localhost:3100",
+      "localStorage": [
+        {
+          "name": "sk_cart",
+          "value": "Sm3aSpkVFv8Ox2yQ5cagtw"
+        },
+        {
+          "name": "__convexAuthServerStateFetchTime_httpstameimpala374euwest1convexcloud",
+          "value": "1790784194896"
+        },
+        {
+          "name": "sk.vehicle.v1",
+          "value": "{\"state\":{\"vehicle\":null},\"version\":1}"
+        }
+      ]
+    }
+  ]
+}

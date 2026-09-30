@@ -1,0 +1,1493 @@
+[
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin",
+    "status": 200,
+    "finalUrl": "/admin",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Pregled · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Pregled"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Popuni u podešavanjima\" 160x16",
+        "a \"Cela revizija\" 74x18",
+        "button \"Prikaži tabelu\" 84x18",
+        "a \"Sve pretrage\" 79x18"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/porudzbine",
+    "status": 200,
+    "finalUrl": "/admin/porudzbine",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Porudžbine · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Porudžbine"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 50,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "button \"Izaberi sve redove\" 20x20",
+        "button \"Izaberi SK-2026-000122\" 20x20",
+        "button \"Izaberi SK-2026-000121\" 20x20",
+        "button \"Izaberi SK-2026-000120\" 20x20",
+        "button \"Izaberi SK-2026-000119\" 20x20",
+        "button \"Izaberi SK-2026-000118\" 20x20",
+        "button \"Izaberi SK-2026-000117\" 20x20"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_porudzbine.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/porudzbine/SK-2026-000092",
+    "status": 200,
+    "finalUrl": "/admin/porudzbine/SK-2026-000092",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "SK-2026-000092 · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Porudžbina SK-2026-000092"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 1,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "a \"Porudžbine\" 74x21",
+        "a \"Kočioni disk prednji 276 × 24 \" 372x19",
+        "button \"\" 20x20",
+        "input \"\" 20x20",
+        "a \"+381 64 333 4455\" 136x16",
+        "a \"admin-e2e-audit21@primer.rs\" 193x16"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_porudzbine_SK-2026-000092.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/upiti",
+    "status": 200,
+    "finalUrl": "/admin/upiti",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Upiti · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Upiti"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 1,
+      "clickableNonInteractive": 50,
+      "small": [
+        "a \"Pregled\" 51x21"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_upiti.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/upiti/UP-2026-000054",
+    "status": 200,
+    "finalUrl": "/admin/upiti/UP-2026-000054",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "UP-2026-000054 · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Upit UP-2026-000054"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "a \"Upiti\" 31x21",
+        "a \"+381 64 333 4455\" 136x16"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_upiti_UP-2026-000054.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/upiti/UP-2026-000003",
+    "status": 200,
+    "finalUrl": "/admin/upiti/UP-2026-000003",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "UP-2026-000003 · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Upit UP-2026-000003"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "a \"Upiti\" 31x21",
+        "a \"+381 64 000 0001\" 136x16",
+        "a \"majstor.demo@sklop.test\" 164x16"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_upiti_UP-2026-000003.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/kupci",
+    "status": 200,
+    "finalUrl": "/admin/kupci",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Kupci · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Kupci"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 49,
+      "small": [
+        "a \"Pregled\" 51x21"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_kupci.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/majstori",
+    "status": 200,
+    "finalUrl": "/admin/majstori",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Majstori · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Majstori"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_majstori.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/proizvodi",
+    "status": 200,
+    "finalUrl": "/admin/proizvodi",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Proizvodi · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Proizvodi"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 50,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "button \"Izaberi sve redove\" 20x20",
+        "button \"Izaberi E2E-VSEO08-muo8o7sc Ko\" 20x20",
+        "button \"Izaberi E2E-5232824 Kočioni di\" 20x20",
+        "button \"Izaberi E2E-2311493 Kočioni di\" 20x20",
+        "button \"Izaberi E2E-7177997 Kočioni di\" 20x20",
+        "button \"Izaberi E2E-1427165 Kočioni di\" 20x20",
+        "button \"Izaberi E2E-7991843 Kočioni di\" 20x20"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_proizvodi.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/proizvodi/novi",
+    "status": 200,
+    "finalUrl": "/admin/proizvodi/novi",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Novi artikal · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Novi artikal"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 3,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "a \"Proizvodi\" 59x21"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_proizvodi_novi.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/uvoz",
+    "status": 200,
+    "finalUrl": "/admin/uvoz",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Uvoz iz Excela · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Uvoz iz Excela"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja",
+        "Koraci uvoza"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "input \"\" 1x1",
+        "a \"Preuzmite šablon\" 133x21",
+        "a \"Istorija uvoza\" 81x18"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_uvoz.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/uvoz/istorija",
+    "status": 200,
+    "finalUrl": "/admin/uvoz/istorija",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Istorija uvoza · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Istorija uvoza"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 21,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "a \"Uvoz iz Excela\" 92x21",
+        "a \"export-export-products.xlsx\" 379x19",
+        "a \"lager-audit.xlsx\" 379x19",
+        "a \"ivicni-slucajevi.xlsx\" 379x19",
+        "a \"proizvodi-1250.csv\" 379x19",
+        "a \"proizvodi-500.xlsx\" 379x19",
+        "a \"proizvodi-1250.csv\" 379x19"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_uvoz_istorija.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/uvoz/n571yqf64h6nfr4j3894281q6n8fdmmv",
+    "status": 200,
+    "finalUrl": "/admin/uvoz/n571yqf64h6nfr4j3894281q6n8fdmmv",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Zapis uvoza · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "proizvodi-1250.csv"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 2,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "a \"Uvoz iz Excela\" 92x21",
+        "a \"IMP-C-001\" 73x13",
+        "a \"IMP-C-002\" 73x13",
+        "a \"IMP-C-003\" 73x13",
+        "a \"IMP-C-004\" 73x13",
+        "a \"IMP-C-005\" 73x13",
+        "a \"IMP-C-006\" 73x13"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_uvoz_n571yqf64h6nfr4j3894281q6n8fdmmv.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/kategorije",
+    "status": 200,
+    "finalUrl": "/admin/kategorije",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Kategorije · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Kategorije"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 1,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "input \"\" 1x1"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_kategorije.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/vozila",
+    "status": 200,
+    "finalUrl": "/admin/vozila",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Vozila · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Vozila"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 2,
+      "small": [
+        "a \"Pregled\" 51x21"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_vozila.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/proizvodjaci",
+    "status": 200,
+    "finalUrl": "/admin/proizvodjaci",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Proizvođači · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Proizvođači"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 30,
+      "small": [
+        "a \"Pregled\" 51x21"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_proizvodjaci.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/lager",
+    "status": 200,
+    "finalUrl": "/admin/lager",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Lager · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Lager"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 17,
+      "small": [
+        "a \"Pregled\" 51x21"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_lager.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/pretrage",
+    "status": 200,
+    "finalUrl": "/admin/pretrage",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Pretrage · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Pretrage"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "button \"Prikaži tabelu\" 84x18",
+        "a \"disk\" 33x13",
+        "a \"5q0-615-505-r\" 106x13",
+        "a \"ZZ9999999\" 73x13",
+        "a \"036 121 959 P\" 106x13",
+        "a \"1k0-615-591-e\" 106x13",
+        "a \"XQ9Z 777 000\" 98x13"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_pretrage.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/izvori",
+    "status": 200,
+    "finalUrl": "/admin/izvori",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Izvori · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Izvori"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "a \"Google Ads\" 76x16",
+        "a \"YYYYYYYYYYYYYYYYYYYYYYYYYYYYYY\" 1833340x16",
+        "a \"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\" 2078515x16",
+        "a \"Podešavanja → Praćenje\" 161x16"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_izvori.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/mejlovi",
+    "status": 200,
+    "finalUrl": "/admin/mejlovi",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "E-pošta · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "E-pošta"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja",
+        "E-pošta"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_mejlovi.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/mejlovi/sabloni",
+    "status": 200,
+    "finalUrl": "/admin/mejlovi/sabloni",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Šabloni e-pošte · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "E-pošta"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja",
+        "E-pošta",
+        "Šabloni"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "a \"E-pošta\" 50x21"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_mejlovi_sabloni.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/izvoz",
+    "status": 200,
+    "finalUrl": "/admin/izvoz",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Izvoz · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Izvoz"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 1,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "button \"\" 20x20"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_izvoz.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/revizija",
+    "status": 200,
+    "finalUrl": "/admin/revizija",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Revizija · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Revizija"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_revizija.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/privatnost",
+    "status": 200,
+    "finalUrl": "/admin/privatnost",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Privatnost · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Privatnost"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_privatnost.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/cenovni-razredi",
+    "status": 200,
+    "finalUrl": "/admin/cenovni-razredi",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Cenovni razredi · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Cenovni razredi"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 1,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_cenovni-razredi.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/korisnici",
+    "status": 200,
+    "finalUrl": "/admin/korisnici",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Korisnici · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Korisnici"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_korisnici.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/podesavanja",
+    "status": 200,
+    "finalUrl": "/admin/podesavanja",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Podešavanja · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Podešavanja"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 2,
+      "small": [
+        "a \"Pregled\" 51x21"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_podesavanja.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/obavestenja",
+    "status": 200,
+    "finalUrl": "/admin/obavestenja",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Obaveštenja · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Obaveštenja"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "a \"podešavanjima\" 98x16"
+      ]
+    },
+    "axe": [
+      {
+        "id": "link-in-text-block",
+        "impact": "serious",
+        "help": "Links must be distinguishable without relying on color",
+        "nodes": 1,
+        "targets": [
+          ".text-accent-text"
+        ],
+        "summary": "Fix any of the following:\n  The link has insufficient color contrast of 1.1:1 with the surrounding text. (Minimum contrast is 3:1, link text: #b8470a, surrounding text: #5d6570)\n  The link has no styling (such as underline) to distinguish it from the surrounding text"
+      }
+    ],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_obavestenja.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/porudzbine/SK-2026-000092/predracun",
+    "status": 200,
+    "finalUrl": "/admin/porudzbine/SK-2026-000092/predracun",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Predračun · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Predračun"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Popuni u podešavanjima\" 160x16"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_porudzbine_SK-2026-000092_predracun.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1440,
+    "route": "/admin/porudzbine/SK-2026-000092/otpremnica",
+    "status": 200,
+    "finalUrl": "/admin/porudzbine/SK-2026-000092/otpremnica",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Otpremnica · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Otpremnica"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Popuni u podešavanjima\" 160x16"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1440-admin_porudzbine_SK-2026-000092_otpremnica.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1024,
+    "route": "/admin",
+    "status": 200,
+    "finalUrl": "/admin",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Pregled · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Pregled"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Popuni u podešavanjima\" 160x16",
+        "a \"Cela revizija\" 74x18",
+        "button \"Prikaži tabelu\" 84x18",
+        "a \"Sve pretrage\" 79x18"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1024-admin.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1024,
+    "route": "/admin/porudzbine",
+    "status": 200,
+    "finalUrl": "/admin/porudzbine",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Porudžbine · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Porudžbine"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 50,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "button \"Izaberi sve redove\" 20x20",
+        "button \"Izaberi SK-2026-000122\" 20x20",
+        "button \"Izaberi SK-2026-000121\" 20x20",
+        "button \"Izaberi SK-2026-000120\" 20x20",
+        "button \"Izaberi SK-2026-000119\" 20x20",
+        "button \"Izaberi SK-2026-000118\" 20x20",
+        "button \"Izaberi SK-2026-000117\" 20x20"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1024-admin_porudzbine.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1024,
+    "route": "/admin/porudzbine/SK-2026-000092",
+    "status": 200,
+    "finalUrl": "/admin/porudzbine/SK-2026-000092",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "SK-2026-000092 · Administracija",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Porudžbina SK-2026-000092"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Administracija",
+        "Putanja"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 1,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"Pregled\" 51x21",
+        "a \"Porudžbine\" 74x21",
+        "a \"Kočioni disk prednji 276 × 24 \" 311x19",
+        "button \"\" 20x20",
+        "input \"\" 20x20",
+        "a \"+381 64 333 4455\" 136x16"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1024-admin_porudzbine_SK-2026-000092.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1024,
+    "route": "/admin/upiti",
+    "status": 200,
+    "finalUrl": "/prijava?next=%2Fadmin%2Fupiti",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Prijava | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Prijavljeni ste"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1024-admin_upiti.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "admin",
+    "width": 1024,
+    "route": "/admin/upiti/UP-2026-000054",
+    "status": 500,
+    "finalUrl": "/prijava?next=%2Fadmin%2Fupiti%2FUP-2026-000054",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Prijava | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Stranica se nije učitala"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/admin-1024-admin_upiti_UP-2026-000054.webp",
+    "console": [
+      "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+      "Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    ],
+    "pageErrors": [],
+    "bad": [
+      "500 http://localhost:3100/prijava?next=%2Fadmin%2Fupiti%2FUP-2026-000054"
+    ]
+  }
+]

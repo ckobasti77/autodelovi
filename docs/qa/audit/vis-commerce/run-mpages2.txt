@@ -1,0 +1,5 @@
+pages 360 {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+pages 768 {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+pages 1440 {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+pages 2560 {"console":["Failed to load resource: the server responded with a status of 500 (Internal Server Error)","Error: Minified React error #441; visit https://react.dev/errors/441 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.","Error: Minifi
+exit 0

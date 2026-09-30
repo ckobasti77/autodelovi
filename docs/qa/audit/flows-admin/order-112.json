@@ -1,0 +1,101 @@
+{
+  "number": "SK-2026-000112",
+  "steps": [
+    {
+      "name": "open",
+      "at": "2026-09-30T17:06:08.278Z",
+      "rows": [
+        "Kočioni disk prednji 276 × 24 mmDEMO-0004 · OEM 5Q0 615 505 R · Febi BilsteinBilo na stanju · sada 5 kom.24.690 RSD—9.380 RSD",
+        "Kočioni disk E2E 5232824E2E-5232824 · ATEPo porudžbini · sada 0 kom.113.490 RSD—13.490 RSD"
+      ]
+    },
+    {
+      "name": "empty note submit",
+      "at": "2026-09-30T17:06:08.716Z",
+      "disabled": true
+    },
+    {
+      "name": "confirm dialog",
+      "at": "2026-09-30T17:06:11.792Z",
+      "text": "Potvrdi — SK-2026-000112Stanje se umanjuje za artikle iz porudžbine (2 stavke); kupac dobija potvrdu.OdustaniPotvrdi"
+    },
+    {
+      "name": "after confirm",
+      "at": "2026-09-30T17:06:16.092Z",
+      "before": [
+        "Kočioni disk prednji 276 × 24 mmDEMO-0004 · OEM 5Q0 615 505 R · Febi BilsteinBilo na stanju · sada 5 kom.24.690 RSD—9.380 RSD",
+        "Kočioni disk E2E 5232824E2E-5232824 · ATEPo porudžbini · sada 0 kom.113.490 RSD—13.490 RSD"
+      ],
+      "after": [
+        "Kočioni disk prednji 276 × 24 mmDEMO-0004 · OEM 5Q0 615 505 R · Febi BilsteinBilo na stanju · sada 3 kom. · skinuto 224.690 RSD—9.380 RSD",
+        "Kočioni disk E2E 5232824E2E-5232824 · ATEPo porudžbini · sada 0 kom.113.490 RSD—13.490 RSD"
+      ]
+    },
+    {
+      "name": "ship dialog empty tracking",
+      "at": "2026-09-30T17:06:16.548Z",
+      "disabled": true,
+      "text": "Označi kao poslato — SK-2026-000112Kupac dobija broj pošiljke i link za praćenje.Kurirska služba (obavezno)D ExpressBEXAKSPost ExpressBroj pošiljke (obavezno)OdustaniOznači kao poslato"
+    },
+    {
+      "name": "isporucena dialog",
+      "at": "2026-09-30T17:06:21.268Z",
+      "text": "Označi kao isporučeno — SK-2026-000112Kupac dobija obaveštenje o promeni statusa.OdustaniOznači kao isporučeno"
+    },
+    {
+      "name": "zavrsena dialog",
+      "at": "2026-09-30T17:06:25.239Z",
+      "text": "Završi — SK-2026-000112Porudžbina se zatvara; posle toga se više ne menja.OdustaniZavrši"
+    },
+    {
+      "name": "final buttons",
+      "at": "2026-09-30T17:06:29.652Z",
+      "buttons": [
+        "",
+        "Dodaj napomenu",
+        "Označi kao plaćeno"
+      ]
+    },
+    {
+      "name": "history",
+      "at": "2026-09-30T17:06:29.657Z",
+      "text": "Istorija30.09. 19:06Završena — ZavršenaVlasnik30.09. 19:06E-pošta zabeležena (nije poslata, režim log): Porudžbina SK-2026-000112 je isporučenaSistem30.09. 19:06Isporučena — IsporučenaVlasnik30.09. 19:06E-pošta zabeležena (nije poslata, režim log): Porudžbina SK-2026-000112 je poslataSistem30.09. 19:06Poslata — Poslata, broj pošiljke RS87976548SRVlasnik30.09. 19:06E-pošta zabeležena (nije poslata, režim log): Porudžbina SK-2026-000112 je potvrđenaSistem30.09. 19:06Potvrđena — PotvrđenaVlasnik30.09. 19:06Za kupca: paket šaljemo sutra ujutru (112).Vlasnik · vidi kupac30.09. 19:06Interna beleška audit 112: kupac zvao, proveriti adresu.Vlasnik · interno30.09. 19:01Stavke porudžbine su izmenjene.Vlasnik30.09. 18:45E-pošta zabeležena (nije poslata, režim log): Porudžbina SK-2026-000112 je primljenaSistem30.09. 18:45Nova — Porudžbina je primljena.Admin Test fa1-86712 · Kupac"
+    },
+    {
+      "name": "email section",
+      "at": "2026-09-30T17:06:29.660Z",
+      "text": "Istorija30.09. 19:06Završena — ZavršenaVlasnik30.09. 19:06E-pošta zabeležena (nije poslata, režim log): Porudžbina SK-2026-000112 je isporučenaSistem30.09. 19:06Isporučena — IsporučenaVlasnik30.09. 19:06E-pošta zabeležena (nije poslata, režim log): Porudžbina SK-2026-000112 je poslataSistem30.09. 19:06Poslata — Poslata, broj pošiljke RS87976548SRVlasnik30.09. 19:06E-pošta zabeležena (nije poslata, režim log): Porudžbina SK-2026-000112 je potvrđenaSistem30.09. 19:06Potvrđena — PotvrđenaVlasnik30.09. 19:06Za kupca: paket šaljemo sutra ujutru (112).Vlasnik · vidi kupac30.09. 19:06Interna beleška audit 112: kupac zvao, proveriti adresu.Vlasnik · interno30.09. 19:01Stavke porudžbine su izmenjene.Vlasnik30.09. 18:45E-pošta zabeležena (nije poslata, režim log): Porudžbina SK-2026-000112 je primljenaSistem30.09. 18:45Nova — Porudžbina je primljena.Admin Test fa1-86712 · Kupac"
+    },
+    {
+      "name": "errors",
+      "at": "2026-09-30T17:06:29.660Z",
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "name": "FAILED",
+      "at": "2026-09-30T17:07:03.235Z",
+      "error": "Error: Command failed: C:\\nvm4w\\nodejs\\node.exe C:\\Users\\admin\\Desktop\\Web Dev Projects\\autodelovi\\node_modules\\convex\\bin\\main.js run testing:emailProbe {\"number\":\"SK-2026-000112\"}\n✖ Failed to run function \"testing:emailProbe\":\nTypeError: fetch failed\n"
+    }
+  ],
+  "probe": {
+    "customerType": "guest",
+    "deliveryMethod": "courier",
+    "eventTypes": [
+      "order.created",
+      "order.edited",
+      "order.status_changed",
+      "order.status_changed",
+      "order.status_changed",
+      "order.status_changed"
+    ],
+    "hasAttribution": false,
+    "itemCount": 3,
+    "paymentMethod": "cod",
+    "source": "web",
+    "status": "zavrsena",
+    "totalPara": 2287000
+  }
+}

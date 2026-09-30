@@ -1,0 +1,75 @@
+[
+  {
+    "role": "anon",
+    "w": "390",
+    "route": "C:/Program Files/Git/delovi",
+    "status": -1,
+    "finalUrl": "blank",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {},
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "anon",
+    "w": "390",
+    "route": "/delovi/kocnice",
+    "status": 200,
+    "finalUrl": "/delovi/kocnice",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 14
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "anon",
+    "w": "390",
+    "route": "/delovi/kocioni-diskovi",
+    "status": 200,
+    "finalUrl": "/delovi/kocioni-diskovi",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 36
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "anon",
+    "w": "390",
+    "route": "/delovi/kocioni-diskovi/volkswagen",
+    "status": 200,
+    "finalUrl": "/delovi/kocioni-diskovi/volkswagen",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 38
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  },
+  {
+    "role": "anon",
+    "w": "390",
+    "route": "/delovi/kocioni-diskovi/volkswagen/golf",
+    "status": 200,
+    "finalUrl": "/delovi/kocioni-diskovi/volkswagen/golf",
+    "stuck": [],
+    "pending": 0,
+    "words": 0,
+    "states": {
+      "done": 32
+    },
+    "newConsole": [],
+    "newPageErrors": []
+  }
+]

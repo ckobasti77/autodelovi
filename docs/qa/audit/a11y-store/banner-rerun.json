@@ -1,0 +1,382 @@
+{
+ "390": {
+  "hits": [
+   {
+    "tab": 15,
+    "name": "Kočioni disk prednji 312 × 25 mm",
+    "tag": "a",
+    "rect": [
+     133,
+     544,
+     228,
+     43
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 16,
+    "name": "U korpu: Kočioni disk prednji 312 × 25 mm",
+    "tag": "button",
+    "rect": [
+     241,
+     656,
+     120,
+     44
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 17,
+    "name": "Kočioni disk zadnji 272 × 10 mm, puni",
+    "tag": "a",
+    "rect": [
+     133,
+     762,
+     228,
+     43
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 19,
+    "name": "Kočioni disk prednji 256 × 22 mm",
+    "tag": "a",
+    "rect": [
+     133,
+     546,
+     228,
+     43
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 20,
+    "name": "U korpu: Kočioni disk prednji 256 × 22 mm",
+    "tag": "button",
+    "rect": [
+     241,
+     658,
+     120,
+     44
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 21,
+    "name": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "tag": "a",
+    "rect": [
+     133,
+     764,
+     228,
+     43
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 23,
+    "name": "Kočioni disk prednji 276 × 24 mm",
+    "tag": "a",
+    "rect": [
+     133,
+     546,
+     228,
+     43
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 24,
+    "name": "U korpu: Kočioni disk prednji 276 × 24 mm",
+    "tag": "button",
+    "rect": [
+     241,
+     658,
+     120,
+     44
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 25,
+    "name": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "tag": "a",
+    "rect": [
+     133,
+     764,
+     228,
+     43
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 27,
+    "name": "Kočioni disk prednji 340 × 30 mm, GTI",
+    "tag": "a",
+    "rect": [
+     133,
+     546,
+     228,
+     43
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 28,
+    "name": "U korpu: Kočioni disk prednji 340 × 30 mm, GTI",
+    "tag": "button",
+    "rect": [
+     241,
+     658,
+     120,
+     44
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 29,
+    "name": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+    "tag": "a",
+    "rect": [
+     133,
+     764,
+     228,
+     43
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 31,
+    "name": "Kočioni disk prednji 320 × 30 mm",
+    "tag": "a",
+    "rect": [
+     133,
+     546,
+     228,
+     43
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 32,
+    "name": "Poruči: Kočioni disk prednji 320 × 30 mm",
+    "tag": "button",
+    "rect": [
+     241,
+     658,
+     120,
+     44
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 36,
+    "name": "Kočioni diskovi za Škoda Superb",
+    "tag": "a",
+    "rect": [
+     16,
+     548,
+     262,
+     25
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 37,
+    "name": "Kočioni diskovi za SEAT Leon",
+    "tag": "a",
+    "rect": [
+     16,
+     581,
+     237,
+     25
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 38,
+    "name": "Kočioni diskovi za VW Golf",
+    "tag": "a",
+    "rect": [
+     16,
+     614,
+     218,
+     25
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 39,
+    "name": "Kočioni diskovi za VW Tiguan",
+    "tag": "a",
+    "rect": [
+     16,
+     647,
+     237,
+     25
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 40,
+    "name": "Kočioni diskovi za VW Touran",
+    "tag": "a",
+    "rect": [
+     16,
+     679,
+     237,
+     25
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 41,
+    "name": "Kočioni diskovi za Audi A3",
+    "tag": "a",
+    "rect": [
+     16,
+     712,
+     216,
+     25
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   },
+   {
+    "tab": 42,
+    "name": "Kočioni diskovi za Škoda Octavia",
+    "tag": "a",
+    "rect": [
+     16,
+     745,
+     263,
+     25
+    ],
+    "bannerTop": 530,
+    "coveredPct": 100
+   }
+  ],
+  "shot": "docs/qa/audit/a11y-store/banner-obscures-focus-390.webp",
+  "bannerAfterEscape": true,
+  "afterSettings": "BODY",
+  "settingsShot": "docs/qa/audit/a11y-store/banner-settings-focus-390.webp"
+ },
+ "1440": {
+  "hits": [
+   {
+    "tab": 27,
+    "name": "",
+    "tag": "button",
+    "rect": [
+     48,
+     771,
+     20,
+     20
+    ],
+    "bannerTop": 741,
+    "coveredPct": 100
+   },
+   {
+    "tab": 28,
+    "name": "",
+    "tag": "button",
+    "rect": [
+     48,
+     815,
+     20,
+     20
+    ],
+    "bannerTop": 741,
+    "coveredPct": 100
+   },
+   {
+    "tab": 29,
+    "name": "",
+    "tag": "button",
+    "rect": [
+     48,
+     859,
+     20,
+     20
+    ],
+    "bannerTop": 741,
+    "coveredPct": 100
+   },
+   {
+    "tab": 37,
+    "name": "U korpu: Kočioni disk prednji 312 × 25 mm",
+    "tag": "button",
+    "rect": [
+     369,
+     798,
+     208,
+     44
+    ],
+    "bannerTop": 741,
+    "coveredPct": 100
+   },
+   {
+    "tab": 39,
+    "name": "U korpu: Kočioni disk zadnji 272 × 10 mm, puni",
+    "tag": "button",
+    "rect": [
+     635,
+     798,
+     208,
+     44
+    ],
+    "bannerTop": 741,
+    "coveredPct": 100
+   },
+   {
+    "tab": 41,
+    "name": "U korpu: Kočioni disk prednji 256 × 22 mm",
+    "tag": "button",
+    "rect": [
+     901,
+     798,
+     208,
+     44
+    ],
+    "bannerTop": 741,
+    "coveredPct": 100
+   },
+   {
+    "tab": 43,
+    "name": "U korpu: Kočioni disk prednji 312 × 25 mm, ventili",
+    "tag": "button",
+    "rect": [
+     1167,
+     798,
+     208,
+     44
+    ],
+    "bannerTop": 741,
+    "coveredPct": 100
+   }
+  ],
+  "shot": "docs/qa/audit/a11y-store/banner-obscures-focus-1440.webp",
+  "bannerAfterEscape": true,
+  "afterSettings": "BODY",
+  "settingsShot": "docs/qa/audit/a11y-store/banner-settings-focus-1440.webp"
+ }
+}

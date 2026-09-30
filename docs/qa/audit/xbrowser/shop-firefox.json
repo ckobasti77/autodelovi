@@ -1,0 +1,192 @@
+{
+  "firefox-1440": {
+    "steps": [
+      {
+        "name": "home",
+        "ok": true,
+        "ms": 2973
+      },
+      {
+        "name": "header-search",
+        "ok": true,
+        "ms": 4612,
+        "focused": "combobox",
+        "url": "/pretraga?q=5q0-615-505-r"
+      },
+      {
+        "name": "search-results",
+        "ok": true,
+        "ms": 2727,
+        "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004"
+      },
+      {
+        "name": "product",
+        "ok": true,
+        "ms": 1899,
+        "qtyFound": true,
+        "qtyType": "number",
+        "qtyBox": {
+          "x": 891,
+          "y": 570.7999877929688,
+          "width": 56,
+          "height": 42
+        },
+        "qtyStyle": {
+          "appearance": "textfield",
+          "h": 42,
+          "w": 56,
+          "font": "16px"
+        },
+        "qtyAfter": "2",
+        "overflow": {
+          "over": 0,
+          "offenders": []
+        }
+      },
+      {
+        "name": "add-to-cart",
+        "ok": true,
+        "ms": 1857,
+        "count": "1"
+      },
+      {
+        "name": "category-vehicle-filter",
+        "ok": true,
+        "ms": 8814,
+        "cards": 5,
+        "url": "/delovi/kocioni-diskovi?marka=volkswagen&model=golf&generacija=golf-7"
+      },
+      {
+        "name": "cart-drawer",
+        "ok": true,
+        "ms": 1601
+      },
+      {
+        "name": "checkout",
+        "ok": true,
+        "ms": 11226,
+        "codChecked": true,
+        "number": "SK-2026-000123"
+      }
+    ],
+    "email": "audit-xbrowser-firefox-1440-1790788602270@primer.rs",
+    "number": "SK-2026-000123",
+    "probe": {
+      "customerType": "guest",
+      "deliveryMethod": "courier",
+      "eventTypes": [
+        "order.created"
+      ],
+      "hasAttribution": true,
+      "itemCount": 1,
+      "paymentMethod": "cod",
+      "source": "web",
+      "status": "nova",
+      "totalPara": 514000
+    },
+    "csp": [],
+    "log": {
+      "console": [
+        "[JavaScript Error: \"Content-Security-Policy: The page’s settings blocked a JavaScript eval (script-src) from being executed because it violates the following directive: “script-src 'self' 'nonce-YuYxw9exY83Fo1D1sB4GtQ==' 'strict-dynamic' 'wasm-unsafe-eval'” (Missing 'unsafe-eval')\" {file: \"http://localhost:3100/_next/static/chunks/1uyyf-z7kpx1w.js\" line: 1}]"
+      ],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "firefox-390": {
+    "steps": [
+      {
+        "name": "home",
+        "ok": true,
+        "ms": 2329
+      },
+      {
+        "name": "header-search",
+        "ok": true,
+        "ms": 4934,
+        "focused": "combobox",
+        "url": "/pretraga?q=5q0-615-505-r"
+      },
+      {
+        "name": "search-results",
+        "ok": true,
+        "ms": 2746,
+        "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004"
+      },
+      {
+        "name": "product",
+        "ok": true,
+        "ms": 2552,
+        "qtyFound": true,
+        "qtyType": "number",
+        "qtyBox": {
+          "x": 61,
+          "y": 872.3833618164062,
+          "width": 56,
+          "height": 42
+        },
+        "qtyStyle": {
+          "appearance": "textfield",
+          "h": 42,
+          "w": 56,
+          "font": "16px"
+        },
+        "qtyAfter": "2",
+        "overflow": {
+          "over": 0,
+          "offenders": []
+        }
+      },
+      {
+        "name": "add-to-cart",
+        "ok": true,
+        "ms": 1830,
+        "count": "1"
+      },
+      {
+        "name": "category-vehicle-filter",
+        "ok": true,
+        "ms": 8932,
+        "cards": 5,
+        "url": "/delovi/kocioni-diskovi?marka=volkswagen&model=golf&generacija=golf-7"
+      },
+      {
+        "name": "cart-drawer",
+        "ok": true,
+        "ms": 1470
+      },
+      {
+        "name": "checkout",
+        "ok": true,
+        "ms": 9009,
+        "codChecked": true,
+        "number": "SK-2026-000124"
+      }
+    ],
+    "email": "audit-xbrowser-firefox-390-1790788646327@primer.rs",
+    "number": "SK-2026-000124",
+    "probe": {
+      "customerType": "guest",
+      "deliveryMethod": "courier",
+      "eventTypes": [
+        "order.created"
+      ],
+      "hasAttribution": true,
+      "itemCount": 1,
+      "paymentMethod": "cod",
+      "source": "web",
+      "status": "nova",
+      "totalPara": 514000
+    },
+    "csp": [],
+    "log": {
+      "console": [
+        "[JavaScript Error: \"Content-Security-Policy: The page’s settings blocked a JavaScript eval (script-src) from being executed because it violates the following directive: “script-src 'self' 'nonce-yTGFa3AGT6FH38FXSNC8kA==' 'strict-dynamic' 'wasm-unsafe-eval'” (Missing 'unsafe-eval')\" {file: \"http://localhost:3100/_next/static/chunks/1uyyf-z7kpx1w.js\" line: 1}]"
+      ],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+}

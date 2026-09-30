@@ -1,0 +1,7 @@
+majstore 768 {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+majstore 1024 {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+majstore 1280 {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+majstore 1440 {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+majstore 1920 {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+majstore 2560 {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+exit 0

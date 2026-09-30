@@ -1,0 +1,416 @@
+[
+  {
+    "width": 360,
+    "viewport": "360x780",
+    "trackTop": 605,
+    "status": "loading",
+    "label": "poster",
+    "stage": {
+      "w": 360,
+      "h": 608,
+      "top": 56
+    },
+    "frameH": 724,
+    "viewportH": 780,
+    "bg": [
+      13,
+      15,
+      17
+    ],
+    "car": {
+      "x": 37,
+      "y": 310,
+      "w": 302,
+      "h": 214
+    },
+    "emptyBandAbovePx": 310,
+    "emptyBelowPx": 84,
+    "pctStageHeight": 35.2,
+    "pctStageWidth": 83.9,
+    "pctStageArea": 29.5
+  },
+  {
+    "width": 360,
+    "viewport": "360x780",
+    "tier": "mid",
+    "progress": 0,
+    "label": "canvas",
+    "stage": {
+      "w": 360,
+      "h": 608,
+      "top": 56
+    },
+    "frameH": 724,
+    "viewportH": 780,
+    "bg": [
+      13,
+      15,
+      17
+    ],
+    "car": {
+      "x": 38,
+      "y": 310,
+      "w": 301,
+      "h": 214
+    },
+    "emptyBandAbovePx": 310,
+    "emptyBelowPx": 84,
+    "pctStageHeight": 35.2,
+    "pctStageWidth": 83.6,
+    "pctStageArea": 29.4
+  },
+  {
+    "width": 360,
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "width": 390,
+    "viewport": "390x844",
+    "trackTop": 607,
+    "status": "loading",
+    "label": "poster",
+    "stage": {
+      "w": 390,
+      "h": 672,
+      "top": 56
+    },
+    "frameH": 788,
+    "viewportH": 844,
+    "bg": [
+      13,
+      15,
+      17
+    ],
+    "car": {
+      "x": 41,
+      "y": 349,
+      "w": 326,
+      "h": 232
+    },
+    "emptyBandAbovePx": 349,
+    "emptyBelowPx": 91,
+    "pctStageHeight": 34.5,
+    "pctStageWidth": 83.6,
+    "pctStageArea": 28.9
+  },
+  {
+    "width": 390,
+    "viewport": "390x844",
+    "tier": "mid",
+    "progress": 0,
+    "label": "canvas",
+    "stage": {
+      "w": 390,
+      "h": 672,
+      "top": 56
+    },
+    "frameH": 788,
+    "viewportH": 844,
+    "bg": [
+      13,
+      15,
+      17
+    ],
+    "car": {
+      "x": 41,
+      "y": 350,
+      "w": 326,
+      "h": 231
+    },
+    "emptyBandAbovePx": 350,
+    "emptyBelowPx": 91,
+    "pctStageHeight": 34.4,
+    "pctStageWidth": 83.6,
+    "pctStageArea": 28.7
+  },
+  {
+    "width": 390,
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "width": 412,
+    "viewport": "412x915",
+    "trackTop": 609,
+    "status": "loading",
+    "label": "poster",
+    "stage": {
+      "w": 412,
+      "h": 743,
+      "top": 56
+    },
+    "frameH": 859,
+    "viewportH": 915,
+    "bg": [
+      13,
+      15,
+      17
+    ],
+    "car": {
+      "x": 43,
+      "y": 402,
+      "w": 345,
+      "h": 245
+    },
+    "emptyBandAbovePx": 402,
+    "emptyBelowPx": 96,
+    "pctStageHeight": 33,
+    "pctStageWidth": 83.7,
+    "pctStageArea": 27.6
+  },
+  {
+    "width": 412,
+    "viewport": "412x915",
+    "tier": "mid",
+    "progress": 0,
+    "label": "canvas",
+    "stage": {
+      "w": 412,
+      "h": 743,
+      "top": 56
+    },
+    "frameH": 859,
+    "viewportH": 915,
+    "bg": [
+      13,
+      15,
+      17
+    ],
+    "car": {
+      "x": 43,
+      "y": 402,
+      "w": 345,
+      "h": 245
+    },
+    "emptyBandAbovePx": 402,
+    "emptyBelowPx": 96,
+    "pctStageHeight": 33,
+    "pctStageWidth": 83.7,
+    "pctStageArea": 27.6
+  },
+  {
+    "width": 412,
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "width": 430,
+    "viewport": "430x932",
+    "trackTop": 610,
+    "status": "loading",
+    "label": "poster",
+    "stage": {
+      "w": 430,
+      "h": 760,
+      "top": 56
+    },
+    "frameH": 876,
+    "viewportH": 932,
+    "bg": [
+      13,
+      15,
+      17
+    ],
+    "car": {
+      "x": 45,
+      "y": 404,
+      "w": 360,
+      "h": 256
+    },
+    "emptyBandAbovePx": 404,
+    "emptyBelowPx": 100,
+    "pctStageHeight": 33.7,
+    "pctStageWidth": 83.7,
+    "pctStageArea": 28.2
+  },
+  {
+    "width": 430,
+    "viewport": "430x932",
+    "tier": "mid",
+    "progress": 0,
+    "label": "canvas",
+    "stage": {
+      "w": 430,
+      "h": 760,
+      "top": 56
+    },
+    "frameH": 876,
+    "viewportH": 932,
+    "bg": [
+      13,
+      15,
+      17
+    ],
+    "car": {
+      "x": 45,
+      "y": 404,
+      "w": 360,
+      "h": 255
+    },
+    "emptyBandAbovePx": 404,
+    "emptyBelowPx": 101,
+    "pctStageHeight": 33.6,
+    "pctStageWidth": 83.7,
+    "pctStageArea": 28.1
+  },
+  {
+    "width": 430,
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "width": 768,
+    "viewport": "768x1024",
+    "trackTop": 529,
+    "status": "loading",
+    "label": "poster",
+    "stage": {
+      "w": 768,
+      "h": 852,
+      "top": 56
+    },
+    "frameH": 968,
+    "viewportH": 1024,
+    "bg": [
+      13,
+      15,
+      17
+    ],
+    "car": {
+      "x": 303,
+      "y": 518,
+      "w": 395,
+      "h": 247
+    },
+    "emptyBandAbovePx": 518,
+    "emptyBelowPx": 87,
+    "pctStageHeight": 29,
+    "pctStageWidth": 51.4,
+    "pctStageArea": 14.9
+  },
+  {
+    "width": 768,
+    "viewport": "768x1024",
+    "tier": "mid",
+    "progress": 0,
+    "label": "canvas",
+    "stage": {
+      "w": 768,
+      "h": 852,
+      "top": 56
+    },
+    "frameH": 968,
+    "viewportH": 1024,
+    "bg": [
+      13,
+      15,
+      17
+    ],
+    "car": {
+      "x": 304,
+      "y": 519,
+      "w": 393,
+      "h": 245
+    },
+    "emptyBandAbovePx": 519,
+    "emptyBelowPx": 88,
+    "pctStageHeight": 28.8,
+    "pctStageWidth": 51.2,
+    "pctStageArea": 14.7
+  },
+  {
+    "width": 768,
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "width": 1440,
+    "viewport": "1440x900",
+    "trackTop": 1,
+    "status": "idle",
+    "label": "poster",
+    "stage": {
+      "w": 1440,
+      "h": 836,
+      "top": 64
+    },
+    "frameH": 836,
+    "viewportH": 900,
+    "bg": [
+      13,
+      15,
+      17
+    ],
+    "car": {
+      "x": 48,
+      "y": 60,
+      "w": 1344,
+      "h": 758
+    },
+    "emptyBandAbovePx": 60,
+    "emptyBelowPx": 18,
+    "pctStageHeight": 90.7,
+    "pctStageWidth": 93.3,
+    "pctStageArea": 84.6
+  },
+  {
+    "width": 1440,
+    "viewport": "1440x900",
+    "tier": "high",
+    "progress": 0,
+    "label": "canvas",
+    "stage": {
+      "w": 1440,
+      "h": 836,
+      "top": 64
+    },
+    "frameH": 836,
+    "viewportH": 900,
+    "bg": [
+      13,
+      15,
+      17
+    ],
+    "car": {
+      "x": 48,
+      "y": 60,
+      "w": 1344,
+      "h": 758
+    },
+    "emptyBandAbovePx": 60,
+    "emptyBelowPx": 18,
+    "pctStageHeight": 90.7,
+    "pctStageWidth": 93.3,
+    "pctStageArea": 84.6
+  },
+  {
+    "width": 1440,
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+]

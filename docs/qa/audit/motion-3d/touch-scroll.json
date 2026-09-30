@@ -1,0 +1,32 @@
+{
+  "control": {
+    "before": 0,
+    "after": 335
+  },
+  "homeCopy": {
+    "before": 0,
+    "after": 335,
+    "status": "loading"
+  },
+  "canvas-center": {
+    "el": "CANVAS ta=auto",
+    "before": 607,
+    "after": 892,
+    "progress": 0.169,
+    "selected": null
+  },
+  "canvas-car": {
+    "el": "CANVAS ta=auto",
+    "before": 607,
+    "after": 852,
+    "progress": 0.145,
+    "selected": null
+  },
+  "canvas-top": {
+    "el": "CANVAS ta=auto",
+    "before": 607,
+    "after": 742,
+    "progress": 0.08,
+    "selected": null
+  }
+}

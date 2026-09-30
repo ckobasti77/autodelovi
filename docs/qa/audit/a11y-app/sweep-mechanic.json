@@ -1,0 +1,540 @@
+[
+  {
+    "role": "mechanic",
+    "width": 390,
+    "route": "/majstor",
+    "status": 200,
+    "finalUrl": "/majstor",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Majstorski portal | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Majstorski portal"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Majstorski portal",
+        "Portal",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "input \"Otpremi CSV\" 1x1",
+        "a \"SK-2026-000103\" 129x20",
+        "a \"SK-2026-000101\" 129x20",
+        "a \"SK-2026-000100\" 129x20"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/mechanic-390-majstor.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 390,
+    "route": "/majstor/brza-porudzbina",
+    "status": 200,
+    "finalUrl": "/majstor/brza-porudzbina",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Brza porudžbina | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Majstorski portal"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Majstorski portal",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "input \"Otpremi CSV\" 1x1"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/mechanic-390-majstor_brza-porudzbina.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 390,
+    "route": "/majstor/porudzbine",
+    "status": 200,
+    "finalUrl": "/majstor/porudzbine",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Porudžbine | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Majstorski portal"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Majstorski portal",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"SK-2026-000103\" 199x20",
+        "a \"SK-2026-000101\" 199x20",
+        "a \"SK-2026-000100\" 199x20"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/mechanic-390-majstor_porudzbine.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 390,
+    "route": "/majstor/omiljeno",
+    "status": 200,
+    "finalUrl": "/majstor/omiljeno",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Omiljeno | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Majstorski portal"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Majstorski portal",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/mechanic-390-majstor_omiljeno.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 390,
+    "route": "/majstor/vozila",
+    "status": 200,
+    "finalUrl": "/majstor/vozila",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Vozila mušterija | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Majstorski portal"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Majstorski portal",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/mechanic-390-majstor_vozila.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 390,
+    "route": "/majstor/cenovnik",
+    "status": 200,
+    "finalUrl": "/majstor/cenovnik",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Cenovnik | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Majstorski portal"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Majstorski portal",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "button \"Motor i usis — sve kategorije\" 20x20",
+        "button \"Blok motora i glava\" 20x20",
+        "button \"Turbina (turbopunjač)\" 20x20",
+        "button \"Interkuler\" 20x20",
+        "button \"Usisna grana i kućište filtera\" 20x20",
+        "button \"Brizgaljke i pumpa goriva\" 20x20",
+        "button \"Set zupčastog kaiša i vodena p\" 20x20",
+        "button \"Kaiš alternatora i zatezači\" 20x20"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/mechanic-390-majstor_cenovnik.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 390,
+    "route": "/majstor/upiti",
+    "error": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3100/majstor/upiti\", waiting until \"networkidle\"\n",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 390,
+    "route": "/majstor/profil",
+    "status": 200,
+    "finalUrl": "/majstor/profil",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Profil servisa | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Majstorski portal"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Majstorski portal",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "button \"Mehanika\" 20x20",
+        "input \"\" 20x20",
+        "button \"Autoelektrika\" 20x20",
+        "input \"\" 20x20",
+        "button \"Dijagnostika\" 20x20",
+        "input \"\" 20x20",
+        "button \"Klima\" 20x20",
+        "input \"\" 20x20"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/mechanic-390-majstor_profil.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 1440,
+    "route": "/majstor",
+    "status": 200,
+    "finalUrl": "/majstor",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Majstorski portal | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Majstorski portal"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Majstorski portal",
+        "Portal",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "input \"Otpremi CSV\" 1x1",
+        "a \"SK-2026-000103\" 129x20",
+        "a \"SK-2026-000101\" 129x20",
+        "a \"SK-2026-000100\" 129x20"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/mechanic-1440-majstor.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 1440,
+    "route": "/majstor/brza-porudzbina",
+    "status": 200,
+    "finalUrl": "/majstor/brza-porudzbina",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Brza porudžbina | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Majstorski portal"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Majstorski portal",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "input \"Otpremi CSV\" 1x1"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/mechanic-1440-majstor_brza-porudzbina.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 1440,
+    "route": "/majstor/porudzbine",
+    "status": 200,
+    "finalUrl": "/majstor/porudzbine",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Porudžbine | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Majstorski portal"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Majstorski portal",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "a \"SK-2026-000103\" 176x20",
+        "a \"SK-2026-000101\" 176x20",
+        "a \"SK-2026-000100\" 176x20"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/mechanic-1440-majstor_porudzbine.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 1440,
+    "route": "/majstor/omiljeno",
+    "status": 200,
+    "finalUrl": "/majstor/omiljeno",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Omiljeno | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Majstorski portal"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Majstorski portal",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/mechanic-1440-majstor_omiljeno.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 1440,
+    "route": "/majstor/vozila",
+    "error": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3100/majstor/vozila\", waiting until \"networkidle\"\n",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 1440,
+    "route": "/majstor/cenovnik",
+    "error": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3100/majstor/cenovnik\", waiting until \"networkidle\"\n",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 1440,
+    "route": "/majstor/upiti",
+    "error": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3100/majstor/upiti\", waiting until \"networkidle\"\n",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 1440,
+    "route": "/majstor/profil",
+    "error": "TimeoutError: page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3100/majstor/profil\", waiting until \"networkidle\"\n",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  }
+]

@@ -1,0 +1,20 @@
+idle 6.5 s on touch {"state":{"ready":false,"tier":null,"status":"idle","progress":0,"stage":0,"selected":null,"hovered":null,"timeline":"mobile","reducedMotion":false},"glb":0,"canvases":0}
+after first swipe {"scrollY":0,"status":"loading"}
+ready at trackTop {"trackTop":607,"state":{"ready":true,"tier":"mid","status":"ready","progress":0,"stage":0,"selected":null,"hovered":null,"timeline":"mobile","reducedMotion":false}}
+canvas box {"x":0,"y":56.1875,"width":390,"height":672}
+swipe on canvas {"before":607,"after":607,"moved":0,"state":{"ready":true,"tier":"mid","status":"ready","progress":0,"stage":0,"selected":null,"hovered":null,"timeline":"mobile","reducedMotion":false}}
+tap select {"x":195,"y":523,"selected":"usisna-grana"}
+sheet at open {"top":490,"height":776,"vh":844,"visiblePct":42}
+products in sheet 2
+swipe above non-modal sheet {"before":607,"after":607,"selected":"usisna-grana"}
+handle box {"x":163,"y":494.53125,"width":64,"height":24}
+after drag up {"top":68,"label":"Smanji panel"}
+after flick down {"selected":null,"panelVisible":true,"url":"/","active":"BODY null undefined"}
+parts list open (tap) true
+picked Akumulator from list {"selected":"akumulator","stage":5,"progress":0.632,"scrollY":1674}
+after close button {"selected":null,"active":"BUTTON parts-list-trigger"}
+toggle label before Rasklopi
+after Rasklopi tap {"state":{"ready":true,"tier":"mid","status":"ready","progress":1,"stage":7,"selected":null,"hovered":null,"timeline":"mobile","reducedMotion":false},"scrollY":2295,"label":"Sklopi"}
+landscape 844x390 {"canvasCss":[844,300],"canvasBuf":[844,300],"media":[844,300],"frameH":416,"state":{"ready":true,"tier":"mid","status":"ready","progress":0.09359,"stage":0,"selected":null,"hovered":null,"timeline":"mobile","reducedMotion":false},"scrollY":607}
+back to portrait {"canvasCss":[390,672],"canvasBuf":[390,672],"state":{"ready":true,"tier":"mid","status":"ready","progress":0,"stage":0,"selected":null,"hovered":null,"timeline":"mobile","reducedMotion":false}}
+errors {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}

@@ -1,0 +1,19 @@
+majstore 360 {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+majstore 390 {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.goto: Timeout 90000ms exceeded.
+Call log:
+  - navigating to "http://localhost:3100/za-majstore", waiting until "load"
+
+    at capture (C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\audit\vis-commerce-secondary.mjs:14:14)
+    at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\audit\vis-commerce-secondary.mjs:36:22 {
+  log: [
+    '  - navigating to "http://localhost:3100/za-majstore", waiting until "load"'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.23.2

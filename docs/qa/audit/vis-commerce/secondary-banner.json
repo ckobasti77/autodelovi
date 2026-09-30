@@ -1,0 +1,180 @@
+{
+  "banner": {
+    "360": {
+      "geo": {
+        "top": 466.40625,
+        "h": 313.59375,
+        "w": 360,
+        "vh": 780,
+        "share": 0.4
+      },
+      "probe": {
+        "vw": 360,
+        "over": 0,
+        "offenders": [],
+        "tiny": [],
+        "tinyCount": 0,
+        "under44": [
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 1,
+        "smallInputs": []
+      },
+      "axe": [],
+      "geoSettings": {
+        "top": 274.28125,
+        "h": 505.71875,
+        "vh": 780,
+        "share": 0.65
+      },
+      "tabOrder": [
+        "Preskoči na sadržaj",
+        "Više o kolačićima",
+        "Prihvati sve",
+        "Odbij sve",
+        "Podešavanja",
+        "SKLOP"
+      ],
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "768": {
+      "geo": {
+        "top": 805.40625,
+        "h": 218.59375,
+        "w": 768,
+        "vh": 1024,
+        "share": 0.21
+      },
+      "probe": {
+        "vw": 768,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "a 50x18 \"Početna\""
+        ],
+        "tinyCount": 1,
+        "under44": [
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 1,
+        "smallInputs": []
+      },
+      "geoSettings": {
+        "top": 653.40625,
+        "h": 370.59375,
+        "vh": 1024,
+        "share": 0.36
+      },
+      "tabOrder": [
+        "Preskoči na sadržaj",
+        "Više o kolačićima",
+        "Prihvati sve",
+        "Odbij sve",
+        "Podešavanja",
+        "SKLOP"
+      ],
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "1440": {
+      "geo": {
+        "top": 741.40625,
+        "h": 158.59375,
+        "w": 1440,
+        "vh": 900,
+        "share": 0.18
+      },
+      "probe": {
+        "vw": 1440,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "a 50x18 \"Početna\""
+        ],
+        "tinyCount": 1,
+        "under44": [
+          "button 256x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 3,
+        "smallInputs": []
+      },
+      "axe": [],
+      "geoSettings": {
+        "top": 589.40625,
+        "h": 310.59375,
+        "vh": 900,
+        "share": 0.35
+      },
+      "tabOrder": [
+        "Preskoči na sadržaj",
+        "Više o kolačićima",
+        "Prihvati sve",
+        "Odbij sve",
+        "Podešavanja",
+        "SKLOP"
+      ],
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "2560": {
+      "geo": {
+        "top": 1281.40625,
+        "h": 158.59375,
+        "w": 2560,
+        "vh": 1440,
+        "share": 0.11
+      },
+      "probe": {
+        "vw": 2560,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "a 50x18 \"Početna\""
+        ],
+        "tinyCount": 1,
+        "under44": [
+          "button 288x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 3,
+        "smallInputs": []
+      },
+      "geoSettings": {
+        "top": 1129.40625,
+        "h": 310.59375,
+        "vh": 1440,
+        "share": 0.22
+      },
+      "tabOrder": [
+        "Preskoči na sadržaj",
+        "Više o kolačićima",
+        "Prihvati sve",
+        "Odbij sve",
+        "Podešavanja",
+        "SKLOP"
+      ],
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    }
+  }
+}

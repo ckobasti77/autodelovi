@@ -1,0 +1,196 @@
+{
+  "360": {
+    "hvala": {
+      "probe": {
+        "vw": 360,
+        "over": 0,
+        "offenders": [],
+        "tiny": [],
+        "tinyCount": 0,
+        "under44": [
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 1,
+        "smallInputs": []
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "axe": []
+    },
+    "status": {
+      "probe": {
+        "vw": 360,
+        "over": 0,
+        "offenders": [],
+        "tiny": [],
+        "tinyCount": 0,
+        "under44": [
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 1,
+        "smallInputs": []
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "axe": []
+    },
+    "predracun": {
+      "probe": {
+        "vw": 360,
+        "over": 0,
+        "offenders": [],
+        "tiny": [],
+        "tinyCount": 0,
+        "under44": [
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 1,
+        "smallInputs": []
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "axe": []
+    },
+    "upit-status": {
+      "probe": {
+        "vw": 360,
+        "over": 0,
+        "offenders": [],
+        "tiny": [],
+        "tinyCount": 0,
+        "under44": [
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 1,
+        "smallInputs": []
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "axe": []
+    },
+    "upit-hvala": {
+      "probe": {
+        "vw": 360,
+        "over": 0,
+        "offenders": [],
+        "tiny": [],
+        "tinyCount": 0,
+        "under44": [
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 1,
+        "smallInputs": []
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "axe": []
+    },
+    "upit": {
+      "probe": {
+        "vw": 360,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "input 1x1 \"INPUT\"",
+          "button 20x20 \"BUTTON\"",
+          "button 20x20 \"BUTTON\"",
+          "button 20x20 \"BUTTON\"",
+          "button 20x20 \"BUTTON\"",
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 6,
+        "under44": [
+          "input 302x42 \"vin\"",
+          "select 326x42 \"IzaberiteVolkswagenAudiŠkodaSEATCupra\"",
+          "select 326x42 \"Prvo marku\"",
+          "select 326x42 \"Prvo model\"",
+          "input 302x42 \"year\"",
+          "select 326x34 \"Dodaj kategoriju\"",
+          "input 302x42 \"name\"",
+          "input 302x42 \"phone\"",
+          "input 302x42 \"email\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 10,
+        "smallInputs": [
+          " 14px"
+        ]
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "axe": []
+    },
+    "upitErrors": {
+      "active": "<textarea name=\"message\" id=\"iq-message\" aria-describedby=\"iq-message-msg iq-message-count\" rows=\"5\" maxlength=\"2000\" class=\"min-h-24 w-full resize-y bg-transparent text-[1rem] leading-normal text-inh",
+      "invalid": [
+        "iq-message",
+        "iq-name",
+        "iq-phone",
+        "cb_R_clinpfd9fclb_"
+      ]
+    },
+    "upitAfter": {
+      "probe": {
+        "vw": 360,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "input 1x1 \"INPUT\"",
+          "button 20x20 \"BUTTON\"",
+          "button 20x20 \"BUTTON\"",
+          "button 20x20 \"BUTTON\"",
+          "button 20x20 \"BUTTON\"",
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 6,
+        "under44": [
+          "input 302x42 \"vin\"",
+          "select 326x42 \"IzaberiteVolkswagenAudiŠkodaSEATCupra\"",
+          "select 326x42 \"IzaberiteGolfPassatPoloCaddyTouranTiguan\"",
+          "select 326x42 \"IzaberiteGolf IV · 1997–2006Golf V · 2003–2009Golf\"",
+          "input 302x42 \"year\"",
+          "select 326x34 \"Dodaj kategoriju\"",
+          "button 32x32 \"Ukloni fotografiju photo-1.jpg\"",
+          "button 32x32 \"Ukloni fotografiju photo-2.jpg\"",
+          "button 32x32 \"Ukloni fotografiju photo-3.jpg\"",
+          "input 302x42 \"name\""
+        ],
+        "under44Count": 13,
+        "smallInputs": [
+          " 14px"
+        ]
+      }
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "print": {
+    "pdfBytes": 101009,
+    "pdfPages": 1,
+    "visible": [
+      "a: Preskoči na sadržaj"
+    ]
+  }
+}

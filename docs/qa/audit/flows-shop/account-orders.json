@@ -1,0 +1,374 @@
+[
+  {
+    "id": "C1",
+    "who": "customer",
+    "width": 390,
+    "guestCart": [],
+    "cartAfterLogin": [
+      "Set za reparaciju kočione čeljusti, prednji Febi Bilstein · OEM 1K0 615 324 H 1.490 RSD × 2 2.980 RSD"
+    ],
+    "cartBefore": [
+      "Set za reparaciju kočione čeljusti, prednji Febi Bilstein · OEM 1K0 615 324 H 1.490 RSD × 2 2.980 RSD"
+    ],
+    "prefill": "{\"firstName\":\"Marko\",\"lastName\":\"Petrović\",\"phone\":\"064 555 0101\",\"email\":\"audit-kupac-5455287@primer.rs\",\"isCompany\":false,\"companyName\":\"\",\"pib\":\"\",\"mb\":\"\",\"deliveryMethod\":\"pickup\",\"street\":\"\",\"city\":\"\",\"postalCode\":\"\",\"addressNote\":\"\",\"paymentMethod\":\"pickup_cash\",\"vin\":\"\",\"useVehicle\":true,\"note\":\"\",\"terms\":false}",
+    "number": "SK-2026-000116",
+    "token": "nPehAaeVqMq8NO09b6N0HR3uFE_-xOsJu8TqIdbqxus",
+    "url": "http://localhost:3100/porudzbina/hvala/nPehAaeVqMq8NO09b6N0HR3uFE_-xOsJu8TqIdbqxus",
+    "total": "2.980 RSD",
+    "paymentOptions": [
+      {
+        "name": "Gotovinom pri preuzimanjuPlaćate u radnji kada preuzimate deo.",
+        "checked": true,
+        "disabled": false
+      },
+      {
+        "name": "Karticom pri preuzimanjuPlaćate karticom u radnji kada preuzimate deo.",
+        "checked": false,
+        "disabled": false
+      },
+      {
+        "name": "Virmanom uz predračunŠaljemo predračun; deo rezervišemo do uplate. Samo za firme — u koraku Kontakt uključite „Kupujem kao firma“.",
+        "checked": false,
+        "disabled": true
+      }
+    ],
+    "shippingOnDelivery": "2.980 RSD",
+    "probe": {
+      "customerType": "customer",
+      "deliveryMethod": "pickup",
+      "eventTypes": [
+        "order.created"
+      ],
+      "hasAttribution": true,
+      "itemCount": 2,
+      "paymentMethod": "pickup_cash",
+      "source": "web",
+      "status": "nova",
+      "totalPara": 298000
+    },
+    "thanksText": "PORUDŽBINA JE PRIMLJENA.\n\nBroj porudžbine je SK-2026-000116. Poslali smo potvrdu na audit-kupac-5455287@primer.rs; javićemo se kad je potvrdimo.\n\nPlaćate gotovinom u radnji kada preuzimate deo.\n\nStatus pratite na stranici porudžbine — sačuvajte link.\n\nSK-2026-000116\nPrimljena\n30.09.2026. 18:48\nTok porudžbine\nPrimljena\n— trenutno\n30.09.2026. 18:48\nPotvrđena\n— čeka\nSpremna za preuzimanje\n— čeka\nPreuzeta\n— čeka\nStavke\nSet za reparaciju kočione čeljusti, prednji\nFebi Bilstein · OEM 1K0 615 324 H · 2 × 1.490 RSD\n2.980 RSD\nArtikli\n2.980 RSD\nDostava\n0 RSD\nUkupno\n2.980 RSD\n\nUračunat PDV: 496,67 RSD\n\nDostava\n\nLično preuzimanje\n\nPlaćanje\n\nGotovinom pri preuzimanju\n\nObaveštenja\n\nSvaku promenu vidite na ovoj stranici — osvežava se sama, bez ponovnog učitavanja.\n\nKupac\n\nMarko Petrović\n+381 64 555 0101\naudit-kupac-5455287@primer.rs",
+    "proformaText": "SKLOP\nPredračun\n\nSK-2026-000116\n\nDatum: 30.09.2026.\n\nKUPAC\n\nMarko Petrović\n+381 64 555 0101 · audit-kupac-5455287@primer.rs\n\nUPLATA\n\nPodatke za uplatu šaljemo uz potvrdu porudžbine. Poziv na broj: 2026000116\n\nARTIKAL\tKOL.\tCENA SA PDV\tIZNOS\nSet za reparaciju kočione čeljusti, prednji\nDEMO-0019 · OEM 1K0 615 324 H\n\t2\t1.490 RSD\t2.980 RSD\nDostava\t0 RSD\nOsnovica\n2.483,33 RSD\nPDV 20 %\n496,67 RSD\nZa uplatu\n2.980 RSD\n\nPredračun nije fiskalni račun. Robu rezervišemo do uplate; račun izdajemo pri isporuci.\n\nŠtampaj predračun",
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "id": "C2",
+    "who": "customer",
+    "width": 1440,
+    "preexistingCart": [],
+    "cartBefore": [
+      "Kočioni disk prednji 256 × 22 mm Bosch · OEM 6R0 615 645 3.990 RSD × 1 3.990 RSD"
+    ],
+    "prefill": "{\"firstName\":\"Marko\",\"lastName\":\"Petrović\",\"phone\":\"064 555 0101\",\"email\":\"audit-kupac-5455287@primer.rs\",\"isCompany\":false,\"companyName\":\"\",\"pib\":\"\",\"mb\":\"\",\"deliveryMethod\":\"courier\",\"street\":\"Radnička 7\",\"city\":\"Beograd\",\"postalCode\":\"11000\",\"addressNote\":\"\",\"paymentMethod\":\"cod\",\"vin\":\"\",\"useVehicle\":true,\"note\":\"\",\"terms\":false}",
+    "number": "SK-2026-000117",
+    "token": "uI0z-u9tLHTNsfpqC5EcKVvUDZ8qJPuNzERvJ36qXGY",
+    "url": "http://localhost:3100/porudzbina/hvala/uI0z-u9tLHTNsfpqC5EcKVvUDZ8qJPuNzERvJ36qXGY",
+    "total": "4.440 RSD",
+    "paymentOptions": [
+      {
+        "name": "PouzećemPlaćate kuriru gotovinom pri preuzimanju paketa.",
+        "checked": true,
+        "disabled": false
+      },
+      {
+        "name": "Virmanom uz predračunŠaljemo predračun; deo rezervišemo do uplate. Samo za firme — u koraku Kontakt uključite „Kupujem kao firma“.",
+        "checked": false,
+        "disabled": true
+      }
+    ],
+    "shippingOnDelivery": "4.440 RSD",
+    "probe": {
+      "customerType": "customer",
+      "deliveryMethod": "courier",
+      "eventTypes": [
+        "order.created"
+      ],
+      "hasAttribution": true,
+      "itemCount": 1,
+      "paymentMethod": "cod",
+      "source": "web",
+      "status": "nova",
+      "totalPara": 444000
+    },
+    "thanksText": "PORUDŽBINA JE PRIMLJENA.\n\nBroj porudžbine je SK-2026-000117. Poslali smo potvrdu na audit-kupac-5455287@primer.rs; javićemo se kad je potvrdimo.\n\nPlaćate pouzećem kuriru pri preuzimanju paketa.\n\nStatus pratite na stranici porudžbine — sačuvajte link.\n\nSK-2026-000117\nPrimljena\n30.09.2026. 18:53\nTok porudžbine\nPrimljena\n— trenutno\n30.09.2026. 18:53\nPotvrđena\n— čeka\nPoslata\n— čeka\nIsporučena\n— čeka\nStavke\nKočioni disk prednji 256 × 22 mm\nBosch · OEM 6R0 615 645 · 1 × 3.990 RSD\n3.990 RSD\nArtikli\n3.990 RSD\nDostava\n450 RSD\nUkupno\n4.440 RSD\n\nUračunat PDV: 740 RSD\n\nDostava\n\nKurirska služba · Radnička 7, 11000 Beograd\n\nPlaćanje\n\nPouzećem\n\nObaveštenja\n\nSvaku promenu vidite na ovoj stranici — osvežava se sama, bez ponovnog učitavanja.\n\nKupac\n\nMarko Petrović\n+381 64 555 0101\naudit-kupac-5455287@primer.rs",
+    "proformaText": "SKLOP\nPredračun\n\nSK-2026-000117\n\nDatum: 30.09.2026.\n\nKUPAC\n\nMarko Petrović\n+381 64 555 0101 · audit-kupac-5455287@primer.rs\n\nUPLATA\n\nPodatke za uplatu šaljemo uz potvrdu porudžbine. Poziv na broj: 2026000117\n\nARTIKAL\tKOL.\tCENA SA PDV\tIZNOS\nKočioni disk prednji 256 × 22 mm\nDEMO-0006 · OEM 6R0 615 645\n\t1\t3.990 RSD\t3.990 RSD\nDostava\t450 RSD\nOsnovica\n3.700 RSD\nPDV 20 %\n740 RSD\nZa uplatu\n4.440 RSD\n\nPredračun nije fiskalni račun. Robu rezervišemo do uplate; račun izdajemo pri isporuci.\n\nŠtampaj predračun",
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "id": "C3",
+    "who": "customer",
+    "width": 390,
+    "preexistingCart": [],
+    "cartBefore": [
+      "ABS senzor prednji Meyle · OEM 6R0 927 986 S 2.590 RSD × 1 2.590 RSD"
+    ],
+    "prefill": "{\"firstName\":\"Marko\",\"lastName\":\"Petrović\",\"phone\":\"064 555 0101\",\"email\":\"audit-kupac-5455287@primer.rs\",\"isCompany\":true,\"companyName\":\"Kupac Firma d.o.o.\",\"pib\":\"154552870\",\"mb\":\"64552872\",\"deliveryMethod\":\"courier\",\"street\":\"Radnička 7\",\"city\":\"Beograd\",\"postalCode\":\"11000\",\"addressNote\":\"\",\"paymentMethod\":\"bank_transfer\",\"vin\":\"\",\"useVehicle\":true,\"note\":\"\",\"terms\":false}",
+    "number": "SK-2026-000118",
+    "token": "Ct2pc5dRq52bjrseW31K29BcRAZ5OH_IMItudTJ5Zh4",
+    "url": "http://localhost:3100/porudzbina/hvala/Ct2pc5dRq52bjrseW31K29BcRAZ5OH_IMItudTJ5Zh4",
+    "total": "3.040 RSD",
+    "paymentOptions": [
+      {
+        "name": "PouzećemPlaćate kuriru gotovinom pri preuzimanju paketa.",
+        "checked": true,
+        "disabled": false
+      },
+      {
+        "name": "Virmanom uz predračunŠaljemo predračun; deo rezervišemo do uplate.",
+        "checked": false,
+        "disabled": false
+      }
+    ],
+    "shippingOnDelivery": "3.040 RSD",
+    "probe": {
+      "customerType": "customer",
+      "deliveryMethod": "courier",
+      "eventTypes": [
+        "order.created"
+      ],
+      "hasAttribution": true,
+      "itemCount": 1,
+      "paymentMethod": "bank_transfer",
+      "source": "web",
+      "status": "nova",
+      "totalPara": 304000
+    },
+    "thanksText": "PORUDŽBINA JE PRIMLJENA.\n\nBroj porudžbine je SK-2026-000118. Poslali smo potvrdu na audit-kupac-5455287@primer.rs; javićemo se kad je potvrdimo.\n\nPosle potvrde šaljemo predračun; deo rezervišemo do uplate.\n\nStatus pratite na stranici porudžbine — sačuvajte link.\n\nSK-2026-000118\nPrimljena\n30.09.2026. 18:55\nTok porudžbine\nPrimljena\n— trenutno\n30.09.2026. 18:55\nPotvrđena\n— čeka\nPoslata\n— čeka\nIsporučena\n— čeka\nStavke\nABS senzor prednji\nMeyle · OEM 6R0 927 986 S · 1 × 2.590 RSD\n2.590 RSD\nArtikli\n2.590 RSD\nDostava\n450 RSD\nUkupno\n3.040 RSD\n\nUračunat PDV: 506,67 RSD\n\nDostava\n\nKurirska služba · Radnička 7, 11000 Beograd\n\nPlaćanje\n\nVirmanom uz predračun\n\nPredračun\n\nObaveštenja\n\nSvaku promenu vidite na ovoj stranici — osvežava se sama, bez ponovnog učitavanja.\n\nKupac\n\nMarko Petrović\n+381 64 555 0101\naudit-kupac-5455287@primer.rs\nKupac Firma d.o.o. · PIB 154552870",
+    "proformaText": "SKLOP\nPredračun\n\nSK-2026-000118\n\nDatum: 30.09.2026.\n\nKUPAC\n\nKupac Firma d.o.o.\nPIB 154552870 · MB 64552872\n+381 64 555 0101 · audit-kupac-5455287@primer.rs\n\nUPLATA\n\nPodatke za uplatu šaljemo uz potvrdu porudžbine. Poziv na broj: 2026000118\n\nARTIKAL\tKOL.\tCENA SA PDV\tIZNOS\nABS senzor prednji\nDEMO-0022 · OEM 6R0 927 986 S\n\t1\t2.590 RSD\t2.590 RSD\nDostava\t450 RSD\nOsnovica\n2.533,33 RSD\nPDV 20 %\n506,67 RSD\nZa uplatu\n3.040 RSD\n\nPredračun nije fiskalni račun. Robu rezervišemo do uplate; račun izdajemo pri isporuci.\n\nŠtampaj predračun",
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "id": "M1",
+    "who": "mechanic",
+    "width": 390,
+    "preexistingCart": [],
+    "cartBefore": [
+      "Kočioni disk prednji 256 × 22 mm Bosch · OEM 6R0 615 645 3.392 RSD × 1 · Vaša cena 3.392 RSD"
+    ],
+    "prefill": "{\"firstName\":\"Dragan\",\"lastName\":\"Jović\",\"phone\":\"+381 64 555 1234\",\"email\":\"audit-majstor-5455287@primer.rs\",\"isCompany\":true,\"companyName\":\"Audit servis d.o.o.\",\"pib\":\"154552870\",\"mb\":\"64552872\",\"deliveryMethod\":\"courier\",\"street\":\"Radnička 7\",\"city\":\"Beograd\",\"postalCode\":\"11000\",\"addressNote\":\"\",\"paymentMethod\":\"deferred\",\"vin\":\"\",\"useVehicle\":true,\"note\":\"\",\"terms\":false}",
+    "number": "SK-2026-000119",
+    "token": "zDbt6VIYRazCPgMIjpF0UAEwcR2rD2ghL9BnicsQ0BM",
+    "url": "http://localhost:3100/porudzbina/hvala/zDbt6VIYRazCPgMIjpF0UAEwcR2rD2ghL9BnicsQ0BM",
+    "total": "3.842 RSD",
+    "paymentOptions": [
+      {
+        "name": "PouzećemPlaćate kuriru gotovinom pri preuzimanju paketa.",
+        "checked": true,
+        "disabled": false
+      },
+      {
+        "name": "Virmanom uz predračunŠaljemo predračun; deo rezervišemo do uplate.",
+        "checked": false,
+        "disabled": false
+      },
+      {
+        "name": "Odloženo plaćanjeZa majstore sa odobrenim odloženim plaćanjem, po dogovorenom roku. Rok 15 dana, preostali limit 200.000 RSD.",
+        "checked": false,
+        "disabled": false
+      }
+    ],
+    "shippingOnDelivery": "3.842 RSD",
+    "probe": {
+      "customerType": "mechanic",
+      "deliveryMethod": "courier",
+      "eventTypes": [
+        "order.created"
+      ],
+      "hasAttribution": true,
+      "itemCount": 1,
+      "paymentMethod": "deferred",
+      "source": "web",
+      "status": "nova",
+      "totalPara": 384200
+    },
+    "thanksText": "PORUDŽBINA JE PRIMLJENA.\n\nBroj porudžbine je SK-2026-000119. Poslali smo potvrdu na audit-majstor-5455287@primer.rs; javićemo se kad je potvrdimo.\n\nPlaćate po dogovorenom roku za odloženo plaćanje.\n\nStatus pratite na stranici porudžbine — sačuvajte link.\n\nSK-2026-000119\nPrimljena\n30.09.2026. 18:56\nTok porudžbine\nPrimljena\n— trenutno\n30.09.2026. 18:56\nPotvrđena\n— čeka\nPoslata\n— čeka\nIsporučena\n— čeka\nStavke\nKočioni disk prednji 256 × 22 mm\nBosch · OEM 6R0 615 645 · 1 × 3.392 RSD\n3.392 RSD\nArtikli\n3.392 RSD\nDostava\n450 RSD\nUkupno\n3.842 RSD\n\nUračunat PDV: 640,33 RSD\n\nDostava\n\nKurirska služba · Radnička 7, 11000 Beograd\n\nPlaćanje\n\nOdloženo plaćanje\n\nObaveštenja\n\nSvaku promenu vidite na ovoj stranici — osvežava se sama, bez ponovnog učitavanja.\n\nKupac\n\nDragan Jović\n+381 64 555 1234\naudit-majstor-5455287@primer.rs\nAudit servis d.o.o. · PIB 154552870",
+    "proformaText": "SKLOP\nPredračun\n\nSK-2026-000119\n\nDatum: 30.09.2026.\n\nKUPAC\n\nAudit servis d.o.o.\nPIB 154552870 · MB 64552872\n+381 64 555 1234 · audit-majstor-5455287@primer.rs\n\nUPLATA\n\nPodatke za uplatu šaljemo uz potvrdu porudžbine. Poziv na broj: 2026000119\n\nARTIKAL\tKOL.\tCENA SA PDV\tIZNOS\nKočioni disk prednji 256 × 22 mm\nDEMO-0006 · OEM 6R0 615 645\n\t1\t3.392 RSD\t3.392 RSD\nDostava\t450 RSD\nOsnovica\n3.201,67 RSD\nPDV 20 %\n640,33 RSD\nZa uplatu\n3.842 RSD\n\nPredračun nije fiskalni račun. Robu rezervišemo do uplate; račun izdajemo pri isporuci.\n\nŠtampaj predračun",
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "id": "M2",
+    "who": "mechanic",
+    "width": 1440,
+    "preexistingCart": [],
+    "cartBefore": [
+      "Kočiona čeljust prednja leva TRW · OEM 1K0 615 411 G 10.115 RSD × 1 · Vaša cena 10.115 RSD"
+    ],
+    "prefill": "{\"firstName\":\"Dragan\",\"lastName\":\"Jović\",\"phone\":\"+381 64 555 1234\",\"email\":\"audit-majstor-5455287@primer.rs\",\"isCompany\":true,\"companyName\":\"Audit servis d.o.o.\",\"pib\":\"154552870\",\"mb\":\"64552872\",\"deliveryMethod\":\"pickup\",\"street\":\"Kralja Petra I 12\",\"city\":\"Kragujevac\",\"postalCode\":\"\",\"addressNote\":\"\",\"paymentMethod\":\"deferred\",\"vin\":\"\",\"useVehicle\":true,\"note\":\"\",\"terms\":false}",
+    "number": "SK-2026-000120",
+    "token": "ByUPRUMpjDiu-g5yaaGxC4hYs4Ae5n25139OSGbB7uY",
+    "url": "http://localhost:3100/porudzbina/hvala/ByUPRUMpjDiu-g5yaaGxC4hYs4Ae5n25139OSGbB7uY",
+    "total": "10.115 RSD",
+    "paymentOptions": [
+      {
+        "name": "Gotovinom pri preuzimanjuPlaćate u radnji kada preuzimate deo.",
+        "checked": true,
+        "disabled": false
+      },
+      {
+        "name": "Karticom pri preuzimanjuPlaćate karticom u radnji kada preuzimate deo.",
+        "checked": false,
+        "disabled": false
+      },
+      {
+        "name": "Virmanom uz predračunŠaljemo predračun; deo rezervišemo do uplate.",
+        "checked": false,
+        "disabled": false
+      },
+      {
+        "name": "Odloženo plaćanjeZa majstore sa odobrenim odloženim plaćanjem, po dogovorenom roku. Rok 15 dana, preostali limit 196.158 RSD.",
+        "checked": false,
+        "disabled": false
+      }
+    ],
+    "shippingOnDelivery": "10.115 RSD",
+    "probe": {
+      "customerType": "mechanic",
+      "deliveryMethod": "pickup",
+      "eventTypes": [
+        "order.created"
+      ],
+      "hasAttribution": true,
+      "itemCount": 1,
+      "paymentMethod": "deferred",
+      "source": "web",
+      "status": "nova",
+      "totalPara": 1011500
+    },
+    "thanksText": "PORUDŽBINA JE PRIMLJENA.\n\nBroj porudžbine je SK-2026-000120. Poslali smo potvrdu na audit-majstor-5455287@primer.rs; javićemo se kad je potvrdimo.\n\nPlaćate po dogovorenom roku za odloženo plaćanje.\n\nStatus pratite na stranici porudžbine — sačuvajte link.\n\nSK-2026-000120\nPrimljena\n30.09.2026. 18:59\nTok porudžbine\nPrimljena\n— trenutno\n30.09.2026. 18:59\nPotvrđena\n— čeka\nSpremna za preuzimanje\n— čeka\nPreuzeta\n— čeka\nStavke\nKočiona čeljust prednja leva\nTRW · OEM 1K0 615 411 G · 1 × 10.115 RSD\n10.115 RSD\nArtikli\n10.115 RSD\nDostava\n0 RSD\nUkupno\n10.115 RSD\n\nUračunat PDV: 1.685,83 RSD\n\nDostava\n\nLično preuzimanje\n\nPlaćanje\n\nOdloženo plaćanje\n\nObaveštenja\n\nSvaku promenu vidite na ovoj stranici — osvežava se sama, bez ponovnog učitavanja.\n\nKupac\n\nDragan Jović\n+381 64 555 1234\naudit-majstor-5455287@primer.rs\nAudit servis d.o.o. · PIB 154552870",
+    "proformaText": "SKLOP\nPredračun\n\nSK-2026-000120\n\nDatum: 30.09.2026.\n\nKUPAC\n\nAudit servis d.o.o.\nPIB 154552870 · MB 64552872\n+381 64 555 1234 · audit-majstor-5455287@primer.rs\n\nUPLATA\n\nPodatke za uplatu šaljemo uz potvrdu porudžbine. Poziv na broj: 2026000120\n\nARTIKAL\tKOL.\tCENA SA PDV\tIZNOS\nKočiona čeljust prednja leva\nDEMO-0017 · OEM 1K0 615 411 G\n\t1\t10.115 RSD\t10.115 RSD\nDostava\t0 RSD\nOsnovica\n8.429,17 RSD\nPDV 20 %\n1.685,83 RSD\nZa uplatu\n10.115 RSD\n\nPredračun nije fiskalni račun. Robu rezervišemo do uplate; račun izdajemo pri isporuci.\n\nŠtampaj predračun",
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "id": "M3",
+    "who": "mechanic",
+    "width": 1440,
+    "preexistingCart": [],
+    "cartBefore": [],
+    "prefill": "{\"firstName\":\"Dragan\",\"lastName\":\"Jović\",\"phone\":\"+381 64 555 1234\",\"email\":\"audit-majstor-5455287@primer.rs\",\"isCompany\":true,\"companyName\":\"Audit servis d.o.o.\",\"pib\":\"154552870\",\"mb\":\"64552872\",\"deliveryMethod\":\"courier\",\"street\":\"Radnička 7\",\"city\":\"Beograd\",\"postalCode\":\"11000\",\"addressNote\":\"\",\"paymentMethod\":\"bank_transfer\",\"vin\":\"\",\"useVehicle\":true,\"note\":\"\",\"terms\":false}",
+    "number": "SK-2026-000121",
+    "token": "2n3QjdJc4Vm2AlT3eSuO-HTrZTo9neCQH6Kx7j5d_W8",
+    "url": "http://localhost:3100/porudzbina/hvala/2n3QjdJc4Vm2AlT3eSuO-HTrZTo9neCQH6Kx7j5d_W8",
+    "total": "4.854 RSD",
+    "paymentOptions": [
+      {
+        "name": "PouzećemPlaćate kuriru gotovinom pri preuzimanju paketa.",
+        "checked": true,
+        "disabled": false
+      },
+      {
+        "name": "Virmanom uz predračunŠaljemo predračun; deo rezervišemo do uplate.",
+        "checked": false,
+        "disabled": false
+      },
+      {
+        "name": "Odloženo plaćanjeZa majstore sa odobrenim odloženim plaćanjem, po dogovorenom roku. Rok 15 dana, preostali limit 186.043 RSD.",
+        "checked": false,
+        "disabled": false
+      }
+    ],
+    "shippingOnDelivery": "4.854 RSD",
+    "probe": {
+      "customerType": "mechanic",
+      "deliveryMethod": "courier",
+      "eventTypes": [
+        "order.created"
+      ],
+      "hasAttribution": true,
+      "itemCount": 2,
+      "paymentMethod": "bank_transfer",
+      "source": "web",
+      "status": "nova",
+      "totalPara": 485400
+    },
+    "thanksText": "PORUDŽBINA JE PRIMLJENA.\n\nBroj porudžbine je SK-2026-000121. Poslali smo potvrdu na audit-majstor-5455287@primer.rs; javićemo se kad je potvrdimo.\n\nPosle potvrde šaljemo predračun; deo rezervišemo do uplate.\n\nStatus pratite na stranici porudžbine — sačuvajte link.\n\nSK-2026-000121\nPrimljena\n30.09.2026. 19:01\nTok porudžbine\nPrimljena\n— trenutno\n30.09.2026. 19:01\nPotvrđena\n— čeka\nPoslata\n— čeka\nIsporučena\n— čeka\nStavke\nABS senzor prednji\nMeyle · OEM 6R0 927 986 S · 2 × 2.202 RSD\n4.404 RSD\nArtikli\n4.404 RSD\nDostava\n450 RSD\nUkupno\n4.854 RSD\n\nUračunat PDV: 809 RSD\n\nDostava\n\nKurirska služba · Radnička 7, 11000 Beograd\n\nPlaćanje\n\nVirmanom uz predračun\n\nPredračun\n\nObaveštenja\n\nSvaku promenu vidite na ovoj stranici — osvežava se sama, bez ponovnog učitavanja.\n\nKupac\n\nDragan Jović\n+381 64 555 1234\naudit-majstor-5455287@primer.rs\nAudit servis d.o.o. · PIB 154552870",
+    "proformaText": "SKLOP\nPredračun\n\nSK-2026-000121\n\nDatum: 30.09.2026.\n\nKUPAC\n\nAudit servis d.o.o.\nPIB 154552870 · MB 64552872\n+381 64 555 1234 · audit-majstor-5455287@primer.rs\n\nUPLATA\n\nPodatke za uplatu šaljemo uz potvrdu porudžbine. Poziv na broj: 2026000121\n\nARTIKAL\tKOL.\tCENA SA PDV\tIZNOS\nABS senzor prednji\nDEMO-0022 · OEM 6R0 927 986 S\n\t2\t2.202 RSD\t4.404 RSD\nDostava\t450 RSD\nOsnovica\n4.045 RSD\nPDV 20 %\n809 RSD\nZa uplatu\n4.854 RSD\n\nPredračun nije fiskalni račun. Robu rezervišemo do uplate; račun izdajemo pri isporuci.\n\nŠtampaj predračun",
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "id": "M4",
+    "who": "mechanic",
+    "width": 390,
+    "preexistingCart": [],
+    "cartBefore": [
+      "Set za reparaciju kočione čeljusti, prednji Febi Bilstein · OEM 1K0 615 324 H 1.267 RSD × 1 · Vaša cena 1.267 RSD"
+    ],
+    "prefill": "{\"firstName\":\"Dragan\",\"lastName\":\"Jović\",\"phone\":\"+381 64 555 1234\",\"email\":\"audit-majstor-5455287@primer.rs\",\"isCompany\":true,\"companyName\":\"Audit servis d.o.o.\",\"pib\":\"154552870\",\"mb\":\"64552872\",\"deliveryMethod\":\"pickup\",\"street\":\"Kralja Petra I 12\",\"city\":\"Kragujevac\",\"postalCode\":\"\",\"addressNote\":\"\",\"paymentMethod\":\"pickup_card\",\"vin\":\"\",\"useVehicle\":true,\"note\":\"\",\"terms\":false}",
+    "number": "SK-2026-000122",
+    "token": "WWFsSvEb57WsKpZtEAkUmL5esGNzY3YXM6CA_Z4p7Lo",
+    "url": "http://localhost:3100/porudzbina/hvala/WWFsSvEb57WsKpZtEAkUmL5esGNzY3YXM6CA_Z4p7Lo",
+    "total": "1.267 RSD",
+    "paymentOptions": [
+      {
+        "name": "Gotovinom pri preuzimanjuPlaćate u radnji kada preuzimate deo.",
+        "checked": true,
+        "disabled": false
+      },
+      {
+        "name": "Karticom pri preuzimanjuPlaćate karticom u radnji kada preuzimate deo.",
+        "checked": false,
+        "disabled": false
+      },
+      {
+        "name": "Virmanom uz predračunŠaljemo predračun; deo rezervišemo do uplate.",
+        "checked": false,
+        "disabled": false
+      },
+      {
+        "name": "Odloženo plaćanjeZa majstore sa odobrenim odloženim plaćanjem, po dogovorenom roku. Rok 15 dana, preostali limit 186.043 RSD.",
+        "checked": false,
+        "disabled": false
+      }
+    ],
+    "shippingOnDelivery": "1.267 RSD",
+    "probe": {
+      "customerType": "mechanic",
+      "deliveryMethod": "pickup",
+      "eventTypes": [
+        "order.created"
+      ],
+      "hasAttribution": true,
+      "itemCount": 1,
+      "paymentMethod": "pickup_card",
+      "source": "web",
+      "status": "nova",
+      "totalPara": 126700
+    },
+    "thanksText": "PORUDŽBINA JE PRIMLJENA.\n\nBroj porudžbine je SK-2026-000122. Poslali smo potvrdu na audit-majstor-5455287@primer.rs; javićemo se kad je potvrdimo.\n\nPlaćate karticom u radnji kada preuzimate deo.\n\nStatus pratite na stranici porudžbine — sačuvajte link.\n\nSK-2026-000122\nPrimljena\n30.09.2026. 19:02\nTok porudžbine\nPrimljena\n— trenutno\n30.09.2026. 19:02\nPotvrđena\n— čeka\nSpremna za preuzimanje\n— čeka\nPreuzeta\n— čeka\nStavke\nSet za reparaciju kočione čeljusti, prednji\nFebi Bilstein · OEM 1K0 615 324 H · 1 × 1.267 RSD\n1.267 RSD\nArtikli\n1.267 RSD\nDostava\n0 RSD\nUkupno\n1.267 RSD\n\nUračunat PDV: 211,17 RSD\n\nDostava\n\nLično preuzimanje\n\nPlaćanje\n\nKarticom pri preuzimanju\n\nObaveštenja\n\nSvaku promenu vidite na ovoj stranici — osvežava se sama, bez ponovnog učitavanja.\n\nKupac\n\nDragan Jović\n+381 64 555 1234\naudit-majstor-5455287@primer.rs\nAudit servis d.o.o. · PIB 154552870",
+    "proformaText": "SKLOP\nPredračun\n\nSK-2026-000122\n\nDatum: 30.09.2026.\n\nKUPAC\n\nAudit servis d.o.o.\nPIB 154552870 · MB 64552872\n+381 64 555 1234 · audit-majstor-5455287@primer.rs\n\nUPLATA\n\nPodatke za uplatu šaljemo uz potvrdu porudžbine. Poziv na broj: 2026000122\n\nARTIKAL\tKOL.\tCENA SA PDV\tIZNOS\nSet za reparaciju kočione čeljusti, prednji\nDEMO-0019 · OEM 1K0 615 324 H\n\t1\t1.267 RSD\t1.267 RSD\nDostava\t0 RSD\nOsnovica\n1.055,83 RSD\nPDV 20 %\n211,17 RSD\nZa uplatu\n1.267 RSD\n\nPredračun nije fiskalni račun. Robu rezervišemo do uplate; račun izdajemo pri isporuci.\n\nŠtampaj predračun",
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+]

@@ -1,0 +1,102 @@
+{
+  "1-palette": "ERR TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: 'Pretraga' }).first()\n",
+  "2-dialog-focus": {
+    "active": {
+      "tag": "BUTTON",
+      "label": "Zatvori",
+      "text": ""
+    },
+    "f": "docs/qa/audit/vis-admin/verify/cancel-dialog-focus.webp",
+    "axe": []
+  },
+  "3-bulk-shift": {
+    "/admin/porudzbine": {
+      "before": {
+        "tableTop": 280,
+        "box1Top": 328
+      },
+      "after": {
+        "tableTop": 298,
+        "box1Top": 347
+      },
+      "shift": 18,
+      "bar": "1 izabranoPotvrdiŠtampaj otpremnicePoništi izbor"
+    },
+    "/admin/proizvodi": {
+      "before": {
+        "tableTop": 280,
+        "box1Top": 328
+      },
+      "after": {
+        "tableTop": 298,
+        "box1Top": 347
+      },
+      "shift": 18,
+      "bar": "1 izabranoAktivirajDeaktivirajPromeni kategorijuPromeni cene"
+    }
+  },
+  "4-editor": {
+    "url": "http://localhost:3100/admin/proizvodi/qh78v2nhb7drnhagy1s7zc1z3h8fbnh0",
+    "top": "docs/qa/audit/vis-admin/verify/editor-top.webp",
+    "full": "docs/qa/audit/vis-admin/verify/editor-full.webp",
+    "dirty": "docs/qa/audit/vis-admin/verify/editor-dirty.webp",
+    "bar": {
+      "pos": "sticky",
+      "top": 831,
+      "h": 69,
+      "left": 232,
+      "w": 1208
+    },
+    "restored": true,
+    "axe": []
+  },
+  "5-empty": {
+    "a": "docs/qa/audit/vis-admin/verify/empty-orders-search.webp",
+    "c": "docs/qa/audit/vis-admin/verify/empty-products-search.webp",
+    "d": "docs/qa/audit/vis-admin/verify/empty-inquiries-tab.webp"
+  },
+  "6-sidebar": {
+    "1440x900": {
+      "scrollH": 985,
+      "clientH": 844,
+      "links": 22,
+      "hiddenBelowFold": [
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ]
+    },
+    "1280x800": {
+      "scrollH": 884,
+      "clientH": 744,
+      "links": 22,
+      "hiddenBelowFold": [
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ]
+    },
+    "1920x1080": {
+      "scrollH": 1024,
+      "clientH": 1024,
+      "links": 22,
+      "hiddenBelowFold": []
+    }
+  },
+  "7-details": {
+    "danger": "docs/qa/audit/vis-admin/verify/settings-opasna-zona.webp",
+    "customerUrl": "http://localhost:3100/admin/kupci/s17266em9mn1gjbxcre9kfzbws8fcv6y",
+    "customer": "docs/qa/audit/vis-admin/verify/customer-detail.webp",
+    "mechanicUrl": "http://localhost:3100/admin/majstori?status=odobreni",
+    "mechanic": "docs/qa/audit/vis-admin/verify/mechanic-detail.webp"
+  },
+  "log": {
+    "console": [
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_CONNECTION_CLOSED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_CONNECTION_CLOSED"
+    ],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

@@ -1,0 +1,19 @@
+ok   mechanic 1440 /majstor → /majstor [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   mechanic 1440 /majstor/brza-porudzbina → /majstor/brza-porudzbina [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   mechanic 1440 /majstor/porudzbine → /majstor/porudzbine [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+FAIL mechanic 1440 /majstor/omiljeno → /majstor/omiljeno [200] stuck=0 pending=0 words=13 states={"running":1,"done":6} console=0 pageErr=0
+    
+ok   mechanic 1440 /majstor/vozila → /majstor/vozila [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   mechanic 1440 /majstor/cenovnik → /majstor/cenovnik [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   mechanic 1440 /majstor/upiti → /majstor/upiti [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   mechanic 1440 /majstor/profil → /majstor/profil [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   mechanic 1440 /deo/kocioni-disk-prednji-276-24-mm-demo-0004 → /deo/kocioni-disk-prednji-276-24-mm-demo-0004 [200] stuck=0 pending=0 words=0 states={"done":41} console=0 pageErr=0
+ok   mechanic 390 /majstor → /majstor [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   mechanic 390 /majstor/brza-porudzbina → /majstor/brza-porudzbina [500] stuck=0 pending=0 words=0 states={} console=3 pageErr=0
+ok   mechanic 390 /majstor/porudzbine → /prijava?next=%2Fmajstor%2Fporudzbine [500] stuck=0 pending=0 words=0 states={} console=3 pageErr=0
+ok   mechanic 390 /majstor/omiljeno → /prijava?next=%2Fmajstor%2Fomiljeno [500] stuck=0 pending=0 words=0 states={} console=3 pageErr=0
+ok   mechanic 390 /majstor/vozila → /prijava?next=%2Fmajstor%2Fvozila [500] stuck=0 pending=0 words=0 states={} console=3 pageErr=0
+ok   mechanic 390 /majstor/cenovnik → /majstor/cenovnik [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   mechanic 390 /majstor/upiti → /majstor/upiti [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   mechanic 390 /majstor/profil → /prijava?next=%2Fmajstor%2Fprofil [200] stuck=0 pending=0 words=0 states={"done":7} console=0 pageErr=0
+ok   mechanic 390 /deo/kocioni-disk-prednji-276-24-mm-demo-0004 → /deo/kocioni-disk-prednji-276-24-mm-demo-0004 [200] stuck=0 pending=0 words=0 states={"done":41} console=0 pageErr=0

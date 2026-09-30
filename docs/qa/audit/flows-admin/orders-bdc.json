@@ -1,0 +1,152 @@
+{
+  "B": "SK-2026-000125",
+  "D": "SK-2026-000126",
+  "C": "SK-2026-000127",
+  "steps": [
+    {
+      "name": "B open",
+      "rows": [
+        "Kočioni disk prednji 340 × 30 mm, GTIDEMO-0005 · OEM 5Q0 615 666 A · Original VAGBilo na stanju · sada 23 kom.118.900 RSD—18.900 RSD"
+      ]
+    },
+    {
+      "name": "B menu items",
+      "items": [
+        "Čeka deo",
+        "Otkaži porudžbinu"
+      ]
+    },
+    {
+      "name": "B ceka_deo dialog",
+      "text": "Čeka deo — SK-2026-000125Kupac dobija obaveštenje o promeni statusa.OdustaniČeka deo"
+    },
+    {
+      "name": "B after ceka_deo",
+      "head": "Porudžbina SK-2026-000125Čeka deo",
+      "rows": [
+        "Kočioni disk prednji 340 × 30 mm, GTIDEMO-0005 · OEM 5Q0 615 666 A · Original VAGBilo na stanju · sada 23 kom.118.900 RSD—18.900 RSD"
+      ]
+    },
+    {
+      "name": "B after potvrdjena",
+      "head": "Porudžbina SK-2026-000125Potvrđena",
+      "rows": [
+        "Kočioni disk prednji 340 × 30 mm, GTIDEMO-0005 · OEM 5Q0 615 666 A · Original VAGBilo na stanju · sada 22 kom. · skinuto 1118.900 RSD—18.900 RSD"
+      ]
+    },
+    {
+      "name": "B cancel dialog",
+      "text": "Otkaži porudžbinu — SK-2026-000125Artikli se vraćaju na stanje. Kupac dobija obaveštenje sa razlogom.Razlog otkazivanja (obavezno)0 / 300Kupac vidi razlog u obaveštenju i na stranici porudžbine.OdustaniOtkaži porudžbinu",
+      "disabledEmpty": true,
+      "focused": "BUTTON "
+    },
+    {
+      "name": "B cancel 2 chars",
+      "disabled": true,
+      "hint": "Otkaži porudžbinu — SK-2026-000125Artikli se vraćaju na stanje. Kupac dobija obaveštenje sa razlogom.Razlog otkazivanja (obavezno)ab2 / 300Kupac vidi razlog u obaveštenju i na stranici porudžbine.OdustaniOtkaži porudžbinu"
+    },
+    {
+      "name": "B after otkazana",
+      "head": "Porudžbina SK-2026-000125Otkazana",
+      "rows": [
+        "Kočioni disk prednji 340 × 30 mm, GTIDEMO-0005 · OEM 5Q0 615 666 A · Original VAGBilo na stanju · sada 23 kom.118.900 RSD—18.900 RSD"
+      ],
+      "buttons": [
+        "",
+        "Dodaj napomenu"
+      ]
+    },
+    {
+      "name": "B errors",
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "name": "B probe",
+      "p": {
+        "customerType": "guest",
+        "deliveryMethod": "courier",
+        "eventTypes": [
+          "order.created",
+          "order.status_changed",
+          "order.status_changed",
+          "order.status_changed"
+        ],
+        "hasAttribution": false,
+        "itemCount": 1,
+        "paymentMethod": "cod",
+        "source": "web",
+        "status": "otkazana",
+        "totalPara": 1890000
+      },
+      "e": [
+        "order_cancelled",
+        "order_confirmed",
+        "order_backordered",
+        "staff_order_new",
+        "order_received"
+      ]
+    },
+    {
+      "name": "D cancel dialog from nova",
+      "text": "Otkaži porudžbinu — SK-2026-000126Kupac dobija obaveštenje sa razlogom.Razlog otkazivanja (obavezno)0 / 300Kupac vidi razlog u obaveštenju i na stranici porudžbine.OdustaniOtkaži porudžbinu"
+    },
+    {
+      "name": "D after Escape",
+      "dialogOpen": false
+    },
+    {
+      "name": "D reason kept after reopen",
+      "value": ""
+    },
+    {
+      "name": "D cancelled: pay button visible",
+      "visible": false,
+      "noteVisible": true,
+      "edit": false
+    },
+    {
+      "name": "C tab2 after tab1 confirm (editing open)",
+      "head": "Porudžbina SK-2026-000127Potvrđena",
+      "saveVisible": true,
+      "inputs": 1
+    },
+    {
+      "name": "C tab2 save after confirm",
+      "alerts": [
+        "Stavke se menjaju samo dok je porudžbina nova.",
+        ""
+      ],
+      "toasts": []
+    },
+    {
+      "name": "FAILED",
+      "error": "TimeoutError: locator.waitFor: Timeout 90000ms exceeded.\nCall log:\n  - waiting for getByRole('alertdialog') to be visible\n"
+    }
+  ],
+  "Bprobe": {
+    "customerType": "guest",
+    "deliveryMethod": "courier",
+    "eventTypes": [
+      "order.created",
+      "order.status_changed",
+      "order.status_changed",
+      "order.status_changed"
+    ],
+    "hasAttribution": false,
+    "itemCount": 1,
+    "paymentMethod": "cod",
+    "source": "web",
+    "status": "otkazana",
+    "totalPara": 1890000
+  },
+  "Bemails": [
+    "order_cancelled",
+    "order_confirmed",
+    "order_backordered",
+    "staff_order_new",
+    "order_received"
+  ]
+}

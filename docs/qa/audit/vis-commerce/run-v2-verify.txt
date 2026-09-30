@@ -1,0 +1,18 @@
+A {"/majstor":{"vw":360,"over":9,"offenders":["div[ml-auto flex items-center gap-0.5 lg:gap-2] L141 R369 \"Broj dela ili naziv/Izaberite \"","div[lg:hidden] L325 R369 \"\"","button[mobile-menu-trigger] L325 R369 \"\"","ul[flex gap-6] L16 R708 \"PregledBrza porudžbinaPorudžbi\"","li[] L321 R379 \"Omiljeno\"","a[inline-flex h-11 items-center whitespace-nowrap border-b-2 t] L321 R379 \"Omiljeno\"","li[] L403 R508 \"Vozila mušterija\"","a[inline-flex h-11 items-center whitespace-nowrap border-b-2 t] L403 R508 \"Vozila mušterija\"","li[] L532 R593 \"Cenovnik\"","a[inline-flex h-11 items-center whitespace-nowrap border-b-2 t] L532 R593 \"Cenovnik\"","li[] L617 R648 \"Upiti\"","a[inline-flex h-11 items-center whitespace-nowrap border-b-2 t] L617 R648 \"Upiti\""]},"scrollXAfter":0,"/majstor/cenovnik":{"vw":360,"over":9,"offenders":["div[ml-auto flex items-center gap-0.5 lg:gap-2] L141 R369 \"Broj dela ili naziv/Izaberite \"","div[lg:hidden] L325 R369 \"\"","button[mobile-menu-trigger] L325 R369 \"\"","ul[flex gap-6] L16 R708 \"PregledBrza porudžbinaPorudžbi\"","li[] L321 R379 \"Omiljeno\"","a[inline-flex h-11 items-center whitespace-nowrap border-b-2 t] L321 R379 \"Omiljeno\"","li[] L403 R508 \"Vozila mušterija\"","a[inline-flex h-11 items-center whitespace-nowrap border-b-2 t] L403 R508 \"Vozila mušterija\"","li[] L532 R593 \"Cenovnik\"","a[inline-flex h-11 items-center whitespace-nowrap border-b-2 t] L532 R593 \"Cenovnik\"","li[] L617 R648 \"Upiti\"","a[inline-flex h-11 items-center whitespace-nowrap border-b-2 t] L617 R648 \"Upiti\""]},"/nalog":{"vw":360,"over":9,"offenders":["div[ml-auto flex items-center gap-0.5 lg:gap-2] L141 R369 \"Broj dela ili naziv/Izaberite \"","div[lg:hidden] L325 R369 \"\"","button[mobile-menu-trigger] L325 R369 \"\""]},"/korpa":{"vw":360,"over":9,"offenders":["div[ml-auto flex items-center gap-0.5 lg:gap-2] L141 R369 \"Broj dela ili naziv/Izaberite \"","div[lg:hidden] L325 R369 \"\"","button[mobile-menu-trigger] L325 R369 \"\""]},"/":{"vw":360,"over":9,"offenders":["div[ml-auto flex items-center gap-0.5 lg:gap-2] L141 R369 \"Broj dela ili naziv/Izaberite \"","div[lg:hidden] L325 R369 \"\"","button[mobile-menu-trigger] L325 R369 \"\""]},"log":{"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}}
+B {"w":2560,"status":200,"h1":"Majstorski portal","log":{"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}}
+B {"w":1440,"status":200,"h1":"Prijava","log":{"console":["Failed to load resource: net::ERR_NETWORK_CHANGED","Failed to load resource: net::ERR_NETWORK_CHANGED","Failed to load resource: net::ERR_NETWORK_CHANGED","Failed to load resource: net::ERR_NETWORK_CHANGED","Failed to load resource: net::ERR_NETWORK_CHANGED"],"pageErrors":[],"failedRequests":["net::ERR_NETWORK_CHANGED http://localhost:3100/_next/static/chunks/1t0q0ok8maumv.js","net::ERR_NETWORK_CHANGED http://localhost:3100/_next/static/chunks/3f_vfql_ja0s2.js","net::ERR_NETWORK_CHANGED http://localhost:3100/_next/static/chunks/3k__gv_ed
+B {"w":2560,"status":200,"h1":"Majstorski portal","log":{"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}}
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.evaluate: TypeError: Cannot read properties of undefined (reading 'getBoundingClientRect')
+    at eval (eval at evaluate (:311:30), <anonymous>:4:29)
+    at UtilityScript.evaluate (<anonymous>:313:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+    at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\audit\vis-commerce-verify.mjs:133:33 {
+  log: []
+}
+
+Node.js v22.23.2
+exit 1

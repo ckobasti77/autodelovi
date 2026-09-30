@@ -1,0 +1,595 @@
+{
+  "1440": {
+    "cartEmpty": {
+      "probe": {
+        "vw": 1440,
+        "over": 0,
+        "offenders": [],
+        "tiny": [],
+        "tinyCount": 0,
+        "under44": [
+          "button 256x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 3,
+        "smallInputs": []
+      },
+      "reveal": {
+        "stuck": [
+          "p: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pret",
+          "li: Pošaljite upit — javljamo se u toku radnog dana",
+          "p: © 2026 SKLOP",
+          "p: Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi"
+        ],
+        "pending": 4,
+        "words": 0
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "cart": {
+      "probe": {
+        "vw": 1440,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "a 562x21 \"Kočioni disk prednji 276 × 24 mm\"",
+          "a 562x21 \"Kočioni disk prednji 288 × 25 mm, ventilirani\"",
+          "a 562x21 \"Kočioni disk zadnji 272 × 10 mm, puni\"",
+          "a 390x21 \"Nastavi kupovinu\""
+        ],
+        "tinyCount": 4,
+        "under44": [
+          "button 256x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\""
+        ],
+        "under44Count": 12,
+        "smallInputs": []
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "axe": []
+    },
+    "drawer": {
+      "x": 1020,
+      "y": 0,
+      "w": 420,
+      "h": 900,
+      "scrollH": 900,
+      "clientH": 900,
+      "probe": {
+        "vw": 1440,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "a 295x21 \"Kočioni disk prednji 276 × 24 mm\"",
+          "a 295x21 \"Kočioni disk prednji 288 × 25 mm, ventilirani\"",
+          "a 295x21 \"Kočioni disk zadnji 272 × 10 mm, puni\""
+        ],
+        "tinyCount": 3,
+        "under44": [
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\""
+        ],
+        "under44Count": 9,
+        "smallInputs": []
+      },
+      "axe": []
+    },
+    "contact": {
+      "probe": {
+        "vw": 1440,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 1,
+        "under44": [
+          "button 256x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "input 408x42 \"firstName\"",
+          "input 408x42 \"lastName\"",
+          "input 408x42 \"phone\"",
+          "input 408x42 \"email\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 7,
+        "smallInputs": []
+      },
+      "axe": []
+    },
+    "contactErrors": {
+      "active": "<div tabindex=\"-1\" role=\"alert\" data-reveal=\"off\" class=\"rounded-sm border border-danger bg-danger-subtle p-4 outline-none\"><p class=\"flex items-center gap-2 ty",
+      "invalid": [
+        "co-firstName",
+        "co-lastName",
+        "co-phone",
+        "co-email"
+      ]
+    },
+    "delivery": {
+      "probe": {
+        "vw": 1440,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "button 40x18 \"Izmeni: Kontakt\"",
+          "button 20x20 \"BUTTON\"",
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 3,
+        "under44": [
+          "button 256x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 3,
+        "smallInputs": []
+      },
+      "axeErrors": []
+    },
+    "payment": {
+      "probe": {
+        "vw": 1440,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "button 40x18 \"Izmeni: Kontakt\"",
+          "button 40x18 \"Izmeni: Dostava\"",
+          "button 20x20 \"BUTTON\"",
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 4,
+        "under44": [
+          "button 256x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 3,
+        "smallInputs": []
+      },
+      "axe": []
+    },
+    "review": {
+      "probe": {
+        "vw": 1440,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "button 40x18 \"Izmeni: Kontakt\"",
+          "button 40x18 \"Izmeni: Dostava\"",
+          "button 40x18 \"Izmeni: Plaćanje\"",
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 4,
+        "under44": [
+          "button 256x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "input 862x42 \"vin\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 4,
+        "smallInputs": []
+      },
+      "axe": []
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "1920": {
+    "cartEmpty": {
+      "probe": {
+        "vw": 1920,
+        "over": 0,
+        "offenders": [],
+        "tiny": [],
+        "tinyCount": 0,
+        "under44": [
+          "button 288x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 3,
+        "smallInputs": []
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "cart": {
+      "probe": {
+        "vw": 1920,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "a 623x21 \"Kočioni disk prednji 276 × 24 mm\"",
+          "a 623x21 \"Kočioni disk prednji 288 × 25 mm, ventilirani\"",
+          "a 623x21 \"Kočioni disk zadnji 272 × 10 mm, puni\"",
+          "a 417x21 \"Nastavi kupovinu\""
+        ],
+        "tinyCount": 4,
+        "under44": [
+          "button 288x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\""
+        ],
+        "under44Count": 12,
+        "smallInputs": []
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "drawer": {
+      "x": 1500,
+      "y": 0,
+      "w": 420,
+      "h": 1080,
+      "scrollH": 1080,
+      "clientH": 1080,
+      "probe": {
+        "vw": 1920,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "a 295x21 \"Kočioni disk prednji 276 × 24 mm\"",
+          "a 295x21 \"Kočioni disk prednji 288 × 25 mm, ventilirani\"",
+          "a 295x21 \"Kočioni disk zadnji 272 × 10 mm, puni\""
+        ],
+        "tinyCount": 3,
+        "under44": [
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\""
+        ],
+        "under44Count": 9,
+        "smallInputs": []
+      }
+    },
+    "contact": {
+      "probe": {
+        "vw": 1920,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 1,
+        "under44": [
+          "button 288x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "input 439x42 \"firstName\"",
+          "input 439x42 \"lastName\"",
+          "input 439x42 \"phone\"",
+          "input 439x42 \"email\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 7,
+        "smallInputs": []
+      }
+    },
+    "contactErrors": {
+      "active": "<div tabindex=\"-1\" role=\"alert\" data-reveal=\"off\" class=\"rounded-sm border border-danger bg-danger-subtle p-4 outline-none\"><p class=\"flex items-center gap-2 ty",
+      "invalid": [
+        "co-firstName",
+        "co-lastName",
+        "co-phone",
+        "co-email"
+      ]
+    },
+    "delivery": {
+      "probe": {
+        "vw": 1920,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "button 40x18 \"Izmeni: Kontakt\"",
+          "button 20x20 \"BUTTON\"",
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 3,
+        "under44": [
+          "button 288x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 3,
+        "smallInputs": []
+      }
+    },
+    "payment": {
+      "probe": {
+        "vw": 1920,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "button 40x18 \"Izmeni: Kontakt\"",
+          "button 40x18 \"Izmeni: Dostava\"",
+          "button 20x20 \"BUTTON\"",
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 4,
+        "under44": [
+          "button 288x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 3,
+        "smallInputs": []
+      }
+    },
+    "review": {
+      "probe": {
+        "vw": 1920,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "button 40x18 \"Izmeni: Kontakt\"",
+          "button 40x18 \"Izmeni: Dostava\"",
+          "button 40x18 \"Izmeni: Plaćanje\"",
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 4,
+        "under44": [
+          "button 288x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "input 923x42 \"vin\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 4,
+        "smallInputs": []
+      }
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "2560": {
+    "cartEmpty": {
+      "probe": {
+        "vw": 2560,
+        "over": 0,
+        "offenders": [],
+        "tiny": [],
+        "tinyCount": 0,
+        "under44": [
+          "button 288x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 3,
+        "smallInputs": []
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "cart": {
+      "probe": {
+        "vw": 2560,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "a 623x21 \"Kočioni disk prednji 276 × 24 mm\"",
+          "a 623x21 \"Kočioni disk prednji 288 × 25 mm, ventilirani\"",
+          "a 623x21 \"Kočioni disk zadnji 272 × 10 mm, puni\"",
+          "a 417x21 \"Nastavi kupovinu\""
+        ],
+        "tinyCount": 4,
+        "under44": [
+          "button 288x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\""
+        ],
+        "under44Count": 12,
+        "smallInputs": []
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "drawer": {
+      "x": 2140,
+      "y": 0,
+      "w": 420,
+      "h": 1440,
+      "scrollH": 1440,
+      "clientH": 1440,
+      "probe": {
+        "vw": 2560,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "a 295x21 \"Kočioni disk prednji 276 × 24 mm\"",
+          "a 295x21 \"Kočioni disk prednji 288 × 25 mm, ventilirani\"",
+          "a 295x21 \"Kočioni disk zadnji 272 × 10 mm, puni\""
+        ],
+        "tinyCount": 3,
+        "under44": [
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\"",
+          "button 36x36 \"Smanji količinu\"",
+          "input 56x34 \"Količina\"",
+          "button 36x36 \"Povećaj količinu\""
+        ],
+        "under44Count": 9,
+        "smallInputs": []
+      }
+    },
+    "contact": {
+      "probe": {
+        "vw": 2560,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 1,
+        "under44": [
+          "button 288x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "input 439x42 \"firstName\"",
+          "input 439x42 \"lastName\"",
+          "input 439x42 \"phone\"",
+          "input 439x42 \"email\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 7,
+        "smallInputs": []
+      }
+    },
+    "contactErrors": {
+      "active": "<div tabindex=\"-1\" role=\"alert\" data-reveal=\"off\" class=\"rounded-sm border border-danger bg-danger-subtle p-4 outline-none\"><p class=\"flex items-center gap-2 ty",
+      "invalid": [
+        "co-firstName",
+        "co-lastName",
+        "co-phone",
+        "co-email"
+      ]
+    },
+    "delivery": {
+      "probe": {
+        "vw": 2560,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "button 40x18 \"Izmeni: Kontakt\"",
+          "button 20x20 \"BUTTON\"",
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 3,
+        "under44": [
+          "button 288x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 3,
+        "smallInputs": []
+      }
+    },
+    "payment": {
+      "probe": {
+        "vw": 2560,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "button 40x18 \"Izmeni: Kontakt\"",
+          "button 40x18 \"Izmeni: Dostava\"",
+          "button 20x20 \"BUTTON\"",
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 4,
+        "under44": [
+          "button 288x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 3,
+        "smallInputs": []
+      }
+    },
+    "review": {
+      "probe": {
+        "vw": 2560,
+        "over": 0,
+        "offenders": [],
+        "tiny": [
+          "button 40x18 \"Izmeni: Kontakt\"",
+          "button 40x18 \"Izmeni: Dostava\"",
+          "button 40x18 \"Izmeni: Plaćanje\"",
+          "button 20x20 \"BUTTON\""
+        ],
+        "tinyCount": 4,
+        "under44": [
+          "button 288x40 \"Broj dela ili naziv/\"",
+          "button 151x36 \"Izaberite vozilo\"",
+          "input 923x42 \"vin\"",
+          "button 130x32 \"Podešavanja kolačića\""
+        ],
+        "under44Count": 4,
+        "smallInputs": []
+      }
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+}

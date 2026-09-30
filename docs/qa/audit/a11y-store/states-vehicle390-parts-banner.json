@@ -1,0 +1,279 @@
+{
+ "vehicle390": {
+  "scenario": "vehicle picker 390 /",
+  "trigger": {
+   "tag": "button",
+   "role": "",
+   "name": "Izaberite vozilomarka, model, motorIzaberi",
+   "testid": "vehicle-picker-trigger",
+   "inDialog": "",
+   "rect": [
+    17,
+    535,
+    356,
+    50
+   ],
+   "outline": "solid 2px"
+  },
+  "handle": {
+   "name": "Smanji panel",
+   "w": 64,
+   "h": 24
+  },
+  "initialFocus": {
+   "tag": "button",
+   "role": "",
+   "name": "Smanji panel",
+   "testid": "",
+   "inDialog": "Izaberite vozilo",
+   "rect": [
+    163,
+    73,
+    64,
+    24
+   ],
+   "outline": "solid 2px"
+  },
+  "dialogs": [
+   {
+    "name": "Izaberite vozilo",
+    "modal": null,
+    "desc": null
+   }
+  ],
+  "axe": [],
+  "shot": "docs/qa/audit/a11y-store/state-vehicle-sheet-390.webp",
+  "tabSequence": [
+   "button:Zatvori",
+   "button:Volkswagen",
+   "button:Audi",
+   "button:Škoda",
+   "button:SEAT",
+   "button:Cupra",
+   "a:Ne nalazim svoje vozilo",
+   "button:Smanji panel"
+  ],
+  "tabsOutside": 0,
+  "afterEscapeDialogs": [],
+  "afterEscapeFocus": {
+   "body": true
+  }
+ },
+ "parts": {
+  "scenario": "3D parts list + part panel 1440 /",
+  "trigger": {
+   "tag": "button",
+   "role": "",
+   "name": "Lista delova",
+   "testid": "parts-list-trigger",
+   "inDialog": "",
+   "rect": [
+    1246,
+    839,
+    146,
+    44
+   ],
+   "outline": "solid 2px"
+  },
+  "snapshot": "- region \"Motor i usis\":\n  - heading \"Motor i usis\" [level=3]\n  - list:\n    - listitem:\n      - button \"Blok motora i glava\"\n    - listitem:\n      - button \"Turbina (turbopunjač)\"\n    - listitem:\n      - button \"Interkuler\"\n    - listitem:\n      - button \"Usisna grana i kućište filtera\"\n    - listitem:\n      - button \"Brizgaljke i pumpa goriva\"\n    - listitem:\n      - button \"Set zupčastog kaiša i vodena pumpa\"\n    - listitem:\n      - button \"Kaiš alternatora i zatezači\"\n    - listitem:\n      - button \"Alternator\"\n    - listitem:\n      - button \"Anlaser\"\n    - listitem:\n      - button \"Svećice, bobine i grejači\"\n    - listitem:\n      - button \"Karter, pumpa ulja i dihtunzi\"\n    - listitem:\n      - button \"EGR ventil\"\n    - listitem:\n      - button \"Nosači motora i menjača\"\n- region \"Izduvni sistem\":\n  - heading \"Izduvni sistem\" [level=3]\n  - list:\n    - listitem:\n      - button \"DPF i katalizator\"\n    - listitem:\n      - button \"Auspuh (lonci i cevi)\"\n- region \"Hlađenje i klima\":\n  - heading \"Hlađenje i klima\" [level=3]\n  - list:\n    - listitem:\n      - button \"Hladnjak i ventilator\"\n    - listitem:\n      - button \"Termostat i creva hlađenja\"\n    - listitem:\n      - button \"Kompresor i kondenzator klime\"\n- region \"Transmisija\":\n  - heading \"Transmisija\" [level=3]\n  - list:\n    - listitem:\n      - button \"Kvačilo i zamajac\"\n    - listitem:\n      - button \"Menjač (DSG)\"\n    - listitem:\n      - button \"Poluosovine i homokinetički zglobovi\"\n- region \"Vešanje i upravljanje\":\n  - heading \"Vešanje i upravljanje\" [level=3]\n  - list:\n    - listitem:\n      - button \"Amortizeri i opruge\"\n    - listitem:\n      - button \"Ramena i selen blokovi\"\n    - listitem:\n      - button \"Spone i stabilizatori\"\n    - listitem:\n      - button \"Letva volana\"\n    - listitem:\n      - button \"Ležaj točka i glavčina\"\n- region \"Kočnice\":\n  - heading \"Kočnice\" [level=3]\n  - list:\n    - listitem:\n      - button \"Kočioni diskovi\"\n    - listitem:\n      - button \"Kočione pločice\"\n    - listitem:\n      - button \"Kočione čeljusti\"\n    - listitem:\n      - button \"ABS senzori\"\n- region \"Elektrika i svetla\":\n  - heading \"Elektrika i svetla\" [level=3]\n  - list:\n    - listitem:\n      - button \"Akumulator\"\n    - listitem:\n      - button \"Farovi\"\n    - listitem:\n      - button \"Stop svetla\"\n    - listitem:\n      - button \"Senzori (lambda, parking, temperatura)\"\n- region \"Karoserija\":\n  - heading \"Karoserija\" [level=3]\n  - list:\n    - listitem:\n      - button \"Hauba\"\n    - listitem:\n      - button \"Branici\"\n    - listitem:\n      - button \"Blatobrani\"\n    - listitem:\n      - button \"Vrata\"\n    - listitem:\n      - button \"Retrovizori\"\n    - listitem:\n      - button \"Stakla\"\n    - listitem:\n      - button \"Brisači\"\n- region \"Točkovi\":\n  - heading \"Točkovi\" [level=3]\n  - list:\n    - listitem:\n      - button \"Felne i gume\"\n- region \"Servis i održavanje\":\n  - heading \"Servis i održavanje\" [level=3]\n  - list:\n    - listitem:\n      - button \"Filteri\"\n    - listitem:\n      - button \"Ulja i tečnosti\"",
+  "initialFocus": {
+   "tag": "button",
+   "role": "",
+   "name": "Zatvori",
+   "testid": "",
+   "inDialog": "Lista delova po sistemima",
+   "rect": [
+    979,
+    107,
+    44,
+    44
+   ],
+   "outline": "solid 2px"
+  },
+  "dialogs": [
+   {
+    "name": "Lista delova po sistemima",
+    "modal": null,
+    "desc": "Izaberite kategoriju — otvara se ista lista artikala kao klikom na deo."
+   }
+  ],
+  "axe": [],
+  "shot": "docs/qa/audit/a11y-store/state-partslist-1440.webp",
+  "tabSequence": [
+   "button:Blok motora i glava3 artikla",
+   "button:Turbina (turbopunjač)4 artikla",
+   "button:Interkuler2 artikla",
+   "button:Usisna grana i kućište filtera2 artikla",
+   "button:Brizgaljke i pumpa goriva3 artikla",
+   "button:Set zupčastog kaiša i vodena pumpa6 artikala",
+   "button:Kaiš alternatora i zatezači3 artikla",
+   "button:Alternator2 artikla",
+   "button:Anlaser2 artikla",
+   "button:Svećice, bobine i grejači4 artikla"
+  ],
+  "tabsOutside": 0,
+  "pickName": "Kočioni diskovi9 artikala",
+  "panelVisible": true,
+  "panelFocus": {
+   "tag": "button",
+   "role": "",
+   "name": "Izaberite vozilo za tačno poklapanje",
+   "testid": "",
+   "inDialog": "Kočioni diskovi",
+   "rect": [
+    985,
+    168,
+    285,
+    36
+   ],
+   "outline": "solid 2px"
+  },
+  "panelDialogs": [
+   {
+    "name": "Kočioni diskovi",
+    "modal": null,
+    "desc": "Diskove menjajte u paru, uvek sa novim pločicama."
+   }
+  ],
+  "panelSnapshot": "- dialog \"Kočioni diskovi\":\n  - heading \"Kočioni diskovi\" [level=2]\n  - paragraph: Diskove menjajte u paru, uvek sa novim pločicama.\n  - text: 9 artikala\n  - button \"Izaberite vozilo za tačno poklapanje\"\n  - button \"Zatvori\"\n  - status\n  - 'list \"Artikli: Kočioni diskovi\"':\n    - listitem:\n      - text: Brembo · OEM kvalitet\n      - link \"Kočioni disk prednji 312 × 25 mm\":\n        - /url: /deo/kocioni-disk-prednji-312-25-mm-demo-0007\n      - text: OEM 3C0 615 098 Na stanju · 10 kom. 7.490 RSD sa PDV-om\n      - 'button \"Dodaj u korpu: Kočioni disk prednji 312 × 25 mm\"'\n    - listitem:\n      - text: TRW · OEM kvalitet\n      - link \"Kočioni disk zadnji 272 × 10 mm, puni\":\n        - /url: /deo/kocioni-disk-zadnji-272-10-mm-puni-demo-0003\n      - text: OEM 1K0 615 540 Q Malo na stanju · 1 kom. 3.890 RSD sa PDV-om\n      - 'button \"Dodaj u korpu: Kočioni disk zadnji 272 × 10 mm, puni\"'\n    - listitem:\n      - text: Bosch · OEM kvalitet\n      - link \"Kočioni disk prednji 256 × 22 mm\":\n        - /url: /deo/kocioni-disk-prednji-256-22-mm-demo-0006\n      - text: OEM 6R0 615 645 Na stanju 3.990 RSD sa PDV-om\n      - 'button \"Dodaj u korpu: Kočioni disk prednji 256 × 22 mm\"'\n    - listitem:\n      - text: Brembo · OEM kvalitet\n      - link \"Kočioni disk prednji 312 × 25 mm, ventilirani\":\n        - /url: /deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-0002\n      - text: OEM 1K0 615 591 E Malo na stanju · 3 kom. 7.290 RSD sa PDV-om\n      - 'button \"Dodaj u korpu: Kočioni disk prednji 312 × 25 mm, ventilirani\"'\n    - listitem:\n      - text: Febi Bilstein · Aftermarket\n      - link \"Kočioni disk prednji 276 × 24 mm\":\n        - /url: /deo/kocioni-disk-prednji-276-24-mm-demo-0004\n      - text: OEM 5Q0 615 505 R Na stanju · 5 kom. 4.690 RSD sa PDV-om\n      - 'button \"Dodaj u korpu: Kočioni disk prednji 276 × 24 mm\"'\n    - listitem:\n      - text: ATE · OEM kvalitet\n      - link \"Kočioni disk prednji 312 × 25 mm, ventilirani\":\n        - /url: /deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-e001\n      - text: OEM 1K0 615 591 E Malo na stanju · 3 kom. 6.700 RSD sa PDV-om\n      - 'button \"Dodaj u korpu: Kočioni disk prednji 312 × 25 mm, ventilirani\"'\n    - listitem:\n      - text: Original VAG · Original VAG\n      - link \"Kočioni disk prednji 340 × 30 mm, GTI\":\n        - /url: /deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005\n      - text: OEM 5Q0 615 666 A Na stanju 18.900 RSD sa PDV-om\n      - 'button \"Dodaj u korpu: Kočioni disk prednji 340 × 30 mm, GTI\"'\n    - listitem:\n      - text: ATE · OEM kvalitet\n      - link \"Kočioni disk prednji 288 × 25 mm, ventilirani\":\n        - /url: /deo/kocioni-disk-prednji-288-25-mm-ventilirani-demo-0001\n      - text: OEM 1K0 615 868 F Po porudžbini · 6 dana 5.490 RSD sa PDV-om\n      - 'button \"Poruči: Kočioni disk prednji 288 × 25 mm, ventilirani\"'\n    - listitem:\n      - text: ATE · OEM kvalitet\n      - link \"Kočioni disk prednji 320 × 30 mm\":\n        - /url: /deo/kocioni-disk-prednji-320-30-mm-demo-0008\n      - text: OEM 8K0",
+  "panelAxe": [],
+  "panelShot": "docs/qa/audit/a11y-store/state-partpanel-1440.webp",
+  "panelTabs": [
+   "button:Zatvori",
+   "a:Kočioni disk prednji 312 × 25 mm",
+   "button:Dodaj u korpu: Kočioni disk prednji 312 × 25 mm",
+   "a:Kočioni disk zadnji 272 × 10 mm, puni",
+   "button:Dodaj u korpu: Kočioni disk zadnji 272 × 10 mm, puni",
+   "a:Kočioni disk prednji 256 × 22 mm",
+   "button:Dodaj u korpu: Kočioni disk prednji 256 × 22 mm",
+   "a:Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "button:Dodaj u korpu: Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "a:Kočioni disk prednji 276 × 24 mm",
+   "button:Dodaj u korpu: Kočioni disk prednji 276 × 24 mm",
+   "a:Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "button:Dodaj u korpu: Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "a:Kočioni disk prednji 340 × 30 mm, GTI"
+  ],
+  "panelAfterEscVisible": false,
+  "panelAfterEscFocus": {
+   "tag": "button",
+   "role": "",
+   "name": "Lista delova",
+   "testid": "parts-list-trigger",
+   "inDialog": "",
+   "rect": [
+    1246,
+    838,
+    146,
+    44
+   ],
+   "outline": "solid 2px"
+  },
+  "console": []
+ },
+ "banner": {
+  "390": {
+   "dialogs": [
+    {
+     "name": "Kolačići",
+     "modal": "false",
+     "desc": "Neophodne kolačiće koristimo za korpu i prijavu. Uz vašu dozvolu koristimo i ana"
+    }
+   ],
+   "focusAtLoad": {
+    "body": true
+   },
+   "axe": [],
+   "shot": "docs/qa/audit/a11y-store/state-banner-390.webp",
+   "bannerRect": {
+    "x": 0,
+    "y": 530.40625,
+    "width": 390,
+    "height": 313.59375
+   },
+   "tabs": [
+    "a:Preskoči na sadržaj 12,12,168,39",
+    "a:Više o kolačićima [banner] 29,663,301,37",
+    "button:Prihvati sve [banner] 29,719,162,44",
+    "button:Odbij sve [banner] 199,719,162,44",
+    "button:Podešavanja [banner] 29,771,332,44",
+    "a:SKLOP — početna 16,6,113,44",
+    "button:Pretraga delova 192,6,44,44",
+    "a:Moj nalog 238,6,44,44"
+   ],
+   "settingsFocus": {
+    "body": true
+   },
+   "settingsSnapshot": "- dialog \"Kolačići\":\n  - heading \"Kolačići\" [level=2]\n  - paragraph:\n    - text: Neophodne kolačiće koristimo za korpu i prijavu. Uz vašu dozvolu koristimo i analitičke (Google Analytics) i oglasne (Google Ads, Meta) — da vidimo odakle dolazite i koji oglasi vrede. Izbor menjate bilo kad, u podnožju strane.\n    - link \"Više o kolačićima\":\n      - /url: /kolacici\n  - group \"Kategorije kolačića\":\n    - text: Kategorije kolačića Neophodni Korpa, prijava, izbor kolačića. Uvek uključeni.\n    - switch \"Neophodni Korpa, prijava, izbor kolačića. Uvek uključeni.\" [checked] [disabled]\n    - text: \"Analitika Google Analytics 4: posete i pretrage, bez ličnih podataka.\"\n    - 'switch \"Analitika Google Analytics 4: posete i pretrage, bez ličnih podataka.\"'\n    - text: \"Oglašavanje Google Ads i Meta: merenje oglasa i konverzija.\"\n    - 'switch \"Oglašavanje Google Ads i Meta: merenje oglasa i konverzija.\"'\n  - button \"Sačuvaj izbor\"\n  - button \"Prihvati sve\"\n  - button \"Odbij sve\"",
+   "settingsAxe": [],
+   "settingsShot": "docs/qa/audit/a11y-store/state-banner-settings-390.webp",
+   "coveredByBanner": [
+    "a \"Kočioni disk prednji 312 × 25 mm\" rect 544-587 bannerTop 530",
+    "button \"U korpu: Kočioni disk prednji 312 × 25 m\" rect 656-700 bannerTop 530",
+    "a \"Kočioni disk zadnji 272 × 10 mm, puni\" rect 762-805 bannerTop 530",
+    "a \"Kočioni disk prednji 256 × 22 mm\" rect 546-589 bannerTop 530",
+    "button \"U korpu: Kočioni disk prednji 256 × 22 m\" rect 658-702 bannerTop 530",
+    "a \"Kočioni disk prednji 312 × 25 mm, ventil\" rect 764-807 bannerTop 530",
+    "a \"Kočioni disk prednji 276 × 24 mm\" rect 546-589 bannerTop 530",
+    "button \"U korpu: Kočioni disk prednji 276 × 24 m\" rect 658-702 bannerTop 530",
+    "a \"Kočioni disk prednji 312 × 25 mm, ventil\" rect 764-807 bannerTop 530",
+    "a \"Kočioni disk prednji 340 × 30 mm, GTI\" rect 546-589 bannerTop 530",
+    "button \"U korpu: Kočioni disk prednji 340 × 30 m\" rect 658-702 bannerTop 530",
+    "a \"Kočioni disk prednji 288 × 25 mm, ventil\" rect 764-808 bannerTop 530",
+    "a \"Kočioni disk prednji 320 × 30 mm\" rect 546-590 bannerTop 530",
+    "button \"Poruči: Kočioni disk prednji 320 × 30 mm\" rect 658-702 bannerTop 530",
+    "a \"Kočioni diskovi za Škoda Superb\" rect 548-573 bannerTop 530",
+    "a \"Kočioni diskovi za SEAT Leon\" rect 581-606 bannerTop 530",
+    "a \"Kočioni diskovi za VW Golf\" rect 614-639 bannerTop 530",
+    "a \"Kočioni diskovi za VW Tiguan\" rect 647-671 bannerTop 530",
+    "a \"Kočioni diskovi za VW Touran\" rect 679-704 bannerTop 530"
+   ],
+   "coveredShot": "docs/qa/audit/a11y-store/state-banner-covers-390.webp"
+  },
+  "1440": {
+   "dialogs": [
+    {
+     "name": "Kolačići",
+     "modal": "false",
+     "desc": "Neophodne kolačiće koristimo za korpu i prijavu. Uz vašu dozvolu koristimo i ana"
+    }
+   ],
+   "focusAtLoad": {
+    "body": true
+   },
+   "axe": [],
+   "shot": "docs/qa/audit/a11y-store/state-banner-1440.webp",
+   "bannerRect": {
+    "x": 0,
+    "y": 741.40625,
+    "width": 1440,
+    "height": 158.59375
+   },
+   "tabs": [
+    "a:Preskoči na sadržaj 12,12,168,39",
+    "a:Više o kolačićima [banner] 481,836,112,16",
+    "button:Prihvati sve [banner] 827,787,144,44",
+    "button:Odbij sve [banner] 979,787,144,44",
+    "button:Podešavanja [banner] 1131,787,144,44",
+    "a:SKLOP — početna 48,10,117,44",
+    "a:Delovi 193,10,67,44",
+    "a:Vozila 264,10,66,44"
+   ],
+   "settingsFocus": {
+    "body": true
+   },
+   "settingsSnapshot": "- dialog \"Kolačići\":\n  - heading \"Kolačići\" [level=2]\n  - paragraph:\n    - text: Neophodne kolačiće koristimo za korpu i prijavu. Uz vašu dozvolu koristimo i analitičke (Google Analytics) i oglasne (Google Ads, Meta) — da vidimo odakle dolazite i koji oglasi vrede. Izbor menjate bilo kad, u podnožju strane.\n    - link \"Više o kolačićima\":\n      - /url: /kolacici\n  - group \"Kategorije kolačića\":\n    - text: Kategorije kolačića Neophodni Korpa, prijava, izbor kolačića. Uvek uključeni.\n    - switch \"Neophodni Korpa, prijava, izbor kolačića. Uvek uključeni.\" [checked] [disabled]\n    - text: \"Analitika Google Analytics 4: posete i pretrage, bez ličnih podataka.\"\n    - 'switch \"Analitika Google Analytics 4: posete i pretrage, bez ličnih podataka.\"'\n    - text: \"Oglašavanje Google Ads i Meta: merenje oglasa i konverzija.\"\n    - 'switch \"Oglašavanje Google Ads i Meta: merenje oglasa i konverzija.\"'\n  - button \"Sačuvaj izbor\"\n  - button \"Prihvati sve\"\n  - button \"Odbij sve\"",
+   "settingsAxe": [],
+   "settingsShot": "docs/qa/audit/a11y-store/state-banner-settings-1440.webp",
+   "coveredByBanner": [
+    "button \"\" rect 771-791 bannerTop 741",
+    "button \"\" rect 815-835 bannerTop 741",
+    "button \"\" rect 859-879 bannerTop 741",
+    "button \"U korpu: Kočioni disk prednji 312 × 25 m\" rect 798-842 bannerTop 741",
+    "button \"U korpu: Kočioni disk zadnji 272 × 10 mm\" rect 798-842 bannerTop 741"
+   ],
+   "coveredShot": "docs/qa/audit/a11y-store/state-banner-covers-1440.webp"
+  },
+  "scenario": "consent banner 1440 + 390 /"
+ }
+}

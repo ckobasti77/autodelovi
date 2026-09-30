@@ -1,0 +1,45 @@
+home-to-category {"href":"/delovi/kocione-plocice","landed":"/delovi/kocione-plocice","frames":35,"trace":[{"t":13,"key":"Rasklopiauto.Nađi deo.|op=1.00 st=-"}],"afterNav":{"stuck":["p: TRW · OEM kvalitet","h3: Kočione pločice zadnje","p: OEM 1K0 698 569","p: ATE · OEM kvalitet","h3: Kočione pločice prednje, sa senzorom","p: OEM 1K0 698 406 F","p: Original VAG · Original VAG","h3: Kočione pločice prednje","p: OEM 5WA 698 115 M","p: Febi Bilstein · Aftermarket","h3: Kočione pločice zadnje","p: OEM 1K0 698 569","p: Brembo · OEM kvalitet","h3: Kočione pločice prednje, sistem Teves","p: OEM 5Q0 698 172","p: Bosch · OEM kvalitet","h3: Kočione pločice prednje","p: OEM 8D0 698 513","p: ATE · OEM kvalitet","h3: Kočione pločice prednje"],"pending":27,"words":0}}
+category-to-product {"href":"/deo/kocioni-disk-prednji-312-25-mm-demo-0007","landed":"/deo/kocioni-disk-prednji-312-25-mm-demo-0007","frames":52,"trace":[{"t":8,"key":"Kočioni diskovi|op=1.00 st=-"},{"t":3967,"key":"Kočioni disk prednji 312 × 25 |op=1.00 st=-"}],"afterNav":{"stuck":["span: · Isporuka za 1–2 radna dana","h2#fitment-title: Kompatibilnost","p: Pre ugradnje uporedite OEM broj sa starim delom. Kad niste s","h2#codes-title: Brojevi","h3: OEM brojevi","h3: Zamenski brojevi","h2#specs-title: Specifikacije","dt: Prečnik","dd: 312 mm","dt: Debljina","dd: 25 mm","dt: Proizvođač","dd: Brembo","dt: Kvalitet","dd: OEM kvalitet","dt: Garancija","dd: 24 meseci","p: Kočioni disk prednji 312 × 25 mm. Demo artikal: kataloški br","p: Napomena: Demo artikal — podaci služe za prikaz.","h2#related-title: Povezani delovi"],"pending":32,"words":0}}
+product-to-category {"href":"/delovi/kocioni-diskovi","landed":"/delovi/kocioni-diskovi","frames":29,"trace":[{"t":1,"key":"Kočioni disk prednji 276 × 24 |op=1.00 st=-"},{"t":3133,"key":"Kočioni diskovi|op=1.00 st=-"}],"afterNav":{"stuck":["p: TRW · OEM kvalitet","h3: Kočioni disk zadnji 272 × 10 mm, puni","p: OEM 1K0 615 540 Q","p: Bosch · OEM kvalitet","h3: Kočioni disk prednji 256 × 22 mm","p: OEM 6R0 615 645","p: Brembo · OEM kvalitet","h3: Kočioni disk prednji 312 × 25 mm, ventilirani","p: OEM 1K0 615 591 E","p: Febi Bilstein · Aftermarket","h3: Kočioni disk prednji 276 × 24 mm","p: OEM 5Q0 615 505 R","p: ATE · OEM kvalitet","h3: Kočioni disk prednji 312 × 25 mm, ventilirani","p: OEM 1K0 615 591 E","p: Original VAG · Original VAG","h3: Kočioni disk prednji 340 × 30 mm, GTI","p: OEM 5Q0 615 666 A","p: ATE · OEM kvalitet","h3: Kočioni disk prednji 288 × 25 mm, ventilirani"],"pending":24,"words":0}}
+vozila-to-brand {"href":"/vozila/volkswagen","landed":"/vozila/volkswagen","frames":35,"trace":[{"t":15,"key":"Delovi po vozilu|op=1.00 st=-"},{"t":124,"key":"Delovi za Volkswagen|op=1.00 st=-"}],"afterNav":{"stuck":["h2#m-polo: Polo","li: Polo IV2001–2009","li: Polo V2009–2017","li: Polo VI2017–","h2#m-caddy: Caddy","li: Caddy III2003–2020","li: Caddy V2020–","h2#m-touran: Touran","li: Touran I2003–2015","li: Touran II2015–","h2#m-tiguan: Tiguan","li: Tiguan I2007–2016","li: Tiguan II2016–2024","p: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pret","h2: Kontakt","li: Pon–pet 8–17, sub 8–14","li: Pošaljite upit — javljamo se u toku radnog dana","p: © 2026 SKLOP","p: Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi"],"pending":19,"words":0}}
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.scrollIntoViewIfNeeded: Timeout 29741.34000000001ms exceeded.
+Call log:
+  - attempting scroll into view action
+    2 × waiting for element to be stable
+      - element is not visible
+    - retrying scroll into view action
+    - waiting 20ms
+    2 × waiting for element to be stable
+      - element is not visible
+    - retrying scroll into view action
+      - waiting 100ms
+    54 × waiting for element to be stable
+       - element is not visible
+     - retrying scroll into view action
+       - waiting 500ms
+
+    at clientNav (C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\audit\motion-3d-reveal-nav.mjs:54:14)
+    at async file:///C:/Users/admin/Desktop/Web%20Dev%20Projects/autodelovi/scripts/qa/audit/motion-3d-reveal-nav.mjs:94:1 {
+  log: [
+    '  - attempting scroll into view action',
+    '    2 × waiting for element to be stable',
+    '      - element is not visible',
+    '    - retrying scroll into view action',
+    '    - waiting 20ms',
+    '    2 × waiting for element to be stable',
+    '      - element is not visible',
+    '    - retrying scroll into view action',
+    '      - waiting 100ms',
+    '    54 × waiting for element to be stable',
+    '       - element is not visible',
+    '     - retrying scroll into view action',
+    '       - waiting 500ms'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.23.2

@@ -1,0 +1,12 @@
+ok   customer 1440 /nalog → /nalog [200] stuck=0 pending=0 words=0 states={"done":8} console=0 pageErr=0
+ok   customer 1440 /nalog/porudzbine → /nalog/porudzbine [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   customer 1440 /nalog/upiti → /nalog/upiti [200] stuck=0 pending=0 words=0 states={"done":7} console=0 pageErr=0
+ok   customer 1440 /nalog/vozila → /nalog/vozila [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   customer 1440 /nalog/omiljeno → /nalog/omiljeno [404] stuck=0 pending=0 words=0 states={"done":7} console=1 pageErr=0
+ok   customer 1440 /nalog/profil → /nalog/profil [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   customer 390 /nalog → /nalog [200] stuck=0 pending=0 words=0 states={"done":8} console=0 pageErr=0
+ok   customer 390 /nalog/porudzbine → /nalog/porudzbine [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   customer 390 /nalog/upiti → /nalog/upiti [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   customer 390 /nalog/vozila → /nalog/vozila [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   customer 390 /nalog/omiljeno → /nalog/omiljeno [404] stuck=0 pending=0 words=0 states={"done":7} console=1 pageErr=0
+ok   customer 390 /nalog/profil → /nalog/profil [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0

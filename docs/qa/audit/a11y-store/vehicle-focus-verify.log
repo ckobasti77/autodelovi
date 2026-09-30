@@ -1,0 +1,66 @@
+[
+ {
+  "w": 1440,
+  "triggers": 2,
+  "which": "first",
+  "how": "Escape",
+  "before": "<button type=\"button\" data-testid=\"vehicle-picker-trigger\" class=\"inline-flex h-9 cursor-pointer items-center gap-2 roun",
+  "after": "BODY"
+ },
+ {
+  "w": 1440,
+  "triggers": 2,
+  "which": "first",
+  "how": "Zatvori",
+  "before": "<button type=\"button\" data-testid=\"vehicle-picker-trigger\" class=\"inline-flex h-9 cursor-pointer items-center gap-2 roun",
+  "after": "BODY"
+ },
+ {
+  "w": 1440,
+  "triggers": 2,
+  "which": "last",
+  "how": "Escape",
+  "before": "<button type=\"button\" aria-describedby=\"vf_R_495fd9fclb_\" data-testid=\"vehicle-picker-trigger\" class=\"flex min-w-0 flex-",
+  "after": "BODY"
+ },
+ {
+  "w": 1440,
+  "triggers": 2,
+  "which": "last",
+  "how": "Zatvori",
+  "before": "<button type=\"button\" aria-describedby=\"vf_R_495fd9fclb_\" data-testid=\"vehicle-picker-trigger\" class=\"flex min-w-0 flex-",
+  "after": "BODY"
+ },
+ {
+  "w": 390,
+  "triggers": 1,
+  "which": "first",
+  "how": "Escape",
+  "before": "<button type=\"button\" aria-describedby=\"vf_R_495fd9fclb_\" data-testid=\"vehicle-picker-trigger\" class=\"flex min-w-0 flex-",
+  "after": "<button type=\"button\" aria-describedby=\"vf_R_495fd9fclb_\" data-testid=\"vehicle-picker-trigger\" class=\"flex min-w-0 flex-"
+ },
+ {
+  "w": 390,
+  "triggers": 1,
+  "which": "first",
+  "how": "Zatvori",
+  "before": "<button type=\"button\" aria-describedby=\"vf_R_495fd9fclb_\" data-testid=\"vehicle-picker-trigger\" class=\"flex min-w-0 flex-",
+  "after": "BODY"
+ },
+ {
+  "w": 390,
+  "triggers": 1,
+  "which": "last",
+  "how": "Escape",
+  "before": "<button type=\"button\" aria-describedby=\"vf_R_495fd9fclb_\" data-testid=\"vehicle-picker-trigger\" class=\"flex min-w-0 flex-",
+  "after": "BODY"
+ },
+ {
+  "w": 390,
+  "triggers": 1,
+  "which": "last",
+  "how": "Zatvori",
+  "before": "<button type=\"button\" aria-describedby=\"vf_R_495fd9fclb_\" data-testid=\"vehicle-picker-trigger\" class=\"flex min-w-0 flex-",
+  "after": "BODY"
+ }
+]

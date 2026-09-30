@@ -1,0 +1,73 @@
+login retry 0
+a {
+  busy: 0,
+  f: 'docs/qa/audit/vis-admin/extra/pregled-1440-loaded.webp',
+  full: 'docs/qa/audit/vis-admin/extra/pregled-1440-full.webp',
+  kpis: [],
+  svgText: [ '12px/rgb(93, 101, 112)', '12px/rgb(18, 21, 24)' ]
+}
+b {
+  crop: 'docs/qa/audit/vis-admin/extra/orders-rows-1440.webp',
+  right: 'docs/qa/audit/vis-admin/extra/orders-right-1440.webp',
+  number: [
+    'SK-2026- color=rgb(93, 101, 112) w=400 fs=13px ff="Martian Mono", "Martian Mono ',
+    '000131 color=rgb(18, 21, 24) w=400 fs=13px ff="Martian Mono", "Martian Mono '
+  ],
+  wrap: {
+    sw: 1160,
+    cw: 1160,
+    cls: 'scroll-fade-x -mx-1 flex max-w-full overflow-x-auto px-1',
+    shadow: 'none',
+    bg: 'none'
+  },
+  clippedTracking: []
+}
+c {
+  right: 'docs/qa/audit/vis-admin/extra/upiti-right-1440.webp',
+  wrap: {
+    sw: 1160,
+    cw: 1160,
+    right: 1412,
+    ths: [
+      'BROJ:257-487',
+      'STATUS:487-648',
+      'PRIMLJEN:648-788',
+      'KONTAKT:788-992',
+      'TRAŽI:992-1392',
+      'IZVOR:1392-1568',
+      'PREUZEO:1568-1660'
+    ]
+  }
+}
+d {
+  sh: 985,
+  ch: 844,
+  scrollbarWidth: 'auto',
+  scrollbarColor: 'rgb(67, 74, 82) rgba(0, 0, 0, 0)',
+  mask: 'none',
+  vh: 900,
+  hidden: [ 'Cenovni razredi', 'Korisnici', 'Podešavanja' ],
+  f: 'docs/qa/audit/vis-admin/extra/sidebar-bottom-1440x900.webp'
+}
+e {
+  open: 1,
+  empty: 'docs/qa/audit/vis-admin/extra/palette-open-1440.webp',
+  results: 'docs/qa/audit/vis-admin/extra/palette-5Q0-1440.webp',
+  none: 'docs/qa/audit/vis-admin/extra/palette-none-1440.webp'
+}
+f {"firma":{"h1s":["Podešavanja|inMain=true|vis=true"],"title":"Podešavanja · Administracija","f":"docs/qa/audit/vis-admin/extra/settings-firma-1440.webp"},"prodaja":{"h1s":["Podešavanja|inMain=true|vis=true"],"title":"Podešavanja · Administracija","f":"docs/qa/audit/vis-admin/extra/settings-prodaja-1440.webp"},"seo":{"h1s":["Podešavanja|inMain=true|vis=true"],"title":"Podešavanja · Administracija"},"funkcije":{"h1s":["Podešavanja|inMain=true|vis=true"],"title":"Podešavanja · Administracija"}}
+g {
+  f: 'docs/qa/audit/vis-admin/extra/kupci-1440.webp',
+  sab: 'docs/qa/audit/vis-admin/extra/sabloni-1440.webp',
+  sabH2: [
+    'PORUDŽBINE 11px uppercase',
+    'UPITI I PONUDE 11px uppercase',
+    'MAJSTORI 11px uppercase',
+    'NALOG 11px uppercase',
+    'OSOBLJE 11px uppercase'
+  ]
+}
+i /admin { main: 1680, kids: [ 1632 ], table: 0 }
+i /admin/porudzbine { main: 1680, kids: [ 1632 ], table: 1630 }
+i /admin/upiti/UP-2026-000003 { main: 1680, kids: [ 1632 ], table: 1192 }
+i /admin/podesavanja?tab=firma { main: 1680, kids: [ 1632 ], table: null }

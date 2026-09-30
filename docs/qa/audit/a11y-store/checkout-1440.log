@@ -1,0 +1,32 @@
+-- focus on load "BODY"
+-- step1 tabbables ["input:text#co-firstName \"Ime\" ac=given-name","input:text#co-lastName \"Prezime\" ac=family-name","input:tel#co-phone \"Telefon\" ac=tel","input:email#co-email \"E-pošta\" ac=email","button:button#co-isCompany \"Kupujem kao firmaUnesite podatke firme z\" ac=","a# \"Korpa\" ac=","button:submit# \"Dalje\" ac="]
+-- step1 fields [": req=- invalid=- ac=off desc=\"\"","co-firstName: req=- invalid=- ac=given-name desc=\"\"","co-lastName: req=- invalid=- ac=family-name desc=\"\"","co-phone: req=- invalid=- ac=tel desc=\"Zovemo samo zbog ove porudžbine.\"","co-email: req=- invalid=- ac=email desc=\"Na nju šaljemo potvrdu i status.\"",": req=- invalid=- ac=- desc=\"\""]
+-- required indicator text ["Veb sajt","Ime","Prezime","Telefon","E-pošta","Kupujem kao firmaUnesite podatke firme za račun i predračun (virman)."]
+-- focus after Dalje (errors) samples ["120ms: div[alert]# \"Proverite 4 polja:Upišite ime.Upišite prezime.Upiš\" top=346 bottom=505","500ms: div[alert]# \"Proverite 4 polja:Upišite ime.Upišite prezime.Upiš\" top=346 bottom=505","1500ms: div[alert]# \"Proverite 4 polja:Upišite ime.Upišite prezime.Upiš\" top=346 bottom=505"]
+-- summary "- alert:\n  - paragraph: \"Proverite 4 polja:\"\n  - list:\n    - listitem:\n      - link \"Upišite ime.\":\n        - /url: \"#co-firstName\"\n    - listitem:\n      - link \"Upišite prezime.\":\n        - /url: \"#co-lastName\"\n    - listitem:\n      - link \"Upišite broj telefona.\":\n        - /url: \"#co-phone\"\n    - listitem:\n      - link \"Upišite e-mail adresu.\":\n        - /url: \"#co-email\""
+-- axe step1 errors []
+-- tab after errors "a# \"Upišite ime.\" top=394 bottom=410"
+-- tab sequence from Ime ["div[alert]# \"Proverite 3 polja:Upišite prezime.Upišite broj tel\" top=346 bottom=480","a# \"Upišite prezime.\" top=394 bottom=410","a# \"Upišite broj telefona.\" top=419 bottom=435","a# \"Upišite e-mail adresu.\" top=444 bottom=460"]
+-- focus step2 samples ["120ms: h2#step-title \"Dostava\" top=248 bottom=282","500ms: h2#step-title \"Dostava\" top=248 bottom=282","1500ms: h2#step-title \"Dostava\" top=248 bottom=282"]
+-- step2 tabbables ["button:button# \"Izmeni: Kontakt\" ac=","div# \"Lično preuzimanje0 RSDDeo preuzimate u r\" ac=","button:button# \"Nazad\" ac=","button:submit# \"Dalje\" ac="]
+-- step2 fields [": req=- invalid=- ac=off desc=\"\"",": req=- invalid=- ac=- desc=\"\"",": req=- invalid=- ac=- desc=\"\""]
+-- focus after step2 errors ["120ms: h2#step-title \"Plaćanje\" top=248 bottom=282","500ms: h2#step-title \"Plaćanje\" top=248 bottom=282","1500ms: h2#step-title \"Plaćanje\" top=248 bottom=282"]
+-- axe step2 errors []
+-- street exists 0
+-- focus step3 samples ["120ms: h2#step-title \"Pregled\" top=248 bottom=282","500ms: h2#step-title \"Pregled\" top=248 bottom=282","1500ms: h2#step-title \"Pregled\" top=248 bottom=282"]
+-- step3 aria "- navigation \"Koraci porudžbine\":\n  - list:\n    - listitem:\n      - text: \"Korak 1, završen: Kontakt\"\n      - 'button \"Izmeni : Kontakt\"'\n    - listitem:\n      - text: \"Korak 2, završen: Dostava\"\n      - 'button \"Izmeni : Dostava\"'\n    - listitem:\n      - text: \"Korak 3, završen: Plaćanje\"\n      - 'button \"Izmeni : Plaćanje\"'\n    - listitem: \"Korak 4: Pregled\"\n- region \"Pregled\":\n  - heading \"Pregled\" [level=2]\n  - term: Kontakt\n  - definition: Petar Petrović 064 123 4567 audit-a11y-store-co1440-1790793185256@primer.rs\n  - term: Dostava\n  - definition: Lično preuzimanje\n  - term: Plaćanje\n  - definition: Gotovinom pri preuzimanju\n  - text: Broj šasije (VIN) (nije obavezno)\n  - textbox \"Broj šasije (VIN) (nije obavezno)\":\n    - /placeholder: WVWZZZ…\n  - paragraph: Proverimo da li deo odgovara pre slanja.\n  - text: Napomena (nije obavezno)\n  - textbox \"Napomena (nije obavezno)\"\n  - paragraph: 0 / 1.000\n  - checkbox \"Prihvatam uslove kupovine i politiku privatnosti.\"\n  - text: Prihvatam\n  - link \"uslove kupovine\":\n    - /url: /uslovi-koriscenja\n  - text: i\n  - link \"politiku privatnosti\":\n    - /url: /politika-privatnosti\n  - text: .\n  - paragraph: Plaćate gotovinom u radnji kada preuzimate deo.\n  - button \"Nazad\"\n  - button \"Pošalji porudžbinu\"\n- complementary \"Pregled porudžbine\":\n  - heading \"Vaša poru
+-- axe step3 []
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.focus: Timeout 30000ms exceeded.
+Call log:
+  - waiting for getByTestId('checkout-next')
+
+    at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\audit\a11y-store-checkout.mjs:107:41 {
+  log: [ "  - waiting for getByTestId('checkout-next')" ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.23.2

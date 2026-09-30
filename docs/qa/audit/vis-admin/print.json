@@ -1,0 +1,56 @@
+{
+  "predracun": {
+    "route": "/admin/porudzbine/SK-2026-000092/predracun",
+    "screen": "docs/qa/audit/vis-admin/print/predracun-screen.webp",
+    "printShot": "docs/qa/audit/vis-admin/print/predracun-print.webp",
+    "pdf": "docs/qa/audit/vis-admin/print/predracun.pdf",
+    "pages": 1,
+    "scrollW": 794,
+    "vw": 794,
+    "h": 1123,
+    "hiddenOnPrint": 4,
+    "text": "Preskoči na sadržaj\nSKLOP\nPREDRAČUN\n\nSK-2026-000092\n\nDatum: 30.09.2026.\n\nPorudžbina od 30.09.2026.\n\nKUPAC\n\nAdmin Test audit21\n\n+381 64 333 4455 · admin-e2e-audit21@primer.rs\n\nUPLATA\n\nPoziv na broj: 2026000092\n\nNačin plaćanja: Pouzećem\n\nR. BR.\tŠIFRA\tNAZIV\tKOL.\tCENA SA PDV\tIZNOS\n1.\tDEMO-0004\tKočioni disk prednji 276 × 24 mm\nFebi Bilstein · OEM 5Q0 615 505 R\n\t1\t4.690 RSD\t4.690 RSD\nDostava — Kurirska služba\t450 RSD\nOsnovica\n4.283,33 RSD\nPDV 20 %\n856,67 RSD\nZa uplatu\n5.140 RSD\n\nPredračun nije fiskalni račun. Robu rezervišemo do uplate; račun izdajemo pri isporuci."
+  },
+  "otpremnica": {
+    "route": "/admin/porudzbine/SK-2026-000092/otpremnica",
+    "screen": "docs/qa/audit/vis-admin/print/otpremnica-screen.webp",
+    "printShot": "docs/qa/audit/vis-admin/print/otpremnica-print.webp",
+    "pdf": "docs/qa/audit/vis-admin/print/otpremnica.pdf",
+    "pages": 1,
+    "scrollW": 794,
+    "vw": 794,
+    "h": 1123,
+    "hiddenOnPrint": 4,
+    "text": "Preskoči na sadržaj\nSKLOP\nOTPREMNICA\n\nSK-2026-000092\n\nDatum: 30.09.2026.\n\nPorudžbina od 30.09.2026.\n\nPRIMALAC\n\nAdmin Test audit21\n\n+381 64 333 4455 · admin-e2e-audit21@primer.rs\n\nISPORUKA\n\nKurirska služba\n\nTest ulica 5, 11000 Beograd\n\nPlaćanje: Pouzećem\n\nR. BR.\tŠIFRA\tOEM\tNAZIV\tKOL.\tIZDATO\n1.\tDEMO-0004\t5Q0 615 505 R\tKočioni disk prednji 276 × 24 mm\nFebi Bilstein\n\t1\t\n\nUkupno komada: 1\n\nRobu izdao\nRobu primio"
+  },
+  "predracun-majstor": {
+    "route": "/admin/porudzbine/SK-2026-000033/predracun",
+    "screen": "docs/qa/audit/vis-admin/print/predracun-majstor-screen.webp",
+    "printShot": "docs/qa/audit/vis-admin/print/predracun-majstor-print.webp",
+    "pdf": "docs/qa/audit/vis-admin/print/predracun-majstor.pdf",
+    "pages": 1,
+    "scrollW": 794,
+    "vw": 794,
+    "h": 1123,
+    "hiddenOnPrint": 4,
+    "text": "Preskoči na sadržaj\nSKLOP\nPREDRAČUN\n\nSK-2026-000033\n\nDatum: 30.09.2026.\n\nPorudžbina od 30.09.2026.\n\nKUPAC\n\nAuto servis Jović\n\nPIB 208423227 · MB 78423226\n\nKontakt: Dragan Jović\n\n+381 64 555 1234 · qa-majstor-1790740842322@primer.rs\n\nUPLATA\n\nPoziv na broj: 2026000033\n\nNačin plaćanja: Odloženo plaćanje\n\nR. BR.\tŠIFRA\tNAZIV\tKOL.\tCENA SA PDV\tIZNOS\n1.\tDEMO-0061\tSet zupčastog kaiša 1.4 16V\nGates · OEM 036 121 959 P\n\t2\t8.067 RSD\t16.134 RSD\n2.\tDEMO-0047\tTurbina 1.9 TDI 77 kW, nova\nGarrett · OEM 03G 145 883\n\t1\t76.415 RSD\t76.415 RSD\nDostava — Kurirska služba\t0 RSD\nOsnovica\n77.124,17 RSD\nPDV 20 %\n15.424,83 RSD\nZa uplatu\n92.549 RSD\n\nPredračun nije fiskalni račun. Robu rezervišemo do uplate; račun izdajemo pri isporuci."
+  },
+  "otpremnice-bulk": {
+    "route": "/admin/stampa/otpremnice?brojevi=SK-2026-000092,SK-2026-000033",
+    "screen": "docs/qa/audit/vis-admin/print/otpremnice-bulk-screen.webp",
+    "printShot": "docs/qa/audit/vis-admin/print/otpremnice-bulk-print.webp",
+    "pdf": "docs/qa/audit/vis-admin/print/otpremnice-bulk.pdf",
+    "pages": 2,
+    "scrollW": 794,
+    "vw": 794,
+    "h": 1123,
+    "hiddenOnPrint": 4,
+    "text": "Preskoči na sadržaj\nSKLOP\nOTPREMNICA\n\nSK-2026-000092\n\nDatum: 30.09.2026.\n\nPorudžbina od 30.09.2026.\n\nPRIMALAC\n\nAdmin Test audit21\n\n+381 64 333 4455 · admin-e2e-audit21@primer.rs\n\nISPORUKA\n\nKurirska služba\n\nTest ulica 5, 11000 Beograd\n\nPlaćanje: Pouzećem\n\nR. BR.\tŠIFRA\tOEM\tNAZIV\tKOL.\tIZDATO\n1.\tDEMO-0004\t5Q0 615 505 R\tKočioni disk prednji 276 × 24 mm\nFebi Bilstein\n\t1\t\n\nUkupno komada: 1\n\nRobu izdao\nRobu primio\nSKLOP\nOTPREMNICA\n\nSK-2026-000033\n\nDatum: 30.09.2026.\n\nPorudžbina od 30.09.2026.\n\nPRIMALAC\n\nAuto servis Jović\n\nPIB 208423227 · MB 78423226\n\nKontakt: Dragan Jović\n\n+381 64 555 1234 · qa-majstor-1790740842322@primer.rs\n\nISPORUKA\n\nKurirska služba\n\nKralja Petra I 12, 34000 Kragujevac\n\nPlaćanje: Odloženo plaćanje\n\nR. BR.\tŠIFRA\tOEM\tNAZIV\tKOL.\tIZDATO\n1.\tDEMO-0061\t036 121 959 P\tSet zupčastog kaiša 1.4 16V\nGates\n\t2\t\n2.\tDEMO-0047\t03G 145 883\tTurbina 1.9 TDI 77 kW, nova\nGarrett\n\t1\t\n\nUkupno komada: 3\n\nRobu izdao\nRobu primio"
+  },
+  "log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

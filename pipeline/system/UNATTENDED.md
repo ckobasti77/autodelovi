@@ -12,6 +12,7 @@ You are one step of an automated, sequential build pipeline running **unattended
 - Tool paths and versions: read pipeline/env/ENVIRONMENT.md. Environment variables available to you: BLENDER_EXE, CHROME_PATH (if found), SEED_ADMIN_EMAIL, SEED_ADMIN_PASSWORD.
 - Only non-interactive commands. `npm_config_yes=true` is set; pass `--yes`/`-y`/non-interactive flags. If a CLI would prompt, find its flags or environment variables instead.
 - Never run watchers or servers in the foreground. Push Convex functions with `npx convex dev --once` (never `npx convex deploy`). Run `next dev` / `next start` in the background (or through Playwright `webServer`), wait for readiness, stop them when done. Port 3000 for dev, 3100 for e2e and production checks.
+- **Another project's pipeline may be running on this PC at the same time.** Never stop, kill or restart a process you did not start yourself in this project, and never kill by port or by process name (no `taskkill /IM node.exe`, no killing whatever listens on a port). If port 3000, 3100 or 3200 is busy with a server that is not from this project folder, run yours on another free port (for example 3300-3399) and point the tests at it (for example `E2E_BASE_URL`).
 - Give long commands explicit timeouts; keep any single command under ~45 minutes. Playwright must never open an HTML report server (PLAYWRIGHT_HTML_OPEN=never is set; use `--reporter=line` or `list` when in doubt).
 
 ## Sources of truth (read before working)

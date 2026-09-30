@@ -1,0 +1,607 @@
+{
+  "chromium-1440-/": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "chromium-1440-/delovi/kocioni-diskovi": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "chromium-1440-/deo/kocioni-disk-prednji-276-24-mm-demo-0004": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "chromium-1440-/za-majstore": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "chromium-1440-/upit": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "chromium-390-/": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "chromium-390-/delovi/kocioni-diskovi": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "chromium-390-/deo/kocioni-disk-prednji-276-24-mm-demo-0004": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "chromium-390-/za-majstore": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "chromium-390-/upit": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "firefox-1440-/": {
+    "error": "TimeoutError: page.goto: Timeout 90000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3100/\", waiting until \"load\"\n"
+  },
+  "firefox-1440-/delovi/kocioni-diskovi": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "firefox-1440-/deo/kocioni-disk-prednji-276-24-mm-demo-0004": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "firefox-1440-/za-majstore": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "firefox-1440-/upit": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "firefox-390-/": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "firefox-390-/delovi/kocioni-diskovi": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "firefox-390-/deo/kocioni-disk-prednji-276-24-mm-demo-0004": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "firefox-390-/za-majstore": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "firefox-390-/upit": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "webkit-1440-/": [
+    {
+      "t": 0,
+      "stuck": 20,
+      "stuckSample": [
+        "span: Motor,",
+        "span: turbina,",
+        "span: gorivo,",
+        "span: paljenje",
+        "span: 05"
+      ],
+      "pending": 0,
+      "words": 255,
+      "detail": [
+        "p[] top=97 \"Motor, turbina, gorivo, paljenje\" op=0",
+        "p[] top=160 \"05 · 8 kategorija · 11 delova\" op=0",
+        "p[] top=180 \"Motor sa turbinom, brizgaljkama, paljenjem i setom\" op=0",
+        "p[running] top=7513 \"Nivo određujemo pri odobrenju naloga. Rabat se rač\" op=1",
+        "h2[running] top=7806 \"Vozila koja pokrivamo\" op=0.9988",
+        "span[] top=7819 \"Volkswagen\" op=0.9998"
+      ]
+    },
+    {
+      "t": 1500,
+      "stuck": 20,
+      "stuckSample": [
+        "span: Pomoćni",
+        "span: agregati,",
+        "span: hlađenje,",
+        "span: usis",
+        "span: 04"
+      ],
+      "pending": 0,
+      "words": 253,
+      "detail": [
+        "p[] top=97 \"Pomoćni agregati, hlađenje, usis\" op=0",
+        "p[] top=160 \"04 · 10 kategorija · 17 delova\" op=0",
+        "p[] top=180 \"Hladnjak, interkuler, klima, alternator, anlaser i\" op=0",
+        "p[running] top=7513 \"Nivo određujemo pri odobrenju naloga. Rabat se rač\" op=1",
+        "h2[running] top=7806 \"Vozila koja pokrivamo\" op=0.9996",
+        "span[] top=7819 \"Volkswagen\" op=0.9999"
+      ]
+    },
+    {
+      "t": 3000,
+      "stuck": 20,
+      "stuckSample": [
+        "span: Pomoćni",
+        "span: agregati,",
+        "span: hlađenje,",
+        "span: usis",
+        "span: 04"
+      ],
+      "pending": 0,
+      "words": 253,
+      "detail": [
+        "p[] top=97 \"Kočnice, vešanje, upravljanje\" op=0",
+        "p[] top=160 \"03 · 9 kategorija · 31 deo\" op=0",
+        "p[] top=180 \"Ispod su diskovi, čeljusti, pločice, amortizeri, r\" op=0",
+        "p[running] top=7513 \"Nivo određujemo pri odobrenju naloga. Rabat se rač\" op=1",
+        "h2[running] top=7806 \"Vozila koja pokrivamo\" op=0.9998",
+        "span[] top=7819 \"Volkswagen\" op=1"
+      ]
+    },
+    {
+      "t": 4500,
+      "stuck": 20,
+      "stuckSample": [
+        "span: Karoserija,",
+        "span: stakla",
+        "span: i",
+        "span: svetla",
+        "span: 01"
+      ],
+      "pending": 0,
+      "words": 253,
+      "detail": [
+        "p[] top=97 \"Karoserija, stakla i svetla\" op=0",
+        "p[] top=160 \"01 · 10 kategorija · 20 delova\" op=0",
+        "p[] top=180 \"Prvo se skidaju limarija, stakla i svetla.\" op=0",
+        "p[running] top=7513 \"Nivo određujemo pri odobrenju naloga. Rabat se rač\" op=1",
+        "h2[running] top=7806 \"Vozila koja pokrivamo\" op=0.9999",
+        "span[] top=7819 \"Volkswagen\" op=1"
+      ]
+    },
+    {
+      "t": 6000,
+      "stuck": 20,
+      "stuckSample": [
+        "span: stakla",
+        "span: i",
+        "span: svetla",
+        "span: 01",
+        "span: ·"
+      ],
+      "pending": 0,
+      "words": 231,
+      "detail": [
+        "p[] top=97 \"Karoserija, stakla i svetla\" op=0.6799",
+        "p[] top=160 \"01 · 10 kategorija · 20 delova\" op=0",
+        "p[] top=180 \"Prvo se skidaju limarija, stakla i svetla.\" op=0.8418",
+        "p[running] top=7513 \"Nivo određujemo pri odobrenju naloga. Rabat se rač\" op=1",
+        "dt[running] top=8179 \"artikala u katalogu\" op=1",
+        "dt[running] top=8179 \"artikala na stanju\" op=1"
+      ]
+    },
+    {
+      "t": 7500,
+      "stuck": 9,
+      "stuckSample": [
+        "span: iznad",
+        "span: 14",
+        "span: kurir",
+        "span: za",
+        "span: odustati"
+      ],
+      "pending": 0,
+      "words": 217,
+      "detail": [
+        "p[] top=0 \"Sklopljenautomobil\" op=0",
+        "p[] top=0 \"00 · 42 kategorije ·91 deo\" op=0",
+        "p[] top=0 \"Skrolujte i auto se rasklapa posistemima.\" op=0",
+        "p[running] top=7513 \"Nivo određujemo pri odobrenju naloga. Rabat se rač\" op=1",
+        "p[running] top=8702 \"Kurirska dostava je 450 RSD, a besplatna za porudž\" op=0.95",
+        "p[running] top=8767 \"Kao potrošač možete odustati od kupovine u roku od\" op=0.997"
+      ]
+    }
+  ],
+  "webkit-1440-/delovi/kocioni-diskovi": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 55,
+      "detail": [
+        "p[running] top=2417 \"Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vo\" op=0.9998",
+        "p[running] top=2630 \"Volkswagen, Audi, Škoda, SEAT i Cupra su registrov\" op=1"
+      ]
+    },
+    {
+      "t": 1500,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "webkit-1440-/deo/kocioni-disk-prednji-276-24-mm-demo-0004": [
+    {
+      "t": 0,
+      "stuck": 20,
+      "stuckSample": [
+        "span: ×",
+        "span: 24",
+        "span: mm.",
+        "span: cene",
+        "span: služe"
+      ],
+      "pending": 0,
+      "words": 192,
+      "detail": [
+        "h2[running] top=1361 \"Kompatibilnost\" op=0.9999",
+        "p[running] top=1403 \"Pre ugradnje uporedite OEM broj sa starim delom. K\" op=0.9632",
+        "a[] top=1405 \"pošaljite broj šasije\" op=0.9999",
+        "h2[running] top=2095 \"Brojevi\" op=0.9839",
+        "h3[running] top=2148 \"OEM brojevi\" op=0.9764",
+        "h3[running] top=2148 \"Zamenski brojevi\" op=0.9839"
+      ]
+    },
+    {
+      "t": 1500,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 74,
+      "detail": [
+        "p[running] top=2379 \"Kočioni disk prednji 276 × 24 mm. Demo artikal: ka\" op=1",
+        "p[running] top=3434 \"Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vo\" op=0.9883",
+        "p[running] top=3647 \"Volkswagen, Audi, Škoda, SEAT i Cupra su registrov\" op=0.9942"
+      ]
+    },
+    {
+      "t": 3000,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 74,
+      "detail": [
+        "p[running] top=2379 \"Kočioni disk prednji 276 × 24 mm. Demo artikal: ka\" op=1",
+        "p[running] top=3434 \"Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vo\" op=0.9962",
+        "p[running] top=3647 \"Volkswagen, Audi, Škoda, SEAT i Cupra su registrov\" op=0.9984"
+      ]
+    },
+    {
+      "t": 4500,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 74,
+      "detail": [
+        "p[running] top=3434 \"Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vo\" op=0.9989",
+        "p[running] top=3647 \"Volkswagen, Audi, Škoda, SEAT i Cupra su registrov\" op=0.9998"
+      ]
+    },
+    {
+      "t": 6000,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "webkit-1440-/za-majstore": {
+    "error": "TimeoutError: page.screenshot: Timeout 30000ms exceeded.\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n"
+  },
+  "webkit-1440-/upit": {
+    "error": "TimeoutError: page.goto: Timeout 90000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3100/upit\", waiting until \"load\"\n"
+  },
+  "webkit-390-/": [
+    {
+      "t": 0,
+      "stuck": 20,
+      "stuckSample": [
+        "span: Motor,",
+        "span: turbina,",
+        "span: gorivo,",
+        "span: paljenje",
+        "span: 05"
+      ],
+      "pending": 0,
+      "words": 143,
+      "detail": [
+        "p[] top=679 \"Motor, turbina, gorivo, paljenje\" op=0",
+        "p[] top=730 \"05 · 8 kategorija · 11 delova\" op=0",
+        "p[] top=750 \"Motor sa turbinom, brizgaljkama, paljenjem i setom\" op=0",
+        "p[running] top=10804 \"Imamo. Registrujte servis na stranici Za majstore;\" op=0.3606",
+        "p[running] top=10869 \"Na stranici artikla uključite „Javi mi kad stigne“\" op=0",
+        "h2[running] top=10984 \"Pitanje za majstora?\" op=0.7735"
+      ]
+    },
+    {
+      "t": 1500,
+      "stuck": 20,
+      "stuckSample": [
+        "span: Kočnice,",
+        "span: vešanje,",
+        "span: upravljanje",
+        "span: 03",
+        "span: ·"
+      ],
+      "pending": 0,
+      "words": 143,
+      "detail": [
+        "p[] top=679 \"Kočnice, vešanje, upravljanje\" op=0",
+        "p[] top=730 \"03 · 9 kategorija · 31 deo\" op=0",
+        "p[] top=750 \"Ispod su diskovi, čeljusti, pločice, amortizeri, r\" op=0.5975",
+        "p[running] top=10804 \"Imamo. Registrujte servis na stranici Za majstore;\" op=0.7007",
+        "p[running] top=10869 \"Na stranici artikla uključite „Javi mi kad stigne“\" op=0",
+        "h2[running] top=10984 \"Pitanje za majstora?\" op=0.8927"
+      ]
+    },
+    {
+      "t": 3000,
+      "stuck": 20,
+      "stuckSample": [
+        "span: stakla",
+        "span: i",
+        "span: svetla",
+        "span: 01",
+        "span: ·"
+      ],
+      "pending": 0,
+      "words": 141,
+      "detail": [
+        "p[] top=679 \"Karoserija, stakla i svetla\" op=0.187",
+        "p[] top=730 \"01 · 10 kategorija · 20 delova\" op=0",
+        "p[] top=750 \"Prvo se skidaju limarija, stakla i svetla.\" op=0.5975",
+        "p[running] top=10804 \"Imamo. Registrujte servis na stranici Za majstore;\" op=0.8585",
+        "p[running] top=10869 \"Na stranici artikla uključite „Javi mi kad stigne“\" op=0",
+        "h2[running] top=10984 \"Pitanje za majstora?\" op=0.9501"
+      ]
+    },
+    {
+      "t": 4500,
+      "stuck": 14,
+      "stuckSample": [
+        "span: Sklopljen",
+        "span: automobil",
+        "span: 00",
+        "span: ·",
+        "span: 42 kategorije"
+      ],
+      "pending": 0,
+      "words": 128,
+      "detail": [
+        "p[] top=679 \"Sklopljen automobil\" op=0",
+        "p[] top=707 \"00 · 42 kategorije · 91 deo\" op=0",
+        "p[] top=728 \"Skrolujte i auto se rasklapa po sistemima.\" op=0",
+        "p[running] top=10804 \"Imamo. Registrujte servis na stranici Za majstore;\" op=1",
+        "p[running] top=10869 \"Na stranici artikla uključite „Javi mi kad stigne“\" op=0.9851",
+        "p[running] top=11019 \"Pozovite, pišite na Viber ili pošaljite upit sa br\" op=1"
+      ]
+    },
+    {
+      "t": 6000,
+      "stuck": 9,
+      "stuckSample": [
+        "span: Sklopljen",
+        "span: 00",
+        "span: ·",
+        "span: 42 kategorije",
+        "span: ·"
+      ],
+      "pending": 0,
+      "words": 128,
+      "detail": [
+        "p[] top=679 \"Sklopljen automobil\" op=0",
+        "p[] top=707 \"00 · 42 kategorije · 91 deo\" op=0",
+        "p[] top=728 \"Skrolujte i auto se rasklapa po sistemima.\" op=0",
+        "p[running] top=10804 \"Imamo. Registrujte servis na stranici Za majstore;\" op=1",
+        "p[running] top=10869 \"Na stranici artikla uključite „Javi mi kad stigne“\" op=0.9947",
+        "p[running] top=11019 \"Pozovite, pišite na Viber ili pošaljite upit sa br\" op=1"
+      ]
+    },
+    {
+      "t": 7500,
+      "stuck": 4,
+      "stuckSample": [
+        "span: 00",
+        "span: ·",
+        "span: i",
+        "span: auto"
+      ],
+      "pending": 0,
+      "words": 118,
+      "detail": [
+        "p[] top=679 \"Sklopljen automobil\" op=0.5858",
+        "p[] top=707 \"00 · 42 kategorije · 91 deo\" op=0",
+        "p[] top=728 \"Skrolujte i auto se rasklapa po sistemima.\" op=0.7244",
+        "p[running] top=10804 \"Imamo. Registrujte servis na stranici Za majstore;\" op=1",
+        "p[running] top=10869 \"Na stranici artikla uključite „Javi mi kad stigne“\" op=0.9985",
+        "p[running] top=11286 \"Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vo\" op=0.9992"
+      ]
+    }
+  ],
+  "webkit-390-/delovi/kocioni-diskovi": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 34,
+      "detail": [
+        "p[running] top=4018 \"Volkswagen, Audi, Škoda, SEAT i Cupra su registrov\" op=1"
+      ]
+    },
+    {
+      "t": 1500,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "webkit-390-/deo/kocioni-disk-prednji-276-24-mm-demo-0004": [
+    {
+      "t": 0,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "webkit-390-/za-majstore": [
+    {
+      "t": 0,
+      "stuck": 9,
+      "stuckSample": [
+        "span: svojih",
+        "span: Nazive",
+        "span: marki",
+        "span: vozila",
+        "span: povezan"
+      ],
+      "pending": 0,
+      "words": 107,
+      "detail": [
+        "span[] top=2643 \"01\" op=1",
+        "h3[] top=2643 \"Registrujte servis\" op=1",
+        "p[] top=2683 \"Naziv servisa, PIB, matični broj, adresa i marke k\" op=1",
+        "span[] top=2971 \"03\" op=1",
+        "h3[] top=2971 \"Poručujete po svojoj ceni\" op=0.9999",
+        "p[] top=3011 \"Posle prijave vidite svoju cenu na svakom artiklu,\" op=1"
+      ]
+    },
+    {
+      "t": 1500,
+      "stuck": 0,
+      "stuckSample": [],
+      "pending": 0,
+      "words": 0,
+      "detail": []
+    }
+  ],
+  "webkit-390-/upit": {
+    "error": "TimeoutError: page.goto: Timeout 90000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3100/upit\", waiting until \"load\"\n"
+  }
+}

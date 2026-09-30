@@ -1,0 +1,4 @@
+768 done {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+1440 done {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+2560 done {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+exit 0

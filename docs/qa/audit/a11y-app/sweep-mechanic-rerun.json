@@ -1,0 +1,177 @@
+[
+  {
+    "role": "mechanic",
+    "width": 390,
+    "route": "/majstor/cenovnik",
+    "status": 200,
+    "finalUrl": "/majstor/cenovnik",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Cenovnik | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Majstorski portal"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Majstorski portal",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": [
+        "button \"Motor i usis — sve kategorije\" 20x20",
+        "button \"Blok motora i glava\" 20x20",
+        "button \"Turbina (turbopunjač)\" 20x20",
+        "button \"Interkuler\" 20x20",
+        "button \"Usisna grana i kućište filtera\" 20x20",
+        "button \"Brizgaljke i pumpa goriva\" 20x20",
+        "button \"Set zupčastog kaiša i vodena p\" 20x20",
+        "button \"Kaiš alternatora i zatezači\" 20x20"
+      ]
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/mechanic-390-majstor_cenovnik.webp",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 390,
+    "route": "/majstor/upiti",
+    "status": 200,
+    "finalUrl": "/majstor/upiti",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Upiti | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Majstorski portal"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Majstorski portal",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/mechanic-390-majstor_upiti.webp",
+    "console": [
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+      "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED"
+    ],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 390,
+    "route": "/majstor/profil",
+    "error": "TimeoutError: page.goto: Timeout 120000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3100/majstor/profil\", waiting until \"load\"\n",
+    "console": [
+      "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    ],
+    "pageErrors": [],
+    "bad": [
+      "500 http://localhost:3100/prijava?next=%2Fmajstor%2Fprofil"
+    ]
+  },
+  {
+    "role": "mechanic",
+    "width": 1440,
+    "route": "/majstor/cenovnik",
+    "error": "TimeoutError: page.goto: Timeout 120000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3100/majstor/cenovnik\", waiting until \"load\"\n",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 1440,
+    "route": "/majstor/upiti",
+    "error": "TimeoutError: page.goto: Timeout 120000ms exceeded.\nCall log:\n  - navigating to \"http://localhost:3100/majstor/upiti\", waiting until \"load\"\n",
+    "console": [],
+    "pageErrors": [],
+    "bad": []
+  },
+  {
+    "role": "mechanic",
+    "width": 1440,
+    "route": "/majstor/profil",
+    "status": 200,
+    "finalUrl": "/majstor/profil",
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "overflow": {
+      "over": 0,
+      "offenders": []
+    },
+    "structure": {
+      "title": "Profil servisa | SKLOP",
+      "lang": "sr-Latn-RS",
+      "h1": [
+        "Majstorski portal"
+      ],
+      "headingSkips": [],
+      "mains": 1,
+      "navs": [
+        "Glavna navigacija",
+        "Majstorski portal",
+        "Delovi",
+        "Kupovina",
+        "Pravne informacije"
+      ],
+      "skipLink": "A \"Preskoči na sadržaj\" → #sadrzaj",
+      "unlabeledButtons": 0,
+      "clickableNonInteractive": 0,
+      "small": []
+    },
+    "axe": [],
+    "shot": "docs/qa/audit/a11y-app/sweep/mechanic-1440-majstor_profil.webp",
+    "console": [
+      "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "Failed to load resource: net::ERR_NETWORK_CHANGED",
+      "Failed to load resource: net::ERR_NETWORK_CHANGED"
+    ],
+    "pageErrors": [],
+    "bad": []
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "overflow360": {
+    "/majstor": {
+      "vw": 360,
+      "over": 9,
+      "offenders": [
+        "div[ml-auto flex items-center gap-0.5 lg:gap-2] L141 R369 \"Broj dela ili naziv/Izaberite \"",
+        "div[lg:hidden] L325 R369 \"\"",
+        "button[mobile-menu-trigger] L325 R369 \"\"",
+        "ul[flex gap-6] L16 R708 \"PregledBrza porudžbinaPorudžbi\"",
+        "li[] L321 R379 \"Omiljeno\"",
+        "a[inline-flex h-11 items-center whitespace-nowrap border-b-2 t] L321 R379 \"Omiljeno\"",
+        "li[] L403 R508 \"Vozila mušterija\"",
+        "a[inline-flex h-11 items-center whitespace-nowrap border-b-2 t] L403 R508 \"Vozila mušterija\"",
+        "li[] L532 R593 \"Cenovnik\"",
+        "a[inline-flex h-11 items-center whitespace-nowrap border-b-2 t] L532 R593 \"Cenovnik\"",
+        "li[] L617 R648 \"Upiti\"",
+        "a[inline-flex h-11 items-center whitespace-nowrap border-b-2 t] L617 R648 \"Upiti\""
+      ]
+    },
+    "scrollXAfter": 0,
+    "/majstor/cenovnik": {
+      "vw": 360,
+      "over": 9,
+      "offenders": [
+        "div[ml-auto flex items-center gap-0.5 lg:gap-2] L141 R369 \"Broj dela ili naziv/Izaberite \"",
+        "div[lg:hidden] L325 R369 \"\"",
+        "button[mobile-menu-trigger] L325 R369 \"\"",
+        "ul[flex gap-6] L16 R708 \"PregledBrza porudžbinaPorudžbi\"",
+        "li[] L321 R379 \"Omiljeno\"",
+        "a[inline-flex h-11 items-center whitespace-nowrap border-b-2 t] L321 R379 \"Omiljeno\"",
+        "li[] L403 R508 \"Vozila mušterija\"",
+        "a[inline-flex h-11 items-center whitespace-nowrap border-b-2 t] L403 R508 \"Vozila mušterija\"",
+        "li[] L532 R593 \"Cenovnik\"",
+        "a[inline-flex h-11 items-center whitespace-nowrap border-b-2 t] L532 R593 \"Cenovnik\"",
+        "li[] L617 R648 \"Upiti\"",
+        "a[inline-flex h-11 items-center whitespace-nowrap border-b-2 t] L617 R648 \"Upiti\""
+      ]
+    },
+    "/nalog": {
+      "vw": 360,
+      "over": 9,
+      "offenders": [
+        "div[ml-auto flex items-center gap-0.5 lg:gap-2] L141 R369 \"Broj dela ili naziv/Izaberite \"",
+        "div[lg:hidden] L325 R369 \"\"",
+        "button[mobile-menu-trigger] L325 R369 \"\""
+      ]
+    },
+    "/korpa": {
+      "vw": 360,
+      "over": 9,
+      "offenders": [
+        "div[ml-auto flex items-center gap-0.5 lg:gap-2] L141 R369 \"Broj dela ili naziv/Izaberite \"",
+        "div[lg:hidden] L325 R369 \"\"",
+        "button[mobile-menu-trigger] L325 R369 \"\""
+      ]
+    },
+    "/": {
+      "vw": 360,
+      "over": 9,
+      "offenders": [
+        "div[ml-auto flex items-center gap-0.5 lg:gap-2] L141 R369 \"Broj dela ili naziv/Izaberite \"",
+        "div[lg:hidden] L325 R369 \"\"",
+        "button[mobile-menu-trigger] L325 R369 \"\""
+      ]
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+}

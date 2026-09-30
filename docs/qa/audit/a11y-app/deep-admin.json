@@ -1,0 +1,68 @@
+{
+  "skip": {
+    "first": {
+      "tag": "a",
+      "role": "",
+      "name": "Preskoči na sadržaj",
+      "id": "",
+      "href": "#sadrzaj",
+      "outline": "solid 2px rgb(18, 21, 24) off 2px",
+      "shadow": "",
+      "rect": [
+        12,
+        12,
+        168,
+        39
+      ],
+      "inViewport": true
+    },
+    "afterEnter": {
+      "tag": "main",
+      "role": "",
+      "name": "PorudžbineSve porudžbine sa sajta, iz upita i brze",
+      "id": "sadrzaj",
+      "href": "",
+      "outline": "none 2px rgb(184, 71, 10) off 2px",
+      "shadow": "",
+      "rect": [
+        232,
+        56,
+        1208,
+        2749
+      ],
+      "inViewport": true
+    },
+    "target": {
+      "tag": "main",
+      "tabindex": "-1",
+      "inMain": true
+    },
+    "nextTab": {
+      "tag": "button",
+      "role": "",
+      "name": "Nove96",
+      "id": "",
+      "href": "",
+      "outline": "solid 2px rgb(184, 71, 10) off -2px",
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0",
+      "rect": [
+        259,
+        176,
+        83,
+        32
+      ],
+      "inViewport": true
+    },
+    "url": "/admin/porudzbine#sadrzaj",
+    "ev1": "docs/qa/audit/a11y-app/deep-skip-01-visible.webp",
+    "_ms": 61945
+  },
+  "palette": {
+    "error": "TimeoutError: locator.focus: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /Broj porudžbine/ }).first()\n",
+    "_ms": 276056
+  },
+  "orders": {
+    "error": "TimeoutError: locator.waitFor: Timeout 90000ms exceeded.\nCall log:\n  - waiting for locator('tbody tr[data-row]').first() to be visible\n",
+    "_ms": 394340
+  }
+}

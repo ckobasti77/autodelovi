@@ -1,0 +1,444 @@
+[
+  {
+    "vp": "1440",
+    "rows": [
+      {
+        "el": "a \"Preskoči na sadržaj\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "idle",
+        "rectY": 12,
+        "inViewport": true
+      },
+      {
+        "el": "a \"SKLOP — početna\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "idle",
+        "rectY": 10,
+        "inViewport": true
+      },
+      {
+        "el": "a \"Delovi\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "idle",
+        "rectY": 10,
+        "inViewport": true
+      },
+      {
+        "el": "a \"Vozila\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 10,
+        "inViewport": true
+      },
+      {
+        "el": "a \"Za majstore\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 10,
+        "inViewport": true
+      },
+      {
+        "el": "a \"Upit po broju šasije\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 10,
+        "inViewport": true
+      },
+      {
+        "el": "button \"Broj dela ili naziv/\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 12,
+        "inViewport": true
+      },
+      {
+        "el": "button \"Izaberite vozilo\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 14,
+        "inViewport": true
+      },
+      {
+        "el": "a \"Moj nalog\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 10,
+        "inViewport": true
+      },
+      {
+        "el": "a \"Korpa\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 10,
+        "inViewport": true
+      },
+      {
+        "el": "input \"Broj dela ili naziv\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 392,
+        "inViewport": true
+      },
+      {
+        "el": "button \"Pretraži\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 391,
+        "inViewport": true
+      },
+      {
+        "el": "button \"Izaberite vozilomarka, model, mo\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 520,
+        "inViewport": true
+      },
+      {
+        "el": "a \"Nemate broj? Pošaljite broj šasi\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 591,
+        "inViewport": true
+      },
+      {
+        "el": "button \"00 Sklopljen automobil\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 829,
+        "inViewport": true
+      },
+      {
+        "el": "button \"01 Karoserija, stakla i svetla\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 829,
+        "inViewport": true
+      },
+      {
+        "el": "button \"02 Točkovi\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 829,
+        "inViewport": true
+      },
+      {
+        "el": "button \"03 Kočnice, vešanje, upravljanje\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 829,
+        "inViewport": true
+      },
+      {
+        "el": "button \"04 Pomoćni agregati, hlađenje, u\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 829,
+        "inViewport": true
+      },
+      {
+        "el": "button \"05 Motor, turbina, gorivo, palje\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 829,
+        "inViewport": true
+      },
+      {
+        "el": "button \"06 Menjač, kvačilo, poluosovine\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 829,
+        "inViewport": true
+      },
+      {
+        "el": "button \"07 Izduvni sistem\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 829,
+        "inViewport": true
+      },
+      {
+        "el": "button \"Rasklopi\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 839,
+        "inViewport": true
+      },
+      {
+        "el": "button \"Lista delova\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 839,
+        "inViewport": true
+      }
+    ]
+  },
+  {
+    "vp": "1280",
+    "rows": [
+      {
+        "el": "a \"Preskoči na sadržaj\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "idle",
+        "rectY": 12,
+        "inViewport": true
+      },
+      {
+        "el": "a \"SKLOP — početna\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "idle",
+        "rectY": 10,
+        "inViewport": true
+      },
+      {
+        "el": "a \"Delovi\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "idle",
+        "rectY": 10,
+        "inViewport": true
+      },
+      {
+        "el": "a \"Vozila\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "idle",
+        "rectY": 10,
+        "inViewport": true
+      },
+      {
+        "el": "a \"Za majstore\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 10,
+        "inViewport": true
+      },
+      {
+        "el": "a \"Upit po broju šasije\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 10,
+        "inViewport": true
+      },
+      {
+        "el": "button \"Broj dela ili naziv/\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 12,
+        "inViewport": true
+      },
+      {
+        "el": "button \"Izaberite vozilo\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 14,
+        "inViewport": true
+      },
+      {
+        "el": "a \"Moj nalog\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 10,
+        "inViewport": true
+      },
+      {
+        "el": "a \"Korpa\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 10,
+        "inViewport": true
+      },
+      {
+        "el": "input \"Broj dela ili naziv\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 376,
+        "inViewport": true
+      },
+      {
+        "el": "button \"Pretraži\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 375,
+        "inViewport": true
+      },
+      {
+        "el": "button \"Izaberite vozilomarka, model, mo\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 505,
+        "inViewport": true
+      },
+      {
+        "el": "a \"Nemate broj? Pošaljite broj šasi\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 576,
+        "inViewport": true
+      },
+      {
+        "el": "button \"00 Sklopljen automobil\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 729,
+        "inViewport": true
+      },
+      {
+        "el": "button \"01 Karoserija, stakla i svetla\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 729,
+        "inViewport": true
+      },
+      {
+        "el": "button \"02 Točkovi\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 729,
+        "inViewport": true
+      },
+      {
+        "el": "button \"03 Kočnice, vešanje, upravljanje\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 729,
+        "inViewport": true
+      },
+      {
+        "el": "button \"04 Pomoćni agregati, hlađenje, u\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 729,
+        "inViewport": true
+      },
+      {
+        "el": "button \"05 Motor, turbina, gorivo, palje\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 729,
+        "inViewport": true
+      },
+      {
+        "el": "button \"06 Menjač, kvačilo, poluosovine\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 729,
+        "inViewport": true
+      },
+      {
+        "el": "button \"07 Izduvni sistem\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 729,
+        "inViewport": true
+      },
+      {
+        "el": "button \"Rasklopi\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 739,
+        "inViewport": true
+      },
+      {
+        "el": "button \"Lista delova\"",
+        "scrollY": 0,
+        "progress": 0,
+        "stage": 0,
+        "status": "loading",
+        "rectY": 739,
+        "inViewport": true
+      }
+    ]
+  }
+]

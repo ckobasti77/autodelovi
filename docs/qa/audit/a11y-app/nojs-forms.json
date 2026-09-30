@@ -1,0 +1,48 @@
+[
+  {
+    "route": "/prijava",
+    "width": 390,
+    "formInfo": [
+      {
+        "method": null,
+        "action": null,
+        "names": [
+          "email",
+          "password"
+        ]
+      }
+    ],
+    "urlAfterSubmit": "/prijava?email=audit-a11y-nojs%40primer.rs&password=LaznaLozinka-123",
+    "evidence": "docs/qa/audit/a11y-app/nojs-prijava-390.webp"
+  },
+  {
+    "route": "/registracija",
+    "width": 390,
+    "formInfo": [
+      {
+        "method": null,
+        "action": null,
+        "names": [
+          "name",
+          "email",
+          "password"
+        ]
+      }
+    ],
+    "urlAfterSubmit": "/registracija?name=Audit+Nojs&email=audit-a11y-nojs%40primer.rs&password=LaznaLozinka-123",
+    "evidence": "docs/qa/audit/a11y-app/nojs-registracija-390.webp"
+  },
+  {
+    "route": "/zaboravljena-lozinka",
+    "width": 390,
+    "formInfo": [
+      {
+        "method": null,
+        "action": null,
+        "names": []
+      }
+    ],
+    "urlAfterSubmit": "/zaboravljena-lozinka?",
+    "evidence": "docs/qa/audit/a11y-app/nojs-zaboravljena-lozinka-390.webp"
+  }
+]

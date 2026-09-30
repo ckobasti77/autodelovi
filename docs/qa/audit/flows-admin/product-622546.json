@@ -1,0 +1,24 @@
+{
+  "ts": "622546",
+  "steps": [
+    {
+      "name": "empty save",
+      "at": "2026-09-30T18:43:22.354Z",
+      "errors": [
+        "Upišite šifru artikla.Upišite naziv.Izaberite kategoriju.Izaberite proizvođača.Upišite cenu sa PDV-om.",
+        "Upišite naziv.",
+        "Upišite šifru artikla.",
+        "Izaberite kategoriju.",
+        "Izaberite proizvođača.",
+        "Upišite cenu sa PDV-om."
+      ],
+      "invalid": 5,
+      "focus": "BODY "
+    },
+    {
+      "name": "FAILED",
+      "at": "2026-09-30T18:43:30.386Z",
+      "error": "Error: locator.fill: Error: strict mode violation: getByLabel('OEM broj 1') resolved to 3 elements:\n    1) <input value=\"\" aria-label=\"OEM broj 1\" class=\"h-9 w-full min-w-0 rounded-xs border border-control bg-surface-1 px-2 type-body-s text-ink-1 transition-control hover:border-ink-3 focus:border-focus focus:outline-none focus:shadow-[inset_0_0_0_1px_var(--color-focus)] font-mono\"/> aka getByRole('textbox', { name: 'OEM broj 1', exact: true })\n    2) <input value=\"\" placeholder=\"VW, Audi…\" aria-label=\"Marka za OEM broj 1\" class=\"h-9 w-full min-w-0 rounded-xs border border-control bg-surface-1 px-2 type-body-s text-ink-1 transition-control hover:border-ink-3 focus:border-focus focus:outline-none focus:shadow-[inset_0_0_0_1px_var(--color-focus)]\"/> aka getByRole('textbox', { name: 'Marka za "
+    }
+  ]
+}

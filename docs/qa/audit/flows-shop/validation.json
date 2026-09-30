@@ -1,0 +1,335 @@
+{
+  "steps": [
+    {
+      "label": "contact-empty",
+      "invalid": [
+        {
+          "label": "Ime",
+          "value": "",
+          "desc": [
+            "Upišite ime."
+          ]
+        },
+        {
+          "label": "Prezime",
+          "value": "",
+          "desc": [
+            "Upišite prezime."
+          ]
+        },
+        {
+          "label": "Telefon",
+          "value": "",
+          "desc": [
+            "Upišite broj telefona."
+          ]
+        },
+        {
+          "label": "E-pošta",
+          "value": "",
+          "desc": [
+            "Upišite e-mail adresu."
+          ]
+        }
+      ],
+      "fieldErrs": [
+        "Ime Upišite ime.",
+        "",
+        "Prezime Upišite prezime.",
+        "",
+        "Telefon Upišite broj telefona.",
+        "",
+        "E-pošta Upišite e-mail adresu.",
+        ""
+      ],
+      "alerts": [
+        "Proverite 4 polja: Upišite ime. Upišite prezime. Upišite broj telefona. Upišite e-mail adresu."
+      ],
+      "focus": "div#|Proverite 4 polja:Upišite ime.Upišite pr"
+    },
+    {
+      "label": "contact-bad-phone-email",
+      "invalid": [
+        {
+          "label": "Telefon",
+          "value": "123",
+          "desc": [
+            "Broj telefona nije ispravan. Primer: 064 123 4567."
+          ]
+        },
+        {
+          "label": "E-pošta",
+          "value": "marko@primer",
+          "desc": [
+            "E-mail adresa nije ispravna. Primer: ime@primer.rs."
+          ]
+        }
+      ],
+      "fieldErrs": [
+        "Telefon Broj telefona nije ispravan. Primer: 064 123 4567.",
+        "",
+        "E-pošta E-mail adresa nije ispravna. Primer: ime@primer.rs.",
+        ""
+      ],
+      "alerts": [
+        "Proverite 2 polja: Broj telefona nije ispravan. Primer: 064 123 4567. E-mail adresa nije ispravna. Primer: ime@primer.rs."
+      ],
+      "focus": "button#|Dalje"
+    },
+    {
+      "label": "company-empty",
+      "invalid": [
+        {
+          "label": "Naziv firme",
+          "value": "",
+          "desc": [
+            "Upišite naziv firme."
+          ]
+        },
+        {
+          "label": "PIB",
+          "value": "",
+          "desc": [
+            "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja."
+          ]
+        }
+      ],
+      "fieldErrs": [
+        "Naziv firme Upišite naziv firme.",
+        "",
+        "PIB PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja.",
+        ""
+      ],
+      "alerts": [
+        "Proverite 2 polja: Upišite naziv firme. PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja."
+      ],
+      "focus": "div#|Proverite 2 polja:Upišite naziv firme.PI"
+    },
+    {
+      "label": "company-short",
+      "invalid": [
+        {
+          "label": "PIB",
+          "value": "15455287",
+          "desc": [
+            "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja."
+          ]
+        },
+        {
+          "label": "Matični broj (nije obavezno)",
+          "value": "6455287",
+          "desc": [
+            "Matični broj ima 8 cifara."
+          ]
+        }
+      ],
+      "fieldErrs": [
+        "PIB PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja.",
+        "",
+        "Matični broj (nije obavezno) Matični broj ima 8 cifara.",
+        ""
+      ],
+      "alerts": [
+        "Proverite 2 polja: PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja. Matični broj ima 8 cifara."
+      ],
+      "focus": "div#|Proverite 2 polja:PIB ima 9 cifara i kon"
+    },
+    {
+      "label": "company-bad-checksum",
+      "invalid": [
+        {
+          "label": "PIB",
+          "value": "154552871",
+          "desc": [
+            "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja."
+          ]
+        },
+        {
+          "label": "Matični broj (nije obavezno)",
+          "value": "64552873",
+          "desc": [
+            "Matični broj ima 8 cifara."
+          ]
+        }
+      ],
+      "fieldErrs": [
+        "PIB PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja.",
+        "",
+        "Matični broj (nije obavezno) Matični broj ima 8 cifara.",
+        ""
+      ],
+      "alerts": [
+        "Proverite 2 polja: PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja. Matični broj ima 8 cifara."
+      ],
+      "focus": "button#|Dalje"
+    },
+    {
+      "label": "courier-empty",
+      "invalid": [
+        {
+          "label": "Ulica i broj",
+          "value": "",
+          "desc": [
+            "Upišite ulicu i broj."
+          ]
+        },
+        {
+          "label": "Poštanski broj",
+          "value": "",
+          "desc": [
+            "Poštanski broj ima 5 cifara."
+          ]
+        },
+        {
+          "label": "Mesto",
+          "value": "",
+          "desc": [
+            "Upišite mesto."
+          ]
+        }
+      ],
+      "fieldErrs": [
+        "Ulica i broj Upišite ulicu i broj.",
+        "",
+        "Poštanski broj Poštanski broj ima 5 cifara.",
+        "",
+        "Mesto Upišite mesto.",
+        ""
+      ],
+      "alerts": [
+        "Proverite 3 polja: Upišite ulicu i broj. Upišite mesto. Poštanski broj ima 5 cifara."
+      ],
+      "focus": "div#|Proverite 3 polja:Upišite ulicu i broj.U"
+    },
+    {
+      "label": "courier-postal-4",
+      "invalid": [
+        {
+          "label": "Poštanski broj",
+          "value": "2100",
+          "desc": [
+            "Poštanski broj ima 5 cifara."
+          ]
+        }
+      ],
+      "fieldErrs": [
+        "Poštanski broj Poštanski broj ima 5 cifara.",
+        ""
+      ],
+      "alerts": [
+        "Proverite jedno polje: Poštanski broj ima 5 cifara."
+      ],
+      "focus": "div#|Proverite jedno polje:Poštanski broj ima"
+    },
+    {
+      "label": "review-vin16-noterms",
+      "invalid": [
+        {
+          "label": "Broj šasije (VIN) (nije obavezno)",
+          "value": "WVWZZZ1KZAW00000",
+          "desc": [
+            "Broj šasije ima 17 znakova (bez slova I, O i Q)."
+          ]
+        }
+      ],
+      "fieldErrs": [
+        "Broj šasije (VIN) (nije obavezno) Broj šasije ima 17 znakova (bez slova I, O i Q).",
+        ""
+      ],
+      "alerts": [
+        "Proverite jedno polje: Broj šasije ima 17 znakova (bez slova I, O i Q)."
+      ],
+      "focus": "div#|Proverite jedno polje:Broj šasije ima 17"
+    },
+    {
+      "label": "review-vin-O",
+      "invalid": [
+        {
+          "label": "Broj šasije (VIN) (nije obavezno)",
+          "value": "WVWZZZ1KZAW0O0001",
+          "desc": [
+            "Broj šasije ima 17 znakova (bez slova I, O i Q)."
+          ]
+        },
+        {
+          "label": "Prihvatam uslove kupovine i politiku privatnosti.",
+          "value": "on",
+          "desc": []
+        }
+      ],
+      "fieldErrs": [
+        "Broj šasije (VIN) (nije obavezno) Broj šasije ima 17 znakova (bez slova I, O i Q).",
+        ""
+      ],
+      "alerts": [
+        "Proverite 2 polja: Broj šasije ima 17 znakova (bez slova I, O i Q). Potrebna je saglasnost sa uslovima kupovine."
+      ],
+      "focus": "div#|Proverite 2 polja:Broj šasije ima 17 zna"
+    },
+    {
+      "label": "walk-to-review",
+      "invalid": [],
+      "fieldErrs": [],
+      "alerts": [],
+      "focus": "h2#step-title|Pregled"
+    }
+  ],
+  "phoneVariants": {
+    "064/123-4567": "ok",
+    "+381 (0) 64 1234567": "ok",
+    "0641234567": "ok",
+    "011 123 4567": "ok",
+    "+49 170 1234567": "ok",
+    "064 123": "invalid",
+    "06412345678901": "invalid"
+  },
+  "vinPresent": 1,
+  "afterReload": {
+    "step": "checkout-step-contact",
+    "vals": [
+      "",
+      "Marko",
+      "Petrović",
+      "064 123 4567",
+      "audit-flows-val-1790793114346@primer.rs",
+      "Test d.o.o.",
+      "154 552 870",
+      "6455-2872"
+    ]
+  },
+  "offline": {
+    "url": "http://localhost:3100/porudzbina",
+    "submitDisabled": false,
+    "submitBusy": "true",
+    "submitText": "Pošalji porudžbinu",
+    "status": [
+      "Nema veze — pokušavamo ponovo. Korpa i uneti podaci ostaju sačuvani."
+    ]
+  },
+  "afterOnline": {
+    "url": "http://localhost:3100/porudzbina/hvala/fzgx-jOq6fAOpRsVcAc8SRVJzpvjG3JNV0ofIlvalMk",
+    "ms": 9323,
+    "number": "SK-2026-000129",
+    "probe": {
+      "customerType": "guest",
+      "deliveryMethod": "courier",
+      "eventTypes": [
+        "order.created"
+      ],
+      "hasAttribution": true,
+      "itemCount": 1,
+      "paymentMethod": "bank_transfer",
+      "source": "web",
+      "status": "nova",
+      "totalPara": 194000
+    },
+    "nextNumber": "SK-2026-000130",
+    "nextProbe": ""
+  },
+  "log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

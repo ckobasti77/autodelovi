@@ -1,0 +1,48 @@
+ok   anon 1440 / → / [200] stuck=0 pending=0 words=0 states={"done":124} console=0 pageErr=0
+ok   anon 1440 /delovi → /delovi [200] stuck=0 pending=0 words=0 states={"done":104} console=0 pageErr=0
+ok   anon 1440 /delovi/kocnice → /delovi/kocnice [200] stuck=0 pending=0 words=0 states={"done":14} console=0 pageErr=0
+ok   anon 1440 /delovi/kocioni-diskovi → /delovi/kocioni-diskovi [200] stuck=0 pending=0 words=0 states={"done":36} console=0 pageErr=0
+ok   anon 1440 /delovi/kocioni-diskovi/volkswagen → /delovi/kocioni-diskovi/volkswagen [200] stuck=0 pending=0 words=0 states={"done":38} console=0 pageErr=0
+ok   anon 1440 /delovi/kocioni-diskovi/volkswagen/golf → /delovi/kocioni-diskovi/volkswagen/golf [200] stuck=0 pending=0 words=0 states={"done":32} console=0 pageErr=0
+ok   anon 1440 /deo/kocioni-disk-prednji-276-24-mm-demo-0004 → /deo/kocioni-disk-prednji-276-24-mm-demo-0004 [200] stuck=0 pending=0 words=0 states={"done":41} console=0 pageErr=0
+ok   anon 1440 /deo/kocione-plocice-prednje-demo-0012 → /deo/kocione-plocice-prednje-demo-0012 [200] stuck=0 pending=0 words=0 states={"done":39} console=0 pageErr=0
+ok   anon 1440 /vozila → /vozila [200] stuck=0 pending=0 words=0 states={"done":32} console=0 pageErr=0
+ok   anon 1440 /vozila/volkswagen → /vozila/volkswagen [200] stuck=0 pending=0 words=0 states={"done":30} console=0 pageErr=0
+ok   anon 1440 /vozila/volkswagen/golf → /vozila/volkswagen/golf [200] stuck=0 pending=0 words=0 states={"done":11} console=0 pageErr=0
+ok   anon 1440 /vozila/volkswagen/golf/golf-7 → /vozila/volkswagen/golf/golf-7 [200] stuck=0 pending=0 words=0 states={"done":106} console=0 pageErr=0
+ok   anon 1440 /pretraga?q=5Q0615505R → /pretraga?q=5Q0615505R [200] stuck=0 pending=0 words=0 states={"done":12} console=0 pageErr=0
+ok   anon 1440 /pretraga?q=disk → /pretraga?q=disk [200] stuck=0 pending=0 words=0 states={"done":35} console=0 pageErr=0
+ok   anon 1440 /pretraga?q=zzzqqq → /pretraga?q=zzzqqq [200] stuck=0 pending=0 words=0 states={"done":8} console=0 pageErr=0
+ok   anon 1440 /ponuda/kocione-plocice-golf → /ponuda/kocione-plocice-golf [200] stuck=0 pending=0 words=0 states={"done":31} console=0 pageErr=0
+ok   anon 1440 /korpa → /korpa [200] stuck=0 pending=0 words=0 states={"done":8} console=0 pageErr=0
+ok   anon 1440 /porudzbina → /porudzbina [200] stuck=0 pending=0 words=0 states={"done":8} console=0 pageErr=0
+ok   anon 1440 /upit → /upit [200] stuck=0 pending=0 words=0 states={"done":8} console=0 pageErr=0
+ok   anon 1440 /za-majstore → /za-majstore [200] stuck=0 pending=0 words=0 states={"done":36} console=0 pageErr=0
+ok   anon 1440 /za-majstore/registracija → /za-majstore/registracija [200] stuck=0 pending=0 words=0 states={"done":10} console=0 pageErr=0
+ok   anon 1440 /za-majstore/hvala → /za-majstore/hvala [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   anon 1440 /kontakt → /kontakt [200] stuck=0 pending=0 words=0 states={"done":7} console=0 pageErr=0
+ok   anon 1440 /o-nama → /o-nama [200] stuck=0 pending=0 words=0 states={"done":16} console=0 pageErr=0
+ok   anon 1440 /dostava-i-placanje → /dostava-i-placanje [200] stuck=0 pending=0 words=0 states={"done":20} console=0 pageErr=0
+ok   anon 1440 /reklamacije-i-povrat → /reklamacije-i-povrat [200] stuck=0 pending=0 words=0 states={"done":24} console=0 pageErr=0
+ok   anon 1440 /uslovi-koriscenja → /uslovi-koriscenja [200] stuck=0 pending=0 words=0 states={"done":28} console=0 pageErr=0
+ok   anon 1440 /politika-privatnosti → /politika-privatnosti [200] stuck=0 pending=0 words=0 states={"done":21} console=0 pageErr=0
+ok   anon 1440 /kolacici → /kolacici [200] stuck=0 pending=0 words=0 states={"done":13} console=0 pageErr=0
+ok   anon 1440 /prijava → /prijava [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   anon 1440 /registracija → /registracija [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   anon 1440 /zaboravljena-lozinka → /zaboravljena-lozinka [200] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+ok   anon 1440 /nova-lozinka → /nova-lozinka [404] stuck=0 pending=0 words=0 states={"done":7} console=1 pageErr=0
+ok   anon 1440 /ovo-ne-postoji → /ovo-ne-postoji [404] stuck=0 pending=0 words=0 states={"done":7} console=1 pageErr=0
+ok   anon 1440 /styleguide → /styleguide [200] stuck=0 pending=0 words=0 states={"done":317} console=0 pageErr=0
+ok   anon 1440 /porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw → /porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw [-1] stuck=0 pending=0 words=0 states={"done":6} console=0 pageErr=0
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.evaluate: Execution context was destroyed, most likely because of a navigation
+    at scrollThrough (C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\audit\kit.mjs:106:14)
+    at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\audit\motion-3d-reveal.mjs:60:13 {
+  log: [],
+  name: 'Error'
+}
+
+Node.js v22.23.2

@@ -1,0 +1,140 @@
+[
+  {
+    "width": 1024,
+    "viewport": "1024x768",
+    "trackTop": 1,
+    "status": "idle",
+    "label": "poster",
+    "stage": {
+      "w": 1024,
+      "h": 704,
+      "top": 64
+    },
+    "frameH": 704,
+    "viewportH": 768,
+    "bg": [
+      13,
+      15,
+      17
+    ],
+    "car": {
+      "x": 454,
+      "y": 295,
+      "w": 484,
+      "h": 302
+    },
+    "emptyBandAbovePx": 295,
+    "emptyBelowPx": 107,
+    "pctStageHeight": 42.9,
+    "pctStageWidth": 47.3,
+    "pctStageArea": 20.3
+  },
+  {
+    "width": 1024,
+    "viewport": "1024x768",
+    "tier": "high",
+    "progress": 0,
+    "label": "canvas",
+    "stage": {
+      "w": 1024,
+      "h": 704,
+      "top": 64
+    },
+    "frameH": 704,
+    "viewportH": 768,
+    "bg": [
+      13,
+      15,
+      17
+    ],
+    "car": {
+      "x": 454,
+      "y": 295,
+      "w": 484,
+      "h": 302
+    },
+    "emptyBandAbovePx": 295,
+    "emptyBelowPx": 107,
+    "pctStageHeight": 42.9,
+    "pctStageWidth": 47.3,
+    "pctStageArea": 20.3
+  },
+  {
+    "width": 1024,
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "width": 1440,
+    "viewport": "1440x900",
+    "trackTop": 1,
+    "status": "idle",
+    "label": "poster",
+    "stage": {
+      "w": 1440,
+      "h": 836,
+      "top": 64
+    },
+    "frameH": 836,
+    "viewportH": 900,
+    "bg": [
+      13,
+      15,
+      17
+    ],
+    "car": {
+      "x": 638,
+      "y": 261,
+      "w": 681,
+      "h": 424
+    },
+    "emptyBandAbovePx": 261,
+    "emptyBelowPx": 151,
+    "pctStageHeight": 50.7,
+    "pctStageWidth": 47.3,
+    "pctStageArea": 24
+  },
+  {
+    "width": 1440,
+    "viewport": "1440x900",
+    "tier": "high",
+    "progress": 0,
+    "label": "canvas",
+    "stage": {
+      "w": 1440,
+      "h": 836,
+      "top": 64
+    },
+    "frameH": 836,
+    "viewportH": 900,
+    "bg": [
+      13,
+      15,
+      17
+    ],
+    "car": {
+      "x": 639,
+      "y": 261,
+      "w": 680,
+      "h": 424
+    },
+    "emptyBandAbovePx": 261,
+    "emptyBelowPx": 151,
+    "pctStageHeight": 50.7,
+    "pctStageWidth": 47.2,
+    "pctStageArea": 24
+  },
+  {
+    "width": 1440,
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+]

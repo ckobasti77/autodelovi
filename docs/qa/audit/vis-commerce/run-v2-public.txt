@@ -1,0 +1,49 @@
+{
+ "zm": {
+  "H": 5048,
+  "sections": [],
+  "reveal": {
+   "stuck": [],
+   "pending": 0,
+   "words": 0
+  },
+  "blocks": [
+   "script 4204-4204 \"[{\"@context\":\"https://schema.org\",\"@type\"",
+   "div 57-3177 \"PočetnaPočetna/Za majstoreZa majstoreSer\"",
+   "section 813-1780 \"Šta dobijateVaša cena svudaKatalog, pret\"",
+   "section 1846-2483 \"Brza porudžbinaBrojevi iz poruke, sa kut\"",
+   "section 2548-3111 \"Kako do naloga01Registrujte servisNaziv \"",
+   "section 3177-3770 \"Česta pitanjaKo može da dobije majstorsk\"",
+   "section 3770-4004 \"Pitanje za majstora?Pozovite, pišite na \"",
+   "p 4003-4004 \"\"",
+   "div 4004-4004 \"\""
+  ],
+  "log": {
+   "console": [],
+   "pageErrors": [],
+   "failedRequests": [],
+   "badResponses": []
+  }
+ },
+ "upit": [
+  "input type=text id= name=website fs=16px h=25 w=193 label=\"Veb sajt\"",
+  "input type=text id=iq-vin name=vin fs=16px h=42 w=332 label=\"Broj šasije (VIN) (nije obavezno)\"",
+  "select type=select-one id=iq-brandSlug name=brandSlug fs=16px h=42 w=356 label=\"Marka\"",
+  "select type=select-one id=iq-modelSlug name=modelSlug fs=16px h=42 w=356 label=\"Model\"",
+  "select type=select-one id=iq-generationSlug name=generationSlug fs=16px h=42 w=356 label=\"Generacija\"",
+  "input type=text id=iq-year name=year fs=16px h=42 w=332 label=\"Godište (nije obavezno)\"",
+  "textarea type=textarea id=iq-message name=message fs=16px h=120 w=332 label=\"Opis\"",
+  "select type=select-one id= name= fs=14px h=34 w=356 label=\"Dodaj kategoriju\"",
+  "input type=file id=_R_mhinpfd9fclb_ name= fs=16px h=1 w=1 label=\"Dodaj fotografijuStari deo, pločica sa b\"",
+  "input type=text id=iq-name name=name fs=16px h=42 w=332 label=\"Ime\"",
+  "input type=tel id=iq-phone name=phone fs=16px h=42 w=332 label=\"Telefon\"",
+  "input type=email id=iq-email name=email fs=16px h=42 w=332 label=\"E-pošta (nije obavezno)\""
+ ],
+ "cart": {
+  "one": {
+   "ctaTop": 550,
+   "vh": 844,
+   "sticky": []
+  }
+ }
+}

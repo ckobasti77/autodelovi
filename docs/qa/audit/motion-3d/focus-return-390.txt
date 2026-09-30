@@ -1,0 +1,21 @@
+FAIL 390 header search (Escape) open=true inside=input[] "Broj dela ili naziv" after=BODY
+ok   390 mobile menu (Escape) open=true inside=button[] "Zatvori" after=button[mobile-menu-trigger] "Otvori meni"
+FAIL 390 hero vehicle field (Escape) open=true inside=button[] "Smanji panel" after=BODY
+ok   390 parts list (Escape) open=false inside=button[parts-list-trigger] "Lista delova" after=button[parts-list-trigger] "Lista delova"
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('[role="dialog"] button[aria-label="Zatvori"]').last()
+
+    at probe (C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\audit\motion-3d-focus.mjs:35:79)
+    at async file:///C:/Users/admin/Desktop/Web%20Dev%20Projects/autodelovi/scripts/qa/audit/motion-3d-focus.mjs:61:3 {
+  log: [
+    `  - waiting for locator('[role="dialog"] button[aria-label="Zatvori"]').last()`
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.23.2

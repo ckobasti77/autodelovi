@@ -1,0 +1,90 @@
+{
+  "pločice": {
+    "h1": "Rezultati za „pločice“",
+    "meta": "10 artikala",
+    "headerVehicle": [],
+    "cards": [
+      "Bosch · OEM kvalitet Kočione pločice prednje OEM 8D0 698 513 Na stanju 3.790 RSD sa PDV-om U korpu : Kočione pločice prednje",
+      "ATE · OEM kvalitet Kočione pločice prednje OEM 3C0 698 904 D Na stanju 4.590 RSD sa PDV-om U korpu : Kočione pločice prednje",
+      "Original VAG · Original VAG Kočione pločice prednje OEM 5WA 698 115 M Malo na stanju · 3 kom. 8.900 RSD sa PDV-om U korpu : Kočione pločice ",
+      "Bosch · OEM kvalitet Kočione pločice prednje OEM 6R0 698 000 MK Nema na stanju 2.990 RSD sa PDV-om Obavesti me : Kočione pločice prednje",
+      "Brembo · OEM kvalitet Kočione pločice prednje, sistem Teves OEM 5Q0 698 172 Na stanju 5.190 RSD sa PDV-om U korpu : Kočione pločice prednje,",
+      "Febi Bilstein · Aftermarket Kočione pločice zadnje OEM 1K0 698 569 Na stanju · 8 kom. 2.600 RSD sa PDV-om U korpu : Kočione pločice zadnje",
+      "TRW · OEM kvalitet Kočione pločice zadnje OEM 1K0 698 569 Malo na stanju · 2 kom. 3.190 RSD sa PDV-om U korpu : Kočione pločice zadnje",
+      "Bosch · OEM kvalitet Kočione pločice prednje, sa senzorom OEM 1K0 698 406 F Po porudžbini · 3 dana 3.900 RSD sa PDV-om Poruči : Kočione ploč",
+      "Febi Bilstein · Aftermarket Kočione pločice zadnje, elektronska ručna OEM 5Q0 698 782 KA Malo na stanju · 2 kom. 3.490 RSD sa PDV-om U korpu",
+      "ATE · OEM kvalitet Kočione pločice prednje, sa senzorom OEM 1K0 698 406 F Na stanju 4.290 RSD sa PDV-om U korpu : Kočione pločice prednje, s"
+    ],
+    "vehicleMention": false
+  },
+  "kočioni disk": {
+    "h1": "Rezultati za „kočioni disk“",
+    "meta": "9 artikala",
+    "headerVehicle": [
+      "Golf 7"
+    ],
+    "cards": [
+      "ATE · OEM kvalitet Kočioni disk prednji 320 × 30 mm OEM 8K0 615 085 Po porudžbini · 2 dana 9.890 RSD sa PDV-om Poruči : Kočioni disk prednji",
+      "Brembo · OEM kvalitet Kočioni disk prednji 312 × 25 mm OEM 3C0 615 098 Na stanju · 10 kom. 7.490 RSD sa PDV-om U korpu : Kočioni disk prednj",
+      "Bosch · OEM kvalitet Kočioni disk prednji 256 × 22 mm OEM 6R0 615 645 Na stanju 3.990 RSD sa PDV-om U korpu : Kočioni disk prednji 256 × 22 ",
+      "Febi Bilstein · Aftermarket Kočioni disk prednji 276 × 24 mm OEM 5Q0 615 505 R Na stanju · 5 kom. 4.690 RSD sa PDV-om U korpu : Kočioni disk",
+      "ATE · OEM kvalitet Kočioni disk prednji 288 × 25 mm, ventilirani OEM 1K0 615 868 F Po porudžbini · 6 dana 5.490 RSD sa PDV-om Poruči : Kočio",
+      "Original VAG · Original VAG Kočioni disk prednji 340 × 30 mm, GTI OEM 5Q0 615 666 A Na stanju 18.900 RSD sa PDV-om U korpu : Kočioni disk pr",
+      "TRW · OEM kvalitet Kočioni disk zadnji 272 × 10 mm, puni OEM 1K0 615 540 Q Malo na stanju · 1 kom. 3.890 RSD sa PDV-om U korpu : Kočioni dis",
+      "ATE · OEM kvalitet Kočioni disk prednji 312 × 25 mm, ventilirani OEM 1K0 615 591 E Malo na stanju · 3 kom. 6.700 RSD sa PDV-om U korpu : Koč",
+      "Brembo · OEM kvalitet Kočioni disk prednji 312 × 25 mm, ventilirani OEM 1K0 615 591 E Malo na stanju · 3 kom. 7.290 RSD sa PDV-om U korpu : "
+    ],
+    "vehicleMention": false
+  },
+  "filterBefore": {
+    "text": "Filteri",
+    "top": 386.703125,
+    "stickyAncestors": []
+  },
+  "filterAfter": {
+    "top": -1013,
+    "visible": false
+  },
+  "product": {
+    "status": 200,
+    "fixed": [
+      {
+        "tag": "HEADER",
+        "top": 0,
+        "text": "SKLOP"
+      }
+    ],
+    "contactInView": [],
+    "contactTotal": 0
+  },
+  "landing": {
+    "status": 200,
+    "fixed": [
+      {
+        "tag": "HEADER",
+        "top": 0,
+        "text": "SKLOP"
+      }
+    ],
+    "contactInView": [],
+    "contactTotal": 0
+  },
+  "category": {
+    "status": 200,
+    "fixed": [
+      {
+        "tag": "HEADER",
+        "top": 0,
+        "text": "SKLOP"
+      }
+    ],
+    "contactInView": [],
+    "contactTotal": 0
+  },
+  "log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}
