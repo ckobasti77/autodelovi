@@ -10,7 +10,12 @@ import { useMutation } from "convex/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Controller, useForm, useWatch } from "react-hook-form";
-import { InfoIcon, PaperPlaneTiltIcon, WarningCircleIcon, XIcon } from "@phosphor-icons/react/dist/ssr";
+import {
+  InfoIcon,
+  PaperPlaneTiltIcon,
+  WarningCircleIcon,
+  XIcon,
+} from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
 import { buildConsent, formStartTime } from "@/lib/validation/consent";
@@ -20,7 +25,13 @@ import { normalizeEmail } from "@/lib/domain/identifiers";
 import { decodeVin, normalizeVin } from "@/lib/domain/vin";
 import { normalizePhone } from "@/lib/format/phone";
 import { readAttribution } from "@/lib/analytics/attribution";
-import { convexErrorCode, convexErrorMessage, ERRORS, PREFERRED_CHANNEL_LABEL } from "@/lib/i18n/sr/shop";
+import { storeLeadUserData } from "@/lib/analytics/leadUserData";
+import {
+  convexErrorCode,
+  convexErrorMessage,
+  ERRORS,
+  PREFERRED_CHANNEL_LABEL,
+} from "@/lib/i18n/sr/shop";
 import { useSelectedVehicle } from "@/lib/vehicle/store";
 import { inquirySchema, type InquiryValues } from "@/lib/validation/inquiry";
 import { Button } from "@/components/ui/Button";
@@ -142,7 +153,9 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
     const b = config.tree.find((x) => x.brand.slug === v.brandSlug);
     const m = b?.models.find((x) => x.model.slug === v.modelSlug);
     const g = m?.generations.find((x) => x.slug === v.generationSlug);
-    const label = [b?.brand.name, g?.name ?? m?.model.name, v.year ? `(${v.year})` : ""].filter(Boolean).join(" ");
+    const label = [b?.brand.name, g?.name ?? m?.model.name, v.year ? `(${v.year})` : ""]
+      .filter(Boolean)
+      .join(" ");
     const normalizedVin = v.vin ? normalizeVin(v.vin) : "";
     const kind = normalizedVin && config.prefill.kind === "part" ? "vin" : config.prefill.kind;
     try {
@@ -164,9 +177,13 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
           : {}),
         message: v.message,
         categorySlugs: categories.map((c) => c.slug),
-        ...(config.prefill.productId ? { productId: config.prefill.productId as Id<"products"> } : {}),
+        ...(config.prefill.productId
+          ? { productId: config.prefill.productId as Id<"products"> }
+          : {}),
         ...(config.prefill.searchQuery ? { searchQuery: config.prefill.searchQuery } : {}),
-        ...(config.prefill.requestedCodes.length ? { requestedCodes: config.prefill.requestedCodes } : {}),
+        ...(config.prefill.requestedCodes.length
+          ? { requestedCodes: config.prefill.requestedCodes }
+          : {}),
         photos: photos.filter((p) => p.status === "done" && p.storageId).map((p) => p.storageId!),
         contact: {
           name: v.name,
@@ -176,8 +193,15 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
         },
         consent: buildConsent(config.legal),
         ...(attribution ? { attribution } : {}),
+        eventSourceUrl: window.location.href,
         honeypot,
         startedAt,
+      });
+      await storeLeadUserData(result.number, {
+        email: v.email,
+        phone: v.phone,
+        firstName: v.name.split(/s+/)[0],
+        lastName: v.name.split(/s+/).slice(1).join(" "),
       });
       router.push(ROUTES.inquiryThanks(result.token));
     } catch (error) {
@@ -220,7 +244,10 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
               <ul className="mt-2 flex flex-col gap-1 pl-6.5 type-body-s">
                 {errorList.map((e) => (
                   <li key={e.k}>
-                    <a href={`#iq-${e.k}`} className="text-ink-1 underline decoration-line-strong underline-offset-4">
+                    <a
+                      href={`#iq-${e.k}`}
+                      className="text-ink-1 underline decoration-line-strong underline-offset-4"
+                    >
                       {e.message}
                     </a>
                   </li>
@@ -277,7 +304,10 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
             <Select
               placeholder={brand ? "Izaberite" : "Prvo marku"}
               disabled={!brand}
-              options={(brand?.models ?? []).map((m) => ({ value: m.model.slug, label: m.model.name }))}
+              options={(brand?.models ?? []).map((m) => ({
+                value: m.model.slug,
+                label: m.model.name,
+              }))}
               {...register("modelSlug", { onChange: () => setValue("generationSlug", "") })}
             />
           </Field>
@@ -303,15 +333,22 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
         {config.prefill.productName ? (
           <p className="flex items-start gap-2 rounded-sm border border-line bg-surface-1 p-3 type-body-s text-ink-2">
             <InfoIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0 text-ink-3" />
-            Pitanje o artiklu: <strong className="font-semibold text-ink-1">{config.prefill.productName}</strong>
+            Pitanje o artiklu:{" "}
+            <strong className="font-semibold text-ink-1">{config.prefill.productName}</strong>
           </p>
         ) : null}
         {config.prefill.requestedCodes.length ? (
           <p className="type-body-s text-ink-2">
-            Brojevi: <span className="type-code text-ink-1">{config.prefill.requestedCodes.join(", ")}</span>
+            Brojevi:{" "}
+            <span className="type-code text-ink-1">{config.prefill.requestedCodes.join(", ")}</span>
           </p>
         ) : null}
-        <Field id="iq-message" label="Opis" error={errors.message?.message} help="Naziv dela, strana (levo/desno, napred/nazad), kvar ili broj sa starog dela.">
+        <Field
+          id="iq-message"
+          label="Opis"
+          error={errors.message?.message}
+          help="Naziv dela, strana (levo/desno, napred/nazad), kvar ili broj sa starog dela."
+        >
           <Textarea rows={5} maxLength={2000} {...register("message")} />
         </Field>
         <div className="flex flex-col gap-2">
@@ -360,9 +397,20 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
             <Input autoComplete="name" {...register("name")} />
           </Field>
           <Field id="iq-phone" label="Telefon" error={errors.phone?.message}>
-            <Input type="tel" inputMode="tel" autoComplete="tel" placeholder="064 123 4567" {...register("phone")} />
+            <Input
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel"
+              placeholder="064 123 4567"
+              {...register("phone")}
+            />
           </Field>
-          <Field id="iq-email" label="E-pošta" optional={channel !== "email"} error={errors.email?.message}>
+          <Field
+            id="iq-email"
+            label="E-pošta"
+            optional={channel !== "email"}
+            error={errors.email?.message}
+          >
             <Input type="email" inputMode="email" autoComplete="email" {...register("email")} />
           </Field>
         </div>
@@ -403,7 +451,9 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
               />
             )}
           />
-          {errors.consent?.message ? <p className="type-caption text-danger">{errors.consent.message}</p> : null}
+          {errors.consent?.message ? (
+            <p className="type-caption text-danger">{errors.consent.message}</p>
+          ) : null}
         </div>
       </fieldset>
 
@@ -418,7 +468,9 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
         >
           Pošalji upit
         </Button>
-        <p className="type-caption font-normal text-ink-3">Odgovaramo u toku radnog dana, kanalom koji ste izabrali.</p>
+        <p className="type-caption font-normal text-ink-3">
+          Odgovaramo u toku radnog dana, kanalom koji ste izabrali.
+        </p>
       </div>
     </form>
   );

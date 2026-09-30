@@ -16,7 +16,7 @@ import { cn } from "@/lib/cn";
 import { compactDateTime, formatElapsed } from "@/lib/admin/format";
 import { slaLevel, workingMinutesBetween } from "@/lib/domain/sla";
 import { formatPhone } from "@/lib/format/phone";
-import { INQUIRY_KIND_LABEL } from "@/lib/i18n/sr/admin";
+import { INQUIRY_KIND_LABEL, CHANNEL_LABEL } from "@/lib/i18n/sr/admin";
 import { PREFERRED_CHANNEL_LABEL, type InquiryStatus } from "@/lib/i18n/sr/shop";
 import { Badge } from "@/components/ui/Badge";
 import { DataTable, type ColumnDef } from "@/components/ui/DataTable";
@@ -53,7 +53,7 @@ const TABS = [
 export function InquiriesList() {
   const router = useRouter();
   const nowMinute = useNowMinute();
-  const [f, setF] = useUrlFilters(["status", "q", "vrsta", "majstori"] as const);
+  const [f, setF] = useUrlFilters(["status", "q", "vrsta", "majstori", "izvor"] as const);
   const [search, setSearch] = useState(f.q);
   const debounced = useDebouncedValue(search, 250);
   useEffect(() => {
@@ -68,6 +68,7 @@ export function InquiriesList() {
       ...(f.q ? { search: f.q } : {}),
       ...(f.vrsta ? { kind: f.vrsta as keyof typeof INQUIRY_KIND_LABEL } : {}),
       ...(f.majstori ? { mechanicsOnly: true } : {}),
+      ...(f.izvor ? { campaign: f.izvor } : {}),
     },
     { initialNumItems: 50 },
   );
@@ -185,6 +186,24 @@ export function InquiriesList() {
         ),
       },
       {
+        id: "source",
+        header: "Izvor",
+        enableSorting: false,
+        meta: { label: "Izvor" },
+        cell: ({ row }) => (
+          <span className="flex flex-col whitespace-nowrap">
+            <span className="text-ink-2">
+              {CHANNEL_LABEL[row.original.channel] ?? row.original.channel}
+            </span>
+            {row.original.campaign ? (
+              <span className="max-w-[10rem] truncate type-caption text-ink-3">
+                {row.original.campaign}
+              </span>
+            ) : null}
+          </span>
+        ),
+      },
+      {
         id: "assignee",
         accessorKey: "assigneeName",
         header: "Preuzeo",
@@ -234,6 +253,19 @@ export function InquiriesList() {
             options={Object.entries(INQUIRY_KIND_LABEL).map(([value, label]) => ({ value, label }))}
           />
         </div>
+        <div className="w-44">
+          <Select
+            size="sm"
+            aria-label="Izvor upita"
+            placeholder="Svi izvori"
+            value={f.izvor}
+            onChange={(e) => setF({ izvor: e.target.value })}
+            options={[
+              { value: "google_ads", label: "Google Ads" },
+              { value: "meta_ads", label: "Meta oglasi" },
+            ]}
+          />
+        </div>
         <Switch
           label="Samo majstori"
           checked={Boolean(f.majstori)}
@@ -243,7 +275,7 @@ export function InquiriesList() {
       <DataTable
         caption="Upiti"
         columns={columns}
-        columnVisibility={{ assignee: roomy }}
+        columnVisibility={{ assignee: roomy, source: roomy }}
         data={results}
         getRowId={(r) => r._id}
         rowLabel={(r) => r.number}

@@ -104,6 +104,11 @@ export const seoSettingsV = v.object({
   ogImageStorageId: v.optional(v.id("_storage")),
   landingMin: v.object({ brand: v.number(), model: v.number(), generationPage: v.number() }),
   maxIndexableLandings: v.number(),
+  /**
+   * Search queries whose result page may be indexed (step 19): normalized, ≤ 30. Every other
+   * `/pretraga?q=` stays `noindex, follow`.
+   */
+  curatedSearches: v.optional(v.array(v.string())),
 });
 
 export const trackingSettingsV = v.object({

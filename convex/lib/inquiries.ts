@@ -116,7 +116,11 @@ export type NewInquiry = Omit<
   | "searchText"
   | "isDemo"
   | "updatedAt"
-> & { actor: Actor };
+> & {
+  actor: Actor;
+  /** Request context for the Meta Conversions API (used only with ads consent). */
+  capiContext?: { ip: string; userAgent: string; eventSourceUrl: string };
+};
 
 /**
  * Inserts a validated inquiry (`nov`) with its number, capability token, `created` history
@@ -127,7 +131,7 @@ export async function insertInquiry(
   ctx: MutationCtx,
   input: NewInquiry,
 ): Promise<{ inquiryId: Id<"inquiries">; number: string; token: string }> {
-  const { actor, ...fields } = input;
+  const { actor, capiContext, ...fields } = input;
   const now = Date.now();
   const settings = await getSettings(ctx);
   const year = belgradeYear(now);
@@ -170,6 +174,8 @@ export async function insertInquiry(
     payload: { kind: "inquiry", inquiryId, number },
     dedupeKey: `inquiry.created:${inquiryId}`,
     actor,
+    // Request context for the Meta Conversions API — only with ads consent (SEO-ADS §J7).
+    ...(capiContext && fields.attribution?.consentAds ? { capiContext } : {}),
   });
   await bumpStatsDaily(ctx, now, { inquiriesCount: 1 });
   return { inquiryId, number, token };

@@ -4,9 +4,10 @@ import { LandingPage, landingMetadata } from "@/components/catalog/LandingPage";
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: PageProps<"/delovi/[kategorija]/[marka]">): Promise<Metadata> {
   const { kategorija, marka } = await params;
-  return landingMetadata(kategorija, marka, undefined);
+  return landingMetadata(kategorija, marka, undefined, await searchParams);
 }
 
 export default async function BrandLandingPage({

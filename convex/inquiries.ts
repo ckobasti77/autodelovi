@@ -123,6 +123,8 @@ export const submit = publicMutation({
     }),
     consent: consentV,
     attribution: v.optional(attributionV),
+    /** Page the inquiry was sent from (Meta CAPI `event_source_url`). */
+    eventSourceUrl: v.optional(v.string()),
     honeypot: v.string(),
     startedAt: v.number(),
   },
@@ -203,6 +205,15 @@ export const submit = publicMutation({
       ...(args.attribution ? { attribution: args.attribution } : {}),
       consent: args.consent,
       actor: viewer ? actorOf(viewer) : { type: "customer" as const, name },
+      ...(ctx.client.ip && ctx.client.userAgent
+        ? {
+            capiContext: {
+              ip: ctx.client.ip,
+              userAgent: ctx.client.userAgent,
+              eventSourceUrl: (args.eventSourceUrl ?? "").slice(0, 500),
+            },
+          }
+        : {}),
     });
     await attachPhotos(ctx, photos, ctx.client.key, inquiryId);
     return { number, token };

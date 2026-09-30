@@ -1,7 +1,9 @@
 /**
  * Page metadata builder (SEO-ADS §J1, ROUTES §B4): keyword-first titles with the settings
- * suffix, absolute canonicals without tracking parameters, robots per route rule. Step 19
- * extends it (OG images per template); the call sites stay the same.
+ * suffix (≤ 60 characters in total), descriptions ≤ 155 characters, absolute canonicals
+ * without tracking parameters, robots per route rule, OpenGraph/Twitter from the same values.
+ * OG images come from the `opengraph-image` file conventions (default, product, category,
+ * landing) unless a page passes one explicitly.
  */
 import type { Metadata } from "next";
 
@@ -20,10 +22,10 @@ export type PageMetaInput = {
   type?: "website" | "article";
 };
 
-const TITLE_MAX = 60;
-const DESCRIPTION_MAX = 160;
+export const TITLE_MAX = 60;
+export const DESCRIPTION_MAX = 155;
 
-/** Trims at a word boundary with an ellipsis. */
+/** Trims at a word boundary with an ellipsis (the result is at most `max` characters). */
 export function clampText(text: string, max: number): string {
   const clean = text.replace(/\s+/g, " ").trim();
   if (clean.length <= max) return clean;
@@ -32,14 +34,30 @@ export function clampText(text: string, max: number): string {
   return `${(space > max * 0.6 ? cut.slice(0, space) : cut).replace(/[\s,.;:—–-]+$/, "")}…`;
 }
 
-export function pageTitle(title: string, suffix = ` | ${site.brand.name}`): string {
-  const room = Math.max(20, TITLE_MAX - suffix.length);
-  return `${clampText(title, room)}${suffix}`;
+export function defaultTitleSuffix(): string {
+  return ` | ${site.brand.name}`;
+}
+
+/**
+ * Keyword-first title with the brand suffix. When the suffix would push the title past
+ * 60 characters, the keyword part is shortened first; a keyword part that cannot fit in 20
+ * characters drops the suffix instead of losing its meaning.
+ */
+export function pageTitle(title: string, suffix: string = defaultTitleSuffix()): string {
+  const clean = title.replace(/\s+/g, " ").trim();
+  if (clean.length + suffix.length <= TITLE_MAX) return `${clean}${suffix}`;
+  const room = TITLE_MAX - suffix.length;
+  if (room >= 20 && clean.length - room <= 18) return `${clampText(clean, room)}${suffix}`;
+  return clampText(clean, TITLE_MAX);
+}
+
+export function pageDescription(description: string): string {
+  return clampText(description, DESCRIPTION_MAX);
 }
 
 export function buildMetadata(input: PageMetaInput): Metadata {
   const title = pageTitle(input.title, input.titleSuffix);
-  const description = clampText(input.description, DESCRIPTION_MAX);
+  const description = pageDescription(input.description);
   return {
     title: { absolute: title },
     description,
@@ -54,7 +72,12 @@ export function buildMetadata(input: PageMetaInput): Metadata {
       locale: "sr_RS",
       ...(input.ogImage ? { images: [input.ogImage] } : {}),
     },
-    twitter: { card: input.ogImage ? "summary_large_image" : "summary", title, description },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      ...(input.ogImage ? { images: [input.ogImage.url] } : {}),
+    },
   };
 }
 

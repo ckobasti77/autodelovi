@@ -37,6 +37,8 @@ export const register = userMutation({
     brandsServiced: v.array(v.id("vehicleBrands")),
     consent: consentV,
     attribution: v.optional(attributionV),
+    /** Page the registration was sent from (Meta CAPI `event_source_url`). */
+    eventSourceUrl: v.optional(v.string()),
   },
   returns: v.id("mechanicProfiles"),
   handler: async (ctx, args) => {
@@ -113,6 +115,15 @@ export const register = userMutation({
       payload: { kind: "mechanic", profileId, userId: viewer.userId, companyName },
       dedupeKey: `mechanic.registered:${profileId}`,
       actor: actorOf(viewer),
+      ...(args.attribution?.consentAds && ctx.client.ip && ctx.client.userAgent
+        ? {
+            capiContext: {
+              ip: ctx.client.ip,
+              userAgent: ctx.client.userAgent,
+              eventSourceUrl: (args.eventSourceUrl ?? "").slice(0, 500),
+            },
+          }
+        : {}),
     });
     await bumpStatsDaily(ctx, now, { registrationsCount: 1 });
     return profileId;

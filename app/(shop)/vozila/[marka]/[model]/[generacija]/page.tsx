@@ -7,9 +7,11 @@ import { formatNumber } from "@/lib/format/number";
 import { pluralSr } from "@/lib/format/plural";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import { buildMetadata } from "@/lib/seo/metadata";
+import { generationMeta } from "@/lib/seo/templates";
 import {
   getSettingsPublic,
   getVehicleEngines,
+  getVehicleLandings,
   getVehicleParts,
   getVehicleTree,
 } from "@/lib/server/catalog-cache";
@@ -21,12 +23,11 @@ import { Link } from "@/components/ui/Link";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { RevealText } from "@/components/text-reveal/RevealText";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { LandingLinks } from "@/components/seo/LandingLinks";
 import { CategoryTile } from "@/components/catalog/CategoryTile";
 import { ProductGrid } from "@/components/catalog/ProductGrid";
 import { UseVehicleButton } from "@/components/vehicle/UseVehicleButton";
 import { ROUTES } from "@/constants/routes";
-
-const MIN_INDEXABLE = 10;
 
 async function load(marka: string, model: string, generacija: string, motor: string | undefined) {
   const brand = findBrand(await getVehicleTree(), marka);
@@ -59,18 +60,19 @@ export async function generateMetadata({
     getSettingsPublic(),
   ]);
   if (!data) return {};
-  const name = `${shortBrand(data.brand.brand)} ${data.generation.name}`;
+  const text = generationMeta({
+    brandName: data.brand.brand.name,
+    generationName: data.generation.name,
+    years: yearsLabel(data.generation),
+    productCount: data.parts.total,
+    categories: data.parts.categories.map((c) => c.category.name),
+    engines: data.engines.map((e) => e.name),
+  });
   return buildMetadata({
-    title: `Delovi za ${name} (${yearsLabel(data.generation)})`,
-    description: `Delovi za ${name}: ${data.parts.total} artikala u ${data.parts.categories.length} kategorija — ${data.parts.categories
-      .slice(0, 4)
-      .map((c) => c.category.name.toLowerCase())
-      .join(", ")}. Motori: ${data.engines
-      .slice(0, 3)
-      .map((e) => e.name)
-      .join(", ")}.`,
+    ...text,
     path: ROUTES.vehicleGeneration(marka, model, generacija),
-    noindex: Boolean(motor) || data.parts.total < MIN_INDEXABLE,
+    // Thin generation pages stay out of the index (settings: seo.landingMin.generationPage).
+    noindex: Boolean(motor) || data.parts.total < settings.seo.generationPageMin,
     titleSuffix: settings.seo.titleSuffix,
   });
 }
@@ -81,7 +83,10 @@ export default async function VehicleGenerationPage({
 }: PageProps<"/vozila/[marka]/[model]/[generacija]">) {
   const { marka, model, generacija } = await params;
   const motor = motorParam((await searchParams).motor);
-  const data = await load(marka, model, generacija, motor);
+  const [data, landings] = await Promise.all([
+    load(marka, model, generacija, motor),
+    getVehicleLandings(marka, model),
+  ]);
   if (!data) notFound();
   const { brand, generation, engines, engine, parts } = data;
   const base = ROUTES.vehicleGeneration(marka, model, generacija);
@@ -225,6 +230,12 @@ export default async function VehicleGenerationPage({
           ) : null}
         </>
       )}
+      <LandingLinks
+        id="generation-landings-title"
+        title={`Delovi za ${shortBrand(brand.brand)} ${data.model.model.name} po kategorijama`}
+        links={landings}
+        show="category"
+      />
     </div>
   );
 }

@@ -54,3 +54,13 @@ export function siteUrl(): string {
     "",
   );
 }
+
+/** Meta Conversions API access token (`npx convex env set META_CAPI_TOKEN …`); empty ⇒ CAPI off. */
+export function metaCapiToken(): string {
+  return process.env.META_CAPI_TOKEN?.trim() ?? "";
+}
+
+/** Shared secret for `POST <site>/api/revalidate` (the Next cache purge channel). */
+export function revalidateSecret(): string {
+  return process.env.REVALIDATE_SECRET?.trim() ?? "";
+}

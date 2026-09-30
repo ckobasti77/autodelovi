@@ -21,6 +21,8 @@ crons.cron(
 crons.cron("low stock e-mail batch", "5 * * * *", internal.automations.lowStockSweep, {});
 crons.cron("back in stock safety sweep", "10 * * * *", internal.automations.backInStockSweep, {});
 crons.cron("auto-complete orders", "30 1 * * *", internal.maintenance.autoCompleteOrders, {});
+// SEO-ADS §J4: landing statistics + thin-content guard (chained per category, then ranked).
+crons.cron("landing stats and guard", "25 * * * *", internal.landings.recompute, {});
 crons.cron("nightly maintenance and retention", "40 1 * * *", internal.automations.nightly, {});
 
 export default crons;

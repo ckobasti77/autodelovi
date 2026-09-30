@@ -27,6 +27,7 @@ import {
   settingsV,
   trackingSettingsV,
   trustFactsSettingsV,
+  type Settings,
 } from "./lib/settingsSchema";
 import { invalid } from "./lib/errors";
 
@@ -50,7 +51,23 @@ export const getPublic = publicQuery({
     couriers: v.array(v.object({ code: v.string(), name: v.string() })),
     flags: flagsSettingsV,
     legalVersions: legalVersionsSettingsV,
-    seo: v.object({ titleSuffix: v.string(), defaultDescription: v.string() }),
+    seo: v.object({
+      titleSuffix: v.string(),
+      defaultDescription: v.string(),
+      generationPageMin: v.number(),
+      curatedSearches: v.array(v.string()),
+    }),
+    /** Browser tag ids (public by nature — they appear in the page source). */
+    tracking: v.object({
+      ga4Id: v.union(v.string(), v.null()),
+      gadsId: v.union(v.string(), v.null()),
+      gadsLabels: v.object({
+        purchase: v.union(v.string(), v.null()),
+        lead: v.union(v.string(), v.null()),
+        mechanicSignup: v.union(v.string(), v.null()),
+      }),
+      metaPixelId: v.union(v.string(), v.null()),
+    }),
     updatedAt: v.number(),
   }),
   handler: async (ctx) => {
@@ -73,11 +90,33 @@ export const getPublic = publicQuery({
       couriers: s.couriers.map((c) => ({ code: c.code, name: c.name })),
       flags: s.flags,
       legalVersions: s.legalVersions,
-      seo: { titleSuffix: s.seo.titleSuffix, defaultDescription: s.seo.defaultDescription },
+      seo: {
+        titleSuffix: s.seo.titleSuffix,
+        defaultDescription: s.seo.defaultDescription,
+        generationPageMin: s.seo.landingMin.generationPage,
+        curatedSearches: s.seo.curatedSearches ?? [],
+      },
+      tracking: publicTracking(s.tracking),
       updatedAt: s.updatedAt,
     };
   },
 });
+
+const id = (value: string | undefined) => (value?.trim() ? value.trim() : null);
+
+/** Tag ids for the browser loaders; empty ⇒ nothing loads. */
+function publicTracking(t: Settings["tracking"]) {
+  return {
+    ga4Id: id(t.ga4Id),
+    gadsId: id(t.gadsId),
+    gadsLabels: {
+      purchase: id(t.gadsLabels.purchase),
+      lead: id(t.gadsLabels.lead),
+      mechanicSignup: id(t.gadsLabels.mechanicSignup),
+    },
+    metaPixelId: id(t.metaPixelId),
+  };
+}
 
 /** Tracking IDs only (all empty ⇒ every adapter is a no-op). */
 export const getTracking = publicQuery({

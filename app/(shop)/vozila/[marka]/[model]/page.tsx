@@ -3,12 +3,13 @@ import { notFound } from "next/navigation";
 
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { getSettingsPublic, getVehicleTree } from "@/lib/server/catalog-cache";
+import { getSettingsPublic, getVehicleLandings, getVehicleTree } from "@/lib/server/catalog-cache";
 import { findBrand, findModel, shortBrand, yearsLabel } from "@/lib/vehicle/hub";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { RevealText } from "@/components/text-reveal/RevealText";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { LandingLinks } from "@/components/seo/LandingLinks";
 import { ROUTES } from "@/constants/routes";
 
 async function load(marka: string, model: string) {
@@ -36,7 +37,10 @@ export async function generateMetadata({
 
 export default async function VehicleModelPage({ params }: PageProps<"/vozila/[marka]/[model]">) {
   const { marka, model } = await params;
-  const data = await load(marka, model);
+  const [data, landings] = await Promise.all([
+    load(marka, model),
+    getVehicleLandings(marka, model),
+  ]);
   if (!data) notFound();
   const name = `${data.brand.brand.name} ${data.model.model.name}`;
   const crumbs = [
@@ -53,7 +57,8 @@ export default async function VehicleModelPage({ params }: PageProps<"/vozila/[m
         {`Delovi za ${name}`}
       </RevealText>
       <RevealText as="p" className="mt-4 max-w-[60ch] type-lead text-ink-2">
-        Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije.
+        Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj
+        ili pošaljite broj šasije.
       </RevealText>
       <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {data.model.generations.map((g) => (
@@ -70,7 +75,8 @@ export default async function VehicleModelPage({ params }: PageProps<"/vozila/[m
                   {g.platform && g.vinModelCodes.length ? " · " : ""}
                   {g.vinModelCodes.length ? (
                     <>
-                      VIN kod <span className="type-code text-ink-2">{g.vinModelCodes.join(", ")}</span>
+                      VIN kod{" "}
+                      <span className="type-code text-ink-2">{g.vinModelCodes.join(", ")}</span>
                     </>
                   ) : null}
                 </span>
@@ -79,6 +85,12 @@ export default async function VehicleModelPage({ params }: PageProps<"/vozila/[m
           </li>
         ))}
       </ul>
+      <LandingLinks
+        id="model-landings-title"
+        title={`Delovi za ${shortBrand(data.brand.brand)} ${data.model.model.name} po kategorijama`}
+        links={landings}
+        show="category"
+      />
     </div>
   );
 }

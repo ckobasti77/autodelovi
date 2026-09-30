@@ -23,8 +23,10 @@ import {
   MECHANIC_STATUS_TONE,
   type MechanicStatus,
 } from "@/lib/i18n/sr/mechanic";
+import { CHANNEL_LABEL } from "@/lib/i18n/sr/admin";
 import { Badge } from "@/components/ui/Badge";
 import { DataTable, type ColumnDef } from "@/components/ui/DataTable";
+import { Select } from "@/components/ui/Select";
 import { ROUTES } from "@/constants/routes";
 import { SegmentedFilter } from "@/components/admin/ui";
 import { TEST_IDS } from "@/constants/testIds";
@@ -49,7 +51,11 @@ const FILTERS: { value: MechanicStatus | "all"; label: string }[] = [
 export function MechanicsAdminList() {
   const router = useRouter();
   const [filter, setFilter] = useState<MechanicStatus | "all">("pending");
-  const rows = useQuery(api.mechanicsAdmin.list, filter === "all" ? {} : { status: filter });
+  const [source, setSource] = useState("");
+  const rows = useQuery(api.mechanicsAdmin.list, {
+    ...(filter === "all" ? {} : { status: filter }),
+    ...(source ? { source } : {}),
+  });
   const counts = useQuery(api.mechanicsAdmin.counts, {});
   const tiers = useQuery(api.pricing.listTiers, {});
   const tierName = useMemo(() => new Map((tiers ?? []).map((t) => [t._id, t.name])), [tiers]);
@@ -103,6 +109,23 @@ export function MechanicsAdminList() {
         ),
       },
       {
+        id: "source",
+        header: "Izvor",
+        enableSorting: false,
+        cell: ({ row }) => (
+          <span className="flex flex-col whitespace-nowrap">
+            <span className="text-ink-2">
+              {CHANNEL_LABEL[row.original.channel] ?? row.original.channel}
+            </span>
+            {row.original.campaign ? (
+              <span className="max-w-[10rem] truncate type-caption text-ink-3">
+                {row.original.campaign}
+              </span>
+            ) : null}
+          </span>
+        ),
+      },
+      {
         accessorKey: "status",
         header: "Status",
         enableSorting: false,
@@ -135,6 +158,16 @@ export function MechanicsAdminList() {
               : counts?.[f.value],
         }))}
       />
+      <div className="w-48">
+        <Select
+          size="sm"
+          aria-label="Izvor registracije"
+          placeholder="Svi izvori"
+          value={source}
+          onChange={(e) => setSource(e.target.value)}
+          options={Object.entries(CHANNEL_LABEL).map(([value, label]) => ({ value, label }))}
+        />
+      </div>
       <DataTable
         caption="Registracije servisa"
         columns={columns}

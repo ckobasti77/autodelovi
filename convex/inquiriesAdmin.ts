@@ -13,6 +13,7 @@ import { actorOf, viewerForUser } from "./lib/authz";
 import { fail, invalid, notFound } from "./lib/errors";
 import { emitEvent } from "./lib/events";
 import { staffMutation, staffQuery } from "./lib/functions";
+import { classifyAttribution } from "../lib/domain/attribution";
 import {
   completeQuoteAcceptance,
   currentSentQuote,
@@ -54,6 +55,9 @@ const listRowV = v.object({
   isMechanic: v.boolean(),
   createdAt: v.number(),
   firstResponseAt: v.union(v.number(), v.null()),
+  /** Traffic source (lib/domain/attribution): channel key + utm_campaign. */
+  channel: v.string(),
+  campaign: v.union(v.string(), v.null()),
   isDemo: v.boolean(),
 });
 
@@ -74,6 +78,8 @@ export const list = staffQuery({
     kind: v.optional(inquiryKindV),
     mine: v.optional(v.boolean()),
     mechanicsOnly: v.optional(v.boolean()),
+    /** `google_ads` / `meta_ads` (click ids) or a utm_campaign value (like orders). */
+    campaign: v.optional(v.string()),
     paginationOpts: paginationOptsValidator,
   },
   returns: paginationResultValidator(listRowV),
@@ -105,13 +111,28 @@ export const list = staffQuery({
           : ctx.db.query("inquiries").order("desc");
     const kindFilter = !term && args.kind;
     const mineFilter = Boolean(term) && args.mine;
+    const campaign = args.campaign?.trim().slice(0, 100);
     const query =
-      kindFilter || args.mechanicsOnly || mineFilter
+      kindFilter || args.mechanicsOnly || mineFilter || campaign
         ? base.filter((q) =>
             q.and(
               kindFilter ? q.eq(q.field("kind"), args.kind) : true,
               args.mechanicsOnly ? q.neq(q.field("mechanicProfileId"), undefined) : true,
               mineFilter ? q.eq(q.field("assignedTo"), ctx.viewer.userId) : true,
+              campaign === "google_ads"
+                ? q.or(
+                    q.neq(q.field("attribution.last.gclid"), undefined),
+                    q.neq(q.field("attribution.last.gbraid"), undefined),
+                    q.neq(q.field("attribution.last.wbraid"), undefined),
+                  )
+                : campaign === "meta_ads"
+                  ? q.neq(q.field("attribution.last.fbclid"), undefined)
+                  : campaign
+                    ? q.or(
+                        q.eq(q.field("attribution.last.campaign"), campaign),
+                        q.eq(q.field("attribution.first.campaign"), campaign),
+                      )
+                    : true,
             ),
           )
         : base;
@@ -142,6 +163,8 @@ export const list = staffQuery({
         isMechanic: i.mechanicProfileId !== undefined,
         createdAt: i._creationTime,
         firstResponseAt: i.firstResponseAt ?? null,
+        channel: classifyAttribution(i.attribution).channel,
+        campaign: (i.attribution?.last ?? i.attribution?.first)?.campaign ?? null,
         isDemo: i.isDemo,
       });
     }

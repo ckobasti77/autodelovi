@@ -4,9 +4,10 @@ import { LandingPage, landingMetadata } from "@/components/catalog/LandingPage";
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: PageProps<"/delovi/[kategorija]/[marka]/[model]">): Promise<Metadata> {
   const { kategorija, marka, model } = await params;
-  return landingMetadata(kategorija, marka, model);
+  return landingMetadata(kategorija, marka, model, await searchParams);
 }
 
 export default async function ModelLandingPage({
@@ -15,6 +16,11 @@ export default async function ModelLandingPage({
 }: PageProps<"/delovi/[kategorija]/[marka]/[model]">) {
   const { kategorija, marka, model } = await params;
   return (
-    <LandingPage kategorija={kategorija} marka={marka} model={model} searchParams={await searchParams} />
+    <LandingPage
+      kategorija={kategorija}
+      marka={marka}
+      model={model}
+      searchParams={await searchParams}
+    />
   );
 }

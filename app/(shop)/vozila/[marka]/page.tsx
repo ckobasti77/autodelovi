@@ -3,15 +3,18 @@ import { notFound } from "next/navigation";
 
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { getSettingsPublic, getVehicleTree } from "@/lib/server/catalog-cache";
+import { getSettingsPublic, getVehicleLandings, getVehicleTree } from "@/lib/server/catalog-cache";
 import { findBrand, yearsLabel } from "@/lib/vehicle/hub";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { RevealText } from "@/components/text-reveal/RevealText";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { LandingLinks } from "@/components/seo/LandingLinks";
 import { ROUTES } from "@/constants/routes";
 
-export async function generateMetadata({ params }: PageProps<"/vozila/[marka]">): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps<"/vozila/[marka]">): Promise<Metadata> {
   const { marka } = await params;
   const [tree, settings] = await Promise.all([getVehicleTree(), getSettingsPublic()]);
   const brand = findBrand(tree, marka);
@@ -29,7 +32,8 @@ export async function generateMetadata({ params }: PageProps<"/vozila/[marka]">)
 
 export default async function VehicleBrandPage({ params }: PageProps<"/vozila/[marka]">) {
   const { marka } = await params;
-  const brand = findBrand(await getVehicleTree(), marka);
+  const [tree, landings] = await Promise.all([getVehicleTree(), getVehicleLandings(marka)]);
+  const brand = findBrand(tree, marka);
   if (!brand) notFound();
   const crumbs = [
     { label: "Početna", href: ROUTES.home },
@@ -47,7 +51,10 @@ export default async function VehicleBrandPage({ params }: PageProps<"/vozila/[m
         {brand.models.map(({ model, generations }) => (
           <section key={model.slug} aria-labelledby={`m-${model.slug}`}>
             <h2 id={`m-${model.slug}`} className="border-b border-line pb-2 type-h3 text-ink-1">
-              <RouteLink href={ROUTES.vehicleModel(marka, model.slug)} className="hover:text-accent">
+              <RouteLink
+                href={ROUTES.vehicleModel(marka, model.slug)}
+                className="hover:text-accent"
+              >
                 {model.name}
               </RouteLink>
             </h2>
@@ -67,6 +74,12 @@ export default async function VehicleBrandPage({ params }: PageProps<"/vozila/[m
           </section>
         ))}
       </div>
+      <LandingLinks
+        id="brand-landings-title"
+        title={`Delovi za ${brand.brand.name} po kategorijama`}
+        links={landings}
+        show="category"
+      />
     </div>
   );
 }

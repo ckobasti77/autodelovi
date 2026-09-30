@@ -65,13 +65,17 @@ export const ORDER_SOURCE_LABEL = {
   reorder: "Ponovljena",
 } as const;
 
+/** Traffic channels (lib/domain/attribution) — the admin „Izvor“ column and filters. */
 export const CHANNEL_LABEL: Readonly<Record<string, string>> = {
   google_ads: "Google Ads",
-  meta_ads: "Meta Ads",
-  referral: "Upućivanje",
-  google: "Google",
-  facebook: "Facebook",
-  instagram: "Instagram",
+  meta_ads: "Meta oglasi",
+  microsoft_ads: "Microsoft Ads",
+  organic: "Pretraživač",
+  email: "E-pošta",
+  viber: "Viber",
+  campaign: "Kampanja",
+  referral: "Drugi sajt",
+  direct: "Direktno",
 };
 
 export const PAYMENT_STATUS_LABEL = {

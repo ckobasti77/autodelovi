@@ -39,7 +39,9 @@ import { toast } from "@/components/ui/Toast";
 
 import { ConfirmDialog, useConfirm } from "../ConfirmDialog";
 import { useAdminShell } from "../shell/context";
+import { AdLandingsTab } from "./AdLandingsTab";
 import { NotificationPrefsMatrix } from "./NotificationPrefsMatrix";
+import { LandingOverview, TrackingStatus } from "./SeoPanels";
 import { PageHeader, SaveBar, Section } from "../ui";
 import { useUrlFilters } from "../useUrlFilters";
 
@@ -114,6 +116,7 @@ export function SettingsAdmin() {
     },
     { value: "seo", label: "SEO", content: <SeoTab s={settings} can={can} /> },
     { value: "pracenje", label: "Praćenje", content: <TrackingTab s={settings} can={can} /> },
+    { value: "oglasne-strane", label: "Oglasne strane", content: <AdLandingsTab /> },
     {
       value: "pravni-tekstovi",
       label: "Pravni tekstovi",
@@ -1211,6 +1214,16 @@ function SeoTab({ s, can }: { s: Settings; can: boolean }) {
               ))}
             </div>
           </fieldset>
+          <Field
+            label="Pretrage koje smeju u Google indeks"
+            help="Jedna po redu, npr. „kocione plocice golf 7“. Sve ostale stranice pretrage ostaju van indeksa."
+            className="md:col-span-2"
+          >
+            <CuratedSearches
+              value={d.curatedSearches ?? []}
+              onChange={(curatedSearches) => seo.setDraft({ ...d, curatedSearches })}
+            />
+          </Field>
         </div>
         {can ? (
           <SaveBar
@@ -1222,7 +1235,35 @@ function SeoTab({ s, can }: { s: Settings; can: boolean }) {
           />
         ) : null}
       </Group>
+      <LandingOverview />
     </fieldset>
+  );
+}
+
+/** One query per line; committed on blur so new lines can be typed. */
+function CuratedSearches({
+  value,
+  onChange,
+}: {
+  value: string[];
+  onChange: (next: string[]) => void;
+}) {
+  const [text, setText] = useState(value.join("\n"));
+  return (
+    <Textarea
+      rows={3}
+      value={text}
+      onChange={(e) => setText(e.target.value)}
+      onBlur={() =>
+        onChange(
+          text
+            .split("\n")
+            .map((x) => x.trim().replace(/\s+/g, " "))
+            .filter(Boolean)
+            .slice(0, 30),
+        )
+      }
+    />
   );
 }
 
@@ -1319,6 +1360,7 @@ function TrackingTab({ s, can }: { s: Settings; can: boolean }) {
           />
         ) : null}
       </Group>
+      <TrackingStatus />
     </fieldset>
   );
 }

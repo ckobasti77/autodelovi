@@ -6,8 +6,9 @@ import { markdownToText } from "@/lib/content/markdown";
 import { formatNumber } from "@/lib/format/number";
 import { formatRSD } from "@/lib/format/money";
 import { faqJsonLd, storeJsonLd, websiteJsonLd } from "@/lib/seo/jsonld";
+import { storeInfoFromSettings } from "@/lib/seo/store";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { companyFromSettings, contactFromSettings, placeholderValues } from "@/lib/settings/public";
+import { contactFromSettings, placeholderValues } from "@/lib/settings/public";
 import {
   getCategoryTree,
   getFaqs,
@@ -53,9 +54,11 @@ export default async function HomePage() {
     getPublicTiers(),
   ]);
   const values = placeholderValues(settings);
-  const faqItems = faqs.map((f) => ({ question: f.question, answer: fillPlaceholders(f.answerMd, values) }));
+  const faqItems = faqs.map((f) => ({
+    question: f.question,
+    answer: fillPlaceholders(f.answerMd, values),
+  }));
   const contact = contactFromSettings(settings);
-  const company = companyFromSettings(settings);
   const courier = settings.deliveryMethods.find((d) => d.code === "courier");
   const courierLine = courier
     ? `Kurir ${formatRSD(courier.pricePara)}${courier.freeOverPara ? `, besplatno iznad ${formatRSD(courier.freeOverPara)}` : ""}; preuzimanje u radnji bez troška.`
@@ -67,27 +70,24 @@ export default async function HomePage() {
     { label: "kategorija delova", value: formatNumber(tree.categories.length) },
     {
       label: "generacija vozila",
-      value: formatNumber(vehicles.reduce((n, b) => n + b.models.reduce((m, x) => m + x.generations.length, 0), 0)),
+      value: formatNumber(
+        vehicles.reduce((n, b) => n + b.models.reduce((m, x) => m + x.generations.length, 0), 0),
+      ),
     },
   ];
-  const hasAddress = Boolean(contact.address.street && contact.address.city);
 
   return (
     <>
       <JsonLd
         data={[
-          websiteJsonLd(),
-          storeJsonLd({
-            name: company.legalName || settings.brand.name,
-            ...(contact.phone ? { telephone: contact.phone } : {}),
-            ...(contact.email ? { email: contact.email } : {}),
-            ...(hasAddress
-              ? { street: contact.address.street, city: contact.address.city, postalCode: contact.address.postalCode }
-              : {}),
-            hours: settings.hours,
-          }),
+          websiteJsonLd(settings.brand.name),
+          storeJsonLd(storeInfoFromSettings(settings)),
           ...(faqItems.length
-            ? [faqJsonLd(faqItems.map((f) => ({ question: f.question, answer: markdownToText(f.answer) })))]
+            ? [
+                faqJsonLd(
+                  faqItems.map((f) => ({ question: f.question, answer: markdownToText(f.answer) })),
+                ),
+              ]
             : []),
         ]}
       />

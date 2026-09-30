@@ -17,6 +17,7 @@ import { CheckCircleIcon, WarningCircleIcon } from "@phosphor-icons/react/dist/s
 import { api } from "@/convex/_generated/api";
 import type { Id } from "@/convex/_generated/dataModel";
 import { readAttribution } from "@/lib/analytics/attribution";
+import { googleUserData } from "@/lib/analytics/hash";
 import { track } from "@/lib/analytics/track";
 import {
   isValidMb,
@@ -85,7 +86,9 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
   const register_ = useMutation(api.mechanics.register);
   const needsAccount = config.viewer === null;
   const schema = useMemo(() => mechanicRegistrationSchema({ needsAccount }), [needsAccount]);
-  const [serverError, setServerError] = useState<{ message: string; signIn?: boolean } | null>(null);
+  const [serverError, setServerError] = useState<{ message: string; signIn?: boolean } | null>(
+    null,
+  );
   const [pending, setPending] = useState(false);
   const summary = useRef<HTMLDivElement>(null);
 
@@ -122,7 +125,8 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
   const errorList =
     submitCount > 0
       ? REGISTRATION_FIELDS.map((k) => ({ k, message: errors[k]?.message })).filter(
-          (e): e is { k: (typeof REGISTRATION_FIELDS)[number]; message: string } => typeof e.message === "string",
+          (e): e is { k: (typeof REGISTRATION_FIELDS)[number]; message: string } =>
+            typeof e.message === "string",
         )
       : [];
 
@@ -165,13 +169,32 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
         brandsServiced: values.brandsServiced as Id<"vehicleBrands">[],
         consent: buildConsent(config.legal),
         ...(attribution ? { attribution } : {}),
+        eventSourceUrl: window.location.href,
       });
-      track({ name: "generate_lead", leadType: "mechanic_registration", leadId: profileId });
+      const userData = await googleUserData({
+        email: needsAccount ? values.email : null,
+        phone: values.phone,
+        firstName: values.contactPerson.trim().split(/s+/)[0],
+        lastName: values.contactPerson.trim().split(/s+/).slice(1).join(" "),
+        city: values.city,
+      }).catch(() => null);
+      track(
+        {
+          name: "generate_lead",
+          leadType: "mechanic_registration",
+          leadId: profileId,
+          ...(userData ? { userData } : {}),
+        },
+        { eventId: `mech-${profileId}` },
+      );
       router.replace(ROUTES.mechanicsThanks);
       router.refresh();
     } catch (error) {
       const code = convexErrorCode(error);
-      const message = convexErrorMessage(error, "Registracija nije poslata. Pokušajte ponovo ili nas pozovite.");
+      const message = convexErrorMessage(
+        error,
+        "Registracija nije poslata. Pokušajte ponovo ili nas pozovite.",
+      );
       const field = (error as { data?: { field?: string } }).data?.field;
       if (field && REGISTRATION_FIELDS.includes(field as (typeof REGISTRATION_FIELDS)[number])) {
         setError(field as (typeof REGISTRATION_FIELDS)[number], { message });
@@ -227,7 +250,11 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
       </div>
 
       {needsAccount ? (
-        <Section id="mr-sec-account" title="Nalog" aside="Ovim podacima se prijavljujete. Ako već imate nalog, prvo se prijavite.">
+        <Section
+          id="mr-sec-account"
+          title="Nalog"
+          aside="Ovim podacima se prijavljujete. Ako već imate nalog, prvo se prijavite."
+        >
           <div className="grid gap-5 sm:grid-cols-2">
             <Field id="mr-email" label="E-pošta" error={errors.email?.message}>
               <Input
@@ -238,7 +265,12 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
                 {...register("email")}
               />
             </Field>
-            <Field id="mr-password" label="Lozinka" help={PASSWORD_HELP} error={errors.password?.message}>
+            <Field
+              id="mr-password"
+              label="Lozinka"
+              help={PASSWORD_HELP}
+              error={errors.password?.message}
+            >
               <Input
                 type="password"
                 autoComplete="new-password"
@@ -249,7 +281,10 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
           </div>
           <p className="type-body-s text-ink-3">
             Već imate nalog?{" "}
-            <Link href={`${ROUTES.signIn}?next=${encodeURIComponent(ROUTES.mechanicsRegister)}`} variant="inline">
+            <Link
+              href={`${ROUTES.signIn}?next=${encodeURIComponent(ROUTES.mechanicsRegister)}`}
+              variant="inline"
+            >
               Prijavite se
             </Link>
             , pa se vratite na ovu stranu.
@@ -262,9 +297,21 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
         </p>
       )}
 
-      <Section id="mr-sec-company" title="Firma" aside="Podatke proveravamo u registru pre odobrenja.">
-        <Field id="mr-companyName" label="Naziv servisa ili firme" error={errors.companyName?.message}>
-          <Input autoComplete="organization" data-testid={TEST_IDS.mechanicRegCompany} {...register("companyName")} />
+      <Section
+        id="mr-sec-company"
+        title="Firma"
+        aside="Podatke proveravamo u registru pre odobrenja."
+      >
+        <Field
+          id="mr-companyName"
+          label="Naziv servisa ili firme"
+          error={errors.companyName?.message}
+        >
+          <Input
+            autoComplete="organization"
+            data-testid={TEST_IDS.mechanicRegCompany}
+            {...register("companyName")}
+          />
         </Field>
         <div className="grid gap-5 sm:grid-cols-2">
           <Field
@@ -305,28 +352,60 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
       <Section id="mr-sec-contact" title="Kontakt">
         <div className="grid gap-5 sm:grid-cols-2">
           <Field id="mr-contactPerson" label="Kontakt osoba" error={errors.contactPerson?.message}>
-            <Input autoComplete="name" data-testid={TEST_IDS.mechanicRegContact} {...register("contactPerson")} />
+            <Input
+              autoComplete="name"
+              data-testid={TEST_IDS.mechanicRegContact}
+              {...register("contactPerson")}
+            />
           </Field>
-          <Field id="mr-phone" label="Telefon" help="Najčešće zovemo ili pišemo na Viber." error={errors.phone?.message}>
-            <Input type="tel" autoComplete="tel" inputMode="tel" data-testid={TEST_IDS.mechanicRegPhone} {...register("phone")} />
+          <Field
+            id="mr-phone"
+            label="Telefon"
+            help="Najčešće zovemo ili pišemo na Viber."
+            error={errors.phone?.message}
+          >
+            <Input
+              type="tel"
+              autoComplete="tel"
+              inputMode="tel"
+              data-testid={TEST_IDS.mechanicRegPhone}
+              {...register("phone")}
+            />
           </Field>
         </div>
       </Section>
 
-      <Section id="mr-sec-workshop" title="Servis" aside="Na ovu adresu šaljemo delove; menja se pri svakoj porudžbini.">
+      <Section
+        id="mr-sec-workshop"
+        title="Servis"
+        aside="Na ovu adresu šaljemo delove; menja se pri svakoj porudžbini."
+      >
         <div className="grid gap-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
           <Field id="mr-city" label="Mesto" error={errors.city?.message}>
-            <Input autoComplete="address-level2" data-testid={TEST_IDS.mechanicRegCity} {...register("city")} />
+            <Input
+              autoComplete="address-level2"
+              data-testid={TEST_IDS.mechanicRegCity}
+              {...register("city")}
+            />
           </Field>
           <Field id="mr-address" label="Adresa servisa" error={errors.address?.message}>
-            <Input autoComplete="street-address" data-testid={TEST_IDS.mechanicRegAddress} {...register("address")} />
+            <Input
+              autoComplete="street-address"
+              data-testid={TEST_IDS.mechanicRegAddress}
+              {...register("address")}
+            />
           </Field>
         </div>
         <Controller
           control={control}
           name="serviceTypes"
           render={({ field }) => (
-            <div id="mr-serviceTypes" className="flex flex-col gap-2" role="group" aria-labelledby="mr-st-label">
+            <div
+              id="mr-serviceTypes"
+              className="flex flex-col gap-2"
+              role="group"
+              aria-labelledby="mr-st-label"
+            >
               <span id="mr-st-label" className="type-caption text-ink-2">
                 Vrsta servisa
               </span>
@@ -338,7 +417,9 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
                       key={s.value}
                       className={cn(
                         "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xs border px-3 type-body-s transition-control",
-                        on ? "border-accent bg-accent-subtle text-ink-1" : "border-line-strong text-ink-2 hover:border-ink-3",
+                        on
+                          ? "border-accent bg-accent-subtle text-ink-1"
+                          : "border-line-strong text-ink-2 hover:border-ink-3",
                       )}
                     >
                       <CheckboxBox
@@ -372,7 +453,12 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
           control={control}
           name="brandsServiced"
           render={({ field }) => (
-            <div id="mr-brandsServiced" className="flex flex-col gap-2" role="group" aria-labelledby="mr-br-label">
+            <div
+              id="mr-brandsServiced"
+              className="flex flex-col gap-2"
+              role="group"
+              aria-labelledby="mr-br-label"
+            >
               <span id="mr-br-label" className="type-caption text-ink-2">
                 Marke koje servisirate <span className="text-ink-3">(nije obavezno)</span>
               </span>
@@ -384,7 +470,9 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
                       key={b.id}
                       className={cn(
                         "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xs border px-3 type-body-s transition-control",
-                        on ? "border-accent bg-accent-subtle text-ink-1" : "border-line-strong text-ink-2 hover:border-ink-3",
+                        on
+                          ? "border-accent bg-accent-subtle text-ink-1"
+                          : "border-line-strong text-ink-2 hover:border-ink-3",
                       )}
                     >
                       <CheckboxBox
@@ -392,7 +480,9 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
                         checked={on}
                         onCheckedChange={(c) =>
                           field.onChange(
-                            c === true ? [...field.value, b.id].slice(0, 5) : field.value.filter((x) => x !== b.id),
+                            c === true
+                              ? [...field.value, b.id].slice(0, 5)
+                              : field.value.filter((x) => x !== b.id),
                           )
                         }
                         onBlur={field.onBlur}
@@ -432,15 +522,24 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
                   </span>
                 }
               />
-              {errors.terms?.message ? <p className="type-caption text-danger">{errors.terms.message}</p> : null}
+              {errors.terms?.message ? (
+                <p className="type-caption text-danger">{errors.terms.message}</p>
+              ) : null}
             </div>
           )}
         />
         <div className="flex flex-wrap items-center gap-4">
-          <Button type="submit" size="lg" loading={pending} data-testid={TEST_IDS.mechanicRegSubmit}>
+          <Button
+            type="submit"
+            size="lg"
+            loading={pending}
+            data-testid={TEST_IDS.mechanicRegSubmit}
+          >
             Registrujte servis
           </Button>
-          <p className="type-body-s text-ink-3">Odgovor stiže e-poštom, obično u toku radnog dana.</p>
+          <p className="type-body-s text-ink-3">
+            Odgovor stiže e-poštom, obično u toku radnog dana.
+          </p>
         </div>
       </div>
     </form>

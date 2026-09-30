@@ -11,10 +11,14 @@ import { contactLinkList } from "@/config/site";
 import { formatRSD } from "@/lib/format/money";
 import { QUALITY_LABEL } from "@/lib/i18n/sr/catalog";
 import { breadcrumbJsonLd, productJsonLd } from "@/lib/seo/jsonld";
+import { productImageAlt } from "@/lib/seo/images";
+import { landingHref, landingLabel } from "@/lib/seo/landingLinks";
 import { buildMetadata } from "@/lib/seo/metadata";
+import { productMeta } from "@/lib/seo/templates";
 import { contactFromSettings } from "@/lib/settings/public";
 import {
   getProductBySlug,
+  getProductLandings,
   getRelatedProducts,
   getRetiredProduct,
   getSameOemProducts,
@@ -45,19 +49,17 @@ import { ContactActions } from "@/components/shell/ContactActions";
 import { RetiredProduct } from "@/components/product/RetiredProduct";
 import { ROUTES } from "@/constants/routes";
 
-function productDescription(p: NonNullable<Awaited<ReturnType<typeof getProductBySlug>>>) {
+function productMetaText(p: NonNullable<Awaited<ReturnType<typeof getProductBySlug>>>) {
   const c = p.product;
-  const vehicles = c.fitmentSummary ? ` za ${c.fitmentSummary}` : "";
-  const price =
-    c.retailPricePara !== null ? ` Cena ${formatRSD(c.retailPricePara)} sa PDV-om.` : "";
-  const stock =
-    c.stockState === "in_stock" || c.stockState === "low_stock"
-      ? " Na stanju."
-      : c.stockState === "on_order"
-        ? " Po porudžbini."
-        : " Trenutno nije na stanju.";
-  const oem = c.oemPrimary ? ` Kat. br. ${c.oemPrimary}.` : "";
-  return `${c.name} (${c.manufacturerName}, ${QUALITY_LABEL[c.quality]})${vehicles}.${price}${stock}${oem}`;
+  return productMeta({
+    name: c.name,
+    manufacturer: c.manufacturerName,
+    qualityLabel: QUALITY_LABEL[c.quality],
+    code: c.oemPrimary ?? p.mpn,
+    fitmentSummary: c.fitmentSummary,
+    pricePara: c.retailPricePara,
+    stockState: c.stockState,
+  });
 }
 
 export async function generateMetadata({ params }: PageProps<"/deo/[slug]">): Promise<Metadata> {
@@ -76,10 +78,10 @@ export async function generateMetadata({ params }: PageProps<"/deo/[slug]">): Pr
       : {};
   }
   const c = data.product;
-  const code = c.oemPrimary ?? data.mpn ?? "";
+  const text = productMetaText(data);
   return buildMetadata({
-    title: data.seoTitle ?? `${c.name} ${c.manufacturerName}${code ? ` ${code}` : ""}`,
-    description: data.seoDescription ?? productDescription(data),
+    title: data.seoTitle ?? text.title,
+    description: data.seoDescription ?? text.description,
     path: ROUTES.product(c.slug),
     titleSuffix: settings.seo.titleSuffix,
   });
@@ -96,9 +98,10 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
     return <RetiredProduct retired={retired} />;
   }
   const c = data.product;
-  const [related, sameOem] = await Promise.all([
+  const [related, sameOem, landings] = await Promise.all([
     getRelatedProducts(c._id),
     c.oemPrimary ? getSameOemProducts(c.oemPrimary) : Promise.resolve(null),
+    getProductLandings(c._id),
   ]);
   const alternatives = (sameOem?.results ?? [])
     .filter((r) => r.card._id !== c._id && (r.match === "exact_code" || r.match === "cross_code"))
@@ -122,7 +125,18 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
   const pickup = settings.deliveryMethods.find((d) => d.code === "pickup");
   const disc = discDimensions(data.specs);
   const orderable = isOrderable(c.stockState, c.allowBackorder);
-  const images = data.images.filter((i) => i.url);
+  const images = data.images
+    .filter((i) => i.url)
+    .map((img, i) => ({
+      ...img,
+      alt: productImageAlt({
+        alt: img.alt,
+        name: c.name,
+        manufacturer: c.manufacturerName,
+        oem: c.oemPrimary,
+        index: i + 1,
+      }),
+    }));
 
   return (
     <LiveOverlayProvider productIds={[c._id]}>
@@ -137,13 +151,14 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
             ean: data.ean,
             manufacturer: c.manufacturerName,
             category: data.category.name,
-            description: data.description ?? productDescription(data),
+            description: data.description ?? productMetaText(data).description,
             images: images.length
-              ? images.map((i) => i.url!)
+              ? images.map((i) => i.path)
               : [`/images/parts/${c.categorySlug}.webp`],
             pricePara: c.retailPricePara,
             stockState: c.stockState,
             shippingPara: courier?.pricePara ?? null,
+            freeOverPara: courier?.freeOverPara ?? settings.commerce.freeShippingOverPara ?? null,
           }),
         ]}
       />
@@ -162,9 +177,12 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
           <div className="flex flex-col gap-4 lg:col-span-7">
             <div className="relative overflow-hidden rounded-sm border border-line">
               <ProductThumb
-                imageUrl={images[0]?.url ?? null}
+                imageUrl={images[0]?.path ?? null}
                 categorySlug={c.categorySlug}
-                alt={`${c.name} ${c.manufacturerName}${c.oemPrimary ? ` ${c.oemPrimary}` : ""}`}
+                alt={
+                  images[0]?.alt ??
+                  `${c.name} — ilustracija kategorije ${data.category.name.toLowerCase()}`
+                }
                 sizes="(min-width: 1024px) 56vw, 100vw"
                 preload
                 className="aspect-[4/3]"
@@ -180,7 +198,7 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
                 {images.slice(1, 7).map((img, i) => (
                   <li key={i}>
                     <ProductThumb
-                      imageUrl={img.url}
+                      imageUrl={img.path}
                       categorySlug={c.categorySlug}
                       alt={img.alt}
                       sizes="120px"
@@ -421,6 +439,23 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
                 <ProductGrid items={relatedCards} headingLevel="h3" />
               </div>
             </section>
+          ) : null}
+
+          {landings.length > 0 ? (
+            <nav aria-labelledby="landings-title">
+              <h2 id="landings-title" className="type-h2 text-ink-1">
+                {data.category.name} po vozilu
+              </h2>
+              <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+                {landings.map((l) => (
+                  <li key={landingHref(l)}>
+                    <Link href={landingHref(l)} variant="standalone">
+                      {landingLabel(l)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           ) : null}
         </div>
       </div>

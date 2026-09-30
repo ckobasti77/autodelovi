@@ -1160,23 +1160,55 @@ export default defineSchema({
     userId: v.optional(v.id("users")),
   }).index("by_consentId", ["consentId"]),
 
+  /**
+   * Programmatic landing candidates (SEO-ADS §J4), recomputed hourly by `landings.recompute`
+   * from active fitments: one row per (category, brand) and (category, brand, model) with at
+   * least one fitting product. `indexable` is the thin-content guard + the global cap.
+   */
   landingStats: defineTable({
     categoryId: v.id("categories"),
     brandId: v.id("vehicleBrands"),
     modelId: v.optional(v.id("vehicleModels")),
+    categorySlug: v.string(),
+    brandSlug: v.string(),
+    modelSlug: v.optional(v.string()),
     productCount: v.number(),
     inStockCount: v.number(),
     minPricePara: v.number(),
     maxPricePara: v.number(),
     manufacturerCount: v.number(),
+    /** Most represented manufacturers (≤ 6), by product count. */
+    manufacturers: v.array(v.object({ name: v.string(), count: v.number() })),
+    /** OEM numbers of the most popular fitting products (≤ 5). */
+    topOems: v.array(v.string()),
     generationIds: v.array(v.id("vehicleGenerations")),
+    /** Fitting products per generation (model rows: that model's generations). */
+    generationCounts: v.array(
+      v.object({
+        generationId: v.id("vehicleGenerations"),
+        count: v.number(),
+        inStock: v.number(),
+      }),
+    ),
+    /** Fitting products per engine (model rows only, ≤ 12, most common first). */
+    engineCounts: v.array(
+      v.object({
+        generationId: v.id("vehicleGenerations"),
+        engineId: v.id("engines"),
+        count: v.number(),
+      }),
+    ),
+    /** productCount × inStockCount — the order in which the cap admits landings. */
+    rank: v.number(),
     indexable: v.boolean(),
     reason: v.optional(v.string()),
     dirty: v.boolean(),
     updatedAt: v.number(),
   })
     .index("by_categoryId_and_brandId_and_modelId", ["categoryId", "brandId", "modelId"])
-    .index("by_indexable", ["indexable"])
+    .index("by_brandId_and_modelId", ["brandId", "modelId"])
+    .index("by_indexable_and_rank", ["indexable", "rank"])
+    .index("by_rank", ["rank"])
     .index("by_dirty", ["dirty"]),
 
   statsDaily: defineTable({

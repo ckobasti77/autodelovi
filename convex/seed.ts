@@ -1027,6 +1027,8 @@ export const run = internalAction({
       internal.seed.seedDemoInquiries,
       {},
     );
+    await ctx.runMutation(internal.landings.seedAdLandings, {});
+    await ctx.runMutation(internal.landings.recompute, {});
     return {
       reference,
       productsCreated,

@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { WifiSlashIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { captureAttribution } from "@/lib/analytics/attribution";
+import { track, type ContactChannel } from "@/lib/analytics/track";
 import { useMergeGuestCartOnSignIn } from "@/lib/cart/guestCart";
 import { useCartDrawer } from "@/lib/cart/drawer";
 import { useLatched } from "@/lib/hooks/useLatched";
@@ -17,6 +18,17 @@ import type { DeliveryInfo } from "@/components/cart/CartView";
 
 const loadDrawer = () => import("@/components/cart/CartDrawer");
 const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });
+
+/** Contact channel of a link (`tel:`, `viber:`, WhatsApp, `mailto:`), or null. */
+function contactChannel(href: string): ContactChannel | null {
+  if (href.startsWith("tel:")) return "phone";
+  if (href.startsWith("viber:")) return "viber";
+  if (/^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(href) || href.startsWith("whatsapp:")) {
+    return "whatsapp";
+  }
+  if (href.startsWith("mailto:")) return "email";
+  return null;
+}
 
 function OfflineNotice() {
   const [offline, setOffline] = useState(false);
@@ -49,12 +61,26 @@ export function ShopChrome({ delivery }: { delivery: DeliveryInfo }) {
 
   useEffect(() => {
     captureAttribution();
+    // Header/footer contact links are server-rendered anchors: one delegated listener tracks
+    // them (`ContactActions` tracks its own links and marks them `data-contact-tracked`).
+    const onContactClick = (e: MouseEvent) => {
+      const a = (e.target as Element | null)?.closest?.("a[href]");
+      if (!(a instanceof HTMLAnchorElement) || a.hasAttribute("data-contact-tracked")) return;
+      const channel = contactChannel(a.getAttribute("href") ?? "");
+      if (!channel) return;
+      const location =
+        a.closest("[data-contact-location]")?.getAttribute("data-contact-location") ??
+        (a.closest("header") ? "header" : a.closest("footer") ? "footer" : "page");
+      track({ name: "contact_click", channel, location });
+    };
+    document.addEventListener("click", onContactClick, true);
     // Warm the drawer chunk on the first sign of intent, never during page load (TBT).
     const warm = () => void loadDrawer();
     const button = document.querySelector("[data-testid='cart-button']");
     button?.addEventListener("pointerenter", warm, { once: true });
     button?.addEventListener("focus", warm, { once: true });
     return () => {
+      document.removeEventListener("click", onContactClick, true);
       button?.removeEventListener("pointerenter", warm);
       button?.removeEventListener("focus", warm);
     };

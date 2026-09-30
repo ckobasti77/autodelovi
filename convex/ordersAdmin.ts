@@ -16,6 +16,7 @@ import { actorOf } from "./lib/authz";
 import { fail, invalid, notFound } from "./lib/errors";
 import { emitEvent } from "./lib/events";
 import { staffMutation, staffQuery } from "./lib/functions";
+import { classifyAttribution } from "../lib/domain/attribution";
 import { transitionOrder } from "./lib/orders";
 import { pricingContextForProfile, resolveForContext, type CategoryPathCache } from "./lib/pricing";
 import { getSettings } from "./lib/settings";
@@ -66,13 +67,7 @@ function campaignOf(a: Doc<"orders">["attribution"]): {
 } {
   const touch = a?.last ?? a?.first;
   if (!touch) return { campaign: null, channel: null };
-  const channel =
-    touch.gclid || touch.gbraid || touch.wbraid
-      ? "google_ads"
-      : touch.fbclid
-        ? "meta_ads"
-        : (touch.source ?? (touch.referrer ? "referral" : null));
-  return { campaign: touch.campaign ?? null, channel };
+  return { campaign: touch.campaign ?? null, channel: classifyAttribution(a).channel };
 }
 
 function toListRow(o: Doc<"orders">) {
@@ -165,7 +160,11 @@ export const list = staffQuery({
             typeFilter ? q.eq(q.field("customerType"), args.customerType) : true,
             args.source ? q.eq(q.field("source"), args.source) : true,
             campaign === "google_ads"
-              ? q.neq(q.field("attribution.last.gclid"), undefined)
+              ? q.or(
+                  q.neq(q.field("attribution.last.gclid"), undefined),
+                  q.neq(q.field("attribution.last.gbraid"), undefined),
+                  q.neq(q.field("attribution.last.wbraid"), undefined),
+                )
               : campaign === "meta_ads"
                 ? q.neq(q.field("attribution.last.fbclid"), undefined)
                 : campaign

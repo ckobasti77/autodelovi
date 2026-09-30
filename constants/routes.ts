@@ -95,6 +95,7 @@ export const ADMIN = {
   emails: "/admin/mejlovi",
   emailTemplates: "/admin/mejlovi/sabloni",
   searches: "/admin/pretrage",
+  sources: "/admin/izvori",
   notifications: "/admin/obavestenja",
   imports: "/admin/uvoz",
   importHistory: "/admin/uvoz/istorija",
@@ -103,8 +104,10 @@ export const ADMIN = {
   importTemplate: "/admin/uvoz/sablon",
   importReport: (id: string) => `/admin/uvoz/${id}/izvestaj`,
   exports: "/admin/izvoz",
-  exportFile: (kind: "proizvodi.xlsx" | "porudzbine.csv" | "kupci.csv" | "majstori.csv") =>
-    `/admin/izvoz/${kind}`,
+  exportFile: (
+    kind:
+      "proizvodi.xlsx" | "porudzbine.csv" | "kupci.csv" | "majstori.csv" | "offline-konverzije.csv",
+  ) => `/admin/izvoz/${kind}`,
   invite: (token: string) => `/admin/pozivnica/${token}`,
 } as const;
 
@@ -144,6 +147,7 @@ export const LIVE_ROUTES: ReadonlySet<string> = new Set<string>([
   ROUTES.cookies,
   ROUTES.mechanics,
   ROUTES.mechanicPortal,
+  "/ponuda",
   "/admin",
 ]);
 

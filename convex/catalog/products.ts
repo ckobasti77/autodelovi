@@ -9,6 +9,7 @@ import type { Doc, Id } from "../_generated/dataModel";
 import type { QueryCtx } from "../_generated/server";
 import { FIT_RANK, fitStatus, type FitStatus } from "../../lib/domain/fitment";
 import { STOCK_STATE_RANK, isAvailableNow } from "../../lib/domain/stock";
+import { productImagePath } from "../../lib/seo/images";
 import {
   categoryBySlug,
   categorySummaryV,
@@ -309,6 +310,8 @@ export const bySlug = publicQuery({
       images: v.array(
         v.object({
           url: v.union(v.string(), v.null()),
+          /** Descriptive URL `/slike/deo/<slug>-<n>-<v>.<ext>` (image SEO). */
+          path: v.string(),
           alt: v.string(),
           width: v.number(),
           height: v.number(),
@@ -376,9 +379,11 @@ export const bySlug = publicQuery({
       });
     }
     const images = [];
-    for (const img of content?.images ?? []) {
+    for (const [i, img] of (content?.images ?? []).entries()) {
+      const meta = await ctx.db.system.get("_storage", img.storageId);
       images.push({
         url: await imageUrl(ctx, img.storageId),
+        path: productImagePath(product.slug, i + 1, img.storageId, meta?.contentType ?? null),
         alt: img.alt,
         width: img.width,
         height: img.height,

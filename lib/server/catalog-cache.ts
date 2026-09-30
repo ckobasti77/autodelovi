@@ -155,3 +155,110 @@ export const getSearchResults = cached(
   120,
   () => ["products"],
 );
+
+// Step 19 — SEO sources (sitemaps, feeds, landings, ads landings). ---------------------
+
+export const getSitemapData = cached(
+  () => fetchPublic(api.seo.sitemapData, {}),
+  "sitemap-data",
+  3600,
+  () => ["sitemap", "products", "categories", "vehicles", "settings"],
+);
+
+type SitemapProduct = FunctionReturnType<typeof api.seo.sitemapProducts>["page"][number];
+
+/** Product chunk `n` (1-based) of the product sitemaps: pages through Convex from the start. */
+export const getSitemapProductChunk = cached(
+  async (n: number, perFile: number): Promise<SitemapProduct[]> => {
+    const skip = (n - 1) * perFile;
+    const out: SitemapProduct[] = [];
+    let seen = 0;
+    let cursor: string | null = null;
+    for (;;) {
+      const page: FunctionReturnType<typeof api.seo.sitemapProducts> = await fetchPublic(
+        api.seo.sitemapProducts,
+        { paginationOpts: { numItems: 250, cursor } },
+      );
+      for (const row of page.page) {
+        if (!row.listed) continue;
+        if (seen >= skip && out.length < perFile) out.push(row);
+        seen++;
+      }
+      if (page.isDone || out.length >= perFile) break;
+      cursor = page.continueCursor;
+    }
+    return out;
+  },
+  "sitemap-products",
+  3600,
+  () => ["sitemap", "products"],
+);
+
+type FeedRow = FunctionReturnType<typeof api.seo.feedProducts>["page"][number];
+
+/** Every feed row (active products with a public price), paged through Convex. */
+export const getFeedRows = cached(
+  async (): Promise<{ pricesPublic: boolean; rows: FeedRow[] }> => {
+    const rows: FeedRow[] = [];
+    let cursor: string | null = null;
+    let pricesPublic = true;
+    for (;;) {
+      const page: FunctionReturnType<typeof api.seo.feedProducts> = await fetchPublic(
+        api.seo.feedProducts,
+        { paginationOpts: { numItems: 200, cursor } },
+      );
+      pricesPublic = page.pricesPublic;
+      rows.push(...page.page);
+      if (page.isDone || !pricesPublic) break;
+      cursor = page.continueCursor;
+    }
+    return { pricesPublic, rows };
+  },
+  "feed-rows",
+  3600,
+  () => ["feeds", "products", "settings"],
+);
+
+export const getLanding = cached(
+  (args: FunctionArgs<typeof api.seo.landing>) => fetchPublic(api.seo.landing, args),
+  "landing",
+  900,
+  (args) => ["products", "landings", `landing:${args.categorySlug}:${args.brandSlug}`],
+);
+
+export const getCategoryLandings = cached(
+  (categorySlug: string) => fetchPublic(api.seo.categoryLandings, { categorySlug, limit: 12 }),
+  "category-landings",
+  900,
+  (categorySlug) => ["landings", `category:${categorySlug}`],
+);
+
+export const getVehicleLandings = cached(
+  (brandSlug: string, modelSlug?: string) =>
+    fetchPublic(api.seo.vehicleLandings, { brandSlug, ...(modelSlug ? { modelSlug } : {}) }),
+  "vehicle-landings",
+  900,
+  () => ["landings", "vehicles"],
+);
+
+export const getProductLandings = cached(
+  (productId: FunctionArgs<typeof api.seo.productLandings>["productId"]) =>
+    fetchPublic(api.seo.productLandings, { productId }),
+  "product-landings",
+  900,
+  () => ["landings", "products"],
+);
+
+export const getAdLanding = cached(
+  (slug: string) => fetchPublic(api.seo.adLanding, { slug }),
+  "ad-landing",
+  300,
+  (slug) => ["adLandings", `adLanding:${slug}`, "products"],
+);
+
+export const getProductImage = cached(
+  (args: FunctionArgs<typeof api.seo.productImage>) => fetchPublic(api.seo.productImage, args),
+  "product-image",
+  3600,
+  (args) => ["products", `product:${args.slug}`],
+);

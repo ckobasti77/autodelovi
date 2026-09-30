@@ -6,6 +6,7 @@
 import type { Icon } from "@phosphor-icons/react";
 import {
   CarIcon,
+  ChartBarIcon,
   ChatCircleTextIcon,
   ClockCounterClockwiseIcon,
   EnvelopeIcon,
@@ -147,6 +148,12 @@ export const ADMIN_NAV: AdminNavGroup[] = [
         label: "Pretrage",
         icon: MagnifyingGlassIcon,
         keywords: "trazeno nemamo",
+      },
+      {
+        href: ADMIN.sources,
+        label: "Izvori",
+        icon: ChartBarIcon,
+        keywords: "izvori kampanje oglasi google meta utm konverzije",
       },
       {
         href: ADMIN.emails,

@@ -2,11 +2,13 @@
 
 import { useEffect } from "react";
 
+import { googleUserData, type RawUserData } from "@/lib/analytics/hash";
 import { analyticsItem, track } from "@/lib/analytics/track";
 
 /**
  * `purchase` once per order (SEO-ADS §J7): sessionStorage guard `sk_tracked_<order>` so a
  * reload of the thank-you page never counts twice; event id = order number (CAPI dedup).
+ * Enhanced Conversions data is hashed here and reaches Google only with ads consent.
  */
 export function PurchaseTracker({
   orderNumber,
@@ -14,6 +16,7 @@ export function PurchaseTracker({
   shippingPara,
   taxPara,
   items,
+  userData,
 }: {
   orderNumber: string;
   valuePara: number;
@@ -26,6 +29,7 @@ export function PurchaseTracker({
     unitPricePara: number;
     quantity: number;
   }[];
+  userData?: RawUserData;
 }) {
   useEffect(() => {
     const key = `sk_tracked_${orderNumber}`;
@@ -35,26 +39,35 @@ export function PurchaseTracker({
     } catch {
       // Without storage the event may repeat on reload; acceptable.
     }
-    track(
-      {
-        name: "purchase",
-        orderNumber,
-        valuePara,
-        shippingPara,
-        taxPara,
-        items: items.map((i) =>
-          analyticsItem({
-            sku: i.sku,
-            name: i.name,
-            manufacturerName: i.manufacturerName,
-            systemSlug: "",
-            pricePara: i.unitPricePara,
-            quantity: i.quantity,
-          }),
-        ),
-      },
-      { eventId: orderNumber },
-    );
+    let cancelled = false;
+    void (async () => {
+      const hashed = userData ? await googleUserData(userData).catch(() => null) : null;
+      if (cancelled) return;
+      track(
+        {
+          name: "purchase",
+          orderNumber,
+          valuePara,
+          shippingPara,
+          taxPara,
+          items: items.map((i) =>
+            analyticsItem({
+              sku: i.sku,
+              name: i.name,
+              manufacturerName: i.manufacturerName,
+              systemSlug: "",
+              pricePara: i.unitPricePara,
+              quantity: i.quantity,
+            }),
+          ),
+          ...(hashed ? { userData: hashed } : {}),
+        },
+        { eventId: orderNumber },
+      );
+    })();
+    return () => {
+      cancelled = true;
+    };
     // Once per order.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [orderNumber]);

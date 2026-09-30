@@ -6,6 +6,7 @@
 import { v } from "convex/values";
 
 import type { Doc } from "./_generated/dataModel";
+import { classifyAttribution } from "../lib/domain/attribution";
 import { audit } from "./lib/audit";
 import { actorOf } from "./lib/authz";
 import { invalid, notFound } from "./lib/errors";
@@ -34,6 +35,9 @@ const rowV = v.object({
   creditEnabled: v.boolean(),
   createdAt: v.number(),
   reviewedAt: v.union(v.number(), v.null()),
+  /** Traffic source (lib/domain/attribution): channel key + utm_campaign. */
+  channel: v.string(),
+  campaign: v.union(v.string(), v.null()),
   isDemo: v.boolean(),
 });
 
@@ -51,15 +55,25 @@ const toRow = (p: Doc<"mechanicProfiles">) => ({
   creditEnabled: p.creditEnabled,
   createdAt: p._creationTime,
   reviewedAt: p.reviewedAt ?? null,
+  ...sourceOf(p.attribution),
   isDemo: p.isDemo,
 });
+
+function sourceOf(a: Doc<"mechanicProfiles">["attribution"]) {
+  const info = classifyAttribution(a);
+  return { channel: info.channel, campaign: info.campaign || null };
+}
 
 const LIST_LIMIT = 200;
 
 export const list = staffQuery({
-  args: { status: v.optional(mechanicStatusV) },
+  args: {
+    status: v.optional(mechanicStatusV),
+    /** Channel key (`google_ads`, `meta_ads`, …) or a utm_campaign value. */
+    source: v.optional(v.string()),
+  },
   returns: v.array(rowV),
-  handler: async (ctx, { status }) => {
+  handler: async (ctx, { status, source }) => {
     const rows = status
       ? await ctx.db
           .query("mechanicProfiles")
@@ -67,7 +81,8 @@ export const list = staffQuery({
           .order("desc")
           .take(LIST_LIMIT)
       : await ctx.db.query("mechanicProfiles").order("desc").take(LIST_LIMIT);
-    return rows.map(toRow);
+    const mapped = rows.map(toRow);
+    return source ? mapped.filter((r) => r.channel === source || r.campaign === source) : mapped;
   },
 });
 

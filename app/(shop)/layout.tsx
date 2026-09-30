@@ -1,6 +1,7 @@
 import { companyFromSettings, contactFromSettings } from "@/lib/settings/public";
 import { getSettingsPublic } from "@/lib/server/catalog-cache";
 import { SiteShell } from "@/components/shell/SiteShell";
+import { ConsentRoot } from "@/components/consent/ConsentRoot";
 import { ShopChrome } from "@/components/shell/ShopChrome";
 import { HeaderVehicleChip } from "@/components/vehicle/VehicleBindings";
 import { VehiclePickerLazy } from "@/components/vehicle/VehiclePickerLazy";
@@ -14,21 +15,25 @@ export default async function ShopLayout({ children }: LayoutProps<"/">) {
   const courier = settings.deliveryMethods.find((d) => d.code === "courier");
   const pickup = settings.deliveryMethods.some((d) => d.code === "pickup");
   return (
-    <SiteShell
-      vehicleSlot={<HeaderVehicleChip />}
-      contact={contactFromSettings(settings)}
-      company={companyFromSettings(settings)}
-    >
-      {children}
-      <VehiclePickerLazy />
-      <ShopChrome
-        delivery={{
-          courierPricePara: courier?.pricePara ?? null,
-          freeOverPara: courier?.freeOverPara ?? settings.commerce.freeShippingOverPara ?? null,
-          pickup,
-          vatRateBp: settings.commerce.vatRateBp,
-        }}
-      />
-    </SiteShell>
+    <>
+      {/* Early in the DOM so keyboard users reach the consent choice first; fixed, so no shift. */}
+      <ConsentRoot />
+      <SiteShell
+        vehicleSlot={<HeaderVehicleChip />}
+        contact={contactFromSettings(settings)}
+        company={companyFromSettings(settings)}
+      >
+        {children}
+        <VehiclePickerLazy />
+        <ShopChrome
+          delivery={{
+            courierPricePara: courier?.pricePara ?? null,
+            freeOverPara: courier?.freeOverPara ?? settings.commerce.freeShippingOverPara ?? null,
+            pickup,
+            vatRateBp: settings.commerce.vatRateBp,
+          }}
+        />
+      </SiteShell>
+    </>
   );
 }

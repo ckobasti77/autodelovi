@@ -45,6 +45,7 @@ export function ContactActions({
           <li key={link.channel}>
             <a
               href={link.href}
+              data-contact-tracked=""
               onClick={() => track({ name: "contact_click", channel: link.channel, location })}
               className={cn(
                 "inline-flex items-center gap-2 transition-control",
@@ -52,7 +53,9 @@ export function ContactActions({
                   ? "h-11 rounded-xs border border-control bg-surface-2 px-3.5 type-button text-ink-1 hover:border-accent hover:bg-surface-3 active:translate-y-px"
                   : "min-h-11 type-body-s font-semibold text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent",
               )}
-              {...(link.channel === "whatsapp" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              {...(link.channel === "whatsapp"
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
             >
               <Icon size={20} aria-hidden="true" className="shrink-0 text-ink-2" />
               <span>

@@ -202,15 +202,27 @@ Lozinke se ne čuvaju u čitljivom obliku, veza sa sajtom je šifrovana, a prist
 | Naziv | Svrha | Trajanje |
 |---|---|---|
 | Kolačići prijave | Održavanje prijave na nalog | Do 30 dana |
+| sk_consent | Vaš izbor kolačića (šta ste dozvolili i kada) | 180 dana |
 | sk_cart (localStorage) | Korpa za kupovinu bez naloga | Dok ga ne obrišete |
 | sk.vehicle.v1 (localStorage) | Izabrano vozilo za filtriranje delova | Dok ga ne obrišete |
 | sk_attr_s | Izvor dolaska na sajt (oznake kampanje), vezan za porudžbinu ili upit | Do zatvaranja pregledača |
 
-## Analitika i oglašavanje (samo uz vaš pristanak)
-Alati za merenje posećenosti i oglašavanja (Google Analytics, Google Ads, Meta Pixel) uključuju se tek kada to odobrite u podešavanjima kolačića. Do tada se ne učitavaju.
+## Analitika (samo uz vaš pristanak)
+| Naziv | Ko ga postavlja | Svrha | Trajanje |
+|---|---|---|---|
+| _ga, _ga_* | Google Analytics 4 | Broj poseta i pretraga, bez imena i kontakata | Do 2 godine |
+| sk_attr | Mi | Izvor dolaska (kampanja) i posle zatvaranja pregledača | 90 dana |
+
+## Oglašavanje (samo uz vaš pristanak)
+| Naziv | Ko ga postavlja | Svrha | Trajanje |
+|---|---|---|---|
+| _gcl_au, _gcl_aw | Google Ads | Merenje da li je oglas doveo do porudžbine | 90 dana |
+| _fbp, _fbc | Meta (Facebook, Instagram) | Merenje oglasa i konverzija | 90 dana |
+
+Uz pristanak na oglašavanje, posle porudžbine ili upita Google i Meta dobijaju i šifrovani (heširani) zapis e-pošte i telefona radi merenja oglasa — nikad u čitljivom obliku. Bez pristanka se ne učitava nijedan Google ili Meta kod.
 
 ## Kako da upravljate kolačićima
-Izbor možete promeniti preko linka „Podešavanja kolačića“ u podnožju sajta, a kolačiće obrisati u podešavanjima pregledača.`,
+Izbor možete promeniti bilo kad preko linka „Podešavanja kolačića“ u podnožju sajta; kada povučete pristanak, brišemo kolačiće Google-a i Mete sa ovog sajta. Kolačiće možete obrisati i u podešavanjima pregledača.`,
   },
 ];
 

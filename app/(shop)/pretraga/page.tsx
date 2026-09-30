@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
-import {
-  ChatCircleTextIcon,
-  MagnifyingGlassIcon,
-  PhoneIcon,
-} from "@phosphor-icons/react/dist/ssr";
+import { ChatCircleTextIcon, MagnifyingGlassIcon, PhoneIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
 import { contactLinks } from "@/config/site";
 import { classifyQuery } from "@/lib/domain/search";
 import { formatNumber } from "@/lib/format/number";
 import { pluralSr } from "@/lib/format/plural";
-import { privateMetadata } from "@/lib/seo/metadata";
+import { buildMetadata, privateMetadata } from "@/lib/seo/metadata";
+import { isCuratedSearch, normalizeCuratedQuery } from "@/lib/seo/templates";
 import { contactFromSettings } from "@/lib/settings/public";
 import { fetchPublic } from "@/lib/server/convex";
 import { getSearchResults, getSettingsPublic } from "@/lib/server/catalog-cache";
@@ -25,9 +22,21 @@ import { TrackViewList } from "@/components/catalog/TrackViewList";
 import { SearchLogger } from "@/components/search/SearchLogger";
 import { ROUTES } from "@/constants/routes";
 
-export async function generateMetadata({ searchParams }: PageProps<"/pretraga">): Promise<Metadata> {
+export async function generateMetadata({
+  searchParams,
+}: PageProps<"/pretraga">): Promise<Metadata> {
   const raw = (await searchParams).q;
   const q = (Array.isArray(raw) ? raw[0] : (raw ?? "")).trim();
+  const settings = await getSettingsPublic();
+  // Search results are noindex, except the owner's curated queries (Podešavanja → SEO).
+  if (q && isCuratedSearch(q, settings.seo.curatedSearches)) {
+    return buildMetadata({
+      title: `${q} — delovi za VAG vozila`,
+      description: `Rezultati za „${q}“: delovi po OEM i zamenskom broju, sa cenama sa PDV-om i stanjem. Pouzeće ili preuzimanje u radnji.`,
+      path: ROUTES.searchFor(normalizeCuratedQuery(q)),
+      titleSuffix: settings.seo.titleSuffix,
+    });
+  }
   return privateMetadata(q ? `Pretraga: ${q}` : "Pretraga delova");
 }
 

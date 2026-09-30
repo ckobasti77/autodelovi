@@ -1,18 +1,16 @@
 import { notFound } from "next/navigation";
-import { CarIcon, ChatCircleTextIcon, ListMagnifyingGlassIcon } from "@phosphor-icons/react/dist/ssr";
+import type { ReactNode } from "react";
+import {
+  CarIcon,
+  ChatCircleTextIcon,
+  ListMagnifyingGlassIcon,
+} from "@phosphor-icons/react/dist/ssr";
 
 import type { Id } from "@/convex/_generated/dataModel";
-import {
-  catalogQuery,
-  type CatalogFilters,
-} from "@/lib/catalog/filters";
+import { catalogQuery, type CatalogFilters } from "@/lib/catalog/filters";
 import type { CategoryDetail, ProductCardData } from "@/lib/catalog/types";
-import { breadcrumbJsonLd, itemListJsonLd } from "@/lib/seo/jsonld";
-import {
-  getCategoryListing,
-  getManufacturers,
-  resolveVehicle,
-} from "@/lib/server/catalog-cache";
+import { breadcrumbJsonLd, itemListJsonLd, type JsonLd as JsonLdData } from "@/lib/seo/jsonld";
+import { getCategoryListing, getManufacturers, resolveVehicle } from "@/lib/server/catalog-cache";
 import { Breadcrumbs, type Crumb } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { EmptyState } from "@/components/ui/EmptyState";
@@ -58,7 +56,9 @@ export async function vehicleForFilters(filters: CatalogFilters) {
 /** Short vehicle name for sentences („Golf VII 2.0 TDI“ / „VW Golf“). */
 export function vehicleSentenceName(resolved: NonNullable<ResolvedVehicle>): string {
   const brand = resolved.brand.slug === "volkswagen" ? "VW" : resolved.brand.name;
-  const base = resolved.generation?.name ?? (resolved.model ? `${brand} ${resolved.model.name}` : resolved.brand.name);
+  const base =
+    resolved.generation?.name ??
+    (resolved.model ? `${brand} ${resolved.model.name}` : resolved.brand.name);
   return resolved.engine ? `${base} ${resolved.engine.name}` : base;
 }
 
@@ -123,6 +123,10 @@ export function CategoryListingView({
   title,
   crumbs,
   intro,
+  lead,
+  listName,
+  jsonLd = [],
+  children,
 }: {
   category: CategoryDetail;
   filters: CatalogFilters;
@@ -131,6 +135,14 @@ export function CategoryListingView({
   title: string;
   crumbs: Crumb[];
   intro: string | null;
+  /** Replaces the category intro under the H1 (landings: data-driven intro). */
+  lead?: ReactNode;
+  /** ItemList name in JSON-LD. */
+  listName?: string;
+  /** Extra JSON-LD nodes (e.g. the landing FAQ). */
+  jsonLd?: JsonLdData[];
+  /** Sections after the results (landing generations, FAQ, internal links). */
+  children?: ReactNode;
 }) {
   const { listing, facets, resolved, manufacturerNames } = data;
   const vehicleName = resolved ? vehicleSentenceName(resolved) : null;
@@ -156,7 +168,11 @@ export function CategoryListingView({
       <JsonLd
         data={[
           breadcrumbJsonLd(crumbs),
-          itemListJsonLd(listing.items.map((i) => ({ name: i.name, slug: i.slug }))),
+          itemListJsonLd(
+            listing.items.map((i) => ({ name: i.name, slug: i.slug })),
+            listName ?? title,
+          ),
+          ...jsonLd,
         ]}
       />
       <Breadcrumbs items={crumbs} />
@@ -165,12 +181,14 @@ export function CategoryListingView({
           <RevealText as="h1" className="type-display-l text-ink-1 uppercase">
             {title}
           </RevealText>
-          {introLead ? (
+          {lead ? (
+            lead
+          ) : introLead ? (
             <RevealText as="p" className="max-w-[72ch] type-lead text-ink-2">
               {introLead}
             </RevealText>
           ) : null}
-          {introRest ? (
+          {!lead && introRest ? (
             <details className="group max-w-[72ch]">
               <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1 type-body-s font-semibold text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent [&::-webkit-details-marker]:hidden">
                 <span className="group-open:hidden">Više o kategoriji</span>
@@ -222,7 +240,9 @@ export function CategoryListingView({
                 <EmptyState
                   icon={<ListMagnifyingGlassIcon size={44} />}
                   as="h2"
-                  title={vehicleName ? `Nema delova za ${vehicleName}` : "Nema artikala za ovaj izbor"}
+                  title={
+                    vehicleName ? `Nema delova za ${vehicleName}` : "Nema artikala za ovaj izbor"
+                  }
                   action={
                     <>
                       <Button asChild variant="primary" icon={<ChatCircleTextIcon size={20} />}>
@@ -232,7 +252,10 @@ export function CategoryListingView({
                       </Button>
                       {filters.vehicle ? (
                         <Button asChild variant="secondary" icon={<CarIcon size={20} />}>
-                          <Link href={`${basePath}${catalogQuery({ ...filters, vehicle: null, page: 1 })}`} variant="unstyled">
+                          <Link
+                            href={`${basePath}${catalogQuery({ ...filters, vehicle: null, page: 1 })}`}
+                            variant="unstyled"
+                          >
                             Prikaži za sva vozila
                           </Link>
                         </Button>
@@ -249,6 +272,8 @@ export function CategoryListingView({
           </div>
         </div>
       </CatalogShell>
+
+      {children}
 
       {category.related.length > 0 ? (
         <nav aria-labelledby="related-title" className="mt-16 border-t border-line pt-8">

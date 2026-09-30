@@ -20,6 +20,7 @@ import {
 import { ROUTES } from "@/constants/routes";
 import { TEST_IDS } from "@/constants/testIds";
 import { Wordmark } from "@/components/shell/BrandMark";
+import { ConsentSettingsButton } from "@/components/consent/ConsentSettingsButton";
 
 const CHANNEL = {
   phone: { label: "Telefon", Icon: PhoneIcon },
@@ -103,7 +104,10 @@ export function Footer({ contact, company }: FooterProps) {
   const makesList = `${makes.slice(0, -1).join(", ")} i ${makes[makes.length - 1]}`;
 
   return (
-    <footer data-testid={TEST_IDS.footer} className="cv-auto border-t border-line bg-bg-raised print:hidden [contain-intrinsic-size:auto_520px]">
+    <footer
+      data-testid={TEST_IDS.footer}
+      className="cv-auto border-t border-line bg-bg-raised print:hidden [contain-intrinsic-size:auto_520px]"
+    >
       <div className="grid gap-10 px-page py-14 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.3fr] lg:gap-8">
         <div className="flex flex-col gap-4">
           <Wordmark size="footer" />
@@ -194,6 +198,9 @@ export function Footer({ contact, company }: FooterProps) {
                   </NextLink>
                 </li>
               ))}
+              <li>
+                <ConsentSettingsButton className={`${linkClass} cursor-pointer`} />
+              </li>
             </ul>
           </nav>
         </div>

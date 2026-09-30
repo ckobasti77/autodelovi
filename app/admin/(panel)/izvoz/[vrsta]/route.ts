@@ -1,7 +1,8 @@
 /**
  * `GET /admin/izvoz/[vrsta]` — staff exports (docs/IMPORT.md §K5):
  * `proizvodi.xlsx` (template columns, imports back unchanged; `?demo=1` includes demo data),
- * `porudzbine.csv` (`?od=YYYY-MM-DD&do=YYYY-MM-DD`), `kupci.csv`, `majstori.csv`.
+ * `porudzbine.csv` (`?od=YYYY-MM-DD&do=YYYY-MM-DD`), `kupci.csv`, `majstori.csv`,
+ * `offline-konverzije.csv` (Google Ads upload template, `?dana=` ≤ 90).
  * CSV files are UTF-8 with a BOM and `;`, the way Serbian Excel opens them.
  */
 import { fetchQuery } from "convex/nextjs";
@@ -20,6 +21,7 @@ import {
   PAYMENT_STATUS_LABEL,
 } from "@/lib/i18n/sr/admin";
 import { DELIVERY_LABEL, PAYMENT_LABEL } from "@/lib/i18n/sr/shop";
+import { offlineConversionsCsv } from "@/lib/seo/offlineConversions";
 import { attachment, CSV_TYPE, plainResponse, tokenOrSignIn } from "@/lib/server/adminDownload";
 
 const PAGE = 200;
@@ -192,6 +194,20 @@ export async function GET(
         ]),
       ]);
       return attachment(csv, `kupci-${stamp}.csv`, CSV_TYPE);
+    }
+    if (vrsta === "offline-konverzije.csv") {
+      const days = Math.min(90, Math.max(1, Number(params.get("dana")) || 90));
+      const to = Date.now();
+      const data = await fetchQuery(
+        api.seoAdmin.offlineConversions,
+        { from: to - days * 86_400_000, to },
+        { token },
+      );
+      return attachment(
+        offlineConversionsCsv(data.gclid, data.conversionName),
+        `google-ads-offline-konverzije-${stamp}.csv`,
+        CSV_TYPE,
+      );
     }
     if (vrsta === "majstori.csv") {
       type Row = FunctionReturnType<typeof api.exportsAdmin.mechanicsPage>["page"][number];

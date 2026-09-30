@@ -41,6 +41,13 @@ export default async function OrderThanksPage({ params }: PageProps<"/porudzbina
           unitPricePara: i.unitPricePara,
           quantity: i.quantity,
         }))}
+        userData={{
+          email: order.contact.email,
+          phone: order.contact.phone,
+          firstName: order.contact.firstName,
+          lastName: order.contact.lastName,
+          city: order.delivery.address?.city ?? null,
+        }}
       />
       <div className="flex max-w-[48rem] flex-col gap-4">
         <CheckCircleIcon size={40} weight="fill" aria-hidden="true" className="text-success" />

@@ -16,8 +16,10 @@ import { internalMutation, type MutationCtx } from "./_generated/server";
 import { formatRsdPlain } from "../lib/domain/money";
 import { normalizeEmail, isValidEmail } from "../lib/domain/identifiers";
 import type { TemplateKey } from "../lib/email/registry";
+import { metaCapiToken } from "./lib/env";
 import { getSettings } from "./lib/settings";
 import type { Settings } from "./lib/settingsSchema";
+import { revalidateEnabled, revalidateTags } from "./revalidate";
 
 export const RETRY_DELAYS_MS = [60_000, 5 * 60_000, 30 * 60_000, 2 * 3_600_000, 12 * 3_600_000];
 export const MAX_ATTEMPTS = RETRY_DELAYS_MS.length;
@@ -456,9 +458,61 @@ async function customerEmails(
   }
 }
 
+/** Server twins of browser conversions (Meta CAPI, SEO-ADS §J7). */
+const CAPI_EVENT_TYPES: ReadonlySet<string> = new Set([
+  "order.created",
+  "inquiry.created",
+  "mechanic.registered",
+]);
+
+/** Queues one non-e-mail delivery (idempotent per event × channel × recipient). */
+async function queueDelivery(
+  ctx: MutationCtx,
+  eventId: Id<"domainEvents">,
+  channel: "meta_capi" | "revalidate",
+  recipient: string,
+): Promise<Id<"notificationDeliveries"> | null> {
+  const existing = await ctx.db
+    .query("notificationDeliveries")
+    .withIndex("by_eventId_and_channel_and_recipient", (q) =>
+      q.eq("eventId", eventId).eq("channel", channel).eq("recipient", recipient),
+    )
+    .unique();
+  if (existing) return null;
+  return await ctx.db.insert("notificationDeliveries", {
+    eventId,
+    channel,
+    recipient,
+    status: "pending",
+    attempts: 0,
+  });
+}
+
+/**
+ * Meta Conversions API: only when enabled in settings with a Pixel id and a token; the
+ * consent and demo checks happen in `capi.job` (the ledger row records why it was skipped).
+ */
+async function queueCapi(ctx: MutationCtx, event: Doc<"domainEvents">, settings: Settings) {
+  if (!CAPI_EVENT_TYPES.has(event.type)) return;
+  const t = settings.tracking;
+  if (!t.metaCapiEnabled || !t.metaPixelId?.trim() || !metaCapiToken()) return;
+  const deliveryId = await queueDelivery(ctx, event._id, "meta_capi", "meta");
+  if (deliveryId) await ctx.scheduler.runAfter(0, internal.capi.send, { deliveryId });
+}
+
+/** Next cache purge for catalog/settings/content changes (deployed sites only). */
+async function queueRevalidate(ctx: MutationCtx, event: Doc<"domainEvents">) {
+  if (!revalidateTags(event) || !revalidateEnabled()) return;
+  const deliveryId = await queueDelivery(ctx, event._id, "revalidate", "next");
+  if (deliveryId) await ctx.scheduler.runAfter(0, internal.revalidate.send, { deliveryId });
+}
+
 async function processEvent(ctx: MutationCtx, event: Doc<"domainEvents">): Promise<void> {
   const flags = await aggregateFlags(ctx, event);
   const settings = await getSettings(ctx);
+
+  await queueCapi(ctx, event, settings);
+  await queueRevalidate(ctx, event);
 
   // In-app: staff (with preferences) and the mechanic whose profile changed.
   const staff = staffMessage(event);

@@ -1,7 +1,10 @@
 /**
  * One analytics entry point (ARCHITECTURE §G9, SEO-ADS §J7). Every component calls `track()`;
- * adapters (gtag, Meta Pixel) plug in at step 19 behind consent. Until then the only sink is
- * an in-memory log on `window.__skTrack` that e2e tests read — nothing leaves the browser.
+ * the consent manager registers the gtag / Meta Pixel adapters only after the visitor granted
+ * the matching cookies (`components/consent/AnalyticsManager.tsx`). Every event is also kept
+ * in an in-memory log on `window.__skTrack` (e2e tests read it); an adapter registered later
+ * receives the events of the current page it has not seen yet, so a conversion that happened
+ * before the consent click still counts once.
  */
 
 export type AnalyticsItem = {
@@ -29,12 +32,15 @@ export type TrackEvent =
       shippingPara: number;
       taxPara: number;
       items: AnalyticsItem[];
+      /** Pre-hashed Enhanced Conversions data (`googleUserData`); sent only with ads consent. */
+      userData?: Record<string, unknown>;
     }
   | {
       name: "generate_lead";
       leadType: "inquiry" | "mechanic_registration" | "quote_accept";
       leadId: string;
       valuePara?: number;
+      userData?: Record<string, unknown>;
     }
   | { name: "contact_click"; channel: ContactChannel; location: string };
 
@@ -42,7 +48,15 @@ export type TrackOptions = { eventId?: string };
 
 export type AnalyticsAdapter = (event: TrackEvent, opts: TrackOptions) => void;
 
-type TrackLogEntry = { event: TrackEvent; eventId?: string; at: number };
+type TrackLogEntry = {
+  event: TrackEvent;
+  eventId?: string;
+  at: number;
+  /** Page the event happened on (replay is limited to the current page). */
+  path: string;
+  /** Adapters that already received it. */
+  delivered: string[];
+};
 
 declare global {
   interface Window {
@@ -50,30 +64,49 @@ declare global {
   }
 }
 
-const adapters: AnalyticsAdapter[] = [];
+const adapters = new Map<string, AnalyticsAdapter>();
 const LOG_MAX = 100;
 
-/** Step 19 registers gtag / fbq adapters here (after consent). */
-export function registerAnalyticsAdapter(adapter: AnalyticsAdapter): () => void {
-  adapters.push(adapter);
+function deliver(name: string, adapter: AnalyticsAdapter, entry: TrackLogEntry): void {
+  if (entry.delivered.includes(name)) return;
+  entry.delivered.push(name);
+  try {
+    adapter(entry.event, entry.eventId ? { eventId: entry.eventId } : {});
+  } catch {
+    // An analytics failure must never break the shop.
+  }
+}
+
+/**
+ * Registers a named adapter (consent manager). Events of the current page that this adapter
+ * has not received yet are replayed once, in order.
+ */
+export function registerAnalyticsAdapter(name: string, adapter: AnalyticsAdapter): () => void {
+  adapters.set(name, adapter);
+  if (typeof window !== "undefined") {
+    const path = window.location.pathname;
+    for (const entry of window.__skTrack ?? []) {
+      if (entry.path === path) deliver(name, adapter, entry);
+    }
+  }
   return () => {
-    const i = adapters.indexOf(adapter);
-    if (i >= 0) adapters.splice(i, 1);
+    if (adapters.get(name) === adapter) adapters.delete(name);
   };
 }
 
 export function track(event: TrackEvent, opts: TrackOptions = {}): void {
   if (typeof window === "undefined") return;
   const log = (window.__skTrack ??= []);
-  log.push({ event, ...(opts.eventId ? { eventId: opts.eventId } : {}), at: Date.now() });
+  const entry: TrackLogEntry = {
+    event,
+    ...(opts.eventId ? { eventId: opts.eventId } : {}),
+    at: Date.now(),
+    path: window.location.pathname,
+    delivered: [],
+  };
+  log.push(entry);
   if (log.length > LOG_MAX) log.splice(0, log.length - LOG_MAX);
-  for (const adapter of adapters) {
-    try {
-      adapter(event, opts);
-    } catch {
-      // An analytics failure must never break the shop.
-    }
-  }
+  for (const [name, adapter] of adapters) deliver(name, adapter, entry);
 }
 
 /** Card/product projection → analytics item. */
