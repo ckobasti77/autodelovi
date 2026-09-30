@@ -11,7 +11,7 @@ pipeline/BRIEF.md §9 (quality bars) · docs/ROADMAP.md (acceptance criteria) ·
 - **Performance:** the shared site shell ships about 303 KB gzip of first-load JS. Lighthouse default simulated throttling reports mobile LCP of about 4.2 s on home (D112 chose applied throttling). Measure both methods, and treat shell JS weight, font preloads and globally registered GSAP plugins as performance findings. Category TBT on phones is about 397 ms.
 - Search is not narrowed by the selected vehicle. The mobile filter row is not sticky, and the mobile sticky contact bar is not built.
 - Mechanics quick order at 1440: the results list clips the last visible row behind the summary bar. Check that it reads as intentional scrolling and that every row is reachable.
-- **Full e2e suite:** the whole Playwright suite has not had a complete clean run since step 14. The runs at the end of steps 15 and 16 were killed, and step 17 ran only the admin and import specs. Run the full suite on a production build during setup and record every failure as a finding.
+- **Full e2e suite:** step 19 ran the full Playwright suite on a production build (85 passed, 23 skipped as desktop-only on the mobile project), but step 20 changed security headers and the CSP after that. Run the full suite again during setup and record every failure as a finding. Phone TBT on home, category and product was about 355 ms against the 300 ms budget in step 19.
 - **Screenshot gotcha, not a defect:** below-the-fold home sections use `content-visibility: auto` (D121). Scroll the page through before taking full-page screenshots, otherwise those sections render blank.
 
 ## Skills reviewers must use (invoke by name)
