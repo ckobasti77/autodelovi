@@ -1,0 +1,1074 @@
+{
+ "base": "http://localhost:3200",
+ "rm": "reduce",
+ "cpu": 4,
+ "viewport": "412x823",
+ "runs": [
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "round": 1,
+   "longTasks": [
+    {
+     "start": 89,
+     "ms": 178,
+     "styleMs": 33,
+     "layoutMs": 129,
+     "top": [
+      "Layout 129",
+      "UpdateLayoutTree 33",
+      "Paint 9",
+      "PrePaint 3"
+     ]
+    },
+    {
+     "start": 276,
+     "ms": 55,
+     "styleMs": 6,
+     "layoutMs": 37,
+     "top": [
+      "Layout 37",
+      "ParseHTML 10",
+      "UpdateLayoutTree 6",
+      "EvaluateScript /delovi/kocioni-diskovi 2"
+     ]
+    },
+    {
+     "start": 378,
+     "ms": 150,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "EvaluateScript 0qy3sss5e6eww.js 149",
+      "RunMicrotasks 149",
+      "v8.compile 0qy3sss5e6eww.js 0",
+      "EventDispatch:load 0"
+     ]
+    },
+    {
+     "start": 607,
+     "ms": 84,
+     "styleMs": 1,
+     "layoutMs": 1,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 84",
+      "UpdateLayoutTree 1",
+      "Layout 1",
+      "Layout 0"
+     ]
+    },
+    {
+     "start": 933,
+     "ms": 80,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 79",
+      "RunMicrotasks 1",
+      "FunctionCall 0qy3sss5e6eww.js 0",
+      "FunctionCall 0qy3sss5e6eww.js 0"
+     ]
+    }
+   ],
+   "perScript": {
+    "/delovi/kocioni-diskovi": {
+     "evaluate": 4,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2h84ksv1mg5s9.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "3fntmmi971322.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "11we8zj_qz5aa.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "25dplrt_qw3he.js": {
+     "evaluate": 0,
+     "functionCall": 10,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "turbopack-324-cyruufpbq.js": {
+     "evaluate": 6,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "14y-81z8a-w-u.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0qimmyhv2_bjj.js": {
+     "evaluate": 0,
+     "functionCall": 26,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2vm060vmiv-df.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "41cvzcmlkfz4o.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0qy3sss5e6eww.js": {
+     "evaluate": 149,
+     "functionCall": 461,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0rklqt_vfe3_n.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2f8qbt33jjpy3.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1kcz530oz9u-o.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "29atrq35xgs9f.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2g3bv_p29okud.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "120epkn8j_rkq.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2jrozipxybei4.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1t0q0ok8maumv.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1cggx7i-lhdg7.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "3k__gv_edg8eb.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1adhcvv0smcza.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1tr6a7zmh41cy.js": {
+     "evaluate": 19,
+     "functionCall": 75,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0sgvhbpe5nb6s.js": {
+     "evaluate": 1,
+     "functionCall": 3,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "38o51x0kbbpcz.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1hvkbf0l88mq3.js": {
+     "evaluate": 2,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    }
+   },
+   "rafCount": 339,
+   "rafMs": 127,
+   "loadDispatch": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "styleTotal": 41,
+   "layoutTotal": 168,
+   "tbtLikeAllTasks": 297
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "round": 2,
+   "longTasks": [
+    {
+     "start": 91,
+     "ms": 185,
+     "styleMs": 31,
+     "layoutMs": 132,
+     "top": [
+      "Layout 132",
+      "UpdateLayoutTree 31",
+      "Paint 17",
+      "PrePaint 2"
+     ]
+    },
+    {
+     "start": 298,
+     "ms": 129,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "EvaluateScript 41cvzcmlkfz4o.js 128",
+      "RunMicrotasks 128",
+      "EventDispatch:load 0",
+      "v8.compile 41cvzcmlkfz4o.js 0"
+     ]
+    },
+    {
+     "start": 523,
+     "ms": 72,
+     "styleMs": 1,
+     "layoutMs": 0,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 71",
+      "UpdateLayoutTree 0",
+      "Layout 0",
+      "Layout 0"
+     ]
+    },
+    {
+     "start": 793,
+     "ms": 61,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 60",
+      "RunMicrotasks 1",
+      "FunctionCall 0qy3sss5e6eww.js 0",
+      "FunctionCall 0qy3sss5e6eww.js 0"
+     ]
+    }
+   ],
+   "perScript": {
+    "/delovi/kocioni-diskovi": {
+     "evaluate": 3,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2h84ksv1mg5s9.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "turbopack-324-cyruufpbq.js": {
+     "evaluate": 4,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0qimmyhv2_bjj.js": {
+     "evaluate": 1,
+     "functionCall": 19,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "3fntmmi971322.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "11we8zj_qz5aa.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "25dplrt_qw3he.js": {
+     "evaluate": 0,
+     "functionCall": 8,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2vm060vmiv-df.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0qy3sss5e6eww.js": {
+     "evaluate": 1,
+     "functionCall": 375,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "14y-81z8a-w-u.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0rklqt_vfe3_n.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "41cvzcmlkfz4o.js": {
+     "evaluate": 128,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2jrozipxybei4.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1kcz530oz9u-o.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2f8qbt33jjpy3.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "29atrq35xgs9f.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "120epkn8j_rkq.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2g3bv_p29okud.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1tr6a7zmh41cy.js": {
+     "evaluate": 16,
+     "functionCall": 121,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1t0q0ok8maumv.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0sgvhbpe5nb6s.js": {
+     "evaluate": 1,
+     "functionCall": 3,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "3k__gv_edg8eb.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1cggx7i-lhdg7.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1adhcvv0smcza.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "38o51x0kbbpcz.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1hvkbf0l88mq3.js": {
+     "evaluate": 2,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    }
+   },
+   "rafCount": 464,
+   "rafMs": 182,
+   "loadDispatch": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "styleTotal": 34,
+   "layoutTotal": 150,
+   "tbtLikeAllTasks": 247
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "round": 1,
+   "longTasks": [
+    {
+     "start": 92,
+     "ms": 225,
+     "styleMs": 24,
+     "layoutMs": 164,
+     "top": [
+      "Layout 108",
+      "Layout 57",
+      "Paint 29",
+      "UpdateLayoutTree 17"
+     ]
+    },
+    {
+     "start": 376,
+     "ms": 143,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "EvaluateScript 0qy3sss5e6eww.js 143",
+      "RunMicrotasks 142",
+      "v8.compile 0qy3sss5e6eww.js 0",
+      "EventDispatch:load 0"
+     ]
+    },
+    {
+     "start": 595,
+     "ms": 78,
+     "styleMs": 0,
+     "layoutMs": 1,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 77",
+      "Layout 0",
+      "UpdateLayoutTree 0",
+      "Layout 0"
+     ]
+    },
+    {
+     "start": 753,
+     "ms": 51,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 50",
+      "RunMicrotasks 0",
+      "FunctionCall 0qy3sss5e6eww.js 0"
+     ]
+    },
+    {
+     "start": 853,
+     "ms": 63,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 62",
+      "RunMicrotasks 1",
+      "FunctionCall 0qy3sss5e6eww.js 0",
+      "FunctionCall 0qy3sss5e6eww.js 0"
+     ]
+    }
+   ],
+   "perScript": {
+    "/deo/kocioni-disk-prednji-276-24-mm-demo-0004": {
+     "evaluate": 4,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2h84ksv1mg5s9.js": {
+     "evaluate": 2,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "turbopack-324-cyruufpbq.js": {
+     "evaluate": 4,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "11we8zj_qz5aa.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "3fntmmi971322.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "25dplrt_qw3he.js": {
+     "evaluate": 0,
+     "functionCall": 10,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "14y-81z8a-w-u.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0qimmyhv2_bjj.js": {
+     "evaluate": 0,
+     "functionCall": 16,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2vm060vmiv-df.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2f8qbt33jjpy3.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1kcz530oz9u-o.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "41cvzcmlkfz4o.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0rklqt_vfe3_n.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2jrozipxybei4.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0qy3sss5e6eww.js": {
+     "evaluate": 143,
+     "functionCall": 378,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2g3bv_p29okud.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1tr6a7zmh41cy.js": {
+     "evaluate": 17,
+     "functionCall": 104,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "120epkn8j_rkq.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "29atrq35xgs9f.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1t0q0ok8maumv.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1tkvz3oryrb1b.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0sgvhbpe5nb6s.js": {
+     "evaluate": 1,
+     "functionCall": 3,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0iy1468xjorsv.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "3k__gv_edg8eb.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1adhcvv0smcza.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1hvkbf0l88mq3.js": {
+     "evaluate": 2,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    }
+   },
+   "rafCount": 340,
+   "rafMs": 161,
+   "loadDispatch": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "styleTotal": 29,
+   "layoutTotal": 184,
+   "tbtLikeAllTasks": 310
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "round": 2,
+   "longTasks": [
+    {
+     "start": 92,
+     "ms": 198,
+     "styleMs": 27,
+     "layoutMs": 148,
+     "top": [
+      "Layout 124",
+      "Layout 24",
+      "UpdateLayoutTree 22",
+      "Paint 15"
+     ]
+    },
+    {
+     "start": 328,
+     "ms": 108,
+     "styleMs": 11,
+     "layoutMs": 65,
+     "top": [
+      "Layout 65",
+      "Paint 25",
+      "UpdateLayoutTree 11",
+      "PrePaint 4"
+     ]
+    },
+    {
+     "start": 444,
+     "ms": 185,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "EvaluateScript 0qy3sss5e6eww.js 185",
+      "RunMicrotasks 184",
+      "v8.compile 0qy3sss5e6eww.js 0",
+      "EventDispatch:load 0"
+     ]
+    },
+    {
+     "start": 711,
+     "ms": 73,
+     "styleMs": 1,
+     "layoutMs": 1,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 73",
+      "UpdateLayoutTree 1",
+      "Layout 0",
+      "Layout 0"
+     ]
+    },
+    {
+     "start": 969,
+     "ms": 57,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 57",
+      "RunMicrotasks 0",
+      "FunctionCall 0qy3sss5e6eww.js 0",
+      "FunctionCall 0qy3sss5e6eww.js 0"
+     ]
+    }
+   ],
+   "perScript": {
+    "/deo/kocioni-disk-prednji-276-24-mm-demo-0004": {
+     "evaluate": 5,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2h84ksv1mg5s9.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "turbopack-324-cyruufpbq.js": {
+     "evaluate": 4,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "3fntmmi971322.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "25dplrt_qw3he.js": {
+     "evaluate": 0,
+     "functionCall": 10,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "11we8zj_qz5aa.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0qimmyhv2_bjj.js": {
+     "evaluate": 0,
+     "functionCall": 16,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2vm060vmiv-df.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "14y-81z8a-w-u.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "41cvzcmlkfz4o.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0rklqt_vfe3_n.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1kcz530oz9u-o.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2f8qbt33jjpy3.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0qy3sss5e6eww.js": {
+     "evaluate": 185,
+     "functionCall": 367,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2jrozipxybei4.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1tr6a7zmh41cy.js": {
+     "evaluate": 21,
+     "functionCall": 110,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2g3bv_p29okud.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "29atrq35xgs9f.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "120epkn8j_rkq.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1tkvz3oryrb1b.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1t0q0ok8maumv.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "3k__gv_edg8eb.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0sgvhbpe5nb6s.js": {
+     "evaluate": 0,
+     "functionCall": 2,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1adhcvv0smcza.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0iy1468xjorsv.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1hvkbf0l88mq3.js": {
+     "evaluate": 2,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    }
+   },
+   "rafCount": 344,
+   "rafMs": 163,
+   "loadDispatch": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    3,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "styleTotal": 43,
+   "layoutTotal": 214,
+   "tbtLikeAllTasks": 371
+  }
+ ]
+}

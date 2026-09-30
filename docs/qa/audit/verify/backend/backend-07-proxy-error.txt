@@ -1,0 +1,2 @@
+{"error":"[Request ID: 03d6effcfafc9534] Server Error\nUncaught ConvexError: {\"code\":\"WEAK_PASSWORD\",\"message\":\"Lozinka mora imati najmanje 10 znakova.\"}\n"}
+HTTP 400

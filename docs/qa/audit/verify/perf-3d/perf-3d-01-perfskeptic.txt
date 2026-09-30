@@ -1,0 +1,83 @@
+# perf-3d-01 skeptic — start long tasks per run (one browser per series: run 0 = cold GPU program cache, runs 1-2 = warm)
+# order of tasks = chronological; position ~3 at 4x = canvas chunk evaluation (turbopack H), the big run-0 task = PMREM GGX compile
+
+## finder desktop 1x  (docs/qa/audit/perf-3d/frames-desktop-cpu1-gpu.json)
+run 0 [COLD] intent→firstDraw 432 ms · intent→ready 1443 ms · tasks 374,251 · worst 374 · tbt 525
+run 1 [warm] intent→firstDraw 436 ms · intent→ready 783 ms · tasks 58 · worst 58 · tbt 8
+run 2 [warm] intent→firstDraw 426 ms · intent→ready 709 ms · tasks  · worst 0 · tbt 0
+
+## finder desktop 4x  (docs/qa/audit/perf-3d/frames-desktop-cpu4-gpu.json)
+run 0 [COLD] intent→firstDraw 862 ms · intent→ready 2853 ms · tasks 54,71,265,137,556,116,196,51,63,60,50,94 · worst 556 · tbt 1113
+run 1 [warm] intent→firstDraw 931 ms · intent→ready 2158 ms · tasks 52,71,291,153,175,92,111,59 · worst 291 · tbt 604
+run 2 [warm] intent→firstDraw 822 ms · intent→ready 2421 ms · tasks 54,255,137,157,434,64,50 · worst 434 · tbt 801
+
+## finder mobile 4x  (docs/qa/audit/perf-3d/frames-mobile-cpu4-gpu.json)
+run 0 [COLD] intent→firstDraw 1076 ms · intent→ready 2707 ms · tasks 64,68,345,168,55,765,173,347,60,58,50 · worst 765 · tbt 1603
+run 1 [warm] intent→firstDraw 963 ms · intent→ready 1492 ms · tasks 55,78,294,127,51,149,89,84 · worst 294 · tbt 527
+run 2 [warm] intent→firstDraw 1005 ms · intent→ready 1643 ms · tasks 58,74,313,154,200,94,89 · worst 313 · tbt 632
+
+## finder mobile 6x  (docs/qa/audit/perf-3d/frames-mobile-cpu6-gpu.json)
+run 0 [COLD] intent→firstDraw 1627 ms · intent→ready 3758 ms · tasks 99,118,489,288,83,897,63,288,368,78,71,51 · worst 897 · tbt 2293
+run 1 [warm] intent→firstDraw 1418 ms · intent→ready 2544 ms · tasks 85,93,435,227,86,272,163,226,77,103 · worst 435 · tbt 1267
+run 2 [warm] intent→firstDraw 1789 ms · intent→ready 3623 ms · tasks 79,94,616,342,92,386,142,50,322,335,91,55,64 · worst 616 · tbt 2018
+
+## verifier desktop 4x  (docs/qa/audit/verify/perf-lh/3d/frames-verify-desktop-cpu4-gpu.json)
+run 0 [COLD] intent→firstDraw 712 ms · intent→ready 2192 ms · tasks 52,210,97,472,118,169,50 · worst 472 · tbt 818
+run 1 [warm] intent→firstDraw 661 ms · intent→ready 1641 ms · tasks 199,99,129,73,74 · worst 199 · tbt 324
+run 2 [warm] intent→firstDraw 747 ms · intent→ready 1854 ms · tasks 58,228,122,144,86,87 · worst 228 · tbt 425
+
+## verifier mobile 4x  (docs/qa/audit/verify/perf-lh/3d/frames-verify-mobile-cpu4-gpu.json)
+run 0 [COLD] intent→firstDraw 775 ms · intent→ready 1804 ms · tasks 60,220,122,520,109,205 · worst 520 · tbt 936
+run 1 [warm] intent→firstDraw 758 ms · intent→ready 1475 ms · tasks 54,219,113,127,389 · worst 389 · tbt 652
+run 2 [warm] intent→firstDraw 749 ms · intent→ready 1184 ms · tasks 64,230,109,135,67,76 · worst 230 · tbt 381
+
+## finder mobile 4x, first scroll = intent (main-thread rAF gaps, not compositor scroll)
+run 0 [COLD] worst rAF gap 683 ms · worst long task while scrolling 627 ms · long tasks 25 · >33 ms 11.4 %
+run 1 [warm] worst rAF gap 333 ms · worst long task while scrolling 260 ms · long tasks 10 · >33 ms 4.2 %
+run 2 [warm] worst rAF gap 300 ms · worst long task while scrolling 243 ms · long tasks 12 · >33 ms 4.6 %
+
+## CPU profiles: getProgramParameter self time inside fromEquirectangular (PMREM) and inside the first frame (compileAsync/render)
+finder desktop 1x (3 separate launches) run 0 cpu1: stretch +480 ms 378 ms · PMREM · 336 ms getProgramParameter
+finder desktop 1x (3 separate launches) run 0 cpu1: stretch +870 ms 206 ms · first frame/compile · 138 ms getProgramParameter
+finder desktop 1x (3 separate launches) run 0 cpu1: stretch +1080 ms 60 ms · chunk eval · - · 3 ms H turbopack-324-cyruufpbq.js:1:7181
+finder desktop 1x (3 separate launches) run 0 cpu1: stretch +107 ms 35 ms · chunk eval · - · 20 ms H turbopack-324-cyruufpbq.js:1:7181
+finder desktop 4x run 0 cpu4: stretch +2005 ms 1223 ms · PMREM · 884 ms getProgramParameter
+finder desktop 4x run 0 cpu4: stretch +3454 ms 912 ms · first frame/compile · 162 ms getProgramParameter
+finder desktop 4x run 0 cpu4: stretch +1108 ms 375 ms · chunk eval · - · 277 ms H turbopack-324-cyruufpbq.js:1:7181
+finder desktop 4x run 0 cpu4: stretch +5602 ms 275 ms · render · 48 ms getProgramParameter
+finder desktop 4x run 1 cpu4: stretch +2207 ms 263 ms · chunk eval · - · 29 ms H turbopack-324-cyruufpbq.js:1:7181
+finder mobile 4x run 0 cpu4: stretch +1876 ms 1122 ms · PMREM · 725 ms getProgramParameter
+finder mobile 4x run 0 cpu4: stretch +3188 ms 618 ms · first frame/compile · 191 ms getProgramParameter
+finder mobile 4x run 0 cpu4: stretch +1217 ms 189 ms · chunk eval · - · 129 ms H turbopack-324-cyruufpbq.js:1:7181
+verifier desktop 1x run 0 cpu1: stretch +484 ms 390 ms · PMREM · 350 ms getProgramParameter
+verifier desktop 1x run 0 cpu1: stretch +876 ms 242 ms · first frame/compile · 148 ms getProgramParameter
+verifier desktop 1x run 0 cpu1: stretch +110 ms 30 ms · chunk eval · - · 22 ms H turbopack-324-cyruufpbq.js:1:7181
+verifier desktop 1x run 1 cpu1: stretch +91 ms 26 ms · chunk eval · - · 18 ms H turbopack-324-cyruufpbq.js:1:7181
+verifier desktop 4x run 0 cpu4: stretch +1003 ms 558 ms · PMREM · 367 ms getProgramParameter
+verifier desktop 4x run 0 cpu4: stretch +1632 ms 357 ms · first frame/compile · 45 ms getProgramParameter
+verifier desktop 4x run 0 cpu4: stretch +566 ms 178 ms · chunk eval · - · 127 ms H turbopack-324-cyruufpbq.js:1:7181
+
+## Skeptic analysis (no new measurements; data above re-read from the finder's and the perf verifier's JSON)
+- Method: perf-3d-frames.mjs (line 32-36) and perf-3d-profile.mjs (line 26-30) launch ONE Chromium and open a new context per run,
+  so only run 0 of each series is a first visit (cold GPU program cache). Runs 1-2 are warm.
+- Desktop 1x: cold run 0 = 374 + 251 ms long tasks (TBT 525); warm runs 1-2 = 58 ms / none (TBT 8 / 0).
+  => at 1x the whole start cost is first-use shader compilation; the canvas chunk evaluates in ~20 ms.
+- PMREM GGX compile, cold, 1x: 336 / 344 / 457 ms (finder, 3 launches) and 350 ms (verifier) getProgramParameter self inside
+  PMREMGenerator.fromEquirectangular -> _applyGGXFilter (three 0.186.1, GGX_SAMPLES = 256 constant loop). First frame after
+  compileAsync: 138-191 ms getProgramParameter (programs not covered by compileAsync / linked at draw on ANGLE D3D11).
+- Code: components/three/canvas/loadCar.ts:96-105 calls pmrem.fromEquirectangular(hdr) synchronously; nothing precompiles the
+  PMREM materials through KHR_parallel_shader_compile. HeroCanvas.tsx:126 compileAsync covers only the scene materials.
+- The 4x/6x "worst" ranges (291-616 ms in warm runs) are dominated by the canvas chunk evaluation (position ~3, 255-489 ms at
+  4x/6x; 'H turbopack' self 127-277 ms) = the lazy 3D chunk inside the 3D-CONTRACT F7.3 budget (282 KB of 350 KB gzip).
+  That is a separate, accepted cost, not this root cause.
+- Mobile rows are a desktop RTX 4060 on ANGLE D3D11 (HLSL compile in the GPU process) with CDP CPU throttling of the renderer;
+  no phone GPU backend (Android ANGLE-Vulkan/GLES, iOS Metal) was measured, so the phone magnitude is unverified.
+- "Frame of 683 ms mid-scroll": rAF gap = main thread. The track is CSS sticky (3D-CONTRACT F9 / D104), intent listeners are
+  passive (HeroStage.tsx:192-195), canvas has touch-action: pan-y -> the page keeps scrolling on the compositor; the scrubbed
+  explode/poster, text reveal and taps stall. Cold run only (683); warm runs 333/300.
+- Standards: BRIEF §9 TBT is the Lighthouse lab bar (D112 method); Lighthouse mobile never starts the 3D (touch devices have no
+  idle start, HeroStage.tsx:196-202) and the desktop preset TBT is 0 -> no §9 bar missed. BRIEF §4 "never block the page" is
+  spelled out as poster first / 3D after first paint, which holds. WEB-QA §4 "tasks <= 175 ms" was measured with SwiftShader,
+  not a hardware GPU -> the doc claim does not hold for Windows Chrome/Edge (ANGLE D3D11) first visits and must be corrected.
+- Not a localhost artefact: shader compile does not depend on the network; on a real network the same tasks run, only later.
+Verdict: partially confirmed, P2 (one-time per cold GPU cache, Windows D3D11 verified, mobile unverified, no flow blocked).

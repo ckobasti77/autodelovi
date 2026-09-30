@@ -1,0 +1,44 @@
+200 /admin
+200 /admin/porudzbine
+200 /admin/upiti
+200 /admin/proizvodi
+200 /admin/proizvodi/novi
+200 /admin/kategorije
+200 /admin/vozila
+200 /admin/proizvodjaci
+200 /admin/lager
+200 /admin/kupci
+200 /admin/majstori
+200 /admin/cenovni-razredi
+200 /admin/uvoz
+200 /admin/uvoz/istorija
+200 /admin/uvoz/n571yqf64h6nfr4j3894281q6n8fdmmv
+200 /admin/izvoz
+ERR /admin/pretrage TimeoutError: page.goto: Timeout 60000ms exceeded.
+Call log:
+  - navigating to "http://localhost:3100/admin/pretrage", waiting until "networkidle"
+
+200 /admin/izvori
+200 /admin/mejlovi
+200 /admin/mejlovi/sabloni
+200 /admin/obavestenja
+200 /admin/korisnici
+200 /admin/revizija
+200 /admin/privatnost
+200 /admin/podesavanja?tab=firma
+200 /admin/podesavanja?tab=radno-vreme
+200 /admin/podesavanja?tab=prodaja
+200 /admin/podesavanja?tab=obavestenja
+200 /admin/podesavanja?tab=seo
+200 /admin/podesavanja?tab=pracenje
+200 /admin/podesavanja?tab=pravni-tekstovi
+200 /admin/podesavanja?tab=funkcije
+200 /admin/podesavanja?tab=oglasne-strane
+200 /admin/podesavanja?tab=opasna-zona
+200 /admin/porudzbine/SK-2026-000092
+200 /admin/porudzbine/SK-2026-000092/predracun
+200 /admin/porudzbine/SK-2026-000092/otpremnica
+200 /admin/upiti/UP-2026-000054
+200 /admin/upiti/UP-2026-000003
+templates 0
+pages 38 console errors 0

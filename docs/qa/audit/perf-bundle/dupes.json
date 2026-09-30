@@ -1,0 +1,2468 @@
+{
+  "perTemplate": {
+    "home": {
+      "dupes": 14,
+      "extraRaw": 26329,
+      "extraGz": 12331,
+      "list": [
+        {
+          "key": "44004",
+          "names": "ADMIN",
+          "raw": 3945,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "22016",
+          "names": "",
+          "raw": 3392,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "76525",
+          "names": "Button,primary,md",
+          "raw": 2659,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18967",
+          "names": "",
+          "raw": 2386,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "62730",
+          "names": "ArrowCounterClockwiseIcon",
+          "raw": 2111,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "79175",
+          "names": "contactLinks,phone,viber",
+          "raw": 2090,
+          "copies": 3,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "42958",
+          "names": "formatPhone",
+          "raw": 1523,
+          "copies": 3,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "44001",
+          "names": "ErrorState,section,div",
+          "raw": 1372,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "95057",
+          "names": "",
+          "raw": 1053,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "98183",
+          "names": "",
+          "raw": 769,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18581",
+          "names": "",
+          "raw": 759,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "73668",
+          "names": "",
+          "raw": 353,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "5698",
+          "names": "RouteLink,string",
+          "raw": 247,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "63552",
+          "names": "MAIN_ID,sadrzaj",
+          "raw": 57,
+          "copies": 2,
+          "chunks": [
+            "0sgvhbpe5nb6s.js",
+            "1adhcvv0smcza.js"
+          ]
+        }
+      ]
+    },
+    "delovi": {
+      "dupes": 14,
+      "extraRaw": 26329,
+      "extraGz": 12331,
+      "list": [
+        {
+          "key": "44004",
+          "names": "ADMIN",
+          "raw": 3945,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "22016",
+          "names": "",
+          "raw": 3392,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "76525",
+          "names": "Button,primary,md",
+          "raw": 2659,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18967",
+          "names": "",
+          "raw": 2386,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "62730",
+          "names": "ArrowCounterClockwiseIcon",
+          "raw": 2111,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "79175",
+          "names": "contactLinks,phone,viber",
+          "raw": 2090,
+          "copies": 3,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "42958",
+          "names": "formatPhone",
+          "raw": 1523,
+          "copies": 3,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "44001",
+          "names": "ErrorState,section,div",
+          "raw": 1372,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "95057",
+          "names": "",
+          "raw": 1053,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "98183",
+          "names": "",
+          "raw": 769,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18581",
+          "names": "",
+          "raw": 759,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "73668",
+          "names": "",
+          "raw": 353,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "5698",
+          "names": "RouteLink,string",
+          "raw": 247,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "63552",
+          "names": "MAIN_ID,sadrzaj",
+          "raw": 57,
+          "copies": 2,
+          "chunks": [
+            "0sgvhbpe5nb6s.js",
+            "1adhcvv0smcza.js"
+          ]
+        }
+      ]
+    },
+    "category": {
+      "dupes": 14,
+      "extraRaw": 27852,
+      "extraGz": 13124,
+      "list": [
+        {
+          "key": "44004",
+          "names": "ADMIN",
+          "raw": 3945,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "22016",
+          "names": "",
+          "raw": 3392,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "76525",
+          "names": "Button,primary,md",
+          "raw": 2659,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18967",
+          "names": "",
+          "raw": 2386,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "62730",
+          "names": "ArrowCounterClockwiseIcon",
+          "raw": 2111,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "79175",
+          "names": "contactLinks,phone,viber",
+          "raw": 2090,
+          "copies": 3,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "42958",
+          "names": "formatPhone",
+          "raw": 1523,
+          "copies": 4,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "1cggx7i-lhdg7.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "44001",
+          "names": "ErrorState,section,div",
+          "raw": 1372,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "95057",
+          "names": "",
+          "raw": 1053,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "98183",
+          "names": "",
+          "raw": 769,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18581",
+          "names": "",
+          "raw": 759,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "73668",
+          "names": "",
+          "raw": 353,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "5698",
+          "names": "RouteLink,string",
+          "raw": 247,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "63552",
+          "names": "MAIN_ID,sadrzaj",
+          "raw": 57,
+          "copies": 2,
+          "chunks": [
+            "0sgvhbpe5nb6s.js",
+            "1adhcvv0smcza.js"
+          ]
+        }
+      ]
+    },
+    "product": {
+      "dupes": 14,
+      "extraRaw": 27852,
+      "extraGz": 13124,
+      "list": [
+        {
+          "key": "44004",
+          "names": "ADMIN",
+          "raw": 3945,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "22016",
+          "names": "",
+          "raw": 3392,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "76525",
+          "names": "Button,primary,md",
+          "raw": 2659,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18967",
+          "names": "",
+          "raw": 2386,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "62730",
+          "names": "ArrowCounterClockwiseIcon",
+          "raw": 2111,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "79175",
+          "names": "contactLinks,phone,viber",
+          "raw": 2090,
+          "copies": 3,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "42958",
+          "names": "formatPhone",
+          "raw": 1523,
+          "copies": 4,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "0iy1468xjorsv.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "44001",
+          "names": "ErrorState,section,div",
+          "raw": 1372,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "95057",
+          "names": "",
+          "raw": 1053,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "98183",
+          "names": "",
+          "raw": 769,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18581",
+          "names": "",
+          "raw": 759,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "73668",
+          "names": "",
+          "raw": 353,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "5698",
+          "names": "RouteLink,string",
+          "raw": 247,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "63552",
+          "names": "MAIN_ID,sadrzaj",
+          "raw": 57,
+          "copies": 2,
+          "chunks": [
+            "0sgvhbpe5nb6s.js",
+            "1adhcvv0smcza.js"
+          ]
+        }
+      ]
+    },
+    "search": {
+      "dupes": 14,
+      "extraRaw": 27852,
+      "extraGz": 13124,
+      "list": [
+        {
+          "key": "44004",
+          "names": "ADMIN",
+          "raw": 3945,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "22016",
+          "names": "",
+          "raw": 3392,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "76525",
+          "names": "Button,primary,md",
+          "raw": 2659,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18967",
+          "names": "",
+          "raw": 2386,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "62730",
+          "names": "ArrowCounterClockwiseIcon",
+          "raw": 2111,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "79175",
+          "names": "contactLinks,phone,viber",
+          "raw": 2090,
+          "copies": 3,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "42958",
+          "names": "formatPhone",
+          "raw": 1523,
+          "copies": 4,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "211aixs67p7-0.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "44001",
+          "names": "ErrorState,section,div",
+          "raw": 1372,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "95057",
+          "names": "",
+          "raw": 1053,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "98183",
+          "names": "",
+          "raw": 769,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18581",
+          "names": "",
+          "raw": 759,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "73668",
+          "names": "",
+          "raw": 353,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "5698",
+          "names": "RouteLink,string",
+          "raw": 247,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "63552",
+          "names": "MAIN_ID,sadrzaj",
+          "raw": 57,
+          "copies": 2,
+          "chunks": [
+            "0sgvhbpe5nb6s.js",
+            "1adhcvv0smcza.js"
+          ]
+        }
+      ]
+    },
+    "generation": {
+      "dupes": 14,
+      "extraRaw": 27852,
+      "extraGz": 13124,
+      "list": [
+        {
+          "key": "44004",
+          "names": "ADMIN",
+          "raw": 3945,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "22016",
+          "names": "",
+          "raw": 3392,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "76525",
+          "names": "Button,primary,md",
+          "raw": 2659,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18967",
+          "names": "",
+          "raw": 2386,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "62730",
+          "names": "ArrowCounterClockwiseIcon",
+          "raw": 2111,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "79175",
+          "names": "contactLinks,phone,viber",
+          "raw": 2090,
+          "copies": 3,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "42958",
+          "names": "formatPhone",
+          "raw": 1523,
+          "copies": 4,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "211aixs67p7-0.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "44001",
+          "names": "ErrorState,section,div",
+          "raw": 1372,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "95057",
+          "names": "",
+          "raw": 1053,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "98183",
+          "names": "",
+          "raw": 769,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18581",
+          "names": "",
+          "raw": 759,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "73668",
+          "names": "",
+          "raw": 353,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "5698",
+          "names": "RouteLink,string",
+          "raw": 247,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "63552",
+          "names": "MAIN_ID,sadrzaj",
+          "raw": 57,
+          "copies": 2,
+          "chunks": [
+            "0sgvhbpe5nb6s.js",
+            "1adhcvv0smcza.js"
+          ]
+        }
+      ]
+    },
+    "landing": {
+      "dupes": 44,
+      "extraRaw": 79545,
+      "extraGz": 35396,
+      "list": [
+        {
+          "key": "69180",
+          "names": "PhoneIcon",
+          "raw": 4539,
+          "copies": 2,
+          "chunks": [
+            "1h9gpy0y5abu7.js",
+            "404ko09-15lhs.js"
+          ]
+        },
+        {
+          "key": "51485",
+          "names": "WhatsappLogoIcon",
+          "raw": 4410,
+          "copies": 2,
+          "chunks": [
+            "1h9gpy0y5abu7.js",
+            "404ko09-15lhs.js"
+          ]
+        },
+        {
+          "key": "44004",
+          "names": "ADMIN",
+          "raw": 3945,
+          "copies": 3,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "404ko09-15lhs.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "22016",
+          "names": "",
+          "raw": 3392,
+          "copies": 3,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "404ko09-15lhs.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "846",
+          "names": "CarIcon",
+          "raw": 3375,
+          "copies": 2,
+          "chunks": [
+            "1h9gpy0y5abu7.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "8379",
+          "names": "VehicleChip,div,off,button",
+          "raw": 3257,
+          "copies": 2,
+          "chunks": [
+            "1h9gpy0y5abu7.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "8032",
+          "names": "useSelectedVehicle",
+          "raw": 3012,
+          "copies": 2,
+          "chunks": [
+            "1h9gpy0y5abu7.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "21081",
+          "names": "ShoppingCartSimpleIcon",
+          "raw": 2815,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "9758",
+          "names": "ChatCircleTextIcon",
+          "raw": 2784,
+          "copies": 2,
+          "chunks": [
+            "1h9gpy0y5abu7.js",
+            "404ko09-15lhs.js"
+          ]
+        },
+        {
+          "key": "89973",
+          "names": "TEST_IDS",
+          "raw": 2727,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "76525",
+          "names": "Button,primary,md",
+          "raw": 2659,
+          "copies": 3,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "404ko09-15lhs.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18967",
+          "names": "",
+          "raw": 2386,
+          "copies": 3,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "404ko09-15lhs.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "93633",
+          "names": "EnvelopeIcon",
+          "raw": 2114,
+          "copies": 2,
+          "chunks": [
+            "1h9gpy0y5abu7.js",
+            "404ko09-15lhs.js"
+          ]
+        },
+        {
+          "key": "79175",
+          "names": "contactLinks,phone,viber",
+          "raw": 2090,
+          "copies": 2,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "62855",
+          "names": "resetGuestToken,useAddToCart",
+          "raw": 1807,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "46951",
+          "names": "ArrowRightIcon",
+          "raw": 1537,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "42958",
+          "names": "formatPhone",
+          "raw": 1523,
+          "copies": 3,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "1h9gpy0y5abu7.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "20887",
+          "names": "CaretDownIcon",
+          "raw": 1369,
+          "copies": 2,
+          "chunks": [
+            "1h9gpy0y5abu7.js",
+            "404ko09-15lhs.js"
+          ]
+        },
+        {
+          "key": "4388",
+          "names": "CartButtonLive",
+          "raw": 1195,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "95057",
+          "names": "",
+          "raw": 1053,
+          "copies": 3,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "404ko09-15lhs.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "69109",
+          "names": "LOCALE,MINUS,NBSP,assertFinite",
+          "raw": 892,
+          "copies": 2,
+          "chunks": [
+            "1h9gpy0y5abu7.js",
+            "404ko09-15lhs.js"
+          ]
+        },
+        {
+          "key": "69093",
+          "names": "",
+          "raw": 851,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "52157",
+          "names": "",
+          "raw": 842,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "98183",
+          "names": "",
+          "raw": 769,
+          "copies": 3,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "404ko09-15lhs.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18581",
+          "names": "",
+          "raw": 759,
+          "copies": 3,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "404ko09-15lhs.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "90317",
+          "names": "",
+          "raw": 756,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "68834+8155",
+          "names": "createStore",
+          "raw": 694,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "36327",
+          "names": "HeaderVehicleChip,HeroVehicleField",
+          "raw": 636,
+          "copies": 2,
+          "chunks": [
+            "1h9gpy0y5abu7.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "33186",
+          "names": "VehiclePickerLazy,complete",
+          "raw": 634,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "70703",
+          "names": "",
+          "raw": 537,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "65551",
+          "names": "openConsentSettings,useConsent",
+          "raw": 394,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "67585",
+          "names": "",
+          "raw": 356,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "73668",
+          "names": "",
+          "raw": 353,
+          "copies": 3,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "404ko09-15lhs.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "71567",
+          "names": "ConsentSettingsButton,button,button",
+          "raw": 252,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "5698",
+          "names": "RouteLink,string",
+          "raw": 247,
+          "copies": 3,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "404ko09-15lhs.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "9885",
+          "names": "",
+          "raw": 228,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "64397",
+          "names": "countSr,pluralSr",
+          "raw": 214,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "404ko09-15lhs.js"
+          ]
+        },
+        {
+          "key": "42344",
+          "names": "",
+          "raw": 212,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "63599",
+          "names": "",
+          "raw": 199,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "38572",
+          "names": "openVehiclePicker,useVehiclePicker",
+          "raw": 173,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "78990",
+          "names": "openCartDrawer,useCartDrawer",
+          "raw": 167,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "87768",
+          "names": "",
+          "raw": 127,
+          "copies": 2,
+          "chunks": [
+            "30febus0elr13.js",
+            "1axg9-vmwkb-w.js"
+          ]
+        },
+        {
+          "key": "60892",
+          "names": "useLatched",
+          "raw": 121,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "00t-a16koa1p2.js"
+          ]
+        },
+        {
+          "key": "63552",
+          "names": "MAIN_ID,sadrzaj",
+          "raw": 57,
+          "copies": 2,
+          "chunks": [
+            "29ikd2g3512r-.js",
+            "1adhcvv0smcza.js"
+          ]
+        }
+      ]
+    },
+    "za-majstore": {
+      "dupes": 14,
+      "extraRaw": 26329,
+      "extraGz": 12331,
+      "list": [
+        {
+          "key": "44004",
+          "names": "ADMIN",
+          "raw": 3945,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "22016",
+          "names": "",
+          "raw": 3392,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "76525",
+          "names": "Button,primary,md",
+          "raw": 2659,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18967",
+          "names": "",
+          "raw": 2386,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "62730",
+          "names": "ArrowCounterClockwiseIcon",
+          "raw": 2111,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "79175",
+          "names": "contactLinks,phone,viber",
+          "raw": 2090,
+          "copies": 3,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "42958",
+          "names": "formatPhone",
+          "raw": 1523,
+          "copies": 3,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "44001",
+          "names": "ErrorState,section,div",
+          "raw": 1372,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "95057",
+          "names": "",
+          "raw": 1053,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "98183",
+          "names": "",
+          "raw": 769,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18581",
+          "names": "",
+          "raw": 759,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "73668",
+          "names": "",
+          "raw": 353,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "5698",
+          "names": "RouteLink,string",
+          "raw": 247,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "63552",
+          "names": "MAIN_ID,sadrzaj",
+          "raw": 57,
+          "copies": 2,
+          "chunks": [
+            "0sgvhbpe5nb6s.js",
+            "1adhcvv0smcza.js"
+          ]
+        }
+      ]
+    },
+    "upit": {
+      "dupes": 14,
+      "extraRaw": 27852,
+      "extraGz": 13124,
+      "list": [
+        {
+          "key": "44004",
+          "names": "ADMIN",
+          "raw": 3945,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "22016",
+          "names": "",
+          "raw": 3392,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "76525",
+          "names": "Button,primary,md",
+          "raw": 2659,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18967",
+          "names": "",
+          "raw": 2386,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "62730",
+          "names": "ArrowCounterClockwiseIcon",
+          "raw": 2111,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "79175",
+          "names": "contactLinks,phone,viber",
+          "raw": 2090,
+          "copies": 3,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "42958",
+          "names": "formatPhone",
+          "raw": 1523,
+          "copies": 4,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "3k__gv_edg8eb.js",
+            "301fp03vk_ndj.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "44001",
+          "names": "ErrorState,section,div",
+          "raw": 1372,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "95057",
+          "names": "",
+          "raw": 1053,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "98183",
+          "names": "",
+          "raw": 769,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18581",
+          "names": "",
+          "raw": 759,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "73668",
+          "names": "",
+          "raw": 353,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "5698",
+          "names": "RouteLink,string",
+          "raw": 247,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "63552",
+          "names": "MAIN_ID,sadrzaj",
+          "raw": 57,
+          "copies": 2,
+          "chunks": [
+            "0sgvhbpe5nb6s.js",
+            "1adhcvv0smcza.js"
+          ]
+        }
+      ]
+    },
+    "korpa": {
+      "dupes": 14,
+      "extraRaw": 26329,
+      "extraGz": 12331,
+      "list": [
+        {
+          "key": "44004",
+          "names": "ADMIN",
+          "raw": 3945,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "22016",
+          "names": "",
+          "raw": 3392,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "76525",
+          "names": "Button,primary,md",
+          "raw": 2659,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18967",
+          "names": "",
+          "raw": 2386,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "62730",
+          "names": "ArrowCounterClockwiseIcon",
+          "raw": 2111,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "79175",
+          "names": "contactLinks,phone,viber",
+          "raw": 2090,
+          "copies": 3,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "42958",
+          "names": "formatPhone",
+          "raw": 1523,
+          "copies": 3,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "44001",
+          "names": "ErrorState,section,div",
+          "raw": 1372,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "95057",
+          "names": "",
+          "raw": 1053,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "98183",
+          "names": "",
+          "raw": 769,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18581",
+          "names": "",
+          "raw": 759,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "73668",
+          "names": "",
+          "raw": 353,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "5698",
+          "names": "RouteLink,string",
+          "raw": 247,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "63552",
+          "names": "MAIN_ID,sadrzaj",
+          "raw": 57,
+          "copies": 2,
+          "chunks": [
+            "0sgvhbpe5nb6s.js",
+            "1adhcvv0smcza.js"
+          ]
+        }
+      ]
+    },
+    "porudzbina": {
+      "dupes": 14,
+      "extraRaw": 27852,
+      "extraGz": 13124,
+      "list": [
+        {
+          "key": "44004",
+          "names": "ADMIN",
+          "raw": 3945,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "22016",
+          "names": "",
+          "raw": 3392,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "76525",
+          "names": "Button,primary,md",
+          "raw": 2659,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18967",
+          "names": "",
+          "raw": 2386,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "62730",
+          "names": "ArrowCounterClockwiseIcon",
+          "raw": 2111,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "79175",
+          "names": "contactLinks,phone,viber",
+          "raw": 2090,
+          "copies": 3,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "42958",
+          "names": "formatPhone",
+          "raw": 1523,
+          "copies": 4,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "0e-3apv4m0eih.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "44001",
+          "names": "ErrorState,section,div",
+          "raw": 1372,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "95057",
+          "names": "",
+          "raw": 1053,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "98183",
+          "names": "",
+          "raw": 769,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18581",
+          "names": "",
+          "raw": 759,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "73668",
+          "names": "",
+          "raw": 353,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "5698",
+          "names": "RouteLink,string",
+          "raw": 247,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "63552",
+          "names": "MAIN_ID,sadrzaj",
+          "raw": 57,
+          "copies": 2,
+          "chunks": [
+            "0sgvhbpe5nb6s.js",
+            "1adhcvv0smcza.js"
+          ]
+        }
+      ]
+    },
+    "prijava": {
+      "dupes": 14,
+      "extraRaw": 26329,
+      "extraGz": 12331,
+      "list": [
+        {
+          "key": "44004",
+          "names": "ADMIN",
+          "raw": 3945,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "22016",
+          "names": "",
+          "raw": 3392,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "76525",
+          "names": "Button,primary,md",
+          "raw": 2659,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18967",
+          "names": "",
+          "raw": 2386,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "62730",
+          "names": "ArrowCounterClockwiseIcon",
+          "raw": 2111,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "79175",
+          "names": "contactLinks,phone,viber",
+          "raw": 2090,
+          "copies": 3,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "42958",
+          "names": "formatPhone",
+          "raw": 1523,
+          "copies": 3,
+          "chunks": [
+            "2f8qbt33jjpy3.js",
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "44001",
+          "names": "ErrorState,section,div",
+          "raw": 1372,
+          "copies": 2,
+          "chunks": [
+            "3k__gv_edg8eb.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "95057",
+          "names": "",
+          "raw": 1053,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "98183",
+          "names": "",
+          "raw": 769,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "18581",
+          "names": "",
+          "raw": 759,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "73668",
+          "names": "",
+          "raw": 353,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "5698",
+          "names": "RouteLink,string",
+          "raw": 247,
+          "copies": 2,
+          "chunks": [
+            "120epkn8j_rkq.js",
+            "1adhcvv0smcza.js"
+          ]
+        },
+        {
+          "key": "63552",
+          "names": "MAIN_ID,sadrzaj",
+          "raw": 57,
+          "copies": 2,
+          "chunks": [
+            "0sgvhbpe5nb6s.js",
+            "1adhcvv0smcza.js"
+          ]
+        }
+      ]
+    }
+  },
+  "buildWide": [
+    {
+      "key": "27597+7341",
+      "names": "HourglassIcon",
+      "raw": 12308,
+      "copies": 14
+    },
+    {
+      "key": "55626",
+      "names": "Checkbox,CheckboxIndicator,Indicator,Root",
+      "raw": 6733,
+      "copies": 24
+    },
+    {
+      "key": "17769+74174",
+      "names": "SquareHalfBottomIcon",
+      "raw": 3405,
+      "copies": 23
+    },
+    {
+      "key": "20552",
+      "names": "DELIVERY_LABEL,ERRORS",
+      "raw": 2621,
+      "copies": 26
+    },
+    {
+      "key": "52310",
+      "names": "Root,Switch,SwitchThumb,Thumb",
+      "raw": 5065,
+      "copies": 13
+    },
+    {
+      "key": "27122",
+      "names": "TruckIcon",
+      "raw": 3584,
+      "copies": 16
+    },
+    {
+      "key": "47900+45204",
+      "names": "COMMIT_PHASE_LABEL,CONFIDENCE_LABEL,sinonim,IMPORT_MODE_LABEL",
+      "raw": 18734,
+      "copies": 3
+    },
+    {
+      "key": "76525",
+      "names": "Button,primary,md",
+      "raw": 2659,
+      "copies": 20
+    },
+    {
+      "key": "576",
+      "names": "Indicator,Item,RadioGroup,RadioGroupIndicator",
+      "raw": 7560,
+      "copies": 7
+    },
+    {
+      "key": "6131",
+      "names": "PaperPlaneTiltIcon",
+      "raw": 2934,
+      "copies": 18
+    },
+    {
+      "key": "8927",
+      "names": "",
+      "raw": 4861,
+      "copies": 10
+    },
+    {
+      "key": "61392",
+      "names": "Content,List,Root,Tabs",
+      "raw": 5623,
+      "copies": 8
+    },
+    {
+      "key": "62730",
+      "names": "ArrowCounterClockwiseIcon",
+      "raw": 2111,
+      "copies": 20
+    },
+    {
+      "key": "76798",
+      "names": "XCircleIcon",
+      "raw": 2449,
+      "copies": 17
+    },
+    {
+      "key": "49427",
+      "names": "ClockIcon",
+      "raw": 1799,
+      "copies": 23
+    },
+    {
+      "key": "17813+71776",
+      "names": "ArrowDownIcon",
+      "raw": 3072,
+      "copies": 13
+    },
+    {
+      "key": "29567",
+      "names": "MinusIcon",
+      "raw": 1240,
+      "copies": 32
+    },
+    {
+      "key": "40743",
+      "names": "Sheet,responsive,sm,full",
+      "raw": 6109,
+      "copies": 6
+    },
+    {
+      "key": "5500",
+      "names": "",
+      "raw": 3564,
+      "copies": 10
+    },
+    {
+      "key": "42958",
+      "names": "formatPhone",
+      "raw": 1523,
+      "copies": 23
+    },
+    {
+      "key": "1206+94321",
+      "names": "Field",
+      "raw": 3146,
+      "copies": 11
+    },
+    {
+      "key": "63380",
+      "names": "dinarsToPara,number,dinars",
+      "raw": 1813,
+      "copies": 19
+    },
+    {
+      "key": "44004",
+      "names": "ADMIN",
+      "raw": 3945,
+      "copies": 8
+    },
+    {
+      "key": "58243",
+      "names": "CheckIcon",
+      "raw": 1536,
+      "copies": 19
+    },
+    {
+      "key": "60891",
+      "names": "TrashIcon",
+      "raw": 2543,
+      "copies": 11
+    },
+    {
+      "key": "22016",
+      "names": "",
+      "raw": 3392,
+      "copies": 8
+    },
+    {
+      "key": "62741",
+      "names": "formatDate,formatDateShort,formatDateTime",
+      "raw": 891,
+      "copies": 30
+    },
+    {
+      "key": "97396",
+      "names": "FIELD_BY_KEY,FIELD_DEFS,fieldsForMode,full",
+      "raw": 6087,
+      "copies": 4
+    },
+    {
+      "key": "42727+86318",
+      "names": "useDirection",
+      "raw": 4648,
+      "copies": 5
+    },
+    {
+      "key": "58626",
+      "names": "QuantityStepper,md",
+      "raw": 2182,
+      "copies": 10
+    },
+    {
+      "key": "34299",
+      "names": "PrinterIcon",
+      "raw": 2971,
+      "copies": 7
+    },
+    {
+      "key": "87778",
+      "names": "Textarea",
+      "raw": 1214,
+      "copies": 17
+    },
+    {
+      "key": "45257",
+      "names": "BellIcon",
+      "raw": 2754,
+      "copies": 7
+    },
+    {
+      "key": "18967",
+      "names": "",
+      "raw": 2386,
+      "copies": 8
+    },
+    {
+      "key": "98771",
+      "names": "FileXlsIcon",
+      "raw": 6311,
+      "copies": 3
+    },
+    {
+      "key": "89158",
+      "names": "StarIcon",
+      "raw": 4692,
+      "copies": 4
+    },
+    {
+      "key": "26450",
+      "names": "ConfirmDialog,alertdialog,sm,useConfirm",
+      "raw": 2066,
+      "copies": 9
+    },
+    {
+      "key": "24876",
+      "names": "Skeleton,SkeletonRegion,div,true",
+      "raw": 742,
+      "copies": 25
+    },
+    {
+      "key": "38013",
+      "names": "PlusIcon",
+      "raw": 1534,
+      "copies": 12
+    },
+    {
+      "key": "69180",
+      "names": "PhoneIcon",
+      "raw": 4539,
+      "copies": 4
+    },
+    {
+      "key": "51485",
+      "names": "WhatsappLogoIcon",
+      "raw": 4410,
+      "copies": 4
+    },
+    {
+      "key": "25633",
+      "names": "",
+      "raw": 1749,
+      "copies": 10
+    },
+    {
+      "key": "18116",
+      "names": "ArrowLeftIcon",
+      "raw": 1545,
+      "copies": 11
+    },
+    {
+      "key": "85795",
+      "names": "AUDIT_ACTION_LABEL",
+      "raw": 4234,
+      "copies": 4
+    },
+    {
+      "key": "846",
+      "names": "CarIcon",
+      "raw": 3375,
+      "copies": 5
+    },
+    {
+      "key": "77688",
+      "names": "ContactActions,inline,ul,off",
+      "raw": 1514,
+      "copies": 11
+    },
+    {
+      "key": "62677",
+      "names": "VehiclePickerDialog,md",
+      "raw": 5241,
+      "copies": 3
+    },
+    {
+      "key": "80437",
+      "names": "WrenchIcon",
+      "raw": 3742,
+      "copies": 4
+    },
+    {
+      "key": "74183",
+      "names": "PencilSimpleIcon",
+      "raw": 2455,
+      "copies": 6
+    },
+    {
+      "key": "182+66365",
+      "names": "normalizeVin,validateVin",
+      "raw": 4865,
+      "copies": 3
+    },
+    {
+      "key": "11201",
+      "names": "HERO_COPY,Rasklopi,Sklopi",
+      "raw": 2428,
+      "copies": 6
+    },
+    {
+      "key": "3025",
+      "names": "ArrowSquareOutIcon",
+      "raw": 2349,
+      "copies": 6
+    },
+    {
+      "key": "9758",
+      "names": "ChatCircleTextIcon",
+      "raw": 2784,
+      "copies": 5
+    },
+    {
+      "key": "37952",
+      "names": "AddToCartButton,catalog,card",
+      "raw": 2747,
+      "copies": 5
+    },
+    {
+      "key": "89973",
+      "names": "TEST_IDS",
+      "raw": 2727,
+      "copies": 5
+    },
+    {
+      "key": "47213",
+      "names": "ReceiptIcon",
+      "raw": 3390,
+      "copies": 4
+    },
+    {
+      "key": "80605",
+      "names": "SearchBox,header",
+      "raw": 4459,
+      "copies": 3
+    },
+    {
+      "key": "8379",
+      "names": "VehicleChip,div,off,button",
+      "raw": 3257,
+      "copies": 4
+    },
+    {
+      "key": "24531",
+      "names": "Combobox,md,search,search",
+      "raw": 4282,
+      "copies": 3
+    },
+    {
+      "key": "22563",
+      "names": "Price,retail,m,start",
+      "raw": 1590,
+      "copies": 8
+    }
+  ]
+}

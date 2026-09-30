@@ -1,0 +1,6 @@
+landing: face loaded right after the fallback capture: false
+landing: h1 first visible at 989 ms (Kočione pločice za VW Golf — proverene po OEM broj) family=displaySemibold 600 faceLoaded=false
+landing: after fonts.ready at 6054 ms faceLoaded=true
+category: face loaded right after the fallback capture: false
+category: h1 first visible at 974 ms (Kočioni diskovi) family=displaySemibold 600 faceLoaded=false
+category: after fonts.ready at 6023 ms faceLoaded=true

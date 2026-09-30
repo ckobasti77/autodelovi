@@ -1,0 +1,38 @@
+[
+ {
+  "path": "/admin",
+  "status": 200,
+  "xRobots": null,
+  "robotsMeta": "noindex, nofollow"
+ },
+ {
+  "path": "/admin/porudzbine",
+  "status": 200,
+  "xRobots": null,
+  "robotsMeta": "noindex, nofollow"
+ },
+ {
+  "path": "/admin/proizvodi",
+  "status": 200,
+  "xRobots": null,
+  "robotsMeta": "noindex, nofollow"
+ },
+ {
+  "path": "/admin/podesavanja?tab=seo",
+  "status": 200,
+  "xRobots": null,
+  "robotsMeta": "noindex, nofollow"
+ },
+ {
+  "path": "/nalog",
+  "status": 200,
+  "xRobots": null,
+  "robotsMeta": "noindex, follow"
+ },
+ {
+  "path": "/admin/porudzbine/SK-2026-000092/predracun",
+  "status": 200,
+  "xRobots": null,
+  "robotsMeta": "noindex, nofollow"
+ }
+]

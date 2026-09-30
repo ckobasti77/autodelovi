@@ -1,0 +1,117 @@
+{
+  "shared": [
+    {
+      "src": "/_next/static/chunks/0qy3sss5e6eww.js",
+      "raw": 234172,
+      "gz": 73278,
+      "br": 62561
+    },
+    {
+      "src": "/_next/static/chunks/1tr6a7zmh41cy.js",
+      "raw": 125720,
+      "gz": 49588,
+      "br": 44376
+    },
+    {
+      "src": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+      "raw": 112594,
+      "gz": 39627,
+      "br": 35158
+    },
+    {
+      "src": "/_next/static/chunks/0qimmyhv2_bjj.js",
+      "raw": 129338,
+      "gz": 34775,
+      "br": 29571
+    },
+    {
+      "src": "/_next/static/chunks/2jrozipxybei4.js",
+      "raw": 82591,
+      "gz": 22641,
+      "br": 20076
+    },
+    {
+      "src": "/_next/static/chunks/0rklqt_vfe3_n.js",
+      "raw": 37952,
+      "gz": 12601,
+      "br": 11040
+    },
+    {
+      "src": "/_next/static/chunks/14y-81z8a-w-u.js",
+      "raw": 26404,
+      "gz": 10408,
+      "br": 9384
+    },
+    {
+      "src": "/_next/static/chunks/2vm060vmiv-df.js",
+      "raw": 27602,
+      "gz": 9278,
+      "br": 8182
+    },
+    {
+      "src": "/_next/static/chunks/1adhcvv0smcza.js",
+      "raw": 23258,
+      "gz": 8829,
+      "br": 7751
+    },
+    {
+      "src": "/_next/static/chunks/11we8zj_qz5aa.js",
+      "raw": 27411,
+      "gz": 8635,
+      "br": 7731
+    },
+    {
+      "src": "/_next/static/chunks/2h84ksv1mg5s9.js",
+      "raw": 30588,
+      "gz": 8077,
+      "br": 7106
+    },
+    {
+      "src": "/_next/static/chunks/1t0q0ok8maumv.js",
+      "raw": 22528,
+      "gz": 8008,
+      "br": 7111
+    },
+    {
+      "src": "/_next/static/chunks/25dplrt_qw3he.js",
+      "raw": 18451,
+      "gz": 7011,
+      "br": 6292
+    },
+    {
+      "src": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+      "raw": 10979,
+      "gz": 4319,
+      "br": 3876
+    },
+    {
+      "src": "/_next/static/chunks/3fntmmi971322.js",
+      "raw": 14377,
+      "gz": 3661,
+      "br": 3266
+    },
+    {
+      "src": "/_next/static/chunks/2f8qbt33jjpy3.js",
+      "raw": 6686,
+      "gz": 2753,
+      "br": 2421
+    },
+    {
+      "src": "/_next/static/chunks/41cvzcmlkfz4o.js",
+      "raw": 7637,
+      "gz": 2011,
+      "br": 1753
+    },
+    {
+      "src": "/_next/static/chunks/29atrq35xgs9f.js",
+      "raw": 5026,
+      "gz": 1721,
+      "br": 1512
+    }
+  ],
+  "sharedTot": {
+    "raw": 943314,
+    "gz": 307221,
+    "br": 269167
+  }
+}

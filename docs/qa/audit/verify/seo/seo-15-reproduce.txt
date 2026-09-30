@@ -1,0 +1,37 @@
+seo-15 reproduce — 2026-09-30T14:57:45.749Z — http://localhost:3100
+
+/ [200] (googlebot, no cookie) body@10675 consentH2@11591 header@14007 main@21216 h1@25088 firstHeading="Kolačići" data-nosnippet=false
+/ [200] (googlebot, sk_consent set) body@10675 consentH2@11591 header@14007 main@21216 h1@25088 firstHeading="Kolačići" data-nosnippet=false
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 [200] (googlebot, no cookie) body@11534 consentH2@12450 header@14866 main@22075 h1@29891 firstHeading="Kolačići" data-nosnippet=false
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 [200] (googlebot, sk_consent set) body@11534 consentH2@12450 header@14866 main@22075 h1@29891 firstHeading="Kolačići" data-nosnippet=false
+/delovi/kocioni-diskovi [200] (googlebot, no cookie) body@11536 consentH2@12452 header@14868 main@22097 h1@25834 firstHeading="Kolačići" data-nosnippet=false
+/delovi/kocioni-diskovi [200] (googlebot, sk_consent set) body@11536 consentH2@12452 header@14868 main@22097 h1@25834 firstHeading="Kolačići" data-nosnippet=false
+/delovi/kocioni-diskovi/volkswagen/golf [200] (googlebot, no cookie) body@11535 consentH2@12451 header@14867 main@22096 h1@26684 firstHeading="Kolačići" data-nosnippet=false
+/delovi/kocioni-diskovi/volkswagen/golf [200] (googlebot, sk_consent set) body@11535 consentH2@12451 header@14867 main@22096 h1@26684 firstHeading="Kolačići" data-nosnippet=false
+/vozila/volkswagen/golf/golf-7 [200] (googlebot, no cookie) body@10311 consentH2@11227 header@13643 main@20872 h1@23432 firstHeading="Kolačići" data-nosnippet=false
+/vozila/volkswagen/golf/golf-7 [200] (googlebot, sk_consent set) body@10311 consentH2@11227 header@13643 main@20872 h1@23432 firstHeading="Kolačići" data-nosnippet=false
+/ponuda/kocione-plocice-golf [200] (googlebot, no cookie) body@11218 consentH2@12134 header@14550 main@16149 h1@17698 firstHeading="Kolačići" data-nosnippet=false
+/ponuda/kocione-plocice-golf [200] (googlebot, sk_consent set) body@11218 consentH2@12134 header@14550 main@16149 h1@17698 firstHeading="Kolačići" data-nosnippet=false
+/kontakt [200] (googlebot, no cookie) body@10167 consentH2@11083 header@13499 main@20708 h1@22093 firstHeading="Kolačići" data-nosnippet=false
+/kontakt [200] (googlebot, sk_consent set) body@10167 consentH2@11083 header@13499 main@20708 h1@22093 firstHeading="Kolačići" data-nosnippet=false
+/pretraga?q=disk [200] (googlebot, no cookie) body@10247 consentH2@11163 header@13579 main@20788 h1@121951 firstHeading="Kolačići" data-nosnippet=false
+/pretraga?q=disk [200] (googlebot, sk_consent set) body@10247 consentH2@11163 header@13579 main@20788 h1@121951 firstHeading="Kolačići" data-nosnippet=false
+
+Home body text, first 600 chars (tags stripped, scripts/styles removed):
+Preskoči na sadržaj Kolačići Neophodne kolačiće koristimo za korpu i prijavu. Uz vašu dozvolu koristimo i analitičke (Google Analytics) i oglasne (Google Ads, Meta) — da vidimo odakle dolazite i koji oglasi vrede. Izbor menjate bilo kad, u podnožju strane. Više o kolačićima Prihvati sve Odbij sve Podešavanja SKLOP Delovi Vozila Za majstore Upit po broju šasije Broj dela ili naziv / Izaberite vozilo Rasklopi auto. Nađi deo. Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra — tražite po OEM broju, po vozilu ili klikom na deo. Pretraži Broj upišite kako god ga imate — razmaci, tačke i crtice ne sme
+
+Rendered (Chromium 390x844, no sk_consent) http://localhost:3100/delovi/kocioni-diskovi:
+{
+  "dialogVisible": true,
+  "dialogHasNosnippet": false,
+  "dialogIndex": 2,
+  "headerIndex": 17,
+  "h1Index": 82,
+  "firstHeadings": [
+    "H2 Kolačići",
+    "H1 Kočioni diskovi",
+    "H2 Vozilo"
+  ],
+  "firstText": "Preskoči na sadržaj Kolačići Neophodne kolačiće koristimo za korpu i prijavu. Uz vašu dozvolu koristimo i analitičke (Google Analytics) i oglasne (Google Ads, Meta) — da vidimo odakle dolazite i koji oglasi vrede. Izbor menjate bilo kad, u podnožju strane. Više o kolačićima Prihvati sve Odbij sve "
+}
+Screenshot: docs/qa/audit/verify/seo/seo-15-reproduce-390.webp

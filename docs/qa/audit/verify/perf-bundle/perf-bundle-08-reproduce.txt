@@ -1,0 +1,109 @@
+home / Link preloads: archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2, archivo_expanded_700-s.p.34q6w5xege1wi.woff2, fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2, fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2
+category /delovi/kocioni-diskovi Link preloads: archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2, archivo_expanded_700-s.p.34q6w5xege1wi.woff2, fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2, fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2
+product /deo/kocioni-disk-prednji-276-24-mm-demo-0004 Link preloads: archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2, archivo_expanded_700-s.p.34q6w5xege1wi.woff2, fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2, fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2
+landing /ponuda/kocione-plocice-golf Link preloads: archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2, archivo_expanded_700-s.p.34q6w5xege1wi.woff2, fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2, fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2
+korpa /korpa Link preloads: archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2, archivo_expanded_700-s.p.34q6w5xege1wi.woff2, fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2, fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2
+search /pretraga?q=disk Link preloads: archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2, archivo_expanded_700-s.p.34q6w5xege1wi.woff2, fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2, fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2
+
+@390 home: 43 first-viewport text elements; LCP element span "Rasklopi"
+    Archivo Expanded (webfont)               5: SKLOP | Rasklopi | auto. | Nađi
+    Public Sans Thin (webfont)               31: Delovi | za | Volkswagen, | Audi,
+    Archivo Expanded SemiBold (webfont)      2: Sklopljen | automobil
+    Martian Mono SemiExpanded (webfont)      5: 00 | · | 42&nbsp;kategorije | 91&nbsp;deo
+@390 category: 49 first-viewport text elements; LCP element p "Kočioni diskovi zajedno sa pločicama pre"
+    Archivo Expanded (webfont)               1: SKLOP
+    Public Sans Thin (webfont)               43: Kočnice | Kočioni | diskovi | zajedno
+    Archivo Expanded SemiBold (webfont)      2: Kočioni | diskovi
+    Martian Mono SemiExpanded (webfont)      3: OEM 3C0 615 098 | 3C0 615 098 | 1K0 615 540 Q
+    Archivo Condensed SemiBold (webfont)     1: 7.490
+@390 product: 22 first-viewport text elements; LCP element img "http://localhost:3100/_next/image?url=%2"
+    Archivo Expanded (webfont)               1: SKLOP
+    Public Sans Thin (webfont)               17: Kočioni diskovi | Ilustracija kategorije — izg | Febi Bilstein · Aftermarket | Kočioni
+    Martian Mono SemiExpanded (webfont)      3: 5Q0 615 505 R | DEMO-0004 | 57447
+    Archivo Condensed SemiBold (webfont)     1: 4.690
+@390 landing: 40 first-viewport text elements; LCP element span "proverene"
+    Archivo Expanded (webfont)               1: SKLOP
+    Public Sans Thin (webfont)               29: Kočione pločice · Volkswagen | Prednje | i | zadnje
+    Archivo Expanded SemiBold (webfont)      10: Kočione | pločice | za | VW
+@390 korpa: 10 first-viewport text elements; LCP element p "Delovi za Volkswagen, Audi, Škoda, SEAT "
+    Archivo Expanded (webfont)               2: SKLOP
+    Public Sans Thin (webfont)               8: Korpa | Korpa je prazna | Dodajte delove iz kataloga i | Pretražite po broju dela
+@390 search: 26 first-viewport text elements; LCP element span "Rezultati"
+    Archivo Expanded (webfont)               1: SKLOP
+    Public Sans Thin (webfont)               22: Pretraži | Broj upišite kako god ga ima | Rezultati | za
+    Martian Mono SemiExpanded (webfont)      3: OEM 8K0 615 085 | 8K0 615 085 | 3C0 615 098
+    Archivo Condensed SemiBold (webfont)     1: 9.890
+@1440 home: 65 first-viewport text elements; LCP element img "http://localhost:3100/images/hero/car-as"
+    Archivo Expanded (webfont)               5: SKLOP | Rasklopi | auto. | Nađi
+    Public Sans Thin (webfont)               46: Delovi | Vozila | Za majstore | Upit po broju šasije
+    Martian Mono SemiExpanded (webfont)      6: / | Prikaz | Faza | 00 / 07
+    Archivo Condensed SemiBold (webfont)     8: 00 | 01 | 02 | 03
+@1440 category: 113 first-viewport text elements; LCP element p "Kočioni diskovi zajedno sa pločicama pre"
+    Archivo Expanded (webfont)               1: SKLOP
+    Public Sans Thin (webfont)               101: Delovi | Vozila | Za majstore | Upit po broju šasije
+    Martian Mono SemiExpanded (webfont)      9: / | OEM 3C0 615 098 | 3C0 615 098 | OEM 1K0 615 540 Q
+    Archivo Expanded SemiBold (webfont)      2: Kočioni | diskovi
+    Archivo Condensed SemiBold (webfont)     4: 7.490 | 3.890 | 3.990 | 7.290
+@1440 product: 44 first-viewport text elements; LCP element img "http://localhost:3100/_next/image?url=%2"
+    Archivo Expanded (webfont)               1: SKLOP
+    Public Sans Thin (webfont)               37: Delovi | Vozila | Za majstore | Upit po broju šasije
+    Martian Mono SemiExpanded (webfont)      5: / | Ø 276 | 5Q0 615 505 R | DEMO-0004
+    Archivo Condensed SemiBold (webfont)     1: 4.690
+@1440 landing: 57 first-viewport text elements; LCP element h1 "Kočione pločice za VW Golf — proverene p"
+    Archivo Expanded (webfont)               1: SKLOP
+    Public Sans Thin (webfont)               42: Kočione pločice · Volkswagen | Prednje | i | zadnje
+    Archivo Expanded SemiBold (webfont)      10: Kočione | pločice | za | VW
+    Martian Mono SemiExpanded (webfont)      4: 5Q0 698 782 KA | 1K0 698 569 | 1K0 698 406 F | 5WA 698 115 M
+@1440 korpa: 26 first-viewport text elements; LCP element span "Korpa"
+    Archivo Expanded (webfont)               2: SKLOP
+    Public Sans Thin (webfont)               23: Delovi | Vozila | Za majstore | Upit po broju šasije
+    Martian Mono SemiExpanded (webfont)      1: /
+@1440 search: 66 first-viewport text elements; LCP element img "http://localhost:3100/_next/image?url=%2"
+    Archivo Expanded (webfont)               1: SKLOP
+    Public Sans Thin (webfont)               56: Delovi | Vozila | Za majstore | Upit po broju šasije
+    Martian Mono SemiExpanded (webfont)      9: / | OEM 8K0 615 085 | 8K0 615 085 | OEM 3C0 615 098
+    Archivo Condensed SemiBold (webfont)     4: 9.890 | 7.490 | 3.990 | 4.690
+
+Throttled 390 (latency 150 ms, 1.6 Mbps): font responseEnd vs first-contentful-paint (ms since navigation start)
+  category run 1: FCP 1788
+      archivo_condensed_600 start 538 end 1137
+      archivo_expanded_700 start 539 end 1134
+      fa0520225c6f3d07 start 539 end 1225
+      fc2699ecc8323b38 start 539 end 1168
+      archivo_expanded_600 start 1330 end 2207
+      ee9d8ff0751135e3 start 1464 end 2427
+  category run 2: FCP 976
+      archivo_condensed_600 start 236 end 820
+      archivo_expanded_700 start 236 end 835
+      fa0520225c6f3d07 start 236 end 921
+      fc2699ecc8323b38 start 237 end 866
+      archivo_expanded_600 start 896 end 1567
+      ee9d8ff0751135e3 start 921 end 1941
+  category run 3: FCP 1004
+      archivo_condensed_600 start 220 end 797
+      archivo_expanded_700 start 220 end 812
+      fa0520225c6f3d07 start 221 end 905
+      fc2699ecc8323b38 start 221 end 844
+      archivo_expanded_600 start 878 end 1526
+      ee9d8ff0751135e3 start 923 end 1914
+  landing run 1: FCP 1000
+      archivo_condensed_600 start 238 end 803
+      archivo_expanded_700 start 239 end 819
+      fc2699ecc8323b38 start 239 end 865
+      fa0520225c6f3d07 start 239 end 912
+      archivo_expanded_600 start 896 end 1581
+      ee9d8ff0751135e3 start 942 end 1926
+  landing run 2: FCP 1012
+      archivo_condensed_600 start 230 end 817
+      archivo_expanded_700 start 230 end 817
+      fc2699ecc8323b38 start 230 end 863
+      fa0520225c6f3d07 start 230 end 910
+      archivo_expanded_600 start 893 end 1581
+      ee9d8ff0751135e3 start 947 end 1924
+  landing run 3: FCP 1012
+      archivo_condensed_600 start 241 end 785
+      archivo_expanded_700 start 242 end 816
+      fa0520225c6f3d07 start 242 end 907
+      fc2699ecc8323b38 start 242 end 861
+      archivo_expanded_600 start 893 end 1559
+      ee9d8ff0751135e3 start 940 end 1904

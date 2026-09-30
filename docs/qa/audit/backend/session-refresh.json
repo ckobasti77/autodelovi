@@ -1,0 +1,84 @@
+{
+  "requests": 6,
+  "jwtChanges": 5,
+  "refreshChanges": 5,
+  "rows": [
+    {
+      "label": "after sign-in",
+      "at": "2026-09-30T14:21:52.967Z",
+      "jwt": "395790938e",
+      "refresh": "3dcf10d51c",
+      "jwtExpires": "2026-10-30T14:21:52.609Z",
+      "cookieNames": [
+        "__convexAuthJWT",
+        "__convexAuthRefreshToken"
+      ]
+    },
+    {
+      "label": "GET /nalog",
+      "at": "2026-09-30T14:21:56.648Z",
+      "jwt": "395790938e",
+      "refresh": "3dcf10d51c",
+      "jwtExpires": "2026-10-30T14:21:52.609Z",
+      "cookieNames": [
+        "__convexAuthJWT",
+        "__convexAuthRefreshToken"
+      ]
+    },
+    {
+      "label": "GET /delovi",
+      "at": "2026-09-30T14:22:00.148Z",
+      "jwt": "3e9e8e9e05",
+      "refresh": "882efd22ed",
+      "jwtExpires": "2026-10-30T14:21:57.680Z",
+      "cookieNames": [
+        "__convexAuthJWT",
+        "__convexAuthRefreshToken"
+      ]
+    },
+    {
+      "label": "GET /nalog/porudzbine",
+      "at": "2026-09-30T14:22:03.425Z",
+      "jwt": "a1737d79c1",
+      "refresh": "b29d7ce41b",
+      "jwtExpires": "2026-10-30T14:22:01.373Z",
+      "cookieNames": [
+        "__convexAuthJWT",
+        "__convexAuthRefreshToken"
+      ]
+    },
+    {
+      "label": "GET /korpa",
+      "at": "2026-09-30T14:22:06.665Z",
+      "jwt": "5f2c59e417",
+      "refresh": "9463f2d4ee",
+      "jwtExpires": "2026-10-30T14:22:04.499Z",
+      "cookieNames": [
+        "__convexAuthJWT",
+        "__convexAuthRefreshToken"
+      ]
+    },
+    {
+      "label": "GET /",
+      "at": "2026-09-30T14:22:10.359Z",
+      "jwt": "13d6981452",
+      "refresh": "3a994ead8b",
+      "jwtExpires": "2026-10-30T14:22:08.033Z",
+      "cookieNames": [
+        "__convexAuthJWT",
+        "__convexAuthRefreshToken"
+      ]
+    },
+    {
+      "label": "GET /nalog",
+      "at": "2026-09-30T14:22:13.594Z",
+      "jwt": "02900b70cc",
+      "refresh": "0de14a2923",
+      "jwtExpires": "2026-10-30T14:22:11.261Z",
+      "cookieNames": [
+        "__convexAuthJWT",
+        "__convexAuthRefreshToken"
+      ]
+    }
+  ]
+}

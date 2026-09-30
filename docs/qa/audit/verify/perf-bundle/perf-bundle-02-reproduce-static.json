@@ -1,0 +1,2818 @@
+{
+  "/": {
+    "scripts": 24,
+    "jsGzKB": 329.1,
+    "groups": {
+      "tooltip": {
+        "n": 1,
+        "rawKB": 8.4,
+        "gzStandaloneKB": 3.1,
+        "gzDeltaKB": 2.7,
+        "chunks": [
+          "25dplrt_qw3he.js"
+        ]
+      },
+      "popperFloatingUi": {
+        "n": 2,
+        "rawKB": 34.1,
+        "gzStandaloneKB": 13.2,
+        "gzDeltaKB": 12.8,
+        "chunks": [
+          "25dplrt_qw3he.js",
+          "14y-81z8a-w-u.js"
+        ]
+      },
+      "gsapMerged": {
+        "n": 1,
+        "rawKB": 121.4,
+        "gzStandaloneKB": 47.7,
+        "gzDeltaKB": 47.6,
+        "chunks": [
+          "1tr6a7zmh41cy.js"
+        ]
+      },
+      "radixDialog": {
+        "n": 1,
+        "rawKB": 5.4,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusScope": {
+        "n": 1,
+        "rawKB": 3.6,
+        "gzStandaloneKB": 1.6,
+        "gzDeltaKB": 1.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusGuards": {
+        "n": 1,
+        "rawKB": 0.8,
+        "gzStandaloneKB": 0.5,
+        "gzDeltaKB": 0.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "removeScroll": {
+        "n": 1,
+        "rawKB": 10.6,
+        "gzStandaloneKB": 4,
+        "gzDeltaKB": 3.7,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "hideOthers": {
+        "n": 1,
+        "rawKB": 1.4,
+        "gzStandaloneKB": 0.7,
+        "gzDeltaKB": 0.5,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "uiSheet": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.3,
+        "gzDeltaKB": 1.8,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "uiDialog": {
+        "n": 1,
+        "rawKB": 2.1,
+        "gzStandaloneKB": 1,
+        "gzDeltaKB": 0.7,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "overlayMotion": {
+        "n": 4,
+        "rawKB": 24.8,
+        "gzStandaloneKB": 9.5,
+        "gzDeltaKB": 8.2,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "dismissableLayer": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.7,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "presence": {
+        "n": 1,
+        "rawKB": 2.7,
+        "gzStandaloneKB": 1.2,
+        "gzDeltaKB": 0.8,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "radixToast": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "toaster": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "collection": {
+        "n": 1,
+        "rawKB": 7.1,
+        "gzStandaloneKB": 2.6,
+        "gzDeltaKB": 2.2,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "consentBanner": {
+        "n": 1,
+        "rawKB": 4.3,
+        "gzStandaloneKB": 2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "radixSwitch": {
+        "n": 1,
+        "rawKB": 4.9,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "mobileNav": {
+        "n": 1,
+        "rawKB": 2.4,
+        "gzStandaloneKB": 1.1,
+        "gzDeltaKB": 0.6,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "headerSearch": {
+        "n": 1,
+        "rawKB": 1.6,
+        "gzStandaloneKB": 0.9,
+        "gzDeltaKB": 0.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "searchBox": {
+        "n": 1,
+        "rawKB": 4.4,
+        "gzStandaloneKB": 2.2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "combobox": {
+        "n": 1,
+        "rawKB": 4.2,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "phosphor": {
+        "n": 26,
+        "rawKB": 86.7,
+        "gzStandaloneKB": 30.3,
+        "gzDeltaKB": 25,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "2g3bv_p29okud.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js",
+          "0wnn3uk7fx3z2.js",
+          "3k__gv_edg8eb.js",
+          "1adhcvv0smcza.js"
+        ]
+      }
+    },
+    "icons": {
+      "modules": 26,
+      "distinct": 25,
+      "rawKB": 86.7,
+      "regularRawKB": 36.1,
+      "gzSaveKB": 13.3,
+      "dup": [
+        "ArrowCounterClockwiseIcon"
+      ]
+    }
+  },
+  "/delovi": {
+    "scripts": 23,
+    "jsGzKB": 313.3,
+    "groups": {
+      "tooltip": {
+        "n": 1,
+        "rawKB": 8.4,
+        "gzStandaloneKB": 3.1,
+        "gzDeltaKB": 2.7,
+        "chunks": [
+          "25dplrt_qw3he.js"
+        ]
+      },
+      "popperFloatingUi": {
+        "n": 2,
+        "rawKB": 34.1,
+        "gzStandaloneKB": 13.2,
+        "gzDeltaKB": 12.8,
+        "chunks": [
+          "25dplrt_qw3he.js",
+          "14y-81z8a-w-u.js"
+        ]
+      },
+      "gsapMerged": {
+        "n": 1,
+        "rawKB": 121.4,
+        "gzStandaloneKB": 47.7,
+        "gzDeltaKB": 47.6,
+        "chunks": [
+          "1tr6a7zmh41cy.js"
+        ]
+      },
+      "radixDialog": {
+        "n": 1,
+        "rawKB": 5.4,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusScope": {
+        "n": 1,
+        "rawKB": 3.6,
+        "gzStandaloneKB": 1.6,
+        "gzDeltaKB": 1.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusGuards": {
+        "n": 1,
+        "rawKB": 0.8,
+        "gzStandaloneKB": 0.5,
+        "gzDeltaKB": 0.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "removeScroll": {
+        "n": 1,
+        "rawKB": 10.6,
+        "gzStandaloneKB": 4,
+        "gzDeltaKB": 3.7,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "hideOthers": {
+        "n": 1,
+        "rawKB": 1.4,
+        "gzStandaloneKB": 0.7,
+        "gzDeltaKB": 0.5,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "uiSheet": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.3,
+        "gzDeltaKB": 1.8,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "uiDialog": {
+        "n": 1,
+        "rawKB": 2.1,
+        "gzStandaloneKB": 1,
+        "gzDeltaKB": 0.7,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "overlayMotion": {
+        "n": 4,
+        "rawKB": 24.8,
+        "gzStandaloneKB": 9.5,
+        "gzDeltaKB": 8.2,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "dismissableLayer": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.7,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "presence": {
+        "n": 1,
+        "rawKB": 2.7,
+        "gzStandaloneKB": 1.2,
+        "gzDeltaKB": 0.8,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "radixToast": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "toaster": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "collection": {
+        "n": 1,
+        "rawKB": 7.1,
+        "gzStandaloneKB": 2.6,
+        "gzDeltaKB": 2.2,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "consentBanner": {
+        "n": 1,
+        "rawKB": 4.3,
+        "gzStandaloneKB": 2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "radixSwitch": {
+        "n": 1,
+        "rawKB": 4.9,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "mobileNav": {
+        "n": 1,
+        "rawKB": 2.4,
+        "gzStandaloneKB": 1.1,
+        "gzDeltaKB": 0.6,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "headerSearch": {
+        "n": 1,
+        "rawKB": 1.6,
+        "gzStandaloneKB": 0.9,
+        "gzDeltaKB": 0.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "searchBox": {
+        "n": 1,
+        "rawKB": 4.4,
+        "gzStandaloneKB": 2.2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "combobox": {
+        "n": 1,
+        "rawKB": 4.2,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "phosphor": {
+        "n": 22,
+        "rawKB": 59.9,
+        "gzStandaloneKB": 21.4,
+        "gzDeltaKB": 17.1,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "2g3bv_p29okud.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js",
+          "3k__gv_edg8eb.js",
+          "1adhcvv0smcza.js"
+        ]
+      }
+    },
+    "icons": {
+      "modules": 22,
+      "distinct": 21,
+      "rawKB": 59.9,
+      "regularRawKB": 15.1,
+      "gzSaveKB": 11.9,
+      "dup": [
+        "ArrowCounterClockwiseIcon"
+      ]
+    }
+  },
+  "/delovi/kocioni-diskovi": {
+    "scripts": 24,
+    "jsGzKB": 330.9,
+    "groups": {
+      "tooltip": {
+        "n": 1,
+        "rawKB": 8.4,
+        "gzStandaloneKB": 3.1,
+        "gzDeltaKB": 2.7,
+        "chunks": [
+          "25dplrt_qw3he.js"
+        ]
+      },
+      "popperFloatingUi": {
+        "n": 2,
+        "rawKB": 34.1,
+        "gzStandaloneKB": 13.2,
+        "gzDeltaKB": 12.8,
+        "chunks": [
+          "25dplrt_qw3he.js",
+          "14y-81z8a-w-u.js"
+        ]
+      },
+      "gsapMerged": {
+        "n": 1,
+        "rawKB": 121.4,
+        "gzStandaloneKB": 47.7,
+        "gzDeltaKB": 47.6,
+        "chunks": [
+          "1tr6a7zmh41cy.js"
+        ]
+      },
+      "radixDialog": {
+        "n": 1,
+        "rawKB": 5.4,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusScope": {
+        "n": 1,
+        "rawKB": 3.6,
+        "gzStandaloneKB": 1.6,
+        "gzDeltaKB": 1.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusGuards": {
+        "n": 1,
+        "rawKB": 0.8,
+        "gzStandaloneKB": 0.5,
+        "gzDeltaKB": 0.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "removeScroll": {
+        "n": 1,
+        "rawKB": 10.6,
+        "gzStandaloneKB": 4,
+        "gzDeltaKB": 3.7,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "hideOthers": {
+        "n": 1,
+        "rawKB": 1.4,
+        "gzStandaloneKB": 0.7,
+        "gzDeltaKB": 0.5,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "uiSheet": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.3,
+        "gzDeltaKB": 1.8,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "uiDialog": {
+        "n": 1,
+        "rawKB": 2.1,
+        "gzStandaloneKB": 1,
+        "gzDeltaKB": 0.7,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "overlayMotion": {
+        "n": 4,
+        "rawKB": 24.8,
+        "gzStandaloneKB": 9.5,
+        "gzDeltaKB": 8.2,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "dismissableLayer": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.7,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "presence": {
+        "n": 1,
+        "rawKB": 2.7,
+        "gzStandaloneKB": 1.2,
+        "gzDeltaKB": 0.8,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "radixToast": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "toaster": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "collection": {
+        "n": 1,
+        "rawKB": 7.1,
+        "gzStandaloneKB": 2.6,
+        "gzDeltaKB": 2.2,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "consentBanner": {
+        "n": 1,
+        "rawKB": 4.3,
+        "gzStandaloneKB": 2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "radixSwitch": {
+        "n": 1,
+        "rawKB": 4.9,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "mobileNav": {
+        "n": 1,
+        "rawKB": 2.4,
+        "gzStandaloneKB": 1.1,
+        "gzDeltaKB": 0.6,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "headerSearch": {
+        "n": 1,
+        "rawKB": 1.6,
+        "gzStandaloneKB": 0.9,
+        "gzDeltaKB": 0.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "searchBox": {
+        "n": 1,
+        "rawKB": 4.4,
+        "gzStandaloneKB": 2.2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "combobox": {
+        "n": 1,
+        "rawKB": 4.2,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "phosphor": {
+        "n": 29,
+        "rawKB": 84.9,
+        "gzStandaloneKB": 29.8,
+        "gzDeltaKB": 23.9,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "2g3bv_p29okud.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js",
+          "1cggx7i-lhdg7.js",
+          "38o51x0kbbpcz.js",
+          "3k__gv_edg8eb.js",
+          "1adhcvv0smcza.js"
+        ]
+      }
+    },
+    "icons": {
+      "modules": 29,
+      "distinct": 28,
+      "rawKB": 84.9,
+      "regularRawKB": 29.2,
+      "gzSaveKB": 14.4,
+      "dup": [
+        "ArrowCounterClockwiseIcon"
+      ]
+    }
+  },
+  "/deo/kocioni-disk-prednji-276-24-mm-demo-0004": {
+    "scripts": 24,
+    "jsGzKB": 333.6,
+    "groups": {
+      "tooltip": {
+        "n": 1,
+        "rawKB": 8.4,
+        "gzStandaloneKB": 3.1,
+        "gzDeltaKB": 2.7,
+        "chunks": [
+          "25dplrt_qw3he.js"
+        ]
+      },
+      "popperFloatingUi": {
+        "n": 2,
+        "rawKB": 34.1,
+        "gzStandaloneKB": 13.2,
+        "gzDeltaKB": 12.8,
+        "chunks": [
+          "25dplrt_qw3he.js",
+          "14y-81z8a-w-u.js"
+        ]
+      },
+      "gsapMerged": {
+        "n": 1,
+        "rawKB": 121.4,
+        "gzStandaloneKB": 47.7,
+        "gzDeltaKB": 47.6,
+        "chunks": [
+          "1tr6a7zmh41cy.js"
+        ]
+      },
+      "radixDialog": {
+        "n": 1,
+        "rawKB": 5.4,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusScope": {
+        "n": 1,
+        "rawKB": 3.6,
+        "gzStandaloneKB": 1.6,
+        "gzDeltaKB": 1.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusGuards": {
+        "n": 1,
+        "rawKB": 0.8,
+        "gzStandaloneKB": 0.5,
+        "gzDeltaKB": 0.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "removeScroll": {
+        "n": 1,
+        "rawKB": 10.6,
+        "gzStandaloneKB": 4,
+        "gzDeltaKB": 3.7,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "hideOthers": {
+        "n": 1,
+        "rawKB": 1.4,
+        "gzStandaloneKB": 0.7,
+        "gzDeltaKB": 0.5,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "uiSheet": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.3,
+        "gzDeltaKB": 1.8,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "uiDialog": {
+        "n": 1,
+        "rawKB": 2.1,
+        "gzStandaloneKB": 1,
+        "gzDeltaKB": 0.7,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "overlayMotion": {
+        "n": 4,
+        "rawKB": 24.8,
+        "gzStandaloneKB": 9.5,
+        "gzDeltaKB": 8.2,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "dismissableLayer": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.7,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "presence": {
+        "n": 1,
+        "rawKB": 2.7,
+        "gzStandaloneKB": 1.2,
+        "gzDeltaKB": 0.8,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "radixToast": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "toaster": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "collection": {
+        "n": 1,
+        "rawKB": 7.1,
+        "gzStandaloneKB": 2.6,
+        "gzDeltaKB": 2.2,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "consentBanner": {
+        "n": 1,
+        "rawKB": 4.3,
+        "gzStandaloneKB": 2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "radixSwitch": {
+        "n": 1,
+        "rawKB": 4.9,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "mobileNav": {
+        "n": 1,
+        "rawKB": 2.4,
+        "gzStandaloneKB": 1.1,
+        "gzDeltaKB": 0.6,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "headerSearch": {
+        "n": 1,
+        "rawKB": 1.6,
+        "gzStandaloneKB": 0.9,
+        "gzDeltaKB": 0.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "searchBox": {
+        "n": 1,
+        "rawKB": 4.4,
+        "gzStandaloneKB": 2.2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "combobox": {
+        "n": 1,
+        "rawKB": 4.2,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "phosphor": {
+        "n": 32,
+        "rawKB": 83.3,
+        "gzStandaloneKB": 29.3,
+        "gzDeltaKB": 22.9,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "2g3bv_p29okud.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js",
+          "1tkvz3oryrb1b.js",
+          "0iy1468xjorsv.js",
+          "3k__gv_edg8eb.js",
+          "1adhcvv0smcza.js"
+        ]
+      }
+    },
+    "icons": {
+      "modules": 32,
+      "distinct": 31,
+      "rawKB": 83.3,
+      "regularRawKB": 20.5,
+      "gzSaveKB": 16,
+      "dup": [
+        "ArrowCounterClockwiseIcon"
+      ]
+    }
+  },
+  "/pretraga?q=disk": {
+    "scripts": 24,
+    "jsGzKB": 324.7,
+    "groups": {
+      "tooltip": {
+        "n": 1,
+        "rawKB": 8.4,
+        "gzStandaloneKB": 3.1,
+        "gzDeltaKB": 2.7,
+        "chunks": [
+          "25dplrt_qw3he.js"
+        ]
+      },
+      "popperFloatingUi": {
+        "n": 2,
+        "rawKB": 34.1,
+        "gzStandaloneKB": 13.2,
+        "gzDeltaKB": 12.8,
+        "chunks": [
+          "25dplrt_qw3he.js",
+          "14y-81z8a-w-u.js"
+        ]
+      },
+      "gsapMerged": {
+        "n": 1,
+        "rawKB": 121.4,
+        "gzStandaloneKB": 47.7,
+        "gzDeltaKB": 47.6,
+        "chunks": [
+          "1tr6a7zmh41cy.js"
+        ]
+      },
+      "radixDialog": {
+        "n": 1,
+        "rawKB": 5.4,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusScope": {
+        "n": 1,
+        "rawKB": 3.6,
+        "gzStandaloneKB": 1.6,
+        "gzDeltaKB": 1.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusGuards": {
+        "n": 1,
+        "rawKB": 0.8,
+        "gzStandaloneKB": 0.5,
+        "gzDeltaKB": 0.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "removeScroll": {
+        "n": 1,
+        "rawKB": 10.6,
+        "gzStandaloneKB": 4,
+        "gzDeltaKB": 3.7,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "hideOthers": {
+        "n": 1,
+        "rawKB": 1.4,
+        "gzStandaloneKB": 0.7,
+        "gzDeltaKB": 0.5,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "uiSheet": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.3,
+        "gzDeltaKB": 1.8,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "uiDialog": {
+        "n": 1,
+        "rawKB": 2.1,
+        "gzStandaloneKB": 1,
+        "gzDeltaKB": 0.7,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "overlayMotion": {
+        "n": 4,
+        "rawKB": 24.8,
+        "gzStandaloneKB": 9.5,
+        "gzDeltaKB": 8.2,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "dismissableLayer": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.7,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "presence": {
+        "n": 1,
+        "rawKB": 2.7,
+        "gzStandaloneKB": 1.2,
+        "gzDeltaKB": 0.8,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "radixToast": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "toaster": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "collection": {
+        "n": 1,
+        "rawKB": 7.1,
+        "gzStandaloneKB": 2.6,
+        "gzDeltaKB": 2.2,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "consentBanner": {
+        "n": 1,
+        "rawKB": 4.3,
+        "gzStandaloneKB": 2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "radixSwitch": {
+        "n": 1,
+        "rawKB": 4.9,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "mobileNav": {
+        "n": 1,
+        "rawKB": 2.4,
+        "gzStandaloneKB": 1.1,
+        "gzDeltaKB": 0.6,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "headerSearch": {
+        "n": 1,
+        "rawKB": 1.6,
+        "gzStandaloneKB": 0.9,
+        "gzDeltaKB": 0.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "searchBox": {
+        "n": 1,
+        "rawKB": 4.4,
+        "gzStandaloneKB": 2.2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "combobox": {
+        "n": 1,
+        "rawKB": 4.2,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "phosphor": {
+        "n": 28,
+        "rawKB": 71.9,
+        "gzStandaloneKB": 25.4,
+        "gzDeltaKB": 20,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "2g3bv_p29okud.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js",
+          "1nsy63apukn80.js",
+          "211aixs67p7-0.js",
+          "3k__gv_edg8eb.js",
+          "1adhcvv0smcza.js"
+        ]
+      }
+    },
+    "icons": {
+      "modules": 28,
+      "distinct": 27,
+      "rawKB": 71.9,
+      "regularRawKB": 18,
+      "gzSaveKB": 13.9,
+      "dup": [
+        "ArrowCounterClockwiseIcon"
+      ]
+    }
+  },
+  "/vozila/volkswagen/golf/golf-7": {
+    "scripts": 24,
+    "jsGzKB": 324.7,
+    "groups": {
+      "tooltip": {
+        "n": 1,
+        "rawKB": 8.4,
+        "gzStandaloneKB": 3.1,
+        "gzDeltaKB": 2.7,
+        "chunks": [
+          "25dplrt_qw3he.js"
+        ]
+      },
+      "popperFloatingUi": {
+        "n": 2,
+        "rawKB": 34.1,
+        "gzStandaloneKB": 13.2,
+        "gzDeltaKB": 12.8,
+        "chunks": [
+          "25dplrt_qw3he.js",
+          "14y-81z8a-w-u.js"
+        ]
+      },
+      "gsapMerged": {
+        "n": 1,
+        "rawKB": 121.4,
+        "gzStandaloneKB": 47.7,
+        "gzDeltaKB": 47.6,
+        "chunks": [
+          "1tr6a7zmh41cy.js"
+        ]
+      },
+      "radixDialog": {
+        "n": 1,
+        "rawKB": 5.4,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusScope": {
+        "n": 1,
+        "rawKB": 3.6,
+        "gzStandaloneKB": 1.6,
+        "gzDeltaKB": 1.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusGuards": {
+        "n": 1,
+        "rawKB": 0.8,
+        "gzStandaloneKB": 0.5,
+        "gzDeltaKB": 0.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "removeScroll": {
+        "n": 1,
+        "rawKB": 10.6,
+        "gzStandaloneKB": 4,
+        "gzDeltaKB": 3.7,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "hideOthers": {
+        "n": 1,
+        "rawKB": 1.4,
+        "gzStandaloneKB": 0.7,
+        "gzDeltaKB": 0.5,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "uiSheet": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.3,
+        "gzDeltaKB": 1.8,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "uiDialog": {
+        "n": 1,
+        "rawKB": 2.1,
+        "gzStandaloneKB": 1,
+        "gzDeltaKB": 0.7,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "overlayMotion": {
+        "n": 4,
+        "rawKB": 24.8,
+        "gzStandaloneKB": 9.5,
+        "gzDeltaKB": 8.2,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "dismissableLayer": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.7,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "presence": {
+        "n": 1,
+        "rawKB": 2.7,
+        "gzStandaloneKB": 1.2,
+        "gzDeltaKB": 0.8,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "radixToast": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "toaster": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "collection": {
+        "n": 1,
+        "rawKB": 7.1,
+        "gzStandaloneKB": 2.6,
+        "gzDeltaKB": 2.2,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "consentBanner": {
+        "n": 1,
+        "rawKB": 4.3,
+        "gzStandaloneKB": 2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "radixSwitch": {
+        "n": 1,
+        "rawKB": 4.9,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "mobileNav": {
+        "n": 1,
+        "rawKB": 2.4,
+        "gzStandaloneKB": 1.1,
+        "gzDeltaKB": 0.6,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "headerSearch": {
+        "n": 1,
+        "rawKB": 1.6,
+        "gzStandaloneKB": 0.9,
+        "gzDeltaKB": 0.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "searchBox": {
+        "n": 1,
+        "rawKB": 4.4,
+        "gzStandaloneKB": 2.2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "combobox": {
+        "n": 1,
+        "rawKB": 4.2,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "phosphor": {
+        "n": 28,
+        "rawKB": 71.9,
+        "gzStandaloneKB": 25.4,
+        "gzDeltaKB": 20,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "2g3bv_p29okud.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js",
+          "3g2k0zrmq592z.js",
+          "211aixs67p7-0.js",
+          "3k__gv_edg8eb.js",
+          "1adhcvv0smcza.js"
+        ]
+      }
+    },
+    "icons": {
+      "modules": 28,
+      "distinct": 27,
+      "rawKB": 71.9,
+      "regularRawKB": 18,
+      "gzSaveKB": 13.9,
+      "dup": [
+        "ArrowCounterClockwiseIcon"
+      ]
+    }
+  },
+  "/ponuda/kocione-plocice-golf": {
+    "scripts": 24,
+    "jsGzKB": 340.2,
+    "groups": {
+      "tooltip": {
+        "n": 1,
+        "rawKB": 8.4,
+        "gzStandaloneKB": 3.1,
+        "gzDeltaKB": 2.7,
+        "chunks": [
+          "25dplrt_qw3he.js"
+        ]
+      },
+      "popperFloatingUi": {
+        "n": 2,
+        "rawKB": 34.1,
+        "gzStandaloneKB": 13.2,
+        "gzDeltaKB": 12.8,
+        "chunks": [
+          "25dplrt_qw3he.js",
+          "14y-81z8a-w-u.js"
+        ]
+      },
+      "gsapMerged": {
+        "n": 1,
+        "rawKB": 121.4,
+        "gzStandaloneKB": 47.7,
+        "gzDeltaKB": 47.6,
+        "chunks": [
+          "1tr6a7zmh41cy.js"
+        ]
+      },
+      "radixDialog": {
+        "n": 1,
+        "rawKB": 5.4,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusScope": {
+        "n": 1,
+        "rawKB": 3.6,
+        "gzStandaloneKB": 1.6,
+        "gzDeltaKB": 1.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusGuards": {
+        "n": 1,
+        "rawKB": 0.8,
+        "gzStandaloneKB": 0.5,
+        "gzDeltaKB": 0.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "removeScroll": {
+        "n": 1,
+        "rawKB": 10.6,
+        "gzStandaloneKB": 4,
+        "gzDeltaKB": 3.7,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "hideOthers": {
+        "n": 1,
+        "rawKB": 1.4,
+        "gzStandaloneKB": 0.7,
+        "gzDeltaKB": 0.5,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "uiSheet": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.3,
+        "gzDeltaKB": 1.8,
+        "chunks": [
+          "00t-a16koa1p2.js"
+        ]
+      },
+      "uiDialog": {
+        "n": 1,
+        "rawKB": 2.1,
+        "gzStandaloneKB": 1,
+        "gzDeltaKB": 0.7,
+        "chunks": [
+          "404ko09-15lhs.js"
+        ]
+      },
+      "overlayMotion": {
+        "n": 4,
+        "rawKB": 24.8,
+        "gzStandaloneKB": 9.5,
+        "gzDeltaKB": 8.2,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "404ko09-15lhs.js",
+          "00t-a16koa1p2.js"
+        ]
+      },
+      "dismissableLayer": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.7,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "presence": {
+        "n": 1,
+        "rawKB": 2.7,
+        "gzStandaloneKB": 1.2,
+        "gzDeltaKB": 0.8,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "radixToast": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "toaster": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "collection": {
+        "n": 1,
+        "rawKB": 7.1,
+        "gzStandaloneKB": 2.6,
+        "gzDeltaKB": 2.2,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "consentBanner": {
+        "n": 1,
+        "rawKB": 4.3,
+        "gzStandaloneKB": 2,
+        "gzDeltaKB": 1.7,
+        "chunks": [
+          "29ikd2g3512r-.js"
+        ]
+      },
+      "radixSwitch": {
+        "n": 1,
+        "rawKB": 4.9,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.8,
+        "chunks": [
+          "29ikd2g3512r-.js"
+        ]
+      },
+      "mobileNav": {
+        "n": 1,
+        "rawKB": 2.4,
+        "gzStandaloneKB": 1.1,
+        "gzDeltaKB": 0.6,
+        "chunks": [
+          "404ko09-15lhs.js"
+        ]
+      },
+      "headerSearch": {
+        "n": 1,
+        "rawKB": 1.6,
+        "gzStandaloneKB": 0.9,
+        "gzDeltaKB": 0.6,
+        "chunks": [
+          "404ko09-15lhs.js"
+        ]
+      },
+      "searchBox": {
+        "n": 1,
+        "rawKB": 4.4,
+        "gzStandaloneKB": 2.2,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "00t-a16koa1p2.js"
+        ]
+      },
+      "combobox": {
+        "n": 1,
+        "rawKB": 4.2,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.4,
+        "chunks": [
+          "00t-a16koa1p2.js"
+        ]
+      },
+      "phosphor": {
+        "n": 35,
+        "rawKB": 92.3,
+        "gzStandaloneKB": 32.5,
+        "gzDeltaKB": 25.5,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "29ikd2g3512r-.js",
+          "3e96qux3-c6pe.js",
+          "1h9gpy0y5abu7.js",
+          "404ko09-15lhs.js",
+          "00t-a16koa1p2.js",
+          "1adhcvv0smcza.js"
+        ]
+      }
+    },
+    "icons": {
+      "modules": 35,
+      "distinct": 27,
+      "rawKB": 92.3,
+      "regularRawKB": 22.4,
+      "gzSaveKB": 18.2,
+      "dup": [
+        "CaretDownIcon",
+        "ChatCircleTextIcon",
+        "EnvelopeIcon",
+        "PhoneIcon",
+        "WhatsappLogoIcon",
+        "ArrowRightIcon",
+        "CarIcon",
+        "ShoppingCartSimpleIcon"
+      ]
+    }
+  },
+  "/za-majstore": {
+    "scripts": 23,
+    "jsGzKB": 316.3,
+    "groups": {
+      "tooltip": {
+        "n": 1,
+        "rawKB": 8.4,
+        "gzStandaloneKB": 3.1,
+        "gzDeltaKB": 2.7,
+        "chunks": [
+          "25dplrt_qw3he.js"
+        ]
+      },
+      "popperFloatingUi": {
+        "n": 2,
+        "rawKB": 34.1,
+        "gzStandaloneKB": 13.2,
+        "gzDeltaKB": 12.8,
+        "chunks": [
+          "25dplrt_qw3he.js",
+          "14y-81z8a-w-u.js"
+        ]
+      },
+      "gsapMerged": {
+        "n": 1,
+        "rawKB": 121.4,
+        "gzStandaloneKB": 47.7,
+        "gzDeltaKB": 47.6,
+        "chunks": [
+          "1tr6a7zmh41cy.js"
+        ]
+      },
+      "radixDialog": {
+        "n": 1,
+        "rawKB": 5.4,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusScope": {
+        "n": 1,
+        "rawKB": 3.6,
+        "gzStandaloneKB": 1.6,
+        "gzDeltaKB": 1.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusGuards": {
+        "n": 1,
+        "rawKB": 0.8,
+        "gzStandaloneKB": 0.5,
+        "gzDeltaKB": 0.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "removeScroll": {
+        "n": 1,
+        "rawKB": 10.6,
+        "gzStandaloneKB": 4,
+        "gzDeltaKB": 3.7,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "hideOthers": {
+        "n": 1,
+        "rawKB": 1.4,
+        "gzStandaloneKB": 0.7,
+        "gzDeltaKB": 0.5,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "uiSheet": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.3,
+        "gzDeltaKB": 1.8,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "uiDialog": {
+        "n": 1,
+        "rawKB": 2.1,
+        "gzStandaloneKB": 1,
+        "gzDeltaKB": 0.7,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "overlayMotion": {
+        "n": 4,
+        "rawKB": 24.8,
+        "gzStandaloneKB": 9.5,
+        "gzDeltaKB": 8.2,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "dismissableLayer": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.7,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "presence": {
+        "n": 1,
+        "rawKB": 2.7,
+        "gzStandaloneKB": 1.2,
+        "gzDeltaKB": 0.8,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "radixToast": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "toaster": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "collection": {
+        "n": 1,
+        "rawKB": 7.1,
+        "gzStandaloneKB": 2.6,
+        "gzDeltaKB": 2.2,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "consentBanner": {
+        "n": 1,
+        "rawKB": 4.3,
+        "gzStandaloneKB": 2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "radixSwitch": {
+        "n": 1,
+        "rawKB": 4.9,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "mobileNav": {
+        "n": 1,
+        "rawKB": 2.4,
+        "gzStandaloneKB": 1.1,
+        "gzDeltaKB": 0.6,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "headerSearch": {
+        "n": 1,
+        "rawKB": 1.6,
+        "gzStandaloneKB": 0.9,
+        "gzDeltaKB": 0.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "searchBox": {
+        "n": 1,
+        "rawKB": 4.4,
+        "gzStandaloneKB": 2.2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "combobox": {
+        "n": 1,
+        "rawKB": 4.2,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "phosphor": {
+        "n": 22,
+        "rawKB": 59.9,
+        "gzStandaloneKB": 21.4,
+        "gzDeltaKB": 17.1,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "2g3bv_p29okud.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js",
+          "3k__gv_edg8eb.js",
+          "1adhcvv0smcza.js"
+        ]
+      }
+    },
+    "icons": {
+      "modules": 22,
+      "distinct": 21,
+      "rawKB": 59.9,
+      "regularRawKB": 15.1,
+      "gzSaveKB": 11.9,
+      "dup": [
+        "ArrowCounterClockwiseIcon"
+      ]
+    }
+  },
+  "/upit": {
+    "scripts": 24,
+    "jsGzKB": 428.7,
+    "groups": {
+      "tooltip": {
+        "n": 1,
+        "rawKB": 8.4,
+        "gzStandaloneKB": 3.1,
+        "gzDeltaKB": 2.7,
+        "chunks": [
+          "25dplrt_qw3he.js"
+        ]
+      },
+      "popperFloatingUi": {
+        "n": 2,
+        "rawKB": 34.1,
+        "gzStandaloneKB": 13.2,
+        "gzDeltaKB": 12.8,
+        "chunks": [
+          "25dplrt_qw3he.js",
+          "14y-81z8a-w-u.js"
+        ]
+      },
+      "gsapMerged": {
+        "n": 1,
+        "rawKB": 121.4,
+        "gzStandaloneKB": 47.7,
+        "gzDeltaKB": 47.6,
+        "chunks": [
+          "1tr6a7zmh41cy.js"
+        ]
+      },
+      "radixDialog": {
+        "n": 1,
+        "rawKB": 5.4,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusScope": {
+        "n": 1,
+        "rawKB": 3.6,
+        "gzStandaloneKB": 1.6,
+        "gzDeltaKB": 1.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusGuards": {
+        "n": 1,
+        "rawKB": 0.8,
+        "gzStandaloneKB": 0.5,
+        "gzDeltaKB": 0.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "removeScroll": {
+        "n": 1,
+        "rawKB": 10.6,
+        "gzStandaloneKB": 4,
+        "gzDeltaKB": 3.7,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "hideOthers": {
+        "n": 1,
+        "rawKB": 1.4,
+        "gzStandaloneKB": 0.7,
+        "gzDeltaKB": 0.5,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "uiSheet": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.3,
+        "gzDeltaKB": 1.8,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "uiDialog": {
+        "n": 1,
+        "rawKB": 2.1,
+        "gzStandaloneKB": 1,
+        "gzDeltaKB": 0.7,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "overlayMotion": {
+        "n": 4,
+        "rawKB": 24.8,
+        "gzStandaloneKB": 9.5,
+        "gzDeltaKB": 8.2,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "dismissableLayer": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.7,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "presence": {
+        "n": 1,
+        "rawKB": 2.7,
+        "gzStandaloneKB": 1.2,
+        "gzDeltaKB": 0.8,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "radixToast": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "toaster": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "collection": {
+        "n": 1,
+        "rawKB": 7.1,
+        "gzStandaloneKB": 2.6,
+        "gzDeltaKB": 2.2,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "consentBanner": {
+        "n": 1,
+        "rawKB": 4.3,
+        "gzStandaloneKB": 2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "radixSwitch": {
+        "n": 1,
+        "rawKB": 4.9,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "mobileNav": {
+        "n": 1,
+        "rawKB": 2.4,
+        "gzStandaloneKB": 1.1,
+        "gzDeltaKB": 0.6,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "headerSearch": {
+        "n": 1,
+        "rawKB": 1.6,
+        "gzStandaloneKB": 0.9,
+        "gzDeltaKB": 0.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "searchBox": {
+        "n": 1,
+        "rawKB": 4.4,
+        "gzStandaloneKB": 2.2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "combobox": {
+        "n": 1,
+        "rawKB": 4.2,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "phosphor": {
+        "n": 26,
+        "rawKB": 84.7,
+        "gzStandaloneKB": 30.6,
+        "gzDeltaKB": 25,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "2g3bv_p29okud.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js",
+          "3k__gv_edg8eb.js",
+          "301fp03vk_ndj.js",
+          "1adhcvv0smcza.js"
+        ]
+      }
+    },
+    "icons": {
+      "modules": 26,
+      "distinct": 25,
+      "rawKB": 84.7,
+      "regularRawKB": 33.3,
+      "gzSaveKB": 13.7,
+      "dup": [
+        "ArrowCounterClockwiseIcon"
+      ]
+    }
+  },
+  "/korpa": {
+    "scripts": 24,
+    "jsGzKB": 321.3,
+    "groups": {
+      "tooltip": {
+        "n": 1,
+        "rawKB": 8.4,
+        "gzStandaloneKB": 3.1,
+        "gzDeltaKB": 2.7,
+        "chunks": [
+          "25dplrt_qw3he.js"
+        ]
+      },
+      "popperFloatingUi": {
+        "n": 2,
+        "rawKB": 34.1,
+        "gzStandaloneKB": 13.2,
+        "gzDeltaKB": 12.8,
+        "chunks": [
+          "25dplrt_qw3he.js",
+          "14y-81z8a-w-u.js"
+        ]
+      },
+      "gsapMerged": {
+        "n": 1,
+        "rawKB": 121.4,
+        "gzStandaloneKB": 47.7,
+        "gzDeltaKB": 47.6,
+        "chunks": [
+          "1tr6a7zmh41cy.js"
+        ]
+      },
+      "radixDialog": {
+        "n": 1,
+        "rawKB": 5.4,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusScope": {
+        "n": 1,
+        "rawKB": 3.6,
+        "gzStandaloneKB": 1.6,
+        "gzDeltaKB": 1.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusGuards": {
+        "n": 1,
+        "rawKB": 0.8,
+        "gzStandaloneKB": 0.5,
+        "gzDeltaKB": 0.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "removeScroll": {
+        "n": 1,
+        "rawKB": 10.6,
+        "gzStandaloneKB": 4,
+        "gzDeltaKB": 3.7,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "hideOthers": {
+        "n": 1,
+        "rawKB": 1.4,
+        "gzStandaloneKB": 0.7,
+        "gzDeltaKB": 0.5,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "uiSheet": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.3,
+        "gzDeltaKB": 1.8,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "uiDialog": {
+        "n": 1,
+        "rawKB": 2.1,
+        "gzStandaloneKB": 1,
+        "gzDeltaKB": 0.7,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "overlayMotion": {
+        "n": 4,
+        "rawKB": 24.8,
+        "gzStandaloneKB": 9.5,
+        "gzDeltaKB": 8.2,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "dismissableLayer": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.7,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "presence": {
+        "n": 1,
+        "rawKB": 2.7,
+        "gzStandaloneKB": 1.2,
+        "gzDeltaKB": 0.8,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "radixToast": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "toaster": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "collection": {
+        "n": 1,
+        "rawKB": 7.1,
+        "gzStandaloneKB": 2.6,
+        "gzDeltaKB": 2.2,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "consentBanner": {
+        "n": 1,
+        "rawKB": 4.3,
+        "gzStandaloneKB": 2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "radixSwitch": {
+        "n": 1,
+        "rawKB": 4.9,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "mobileNav": {
+        "n": 1,
+        "rawKB": 2.4,
+        "gzStandaloneKB": 1.1,
+        "gzDeltaKB": 0.6,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "headerSearch": {
+        "n": 1,
+        "rawKB": 1.6,
+        "gzStandaloneKB": 0.9,
+        "gzDeltaKB": 0.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "searchBox": {
+        "n": 1,
+        "rawKB": 4.4,
+        "gzStandaloneKB": 2.2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "combobox": {
+        "n": 1,
+        "rawKB": 4.2,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "phosphor": {
+        "n": 25,
+        "rawKB": 65.1,
+        "gzStandaloneKB": 23.1,
+        "gzDeltaKB": 18.1,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "2g3bv_p29okud.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js",
+          "3k__gv_edg8eb.js",
+          "42-8_0nljx4ce.js",
+          "1adhcvv0smcza.js"
+        ]
+      }
+    },
+    "icons": {
+      "modules": 25,
+      "distinct": 24,
+      "rawKB": 65.1,
+      "regularRawKB": 16.4,
+      "gzSaveKB": 12.6,
+      "dup": [
+        "ArrowCounterClockwiseIcon"
+      ]
+    }
+  },
+  "/porudzbina": {
+    "scripts": 24,
+    "jsGzKB": 429.9,
+    "groups": {
+      "tooltip": {
+        "n": 1,
+        "rawKB": 8.4,
+        "gzStandaloneKB": 3.1,
+        "gzDeltaKB": 2.7,
+        "chunks": [
+          "25dplrt_qw3he.js"
+        ]
+      },
+      "popperFloatingUi": {
+        "n": 2,
+        "rawKB": 34.1,
+        "gzStandaloneKB": 13.2,
+        "gzDeltaKB": 12.8,
+        "chunks": [
+          "25dplrt_qw3he.js",
+          "14y-81z8a-w-u.js"
+        ]
+      },
+      "gsapMerged": {
+        "n": 1,
+        "rawKB": 121.4,
+        "gzStandaloneKB": 47.7,
+        "gzDeltaKB": 47.6,
+        "chunks": [
+          "1tr6a7zmh41cy.js"
+        ]
+      },
+      "radixDialog": {
+        "n": 1,
+        "rawKB": 5.4,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusScope": {
+        "n": 1,
+        "rawKB": 3.6,
+        "gzStandaloneKB": 1.6,
+        "gzDeltaKB": 1.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusGuards": {
+        "n": 1,
+        "rawKB": 0.8,
+        "gzStandaloneKB": 0.5,
+        "gzDeltaKB": 0.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "removeScroll": {
+        "n": 1,
+        "rawKB": 10.6,
+        "gzStandaloneKB": 4,
+        "gzDeltaKB": 3.7,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "hideOthers": {
+        "n": 1,
+        "rawKB": 1.4,
+        "gzStandaloneKB": 0.7,
+        "gzDeltaKB": 0.5,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "uiSheet": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.3,
+        "gzDeltaKB": 1.8,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "uiDialog": {
+        "n": 1,
+        "rawKB": 2.1,
+        "gzStandaloneKB": 1,
+        "gzDeltaKB": 0.7,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "overlayMotion": {
+        "n": 4,
+        "rawKB": 24.8,
+        "gzStandaloneKB": 9.5,
+        "gzDeltaKB": 8.2,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "dismissableLayer": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.7,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "presence": {
+        "n": 1,
+        "rawKB": 2.7,
+        "gzStandaloneKB": 1.2,
+        "gzDeltaKB": 0.8,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "radixToast": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "toaster": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "collection": {
+        "n": 1,
+        "rawKB": 7.1,
+        "gzStandaloneKB": 2.6,
+        "gzDeltaKB": 2.2,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "consentBanner": {
+        "n": 1,
+        "rawKB": 4.3,
+        "gzStandaloneKB": 2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "radixSwitch": {
+        "n": 1,
+        "rawKB": 4.9,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "mobileNav": {
+        "n": 1,
+        "rawKB": 2.4,
+        "gzStandaloneKB": 1.1,
+        "gzDeltaKB": 0.6,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "headerSearch": {
+        "n": 1,
+        "rawKB": 1.6,
+        "gzStandaloneKB": 0.9,
+        "gzDeltaKB": 0.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "searchBox": {
+        "n": 1,
+        "rawKB": 4.4,
+        "gzStandaloneKB": 2.2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "combobox": {
+        "n": 1,
+        "rawKB": 4.2,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "phosphor": {
+        "n": 26,
+        "rawKB": 67,
+        "gzStandaloneKB": 24.1,
+        "gzDeltaKB": 19,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "2g3bv_p29okud.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js",
+          "0e-3apv4m0eih.js",
+          "3k__gv_edg8eb.js",
+          "1adhcvv0smcza.js"
+        ]
+      }
+    },
+    "icons": {
+      "modules": 26,
+      "distinct": 25,
+      "rawKB": 67,
+      "regularRawKB": 16.8,
+      "gzSaveKB": 13.4,
+      "dup": [
+        "ArrowCounterClockwiseIcon"
+      ]
+    }
+  },
+  "/prijava": {
+    "scripts": 23,
+    "jsGzKB": 308.7,
+    "groups": {
+      "tooltip": {
+        "n": 1,
+        "rawKB": 8.4,
+        "gzStandaloneKB": 3.1,
+        "gzDeltaKB": 2.7,
+        "chunks": [
+          "25dplrt_qw3he.js"
+        ]
+      },
+      "popperFloatingUi": {
+        "n": 2,
+        "rawKB": 34.1,
+        "gzStandaloneKB": 13.2,
+        "gzDeltaKB": 12.8,
+        "chunks": [
+          "25dplrt_qw3he.js",
+          "14y-81z8a-w-u.js"
+        ]
+      },
+      "gsapMerged": {
+        "n": 1,
+        "rawKB": 121.4,
+        "gzStandaloneKB": 47.7,
+        "gzDeltaKB": 47.6,
+        "chunks": [
+          "1tr6a7zmh41cy.js"
+        ]
+      },
+      "radixDialog": {
+        "n": 1,
+        "rawKB": 5.4,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusScope": {
+        "n": 1,
+        "rawKB": 3.6,
+        "gzStandaloneKB": 1.6,
+        "gzDeltaKB": 1.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "focusGuards": {
+        "n": 1,
+        "rawKB": 0.8,
+        "gzStandaloneKB": 0.5,
+        "gzDeltaKB": 0.3,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "removeScroll": {
+        "n": 1,
+        "rawKB": 10.6,
+        "gzStandaloneKB": 4,
+        "gzDeltaKB": 3.7,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "hideOthers": {
+        "n": 1,
+        "rawKB": 1.4,
+        "gzStandaloneKB": 0.7,
+        "gzDeltaKB": 0.5,
+        "chunks": [
+          "1t0q0ok8maumv.js"
+        ]
+      },
+      "uiSheet": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.3,
+        "gzDeltaKB": 1.8,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "uiDialog": {
+        "n": 1,
+        "rawKB": 2.1,
+        "gzStandaloneKB": 1,
+        "gzDeltaKB": 0.7,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "overlayMotion": {
+        "n": 4,
+        "rawKB": 24.8,
+        "gzStandaloneKB": 9.5,
+        "gzDeltaKB": 8.2,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "dismissableLayer": {
+        "n": 1,
+        "rawKB": 6,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.7,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "presence": {
+        "n": 1,
+        "rawKB": 2.7,
+        "gzStandaloneKB": 1.2,
+        "gzDeltaKB": 0.8,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "radixToast": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "toaster": {
+        "n": 1,
+        "rawKB": 15.3,
+        "gzStandaloneKB": 5.5,
+        "gzDeltaKB": 5.1,
+        "chunks": [
+          "0rklqt_vfe3_n.js"
+        ]
+      },
+      "collection": {
+        "n": 1,
+        "rawKB": 7.1,
+        "gzStandaloneKB": 2.6,
+        "gzDeltaKB": 2.2,
+        "chunks": [
+          "2vm060vmiv-df.js"
+        ]
+      },
+      "consentBanner": {
+        "n": 1,
+        "rawKB": 4.3,
+        "gzStandaloneKB": 2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "0sgvhbpe5nb6s.js"
+        ]
+      },
+      "radixSwitch": {
+        "n": 1,
+        "rawKB": 4.9,
+        "gzStandaloneKB": 2.1,
+        "gzDeltaKB": 1.6,
+        "chunks": [
+          "120epkn8j_rkq.js"
+        ]
+      },
+      "mobileNav": {
+        "n": 1,
+        "rawKB": 2.4,
+        "gzStandaloneKB": 1.1,
+        "gzDeltaKB": 0.6,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "headerSearch": {
+        "n": 1,
+        "rawKB": 1.6,
+        "gzStandaloneKB": 0.9,
+        "gzDeltaKB": 0.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "searchBox": {
+        "n": 1,
+        "rawKB": 4.4,
+        "gzStandaloneKB": 2.2,
+        "gzDeltaKB": 1.5,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "combobox": {
+        "n": 1,
+        "rawKB": 4.2,
+        "gzStandaloneKB": 1.9,
+        "gzDeltaKB": 1.4,
+        "chunks": [
+          "2g3bv_p29okud.js"
+        ]
+      },
+      "phosphor": {
+        "n": 22,
+        "rawKB": 59.9,
+        "gzStandaloneKB": 21.4,
+        "gzDeltaKB": 17.1,
+        "chunks": [
+          "2vm060vmiv-df.js",
+          "0rklqt_vfe3_n.js",
+          "2g3bv_p29okud.js",
+          "120epkn8j_rkq.js",
+          "0sgvhbpe5nb6s.js",
+          "3k__gv_edg8eb.js",
+          "1adhcvv0smcza.js"
+        ]
+      }
+    },
+    "icons": {
+      "modules": 22,
+      "distinct": 21,
+      "rawKB": 59.9,
+      "regularRawKB": 15.1,
+      "gzSaveKB": 11.9,
+      "dup": [
+        "ArrowCounterClockwiseIcon"
+      ]
+    }
+  }
+}

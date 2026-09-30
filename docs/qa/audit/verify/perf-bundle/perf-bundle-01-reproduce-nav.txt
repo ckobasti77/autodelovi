@@ -1,0 +1,8 @@
+verify perf-bundle-01 - /korpa -> tap checkout -> URL /porudzbina + h1 visible, 390 px, slow 4G (150 ms RTT, 1.6 Mbps), CPU 1x, :3100
+cold run 1: 1135 ms (chunk from cache: false)
+warm run 1: 1010 ms (chunk from cache: true)
+cold run 2: 1403 ms (chunk from cache: false)
+warm run 2: 829 ms (chunk from cache: true)
+cold run 3: 1891 ms (chunk from cache: false)
+warm run 3: 756 ms (chunk from cache: true)
+median cold 1403 ms, warm 829 ms, difference 574 ms

@@ -1,0 +1,140 @@
+=== 15:51:57 --runs 5 --throttling devtools /
+http://localhost:3200/ run 1: perf 90 · LCP 2246 ms · CLS 0.001 · TBT 297 ms · FCP 2246 ms · SI 2267 ms
+file:///C:/Users/admin/Desktop/Web%20Dev%20Projects/autodelovi/tests/lighthouse/run.mjs:76
+        `${url} run ${r + 1}: perf ${Math.round(run.performance * 100)} · LCP ${Math.round(run.lcp)} ms · CLS ${run.cls.toFixed(3)} · TBT ${Math.round(run.tbt)} ms · FCP ${Math.round(run.fcp)} ms · SI ${Math.round(run.si)} ms`,
+                                                                                                                        ^
+
+TypeError: Cannot read properties of undefined (reading 'toFixed')
+    at file:///C:/Users/admin/Desktop/Web%20Dev%20Projects/autodelovi/tests/lighthouse/run.mjs:76:121
+
+Node.js v22.23.2
+=== exit 1 15:54:19
+=== 15:54:19 --runs 3 --throttling devtools /delovi/kocioni-diskovi /deo/kocioni-disk-prednji-276-24-mm-demo-0004
+http://localhost:3200/delovi/kocioni-diskovi run 1: perf 74 · LCP 2320 ms · CLS 0.001 · TBT 976 ms · FCP 2320 ms · SI 2529 ms
+http://localhost:3200/delovi/kocioni-diskovi run 2: perf 76 · LCP 2196 ms · CLS 0.000 · TBT 863 ms · FCP 2196 ms · SI 2390 ms
+http://localhost:3200/delovi/kocioni-diskovi run 3: perf 77 · LCP 2162 ms · CLS 0.000 · TBT 837 ms · FCP 2162 ms · SI 2339 ms
+MEDIAN http://localhost:3200/delovi/kocioni-diskovi (mobile, devtools throttling, 3 runs): performance 76 · accessibility 100 · best practices 100 · SEO 100 · LCP 2196 ms · CLS 0.000 · TBT 863 ms · FCP 2196 ms · SI 2390 ms
+  LCP element: 
+  BUDGET MISSED: TBT 863 > 300, performance 76 < 85
+http://localhost:3200/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 1: perf 76 · LCP 2533 ms · CLS 0.000 · TBT 699 ms · FCP 2533 ms · SI 2637 ms
+file:///C:/Users/admin/Desktop/Web%20Dev%20Projects/autodelovi/tests/lighthouse/run.mjs:76
+        `${url} run ${r + 1}: perf ${Math.round(run.performance * 100)} · LCP ${Math.round(run.lcp)} ms · CLS ${run.cls.toFixed(3)} · TBT ${Math.round(run.tbt)} ms · FCP ${Math.round(run.fcp)} ms · SI ${Math.round(run.si)} ms`,
+                                                                                                                        ^
+
+TypeError: Cannot read properties of undefined (reading 'toFixed')
+    at file:///C:/Users/admin/Desktop/Web%20Dev%20Projects/autodelovi/tests/lighthouse/run.mjs:76:121
+
+Node.js v22.23.2
+=== exit 1 15:57:07
+=== 15:57:07 --runs 3 --throttling simulate / /delovi/kocioni-diskovi /deo/kocioni-disk-prednji-276-24-mm-demo-0004
+http://localhost:3200/ run 1: perf 82 · LCP 4613 ms · CLS 0.001 · TBT 117 ms · FCP 1402 ms · SI 2734 ms
+http://localhost:3200/ run 2: perf 84 · LCP 4403 ms · CLS 0.001 · TBT 78 ms · FCP 1373 ms · SI 1452 ms
+http://localhost:3200/ run 3: perf 84 · LCP 4393 ms · CLS 0.001 · TBT 73 ms · FCP 1369 ms · SI 1369 ms
+MEDIAN http://localhost:3200/ (mobile, simulate throttling, 3 runs): performance 84 · accessibility 100 · best practices 100 · SEO 100 · LCP 4403 ms · CLS 0.001 · TBT 78 ms · FCP 1373 ms · SI 1452 ms
+  LCP element: 
+  BUDGET MISSED: LCP 4403 > 2500, performance 84 < 85
+http://localhost:3200/delovi/kocioni-diskovi run 1: perf 85 · LCP 4381 ms · CLS 0.000 · TBT 63 ms · FCP 1364 ms · SI 1658 ms
+http://localhost:3200/delovi/kocioni-diskovi run 2: perf 85 · LCP 4355 ms · CLS 0.000 · TBT 52 ms · FCP 1367 ms · SI 1600 ms
+http://localhost:3200/delovi/kocioni-diskovi run 3: perf 82 · LCP 4437 ms · CLS 0.000 · TBT 168 ms · FCP 1391 ms · SI 1708 ms
+MEDIAN http://localhost:3200/delovi/kocioni-diskovi (mobile, simulate throttling, 3 runs): performance 85 · accessibility 100 · best practices 100 · SEO 100 · LCP 4381 ms · CLS 0.000 · TBT 63 ms · FCP 1367 ms · SI 1658 ms
+  LCP element: 
+  BUDGET MISSED: LCP 4381 > 2500
+http://localhost:3200/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 1: perf 85 · LCP 4283 ms · CLS 0.000 · TBT 55 ms · FCP 1068 ms · SI 1222 ms
+http://localhost:3200/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 2: perf 88 · LCP 3858 ms · CLS 0.000 · TBT 49 ms · FCP 1070 ms · SI 1070 ms
+http://localhost:3200/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 3: perf 86 · LCP 4257 ms · CLS 0.000 · TBT 43 ms · FCP 1066 ms · SI 1076 ms
+MEDIAN http://localhost:3200/deo/kocioni-disk-prednji-276-24-mm-demo-0004 (mobile, simulate throttling, 3 runs): performance 86 · accessibility 100 · best practices 100 · SEO 100 · LCP 4257 ms · CLS 0.000 · TBT 49 ms · FCP 1068 ms · SI 1076 ms
+  LCP element: 
+  BUDGET MISSED: LCP 4257 > 2500
+=== exit 1 16:00:37
+=== 16:00:37 --runs 1 --throttling devtools /delovi /pretraga?q=disk /vozila/volkswagen/golf/golf-7 /delovi/kocioni-diskovi/volkswagen/golf /za-majstore /upit /ponuda/kocione-plocice-golf /kontakt
+http://localhost:3200/delovi run 1: perf 91 · LCP 2274 ms · CLS 0.000 · TBT 246 ms · FCP 2274 ms · SI 2381 ms
+MEDIAN http://localhost:3200/delovi (mobile, devtools throttling, 1 runs): performance 91 · accessibility 100 · best practices 100 · SEO 100 · LCP 2274 ms · CLS 0.000 · TBT 246 ms · FCP 2274 ms · SI 2381 ms
+  LCP element: 
+  budgets met
+http://localhost:3200/pretraga?q=disk run 1: perf 82 · LCP 1991 ms · CLS 0.000 · TBT 625 ms · FCP 1991 ms · SI 2217 ms
+MEDIAN http://localhost:3200/pretraga?q=disk (mobile, devtools throttling, 1 runs): performance 82 · accessibility 100 · best practices 100 · SEO 66 · LCP 1991 ms · CLS 0.000 · TBT 625 ms · FCP 1991 ms · SI 2217 ms
+  LCP element: 
+  BUDGET MISSED: TBT 625 > 300, performance 82 < 85
+http://localhost:3200/vozila/volkswagen/golf/golf-7 run 1: perf 78 · LCP 2249 ms · CLS 0.082 · TBT 650 ms · FCP 2249 ms · SI 2308 ms
+MEDIAN http://localhost:3200/vozila/volkswagen/golf/golf-7 (mobile, devtools throttling, 1 runs): performance 78 · accessibility 100 · best practices 100 · SEO 100 · LCP 2249 ms · CLS 0.082 · TBT 650 ms · FCP 2249 ms · SI 2308 ms
+  LCP element: 
+  BUDGET MISSED: CLS 0.082 > 0.05, TBT 650 > 300, performance 78 < 85
+http://localhost:3200/delovi/kocioni-diskovi/volkswagen/golf run 1: perf 73 · LCP 2356 ms · CLS 0.000 · TBT 1019 ms · FCP 2356 ms · SI 2416 ms
+MEDIAN http://localhost:3200/delovi/kocioni-diskovi/volkswagen/golf (mobile, devtools throttling, 1 runs): performance 73 · accessibility 100 · best practices 100 · SEO 100 · LCP 2356 ms · CLS 0.000 · TBT 1019 ms · FCP 2356 ms · SI 2416 ms
+  LCP element: 
+  BUDGET MISSED: TBT 1019 > 300, performance 73 < 85
+http://localhost:3200/za-majstore run 1: perf 90 · LCP 2259 ms · CLS 0.000 · TBT 280 ms · FCP 2259 ms · SI 2279 ms
+MEDIAN http://localhost:3200/za-majstore (mobile, devtools throttling, 1 runs): performance 90 · accessibility 100 · best practices 100 · SEO 100 · LCP 2259 ms · CLS 0.000 · TBT 280 ms · FCP 2259 ms · SI 2279 ms
+  LCP element: 
+  budgets met
+http://localhost:3200/upit run 1: perf 88 · LCP 2196 ms · CLS 0.000 · TBT 371 ms · FCP 2196 ms · SI 2221 ms
+MEDIAN http://localhost:3200/upit (mobile, devtools throttling, 1 runs): performance 88 · accessibility 100 · best practices 96 · SEO 100 · LCP 2196 ms · CLS 0.000 · TBT 371 ms · FCP 2196 ms · SI 2221 ms
+  LCP element: 
+  BUDGET MISSED: TBT 371 > 300
+http://localhost:3200/ponuda/kocione-plocice-golf run 1: perf 75 · LCP 2741 ms · CLS 0.001 · TBT 629 ms · FCP 2741 ms · SI 2910 ms
+MEDIAN http://localhost:3200/ponuda/kocione-plocice-golf (mobile, devtools throttling, 1 runs): performance 75 · accessibility 100 · best practices 100 · SEO 69 · LCP 2741 ms · CLS 0.001 · TBT 629 ms · FCP 2741 ms · SI 2910 ms
+  LCP element: 
+  BUDGET MISSED: LCP 2741 > 2500, TBT 629 > 300, performance 75 < 85
+http://localhost:3200/kontakt run 1: perf 83 · LCP 2443 ms · CLS 0.000 · TBT 454 ms · FCP 2443 ms · SI 2747 ms
+MEDIAN http://localhost:3200/kontakt (mobile, devtools throttling, 1 runs): performance 83 · accessibility 100 · best practices 100 · SEO 100 · LCP 2443 ms · CLS 0.000 · TBT 454 ms · FCP 2443 ms · SI 2747 ms
+  LCP element: 
+  BUDGET MISSED: TBT 454 > 300, performance 83 < 85
+=== exit 1 16:04:53
+=== 16:04:53 --runs 1 --throttling simulate /delovi /pretraga?q=disk /vozila/volkswagen/golf/golf-7 /delovi/kocioni-diskovi/volkswagen/golf /za-majstore /upit /ponuda/kocione-plocice-golf /kontakt
+http://localhost:3200/delovi run 1: perf 85 · LCP 4374 ms · CLS 0.000 · TBT 82 ms · FCP 1070 ms · SI 1552 ms
+MEDIAN http://localhost:3200/delovi (mobile, simulate throttling, 1 runs): performance 85 · accessibility 100 · best practices 100 · SEO 100 · LCP 4374 ms · CLS 0.000 · TBT 82 ms · FCP 1070 ms · SI 1552 ms
+  LCP element: 
+  BUDGET MISSED: LCP 4374 > 2500
+http://localhost:3200/pretraga?q=disk run 1: perf 86 · LCP 4170 ms · CLS 0.000 · TBT 28 ms · FCP 910 ms · SI 1604 ms
+MEDIAN http://localhost:3200/pretraga?q=disk (mobile, simulate throttling, 1 runs): performance 86 · accessibility 100 · best practices 100 · SEO 66 · LCP 4170 ms · CLS 0.000 · TBT 28 ms · FCP 910 ms · SI 1604 ms
+  LCP element: 
+  BUDGET MISSED: LCP 4170 > 2500
+http://localhost:3200/vozila/volkswagen/golf/golf-7 run 1: perf 83 · LCP 4150 ms · CLS 0.100 · TBT 80 ms · FCP 1369 ms · SI 1369 ms
+MEDIAN http://localhost:3200/vozila/volkswagen/golf/golf-7 (mobile, simulate throttling, 1 runs): performance 83 · accessibility 100 · best practices 100 · SEO 100 · LCP 4150 ms · CLS 0.100 · TBT 80 ms · FCP 1369 ms · SI 1369 ms
+  LCP element: 
+  BUDGET MISSED: LCP 4150 > 2500, CLS 0.100 > 0.05, performance 83 < 85
+file:///C:/Users/admin/Desktop/Web%20Dev%20Projects/autodelovi/tests/lighthouse/run.mjs:76
+        `${url} run ${r + 1}: perf ${Math.round(run.performance * 100)} · LCP ${Math.round(run.lcp)} ms · CLS ${run.cls.toFixed(3)} · TBT ${Math.round(run.tbt)} ms · FCP ${Math.round(run.fcp)} ms · SI ${Math.round(run.si)} ms`,
+                                                                                                                        ^
+
+TypeError: Cannot read properties of undefined (reading 'toFixed')
+    at file:///C:/Users/admin/Desktop/Web%20Dev%20Projects/autodelovi/tests/lighthouse/run.mjs:76:121
+
+Node.js v22.23.2
+=== exit 1 16:05:46
+=== 16:05:46 --runs 3 --desktop / /delovi/kocioni-diskovi /deo/kocioni-disk-prednji-276-24-mm-demo-0004
+http://localhost:3200/delovi/kocioni-diskovi run 1: perf 99 · LCP 919 ms · CLS 0.000 · TBT 0 ms · FCP 384 ms · SI 561 ms
+http://localhost:3200/delovi/kocioni-diskovi run 2: perf 99 · LCP 895 ms · CLS 0.000 · TBT 0 ms · FCP 379 ms · SI 399 ms
+http://localhost:3200/delovi/kocioni-diskovi run 3: perf 99 · LCP 882 ms · CLS 0.000 · TBT 0 ms · FCP 375 ms · SI 427 ms
+MEDIAN http://localhost:3200/delovi/kocioni-diskovi (desktop, simulate throttling, 3 runs): performance 99 · accessibility 100 · best practices 100 · SEO 100 · LCP 895 ms · CLS 0.000 · TBT 0 ms · FCP 379 ms · SI 427 ms
+  LCP element: 
+http://localhost:3200/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 1: perf 99 · LCP 883 ms · CLS 0.000 · TBT 0 ms · FCP 293 ms · SI 385 ms
+http://localhost:3200/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 2: perf 99 · LCP 874 ms · CLS 0.000 · TBT 0 ms · FCP 296 ms · SI 413 ms
+http://localhost:3200/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 3: perf 99 · LCP 870 ms · CLS 0.000 · TBT 0 ms · FCP 294 ms · SI 343 ms
+MEDIAN http://localhost:3200/deo/kocioni-disk-prednji-276-24-mm-demo-0004 (desktop, simulate throttling, 3 runs): performance 99 · accessibility 100 · best practices 100 · SEO 100 · LCP 874 ms · CLS 0.000 · TBT 0 ms · FCP 294 ms · SI 385 ms
+  LCP element: 
+=== exit 0 16:06:45
+=== 16:06:45 --runs 1 --desktop /delovi /pretraga?q=disk /vozila/volkswagen/golf/golf-7 /delovi/kocioni-diskovi/volkswagen/golf /za-majstore /upit /ponuda/kocione-plocice-golf /kontakt
+http://localhost:3200/pretraga?q=disk run 1: perf 99 · LCP 997 ms · CLS 0.000 · TBT 0 ms · FCP 296 ms · SI 483 ms
+MEDIAN http://localhost:3200/pretraga?q=disk (desktop, simulate throttling, 1 runs): performance 99 · accessibility 100 · best practices 100 · SEO 66 · LCP 997 ms · CLS 0.000 · TBT 0 ms · FCP 296 ms · SI 483 ms
+  LCP element: 
+http://localhost:3200/vozila/volkswagen/golf/golf-7 run 1: perf 98 · LCP 881 ms · CLS 0.074 · TBT 0 ms · FCP 375 ms · SI 425 ms
+MEDIAN http://localhost:3200/vozila/volkswagen/golf/golf-7 (desktop, simulate throttling, 1 runs): performance 98 · accessibility 100 · best practices 100 · SEO 100 · LCP 881 ms · CLS 0.074 · TBT 0 ms · FCP 375 ms · SI 425 ms
+  LCP element: 
+http://localhost:3200/delovi/kocioni-diskovi/volkswagen/golf run 1: perf 99 · LCP 893 ms · CLS 0.001 · TBT 0 ms · FCP 379 ms · SI 451 ms
+MEDIAN http://localhost:3200/delovi/kocioni-diskovi/volkswagen/golf (desktop, simulate throttling, 1 runs): performance 99 · accessibility 100 · best practices 100 · SEO 100 · LCP 893 ms · CLS 0.001 · TBT 0 ms · FCP 379 ms · SI 451 ms
+  LCP element: 
+http://localhost:3200/za-majstore run 1: perf 99 · LCP 888 ms · CLS 0.000 · TBT 0 ms · FCP 381 ms · SI 472 ms
+MEDIAN http://localhost:3200/za-majstore (desktop, simulate throttling, 1 runs): performance 99 · accessibility 100 · best practices 100 · SEO 100 · LCP 888 ms · CLS 0.000 · TBT 0 ms · FCP 381 ms · SI 472 ms
+  LCP element: 
+http://localhost:3200/upit run 1: perf 99 · LCP 993 ms · CLS 0.000 · TBT 0 ms · FCP 374 ms · SI 480 ms
+MEDIAN http://localhost:3200/upit (desktop, simulate throttling, 1 runs): performance 99 · accessibility 100 · best practices 96 · SEO 100 · LCP 993 ms · CLS 0.000 · TBT 0 ms · FCP 374 ms · SI 480 ms
+  LCP element: 
+http://localhost:3200/ponuda/kocione-plocice-golf run 1: perf 99 · LCP 886 ms · CLS 0.001 · TBT 0 ms · FCP 375 ms · SI 439 ms
+MEDIAN http://localhost:3200/ponuda/kocione-plocice-golf (desktop, simulate throttling, 1 runs): performance 99 · accessibility 100 · best practices 100 · SEO 69 · LCP 886 ms · CLS 0.001 · TBT 0 ms · FCP 375 ms · SI 439 ms
+  LCP element: 
+http://localhost:3200/kontakt run 1: perf 99 · LCP 873 ms · CLS 0.000 · TBT 0 ms · FCP 376 ms · SI 411 ms
+MEDIAN http://localhost:3200/kontakt (desktop, simulate throttling, 1 runs): performance 99 · accessibility 100 · best practices 100 · SEO 100 · LCP 873 ms · CLS 0.000 · TBT 0 ms · FCP 376 ms · SI 411 ms
+  LCP element: 
+=== exit 0 16:07:54
+=== ALL DONE 16:07:54

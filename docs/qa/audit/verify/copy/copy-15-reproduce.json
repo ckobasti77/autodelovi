@@ -1,0 +1,401 @@
+{
+  "w390_load": [
+    {
+      "tag": "div",
+      "text": "SKLOPLJEN AUTOMOBIL 00 · 42 KATEGORIJE · 91 DEO Skrolujte i auto se rasklapa po sistemima.",
+      "top": 663
+    },
+    {
+      "tag": "p",
+      "text": "00 · 42 KATEGORIJE · 91 DEO",
+      "top": 707
+    },
+    {
+      "tag": "span",
+      "text": "42 KATEGORIJE",
+      "top": 707
+    },
+    {
+      "tag": "div",
+      "text": "Najtraženije kategorijeSvih 44 kategorija · 157 artikala",
+      "top": 4239
+    },
+    {
+      "tag": "h2",
+      "text": "Najtraženije kategorije",
+      "top": 4239
+    },
+    {
+      "tag": "a",
+      "text": "Svih 44 kategorija · 157 artikala",
+      "top": 4313
+    },
+    {
+      "tag": "div",
+      "text": "kategorija delova44",
+      "top": 10275
+    },
+    {
+      "tag": "dt",
+      "text": "kategorija delova",
+      "top": 10309
+    }
+  ],
+  "w390_after_scroll": [
+    {
+      "tag": "div",
+      "text": "SKLOPLJEN AUTOMOBIL 00 · 42 KATEGORIJE · 91 DEO Skrolujte i auto se rasklapa po sistemima.",
+      "top": 663
+    },
+    {
+      "tag": "p",
+      "text": "00 · 42 KATEGORIJE · 91 DEO",
+      "top": 707
+    },
+    {
+      "tag": "div",
+      "text": "Najtraženije kategorijeSvih 44 kategorija · 157 artikala",
+      "top": 4070
+    },
+    {
+      "tag": "h2",
+      "text": "Najtraženije kategorije",
+      "top": 4070
+    },
+    {
+      "tag": "a",
+      "text": "Svih 44 kategorija · 157 artikala",
+      "top": 4144
+    },
+    {
+      "tag": "div",
+      "text": "kategorija delova44",
+      "top": 10087
+    },
+    {
+      "tag": "dt",
+      "text": "kategorija delova",
+      "top": 10121
+    }
+  ],
+  "w390_svih": "Svih 44 kategorija · 157 artikala",
+  "w390_log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  },
+  "w768_load": [
+    {
+      "tag": "div",
+      "text": "SKLOPLJEN AUTOMOBIL 00 · 42 KATEGORIJE · 91 DEO Skrolujte i auto se rasklapa po sistemima.",
+      "top": 585
+    },
+    {
+      "tag": "p",
+      "text": "00 · 42 KATEGORIJE · 91 DEO",
+      "top": 632
+    },
+    {
+      "tag": "span",
+      "text": "42 KATEGORIJE",
+      "top": 632
+    },
+    {
+      "tag": "div",
+      "text": "Najtraženije kategorijeSvih 44 kategorija · 157 artikala",
+      "top": 4768
+    },
+    {
+      "tag": "h2",
+      "text": "Najtraženije kategorije",
+      "top": 4768
+    },
+    {
+      "tag": "a",
+      "text": "Svih 44 kategorija · 157 artikala",
+      "top": 4817
+    },
+    {
+      "tag": "div",
+      "text": "kategorija delova44",
+      "top": 9622
+    },
+    {
+      "tag": "dt",
+      "text": "kategorija delova",
+      "top": 9659
+    }
+  ],
+  "w768_after_scroll": [
+    {
+      "tag": "div",
+      "text": "SKLOPLJEN AUTOMOBIL 00 · 42 KATEGORIJE · 91 DEO Skrolujte i auto se rasklapa po sistemima.",
+      "top": 585
+    },
+    {
+      "tag": "p",
+      "text": "00 · 42 KATEGORIJE · 91 DEO",
+      "top": 632
+    },
+    {
+      "tag": "div",
+      "text": "Najtraženije kategorijeSvih 44 kategorija · 157 artikala",
+      "top": 4465
+    },
+    {
+      "tag": "h2",
+      "text": "Najtraženije kategorije",
+      "top": 4465
+    },
+    {
+      "tag": "a",
+      "text": "Svih 44 kategorija · 157 artikala",
+      "top": 4515
+    },
+    {
+      "tag": "div",
+      "text": "kategorija delova44",
+      "top": 8670
+    },
+    {
+      "tag": "dt",
+      "text": "kategorija delova",
+      "top": 8708
+    }
+  ],
+  "w768_svih": "Svih 44 kategorija · 157 artikala",
+  "w768_log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  },
+  "w1440_load": [
+    {
+      "tag": "div",
+      "text": "PRIKAZ Generički kompaktni hečbek, nije konkretan model FAZA 00 / 07 KATEGORIJE 44",
+      "top": 65
+    },
+    {
+      "tag": "div",
+      "text": "KATEGORIJE 44",
+      "top": 152
+    },
+    {
+      "tag": "dt",
+      "text": "KATEGORIJE",
+      "top": 160
+    },
+    {
+      "tag": "div",
+      "text": "Najtraženije kategorijeSvih 44 kategorija · 157 artikala",
+      "top": 5067
+    },
+    {
+      "tag": "h2",
+      "text": "Najtraženije kategorije",
+      "top": 5067
+    },
+    {
+      "tag": "a",
+      "text": "Svih 44 kategorija · 157 artikala",
+      "top": 5084
+    },
+    {
+      "tag": "div",
+      "text": "kategorija delova44",
+      "top": 9771
+    },
+    {
+      "tag": "dt",
+      "text": "kategorija delova",
+      "top": 9815
+    }
+  ],
+  "w1440_after_scroll": [
+    {
+      "tag": "div",
+      "text": "PRIKAZ Generički kompaktni hečbek, nije konkretan model FAZA 00 / 07 KATEGORIJE 44",
+      "top": 65
+    },
+    {
+      "tag": "div",
+      "text": "KATEGORIJE 44",
+      "top": 152
+    },
+    {
+      "tag": "dt",
+      "text": "KATEGORIJE",
+      "top": 160
+    },
+    {
+      "tag": "div",
+      "text": "Najtraženije kategorijeSvih 44 kategorija · 157 artikala",
+      "top": 4563
+    },
+    {
+      "tag": "h2",
+      "text": "Najtraženije kategorije",
+      "top": 4563
+    },
+    {
+      "tag": "a",
+      "text": "Svih 44 kategorija · 157 artikala",
+      "top": 4580
+    },
+    {
+      "tag": "div",
+      "text": "kategorija delova44",
+      "top": 8118
+    },
+    {
+      "tag": "dt",
+      "text": "kategorija delova",
+      "top": 8162
+    }
+  ],
+  "w1440_svih": "Svih 44 kategorija · 157 artikala",
+  "w1440_hero_0.25": [
+    {
+      "tag": "p",
+      "text": "03 · 9 KATEGORIJA · 31 DEO",
+      "top": 1088
+    },
+    {
+      "tag": "div",
+      "text": "PRIKAZ Generički kompaktni hečbek, nije konkretan model FAZA 03 / 07 KATEGORIJE 44",
+      "top": 993
+    },
+    {
+      "tag": "div",
+      "text": "KATEGORIJE 44",
+      "top": 1080
+    },
+    {
+      "tag": "dt",
+      "text": "KATEGORIJE",
+      "top": 1088
+    },
+    {
+      "tag": "div",
+      "text": "Najtraženije kategorijeSvih 44 kategorija · 157 artikala",
+      "top": 4563
+    },
+    {
+      "tag": "h2",
+      "text": "Najtraženije kategorije",
+      "top": 4563
+    },
+    {
+      "tag": "a",
+      "text": "Svih 44 kategorija · 157 artikala",
+      "top": 4580
+    },
+    {
+      "tag": "div",
+      "text": "kategorija delova44",
+      "top": 8118
+    },
+    {
+      "tag": "dt",
+      "text": "kategorija delova",
+      "top": 8162
+    }
+  ],
+  "w1440_hero_0.5": [
+    {
+      "tag": "p",
+      "text": "05 · 8 KATEGORIJA · 11 DELOVA",
+      "top": 2017
+    },
+    {
+      "tag": "div",
+      "text": "PRIKAZ Generički kompaktni hečbek, nije konkretan model FAZA 05 / 07 KATEGORIJE 44",
+      "top": 1922
+    },
+    {
+      "tag": "div",
+      "text": "KATEGORIJE 44",
+      "top": 2009
+    },
+    {
+      "tag": "dt",
+      "text": "KATEGORIJE",
+      "top": 2017
+    },
+    {
+      "tag": "div",
+      "text": "Najtraženije kategorijeSvih 44 kategorija · 157 artikala",
+      "top": 4563
+    },
+    {
+      "tag": "h2",
+      "text": "Najtraženije kategorije",
+      "top": 4563
+    },
+    {
+      "tag": "a",
+      "text": "Svih 44 kategorija · 157 artikala",
+      "top": 4580
+    },
+    {
+      "tag": "div",
+      "text": "kategorija delova44",
+      "top": 8118
+    },
+    {
+      "tag": "dt",
+      "text": "kategorija delova",
+      "top": 8162
+    }
+  ],
+  "w1440_hero_0.97": [
+    {
+      "tag": "div",
+      "text": "PRIKAZ Generički kompaktni hečbek, nije konkretan model FAZA 07 / 07 KATEGORIJE 44",
+      "top": 2945
+    },
+    {
+      "tag": "div",
+      "text": "KATEGORIJE 44",
+      "top": 3032
+    },
+    {
+      "tag": "dt",
+      "text": "KATEGORIJE",
+      "top": 3040
+    },
+    {
+      "tag": "div",
+      "text": "NAJTRAŽENIJE KATEGORIJE Svih 44 kategorija · 157 artikala",
+      "top": 4563
+    },
+    {
+      "tag": "h2",
+      "text": "NAJTRAŽENIJE KATEGORIJE",
+      "top": 4563
+    },
+    {
+      "tag": "a",
+      "text": "Svih 44 kategorija · 157 artikala",
+      "top": 4580
+    },
+    {
+      "tag": "div",
+      "text": "kategorija delova44",
+      "top": 8118
+    },
+    {
+      "tag": "dt",
+      "text": "kategorija delova",
+      "top": 8162
+    }
+  ],
+  "w1440_log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

@@ -1,0 +1,4515 @@
+[
+ {
+  "run": 0,
+  "taps": [
+   {
+    "at": [
+     0.5,
+     0.5
+    ],
+    "selected": "usisna-grana",
+    "events": [
+     {
+      "t": 5763,
+      "name": "pointerover",
+      "d": 88,
+      "proc": 2,
+      "delay": 15
+     },
+     {
+      "t": 5763,
+      "name": "pointerenter",
+      "d": 88,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5763,
+      "name": "pointerenter",
+      "d": 88,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5763,
+      "name": "pointerenter",
+      "d": 88,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5763,
+      "name": "pointerenter",
+      "d": 88,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5763,
+      "name": "pointerenter",
+      "d": 88,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5763,
+      "name": "pointerenter",
+      "d": 88,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5763,
+      "name": "pointerenter",
+      "d": 88,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5763,
+      "name": "pointerenter",
+      "d": 88,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5763,
+      "name": "pointerenter",
+      "d": 88,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5763,
+      "name": "pointerenter",
+      "d": 88,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5763,
+      "name": "pointerenter",
+      "d": 88,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5763,
+      "name": "pointerenter",
+      "d": 88,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5763,
+      "name": "pointerenter",
+      "d": 88,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5763,
+      "name": "pointerenter",
+      "d": 88,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5763,
+      "name": "pointerenter",
+      "d": 88,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5763,
+      "name": "pointerenter",
+      "d": 88,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5763,
+      "name": "pointerdown",
+      "d": 88,
+      "proc": 4,
+      "delay": 18
+     },
+     {
+      "t": 5763,
+      "name": "touchstart",
+      "d": 88,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 5763,
+      "name": "gotpointercapture",
+      "d": 88,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 5763,
+      "name": "pointerup",
+      "d": 88,
+      "proc": 49,
+      "delay": 22
+     },
+     {
+      "t": 5763,
+      "name": "lostpointercapture",
+      "d": 88,
+      "proc": 0,
+      "delay": 71
+     },
+     {
+      "t": 5763,
+      "name": "pointerout",
+      "d": 88,
+      "proc": 0,
+      "delay": 72
+     },
+     {
+      "t": 5763,
+      "name": "pointerleave",
+      "d": 88,
+      "proc": 0,
+      "delay": 72
+     },
+     {
+      "t": 5763,
+      "name": "pointerleave",
+      "d": 88,
+      "proc": 0,
+      "delay": 72
+     },
+     {
+      "t": 5763,
+      "name": "pointerleave",
+      "d": 88,
+      "proc": 0,
+      "delay": 72
+     },
+     {
+      "t": 5763,
+      "name": "pointerleave",
+      "d": 88,
+      "proc": 0,
+      "delay": 73
+     },
+     {
+      "t": 5763,
+      "name": "pointerleave",
+      "d": 88,
+      "proc": 0,
+      "delay": 73
+     },
+     {
+      "t": 5763,
+      "name": "pointerleave",
+      "d": 88,
+      "proc": 0,
+      "delay": 73
+     },
+     {
+      "t": 5763,
+      "name": "pointerleave",
+      "d": 88,
+      "proc": 0,
+      "delay": 73
+     },
+     {
+      "t": 5763,
+      "name": "pointerleave",
+      "d": 88,
+      "proc": 0,
+      "delay": 73
+     },
+     {
+      "t": 5763,
+      "name": "pointerleave",
+      "d": 88,
+      "proc": 0,
+      "delay": 73
+     },
+     {
+      "t": 5763,
+      "name": "pointerleave",
+      "d": 88,
+      "proc": 0,
+      "delay": 73
+     },
+     {
+      "t": 5763,
+      "name": "pointerleave",
+      "d": 88,
+      "proc": 0,
+      "delay": 73
+     },
+     {
+      "t": 5763,
+      "name": "pointerleave",
+      "d": 88,
+      "proc": 0,
+      "delay": 73
+     },
+     {
+      "t": 5763,
+      "name": "pointerleave",
+      "d": 88,
+      "proc": 0,
+      "delay": 73
+     },
+     {
+      "t": 5763,
+      "name": "pointerleave",
+      "d": 88,
+      "proc": 0,
+      "delay": 73
+     },
+     {
+      "t": 5763,
+      "name": "pointerleave",
+      "d": 88,
+      "proc": 0,
+      "delay": 73
+     },
+     {
+      "t": 5763,
+      "name": "pointerleave",
+      "d": 88,
+      "proc": 0,
+      "delay": 73
+     },
+     {
+      "t": 5763,
+      "name": "touchend",
+      "d": 88,
+      "proc": 0,
+      "delay": 73
+     },
+     {
+      "t": 5763,
+      "name": "click",
+      "d": 88,
+      "proc": 1,
+      "delay": 77
+     }
+    ],
+    "loaf": []
+   },
+   {
+    "at": [
+     0.4,
+     0.55
+    ],
+    "selected": "hauba",
+    "events": [
+     {
+      "t": 9317,
+      "name": "pointerover",
+      "d": 120,
+      "proc": 1,
+      "delay": 10
+     },
+     {
+      "t": 9317,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 9317,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 9317,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 9317,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 9317,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 9317,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 9317,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 9317,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 9317,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 9317,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 9317,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 9317,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 9317,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 9317,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 9317,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 9317,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 9317,
+      "name": "pointerdown",
+      "d": 120,
+      "proc": 1,
+      "delay": 11
+     },
+     {
+      "t": 9317,
+      "name": "touchstart",
+      "d": 120,
+      "proc": 0,
+      "delay": 13
+     },
+     {
+      "t": 9317,
+      "name": "gotpointercapture",
+      "d": 120,
+      "proc": 0,
+      "delay": 13
+     },
+     {
+      "t": 9317,
+      "name": "pointerup",
+      "d": 120,
+      "proc": 85,
+      "delay": 14
+     },
+     {
+      "t": 9317,
+      "name": "lostpointercapture",
+      "d": 120,
+      "proc": 0,
+      "delay": 98
+     },
+     {
+      "t": 9317,
+      "name": "pointerout",
+      "d": 120,
+      "proc": 1,
+      "delay": 98
+     },
+     {
+      "t": 9317,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 99
+     },
+     {
+      "t": 9317,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 99
+     },
+     {
+      "t": 9317,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 99
+     },
+     {
+      "t": 9317,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 99
+     },
+     {
+      "t": 9317,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 99
+     },
+     {
+      "t": 9317,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 99
+     },
+     {
+      "t": 9317,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 99
+     },
+     {
+      "t": 9317,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 99
+     },
+     {
+      "t": 9317,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 99
+     },
+     {
+      "t": 9317,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 99
+     },
+     {
+      "t": 9317,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 99
+     },
+     {
+      "t": 9317,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 99
+     },
+     {
+      "t": 9317,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 99
+     },
+     {
+      "t": 9317,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 99
+     },
+     {
+      "t": 9317,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 99
+     },
+     {
+      "t": 9317,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 99
+     },
+     {
+      "t": 9317,
+      "name": "touchend",
+      "d": 120,
+      "proc": 0,
+      "delay": 99
+     },
+     {
+      "t": 9317,
+      "name": "click",
+      "d": 120,
+      "proc": 1,
+      "delay": 109
+     }
+    ],
+    "loaf": [
+     {
+      "t": 9325,
+      "d": 109,
+      "block": 48,
+      "render": 8,
+      "scripts": [
+       "84ms CANVAS.onpointerup d 3loc6izf4ows2.js:656021"
+      ]
+     }
+    ]
+   },
+   {
+    "at": [
+     0.6,
+     0.45
+    ],
+    "selected": null,
+    "events": [
+     {
+      "t": 12889,
+      "name": "pointerover",
+      "d": 32,
+      "proc": 1,
+      "delay": 21
+     },
+     {
+      "t": 12889,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 12889,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 12889,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 12889,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 12889,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 12889,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 12889,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 12889,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 12889,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 12889,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 12889,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 12889,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 12889,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 12889,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 12889,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 12889,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 22
+     },
+     {
+      "t": 12889,
+      "name": "pointerdown",
+      "d": 32,
+      "proc": 1,
+      "delay": 22
+     },
+     {
+      "t": 12889,
+      "name": "touchstart",
+      "d": 32,
+      "proc": 0,
+      "delay": 23
+     },
+     {
+      "t": 12889,
+      "name": "gotpointercapture",
+      "d": 32,
+      "proc": 0,
+      "delay": 23
+     },
+     {
+      "t": 12889,
+      "name": "pointerup",
+      "d": 32,
+      "proc": 3,
+      "delay": 23
+     },
+     {
+      "t": 12889,
+      "name": "lostpointercapture",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 12889,
+      "name": "pointerout",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 12889,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 27
+     },
+     {
+      "t": 12889,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 27
+     },
+     {
+      "t": 12889,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 27
+     },
+     {
+      "t": 12889,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 27
+     },
+     {
+      "t": 12889,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 27
+     },
+     {
+      "t": 12889,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 27
+     },
+     {
+      "t": 12889,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 27
+     },
+     {
+      "t": 12889,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 27
+     },
+     {
+      "t": 12889,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 27
+     },
+     {
+      "t": 12889,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 27
+     },
+     {
+      "t": 12889,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 27
+     },
+     {
+      "t": 12889,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 27
+     },
+     {
+      "t": 12889,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 27
+     },
+     {
+      "t": 12889,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 27
+     },
+     {
+      "t": 12889,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 27
+     },
+     {
+      "t": 12889,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 27
+     },
+     {
+      "t": 12889,
+      "name": "touchend",
+      "d": 32,
+      "proc": 0,
+      "delay": 27
+     },
+     {
+      "t": 12889,
+      "name": "click",
+      "d": 32,
+      "proc": 0,
+      "delay": 32
+     }
+    ],
+    "loaf": []
+   },
+   {
+    "at": [
+     0.5,
+     0.62
+    ],
+    "selected": "akumulator",
+    "events": [
+     {
+      "t": 15152,
+      "name": "pointerover",
+      "d": 152,
+      "proc": 2,
+      "delay": 5
+     },
+     {
+      "t": 15152,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "pointerdown",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "touchstart",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "gotpointercapture",
+      "d": 152,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "pointerup",
+      "d": 152,
+      "proc": 100,
+      "delay": 8
+     },
+     {
+      "t": 15152,
+      "name": "lostpointercapture",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "pointerout",
+      "d": 152,
+      "proc": 1,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "touchend",
+      "d": 152,
+      "proc": 0,
+      "delay": 109
+     },
+     {
+      "t": 15152,
+      "name": "click",
+      "d": 152,
+      "proc": 1,
+      "delay": 123
+     }
+    ],
+    "loaf": []
+   },
+   {
+    "at": [
+     0.35,
+     0.45
+    ],
+    "selected": null,
+    "events": [
+     {
+      "t": 18799,
+      "name": "pointerover",
+      "d": 24,
+      "proc": 1,
+      "delay": 10
+     },
+     {
+      "t": 18799,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 18799,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 18799,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 18799,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 18799,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 18799,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 18799,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 18799,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 18799,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 18799,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 18799,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 18799,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 18799,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 18799,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 18799,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 18799,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 11
+     },
+     {
+      "t": 18799,
+      "name": "pointerdown",
+      "d": 24,
+      "proc": 1,
+      "delay": 11
+     },
+     {
+      "t": 18799,
+      "name": "touchstart",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 18799,
+      "name": "gotpointercapture",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 18799,
+      "name": "pointerup",
+      "d": 24,
+      "proc": 1,
+      "delay": 13
+     },
+     {
+      "t": 18799,
+      "name": "lostpointercapture",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "pointerout",
+      "d": 24,
+      "proc": 1,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "touchend",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 18799,
+      "name": "click",
+      "d": 24,
+      "proc": 1,
+      "delay": 19
+     }
+    ],
+    "loaf": []
+   }
+  ],
+  "idleDraws3s": 0
+ },
+ {
+  "run": 1,
+  "taps": [
+   {
+    "at": [
+     0.5,
+     0.5
+    ],
+    "selected": "usisna-grana",
+    "events": [
+     {
+      "t": 5473,
+      "name": "pointerover",
+      "d": 112,
+      "proc": 1,
+      "delay": 14
+     },
+     {
+      "t": 5473,
+      "name": "pointerenter",
+      "d": 112,
+      "proc": 0,
+      "delay": 15
+     },
+     {
+      "t": 5473,
+      "name": "pointerenter",
+      "d": 112,
+      "proc": 0,
+      "delay": 15
+     },
+     {
+      "t": 5473,
+      "name": "pointerenter",
+      "d": 112,
+      "proc": 0,
+      "delay": 15
+     },
+     {
+      "t": 5473,
+      "name": "pointerenter",
+      "d": 112,
+      "proc": 0,
+      "delay": 15
+     },
+     {
+      "t": 5473,
+      "name": "pointerenter",
+      "d": 112,
+      "proc": 0,
+      "delay": 15
+     },
+     {
+      "t": 5473,
+      "name": "pointerenter",
+      "d": 112,
+      "proc": 0,
+      "delay": 15
+     },
+     {
+      "t": 5473,
+      "name": "pointerenter",
+      "d": 112,
+      "proc": 0,
+      "delay": 15
+     },
+     {
+      "t": 5473,
+      "name": "pointerenter",
+      "d": 112,
+      "proc": 0,
+      "delay": 15
+     },
+     {
+      "t": 5473,
+      "name": "pointerenter",
+      "d": 112,
+      "proc": 0,
+      "delay": 15
+     },
+     {
+      "t": 5473,
+      "name": "pointerenter",
+      "d": 112,
+      "proc": 0,
+      "delay": 15
+     },
+     {
+      "t": 5473,
+      "name": "pointerenter",
+      "d": 112,
+      "proc": 0,
+      "delay": 15
+     },
+     {
+      "t": 5473,
+      "name": "pointerenter",
+      "d": 112,
+      "proc": 0,
+      "delay": 15
+     },
+     {
+      "t": 5473,
+      "name": "pointerenter",
+      "d": 112,
+      "proc": 0,
+      "delay": 15
+     },
+     {
+      "t": 5473,
+      "name": "pointerenter",
+      "d": 112,
+      "proc": 0,
+      "delay": 15
+     },
+     {
+      "t": 5473,
+      "name": "pointerenter",
+      "d": 112,
+      "proc": 0,
+      "delay": 15
+     },
+     {
+      "t": 5473,
+      "name": "pointerenter",
+      "d": 112,
+      "proc": 0,
+      "delay": 15
+     },
+     {
+      "t": 5473,
+      "name": "pointerdown",
+      "d": 112,
+      "proc": 2,
+      "delay": 15
+     },
+     {
+      "t": 5473,
+      "name": "touchstart",
+      "d": 112,
+      "proc": 1,
+      "delay": 17
+     },
+     {
+      "t": 5473,
+      "name": "gotpointercapture",
+      "d": 112,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5473,
+      "name": "pointerup",
+      "d": 112,
+      "proc": 74,
+      "delay": 19
+     },
+     {
+      "t": 5473,
+      "name": "lostpointercapture",
+      "d": 112,
+      "proc": 0,
+      "delay": 93
+     },
+     {
+      "t": 5473,
+      "name": "pointerout",
+      "d": 112,
+      "proc": 0,
+      "delay": 93
+     },
+     {
+      "t": 5473,
+      "name": "pointerleave",
+      "d": 112,
+      "proc": 0,
+      "delay": 94
+     },
+     {
+      "t": 5473,
+      "name": "pointerleave",
+      "d": 112,
+      "proc": 0,
+      "delay": 94
+     },
+     {
+      "t": 5473,
+      "name": "pointerleave",
+      "d": 112,
+      "proc": 0,
+      "delay": 94
+     },
+     {
+      "t": 5473,
+      "name": "pointerleave",
+      "d": 112,
+      "proc": 0,
+      "delay": 94
+     },
+     {
+      "t": 5473,
+      "name": "pointerleave",
+      "d": 112,
+      "proc": 0,
+      "delay": 94
+     },
+     {
+      "t": 5473,
+      "name": "pointerleave",
+      "d": 112,
+      "proc": 0,
+      "delay": 94
+     },
+     {
+      "t": 5473,
+      "name": "pointerleave",
+      "d": 112,
+      "proc": 0,
+      "delay": 94
+     },
+     {
+      "t": 5473,
+      "name": "pointerleave",
+      "d": 112,
+      "proc": 0,
+      "delay": 94
+     },
+     {
+      "t": 5473,
+      "name": "pointerleave",
+      "d": 112,
+      "proc": 0,
+      "delay": 94
+     },
+     {
+      "t": 5473,
+      "name": "pointerleave",
+      "d": 112,
+      "proc": 0,
+      "delay": 94
+     },
+     {
+      "t": 5473,
+      "name": "pointerleave",
+      "d": 112,
+      "proc": 0,
+      "delay": 94
+     },
+     {
+      "t": 5473,
+      "name": "pointerleave",
+      "d": 112,
+      "proc": 0,
+      "delay": 94
+     },
+     {
+      "t": 5473,
+      "name": "pointerleave",
+      "d": 112,
+      "proc": 0,
+      "delay": 94
+     },
+     {
+      "t": 5473,
+      "name": "pointerleave",
+      "d": 112,
+      "proc": 0,
+      "delay": 94
+     },
+     {
+      "t": 5473,
+      "name": "pointerleave",
+      "d": 112,
+      "proc": 0,
+      "delay": 94
+     },
+     {
+      "t": 5473,
+      "name": "pointerleave",
+      "d": 112,
+      "proc": 0,
+      "delay": 94
+     },
+     {
+      "t": 5473,
+      "name": "touchend",
+      "d": 112,
+      "proc": 0,
+      "delay": 94
+     },
+     {
+      "t": 5473,
+      "name": "click",
+      "d": 112,
+      "proc": 1,
+      "delay": 103
+     }
+    ],
+    "loaf": []
+   },
+   {
+    "at": [
+     0.4,
+     0.55
+    ],
+    "selected": "hauba",
+    "events": [
+     {
+      "t": 9060,
+      "name": "pointerover",
+      "d": 152,
+      "proc": 1,
+      "delay": 11
+     },
+     {
+      "t": 9060,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 9060,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 9060,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 9060,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 9060,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 9060,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 9060,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 9060,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 9060,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 9060,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 9060,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 9060,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 9060,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 9060,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 9060,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 9060,
+      "name": "pointerenter",
+      "d": 152,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 9060,
+      "name": "pointerdown",
+      "d": 152,
+      "proc": 1,
+      "delay": 12
+     },
+     {
+      "t": 9060,
+      "name": "touchstart",
+      "d": 152,
+      "proc": 0,
+      "delay": 13
+     },
+     {
+      "t": 9060,
+      "name": "gotpointercapture",
+      "d": 152,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 9060,
+      "name": "pointerup",
+      "d": 152,
+      "proc": 112,
+      "delay": 14
+     },
+     {
+      "t": 9060,
+      "name": "lostpointercapture",
+      "d": 152,
+      "proc": 0,
+      "delay": 126
+     },
+     {
+      "t": 9060,
+      "name": "pointerout",
+      "d": 152,
+      "proc": 0,
+      "delay": 126
+     },
+     {
+      "t": 9060,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 127
+     },
+     {
+      "t": 9060,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 127
+     },
+     {
+      "t": 9060,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 127
+     },
+     {
+      "t": 9060,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 127
+     },
+     {
+      "t": 9060,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 127
+     },
+     {
+      "t": 9060,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 127
+     },
+     {
+      "t": 9060,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 127
+     },
+     {
+      "t": 9060,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 127
+     },
+     {
+      "t": 9060,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 127
+     },
+     {
+      "t": 9060,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 127
+     },
+     {
+      "t": 9060,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 127
+     },
+     {
+      "t": 9060,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 127
+     },
+     {
+      "t": 9060,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 127
+     },
+     {
+      "t": 9060,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 127
+     },
+     {
+      "t": 9060,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 127
+     },
+     {
+      "t": 9060,
+      "name": "pointerleave",
+      "d": 152,
+      "proc": 0,
+      "delay": 127
+     },
+     {
+      "t": 9060,
+      "name": "touchend",
+      "d": 152,
+      "proc": 0,
+      "delay": 127
+     },
+     {
+      "t": 9060,
+      "name": "click",
+      "d": 152,
+      "proc": 0,
+      "delay": 140
+     }
+    ],
+    "loaf": [
+     {
+      "t": 9070,
+      "d": 138,
+      "block": 74,
+      "render": 7,
+      "scripts": [
+       "112ms CANVAS.onpointerup d 3loc6izf4ows2.js:656021"
+      ]
+     }
+    ]
+   },
+   {
+    "at": [
+     0.6,
+     0.45
+    ],
+    "selected": null,
+    "events": [
+     {
+      "t": 12676,
+      "name": "pointerover",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerdown",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "touchstart",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "gotpointercapture",
+      "d": 24,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 12676,
+      "name": "pointerup",
+      "d": 24,
+      "proc": 1,
+      "delay": 13
+     },
+     {
+      "t": 12676,
+      "name": "lostpointercapture",
+      "d": 24,
+      "proc": 0,
+      "delay": 13
+     },
+     {
+      "t": 12676,
+      "name": "pointerout",
+      "d": 24,
+      "proc": 0,
+      "delay": 13
+     },
+     {
+      "t": 12676,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 12676,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 12676,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 12676,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 12676,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 12676,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 12676,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 12676,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 12676,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 12676,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 12676,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 12676,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 12676,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 12676,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 12676,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 12676,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 12676,
+      "name": "touchend",
+      "d": 24,
+      "proc": 0,
+      "delay": 14
+     },
+     {
+      "t": 12676,
+      "name": "click",
+      "d": 24,
+      "proc": 1,
+      "delay": 15
+     }
+    ],
+    "loaf": []
+   },
+   {
+    "at": [
+     0.5,
+     0.62
+    ],
+    "selected": "akumulator",
+    "events": [
+     {
+      "t": 14902,
+      "name": "pointerover",
+      "d": 136,
+      "proc": 1,
+      "delay": 18
+     },
+     {
+      "t": 14902,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 14902,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 14902,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 14902,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 14902,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 14902,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 14902,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 14902,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 14902,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 14902,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 14902,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 14902,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 14902,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 14902,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 14902,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 14902,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 14902,
+      "name": "pointerdown",
+      "d": 136,
+      "proc": 1,
+      "delay": 19
+     },
+     {
+      "t": 14902,
+      "name": "touchstart",
+      "d": 136,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 14902,
+      "name": "gotpointercapture",
+      "d": 136,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 14902,
+      "name": "pointerup",
+      "d": 136,
+      "proc": 70,
+      "delay": 20
+     },
+     {
+      "t": 14902,
+      "name": "lostpointercapture",
+      "d": 136,
+      "proc": 0,
+      "delay": 90
+     },
+     {
+      "t": 14902,
+      "name": "pointerout",
+      "d": 136,
+      "proc": 0,
+      "delay": 90
+     },
+     {
+      "t": 14902,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 91
+     },
+     {
+      "t": 14902,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 91
+     },
+     {
+      "t": 14902,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 91
+     },
+     {
+      "t": 14902,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 91
+     },
+     {
+      "t": 14902,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 91
+     },
+     {
+      "t": 14902,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 91
+     },
+     {
+      "t": 14902,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 91
+     },
+     {
+      "t": 14902,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 91
+     },
+     {
+      "t": 14902,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 91
+     },
+     {
+      "t": 14902,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 91
+     },
+     {
+      "t": 14902,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 91
+     },
+     {
+      "t": 14902,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 91
+     },
+     {
+      "t": 14902,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 91
+     },
+     {
+      "t": 14902,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 91
+     },
+     {
+      "t": 14902,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 91
+     },
+     {
+      "t": 14902,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 91
+     },
+     {
+      "t": 14902,
+      "name": "touchend",
+      "d": 136,
+      "proc": 0,
+      "delay": 91
+     },
+     {
+      "t": 14902,
+      "name": "click",
+      "d": 136,
+      "proc": 0,
+      "delay": 103
+     }
+    ],
+    "loaf": []
+   },
+   {
+    "at": [
+     0.35,
+     0.45
+    ],
+    "selected": null,
+    "events": [
+     {
+      "t": 18467,
+      "name": "pointerover",
+      "d": 32,
+      "proc": 1,
+      "delay": 23
+     },
+     {
+      "t": 18467,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "pointerdown",
+      "d": 32,
+      "proc": 1,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "touchstart",
+      "d": 32,
+      "proc": 0,
+      "delay": 24
+     },
+     {
+      "t": 18467,
+      "name": "gotpointercapture",
+      "d": 32,
+      "proc": 0,
+      "delay": 25
+     },
+     {
+      "t": 18467,
+      "name": "pointerup",
+      "d": 32,
+      "proc": 1,
+      "delay": 25
+     },
+     {
+      "t": 18467,
+      "name": "lostpointercapture",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "pointerout",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "touchend",
+      "d": 32,
+      "proc": 0,
+      "delay": 26
+     },
+     {
+      "t": 18467,
+      "name": "click",
+      "d": 32,
+      "proc": 0,
+      "delay": 28
+     }
+    ],
+    "loaf": []
+   }
+  ],
+  "idleDraws3s": 0
+ },
+ {
+  "run": 2,
+  "taps": [
+   {
+    "at": [
+     0.5,
+     0.5
+    ],
+    "selected": "usisna-grana",
+    "events": [
+     {
+      "t": 5183,
+      "name": "pointerover",
+      "d": 80,
+      "proc": 2,
+      "delay": 10
+     },
+     {
+      "t": 5183,
+      "name": "pointerenter",
+      "d": 80,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 5183,
+      "name": "pointerenter",
+      "d": 80,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 5183,
+      "name": "pointerenter",
+      "d": 80,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 5183,
+      "name": "pointerenter",
+      "d": 80,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 5183,
+      "name": "pointerenter",
+      "d": 80,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 5183,
+      "name": "pointerenter",
+      "d": 80,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 5183,
+      "name": "pointerenter",
+      "d": 80,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 5183,
+      "name": "pointerenter",
+      "d": 80,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 5183,
+      "name": "pointerenter",
+      "d": 80,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 5183,
+      "name": "pointerenter",
+      "d": 80,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 5183,
+      "name": "pointerenter",
+      "d": 80,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 5183,
+      "name": "pointerenter",
+      "d": 80,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 5183,
+      "name": "pointerenter",
+      "d": 80,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 5183,
+      "name": "pointerenter",
+      "d": 80,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 5183,
+      "name": "pointerenter",
+      "d": 80,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 5183,
+      "name": "pointerenter",
+      "d": 80,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 5183,
+      "name": "pointerdown",
+      "d": 80,
+      "proc": 4,
+      "delay": 12
+     },
+     {
+      "t": 5183,
+      "name": "touchstart",
+      "d": 80,
+      "proc": 0,
+      "delay": 17
+     },
+     {
+      "t": 5183,
+      "name": "gotpointercapture",
+      "d": 80,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 5183,
+      "name": "pointerup",
+      "d": 80,
+      "proc": 43,
+      "delay": 18
+     },
+     {
+      "t": 5183,
+      "name": "lostpointercapture",
+      "d": 80,
+      "proc": 0,
+      "delay": 62
+     },
+     {
+      "t": 5183,
+      "name": "pointerout",
+      "d": 80,
+      "proc": 0,
+      "delay": 62
+     },
+     {
+      "t": 5183,
+      "name": "pointerleave",
+      "d": 80,
+      "proc": 0,
+      "delay": 62
+     },
+     {
+      "t": 5183,
+      "name": "pointerleave",
+      "d": 80,
+      "proc": 0,
+      "delay": 63
+     },
+     {
+      "t": 5183,
+      "name": "pointerleave",
+      "d": 80,
+      "proc": 1,
+      "delay": 63
+     },
+     {
+      "t": 5183,
+      "name": "pointerleave",
+      "d": 80,
+      "proc": 0,
+      "delay": 63
+     },
+     {
+      "t": 5183,
+      "name": "pointerleave",
+      "d": 80,
+      "proc": 0,
+      "delay": 63
+     },
+     {
+      "t": 5183,
+      "name": "pointerleave",
+      "d": 80,
+      "proc": 0,
+      "delay": 63
+     },
+     {
+      "t": 5183,
+      "name": "pointerleave",
+      "d": 80,
+      "proc": 0,
+      "delay": 63
+     },
+     {
+      "t": 5183,
+      "name": "pointerleave",
+      "d": 80,
+      "proc": 0,
+      "delay": 63
+     },
+     {
+      "t": 5183,
+      "name": "pointerleave",
+      "d": 80,
+      "proc": 0,
+      "delay": 63
+     },
+     {
+      "t": 5183,
+      "name": "pointerleave",
+      "d": 80,
+      "proc": 0,
+      "delay": 63
+     },
+     {
+      "t": 5183,
+      "name": "pointerleave",
+      "d": 80,
+      "proc": 0,
+      "delay": 63
+     },
+     {
+      "t": 5183,
+      "name": "pointerleave",
+      "d": 80,
+      "proc": 0,
+      "delay": 63
+     },
+     {
+      "t": 5183,
+      "name": "pointerleave",
+      "d": 80,
+      "proc": 0,
+      "delay": 63
+     },
+     {
+      "t": 5183,
+      "name": "pointerleave",
+      "d": 80,
+      "proc": 0,
+      "delay": 63
+     },
+     {
+      "t": 5183,
+      "name": "pointerleave",
+      "d": 80,
+      "proc": 0,
+      "delay": 63
+     },
+     {
+      "t": 5183,
+      "name": "pointerleave",
+      "d": 80,
+      "proc": 0,
+      "delay": 63
+     },
+     {
+      "t": 5183,
+      "name": "touchend",
+      "d": 80,
+      "proc": 0,
+      "delay": 63
+     },
+     {
+      "t": 5183,
+      "name": "click",
+      "d": 80,
+      "proc": 1,
+      "delay": 73
+     }
+    ],
+    "loaf": [
+     {
+      "t": 5379,
+      "d": 62,
+      "block": 0,
+      "render": 41,
+      "scripts": [
+       "39ms FrameRequestCallback au 3loc6izf4ows2.js:514263"
+      ]
+     }
+    ]
+   },
+   {
+    "at": [
+     0.4,
+     0.55
+    ],
+    "selected": "hauba",
+    "events": [
+     {
+      "t": 8757,
+      "name": "pointerover",
+      "d": 120,
+      "proc": 1,
+      "delay": 17
+     },
+     {
+      "t": 8757,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 8757,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 8757,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 8757,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 8757,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 8757,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 8757,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 8757,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 8757,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 8757,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 8757,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 8757,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 8757,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 8757,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 8757,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 8757,
+      "name": "pointerenter",
+      "d": 120,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 8757,
+      "name": "pointerdown",
+      "d": 120,
+      "proc": 1,
+      "delay": 18
+     },
+     {
+      "t": 8757,
+      "name": "touchstart",
+      "d": 120,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 8757,
+      "name": "gotpointercapture",
+      "d": 120,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 8757,
+      "name": "pointerup",
+      "d": 120,
+      "proc": 81,
+      "delay": 19
+     },
+     {
+      "t": 8757,
+      "name": "lostpointercapture",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "pointerout",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "pointerleave",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "touchend",
+      "d": 120,
+      "proc": 0,
+      "delay": 100
+     },
+     {
+      "t": 8757,
+      "name": "click",
+      "d": 120,
+      "proc": 0,
+      "delay": 111
+     }
+    ],
+    "loaf": [
+     {
+      "t": 8773,
+      "d": 103,
+      "block": 41,
+      "render": 6,
+      "scripts": [
+       "80ms CANVAS.onpointerup d 3loc6izf4ows2.js:656021"
+      ]
+     }
+    ]
+   },
+   {
+    "at": [
+     0.6,
+     0.45
+    ],
+    "selected": null,
+    "events": [
+     {
+      "t": 12342,
+      "name": "pointerover",
+      "d": 32,
+      "proc": 1,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "pointerenter",
+      "d": 32,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "pointerdown",
+      "d": 32,
+      "proc": 0,
+      "delay": 18
+     },
+     {
+      "t": 12342,
+      "name": "touchstart",
+      "d": 32,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 12342,
+      "name": "gotpointercapture",
+      "d": 32,
+      "proc": 0,
+      "delay": 19
+     },
+     {
+      "t": 12342,
+      "name": "pointerup",
+      "d": 32,
+      "proc": 1,
+      "delay": 19
+     },
+     {
+      "t": 12342,
+      "name": "lostpointercapture",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "pointerout",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "pointerleave",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "touchend",
+      "d": 32,
+      "proc": 0,
+      "delay": 20
+     },
+     {
+      "t": 12342,
+      "name": "click",
+      "d": 32,
+      "proc": 1,
+      "delay": 21
+     }
+    ],
+    "loaf": []
+   },
+   {
+    "at": [
+     0.5,
+     0.62
+    ],
+    "selected": "akumulator",
+    "events": [
+     {
+      "t": 14579,
+      "name": "pointerover",
+      "d": 136,
+      "proc": 1,
+      "delay": 11
+     },
+     {
+      "t": 14579,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "pointerenter",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "pointerdown",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "touchstart",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "gotpointercapture",
+      "d": 136,
+      "proc": 0,
+      "delay": 12
+     },
+     {
+      "t": 14579,
+      "name": "pointerup",
+      "d": 136,
+      "proc": 88,
+      "delay": 13
+     },
+     {
+      "t": 14579,
+      "name": "lostpointercapture",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "pointerout",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "pointerleave",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "touchend",
+      "d": 136,
+      "proc": 0,
+      "delay": 101
+     },
+     {
+      "t": 14579,
+      "name": "click",
+      "d": 136,
+      "proc": 1,
+      "delay": 110
+     }
+    ],
+    "loaf": []
+   },
+   {
+    "at": [
+     0.35,
+     0.45
+    ],
+    "selected": null,
+    "events": [
+     {
+      "t": 18166,
+      "name": "pointerover",
+      "d": 24,
+      "proc": 1,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "pointerenter",
+      "d": 24,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "pointerdown",
+      "d": 24,
+      "proc": 0,
+      "delay": 8
+     },
+     {
+      "t": 18166,
+      "name": "touchstart",
+      "d": 24,
+      "proc": 0,
+      "delay": 9
+     },
+     {
+      "t": 18166,
+      "name": "gotpointercapture",
+      "d": 24,
+      "proc": 0,
+      "delay": 9
+     },
+     {
+      "t": 18166,
+      "name": "pointerup",
+      "d": 24,
+      "proc": 1,
+      "delay": 9
+     },
+     {
+      "t": 18166,
+      "name": "lostpointercapture",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "pointerout",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "pointerleave",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "touchend",
+      "d": 24,
+      "proc": 0,
+      "delay": 10
+     },
+     {
+      "t": 18166,
+      "name": "click",
+      "d": 24,
+      "proc": 1,
+      "delay": 12
+     }
+    ],
+    "loaf": []
+   }
+  ],
+  "idleDraws3s": 0
+ }
+]

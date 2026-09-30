@@ -1,0 +1,7 @@
+# perf-lh-12 verify: LH devtools home a11y 97 (3/3, target-size), simulate a11y 100 (3/3); Playwright axe target-size 0 violations before/after scroll
+  perf 89 (93/89/89) · a11y 97 (97/97/97) · bp 100 (100/100/100) · LCP 2134 (2326/2134/2128) · FCP 2134 (2326/2134/2128) · TBT 343 (171/353/343) · CLS 0.001/0.001/0.001
+  JS 25 scripts 351 KB gz (1022.2 KB raw) · doc 36.3 KB gz / 246.5 KB raw · inline RSC 136.5 KB · failedA11y target-size · failedBp -
+  perf 85 (84/85/85) · a11y 100 (100/100/100) · bp 100 (100/100/100) · LCP 4383 (4521/4383/4377) · FCP 1361 (1360/1364/1361) · TBT 44 (77/41/44) · CLS 0.001/0.001/0.001
+  JS 25 scripts 351 KB gz (1022.2 KB raw) · doc 36.3 KB gz / 246.5 KB raw · inline RSC 136.5 KB · failedA11y - · failedBp -
+beforeScroll catsSection {"top":4113,"bottom":5148,"h":1035} lastCardBottom 5763 nextSectionTop 5148 systems links [{"text":"Usisna grana i kućište filtera","top":5482,"h":44,"inCv":false},{"text":"Brizgaljke i pumpa goriva","top":5526,"h":44,"inCv":false}] axe 0
+afterScroll catsSection {"top":3891,"bottom":5609,"h":1718} lastCardBottom 5542 nextSectionTop 5609 systems links [{"text":"Usisna grana i kućište filtera","top":5943,"h":44,"inCv":false},{"text":"Brizgaljke i pumpa goriva","top":5987,"h":44,"inCv":false}] axe 0

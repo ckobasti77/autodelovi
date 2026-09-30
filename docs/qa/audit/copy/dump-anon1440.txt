@@ -1,0 +1,2714 @@
+COMMON LINES (on > 60 % of pages):
+Preskoči na sadržaj
+SKLOP
+Delovi
+Vozila
+Za majstore
+Upit po broju šasije
+Broj dela ili naziv
+/
+Izaberite vozilo
+Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+DELOVI
+Svi delovi
+Delovi po vozilu
+Pretraga po broju dela
+KUPOVINA
+Dostava i plaćanje
+Reklamacije i povrat
+O nama
+KONTAKT
+Pon–pet 8–17, sub 8–14
+Pošaljite upit — javljamo se u toku radnog dana
+© 2026 SKLOP
+Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.
+Uslovi korišćenja
+Politika privatnosti
+Kolačići
+Podešavanja kolačića
+
+
+======== / [200]
+TITLE: Auto delovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Plaćanje pouzećem ili pri preuzimanju u radnji.
+OG: Auto delovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Plaćanje pouzećem ili pri preuzimanju u radnji.
+H1: ["RASKLOPI\nAUTO.\nNAĐI DEO."]
+--- text
+RASKLOPI
+AUTO.
+NAĐI DEO.
+Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra — tražite po OEM broju, po vozilu ili klikom na deo.
+Pretraži
+Broj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju.
+Vaše vozilo
+marka, model, motor
+Izaberi
+Nemate broj? Pošaljite broj šasije
+PRIKAZ
+Generički kompaktni hečbek, nije konkretan model
+FAZA
+00 / 07
+KATEGORIJE
+44
+00
+Sklopljeno
+01
+Karoserija i svetla
+02
+Točkovi
+03
+Kočnice i vešanje
+04
+Agregati i hlađenje
+05
+Motor i turbina
+06
+Menjač i kvačilo
+07
+Izduvni sistem
+Rasklopi
+Lista delova
+DELOVI PO SISTEMIMA
+MOTOR I USIS
+Blok motora i glava
+Turbina (turbopunjač)
+Interkuler
+Usisna grana i kućište filtera
+Brizgaljke i pumpa goriva
+Set zupčastog kaiša i vodena pumpa
+Kaiš alternatora i zatezači
+Alternator
+Anlaser
+Svećice, bobine i grejači
+Karter, pumpa ulja i dihtunzi
+EGR ventil
+Nosači motora i menjača
+IZDUVNI SISTEM
+DPF i katalizator
+Auspuh (lonci i cevi)
+HLAĐENJE I KLIMA
+Hladnjak i ventilator
+Termostat i creva hlađenja
+Kompresor i kondenzator klime
+TRANSMISIJA
+Kvačilo i zamajac
+Menjač (DSG)
+Poluosovine i homokinetički zglobovi
+VEŠANJE I UPRAVLJANJE
+Amortizeri i opruge
+Ramena i selen blokovi
+Spone i stabilizatori
+Letva volana
+Ležaj točka i glavčina
+KOČNICE
+Kočioni diskovi
+Kočione pločice
+Kočione čeljusti
+ABS senzori
+ELEKTRIKA I SVETLA
+Akumulator
+Farovi
+Stop svetla
+Senzori (lambda, parking, temperatura)
+KAROSERIJA
+Hauba
+Branici
+Blatobrani
+Vrata
+Retrovizori
+Stakla
+Brisači
+TOČKOVI
+Felne i gume
+SERVIS I ODRŽAVANJE
+Filteri
+Ulja i tečnosti
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Broj dela ili naziv | placeholder=npr. 1K0 615 301 AA ili kočione pločice | aria-label=Interaktivni 3D prikaz automobila u rendgen stilu. Delove birate mišem, dodirom ili iz liste delova. | aria-label=Faze rasklapanja | aria-label=00 Sklopljen automobil | aria-label=01 Karoserija, stakla i svetla | aria-label=02 Točkovi | aria-label=03 Kočnice, vešanje, upravljanje | aria-label=04 Pomoćni agregati, hlađenje, usis | aria-label=05 Motor, turbina, gorivo, paljenje | aria-label=06 Menjač, kvačilo, poluosovine | aria-label=07 Izduvni sistem | aria-label=Prethodna faza | aria-label=Sledeća faza | aria-label=Činjenice | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /delovi [200]
+TITLE: Svi delovi po sistemima vozila | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra po sistemima: motor, kočnice, vešanje, hlađenje, elektrika, karoserija i servisni delovi. Cene sa PDV-om…
+OG: Svi delovi po sistemima vozila | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra po sistemima: motor, kočnice, vešanje, hlađenje, elektrika, karoserija i servisni delovi. Cene sa PDV-om…
+H1: ["DELOVI PO SISTEMIMA"]
+--- text
+Početna
+DELOVI PO SISTEMIMA
+Izaberite sistem i kategoriju, pa suzite izbor po vozilu i motoru. Broj dela upišite u pretragu kako god ga imate.
+MOTOR I USIS
+Ceo sistem
+Blok motora i glava
+3 artikla
+Turbina (turbopunjač)
+4 artikla
+Interkuler
+2 artikla
+Usisna grana i kućište filtera
+2 artikla
+Brizgaljke i pumpa goriva
+3 artikla
+Set zupčastog kaiša i vodena pumpa
+6 artikala
+Kaiš alternatora i zatezači
+3 artikla
+Alternator
+2 artikla
+Anlaser
+2 artikla
+Svećice, bobine i grejači
+4 artikla
+Karter, pumpa ulja i dihtunzi
+3 artikla
+EGR ventil
+2 artikla
+Nosači motora i menjača
+3 artikla
+IZDUVNI SISTEM
+Ceo sistem
+DPF i katalizator
+2 artikla
+Auspuh (lonci i cevi)
+3 artikla
+HLAĐENJE I KLIMA
+Ceo sistem
+Hladnjak i ventilator
+3 artikla
+Termostat i creva hlađenja
+3 artikla
+Kompresor i kondenzator klime
+2 artikla
+TRANSMISIJA
+Ceo sistem
+Kvačilo i zamajac
+3 artikla
+Menjač (DSG)
+2 artikla
+Poluosovine i homokinetički zglobovi
+3 artikla
+VEŠANJE I UPRAVLJANJE
+Ceo sistem
+Amortizeri i opruge
+7 artikala
+Ramena i selen blokovi
+5 artikala
+Spone i stabilizatori
+5 artikala
+Letva volana
+2 artikla
+Ležaj točka i glavčina
+4 artikla
+KOČNICE
+Ceo sistem
+Kočioni diskovi
+9 artikala
+Kočione pločice
+10 artikala
+Kočione čeljusti
+3 artikla
+ABS senzori
+3 artikla
+ELEKTRIKA I SVETLA
+Ceo sistem
+Akumulator
+3 artikla
+Farovi
+2 artikla
+Stop svetla
+2 artikla
+Senzori (lambda, parking, temperatura)
+5 artikala
+KAROSERIJA
+Ceo sistem
+Hauba
+1 artikal
+Branici
+2 artikla
+Blatobrani
+2 artikla
+Vrata
+2 artikla
+Retrovizori
+2 artikla
+Stakla
+1 artikal
+Brisači
+3 artikla
+TOČKOVI
+Ceo sistem
+Felne i gume
+3 artikla
+SERVIS I ODRŽAVANJE
+Ceo sistem
+Filteri
+16 artikala
+Ulja i tečnosti
+5 artikala
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /delovi/kocnice [200]
+TITLE: Kočnice za VW, Audi, Škoda, SEAT i Cupra | SKLOP
+DESC: Kočnice: delovi za VW, Audi, Škoda, SEAT i Cupra — pretraga po OEM broju i vozilu, cene sa PDV-om i stanje.
+OG: Kočnice za VW, Audi, Škoda, SEAT i Cupra | SKLOP | Kočnice: delovi za VW, Audi, Škoda, SEAT i Cupra — pretraga po OEM broju i vozilu, cene sa PDV-om i stanje.
+H1: ["KOČNICE"]
+--- text
+Početna
+Kočnice
+KOČNICE
+Kočioni diskovi
+9 artikala
+Kočione pločice
+10 artikala
+Kočione čeljusti
+3 artikla
+ABS senzori
+3 artikla
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /delovi/kocioni-diskovi [200]
+TITLE: Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP
+DESC: Kočioni diskovi za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Prednji i zadnji diskovi, puni i ventilirani.
+OG: Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP | Kočioni diskovi za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Prednji i zadnji diskovi, puni i ventilirani.
+H1: ["KOČIONI DISKOVI"]
+--- text
+Početna
+Kočnice
+Kočioni diskovi
+KOČIONI DISKOVI
+Kočioni diskovi zajedno sa pločicama pretvaraju kretanje u toplotu i zaustavljaju vozilo. Vibracije pri kočenju, ivica na disku ili debljina ispod minimalne znače zamenu.
+Više o kategoriji
+Vozilo
+Dostupnost
+Samo na stanju
+7
+Proizvođač
+ATE
+3
+Brembo
+2
+Bosch
+1
+Febi Bilstein
+1
+Original VAG
+1
+TRW
+1
+Kvalitet
+Original VAG
+1
+Deo u pakovanju proizvođača vozila.
+OEM kvalitet
+7
+Proizvođač koji isti deo isporučuje fabrici, u svom pakovanju.
+Aftermarket
+1
+Zamenski deo drugog proizvođača, obično povoljniji.
+Cena
+9 artikala
+Sortiraj
+Popularno
+Cena: od najniže
+Cena: od najviše
+Najnovije
+Artikli
+OEM kvalitet
+Brembo
+Kočioni disk prednji 312 × 25 mm
+OEM 3C0 615 098
+Na stanju · 10 kom.
+7.490
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm
+OEM kvalitet
+TRW
+Kočioni disk zadnji 272 × 10 mm, puni
+OEM 1K0 615 540 Q
+Malo na stanju · 1 kom.
+3.890
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk zadnji 272 × 10 mm, puni
+OEM kvalitet
+Bosch
+Kočioni disk prednji 256 × 22 mm
+OEM 6R0 615 645
+Na stanju
+3.990
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 256 × 22 mm
+OEM kvalitet
+Brembo
+Kočioni disk prednji 312 × 25 mm, ventilirani
+OEM 1K0 615 591 E
+Malo na stanju · 3 kom.
+7.290
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm, ventilirani
+Aftermarket
+Febi Bilstein
+Kočioni disk prednji 276 × 24 mm
+OEM 5Q0 615 505 R
+Na stanju · 5 kom.
+4.690
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 276 × 24 mm
+OEM kvalitet
+ATE
+Kočioni disk prednji 312 × 25 mm, ventilirani
+OEM 1K0 615 591 E
+Malo na stanju · 3 kom.
+6.700
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm, ventilirani
+Original VAG
+Original VAG
+Kočioni disk prednji 340 × 30 mm, GTI
+OEM 5Q0 615 666 A
+Na stanju
+18.900
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 340 × 30 mm, GTI
+OEM kvalitet
+ATE
+Kočioni disk prednji 288 × 25 mm, ventilirani
+OEM 1K0 615 868 F
+Po porudžbini · 6 dana
+5.490
+RSD
+sa PDV-om
+Poruči
+: Kočioni disk prednji 288 × 25 mm, ventilirani
+OEM kvalitet
+ATE
+Kočioni disk prednji 320 × 30 mm
+OEM 8K0 615 085
+Po porudžbini · 2 dana
+9.890
+RSD
+sa PDV-om
+Poruči
+: Kočioni disk prednji 320 × 30 mm
+Kočioni diskovi po vozilu
+Kočioni diskovi za Volkswagen
+Kočioni diskovi za Škoda
+Kočioni diskovi za VW Passat
+Kočioni diskovi za Škoda Superb
+Kočioni diskovi za SEAT Leon
+Kočioni diskovi za VW Golf
+Kočioni diskovi za VW Tiguan
+Kočioni diskovi za VW Touran
+Kočioni diskovi za Audi A3
+Kočioni diskovi za Škoda Octavia
+Povezani delovi
+Kočione pločice
+Kočione čeljusti
+ABS senzori
+Ležaj točka i glavčina
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Filteri | aria-label=Cena od, u dinarima | placeholder=3.890 | aria-label=Cena do, u dinarima | placeholder=18.900 | aria-label=Sortiraj | text=Popularno | text=Cena: od najniže | text=Cena: od najviše | text=Najnovije | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /delovi/kocioni-diskovi/volkswagen [200]
+TITLE: Kočioni diskovi za Volkswagen — cene i stanje | SKLOP
+DESC: Kočioni diskovi za Volkswagen: 8 artikala, 7 na stanju, 3.890 RSD – 18.900 RSD. Generacije: Golf VII, Passat B8, Touran II, Tiguan II.
+OG: Kočioni diskovi za Volkswagen — cene i stanje | SKLOP | Kočioni diskovi za Volkswagen: 8 artikala, 7 na stanju, 3.890 RSD – 18.900 RSD. Generacije: Golf VII, Passat B8, Touran II, Tiguan II.
+H1: ["KOČIONI DISKOVI ZA VOLKSWAGEN"]
+--- text
+Početna
+Kočioni diskovi
+Volkswagen
+KOČIONI DISKOVI ZA VOLKSWAGEN
+Za Volkswagen vozila imamo 8 artikala iz grupe „Kočioni diskovi“, 7 odmah na stanju, u rasponu od 3.890 RSD do 18.900 RSD sa PDV-om. Najviše delova ima za Golf VII, Passat B8, Touran II i Tiguan II. Proizvođači: ATE (2), Brembo (2), Bosch (1) i Febi Bilstein (1) i još 2.
+Vozilo
+Volkswagen
+Promeni vozilo
+Dostupnost
+Samo na stanju
+7
+Proizvođač
+ATE
+2
+Brembo
+2
+Bosch
+1
+Febi Bilstein
+1
+Original VAG
+1
+TRW
+1
+Kvalitet
+Original VAG
+1
+Deo u pakovanju proizvođača vozila.
+OEM kvalitet
+6
+Proizvođač koji isti deo isporučuje fabrici, u svom pakovanju.
+Aftermarket
+1
+Zamenski deo drugog proizvođača, obično povoljniji.
+Cena
+8 artikala
+Sortiraj
+Popularno
+Cena: od najniže
+Cena: od najviše
+Najnovije
+Volkswagen
+Poništi sve
+Artikli
+OEM kvalitet
+Brembo
+Kočioni disk prednji 312 × 25 mm
+OEM 3C0 615 098
+Na stanju · 10 kom.
+7.490
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm
+OEM kvalitet
+TRW
+Kočioni disk zadnji 272 × 10 mm, puni
+OEM 1K0 615 540 Q
+Malo na stanju · 1 kom.
+3.890
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk zadnji 272 × 10 mm, puni
+OEM kvalitet
+Bosch
+Kočioni disk prednji 256 × 22 mm
+OEM 6R0 615 645
+Na stanju
+3.990
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 256 × 22 mm
+OEM kvalitet
+Brembo
+Kočioni disk prednji 312 × 25 mm, ventilirani
+OEM 1K0 615 591 E
+Malo na stanju · 3 kom.
+7.290
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm, ventilirani
+Aftermarket
+Febi Bilstein
+Kočioni disk prednji 276 × 24 mm
+OEM 5Q0 615 505 R
+Na stanju · 5 kom.
+4.690
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 276 × 24 mm
+OEM kvalitet
+ATE
+Kočioni disk prednji 312 × 25 mm, ventilirani
+OEM 1K0 615 591 E
+Malo na stanju · 3 kom.
+6.700
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm, ventilirani
+Original VAG
+Original VAG
+Kočioni disk prednji 340 × 30 mm, GTI
+OEM 5Q0 615 666 A
+Na stanju
+18.900
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 340 × 30 mm, GTI
+OEM kvalitet
+ATE
+Kočioni disk prednji 288 × 25 mm, ventilirani
+OEM 1K0 615 868 F
+Po porudžbini · 6 dana
+5.490
+RSD
+sa PDV-om
+Poruči
+: Kočioni disk prednji 288 × 25 mm, ventilirani
+Najviše delova za modele
+Golf VII
+2012–2020 · 5 artikala
+Passat B8
+2014–2023 · 5 artikala
+Touran II
+od 2015 · 5 artikala
+Tiguan II
+2016–2024 · 5 artikala
+Golf V
+2003–2009 · 4 artikla
+Golf VI
+2008–2013 · 4 artikla
+Caddy III
+2003–2020 · 4 artikla
+Touran I
+2003–2015 · 4 artikla
+Tiguan I
+2007–2016 · 4 artikla
+Golf IV
+1997–2006 · 1 artikal
+Polo VI
+od 2017 · 1 artikal
+Golf VIII
+od 2019 · 1 artikal
+Pitanja o delovima za Volkswagen
+Koliko artikala „Kočioni diskovi“ za Volkswagen imate na stanju?
+U katalogu je 8 artikala za Volkswagen, od toga 7 odmah na stanju. Za ostale rok isporuke piše na stranici artikla.
+Koji proizvođači su u ponudi za Volkswagen?
+ATE (2), Brembo (2), Bosch (1), Febi Bilstein (1), Original VAG (1) i TRW (1). Sve cene su sa PDV-om.
+Kako da proverim da deo odgovara mom vozilu?
+Uporedite OEM broj sa starim delom — najtraženiji brojevi u ovoj grupi su 3C0 615 098, 1K0 615 868 F i 1K0 615 540 Q. Kad niste sigurni, pošaljite broj šasije (VIN) kroz upit i proverićemo umesto vas.
+Kočioni diskovi za druge modele
+VW Golf
+VW Tiguan
+VW Touran
+VW Passat
+VW Caddy
+VW Polo
+Drugi delovi za Volkswagen
+Filteri
+Kočione pločice
+Amortizeri i opruge
+Set zupčastog kaiša i vodena pumpa
+Spone i stabilizatori
+Senzori (lambda, parking, temperatura)
+Turbina (turbopunjač)
+Svećice, bobine i grejači
+Ramena i selen blokovi
+Filter ulja
+Filter vazduha
+Filter kabine
+Svi delovi za Volkswagen
+Ne nalazite deo? Pošaljite upit
+Povezani delovi
+Kočione pločice
+Kočione čeljusti
+ABS senzori
+Ležaj točka i glavčina
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Filteri | aria-label=Prikaži za sva vozila | aria-label=Cena od, u dinarima | placeholder=3.890 | aria-label=Cena do, u dinarima | placeholder=18.900 | aria-label=Sortiraj | text=Popularno | text=Cena: od najniže | text=Cena: od najviše | text=Najnovije | aria-label=Primenjeni filteri | aria-label=Ukloni filter: Volkswagen | aria-label=Srodne strane | aria-label=Filteri za Volkswagen | aria-label=Kočione pločice za Volkswagen | aria-label=Amortizeri i opruge za Volkswagen | aria-label=Set zupčastog kaiša i vodena pumpa za Volkswagen | aria-label=Spone i stabilizatori za Volkswagen | aria-label=Senzori (lambda, parking, temperatura) za Volkswagen | aria-label=Turbina (turbopunjač) za Volkswagen | aria-label=Svećice, bobine i grejači za Volkswagen | aria-label=Ramena i selen blokovi za Volkswagen | aria-label=Filter ulja za Volkswagen | aria-label=Filter vazduha za Volkswagen | aria-label=Filter kabine za Volkswagen | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /delovi/kocioni-diskovi/volkswagen/golf [200]
+TITLE: Kočioni diskovi za VW Golf | SKLOP
+DESC: Kočioni diskovi za VW Golf: 6 artikala, 5 na stanju, 3.890 RSD – 18.900 RSD. Generacije: Golf VII, Golf V, Golf VI, Golf IV.
+OG: Kočioni diskovi za VW Golf | SKLOP | Kočioni diskovi za VW Golf: 6 artikala, 5 na stanju, 3.890 RSD – 18.900 RSD. Generacije: Golf VII, Golf V, Golf VI, Golf IV.
+H1: ["KOČIONI DISKOVI ZA VW GOLF"]
+--- text
+Početna
+Kočioni diskovi
+Volkswagen
+Golf
+KOČIONI DISKOVI ZA VW GOLF
+Za VW Golf imamo 6 artikala iz grupe „Kočioni diskovi“, 5 odmah na stanju, u rasponu od 3.890 RSD do 18.900 RSD sa PDV-om. Pokrivene generacije: Golf VII (2012–2020), Golf V (2003–2009), Golf VI (2008–2013) i Golf IV (1997–2006). Proizvođači: ATE (2), Brembo (1), Febi Bilstein (1) i Original VAG (1) i još 1.
+Vozilo
+Volkswagen Golf
+Promeni vozilo
+Dostupnost
+Samo na stanju
+5
+Proizvođač
+ATE
+2
+Brembo
+1
+Febi Bilstein
+1
+Original VAG
+1
+TRW
+1
+Kvalitet
+Original VAG
+1
+Deo u pakovanju proizvođača vozila.
+OEM kvalitet
+4
+Proizvođač koji isti deo isporučuje fabrici, u svom pakovanju.
+Aftermarket
+1
+Zamenski deo drugog proizvođača, obično povoljniji.
+Cena
+6 artikala
+Sortiraj
+Popularno
+Cena: od najniže
+Cena: od najviše
+Najnovije
+Volkswagen Golf
+Poništi sve
+Artikli
+OEM kvalitet
+TRW
+Kočioni disk zadnji 272 × 10 mm, puni
+OEM 1K0 615 540 Q
+Malo na stanju · 1 kom.
+3.890
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk zadnji 272 × 10 mm, puni
+OEM kvalitet
+Brembo
+Kočioni disk prednji 312 × 25 mm, ventilirani
+OEM 1K0 615 591 E
+Malo na stanju · 3 kom.
+7.290
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm, ventilirani
+Aftermarket
+Febi Bilstein
+Kočioni disk prednji 276 × 24 mm
+OEM 5Q0 615 505 R
+Na stanju · 5 kom.
+4.690
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 276 × 24 mm
+OEM kvalitet
+ATE
+Kočioni disk prednji 312 × 25 mm, ventilirani
+OEM 1K0 615 591 E
+Malo na stanju · 3 kom.
+6.700
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm, ventilirani
+Original VAG
+Original VAG
+Kočioni disk prednji 340 × 30 mm, GTI
+OEM 5Q0 615 666 A
+Na stanju
+18.900
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 340 × 30 mm, GTI
+OEM kvalitet
+ATE
+Kočioni disk prednji 288 × 25 mm, ventilirani
+OEM 1K0 615 868 F
+Po porudžbini · 6 dana
+5.490
+RSD
+sa PDV-om
+Poruči
+: Kočioni disk prednji 288 × 25 mm, ventilirani
+Kočioni diskovi po generaciji
+Golf VII
+2012–2020 · 5 artikala
+Golf V
+2003–2009 · 4 artikla
+Golf VI
+2008–2013 · 4 artikla
+Golf IV
+1997–2006 · 1 artikal
+Golf VIII
+od 2019 · 1 artikal
+Pitanja o delovima za VW Golf
+Koliko artikala „Kočioni diskovi“ za VW Golf imate na stanju?
+U katalogu je 6 artikala za VW Golf, od toga 5 odmah na stanju. Za ostale rok isporuke piše na stranici artikla.
+Koji proizvođači su u ponudi za VW Golf?
+ATE (2), Brembo (1), Febi Bilstein (1), Original VAG (1) i TRW (1). Sve cene su sa PDV-om.
+Kako da proverim da deo odgovara mom vozilu?
+Uporedite OEM broj sa starim delom — najtraženiji brojevi u ovoj grupi su 1K0 615 868 F, 1K0 615 540 Q i 1K0 615 591 E. Kad niste sigurni, pošaljite broj šasije (VIN) kroz upit i proverićemo umesto vas.
+Kočioni diskovi za druge modele
+VW Tiguan
+VW Touran
+VW Passat
+VW Caddy
+VW Polo
+Drugi delovi za VW Golf
+Filteri
+Kočione pločice
+Set zupčastog kaiša i vodena pumpa
+Amortizeri i opruge
+Senzori (lambda, parking, temperatura)
+Turbina (turbopunjač)
+Svećice, bobine i grejači
+Ramena i selen blokovi
+Spone i stabilizatori
+Filter ulja
+Blok motora i glava
+Brizgaljke i pumpa goriva
+Svi delovi za VW Golf
+Ne nalazite deo? Pošaljite upit
+Povezani delovi
+Kočione pločice
+Kočione čeljusti
+ABS senzori
+Ležaj točka i glavčina
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Filteri | aria-label=Prikaži za sva vozila | aria-label=Cena od, u dinarima | placeholder=3.890 | aria-label=Cena do, u dinarima | placeholder=18.900 | aria-label=Sortiraj | text=Popularno | text=Cena: od najniže | text=Cena: od najviše | text=Najnovije | aria-label=Primenjeni filteri | aria-label=Ukloni filter: Volkswagen Golf | aria-label=Srodne strane | aria-label=Filteri za VW Golf | aria-label=Kočione pločice za VW Golf | aria-label=Set zupčastog kaiša i vodena pumpa za VW Golf | aria-label=Amortizeri i opruge za VW Golf | aria-label=Senzori (lambda, parking, temperatura) za VW Golf | aria-label=Turbina (turbopunjač) za VW Golf | aria-label=Svećice, bobine i grejači za VW Golf | aria-label=Ramena i selen blokovi za VW Golf | aria-label=Spone i stabilizatori za VW Golf | aria-label=Filter ulja za VW Golf | aria-label=Blok motora i glava za VW Golf | aria-label=Brizgaljke i pumpa goriva za VW Golf | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /deo/kocioni-disk-prednji-276-24-mm-demo-0004 [200]
+TITLE: Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP
+DESC: Kočioni disk prednji 276 × 24 mm (Febi Bilstein, Aftermarket) za VW Golf VII, VW Passat B8 i … Cena 4.690 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 615 505 R.
+OG: Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP | Kočioni disk prednji 276 × 24 mm (Febi Bilstein, Aftermarket) za VW Golf VII, VW Passat B8 i … Cena 4.690 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 615 505 R.
+H1: ["Kočioni disk prednji 276 × 24 mm"]
+--- text
+Početna
+Kočioni diskovi
+Kočioni disk prednji 276 × 24 mm
+Ilustracija kategorije — izgled dela može se razlikovati
+Ø 276
+24
+mm
+Mere diska: prečnik 276 mm, debljina 24 mm.
+Febi Bilstein · Aftermarket
+Kočioni disk prednji 276 × 24 mm
+OEM
+5Q0 615 505 R
+Šifra
+DEMO-0004
+Kat. br. proizvođača
+57447
+Izaberite vozilo da proverimo da li deo odgovara
+4.690
+RSD
+sa PDV-om
+Na stanju · 5 kom.
+· Isporuka za 1–2 radna dana
+Dodaj u korpu
+: Kočioni disk prednji 276 × 24 mm
+Pošaljite upit
+Kurir 450 RSD, besplatno iznad 10.000 RSD · pouzećem ili virmanom
+Lično preuzimanje bez troška · plaćanje gotovinom ili karticom
+Bez plaćanja na sajtu. Dostava i plaćanje
+Kompatibilnost
+Pre ugradnje uporedite OEM broj sa starim delom. Kad niste sigurni, pošaljite broj šasije.
+Vozila za koja deo odgovara
+MARKA	MODEL / GENERACIJA	GODINE	MOTOR	NAPOMENA
+Audi	A3 (8V)	2012–2020	Svi motori
+Cupra	Ateca	2018–	Svi motori
+SEAT	Ateca	2016–	Svi motori
+SEAT	Ibiza V	2017–	Svi motori
+SEAT	Leon III	2012–2020	Svi motori
+Škoda	Fabia IV	2021–	Svi motori
+Škoda	Karoq	2017–	Svi motori
+Škoda	Kodiaq I	2016–2024	Svi motori
+Škoda	Octavia III	2012–2020	Svi motori
+Škoda	Superb III	2015–2024	Svi motori
+Volkswagen	Golf VII	2012–2020	Svi motori
+Volkswagen	Passat B8	2014–2023	Svi motori
+Prikaži još 3
+Brojevi
+OEM BROJEVI
+5Q0 615 505 R
+VAG (demo)
+ZAMENSKI BROJEVI
+OX 408D
+Mahle
+Specifikacije
+Prečnik
+276 mm
+Debljina
+24 mm
+Proizvođač
+Febi Bilstein
+Kvalitet
+Aftermarket
+Garancija
+24 meseci
+Kočioni disk prednji 276 × 24 mm. Demo artikal: kataloški brojevi i cene služe samo za prikaz rada prodavnice.
+Napomena: Demo artikal — podaci služe za prikaz.
+Povezani delovi
+Svi: Kočioni diskovi
+OEM kvalitet
+Brembo
+Kočioni disk prednji 312 × 25 mm
+OEM 3C0 615 098
+Na stanju · 10 kom.
+7.490
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm
+OEM kvalitet
+ATE
+Kočioni disk prednji 288 × 25 mm, ventilirani
+OEM 1K0 615 868 F
+Po porudžbini · 6 dana
+5.490
+RSD
+sa PDV-om
+Poruči
+: Kočioni disk prednji 288 × 25 mm, ventilirani
+OEM kvalitet
+TRW
+Kočioni disk zadnji 272 × 10 mm, puni
+OEM 1K0 615 540 Q
+Malo na stanju · 1 kom.
+3.890
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk zadnji 272 × 10 mm, puni
+OEM kvalitet
+Bosch
+Kočioni disk prednji 256 × 22 mm
+OEM 6R0 615 645
+Na stanju
+3.990
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 256 × 22 mm
+Kočioni diskovi po vozilu
+Kočioni diskovi za VW Passat
+Kočioni diskovi za Škoda Superb
+Kočioni diskovi za VW Golf
+Kočioni diskovi za VW Touran
+Kočioni diskovi za VW Tiguan
+Kočioni diskovi za Audi A3
+Kočioni diskovi za Škoda Octavia
+Kočioni diskovi za SEAT Leon
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | alt=Kočioni disk prednji 276 × 24 mm — ilustracija kategorije kočioni diskovi | aria-label=Kopiraj OEM broj 5Q0 615 505 R | aria-label=Količina: Kočioni disk prednji 276 × 24 mm | aria-label=Smanji količinu | aria-label=Količina | aria-label=Povećaj količinu | aria-label=Kopiraj broj OX 408D | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /deo/kocione-plocice-prednje-demo-0012 [200]
+TITLE: Kočione pločice prednje Bosch 6R0 698 000 MK | SKLOP
+DESC: Kočione pločice prednje (Bosch, OEM kvalitet) za VW Polo IV, VW Polo V i još 6. Cena 2.990 RSD sa PDV-om. Trenutno nije na stanju. Kat. br. 6R0 698 000 MK.
+OG: Kočione pločice prednje Bosch 6R0 698 000 MK | SKLOP | Kočione pločice prednje (Bosch, OEM kvalitet) za VW Polo IV, VW Polo V i još 6. Cena 2.990 RSD sa PDV-om. Trenutno nije na stanju. Kat. br. 6R0 698 000 MK.
+H1: ["Kočione pločice prednje"]
+--- text
+Početna
+Kočione pločice
+Kočione pločice prednje
+Ilustracija kategorije — izgled dela može se razlikovati
+Bosch · OEM kvalitet
+Kočione pločice prednje
+OEM
+6R0 698 000 MK
+Šifra
+DEMO-0012
+Kat. br. proizvođača
+0 986 661 655
+Izaberite vozilo da proverimo da li deo odgovara
+2.990
+RSD
+sa PDV-om
+Nema na stanju
+Javi mi kad stigne
+E-pošta
+Pošaljite mi jedno obaveštenje kad artikal stigne.
+Veb sajt
+Obavesti me
+Pošaljite upit
+Kurir 450 RSD, besplatno iznad 10.000 RSD · pouzećem ili virmanom
+Lično preuzimanje bez troška · plaćanje gotovinom ili karticom
+Bez plaćanja na sajtu. Dostava i plaćanje
+Kompatibilnost
+Pre ugradnje uporedite OEM broj sa starim delom. Kad niste sigurni, pošaljite broj šasije.
+Vozila za koja deo odgovara
+MARKA	MODEL / GENERACIJA	GODINE	MOTOR	NAPOMENA
+SEAT	Ibiza III	2002–2008	Svi motori
+SEAT	Ibiza IV	2008–2017	Svi motori
+Škoda	Fabia I	1999–2007	Svi motori
+Škoda	Fabia II	2007–2014	Svi motori
+Škoda	Fabia III	2014–2021	Svi motori
+Škoda	Rapid	2012–2019	Svi motori
+Volkswagen	Polo IV	2001–2009	Svi motori
+Volkswagen	Polo V	2009–2017	Svi motori
+Brojevi
+OEM BROJEVI
+6R0 698 000 MK
+VAG (demo)
+ZAMENSKI BROJEVI
+24.0169-5606.1
+ATE
+Specifikacije
+Širina
+131,1 mm
+Debljina
+19,5 mm
+Proizvođač
+Bosch
+Kvalitet
+OEM kvalitet
+Garancija
+24 meseci
+Kočione pločice prednje. Demo artikal: kataloški brojevi i cene služe samo za prikaz rada prodavnice.
+Napomena: Demo artikal — podaci služe za prikaz.
+Povezani delovi
+Svi: Kočione pločice
+Aftermarket
+Febi Bilstein
+Kočione pločice zadnje, elektronska ručna
+OEM 5Q0 698 782 KA
+Malo na stanju · 2 kom.
+3.490
+RSD
+sa PDV-om
+U korpu
+: Kočione pločice zadnje, elektronska ručna
+OEM kvalitet
+TRW
+Kočione pločice zadnje
+OEM 1K0 698 569
+Malo na stanju · 2 kom.
+3.190
+RSD
+sa PDV-om
+U korpu
+: Kočione pločice zadnje
+OEM kvalitet
+ATE
+Kočione pločice prednje, sa senzorom
+OEM 1K0 698 406 F
+Na stanju
+4.290
+RSD
+sa PDV-om
+U korpu
+: Kočione pločice prednje, sa senzorom
+Original VAG
+Original VAG
+Kočione pločice prednje
+OEM 5WA 698 115 M
+Malo na stanju · 3 kom.
+8.900
+RSD
+sa PDV-om
+U korpu
+: Kočione pločice prednje
+Kočione pločice po vozilu
+Kočione pločice za Volkswagen
+Kočione pločice za Škoda
+Kočione pločice za SEAT
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | alt=Kočione pločice prednje — ilustracija kategorije kočione pločice | aria-label=Kopiraj OEM broj 6R0 698 000 MK | aria-label=Obaveštenje o dolasku: Kočione pločice prednje | placeholder=ime@primer.rs | aria-label=Kopiraj broj 24.0169-5606.1 | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /vozila [200]
+TITLE: Delovi po vozilu — VW, Audi, Škoda, SEAT, Cupra | SKLOP
+DESC: Izaberite marku, model i generaciju vozila i pogledajte delove koji odgovaraju: kočnice, vešanje, motor, hlađenje, elektrika i servisni delovi.
+OG: Delovi po vozilu — VW, Audi, Škoda, SEAT, Cupra | SKLOP | Izaberite marku, model i generaciju vozila i pogledajte delove koji odgovaraju: kočnice, vešanje, motor, hlađenje, elektrika i servisni delovi.
+H1: ["DELOVI PO VOZILU"]
+--- text
+Početna
+DELOVI PO VOZILU
+Izaberite marku i model, pa generaciju. Na stranici generacije su svi delovi koji odgovaraju, po kategorijama.
+VOLKSWAGEN
+Golf
+1997–
+Passat
+1996–2023
+Polo
+2001–
+Caddy
+2003–
+Touran
+2003–
+Tiguan
+2007–2024
+AUDI
+A3
+1996–
+A4
+1994–
+A6
+1997–
+ŠKODA
+Octavia
+1996–
+Fabia
+1999–
+Superb
+2001–2024
+Rapid
+2012–2019
+Kodiaq
+2016–2024
+Karoq
+2017–
+SEAT
+Leon
+1999–
+Ibiza
+2002–
+Ateca
+2016–
+CUPRA
+Formentor
+2020–
+Leon
+2020–
+Ateca
+2018–
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /vozila/volkswagen [200]
+TITLE: Delovi za Volkswagen — svi modeli | SKLOP
+DESC: Delovi za Volkswagen: Golf, Passat, Polo, Caddy, Touran, Tiguan i drugi modeli. Izaberite generaciju i pogledajte delove koji odgovaraju.
+OG: Delovi za Volkswagen — svi modeli | SKLOP | Delovi za Volkswagen: Golf, Passat, Polo, Caddy, Touran, Tiguan i drugi modeli. Izaberite generaciju i pogledajte delove koji odgovaraju.
+H1: ["DELOVI ZA VOLKSWAGEN"]
+--- text
+Početna
+Volkswagen
+DELOVI ZA VOLKSWAGEN
+Golf
+Golf IV
+1997–2006
+Golf V
+2003–2009
+Golf VI
+2008–2013
+Golf VII
+2012–2020
+Golf VIII
+2019–
+Passat
+Passat B5
+1996–2005
+Passat B6
+2005–2010
+Passat B7
+2010–2014
+Passat B8
+2014–2023
+Polo
+Polo IV
+2001–2009
+Polo V
+2009–2017
+Polo VI
+2017–
+Caddy
+Caddy III
+2003–2020
+Caddy V
+2020–
+Touran
+Touran I
+2003–2015
+Touran II
+2015–
+Tiguan
+Tiguan I
+2007–2016
+Tiguan II
+2016–2024
+Delovi za Volkswagen po kategorijama
+Filteri
+Kočione pločice
+Kočioni diskovi
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Filteri za Volkswagen | aria-label=Kočione pločice za Volkswagen | aria-label=Kočioni diskovi za Volkswagen | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /vozila/volkswagen/golf [200]
+TITLE: Delovi za VW Golf — sve generacije | SKLOP
+DESC: Delovi za VW Golf: Golf IV (1997–2006), Golf V (2003–2009), Golf VI (2008–2013), Golf VII (2012–2020), Golf VIII (2019–). Izaberite generaciju i…
+OG: Delovi za VW Golf — sve generacije | SKLOP | Delovi za VW Golf: Golf IV (1997–2006), Golf V (2003–2009), Golf VI (2008–2013), Golf VII (2012–2020), Golf VIII (2019–). Izaberite generaciju i…
+H1: ["DELOVI ZA VOLKSWAGEN GOLF"]
+--- text
+Početna
+Volkswagen
+Golf
+DELOVI ZA VOLKSWAGEN GOLF
+Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije.
+Golf IV
+1997–2006
+Platforma PQ34 · VIN kod 1J
+Golf V
+2003–2009
+Platforma PQ35 · VIN kod 1K
+Golf VI
+2008–2013
+Platforma PQ35 · VIN kod 1K, 5K
+Golf VII
+2012–2020
+Platforma MQB · VIN kod 5G, AU
+Golf VIII
+2019–
+Platforma MQB Evo · VIN kod CD
+Delovi za VW Golf po kategorijama
+Filteri
+Kočione pločice
+Set zupčastog kaiša i vodena pumpa
+Kočioni diskovi
+Amortizeri i opruge
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Filteri za VW Golf | aria-label=Kočione pločice za VW Golf | aria-label=Set zupčastog kaiša i vodena pumpa za VW Golf | aria-label=Kočioni diskovi za VW Golf | aria-label=Amortizeri i opruge za VW Golf | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /vozila/volkswagen/golf/golf-7 [200]
+TITLE: Delovi za VW Golf VII (2012–2020) | SKLOP
+DESC: Delovi za VW Golf VII: 61 artikal u 37 kategorija. Blok motora i glava, Filter ulja, Filter vazduha, Turbina (turbopunjač).
+OG: Delovi za VW Golf VII (2012–2020) | SKLOP | Delovi za VW Golf VII: 61 artikal u 37 kategorija. Blok motora i glava, Filter ulja, Filter vazduha, Turbina (turbopunjač).
+H1: ["DELOVI ZA VW GOLF VII"]
+--- text
+Početna
+Volkswagen
+Golf
+Golf VII
+DELOVI ZA VW GOLF VII
+2012–2020 · platforma MQB · VIN kod 5G, AU · 61 artikal
+Izaberi ovo vozilo
+MOTOR
+Svi motori
+1.2 TSI 77 kW
+CBZB
+1.0 TSI 81 kW
+CHZD, DKLA
+1.4 TSI 110 kW
+CZDA
+1.5 TSI 110 kW
+DADA, DPCA
+2.0 TSI 162 kW
+CHHB
+1.6 TDI 77 kW
+CAYC, CLHA
+2.0 TDI 110 kW
+CRLB, DFGA
+2.0 TDI 140 kW
+CUAA, DFHA
+Delovi po kategorijama
+Blok motora i glava
+1 artikal
+Filter ulja
+2 artikla
+Filter vazduha
+1 artikal
+Turbina (turbopunjač)
+1 artikal
+Filter goriva
+1 artikal
+Interkuler
+1 artikal
+Usisna grana i kućište filtera
+1 artikal
+Filter kabine
+1 artikal
+Brizgaljke i pumpa goriva
+1 artikal
+Set zupčastog kaiša i vodena pumpa
+2 artikla
+Kaiš alternatora i zatezači
+1 artikal
+Svećice, bobine i grejači
+3 artikla
+EGR ventil
+1 artikal
+Nosači motora i menjača
+1 artikal
+DPF i katalizator
+1 artikal
+Hladnjak i ventilator
+1 artikal
+Termostat i creva hlađenja
+1 artikal
+Kompresor i kondenzator klime
+1 artikal
+Kvačilo i zamajac
+1 artikal
+Menjač (DSG)
+2 artikla
+Poluosovine i homokinetički zglobovi
+2 artikla
+Amortizeri i opruge
+3 artikla
+Ramena i selen blokovi
+1 artikal
+Spone i stabilizatori
+4 artikla
+Ležaj točka i glavčina
+1 artikal
+Kočioni diskovi
+5 artikala
+Kočione pločice
+6 artikala
+Kočione čeljusti
+2 artikla
+ABS senzori
+1 artikal
+Farovi
+1 artikal
+Senzori (lambda, parking, temperatura)
+3 artikla
+Hauba
+1 artikal
+Vrata
+1 artikal
+Retrovizori
+1 artikal
+Stakla
+1 artikal
+Brisači
+2 artikla
+Felne i gume
+1 artikal
+Izbor delova za Golf VII
+OEM kvalitet
+Bosch
+Metlice brisača Aerotwin 600/475, set
+OEM 5G0 955 985 BN
+Odgovara za Golf VII — proverite motor
+Na stanju · 4 kom.
+3.490
+RSD
+sa PDV-om
+U korpu
+: Metlice brisača Aerotwin 600/475, set
+OEM kvalitet
+Sachs
+Set kvačila 1.6 TDI
+OEM 04L 105 204 K
+Odgovara za Golf VII — proverite motor
+Na stanju · 6 kom.
+19.900
+RSD
+sa PDV-om
+U korpu
+: Set kvačila 1.6 TDI
+Aftermarket
+Febi Bilstein
+Kočione pločice zadnje, elektronska ručna
+OEM 5Q0 698 782 KA
+Odgovara za Golf VII — proverite motor
+Malo na stanju · 2 kom.
+3.490
+RSD
+sa PDV-om
+U korpu
+: Kočione pločice zadnje, elektronska ručna
+Original VAG
+Original VAG
+Aluminijumska felna 6,5J × 16 ET46, 5 × 112
+OEM 1K0 601 701
+Odgovara za Golf VII — proverite motor
+Na stanju
+24.900
+RSD
+sa PDV-om
+U korpu
+: Aluminijumska felna 6,5J × 16 ET46, 5 × 112
+Original VAG
+Original VAG
+Kućište termostata sa pumpom 1.4 TSI
+OEM 04E 121 315
+Odgovara za Golf VII — proverite motor
+Na stanju
+22.900
+RSD
+sa PDV-om
+U korpu
+: Kućište termostata sa pumpom 1.4 TSI
+Original VAG
+Original VAG
+Parking senzor
+OEM 1K0 906 861 EQ
+Odgovara za Golf VII — proverite motor
+Na stanju · 8 kom.
+5.900
+RSD
+sa PDV-om
+U korpu
+: Parking senzor
+OEM kvalitet
+TRW
+Kočioni disk zadnji 272 × 10 mm, puni
+OEM 1K0 615 540 Q
+Odgovara za Golf VII — proverite motor
+Malo na stanju · 1 kom.
+3.890
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk zadnji 272 × 10 mm, puni
+OEM kvalitet
+TRW
+Kočione pločice zadnje
+OEM 1K0 698 569
+Odgovara za Golf VII — proverite motor
+Malo na stanju · 2 kom.
+3.190
+RSD
+sa PDV-om
+U korpu
+: Kočione pločice zadnje
+Delovi za VW Golf po kategorijama
+Filteri
+Kočione pločice
+Set zupčastog kaiša i vodena pumpa
+Kočioni diskovi
+Amortizeri i opruge
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Motor | aria-label=Filteri za VW Golf | aria-label=Kočione pločice za VW Golf | aria-label=Set zupčastog kaiša i vodena pumpa za VW Golf | aria-label=Kočioni diskovi za VW Golf | aria-label=Amortizeri i opruge za VW Golf | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /pretraga?q=5Q0615505R [200]
+TITLE: Pretraga: 5Q0615505R | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Pretraga: 5Q0615505R | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Rezultati za „5Q0615505R“"]
+--- text
+Pretraži
+Broj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju.
+Rezultati za „5Q0615505R“
+1 artikal · Tražili smo broj 5Q0615505R u OEM, zamenskim i kataloškim brojevima.
+TAČNO POKLAPANJE
+Broj se poklapa sa OEM ili kataloškim brojem artikla.
+Aftermarket
+Febi Bilstein
+Kočioni disk prednji 276 × 24 mm
+OEM 5Q0 615 505 R
+Na stanju · 5 kom.
+4.690
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 276 × 24 mm
+Ne vidite pravi deo? Pošaljite upit sa brojem šasije.
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Broj dela ili naziv | placeholder=npr. 1K0 615 301 AA ili kočione pločice | aria-label=Obriši pretragu | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /pretraga?q=disk [200]
+TITLE: Pretraga: disk | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Pretraga: disk | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Rezultati za „disk“"]
+--- text
+Pretraži
+Broj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju.
+Rezultati za „disk“
+9 artikala
+Kočioni diskovi
+9
+PROIZVODI
+OEM kvalitet
+ATE
+Kočioni disk prednji 320 × 30 mm
+OEM 8K0 615 085
+Po porudžbini · 2 dana
+9.890
+RSD
+sa PDV-om
+Poruči
+: Kočioni disk prednji 320 × 30 mm
+OEM kvalitet
+Brembo
+Kočioni disk prednji 312 × 25 mm
+OEM 3C0 615 098
+Na stanju · 10 kom.
+7.490
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm
+OEM kvalitet
+Bosch
+Kočioni disk prednji 256 × 22 mm
+OEM 6R0 615 645
+Na stanju
+3.990
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 256 × 22 mm
+Aftermarket
+Febi Bilstein
+Kočioni disk prednji 276 × 24 mm
+OEM 5Q0 615 505 R
+Na stanju · 5 kom.
+4.690
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 276 × 24 mm
+OEM kvalitet
+ATE
+Kočioni disk prednji 288 × 25 mm, ventilirani
+OEM 1K0 615 868 F
+Po porudžbini · 6 dana
+5.490
+RSD
+sa PDV-om
+Poruči
+: Kočioni disk prednji 288 × 25 mm, ventilirani
+Original VAG
+Original VAG
+Kočioni disk prednji 340 × 30 mm, GTI
+OEM 5Q0 615 666 A
+Na stanju
+18.900
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 340 × 30 mm, GTI
+OEM kvalitet
+TRW
+Kočioni disk zadnji 272 × 10 mm, puni
+OEM 1K0 615 540 Q
+Malo na stanju · 1 kom.
+3.890
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk zadnji 272 × 10 mm, puni
+OEM kvalitet
+ATE
+Kočioni disk prednji 312 × 25 mm, ventilirani
+OEM 1K0 615 591 E
+Malo na stanju · 3 kom.
+6.700
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm, ventilirani
+OEM kvalitet
+Brembo
+Kočioni disk prednji 312 × 25 mm, ventilirani
+OEM 1K0 615 591 E
+Malo na stanju · 3 kom.
+7.290
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm, ventilirani
+Ne vidite pravi deo? Pošaljite upit sa brojem šasije.
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Broj dela ili naziv | placeholder=npr. 1K0 615 301 AA ili kočione pločice | aria-label=Obriši pretragu | aria-label=Kategorije | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /pretraga?q=qqzz9981 [200]
+TITLE: Pretraga: qqzz9981 | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Pretraga: qqzz9981 | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Nema rezultata za „qqzz9981“"]
+--- text
+Pretraži
+Broj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju.
+Nema rezultata za „qqzz9981“
+Tražili smo broj QQZZ9981 u OEM, zamenskim i kataloškim brojevima.
+Ovaj broj nije u katalogu
+Za „qqzz9981“ nemamo artikal u katalogu. Pošaljite upit — proverićemo kod dobavljača i javiti vam se u toku radnog dana.
+Pošaljite upit
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Broj dela ili naziv | placeholder=npr. 1K0 615 301 AA ili kočione pločice | aria-label=Obriši pretragu | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /pretraga [200]
+TITLE: Pretraga delova | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Pretraga delova | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["PRETRAGA DELOVA"]
+--- text
+PRETRAGA DELOVA
+Pretraži
+Broj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju.
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Broj dela ili naziv | placeholder=npr. 1K0 615 301 AA ili kočione pločice | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /korpa [200]
+TITLE: Korpa | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Korpa | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Korpa"]
+--- text
+Korpa
+Korpa je prazna
+Dodajte delove iz kataloga ili pretražite po OEM broju.
+Pretražite po broju dela
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /porudzbina [200]
+TITLE: Porudžbina | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Porudžbina | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Porudžbina"]
+--- text
+Porudžbina
+Bez plaćanja na sajtu. Potvrdu šaljemo e-poštom, a pre slanja vas zovemo ako nešto treba proveriti.
+Korpa je prazna
+Dodajte delove u korpu, pa se vratite na porudžbinu.
+Pretražite delove
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /upit [200]
+TITLE: Upit za deo po broju šasije (VIN) | SKLOP
+DESC: Ne nalazite deo? Pošaljite broj šasije, opis i fotografiju starog dela — proverimo kod dobavljača i javimo ponudu u toku radnog dana. Odgovor telefonom…
+OG: Upit za deo po broju šasije (VIN) | SKLOP | Ne nalazite deo? Pošaljite broj šasije, opis i fotografiju starog dela — proverimo kod dobavljača i javimo ponudu u toku radnog dana. Odgovor telefonom…
+H1: ["NE NALAZITE DEO?"]
+--- text
+NE NALAZITE DEO?
+Pošaljite broj šasije i šta vam treba — javljamo se sa ponudom u toku radnog dana.
+Veb sajt
+Vozilo
+Broj šasije (VIN) (nije obavezno)
+0 / 17 znakova · bez slova I, O i Q
+Marka
+Izaberite
+Volkswagen
+Audi
+Škoda
+SEAT
+Cupra
+Model
+Prvo marku
+Generacija
+Prvo model
+Godište (nije obavezno)
+Šta vam treba?
+Opis
+0 / 2.000
+Naziv dela, strana (levo/desno, napred/nazad), kvar ili broj sa starog dela.
+Kategorija (nije obavezno)
+Dodaj kategoriju
+ABS senzori
+Akumulator
+Alternator
+Amortizeri i opruge
+Anlaser
+Auspuh (lonci i cevi)
+Blatobrani
+Blok motora i glava
+Branici
+Brisači
+Brizgaljke i pumpa goriva
+DPF i katalizator
+EGR ventil
+Farovi
+Felne i gume
+Filter goriva
+Filter kabine
+Filter ulja
+Filter vazduha
+Filteri
+Hauba
+Hladnjak i ventilator
+Interkuler
+Kaiš alternatora i zatezači
+Karter, pumpa ulja i dihtunzi
+Kočione čeljusti
+Kočione pločice
+Kočioni diskovi
+Kompresor i kondenzator klime
+Kvačilo i zamajac
+Letva volana
+Ležaj točka i glavčina
+Menjač (DSG)
+Nosači motora i menjača
+Poluosovine i homokinetički zglobovi
+Ramena i selen blokovi
+Retrovizori
+Senzori (lambda, parking, temperatura)
+Set zupčastog kaiša i vodena pumpa
+Spone i stabilizatori
+Stakla
+Stop svetla
+Svećice, bobine i grejači
+Termostat i creva hlađenja
+Turbina (turbopunjač)
+Ulja i tečnosti
+Usisna grana i kućište filtera
+Vrata
+Fotografije (nije obavezno)
+Dodaj fotografiju
+Stari deo, pločica sa brojem ili saobraćajna · do 5 · JPG, PNG, WebP do 8 MB
+Kontakt
+Ime
+Telefon
+E-pošta (nije obavezno)
+Kako da vam odgovorimo?
+Telefonom
+Viber
+WhatsApp
+E-poštom
+Slažem se da podatke iz upita koristite za odgovor, prema politici privatnosti.
+Pošalji upit
+Odgovaramo u toku radnog dana, kanalom koji ste izabrali.
+Gde je broj šasije?
+WVWZZZ1KZ8W…
+VETROBRAN · VOZAČ
+E · 17 zn.
+SAOBRAĆAJNA DOZVOLA
+Broj šasije (VIN) ima 17 znakova, bez slova I, O i Q.
+U saobraćajnoj dozvoli je u polju E. Na vozilu je ispod vetrobrana sa strane vozača i na nalepnici na B-stubu.
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | placeholder=WVWZZZ1KZ8W000001 | text=Izaberite | text=Volkswagen | text=Audi | text=Škoda | text=SEAT | text=Cupra | text=Prvo marku | text=Prvo model | placeholder=2016 | aria-label=Dodaj kategoriju | text=Dodaj kategoriju | text=ABS senzori | text=Akumulator | text=Alternator | text=Amortizeri i opruge | text=Anlaser | text=Auspuh (lonci i cevi) | text=Blatobrani | text=Blok motora i glava | text=Branici | text=Brisači | text=Brizgaljke i pumpa goriva | text=DPF i katalizator | text=EGR ventil | text=Farovi | text=Felne i gume | text=Filter goriva | text=Filter kabine | text=Filter ulja | text=Filter vazduha | text=Filteri | text=Hauba | text=Hladnjak i ventilator | text=Interkuler | text=Kaiš alternatora i zatezači | text=Karter, pumpa ulja i dihtunzi | text=Kočione čeljusti | text=Kočione pločice | text=Kočioni diskovi | text=Kompresor i kondenzator klime | text=Kvačilo i zamajac | text=Letva volana | text=Ležaj točka i glavčina | text=Menjač (DSG) | text=Nosači motora i menjača | text=Poluosovine i homokinetički zglobovi | text=Ramena i selen blokovi | text=Retrovizori | text=Senzori (lambda, parking, temperatura) | text=Set zupčastog kaiša i vodena pumpa | text=Spone i stabilizatori | text=Stakla | text=Stop svetla | text=Svećice, bobine i grejači | text=Termostat i creva hlađenja | text=Turbina (turbopunjač) | text=Ulja i tečnosti | text=Usisna grana i kućište filtera | text=Vrata | placeholder=064 123 4567 | aria-label=Pomoć | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /za-majstore [200]
+TITLE: Delovi za auto servise — rabat i brza porudžbina | SKLOP
+DESC: Za majstore i auto servise: rabat po nivou saradnje, brza porudžbina po OEM brojevima, dostava u servis, istorija porudžbina i odloženo plaćanje po…
+OG: Delovi za auto servise — rabat i brza porudžbina | SKLOP | Za majstore i auto servise: rabat po nivou saradnje, brza porudžbina po OEM brojevima, dostava u servis, istorija porudžbina i odloženo plaćanje po…
+H1: ["ZA MAJSTORE"]
+--- text
+Početna
+ZA MAJSTORE
+Servisi za VAG vozila kod nas poručuju po svojoj ceni, po OEM broju i bez čekanja na telefonu.
+Registrujte servis
+Prijavite se
+NIVOI RABATA
+Nivo	Rabat	Artikal od 10.000 RSD
+Majstor
+10 %
+9.000 RSD
+sa PDV-om
+Majstor Plus
+15 %
+8.500 RSD
+sa PDV-om
+Partner
+20 %
+8.000 RSD
+sa PDV-om
+Rabat se računa od maloprodajne cene sa PDV-om; za pojedine proizvođače i kategorije može biti drugačiji. Nivo određujemo pri odobrenju naloga.
+ŠTA DOBIJATE
+Vaša cena svuda
+Katalog, pretraga, 3D prikaz, korpa i porudžbina računaju cenu sa vašim rabatom. Maloprodajna cena stoji precrtana pored.
+Brza porudžbina
+Nalepite listu OEM brojeva sa količinama ili otpremite CSV. Tačni brojevi idu u korpu jednim klikom, nepronađeni kao upit.
+Dostava u servis
+Kurir donosi na adresu servisa iz profila; adresu menjate pri svakoj porudžbini. Lično preuzimanje je bez troška.
+Prioritetni upiti
+Upiti servisa su kod nas označeni i idu prvi na red — i oni poslati iz brze porudžbine, bez popunjavanja forme.
+Odloženo plaćanje
+Po dogovoru, za servise sa kojima redovno radimo: rok i limit vidite u portalu, a način plaćanja birate u porudžbini.
+Istorija, omiljeno, vozila mušterija
+„Poruči ponovo“ za iste radove, delovi koje stalno poručujete i vozila mušterija sa brojem šasije i tablicama.
+BRZA PORUDŽBINA
+Brojevi iz poruke, sa kutije ili iz Excela — razmaci, tačke, crtice i velika slova ne smetaju. Probajte.
+Nalepite kako vam je stiglo
+Ovako sistem čita brojeve
+RED	OEM BROJ	KOM.
+1	1K0615301AA	2
+2	5Q0698151	4
+3	1K0698151	2
+4	03L115562	1
+Posle prijave svaki red dobija artikal, stanje i vašu cenu; brojeve koje nemamo šaljete kao upit jednim klikom.
+KAKO DO NALOGA
+01
+Registrujte servis
+Naziv servisa, PIB, matični broj, adresa i marke koje servisirate — pet minuta posla.
+02
+Proverimo podatke
+U toku radnog dana proverimo firmu i odredimo nivo rabata. Odgovor stiže e-poštom.
+03
+Poručujete po svojoj ceni
+Posle prijave vidite svoju cenu na svakom artiklu, u korpi i u cenovniku koji preuzimate u Excelu.
+ČESTA PITANJA
+Ko može da dobije majstorski nalog?
+Koliko traje odobrenje?
+Kako se računa rabat?
+Kako radi brza porudžbina?
+Mogu li da platim kasnije?
+Da li dostavljate u servis?
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /za-majstore/registracija [200]
+TITLE: Registracija servisa | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Registracija servisa | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["REGISTRUJTE SERVIS"]
+--- text
+Početna
+Registracija
+REGISTRUJTE SERVIS
+Pet minuta posla: podaci firme i kontakt. Posle odobrenja poručujete po svojoj ceni.
+Nalog
+Ovim podacima se prijavljujete. Ako već imate nalog, prvo se prijavite.
+E-pošta
+Lozinka
+Najmanje 10 znakova, bar jedno slovo i jedna cifra.
+Već imate nalog? Prijavite se, pa se vratite na ovu stranu.
+Firma
+Podatke proveravamo u registru pre odobrenja.
+Naziv servisa ili firme
+PIB
+9 cifara
+Matični broj
+8 cifara
+Kontakt
+Kontakt osoba
+Telefon
+Najčešće zovemo ili pišemo na Viber.
+Servis
+Na ovu adresu šaljemo delove; menja se pri svakoj porudžbini.
+Mesto
+Adresa servisa
+Vrsta servisa
+Mehanika
+Autoelektrika
+Dijagnostika
+Klima
+Limarija i farbanje
+Vulkanizer
+Ostalo
+Marke koje servisirate (nije obavezno)
+Volkswagen
+Audi
+Škoda
+SEAT
+Cupra
+Prihvatam uslove korišćenja i politiku privatnosti.
+Registrujte servis
+Odgovor stiže e-poštom, obično u toku radnog dana.
+Šta sledi
+1
+Proverimo firmu u registru i odredimo nivo rabata.
+2
+Stiže vam e-mail o odobrenju; posle prijave vidite svoju cenu na svakom artiklu.
+3
+Brza porudžbina, cenovnik i istorija su u portalu „Majstor“.
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Mehanika | aria-label=Autoelektrika | aria-label=Dijagnostika | aria-label=Klima | aria-label=Limarija i farbanje | aria-label=Vulkanizer | aria-label=Ostalo | aria-label=Volkswagen | aria-label=Audi | aria-label=Škoda | aria-label=SEAT | aria-label=Cupra | aria-label=Posle registracije | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /za-majstore/hvala [200]
+TITLE: Registracija primljena | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Registracija primljena | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["REGISTRACIJA JE PRIMLJENA"]
+--- text
+REGISTRACIJA JE PRIMLJENA
+Nalog odobravamo u toku radnog dana; stići će vam e-mail. Do tada možete da poručujete po maloprodajnim cenama.
+Status naloga
+Pretražite delove
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /prijava [200]
+TITLE: Prijava | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Prijava | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Prijava"]
+--- text
+Prijava
+Nalog nije obavezan za kupovinu — služi za istoriju porudžbina i sačuvana vozila.
+E-pošta
+Lozinka
+Prijavi se
+Nemate nalog? Napravite nalog
+Zaboravljena lozinka
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /registracija [200]
+TITLE: Registracija | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Registracija | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Novi nalog"]
+--- text
+Novi nalog
+Porudžbine, upiti i vozila na jednom mestu. Korpa ostaje sačuvana.
+Ime i prezime
+E-pošta
+Lozinka
+Najmanje 10 znakova, bar jedno slovo i jedna cifra.
+Prihvatam uslove korišćenja i politiku privatnosti.
+Napravi nalog
+Već imate nalog? Prijavite se
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /zaboravljena-lozinka [200]
+TITLE: Zaboravljena lozinka | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Zaboravljena lozinka | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Nova lozinka"]
+--- text
+Nova lozinka
+Pošaljite adresu naloga; stiže vam kod od 8 cifara, važi 15 minuta.
+E-pošta
+Pošalji kod
+Setili ste se? Prijava
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /nova-lozinka [404]
+TITLE: Stranica nije pronađena · SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Stranica nije pronađena · SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Stranica nije pronađena"]
+--- text
+Stranica nije pronađena
+Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas.
+Pretraži
+Broj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju.
+Vaše vozilo
+marka, model, motor
+Izaberi
+ČESTO TRAŽENE KATEGORIJE
+Kočione pločice
+Kočioni diskovi
+Amortizeri i opruge
+Zupčasti kaiš i vodena pumpa
+Filteri
+Turbina
+Pošaljite upit
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Broj dela ili naziv | placeholder=npr. 1K0 615 301 AA ili kočione pločice | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /o-nama [200]
+TITLE: O nama | SKLOP
+DESC: SKLOP je prodavnica delova za vozila grupe Volkswagen: Volkswagen, Audi, Škoda, SEAT i Cupra. Radimo sa majstorima i auto servisima i sa vozačima koji…
+OG: O nama | SKLOP | SKLOP je prodavnica delova za vozila grupe Volkswagen: Volkswagen, Audi, Škoda, SEAT i Cupra. Radimo sa majstorima i auto servisima i sa vozačima koji…
+H1: ["O NAMA"]
+--- text
+Početna
+O NAMA
+Poslednja izmena: 30.09.2026.
+SKLOP je prodavnica delova za vozila grupe Volkswagen: Volkswagen, Audi, Škoda, SEAT i Cupra. Radimo sa majstorima i auto servisima i sa vozačima koji sami održavaju svoj auto.
+Kako radimo
+Deo tražite po OEM (kataloškom) broju, po vozilu ili klikom na deo na 3D prikazu automobila.
+Za svaki artikal vidite proizvođača, kvalitet (original VAG, OEM kvalitet ili aftermarket), cenu sa PDV-om i stanje.
+Porudžbinu šaljete bez plaćanja unapred. Plaćate pouzećem, pri preuzimanju u radnji ili virmanom uz predračun.
+Kad ne znate broj dela, pošaljete broj šasije (VIN) i šta vam treba, a mi vam javimo ponudu.
+Servisi posle odobrenja naloga vide svoju cenu sa rabatom na celom sajtu, poručuju nalepljenom listom brojeva i imaju istoriju porudžbina na jednom mestu.
+Zašto 3D automobil
+Automobil na početnoj strani je generički kompaktni hečbek, a ne konkretan model. Služi kao mapa: kliknete na turbinu, pločice ili amortizer i dobijete delove te kategorije za vaše vozilo.
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /kontakt [200]
+TITLE: Kontakt | SKLOP
+DESC: Najbrže je da nas pozovete ili pišete na Viber. Ako ne znate broj dela, pošaljite upit sa brojem šasije i fotografijom starog dela; odgovaramo u toku…
+OG: Kontakt | SKLOP | Najbrže je da nas pozovete ili pišete na Viber. Ako ne znate broj dela, pošaljite upit sa brojem šasije i fotografijom starog dela; odgovaramo u toku…
+H1: ["KONTAKT"]
+--- text
+Početna
+Kontakt
+Poslednja izmena: 30.09.2026.
+Radno vreme: Pon–pet 8–17, sub 8–14
+Pošaljite upit
+Najbrže je da nas pozovete ili pišete na Viber. Ako ne znate broj dela, pošaljite upit sa brojem šasije i fotografijom starog dela; odgovaramo u toku radnog dana.
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /dostava-i-placanje [200]
+TITLE: Dostava i plaćanje | SKLOP
+DESC: Na sajtu nema plaćanja karticom. Porudžbinu šaljete bez plaćanja, a mi je potvrđujemo telefonom ili e-poštom pre slanja. Načini dostave - Lično…
+OG: Dostava i plaćanje | SKLOP | Na sajtu nema plaćanja karticom. Porudžbinu šaljete bez plaćanja, a mi je potvrđujemo telefonom ili e-poštom pre slanja. Načini dostave - Lično…
+H1: ["DOSTAVA I PLAĆANJE"]
+--- text
+Početna
+DOSTAVA I PLAĆANJE
+Poslednja izmena: 30.09.2026.
+Načini dostave i cene
+DOSTAVA	CENA	ROK	PLAĆANJE
+Lično preuzimanje	bez troška	Obično isti ili sledeći radni dan	Gotovinom pri preuzimanju, Karticom pri preuzimanju, Virmanom uz predračun, Odloženo plaćanje
+Kurirska služba	450 RSD
+besplatno iznad 10.000 RSD
+1–2 radna dana	Pouzećem, Virmanom uz predračun, Odloženo plaćanje
+Na sajtu nema plaćanja karticom. Porudžbinu šaljete bez plaćanja, a mi je potvrđujemo telefonom ili e-poštom pre slanja.
+Načini dostave
+Lično preuzimanje u radnji, bez troška. Javljamo vam kad je deo spreman.
+Kurirska služba na adresu u Srbiji: 450 RSD. Dostava je besplatna za porudžbine iznad 10.000 RSD.
+Porudžbine potvrđene radnim danom do 14 časova šaljemo istog dana, ako je deo na stanju. Rok isporuke kurirske službe je obično 1–2 radna dana. Za delove „po porudžbini“ rok piše na stranici artikla i u potvrdi porudžbine.
+Načini plaćanja
+Pouzećem — plaćate kuriru gotovinom pri preuzimanju paketa.
+Gotovinom ili karticom pri preuzimanju u radnji.
+Virmanom uz predračun — za firme. Predračun šaljemo posle potvrde, a deo rezervišemo do uplate.
+Odloženo plaćanje — samo za majstore kojima je ta opcija odobrena, po dogovorenom roku.
+Cene
+Sve cene na sajtu su u dinarima (RSD) i uključuju PDV 20 %. Cena važi u trenutku slanja porudžbine; ako se u međuvremenu promeni, pre slanja vidite obaveštenje u korpi.
+Pregled paketa
+Pri preuzimanju od kurira pregledajte paket. Ako je oštećen, zapišite to sa kurirom i javite nam se istog dana.
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /reklamacije-i-povrat [200]
+TITLE: Reklamacije i povrat | SKLOP
+DESC: Ova pravila važe za kupce koji su potrošači u smislu Zakona o zaštiti potrošača. Za pravna lica i preduzetnike (servise) važe opšta pravila obligacionog…
+OG: Reklamacije i povrat | SKLOP | Ova pravila važe za kupce koji su potrošači u smislu Zakona o zaštiti potrošača. Za pravna lica i preduzetnike (servise) važe opšta pravila obligacionog…
+H1: ["REKLAMACIJE I POVRAT"]
+--- text
+Početna
+REKLAMACIJE I POVRAT
+Poslednja izmena: 30.09.2026.
+Ova pravila važe za kupce koji su potrošači u smislu Zakona o zaštiti potrošača. Za pravna lica i preduzetnike (servise) važe opšta pravila obligacionog prava i dogovor sa prodavcem.
+Odustanak od ugovora (14 dana)
+Kod kupovine na daljinu imate pravo da odustanete od ugovora u roku od 14 dana od dana kada ste vi ili lice koje ste odredili preuzeli robu, bez navođenja razloga.
+Pošaljite nam izjavu o odustanku e-poštom (adresa sa stranice Kontakt) ili pismom na adresu prodavca. Dovoljno je da navedete broj porudžbine, artikal i da odustajete od ugovora.
+Robu vratite najkasnije 14 dana od slanja izjave, neoštećenu i u originalnom pakovanju. Trošak vraćanja robe snosite vi.
+Novac za robu (i za osnovnu dostavu, ako ste je platili) vraćamo najkasnije u roku od 14 dana od prijema izjave, istim načinom plaćanja ili uplatom na vaš račun. Povraćaj možemo zadržati dok ne primimo robu ili dokaz da je poslata.
+Pravo na odustanak nemate za robu izrađenu po vašoj specifikaciji ili jasno prilagođenu vama (na primer deo naručen specijalno za vaše vozilo po broju šasije, ako je to naglašeno u ponudi), kao ni za robu u zapečaćenom pakovanju koja iz zdravstvenih ili higijenskih razloga nije pogodna za vraćanje posle otvaranja. Za ugrađen deo koji je korišćen odgovarate za umanjenje vrednosti nastalo rukovanjem koje nije neophodno da bi se utvrdila priroda i svojstva robe.
+Reklamacija (saobraznost robe)
+Ako deo ima nedostatak, reklamaciju možete izjaviti u roku od dve godine od dana prijema robe.
+Javite nam se telefonom, e-poštom ili lično i dostavite račun ili drugi dokaz o kupovini (na primer broj porudžbine).
+Prijem reklamacije potvrđujemo i upisujemo je u evidenciju reklamacija.
+Na reklamaciju odgovaramo bez odlaganja, a najkasnije u roku od 8 dana od prijema, pisanim ili elektronskim putem.
+Reklamaciju rešavamo u zakonskom roku od podnošenja (15 dana, odnosno 30 dana za tehničku robu) — popravkom, zamenom, umanjenjem cene ili raskidom ugovora, u skladu sa zakonom.
+Pre ugradnje proverite da li deo odgovara vozilu (OEM broj, oznaka motora, broj šasije). Nedostatak nastao nestručnom ugradnjom ili upotrebom suprotnom uputstvu proizvođača nije osnov za reklamaciju.
+Garancija proizvođača
+Kada proizvođač daje garanciju, uslovi i rok garancije navedeni su u garantnom listu ili na stranici artikla. Garancija ne isključuje vaša prava po osnovu saobraznosti.
+Vansudsko rešavanje sporova
+Ako spor ne rešimo dogovorom, možete se obratiti telu za vansudsko rešavanje potrošačkih sporova sa liste ministarstva nadležnog za zaštitu potrošača.
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /uslovi-koriscenja [200]
+TITLE: Uslovi korišćenja i kupovine | SKLOP
+DESC: Ovi uslovi uređuju korišćenje sajta localhost:3000 i kupovinu robe preko njega. Slanjem porudžbine potvrđujete da ste ih pročitali i da ih prihvatate…
+OG: Uslovi korišćenja i kupovine | SKLOP | Ovi uslovi uređuju korišćenje sajta localhost:3000 i kupovinu robe preko njega. Slanjem porudžbine potvrđujete da ste ih pročitali i da ih prihvatate…
+H1: ["USLOVI KORIŠĆENJA I KUPOVINE"]
+--- text
+Početna
+Uslovi korišćenja i kupovine
+USLOVI KORIŠĆENJA I KUPOVINE
+Poslednja izmena: 30.09.2026.
+Ovi uslovi uređuju korišćenje sajta localhost:3000 i kupovinu robe preko njega. Slanjem porudžbine potvrđujete da ste ih pročitali i da ih prihvatate.
+Katalog i cene
+Cene su izražene u dinarima (RSD) i uključuju PDV 20 %.
+Trudimo se da podaci o artiklima (OEM brojevi, kompatibilnost, stanje) budu tačni. Kompatibilnost sa vozilom je informativna; pre ugradnje uporedite OEM broj sa starim delom ili nam pošaljite broj šasije.
+Nazive marki vozila koristimo samo da bismo označili vozila kojima su delovi namenjeni. Nismo povezani sa proizvođačima vozila niti smo njihov ovlašćeni zastupnik.
+Artikli označeni kao demo služe za prikaz rada sajta i ne mogu se kupiti dok ih ne zamene stvarni artikli.
+Porudžbina i zaključenje ugovora
+Porudžbinu šaljete iz korpe, kao gost ili prijavljeni korisnik.
+Posle slanja dobijate broj porudžbine i potvrdu na e-poštu. To je potvrda prijema, ne i prihvat ponude.
+Ugovor je zaključen kada porudžbinu potvrdimo telefonom ili e-poštom. Ako artikal nije dostupan ili je cena pogrešno objavljena, javljamo vam se pre potvrde i možete odustati bez troška.
+Plaćanje i dostava
+Načini plaćanja i dostave, rokovi i troškovi opisani su na stranici „Dostava i plaćanje“. Na sajtu se ne unose podaci o platnim karticama.
+Odustanak, reklamacije i garancija
+Prava potrošača na odustanak od ugovora zaključenog na daljinu i na reklamaciju opisana su na stranici „Reklamacije i povrat“.
+Nalog na sajtu
+Nalog je opcion. Odgovorni ste za čuvanje lozinke. Nalog možemo privremeno blokirati u slučaju zloupotrebe (na primer lažnih porudžbina).
+Nalozi za majstore (B2B)
+Registracija servisa podleže odobrenju. Rabat, odloženo plaćanje i drugi uslovi za pravna lica i preduzetnike dogovaraju se posebno; na njih se ne primenjuju pravila Zakona o zaštiti potrošača koja važe samo za potrošače.
+Zaštita podataka
+Obradu podataka o ličnosti opisuje „Politika privatnosti“, a kolačiće stranica „Kolačići“.
+Izmene uslova
+Uslove možemo izmeniti; na porudžbinu se primenjuju uslovi važeći u trenutku njenog slanja.
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /politika-privatnosti [200]
+TITLE: Politika privatnosti | SKLOP
+DESC: Ova politika objašnjava koje podatke o ličnosti obrađujemo, zašto, koliko dugo i koja su vaša prava, u skladu sa Zakonom o zaštiti podataka o ličnosti…
+OG: Politika privatnosti | SKLOP | Ova politika objašnjava koje podatke o ličnosti obrađujemo, zašto, koliko dugo i koja su vaša prava, u skladu sa Zakonom o zaštiti podataka o ličnosti…
+H1: ["POLITIKA PRIVATNOSTI"]
+--- text
+Početna
+POLITIKA PRIVATNOSTI
+Poslednja izmena: 30.09.2026.
+Ova politika objašnjava koje podatke o ličnosti obrađujemo, zašto, koliko dugo i koja su vaša prava, u skladu sa Zakonom o zaštiti podataka o ličnosti.
+Rukovalac
+Prodavac naveden na stranici Kontakt
+Koje podatke obrađujemo i zašto
+PODACI	SVRHA	PRAVNI OSNOV
+Ime, prezime, telefon, e-pošta, adresa dostave	Obrada porudžbine, dostava, obaveštenja o statusu	Izvršenje ugovora
+Podaci firme (naziv, PIB, matični broj)	Predračun, račun, poslovanje sa firmama	Izvršenje ugovora, zakonska obaveza
+Broj šasije (VIN), fotografije dela, opis	Odgovor na upit i izrada ponude	Vaš zahtev pre zaključenja ugovora
+Podaci o porudžbinama i računima	Knjigovodstvena evidencija	Zakonska obaveza
+Pretrage na sajtu (bez ličnih podataka)	Dopuna asortimana („traženo, a nemamo“)	Legitimni interes
+Izvor posete (npr. oznaka kampanje)	Merenje koje reklame donose porudžbine	Legitimni interes; za oglasne kolačiće pristanak
+E-pošta za „Javi mi kad stigne“	Jedno obaveštenje o dolasku robe	Pristanak
+Koliko dugo čuvamo podatke
+Porudžbine i račune koliko propisi o računovodstvu zahtevaju.
+Upite do 24 meseca od poslednje komunikacije.
+Prijave „Javi mi kad stigne“ do slanja obaveštenja ili odjave.
+Fotografije iz upita do 12 meseci.
+Primaoci
+Podatke dobijaju samo oni kojima su potrebni za izvršenje usluge: kurirska služba (ime, adresa, telefon), pružalac usluge slanja e-pošte i pružaoci infrastrukture na kojoj sajt radi. Neki od njih obrađuju podatke van Srbije, uz mere zaštite propisane zakonom. Podatke ne prodajemo.
+Vaša prava
+Imate pravo da zatražite pristup podacima, ispravku, brisanje, ograničenje obrade i prenosivost, pravo na prigovor i pravo da u svakom trenutku opozovete pristanak. Zahtev pošaljite na e-poštu sa stranice Kontakt; odgovaramo najkasnije u roku od 30 dana. Imate pravo i da podnesete pritužbu Povereniku za informacije od javnog značaja i zaštitu podataka o ličnosti.
+Bezbednost
+Lozinke se ne čuvaju u čitljivom obliku, veza sa sajtom je šifrovana, a pristup podacima u administraciji imaju samo ovlašćeni zaposleni i beleži se.
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /kolacici [200]
+TITLE: Kolačići | SKLOP
+DESC: Kolačići i slični zapisi (localStorage) su mali podaci koje sajt čuva u vašem pregledaču. Neophodni (uvek uključeni) | Naziv | Svrha | Trajanje |…
+OG: Kolačići | SKLOP | Kolačići i slični zapisi (localStorage) su mali podaci koje sajt čuva u vašem pregledaču. Neophodni (uvek uključeni) | Naziv | Svrha | Trajanje |…
+H1: ["KOLAČIĆI"]
+--- text
+Početna
+KOLAČIĆI
+Poslednja izmena: 30.09.2026.
+Kolačići i slični zapisi (localStorage) su mali podaci koje sajt čuva u vašem pregledaču.
+Neophodni (uvek uključeni)
+NAZIV	SVRHA	TRAJANJE
+Kolačići prijave	Održavanje prijave na nalog	Do 30 dana
+sk_consent	Vaš izbor kolačića (šta ste dozvolili i kada)	180 dana
+sk_cart (localStorage)	Korpa za kupovinu bez naloga	Dok ga ne obrišete
+sk.vehicle.v1 (localStorage)	Izabrano vozilo za filtriranje delova	Dok ga ne obrišete
+sk_attr_s	Izvor dolaska na sajt (oznake kampanje), vezan za porudžbinu ili upit	Do zatvaranja pregledača
+Analitika (samo uz vaš pristanak)
+NAZIV	KO GA POSTAVLJA	SVRHA	TRAJANJE
+_ga, _ga_*	Google Analytics 4	Broj poseta i pretraga, bez imena i kontakata	Do 2 godine
+sk_attr	Mi	Izvor dolaska (kampanja) i posle zatvaranja pregledača	90 dana
+Oglašavanje (samo uz vaš pristanak)
+NAZIV	KO GA POSTAVLJA	SVRHA	TRAJANJE
+_gcl_au, _gcl_aw	Google Ads	Merenje da li je oglas doveo do porudžbine	90 dana
+_fbp, _fbc	Meta (Facebook, Instagram)	Merenje oglasa i konverzija	90 dana
+Uz pristanak na oglašavanje, posle porudžbine ili upita Google i Meta dobijaju i šifrovani (heširani) zapis e-pošte i telefona radi merenja oglasa — nikad u čitljivom obliku. Bez pristanka se ne učitava nijedan Google ili Meta kod.
+Kako da upravljate kolačićima
+Izbor možete promeniti bilo kad preko linka „Podešavanja kolačića“ u podnožju sajta; kada povučete pristanak, brišemo kolačiće Google-a i Mete sa ovog sajta. Kolačiće možete obrisati i u podešavanjima pregledača.
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /ponuda/kocione-plocice-golf [200]
+TITLE: Kočione pločice za VW Golf | SKLOP
+DESC: Prednje i zadnje pločice za Golf VI, VII i VIII. Pošaljite broj šasije ako niste sigurni koje vam trebaju.
+OG: Kočione pločice za VW Golf | SKLOP | Prednje i zadnje pločice za Golf VI, VII i VIII. Pošaljite broj šasije ako niste sigurni koje vam trebaju.
+H1: ["KOČIONE PLOČICE ZA VW GOLF — PROVERENE PO OEM BROJU"]
+--- text
+KOČIONE PLOČICE · VOLKSWAGEN GOLF
+KOČIONE PLOČICE ZA VW GOLF — PROVERENE PO OEM BROJU
+Prednje i zadnje pločice za Golf VI, VII i VIII. Pošaljite broj šasije ako niste sigurni koje vam trebaju.
+Pošaljite upit
+6 artikala na stanju
+Isporuka za 1–2 radna dana
+Kurir 450 RSD
+Besplatno iznad 10.000 RSD.
+Plaćanje pouzećem
+Ili lično preuzimanje u radnji, bez troška.
+Kočione pločice za Volkswagen Golf
+Svi artikli
+Aftermarket
+Febi Bilstein
+Kočione pločice zadnje, elektronska ručna
+OEM 5Q0 698 782 KA
+Malo na stanju · 2 kom.
+3.490
+RSD
+sa PDV-om
+U korpu
+: Kočione pločice zadnje, elektronska ručna
+OEM kvalitet
+TRW
+Kočione pločice zadnje
+OEM 1K0 698 569
+Malo na stanju · 2 kom.
+3.190
+RSD
+sa PDV-om
+U korpu
+: Kočione pločice zadnje
+OEM kvalitet
+ATE
+Kočione pločice prednje, sa senzorom
+OEM 1K0 698 406 F
+Na stanju
+4.290
+RSD
+sa PDV-om
+U korpu
+: Kočione pločice prednje, sa senzorom
+Original VAG
+Original VAG
+Kočione pločice prednje
+OEM 5WA 698 115 M
+Malo na stanju · 3 kom.
+8.900
+RSD
+sa PDV-om
+U korpu
+: Kočione pločice prednje
+Aftermarket
+Febi Bilstein
+Kočione pločice zadnje
+OEM 1K0 698 569
+Na stanju · 8 kom.
+2.600
+RSD
+sa PDV-om
+U korpu
+: Kočione pločice zadnje
+OEM kvalitet
+Brembo
+Kočione pločice prednje, sistem Teves
+OEM 5Q0 698 172
+Na stanju
+5.190
+RSD
+sa PDV-om
+U korpu
+: Kočione pločice prednje, sistem Teves
+OEM kvalitet
+Bosch
+Kočione pločice prednje, sa senzorom
+OEM 1K0 698 406 F
+Po porudžbini · 3 dana
+3.900
+RSD
+sa PDV-om
+Poruči
+: Kočione pločice prednje, sa senzorom
+Privatnost
+--- attrs
+aria-label=SKLOP — početna | aria-label=Korpa | aria-label=Obaveštenja (F8)
+
+======== /porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw [200]
+TITLE: Status porudžbine | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Status porudžbine | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Porudžbina"]
+--- text
+Porudžbina
+SK-2026-000092
+Primljena
+30.09.2026. 15:38
+Pitanje o porudžbini? Navedite njen broj.
+Tok porudžbine
+Primljena
+— trenutno
+30.09.2026. 15:38
+Potvrđena
+— čeka
+Poslata
+— čeka
+Isporučena
+— čeka
+Stavke
+Kočioni disk prednji 276 × 24 mm
+Febi Bilstein · OEM 5Q0 615 505 R · 1 × 4.690 RSD
+4.690 RSD
+Artikli
+4.690 RSD
+Dostava
+450 RSD
+Ukupno
+5.140 RSD
+Uračunat PDV: 856,67 RSD
+Dostava
+Kurirska služba · Test ulica 5, 11000 Beograd
+Plaćanje
+Pouzećem
+Obaveštenja
+Svaku promenu vidite na ovoj stranici — osvežava se sama, bez ponovnog učitavanja.
+Kupac
+Admin Test audit21
++381 64 333 4455
+admin-e2e-audit21@primer.rs
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw/predracun [200]
+TITLE: Predračun | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Predračun | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Predračun"]
+--- text
+Predračun
+SK-2026-000092
+Datum: 30.09.2026.
+KUPAC
+Admin Test audit21
++381 64 333 4455 · admin-e2e-audit21@primer.rs
+UPLATA
+Podatke za uplatu šaljemo uz potvrdu porudžbine. Poziv na broj: 2026000092
+ARTIKAL	KOL.	CENA SA PDV	IZNOS
+Kočioni disk prednji 276 × 24 mm
+DEMO-0004 · OEM 5Q0 615 505 R
+1	4.690 RSD	4.690 RSD
+Dostava	450 RSD
+Osnovica
+4.283,33 RSD
+PDV 20 %
+856,67 RSD
+Za uplatu
+5.140 RSD
+Predračun nije fiskalni račun. Robu rezervišemo do uplate; račun izdajemo pri isporuci.
+Štampaj predračun
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /porudzbina/hvala/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw [200]
+TITLE: Porudžbina je primljena | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Porudžbina je primljena | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["PORUDŽBINA JE PRIMLJENA."]
+--- text
+PORUDŽBINA JE PRIMLJENA.
+Broj porudžbine je SK-2026-000092. Poslali smo potvrdu na admin-e2e-audit21@primer.rs; javićemo se kad je potvrdimo.
+Plaćate pouzećem kuriru pri preuzimanju paketa.
+Status pratite na stranici porudžbine — sačuvajte link.
+SK-2026-000092
+Primljena
+30.09.2026. 15:38
+Tok porudžbine
+Primljena
+— trenutno
+30.09.2026. 15:38
+Potvrđena
+— čeka
+Poslata
+— čeka
+Isporučena
+— čeka
+Stavke
+Kočioni disk prednji 276 × 24 mm
+Febi Bilstein · OEM 5Q0 615 505 R · 1 × 4.690 RSD
+4.690 RSD
+Artikli
+4.690 RSD
+Dostava
+450 RSD
+Ukupno
+5.140 RSD
+Uračunat PDV: 856,67 RSD
+Dostava
+Kurirska služba · Test ulica 5, 11000 Beograd
+Plaćanje
+Pouzećem
+Obaveštenja
+Svaku promenu vidite na ovoj stranici — osvežava se sama, bez ponovnog učitavanja.
+Kupac
+Admin Test audit21
++381 64 333 4455
+admin-e2e-audit21@primer.rs
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /upit/3UMmrdzw1RNGw5ToQh06cANjxl8c_-Ajvp7eBwA1ayI [200]
+TITLE: Upit i ponuda | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Upit i ponuda | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Upit i ponuda"]
+--- text
+Upit i ponuda
+UP-2026-000003
+Ponuda poslata
+29.09.2026. 16:31
+Ponuda
+Važi do 06.10.2026.
+Nosač motora desni, hidraulični
+Lemförder · na stanju · 1 × 8.991 RSD
+8.991 RSD
+Nosač menjača, po porudžbini
+po porudžbini · 3 dana · 1 × 6.490 RSD
+6.490 RSD
+Ukupno
+15.481 RSD
+Prihvati ponudu
+Odbij ponudu
+Vaš upit
+Nisam našao nosač motora za Tiguan 2.0 TDI 2014.
+Tok upita
+Upit je primljen.
+29.09.2026. 16:31
+Ponudu i svaku promenu vidite na ovoj stranici — osvežava se sama.
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /ovo-ne-postoji [404]
+TITLE: Stranica nije pronađena · SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Stranica nije pronađena · SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Stranica nije pronađena"]
+--- text
+Stranica nije pronađena
+Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas.
+Pretraži
+Broj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju.
+Vaše vozilo
+marka, model, motor
+Izaberi
+ČESTO TRAŽENE KATEGORIJE
+Kočione pločice
+Kočioni diskovi
+Amortizeri i opruge
+Zupčasti kaiš i vodena pumpa
+Filteri
+Turbina
+Pošaljite upit
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Broj dela ili naziv | placeholder=npr. 1K0 615 301 AA ili kočione pločice | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /obavestenja/odjava/nevazeci-token [200]
+TITLE: Odjava obaveštenja | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Odjava obaveštenja | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Odjava obaveštenja"]
+--- text
+Odjava obaveštenja
+Posle odjave više vam ne šaljemo poruke „Stiglo je“ za artikle koje pratite na ovoj e-adresi. Porudžbine i upiti ovo ne menja.
+Odjavi me
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /delovi/kocioni-diskovi?strana=2 [200]
+TITLE: Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra… | SKLOP
+DESC: Kočioni diskovi za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Prednji i zadnji diskovi, puni i ventilirani.
+OG: Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra… | SKLOP | Kočioni diskovi za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Prednji i zadnji diskovi, puni i ventilirani.
+H1: ["KOČIONI DISKOVI"]
+--- text
+Početna
+Kočnice
+Kočioni diskovi
+KOČIONI DISKOVI
+Kočioni diskovi zajedno sa pločicama pretvaraju kretanje u toplotu i zaustavljaju vozilo. Vibracije pri kočenju, ivica na disku ili debljina ispod minimalne znače zamenu.
+Više o kategoriji
+Vozilo
+Dostupnost
+Samo na stanju
+7
+Proizvođač
+ATE
+3
+Brembo
+2
+Bosch
+1
+Febi Bilstein
+1
+Original VAG
+1
+TRW
+1
+Kvalitet
+Original VAG
+1
+Deo u pakovanju proizvođača vozila.
+OEM kvalitet
+7
+Proizvođač koji isti deo isporučuje fabrici, u svom pakovanju.
+Aftermarket
+1
+Zamenski deo drugog proizvođača, obično povoljniji.
+Cena
+9 artikala
+Sortiraj
+Popularno
+Cena: od najniže
+Cena: od najviše
+Najnovije
+Artikli
+OEM kvalitet
+Brembo
+Kočioni disk prednji 312 × 25 mm
+OEM 3C0 615 098
+Na stanju · 10 kom.
+7.490
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm
+OEM kvalitet
+TRW
+Kočioni disk zadnji 272 × 10 mm, puni
+OEM 1K0 615 540 Q
+Malo na stanju · 1 kom.
+3.890
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk zadnji 272 × 10 mm, puni
+OEM kvalitet
+Bosch
+Kočioni disk prednji 256 × 22 mm
+OEM 6R0 615 645
+Na stanju
+3.990
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 256 × 22 mm
+OEM kvalitet
+Brembo
+Kočioni disk prednji 312 × 25 mm, ventilirani
+OEM 1K0 615 591 E
+Malo na stanju · 3 kom.
+7.290
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm, ventilirani
+Aftermarket
+Febi Bilstein
+Kočioni disk prednji 276 × 24 mm
+OEM 5Q0 615 505 R
+Na stanju · 5 kom.
+4.690
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 276 × 24 mm
+OEM kvalitet
+ATE
+Kočioni disk prednji 312 × 25 mm, ventilirani
+OEM 1K0 615 591 E
+Malo na stanju · 3 kom.
+6.700
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm, ventilirani
+Original VAG
+Original VAG
+Kočioni disk prednji 340 × 30 mm, GTI
+OEM 5Q0 615 666 A
+Na stanju
+18.900
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 340 × 30 mm, GTI
+OEM kvalitet
+ATE
+Kočioni disk prednji 288 × 25 mm, ventilirani
+OEM 1K0 615 868 F
+Po porudžbini · 6 dana
+5.490
+RSD
+sa PDV-om
+Poruči
+: Kočioni disk prednji 288 × 25 mm, ventilirani
+OEM kvalitet
+ATE
+Kočioni disk prednji 320 × 30 mm
+OEM 8K0 615 085
+Po porudžbini · 2 dana
+9.890
+RSD
+sa PDV-om
+Poruči
+: Kočioni disk prednji 320 × 30 mm
+Kočioni diskovi po vozilu
+Kočioni diskovi za Volkswagen
+Kočioni diskovi za Škoda
+Kočioni diskovi za VW Passat
+Kočioni diskovi za Škoda Superb
+Kočioni diskovi za SEAT Leon
+Kočioni diskovi za VW Golf
+Kočioni diskovi za VW Tiguan
+Kočioni diskovi za VW Touran
+Kočioni diskovi za Audi A3
+Kočioni diskovi za Škoda Octavia
+Povezani delovi
+Kočione pločice
+Kočione čeljusti
+ABS senzori
+Ležaj točka i glavčina
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Filteri | aria-label=Cena od, u dinarima | placeholder=3.890 | aria-label=Cena do, u dinarima | placeholder=18.900 | aria-label=Sortiraj | text=Popularno | text=Cena: od najniže | text=Cena: od najviše | text=Najnovije | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /delovi/kocioni-diskovi?dostupnost=na-stanju&sort=cena [200]
+TITLE: Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP
+DESC: Kočioni diskovi za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Prednji i zadnji diskovi, puni i ventilirani.
+OG: Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP | Kočioni diskovi za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Prednji i zadnji diskovi, puni i ventilirani.
+H1: ["KOČIONI DISKOVI"]
+--- text
+Početna
+Kočnice
+Kočioni diskovi
+KOČIONI DISKOVI
+Kočioni diskovi zajedno sa pločicama pretvaraju kretanje u toplotu i zaustavljaju vozilo. Vibracije pri kočenju, ivica na disku ili debljina ispod minimalne znače zamenu.
+Više o kategoriji
+Vozilo
+Dostupnost
+Samo na stanju
+7
+Proizvođač
+Brembo
+2
+ATE
+1
+Bosch
+1
+Febi Bilstein
+1
+Original VAG
+1
+TRW
+1
+Kvalitet
+Original VAG
+1
+Deo u pakovanju proizvođača vozila.
+OEM kvalitet
+5
+Proizvođač koji isti deo isporučuje fabrici, u svom pakovanju.
+Aftermarket
+1
+Zamenski deo drugog proizvođača, obično povoljniji.
+Cena
+7 artikala
+Sortiraj
+Popularno
+Cena: od najniže
+Cena: od najviše
+Najnovije
+Na stanju
+Poništi sve
+Artikli
+OEM kvalitet
+Brembo
+Kočioni disk prednji 312 × 25 mm
+OEM 3C0 615 098
+Na stanju · 10 kom.
+7.490
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm
+OEM kvalitet
+TRW
+Kočioni disk zadnji 272 × 10 mm, puni
+OEM 1K0 615 540 Q
+Malo na stanju · 1 kom.
+3.890
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk zadnji 272 × 10 mm, puni
+OEM kvalitet
+Bosch
+Kočioni disk prednji 256 × 22 mm
+OEM 6R0 615 645
+Na stanju
+3.990
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 256 × 22 mm
+OEM kvalitet
+Brembo
+Kočioni disk prednji 312 × 25 mm, ventilirani
+OEM 1K0 615 591 E
+Malo na stanju · 3 kom.
+7.290
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm, ventilirani
+Aftermarket
+Febi Bilstein
+Kočioni disk prednji 276 × 24 mm
+OEM 5Q0 615 505 R
+Na stanju · 5 kom.
+4.690
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 276 × 24 mm
+OEM kvalitet
+ATE
+Kočioni disk prednji 312 × 25 mm, ventilirani
+OEM 1K0 615 591 E
+Malo na stanju · 3 kom.
+6.700
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 312 × 25 mm, ventilirani
+Original VAG
+Original VAG
+Kočioni disk prednji 340 × 30 mm, GTI
+OEM 5Q0 615 666 A
+Na stanju
+18.900
+RSD
+sa PDV-om
+U korpu
+: Kočioni disk prednji 340 × 30 mm, GTI
+Kočioni diskovi po vozilu
+Kočioni diskovi za Volkswagen
+Kočioni diskovi za Škoda
+Kočioni diskovi za VW Passat
+Kočioni diskovi za Škoda Superb
+Kočioni diskovi za SEAT Leon
+Kočioni diskovi za VW Golf
+Kočioni diskovi za VW Tiguan
+Kočioni diskovi za VW Touran
+Kočioni diskovi za Audi A3
+Kočioni diskovi za Škoda Octavia
+Povezani delovi
+Kočione pločice
+Kočione čeljusti
+ABS senzori
+Ležaj točka i glavčina
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Putanja | aria-label=Filteri | aria-label=Cena od, u dinarima | placeholder=3.890 | aria-label=Cena do, u dinarima | placeholder=18.900 | aria-label=Sortiraj | text=Popularno | text=Cena: od najniže | text=Cena: od najviše | text=Najnovije | aria-label=Primenjeni filteri | aria-label=Ukloni filter: Na stanju | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /deo/ne-postoji-deo [404]
+TITLE: SKLOP — Rasklopi auto. Nađi deo.
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: SKLOP — Rasklopi auto. Nađi deo. | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Stranica nije pronađena"]
+--- text
+Stranica nije pronađena
+Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas.
+Pretraži
+Broj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju.
+Vaše vozilo
+marka, model, motor
+Izaberi
+ČESTO TRAŽENE KATEGORIJE
+Kočione pločice
+Kočioni diskovi
+Amortizeri i opruge
+Zupčasti kaiš i vodena pumpa
+Filteri
+Turbina
+Pošaljite upit
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Broj dela ili naziv | placeholder=npr. 1K0 615 301 AA ili kočione pločice | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /upit/hvala/nevazeci [404]
+TITLE: Upit je primljen | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Upit je primljen | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Stranica nije pronađena"]
+--- text
+Stranica nije pronađena
+Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas.
+Pretraži
+Broj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju.
+Vaše vozilo
+marka, model, motor
+Izaberi
+ČESTO TRAŽENE KATEGORIJE
+Kočione pločice
+Kočioni diskovi
+Amortizeri i opruge
+Zupčasti kaiš i vodena pumpa
+Filteri
+Turbina
+Pošaljite upit
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Broj dela ili naziv | placeholder=npr. 1K0 615 301 AA ili kočione pločice | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /porudzbina/nevazeci-token [404]
+TITLE: Status porudžbine | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Status porudžbine | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Stranica nije pronađena"]
+--- text
+Stranica nije pronađena
+Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas.
+Pretraži
+Broj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju.
+Vaše vozilo
+marka, model, motor
+Izaberi
+ČESTO TRAŽENE KATEGORIJE
+Kočione pločice
+Kočioni diskovi
+Amortizeri i opruge
+Zupčasti kaiš i vodena pumpa
+Filteri
+Turbina
+Pošaljite upit
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Broj dela ili naziv | placeholder=npr. 1K0 615 301 AA ili kočione pločice | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)

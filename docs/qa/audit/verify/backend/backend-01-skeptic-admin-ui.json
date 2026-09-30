@@ -1,0 +1,43 @@
+{
+  "steps": [
+    {
+      "step": "mechanic credit before",
+      "availablePara": 20000000,
+      "enabled": true,
+      "limitPara": 20000000,
+      "openCount": 0,
+      "paymentTermsDays": 15,
+      "usedPara": 0
+    },
+    {
+      "step": "inquiry submitted by mechanic",
+      "number": "UP-2026-000065"
+    },
+    {
+      "step": "quote sent",
+      "quoteTotalPara": 25000000,
+      "availablePara": 20000000
+    },
+    {
+      "step": "admin convert dialog payment options (pickup)",
+      "options": [
+        "Gotovinom pri preuzimanju",
+        "Karticom pri preuzimanju",
+        "Odloženo plaćanje"
+      ]
+    },
+    {
+      "step": "dialog text after choosing deferred",
+      "mentionsLimit": false,
+      "text": "Pretvori ponudu u porudžbinu Kupac je prihvatio ponudu telefonom ili u radnji. Porudžbina na 250.000 RSD dobija sve stavke iz ponude; upit se zatvara kao prihvaćen. Ime (obavezno) Prezime (obavezno) Telefon (obavezno) E-pošta (obavezno) Dostava Lično preuzimanje Kurirska služba Plaćanje Gotovinom pri preuzimanju Karticom pri preuzimanju Odloženo plaćanje Odustani Kreiraj porudžbinu"
+    },
+    {
+      "step": "dialog closed without submitting",
+      "consoleErrors": 0,
+      "pageErrors": 0
+    },
+    {
+      "step": "cleanup: quote declined by mechanic, inquiry closed"
+    }
+  ]
+}

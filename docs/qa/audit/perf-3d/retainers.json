@@ -1,0 +1,329 @@
+{
+ "rows": [
+  {
+   "label": "home before 3D",
+   "usedMB": 5,
+   "backingStorageMB": 1,
+   "embedderMB": 2.8,
+   "documents": 1,
+   "nodes": 1235,
+   "jsEventListeners": 506
+  },
+  {
+   "label": "/delovi after 1 home visit with 3D",
+   "usedMB": 12.6,
+   "backingStorageMB": 11.7,
+   "embedderMB": 3.6,
+   "documents": 1,
+   "nodes": 1365,
+   "jsEventListeners": 604
+  },
+  {
+   "label": "/delovi after 2 home visits with 3D",
+   "usedMB": 13.6,
+   "backingStorageMB": 11.7,
+   "embedderMB": 4.3,
+   "documents": 1,
+   "nodes": 2472,
+   "jsEventListeners": 777
+  },
+  {
+   "label": "/delovi after 3 home visits with 3D",
+   "usedMB": 14.3,
+   "backingStorageMB": 11.7,
+   "embedderMB": 5,
+   "documents": 1,
+   "nodes": 3579,
+   "jsEventListeners": 950
+  }
+ ],
+ "counts": {
+  "HTMLCanvasElement": 14,
+  "ScrollTrigger": 1,
+  "BufferGeometry": 1,
+  "WebGL2RenderingContext": 8,
+  "Mesh": 1,
+  "WebGLRenderer": 1,
+  "PMREMGenerator": 1,
+  "Scene": 1,
+  "detachedAll": 2045
+ },
+ "canvases": [
+  {
+   "name": "HTMLCanvasElement",
+   "reachable": true,
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[8] → synthetic (Eternal handles)",
+    ".149 → native system / FunctionTemplateInfo",
+    "[2] → string HTMLCanvasElement"
+   ]
+  },
+  {
+   "name": "HTMLCanvasElement",
+   "reachable": true,
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[8] → synthetic (Eternal handles)",
+    ".251 → native system / FunctionTemplateInfo",
+    "[3] → string HTMLCanvasElement"
+   ]
+  },
+  {
+   "name": "HTMLCanvasElement (prototype) / http://localhost:3200",
+   "reachable": true,
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[8] → synthetic (Eternal handles)",
+    ".251 → native system / FunctionTemplateInfo",
+    ".6 / part of key (system / FunctionTemplateInfo @7899) -> value (HTMLCanvasElement @62211) pair in WeakMap (table @266617) → closure HTMLCanvasElement",
+    ".prototype → object HTMLCanvasElement (prototype) / http://localhost:3200"
+   ]
+  },
+  {
+   "name": "HTMLCanvasElement",
+   "reachable": true,
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[8] → synthetic (Eternal handles)",
+    ".251 → native system / FunctionTemplateInfo",
+    ".6 / part of key (system / FunctionTemplateInfo @7899) -> value (HTMLCanvasElement @62211) pair in WeakMap (table @266617) → closure HTMLCanvasElement"
+   ]
+  },
+  {
+   "name": "HTMLCanvasElement (internal cache) / http://localhost:3200",
+   "reachable": true,
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[10] → synthetic (Global handles)",
+    ".4 / V8PerContextData::context_ → native system / NativeContext / http://localhost:3200",
+    ".slow_template_instantiations_cache → array ",
+    ".400 / part of key (system / ObjectTemplateInfo @459975) -> value (HTMLCanvasElement (internal cache) / http://localhost:3200 @62217) pair in WeakMap (table @266617) → object HTMLCanvasElement (internal cache) / http://localhost:3200"
+   ]
+  },
+  {
+   "name": "HTMLCanvasElement",
+   "reachable": true,
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[29] → synthetic C++ Persistent roots",
+    ".blink::ScriptState::ScriptState(v8::Local<v8::Context>, DOMWrapperWorld *, ExecutionContext *)@..\\..\\third_party\\blink\\renderer\\platform\\bindings\\script_state.cc:31 → native blink::ScriptStateImpl",
+    "[1] → native blink::V8PerContextData",
+    "[1] → native blink::HeapHashTableBacking<blink::HashTable<const blink::WrapperTypeI",
+    "[38] → object HTMLCanvasElement"
+   ]
+  },
+  {
+   "name": "HTMLCanvasElement",
+   "reachable": true,
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[10] → synthetic (Global handles)",
+    ".14 / DevTools console → object InjectedScript",
+    ".document → native HTMLDocument",
+    ".__reactContainer$mg1eqboxosb → object rw",
+    ".child → object rw",
+    ".child → object rw",
+    ".elementType → object Object",
+    ".get _currentRenderer2 → closure get",
+    ".context → object system / Context / scope @129877",
+    ".tZ → object iI",
+    ".source → object Q",
+    ".1 / part of key (Q @158477) -> value (Object @158479) pair in WeakMap (table @158475) → object Object",
+    ".1001,1001,0,1006,1006,1,,1030,1016,false,false,false,1, → object Object",
+    ".texture → native WebGLTexture",
+    "[3] → native WebGL2RenderingContext",
+    "[16] → native <canvas data-engine=\"three.js r186\" width=\"1440\" height=\"836\" style=\"d",
+    ".part of key -> value pair in ephemeron table → object HTMLCanvasElement"
+   ]
+  },
+  {
+   "name": "HTMLCanvasElement",
+   "reachable": true,
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[29] → synthetic C++ Persistent roots",
+    ".blink::ScriptState::ScriptState(v8::Local<v8::Context>, DOMWrapperWorld *, ExecutionContext *)@..\\..\\third_party\\blink\\renderer\\platform\\bindings\\script_state.cc:31 → native blink::ScriptStateImpl",
+    "[1] → native blink::V8PerContextData",
+    "[1] → native blink::HeapHashTableBacking<blink::HashTable<const blink::WrapperTypeI",
+    "[43] → object HTMLCanvasElement"
+   ]
+  },
+  {
+   "name": "HTMLCanvasElement (prototype) / http://localhost:3200",
+   "reachable": true,
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[8] → synthetic (Eternal handles)",
+    ".149 → native system / FunctionTemplateInfo",
+    ".1 / part of key (system / FunctionTemplateInfo @7699) -> value (HTMLCanvasElement @229803) pair in WeakMap (table @263007) → closure HTMLCanvasElement",
+    ".prototype → object HTMLCanvasElement (prototype) / http://localhost:3200"
+   ]
+  },
+  {
+   "name": "HTMLCanvasElement",
+   "reachable": true,
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[8] → synthetic (Eternal handles)",
+    ".149 → native system / FunctionTemplateInfo",
+    ".1 / part of key (system / FunctionTemplateInfo @7699) -> value (HTMLCanvasElement @229803) pair in WeakMap (table @263007) → closure HTMLCanvasElement"
+   ]
+  },
+  {
+   "name": "HTMLCanvasElement",
+   "reachable": true,
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[8] → synthetic (Eternal handles)",
+    ".149 → native system / FunctionTemplateInfo",
+    "[3] → string HTMLCanvasElement"
+   ]
+  },
+  {
+   "name": "HTMLCanvasElement (internal cache) / http://localhost:3200",
+   "reachable": true,
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[10] → synthetic (Global handles)",
+    ".1 / V8PerContextData::context_ → native system / NativeContext / http://localhost:3200",
+    ".slow_template_instantiations_cache → array ",
+    ".210 / part of key (system / ObjectTemplateInfo @263457) -> value (HTMLCanvasElement (internal cache) / http://localhost:3200 @242279) pair in WeakMap (table @263007) → object HTMLCanvasElement (internal cache) / http://localhost:3200"
+   ]
+  },
+  {
+   "name": "HTMLCanvasElement",
+   "reachable": true,
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[10] → synthetic (Global handles)",
+    ".14 / DevTools console → object InjectedScript",
+    ".document → native HTMLDocument",
+    ".__reactContainer$mg1eqboxosb → object rw",
+    ".child → object rw",
+    ".child → object rw",
+    ".elementType → object Object",
+    ".get _currentRenderer2 → closure get",
+    ".context → object system / Context / scope @129877",
+    ".tZ → object iI",
+    ".source → object Q",
+    ".2 / part of key (Q @158477) -> value (Object @273573) pair in WeakMap (table @273571) → object Object",
+    ".1001,1001,0,1006,1006,1,,1030,1016,false,false,false,1, → object Object",
+    ".texture → native WebGLTexture",
+    "[3] → native WebGL2RenderingContext",
+    "[16] → native <canvas data-engine=\"three.js r186\" width=\"1440\" height=\"836\" style=\"d",
+    ".part of key -> value pair in ephemeron table → object HTMLCanvasElement"
+   ]
+  },
+  {
+   "name": "HTMLCanvasElement",
+   "reachable": true,
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[10] → synthetic (Global handles)",
+    ".14 / DevTools console → object InjectedScript",
+    ".document → native HTMLDocument",
+    ".__reactContainer$mg1eqboxosb → object rw",
+    ".child → object rw",
+    ".child → object rw",
+    ".elementType → object Object",
+    ".get _currentRenderer2 → closure get",
+    ".context → object system / Context / scope @129877",
+    ".i → object Object",
+    ".gl → object t$",
+    ".domElement → native <canvas data-engine=\"three.js r186\" width=\"1440\" height=\"836\" style=\"d",
+    ".part of key -> value pair in ephemeron table → object HTMLCanvasElement"
+   ]
+  }
+ ],
+ "renderers": [
+  {
+   "name": "WebGL2RenderingContext",
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[8] → synthetic (Eternal handles)",
+    ".100 → native system / FunctionTemplateInfo",
+    "[2] → string WebGL2RenderingContext"
+   ]
+  },
+  {
+   "name": "WebGLRenderer",
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[10] → synthetic (Global handles)",
+    ".1 / V8PerContextData::context_ → native system / NativeContext / http://localhost:3200",
+    ".global_object → object Window [JSGlobalObject] / http://localhost:3200",
+    ".TURBOPACK → object Object",
+    ".push → closure F",
+    ".context → object system / Context / scope @76043",
+    ".L → object Object",
+    "[8560] → object Object",
+    ".exports → object Module",
+    ".map → object shape system / Map",
+    ".descriptors → object shape system / DescriptorArray",
+    ".21 → string WebGLRenderer"
+   ]
+  },
+  {
+   "name": "WebGL2RenderingContext",
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[29] → synthetic C++ Persistent roots",
+    ".blink::ScriptState::ScriptState(v8::Local<v8::Context>, DOMWrapperWorld *, ExecutionContext *)@..\\..\\third_party\\blink\\renderer\\platform\\bindings\\script_state.cc:31 → native blink::ScriptStateImpl",
+    "[1] → native blink::V8PerContextData",
+    "[1] → native blink::HeapHashTableBacking<blink::HashTable<const blink::WrapperTypeI",
+    "[88] → object WebGL2RenderingContext"
+   ]
+  },
+  {
+   "name": "WebGL2RenderingContext",
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[10] → synthetic (Global handles)",
+    ".1 / V8PerContextData::context_ → native system / NativeContext / http://localhost:3200",
+    ".global_object → object Window [JSGlobalObject] / http://localhost:3200",
+    ".WebGL2RenderingContext → closure WebGL2RenderingContext"
+   ]
+  },
+  {
+   "name": "WebGL2RenderingContext",
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[10] → synthetic (Global handles)",
+    ".14 / DevTools console → object InjectedScript",
+    ".document → native HTMLDocument",
+    ".__reactContainer$mg1eqboxosb → object rw",
+    ".child → object rw",
+    ".child → object rw",
+    ".elementType → object Object",
+    ".get _currentRenderer2 → closure get",
+    ".context → object system / Context / scope @129877",
+    ".i → object Object",
+    ".gl → object t$",
+    ".domElement → native <canvas data-engine=\"three.js r186\" width=\"1440\" height=\"836\" style=\"d",
+    "[5] → native WebGL2RenderingContext"
+   ]
+  },
+  {
+   "name": "WebGL2RenderingContext",
+   "path": [
+    "[1] → synthetic (GC roots)",
+    "[10] → synthetic (Global handles)",
+    ".14 / DevTools console → object InjectedScript",
+    ".document → native HTMLDocument",
+    ".__reactContainer$mg1eqboxosb → object rw",
+    ".child → object rw",
+    ".child → object rw",
+    ".elementType → object Object",
+    ".get _currentRenderer2 → closure get",
+    ".context → object system / Context / scope @129877",
+    ".tZ → object iI",
+    ".source → object Q",
+    ".1 / part of key (Q @158477) -> value (Object @158479) pair in WeakMap (table @158475) → object Object",
+    ".1001,1001,0,1006,1006,1,,1030,1016,false,false,false,1, → object Object",
+    ".texture → native WebGLTexture",
+    "[3] → native WebGL2RenderingContext"
+   ]
+  }
+ ]
+}

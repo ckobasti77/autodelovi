@@ -1,0 +1,17 @@
+# perf-3d-07 verify: CPU profile desktop 4x cold (sN = minified EdgesGeometry ctor, init = three-mesh-bvh)
+[desktop cpu4 run 0] busy stretch at +2156 ms: 327 ms
+  self: 149 ms sN 0i-5efvfrwjiv.js:1:183806 | 23 ms (anon) 0nvty3axw6gpe.js:503:6395 | 23 ms er 0nvty3axw6gpe.js:503:969 | 22 ms (anon) 3loc6izf4ows2.js:451:4341 | 19 ms init 0nvty3axw6gpe.js:503:3663 | 16 ms computePrimitiveBounds 0nvty3axw6gpe.js:503:37953 |
+  incl: 114 ms init 0nvty3axw6gpe.js:503:14681 | 112 ms init 0nvty3axw6gpe.js:503:3663 | 27 ms computePrimitiveBounds 0nvty3axw6gpe.js:503:37953 | 14 ms getX 0i-5efvfrwjiv.js:1:103678 | 11 ms fromBufferAttribute 0i-5efvfrwjiv.js:1:19346 | 5 ms getZ 0i-5efvfrwj
+--
+[desktop cpu4 run 0] busy stretch at +2680 ms: 145 ms
+  self: 49 ms sN 0i-5efvfrwjiv.js:1:183806 | 21 ms getProgramParameter | 3 ms uniformMatrix4fv | 3 ms er 0nvty3axw6gpe.js:503:969 | 3 ms e8 3loc6izf4ows2.js:342:42372 | 3 ms (garbage collector) | 3 ms e1 3loc6izf4ows2.js:342:39074 | 2 ms updateMatrixWorld 0i-5
+  incl: 60 ms render 3loc6izf4ows2.js:342:46299 | 41 ms renderBufferDirect 3loc6izf4ows2.js:342:30244 | 21 ms getProgramParameter | 21 ms getUniforms 3loc6izf4ows2.js:318:2279 | 7 ms init 0nvty3axw6gpe.js:503:3663 | 7 ms init 0nvty3axw6gpe.js:503:14681 | 7 ms 
+## 1x
+  self: 17 ms sN 0i-5efvfrwjiv.js:1:183806 | 5 ms (anon) 0nvty3axw6gpe.js:503:6395 | 4 ms (anon) 3loc6izf4ows2.js:451:4341 | 3 ms getX 0i-5efvfrwjiv.js:1:103678 | 2 ms (garbage collector) | 1 ms er 0n
+  incl: 8 ms init 0nvty3axw6gpe.js:503:3663 | 8 ms init 0nvty3axw6gpe.js:503:14681 | 3 ms getX 0i-5efvfrwjiv.js:1:103678 | 3 ms renderBufferDirect 3loc6izf4ows2.js:342:30244 | 3 ms render 3loc6izf4ows
+--
+  self: 13 ms sN 0i-5efvfrwjiv.js:1:183806 | 4 ms (anon) 0nvty3axw6gpe.js:503:6395 | 2 ms (garbage collector) | 2 ms getNormal 0i-5efvfrwjiv.js:1:74974 | 1 ms computePrimitiveBounds 0nvty3axw6gpe.js:5
+  incl: 7 ms init 0nvty3axw6gpe.js:503:3663 | 7 ms init 0nvty3axw6gpe.js:503:14681 | 2 ms renderBufferDirect 3loc6izf4ows2.js:342:30244 | 2 ms render 3loc6izf4ows2.js:342:46299 | 2 ms getNormal 0i-5ef
+--
+10:    ? (cb) => window.requestIdleCallback(cb, { timeout: 2000 })
+21:  budgetMs = 6,

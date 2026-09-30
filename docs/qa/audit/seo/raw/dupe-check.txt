@@ -1,0 +1,12 @@
+/vozila/seat/ateca/ateca (384 words) vs /vozila/cupra/ateca/cupra-ateca (384 words): jaccard 0.93
+  only in A: seat ateca2016
+  only in B: cupra ateca2018
+/vozila/volkswagen/golf/golf-5 (402 words) vs /vozila/volkswagen/golf/golf-6 (405 words): jaccard 0.73
+  only in A: vdelovi v2003 2009 79 artiklablatobrani1 vaftermarketnissens v
+  only in B: videlovi vi2008 2013 5k 80 artikalstop svetla1 artiklabranici1 viaftermarketnissens vi
+/delovi/kocione-plocice/seat/ateca (383 words) vs /delovi/kocione-plocice/cupra/ateca (383 words): jaccard 0.69
+  only in A: seatpočetna seat 2016 voziloseat najvišenajnovijeseat modeleseat leonseat ibizadrugi
+  only in B: cuprapočetna cupra 2018 vozilocupra najvišenajnovijecupra modelecupra formentorcupra leondrugi
+/delovi/kocioni-diskovi/volkswagen/golf (463 words) vs /delovi/kocioni-diskovi/skoda/octavia (459 words): jaccard 0.59
+  only in A: volkswagenpočetna volkswagen golfkočioni vw golfza golf vii v 2003 2009 vi 2008 1997 2006 vozilovolkswagen golfpromeni najvišenajnovijevolkswagen golfponišti generacijigolf vii2012 artikalagolf v2003 artiklagolf vi2008 iv1997 artikalgolf viiiod golfkoliko modelevw tiguanvw touranvw passatvw caddyvw polodrugi golffilterikočione golfne
+  only in B: škodapočetna škoda octaviakočioni octaviaza octavia iii ii 2004 1996 2010 voziloškoda octaviapromeni najvišenajnoviješkoda octaviaponišti generacijioctavia iii2012 artikalaoctavia ii2004 artiklaoctavia i1996 artikaloctavia ivod octaviakoliko modeleškoda superbškoda kodiaqškoda karoqškoda fabiaškoda rapiddrugi octaviafilterikočione octaviane

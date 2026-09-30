@@ -1,0 +1,23 @@
+/delovi/kocioni-diskovi r1: long tasks 5 (Σ>50 297 ms) · style 41 · layout 168 · rAF 339× 127 ms · load handler 0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/3/0/0/0/0/0/0/0/1 ms · gsap chunk {"evaluate":19,"functionCall":75,"forcedStyle":0,"forcedLayout":0}
+   @89 178 ms (style 33, layout 129) Layout 129 | UpdateLayoutTree 33 | Paint 9 | PrePaint 3
+   @276 55 ms (style 6, layout 37) Layout 37 | ParseHTML 10 | UpdateLayoutTree 6 | EvaluateScript /delovi/kocioni-diskovi 2
+   @378 150 ms (style 0, layout 0) EvaluateScript 0qy3sss5e6eww.js 149 | RunMicrotasks 149 | v8.compile 0qy3sss5e6eww.js 0 | EventDispatch:load 0
+   @607 84 ms (style 1, layout 1) FunctionCall 0qy3sss5e6eww.js 84 | UpdateLayoutTree 1 | Layout 1 | Layout 0
+   @933 80 ms (style 0, layout 0) FunctionCall 0qy3sss5e6eww.js 79 | RunMicrotasks 1 | FunctionCall 0qy3sss5e6eww.js 0 | FunctionCall 0qy3sss5e6eww.js 0
+/delovi/kocioni-diskovi r2: long tasks 4 (Σ>50 247 ms) · style 34 · layout 150 · rAF 464× 182 ms · load handler 0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/3/0/0/0/0/0/0/0/0/0/0/0/1 ms · gsap chunk {"evaluate":16,"functionCall":121,"forcedStyle":0,"forcedLayout":0}
+   @91 185 ms (style 31, layout 132) Layout 132 | UpdateLayoutTree 31 | Paint 17 | PrePaint 2
+   @298 129 ms (style 0, layout 0) EvaluateScript 41cvzcmlkfz4o.js 128 | RunMicrotasks 128 | EventDispatch:load 0 | v8.compile 41cvzcmlkfz4o.js 0
+   @523 72 ms (style 1, layout 0) FunctionCall 0qy3sss5e6eww.js 71 | UpdateLayoutTree 0 | Layout 0 | Layout 0
+   @793 61 ms (style 0, layout 0) FunctionCall 0qy3sss5e6eww.js 60 | RunMicrotasks 1 | FunctionCall 0qy3sss5e6eww.js 0 | FunctionCall 0qy3sss5e6eww.js 0
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 r1: long tasks 5 (Σ>50 310 ms) · style 29 · layout 184 · rAF 340× 161 ms · load handler 0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/3/0/0/0/0/0/0/0/0/0/0/0/0/0/1 ms · gsap chunk {"evaluate":17,"functionCall":104,"forcedStyle":0,"forcedLayout":0}
+   @92 225 ms (style 24, layout 164) Layout 108 | Layout 57 | Paint 29 | UpdateLayoutTree 17
+   @376 143 ms (style 0, layout 0) EvaluateScript 0qy3sss5e6eww.js 143 | RunMicrotasks 142 | v8.compile 0qy3sss5e6eww.js 0 | EventDispatch:load 0
+   @595 78 ms (style 0, layout 1) FunctionCall 0qy3sss5e6eww.js 77 | Layout 0 | UpdateLayoutTree 0 | Layout 0
+   @753 51 ms (style 0, layout 0) FunctionCall 0qy3sss5e6eww.js 50 | RunMicrotasks 0 | FunctionCall 0qy3sss5e6eww.js 0
+   @853 63 ms (style 0, layout 0) FunctionCall 0qy3sss5e6eww.js 62 | RunMicrotasks 1 | FunctionCall 0qy3sss5e6eww.js 0 | FunctionCall 0qy3sss5e6eww.js 0
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 r2: long tasks 5 (Σ>50 371 ms) · style 43 · layout 214 · rAF 344× 163 ms · load handler 0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/3/1/0/0/1/0/0/0/0/0/0/0/0/0/0/1 ms · gsap chunk {"evaluate":21,"functionCall":110,"forcedStyle":0,"forcedLayout":0}
+   @92 198 ms (style 27, layout 148) Layout 124 | Layout 24 | UpdateLayoutTree 22 | Paint 15
+   @328 108 ms (style 11, layout 65) Layout 65 | Paint 25 | UpdateLayoutTree 11 | PrePaint 4
+   @444 185 ms (style 0, layout 0) EvaluateScript 0qy3sss5e6eww.js 185 | RunMicrotasks 184 | v8.compile 0qy3sss5e6eww.js 0 | EventDispatch:load 0
+   @711 73 ms (style 1, layout 1) FunctionCall 0qy3sss5e6eww.js 73 | UpdateLayoutTree 1 | Layout 0 | Layout 0
+   @969 57 ms (style 0, layout 0) FunctionCall 0qy3sss5e6eww.js 57 | RunMicrotasks 0 | FunctionCall 0qy3sss5e6eww.js 0 | FunctionCall 0qy3sss5e6eww.js 0

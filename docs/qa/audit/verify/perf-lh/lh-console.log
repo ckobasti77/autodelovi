@@ -1,0 +1,31 @@
+=== start 17:22:53
+/ mobile devtools #1 bench 4001: perf 93 a11y 97 bp 100 · LCP 2326 FCP 2326 TBT 171 CLS 0.001 · JS 25/351KB · obs FCP/LCP/load 2326/2326/5566
+/ mobile devtools #2 bench 3634: perf 89 a11y 97 bp 100 · LCP 2134 FCP 2134 TBT 353 CLS 0.001 · JS 25/351KB · obs FCP/LCP/load 2134/2134/5483
+/ mobile devtools #3 bench 4158: perf 89 a11y 97 bp 100 · LCP 2128 FCP 2128 TBT 343 CLS 0.001 · JS 25/351KB · obs FCP/LCP/load 2128/2128/5406
+/delovi/kocioni-diskovi mobile devtools #1 bench 4114: perf 95 a11y 100 bp 100 · LCP 2139 FCP 2139 TBT 169 CLS 0 · JS 25/352.6KB · obs FCP/LCP/load 2139/2139/5386
+/delovi/kocioni-diskovi mobile devtools #2 bench 3989: perf 84 a11y 100 bp 100 · LCP 2133 FCP 2133 TBT 487 CLS 0 · JS 25/352.6KB · obs FCP/LCP/load 2133/2133/5305
+/delovi/kocioni-diskovi mobile devtools #3 bench 3635: perf 95 a11y 100 bp 100 · LCP 2068 FCP 2068 TBT 170 CLS 0 · JS 25/352.6KB · obs FCP/LCP/load 2068/2068/5384
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 mobile devtools #1 bench 4073: perf 93 a11y 100 bp 100 · LCP 2205 FCP 2205 TBT 217 CLS 0 · JS 25/355.3KB · obs FCP/LCP/load 2205/2205/5203
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 mobile devtools #2 bench 4076: perf 94 a11y 100 bp 100 · LCP 2295 FCP 2295 TBT 143 CLS 0 · JS 25/355.3KB · obs FCP/LCP/load 2295/2295/5301
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 mobile devtools #3 bench 3496: perf 95 a11y 100 bp 100 · LCP 2235 FCP 2235 TBT 135 CLS 0 · JS 25/355.3KB · obs FCP/LCP/load 2235/2235/5252
+/vozila/volkswagen/golf/golf-7 mobile devtools #1 bench 4049: perf 95 a11y 100 bp 100 · LCP 2090 FCP 2090 TBT 86 CLS 0.082 · JS 25/346.4KB · obs FCP/LCP/load 2090/2090/5440
+/vozila/volkswagen/golf/golf-7 mobile devtools #2 bench 4139: perf 92 a11y 100 bp 100 · LCP 2147 FCP 2147 TBT 191 CLS 0.082 · JS 25/346.4KB · obs FCP/LCP/load 2147/2147/5447
+/vozila/volkswagen/golf/golf-7 mobile devtools #3 bench 4117: perf 93 a11y 100 bp 100 · LCP 2004 FCP 2004 TBT 206 CLS 0.082 · JS 25/346.4KB · obs FCP/LCP/load 2004/2004/5412
+/upit mobile devtools #1 bench 4126: perf 91 a11y 100 bp 96 · LCP 2100 FCP 2100 TBT 297 CLS 0 · JS 25/450.5KB · obs FCP/LCP/load 2100/2100/6001
+/upit mobile devtools #2 bench 3810: perf 92 a11y 100 bp 96 · LCP 2107 FCP 2107 TBT 262 CLS 0 · JS 25/450.5KB · obs FCP/LCP/load 2107/2107/5997
+/upit mobile devtools #3 bench 4109: perf 94 a11y 100 bp 96 · LCP 2071 FCP 2071 TBT 217 CLS 0 · JS 25/450.5KB · obs FCP/LCP/load 2071/2071/5966
+/delovi/kocioni-diskovi/volkswagen/golf mobile devtools #1 bench 4024: perf 93 a11y 100 bp 100 · LCP 2139 FCP 2139 TBT 218 CLS 0 · JS 25/352.6KB · obs FCP/LCP/load 2139/2139/5282
+/delovi/kocioni-diskovi/volkswagen/golf mobile devtools #2 bench 3948: perf 95 a11y 100 bp 100 · LCP 2109 FCP 2109 TBT 167 CLS 0 · JS 25/352.6KB · obs FCP/LCP/load 2109/2109/5418
+/delovi/kocioni-diskovi/volkswagen/golf mobile devtools #3 bench 3990: perf 93 a11y 100 bp 100 · LCP 2033 FCP 2033 TBT 256 CLS 0 · JS 25/352.6KB · obs FCP/LCP/load 2033/2033/5299
+/ponuda/kocione-plocice-golf mobile devtools #1 bench 4047: perf 94 a11y 100 bp 100 · LCP 2099 FCP 2099 TBT 182 CLS 0.001 · JS 25/366KB · obs FCP/LCP/load 2099/2099/5322
+/ponuda/kocione-plocice-golf mobile devtools #2 bench 4171: perf 95 a11y 100 bp 100 · LCP 2141 FCP 2141 TBT 148 CLS 0.001 · JS 25/366KB · obs FCP/LCP/load 2141/2141/5428
+/ponuda/kocione-plocice-golf mobile devtools #3 bench 4105: perf 96 a11y 100 bp 100 · LCP 2105 FCP 2105 TBT 99 CLS 0.001 · JS 25/366KB · obs FCP/LCP/load 2105/2105/5308
+/ mobile simulate #1 bench 3346: perf 84 a11y 100 bp 100 · LCP 4521 FCP 1360 TBT 77 CLS 0.001 · JS 25/351KB · obs FCP/LCP/load 271/271/196
+/ mobile simulate #2 bench 4026: perf 85 a11y 100 bp 100 · LCP 4383 FCP 1364 TBT 41 CLS 0.001 · JS 25/351KB · obs FCP/LCP/load 148/148/190
+/ mobile simulate #3 bench 4069: perf 85 a11y 100 bp 100 · LCP 4377 FCP 1361 TBT 44 CLS 0.001 · JS 25/351KB · obs FCP/LCP/load 143/143/187
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 mobile simulate #1 bench 4055: perf 86 a11y 100 bp 100 · LCP 4272 FCP 1060 TBT 17 CLS 0 · JS 25/355.3KB · obs FCP/LCP/load 188/188/150
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 mobile simulate #2 bench 3970: perf 86 a11y 100 bp 100 · LCP 4226 FCP 1062 TBT 20 CLS 0 · JS 25/355.3KB · obs FCP/LCP/load 141/141/164
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 mobile simulate #3 bench 3950: perf 86 a11y 100 bp 100 · LCP 4236 FCP 1060 TBT 32 CLS 0 · JS 25/355.3KB · obs FCP/LCP/load 142/142/181
+/vozila/volkswagen/golf/golf-7 desktop simulate #1 bench 3601: perf 98 a11y 100 bp 100 · LCP 904 FCP 375 TBT 0 CLS 0.074 · JS 25/346.4KB · obs FCP/LCP/load 277/277/238
+/vozila/volkswagen/golf/golf-7 desktop simulate #2 bench 3542: perf 98 a11y 100 bp 100 · LCP 876 FCP 376 TBT 0 CLS 0.074 · JS 25/346.4KB · obs FCP/LCP/load 214/214/275
+=== ALL DONE 17:33:47

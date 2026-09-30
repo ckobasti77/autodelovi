@@ -1,0 +1,197 @@
+[
+ {
+  "run": 0,
+  "vp": "desktop",
+  "cpu": 1,
+  "gpu": true,
+  "summary": [
+   {
+    "at": 480,
+    "ms": 378,
+    "self": [
+     "336 ms getProgramParameter",
+     "4 ms (garbage collector)",
+     "3 ms (anon) 3loc6izf4ows2.js:353:137546",
+     "3 ms (anon) 3loc6izf4ows2.js:353:109695",
+     "3 ms (anon) 3loc6izf4ows2.js:353:110807",
+     "2 ms acquireProgram 3loc6izf4ows2.js:318:14338",
+     "2 ms renderBufferDirect 3loc6izf4ows2.js:342:30244",
+     "1 ms rO 3loc6izf4ows2.js:353:83839"
+    ],
+    "inclusiveNamed": [
+     "346 ms _fromTexture 3loc6izf4ows2.js:1:177308",
+     "346 ms fromEquirectangular 3loc6izf4ows2.js:1:176197",
+     "344 ms render 3loc6izf4ows2.js:342:46299",
+     "343 ms renderBufferDirect 3loc6izf4ows2.js:342:30244",
+     "337 ms getUniforms 3loc6izf4ows2.js:318:2279",
+     "336 ms getProgramParameter",
+     "333 ms _applyGGXFilter 3loc6izf4ows2.js:165:1868",
+     "333 ms _applyPMREM 3loc6izf4ows2.js:165:1706",
+     "12 ms _textureToCubeUV 3loc6izf4ows2.js:165:1203",
+     "8 ms parse 3loc6izf4ows2.js:353:108166",
+     "4 ms _invokeOne 3loc6izf4ows2.js:353:86774",
+     "4 ms getDependency 3loc6izf4ows2.js:353:87043",
+     "4 ms loadNode 3loc6izf4ows2.js:353:101459",
+     "4 ms loadScene 3loc6izf4ows2.js:353:103366",
+     "4 ms getDependencies 3loc6izf4ows2.js:353:88020",
+     "3 ms loadMesh 3loc6izf4ows2.js:353:97128",
+     "3 ms createNodeMesh 3loc6izf4ows2.js:353:101146",
+     "3 ms _loadNodeShallow 3loc6izf4ows2.js:353:102117",
+     "3 ms decodeGltfBufferAsync 3loc6izf4ows2.js:353:137402",
+     "2 ms acquireProgram 3loc6izf4ows2.js:318:14338",
+     "2 ms loadGeometries 3loc6izf4ows2.js:353:96289",
+     "2 ms parse 3loc6izf4ows2.js:353:64521",
+     "2 ms parseAsync 3loc6izf4ows2.js:353:65885",
+     "1 ms dispatchEvent 0i-5efvfrwjiv.js:1:1747",
+     "1 ms dispose 0i-5efvfrwjiv.js:1:100741"
+    ]
+   },
+   {
+    "at": 870,
+    "ms": 206,
+    "self": [
+     "138 ms getProgramParameter",
+     "12 ms texSubImage2D",
+     "11 ms update 3loc6izf4ows2.js:250:3758",
+     "6 ms tr 3loc6izf4ows2.js:296:10779",
+     "4 ms getParameters 3loc6izf4ows2.js:318:4231",
+     "2 ms addEventListener 0i-5efvfrwjiv.js:1:1364",
+     "2 ms (garbage collector)",
+     "2 ms rE 0i-5efvfrwjiv.js:1:224847"
+    ],
+    "inclusiveNamed": [
+     "164 ms render 3loc6izf4ows2.js:342:46299",
+     "151 ms renderBufferDirect 3loc6izf4ows2.js:342:30244",
+     "139 ms getUniforms 3loc6izf4ows2.js:318:2279",
+     "138 ms getProgramParameter",
+     "17 ms traverse 0i-5efvfrwjiv.js:1:58737",
+     "16 ms compile 3loc6izf4ows2.js:342:37858",
+     "16 ms compileAsync 3loc6izf4ows2.js:342:38716",
+     "13 ms initTexture 3loc6izf4ows2.js:342:57019",
+     "12 ms texSubImage2D",
+     "12 ms texSubImage2D 3loc6izf4ows2.js:318:42185",
+     "11 ms update 3loc6izf4ows2.js:250:3758",
+     "11 ms update 3loc6izf4ows2.js:250:6867",
+     "8 ms acquireProgram 3loc6izf4ows2.js:318:14338",
+     "5 ms getParameters 3loc6izf4ows2.js:318:4231",
+     "5 ms setup 3loc6izf4ows2.js:1:168195",
+     "3 ms getUniforms 3loc6izf4ows2.js:318:14212",
+     "2 ms addEventListener 0i-5efvfrwjiv.js:1:1364",
+     "2 ms shaderSource",
+     "2 ms setValue 3loc6izf4ows2.js:296:9586",
+     "1 ms bindBuffer",
+     "1 ms P.<computed>"
+    ]
+   },
+   {
+    "at": 1080,
+    "ms": 60,
+    "self": [
+     "15 ms sN 0i-5efvfrwjiv.js:1:183806",
+     "6 ms (anon) 3loc6izf4ows2.js:451:4341",
+     "5 ms init 0nvty3axw6gpe.js:503:3663",
+     "4 ms er 0nvty3axw6gpe.js:503:969",
+     "4 ms (anon) 0nvty3axw6gpe.js:503:6395",
+     "3 ms H turbopack-324-cyruufpbq.js:1:7181",
+     "3 ms e 0nvty3axw6gpe.js:503:4382",
+     "2 ms (garbage collector)"
+    ],
+    "inclusiveNamed": [
+     "21 ms init 0nvty3axw6gpe.js:503:3663",
+     "21 ms init 0nvty3axw6gpe.js:503:14681",
+     "3 ms getX 0i-5efvfrwjiv.js:1:103678",
+     "3 ms computePrimitiveBounds 0nvty3axw6gpe.js:503:37953",
+     "3 ms renderBufferDirect 3loc6izf4ows2.js:342:30244",
+     "3 ms render 3loc6izf4ows2.js:342:46299",
+     "2 ms fromBufferAttribute 0i-5efvfrwjiv.js:1:19346",
+     "1 ms getNormal 0i-5efvfrwjiv.js:1:74974",
+     "1 ms getNormal 0i-5efvfrwjiv.js:1:76711",
+     "1 ms clone 0i-5efvfrwjiv.js:1:13976",
+     "1 ms refreshMaterialUniforms 3loc6izf4ows2.js:342:11511",
+     "1 ms getY 0i-5efvfrwjiv.js:1:103786",
+     "1 ms uniformMatrix4fv",
+     "1 ms setValue 3loc6izf4ows2.js:296:9586",
+     "1 ms getX 0i-5efvfrwjiv.js:1:86433",
+     "0 ms getZ 0i-5efvfrwjiv.js:1:86791"
+    ]
+   },
+   {
+    "at": 1247,
+    "ms": 42,
+    "self": [
+     "17 ms getProgramParameter",
+     "2 ms getY 0i-5efvfrwjiv.js:1:103786",
+     "1 ms getY 0i-5efvfrwjiv.js:1:86610",
+     "1 ms querySelectorAll",
+     "1 ms getX 0i-5efvfrwjiv.js:1:103678",
+     "1 ms ti 3loc6izf4ows2.js:296:11541",
+     "1 ms t 1tr6a7zmh41cy.js:1:55283",
+     "1 ms iN 0qy3sss5e6eww.js:31:103213"
+    ],
+    "inclusiveNamed": [
+     "26 ms render 3loc6izf4ows2.js:342:46299",
+     "22 ms renderBufferDirect 3loc6izf4ows2.js:342:30244",
+     "17 ms getProgramParameter",
+     "17 ms getUniforms 3loc6izf4ows2.js:318:2279",
+     "7 ms init 0nvty3axw6gpe.js:503:3663",
+     "7 ms init 0nvty3axw6gpe.js:503:14681",
+     "4 ms computePrimitiveBounds 0nvty3axw6gpe.js:503:37953",
+     "2 ms getY 0i-5efvfrwjiv.js:1:103786",
+     "1 ms getY 0i-5efvfrwjiv.js:1:86610",
+     "1 ms intersectsObject 0i-5efvfrwjiv.js:1:149747",
+     "1 ms intersectsFrustum 0i-5efvfrwjiv.js:1:169705",
+     "1 ms querySelectorAll",
+     "1 ms loadChunkCached turbopack-324-cyruufpbq.js:1:10891",
+     "1 ms Y.loadableGenerated.modules 0wnn3uk7fx3z2.js:1:13804"
+    ]
+   },
+   {
+    "at": 107,
+    "ms": 35,
+    "self": [
+     "20 ms H turbopack-324-cyruufpbq.js:1:7181",
+     "2 ms (anon) 3loc6izf4ows2.js:1:118",
+     "2 ms c turbopack-324-cyruufpbq.js:1:813",
+     "1 ms i 3loc6izf4ows2.js:353:135218",
+     "1 ms aS 0qy3sss5e6eww.js:31:62317",
+     "1 ms N.e._status.e._status 2h84ksv1mg5s9.js:1:23316",
+     "1 ms timeStamp 0qy3sss5e6eww.js:31:31259",
+     "1 ms ab 3loc6izf4ows2.js:353:36951"
+    ],
+    "inclusiveNamed": [
+     "1 ms N.e._status.e._status 2h84ksv1mg5s9.js:1:23316",
+     "1 ms timeStamp 0qy3sss5e6eww.js:31:31259",
+     "1 ms convert 0i-5efvfrwjiv.js:1:23305",
+     "1 ms colorSpaceToWorking 0i-5efvfrwjiv.js:1:23726",
+     "1 ms setHex 0i-5efvfrwjiv.js:1:68393",
+     "1 ms useMemo 0qy3sss5e6eww.js:31:75119",
+     "1 ms r.useMemo 2h84ksv1mg5s9.js:1:27255"
+    ]
+   },
+   {
+    "at": 448,
+    "ms": 26,
+    "self": [
+     "3 ms setSize 3loc6izf4ows2.js:342:27348",
+     "2 ms getExtension",
+     "2 ms getContext",
+     "1 ms (anon) 3loc6izf4ows2.js:353:136723",
+     "1 ms nZ 3loc6izf4ows2.js:353:2151",
+     "1 ms get 3loc6izf4ows2.js:318:16527",
+     "1 ms n 0sgvhbpe5nb6s.js:1:68460",
+     "1 ms (anon) 3loc6izf4ows2.js:451:6778"
+    ],
+    "inclusiveNamed": [
+     "13 ms configure 3loc6izf4ows2.js:353:44839",
+     "9 ms render 3loc6izf4ows2.js:353:48806",
+     "3 ms setSize 3loc6izf4ows2.js:342:27348",
+     "3 ms setSize 3loc6izf4ows2.js:353:43073",
+     "2 ms getExtension",
+     "2 ms init 3loc6izf4ows2.js:250:2502",
+     "2 ms useWorkers 3loc6izf4ows2.js:353:136380",
+     "2 ms getContext"
+    ]
+   }
+  ]
+ }
+]

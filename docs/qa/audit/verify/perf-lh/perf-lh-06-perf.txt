@@ -1,0 +1,14 @@
+# perf-lh-06 verify: 4x CPU trace, 412x823, consent set, navigation→load+5 s, 2 rounds; A = motion, B = prefers-reduced-motion (reveal marks done without tweens; RevealText CSS off too)
+## A motion
+/delovi/kocioni-diskovi r1: long tasks 8 (Σ>50 659 ms) · style 246 · layout 338 · rAF 449× 238 ms · load handler 0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/4/0/0/0/0/0/0/0/0/1 ms · gsap chunk {"evaluate":0,"functionCall":176,"forcedStyle":0,"forcedLayout":0}
+/delovi/kocioni-diskovi r2: long tasks 11 (Σ>50 1582 ms) · style 326 · layout 509 · rAF 407× 222 ms · load handler 0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/14/0/0/0/1/0/1 ms · gsap chunk {"evaluate":1,"functionCall":157,"forcedStyle":0,"forcedLayout":0}
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 r1: long tasks 6 (Σ>50 618 ms) · style 115 · layout 319 · rAF 458× 215 ms · load handler 0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/4/0/0/0/0/0/0/0/1 ms · gsap chunk {"evaluate":0,"functionCall":137,"forcedStyle":0,"forcedLayout":0}
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 r2: long tasks 7 (Σ>50 458 ms) · style 115 · layout 242 · rAF 456× 232 ms · load handler 0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/3/0/0/0/0/0/0/0/0/0/0/0/1 ms · gsap chunk {"evaluate":26,"functionCall":161,"forcedStyle":0,"forcedLayout":0}
+   @1858 111 ms (style 16, layout 34) FunctionCall 25dplrt_qw3he.js 109 | Layout 8 | Layout 6 | Layout 5
+   @3300 200 ms (style 23, layout 72) FunctionCall 25dplrt_qw3he.js 198 | Layout 33 | Layout 11 | Layout 9
+## B reduce
+/delovi/kocioni-diskovi r1: long tasks 5 (Σ>50 297 ms) · style 41 · layout 168 · rAF 339× 127 ms · load handler 0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/3/0/0/0/0/0/0/0/1 ms · gsap chunk {"evaluate":19,"functionCall":75,"forcedStyle":0,"forcedLayout":0}
+/delovi/kocioni-diskovi r2: long tasks 4 (Σ>50 247 ms) · style 34 · layout 150 · rAF 464× 182 ms · load handler 0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/3/0/0/0/0/0/0/0/0/0/0/0/1 ms · gsap chunk {"evaluate":16,"functionCall":121,"forcedStyle":0,"forcedLayout":0}
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 r1: long tasks 5 (Σ>50 310 ms) · style 29 · layout 184 · rAF 340× 161 ms · load handler 0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/3/0/0/0/0/0/0/0/0/0/0/0/0/0/1 ms · gsap chunk {"evaluate":17,"functionCall":104,"forcedStyle":0,"forcedLayout":0}
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 r2: long tasks 5 (Σ>50 371 ms) · style 43 · layout 214 · rAF 344× 163 ms · load handler 0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/3/1/0/0/1/0/0/0/0/0/0/0/0/0/0/1 ms · gsap chunk {"evaluate":21,"functionCall":110,"forcedStyle":0,"forcedLayout":0}
+0

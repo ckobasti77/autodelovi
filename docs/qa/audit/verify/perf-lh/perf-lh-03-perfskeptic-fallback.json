@@ -1,0 +1,80 @@
+{
+ "base": "http://localhost:3100",
+ "path": "/vozila/volkswagen/golf/golf-7",
+ "advancePerEm": {
+  "martian": {
+   "caps": 0.7,
+   "digits": 0.7,
+   "lower": 0.7
+  },
+  "nextFallback": {
+   "caps": 1.0643,
+   "digits": 0.8732,
+   "lower": 0.7129
+  },
+  "courierNew": {
+   "caps": 0.6001,
+   "digits": 0.6001,
+   "lower": 0.6001
+  }
+ },
+ "calibratedSizeAdjust": 116.65,
+ "currentFallback": {
+  "fallback": {
+   "navH": 401,
+   "codes": [
+    48,
+    107,
+    49,
+    110,
+    51,
+    107,
+    108,
+    109
+   ]
+  },
+  "loaded": {
+   "navH": 305,
+   "codes": [
+    33,
+    81,
+    33,
+    81,
+    33,
+    81,
+    81,
+    81
+   ]
+  },
+  "cls": 0.0814
+ },
+ "calibratedMonoFallback": {
+  "fallback": {
+   "navH": 305,
+   "codes": [
+    33,
+    81,
+    33,
+    81,
+    33,
+    81,
+    81,
+    81
+   ]
+  },
+  "loaded": {
+   "navH": 305,
+   "codes": [
+    33,
+    81,
+    33,
+    81,
+    33,
+    81,
+    81,
+    81
+   ]
+  },
+  "cls": 0
+ }
+}

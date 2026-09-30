@@ -1,0 +1,34 @@
+# perf-lh-02 verify: LCP medians (devtools) + CSS/font timing from lh-summary.txt; A/B preloads blocked: perf-lh-02-fonts-ab.json (script verify-perf-lh-02-fonts.mjs)
+/delovi/kocioni-diskovi
+LCP 2116 (2098/2139/2133/2068)
+/
+LCP 2134 (2326/2134/2128)
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004
+LCP 2235 (2205/2295/2235)
+/vozila/volkswagen/golf/golf-7
+LCP 2090 (2090/2147/2004)
+/upit
+LCP 2100 (2100/2107/2071)
+/delovi/kocioni-diskovi/volkswagen/golf
+LCP 2109 (2139/2109/2033)
+/ponuda/kocione-plocice-golf
+LCP 2105 (2099/2141/2105)
+  CSS 640→1736 · 620→1725 · 634→1730 · 615→1721 · preloaded fonts end 1688,1672,1768,1704 · 1646,1662,1772,1710 · 1652,1668,1775,1714 · 1628,1643,1753,1690
+  CSS 637→1782 · 623→1771 · 610→1711 · preloaded fonts end 1690,1705,1844,1751 · 1676,1692,1818,1739 · 1649,1634,1739,1681
+  CSS 618→1740 · 621→1738 · 619→1733 · preloaded fonts end 1647,1663,1771,1710 · 1645,1660,1765,1706 · 1655,1655,1764,1701
+  CSS 625→1699 · 623→1700 · 618→1702 · preloaded fonts end 1607,1622,1730,1668 · 1638,1638,1746,1685 · 1623,1639,1749,1686
+  CSS 632→1714 · 634→1713 · 626→1713 · preloaded fonts end 1652,1637,1746,1698 · 1634,1650,1744,1698 · 1628,1636,1739,1681
+  CSS 630→1735 · 621→1727 · 631→1707 · preloaded fonts end 1646,1661,1766,1704 · 1635,1666,1773,1711 · 1645,1645,1754,1691
+  CSS 622→1713 · 627→1728 · 624→1720 · preloaded fonts end 1635,1635,1760,1682 · 1634,1650,1754,1696 · 1633,1648,1754,1688
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 A-shipped r1 cssEnd 1787 fcp 2080 lcp 2080
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 B-no-preloads r1 cssEnd 1342 fcp 1768 lcp 1768
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 A-shipped r2 cssEnd 1775 fcp 2096 lcp 2096
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 B-no-preloads r2 cssEnd 1345 fcp 1780 lcp 1780
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 A-shipped r3 cssEnd 1763 fcp 2112 lcp 2112
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 B-no-preloads r3 cssEnd 1339 fcp 1712 lcp 1712
+/delovi/kocioni-diskovi A-shipped r1 cssEnd 1739 fcp 2016 lcp 2016
+/delovi/kocioni-diskovi B-no-preloads r1 cssEnd 1364 fcp 1656 lcp 1656
+/delovi/kocioni-diskovi A-shipped r2 cssEnd 1764 fcp 2008 lcp 2008
+/delovi/kocioni-diskovi B-no-preloads r2 cssEnd 1346 fcp 1624 lcp 1624
+/delovi/kocioni-diskovi A-shipped r3 cssEnd 1734 fcp 2012 lcp 2012
+/delovi/kocioni-diskovi B-no-preloads r3 cssEnd 1336 fcp 1648 lcp 1648

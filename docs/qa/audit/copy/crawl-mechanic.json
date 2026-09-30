@@ -1,0 +1,1579 @@
+{
+ "base": "http://localhost:3100",
+ "nojs": false,
+ "width": 1440,
+ "role": "mechanic",
+ "log": {
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "badResponses": []
+ },
+ "results": [
+  {
+   "url": "/majstor",
+   "status": 200,
+   "title": "Majstorski portal | SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogTitle": "Majstorski portal | SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Majstorski portal | SKLOP",
+   "robots": "noindex, follow",
+   "h1": [
+    "Majstorski portal"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\n\nAudit servis d.o.o.\n\nMajstorski portal\nPregled\nBrza porudžbina\nPorudžbine\nOmiljeno\nVozila mušterija\nCenovnik\nUpiti\nProfil\nOdjavi se\nBrza porudžbina\nBrojevi delova i količine\n\nJedan broj po redu, količina posle broja. Razmaci, tačke i crtice ne smetaju. Do 200 redova.\n\nProveri brojeve\nOtpremi CSV\n\nCSV ili TXT do 200 KB: kolona sa brojem dela i, po želji, kolona sa količinom.\n\nNalepite brojeve iz poruke, Excela ili sa kutije. Posle provere vidite šta je na stanju i po kojoj ceni, pa sve dodajete u korpu jednim klikom.\n\n1K0615301AA 2\nbroj, pa količina\n5Q0 698 151 x4\nrazmaci i „x“ su u redu\n2x 1K0-698-151\nkoličina ispred broja\n1K0615301AA;Disk;2\nred iz Excela ili CSV-a\nNIVO\nMajstor Plus\nOSNOVNI RABAT\n15 %\nODLOŽENO PLAĆANJE\nPreostalo 200.000 RSD od 200.000 RSD\nRok 15 dana\nPoslednje porudžbine\nSve porudžbine\nSK-2026-000100\n30.09.2026.\nOtkazana\n250.000 RSD\nPoruči ponovo\nOmiljeno\n0 delova koje često poručujete\nVozila mušterija\n0 vozila · VIN, tablice, napomena\nCenovnik\nVaše cene za izabrane kategorije, Excel\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–14\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.\n\nUslovi korišćenja\nPolitika privatnosti\nKolačići\nPodešavanja kolačića",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Brza porudžbina"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "textarea",
+     "attr": "placeholder",
+     "value": "1K0615301AA 2\n5Q0 698 151 x4\n2x 1K0-698-151"
+    },
+    {
+     "tag": "input",
+     "attr": "aria-label",
+     "value": "Otpremi CSV"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Rezultat provere"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Portal"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/",
+    "Brojevi delova i količine"
+   ],
+   "jsonld": [],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/majstor/brza-porudzbina",
+   "status": 200,
+   "title": "Brza porudžbina | SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogTitle": "Brza porudžbina | SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Brza porudžbina | SKLOP",
+   "robots": "noindex, follow",
+   "h1": [
+    "Majstorski portal"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\n\nAudit servis d.o.o.\n\nMajstorski portal\nPregled\nBrza porudžbina\nPorudžbine\nOmiljeno\nVozila mušterija\nCenovnik\nUpiti\nProfil\nOdjavi se\nBrza porudžbina\nBrojevi delova i količine\n\nJedan broj po redu, količina posle broja. Razmaci, tačke i crtice ne smetaju. Do 200 redova.\n\nProveri brojeve\nOtpremi CSV\n\nCSV ili TXT do 200 KB: kolona sa brojem dela i, po želji, kolona sa količinom.\n\nNalepite brojeve iz poruke, Excela ili sa kutije. Posle provere vidite šta je na stanju i po kojoj ceni, pa sve dodajete u korpu jednim klikom.\n\n1K0615301AA 2\nbroj, pa količina\n5Q0 698 151 x4\nrazmaci i „x“ su u redu\n2x 1K0-698-151\nkoličina ispred broja\n1K0615301AA;Disk;2\nred iz Excela ili CSV-a\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–14\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.\n\nUslovi korišćenja\nPolitika privatnosti\nKolačići\nPodešavanja kolačića",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Brza porudžbina"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "textarea",
+     "attr": "placeholder",
+     "value": "1K0615301AA 2\n5Q0 698 151 x4\n2x 1K0-698-151"
+    },
+    {
+     "tag": "input",
+     "attr": "aria-label",
+     "value": "Otpremi CSV"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Rezultat provere"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/",
+    "Brojevi delova i količine"
+   ],
+   "jsonld": [],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/majstor/porudzbine",
+   "status": 200,
+   "title": "Porudžbine | SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogTitle": "Porudžbine | SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Porudžbine | SKLOP",
+   "robots": "noindex, follow",
+   "h1": [
+    "Majstorski portal"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\n\nAudit servis d.o.o.\n\nMajstorski portal\nPregled\nBrza porudžbina\nPorudžbine\nOmiljeno\nVozila mušterija\nCenovnik\nUpiti\nProfil\nOdjavi se\nSve\n1\nU toku\n0\nZavršene\n0\nOtkazane\n1\nSK-2026-000100\nOtkazana\n30.09.2026. · 1 kom. · Odloženo plaćanje\n250.000 RSD\nPoruči ponovo\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–14\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.\n\nUslovi korišćenja\nPolitika privatnosti\nKolačići\nPodešavanja kolačića",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Brza porudžbina"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Filter porudžbina"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/"
+   ],
+   "jsonld": [],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/majstor/omiljeno",
+   "status": 200,
+   "title": "Omiljeno | SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogTitle": "Omiljeno | SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Omiljeno | SKLOP",
+   "robots": "noindex, follow",
+   "h1": [
+    "Majstorski portal"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\n\nAudit servis d.o.o.\n\nMajstorski portal\nPregled\nBrza porudžbina\nPorudžbine\nOmiljeno\nVozila mušterija\nCenovnik\nUpiti\nProfil\nOdjavi se\n\nOvde čuvate delove koje često poručujete. Na strani artikla izaberite „Sačuvaj u omiljeno“.\n\nPretražite delove\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–14\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.\n\nUslovi korišćenja\nPolitika privatnosti\nKolačići\nPodešavanja kolačića",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Brza porudžbina"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/"
+   ],
+   "jsonld": [],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/majstor/vozila",
+   "status": 200,
+   "title": "Vozila mušterija | SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogTitle": "Vozila mušterija | SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Vozila mušterija | SKLOP",
+   "robots": "noindex, follow",
+   "h1": [
+    "Majstorski portal"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\n\nAudit servis d.o.o.\n\nMajstorski portal\nPregled\nBrza porudžbina\nPorudžbine\nOmiljeno\nVozila mušterija\nCenovnik\nUpiti\nProfil\nOdjavi se\nDodaj vozilo mušterije\n\nSačuvajte vozila mušterija sa brojem šasije i tablicama — delovi za njih su onda na jedan klik.\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–14\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.\n\nUslovi korišćenja\nPolitika privatnosti\nKolačići\nPodešavanja kolačića",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Brza porudžbina"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/"
+   ],
+   "jsonld": [],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/majstor/cenovnik",
+   "status": 200,
+   "title": "Cenovnik | SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogTitle": "Cenovnik | SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Cenovnik | SKLOP",
+   "robots": "noindex, follow",
+   "h1": [
+    "Majstorski portal"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\n\nAudit servis d.o.o.\n\nMajstorski portal\nPregled\nBrza porudžbina\nPorudžbine\nOmiljeno\nVozila mušterija\nCenovnik\nUpiti\nProfil\nOdjavi se\n\nIzaberite sisteme ili kategorije. Fajl ima šifru, naziv, proizvođača, OEM broj, maloprodajnu cenu, vašu cenu, rabat i stanje — za rad bez interneta ili za ponudu mušteriji.\n\nIzaberi sve kategorije\nIzabrano: 0 kategorija · oko 0 artikala\nMotor i usis\nMotor i usis\nBlok motora i glava\n3\nTurbina (turbopunjač)\n4\nInterkuler\n2\nUsisna grana i kućište filtera\n2\nBrizgaljke i pumpa goriva\n3\nSet zupčastog kaiša i vodena pumpa\n6\nKaiš alternatora i zatezači\n3\nAlternator\n2\nAnlaser\n2\nSvećice, bobine i grejači\n4\nKarter, pumpa ulja i dihtunzi\n3\nEGR ventil\n2\nNosači motora i menjača\n3\nIzduvni sistem\nIzduvni sistem\nDPF i katalizator\n2\nAuspuh (lonci i cevi)\n3\nHlađenje i klima\nHlađenje i klima\nHladnjak i ventilator\n3\nTermostat i creva hlađenja\n3\nKompresor i kondenzator klime\n2\nTransmisija\nTransmisija\nKvačilo i zamajac\n3\nMenjač (DSG)\n2\nPoluosovine i homokinetički zglobovi\n3\nVešanje i upravljanje\nVešanje i upravljanje\nAmortizeri i opruge\n7\nRamena i selen blokovi\n5\nSpone i stabilizatori\n5\nLetva volana\n2\nLežaj točka i glavčina\n4\nKočnice\nKočnice\nKočioni diskovi\n9\nKočione pločice\n10\nKočione čeljusti\n3\nABS senzori\n3\nElektrika i svetla\nElektrika i svetla\nAkumulator\n3\nFarovi\n2\nStop svetla\n2\nSenzori (lambda, parking, temperatura)\n5\nKaroserija\nKaroserija\nHauba\n1\nBranici\n2\nBlatobrani\n2\nVrata\n2\nRetrovizori\n2\nStakla\n1\nBrisači\n3\nTočkovi\nTočkovi\nFelne i gume\n3\nServis i održavanje\nServis i održavanje\nFilteri\n16\nUlja i tečnosti\n5\nPreuzmi cenovnik (Excel)\n\nCene su sa PDV-om i vašim rabatom na dan preuzimanja. Najviše 5.000 artikala u jednom fajlu.",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Brza porudžbina"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Motor i usis — sve kategorije"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Blok motora i glava"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Turbina (turbopunjač)"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Interkuler"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Usisna grana i kućište filtera"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Brizgaljke i pumpa goriva"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Set zupčastog kaiša i vodena pumpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Kaiš alternatora i zatezači"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Alternator"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Anlaser"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Svećice, bobine i grejači"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Karter, pumpa ulja i dihtunzi"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "EGR ventil"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Nosači motora i menjača"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Izduvni sistem — sve kategorije"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "DPF i katalizator"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Auspuh (lonci i cevi)"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Hlađenje i klima — sve kategorije"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Hladnjak i ventilator"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Termostat i creva hlađenja"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Kompresor i kondenzator klime"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Transmisija — sve kategorije"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Kvačilo i zamajac"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Menjač (DSG)"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Poluosovine i homokinetički zglobovi"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Vešanje i upravljanje — sve kategorije"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Amortizeri i opruge"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Ramena i selen blokovi"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Spone i stabilizatori"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Letva volana"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Ležaj točka i glavčina"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Kočnice — sve kategorije"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Kočioni diskovi"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Kočione pločice"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Kočione čeljusti"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "ABS senzori"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Elektrika i svetla — sve kategorije"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Akumulator"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Farovi"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Stop svetla"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Senzori (lambda, parking, temperatura)"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Karoserija — sve kategorije"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Hauba"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Branici"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Blatobrani"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Vrata"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Retrovizori"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Stakla"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Brisači"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Točkovi — sve kategorije"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Felne i gume"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Servis i održavanje — sve kategorije"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Filteri"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Ulja i tečnosti"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/",
+    "Motor i usis",
+    "Izduvni sistem",
+    "Hlađenje i klima",
+    "Transmisija",
+    "Vešanje i upravljanje",
+    "Kočnice",
+    "Elektrika i svetla",
+    "Karoserija",
+    "Točkovi",
+    "Servis i održavanje"
+   ],
+   "jsonld": [],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/majstor/upiti",
+   "status": 200,
+   "title": "Upiti | SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogTitle": "Upiti | SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Upiti | SKLOP",
+   "robots": "noindex, follow",
+   "h1": [
+    "Majstorski portal"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\n\nAudit servis d.o.o.\n\nMajstorski portal\nPregled\nBrza porudžbina\nPorudžbine\nOmiljeno\nVozila mušterija\nCenovnik\nUpiti\nProfil\nOdjavi se\n\nUP-2026-000059\nPrihvaćena\n\nQA audit (backend) — test upit za proveru limita odloženog plaćanja. Ne obrađivati.\n\n30.09.2026.\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–14\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.\n\nUslovi korišćenja\nPolitika privatnosti\nKolačići\nPodešavanja kolačića",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Brza porudžbina"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/"
+   ],
+   "jsonld": [],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/majstor/profil",
+   "status": 200,
+   "title": "Profil servisa | SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogTitle": "Profil servisa | SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Profil servisa | SKLOP",
+   "robots": "noindex, follow",
+   "h1": [
+    "Majstorski portal"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\n\nAudit servis d.o.o.\n\nMajstorski portal\nPregled\nBrza porudžbina\nPorudžbine\nOmiljeno\nVozila mušterija\nCenovnik\nUpiti\nProfil\nOdjavi se\nKontakt osoba\nTelefon\nMesto\nAdresa servisa\n\nAdresa za dostavu kurirom.\n\nVrsta servisa\nMehanika\nAutoelektrika\nDijagnostika\nKlima\nLimarija i farbanje\nVulkanizer\nOstalo\nMarke koje servisirate\nVolkswagen\nAudi\nŠkoda\nSEAT\nCupra\nSačuvaj\nFirma\nAudit servis d.o.o.\nPIB\n154552870\nMatični broj\n64552872\nNalog\naudit-majstor-5455287@primer.rs\nNivo\nMajstor Plus · rabat 15 %\nPlaćanje\nOdloženo, rok 15 dana\n\nNaziv firme, PIB i matični broj menjamo mi — pozovite nas ili pošaljite upit sa novim podacima.\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–14\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.\n\nUslovi korišćenja\nPolitika privatnosti\nKolačići\nPodešavanja kolačića",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Brza porudžbina"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Mehanika"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Autoelektrika"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Dijagnostika"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Klima"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Limarija i farbanje"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Vulkanizer"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Ostalo"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Volkswagen"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Audi"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Škoda"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "SEAT"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Cupra"
+    },
+    {
+     "tag": "aside",
+     "attr": "aria-label",
+     "value": "Podaci firme"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/"
+   ],
+   "jsonld": [],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "status": 200,
+   "title": "Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP",
+   "description": "Kočioni disk prednji 276 × 24 mm (Febi Bilstein, Aftermarket) za VW Golf VII, VW Passat B8 i … Cena 4.690 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 615 505 R.",
+   "ogTitle": "Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP",
+   "ogDescription": "Kočioni disk prednji 276 × 24 mm (Febi Bilstein, Aftermarket) za VW Golf VII, VW Passat B8 i … Cena 4.690 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 615 505 R.",
+   "ogImageAlt": "Auto deo — naziv, OEM broj i proizvođač",
+   "twitterTitle": "Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP",
+   "robots": "index, follow",
+   "h1": [
+    "Kočioni disk prednji 276 × 24 mm"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\nPočetna\n/\nDelovi\n/\nKočioni diskovi\n/\nKočioni disk prednji 276 × 24 mm\n\nIlustracija kategorije — izgled dela može se razlikovati\n\nØ 276\n24\nmm\nMere diska: prečnik 276 mm, debljina 24 mm.\n\nFebi Bilstein · Aftermarket\n\nKočioni disk prednji 276 × 24 mm\nOEM\n5Q0 615 505 R\nŠifra\nDEMO-0004\nKat. br. proizvođača\n57447\nIzaberite vozilo da proverimo da li deo odgovara\nMP\nMaloprodajna cena:\n 4.690 RSD\nVaša cena · rabat 15 %\n3.987\nRSD\nsa PDV-om\nNa stanju · 5 kom.\n· Isporuka za 1–2 radna dana\nDodaj u korpu\n: Kočioni disk prednji 276 × 24 mm\nPošaljite upit\nSačuvaj u omiljeno\n: Kočioni disk prednji 276 × 24 mm\nKurir 450 RSD, besplatno iznad 10.000 RSD · pouzećem ili virmanom\nLično preuzimanje bez troška · plaćanje gotovinom ili karticom\nBez plaćanja na sajtu. Dostava i plaćanje\nKompatibilnost\n\nPre ugradnje uporedite OEM broj sa starim delom. Kad niste sigurni, pošaljite broj šasije.\n\nVozila za koja deo odgovara\nMARKA\tMODEL / GENERACIJA\tGODINE\tMOTOR\tNAPOMENA\nAudi\tA3 (8V)\t2012–2020\tSvi motori\t\nCupra\tAteca\t2018–\tSvi motori\t\nSEAT\tAteca\t2016–\tSvi motori\t\nSEAT\tIbiza V\t2017–\tSvi motori\t\nSEAT\tLeon III\t2012–2020\tSvi motori\t\nŠkoda\tFabia IV\t2021–\tSvi motori\t\nŠkoda\tKaroq\t2017–\tSvi motori\t\nŠkoda\tKodiaq I\t2016–2024\tSvi motori\t\nŠkoda\tOctavia III\t2012–2020\tSvi motori\t\nŠkoda\tSuperb III\t2015–2024\tSvi motori\t\nVolkswagen\tGolf VII\t2012–2020\tSvi motori\t\nVolkswagen\tPassat B8\t2014–2023\tSvi motori\t\nPrikaži još 3\nBrojevi\nOEM BROJEVI\n5Q0 615 505 R\nVAG (demo)\nZAMENSKI BROJEVI\nOX 408D\nMahle\nSpecifikacije\nPrečnik\n276 mm\nDebljina\n24 mm\nProizvođač\nFebi Bilstein\nKvalitet\nAftermarket\nGarancija\n24 meseci\n\nKočioni disk prednji 276 × 24 mm. Demo artikal: kataloški brojevi i cene služe samo za prikaz rada prodavnice.\n\nNapomena: Demo artikal — podaci služe za prikaz.\n\nPovezani delovi\nSvi: Kočioni diskovi\nOEM kvalitet\n\nBrembo\n\nKočioni disk prednji 312 × 25 mm\n\nOEM 3C0 615 098\n\nNa stanju · 10 kom.\nMP\nMaloprodajna cena:\n 7.490 RSD\nVaša cena\n6.367\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 312 × 25 mm\nOEM kvalitet\n\nATE\n\nKočioni disk prednji 288 × 25 mm, ventilirani\n\nOEM 1K0 615 868 F\n\nPo porudžbini · 6 dana\nMP\nMaloprodajna cena:\n 5.490 RSD\nVaša cena\n4.667\nRSD\nsa PDV-om\nPoruči\n: Kočioni disk prednji 288 × 25 mm, ventilirani\nOEM kvalitet\n\nTRW\n\nKočioni disk zadnji 272 × 10 mm, puni\n\nOEM 1K0 615 540 Q\n\nMalo na stanju · 1 kom.\nMP\nMaloprodajna cena:\n 3.890 RSD\nVaša cena\n3.307\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk zadnji 272 × 10 mm, puni\nOEM kvalitet\n\nBosch\n\nKočioni disk prednji 256 × 22 mm\n\nOEM 6R0 615 645\n\nNa stanju\nMP\nMaloprodajna cena:\n 3.990 RSD\nVaša cena\n3.392\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 256 × 22 mm\nKočioni diskovi po vozilu\nKočioni diskovi za VW Passat\nKočioni diskovi za Škoda Superb\nKočioni diskovi za VW Golf\nKočioni diskovi za VW Touran\nKočioni diskovi za VW Tiguan\nKočioni diskovi za Audi A3\nKočioni diskovi za Škoda Octavia\nKočioni diskovi za SEAT Leon",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Brza porudžbina"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Putanja"
+    },
+    {
+     "tag": "img",
+     "attr": "alt",
+     "value": "Kočioni disk prednji 276 × 24 mm — ilustracija kategorije kočioni diskovi"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Kopiraj OEM broj 5Q0 615 505 R"
+    },
+    {
+     "tag": "abbr",
+     "attr": "title",
+     "value": "Maloprodajna cena"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Količina: Kočioni disk prednji 276 × 24 mm"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Smanji količinu"
+    },
+    {
+     "tag": "input",
+     "attr": "aria-label",
+     "value": "Količina"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Povećaj količinu"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Kopiraj OEM broj 5Q0 615 505 R"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Kopiraj broj OX 408D"
+    },
+    {
+     "tag": "abbr",
+     "attr": "title",
+     "value": "Maloprodajna cena"
+    },
+    {
+     "tag": "abbr",
+     "attr": "title",
+     "value": "Maloprodajna cena"
+    },
+    {
+     "tag": "abbr",
+     "attr": "title",
+     "value": "Maloprodajna cena"
+    },
+    {
+     "tag": "abbr",
+     "attr": "title",
+     "value": "Maloprodajna cena"
+    },
+    {
+     "tag": "abbr",
+     "attr": "title",
+     "value": "Maloprodajna cena"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/",
+    "/",
+    "/",
+    "/",
+    "Ø 27624mm",
+    "MP",
+    "Maloprodajna cena:",
+    ": Kočioni disk prednji 276 × 24 mm",
+    ": Kočioni disk prednji 276 × 24 mm",
+    "Vozila za koja deo odgovara",
+    "MP",
+    "Maloprodajna cena:",
+    ": Kočioni disk prednji 312 × 25 mm",
+    "MP",
+    "Maloprodajna cena:",
+    ": Kočioni disk prednji 288 × 25 mm, ventilirani",
+    "MP",
+    "Maloprodajna cena:",
+    ": Kočioni disk zadnji 272 × 10 mm, puni",
+    "MP",
+    "Maloprodajna cena:",
+    ": Kočioni disk prednji 256 × 22 mm",
+    "MPMaloprodajna cena: 4.690 RSDVaša cena3.987RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm",
+    "MP",
+    "Maloprodajna cena:",
+    ": Kočioni disk prednji 276 × 24 mm"
+   ],
+   "jsonld": [
+    "[{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Početna\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Delovi\",\"item\":\"http://localhost:3000/delovi\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Kočioni diskovi\",\"item\":\"http://localhost:3000/delovi/kocioni-diskovi\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"Kočioni disk prednji 276 × 24 mm\"}]},{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"Kočioni disk prednji 276 × 24 mm\",\"sku\":\"DEMO-0004\",\"mpn\":\"57447\",\"brand\":{\"@type\":\"Brand\",\"name\":\"Febi Bilstein\"},\"category\":\"Kočioni diskovi\",\"description\":\"Kočioni disk prednji 276 × 24 mm. Demo artikal: kataloški brojevi i cene služe samo za prikaz rada prodavnice.\",\"image\":[\"http://localhost:3000/images/parts/kocioni-diskovi.webp\"],\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-276-24-mm-demo-0004\",\"offers\":{\"@type\":\"Offer\",\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-276-24-mm-demo-0004\",\"priceCurrency\":\"RSD\",\"price\":\"4690.00\",\"availability\":\"https://schema.org/InStock\",\"itemCondition\":\"https://schema.org/NewCondition\",\"seller\":{\"@id\":\"http://localhost:3000/#organizacija\"},\"shippingDetails\":{\"@type\":\"OfferShippingDetails\",\"shippingRate\":{\"@type\":\"MonetaryAmount\",\"value\":\"450.00\",\"currency\":\"RSD\"},\"shippingDestination\":{\"@type\":\"DefinedRegion\",\"addressCountry\":\"RS\"}},\"hasMerchantReturnPolicy\":{\"@type\":\"MerchantReturnPolicy\",\"applicableCountry\":\"RS\",\"returnPolicyCountry\":\"RS\",\"returnPolicyCategory\":\"https://schema.org/MerchantReturnFiniteReturnWindow\",\"merchantReturnDays\":14}}}]"
+   ],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/delovi/kocioni-diskovi",
+   "status": 200,
+   "title": "Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "description": "Kočioni diskovi za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Prednji i zadnji diskovi, puni i ventilirani.",
+   "ogTitle": "Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "ogDescription": "Kočioni diskovi za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Prednji i zadnji diskovi, puni i ventilirani.",
+   "ogImageAlt": "Kategorija auto delova — broj artikala i stanje",
+   "twitterTitle": "Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "robots": "index, follow",
+   "h1": [
+    "KOČIONI DISKOVI"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\nPočetna\n/\nDelovi\n/\nKočnice\n/\nKočioni diskovi\nKOČIONI DISKOVI\n\nKočioni diskovi zajedno sa pločicama pretvaraju kretanje u toplotu i zaustavljaju vozilo. Vibracije pri kočenju, ivica na disku ili debljina ispod minimalne znače zamenu.\n\nViše o kategoriji\nVozilo\nIzaberite vozilo\nDostupnost\nSamo na stanju\n7\nProizvođač\nATE\n3\nBrembo\n2\nBosch\n1\nFebi Bilstein\n1\nOriginal VAG\n1\nTRW\n1\nKvalitet\nOriginal VAG\n1\nDeo u pakovanju proizvođača vozila.\nOEM kvalitet\n7\nProizvođač koji isti deo isporučuje fabrici, u svom pakovanju.\nAftermarket\n1\nZamenski deo drugog proizvođača, obično povoljniji.\nCena\n\n9 artikala\n\nSortiraj\nPopularno\nCena: od najniže\nCena: od najviše\nNajnovije\nArtikli\nOEM kvalitet\n\nBrembo\n\nKočioni disk prednji 312 × 25 mm\n\nOEM 3C0 615 098\n\nNa stanju · 10 kom.\nMP\nMaloprodajna cena:\n 7.490 RSD\nVaša cena\n6.367\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 312 × 25 mm\nOEM kvalitet\n\nTRW\n\nKočioni disk zadnji 272 × 10 mm, puni\n\nOEM 1K0 615 540 Q\n\nMalo na stanju · 1 kom.\nMP\nMaloprodajna cena:\n 3.890 RSD\nVaša cena\n3.307\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk zadnji 272 × 10 mm, puni\nOEM kvalitet\n\nBosch\n\nKočioni disk prednji 256 × 22 mm\n\nOEM 6R0 615 645\n\nNa stanju\nMP\nMaloprodajna cena:\n 3.990 RSD\nVaša cena\n3.392\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 256 × 22 mm\nOEM kvalitet\n\nBrembo\n\nKočioni disk prednji 312 × 25 mm, ventilirani\n\nOEM 1K0 615 591 E\n\nMalo na stanju · 3 kom.\nMP\nMaloprodajna cena:\n 7.290 RSD\nVaša cena\n6.197\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 312 × 25 mm, ventilirani\nAftermarket\n\nFebi Bilstein\n\nKočioni disk prednji 276 × 24 mm\n\nOEM 5Q0 615 505 R\n\nNa stanju · 5 kom.\nMP\nMaloprodajna cena:\n 4.690 RSD\nVaša cena\n3.987\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 276 × 24 mm\nOEM kvalitet\n\nATE\n\nKočioni disk prednji 312 × 25 mm, ventilirani\n\nOEM 1K0 615 591 E\n\nMalo na stanju · 3 kom.\nMP\nMaloprodajna cena:\n 6.700 RSD\nVaša cena\n5.695\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 312 × 25 mm, ventilirani\nOriginal VAG\n\nOriginal VAG\n\nKočioni disk prednji 340 × 30 mm, GTI\n\nOEM 5Q0 615 666 A\n\nNa stanju\nMP\nMaloprodajna cena:\n 18.900 RSD\nVaša cena\n16.065\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 340 × 30 mm, GTI\nOEM kvalitet\n\nATE\n\nKočioni disk prednji 288 × 25 mm, ventilirani\n\nOEM 1K0 615 868 F\n\nPo porudžbini · 6 dana\nMP\nMaloprodajna cena:\n 5.490 RSD\nVaša cena\n4.667\nRSD\nsa PDV-om\nPoruči\n: Kočioni disk prednji 288 × 25 mm, ventilirani\nOEM kvalitet\n\nATE\n\nKočioni disk prednji 320 × 30 mm\n\nOEM 8K0 615 085\n\nPo porudžbini · 2 dana\nMP\nMaloprodajna cena:\n 9.890 RSD\nVaša cena\n8.407\nRSD\nsa PDV-om\nPoruči\n: Kočioni disk prednji 320 × 30 mm\nKočioni diskovi po vozilu\nKočioni diskovi za Volkswagen\nKočioni diskovi za Škoda\nKočioni diskovi za VW Passat\nKočioni diskovi za Škoda Superb\nKočioni diskovi za SEAT Leon\nKočioni diskovi za VW Golf\nKočioni diskovi za VW Tiguan\nKočioni diskovi za VW Touran\nKočioni diskovi za Audi A3\nKočioni diskovi za Škoda Octavia\nPovezani delovi\nKočione pločice\nKočione čeljusti\nABS senzori\nLežaj točka i glavčina",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Brza porudžbina"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Putanja"
+    },
+    {
+     "tag": "aside",
+     "attr": "aria-label",
+     "value": "Filteri"
+    },
+    {
+     "tag": "input",
+     "attr": "aria-label",
+     "value": "Cena od, u dinarima"
+    },
+    {
+     "tag": "input",
+     "attr": "placeholder",
+     "value": "3.890"
+    },
+    {
+     "tag": "input",
+     "attr": "aria-label",
+     "value": "Cena do, u dinarima"
+    },
+    {
+     "tag": "input",
+     "attr": "placeholder",
+     "value": "18.900"
+    },
+    {
+     "tag": "select",
+     "attr": "aria-label",
+     "value": "Sortiraj"
+    },
+    {
+     "tag": "option",
+     "attr": "text",
+     "value": "Popularno"
+    },
+    {
+     "tag": "option",
+     "attr": "text",
+     "value": "Cena: od najniže"
+    },
+    {
+     "tag": "option",
+     "attr": "text",
+     "value": "Cena: od najviše"
+    },
+    {
+     "tag": "option",
+     "attr": "text",
+     "value": "Najnovije"
+    },
+    {
+     "tag": "abbr",
+     "attr": "title",
+     "value": "Maloprodajna cena"
+    },
+    {
+     "tag": "abbr",
+     "attr": "title",
+     "value": "Maloprodajna cena"
+    },
+    {
+     "tag": "abbr",
+     "attr": "title",
+     "value": "Maloprodajna cena"
+    },
+    {
+     "tag": "abbr",
+     "attr": "title",
+     "value": "Maloprodajna cena"
+    },
+    {
+     "tag": "abbr",
+     "attr": "title",
+     "value": "Maloprodajna cena"
+    },
+    {
+     "tag": "abbr",
+     "attr": "title",
+     "value": "Maloprodajna cena"
+    },
+    {
+     "tag": "abbr",
+     "attr": "title",
+     "value": "Maloprodajna cena"
+    },
+    {
+     "tag": "abbr",
+     "attr": "title",
+     "value": "Maloprodajna cena"
+    },
+    {
+     "tag": "abbr",
+     "attr": "title",
+     "value": "Maloprodajna cena"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/",
+    "/",
+    "/",
+    "/",
+    "OdRSDDoRSDPrimeni cenu",
+    "Artikli",
+    "MP",
+    "Maloprodajna cena:",
+    ": Kočioni disk prednji 312 × 25 mm",
+    "MP",
+    "Maloprodajna cena:",
+    ": Kočioni disk zadnji 272 × 10 mm, puni",
+    "MP",
+    "Maloprodajna cena:",
+    ": Kočioni disk prednji 256 × 22 mm",
+    "MP",
+    "Maloprodajna cena:",
+    ": Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "MP",
+    "Maloprodajna cena:",
+    ": Kočioni disk prednji 276 × 24 mm",
+    "MP",
+    "Maloprodajna cena:",
+    ": Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "MP",
+    "Maloprodajna cena:",
+    ": Kočioni disk prednji 340 × 30 mm, GTI",
+    "MP",
+    "Maloprodajna cena:",
+    ": Kočioni disk prednji 288 × 25 mm, ventilirani",
+    "MP",
+    "Maloprodajna cena:",
+    ": Kočioni disk prednji 320 × 30 mm"
+   ],
+   "jsonld": [
+    "[{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Početna\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Delovi\",\"item\":\"http://localhost:3000/delovi\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Kočnice\",\"item\":\"http://localhost:3000/delovi/kocnice\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"Kočioni diskovi\"}]},{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"name\":\"Kočioni diskovi\",\"numberOfItems\":9,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-312-25-mm-demo-0007\",\"name\":\"Kočioni disk prednji 312 × 25 mm\"},{\"@type\":\"ListItem\",\"position\":2,\"url\":\"http://localhost:3000/deo/kocioni-disk-zadnji-272-10-mm-puni-demo-0003\",\"name\":\"Kočioni disk zadnji 272 × 10 mm, puni\"},{\"@type\":\"ListItem\",\"position\":3,\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-256-22-mm-demo-0006\",\"name\":\"Kočioni disk prednji 256 × 22 mm\"},{\"@type\":\"ListItem\",\"position\":4,\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-0002\",\"name\":\"Kočioni disk prednji 312 × 25 mm, ventilirani\"},{\"@type\":\"ListItem\",\"position\":5,\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-276-24-mm-demo-0004\",\"name\":\"Kočioni disk prednji 276 × 24 mm\"},{\"@type\":\"ListItem\",\"position\":6,\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-e001\",\"name\":\"Kočioni disk prednji 312 × 25 mm, ventilirani\"},{\"@type\":\"ListItem\",\"position\":7,\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005\",\"name\":\"Kočioni disk prednji 340 × 30 mm, GTI\"},{\"@type\":\"ListItem\",\"position\":8,\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-288-25-mm-ventilirani-demo-0001\",\"name\":\"Kočioni disk prednji 288 × 25 mm, ventilirani\"},{\"@type\":\"ListItem\",\"position\":9,\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-320-30-mm-demo-0008\",\"name\":\"Kočioni disk prednji 320 × 30 mm\"}]}]"
+   ],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/korpa",
+   "status": 200,
+   "title": "Korpa | SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogTitle": "Korpa | SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Korpa | SKLOP",
+   "robots": "noindex, follow",
+   "h1": [
+    "Korpa"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\nKorpa\nKorpa je prazna\n\nDodajte delove iz kataloga ili pretražite po OEM broju.\n\nPretražite po broju dela\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–14\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.\n\nUslovi korišćenja\nPolitika privatnosti\nKolačići\nPodešavanja kolačića",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Brza porudžbina"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Majstorski portal"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/"
+   ],
+   "jsonld": [],
+   "lang": "sr-Latn-RS"
+  }
+ ]
+}

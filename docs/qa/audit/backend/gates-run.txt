@@ -1,0 +1,9 @@
+=== tsc ===
+
+real	4m52.293s
+user	0m0.030s
+sys	0m0.060s
+=== lint ===
+=== validate ===
+=== vitest ===
+done

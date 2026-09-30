@@ -1,0 +1,24 @@
+# perf-3d-08 (verify) 2026-09-30T15:34:16Z
+$ curl -s -D - -o /dev/null -H "Accept-Encoding: gzip, br" http://localhost:3200/models/env/studio-512.hdr
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+Cache-Control: public, max-age=0
+Content-Type: application/octet-stream
+Content-Length: 410772
+$ gzip -c public/models/env/studio-512.hdr | wc -c
+307757
+$ curl headers /models/car.glb
+X-Content-Type-Options: nosniff
+Cache-Control: public, max-age=0
+Content-Type: model/gltf-binary
+Content-Encoding: gzip
+$ curl headers /models/car-lite.glb
+X-Content-Type-Options: nosniff
+Cache-Control: public, max-age=0
+Content-Type: model/gltf-binary
+Content-Encoding: gzip
+$ curl headers /models/car.manifest.json
+X-Content-Type-Options: nosniff
+Cache-Control: public, max-age=0
+Content-Type: application/json; charset=UTF-8
+Content-Encoding: gzip

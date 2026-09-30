@@ -1,0 +1,60 @@
+{
+  "cart": {
+    "delivery": "Preuzimanje 0 RSD · kurir 450 RSD",
+    "deliveryCodes": "Preuzimanje[SP]0[SP]RSD[SP]·[SP]kurir[SP]450[NBSP]RSD",
+    "subtotalCodes": "4.690[NBSP]RSD"
+  },
+  "checkoutDelivery": [
+    {
+      "text": "Lično preuzimanje0 RSDDeo preuzimate u radnji kada vam javimo da je spreman. Obično isti ili sledeći radni dan.",
+      "codes": "Lično[SP]preuzimanje0[SP]RSDDeo[SP]preuzimate[SP]u[SP]radnji[SP]kada[SP]vam[SP]javimo[SP]da[SP]je[SP]spreman.[SP]Obično[SP]isti[SP]ili[SP]sledeći[SP]radni[SP]dan."
+    },
+    {
+      "text": "Kurirska služba450 RSDPlaćanje pouzećem ili virmanom; kurir dostavlja na adresu. 1–2 radna dana.",
+      "codes": "Kurirska[SP]služba450[NBSP]RSDPlaćanje[SP]pouzećem[SP]ili[SP]virmanom;[SP]kurir[SP]dostavlja[SP]na[SP]adresu.[SP]1–2[SP]radna[SP]dana."
+    }
+  ],
+  "predracunHeaders": [
+    "Artikal",
+    "Kol.",
+    "Cena sa PDV",
+    "Iznos"
+  ],
+  "emails": {
+    "quote_ready": {
+      "subject": "Ponuda za upit UP-2026-000045 je spremna",
+      "preheader": "Ukupno 94.800 RSD, važi do 06.10.2026..",
+      "text": "Ponuda je spremna.\n==================\n\nZa upit UP-2026-000045 (Volkswagen Golf VII 2.0 TDI (2015)) našli smo sledeće. Cene su sa PDV-om.\n\n- Turbopunjač, reparirani\n  04L253016H\n  Garrett\n  1 × 89.900 RSD = 89.900 RSD\n  Po porudžbini, 2–3 radna dana\n- Set dihtunga za turbinu\n  03L198015A\n  Elring\n  1 × 4.900 RSD = 4.900 RSD\n\nUkupno sa PDV-om: 94.800 RSD\n\nPonuda važi do: 06.10.2026. 10:42\n\nStaru turbinu vratite pri preuzimanju — kaucija se ne naplaćuje.\n\nPogledajte i prihvatite ponudu: http://localhost:3000/upit/primer-tokena-za-pregled-sablona\n\nKad prihvatite ponudu, pravimo porudžbinu po ovim cenama. Plaćate pouzećem, pri preuzimanju ili virmanom — ništa unapred preko sajta.\n\nPitanja? Odgovorite na ovu poruku.\n\n--\nSKLOP\nRadno vreme: Pon–pet 8–17, sub 8–14\n\nOvu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu SKLOP.\n"
+    },
+    "quote_expiring": {
+      "subject": "Ponuda za upit UP-2026-000045 ističe 06.10.2026.",
+      "preheader": "Ponuda važi do 06.10.2026. 10:42.",
+      "text": "Ponuda uskoro ističe.\n=====================\n\nPonuda za upit UP-2026-000045 važi do 06.10.2026. 10:42. Posle toga cene i rok moramo ponovo da proverimo kod dobavljača.\n\nUkupno sa PDV-om: 94.800 RSD\nStavki: 2\n\nPogledajte ponudu: http://localhost:3000/upit/primer-tokena-za-pregled-sablona\n\nPitanja? Odgovorite na ovu poruku.\n\n--\nSKLOP\nRadno vreme: Pon–pet 8–17, sub 8–14\n\nOvu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu SKLOP.\n"
+    },
+    "back_in_stock": {
+      "subject": "Stiglo je: Kočione pločice prednje",
+      "preheader": "Kočione pločice prednje je ponovo na stanju. Cena 4.590 RSD.",
+      "text": "Stiglo je.\n==========\n\nArtikal koji ste tražili je ponovo na stanju.\n\nArtikal: Kočione pločice prednje\nŠifra: DEMO-KP-0142\nProizvođač: TRW\nCena sa PDV-om: 4.590 RSD\nStanje: Na stanju\n\nPogledajte artikal: http://localhost:3000/deo/kocione-plocice-prednje-trw\n\nKoličine su ograničene i ne rezervišemo ih bez porudžbine. Ovo obaveštenje šaljemo samo jednom.\n\n--\nSKLOP\nRadno vreme: Pon–pet 8–17, sub 8–14\n\nOvu poruku ste dobili jer ste tražili da vam javimo kad artikal stigne. Odjavite sva obaveštenja o dolasku robe.: http://localhost:3000/obavestenja/odjava/primer-tokena-za-pregled-sablona\n"
+    },
+    "staff_low_stock": {
+      "subject": "Malo na stanju: 3 artikla",
+      "preheader": "DEMO-KD-0031, DEMO-FU-0007, DEMO-SV-0112",
+      "text": "Malo na stanju: 3 artikla\n=========================\n\nArtikli koji su u poslednjem satu pali na prag zaliha ili ispod njega.\n\nDEMO-KD-0031: Kočioni disk prednji, 288 mm: http://localhost:3000/admin/lager — ostalo 1 kom\nDEMO-FU-0007: Filter ulja: http://localhost:3000/admin/lager — nema na stanju\nDEMO-SV-0112: Svećica, iridijum: http://localhost:3000/admin/lager — ostalo 2 kom\n\nOtvorite lager: http://localhost:3000/admin/lager\n\n--\nSKLOP\n\nOvu poruku dobijate kao zaposleni u SKLOP. Podešavanja obaveštenja: http://localhost:3000/admin/podesavanja?tab=obavestenja\n"
+    },
+    "staff_order_new": {
+      "subject": "Nova porudžbina SK-2026-000187 — 33.260 RSD",
+      "preheader": "Petar Petrović, 4 kom · Kurirska služba · Odloženo plaćanje",
+      "text": "Nova porudžbina SK-2026-000187\n==============================\n\n[Majstorska porudžbina · razred Majstor Plus]\nAuto servis Primer\n\nKupac: Petar Petrović (majstor)\nTelefon: +381 64 123 4567: tel:+381641234567\nE-pošta: petar@primer.rs\nDostava: Kurirska služba\nPlaćanje: Odloženo plaćanje\nIzvor: Google Ads · kočioni-diskovi\nNapomena kupca: Pozvati pre slanja.\n\n- Set zupčastog kaiša sa vodenom pumpom\n  04L198119A\n  INA\n  1 × 18.990 RSD = 18.990 RSD\n- Kočioni disk prednji, 312 mm\n  5Q0615301F\n  ATE\n  2 × 6.490 RSD = 12.980 RSD\n- Filter ulja\n  03N115562B\n  MANN-FILTER\n  1 × 1.290 RSD = 1.290 RSD\n\nUkupno sa PDV-om: 33.260 RSD\n\nOtvorite porudžbinu: http://localhost:3000/admin/porudzbine/SK-2026-000187\n\n--\nSKLOP\n\nOvu poruku dobijate kao zaposleni u SKLOP. Podešavanja obaveštenja: http://localhost:3000/admin/podesavanja?tab=obavestenja\n"
+    },
+    "order_received": {
+      "subject": "Porudžbina SK-2026-000187 je primljena",
+      "preheader": "Ukupno 33.260 RSD. Javljamo se kad proverimo stanje i potvrdimo.",
+      "text": "Porudžbina je primljena.\n========================\n\nPrimili smo porudžbinu SK-2026-000187. Proveravamo stanje i javljamo se kad je potvrdimo. Ništa ne plaćate unapred.\n\n- Set zupčastog kaiša sa vodenom pumpom\n  04L198119A\n  INA\n  1 × 18.990 RSD = 18.990 RSD\n- Kočioni disk prednji, 312 mm\n  5Q0615301F\n  ATE\n  2 × 6.490 RSD = 12.980 RSD\n- Filter ulja\n  03N115562B\n  MANN-FILTER\n  1 × 1.290 RSD = 1.290 RSD\n\nArtikli: 33.260 RSD\nDostava: bez naknade\nUkupno sa PDV-om: 33.260 RSD\nU tome PDV: 5.543,33 RSD\n\nDostava: Kurirska služba\nAdresa: Bulevar oslobođenja 12, 21000 Novi Sad\nPlaćanje: Pouzećem\n\nPlaćate kuriru gotovinom pri preuzimanju paketa.\n\nPogledajte status porudžbine: http://localhost:3000/porudzbina/primer-tokena-za-pregled-sablona\n\nPitanja? Odgovorite na ovu poruku.\n\n--\nSKLOP\nRadno vreme: Pon–pet 8–17, sub 8–14\n\nOvu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu SKLOP.\n"
+    },
+    "staff_inquiry_new": {
+      "subject": "Novi upit UP-2026-000045 — Golf VII, turbina",
+      "preheader": "Marko Jovanović · odgovor na Viber",
+      "text": "Novi upit UP-2026-000045\n========================\n\nKupac: Marko Jovanović\nTelefon: +381 60 123 4567: tel:+381601234567\nE-pošta: marko@primer.rs\nOdgovor želi: na Viber\nVozilo: Golf VII\nVIN: WVWZZZAUZFW123456\nTraži: turbina\nBrojevi: 04L253016H\nFotografije: 2\n\n[Poruka]\nTreba mi turbina, stara duva ulje. Motor CRLB.\n\nOtvorite upit: http://localhost:3000/admin/upiti/UP-2026-000045\n\n--\nSKLOP\n\nOvu poruku dobijate kao zaposleni u SKLOP. Podešavanja obaveštenja: http://localhost:3000/admin/podesavanja?tab=obavestenja\n"
+    }
+  }
+}

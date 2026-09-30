@@ -1,0 +1,172 @@
+sitemap URLs: 349
+
+Affected sitemap pages (ungrammatical „za <Škoda|Cupra|…-a model>“ anywhere in HTML incl. meta/JSON-LD): 86
+/delovi/amortizeri-opruge
+/delovi/amortizeri-opruge/skoda/octavia
+/delovi/filteri
+/delovi/filteri/skoda
+/delovi/filteri/skoda/octavia
+/delovi/filteri/skoda/superb
+/delovi/kocione-plocice
+/delovi/kocione-plocice/cupra/ateca
+/delovi/kocione-plocice/seat/ateca
+/delovi/kocione-plocice/skoda
+/delovi/kocione-plocice/skoda/karoq
+/delovi/kocione-plocice/skoda/kodiaq
+/delovi/kocione-plocice/skoda/octavia
+/delovi/kocione-plocice/skoda/superb
+/delovi/kocioni-diskovi
+/delovi/kocioni-diskovi/skoda
+/delovi/kocioni-diskovi/skoda/octavia
+/delovi/kocioni-diskovi/skoda/superb
+/delovi/zupcasti-kais-vodena-pumpa
+/delovi/zupcasti-kais-vodena-pumpa/skoda/octavia
+/deo/amortizer-prednji-excel-g-demo-0024
+/deo/amortizer-prednji-gasni-demo-0023
+/deo/amortizer-prednji-gasni-demo-e004
+/deo/amortizer-zadnji-b4-demo-0025
+/deo/branik-prednji-za-prskalice-farova-demo-0115
+/deo/far-desni-halogeni-demo-0106
+/deo/kocione-plocice-prednje-demo-0012
+/deo/kocione-plocice-prednje-demo-0014
+/deo/kocione-plocice-prednje-demo-0015
+/deo/kocione-plocice-prednje-demo-0016
+/deo/kocione-plocice-prednje-sa-senzorom-demo-0009
+/deo/kocione-plocice-prednje-sa-senzorom-demo-e002
+/deo/kocione-plocice-prednje-sistem-teves-demo-0010
+/deo/kocione-plocice-zadnje-demo-0011
+/deo/kocione-plocice-zadnje-demo-e003
+/deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013
+/deo/kocioni-disk-prednji-256-22-mm-demo-0006
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004
+/deo/kocioni-disk-prednji-288-25-mm-ventilirani-demo-0001
+/deo/kocioni-disk-prednji-312-25-mm-demo-0007
+/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-0002
+/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-e001
+/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005
+/deo/kocioni-disk-zadnji-272-10-mm-puni-demo-0003
+/deo/lezaj-amortizera-sa-gumom-set-demo-0027
+/deo/opruga-prednja-demo-0026
+/deo/poklopac-retrovizora-desni-demo-0122
+/deo/set-zupcastog-kaisa-1-4-16v-demo-0061
+/deo/set-zupcastog-kaisa-1-6-8v-demo-0059
+/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-6-tdi-demo-0060
+/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-0057
+/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-e007
+/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-2-0-tdi-demo-0058
+/deo/stop-svetlo-desno-karavan-demo-0108
+/vozila/cupra
+/vozila/cupra/ateca
+/vozila/cupra/ateca/cupra-ateca
+/vozila/cupra/formentor
+/vozila/cupra/formentor/formentor
+/vozila/cupra/leon
+/vozila/cupra/leon/cupra-leon
+/vozila/seat/ateca
+/vozila/seat/ateca/ateca
+/vozila/seat/ibiza
+/vozila/seat/ibiza/ibiza-3
+/vozila/seat/ibiza/ibiza-4
+/vozila/skoda
+/vozila/skoda/fabia
+/vozila/skoda/fabia/fabia-1
+/vozila/skoda/fabia/fabia-2
+/vozila/skoda/fabia/fabia-3
+/vozila/skoda/karoq
+/vozila/skoda/karoq/karoq
+/vozila/skoda/kodiaq
+/vozila/skoda/kodiaq/kodiaq-1
+/vozila/skoda/octavia
+/vozila/skoda/octavia/octavia-1
+/vozila/skoda/octavia/octavia-2
+/vozila/skoda/octavia/octavia-3
+/vozila/skoda/octavia/octavia-4
+/vozila/skoda/rapid
+/vozila/skoda/rapid/rapid
+/vozila/skoda/superb
+/vozila/skoda/superb/superb-1
+/vozila/skoda/superb/superb-2
+/vozila/skoda/superb/superb-3
+
+Phrases (count of pages):
+44	za Škoda Octavia
+24	za Škoda Superb
+14	za Škoda
+4	za SEAT Ateca
+4	za Cupra Ateca
+4	za Škoda Fabia
+3	za Škoda Kodiaq
+3	za Škoda Karoq
+3	za SEAT Ibiza
+2	za Škoda Rapid
+2	za Cupra Formentor
+2	za Cupra Leon
+1	za Cupra
+
+Titles of affected pages with the phrase in <title>:
+/vozila/skoda	Delovi za Škoda — svi modeli | SKLOP
+/vozila/cupra	Delovi za Cupra — svi modeli | SKLOP
+/vozila/skoda/octavia	Delovi za Škoda Octavia — sve generacije | SKLOP
+/vozila/skoda/fabia	Delovi za Škoda Fabia — sve generacije | SKLOP
+/vozila/skoda/superb	Delovi za Škoda Superb — sve generacije | SKLOP
+/vozila/skoda/rapid	Delovi za Škoda Rapid — sve generacije | SKLOP
+/vozila/skoda/kodiaq	Delovi za Škoda Kodiaq — sve generacije | SKLOP
+/vozila/skoda/karoq	Delovi za Škoda Karoq — sve generacije | SKLOP
+/vozila/seat/ibiza	Delovi za SEAT Ibiza — sve generacije | SKLOP
+/vozila/seat/ateca	Delovi za SEAT Ateca — sve generacije | SKLOP
+/vozila/cupra/formentor	Delovi za Cupra Formentor — sve generacije | SKLOP
+/vozila/cupra/leon	Delovi za Cupra Leon — sve generacije | SKLOP
+/vozila/cupra/ateca	Delovi za Cupra Ateca — sve generacije | SKLOP
+/vozila/skoda/octavia/octavia-1	Delovi za Škoda Octavia I (1996–2010) | SKLOP
+/vozila/skoda/octavia/octavia-2	Delovi za Škoda Octavia II (2004–2013) | SKLOP
+/vozila/skoda/octavia/octavia-3	Delovi za Škoda Octavia III (2012–2020) | SKLOP
+/vozila/skoda/octavia/octavia-4	Delovi za Škoda Octavia IV (2019–) | SKLOP
+/vozila/skoda/fabia/fabia-1	Delovi za Škoda Fabia I (1999–2007) | SKLOP
+/vozila/skoda/fabia/fabia-2	Delovi za Škoda Fabia II (2007–2014) | SKLOP
+/vozila/skoda/fabia/fabia-3	Delovi za Škoda Fabia III (2014–2021) | SKLOP
+/vozila/skoda/superb/superb-1	Delovi za Škoda Superb I (2001–2008) | SKLOP
+/vozila/skoda/superb/superb-2	Delovi za Škoda Superb II (2008–2015) | SKLOP
+/vozila/skoda/superb/superb-3	Delovi za Škoda Superb III (2015–2024) | SKLOP
+/vozila/skoda/rapid/rapid	Delovi za Škoda Rapid (2012–2019) | SKLOP
+/vozila/skoda/kodiaq/kodiaq-1	Delovi za Škoda Kodiaq I (2016–2024) | SKLOP
+/vozila/skoda/karoq/karoq	Delovi za Škoda Karoq (2017–) | SKLOP
+/vozila/seat/ibiza/ibiza-3	Delovi za SEAT Ibiza III (2002–2008) | SKLOP
+/vozila/seat/ibiza/ibiza-4	Delovi za SEAT Ibiza IV (2008–2017) | SKLOP
+/vozila/seat/ateca/ateca	Delovi za SEAT Ateca (2016–) | SKLOP
+/vozila/cupra/formentor/formentor	Delovi za Cupra Formentor (2020–) | SKLOP
+/vozila/cupra/leon/cupra-leon	Delovi za Cupra Leon (KL) (2020–) | SKLOP
+/vozila/cupra/ateca/cupra-ateca	Delovi za Cupra Ateca (2018–) | SKLOP
+/delovi/amortizeri-opruge/skoda/octavia	Amortizeri i opruge za Škoda Octavia | SKLOP
+/delovi/zupcasti-kais-vodena-pumpa/skoda/octavia	Set zupčastog kaiša i vodena pumpa za Škoda Octavia | SKLOP
+/delovi/kocioni-diskovi/skoda/octavia	Kočioni diskovi za Škoda Octavia | SKLOP
+/delovi/kocione-plocice/skoda/kodiaq	Kočione pločice za Škoda Kodiaq | SKLOP
+/delovi/kocione-plocice/skoda/karoq	Kočione pločice za Škoda Karoq | SKLOP
+/delovi/kocione-plocice/seat/ateca	Kočione pločice za SEAT Ateca | SKLOP
+/delovi/kocione-plocice/cupra/ateca	Kočione pločice za Cupra Ateca | SKLOP
+/delovi/kocioni-diskovi/skoda/superb	Kočioni diskovi za Škoda Superb | SKLOP
+/delovi/kocione-plocice/skoda/octavia	Kočione pločice za Škoda Octavia | SKLOP
+/delovi/kocioni-diskovi/skoda	Kočioni diskovi za Škoda — cene i stanje | SKLOP
+/delovi/kocione-plocice/skoda/superb	Kočione pločice za Škoda Superb | SKLOP
+/delovi/kocione-plocice/skoda	Kočione pločice za Škoda — cene i stanje | SKLOP
+/delovi/filteri/skoda/superb	Filteri za Škoda Superb | SKLOP
+/delovi/filteri/skoda/octavia	Filteri za Škoda Octavia | SKLOP
+/delovi/filteri/skoda	Filteri za Škoda — cene i stanje | SKLOP
+
+/vozila/skoda @1440 status=200 title=Delovi za Škoda — svi modeli | SKLOP H1="DELOVI ZA ŠKODA"
+
+/delovi/kocioni-diskovi/skoda @1440 status=200 title=Kočioni diskovi za Škoda — cene i stanje | SKLOP H1="KOČIONI DISKOVI ZA ŠKODA"
+
+/vozila/cupra @1440 status=200 title=Delovi za Cupra — svi modeli | SKLOP H1="DELOVI ZA CUPRA"
+
+/vozila/seat/ibiza @1440 status=200 title=Delovi za SEAT Ibiza — sve generacije | SKLOP H1="DELOVI ZA SEAT IBIZA"
+
+/vozila/skoda @390 status=200 title=Delovi za Škoda — svi modeli | SKLOP H1="DELOVI ZA ŠKODA"
+
+/delovi/kocioni-diskovi/skoda @390 status=200 title=Kočioni diskovi za Škoda — cene i stanje | SKLOP H1="KOČIONI DISKOVI ZA ŠKODA"
+
+/vozila/cupra @390 status=200 title=Delovi za Cupra — svi modeli | SKLOP H1="DELOVI ZA CUPRA"
+
+/vozila/seat/ibiza @390 status=200 title=Delovi za SEAT Ibiza — sve generacije | SKLOP H1="DELOVI ZA SEAT IBIZA"
+
+og:image http://localhost:3000/delovi/kocioni-diskovi/skoda/opengraph-image-170i3u?75df9d228d439aaa
+og status 200 bytes 124484

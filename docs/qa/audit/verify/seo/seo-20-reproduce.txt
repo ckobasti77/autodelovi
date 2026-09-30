@@ -1,0 +1,27 @@
+# seo-20 reproduce 2026-09-30T15:00:16Z base=http://localhost:3100 (curl)
+## /sitemap.xml index entries (lastmod present?)
+<loc>http://localhost:3000/sitemaps/staticne.xml</loc>
+<loc>http://localhost:3000/sitemaps/kategorije.xml</loc>
+<lastmod>2026-09-29T14:32:06.619Z</lastmod>
+<loc>http://localhost:3000/sitemaps/vozila.xml</loc>
+<loc>http://localhost:3000/sitemaps/landing.xml</loc>
+<lastmod>2026-09-30T14:25:11.331Z</lastmod>
+<loc>http://localhost:3000/sitemaps/proizvodi-1.xml</loc>
+## child files: url count / lastmod count
+staticne urls=12 lastmod=0
+kategorije urls=58 lastmod=58
+vozila urls=72 lastmod=0
+landing urls=50 lastmod=50
+proizvodi-1 urls=157 lastmod=157
+## max product lastmod in proizvodi-1.xml (would be the index lastmod)
+2026-09-30T04:05:56.431Z
+## staticne.xml URLs that render 'Poslednja izmena' (contentPages.updatedAt) but carry no lastmod
+/o-nama Poslednja izmena: 30.09.2026.
+/kontakt Poslednja izmena: 30.09.2026.
+/dostava-i-placanje Poslednja izmena: 30.09.2026.
+/reklamacije-i-povrat Poslednja izmena: 30.09.2026.
+/uslovi-koriscenja Poslednja izmena: 30.09.2026.
+/politika-privatnosti Poslednja izmena: 30.09.2026.
+/kolacici Poslednja izmena: 30.09.2026.
+## vehicle tables in convex/schema.ts have no updatedAt field (vehicleBrands L153, vehicleModels L165, vehicleGenerations L177) -> no real change date for vozila.xml URLs
+0

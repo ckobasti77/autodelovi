@@ -1,0 +1,988 @@
+{
+ "base": "http://localhost:3200",
+ "cpu": 4,
+ "viewport": "412x823",
+ "runs": [
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "round": 1,
+   "longTasks": [
+    {
+     "start": 120,
+     "ms": 465,
+     "styleMs": 120,
+     "layoutMs": 307,
+     "top": [
+      "Layout 307",
+      "UpdateLayoutTree 120",
+      "Paint 16",
+      "PrePaint 13"
+     ]
+    },
+    {
+     "start": 678,
+     "ms": 130,
+     "styleMs": 26,
+     "layoutMs": 76,
+     "top": [
+      "Layout 76",
+      "UpdateLayoutTree 26",
+      "Paint 25",
+      "PrePaint 1"
+     ]
+    },
+    {
+     "start": 833,
+     "ms": 149,
+     "styleMs": 15,
+     "layoutMs": 74,
+     "top": [
+      "Layout 74",
+      "Paint 30",
+      "Commit 16",
+      "UpdateLayoutTree 15"
+     ]
+    },
+    {
+     "start": 984,
+     "ms": 348,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "EvaluateScript 41cvzcmlkfz4o.js 343",
+      "RunMicrotasks 341",
+      "EventDispatch:load 6",
+      "FunctionCall 0qy3sss5e6eww.js 5"
+     ]
+    },
+    {
+     "start": 1498,
+     "ms": 122,
+     "styleMs": 2,
+     "layoutMs": 1,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 121",
+      "Layout 1",
+      "UpdateLayoutTree 1",
+      "Layout 1"
+     ]
+    },
+    {
+     "start": 1949,
+     "ms": 148,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 144",
+      "RunMicrotasks 0",
+      "FunctionCall 0qy3sss5e6eww.js 0"
+     ]
+    },
+    {
+     "start": 2640,
+     "ms": 182,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 180",
+      "RunMicrotasks 2",
+      "FunctionCall 0qy3sss5e6eww.js 0",
+      "FunctionCall 0qy3sss5e6eww.js 0"
+     ]
+    },
+    {
+     "start": 2832,
+     "ms": 72,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 65",
+      "RunMicrotasks 7",
+      "FunctionCall 0qy3sss5e6eww.js 7",
+      "FunctionCall 0qy3sss5e6eww.js 0"
+     ]
+    },
+    {
+     "start": 2907,
+     "ms": 103,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "RunMicrotasks 97",
+      "FunctionCall 0qimmyhv2_bjj.js 69",
+      "FunctionCall 0qimmyhv2_bjj.js 4"
+     ]
+    },
+    {
+     "start": 3445,
+     "ms": 300,
+     "styleMs": 68,
+     "layoutMs": 74,
+     "top": [
+      "FunctionCall 25dplrt_qw3he.js 298",
+      "UpdateLayoutTree 26",
+      "Layout 19",
+      "Layout 19"
+     ]
+    },
+    {
+     "start": 3746,
+     "ms": 103,
+     "styleMs": 30,
+     "layoutMs": 1,
+     "top": [
+      "FireAnimationFrame 66",
+      "FunctionCall 1tr6a7zmh41cy.js 66",
+      "UpdateLayoutTree 30",
+      "FireAnimationFrame 2"
+     ]
+    },
+    {
+     "start": 3954,
+     "ms": 74,
+     "styleMs": 1,
+     "layoutMs": 0,
+     "top": [
+      "FireAnimationFrame 22",
+      "FunctionCall 1tr6a7zmh41cy.js 22",
+      "Commit 11",
+      "FireAnimationFrame 2"
+     ]
+    },
+    {
+     "start": 4069,
+     "ms": 249,
+     "styleMs": 66,
+     "layoutMs": 0,
+     "top": [
+      "UpdateLayoutTree 66",
+      "Commit 33",
+      "FireAnimationFrame 9",
+      "FunctionCall 1tr6a7zmh41cy.js 9"
+     ]
+    },
+    {
+     "start": 4318,
+     "ms": 60,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": []
+    },
+    {
+     "start": 4379,
+     "ms": 110,
+     "styleMs": 2,
+     "layoutMs": 77,
+     "top": [
+      "Layout 77",
+      "FireAnimationFrame 15",
+      "FunctionCall 1tr6a7zmh41cy.js 15",
+      "Paint 9"
+     ]
+    },
+    {
+     "start": 4666,
+     "ms": 60,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "FireAnimationFrame 3",
+      "FunctionCall 1tr6a7zmh41cy.js 3",
+      "FireAnimationFrame 1",
+      "Commit 1"
+     ]
+    },
+    {
+     "start": 5267,
+     "ms": 91,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "FireAnimationFrame 83",
+      "FunctionCall 1tr6a7zmh41cy.js 53",
+      "Commit 4",
+      "FireAnimationFrame 0"
+     ]
+    }
+   ],
+   "perScript": {
+    "/delovi/kocioni-diskovi": {
+     "evaluate": 2,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2h84ksv1mg5s9.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "turbopack-324-cyruufpbq.js": {
+     "evaluate": 7,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0qimmyhv2_bjj.js": {
+     "evaluate": 1,
+     "functionCall": 137,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "3fntmmi971322.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "25dplrt_qw3he.js": {
+     "evaluate": 0,
+     "functionCall": 353,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "14y-81z8a-w-u.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0rklqt_vfe3_n.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2vm060vmiv-df.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1kcz530oz9u-o.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2f8qbt33jjpy3.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1tr6a7zmh41cy.js": {
+     "evaluate": 0,
+     "functionCall": 293,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2jrozipxybei4.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "29atrq35xgs9f.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "120epkn8j_rkq.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2g3bv_p29okud.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1t0q0ok8maumv.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "11we8zj_qz5aa.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1cggx7i-lhdg7.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0sgvhbpe5nb6s.js": {
+     "evaluate": 0,
+     "functionCall": 1,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "3k__gv_edg8eb.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1adhcvv0smcza.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "38o51x0kbbpcz.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0qy3sss5e6eww.js": {
+     "evaluate": 0,
+     "functionCall": 1292,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "41cvzcmlkfz4o.js": {
+     "evaluate": 343,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1hvkbf0l88mq3.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    }
+   },
+   "rafCount": 333,
+   "rafMs": 397,
+   "loadDispatch": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    6,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "styleTotal": 369,
+   "layoutTotal": 613,
+   "tbtLikeAllTasks": 1916
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "round": 1,
+   "longTasks": [
+    {
+     "start": 4,
+     "ms": 65,
+     "styleMs": 0,
+     "layoutMs": 1,
+     "top": [
+      "Layout 1",
+      "UpdateLayoutTree 0",
+      "EventDispatch:pagehide 0",
+      "EventDispatch:visibilitychange 0"
+     ]
+    },
+    {
+     "start": 138,
+     "ms": 57,
+     "styleMs": 53,
+     "layoutMs": 0,
+     "top": [
+      "UpdateLayoutTree 53",
+      "ParseHTML 3",
+      "EvaluateScript /deo/kocioni-disk-prednji-276-24-mm-demo-0004 2",
+      "v8.compile /deo/kocioni-disk-prednji-276-24-mm-demo-0004 2"
+     ]
+    },
+    {
+     "start": 277,
+     "ms": 834,
+     "styleMs": 36,
+     "layoutMs": 421,
+     "top": [
+      "Paint 244",
+      "Layout 223",
+      "Layout 198",
+      "PrePaint 88"
+     ]
+    },
+    {
+     "start": 1175,
+     "ms": 269,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "EvaluateScript 0qy3sss5e6eww.js 269",
+      "RunMicrotasks 269",
+      "v8.compile 0qy3sss5e6eww.js 0",
+      "EventDispatch:load 0"
+     ]
+    },
+    {
+     "start": 1555,
+     "ms": 113,
+     "styleMs": 1,
+     "layoutMs": 1,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 112",
+      "UpdateLayoutTree 0",
+      "Layout 0",
+      "UpdateLayoutTree 0"
+     ]
+    },
+    {
+     "start": 1793,
+     "ms": 70,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 70",
+      "RunMicrotasks 0",
+      "FunctionCall 0qy3sss5e6eww.js 0"
+     ]
+    },
+    {
+     "start": 1967,
+     "ms": 77,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 76",
+      "RunMicrotasks 1",
+      "FunctionCall 0qy3sss5e6eww.js 0",
+      "FunctionCall 0qy3sss5e6eww.js 0"
+     ]
+    }
+   ],
+   "perScript": {
+    "/deo/kocioni-disk-prednji-276-24-mm-demo-0004": {
+     "evaluate": 5,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "41cvzcmlkfz4o.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2h84ksv1mg5s9.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "11we8zj_qz5aa.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "turbopack-324-cyruufpbq.js": {
+     "evaluate": 34,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "3fntmmi971322.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "25dplrt_qw3he.js": {
+     "evaluate": 1,
+     "functionCall": 49,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2vm060vmiv-df.js": {
+     "evaluate": 12,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "14y-81z8a-w-u.js": {
+     "evaluate": 2,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0rklqt_vfe3_n.js": {
+     "evaluate": 2,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2f8qbt33jjpy3.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0qimmyhv2_bjj.js": {
+     "evaluate": 0,
+     "functionCall": 27,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2jrozipxybei4.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1kcz530oz9u-o.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "120epkn8j_rkq.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2g3bv_p29okud.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "29atrq35xgs9f.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1t0q0ok8maumv.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0qy3sss5e6eww.js": {
+     "evaluate": 269,
+     "functionCall": 558,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1tr6a7zmh41cy.js": {
+     "evaluate": 22,
+     "functionCall": 150,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0sgvhbpe5nb6s.js": {
+     "evaluate": 0,
+     "functionCall": 4,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "3k__gv_edg8eb.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1tkvz3oryrb1b.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1adhcvv0smcza.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0iy1468xjorsv.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1hvkbf0l88mq3.js": {
+     "evaluate": 3,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    }
+   },
+   "rafCount": 456,
+   "rafMs": 227,
+   "loadDispatch": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "styleTotal": 160,
+   "layoutTotal": 428,
+   "tbtLikeAllTasks": 1135
+  },
+  {
+   "path": "/kontakt",
+   "round": 1,
+   "longTasks": [
+    {
+     "start": 24,
+     "ms": 65,
+     "styleMs": 1,
+     "layoutMs": 1,
+     "top": [
+      "Layout 1",
+      "UpdateLayoutTree 1",
+      "EventDispatch:webkitvisibilitychange 0",
+      "EventDispatch:pagehide 0"
+     ]
+    },
+    {
+     "start": 154,
+     "ms": 315,
+     "styleMs": 50,
+     "layoutMs": 171,
+     "top": [
+      "Layout 113",
+      "Paint 83",
+      "Layout 58",
+      "UpdateLayoutTree 33"
+     ]
+    },
+    {
+     "start": 542,
+     "ms": 100,
+     "styleMs": 0,
+     "layoutMs": 61,
+     "top": [
+      "Layout 61",
+      "PrePaint 30",
+      "Paint 7",
+      "Paint 2"
+     ]
+    },
+    {
+     "start": 668,
+     "ms": 291,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "EvaluateScript 0qy3sss5e6eww.js 291",
+      "RunMicrotasks 288",
+      "v8.compile 0qy3sss5e6eww.js 0",
+      "EventDispatch:load 0"
+     ]
+    },
+    {
+     "start": 1107,
+     "ms": 147,
+     "styleMs": 1,
+     "layoutMs": 1,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 147",
+      "Layout 0",
+      "Layout 0",
+      "UpdateLayoutTree 0"
+     ]
+    },
+    {
+     "start": 1412,
+     "ms": 68,
+     "styleMs": 0,
+     "layoutMs": 0,
+     "top": [
+      "FunctionCall 0qy3sss5e6eww.js 67",
+      "RunMicrotasks 1",
+      "FunctionCall 0qy3sss5e6eww.js 0",
+      "FunctionCall 0qy3sss5e6eww.js 0"
+     ]
+    },
+    {
+     "start": 1665,
+     "ms": 57,
+     "styleMs": 8,
+     "layoutMs": 5,
+     "top": [
+      "FunctionCall 25dplrt_qw3he.js 56",
+      "Layout 3",
+      "UpdateLayoutTree 2",
+      "Layout 2"
+     ]
+    }
+   ],
+   "perScript": {
+    "/kontakt": {
+     "evaluate": 5,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "41cvzcmlkfz4o.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2h84ksv1mg5s9.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "turbopack-324-cyruufpbq.js": {
+     "evaluate": 10,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "11we8zj_qz5aa.js": {
+     "evaluate": 2,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "3fntmmi971322.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0qimmyhv2_bjj.js": {
+     "evaluate": 1,
+     "functionCall": 27,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "25dplrt_qw3he.js": {
+     "evaluate": 0,
+     "functionCall": 67,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0rklqt_vfe3_n.js": {
+     "evaluate": 2,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1kcz530oz9u-o.js": {
+     "evaluate": 4,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0qy3sss5e6eww.js": {
+     "evaluate": 291,
+     "functionCall": 465,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2f8qbt33jjpy3.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2jrozipxybei4.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2g3bv_p29okud.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "29atrq35xgs9f.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1tr6a7zmh41cy.js": {
+     "evaluate": 0,
+     "functionCall": 177,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "120epkn8j_rkq.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "3k__gv_edg8eb.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1t0q0ok8maumv.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "14y-81z8a-w-u.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1adhcvv0smcza.js": {
+     "evaluate": 0,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "2vm060vmiv-df.js": {
+     "evaluate": 30,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "0sgvhbpe5nb6s.js": {
+     "evaluate": 1,
+     "functionCall": 3,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "18gt8k3qjy288.js": {
+     "evaluate": 1,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    },
+    "1hvkbf0l88mq3.js": {
+     "evaluate": 3,
+     "functionCall": 0,
+     "forcedStyle": 0,
+     "forcedLayout": 0
+    }
+   },
+   "rafCount": 454,
+   "rafMs": 234,
+   "loadDispatch": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    5,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   "styleTotal": 192,
+   "layoutTotal": 242,
+   "tbtLikeAllTasks": 693
+  }
+ ]
+}

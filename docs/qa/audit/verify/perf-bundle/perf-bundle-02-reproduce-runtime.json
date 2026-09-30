@@ -1,0 +1,759 @@
+[
+  {
+    "engine": "chromium",
+    "width": 390,
+    "route": "/",
+    "jsRequests": 25,
+    "suspectsLoaded": [
+      "14y-81z8a-w-u.js",
+      "25dplrt_qw3he.js",
+      "1tr6a7zmh41cy.js",
+      "1t0q0ok8maumv.js",
+      "2vm060vmiv-df.js",
+      "0rklqt_vfe3_n.js",
+      "0sgvhbpe5nb6s.js",
+      "120epkn8j_rkq.js",
+      "2g3bv_p29okud.js"
+    ],
+    "dom": {
+      "tooltipContent": 0,
+      "consentBannerVisible": false,
+      "toastRegion": 1,
+      "windowGsap": "undefined",
+      "scrollTriggerGlobal": "undefined",
+      "scrollTriggers": null,
+      "registeredPlugins": null
+    },
+    "coverage": {
+      "25dplrt_qw3he.js": {
+        "rawKB": 18,
+        "usedPct": 38.9
+      },
+      "14y-81z8a-w-u.js": {
+        "rawKB": 25.8,
+        "usedPct": 5.7
+      },
+      "2vm060vmiv-df.js": {
+        "rawKB": 27,
+        "usedPct": 34.6
+      },
+      "0rklqt_vfe3_n.js": {
+        "rawKB": 37.1,
+        "usedPct": 51.8
+      },
+      "1tr6a7zmh41cy.js": {
+        "rawKB": 122.8,
+        "usedPct": 30.5
+      },
+      "2g3bv_p29okud.js": {
+        "rawKB": 31.6,
+        "usedPct": 73.9
+      },
+      "1t0q0ok8maumv.js": {
+        "rawKB": 22,
+        "usedPct": 19.3
+      },
+      "120epkn8j_rkq.js": {
+        "rawKB": 29.9,
+        "usedPct": 48.7
+      },
+      "0sgvhbpe5nb6s.js": {
+        "rawKB": 67.5,
+        "usedPct": 64.9
+      }
+    },
+    "errors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 390,
+    "route": "/delovi/kocioni-diskovi",
+    "jsRequests": 25,
+    "suspectsLoaded": [
+      "14y-81z8a-w-u.js",
+      "25dplrt_qw3he.js",
+      "1tr6a7zmh41cy.js",
+      "1t0q0ok8maumv.js",
+      "2vm060vmiv-df.js",
+      "0rklqt_vfe3_n.js",
+      "0sgvhbpe5nb6s.js",
+      "120epkn8j_rkq.js",
+      "2g3bv_p29okud.js"
+    ],
+    "dom": {
+      "tooltipContent": 0,
+      "consentBannerVisible": false,
+      "toastRegion": 1,
+      "windowGsap": "undefined",
+      "scrollTriggerGlobal": "undefined",
+      "scrollTriggers": null,
+      "registeredPlugins": null
+    },
+    "coverage": {
+      "14y-81z8a-w-u.js": {
+        "rawKB": 25.8,
+        "usedPct": 5.7
+      },
+      "2vm060vmiv-df.js": {
+        "rawKB": 27,
+        "usedPct": 38.2
+      },
+      "0rklqt_vfe3_n.js": {
+        "rawKB": 37.1,
+        "usedPct": 51.8
+      },
+      "25dplrt_qw3he.js": {
+        "rawKB": 18,
+        "usedPct": 50.1
+      },
+      "1tr6a7zmh41cy.js": {
+        "rawKB": 122.8,
+        "usedPct": 30
+      },
+      "2g3bv_p29okud.js": {
+        "rawKB": 31.6,
+        "usedPct": 57.7
+      },
+      "120epkn8j_rkq.js": {
+        "rawKB": 29.9,
+        "usedPct": 51.5
+      },
+      "1t0q0ok8maumv.js": {
+        "rawKB": 22,
+        "usedPct": 19.3
+      },
+      "0sgvhbpe5nb6s.js": {
+        "rawKB": 67.5,
+        "usedPct": 65.5
+      }
+    },
+    "errors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 390,
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "jsRequests": 25,
+    "suspectsLoaded": [
+      "14y-81z8a-w-u.js",
+      "25dplrt_qw3he.js",
+      "1tr6a7zmh41cy.js",
+      "1t0q0ok8maumv.js",
+      "2vm060vmiv-df.js",
+      "0rklqt_vfe3_n.js",
+      "0sgvhbpe5nb6s.js",
+      "120epkn8j_rkq.js",
+      "2g3bv_p29okud.js"
+    ],
+    "dom": {
+      "tooltipContent": 0,
+      "consentBannerVisible": false,
+      "toastRegion": 1,
+      "windowGsap": "undefined",
+      "scrollTriggerGlobal": "undefined",
+      "scrollTriggers": null,
+      "registeredPlugins": null
+    },
+    "coverage": {
+      "25dplrt_qw3he.js": {
+        "rawKB": 18,
+        "usedPct": 48.8
+      },
+      "14y-81z8a-w-u.js": {
+        "rawKB": 25.8,
+        "usedPct": 5.7
+      },
+      "2vm060vmiv-df.js": {
+        "rawKB": 27,
+        "usedPct": 34.6
+      },
+      "0rklqt_vfe3_n.js": {
+        "rawKB": 37.1,
+        "usedPct": 51.8
+      },
+      "1tr6a7zmh41cy.js": {
+        "rawKB": 122.8,
+        "usedPct": 31
+      },
+      "2g3bv_p29okud.js": {
+        "rawKB": 31.6,
+        "usedPct": 57.7
+      },
+      "120epkn8j_rkq.js": {
+        "rawKB": 29.9,
+        "usedPct": 48.6
+      },
+      "0sgvhbpe5nb6s.js": {
+        "rawKB": 67.5,
+        "usedPct": 65.5
+      },
+      "1t0q0ok8maumv.js": {
+        "rawKB": 22,
+        "usedPct": 19.3
+      }
+    },
+    "errors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 390,
+    "route": "/ponuda/kocione-plocice-golf",
+    "jsRequests": 25,
+    "suspectsLoaded": [
+      "14y-81z8a-w-u.js",
+      "25dplrt_qw3he.js",
+      "1tr6a7zmh41cy.js",
+      "1t0q0ok8maumv.js",
+      "2vm060vmiv-df.js",
+      "0rklqt_vfe3_n.js"
+    ],
+    "dom": {
+      "tooltipContent": 0,
+      "consentBannerVisible": false,
+      "toastRegion": 1,
+      "windowGsap": "undefined",
+      "scrollTriggerGlobal": "undefined",
+      "scrollTriggers": null,
+      "registeredPlugins": null
+    },
+    "coverage": {
+      "25dplrt_qw3he.js": {
+        "rawKB": 18,
+        "usedPct": 48.9
+      },
+      "2vm060vmiv-df.js": {
+        "rawKB": 27,
+        "usedPct": 29.6
+      },
+      "14y-81z8a-w-u.js": {
+        "rawKB": 25.8,
+        "usedPct": 5.7
+      },
+      "1tr6a7zmh41cy.js": {
+        "rawKB": 122.8,
+        "usedPct": 30
+      },
+      "0rklqt_vfe3_n.js": {
+        "rawKB": 37.1,
+        "usedPct": 51.7
+      },
+      "1t0q0ok8maumv.js": {
+        "rawKB": 22,
+        "usedPct": 15.4
+      }
+    },
+    "errors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 390,
+    "route": "/korpa",
+    "jsRequests": 25,
+    "suspectsLoaded": [
+      "14y-81z8a-w-u.js",
+      "25dplrt_qw3he.js",
+      "1tr6a7zmh41cy.js",
+      "1t0q0ok8maumv.js",
+      "2vm060vmiv-df.js",
+      "0rklqt_vfe3_n.js",
+      "0sgvhbpe5nb6s.js",
+      "120epkn8j_rkq.js",
+      "2g3bv_p29okud.js"
+    ],
+    "dom": {
+      "tooltipContent": 0,
+      "consentBannerVisible": false,
+      "toastRegion": 1,
+      "windowGsap": "undefined",
+      "scrollTriggerGlobal": "undefined",
+      "scrollTriggers": null,
+      "registeredPlugins": null
+    },
+    "coverage": {
+      "14y-81z8a-w-u.js": {
+        "rawKB": 25.8,
+        "usedPct": 5.7
+      },
+      "2vm060vmiv-df.js": {
+        "rawKB": 27,
+        "usedPct": 34.6
+      },
+      "25dplrt_qw3he.js": {
+        "rawKB": 18,
+        "usedPct": 48.6
+      },
+      "0rklqt_vfe3_n.js": {
+        "rawKB": 37.1,
+        "usedPct": 52.3
+      },
+      "2g3bv_p29okud.js": {
+        "rawKB": 31.6,
+        "usedPct": 57.7
+      },
+      "120epkn8j_rkq.js": {
+        "rawKB": 29.9,
+        "usedPct": 47.1
+      },
+      "1tr6a7zmh41cy.js": {
+        "rawKB": 122.8,
+        "usedPct": 30
+      },
+      "1t0q0ok8maumv.js": {
+        "rawKB": 22,
+        "usedPct": 19.3
+      },
+      "0sgvhbpe5nb6s.js": {
+        "rawKB": 67.5,
+        "usedPct": 65.3
+      }
+    },
+    "errors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 1440,
+    "route": "/",
+    "jsRequests": 25,
+    "suspectsLoaded": [
+      "14y-81z8a-w-u.js",
+      "25dplrt_qw3he.js",
+      "1tr6a7zmh41cy.js",
+      "1t0q0ok8maumv.js",
+      "2vm060vmiv-df.js",
+      "0rklqt_vfe3_n.js",
+      "0sgvhbpe5nb6s.js",
+      "120epkn8j_rkq.js",
+      "2g3bv_p29okud.js"
+    ],
+    "dom": {
+      "tooltipContent": 0,
+      "consentBannerVisible": false,
+      "toastRegion": 1,
+      "windowGsap": "undefined",
+      "scrollTriggerGlobal": "undefined",
+      "scrollTriggers": null,
+      "registeredPlugins": null
+    },
+    "coverage": {
+      "25dplrt_qw3he.js": {
+        "rawKB": 18,
+        "usedPct": 38.9
+      },
+      "14y-81z8a-w-u.js": {
+        "rawKB": 25.8,
+        "usedPct": 5.7
+      },
+      "2vm060vmiv-df.js": {
+        "rawKB": 27,
+        "usedPct": 34.6
+      },
+      "0rklqt_vfe3_n.js": {
+        "rawKB": 37.1,
+        "usedPct": 51.8
+      },
+      "1tr6a7zmh41cy.js": {
+        "rawKB": 122.8,
+        "usedPct": 30.4
+      },
+      "2g3bv_p29okud.js": {
+        "rawKB": 31.6,
+        "usedPct": 74
+      },
+      "120epkn8j_rkq.js": {
+        "rawKB": 29.9,
+        "usedPct": 48.7
+      },
+      "1t0q0ok8maumv.js": {
+        "rawKB": 22,
+        "usedPct": 19.3
+      },
+      "0sgvhbpe5nb6s.js": {
+        "rawKB": 67.5,
+        "usedPct": 64.9
+      }
+    },
+    "errors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 1440,
+    "route": "/delovi/kocioni-diskovi",
+    "jsRequests": 25,
+    "suspectsLoaded": [
+      "14y-81z8a-w-u.js",
+      "25dplrt_qw3he.js",
+      "1tr6a7zmh41cy.js",
+      "1t0q0ok8maumv.js",
+      "2vm060vmiv-df.js",
+      "0rklqt_vfe3_n.js",
+      "0sgvhbpe5nb6s.js",
+      "120epkn8j_rkq.js",
+      "2g3bv_p29okud.js"
+    ],
+    "dom": {
+      "tooltipContent": 0,
+      "consentBannerVisible": false,
+      "toastRegion": 1,
+      "windowGsap": "undefined",
+      "scrollTriggerGlobal": "undefined",
+      "scrollTriggers": null,
+      "registeredPlugins": null
+    },
+    "coverage": {
+      "25dplrt_qw3he.js": {
+        "rawKB": 18,
+        "usedPct": 50
+      },
+      "2vm060vmiv-df.js": {
+        "rawKB": 27,
+        "usedPct": 38.2
+      },
+      "14y-81z8a-w-u.js": {
+        "rawKB": 25.8,
+        "usedPct": 5.7
+      },
+      "0rklqt_vfe3_n.js": {
+        "rawKB": 37.1,
+        "usedPct": 51.8
+      },
+      "1tr6a7zmh41cy.js": {
+        "rawKB": 122.8,
+        "usedPct": 30.9
+      },
+      "2g3bv_p29okud.js": {
+        "rawKB": 31.6,
+        "usedPct": 57.7
+      },
+      "120epkn8j_rkq.js": {
+        "rawKB": 29.9,
+        "usedPct": 51.5
+      },
+      "1t0q0ok8maumv.js": {
+        "rawKB": 22,
+        "usedPct": 19.3
+      },
+      "0sgvhbpe5nb6s.js": {
+        "rawKB": 67.5,
+        "usedPct": 65.5
+      }
+    },
+    "errors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 1440,
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "jsRequests": 25,
+    "suspectsLoaded": [
+      "14y-81z8a-w-u.js",
+      "25dplrt_qw3he.js",
+      "1tr6a7zmh41cy.js",
+      "1t0q0ok8maumv.js",
+      "2vm060vmiv-df.js",
+      "0rklqt_vfe3_n.js",
+      "0sgvhbpe5nb6s.js",
+      "120epkn8j_rkq.js",
+      "2g3bv_p29okud.js"
+    ],
+    "dom": {
+      "tooltipContent": 0,
+      "consentBannerVisible": false,
+      "toastRegion": 1,
+      "windowGsap": "undefined",
+      "scrollTriggerGlobal": "undefined",
+      "scrollTriggers": null,
+      "registeredPlugins": null
+    },
+    "coverage": {
+      "25dplrt_qw3he.js": {
+        "rawKB": 18,
+        "usedPct": 48.8
+      },
+      "14y-81z8a-w-u.js": {
+        "rawKB": 25.8,
+        "usedPct": 5.7
+      },
+      "2vm060vmiv-df.js": {
+        "rawKB": 27,
+        "usedPct": 34.6
+      },
+      "0rklqt_vfe3_n.js": {
+        "rawKB": 37.1,
+        "usedPct": 51.8
+      },
+      "1tr6a7zmh41cy.js": {
+        "rawKB": 122.8,
+        "usedPct": 30.7
+      },
+      "2g3bv_p29okud.js": {
+        "rawKB": 31.6,
+        "usedPct": 57.7
+      },
+      "120epkn8j_rkq.js": {
+        "rawKB": 29.9,
+        "usedPct": 48.6
+      },
+      "1t0q0ok8maumv.js": {
+        "rawKB": 22,
+        "usedPct": 19.3
+      },
+      "0sgvhbpe5nb6s.js": {
+        "rawKB": 67.5,
+        "usedPct": 65.5
+      }
+    },
+    "errors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 1440,
+    "route": "/ponuda/kocione-plocice-golf",
+    "jsRequests": 25,
+    "suspectsLoaded": [
+      "14y-81z8a-w-u.js",
+      "25dplrt_qw3he.js",
+      "1tr6a7zmh41cy.js",
+      "1t0q0ok8maumv.js",
+      "2vm060vmiv-df.js",
+      "0rklqt_vfe3_n.js"
+    ],
+    "dom": {
+      "tooltipContent": 0,
+      "consentBannerVisible": false,
+      "toastRegion": 1,
+      "windowGsap": "undefined",
+      "scrollTriggerGlobal": "undefined",
+      "scrollTriggers": null,
+      "registeredPlugins": null
+    },
+    "coverage": {
+      "14y-81z8a-w-u.js": {
+        "rawKB": 25.8,
+        "usedPct": 5.7
+      },
+      "2vm060vmiv-df.js": {
+        "rawKB": 27,
+        "usedPct": 29.6
+      },
+      "25dplrt_qw3he.js": {
+        "rawKB": 18,
+        "usedPct": 48.9
+      },
+      "0rklqt_vfe3_n.js": {
+        "rawKB": 37.1,
+        "usedPct": 51.7
+      },
+      "1tr6a7zmh41cy.js": {
+        "rawKB": 122.8,
+        "usedPct": 30
+      },
+      "1t0q0ok8maumv.js": {
+        "rawKB": 22,
+        "usedPct": 15.4
+      }
+    },
+    "errors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 1440,
+    "route": "/korpa",
+    "jsRequests": 25,
+    "suspectsLoaded": [
+      "14y-81z8a-w-u.js",
+      "25dplrt_qw3he.js",
+      "1tr6a7zmh41cy.js",
+      "1t0q0ok8maumv.js",
+      "2vm060vmiv-df.js",
+      "0rklqt_vfe3_n.js",
+      "0sgvhbpe5nb6s.js",
+      "120epkn8j_rkq.js",
+      "2g3bv_p29okud.js"
+    ],
+    "dom": {
+      "tooltipContent": 0,
+      "consentBannerVisible": false,
+      "toastRegion": 1,
+      "windowGsap": "undefined",
+      "scrollTriggerGlobal": "undefined",
+      "scrollTriggers": null,
+      "registeredPlugins": null
+    },
+    "coverage": {
+      "25dplrt_qw3he.js": {
+        "rawKB": 18,
+        "usedPct": 49.5
+      },
+      "14y-81z8a-w-u.js": {
+        "rawKB": 25.8,
+        "usedPct": 5.7
+      },
+      "2vm060vmiv-df.js": {
+        "rawKB": 27,
+        "usedPct": 34.6
+      },
+      "0rklqt_vfe3_n.js": {
+        "rawKB": 37.1,
+        "usedPct": 52.3
+      },
+      "1tr6a7zmh41cy.js": {
+        "rawKB": 122.8,
+        "usedPct": 30
+      },
+      "120epkn8j_rkq.js": {
+        "rawKB": 29.9,
+        "usedPct": 47.1
+      },
+      "2g3bv_p29okud.js": {
+        "rawKB": 31.6,
+        "usedPct": 57.7
+      },
+      "1t0q0ok8maumv.js": {
+        "rawKB": 22,
+        "usedPct": 19.3
+      },
+      "0sgvhbpe5nb6s.js": {
+        "rawKB": 67.5,
+        "usedPct": 65.2
+      }
+    },
+    "errors": []
+  },
+  {
+    "engine": "webkit",
+    "width": 390,
+    "route": "/",
+    "jsRequests": 25,
+    "suspectsLoaded": [
+      "14y-81z8a-w-u.js",
+      "25dplrt_qw3he.js",
+      "1tr6a7zmh41cy.js",
+      "1t0q0ok8maumv.js",
+      "2vm060vmiv-df.js",
+      "0rklqt_vfe3_n.js",
+      "0sgvhbpe5nb6s.js",
+      "120epkn8j_rkq.js",
+      "2g3bv_p29okud.js"
+    ],
+    "dom": {
+      "tooltipContent": 0,
+      "consentBannerVisible": false,
+      "toastRegion": 1,
+      "windowGsap": "undefined",
+      "scrollTriggerGlobal": "undefined",
+      "scrollTriggers": null,
+      "registeredPlugins": null
+    },
+    "coverage": {},
+    "errors": []
+  },
+  {
+    "engine": "webkit",
+    "width": 390,
+    "route": "/delovi/kocioni-diskovi",
+    "jsRequests": 25,
+    "suspectsLoaded": [
+      "14y-81z8a-w-u.js",
+      "25dplrt_qw3he.js",
+      "1tr6a7zmh41cy.js",
+      "1t0q0ok8maumv.js",
+      "2vm060vmiv-df.js",
+      "0rklqt_vfe3_n.js",
+      "0sgvhbpe5nb6s.js",
+      "120epkn8j_rkq.js",
+      "2g3bv_p29okud.js"
+    ],
+    "dom": {
+      "tooltipContent": 0,
+      "consentBannerVisible": false,
+      "toastRegion": 1,
+      "windowGsap": "undefined",
+      "scrollTriggerGlobal": "undefined",
+      "scrollTriggers": null,
+      "registeredPlugins": null
+    },
+    "coverage": {},
+    "errors": []
+  },
+  {
+    "engine": "webkit",
+    "width": 390,
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "jsRequests": 25,
+    "suspectsLoaded": [
+      "14y-81z8a-w-u.js",
+      "25dplrt_qw3he.js",
+      "1tr6a7zmh41cy.js",
+      "1t0q0ok8maumv.js",
+      "2vm060vmiv-df.js",
+      "0rklqt_vfe3_n.js",
+      "0sgvhbpe5nb6s.js",
+      "120epkn8j_rkq.js",
+      "2g3bv_p29okud.js"
+    ],
+    "dom": {
+      "tooltipContent": 0,
+      "consentBannerVisible": false,
+      "toastRegion": 1,
+      "windowGsap": "undefined",
+      "scrollTriggerGlobal": "undefined",
+      "scrollTriggers": null,
+      "registeredPlugins": null
+    },
+    "coverage": {},
+    "errors": []
+  },
+  {
+    "engine": "webkit",
+    "width": 390,
+    "route": "/ponuda/kocione-plocice-golf",
+    "jsRequests": 25,
+    "suspectsLoaded": [
+      "14y-81z8a-w-u.js",
+      "25dplrt_qw3he.js",
+      "1tr6a7zmh41cy.js",
+      "1t0q0ok8maumv.js",
+      "2vm060vmiv-df.js",
+      "0rklqt_vfe3_n.js"
+    ],
+    "dom": {
+      "tooltipContent": 0,
+      "consentBannerVisible": false,
+      "toastRegion": 1,
+      "windowGsap": "undefined",
+      "scrollTriggerGlobal": "undefined",
+      "scrollTriggers": null,
+      "registeredPlugins": null
+    },
+    "coverage": {},
+    "errors": []
+  },
+  {
+    "engine": "webkit",
+    "width": 390,
+    "route": "/korpa",
+    "jsRequests": 25,
+    "suspectsLoaded": [
+      "14y-81z8a-w-u.js",
+      "25dplrt_qw3he.js",
+      "1tr6a7zmh41cy.js",
+      "1t0q0ok8maumv.js",
+      "2vm060vmiv-df.js",
+      "0rklqt_vfe3_n.js",
+      "0sgvhbpe5nb6s.js",
+      "120epkn8j_rkq.js",
+      "2g3bv_p29okud.js"
+    ],
+    "dom": {
+      "tooltipContent": 0,
+      "consentBannerVisible": false,
+      "toastRegion": 1,
+      "windowGsap": "undefined",
+      "scrollTriggerGlobal": "undefined",
+      "scrollTriggers": null,
+      "registeredPlugins": null
+    },
+    "coverage": {},
+    "errors": []
+  }
+]

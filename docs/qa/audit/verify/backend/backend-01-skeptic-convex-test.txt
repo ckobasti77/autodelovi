@@ -1,0 +1,64 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.2 [39m[90mC:/Users/admin/Desktop/Web Dev Projects/autodelovi[39m
+
+[90mstdout[2m | scripts/qa/audit/verify-backend-01.test.ts[2m > [22m[2mbackend-01: credit limit / terms / tier on quote paths
+[22m[39mBACKEND01_RESULT {
+  "creditBefore": {
+    "availablePara": 500000,
+    "enabled": true,
+    "limitPara": 500000,
+    "openCount": 0,
+    "paymentTermsDays": 30,
+    "usedPara": 0
+  },
+  "control": {
+    "submitDeferred": "INVALID"
+  },
+  "customerAcceptQuote": {
+    "inquiryUserIdSet": true,
+    "result": "ACCEPTED",
+    "orderNumber": "SK-2026-000001",
+    "totalPara": 1000000,
+    "payment": "deferred",
+    "dueInDays": 15,
+    "tierSnapshot": null,
+    "customerType": "mechanic"
+  },
+  "creditAfterCustomerPath": {
+    "availablePara": 0,
+    "enabled": true,
+    "limitPara": 500000,
+    "openCount": 1,
+    "paymentTermsDays": 30,
+    "usedPara": 1000000
+  },
+  "staffConvertToOrder": {
+    "result": "ACCEPTED",
+    "orderNumber": "SK-2026-000002",
+    "totalPara": 1000000,
+    "payment": "deferred",
+    "dueInDays": 15,
+    "tierSnapshot": null
+  },
+  "creditAfterStaffPath": {
+    "availablePara": 0,
+    "enabled": true,
+    "limitPara": 500000,
+    "openCount": 2,
+    "paymentTermsDays": 30,
+    "usedPara": 2000000
+  },
+  "guestAcceptDeferred": "INVALID"
+}
+
+ [32m✓[39m scripts/qa/audit/verify-backend-01.test.ts[2m > [22mbackend-01: credit limit / terms / tier on quote paths[33m 4041[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m   Start at [22m 16:34:18
+[2m   Duration [22m 37.18s[2m (tests 38%, transform 38%, import 20%, environment 3%)[22m
+
+[2m  Transform [22m [33mtransforming modules took 4.04s[39m[2m · 38% of tracked time, re-done on every run[22m
+[2m            [22m [2mpersist transforms across runs with [22m[33mfsModuleCache: true[39m
+[2m            [22m [2mlearn more: https://vitest.dev/guide/improving-performance#caching-between-reruns[22m
+

@@ -1,0 +1,8 @@
+verify perf-bundle-01 - esbuild (write:false, minify, esm, browser, react external), gzip level 9, 2026-09-30
+3 real schemas, as-is (import { z } from "zod")                    451.0 KiB raw   93.9 KiB gz   Nieprawid x14 toJSONSchema x5
+3 real schemas, rewritten (import * as z from "zod")                91.0 KiB raw   27.7 KiB gz   Nieprawid x0 toJSONSchema x3
+3 schemas + RHF + zodResolver, as-is                               485.0 KiB raw  106.0 KiB gz   Nieprawid x14 toJSONSchema x5
+3 schemas + RHF + zodResolver, namespace import                    124.8 KiB raw   39.7 KiB gz   Nieprawid x0 toJSONSchema x3
+RHF + zodResolver only (zod/v4/core pulled by resolver)             33.5 KiB raw   12.2 KiB gz   Nieprawid x0 toJSONSchema x0
+3 schemas, zod external (own code only)                              8.6 KiB raw    3.6 KiB gz   Nieprawid x0 toJSONSchema x0
+production chunk 1uyyf-z7kpx1w.js                                 420.0 KiB raw (430078 B) 101.0 KiB gz (103394 B)

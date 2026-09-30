@@ -1,0 +1,124 @@
+
+== home @390: 43 responses; scripts load 24, after-load 1
+   after-load fetch 307 /nalog?_rsc=5CB68i4pnAekjehf
+   after-load fetch 200 /korpa?_rsc=5CB68i4pnAekjehf
+   after-load fetch 200 /upit?_rsc=5CB68i4pnAekjehf
+   after-load fetch 200 /?_rsc=tXyZJ52UQVBCVsD3
+   after-load fetch 307 /prijava?next=%2Fnalog
+   after-load script 200 /_next/static/chunks/1hvkbf0l88mq3.js
+   after-load fetch 200 /prijava?next=%2Fnalog&_rsc=5CB68i4pnAekjehf
+   after-load fetch 200 /korpa?_rsc=tXyZJ52UQVBCVsD3
+   after-load fetch 200 /upit?_rsc=tXyZJ52UQVBCVsD3
+   after-load fetch 200 /prijava?next=%2Fnalog&_rsc=tXyZJ52UQVBCVsD3
+   images fetched: 1, 10.8 KB transfer
+   fonts loaded: display 700 normal | displaySemibold 600 normal | displaySemibold Fallback normal normal | condensed 600 normal | Public Sans 100 900 normal | Public Sans 100 900 normal | Martian Mono 100 800 normal | Martian Mono Fallback normal normal
+   fonts used: Public Sans 600 normal | display 700 normal | Public Sans 500 normal | Public Sans 400 normal | Martian Mono 400 normal | displaySemibold 600 normal | condensed 600 normal | Public Sans 650 normal
+   render-blocking: /_next/static/chunks/1ims1_lcdan5r.css
+   JS coverage (chunks executed so far): 1021.8 KB raw, unused 566.6 KB (55 %)
+   CSS @layer properties{@supports (((-webkit-h… 96.5 KB, used rules 100 %
+   CSS @media screen and (prefers-reduced-motio… 3.1 KB, used rules 100 %
+
+== home @1440: 69 responses; scripts load 24, after-load 12
+   after-load fetch 200 /delovi?_rsc=5CB68i4pnAekjehf
+   after-load fetch 200 /vozila?_rsc=5CB68i4pnAekjehf
+   after-load fetch 200 /za-majstore?_rsc=5CB68i4pnAekjehf
+   after-load fetch 200 /upit?_rsc=5CB68i4pnAekjehf
+   after-load script 200 /_next/static/chunks/1hvkbf0l88mq3.js
+   after-load fetch 307 /nalog?_rsc=5CB68i4pnAekjehf
+   after-load fetch 200 /korpa?_rsc=5CB68i4pnAekjehf
+   after-load fetch 200 /?_rsc=tXyZJ52UQVBCVsD3
+   after-load fetch 200 /delovi?_rsc=tXyZJ52UQVBCVsD3
+   after-load fetch 307 /prijava?next=%2Fnalog
+   after-load fetch 200 /prijava?next=%2Fnalog&_rsc=5CB68i4pnAekjehf
+   after-load fetch 200 /vozila?_rsc=tXyZJ52UQVBCVsD3
+   after-load fetch 200 /za-majstore?_rsc=tXyZJ52UQVBCVsD3
+   after-load fetch 200 /upit?_rsc=tXyZJ52UQVBCVsD3
+   after-load fetch 200 /prijava?next=%2Fnalog&_rsc=tXyZJ52UQVBCVsD3
+   after-load fetch 200 /korpa?_rsc=tXyZJ52UQVBCVsD3
+   after-load fetch 200 /models/car.glb
+   after-load script 200 /_next/static/chunks/0yenm6rgh0wzh.js
+   after-load script 200 /_next/static/chunks/103_o3v2fee5x.js
+   after-load script 200 /_next/static/chunks/277kqryst5vz8.js
+   after-load script 200 /_next/static/chunks/0i-5efvfrwjiv.js
+   after-load script 200 /_next/static/chunks/3loc6izf4ows2.js
+   after-load image 200 /models/car-shadow.webp
+   after-load image 200 /models/car-shadow-exploded.webp
+   after-load fetch 200 /models/env/studio-512.hdr
+   after-load script 200 blob:/1063be6a-85e6-4f2f-955f-9e54d2a3b9c2
+   after-load script 200 blob:/1063be6a-85e6-4f2f-955f-9e54d2a3b9c2
+   after-load script 200 blob:/1063be6a-85e6-4f2f-955f-9e54d2a3b9c2
+   after-load script 200 blob:/1063be6a-85e6-4f2f-955f-9e54d2a3b9c2
+   after-load fetch 200 blob:/5e339a9b-74d0-45aa-be51-584ecf0c06a9
+   after-load fetch 200 blob:/315f93a3-25f6-47b8-bd8e-398885ad7e96
+   after-load fetch 200 blob:/f3dfdfc7-0a2c-43db-a9b5-1d93853b56ef
+   after-load fetch 200 blob:/40aa0fe3-f783-48c6-a655-4127f129c416
+   after-load fetch 200 blob:/c4559279-2d85-49ec-9d85-56aa287b1660
+   after-load script 200 /_next/static/chunks/0nvty3axw6gpe.js
+   after-load script 200 /_next/static/chunks/0e7n8ktdpx6ij.js
+   images fetched: 3, 50.6 KB transfer
+   fonts loaded: display 700 normal | displaySemibold 600 normal | displaySemibold Fallback normal normal | condensed 600 normal | Public Sans 100 900 normal | Public Sans 100 900 normal | Public Sans Fallback normal normal | Martian Mono 100 800 normal | Martian Mono Fallback normal normal
+   fonts used: Public Sans 600 normal | display 700 normal | Public Sans 500 normal | Public Sans 400 normal | Martian Mono 400 normal | displaySemibold 600 normal | condensed 600 normal | Public Sans 650 normal
+   render-blocking: /_next/static/chunks/1ims1_lcdan5r.css
+   JS coverage (chunks executed so far): 2231.2 KB raw, unused 1110.9 KB (50 %)
+   CSS @media screen and (prefers-reduced-motio… 3.1 KB, used rules 100 %
+   CSS @layer properties{@supports (((-webkit-h… 96.5 KB, used rules 100 %
+
+== category @390: 49 responses; scripts load 24, after-load 1
+   after-load fetch 307 /nalog?_rsc=Nm3pf7pJccbMmUUB
+   after-load fetch 200 /?_rsc=Nm3pf7pJccbMmUUB
+   after-load fetch 200 /korpa?_rsc=Nm3pf7pJccbMmUUB
+   after-load fetch 307 /prijava?next=%2Fnalog
+   after-load fetch 200 /deo/kocioni-disk-prednji-312-25-mm-demo-0007?_rsc=Nm3pf7pJccbMmUUB
+   after-load fetch 200 /prijava?next=%2Fnalog&_rsc=Nm3pf7pJccbMmUUB
+   after-load fetch 200 /deo/kocioni-disk-zadnji-272-10-mm-puni-demo-0003?_rsc=Nm3pf7pJccbMmUUB
+   after-load fetch 200 /deo/kocioni-disk-prednji-256-22-mm-demo-0006?_rsc=Nm3pf7pJccbMmUUB
+   after-load script 200 /_next/static/chunks/1hvkbf0l88mq3.js
+   after-load fetch 200 /?_rsc=4fiaeTm4Nl2jnDGb
+   after-load fetch 200 /prijava?next=%2Fnalog&_rsc=4fiaeTm4Nl2jnDGb
+   after-load fetch 200 /korpa?_rsc=4fiaeTm4Nl2jnDGb
+   after-load fetch 200 /delovi/kocnice?_rsc=4fiaeTm4Nl2jnDGb
+   after-load fetch 200 /deo/kocioni-disk-prednji-312-25-mm-demo-0007?_rsc=4fiaeTm4Nl2jnDGb
+   after-load fetch 200 /deo/kocioni-disk-zadnji-272-10-mm-puni-demo-0003?_rsc=4fiaeTm4Nl2jnDGb
+   after-load fetch 200 /deo/kocioni-disk-prednji-256-22-mm-demo-0006?_rsc=4fiaeTm4Nl2jnDGb
+   images fetched: 1, 3.3 KB transfer
+   fonts loaded: display 700 normal | displaySemibold 600 normal | displaySemibold Fallback normal normal | condensed 600 normal | Public Sans 100 900 normal | Public Sans 100 900 normal | Public Sans Fallback normal normal | Martian Mono 100 800 normal | Martian Mono Fallback normal normal
+   fonts used: Public Sans 600 normal | display 700 normal | Public Sans 500 normal | Public Sans 400 normal | Martian Mono 400 normal | displaySemibold 600 normal | condensed 600 normal
+   render-blocking: /_next/static/chunks/1ims1_lcdan5r.css
+
+== product @390: 46 responses; scripts load 24, after-load 1
+   after-load fetch 307 /nalog?_rsc=pN8bX5vSYyFj_sQa
+   after-load fetch 200 /?_rsc=pN8bX5vSYyFj_sQa
+   after-load fetch 200 /korpa?_rsc=pN8bX5vSYyFj_sQa
+   after-load fetch 200 /delovi/kocioni-diskovi?_rsc=pN8bX5vSYyFj_sQa
+   after-load fetch 307 /prijava?next=%2Fnalog
+   after-load fetch 200 /prijava?next=%2Fnalog&_rsc=pN8bX5vSYyFj_sQa
+   after-load script 200 /_next/static/chunks/1hvkbf0l88mq3.js
+   after-load fetch 200 /upit?proizvod=kocioni-disk-prednji-276-24-mm-demo-0004&_rsc=pN8bX5vSYyFj_sQa
+   after-load fetch 200 /?_rsc=-xlHsezuCG0QR-fE
+   after-load fetch 200 /korpa?_rsc=-xlHsezuCG0QR-fE
+   after-load fetch 200 /prijava?next=%2Fnalog&_rsc=-xlHsezuCG0QR-fE
+   after-load fetch 200 /delovi/kocioni-diskovi?_rsc=-xlHsezuCG0QR-fE
+   after-load fetch 200 /upit?proizvod=kocioni-disk-prednji-276-24-mm-demo-0004&_rsc=-xlHsezuCG0QR-fE
+   after-load fetch 200 /upit?_rsc=pN8bX5vSYyFj_sQa
+   images fetched: 1, 7.2 KB transfer
+   fonts loaded: display 700 normal | condensed 600 normal | Public Sans 100 900 normal | Public Sans 100 900 normal | Martian Mono 100 800 normal | Martian Mono Fallback normal normal
+   fonts used: Public Sans 600 normal | display 700 normal | Public Sans 500 normal | Public Sans 400 normal | Martian Mono 400 normal | Public Sans 650 normal | Martian Mono 500 normal | condensed 600 normal
+   render-blocking: /_next/static/chunks/1ims1_lcdan5r.css
+
+== landing @390: 45 responses; scripts load 24, after-load 1
+   after-load fetch 200 /?_rsc=L3rQiisJVkoYMz2F
+   after-load fetch 200 /korpa?_rsc=L3rQiisJVkoYMz2F
+   after-load fetch 200 /upit?deo=kocione-plocice&_rsc=L3rQiisJVkoYMz2F
+   after-load fetch 200 /delovi/kocione-plocice/volkswagen/golf?_rsc=L3rQiisJVkoYMz2F
+   after-load fetch 200 /deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013?_rsc=L3rQiisJVkoYMz2F
+   after-load fetch 200 /?_rsc=PRq8y3EoRzkcdmKI
+   after-load fetch 200 /korpa?_rsc=PRq8y3EoRzkcdmKI
+   after-load fetch 200 /upit?deo=kocione-plocice&_rsc=PRq8y3EoRzkcdmKI
+   after-load script 200 /_next/static/chunks/2lujup_6ek0ah.js
+   after-load fetch 200 /delovi/kocione-plocice/volkswagen/golf?_rsc=PRq8y3EoRzkcdmKI
+   after-load fetch 200 /deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013?_rsc=PRq8y3EoRzkcdmKI
+   after-load fetch 200 /upit?_rsc=L3rQiisJVkoYMz2F
+   images fetched: 1, 2.4 KB transfer
+   fonts loaded: display 700 normal | displaySemibold 600 normal | displaySemibold Fallback normal normal | condensed 600 normal | Public Sans 100 900 normal | Public Sans 100 900 normal | Public Sans Fallback normal normal | Martian Mono 100 800 normal | Martian Mono Fallback normal normal
+   fonts used: Public Sans 600 normal | display 700 normal | Public Sans 400 normal | displaySemibold 600 normal | Public Sans 650 normal | Public Sans 500 normal | Martian Mono 400 normal | condensed 600 normal
+   render-blocking: /_next/static/chunks/1ims1_lcdan5r.css

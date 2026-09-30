@@ -1,0 +1,63 @@
+# backend-06: stock reason order_edited declared but never written
+convex/lib/validators.ts:226:  v.literal("order_edited"),
+lib/i18n/sr/admin.ts:106:  order_edited: "Izmena porudžbine",
+
+# backend-06: editItems has no stock call
+0
+
+# backend-09: readers of domainEvents status index (no staff query)
+convex/automations.ts:180:      .query("domainEvents")
+convex/automations.ts:401:    .query("domainEvents")
+convex/automations.ts:402:    .withIndex("by_status_and_nextAttemptAt", (q) =>
+convex/automations.ts:520:    .query("domainEvents")
+convex/demo.ts:53:    .query("domainEvents")
+convex/events.ts:591:        .query("domainEvents")
+convex/events.ts:592:        .withIndex("by_status_and_nextAttemptAt", (q) =>
+convex/lib/events.ts:26:    .query("domainEvents")
+convex/schema.ts:843:    .index("by_status_and_nextAttemptAt", ["status", "nextAttemptAt"])
+
+# backend-10: dashboard / digest counts by scanning product docs
+convex/dashboard.ts:82:      .take(500);
+convex/dashboard.ts:89:        .take(500);
+convex/dashboard.ts:100:      .take(500);
+convex/dashboard.ts:106:      .take(1_000);
+convex/dashboard.ts:112:      .take(1_000);
+convex/lib/emailData.ts:385:    .take(1000);
+convex/lib/emailData.ts:391:    .take(1000);
+convex/lib/emailData.ts:395:    .take(1000);
+
+# backend-11: PIB uniqueness ignores rejected profiles
+    const mb = normalizeMb(args.mb);
+    if (!isValidMb(mb)) invalid("Matični broj nije ispravan (8 cifara).", "mb");
+    const pibTaken = await ctx.db
+      .query("mechanicProfiles")
+      .withIndex("by_pib", (q) => q.eq("pib", pib))
+      .first();
+    if (pibTaken)
+      fail("DUPLICATE", "Ovaj PIB je već registrovan — prijavite se ili nas pozovite.", {
+        field: "pib",
+      });
+
+# backend-12: password rule (no e-mail comparison)
+/** ≥ 10 characters with at least one letter and one digit. */
+export function validatePassword(password: string): void {
+  if (password.length < PASSWORD_MIN_LENGTH) {
+    throw new ConvexError({
+      code: "WEAK_PASSWORD",
+      message: "Lozinka mora imati najmanje 10 znakova.",
+    });
+  }
+  if (!/\p{L}/u.test(password) || !/\d/.test(password)) {
+    throw new ConvexError({
+      code: "WEAK_PASSWORD",
+      message: "Lozinka mora sadržati bar jedno slovo i jednu cifru.",
+    });
+  }
+11:- `profile(params)` lowercases/validates the e-mail and sets `name`; `validatePasswordRequirements`: ≥ 10 characters, at least one letter and one digit, not equal to the e-mail.
+
+# backend-07: sign-up global limit + public signIn action
+convex/auth.ts:90:      await enforceRateLimit(ctx, "signUpGlobal", "global");
+convex/lib/rateLimits.ts:25:  signUpGlobal: { kind: "token bucket", rate: 60, period: HOUR, capacity: 30 },
+convex/lib/rateLimits.ts:48:  | "signUpGlobal"
+2:public without returns: auth.js:isAuthenticated, auth.js:signIn, auth.js:signOut
+4:public actions: auth.js:signIn, auth.js:signOut

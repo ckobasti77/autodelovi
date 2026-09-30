@@ -1,0 +1,5564 @@
+{
+  "home@390": {
+    "route": "/",
+    "width": 390,
+    "requests": [
+      {
+        "phase": "load",
+        "t": "document",
+        "url": "/",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 16260
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 26636
+      },
+      {
+        "phase": "load",
+        "t": "stylesheet",
+        "url": "/_next/static/chunks/1ims1_lcdan5r.css",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 16384
+      },
+      {
+        "phase": "load",
+        "t": "image",
+        "url": "/images/hero/car-assembled-m-640.avif",
+        "status": 200,
+        "cc": "public, max-age=0",
+        "enc": "",
+        "len": 10709
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 18372
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2h84ksv1mg5s9.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0qimmyhv2_bjj.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 15444
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/11we8zj_qz5aa.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/3fntmmi971322.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/25dplrt_qw3he.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/14y-81z8a-w-u.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2vm060vmiv-df.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0rklqt_vfe3_n.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0qy3sss5e6eww.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2f8qbt33jjpy3.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1kcz530oz9u-o.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 550
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2jrozipxybei4.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1tr6a7zmh41cy.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2g3bv_p29okud.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/29atrq35xgs9f.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/120epkn8j_rkq.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1c6x4sv25ngo-.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 583
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 23544
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1adhcvv0smcza.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/nalog?_rsc=5CB68i4pnAekjehf",
+        "status": 307,
+        "cc": "",
+        "enc": "",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/korpa?_rsc=5CB68i4pnAekjehf",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/upit?_rsc=5CB68i4pnAekjehf",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/?_rsc=tXyZJ52UQVBCVsD3",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/prijava?next=%2Fnalog",
+        "status": 307,
+        "cc": "",
+        "enc": "",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "script",
+        "url": "/_next/static/chunks/1hvkbf0l88mq3.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/prijava?next=%2Fnalog&_rsc=5CB68i4pnAekjehf",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/korpa?_rsc=tXyZJ52UQVBCVsD3",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/upit?_rsc=tXyZJ52UQVBCVsD3",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/prijava?next=%2Fnalog&_rsc=tXyZJ52UQVBCVsD3",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      }
+    ],
+    "inventory": {
+      "fontsLoaded": [
+        "display 700 normal",
+        "displaySemibold 600 normal",
+        "displaySemibold Fallback normal normal",
+        "condensed 600 normal",
+        "Public Sans 100 900 normal",
+        "Public Sans 100 900 normal",
+        "Martian Mono 100 800 normal",
+        "Martian Mono Fallback normal normal"
+      ],
+      "fontsUsed": [
+        "Public Sans 600 normal",
+        "display 700 normal",
+        "Public Sans 500 normal",
+        "Public Sans 400 normal",
+        "Martian Mono 400 normal",
+        "displaySemibold 600 normal",
+        "condensed 600 normal",
+        "Public Sans 650 normal"
+      ],
+      "imgs": [
+        {
+          "src": "/images/hero/car-assembled-m-640.avif",
+          "natural": "390x487",
+          "rendered": "390x672",
+          "dpr": 1,
+          "inViewport": true,
+          "top": 663,
+          "loading": "eager",
+          "fetchpriority": null,
+          "hasWH": true,
+          "sizes": null,
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "0x0",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 0,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "171x137",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 4379,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "171x137",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 4599,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "171x137",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 4599,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "171x137",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 4840,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "171x137",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 4840,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "171x137",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 5103,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Ffilteri.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "171x137",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 5103,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fakumulator.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "171x137",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 5344,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Ffarovi.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "171x137",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 5344,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "171x137",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 5564,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "171x137",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 5564,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        }
+      ],
+      "nav": {
+        "transfer": 34443,
+        "decoded": 249502,
+        "dcl": 214,
+        "load": 310
+      },
+      "res": [
+        {
+          "name": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+          "type": "link",
+          "start": 103,
+          "transfer": 16560,
+          "encoded": 16260,
+          "decoded": 16260,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+          "type": "link",
+          "start": 103,
+          "transfer": 26936,
+          "encoded": 26636,
+          "decoded": 26636,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+          "type": "link",
+          "start": 103,
+          "transfer": 16684,
+          "encoded": 16384,
+          "decoded": 16384,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+          "type": "link",
+          "start": 103,
+          "transfer": 18672,
+          "encoded": 18372,
+          "decoded": 18372,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1ims1_lcdan5r.css",
+          "type": "link",
+          "start": 114,
+          "transfer": 19248,
+          "encoded": 18948,
+          "decoded": 98804,
+          "renderBlocking": "blocking"
+        },
+        {
+          "name": "/_next/static/chunks/41cvzcmlkfz4o.js",
+          "type": "link",
+          "start": 114,
+          "transfer": 2311,
+          "encoded": 2011,
+          "decoded": 7637,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2h84ksv1mg5s9.js",
+          "type": "script",
+          "start": 114,
+          "transfer": 8377,
+          "encoded": 8077,
+          "decoded": 30588,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0qimmyhv2_bjj.js",
+          "type": "script",
+          "start": 114,
+          "transfer": 35075,
+          "encoded": 34775,
+          "decoded": 129338,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/11we8zj_qz5aa.js",
+          "type": "script",
+          "start": 114,
+          "transfer": 8935,
+          "encoded": 8635,
+          "decoded": 27411,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0qy3sss5e6eww.js",
+          "type": "script",
+          "start": 114,
+          "transfer": 73578,
+          "encoded": 73278,
+          "decoded": 234172,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 4619,
+          "encoded": 4319,
+          "decoded": 10979,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/3fntmmi971322.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 3961,
+          "encoded": 3661,
+          "decoded": 14377,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/25dplrt_qw3he.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 7311,
+          "encoded": 7011,
+          "decoded": 18451,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/14y-81z8a-w-u.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 10708,
+          "encoded": 10408,
+          "decoded": 26404,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2vm060vmiv-df.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 9578,
+          "encoded": 9278,
+          "decoded": 27602,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0rklqt_vfe3_n.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 12901,
+          "encoded": 12601,
+          "decoded": 37952,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2f8qbt33jjpy3.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 3053,
+          "encoded": 2753,
+          "decoded": 6686,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2jrozipxybei4.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 22941,
+          "encoded": 22641,
+          "decoded": 82591,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1tr6a7zmh41cy.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 49888,
+          "encoded": 49588,
+          "decoded": 125720,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1kcz530oz9u-o.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 850,
+          "encoded": 550,
+          "decoded": 550,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2g3bv_p29okud.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 10651,
+          "encoded": 10351,
+          "decoded": 32381,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/120epkn8j_rkq.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 11195,
+          "encoded": 10895,
+          "decoded": 30585,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/29atrq35xgs9f.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 2021,
+          "encoded": 1721,
+          "decoded": 5026,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1c6x4sv25ngo-.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 883,
+          "encoded": 583,
+          "decoded": 583,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1t0q0ok8maumv.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 8308,
+          "encoded": 8008,
+          "decoded": 22528,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 23196,
+          "encoded": 22896,
+          "decoded": 69125,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/images/hero/car-assembled-m-640.avif",
+          "type": "img",
+          "start": 115,
+          "transfer": 11009,
+          "encoded": 10709,
+          "decoded": 10709,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/3k__gv_edg8eb.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 3451,
+          "encoded": 3151,
+          "decoded": 7477,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1adhcvv0smcza.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 9129,
+          "encoded": 8829,
+          "decoded": 23258,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+          "type": "script",
+          "start": 115,
+          "transfer": 21775,
+          "encoded": 21475,
+          "decoded": 66220,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2",
+          "type": "css",
+          "start": 168,
+          "transfer": 15744,
+          "encoded": 15444,
+          "decoded": 15444,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2",
+          "type": "css",
+          "start": 168,
+          "transfer": 23844,
+          "encoded": 23544,
+          "decoded": 23544,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/nalog?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "start": 450,
+          "transfer": 489,
+          "encoded": 189,
+          "decoded": 336,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/korpa?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "start": 450,
+          "transfer": 475,
+          "encoded": 175,
+          "decoded": 320,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/upit?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "start": 451,
+          "transfer": 474,
+          "encoded": 174,
+          "decoded": 319,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/?_rsc=tXyZJ52UQVBCVsD3",
+          "type": "fetch",
+          "start": 451,
+          "transfer": 1645,
+          "encoded": 1345,
+          "decoded": 3742,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1hvkbf0l88mq3.js",
+          "type": "script",
+          "start": 466,
+          "transfer": 3406,
+          "encoded": 3106,
+          "decoded": 9064,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/korpa?_rsc=tXyZJ52UQVBCVsD3",
+          "type": "fetch",
+          "start": 494,
+          "transfer": 1633,
+          "encoded": 1333,
+          "decoded": 3639,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/upit?_rsc=tXyZJ52UQVBCVsD3",
+          "type": "fetch",
+          "start": 495,
+          "transfer": 1694,
+          "encoded": 1394,
+          "decoded": 3781,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/prijava?next=%2Fnalog&_rsc=tXyZJ52UQVBCVsD3",
+          "type": "fetch",
+          "start": 504,
+          "transfer": 1660,
+          "encoded": 1360,
+          "decoded": 3683,
+          "renderBlocking": "non-blocking"
+        }
+      ]
+    },
+    "coverage": {
+      "jsRows": [
+        {
+          "url": "/_next/static/chunks/41cvzcmlkfz4o.js",
+          "total": 7637,
+          "used": 4707,
+          "unusedPct": 38
+        },
+        {
+          "url": "/_next/static/chunks/2h84ksv1mg5s9.js",
+          "total": 30588,
+          "used": 14254,
+          "unusedPct": 53
+        },
+        {
+          "url": "/_next/static/chunks/0qimmyhv2_bjj.js",
+          "total": 129338,
+          "used": 62342,
+          "unusedPct": 52
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+          "total": 10979,
+          "used": 6355,
+          "unusedPct": 42
+        },
+        {
+          "url": "/_next/static/chunks/11we8zj_qz5aa.js",
+          "total": 27411,
+          "used": 13740,
+          "unusedPct": 50
+        },
+        {
+          "url": "/_next/static/chunks/3fntmmi971322.js",
+          "total": 14375,
+          "used": 6168,
+          "unusedPct": 57
+        },
+        {
+          "url": "/_next/static/chunks/25dplrt_qw3he.js",
+          "total": 18451,
+          "used": 7194,
+          "unusedPct": 61
+        },
+        {
+          "url": "/_next/static/chunks/14y-81z8a-w-u.js",
+          "total": 26404,
+          "used": 1508,
+          "unusedPct": 94
+        },
+        {
+          "url": "/_next/static/chunks/2vm060vmiv-df.js",
+          "total": 27602,
+          "used": 9810,
+          "unusedPct": 64
+        },
+        {
+          "url": "/_next/static/chunks/0rklqt_vfe3_n.js",
+          "total": 37949,
+          "used": 19730,
+          "unusedPct": 48
+        },
+        {
+          "url": "/_next/static/chunks/0qy3sss5e6eww.js",
+          "total": 234170,
+          "used": 122139,
+          "unusedPct": 48
+        },
+        {
+          "url": "/_next/static/chunks/2f8qbt33jjpy3.js",
+          "total": 6672,
+          "used": 3122,
+          "unusedPct": 53
+        },
+        {
+          "url": "/_next/static/chunks/1kcz530oz9u-o.js",
+          "total": 550,
+          "used": 201,
+          "unusedPct": 63
+        },
+        {
+          "url": "/_next/static/chunks/2jrozipxybei4.js",
+          "total": 82591,
+          "used": 10288,
+          "unusedPct": 88
+        },
+        {
+          "url": "/_next/static/chunks/1tr6a7zmh41cy.js",
+          "total": 125720,
+          "used": 42474,
+          "unusedPct": 66
+        },
+        {
+          "url": "/_next/static/chunks/2g3bv_p29okud.js",
+          "total": 32340,
+          "used": 23906,
+          "unusedPct": 26
+        },
+        {
+          "url": "/_next/static/chunks/29atrq35xgs9f.js",
+          "total": 5026,
+          "used": 1904,
+          "unusedPct": 62
+        },
+        {
+          "url": "/_next/static/chunks/120epkn8j_rkq.js",
+          "total": 30581,
+          "used": 14913,
+          "unusedPct": 51
+        },
+        {
+          "url": "/_next/static/chunks/1c6x4sv25ngo-.js",
+          "total": 583,
+          "used": 107,
+          "unusedPct": 82
+        },
+        {
+          "url": "/_next/static/chunks/1t0q0ok8maumv.js",
+          "total": 22528,
+          "used": 4343,
+          "unusedPct": 81
+        },
+        {
+          "url": "/_next/static/chunks/3k__gv_edg8eb.js",
+          "total": 7455,
+          "used": 2384,
+          "unusedPct": 68
+        },
+        {
+          "url": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+          "total": 69094,
+          "used": 45210,
+          "unusedPct": 35
+        },
+        {
+          "url": "/_next/static/chunks/1adhcvv0smcza.js",
+          "total": 23235,
+          "used": 276,
+          "unusedPct": 99
+        },
+        {
+          "url": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+          "total": 65999,
+          "used": 47004,
+          "unusedPct": 29
+        },
+        {
+          "url": "/_next/static/chunks/1hvkbf0l88mq3.js",
+          "total": 9055,
+          "used": 2023,
+          "unusedPct": 78
+        }
+      ],
+      "cssRows": [
+        {
+          "id": "style-sheet-28192-7",
+          "bytes": 98804,
+          "rulesBytes": 12767600,
+          "usedBytes": 12767600,
+          "usedPct": 100,
+          "gz": 18948,
+          "head": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+        },
+        {
+          "id": "style-sheet-28192-1",
+          "bytes": 3215,
+          "rulesBytes": 1695,
+          "usedBytes": 1695,
+          "usedPct": 100,
+          "gz": 632,
+          "head": "@media screen and (prefers-reduced-motion: no-preference){html.tr-js:not(.tr-fai"
+        }
+      ]
+    },
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "home@1440": {
+    "route": "/",
+    "width": 1440,
+    "requests": [
+      {
+        "phase": "load",
+        "t": "document",
+        "url": "/",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "image",
+        "url": "/images/hero/car-assembled-1440.avif",
+        "status": 200,
+        "cc": "public, max-age=0",
+        "enc": "",
+        "len": 16342
+      },
+      {
+        "phase": "load",
+        "t": "stylesheet",
+        "url": "/_next/static/chunks/1ims1_lcdan5r.css",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 16260
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 16384
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 18372
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 26636
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2h84ksv1mg5s9.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/11we8zj_qz5aa.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/3fntmmi971322.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0qimmyhv2_bjj.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/25dplrt_qw3he.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/14y-81z8a-w-u.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2vm060vmiv-df.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0rklqt_vfe3_n.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0qy3sss5e6eww.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1kcz530oz9u-o.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 550
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2f8qbt33jjpy3.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1tr6a7zmh41cy.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2jrozipxybei4.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 23544
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 15444
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2g3bv_p29okud.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/120epkn8j_rkq.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/29atrq35xgs9f.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1c6x4sv25ngo-.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 583
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1adhcvv0smcza.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/delovi?_rsc=5CB68i4pnAekjehf",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/vozila?_rsc=5CB68i4pnAekjehf",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/za-majstore?_rsc=5CB68i4pnAekjehf",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/upit?_rsc=5CB68i4pnAekjehf",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "script",
+        "url": "/_next/static/chunks/1hvkbf0l88mq3.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/nalog?_rsc=5CB68i4pnAekjehf",
+        "status": 307,
+        "cc": "",
+        "enc": "",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/korpa?_rsc=5CB68i4pnAekjehf",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/?_rsc=tXyZJ52UQVBCVsD3",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/delovi?_rsc=tXyZJ52UQVBCVsD3",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/prijava?next=%2Fnalog",
+        "status": 307,
+        "cc": "",
+        "enc": "",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/prijava?next=%2Fnalog&_rsc=5CB68i4pnAekjehf",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/vozila?_rsc=tXyZJ52UQVBCVsD3",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/za-majstore?_rsc=tXyZJ52UQVBCVsD3",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/upit?_rsc=tXyZJ52UQVBCVsD3",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/prijava?next=%2Fnalog&_rsc=tXyZJ52UQVBCVsD3",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/korpa?_rsc=tXyZJ52UQVBCVsD3",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/models/car.glb",
+        "status": 200,
+        "cc": "public, max-age=0",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "script",
+        "url": "/_next/static/chunks/0yenm6rgh0wzh.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "script",
+        "url": "/_next/static/chunks/103_o3v2fee5x.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "script",
+        "url": "/_next/static/chunks/277kqryst5vz8.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 215
+      },
+      {
+        "phase": "after-load",
+        "t": "script",
+        "url": "/_next/static/chunks/0i-5efvfrwjiv.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "script",
+        "url": "/_next/static/chunks/3loc6izf4ows2.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "image",
+        "url": "/models/car-shadow.webp",
+        "status": 200,
+        "cc": "public, max-age=0",
+        "enc": "",
+        "len": 14378
+      },
+      {
+        "phase": "after-load",
+        "t": "image",
+        "url": "/models/car-shadow-exploded.webp",
+        "status": 200,
+        "cc": "public, max-age=0",
+        "enc": "",
+        "len": 20202
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/models/env/studio-512.hdr",
+        "status": 200,
+        "cc": "public, max-age=0",
+        "enc": "",
+        "len": 410772
+      },
+      {
+        "phase": "after-load",
+        "t": "script",
+        "url": "blob:/1063be6a-85e6-4f2f-955f-9e54d2a3b9c2",
+        "status": 200,
+        "cc": "",
+        "enc": "",
+        "len": 35996
+      },
+      {
+        "phase": "after-load",
+        "t": "script",
+        "url": "blob:/1063be6a-85e6-4f2f-955f-9e54d2a3b9c2",
+        "status": 200,
+        "cc": "",
+        "enc": "",
+        "len": 35996
+      },
+      {
+        "phase": "after-load",
+        "t": "script",
+        "url": "blob:/1063be6a-85e6-4f2f-955f-9e54d2a3b9c2",
+        "status": 200,
+        "cc": "",
+        "enc": "",
+        "len": 35996
+      },
+      {
+        "phase": "after-load",
+        "t": "script",
+        "url": "blob:/1063be6a-85e6-4f2f-955f-9e54d2a3b9c2",
+        "status": 200,
+        "cc": "",
+        "enc": "",
+        "len": 35996
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "blob:/5e339a9b-74d0-45aa-be51-584ecf0c06a9",
+        "status": 200,
+        "cc": "",
+        "enc": "",
+        "len": 2182
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "blob:/315f93a3-25f6-47b8-bd8e-398885ad7e96",
+        "status": 200,
+        "cc": "",
+        "enc": "",
+        "len": 1008
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "blob:/f3dfdfc7-0a2c-43db-a9b5-1d93853b56ef",
+        "status": 200,
+        "cc": "",
+        "enc": "",
+        "len": 364514
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "blob:/40aa0fe3-f783-48c6-a655-4127f129c416",
+        "status": 200,
+        "cc": "",
+        "enc": "",
+        "len": 12788
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "blob:/c4559279-2d85-49ec-9d85-56aa287b1660",
+        "status": 200,
+        "cc": "",
+        "enc": "",
+        "len": 306102
+      },
+      {
+        "phase": "after-load",
+        "t": "script",
+        "url": "/_next/static/chunks/0nvty3axw6gpe.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "script",
+        "url": "/_next/static/chunks/0e7n8ktdpx6ij.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      }
+    ],
+    "inventory": {
+      "fontsLoaded": [
+        "display 700 normal",
+        "displaySemibold 600 normal",
+        "displaySemibold Fallback normal normal",
+        "condensed 600 normal",
+        "Public Sans 100 900 normal",
+        "Public Sans 100 900 normal",
+        "Public Sans Fallback normal normal",
+        "Martian Mono 100 800 normal",
+        "Martian Mono Fallback normal normal"
+      ],
+      "fontsUsed": [
+        "Public Sans 600 normal",
+        "display 700 normal",
+        "Public Sans 500 normal",
+        "Public Sans 400 normal",
+        "Martian Mono 400 normal",
+        "displaySemibold 600 normal",
+        "condensed 600 normal",
+        "Public Sans 650 normal"
+      ],
+      "imgs": [
+        {
+          "src": "/images/hero/car-assembled-1440.avif",
+          "natural": "1440x810",
+          "rendered": "1325x836",
+          "dpr": 1,
+          "inViewport": true,
+          "top": 65,
+          "loading": "eager",
+          "fetchpriority": null,
+          "hasWH": true,
+          "sizes": null,
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "0x0",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 0,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "316x253",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 5150,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "316x253",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 5150,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "316x253",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 5150,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "316x253",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 5505,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "316x253",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 5505,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "316x253",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 5505,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Ffilteri.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "316x253",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 5505,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fakumulator.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "316x253",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 5861,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Ffarovi.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "316x253",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 5861,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "316x253",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 5861,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&w=3840&q=75",
+          "natural": "0x0",
+          "rendered": "316x253",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 5861,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+          "complete": false
+        }
+      ],
+      "nav": {
+        "transfer": 34440,
+        "decoded": 249503,
+        "dcl": 229,
+        "load": 454
+      },
+      "res": [
+        {
+          "name": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+          "type": "link",
+          "start": 165,
+          "transfer": 16560,
+          "encoded": 16260,
+          "decoded": 16260,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+          "type": "link",
+          "start": 166,
+          "transfer": 16684,
+          "encoded": 16384,
+          "decoded": 16384,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+          "type": "link",
+          "start": 166,
+          "transfer": 26936,
+          "encoded": 26636,
+          "decoded": 26636,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+          "type": "link",
+          "start": 166,
+          "transfer": 18672,
+          "encoded": 18372,
+          "decoded": 18372,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/images/hero/car-assembled-1440.avif",
+          "type": "link",
+          "start": 170,
+          "transfer": 16642,
+          "encoded": 16342,
+          "decoded": 16342,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1ims1_lcdan5r.css",
+          "type": "link",
+          "start": 170,
+          "transfer": 19248,
+          "encoded": 18948,
+          "decoded": 98804,
+          "renderBlocking": "blocking"
+        },
+        {
+          "name": "/_next/static/chunks/41cvzcmlkfz4o.js",
+          "type": "link",
+          "start": 170,
+          "transfer": 2311,
+          "encoded": 2011,
+          "decoded": 7637,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2h84ksv1mg5s9.js",
+          "type": "script",
+          "start": 170,
+          "transfer": 8377,
+          "encoded": 8077,
+          "decoded": 30588,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0qimmyhv2_bjj.js",
+          "type": "script",
+          "start": 170,
+          "transfer": 35075,
+          "encoded": 34775,
+          "decoded": 129338,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0qy3sss5e6eww.js",
+          "type": "script",
+          "start": 170,
+          "transfer": 73578,
+          "encoded": 73278,
+          "decoded": 234172,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/11we8zj_qz5aa.js",
+          "type": "script",
+          "start": 170,
+          "transfer": 8935,
+          "encoded": 8635,
+          "decoded": 27411,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/3fntmmi971322.js",
+          "type": "script",
+          "start": 170,
+          "transfer": 3961,
+          "encoded": 3661,
+          "decoded": 14377,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+          "type": "script",
+          "start": 170,
+          "transfer": 4619,
+          "encoded": 4319,
+          "decoded": 10979,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/25dplrt_qw3he.js",
+          "type": "script",
+          "start": 170,
+          "transfer": 7311,
+          "encoded": 7011,
+          "decoded": 18451,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/14y-81z8a-w-u.js",
+          "type": "script",
+          "start": 170,
+          "transfer": 10708,
+          "encoded": 10408,
+          "decoded": 26404,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2vm060vmiv-df.js",
+          "type": "script",
+          "start": 171,
+          "transfer": 9578,
+          "encoded": 9278,
+          "decoded": 27602,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1tr6a7zmh41cy.js",
+          "type": "script",
+          "start": 171,
+          "transfer": 49888,
+          "encoded": 49588,
+          "decoded": 125720,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0rklqt_vfe3_n.js",
+          "type": "script",
+          "start": 171,
+          "transfer": 12901,
+          "encoded": 12601,
+          "decoded": 37952,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1kcz530oz9u-o.js",
+          "type": "script",
+          "start": 171,
+          "transfer": 850,
+          "encoded": 550,
+          "decoded": 550,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2f8qbt33jjpy3.js",
+          "type": "script",
+          "start": 171,
+          "transfer": 3053,
+          "encoded": 2753,
+          "decoded": 6686,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2jrozipxybei4.js",
+          "type": "script",
+          "start": 171,
+          "transfer": 22941,
+          "encoded": 22641,
+          "decoded": 82591,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2g3bv_p29okud.js",
+          "type": "script",
+          "start": 171,
+          "transfer": 10651,
+          "encoded": 10351,
+          "decoded": 32381,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/120epkn8j_rkq.js",
+          "type": "script",
+          "start": 171,
+          "transfer": 11195,
+          "encoded": 10895,
+          "decoded": 30585,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/29atrq35xgs9f.js",
+          "type": "script",
+          "start": 171,
+          "transfer": 2021,
+          "encoded": 1721,
+          "decoded": 5026,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1c6x4sv25ngo-.js",
+          "type": "script",
+          "start": 171,
+          "transfer": 883,
+          "encoded": 583,
+          "decoded": 583,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+          "type": "script",
+          "start": 171,
+          "transfer": 23196,
+          "encoded": 22896,
+          "decoded": 69125,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1t0q0ok8maumv.js",
+          "type": "script",
+          "start": 171,
+          "transfer": 8308,
+          "encoded": 8008,
+          "decoded": 22528,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/3k__gv_edg8eb.js",
+          "type": "script",
+          "start": 171,
+          "transfer": 3451,
+          "encoded": 3151,
+          "decoded": 7477,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+          "type": "script",
+          "start": 171,
+          "transfer": 21775,
+          "encoded": 21475,
+          "decoded": 66220,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1adhcvv0smcza.js",
+          "type": "script",
+          "start": 171,
+          "transfer": 9129,
+          "encoded": 8829,
+          "decoded": 23258,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2",
+          "type": "css",
+          "start": 282,
+          "transfer": 23844,
+          "encoded": 23544,
+          "decoded": 23544,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2",
+          "type": "css",
+          "start": 283,
+          "transfer": 15744,
+          "encoded": 15444,
+          "decoded": 15444,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/delovi?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "start": 597,
+          "transfer": 475,
+          "encoded": 175,
+          "decoded": 321,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/vozila?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "start": 598,
+          "transfer": 475,
+          "encoded": 175,
+          "decoded": 321,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/za-majstore?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "start": 598,
+          "transfer": 478,
+          "encoded": 178,
+          "decoded": 326,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/upit?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "start": 598,
+          "transfer": 474,
+          "encoded": 174,
+          "decoded": 319,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1hvkbf0l88mq3.js",
+          "type": "script",
+          "start": 610,
+          "transfer": 3406,
+          "encoded": 3106,
+          "decoded": 9064,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/nalog?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "start": 625,
+          "transfer": 489,
+          "encoded": 189,
+          "decoded": 336,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/korpa?_rsc=5CB68i4pnAekjehf",
+          "type": "fetch",
+          "start": 625,
+          "transfer": 475,
+          "encoded": 175,
+          "decoded": 320,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/?_rsc=tXyZJ52UQVBCVsD3",
+          "type": "fetch",
+          "start": 627,
+          "transfer": 1645,
+          "encoded": 1345,
+          "decoded": 3742,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/delovi?_rsc=tXyZJ52UQVBCVsD3",
+          "type": "fetch",
+          "start": 629,
+          "transfer": 1660,
+          "encoded": 1360,
+          "decoded": 3775,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/vozila?_rsc=tXyZJ52UQVBCVsD3",
+          "type": "fetch",
+          "start": 670,
+          "transfer": 1681,
+          "encoded": 1381,
+          "decoded": 3796,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/za-majstore?_rsc=tXyZJ52UQVBCVsD3",
+          "type": "fetch",
+          "start": 735,
+          "transfer": 1682,
+          "encoded": 1382,
+          "decoded": 3838,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/upit?_rsc=tXyZJ52UQVBCVsD3",
+          "type": "fetch",
+          "start": 738,
+          "transfer": 1693,
+          "encoded": 1393,
+          "decoded": 3781,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/prijava?next=%2Fnalog&_rsc=tXyZJ52UQVBCVsD3",
+          "type": "fetch",
+          "start": 739,
+          "transfer": 1663,
+          "encoded": 1363,
+          "decoded": 3683,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/korpa?_rsc=tXyZJ52UQVBCVsD3",
+          "type": "fetch",
+          "start": 789,
+          "transfer": 1633,
+          "encoded": 1333,
+          "decoded": 3639,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/models/car.glb",
+          "type": "fetch",
+          "start": 4620,
+          "transfer": 2101662,
+          "encoded": 2101362,
+          "decoded": 3638264,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/103_o3v2fee5x.js",
+          "type": "script",
+          "start": 4622,
+          "transfer": 11452,
+          "encoded": 11152,
+          "decoded": 31849,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0yenm6rgh0wzh.js",
+          "type": "script",
+          "start": 4623,
+          "transfer": 1843,
+          "encoded": 1543,
+          "decoded": 3239,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/277kqryst5vz8.js",
+          "type": "script",
+          "start": 4629,
+          "transfer": 515,
+          "encoded": 215,
+          "decoded": 215,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/3loc6izf4ows2.js",
+          "type": "script",
+          "start": 4630,
+          "transfer": 187691,
+          "encoded": 187391,
+          "decoded": 722490,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0i-5efvfrwjiv.js",
+          "type": "script",
+          "start": 4630,
+          "transfer": 101452,
+          "encoded": 101152,
+          "decoded": 383187,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/models/env/studio-512.hdr",
+          "type": "fetch",
+          "start": 5185,
+          "transfer": 411072,
+          "encoded": 410772,
+          "decoded": 410772,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/models/car-shadow.webp",
+          "type": "img",
+          "start": 5187,
+          "transfer": 14678,
+          "encoded": 14378,
+          "decoded": 14378,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/models/car-shadow-exploded.webp",
+          "type": "img",
+          "start": 5187,
+          "transfer": 20502,
+          "encoded": 20202,
+          "decoded": 20202,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0nvty3axw6gpe.js",
+          "type": "script",
+          "start": 6075,
+          "transfer": 28043,
+          "encoded": 27743,
+          "decoded": 91184,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0e7n8ktdpx6ij.js",
+          "type": "script",
+          "start": 6869,
+          "transfer": 3418,
+          "encoded": 3118,
+          "decoded": 6594,
+          "renderBlocking": "non-blocking"
+        }
+      ]
+    },
+    "coverage": {
+      "jsRows": [
+        {
+          "url": "/_next/static/chunks/41cvzcmlkfz4o.js",
+          "total": 7637,
+          "used": 4707,
+          "unusedPct": 38
+        },
+        {
+          "url": "/_next/static/chunks/2h84ksv1mg5s9.js",
+          "total": 30588,
+          "used": 14781,
+          "unusedPct": 52
+        },
+        {
+          "url": "/_next/static/chunks/11we8zj_qz5aa.js",
+          "total": 27411,
+          "used": 13740,
+          "unusedPct": 50
+        },
+        {
+          "url": "/_next/static/chunks/3fntmmi971322.js",
+          "total": 14375,
+          "used": 6168,
+          "unusedPct": 57
+        },
+        {
+          "url": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+          "total": 10979,
+          "used": 6422,
+          "unusedPct": 42
+        },
+        {
+          "url": "/_next/static/chunks/0qimmyhv2_bjj.js",
+          "total": 129338,
+          "used": 63350,
+          "unusedPct": 51
+        },
+        {
+          "url": "/_next/static/chunks/25dplrt_qw3he.js",
+          "total": 18451,
+          "used": 7382,
+          "unusedPct": 60
+        },
+        {
+          "url": "/_next/static/chunks/14y-81z8a-w-u.js",
+          "total": 26404,
+          "used": 1508,
+          "unusedPct": 94
+        },
+        {
+          "url": "/_next/static/chunks/2vm060vmiv-df.js",
+          "total": 27602,
+          "used": 9810,
+          "unusedPct": 64
+        },
+        {
+          "url": "/_next/static/chunks/0rklqt_vfe3_n.js",
+          "total": 37949,
+          "used": 19738,
+          "unusedPct": 48
+        },
+        {
+          "url": "/_next/static/chunks/0qy3sss5e6eww.js",
+          "total": 234170,
+          "used": 136808,
+          "unusedPct": 42
+        },
+        {
+          "url": "/_next/static/chunks/1kcz530oz9u-o.js",
+          "total": 550,
+          "used": 201,
+          "unusedPct": 63
+        },
+        {
+          "url": "/_next/static/chunks/2f8qbt33jjpy3.js",
+          "total": 6672,
+          "used": 3122,
+          "unusedPct": 53
+        },
+        {
+          "url": "/_next/static/chunks/1tr6a7zmh41cy.js",
+          "total": 125720,
+          "used": 50210,
+          "unusedPct": 60
+        },
+        {
+          "url": "/_next/static/chunks/2jrozipxybei4.js",
+          "total": 82591,
+          "used": 30189,
+          "unusedPct": 63
+        },
+        {
+          "url": "/_next/static/chunks/2g3bv_p29okud.js",
+          "total": 32340,
+          "used": 23948,
+          "unusedPct": 26
+        },
+        {
+          "url": "/_next/static/chunks/120epkn8j_rkq.js",
+          "total": 30581,
+          "used": 14913,
+          "unusedPct": 51
+        },
+        {
+          "url": "/_next/static/chunks/29atrq35xgs9f.js",
+          "total": 5026,
+          "used": 1904,
+          "unusedPct": 62
+        },
+        {
+          "url": "/_next/static/chunks/1c6x4sv25ngo-.js",
+          "total": 583,
+          "used": 549,
+          "unusedPct": 6
+        },
+        {
+          "url": "/_next/static/chunks/3k__gv_edg8eb.js",
+          "total": 7455,
+          "used": 2384,
+          "unusedPct": 68
+        },
+        {
+          "url": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+          "total": 69094,
+          "used": 45631,
+          "unusedPct": 34
+        },
+        {
+          "url": "/_next/static/chunks/1t0q0ok8maumv.js",
+          "total": 22528,
+          "used": 4343,
+          "unusedPct": 81
+        },
+        {
+          "url": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+          "total": 65999,
+          "used": 49767,
+          "unusedPct": 25
+        },
+        {
+          "url": "/_next/static/chunks/1adhcvv0smcza.js",
+          "total": 23235,
+          "used": 276,
+          "unusedPct": 99
+        },
+        {
+          "url": "/_next/static/chunks/1hvkbf0l88mq3.js",
+          "total": 9055,
+          "used": 2023,
+          "unusedPct": 78
+        },
+        {
+          "url": "/_next/static/chunks/0yenm6rgh0wzh.js",
+          "total": 3238,
+          "used": 1407,
+          "unusedPct": 57
+        },
+        {
+          "url": "/_next/static/chunks/103_o3v2fee5x.js",
+          "total": 31776,
+          "used": 14495,
+          "unusedPct": 54
+        },
+        {
+          "url": "/_next/static/chunks/277kqryst5vz8.js",
+          "total": 215,
+          "used": 181,
+          "unusedPct": 16
+        },
+        {
+          "url": "/_next/static/chunks/0i-5efvfrwjiv.js",
+          "total": 383187,
+          "used": 82677,
+          "unusedPct": 78
+        },
+        {
+          "url": "/_next/static/chunks/3loc6izf4ows2.js",
+          "total": 722301,
+          "used": 506664,
+          "unusedPct": 30
+        },
+        {
+          "url": "/_next/static/chunks/0nvty3axw6gpe.js",
+          "total": 91184,
+          "used": 26154,
+          "unusedPct": 71
+        },
+        {
+          "url": "/_next/static/chunks/0e7n8ktdpx6ij.js",
+          "total": 6530,
+          "used": 1796,
+          "unusedPct": 72
+        }
+      ],
+      "cssRows": [
+        {
+          "id": "style-sheet-29020-1",
+          "bytes": 3215,
+          "rulesBytes": 1695,
+          "usedBytes": 1695,
+          "usedPct": 100,
+          "gz": 632,
+          "head": "@media screen and (prefers-reduced-motion: no-preference){html.tr-js:not(.tr-fai"
+        },
+        {
+          "id": "style-sheet-29020-2",
+          "bytes": 98804,
+          "rulesBytes": 19321255,
+          "usedBytes": 19321255,
+          "usedPct": 100,
+          "gz": 18948,
+          "head": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inli"
+        }
+      ]
+    },
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "category@390": {
+    "route": "/delovi/kocioni-diskovi",
+    "width": 390,
+    "requests": [
+      {
+        "phase": "load",
+        "t": "document",
+        "url": "/delovi/kocioni-diskovi",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 16260
+      },
+      {
+        "phase": "load",
+        "t": "stylesheet",
+        "url": "/_next/static/chunks/1ims1_lcdan5r.css",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "image",
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+        "status": 200,
+        "cc": "public, max-age=14400, must-revalidate",
+        "enc": "",
+        "len": 3103
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 26636
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 16384
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 18372
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2h84ksv1mg5s9.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/11we8zj_qz5aa.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/3fntmmi971322.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/25dplrt_qw3he.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/14y-81z8a-w-u.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0qimmyhv2_bjj.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2vm060vmiv-df.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0rklqt_vfe3_n.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1kcz530oz9u-o.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 550
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2f8qbt33jjpy3.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0qy3sss5e6eww.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2jrozipxybei4.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2g3bv_p29okud.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/120epkn8j_rkq.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1tr6a7zmh41cy.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/29atrq35xgs9f.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1cggx7i-lhdg7.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/38o51x0kbbpcz.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1adhcvv0smcza.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 15444
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 23544
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/nalog?_rsc=Nm3pf7pJccbMmUUB",
+        "status": 307,
+        "cc": "",
+        "enc": "",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/?_rsc=Nm3pf7pJccbMmUUB",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/korpa?_rsc=Nm3pf7pJccbMmUUB",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/prijava?next=%2Fnalog",
+        "status": 307,
+        "cc": "",
+        "enc": "",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/deo/kocioni-disk-prednji-312-25-mm-demo-0007?_rsc=Nm3pf7pJccbMmUUB",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/prijava?next=%2Fnalog&_rsc=Nm3pf7pJccbMmUUB",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/deo/kocioni-disk-zadnji-272-10-mm-puni-demo-0003?_rsc=Nm3pf7pJccbMmUUB",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/deo/kocioni-disk-prednji-256-22-mm-demo-0006?_rsc=Nm3pf7pJccbMmUUB",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "script",
+        "url": "/_next/static/chunks/1hvkbf0l88mq3.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/?_rsc=4fiaeTm4Nl2jnDGb",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/prijava?next=%2Fnalog&_rsc=4fiaeTm4Nl2jnDGb",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/korpa?_rsc=4fiaeTm4Nl2jnDGb",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/delovi/kocnice?_rsc=4fiaeTm4Nl2jnDGb",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/deo/kocioni-disk-prednji-312-25-mm-demo-0007?_rsc=4fiaeTm4Nl2jnDGb",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/deo/kocioni-disk-zadnji-272-10-mm-puni-demo-0003?_rsc=4fiaeTm4Nl2jnDGb",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/deo/kocioni-disk-prednji-256-22-mm-demo-0006?_rsc=4fiaeTm4Nl2jnDGb",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      }
+    ],
+    "inventory": {
+      "fontsLoaded": [
+        "display 700 normal",
+        "displaySemibold 600 normal",
+        "displaySemibold Fallback normal normal",
+        "condensed 600 normal",
+        "Public Sans 100 900 normal",
+        "Public Sans 100 900 normal",
+        "Public Sans Fallback normal normal",
+        "Martian Mono 100 800 normal",
+        "Martian Mono Fallback normal normal"
+      ],
+      "fontsUsed": [
+        "Public Sans 600 normal",
+        "display 700 normal",
+        "Public Sans 500 normal",
+        "Public Sans 400 normal",
+        "Martian Mono 400 normal",
+        "displaySemibold 600 normal",
+        "condensed 600 normal"
+      ],
+      "imgs": [
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+          "natural": "195x195",
+          "rendered": "104x204",
+          "dpr": 1,
+          "inViewport": true,
+          "top": 508,
+          "loading": null,
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+          "natural": "195x195",
+          "rendered": "104x204",
+          "dpr": 1,
+          "inViewport": true,
+          "top": 726,
+          "loading": null,
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+          "natural": "195x195",
+          "rendered": "104x204",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 944,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+          "natural": "195x195",
+          "rendered": "104x204",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 1162,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+          "natural": "195x195",
+          "rendered": "104x204",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 1380,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+          "natural": "195x195",
+          "rendered": "104x204",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 1598,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+          "natural": "195x195",
+          "rendered": "104x204",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 1816,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+          "natural": "195x195",
+          "rendered": "104x204",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 2034,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+          "natural": "195x195",
+          "rendered": "104x204",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 2252,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        }
+      ],
+      "nav": {
+        "transfer": 25991,
+        "decoded": 240115,
+        "dcl": 127,
+        "load": 299
+      },
+      "res": [
+        {
+          "name": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+          "type": "link",
+          "start": 89,
+          "transfer": 16560,
+          "encoded": 16260,
+          "decoded": 16260,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+          "type": "link",
+          "start": 90,
+          "transfer": 16684,
+          "encoded": 16384,
+          "decoded": 16384,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+          "type": "link",
+          "start": 90,
+          "transfer": 26936,
+          "encoded": 26636,
+          "decoded": 26636,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+          "type": "link",
+          "start": 90,
+          "transfer": 18672,
+          "encoded": 18372,
+          "decoded": 18372,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+          "type": "link",
+          "start": 97,
+          "transfer": 3403,
+          "encoded": 3103,
+          "decoded": 3103,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1ims1_lcdan5r.css",
+          "type": "link",
+          "start": 97,
+          "transfer": 19248,
+          "encoded": 18948,
+          "decoded": 98804,
+          "renderBlocking": "blocking"
+        },
+        {
+          "name": "/_next/static/chunks/41cvzcmlkfz4o.js",
+          "type": "link",
+          "start": 97,
+          "transfer": 2311,
+          "encoded": 2011,
+          "decoded": 7637,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2h84ksv1mg5s9.js",
+          "type": "script",
+          "start": 97,
+          "transfer": 8377,
+          "encoded": 8077,
+          "decoded": 30588,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/11we8zj_qz5aa.js",
+          "type": "script",
+          "start": 97,
+          "transfer": 8935,
+          "encoded": 8635,
+          "decoded": 27411,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0qimmyhv2_bjj.js",
+          "type": "script",
+          "start": 97,
+          "transfer": 35075,
+          "encoded": 34775,
+          "decoded": 129338,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0qy3sss5e6eww.js",
+          "type": "script",
+          "start": 97,
+          "transfer": 73578,
+          "encoded": 73278,
+          "decoded": 234172,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+          "type": "script",
+          "start": 97,
+          "transfer": 4619,
+          "encoded": 4319,
+          "decoded": 10979,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/3fntmmi971322.js",
+          "type": "script",
+          "start": 97,
+          "transfer": 3961,
+          "encoded": 3661,
+          "decoded": 14377,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/25dplrt_qw3he.js",
+          "type": "script",
+          "start": 97,
+          "transfer": 7311,
+          "encoded": 7011,
+          "decoded": 18451,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/14y-81z8a-w-u.js",
+          "type": "script",
+          "start": 97,
+          "transfer": 10708,
+          "encoded": 10408,
+          "decoded": 26404,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2vm060vmiv-df.js",
+          "type": "script",
+          "start": 97,
+          "transfer": 9578,
+          "encoded": 9278,
+          "decoded": 27602,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1tr6a7zmh41cy.js",
+          "type": "script",
+          "start": 97,
+          "transfer": 49888,
+          "encoded": 49588,
+          "decoded": 125720,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0rklqt_vfe3_n.js",
+          "type": "script",
+          "start": 97,
+          "transfer": 12901,
+          "encoded": 12601,
+          "decoded": 37952,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2jrozipxybei4.js",
+          "type": "script",
+          "start": 97,
+          "transfer": 22941,
+          "encoded": 22641,
+          "decoded": 82591,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1kcz530oz9u-o.js",
+          "type": "script",
+          "start": 97,
+          "transfer": 850,
+          "encoded": 550,
+          "decoded": 550,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2f8qbt33jjpy3.js",
+          "type": "script",
+          "start": 97,
+          "transfer": 3053,
+          "encoded": 2753,
+          "decoded": 6686,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2g3bv_p29okud.js",
+          "type": "script",
+          "start": 97,
+          "transfer": 10651,
+          "encoded": 10351,
+          "decoded": 32381,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/120epkn8j_rkq.js",
+          "type": "script",
+          "start": 98,
+          "transfer": 11195,
+          "encoded": 10895,
+          "decoded": 30585,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/29atrq35xgs9f.js",
+          "type": "script",
+          "start": 98,
+          "transfer": 2021,
+          "encoded": 1721,
+          "decoded": 5026,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1t0q0ok8maumv.js",
+          "type": "script",
+          "start": 98,
+          "transfer": 8308,
+          "encoded": 8008,
+          "decoded": 22528,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+          "type": "script",
+          "start": 98,
+          "transfer": 23196,
+          "encoded": 22896,
+          "decoded": 69125,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1cggx7i-lhdg7.js",
+          "type": "script",
+          "start": 98,
+          "transfer": 8638,
+          "encoded": 8338,
+          "decoded": 25932,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/38o51x0kbbpcz.js",
+          "type": "script",
+          "start": 98,
+          "transfer": 15642,
+          "encoded": 15342,
+          "decoded": 42487,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/3k__gv_edg8eb.js",
+          "type": "script",
+          "start": 98,
+          "transfer": 3451,
+          "encoded": 3151,
+          "decoded": 7477,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1adhcvv0smcza.js",
+          "type": "script",
+          "start": 98,
+          "transfer": 9129,
+          "encoded": 8829,
+          "decoded": 23258,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2",
+          "type": "css",
+          "start": 143,
+          "transfer": 15744,
+          "encoded": 15444,
+          "decoded": 15444,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2",
+          "type": "css",
+          "start": 175,
+          "transfer": 23844,
+          "encoded": 23544,
+          "decoded": 23544,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/?_rsc=Nm3pf7pJccbMmUUB",
+          "type": "fetch",
+          "start": 509,
+          "transfer": 469,
+          "encoded": 169,
+          "decoded": 266,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/nalog?_rsc=Nm3pf7pJccbMmUUB",
+          "type": "fetch",
+          "start": 510,
+          "transfer": 489,
+          "encoded": 189,
+          "decoded": 336,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/korpa?_rsc=Nm3pf7pJccbMmUUB",
+          "type": "fetch",
+          "start": 510,
+          "transfer": 475,
+          "encoded": 175,
+          "decoded": 320,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/deo/kocioni-disk-prednji-312-25-mm-demo-0007?_rsc=Nm3pf7pJccbMmUUB",
+          "type": "fetch",
+          "start": 511,
+          "transfer": 521,
+          "encoded": 221,
+          "decoded": 423,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1hvkbf0l88mq3.js",
+          "type": "script",
+          "start": 522,
+          "transfer": 3406,
+          "encoded": 3106,
+          "decoded": 9064,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/deo/kocioni-disk-zadnji-272-10-mm-puni-demo-0003?_rsc=Nm3pf7pJccbMmUUB",
+          "type": "fetch",
+          "start": 643,
+          "transfer": 519,
+          "encoded": 219,
+          "decoded": 427,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/deo/kocioni-disk-prednji-256-22-mm-demo-0006?_rsc=Nm3pf7pJccbMmUUB",
+          "type": "fetch",
+          "start": 655,
+          "transfer": 518,
+          "encoded": 218,
+          "decoded": 423,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/?_rsc=4fiaeTm4Nl2jnDGb",
+          "type": "fetch",
+          "start": 771,
+          "transfer": 1645,
+          "encoded": 1345,
+          "decoded": 3742,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/prijava?next=%2Fnalog&_rsc=4fiaeTm4Nl2jnDGb",
+          "type": "fetch",
+          "start": 788,
+          "transfer": 1661,
+          "encoded": 1361,
+          "decoded": 3683,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/korpa?_rsc=4fiaeTm4Nl2jnDGb",
+          "type": "fetch",
+          "start": 789,
+          "transfer": 1632,
+          "encoded": 1332,
+          "decoded": 3639,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/delovi/kocnice?_rsc=4fiaeTm4Nl2jnDGb",
+          "type": "fetch",
+          "start": 790,
+          "transfer": 1700,
+          "encoded": 1400,
+          "decoded": 3960,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/deo/kocioni-disk-prednji-312-25-mm-demo-0007?_rsc=4fiaeTm4Nl2jnDGb",
+          "type": "fetch",
+          "start": 898,
+          "transfer": 1789,
+          "encoded": 1489,
+          "decoded": 4260,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/deo/kocioni-disk-zadnji-272-10-mm-puni-demo-0003?_rsc=4fiaeTm4Nl2jnDGb",
+          "type": "fetch",
+          "start": 903,
+          "transfer": 1796,
+          "encoded": 1496,
+          "decoded": 4280,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/deo/kocioni-disk-prednji-256-22-mm-demo-0006?_rsc=4fiaeTm4Nl2jnDGb",
+          "type": "fetch",
+          "start": 923,
+          "transfer": 1788,
+          "encoded": 1488,
+          "decoded": 4239,
+          "renderBlocking": "non-blocking"
+        }
+      ]
+    },
+    "coverage": null,
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "product@390": {
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "width": 390,
+    "requests": [
+      {
+        "phase": "load",
+        "t": "document",
+        "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 16260
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 16384
+      },
+      {
+        "phase": "load",
+        "t": "stylesheet",
+        "url": "/_next/static/chunks/1ims1_lcdan5r.css",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 26636
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 18372
+      },
+      {
+        "phase": "load",
+        "t": "image",
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "status": 200,
+        "cc": "public, max-age=14400, must-revalidate",
+        "enc": "",
+        "len": 7123
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2h84ksv1mg5s9.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/11we8zj_qz5aa.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/3fntmmi971322.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/25dplrt_qw3he.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0qimmyhv2_bjj.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/14y-81z8a-w-u.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2vm060vmiv-df.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0qy3sss5e6eww.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0rklqt_vfe3_n.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2f8qbt33jjpy3.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1tr6a7zmh41cy.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1kcz530oz9u-o.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 550
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2jrozipxybei4.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 23544
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/29atrq35xgs9f.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2g3bv_p29okud.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/120epkn8j_rkq.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1tkvz3oryrb1b.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0iy1468xjorsv.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1adhcvv0smcza.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/nalog?_rsc=pN8bX5vSYyFj_sQa",
+        "status": 307,
+        "cc": "",
+        "enc": "",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/?_rsc=pN8bX5vSYyFj_sQa",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/korpa?_rsc=pN8bX5vSYyFj_sQa",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/delovi/kocioni-diskovi?_rsc=pN8bX5vSYyFj_sQa",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/prijava?next=%2Fnalog",
+        "status": 307,
+        "cc": "",
+        "enc": "",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/prijava?next=%2Fnalog&_rsc=pN8bX5vSYyFj_sQa",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "script",
+        "url": "/_next/static/chunks/1hvkbf0l88mq3.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/upit?proizvod=kocioni-disk-prednji-276-24-mm-demo-0004&_rsc=pN8bX5vSYyFj_sQa",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/?_rsc=-xlHsezuCG0QR-fE",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/korpa?_rsc=-xlHsezuCG0QR-fE",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/prijava?next=%2Fnalog&_rsc=-xlHsezuCG0QR-fE",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/delovi/kocioni-diskovi?_rsc=-xlHsezuCG0QR-fE",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/upit?proizvod=kocioni-disk-prednji-276-24-mm-demo-0004&_rsc=-xlHsezuCG0QR-fE",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/upit?_rsc=pN8bX5vSYyFj_sQa",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      }
+    ],
+    "inventory": {
+      "fontsLoaded": [
+        "display 700 normal",
+        "condensed 600 normal",
+        "Public Sans 100 900 normal",
+        "Public Sans 100 900 normal",
+        "Martian Mono 100 800 normal",
+        "Martian Mono Fallback normal normal"
+      ],
+      "fontsUsed": [
+        "Public Sans 600 normal",
+        "display 700 normal",
+        "Public Sans 500 normal",
+        "Public Sans 400 normal",
+        "Martian Mono 400 normal",
+        "Public Sans 650 normal",
+        "Martian Mono 500 normal",
+        "condensed 600 normal"
+      ],
+      "imgs": [
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+          "natural": "390x390",
+          "rendered": "356x267",
+          "dpr": 1,
+          "inViewport": true,
+          "top": 146,
+          "loading": null,
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1024px) 56vw, 100vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+          "natural": "195x195",
+          "rendered": "104x204",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 3014,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+          "natural": "195x195",
+          "rendered": "104x204",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 3232,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+          "natural": "195x195",
+          "rendered": "104x204",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 3451,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+          "natural": "195x195",
+          "rendered": "104x204",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 3669,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        }
+      ],
+      "nav": {
+        "transfer": 30208,
+        "decoded": 222853,
+        "dcl": 225,
+        "load": 362
+      },
+      "res": [
+        {
+          "name": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+          "type": "link",
+          "start": 79,
+          "transfer": 16560,
+          "encoded": 16260,
+          "decoded": 16260,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+          "type": "link",
+          "start": 79,
+          "transfer": 16684,
+          "encoded": 16384,
+          "decoded": 16384,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+          "type": "link",
+          "start": 79,
+          "transfer": 26936,
+          "encoded": 26636,
+          "decoded": 26636,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+          "type": "link",
+          "start": 79,
+          "transfer": 18672,
+          "encoded": 18372,
+          "decoded": 18372,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+          "type": "link",
+          "start": 84,
+          "transfer": 7423,
+          "encoded": 7123,
+          "decoded": 7123,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1ims1_lcdan5r.css",
+          "type": "link",
+          "start": 84,
+          "transfer": 19248,
+          "encoded": 18948,
+          "decoded": 98804,
+          "renderBlocking": "blocking"
+        },
+        {
+          "name": "/_next/static/chunks/41cvzcmlkfz4o.js",
+          "type": "link",
+          "start": 84,
+          "transfer": 2311,
+          "encoded": 2011,
+          "decoded": 7637,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2h84ksv1mg5s9.js",
+          "type": "script",
+          "start": 84,
+          "transfer": 8377,
+          "encoded": 8077,
+          "decoded": 30588,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0qimmyhv2_bjj.js",
+          "type": "script",
+          "start": 84,
+          "transfer": 35075,
+          "encoded": 34775,
+          "decoded": 129338,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/11we8zj_qz5aa.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 8935,
+          "encoded": 8635,
+          "decoded": 27411,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 4619,
+          "encoded": 4319,
+          "decoded": 10979,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/3fntmmi971322.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 3961,
+          "encoded": 3661,
+          "decoded": 14377,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/25dplrt_qw3he.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 7311,
+          "encoded": 7011,
+          "decoded": 18451,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/14y-81z8a-w-u.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 10708,
+          "encoded": 10408,
+          "decoded": 26404,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0qy3sss5e6eww.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 73578,
+          "encoded": 73278,
+          "decoded": 234172,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2vm060vmiv-df.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 9578,
+          "encoded": 9278,
+          "decoded": 27602,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0rklqt_vfe3_n.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 12901,
+          "encoded": 12601,
+          "decoded": 37952,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2f8qbt33jjpy3.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 3053,
+          "encoded": 2753,
+          "decoded": 6686,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1tr6a7zmh41cy.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 49888,
+          "encoded": 49588,
+          "decoded": 125720,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2jrozipxybei4.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 22941,
+          "encoded": 22641,
+          "decoded": 82591,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1kcz530oz9u-o.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 850,
+          "encoded": 550,
+          "decoded": 550,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2g3bv_p29okud.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 10651,
+          "encoded": 10351,
+          "decoded": 32381,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/29atrq35xgs9f.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 2021,
+          "encoded": 1721,
+          "decoded": 5026,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/120epkn8j_rkq.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 11195,
+          "encoded": 10895,
+          "decoded": 30585,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1t0q0ok8maumv.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 8308,
+          "encoded": 8008,
+          "decoded": 22528,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1tkvz3oryrb1b.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 11533,
+          "encoded": 11233,
+          "decoded": 37445,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 23196,
+          "encoded": 22896,
+          "decoded": 69125,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0iy1468xjorsv.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 15507,
+          "encoded": 15207,
+          "decoded": 40337,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/3k__gv_edg8eb.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 3451,
+          "encoded": 3151,
+          "decoded": 7477,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1adhcvv0smcza.js",
+          "type": "script",
+          "start": 85,
+          "transfer": 9129,
+          "encoded": 8829,
+          "decoded": 23258,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2",
+          "type": "css",
+          "start": 137,
+          "transfer": 23844,
+          "encoded": 23544,
+          "decoded": 23544,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/?_rsc=pN8bX5vSYyFj_sQa",
+          "type": "fetch",
+          "start": 654,
+          "transfer": 469,
+          "encoded": 169,
+          "decoded": 266,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/nalog?_rsc=pN8bX5vSYyFj_sQa",
+          "type": "fetch",
+          "start": 655,
+          "transfer": 489,
+          "encoded": 189,
+          "decoded": 336,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/korpa?_rsc=pN8bX5vSYyFj_sQa",
+          "type": "fetch",
+          "start": 657,
+          "transfer": 475,
+          "encoded": 175,
+          "decoded": 320,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/delovi/kocioni-diskovi?_rsc=pN8bX5vSYyFj_sQa",
+          "type": "fetch",
+          "start": 657,
+          "transfer": 502,
+          "encoded": 202,
+          "decoded": 407,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1hvkbf0l88mq3.js",
+          "type": "script",
+          "start": 673,
+          "transfer": 3406,
+          "encoded": 3106,
+          "decoded": 9064,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/upit?proizvod=kocioni-disk-prednji-276-24-mm-demo-0004&_rsc=pN8bX5vSYyFj_sQa",
+          "type": "fetch",
+          "start": 737,
+          "transfer": 518,
+          "encoded": 218,
+          "decoded": 369,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/?_rsc=-xlHsezuCG0QR-fE",
+          "type": "fetch",
+          "start": 739,
+          "transfer": 1645,
+          "encoded": 1345,
+          "decoded": 3742,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/korpa?_rsc=-xlHsezuCG0QR-fE",
+          "type": "fetch",
+          "start": 748,
+          "transfer": 1632,
+          "encoded": 1332,
+          "decoded": 3639,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/prijava?next=%2Fnalog&_rsc=-xlHsezuCG0QR-fE",
+          "type": "fetch",
+          "start": 868,
+          "transfer": 1662,
+          "encoded": 1362,
+          "decoded": 3683,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/delovi/kocioni-diskovi?_rsc=-xlHsezuCG0QR-fE",
+          "type": "fetch",
+          "start": 869,
+          "transfer": 1740,
+          "encoded": 1440,
+          "decoded": 4093,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/upit?proizvod=kocioni-disk-prednji-276-24-mm-demo-0004&_rsc=-xlHsezuCG0QR-fE",
+          "type": "fetch",
+          "start": 963,
+          "transfer": 1755,
+          "encoded": 1455,
+          "decoded": 3891,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/upit?_rsc=pN8bX5vSYyFj_sQa",
+          "type": "fetch",
+          "start": 1052,
+          "transfer": 474,
+          "encoded": 174,
+          "decoded": 319,
+          "renderBlocking": "non-blocking"
+        }
+      ]
+    },
+    "coverage": null,
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "landing@390": {
+    "route": "/ponuda/kocione-plocice-golf",
+    "width": 390,
+    "requests": [
+      {
+        "phase": "load",
+        "t": "document",
+        "url": "/ponuda/kocione-plocice-golf",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 16260
+      },
+      {
+        "phase": "load",
+        "t": "stylesheet",
+        "url": "/_next/static/chunks/1ims1_lcdan5r.css",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 16384
+      },
+      {
+        "phase": "load",
+        "t": "image",
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75",
+        "status": 200,
+        "cc": "public, max-age=14400, must-revalidate",
+        "enc": "",
+        "len": 2196
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 18372
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 26636
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/3fntmmi971322.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/11we8zj_qz5aa.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2h84ksv1mg5s9.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0qimmyhv2_bjj.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/25dplrt_qw3he.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0qy3sss5e6eww.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/14y-81z8a-w-u.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2vm060vmiv-df.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/0rklqt_vfe3_n.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/30febus0elr13.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 415
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2f8qbt33jjpy3.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1tr6a7zmh41cy.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/2jrozipxybei4.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/29atrq35xgs9f.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/29ikd2g3512r-.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1axg9-vmwkb-w.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 416
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/3e96qux3-c6pe.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1h9gpy0y5abu7.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/404ko09-15lhs.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/1adhcvv0smcza.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "script",
+        "url": "/_next/static/chunks/00t-a16koa1p2.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 15444
+      },
+      {
+        "phase": "load",
+        "t": "font",
+        "url": "/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "",
+        "len": 23544
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/?_rsc=L3rQiisJVkoYMz2F",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/korpa?_rsc=L3rQiisJVkoYMz2F",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/upit?deo=kocione-plocice&_rsc=L3rQiisJVkoYMz2F",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/delovi/kocione-plocice/volkswagen/golf?_rsc=L3rQiisJVkoYMz2F",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013?_rsc=L3rQiisJVkoYMz2F",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/?_rsc=PRq8y3EoRzkcdmKI",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/korpa?_rsc=PRq8y3EoRzkcdmKI",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/upit?deo=kocione-plocice&_rsc=PRq8y3EoRzkcdmKI",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "script",
+        "url": "/_next/static/chunks/2lujup_6ek0ah.js",
+        "status": 200,
+        "cc": "public, max-age=31536000, immutable",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/delovi/kocione-plocice/volkswagen/golf?_rsc=PRq8y3EoRzkcdmKI",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013?_rsc=PRq8y3EoRzkcdmKI",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      },
+      {
+        "phase": "after-load",
+        "t": "fetch",
+        "url": "/upit?_rsc=L3rQiisJVkoYMz2F",
+        "status": 200,
+        "cc": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "enc": "gzip",
+        "len": 0
+      }
+    ],
+    "inventory": {
+      "fontsLoaded": [
+        "display 700 normal",
+        "displaySemibold 600 normal",
+        "displaySemibold Fallback normal normal",
+        "condensed 600 normal",
+        "Public Sans 100 900 normal",
+        "Public Sans 100 900 normal",
+        "Public Sans Fallback normal normal",
+        "Martian Mono 100 800 normal",
+        "Martian Mono Fallback normal normal"
+      ],
+      "fontsUsed": [
+        "Public Sans 600 normal",
+        "display 700 normal",
+        "Public Sans 400 normal",
+        "displaySemibold 600 normal",
+        "Public Sans 650 normal",
+        "Public Sans 500 normal",
+        "Martian Mono 400 normal",
+        "condensed 600 normal"
+      ],
+      "imgs": [
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75",
+          "natural": "195x195",
+          "rendered": "104x204",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 862,
+          "loading": null,
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75",
+          "natural": "195x195",
+          "rendered": "104x182",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 1080,
+          "loading": null,
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75",
+          "natural": "195x195",
+          "rendered": "104x204",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 1276,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75",
+          "natural": "195x195",
+          "rendered": "104x182",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 1494,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75",
+          "natural": "195x195",
+          "rendered": "104x182",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 1691,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75",
+          "natural": "195x195",
+          "rendered": "104x204",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 1887,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        },
+        {
+          "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75",
+          "natural": "195x195",
+          "rendered": "104x204",
+          "dpr": 1,
+          "inViewport": false,
+          "top": 2105,
+          "loading": "lazy",
+          "fetchpriority": null,
+          "hasWH": false,
+          "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+          "complete": true
+        }
+      ],
+      "nav": {
+        "transfer": 20937,
+        "decoded": 167329,
+        "dcl": 82,
+        "load": 236
+      },
+      "res": [
+        {
+          "name": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+          "type": "link",
+          "start": 64,
+          "transfer": 16560,
+          "encoded": 16260,
+          "decoded": 16260,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+          "type": "link",
+          "start": 64,
+          "transfer": 16684,
+          "encoded": 16384,
+          "decoded": 16384,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+          "type": "link",
+          "start": 64,
+          "transfer": 18672,
+          "encoded": 18372,
+          "decoded": 18372,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+          "type": "link",
+          "start": 64,
+          "transfer": 26936,
+          "encoded": 26636,
+          "decoded": 26636,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75",
+          "type": "link",
+          "start": 67,
+          "transfer": 2496,
+          "encoded": 2196,
+          "decoded": 2196,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1ims1_lcdan5r.css",
+          "type": "link",
+          "start": 68,
+          "transfer": 19248,
+          "encoded": 18948,
+          "decoded": 98804,
+          "renderBlocking": "blocking"
+        },
+        {
+          "name": "/_next/static/chunks/41cvzcmlkfz4o.js",
+          "type": "link",
+          "start": 68,
+          "transfer": 2311,
+          "encoded": 2011,
+          "decoded": 7637,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2h84ksv1mg5s9.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 8377,
+          "encoded": 8077,
+          "decoded": 30588,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/3fntmmi971322.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 3961,
+          "encoded": 3661,
+          "decoded": 14377,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/11we8zj_qz5aa.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 8935,
+          "encoded": 8635,
+          "decoded": 27411,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 4619,
+          "encoded": 4319,
+          "decoded": 10979,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0qimmyhv2_bjj.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 35075,
+          "encoded": 34775,
+          "decoded": 129338,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/25dplrt_qw3he.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 7311,
+          "encoded": 7011,
+          "decoded": 18451,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0qy3sss5e6eww.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 73578,
+          "encoded": 73278,
+          "decoded": 234172,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/14y-81z8a-w-u.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 10708,
+          "encoded": 10408,
+          "decoded": 26404,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2vm060vmiv-df.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 9578,
+          "encoded": 9278,
+          "decoded": 27602,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/0rklqt_vfe3_n.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 12901,
+          "encoded": 12601,
+          "decoded": 37952,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1tr6a7zmh41cy.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 49888,
+          "encoded": 49588,
+          "decoded": 125720,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2jrozipxybei4.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 22941,
+          "encoded": 22641,
+          "decoded": 82591,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/30febus0elr13.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 715,
+          "encoded": 415,
+          "decoded": 415,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2f8qbt33jjpy3.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 3053,
+          "encoded": 2753,
+          "decoded": 6686,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/29atrq35xgs9f.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 2021,
+          "encoded": 1721,
+          "decoded": 5026,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/29ikd2g3512r-.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 22532,
+          "encoded": 22232,
+          "decoded": 63655,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1axg9-vmwkb-w.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 716,
+          "encoded": 416,
+          "decoded": 416,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/3e96qux3-c6pe.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 12282,
+          "encoded": 11982,
+          "decoded": 31879,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1h9gpy0y5abu7.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 13614,
+          "encoded": 13314,
+          "decoded": 43470,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1t0q0ok8maumv.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 8308,
+          "encoded": 8008,
+          "decoded": 22528,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/404ko09-15lhs.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 18502,
+          "encoded": 18202,
+          "decoded": 57625,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/00t-a16koa1p2.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 14809,
+          "encoded": 14509,
+          "decoded": 43301,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/1adhcvv0smcza.js",
+          "type": "script",
+          "start": 68,
+          "transfer": 9129,
+          "encoded": 8829,
+          "decoded": 23258,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2",
+          "type": "css",
+          "start": 93,
+          "transfer": 15744,
+          "encoded": 15444,
+          "decoded": 15444,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2",
+          "type": "css",
+          "start": 131,
+          "transfer": 23844,
+          "encoded": 23544,
+          "decoded": 23544,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/?_rsc=L3rQiisJVkoYMz2F",
+          "type": "fetch",
+          "start": 317,
+          "transfer": 469,
+          "encoded": 169,
+          "decoded": 266,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/korpa?_rsc=L3rQiisJVkoYMz2F",
+          "type": "fetch",
+          "start": 317,
+          "transfer": 475,
+          "encoded": 175,
+          "decoded": 320,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/upit?deo=kocione-plocice&_rsc=L3rQiisJVkoYMz2F",
+          "type": "fetch",
+          "start": 317,
+          "transfer": 491,
+          "encoded": 191,
+          "decoded": 339,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/delovi/kocione-plocice/volkswagen/golf?_rsc=L3rQiisJVkoYMz2F",
+          "type": "fetch",
+          "start": 318,
+          "transfer": 532,
+          "encoded": 232,
+          "decoded": 553,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/_next/static/chunks/2lujup_6ek0ah.js",
+          "type": "script",
+          "start": 327,
+          "transfer": 7640,
+          "encoded": 7340,
+          "decoded": 22224,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013?_rsc=L3rQiisJVkoYMz2F",
+          "type": "fetch",
+          "start": 375,
+          "transfer": 526,
+          "encoded": 226,
+          "decoded": 433,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/?_rsc=PRq8y3EoRzkcdmKI",
+          "type": "fetch",
+          "start": 378,
+          "transfer": 1644,
+          "encoded": 1344,
+          "decoded": 3742,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/korpa?_rsc=PRq8y3EoRzkcdmKI",
+          "type": "fetch",
+          "start": 379,
+          "transfer": 1634,
+          "encoded": 1334,
+          "decoded": 3639,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/upit?deo=kocione-plocice&_rsc=PRq8y3EoRzkcdmKI",
+          "type": "fetch",
+          "start": 380,
+          "transfer": 1729,
+          "encoded": 1429,
+          "decoded": 3831,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/delovi/kocione-plocice/volkswagen/golf?_rsc=PRq8y3EoRzkcdmKI",
+          "type": "fetch",
+          "start": 1026,
+          "transfer": 1756,
+          "encoded": 1456,
+          "decoded": 4250,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013?_rsc=PRq8y3EoRzkcdmKI",
+          "type": "fetch",
+          "start": 1121,
+          "transfer": 1800,
+          "encoded": 1500,
+          "decoded": 4316,
+          "renderBlocking": "non-blocking"
+        },
+        {
+          "name": "/upit?_rsc=L3rQiisJVkoYMz2F",
+          "type": "fetch",
+          "start": 1123,
+          "transfer": 474,
+          "encoded": 174,
+          "decoded": 319,
+          "renderBlocking": "non-blocking"
+        }
+      ]
+    },
+    "coverage": null,
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+}

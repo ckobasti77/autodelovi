@@ -1,0 +1,20 @@
+{
+ "base": "http://localhost:3100",
+ "pagesCrawled": 359,
+ "kontaktInSitemap": true,
+ "kontaktSitemap": "/sitemaps/staticne.xml",
+ "kontaktStatus": 200,
+ "kontaktRobots": "index, follow",
+ "pagesLinkingToKontakt": [],
+ "pagesLinkingToKontaktExcludingSelf": [],
+ "comparison": {
+  "/o-nama": 357,
+  "/dostava-i-placanje": 358,
+  "/reklamacije-i-povrat": 358,
+  "/uslovi-koriscenja": 357,
+  "/politika-privatnosti": 358,
+  "/kolacici": 358,
+  "/upit": 357,
+  "/za-majstore": 357
+ }
+}

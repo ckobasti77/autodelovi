@@ -1,0 +1,24 @@
+# copy-20 verifier: raw <title> from server HTML (curl, 2026-09-30T16:37:44+02:00)
+/ovo-ne-postoji  HTTP 404  <title>Stranica nije pronađena · SKLOP</title>
+/deo/ovaj-deo-ne-postoji-demo-9999  HTTP 404  <title>SKLOP — Rasklopi auto. Nađi deo.</title>
+/delovi/nepostojeca-kategorija  HTTP 404  <title>SKLOP — Rasklopi auto. Nađi deo.</title>
+/kontakt  HTTP 200  <title>Kontakt | SKLOP</title>
+/dostava-i-placanje  HTTP 200  <title>Dostava i plaćanje | SKLOP</title>
+/korpa  HTTP 200  <title>Korpa | SKLOP</title>
+
+# sources
+app/layout.tsx:27:    template: `%s · ${site.brand.name}`,
+app/admin/layout.tsx:4:  title: { absolute: "Administracija", template: "%s · Administracija" },
+44:export function defaultTitleSuffix(): string {
+45:  return ` | ${site.brand.name}`;
+53:export function pageTitle(title: string, suffix: string = defaultTitleSuffix()): string {
+83-      : {};
+45:  if (!category) return {};
+9:  { slug: "kocione-plocice", label: "Kočione pločice" },
+10:  { slug: "kocioni-diskovi", label: "Kočioni diskovi" },
+11:  { slug: "amortizeri-opruge", label: "Amortizeri i opruge" },
+12:  { slug: "zupcasti-kais-vodena-pumpa", label: "Zupčasti kaiš i vodena pumpa" },
+13:  { slug: "filteri", label: "Filteri" },
+14:  { slug: "turbina", label: "Turbina" },
+98:    labelSr: "Turbina (turbopunjač)",
+130:    labelSr: "Set zupčastog kaiša i vodena pumpa",

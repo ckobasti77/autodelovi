@@ -1,0 +1,2753 @@
+{
+  "summary": {
+    "files": 52,
+    "functions": 298,
+    "byKind": {
+      "sklop": 227,
+      "internal": 71
+    },
+    "byBuilder": {
+      "userQuery": 12,
+      "userMutation": 14,
+      "staffQuery": 65,
+      "internalMutation": 48,
+      "publicMutation": 15,
+      "internalQuery": 17,
+      "internalAction": 6,
+      "publicQuery": 40,
+      "staffMutation": 64,
+      "ownerMutation": 13,
+      "ownerQuery": 4
+    },
+    "internalWithoutReturns": 0,
+    "flags": 5
+  },
+  "flags": [
+    {
+      "file": "convex/catalog/vehiclesAdmin.ts",
+      "line": 471,
+      "issue": "db .filter()",
+      "text": ".filter((q) => q.eq(q.field(\"generationId\"), link.generationId))"
+    },
+    {
+      "file": "convex/exportsAdmin.ts",
+      "line": 70,
+      "issue": "db .filter()",
+      "text": ".filter((q) => q.eq(q.field(\"deletedAt\"), undefined))"
+    },
+    {
+      "file": "convex/privacy.ts",
+      "line": 116,
+      "name": "customerData",
+      "builder": "ownerQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true,
+      "issue": "wall clock read inside a query handler (direct)"
+    },
+    {
+      "file": "convex/staff.ts",
+      "line": 85,
+      "name": "listInvites",
+      "builder": "ownerQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true,
+      "issue": "wall clock read inside a query handler (direct)"
+    },
+    {
+      "file": "convex/staff.ts",
+      "line": 265,
+      "name": "inviteInfo",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true,
+      "issue": "wall clock read inside a query handler (direct)"
+    }
+  ],
+  "results": [
+    {
+      "file": "convex/account.ts",
+      "line": 36,
+      "name": "savedVehicles",
+      "builder": "userQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/account.ts",
+      "line": 76,
+      "name": "addSavedVehicle",
+      "builder": "userMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/account.ts",
+      "line": 152,
+      "name": "removeSavedVehicle",
+      "builder": "userMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/account.ts",
+      "line": 163,
+      "name": "updateSavedVehicle",
+      "builder": "userMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/account.ts",
+      "line": 198,
+      "name": "favorites",
+      "builder": "userQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/account.ts",
+      "line": 236,
+      "name": "favoriteIds",
+      "builder": "userQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/account.ts",
+      "line": 255,
+      "name": "toggleFavorite",
+      "builder": "userMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/adminSearch.ts",
+      "line": 30,
+      "name": "run",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/audit.ts",
+      "line": 12,
+      "name": "list",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/authEmails.ts",
+      "line": 17,
+      "name": "sendPasswordResetCode",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/automations.ts",
+      "line": 52,
+      "name": "runReminders",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/automations.ts",
+      "line": 143,
+      "name": "runDigest",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/automations.ts",
+      "line": 169,
+      "name": "lowStockSweep",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/automations.ts",
+      "line": 214,
+      "name": "backInStockSweep",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/automations.ts",
+      "line": 252,
+      "name": "quoteExpiringSweep",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/automations.ts",
+      "line": 564,
+      "name": "nightly",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/backInStock.ts",
+      "line": 15,
+      "name": "subscribe",
+      "builder": "publicMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/backInStock.ts",
+      "line": 57,
+      "name": "unsubscribe",
+      "builder": "publicMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/capi.ts",
+      "line": 184,
+      "name": "job",
+      "builder": "internalQuery",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/capi.ts",
+      "line": 216,
+      "name": "finish",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/capi.ts",
+      "line": 258,
+      "name": "send",
+      "builder": "internalAction",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/carts.ts",
+      "line": 38,
+      "name": "get",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/carts.ts",
+      "line": 187,
+      "name": "addItem",
+      "builder": "publicMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/carts.ts",
+      "line": 204,
+      "name": "setQuantity",
+      "builder": "publicMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/carts.ts",
+      "line": 217,
+      "name": "removeItem",
+      "builder": "publicMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/carts.ts",
+      "line": 235,
+      "name": "clear",
+      "builder": "publicMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/carts.ts",
+      "line": 248,
+      "name": "addMany",
+      "builder": "publicMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/carts.ts",
+      "line": 282,
+      "name": "mergeGuest",
+      "builder": "userMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/categories.ts",
+      "line": 15,
+      "name": "tree",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/categories.ts",
+      "line": 40,
+      "name": "bySlug",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/categories.ts",
+      "line": 86,
+      "name": "update",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/categoriesAdmin.ts",
+      "line": 45,
+      "name": "tree",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/categoriesAdmin.ts",
+      "line": 112,
+      "name": "create",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/categoriesAdmin.ts",
+      "line": 164,
+      "name": "update",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/categoriesAdmin.ts",
+      "line": 241,
+      "name": "move",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/categoriesAdmin.ts",
+      "line": 283,
+      "name": "generateThumbnailUploadUrl",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/categoriesAdmin.ts",
+      "line": 293,
+      "name": "setThumbnail",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/categoriesAdmin.ts",
+      "line": 341,
+      "name": "options",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/codes.ts",
+      "line": 50,
+      "name": "lookup",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/manufacturers.ts",
+      "line": 9,
+      "name": "list",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/manufacturersAdmin.ts",
+      "line": 14,
+      "name": "list",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/manufacturersAdmin.ts",
+      "line": 45,
+      "name": "save",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/products.ts",
+      "line": 167,
+      "name": "listByCategory",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/products.ts",
+      "line": 291,
+      "name": "bySlug",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/products.ts",
+      "line": 413,
+      "name": "related",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/products.ts",
+      "line": 469,
+      "name": "partPanel",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/products.ts",
+      "line": 542,
+      "name": "liveState",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/products.ts",
+      "line": 586,
+      "name": "forVehicle",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/products.ts",
+      "line": 652,
+      "name": "retired",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 154,
+      "name": "list",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 258,
+      "name": "get",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 315,
+      "name": "create",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 336,
+      "name": "update",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 402,
+      "name": "setActive",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 424,
+      "name": "adjustStock",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 468,
+      "name": "history",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 558,
+      "name": "generateImageUploadUrl",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 568,
+      "name": "attachImage",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 633,
+      "name": "reorderImages",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 667,
+      "name": "removeImage",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 715,
+      "name": "getFull",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 879,
+      "name": "duplicate",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 982,
+      "name": "bulkSetActive",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 1007,
+      "name": "bulkSetCategory",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 1037,
+      "name": "bulkAdjustPrice",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 1072,
+      "name": "bulkRestore",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/productsAdmin.ts",
+      "line": 1098,
+      "name": "pick",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/vehicles.ts",
+      "line": 81,
+      "name": "brands",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/vehicles.ts",
+      "line": 90,
+      "name": "models",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/vehicles.ts",
+      "line": 107,
+      "name": "generations",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/vehicles.ts",
+      "line": 119,
+      "name": "engines",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/vehicles.ts",
+      "line": 149,
+      "name": "resolve",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/vehicles.ts",
+      "line": 232,
+      "name": "tree",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/vehiclesAdmin.ts",
+      "line": 28,
+      "name": "tree",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/vehiclesAdmin.ts",
+      "line": 78,
+      "name": "generations",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/vehiclesAdmin.ts",
+      "line": 146,
+      "name": "engines",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/vehiclesAdmin.ts",
+      "line": 187,
+      "name": "saveBrand",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/vehiclesAdmin.ts",
+      "line": 238,
+      "name": "saveModel",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/vehiclesAdmin.ts",
+      "line": 295,
+      "name": "saveGeneration",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/vehiclesAdmin.ts",
+      "line": 375,
+      "name": "saveEngine",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/vehiclesAdmin.ts",
+      "line": 436,
+      "name": "linkEngine",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/catalog/vehiclesAdmin.ts",
+      "line": 462,
+      "name": "unlinkEngine",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/consent.ts",
+      "line": 14,
+      "name": "record",
+      "builder": "publicMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/content.ts",
+      "line": 25,
+      "name": "pageBySlug",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/content.ts",
+      "line": 45,
+      "name": "faqs",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/content.ts",
+      "line": 63,
+      "name": "seedContent",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/content.ts",
+      "line": 130,
+      "name": "adminPages",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/content.ts",
+      "line": 154,
+      "name": "updatePage",
+      "builder": "ownerMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/customersAdmin.ts",
+      "line": 45,
+      "name": "list",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/customersAdmin.ts",
+      "line": 103,
+      "name": "get",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/customersAdmin.ts",
+      "line": 245,
+      "name": "addNote",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/customersAdmin.ts",
+      "line": 267,
+      "name": "setBlocked",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/dashboard.ts",
+      "line": 55,
+      "name": "kpis",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/dashboard.ts",
+      "line": 139,
+      "name": "ordersPerDay",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/dashboard.ts",
+      "line": 150,
+      "name": "byCategory",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/dashboard.ts",
+      "line": 194,
+      "name": "slaQueue",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/dashboard.ts",
+      "line": 258,
+      "name": "recentActivity",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/dashboard.ts",
+      "line": 289,
+      "name": "searchedNotFound",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/dashboard.ts",
+      "line": 338,
+      "name": "navCounts",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/demo.ts",
+      "line": 268,
+      "name": "removeDemoData",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/demo.ts",
+      "line": 290,
+      "name": "status",
+      "builder": "ownerQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/demo.ts",
+      "line": 320,
+      "name": "remove",
+      "builder": "ownerMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/emailsAdmin.ts",
+      "line": 62,
+      "name": "outbox",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/emailsAdmin.ts",
+      "line": 119,
+      "name": "get",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/emailsAdmin.ts",
+      "line": 177,
+      "name": "config",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/emailsAdmin.ts",
+      "line": 225,
+      "name": "templates",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/emailsAdmin.ts",
+      "line": 236,
+      "name": "preview",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/emailsAdmin.ts",
+      "line": 250,
+      "name": "sendTest",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/emailsAdmin.ts",
+      "line": 279,
+      "name": "resend",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/events.ts",
+      "line": 552,
+      "name": "dispatch",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/events.ts",
+      "line": 583,
+      "name": "sweep",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/exportsAdmin.ts",
+      "line": 39,
+      "name": "productsPage",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/exportsAdmin.ts",
+      "line": 126,
+      "name": "ordersPage",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/exportsAdmin.ts",
+      "line": 202,
+      "name": "customersPage",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/exportsAdmin.ts",
+      "line": 248,
+      "name": "mechanicsPage",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/files.ts",
+      "line": 34,
+      "name": "sniff",
+      "builder": "internalAction",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/files.ts",
+      "line": 47,
+      "name": "recordSniff",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/importCommit.ts",
+      "line": 63,
+      "name": "commitRow",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/importCommit.ts",
+      "line": 168,
+      "name": "deactivateOne",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/importCommit.ts",
+      "line": 201,
+      "name": "commitChunk",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/importCommit.ts",
+      "line": 331,
+      "name": "countMissingChunk",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/importCommit.ts",
+      "line": 429,
+      "name": "rollbackOne",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/importCommit.ts",
+      "line": 494,
+      "name": "rollbackChunk",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/importCommit.ts",
+      "line": 574,
+      "name": "purgeRows",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/importImages.ts",
+      "line": 32,
+      "name": "nextJobs",
+      "builder": "internalQuery",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/importImages.ts",
+      "line": 143,
+      "name": "run",
+      "builder": "internalAction",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/importImages.ts",
+      "line": 193,
+      "name": "attach",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/importImages.ts",
+      "line": 260,
+      "name": "fail",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 54,
+      "name": "reference",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 124,
+      "name": "presets",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 139,
+      "name": "savePreset",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 181,
+      "name": "deletePreset",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 201,
+      "name": "generateUploadUrl",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 207,
+      "name": "createBatch",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 296,
+      "name": "stageRows",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 413,
+      "name": "finalizeStaging",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 433,
+      "name": "cancel",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 453,
+      "name": "commit",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 494,
+      "name": "resume",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 509,
+      "name": "rollback",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 620,
+      "name": "batch",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 629,
+      "name": "history",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 672,
+      "name": "rows",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 695,
+      "name": "samples",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 784,
+      "name": "changes",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 823,
+      "name": "imageJobs",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/imports.ts",
+      "line": 852,
+      "name": "sourceFileUrl",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/inquiries.ts",
+      "line": 60,
+      "name": "generateUploadUrl",
+      "builder": "publicMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/inquiries.ts",
+      "line": 107,
+      "name": "submit",
+      "builder": "publicMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/inquiries.ts",
+      "line": 238,
+      "name": "getByToken",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/inquiries.ts",
+      "line": 359,
+      "name": "acceptQuote",
+      "builder": "publicMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/inquiries.ts",
+      "line": 412,
+      "name": "declineQuote",
+      "builder": "publicMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/inquiries.ts",
+      "line": 460,
+      "name": "requestRenewal",
+      "builder": "publicMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/inquiries.ts",
+      "line": 494,
+      "name": "mine",
+      "builder": "userQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/inquiriesAdmin.ts",
+      "line": 74,
+      "name": "list",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/inquiriesAdmin.ts",
+      "line": 176,
+      "name": "statusCounts",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/inquiriesAdmin.ts",
+      "line": 227,
+      "name": "get",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/inquiriesAdmin.ts",
+      "line": 403,
+      "name": "assign",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/inquiriesAdmin.ts",
+      "line": 436,
+      "name": "startProcessing",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/inquiriesAdmin.ts",
+      "line": 456,
+      "name": "close",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/inquiriesAdmin.ts",
+      "line": 502,
+      "name": "saveQuoteDraft",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/inquiriesAdmin.ts",
+      "line": 562,
+      "name": "sendQuote",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/inquiriesAdmin.ts",
+      "line": 627,
+      "name": "addNote",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/inquiriesAdmin.ts",
+      "line": 654,
+      "name": "convertToOrder",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/landings.ts",
+      "line": 240,
+      "name": "recompute",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/landings.ts",
+      "line": 260,
+      "name": "recomputeBatch",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/landings.ts",
+      "line": 279,
+      "name": "rank",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/landings.ts",
+      "line": 331,
+      "name": "seedAdLandings",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/maintenance.ts",
+      "line": 19,
+      "name": "expireQuotes",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/maintenance.ts",
+      "line": 58,
+      "name": "autoCompleteOrders",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/maintenance.ts",
+      "line": 89,
+      "name": "rekeyStatusLinks",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/maintenance.ts",
+      "line": 123,
+      "name": "backfillCustomerRole",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/mechanicPortal.ts",
+      "line": 57,
+      "name": "overview",
+      "builder": "userQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/mechanicPortal.ts",
+      "line": 166,
+      "name": "quickOrderMatch",
+      "builder": "userMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/mechanicPortal.ts",
+      "line": 295,
+      "name": "inquireMissing",
+      "builder": "userMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/mechanicPortal.ts",
+      "line": 363,
+      "name": "priceListMeta",
+      "builder": "userQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/mechanicPortal.ts",
+      "line": 386,
+      "name": "priceListPage",
+      "builder": "userQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/mechanics.ts",
+      "line": 26,
+      "name": "register",
+      "builder": "userMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/mechanics.ts",
+      "line": 133,
+      "name": "myProfile",
+      "builder": "userQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/mechanics.ts",
+      "line": 192,
+      "name": "updateMyProfile",
+      "builder": "userMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/mechanicsAdmin.ts",
+      "line": 70,
+      "name": "list",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/mechanicsAdmin.ts",
+      "line": 91,
+      "name": "counts",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/mechanicsAdmin.ts",
+      "line": 116,
+      "name": "get",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/mechanicsAdmin.ts",
+      "line": 190,
+      "name": "approve",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/mechanicsAdmin.ts",
+      "line": 207,
+      "name": "reject",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/mechanicsAdmin.ts",
+      "line": 225,
+      "name": "suspend",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/mechanicsAdmin.ts",
+      "line": 242,
+      "name": "reactivate",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/mechanicsAdmin.ts",
+      "line": 262,
+      "name": "reopen",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/mechanicsAdmin.ts",
+      "line": 278,
+      "name": "update",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/notifications.ts",
+      "line": 31,
+      "name": "mine",
+      "builder": "userQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/notifications.ts",
+      "line": 55,
+      "name": "unreadCount",
+      "builder": "userQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/notifications.ts",
+      "line": 67,
+      "name": "markRead",
+      "builder": "userMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/notifications.ts",
+      "line": 79,
+      "name": "markAllRead",
+      "builder": "userMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/notifications.ts",
+      "line": 124,
+      "name": "preferences",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/notifications.ts",
+      "line": 148,
+      "name": "setPreferences",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/notifications.ts",
+      "line": 165,
+      "name": "preferencesFor",
+      "builder": "ownerQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/notifications.ts",
+      "line": 179,
+      "name": "setPreferencesFor",
+      "builder": "ownerMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/notify.ts",
+      "line": 363,
+      "name": "deliverEmail",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/notify.ts",
+      "line": 506,
+      "name": "onEmailEvent",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/orders.ts",
+      "line": 37,
+      "name": "submit",
+      "builder": "publicMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/orders.ts",
+      "line": 311,
+      "name": "getByToken",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/orders.ts",
+      "line": 325,
+      "name": "myOrders",
+      "builder": "userQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/orders.ts",
+      "line": 372,
+      "name": "myOrder",
+      "builder": "userQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/orders.ts",
+      "line": 382,
+      "name": "reorder",
+      "builder": "userMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/ordersAdmin.ts",
+      "line": 105,
+      "name": "list",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/ordersAdmin.ts",
+      "line": 185,
+      "name": "statusCounts",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/ordersAdmin.ts",
+      "line": 219,
+      "name": "get",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/ordersAdmin.ts",
+      "line": 430,
+      "name": "transition",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/ordersAdmin.ts",
+      "line": 459,
+      "name": "addNote",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/ordersAdmin.ts",
+      "line": 489,
+      "name": "markPaid",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/ordersAdmin.ts",
+      "line": 524,
+      "name": "setTracking",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/ordersAdmin.ts",
+      "line": 581,
+      "name": "editItems",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/ordersAdmin.ts",
+      "line": 752,
+      "name": "customerHistory",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/pricing.ts",
+      "line": 25,
+      "name": "forProducts",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/pricing.ts",
+      "line": 85,
+      "name": "listTiers",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/pricing.ts",
+      "line": 95,
+      "name": "publicTiers",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/pricing.ts",
+      "line": 117,
+      "name": "previewTier",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/pricing.ts",
+      "line": 203,
+      "name": "createTier",
+      "builder": "ownerMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/pricing.ts",
+      "line": 231,
+      "name": "updateTier",
+      "builder": "ownerMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/pricing.ts",
+      "line": 254,
+      "name": "setTierActive",
+      "builder": "ownerMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/privacy.ts",
+      "line": 116,
+      "name": "customerData",
+      "builder": "ownerQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/privacy.ts",
+      "line": 265,
+      "name": "logExport",
+      "builder": "ownerMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/privacy.ts",
+      "line": 403,
+      "name": "anonymize",
+      "builder": "ownerMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/revalidate.ts",
+      "line": 42,
+      "name": "job",
+      "builder": "internalQuery",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/revalidate.ts",
+      "line": 55,
+      "name": "finish",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/revalidate.ts",
+      "line": 83,
+      "name": "send",
+      "builder": "internalAction",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/search.ts",
+      "line": 35,
+      "name": "run",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/search.ts",
+      "line": 119,
+      "name": "suggest",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/search.ts",
+      "line": 208,
+      "name": "log",
+      "builder": "publicMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/search.ts",
+      "line": 241,
+      "name": "zeroResults",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/search.ts",
+      "line": 284,
+      "name": "categoryScope",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/search.ts",
+      "line": 298,
+      "name": "analytics",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seed.ts",
+      "line": 70,
+      "name": "seedReference",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seed.ts",
+      "line": 398,
+      "name": "seedProducts",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seed.ts",
+      "line": 426,
+      "name": "seedAlternatives",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seed.ts",
+      "line": 482,
+      "name": "seedDemoAccounts",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seed.ts",
+      "line": 578,
+      "name": "seedDemoOrders",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seed.ts",
+      "line": 831,
+      "name": "seedDemoInquiries",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seed.ts",
+      "line": 985,
+      "name": "run",
+      "builder": "internalAction",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seed.ts",
+      "line": 1045,
+      "name": "findPasswordAccount",
+      "builder": "internalQuery",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seed.ts",
+      "line": 1064,
+      "name": "promoteOwner",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seed.ts",
+      "line": 1105,
+      "name": "createOwner",
+      "builder": "internalAction",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seed.ts",
+      "line": 1174,
+      "name": "stats",
+      "builder": "internalQuery",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seo.ts",
+      "line": 121,
+      "name": "sitemapData",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seo.ts",
+      "line": 245,
+      "name": "sitemapProducts",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seo.ts",
+      "line": 277,
+      "name": "feedProducts",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seo.ts",
+      "line": 361,
+      "name": "landing",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seo.ts",
+      "line": 506,
+      "name": "categoryLandings",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seo.ts",
+      "line": 530,
+      "name": "vehicleLandings",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seo.ts",
+      "line": 558,
+      "name": "productLandings",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seo.ts",
+      "line": 603,
+      "name": "adLanding",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seo.ts",
+      "line": 677,
+      "name": "productImage",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seoAdmin.ts",
+      "line": 33,
+      "name": "landingOverview",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seoAdmin.ts",
+      "line": 77,
+      "name": "recomputeLandings",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seoAdmin.ts",
+      "line": 89,
+      "name": "trackingStatus",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seoAdmin.ts",
+      "line": 188,
+      "name": "adLandings",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seoAdmin.ts",
+      "line": 201,
+      "name": "saveAdLanding",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seoAdmin.ts",
+      "line": 297,
+      "name": "removeAdLanding",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seoAdmin.ts",
+      "line": 344,
+      "name": "sourcesReport",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/seoAdmin.ts",
+      "line": 454,
+      "name": "offlineConversions",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/settings.ts",
+      "line": 34,
+      "name": "getPublic",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/settings.ts",
+      "line": 122,
+      "name": "getTracking",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/settings.ts",
+      "line": 128,
+      "name": "getAdmin",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/settings.ts",
+      "line": 162,
+      "name": "updateSection",
+      "builder": "ownerMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/staff.ts",
+      "line": 47,
+      "name": "listUsers",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/staff.ts",
+      "line": 85,
+      "name": "listInvites",
+      "builder": "ownerQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/staff.ts",
+      "line": 133,
+      "name": "createInvite",
+      "builder": "ownerMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/staff.ts",
+      "line": 196,
+      "name": "revokeInvite",
+      "builder": "ownerMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/staff.ts",
+      "line": 216,
+      "name": "setRole",
+      "builder": "ownerMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/staff.ts",
+      "line": 241,
+      "name": "setBlocked",
+      "builder": "ownerMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/staff.ts",
+      "line": 265,
+      "name": "inviteInfo",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/staff.ts",
+      "line": 304,
+      "name": "acceptInvite",
+      "builder": "userMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/staff.ts",
+      "line": 347,
+      "name": "touchStaffActivity",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/stock.ts",
+      "line": 29,
+      "name": "movements",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/stock.ts",
+      "line": 72,
+      "name": "lowStock",
+      "builder": "staffQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/stock.ts",
+      "line": 106,
+      "name": "setThreshold",
+      "builder": "staffMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 31,
+      "name": "orderProbe",
+      "builder": "internalQuery",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 73,
+      "name": "inquiryProbe",
+      "builder": "internalQuery",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 107,
+      "name": "backInStockProbe",
+      "builder": "internalQuery",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 129,
+      "name": "samples",
+      "builder": "internalQuery",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 223,
+      "name": "quotedInquiryToken",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 243,
+      "name": "approveMechanic",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 279,
+      "name": "mechanicProbe",
+      "builder": "internalQuery",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 322,
+      "name": "quickOrderSamples",
+      "builder": "internalQuery",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 371,
+      "name": "createTestOrder",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 439,
+      "name": "createTestInquiry",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 467,
+      "name": "createPendingMechanic",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 517,
+      "name": "mechanicProfileProbe",
+      "builder": "internalQuery",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 532,
+      "name": "adminProbe",
+      "builder": "internalQuery",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 565,
+      "name": "deactivateE2EProducts",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 589,
+      "name": "purgeImportFixtures",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 620,
+      "name": "productBySku",
+      "builder": "internalQuery",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 650,
+      "name": "emailProbe",
+      "builder": "internalQuery",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 685,
+      "name": "orderStatusToken",
+      "builder": "internalQuery",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 698,
+      "name": "setTracking",
+      "builder": "internalMutation",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/testing.ts",
+      "line": 728,
+      "name": "consentRecordCount",
+      "builder": "internalQuery",
+      "kind": "internal",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/users.ts",
+      "line": 13,
+      "name": "viewer",
+      "builder": "publicQuery",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    },
+    {
+      "file": "convex/users.ts",
+      "line": 66,
+      "name": "updateMyProfile",
+      "builder": "userMutation",
+      "kind": "sklop",
+      "hasArgs": true,
+      "hasReturns": true
+    }
+  ]
+}

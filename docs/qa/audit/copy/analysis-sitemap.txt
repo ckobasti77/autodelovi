@@ -1,0 +1,63 @@
+pages: 349 from crawl-sitemap.json
+
+## emoji (1 distinct lines)
+[text] © 2026 SKLOP
+    ↳ 126 page(s): /vozila /upit /o-nama /kontakt …
+
+## titleCase (4 distinct lines)
+[text] Brizgaljka Common Rail 2.0 TDI
+    ↳ 3 page(s): /delovi/brizgaljke-pumpa-goriva /deo/brizgaljka-common-rail-2-0-tdi-demo-0054 /deo/set-podlozki-brizgaljki-demo-0056
+[text] : Brizgaljka Common Rail 2.0 TDI
+    ↳ 3 page(s): /delovi/brizgaljke-pumpa-goriva /deo/brizgaljka-common-rail-2-0-tdi-demo-0054 /deo/set-podlozki-brizgaljki-demo-0056
+[text] Nivo	Rabat	Artikal od 10.000 RSD
+    ↳ 1 page(s): /za-majstore
+[div@aria-label] Količina: Brizgaljka Common Rail 2.0 TDI
+    ↳ 1 page(s): /deo/brizgaljka-common-rail-2-0-tdi-demo-0054
+
+## email (16 distinct lines)
+[text] E-pošta
+    ↳ 15 page(s): /deo/kocione-plocice-prednje-demo-0012 /deo/rame-prednje-desno-sa-kuglom-demo-0030 /deo/kraj-spone-demo-0034 /deo/lezaj-prednjeg-tocka-set-demo-0040 …
+[text] U toku radnog dana proverimo firmu i odredimo nivo rabata. Odgovor stiže e-poštom.
+    ↳ 1 page(s): /za-majstore
+[text] E-pošta (nije obavezno)
+    ↳ 1 page(s): /upit
+[text] E-poštom
+    ↳ 1 page(s): /upit
+[text] Na sajtu nema plaćanja karticom. Porudžbinu šaljete bez plaćanja, a mi je potvrđujemo telefonom ili e-poštom pre slanja.
+    ↳ 1 page(s): /dostava-i-placanje
+[description] Na sajtu nema plaćanja karticom. Porudžbinu šaljete bez plaćanja, a mi je potvrđujemo telefonom ili e-poštom pre slanja. Načini dostave - Lično…
+    ↳ 1 page(s): /dostava-i-placanje
+[ogDescription] Na sajtu nema plaćanja karticom. Porudžbinu šaljete bez plaćanja, a mi je potvrđujemo telefonom ili e-poštom pre slanja. Načini dostave - Lično…
+    ↳ 1 page(s): /dostava-i-placanje
+[text] Pošaljite nam izjavu o odustanku e-poštom (adresa sa stranice Kontakt) ili pismom na adresu prodavca. Dovoljno je da navedete broj porudžbine, artikal i da odustajete od ugovora.
+    ↳ 1 page(s): /reklamacije-i-povrat
+[text] Javite nam se telefonom, e-poštom ili lično i dostavite račun ili drugi dokaz o kupovini (na primer broj porudžbine).
+    ↳ 1 page(s): /reklamacije-i-povrat
+[text] Posle slanja dobijate broj porudžbine i potvrdu na e-poštu. To je potvrda prijema, ne i prihvat ponude.
+    ↳ 1 page(s): /uslovi-koriscenja
+[text] Ugovor je zaključen kada porudžbinu potvrdimo telefonom ili e-poštom. Ako artikal nije dostupan ili je cena pogrešno objavljena, javljamo vam se pre potvrde i možete odustati bez troška.
+    ↳ 1 page(s): /uslovi-koriscenja
+[text] Ime, prezime, telefon, e-pošta, adresa dostave	Obrada porudžbine, dostava, obaveštenja o statusu	Izvršenje ugovora
+    ↳ 1 page(s): /politika-privatnosti
+[text] E-pošta za „Javi mi kad stigne“	Jedno obaveštenje o dolasku robe	Pristanak
+    ↳ 1 page(s): /politika-privatnosti
+[text] Podatke dobijaju samo oni kojima su potrebni za izvršenje usluge: kurirska služba (ime, adresa, telefon), pružalac usluge slanja e-pošte i pružaoci infrastrukture na kojoj sajt radi. Neki od njih obrađuju podatke van Srb
+    ↳ 1 page(s): /politika-privatnosti
+[text] Imate pravo da zatražite pristup podacima, ispravku, brisanje, ograničenje obrade i prenosivost, pravo na prigovor i pravo da u svakom trenutku opozovete pristanak. Zahtev pošaljite na e-poštu sa stranice Kontakt; odgova
+    ↳ 1 page(s): /politika-privatnosti
+[text] Uz pristanak na oglašavanje, posle porudžbine ili upita Google i Meta dobijaju i šifrovani (heširani) zapis e-pošte i telefona radi merenja oglasa — nikad u čitljivom obliku. Bez pristanka se ne učitava nijedan Google il
+    ↳ 1 page(s): /kolacici
+
+## hyphenAsDash (2 distinct lines)
+[description] Na sajtu nema plaćanja karticom. Porudžbinu šaljete bez plaćanja, a mi je potvrđujemo telefonom ili e-poštom pre slanja. Načini dostave - Lično…
+    ↳ 1 page(s): /dostava-i-placanje
+[ogDescription] Na sajtu nema plaćanja karticom. Porudžbinu šaljete bez plaćanja, a mi je potvrđujemo telefonom ili e-poštom pre slanja. Načini dostave - Lično…
+    ↳ 1 page(s): /dostava-i-placanje
+
+## hyphenRange (3 distinct lines)
+[text] 1EG 834 025-331
+    ↳ 1 page(s): /deo/far-levi-halogeni-demo-0105
+[text] 1EG 440 610-924
+    ↳ 1 page(s): /deo/stop-svetlo-levo-demo-0107
+[text] 1EG 155 626-345
+    ↳ 1 page(s): /deo/poklopac-retrovizora-desni-demo-0122

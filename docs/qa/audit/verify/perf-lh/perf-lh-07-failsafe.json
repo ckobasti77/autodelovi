@@ -1,0 +1,167 @@
+{
+ "base": "http://localhost:3200",
+ "cpu": 4,
+ "network": "slow 4G applied (562.5 ms RTT, 1.47 Mbps)",
+ "rows": [
+  {
+   "path": "/",
+   "round": 1,
+   "failsafeAt": 5301,
+   "firstWordAt": null,
+   "firstStateAt": 5659,
+   "splitAfterFailsafe": 0,
+   "splitBefore": 0,
+   "dcl": 2157,
+   "lcp": [
+    {
+     "at": 2060,
+     "size": 28999,
+     "el": "span.rw “Rasklopi”"
+    }
+   ],
+   "fcp": 2060,
+   "failsafeNow": true,
+   "done": 68
+  },
+  {
+   "path": "/",
+   "round": 2,
+   "failsafeAt": 5317,
+   "firstWordAt": null,
+   "firstStateAt": 5640,
+   "splitAfterFailsafe": 0,
+   "splitBefore": 0,
+   "dcl": 2282,
+   "lcp": [
+    {
+     "at": 2132,
+     "size": 28999,
+     "el": "span.rw “Rasklopi”"
+    }
+   ],
+   "fcp": 2132,
+   "failsafeNow": true,
+   "done": 68
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "round": 1,
+   "failsafeAt": 5258,
+   "firstWordAt": 5620,
+   "firstStateAt": 5568,
+   "splitAfterFailsafe": 6,
+   "splitBefore": 0,
+   "dcl": 2100,
+   "lcp": [
+    {
+     "at": 2012,
+     "size": 31212,
+     "el": "p.max-w-[72ch].type-lead “Kočioni diskovi zajedno sa pločicama pretvaraju kr”"
+    }
+   ],
+   "fcp": 2012,
+   "failsafeNow": true,
+   "done": 14
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "round": 2,
+   "failsafeAt": 5237,
+   "firstWordAt": 5647,
+   "firstStateAt": 5590,
+   "splitAfterFailsafe": 6,
+   "splitBefore": 0,
+   "dcl": 2087,
+   "lcp": [
+    {
+     "at": 1996,
+     "size": 31212,
+     "el": "p.max-w-[72ch].type-lead “Kočioni diskovi zajedno sa pločicama pretvaraju kr”"
+    }
+   ],
+   "fcp": 1996,
+   "failsafeNow": true,
+   "done": 14
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "round": 1,
+   "failsafeAt": 5286,
+   "firstWordAt": 5701,
+   "firstStateAt": 5665,
+   "splitAfterFailsafe": 2,
+   "splitBefore": 0,
+   "dcl": 2252,
+   "lcp": [
+    {
+     "at": 2148,
+     "size": 63756,
+     "el": "img.object-contain.transition-transform “”"
+    }
+   ],
+   "fcp": 2148,
+   "failsafeNow": true,
+   "done": 9
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "round": 2,
+   "failsafeAt": 5293,
+   "firstWordAt": 5654,
+   "firstStateAt": 5627,
+   "splitAfterFailsafe": 2,
+   "splitBefore": 0,
+   "dcl": 2231,
+   "lcp": [
+    {
+     "at": 2140,
+     "size": 63756,
+     "el": "img.object-contain.transition-transform “”"
+    }
+   ],
+   "fcp": 2140,
+   "failsafeNow": true,
+   "done": 9
+  },
+  {
+   "path": "/delovi/kocioni-diskovi/volkswagen/golf",
+   "round": 1,
+   "failsafeAt": 5242,
+   "firstWordAt": 5624,
+   "firstStateAt": 5589,
+   "splitAfterFailsafe": 2,
+   "splitBefore": 0,
+   "dcl": 2175,
+   "lcp": [
+    {
+     "at": 2052,
+     "size": 66043,
+     "el": "p.max-w-[72ch].type-lead “Za VW Golf imamo 6 artikala iz grupe „Kočioni disk”"
+    }
+   ],
+   "fcp": 2052,
+   "failsafeNow": true,
+   "done": 8
+  },
+  {
+   "path": "/delovi/kocioni-diskovi/volkswagen/golf",
+   "round": 2,
+   "failsafeAt": 5270,
+   "firstWordAt": 5701,
+   "firstStateAt": 5666,
+   "splitAfterFailsafe": 2,
+   "splitBefore": 0,
+   "dcl": 2210,
+   "lcp": [
+    {
+     "at": 2076,
+     "size": 66043,
+     "el": "p.max-w-[72ch].type-lead “Za VW Golf imamo 6 artikala iz grupe „Kočioni disk”"
+    }
+   ],
+   "fcp": 2076,
+   "failsafeNow": true,
+   "done": 8
+  }
+ ]
+}

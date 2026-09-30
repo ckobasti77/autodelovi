@@ -1,0 +1,64 @@
+{
+  "dashboard": {
+    "headings": [
+      "Pregled",
+      "Red čekanja",
+      "Aktivnost",
+      "Porudžbine po danima",
+      "Traženo, a nemamo",
+      "Porudžbine po sistemima"
+    ],
+    "text": "Pregled Danas 30.09.2026. — stanje u realnom vremenu. Podaci o firmi nisu popunjeni: pun naziv firme, PIB, adresa sedišta, telefon, tekući račun. Predračun, otpremnica i podnožje sajta ih prikazuju. Popuni u podešavanjima Porudžbine danas 58 75 čeka potvrdu Vrednost danas 1.728.672 RSD sa PDV-om Poslednjih 7 dana 58 više nego prethodnih 7 dana (0) Upiti bez odgovora 45 najstariji čeka 9 h 8 min radnog vremena Majstori na čekanju 0 registracije za odobrenje Bez zaliha 15 još 28 sa malo zaliha Red čekanja cilj: odgovor za 2 h SK-2026-000001 Porudžbina Petar Demo · 15.270 RSD 9 h 8 min — kasni primljeno 29.09. 16:31 UP-2026-000002 Upit Demo Kupac · Traži deo · Pumpa za vodu za Octavia III 1.6 TDI, ima li na stanju? 9 h 8 min — kasni primljeno 29.09. 16:31 SK-2026-000009 Porudžbina Nikola Stanković · 7.740 RSD 8 h 40 min — kasni primljeno 30.09. 03:39 UP-2026-000005 Upit Marko Jovanović · Po broju šasije · Volkswagen Golf V (2008) 8 h 40 min — kasni primljeno 30.09. 03:41 SK-2026-000010 Porudžbina Nikola Stanković · 7.740 RSD 8 h 40 min — kasni primljeno 30.09. 03:42 UP-2026-000006 Upit Marko Jovanović · Po broju šasije · Volkswagen Golf V (2008) 8 h 40 min — kasni primljeno 30.09. 03:42 SK-2026-000011 Porudžbina Auto servis Petrović · 7.290 RSD 8 h 40 min — kasni primljeno 30.09. 03:43 UP-2026-000007 Upit Ana Petrović · Po broju šasije · Škoda Octavia III (2015) 8 h 40 min — kasni primljeno 30.09. 03:43 SK-2026-000012 Porudžbina Nikola Stanković · 7.740 RSD 8 h 40 min — kasni primljeno 30.09. 03:59 UP-2026-000008 Upit Marko Jovanović · Po broju šasije · Volkswagen Golf V (2008) 8 h 40 min — kasni primljeno 30.09. 03:59 Aktivnost Cela revizija pre 3 min UP-2026-000065: poslata ponuda br. 1 Vlasnik pre 3 min UP-2026-000065: nacrt ponude Vlasnik pre 4 min UP-2026-000064: poslata ponuda br. 1 Vlasnik pre 4 min UP-2026-000064: nacrt ponude Vlasnik pre 4 min SK-2026-000103: Primljena → Otkazana Vlasnik pre 4 min UP-2026-000062: ponuda br. 1 → porudžbina SK-2026-000103 Vlasnik pre 5 min SK-2026-000102: Primljena → Otkazana Vlasnik pre 5 min UP-2026-000063: zatvoren — QA verify test (backend-03/04) — zatvoreno Vlasnik pre 6 min UP-2026-000062: poslata ponuda br. 1 Vlasnik pre 6 min UP-2026-000062: nacrt ponude Vlasnik Porudžbine po danima poslednjih 30 dana 0 50 100 01.09. 03.09. 05.09. 07.09. 09.09. 11.09. 13.09. 15.09. 17.09. 19.09. 21.09. 23.09. 25.09. 27.09. 58 30.09. Prikaži tabelu Traženo, a nemamo Sve pretrage ZZ9999999 22× novo 5Q0 698 151 6× novo xyz123abc 4"
+  },
+  "dashboardShot": "docs/qa/audit/verify/backend/backend-09-reproduce-dashboard.webp",
+  "outbox": {
+    "headings": [
+      "E-pošta"
+    ],
+    "statusOptions": [
+      "Svi statusi",
+      "Zabeleženo",
+      "U redu",
+      "Poslato",
+      "Isporučeno",
+      "Kasni",
+      "Odbijeno",
+      "Prijavljeno",
+      "Greška",
+      "Otvoreno",
+      "Kliknuto",
+      "Svi šabloni",
+      "Porudžbine · Porudžbina primljena",
+      "Porudžbine · Porudžbina potvrđena (predračun)",
+      "Porudžbine · Porudžbina čeka deo",
+      "Porudžbine · Spremna za preuzimanje",
+      "Porudžbine · Porudžbina poslata",
+      "Porudžbine · Isporučena / preuzeta",
+      "Porudžbine · Porudžbina otkazana",
+      "Upiti i ponude · Upit primljen",
+      "Upiti i ponude · Ponuda spremna",
+      "Upiti i ponude · Ponuda uskoro ističe",
+      "Upiti i ponude · Deo je ponovo na stanju",
+      "Majstori · Registracija majstora primljena",
+      "Majstori · Majstor odobren (razred)",
+      "Majstori · Registracija odbijena",
+      "Majstori · Majstorski nalog pauziran",
+      "Nalog · Kod za novu lozinku",
+      "Nalog · Pozivnica za administraciju",
+      "Osoblje · Osoblje: nova porudžbina",
+      "Osoblje · Osoblje: novi upit",
+      "Osoblje · Osoblje: nova registracija majstora",
+      "Osoblje · Osoblje: ponuda prihvaćena",
+      "Osoblje · Osoblje: traži se nova ponuda",
+      "Osoblje · Osoblje: malo na stanju",
+      "Osoblje · Osoblje: dnevni pregled",
+      "Osoblje · Osoblje: podsetnik"
+    ],
+    "text": "E-pošta Sve poruke koje sistem pravi za kupce, majstore i osoblje — sa statusom isporuke. Poruke Šabloni i probne poruke Režim slanja: Samo zapis. Poruke se samo beleže ovde — ništa ne odlazi kupcima ni osoblju. Promenite režim slanja Svi statusi Zabeleženo U redu Poslato Isporučeno Kasni Odbijeno Prijavljeno Greška Otvoreno Kliknuto Svi šabloni Porudžbine · Porudžbina primljena Porudžbine · Porudžbina potvrđena (predračun) Porudžbine · Porudžbina čeka deo Porudžbine · Spremna za preuzimanje Porudžbine · Porudžbina poslata Porudžbine · Isporučena / preuzeta Porudžbine · Porudžbina otkazana Upiti i ponude · Upit primljen Upiti i ponude · Ponuda spremna Upiti i ponude · Ponuda uskoro ističe Upiti i ponude · Deo je ponovo na stanju Majstori · Registracija majstora primljena Majstori · Majstor odobren (razred) Majstori · Registracija odbijena Majstori · Majstorski nalog pauziran Nalog · Kod za novu lozinku Nalog · Pozivnica za administraciju Osoblje · Osoblje: nova porudžbina Osoblje · Osoblje: novi upit Osoblje · Osoblje: nova registracija majstora Osoblje · Osoblje: ponuda prihvaćena Osoblje · Osoblje: traži se nova ponuda Osoblje · Osoblje: malo na stanju Osoblje · Osoblje: dnevni p"
+  },
+  "outboxShot": "docs/qa/audit/verify/backend/backend-09-reproduce-outbox.webp",
+  "mentionsEventHealth": {
+    "dashboard": false,
+    "outbox": false
+  }
+}

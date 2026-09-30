@@ -1,0 +1,238 @@
+
+ RUN  v5.0.2 C:/Users/admin/Desktop/Web Dev Projects/autodelovi
+
+ ✓  convex  convex/orders.test.ts (21 tests) 15138ms
+   ✓ order submit (12)
+     ✓ guest order is re-priced on the server, numbered and totals follow the rules 1977ms
+     ✓ delivery fee applies below the free-shipping threshold 376ms
+     ✓ order numbers are unique and sequential 717ms
+     ✓ approved mechanic orders at his price with a tier snapshot 1172ms
+     ✓ honeypot and too-fast submissions are rejected 655ms
+     ✓ invalid payloads are rejected with field errors 383ms
+     ✓ out-of-stock products cannot be added; backorder products can 422ms
+     ✓ stock that dropped after adding to the cart blocks the order 547ms
+     ✓ a stale reviewed total is rejected with PRICE_CHANGED 418ms
+     ✓ submissions are rate limited per client 495ms
+     ✓ guest checkout can be disabled by the owner 492ms
+   ✓ order ownership (2)
+     ✓ a customer cannot read or reorder another customer's order 571ms
+     ✓ reorder adds the still-available lines to the own cart 621ms
+   ✓ order state machine through ordersAdmin.transition (7)
+     ✓ confirming commits stock once; cancelling restocks it 755ms
+     ✓ illegal transitions are rejected 805ms
+     ✓ a stale expectedUpdatedAt is a conflict 504ms
+     ✓ courier flow with tracking reaches zavrsena; events, outbox and audit are written 1778ms
+     ✓ pickup flow: spremna_za_preuzimanje → preuzeta 1123ms
+     ✓ items are editable only while the order is new 496ms
+     ✓ non-staff cannot call admin order functions 522ms
+ ✓  convex  convex/seed.test.ts (2 tests) 39363ms
+   ✓ seed (2)
+     ✓ is idempotent and fills every table the storefront needs; demo removal keeps reference data 39356ms
+stdout | convex/security.test.ts > owner seed (P1) > an existing account with the owner's e-mail but another password is never promoted
+`auth:store` type: createAccountFromCredentials
+
+stdout | convex/security.test.ts > owner seed (P1) > an existing account with the owner's e-mail but another password is never promoted
+`auth:store` type: retrieveAccountWithCredentials
+
+stdout | convex/security.test.ts > owner seed (P1) > an existing account with the owner's e-mail but another password is never promoted
+`auth:store` type: retrieveAccountWithCredentials
+
+ ✓  convex  convex/security.test.ts (13 tests) 3676ms
+   ✓ owner seed (P1) (1)
+     ✓ an existing account with the owner's e-mail but another password is never promoted 904ms
+   ✓ privacy tools (ZZPL) (3)
+     ✓ anonymization keeps orders without personal data and removes the rest, including the login 363ms
+   ✓ abuse limits (2)
+     ✓ password-reset codes: at most 3 e-mails per address per hour 334ms
+     ✓ new guest carts are rate-limited per client; existing carts keep working 406ms
+ ✓  convex  convex/admin.test.ts (17 tests) 3723ms
+   ✓ staff vs owner permissions (3)
+     ✓ staff-only reads refuse customers, mechanics and anonymous visitors 463ms
+     ✓ owner-only writes refuse staff: settings, invites, roles, tiers, legal texts, demo removal 471ms
+ ✓  convex  convex/mechanics.test.ts (19 tests) 7173ms
+   ✓ registration (3)
+     ✓ anonymous visitors cannot register; a signed-in customer creates a pending profile 871ms
+   ✓ approval authorization (3)
+     ✓ staff approve with tier, personal rabat and credit → prices and events follow 495ms
+     ✓ reject needs a reason, shows it to the applicant, and reopen returns to pending 334ms
+   ✓ quick order (7)
+     ✓ rate limited per mechanic 695ms
+     ✓ matched lines go to the cart with the mechanic's price 412ms
+     ✓ one-click inquiry for missing numbers uses the profile contact 701ms
+   ✓ price list (1)
+     ✓ own prices per tier, retail next to them, never cost; approved only 347ms
+   ✓ favorites and customer vehicles (2)
+     ✓ customer vehicles: VIN validated, plate normalised, only the owner edits 315ms
+   ✓ deferred payment (3)
+     ✓ approved mechanic with credit orders on deferred payment with a due date 330ms
+     ✓ no credit flag or a customer → deferred refused 305ms
+stdout | convex/notify.test.ts > webhook feedback > statuses only move forward; a bounce flags the order for staff
+Making a batch of 1 emails
+
+stderr | convex/notify.test.ts > webhook feedback > statuses only move forward; a bounce flags the order for staff
+Error when running scheduled function lib:makeBatch Error: Component "resend/rateLimiter" is not registered. Call "t.registerComponent".
+    at performAsyncSyscall (file:///C:/Users/admin/Desktop/Web%20Dev%20Projects/autodelovi/node_modules/convex/dist/esm/server/impl/syscall.js:28:11)
+    at runUdf (file:///C:/Users/admin/Desktop/Web%20Dev%20Projects/autodelovi/node_modules/convex/dist/esm/server/impl/registration_impl.js:260:18)
+    at getDelay (C:/Users/admin/Desktop/Web Dev Projects/autodelovi/node_modules/@convex-dev/resend/src/component/lib.ts:751:17)
+    at handler (C:/Users/admin/Desktop/Web Dev Projects/autodelovi/node_modules/@convex-dev/resend/src/component/lib.ts:477:19)
+    at invokeFunction (file:///C:/Users/admin/Desktop/Web%20Dev%20Projects/autodelovi/node_modules/convex/dist/esm/server/impl/registration_impl.js:56:14)
+    at invokeMutation (file:///C:/Users/admin/Desktop/Web%20Dev%20Projects/autodelovi/node_modules/convex/dist/esm/server/impl/registration_impl.js:42:18)
+    at runMutationWithHandler (C:/Users/admin/Desktop/Web Dev Projects/autodelovi/node_modules/convex-test/dist/index.js:1975:31)
+    at Object.mutationFromPath (C:/Users/admin/Desktop/Web Dev Projects/autodelovi/node_modules/convex-test/dist/index.js:2119:32)
+    at Object.fun (C:/Users/admin/Desktop/Web Dev Projects/autodelovi/node_modules/convex-test/dist/index.js:2216:24)
+    at C:/Users/admin/Desktop/Web Dev Projects/autodelovi/node_modules/convex-test/dist/index.js:1073:13
+
+ ❯  convex  convex/notify.test.ts (20 tests | 2 failed) 38469ms
+   ✓ fan-out (4)
+     ✓ a new order logs the customer and staff e-mails and rings the staff bell 2779ms
+     ✓ status changes e-mail the customer with the matching template 1623ms
+     ✓ an inquiry e-mails the customer and staff; a sent quote e-mails the accept link 816ms
+     ✓ mechanic registration and approval reach the applicant and staff 577ms
+   ✓ preferences (2)
+     ✓ a staff member can mute e-mail and in-app per event; shared addresses get staff mail 485ms
+     ✓ the owner manages another staff member's preferences; staff cannot 325ms
+   ✓ idempotency and retries (3)
+     ✓ re-dispatching an event never duplicates deliveries or e-mails 415ms
+     ✓ a failing render retries with backoff and stops after five attempts 396ms
+     ✓ a delivery that recovers on retry is sent once 493ms
+   ❯ delivery modes (2)
+     ✓ live without an API key falls back to log and never calls the provider 522ms
+     × test mode rewrites recipients and hands off to Resend; e2e orders stay logged 28214ms
+   ✓ admin outbox (2)
+     ✓ template previews, test sends, masking and resend 212ms
+     ✓ password reset codes go through the mailer 152ms
+   ✓ webhook feedback (1)
+     ✓ statuses only move forward; a bounce flags the order for staff 279ms
+   ❯ crons (fake time, Europe/Belgrade) (6)
+     × reminders count working minutes, escalate once and stay quiet after hours 211ms
+     ✓ the digest goes out once per local day at 08:00, across the DST change 194ms
+     ✓ low stock is batched into one staff e-mail per hour 173ms
+     ✓ back in stock: the sweep e-mails subscribers once with a working unsubscribe link 224ms
+     ✓ quotes expiring within 24 h remind the customer once 189ms
+     ✓ nightly maintenance prunes by the retention policy and removes orphan uploads 166ms
+ ✓  convex  convex/imports.test.ts (12 tests) 3030ms
+   ✓ authorization (1)
+     ✓ only staff can use the import API 557ms
+   ✓ commit and rollback (7)
+     ✓ image URLs are fetched after commit, verified and removed on rollback 329ms
+ ✓  convex  convex/seo.test.ts (13 tests) 3808ms
+   ✓ landing statistics and the thin-content guard (4)
+     ✓ rows per brand and model with counts, price range and makers 412ms
+     ✓ below the minimum, too few in stock or one maker and one generation → noindex 402ms
+     ✓ the global cap admits the best ranked landings only 435ms
+     ✓ an inactive category loses its rows; public reads expose only indexable landings 432ms
+   ✓ Meta Conversions API (4)
+     ✓ a purchase with ads consent posts one hashed event with the order number as event_id 486ms
+ ✓  convex  convex/catalog.test.ts (16 tests) 3929ms
+   ✓ normalized OEM lookup and search (8)
+     ✓ every spelling of an OEM number finds the product 370ms
+   ✓ product images (1)
+     ✓ staff attach images; a fake image is removed after the magic-byte check 479ms
+ ✓  convex  convex/inquiries.test.ts (10 tests) 2876ms
+   ✓ inquiries (10)
+     ✓ submit decodes the VIN, numbers the inquiry and notifies staff in-app 505ms
+     ✓ photos are checked by metadata and by magic bytes 318ms
+ ✓  convex  convex/priceVisibility.test.ts (9 tests) 1927ms
+   ✓ price visibility matrix (docs/SECURITY.md §D4) (8)
+     ✓ anonymous, customer, pending, suspended, blocked and staff get retail only 350ms
+ ✓  convex  convex/storefront.test.ts (5 tests) 890ms
+ ✓  convex  convex/authz.test.ts (8 tests) 1536ms
+ ✓  unit  tests/unit/lib/textReveal.test.ts (19 tests) 178ms
+ ✓  unit  tests/unit/import/workbooks.test.ts (4 tests) 85ms
+ ✓  unit  tests/unit/import/fixtures.test.ts (4 tests) 84ms
+ ✓  unit  tests/unit/email/templates.test.ts (88 tests) 48ms
+ ✓  unit  tests/unit/lib/priceList.test.ts (2 tests) 37ms
+ ✓  unit  tests/unit/analytics/analytics.test.ts (13 tests) 40ms
+ ✓  unit  tests/unit/format/number.test.ts (22 tests) 37ms
+ ✓  unit  tests/unit/three/manifest-guard.test.ts (2 tests) 51ms
+ ✓  unit  tests/unit/3d-manifest.test.ts (8 tests) 40ms
+ ✓  unit  tests/unit/import/row.test.ts (16 tests) 20ms
+ ✓  unit  tests/unit/domain/commerce.test.ts (19 tests) 30ms
+ ✓  unit  tests/unit/seo/sitemapFeeds.test.ts (9 tests) 28ms
+ ✓  unit  tests/unit/components/RevealText.test.tsx (5 tests) 19ms
+ ✓  unit  tests/unit/domain/stateMachines.test.ts (87 tests) 16ms
+ ✓  unit  tests/unit/domain/quickOrder.test.ts (38 tests) 16ms
+ ✓  unit  tests/unit/domain/vin.test.ts (88 tests) 22ms
+ ✓  unit  tests/unit/lib/storefront.test.ts (15 tests) 13ms
+ ✓  unit  tests/unit/import/parsing.test.ts (19 tests) 18ms
+ ✓  unit  tests/unit/lib/pagination.test.ts (11 tests) 14ms
+ ✓  unit  tests/unit/domain/codes.test.ts (59 tests) 15ms
+ ✓  unit  tests/unit/lib/validation.test.ts (8 tests) 15ms
+ ✓  unit  tests/unit/domain/slug.test.ts (23 tests) 8ms
+ ✓  unit  tests/unit/three/explode.test.ts (11 tests) 15ms
+ ✓  unit  tests/unit/seo/landing.test.ts (8 tests) 12ms
+ ✓  unit  tests/unit/format/money.test.ts (51 tests) 13ms
+ ✓  unit  tests/unit/config/site.test.ts (24 tests) 14ms
+ ✓  unit  tests/unit/domain/pricing.test.ts (21 tests) 10ms
+ ✓  unit  tests/unit/three/hero-copy.test.ts (2 tests) 8ms
+ ✓  unit  tests/unit/format/nbsp.test.ts (26 tests) 8ms
+ ✓  unit  tests/unit/format/phone.test.ts (47 tests) 10ms
+ ✓  unit  tests/unit/lib/adminFormat.test.ts (10 tests) 9ms
+ ✓  unit  tests/unit/seo/metadata.test.ts (10 tests) 9ms
+ ✓  unit  tests/unit/lib/securityHeaders.test.ts (7 tests) 9ms
+ ✓  unit  tests/unit/three/camera.test.ts (7 tests) 12ms
+ ✓  unit  tests/unit/format/date.test.ts (18 tests) 8ms
+ ✓  unit  tests/unit/seo/jsonld.test.ts (6 tests) 8ms
+ ✓  unit  tests/unit/import/remoteUrl.test.ts (32 tests) 12ms
+ ✓  unit  tests/unit/domain/sla.test.ts (8 tests) 8ms
+ ✓  unit  tests/unit/domain/redirect.test.ts (14 tests) 7ms
+ ✓  unit  tests/unit/lib/routes.test.ts (16 tests) 8ms
+ ✓  unit  tests/unit/analytics/redact.test.ts (12 tests) 9ms
+ ✓  unit  tests/unit/format/plural.test.ts (14 tests) 5ms
+ ✓  unit  tests/unit/lib/taxonomy-labels.test.ts (1 test) 7ms
+ ✓  unit  tests/unit/three/tier.test.ts (6 tests) 6ms
+ ✓  unit  tests/unit/three/xray-parity.test.ts (2 tests) 6ms
+ ✓  unit  tests/unit/domain/company.test.ts (3 tests) 5ms
+ ↓  unit  tests/unit/backup/restoreDrill.test.ts (4 tests | 4 skipped)
+ ✓  unit  tests/unit/components/ui.test.tsx (12 tests) 494ms
+   ✓ Button (2)
+     ✓ keeps its label, sets aria-busy and blocks clicks while loading 366ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL   convex  convex/notify.test.ts > delivery modes > test mode rewrites recipients and hands off to Resend; e2e orders stay logged
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ convex/notify.test.ts:328:3
+    326|   });
+    327|
+    328|   test("test mode rewrites recipients and hands off to Resend; e2e ord…
+       |   ^
+    329|     vi.stubEnv("EMAIL_MODE", "test");
+    330|     vi.stubEnv("RESEND_API_KEY", "re_test_key");
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL   convex  convex/notify.test.ts > crons (fake time, Europe/Belgrade) > reminders count working minutes, escalate once and stay quiet after hours
+AssertionError: expected { checked: 1, reminded: +0, …(1) } to match object { reminded: 1 }
+(2 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "reminded": 1,
++   "reminded": 0,
+  }
+
+ ❯ convex/notify.test.ts:485:69
+    483|     // 09:31 → 121 minutes: first reminder.
+    484|     vi.setSystemTime(belgradeLocalToUtc(2026, 10, 1, 9, 31));
+    485|     expect(await t.mutation(internal.automations.runReminders, {})).to…
+       |                                                                     ^
+    486|     vi.setSystemTime(belgradeLocalToUtc(2026, 10, 1, 9, 46));
+    487|     expect(await t.mutation(internal.automations.runReminders, {})).to…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 59 passed | 1 skipped (61)
+      Tests  2 failed | 1090 passed | 4 skipped (1096)
+   Start at  16:36:26
+   Duration  249.64s (import 57%, tests 37%, environment 4%, transform 2%)
+
+
+real	4m29.716s
+user	0m0.105s
+sys	0m0.120s
+vitest exit 1

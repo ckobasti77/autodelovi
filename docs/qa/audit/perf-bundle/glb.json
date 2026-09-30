@@ -1,0 +1,166 @@
+{
+  "car.glb": {
+    "raw": 3638264,
+    "gz": 2101362,
+    "br": 2018173,
+    "gltf": {
+      "extensionsUsed": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_materials_clearcoat",
+        "KHR_materials_emissive_strength",
+        "KHR_mesh_quantization"
+      ],
+      "extensionsRequired": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_mesh_quantization"
+      ],
+      "meshes": 89,
+      "primitives": 194,
+      "triangles": 290022,
+      "materials": 23,
+      "nodes": 200,
+      "textures": [
+        {
+          "name": "tex_machined_n",
+          "mime": "image/webp",
+          "size": [
+            512,
+            512
+          ],
+          "bytes": 2182
+        },
+        {
+          "name": "tex_fins_n",
+          "mime": "image/webp",
+          "size": [
+            512,
+            512
+          ],
+          "bytes": 1008
+        },
+        {
+          "name": "tex_cast_n",
+          "mime": "image/webp",
+          "size": [
+            512,
+            512
+          ],
+          "bytes": 364514
+        },
+        {
+          "name": "tex_emboss_n",
+          "mime": "image/webp",
+          "size": [
+            512,
+            512
+          ],
+          "bytes": 12788
+        },
+        {
+          "name": "tex_tyre_n",
+          "mime": "image/webp",
+          "size": [
+            1024,
+            1024
+          ],
+          "bytes": 306102
+        }
+      ],
+      "textureBytes": 686594
+    }
+  },
+  "car-lite.glb": {
+    "raw": 2628980,
+    "gz": 1687209,
+    "br": 1649044,
+    "gltf": {
+      "extensionsUsed": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_materials_clearcoat",
+        "KHR_materials_emissive_strength",
+        "KHR_mesh_quantization"
+      ],
+      "extensionsRequired": [
+        "EXT_meshopt_compression",
+        "EXT_texture_webp",
+        "KHR_mesh_quantization"
+      ],
+      "meshes": 89,
+      "primitives": 135,
+      "triangles": 198016,
+      "materials": 21,
+      "nodes": 200,
+      "textures": [
+        {
+          "name": "tex_fins_n",
+          "mime": "image/webp",
+          "size": [
+            512,
+            512
+          ],
+          "bytes": 1008
+        },
+        {
+          "name": "tex_cast_n",
+          "mime": "image/webp",
+          "size": [
+            512,
+            512
+          ],
+          "bytes": 364514
+        },
+        {
+          "name": "tex_emboss_n",
+          "mime": "image/webp",
+          "size": [
+            512,
+            512
+          ],
+          "bytes": 12788
+        },
+        {
+          "name": "tex_machined_n",
+          "mime": "image/webp",
+          "size": [
+            512,
+            512
+          ],
+          "bytes": 2182
+        },
+        {
+          "name": "tex_tyre_n",
+          "mime": "image/webp",
+          "size": [
+            512,
+            512
+          ],
+          "bytes": 60186
+        }
+      ],
+      "textureBytes": 440678
+    }
+  },
+  "env/studio-512.hdr": {
+    "raw": 410772,
+    "gz": 310290,
+    "br": 298960
+  },
+  "car.manifest.json": {
+    "raw": 87685,
+    "gz": 11555,
+    "br": 10259
+  },
+  "car-shadow.webp": {
+    "raw": 14378,
+    "gz": 14004,
+    "br": 14046
+  },
+  "car-shadow-exploded.webp": {
+    "raw": 20202,
+    "gz": 19854,
+    "br": 19862
+  }
+}

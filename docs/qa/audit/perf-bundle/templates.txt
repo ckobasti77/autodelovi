@@ -1,0 +1,32 @@
+home         200 gzip html 33.3KB wire / 243.6KB raw (rsc 136.9KB)  js 25 = 367.8KB gz / 321.7KB br / 1123.3KB raw  css 1 = 18.5KB gz  fonts 4 = 75.8KB  imgs 13  preloads 2
+delovi       200 gzip html 26.0KB wire / 259.5KB raw (rsc 137.0KB)  js 24 = 352.0KB gz / 308.0KB br / 1072.5KB raw  css 1 = 18.5KB gz  fonts 4 = 75.8KB  imgs 44  preloads 1
+category     200 gzip html 25.1KB wire / 234.5KB raw (rsc 127.6KB)  js 25 = 369.6KB gz / 323.3KB br / 1124.9KB raw  css 1 = 18.5KB gz  fonts 4 = 75.8KB  imgs 9  preloads 2
+product      200 gzip html 29.2KB wire / 217.6KB raw (rsc 135.1KB)  js 25 = 372.3KB gz / 325.4KB br / 1134.0KB raw  css 1 = 18.5KB gz  fonts 4 = 75.8KB  imgs 5  preloads 2
+search       200 gzip html 26.6KB wire / 188.6KB raw (rsc 108.4KB)  js 25 = 363.4KB gz / 317.9KB br / 1104.7KB raw  css 1 = 18.5KB gz  fonts 4 = 75.8KB  imgs 9  preloads 1
+generation   200 gzip html 28.9KB wire / 322.3KB raw (rsc 167.3KB)  js 25 = 363.4KB gz / 317.8KB br / 1104.4KB raw  css 1 = 18.5KB gz  fonts 4 = 75.8KB  imgs 45  preloads 1
+landing      200 gzip html 20.1KB wire / 163.4KB raw (rsc 105.0KB)  js 25 = 378.9KB gz / 331.0KB br / 1156.3KB raw  css 1 = 18.5KB gz  fonts 4 = 75.8KB  imgs 7  preloads 2
+za-majstore  200 gzip html 21.2KB wire / 133.8KB raw (rsc 89.5KB)  js 24 = 355.0KB gz / 310.7KB br / 1080.4KB raw  css 1 = 18.5KB gz  fonts 4 = 75.8KB  imgs 0  preloads 1
+upit         200 gzip html 24.6KB wire / 144.4KB raw (rsc 94.5KB)  js 25 = 467.4KB gz / 403.1KB br / 1537.3KB raw  css 1 = 18.5KB gz  fonts 4 = 75.8KB  imgs 0  preloads 1
+korpa        200 gzip html 13.3KB wire / 88.4KB raw (rsc 62.8KB)  js 25 = 360.0KB gz / 315.1KB br / 1095.9KB raw  css 1 = 18.5KB gz  fonts 4 = 75.8KB  imgs 0  preloads 1
+porudzbina   200 gzip html 13.9KB wire / 90.0KB raw (rsc 64.6KB)  js 25 = 468.6KB gz / 404.1KB br / 1543.3KB raw  css 1 = 18.5KB gz  fonts 4 = 75.8KB  imgs 0  preloads 1
+prijava      200 gzip html 14.0KB wire / 92.6KB raw (rsc 65.2KB)  js 24 = 347.4KB gz / 303.9KB br / 1059.8KB raw  css 1 = 18.5KB gz  fonts 4 = 75.8KB  imgs 0  preloads 1
+
+Shared by all 12 templates: 18 scripts, 300.0 KB gz, 262.9 KB br, 921.2 KB raw
+     71.6 gz   228.7 raw  /_next/static/chunks/0qy3sss5e6eww.js
+     48.4 gz   122.8 raw  /_next/static/chunks/1tr6a7zmh41cy.js
+     38.7 gz   110.0 raw  /_next/static/chunks/0cz1d0mv5g_q7.js
+     34.0 gz   126.3 raw  /_next/static/chunks/0qimmyhv2_bjj.js
+     22.1 gz    80.7 raw  /_next/static/chunks/2jrozipxybei4.js
+     12.3 gz    37.1 raw  /_next/static/chunks/0rklqt_vfe3_n.js
+     10.2 gz    25.8 raw  /_next/static/chunks/14y-81z8a-w-u.js
+      9.1 gz    27.0 raw  /_next/static/chunks/2vm060vmiv-df.js
+      8.6 gz    22.7 raw  /_next/static/chunks/1adhcvv0smcza.js
+      8.4 gz    26.8 raw  /_next/static/chunks/11we8zj_qz5aa.js
+      7.9 gz    29.9 raw  /_next/static/chunks/2h84ksv1mg5s9.js
+      7.8 gz    22.0 raw  /_next/static/chunks/1t0q0ok8maumv.js
+      6.8 gz    18.0 raw  /_next/static/chunks/25dplrt_qw3he.js
+      4.2 gz    10.7 raw  /_next/static/chunks/turbopack-324-cyruufpbq.js
+      3.6 gz    14.0 raw  /_next/static/chunks/3fntmmi971322.js
+      2.7 gz     6.5 raw  /_next/static/chunks/2f8qbt33jjpy3.js
+      2.0 gz     7.5 raw  /_next/static/chunks/41cvzcmlkfz4o.js
+      1.7 gz     4.9 raw  /_next/static/chunks/29atrq35xgs9f.js

@@ -1,0 +1,434 @@
+{
+  "home": {
+    "app/opengraph-image--metadata": {
+      "gz": 3661,
+      "files": [
+        "3fntmmi971322.js(3.6)"
+      ]
+    },
+    "app/layout": {
+      "gz": 111527,
+      "files": [
+        "25dplrt_qw3he.js(6.8)",
+        "14y-81z8a-w-u.js(10.2)",
+        "2vm060vmiv-df.js(9.1)",
+        "1tr6a7zmh41cy.js(48.4)",
+        "0rklqt_vfe3_n.js(12.3)",
+        "2jrozipxybei4.js(22.1)"
+      ]
+    },
+    "app/error": {
+      "gz": 8829,
+      "files": [
+        "1adhcvv0smcza.js(8.6)"
+      ]
+    },
+    "app/not-found": {
+      "gz": 42687,
+      "files": [
+        "1axg9-vmwkb-w.js(0.2)",
+        "1t0q0ok8maumv.js(7.8)",
+        "404ko09-15lhs.js(17.8)",
+        "00t-a16koa1p2.js(14.2)",
+        "29atrq35xgs9f.js(1.7)"
+      ]
+    },
+    "app/global-error": {
+      "gz": 2753,
+      "files": [
+        "2f8qbt33jjpy3.js(2.7)"
+      ]
+    },
+    "app/(shop)/layout": {
+      "gz": 44429,
+      "files": [
+        "1kcz530oz9u-o.js(0.3)",
+        "2g3bv_p29okud.js(10.1)",
+        "120epkn8j_rkq.js(10.6)",
+        "0sgvhbpe5nb6s.js(22.4)"
+      ]
+    },
+    "app/(shop)/error": {
+      "gz": 3151,
+      "files": [
+        "3k__gv_edg8eb.js(3.1)"
+      ]
+    },
+    "app/(shop)/page": {
+      "gz": 21775,
+      "files": [
+        "1c6x4sv25ngo-.js(0.3)",
+        "0wnn3uk7fx3z2.js(21.0)"
+      ]
+    }
+  },
+  "category": {
+    "app/opengraph-image--metadata": {
+      "gz": 3661,
+      "files": [
+        "3fntmmi971322.js(3.6)"
+      ]
+    },
+    "app/layout": {
+      "gz": 111527,
+      "files": [
+        "25dplrt_qw3he.js(6.8)",
+        "14y-81z8a-w-u.js(10.2)",
+        "2vm060vmiv-df.js(9.1)",
+        "1tr6a7zmh41cy.js(48.4)",
+        "0rklqt_vfe3_n.js(12.3)",
+        "2jrozipxybei4.js(22.1)"
+      ]
+    },
+    "app/error": {
+      "gz": 8829,
+      "files": [
+        "1adhcvv0smcza.js(8.6)"
+      ]
+    },
+    "app/not-found": {
+      "gz": 42687,
+      "files": [
+        "1axg9-vmwkb-w.js(0.2)",
+        "1t0q0ok8maumv.js(7.8)",
+        "404ko09-15lhs.js(17.8)",
+        "00t-a16koa1p2.js(14.2)",
+        "29atrq35xgs9f.js(1.7)"
+      ]
+    },
+    "app/global-error": {
+      "gz": 2753,
+      "files": [
+        "2f8qbt33jjpy3.js(2.7)"
+      ]
+    },
+    "app/(shop)/layout": {
+      "gz": 44429,
+      "files": [
+        "1kcz530oz9u-o.js(0.3)",
+        "2g3bv_p29okud.js(10.1)",
+        "120epkn8j_rkq.js(10.6)",
+        "0sgvhbpe5nb6s.js(22.4)"
+      ]
+    },
+    "app/(shop)/error": {
+      "gz": 3151,
+      "files": [
+        "3k__gv_edg8eb.js(3.1)"
+      ]
+    },
+    "app/(shop)/delovi/[kategorija]/page": {
+      "gz": 23680,
+      "files": [
+        "1cggx7i-lhdg7.js(8.1)",
+        "38o51x0kbbpcz.js(15.0)"
+      ]
+    }
+  },
+  "product": {
+    "app/opengraph-image--metadata": {
+      "gz": 3661,
+      "files": [
+        "3fntmmi971322.js(3.6)"
+      ]
+    },
+    "app/layout": {
+      "gz": 111527,
+      "files": [
+        "25dplrt_qw3he.js(6.8)",
+        "14y-81z8a-w-u.js(10.2)",
+        "2vm060vmiv-df.js(9.1)",
+        "1tr6a7zmh41cy.js(48.4)",
+        "0rklqt_vfe3_n.js(12.3)",
+        "2jrozipxybei4.js(22.1)"
+      ]
+    },
+    "app/error": {
+      "gz": 8829,
+      "files": [
+        "1adhcvv0smcza.js(8.6)"
+      ]
+    },
+    "app/not-found": {
+      "gz": 42687,
+      "files": [
+        "1axg9-vmwkb-w.js(0.2)",
+        "1t0q0ok8maumv.js(7.8)",
+        "404ko09-15lhs.js(17.8)",
+        "00t-a16koa1p2.js(14.2)",
+        "29atrq35xgs9f.js(1.7)"
+      ]
+    },
+    "app/global-error": {
+      "gz": 2753,
+      "files": [
+        "2f8qbt33jjpy3.js(2.7)"
+      ]
+    },
+    "app/(shop)/layout": {
+      "gz": 44429,
+      "files": [
+        "1kcz530oz9u-o.js(0.3)",
+        "2g3bv_p29okud.js(10.1)",
+        "120epkn8j_rkq.js(10.6)",
+        "0sgvhbpe5nb6s.js(22.4)"
+      ]
+    },
+    "app/(shop)/error": {
+      "gz": 3151,
+      "files": [
+        "3k__gv_edg8eb.js(3.1)"
+      ]
+    },
+    "app/(shop)/deo/[slug]/page": {
+      "gz": 26440,
+      "files": [
+        "1tkvz3oryrb1b.js(11.0)",
+        "0iy1468xjorsv.js(14.9)"
+      ]
+    }
+  },
+  "landing": {
+    "app/opengraph-image--metadata": {
+      "gz": 3661,
+      "files": [
+        "3fntmmi971322.js(3.6)"
+      ]
+    },
+    "app/layout": {
+      "gz": 111527,
+      "files": [
+        "25dplrt_qw3he.js(6.8)",
+        "14y-81z8a-w-u.js(10.2)",
+        "2vm060vmiv-df.js(9.1)",
+        "1tr6a7zmh41cy.js(48.4)",
+        "0rklqt_vfe3_n.js(12.3)",
+        "2jrozipxybei4.js(22.1)"
+      ]
+    },
+    "app/error": {
+      "gz": 8829,
+      "files": [
+        "1adhcvv0smcza.js(8.6)"
+      ]
+    },
+    "app/not-found": {
+      "gz": 42687,
+      "files": [
+        "1axg9-vmwkb-w.js(0.2)",
+        "1t0q0ok8maumv.js(7.8)",
+        "404ko09-15lhs.js(17.8)",
+        "00t-a16koa1p2.js(14.2)",
+        "29atrq35xgs9f.js(1.7)"
+      ]
+    },
+    "app/global-error": {
+      "gz": 2753,
+      "files": [
+        "2f8qbt33jjpy3.js(2.7)"
+      ]
+    },
+    "app/(landing)/layout": {
+      "gz": 22484,
+      "files": [
+        "30febus0elr13.js(0.2)",
+        "29ikd2g3512r-.js(21.7)"
+      ]
+    },
+    "app/(landing)/ponuda/[slug]/page": {
+      "gz": 25296,
+      "files": [
+        "3e96qux3-c6pe.js(11.7)",
+        "1h9gpy0y5abu7.js(13.0)"
+      ]
+    }
+  },
+  "upit": {
+    "app/opengraph-image--metadata": {
+      "gz": 3661,
+      "files": [
+        "3fntmmi971322.js(3.6)"
+      ]
+    },
+    "app/layout": {
+      "gz": 111527,
+      "files": [
+        "25dplrt_qw3he.js(6.8)",
+        "14y-81z8a-w-u.js(10.2)",
+        "2vm060vmiv-df.js(9.1)",
+        "1tr6a7zmh41cy.js(48.4)",
+        "0rklqt_vfe3_n.js(12.3)",
+        "2jrozipxybei4.js(22.1)"
+      ]
+    },
+    "app/error": {
+      "gz": 8829,
+      "files": [
+        "1adhcvv0smcza.js(8.6)"
+      ]
+    },
+    "app/not-found": {
+      "gz": 42687,
+      "files": [
+        "1axg9-vmwkb-w.js(0.2)",
+        "1t0q0ok8maumv.js(7.8)",
+        "404ko09-15lhs.js(17.8)",
+        "00t-a16koa1p2.js(14.2)",
+        "29atrq35xgs9f.js(1.7)"
+      ]
+    },
+    "app/global-error": {
+      "gz": 2753,
+      "files": [
+        "2f8qbt33jjpy3.js(2.7)"
+      ]
+    },
+    "app/(shop)/layout": {
+      "gz": 44429,
+      "files": [
+        "1kcz530oz9u-o.js(0.3)",
+        "2g3bv_p29okud.js(10.1)",
+        "120epkn8j_rkq.js(10.6)",
+        "0sgvhbpe5nb6s.js(22.4)"
+      ]
+    },
+    "app/(shop)/error": {
+      "gz": 3151,
+      "files": [
+        "3k__gv_edg8eb.js(3.1)"
+      ]
+    },
+    "app/(shop)/upit/page": {
+      "gz": 123823,
+      "files": [
+        "301fp03vk_ndj.js(19.7)",
+        "1uyyf-z7kpx1w.js(101.2)"
+      ]
+    }
+  },
+  "porudzbina": {
+    "app/opengraph-image--metadata": {
+      "gz": 3661,
+      "files": [
+        "3fntmmi971322.js(3.6)"
+      ]
+    },
+    "app/layout": {
+      "gz": 111527,
+      "files": [
+        "25dplrt_qw3he.js(6.8)",
+        "14y-81z8a-w-u.js(10.2)",
+        "2vm060vmiv-df.js(9.1)",
+        "1tr6a7zmh41cy.js(48.4)",
+        "0rklqt_vfe3_n.js(12.3)",
+        "2jrozipxybei4.js(22.1)"
+      ]
+    },
+    "app/error": {
+      "gz": 8829,
+      "files": [
+        "1adhcvv0smcza.js(8.6)"
+      ]
+    },
+    "app/not-found": {
+      "gz": 42687,
+      "files": [
+        "1axg9-vmwkb-w.js(0.2)",
+        "1t0q0ok8maumv.js(7.8)",
+        "404ko09-15lhs.js(17.8)",
+        "00t-a16koa1p2.js(14.2)",
+        "29atrq35xgs9f.js(1.7)"
+      ]
+    },
+    "app/global-error": {
+      "gz": 2753,
+      "files": [
+        "2f8qbt33jjpy3.js(2.7)"
+      ]
+    },
+    "app/(shop)/layout": {
+      "gz": 44429,
+      "files": [
+        "1kcz530oz9u-o.js(0.3)",
+        "2g3bv_p29okud.js(10.1)",
+        "120epkn8j_rkq.js(10.6)",
+        "0sgvhbpe5nb6s.js(22.4)"
+      ]
+    },
+    "app/(shop)/error": {
+      "gz": 3151,
+      "files": [
+        "3k__gv_edg8eb.js(3.1)"
+      ]
+    },
+    "app/(shop)/porudzbina/page": {
+      "gz": 125039,
+      "files": [
+        "0e-3apv4m0eih.js(20.9)",
+        "1uyyf-z7kpx1w.js(101.2)"
+      ]
+    }
+  },
+  "prijava": {
+    "app/opengraph-image--metadata": {
+      "gz": 3661,
+      "files": [
+        "3fntmmi971322.js(3.6)"
+      ]
+    },
+    "app/layout": {
+      "gz": 111527,
+      "files": [
+        "25dplrt_qw3he.js(6.8)",
+        "14y-81z8a-w-u.js(10.2)",
+        "2vm060vmiv-df.js(9.1)",
+        "1tr6a7zmh41cy.js(48.4)",
+        "0rklqt_vfe3_n.js(12.3)",
+        "2jrozipxybei4.js(22.1)"
+      ]
+    },
+    "app/error": {
+      "gz": 8829,
+      "files": [
+        "1adhcvv0smcza.js(8.6)"
+      ]
+    },
+    "app/not-found": {
+      "gz": 42687,
+      "files": [
+        "1axg9-vmwkb-w.js(0.2)",
+        "1t0q0ok8maumv.js(7.8)",
+        "404ko09-15lhs.js(17.8)",
+        "00t-a16koa1p2.js(14.2)",
+        "29atrq35xgs9f.js(1.7)"
+      ]
+    },
+    "app/global-error": {
+      "gz": 2753,
+      "files": [
+        "2f8qbt33jjpy3.js(2.7)"
+      ]
+    },
+    "app/(shop)/layout": {
+      "gz": 44429,
+      "files": [
+        "1kcz530oz9u-o.js(0.3)",
+        "2g3bv_p29okud.js(10.1)",
+        "120epkn8j_rkq.js(10.6)",
+        "0sgvhbpe5nb6s.js(22.4)"
+      ]
+    },
+    "app/(shop)/error": {
+      "gz": 3151,
+      "files": [
+        "3k__gv_edg8eb.js(3.1)"
+      ]
+    },
+    "app/(shop)/prijava/page": {
+      "gz": 912,
+      "files": [
+        "08lons-06ykpl.js(0.9)"
+      ]
+    }
+  }
+}

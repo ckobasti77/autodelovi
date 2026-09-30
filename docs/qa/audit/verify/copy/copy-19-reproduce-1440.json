@@ -1,0 +1,63 @@
+{
+  "order": {
+    "lines": [
+      "Interna napomena vidi samo osoblje, osim ako je označeno drugačije.",
+      "E-pošta zabeležena (nije poslata, režim log): Porudžbina SK-2026-000092 je primljena"
+    ],
+    "noteFieldVisible": true,
+    "helpVisibleInitially": true,
+    "helpShot": "docs/qa/audit/verify/copy/copy-19-reproduce-1440-note-help.webp",
+    "histShot": "docs/qa/audit/verify/copy/copy-19-reproduce-1440-history.webp"
+  },
+  "settings": [
+    "Režim važi za sve poruke. Sadržaj i izgled poruka vidite u delu E-pošta → Šabloni.",
+    "Samo zapis— sada aktivno"
+  ],
+  "outbox": [
+    "Režim slanja: Samo zapis. Poruke se samo beleže ovde — ništa ne odlazi kupcima ni osoblju.",
+    "\tSamo zapis\tZABELEŽENO"
+  ],
+  "back_in_stock": {
+    "className": "mx-auto max-w-[680px] whitespace-pre-wrap rounded-sm border border-line bg-surface-1 p-4 type-code-s text-ink-1",
+    "textTransform": "uppercase",
+    "fontFamily": "\"Martian Mono\", \"Martian Mono Fallback\", ui-monospace, \"Casc",
+    "fontSize": "11px",
+    "source": "Stiglo je.\n==========\n\nArtikal koji ste tražili je ponovo na stanju.\n\nArtikal: Kočione pločice prednje\nŠifra: DEMO-KP-0142\nProizvođač: TRW\nCena sa PDV-om: 4.590 RSD\nStanje: Na stanju\n\nPogledajte artikal: http://localhost:3000/deo/kocione-plocice-prednje-trw\n\nKoličine su ograničene i ne rezervišemo ih bez porudžbine. Ovo obaveštenje šaljemo samo jednom.\n\n--\nSKLOP\nRadno vreme: Pon–pet 8–17, sub 8–14\n\nOvu poruku ste dobili jer ste tražili da vam javimo kad artikal stigne. Odjavite sva obaveštenja o dolasku robe.: http://localhost:3000/obavestenja/odjava/primer-tokena-za-pregled-sablona\n",
+    "renderedFirstLines": [
+      "STIGLO JE.",
+      "==========",
+      "",
+      "ARTIKAL KOJI STE TRAŽILI JE PONOVO NA STANJU.",
+      "",
+      "ARTIKAL: KOČIONE PLOČICE PREDNJE"
+    ],
+    "description": "Svaki šablon sa primerom podataka i vašim podešavanjima (firma, kontakt, radno vreme) — tačno kako ga kupac ili zaposleni vidi.",
+    "shot": "docs/qa/audit/verify/copy/copy-19-reproduce-1440-back_in_stock-tekst.webp",
+    "pageShot": "docs/qa/audit/verify/copy/copy-19-reproduce-1440-back_in_stock-tekst-page.webp"
+  },
+  "staff_daily_digest": {
+    "className": "mx-auto max-w-[680px] whitespace-pre-wrap rounded-sm border border-line bg-surface-1 p-4 type-code-s text-ink-1",
+    "textTransform": "uppercase",
+    "fontFamily": "\"Martian Mono\", \"Martian Mono Fallback\", ui-monospace, \"Casc",
+    "fontSize": "11px",
+    "source": "Pregled za 28.09.2026.\n======================\n\nPorudžbine: 7 · 125.400 RSD\nOtkazane: 1\nNovi upiti: 4\nRegistracije majstora: 1\n\n\nČEKA POTVRDU (1)\n\n- SK-2026-000186: http://localhost:3000/admin/porudzbine/SK-2026-000186 — 3 h 20 min\n\n\nUPITI BEZ ODGOVORA (2)\n\n- UP-2026-000044: http://localhost:3000/admin/upiti/UP-2026-000044 — 5 h 10 min\n- UP-2026-000045: http://localhost:3000/admin/upiti/UP-2026-000045 — 40 min\n\n\nMAJSTORI ČEKAJU ODOBRENJE (1)\n\n- Auto servis Primer: http://localhost:3000/admin/majstori\n\n\nLAGER\n\nBez zaliha: 3 · malo na stanju: 12. Otvorite lager: http://localhost:3000/admin/lager\n\n\nTRAŽENO, A NEMAMO\n\n- 5Q0 407 271 — 4×\n- letva volana passat b8 — 2×\n\nSve pretrage: http://localhost:3000/admin/pretrage\n\nOtvorite kontrolnu tablu: http://localhost:3000/admin\n\n--\nSKLOP\n\nOvu poruku dobijate kao zaposleni u SKLOP. Podešavanja obaveštenja: http://localhost:3000/admin/podesavanja?tab=",
+    "renderedFirstLines": [
+      "PREGLED ZA 28.09.2026.",
+      "======================",
+      "",
+      "PORUDŽBINE: 7 · 125.400 RSD",
+      "OTKAZANE: 1",
+      "NOVI UPITI: 4"
+    ],
+    "description": "Svaki šablon sa primerom podataka i vašim podešavanjima (firma, kontakt, radno vreme) — tačno kako ga kupac ili zaposleni vidi.",
+    "shot": "docs/qa/audit/verify/copy/copy-19-reproduce-1440-staff_daily_digest-tekst.webp",
+    "pageShot": "docs/qa/audit/verify/copy/copy-19-reproduce-1440-staff_daily_digest-tekst-page.webp"
+  },
+  "dashboardLabel": [
+    "Pregled",
+    "Pregled",
+    "Pregled"
+  ],
+  "consoleErrors": [],
+  "pageErrors": []
+}

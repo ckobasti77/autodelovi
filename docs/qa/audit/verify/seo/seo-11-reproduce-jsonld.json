@@ -1,0 +1,130 @@
+{
+  "/deo/kocioni-disk-prednji-276-24-mm-demo-0004": {
+    "types": [
+      "BreadcrumbList",
+      "Product"
+    ],
+    "ids": [],
+    "product": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Kočioni disk prednji 276 × 24 mm",
+      "sku": "DEMO-0004",
+      "mpn": "57447",
+      "brand": {
+        "@type": "Brand",
+        "name": "Febi Bilstein"
+      },
+      "category": "Kočioni diskovi",
+      "description": "Kočioni disk prednji 276 × 24 mm. Demo artikal: kataloški brojevi i cene služe samo za prikaz rada prodavnice.",
+      "image": [
+        "http://localhost:3000/images/parts/kocioni-diskovi.webp"
+      ],
+      "url": "http://localhost:3000/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+      "offers": {
+        "@type": "Offer",
+        "url": "http://localhost:3000/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+        "priceCurrency": "RSD",
+        "price": "4690.00",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {
+          "@id": "http://localhost:3000/#organizacija"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "450.00",
+            "currency": "RSD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "RS"
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "RS",
+          "returnPolicyCountry": "RS",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 14
+        }
+      }
+    }
+  },
+  "/deo/kocione-plocice-prednje-demo-0012": {
+    "types": [
+      "BreadcrumbList",
+      "Product"
+    ],
+    "ids": [],
+    "product": {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Kočione pločice prednje",
+      "sku": "DEMO-0012",
+      "mpn": "0 986 661 655",
+      "brand": {
+        "@type": "Brand",
+        "name": "Bosch"
+      },
+      "category": "Kočione pločice",
+      "description": "Kočione pločice prednje. Demo artikal: kataloški brojevi i cene služe samo za prikaz rada prodavnice.",
+      "image": [
+        "http://localhost:3000/images/parts/kocione-plocice.webp"
+      ],
+      "url": "http://localhost:3000/deo/kocione-plocice-prednje-demo-0012",
+      "offers": {
+        "@type": "Offer",
+        "url": "http://localhost:3000/deo/kocione-plocice-prednje-demo-0012",
+        "priceCurrency": "RSD",
+        "price": "2990.00",
+        "availability": "https://schema.org/OutOfStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {
+          "@id": "http://localhost:3000/#organizacija"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "450.00",
+            "currency": "RSD"
+          },
+          "shippingDestination": {
+            "@type": "DefinedRegion",
+            "addressCountry": "RS"
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "RS",
+          "returnPolicyCountry": "RS",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 14
+        }
+      }
+    }
+  },
+  "/": {
+    "types": [
+      "WebSite",
+      "Organization",
+      "FAQPage"
+    ],
+    "ids": [
+      "http://localhost:3000/#sajt",
+      "http://localhost:3000/#organizacija"
+    ]
+  },
+  "/kontakt": {
+    "types": [
+      "BreadcrumbList",
+      "Organization"
+    ],
+    "ids": [
+      "http://localhost:3000/#organizacija"
+    ]
+  }
+}

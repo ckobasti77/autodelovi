@@ -1,0 +1,155 @@
+{
+  "base": "http://localhost:3100",
+  "at": "2026-09-30T14:35:19.776Z",
+  "summary": {
+    "fullLoads": 4,
+    "apiAuthPostsDuringFullLoads": 4,
+    "clientNavs": 4,
+    "apiAuthPostsDuringClientNavs": 0
+  },
+  "events": [
+    {
+      "phase": "login",
+      "kind": "POST /api/auth",
+      "body": {
+        "action": "auth:signIn",
+        "argKeys": [
+          "provider",
+          "params"
+        ]
+      }
+    },
+    {
+      "phase": "login",
+      "kind": "sets JWT cookie",
+      "method": "POST",
+      "url": "/api/auth",
+      "type": "fetch"
+    },
+    {
+      "phase": "login",
+      "kind": "POST /api/auth",
+      "body": {
+        "action": "auth:signIn",
+        "argKeys": [
+          "refreshToken"
+        ]
+      }
+    },
+    {
+      "phase": "login",
+      "kind": "sets JWT cookie",
+      "method": "POST",
+      "url": "/api/auth",
+      "type": "fetch"
+    },
+    {
+      "phase": "A full load /delovi",
+      "kind": "POST /api/auth",
+      "body": {
+        "action": "auth:signIn",
+        "argKeys": [
+          "refreshToken"
+        ]
+      }
+    },
+    {
+      "phase": "A full load /delovi",
+      "kind": "sets JWT cookie",
+      "method": "POST",
+      "url": "/api/auth",
+      "type": "fetch"
+    },
+    {
+      "phase": "A full load /korpa",
+      "kind": "POST /api/auth",
+      "body": {
+        "action": "auth:signIn",
+        "argKeys": [
+          "refreshToken"
+        ]
+      }
+    },
+    {
+      "phase": "A full load /korpa",
+      "kind": "sets JWT cookie",
+      "method": "POST",
+      "url": "/api/auth",
+      "type": "fetch"
+    },
+    {
+      "phase": "A full load /",
+      "kind": "POST /api/auth",
+      "body": {
+        "action": "auth:signIn",
+        "argKeys": [
+          "refreshToken"
+        ]
+      }
+    },
+    {
+      "phase": "A full load /",
+      "kind": "sets JWT cookie",
+      "method": "POST",
+      "url": "/api/auth",
+      "type": "fetch"
+    },
+    {
+      "phase": "A full load /nalog",
+      "kind": "POST /api/auth",
+      "body": {
+        "action": "auth:signIn",
+        "argKeys": [
+          "refreshToken"
+        ]
+      }
+    },
+    {
+      "phase": "A full load /nalog",
+      "kind": "sets JWT cookie",
+      "method": "POST",
+      "url": "/api/auth",
+      "type": "fetch"
+    },
+    {
+      "phase": "B client nav /delovi",
+      "kind": "clicked",
+      "desc": "Delovi"
+    },
+    {
+      "phase": "B client nav /delovi",
+      "kind": "nav type",
+      "softNavigation": true
+    },
+    {
+      "phase": "B client nav /nalog",
+      "kind": "clicked",
+      "desc": "Moj nalog"
+    },
+    {
+      "phase": "B client nav /nalog",
+      "kind": "nav type",
+      "softNavigation": true
+    },
+    {
+      "phase": "B client nav /vozila",
+      "kind": "clicked",
+      "desc": "Vozila"
+    },
+    {
+      "phase": "B client nav /vozila",
+      "kind": "nav type",
+      "softNavigation": true
+    },
+    {
+      "phase": "B client nav /",
+      "kind": "clicked",
+      "desc": "SKLOP"
+    },
+    {
+      "phase": "B client nav /",
+      "kind": "nav type",
+      "softNavigation": true
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+ "guest /admin": {
+  "status": 200,
+  "url": "http://localhost:3100/prijava?next=%2Fadmin",
+  "title": "Prijava | SKLOP",
+  "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\nPrijava\n\nNalog nije obavezan za kupovinu — služi za istoriju porudžbina i sačuvana vozila.\n\nE-pošta\nLozinka\nPrijavi se\n\nNemate nalog? Napravite nalog\n\nZaboravljena lozinka\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–1"
+ },
+ "guest /majstor": {
+  "status": 200,
+  "url": "http://localhost:3100/prijava?next=%2Fmajstor",
+  "title": "Prijava | SKLOP",
+  "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\nPrijava\n\nNalog nije obavezan za kupovinu — služi za istoriju porudžbina i sačuvana vozila.\n\nE-pošta\nLozinka\nPrijavi se\n\nNemate nalog? Napravite nalog\n\nZaboravljena lozinka\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–1"
+ },
+ "guest /nalog": {
+  "status": 200,
+  "url": "http://localhost:3100/prijava?next=%2Fnalog",
+  "title": "Prijava | SKLOP",
+  "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\nPrijava\n\nNalog nije obavezan za kupovinu — služi za istoriju porudžbina i sačuvana vozila.\n\nE-pošta\nLozinka\nPrijavi se\n\nNemate nalog? Napravite nalog\n\nZaboravljena lozinka\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–1"
+ },
+ "customer 1440 /admin": {
+  "status": 403,
+  "url": "http://localhost:3100/admin",
+  "title": "403: This page could not be accessed.",
+  "text": "Preskoči na sadržaj\n403\nThis page could not be accessed."
+ },
+ "customer 1440 /admin/porudzbine": {
+  "status": 403,
+  "url": "http://localhost:3100/admin/porudzbine",
+  "title": "403: This page could not be accessed.",
+  "text": "Preskoči na sadržaj\n403\nThis page could not be accessed."
+ },
+ "customer 1440 /majstor": {
+  "status": 200,
+  "url": "http://localhost:3100/majstor",
+  "title": "Majstorski portal | SKLOP",
+  "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\n\nMajstorski portal\n\nMajstorski nalog\nOvaj nalog nema registrovan servis\n\nMajstorski portal — brza porudžbina po OEM brojevima, vaša cena sa rabatom i cenovnik — otvara se posle registracije servisa i odobrenja.\n\nRegistrujte servis\nMoj nalog\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–14\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP n"
+ },
+ "customer 390 /admin": {
+  "status": 403,
+  "url": "http://localhost:3100/admin",
+  "title": "403: This page could not be accessed.",
+  "text": "Preskoči na sadržaj\n403\nThis page could not be accessed."
+ },
+ "customer 390 /admin/porudzbine": {
+  "status": 403,
+  "url": "http://localhost:3100/admin/porudzbine",
+  "title": "403: This page could not be accessed.",
+  "text": "Preskoči na sadržaj\n403\nThis page could not be accessed."
+ },
+ "customer 390 /majstor": {
+  "status": 200,
+  "url": "http://localhost:3100/majstor",
+  "title": "Majstorski portal | SKLOP",
+  "text": "Preskoči na sadržaj\nSKLOP\n\nMajstorski portal\n\nMajstorski nalog\nOvaj nalog nema registrovan servis\n\nMajstorski portal — brza porudžbina po OEM brojevima, vaša cena sa rabatom i cenovnik — otvara se posle registracije servisa i odobrenja.\n\nRegistrujte servis\nMoj nalog\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–14\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.\n\nUslovi korišć"
+ }
+}

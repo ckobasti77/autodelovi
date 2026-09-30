@@ -1,0 +1,7 @@
+sitemap pages: 349
+pages with „za Škoda/Cupra …“ (brand not declined): 80
+pages with only „za SEAT <feminine model>“: 6
+total affected: 86
+affected in <title> or <h1>: 47
+attributive „za Škoda vozila“ occurrences (grammatical, excluded): 0
+by type: {"delovi":20,"vozila":32,"deo":34}

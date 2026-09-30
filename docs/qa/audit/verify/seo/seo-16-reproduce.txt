@@ -1,0 +1,70 @@
+seo-16 reproduce — 2026-09-30T14:59:21.039Z — http://localhost:3100
+
+/vozila/seat/ateca/ateca vs /vozila/cupra/ateca/cupra-ateca
+  status 200/200; robots "index, follow" / "index, follow"; canonical http://localhost:3000/vozila/seat/ateca/ateca / http://localhost:3000/vozila/cupra/ateca/cupra-ateca
+  words 384/384; jaccard 5-shingle 0.93; 3-shingle 0.94; product links 8/8, shared 8 (jaccard 1.00)
+  H1: "Delovi za SEAT Ateca" / "Delovi za Cupra Ateca"
+  title: "Delovi za SEAT Ateca (2016–) | SKLOP" / "Delovi za Cupra Ateca (2018–) | SKLOP"
+  desc A: Delovi za SEAT Ateca: 56 artikala u 33 kategorije. Blok motora i glava, Filter ulja, Filter vazduha, Turbina (turbopunjač).
+  desc B: Delovi za Cupra Ateca: 56 artikala u 33 kategorije. Blok motora i glava, Filter ulja, Filter vazduha, Turbina (turbopunjač).
+  cross-link A->B false, B->A false
+  words only in A (2): seat ateca2016
+  words only in B (2): cupra ateca2018
+
+/delovi/kocione-plocice/seat/ateca vs /delovi/kocione-plocice/cupra/ateca
+  status 200/200; robots "index, follow" / "index, follow"; canonical http://localhost:3000/delovi/kocione-plocice/seat/ateca / http://localhost:3000/delovi/kocione-plocice/cupra/ateca
+  words 383/383; jaccard 5-shingle 0.69; 3-shingle 0.78; product links 6/6, shared 6 (jaccard 1.00)
+  H1: "Kočione pločice za SEAT Ateca" / "Kočione pločice za Cupra Ateca"
+  title: "Kočione pločice za SEAT Ateca | SKLOP" / "Kočione pločice za Cupra Ateca | SKLOP"
+  desc A: Kočione pločice za SEAT Ateca: 6 artikala, 5 na stanju, 2.600 RSD – 5.190 RSD. Generacije: Ateca. Proizvođači: Febi Bilstein, ATE, Bosch.
+  desc B: Kočione pločice za Cupra Ateca: 6 artikala, 5 na stanju, 2.600 RSD – 5.190 RSD. Generacije: Ateca. Proizvođači: Febi Bilstein, ATE, Bosch.
+  cross-link A->B false, B->A false
+  words only in A (8): seatpočetna seat 2016 voziloseat najvišenajnovijeseat modeleseat leonseat ibizadrugi
+  words only in B (8): cuprapočetna cupra 2018 vozilocupra najvišenajnovijecupra modelecupra formentorcupra leondrugi
+
+/vozila/volkswagen/golf/golf-7 vs /vozila/skoda/octavia/octavia-3
+  status 200/200; robots "index, follow" / "index, follow"; canonical http://localhost:3000/vozila/volkswagen/golf/golf-7 / http://localhost:3000/vozila/skoda/octavia/octavia-3
+  words 418/413; jaccard 5-shingle 0.62; 3-shingle 0.73; product links 8/8, shared 7 (jaccard 0.78)
+  H1: "Delovi za VW Golf VII" / "Delovi za Škoda Octavia III"
+  title: "Delovi za VW Golf VII (2012–2020) | SKLOP" / "Delovi za Škoda Octavia III (2012–2020) | SKLOP"
+  desc A: Delovi za VW Golf VII: 61 artikal u 37 kategorija. Blok motora i glava, Filter ulja, Filter vazduha, Turbina (turbopunjač).
+  desc B: Delovi za Škoda Octavia III: 60 artikala u 36 kategorija. Blok motora i glava, Filter ulja, Filter vazduha, Turbina (turbopunjač).
+  cross-link A->B false, B->A false
+  words only in A (19): golfpočetna volkswagen golf viidelovi vw vii2012 5g au 61 artikalizaberi artiklahauba1 artikalstakla1 viioem vii kvalitetkočione zadnjeoem 569odgovara 190rsdsa zadnjedelovi
+  words only in B (22): octaviapočetna škoda octavia iiidelovi iii2012 5e ne 60 artikalaizaberi artiklabranici1 iiioem kvalitetvaleo kvalitetfar desni halogenioem 5e0 941 203odgovara iii stanju34 far punidelovi
+
+/vozila/audi/a3/a3-8v vs /vozila/seat/leon/leon-3
+  status 200/200; robots "index, follow" / "index, follow"; canonical http://localhost:3000/vozila/audi/a3/a3-8v / http://localhost:3000/vozila/seat/leon/leon-3
+  words 416/413; jaccard 5-shingle 0.71; 3-shingle 0.83; product links 8/8, shared 8 (jaccard 1.00)
+  H1: "Delovi za Audi A3 (8V)" / "Delovi za SEAT Leon III"
+  title: "Delovi za Audi A3 (8V) (2012–2020) | SKLOP" / "Delovi za SEAT Leon III (2012–2020) | SKLOP"
+  desc A: Delovi za Audi A3 (8V): 57 artikala u 33 kategorije. Blok motora i glava, Filter ulja, Filter vazduha, Turbina (turbopunjač).
+  desc B: Delovi za SEAT Leon III: 57 artikala u 33 kategorije. Blok motora i glava, Filter ulja, Filter vazduha, Turbina (turbopunjač).
+  cross-link A->B false, B->A false
+  words only in A (6): a3početna audi a3 8v delovi 2012
+  words only in B (8): leonpočetna seat leon iiidelovi iii2012 5f iiioem iii
+
+/delovi/kocioni-diskovi/volkswagen/golf vs /delovi/kocioni-diskovi/skoda/octavia
+  status 200/200; robots "index, follow" / "index, follow"; canonical http://localhost:3000/delovi/kocioni-diskovi/volkswagen/golf / http://localhost:3000/delovi/kocioni-diskovi/skoda/octavia
+  words 463/459; jaccard 5-shingle 0.59; 3-shingle 0.64; product links 6/6, shared 6 (jaccard 1.00)
+  H1: "Kočioni diskovi za VW Golf" / "Kočioni diskovi za Škoda Octavia"
+  title: "Kočioni diskovi za VW Golf | SKLOP" / "Kočioni diskovi za Škoda Octavia | SKLOP"
+  desc A: Kočioni diskovi za VW Golf: 6 artikala, 5 na stanju, 3.890 RSD – 18.900 RSD. Generacije: Golf VII, Golf V, Golf VI, Golf IV.
+  desc B: Kočioni diskovi za Škoda Octavia: 6 artikala, 5 na stanju, 3.890 RSD – 18.900 RSD. Generacije: Octavia III, Octavia II, Octavia I, Octavia IV.
+  cross-link A->B false, B->A false
+  words only in A (36): volkswagenpočetna volkswagen golfkočioni vw golfza golf vii v 2003 2009 vi 2008 1997 2006 vozilovolkswagen golfpromeni najvišenajnovijevolkswagen golfponišti generacijigolf vii2012 artikalagolf v2003 artiklagolf vi2008 iv1997 artikalgolf viiiod golfkoliko modelevw tiguanvw touranvw passatvw caddyvw 
+  words only in B (31): škodapočetna škoda octaviakočioni octaviaza octavia iii ii 2004 1996 2010 voziloškoda octaviapromeni najvišenajnoviješkoda octaviaponišti generacijioctavia iii2012 artikalaoctavia ii2004 artiklaoctavia i1996 artikaloctavia ivod octaviakoliko modeleškoda superbškoda kodiaqškoda karoqškoda fabiaškoda 
+
+Template already renders platform, VIN code, engine list with codes and per-category counts (both pages):
+  P: 2016– · platforma MQB · VIN kod KH · 56 artikala   /   P: 2018– · platforma MQB · VIN kod KH · 56 artikala
+  H2 Motor: 1.2 TSI 77 kW CBZB · 1.0 TSI 81 kW CHZD, DKLA · 1.4 TSI 110 kW CZDA · 1.5 TSI 110 kW DADA, DPCA · 2.0 TSI 162 kW CHHB · 1.6 TDI 77 kW CAYC, CLHA · 2.0 TDI 110 kW CRLB, DFGA · 2.0 TDI 140 kW CUAA, DFHA (identical on both)
+
+Root cause is seed/demo data (same platform group => same engines and same demo fitments):
+274:  { brand: "seat", slug: "ateca", name: "Ateca", aliases: ["ateca", "ateka"], generations: [
+275:    { slug: "ateca", name: "Ateca", code: "KH", vinModelCodes: ["KH"], aliases: ["ateca"], yearFrom: 2016, platform: "MQB", group: "mqb", engines: MQB_ENGINES },
+283:  { brand: "cupra", slug: "ateca", name: "Ateca", aliases: ["cupra ateca"], generations: [
+284:    { slug: "cupra-ateca", name: "Ateca", code: "KH", vinModelCodes: ["KH"], aliases: ["cupra ateca"], yearFrom: 2018, platform: "MQB", group: "mqb", engines: MQB_ENGINES },
+
+HUMAN-TODO (owner items):
+127:- [ ] **[P1] seed – proveriti: koji motor ide u koju generaciju** (tabela `generationEngines`, 345 veza) — trenutno po platformi (PQ34, PQ35, MQB, MQB Evo, PQ46, B5, PQ25, MQB A0, B6/B7, MLB, C6).
+129:- [ ] **[P0] Demo artikli (šifre `DEMO-0001` … `DEMO-0150` i zamene `DEMO-E001` … `DEMO-E007`), demo majstor, 8 demo porudžbina i 4 demo upita** — kataloški (OEM) i zamenski brojevi su izmišljeni i označeni „VAG (demo)“; obrisati pre puštan

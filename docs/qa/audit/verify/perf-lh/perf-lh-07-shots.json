@@ -1,0 +1,50 @@
+{
+ "base": "http://localhost:3200",
+ "path": "/delovi/kocioni-diskovi",
+ "samples": [
+  {
+   "label": "before-failsafe",
+   "wallMs": 3990,
+   "now": 3985,
+   "fcp": 2076,
+   "failsafe": false,
+   "running": 0,
+   "hiddenInViewport": [
+    "span: Više o kategoriji",
+    "p: Diskove menjajte u paru i uvek sa novim pločicama;",
+    "p: Brembo · OEM kvalitet",
+    "h3: Kočioni disk prednji 312 × 25 mm",
+    "p: OEM 3C0 615 098",
+    "p: TRW · OEM kvalitet",
+    "h3: Kočioni disk zadnji 272 × 10 mm, puni",
+    "p: OEM 1K0 615 540 Q"
+   ]
+  },
+  {
+   "label": "failsafe-fired",
+   "wallMs": 5309,
+   "now": 5306,
+   "fcp": 2076,
+   "failsafe": true,
+   "running": 0,
+   "hiddenInViewport": []
+  },
+  {
+   "label": "reveal-running",
+   "wallMs": 5783,
+   "now": 5780,
+   "fcp": 2076,
+   "failsafe": true,
+   "running": 6,
+   "hiddenInViewport": [
+    "span: prednji",
+    "span: ×",
+    "span: 25",
+    "span: disk",
+    "span: zadnji",
+    "span: 10",
+    "span: puni"
+   ]
+  }
+ ]
+}

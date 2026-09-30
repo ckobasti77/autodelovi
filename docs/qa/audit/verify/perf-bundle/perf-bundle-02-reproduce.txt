@@ -1,0 +1,78 @@
+perf-bundle-02 verify — build 9b4K278NWK6BGwhVv5UCP, served :3100
+
+# Module chain (served chunks)
+25dplrt_qw3he.js #66120 Providers -> e.i(85786) Tooltip module -> e.i(53660) Popper+floating-ui (chunk 14y-81z8a-w-u.js)
+var t=e.i(43476),r=e.i(85786)
+chunks containing module 53660: 085mnq86x2n79.js 14y-81z8a-w-u.js 25dplrt_qw3he.js 3rc_lulm_urtg.js   (085mnq86x2n79/3rc_lulm_urtg = DropdownMenu, admin/styleguide)
+
+# Static attribution per route (verify-perf-bundle-static.mjs)
+== /  scripts 24  module JS 329.1 KB gz
+  popperFloatingUi   n= 2 raw   34.1 KB  gz(standalone)  13.2 KB  gz(in-chunk delta)  12.8 KB  25dplrt_qw3he.js,14y-81z8a-w-u.js  #85786 #53660
+== /delovi  scripts 23  module JS 313.3 KB gz
+  popperFloatingUi   n= 2 raw   34.1 KB  gz(standalone)  13.2 KB  gz(in-chunk delta)  12.8 KB  25dplrt_qw3he.js,14y-81z8a-w-u.js  #85786 #53660
+== /delovi/kocioni-diskovi  scripts 24  module JS 330.9 KB gz
+  popperFloatingUi   n= 2 raw   34.1 KB  gz(standalone)  13.2 KB  gz(in-chunk delta)  12.8 KB  25dplrt_qw3he.js,14y-81z8a-w-u.js  #85786 #53660
+== /deo/kocioni-disk-prednji-276-24-mm-demo-0004  scripts 24  module JS 333.6 KB gz
+  popperFloatingUi   n= 2 raw   34.1 KB  gz(standalone)  13.2 KB  gz(in-chunk delta)  12.8 KB  25dplrt_qw3he.js,14y-81z8a-w-u.js  #85786 #53660
+== /pretraga?q=disk  scripts 24  module JS 324.7 KB gz
+  popperFloatingUi   n= 2 raw   34.1 KB  gz(standalone)  13.2 KB  gz(in-chunk delta)  12.8 KB  25dplrt_qw3he.js,14y-81z8a-w-u.js  #85786 #53660
+== /vozila/volkswagen/golf/golf-7  scripts 24  module JS 324.7 KB gz
+  popperFloatingUi   n= 2 raw   34.1 KB  gz(standalone)  13.2 KB  gz(in-chunk delta)  12.8 KB  25dplrt_qw3he.js,14y-81z8a-w-u.js  #85786 #53660
+== /ponuda/kocione-plocice-golf  scripts 24  module JS 340.2 KB gz
+  popperFloatingUi   n= 2 raw   34.1 KB  gz(standalone)  13.2 KB  gz(in-chunk delta)  12.8 KB  25dplrt_qw3he.js,14y-81z8a-w-u.js  #85786 #53660
+== /za-majstore  scripts 23  module JS 316.3 KB gz
+  popperFloatingUi   n= 2 raw   34.1 KB  gz(standalone)  13.2 KB  gz(in-chunk delta)  12.8 KB  25dplrt_qw3he.js,14y-81z8a-w-u.js  #85786 #53660
+== /upit  scripts 24  module JS 428.7 KB gz
+  popperFloatingUi   n= 2 raw   34.1 KB  gz(standalone)  13.2 KB  gz(in-chunk delta)  12.8 KB  25dplrt_qw3he.js,14y-81z8a-w-u.js  #85786 #53660
+== /korpa  scripts 24  module JS 321.3 KB gz
+  popperFloatingUi   n= 2 raw   34.1 KB  gz(standalone)  13.2 KB  gz(in-chunk delta)  12.8 KB  25dplrt_qw3he.js,14y-81z8a-w-u.js  #85786 #53660
+== /porudzbina  scripts 24  module JS 429.9 KB gz
+  popperFloatingUi   n= 2 raw   34.1 KB  gz(standalone)  13.2 KB  gz(in-chunk delta)  12.8 KB  25dplrt_qw3he.js,14y-81z8a-w-u.js  #85786 #53660
+== /prijava  scripts 23  module JS 308.7 KB gz
+  popperFloatingUi   n= 2 raw   34.1 KB  gz(standalone)  13.2 KB  gz(in-chunk delta)  12.8 KB  25dplrt_qw3he.js,14y-81z8a-w-u.js  #85786 #53660
+
+# Runtime (verify-perf-bundle-runtime.mjs): chunk requested + % executed, no interaction, consent cookie set
+## chromium 390 /  js requests 25
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+## chromium 390 /delovi/kocioni-diskovi  js requests 25
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+## chromium 390 /deo/kocioni-disk-prednji-276-24-mm-demo-0004  js requests 25
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+## chromium 390 /ponuda/kocione-plocice-golf  js requests 25
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+## chromium 390 /korpa  js requests 25
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+## chromium 1440 /  js requests 25
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+## chromium 1440 /delovi/kocioni-diskovi  js requests 25
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+## chromium 1440 /deo/kocioni-disk-prednji-276-24-mm-demo-0004  js requests 25
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+## chromium 1440 /ponuda/kocione-plocice-golf  js requests 25
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+## chromium 1440 /korpa  js requests 25
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+## webkit 390 /  js requests 25
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,
+## webkit 390 /delovi/kocioni-diskovi  js requests 25
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,
+## webkit 390 /deo/kocioni-disk-prednji-276-24-mm-demo-0004  js requests 25
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,
+## webkit 390 /ponuda/kocione-plocice-golf  js requests 25
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,
+## webkit 390 /korpa  js requests 25
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,
+
+# Source: Tooltip consumers
+components/admin/shell/AdminSidebar.tsx:17:import { Tooltip } from "@/components/ui/Tooltip";
+app/styleguide/_components/GalleryOverlays.tsx:19:import { Tooltip } from "@/components/ui/Tooltip";

@@ -1,0 +1,6 @@
+martian-mono-latin-400-normal.woff [Martian Mono] S=1 k=1 o=1 d=1 a=1 Š=0 Č=0 Ć=0 Ž=0 Đ=0
+martian-mono-latin-ext-400-normal.woff [Martian Mono] S=0 k=0 o=0 d=0 a=0 Š=1 Č=1 Ć=1 Ž=1 Đ=1
+archivo-expanded-700.woff [Archivo Expanded] S=1 k=1 o=1 d=1 a=1 Š=1 Č=1 Ć=1 Ž=1 Đ=1
+og:image:alt /delovi/kocnice = "Kategorija auto delova — broj artikala i stanje" (static export const alt in app/(shop)/delovi/[kategorija]/opengraph-image.tsx:7)
+og:image:alt /deo/* = "Auto deo — naziv, OEM broj i proizvođač" (app/(shop)/deo/[slug]/opengraph-image.tsx:6)
+og:image:alt /delovi/*/*/* = "Delovi po kategoriji za model vozila — broj artikala i stanje"

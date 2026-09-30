@@ -1,0 +1,68 @@
+# backend-08 root cause (library code) — convex   "version": "1.46.0",, @convex-dev/auth 0.0.95
+## node_modules/convex/src/browser/sync/authentication_manager.ts:38-51 (default 3-step flow)
+/**
+ * By default we take 3 steps:
+ *   1. Fetch a possibly cached token and send it to the server
+ *   2. Immediately fetch a fresh token without using a cache
+ *   3. Repeat step 2 before the end of the fresh token's lifetime
+ *
+ * When `initialAuthTokenReuse` is enabled, step 2 is skipped: the
+ * cached token is reused and a refetch is scheduled based on its
+ * remaining lifetime (estimated via the server's clock skew). This
+ * avoids a second Authenticate message that would cause the server
+ * to re-execute all authenticated queries.
+ *
+ * If the server rejects a token before a scheduled refetch, we
+ * immediately fetch a fresh token and retry.
+## :213-222 — after the server confirms the cached (SSR-provided) token, a forced refetch runs unless initialAuthTokenReuse
+    if (this.authState.state === "waitingForServerConfirmationOfCachedToken") {
+      this._logVerbose("server confirmed auth token is valid");
+      const cachedToken = this.syncState.getAuth()?.value;
+      if (this.initialAuthTokenReuse && cachedToken) {
+        this.scheduleTokenRefetch(cachedToken, serverMessage.clientClockSkew);
+      } else {
+        void this.refetchToken();
+      }
+      this.authState.config.onAuthChange(true);
+      return;
+## node_modules/convex/src/browser/sync/client.ts:140-155 (opt-in option, experimental, default false)
+  /**
+   * This API is experimental: it may change or disappear.
+   *
+   * When true, the client reuses the initial cached auth token instead
+   * of immediately fetching a fresh one. This avoids a second
+   * Authenticate message that causes the server to re-execute all
+   * authenticated queries.
+   *
+   * The cached token's remaining lifetime is estimated using the
+   * server's clock skew measurement, and a refresh is scheduled
+   * before it expires.
+   *
+   * Defaults to false, preserving the original behavior of immediately
+   * fetching a fresh token after the cached token is confirmed.
+   */
+  initialAuthTokenReuse?: boolean;
+## @convex-dev/auth react client: forceRefreshToken -> verifyCodeAndSetToken({refreshToken}) -> POST /api/auth
+    const fetchAccessToken = useCallback(async ({ forceRefreshToken }) => {
+        if (forceRefreshToken) {
+            const tokenBeforeLockAquisition = token.current;
+            return await browserMutex(REFRESH_TOKEN_STORAGE_KEY, async () => {
+                const tokenAfterLockAquisition = token.current;
+                // Another tab or frame just refreshed the token, we can use it
+                // and skip another refresh.
+                if (tokenAfterLockAquisition !== tokenBeforeLockAquisition) {
+                    logVerbose(`returning synced token, is null: ${tokenAfterLockAquisition === null}`);
+                    return tokenAfterLockAquisition;
+                }
+                const refreshToken = (await storageGet(REFRESH_TOKEN_STORAGE_KEY)) ?? null;
+                if (refreshToken !== null) {
+                    setIsRefreshingToken(true);
+                    await verifyCodeAndSetToken({ refreshToken }).finally(() => {
+                        setIsRefreshingToken(false);
+                    });
+                    logVerbose(`returning retrieved token, is null: ${tokenAfterLockAquisition === null}`);
+                    return token.current;
+                }
+                else {
+## App: components/providers/ConvexClientProvider.tsx constructs the client without options
+19:export const convexClient: ConvexReactClient | null = url ? new ConvexReactClient(url) : null;

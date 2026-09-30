@@ -1,0 +1,28 @@
+# seo evidence: command outputs (2026-09-30, build on :3100)
+
+## seo-01 product <title> drops lowercase s
+$ curl -s http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 | grep -o "<title>[^<]*</title>"
+<title>Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP</title>
+<title>Kočione pločice prednje, a enzorom 1K0 698 406 F | SKLOP</title>
+$ grep -n "replace(/s+/" lib/seo/templates.ts
+54:  const name = p.name.replace(/s+/g, " ").trim();
+
+## seo-08 slug redirects written but never read
+$ grep -rn "\"redirects\"\|by_fromPath" convex lib app proxy.ts (excluding tests/_generated)
+convex/lib/productWriter.ts:863:    await ctx.db.insert("redirects", {
+convex/schema.ts:134:  }).index("by_fromPath", ["fromPath"]),
+$ npx convex data redirects
+There are no documents in this table.
+$ grep -n "Promena pravi preusmerenje" components/admin/products/ProductEditor.tsx
+534:                    : "Promena pravi preusmerenje sa stare adrese."
+
+## seo-03 out-of-range pagination
+/delovi/kocioni-diskovi | 200 <title>Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP <meta name="robots" content="index, follow" <link rel="canonical" href="http://localhost:3000/delovi/kocioni-diskovi" 
+/delovi/kocioni-diskovi?strana=2 | 200 <title>Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra… | SKLOP <meta name="robots" content="index, follow" <link rel="canonical" href="http://localhost:3000/delovi/kocioni-diskovi?strana=2" 
+/delovi/kocioni-diskovi?strana=99 | 200 <title>Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra… | SKLOP <meta name="robots" content="index, follow" <link rel="canonical" href="http://localhost:3000/delovi/kocioni-diskovi?strana=99" 
+/delovi/kocioni-diskovi?strana=500 | 200 <title>Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra… | SKLOP <meta name="robots" content="index, follow" <link rel="canonical" href="http://localhost:3000/delovi/kocioni-diskovi?strana=500" 
+
+## seo-17 /api/zdravlje
+GET /api/zdravlje -> 404
+atribucija
+revalidate

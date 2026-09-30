@@ -1,0 +1,4720 @@
+COMMON LINES (on > 60 % of pages):
+Preskoči na sadržaj
+SKLOP
+Pregled
+PRODAJA
+Porudžbine
+75
+novih
+Upiti
+42
+Kupci
+Majstori
+KATALOG
+Proizvodi
+Uvoz iz Excela
+Kategorije
+Vozila
+Proizvođači
+Lager
+15
+bez zaliha
+EVIDENCIJA
+Pretrage
+Izvori
+E-pošta
+Izvoz
+Revizija
+Privatnost
+PODEŠAVANJA
+Cenovni razredi
+Korisnici
+Podešavanja
+Broj porudžbine, OEM, telefon…
+Ctrl K
+9+
+Vlasnik
+/
+
+
+======== /admin [200]
+TITLE: Pregled · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Pregled"]
+--- text
+Danas 30.09.2026. — stanje u realnom vremenu.
+Podaci o firmi nisu popunjeni: pun naziv firme, PIB, adresa sedišta, telefon, tekući račun. Predračun, otpremnica i podnožje sajta ih prikazuju. Popuni u podešavanjima
+Porudžbine danas
+55
+75 čeka potvrdu
+Vrednost danas
+1.223.982
+RSD sa PDV-om
+Poslednjih 7 dana
+55
+više nego prethodnih 7 dana (0)
+Upiti bez odgovora
+45
+najstariji čeka 8 h 41 min radnog vremena
+Majstori na čekanju
+0
+registracije za odobrenje
+Bez zaliha
+još 28 sa malo zaliha
+Red čekanja
+cilj: odgovor za 2 h
+SK-2026-000001
+Porudžbina
+Petar Demo · 15.270 RSD
+8 h 41 min
+— kasni
+primljeno 29.09. 16:31
+UP-2026-000002
+Upit
+Demo Kupac · Traži deo · Pumpa za vodu za Octavia III 1.6 TDI, ima li na stanju?
+8 h 41 min
+— kasni
+primljeno 29.09. 16:31
+SK-2026-000009
+Porudžbina
+Nikola Stanković · 7.740 RSD
+8 h 13 min
+— kasni
+primljeno 30.09. 03:39
+UP-2026-000005
+Upit
+Marko Jovanović · Po broju šasije · Volkswagen Golf V (2008)
+8 h 13 min
+— kasni
+primljeno 30.09. 03:41
+SK-2026-000010
+Porudžbina
+Nikola Stanković · 7.740 RSD
+8 h 13 min
+— kasni
+primljeno 30.09. 03:42
+UP-2026-000006
+Upit
+Marko Jovanović · Po broju šasije · Volkswagen Golf V (2008)
+8 h 13 min
+— kasni
+primljeno 30.09. 03:42
+SK-2026-000011
+Porudžbina
+Auto servis Petrović · 7.290 RSD
+8 h 13 min
+— kasni
+primljeno 30.09. 03:43
+UP-2026-000007
+Upit
+Ana Petrović · Po broju šasije · Škoda Octavia III (2015)
+8 h 13 min
+— kasni
+primljeno 30.09. 03:43
+SK-2026-000012
+Porudžbina
+Nikola Stanković · 7.740 RSD
+8 h 13 min
+— kasni
+primljeno 30.09. 03:59
+UP-2026-000008
+Upit
+Marko Jovanović · Po broju šasije · Volkswagen Golf V (2008)
+8 h 13 min
+— kasni
+primljeno 30.09. 03:59
+Aktivnost
+Cela revizija
+pre 2 min
+SK-2026-000100: Primljena → Otkazana
+pre 2 min
+UP-2026-000059: poslata ponuda br. 1
+pre 2 min
+UP-2026-000059: nacrt ponude
+pre 29 min
+Auto servis E2E: na čekanju → odobren · razred Majstor Plus (15 %)
+Sistem
+pre 32 min
+Izvoz podataka kupca (bez naloga)
+pre 33 min
+Probna poruka „Porudžbina potvrđena (predračun)“ na admin@sklop.test
+pre 33 min
+SK-2026-000094: Potvrđena → Otkazana
+pre 33 min
+SK-2026-000094: Primljena → Potvrđena
+pre 33 min
+Servis Odobrenje 38854: na čekanju → odobren · razred Partner (20 %)
+pre 34 min
+Auto servis E2E: na čekanju → odobren · razred Majstor Plus (15 %)
+Sistem
+Porudžbine po danima
+poslednjih 30 dana
+0
+50
+100
+01.09.
+03.09.
+05.09.
+07.09.
+09.09.
+11.09.
+13.09.
+15.09.
+17.09.
+19.09.
+21.09.
+23.09.
+25.09.
+27.09.
+55
+30.09.
+Prikaži tabelu
+Traženo, a nemamo
+Sve pretrage
+ZZ9999999
+22×
+novo
+5Q0 698 151
+6×
+novo
+xyz123abc
+4×
+novo
+qqzz9981
+2×
+novo
+Porudžbine po sistemima
+komada, poslednjih 30 dana
+Motor i usis
+51 kom. · 747.542 RSD
+Kočnice
+36 kom. · 215.640 RSD
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Porudžbine po danima: ukupno 55 porudžbina za 30 dana. Tabela je ispod. | title=ZZ9999999 | title=Promena u odnosu na prethodnih 7 dana | title=5Q0 698 151 | title=xyz123abc | title=qqzz9981 | aria-label=Porudžbine po sistemima | aria-label=Obaveštenja (F8)
+
+======== /admin/porudzbine [200]
+TITLE: Porudžbine · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Porudžbine"]
+--- text
+Sve porudžbine sa sajta, iz upita i brze porudžbine majstora.
+Nove
+Sve
+Potvrđene
+1
+Čeka deo
+1
+Za preuzimanje
+1
+Poslate
+12
+Završene
+Otkazane
+Pretraga porudžbina
+Filteri
+Izvoz za Excel
+BROJ
+PRIMLJENA
+KUPAC
+STATUS
+KOM.
+UKUPNO
+PLAĆANJE · DOSTAVA
+RADNJE
+SK-2026-000099
+30.09. 15:44
+Nikola Stanković
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000098
+30.09. 15:44
+Auto servis E2E
+Dragan Jović · Majstor
+NOVA
+IMA PO PORUDŽBINI
+3	29.904 RSD
+Odloženo plaćanje
+Kurirska služba
+SK-2026-000097
+30.09. 15:40
+Nikola Stanković
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000096
+30.09. 15:40
+Admin Test sec1790775610209
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000095
+30.09. 15:39
+Admin Test sec1790775593547
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000093
+30.09. 15:38
+Auto servis E2E
+Dragan Jović · Majstor
+NOVA
+IMA PO PORUDŽBINI
+3	29.904 RSD
+Odloženo plaćanje
+Kurirska služba
+SK-2026-000092
+30.09. 15:38
+Admin Test audit21
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000090
+30.09. 15:34
+Admin Test p5232824
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000089
+30.09. 15:25
+Nikola Stanković
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000088
+30.09. 15:23
+Nikola Stanković
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000087
+30.09. 15:22
+Admin Test sec1790774556679
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000086
+30.09. 15:22
+Admin Test sec1790774537368
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000085
+30.09. 14:56
+Admin Test sec1790773016796
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000084
+30.09. 14:56
+Admin Test sec1790773000449
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000083
+30.09. 14:55
+Nikola Stanković
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000082
+30.09. 14:54
+Auto servis E2E
+Dragan Jović · Majstor
+NOVA
+IMA PO PORUDŽBINI
+3	29.904 RSD
+Odloženo plaćanje
+Kurirska služba
+SK-2026-000081
+30.09. 14:51
+Nikola Stanković
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000080
+30.09. 14:50
+Admin Test sec1790772652098
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000079
+30.09. 14:50
+Admin Test sec1790772637046
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000077
+30.09. 14:49
+Auto servis E2E
+Dragan Jović · Majstor
+NOVA
+IMA PO PORUDŽBINI
+3	29.904 RSD
+Odloženo plaćanje
+Kurirska služba
+SK-2026-000075
+30.09. 14:45
+Admin Test p2311493
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000074
+30.09. 14:44
+Admin Test sec1790772281063
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000073
+30.09. 14:44
+Admin Test sec1790772264044
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000072
+30.09. 14:42
+Admin Test sec1790772156644
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000071
+30.09. 14:42
+Admin Test sec1790772139947
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000070
+30.09. 13:28
+Nikola Stanković
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000069
+30.09. 13:28
+Auto servis E2E
+Dragan Jović · Majstor
+NOVA
+IMA PO PORUDŽBINI
+3	29.904 RSD
+Odloženo plaćanje
+Kurirska služba
+SK-2026-000068
+30.09. 13:25
+Nikola Stanković
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000066
+30.09. 13:24
+Auto servis E2E
+Dragan Jović · Majstor
+NOVA
+IMA PO PORUDŽBINI
+3	29.904 RSD
+Odloženo plaćanje
+Kurirska služba
+SK-2026-000064
+30.09. 13:19
+Admin Test p7177997
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000063
+30.09. 11:47
+Nikola Stanković
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000062
+30.09. 11:47
+Auto servis E2E
+Dragan Jović · Majstor
+NOVA
+IMA PO PORUDŽBINI
+3	29.904 RSD
+Odloženo plaćanje
+Kurirska služba
+SK-2026-000061
+30.09. 11:45
+Nikola Stanković
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000059
+30.09. 11:44
+Auto servis E2E
+Dragan Jović · Majstor
+NOVA
+IMA PO PORUDŽBINI
+3	29.904 RSD
+Odloženo plaćanje
+Kurirska služba
+SK-2026-000057
+30.09. 11:43
+Admin Test p1427165
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000056
+30.09. 11:39
+Admin Test qa18
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000053
+30.09. 11:35
+Jelena Obradović
+Gost
+NOVA
+1	4.690 RSD
+Gotovinom pri preuzimanju
+Lično preuzimanje
+SK-2026-000052
+30.09. 11:34
+Jelena Obradović
+Gost
+NOVA
+1	4.690 RSD
+Gotovinom pri preuzimanju
+Lično preuzimanje
+SK-2026-000050
+30.09. 10:46
+Admin Test p7991843
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000048
+30.09. 10:15
+Admin Test p6110363
+Gost
+NOVA
+1	5.140 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000046
+30.09. 08:34
+Admin Test p0087613
+Gost
+NOVA
+1	7.740 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000044
+30.09. 08:33
+Admin Test p0021559
+Gost
+NOVA
+1	7.740 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000042
+30.09. 08:32
+Admin Test p9956724
+Gost
+NOVA
+1	7.740 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000040
+30.09. 08:31
+Admin Test p9878887
+Gost
+NOVA
+1	7.740 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000039
+30.09. 07:49
+Admin Test qa1
+Gost
+NOVA
+1	7.740 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000037
+30.09. 07:45
+Admin Test p7134516
+Gost
+NOVA
+1	7.740 RSD
+Pouzećem
+Kurirska služba
+SK-2026-000036
+30.09. 06:08
+Auto servis Jović
+Dragan Jović · Majstor
+NOVA
+IMA PO PORUDŽBINI
+3	29.904 RSD
+Odloženo plaćanje
+Kurirska služba
+SK-2026-000035
+30.09. 06:07
+Auto servis E2E
+Dragan Jović · Majstor
+NOVA
+IMA PO PORUDŽBINI
+3	29.904 RSD
+Odloženo plaćanje
+Kurirska služba
+SK-2026-000034
+30.09. 06:06
+Auto servis E2E
+Dragan Jović · Majstor
+NOVA
+IMA PO PORUDŽBINI
+3	29.904 RSD
+Odloženo plaćanje
+Kurirska služba
+SK-2026-000033
+30.09. 06:01
+Auto servis Jović
+Dragan Jović · Majstor
+NOVA
+3	92.549 RSD
+Odloženo plaćanje
+Kurirska služba
+Prikazano: 50 porudžbina
+Učitaj još 50
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Status porudžbine | placeholder=Broj, ime, telefon, e-mail, PIB… | aria-label=Kolone | aria-label=Gusti redovi | aria-label=Izaberi sve redove | aria-label=Izaberi SK-2026-000099 | aria-label=Radnje za SK-2026-000099 | aria-label=Izaberi SK-2026-000098 | aria-label=Radnje za SK-2026-000098 | aria-label=Izaberi SK-2026-000097 | aria-label=Radnje za SK-2026-000097 | aria-label=Izaberi SK-2026-000096 | aria-label=Radnje za SK-2026-000096 | aria-label=Izaberi SK-2026-000095 | aria-label=Radnje za SK-2026-000095 | aria-label=Izaberi SK-2026-000093 | aria-label=Radnje za SK-2026-000093 | aria-label=Izaberi SK-2026-000092 | aria-label=Radnje za SK-2026-000092 | aria-label=Izaberi SK-2026-000090 | aria-label=Radnje za SK-2026-000090 | aria-label=Izaberi SK-2026-000089 | aria-label=Radnje za SK-2026-000089 | aria-label=Izaberi SK-2026-000088 | aria-label=Radnje za SK-2026-000088 | aria-label=Izaberi SK-2026-000087 | aria-label=Radnje za SK-2026-000087 | aria-label=Izaberi SK-2026-000086 | aria-label=Radnje za SK-2026-000086 | aria-label=Izaberi SK-2026-000085 | aria-label=Radnje za SK-2026-000085 | aria-label=Izaberi SK-2026-000084 | aria-label=Radnje za SK-2026-000084 | aria-label=Izaberi SK-2026-000083 | aria-label=Radnje za SK-2026-000083 | aria-label=Izaberi SK-2026-000082 | aria-label=Radnje za SK-2026-000082 | aria-label=Izaberi SK-2026-000081 | aria-label=Radnje za SK-2026-000081 | aria-label=Izaberi SK-2026-000080 | aria-label=Radnje za SK-2026-000080 | aria-label=Izaberi SK-2026-000079 | aria-label=Radnje za SK-2026-000079 | aria-label=Izaberi SK-2026-000077 | aria-label=Radnje za SK-2026-000077 | aria-label=Izaberi SK-2026-000075 | aria-label=Radnje za SK-2026-000075 | aria-label=Izaberi SK-2026-000074 | aria-label=Radnje za SK-2026-000074 | aria-label=Izaberi SK-2026-000073 | aria-label=Radnje za SK-2026-000073 | aria-label=Izaberi SK-2026-000072 | aria-label=Radnje za SK-2026-000072 | aria-label=Izaberi SK-2026-000071 | aria-label=Radnje za SK-2026-000071 | aria-label=Izaberi SK-2026-000070 | aria-label=Radnje za SK-2026-000070 | aria-label=Izaberi SK-2026-000069 | aria-label=Radnje za SK-2026-000069 | aria-label=Izaberi SK-2026-000068 | aria-label=Radnje za SK-2026-000068 | aria-label=Izaberi SK-2026-000066 | aria-label=Radnje za SK-2026-000066 | aria-label=Izaberi SK-2026-000064 | aria-label=Radnje za SK-2026-000064 | aria-label=Izaberi SK-2026-000063 | aria-label=Radnje za SK-2026-000063 | aria-label=Izaberi SK-2026-000062 | aria-label=Radnje za SK-2026-000062 | aria-label=Izaberi SK-2026-000061 | aria-label=Radnje za SK-2026-000061 | aria-label=Izaberi SK-2026-000059 | aria-label=Radnje za SK-2026-000059 | aria-label=Izaberi SK-2026-000057 | aria-label=Radnje za SK-2026-000057 | aria-label=Izaberi SK-2026-000056 | aria-label=Radnje za SK-2026-000056 | aria-label=Izaberi SK-2026-000053 | aria-label=Radnje za SK-2026-000053 | aria-label=Izaberi SK-2026-000052 | aria-label=Radnje za SK-2026-000052 | aria-label=Izaberi SK-2026-000050 | aria-label=Radnje za SK-2026-000050 | aria-label=Izaberi SK-2026-000048 | aria-label=Radnje za SK-2026-000048 | aria-label=Izaberi SK-2026-000046 | aria-label=Radnje za SK-2026-000046 | aria-label=Izaberi SK-2026-000044 | aria-label=Radnje za SK-2026-000044 | aria-label=Izaberi SK-2026-000042 | aria-label=Radnje za SK-2026-000042 | aria-label=Izaberi SK-2026-000040 | aria-label=Radnje za SK-2026-000040 | aria-label=Izaberi SK-2026-000039 | aria-label=Radnje za SK-2026-000039 | aria-label=Izaberi SK-2026-000037 | aria-label=Radnje za SK-2026-000037 | aria-label=Izaberi SK-2026-000036 | aria-label=Radnje za SK-2026-000036 | aria-label=Izaberi SK-2026-000035 | aria-label=Radnje za SK-2026-000035 | aria-label=Izaberi SK-2026-000034 | aria-label=Radnje za SK-2026-000034 | aria-label=Izaberi SK-2026-000033 | aria-label=Radnje za SK-2026-000033 | aria-label=Obaveštenja (F8)
+
+======== /admin/upiti [200]
+TITLE: Upiti · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Upiti"]
+--- text
+Upiti po broju šasije i za delove koje kupci nisu našli. Odgovor šaljete kao ponudu.
+Svi
+Novi
+U obradi
+3
+Ponuda poslata
+12
+Istekli
+Prihvaćeni
+Zatvoreni
+Moji
+Pretraga upita
+Sve vrste
+Po broju šasije
+Traži deo
+Nije pronađeno
+Pitanje o artiklu
+Brza porudžbina
+Svi izvori
+Google Ads
+Meta oglasi
+Samo majstori
+BROJ
+STATUS
+PRIMLJEN
+KONTAKT
+TRAŽI	IZVOR	PREUZEO
+UP-2026-000059
+MAJSTOR
+PRIHVAĆENA
+30.09. 16:10
+QA Audit Majstor
++381 64 123 4567 · Telefonom
+Traži deo
+QA audit (backend) — test upit za proveru limita odloženog plaćanja. Ne obrađivati.
+Direktno
+—
+UP-2026-000058
+NOV
+30.09. 15:44
+čeka 29 min
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000057
+MAJSTOR
+NOV
+30.09. 15:43
+čeka 30 min
+Dragan Jović
++381 64 555 1234 · Telefonom
+Brza porudžbina
+Brza porudžbina — ove brojeve nismo našli u katalogu: ZZ9999999 — 3 kom.
+Direktno
+—
+UP-2026-000056
+NOV
+30.09. 15:41
+čeka 32 min
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000055
+MAJSTOR
+NOV
+30.09. 15:38
+čeka 35 min
+Dragan Jović
++381 64 555 1234 · Telefonom
+Brza porudžbina
+Brza porudžbina — ove brojeve nismo našli u katalogu: ZZ9999999 — 3 kom.
+Direktno
+—
+UP-2026-000054
+NOV
+30.09. 15:38
+čeka 35 min
+Upit Test audit21
++381 64 333 4455 · Telefonom
+Traži deo
+Treba mi set kvačila za Golf 7 2.0 TDI (test audit21).
+Direktno
+—
+UP-2026-000053
+PONUDA POSLATA
+30.09. 15:34
+Upit Test 5232824
++381 64 333 4455 · Telefonom
+Traži deo
+Treba mi set kvačila za Golf 7 2.0 TDI (test 5232824).
+Direktno
+—
+UP-2026-000052
+NOV
+30.09. 15:25
+čeka 48 min
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000051
+NOV
+30.09. 15:23
+čeka 50 min
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000050
+NOV
+30.09. 14:55
+čeka 1 h 18 min
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000049
+MAJSTOR
+NOV
+30.09. 14:54
+čeka 1 h 19 min
+Dragan Jović
++381 64 555 1234 · Telefonom
+Brza porudžbina
+Brza porudžbina — ove brojeve nismo našli u katalogu: ZZ9999999 — 3 kom.
+Direktno
+—
+UP-2026-000048
+NOV
+30.09. 14:51
+čeka 1 h 22 min
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000047
+MAJSTOR
+NOV
+30.09. 14:49
+čeka 1 h 24 min
+Dragan Jović
++381 64 555 1234 · Telefonom
+Brza porudžbina
+Brza porudžbina — ove brojeve nismo našli u katalogu: ZZ9999999 — 3 kom.
+Direktno
+—
+UP-2026-000046
+PONUDA POSLATA
+30.09. 14:45
+Upit Test 2311493
++381 64 333 4455 · Telefonom
+Traži deo
+Treba mi set kvačila za Golf 7 2.0 TDI (test 2311493).
+Direktno
+—
+UP-2026-000045
+NOV
+30.09. 13:29
+čeka 2 h 44 min
+— kasni
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000044
+MAJSTOR
+NOV
+30.09. 13:28
+čeka 2 h 45 min
+— kasni
+Dragan Jović
++381 64 555 1234 · Telefonom
+Brza porudžbina
+Brza porudžbina — ove brojeve nismo našli u katalogu: ZZ9999999 — 3 kom.
+Direktno
+—
+UP-2026-000043
+NOV
+30.09. 13:25
+čeka 2 h 48 min
+— kasni
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000042
+MAJSTOR
+NOV
+30.09. 13:24
+čeka 2 h 49 min
+— kasni
+Dragan Jović
++381 64 555 1234 · Telefonom
+Brza porudžbina
+Brza porudžbina — ove brojeve nismo našli u katalogu: ZZ9999999 — 3 kom.
+Direktno
+—
+UP-2026-000041
+PONUDA POSLATA
+30.09. 13:20
+Upit Test 7177997
++381 64 333 4455 · Telefonom
+Traži deo
+Treba mi set kvačila za Golf 7 2.0 TDI (test 7177997).
+Direktno
+—
+UP-2026-000040
+NOV
+30.09. 11:47
+čeka 4 h 26 min
+— kasni
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000039
+MAJSTOR
+NOV
+30.09. 11:47
+čeka 4 h 26 min
+— kasni
+Dragan Jović
++381 64 555 1234 · Telefonom
+Brza porudžbina
+Brza porudžbina — ove brojeve nismo našli u katalogu: ZZ9999999 — 3 kom.
+Direktno
+—
+UP-2026-000038
+NOV
+30.09. 11:46
+čeka 4 h 27 min
+— kasni
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000037
+MAJSTOR
+NOV
+30.09. 11:44
+čeka 4 h 29 min
+— kasni
+Dragan Jović
++381 64 555 1234 · Telefonom
+Brza porudžbina
+Brza porudžbina — ove brojeve nismo našli u katalogu: ZZ9999999 — 3 kom.
+Direktno
+—
+UP-2026-000036
+PONUDA POSLATA
+30.09. 11:44
+Upit Test 1427165
++381 64 333 4455 · Telefonom
+Traži deo
+Treba mi set kvačila za Golf 7 2.0 TDI (test 1427165).
+Direktno
+—
+UP-2026-000035
+PONUDA POSLATA
+30.09. 10:47
+Upit Test 7991843
++381 64 333 4455 · Telefonom
+Traži deo
+Treba mi set kvačila za Golf 7 2.0 TDI (test 7991843).
+Direktno
+—
+UP-2026-000034
+PONUDA POSLATA
+30.09. 10:15
+Upit Test 6110363
++381 64 333 4455 · Telefonom
+Traži deo
+Treba mi set kvačila za Golf 7 2.0 TDI (test 6110363).
+Direktno
+—
+UP-2026-000033
+PONUDA POSLATA
+30.09. 08:35
+Upit Test 0087613
++381 64 333 4455 · Telefonom
+Traži deo
+Treba mi set kvačila za Golf 7 2.0 TDI (test 0087613).
+Direktno
+—
+UP-2026-000032
+PONUDA POSLATA
+30.09. 08:34
+Upit Test 0021559
++381 64 333 4455 · Telefonom
+Traži deo
+Treba mi set kvačila za Golf 7 2.0 TDI (test 0021559).
+Direktno
+—
+UP-2026-000031
+PONUDA POSLATA
+30.09. 08:33
+Upit Test 9956724
++381 64 333 4455 · Telefonom
+Traži deo
+Treba mi set kvačila za Golf 7 2.0 TDI (test 9956724).
+Direktno
+—
+UP-2026-000030
+PONUDA POSLATA
+30.09. 08:32
+Upit Test 9878887
++381 64 333 4455 · Telefonom
+Traži deo
+Treba mi set kvačila za Golf 7 2.0 TDI (test 9878887).
+Direktno
+—
+UP-2026-000029
+U OBRADI
+30.09. 07:49
+Upit Test qa1
++381 64 333 4455 · Telefonom
+Traži deo
+Treba mi set kvačila za Golf 7 2.0 TDI (test qa1).
+Direktno
+—
+UP-2026-000028
+PONUDA POSLATA
+30.09. 07:46
+Upit Test 7134516
++381 64 333 4455 · Telefonom
+Traži deo
+Treba mi set kvačila za Golf 7 2.0 TDI (test 7134516).
+Direktno
+—
+UP-2026-000027
+MAJSTOR
+NOV
+30.09. 06:07
+čeka 8 h 14 min
+— kasni
+Dragan Jović
++381 64 555 1234 · Telefonom
+Brza porudžbina
+Brza porudžbina — ove brojeve nismo našli u katalogu: ZZ9999999 — 3 kom.
+Direktno
+—
+UP-2026-000026
+MAJSTOR
+NOV
+30.09. 06:06
+čeka 8 h 14 min
+— kasni
+Dragan Jović
++381 64 555 1234 · Telefonom
+Brza porudžbina
+Brza porudžbina — ove brojeve nismo našli u katalogu: ZZ9999999 — 3 kom.
+Direktno
+—
+UP-2026-000025
+MAJSTOR
+NOV
+30.09. 06:00
+čeka 8 h 14 min
+— kasni
+Dragan Jović
++381 64 555 1234 · Telefonom
+Brza porudžbina
+Brza porudžbina — ove brojeve nismo našli u katalogu: ZZ9999999 — 3 kom.
+Direktno
+—
+UP-2026-000024
+MAJSTOR
+NOV
+30.09. 05:59
+čeka 8 h 14 min
+— kasni
+Dragan Jović
++381 64 555 1234 · Telefonom
+Brza porudžbina
+Brza porudžbina — ove brojeve nismo našli u katalogu: ZZ9999999 — 3 kom.
+Direktno
+—
+UP-2026-000023
+NOV
+30.09. 05:58
+čeka 8 h 14 min
+— kasni
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000022
+MAJSTOR
+NOV
+30.09. 05:58
+čeka 8 h 14 min
+— kasni
+Dragan Jović
++381 64 555 1234 · Telefonom
+Brza porudžbina
+Brza porudžbina — ove brojeve nismo našli u katalogu: ZZ9999999 — 3 kom.
+Direktno
+—
+UP-2026-000021
+NOV
+30.09. 05:55
+čeka 8 h 14 min
+— kasni
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000020
+MAJSTOR
+NOV
+30.09. 05:54
+čeka 8 h 14 min
+— kasni
+Dragan Jović
++381 64 555 1234 · Telefonom
+Brza porudžbina
+Brza porudžbina — ove brojeve nismo našli u katalogu: ZZ9999999 — 3 kom.
+Direktno
+—
+UP-2026-000019
+MAJSTOR
+NOV
+30.09. 05:39
+čeka 8 h 14 min
+— kasni
+Dragan Jović
++381 64 555 1234 · Telefonom
+Brza porudžbina
+Brza porudžbina — ove brojeve nismo našli u katalogu: ZZ9999999 — 3 kom.
+Direktno
+—
+UP-2026-000018
+MAJSTOR
+NOV
+30.09. 05:39
+čeka 8 h 14 min
+— kasni
+Dragan Jović
++381 64 555 1234 · Telefonom
+Brza porudžbina
+Brza porudžbina — ove brojeve nismo našli u katalogu: ZZ9999999 — 3 kom.
+Direktno
+—
+UP-2026-000017
+NOV
+30.09. 04:55
+čeka 8 h 14 min
+— kasni
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000016
+NOV
+30.09. 04:54
+čeka 8 h 14 min
+— kasni
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000015
+NOV
+30.09. 04:43
+čeka 8 h 14 min
+— kasni
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000014
+NOV
+30.09. 04:42
+čeka 8 h 14 min
+— kasni
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000013
+NOV
+30.09. 04:39
+čeka 8 h 14 min
+— kasni
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000012
+NOV
+30.09. 04:36
+čeka 8 h 14 min
+— kasni
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000011
+NOV
+30.09. 04:31
+čeka 8 h 14 min
+— kasni
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+UP-2026-000010
+NOV
+30.09. 04:28
+čeka 8 h 14 min
+— kasni
+Marko Jovanović
++381 65 987 6543 · Telefonom
+Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456
+1
+fotografija
+Turbina za Golf, dizel. Stara duva ulje na izduvnoj strani.
+Direktno
+—
+Prikazano: 50 upita
+Učitaj još 50
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Status upita | placeholder=Broj, ime, telefon, VIN, OEM… | aria-label=Vrsta upita | aria-label=Izvor upita | title=Fotografija: 1 | aria-label=Obaveštenja (F8)
+
+======== /admin/proizvodi [200]
+TITLE: Proizvodi · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Proizvodi"]
+--- text
+Katalog delova: cene, stanje, brojevi, kompatibilnost i slike.
+Novi artikal
+Svi
+Aktivni
+Neaktivni
+Pretraga artikala
+Filteri
+ARTIKAL
+STANJE
+CENA
+OEM	KATEGORIJA
+PROIZVOĐAČ
+RADNJE
+Kočioni disk E2E 5232824
+E2E-5232824
+NEAKTIVAN
+NEMA NA STANJU
+13.490 RSD	—
+Kočioni diskovi
+ATE
+OEM kvalitet
+Kočioni disk E2E 2311493
+E2E-2311493
+NEAKTIVAN
+NEMA NA STANJU
+13.490 RSD	—
+Kočioni diskovi
+ATE
+OEM kvalitet
+Kočioni disk E2E 7177997
+E2E-7177997
+NEAKTIVAN
+NEMA NA STANJU
+13.490 RSD	—
+Kočioni diskovi
+ATE
+OEM kvalitet
+Kočioni disk E2E 1427165
+E2E-1427165
+NEAKTIVAN
+NEMA NA STANJU
+13.490 RSD	—
+Kočioni diskovi
+ATE
+OEM kvalitet
+Kočioni disk E2E 7991843
+E2E-7991843
+NEAKTIVAN
+NEMA NA STANJU
+13.490 RSD	—
+Kočioni diskovi
+ATE
+OEM kvalitet
+Kočioni disk E2E 6110363
+E2E-6110363
+NEAKTIVAN
+NEMA NA STANJU
+13.490 RSD	—
+Kočioni diskovi
+ATE
+OEM kvalitet
+Kočioni disk E2E 0087613
+E2E-0087613
+NEAKTIVAN
+NEMA NA STANJU
+13.490 RSD	—
+Kočioni diskovi
+ATE
+OEM kvalitet
+Kočioni disk E2E 0021559
+E2E-0021559
+NEAKTIVAN
+NEMA NA STANJU
+13.490 RSD	—
+Kočioni diskovi
+ATE
+OEM kvalitet
+Kočioni disk E2E 9956724
+E2E-9956724
+NEAKTIVAN
+NEMA NA STANJU
+13.490 RSD	—
+Kočioni diskovi
+ATE
+OEM kvalitet
+Kočioni disk E2E 9878887
+E2E-9878887
+NEAKTIVAN
+NEMA NA STANJU
+13.490 RSD	—
+Kočioni diskovi
+ATE
+OEM kvalitet
+Kočioni disk E2E 7134516
+E2E-7134516
+NEAKTIVAN
+NEMA NA STANJU
+13.490 RSD	—
+Kočioni diskovi
+ATE
+OEM kvalitet
+Set zupčastog kaiša sa vodenom pumpom 1.9 TDI
+DEMO-E007
+DEMO
+PO PORUDŽBINI
+16.200 RSD	038 121 662
+Set zupčastog kaiša i vodena pumpa
+Gates
+OEM kvalitet
+Turbina 1.9 TDI 77 kW, nova
+DEMO-E006
+DEMO
+84.500 RSD	03G 145 883
+Turbina (turbopunjač)
+BorgWarner
+OEM kvalitet
+Kraj spone
+DEMO-E005
+DEMO
+PO PORUDŽBINI
+1.900 RSD	1K0 411 042 HC
+Spone i stabilizatori
+Meyle
+Aftermarket
+Amortizer prednji, gasni
+DEMO-E004
+DEMO
+8.100 RSD	1K0 413 165 G
+Amortizeri i opruge
+KYB
+OEM kvalitet
+Kočione pločice zadnje
+DEMO-E003
+DEMO
+2.600 RSD	1K0 698 569
+Kočione pločice
+Febi Bilstein
+Aftermarket
+Kočione pločice prednje, sa senzorom
+DEMO-E002
+DEMO
+PO PORUDŽBINI
+3.900 RSD	1K0 698 406 F
+Kočione pločice
+Bosch
+OEM kvalitet
+Kočioni disk prednji 312 × 25 mm, ventilirani
+DEMO-E001
+DEMO
+MALO NA STANJU
+6.700 RSD	1K0 615 591 E
+Kočioni diskovi
+ATE
+OEM kvalitet
+Ulje za DSG menjač, 1 L
+DEMO-0150
+DEMO
+NEMA NA STANJU
+1.690 RSD	—
+Ulja i tečnosti
+Febi Bilstein
+Aftermarket
+Kočiona tečnost Super DOT 4, 1 L
+DEMO-0149
+DEMO
+NEMA NA STANJU
+1.290 RSD	—
+Ulja i tečnosti
+ATE
+OEM kvalitet
+Rashladna tečnost G13, koncentrat 1,5 L
+DEMO-0148
+DEMO
+MALO NA STANJU
+1.890 RSD	—
+Ulja i tečnosti
+Original VAG
+Original VAG
+Motorno ulje Magnatec 5W-40, 4 L
+DEMO-0147
+DEMO
+MALO NA STANJU
+4.990 RSD	—
+Ulja i tečnosti
+Castrol
+Aftermarket
+Motorno ulje Edge 5W-30 LL, 5 L
+DEMO-0146
+DEMO
+7.490 RSD	—
+Ulja i tečnosti
+Castrol
+Aftermarket
+Filter kabine sa aktivnim ugljem
+DEMO-0145
+DEMO
+1.890 RSD	5WA 819 778
+Filter kabine
+Febi Bilstein
+Aftermarket
+Filter kabine
+DEMO-0144
+DEMO
+MALO NA STANJU
+1.290 RSD	6R0 819 138 LK
+Filter kabine
+Mahle
+OEM kvalitet
+Filter kabine
+DEMO-0143
+DEMO
+1.490 RSD	5Q0 819 854
+Filter kabine
+Bosch
+OEM kvalitet
+Filter kabine sa aktivnim ugljem
+DEMO-0142
+DEMO
+PO PORUDŽBINI
+2.190 RSD	1K0 819 072 BD
+Filter kabine
+Mann-Filter
+OEM kvalitet
+Filter goriva
+DEMO-0141
+DEMO
+1.990 RSD	1J0 127 051
+Filter goriva
+Mahle
+OEM kvalitet
+Filter goriva
+DEMO-0140
+DEMO
+2.990 RSD	5Q0 127 966
+Filter goriva
+Bosch
+OEM kvalitet
+Filter goriva
+DEMO-0139
+DEMO
+2.490 RSD	3C0 127 559 P
+Filter goriva
+Mann-Filter
+OEM kvalitet
+Filter vazduha
+DEMO-0138
+DEMO
+1.590 RSD	3C0 129 362 SM
+Filter vazduha
+Febi Bilstein
+Aftermarket
+Filter vazduha
+DEMO-0137
+DEMO
+PO PORUDŽBINI
+1.390 RSD	6R0 129 754 DG
+Filter vazduha
+Bosch
+OEM kvalitet
+Filter vazduha
+DEMO-0136
+DEMO
+PO PORUDŽBINI
+1.890 RSD	5Q0 129 828
+Filter vazduha
+Mahle
+OEM kvalitet
+Filter vazduha
+DEMO-0135
+DEMO
+1.690 RSD	1K0 129 599
+Filter vazduha
+Mann-Filter
+OEM kvalitet
+Filter ulja
+DEMO-0134
+DEMO
+NEMA NA STANJU
+1.490 RSD	03L 115 549 DA
+Filter ulja
+Mann-Filter
+OEM kvalitet
+Filter ulja
+DEMO-0133
+DEMO
+MALO NA STANJU
+890 RSD	030 115 446
+Filter ulja
+Mann-Filter
+OEM kvalitet
+Filter ulja
+DEMO-0132
+DEMO
+1.090 RSD	04E 115 052 TE
+Filter ulja
+Bosch
+OEM kvalitet
+Filter ulja
+DEMO-0131
+DEMO
+MALO NA STANJU
+1.390 RSD	03N 115 852 MR
+Filter ulja
+Mahle
+OEM kvalitet
+Filter ulja
+DEMO-0130
+DEMO
+1.190 RSD	045 115 278
+Filter ulja
+Mann-Filter
+OEM kvalitet
+Vijci točka M14 × 1,5, set 20 kom
+DEMO-0129
+DEMO
+2.490 RSD	—
+Felne i gume
+Febi Bilstein
+Aftermarket
+Aluminijumska felna 6,5J × 16 ET46, 5 × 112
+DEMO-0128
+DEMO
+24.900 RSD	1K0 601 701
+Felne i gume
+Original VAG
+Original VAG
+Guma letnja 205/55 R16 91V
+DEMO-0127
+DEMO
+11.900 RSD	—
+Felne i gume
+Continental
+OEM kvalitet
+Motor prednjih brisača
+DEMO-0126
+DEMO
+PO PORUDŽBINI
+15.900 RSD	1K0 955 857
+Brisači
+Valeo
+OEM kvalitet
+Metlica zadnjeg brisača 280 mm
+DEMO-0125
+DEMO
+NEMA NA STANJU
+1.190 RSD	1K0 955 897 M
+Brisači
+Bosch
+OEM kvalitet
+Metlice brisača Aerotwin 600/475, set
+DEMO-0124
+DEMO
+3.490 RSD	5G0 955 985 BN
+Brisači
+Bosch
+OEM kvalitet
+Vetrobransko staklo sa nosačem senzora
+DEMO-0123
+DEMO
+42.900 RSD	5G0 845 759 N
+Stakla
+Original VAG
+Original VAG
+Poklopac retrovizora desni
+DEMO-0122
+DEMO
+PO PORUDŽBINI
+2.990 RSD	5E0 857 198 A
+Retrovizori
+Hella
+OEM kvalitet
+Staklo retrovizora levo, grejano
+DEMO-0121
+DEMO
+4.990 RSD	5G0 857 875 B
+Retrovizori
+Original VAG
+Original VAG
+Brava prednjih desnih vrata
+DEMO-0120
+DEMO
+PO PORUDŽBINI
+12.900 RSD	5Q0 837 241 CL
+Vrata
+Original VAG
+Original VAG
+Podizač stakla prednji levi, sa motorom
+DEMO-0119
+DEMO
+8.990 RSD	1K0 837 449 K
+Vrata
+Febi Bilstein
+Aftermarket
+Prikazano: 50 artikala
+Učitaj još 50
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Status artikla | placeholder=OEM, šifra, naziv… | aria-label=Kolone | aria-label=Gusti redovi | aria-label=Izaberi sve redove | aria-label=Izaberi E2E-5232824 Kočioni disk E2E 5232824 | aria-label=Stanje, E2E-5232824 | title=Kočioni diskovi | aria-label=Radnje za E2E-5232824 | aria-label=Izaberi E2E-2311493 Kočioni disk E2E 2311493 | aria-label=Stanje, E2E-2311493 | aria-label=Radnje za E2E-2311493 | aria-label=Izaberi E2E-7177997 Kočioni disk E2E 7177997 | aria-label=Stanje, E2E-7177997 | aria-label=Radnje za E2E-7177997 | aria-label=Izaberi E2E-1427165 Kočioni disk E2E 1427165 | aria-label=Stanje, E2E-1427165 | aria-label=Radnje za E2E-1427165 | aria-label=Izaberi E2E-7991843 Kočioni disk E2E 7991843 | aria-label=Stanje, E2E-7991843 | aria-label=Radnje za E2E-7991843 | aria-label=Izaberi E2E-6110363 Kočioni disk E2E 6110363 | aria-label=Stanje, E2E-6110363 | aria-label=Radnje za E2E-6110363 | aria-label=Izaberi E2E-0087613 Kočioni disk E2E 0087613 | aria-label=Stanje, E2E-0087613 | aria-label=Radnje za E2E-0087613 | aria-label=Izaberi E2E-0021559 Kočioni disk E2E 0021559 | aria-label=Stanje, E2E-0021559 | aria-label=Radnje za E2E-0021559 | aria-label=Izaberi E2E-9956724 Kočioni disk E2E 9956724 | aria-label=Stanje, E2E-9956724 | aria-label=Radnje za E2E-9956724 | aria-label=Izaberi E2E-9878887 Kočioni disk E2E 9878887 | aria-label=Stanje, E2E-9878887 | aria-label=Radnje za E2E-9878887 | aria-label=Izaberi E2E-7134516 Kočioni disk E2E 7134516 | aria-label=Stanje, E2E-7134516 | aria-label=Radnje za E2E-7134516 | aria-label=Izaberi DEMO-E007 Set zupčastog kaiša sa vodenom pumpom 1.9 TDI | aria-label=Stanje, DEMO-E007 | title=Set zupčastog kaiša i vodena pumpa | aria-label=Radnje za DEMO-E007 | aria-label=Izaberi DEMO-E006 Turbina 1.9 TDI 77 kW, nova | aria-label=Stanje, DEMO-E006 | title=Turbina (turbopunjač) | aria-label=Radnje za DEMO-E006 | aria-label=Izaberi DEMO-E005 Kraj spone | aria-label=Stanje, DEMO-E005 | title=Spone i stabilizatori | aria-label=Radnje za DEMO-E005 | aria-label=Izaberi DEMO-E004 Amortizer prednji, gasni | aria-label=Stanje, DEMO-E004 | title=Amortizeri i opruge | aria-label=Radnje za DEMO-E004 | aria-label=Izaberi DEMO-E003 Kočione pločice zadnje | aria-label=Stanje, DEMO-E003 | title=Kočione pločice | aria-label=Radnje za DEMO-E003 | aria-label=Izaberi DEMO-E002 Kočione pločice prednje, sa senzorom | aria-label=Stanje, DEMO-E002 | aria-label=Radnje za DEMO-E002 | aria-label=Izaberi DEMO-E001 Kočioni disk prednji 312 × 25 mm, ventilirani | aria-label=Stanje, DEMO-E001 | aria-label=Radnje za DEMO-E001 | aria-label=Izaberi DEMO-0150 Ulje za DSG menjač, 1 L | aria-label=Stanje, DEMO-0150 | title=Ulja i tečnosti | aria-label=Radnje za DEMO-0150 | aria-label=Izaberi DEMO-0149 Kočiona tečnost Super DOT 4, 1 L | aria-label=Stanje, DEMO-0149 | aria-label=Radnje za DEMO-0149 | aria-label=Izaberi DEMO-0148 Rashladna tečnost G13, koncentrat 1,5 L | aria-label=Stanje, DEMO-0148 | aria-label=Radnje za DEMO-0148 | aria-label=Izaberi DEMO-0147 Motorno ulje Magnatec 5W-40, 4 L | aria-label=Stanje, DEMO-0147 | aria-label=Radnje za DEMO-0147 | aria-label=Izaberi DEMO-0146 Motorno ulje Edge 5W-30 LL, 5 L | aria-label=Stanje, DEMO-0146 | aria-label=Radnje za DEMO-0146 | aria-label=Izaberi DEMO-0145 Filter kabine sa aktivnim ugljem | aria-label=Stanje, DEMO-0145 | title=Filter kabine | aria-label=Radnje za DEMO-0145 | aria-label=Izaberi DEMO-0144 Filter kabine | aria-label=Stanje, DEMO-0144 | aria-label=Radnje za DEMO-0144 | aria-label=Izaberi DEMO-0143 Filter kabine | aria-label=Stanje, DEMO-0143 | aria-label=Radnje za DEMO-0143 | aria-label=Izaberi DEMO-0142 Filter kabine sa aktivnim ugljem | aria-label=Stanje, DEMO-0142 | aria-label=Radnje za DEMO-0142 | aria-label=Izaberi DEMO-0141 Filter goriva | aria-label=Stanje, DEMO-0141 | title=Filter goriva | aria-label=Radnje za DEMO-0141 | aria-label=Izaberi DEMO-0140 Filter goriva | aria-label=Stanje, DEMO-0140 | aria-label=Radnje za DEMO-0140 | aria-label=Izaberi DEMO-0139 Filter goriva | aria-label=Stanje, DEMO-0139 | aria-label=Radnje za DEMO-0139 | aria-label=Izaberi DEMO-0138 Filter vazduha | aria-label=Stanje, DEMO-0138 | title=Filter vazduha | aria-label=Radnje za DEMO-0138 | aria-label=Izaberi DEMO-0137 Filter vazduha | aria-label=Stanje, DEMO-0137 | aria-label=Radnje za DEMO-0137 | aria-label=Izaberi DEMO-0136 Filter vazduha | aria-label=Stanje, DEMO-0136 | aria-label=Radnje za DEMO-0136 | aria-label=Izaberi DEMO-0135 Filter vazduha | aria-label=Stanje, DEMO-0135 | aria-label=Radnje za DEMO-0135 | aria-label=Izaberi DEMO-0134 Filter ulja | aria-label=Stanje, DEMO-0134 | title=Filter ulja | aria-label=Radnje za DEMO-0134 | aria-label=Izaberi DEMO-0133 Filter ulja | aria-label=Stanje, DEMO-0133 | aria-label=Radnje za DEMO-0133 | aria-label=Izaberi DEMO-0132 Filter ulja | aria-label=Stanje, DEMO-0132 | aria-label=Radnje za DEMO-0132 | aria-label=Izaberi DEMO-0131 Filter ulja | aria-label=Stanje, DEMO-0131 | aria-label=Radnje za DEMO-0131 | aria-label=Izaberi DEMO-0130 Filter ulja | aria-label=Stanje, DEMO-0130 | aria-label=Radnje za DEMO-0130 | aria-label=Izaberi DEMO-0129 Vijci točka M14 × 1,5, set 20 kom | aria-label=Stanje, DEMO-0129 | title=Felne i gume | aria-label=Radnje za DEMO-0129 | aria-label=Izaberi DEMO-0128 Aluminijumska felna 6,5J × 16 ET46, 5 × 112 | aria-label=Stanje, DEMO-0128 | aria-label=Radnje za DEMO-0128 | aria-label=Izaberi DEMO-0127 Guma letnja 205/55 R16 91V | aria-label=Stanje, DEMO-0127 | aria-label=Radnje za DEMO-0127 | aria-label=Izaberi DEMO-0126 Motor prednjih brisača | aria-label=Stanje, DEMO-0126 | title=Brisači | aria-label=Radnje za DEMO-0126 | aria-label=Izaberi DEMO-0125 Metlica zadnjeg brisača 280 mm | aria-label=Stanje, DEMO-0125 | aria-label=Radnje za DEMO-0125 | aria-label=Izaberi DEMO-0124 Metlice brisača Aerotwin 600/475, set | aria-label=Stanje, DEMO-0124 | aria-label=Radnje za DEMO-0124 | aria-label=Izaberi DEMO-0123 Vetrobransko staklo sa nosačem senzora | aria-label=Stanje, DEMO-0123 | title=Stakla | aria-label=Radnje za DEMO-0123 | aria-label=Izaberi DEMO-0122 Poklopac retrovizora desni | aria-label=Stanje, DEMO-0122 | title=Retrovizori | aria-label=Radnje za DEMO-0122 | aria-label=Izaberi DEMO-0121 Staklo retrovizora levo, grejano | aria-label=Stanje, DEMO-0121 | aria-label=Radnje za DEMO-0121 | aria-label=Izaberi DEMO-0120 Brava prednjih desnih vrata | aria-label=Stanje, DEMO-0120 | title=Vrata | aria-label=Radnje za DEMO-0120 | aria-label=Izaberi DEMO-0119 Podizač stakla prednji levi, sa motorom | aria-label=Stanje, DEMO-0119 | aria-label=Radnje za DEMO-0119 | aria-label=Obaveštenja (F8)
+
+======== /admin/proizvodi/novi [200]
+TITLE: Novi artikal · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Novi artikal"]
+--- text
+Novi artikal
+Novi artikal
+Obavezno: šifra, naziv, kategorija, proizvođač i cena. Slike se dodaju posle prvog čuvanja.
+Osnovno
+Naziv (obavezno)
+Šifra artikla (obavezno)
+Interna šifra; mora biti jedinstvena.
+Adresa na sajtu (slug)
+Prazno: pravi se iz naziva.
+Kategorija (obavezno)
+Izaberite
+Motor i usis › Blok motora i glava
+Motor i usis › Turbina (turbopunjač)
+Motor i usis › Interkuler
+Motor i usis › Usisna grana i kućište filtera
+Motor i usis › Brizgaljke i pumpa goriva
+Motor i usis › Set zupčastog kaiša i vodena pumpa
+Motor i usis › Kaiš alternatora i zatezači
+Motor i usis › Alternator
+Motor i usis › Anlaser
+Motor i usis › Svećice, bobine i grejači
+Motor i usis › Karter, pumpa ulja i dihtunzi
+Motor i usis › EGR ventil
+Motor i usis › Nosači motora i menjača
+Izduvni sistem › DPF i katalizator
+Izduvni sistem › Auspuh (lonci i cevi)
+Hlađenje i klima › Hladnjak i ventilator
+Hlađenje i klima › Termostat i creva hlađenja
+Hlađenje i klima › Kompresor i kondenzator klime
+Transmisija › Kvačilo i zamajac
+Transmisija › Menjač (DSG)
+Transmisija › Poluosovine i homokinetički zglobovi
+Vešanje i upravljanje › Amortizeri i opruge
+Vešanje i upravljanje › Ramena i selen blokovi
+Vešanje i upravljanje › Spone i stabilizatori
+Vešanje i upravljanje › Letva volana
+Vešanje i upravljanje › Ležaj točka i glavčina
+Kočnice › Kočioni diskovi
+Kočnice › Kočione pločice
+Kočnice › Kočione čeljusti
+Kočnice › ABS senzori
+Elektrika i svetla › Akumulator
+Elektrika i svetla › Farovi
+Elektrika i svetla › Stop svetla
+Elektrika i svetla › Senzori (lambda, parking, temperatura)
+Karoserija › Hauba
+Karoserija › Branici
+Karoserija › Blatobrani
+Karoserija › Vrata
+Karoserija › Retrovizori
+Karoserija › Stakla
+Karoserija › Brisači
+Točkovi › Felne i gume
+Servis i održavanje › Filteri
+Servis i održavanje › Filteri › Filter ulja
+Servis i održavanje › Filteri › Filter vazduha
+Servis i održavanje › Filteri › Filter goriva
+Servis i održavanje › Filteri › Filter kabine
+Servis i održavanje › Ulja i tečnosti
+Proizvođač (obavezno)
+Izaberite
+ATE
+Bilstein
+BorgWarner
+Bosch
+Brembo
+Castrol
+ContiTech
+Continental
+Denso
+Febi Bilstein
+Garrett
+Gates
+Hella
+INA
+KYB
+Lemförder
+LuK
+Mahle
+Mann-Filter
+Meyle
+NGK
+Nissens
+Original VAG
+Pierburg
+SKF
+Sachs
+TRW
+Valeo
+Varta
+Walker
+Kvalitet
+Kao proizvođač
+Original VAG
+OEM kvalitet
+Aftermarket
+Kataloški broj (MPN)
+EAN
+Brojevi
+OEM brojevi
+Prvi broj je glavni (prikazuje se na kartici). Kolona desno pokazuje kako ga pretraga čita.
+—
+Dodaj OEM broj
+Zamenski brojevi
+Brojevi istog dela kod drugih proizvođača (Bosch, Febi, TRW…).
+Dodaj zamenski broj
+Kompatibilnost
+Univerzalno (sva vozila)
+Artikal još nema vozila. Bez kompatibilnosti ga kupci ne vide kad izaberu vozilo.
+Dodaj vozilo
+Marka
+Izaberite
+Volkswagen
+Audi
+Škoda
+SEAT
+Cupra
+Model
+Izaberite
+Generacija
+Izaberite
+Motor
+Svi motori
+Od godine
+Do godine
+Napomena
+Dodaj
+Dodaj sve generacije modela
+Opis i tehnički podaci
+Opis
+0 / 5.000
+Kratko: šta je deo, na šta treba paziti pri ugradnji.
+Tehnički podaci
+Dodaj podatak
+Masa
+g
+Garancija
+mes.
+Napomena za kupce
+Slike
+Sačuvajte artikal, pa dodajte slike. Dok nema fotografija, sajt prikazuje render kategorije.
+SEO
+Naslov za pretraživače
+0 / 60
+Prazno: „Naziv artikla“. Do 60 znakova se vidi ceo.
+Opis za pretraživače
+0 / 170
+Do 155 znakova: šta je deo, za koja vozila, cena i stanje. 0 / 155
+PREGLED U PRETRAZI
+localhost:3000 › deo › novi-artikal
+Naziv artikla | SKLOP
+Deo. Cena sa PDV-om, stanje i dostava.
+Cena
+Maloprodajna cena sa PDV-om (obavezno)
+RSD
+Nabavna cena bez PDV-a
+RSD
+Vidi je samo osoblje; čuva minimalnu maržu kod rabata majstora.
+Marža
+upišite nabavnu cenu
+Stanje
+Početno stanje
+kom.
+Prag „malo“
+Prazno: 3
+Rok nabavke
+dana
+Prima porudžbine bez stanja
+Kad nema na stanju, kupac i dalje poručuje (po porudžbini, uz rok nabavke).
+Interno
+Dobavljač
+Šifra kod dobavljača
+Interna beleška
+0 / 1.000
+Aktivan (vidi se na sajtu)
+Novi artikal još nije sačuvan.
+Odbaci izmene
+Sačuvaj artikal
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=OEM broj 1 | aria-label=Marka za OEM broj 1 | placeholder=VW, Audi… | aria-label=Ukloni OEM broj 1 | placeholder=npr. samo za vozila sa start-stop sistemom | placeholder=npr. prodaje se u paru | aria-label=Pregled u rezultatima pretrage | aria-label=Cena, stanje i status | aria-label=Obaveštenja (F8)
+
+======== /admin/kategorije [200]
+TITLE: Kategorije · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Kategorije"]
+--- text
+Stablo kataloga, tekstovi za pretraživače, sličice i veza sa delovima 3D automobila.
+Stablo
+MOTOR I USIS
+Blok motora i glava
+3
+Turbina (turbopunjač)
+4
+Interkuler
+2
+Usisna grana i kućište filtera
+2
+Brizgaljke i pumpa goriva
+3
+Set zupčastog kaiša i vodena pumpa
+6
+Kaiš alternatora i zatezači
+3
+Alternator
+2
+Anlaser
+2
+Svećice, bobine i grejači
+4
+Karter, pumpa ulja i dihtunzi
+3
+EGR ventil
+2
+Nosači motora i menjača
+3
+IZDUVNI SISTEM
+DPF i katalizator
+2
+Auspuh (lonci i cevi)
+3
+HLAĐENJE I KLIMA
+Hladnjak i ventilator
+3
+Termostat i creva hlađenja
+3
+Kompresor i kondenzator klime
+2
+TRANSMISIJA
+Kvačilo i zamajac
+3
+Menjač (DSG)
+2
+Poluosovine i homokinetički zglobovi
+3
+VEŠANJE I UPRAVLJANJE
+Amortizeri i opruge
+7
+Ramena i selen blokovi
+5
+Spone i stabilizatori
+5
+Letva volana
+2
+Ležaj točka i glavčina
+4
+KOČNICE
+Kočioni diskovi
+9
+Kočione pločice
+10
+Kočione čeljusti
+3
+ABS senzori
+3
+ELEKTRIKA I SVETLA
+Akumulator
+3
+Farovi
+2
+Stop svetla
+2
+Senzori (lambda, parking, temperatura)
+5
+KAROSERIJA
+Hauba
+1
+Branici
+2
+Blatobrani
+2
+Vrata
+2
+Retrovizori
+2
+Stakla
+1
+Brisači
+3
+TOČKOVI
+Felne i gume
+3
+SERVIS I ODRŽAVANJE
+Filteri
+0
+Filter ulja
+5
+Filter vazduha
+4
+Filter goriva
+3
+Filter kabine
+4
+Ulja i tečnosti
+5
+Blok motora i glava
+/motor
+3 ART. · 3 NA STANJU
+Naziv
+Vidljiva na sajtu
+Uvodni tekst
+633 / 3.000
+80–180 reči: šta deo radi, kada se menja, savet iz radionice.
+Naslov za pretraživače
+52 / 60
+Do 60 znakova se vidi ceo.
+Opis za pretraživače
+138 / 170
+Do 155 znakova se vidi ceo. 138 / 155
+Sličica
+Render iz 3D modela.
+Otpremi sličicu
+Otpremi sliku
+3D automobil
+Deo u 3D modelu
+Bez veze sa 3D modelom
+Blok motora i glava (motor)
+Turbina (turbopunjač) (turbina)
+Interkuler (interkuler)
+Usisna grana i kućište filtera (usisna-grana)
+Brizgaljke i pumpa goriva (brizgaljke-pumpa-goriva)
+Set zupčastog kaiša i vodena pumpa (zupcasti-kais-vodena-pumpa)
+Kaiš alternatora i zatezači (kais-alternatora)
+Alternator (alternator)
+Anlaser (anlaser)
+Svećice, bobine i grejači (paljenje-grejaci)
+Karter, pumpa ulja i dihtunzi (karter-dihtunzi)
+EGR ventil (egr-ventil)
+Nosači motora i menjača (nosaci-motora)
+DPF i katalizator (dpf-katalizator)
+Auspuh (lonci i cevi) (auspuh)
+Hladnjak i ventilator (hladnjak-ventilator)
+Termostat i creva hlađenja (termostat-creva)
+Kompresor i kondenzator klime (klima)
+Kvačilo i zamajac (kvacilo-zamajac)
+Menjač (DSG) (menjac)
+Poluosovine i homokinetički zglobovi (poluosovine)
+Amortizeri i opruge (amortizeri-opruge)
+Ramena i selen blokovi (ramena-selen-blokovi)
+Spone i stabilizatori (spone-stabilizatori)
+Letva volana (letva-volana)
+Ležaj točka i glavčina (lezaj-glavcina)
+Kočioni diskovi (kocioni-diskovi)
+Kočione pločice (kocione-plocice)
+Kočione čeljusti (kocione-celjusti)
+ABS senzori (abs-senzori)
+Akumulator (akumulator)
+Farovi (farovi)
+Stop svetla (stop-svetla)
+Senzori (lambda, parking, temperatura) (senzori)
+Hauba (hauba)
+Branici (branici)
+Blatobrani (blatobrani)
+Vrata (vrata)
+Retrovizori (retrovizori)
+Stakla (stakla)
+Brisači (brisaci)
+Felne i gume (felne-gume)
+Klik na ovaj deo automobila otvara ovu kategoriju. Jedan deo ide jednoj kategoriji.
+Čvorovi u modelu (2):
+part__motor__block
+part__motor__head
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Kategorije | aria-label=Pomeri „Motor i usis“ gore | aria-label=Pomeri „Motor i usis“ dole | aria-label=Nova kategorija u „Motor i usis“ | aria-label=Pomeri „Blok motora i glava“ gore | aria-label=Pomeri „Blok motora i glava“ dole | aria-label=Nova kategorija u „Blok motora i glava“ | aria-label=Pomeri „Turbina (turbopunjač)“ gore | aria-label=Pomeri „Turbina (turbopunjač)“ dole | aria-label=Nova kategorija u „Turbina (turbopunjač)“ | aria-label=Pomeri „Interkuler“ gore | aria-label=Pomeri „Interkuler“ dole | aria-label=Nova kategorija u „Interkuler“ | aria-label=Pomeri „Usisna grana i kućište filtera“ gore | aria-label=Pomeri „Usisna grana i kućište filtera“ dole | aria-label=Nova kategorija u „Usisna grana i kućište filtera“ | aria-label=Pomeri „Brizgaljke i pumpa goriva“ gore | aria-label=Pomeri „Brizgaljke i pumpa goriva“ dole | aria-label=Nova kategorija u „Brizgaljke i pumpa goriva“ | aria-label=Pomeri „Set zupčastog kaiša i vodena pumpa“ gore | aria-label=Pomeri „Set zupčastog kaiša i vodena pumpa“ dole | aria-label=Nova kategorija u „Set zupčastog kaiša i vodena pumpa“ | aria-label=Pomeri „Kaiš alternatora i zatezači“ gore | aria-label=Pomeri „Kaiš alternatora i zatezači“ dole | aria-label=Nova kategorija u „Kaiš alternatora i zatezači“ | aria-label=Pomeri „Alternator“ gore | aria-label=Pomeri „Alternator“ dole | aria-label=Nova kategorija u „Alternator“ | aria-label=Pomeri „Anlaser“ gore | aria-label=Pomeri „Anlaser“ dole | aria-label=Nova kategorija u „Anlaser“ | aria-label=Pomeri „Svećice, bobine i grejači“ gore | aria-label=Pomeri „Svećice, bobine i grejači“ dole | aria-label=Nova kategorija u „Svećice, bobine i grejači“ | aria-label=Pomeri „Karter, pumpa ulja i dihtunzi“ gore | aria-label=Pomeri „Karter, pumpa ulja i dihtunzi“ dole | aria-label=Nova kategorija u „Karter, pumpa ulja i dihtunzi“ | aria-label=Pomeri „EGR ventil“ gore | aria-label=Pomeri „EGR ventil“ dole | aria-label=Nova kategorija u „EGR ventil“ | aria-label=Pomeri „Nosači motora i menjača“ gore | aria-label=Pomeri „Nosači motora i menjača“ dole | aria-label=Nova kategorija u „Nosači motora i menjača“ | aria-label=Pomeri „Izduvni sistem“ gore | aria-label=Pomeri „Izduvni sistem“ dole | aria-label=Nova kategorija u „Izduvni sistem“ | aria-label=Pomeri „DPF i katalizator“ gore | aria-label=Pomeri „DPF i katalizator“ dole | aria-label=Nova kategorija u „DPF i katalizator“ | aria-label=Pomeri „Auspuh (lonci i cevi)“ gore | aria-label=Pomeri „Auspuh (lonci i cevi)“ dole | aria-label=Nova kategorija u „Auspuh (lonci i cevi)“ | aria-label=Pomeri „Hlađenje i klima“ gore | aria-label=Pomeri „Hlađenje i klima“ dole | aria-label=Nova kategorija u „Hlađenje i klima“ | aria-label=Pomeri „Hladnjak i ventilator“ gore | aria-label=Pomeri „Hladnjak i ventilator“ dole | aria-label=Nova kategorija u „Hladnjak i ventilator“ | aria-label=Pomeri „Termostat i creva hlađenja“ gore | aria-label=Pomeri „Termostat i creva hlađenja“ dole | aria-label=Nova kategorija u „Termostat i creva hlađenja“ | aria-label=Pomeri „Kompresor i kondenzator klime“ gore | aria-label=Pomeri „Kompresor i kondenzator klime“ dole | aria-label=Nova kategorija u „Kompresor i kondenzator klime“ | aria-label=Pomeri „Transmisija“ gore | aria-label=Pomeri „Transmisija“ dole | aria-label=Nova kategorija u „Transmisija“ | aria-label=Pomeri „Kvačilo i zamajac“ gore | aria-label=Pomeri „Kvačilo i zamajac“ dole | aria-label=Nova kategorija u „Kvačilo i zamajac“ | aria-label=Pomeri „Menjač (DSG)“ gore | aria-label=Pomeri „Menjač (DSG)“ dole | aria-label=Nova kategorija u „Menjač (DSG)“ | aria-label=Pomeri „Poluosovine i homokinetički zglobovi“ gore | aria-label=Pomeri „Poluosovine i homokinetički zglobovi“ dole | aria-label=Nova kategorija u „Poluosovine i homokinetički zglobovi“ | aria-label=Pomeri „Vešanje i upravljanje“ gore | aria-label=Pomeri „Vešanje i upravljanje“ dole | aria-label=Nova kategorija u „Vešanje i upravljanje“ | aria-label=Pomeri „Amortizeri i opruge“ gore | aria-label=Pomeri „Amortizeri i opruge“ dole | aria-label=Nova kategorija u „Amortizeri i opruge“ | aria-label=Pomeri „Ramena i selen blokovi“ gore | aria-label=Pomeri „Ramena i selen blokovi“ dole | aria-label=Nova kategorija u „Ramena i selen blokovi“ | aria-label=Pomeri „Spone i stabilizatori“ gore | aria-label=Pomeri „Spone i stabilizatori“ dole | aria-label=Nova kategorija u „Spone i stabilizatori“ | aria-label=Pomeri „Letva volana“ gore | aria-label=Pomeri „Letva volana“ dole | aria-label=Nova kategorija u „Letva volana“ | aria-label=Pomeri „Ležaj točka i glavčina“ gore | aria-label=Pomeri „Ležaj točka i glavčina“ dole | aria-label=Nova kategorija u „Ležaj točka i glavčina“ | aria-label=Pomeri „Kočnice“ gore | aria-label=Pomeri „Kočnice“ dole | aria-label=Nova kategorija u „Kočnice“ | aria-label=Pomeri „Kočioni diskovi“ gore | aria-label=Pomeri „Kočioni diskovi“ dole | aria-label=Nova kategorija u „Kočioni diskovi“ | aria-label=Pomeri „Kočione pločice“ gore | aria-label=Pomeri „Kočione pločice“ dole | aria-label=Nova kategorija u „Kočione pločice“ | aria-label=Pomeri „Kočione čeljusti“ gore | aria-label=Pomeri „Kočione čeljusti“ dole | aria-label=Nova kategorija u „Kočione čeljusti“ | aria-label=Pomeri „ABS senzori“ gore | aria-label=Pomeri „ABS senzori“ dole | aria-label=Nova kategorija u „ABS senzori“ | aria-label=Pomeri „Elektrika i svetla“ gore | aria-label=Pomeri „Elektrika i svetla“ dole | aria-label=Nova kategorija u „Elektrika i svetla“ | aria-label=Pomeri „Akumulator“ gore | aria-label=Pomeri „Akumulator“ dole | aria-label=Nova kategorija u „Akumulator“ | aria-label=Pomeri „Farovi“ gore | aria-label=Pomeri „Farovi“ dole | aria-label=Nova kategorija u „Farovi“ | aria-label=Pomeri „Stop svetla“ gore | aria-label=Pomeri „Stop svetla“ dole | aria-label=Nova kategorija u „Stop svetla“ | aria-label=Pomeri „Senzori (lambda, parking, temperatura)“ gore | aria-label=Pomeri „Senzori (lambda, parking, temperatura)“ dole | aria-label=Nova kategorija u „Senzori (lambda, parking, temperatura)“ | aria-label=Pomeri „Karoserija“ gore | aria-label=Pomeri „Karoserija“ dole | aria-label=Nova kategorija u „Karoserija“ | aria-label=Pomeri „Hauba“ gore | aria-label=Pomeri „Hauba“ dole | aria-label=Nova kategorija u „Hauba“ | aria-label=Pomeri „Branici“ gore | aria-label=Pomeri „Branici“ dole | aria-label=Nova kategorija u „Branici“ | aria-label=Pomeri „Blatobrani“ gore | aria-label=Pomeri „Blatobrani“ dole | aria-label=Nova kategorija u „Blatobrani“ | aria-label=Pomeri „Vrata“ gore | aria-label=Pomeri „Vrata“ dole | aria-label=Nova kategorija u „Vrata“ | aria-label=Pomeri „Retrovizori“ gore | aria-label=Pomeri „Retrovizori“ dole | aria-label=Nova kategorija u „Retrovizori“ | aria-label=Pomeri „Stakla“ gore | aria-label=Pomeri „Stakla“ dole | aria-label=Nova kategorija u „Stakla“ | aria-label=Pomeri „Brisači“ gore | aria-label=Pomeri „Brisači“ dole | aria-label=Nova kategorija u „Brisači“ | aria-label=Pomeri „Točkovi“ gore | aria-label=Pomeri „Točkovi“ dole | aria-label=Nova kategorija u „Točkovi“ | aria-label=Pomeri „Felne i gume“ gore | aria-label=Pomeri „Felne i gume“ dole | aria-label=Nova kategorija u „Felne i gume“ | aria-label=Pomeri „Servis i održavanje“ gore | aria-label=Pomeri „Servis i održavanje“ dole | aria-label=Nova kategorija u „Servis i održavanje“ | aria-label=Pomeri „Filteri“ gore | aria-label=Pomeri „Filteri“ dole | aria-label=Nova kategorija u „Filteri“ | aria-label=Pomeri „Filter ulja“ gore | aria-label=Pomeri „Filter ulja“ dole | aria-label=Pomeri „Filter vazduha“ gore | aria-label=Pomeri „Filter vazduha“ dole | aria-label=Pomeri „Filter goriva“ gore | aria-label=Pomeri „Filter goriva“ dole | aria-label=Pomeri „Filter kabine“ gore | aria-label=Pomeri „Filter kabine“ dole | aria-label=Pomeri „Ulja i tečnosti“ gore | aria-label=Pomeri „Ulja i tečnosti“ dole | aria-label=Nova kategorija u „Ulja i tečnosti“ | title=Blok motora | title=Glava motora | aria-label=Obaveštenja (F8)
+
+======== /admin/vozila [200]
+TITLE: Vozila · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Vozila"]
+--- text
+Marke, modeli, generacije i motori — osnova za izbor vozila i kompatibilnost delova.
+Marke, modeli, generacije
+Motori (25)
+Marke
+Volkswagen
+6
+Audi
+3
+Škoda
+6
+SEAT
+3
+Cupra
+3
+Modeli — Volkswagen
+Golf
+Passat
+Polo
+Caddy
+Touran
+Tiguan
+Generacije — Volkswagen Golf
+Model
+Nova generacija
+Golf IV
+1J
+1997–2006
+PQ34
+VIN: 1J
+1.4 16V 55 kW
+1.6 8V 75 kW
+1.8 T 110 kW
+1.9 TDI 66 kW
+1.9 TDI 74 kW
+1.9 TDI 96 kW
+Dodaj motor…
+1.0 TSI 81 kW · Benzin
+1.2 HTP 44 kW · Benzin
+1.2 TDI 55 kW · Dizel
+1.2 TSI 77 kW · Benzin
+1.4 TDI 55 kW · Dizel
+1.4 TSI 110 kW · Benzin
+1.4 TSI 90 kW · Benzin
+1.5 TSI 110 kW · Benzin
+1.6 TDI 77 kW · Dizel
+1.9 TDI 77 kW · Dizel
+2.0 TDI 103 kW (CR) · Dizel
+2.0 TDI 103 kW (PD) · Dizel
+2.0 TDI 110 kW · Dizel
+2.0 TDI 140 kW · Dizel
+2.0 TFSI 147 kW · Benzin
+2.0 TSI 162 kW · Benzin
+2.5 TDI V6 132 kW · Dizel
+2.7 TDI 132 kW · Dizel
+3.0 TDI 171 kW · Dizel
+Dodaj
+Golf V
+1K
+2003–2009
+PQ35
+VIN: 1K
+1.4 TSI 90 kW
+1.6 8V 75 kW
+2.0 TFSI 147 kW
+1.9 TDI 77 kW
+2.0 TDI 103 kW (PD)
+1.6 TDI 77 kW
+2.0 TDI 103 kW (CR)
+Dodaj motor…
+1.0 TSI 81 kW · Benzin
+1.2 HTP 44 kW · Benzin
+1.2 TDI 55 kW · Dizel
+1.2 TSI 77 kW · Benzin
+1.4 16V 55 kW · Benzin
+1.4 TDI 55 kW · Dizel
+1.4 TSI 110 kW · Benzin
+1.5 TSI 110 kW · Benzin
+1.8 T 110 kW · Benzin
+1.9 TDI 66 kW · Dizel
+1.9 TDI 74 kW · Dizel
+1.9 TDI 96 kW · Dizel
+2.0 TDI 110 kW · Dizel
+2.0 TDI 140 kW · Dizel
+2.0 TSI 162 kW · Benzin
+2.5 TDI V6 132 kW · Dizel
+2.7 TDI 132 kW · Dizel
+3.0 TDI 171 kW · Dizel
+Dodaj
+Golf VI
+5K
+2008–2013
+PQ35
+VIN: 1K, 5K
+1.4 TSI 90 kW
+1.6 8V 75 kW
+2.0 TFSI 147 kW
+1.9 TDI 77 kW
+2.0 TDI 103 kW (PD)
+1.6 TDI 77 kW
+2.0 TDI 103 kW (CR)
+Dodaj motor…
+1.0 TSI 81 kW · Benzin
+1.2 HTP 44 kW · Benzin
+1.2 TDI 55 kW · Dizel
+1.2 TSI 77 kW · Benzin
+1.4 16V 55 kW · Benzin
+1.4 TDI 55 kW · Dizel
+1.4 TSI 110 kW · Benzin
+1.5 TSI 110 kW · Benzin
+1.8 T 110 kW · Benzin
+1.9 TDI 66 kW · Dizel
+1.9 TDI 74 kW · Dizel
+1.9 TDI 96 kW · Dizel
+2.0 TDI 110 kW · Dizel
+2.0 TDI 140 kW · Dizel
+2.0 TSI 162 kW · Benzin
+2.5 TDI V6 132 kW · Dizel
+2.7 TDI 132 kW · Dizel
+3.0 TDI 171 kW · Dizel
+Dodaj
+Golf VII
+5G
+2012–2020
+MQB
+VIN: 5G, AU
+1.2 TSI 77 kW
+1.4 TSI 110 kW
+1.0 TSI 81 kW
+1.5 TSI 110 kW
+2.0 TSI 162 kW
+1.6 TDI 77 kW
+2.0 TDI 110 kW
+2.0 TDI 140 kW
+Dodaj motor…
+1.2 HTP 44 kW · Benzin
+1.2 TDI 55 kW · Dizel
+1.4 16V 55 kW · Benzin
+1.4 TDI 55 kW · Dizel
+1.4 TSI 90 kW · Benzin
+1.6 8V 75 kW · Benzin
+1.8 T 110 kW · Benzin
+1.9 TDI 66 kW · Dizel
+1.9 TDI 74 kW · Dizel
+1.9 TDI 77 kW · Dizel
+1.9 TDI 96 kW · Dizel
+2.0 TDI 103 kW (CR) · Dizel
+2.0 TDI 103 kW (PD) · Dizel
+2.0 TFSI 147 kW · Benzin
+2.5 TDI V6 132 kW · Dizel
+2.7 TDI 132 kW · Dizel
+3.0 TDI 171 kW · Dizel
+Dodaj
+Golf VIII
+CD
+2019–danas
+MQB EVO
+VIN: CD
+1.0 TSI 81 kW
+1.5 TSI 110 kW
+2.0 TSI 162 kW
+2.0 TDI 110 kW
+Dodaj motor…
+1.2 HTP 44 kW · Benzin
+1.2 TDI 55 kW · Dizel
+1.2 TSI 77 kW · Benzin
+1.4 16V 55 kW · Benzin
+1.4 TDI 55 kW · Dizel
+1.4 TSI 110 kW · Benzin
+1.4 TSI 90 kW · Benzin
+1.6 8V 75 kW · Benzin
+1.6 TDI 77 kW · Dizel
+1.8 T 110 kW · Benzin
+1.9 TDI 66 kW · Dizel
+1.9 TDI 74 kW · Dizel
+1.9 TDI 77 kW · Dizel
+1.9 TDI 96 kW · Dizel
+2.0 TDI 103 kW (CR) · Dizel
+2.0 TDI 103 kW (PD) · Dizel
+2.0 TDI 140 kW · Dizel
+2.0 TFSI 147 kW · Benzin
+2.5 TDI V6 132 kW · Dizel
+2.7 TDI 132 kW · Dizel
+3.0 TDI 171 kW · Dizel
+Dodaj
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Vozila | aria-label=Nova marka | aria-label=Izmeni marku Volkswagen | aria-label=Novi model | aria-label=Izmeni generaciju Golf IV | aria-label=Ukloni motor 1.4 16V 55 kW iz Golf IV | aria-label=Ukloni motor 1.6 8V 75 kW iz Golf IV | aria-label=Ukloni motor 1.8 T 110 kW iz Golf IV | aria-label=Ukloni motor 1.9 TDI 66 kW iz Golf IV | aria-label=Ukloni motor 1.9 TDI 74 kW iz Golf IV | aria-label=Ukloni motor 1.9 TDI 96 kW iz Golf IV | aria-label=Dodaj motor u Golf IV | aria-label=Izmeni generaciju Golf V | aria-label=Ukloni motor 1.4 TSI 90 kW iz Golf V | aria-label=Ukloni motor 1.6 8V 75 kW iz Golf V | aria-label=Ukloni motor 2.0 TFSI 147 kW iz Golf V | aria-label=Ukloni motor 1.9 TDI 77 kW iz Golf V | aria-label=Ukloni motor 2.0 TDI 103 kW (PD) iz Golf V | aria-label=Ukloni motor 1.6 TDI 77 kW iz Golf V | aria-label=Ukloni motor 2.0 TDI 103 kW (CR) iz Golf V | aria-label=Dodaj motor u Golf V | aria-label=Izmeni generaciju Golf VI | aria-label=Ukloni motor 1.4 TSI 90 kW iz Golf VI | aria-label=Ukloni motor 1.6 8V 75 kW iz Golf VI | aria-label=Ukloni motor 2.0 TFSI 147 kW iz Golf VI | aria-label=Ukloni motor 1.9 TDI 77 kW iz Golf VI | aria-label=Ukloni motor 2.0 TDI 103 kW (PD) iz Golf VI | aria-label=Ukloni motor 1.6 TDI 77 kW iz Golf VI | aria-label=Ukloni motor 2.0 TDI 103 kW (CR) iz Golf VI | aria-label=Dodaj motor u Golf VI | aria-label=Izmeni generaciju Golf VII | aria-label=Ukloni motor 1.2 TSI 77 kW iz Golf VII | aria-label=Ukloni motor 1.4 TSI 110 kW iz Golf VII | aria-label=Ukloni motor 1.0 TSI 81 kW iz Golf VII | aria-label=Ukloni motor 1.5 TSI 110 kW iz Golf VII | aria-label=Ukloni motor 2.0 TSI 162 kW iz Golf VII | aria-label=Ukloni motor 1.6 TDI 77 kW iz Golf VII | aria-label=Ukloni motor 2.0 TDI 110 kW iz Golf VII | aria-label=Ukloni motor 2.0 TDI 140 kW iz Golf VII | aria-label=Dodaj motor u Golf VII | aria-label=Izmeni generaciju Golf VIII | aria-label=Ukloni motor 1.0 TSI 81 kW iz Golf VIII | aria-label=Ukloni motor 1.5 TSI 110 kW iz Golf VIII | aria-label=Ukloni motor 2.0 TSI 162 kW iz Golf VIII | aria-label=Ukloni motor 2.0 TDI 110 kW iz Golf VIII | aria-label=Dodaj motor u Golf VIII | aria-label=Obaveštenja (F8)
+
+======== /admin/proizvodjaci [200]
+TITLE: Proizvođači · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Proizvođači"]
+--- text
+Proizvođači delova. Drugi nazivi pomažu da uvoz iz Excela prepozna „LUK“, „LuK GmbH“ i slično.
+Novi proizvođač
+Pretraga proizvođača
+PROIZVOĐAČ
+KVALITET
+DRUGI NAZIVI	ZEMLJA
+ARTIKALA
+ATE
+OEM kvalitet	ate	—	7
+Bilstein
+OEM kvalitet	bilstein	—	1
+BorgWarner
+OEM kvalitet	borgwarner, borg warner, kkk	—	2
+Bosch
+OEM kvalitet	bosch, bos	—	20
+Brembo
+OEM kvalitet	brembo	—	3
+Castrol
+Aftermarket	castrol	—	2
+ContiTech
+OEM kvalitet	contitech, conti	—	2
+Continental
+OEM kvalitet	continental	—	1
+Denso
+OEM kvalitet	denso	—	1
+Febi Bilstein
+Aftermarket	febi bilstein, febi	—	23
+Garrett
+OEM kvalitet	garrett	—	2
+Gates
+OEM kvalitet	gates	—	4
+Hella
+OEM kvalitet	hella	—	3
+INA
+OEM kvalitet	ina	—	2
+KYB
+OEM kvalitet	kyb, kayaba	—	2
+Lemförder
+OEM kvalitet	lemförder, lemforder, lemferder	—	5
+LuK
+OEM kvalitet	luk	—	2
+Mahle
+OEM kvalitet	mahle, knecht	—	6
+Mann-Filter
+OEM kvalitet	mann-filter, mann, man filter	—	6
+Meyle
+Aftermarket	meyle, majle	—	7
+NGK
+OEM kvalitet	ngk	—	3
+Nissens
+Aftermarket	nissens	—	4
+Original VAG
+ORIGINAL VAG
+Original VAG	vag, original, vw original, orginal	—	21
+Pierburg
+OEM kvalitet	pierburg	—	3
+SKF
+OEM kvalitet	skf	—	4
+Sachs
+OEM kvalitet	sachs, saks	—	4
+TRW
+OEM kvalitet	trw	—	5
+Valeo
+OEM kvalitet	valeo	—	7
+Varta
+OEM kvalitet	varta	—	2
+Walker
+Aftermarket	walker	—	3
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | placeholder=Naziv ili drugi naziv… | aria-label=Obaveštenja (F8)
+
+======== /admin/lager [200]
+TITLE: Lager · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Lager"]
+--- text
+Artikli bez zaliha i sa malo zaliha (prag 3 kom. ako artikal nema svoj) i svaka promena stanja sa razlogom. Količinu i prag menjate direktno u redu.
+Bez zaliha (15)
+Malo na stanju (28)
+Kretanje zaliha
+Aktivni artikli bez zaliha
+ARTIKAL
+STANJE
+KOM.
+PRAG
+Kočione pločice prednje
+DEMO-0012
+NEMA NA STANJU
+0
+Rame prednje desno, sa kuglom
+DEMO-0030
+NEMA NA STANJU
+0
+Kraj spone
+DEMO-0034
+NEMA NA STANJU
+0
+Ležaj prednjeg točka, set
+DEMO-0040
+NEMA NA STANJU
+0
+Alternator 140 A
+DEMO-0065
+NEMA NA STANJU
+0
+Alternator 110 A
+DEMO-0066
+NEMA NA STANJU
+0
+Nosač menjača levi, DSG
+DEMO-0079
+NEMA NA STANJU
+0
+Lonac zadnji
+DEMO-0083
+NEMA NA STANJU
+0
+Crevo hladnjaka gornje
+DEMO-0090
+NEMA NA STANJU
+0
+Kompresor klime
+DEMO-0092
+NEMA NA STANJU
+0
+Hauba
+DEMO-0114
+NEMA NA STANJU
+0
+Metlica zadnjeg brisača 280 mm
+DEMO-0125
+NEMA NA STANJU
+0
+Filter ulja
+DEMO-0134
+NEMA NA STANJU
+0
+Kočiona tečnost Super DOT 4, 1 L
+DEMO-0149
+NEMA NA STANJU
+0
+Ulje za DSG menjač, 1 L
+DEMO-0150
+NEMA NA STANJU
+0
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Lager | aria-label=Promeni stanje za DEMO-0012, trenutno 0 kom. | aria-label=Prag za DEMO-0012 | placeholder=3 | aria-label=Promeni stanje za DEMO-0030, trenutno 0 kom. | aria-label=Prag za DEMO-0030 | aria-label=Promeni stanje za DEMO-0034, trenutno 0 kom. | aria-label=Prag za DEMO-0034 | aria-label=Promeni stanje za DEMO-0040, trenutno 0 kom. | aria-label=Prag za DEMO-0040 | aria-label=Promeni stanje za DEMO-0065, trenutno 0 kom. | aria-label=Prag za DEMO-0065 | aria-label=Promeni stanje za DEMO-0066, trenutno 0 kom. | aria-label=Prag za DEMO-0066 | aria-label=Promeni stanje za DEMO-0079, trenutno 0 kom. | aria-label=Prag za DEMO-0079 | aria-label=Promeni stanje za DEMO-0083, trenutno 0 kom. | aria-label=Prag za DEMO-0083 | aria-label=Promeni stanje za DEMO-0090, trenutno 0 kom. | aria-label=Prag za DEMO-0090 | aria-label=Promeni stanje za DEMO-0092, trenutno 0 kom. | aria-label=Prag za DEMO-0092 | aria-label=Promeni stanje za DEMO-0114, trenutno 0 kom. | aria-label=Prag za DEMO-0114 | aria-label=Promeni stanje za DEMO-0125, trenutno 0 kom. | aria-label=Prag za DEMO-0125 | aria-label=Promeni stanje za DEMO-0134, trenutno 0 kom. | aria-label=Prag za DEMO-0134 | aria-label=Promeni stanje za DEMO-0149, trenutno 0 kom. | aria-label=Prag za DEMO-0149 | aria-label=Promeni stanje za DEMO-0150, trenutno 0 kom. | aria-label=Prag za DEMO-0150 | aria-label=Obaveštenja (F8)
+
+======== /admin/kupci [200]
+TITLE: Kupci · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Kupci"]
+--- text
+Registrovani nalozi. Kupci bez naloga (gosti) su u porudžbinama — tražite ih po imenu, telefonu ili e-pošti.
+Svi
+Blokirani
+Pronađi po e-pošti
+KUPAC
+TELEFON	NALOG	PORUDŽBINE
+REGISTROVAN
+Dragan Jović
+e2e-majstor-1790775820963@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Dragan Jović
+e2e-servis-1790775538854@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+0	30.09.
+Dragan Jović
+e2e-majstor-1790775510563@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Marko Petrović
+audit-kupac-5455287@primer.rs
+—
+Kupac
+0	30.09.
+Dragan Jović
+audit-majstor-5455287@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Majstor 5232824
+majstor-admin-5232824@primer.rs
+—
+MAJSTOR · ODOBREN
+0	30.09.
+Dragan Jović
+e2e-majstor-1790772861926@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Dragan Jović
+e2e-servis-1790772583154@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+0	30.09.
+Dragan Jović
+e2e-majstor-1790772560494@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Majstor 2311493
+majstor-admin-2311493@primer.rs
+—
+MAJSTOR · ODOBREN
+0	30.09.
+Dragan Jović
+e2e-majstor-1790767695059@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Dragan Jović
+e2e-servis-1790767458148@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+0	30.09.
+Dragan Jović
+e2e-majstor-1790767436907@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Majstor 7177997
+majstor-admin-7177997@primer.rs
+—
+MAJSTOR · ODOBREN
+0	30.09.
+Dragan Jović
+e2e-majstor-1790761623411@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Dragan Jović
+e2e-servis-1790761498286@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+0	30.09.
+Dragan Jović
+e2e-majstor-1790761476294@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Majstor 1427165
+majstor-admin-1427165@primer.rs
+—
+MAJSTOR · ODOBREN
+0	30.09.
+Majstor 7991843
+majstor-admin-7991843@primer.rs
+—
+MAJSTOR · ODOBREN
+0	30.09.
+Majstor 6110363
+majstor-admin-6110363@primer.rs
+—
+MAJSTOR · ODOBREN
+0	30.09.
+Majstor 0087613
+majstor-admin-0087613@primer.rs
+—
+MAJSTOR · ODOBREN
+0	30.09.
+Majstor 0021559
+majstor-admin-0021559@primer.rs
+—
+MAJSTOR · ODOBREN
+0	30.09.
+Majstor 9956724
+majstor-admin-9956724@primer.rs
+—
+MAJSTOR · ODOBREN
+0	30.09.
+Majstor 9878887
+majstor-admin-9878887@primer.rs
+—
+MAJSTOR · ODOBREN
+0	30.09.
+Majstor 7134516
+majstor-admin-7134516@primer.rs
+—
+MAJSTOR · ODOBREN
+0	30.09.
+Dragan Jović
+qa-majstor-1790741260390@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Dragan Jović
+e2e-majstor-1790741233109@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Dragan Jović
+e2e-servis-1790741216113@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+0	30.09.
+Dragan Jović
+e2e-majstor-1790741196227@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Dragan Jović
+qa-majstor-1790740842322@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Dragan Jović
+e2e-majstor-1790740808237@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Dragan Jović
+e2e-servis-1790740790444@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+0	30.09.
+Dragan Jović
+e2e-majstor-1790740769316@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Dragan Jović
+e2e-majstor-1790740672056@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+0	30.09.
+Dragan Jović
+e2e-servis-1790740498895@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+0	30.09.
+Dragan Jović
+e2e-majstor-1790740477323@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Dragan Jović
+qa-majstor-1790739712849@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Dragan Jović
+e2e-majstor-1790739586044@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Dragan Jović
+e2e-servis-1790739569789@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+0	30.09.
+Dragan Jović
+e2e-majstor-1790739536978@primer.rs
++381 64 555 1234
+MAJSTOR · ODOBREN
+1	30.09.
+Jelena Marković
+qa-account-1790737001284@primer.rs
++381 64 222 3344
+Kupac
+1	30.09.
+Jelena Marković
+qa-account-1790736701139@primer.rs
++381 64 222 3344
+Kupac
+1	30.09.
+Jelena Marković
+qa-account-1790736625250@primer.rs
++381 64 222 3344
+Kupac
+1	30.09.
+Jelena Marković
+qa-account-1790736534513@primer.rs
+—
+Kupac
+0	30.09.
+Demo Kupac
+DEMO
+kupac.demo@sklop.test
++381 64 000 0002
+Kupac
+1	29.09.
+Demo Majstor
+DEMO
+majstor.demo@sklop.test
++381 64 000 0001
+MAJSTOR · ODOBREN
+2	29.09.
+Prikazano: 46 kupaca — kraj liste.
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Vrsta naloga | placeholder=tačna e-mail adresa… | aria-label=Obaveštenja (F8)
+
+======== /admin/majstori [200]
+TITLE: Majstori · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Majstori"]
+--- text
+Registracije servisa, nivoi rabata i odloženo plaćanje.
+Na čekanju
+Odobreni
+40
+Pauzirani
+Odbijeni
+Svi
+40
+Svi izvori
+Google Ads
+Meta oglasi
+Microsoft Ads
+Pretraživač
+Viber
+Kampanja
+Drugi sajt
+Direktno
+Registracije servisa
+SERVIS
+PIB
+KONTAKT	REGISTROVAN
+NIVO	IZVOR	STATUS
+Nema registracija sa ovim statusom.
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Status registracije | aria-label=Izvor registracije | aria-label=Obaveštenja (F8)
+
+======== /admin/cenovni-razredi [200]
+TITLE: Cenovni razredi · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Cenovni razredi"]
+--- text
+Rabat majstora po nivoima. Cena se računa samo na serveru i nikad nije ispod nabavne cene uvećane za minimalnu maržu.
+Novi razred
+Razredi
+Majstor
+PODRAZUMEVAN
+10 %
+Majstor Plus
+15 %
+Partner
+20 %
+Majstor
+Arhiviraj
+Naziv
+Redosled
+Osnovni rabat
+%
+Minimalna marža
+%
+Prazno: 8 % iz podešavanja
+Podrazumevan kod odobrenja
+Opis za stranicu „Za majstore“
+0 / 200
+Izuzeci po kategoriji
+Nema izuzetaka — važi osnovni rabat.
+Dodaj kategoriju
+Izuzeci po proizvođaču
+Nema izuzetaka — važi osnovni rabat.
+Dodaj proizvođača
+Primer cene
+Maloprodajna cena sa PDV-om
+RSD
+Nabavna bez PDV-a
+RSD
+Kategorija
+Bilo koja
+Motor i usis › Blok motora i glava
+Motor i usis › Turbina (turbopunjač)
+Motor i usis › Interkuler
+Motor i usis › Usisna grana i kućište filtera
+Motor i usis › Brizgaljke i pumpa goriva
+Motor i usis › Set zupčastog kaiša i vodena pumpa
+Motor i usis › Kaiš alternatora i zatezači
+Motor i usis › Alternator
+Motor i usis › Anlaser
+Motor i usis › Svećice, bobine i grejači
+Motor i usis › Karter, pumpa ulja i dihtunzi
+Motor i usis › EGR ventil
+Motor i usis › Nosači motora i menjača
+Izduvni sistem › DPF i katalizator
+Izduvni sistem › Auspuh (lonci i cevi)
+Hlađenje i klima › Hladnjak i ventilator
+Hlađenje i klima › Termostat i creva hlađenja
+Hlađenje i klima › Kompresor i kondenzator klime
+Transmisija › Kvačilo i zamajac
+Transmisija › Menjač (DSG)
+Transmisija › Poluosovine i homokinetički zglobovi
+Vešanje i upravljanje › Amortizeri i opruge
+Vešanje i upravljanje › Ramena i selen blokovi
+Vešanje i upravljanje › Spone i stabilizatori
+Vešanje i upravljanje › Letva volana
+Vešanje i upravljanje › Ležaj točka i glavčina
+Kočnice › Kočioni diskovi
+Kočnice › Kočione pločice
+Kočnice › Kočione čeljusti
+Kočnice › ABS senzori
+Elektrika i svetla › Akumulator
+Elektrika i svetla › Farovi
+Elektrika i svetla › Stop svetla
+Elektrika i svetla › Senzori (lambda, parking, temperatura)
+Karoserija › Hauba
+Karoserija › Branici
+Karoserija › Blatobrani
+Karoserija › Vrata
+Karoserija › Retrovizori
+Karoserija › Stakla
+Karoserija › Brisači
+Točkovi › Felne i gume
+Servis i održavanje › Filteri
+Servis i održavanje › Filteri › Filter ulja
+Servis i održavanje › Filteri › Filter vazduha
+Servis i održavanje › Filteri › Filter goriva
+Servis i održavanje › Filteri › Filter kabine
+Servis i održavanje › Ulja i tečnosti
+Proizvođač
+Bilo koji
+ATE
+Bilstein
+BorgWarner
+Bosch
+Brembo
+Castrol
+ContiTech
+Continental
+Denso
+Febi Bilstein
+Garrett
+Gates
+Hella
+INA
+KYB
+Lemförder
+LuK
+Mahle
+Mann-Filter
+Meyle
+NGK
+Nissens
+Original VAG
+Pierburg
+SKF
+Sachs
+TRW
+Valeo
+Varta
+Walker
+Majstor (sa izmenama)
+9.000 RSD
+−10 %
+Cena po razredima za primer
+Majstor	9.000 RSD	−10 %
+Majstor Plus	8.500 RSD	−15 %
+Partner	8.000 RSD	−20 %
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Obaveštenja (F8)
+
+======== /admin/uvoz [200]
+TITLE: Uvoz iz Excela · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Uvoz iz Excela"]
+--- text
+Cenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.
+Šablon (.xlsx)
+Istorija
+1
+Korak 1:
+Datoteka
+2
+Korak 2:
+Kolone
+3
+Korak 3:
+Provera
+4
+Korak 4:
+Probni uvoz
+5
+Korak 5:
+Upis
+Prevucite fajl ovde
+xlsx, xls ili csv · do 25 MB i 50.000 redova
+Izaberi fajl
+Nemate fajl u pravom obliku?
+Preuzmite šablon sa uputstvom i listama kategorija, proizvođača i vozila.
+Kako teče uvoz
+1
+Datoteka
+xlsx, xls ili csv iz knjigovodstvenog programa ili iz šablona.
+2
+Kolone
+Kolone se prepoznaju same; proverite ih i sačuvajte raspored za sledeći put.
+3
+Provera
+Greške, ponovljene šifre i nepoznate kategorije vidite pre slanja.
+4
+Probni uvoz
+Šta je novo, šta se menja i šta se preskače — ništa se još ne upisuje.
+5
+Upis
+Svaka izmena ostaje zapisana, a ceo uvoz može da se poništi.
+Poslednji uvozi
+Istorija uvoza
+proizvodi-1250.csv
+PONIŠTEN
+30.09. 15:38 · Pun uvoz · 20 redova
+proizvodi-500.xlsx
+PONIŠTEN
+30.09. 15:37 · Pun uvoz · 500 redova
+proizvodi-1250.csv
+PONIŠTEN
+30.09. 14:49 · Pun uvoz · 20 redova
+proizvodi-500.xlsx
+PONIŠTEN
+30.09. 14:48 · Pun uvoz · 500 redova
+proizvodi-1250.csv
+PONIŠTEN
+30.09. 13:23 · Pun uvoz · 20 redova
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Koraci uvoza | aria-label=Obaveštenja (F8)
+
+======== /admin/uvoz/istorija [200]
+TITLE: Istorija uvoza · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Istorija uvoza"]
+--- text
+Istorija
+Istorija uvoza
+Svaki uvoz sa brojem novih i izmenjenih artikala, greškama i mogućnošću poništavanja.
+Novi uvoz
+Istorija uvoza
+VREME
+FAJL
+KO	STATUS
+NOVI	IZMENE	GREŠKE
+30.09. 15:38
+proizvodi-1250.csv
+Pun uvoz · 20 redova
+PONIŠTEN	20	0	0
+30.09. 15:37
+proizvodi-500.xlsx
+Pun uvoz · 500 redova
+PONIŠTEN	490	0	10
+30.09. 14:49
+proizvodi-1250.csv
+Pun uvoz · 20 redova
+PONIŠTEN	20	0	0
+30.09. 14:48
+proizvodi-500.xlsx
+Pun uvoz · 500 redova
+PONIŠTEN	490	0	10
+30.09. 13:23
+proizvodi-1250.csv
+Pun uvoz · 20 redova
+PONIŠTEN	20	0	0
+30.09. 13:23
+proizvodi-500.xlsx
+Pun uvoz · 500 redova
+PONIŠTEN	490	0	10
+30.09. 10:48
+proizvodi-1250.csv
+Pun uvoz · 20 redova
+PONIŠTEN	20	0	0
+30.09. 10:47
+proizvodi-500.xlsx
+Pun uvoz · 500 redova
+PONIŠTEN	490	0	10
+30.09. 10:16
+proizvodi-1250.csv
+Pun uvoz · 20 redova
+PONIŠTEN	20	0	0
+30.09. 10:16
+proizvodi-500.xlsx
+Pun uvoz · 500 redova
+PONIŠTEN	490	0	10
+30.09. 10:05
+proizvodi-500.xlsx
+Pun uvoz · 500 redova
+PONIŠTEN	490	0	10
+30.09. 10:04
+proizvodi-500.xlsx
+Pun uvoz · 500 redova
+PONIŠTEN	490	0	10
+30.09. 10:03
+proizvodi-500.xlsx
+Pun uvoz · 500 redova
+PONIŠTEN	490	0	10
+30.09. 09:51
+proizvodi-500.xlsx
+Pun uvoz · 500 redova
+UVEZEN	490	0	10
+30.09. 09:50
+proizvodi-500.xlsx
+Pun uvoz · 500 redova
+UVEZEN	490	0	10
+30.09. 09:49
+proizvodi-500.xlsx
+Pun uvoz · 500 redova
+UVEZEN	490	0	10
+30.09. 09:48
+proizvodi-500.xlsx
+Pun uvoz · 500 redova
+OTKAZAN	490	0	10
+30.09. 09:43
+proizvodi-500.xlsx
+Pun uvoz · 500 redova
+PONIŠTEN	490	0	10
+Prikazano: 18 uvoza — kraj liste.
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Obaveštenja (F8)
+
+======== /admin/uvoz/n571yqf64h6nfr4j3894281q6n8fdmmv [200]
+TITLE: Zapis uvoza · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["proizvodi-1250.csv"]
+--- text
+proizvodi-1250.csv
+proizvodi-1250.csv
+PONIŠTEN
+Pun uvoz · 20 redova · 30.09. 15:38
+Izveštaj
+Originalni fajl
+Novi
+20
+Izmene
+0
+Bez promena
+0
+Preskočeni
+0
+Greške
+0
+Uvoz je poništen. Sve vrednosti su vraćene.
+Zapis uvoza
+Izveštaj
+Podaci o uvozu
+Pokrenuo
+Režim
+Pun uvoz
+Brojevi
+srpski zapis
+Kodna strana
+windows-1250
+Provereno
+30.09. 15:38
+Upisano
+30.09. 15:38
+Poništeno
+30.09. 15:38
+Kolone
+8 od 8
+Redovi (20)
+Izmene artikala
+Svi
+Novi
+Izmene
+Bez promena
+Preskočeni
+Greške
+Redovi uvoza
+RED	ŠIFRA	NAZIV	STATUS	IZMENE I NAPOMENE
+2	IMP-C-001	Ćevap držač „test“ – čćžšđ 1
+NOV
+upisano, pa poništeno
+3	IMP-C-002	Žica držač „test“ – čćžšđ 2
+NOV
+upisano, pa poništeno
+4	IMP-C-003	Šelna držač „test“ – čćžšđ 3
+NOV
+upisano, pa poništeno
+5	IMP-C-004	Đon držač „test“ – čćžšđ 4
+NOV
+upisano, pa poništeno
+6	IMP-C-005	ČĆŽŠĐ držač „test“ – čćžšđ 5
+NOV
+upisano, pa poništeno
+7	IMP-C-006	Čep držač „test“ – čćžšđ 6
+NOV
+upisano, pa poništeno
+8	IMP-C-007	Ćevap držač „test“ – čćžšđ 7
+NOV
+upisano, pa poništeno
+9	IMP-C-008	Žica držač „test“ – čćžšđ 8
+NOV
+upisano, pa poništeno
+10	IMP-C-009	Šelna držač „test“ – čćžšđ 9
+NOV
+upisano, pa poništeno
+11	IMP-C-010	Đon držač „test“ – čćžšđ 10
+NOV
+upisano, pa poništeno
+12	IMP-C-011	ČĆŽŠĐ držač „test“ – čćžšđ 11
+NOV
+upisano, pa poništeno
+13	IMP-C-012	Čep držač „test“ – čćžšđ 12
+NOV
+upisano, pa poništeno
+14	IMP-C-013	Ćevap držač „test“ – čćžšđ 13
+NOV
+upisano, pa poništeno
+15	IMP-C-014	Žica držač „test“ – čćžšđ 14
+NOV
+upisano, pa poništeno
+16	IMP-C-015	Šelna držač „test“ – čćžšđ 15
+NOV
+upisano, pa poništeno
+17	IMP-C-016	Đon držač „test“ – čćžšđ 16
+NOV
+upisano, pa poništeno
+18	IMP-C-017	ČĆŽŠĐ držač „test“ – čćžšđ 17
+NOV
+upisano, pa poništeno
+19	IMP-C-018	Čep držač „test“ – čćžšđ 18
+NOV
+upisano, pa poništeno
+20	IMP-C-019	Ćevap držač „test“ – čćžšđ 19
+NOV
+upisano, pa poništeno
+21	IMP-C-020	Žica držač „test“ – čćžšđ 20
+NOV
+upisano, pa poništeno
+Prikazano: 20 redova — kraj liste.
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Zapis uvoza | aria-label=Vrsta reda | aria-label=Obaveštenja (F8)
+
+======== /admin/izvoz [200]
+TITLE: Izvoz · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Izvoz"]
+--- text
+Katalog, porudžbine i kupci u fajlovima koje otvara Excel. CSV fajlovi koriste tačku-zarez i srpska slova.
+Proizvodi (.xlsx)
+Sve kolone iz šablona za uvoz, sa nabavnim cenama i vozilima. Izmenite fajl i uvezite ga nazad — prepoznaje se sam.
+Uključi demo artikle
+Preuzmi proizvode
+Porudžbine (.csv)
+Kupac, firma i PIB, iznosi sa PDV-om, plaćanje, isporuka i izvor. Bez datuma: sve porudžbine.
+Od
+Do
+Preuzmi porudžbine
+Kupci (.csv)
+Registrovani kupci: kontakt, datum registracije, broj porudžbina i pristanak na obaveštenja. Gosti su u izvozu porudžbina.
+Preuzmi kupce
+Majstori (.csv)
+Servisi sa PIB-om, statusom, cenovnim razredom i uslovima odloženog plaćanja.
+Preuzmi majstore
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Obaveštenja (F8)
+
+======== /admin/izvori [200]
+TITLE: Izvori · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Izvori"]
+--- text
+Odakle dolaze upiti, registracije i porudžbine. Izvor je poslednja kampanja pre upita (ili prva, ako je posle bio direktan dolazak).
+7 dana
+30 dana
+90 dana
+Po kanalu
+Upiti, registracije i porudžbine po kanalu
+KANAL	UPITI	REGISTRACIJE	PORUDŽBINE	VREDNOST	ZAVRŠENO
+Direktno	46	40	55	1.056.506 RSD	2 · 49.706 RSD
+Izvor / medij / kampanja
+Detalji po izvoru, mediju i kampanji
+IZVOR / MEDIJ	KAMPANJA	UPITI	REG.	PORUDŽBINE	VREDNOST	ZAVRŠENO
+(direktno) / (nema)
+Direktno	—	46	40	55	1.056.506 RSD	49.706 RSD
+Bez podataka o izvoru: 55 porudžbina, 46 upita, 40 registracija (direktan dolazak ili stari pregledač).
+Offline konverzije za Google Ads
+Završene porudžbine iz poslednjih 90 dana koje su došle preko Google oglasa (gclid) i čiji je kupac dozvolio oglasne kolačiće. Fajl se uvozi u Google Ads → Ciljevi → Konverzije → Uvoz.
+Naziv konverzije nije podešen — upišite ga u Podešavanja → Praćenje, tačno kao u Google Ads nalogu.
+Sa gclid
+0
+Sa gbraid/wbraid
+0
+Bez saglasnosti
+0
+Preuzmi CSV (gclid)
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Period | aria-label=Obaveštenja (F8)
+
+======== /admin/mejlovi [200]
+TITLE: E-pošta · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["E-pošta"]
+--- text
+Sve poruke koje sistem pravi za kupce, majstore i osoblje — sa statusom isporuke.
+Poruke
+Šabloni i probne poruke
+Režim slanja: Samo zapis. Poruke se samo beleže ovde — ništa ne odlazi kupcima ni osoblju.
+Promenite režim slanja
+Svi statusi
+Zabeleženo
+U redu
+Poslato
+Isporučeno
+Kasni
+Odbijeno
+Prijavljeno
+Greška
+Otvoreno
+Kliknuto
+Svi šabloni
+Porudžbine · Porudžbina primljena
+Porudžbine · Porudžbina potvrđena (predračun)
+Porudžbine · Porudžbina čeka deo
+Porudžbine · Spremna za preuzimanje
+Porudžbine · Porudžbina poslata
+Porudžbine · Isporučena / preuzeta
+Porudžbine · Porudžbina otkazana
+Upiti i ponude · Upit primljen
+Upiti i ponude · Ponuda spremna
+Upiti i ponude · Ponuda uskoro ističe
+Upiti i ponude · Deo je ponovo na stanju
+Majstori · Registracija majstora primljena
+Majstori · Majstor odobren (razred)
+Majstori · Registracija odbijena
+Majstori · Majstorski nalog pauziran
+Nalog · Kod za novu lozinku
+Nalog · Pozivnica za administraciju
+Osoblje · Osoblje: nova porudžbina
+Osoblje · Osoblje: novi upit
+Osoblje · Osoblje: nova registracija majstora
+Osoblje · Osoblje: ponuda prihvaćena
+Osoblje · Osoblje: traži se nova ponuda
+Osoblje · Osoblje: malo na stanju
+Osoblje · Osoblje: dnevni pregled
+Osoblje · Osoblje: podsetnik
+Poslate i zabeležene poruke
+VREME
+PRIMA	NASLOV
+NAČIN
+STATUS
+30.09. 16:15
+admin@sklop.test
+Novi upit UP-2026-000060 — QA audit (backend) — provera zapisa sagl…
+Osoblje: novi upit · Upit
+Samo zapis	ZABELEŽENO
+30.09. 16:15
+audit-backend-consent-1790777745057@primer.rs
+Upit UP-2026-000060 je primljen
+Upit primljen · Upit
+Samo zapis	ZABELEŽENO
+30.09. 16:10
+audit-majstor-5455287@primer.rs
+Porudžbina SK-2026-000100 je otkazana
+Porudžbina otkazana · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 16:10
+audit-majstor-5455287@primer.rs
+Porudžbina SK-2026-000100 je primljena
+Porudžbina primljena · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 16:10
+admin@sklop.test
+Ponuda prihvaćena — UP-2026-000059 → SK-2026-000100
+Osoblje: ponuda prihvaćena · Upit
+Samo zapis	ZABELEŽENO
+30.09. 16:10
+admin@sklop.test
+Novi upit UP-2026-000059 — QA audit (backend) — test upit za prover…
+Osoblje: novi upit · Upit
+Samo zapis	ZABELEŽENO
+30.09. 16:00
+admin@sklop.test
+Drugi podsetnik: porudžbina SK-2026-000063 čeka potvrdu
+Osoblje: podsetnik · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 16:00
+admin@sklop.test
+Drugi podsetnik: upit UP-2026-000039 čeka odgovor
+Osoblje: podsetnik · Upit
+Samo zapis	ZABELEŽENO
+30.09. 16:00
+admin@sklop.test
+Drugi podsetnik: upit UP-2026-000038 čeka odgovor
+Osoblje: podsetnik · Upit
+Samo zapis	ZABELEŽENO
+30.09. 16:00
+admin@sklop.test
+Drugi podsetnik: porudžbina SK-2026-000062 čeka potvrdu
+Osoblje: podsetnik · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 16:00
+admin@sklop.test
+Drugi podsetnik: upit UP-2026-000040 čeka odgovor
+Osoblje: podsetnik · Upit
+Samo zapis	ZABELEŽENO
+30.09. 16:00
+admin@sklop.test
+Drugi podsetnik: porudžbina SK-2026-000061 čeka potvrdu
+Osoblje: podsetnik · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:45
+admin@sklop.test
+Drugi podsetnik: porudžbina SK-2026-000052 čeka potvrdu
+Osoblje: podsetnik · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:45
+admin@sklop.test
+Drugi podsetnik: porudžbina SK-2026-000059 čeka potvrdu
+Osoblje: podsetnik · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:45
+admin@sklop.test
+Drugi podsetnik: upit UP-2026-000037 čeka odgovor
+Osoblje: podsetnik · Upit
+Samo zapis	ZABELEŽENO
+30.09. 15:45
+admin@sklop.test
+Drugi podsetnik: porudžbina SK-2026-000053 čeka potvrdu
+Osoblje: podsetnik · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:44
+admin@sklop.test
+Novi upit UP-2026-000058 — Volkswagen Golf V (2008)
+Osoblje: novi upit · Upit
+Samo zapis	ZABELEŽENO
+30.09. 15:44
+admin@sklop.test
+Nova porudžbina SK-2026-000099 — 5.140 RSD
+Osoblje: nova porudžbina · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:44
+e2e-1790775867196@primer.rs
+Porudžbina SK-2026-000099 je primljena
+Porudžbina primljena · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:44
+admin@sklop.test
+Nova porudžbina SK-2026-000098 — 29.904 RSD
+Osoblje: nova porudžbina · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:44
+e2e-majstor-1790775820963@primer.rs
+Porudžbina SK-2026-000098 je primljena
+Porudžbina primljena · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:43
+e2e-majstor-1790775820963@primer.rs
+Upit UP-2026-000057 je primljen
+Upit primljen · Upit
+Samo zapis	ZABELEŽENO
+30.09. 15:43
+admin@sklop.test
+Novi upit UP-2026-000057 — Brza porudžbina — ove brojeve nismo našl…
+Osoblje: novi upit · Upit
+Samo zapis	ZABELEŽENO
+30.09. 15:43
+e2e-majstor-1790775820963@primer.rs
+Nalog je odobren — Majstor Plus (15 %)
+Majstor odobren (razred) · Majstor
+Samo zapis	ZABELEŽENO
+30.09. 15:43
+e2e-majstor-1790775820963@primer.rs
+Registracija servisa je primljena
+Registracija majstora primljena · Majstor
+Samo zapis	ZABELEŽENO
+30.09. 15:43
+admin@sklop.test
+Nova registracija majstora — Auto servis E2E
+Osoblje: nova registracija majstora · Majstor
+Samo zapis	ZABELEŽENO
+30.09. 15:41
+admin@sklop.test
+Novi upit UP-2026-000056 — Volkswagen Golf V (2008)
+Osoblje: novi upit · Upit
+Samo zapis	ZABELEŽENO
+30.09. 15:40
+admin@sklop.test
+Nova porudžbina SK-2026-000097 — 5.140 RSD
+Osoblje: nova porudžbina · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:40
+e2e-1790775649263@primer.rs
+Porudžbina SK-2026-000097 je primljena
+Porudžbina primljena · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:40
+admin@sklop.test
+Nova porudžbina SK-2026-000096 — 5.140 RSD
+Osoblje: nova porudžbina · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:40
+admin-e2e-sec1790775610209@primer.rs
+Porudžbina SK-2026-000096 je primljena
+Porudžbina primljena · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:39
+admin@sklop.test
+Nova porudžbina SK-2026-000095 — 5.140 RSD
+Osoblje: nova porudžbina · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:39
+admin-e2e-sec1790775593547@primer.rs
+Porudžbina SK-2026-000095 je primljena
+Porudžbina primljena · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:39
+admin@sklop.test
+[PROBA] Porudžbina SK-2026-000187 je potvrđena
+Porudžbina potvrđena (predračun) · Proba
+Samo zapis	ZABELEŽENO
+30.09. 15:39
+e2e-notify-1790775555295@primer.rs
+Porudžbina SK-2026-000094 je otkazana
+Porudžbina otkazana · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:39
+e2e-notify-1790775555295@primer.rs
+Porudžbina SK-2026-000094 je potvrđena
+Porudžbina potvrđena (predračun) · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:39
+e2e-notify-1790775555295@primer.rs
+Porudžbina SK-2026-000094 je primljena
+Porudžbina primljena · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:39
+admin@sklop.test
+Nova porudžbina SK-2026-000094 — 4.690 RSD
+Osoblje: nova porudžbina · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:39
+e2e-servis-1790775538854@primer.rs
+Nalog je odobren — Partner (20 %)
+Majstor odobren (razred) · Majstor
+Samo zapis	ZABELEŽENO
+30.09. 15:39
+admin@sklop.test
+Nova registracija majstora — Servis Odobrenje 38854
+Osoblje: nova registracija majstora · Majstor
+Samo zapis	ZABELEŽENO
+30.09. 15:39
+e2e-servis-1790775538854@primer.rs
+Registracija servisa je primljena
+Registracija majstora primljena · Majstor
+Samo zapis	ZABELEŽENO
+30.09. 15:38
+e2e-majstor-1790775510563@primer.rs
+Porudžbina SK-2026-000093 je primljena
+Porudžbina primljena · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:38
+admin@sklop.test
+Nova porudžbina SK-2026-000093 — 29.904 RSD
+Osoblje: nova porudžbina · Porudžbina
+Samo zapis	ZABELEŽENO
+30.09. 15:38
+admin@sklop.test
+Novi upit UP-2026-000055 — Brza porudžbina — ove brojeve nismo našl…
+Osoblje: novi upit · Upit
+Samo zapis	ZABELEŽENO
+30.09. 15:38
+e2e-majstor-1790775510563@primer.rs
+Upit UP-2026-000055 je primljen
+Upit primljen · Upit
+Samo zapis	ZABELEŽENO
+30.09. 15:38
+e2e-majstor-1790775510563@primer.rs
+Nalog je odobren — Majstor Plus (15 %)
+Majstor odobren (razred) · Majstor
+Samo zapis	ZABELEŽENO
+30.09. 15:38
+e2e-majstor-1790775510563@primer.rs
+Registracija servisa je primljena
+Registracija majstora primljena · Majstor
+Samo zapis	ZABELEŽENO
+30.09. 15:38
+admin@sklop.test
+Nova registracija majstora — Auto servis E2E
+Osoblje: nova registracija majstora · Majstor
+Samo zapis	ZABELEŽENO
+30.09. 15:38
+admin@sklop.test
+Novi upit UP-2026-000054 — Treba mi set kvačila za Golf 7 2.0 TDI (…
+Osoblje: novi upit · Upit
+Samo zapis	ZABELEŽENO
+30.09. 15:38
+admin-e2e-audit21@primer.rs
+Porudžbina SK-2026-000092 je primljena
+Porudžbina primljena · Porudžbina
+Samo zapis	ZABELEŽENO
+Prikazano: 50 poruka
+Učitaj još 50
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=E-pošta | aria-label=Status poruke | aria-label=Šablon | aria-label=Obaveštenja (F8)
+
+======== /admin/mejlovi/sabloni [200]
+TITLE: Šabloni e-pošte · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["E-pošta"]
+--- text
+Šabloni
+Svaki šablon sa primerom podataka i vašim podešavanjima (firma, kontakt, radno vreme) — tačno kako ga kupac ili zaposleni vidi.
+Poruke
+Šabloni i probne poruke
+Režim slanja: Samo zapis. Poruke se samo beleže ovde — ništa ne odlazi kupcima ni osoblju.
+Promenite režim slanja
+Podaci o firmi nisu popunjeni: pun naziv firme, PIB, adresa sedišta, telefon, tekući račun. Predračun, otpremnica i podnožje sajta ih prikazuju. Popuni u podešavanjima
+PORUDŽBINE
+Porudžbina primljena
+Porudžbina potvrđena (predračun)
+Porudžbina čeka deo
+Spremna za preuzimanje
+Porudžbina poslata
+Isporučena / preuzeta
+Porudžbina otkazana
+UPITI I PONUDE
+Upit primljen
+Ponuda spremna
+Ponuda uskoro ističe
+Deo je ponovo na stanju
+MAJSTORI
+Registracija majstora primljena
+Majstor odobren (razred)
+Registracija odbijena
+Majstorski nalog pauziran
+NALOG
+Kod za novu lozinku
+Pozivnica za administraciju
+OSOBLJE
+Osoblje: nova porudžbina
+Osoblje: novi upit
+Osoblje: nova registracija majstora
+Osoblje: ponuda prihvaćena
+Osoblje: traži se nova ponuda
+Osoblje: malo na stanju
+Osoblje: dnevni pregled
+Osoblje: podsetnik
+Porudžbina primljena
+Šalje se: Kupac pošalje porudžbinu (i kad prihvati ponudu).
+Računar
+Telefon
+Običan tekst
+Naslov
+Porudžbina SK-2026-000187 je primljena
+Ukupno 33.260 RSD. Javljamo se kad proverimo stanje i potvrdimo.
+Pošalji probnu poruku na
+Pošalji probnu poruku
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=E-pošta | aria-label=Šabloni | aria-label=Prikaz | placeholder=admin@sklop.test | title=Pregled šablona: Porudžbina primljena | aria-label=Obaveštenja (F8)
+
+======== /admin/obavestenja [200]
+TITLE: Obaveštenja · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Obaveštenja"]
+--- text
+Obaveštenja
+Obaveštenja
+Nove porudžbine, upiti, registracije i zalihe. Šta dobijate birate u podešavanjima.
+Označi sve kao pročitano
+Novi upit UP-2026-000060
+(nepročitano)
+Kupac čeka ponudu.
+30.09. 16:15
+Ponuda prihvaćena — UP-2026-000059
+(nepročitano)
+Kupac je prihvatio ponudu; porudžbina je kreirana.
+30.09. 16:10
+Nova porudžbina SK-2026-000100
+(nepročitano)
+Ukupno 250.000 RSD
+30.09. 16:10
+Novi upit UP-2026-000059
+(nepročitano)
+Kupac čeka ponudu.
+30.09. 16:10
+Drugi podsetnik: upit UP-2026-000038 čeka odgovor
+(nepročitano)
+Čeka 4 h 14 min radnog vremena.
+30.09. 16:00
+Drugi podsetnik: upit UP-2026-000040 čeka odgovor
+(nepročitano)
+Čeka 4 h 12 min radnog vremena.
+30.09. 16:00
+Drugi podsetnik: porudžbina SK-2026-000062 čeka potvrdu
+(nepročitano)
+Čeka 4 h 12 min radnog vremena.
+30.09. 16:00
+Drugi podsetnik: upit UP-2026-000039 čeka odgovor
+(nepročitano)
+Čeka 4 h 12 min radnog vremena.
+30.09. 16:00
+Drugi podsetnik: porudžbina SK-2026-000063 čeka potvrdu
+(nepročitano)
+Čeka 4 h 12 min radnog vremena.
+30.09. 16:00
+Drugi podsetnik: porudžbina SK-2026-000061 čeka potvrdu
+(nepročitano)
+Čeka 4 h 14 min radnog vremena.
+30.09. 16:00
+Drugi podsetnik: porudžbina SK-2026-000052 čeka potvrdu
+(nepročitano)
+Čeka 4 h 10 min radnog vremena.
+30.09. 15:45
+Drugi podsetnik: upit UP-2026-000037 čeka odgovor
+(nepročitano)
+Čeka 4 h 0 min radnog vremena.
+30.09. 15:45
+Drugi podsetnik: porudžbina SK-2026-000059 čeka potvrdu
+(nepročitano)
+Čeka 4 h 0 min radnog vremena.
+30.09. 15:45
+Drugi podsetnik: porudžbina SK-2026-000053 čeka potvrdu
+(nepročitano)
+Čeka 4 h 9 min radnog vremena.
+30.09. 15:45
+Novi upit UP-2026-000058
+(nepročitano)
+Kupac čeka ponudu.
+30.09. 15:44
+Nova porudžbina SK-2026-000099
+(nepročitano)
+Ukupno 5.140 RSD
+30.09. 15:44
+Nova porudžbina SK-2026-000098
+(nepročitano)
+Ukupno 29.904 RSD
+30.09. 15:44
+Novi upit UP-2026-000057
+(nepročitano)
+Kupac čeka ponudu.
+30.09. 15:43
+Nova registracija majstora
+(nepročitano)
+Auto servis E2E čeka odobrenje.
+30.09. 15:43
+Novi upit UP-2026-000056
+(nepročitano)
+Kupac čeka ponudu.
+30.09. 15:41
+Nova porudžbina SK-2026-000097
+(nepročitano)
+Ukupno 5.140 RSD
+30.09. 15:40
+Nova porudžbina SK-2026-000096
+(nepročitano)
+Ukupno 5.140 RSD
+30.09. 15:40
+Nova porudžbina SK-2026-000095
+(nepročitano)
+Ukupno 5.140 RSD
+30.09. 15:39
+Nova porudžbina SK-2026-000094
+(nepročitano)
+Ukupno 4.690 RSD
+30.09. 15:39
+Nova registracija majstora
+(nepročitano)
+Servis Odobrenje 38854 čeka odobrenje.
+30.09. 15:39
+Nova porudžbina SK-2026-000093
+(nepročitano)
+Ukupno 29.904 RSD
+30.09. 15:38
+Novi upit UP-2026-000055
+(nepročitano)
+Kupac čeka ponudu.
+30.09. 15:38
+Nova registracija majstora
+(nepročitano)
+Auto servis E2E čeka odobrenje.
+30.09. 15:38
+Uvoz završen: proizvodi-1250.csv
+(nepročitano)
+20 novih, 0 izmenjenih.
+30.09. 15:38
+Novi upit UP-2026-000054
+(nepročitano)
+Kupac čeka ponudu.
+30.09. 15:38
+Prikazano: 30 obaveštenja
+Učitaj još 30
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Obaveštenja (F8)
+
+======== /admin/korisnici [200]
+TITLE: Korisnici · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Korisnici"]
+--- text
+Ko ima pristup administraciji. Vlasnik vidi sve i menja podešavanja; zaposleni rade porudžbine, upite i katalog.
+Pozovi zaposlenog
+Nalozi osoblja
+Nalozi osoblja
+IME	ULOGA	POSLEDNJA AKTIVNOST	PRISTUP
+Vlasnik (vi)
+admin@sklop.test
+Vlasnik	30.09. 16:13
+Obaveštenja
+Pozivnice
+Još nema pozivnica.
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Obaveštenja (F8)
+
+======== /admin/revizija [200]
+TITLE: Revizija · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Revizija"]
+--- text
+Svaka izmena koju je napravilo osoblje: ko, šta, kada i šta je bilo pre toga.
+Ko
+Svi
+Šta
+Sve
+Porudžbina
+Upit
+Artikal
+Kategorija
+Proizvođač
+Majstor
+Majstor
+Korisnik
+Cenovni razred
+Pozivnica
+Stranica
+Marka
+Model
+Generacija
+Motor
+Sistem
+Radnja
+Sve
+Artikal: aktiviran
+Artikal: deaktiviran
+Artikal: dodata slika
+Artikal: izmena
+Artikal: kopija
+Artikal: novi
+Artikal: redosled slika
+Artikal: uklonjena slika
+Artikli: grupna promena cene
+Artikli: grupna promena kategorije
+Artikli: grupno aktivirani
+Artikli: grupno deaktivirani
+Artikli: poništena grupna izmena
+Cenovni razred: aktiviran
+Cenovni razred: arhiviran
+Cenovni razred: izmena
+Cenovni razred: novi
+Demo podaci: obrisani
+Demo podaci: zahtev za brisanje
+E-pošta: ponovo poslata
+E-pošta: probna poruka
+Kategorija: izmena
+Kategorija: nova
+Kategorija: redosled
+Kategorija: slika
+Korisnici: blokiran
+Korisnici: odblokiran
+Korisnici: opozvana pozivnica
+Korisnici: pozivnica
+Korisnici: prihvaćena pozivnica
+Korisnici: promena uloge
+Korisnik: izmena profila
+Korisnik: promena uloge
+Kupac: beleška
+Kupac: blokiran
+Kupac: odblokiran
+Lager: prag zaliha
+Lager: promena stanja
+Majstor: izmena uslova
+Majstor: odbijen
+Majstor: odobren
+Majstor: suspendovan
+Majstor: vraćen na čekanje
+Obaveštenja: podešavanja
+Obaveštenja: podešavanja zaposlenog
+Podešavanja: izmena
+Ponuda: nacrt
+Ponuda: poslata
+Ponuda: pretvorena u porudžbinu
+Porudžbina: beleška
+Porudžbina: broj pošiljke
+Porudžbina: izmena stavki
+Porudžbina: promena statusa
+Porudžbina: uplata
+Pravni tekst: izmena
+Privatnost: anonimizacija kupca
+Privatnost: izvoz podataka kupca
+Proizvođač: izmena
+Proizvođač: novi
+Upit: beleška
+Upit: dodela
+Upit: promena statusa
+Upit: zatvoren
+Uvoz: otkazan
+Uvoz: pokrenut upis
+Uvoz: pokrenuto poništavanje
+Uvoz: poništen
+Uvoz: upisan
+Vozila: izmena generacije
+Vozila: izmena marke
+Vozila: izmena modela
+Vozila: izmena motora
+Vozila: motor dodat generaciji
+Vozila: motor uklonjen iz generacije
+Vozila: nova generacija
+Vozila: nova marka
+Vozila: novi model
+Vozila: novi motor
+Od
+Do
+30.09. 16:15
+UP-2026-000060: zatvoren — QA audit test (backend) — zatvoreno
+Vlasnik · Upit: zatvoren
+30.09. 16:10
+SK-2026-000100: Primljena → Otkazana
+Vlasnik · Porudžbina: promena statusa
+Izmene (1)
+30.09. 16:10
+UP-2026-000059: poslata ponuda br. 1
+Vlasnik · Ponuda: poslata
+30.09. 16:10
+UP-2026-000059: nacrt ponude
+Vlasnik · Ponuda: nacrt
+30.09. 15:43
+Auto servis E2E: na čekanju → odobren · razred Majstor Plus (15 %)
+Sistem · Majstor: odobren
+Izmene (3)
+30.09. 15:40
+Izvoz podataka kupca (bez naloga)
+Vlasnik · Privatnost: izvoz podataka kupca
+30.09. 15:39
+Probna poruka „Porudžbina potvrđena (predračun)“ na admin@sklop.test
+Vlasnik · E-pošta: probna poruka
+30.09. 15:39
+SK-2026-000094: Potvrđena → Otkazana
+Vlasnik · Porudžbina: promena statusa
+Izmene (1)
+30.09. 15:39
+SK-2026-000094: Primljena → Potvrđena
+Vlasnik · Porudžbina: promena statusa
+Izmene (1)
+30.09. 15:39
+Servis Odobrenje 38854: na čekanju → odobren · razred Partner (20 %)
+Vlasnik · Majstor: odobren
+Izmene (3)
+30.09. 15:38
+Auto servis E2E: na čekanju → odobren · razred Majstor Plus (15 %)
+Sistem · Majstor: odobren
+Izmene (3)
+30.09. 15:38
+Poništen uvoz proizvodi-1250.csv
+Vlasnik · Uvoz: poništen
+30.09. 15:38
+Pokrenuto poništavanje uvoza „proizvodi-1250.csv“
+Vlasnik · Uvoz: pokrenuto poništavanje
+30.09. 15:38
+Uvoz proizvodi-1250.csv: 20 novih, 0 izmenjenih, 0 deaktiviranih, 0 neuspelih
+Vlasnik · Uvoz: upisan
+30.09. 15:38
+Pokrenut upis uvoza „proizvodi-1250.csv“
+Vlasnik · Uvoz: pokrenut upis
+Izmene (1)
+30.09. 15:38
+Poništen uvoz proizvodi-500.xlsx
+Vlasnik · Uvoz: poništen
+30.09. 15:38
+Pokrenuto poništavanje uvoza „proizvodi-500.xlsx“
+Vlasnik · Uvoz: pokrenuto poništavanje
+30.09. 15:38
+Uvoz proizvodi-500.xlsx: 490 novih, 0 izmenjenih, 0 deaktiviranih, 0 neuspelih
+Vlasnik · Uvoz: upisan
+30.09. 15:37
+Pokrenut upis uvoza „proizvodi-500.xlsx“
+Vlasnik · Uvoz: pokrenut upis
+Izmene (1)
+30.09. 15:37
+Audit servis d.o.o.: na čekanju → odobren · razred Majstor Plus (15 %)
+Sistem · Majstor: odobren
+Izmene (4)
+30.09. 15:34
+Izmenjena podešavanja: podaci o firmi
+Vlasnik · Podešavanja: izmena
+Izmene (1)
+30.09. 15:34
+Izmenjena podešavanja: podaci o firmi
+Vlasnik · Podešavanja: izmena
+Izmene (1)
+30.09. 15:34
+Servis Admin 5232824: na čekanju → odobren · razred Partner (20 %)
+Vlasnik · Majstor: odobren
+Izmene (2)
+30.09. 15:34
+UP-2026-000053: poslata ponuda br. 1
+Vlasnik · Ponuda: poslata
+30.09. 15:34
+UP-2026-000053: nacrt ponude
+Vlasnik · Ponuda: nacrt
+30.09. 15:34
+UP-2026-000053: u obradi
+Vlasnik · Upit: promena statusa
+30.09. 15:34
+SK-2026-000091: Potvrđena → Poslata
+Vlasnik · Porudžbina: promena statusa
+Izmene (1)
+30.09. 15:34
+SK-2026-000091: Primljena → Potvrđena
+Vlasnik · Porudžbina: promena statusa
+Izmene (1)
+30.09. 15:34
+E2E-5232824: cena
+Vlasnik · Artikal: izmena
+Izmene (1)
+30.09. 15:34
+Dodata slika: Kočioni disk E2E 5232824
+Vlasnik · Artikal: dodata slika
+30.09. 15:34
+Novi artikal E2E-5232824 — Kočioni disk E2E 5232824
+Vlasnik · Artikal: novi
+30.09. 15:22
+Izvoz podataka kupca (bez naloga)
+Vlasnik · Privatnost: izvoz podataka kupca
+30.09. 14:57
+Izvoz podataka kupca (bez naloga)
+Vlasnik · Privatnost: izvoz podataka kupca
+30.09. 14:54
+Auto servis E2E: na čekanju → odobren · razred Majstor Plus (15 %)
+Sistem · Majstor: odobren
+Izmene (3)
+30.09. 14:51
+Izvoz podataka kupca (bez naloga)
+Vlasnik · Privatnost: izvoz podataka kupca
+30.09. 14:50
+Probna poruka „Porudžbina potvrđena (predračun)“ na admin@sklop.test
+Vlasnik · E-pošta: probna poruka
+30.09. 14:50
+SK-2026-000078: Potvrđena → Otkazana
+Vlasnik · Porudžbina: promena statusa
+Izmene (1)
+30.09. 14:50
+SK-2026-000078: Primljena → Potvrđena
+Vlasnik · Porudžbina: promena statusa
+Izmene (1)
+30.09. 14:49
+Servis Odobrenje 83154: na čekanju → odobren · razred Partner (20 %)
+Vlasnik · Majstor: odobren
+Izmene (3)
+30.09. 14:49
+Auto servis E2E: na čekanju → odobren · razred Majstor Plus (15 %)
+Sistem · Majstor: odobren
+Izmene (3)
+30.09. 14:49
+Poništen uvoz proizvodi-1250.csv
+Vlasnik · Uvoz: poništen
+30.09. 14:49
+Pokrenuto poništavanje uvoza „proizvodi-1250.csv“
+Vlasnik · Uvoz: pokrenuto poništavanje
+30.09. 14:49
+Uvoz proizvodi-1250.csv: 20 novih, 0 izmenjenih, 0 deaktiviranih, 0 neuspelih
+Vlasnik · Uvoz: upisan
+30.09. 14:49
+Pokrenut upis uvoza „proizvodi-1250.csv“
+Vlasnik · Uvoz: pokrenut upis
+Izmene (1)
+30.09. 14:49
+Poništen uvoz proizvodi-500.xlsx
+Vlasnik · Uvoz: poništen
+30.09. 14:48
+Pokrenuto poništavanje uvoza „proizvodi-500.xlsx“
+Vlasnik · Uvoz: pokrenuto poništavanje
+30.09. 14:48
+Uvoz proizvodi-500.xlsx: 490 novih, 0 izmenjenih, 0 deaktiviranih, 0 neuspelih
+Vlasnik · Uvoz: upisan
+30.09. 14:48
+Pokrenut upis uvoza „proizvodi-500.xlsx“
+Vlasnik · Uvoz: pokrenut upis
+Izmene (1)
+30.09. 14:45
+Izmenjena podešavanja: podaci o firmi
+Vlasnik · Podešavanja: izmena
+Izmene (1)
+30.09. 14:45
+Izmenjena podešavanja: podaci o firmi
+Vlasnik · Podešavanja: izmena
+Izmene (1)
+Prikazano: 50 izmena
+Učitaj još 50
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Obaveštenja (F8)
+
+======== /admin/privatnost [200]
+TITLE: Privatnost · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Privatnost"]
+--- text
+Zahtevi kupaca po Zakonu o zaštiti podataka o ličnosti: uvid u podatke i brisanje. Odgovor je dužan u roku od 30 dana.
+Kupac bez naloga ili po e-pošti
+E-pošta kupca
+Preuzmi sve podatke (JSON)
+Anonimizuj kupca
+Šta se dešava
+Izvoz sadrži nalog, profil majstora, porudžbine, upite, vozila, omiljene artikle, pretplate i zapise o kolačićima. Pošaljite ga kupcu bezbednim kanalom.
+Posle anonimizacije kupac više ne može da se prijavi; ako želi da poručuje, pravi novi nalog.
+Podaci firme (naziv, PIB, adresa sedišta) na porudžbinama ostaju — to su podaci pravnog lica i deo knjigovodstvene evidencije.
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Obaveštenja (F8)
+
+======== /admin/podesavanja?tab=firma [200]
+TITLE: Podešavanja · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Podešavanja"]
+--- text
+Poslednja izmena: 30.09.2026.
+Firma
+Radno vreme
+Dostava i plaćanje
+Obaveštenja
+SEO
+Praćenje
+Oglasne strane
+Pravni tekstovi
+Funkcije
+Opasna zona
+Podaci o firmi
+Prikazuju se u podnožju, na predračunu, otpremnici i u pravnim tekstovima. Prazno polje se ne prikazuje.
+Pun naziv (iz APR-a)
+Kratak naziv
+PIB
+Matični broj
+Ulica i broj
+Poštanski broj
+Mesto
+Link ka mapi
+Google Maps link radnje.
+Viber broj
+WhatsApp broj
+Napomena o registraciji
+npr. „Registrovano u APR, BD 12345/2020“
+Telefoni
+Dodaj telefon
+Tekući računi
+Dodaj račun
+Brend i brojevi dokumenata
+Naziv i slogan važe svuda na sajtu. Prefiksi određuju izgled brojeva porudžbina (SK-2026-000123) i upita.
+Naziv prodavnice
+Slogan
+Prefiks porudžbine
+1–4 velika slova
+Prefiks upita
+1–4 velika slova
+Činjenice o radnji
+Kratke proverljive činjenice za početnu stranu (npr. „Godina osnivanja — 2009“). Ne upisujte ništa što ne možete dokazati.
+Dodaj činjenicu
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Podešavanja | aria-label=Obaveštenja (F8)
+
+======== /admin/podesavanja?tab=radno-vreme [200]
+TITLE: Podešavanja · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Podešavanja"]
+--- text
+Poslednja izmena: 30.09.2026.
+Firma
+Radno vreme
+Dostava i plaćanje
+Obaveštenja
+SEO
+Praćenje
+Oglasne strane
+Pravni tekstovi
+Funkcije
+Opasna zona
+Radno vreme
+Prikazuje se kupcima i računa rokove odgovora na upite (SLA) i podsetnike.
+Radno vreme po danima
+Ponedeljak
+Zatvoreno
+–
+Utorak
+Zatvoreno
+–
+Sreda
+Zatvoreno
+–
+Četvrtak
+Zatvoreno
+–
+Petak
+Zatvoreno
+–
+Subota
+Zatvoreno
+–
+Nedelja
+Zatvoreno
+–
+Neradni dani
+Praznici i kolektivni odmor (ne računaju se u rokove).
+Dodaj neradni dan
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Podešavanja | aria-label=Ponedeljak, otvara se | aria-label=Ponedeljak, zatvara se | aria-label=Utorak, otvara se | aria-label=Utorak, zatvara se | aria-label=Sreda, otvara se | aria-label=Sreda, zatvara se | aria-label=Četvrtak, otvara se | aria-label=Četvrtak, zatvara se | aria-label=Petak, otvara se | aria-label=Petak, zatvara se | aria-label=Subota, otvara se | aria-label=Subota, zatvara se | aria-label=Nedelja, otvara se | aria-label=Nedelja, zatvara se | aria-label=Obaveštenja (F8)
+
+======== /admin/podesavanja?tab=prodaja [200]
+TITLE: Podešavanja · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Podešavanja"]
+--- text
+Poslednja izmena: 30.09.2026.
+Firma
+Radno vreme
+Dostava i plaćanje
+Obaveštenja
+SEO
+Praćenje
+Oglasne strane
+Pravni tekstovi
+Funkcije
+Opasna zona
+Prodaja
+Pravila koja važe za sve porudžbine.
+PDV
+%
+Minimalna marža
+%
+Rabat majstora nikad ne spušta cenu ispod nabavne + ove marže.
+Besplatna dostava preko
+RSD
+Prag „malo na stanju“
+kom.
+Ponuda važi
+dana
+Automatsko završavanje
+dana
+Isporučene i preuzete porudžbine se zatvaraju posle roka za odustanak.
+Stanje se umanjuje
+Kad potvrdimo porudžbinu
+Čim kupac poruči
+Rok za slanje istog dana
+Tekst o roku isporuke
+Vrati stanje kad se porudžbina otkaže
+Načini dostave
+Naziv
+Cena
+RSD
+Besplatno preko
+RSD
+Aktivno
+Opis
+Rok
+Naziv
+Cena
+RSD
+Besplatno preko
+RSD
+Aktivno
+Opis
+Rok
+Načini plaćanja
+Plaćanje virmanom traži podatke firme; odloženo plaćanje samo odobreni majstori sa tom opcijom.
+Naziv
+Uputstvo kupcu
+Aktivno
+Naziv
+Uputstvo kupcu
+Aktivno
+Naziv
+Uputstvo kupcu
+Aktivno
+Naziv
+Uputstvo kupcu
+Aktivno
+Naziv
+Uputstvo kupcu
+Aktivno
+Kurirske službe
+Link za praćenje sa {broj} na mestu broja pošiljke, npr. https://…/pracenje?broj={broj}
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Podešavanja | aria-label=Naziv kurira 1 | aria-label=Link za praćenje, D Express | placeholder=https://…{broj} | aria-label=Naziv kurira 2 | aria-label=Link za praćenje, BEX | aria-label=Naziv kurira 3 | aria-label=Link za praćenje, AKS | aria-label=Naziv kurira 4 | aria-label=Link za praćenje, Post Express | aria-label=Obaveštenja (F8)
+
+======== /admin/podesavanja?tab=obavestenja [200]
+TITLE: Podešavanja · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Podešavanja"]
+--- text
+Poslednja izmena: 30.09.2026.
+Firma
+Radno vreme
+Dostava i plaćanje
+Obaveštenja
+SEO
+Praćenje
+Oglasne strane
+Pravni tekstovi
+Funkcije
+Opasna zona
+Obaveštenja osoblju
+E-poruke stižu na ove adrese. Dok slanje e-pošte nije podešeno, sve poruke su u delu E-pošta.
+Adrese osoblja
+Razdvojite zarezom.
+Podsetnik posle
+min
+Radnog vremena bez odgovora na upit ili potvrde porudžbine.
+Dnevni pregled u
+00:00
+01:00
+02:00
+03:00
+04:00
+05:00
+06:00
+07:00
+08:00
+09:00
+10:00
+11:00
+12:00
+13:00
+14:00
+15:00
+16:00
+17:00
+18:00
+19:00
+20:00
+21:00
+22:00
+23:00
+Dnevni pregled e-poštom
+E-pošta kad artikla ima malo na stanju
+Slanje e-pošte
+Režim važi za sve poruke. Sadržaj i izgled poruka vidite u delu E-pošta → Šabloni.
+Samo zapis— sada aktivno
+Poruke se samo beleže u E-pošti; ništa ne odlazi. Bezbedno dok firma, domen i ključ nisu spremni.
+Test
+Poruke idu kroz Resend, ali stižu na delivered@resend.dev — provera da slanje radi.
+Potreban je RESEND_API_KEY.
+Uživo
+Poruke stižu kupcima, majstorima i osoblju. Potrebni su ključ, verifikovan domen i adresa pošiljaoca.
+Potreban je RESEND_API_KEY.
+Ime pošiljaoca
+Prazno: SKLOP.
+Odgovori stižu na
+Prazno: e-pošta firme iz podešavanja.
+Adresa za Resend webhook (status isporuke): https://tame-impala-374.eu-west-1.convex.site/resend-webhook
+Moja obaveštenja
+Šta vi dobijate — važi samo za vaš nalog.
+Obaveštenja po događaju i kanalu
+DOGAĐAJ	U APLIKACIJI	E-POŠTA
+Nova porudžbina (i prihvaćena ponuda)
+Nova porudžbina (i prihvaćena ponuda), u aplikaciji
+Nova porudžbina (i prihvaćena ponuda), e-pošta
+Novi upit, zahtev za novu ponudu
+Novi upit, zahtev za novu ponudu, u aplikaciji
+Novi upit, zahtev za novu ponudu, e-pošta
+Nova registracija majstora
+Nova registracija majstora, u aplikaciji
+Nova registracija majstora, e-pošta
+Malo na stanju (e-pošta najviše jednom na sat)
+Malo na stanju (e-pošta najviše jednom na sat), u aplikaciji
+Malo na stanju (e-pošta najviše jednom na sat), e-pošta
+Podsetnici za neodgovorene
+Podsetnici za neodgovorene, u aplikaciji
+Podsetnici za neodgovorene, e-pošta
+Dnevni pregled	—
+Dnevni pregled, e-pošta
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Podešavanja | aria-label=Režim slanja | aria-label=Ne postoji u aplikaciji | aria-label=Obaveštenja (F8)
+
+======== /admin/podesavanja?tab=seo [200]
+TITLE: Podešavanja · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Podešavanja"]
+--- text
+Poslednja izmena: 30.09.2026.
+Firma
+Radno vreme
+Dostava i plaćanje
+Obaveštenja
+SEO
+Praćenje
+Oglasne strane
+Pravni tekstovi
+Funkcije
+Opasna zona
+SEO podrazumevano
+Važi za stranice bez sopstvenog naslova i opisa.
+Dodatak naslovu
+Dodaje se iza naslova svake stranice, npr. „ | SKLOP“.
+Najviše indeksiranih odredišnih strana
+Podrazumevani opis
+114 / 170
+114/155
+Najmanje artikala za indeksiranu odredišnu stranu
+Kategorija × marka
+Kategorija × model
+Stranica generacije
+Pretrage koje smeju u Google indeks
+Jedna po redu, npr. „kocione plocice golf 7“. Sve ostale stranice pretrage ostaju van indeksa.
+Odredišne strane kategorija × vozilo
+Preračunaj sada
+U pretrazi: 50 od 816 mogućih (ograničenje 300). Strana ulazi u indeks kad ima dovoljno artikala, bar 2 na stanju i više proizvođača ili generacija; računa se svakog sata (poslednja promena 30.09. 15:25).
+premalo artikala: 766
+/delovi/filteri/skoda
+15 art. · 12 na stanju
+/delovi/filteri/volkswagen
+15 art. · 12 na stanju
+/delovi/filteri/seat
+14 art. · 11 na stanju
+/delovi/filteri/audi
+13 art. · 10 na stanju
+/delovi/filteri/seat/leon
+12 art. · 10 na stanju
+/delovi/filteri/skoda/octavia
+12 art. · 10 na stanju
+/delovi/filteri/audi/a3
+12 art. · 10 na stanju
+/delovi/filteri/volkswagen/golf
+12 art. · 10 na stanju
+/delovi/filteri/skoda/superb
+10 art. · 8 na stanju
+/delovi/filteri/volkswagen/tiguan
+10 art. · 8 na stanju
+/delovi/filteri/volkswagen/touran
+10 art. · 8 na stanju
+/delovi/filteri/volkswagen/passat
+10 art. · 8 na stanju
+/delovi/kocione-plocice/skoda
+10 art. · 8 na stanju
+/delovi/kocione-plocice/volkswagen
+10 art. · 8 na stanju
+/delovi/filteri/volkswagen/caddy
+8 art. · 7 na stanju
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Podešavanja | aria-label=U pretrazi | aria-label=Obaveštenja (F8)
+
+======== /admin/podesavanja?tab=pracenje [200]
+TITLE: Podešavanja · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Podešavanja"]
+--- text
+Poslednja izmena: 30.09.2026.
+Firma
+Radno vreme
+Dostava i plaćanje
+Obaveštenja
+SEO
+Praćenje
+Oglasne strane
+Pravni tekstovi
+Funkcije
+Opasna zona
+Praćenje i oglasi
+Sve je isključeno dok je polje prazno. Kodovi se učitavaju tek kad posetilac pristane na kolačiće.
+Google Analytics 4 (Measurement ID)
+Google Ads (Conversion ID)
+Google Ads oznaka: porudžbina
+Google Ads oznaka: upit
+Google Ads oznaka: registracija majstora
+Naziv konverzije za offline uvoz
+Meta Pixel ID
+Meta test event kod
+Samo za proveru u Events Manageru; obrišite posle testa.
+Meta Conversions API (sa servera)
+Traži pristupni token u podešavanjima servera (vidi uputstvo za pokretanje).
+Status servera i adrese za oglasne naloge
+Meta Conversions API token nije podešen — slanje sa servera ne radi dok se ne unese (uputstvo: ADS-PLAYBOOK).
+Trenutno osvežavanje sajta posle izmena kataloga nije uključeno (lokalni rad) — strane se osvežavaju same u roku od 5–60 minuta.
+Mapa sajta (Search Console)
+/sitemap.xml
+Google Merchant Center (XML)
+/feeds/google-merchant.xml
+Meta katalog (CSV)
+/feeds/meta-catalog.csv
+robots.txt
+/robots.txt
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Podešavanja | placeholder=G-XXXXXXXXXX | placeholder=AW-123456789 | aria-label=Obaveštenja (F8)
+
+======== /admin/podesavanja?tab=pravni-tekstovi [200]
+TITLE: Podešavanja · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Podešavanja"]
+--- text
+Poslednja izmena: 30.09.2026.
+Firma
+Radno vreme
+Dostava i plaćanje
+Obaveštenja
+SEO
+Praćenje
+Oglasne strane
+Pravni tekstovi
+Funkcije
+Opasna zona
+Stranice
+Dostava i plaćanje
+v1 · čeka pravnika
+Kolačići
+v1 · čeka pravnika
+Kontakt
+v1 · pregledano
+O nama
+v1 · pregledano
+Politika privatnosti
+v1 · čeka pravnika
+Reklamacije i povrat
+v1 · čeka pravnika
+Uslovi korišćenja i kupovine
+v1 · čeka pravnika
+Dostava i plaćanje
+ČEKA PREGLED PRAVNIKA
+Naslov
+Tekst (Markdown)
+## naslov, - lista, **podebljano**, [link](/putanja). {{firma.naziv}} i slično se popunjava iz podešavanja.
+Na sajtu nema plaćanja karticom. Porudžbinu šaljete bez plaćanja, a mi je potvrđujemo telefonom ili e-poštom pre slanja.
+Načini dostave
+Lično preuzimanje u radnji, bez troška. Javljamo vam kad je deo spreman.
+Kurirska služba na adresu u Srbiji: 450 RSD. Dostava je besplatna za porudžbine iznad 10.000 RSD.
+Porudžbine potvrđene radnim danom do 14 časova šaljemo istog dana, ako je deo na stanju. Rok isporuke kurirske službe je obično 1–2 radna dana. Za delove „po porudžbini“ rok piše na stranici artikla i u potvrdi porudžbine.
+Načini plaćanja
+Pouzećem — plaćate kuriru gotovinom pri preuzimanju paketa.
+Gotovinom ili karticom pri preuzimanju u radnji.
+Virmanom uz predračun — za firme. Predračun šaljemo posle potvrde, a deo rezervišemo do uplate.
+Odloženo plaćanje — samo za majstore kojima je ta opcija odobrena, po dogovorenom roku.
+Cene
+Sve cene na sajtu su u dinarima (RSD) i uključuju PDV 20 %. Cena važi u trenutku slanja porudžbine; ako se u međuvremenu promeni, pre slanja vidite obaveštenje u korpi.
+Pregled paketa
+Pri preuzimanju od kurira pregledajte paket. Ako je oštećen, zapišite to sa kurirom i javite nam se istog dana.
+Objavljeno
+Pravnik je pregledao ovu verziju
+Verzije pravnih dokumenata
+Datum verzije se čuva uz svaku saglasnost kupca. Promenite ga kad se tekst suštinski izmeni.
+Uslovi korišćenja
+Politika privatnosti
+Kolačići
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Podešavanja | aria-label=Pregled stranice | aria-label=Obaveštenja (F8)
+
+======== /admin/podesavanja?tab=funkcije [200]
+TITLE: Podešavanja · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Podešavanja"]
+--- text
+Poslednja izmena: 30.09.2026.
+Firma
+Radno vreme
+Dostava i plaćanje
+Obaveštenja
+SEO
+Praćenje
+Oglasne strane
+Pravni tekstovi
+Funkcije
+Opasna zona
+Funkcije
+Uključivanje i isključivanje delova sajta bez izmene koda.
+Cene vidljive svima
+Isključeno: cene vide samo prijavljeni kupci i majstori.
+Poručivanje bez naloga
+Kupac može da poruči bez registracije.
+„Javi mi kad stigne“
+Prijava za obaveštenje kad artikal stigne.
+Registracija majstora
+Forma na /za-majstore prima nove servise.
+Brza porudžbina majstora
+Unos liste OEM brojeva u portalu.
+3D automobil na početnoj
+Isključeno: samo statična slika (brže na slabim uređajima).
+Odredišne strane po generaciji
+Dodatne stranice kategorija × generacija (kad ima dovoljno artikala).
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Podešavanja | aria-label=Obaveštenja (F8)
+
+======== /admin/podesavanja?tab=oglasne-strane [200]
+TITLE: Podešavanja · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Podešavanja"]
+--- text
+Poslednja izmena: 30.09.2026.
+Firma
+Radno vreme
+Dostava i plaćanje
+Obaveštenja
+SEO
+Praćenje
+Oglasne strane
+Pravni tekstovi
+Funkcije
+Opasna zona
+Oglasne strane (/ponuda/…)
+Nova strana
+Odredišne strane za oglase: naslov ponavlja obećanje iz oglasa, ispod su izabrani artikli (ili kategorija za izabrano vozilo), telefon, Viber i upit. Po pravilu nisu u Google pretrazi, da ne takmiče sa stranama kategorija. Izmena je vidljiva za najviše 5 minuta.
+Kočione pločice za VW Golf — proverene po OEM broju
+/ponuda/kocione-plocice-golf · Kočione pločice · Volkswagen Golf
+AKTIVNA
+Otvori
+Izmeni
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Podešavanja | aria-label=Obaveštenja (F8)
+
+======== /admin/podesavanja?tab=opasna-zona [200]
+TITLE: Podešavanja · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Podešavanja"]
+--- text
+Poslednja izmena: 30.09.2026.
+Firma
+Radno vreme
+Dostava i plaćanje
+Obaveštenja
+SEO
+Praćenje
+Oglasne strane
+Pravni tekstovi
+Funkcije
+Opasna zona
+Obriši demo podatke
+Briše sve probne artikle (šifre DEMO-), porudžbine, upite, naloge i majstore označene kao demo. Marke, modeli, kategorije i podešavanja ostaju. Radnja se ne može poništiti.
+Artikli
+157
+8
+4
+Nalozi
+2
+1
+Obriši demo podatke
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Podešavanja | aria-label=Obaveštenja (F8)
+
+======== /admin/porudzbine/SK-2026-000092 [200]
+TITLE: SK-2026-000092 · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Porudžbina\nSK-2026-000092"]
+--- text
+SK-2026-000092
+Porudžbina
+SK-2026-000092
+NOVA
+Primljena 30.09. 15:38 · Sajt
+Predračun
+Otpremnica
+Promeni status
+Potvrdi
+Stavke
+Izmeni stavke
+Stavke porudžbine SK-2026-000092
+ARTIKAL	KOL.	CENA	RABAT	IZNOS
+Kočioni disk prednji 276 × 24 mm
+DEMO-0004 · OEM 5Q0 615 505 R · Febi Bilstein
+Bilo na stanju · sada 5 kom.
+1
+4.690 RSD
+—	4.690 RSD
+Artikli
+4.690 RSD
+Dostava
+450 RSD
+Ukupno sa PDV-om
+5.140 RSD
+od toga PDV
+856,67 RSD
+Napomena
+Nova napomena
+0 / 1.000
+Interna napomena vidi samo osoblje, osim ako je označeno drugačije.
+Vidljivo kupcu na stranici porudžbine
+Dodaj napomenu
+Istorija
+30.09. 15:38
+E-pošta zabeležena (nije poslata, režim log): Porudžbina SK-2026-000092 je primljena
+Sistem
+30.09. 15:38
+Nova — Porudžbina je primljena.
+Admin Test audit21 · Kupac
+30.09. 15:38
+Porudžbina SK-2026-000092 je primljena
+ZABELEŽENO
+30.09. 15:38
+Nova porudžbina SK-2026-000092 — 5.140 RSD
+ZABELEŽENO
+Kupac
+Ime
+Admin Test audit21
+Tip
+Gost
+Telefon
++381 64 333 4455
+admin-e2e-audit21@primer.rs
+Pozovi
+Viber
+WhatsApp
+Dostava
+Upiši broj pošiljke
+Način
+Kurirska služba
+Cena
+450 RSD
+Adresa
+Test ulica 5, 11000 Beograd
+Plaćanje
+Označi kao plaćeno
+Način
+Pouzećem
+Status
+NIJE PLAĆENO
+Poziv na broj
+2026000092
+Izvor
+Bez podataka o izvoru (direktan dolazak ili stari pregledač).
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Kupac, dostava i plaćanje | aria-label=Obaveštenja (F8)
+
+======== /admin/porudzbine/SK-2026-000092/predracun [200]
+TITLE: Predračun · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["PREDRAČUN"]
+--- text
+Nazad
+Štampaj
+Podaci o firmi nisu popunjeni: pun naziv firme, PIB, adresa sedišta, telefon, tekući račun. Predračun, otpremnica i podnožje sajta ih prikazuju. Popuni u podešavanjima
+PREDRAČUN
+SK-2026-000092
+Datum: 30.09.2026.
+Porudžbina od 30.09.2026.
+KUPAC
+Admin Test audit21
++381 64 333 4455 · admin-e2e-audit21@primer.rs
+UPLATA
+Poziv na broj: 2026000092
+Način plaćanja: Pouzećem
+R. BR.	ŠIFRA	NAZIV	KOL.	CENA SA PDV	IZNOS
+1.	DEMO-0004	Kočioni disk prednji 276 × 24 mm
+Febi Bilstein · OEM 5Q0 615 505 R
+1	4.690 RSD	4.690 RSD
+Dostava — Kurirska služba	450 RSD
+Osnovica
+4.283,33 RSD
+PDV 20 %
+856,67 RSD
+Za uplatu
+5.140 RSD
+Predračun nije fiskalni račun. Robu rezervišemo do uplate; račun izdajemo pri isporuci.
+--- attrs
+aria-label=Obaveštenja (F8)
+
+======== /admin/porudzbine/SK-2026-000092/otpremnica [200]
+TITLE: Otpremnica · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["OTPREMNICA"]
+--- text
+Nazad
+Štampaj
+Podaci o firmi nisu popunjeni: pun naziv firme, PIB, adresa sedišta, telefon. Predračun, otpremnica i podnožje sajta ih prikazuju. Popuni u podešavanjima
+OTPREMNICA
+SK-2026-000092
+Datum: 30.09.2026.
+Porudžbina od 30.09.2026.
+PRIMALAC
+Admin Test audit21
++381 64 333 4455 · admin-e2e-audit21@primer.rs
+ISPORUKA
+Kurirska služba
+Test ulica 5, 11000 Beograd
+Plaćanje: Pouzećem
+R. BR.	ŠIFRA	OEM	NAZIV	KOL.	IZDATO
+1.	DEMO-0004	5Q0 615 505 R	Kočioni disk prednji 276 × 24 mm
+Febi Bilstein
+1
+Ukupno komada: 1
+Robu izdao
+Robu primio
+--- attrs
+aria-label=Obaveštenja (F8)
+
+======== /admin/upiti/UP-2026-000054 [200]
+TITLE: UP-2026-000054 · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Upit\nUP-2026-000054"]
+--- text
+41
+UP-2026-000054
+Upit
+UP-2026-000054
+U OBRADI
+Traži deo · primljen 30.09. 15:38
+Preuzmi upit
+Zatvori upit
+Napravi ponudu
+Upit
+Treba mi set kvačila za Golf 7 2.0 TDI (test audit21).
+Istorija
+30.09. 16:17
+U obradi
+30.09. 15:38
+Upit je primljen.
+Upit Test audit21 · Kupac
+Kontakt
+Ime
+Upit Test audit21
+Telefon
++381 64 333 4455
+Želi odgovor
+Telefonom
+Pozovi
+Viber
+WhatsApp
+Dodela
+Radi na upitu
+Niko
+Interna beleška
+0 / 1.000
+Dodaj belešku
+Izvor
+Bez podataka o izvoru (direktan dolazak ili stari pregledač).
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Kontakt i dodela | aria-label=Nova beleška | aria-label=Obaveštenja (F8)
+
+======== /admin/upiti/UP-2026-000003 [200]
+TITLE: UP-2026-000003 · Administracija
+DESC: undefined
+OG: undefined | undefined
+H1: ["Upit\nUP-2026-000003"]
+--- text
+41
+UP-2026-000003
+Upit
+UP-2026-000003
+PONUDA POSLATA
+DEMO
+Nije pronađeno · primljen 29.09. 16:31
+Preuzmi upit
+Zatvori upit
+Pretvori u porudžbinu
+Nova verzija ponude
+Upit
+Nisam našao nosač motora za Tiguan 2.0 TDI 2014.
+Ponude
+Verzija 1
+Poslata 29.09. 16:31 · važi do 06.10.2026.
+15.481 RSD
+Stavke ponude, verzija 1
+Nosač motora desni, hidraulični
+DEMO-0078 · Lemförder · na stanju
+1 ×	8.991 RSD
+Nosač menjača, po porudžbini
+po porudžbini, 3 d
+1 ×	6.490 RSD
+Istorija
+29.09. 16:31
+Ponuda v1 poslata
+Sistem
+29.09. 16:31
+Upit je primljen.
+Sistem
+Kontakt
+Ime
+Demo Majstor
+Telefon
++381 64 000 0001
+majstor.demo@sklop.test
+Želi odgovor
+Telefonom
+Pozovi
+Viber
+WhatsApp
+Dodela
+Radi na upitu
+Niko
+Interna beleška
+0 / 1.000
+Dodaj belešku
+Izvor
+Bez podataka o izvoru (direktan dolazak ili stari pregledač).
+--- attrs
+aria-label=Administracija | aria-label=SKLOP — početna | aria-label=Pregled | aria-label=Meni administracije | aria-label=Putanja | aria-label=Pretraga | aria-label=Obaveštenja, nepročitano: 100 | aria-label=Nalog: Vlasnik | aria-label=Kontakt i dodela | aria-label=Nova beleška | aria-label=Obaveštenja (F8)

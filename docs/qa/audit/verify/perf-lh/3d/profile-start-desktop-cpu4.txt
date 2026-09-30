@@ -1,0 +1,24 @@
+
+[desktop cpu4 run 0] busy stretch at +1003 ms: 558 ms
+  self: 367 ms getProgramParameter | 17 ms (anon) 3loc6izf4ows2.js:353:137546 | 12 ms (anon) 3loc6izf4ows2.js:353:110807 | 7 ms parse 3loc6izf4ows2.js:353:108166 | 6 ms (anon) 3loc6izf4ows2.js:353:109695 | 5 ms parse 3loc6izf4ows2.js:353:64521 | 4 ms ed 0i-5efvfrwjiv.js:1:84136 | 3 ms fetch
+  incl: 429 ms _fromTexture 3loc6izf4ows2.js:1:177308 | 429 ms fromEquirectangular 3loc6izf4ows2.js:1:176197 | 417 ms render 3loc6izf4ows2.js:342:46299 | 400 ms renderBufferDirect 3loc6izf4ows2.js:342:30244 | 378 ms _applyPMREM 3loc6izf4ows2.js:165:1706 | 378 ms _applyGGXFilter 3loc6izf4ows2.js:165:1868 | 370 ms getUniforms 3loc6izf4ows2.js:318:2279 | 367 ms getProgramParameter | 44 ms _textureToCubeUV 3loc6izf4ows2.js:165:1203 | 33 ms parse 3loc6izf4ows2.js:353:108166 | 25 ms loadScene 3loc6izf4ows2.js:353:103366 | 25 ms getDependency 3loc6izf4ows2.js:353:87043 | 25 ms getDependencies 3loc6izf4ows2.js:353:88020 | 24 ms _invokeOne 3loc6izf4ows2.js:353:86774 | 24 ms _loadNodeShallow 3loc6izf4ows2.js:353:102117 | 24 ms loadNode 3loc6izf4ows2.js:353:101459
+
+[desktop cpu4 run 0] busy stretch at +1632 ms: 357 ms
+  self: 46 ms texSubImage2D | 45 ms getProgramParameter | 22 ms e5 3loc6izf4ows2.js:342:42921 | 16 ms rE 0i-5efvfrwjiv.js:1:224847 | 15 ms shaderSource | 13 ms getParameters 3loc6izf4ows2.js:318:4231 | 11 ms tr 3loc6izf4ows2.js:296:10779 | 8 ms (garbage collector)
+  incl: 159 ms render 3loc6izf4ows2.js:342:46299 | 122 ms renderBufferDirect 3loc6izf4ows2.js:342:30244 | 107 ms traverse 0i-5efvfrwjiv.js:1:58737 | 107 ms compileAsync 3loc6izf4ows2.js:342:38716 | 106 ms compile 3loc6izf4ows2.js:342:37858 | 52 ms getUniforms 3loc6izf4ows2.js:318:2279 | 49 ms initTexture 3loc6izf4ows2.js:342:57019 | 46 ms texSubImage2D | 46 ms texSubImage2D 3loc6izf4ows2.js:318:42185 | 45 ms getProgramParameter | 40 ms acquireProgram 3loc6izf4ows2.js:318:14338 | 24 ms getUniforms 3loc6izf4ows2.js:318:14212 | 22 ms update 3loc6izf4ows2.js:1:782 | 21 ms P.<computed> | 21 ms update 3loc6izf4ows2.js:250:3758 | 21 ms update 3loc6izf4ows2.js:250:6867
+
+[desktop cpu4 run 0] busy stretch at +2156 ms: 327 ms
+  self: 149 ms sN 0i-5efvfrwjiv.js:1:183806 | 23 ms (anon) 0nvty3axw6gpe.js:503:6395 | 23 ms er 0nvty3axw6gpe.js:503:969 | 22 ms (anon) 3loc6izf4ows2.js:451:4341 | 19 ms init 0nvty3axw6gpe.js:503:3663 | 16 ms computePrimitiveBounds 0nvty3axw6gpe.js:503:37953 | 9 ms F 0i-5efvfrwjiv.js:1:3740 | 8 ms getX 0i-5efvfrwjiv.js:1:103678
+  incl: 114 ms init 0nvty3axw6gpe.js:503:14681 | 112 ms init 0nvty3axw6gpe.js:503:3663 | 27 ms computePrimitiveBounds 0nvty3axw6gpe.js:503:37953 | 14 ms getX 0i-5efvfrwjiv.js:1:103678 | 11 ms fromBufferAttribute 0i-5efvfrwjiv.js:1:19346 | 5 ms getZ 0i-5efvfrwjiv.js:1:103896 | 4 ms getY 0i-5efvfrwjiv.js:1:103786 | 2 ms getNormal 0i-5efvfrwjiv.js:1:74974 | 2 ms getNormal 0i-5efvfrwjiv.js:1:76711 | 1 ms lengthSq 0i-5efvfrwjiv.js:1:16953 | 1 ms requestIdleCallback | 1 ms window.setTimeout.e.timeRemaining 3loc6izf4ows2.js:353:60957 | 1 ms requestAnimationFrame | 1 ms tick | 1 ms getRootRanges 0nvty3axw6gpe.js:503:15099
+
+[desktop cpu4 run 0] busy stretch at +566 ms: 178 ms
+  self: 127 ms H turbopack-324-cyruufpbq.js:1:7181 | 17 ms (anon) 3loc6izf4ows2.js:1:118 | 6 ms validate | 6 ms c turbopack-324-cyruufpbq.js:1:813 | 4 ms (anon) 0i-5efvfrwjiv.js:1:119 | 2 ms rF 0i-5efvfrwjiv.js:1:225250 | 2 ms tE 0i-5efvfrwjiv.js:1:54010 | 2 ms i 3loc6izf4ows2.js:353:135218
+  incl: 6 ms validate | 1 ms nV.exports 3loc6izf4ows2.js:342:68515
+
+[desktop cpu4 run 0] busy stretch at +2680 ms: 145 ms
+  self: 49 ms sN 0i-5efvfrwjiv.js:1:183806 | 21 ms getProgramParameter | 3 ms uniformMatrix4fv | 3 ms er 0nvty3axw6gpe.js:503:969 | 3 ms e8 3loc6izf4ows2.js:342:42372 | 3 ms (garbage collector) | 3 ms e1 3loc6izf4ows2.js:342:39074 | 2 ms updateMatrixWorld 0i-5efvfrwjiv.js:1:59317
+  incl: 60 ms render 3loc6izf4ows2.js:342:46299 | 41 ms renderBufferDirect 3loc6izf4ows2.js:342:30244 | 21 ms getProgramParameter | 21 ms getUniforms 3loc6izf4ows2.js:318:2279 | 7 ms init 0nvty3axw6gpe.js:503:3663 | 7 ms init 0nvty3axw6gpe.js:503:14681 | 7 ms intersectsObject 0i-5efvfrwjiv.js:1:149747 | 6 ms computeBoundingSphere 0i-5efvfrwjiv.js:1:94095 | 6 ms intersectsFrustum 0i-5efvfrwjiv.js:1:169705 | 5 ms setup 3loc6izf4ows2.js:1:168195 | 3 ms P.<computed> | 3 ms acquireProgram 3loc6izf4ows2.js:318:14338 | 3 ms computePrimitiveBounds 0nvty3axw6gpe.js:503:37953
+
+[desktop cpu4 run 0] busy stretch at +839 ms: 130 ms
+  self: 9 ms eV 3loc6izf4ows2.js:342:25251 | 9 ms (garbage collector) | 6 ms getContext | 5 ms getExtension | 4 ms setSize 3loc6izf4ows2.js:342:27348 | 4 ms d 3loc6izf4ows2.js:353:48505 | 4 ms (anon) 3loc6izf4ows2.js:353:45393 | 3 ms useWorkers 3loc6izf4ows2.js:353:136380
+  incl: 58 ms render 3loc6izf4ows2.js:353:48806 | 52 ms configure 3loc6izf4ows2.js:353:44839 | 7 ms useWorkers 3loc6izf4ows2.js:353:136380 | 6 ms getContext | 6 ms HTMLCanvasElement.getContext

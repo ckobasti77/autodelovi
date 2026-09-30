@@ -1,0 +1,13 @@
+== korpa: RSC 57.2 KB, rows 68
+   boundary roots {"forbidden":["20","39"],"unauthorized":["21","3a"],"notFound":[],"notFoundStyles":[],"errorComponent":[],"globalError":[]}
+   rows reachable from forbidden/unauthorized slots: 4, 3.5 KB
+   …ned","templateScripts":"$undefined","notFound":"$undefined","forbidden":
+   …null]}]}],"$L1b","$L1c","$L1d","$L1e"]}],"$L1f"]}]]}]}],[]],"forbidden":
+   …33","$L34","$L35"]}],"$L36"]}]]}]}],"$L37"]}],"$L38"]}],[]],"forbidden":
+   rows mentioning 404/not-found: 3,2a; closure 50 rows, 42.4 KB
+== home: RSC 124.8 KB, rows 109
+   boundary roots {"forbidden":["1f","37"],"unauthorized":["20","38"],"notFound":[],"notFoundStyles":[],"errorComponent":[],"globalError":[]}
+   rows reachable from forbidden/unauthorized slots: 4, 3.5 KB
+   …null]}]}],"$L1a","$L1b","$L1c","$L1d"]}],"$L1e"]}]]}]}],[]],"forbidden":
+   …31","$L32","$L33"]}],"$L34"]}]]}]}],"$L35"]}],"$L36"]}],[]],"forbidden":
+   rows mentioning 404/not-found: 3,28; closure 50 rows, 42.6 KB

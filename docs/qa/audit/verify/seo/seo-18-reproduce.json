@@ -1,0 +1,149 @@
+{
+ "base": "http://localhost:3100",
+ "at": "2026-09-30T14:58:07.088Z",
+ "owner": [
+  {
+   "path": "/admin",
+   "status": 200,
+   "contentType": "text/html",
+   "xRobots": null,
+   "robotsMeta": "noindex, nofollow"
+  },
+  {
+   "path": "/admin/porudzbine",
+   "status": 200,
+   "contentType": "text/html",
+   "xRobots": null,
+   "robotsMeta": "noindex, nofollow"
+  },
+  {
+   "path": "/admin/porudzbine/SK-2026-000092",
+   "status": 200,
+   "contentType": "text/html",
+   "xRobots": null,
+   "robotsMeta": "noindex, nofollow"
+  },
+  {
+   "path": "/admin/porudzbine/SK-2026-000092/predracun",
+   "status": 200,
+   "contentType": "text/html",
+   "xRobots": null,
+   "robotsMeta": "noindex, nofollow"
+  },
+  {
+   "path": "/admin/porudzbine/SK-2026-000092/otpremnica",
+   "status": 200,
+   "contentType": "text/html",
+   "xRobots": null,
+   "robotsMeta": "noindex, nofollow"
+  },
+  {
+   "path": "/admin/upiti",
+   "status": 200,
+   "contentType": "text/html",
+   "xRobots": null,
+   "robotsMeta": "noindex, nofollow"
+  },
+  {
+   "path": "/admin/proizvodi",
+   "status": 200,
+   "contentType": "text/html",
+   "xRobots": null,
+   "robotsMeta": "noindex, nofollow"
+  },
+  {
+   "path": "/admin/uvoz",
+   "status": 200,
+   "contentType": "text/html",
+   "xRobots": null,
+   "robotsMeta": "noindex, nofollow"
+  },
+  {
+   "path": "/admin/izvori",
+   "status": 200,
+   "contentType": "text/html",
+   "xRobots": null,
+   "robotsMeta": "noindex, nofollow"
+  },
+  {
+   "path": "/admin/podesavanja?tab=seo",
+   "status": 200,
+   "contentType": "text/html",
+   "xRobots": null,
+   "robotsMeta": "noindex, nofollow"
+  },
+  {
+   "path": "/admin/privatnost",
+   "status": 200,
+   "contentType": "text/html",
+   "xRobots": null,
+   "robotsMeta": "noindex, nofollow"
+  },
+  {
+   "path": "/admin/pozivnica/abc",
+   "status": 200,
+   "contentType": "text/html",
+   "xRobots": null,
+   "robotsMeta": "noindex, nofollow"
+  },
+  {
+   "path": "/admin/izvoz/kupci.csv",
+   "status": 200,
+   "contentType": "text/csv",
+   "xRobots": "noindex, nofollow",
+   "robotsMeta": null
+  },
+  {
+   "path": "/nalog",
+   "status": 200,
+   "contentType": "text/html",
+   "xRobots": null,
+   "robotsMeta": "noindex, follow"
+  },
+  {
+   "path": "/styleguide",
+   "status": 200,
+   "contentType": "text/html",
+   "xRobots": "noindex, nofollow",
+   "robotsMeta": "noindex, nofollow"
+  }
+ ],
+ "anonymous": [
+  {
+   "path": "/admin",
+   "status": 307,
+   "location": "/prijava?next=%2Fadmin",
+   "xRobots": null,
+   "robotsMeta": null
+  },
+  {
+   "path": "/admin/porudzbine",
+   "status": 307,
+   "location": "/prijava?next=%2Fadmin%2Fporudzbine",
+   "xRobots": null,
+   "robotsMeta": null
+  },
+  {
+   "path": "/admin/pozivnica/abc",
+   "status": 200,
+   "location": null,
+   "xRobots": null,
+   "robotsMeta": "noindex, nofollow"
+  },
+  {
+   "path": "/admin/pozivnica/xyz123456789",
+   "status": 200,
+   "location": null,
+   "xRobots": null,
+   "robotsMeta": "noindex, nofollow"
+  },
+  {
+   "path": "/styleguide",
+   "status": 200,
+   "location": null,
+   "xRobots": "noindex, nofollow",
+   "robotsMeta": "noindex, nofollow"
+  }
+ ],
+ "robotsTxt": "User-Agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api/\nDisallow: /nalog\nDisallow: /majstor\nDisallow: /styleguide\n\nSitemap: http://localhost:3000/sitemap.xml\n"
+}

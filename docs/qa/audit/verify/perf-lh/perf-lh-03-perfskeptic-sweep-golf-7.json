@@ -1,0 +1,1131 @@
+{
+ "base": "http://localhost:3100",
+ "note": "font-swap emulation via next/font fallback faces; scroll 0; no throttling",
+ "rows": [
+  {
+   "path": "/vozila/volkswagen/golf/golf-7",
+   "width": 360,
+   "height": 823,
+   "engines": 9,
+   "codes": [
+    "CBZB",
+    "CHZD, DKLA",
+    "CZDA",
+    "DADA, DPCA",
+    "CHHB",
+    "CAYC, CLHA",
+    "CRLB, DFGA",
+    "CUAA, DFHA"
+   ],
+   "vin": "5G, AU",
+   "monoLoaded": true,
+   "mono": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 810,
+     "h1H": 58,
+     "pH": 50,
+     "vw": 360
+    },
+    "loaded": {
+     "navH": 401,
+     "catsTop": 810,
+     "h1H": 58,
+     "pH": 50,
+     "vw": 360
+    },
+    "dCats": 0,
+    "cls": 0.0263,
+    "top": [
+     "#text. 240->215",
+     "#text. 238->238"
+    ]
+   },
+   "d600": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 810,
+     "h1H": 58,
+     "pH": 50,
+     "vw": 360
+    },
+    "loaded": {
+     "navH": 401,
+     "catsTop": 810,
+     "h1H": 58,
+     "pH": 50,
+     "vw": 360
+    },
+    "dCats": 0,
+    "cls": 0.0006,
+    "top": [
+     "#text. 140->140",
+     "#text. 169->169",
+     "span.rw 166->169"
+    ]
+   },
+   "both": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 810,
+     "h1H": 58,
+     "pH": 50,
+     "vw": 360
+    },
+    "loaded": {
+     "navH": 401,
+     "catsTop": 810,
+     "h1H": 58,
+     "pH": 50,
+     "vw": 360
+    },
+    "dCats": 0,
+    "cls": 0.0504,
+    "top": [
+     "#text. 240->215",
+     "#text. 140->140",
+     "#text. 169->169"
+    ]
+   }
+  },
+  {
+   "path": "/vozila/volkswagen/golf/golf-7",
+   "width": 375,
+   "height": 823,
+   "engines": 9,
+   "codes": [
+    "CBZB",
+    "CHZD, DKLA",
+    "CZDA",
+    "DADA, DPCA",
+    "CHHB",
+    "CAYC, CLHA",
+    "CRLB, DFGA",
+    "CUAA, DFHA"
+   ],
+   "vin": "5G, AU",
+   "monoLoaded": true,
+   "mono": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 810,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 375
+    },
+    "loaded": {
+     "navH": 401,
+     "catsTop": 810,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 375
+    },
+    "dCats": 0,
+    "cls": 0.0003,
+    "top": [
+     "#text. 238->238"
+    ]
+   },
+   "d600": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 810,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 375
+    },
+    "loaded": {
+     "navH": 401,
+     "catsTop": 810,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 375
+    },
+    "dCats": 0,
+    "cls": 0.0006,
+    "top": [
+     "#text. 140->140",
+     "#text. 169->169",
+     "span.rw 166->169"
+    ]
+   },
+   "both": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 810,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 375
+    },
+    "loaded": {
+     "navH": 401,
+     "catsTop": 810,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 375
+    },
+    "dCats": 0,
+    "cls": 0.0011,
+    "top": [
+     "#text. 140->140",
+     "#text. 169->169",
+     "#text. 238->238"
+    ]
+   }
+  },
+  {
+   "path": "/vozila/volkswagen/golf/golf-7",
+   "width": 390,
+   "height": 823,
+   "engines": 9,
+   "codes": [
+    "CBZB",
+    "CHZD, DKLA",
+    "CZDA",
+    "DADA, DPCA",
+    "CHHB",
+    "CAYC, CLHA",
+    "CRLB, DFGA",
+    "CUAA, DFHA"
+   ],
+   "vin": "5G, AU",
+   "monoLoaded": true,
+   "mono": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 811,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 390
+    },
+    "loaded": {
+     "navH": 401,
+     "catsTop": 811,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 390
+    },
+    "dCats": 0,
+    "cls": 0.0008,
+    "top": [
+     "#text. 239->239"
+    ]
+   },
+   "d600": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 811,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 390
+    },
+    "loaded": {
+     "navH": 401,
+     "catsTop": 811,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 390
+    },
+    "dCats": 0,
+    "cls": 0.0006,
+    "top": [
+     "#text. 140->140",
+     "#text. 169->169",
+     "span.rw 166->169"
+    ]
+   },
+   "both": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 811,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 390
+    },
+    "loaded": {
+     "navH": 401,
+     "catsTop": 811,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 390
+    },
+    "dCats": 0,
+    "cls": 0.0035,
+    "top": [
+     "#text. 140->140",
+     "#text. 169->169",
+     "#text. 239->239"
+    ]
+   }
+  },
+  {
+   "path": "/vozila/volkswagen/golf/golf-7",
+   "width": 393,
+   "height": 823,
+   "engines": 9,
+   "codes": [
+    "CBZB",
+    "CHZD, DKLA",
+    "CZDA",
+    "DADA, DPCA",
+    "CHHB",
+    "CAYC, CLHA",
+    "CRLB, DFGA",
+    "CUAA, DFHA"
+   ],
+   "vin": "5G, AU",
+   "monoLoaded": true,
+   "mono": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 811,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 393
+    },
+    "loaded": {
+     "navH": 401,
+     "catsTop": 811,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 393
+    },
+    "dCats": 0,
+    "cls": 0.0167,
+    "top": [
+     "#text. 239->214",
+     "#text. 239->239"
+    ]
+   },
+   "d600": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 811,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 393
+    },
+    "loaded": {
+     "navH": 401,
+     "catsTop": 811,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 393
+    },
+    "dCats": 0,
+    "cls": 0.0006,
+    "top": [
+     "#text. 140->140",
+     "#text. 169->169",
+     "span.rw 166->169"
+    ]
+   },
+   "both": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 811,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 393
+    },
+    "loaded": {
+     "navH": 401,
+     "catsTop": 811,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 393
+    },
+    "dCats": 0,
+    "cls": 0.0432,
+    "top": [
+     "#text. 239->214",
+     "#text. 140->140",
+     "#text. 169->169"
+    ]
+   }
+  },
+  {
+   "path": "/vozila/volkswagen/golf/golf-7",
+   "width": 412,
+   "height": 823,
+   "engines": 9,
+   "codes": [
+    "CBZB",
+    "CHZD, DKLA",
+    "CZDA",
+    "DADA, DPCA",
+    "CHHB",
+    "CAYC, CLHA",
+    "CRLB, DFGA",
+    "CUAA, DFHA"
+   ],
+   "vin": "5G, AU",
+   "monoLoaded": true,
+   "mono": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 811,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 412
+    },
+    "loaded": {
+     "navH": 305,
+     "catsTop": 715,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 412
+    },
+    "dCats": 96,
+    "cls": 0.0814,
+    "top": [
+     "section.mt-12 811->715",
+     "li. 723->627",
+     "li. 675->579"
+    ]
+   },
+   "d600": {
+    "fallback": {
+     "navH": 305,
+     "catsTop": 715,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 412
+    },
+    "loaded": {
+     "navH": 305,
+     "catsTop": 715,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 412
+    },
+    "dCats": 0,
+    "cls": 0.0005,
+    "top": [
+     "#text. 140->140",
+     "#text. 170->170",
+     "span.rw 166->170"
+    ]
+   },
+   "both": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 811,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 412
+    },
+    "loaded": {
+     "navH": 305,
+     "catsTop": 715,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 412
+    },
+    "dCats": 96,
+    "cls": 0.0994,
+    "top": [
+     "section.mt-12 811->715",
+     "li. 723->627",
+     "li. 675->579"
+    ]
+   }
+  },
+  {
+   "path": "/vozila/volkswagen/golf/golf-7",
+   "width": 414,
+   "height": 823,
+   "engines": 9,
+   "codes": [
+    "CBZB",
+    "CHZD, DKLA",
+    "CZDA",
+    "DADA, DPCA",
+    "CHHB",
+    "CAYC, CLHA",
+    "CRLB, DFGA",
+    "CUAA, DFHA"
+   ],
+   "vin": "5G, AU",
+   "monoLoaded": true,
+   "mono": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 811,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 414
+    },
+    "loaded": {
+     "navH": 305,
+     "catsTop": 715,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 414
+    },
+    "dCats": 96,
+    "cls": 0.0809,
+    "top": [
+     "section.mt-12 811->715",
+     "li. 723->627",
+     "li. 675->579"
+    ]
+   },
+   "d600": {
+    "fallback": {
+     "navH": 305,
+     "catsTop": 715,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 414
+    },
+    "loaded": {
+     "navH": 305,
+     "catsTop": 715,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 414
+    },
+    "dCats": 0,
+    "cls": 0.0005,
+    "top": [
+     "#text. 140->140",
+     "#text. 170->170",
+     "span.rw 166->170"
+    ]
+   },
+   "both": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 811,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 414
+    },
+    "loaded": {
+     "navH": 305,
+     "catsTop": 715,
+     "h1H": 59,
+     "pH": 50,
+     "vw": 414
+    },
+    "dCats": 96,
+    "cls": 0.0987,
+    "top": [
+     "section.mt-12 811->715",
+     "li. 723->627",
+     "li. 675->579"
+    ]
+   }
+  },
+  {
+   "path": "/vozila/volkswagen/golf/golf-7",
+   "width": 430,
+   "height": 823,
+   "engines": 9,
+   "codes": [
+    "CBZB",
+    "CHZD, DKLA",
+    "CZDA",
+    "DADA, DPCA",
+    "CHHB",
+    "CAYC, CLHA",
+    "CRLB, DFGA",
+    "CUAA, DFHA"
+   ],
+   "vin": "5G, AU",
+   "monoLoaded": true,
+   "mono": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 812,
+     "h1H": 60,
+     "pH": 50,
+     "vw": 430
+    },
+    "loaded": {
+     "navH": 305,
+     "catsTop": 716,
+     "h1H": 60,
+     "pH": 50,
+     "vw": 430
+    },
+    "dCats": 96,
+    "cls": 0.0791,
+    "top": [
+     "section.mt-12 812->716",
+     "li. 724->628",
+     "li. 676->580"
+    ]
+   },
+   "d600": {
+    "fallback": {
+     "navH": 305,
+     "catsTop": 716,
+     "h1H": 60,
+     "pH": 50,
+     "vw": 430
+    },
+    "loaded": {
+     "navH": 305,
+     "catsTop": 716,
+     "h1H": 60,
+     "pH": 50,
+     "vw": 430
+    },
+    "dCats": 0,
+    "cls": 0.0006,
+    "top": [
+     "#text. 140->140",
+     "#text. 170->170",
+     "span.rw 166->170"
+    ]
+   },
+   "both": {
+    "fallback": {
+     "navH": 401,
+     "catsTop": 812,
+     "h1H": 60,
+     "pH": 50,
+     "vw": 430
+    },
+    "loaded": {
+     "navH": 305,
+     "catsTop": 716,
+     "h1H": 60,
+     "pH": 50,
+     "vw": 430
+    },
+    "dCats": 96,
+    "cls": 0.0971,
+    "top": [
+     "section.mt-12 812->716",
+     "li. 724->628",
+     "li. 676->580"
+    ]
+   }
+  },
+  {
+   "path": "/vozila/volkswagen/golf/golf-7",
+   "width": 768,
+   "height": 940,
+   "engines": 9,
+   "codes": [
+    "CBZB",
+    "CHZD, DKLA",
+    "CZDA",
+    "DADA, DPCA",
+    "CHHB",
+    "CAYC, CLHA",
+    "CRLB, DFGA",
+    "CUAA, DFHA"
+   ],
+   "vin": "5G, AU",
+   "monoLoaded": true,
+   "mono": {
+    "fallback": {
+     "navH": 161,
+     "catsTop": 495,
+     "h1H": 34,
+     "pH": 25,
+     "vw": 768
+    },
+    "loaded": {
+     "navH": 161,
+     "catsTop": 495,
+     "h1H": 34,
+     "pH": 25,
+     "vw": 768
+    },
+    "dCats": 0,
+    "cls": 0.0041,
+    "top": [
+     "#text. 163->163",
+     "li. 359->359",
+     "li. 407->407"
+    ]
+   },
+   "d600": {
+    "fallback": {
+     "navH": 161,
+     "catsTop": 495,
+     "h1H": 34,
+     "pH": 25,
+     "vw": 768
+    },
+    "loaded": {
+     "navH": 161,
+     "catsTop": 495,
+     "h1H": 34,
+     "pH": 25,
+     "vw": 768
+    },
+    "dCats": 0,
+    "cls": 0.0006,
+    "top": [
+     "#text. 113->113",
+     "span.rw 110->113",
+     "span.rw 110->113"
+    ]
+   },
+   "both": {
+    "fallback": {
+     "navH": 161,
+     "catsTop": 495,
+     "h1H": 34,
+     "pH": 25,
+     "vw": 768
+    },
+    "loaded": {
+     "navH": 161,
+     "catsTop": 495,
+     "h1H": 34,
+     "pH": 25,
+     "vw": 768
+    },
+    "dCats": 0,
+    "cls": 0.0059,
+    "top": [
+     "#text. 113->113",
+     "#text. 163->163",
+     "li. 359->359"
+    ]
+   }
+  },
+  {
+   "path": "/vozila/volkswagen/golf/golf-7",
+   "width": 1024,
+   "height": 940,
+   "engines": 9,
+   "codes": [
+    "CBZB",
+    "CHZD, DKLA",
+    "CZDA",
+    "DADA, DPCA",
+    "CHHB",
+    "CAYC, CLHA",
+    "CRLB, DFGA",
+    "CUAA, DFHA"
+   ],
+   "vin": "5G, AU",
+   "monoLoaded": true,
+   "mono": {
+    "fallback": {
+     "navH": 113,
+     "catsTop": 398,
+     "h1H": 37,
+     "pH": 25,
+     "vw": 1024
+    },
+    "loaded": {
+     "navH": 113,
+     "catsTop": 398,
+     "h1H": 37,
+     "pH": 25,
+     "vw": 1024
+    },
+    "dCats": 0,
+    "cls": 0.0048,
+    "top": [
+     "li. 310->310",
+     "#text. 182->182",
+     "li. 262->262"
+    ]
+   },
+   "d600": {
+    "fallback": {
+     "navH": 113,
+     "catsTop": 398,
+     "h1H": 37,
+     "pH": 25,
+     "vw": 1024
+    },
+    "loaded": {
+     "navH": 113,
+     "catsTop": 398,
+     "h1H": 37,
+     "pH": 25,
+     "vw": 1024
+    },
+    "dCats": 0,
+    "cls": 0.0004,
+    "top": [
+     "#text. 130->130",
+     "span.rw 126->130",
+     "span.rw 126->130"
+    ]
+   },
+   "both": {
+    "fallback": {
+     "navH": 113,
+     "catsTop": 398,
+     "h1H": 37,
+     "pH": 25,
+     "vw": 1024
+    },
+    "loaded": {
+     "navH": 113,
+     "catsTop": 398,
+     "h1H": 37,
+     "pH": 25,
+     "vw": 1024
+    },
+    "dCats": 0,
+    "cls": 0.0066,
+    "top": [
+     "#text. 130->130",
+     "li. 310->310",
+     "#text. 182->182"
+    ]
+   }
+  },
+  {
+   "path": "/vozila/volkswagen/golf/golf-7",
+   "width": 1280,
+   "height": 940,
+   "engines": 9,
+   "codes": [
+    "CBZB",
+    "CHZD, DKLA",
+    "CZDA",
+    "DADA, DPCA",
+    "CHHB",
+    "CAYC, CLHA",
+    "CRLB, DFGA",
+    "CUAA, DFHA"
+   ],
+   "vin": "5G, AU",
+   "monoLoaded": true,
+   "mono": {
+    "fallback": {
+     "navH": 113,
+     "catsTop": 401,
+     "h1H": 40,
+     "pH": 25,
+     "vw": 1280
+    },
+    "loaded": {
+     "navH": 113,
+     "catsTop": 401,
+     "h1H": 40,
+     "pH": 25,
+     "vw": 1280
+    },
+    "dCats": 0,
+    "cls": 0.0039,
+    "top": [
+     "#text. 185->185",
+     "li. 265->265",
+     "li. 313->313"
+    ]
+   },
+   "d600": {
+    "fallback": {
+     "navH": 113,
+     "catsTop": 401,
+     "h1H": 40,
+     "pH": 25,
+     "vw": 1280
+    },
+    "loaded": {
+     "navH": 113,
+     "catsTop": 401,
+     "h1H": 40,
+     "pH": 25,
+     "vw": 1280
+    },
+    "dCats": 0,
+    "cls": 0.0004,
+    "top": [
+     "#text. 129->129",
+     "span.rw 125->129",
+     "span.rw 126->129"
+    ]
+   },
+   "both": {
+    "fallback": {
+     "navH": 113,
+     "catsTop": 401,
+     "h1H": 40,
+     "pH": 25,
+     "vw": 1280
+    },
+    "loaded": {
+     "navH": 113,
+     "catsTop": 401,
+     "h1H": 40,
+     "pH": 25,
+     "vw": 1280
+    },
+    "dCats": 0,
+    "cls": 0.0058,
+    "top": [
+     "#text. 129->129",
+     "#text. 185->185",
+     "li. 265->265"
+    ]
+   }
+  },
+  {
+   "path": "/vozila/volkswagen/golf/golf-7",
+   "width": 1350,
+   "height": 940,
+   "engines": 9,
+   "codes": [
+    "CBZB",
+    "CHZD, DKLA",
+    "CZDA",
+    "DADA, DPCA",
+    "CHHB",
+    "CAYC, CLHA",
+    "CRLB, DFGA",
+    "CUAA, DFHA"
+   ],
+   "vin": "5G, AU",
+   "monoLoaded": true,
+   "mono": {
+    "fallback": {
+     "navH": 113,
+     "catsTop": 402,
+     "h1H": 41,
+     "pH": 25,
+     "vw": 1350
+    },
+    "loaded": {
+     "navH": 113,
+     "catsTop": 402,
+     "h1H": 41,
+     "pH": 25,
+     "vw": 1350
+    },
+    "dCats": 0,
+    "cls": 0.0494,
+    "top": [
+     "li. 314->314",
+     "li. 314->314",
+     "li. 314->266"
+    ]
+   },
+   "d600": {
+    "fallback": {
+     "navH": 113,
+     "catsTop": 402,
+     "h1H": 41,
+     "pH": 25,
+     "vw": 1350
+    },
+    "loaded": {
+     "navH": 113,
+     "catsTop": 402,
+     "h1H": 41,
+     "pH": 25,
+     "vw": 1350
+    },
+    "dCats": 0,
+    "cls": 0.0004,
+    "top": [
+     "#text. 130->130",
+     "span.rw 125->130",
+     "span.rw 126->130"
+    ]
+   },
+   "both": {
+    "fallback": {
+     "navH": 113,
+     "catsTop": 402,
+     "h1H": 41,
+     "pH": 25,
+     "vw": 1350
+    },
+    "loaded": {
+     "navH": 113,
+     "catsTop": 402,
+     "h1H": 41,
+     "pH": 25,
+     "vw": 1350
+    },
+    "dCats": 0,
+    "cls": 0.0711,
+    "top": [
+     "#text. 130->130",
+     "li. 314->314",
+     "li. 314->314"
+    ]
+   }
+  },
+  {
+   "path": "/vozila/volkswagen/golf/golf-7",
+   "width": 1440,
+   "height": 940,
+   "engines": 9,
+   "codes": [
+    "CBZB",
+    "CHZD, DKLA",
+    "CZDA",
+    "DADA, DPCA",
+    "CHHB",
+    "CAYC, CLHA",
+    "CRLB, DFGA",
+    "CUAA, DFHA"
+   ],
+   "vin": "5G, AU",
+   "monoLoaded": true,
+   "mono": {
+    "fallback": {
+     "navH": 113,
+     "catsTop": 403,
+     "h1H": 42,
+     "pH": 25,
+     "vw": 1440
+    },
+    "loaded": {
+     "navH": 113,
+     "catsTop": 403,
+     "h1H": 42,
+     "pH": 25,
+     "vw": 1440
+    },
+    "dCats": 0,
+    "cls": 0.044,
+    "top": [
+     "li. 315->315",
+     "li. 315->315",
+     "li. 315->267"
+    ]
+   },
+   "d600": {
+    "fallback": {
+     "navH": 113,
+     "catsTop": 403,
+     "h1H": 42,
+     "pH": 25,
+     "vw": 1440
+    },
+    "loaded": {
+     "navH": 113,
+     "catsTop": 403,
+     "h1H": 42,
+     "pH": 25,
+     "vw": 1440
+    },
+    "dCats": 0,
+    "cls": 0.0004,
+    "top": [
+     "#text. 130->130",
+     "span.rw 125->130",
+     "span.rw 126->130"
+    ]
+   },
+   "both": {
+    "fallback": {
+     "navH": 113,
+     "catsTop": 403,
+     "h1H": 42,
+     "pH": 25,
+     "vw": 1440
+    },
+    "loaded": {
+     "navH": 113,
+     "catsTop": 403,
+     "h1H": 42,
+     "pH": 25,
+     "vw": 1440
+    },
+    "dCats": 0,
+    "cls": 0.0649,
+    "top": [
+     "#text. 130->130",
+     "li. 315->315",
+     "li. 315->315"
+    ]
+   }
+  },
+  {
+   "path": "/vozila/volkswagen/golf/golf-7",
+   "width": 1920,
+   "height": 940,
+   "engines": 9,
+   "codes": [
+    "CBZB",
+    "CHZD, DKLA",
+    "CZDA",
+    "DADA, DPCA",
+    "CHHB",
+    "CAYC, CLHA",
+    "CRLB, DFGA",
+    "CUAA, DFHA"
+   ],
+   "vin": "5G, AU",
+   "monoLoaded": true,
+   "mono": {
+    "fallback": {
+     "navH": 113,
+     "catsTop": 407,
+     "h1H": 46,
+     "pH": 25,
+     "vw": 1920
+    },
+    "loaded": {
+     "navH": 113,
+     "catsTop": 407,
+     "h1H": 46,
+     "pH": 25,
+     "vw": 1920
+    },
+    "dCats": 0,
+    "cls": 0.0022,
+    "top": [
+     "#text. 191->191",
+     "li. 271->271",
+     "li. 271->271"
+    ]
+   },
+   "d600": {
+    "fallback": {
+     "navH": 113,
+     "catsTop": 407,
+     "h1H": 46,
+     "pH": 25,
+     "vw": 1920
+    },
+    "loaded": {
+     "navH": 113,
+     "catsTop": 407,
+     "h1H": 46,
+     "pH": 25,
+     "vw": 1920
+    },
+    "dCats": 0,
+    "cls": 0.0003,
+    "top": [
+     "#text. 129->129",
+     "span.rw 124->129",
+     "span.rw 125->129"
+    ]
+   },
+   "both": {
+    "fallback": {
+     "navH": 113,
+     "catsTop": 407,
+     "h1H": 46,
+     "pH": 25,
+     "vw": 1920
+    },
+    "loaded": {
+     "navH": 113,
+     "catsTop": 407,
+     "h1H": 46,
+     "pH": 25,
+     "vw": 1920
+    },
+    "dCats": 0,
+    "cls": 0.0036,
+    "top": [
+     "#text. 129->129",
+     "#text. 191->191",
+     "li. 271->271"
+    ]
+   }
+  }
+ ]
+}

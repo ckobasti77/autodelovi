@@ -1,0 +1,40 @@
+perf-bundle-01 skeptic verification, 2026-09-30T16:25:23+02:00, build on :3100 (served chunk byte-identical to .next/static/chunks/1uyyf-z7kpx1w.js)
+
+## routes whose HTML references 1uyyf-z7kpx1w.js (curl http://localhost:3100<route>)
+/porudzbina                                   1
+/upit                                         1
+/za-majstore/registracija                     1
+/korpa                                        0
+/                                             0
+/deo/kocione-plocice-prednje-demo-0012        0
+
+## client reference manifests containing the chunk
+(shop)/porudzbina/page_client-reference-manifest.js
+(shop)/upit/page_client-reference-manifest.js
+(shop)/za-majstore/registracija/page_client-reference-manifest.js
+
+## chunk size and signatures
+bytes 430078 ( 420.0 KiB ) chars 403166  gzip9 103394  brotli 84769
+  "Nieprawid" 13
+  "无效" 13
+  "Неверн" 13
+  "Geçersiz" 1
+  "Ungültig" 1
+  "toJSONSchema" 5
+  "fromJSONSchema" 2
+  "useForm" 1
+  "zodResolver" 1
+
+## other chunks with zod locales
+.next/static/chunks/1uyyf-z7kpx1w.js
+
+## app imports
+lib/validation/checkout.ts:6:import { z } from "zod";
+lib/validation/inquiry.ts:5:import { z } from "zod";
+lib/validation/mechanicRegistration.ts:6:import { z } from "zod";
+
+## zod 4.6.5 index.js comment
+// Aliasing the binding, instead of `export default z`, keeps the default export a
+// re-export of `z` rather than a fresh namespace value. Rollup and Webpack can then
+// shake `import z from "zod"` as they already shake `import { z } from "zod"` — without
+// this they pull in every locale. See #6050.

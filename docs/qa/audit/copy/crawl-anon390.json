@@ -1,0 +1,866 @@
+{
+ "base": "http://localhost:3100",
+ "nojs": false,
+ "width": 390,
+ "role": "anon",
+ "log": {
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "badResponses": []
+ },
+ "results": [
+  {
+   "url": "/",
+   "status": 200,
+   "title": "Auto delovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Plaćanje pouzećem ili pri preuzimanju u radnji.",
+   "ogTitle": "Auto delovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Plaćanje pouzećem ili pri preuzimanju u radnji.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Auto delovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "robots": "index, follow",
+   "h1": [
+    "RASKLOPI\nAUTO.\nNAĐI DEO."
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nRASKLOPI\nAUTO.\nNAĐI DEO.\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra — tražite po OEM broju, po vozilu ili klikom na deo.\n\nPretraži\n\nBroj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju.\n\nVaše vozilo\nIzaberite vozilo\nmarka, model, motor\nIzaberi\nNemate broj? Pošaljite broj šasije\n\nSKLOPLJEN AUTOMOBIL\n\n00 · 42 KATEGORIJE · 91 DEO\n\nSkrolujte i auto se rasklapa po sistemima.\n\nGenerički kompaktni hečbek, nije konkretan model\n\n00 / 07 Sklopljeno\n\nRasklopi\nLista delova\nDELOVI PO SISTEMIMA\nMOTOR I USIS\nBlok motora i glava\nTurbina (turbopunjač)\nInterkuler\nUsisna grana i kućište filtera\nBrizgaljke i pumpa goriva\nSet zupčastog kaiša i vodena pumpa\nKaiš alternatora i zatezači\nAlternator\nAnlaser\nSvećice, bobine i grejači\nKarter, pumpa ulja i dihtunzi\nEGR ventil\nNosači motora i menjača\nIZDUVNI SISTEM\nDPF i katalizator\nAuspuh (lonci i cevi)\nHLAĐENJE I KLIMA\nHladnjak i ventilator\nTermostat i creva hlađenja\nKompresor i kondenzator klime\nTRANSMISIJA\nKvačilo i zamajac\nMenjač (DSG)\nPoluosovine i homokinetički zglobovi\nVEŠANJE I UPRAVLJANJE\nAmortizeri i opruge\nRamena i selen blokovi\nSpone i stabilizatori\nLetva volana\nLežaj točka i glavčina\nKOČNICE\nKočioni diskovi\nKočione pločice\nKočione čeljusti\nABS senzori\nELEKTRIKA I SVETLA\nAkumulator\nFarovi\nStop svetla\nSenzori (lambda, parking, temperatura)\nKAROSERIJA\nHauba\nBranici\nBlatobrani\nVrata\nRetrovizori\nStakla\nBrisači\nTOČKOVI\nFelne i gume\nSERVIS I ODRŽAVANJE\nFilteri\nUlja i tečnosti",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Moj nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "input",
+     "attr": "aria-label",
+     "value": "Broj dela ili naziv"
+    },
+    {
+     "tag": "input",
+     "attr": "placeholder",
+     "value": "Broj dela ili naziv"
+    },
+    {
+     "tag": "ul",
+     "attr": "aria-label",
+     "value": "Broj dela ili naziv"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Interaktivni 3D prikaz automobila u rendgen stilu. Delove birate mišem, dodirom ili iz liste delova."
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Faze rasklapanja"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "00 Sklopljen automobil"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "01 Karoserija, stakla i svetla"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "02 Točkovi"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "03 Kočnice, vešanje, upravljanje"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "04 Pomoćni agregati, hlađenje, usis"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "05 Motor, turbina, gorivo, paljenje"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "06 Menjač, kvačilo, poluosovine"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "07 Izduvni sistem"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Prethodna faza"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Sledeća faza"
+    },
+    {
+     "tag": "section",
+     "attr": "aria-label",
+     "value": "Činjenice"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/",
+    "Izaberi",
+    "01",
+    "02",
+    "03"
+   ],
+   "jsonld": [
+    "[{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"@id\":\"http://localhost:3000/#sajt\",\"name\":\"SKLOP\",\"url\":\"http://localhost:3000/\",\"inLanguage\":\"sr-Latn-RS\",\"publisher\":{\"@id\":\"http://localhost:3000/#organizacija\"},\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"http://localhost:3000/pretraga?q={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}},{\"@context\":\"https://schema.org\",\"@id\":\"http://localhost:3000/#organizacija\",\"name\":\"SKLOP\",\"url\":\"http://localhost:3000/\",\"logo\":\"http://localhost:3000/apple-icon.png\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"Country\",\"name\":\"Srbija\"}},{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Kako da budem siguran da deo odgovara mom autu?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Najsigurnije je po OEM broju sa starog dela ili iz servisne knjižice: upišite ga u pretragu kako god ga imate, razmaci i crtice ne smetaju. Ako broja nemate, izaberite vozilo i motor, pa na stranici artikla proverite tabelu kompatibilnosti. Kad niste sigurni, pošaljite upit sa brojem šasije (VIN) — proverimo pre slanja.\"}},{\"@type\":\"Question\",\"name\":\"Gde nalazim broj šasije (VIN)?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"U saobraćajnoj dozvoli, polje E. Na vozilu je utisnut ispod vetrobranskog stakla sa strane vozača i na nalepnici na B-stubu. Ima 17 znakova, bez slova I, O i Q.\"}},{\"@type\":\"Question\",\"name\":\"Šta znači original VAG, OEM kvalitet i aftermarket?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Original VAG je deo u pakovanju proizvođača vozila. OEM kvalitet je deo proizvođača koji isti deo isporučuje fabrici (npr. Bosch, LuK, Valeo), u sopstvenom pakovanju. Aftermarket je zamenski deo drugog proizvođača, obično povoljniji. Proizvođač i kvalitet pišu na svakom artiklu.\"}},{\"@type\":\"Question\",\"name\":\"Da li plaćam unapred?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Ne. Porudžbinu šaljete bez plaćanja. Plaćate kuriru pouzećem, gotovinom ili karticom pri preuzimanju u radnji, a firme mogu virmanom uz predračun.\"}},{\"@type\":\"Question\",\"name\":\"Koliko košta dostava i kada stiže?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Kurirska dostava je 450 RSD, a besplatna za porudžbine iznad 10.000 RSD. Delove na stanju šaljemo istog radnog dana za porudžbine potvrđene do 14 časova; kurir obično isporučuje za 1–2 radna dana. Lično preuzimanje je bez troška.\"}},{\"@type\":\"Question\",\"name\":\"Mogu li da vratim deo?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Kao potrošač možete odustati od kupovine u roku od 14 dana od prijema, ako deo nije ugrađivan i vraćate ga u originalnom pakovanju. Detalji su na stranici Reklamacije i povrat.\"}},{\"@type\":\"Question\",\"name\":\"Radim u servisu. Imate li posebne cene?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Imamo. Registrujte servis na stranici Za majstore; posle odobrenja vidite svoju cenu sa rabatom na celom sajtu i poručujete nalepljenom listom OEM brojeva.\"}},{\"@type\":\"Question\",\"name\":\"Deo nije na stanju. Šta sada?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Na stranici artikla uključite „Javi mi kad stigne“ ili pošaljite upit — često možemo da nabavimo deo ili ponudimo zamenu drugog proizvođača sa istim OEM brojem.\"}}]}]"
+   ],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/delovi/kocioni-diskovi",
+   "status": 200,
+   "title": "Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "description": "Kočioni diskovi za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Prednji i zadnji diskovi, puni i ventilirani.",
+   "ogTitle": "Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "ogDescription": "Kočioni diskovi za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Prednji i zadnji diskovi, puni i ventilirani.",
+   "ogImageAlt": "Kategorija auto delova — broj artikala i stanje",
+   "twitterTitle": "Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "robots": "index, follow",
+   "h1": [
+    "KOČIONI DISKOVI"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nKočnice\nKOČIONI DISKOVI\n\nKočioni diskovi zajedno sa pločicama pretvaraju kretanje u toplotu i zaustavljaju vozilo. Vibracije pri kočenju, ivica na disku ili debljina ispod minimalne znače zamenu.\n\nViše o kategoriji\n\n9 artikala\n\nFilteri\nPopularno\nCena: od najniže\nCena: od najviše\nNajnovije\nArtikli\n\nBrembo · OEM kvalitet\n\nKočioni disk prednji 312 × 25 mm\n\nOEM 3C0 615 098\n\nNa stanju · 10 kom.\n7.490\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 312 × 25 mm\n\nTRW · OEM kvalitet\n\nKočioni disk zadnji 272 × 10 mm, puni\n\nOEM 1K0 615 540 Q\n\nMalo na stanju · 1 kom.\n3.890\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk zadnji 272 × 10 mm, puni\n\nBosch · OEM kvalitet\n\nKočioni disk prednji 256 × 22 mm\n\nOEM 6R0 615 645\n\nNa stanju\n3.990\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 256 × 22 mm\n\nBrembo · OEM kvalitet\n\nKočioni disk prednji 312 × 25 mm, ventilirani\n\nOEM 1K0 615 591 E\n\nMalo na stanju · 3 kom.\n7.290\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 312 × 25 mm, ventilirani\n\nFebi Bilstein · Aftermarket\n\nKočioni disk prednji 276 × 24 mm\n\nOEM 5Q0 615 505 R\n\nNa stanju · 5 kom.\n4.690\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 276 × 24 mm\n\nATE · OEM kvalitet\n\nKočioni disk prednji 312 × 25 mm, ventilirani\n\nOEM 1K0 615 591 E\n\nMalo na stanju · 3 kom.\n6.700\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 312 × 25 mm, ventilirani\n\nOriginal VAG · Original VAG\n\nKočioni disk prednji 340 × 30 mm, GTI\n\nOEM 5Q0 615 666 A\n\nNa stanju\n18.900\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 340 × 30 mm, GTI\n\nATE · OEM kvalitet\n\nKočioni disk prednji 288 × 25 mm, ventilirani\n\nOEM 1K0 615 868 F\n\nPo porudžbini · 6 dana\n5.490\nRSD\nsa PDV-om\nPoruči\n: Kočioni disk prednji 288 × 25 mm, ventilirani\n\nATE · OEM kvalitet\n\nKočioni disk prednji 320 × 30 mm\n\nOEM 8K0 615 085\n\nPo porudžbini · 2 dana\n9.890\nRSD\nsa PDV-om\nPoruči\n: Kočioni disk prednji 320 × 30 mm\nKočioni diskovi po vozilu\nKočioni diskovi za Volkswagen\nKočioni diskovi za Škoda\nKočioni diskovi za VW Passat\nKočioni diskovi za Škoda Superb\nKočioni diskovi za SEAT Leon\nKočioni diskovi za VW Golf\nKočioni diskovi za VW Tiguan\nKočioni diskovi za VW Touran\nKočioni diskovi za Audi A3\nKočioni diskovi za Škoda Octavia\nPovezani delovi\nKočione pločice\nKočione čeljusti\nABS senzori\nLežaj točka i glavčina",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Moj nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Putanja"
+    },
+    {
+     "tag": "aside",
+     "attr": "aria-label",
+     "value": "Filteri"
+    },
+    {
+     "tag": "input",
+     "attr": "aria-label",
+     "value": "Cena od, u dinarima"
+    },
+    {
+     "tag": "input",
+     "attr": "placeholder",
+     "value": "3.890"
+    },
+    {
+     "tag": "input",
+     "attr": "aria-label",
+     "value": "Cena do, u dinarima"
+    },
+    {
+     "tag": "input",
+     "attr": "placeholder",
+     "value": "18.900"
+    },
+    {
+     "tag": "select",
+     "attr": "aria-label",
+     "value": "Sortiraj"
+    },
+    {
+     "tag": "option",
+     "attr": "text",
+     "value": "Popularno"
+    },
+    {
+     "tag": "option",
+     "attr": "text",
+     "value": "Cena: od najniže"
+    },
+    {
+     "tag": "option",
+     "attr": "text",
+     "value": "Cena: od najviše"
+    },
+    {
+     "tag": "option",
+     "attr": "text",
+     "value": "Najnovije"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/",
+    "/",
+    "/",
+    "/",
+    "OdRSDDoRSDPrimeni cenu",
+    "Artikli",
+    ": Kočioni disk prednji 312 × 25 mm",
+    ": Kočioni disk zadnji 272 × 10 mm, puni",
+    ": Kočioni disk prednji 256 × 22 mm",
+    ": Kočioni disk prednji 312 × 25 mm, ventilirani",
+    ": Kočioni disk prednji 276 × 24 mm",
+    ": Kočioni disk prednji 312 × 25 mm, ventilirani",
+    ": Kočioni disk prednji 340 × 30 mm, GTI",
+    ": Kočioni disk prednji 288 × 25 mm, ventilirani",
+    ": Kočioni disk prednji 320 × 30 mm"
+   ],
+   "jsonld": [
+    "[{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Početna\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Delovi\",\"item\":\"http://localhost:3000/delovi\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Kočnice\",\"item\":\"http://localhost:3000/delovi/kocnice\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"Kočioni diskovi\"}]},{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"name\":\"Kočioni diskovi\",\"numberOfItems\":9,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-312-25-mm-demo-0007\",\"name\":\"Kočioni disk prednji 312 × 25 mm\"},{\"@type\":\"ListItem\",\"position\":2,\"url\":\"http://localhost:3000/deo/kocioni-disk-zadnji-272-10-mm-puni-demo-0003\",\"name\":\"Kočioni disk zadnji 272 × 10 mm, puni\"},{\"@type\":\"ListItem\",\"position\":3,\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-256-22-mm-demo-0006\",\"name\":\"Kočioni disk prednji 256 × 22 mm\"},{\"@type\":\"ListItem\",\"position\":4,\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-0002\",\"name\":\"Kočioni disk prednji 312 × 25 mm, ventilirani\"},{\"@type\":\"ListItem\",\"position\":5,\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-276-24-mm-demo-0004\",\"name\":\"Kočioni disk prednji 276 × 24 mm\"},{\"@type\":\"ListItem\",\"position\":6,\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-e001\",\"name\":\"Kočioni disk prednji 312 × 25 mm, ventilirani\"},{\"@type\":\"ListItem\",\"position\":7,\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005\",\"name\":\"Kočioni disk prednji 340 × 30 mm, GTI\"},{\"@type\":\"ListItem\",\"position\":8,\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-288-25-mm-ventilirani-demo-0001\",\"name\":\"Kočioni disk prednji 288 × 25 mm, ventilirani\"},{\"@type\":\"ListItem\",\"position\":9,\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-320-30-mm-demo-0008\",\"name\":\"Kočioni disk prednji 320 × 30 mm\"}]}]"
+   ],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "status": 200,
+   "title": "Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP",
+   "description": "Kočioni disk prednji 276 × 24 mm (Febi Bilstein, Aftermarket) za VW Golf VII, VW Passat B8 i … Cena 4.690 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 615 505 R.",
+   "ogTitle": "Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP",
+   "ogDescription": "Kočioni disk prednji 276 × 24 mm (Febi Bilstein, Aftermarket) za VW Golf VII, VW Passat B8 i … Cena 4.690 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 615 505 R.",
+   "ogImageAlt": "Auto deo — naziv, OEM broj i proizvođač",
+   "twitterTitle": "Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP",
+   "robots": "index, follow",
+   "h1": [
+    "Kočioni disk prednji 276 × 24 mm"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nKočioni diskovi\n\nIlustracija kategorije — izgled dela može se razlikovati\n\nFebi Bilstein · Aftermarket\n\nKočioni disk prednji 276 × 24 mm\nOEM\n5Q0 615 505 R\nŠifra\nDEMO-0004\nKat. br. proizvođača\n57447\nIzaberite vozilo da proverimo da li deo odgovara\n4.690\nRSD\nsa PDV-om\nNa stanju · 5 kom.\n· Isporuka za 1–2 radna dana\nDodaj u korpu\n: Kočioni disk prednji 276 × 24 mm\nPošaljite upit\nKurir 450 RSD, besplatno iznad 10.000 RSD · pouzećem ili virmanom\nLično preuzimanje bez troška · plaćanje gotovinom ili karticom\nBez plaćanja na sajtu. Dostava i plaćanje\nKompatibilnost\n\nPre ugradnje uporedite OEM broj sa starim delom. Kad niste sigurni, pošaljite broj šasije.\n\nVozila za koja deo odgovara\nMARKA\tMODEL / GENERACIJA\tMOTOR\nAudi\tA3 (8V)\n2012–2020\n\tSvi motori\nCupra\tAteca\n2018–\n\tSvi motori\nSEAT\tAteca\n2016–\n\tSvi motori\nSEAT\tIbiza V\n2017–\n\tSvi motori\nSEAT\tLeon III\n2012–2020\n\tSvi motori\nŠkoda\tFabia IV\n2021–\n\tSvi motori\nŠkoda\tKaroq\n2017–\n\tSvi motori\nŠkoda\tKodiaq I\n2016–2024\n\tSvi motori\nŠkoda\tOctavia III\n2012–2020\n\tSvi motori\nŠkoda\tSuperb III\n2015–2024\n\tSvi motori\nVolkswagen\tGolf VII\n2012–2020\n\tSvi motori\nVolkswagen\tPassat B8\n2014–2023\n\tSvi motori\nPrikaži još 3\nBrojevi\nOEM BROJEVI\n5Q0 615 505 R\nVAG (demo)\nZAMENSKI BROJEVI\nOX 408D\nMahle\nSpecifikacije\nPrečnik\n276 mm\nDebljina\n24 mm\nProizvođač\nFebi Bilstein\nKvalitet\nAftermarket\nGarancija\n24 meseci\n\nKočioni disk prednji 276 × 24 mm. Demo artikal: kataloški brojevi i cene služe samo za prikaz rada prodavnice.\n\nNapomena: Demo artikal — podaci služe za prikaz.\n\nPovezani delovi\nSvi: Kočioni diskovi\n\nBrembo · OEM kvalitet\n\nKočioni disk prednji 312 × 25 mm\n\nOEM 3C0 615 098\n\nNa stanju · 10 kom.\n7.490\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 312 × 25 mm\n\nATE · OEM kvalitet\n\nKočioni disk prednji 288 × 25 mm, ventilirani\n\nOEM 1K0 615 868 F\n\nPo porudžbini · 6 dana\n5.490\nRSD\nsa PDV-om\nPoruči\n: Kočioni disk prednji 288 × 25 mm, ventilirani\n\nTRW · OEM kvalitet\n\nKočioni disk zadnji 272 × 10 mm, puni\n\nOEM 1K0 615 540 Q\n\nMalo na stanju · 1 kom.\n3.890\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk zadnji 272 × 10 mm, puni\n\nBosch · OEM kvalitet\n\nKočioni disk prednji 256 × 22 mm\n\nOEM 6R0 615 645\n\nNa stanju\n3.990\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 256 × 22 mm\nKočioni diskovi po vozilu\nKočioni diskovi za VW Passat\nKočioni diskovi za Škoda Superb\nKočioni diskovi za VW Golf\nKočioni diskovi za VW Touran\nKočioni diskovi za VW Tiguan\nKočioni diskovi za Audi A3\nKočioni diskovi za Škoda Octavia\nKočioni diskovi za SEAT Leon",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Moj nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Putanja"
+    },
+    {
+     "tag": "img",
+     "attr": "alt",
+     "value": "Kočioni disk prednji 276 × 24 mm — ilustracija kategorije kočioni diskovi"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Kopiraj OEM broj 5Q0 615 505 R"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Količina: Kočioni disk prednji 276 × 24 mm"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Smanji količinu"
+    },
+    {
+     "tag": "input",
+     "attr": "aria-label",
+     "value": "Količina"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Povećaj količinu"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Kopiraj OEM broj 5Q0 615 505 R"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Kopiraj broj OX 408D"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/",
+    "/",
+    "/",
+    "/",
+    "Ø 27624mm",
+    ": Kočioni disk prednji 276 × 24 mm",
+    "Vozila za koja deo odgovara",
+    ": Kočioni disk prednji 312 × 25 mm",
+    ": Kočioni disk prednji 288 × 25 mm, ventilirani",
+    ": Kočioni disk zadnji 272 × 10 mm, puni",
+    ": Kočioni disk prednji 256 × 22 mm",
+    "4.690RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm",
+    ": Kočioni disk prednji 276 × 24 mm"
+   ],
+   "jsonld": [
+    "[{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Početna\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Delovi\",\"item\":\"http://localhost:3000/delovi\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Kočioni diskovi\",\"item\":\"http://localhost:3000/delovi/kocioni-diskovi\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"Kočioni disk prednji 276 × 24 mm\"}]},{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"Kočioni disk prednji 276 × 24 mm\",\"sku\":\"DEMO-0004\",\"mpn\":\"57447\",\"brand\":{\"@type\":\"Brand\",\"name\":\"Febi Bilstein\"},\"category\":\"Kočioni diskovi\",\"description\":\"Kočioni disk prednji 276 × 24 mm. Demo artikal: kataloški brojevi i cene služe samo za prikaz rada prodavnice.\",\"image\":[\"http://localhost:3000/images/parts/kocioni-diskovi.webp\"],\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-276-24-mm-demo-0004\",\"offers\":{\"@type\":\"Offer\",\"url\":\"http://localhost:3000/deo/kocioni-disk-prednji-276-24-mm-demo-0004\",\"priceCurrency\":\"RSD\",\"price\":\"4690.00\",\"availability\":\"https://schema.org/InStock\",\"itemCondition\":\"https://schema.org/NewCondition\",\"seller\":{\"@id\":\"http://localhost:3000/#organizacija\"},\"shippingDetails\":{\"@type\":\"OfferShippingDetails\",\"shippingRate\":{\"@type\":\"MonetaryAmount\",\"value\":\"450.00\",\"currency\":\"RSD\"},\"shippingDestination\":{\"@type\":\"DefinedRegion\",\"addressCountry\":\"RS\"}},\"hasMerchantReturnPolicy\":{\"@type\":\"MerchantReturnPolicy\",\"applicableCountry\":\"RS\",\"returnPolicyCountry\":\"RS\",\"returnPolicyCategory\":\"https://schema.org/MerchantReturnFiniteReturnWindow\",\"merchantReturnDays\":14}}}]"
+   ],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/deo/kocione-plocice-prednje-demo-0012",
+   "status": 200,
+   "title": "Kočione pločice prednje Bosch 6R0 698 000 MK | SKLOP",
+   "description": "Kočione pločice prednje (Bosch, OEM kvalitet) za VW Polo IV, VW Polo V i još 6. Cena 2.990 RSD sa PDV-om. Trenutno nije na stanju. Kat. br. 6R0 698 000 MK.",
+   "ogTitle": "Kočione pločice prednje Bosch 6R0 698 000 MK | SKLOP",
+   "ogDescription": "Kočione pločice prednje (Bosch, OEM kvalitet) za VW Polo IV, VW Polo V i još 6. Cena 2.990 RSD sa PDV-om. Trenutno nije na stanju. Kat. br. 6R0 698 000 MK.",
+   "ogImageAlt": "Auto deo — naziv, OEM broj i proizvođač",
+   "twitterTitle": "Kočione pločice prednje Bosch 6R0 698 000 MK | SKLOP",
+   "robots": "index, follow",
+   "h1": [
+    "Kočione pločice prednje"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nKočione pločice\n\nIlustracija kategorije — izgled dela može se razlikovati\n\nBosch · OEM kvalitet\n\nKočione pločice prednje\nOEM\n6R0 698 000 MK\nŠifra\nDEMO-0012\nKat. br. proizvođača\n0 986 661 655\nIzaberite vozilo da proverimo da li deo odgovara\n2.990\nRSD\nsa PDV-om\nNema na stanju\n\nJavi mi kad stigne\n\nE-pošta\nPošaljite mi jedno obaveštenje kad artikal stigne.\nVeb sajt\nObavesti me\nPošaljite upit\nKurir 450 RSD, besplatno iznad 10.000 RSD · pouzećem ili virmanom\nLično preuzimanje bez troška · plaćanje gotovinom ili karticom\nBez plaćanja na sajtu. Dostava i plaćanje\nKompatibilnost\n\nPre ugradnje uporedite OEM broj sa starim delom. Kad niste sigurni, pošaljite broj šasije.\n\nVozila za koja deo odgovara\nMARKA\tMODEL / GENERACIJA\tMOTOR\nSEAT\tIbiza III\n2002–2008\n\tSvi motori\nSEAT\tIbiza IV\n2008–2017\n\tSvi motori\nŠkoda\tFabia I\n1999–2007\n\tSvi motori\nŠkoda\tFabia II\n2007–2014\n\tSvi motori\nŠkoda\tFabia III\n2014–2021\n\tSvi motori\nŠkoda\tRapid\n2012–2019\n\tSvi motori\nVolkswagen\tPolo IV\n2001–2009\n\tSvi motori\nVolkswagen\tPolo V\n2009–2017\n\tSvi motori\nBrojevi\nOEM BROJEVI\n6R0 698 000 MK\nVAG (demo)\nZAMENSKI BROJEVI\n24.0169-5606.1\nATE\nSpecifikacije\nŠirina\n131,1 mm\nDebljina\n19,5 mm\nProizvođač\nBosch\nKvalitet\nOEM kvalitet\nGarancija\n24 meseci\n\nKočione pločice prednje. Demo artikal: kataloški brojevi i cene služe samo za prikaz rada prodavnice.\n\nNapomena: Demo artikal — podaci služe za prikaz.\n\nPovezani delovi\nSvi: Kočione pločice\n\nFebi Bilstein · Aftermarket\n\nKočione pločice zadnje, elektronska ručna\n\nOEM 5Q0 698 782 KA\n\nMalo na stanju · 2 kom.\n3.490\nRSD\nsa PDV-om\nU korpu\n: Kočione pločice zadnje, elektronska ručna\n\nTRW · OEM kvalitet\n\nKočione pločice zadnje\n\nOEM 1K0 698 569\n\nMalo na stanju · 2 kom.\n3.190\nRSD\nsa PDV-om\nU korpu\n: Kočione pločice zadnje\n\nATE · OEM kvalitet\n\nKočione pločice prednje, sa senzorom\n\nOEM 1K0 698 406 F\n\nNa stanju\n4.290\nRSD\nsa PDV-om\nU korpu\n: Kočione pločice prednje, sa senzorom\n\nOriginal VAG · Original VAG\n\nKočione pločice prednje\n\nOEM 5WA 698 115 M\n\nMalo na stanju · 3 kom.\n8.900\nRSD\nsa PDV-om\nU korpu\n: Kočione pločice prednje\nKočione pločice po vozilu\nKočione pločice za Volkswagen\nKočione pločice za Škoda\nKočione pločice za SEAT",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Moj nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Putanja"
+    },
+    {
+     "tag": "img",
+     "attr": "alt",
+     "value": "Kočione pločice prednje — ilustracija kategorije kočione pločice"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Kopiraj OEM broj 6R0 698 000 MK"
+    },
+    {
+     "tag": "form",
+     "attr": "aria-label",
+     "value": "Obaveštenje o dolasku: Kočione pločice prednje"
+    },
+    {
+     "tag": "input",
+     "attr": "placeholder",
+     "value": "ime@primer.rs"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Kopiraj OEM broj 6R0 698 000 MK"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Kopiraj broj 24.0169-5606.1"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/",
+    "/",
+    "/",
+    "/",
+    "Veb sajt",
+    "Vozila za koja deo odgovara",
+    ": Kočione pločice zadnje, elektronska ručna",
+    ": Kočione pločice zadnje",
+    ": Kočione pločice prednje, sa senzorom",
+    ": Kočione pločice prednje"
+   ],
+   "jsonld": [
+    "[{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Početna\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Delovi\",\"item\":\"http://localhost:3000/delovi\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Kočione pločice\",\"item\":\"http://localhost:3000/delovi/kocione-plocice\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"Kočione pločice prednje\"}]},{\"@context\":\"https://schema.org\",\"@type\":\"Product\",\"name\":\"Kočione pločice prednje\",\"sku\":\"DEMO-0012\",\"mpn\":\"0 986 661 655\",\"brand\":{\"@type\":\"Brand\",\"name\":\"Bosch\"},\"category\":\"Kočione pločice\",\"description\":\"Kočione pločice prednje. Demo artikal: kataloški brojevi i cene služe samo za prikaz rada prodavnice.\",\"image\":[\"http://localhost:3000/images/parts/kocione-plocice.webp\"],\"url\":\"http://localhost:3000/deo/kocione-plocice-prednje-demo-0012\",\"offers\":{\"@type\":\"Offer\",\"url\":\"http://localhost:3000/deo/kocione-plocice-prednje-demo-0012\",\"priceCurrency\":\"RSD\",\"price\":\"2990.00\",\"availability\":\"https://schema.org/OutOfStock\",\"itemCondition\":\"https://schema.org/NewCondition\",\"seller\":{\"@id\":\"http://localhost:3000/#organizacija\"},\"shippingDetails\":{\"@type\":\"OfferShippingDetails\",\"shippingRate\":{\"@type\":\"MonetaryAmount\",\"value\":\"450.00\",\"currency\":\"RSD\"},\"shippingDestination\":{\"@type\":\"DefinedRegion\",\"addressCountry\":\"RS\"}},\"hasMerchantReturnPolicy\":{\"@type\":\"MerchantReturnPolicy\",\"applicableCountry\":\"RS\",\"returnPolicyCountry\":\"RS\",\"returnPolicyCategory\":\"https://schema.org/MerchantReturnFiniteReturnWindow\",\"merchantReturnDays\":14}}}]"
+   ],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/ponuda/kocione-plocice-golf",
+   "status": 200,
+   "title": "Kočione pločice za VW Golf | SKLOP",
+   "description": "Prednje i zadnje pločice za Golf VI, VII i VIII. Pošaljite broj šasije ako niste sigurni koje vam trebaju.",
+   "ogTitle": "Kočione pločice za VW Golf | SKLOP",
+   "ogDescription": "Prednje i zadnje pločice za Golf VI, VII i VIII. Pošaljite broj šasije ako niste sigurni koje vam trebaju.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Kočione pločice za VW Golf | SKLOP",
+   "robots": "noindex, follow",
+   "h1": [
+    "KOČIONE PLOČICE ZA VW GOLF — PROVERENE PO OEM BROJU"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\n\nKOČIONE PLOČICE · VOLKSWAGEN GOLF\n\nKOČIONE PLOČICE ZA VW GOLF — PROVERENE PO OEM BROJU\n\nPrednje i zadnje pločice za Golf VI, VII i VIII. Pošaljite broj šasije ako niste sigurni koje vam trebaju.\n\nPošaljite upit\nIzaberite vozilo\n\n6 artikala na stanju\n\nIsporuka za 1–2 radna dana\n\nKurir 450 RSD\n\nBesplatno iznad 10.000 RSD.\n\nPlaćanje pouzećem\n\nIli lično preuzimanje u radnji, bez troška.\n\nKočione pločice za Volkswagen Golf\nSvi artikli\n\nFebi Bilstein · Aftermarket\n\nKočione pločice zadnje, elektronska ručna\n\nOEM 5Q0 698 782 KA\n\nMalo na stanju · 2 kom.\n3.490\nRSD\nsa PDV-om\nU korpu\n: Kočione pločice zadnje, elektronska ručna\n\nTRW · OEM kvalitet\n\nKočione pločice zadnje\n\nOEM 1K0 698 569\n\nMalo na stanju · 2 kom.\n3.190\nRSD\nsa PDV-om\nU korpu\n: Kočione pločice zadnje\n\nATE · OEM kvalitet\n\nKočione pločice prednje, sa senzorom\n\nOEM 1K0 698 406 F\n\nNa stanju\n4.290\nRSD\nsa PDV-om\nU korpu\n: Kočione pločice prednje, sa senzorom\n\nOriginal VAG · Original VAG\n\nKočione pločice prednje\n\nOEM 5WA 698 115 M\n\nMalo na stanju · 3 kom.\n8.900\nRSD\nsa PDV-om\nU korpu\n: Kočione pločice prednje\n\nFebi Bilstein · Aftermarket\n\nKočione pločice zadnje\n\nOEM 1K0 698 569\n\nNa stanju · 8 kom.\n2.600\nRSD\nsa PDV-om\nU korpu\n: Kočione pločice zadnje\n\nBrembo · OEM kvalitet\n\nKočione pločice prednje, sistem Teves\n\nOEM 5Q0 698 172\n\nNa stanju\n5.190\nRSD\nsa PDV-om\nU korpu\n: Kočione pločice prednje, sistem Teves\n\nBosch · OEM kvalitet\n\nKočione pločice prednje, sa senzorom\n\nOEM 1K0 698 406 F\n\nPo porudžbini · 3 dana\n3.900\nRSD\nsa PDV-om\nPoruči\n: Kočione pločice prednje, sa senzorom\n\nSKLOP\n\nSvi delovi\nDostava i plaćanje\nReklamacije i povrat\nPrivatnost\nKolačići\nPodešavanja kolačića",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    ": Kočione pločice zadnje, elektronska ručna",
+    ": Kočione pločice zadnje",
+    ": Kočione pločice prednje, sa senzorom",
+    ": Kočione pločice prednje",
+    ": Kočione pločice zadnje",
+    ": Kočione pločice prednje, sistem Teves",
+    ": Kočione pločice prednje, sa senzorom"
+   ],
+   "jsonld": [
+    "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"name\":\"Kočione pločice za VW Golf\",\"numberOfItems\":7,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"url\":\"http://localhost:3000/deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013\",\"name\":\"Kočione pločice zadnje, elektronska ručna\"},{\"@type\":\"ListItem\",\"position\":2,\"url\":\"http://localhost:3000/deo/kocione-plocice-zadnje-demo-0011\",\"name\":\"Kočione pločice zadnje\"},{\"@type\":\"ListItem\",\"position\":3,\"url\":\"http://localhost:3000/deo/kocione-plocice-prednje-sa-senzorom-demo-0009\",\"name\":\"Kočione pločice prednje, sa senzorom\"},{\"@type\":\"ListItem\",\"position\":4,\"url\":\"http://localhost:3000/deo/kocione-plocice-prednje-demo-0014\",\"name\":\"Kočione pločice prednje\"},{\"@type\":\"ListItem\",\"position\":5,\"url\":\"http://localhost:3000/deo/kocione-plocice-zadnje-demo-e003\",\"name\":\"Kočione pločice zadnje\"},{\"@type\":\"ListItem\",\"position\":6,\"url\":\"http://localhost:3000/deo/kocione-plocice-prednje-sistem-teves-demo-0010\",\"name\":\"Kočione pločice prednje, sistem Teves\"},{\"@type\":\"ListItem\",\"position\":7,\"url\":\"http://localhost:3000/deo/kocione-plocice-prednje-sa-senzorom-demo-e002\",\"name\":\"Kočione pločice prednje, sa senzorom\"}]}"
+   ],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/vozila/volkswagen/golf/golf-7",
+   "status": 200,
+   "title": "Delovi za VW Golf VII (2012–2020) | SKLOP",
+   "description": "Delovi za VW Golf VII: 61 artikal u 37 kategorija. Blok motora i glava, Filter ulja, Filter vazduha, Turbina (turbopunjač).",
+   "ogTitle": "Delovi za VW Golf VII (2012–2020) | SKLOP",
+   "ogDescription": "Delovi za VW Golf VII: 61 artikal u 37 kategorija. Blok motora i glava, Filter ulja, Filter vazduha, Turbina (turbopunjač).",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Delovi za VW Golf VII (2012–2020) | SKLOP",
+   "robots": "index, follow",
+   "h1": [
+    "DELOVI ZA VW GOLF VII"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nGolf\nDELOVI ZA VW GOLF VII\n\n2012–2020 · platforma MQB · VIN kod 5G, AU · 61 artikal\n\nIzaberi ovo vozilo\nMOTOR\nSvi motori\n1.2 TSI 77 kW\nCBZB\n1.0 TSI 81 kW\nCHZD, DKLA\n1.4 TSI 110 kW\nCZDA\n1.5 TSI 110 kW\nDADA, DPCA\n2.0 TSI 162 kW\nCHHB\n1.6 TDI 77 kW\nCAYC, CLHA\n2.0 TDI 110 kW\nCRLB, DFGA\n2.0 TDI 140 kW\nCUAA, DFHA\nDelovi po kategorijama\nBlok motora i glava\n\n1 artikal\n\nFilter ulja\n\n2 artikla\n\nFilter vazduha\n\n1 artikal\n\nTurbina (turbopunjač)\n\n1 artikal\n\nFilter goriva\n\n1 artikal\n\nInterkuler\n\n1 artikal\n\nUsisna grana i kućište filtera\n\n1 artikal\n\nFilter kabine\n\n1 artikal\n\nBrizgaljke i pumpa goriva\n\n1 artikal\n\nSet zupčastog kaiša i vodena pumpa\n\n2 artikla\n\nKaiš alternatora i zatezači\n\n1 artikal\n\nSvećice, bobine i grejači\n\n3 artikla\n\nEGR ventil\n\n1 artikal\n\nNosači motora i menjača\n\n1 artikal\n\nDPF i katalizator\n\n1 artikal\n\nHladnjak i ventilator\n\n1 artikal\n\nTermostat i creva hlađenja\n\n1 artikal\n\nKompresor i kondenzator klime\n\n1 artikal\n\nKvačilo i zamajac\n\n1 artikal\n\nMenjač (DSG)\n\n2 artikla\n\nPoluosovine i homokinetički zglobovi\n\n2 artikla\n\nAmortizeri i opruge\n\n3 artikla\n\nRamena i selen blokovi\n\n1 artikal\n\nSpone i stabilizatori\n\n4 artikla\n\nLežaj točka i glavčina\n\n1 artikal\n\nKočioni diskovi\n\n5 artikala\n\nKočione pločice\n\n6 artikala\n\nKočione čeljusti\n\n2 artikla\n\nABS senzori\n\n1 artikal\n\nFarovi\n\n1 artikal\n\nSenzori (lambda, parking, temperatura)\n\n3 artikla\n\nHauba\n\n1 artikal\n\nVrata\n\n1 artikal\n\nRetrovizori\n\n1 artikal\n\nStakla\n\n1 artikal\n\nBrisači\n\n2 artikla\n\nFelne i gume\n\n1 artikal\n\nIzbor delova za Golf VII\n\nBosch · OEM kvalitet\n\nMetlice brisača Aerotwin 600/475, set\n\nOEM 5G0 955 985 BN\n\nOdgovara za Golf VII — proverite motor\nNa stanju · 4 kom.\n3.490\nRSD\nsa PDV-om\nU korpu\n: Metlice brisača Aerotwin 600/475, set\n\nSachs · OEM kvalitet\n\nSet kvačila 1.6 TDI\n\nOEM 04L 105 204 K\n\nOdgovara za Golf VII — proverite motor\nNa stanju · 6 kom.\n19.900\nRSD\nsa PDV-om\nU korpu\n: Set kvačila 1.6 TDI\n\nFebi Bilstein · Aftermarket\n\nKočione pločice zadnje, elektronska ručna\n\nOEM 5Q0 698 782 KA\n\nOdgovara za Golf VII — proverite motor\nMalo na stanju · 2 kom.\n3.490\nRSD\nsa PDV-om\nU korpu\n: Kočione pločice zadnje, elektronska ručna\n\nOriginal VAG · Original VAG\n\nAluminijumska felna 6,5J × 16 ET46, 5 × 112\n\nOEM 1K0 601 701\n\nOdgovara za Golf VII — proverite motor\nNa stanju\n24.900\nRSD\nsa PDV-om\nU korpu\n: Aluminijumska felna 6,5J × 16 ET46, 5 × 112\n\nOriginal VAG · Original VAG\n\nKućište termostata sa pumpom 1.4 TSI\n\nOEM 04E 121 315\n\nOdgovara za Golf VII — proverite motor\nNa stanju\n22.900\nRSD\nsa PDV-om\nU korpu\n: Kućište termostata sa pumpom 1.4 TSI\n\nOriginal VAG · Original VAG\n\nParking senzor\n\nOEM 1K0 906 861 EQ\n\nOdgovara za Golf VII — proverite motor\nNa stanju · 8 kom.\n5.900\nRSD\nsa PDV-om\nU korpu\n: Parking senzor\n\nTRW · OEM kvalitet\n\nKočioni disk zadnji 272 × 10 mm, puni\n\nOEM 1K0 615 540 Q\n\nOdgovara za Golf VII — proverite motor\nMalo na stanju · 1 kom.\n3.890\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk zadnji 272 × 10 mm, puni\n\nTRW · OEM kvalitet\n\nKočione pločice zadnje\n\nOEM 1K0 698 569\n\nOdgovara za Golf VII — proverite motor\nMalo na stanju · 2 kom.\n3.190\nRSD\nsa PDV-om\nU korpu\n: Kočione pločice zadnje\nDelovi za VW Golf po kategorijama\nFilteri\nKočione pločice\nSet zupčastog kaiša i vodena pumpa\nKočioni diskovi\nAmortizeri i opruge",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Moj nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Putanja"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Motor"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Filteri za VW Golf"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Kočione pločice za VW Golf"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Set zupčastog kaiša i vodena pumpa za VW Golf"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Kočioni diskovi za VW Golf"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Amortizeri i opruge za VW Golf"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/",
+    "/",
+    "/",
+    "/",
+    "/",
+    ": Metlice brisača Aerotwin 600/475, set",
+    ": Set kvačila 1.6 TDI",
+    ": Kočione pločice zadnje, elektronska ručna",
+    ": Aluminijumska felna 6,5J × 16 ET46, 5 × 112",
+    ": Kućište termostata sa pumpom 1.4 TSI",
+    ": Parking senzor",
+    ": Kočioni disk zadnji 272 × 10 mm, puni",
+    ": Kočione pločice zadnje"
+   ],
+   "jsonld": [
+    "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Početna\",\"item\":\"http://localhost:3000/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Vozila\",\"item\":\"http://localhost:3000/vozila\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Volkswagen\",\"item\":\"http://localhost:3000/vozila/volkswagen\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"Golf\",\"item\":\"http://localhost:3000/vozila/volkswagen/golf\"},{\"@type\":\"ListItem\",\"position\":5,\"name\":\"Golf VII\"}]}"
+   ],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/pretraga?q=disk",
+   "status": 200,
+   "title": "Pretraga: disk | SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogTitle": "Pretraga: disk | SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Pretraga: disk | SKLOP",
+   "robots": "noindex, follow",
+   "h1": [
+    "Rezultati za „disk“"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nPretraži\n\nBroj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju.\n\nRezultati za „disk“\n\n9 artikala\n\nKočioni diskovi\n9\nPROIZVODI\n\nATE · OEM kvalitet\n\nKočioni disk prednji 320 × 30 mm\n\nOEM 8K0 615 085\n\nPo porudžbini · 2 dana\n9.890\nRSD\nsa PDV-om\nPoruči\n: Kočioni disk prednji 320 × 30 mm\n\nBrembo · OEM kvalitet\n\nKočioni disk prednji 312 × 25 mm\n\nOEM 3C0 615 098\n\nNa stanju · 10 kom.\n7.490\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 312 × 25 mm\n\nBosch · OEM kvalitet\n\nKočioni disk prednji 256 × 22 mm\n\nOEM 6R0 615 645\n\nNa stanju\n3.990\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 256 × 22 mm\n\nFebi Bilstein · Aftermarket\n\nKočioni disk prednji 276 × 24 mm\n\nOEM 5Q0 615 505 R\n\nNa stanju · 5 kom.\n4.690\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 276 × 24 mm\n\nATE · OEM kvalitet\n\nKočioni disk prednji 288 × 25 mm, ventilirani\n\nOEM 1K0 615 868 F\n\nPo porudžbini · 6 dana\n5.490\nRSD\nsa PDV-om\nPoruči\n: Kočioni disk prednji 288 × 25 mm, ventilirani\n\nOriginal VAG · Original VAG\n\nKočioni disk prednji 340 × 30 mm, GTI\n\nOEM 5Q0 615 666 A\n\nNa stanju\n18.900\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 340 × 30 mm, GTI\n\nTRW · OEM kvalitet\n\nKočioni disk zadnji 272 × 10 mm, puni\n\nOEM 1K0 615 540 Q\n\nMalo na stanju · 1 kom.\n3.890\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk zadnji 272 × 10 mm, puni\n\nATE · OEM kvalitet\n\nKočioni disk prednji 312 × 25 mm, ventilirani\n\nOEM 1K0 615 591 E\n\nMalo na stanju · 3 kom.\n6.700\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 312 × 25 mm, ventilirani\n\nBrembo · OEM kvalitet\n\nKočioni disk prednji 312 × 25 mm, ventilirani\n\nOEM 1K0 615 591 E\n\nMalo na stanju · 3 kom.\n7.290\nRSD\nsa PDV-om\nU korpu\n: Kočioni disk prednji 312 × 25 mm, ventilirani\n\nNe vidite pravi deo? Pošaljite upit sa brojem šasije.",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Moj nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "input",
+     "attr": "aria-label",
+     "value": "Broj dela ili naziv"
+    },
+    {
+     "tag": "input",
+     "attr": "placeholder",
+     "value": "Broj dela ili naziv"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Obriši pretragu"
+    },
+    {
+     "tag": "ul",
+     "attr": "aria-label",
+     "value": "Broj dela ili naziv"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kategorije"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/",
+    ": Kočioni disk prednji 320 × 30 mm",
+    ": Kočioni disk prednji 312 × 25 mm",
+    ": Kočioni disk prednji 256 × 22 mm",
+    ": Kočioni disk prednji 276 × 24 mm",
+    ": Kočioni disk prednji 288 × 25 mm, ventilirani",
+    ": Kočioni disk prednji 340 × 30 mm, GTI",
+    ": Kočioni disk zadnji 272 × 10 mm, puni",
+    ": Kočioni disk prednji 312 × 25 mm, ventilirani",
+    ": Kočioni disk prednji 312 × 25 mm, ventilirani"
+   ],
+   "jsonld": [],
+   "lang": "sr-Latn-RS"
+  }
+ ]
+}

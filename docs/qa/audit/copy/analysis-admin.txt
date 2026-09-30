@@ -1,0 +1,159 @@
+pages: 38 from crawl-admin.json
+
+## email (30 distinct lines)
+[text] E-pošta
+    ↳ 36 page(s): /admin /admin/porudzbine /admin/upiti /admin/proizvodi …
+[nav@aria-label] E-pošta
+    ↳ 2 page(s): /admin/mejlovi /admin/mejlovi/sabloni
+[input@placeholder] Broj, ime, telefon, e-mail, PIB…
+    ↳ 1 page(s): /admin/porudzbine
+[text] Registrovani nalozi. Kupci bez naloga (gosti) su u porudžbinama — tražite ih po imenu, telefonu ili e-pošti.
+    ↳ 1 page(s): /admin/kupci
+[text] Pronađi po e-pošti
+    ↳ 1 page(s): /admin/kupci
+[input@placeholder] tačna e-mail adresa…
+    ↳ 1 page(s): /admin/kupci
+[title] E-pošta · Administracija
+    ↳ 1 page(s): /admin/mejlovi
+[title] Šabloni e-pošte · Administracija
+    ↳ 1 page(s): /admin/mejlovi/sabloni
+[text] E-pošta: ponovo poslata
+    ↳ 1 page(s): /admin/revizija
+[text] E-pošta: probna poruka
+    ↳ 1 page(s): /admin/revizija
+[text] Vlasnik · E-pošta: probna poruka
+    ↳ 1 page(s): /admin/revizija
+[text] Kupac bez naloga ili po e-pošti
+    ↳ 1 page(s): /admin/privatnost
+[text] E-pošta kupca
+    ↳ 1 page(s): /admin/privatnost
+[text] E-poruke stižu na ove adrese. Dok slanje e-pošte nije podešeno, sve poruke su u delu E-pošta.
+    ↳ 1 page(s): /admin/podesavanja?tab=obavestenja
+[text] Dnevni pregled e-poštom
+    ↳ 1 page(s): /admin/podesavanja?tab=obavestenja
+[text] E-pošta kad artikla ima malo na stanju
+    ↳ 1 page(s): /admin/podesavanja?tab=obavestenja
+[text] Slanje e-pošte
+    ↳ 1 page(s): /admin/podesavanja?tab=obavestenja
+[text] Režim važi za sve poruke. Sadržaj i izgled poruka vidite u delu E-pošta → Šabloni.
+    ↳ 1 page(s): /admin/podesavanja?tab=obavestenja
+[text] Poruke se samo beleže u E-pošti; ništa ne odlazi. Bezbedno dok firma, domen i ključ nisu spremni.
+    ↳ 1 page(s): /admin/podesavanja?tab=obavestenja
+[text] Prazno: e-pošta firme iz podešavanja.
+    ↳ 1 page(s): /admin/podesavanja?tab=obavestenja
+[text] Nova porudžbina (i prihvaćena ponuda), e-pošta
+    ↳ 1 page(s): /admin/podesavanja?tab=obavestenja
+[text] Novi upit, zahtev za novu ponudu, e-pošta
+    ↳ 1 page(s): /admin/podesavanja?tab=obavestenja
+[text] Nova registracija majstora, e-pošta
+    ↳ 1 page(s): /admin/podesavanja?tab=obavestenja
+[text] Malo na stanju (e-pošta najviše jednom na sat)
+    ↳ 1 page(s): /admin/podesavanja?tab=obavestenja
+[text] Malo na stanju (e-pošta najviše jednom na sat), u aplikaciji
+    ↳ 1 page(s): /admin/podesavanja?tab=obavestenja
+[text] Malo na stanju (e-pošta najviše jednom na sat), e-pošta
+    ↳ 1 page(s): /admin/podesavanja?tab=obavestenja
+[text] Podsetnici za neodgovorene, e-pošta
+    ↳ 1 page(s): /admin/podesavanja?tab=obavestenja
+[text] Dnevni pregled, e-pošta
+    ↳ 1 page(s): /admin/podesavanja?tab=obavestenja
+[text] Na sajtu nema plaćanja karticom. Porudžbinu šaljete bez plaćanja, a mi je potvrđujemo telefonom ili e-poštom pre slanja.
+    ↳ 1 page(s): /admin/podesavanja?tab=pravni-tekstovi
+[text] E-pošta zabeležena (nije poslata, režim log): Porudžbina SK-2026-000092 je primljena
+    ↳ 1 page(s): /admin/porudzbine/SK-2026-000092
+
+## rsdLeading (35 distinct lines)
+[text] 16.200 RSD	038 121 662
+    ↳ 1 page(s): /admin/proizvodi
+[text] 84.500 RSD	03G 145 883
+    ↳ 1 page(s): /admin/proizvodi
+[text] 1.900 RSD	1K0 411 042 HC
+    ↳ 1 page(s): /admin/proizvodi
+[text] 8.100 RSD	1K0 413 165 G
+    ↳ 1 page(s): /admin/proizvodi
+[text] 2.600 RSD	1K0 698 569
+    ↳ 1 page(s): /admin/proizvodi
+[text] 3.900 RSD	1K0 698 406 F
+    ↳ 1 page(s): /admin/proizvodi
+[text] 6.700 RSD	1K0 615 591 E
+    ↳ 1 page(s): /admin/proizvodi
+[text] 1.890 RSD	5WA 819 778
+    ↳ 1 page(s): /admin/proizvodi
+[text] 1.290 RSD	6R0 819 138 LK
+    ↳ 1 page(s): /admin/proizvodi
+[text] 1.490 RSD	5Q0 819 854
+    ↳ 1 page(s): /admin/proizvodi
+[text] 2.190 RSD	1K0 819 072 BD
+    ↳ 1 page(s): /admin/proizvodi
+[text] 1.990 RSD	1J0 127 051
+    ↳ 1 page(s): /admin/proizvodi
+[text] 2.990 RSD	5Q0 127 966
+    ↳ 1 page(s): /admin/proizvodi
+[text] 2.490 RSD	3C0 127 559 P
+    ↳ 1 page(s): /admin/proizvodi
+[text] 1.590 RSD	3C0 129 362 SM
+    ↳ 1 page(s): /admin/proizvodi
+[text] 1.390 RSD	6R0 129 754 DG
+    ↳ 1 page(s): /admin/proizvodi
+[text] 1.890 RSD	5Q0 129 828
+    ↳ 1 page(s): /admin/proizvodi
+[text] 1.690 RSD	1K0 129 599
+    ↳ 1 page(s): /admin/proizvodi
+[text] 1.490 RSD	03L 115 549 DA
+    ↳ 1 page(s): /admin/proizvodi
+[text] 890 RSD	030 115 446
+    ↳ 1 page(s): /admin/proizvodi
+[text] 1.090 RSD	04E 115 052 TE
+    ↳ 1 page(s): /admin/proizvodi
+[text] 1.390 RSD	03N 115 852 MR
+    ↳ 1 page(s): /admin/proizvodi
+[text] 1.190 RSD	045 115 278
+    ↳ 1 page(s): /admin/proizvodi
+[text] 24.900 RSD	1K0 601 701
+    ↳ 1 page(s): /admin/proizvodi
+[text] 15.900 RSD	1K0 955 857
+    ↳ 1 page(s): /admin/proizvodi
+[text] 1.190 RSD	1K0 955 897 M
+    ↳ 1 page(s): /admin/proizvodi
+[text] 3.490 RSD	5G0 955 985 BN
+    ↳ 1 page(s): /admin/proizvodi
+[text] 42.900 RSD	5G0 845 759 N
+    ↳ 1 page(s): /admin/proizvodi
+[text] 2.990 RSD	5E0 857 198 A
+    ↳ 1 page(s): /admin/proizvodi
+[text] 4.990 RSD	5G0 857 875 B
+    ↳ 1 page(s): /admin/proizvodi
+[text] 12.900 RSD	5Q0 837 241 CL
+    ↳ 1 page(s): /admin/proizvodi
+[text] 8.990 RSD	1K0 837 449 K
+    ↳ 1 page(s): /admin/proizvodi
+[text] Direktno	46	40	55	1.056.506 RSD	2 · 49.706 RSD
+    ↳ 1 page(s): /admin/izvori
+[text] Direktno	—	46	40	55	1.056.506 RSD	49.706 RSD
+    ↳ 1 page(s): /admin/izvori
+[text] 1	4.690 RSD	4.690 RSD
+    ↳ 1 page(s): /admin/porudzbine/SK-2026-000092/predracun
+
+## asciiDiacritic (4 distinct lines)
+[text] Menjač (DSG) (menjac)
+    ↳ 1 page(s): /admin/kategorije
+[text] Brisači (brisaci)
+    ↳ 1 page(s): /admin/kategorije
+[text] Jedna po redu, npr. „kocione plocice golf 7“. Sve ostale stranice pretrage ostaju van indeksa.
+    ↳ 1 page(s): /admin/podesavanja?tab=seo
+[text] Predračun nije fiskalni račun. Robu rezervišemo do uplate; račun izdajemo pri isporuci.
+    ↳ 1 page(s): /admin/porudzbine/SK-2026-000092/predracun
+
+## titleCase (1 distinct lines)
+[title] Uvoz iz Excela · Administracija
+    ↳ 1 page(s): /admin/uvoz
+
+## english (2 distinct lines)
+[text] Offline konverzije za Google Ads
+    ↳ 1 page(s): /admin/izvori
+[text] Mapa sajta (Search Console)
+    ↳ 1 page(s): /admin/podesavanja?tab=pracenje
+
+## hyphenAsDash (1 distinct lines)
+[text] ## naslov, - lista, **podebljano**, [link](/putanja). {{firma.naziv}} i slično se popunjava iz podešavanja.
+    ↳ 1 page(s): /admin/podesavanja?tab=pravni-tekstovi

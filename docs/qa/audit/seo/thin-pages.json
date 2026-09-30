@@ -1,0 +1,1747 @@
+[
+ {
+  "url": "/delovi/tockovi",
+  "words": 6,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/servis",
+  "words": 11,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/izduvni-sistem",
+  "words": 13,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/cupra",
+  "words": 13,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/transmisija",
+  "words": 16,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocnice",
+  "words": 17,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/elektrika-i-svetla",
+  "words": 19,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/hladjenje-i-klima",
+  "words": 20,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/karoserija",
+  "words": 22,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/rapid",
+  "words": 27,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/cupra/formentor",
+  "words": 28,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/vesanje-i-upravljanje",
+  "words": 29,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/cupra/leon",
+  "words": 29,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/karoq",
+  "words": 35,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/seat/ateca",
+  "words": 35,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/cupra/ateca",
+  "words": 35,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/kodiaq",
+  "words": 36,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/seat",
+  "words": 37,
+  "inSitemap": true
+ },
+ {
+  "url": "/kontakt",
+  "words": 40,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/polo",
+  "words": 46,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/caddy",
+  "words": 46,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/seat/ibiza",
+  "words": 46,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/touran",
+  "words": 50,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/tiguan",
+  "words": 51,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/audi",
+  "words": 53,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/audi/a6",
+  "words": 53,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/fabia",
+  "words": 53,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/superb",
+  "words": 55,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda",
+  "words": 59,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/audi/a4",
+  "words": 62,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/passat",
+  "words": 64,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila",
+  "words": 66,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/motor-i-usis",
+  "words": 72,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen",
+  "words": 73,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/seat/leon",
+  "words": 73,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/audi/a3",
+  "words": 74,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/octavia",
+  "words": 74,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/golf",
+  "words": 83,
+  "inSitemap": true
+ },
+ {
+  "url": "/o-nama",
+  "words": 158,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/hauba",
+  "words": 170,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/stakla",
+  "words": 180,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/blatobrani",
+  "words": 195,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/farovi",
+  "words": 197,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/stop-svetla",
+  "words": 200,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/anlaser",
+  "words": 201,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/klima",
+  "words": 203,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/retrovizori",
+  "words": 203,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/branici",
+  "words": 205,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/letva-volana",
+  "words": 207,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/interkuler",
+  "words": 209,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/alternator",
+  "words": 210,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/vrata",
+  "words": 211,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/dpf-katalizator",
+  "words": 216,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filter-goriva",
+  "words": 217,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/egr-ventil",
+  "words": 219,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/menjac",
+  "words": 219,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/usisna-grana",
+  "words": 224,
+  "inSitemap": true
+ },
+ {
+  "url": "/kolacici",
+  "words": 225,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/auspuh",
+  "words": 225,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/hladnjak-ventilator",
+  "words": 228,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/brisaci",
+  "words": 230,
+  "inSitemap": true
+ },
+ {
+  "url": "/dostava-i-placanje",
+  "words": 231,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/poluosovine",
+  "words": 232,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/akumulator",
+  "words": 234,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kais-alternatora",
+  "words": 238,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/abs-senzori",
+  "words": 240,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/karter-dihtunzi",
+  "words": 243,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/nosaci-motora",
+  "words": 243,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/gumeni-nosac-auspuha-demo-0085",
+  "words": 243,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filter-vazduha",
+  "words": 244,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-celjusti",
+  "words": 249,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/felne-gume",
+  "words": 249,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kvacilo-zamajac",
+  "words": 250,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/termostat-creva",
+  "words": 251,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/brizgaljke-pumpa-goriva",
+  "words": 257,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filter-kabine",
+  "words": 262,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/cep-kartera-sa-podloskom-demo-0073",
+  "words": 262,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/branik-zadnji-demo-0116",
+  "words": 262,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/hauba-demo-0114",
+  "words": 263,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/blatobran-levi-demo-0117",
+  "words": 263,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/far-desni-halogeni-demo-0106",
+  "words": 266,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi",
+  "words": 268,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filter-ulja",
+  "words": 268,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/far-levi-halogeni-demo-0105",
+  "words": 268,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/lezaj-glavcina",
+  "words": 269,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/blatobran-desni-demo-0118",
+  "words": 269,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/ulje-za-dsg-menjac-1-l-demo-0150",
+  "words": 269,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/akumulator-60-ah-540-a-demo-0102",
+  "words": 271,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kociona-tecnost-super-dot-4-1-l-demo-0149",
+  "words": 271,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/akumulator-agm-80-ah-800-a-demo-0104",
+  "words": 272,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/akumulator-efb-70-ah-760-a-start-stop-demo-0103",
+  "words": 273,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/paljenje-grejaci",
+  "words": 274,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/stop-svetlo-desno-karavan-demo-0108",
+  "words": 275,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/guma-letnja-205-55-r16-91v-demo-0127",
+  "words": 275,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/vijci-tocka-m14-1-5-set-20-kom-demo-0129",
+  "words": 275,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/stop-svetlo-levo-demo-0107",
+  "words": 276,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/branik-prednji-za-prskalice-farova-demo-0115",
+  "words": 276,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/poklopac-retrovizora-desni-demo-0122",
+  "words": 277,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/rashladna-tecnost-g13-koncentrat-1-5-l-demo-0148",
+  "words": 277,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/filter-vazduha-demo-0138",
+  "words": 279,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/amortizer-prednji-demo-0028",
+  "words": 283,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/staklo-retrovizora-levo-grejano-demo-0121",
+  "words": 283,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/motor",
+  "words": 286,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/spone-stabilizatori",
+  "words": 286,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/vetrobransko-staklo-sa-nosacem-senzora-demo-0123",
+  "words": 286,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/motorno-ulje-magnatec-5w-40-4-l-demo-0147",
+  "words": 286,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/motorno-ulje-edge-5w-30-ll-5-l-demo-0146",
+  "words": 288,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/ramena-selen-blokovi",
+  "words": 296,
+  "inSitemap": true
+ },
+ {
+  "url": "/upit",
+  "words": 298,
+  "inSitemap": true
+ },
+ {
+  "url": "/politika-privatnosti",
+  "words": 299,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/senzori",
+  "words": 299,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/lezaj-prednjeg-tocka-set-demo-0043",
+  "words": 299,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/turbina",
+  "words": 302,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/katalizator-1-6-8v-demo-0081",
+  "words": 304,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/ulja-tecnosti",
+  "words": 305,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/podizac-stakla-prednji-levi-sa-motorom-demo-0119",
+  "words": 305,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/lonac-srednji-demo-0084",
+  "words": 308,
+  "inSitemap": true
+ },
+ {
+  "url": "/uslovi-koriscenja",
+  "words": 309,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/filter-vazduha-demo-0137",
+  "words": 310,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/lonac-zadnji-demo-0083",
+  "words": 311,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/poluosovina-leva-demo-0100",
+  "words": 311,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/stangla-stabilizatora-prednja-hd-demo-0037",
+  "words": 312,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/ventilator-hladnjaka-sa-motorom-demo-0088",
+  "words": 315,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/alternator-110-a-demo-0066",
+  "words": 317,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/metlice-brisaca-aerotwin-600-475-set-demo-0124",
+  "words": 318,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/filter-vazduha-demo-0135",
+  "words": 318,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/abs-senzor-prednji-demo-0022",
+  "words": 319,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/rame-prednje-gornje-demo-0033",
+  "words": 319,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kondenzator-klime-demo-0093",
+  "words": 319,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/filter-kabine-demo-0144",
+  "words": 319,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/interkuler-demo-0050",
+  "words": 322,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kompresor-klime-demo-0092",
+  "words": 322,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/filter-kabine-sa-aktivnim-ugljem-demo-0145",
+  "words": 322,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocione-plocice-prednje-demo-0015",
+  "words": 323,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/manzetna-letve-volana-set-demo-0038",
+  "words": 323,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/anlaser-1-1-kw-demo-0068",
+  "words": 324,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/crevo-hladnjaka-gornje-demo-0090",
+  "words": 324,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/letva-volana-hidraulicna-demo-0039",
+  "words": 325,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/lezaj-prednjeg-tocka-demo-0042",
+  "words": 325,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/hladnjak-motora-demo-0086",
+  "words": 326,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/filter-vazduha-demo-0136",
+  "words": 326,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/motor-prednjih-brisaca-demo-0126",
+  "words": 331,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/spona-aksijalna-demo-0035",
+  "words": 331,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/rame-prednje-desno-sa-kuglom-demo-0030",
+  "words": 337,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/hladnjak-motora-demo-0087",
+  "words": 338,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/nosac-motora-desni-hidraulicni-demo-0078",
+  "words": 339,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/abs-senzor-zadnji-demo-0021",
+  "words": 339,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocioni-disk-prednji-320-30-mm-demo-0008",
+  "words": 341,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocione-plocice-prednje-demo-0016",
+  "words": 342,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/rame-prednje-levo-sa-kuglom-demo-0029",
+  "words": 342,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/crevo-usisa-od-filtera-vazduha-demo-0053",
+  "words": 343,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/rebrasti-kais-6pk1153-demo-0062",
+  "words": 343,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/zatezac-kaisa-alternatora-demo-0064",
+  "words": 343,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/alternator-140-a-demo-0065",
+  "words": 343,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/filter-kabine-sa-aktivnim-ugljem-demo-0142",
+  "words": 346,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kociona-celjust-prednja-leva-demo-0017",
+  "words": 347,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/nosac-menjaca-levi-dsg-demo-0079",
+  "words": 347,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/lezaj-prednjeg-tocka-set-demo-0040",
+  "words": 348,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/rebrasti-kais-6pk1070-demo-0063",
+  "words": 348,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocione-plocice-prednje-demo-0012",
+  "words": 349,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/filter-kabine-demo-0143",
+  "words": 350,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/anlaser-2-0-kw-demo-0067",
+  "words": 352,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/cupra/formentor/formentor",
+  "words": 353,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/interkuler-demo-0051",
+  "words": 354,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/brava-prednjih-desnih-vrata-demo-0120",
+  "words": 355,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocione-plocice-prednje-demo-0014",
+  "words": 362,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/cupra/leon/cupra-leon",
+  "words": 363,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/audi/a4/a4-b5",
+  "words": 364,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/audi/a6/a6-c5",
+  "words": 364,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/obrtni-nosac-motora-pas-demo-0080",
+  "words": 364,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/rame-prednje-donje-hd-demo-0031",
+  "words": 366,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocioni-disk-prednji-312-25-mm-demo-0007",
+  "words": 367,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/turbina-1-4-tsi-90-kw-nova-demo-0049",
+  "words": 368,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/caddy/caddy-5",
+  "words": 372,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/opruga-prednja-demo-0026",
+  "words": 374,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/passat/passat-b5",
+  "words": 375,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/superb/superb-1",
+  "words": 375,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/lezaj-amortizera-sa-gumom-set-demo-0027",
+  "words": 376,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/amortizeri-opruge",
+  "words": 379,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/dpf-filter-2-0-tdi-demo-0082",
+  "words": 379,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kociona-celjust-zadnja-desna-sa-motorom-rucne-demo-0018",
+  "words": 381,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/amortizer-prednji-excel-g-demo-0024",
+  "words": 381,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/golf/golf-8",
+  "words": 383,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/octavia/octavia-4",
+  "words": 383,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/seat/leon/leon-4",
+  "words": 383,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/audi/a3/a3-8y",
+  "words": 384,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/set-kvacila-1-9-tdi-demo-0094",
+  "words": 390,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/golf/golf-4",
+  "words": 393,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/audi/a3/a3-8l",
+  "words": 393,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/octavia/octavia-1",
+  "words": 393,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/seat/leon/leon-1",
+  "words": 393,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/motor-klapni-usisne-grane-2-0-tdi-demo-0052",
+  "words": 393,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocioni-disk-prednji-256-22-mm-demo-0006",
+  "words": 394,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/pumpa-ulja-2-0-tdi-demo-0074",
+  "words": 396,
+  "inSitemap": true
+ },
+ {
+  "url": "/reklamacije-i-povrat",
+  "words": 398,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/selen-blok-zadnjeg-mosta-demo-0032",
+  "words": 399,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/brizgaljka-common-rail-2-0-tdi-demo-0054",
+  "words": 400,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/rapid/rapid",
+  "words": 401,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/abs-senzor-prednji-demo-0020",
+  "words": 404,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/homokineticki-zglob-spoljni-demo-0099",
+  "words": 407,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/amortizer-prednji-gasni-demo-0023",
+  "words": 408,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/parking-senzor-demo-0111",
+  "words": 409,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/amortizer-prednji-gasni-demo-e004",
+  "words": 409,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/polo/polo-4",
+  "words": 411,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/fabia/fabia-1",
+  "words": 411,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/fabia/fabia-2",
+  "words": 411,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/fabia/fabia-3",
+  "words": 411,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/seat/ibiza/ibiza-3",
+  "words": 411,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/polo/polo-5",
+  "words": 412,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/seat/ibiza/ibiza-4",
+  "words": 412,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocione-plocice-prednje-sistem-teves-demo-0010",
+  "words": 412,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/glavcina-zadnja-sa-lezajem-demo-0041",
+  "words": 416,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/turbina-2-0-tdi-110-kw-nova-demo-0048",
+  "words": 417,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/set-kvacila-1-6-tdi-demo-0096",
+  "words": 418,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/lambda-sonda-demo-0110",
+  "words": 418,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/metlica-zadnjeg-brisaca-280-mm-demo-0125",
+  "words": 424,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/zupcasti-kais-vodena-pumpa",
+  "words": 427,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/stangla-stabilizatora-prednja-demo-0036",
+  "words": 429,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kraj-spone-demo-0034",
+  "words": 443,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kraj-spone-demo-e005",
+  "words": 445,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/amortizer-zadnji-b4-demo-0025",
+  "words": 447,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocioni-disk-prednji-288-25-mm-ventilirani-demo-0001",
+  "words": 448,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/turbina-1-9-tdi-77-kw-nova-demo-0047",
+  "words": 451,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/amortizeri-opruge/audi/a3",
+  "words": 458,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/set-za-reparaciju-kocione-celjusti-prednji-demo-0019",
+  "words": 459,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/set-filtera-i-ulja-za-dsg-dq250-demo-0097",
+  "words": 461,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/turbina-1-9-tdi-77-kw-nova-demo-e006",
+  "words": 462,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/filter-ulja-demo-0134",
+  "words": 465,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/amortizeri-opruge/seat/leon",
+  "words": 466,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/senzor-temperature-rashladne-tecnosti-demo-0112",
+  "words": 467,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013",
+  "words": 468,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/amortizeri-opruge/skoda/octavia",
+  "words": 470,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/amortizeri-opruge/volkswagen/tiguan",
+  "words": 472,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/amortizeri-opruge/volkswagen/touran",
+  "words": 474,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/seat/ateca",
+  "words": 477,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/cupra/ateca",
+  "words": 477,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "words": 478,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/mehatronika-dq200-nova-demo-0098",
+  "words": 478,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/amortizeri-opruge/volkswagen/golf",
+  "words": 480,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/skoda/kodiaq",
+  "words": 483,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/skoda/karoq",
+  "words": 483,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/aluminijumska-felna-6-5j-16-et46-5-112-demo-0128",
+  "words": 485,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/filter-goriva-demo-0141",
+  "words": 485,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/manzetna-homokinetickog-zgloba-set-demo-0101",
+  "words": 489,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/set-zupcastog-kaisa-1-4-16v-demo-0061",
+  "words": 490,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice",
+  "words": 492,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/volkswagen/tiguan",
+  "words": 494,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/superb/superb-2",
+  "words": 495,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/passat/passat-b7",
+  "words": 496,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/volkswagen/touran",
+  "words": 496,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/passat/passat-b6",
+  "words": 498,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/volkswagen/caddy",
+  "words": 501,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005",
+  "words": 506,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocione-plocice-zadnje-demo-0011",
+  "words": 508,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/karoq/karoq",
+  "words": 511,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/seat/ateca/ateca",
+  "words": 511,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/cupra/ateca/cupra-ateca",
+  "words": 511,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocioni-disk-zadnji-272-10-mm-puni-demo-0003",
+  "words": 516,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocione-plocice-zadnje-demo-e003",
+  "words": 516,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/filter-goriva-demo-0139",
+  "words": 518,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/kodiaq/kodiaq-1",
+  "words": 521,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi",
+  "words": 523,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/passat/passat-b8",
+  "words": 524,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/caddy/caddy-3",
+  "words": 524,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/superb/superb-3",
+  "words": 524,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocione-plocice-prednje-sa-senzorom-demo-e002",
+  "words": 525,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocione-plocice-prednje-sa-senzorom-demo-0009",
+  "words": 526,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/touran/touran-2",
+  "words": 527,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/tiguan/tiguan-2",
+  "words": 528,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/touran/touran-1",
+  "words": 529,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/tiguan/tiguan-1",
+  "words": 529,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/skoda/superb",
+  "words": 532,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/audi/a3",
+  "words": 532,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/seat/leon",
+  "words": 532,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/audi/a3/a3-8p",
+  "words": 535,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/seat/leon/leon-2",
+  "words": 535,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/volkswagen/tiguan",
+  "words": 537,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/skoda/octavia",
+  "words": 538,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/octavia/octavia-2",
+  "words": 539,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/volkswagen/touran",
+  "words": 539,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/audi/a3/a3-8v",
+  "words": 540,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/seat/leon/leon-3",
+  "words": 540,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/volkswagen/passat",
+  "words": 540,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/golf/golf-5",
+  "words": 541,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/golf/golf-6",
+  "words": 546,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/volkswagen/golf",
+  "words": 546,
+  "inSitemap": true
+ },
+ {
+  "url": "/za-majstore",
+  "words": 547,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/skoda/octavia/octavia-3",
+  "words": 547,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/skoda/superb",
+  "words": 547,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/audi/a3",
+  "words": 549,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/seat/leon",
+  "words": 549,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/pumpa-visokog-pritiska-cp4-2-0-tdi-demo-0055",
+  "words": 550,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/egr-ventil-2-0-tdi-cr-demo-0077",
+  "words": 550,
+  "inSitemap": true
+ },
+ {
+  "url": "/vozila/volkswagen/golf/golf-7",
+  "words": 553,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/skoda/octavia",
+  "words": 555,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/volkswagen/passat",
+  "words": 555,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/dihtung-glave-motora-2-0-tdi-2-zareza-demo-0044",
+  "words": 555,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/filter-ulja-demo-0133",
+  "words": 557,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/volkswagen/golf",
+  "words": 559,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filteri/volkswagen/caddy",
+  "words": 561,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/seat",
+  "words": 562,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/audi",
+  "words": 568,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/set-zupcastog-kaisa-1-6-8v-demo-0059",
+  "words": 569,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/dvomaseni-zamajac-2-0-tdi-demo-0095",
+  "words": 570,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-0002",
+  "words": 574,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/zupcasti-kais-vodena-pumpa/audi/a3",
+  "words": 575,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/zupcasti-kais-vodena-pumpa/seat/leon",
+  "words": 575,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-e001",
+  "words": 576,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/zupcasti-kais-vodena-pumpa/skoda/octavia",
+  "words": 581,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filteri/volkswagen/tiguan",
+  "words": 587,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/zupcasti-kais-vodena-pumpa/volkswagen/golf",
+  "words": 589,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filteri/volkswagen/touran",
+  "words": 589,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filteri/skoda/superb",
+  "words": 599,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/kuciste-termostata-sa-pumpom-1-4-tsi-demo-0091",
+  "words": 601,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filteri",
+  "words": 602,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filteri/volkswagen/passat",
+  "words": 607,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/set-klipnih-karika-1-9-tdi-demo-0046",
+  "words": 627,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/skoda",
+  "words": 642,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/skoda",
+  "words": 642,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/volkswagen",
+  "words": 645,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/volkswagen",
+  "words": 646,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/filter-goriva-demo-0140",
+  "words": 652,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filteri/audi/a3",
+  "words": 656,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filteri/seat/leon",
+  "words": 656,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/svecica-iridijumska-demo-0069",
+  "words": 659,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filteri/skoda/octavia",
+  "words": 662,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filteri/volkswagen/golf",
+  "words": 666,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filteri/audi",
+  "words": 671,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/semering-radilice-strana-zamajca-demo-0075",
+  "words": 672,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filteri/seat",
+  "words": 677,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/termostat-1-9-2-0-tdi-demo-0089",
+  "words": 680,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-6-tdi-demo-0060",
+  "words": 682,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/egr-ventil-1-9-2-0-tdi-demo-0076",
+  "words": 697,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filteri/skoda",
+  "words": 720,
+  "inSitemap": true
+ },
+ {
+  "url": "/delovi/filteri/volkswagen",
+  "words": 722,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/filter-ulja-demo-0130",
+  "words": 755,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/set-podlozki-brizgaljki-demo-0056",
+  "words": 768,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/grejac-duraterm-1-9-2-0-tdi-demo-0071",
+  "words": 770,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/dihtung-poklopca-ventila-1-9-tdi-demo-0045",
+  "words": 787,
+  "inSitemap": true
+ },
+ {
+  "url": "/",
+  "words": 825,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-2-0-tdi-demo-0058",
+  "words": 885,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-0057",
+  "words": 910,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-e007",
+  "words": 910,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/senzor-pritiska-izduvnih-gasova-dpf-demo-0113",
+  "words": 923,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/lambda-sonda-pre-katalizatora-demo-0109",
+  "words": 926,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/filter-ulja-demo-0132",
+  "words": 981,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/bobina-paljenja-demo-0070",
+  "words": 985,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/filter-ulja-demo-0131",
+  "words": 991,
+  "inSitemap": true
+ },
+ {
+  "url": "/deo/grejac-1-6-2-0-tdi-cr-demo-0072",
+  "words": 1008,
+  "inSitemap": true
+ }
+]

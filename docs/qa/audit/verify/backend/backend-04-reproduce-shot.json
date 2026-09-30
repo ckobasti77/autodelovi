@@ -1,0 +1,21 @@
+{
+  "number": "SK-2026-000102",
+  "overflow": {
+    "over": 0,
+    "offenders": []
+  },
+  "addressBox": {
+    "tag": "DD",
+    "width": 218,
+    "height": 19110,
+    "textLength": 20013
+  },
+  "shot": "docs/qa/audit/verify/backend/backend-04-reproduce-order-detail-1440.webp",
+  "shotAtAddress": "docs/qa/audit/verify/backend/backend-04-reproduce-order-detail-address-1440.webp",
+  "log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

@@ -1,0 +1,635 @@
+{
+  "summary": {
+    "products": 157,
+    "duplicateQuality": 21,
+    "truncatedVehicleList": 32,
+    "danglingI": 4,
+    "landings": 50,
+    "landingsWithIntro": 50,
+    "landingDoubleI": 27,
+    "landingJosOne": 17,
+    "landingNonChronologicalGenerations": 24
+  },
+  "products": [
+    {
+      "url": "/deo/kocioni-disk-prednji-288-25-mm-ventilirani-demo-0001",
+      "description": "Kočioni disk prednji 288 × 25 mm, ventilirani (ATE, OEM kvalitet) za VW Golf IV, VW Golf … Cena 5.490 RSD sa PDV-om. Po porudžbini. Kat. br. 1K0 615 868 F.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+      "description": "Kočioni disk prednji 276 × 24 mm (Febi Bilstein, Aftermarket) za VW Golf VII, VW Passat B8 i … Cena 4.690 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 615 505 R.",
+      "duplicateQuality": false,
+      "danglingI": true,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005",
+      "description": "Kočioni disk prednji 340 × 30 mm, GTI (Original VAG, Original VAG) za VW Golf VII, VW Golf V… Cena 18.900 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 615 666 A.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013",
+      "description": "Kočione pločice zadnje, elektronska ručna (Febi Bilstein, Aftermarket) za VW Golf VII, VW Go… Cena 3.490 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 698 782 KA.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/kocione-plocice-prednje-demo-0014",
+      "description": "Kočione pločice prednje (Original VAG, Original VAG) za VW Golf VIII, VW Caddy V i još 5. Cena 8.900 RSD sa PDV-om. Na stanju. Kat. br. 5WA 698 115 M.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": false
+    },
+    {
+      "url": "/deo/set-za-reparaciju-kocione-celjusti-prednji-demo-0019",
+      "description": "Set za reparaciju kočione čeljusti, prednji (Febi Bilstein, Aftermarket) za VW Golf V, VW Gol… Cena 1.490 RSD sa PDV-om. Na stanju. Kat. br. 1K0 615 324 H.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/rame-prednje-desno-sa-kuglom-demo-0030",
+      "description": "Rame prednje desno, sa kuglom (Lemförder, OEM kvalitet) za VW Golf V, VW Golf … Cena 7.990 RSD sa PDV-om. Trenutno nije na stanju. Kat. br. 1K0 407 176 RD.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/manzetna-letve-volana-set-demo-0038",
+      "description": "Manžetna letve volana, set (Original VAG, Original VAG) za VW Golf V, VW Golf VI i još 6. Cena 3.290 RSD sa PDV-om. Na stanju. Kat. br. 1K0 423 878.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": false
+    },
+    {
+      "url": "/deo/dihtung-glave-motora-2-0-tdi-2-zareza-demo-0044",
+      "description": "Dihtung glave motora 2.0 TDI, 2 zareza (Original VAG, Original VAG) za VW Golf V, VW Golf VI … Cena 7.900 RSD sa PDV-om. Na stanju. Kat. br. 04L 103 879 G.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/motor-klapni-usisne-grane-2-0-tdi-demo-0052",
+      "description": "Motor klapni usisne grane 2.0 TDI (Pierburg, OEM kvalitet) za VW Golf V, VW Golf VI i jo… Cena 18.900 RSD sa PDV-om. Po porudžbini. Kat. br. 03L 129 304 H.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/crevo-usisa-od-filtera-vazduha-demo-0053",
+      "description": "Crevo usisa od filtera vazduha (Original VAG, Original VAG) za VW Golf VII, VW Passat B8 i još … Cena 6.900 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 129 790.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-0057",
+      "description": "Set zupčastog kaiša sa vodenom pumpom 1.9 TDI (INA, OEM kvalitet) za VW Golf IV, VW Golf V i j… Cena 16.900 RSD sa PDV-om. Na stanju. Kat. br. 038 121 662.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-2-0-tdi-demo-0058",
+      "description": "Set zupčastog kaiša sa vodenom pumpom 2.0 TDI (Gates, OEM kvalitet) za VW Golf V, VW Golf V… Cena 19.900 RSD sa PDV-om. Na stanju. Kat. br. 04L 121 248 DR.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-6-tdi-demo-0060",
+      "description": "Set zupčastog kaiša sa vodenom pumpom 1.6 TDI (SKF, OEM kvalitet) za VW Golf V, VW Golf VI i… Cena 17.490 RSD sa PDV-om. Na stanju. Kat. br. 04L 121 911 B.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/pumpa-ulja-2-0-tdi-demo-0074",
+      "description": "Pumpa ulja 2.0 TDI (Original VAG, Original VAG) za VW Golf V, VW Golf VI i još 9. Cena 32.900 RSD sa PDV-om. Na stanju. Kat. br. 03L 115 686.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": false
+    },
+    {
+      "url": "/deo/semering-radilice-strana-zamajca-demo-0075",
+      "description": "Semering radilice, strana zamajca (Febi Bilstein, Aftermarket) za VW Golf IV, VW Golf V … Cena 2.490 RSD sa PDV-om. Po porudžbini. Kat. br. 038 115 925 GE.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/nosac-menjaca-levi-dsg-demo-0079",
+      "description": "Nosač menjača levi, DSG (Febi Bilstein, Aftermarket) za VW Golf V, VW Golf VI i j… Cena 5.490 RSD sa PDV-om. Trenutno nije na stanju. Kat. br. 1K0 199 520.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/dpf-filter-2-0-tdi-demo-0082",
+      "description": "DPF filter 2.0 TDI (Original VAG, Original VAG) za VW Golf VII, VW Passat B8 i još 10. Cena 139.900 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 254 256 FJ.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": false
+    },
+    {
+      "url": "/deo/crevo-hladnjaka-gornje-demo-0090",
+      "description": "Crevo hladnjaka gornje (Febi Bilstein, Aftermarket) za VW Golf V, VW Golf VI i … Cena 2.490 RSD sa PDV-om. Trenutno nije na stanju. Kat. br. 1K0 121 740 S.",
+      "duplicateQuality": false,
+      "danglingI": true,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/kuciste-termostata-sa-pumpom-1-4-tsi-demo-0091",
+      "description": "Kućište termostata sa pumpom 1.4 TSI (Original VAG, Original VAG) za VW Golf VII, VW Golf VIII… Cena 22.900 RSD sa PDV-om. Na stanju. Kat. br. 04E 121 315.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/set-filtera-i-ulja-za-dsg-dq250-demo-0097",
+      "description": "Set filtera i ulja za DSG DQ250 (Original VAG, Original VAG) za VW Golf V, VW Golf VI i još… Cena 14.900 RSD sa PDV-om. Na stanju. Kat. br. 1K0 325 592 RB.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/mehatronika-dq200-nova-demo-0098",
+      "description": "Mehatronika DQ200, nova (Original VAG, Original VAG) za VW Golf V, VW Golf VI i još 26. Cena 189.900 RSD sa PDV-om. Na stanju. Kat. br. 1K0 325 741.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": false
+    },
+    {
+      "url": "/deo/manzetna-homokinetickog-zgloba-set-demo-0101",
+      "description": "Manžetna homokinetičkog zgloba, set (Febi Bilstein, Aftermarket) za VW Golf V, VW Golf VI i još… Cena 1.290 RSD sa PDV-om. Na stanju. Kat. br. 1K0 498 509.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/parking-senzor-demo-0111",
+      "description": "Parking senzor (Original VAG, Original VAG) za VW Golf V, VW Golf VI i još 18. Cena 5.900 RSD sa PDV-om. Na stanju. Kat. br. 1K0 906 861 EQ.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": false
+    },
+    {
+      "url": "/deo/senzor-temperature-rashladne-tecnosti-demo-0112",
+      "description": "Senzor temperature rashladne tečnosti (Febi Bilstein, Aftermarket) za VW Golf IV, VW Golf V i j… Cena 1.490 RSD sa PDV-om. Na stanju. Kat. br. 1J0 906 761.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/hauba-demo-0114",
+      "description": "Hauba (Original VAG, Original VAG) za VW Golf VII. Cena 49.900 RSD sa PDV-om. Trenutno nije na stanju. Kat. br. 5G0 823 884 H.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": false
+    },
+    {
+      "url": "/deo/branik-prednji-za-prskalice-farova-demo-0115",
+      "description": "Branik prednji, za prskalice farova (Original VAG, Original VAG) za Škoda Octavia III. Cena 39.900 RSD sa PDV-om. Na stanju. Kat. br. 5E0 807 443 JJ.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": false
+    },
+    {
+      "url": "/deo/branik-zadnji-demo-0116",
+      "description": "Branik zadnji (Original VAG, Original VAG) za VW Golf VI. Cena 36.900 RSD sa PDV-om. Po porudžbini. Kat. br. 5K0 807 784.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": false
+    },
+    {
+      "url": "/deo/blatobran-levi-demo-0117",
+      "description": "Blatobran levi (Original VAG, Original VAG) za VW Golf V. Cena 18.900 RSD sa PDV-om. Na stanju. Kat. br. 1K0 821 283 S.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": false
+    },
+    {
+      "url": "/deo/blatobran-desni-demo-0118",
+      "description": "Blatobran desni (Original VAG, Original VAG) za VW Passat B6. Cena 21.900 RSD sa PDV-om. Na stanju. Kat. br. 3C0 821 404 G.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": false
+    },
+    {
+      "url": "/deo/brava-prednjih-desnih-vrata-demo-0120",
+      "description": "Brava prednjih desnih vrata (Original VAG, Original VAG) za VW Golf VII, VW Passat B8 i… Cena 12.900 RSD sa PDV-om. Po porudžbini. Kat. br. 5Q0 837 241 CL.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/staklo-retrovizora-levo-grejano-demo-0121",
+      "description": "Staklo retrovizora levo, grejano (Original VAG, Original VAG) za VW Golf VII. Cena 4.990 RSD sa PDV-om. Na stanju. Kat. br. 5G0 857 875 B.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": false
+    },
+    {
+      "url": "/deo/vetrobransko-staklo-sa-nosacem-senzora-demo-0123",
+      "description": "Vetrobransko staklo sa nosačem senzora (Original VAG, Original VAG) za VW Golf VII. Cena 42.900 RSD sa PDV-om. Na stanju. Kat. br. 5G0 845 759 N.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": false
+    },
+    {
+      "url": "/deo/metlice-brisaca-aerotwin-600-475-set-demo-0124",
+      "description": "Metlice brisača Aerotwin 600/475, set (Bosch, OEM kvalitet) za VW Golf VII, Škoda Octavia II… Cena 3.490 RSD sa PDV-om. Na stanju. Kat. br. 5G0 955 985 BN.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/metlica-zadnjeg-brisaca-280-mm-demo-0125",
+      "description": "Metlica zadnjeg brisača 280 mm (Bosch, OEM kvalitet) za VW Golf V, VW Golf VI i… Cena 1.190 RSD sa PDV-om. Trenutno nije na stanju. Kat. br. 1K0 955 897 M.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/aluminijumska-felna-6-5j-16-et46-5-112-demo-0128",
+      "description": "Aluminijumska felna 6,5J × 16 ET46, 5 × 112 (Original VAG, Original VAG) za VW Golf V, VW Golf… Cena 24.900 RSD sa PDV-om. Na stanju. Kat. br. 1K0 601 701.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/filter-kabine-sa-aktivnim-ugljem-demo-0142",
+      "description": "Filter kabine sa aktivnim ugljem (Mann-Filter, OEM kvalitet) za VW Golf V, VW Golf VI i … Cena 2.190 RSD sa PDV-om. Po porudžbini. Kat. br. 1K0 819 072 BD.",
+      "duplicateQuality": false,
+      "danglingI": true,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/filter-kabine-sa-aktivnim-ugljem-demo-0145",
+      "description": "Filter kabine sa aktivnim ugljem (Febi Bilstein, Aftermarket) za VW Golf VIII, VW Caddy V i još… Cena 1.890 RSD sa PDV-om. Na stanju. Kat. br. 5WA 819 778.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/rashladna-tecnost-g13-koncentrat-1-5-l-demo-0148",
+      "description": "Rashladna tečnost G13, koncentrat 1,5 L (Original VAG, Original VAG). Cena 1.890 RSD sa PDV-om. Na stanju.",
+      "duplicateQuality": true,
+      "danglingI": false,
+      "truncatedVehicles": false
+    },
+    {
+      "url": "/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-0002",
+      "description": "Kočioni disk prednji 312 × 25 mm, ventilirani (Brembo, OEM kvalitet) za VW Golf V, VW Golf VI… Cena 7.290 RSD sa PDV-om. Na stanju. Kat. br. 1K0 615 591 E.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/kocione-plocice-prednje-sistem-teves-demo-0010",
+      "description": "Kočione pločice prednje, sistem Teves (Brembo, OEM kvalitet) za VW Golf VII, VW Passat B8 i još… Cena 5.190 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 698 172.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/kociona-celjust-zadnja-desna-sa-motorom-rucne-demo-0018",
+      "description": "Kočiona čeljust zadnja desna, sa motorom ručne (ATE, OEM kvalitet) za VW Golf VII, VW Passat B… Cena 24.900 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 615 723.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/dihtung-poklopca-ventila-1-9-tdi-demo-0045",
+      "description": "Dihtung poklopca ventila 1.9 TDI (Febi Bilstein, Aftermarket) za VW Golf IV, VW Golf V i još… Cena 1.990 RSD sa PDV-om. Na stanju. Kat. br. 038 103 973 FS.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-e001",
+      "description": "Kočioni disk prednji 312 × 25 mm, ventilirani (ATE, OEM kvalitet) za VW Golf V, VW Golf VI i … Cena 6.700 RSD sa PDV-om. Na stanju. Kat. br. 1K0 615 591 E.",
+      "duplicateQuality": false,
+      "danglingI": true,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/kocione-plocice-prednje-sa-senzorom-demo-e002",
+      "description": "Kočione pločice prednje, sa senzorom (Bosch, OEM kvalitet) za VW Golf V, VW Golf VI i još… Cena 3.900 RSD sa PDV-om. Po porudžbini. Kat. br. 1K0 698 406 F.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    },
+    {
+      "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-e007",
+      "description": "Set zupčastog kaiša sa vodenom pumpom 1.9 TDI (Gates, OEM kvalitet) za VW Golf IV, VW Golf… Cena 16.200 RSD sa PDV-om. Po porudžbini. Kat. br. 038 121 662.",
+      "duplicateQuality": false,
+      "danglingI": false,
+      "truncatedVehicles": true
+    }
+  ],
+  "landings": [
+    {
+      "url": "/delovi/zupcasti-kais-vodena-pumpa/volkswagen/golf",
+      "intro": "Za VW Golf imamo 6 artikala iz grupe „Set zupčastog kaiša i vodena pumpa“, 5 odmah na stanju, u rasponu od 8.990 RSD do 19.900 RSD sa PDV-om. Pokrivene generacije: Golf V (2003–2009), Golf VI (2008–2013), Golf IV (1997–2006) i Golf VII (2012–2020). Proizvođači: Gates (3), ContiTech (1), INA (1) i SKF (1).",
+      "doubleI": false,
+      "josOne": false,
+      "generationsListed": "Golf V (2003–2009), Golf VI (2008–2013), Golf IV (1997–2006) i Golf VII (2012–2020)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/zupcasti-kais-vodena-pumpa/audi/a3",
+      "intro": "Za Audi A3 imamo 6 artikala iz grupe „Set zupčastog kaiša i vodena pumpa“, 5 odmah na stanju, u rasponu od 8.990 RSD do 19.900 RSD sa PDV-om. Pokrivene generacije: A3 (8P) (2003–2013), A3 (8L) (1996–2003) i A3 (8V) (2012–2020). Proizvođači: Gates (3), ContiTech (1), INA (1) i SKF (1).",
+      "doubleI": false,
+      "josOne": false,
+      "generationsListed": "A3 (8P) (2003–2013), A3 (8L) (1996–2003) i A3 (8V) (2012–2020)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/zupcasti-kais-vodena-pumpa/skoda/octavia",
+      "intro": "Za Škoda Octavia imamo 6 artikala iz grupe „Set zupčastog kaiša i vodena pumpa“, 5 odmah na stanju, u rasponu od 8.990 RSD do 19.900 RSD sa PDV-om. Pokrivene generacije: Octavia II (2004–2013), Octavia I (1996–2010) i Octavia III (2012–2020). Proizvođači: Gates (3), ContiTech (1), INA (1) i SKF (1).",
+      "doubleI": false,
+      "josOne": false,
+      "generationsListed": "Octavia II (2004–2013), Octavia I (1996–2010) i Octavia III (2012–2020)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/zupcasti-kais-vodena-pumpa/seat/leon",
+      "intro": "Za SEAT Leon imamo 6 artikala iz grupe „Set zupčastog kaiša i vodena pumpa“, 5 odmah na stanju, u rasponu od 8.990 RSD do 19.900 RSD sa PDV-om. Pokrivene generacije: Leon II (2005–2012), Leon I (1999–2005) i Leon III (2012–2020). Proizvođači: Gates (3), ContiTech (1), INA (1) i SKF (1).",
+      "doubleI": false,
+      "josOne": false,
+      "generationsListed": "Leon II (2005–2012), Leon I (1999–2005) i Leon III (2012–2020)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/kocioni-diskovi/volkswagen/golf",
+      "intro": "Za VW Golf imamo 6 artikala iz grupe „Kočioni diskovi“, 5 odmah na stanju, u rasponu od 3.890 RSD do 18.900 RSD sa PDV-om. Pokrivene generacije: Golf VII (2012–2020), Golf V (2003–2009), Golf VI (2008–2013) i Golf IV (1997–2006). Proizvođači: ATE (2), Brembo (1), Febi Bilstein (1) i Original VAG (1) i još 1.",
+      "doubleI": true,
+      "josOne": true,
+      "generationsListed": "Golf VII (2012–2020), Golf V (2003–2009), Golf VI (2008–2013) i Golf IV (1997–2006)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/kocioni-diskovi/volkswagen/touran",
+      "intro": "Za VW Touran imamo 6 artikala iz grupe „Kočioni diskovi“, 5 odmah na stanju, u rasponu od 3.890 RSD do 18.900 RSD sa PDV-om. Pokrivene generacije: Touran II (od 2015) i Touran I (2003–2015). Proizvođači: ATE (2), Brembo (1), Febi Bilstein (1) i Original VAG (1) i još 1.",
+      "doubleI": true,
+      "josOne": true,
+      "generationsListed": "Touran II (od 2015) i Touran I (2003–2015)",
+      "nonChronological": false
+    },
+    {
+      "url": "/delovi/kocioni-diskovi/volkswagen/tiguan",
+      "intro": "Za VW Tiguan imamo 6 artikala iz grupe „Kočioni diskovi“, 5 odmah na stanju, u rasponu od 3.890 RSD do 18.900 RSD sa PDV-om. Pokrivene generacije: Tiguan II (2016–2024) i Tiguan I (2007–2016). Proizvođači: ATE (2), Brembo (1), Febi Bilstein (1) i Original VAG (1) i još 1.",
+      "doubleI": true,
+      "josOne": true,
+      "generationsListed": "Tiguan II (2016–2024) i Tiguan I (2007–2016)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/kocioni-diskovi/audi/a3",
+      "intro": "Za Audi A3 imamo 6 artikala iz grupe „Kočioni diskovi“, 5 odmah na stanju, u rasponu od 3.890 RSD do 18.900 RSD sa PDV-om. Pokrivene generacije: A3 (8V) (2012–2020), A3 (8P) (2003–2013), A3 (8L) (1996–2003) i A3 (8Y) (od 2020). Proizvođači: ATE (2), Brembo (1), Febi Bilstein (1) i Original VAG (1) i još 1.",
+      "doubleI": true,
+      "josOne": true,
+      "generationsListed": "A3 (8V) (2012–2020), A3 (8P) (2003–2013), A3 (8L) (1996–2003) i A3 (8Y) (od 2020)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/kocioni-diskovi/skoda/octavia",
+      "intro": "Za Škoda Octavia imamo 6 artikala iz grupe „Kočioni diskovi“, 5 odmah na stanju, u rasponu od 3.890 RSD do 18.900 RSD sa PDV-om. Pokrivene generacije: Octavia III (2012–2020), Octavia II (2004–2013), Octavia I (1996–2010) i Octavia IV (od 2019). Proizvođači: ATE (2), Brembo (1), Febi Bilstein (1) i Original VAG (1) i još 1.",
+      "doubleI": true,
+      "josOne": true,
+      "generationsListed": "Octavia III (2012–2020), Octavia II (2004–2013), Octavia I (1996–2010) i Octavia IV (od 2019)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/kocioni-diskovi/seat/leon",
+      "intro": "Za SEAT Leon imamo 6 artikala iz grupe „Kočioni diskovi“, 5 odmah na stanju, u rasponu od 3.890 RSD do 18.900 RSD sa PDV-om. Pokrivene generacije: Leon III (2012–2020), Leon II (2005–2012), Leon I (1999–2005) i Leon IV (od 2020). Proizvođači: ATE (2), Brembo (1), Febi Bilstein (1) i Original VAG (1) i još 1.",
+      "doubleI": true,
+      "josOne": true,
+      "generationsListed": "Leon III (2012–2020), Leon II (2005–2012), Leon I (1999–2005) i Leon IV (od 2020)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/kocione-plocice/volkswagen/caddy",
+      "intro": "Za VW Caddy imamo 6 artikala iz grupe „Kočione pločice“, 5 odmah na stanju, u rasponu od 2.600 RSD do 8.900 RSD sa PDV-om. Pokrivene generacije: Caddy III (2003–2020) i Caddy V (od 2020). Proizvođači: Febi Bilstein (2), ATE (1), Bosch (1) i Original VAG (1) i još 1.",
+      "doubleI": true,
+      "josOne": true,
+      "generationsListed": "Caddy III (2003–2020) i Caddy V (od 2020)",
+      "nonChronological": false
+    },
+    {
+      "url": "/delovi/kocione-plocice/volkswagen/touran",
+      "intro": "Za VW Touran imamo 6 artikala iz grupe „Kočione pločice“, 5 odmah na stanju, u rasponu od 2.600 RSD do 5.190 RSD sa PDV-om. Pokrivene generacije: Touran II (od 2015) i Touran I (2003–2015). Proizvođači: Febi Bilstein (2), ATE (1), Bosch (1) i Brembo (1) i još 1.",
+      "doubleI": true,
+      "josOne": true,
+      "generationsListed": "Touran II (od 2015) i Touran I (2003–2015)",
+      "nonChronological": false
+    },
+    {
+      "url": "/delovi/kocione-plocice/volkswagen/tiguan",
+      "intro": "Za VW Tiguan imamo 6 artikala iz grupe „Kočione pločice“, 5 odmah na stanju, u rasponu od 2.600 RSD do 5.190 RSD sa PDV-om. Pokrivene generacije: Tiguan II (2016–2024) i Tiguan I (2007–2016). Proizvođači: Febi Bilstein (2), ATE (1), Bosch (1) i Brembo (1) i još 1.",
+      "doubleI": true,
+      "josOne": true,
+      "generationsListed": "Tiguan II (2016–2024) i Tiguan I (2007–2016)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/kocione-plocice/skoda/kodiaq",
+      "intro": "Za Škoda Kodiaq imamo 6 artikala iz grupe „Kočione pločice“, 5 odmah na stanju, u rasponu od 2.600 RSD do 5.190 RSD sa PDV-om. Pokrivene generacije: Kodiaq I (2016–2024). Proizvođači: Febi Bilstein (2), ATE (1), Bosch (1) i Brembo (1) i još 1.",
+      "doubleI": true,
+      "josOne": true,
+      "generationsListed": "Kodiaq I (2016–2024)",
+      "nonChronological": false
+    },
+    {
+      "url": "/delovi/kocione-plocice/skoda/karoq",
+      "intro": "Za Škoda Karoq imamo 6 artikala iz grupe „Kočione pločice“, 5 odmah na stanju, u rasponu od 2.600 RSD do 5.190 RSD sa PDV-om. Pokrivene generacije: Karoq (od 2017). Proizvođači: Febi Bilstein (2), ATE (1), Bosch (1) i Brembo (1) i još 1.",
+      "doubleI": true,
+      "josOne": true,
+      "generationsListed": "Karoq (od 2017)",
+      "nonChronological": false
+    },
+    {
+      "url": "/delovi/kocione-plocice/seat/ateca",
+      "intro": "Za SEAT Ateca imamo 6 artikala iz grupe „Kočione pločice“, 5 odmah na stanju, u rasponu od 2.600 RSD do 5.190 RSD sa PDV-om. Pokrivene generacije: Ateca (od 2016). Proizvođači: Febi Bilstein (2), ATE (1), Bosch (1) i Brembo (1) i još 1.",
+      "doubleI": true,
+      "josOne": true,
+      "generationsListed": "Ateca (od 2016)",
+      "nonChronological": false
+    },
+    {
+      "url": "/delovi/kocione-plocice/cupra/ateca",
+      "intro": "Za Cupra Ateca imamo 6 artikala iz grupe „Kočione pločice“, 5 odmah na stanju, u rasponu od 2.600 RSD do 5.190 RSD sa PDV-om. Pokrivene generacije: Ateca (od 2018). Proizvođači: Febi Bilstein (2), ATE (1), Bosch (1) i Brembo (1) i još 1.",
+      "doubleI": true,
+      "josOne": true,
+      "generationsListed": "Ateca (od 2018)",
+      "nonChronological": false
+    },
+    {
+      "url": "/delovi/kocioni-diskovi/volkswagen/passat",
+      "intro": "Za VW Passat imamo 6 artikala iz grupe „Kočioni diskovi“, 6 odmah na stanju, u rasponu od 3.890 RSD do 18.900 RSD sa PDV-om. Pokrivene generacije: Passat B8 (2014–2023), Passat B6 (2005–2010) i Passat B7 (2010–2014). Proizvođači: Brembo (2), ATE (1), Febi Bilstein (1) i Original VAG (1) i još 1.",
+      "doubleI": true,
+      "josOne": true,
+      "generationsListed": "Passat B8 (2014–2023), Passat B6 (2005–2010) i Passat B7 (2010–2014)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/kocioni-diskovi/skoda/superb",
+      "intro": "Za Škoda Superb imamo 6 artikala iz grupe „Kočioni diskovi“, 6 odmah na stanju, u rasponu od 3.890 RSD do 18.900 RSD sa PDV-om. Pokrivene generacije: Superb III (2015–2024) i Superb II (2008–2015). Proizvođači: Brembo (2), ATE (1), Febi Bilstein (1) i Original VAG (1) i još 1.",
+      "doubleI": true,
+      "josOne": true,
+      "generationsListed": "Superb III (2015–2024) i Superb II (2008–2015)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/kocione-plocice/volkswagen/golf",
+      "intro": "Za VW Golf imamo 7 artikala iz grupe „Kočione pločice“, 6 odmah na stanju, u rasponu od 2.600 RSD do 8.900 RSD sa PDV-om. Pokrivene generacije: Golf VII (2012–2020), Golf V (2003–2009), Golf VI (2008–2013) i Golf VIII (od 2019). Proizvođači: Febi Bilstein (2), ATE (1), Bosch (1) i Brembo (1) i još 2.",
+      "doubleI": true,
+      "josOne": false,
+      "generationsListed": "Golf VII (2012–2020), Golf V (2003–2009), Golf VI (2008–2013) i Golf VIII (od 2019)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/kocione-plocice/audi/a3",
+      "intro": "Za Audi A3 imamo 7 artikala iz grupe „Kočione pločice“, 6 odmah na stanju, u rasponu od 2.600 RSD do 8.900 RSD sa PDV-om. Pokrivene generacije: A3 (8V) (2012–2020), A3 (8P) (2003–2013) i A3 (8Y) (od 2020). Proizvođači: Febi Bilstein (2), ATE (1), Bosch (1) i Brembo (1) i još 2.",
+      "doubleI": true,
+      "josOne": false,
+      "generationsListed": "A3 (8V) (2012–2020), A3 (8P) (2003–2013) i A3 (8Y) (od 2020)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/kocione-plocice/skoda/octavia",
+      "intro": "Za Škoda Octavia imamo 7 artikala iz grupe „Kočione pločice“, 6 odmah na stanju, u rasponu od 2.600 RSD do 8.900 RSD sa PDV-om. Pokrivene generacije: Octavia III (2012–2020), Octavia II (2004–2013) i Octavia IV (od 2019). Proizvođači: Febi Bilstein (2), ATE (1), Bosch (1) i Brembo (1) i još 2.",
+      "doubleI": true,
+      "josOne": false,
+      "generationsListed": "Octavia III (2012–2020), Octavia II (2004–2013) i Octavia IV (od 2019)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/kocione-plocice/seat/leon",
+      "intro": "Za SEAT Leon imamo 7 artikala iz grupe „Kočione pločice“, 6 odmah na stanju, u rasponu od 2.600 RSD do 8.900 RSD sa PDV-om. Pokrivene generacije: Leon III (2012–2020), Leon II (2005–2012) i Leon IV (od 2020). Proizvođači: Febi Bilstein (2), ATE (1), Bosch (1) i Brembo (1) i još 2.",
+      "doubleI": true,
+      "josOne": false,
+      "generationsListed": "Leon III (2012–2020), Leon II (2005–2012) i Leon IV (od 2020)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/kocione-plocice/seat",
+      "intro": "Za SEAT vozila imamo 8 artikala iz grupe „Kočione pločice“, 6 odmah na stanju, u rasponu od 2.600 RSD do 8.900 RSD sa PDV-om. Najviše delova ima za Leon III, Ateca, Leon II i Leon IV. Proizvođači: Bosch (2), Febi Bilstein (2), ATE (1) i Brembo (1) i još 2.",
+      "doubleI": true,
+      "josOne": false,
+      "generationsListed": "Leon III, Ateca, Leon II i Leon IV",
+      "nonChronological": false
+    },
+    {
+      "url": "/delovi/kocioni-diskovi/volkswagen",
+      "intro": "Za Volkswagen vozila imamo 8 artikala iz grupe „Kočioni diskovi“, 7 odmah na stanju, u rasponu od 3.890 RSD do 18.900 RSD sa PDV-om. Najviše delova ima za Golf VII, Passat B8, Touran II i Tiguan II. Proizvođači: ATE (2), Brembo (2), Bosch (1) i Febi Bilstein (1) i još 2.",
+      "doubleI": true,
+      "josOne": false,
+      "generationsListed": "Golf VII, Passat B8, Touran II i Tiguan II",
+      "nonChronological": false
+    },
+    {
+      "url": "/delovi/kocioni-diskovi/skoda",
+      "intro": "Za Škoda vozila imamo 8 artikala iz grupe „Kočioni diskovi“, 7 odmah na stanju, u rasponu od 3.890 RSD do 18.900 RSD sa PDV-om. Najviše delova ima za Octavia III, Superb III, Kodiaq I i Karoq. Proizvođači: ATE (2), Brembo (2), Bosch (1) i Febi Bilstein (1) i još 2.",
+      "doubleI": true,
+      "josOne": false,
+      "generationsListed": "Octavia III, Superb III, Kodiaq I i Karoq",
+      "nonChronological": false
+    },
+    {
+      "url": "/delovi/kocione-plocice/volkswagen/passat",
+      "intro": "Za VW Passat imamo 8 artikala iz grupe „Kočione pločice“, 7 odmah na stanju, u rasponu od 2.600 RSD do 5.190 RSD sa PDV-om. Pokrivene generacije: Passat B8 (2014–2023), Passat B6 (2005–2010), Passat B7 (2010–2014) i Passat B5 (1996–2005). Proizvođači: ATE (2), Bosch (2), Febi Bilstein (2) i Brembo (1) i još 1.",
+      "doubleI": true,
+      "josOne": true,
+      "generationsListed": "Passat B8 (2014–2023), Passat B6 (2005–2010), Passat B7 (2010–2014) i Passat B5 (1996–2005)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/kocione-plocice/audi",
+      "intro": "Za Audi vozila imamo 8 artikala iz grupe „Kočione pločice“, 7 odmah na stanju, u rasponu od 2.600 RSD do 8.900 RSD sa PDV-om. Najviše delova ima za A3 (8V), A3 (8P), A3 (8Y) i A4 B5. Proizvođači: Bosch (2), Febi Bilstein (2), ATE (1) i Brembo (1) i još 2.",
+      "doubleI": true,
+      "josOne": false,
+      "generationsListed": "A3 (8V), A3 (8P), A3 (8Y) i A4 B5",
+      "nonChronological": false
+    },
+    {
+      "url": "/delovi/kocione-plocice/skoda/superb",
+      "intro": "Za Škoda Superb imamo 8 artikala iz grupe „Kočione pločice“, 7 odmah na stanju, u rasponu od 2.600 RSD do 5.190 RSD sa PDV-om. Pokrivene generacije: Superb III (2015–2024), Superb II (2008–2015) i Superb I (2001–2008). Proizvođači: ATE (2), Bosch (2), Febi Bilstein (2) i Brembo (1) i još 1.",
+      "doubleI": true,
+      "josOne": true,
+      "generationsListed": "Superb III (2015–2024), Superb II (2008–2015) i Superb I (2001–2008)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/kocione-plocice/volkswagen",
+      "intro": "Za Volkswagen vozila imamo 10 artikala iz grupe „Kočione pločice“, 8 odmah na stanju, u rasponu od 2.600 RSD do 8.900 RSD sa PDV-om. Najviše delova ima za Golf VII, Passat B8, Touran II i Tiguan II. Proizvođači: Bosch (3), ATE (2), Febi Bilstein (2) i Brembo (1) i još 2.",
+      "doubleI": true,
+      "josOne": false,
+      "generationsListed": "Golf VII, Passat B8, Touran II i Tiguan II",
+      "nonChronological": false
+    },
+    {
+      "url": "/delovi/kocione-plocice/skoda",
+      "intro": "Za Škoda vozila imamo 10 artikala iz grupe „Kočione pločice“, 8 odmah na stanju, u rasponu od 2.600 RSD do 8.900 RSD sa PDV-om. Najviše delova ima za Octavia III, Superb III, Kodiaq I i Karoq. Proizvođači: Bosch (3), ATE (2), Febi Bilstein (2) i Brembo (1) i još 2.",
+      "doubleI": true,
+      "josOne": false,
+      "generationsListed": "Octavia III, Superb III, Kodiaq I i Karoq",
+      "nonChronological": false
+    },
+    {
+      "url": "/delovi/filteri/volkswagen/passat",
+      "intro": "Za VW Passat imamo 10 artikala iz grupe „Filteri“, 8 odmah na stanju, u rasponu od 1.090 RSD do 2.990 RSD sa PDV-om. Pokrivene generacije: Passat B6 (2005–2010), Passat B7 (2010–2014), Passat B8 (2014–2023) i Passat B5 (1996–2005). Proizvođači: Bosch (3), Mahle (3), Mann-Filter (3) i Febi Bilstein (1).",
+      "doubleI": false,
+      "josOne": false,
+      "generationsListed": "Passat B6 (2005–2010), Passat B7 (2010–2014), Passat B8 (2014–2023) i Passat B5 (1996–2005)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/filteri/skoda/superb",
+      "intro": "Za Škoda Superb imamo 10 artikala iz grupe „Filteri“, 8 odmah na stanju, u rasponu od 1.090 RSD do 2.990 RSD sa PDV-om. Pokrivene generacije: Superb II (2008–2015), Superb III (2015–2024) i Superb I (2001–2008). Proizvođači: Bosch (3), Mahle (3), Mann-Filter (3) i Febi Bilstein (1).",
+      "doubleI": false,
+      "josOne": false,
+      "generationsListed": "Superb II (2008–2015), Superb III (2015–2024) i Superb I (2001–2008)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/filteri/volkswagen/golf",
+      "intro": "Za VW Golf imamo 12 artikala iz grupe „Filteri“, 10 odmah na stanju, u rasponu od 890 RSD do 2.990 RSD sa PDV-om. Pokrivene generacije: Golf V (2003–2009), Golf VI (2008–2013), Golf VII (2012–2020) i Golf IV (1997–2006). Proizvođači: Mann-Filter (5), Bosch (3), Mahle (3) i Febi Bilstein (1).",
+      "doubleI": false,
+      "josOne": false,
+      "generationsListed": "Golf V (2003–2009), Golf VI (2008–2013), Golf VII (2012–2020) i Golf IV (1997–2006)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/filteri/audi/a3",
+      "intro": "Za Audi A3 imamo 12 artikala iz grupe „Filteri“, 10 odmah na stanju, u rasponu od 890 RSD do 2.990 RSD sa PDV-om. Pokrivene generacije: A3 (8P) (2003–2013), A3 (8V) (2012–2020), A3 (8L) (1996–2003) i A3 (8Y) (od 2020). Proizvođači: Mann-Filter (5), Bosch (3), Mahle (3) i Febi Bilstein (1).",
+      "doubleI": false,
+      "josOne": false,
+      "generationsListed": "A3 (8P) (2003–2013), A3 (8V) (2012–2020), A3 (8L) (1996–2003) i A3 (8Y) (od 2020)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/filteri/skoda/octavia",
+      "intro": "Za Škoda Octavia imamo 12 artikala iz grupe „Filteri“, 10 odmah na stanju, u rasponu od 890 RSD do 2.990 RSD sa PDV-om. Pokrivene generacije: Octavia II (2004–2013), Octavia III (2012–2020), Octavia I (1996–2010) i Octavia IV (od 2019). Proizvođači: Mann-Filter (5), Bosch (3), Mahle (3) i Febi Bilstein (1).",
+      "doubleI": false,
+      "josOne": false,
+      "generationsListed": "Octavia II (2004–2013), Octavia III (2012–2020), Octavia I (1996–2010) i Octavia IV (od 2019)",
+      "nonChronological": true
+    },
+    {
+      "url": "/delovi/filteri/seat/leon",
+      "intro": "Za SEAT Leon imamo 12 artikala iz grupe „Filteri“, 10 odmah na stanju, u rasponu od 890 RSD do 2.990 RSD sa PDV-om. Pokrivene generacije: Leon II (2005–2012), Leon III (2012–2020), Leon I (1999–2005) i Leon IV (od 2020). Proizvođači: Mann-Filter (5), Bosch (3), Mahle (3) i Febi Bilstein (1).",
+      "doubleI": false,
+      "josOne": false,
+      "generationsListed": "Leon II (2005–2012), Leon III (2012–2020), Leon I (1999–2005) i Leon IV (od 2020)",
+      "nonChronological": true
+    }
+  ]
+}

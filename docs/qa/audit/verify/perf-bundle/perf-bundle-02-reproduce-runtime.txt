@@ -1,0 +1,129 @@
+## chromium 390 /  js requests 25
+  suspects loaded (9/9): 14y-81z8a-w-u.js 25dplrt_qw3he.js 1tr6a7zmh41cy.js 1t0q0ok8maumv.js 2vm060vmiv-df.js 0rklqt_vfe3_n.js 0sgvhbpe5nb6s.js 120epkn8j_rkq.js 2g3bv_p29okud.js
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,"windowGsap":"undefined","scrollTriggerGlobal":"undefined","scrollTriggers":null,"registeredPlugins":null}
+  coverage 25dplrt_qw3he.js       18 KB raw,  38.9 % executed  (root layout: Providers + Tooltip module + TextReveal)
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+  coverage 2vm060vmiv-df.js       27 KB raw,  34.6 % executed  (DismissableLayer/Presence/Collection + icons)
+  coverage 0rklqt_vfe3_n.js     37.1 KB raw,  51.8 % executed  (radix Toast (Toaster) + Convex auth + icons)
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,  30.5 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+  coverage 2g3bv_p29okud.js     31.6 KB raw,  73.9 % executed  (MobileNav, HeaderSearch, SearchBox, Combobox)
+  coverage 1t0q0ok8maumv.js       22 KB raw,  19.3 % executed  (radix Dialog + FocusScope + RemoveScroll + hideOthers)
+  coverage 120epkn8j_rkq.js     29.9 KB raw,  48.7 % executed  (Button, ui/Dialog, radix Switch, icons)
+  coverage 0sgvhbpe5nb6s.js     67.5 KB raw,  64.9 % executed  (ShopChrome, ConsentBanner, Sheet, icons)
+## chromium 390 /delovi/kocioni-diskovi  js requests 25
+  suspects loaded (9/9): 14y-81z8a-w-u.js 25dplrt_qw3he.js 1tr6a7zmh41cy.js 1t0q0ok8maumv.js 2vm060vmiv-df.js 0rklqt_vfe3_n.js 0sgvhbpe5nb6s.js 120epkn8j_rkq.js 2g3bv_p29okud.js
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,"windowGsap":"undefined","scrollTriggerGlobal":"undefined","scrollTriggers":null,"registeredPlugins":null}
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+  coverage 2vm060vmiv-df.js       27 KB raw,  38.2 % executed  (DismissableLayer/Presence/Collection + icons)
+  coverage 0rklqt_vfe3_n.js     37.1 KB raw,  51.8 % executed  (radix Toast (Toaster) + Convex auth + icons)
+  coverage 25dplrt_qw3he.js       18 KB raw,  50.1 % executed  (root layout: Providers + Tooltip module + TextReveal)
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,    30 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+  coverage 2g3bv_p29okud.js     31.6 KB raw,  57.7 % executed  (MobileNav, HeaderSearch, SearchBox, Combobox)
+  coverage 120epkn8j_rkq.js     29.9 KB raw,  51.5 % executed  (Button, ui/Dialog, radix Switch, icons)
+  coverage 1t0q0ok8maumv.js       22 KB raw,  19.3 % executed  (radix Dialog + FocusScope + RemoveScroll + hideOthers)
+  coverage 0sgvhbpe5nb6s.js     67.5 KB raw,  65.5 % executed  (ShopChrome, ConsentBanner, Sheet, icons)
+## chromium 390 /deo/kocioni-disk-prednji-276-24-mm-demo-0004  js requests 25
+  suspects loaded (9/9): 14y-81z8a-w-u.js 25dplrt_qw3he.js 1tr6a7zmh41cy.js 1t0q0ok8maumv.js 2vm060vmiv-df.js 0rklqt_vfe3_n.js 0sgvhbpe5nb6s.js 120epkn8j_rkq.js 2g3bv_p29okud.js
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,"windowGsap":"undefined","scrollTriggerGlobal":"undefined","scrollTriggers":null,"registeredPlugins":null}
+  coverage 25dplrt_qw3he.js       18 KB raw,  48.8 % executed  (root layout: Providers + Tooltip module + TextReveal)
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+  coverage 2vm060vmiv-df.js       27 KB raw,  34.6 % executed  (DismissableLayer/Presence/Collection + icons)
+  coverage 0rklqt_vfe3_n.js     37.1 KB raw,  51.8 % executed  (radix Toast (Toaster) + Convex auth + icons)
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,    31 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+  coverage 2g3bv_p29okud.js     31.6 KB raw,  57.7 % executed  (MobileNav, HeaderSearch, SearchBox, Combobox)
+  coverage 120epkn8j_rkq.js     29.9 KB raw,  48.6 % executed  (Button, ui/Dialog, radix Switch, icons)
+  coverage 0sgvhbpe5nb6s.js     67.5 KB raw,  65.5 % executed  (ShopChrome, ConsentBanner, Sheet, icons)
+  coverage 1t0q0ok8maumv.js       22 KB raw,  19.3 % executed  (radix Dialog + FocusScope + RemoveScroll + hideOthers)
+## chromium 390 /ponuda/kocione-plocice-golf  js requests 25
+  suspects loaded (6/9): 14y-81z8a-w-u.js 25dplrt_qw3he.js 1tr6a7zmh41cy.js 1t0q0ok8maumv.js 2vm060vmiv-df.js 0rklqt_vfe3_n.js
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,"windowGsap":"undefined","scrollTriggerGlobal":"undefined","scrollTriggers":null,"registeredPlugins":null}
+  coverage 25dplrt_qw3he.js       18 KB raw,  48.9 % executed  (root layout: Providers + Tooltip module + TextReveal)
+  coverage 2vm060vmiv-df.js       27 KB raw,  29.6 % executed  (DismissableLayer/Presence/Collection + icons)
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,    30 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+  coverage 0rklqt_vfe3_n.js     37.1 KB raw,  51.7 % executed  (radix Toast (Toaster) + Convex auth + icons)
+  coverage 1t0q0ok8maumv.js       22 KB raw,  15.4 % executed  (radix Dialog + FocusScope + RemoveScroll + hideOthers)
+## chromium 390 /korpa  js requests 25
+  suspects loaded (9/9): 14y-81z8a-w-u.js 25dplrt_qw3he.js 1tr6a7zmh41cy.js 1t0q0ok8maumv.js 2vm060vmiv-df.js 0rklqt_vfe3_n.js 0sgvhbpe5nb6s.js 120epkn8j_rkq.js 2g3bv_p29okud.js
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,"windowGsap":"undefined","scrollTriggerGlobal":"undefined","scrollTriggers":null,"registeredPlugins":null}
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+  coverage 2vm060vmiv-df.js       27 KB raw,  34.6 % executed  (DismissableLayer/Presence/Collection + icons)
+  coverage 25dplrt_qw3he.js       18 KB raw,  48.6 % executed  (root layout: Providers + Tooltip module + TextReveal)
+  coverage 0rklqt_vfe3_n.js     37.1 KB raw,  52.3 % executed  (radix Toast (Toaster) + Convex auth + icons)
+  coverage 2g3bv_p29okud.js     31.6 KB raw,  57.7 % executed  (MobileNav, HeaderSearch, SearchBox, Combobox)
+  coverage 120epkn8j_rkq.js     29.9 KB raw,  47.1 % executed  (Button, ui/Dialog, radix Switch, icons)
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,    30 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+  coverage 1t0q0ok8maumv.js       22 KB raw,  19.3 % executed  (radix Dialog + FocusScope + RemoveScroll + hideOthers)
+  coverage 0sgvhbpe5nb6s.js     67.5 KB raw,  65.3 % executed  (ShopChrome, ConsentBanner, Sheet, icons)
+## chromium 1440 /  js requests 25
+  suspects loaded (9/9): 14y-81z8a-w-u.js 25dplrt_qw3he.js 1tr6a7zmh41cy.js 1t0q0ok8maumv.js 2vm060vmiv-df.js 0rklqt_vfe3_n.js 0sgvhbpe5nb6s.js 120epkn8j_rkq.js 2g3bv_p29okud.js
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,"windowGsap":"undefined","scrollTriggerGlobal":"undefined","scrollTriggers":null,"registeredPlugins":null}
+  coverage 25dplrt_qw3he.js       18 KB raw,  38.9 % executed  (root layout: Providers + Tooltip module + TextReveal)
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+  coverage 2vm060vmiv-df.js       27 KB raw,  34.6 % executed  (DismissableLayer/Presence/Collection + icons)
+  coverage 0rklqt_vfe3_n.js     37.1 KB raw,  51.8 % executed  (radix Toast (Toaster) + Convex auth + icons)
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,  30.4 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+  coverage 2g3bv_p29okud.js     31.6 KB raw,    74 % executed  (MobileNav, HeaderSearch, SearchBox, Combobox)
+  coverage 120epkn8j_rkq.js     29.9 KB raw,  48.7 % executed  (Button, ui/Dialog, radix Switch, icons)
+  coverage 1t0q0ok8maumv.js       22 KB raw,  19.3 % executed  (radix Dialog + FocusScope + RemoveScroll + hideOthers)
+  coverage 0sgvhbpe5nb6s.js     67.5 KB raw,  64.9 % executed  (ShopChrome, ConsentBanner, Sheet, icons)
+## chromium 1440 /delovi/kocioni-diskovi  js requests 25
+  suspects loaded (9/9): 14y-81z8a-w-u.js 25dplrt_qw3he.js 1tr6a7zmh41cy.js 1t0q0ok8maumv.js 2vm060vmiv-df.js 0rklqt_vfe3_n.js 0sgvhbpe5nb6s.js 120epkn8j_rkq.js 2g3bv_p29okud.js
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,"windowGsap":"undefined","scrollTriggerGlobal":"undefined","scrollTriggers":null,"registeredPlugins":null}
+  coverage 25dplrt_qw3he.js       18 KB raw,    50 % executed  (root layout: Providers + Tooltip module + TextReveal)
+  coverage 2vm060vmiv-df.js       27 KB raw,  38.2 % executed  (DismissableLayer/Presence/Collection + icons)
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+  coverage 0rklqt_vfe3_n.js     37.1 KB raw,  51.8 % executed  (radix Toast (Toaster) + Convex auth + icons)
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,  30.9 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+  coverage 2g3bv_p29okud.js     31.6 KB raw,  57.7 % executed  (MobileNav, HeaderSearch, SearchBox, Combobox)
+  coverage 120epkn8j_rkq.js     29.9 KB raw,  51.5 % executed  (Button, ui/Dialog, radix Switch, icons)
+  coverage 1t0q0ok8maumv.js       22 KB raw,  19.3 % executed  (radix Dialog + FocusScope + RemoveScroll + hideOthers)
+  coverage 0sgvhbpe5nb6s.js     67.5 KB raw,  65.5 % executed  (ShopChrome, ConsentBanner, Sheet, icons)
+## chromium 1440 /deo/kocioni-disk-prednji-276-24-mm-demo-0004  js requests 25
+  suspects loaded (9/9): 14y-81z8a-w-u.js 25dplrt_qw3he.js 1tr6a7zmh41cy.js 1t0q0ok8maumv.js 2vm060vmiv-df.js 0rklqt_vfe3_n.js 0sgvhbpe5nb6s.js 120epkn8j_rkq.js 2g3bv_p29okud.js
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,"windowGsap":"undefined","scrollTriggerGlobal":"undefined","scrollTriggers":null,"registeredPlugins":null}
+  coverage 25dplrt_qw3he.js       18 KB raw,  48.8 % executed  (root layout: Providers + Tooltip module + TextReveal)
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+  coverage 2vm060vmiv-df.js       27 KB raw,  34.6 % executed  (DismissableLayer/Presence/Collection + icons)
+  coverage 0rklqt_vfe3_n.js     37.1 KB raw,  51.8 % executed  (radix Toast (Toaster) + Convex auth + icons)
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,  30.7 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+  coverage 2g3bv_p29okud.js     31.6 KB raw,  57.7 % executed  (MobileNav, HeaderSearch, SearchBox, Combobox)
+  coverage 120epkn8j_rkq.js     29.9 KB raw,  48.6 % executed  (Button, ui/Dialog, radix Switch, icons)
+  coverage 1t0q0ok8maumv.js       22 KB raw,  19.3 % executed  (radix Dialog + FocusScope + RemoveScroll + hideOthers)
+  coverage 0sgvhbpe5nb6s.js     67.5 KB raw,  65.5 % executed  (ShopChrome, ConsentBanner, Sheet, icons)
+## chromium 1440 /ponuda/kocione-plocice-golf  js requests 25
+  suspects loaded (6/9): 14y-81z8a-w-u.js 25dplrt_qw3he.js 1tr6a7zmh41cy.js 1t0q0ok8maumv.js 2vm060vmiv-df.js 0rklqt_vfe3_n.js
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,"windowGsap":"undefined","scrollTriggerGlobal":"undefined","scrollTriggers":null,"registeredPlugins":null}
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+  coverage 2vm060vmiv-df.js       27 KB raw,  29.6 % executed  (DismissableLayer/Presence/Collection + icons)
+  coverage 25dplrt_qw3he.js       18 KB raw,  48.9 % executed  (root layout: Providers + Tooltip module + TextReveal)
+  coverage 0rklqt_vfe3_n.js     37.1 KB raw,  51.7 % executed  (radix Toast (Toaster) + Convex auth + icons)
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,    30 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+  coverage 1t0q0ok8maumv.js       22 KB raw,  15.4 % executed  (radix Dialog + FocusScope + RemoveScroll + hideOthers)
+## chromium 1440 /korpa  js requests 25
+  suspects loaded (9/9): 14y-81z8a-w-u.js 25dplrt_qw3he.js 1tr6a7zmh41cy.js 1t0q0ok8maumv.js 2vm060vmiv-df.js 0rklqt_vfe3_n.js 0sgvhbpe5nb6s.js 120epkn8j_rkq.js 2g3bv_p29okud.js
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,"windowGsap":"undefined","scrollTriggerGlobal":"undefined","scrollTriggers":null,"registeredPlugins":null}
+  coverage 25dplrt_qw3he.js       18 KB raw,  49.5 % executed  (root layout: Providers + Tooltip module + TextReveal)
+  coverage 14y-81z8a-w-u.js     25.8 KB raw,   5.7 % executed  (Popper/floating-ui (Tooltip))
+  coverage 2vm060vmiv-df.js       27 KB raw,  34.6 % executed  (DismissableLayer/Presence/Collection + icons)
+  coverage 0rklqt_vfe3_n.js     37.1 KB raw,  52.3 % executed  (radix Toast (Toaster) + Convex auth + icons)
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,    30 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+  coverage 120epkn8j_rkq.js     29.9 KB raw,  47.1 % executed  (Button, ui/Dialog, radix Switch, icons)
+  coverage 2g3bv_p29okud.js     31.6 KB raw,  57.7 % executed  (MobileNav, HeaderSearch, SearchBox, Combobox)
+  coverage 1t0q0ok8maumv.js       22 KB raw,  19.3 % executed  (radix Dialog + FocusScope + RemoveScroll + hideOthers)
+  coverage 0sgvhbpe5nb6s.js     67.5 KB raw,  65.2 % executed  (ShopChrome, ConsentBanner, Sheet, icons)
+## webkit 390 /  js requests 25
+  suspects loaded (9/9): 14y-81z8a-w-u.js 25dplrt_qw3he.js 1tr6a7zmh41cy.js 1t0q0ok8maumv.js 2vm060vmiv-df.js 0rklqt_vfe3_n.js 0sgvhbpe5nb6s.js 120epkn8j_rkq.js 2g3bv_p29okud.js
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,"windowGsap":"undefined","scrollTriggerGlobal":"undefined","scrollTriggers":null,"registeredPlugins":null}
+## webkit 390 /delovi/kocioni-diskovi  js requests 25
+  suspects loaded (9/9): 14y-81z8a-w-u.js 25dplrt_qw3he.js 1tr6a7zmh41cy.js 1t0q0ok8maumv.js 2vm060vmiv-df.js 0rklqt_vfe3_n.js 0sgvhbpe5nb6s.js 120epkn8j_rkq.js 2g3bv_p29okud.js
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,"windowGsap":"undefined","scrollTriggerGlobal":"undefined","scrollTriggers":null,"registeredPlugins":null}
+## webkit 390 /deo/kocioni-disk-prednji-276-24-mm-demo-0004  js requests 25
+  suspects loaded (9/9): 14y-81z8a-w-u.js 25dplrt_qw3he.js 1tr6a7zmh41cy.js 1t0q0ok8maumv.js 2vm060vmiv-df.js 0rklqt_vfe3_n.js 0sgvhbpe5nb6s.js 120epkn8j_rkq.js 2g3bv_p29okud.js
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,"windowGsap":"undefined","scrollTriggerGlobal":"undefined","scrollTriggers":null,"registeredPlugins":null}
+## webkit 390 /ponuda/kocione-plocice-golf  js requests 25
+  suspects loaded (6/9): 14y-81z8a-w-u.js 25dplrt_qw3he.js 1tr6a7zmh41cy.js 1t0q0ok8maumv.js 2vm060vmiv-df.js 0rklqt_vfe3_n.js
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,"windowGsap":"undefined","scrollTriggerGlobal":"undefined","scrollTriggers":null,"registeredPlugins":null}
+## webkit 390 /korpa  js requests 25
+  suspects loaded (9/9): 14y-81z8a-w-u.js 25dplrt_qw3he.js 1tr6a7zmh41cy.js 1t0q0ok8maumv.js 2vm060vmiv-df.js 0rklqt_vfe3_n.js 0sgvhbpe5nb6s.js 120epkn8j_rkq.js 2g3bv_p29okud.js
+  dom: {"tooltipContent":0,"consentBannerVisible":false,"toastRegion":1,"windowGsap":"undefined","scrollTriggerGlobal":"undefined","scrollTriggers":null,"registeredPlugins":null}

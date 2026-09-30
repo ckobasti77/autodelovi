@@ -1,0 +1,306 @@
+{
+ "copy-07": {
+  "chromium customer 1440 /admin": {
+   "status": 403,
+   "url": "/admin",
+   "title": "403: This page could not be accessed.",
+   "lang": "sr-Latn-RS",
+   "h1": [
+    "403"
+   ],
+   "text": "Preskoči na sadržaj\n403\nThis page could not be accessed.",
+   "links": [
+    "Preskoči na sadržaj"
+   ]
+  },
+  "chromium customer 1440 /admin/porudzbine": {
+   "status": 403,
+   "url": "/admin/porudzbine",
+   "title": "403: This page could not be accessed.",
+   "lang": "sr-Latn-RS",
+   "h1": [
+    "403"
+   ],
+   "text": "Preskoči na sadržaj\n403\nThis page could not be accessed.",
+   "links": [
+    "Preskoči na sadržaj"
+   ]
+  },
+  "chromium customer 1440 /admin/korisnici": {
+   "status": 403,
+   "url": "/admin/korisnici",
+   "title": "403: This page could not be accessed.",
+   "lang": "sr-Latn-RS",
+   "h1": [
+    "403"
+   ],
+   "text": "Preskoči na sadržaj\n403\nThis page could not be accessed.",
+   "links": [
+    "Preskoči na sadržaj"
+   ]
+  },
+  "chromium customer 1440 /admin/porudzbine/SK-2026-000092/predracun": {
+   "status": 403,
+   "url": "/admin/porudzbine/SK-2026-000092/predracun",
+   "title": "403: This page could not be accessed.",
+   "lang": "sr-Latn-RS",
+   "h1": [
+    "403"
+   ],
+   "text": "Preskoči na sadržaj\n403\nThis page could not be accessed.",
+   "links": [
+    "Preskoči na sadržaj"
+   ]
+  },
+  "chromium customer 1440 log": {
+   "console": [
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+   ],
+   "pageErrors": [],
+   "failedRequests": [],
+   "badResponses": [
+    "403 http://localhost:3100/admin",
+    "403 http://localhost:3100/admin/porudzbine",
+    "403 http://localhost:3100/admin/korisnici",
+    "403 http://localhost:3100/admin/porudzbine/SK-2026-000092/predracun"
+   ]
+  },
+  "chromium mechanic 1440 /admin": {
+   "status": 403,
+   "url": "/admin",
+   "title": "403: This page could not be accessed.",
+   "lang": "sr-Latn-RS",
+   "h1": [
+    "403"
+   ],
+   "text": "Preskoči na sadržaj\n403\nThis page could not be accessed.",
+   "links": [
+    "Preskoči na sadržaj"
+   ]
+  },
+  "chromium mechanic 1440 /admin/porudzbine": {
+   "status": 403,
+   "url": "/admin/porudzbine",
+   "title": "403: This page could not be accessed.",
+   "lang": "sr-Latn-RS",
+   "h1": [
+    "403"
+   ],
+   "text": "Preskoči na sadržaj\n403\nThis page could not be accessed.",
+   "links": [
+    "Preskoči na sadržaj"
+   ]
+  },
+  "chromium mechanic 1440 /admin/korisnici": {
+   "status": 403,
+   "url": "/admin/korisnici",
+   "title": "403: This page could not be accessed.",
+   "lang": "sr-Latn-RS",
+   "h1": [
+    "403"
+   ],
+   "text": "Preskoči na sadržaj\n403\nThis page could not be accessed.",
+   "links": [
+    "Preskoči na sadržaj"
+   ]
+  },
+  "chromium mechanic 1440 /admin/porudzbine/SK-2026-000092/predracun": {
+   "status": 403,
+   "url": "/admin/porudzbine/SK-2026-000092/predracun",
+   "title": "403: This page could not be accessed.",
+   "lang": "sr-Latn-RS",
+   "h1": [
+    "403"
+   ],
+   "text": "Preskoči na sadržaj\n403\nThis page could not be accessed.",
+   "links": [
+    "Preskoči na sadržaj"
+   ]
+  },
+  "chromium mechanic 1440 log": {
+   "console": [
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+   ],
+   "pageErrors": [],
+   "failedRequests": [],
+   "badResponses": [
+    "403 http://localhost:3100/admin",
+    "403 http://localhost:3100/admin/porudzbine",
+    "403 http://localhost:3100/admin/korisnici",
+    "403 http://localhost:3100/admin/porudzbine/SK-2026-000092/predracun"
+   ]
+  },
+  "chromium customer 390 /admin": {
+   "status": 403,
+   "url": "/admin",
+   "title": "403: This page could not be accessed.",
+   "lang": "sr-Latn-RS",
+   "h1": [
+    "403"
+   ],
+   "text": "Preskoči na sadržaj\n403\nThis page could not be accessed.",
+   "links": [
+    "Preskoči na sadržaj"
+   ]
+  },
+  "chromium customer 390 /admin/porudzbine": {
+   "status": 403,
+   "url": "/admin/porudzbine",
+   "title": "403: This page could not be accessed.",
+   "lang": "sr-Latn-RS",
+   "h1": [
+    "403"
+   ],
+   "text": "Preskoči na sadržaj\n403\nThis page could not be accessed.",
+   "links": [
+    "Preskoči na sadržaj"
+   ]
+  },
+  "chromium customer 390 /admin/korisnici": {
+   "status": 403,
+   "url": "/admin/korisnici",
+   "title": "403: This page could not be accessed.",
+   "lang": "sr-Latn-RS",
+   "h1": [
+    "403"
+   ],
+   "text": "Preskoči na sadržaj\n403\nThis page could not be accessed.",
+   "links": [
+    "Preskoči na sadržaj"
+   ]
+  },
+  "chromium customer 390 /admin/porudzbine/SK-2026-000092/predracun": {
+   "status": 403,
+   "url": "/admin/porudzbine/SK-2026-000092/predracun",
+   "title": "403: This page could not be accessed.",
+   "lang": "sr-Latn-RS",
+   "h1": [
+    "403"
+   ],
+   "text": "Preskoči na sadržaj\n403\nThis page could not be accessed.",
+   "links": [
+    "Preskoči na sadržaj"
+   ]
+  },
+  "chromium customer 390 log": {
+   "console": [
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+   ],
+   "pageErrors": [],
+   "failedRequests": [],
+   "badResponses": [
+    "403 http://localhost:3100/admin",
+    "403 http://localhost:3100/admin/porudzbine",
+    "403 http://localhost:3100/admin/korisnici",
+    "403 http://localhost:3100/admin/porudzbine/SK-2026-000092/predracun"
+   ]
+  },
+  "firefox customer 1440 /admin": {
+   "status": 403,
+   "url": "/admin",
+   "title": "403: This page could not be accessed.",
+   "lang": "sr-Latn-RS",
+   "h1": [
+    "403"
+   ],
+   "text": "Preskoči na sadržaj\n403\nThis page could not be accessed.",
+   "links": [
+    "Preskoči na sadržaj"
+   ]
+  },
+  "firefox customer 1440 /admin/porudzbine": {
+   "status": 403,
+   "url": "/admin/porudzbine",
+   "title": "403: This page could not be accessed.",
+   "lang": "sr-Latn-RS",
+   "h1": [
+    "403"
+   ],
+   "text": "Preskoči na sadržaj\n403\nThis page could not be accessed.",
+   "links": [
+    "Preskoči na sadržaj"
+   ]
+  },
+  "firefox customer 1440 /admin/korisnici": {
+   "status": 403,
+   "url": "/admin/korisnici",
+   "title": "403: This page could not be accessed.",
+   "lang": "sr-Latn-RS",
+   "h1": [
+    "403"
+   ],
+   "text": "Preskoči na sadržaj\n403\nThis page could not be accessed.",
+   "links": [
+    "Preskoči na sadržaj"
+   ]
+  },
+  "firefox customer 1440 /admin/porudzbine/SK-2026-000092/predracun": {
+   "status": 403,
+   "url": "/admin/porudzbine/SK-2026-000092/predracun",
+   "title": "403: This page could not be accessed.",
+   "lang": "sr-Latn-RS",
+   "h1": [
+    "403"
+   ],
+   "text": "Preskoči na sadržaj\n403\nThis page could not be accessed.",
+   "links": [
+    "Preskoči na sadržaj"
+   ]
+  },
+  "firefox customer 1440 log": {
+   "console": [],
+   "pageErrors": [],
+   "failedRequests": [],
+   "badResponses": [
+    "403 http://localhost:3100/admin",
+    "403 http://localhost:3100/admin/porudzbine",
+    "403 http://localhost:3100/admin/korisnici",
+    "403 http://localhost:3100/admin/porudzbine/SK-2026-000092/predracun"
+   ]
+  },
+  "fetch /slike/deo/nepostoji-1-abc.jpg": {
+   "status": 404,
+   "type": "text/plain;charset=UTF-8",
+   "body": "Not found"
+  },
+  "fetch /slike/deo/kocioni-disk-prednji-276-24-mm-demo-0004-9-zzzz.webp": {
+   "status": 404,
+   "type": "text/plain;charset=UTF-8",
+   "body": "Not found"
+  },
+  "fetch /slike/deo/nesto": {
+   "status": 404,
+   "type": "text/plain;charset=UTF-8",
+   "body": "Not found"
+  },
+  "fetch /sitemaps/nepostoji.xml": {
+   "status": 404,
+   "type": "text/plain;charset=UTF-8",
+   "body": "Not found"
+  },
+  "fetch /sitemaps/proizvodi-99.xml": {
+   "status": 404,
+   "type": "text/plain;charset=UTF-8",
+   "body": "Not found"
+  },
+  "fetch /sitemaps/staticne": {
+   "status": 404,
+   "type": "text/plain;charset=UTF-8",
+   "body": "Not found"
+  },
+  "fetch /ovo-ne-postoji": {
+   "status": 404,
+   "type": "text/html; charset=utf-8",
+   "body": "86623 bytes html; title=Stranica nije pronađena · SKLOP"
+  }
+ }
+}

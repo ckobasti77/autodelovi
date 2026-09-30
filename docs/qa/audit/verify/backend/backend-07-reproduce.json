@@ -1,0 +1,24 @@
+{
+  "at": "2026-09-30T14:37:04.832Z",
+  "convexHost": "<deployment>.eu-west-1.convex.cloud",
+  "directSignUp": {
+    "ok": false,
+    "errorData": {
+      "code": "WEAK_PASSWORD",
+      "message": "Lozinka mora imati najmanje 10 znakova."
+    },
+    "message": "[Request ID: 9849aaf1ac06b75b] Server Error\nUncaught ConvexError: {\"code\":\"WEAK_PASSWORD\",\"message\":\"Lozinka mora imati najmanje 10 znakova.\"}\n"
+  },
+  "signUpGlobalBucket": {
+    "config": {
+      "capacity": 30,
+      "kind": "token bucket",
+      "period": 3600000,
+      "rate": 60,
+      "shards": 1
+    },
+    "shard": 0,
+    "ts": 1790778715586,
+    "value": 28.1139
+  }
+}

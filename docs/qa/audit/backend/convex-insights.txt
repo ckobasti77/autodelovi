@@ -1,0 +1,3 @@
+No issues found. The deployment is healthy over the last 72 hours.
+
+Dashboard: https://dashboard.convex.dev/d/tame-impala-374?view=insights

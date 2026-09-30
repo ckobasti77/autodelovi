@@ -1,0 +1,14 @@
+[
+  {
+    "viewport": "1440",
+    "intercepted": 1,
+    "alertText": "Nalog nije napravljen. Ako već imate nalog sa ovom adresom, prijavite se ili promenite lozinku.",
+    "screenshot": "docs/qa/audit/verify/backend/backend-07-reproduce-signup-1440.webp"
+  },
+  {
+    "viewport": "390",
+    "intercepted": 1,
+    "alertText": "Nalog nije napravljen. Ako već imate nalog sa ovom adresom, prijavite se ili promenite lozinku.",
+    "screenshot": "docs/qa/audit/verify/backend/backend-07-reproduce-signup-390.webp"
+  }
+]

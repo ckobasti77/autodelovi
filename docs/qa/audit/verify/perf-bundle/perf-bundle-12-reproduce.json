@@ -1,0 +1,3562 @@
+[
+  {
+    "width": 360,
+    "height": 780,
+    "dpr": 3,
+    "route": "category",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "bytes": 7123,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 360,
+    "height": 780,
+    "dpr": 3,
+    "route": "search",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "bytes": 7123,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 360,
+    "height": 780,
+    "dpr": 3,
+    "route": "landing",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "bytes": 5104,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 360,
+    "height": 780,
+    "dpr": 3,
+    "route": "product-related",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "bytes": 7123,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=1080&q=75",
+        "bytes": 9658,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 360,
+    "height": 780,
+    "dpr": 3,
+    "route": "vehicle-gen",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&w=640&q=75"
+      },
+      {
+        "w": 1080,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=1080&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=1080&q=75",
+        "bytes": 9658,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "bytes": 5104,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&w=640&q=75",
+        "bytes": 7811,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fmotor.webp&w=640&q=75",
+        "bytes": 6475,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-ulja.webp&w=640&q=75",
+        "bytes": 6208,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-goriva.webp&w=640&q=75",
+        "bytes": 5535,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=640&q=75",
+        "bytes": 6462,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&w=640&q=75",
+        "bytes": 4416,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-vazduha.webp&w=640&q=75",
+        "bytes": 5556,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Finterkuler.webp&w=640&q=75",
+        "bytes": 4432,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-kabine.webp&w=640&q=75",
+        "bytes": 4484,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fusisna-grana.webp&w=640&q=75",
+        "bytes": 6054,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkais-alternatora.webp&w=640&q=75",
+        "bytes": 4848,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&w=640&q=75",
+        "bytes": 5381,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fdpf-katalizator.webp&w=640&q=75",
+        "bytes": 4678,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fnosaci-motora.webp&w=640&q=75",
+        "bytes": 5152,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fegr-ventil.webp&w=640&q=75",
+        "bytes": 7031,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=640&q=75",
+        "bytes": 10186,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fpaljenje-grejaci.webp&w=640&q=75",
+        "bytes": 8658,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&w=640&q=75",
+        "bytes": 7737,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&w=640&q=75",
+        "bytes": 3671,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&w=640&q=75",
+        "bytes": 5007,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fmenjac.webp&w=640&q=75",
+        "bytes": 9300,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fpoluosovine.webp&w=640&q=75",
+        "bytes": 4178,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffarovi.webp&w=640&q=75",
+        "bytes": 5629,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fspone-stabilizatori.webp&w=640&q=75",
+        "bytes": 4063,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Flezaj-glavcina.webp&w=640&q=75",
+        "bytes": 8707,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fklima.webp&w=640&q=75",
+        "bytes": 4752,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fabs-senzori.webp&w=640&q=75",
+        "bytes": 3521,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-celjusti.webp&w=640&q=75",
+        "bytes": 6551,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&w=640&q=75",
+        "bytes": 4194,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&w=640&q=75",
+        "bytes": 3362,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fvrata.webp&w=640&q=75",
+        "bytes": 5449,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fstakla.webp&w=640&q=75",
+        "bytes": 4968,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fretrovizori.webp&w=640&q=75",
+        "bytes": 4213,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fhauba.webp&w=640&q=75",
+        "bytes": 3667,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&w=640&q=75",
+        "bytes": 10471,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "dpr": 3,
+    "route": "category",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "bytes": 7123,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "dpr": 3,
+    "route": "search",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "bytes": 7123,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "dpr": 3,
+    "route": "landing",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "bytes": 5104,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "dpr": 3,
+    "route": "product-related",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "bytes": 7123,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=1200&q=75",
+        "bytes": 9658,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "dpr": 3,
+    "route": "vehicle-gen",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&w=640&q=75"
+      },
+      {
+        "w": 1200,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=1200&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 312,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=1200&q=75",
+        "bytes": 9658,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "bytes": 5104,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-vazduha.webp&w=640&q=75",
+        "bytes": 5556,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-ulja.webp&w=640&q=75",
+        "bytes": 6208,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fmotor.webp&w=640&q=75",
+        "bytes": 6475,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&w=640&q=75",
+        "bytes": 7811,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-goriva.webp&w=640&q=75",
+        "bytes": 5535,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fusisna-grana.webp&w=640&q=75",
+        "bytes": 6054,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Finterkuler.webp&w=640&q=75",
+        "bytes": 4432,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-kabine.webp&w=640&q=75",
+        "bytes": 4484,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&w=640&q=75",
+        "bytes": 4416,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=640&q=75",
+        "bytes": 6462,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkais-alternatora.webp&w=640&q=75",
+        "bytes": 4848,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fpaljenje-grejaci.webp&w=640&q=75",
+        "bytes": 8658,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fegr-ventil.webp&w=640&q=75",
+        "bytes": 7031,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fnosaci-motora.webp&w=640&q=75",
+        "bytes": 5152,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fdpf-katalizator.webp&w=640&q=75",
+        "bytes": 4678,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&w=640&q=75",
+        "bytes": 5007,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&w=640&q=75",
+        "bytes": 5381,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fklima.webp&w=640&q=75",
+        "bytes": 4752,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fmenjac.webp&w=640&q=75",
+        "bytes": 9300,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=640&q=75",
+        "bytes": 10186,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fpoluosovine.webp&w=640&q=75",
+        "bytes": 4178,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&w=640&q=75",
+        "bytes": 7737,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&w=640&q=75",
+        "bytes": 3671,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fspone-stabilizatori.webp&w=640&q=75",
+        "bytes": 4063,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Flezaj-glavcina.webp&w=640&q=75",
+        "bytes": 8707,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fabs-senzori.webp&w=640&q=75",
+        "bytes": 3521,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-celjusti.webp&w=640&q=75",
+        "bytes": 6551,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffarovi.webp&w=640&q=75",
+        "bytes": 5629,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fhauba.webp&w=640&q=75",
+        "bytes": 3667,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fretrovizori.webp&w=640&q=75",
+        "bytes": 4213,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fvrata.webp&w=640&q=75",
+        "bytes": 5449,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&w=640&q=75",
+        "bytes": 4194,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fstakla.webp&w=640&q=75",
+        "bytes": 4968,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&w=640&q=75",
+        "bytes": 3362,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&w=640&q=75",
+        "bytes": 10471,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "dpr": 2,
+    "route": "category",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "bytes": 7123,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "dpr": 2,
+    "route": "search",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "bytes": 7123,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "dpr": 2,
+    "route": "landing",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "bytes": 5104,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "dpr": 2,
+    "route": "product-related",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "bytes": 7123,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=828&q=75",
+        "bytes": 9658,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "dpr": 2,
+    "route": "vehicle-gen",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&w=640&q=75"
+      },
+      {
+        "w": 828,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=828&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 208,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=828&q=75",
+        "bytes": 9658,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "bytes": 5104,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fmotor.webp&w=640&q=75",
+        "bytes": 6475,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-vazduha.webp&w=640&q=75",
+        "bytes": 5556,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&w=640&q=75",
+        "bytes": 7811,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-ulja.webp&w=640&q=75",
+        "bytes": 6208,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-goriva.webp&w=640&q=75",
+        "bytes": 5535,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Finterkuler.webp&w=640&q=75",
+        "bytes": 4432,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fusisna-grana.webp&w=640&q=75",
+        "bytes": 6054,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-kabine.webp&w=640&q=75",
+        "bytes": 4484,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=640&q=75",
+        "bytes": 6462,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&w=640&q=75",
+        "bytes": 4416,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fpaljenje-grejaci.webp&w=640&q=75",
+        "bytes": 8658,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkais-alternatora.webp&w=640&q=75",
+        "bytes": 4848,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fegr-ventil.webp&w=640&q=75",
+        "bytes": 7031,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fdpf-katalizator.webp&w=640&q=75",
+        "bytes": 4678,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fnosaci-motora.webp&w=640&q=75",
+        "bytes": 5152,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&w=640&q=75",
+        "bytes": 5007,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&w=640&q=75",
+        "bytes": 5381,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fklima.webp&w=640&q=75",
+        "bytes": 4752,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=640&q=75",
+        "bytes": 10186,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fmenjac.webp&w=640&q=75",
+        "bytes": 9300,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fpoluosovine.webp&w=640&q=75",
+        "bytes": 4178,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&w=640&q=75",
+        "bytes": 7737,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&w=640&q=75",
+        "bytes": 3671,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fspone-stabilizatori.webp&w=640&q=75",
+        "bytes": 4063,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Flezaj-glavcina.webp&w=640&q=75",
+        "bytes": 8707,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffarovi.webp&w=640&q=75",
+        "bytes": 5629,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-celjusti.webp&w=640&q=75",
+        "bytes": 6551,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fabs-senzori.webp&w=640&q=75",
+        "bytes": 3521,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fretrovizori.webp&w=640&q=75",
+        "bytes": 4213,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fvrata.webp&w=640&q=75",
+        "bytes": 5449,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&w=640&q=75",
+        "bytes": 4194,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fhauba.webp&w=640&q=75",
+        "bytes": 3667,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&w=640&q=75",
+        "bytes": 3362,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fstakla.webp&w=640&q=75",
+        "bytes": 4968,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&w=640&q=75",
+        "bytes": 10471,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 412,
+    "height": 915,
+    "dpr": 2.625,
+    "route": "category",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "bytes": 7123,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 412,
+    "height": 915,
+    "dpr": 2.625,
+    "route": "search",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "bytes": 7123,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 412,
+    "height": 915,
+    "dpr": 2.625,
+    "route": "landing",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "bytes": 5104,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 412,
+    "height": 915,
+    "dpr": 2.625,
+    "route": "product-related",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "bytes": 7123,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=1200&q=75",
+        "bytes": 9658,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 412,
+    "height": 915,
+    "dpr": 2.625,
+    "route": "vehicle-gen",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&w=640&q=75"
+      },
+      {
+        "w": 1200,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=1200&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 273,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=1200&q=75",
+        "bytes": 9658,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "bytes": 5104,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fmotor.webp&w=640&q=75",
+        "bytes": 6475,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-ulja.webp&w=640&q=75",
+        "bytes": 6208,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-vazduha.webp&w=640&q=75",
+        "bytes": 5556,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&w=640&q=75",
+        "bytes": 7811,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-goriva.webp&w=640&q=75",
+        "bytes": 5535,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Finterkuler.webp&w=640&q=75",
+        "bytes": 4432,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fusisna-grana.webp&w=640&q=75",
+        "bytes": 6054,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&w=640&q=75",
+        "bytes": 4416,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-kabine.webp&w=640&q=75",
+        "bytes": 4484,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=640&q=75",
+        "bytes": 6462,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkais-alternatora.webp&w=640&q=75",
+        "bytes": 4848,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fpaljenje-grejaci.webp&w=640&q=75",
+        "bytes": 8658,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fdpf-katalizator.webp&w=640&q=75",
+        "bytes": 4678,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&w=640&q=75",
+        "bytes": 5007,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fnosaci-motora.webp&w=640&q=75",
+        "bytes": 5152,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fklima.webp&w=640&q=75",
+        "bytes": 4752,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&w=640&q=75",
+        "bytes": 5381,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fegr-ventil.webp&w=640&q=75",
+        "bytes": 7031,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fmenjac.webp&w=640&q=75",
+        "bytes": 9300,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=640&q=75",
+        "bytes": 10186,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fpoluosovine.webp&w=640&q=75",
+        "bytes": 4178,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&w=640&q=75",
+        "bytes": 7737,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&w=640&q=75",
+        "bytes": 3671,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fspone-stabilizatori.webp&w=640&q=75",
+        "bytes": 4063,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Flezaj-glavcina.webp&w=640&q=75",
+        "bytes": 8707,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-celjusti.webp&w=640&q=75",
+        "bytes": 6551,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fabs-senzori.webp&w=640&q=75",
+        "bytes": 3521,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fhauba.webp&w=640&q=75",
+        "bytes": 3667,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffarovi.webp&w=640&q=75",
+        "bytes": 5629,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&w=640&q=75",
+        "bytes": 4194,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fvrata.webp&w=640&q=75",
+        "bytes": 5449,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fstakla.webp&w=640&q=75",
+        "bytes": 4968,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&w=640&q=75",
+        "bytes": 3362,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fretrovizori.webp&w=640&q=75",
+        "bytes": 4213,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&w=640&q=75",
+        "bytes": 10471,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "dpr": 1,
+    "route": "category",
+    "cards": [
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+        "bytes": 3103,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "dpr": 1,
+    "route": "search",
+    "cards": [
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+        "bytes": 3103,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "dpr": 1,
+    "route": "landing",
+    "cards": [
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75",
+        "bytes": 2196,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "dpr": 1,
+    "route": "product-related",
+    "cards": [
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+        "bytes": 3103,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "bytes": 7123,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "dpr": 1,
+    "route": "vehicle-gen",
+    "cards": [
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&w=256&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&w=256&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 256,
+        "renderedCssPx": 104,
+        "neededPx": 104,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "bytes": 7123,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75",
+        "bytes": 2196,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fmotor.webp&w=256&q=75",
+        "bytes": 2560,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-goriva.webp&w=256&q=75",
+        "bytes": 2391,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&w=256&q=75",
+        "bytes": 2893,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-ulja.webp&w=256&q=75",
+        "bytes": 2689,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Finterkuler.webp&w=256&q=75",
+        "bytes": 1989,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-vazduha.webp&w=256&q=75",
+        "bytes": 2512,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-kabine.webp&w=256&q=75",
+        "bytes": 2063,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fusisna-grana.webp&w=256&q=75",
+        "bytes": 2625,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&w=256&q=75",
+        "bytes": 2063,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=256&q=75",
+        "bytes": 2642,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkais-alternatora.webp&w=256&q=75",
+        "bytes": 2284,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fpaljenje-grejaci.webp&w=256&q=75",
+        "bytes": 3311,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fegr-ventil.webp&w=256&q=75",
+        "bytes": 2897,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fnosaci-motora.webp&w=256&q=75",
+        "bytes": 2139,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&w=256&q=75",
+        "bytes": 2087,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&w=256&q=75",
+        "bytes": 2087,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fklima.webp&w=256&q=75",
+        "bytes": 2144,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fdpf-katalizator.webp&w=256&q=75",
+        "bytes": 2051,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fpoluosovine.webp&w=256&q=75",
+        "bytes": 1929,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&w=256&q=75",
+        "bytes": 3114,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fmenjac.webp&w=256&q=75",
+        "bytes": 3324,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=256&q=75",
+        "bytes": 3888,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&w=256&q=75",
+        "bytes": 1740,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fspone-stabilizatori.webp&w=256&q=75",
+        "bytes": 1915,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Flezaj-glavcina.webp&w=256&q=75",
+        "bytes": 3265,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-celjusti.webp&w=256&q=75",
+        "bytes": 2632,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fabs-senzori.webp&w=256&q=75",
+        "bytes": 1732,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffarovi.webp&w=256&q=75",
+        "bytes": 2396,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&w=256&q=75",
+        "bytes": 1885,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fhauba.webp&w=256&q=75",
+        "bytes": 1762,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fretrovizori.webp&w=256&q=75",
+        "bytes": 1897,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fvrata.webp&w=256&q=75",
+        "bytes": 2329,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fstakla.webp&w=256&q=75",
+        "bytes": 2193,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&w=256&q=75",
+        "bytes": 1822,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&w=256&q=75",
+        "bytes": 3917,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 540,
+    "height": 900,
+    "dpr": 2,
+    "route": "category",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "bytes": 7123,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 540,
+    "height": 900,
+    "dpr": 2,
+    "route": "search",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "bytes": 7123,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 540,
+    "height": 900,
+    "dpr": 2,
+    "route": "landing",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "bytes": 5104,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 540,
+    "height": 900,
+    "dpr": 2,
+    "route": "product-related",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "bytes": 7123,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=1080&q=75",
+        "bytes": 9658,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 540,
+    "height": 900,
+    "dpr": 2,
+    "route": "vehicle-gen",
+    "cards": [
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&w=640&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&w=640&q=75"
+      },
+      {
+        "w": 1080,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=1080&q=75"
+      },
+      {
+        "w": 640,
+        "renderedCssPx": 238,
+        "neededPx": 477,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=1080&q=75",
+        "bytes": 9658,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "bytes": 5104,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fmotor.webp&w=640&q=75",
+        "bytes": 6475,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-ulja.webp&w=640&q=75",
+        "bytes": 6208,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Finterkuler.webp&w=640&q=75",
+        "bytes": 4432,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-goriva.webp&w=640&q=75",
+        "bytes": 5535,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&w=640&q=75",
+        "bytes": 7811,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-vazduha.webp&w=640&q=75",
+        "bytes": 5556,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fusisna-grana.webp&w=640&q=75",
+        "bytes": 6054,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-kabine.webp&w=640&q=75",
+        "bytes": 4484,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=640&q=75",
+        "bytes": 6462,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&w=640&q=75",
+        "bytes": 4416,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fpaljenje-grejaci.webp&w=640&q=75",
+        "bytes": 8658,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkais-alternatora.webp&w=640&q=75",
+        "bytes": 4848,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fegr-ventil.webp&w=640&q=75",
+        "bytes": 7031,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fnosaci-motora.webp&w=640&q=75",
+        "bytes": 5152,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&w=640&q=75",
+        "bytes": 5381,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fdpf-katalizator.webp&w=640&q=75",
+        "bytes": 4678,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fklima.webp&w=640&q=75",
+        "bytes": 4752,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&w=640&q=75",
+        "bytes": 5007,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fpoluosovine.webp&w=640&q=75",
+        "bytes": 4178,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=640&q=75",
+        "bytes": 10186,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fmenjac.webp&w=640&q=75",
+        "bytes": 9300,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&w=640&q=75",
+        "bytes": 7737,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&w=640&q=75",
+        "bytes": 3671,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fspone-stabilizatori.webp&w=640&q=75",
+        "bytes": 4063,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Flezaj-glavcina.webp&w=640&q=75",
+        "bytes": 8707,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-celjusti.webp&w=640&q=75",
+        "bytes": 6551,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fabs-senzori.webp&w=640&q=75",
+        "bytes": 3521,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffarovi.webp&w=640&q=75",
+        "bytes": 5629,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&w=640&q=75",
+        "bytes": 4194,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fhauba.webp&w=640&q=75",
+        "bytes": 3667,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fvrata.webp&w=640&q=75",
+        "bytes": 5449,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fretrovizori.webp&w=640&q=75",
+        "bytes": 4213,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fstakla.webp&w=640&q=75",
+        "bytes": 4968,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&w=640&q=75",
+        "bytes": 3362,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&w=640&q=75",
+        "bytes": 10471,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1,
+    "route": "category",
+    "cards": [
+      {
+        "w": 384,
+        "renderedCssPx": 240,
+        "neededPx": 240,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 240,
+        "neededPx": 240,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 240,
+        "neededPx": 240,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 240,
+        "neededPx": 240,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 240,
+        "neededPx": 240,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 240,
+        "neededPx": 240,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 240,
+        "neededPx": 240,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 240,
+        "neededPx": 240,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75",
+        "bytes": 4516,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1,
+    "route": "search",
+    "cards": [
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75",
+        "bytes": 4516,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1,
+    "route": "landing",
+    "cards": [
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "bytes": 3202,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1,
+    "route": "product-related",
+    "cards": [
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75",
+        "bytes": 4516,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=828&q=75",
+        "bytes": 9658,
+        "type": "image/avif"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "dpr": 1,
+    "route": "vehicle-gen",
+    "cards": [
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&w=384&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&w=384&q=75"
+      },
+      {
+        "w": 828,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=828&q=75"
+      },
+      {
+        "w": 384,
+        "renderedCssPx": 316,
+        "neededPx": 316,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75"
+      }
+    ],
+    "fetched": [
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=828&q=75",
+        "bytes": 9658,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "bytes": 3202,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fmotor.webp&w=256&q=75",
+        "bytes": 2560,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-ulja.webp&w=256&q=75",
+        "bytes": 2689,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-goriva.webp&w=256&q=75",
+        "bytes": 2391,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&w=256&q=75",
+        "bytes": 2893,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-vazduha.webp&w=256&q=75",
+        "bytes": 2512,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Finterkuler.webp&w=256&q=75",
+        "bytes": 1989,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fusisna-grana.webp&w=256&q=75",
+        "bytes": 2625,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-kabine.webp&w=256&q=75",
+        "bytes": 2063,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&w=256&q=75",
+        "bytes": 2063,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=256&q=75",
+        "bytes": 2642,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkais-alternatora.webp&w=256&q=75",
+        "bytes": 2284,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fpaljenje-grejaci.webp&w=256&q=75",
+        "bytes": 3311,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fegr-ventil.webp&w=256&q=75",
+        "bytes": 2897,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fdpf-katalizator.webp&w=256&q=75",
+        "bytes": 2051,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fnosaci-motora.webp&w=256&q=75",
+        "bytes": 2139,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&w=256&q=75",
+        "bytes": 2087,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&w=256&q=75",
+        "bytes": 2087,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fklima.webp&w=256&q=75",
+        "bytes": 2144,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=256&q=75",
+        "bytes": 3888,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&w=256&q=75",
+        "bytes": 3114,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fmenjac.webp&w=256&q=75",
+        "bytes": 3324,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fpoluosovine.webp&w=256&q=75",
+        "bytes": 1929,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&w=256&q=75",
+        "bytes": 1740,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fspone-stabilizatori.webp&w=256&q=75",
+        "bytes": 1915,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Flezaj-glavcina.webp&w=256&q=75",
+        "bytes": 3265,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-celjusti.webp&w=256&q=75",
+        "bytes": 2632,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fabs-senzori.webp&w=256&q=75",
+        "bytes": 1732,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffarovi.webp&w=256&q=75",
+        "bytes": 2396,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&w=256&q=75",
+        "bytes": 1885,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fhauba.webp&w=256&q=75",
+        "bytes": 1762,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fvrata.webp&w=256&q=75",
+        "bytes": 2329,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fretrovizori.webp&w=256&q=75",
+        "bytes": 1897,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&w=256&q=75",
+        "bytes": 1822,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&w=256&q=75",
+        "bytes": 3917,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fstakla.webp&w=256&q=75",
+        "bytes": 2193,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&w=384&q=75",
+        "bytes": 2488,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&w=384&q=75",
+        "bytes": 3216,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=384&q=75",
+        "bytes": 5774,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&w=384&q=75",
+        "bytes": 6358,
+        "type": "image/avif"
+      },
+      {
+        "url": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&w=384&q=75",
+        "bytes": 2930,
+        "type": "image/avif"
+      }
+    ]
+  }
+]

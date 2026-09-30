@@ -1,0 +1,237 @@
+{
+ "base": "http://localhost:3200",
+ "path": "/vozila/volkswagen/golf/golf-7",
+ "throttled": true,
+ "rows": [
+  {
+   "width": 412,
+   "mono": "blocked",
+   "blockedHits": 2,
+   "fontUrls": [
+    "archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+    "archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+    "fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+    "fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+    "archivo_expanded_600-s.0-vwu0izeway0.woff2",
+    "ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2"
+   ],
+   "navHeight": 401,
+   "catsTop": 811,
+   "monoLoaded": true,
+   "chips": 9,
+   "cls": 0,
+   "shifts": [
+    {
+     "at": 2237,
+     "value": 0.0013,
+     "recent": true,
+     "sources": [
+      {
+       "node": "#text. “·”",
+       "prev": [
+        214,
+        19
+       ],
+       "curr": [
+        214,
+        19
+       ]
+      },
+      {
+       "node": "#text. “”",
+       "prev": [
+        239,
+        19
+       ],
+       "curr": [
+        239,
+        19
+       ]
+      },
+      {
+       "node": "span.type-code-s.text-ink-3 “DADA, DPCA”",
+       "prev": [
+        543,
+        15
+       ],
+       "curr": [
+        543,
+        15
+       ]
+      },
+      {
+       "node": "span.type-code-s.text-ink-3 “CRLB, DFGA”",
+       "prev": [
+        687,
+        15
+       ],
+       "curr": [
+        687,
+        15
+       ]
+      },
+      {
+       "node": "span.type-code-s.text-ink-3 “CHZD, DKLA”",
+       "prev": [
+        447,
+        15
+       ],
+       "curr": [
+        447,
+        15
+       ]
+      }
+     ]
+    }
+   ],
+   "fontsDone": 724,
+   "fcp": 2160
+  },
+  {
+   "width": 412,
+   "mono": "loaded",
+   "blockedHits": 0,
+   "fontUrls": [
+    "archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+    "archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+    "fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+    "fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+    "archivo_expanded_600-s.0-vwu0izeway0.woff2",
+    "ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2"
+   ],
+   "navHeight": 305,
+   "catsTop": 715,
+   "monoLoaded": true,
+   "chips": 9,
+   "cls": 0.0837,
+   "shifts": [
+    {
+     "at": 3184,
+     "value": 0.0005,
+     "recent": false,
+     "sources": [
+      {
+       "node": "#text. “”",
+       "prev": [
+        140,
+        31
+       ],
+       "curr": [
+        140,
+        31
+       ]
+      },
+      {
+       "node": "#text. “”",
+       "prev": [
+        170,
+        31
+       ],
+       "curr": [
+        170,
+        31
+       ]
+      },
+      {
+       "node": "span.rw “Golf”",
+       "prev": [
+        166,
+        35
+       ],
+       "curr": [
+        170,
+        31
+       ]
+      },
+      {
+       "node": "span.rw “za”",
+       "prev": [
+        137,
+        34
+       ],
+       "curr": [
+        140,
+        31
+       ]
+      },
+      {
+       "node": "span.rw “VII”",
+       "prev": [
+        167,
+        34
+       ],
+       "curr": [
+        170,
+        31
+       ]
+      }
+     ]
+    },
+    {
+     "at": 3660,
+     "value": 0.0832,
+     "recent": false,
+     "sources": [
+      {
+       "node": "section.mt-12 “Delovi po kategorijamaBlok mot”",
+       "prev": [
+        811,
+        33
+       ],
+       "curr": [
+        715,
+        129
+       ]
+      },
+      {
+       "node": "li. “2.0 TDI 140 kWCUAA, DFHA”",
+       "prev": [
+        723,
+        40
+       ],
+       "curr": [
+        627,
+        40
+       ]
+      },
+      {
+       "node": "li. “2.0 TDI 110 kWCRLB, DFGA”",
+       "prev": [
+        675,
+        40
+       ],
+       "curr": [
+        579,
+        40
+       ]
+      },
+      {
+       "node": "li. “1.5 TSI 110 kWDADA, DPCA”",
+       "prev": [
+        531,
+        40
+       ],
+       "curr": [
+        483,
+        40
+       ]
+      },
+      {
+       "node": "li. “1.6 TDI 77 kWCAYC, CLHA”",
+       "prev": [
+        627,
+        40
+       ],
+       "curr": [
+        531,
+        40
+       ]
+      }
+     ]
+    }
+   ],
+   "fontsDone": 695,
+   "fcp": 2108
+  }
+ ]
+}

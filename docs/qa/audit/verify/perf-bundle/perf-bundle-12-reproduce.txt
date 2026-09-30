@@ -1,0 +1,43 @@
+360x780@3 category         cards=8 rendered=104css need=312px got w=640 (2.05x width, 4.2x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+360x780@3 search           cards=8 rendered=104css need=312px got w=640 (2.05x width, 4.2x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+360x780@3 landing          cards=7 rendered=104css need=312px got w=640 (2.05x width, 4.2x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+360x780@3 product-related  cards=4 rendered=104css need=312px got w=640 (2.05x width, 4.2x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+360x780@3 vehicle-gen      cards=8 rendered=104css need=312px got w=640 (2.05x width, 4.2x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+390x844@3 category         cards=8 rendered=104css need=312px got w=640 (2.05x width, 4.2x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+390x844@3 search           cards=8 rendered=104css need=312px got w=640 (2.05x width, 4.2x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+390x844@3 landing          cards=7 rendered=104css need=312px got w=640 (2.05x width, 4.2x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+390x844@3 product-related  cards=4 rendered=104css need=312px got w=640 (2.05x width, 4.2x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+390x844@3 vehicle-gen      cards=8 rendered=104css need=312px got w=640 (2.05x width, 4.2x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+390x844@2 category         cards=8 rendered=104css need=208px got w=640 (3.08x width, 9.5x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+390x844@2 search           cards=8 rendered=104css need=208px got w=640 (3.08x width, 9.5x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+390x844@2 landing          cards=7 rendered=104css need=208px got w=640 (3.08x width, 9.5x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+390x844@2 product-related  cards=4 rendered=104css need=208px got w=640 (3.08x width, 9.5x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+390x844@2 vehicle-gen      cards=8 rendered=104css need=208px got w=640 (3.08x width, 9.5x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+412x915@2.625 category         cards=8 rendered=104css need=273px got w=640 (2.34x width, 5.5x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+412x915@2.625 search           cards=8 rendered=104css need=273px got w=640 (2.34x width, 5.5x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+412x915@2.625 landing          cards=7 rendered=104css need=273px got w=640 (2.34x width, 5.5x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+412x915@2.625 product-related  cards=4 rendered=104css need=273px got w=640 (2.34x width, 5.5x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+412x915@2.625 vehicle-gen      cards=8 rendered=104css need=273px got w=640 (2.34x width, 5.5x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+390x844@1 category         cards=8 rendered=104css need=104px got w=256 (2.46x width, 6.1x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+390x844@1 search           cards=8 rendered=104css need=104px got w=256 (2.46x width, 6.1x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+390x844@1 landing          cards=7 rendered=104css need=104px got w=256 (2.46x width, 6.1x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+390x844@1 product-related  cards=4 rendered=104css need=104px got w=256 (2.46x width, 6.1x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+390x844@1 vehicle-gen      cards=8 rendered=104css need=104px got w=256 (2.46x width, 6.1x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+540x900@2 category         cards=8 rendered=238css need=477px got w=640 (1.34x width, 1.8x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+540x900@2 search           cards=8 rendered=238css need=477px got w=640 (1.34x width, 1.8x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+540x900@2 landing          cards=7 rendered=238css need=477px got w=640 (1.34x width, 1.8x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+540x900@2 product-related  cards=4 rendered=238css need=477px got w=640 (1.34x width, 1.8x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+540x900@2 vehicle-gen      cards=8 rendered=238css need=477px got w=640 (1.34x width, 1.8x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+1440x900@1 category         cards=8 rendered=240css need=240px got w=384 (1.60x width, 2.6x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+1440x900@1 search           cards=8 rendered=316css need=316px got w=384 (1.22x width, 1.5x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+1440x900@1 landing          cards=7 rendered=316css need=316px got w=384 (1.22x width, 1.5x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+1440x900@1 product-related  cards=4 rendered=316css need=316px got w=384 (1.22x width, 1.5x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+1440x900@1 vehicle-gen      cards=8 rendered=316css need=316px got w=384 (1.22x width, 1.5x px)  sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
+
+candidate bytes (AVIF):
+/images/parts/kocioni-diskovi.webp w=256 image/avif 3103 B
+/images/parts/kocioni-diskovi.webp w=384 image/avif 4516 B
+/images/parts/kocioni-diskovi.webp w=640 image/avif 7123 B
+/images/parts/kocione-plocice.webp w=256 image/avif 2196 B
+/images/parts/kocione-plocice.webp w=384 image/avif 3202 B
+/images/parts/kocione-plocice.webp w=640 image/avif 5104 B

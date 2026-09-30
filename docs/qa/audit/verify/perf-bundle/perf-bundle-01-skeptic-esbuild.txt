@@ -1,0 +1,5 @@
+esbuild 0.27.0, --bundle --minify --format=esm --platform=browser; gzip level 9. 2026-09-30T14:19:19.345Z
+real-schemas-as-is                 raw  452.0 KiB  gz  94.2 KiB  | zod 442.3 KiB (locales 257.6, json-schema 33.2) app 9.6 KiB | "Nieprawid" x14
+real-schemas-namespace-import      raw   92.1 KiB  gz  28.0 KiB  | zod 82.7 KiB (locales 2.6, json-schema 14.0) app 9.3 KiB | "Nieprawid" x0
+as-is + rhf + zodResolver          raw  486.1 KiB  gz 106.4 KiB  | zod 442.5 KiB (locales 257.6, json-schema 33.3) app 43.4 KiB | "Nieprawid" x14
+namespace + rhf + zodResolver      raw  125.9 KiB  gz  40.1 KiB  | zod 82.9 KiB (locales 2.6, json-schema 14.1) app 42.9 KiB | "Nieprawid" x0

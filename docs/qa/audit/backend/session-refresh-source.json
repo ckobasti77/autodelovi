@@ -1,0 +1,42 @@
+[
+  {
+    "phase": "login",
+    "method": "POST",
+    "url": "/api/auth",
+    "status": 200,
+    "type": "fetch",
+    "clearing": false
+  },
+  {
+    "phase": "login",
+    "method": "POST",
+    "url": "/api/auth",
+    "status": 200,
+    "type": "fetch",
+    "clearing": false
+  },
+  {
+    "phase": "GET /delovi",
+    "method": "POST",
+    "url": "/api/auth",
+    "status": 200,
+    "type": "fetch",
+    "clearing": false
+  },
+  {
+    "phase": "GET /nalog/porudzbine",
+    "method": "POST",
+    "url": "/api/auth",
+    "status": 200,
+    "type": "fetch",
+    "clearing": false
+  },
+  {
+    "phase": "GET /",
+    "method": "POST",
+    "url": "/api/auth",
+    "status": 200,
+    "type": "fetch",
+    "clearing": false
+  }
+]

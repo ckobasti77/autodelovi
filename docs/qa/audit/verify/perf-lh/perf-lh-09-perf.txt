@@ -1,0 +1,12 @@
+# perf-lh-09 verify: simulate vs devtools
+/ | mobile | simulate  n=3 bench 3346/4026/4069
+  perf 85 (84/85/85) · a11y 100 (100/100/100) · bp 100 (100/100/100) · LCP 4383 (4521/4383/4377) · FCP 1361 (1360/1364/1361) · TBT 44 (77/41/44) · CLS 0.001/0.001/0.001
+  JS 25 scripts 351 KB gz (1022.2 KB raw) · doc 36.3 KB gz / 246.5 KB raw · inline RSC 136.5 KB · failedA11y - · failedBp -
+  observed FCP/LCP/load 271/271/196 · 148/148/190 · 143/143/187 · scripts done before observed LCP 24/25 (347.2 KB) · 24/25 (347.2 KB) · 24/25 (347.2 KB)
+  CSS 40→46 · 34→39 · 36→42 · preloaded fonts end 34,33,34,34,116,117 · 32,34,32,34,110,110 · 38,38,37,38,108,109
+--
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 | mobile | simulate  n=3 bench 4055/3970/3950
+  perf 86 (86/86/86) · a11y 100 (100/100/100) · bp 100 (100/100/100) · LCP 4236 (4272/4226/4236) · FCP 1060 (1060/1062/1060) · TBT 20 (17/20/32) · CLS 0/0/0
+  JS 25 scripts 355.3 KB gz (1032.9 KB raw) · doc 32.2 KB gz / 220.5 KB raw · inline RSC 134.7 KB · failedA11y - · failedBp -
+  observed FCP/LCP/load 188/188/150 · 141/141/164 · 142/142/181 · scripts done before observed LCP 24/25 (351.6 KB) · 24/25 (351.6 KB) · 24/25 (351.6 KB)
+  CSS 34→39 · 33→38 · 32→35 · preloaded fonts end 32,31,32,32,81 · 32,32,35,33,88 · 28,28,28,28,94

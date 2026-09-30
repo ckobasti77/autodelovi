@@ -1,0 +1,662 @@
+[
+ {
+  "name": "home",
+  "path": "/",
+  "nojs": {
+   "title": "Auto delovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "canonical": "http://localhost:3000/",
+   "robots": "index, follow",
+   "h1": [
+    "RASKLOPI AUTO. NAĐI DEO."
+   ],
+   "jsonld": 1,
+   "words": 233,
+   "cards": 0,
+   "imgs": 13,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "nojsShot": "docs/qa/audit/seo/nojs-home-1440.webp",
+  "js": {
+   "title": "Auto delovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "canonical": "http://localhost:3000/",
+   "robots": "index, follow",
+   "h1": [
+    "RASKLOPI AUTO. NAĐI DEO."
+   ],
+   "jsonld": 1,
+   "words": 233,
+   "cards": 0,
+   "imgs": 14,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "errors": {
+   "console": [],
+   "page": [],
+   "bad": []
+  },
+  "diff": {
+   "title": true,
+   "canonical": true,
+   "robots": true,
+   "h1": true,
+   "jsonld": true,
+   "linksOnlyWithJs": [],
+   "linksOnlyWithoutJs": [],
+   "words": [
+    233,
+    233
+   ],
+   "cards": [
+    0,
+    0
+   ]
+  }
+ },
+ {
+  "name": "category",
+  "path": "/delovi/kocioni-diskovi",
+  "nojs": {
+   "title": "Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "canonical": "http://localhost:3000/delovi/kocioni-diskovi",
+   "robots": "index, follow",
+   "h1": [
+    "KOČIONI DISKOVI"
+   ],
+   "jsonld": 1,
+   "words": 475,
+   "cards": 9,
+   "imgs": 9,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "nojsShot": "docs/qa/audit/seo/nojs-category-1440.webp",
+  "js": {
+   "title": "Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "canonical": "http://localhost:3000/delovi/kocioni-diskovi",
+   "robots": "index, follow",
+   "h1": [
+    "KOČIONI DISKOVI"
+   ],
+   "jsonld": 1,
+   "words": 475,
+   "cards": 9,
+   "imgs": 9,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "errors": {
+   "console": [],
+   "page": [],
+   "bad": []
+  },
+  "diff": {
+   "title": true,
+   "canonical": true,
+   "robots": true,
+   "h1": true,
+   "jsonld": true,
+   "linksOnlyWithJs": [],
+   "linksOnlyWithoutJs": [],
+   "words": [
+    475,
+    475
+   ],
+   "cards": [
+    9,
+    9
+   ]
+  }
+ },
+ {
+  "name": "system",
+  "path": "/delovi/kocnice",
+  "nojs": {
+   "title": "Kočnice za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "canonical": "http://localhost:3000/delovi/kocnice",
+   "robots": "index, follow",
+   "h1": [
+    "KOČNICE"
+   ],
+   "jsonld": 1,
+   "words": 22,
+   "cards": 0,
+   "imgs": 4,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "js": {
+   "title": "Kočnice za VW, Audi, Škoda, SEAT i Cupra | SKLOP",
+   "canonical": "http://localhost:3000/delovi/kocnice",
+   "robots": "index, follow",
+   "h1": [
+    "KOČNICE"
+   ],
+   "jsonld": 1,
+   "words": 22,
+   "cards": 0,
+   "imgs": 4,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "errors": {
+   "console": [],
+   "page": [],
+   "bad": []
+  },
+  "diff": {
+   "title": true,
+   "canonical": true,
+   "robots": true,
+   "h1": true,
+   "jsonld": true,
+   "linksOnlyWithJs": [],
+   "linksOnlyWithoutJs": [],
+   "words": [
+    22,
+    22
+   ],
+   "cards": [
+    0,
+    0
+   ]
+  }
+ },
+ {
+  "name": "landing-model",
+  "path": "/delovi/kocioni-diskovi/volkswagen/golf",
+  "nojs": {
+   "title": "Kočioni diskovi za VW Golf | SKLOP",
+   "canonical": "http://localhost:3000/delovi/kocioni-diskovi/volkswagen/golf",
+   "robots": "index, follow",
+   "h1": [
+    "KOČIONI DISKOVI ZA VW GOLF"
+   ],
+   "jsonld": 1,
+   "words": 579,
+   "cards": 6,
+   "imgs": 6,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "nojsShot": "docs/qa/audit/seo/nojs-landing-model-1440.webp",
+  "js": {
+   "title": "Kočioni diskovi za VW Golf | SKLOP",
+   "canonical": "http://localhost:3000/delovi/kocioni-diskovi/volkswagen/golf",
+   "robots": "index, follow",
+   "h1": [
+    "KOČIONI DISKOVI ZA VW GOLF"
+   ],
+   "jsonld": 1,
+   "words": 579,
+   "cards": 6,
+   "imgs": 6,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "errors": {
+   "console": [],
+   "page": [],
+   "bad": []
+  },
+  "diff": {
+   "title": true,
+   "canonical": true,
+   "robots": true,
+   "h1": true,
+   "jsonld": true,
+   "linksOnlyWithJs": [],
+   "linksOnlyWithoutJs": [],
+   "words": [
+    579,
+    579
+   ],
+   "cards": [
+    6,
+    6
+   ]
+  }
+ },
+ {
+  "name": "landing-brand",
+  "path": "/delovi/kocioni-diskovi/volkswagen",
+  "nojs": {
+   "title": "Kočioni diskovi za Volkswagen — cene i stanje | SKLOP",
+   "canonical": "http://localhost:3000/delovi/kocioni-diskovi/volkswagen",
+   "robots": "index, follow",
+   "h1": [
+    "KOČIONI DISKOVI ZA VOLKSWAGEN"
+   ],
+   "jsonld": 1,
+   "words": 673,
+   "cards": 8,
+   "imgs": 8,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "js": {
+   "title": "Kočioni diskovi za Volkswagen — cene i stanje | SKLOP",
+   "canonical": "http://localhost:3000/delovi/kocioni-diskovi/volkswagen",
+   "robots": "index, follow",
+   "h1": [
+    "KOČIONI DISKOVI ZA VOLKSWAGEN"
+   ],
+   "jsonld": 1,
+   "words": 673,
+   "cards": 8,
+   "imgs": 8,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "errors": {
+   "console": [],
+   "page": [],
+   "bad": []
+  },
+  "diff": {
+   "title": true,
+   "canonical": true,
+   "robots": true,
+   "h1": true,
+   "jsonld": true,
+   "linksOnlyWithJs": [],
+   "linksOnlyWithoutJs": [],
+   "words": [
+    673,
+    673
+   ],
+   "cards": [
+    8,
+    8
+   ]
+  }
+ },
+ {
+  "name": "product",
+  "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "nojs": {
+   "title": "Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP",
+   "canonical": "http://localhost:3000/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "robots": "index, follow",
+   "h1": [
+    "Kočioni disk prednji 276 × 24 mm"
+   ],
+   "jsonld": 1,
+   "words": 458,
+   "cards": 4,
+   "imgs": 5,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "nojsShot": "docs/qa/audit/seo/nojs-product-1440.webp",
+  "js": {
+   "title": "Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP",
+   "canonical": "http://localhost:3000/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "robots": "index, follow",
+   "h1": [
+    "Kočioni disk prednji 276 × 24 mm"
+   ],
+   "jsonld": 1,
+   "words": 458,
+   "cards": 4,
+   "imgs": 5,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "errors": {
+   "console": [],
+   "page": [],
+   "bad": []
+  },
+  "diff": {
+   "title": true,
+   "canonical": true,
+   "robots": true,
+   "h1": true,
+   "jsonld": true,
+   "linksOnlyWithJs": [],
+   "linksOnlyWithoutJs": [],
+   "words": [
+    458,
+    458
+   ],
+   "cards": [
+    4,
+    4
+   ]
+  }
+ },
+ {
+  "name": "product-oos",
+  "path": "/deo/kocione-plocice-prednje-demo-0012",
+  "nojs": {
+   "title": "Kočione pločice prednje Bosch 6R0 698 000 MK | SKLOP",
+   "canonical": "http://localhost:3000/deo/kocione-plocice-prednje-demo-0012",
+   "robots": "index, follow",
+   "h1": [
+    "Kočione pločice prednje"
+   ],
+   "jsonld": 1,
+   "words": 357,
+   "cards": 4,
+   "imgs": 5,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "js": {
+   "title": "Kočione pločice prednje Bosch 6R0 698 000 MK | SKLOP",
+   "canonical": "http://localhost:3000/deo/kocione-plocice-prednje-demo-0012",
+   "robots": "index, follow",
+   "h1": [
+    "Kočione pločice prednje"
+   ],
+   "jsonld": 1,
+   "words": 357,
+   "cards": 4,
+   "imgs": 5,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "errors": {
+   "console": [],
+   "page": [],
+   "bad": []
+  },
+  "diff": {
+   "title": true,
+   "canonical": true,
+   "robots": true,
+   "h1": true,
+   "jsonld": true,
+   "linksOnlyWithJs": [],
+   "linksOnlyWithoutJs": [],
+   "words": [
+    357,
+    357
+   ],
+   "cards": [
+    4,
+    4
+   ]
+  }
+ },
+ {
+  "name": "vehicle-gen",
+  "path": "/vozila/volkswagen/golf/golf-7",
+  "nojs": {
+   "title": "Delovi za VW Golf VII (2012–2020) | SKLOP",
+   "canonical": "http://localhost:3000/vozila/volkswagen/golf/golf-7",
+   "robots": "index, follow",
+   "h1": [
+    "DELOVI ZA VW GOLF VII"
+   ],
+   "jsonld": 1,
+   "words": 579,
+   "cards": 8,
+   "imgs": 45,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "js": {
+   "title": "Delovi za VW Golf VII (2012–2020) | SKLOP",
+   "canonical": "http://localhost:3000/vozila/volkswagen/golf/golf-7",
+   "robots": "index, follow",
+   "h1": [
+    "DELOVI ZA VW GOLF VII"
+   ],
+   "jsonld": 1,
+   "words": 579,
+   "cards": 8,
+   "imgs": 45,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "errors": {
+   "console": [],
+   "page": [],
+   "bad": []
+  },
+  "diff": {
+   "title": true,
+   "canonical": true,
+   "robots": true,
+   "h1": true,
+   "jsonld": true,
+   "linksOnlyWithJs": [],
+   "linksOnlyWithoutJs": [],
+   "words": [
+    579,
+    579
+   ],
+   "cards": [
+    8,
+    8
+   ]
+  }
+ },
+ {
+  "name": "vehicle-model",
+  "path": "/vozila/volkswagen/golf",
+  "nojs": {
+   "title": "Delovi za VW Golf — sve generacije | SKLOP",
+   "canonical": "http://localhost:3000/vozila/volkswagen/golf",
+   "robots": "index, follow",
+   "h1": [
+    "DELOVI ZA VOLKSWAGEN GOLF"
+   ],
+   "jsonld": 1,
+   "words": 95,
+   "cards": 0,
+   "imgs": 0,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "js": {
+   "title": "Delovi za VW Golf — sve generacije | SKLOP",
+   "canonical": "http://localhost:3000/vozila/volkswagen/golf",
+   "robots": "index, follow",
+   "h1": [
+    "DELOVI ZA VOLKSWAGEN GOLF"
+   ],
+   "jsonld": 1,
+   "words": 95,
+   "cards": 0,
+   "imgs": 0,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "errors": {
+   "console": [],
+   "page": [],
+   "bad": []
+  },
+  "diff": {
+   "title": true,
+   "canonical": true,
+   "robots": true,
+   "h1": true,
+   "jsonld": true,
+   "linksOnlyWithJs": [],
+   "linksOnlyWithoutJs": [],
+   "words": [
+    95,
+    95
+   ],
+   "cards": [
+    0,
+    0
+   ]
+  }
+ },
+ {
+  "name": "za-majstore",
+  "path": "/za-majstore",
+  "nojs": {
+   "title": "Delovi za auto servise — rabat i brza porudžbina | SKLOP",
+   "canonical": "http://localhost:3000/za-majstore",
+   "robots": "index, follow",
+   "h1": [
+    "ZA MAJSTORE"
+   ],
+   "jsonld": 1,
+   "words": 358,
+   "cards": 0,
+   "imgs": 0,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "js": {
+   "title": "Delovi za auto servise — rabat i brza porudžbina | SKLOP",
+   "canonical": "http://localhost:3000/za-majstore",
+   "robots": "index, follow",
+   "h1": [
+    "ZA MAJSTORE"
+   ],
+   "jsonld": 1,
+   "words": 358,
+   "cards": 0,
+   "imgs": 0,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "errors": {
+   "console": [],
+   "page": [],
+   "bad": []
+  },
+  "diff": {
+   "title": true,
+   "canonical": true,
+   "robots": true,
+   "h1": true,
+   "jsonld": true,
+   "linksOnlyWithJs": [],
+   "linksOnlyWithoutJs": [],
+   "words": [
+    358,
+    358
+   ],
+   "cards": [
+    0,
+    0
+   ]
+  }
+ },
+ {
+  "name": "upit",
+  "path": "/upit",
+  "nojs": {
+   "title": "Upit za deo po broju šasije (VIN) | SKLOP",
+   "canonical": "http://localhost:3000/upit",
+   "robots": "index, follow",
+   "h1": [
+    "NE NALAZITE DEO?"
+   ],
+   "jsonld": 0,
+   "words": 306,
+   "cards": 0,
+   "imgs": 0,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "js": {
+   "title": "Upit za deo po broju šasije (VIN) | SKLOP",
+   "canonical": "http://localhost:3000/upit",
+   "robots": "index, follow",
+   "h1": [
+    "NE NALAZITE DEO?"
+   ],
+   "jsonld": 0,
+   "words": 306,
+   "cards": 0,
+   "imgs": 0,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "errors": {
+   "console": [],
+   "page": [],
+   "bad": []
+  },
+  "diff": {
+   "title": true,
+   "canonical": true,
+   "robots": true,
+   "h1": true,
+   "jsonld": true,
+   "linksOnlyWithJs": [],
+   "linksOnlyWithoutJs": [],
+   "words": [
+    306,
+    306
+   ],
+   "cards": [
+    0,
+    0
+   ]
+  }
+ },
+ {
+  "name": "kontakt",
+  "path": "/kontakt",
+  "nojs": {
+   "title": "Kontakt | SKLOP",
+   "canonical": "http://localhost:3000/kontakt",
+   "robots": "index, follow",
+   "h1": [
+    "KONTAKT"
+   ],
+   "jsonld": 2,
+   "words": 43,
+   "cards": 0,
+   "imgs": 0,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "js": {
+   "title": "Kontakt | SKLOP",
+   "canonical": "http://localhost:3000/kontakt",
+   "robots": "index, follow",
+   "h1": [
+    "KONTAKT"
+   ],
+   "jsonld": 2,
+   "words": 43,
+   "cards": 0,
+   "imgs": 0,
+   "imgsNoAlt": 0,
+   "hiddenCopy": 0
+  },
+  "errors": {
+   "console": [],
+   "page": [],
+   "bad": []
+  },
+  "diff": {
+   "title": true,
+   "canonical": true,
+   "robots": true,
+   "h1": true,
+   "jsonld": true,
+   "linksOnlyWithJs": [],
+   "linksOnlyWithoutJs": [],
+   "words": [
+    43,
+    43
+   ],
+   "cards": [
+    0,
+    0
+   ]
+  }
+ },
+ {
+  "name": "home-390-nojs",
+  "shot": "docs/qa/audit/seo/nojs-home-390.webp"
+ },
+ {
+  "name": "product-390-nojs",
+  "shot": "docs/qa/audit/seo/nojs-product-390.webp"
+ }
+]

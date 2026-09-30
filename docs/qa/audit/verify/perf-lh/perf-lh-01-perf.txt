@@ -1,0 +1,22 @@
+# perf-lh-01 verify: Lighthouse 13.5 mobile, --throttling devtools, :3200, fresh profile (banner visible). Runner scripts/qa/audit/verify-perf-lh-runner.mjs; raw per-run data lh-runs.jsonl; medians lh-summary.txt
+/delovi/kocioni-diskovi | mobile | devtools  n=4 bench 3516/4114/3989/3635
+  perf 95 (95/95/84/95) · a11y 100 (100/100/100/100) · bp 100 (100/100/100/100) · LCP 2116 (2098/2139/2133/2068) · FCP 2116 (2098/2139/2133/2068) · TBT 170 (170/169/487/170) · CLS 0/0/0/0
+/ | mobile | devtools  n=3 bench 4001/3634/4158
+  perf 89 (93/89/89) · a11y 97 (97/97/97) · bp 100 (100/100/100) · LCP 2134 (2326/2134/2128) · FCP 2134 (2326/2134/2128) · TBT 343 (171/353/343) · CLS 0.001/0.001/0.001
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 | mobile | devtools  n=3 bench 4073/4076/3496
+  perf 94 (93/94/95) · a11y 100 (100/100/100) · bp 100 (100/100/100) · LCP 2235 (2205/2295/2235) · FCP 2235 (2205/2295/2235) · TBT 143 (217/143/135) · CLS 0/0/0
+/vozila/volkswagen/golf/golf-7 | mobile | devtools  n=3 bench 4049/4139/4117
+  perf 93 (95/92/93) · a11y 100 (100/100/100) · bp 100 (100/100/100) · LCP 2090 (2090/2147/2004) · FCP 2090 (2090/2147/2004) · TBT 191 (86/191/206) · CLS 0.082/0.082/0.082
+/upit | mobile | devtools  n=3 bench 4126/3810/4109
+  perf 92 (91/92/94) · a11y 100 (100/100/100) · bp 96 (96/96/96) · LCP 2100 (2100/2107/2071) · FCP 2100 (2100/2107/2071) · TBT 262 (297/262/217) · CLS 0/0/0
+/delovi/kocioni-diskovi/volkswagen/golf | mobile | devtools  n=3 bench 4024/3948/3990
+  perf 93 (93/95/93) · a11y 100 (100/100/100) · bp 100 (100/100/100) · LCP 2109 (2139/2109/2033) · FCP 2109 (2139/2109/2033) · TBT 218 (218/167/256) · CLS 0/0/0
+/ponuda/kocione-plocice-golf | mobile | devtools  n=3 bench 4047/4171/4105
+  perf 95 (94/95/96) · a11y 100 (100/100/100) · bp 100 (100/100/100) · LCP 2105 (2099/2141/2105) · FCP 2105 (2099/2141/2105) · TBT 148 (182/148/99) · CLS 0.001/0.001/0.001
+  long tasks (run 1) kocioni-diskovi@1759:207 kocioni-diskovi@1981:164 0qy3sss5e6eww.js@3304:139 0qy3sss5e6eww.js@5142:77 25dplrt_qw3he.js@5703:76 0qy3sss5e6eww.js@5563:76 kocioni-diskovi@2164:52
+  long tasks (run 1) doc@1814:379 doc@2208:154 0qy3sss5e6eww.js@3384:151 0qy3sss5e6eww.js@5722:86 0qy3sss5e6eww.js@5226:84
+  long tasks (run 1) kocioni-disk-predn@1760:378 kocioni-disk-predn@2158:207 0qy3sss5e6eww.js@3283:115 0qy3sss5e6eww.js@5044:81 0qy3sss5e6eww.js@5399:61
+  long tasks (run 1) golf-7@1721:262 golf-7@2000:109 0qy3sss5e6eww.js@3195:108 0qy3sss5e6eww.js@5267:66 golf-7@2123:56 0qy3sss5e6eww.js@5616:56
+  long tasks (run 1) upit@1736:274 0qy3sss5e6eww.js@6409:149 0qy3sss5e6eww.js@6163:144 0qy3sss5e6eww.js@3237:127 upit@2032:93 0qy3sss5e6eww.js@6005:77
+  long tasks (run 1) golf@1755:337 golf@2122:168 0qy3sss5e6eww.js@3206:131 0qy3sss5e6eww.js@5082:73 0qy3sss5e6eww.js@5562:63
+  long tasks (run 1) kocione-plocice-go@1733:340 kocione-plocice-go@2097:118 0qy3sss5e6eww.js@3198:108 0qy3sss5e6eww.js@5391:72 0qy3sss5e6eww.js@5531:71 0qy3sss5e6eww.js@4716:66

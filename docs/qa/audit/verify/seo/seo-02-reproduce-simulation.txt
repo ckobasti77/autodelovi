@@ -1,0 +1,6 @@
+ATE     | full len 62 | current(correct regex): "Kočione pločice prednje, sa senzorom 1K0 698 406 F | SKLOP" | D193 order: "Kočione pločice prednje, sa senzorom ATE 1K0 698 406 F"
+Bosch   | full len 64 | current(correct regex): "Kočione pločice prednje, sa senzorom 1K0 698 406 F | SKLOP" | D193 order: "Kočione pločice prednje, sa senzorom Bosch 1K0 698 406 F"
+Brembo  | full len 74 | current(correct regex): "Kočioni disk prednji 312 × 25 mm, ventilirani 1K0 615 591 E" | D193 order: "Kočioni disk prednji 312 × 25 mm, ventilirani 1K0 615 591 E"
+ATE     | full len 71 | current(correct regex): "Kočioni disk prednji 312 × 25 mm, ventilirani 1K0 615 591 E" | D193 order: "Kočioni disk prednji 312 × 25 mm, ventilirani 1K0 615 591 E"
+INA     | full len 69 | current(correct regex): "Set zupčastog kaiša sa vodenom pumpom 1.9 TDI 038 121 662" | D193 order: "Set zupčastog kaiša sa vodenom pumpom 1.9 TDI 038 121 662"
+Gates   | full len 71 | current(correct regex): "Set zupčastog kaiša sa vodenom pumpom 1.9 TDI 038 121 662" | D193 order: "Set zupčastog kaiša sa vodenom pumpom 1.9 TDI 038 121 662"

@@ -1,0 +1,34 @@
+{
+ "generationPagesLinked": 56,
+ "notInSitemap": 10,
+ "notInSitemapSample": [
+  {
+   "g": "/vozila/audi/a4/a4-b6",
+   "status": 200,
+   "robots": "noindex, follow"
+  },
+  {
+   "g": "/vozila/audi/a4/a4-b7",
+   "status": 200,
+   "robots": "noindex, follow"
+  },
+  {
+   "g": "/vozila/audi/a4/a4-b8",
+   "status": 200,
+   "robots": "noindex, follow"
+  },
+  {
+   "g": "/vozila/audi/a4/a4-b9",
+   "status": 200,
+   "robots": "noindex, follow"
+  },
+  {
+   "g": "/vozila/audi/a6/a6-c6",
+   "status": 200,
+   "robots": "noindex, follow"
+  }
+ ],
+ "uniqueGenerationFilteredLinks": 1109,
+ "withIndexableLandingTwin": 82,
+ "twinAlsoLinkedOnSamePage": 82
+}

@@ -1,0 +1,247 @@
+{
+ "summary": {
+  "generationPages": 46,
+  "uniqueGenerationFilteredLinks": 1079,
+  "withIndexableLandingTwin": 82,
+  "twinAlsoLinkedOnSamePage": 82,
+  "twinNotLinkedOnSamePage": 0,
+  "twinNotLinkedExamples": [],
+  "sampledForRobots": 400,
+  "sampledIndex": 400,
+  "sampledNoindex": 0,
+  "sampledCanonicalToBaseCategory": 400,
+  "pagesWithoutLandingLinks": 12
+ },
+ "perPage": [
+  {
+   "page": "/vozila/audi/a3/a3-8l",
+   "generationFilteredLinks": 12,
+   "landingLinks": 5
+  },
+  {
+   "page": "/vozila/audi/a3/a3-8p",
+   "generationFilteredLinks": 36,
+   "landingLinks": 5
+  },
+  {
+   "page": "/vozila/audi/a3/a3-8v",
+   "generationFilteredLinks": 33,
+   "landingLinks": 5
+  },
+  {
+   "page": "/vozila/audi/a3/a3-8y",
+   "generationFilteredLinks": 10,
+   "landingLinks": 5
+  },
+  {
+   "page": "/vozila/audi/a4/a4-b5",
+   "generationFilteredLinks": 8,
+   "landingLinks": 0
+  },
+  {
+   "page": "/vozila/audi/a6/a6-c5",
+   "generationFilteredLinks": 8,
+   "landingLinks": 0
+  },
+  {
+   "page": "/vozila/cupra/ateca/cupra-ateca",
+   "generationFilteredLinks": 33,
+   "landingLinks": 1
+  },
+  {
+   "page": "/vozila/cupra/formentor/formentor",
+   "generationFilteredLinks": 10,
+   "landingLinks": 0
+  },
+  {
+   "page": "/vozila/cupra/leon/cupra-leon",
+   "generationFilteredLinks": 10,
+   "landingLinks": 0
+  },
+  {
+   "page": "/vozila/seat/ateca/ateca",
+   "generationFilteredLinks": 33,
+   "landingLinks": 1
+  },
+  {
+   "page": "/vozila/seat/ibiza/ibiza-3",
+   "generationFilteredLinks": 18,
+   "landingLinks": 0
+  },
+  {
+   "page": "/vozila/seat/ibiza/ibiza-4",
+   "generationFilteredLinks": 18,
+   "landingLinks": 0
+  },
+  {
+   "page": "/vozila/seat/leon/leon-1",
+   "generationFilteredLinks": 12,
+   "landingLinks": 5
+  },
+  {
+   "page": "/vozila/seat/leon/leon-2",
+   "generationFilteredLinks": 36,
+   "landingLinks": 5
+  },
+  {
+   "page": "/vozila/seat/leon/leon-3",
+   "generationFilteredLinks": 33,
+   "landingLinks": 5
+  },
+  {
+   "page": "/vozila/seat/leon/leon-4",
+   "generationFilteredLinks": 10,
+   "landingLinks": 5
+  },
+  {
+   "page": "/vozila/skoda/fabia/fabia-1",
+   "generationFilteredLinks": 18,
+   "landingLinks": 0
+  },
+  {
+   "page": "/vozila/skoda/fabia/fabia-2",
+   "generationFilteredLinks": 18,
+   "landingLinks": 0
+  },
+  {
+   "page": "/vozila/skoda/fabia/fabia-3",
+   "generationFilteredLinks": 18,
+   "landingLinks": 0
+  },
+  {
+   "page": "/vozila/skoda/karoq/karoq",
+   "generationFilteredLinks": 33,
+   "landingLinks": 1
+  },
+  {
+   "page": "/vozila/skoda/kodiaq/kodiaq-1",
+   "generationFilteredLinks": 33,
+   "landingLinks": 1
+  },
+  {
+   "page": "/vozila/skoda/octavia/octavia-1",
+   "generationFilteredLinks": 12,
+   "landingLinks": 5
+  },
+  {
+   "page": "/vozila/skoda/octavia/octavia-2",
+   "generationFilteredLinks": 37,
+   "landingLinks": 5
+  },
+  {
+   "page": "/vozila/skoda/octavia/octavia-3",
+   "generationFilteredLinks": 36,
+   "landingLinks": 5
+  },
+  {
+   "page": "/vozila/skoda/octavia/octavia-4",
+   "generationFilteredLinks": 10,
+   "landingLinks": 5
+  },
+  {
+   "page": "/vozila/skoda/rapid/rapid",
+   "generationFilteredLinks": 18,
+   "landingLinks": 0
+  },
+  {
+   "page": "/vozila/skoda/superb/superb-1",
+   "generationFilteredLinks": 8,
+   "landingLinks": 3
+  },
+  {
+   "page": "/vozila/skoda/superb/superb-2",
+   "generationFilteredLinks": 29,
+   "landingLinks": 3
+  },
+  {
+   "page": "/vozila/skoda/superb/superb-3",
+   "generationFilteredLinks": 33,
+   "landingLinks": 3
+  },
+  {
+   "page": "/vozila/volkswagen/caddy/caddy-3",
+   "generationFilteredLinks": 36,
+   "landingLinks": 2
+  },
+  {
+   "page": "/vozila/volkswagen/caddy/caddy-5",
+   "generationFilteredLinks": 10,
+   "landingLinks": 2
+  },
+  {
+   "page": "/vozila/volkswagen/golf/golf-4",
+   "generationFilteredLinks": 12,
+   "landingLinks": 5
+  },
+  {
+   "page": "/vozila/volkswagen/golf/golf-5",
+   "generationFilteredLinks": 38,
+   "landingLinks": 5
+  },
+  {
+   "page": "/vozila/volkswagen/golf/golf-6",
+   "generationFilteredLinks": 39,
+   "landingLinks": 5
+  },
+  {
+   "page": "/vozila/volkswagen/golf/golf-7",
+   "generationFilteredLinks": 37,
+   "landingLinks": 5
+  },
+  {
+   "page": "/vozila/volkswagen/golf/golf-8",
+   "generationFilteredLinks": 10,
+   "landingLinks": 5
+  },
+  {
+   "page": "/vozila/volkswagen/passat/passat-b5",
+   "generationFilteredLinks": 8,
+   "landingLinks": 3
+  },
+  {
+   "page": "/vozila/volkswagen/passat/passat-b6",
+   "generationFilteredLinks": 30,
+   "landingLinks": 3
+  },
+  {
+   "page": "/vozila/volkswagen/passat/passat-b7",
+   "generationFilteredLinks": 29,
+   "landingLinks": 3
+  },
+  {
+   "page": "/vozila/volkswagen/passat/passat-b8",
+   "generationFilteredLinks": 33,
+   "landingLinks": 3
+  },
+  {
+   "page": "/vozila/volkswagen/polo/polo-4",
+   "generationFilteredLinks": 18,
+   "landingLinks": 0
+  },
+  {
+   "page": "/vozila/volkswagen/polo/polo-5",
+   "generationFilteredLinks": 18,
+   "landingLinks": 0
+  },
+  {
+   "page": "/vozila/volkswagen/tiguan/tiguan-1",
+   "generationFilteredLinks": 36,
+   "landingLinks": 4
+  },
+  {
+   "page": "/vozila/volkswagen/tiguan/tiguan-2",
+   "generationFilteredLinks": 33,
+   "landingLinks": 4
+  },
+  {
+   "page": "/vozila/volkswagen/touran/touran-1",
+   "generationFilteredLinks": 36,
+   "landingLinks": 4
+  },
+  {
+   "page": "/vozila/volkswagen/touran/touran-2",
+   "generationFilteredLinks": 33,
+   "landingLinks": 4
+  }
+ ]
+}

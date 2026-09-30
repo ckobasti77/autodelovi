@@ -1,0 +1,6 @@
+/                                                links to forms: ["/upit"]  chunk fetched without interaction: false
+/deo/kocione-plocice-prednje-demo-0012           links to forms: ["/upit","/upit?proizvod=kocione-plocice-prednje-demo-0012"]  chunk fetched without interaction: false
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004    links to forms: ["/upit","/upit?proizvod=kocioni-disk-prednji-276-24-mm-demo-0004"]  chunk fetched without interaction: false
+/korpa                                           links to forms: ["/upit"]  chunk fetched without interaction: false
+/za-majstore                                     links to forms: ["/upit","/za-majstore/registracija"]  chunk fetched without interaction: false
+cart -> checkout (client nav): checkout link present true; chunk requested while on /korpa before click: false; requested after click: true; url now /porudzbina; nav 151 ms

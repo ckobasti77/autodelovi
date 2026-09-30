@@ -1,0 +1,26 @@
+verify perf-bundle-01 - Chromium headless, 390x844 isMobile, 4x CPU throttle, :3100, 2026-09-30
+run name          jsKiB(wire) chunk? chunkKiB compileMs evalMs blocking>50ms longestTask
+1   korpa            343.1  false        0        0      0     1047        471
+1   prijava          329.7  false        0        0      0     1402        424
+1   porudzbina       451.7  true       102        0      1     1004        737
+1   upit             450.5  true       102        0      0     1988        659
+1   registracija     441.8  true       102        0      0     1014        597
+2   korpa            343.1  false        0        0      0     1151        499
+2   prijava          329.7  false        0        0      0      633        253
+2   porudzbina       451.7  true       102        0      2     1067        359
+2   upit             450.5  true       102        0      1     2667       1012
+2   registracija     441.8  true       102        0      0     1939        607
+3   korpa            343.1  false        0        0      0     1212        378
+3   prijava          329.7  false        0        0      0     4229       1599
+3   porudzbina       451.7  true       102        0      0     3455        926
+3   upit             450.5  true       102        0      7     3524       1032
+3   registracija     441.8  true       102        0      0     2516        756
+
+medians:
+  korpa         js 343.1 KiB wire, chunk compile 0 ms + eval 0 ms, blocking 1151 ms, longest 471 ms
+  prijava       js 329.7 KiB wire, chunk compile 0 ms + eval 0 ms, blocking 1402 ms, longest 424 ms
+  porudzbina    js 451.7 KiB wire, chunk compile 0 ms + eval 1 ms, blocking 1067 ms, longest 737 ms
+  upit          js 450.5 KiB wire, chunk compile 0 ms + eval 1 ms, blocking 2667 ms, longest 1012 ms
+  registracija  js 441.8 KiB wire, chunk compile 0 ms + eval 0 ms, blocking 1939 ms, longest 607 ms
+
+flow (390): added to cart=true; checkout links on /korpa=1; chunk requests while on /korpa (4 s, no click)=0; after clicking to /porudzbina total chunk requests=1; navigated=true

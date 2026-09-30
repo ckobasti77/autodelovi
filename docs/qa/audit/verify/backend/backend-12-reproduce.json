@@ -1,0 +1,34 @@
+{
+  "startedAt": "2026-09-30T14:31:27.026Z",
+  "pib": "286870265",
+  "mbFraud": "76870268",
+  "mbReal": "86870266",
+  "created": {
+    "companyName": "Servis Admin v11-8687026",
+    "profileId": "p57fkc91ngbt7g1agp5jbm3qfd8fcnze"
+  },
+  "adminButtonsAfterReject": [
+    "Sačuvaj belešku",
+    "Vrati na čekanje"
+  ],
+  "adminShot": "docs/qa/audit/verify/backend/backend-11-reproduce-admin-rejected.webp",
+  "probeAfterReject": {
+    "status": "rejected",
+    "tierName": null
+  },
+  "realEmail": "audit-verify-b11-8687026@primer.rs",
+  "realRegistration": "DUPLICATE shown",
+  "realUrl": "http://localhost:3100/za-majstore/registracija",
+  "realMessages": [
+    "Ovaj PIB je već registrovan — prijavite se ili nas pozovite.Ovaj PIB je već registrovan — prijavite se ili nas pozovite.",
+    "Ovaj PIB je već registrovan — prijavite se ili nas pozovite.",
+    "Ovaj PIB je već registrovan — prijavite se ili nas pozovite."
+  ],
+  "realShot": "docs/qa/audit/verify/backend/backend-11-reproduce-duplicate-pib.webp",
+  "b12_mechanicFormAccountLogin": "signed in, url=/nalog",
+  "b12Shot1": "docs/qa/audit/verify/backend/backend-12-reproduce-login-email-as-password.webp",
+  "b12Email": "marko2024-8687026@primer.rs",
+  "b12Shot2": "docs/qa/audit/verify/backend/backend-12-reproduce-signup-form.webp",
+  "b12_signup": "accepted, landed on /nalog",
+  "b12Shot3": "docs/qa/audit/verify/backend/backend-12-reproduce-signup-accepted.webp"
+}

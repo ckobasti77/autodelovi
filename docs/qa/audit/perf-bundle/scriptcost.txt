@@ -1,0 +1,18 @@
+run 1 korpa       script   543 ms  task  1451 ms  heap 5.6 MB  dcl 124  load 491
+run 1 upit        script   641 ms  task  1406 ms  heap 6.3 MB  dcl 159  load 638
+run 1 porudzbina  script   672 ms  task  1411 ms  heap 6.6 MB  dcl 129  load 517
+run 1 prijava     script   433 ms  task  1132 ms  heap 5.4 MB  dcl 136  load 478
+run 2 korpa       script   601 ms  task  1461 ms  heap 5.6 MB  dcl 151  load 502
+run 2 upit        script   755 ms  task  1549 ms  heap 6.3 MB  dcl 395  load 726
+run 2 porudzbina  script   566 ms  task  1269 ms  heap 6.6 MB  dcl 110  load 464
+run 2 prijava     script   489 ms  task  1320 ms  heap 5.4 MB  dcl 145  load 555
+run 3 korpa       script   579 ms  task  1563 ms  heap 5.6 MB  dcl 133  load 531
+run 3 upit        script   870 ms  task  1845 ms  heap 6.3 MB  dcl 151  load 715
+run 3 porudzbina  script   803 ms  task  1702 ms  heap 6.6 MB  dcl 379  load 643
+run 3 prijava     script   449 ms  task  1269 ms  heap 5.4 MB  dcl 337  load 593
+
+medians (4x CPU):
+  korpa       script 579 ms, task 1461 ms, heap 5.6 MB
+  upit        script 755 ms, task 1549 ms, heap 6.3 MB
+  porudzbina  script 672 ms, task 1411 ms, heap 6.6 MB
+  prijava     script 449 ms, task 1269 ms, heap 5.4 MB

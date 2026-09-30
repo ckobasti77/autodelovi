@@ -1,0 +1,5 @@
+# perf-3d-06 verify: frames desktop 1x, --use-angle=swiftshader --enable-unsafe-swiftshader
+[verify-desktop-cpu1-swiftshader run 0] ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver) tier=high · 189 frames · median 16.7 · p95 1116.6 · p99 1399.9 · worst 1900 ms · >33 ms 39.7 % · >50 ms 73 · >100 ms 69 · long tasks 2 (worst 65) · end p 0.99 ready
+    start: first draw +756 ms · ready +1348 ms · long tasks 3 (sum>50 326 ms; worst 310 ms)
+    gl: draws/frame max 290 last 290 · tris/frame max 416272 last 416272 · GPU est 62.1 MB · contexts created 2 live 1 · heap 30 MB · canvas {"css":"1440x836","px":"1440x836"} · models after intent ["/models/car.glb","/models/env/studio-512.hdr","/models/car-shadow.webp","/models/car-shadow-exploded.webp"] · before intent []
+57:    const gl = canvas.getContext("webgl2", { failIfMajorPerformanceCaveat: false });

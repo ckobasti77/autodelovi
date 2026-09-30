@@ -1,0 +1,3 @@
+[verify-desktop-dpr2-cpu4-gpu run 0] ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11) tier=high · 524 frames · median 16.7 · p95 33.4 · p99 50 · worst 50 ms · >33 ms 3.4 % · >50 ms 1 · >100 ms 0 · long tasks 5 (worst 61) · end p 1.00 ready
+    start: first draw +877 ms · ready +2462 ms · long tasks 7 (sum>50 1002 ms; worst 508 ms)
+    gl: draws/frame max 290 last 290 · tris/frame max 416272 last 416272 · GPU est 113.7 MB · contexts created 2 live 1 · heap 36 MB · canvas {"css":"1440x836","px":"2160x1254"} · models after intent ["/models/car.glb","/models/env/studio-512.hdr","/models/car-shadow.webp","/models/car-shadow-exploded.webp"] · before intent []

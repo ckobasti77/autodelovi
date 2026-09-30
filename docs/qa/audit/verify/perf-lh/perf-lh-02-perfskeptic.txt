@@ -1,0 +1,32 @@
+# perf-lh-02 skeptic (analysis of existing LH JSON; no new runs). Script: scripts/qa/audit/verify-perf-lh-02-skeptic.mjs. Per-run rows: perf-lh-02-perfskeptic.json
+# Protocol in every run: http/1.1 (localhost next start). Font preloads come from the HTTP Link header; CSS from <link rel=stylesheet>.
+HOME finder kept ok runs (cited 2519 median) n=5 bench 3391/3459/3749/3083/3137 | LCP med 2519 (2519/2571/2547/2455/2490) | cssEnd med 1793 (1774-1814) | cssEnd->LCP med 724 (724/757/764/681/697) | first task after CSS 520/471/563/477/498 | protocol http/1.1
+HOME step-19 runs .lighthouse/_-mobile-devtools-1..3 n=3 bench 4093/4035/3982 | LCP med 2193 (2193/2251/2192) | cssEnd med 1729 (1726-1758) | cssEnd->LCP med 467 (467/493/463) | first task after CSS 292/413/415 | protocol http/1.1
+PRODUCT 0004 finder runs (ok b3086 + 4 contended) n=5 bench 3086/1771/2931/2798/790 | LCP med 2497 (2497/2145/2197/2631/2890) | cssEnd med 1760 (1745-1833) | cssEnd->LCP med 737 (737/391/452/868/1057) | first task after CSS 490/266/292/555/691 | protocol http/1.1
+PRODUCT 0003 step-19 runs n=3 bench 4045/3996/4063 | LCP med 2168 (2331/2168/2083) | cssEnd med 1715 (1712-1723) | cssEnd->LCP med 452 (608/452/371) | first task after CSS 516/409/324 | protocol http/1.1
+CATEGORY finder runs (1 ok b3100 + 4 contended) n=5 bench 1242/1604/2713/796/3100 | LCP med 2936 (2936/3634/2953/2454/2513) | cssEnd med 1805 (1739-1997) | cssEnd->LCP med 939 (939/1676/1201/649/774) | first task after CSS 689/1132/827/363/549 | protocol http/1.1
+CATEGORY step-19 runs .lighthouse/_delovi_kocioni-diskovi-mobile-devtools-1..3 n=3 bench 4079/4079/4068 | LCP med 2129 (2333/2129/2030) | cssEnd med 1696 (1659-1708) | cssEnd->LCP med 421 (674/421/334) | first task after CSS 476/374/287 | protocol http/1.1
+
+Verifier runs (lh-runs.jsonl, bench 3496-4171): CSS end vs early image presence; fonts High, CSS VeryHigh, images Low/Medium
+  /delovi/kocioni-diskovi                        b3516 LCP 2098 cssEnd 1736 cssEnd->LCP 362 early imgs: 5.2KB Low | preloaded fonts end 1688/1672/1768/1704
+  /                                              b4001 LCP 2326 cssEnd 1782 cssEnd->LCP 544 early imgs: 14.7KB Medium | preloaded fonts end 1690/1705/1844/1751
+  /                                              b3634 LCP 2134 cssEnd 1771 cssEnd->LCP 363 early imgs: 14.7KB Medium | preloaded fonts end 1676/1692/1818/1739
+  /                                              b4158 LCP 2128 cssEnd 1711 cssEnd->LCP 417 early imgs: none | preloaded fonts end 1649/1634/1739/1681
+  /delovi/kocioni-diskovi                        b4114 LCP 2139 cssEnd 1725 cssEnd->LCP 414 early imgs: 5.2KB Low | preloaded fonts end 1646/1662/1772/1710
+  /delovi/kocioni-diskovi                        b3989 LCP 2133 cssEnd 1730 cssEnd->LCP 403 early imgs: 5.2KB Low | preloaded fonts end 1652/1668/1775/1714
+  /delovi/kocioni-diskovi                        b3635 LCP 2068 cssEnd 1721 cssEnd->LCP 347 early imgs: 5.2KB Low | preloaded fonts end 1628/1643/1753/1690
+  /deo/kocioni-disk-prednji-276-24-mm-demo-0004  b4073 LCP 2205 cssEnd 1740 cssEnd->LCP 465 early imgs: 8.7KB Low | preloaded fonts end 1647/1663/1771/1710
+  /deo/kocioni-disk-prednji-276-24-mm-demo-0004  b4076 LCP 2295 cssEnd 1738 cssEnd->LCP 557 early imgs: 8.7KB Low | preloaded fonts end 1645/1660/1765/1706
+  /deo/kocioni-disk-prednji-276-24-mm-demo-0004  b3496 LCP 2235 cssEnd 1733 cssEnd->LCP 502 early imgs: 8.7KB Low | preloaded fonts end 1655/1655/1764/1701
+  /vozila/volkswagen/golf/golf-7                 b4049 LCP 2090 cssEnd 1699 cssEnd->LCP 391 early imgs: none | preloaded fonts end 1607/1622/1730/1668
+  /vozila/volkswagen/golf/golf-7                 b4139 LCP 2147 cssEnd 1700 cssEnd->LCP 447 early imgs: none | preloaded fonts end 1638/1638/1746/1685
+  /vozila/volkswagen/golf/golf-7                 b4117 LCP 2004 cssEnd 1702 cssEnd->LCP 302 early imgs: none | preloaded fonts end 1623/1639/1749/1686
+  /upit                                          b4126 LCP 2100 cssEnd 1714 cssEnd->LCP 386 early imgs: none | preloaded fonts end 1652/1637/1746/1698
+  /upit                                          b3810 LCP 2107 cssEnd 1713 cssEnd->LCP 394 early imgs: none | preloaded fonts end 1634/1650/1744/1698
+  /upit                                          b4109 LCP 2071 cssEnd 1713 cssEnd->LCP 358 early imgs: none | preloaded fonts end 1628/1636/1739/1681
+  /delovi/kocioni-diskovi/volkswagen/golf        b4024 LCP 2139 cssEnd 1735 cssEnd->LCP 404 early imgs: 5.2KB Low | preloaded fonts end 1646/1661/1766/1704
+  /delovi/kocioni-diskovi/volkswagen/golf        b3948 LCP 2109 cssEnd 1727 cssEnd->LCP 382 early imgs: 5.2KB Low | preloaded fonts end 1635/1666/1773/1711
+  /delovi/kocioni-diskovi/volkswagen/golf        b3990 LCP 2033 cssEnd 1707 cssEnd->LCP 326 early imgs: none | preloaded fonts end 1645/1645/1754/1691
+  /ponuda/kocione-plocice-golf                   b4047 LCP 2099 cssEnd 1713 cssEnd->LCP 386 early imgs: 3.9KB Low | preloaded fonts end 1635/1635/1760/1682
+  /ponuda/kocione-plocice-golf                   b4171 LCP 2141 cssEnd 1728 cssEnd->LCP 413 early imgs: 3.9KB Low | preloaded fonts end 1634/1650/1754/1696
+  /ponuda/kocione-plocice-golf                   b4105 LCP 2105 cssEnd 1720 cssEnd->LCP 385 early imgs: 3.9KB Low | preloaded fonts end 1633/1648/1754/1688

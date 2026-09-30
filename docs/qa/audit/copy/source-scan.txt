@@ -1,0 +1,215 @@
+files scanned: 557
+hits: 194
+
+## ascii-diacritic (114)
+app/(landing)/ponuda/[slug]/page.tsx:121 [literal] Plaćanje pri preuzimanju
+app/(landing)/ponuda/[slug]/page.tsx:122 [literal] Ili lično preuzimanje u radnji, bez troška.
+app/(landing)/ponuda/[slug]/page.tsx:198 [jsx-text] Proverićemo za vas
+app/(shop)/deo/[slug]/page.tsx:324 [jsx-text] Lično preuzimanje bez troška · plaćanje gotovinom ili karticom
+app/(shop)/page.tsx:37 [literal] Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Plaćanje pouzećem ili pri preuzimanju u radnji.
+app/(shop)/page.tsx:64 [template] Kurir {x}{x}; preuzimanje u radnji bez troška.
+app/(shop)/porudzbina/hvala/[token]/page.tsx:59 [jsx-text] ; javićemo se kad je potvrdimo.
+app/(shop)/pretraga/page.tsx:35 [template] Rezultati za „{x}“: delovi po OEM i zamenskom broju, sa cenama sa PDV-om i stanjem. Pouzeće ili preuzimanje u radnji.
+app/(shop)/pretraga/page.tsx:165 [jsx-text] “ nemamo artikal u katalogu. Pošaljite upit — proverićemo kod dobavljača i javiti vam se u toku radnog dana.
+app/(shop)/vozila/[marka]/[model]/[generacija]/page.tsx:200 [jsx-text] pošaljite broj šasije i šta vam treba — proverićemo kod dobavljača.
+app/(shop)/za-majstore/page.tsx:38 [literal] Kurir donosi na adresu servisa iz profila; adresu menjate pri svakoj porudžbini. Lično preuzimanje je bez troška.
+app/(shop)/za-majstore/registracija/page.tsx:66 [jsx-text] Registracija preko sajta je trenutno isključena. Pozovite nas ili pišite na Viber — otvorićemo nalog.
+app/admin/(panel)/izvoz/[vrsta]/route.ts:157 [template] porudzbine-{x}.csv
+app/admin/(print)/porudzbine/[broj]/otpremnica/page.tsx:15 [template] /admin/porudzbine/{x}/otpremnica
+app/admin/(print)/porudzbine/[broj]/predracun/page.tsx:15 [template] /admin/porudzbine/{x}/predracun
+app/opengraph-image.tsx:13 [literal] Pouzeće ili preuzimanje u radnji
+components/admin/catalog/CategoriesAdmin.tsx:397 [jsx-text] Kategorija se vidi u katalogu i pretrazi, ali ne i na 3D automobilu.
+components/admin/dashboard/Dashboard.tsx:64 [jsx-text] isto kao prošle nedelje
+components/admin/orders/OrdersList.tsx:79 [literal] Za preuzimanje
+components/admin/orders/OrdersList.tsx:348 [template] porudzbine-{x}.csv
+components/admin/products/SeoFields.tsx:73 [jsx-text] Pregled u pretrazi
+components/admin/settings/AdLandingsTab.tsx:98 [jsx-text] Odredišne strane za oglase: naslov ponavlja obećanje iz oglasa, ispod su izabrani artikli (ili kategorija za izabrano vozilo), telefon, Viber i upit. Po pravilu nisu u Google pretrazi, da ne takmiče sa stranama kategorija. Izmena je vidljiv
+components/admin/settings/AdLandingsTab.tsx:122 [jsx-text] U pretrazi
+components/admin/settings/AdLandingsTab.tsx:353 [attr:label] Prikazati u Google pretrazi
+components/admin/settings/SeoPanels.tsx:44 [jsx-text] U pretrazi:
+components/admin/settings/SeoPanels.tsx:67 [attr:aria-label] U pretrazi
+components/admin/shell/nav.ts:59 [literal] dashboard pocetna
+components/admin/shell/nav.ts:72 [literal] porudzbine narudzbine
+components/admin/shell/nav.ts:202 [literal] firma dostava placanje pracenje
+components/cart/CartPageView.tsx:59 [jsx-text] Bez plaćanja karticom na sajtu. Plaćate pouzećem, pri preuzimanju ili virmanom.
+components/cart/CartView.tsx:46 [template] Na stanju je još {x} Smanjite količinu.
+components/catalog/AddToCartButton.tsx:81 [template] {x}#obavestenje
+components/catalog/CategoryListingView.tsx:267 [template] Za {x} trenutno nemamo {x} na stanju. Pošaljite upit — proverićemo kod dobavljača i javiti vam se u toku radnog dana.
+components/catalog/CategoryListingView.tsx:268 [literal] Promenite filtere ili pošaljite upit — proverićemo kod dobavljača.
+components/home/HomeSections.tsx:26 [literal] Upišite OEM broj kako god ga imate, izaberite vozilo i motor ili kliknite na deo na 3D prikazu.
+components/home/HomeSections.tsx:33 [literal] Platite pri preuzimanju
+components/mechanic/MechanicProfileForm.tsx:209 [literal] Pouzeće, pri preuzimanju ili virman
+components/mechanic/PriceListPicker.tsx:121 [jsx-text] Cene su sa PDV-om i vašim rabatom na dan preuzimanja. Najviše
+components/mechanic/QuickOrder.tsx:573 [template] Na stanju je još {x} kom.
+components/product/BackInStockForm.tsx:57 [template] Već ste prijavljeni. Javićemo vam na {x} kad stigne.
+components/product/BackInStockForm.tsx:58 [template] Javićemo vam na {x} kad stigne.
+components/product/FitmentBadge.tsx:92 [template] Za {x} izaberite generaciju i motor
+components/product/RetiredProduct.tsx:41 [jsx-text] ) više ne prodajemo. Pogledajte zamenu u kategoriji ili nam pošaljite upit — proverićemo kod dobavljača.
+lib/catalog/partNotes.ts:11 [literal] Uz usisnu granu uvek uzmite nove dihtunge.
+lib/catalog/partNotes.ts:18 [literal] Uz karter uzmite novi dihtung i zavrtanj za ispust ulja.
+lib/domain/orderStateMachine.ts:119 [literal] „Spremna za preuzimanje“ važi samo za lično preuzimanje.
+lib/email/catalog.ts:27 [literal] Spremna za preuzimanje
+lib/email/catalog.ts:29 [literal] Status → spremna za preuzimanje.
+lib/email/samples.ts:60 [template] {x}/porudzbina/{x}
+lib/email/samples.ts:83 [literal] Plaćate kuriru gotovinom pri preuzimanju paketa.
+lib/email/samples.ts:121 [literal] Set dihtunga za turbinu
+lib/email/samples.ts:130 [literal] Staru turbinu vratite pri preuzimanju — kaucija se ne naplaćuje.
+lib/email/samples.ts:168 [template] {x}/porudzbina/{x}/predracun
+lib/email/samples.ts:183 [literal] Lično preuzimanje
+lib/email/samples.ts:186 [literal] Gotovinom pri preuzimanju
+lib/email/samples.ts:216 [template] {x}/deo/kocione-plocice-prednje-trw
+lib/email/samples.ts:217 [template] {x}/obavestenja/odjava/{x}
+lib/email/samples.ts:241 [template] {x}/admin/porudzbine/SK-2026-000187
+lib/email/samples.ts:285 [template] {x}/admin/porudzbine/SK-2026-000188
+lib/email/samples.ts:318 [template] {x}/admin/porudzbine/SK-2026-000186
+lib/email/templates/customer.ts:69 [literal] Kad prihvatite ponudu, pravimo porudžbinu po ovim cenama. Plaćate pouzećem, pri preuzimanju ili virmanom — ništa unapred preko sajta.
+lib/email/templates/order.ts:85 [literal] Podaci za uplatu još nisu upisani u sistem; javićemo vam ih telefonom ili e-poštom.
+lib/email/templates/order.ts:131 [literal] Javićemo vam kad bude spremna za preuzimanje.
+lib/email/templates/order.ts:171 [literal] Ako vam deo treba hitno ili želite zamenu drugog proizvođača, javite se — proverićemo šta je odmah dostupno.
+lib/email/templates/order.ts:190 [template] Pri preuzimanju plaćate {x} ({x}).
+lib/email/templates/order.ts:195 [literal] Porudžbina je spremna za preuzimanje.
+lib/email/templates/order.ts:213 [template] Porudžbina {x} je spremna za preuzimanje
+lib/email/templates/order.ts:278 [literal] Proverite deo pre ugradnje; reklamacije i povrat — uslovi u poruci.
+lib/i18n/sr/admin.ts:14 [literal] Za preuzimanje
+lib/i18n/sr/admin.ts:27 [literal] Spremna za preuzimanje
+lib/i18n/sr/shop.ts:30 [literal] Spremna za preuzimanje
+lib/i18n/sr/shop.ts:73 [literal] Lično preuzimanje
+lib/i18n/sr/shop.ts:79 [literal] Gotovinom pri preuzimanju
+lib/i18n/sr/shop.ts:80 [literal] Karticom pri preuzimanju
+lib/i18n/sr/shop.ts:90 [literal] Plaćate pouzećem kuriru pri preuzimanju paketa.
+lib/import/fields.ts:313 [literal] min kolicina
+lib/seo/feeds.ts:75 [literal] Cena sa PDV-om. Plaćanje pouzećem ili pri preuzimanju u radnji.
+lib/seo/landingCopy.ts:100 [template] Uporedite OEM broj sa starim delom — najtraženiji brojevi u ovoj grupi su {x}. Kad niste sigurni, pošaljite broj šasije (VIN) kroz upit i proverićemo umesto vas.
+lib/seo/offlineConversions.ts:16 [literal] Zavrsena porudzbina
+lib/seo/templates.ts:112 [literal] Cene sa PDV-om, pouzeće ili preuzimanje u radnji.
+lib/seo/templates.ts:164 [literal] Pouzeće ili preuzimanje u radnji.
+convex/adminSearch.ts:60 [template] /admin/porudzbine/{x}
+convex/adminSearch.ts:151 [template] /admin/porudzbine/{x}
+convex/carts.ts:126 [template] Na stanju je još {x} kom.
+convex/catalog/productsAdmin.ts:442 [template] Na stanju je {x} kom.
+convex/catalog/vehiclesAdmin.ts:474 [literal] Motor ima artikle za ovu generaciju — prvo izmenite kompatibilnost tih artikala.
+convex/events.ts:59 [template] /admin/porudzbine/{x}
+convex/events.ts:132 [template] /admin/porudzbine/{x}
+convex/lib/emailData.ts:49 [template] /porudzbina/{x}{x}
+convex/lib/emailData.ts:119 [literal] Lično preuzimanje
+convex/lib/emailData.ts:265 [template] /admin/porudzbine/{x}
+convex/lib/emailData.ts:413 [template] /admin/porudzbine/{x}
+convex/lib/orders.ts:409 [literal] Spremna za preuzimanje
+convex/lib/settings.ts:50 [literal] Lično preuzimanje
+convex/lib/settings.ts:70 [literal] Plaćate kuriru gotovinom pri preuzimanju paketa.
+convex/lib/settings.ts:77 [literal] Gotovinom pri preuzimanju
+convex/lib/settings.ts:85 [literal] Karticom pri preuzimanju
+convex/notify.ts:201 [template] /admin/porudzbine/{x}
+convex/notify.ts:265 [template] /obavestenja/odjava/{x}
+convex/notify.ts:349 [template] /admin/porudzbine/{x}
+convex/notify.ts:533 [template] /admin/porudzbine/{x}
+convex/orders.ts:82 [template] {x}: na stanju je još {x} kom.
+convex/users.ts:101 [literal] Korisnik je izmenio svoj profil
+constants/routes.ts:28 [template] /majstor/brza-porudzbina?kodovi={x}
+constants/routes.ts:30 [template] /majstor/porudzbine/{x}
+constants/routes.ts:45 [template] /nalog/porudzbine/{x}
+constants/routes.ts:49 [template] /porudzbina/hvala/{x}
+constants/routes.ts:50 [template] /porudzbina/{x}
+constants/routes.ts:51 [template] /porudzbina/{x}/predracun
+constants/routes.ts:54 [template] /obavestenja/odjava/{x}
+constants/routes.ts:73 [template] /admin/porudzbine/{x}
+constants/routes.ts:74 [template] /admin/porudzbine/{x}/predracun
+constants/routes.ts:76 [template] /admin/porudzbine/{x}/otpremnica
+constants/routes.ts:92 [template] /admin/podesavanja?tab={x}
+
+## english (49)
+app/(shop)/majstor/cenovnik/preuzmi/route.ts:25 [literal] private, no-store
+app/(shop)/porudzbina/hvala/[token]/page.tsx:63 [jsx-text] Status pratite na
+app/(shop)/za-majstore/hvala/page.tsx:33 [jsx-text] Status naloga
+app/sitemaps/[file]/route.ts:20 [literal] Not found
+app/sitemaps/[file]/route.ts:22 [literal] Not found
+app/slike/deo/[file]/route.ts:12 [literal] Not found
+app/slike/deo/[file]/route.ts:18 [literal] Not found
+app/slike/deo/[file]/route.ts:20 [literal] Not found
+components/admin/import/ImportBatchDetail.tsx:74 [jsx-text] Status
+components/admin/inquiries/InquiriesList.tsx:227 [attr:label] Status upita
+components/admin/MechanicsAdminList.tsx:148 [attr:label] Status registracije
+components/admin/orders/OrderDetail.tsx:260 [literal] Status nije promenjen.
+components/admin/products/ProductsList.tsx:359 [attr:label] Status artikla
+components/admin/system/EmailsAdmin.tsx:143 [attr:aria-label] Status poruke
+components/mechanic/QuickOrder.tsx:481 [jsx-text] Status upita
+components/three/canvas/materials.ts:134 [template] float xrNdv = abs( dot( normalize( vXrN ), normalize( vXrV ) ) ); float xrRim = clamp( pow( clamp( 1.0 - xrNdv, 0.0, 1.0 ), uXrRimPower ) * uXrRimScale, 0.0, 1.0 ); float xrHi = clamp( max( uHiHover * {x}, uHiSelect * {x} ), 0.0, 1.0 ); vec
+components/ui/Button.tsx:14 [literal] aria-disabled:cursor-not-allowed aria-disabled:active:translate-y-0
+components/ui/Menu.tsx:32 [literal] flex min-h-10 cursor-pointer select-none items-center gap-2.5 rounded-xs px-2.5 type-body-s outline-none data-[highlighted]:bg-surface-4 data-[disabled]:cursor-not-allowed data-[disabled]:text-ink-4
+lib/catalog/taxonomy.ts:564 [literal] Filter ulja
+lib/catalog/taxonomy.ts:571 [literal] Filter vazduha
+lib/catalog/taxonomy.ts:578 [literal] Filter goriva
+lib/catalog/taxonomy.ts:585 [literal] Filter kabine
+lib/email/html.ts:342 [template] :root { color-scheme: light dark; supported-color-schemes: light dark; } body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; } table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; } a[x-apple-data-detectors
+lib/email/html.ts:379 [template] <div style="display:none;max-height:0;max-width:0;overflow:hidden;opacity:0;mso-hide:all;font-size:1px;line-height:1px;color:{x};">{x}{x}</div>
+lib/email/html.ts:413 [template] <!doctype html> <html lang="sr-Latn-RS" xmlns="http://www.w3.org/1999/xhtml"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta nam
+lib/email/samples.ts:45 [literal] Filter ulja
+lib/email/samples.ts:303 [literal] Filter ulja
+lib/email/templates/customer.ts:44 [literal] Status upita
+lib/email/templates/customer.ts:156 [literal] Status registracije
+lib/excel/importWorkbooks.ts:285 [literal] Status reda
+lib/format/date.ts:32 [template] Invalid date: {x}
+lib/seo/feeds.ts:46 [literal] available for order
+lib/seo/feeds.ts:47 [literal] out of stock
+lib/seo/offlineConversions.ts:9 [literal] Google Click ID
+lib/seo/offlineConversions.ts:10 [literal] Conversion Name
+lib/seo/offlineConversions.ts:11 [literal] Conversion Time
+lib/server/adminDownload.ts:14 [literal] private, no-store
+lib/textRevealCss.ts:20 [template] html.{x}:not(.{x}) :is({x}):not([{x}="running"]):not([{x}="done"])
+lib/textRevealCss.ts:21 [template] @media screen and (prefers-reduced-motion: no-preference) { {x} { opacity: 0; } } .{x} { display: inline-block; } @media (scripting: none) { :is({x}) { opacity: 1 !important; } } .{x} { display: inline-block; } @media screen and (prefers-re
+convex/auth.ts:51 [literal] Password reset needs the Convex action context.
+convex/http.ts:23 [literal] Webhook secret is not configured.
+convex/http.ts:29 [literal] Invalid webhook.
+convex/lib/env.ts:57 [literal] LINK_TOKEN_SECRET is not set on this deployment (docs/GO-LIVE-ENV.md).
+convex/test.setup.ts:189 [literal] Filter ulja
+convex/testing.ts:27 [literal] Test helpers are disabled on this deployment (set E2E_TEST_HELPERS=1 on dev).
+constants/motion.ts:76 [literal] (prefers-reduced-motion: no-preference)
+constants/textRevealConfig.ts:94 [template] :is({x}):not(:has({x}))
+constants/textRevealConfig.ts:101 [template] {x}:not(:is({x}) *)
+constants/textRevealConfig.ts:101 [template] :not({x}):not(:is({x}) *)
+
+## title-case (7)
+app/opengraph-image.tsx:11 [literal] Delovi za VW, Audi, Škoda, SEAT i Cupra
+components/admin/settings/SeoPanels.tsx:94 [literal] Google Merchant Center (XML)
+lib/domain/vin/vagModelCodes.ts:17 [literal] Golf V / Golf VI, Jetta
+lib/domain/vin/wmi.ts:30 [literal] Audi Sport GmbH (quattro GmbH)
+lib/domain/vin/wmi.ts:46 [literal] Volkswagen, Južna Afrika
+lib/domain/vin/wmi.ts:49 [literal] Volkswagen Group Rus
+convex/seed.ts:531 [literal] Demo Auto Servis
+
+## ijekavian (11)
+components/admin/catalog/CategoriesAdmin.tsx:54 [attr:description] Stablo kataloga, tekstovi za pretraživače, sličice i veza sa delovima 3D automobila.
+components/admin/catalog/CategoriesAdmin.tsx:270 [attr:label] Naslov za pretraživače
+components/admin/catalog/CategoriesAdmin.tsx:279 [attr:label] Opis za pretraživače
+components/admin/products/SeoFields.tsx:41 [attr:label] Naslov za pretraživače
+components/admin/products/SeoFields.tsx:52 [attr:label] Opis za pretraživače
+components/admin/products/StockDialog.tsx:97 [literal] Promena (+ prijem, − otpis)
+components/admin/settings/AdLandingsTab.tsx:226 [attr:label] Naslov stranice (u pretraživaču)
+lib/domain/attribution.ts:50 [literal] Pretraživač (organski)
+lib/email/templates/order.ts:269 [template] Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Uslovi i obrazac su na stranici [Reklamacije i povrat]({x}).
+lib/i18n/sr/admin.ts:73 [literal] Pretraživač
+lib/i18n/sr/admin.ts:110 [literal] Prijem robe
+
+## rsd-space (3)
+components/cart/CartView.tsx:222 [literal] Preuzimanje 0 RSD
+components/checkout/CheckoutForm.tsx:544 [literal] 0 RSD
+lib/import/row.ts:390 [literal] Cena je 0 RSD — kupci će videti „cena na upit“.
+
+## x-dimension (4)
+components/mechanic/QuickOrder.tsx:674 [literal] 5Q0 698 151 x4
+components/mechanic/QuickOrder.tsx:675 [literal] 2x 1K0-698-151
+components/mechanic/QuickOrderDemo.tsx:12 [literal] 1k0-615-301-aa 2 5Q0 698 151 x4 2x 1K0.698.151 OEM: 03L 115 562
+lib/i18n/sr/mechanic.ts:55 [literal] 1K0615301AA 2 5Q0 698 151 x4 2x 1K0-698-151
+
+## hyphen-range (6)
+components/mechanic/QuickOrder.tsx:675 [literal] 2x 1K0-698-151
+components/mechanic/QuickOrderDemo.tsx:12 [literal] 1k0-615-301-aa 2 5Q0 698 151 x4 2x 1K0.698.151 OEM: 03L 115 562
+lib/excel/importWorkbooks.ts:94 [literal] Primena: vozila odvojena sa ;, npr. „VW Golf VII 2012-2020 [CRLB, DFGA]; Škoda Octavia III“. Nazive vidite na listu „Vozila“.
+lib/i18n/sr/mechanic.ts:55 [literal] 1K0615301AA 2 5Q0 698 151 x4 2x 1K0-698-151
+lib/import/fields.ts:144 [literal] Kataloški broj proizvođača dela (npr. ATE 24.0125-0158.1).
+lib/import/fields.ts:245 [literal] Vozila odvojena sa ;, npr. „VW Golf VII 2012-2020 [CRLB, CUNA]; Škoda Octavia III“. Nazive vozila vidite na listu „Vozila“.
+
+## straight-quotes (3)
+lib/admin/format.ts:108 [template] "{x}"
+lib/format/money.ts:78 [template] Cannot read an amount from "{x}"
+lib/seo/feeds.ts:146 [template] "{x}"

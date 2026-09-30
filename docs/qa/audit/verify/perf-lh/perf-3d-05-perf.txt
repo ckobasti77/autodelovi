@@ -1,0 +1,11 @@
+# perf-3d-05 verify
+    gl: draws/frame max 290 last 290 · tris/frame max 416272 last 416272 · GPU est 62.1 MB · contexts created 2 live 1 · heap 33 MB · canvas {"css":"1440x836","px":"1440x836"} · models after intent ["/models/car.glb","/models/env/studio-512.hdr","/models
+    gl: draws/frame max 290 last 290 · tris/frame max 416272 last 416272 · GPU est 62.1 MB · contexts created 2 live 1 · heap 33 MB · canvas {"css":"1440x836","px":"1440x836"} · models after intent ["/models/car.glb","/models/env/studio-512.hdr","/models
+    gl: draws/frame max 290 last 290 · tris/frame max 416272 last 416272 · GPU est 62.1 MB · contexts created 2 live 1 · heap 36 MB · canvas {"css":"1440x836","px":"1440x836"} · models after intent ["/models/car.glb","/models/env/studio-512.hdr","/models
+    gl: draws/frame max 290 last 290 · tris/frame max 416272 last 416272 · GPU est 113.7 MB · contexts created 2 live 1 · heap 36 MB · canvas {"css":"1440x836","px":"2160x1254"} · models after intent ["/models/car.glb","/models/env/studio-512.hdr","/mode
+51:      dpr={[1, TIER_MAX_DPR[tier]]}
+54:        antialias: tier === "high",
+36:export const TIER_MAX_DPR: Readonly<Record<Exclude<Tier, "low">, number>> = {
+37-  high: 2,
+38-  mid: 1.5,
+39-};

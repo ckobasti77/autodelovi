@@ -1,0 +1,110 @@
+[
+  {
+    "run": 1,
+    "name": "korpa",
+    "scriptMs": 543,
+    "taskMs": 1451,
+    "jsHeapMB": 5.6,
+    "dcl": 124,
+    "load": 491
+  },
+  {
+    "run": 1,
+    "name": "upit",
+    "scriptMs": 641,
+    "taskMs": 1406,
+    "jsHeapMB": 6.3,
+    "dcl": 159,
+    "load": 638
+  },
+  {
+    "run": 1,
+    "name": "porudzbina",
+    "scriptMs": 672,
+    "taskMs": 1411,
+    "jsHeapMB": 6.6,
+    "dcl": 129,
+    "load": 517
+  },
+  {
+    "run": 1,
+    "name": "prijava",
+    "scriptMs": 433,
+    "taskMs": 1132,
+    "jsHeapMB": 5.4,
+    "dcl": 136,
+    "load": 478
+  },
+  {
+    "run": 2,
+    "name": "korpa",
+    "scriptMs": 601,
+    "taskMs": 1461,
+    "jsHeapMB": 5.6,
+    "dcl": 151,
+    "load": 502
+  },
+  {
+    "run": 2,
+    "name": "upit",
+    "scriptMs": 755,
+    "taskMs": 1549,
+    "jsHeapMB": 6.3,
+    "dcl": 395,
+    "load": 726
+  },
+  {
+    "run": 2,
+    "name": "porudzbina",
+    "scriptMs": 566,
+    "taskMs": 1269,
+    "jsHeapMB": 6.6,
+    "dcl": 110,
+    "load": 464
+  },
+  {
+    "run": 2,
+    "name": "prijava",
+    "scriptMs": 489,
+    "taskMs": 1320,
+    "jsHeapMB": 5.4,
+    "dcl": 145,
+    "load": 555
+  },
+  {
+    "run": 3,
+    "name": "korpa",
+    "scriptMs": 579,
+    "taskMs": 1563,
+    "jsHeapMB": 5.6,
+    "dcl": 133,
+    "load": 531
+  },
+  {
+    "run": 3,
+    "name": "upit",
+    "scriptMs": 870,
+    "taskMs": 1845,
+    "jsHeapMB": 6.3,
+    "dcl": 151,
+    "load": 715
+  },
+  {
+    "run": 3,
+    "name": "porudzbina",
+    "scriptMs": 803,
+    "taskMs": 1702,
+    "jsHeapMB": 6.6,
+    "dcl": 379,
+    "load": 643
+  },
+  {
+    "run": 3,
+    "name": "prijava",
+    "scriptMs": 449,
+    "taskMs": 1269,
+    "jsHeapMB": 5.4,
+    "dcl": 337,
+    "load": 593
+  }
+]

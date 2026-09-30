@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-30",
+  "environment": [
+    "Build: `NEXT_PUBLIC_TEST_HOOKS=1 npm run build` — exit 0 in 3 min 30 s (log not committed). Served by `next start -p 3100` (all reviewers) and a second `next start -p 3200` of the same build reserved for the performance track, so Lighthouse and frame-time runs never shared a Node event loop with the crawlers.",
+    "Data: Convex dev deployment `tame-impala-374`, `seed:stats` before the audit — 167 products (157 demo), 89 orders, 52 inquiries, 35 mechanic profiles, owner present. Shared audit accounts (approved mechanic „Majstor Plus“ with deferred payment, retail customer) were created through the real UI by `scripts/qa/audit/accounts.mjs`.",
+    "Browsers: Playwright 1.63 with Chromium 1243, Firefox 1543 and WebKit 2359 installed for the audit.",
+    "**Full e2e suite on the production build after the step 20 CSP/header changes: 118 tests — 91 passed, 27 skipped, 0 failed, 0 flaky (11.6 min).** All 27 skips are intentional (admin/import desktop-only, HTTP-level and run-once checks skipped on the mobile-390 project). Evidence: [audit/e2e/full-run.txt](audit/e2e/full-run.txt), [audit/e2e/full-run.json](audit/e2e/full-run.json). The suite covers Chromium only; Firefox/WebKit are the cross-browser track.",
+    "Lighthouse: Lighthouse 13.5 through `tests/lighthouse/run.mjs` against :3200 (fresh profile, so the cookie banner is visible as on a first ad click). Runs whose CPU benchmarkIndex showed machine contention were excluded and are listed in `audit/perf-lh/lighthouse.md`; timing claims were re-measured by an independent verifier.",
+    "Incidents: (1) the :3100 `next start` process exited with code 1 at about 17:50 without an error in its log; it was restarted at 17:56 and guarded by a watchdog for the rest of the audit (no restart was needed). No verdict was produced against the dead server. (2) The first audit run lost all ten browser-heavy reviewers (visual, motion/3D, accessibility, cross-browser, flows) and the completeness critic to API network errors (ECONNRESET / ENOTFOUND) at about 19:40. Those tracks were re-run in a second workflow that reused the evidence already on disk; the completeness-critic phase was dropped to stay within the step's time limit."
+  ],
+  "notes": [
+    "Evidence paths are relative to `docs/qa/`. Reviewer scripts in `scripts/qa/audit/` re-create most measurements (`kit.mjs` is the shared helper).",
+    "Lab numbers come from localhost on a Windows desktop; PageSpeed Insights on the deployed site remains the owner's check (HUMAN-TODO)."
+  ],
+  "knownItems": [
+    { "item": "Mobile hero framing at 360–430 px (empty band above the car)", "match": "hero framing", "fallback": "see motion/3D findings" },
+    { "item": "Shared shell first-load JS ~303 KB gzip", "match": "first-load js" },
+    { "item": "Default simulated mobile LCP ~4.2 s on home (D112 applied throttling)", "match": "simulated mobile lcp" },
+    { "item": "Phone TBT over budget on home, category and product", "match": "tbt" },
+    { "item": "Font preloads", "match": "font preload" },
+    { "item": "Globally registered GSAP plugins", "match": "gsap plugins" },
+    { "item": "Search not narrowed by the selected vehicle", "match": "narrowed", "fallback": "see flows findings" },
+    { "item": "Mobile filter row not sticky", "match": "filter row", "fallback": "see flows findings" },
+    { "item": "Mobile sticky contact bar not built", "match": "contact bar", "fallback": "see flows findings" },
+    { "item": "Mechanics quick order at 1440: last row behind the summary bar", "match": "quick order", "fallback": "see visual findings" },
+    { "item": "Full e2e suite re-run after the step 20 CSP changes", "match": "__none__", "fallback": "118 tests: 91 passed, 27 skipped (intentional), 0 failed — no finding" }
+  ]
+}

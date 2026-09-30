@@ -1,0 +1,126 @@
+{
+ "base": "http://localhost:3100",
+ "note": "412x823 Chromium, no CPU/network throttling; forced = boot failsafe timer fired at 0 ms",
+ "runs": [
+  {
+   "mode": "forced",
+   "url": "http://localhost:3100/delovi/kocioni-diskovi -> /deo/kocioni-disk-prednji-312-25-mm-demo-0007",
+   "clientSideNav": true,
+   "failsafeAtDcl": true,
+   "failsafeNow": true,
+   "leftoverWords": 0,
+   "pendingLeft": 32,
+   "load": {
+    "running": 6,
+    "paintedVisibleThenHidden": 6,
+    "medianVisibleMs": 33,
+    "sample": [
+     "span: Više o kategoriji (visible 40 ms, top 323)",
+     "p: Brembo · OEM kvalitet (visible 33 ms, top 464)",
+     "h3: Kočioni disk prednji 312 × 25 mm (visible 33 ms, top 488)",
+     "p: OEM 3C0 615 098 (visible 33 ms, top 516)",
+     "p: TRW · OEM kvalitet (visible 33 ms, top 661)",
+     "h3: Kočioni disk zadnji 272 × 10 mm, puni (visible 33 ms, top 685)"
+    ]
+   },
+   "scroll": {
+    "running": 22,
+    "paintedVisibleThenHidden": 22,
+    "medianVisibleMs": 2855,
+    "sample": [
+     "p: OEM 1K0 615 540 Q (visible 2418 ms, top 474)",
+     "p: Bosch · OEM kvalitet (visible 2419 ms, top 619)",
+     "h3: Kočioni disk prednji 256 × 22 mm (visible 2419 ms, top 643)",
+     "p: OEM 6R0 615 645 (visible 2419 ms, top 692)",
+     "p: Brembo · OEM kvalitet (visible 2554 ms, top 577)",
+     "h3: Kočioni disk prednji 312 × 25 mm, ventilirani (visible 2555 ms, top 601)"
+    ]
+   },
+   "nav": {
+    "running": 2,
+    "paintedVisibleThenHidden": 0,
+    "medianVisibleMs": 0,
+    "sample": []
+   },
+   "navRaw": [
+    {
+     "phase": "nav",
+     "el": "p: Ilustracija kategorije — izgled dela može se raz",
+     "pendingAt": 10696,
+     "runningAt": 10703,
+     "visibleMsBeforeHide": 7,
+     "opacityWhilePending": "1",
+     "failsafe": true,
+     "topPx": 393,
+     "msFromClickToPending": 1292,
+     "msFromClickToHide": 1299
+    },
+    {
+     "phase": "nav",
+     "el": "p: Brembo · OEM kvalitet",
+     "pendingAt": 10698,
+     "runningAt": 10703,
+     "visibleMsBeforeHide": 5,
+     "opacityWhilePending": "1",
+     "failsafe": true,
+     "topPx": 462,
+     "msFromClickToPending": 1294,
+     "msFromClickToHide": 1299
+    }
+   ]
+  },
+  {
+   "mode": "control",
+   "url": "http://localhost:3100/delovi/kocioni-diskovi -> /deo/kocioni-disk-prednji-312-25-mm-demo-0007",
+   "clientSideNav": true,
+   "failsafeAtDcl": false,
+   "failsafeNow": false,
+   "leftoverWords": 0,
+   "pendingLeft": 32,
+   "load": {
+    "running": 6,
+    "paintedVisibleThenHidden": 0,
+    "medianVisibleMs": 0,
+    "sample": []
+   },
+   "scroll": {
+    "running": 22,
+    "paintedVisibleThenHidden": 0,
+    "medianVisibleMs": 0,
+    "sample": []
+   },
+   "nav": {
+    "running": 2,
+    "paintedVisibleThenHidden": 0,
+    "medianVisibleMs": 0,
+    "sample": []
+   },
+   "navRaw": [
+    {
+     "phase": "nav",
+     "el": "p: Ilustracija kategorije — izgled dela može se raz",
+     "pendingAt": 12126,
+     "runningAt": 12143,
+     "visibleMsBeforeHide": 0,
+     "opacityWhilePending": "0",
+     "failsafe": false,
+     "topPx": 393,
+     "msFromClickToPending": 2010,
+     "msFromClickToHide": 2027
+    },
+    {
+     "phase": "nav",
+     "el": "p: Brembo · OEM kvalitet",
+     "pendingAt": 12128,
+     "runningAt": 12143,
+     "visibleMsBeforeHide": 0,
+     "opacityWhilePending": "0",
+     "failsafe": false,
+     "topPx": 462,
+     "msFromClickToPending": 2012,
+     "msFromClickToHide": 2027
+    }
+   ]
+  }
+ ]
+}

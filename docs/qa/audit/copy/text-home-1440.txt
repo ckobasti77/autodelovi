@@ -1,0 +1,296 @@
+<a> Preskoči na sadržaj
+        @aria-label=SKLOP — početna
+          <span> SKLOP
+        @aria-label=Glavna navigacija
+            <a> Delovi
+            <a> Vozila
+            <a> Za majstore
+            <a> Upit po broju šasije
+          <span> Broj dela ili naziv
+          <kbd aria-hidden> /
+          @aria-label=Pretraga delova
+          <button> Izaberite vozilo
+          @aria-label=Moj nalog
+          @aria-label=Korpa
+            @aria-label=Otvori meni
+                <span> Rasklopi
+                <span> auto.
+                <span> Nađi
+                <span> deo.
+                <span> Delovi
+                <span> za
+                <span> Volkswagen,
+                <span> Audi,
+                <span> Škoda,
+                <span> SEAT
+                <span> i Cupra —
+                <span> tražite
+                <span> po
+                <span> OEM
+                <span> broju,
+                <span> po
+                <span> vozilu
+                <span> ili
+                <span> klikom
+                <span> na
+                <span> deo.
+                  @aria-label=Broj dela ili naziv
+                  @placeholder=npr. 1K0 615 301 AA ili kočione pločice
+                  @aria-label=Broj dela ili naziv
+                <span> Pretraži
+                <p> Broj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju.
+                <span> Vaše vozilo
+                <span> Izaberite vozilo
+                <span> marka, model, motor
+                <span sr-only> Izaberi
+              <a> Nemate broj? Pošaljite broj šasije
+                  @aria-label=Interaktivni 3D prikaz automobila u rendgen stilu. Delove birate mišem, dodirom ili iz liste delova.
+                <span> Sklopljen
+                <span> automobil
+                <span> 00
+                <span> ·
+                <span> 42 kategorije
+                <span> ·
+                <span> 91 deo
+                <span> Skrolujte
+                <span> i
+                <span> auto
+                <span> se
+                <span> rasklapa
+                <span> po
+                <span> sistemima.
+                <span> Prikaz
+                <span> Generički
+                <span> kompaktni
+                <span> hečbek,
+                <span> nije
+                <span> konkretan
+                <span> model
+                <span> Faza
+                <dd> 00 / 07
+                <span> Kategorije
+                <dd> 44
+                <span> Generički
+                <span> kompaktni
+                <span> hečbek,
+                <span> nije
+                <span> konkretan
+                <span> model
+                  @aria-label=Faze rasklapanja
+                  @aria-label=00 Sklopljen automobil
+                <span> 00
+                <span> Sklopljeno
+                  @aria-label=01 Karoserija, stakla i svetla
+                <span> 01
+                <span> Karoserija i svetla
+                  @aria-label=02 Točkovi
+                <span> 02
+                <span> Točkovi
+                  @aria-label=03 Kočnice, vešanje, upravljanje
+                <span> 03
+                <span> Kočnice i vešanje
+                  @aria-label=04 Pomoćni agregati, hlađenje, usis
+                <span> 04
+                <span> Agregati i hlađenje
+                  @aria-label=05 Motor, turbina, gorivo, paljenje
+                <span> 05
+                <span> Motor i turbina
+                  @aria-label=06 Menjač, kvačilo, poluosovine
+                <span> 06
+                <span> Menjač i kvačilo
+                  @aria-label=07 Izduvni sistem
+                <span> 07
+                <span> Izduvni sistem
+                  @aria-label=Prethodna faza
+                <span> 00
+                <span> / 07
+                <span> Sklopljeno
+                  @aria-label=Sledeća faza
+                <span> Rasklopi
+                <span> Lista delova
+          <h2> Kako se poručuje
+          <p> Tri koraka, bez kartice i bez registracije. Kurir 450 RSD, besplatno iznad 10.000 RSD; preuzimanje u radnji bez troška.
+          <a> Dostava i plaćanje
+            <span aria-hidden> 01
+            <h3> Pronađite deo
+            <p> Upišite OEM broj kako god ga imate, izaberite vozilo i motor ili kliknite na deo na 3D prikazu.
+            <span aria-hidden> 02
+            <h3> Pošaljite porudžbinu
+            <p> Bez plaćanja na sajtu. Proverimo stanje i kompatibilnost i potvrdimo porudžbinu telefonom ili e-poštom.
+            <span aria-hidden> 03
+            <h3> Platite pri preuzimanju
+            <p> Pouzećem kuriru, gotovinom ili karticom u radnji, a firme virmanom uz predračun.
+        <h2> Najtraženije kategorije
+        <a> Svih 44 kategorija · 157 artikala
+              <h3> Kočione pločice
+              <p> artikala
+                <span> 10
+              <h3> Kočioni diskovi
+              <p> artikala
+                <span> 9
+              <h3> Amortizeri i opruge
+              <p> artikala
+                <span> 7
+              <h3> Ramena i selen blokovi
+              <p> artikala
+                <span> 5
+              <h3> Set zupčastog kaiša i vodena pumpa
+              <p> artikala
+                <span> 6
+              <h3> Kvačilo i zamajac
+              <p> artikla
+                <span> 3
+              <h3> Turbina (turbopunjač)
+              <p> artikla
+                <span> 4
+              <h3> Filteri
+              <p> artikala
+                <span> 16
+              <h3> Akumulator
+              <p> artikla
+                <span> 3
+              <h3> Farovi
+              <p> artikla
+                <span> 2
+              <h3> Hladnjak i ventilator
+              <p> artikla
+                <span> 3
+              <h3> Brizgaljke i pumpa goriva
+              <p> artikla
+                <span> 3
+      <h2> Delovi po sistemima
+          <h3> Motor i usis
+              <a> Blok motora i glava
+              <a> Turbina (turbopunjač)
+              <a> Interkuler
+              <a> Usisna grana i kućište filtera
+              <a> Brizgaljke i pumpa goriva
+              <a> Set zupčastog kaiša i vodena pumpa
+              <a> Kaiš alternatora i zatezači
+              <a> Alternator
+              <a> Anlaser
+              <a> Svećice, bobine i grejači
+              <a> Karter, pumpa ulja i dihtunzi
+              <a> EGR ventil
+              <a> Nosači motora i menjača
+          <h3> Izduvni sistem
+              <a> DPF i katalizator
+              <a> Auspuh (lonci i cevi)
+          <h3> Hlađenje i klima
+              <a> Hladnjak i ventilator
+              <a> Termostat i creva hlađenja
+              <a> Kompresor i kondenzator klime
+          <h3> Transmisija
+              <a> Kvačilo i zamajac
+              <a> Menjač (DSG)
+              <a> Poluosovine i homokinetički zglobovi
+          <h3> Vešanje i upravljanje
+              <a> Amortizeri i opruge
+              <a> Ramena i selen blokovi
+              <a> Spone i stabilizatori
+              <a> Letva volana
+              <a> Ležaj točka i glavčina
+          <h3> Kočnice
+              <a> Kočioni diskovi
+              <a> Kočione pločice
+              <a> Kočione čeljusti
+              <a> ABS senzori
+          <h3> Elektrika i svetla
+              <a> Akumulator
+              <a> Farovi
+              <a> Stop svetla
+              <a> Senzori (lambda, parking, temperatura)
+          <h3> Karoserija
+              <a> Hauba
+              <a> Branici
+              <a> Blatobrani
+              <a> Vrata
+              <a> Retrovizori
+              <a> Stakla
+              <a> Brisači
+          <h3> Točkovi
+              <a> Felne i gume
+          <h3> Servis i održavanje
+              <a> Filteri
+              <a> Ulja i tečnosti
+          <h2> Za majstore i servise
+            <li> Vaša cena sa rabatom na celom sajtu, odmah posle odobrenja naloga.
+            <li> Brza porudžbina: nalepite listu OEM brojeva sa količinama, mi pronađemo artikle.
+            <li> Istorija porudžbina i „Poruči ponovo“ za servise koji rade iste modele.
+            <li> Odloženo plaćanje po dogovoru, za servise sa kojima sarađujemo.
+          <a> Uslovi za servise
+            <caption> Nivoi rabata
+                <th> Majstor
+                <td> 10 %
+                <th> Majstor Plus
+                <td> 15 %
+                <th> Partner
+                <td> 20 %
+          <p> Nivo određujemo pri odobrenju naloga. Rabat se računa od maloprodajne cene sa PDV-om.
+        <h2> Vozila koja pokrivamo
+              <span> Volkswagen
+              <span> 6 modela
+              <span> Audi
+              <span> 3 modela
+              <span> Škoda
+              <span> 6 modela
+              <span> SEAT
+              <span> 3 modela
+              <span> Cupra
+              <span> 3 modela
+      @aria-label=Činjenice
+          <dt> artikala u katalogu
+          <dd> 157
+          <dt> artikala na stanju
+          <dd> 114
+          <dt> kategorija delova
+          <dd> 44
+          <dt> generacija vozila
+          <dd> 56
+        <h2> Česta pitanja
+            <summary> Kako da budem siguran da deo odgovara mom autu?
+              <p> Najsigurnije je po OEM broju sa starog dela ili iz servisne knjižice: upišite ga u pretragu kako god ga imate, razmaci i crtice ne smetaju. Ako broja nemate, izaberite vozilo i motor, pa na stranici artikla proverite tabelu kompatibilnosti. Kad niste sigurni, pošaljite upit sa brojem šasije (VIN) — proverimo pre slanja.
+            <summary> Gde nalazim broj šasije (VIN)?
+              <p> U saobraćajnoj dozvoli, polje E. Na vozilu je utisnut ispod vetrobranskog stakla sa strane vozača i na nalepnici na B-stubu. Ima 17 znakova, bez slova I, O i Q.
+            <summary> Šta znači original VAG, OEM kvalitet i aftermarket?
+              <p> Original VAG je deo u pakovanju proizvođača vozila. OEM kvalitet je deo proizvođača koji isti deo isporučuje fabrici (npr. Bosch, LuK, Valeo), u sopstvenom pakovanju. Aftermarket je zamenski deo drugog proizvođača, obično povoljniji. Proizvođač i kvalitet pišu na svakom artiklu.
+            <summary> Da li plaćam unapred?
+              <p> Ne. Porudžbinu šaljete bez plaćanja. Plaćate kuriru pouzećem, gotovinom ili karticom pri preuzimanju u radnji, a firme mogu virmanom uz predračun.
+            <summary> Koliko košta dostava i kada stiže?
+              <p> Kurirska dostava je 450 RSD, a besplatna za porudžbine iznad 10.000 RSD. Delove na stanju šaljemo istog radnog dana za porudžbine potvrđene do 14 časova; kurir obično isporučuje za 1–2 radna dana. Lično preuzimanje je bez troška.
+            <summary> Mogu li da vratim deo?
+              <p> Kao potrošač možete odustati od kupovine u roku od 14 dana od prijema, ako deo nije ugrađivan i vraćate ga u originalnom pakovanju. Detalji su na stranici Reklamacije i povrat.
+            <summary> Radim u servisu. Imate li posebne cene?
+              <p> Imamo. Registrujte servis na stranici Za majstore; posle odobrenja vidite svoju cenu sa rabatom na celom sajtu i poručujete nalepljenom listom OEM brojeva.
+            <summary> Deo nije na stanju. Šta sada?
+              <p> Na stranici artikla uključite „Javi mi kad stigne“ ili pošaljite upit — često možemo da nabavimo deo ili ponudimo zamenu drugog proizvođača sa istim OEM brojem.
+          <h2> Pitanje za majstora?
+          <p> Pozovite, pišite na Viber ili pošaljite upit sa brojem šasije.
+            <span> Pon–pet 8–17, sub 8–14
+            <a> Pošaljite upit
+          @aria-label=SKLOP — početna
+            <span> SKLOP
+        <p> Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+        @aria-label=Delovi
+        <h2> Delovi
+            <a> Svi delovi
+            <a> Delovi po vozilu
+            <a> Pretraga po broju dela
+            <a> Upit po broju šasije
+        @aria-label=Kupovina
+        <h2> Kupovina
+            <a> Dostava i plaćanje
+            <a> Reklamacije i povrat
+            <a> Za majstore
+            <a> O nama
+        <h2> Kontakt
+            <span> Pon–pet 8–17, sub 8–14
+            <a> Pošaljite upit — javljamo se u toku radnog dana
+          <p> © 2026 SKLOP
+          <p> Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.
+          @aria-label=Pravne informacije
+              <a> Uslovi korišćenja
+              <a> Politika privatnosti
+              <a> Kolačići
+              <button> Podešavanja kolačića
+  @aria-label=Obaveštenja (F8)

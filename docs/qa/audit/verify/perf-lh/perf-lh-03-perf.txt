@@ -1,0 +1,9 @@
+# perf-lh-03 verify
+/vozila/volkswagen/golf/golf-7 | mobile | devtools  n=3 bench 4049/4139/4117
+  perf 93 (95/92/93) · a11y 100 (100/100/100) · bp 100 (100/100/100) · LCP 2090 (2090/2147/2004) · FCP 2090 (2090/2147/2004) · TBT 191 (86/191/206) · CLS 0.082/0.082/0.082
+--
+/vozila/volkswagen/golf/golf-7 | desktop | simulate  n=2 bench 3601/3542
+  perf 98 (98/98) · a11y 100 (100/100) · bp 100 (100/100) · LCP 890 (904/876) · FCP 376 (375/376) · TBT 0 (0/0) · CLS 0.074/0.074
+  shifts [{"score":0.08140405148402233,"node":"div.flex > main#sadrzaj > div.px-page > section.mt-12","causes":["Web font loaded http://localhost:3200/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2"]},{"score":0.0005018068760005302,"node":"div.px-page > div.mt-4 > div.flex > h1.type-display-l","causes":["Web font loaded http://localhost:3200/_next/static/media/archivo_expanded_600-s.0-vwu0izeway
+blocked navHeight 401 catsTop 811 cls 0 []
+loaded navHeight 305 catsTop 715 cls 0.0837 [{"at":3101,"value":0.0005,"recent":false,"sources":[{"node":"#text. “”","prev":[140,31],"curr":[140,31]},{"node":"#text. “”","prev":[170,31],"curr":[170,31]},{"node":"span.rw “Golf”","prev":[166,35],"curr":[170,31]},{"node":"span.rw “za”","prev":[137,34],"curr":[140,31]},{"node":"span.rw “VII”","prev":[167,34],"curr":[170,31]}]},{"at":3380,"value":0.0832,"recent":false,"sources":[{"node":"section

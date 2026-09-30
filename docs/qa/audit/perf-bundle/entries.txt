@@ -1,0 +1,69 @@
+
+== home ((shop)/page) — chunks first attributed to each entry, KB gz
+      3.6  app/opengraph-image--metadata                3fntmmi971322.js(3.6)
+    108.9  app/layout                                   25dplrt_qw3he.js(6.8) 14y-81z8a-w-u.js(10.2) 2vm060vmiv-df.js(9.1) 1tr6a7zmh41cy.js(48.4) 0rklqt_vfe3_n.js(12.3) 2jrozipxybei4.js(22.1)
+      8.6  app/error                                    1adhcvv0smcza.js(8.6)
+     41.7  app/not-found                                1axg9-vmwkb-w.js(0.2) 1t0q0ok8maumv.js(7.8) 404ko09-15lhs.js(17.8) 00t-a16koa1p2.js(14.2) 29atrq35xgs9f.js(1.7)
+      2.7  app/global-error                             2f8qbt33jjpy3.js(2.7)
+     43.4  app/(shop)/layout                            1kcz530oz9u-o.js(0.3) 2g3bv_p29okud.js(10.1) 120epkn8j_rkq.js(10.6) 0sgvhbpe5nb6s.js(22.4)
+      3.1  app/(shop)/error                             3k__gv_edg8eb.js(3.1)
+     21.3  app/(shop)/page                              1c6x4sv25ngo-.js(0.3) 0wnn3uk7fx3z2.js(21.0)
+
+== category ((shop)/delovi/[kategorija]/page) — chunks first attributed to each entry, KB gz
+      3.6  app/opengraph-image--metadata                3fntmmi971322.js(3.6)
+    108.9  app/layout                                   25dplrt_qw3he.js(6.8) 14y-81z8a-w-u.js(10.2) 2vm060vmiv-df.js(9.1) 1tr6a7zmh41cy.js(48.4) 0rklqt_vfe3_n.js(12.3) 2jrozipxybei4.js(22.1)
+      8.6  app/error                                    1adhcvv0smcza.js(8.6)
+     41.7  app/not-found                                1axg9-vmwkb-w.js(0.2) 1t0q0ok8maumv.js(7.8) 404ko09-15lhs.js(17.8) 00t-a16koa1p2.js(14.2) 29atrq35xgs9f.js(1.7)
+      2.7  app/global-error                             2f8qbt33jjpy3.js(2.7)
+     43.4  app/(shop)/layout                            1kcz530oz9u-o.js(0.3) 2g3bv_p29okud.js(10.1) 120epkn8j_rkq.js(10.6) 0sgvhbpe5nb6s.js(22.4)
+      3.1  app/(shop)/error                             3k__gv_edg8eb.js(3.1)
+     23.1  app/(shop)/delovi/[kategorija]/page          1cggx7i-lhdg7.js(8.1) 38o51x0kbbpcz.js(15.0)
+
+== product ((shop)/deo/[slug]/page) — chunks first attributed to each entry, KB gz
+      3.6  app/opengraph-image--metadata                3fntmmi971322.js(3.6)
+    108.9  app/layout                                   25dplrt_qw3he.js(6.8) 14y-81z8a-w-u.js(10.2) 2vm060vmiv-df.js(9.1) 1tr6a7zmh41cy.js(48.4) 0rklqt_vfe3_n.js(12.3) 2jrozipxybei4.js(22.1)
+      8.6  app/error                                    1adhcvv0smcza.js(8.6)
+     41.7  app/not-found                                1axg9-vmwkb-w.js(0.2) 1t0q0ok8maumv.js(7.8) 404ko09-15lhs.js(17.8) 00t-a16koa1p2.js(14.2) 29atrq35xgs9f.js(1.7)
+      2.7  app/global-error                             2f8qbt33jjpy3.js(2.7)
+     43.4  app/(shop)/layout                            1kcz530oz9u-o.js(0.3) 2g3bv_p29okud.js(10.1) 120epkn8j_rkq.js(10.6) 0sgvhbpe5nb6s.js(22.4)
+      3.1  app/(shop)/error                             3k__gv_edg8eb.js(3.1)
+     25.8  app/(shop)/deo/[slug]/page                   1tkvz3oryrb1b.js(11.0) 0iy1468xjorsv.js(14.9)
+
+== landing ((landing)/ponuda/[slug]/page) — chunks first attributed to each entry, KB gz
+      3.6  app/opengraph-image--metadata                3fntmmi971322.js(3.6)
+    108.9  app/layout                                   25dplrt_qw3he.js(6.8) 14y-81z8a-w-u.js(10.2) 2vm060vmiv-df.js(9.1) 1tr6a7zmh41cy.js(48.4) 0rklqt_vfe3_n.js(12.3) 2jrozipxybei4.js(22.1)
+      8.6  app/error                                    1adhcvv0smcza.js(8.6)
+     41.7  app/not-found                                1axg9-vmwkb-w.js(0.2) 1t0q0ok8maumv.js(7.8) 404ko09-15lhs.js(17.8) 00t-a16koa1p2.js(14.2) 29atrq35xgs9f.js(1.7)
+      2.7  app/global-error                             2f8qbt33jjpy3.js(2.7)
+     22.0  app/(landing)/layout                         30febus0elr13.js(0.2) 29ikd2g3512r-.js(21.7)
+     24.7  app/(landing)/ponuda/[slug]/page             3e96qux3-c6pe.js(11.7) 1h9gpy0y5abu7.js(13.0)
+
+== upit ((shop)/upit/page) — chunks first attributed to each entry, KB gz
+      3.6  app/opengraph-image--metadata                3fntmmi971322.js(3.6)
+    108.9  app/layout                                   25dplrt_qw3he.js(6.8) 14y-81z8a-w-u.js(10.2) 2vm060vmiv-df.js(9.1) 1tr6a7zmh41cy.js(48.4) 0rklqt_vfe3_n.js(12.3) 2jrozipxybei4.js(22.1)
+      8.6  app/error                                    1adhcvv0smcza.js(8.6)
+     41.7  app/not-found                                1axg9-vmwkb-w.js(0.2) 1t0q0ok8maumv.js(7.8) 404ko09-15lhs.js(17.8) 00t-a16koa1p2.js(14.2) 29atrq35xgs9f.js(1.7)
+      2.7  app/global-error                             2f8qbt33jjpy3.js(2.7)
+     43.4  app/(shop)/layout                            1kcz530oz9u-o.js(0.3) 2g3bv_p29okud.js(10.1) 120epkn8j_rkq.js(10.6) 0sgvhbpe5nb6s.js(22.4)
+      3.1  app/(shop)/error                             3k__gv_edg8eb.js(3.1)
+    120.9  app/(shop)/upit/page                         301fp03vk_ndj.js(19.7) 1uyyf-z7kpx1w.js(101.2)
+
+== porudzbina ((shop)/porudzbina/page) — chunks first attributed to each entry, KB gz
+      3.6  app/opengraph-image--metadata                3fntmmi971322.js(3.6)
+    108.9  app/layout                                   25dplrt_qw3he.js(6.8) 14y-81z8a-w-u.js(10.2) 2vm060vmiv-df.js(9.1) 1tr6a7zmh41cy.js(48.4) 0rklqt_vfe3_n.js(12.3) 2jrozipxybei4.js(22.1)
+      8.6  app/error                                    1adhcvv0smcza.js(8.6)
+     41.7  app/not-found                                1axg9-vmwkb-w.js(0.2) 1t0q0ok8maumv.js(7.8) 404ko09-15lhs.js(17.8) 00t-a16koa1p2.js(14.2) 29atrq35xgs9f.js(1.7)
+      2.7  app/global-error                             2f8qbt33jjpy3.js(2.7)
+     43.4  app/(shop)/layout                            1kcz530oz9u-o.js(0.3) 2g3bv_p29okud.js(10.1) 120epkn8j_rkq.js(10.6) 0sgvhbpe5nb6s.js(22.4)
+      3.1  app/(shop)/error                             3k__gv_edg8eb.js(3.1)
+    122.1  app/(shop)/porudzbina/page                   0e-3apv4m0eih.js(20.9) 1uyyf-z7kpx1w.js(101.2)
+
+== prijava ((shop)/prijava/page) — chunks first attributed to each entry, KB gz
+      3.6  app/opengraph-image--metadata                3fntmmi971322.js(3.6)
+    108.9  app/layout                                   25dplrt_qw3he.js(6.8) 14y-81z8a-w-u.js(10.2) 2vm060vmiv-df.js(9.1) 1tr6a7zmh41cy.js(48.4) 0rklqt_vfe3_n.js(12.3) 2jrozipxybei4.js(22.1)
+      8.6  app/error                                    1adhcvv0smcza.js(8.6)
+     41.7  app/not-found                                1axg9-vmwkb-w.js(0.2) 1t0q0ok8maumv.js(7.8) 404ko09-15lhs.js(17.8) 00t-a16koa1p2.js(14.2) 29atrq35xgs9f.js(1.7)
+      2.7  app/global-error                             2f8qbt33jjpy3.js(2.7)
+     43.4  app/(shop)/layout                            1kcz530oz9u-o.js(0.3) 2g3bv_p29okud.js(10.1) 120epkn8j_rkq.js(10.6) 0sgvhbpe5nb6s.js(22.4)
+      3.1  app/(shop)/error                             3k__gv_edg8eb.js(3.1)
+      0.9  app/(shop)/prijava/page                      08lons-06ykpl.js(0.9)

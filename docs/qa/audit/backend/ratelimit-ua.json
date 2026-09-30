@@ -1,0 +1,12 @@
+{
+  "limit": "uploadUrl: token bucket 20/h per client key",
+  "sameUa": {
+    "ok": 20,
+    "limited": 1,
+    "sequence": "ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,RATE_LIMITED"
+  },
+  "rotatingUa": {
+    "ok": 21,
+    "limited": 0
+  }
+}

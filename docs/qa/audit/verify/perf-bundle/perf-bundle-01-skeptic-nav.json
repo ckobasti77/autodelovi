@@ -1,0 +1,23 @@
+[
+  {
+    "run": 1,
+    "urlChangeMs": 1362,
+    "firstFieldVisibleMs": 1576,
+    "chunkDownloadMs": 784,
+    "chunkBytes": 104450
+  },
+  {
+    "run": 2,
+    "urlChangeMs": 1414,
+    "firstFieldVisibleMs": 1645,
+    "chunkDownloadMs": 772,
+    "chunkBytes": 104450
+  },
+  {
+    "run": 3,
+    "urlChangeMs": 1432,
+    "firstFieldVisibleMs": 1592,
+    "chunkDownloadMs": 789,
+    "chunkBytes": 104450
+  }
+]

@@ -1,0 +1,847 @@
+{
+ "base": "http://localhost:3100",
+ "sitemaps": {
+  "/sitemaps/staticne.xml": 12,
+  "/sitemaps/kategorije.xml": 58,
+  "/sitemaps/vozila.xml": 72,
+  "/sitemaps/landing.xml": 50,
+  "/sitemaps/proizvodi-1.xml": 157
+ },
+ "sitemapUrlCount": 349,
+ "indexableCount": 349,
+ "nonIndexableInSitemap": [],
+ "under150Count": 38,
+ "under60Count": 29,
+ "byKind": {
+  "system-or-category": [
+   "6 /delovi/tockovi",
+   "11 /delovi/servis",
+   "13 /delovi/izduvni-sistem",
+   "16 /delovi/transmisija",
+   "17 /delovi/kocnice",
+   "19 /delovi/elektrika-i-svetla",
+   "20 /delovi/hladjenje-i-klima",
+   "22 /delovi/karoserija",
+   "29 /delovi/vesanje-i-upravljanje",
+   "72 /delovi/motor-i-usis"
+  ],
+  "brand-hub": [
+   "13 /vozila/cupra",
+   "37 /vozila/seat",
+   "53 /vozila/audi",
+   "59 /vozila/skoda",
+   "73 /vozila/volkswagen"
+  ],
+  "model-hub": [
+   "27 /vozila/skoda/rapid",
+   "28 /vozila/cupra/formentor",
+   "29 /vozila/cupra/leon",
+   "35 /vozila/skoda/karoq",
+   "35 /vozila/seat/ateca",
+   "35 /vozila/cupra/ateca",
+   "36 /vozila/skoda/kodiaq",
+   "46 /vozila/volkswagen/polo",
+   "46 /vozila/volkswagen/caddy",
+   "46 /vozila/seat/ibiza",
+   "50 /vozila/volkswagen/touran",
+   "51 /vozila/volkswagen/tiguan",
+   "53 /vozila/audi/a6",
+   "53 /vozila/skoda/fabia",
+   "55 /vozila/skoda/superb",
+   "62 /vozila/audi/a4",
+   "64 /vozila/volkswagen/passat",
+   "73 /vozila/seat/leon",
+   "74 /vozila/audi/a3",
+   "74 /vozila/skoda/octavia",
+   "83 /vozila/volkswagen/golf"
+  ],
+  "other": [
+   "40 /kontakt"
+  ],
+  "vehicles-root": [
+   "66 /vozila"
+  ]
+ },
+ "singleGenerationModelHubs": [
+  {
+   "url": "/vozila/skoda/rapid",
+   "words": 27,
+   "generationLinks": [
+    "/vozila/skoda/rapid/rapid"
+   ]
+  },
+  {
+   "url": "/vozila/skoda/kodiaq",
+   "words": 36,
+   "generationLinks": [
+    "/vozila/skoda/kodiaq/kodiaq-1"
+   ]
+  },
+  {
+   "url": "/vozila/skoda/karoq",
+   "words": 35,
+   "generationLinks": [
+    "/vozila/skoda/karoq/karoq"
+   ]
+  },
+  {
+   "url": "/vozila/seat/ateca",
+   "words": 35,
+   "generationLinks": [
+    "/vozila/seat/ateca/ateca"
+   ]
+  },
+  {
+   "url": "/vozila/cupra/formentor",
+   "words": 28,
+   "generationLinks": [
+    "/vozila/cupra/formentor/formentor"
+   ]
+  },
+  {
+   "url": "/vozila/cupra/leon",
+   "words": 29,
+   "generationLinks": [
+    "/vozila/cupra/leon/cupra-leon"
+   ]
+  },
+  {
+   "url": "/vozila/cupra/ateca",
+   "words": 35,
+   "generationLinks": [
+    "/vozila/cupra/ateca/cupra-ateca"
+   ]
+  }
+ ],
+ "modelHubs": [
+  {
+   "url": "/vozila/skoda/rapid",
+   "words": 27,
+   "generationLinks": [
+    "/vozila/skoda/rapid/rapid"
+   ]
+  },
+  {
+   "url": "/vozila/skoda/kodiaq",
+   "words": 36,
+   "generationLinks": [
+    "/vozila/skoda/kodiaq/kodiaq-1"
+   ]
+  },
+  {
+   "url": "/vozila/skoda/karoq",
+   "words": 35,
+   "generationLinks": [
+    "/vozila/skoda/karoq/karoq"
+   ]
+  },
+  {
+   "url": "/vozila/seat/ateca",
+   "words": 35,
+   "generationLinks": [
+    "/vozila/seat/ateca/ateca"
+   ]
+  },
+  {
+   "url": "/vozila/cupra/formentor",
+   "words": 28,
+   "generationLinks": [
+    "/vozila/cupra/formentor/formentor"
+   ]
+  },
+  {
+   "url": "/vozila/cupra/leon",
+   "words": 29,
+   "generationLinks": [
+    "/vozila/cupra/leon/cupra-leon"
+   ]
+  },
+  {
+   "url": "/vozila/cupra/ateca",
+   "words": 35,
+   "generationLinks": [
+    "/vozila/cupra/ateca/cupra-ateca"
+   ]
+  },
+  {
+   "url": "/vozila/volkswagen/caddy",
+   "words": 46,
+   "generationLinks": [
+    "/vozila/volkswagen/caddy/caddy-3",
+    "/vozila/volkswagen/caddy/caddy-5"
+   ]
+  },
+  {
+   "url": "/vozila/volkswagen/touran",
+   "words": 50,
+   "generationLinks": [
+    "/vozila/volkswagen/touran/touran-1",
+    "/vozila/volkswagen/touran/touran-2"
+   ]
+  },
+  {
+   "url": "/vozila/volkswagen/tiguan",
+   "words": 51,
+   "generationLinks": [
+    "/vozila/volkswagen/tiguan/tiguan-1",
+    "/vozila/volkswagen/tiguan/tiguan-2"
+   ]
+  },
+  {
+   "url": "/vozila/volkswagen/polo",
+   "words": 46,
+   "generationLinks": [
+    "/vozila/volkswagen/polo/polo-4",
+    "/vozila/volkswagen/polo/polo-5",
+    "/vozila/volkswagen/polo/polo-6"
+   ]
+  },
+  {
+   "url": "/vozila/skoda/superb",
+   "words": 55,
+   "generationLinks": [
+    "/vozila/skoda/superb/superb-1",
+    "/vozila/skoda/superb/superb-2",
+    "/vozila/skoda/superb/superb-3"
+   ]
+  },
+  {
+   "url": "/vozila/seat/ibiza",
+   "words": 46,
+   "generationLinks": [
+    "/vozila/seat/ibiza/ibiza-3",
+    "/vozila/seat/ibiza/ibiza-4",
+    "/vozila/seat/ibiza/ibiza-5"
+   ]
+  },
+  {
+   "url": "/vozila/volkswagen/passat",
+   "words": 64,
+   "generationLinks": [
+    "/vozila/volkswagen/passat/passat-b5",
+    "/vozila/volkswagen/passat/passat-b6",
+    "/vozila/volkswagen/passat/passat-b7",
+    "/vozila/volkswagen/passat/passat-b8"
+   ]
+  },
+  {
+   "url": "/vozila/audi/a3",
+   "words": 74,
+   "generationLinks": [
+    "/vozila/audi/a3/a3-8l",
+    "/vozila/audi/a3/a3-8p",
+    "/vozila/audi/a3/a3-8v",
+    "/vozila/audi/a3/a3-8y"
+   ]
+  },
+  {
+   "url": "/vozila/audi/a6",
+   "words": 53,
+   "generationLinks": [
+    "/vozila/audi/a6/a6-c5",
+    "/vozila/audi/a6/a6-c6",
+    "/vozila/audi/a6/a6-c7",
+    "/vozila/audi/a6/a6-c8"
+   ]
+  },
+  {
+   "url": "/vozila/skoda/octavia",
+   "words": 74,
+   "generationLinks": [
+    "/vozila/skoda/octavia/octavia-1",
+    "/vozila/skoda/octavia/octavia-2",
+    "/vozila/skoda/octavia/octavia-3",
+    "/vozila/skoda/octavia/octavia-4"
+   ]
+  },
+  {
+   "url": "/vozila/skoda/fabia",
+   "words": 53,
+   "generationLinks": [
+    "/vozila/skoda/fabia/fabia-1",
+    "/vozila/skoda/fabia/fabia-2",
+    "/vozila/skoda/fabia/fabia-3",
+    "/vozila/skoda/fabia/fabia-4"
+   ]
+  },
+  {
+   "url": "/vozila/seat/leon",
+   "words": 73,
+   "generationLinks": [
+    "/vozila/seat/leon/leon-1",
+    "/vozila/seat/leon/leon-2",
+    "/vozila/seat/leon/leon-3",
+    "/vozila/seat/leon/leon-4"
+   ]
+  },
+  {
+   "url": "/vozila/volkswagen/golf",
+   "words": 83,
+   "generationLinks": [
+    "/vozila/volkswagen/golf/golf-4",
+    "/vozila/volkswagen/golf/golf-5",
+    "/vozila/volkswagen/golf/golf-6",
+    "/vozila/volkswagen/golf/golf-7",
+    "/vozila/volkswagen/golf/golf-8"
+   ]
+  },
+  {
+   "url": "/vozila/audi/a4",
+   "words": 62,
+   "generationLinks": [
+    "/vozila/audi/a4/a4-b5",
+    "/vozila/audi/a4/a4-b6",
+    "/vozila/audi/a4/a4-b7",
+    "/vozila/audi/a4/a4-b8",
+    "/vozila/audi/a4/a4-b9"
+   ]
+  }
+ ],
+ "under150": [
+  {
+   "url": "/delovi/tockovi",
+   "sitemap": "/sitemaps/kategorije.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 6,
+   "wordsWithCrumbs": 10,
+   "mainLinks": 1,
+   "h1": "Točkovi",
+   "paragraphs": [
+    "3 artikla"
+   ]
+  },
+  {
+   "url": "/delovi/servis",
+   "sitemap": "/sitemaps/kategorije.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 11,
+   "wordsWithCrumbs": 17,
+   "mainLinks": 2,
+   "h1": "Servis i održavanje",
+   "paragraphs": [
+    "16 artikala",
+    "5 artikala"
+   ]
+  },
+  {
+   "url": "/delovi/izduvni-sistem",
+   "sitemap": "/sitemaps/kategorije.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 13,
+   "wordsWithCrumbs": 18,
+   "mainLinks": 2,
+   "h1": "Izduvni sistem",
+   "paragraphs": [
+    "2 artikla",
+    "3 artikla"
+   ]
+  },
+  {
+   "url": "/vozila/cupra",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 13,
+   "wordsWithCrumbs": 17,
+   "mainLinks": 6,
+   "h1": "Delovi za Cupra",
+   "paragraphs": []
+  },
+  {
+   "url": "/delovi/transmisija",
+   "sitemap": "/sitemaps/kategorije.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 16,
+   "wordsWithCrumbs": 20,
+   "mainLinks": 3,
+   "h1": "Transmisija",
+   "paragraphs": [
+    "3 artikla",
+    "2 artikla",
+    "3 artikla"
+   ]
+  },
+  {
+   "url": "/delovi/kocnice",
+   "sitemap": "/sitemaps/kategorije.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 17,
+   "wordsWithCrumbs": 21,
+   "mainLinks": 4,
+   "h1": "Kočnice",
+   "paragraphs": [
+    "9 artikala",
+    "10 artikala",
+    "3 artikla",
+    "3 artikla"
+   ]
+  },
+  {
+   "url": "/delovi/elektrika-i-svetla",
+   "sitemap": "/sitemaps/kategorije.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 19,
+   "wordsWithCrumbs": 25,
+   "mainLinks": 4,
+   "h1": "Elektrika i svetla",
+   "paragraphs": [
+    "3 artikla",
+    "2 artikla",
+    "2 artikla",
+    "5 artikala"
+   ]
+  },
+  {
+   "url": "/delovi/hladjenje-i-klima",
+   "sitemap": "/sitemaps/kategorije.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 20,
+   "wordsWithCrumbs": 26,
+   "mainLinks": 3,
+   "h1": "Hlađenje i klima",
+   "paragraphs": [
+    "3 artikla",
+    "3 artikla",
+    "2 artikla"
+   ]
+  },
+  {
+   "url": "/delovi/karoserija",
+   "sitemap": "/sitemaps/kategorije.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 22,
+   "wordsWithCrumbs": 26,
+   "mainLinks": 7,
+   "h1": "Karoserija",
+   "paragraphs": [
+    "1 artikal",
+    "2 artikla",
+    "2 artikla",
+    "2 artikla"
+   ]
+  },
+  {
+   "url": "/vozila/skoda/rapid",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 27,
+   "wordsWithCrumbs": 32,
+   "mainLinks": 1,
+   "h1": "Delovi za Škoda Rapid",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/cupra/formentor",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 28,
+   "wordsWithCrumbs": 33,
+   "mainLinks": 1,
+   "h1": "Delovi za Cupra Formentor",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/delovi/vesanje-i-upravljanje",
+   "sitemap": "/sitemaps/kategorije.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 29,
+   "wordsWithCrumbs": 35,
+   "mainLinks": 5,
+   "h1": "Vešanje i upravljanje",
+   "paragraphs": [
+    "7 artikala",
+    "5 artikala",
+    "5 artikala",
+    "2 artikla"
+   ]
+  },
+  {
+   "url": "/vozila/cupra/leon",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 29,
+   "wordsWithCrumbs": 34,
+   "mainLinks": 1,
+   "h1": "Delovi za Cupra Leon",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/skoda/karoq",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 35,
+   "wordsWithCrumbs": 40,
+   "mainLinks": 2,
+   "h1": "Delovi za Škoda Karoq",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/seat/ateca",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 35,
+   "wordsWithCrumbs": 40,
+   "mainLinks": 2,
+   "h1": "Delovi za SEAT Ateca",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/cupra/ateca",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 35,
+   "wordsWithCrumbs": 40,
+   "mainLinks": 2,
+   "h1": "Delovi za Cupra Ateca",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/skoda/kodiaq",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 36,
+   "wordsWithCrumbs": 41,
+   "mainLinks": 2,
+   "h1": "Delovi za Škoda Kodiaq",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/seat",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 37,
+   "wordsWithCrumbs": 41,
+   "mainLinks": 13,
+   "h1": "Delovi za SEAT",
+   "paragraphs": []
+  },
+  {
+   "url": "/kontakt",
+   "sitemap": "/sitemaps/staticne.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 40,
+   "wordsWithCrumbs": 43,
+   "mainLinks": 1,
+   "h1": "Kontakt",
+   "paragraphs": [
+    "Poslednja izmena: 30.09.2026.",
+    "Radno vreme: Pon–pet 8–17, sub 8–14",
+    "Najbrže je da nas pozovete ili pišete na Viber. Ako ne znate broj dela, pošaljite upit sa brojem šasije i fotografijom starog dela; odgovaramo u toku radnog dana."
+   ]
+  },
+  {
+   "url": "/vozila/volkswagen/polo",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 46,
+   "wordsWithCrumbs": 51,
+   "mainLinks": 3,
+   "h1": "Delovi za Volkswagen Polo",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/volkswagen/caddy",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 46,
+   "wordsWithCrumbs": 51,
+   "mainLinks": 4,
+   "h1": "Delovi za Volkswagen Caddy",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/seat/ibiza",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 46,
+   "wordsWithCrumbs": 51,
+   "mainLinks": 3,
+   "h1": "Delovi za SEAT Ibiza",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/volkswagen/touran",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 50,
+   "wordsWithCrumbs": 55,
+   "mainLinks": 6,
+   "h1": "Delovi za Volkswagen Touran",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/volkswagen/tiguan",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 51,
+   "wordsWithCrumbs": 56,
+   "mainLinks": 6,
+   "h1": "Delovi za Volkswagen Tiguan",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/audi",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 53,
+   "wordsWithCrumbs": 57,
+   "mainLinks": 18,
+   "h1": "Delovi za Audi",
+   "paragraphs": []
+  },
+  {
+   "url": "/vozila/audi/a6",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 53,
+   "wordsWithCrumbs": 58,
+   "mainLinks": 4,
+   "h1": "Delovi za Audi A6",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/skoda/fabia",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 53,
+   "wordsWithCrumbs": 58,
+   "mainLinks": 4,
+   "h1": "Delovi za Škoda Fabia",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/skoda/superb",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 55,
+   "wordsWithCrumbs": 60,
+   "mainLinks": 6,
+   "h1": "Delovi za Škoda Superb",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/skoda",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 59,
+   "wordsWithCrumbs": 63,
+   "mainLinks": 23,
+   "h1": "Delovi za Škoda",
+   "paragraphs": []
+  },
+  {
+   "url": "/vozila/audi/a4",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 62,
+   "wordsWithCrumbs": 67,
+   "mainLinks": 5,
+   "h1": "Delovi za Audi A4",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/volkswagen/passat",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 64,
+   "wordsWithCrumbs": 69,
+   "mainLinks": 7,
+   "h1": "Delovi za Volkswagen Passat",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila",
+   "sitemap": "/sitemaps/staticne.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 66,
+   "wordsWithCrumbs": 69,
+   "mainLinks": 26,
+   "h1": "Delovi po vozilu",
+   "paragraphs": [
+    "Izaberite marku i model, pa generaciju. Na stranici generacije su svi delovi koji odgovaraju, po kategorijama."
+   ]
+  },
+  {
+   "url": "/delovi/motor-i-usis",
+   "sitemap": "/sitemaps/kategorije.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 72,
+   "wordsWithCrumbs": 78,
+   "mainLinks": 13,
+   "h1": "Motor i usis",
+   "paragraphs": [
+    "3 artikla",
+    "4 artikla",
+    "2 artikla",
+    "2 artikla"
+   ]
+  },
+  {
+   "url": "/vozila/volkswagen",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 73,
+   "wordsWithCrumbs": 77,
+   "mainLinks": 27,
+   "h1": "Delovi za Volkswagen",
+   "paragraphs": []
+  },
+  {
+   "url": "/vozila/seat/leon",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 73,
+   "wordsWithCrumbs": 78,
+   "mainLinks": 9,
+   "h1": "Delovi za SEAT Leon",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/audi/a3",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 74,
+   "wordsWithCrumbs": 79,
+   "mainLinks": 9,
+   "h1": "Delovi za Audi A3",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/skoda/octavia",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 74,
+   "wordsWithCrumbs": 79,
+   "mainLinks": 9,
+   "h1": "Delovi za Škoda Octavia",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  },
+  {
+   "url": "/vozila/volkswagen/golf",
+   "sitemap": "/sitemaps/vozila.xml",
+   "status": 200,
+   "indexable": true,
+   "robots": "index, follow",
+   "words": 83,
+   "wordsWithCrumbs": 88,
+   "mainLinks": 10,
+   "h1": "Delovi za Volkswagen Golf",
+   "paragraphs": [
+    "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+   ]
+  }
+ ]
+}

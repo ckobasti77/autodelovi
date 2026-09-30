@@ -1,0 +1,43 @@
+▌ Showing logs of deployment:
+▌ [Development] ckobasti77:autodelovi:dev/jovan-milojevic (dev) (dashboard: https://dashboard.convex.dev/t/ckobasti77/autodelovi/tame-impala-374)
+▌ └─ https://tame-impala-374.eu-west-1.convex.cloud
+Watching logs for dev deployment tame-impala-374...
+9/30/2026, 4:16:02 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:16:05 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:16:08 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:16:11 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:16:14 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:16:17 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:16:21 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:16:24 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:16:28 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:16:34 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:16:39 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:16:45 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:16:50 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:16:54 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:16:59 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:17:01 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:17:03 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:17:08 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:17:12 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: refreshSession'
+9/30/2026, 4:17:24 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: retrieveAccountWithCredentials'
+9/30/2026, 4:17:24 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: signIn'
+9/30/2026, 4:17:24 PM [CONVEX Q(notifications:mine)] ArgumentValidationError: Object is missing the required field `paginationOpts`. Consider wrapping the field validator in `v.optional(...)` if this is expected.
+
+Object: {}
+Validator: v.object({paginationOpts: v.object({cursor: v.union(v.string(), v.null()), endCursor: v.optional(v.union(v.string(), v.null())), id: v.optional(v.float64()), maximumBytesRead: v.optional(v.float64()), maximumRowsRead: v.optional(v.float64()), numItems: v.float64()})})
+
+
+9/30/2026, 4:17:30 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: retrieveAccountWithCredentials'
+9/30/2026, 4:17:30 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: signIn'
+9/30/2026, 4:17:30 PM [CONVEX Q(dashboard:kpis)] ArgumentValidationError: Object is missing the required field `nowMinute`. Consider wrapping the field validator in `v.optional(...)` if this is expected.
+
+Object: {}
+Validator: v.object({nowMinute: v.float64()})
+
+
+9/30/2026, 4:17:31 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: signOut'
+9/30/2026, 4:17:46 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: retrieveAccountWithCredentials'
+9/30/2026, 4:17:46 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: signIn'
+9/30/2026, 4:17:46 PM [CONVEX M(auth:store)] [INFO] '`auth:store` type: signOut'

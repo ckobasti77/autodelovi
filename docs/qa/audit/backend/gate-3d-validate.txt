@@ -1,0 +1,24 @@
+(node:27500) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/admin/Desktop/Web%20Dev%20Projects/autodelovi/lib/catalog/taxonomy.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to C:\Users\admin\Desktop\Web Dev Projects\autodelovi\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+desktop  3.64 MB   343982 tris   213 draws   200 nodes  5 textures
+lite     2.63 MB   233664 tris   149 draws   200 nodes  5 textures
+WARN  desktop: 343982 triangles outside target 450000-600000
+WARN  packaging: felne-gume__fl x kocioni-diskovi__fl: 1426 intersecting triangle pairs
+WARN  packaging: felne-gume__fr x kocioni-diskovi__fr: 1426 intersecting triangle pairs
+WARN  packaging: felne-gume__rl x kocioni-diskovi__rl: 1426 intersecting triangle pairs
+WARN  packaging: felne-gume__rr x kocioni-diskovi__rr: 1426 intersecting triangle pairs
+WARN  packaging: dpf-katalizator__main x turbina__main: 1228 intersecting triangle pairs
+WARN  motion: chassis__subframe x poluosovine__r: 27 mm apart at p=1
+WARN  motion: chassis__knuckle__fl x kvacilo-zamajac__main: 28 mm apart at p=1
+WARN  motion: poluosovine__r x ramena-selen-blokovi__fr: 31 mm apart at p=1
+WARN  motion: chassis__knuckle__fl x spone-stabilizatori__stabilizer: 31 mm apart at p=1
+WARN  motion: chassis__knuckle__fr x spone-stabilizatori__stabilizer: 31 mm apart at p=1
+WARN  visibility: abs-senzori__fl: small click target on desktop (14 px at 960x540; category list covers it)
+WARN  visibility: abs-senzori__fr: small click target on desktop (16 px at 960x540; category list covers it)
+WARN  visibility: abs-senzori__rl: small click target on desktop (22 px at 960x540; category list covers it)
+WARN  visibility: abs-senzori__rr: small click target on desktop (103 px at 960x540; category list covers it)
+WARN  visibility: brizgaljke-pumpa-goriva__injectors: small click target on desktop (75 px at 960x540; category list covers it)
+PASS (16 warnings)
+validate exit 0

@@ -1,0 +1,8 @@
+# perf-lh-07 perf skeptic — deterministic check (no throttling): boot failsafe timer forced to 0 ms vs control
+forced: failsafeAtDcl=true clientSideNav=true | load: running 6, painted at opacity 1 then split to 0: 6 | scroll: running 22, painted visible then hidden: 22 | client nav: running 2, opacity while pending: 1,1
+control: failsafeAtDcl=false clientSideNav=true | load: running 6, painted at opacity 1 then split to 0: 0 | scroll: running 22, painted visible then hidden: 0 | client nav: running 2, opacity while pending: 0,0
+
+# Race margin on the lab profile (from existing data, no new measurement)
+verify perf-lh-07-failsafe.txt (contended machine): firstStateAt - failsafeAt = 310-396 ms on all 8 runs; TextRevealGlobal effect (clearTimeout) ran inside that window, i.e. hydration lost the race by 0-~400 ms.
+Pre-audit uncontended Lighthouse devtools runs (.lighthouse/_delovi_kocioni-diskovi-mobile-devtools-4/5.json, benchmarkIndex 4026/4133): CSS (script-blocking the boot script) ends 1591-1620 ms -> failsafe ~5.1 s; last first-load JS ends 3948-3971 ms; long tasks at 4031-4084 ms and 5247-5414 ms. Hydration commit ~4.3-5.5 s -> race is marginal on the lab profile, reliable only on slower-than-lab devices.
+Boot script order in <head>: stylesheet link at byte 1375, text-reveal-boot script at byte 9801 (runs after CSS loads).

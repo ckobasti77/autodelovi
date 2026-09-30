@@ -1,0 +1,42 @@
+urls 349 by sitemap {
+  'staticne.xml': 12,
+  'kategorije.xml': 58,
+  'landing.xml': 50,
+  'proizvodi-1.xml': 157,
+  'vozila.xml': 72
+}
+non-200 0 noindex 0
+duplicate titles: 3
+   "Kočione pločice prednje, a enzorom 1K0 698 406 F | SKLOP" [
+  '/deo/kocione-plocice-prednje-sa-senzorom-demo-0009',
+  '/deo/kocione-plocice-prednje-sa-senzorom-demo-e002'
+]
+   "Kočioni di k prednji 312 × 25 mm, ventilirani 1K0 615 591 E" [
+  '/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-0002',
+  '/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-e001'
+]
+   "Set zupča tog kaiša a vodenom pumpom 1.9 TDI 038 121 662" [
+  '/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-0057',
+  '/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-e007'
+]
+titles with ellipsis: 18
+   kategorije.xml /delovi/auspuh "Auspuh (lonci i cevi) za VW, Audi, Škoda, SEAT i… | SKLOP" 57
+   kategorije.xml /delovi/brizgaljke-pumpa-goriva "Brizgaljke i pumpa goriva za VW, Audi, Škoda, SEAT… | SKLOP" 59
+   kategorije.xml /delovi/hladnjak-ventilator "Hladnjak i ventilator za VW, Audi, Škoda, SEAT i… | SKLOP" 57
+   kategorije.xml /delovi/kais-alternatora "Kaiš alternatora i zatezači za VW, Audi, Škoda… | SKLOP" 55
+   kategorije.xml /delovi/karter-dihtunzi "Karter, pumpa ulja i dihtunzi za VW, Audi, Škoda… | SKLOP" 57
+   kategorije.xml /delovi/klima "Kompresor i kondenzator klime za VW, Audi, Škoda… | SKLOP" 57
+   kategorije.xml /delovi/lezaj-glavcina "Ležaj točka i glavčina za VW, Audi, Škoda, SEAT i… | SKLOP" 58
+   kategorije.xml /delovi/nosaci-motora "Nosači motora i menjača za VW, Audi, Škoda, SEAT i… | SKLOP" 59
+   kategorije.xml /delovi/paljenje-grejaci "Svećice, bobine i grejači za VW, Audi, Škoda, SEAT… | SKLOP" 59
+   kategorije.xml /delovi/poluosovine "Poluosovine i homokinetički zglobovi za VW, Audi… | SKLOP" 57
+   kategorije.xml /delovi/ramena-selen-blokovi "Ramena i selen blokovi za VW, Audi, Škoda, SEAT i… | SKLOP" 58
+   kategorije.xml /delovi/senzori "Senzori (lambda, parking, temperatura) za VW, Audi, Škoda…" 58
+   kategorije.xml /delovi/spone-stabilizatori "Spone i stabilizatori za VW, Audi, Škoda, SEAT i… | SKLOP" 57
+   kategorije.xml /delovi/termostat-creva "Termostat i creva hlađenja za VW, Audi, Škoda… | SKLOP" 54
+   kategorije.xml /delovi/turbina "Turbina (turbopunjač) za VW, Audi, Škoda, SEAT i… | SKLOP" 57
+   kategorije.xml /delovi/usisna-grana "Usisna grana i kućište filtera za VW, Audi, Škoda… | SKLOP" 58
+   kategorije.xml /delovi/vesanje-i-upravljanje "Vešanje i upravljanje za VW, Audi, Škoda, SEAT i… | SKLOP" 57
+   kategorije.xml /delovi/zupcasti-kais-vodena-pumpa "Set zupčastog kaiša i vodena pumpa za VW, Audi… | SKLOP" 55
+titles > 60: 0
+duplicate descriptions: 0

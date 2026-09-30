@@ -1,0 +1,41 @@
+car.glb: 3638264 B raw, 2101362 B gzip-6
+   image 0 tex_machined_n image/webp RIFF/VP8L 512x512 ch=3 2182 B  normalTexture of: mat_machined_steel
+   image 1 tex_fins_n image/webp RIFF/VP8L 512x512 ch=3 1008 B  normalTexture of: mat_core_fins
+   image 2 tex_cast_n image/webp RIFF/VP8L 512x512 ch=3 364514 B  normalTexture of: mat_cast_alu, mat_cast_iron
+   image 3 tex_emboss_n image/webp RIFF/VP8L 512x512 ch=3 12788 B  normalTexture of: mat_heat_shield
+   image 4 tex_tyre_n image/webp RIFF/VP8L 1024x1024 ch=3 306102 B  normalTexture of: mat_tyre
+   total image bytes 686594 B = 18.9 % of raw file
+car-lite.glb: 2628980 B raw, 1687209 B gzip-6
+   image 0 tex_fins_n image/webp RIFF/VP8L 512x512 ch=3 1008 B  normalTexture of: mat_core_fins
+   image 1 tex_cast_n image/webp RIFF/VP8L 512x512 ch=3 364514 B  normalTexture of: mat_cast_alu, mat_cast_iron
+   image 2 tex_emboss_n image/webp RIFF/VP8L 512x512 ch=3 12788 B  normalTexture of: mat_heat_shield
+   image 3 tex_machined_n image/webp RIFF/VP8L 512x512 ch=3 2182 B  normalTexture of: mat_machined_steel
+   image 4 tex_tyre_n image/webp RIFF/VP8L 512x512 ch=3 60186 B  normalTexture of: mat_tyre
+   total image bytes 440678 B = 16.8 % of raw file
+tex_cast_n (car-lite) alternative encodings:
+   lossless 512                   364514 B
+   near-lossless q60 512          273984 B
+   lossy q90 512                  97294 B
+   lossy q90 512 smartSubsample   108788 B
+   near-lossless 256              108630 B
+   lossless 256                   135354 B
+
+HTTP (http://localhost:3100), Accept-Encoding: br, gzip
+   /models/env/studio-512.hdr 200 type=application/octet-stream encoding=(none) content-length=410772 wire=410772 B cache-control=public, max-age=0
+   /models/car-lite.glb 200 type=model/gltf-binary encoding=gzip content-length=- wire=1687209 B cache-control=public, max-age=0
+   /models/car.glb 200 type=model/gltf-binary encoding=gzip content-length=- wire=2101362 B cache-control=public, max-age=0
+   /models/car-shadow.webp 200 type=image/webp encoding=(none) content-length=14378 wire=14378 B cache-control=public, max-age=0
+studio-512.hdr raw 410772 B, gzip-6 310290 B, gzip-9 310278 B, br-11 283447 B
+   header: ["#?RADIANCE","FORMAT=32-bit_rle_rgbe","","-Y 256 +X 512","\u0002\u0002\u0002\u0000\u0005L ¡£¤¥¨ª­²·½ÄÌÕßèòü ¢¤¦§©«¬­®®¯°°±°°¯¯°°°"]
+
+runtime (2026-09-30T14:20:42.581Z):
+phone 390x844@2 tier=?
+   /models/car-lite.glb type=model/gltf-binary encoding=gzip wire=1689013 B
+   /models/env/studio-512.hdr type=application/octet-stream encoding=(none) wire=411425 B
+   /models/car-shadow-exploded.webp type=image/webp encoding=(none) wire=20839 B
+   /models/car-shadow.webp type=image/webp encoding=(none) wire=15015 B
+desktop 1440x900@1 tier=?
+   /models/car.glb type=model/gltf-binary encoding=gzip wire=2103480 B
+   /models/car-shadow.webp type=image/webp encoding=(none) wire=15015 B
+   /models/env/studio-512.hdr type=application/octet-stream encoding=(none) wire=411425 B
+   /models/car-shadow-exploded.webp type=image/webp encoding=(none) wire=20839 B

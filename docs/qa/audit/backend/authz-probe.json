@@ -1,0 +1,2392 @@
+{
+  "summary": {
+    "viewers": {
+      "owner": "owner",
+      "customer": "customer",
+      "mechanic": "customer"
+    },
+    "protectedQueries": 81,
+    "argsResolved": 81,
+    "conclusive": 81,
+    "violations": [],
+    "publicQueries": 40,
+    "publicWithSensitiveKeys": [
+      "settings:getPublic: .company.address .company.address.street"
+    ],
+    "publicErrors": [
+      "catalog/products:forVehicle: [Request ID: 14269c84cc336d15] Server Error\nArgumentValidationError: Found ID \"j97bvc6qtdtdccbme1yccg6sdx8fcsnt\" from table `auditLog`, which does not match the table name in validator `v.id(\"vehicleGenerations\")`.Path: .generationId\n\n",
+      "catalog/vehicles:engines: [Request ID: 30815e60a2bceb40] Server Error\nArgumentValidationError: Found ID \"j97bvc6qtdtdccbme1yccg6sdx8fcsnt\" from table `auditLog`, which does not match the table name in validator `v.id(\"vehicleGenerations\")`.Path: .generationId\n\n",
+      "content:faqs: [Request ID: 15aca707393ae68b] Server Error\nArgumentValidationError: Object is missing the required field `scope`. Consider wrapping the field validator in `v.optional(...)` if this is expected.\n\nObject: {}\nValidator: v.object({scope: v.str",
+      "seo:feedProducts: [Request ID: 25fabe3c7fb768d5] Server Error\nArgumentValidationError: Object is missing the required field `paginationOpts`. Consider wrapping the field validator in `v.optional(...)` if this is expected.\n\nObject: {}\nValidator: v.object({inc",
+      "seo:sitemapProducts: [Request ID: fad1b895dae4881b] Server Error\nArgumentValidationError: Object is missing the required field `paginationOpts`. Consider wrapping the field validator in `v.optional(...)` if this is expected.\n\nObject: {}\nValidator: v.object({pag"
+    ],
+    "priceCheck": {
+      "anonymous": [
+        {
+          "discountBp": 0,
+          "productId": "qh7dk09bjwq5r4nsv8zw4mwqbn8fdrwr",
+          "retailPricePara": 1349000,
+          "yourPricePara": null
+        }
+      ],
+      "customer": [
+        {
+          "discountBp": 0,
+          "productId": "qh7dk09bjwq5r4nsv8zw4mwqbn8fdrwr",
+          "retailPricePara": 1349000,
+          "yourPricePara": null
+        }
+      ],
+      "mechanic": [
+        {
+          "discountBp": 1500,
+          "productId": "qh7dk09bjwq5r4nsv8zw4mwqbn8fdrwr",
+          "retailPricePara": 1349000,
+          "yourPricePara": 1146700
+        }
+      ]
+    },
+    "cross": {
+      "customerMyOrderForeign": "null",
+      "mechanicMyOrderForeign": "null",
+      "orderWrongToken": "null",
+      "orderShortToken": "null",
+      "inquiryWrongToken": "null",
+      "inviteWrongToken": "OBJECT RETURNED"
+    }
+  },
+  "results": [
+    {
+      "fn": "audit:list",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "catalog/productsAdmin:get",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "catalog/productsAdmin:getFull",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "catalog/productsAdmin:history",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "catalog/productsAdmin:list",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "catalog/productsAdmin:pick",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "demo:status",
+      "builder": "ownerQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "inquiries:mine",
+      "builder": "userQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": true,
+        "empty": true
+      },
+      "mechanic": {
+        "allowed": true,
+        "empty": true
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "inquiriesAdmin:get",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "inquiriesAdmin:list",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "inquiriesAdmin:statusCounts",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "mechanics:myProfile",
+      "builder": "userQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": true,
+        "empty": true
+      },
+      "mechanic": {
+        "allowed": true,
+        "empty": false
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "mechanicsAdmin:counts",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "mechanicsAdmin:get",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "mechanicsAdmin:list",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "notifications:mine",
+      "builder": "userQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": true,
+        "empty": false
+      },
+      "mechanic": {
+        "allowed": true,
+        "empty": false
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "notifications:preferences",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "notifications:preferencesFor",
+      "builder": "ownerQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "notifications:unreadCount",
+      "builder": "userQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": true,
+        "empty": false
+      },
+      "mechanic": {
+        "allowed": true,
+        "empty": false
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "orders:myOrder",
+      "builder": "userQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": true,
+        "empty": true
+      },
+      "mechanic": {
+        "allowed": true,
+        "empty": true
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "orders:myOrders",
+      "builder": "userQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": true,
+        "empty": true
+      },
+      "mechanic": {
+        "allowed": true,
+        "empty": true
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "ordersAdmin:customerHistory",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "ordersAdmin:get",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "ordersAdmin:list",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "ordersAdmin:statusCounts",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "pricing:listTiers",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "pricing:previewTier",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "search:analytics",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "search:zeroResults",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "settings:getAdmin",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "stock:lowStock",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "stock:movements",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "account:favoriteIds",
+      "builder": "userQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": true,
+        "empty": true
+      },
+      "mechanic": {
+        "allowed": true,
+        "empty": true
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "account:favorites",
+      "builder": "userQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": true,
+        "empty": true
+      },
+      "mechanic": {
+        "allowed": true,
+        "empty": true
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "account:savedVehicles",
+      "builder": "userQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": true,
+        "empty": true
+      },
+      "mechanic": {
+        "allowed": true,
+        "empty": true
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "content:adminPages",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "mechanicPortal:overview",
+      "builder": "userQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": true,
+        "empty": true
+      },
+      "mechanic": {
+        "allowed": true,
+        "empty": false
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "mechanicPortal:priceListMeta",
+      "builder": "userQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": true,
+        "empty": false
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "mechanicPortal:priceListPage",
+      "builder": "userQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": true,
+        "empty": false
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "adminSearch:run",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "catalog/categoriesAdmin:options",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "catalog/categoriesAdmin:tree",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "catalog/manufacturersAdmin:list",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "catalog/vehiclesAdmin:engines",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "catalog/vehiclesAdmin:generations",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "catalog/vehiclesAdmin:tree",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "customersAdmin:get",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "customersAdmin:list",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "dashboard:byCategory",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "dashboard:kpis",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "dashboard:navCounts",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "dashboard:ordersPerDay",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "dashboard:recentActivity",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "dashboard:searchedNotFound",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "dashboard:slaQueue",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "emailsAdmin:config",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "emailsAdmin:get",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "emailsAdmin:outbox",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "emailsAdmin:preview",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "emailsAdmin:templates",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "staff:listInvites",
+      "builder": "ownerQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "staff:listUsers",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "exportsAdmin:customersPage",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "exportsAdmin:mechanicsPage",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "exportsAdmin:ordersPage",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "exportsAdmin:productsPage",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "imports:batch",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "imports:changes",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "imports:history",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "imports:imageJobs",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "imports:presets",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": true
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "imports:reference",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "imports:rows",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "imports:samples",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "imports:sourceFileUrl",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "seoAdmin:adLandings",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "seoAdmin:landingOverview",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "seoAdmin:offlineConversions",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "seoAdmin:sourcesReport",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "seoAdmin:trackingStatus",
+      "builder": "staffQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": true,
+        "empty": false
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    },
+    {
+      "fn": "privacy:customerData",
+      "builder": "ownerQuery",
+      "argsResolved": true,
+      "owner": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "INVALID"
+      },
+      "anonymous": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "UNAUTHENTICATED"
+      },
+      "customer": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "mechanic": {
+        "allowed": false,
+        "kind": "convex",
+        "code": "FORBIDDEN"
+      },
+      "violation": [],
+      "conclusive": true
+    }
+  ],
+  "publicScan": [
+    {
+      "fn": "carts:get",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 111
+    },
+    {
+      "fn": "catalog/categories:bySlug",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 2841
+    },
+    {
+      "fn": "catalog/categories:tree",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 17072
+    },
+    {
+      "fn": "catalog/codes:lookup",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 126
+    },
+    {
+      "fn": "catalog/manufacturers:list",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 4598
+    },
+    {
+      "fn": "catalog/products:bySlug",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 5431
+    },
+    {
+      "fn": "catalog/products:forVehicle",
+      "ok": false,
+      "kind": "args",
+      "msg": "[Request ID: 14269c84cc336d15] Server Error\nArgumentValidationError: Found ID \"j97bvc6qtdtdccbme1yccg6sdx8fcsnt\" from table `auditLog`, which does not match the table name in validator `v.id(\"vehicleGenerations\")`.Path: .generationId\n\n"
+    },
+    {
+      "fn": "catalog/products:listByCategory",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 6401
+    },
+    {
+      "fn": "catalog/products:liveState",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 2
+    },
+    {
+      "fn": "catalog/products:partPanel",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 4
+    },
+    {
+      "fn": "catalog/products:related",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 4722
+    },
+    {
+      "fn": "catalog/products:retired",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 4
+    },
+    {
+      "fn": "catalog/vehicles:brands",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 675
+    },
+    {
+      "fn": "catalog/vehicles:engines",
+      "ok": false,
+      "kind": "args",
+      "msg": "[Request ID: 30815e60a2bceb40] Server Error\nArgumentValidationError: Found ID \"j97bvc6qtdtdccbme1yccg6sdx8fcsnt\" from table `auditLog`, which does not match the table name in validator `v.id(\"vehicleGenerations\")`.Path: .generationId\n\n"
+    },
+    {
+      "fn": "catalog/vehicles:generations",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 1447
+    },
+    {
+      "fn": "catalog/vehicles:models",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 864
+    },
+    {
+      "fn": "catalog/vehicles:resolve",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 4
+    },
+    {
+      "fn": "catalog/vehicles:tree",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 20121
+    },
+    {
+      "fn": "inquiries:getByToken",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 4
+    },
+    {
+      "fn": "orders:getByToken",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 4
+    },
+    {
+      "fn": "pricing:forProducts",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 2
+    },
+    {
+      "fn": "pricing:publicTiers",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 213
+    },
+    {
+      "fn": "search:categoryScope",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 4
+    },
+    {
+      "fn": "search:run",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 5825
+    },
+    {
+      "fn": "search:suggest",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 1404
+    },
+    {
+      "fn": "settings:getPublic",
+      "ok": true,
+      "sensitiveKeys": [
+        ".company.address",
+        ".company.address.street"
+      ],
+      "size": 2898
+    },
+    {
+      "fn": "settings:getTracking",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 41
+    },
+    {
+      "fn": "users:viewer",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 4
+    },
+    {
+      "fn": "content:faqs",
+      "ok": false,
+      "kind": "args",
+      "msg": "[Request ID: 15aca707393ae68b] Server Error\nArgumentValidationError: Object is missing the required field `scope`. Consider wrapping the field validator in `v.optional(...)` if this is expected.\n\nObject: {}\nValidator: v.object({scope: v.str"
+    },
+    {
+      "fn": "content:pageBySlug",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 4
+    },
+    {
+      "fn": "staff:inviteInfo",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 72
+    },
+    {
+      "fn": "seo:adLanding",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 491
+    },
+    {
+      "fn": "seo:categoryLandings",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 2
+    },
+    {
+      "fn": "seo:feedProducts",
+      "ok": false,
+      "kind": "args",
+      "msg": "[Request ID: 25fabe3c7fb768d5] Server Error\nArgumentValidationError: Object is missing the required field `paginationOpts`. Consider wrapping the field validator in `v.optional(...)` if this is expected.\n\nObject: {}\nValidator: v.object({inc"
+    },
+    {
+      "fn": "seo:landing",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 6130
+    },
+    {
+      "fn": "seo:productImage",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 4
+    },
+    {
+      "fn": "seo:productLandings",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 2
+    },
+    {
+      "fn": "seo:sitemapData",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 12562
+    },
+    {
+      "fn": "seo:sitemapProducts",
+      "ok": false,
+      "kind": "args",
+      "msg": "[Request ID: fad1b895dae4881b] Server Error\nArgumentValidationError: Object is missing the required field `paginationOpts`. Consider wrapping the field validator in `v.optional(...)` if this is expected.\n\nObject: {}\nValidator: v.object({pag"
+    },
+    {
+      "fn": "seo:vehicleLandings",
+      "ok": true,
+      "sensitiveKeys": [],
+      "size": 2
+    }
+  ]
+}

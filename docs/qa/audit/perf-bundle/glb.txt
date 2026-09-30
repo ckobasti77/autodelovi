@@ -1,0 +1,10 @@
+car.glb                    raw 3553 KB  gzip 2052 KB  br 1971 KB
+   ext EXT_meshopt_compression,EXT_texture_webp,KHR_materials_clearcoat,KHR_materials_emissive_strength,KHR_mesh_quantization | required EXT_meshopt_compression,EXT_texture_webp,KHR_mesh_quantization | meshes 89 prims 194 tris 290022 materials 23 nodes 200
+   textures 5, 671 KB: tex_machined_n image/webp 512x512 2KB; tex_fins_n image/webp 512x512 1KB; tex_cast_n image/webp 512x512 356KB; tex_emboss_n image/webp 512x512 12KB; tex_tyre_n image/webp 1024x1024 299KB
+car-lite.glb               raw 2567 KB  gzip 1648 KB  br 1610 KB
+   ext EXT_meshopt_compression,EXT_texture_webp,KHR_materials_clearcoat,KHR_materials_emissive_strength,KHR_mesh_quantization | required EXT_meshopt_compression,EXT_texture_webp,KHR_mesh_quantization | meshes 89 prims 135 tris 198016 materials 21 nodes 200
+   textures 5, 430 KB: tex_fins_n image/webp 512x512 1KB; tex_cast_n image/webp 512x512 356KB; tex_emboss_n image/webp 512x512 12KB; tex_machined_n image/webp 512x512 2KB; tex_tyre_n image/webp 512x512 59KB
+env/studio-512.hdr         raw 401 KB  gzip 303 KB  br 292 KB
+car.manifest.json          raw 86 KB  gzip 11 KB  br 10 KB
+car-shadow.webp            raw 14 KB  gzip 14 KB  br 14 KB
+car-shadow-exploded.webp   raw 20 KB  gzip 19 KB  br 19 KB

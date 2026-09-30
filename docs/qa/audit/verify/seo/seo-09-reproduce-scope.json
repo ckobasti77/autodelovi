@@ -1,0 +1,66 @@
+[
+ {
+  "js": true,
+  "url": "/ponuda/ne-postoji",
+  "status": 404,
+  "title": "SKLOP — Rasklopi auto. Nađi deo.",
+  "h1": "Stranica nije pronađena",
+  "header": true
+ },
+ {
+  "js": true,
+  "url": "/porudzbina/nevazeci-token-123456789012345678901234567",
+  "status": 404,
+  "title": "Status porudžbine | SKLOP",
+  "h1": "Stranica nije pronađena",
+  "header": true
+ },
+ {
+  "js": true,
+  "url": "/upit/nevazeci-token-1234567890123456789012345678",
+  "status": 404,
+  "title": "Upit i ponuda | SKLOP",
+  "h1": "Stranica nije pronađena",
+  "header": true
+ },
+ {
+  "js": true,
+  "url": "/delovi/kocnice/volkswagen",
+  "status": 404,
+  "title": "SKLOP — Rasklopi auto. Nađi deo.",
+  "h1": "Stranica nije pronađena",
+  "header": true
+ },
+ {
+  "js": false,
+  "url": "/ponuda/ne-postoji",
+  "status": 404,
+  "title": "Stranica nije pronađena · SKLOP",
+  "h1": null,
+  "header": false
+ },
+ {
+  "js": false,
+  "url": "/porudzbina/nevazeci-token-123456789012345678901234567",
+  "status": 404,
+  "title": "SKLOP — Rasklopi auto. Nađi deo.",
+  "h1": null,
+  "header": false
+ },
+ {
+  "js": false,
+  "url": "/upit/nevazeci-token-1234567890123456789012345678",
+  "status": 404,
+  "title": "SKLOP — Rasklopi auto. Nađi deo.",
+  "h1": null,
+  "header": false
+ },
+ {
+  "js": false,
+  "url": "/delovi/kocnice/volkswagen",
+  "status": 404,
+  "title": "SKLOP — Rasklopi auto. Nađi deo.",
+  "h1": null,
+  "header": false
+ }
+]

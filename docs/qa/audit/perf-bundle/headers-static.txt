@@ -1,0 +1,107 @@
+== /_next/static/chunks/0qy3sss5e6eww.js
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+Cache-Control: public, max-age=31536000, immutable
+Last-Modified: Wed, 30 Sep 2026 13:30:10 GMT
+ETag: W/"392bc-1a0f2822483"
+Content-Type: application/javascript; charset=UTF-8
+Vary: Accept-Encoding
+Content-Encoding: gzip
+== /_next/static/chunks/1ims1_lcdan5r.css
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+Cache-Control: public, max-age=31536000, immutable
+Last-Modified: Wed, 30 Sep 2026 13:30:09 GMT
+ETag: W/"181f4-1a0f28221a1"
+Content-Type: text/css; charset=UTF-8
+Vary: Accept-Encoding
+Content-Encoding: gzip
+== /_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+Cache-Control: public, max-age=31536000, immutable
+Last-Modified: Wed, 30 Sep 2026 13:30:10 GMT
+ETag: W/"680c-1a0f28223ef"
+Content-Type: font/woff2
+Content-Length: 26636
+== /images/hero/car-assembled-1440.avif
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 29 Sep 2026 20:37:16 GMT
+ETag: W/"3fd6-1a0eee2cce9"
+Content-Type: image/avif
+Content-Length: 16342
+== /models/car.glb
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 29 Sep 2026 20:36:05 GMT
+ETag: W/"3783f8-1a0eee1b787"
+Content-Type: model/gltf-binary
+Vary: Accept-Encoding
+Content-Encoding: gzip
+== /models/car-lite.glb
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 29 Sep 2026 20:36:06 GMT
+ETag: W/"281d74-1a0eee1baf4"
+Content-Type: model/gltf-binary
+Vary: Accept-Encoding
+Content-Encoding: gzip
+== /models/env/studio-512.hdr
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 29 Sep 2026 20:37:13 GMT
+ETag: W/"64494-1a0eee2c2bb"
+Content-Type: application/octet-stream
+Content-Length: 410772
+== /models/car.manifest.json
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 29 Sep 2026 20:36:06 GMT
+ETag: W/"15685-1a0eee1bcbd"
+Content-Type: application/json; charset=UTF-8
+Vary: Accept-Encoding
+Content-Encoding: gzip
+== /models/car-shadow.webp
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 29 Sep 2026 20:37:27 GMT
+ETag: W/"382a-1a0eee2f85d"
+Content-Type: image/webp
+Content-Length: 14378
+== /icon.svg
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+cache-control: public, max-age=0, must-revalidate
+content-type: image/svg+xml
+== /favicon.ico
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+cache-control: public, max-age=0, must-revalidate
+content-type: image/x-icon
+== /manifest.webmanifest
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+cache-control: public, max-age=0, must-revalidate
+content-type: application/manifest+json
+== /robots.txt
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+cache-control: public, max-age=0, must-revalidate
+content-type: text/plain
+== /sitemap.xml
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+cache-control: public, max-age=0, s-maxage=3600, stale-while-revalidate=86400
+content-type: application/xml; charset=utf-8

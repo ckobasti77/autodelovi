@@ -1,0 +1,8 @@
+landing run 1: FCP 1424 ms, Expanded 600 responseEnd 1828 ms, LCP entries: 1424 ms size 26602 span "proverene"
+landing run 2: FCP 1324 ms, Expanded 600 responseEnd 1865 ms, LCP entries: 1324 ms size 26602 span "proverene"
+landing run 3: FCP 1400 ms, Expanded 600 responseEnd 1886 ms, LCP entries: 1400 ms size 26602 span "proverene"
+landing: fallback frame 2.5 s after h1 first appeared, Expanded 600 loaded=false
+category run 1: FCP 972 ms, Expanded 600 responseEnd 1547 ms, LCP entries: 972 ms size 29664 p "Kočioni diskovi zajedno sa plo"
+category run 2: FCP 1068 ms, Expanded 600 responseEnd 1661 ms, LCP entries: 1068 ms size 29664 p "Kočioni diskovi zajedno sa plo"
+category run 3: FCP 956 ms, Expanded 600 responseEnd 1567 ms, LCP entries: 956 ms size 29664 p "Kočioni diskovi zajedno sa plo"
+category: fallback frame 2.5 s after h1 first appeared, Expanded 600 loaded=false

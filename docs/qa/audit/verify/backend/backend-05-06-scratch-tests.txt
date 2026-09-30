@@ -1,0 +1,41 @@
+
+ RUN  v5.0.2 C:/Users/admin/Desktop/Web Dev Projects/autodelovi
+
+stdout | scripts/qa/audit/verify-backend-06.test.ts > created mode: removing a committed line never returns its stock, not even on cancel
+VERIFY06 {"name":"remove-then-cancel","discStart":10,"afterCreate":7,"afterRemove_expected":10,"afterRemove":7,"afterCancel_expected":10,"afterCancel":7,"batteryAfterCancel":20,"movements":["receipt:10","order_created:-3"]}
+
+ ✓ scripts/qa/audit/verify-backend-06.test.ts > created mode: removing a committed line never returns its stock, not even on cancel 3642ms
+stdout | scripts/qa/audit/verify-backend-06.test.ts > created mode: lowering 3 → 1 keeps 3 off the shelf through completion
+VERIFY06 {"name":"lower-then-complete","soldQty":1,"committedQty":3,"afterEdit_expected":9,"afterEdit":7,"afterComplete_expected":9,"afterComplete":7,"movements":["receipt:10","order_created:-3"]}
+
+ ✓ scripts/qa/audit/verify-backend-06.test.ts > created mode: lowering 3 → 1 keeps 3 off the shelf through completion 1044ms
+stdout | scripts/qa/audit/verify-backend-05-clock.test.ts > world built before 16:30 (like a morning run) → first reminder at 09:31
+VERIFY05 {"case":"built 16:00","worldBuiltAt":"2026-09-30T14:00:00.000Z","orderCreationTime":"2026-09-30T14:30:00.000Z","result":{"checked":1,"reminded":1,"skipped":false}}
+
+stdout | scripts/qa/audit/verify-backend-06.test.ts > created mode: a line added by staff is never taken off the shelf
+VERIFY06 {"name":"add-then-complete","batteryStart":20,"batteryLine":{"_id":"0000000000000000010597orderItems","availabilityAtOrder":"in_stock","committedQty":null,"currentStock":20,"discountBp":0,"isCustomLine":false,"leadTimeDays":null,"lineTotalPara":2400000,"manufacturerName":"Varta","name":"Akumulator 60 Ah","oem":null,"productId":"000000000000000000010582products","quantity":2,"sku":"T-BATT","unitPricePara":1200000,"unitRetailPara":1200000},"afterComplete_expected":18,"afterComplete":20,"movements":["receipt:20"]}
+
+ ✓ scripts/qa/audit/verify-backend-06.test.ts > created mode: a line added by staff is never taken off the shelf 2542ms
+ ✓ scripts/qa/audit/verify-backend-05-clock.test.ts > world built before 16:30 (like a morning run) → first reminder at 09:31 6781ms
+stdout | scripts/qa/audit/verify-backend-05-clock.test.ts > world built after 16:30 (any run from 30.09.2026 16:30 on) → no reminder
+VERIFY05 {"case":"built 16:45","worldBuiltAt":"2026-09-30T14:45:00.000Z","orderCreationTime":"2026-09-30T14:45:00.000Z","result":{"checked":1,"reminded":0,"skipped":false}}
+
+stdout | scripts/qa/audit/verify-backend-06.test.ts > mode switch confirmed → created: an open „nova“ order is never committed
+VERIFY06 {"name":"mode-switch","stockCommitted":false,"afterComplete_expected":7,"afterComplete":10,"movements":["receipt:10"]}
+
+ ✓ scripts/qa/audit/verify-backend-06.test.ts > mode switch confirmed → created: an open „nova“ order is never committed 781ms
+ ✓ scripts/qa/audit/verify-backend-05-clock.test.ts > world built after 16:30 (any run from 30.09.2026 16:30 on) → no reminder 719ms
+stdout | scripts/qa/audit/verify-backend-05-clock.test.ts > world built a week later (e.g. 07.10.2026) → no reminder
+VERIFY05 {"case":"built 07.10.","worldBuiltAt":"2026-10-07T08:00:00.000Z","orderCreationTime":"2026-10-07T08:00:00.000Z","result":{"checked":1,"reminded":0,"skipped":false}}
+
+ ✓ scripts/qa/audit/verify-backend-05-clock.test.ts > world built a week later (e.g. 07.10.2026) → no reminder 942ms
+stdout | scripts/qa/audit/verify-backend-06.test.ts > control: confirmed mode (default) — edits happen before commit, so stock is exact
+VERIFY06 {"name":"control-confirmed","afterConfirm_expected":9,"afterConfirm":9}
+
+ ✓ scripts/qa/audit/verify-backend-06.test.ts > control: confirmed mode (default) — edits happen before commit, so stock is exact 935ms
+
+ Test Files  2 passed (2)
+      Tests  8 passed (8)
+   Start at  16:44:02
+   Duration  12.46s (tests 76%, transform 12%, import 11%, environment 2%)
+

@@ -1,0 +1,68 @@
+{
+  "run": 1790778653966,
+  "limit": "uploadUrl: token bucket 20/h (capacity 20) per ctx.client.key",
+  "A_http_fixedUa": {
+    "ok": 20,
+    "limited": 1,
+    "other": [],
+    "sequence": "ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,RATE_LIMITED"
+  },
+  "B_http_rotatingUa": {
+    "ok": 21,
+    "limited": 0,
+    "other": [],
+    "sequence": "ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok"
+  },
+  "C_http_exhaustedUa_spoofedIpHeaders": [
+    {
+      "header": "X-Forwarded-For",
+      "result": "RATE_LIMITED"
+    },
+    {
+      "header": "X-Forwarded-For",
+      "result": "RATE_LIMITED"
+    },
+    {
+      "header": "X-Real-IP",
+      "result": "RATE_LIMITED"
+    },
+    {
+      "header": "CF-Connecting-IP",
+      "result": "<!doctype html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <!"
+    },
+    {
+      "header": "True-Client-IP",
+      "result": "RATE_LIMITED"
+    },
+    {
+      "header": "Forwarded",
+      "result": "RATE_LIMITED"
+    }
+  ],
+  "D_ws_fixedUa": {
+    "ok": 20,
+    "limited": 1,
+    "other": [],
+    "sequence": "ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,RATE_LIMITED"
+  },
+  "D_ws_rotatingUa": {
+    "ok": 5,
+    "limited": 0,
+    "other": [],
+    "sequence": "ok,ok,ok,ok,ok"
+  },
+  "E_chromium_contextX": {
+    "ua": "Mozilla/5.0 VerifyBackend02-E/1790778653966-x",
+    "ok": 20,
+    "limited": 1,
+    "other": [],
+    "sequence": "ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,RATE_LIMITED"
+  },
+  "E_chromium_contextY_newUa": {
+    "ua": "Mozilla/5.0 VerifyBackend02-E/1790778653966-y",
+    "ok": 1,
+    "limited": 0,
+    "other": [],
+    "sequence": "ok"
+  }
+}

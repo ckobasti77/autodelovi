@@ -1,0 +1,32 @@
+{
+ "base": "http://localhost:3100",
+ "stamp": "muo8o7sc",
+ "adminUrl": "http://localhost:3100/admin/proizvodi/qh75h4b5rem044cs1v8jjr89158fcc5a",
+ "oldSlug": "kocioni-disk-verifikacija-muo8o7sc-e2e-vseo08-muo8o7sc",
+ "helpText": "Promena pravi preusmerenje sa stare adrese.",
+ "adminShot": "docs/qa/audit/verify/seo/seo-08-reproduce-admin-slug.webp",
+ "newSlugAfterReload": "kocioni-disk-verifikacija-muo8o7sc-e2e-vseo08-muo8o7sc-novi",
+ "oldUrl": {
+  "path": "/deo/kocioni-disk-verifikacija-muo8o7sc-e2e-vseo08-muo8o7sc",
+  "status": 404,
+  "location": null
+ },
+ "newUrl": {
+  "path": "/deo/kocioni-disk-verifikacija-muo8o7sc-e2e-vseo08-muo8o7sc-novi",
+  "status": 200,
+  "location": null
+ },
+ "oldUrlBrowser": {
+  "finalUrl": "http://localhost:3100/deo/kocioni-disk-verifikacija-muo8o7sc-e2e-vseo08-muo8o7sc",
+  "title": "SKLOP — Rasklopi auto. Nađi deo.",
+  "h1": "Stranica nije pronađena"
+ },
+ "visitorShot": "docs/qa/audit/verify/seo/seo-08-reproduce-old-url.webp",
+ "product": {
+  "active": false,
+  "name": "Kočioni disk verifikacija muo8o7sc",
+  "retailPricePara": 1299000,
+  "source": "manual",
+  "stockQty": 0
+ }
+}

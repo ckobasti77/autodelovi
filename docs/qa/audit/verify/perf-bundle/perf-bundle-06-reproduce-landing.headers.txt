@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), bluetooth=(), hid=(), browsing-topics=()
+Cross-Origin-Opener-Policy: same-origin
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+content-security-policy: default-src 'self'; script-src 'self' 'nonce-T6n5flmgH0ZazZx8lLoxkQ==' 'strict-dynamic' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://tame-impala-374.eu-west-1.convex.cloud http://localhost:3000 https://*.google-analytics.com https://*.googletagmanager.com https://*.g.doubleclick.net https://www.google.com https://www.google.rs https://www.googleadservices.com https://www.facebook.com; font-src 'self' data:; connect-src 'self' blob: data: https://tame-impala-374.eu-west-1.convex.cloud wss://tame-impala-374.eu-west-1.convex.cloud https://tame-impala-374.eu-west-1.convex.site https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://www.google.com https://www.google.rs https://www.googleadservices.com https://www.facebook.com https://connect.facebook.net; media-src 'self' blob:; frame-src https://td.doubleclick.net https://www.googletagmanager.com https://www.facebook.com; worker-src 'self' blob:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+Vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch, Accept-Encoding
+Link: </_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2>; rel=preload; as="font"; crossorigin=""; nonce="T6n5flmgH0ZazZx8lLoxkQ=="; type="font/woff2", </_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2>; rel=preload; as="font"; crossorigin=""; nonce="T6n5flmgH0ZazZx8lLoxkQ=="; type="font/woff2", </_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2>; rel=preload; as="font"; crossorigin=""; nonce="T6n5flmgH0ZazZx8lLoxkQ=="; type="font/woff2", </_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2>; rel=preload; as="font"; crossorigin=""; nonce="T6n5flmgH0ZazZx8lLoxkQ=="; type="font/woff2"
+Cache-Control: private, no-cache, no-store, max-age=0, must-revalidate
+Content-Type: text/html; charset=utf-8
+Date: Wed, 30 Sep 2026 14:15:25 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+

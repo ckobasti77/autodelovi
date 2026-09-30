@@ -1,0 +1,136 @@
+COMMON LINES (on > 60 % of pages):
+Preskoči na sadržaj
+SKLOP
+Delovi
+Vozila
+Za majstore
+Upit po broju šasije
+Broj dela ili naziv
+/
+Izaberite vozilo
+Prijavljeni ste kao audit-kupac-5455287@primer.rs
+Moj nalog
+Pregled
+Porudžbine
+Upiti
+Profil
+Odjavi se
+Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+DELOVI
+Svi delovi
+Delovi po vozilu
+Pretraga po broju dela
+KUPOVINA
+Dostava i plaćanje
+Reklamacije i povrat
+O nama
+KONTAKT
+Pon–pet 8–17, sub 8–14
+Pošaljite upit — javljamo se u toku radnog dana
+© 2026 SKLOP
+Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.
+Uslovi korišćenja
+Politika privatnosti
+Kolačići
+Podešavanja kolačića
+
+
+======== /nalog [200]
+TITLE: Moj nalog | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Moj nalog | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Moj nalog"]
+--- text
+Poslednje porudžbine
+Sve
+Još nemate porudžbina.
+Pretražite delove
+Izaberite vozilo, pa ga sačuvajte za sledeći put.
+Nemate sačuvana vozila.
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Nalog | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /nalog/porudzbine [200]
+TITLE: Porudžbine | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Porudžbine | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Moj nalog"]
+--- text
+Još nemate porudžbina.
+Pretražite delove
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Nalog | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /nalog/upiti [200]
+TITLE: Upiti | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Upiti | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Moj nalog"]
+--- text
+Još niste slali upite. Ne nalazite deo? Pošaljite broj šasije.
+Pošaljite upit
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Nalog | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /nalog/vozila [200]
+TITLE: Vozila | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Vozila | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Moj nalog"]
+--- text
+Izaberite vozilo, pa ga sačuvajte za sledeći put.
+Nemate sačuvana vozila.
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Nalog | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /nalog/omiljeno [404]
+TITLE: Stranica nije pronađena · SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Stranica nije pronađena · SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Stranica nije pronađena"]
+--- text
+Stranica nije pronađena
+Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas.
+Pretraži
+Broj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju.
+Vaše vozilo
+marka, model, motor
+Izaberi
+ČESTO TRAŽENE KATEGORIJE
+Kočione pločice
+Kočioni diskovi
+Amortizeri i opruge
+Zupčasti kaiš i vodena pumpa
+Filteri
+Turbina
+Pošaljite upit
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Broj dela ili naziv | placeholder=npr. 1K0 615 301 AA ili kočione pločice | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /nalog/profil [200]
+TITLE: Profil | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Profil | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Moj nalog"]
+--- text
+Ime
+Prezime
+Telefon
+E-pošta
+Adresa naloga se ne menja ovde.
+Sačuvaj
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Nalog | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)
+
+======== /korpa [200]
+TITLE: Korpa | SKLOP
+DESC: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+OG: Korpa | SKLOP | Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.
+H1: ["Korpa"]
+--- text
+Korpa
+Korpa je prazna
+Dodajte delove iz kataloga ili pretražite po OEM broju.
+Pretražite po broju dela
+--- attrs
+aria-label=SKLOP — početna | aria-label=Glavna navigacija | aria-label=Pretraga delova | aria-label=Moj nalog | aria-label=Korpa | aria-label=Otvori meni | aria-label=Delovi | aria-label=Kupovina | aria-label=Pravne informacije | aria-label=Obaveštenja (F8)

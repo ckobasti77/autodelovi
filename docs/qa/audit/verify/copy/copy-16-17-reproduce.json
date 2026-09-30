@@ -1,0 +1,147 @@
+{
+  "upit_vinLabel": "Broj šasije (VIN) (nije obavezno)",
+  "upit_selects": [
+    {
+      "id": "iq-brandSlug",
+      "tag": "SELECT",
+      "disabled": false,
+      "shown": "Izaberite"
+    },
+    {
+      "id": "iq-modelSlug",
+      "tag": "SELECT",
+      "disabled": true,
+      "shown": "Prvo marku"
+    },
+    {
+      "id": "iq-generationSlug",
+      "tag": "SELECT",
+      "disabled": true,
+      "shown": "Prvo model"
+    }
+  ],
+  "upit_log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  },
+  "checkout_emptyEmail": [
+    "Upišite e-mail adresu."
+  ],
+  "checkout_vinLabel": "Broj šasije (VIN) (nije obavezno)",
+  "checkout_log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  },
+  "empty/registracija": {
+    "emailValue": "",
+    "invalid": "true",
+    "describedBy": [
+      "E-mail adresa nije ispravna. Primer: ime@primer.rs."
+    ],
+    "alerts": []
+  },
+  "empty/registracija_log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  },
+  "empty/zaboravljena-lozinka": {
+    "emailValue": "",
+    "invalid": "true",
+    "describedBy": [
+      "E-mail adresa nije ispravna. Primer: ime@primer.rs."
+    ],
+    "alerts": []
+  },
+  "empty/zaboravljena-lozinka_log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  },
+  "empty/za-majstore/registracija": {
+    "emailValue": "",
+    "invalid": "true",
+    "describedBy": [
+      "E-mail adresa nije ispravna. Primer: ime@primer.rs."
+    ],
+    "alerts": [
+      "Proverite označena polja:E-mail adresa nije ispravna. Primer: ime@primer.rs.Lozinka mora imati najmanje 10 znakova.Upišite naziv servisa ili firme.PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja.Matični broj ima 8 cifara.Upišite ime i prezime kontakt osobe.Upišite broj telefona.Upišite mesto.Upišite adresu servisa.Izaberite bar jednu vrstu servisa.Potrebna je saglasnost sa uslovima korišćenja."
+    ]
+  },
+  "empty/za-majstore/registracija_log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  },
+  "empty/prijava": {
+    "emailValue": "",
+    "invalid": null,
+    "describedBy": [],
+    "alerts": [
+      "Pogrešan e-mail ili lozinka. Proverite podatke i pokušajte ponovo."
+    ]
+  },
+  "empty/prijava_log": {
+    "console": [
+      "Failed to load resource: the server responded with a status of 400 (Bad Request)"
+    ],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": [
+      "400 http://localhost:3100/api/auth"
+    ]
+  },
+  "c17/za-majstore/registracija": [
+    "Na ovu adresu šaljemo delove; menja se pri svakoj porudžbini."
+  ],
+  "c17/za-majstore": [
+    "Nalepite listu OEM brojeva sa količinama ili otpremite CSV. Tačni brojevi idu u korpu jednim klikom, nepronađeni kao upit.",
+    "Nalepite brojeve delova, jedan po redu, sa količinom (npr. `1K0615301AA 2`) ili otpremite CSV. Sistem prepoznaje brojeve sa razmacima, tačkama i crticama, pokaže šta je na stanju i po kojoj ceni, a brojeve koje nemamo šaljete kao upit jednim klikom."
+  ],
+  "c17/zaboravljena-lozinka": [
+    "Pošaljite adresu naloga; stiže vam kod od 8 cifara, važi 15 minuta."
+  ],
+  "c17/uslovi-koriscenja": [
+    "Nalog je opcion. Odgovorni ste za čuvanje lozinke. Nalog možemo privremeno blokirati u slučaju zloupotrebe (na primer lažnih porudžbina)."
+  ],
+  "c17_anon_log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  },
+  "c17_profil": [
+    "Adresa naloga se ne menja ovde."
+  ],
+  "c17_profil_actions": [
+    "Pregled",
+    "Porudžbine",
+    "Upiti",
+    "Vozila",
+    "Profil",
+    "Odjavi se",
+    "Sačuvaj"
+  ],
+  "c17_customer_log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  },
+  "c17_quick": [
+    "Otpremi CSV"
+  ],
+  "c17_mechanic_log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

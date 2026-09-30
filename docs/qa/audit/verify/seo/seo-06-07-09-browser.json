@@ -1,0 +1,546 @@
+{
+ "seo06": {
+  "/delovi/kocnice": {
+   "390": {
+    "h1": "KOČNICE",
+    "paragraphsInMain": [
+     "9 artikala",
+     "10 artikala",
+     "3 artikla",
+     "3 artikla"
+    ],
+    "mainLinks": [
+     "/delovi",
+     "/",
+     "/delovi",
+     "/delovi/kocioni-diskovi",
+     "/delovi/kocione-plocice",
+     "/delovi/kocione-celjusti",
+     "/delovi/abs-senzori"
+    ],
+    "visibleWords": 9,
+    "itemList": false,
+    "robots": "index, follow",
+    "scrollHeight": 1730
+   },
+   "1440": {
+    "h1": "KOČNICE",
+    "paragraphsInMain": [
+     "9 artikala",
+     "10 artikala",
+     "3 artikla",
+     "3 artikla"
+    ],
+    "mainLinks": [
+     "/delovi",
+     "/",
+     "/delovi",
+     "/delovi/kocioni-diskovi",
+     "/delovi/kocione-plocice",
+     "/delovi/kocione-celjusti",
+     "/delovi/abs-senzori"
+    ],
+    "visibleWords": 9,
+    "itemList": false,
+    "robots": "index, follow",
+    "scrollHeight": 1065
+   }
+  },
+  "/delovi/tockovi": {
+   "390": {
+    "h1": "TOČKOVI",
+    "paragraphsInMain": [
+     "3 artikla"
+    ],
+    "mainLinks": [
+     "/delovi",
+     "/",
+     "/delovi",
+     "/delovi/felne-gume"
+    ],
+    "visibleWords": 4,
+    "itemList": false,
+    "robots": "index, follow",
+    "scrollHeight": 1519
+   },
+   "1440": {
+    "h1": "TOČKOVI",
+    "paragraphsInMain": [
+     "3 artikla"
+    ],
+    "mainLinks": [
+     "/delovi",
+     "/",
+     "/delovi",
+     "/delovi/felne-gume"
+    ],
+    "visibleWords": 4,
+    "itemList": false,
+    "robots": "index, follow",
+    "scrollHeight": 1065
+   }
+  },
+  "/vozila/skoda/rapid": {
+   "390": {
+    "h1": "DELOVI ZA ŠKODA RAPID",
+    "paragraphsInMain": [
+     "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+    ],
+    "mainLinks": [
+     "/vozila/skoda",
+     "/",
+     "/vozila",
+     "/vozila/skoda",
+     "/vozila/skoda/rapid/rapid"
+    ],
+    "visibleWords": 23,
+    "itemList": false,
+    "robots": "index, follow",
+    "scrollHeight": 1561
+   },
+   "1440": {
+    "h1": "DELOVI ZA ŠKODA RAPID",
+    "paragraphsInMain": [
+     "Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije."
+    ],
+    "mainLinks": [
+     "/vozila/skoda",
+     "/",
+     "/vozila",
+     "/vozila/skoda",
+     "/vozila/skoda/rapid/rapid"
+    ],
+    "visibleWords": 23,
+    "itemList": false,
+    "robots": "index, follow",
+    "scrollHeight": 941
+   }
+  },
+  "/vozila/cupra": {
+   "390": {
+    "h1": "DELOVI ZA CUPRA",
+    "paragraphsInMain": [],
+    "mainLinks": [
+     "/vozila",
+     "/",
+     "/vozila",
+     "/vozila/cupra/formentor",
+     "/vozila/cupra/formentor/formentor",
+     "/vozila/cupra/leon",
+     "/vozila/cupra/leon/cupra-leon",
+     "/vozila/cupra/ateca",
+     "/vozila/cupra/ateca/cupra-ateca"
+    ],
+    "visibleWords": 4,
+    "itemList": false,
+    "robots": "index, follow",
+    "scrollHeight": 1653
+   },
+   "1440": {
+    "h1": "DELOVI ZA CUPRA",
+    "paragraphsInMain": [],
+    "mainLinks": [
+     "/vozila",
+     "/",
+     "/vozila",
+     "/vozila/cupra/formentor",
+     "/vozila/cupra/formentor/formentor",
+     "/vozila/cupra/leon",
+     "/vozila/cupra/leon/cupra-leon",
+     "/vozila/cupra/ateca",
+     "/vozila/cupra/ateca/cupra-ateca"
+    ],
+    "visibleWords": 4,
+    "itemList": false,
+    "robots": "index, follow",
+    "scrollHeight": 900
+   }
+  }
+ },
+ "seo07": {
+  "390": {
+   "homeLinksToKontakt": 0,
+   "menuLinksToKontakt": 0,
+   "menuItems": [
+    "a /delovi Delovi",
+    "a /vozila Vozila",
+    "a /za-majstore Za majstore",
+    "a /upit Upit po broju šasije",
+    "a /nalog Moj nalog",
+    "p  KONTAKT",
+    "a /upit Pošaljite upit po broju šasije"
+   ],
+   "categoryPageLinksToKontakt": [],
+   "footerText": "SKLOP Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred. DELOVI Svi delovi Delovi po vozilu Pretraga po broju dela Upit po broju šasije KUPOVINA Dostava i plaćanje Reklamacije i povrat Za majstore O nama KONTAKT Pon–pet 8–17, sub 8–14 Pošaljite upit — javljamo se u toku radnog dana © 2026 SKLOP Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik. Uslovi korišćenja Politika privatnosti Kolačići Podešavanja kolačića"
+  },
+  "1440": {
+   "homeLinksToKontakt": 0,
+   "menuLinksToKontakt": null,
+   "menuItems": null,
+   "categoryPageLinksToKontakt": [],
+   "footerText": "SKLOP Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred. DELOVI Svi delovi Delovi po vozilu Pretraga po broju dela Upit po broju šasije KUPOVINA Dostava i plaćanje Reklamacije i povrat Za majstore O nama KONTAKT Pon–pet 8–17, sub 8–14 Pošaljite upit — javljamo se u toku radnog dana © 2026 SKLOP Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik. Uslovi korišćenja Politika privatnosti Kolačići Podešavanja kolačića"
+  }
+ },
+ "seo09": [
+  {
+   "engine": "chromium",
+   "js": true,
+   "url": "/deo/ne-postoji-demo-9999",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  },
+  {
+   "engine": "chromium",
+   "js": true,
+   "url": "/delovi/nepostojeca-kategorija",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  },
+  {
+   "engine": "chromium",
+   "js": true,
+   "url": "/delovi/kocioni-diskovi/nepostojeca-marka",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  },
+  {
+   "engine": "chromium",
+   "js": true,
+   "url": "/delovi/kocioni-diskovi/volkswagen/nepostojeci-model",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  },
+  {
+   "engine": "chromium",
+   "js": true,
+   "url": "/vozila/nepostojeca",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  },
+  {
+   "engine": "chromium",
+   "js": true,
+   "url": "/vozila/volkswagen/nepostojeci",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  },
+  {
+   "engine": "chromium",
+   "js": true,
+   "url": "/vozila/volkswagen/golf/golf-99",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  },
+  {
+   "engine": "chromium",
+   "js": true,
+   "url": "/deo/KOCIONI-DISK-PREDNJI-276-24-MM-DEMO-0004",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  },
+  {
+   "engine": "chromium",
+   "js": true,
+   "url": "/ovo-ne-postoji",
+   "status": 404,
+   "title": "Stranica nije pronađena · SKLOP",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  },
+  {
+   "engine": "chromium",
+   "js": false,
+   "url": "/deo/ne-postoji-demo-9999",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": null,
+   "header": false,
+   "footer": false,
+   "main": false,
+   "bodyText": ""
+  },
+  {
+   "engine": "chromium",
+   "js": false,
+   "url": "/delovi/nepostojeca-kategorija",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": null,
+   "header": false,
+   "footer": false,
+   "main": false,
+   "bodyText": ""
+  },
+  {
+   "engine": "chromium",
+   "js": false,
+   "url": "/delovi/kocioni-diskovi/nepostojeca-marka",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": null,
+   "header": false,
+   "footer": false,
+   "main": false,
+   "bodyText": ""
+  },
+  {
+   "engine": "chromium",
+   "js": false,
+   "url": "/delovi/kocioni-diskovi/volkswagen/nepostojeci-model",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": null,
+   "header": false,
+   "footer": false,
+   "main": false,
+   "bodyText": ""
+  },
+  {
+   "engine": "chromium",
+   "js": false,
+   "url": "/vozila/nepostojeca",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": null,
+   "header": false,
+   "footer": false,
+   "main": false,
+   "bodyText": ""
+  },
+  {
+   "engine": "chromium",
+   "js": false,
+   "url": "/vozila/volkswagen/nepostojeci",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": null,
+   "header": false,
+   "footer": false,
+   "main": false,
+   "bodyText": ""
+  },
+  {
+   "engine": "chromium",
+   "js": false,
+   "url": "/vozila/volkswagen/golf/golf-99",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": null,
+   "header": false,
+   "footer": false,
+   "main": false,
+   "bodyText": ""
+  },
+  {
+   "engine": "chromium",
+   "js": false,
+   "url": "/deo/KOCIONI-DISK-PREDNJI-276-24-MM-DEMO-0004",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": null,
+   "header": false,
+   "footer": false,
+   "main": false,
+   "bodyText": ""
+  },
+  {
+   "engine": "chromium",
+   "js": false,
+   "url": "/ovo-ne-postoji",
+   "status": 404,
+   "title": "Stranica nije pronađena · SKLOP",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  },
+  {
+   "engine": "firefox",
+   "js": true,
+   "url": "/deo/ne-postoji-demo-9999",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  },
+  {
+   "engine": "firefox",
+   "js": true,
+   "url": "/vozila/nepostojeca",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  },
+  {
+   "engine": "firefox",
+   "js": true,
+   "url": "/ovo-ne-postoji",
+   "status": 404,
+   "title": "Stranica nije pronađena · SKLOP",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  },
+  {
+   "engine": "firefox",
+   "js": false,
+   "url": "/deo/ne-postoji-demo-9999",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": null,
+   "header": false,
+   "footer": false,
+   "main": false,
+   "bodyText": ""
+  },
+  {
+   "engine": "firefox",
+   "js": false,
+   "url": "/vozila/nepostojeca",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": null,
+   "header": false,
+   "footer": false,
+   "main": false,
+   "bodyText": ""
+  },
+  {
+   "engine": "firefox",
+   "js": false,
+   "url": "/ovo-ne-postoji",
+   "status": 404,
+   "title": "Stranica nije pronađena · SKLOP",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  },
+  {
+   "engine": "webkit",
+   "js": true,
+   "url": "/deo/ne-postoji-demo-9999",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  },
+  {
+   "engine": "webkit",
+   "js": true,
+   "url": "/vozila/nepostojeca",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  },
+  {
+   "engine": "webkit",
+   "js": true,
+   "url": "/ovo-ne-postoji",
+   "status": 404,
+   "title": "Stranica nije pronađena · SKLOP",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  },
+  {
+   "engine": "webkit",
+   "js": false,
+   "url": "/deo/ne-postoji-demo-9999",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": null,
+   "header": false,
+   "footer": false,
+   "main": false,
+   "bodyText": ""
+  },
+  {
+   "engine": "webkit",
+   "js": false,
+   "url": "/vozila/nepostojeca",
+   "status": 404,
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": null,
+   "header": false,
+   "footer": false,
+   "main": false,
+   "bodyText": ""
+  },
+  {
+   "engine": "webkit",
+   "js": false,
+   "url": "/ovo-ne-postoji",
+   "status": 404,
+   "title": "Stranica nije pronađena · SKLOP",
+   "h1": "Stranica nije pronađena",
+   "header": true,
+   "footer": true,
+   "main": true,
+   "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili"
+  }
+ ]
+}

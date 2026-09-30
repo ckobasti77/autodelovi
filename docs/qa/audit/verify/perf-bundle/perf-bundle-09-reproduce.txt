@@ -1,0 +1,112 @@
+== home / @390: 25 chunks fetched, 315 modules, 15 downloaded more than once, redundant 27.1 KB raw (~8.8 KB gz standalone); 14 of them involve 1adhcvv0smcza.js (app/error) = 22.2 KB raw
+   #44004 3.9 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #22016 3.3 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #76525 2.6 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #18967 2.3 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #62730 2.1 KB x2 [use strict] 3k__gv_edg8eb.js 1adhcvv0smcza.js
+   #79175 2.0 KB x3 [use strict] 2f8qbt33jjpy3.js 3k__gv_edg8eb.js 1adhcvv0smcza.js
+   #42958 1.5 KB x3 [use strict] 2f8qbt33jjpy3.js 3k__gv_edg8eb.js 1adhcvv0smcza.js
+   #40397 1.4 KB x2 [use strict] 0wnn3uk7fx3z2.js 1hvkbf0l88mq3.js
+   #44001 1.3 KB x2 [use strict] 3k__gv_edg8eb.js 1adhcvv0smcza.js
+   #95057 1.0 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #98183 0.8 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #18581 0.7 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #73668 0.3 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #5698 0.2 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #63552 0.1 KB x2 [use strict] 0sgvhbpe5nb6s.js 1adhcvv0smcza.js
+== category /delovi/kocioni-diskovi @390: 25 chunks fetched, 320 modules, 14 downloaded more than once, redundant 27.2 KB raw (~8.5 KB gz standalone); 14 of them involve 1adhcvv0smcza.js (app/error) = 22.2 KB raw
+   #44004 3.9 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #22016 3.3 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #76525 2.6 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #18967 2.3 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #62730 2.1 KB x2 [use strict] 3k__gv_edg8eb.js 1adhcvv0smcza.js
+   #79175 2.0 KB x3 [use strict] 2f8qbt33jjpy3.js 3k__gv_edg8eb.js 1adhcvv0smcza.js
+   #42958 1.5 KB x4 [use strict] 2f8qbt33jjpy3.js 1cggx7i-lhdg7.js 3k__gv_edg8eb.js 1adhcvv0smcza.js
+   #44001 1.3 KB x2 [use strict] 3k__gv_edg8eb.js 1adhcvv0smcza.js
+   #95057 1.0 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #98183 0.8 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #18581 0.7 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #73668 0.3 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #5698 0.2 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #63552 0.1 KB x2 [use strict] 0sgvhbpe5nb6s.js 1adhcvv0smcza.js
+== product /deo/kocioni-disk-prednji-276-24-mm-demo-0004 @390: 25 chunks fetched, 330 modules, 14 downloaded more than once, redundant 27.2 KB raw (~8.5 KB gz standalone); 14 of them involve 1adhcvv0smcza.js (app/error) = 22.2 KB raw
+   #44004 3.9 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #22016 3.3 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #76525 2.6 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #18967 2.3 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #62730 2.1 KB x2 [use strict] 3k__gv_edg8eb.js 1adhcvv0smcza.js
+   #79175 2.0 KB x3 [use strict] 2f8qbt33jjpy3.js 3k__gv_edg8eb.js 1adhcvv0smcza.js
+   #42958 1.5 KB x4 [use strict] 2f8qbt33jjpy3.js 3k__gv_edg8eb.js 1adhcvv0smcza.js 0iy1468xjorsv.js
+   #44001 1.3 KB x2 [use strict] 3k__gv_edg8eb.js 1adhcvv0smcza.js
+   #95057 1.0 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #98183 0.8 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #18581 0.7 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #73668 0.3 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #5698 0.2 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #63552 0.1 KB x2 [use strict] 0sgvhbpe5nb6s.js 1adhcvv0smcza.js
+== landing /ponuda/kocione-plocice-golf @390: 25 chunks fetched, 317 modules, 49 downloaded more than once, redundant 90.5 KB raw (~23.2 KB gz standalone); 12 of them involve 1adhcvv0smcza.js (app/error) = 18.8 KB raw
+   #40743 6.0 KB x2 [use strict] 00t-a16koa1p2.js 2lujup_6ek0ah.js
+   #69180 4.4 KB x2 [use strict] 404ko09-15lhs.js 1h9gpy0y5abu7.js
+   #51485 4.3 KB x2 [use strict] 404ko09-15lhs.js 1h9gpy0y5abu7.js
+   #44004 3.9 KB x3 [use strict] 29ikd2g3512r-.js 404ko09-15lhs.js 1adhcvv0smcza.js
+   #22016 3.3 KB x3 [use strict] 29ikd2g3512r-.js 404ko09-15lhs.js 1adhcvv0smcza.js
+   #846 3.3 KB x2 [use strict] 1h9gpy0y5abu7.js 00t-a16koa1p2.js
+   #8379 3.2 KB x2 [use strict] 1h9gpy0y5abu7.js 00t-a16koa1p2.js
+   #8032 2.9 KB x3 [use strict] 1h9gpy0y5abu7.js 00t-a16koa1p2.js 2lujup_6ek0ah.js
+   #21081 2.7 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #9758 2.7 KB x2 [use strict] 404ko09-15lhs.js 1h9gpy0y5abu7.js
+   #89973 2.7 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #76525 2.6 KB x3 [use strict] 29ikd2g3512r-.js 404ko09-15lhs.js 1adhcvv0smcza.js
+   #18967 2.3 KB x3 [use strict] 29ikd2g3512r-.js 404ko09-15lhs.js 1adhcvv0smcza.js
+   #39686 2.1 KB x2 [use strict] 404ko09-15lhs.js 2lujup_6ek0ah.js
+   #93633 2.1 KB x2 [use strict] 404ko09-15lhs.js 1h9gpy0y5abu7.js
+   #79175 2.0 KB x2 [use strict] 2f8qbt33jjpy3.js 1adhcvv0smcza.js
+   #62855 1.8 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #57693 1.6 KB x2 [use strict] 404ko09-15lhs.js 2lujup_6ek0ah.js
+   #46951 1.5 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #42958 1.5 KB x3 [use strict] 2f8qbt33jjpy3.js 1h9gpy0y5abu7.js 1adhcvv0smcza.js
+   #20887 1.3 KB x2 [use strict] 404ko09-15lhs.js 1h9gpy0y5abu7.js
+   #4388 1.2 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #95057 1.0 KB x3 [use strict] 29ikd2g3512r-.js 404ko09-15lhs.js 1adhcvv0smcza.js
+   #69109 0.9 KB x2 [use strict] 404ko09-15lhs.js 1h9gpy0y5abu7.js
+   #69093 0.8 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #52157 0.8 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #98183 0.8 KB x3 [use strict] 29ikd2g3512r-.js 404ko09-15lhs.js 1adhcvv0smcza.js
+   #18581 0.7 KB x3 [use strict] 29ikd2g3512r-.js 404ko09-15lhs.js 1adhcvv0smcza.js
+   #90317 0.7 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #8155 0.7 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #36327 0.6 KB x2 [use strict] 1h9gpy0y5abu7.js 00t-a16koa1p2.js
+   #33186 0.6 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #70703 0.5 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #65551 0.4 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #67585 0.3 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #73668 0.3 KB x3 [use strict] 29ikd2g3512r-.js 404ko09-15lhs.js 1adhcvv0smcza.js
+   #71567 0.2 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #5698 0.2 KB x3 [use strict] 29ikd2g3512r-.js 404ko09-15lhs.js 1adhcvv0smcza.js
+   #9885 0.2 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #64397 0.2 KB x2 [use strict] 29ikd2g3512r-.js 404ko09-15lhs.js
+   #42344 0.2 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #63599 0.2 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #38572 0.2 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #78990 0.2 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #87768 0.1 KB x2 [static/chunks/2lujup_6ek0ah.js] 30febus0elr13.js 1axg9-vmwkb-w.js
+   #60892 0.1 KB x2 [use strict] 29ikd2g3512r-.js 00t-a16koa1p2.js
+   #90815 0.1 KB x2 [static/chunks/3p2plj6_z8m-n.js] 1axg9-vmwkb-w.js 2lujup_6ek0ah.js
+   #8606 0.1 KB x2 [static/chunks/3ust1k_5l_aqb.js] 1axg9-vmwkb-w.js 2lujup_6ek0ah.js
+   #63552 0.1 KB x2 [use strict] 29ikd2g3512r-.js 1adhcvv0smcza.js
+== korpa /korpa @390: 25 chunks fetched, 312 modules, 15 downloaded more than once, redundant 26.4 KB raw (~8.7 KB gz standalone); 14 of them involve 1adhcvv0smcza.js (app/error) = 22.2 KB raw
+   #44004 3.9 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #22016 3.3 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #76525 2.6 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #18967 2.3 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #62730 2.1 KB x2 [use strict] 3k__gv_edg8eb.js 1adhcvv0smcza.js
+   #79175 2.0 KB x3 [use strict] 2f8qbt33jjpy3.js 3k__gv_edg8eb.js 1adhcvv0smcza.js
+   #42958 1.5 KB x3 [use strict] 2f8qbt33jjpy3.js 3k__gv_edg8eb.js 1adhcvv0smcza.js
+   #44001 1.3 KB x2 [use strict] 3k__gv_edg8eb.js 1adhcvv0smcza.js
+   #95057 1.0 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #98183 0.8 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #18581 0.7 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #24876 0.7 KB x2 [use strict] 42-8_0nljx4ce.js 1hvkbf0l88mq3.js
+   #73668 0.3 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #5698 0.2 KB x2 [use strict] 120epkn8j_rkq.js 1adhcvv0smcza.js
+   #63552 0.1 KB x2 [use strict] 0sgvhbpe5nb6s.js 1adhcvv0smcza.js

@@ -1,0 +1,21 @@
+seo-17 reproduce — 2026-09-30T15:00:20Z — http://localhost:3100
+
+GET /api/zdravlje -> 404
+GET /api/health -> 404
+GET /api/revalidate -> 405
+HEAD /api/zdravlje -> 404
+GET /api/zdravlje <title>: <title>Stranica nije pronađena · SKLOP</title>
+
+$ ls app/api
+atribucija
+revalidate
+
+$ find app -path '*zdravlje*'  (empty = no route file)
+
+$ grep -rn zdravlje docs/ROUTES.md docs/ARCHITECTURE.md docs/plans/01-master-plan.md
+docs/ROUTES.md:51:- `GET /api/zdravlje` — health (build id, Convex reachability) for monitoring.
+docs/ARCHITECTURE.md:241:  api/revalidate/route.ts · api/zdravlje/route.ts · feeds/* · sitemaps/* · sitemap.xml/route.ts
+docs/plans/01-master-plan.md:169:- `GET /api/zdravlje` — health (build id, Convex reachability) for monitoring.
+docs/plans/01-master-plan.md:634:  api/revalidate/route.ts · api/zdravlje/route.ts · feeds/* · sitemaps/* · sitemap.xml/route.ts
+
+$ grep -n -i 'zdravlje|health|uptime|monitor' docs/GO-LIVE-ENV.md docs/HUMAN-TODO.md docs/DECISIONS.md docs/ROADMAP.md pipeline/BRIEF.md  (no hits = not waived or scheduled elsewhere)

@@ -1,0 +1,63 @@
+{
+  "total": 200,
+  "byType": {
+    "inquiry_new": 25,
+    "quote_accepted": 1,
+    "order_new": 49,
+    "reminder": 106,
+    "mechanic_new": 13,
+    "import_done": 6
+  },
+  "reminders": [
+    {
+      "title": "Drugi podsetnik: upit UP-2026-000038 čeka odgovor",
+      "body": "Čeka 4 h 14 min radnog vremena.",
+      "at": 1790776814110.876
+    },
+    {
+      "title": "Drugi podsetnik: upit UP-2026-000040 čeka odgovor",
+      "body": "Čeka 4 h 12 min radnog vremena.",
+      "at": 1790776814110.136
+    },
+    {
+      "title": "Drugi podsetnik: porudžbina SK-2026-000062 čeka potvrdu",
+      "body": "Čeka 4 h 12 min radnog vremena.",
+      "at": 1790776814109.8135
+    },
+    {
+      "title": "Drugi podsetnik: upit UP-2026-000039 čeka odgovor",
+      "body": "Čeka 4 h 12 min radnog vremena.",
+      "at": 1790776814109.768
+    },
+    {
+      "title": "Drugi podsetnik: porudžbina SK-2026-000063 čeka potvrdu",
+      "body": "Čeka 4 h 12 min radnog vremena.",
+      "at": 1790776814109.5603
+    },
+    {
+      "title": "Drugi podsetnik: porudžbina SK-2026-000061 čeka potvrdu",
+      "body": "Čeka 4 h 14 min radnog vremena.",
+      "at": 1790776814109.5034
+    },
+    {
+      "title": "Drugi podsetnik: porudžbina SK-2026-000052 čeka potvrdu",
+      "body": "Čeka 4 h 10 min radnog vremena.",
+      "at": 1790775914109.2744
+    },
+    {
+      "title": "Drugi podsetnik: upit UP-2026-000037 čeka odgovor",
+      "body": "Čeka 4 h 0 min radnog vremena.",
+      "at": 1790775914107.8616
+    }
+  ],
+  "sampleKeys": [
+    "_id",
+    "body",
+    "createdAt",
+    "href",
+    "kind",
+    "read",
+    "title"
+  ],
+  "kpis": "[Request ID: 17620640d0cf6f07] Server Error\nArgumentValidationError: Object is missing the required "
+}

@@ -1,0 +1,19 @@
+perf-bundle track - library cost measured with esbuild 0.x (node_modules/.bin/esbuild --bundle --minify --format=esm --platform=browser),
+entries written to a temporary folder and deleted afterwards; sizes gzip level 9 default of zlib.gzipSync. 2026-09-30.
+
+zod (4.6.5) - same small object schema (string trim/min/max, email, enum, boolean, superRefine):
+  import { z } from "zod"          442.5 KB raw   91.0 KB gz   (all ~40 locales + JSON Schema kept; "Nieprawid" present)
+  import * as z from "zod"          82.8 KB raw   24.4 KB gz
+  import * as z from "zod/mini"     16.1 KB raw    5.6 KB gz
+real schemas lib/validation/checkout.ts + inquiry.ts bundled as-is: 449.4 KB raw / 93.8 KB gz (with zod external: 7.0 KB raw / 3.0 KB gz)
+production chunk .next/static/chunks/1uyyf-z7kpx1w.js (zod + react-hook-form + zodResolver): 393.6 KB raw / 101.1 KB gz;
+  locale strings present: "Nieprawid" x13, Chinese "无效" x13, Russian "Неверн" x13, "toJSONSchema" x5, "fromJSONSchema" x2
+  routes: (shop)/porudzbina, (shop)/upit, (shop)/za-majstore/registracija (grep of .next/server/app/**/page_client-reference-manifest.js)
+
+gsap 3.15 (react external):
+  gsap core                                   69.0 KB raw  27.1 KB gz
+  + ScrollTrigger                            112.5 KB raw  44.4 KB gz   (+17.3 KB gz)
+  + ScrollToPlugin                            72.8 KB raw  28.5 KB gz   (+1.4 KB gz)
+  + CustomEase                                76.0 KB raw  30.2 KB gz   (+3.1 KB gz)
+  core + ScrollTrigger + ScrollTo + CustomEase + useGSAP (= lib/gsap/client.ts)  124.2 KB raw  49.3 KB gz  (plugins = +22.2 KB gz)
+production chunk .next/static/chunks/1tr6a7zmh41cy.js (gsap + 3 plugins + constants/motion): 121.4 KB raw / 47.7-48.4 KB gz, in the first load of all 12 templates

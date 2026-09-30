@@ -1,0 +1,55 @@
+# seo-01 verifier evidence (2026-09-30T16:58:48+02:00), server http://localhost:3100
+
+$ curl -s http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 | grep -oE "<title>[^<]*|og:title\" content=\"[^\"]*|twitter:title\" content=\"[^\"]*"
+<title>Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP
+og:title" content="Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP
+twitter:title" content="Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP
+
+$ curl -s http://localhost:3100/deo/kocione-plocice-prednje-sa-senzorom-demo-0009 | grep -oE "<title>[^<]*|og:title\" content=\"[^\"]*|twitter:title\" content=\"[^\"]*"
+<title>Kočione pločice prednje, a enzorom 1K0 698 406 F | SKLOP
+og:title" content="Kočione pločice prednje, a enzorom 1K0 698 406 F | SKLOP
+twitter:title" content="Kočione pločice prednje, a enzorom 1K0 698 406 F | SKLOP
+
+$ curl -s http://localhost:3100/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-0057 | grep -oE "<title>[^<]*"
+<title>Set zupča tog kaiša a vodenom pumpom 1.9 TDI 038 121 662
+
+$ grep -nE "replace\(/\[?s|S\*" lib/seo/templates.ts
+54:  const name = p.name.replace(/s+/g, " ").trim();
+88:  const vehicles = room > 12 ? p.fitmentSummary.slice(0, room).replace(/[s,;]+S*$/, "") : "";
+
+$ node scripts/qa/audit/verify-seo-01-crawl.mjs   (all 157 URLs of /sitemaps/proizvodi-1.xml, raw HTML)
+{
+  "base": "http://localhost:3100",
+  "products": 157,
+  "namesWithLowercaseS": 87,
+  "titleNotStartingWithName": 87,
+  "badWithoutS": 0,
+  "goodWithS": 0,
+  "ogEqualsTitle": 157,
+  "twEqualsTitle": 157,
+  "descStartsWithName": 157,
+  "h1EqualsLdName": 157
+}
+
+# Same root cause, line 88 (meta description vehicle-list shortening): /[s,;]+S*$/ instead of /[\s,;]+\S*$/
+# -> truncated descriptions are cut mid-word (32 of 157 product descriptions contain the ellipsis):
+/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005
+  Kočioni disk prednji 340 × 30 mm, GTI (Original VAG, Original VAG) za VW Golf VII, VW Golf V… Cena 18.900 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 615 666 A.
+/deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013
+  Kočione pločice zadnje, elektronska ručna (Febi Bilstein, Aftermarket) za VW Golf VII, VW Go… Cena 3.490 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 698 782 KA.
+/deo/set-za-reparaciju-kocione-celjusti-prednji-demo-0019
+  Set za reparaciju kočione čeljusti, prednji (Febi Bilstein, Aftermarket) za VW Golf V, VW Gol… Cena 1.490 RSD sa PDV-om. Na stanju. Kat. br. 1K0 615 324 H.
+/deo/motor-klapni-usisne-grane-2-0-tdi-demo-0052
+  Motor klapni usisne grane 2.0 TDI (Pierburg, OEM kvalitet) za VW Golf V, VW Golf VI i jo… Cena 18.900 RSD sa PDV-om. Po porudžbini. Kat. br. 03L 129 304 H.
+/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-0057
+  Set zupčastog kaiša sa vodenom pumpom 1.9 TDI (INA, OEM kvalitet) za VW Golf IV, VW Golf V i j… Cena 16.900 RSD sa PDV-om. Na stanju. Kat. br. 038 121 662.
+/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-2-0-tdi-demo-0058
+  Set zupčastog kaiša sa vodenom pumpom 2.0 TDI (Gates, OEM kvalitet) za VW Golf V, VW Golf V… Cena 19.900 RSD sa PDV-om. Na stanju. Kat. br. 04L 121 248 DR.
+
+# Regex behaviour on the visible prefix:
+broken /[s,;]+S*$/  -> "VW Golf VII, VW Go"
+fixed  /[\s,;]+\S*$/ -> "VW Golf VII, VW"
+broken /s+/g -> "Kočione pločice prednje,  a  enzorom"
+fixed  /\s+/g -> "Kočione pločice prednje, sa senzorom"
+
+# Unit test gap: tests/unit/seo/metadata.test.ts:81-90 uses a name with an s but only asserts length and endsWith(code).

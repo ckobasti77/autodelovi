@@ -1,0 +1,19 @@
+{
+  "inquiry": "UP-2026-000063",
+  "inquiryStoredCampaignLength": 200000,
+  "inquiryStoredGclidLength": 3010,
+  "inquiryStoredGclidSample": "<>\"'=;|<>\"'=;|<>\"'=;|",
+  "inquiryExportBytes": 204646,
+  "inquiryAdminListCampaignLength": 200000,
+  "inquiryAdminListRowBytes": 200466,
+  "inquiryDefaultTabFirstPageBytes": 424882,
+  "inquiryDefaultTabContainsRow": true,
+  "inquiryStillInDefaultTabAfterClose": true,
+  "order": "SK-2026-000102",
+  "orderAdminDetailCompanyStreetLength": 20000,
+  "orderAdminDetailCompanyPostalCode": "ABC",
+  "orderStoredCompanyStreetLength": 20000,
+  "orderStoredCompanyPostalCode": "ABC",
+  "orderStoredCampaignLength": 50000,
+  "orderAdminListCampaignLength": 50000
+}

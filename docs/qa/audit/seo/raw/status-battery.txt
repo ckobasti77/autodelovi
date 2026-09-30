@@ -1,0 +1,29 @@
+/ovo-ne-postoji | 404  86816 | robots="noindex" | canon= | Stranica nije pronađena · SKLOP
+/deo/ne-postoji-demo-9999 | 404  67236 | robots="noindex" | canon= | SKLOP — Rasklopi auto. Nađi deo.
+/delovi/nepostojeca-kategorija | 404  67296 | robots="noindex" | canon= | SKLOP — Rasklopi auto. Nađi deo.
+/delovi/kocioni-diskovi/nepostojeca-marka | 404  67994 | robots="noindex" | canon= | SKLOP — Rasklopi auto. Nađi deo.
+/delovi/kocioni-diskovi/volkswagen/nepostojeci-model | 404  68484 | robots="noindex" | canon= | SKLOP — Rasklopi auto. Nađi deo.
+/delovi/kocioni-diskovi/volkswagen/golf/visak | 404  86898 | robots="noindex" | canon= | Stranica nije pronađena · SKLOP
+/vozila/nepostojeca | 404  66716 | robots="noindex" | canon= | SKLOP — Rasklopi auto. Nađi deo.
+/vozila/volkswagen/nepostojeci | 404  67238 | robots="noindex" | canon= | SKLOP — Rasklopi auto. Nađi deo.
+/vozila/volkswagen/golf/golf-99 | 404  68186 | robots="noindex" | canon= | SKLOP — Rasklopi auto. Nađi deo.
+/delovi/kocioni-diskovi/ | 308 http://localhost:3100/delovi/kocioni-diskovi 23 | robots= | canon= | 
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004/ | 308 http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 45 | robots= | canon= | 
+/Delovi/Kocioni-Diskovi | 404  86828 | robots="noindex" | canon= | Stranica nije pronađena · SKLOP
+/DEO/kocioni-disk-prednji-276-24-mm-demo-0004 | 404  86866 | robots="noindex" | canon= | Stranica nije pronađena · SKLOP
+/deo/KOCIONI-DISK-PREDNJI-276-24-MM-DEMO-0004 | 404  67356 | robots="noindex" | canon= | SKLOP — Rasklopi auto. Nađi deo.
+/delovi/kocioni-diskovi?strana=2 | 200  243153 | robots="index, follow" | canon="http://localhost:3000/delovi/kocioni-diskovi?strana=2" | Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra… | SKLOP
+/delovi/kocioni-diskovi?strana=99 | 200  243161 | robots="index, follow" | canon="http://localhost:3000/delovi/kocioni-diskovi?strana=99" | Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra… | SKLOP
+/delovi/kocioni-diskovi?strana=abc | 200  243105 | robots="index, follow" | canon="http://localhost:3000/delovi/kocioni-diskovi" | Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP
+/delovi/kocioni-diskovi?strana=1 | 200  243099 | robots="index, follow" | canon="http://localhost:3000/delovi/kocioni-diskovi" | Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP
+/delovi/kocnice?strana=2 | 200  110170 | robots="index, follow" | canon="http://localhost:3000/delovi/kocnice" | Kočnice za VW, Audi, Škoda, SEAT i Cupra | SKLOP
+/lab/koncept | 308 http://localhost:3100/styleguide 11 | robots= | canon= | 
+/styleguide | 200  484425 | robots="noindex, nofollow" | canon= | Stilski vodič · SKLOP
+/delovi/kocioni-diskovi/cupra/formentor | 200  181667 | robots="noindex, follow" | canon="http://localhost:3000/delovi/kocioni-diskovi/cupra/formentor" | Kočioni diskovi za Cupra Formentor | SKLOP
+/delovi/turbina/cupra/ateca | 200  182003 | robots="noindex, follow" | canon="http://localhost:3000/delovi/turbina/cupra/ateca" | Turbina (turbopunjač) za Cupra Ateca | SKLOP
+/index.html | 404  85711 | robots="noindex" | canon= | Stranica nije pronađena · SKLOP
+/deo | 404  86805 | robots="noindex" | canon= | Stranica nije pronađena · SKLOP
+/delovi/kocioni-diskovi/volkswagen/golf?generacija=golf-7 | 200  254257 | robots="noindex, follow" | canon="http://localhost:3000/delovi/kocioni-diskovi/volkswagen/golf" | Kočioni diskovi za VW Golf | SKLOP
+/delovi/kocioni-diskovi/volkswagen?utm_source=google | 200  285366 | robots="noindex, follow" | canon="http://localhost:3000/delovi/kocioni-diskovi/volkswagen" | Kočioni diskovi za Volkswagen — cene i stanje | SKLOP
+/?utm_source=google&gclid=x | 200  252567 | robots="index, follow" | canon="http://localhost:3000" | Auto delovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004?utm_source=meta | 200  225859 | robots="index, follow" | canon="http://localhost:3000/deo/kocioni-disk-prednji-276-24-mm-demo-0004" | Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP

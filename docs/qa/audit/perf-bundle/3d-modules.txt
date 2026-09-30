@@ -1,0 +1,26 @@
+  643.0 raw  170.6 gz  3loc6izf4ows2.js #8266  [PMREMGenerator,ShaderChunk,ShaderLib,UniformsLib,WebGLCubeRenderTarget,WebGLRenderer,WebGLUtils]  ,alphahash_pars_fragment: | ,alphamap_fragment: | ,alphamap_pars_fragment: | ,alphatest_fragment:
+  374.1 raw   98.7 gz  0i-5efvfrwjiv.js #90072  [ACESFilmicToneMapping,AddEquation,AddOperation,AdditiveAnimationBlendMode,AdditiveBlending,AgXToneMapping,AlphaFormat,AlwaysCompare]  attached | detached | srgb-linear | linear
+   88.9 raw   27.0 gz  0nvty3axw6gpe.js #48815  [shaderDistanceFunction,shaderIntersectFunction,shaderStructs]  shaderDistanceFunction | shaderIntersectFunction | shaderStructs | SKIP_GENERATION
+   57.1 raw   10.2 gz  3loc6izf4ows2.js #36381  []  schemaVersion | generatedAt | 2026-09-29T20:36:01Z | source
+    9.0 raw    3.5 gz  103_o3v2fee5x.js #78240  [PartPanel,md,responsive,peek]  ===e?(0,t.jsxs)( | ,{className: | aria-hidden | generation_only
+    3.4 raw    1.4 gz  3loc6izf4ows2.js #45015  []  object | function | function | function
+    3.3 raw    0.9 gz  103_o3v2fee5x.js #17769+74174  [SquareHalfBottomIcon]  }))],[ | ,opacity: | }),t.createElement( | }))],[
+    3.1 raw    1.6 gz  103_o3v2fee5x.js #85764  [PART_NOTES]  PART_NOTES | ,turbina: | ,interkuler: | usisna-grana
+    3.1 raw    1.6 gz  0e7n8ktdpx6ij.js #85764  [PART_NOTES]  PART_NOTES | ,turbina: | ,interkuler: | usisna-grana
+    2.7 raw    1.0 gz  103_o3v2fee5x.js #22969  [QuestionIcon]  }))],[ | ,opacity: | }),t.createElement( | }))],[
+    2.3 raw    1.1 gz  0e7n8ktdpx6ij.js #76801  [HeroCallout,ready]  HeroCallout | hidden | visible | ,{ref:k,
+    1.8 raw    1.0 gz  0yenm6rgh0wzh.js #33869  [PartsListDialog,md]  PartsListDialog | [&_[data-parts-list]]:min-h-0 | data-parts-list | data-testid
+    1.8 raw    1.0 gz  103_o3v2fee5x.js #63380  [dinarsToPara,number,dinars]  always | }}function r(e,t){let a=Number((t+ | ).slice(0,2)),n=+(Number(t.charAt(2)|| | Amount is too large
+    1.8 raw    0.6 gz  103_o3v2fee5x.js #49427  [ClockIcon]  }))],[ | ,opacity: | }),t.createElement( | }))],[
+    1.6 raw    0.7 gz  103_o3v2fee5x.js #22563  [Price,retail,m,start,mechanic,div,off,end]  type-numeral-s | type-numeral-m | type-numeral-l | ,{className:(0,a.cn)(
+    1.5 raw    0.5 gz  103_o3v2fee5x.js #58243  [CheckIcon]  }))],[ | ,opacity: | }),t.createElement( | }))],[
+    1.5 raw    0.8 gz  103_o3v2fee5x.js #42958  [formatPhone]  ]),a=new Set( | .split( | string | )?l=i.slice(2):i.startsWith(
+    1.2 raw    0.6 gz  103_o3v2fee5x.js #35881  [StockBadge,inline]  Na stanju | Malo na stanju | Po porudžbini | Nema na stanju
+    0.9 raw    0.4 gz  103_o3v2fee5x.js #62741  [formatDate,formatDateShort,formatDateTime]  ,{timeZone: | ,year: | ,month: | 2-digit
+    0.8 raw    0.4 gz  103_o3v2fee5x.js #97141  [useCategoryCounts,skip]  useCategoryCounts
+    0.8 raw    0.4 gz  0yenm6rgh0wzh.js #97141  [useCategoryCounts,skip]  useCategoryCounts
+    0.8 raw    0.4 gz  0e7n8ktdpx6ij.js #97141  [useCategoryCounts,skip]  useCategoryCounts
+    0.8 raw    0.4 gz  3loc6izf4ows2.js #52822  []  function
+    0.7 raw    0.4 gz  103_o3v2fee5x.js #24876  [Skeleton,SkeletonRegion,div,true,off,span,status]  aria-hidden | ,className:(0,a.cn)( | ,e),...r})}e.s([ | SkeletonRegion
+    0.7 raw    0.4 gz  3loc6izf4ows2.js #55838  []  function
+modules: 34, sum raw 1208.3 KB

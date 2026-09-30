@@ -1,0 +1,23 @@
+/** vis-store route map (shared by vis-store scripts). */
+export const ROUTES = {
+  home: "/",
+  delovi: "/delovi",
+  hub: "/delovi/kocnice",
+  cat: "/delovi/kocioni-diskovi",
+  catf: "/delovi/kocioni-diskovi?dostupnost=na-stanju&marka=volkswagen&model=golf&generacija=golf-7",
+  landb: "/delovi/kocioni-diskovi/volkswagen",
+  landm: "/delovi/kocioni-diskovi/volkswagen/golf",
+  pin: "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  pout: "/deo/kocione-plocice-prednje-demo-0012",
+  porder: "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-e007",
+  plong: "/deo/kociona-celjust-zadnja-desna-sa-motorom-rucne-demo-0018",
+  soem: "/pretraga?q=5Q0615505R",
+  sname: "/pretraga?q=disk",
+  szero: "/pretraga?q=XQ9Z%20777%20000",
+  voz: "/vozila",
+  vozb: "/vozila/volkswagen",
+  vozm: "/vozila/volkswagen/golf",
+  vozg: "/vozila/volkswagen/golf/golf-7",
+  nf: "/ovo-ne-postoji",
+  sg: "/styleguide",
+};

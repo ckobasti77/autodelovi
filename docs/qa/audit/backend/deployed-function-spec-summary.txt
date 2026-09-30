@@ -1,0 +1,9 @@
+deployed total 305 public 230 internal 75
+public without returns: auth.js:isAuthenticated, auth.js:signIn, auth.js:signOut
+{ Query: 122, Action: 2, Mutation: 106 }
+public actions: auth.js:signIn, auth.js:signOut
+http: GET undefined, GET undefined, POST undefined
+deployed public not in source SKLOP: [ 'auth:isAuthenticated', 'auth:signIn', 'auth:signOut' ]
+source SKLOP not deployed public: []
+deployed internal not in source: [ 'auth:store' ]
+source internal not deployed: []

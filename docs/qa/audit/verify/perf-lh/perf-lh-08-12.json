@@ -1,0 +1,93 @@
+{
+ "base": "http://localhost:3200",
+ "csp": [
+  {
+   "path": "/upit",
+   "csp": [
+    {
+     "directive": "script-src",
+     "blocked": "eval",
+     "source": "1uyyf-z7kpx1w.js",
+     "disposition": "enforce"
+    }
+   ],
+   "zodChunkLoaded": true,
+   "chunkCount": 25
+  },
+  {
+   "path": "/za-majstore/registracija",
+   "csp": [
+    {
+     "directive": "script-src",
+     "blocked": "eval",
+     "source": "1uyyf-z7kpx1w.js",
+     "disposition": "enforce"
+    }
+   ],
+   "zodChunkLoaded": true,
+   "chunkCount": 25
+  }
+ ],
+ "targetSize": {
+  "beforeScroll": {
+   "catsSection": {
+    "top": 4113,
+    "bottom": 5148,
+    "h": 1035
+   },
+   "lastCardBottom": 5763,
+   "nextSectionTop": 5148,
+   "links": [
+    {
+     "text": "Brizgaljke i pumpa goriva3 artikla",
+     "top": 5526,
+     "h": 238,
+     "inCv": true
+    },
+    {
+     "text": "Usisna grana i kućište filtera",
+     "top": 5482,
+     "h": 44,
+     "inCv": false
+    },
+    {
+     "text": "Brizgaljke i pumpa goriva",
+     "top": 5526,
+     "h": 44,
+     "inCv": false
+    }
+   ],
+   "axe": []
+  },
+  "afterScroll": {
+   "catsSection": {
+    "top": 3891,
+    "bottom": 5609,
+    "h": 1718
+   },
+   "lastCardBottom": 5542,
+   "nextSectionTop": 5609,
+   "links": [
+    {
+     "text": "Brizgaljke i pumpa goriva3 artikla",
+     "top": 5304,
+     "h": 238,
+     "inCv": true
+    },
+    {
+     "text": "Usisna grana i kućište filtera",
+     "top": 5943,
+     "h": 44,
+     "inCv": false
+    },
+    {
+     "text": "Brizgaljke i pumpa goriva",
+     "top": 5987,
+     "h": 44,
+     "inCv": false
+    }
+   ],
+   "axe": []
+  }
+ }
+}

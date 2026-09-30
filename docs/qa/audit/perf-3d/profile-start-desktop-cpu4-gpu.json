@@ -1,0 +1,388 @@
+[
+ {
+  "run": 0,
+  "vp": "desktop",
+  "cpu": 4,
+  "gpu": true,
+  "summary": [
+   {
+    "at": 2005,
+    "ms": 1223,
+    "self": [
+     "884 ms getProgramParameter",
+     "26 ms (anon) 3loc6izf4ows2.js:353:110807",
+     "20 ms (anon) 3loc6izf4ows2.js:353:109695",
+     "13 ms parse 3loc6izf4ows2.js:353:64521",
+     "12 ms ed 0i-5efvfrwjiv.js:1:84136",
+     "11 ms _invokeOne 3loc6izf4ows2.js:353:86774",
+     "9 ms texSubImage2D",
+     "8 ms parse 3loc6izf4ows2.js:353:108166"
+    ],
+    "inclusiveNamed": [
+     "1024 ms _fromTexture 3loc6izf4ows2.js:1:177308",
+     "1024 ms fromEquirectangular 3loc6izf4ows2.js:1:176197",
+     "985 ms render 3loc6izf4ows2.js:342:46299",
+     "945 ms renderBufferDirect 3loc6izf4ows2.js:342:30244",
+     "915 ms _applyGGXFilter 3loc6izf4ows2.js:165:1868",
+     "915 ms _applyPMREM 3loc6izf4ows2.js:165:1706",
+     "888 ms getUniforms 3loc6izf4ows2.js:318:2279",
+     "884 ms getProgramParameter",
+     "92 ms _textureToCubeUV 3loc6izf4ows2.js:165:1203",
+     "73 ms parse 3loc6izf4ows2.js:353:108166",
+     "66 ms getDependencies 3loc6izf4ows2.js:353:88020",
+     "65 ms loadScene 3loc6izf4ows2.js:353:103366",
+     "65 ms getDependency 3loc6izf4ows2.js:353:87043",
+     "62 ms _invokeOne 3loc6izf4ows2.js:353:86774",
+     "62 ms loadNode 3loc6izf4ows2.js:353:101459",
+     "57 ms _loadNodeShallow 3loc6izf4ows2.js:353:102117",
+     "49 ms createNodeMesh 3loc6izf4ows2.js:353:101146",
+     "48 ms loadMesh 3loc6izf4ows2.js:353:97128",
+     "34 ms loadGeometries 3loc6izf4ows2.js:353:96289",
+     "27 ms parseAsync 3loc6izf4ows2.js:353:65885",
+     "26 ms parse 3loc6izf4ows2.js:353:64521",
+     "19 ms setRenderTarget 3loc6izf4ows2.js:342:49008",
+     "17 ms toHalfFloat 0i-5efvfrwjiv.js:1:333228",
+     "16 ms upload 3loc6izf4ows2.js:296:9720",
+     "14 ms acquireProgram 3loc6izf4ows2.js:318:14338"
+    ]
+   },
+   {
+    "at": 3454,
+    "ms": 912,
+    "self": [
+     "162 ms getProgramParameter",
+     "92 ms texSubImage2D",
+     "51 ms (garbage collector)",
+     "46 ms rE 0i-5efvfrwjiv.js:1:224847",
+     "43 ms getParameters 3loc6izf4ows2.js:318:4231",
+     "35 ms shaderSource",
+     "33 ms e5 3loc6izf4ows2.js:342:42921",
+     "20 ms tr 3loc6izf4ows2.js:296:10779"
+    ],
+    "inclusiveNamed": [
+     "463 ms render 3loc6izf4ows2.js:342:46299",
+     "427 ms renderBufferDirect 3loc6izf4ows2.js:342:30244",
+     "213 ms traverse 0i-5efvfrwjiv.js:1:58737",
+     "207 ms compile 3loc6izf4ows2.js:342:37858",
+     "207 ms compileAsync 3loc6izf4ows2.js:342:38716",
+     "178 ms getUniforms 3loc6izf4ows2.js:318:2279",
+     "162 ms getProgramParameter",
+     "101 ms initTexture 3loc6izf4ows2.js:342:57019",
+     "92 ms texSubImage2D",
+     "92 ms texSubImage2D 3loc6izf4ows2.js:318:42185",
+     "90 ms acquireProgram 3loc6izf4ows2.js:318:14338",
+     "71 ms setup 3loc6izf4ows2.js:1:168195",
+     "53 ms getUniforms 3loc6izf4ows2.js:318:14212",
+     "51 ms getParameters 3loc6izf4ows2.js:318:4231",
+     "49 ms P.<computed>",
+     "35 ms shaderSource",
+     "25 ms update 3loc6izf4ows2.js:1:782",
+     "22 ms refreshMaterialUniforms 3loc6izf4ows2.js:342:11511",
+     "22 ms upload 3loc6izf4ows2.js:296:9720",
+     "17 ms clone 0i-5efvfrwjiv.js:1:125416",
+     "17 ms bufferData",
+     "16 ms setValue 3loc6izf4ows2.js:296:9586"
+    ]
+   },
+   {
+    "at": 1108,
+    "ms": 375,
+    "self": [
+     "277 ms H turbopack-324-cyruufpbq.js:1:7181",
+     "25 ms (anon) 3loc6izf4ows2.js:1:118",
+     "13 ms (anon) 0i-5efvfrwjiv.js:1:119",
+     "10 ms c turbopack-324-cyruufpbq.js:1:813",
+     "8 ms rE 0i-5efvfrwjiv.js:1:224847",
+     "7 ms i 3loc6izf4ows2.js:353:135218",
+     "5 ms tE 0i-5efvfrwjiv.js:1:54010",
+     "4 ms (anon) 3loc6izf4ows2.js:353:111430"
+    ],
+    "inclusiveNamed": [
+     "3 ms nV.exports 3loc6izf4ows2.js:342:68515",
+     "2 ms updateProjectionMatrix 0i-5efvfrwjiv.js:1:269638",
+     "1 ms setRGB 0i-5efvfrwjiv.js:1:68529",
+     "1 ms updateMorphTargets 0i-5efvfrwjiv.js:1:136915",
+     "1 ms convert 0i-5efvfrwjiv.js:1:23305",
+     "1 ms colorSpaceToWorking 0i-5efvfrwjiv.js:1:23726",
+     "1 ms setHex 0i-5efvfrwjiv.js:1:68393"
+    ]
+   },
+   {
+    "at": 5602,
+    "ms": 275,
+    "self": [
+     "63 ms sN 0i-5efvfrwjiv.js:1:183806",
+     "48 ms getProgramParameter",
+     "12 ms renderBufferDirect 3loc6izf4ows2.js:342:30244",
+     "11 ms i 3loc6izf4ows2.js:318:15467",
+     "9 ms createVertexArray",
+     "8 ms upload 3loc6izf4ows2.js:296:9720",
+     "8 ms sort 3loc6izf4ows2.js:318:16390",
+     "7 ms (anon) 3loc6izf4ows2.js:451:4341"
+    ],
+    "inclusiveNamed": [
+     "161 ms render 3loc6izf4ows2.js:342:46299",
+     "114 ms renderBufferDirect 3loc6izf4ows2.js:342:30244",
+     "48 ms getProgramParameter",
+     "48 ms getUniforms 3loc6izf4ows2.js:318:2279",
+     "16 ms init 0nvty3axw6gpe.js:503:3663",
+     "16 ms init 0nvty3axw6gpe.js:503:14681",
+     "15 ms setup 3loc6izf4ows2.js:1:168195",
+     "14 ms push 3loc6izf4ows2.js:318:15964",
+     "12 ms intersectsObject 0i-5efvfrwjiv.js:1:149747",
+     "10 ms refreshMaterialUniforms 3loc6izf4ows2.js:342:11511",
+     "10 ms intersectsFrustum 0i-5efvfrwjiv.js:1:169705",
+     "9 ms createVertexArray",
+     "9 ms sort 3loc6izf4ows2.js:318:16390",
+     "8 ms upload 3loc6izf4ows2.js:296:9720"
+    ]
+   },
+   {
+    "at": 1781,
+    "ms": 170,
+    "self": [
+     "12 ms getExtension",
+     "10 ms eV 3loc6izf4ows2.js:342:25251",
+     "9 ms getContext",
+     "8 ms render 3loc6izf4ows2.js:342:46299",
+     "8 ms d 3loc6izf4ows2.js:353:48505",
+     "7 ms setSize 3loc6izf4ows2.js:342:27348",
+     "6 ms (anon) 3loc6izf4ows2.js:349:86044",
+     "4 ms (anon) 3loc6izf4ows2.js:353:41529"
+    ],
+    "inclusiveNamed": [
+     "64 ms configure 3loc6izf4ows2.js:353:44839",
+     "60 ms render 3loc6izf4ows2.js:353:48806",
+     "19 ms render 3loc6izf4ows2.js:342:46299",
+     "12 ms getExtension",
+     "12 ms init 3loc6izf4ows2.js:250:2502",
+     "9 ms getContext"
+    ]
+   },
+   {
+    "at": 4675,
+    "ms": 144,
+    "self": [
+     "70 ms sN 0i-5efvfrwjiv.js:1:183806",
+     "15 ms (garbage collector)",
+     "8 ms clone 0i-5efvfrwjiv.js:1:13976",
+     "8 ms getX 0i-5efvfrwjiv.js:1:103678",
+     "6 ms (anon) 3loc6izf4ows2.js:451:4341",
+     "6 ms (anon) 0nvty3axw6gpe.js:503:6395",
+     "5 ms getZ 0i-5efvfrwjiv.js:1:103896",
+     "5 ms e 0nvty3axw6gpe.js:503:4382"
+    ],
+    "inclusiveNamed": [
+     "22 ms init 0nvty3axw6gpe.js:503:3663",
+     "22 ms init 0nvty3axw6gpe.js:503:14681",
+     "15 ms fromBufferAttribute 0i-5efvfrwjiv.js:1:19346",
+     "8 ms clone 0i-5efvfrwjiv.js:1:13976",
+     "8 ms getX 0i-5efvfrwjiv.js:1:103678",
+     "5 ms getZ 0i-5efvfrwjiv.js:1:103896",
+     "5 ms getNormal 0i-5efvfrwjiv.js:1:74974",
+     "5 ms getNormal 0i-5efvfrwjiv.js:1:76711",
+     "3 ms computePrimitiveBounds 0nvty3axw6gpe.js:503:37953",
+     "1 ms getY 0i-5efvfrwjiv.js:1:103786"
+    ]
+   }
+  ]
+ },
+ {
+  "run": 1,
+  "vp": "desktop",
+  "cpu": 4,
+  "gpu": true,
+  "summary": [
+   {
+    "at": 3138,
+    "ms": 340,
+    "self": [
+     "155 ms sN 0i-5efvfrwjiv.js:1:183806",
+     "27 ms (anon) 3loc6izf4ows2.js:451:4341",
+     "13 ms renderBufferDirect 3loc6izf4ows2.js:342:30244",
+     "8 ms (anon) 0nvty3axw6gpe.js:503:6395",
+     "8 ms getProgramParameter",
+     "6 ms (garbage collector)",
+     "6 ms getX 0i-5efvfrwjiv.js:1:86433",
+     "6 ms e8 3loc6izf4ows2.js:342:42372"
+    ],
+    "inclusiveNamed": [
+     "101 ms render 3loc6izf4ows2.js:342:46299",
+     "60 ms renderBufferDirect 3loc6izf4ows2.js:342:30244",
+     "28 ms init 0nvty3axw6gpe.js:503:3663",
+     "28 ms init 0nvty3axw6gpe.js:503:14681",
+     "16 ms intersectsFrustum 0i-5efvfrwjiv.js:1:169705",
+     "15 ms intersectsObject 0i-5efvfrwjiv.js:1:149747",
+     "14 ms computeBoundingSphere 0i-5efvfrwjiv.js:1:94095",
+     "12 ms computePrimitiveBounds 0nvty3axw6gpe.js:503:37953",
+     "9 ms fromBufferAttribute 0i-5efvfrwjiv.js:1:19346",
+     "9 ms setup 3loc6izf4ows2.js:1:168195",
+     "8 ms getZ 0i-5efvfrwjiv.js:1:103896",
+     "8 ms getUniforms 3loc6izf4ows2.js:318:2279",
+     "8 ms getProgramParameter",
+     "7 ms setFromBufferAttribute 0i-5efvfrwjiv.js:1:78256",
+     "6 ms getX 0i-5efvfrwjiv.js:1:86433",
+     "6 ms update 3loc6izf4ows2.js:250:6867",
+     "5 ms updateMatrixWorld 0i-5efvfrwjiv.js:1:59317",
+     "5 ms P.<computed>",
+     "5 ms expandByPoint 0i-5efvfrwjiv.js:1:79152",
+     "5 ms upload 3loc6izf4ows2.js:296:9720",
+     "5 ms setValue 3loc6izf4ows2.js:296:9586",
+     "5 ms update 3loc6izf4ows2.js:250:3758",
+     "5 ms update 3loc6izf4ows2.js:1:782",
+     "4 ms refreshMaterialUniforms 3loc6izf4ows2.js:342:11511"
+    ]
+   },
+   {
+    "at": 1822,
+    "ms": 329,
+    "self": [
+     "71 ms texSubImage2D",
+     "15 ms P.<computed>",
+     "13 ms getParameters 3loc6izf4ows2.js:318:4231",
+     "12 ms getProgramParameter",
+     "10 ms rE 0i-5efvfrwjiv.js:1:224847",
+     "9 ms tr 3loc6izf4ows2.js:296:10779",
+     "8 ms shaderSource",
+     "6 ms updateMatrixWorld 0i-5efvfrwjiv.js:1:59317"
+    ],
+    "inclusiveNamed": [
+     "101 ms render 3loc6izf4ows2.js:342:46299",
+     "80 ms initTexture 3loc6izf4ows2.js:342:57019",
+     "71 ms texSubImage2D",
+     "71 ms texSubImage2D 3loc6izf4ows2.js:318:42185",
+     "71 ms renderBufferDirect 3loc6izf4ows2.js:342:30244",
+     "57 ms compileAsync 3loc6izf4ows2.js:342:38716",
+     "57 ms traverse 0i-5efvfrwjiv.js:1:58737",
+     "56 ms compile 3loc6izf4ows2.js:342:37858",
+     "26 ms update 3loc6izf4ows2.js:1:782",
+     "24 ms update 3loc6izf4ows2.js:250:3758",
+     "24 ms update 3loc6izf4ows2.js:250:6867",
+     "23 ms P.<computed>",
+     "22 ms acquireProgram 3loc6izf4ows2.js:318:14338",
+     "19 ms getUniforms 3loc6izf4ows2.js:318:2279",
+     "17 ms getUniforms 3loc6izf4ows2.js:318:14212",
+     "17 ms buildExplode 3loc6izf4ows2.js:353:54341",
+     "16 ms setup 3loc6izf4ows2.js:1:168195",
+     "13 ms getParameters 3loc6izf4ows2.js:318:4231",
+     "12 ms getProgramParameter",
+     "11 ms clone 0i-5efvfrwjiv.js:1:125416",
+     "8 ms shaderSource"
+    ]
+   },
+   {
+    "at": 2207,
+    "ms": 263,
+    "self": [
+     "72 ms sN 0i-5efvfrwjiv.js:1:183806",
+     "29 ms H turbopack-324-cyruufpbq.js:1:7181",
+     "18 ms (anon) 3loc6izf4ows2.js:451:4341",
+     "8 ms appendChild",
+     "8 ms (anon) 0nvty3axw6gpe.js:503:6395",
+     "7 ms refreshMaterialUniforms 3loc6izf4ows2.js:342:11511",
+     "5 ms F 0i-5efvfrwjiv.js:1:3740",
+     "5 ms (garbage collector)"
+    ],
+    "inclusiveNamed": [
+     "34 ms render 3loc6izf4ows2.js:342:46299",
+     "22 ms init 0nvty3axw6gpe.js:503:3663",
+     "22 ms init 0nvty3axw6gpe.js:503:14681",
+     "20 ms renderBufferDirect 3loc6izf4ows2.js:342:30244",
+     "14 ms fromBufferAttribute 0i-5efvfrwjiv.js:1:19346",
+     "8 ms update 3loc6izf4ows2.js:250:6867",
+     "8 ms appendChild",
+     "8 ms loadChunkCached turbopack-324-cyruufpbq.js:1:10891"
+    ]
+   },
+   {
+    "at": 1308,
+    "ms": 153,
+    "self": [
+     "18 ms (anon) 3loc6izf4ows2.js:353:110807",
+     "18 ms (anon) 3loc6izf4ows2.js:353:109695",
+     "12 ms parse 3loc6izf4ows2.js:353:108166",
+     "8 ms ed 0i-5efvfrwjiv.js:1:84136",
+     "7 ms getProgramParameter",
+     "5 ms e8 3loc6izf4ows2.js:342:42372",
+     "4 ms (anon) 0i-5efvfrwjiv.js:1:332304",
+     "4 ms renderBufferDirect 3loc6izf4ows2.js:342:30244"
+    ],
+    "inclusiveNamed": [
+     "77 ms _fromTexture 3loc6izf4ows2.js:1:177308",
+     "77 ms fromEquirectangular 3loc6izf4ows2.js:1:176197",
+     "62 ms render 3loc6izf4ows2.js:342:46299",
+     "60 ms parse 3loc6izf4ows2.js:353:108166",
+     "40 ms _applyGGXFilter 3loc6izf4ows2.js:165:1868",
+     "40 ms _applyPMREM 3loc6izf4ows2.js:165:1706",
+     "35 ms renderBufferDirect 3loc6izf4ows2.js:342:30244",
+     "33 ms _textureToCubeUV 3loc6izf4ows2.js:165:1203",
+     "11 ms toHalfFloat 0i-5efvfrwjiv.js:1:333228",
+     "9 ms getUniforms 3loc6izf4ows2.js:318:2279",
+     "8 ms upload 3loc6izf4ows2.js:296:9720",
+     "7 ms setRenderTarget 3loc6izf4ows2.js:342:49008",
+     "7 ms getProgramParameter",
+     "5 ms update 3loc6izf4ows2.js:250:6867",
+     "4 ms intersectsObject 0i-5efvfrwjiv.js:1:149747",
+     "4 ms intersectsFrustum 0i-5efvfrwjiv.js:1:137590",
+     "4 ms dispatchEvent 0i-5efvfrwjiv.js:1:1747",
+     "4 ms update 3loc6izf4ows2.js:250:3758",
+     "3 ms setFromBufferAttribute 0i-5efvfrwjiv.js:1:78256",
+     "3 ms computeBoundingSphere 0i-5efvfrwjiv.js:1:94095",
+     "3 ms setup 3loc6izf4ows2.js:1:168195",
+     "3 ms dispose 3loc6izf4ows2.js:1:176560",
+     "3 ms update 3loc6izf4ows2.js:1:782",
+     "3 ms acquireProgram 3loc6izf4ows2.js:318:14338",
+     "2 ms setMaterial 3loc6izf4ows2.js:318:39763"
+    ]
+   },
+   {
+    "at": 877,
+    "ms": 125,
+    "self": [
+     "9 ms (garbage collector)",
+     "6 ms (anon) 3loc6izf4ows2.js:353:136723",
+     "5 ms getContext",
+     "5 ms eV 3loc6izf4ows2.js:342:25251",
+     "5 ms (anon) 3loc6izf4ows2.js:349:86044",
+     "4 ms a6 3loc6izf4ows2.js:349:83601",
+     "4 ms nJ 3loc6izf4ows2.js:349:53677",
+     "4 ms fetch"
+    ],
+    "inclusiveNamed": [
+     "79 ms render 3loc6izf4ows2.js:353:48806",
+     "31 ms configure 3loc6izf4ows2.js:353:44839",
+     "12 ms loadAsync 0i-5efvfrwjiv.js:1:256644",
+     "10 ms useWorkers 3loc6izf4ows2.js:353:136380",
+     "8 ms load 0i-5efvfrwjiv.js:1:332094"
+    ]
+   },
+   {
+    "at": 2613,
+    "ms": 121,
+    "self": [
+     "63 ms sN 0i-5efvfrwjiv.js:1:183806",
+     "11 ms (anon) 3loc6izf4ows2.js:451:4341",
+     "8 ms init 0nvty3axw6gpe.js:503:3663",
+     "5 ms computePrimitiveBounds 0nvty3axw6gpe.js:503:37953",
+     "5 ms getZ 0i-5efvfrwjiv.js:1:103896",
+     "5 ms (garbage collector)",
+     "4 ms (anon) 0nvty3axw6gpe.js:503:6395",
+     "4 ms getY 0i-5efvfrwjiv.js:1:103786"
+    ],
+    "inclusiveNamed": [
+     "28 ms init 0nvty3axw6gpe.js:503:3663",
+     "28 ms init 0nvty3axw6gpe.js:503:14681",
+     "9 ms fromBufferAttribute 0i-5efvfrwjiv.js:1:19346",
+     "8 ms computePrimitiveBounds 0nvty3axw6gpe.js:503:37953",
+     "5 ms getZ 0i-5efvfrwjiv.js:1:103896",
+     "4 ms getY 0i-5efvfrwjiv.js:1:103786",
+     "3 ms getX 0i-5efvfrwjiv.js:1:103678",
+     "1 ms getNormal 0i-5efvfrwjiv.js:1:76711",
+     "1 ms requestAnimationFrame",
+     "1 ms tick",
+     "0 ms getX 0i-5efvfrwjiv.js:1:86433"
+    ]
+   }
+  ]
+ }
+]

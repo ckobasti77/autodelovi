@@ -1,0 +1,16 @@
+# perf-3d-04 verify: node scripts/qa/audit/verify-perf-3d-interact.mjs --vp mobile --cpu 4 --gpu --runs 3 (Event Timing duration per tap)
+run 0 [0.5,0.5] usisna-grana duration 88 pointerup processing 49
+run 0 [0.4,0.55] hauba duration 120 pointerup processing 85
+run 0 [0.6,0.45] null duration 32 pointerup processing 3
+run 0 [0.5,0.62] akumulator duration 152 pointerup processing 100
+run 0 [0.35,0.45] null duration 24 pointerup processing 1
+run 1 [0.5,0.5] usisna-grana duration 112 pointerup processing 74
+run 1 [0.4,0.55] hauba duration 152 pointerup processing 112
+run 1 [0.6,0.45] null duration 24 pointerup processing 1
+run 1 [0.5,0.62] akumulator duration 136 pointerup processing 70
+run 1 [0.35,0.45] null duration 32 pointerup processing 1
+run 2 [0.5,0.5] usisna-grana duration 80 pointerup processing 43
+run 2 [0.4,0.55] hauba duration 120 pointerup processing 81
+run 2 [0.6,0.45] null duration 32 pointerup processing 1
+run 2 [0.5,0.62] akumulator duration 136 pointerup processing 88
+run 2 [0.35,0.45] null duration 24 pointerup processing 1

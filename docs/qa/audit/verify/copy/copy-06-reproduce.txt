@@ -1,0 +1,111 @@
+
+[1] back-in-stock @1440:
+Javi mi kad stigne
+
+E-pošta
+
+E-mail adresa nije ispravna. Primer: ime@primer.rs.
+
+Pošaljite mi jedno obaveštenje kad artikal stigne.
+Veb sajt
+Obavesti me
+
+[2] checkout contact step errors @1440:
+Kontakt
+
+Proverite 4 polja:
+
+Upišite ime.
+Upišite prezime.
+Upišite broj telefona.
+Upišite e-mail adresu.
+Ime
+
+Upišite ime.
+
+Prezime
+
+Upišite prezime.
+
+Telefon
+
+Upišite broj telefona.
+
+E-pošta
+
+Upišite e-mail adresu.
+
+Kupujem kao firma
+Unesite podatke firme za račun i predračun (virman).
+Korpa
+Dalje
+
+[3] sign-in wrong creds @1440:
+E-pošta
+Lozinka
+
+Pogrešan e-mail ili lozinka. Proverite podatke i pokušajte ponovo.
+
+Pogrešan e-mail ili lozinka. Proverite podatke i pokušajte ponovo.
+
+Prijavi se
+
+[4] /za-majstore/registracija @1440 lines mentioning e-mail/e-pošta:
+E-pošta
+Odgovor stiže e-poštom, obično u toku radnog dana.
+Stiže vam e-mail o odobrenju; posle prijave vidite svoju cenu na svakom artiklu.
+
+[5] /pretraga?q=disk @1440 headings: ["Rezultati za „disk“","PROIZVODI"]
+/delovi/kocioni-diskovi count label: 9 artikala
+search suggest listbox: "KATEGORIJE\nKočioni diskovi\n9\nPROIZVODI\nKočioni disk prednji 320 × 30 mm\nATE\nKočioni disk prednji 312 × 25 mm\nBrembo\nKočioni disk prednji 256 × 22 mm\nBosch\nKočioni disk prednji 276 × 24 mm\nFebi Bilstein\nKočioni disk prednji 288 × 25 mm, ventilirani\nATE\nKočioni disk prednji 340 × 30 mm, GTI\nOriginal V"
+errors: {"c":["Failed to load resource: the server responded with a status of 400 (Bad Request)"],"pe":[]}
+
+[1] back-in-stock @390:
+Javi mi kad stigne
+
+E-pošta
+
+E-mail adresa nije ispravna. Primer: ime@primer.rs.
+
+Pošaljite mi jedno obaveštenje kad artikal stigne.
+Veb sajt
+Obavesti me
+
+[2] checkout contact step errors @390:
+Kontakt
+
+Proverite 4 polja:
+
+Upišite ime.
+Upišite prezime.
+Upišite broj telefona.
+Upišite e-mail adresu.
+Ime
+
+Upišite ime.
+
+Prezime
+
+Upišite prezime.
+
+Telefon
+
+Upišite broj telefona.
+
+E-pošta
+
+Upišite e-mail adresu.
+
+Kupujem kao firma
+Unesite podatke firme za račun i predračun (virman).
+Korpa
+Dalje
+
+[4] /za-majstore/registracija @390 lines mentioning e-mail/e-pošta:
+E-pošta
+Odgovor stiže e-poštom, obično u toku radnog dana.
+Stiže vam e-mail o odobrenju; posle prijave vidite svoju cenu na svakom artiklu.
+
+[5] /pretraga?q=disk @390 headings: ["Rezultati za „disk“","PROIZVODI"]
+/delovi/kocioni-diskovi count label: 9 artikala
+errors: {"c":[],"pe":[]}

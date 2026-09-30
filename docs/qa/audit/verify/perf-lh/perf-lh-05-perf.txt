@@ -1,0 +1,50 @@
+# perf-lh-04/05/08/11 verify (bytes, from lh-summary.txt)
+/delovi/kocioni-diskovi | mobile | devtools  n=4 bench 3516/4114/3989/3635
+  JS 25 scripts 352.6 KB gz (1023.8 KB raw) · doc 28.2 KB gz / 237.4 KB raw · inline RSC 127.2 KB · failedA11y - · failedBp -
+/ | mobile | devtools  n=3 bench 4001/3634/4158
+  JS 25 scripts 351 KB gz (1022.2 KB raw) · doc 36.3 KB gz / 246.5 KB raw · inline RSC 136.5 KB · failedA11y target-size · failedBp -
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 | mobile | devtools  n=3 bench 4073/4076/3496
+  JS 25 scripts 355.3 KB gz (1032.9 KB raw) · doc 32.2 KB gz / 220.5 KB raw · inline RSC 134.7 KB · failedA11y - · failedBp -
+/vozila/volkswagen/golf/golf-7 | mobile | devtools  n=3 bench 4049/4139/4117
+  JS 25 scripts 346.4 KB gz (1003.3 KB raw) · doc 32 KB gz / 325.2 KB raw · inline RSC 167 KB · failedA11y - · failedBp -
+/upit | mobile | devtools  n=3 bench 4126/3810/4109
+  JS 25 scripts 450.5 KB gz (1436.2 KB raw) · doc 27.6 KB gz / 147.2 KB raw · inline RSC 94.3 KB · failedA11y - · failedBp inspector-issues
+/delovi/kocioni-diskovi/volkswagen/golf | mobile | devtools  n=3 bench 4024/3948/3990
+  JS 25 scripts 352.6 KB gz (1023.8 KB raw) · doc 31.4 KB gz / 248.2 KB raw · inline RSC 138.5 KB · failedA11y - · failedBp -
+/ponuda/kocione-plocice-golf | mobile | devtools  n=3 bench 4047/4171/4105
+  JS 25 scripts 366 KB gz (1068.1 KB raw) · doc 23.2 KB gz / 166.3 KB raw · inline RSC 104.7 KB · failedA11y - · failedBp -
+/ | mobile | simulate  n=3 bench 3346/4026/4069
+  JS 25 scripts 351 KB gz (1022.2 KB raw) · doc 36.3 KB gz / 246.5 KB raw · inline RSC 136.5 KB · failedA11y - · failedBp -
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 | mobile | simulate  n=3 bench 4055/3970/3950
+  JS 25 scripts 355.3 KB gz (1032.9 KB raw) · doc 32.2 KB gz / 220.5 KB raw · inline RSC 134.7 KB · failedA11y - · failedBp -
+/vozila/volkswagen/golf/golf-7 | desktop | simulate  n=2 bench 3601/3542
+  JS 25 scripts 346.4 KB gz (1003.3 KB raw) · doc 32 KB gz / 325.2 KB raw · inline RSC 167 KB · failedA11y - · failedBp -
+  unused JS 1tr6a7zmh41cy.js 27.3/48.5 KB, 0qy3sss5e6eww.js 23.9/71.6 KB
+  bootup 1tr6a7zmh41cy.js total 1632 script 611, 0qy3sss5e6eww.js total 1366 script 1198, kocioni-diskovi total 855 script 6, Unattributable total 351 script 21
+  unused JS 1tr6a7zmh41cy.js 26.1/48.5 KB, 0qy3sss5e6eww.js 24.7/71.6 KB
+  bootup 0qy3sss5e6eww.js total 1446 script 1251, 1tr6a7zmh41cy.js total 1445 script 470,  total 793 script 8, Unattributable total 336 script 16
+  unused JS 1tr6a7zmh41cy.js 27.2/48.5 KB, 0qy3sss5e6eww.js 24.7/71.6 KB
+  bootup 0qy3sss5e6eww.js total 1290 script 1117, 1tr6a7zmh41cy.js total 1260 script 490, kocioni-disk-prednji-276-24-mm-demo-0004 total 782 script 5, Unattributable total 310 script 16
+  unused JS 1tr6a7zmh41cy.js 33/48.5 KB, 0qy3sss5e6eww.js 25.1/71.6 KB
+  bootup 1tr6a7zmh41cy.js total 1553 script 576, 0qy3sss5e6eww.js total 1434 script 1247, golf-7 total 757 script 18, Unattributable total 462 script 35
+  unused JS 1uyyf-z7kpx1w.js 80.5/94.9 KB, 1tr6a7zmh41cy.js 33.4/48.5 KB, 0qy3sss5e6eww.js 24.1/71.6 KB
+  bootup 0qy3sss5e6eww.js total 2197 script 1870, 1tr6a7zmh41cy.js total 1113 script 454, upit total 655 script 10, Unattributable total 302 script 13
+  unused JS 1tr6a7zmh41cy.js 27.3/48.5 KB, 0qy3sss5e6eww.js 23.9/71.6 KB
+  bootup 1tr6a7zmh41cy.js total 1434 script 495, 0qy3sss5e6eww.js total 1356 script 1179, golf total 822 script 6, Unattributable total 294 script 17
+  unused JS 1tr6a7zmh41cy.js 27.3/48.5 KB, 0qy3sss5e6eww.js 25/71.6 KB
+  bootup 0qy3sss5e6eww.js total 1324 script 1161, 1tr6a7zmh41cy.js total 1251 script 503, kocione-plocice-golf total 757 script 6, Unattributable total 327 script 14
+  unused JS 1tr6a7zmh41cy.js 26.1/48.5 KB, 0qy3sss5e6eww.js 25.7/71.6 KB
+  bootup 0qy3sss5e6eww.js total 533 script 395,  total 402 script 6, 1tr6a7zmh41cy.js total 201 script 64, Unattributable total 153 script 10
+  unused JS 1tr6a7zmh41cy.js 27.5/48.5 KB, 0qy3sss5e6eww.js 25.7/71.6 KB
+  bootup 0qy3sss5e6eww.js total 364 script 314, kocioni-disk-prednji-276-24-mm-demo-0004 total 288 script 4, 1tr6a7zmh41cy.js total 205 script 76, Unattributable total 121 script 11
+  unused JS 1tr6a7zmh41cy.js 27.7/48.5 KB, 0qy3sss5e6eww.js 26.3/71.6 KB
+  bootup 0qy3sss5e6eww.js total 153 script 133, golf-7 total 121 script 4, 1tr6a7zmh41cy.js total 97 script 34, Unattributable total 71 script 8
+
+# static: chunk + plugin sizes
+1tr6a7zmh41cy.js raw 125720
+gzip -c: 49392
+node_modules/gsap/dist/gsap.min.js raw 72927 gz 28284
+node_modules/gsap/dist/ScrollTrigger.min.js raw 44575 gz 18004
+node_modules/gsap/dist/ScrollToPlugin.min.js raw 4059 gz 1962
+node_modules/gsap/dist/CustomEase.min.js raw 7143 gz 3673
+22:  gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin, CustomEase);

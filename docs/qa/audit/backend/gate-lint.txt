@@ -1,0 +1,12 @@
+
+> autodelovi@0.1.0 lint
+> eslint
+
+
+C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\audit\seo-crawl.mjs
+   23:7  warning  'toSite' is assigned a value but never used                            @typescript-eslint/no-unused-vars
+  215:1  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+
+✖ 2 problems (0 errors, 2 warnings)
+
+lint exit 0

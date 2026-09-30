@@ -1,0 +1,82 @@
+perf-bundle-03 verify — build 9b4K278NWK6BGwhVv5UCP, served :3100
+
+# esbuild 0.27 minified, react external, gzip -6 (verify-perf-bundle-gsap.mjs)
+core_useGSAP                   raw   70.1 KB  gz  27.6 KB
+core_useGSAP_CustomEase        raw   77.1 KB  gz  30.7 KB
+core_useGSAP_ScrollTrigger     raw  113.6 KB  gz  44.8 KB
+core_useGSAP_ScrollToPlugin    raw   73.9 KB  gz  28.9 KB
+as_shipped_all_three           raw  124.3 KB  gz  49.3 KB
+
+plugins total (as shipped - core): 21.8 KB gz / 54.2 KB raw
+  ScrollTrigger    +17.2 KB gz
+  CustomEase       +3.1 KB gz
+  ScrollToPlugin   +1.4 KB gz
+
+served 1tr6a7zmh41cy.js raw 122.8 KB gz 48.4 KB; contains: ScrollTrigger=true scrollTo=true CustomEase=true refreshInit=true ignoreMobileResize=true
+
+# Served merged GSAP module #65747 per route (verify-perf-bundle-static.mjs)
+== /  scripts 24  module JS 329.1 KB gz
+  gsapMerged         n= 1 raw  121.4 KB  gz(standalone)  47.7 KB  gz(in-chunk delta)  47.6 KB  1tr6a7zmh41cy.js  #65747
+== /delovi  scripts 23  module JS 313.3 KB gz
+  gsapMerged         n= 1 raw  121.4 KB  gz(standalone)  47.7 KB  gz(in-chunk delta)  47.6 KB  1tr6a7zmh41cy.js  #65747
+== /delovi/kocioni-diskovi  scripts 24  module JS 330.9 KB gz
+  gsapMerged         n= 1 raw  121.4 KB  gz(standalone)  47.7 KB  gz(in-chunk delta)  47.6 KB  1tr6a7zmh41cy.js  #65747
+== /deo/kocioni-disk-prednji-276-24-mm-demo-0004  scripts 24  module JS 333.6 KB gz
+  gsapMerged         n= 1 raw  121.4 KB  gz(standalone)  47.7 KB  gz(in-chunk delta)  47.6 KB  1tr6a7zmh41cy.js  #65747
+== /pretraga?q=disk  scripts 24  module JS 324.7 KB gz
+  gsapMerged         n= 1 raw  121.4 KB  gz(standalone)  47.7 KB  gz(in-chunk delta)  47.6 KB  1tr6a7zmh41cy.js  #65747
+== /vozila/volkswagen/golf/golf-7  scripts 24  module JS 324.7 KB gz
+  gsapMerged         n= 1 raw  121.4 KB  gz(standalone)  47.7 KB  gz(in-chunk delta)  47.6 KB  1tr6a7zmh41cy.js  #65747
+== /ponuda/kocione-plocice-golf  scripts 24  module JS 340.2 KB gz
+  gsapMerged         n= 1 raw  121.4 KB  gz(standalone)  47.7 KB  gz(in-chunk delta)  47.6 KB  1tr6a7zmh41cy.js  #65747
+== /za-majstore  scripts 23  module JS 316.3 KB gz
+  gsapMerged         n= 1 raw  121.4 KB  gz(standalone)  47.7 KB  gz(in-chunk delta)  47.6 KB  1tr6a7zmh41cy.js  #65747
+== /upit  scripts 24  module JS 428.7 KB gz
+  gsapMerged         n= 1 raw  121.4 KB  gz(standalone)  47.7 KB  gz(in-chunk delta)  47.6 KB  1tr6a7zmh41cy.js  #65747
+== /korpa  scripts 24  module JS 321.3 KB gz
+  gsapMerged         n= 1 raw  121.4 KB  gz(standalone)  47.7 KB  gz(in-chunk delta)  47.6 KB  1tr6a7zmh41cy.js  #65747
+== /porudzbina  scripts 24  module JS 429.9 KB gz
+  gsapMerged         n= 1 raw  121.4 KB  gz(standalone)  47.7 KB  gz(in-chunk delta)  47.6 KB  1tr6a7zmh41cy.js  #65747
+== /prijava  scripts 23  module JS 308.7 KB gz
+  gsapMerged         n= 1 raw  121.4 KB  gz(standalone)  47.7 KB  gz(in-chunk delta)  47.6 KB  1tr6a7zmh41cy.js  #65747
+
+# Source users of ScrollTrigger / scrollTo / CustomEase outside lib/gsap/client.ts
+components/three/HeroStage.tsx:250:      ScrollTrigger.addEventListener("refresh", onRefreshed);
+components/three/HeroStage.tsx:253:        ScrollTrigger.removeEventListener("refresh", onRefreshed);
+components/three/HeroStage.tsx:283:          ScrollTrigger.update();
+components/three/HeroStage.tsx:289:          scrollTo: { y, autoKill: true },
+components/three/HeroStage.tsx:428:      ScrollTrigger.refresh();
+lib/gsap/refresh.ts:6: * Coalesce refresh requests into one ScrollTrigger.refresh() on the next frame. Refresh is
+lib/gsap/refresh.ts:8: * through this instead of calling ScrollTrigger.refresh() directly.
+lib/gsap/refresh.ts:15:    if (ScrollTrigger.getAll().length > 0) ScrollTrigger.refresh();
+constants/motion.ts:28:/** Cubic-bezier control points; registered as GSAP CustomEases in lib/gsap/client.ts. */
+
+# lib/gsap/refresh.ts: refresh is a no-op without triggers
+15:    if (ScrollTrigger.getAll().length > 0) ScrollTrigger.refresh();
+
+# Runtime: chunk 1tr6a7zmh41cy.js requested on every route/width/engine
+## chromium 390 /  js requests 25
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,  30.5 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+## chromium 390 /delovi/kocioni-diskovi  js requests 25
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,    30 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+## chromium 390 /deo/kocioni-disk-prednji-276-24-mm-demo-0004  js requests 25
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,    31 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+## chromium 390 /ponuda/kocione-plocice-golf  js requests 25
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,    30 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+## chromium 390 /korpa  js requests 25
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,    30 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+## chromium 1440 /  js requests 25
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,  30.4 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+## chromium 1440 /delovi/kocioni-diskovi  js requests 25
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,  30.9 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+## chromium 1440 /deo/kocioni-disk-prednji-276-24-mm-demo-0004  js requests 25
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,  30.7 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+## chromium 1440 /ponuda/kocione-plocice-golf  js requests 25
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,    30 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+## chromium 1440 /korpa  js requests 25
+  coverage 1tr6a7zmh41cy.js    122.8 KB raw,    30 % executed  (gsap + ScrollTrigger + ScrollToPlugin + CustomEase)
+## webkit 390 /  js requests 25
+## webkit 390 /delovi/kocioni-diskovi  js requests 25
+## webkit 390 /deo/kocioni-disk-prednji-276-24-mm-demo-0004  js requests 25
+## webkit 390 /ponuda/kocione-plocice-golf  js requests 25
+## webkit 390 /korpa  js requests 25

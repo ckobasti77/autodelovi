@@ -1,0 +1,485 @@
+[
+ {
+  "run": 0,
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "tier": "high",
+  "frames": 536,
+  "median": 16.7,
+  "p95": 33.3,
+  "p99": 33.4,
+  "worst": 50,
+  "over33pct": 1.5,
+  "over50": 0,
+  "over100": 0,
+  "longTasksScroll": 2,
+  "worstLongScroll": 53,
+  "endProgress": 1,
+  "endStatus": "ready",
+  "drawsDuringScroll": 71050,
+  "gl": {
+   "created": 2,
+   "alive": 1,
+   "live": 1,
+   "gpuMB": 113.7,
+   "perContext": [
+    {
+     "at": 1439,
+     "bufMB": 5.9,
+     "texMB": 14.8,
+     "rbMB": 0,
+     "drawingBufferMB": 93,
+     "totalMB": 113.7,
+     "buffers": 643,
+     "textures": 13,
+     "programs": 12,
+     "dbw": 2160,
+     "dbh": 1254,
+     "antialias": true
+    }
+   ],
+   "draws": 71831,
+   "maxDrawsPerFrame": 290,
+   "maxTrisPerFrame": 416272,
+   "lastDraws": 290,
+   "lastTris": 416272,
+   "renderedFrames": 249
+  },
+  "heapMB": 38,
+  "canvas": {
+   "css": "1440x836",
+   "px": "2160x1254"
+  },
+  "start": {
+   "intentAt": 978,
+   "loadingAt": 1010,
+   "firstDrawAfterIntent": 673,
+   "readyAfterIntent": 2099,
+   "tier": "high",
+   "longTasks": [
+    {
+     "t": 135,
+     "d": 181
+    },
+    {
+     "t": 440,
+     "d": 124
+    },
+    {
+     "t": 633,
+     "d": 464
+    },
+    {
+     "t": 1231,
+     "d": 109
+    },
+    {
+     "t": 1340,
+     "d": 138
+    },
+    {
+     "t": 2021,
+     "d": 53
+    }
+   ],
+   "tbt": 769,
+   "resources": [
+    {
+     "name": "/models/car.glb",
+     "start": 14,
+     "end": 99,
+     "kb": 2052
+    },
+    {
+     "name": "/_next/static/chunks/103_o3v2fee5x.js",
+     "start": 16,
+     "end": 18,
+     "kb": 11
+    },
+    {
+     "name": "/_next/static/chunks/0yenm6rgh0wzh.js",
+     "start": 17,
+     "end": 18,
+     "kb": 2
+    },
+    {
+     "name": "/_next/static/chunks/277kqryst5vz8.js",
+     "start": 21,
+     "end": 23,
+     "kb": 0
+    },
+    {
+     "name": "/_next/static/chunks/3loc6izf4ows2.js",
+     "start": 22,
+     "end": 40,
+     "kb": 183
+    },
+    {
+     "name": "/_next/static/chunks/0i-5efvfrwjiv.js",
+     "start": 23,
+     "end": 32,
+     "kb": 99
+    },
+    {
+     "name": "/models/env/studio-512.hdr",
+     "start": 560,
+     "end": 563,
+     "kb": 401
+    },
+    {
+     "name": "/models/car-shadow.webp",
+     "start": 564,
+     "end": 566,
+     "kb": 14
+    },
+    {
+     "name": "/models/car-shadow-exploded.webp",
+     "start": 564,
+     "end": 566,
+     "kb": 20
+    },
+    {
+     "name": "/_next/static/chunks/0nvty3axw6gpe.js",
+     "start": 1489,
+     "end": 1494,
+     "kb": 27
+    },
+    {
+     "name": "/_next/static/chunks/0e7n8ktdpx6ij.js",
+     "start": 2079,
+     "end": 2081,
+     "kb": 3
+    }
+   ]
+  },
+  "loadedBeforeIntent": 26,
+  "glbBeforeIntent": [],
+  "afterIntent": 11,
+  "afterIntentModels": [
+   "/models/car.glb",
+   "/models/env/studio-512.hdr",
+   "/models/car-shadow.webp",
+   "/models/car-shadow-exploded.webp"
+  ],
+  "consoleErrors": [
+   "warning: THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+  ]
+ },
+ {
+  "run": 1,
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "tier": "high",
+  "frames": 507,
+  "median": 16.7,
+  "p95": 33.4,
+  "p99": 50.1,
+  "worst": 567,
+  "over33pct": 5.5,
+  "over50": 7,
+  "over100": 1,
+  "longTasksScroll": 11,
+  "worstLongScroll": 575,
+  "endProgress": 1,
+  "endStatus": "ready",
+  "drawsDuringScroll": 66990,
+  "gl": {
+   "created": 2,
+   "alive": 1,
+   "live": 1,
+   "gpuMB": 113.7,
+   "perContext": [
+    {
+     "at": 1531,
+     "bufMB": 5.9,
+     "texMB": 14.8,
+     "rbMB": 0,
+     "drawingBufferMB": 93,
+     "totalMB": 113.7,
+     "buffers": 643,
+     "textures": 13,
+     "programs": 12,
+     "dbw": 2160,
+     "dbh": 1254,
+     "antialias": true
+    }
+   ],
+   "draws": 68007,
+   "maxDrawsPerFrame": 290,
+   "maxTrisPerFrame": 416272,
+   "lastDraws": 290,
+   "lastTris": 416272,
+   "renderedFrames": 236
+  },
+  "heapMB": 33,
+  "canvas": {
+   "css": "1440x836",
+   "px": "2160x1254"
+  },
+  "start": {
+   "intentAt": 984,
+   "loadingAt": 1026,
+   "firstDrawAfterIntent": 786,
+   "readyAfterIntent": 2067,
+   "tier": "high",
+   "longTasks": [
+    {
+     "t": 142,
+     "d": 228
+    },
+    {
+     "t": 511,
+     "d": 159
+    },
+    {
+     "t": 744,
+     "d": 137
+    },
+    {
+     "t": 1034,
+     "d": 357
+    }
+   ],
+   "tbt": 681,
+   "resources": [
+    {
+     "name": "/models/car.glb",
+     "start": 22,
+     "end": 108,
+     "kb": 2052
+    },
+    {
+     "name": "/_next/static/chunks/103_o3v2fee5x.js",
+     "start": 23,
+     "end": 25,
+     "kb": 11
+    },
+    {
+     "name": "/_next/static/chunks/0yenm6rgh0wzh.js",
+     "start": 25,
+     "end": 26,
+     "kb": 2
+    },
+    {
+     "name": "/_next/static/chunks/277kqryst5vz8.js",
+     "start": 29,
+     "end": 31,
+     "kb": 0
+    },
+    {
+     "name": "/_next/static/chunks/3loc6izf4ows2.js",
+     "start": 30,
+     "end": 48,
+     "kb": 183
+    },
+    {
+     "name": "/_next/static/chunks/0i-5efvfrwjiv.js",
+     "start": 31,
+     "end": 41,
+     "kb": 99
+    },
+    {
+     "name": "/models/env/studio-512.hdr",
+     "start": 666,
+     "end": 669,
+     "kb": 401
+    },
+    {
+     "name": "/models/car-shadow.webp",
+     "start": 671,
+     "end": 672,
+     "kb": 14
+    },
+    {
+     "name": "/models/car-shadow-exploded.webp",
+     "start": 671,
+     "end": 673,
+     "kb": 20
+    },
+    {
+     "name": "/_next/static/chunks/0nvty3axw6gpe.js",
+     "start": 1437,
+     "end": 1442,
+     "kb": 27
+    },
+    {
+     "name": "/_next/static/chunks/0e7n8ktdpx6ij.js",
+     "start": 2043,
+     "end": 2045,
+     "kb": 3
+    }
+   ]
+  },
+  "loadedBeforeIntent": 26,
+  "glbBeforeIntent": [],
+  "afterIntent": 11,
+  "afterIntentModels": [
+   "/models/car.glb",
+   "/models/env/studio-512.hdr",
+   "/models/car-shadow.webp",
+   "/models/car-shadow-exploded.webp"
+  ],
+  "consoleErrors": [
+   "warning: THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+  ]
+ },
+ {
+  "run": 2,
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "tier": "high",
+  "frames": 508,
+  "median": 16.7,
+  "p95": 33.4,
+  "p99": 50.1,
+  "worst": 83,
+  "over33pct": 3.3,
+  "over50": 6,
+  "over100": 0,
+  "longTasksScroll": 9,
+  "worstLongScroll": 98,
+  "endProgress": 1,
+  "endStatus": "ready",
+  "drawsDuringScroll": 66990,
+  "gl": {
+   "created": 2,
+   "alive": 1,
+   "live": 1,
+   "gpuMB": 113.7,
+   "perContext": [
+    {
+     "at": 1476,
+     "bufMB": 5.9,
+     "texMB": 14.8,
+     "rbMB": 0,
+     "drawingBufferMB": 93,
+     "totalMB": 113.7,
+     "buffers": 643,
+     "textures": 13,
+     "programs": 12,
+     "dbw": 2160,
+     "dbh": 1254,
+     "antialias": true
+    }
+   ],
+   "draws": 68007,
+   "maxDrawsPerFrame": 290,
+   "maxTrisPerFrame": 416272,
+   "lastDraws": 290,
+   "lastTris": 416272,
+   "renderedFrames": 236
+  },
+  "heapMB": 32,
+  "canvas": {
+   "css": "1440x836",
+   "px": "2160x1254"
+  },
+  "start": {
+   "intentAt": 987,
+   "loadingAt": 1028,
+   "firstDrawAfterIntent": 712,
+   "readyAfterIntent": 1759,
+   "tier": "high",
+   "longTasks": [
+    {
+     "t": 120,
+     "d": 193
+    },
+    {
+     "t": 464,
+     "d": 140
+    },
+    {
+     "t": 678,
+     "d": 133
+    },
+    {
+     "t": 956,
+     "d": 85
+    },
+    {
+     "t": 1042,
+     "d": 78
+    }
+   ],
+   "tbt": 379,
+   "resources": [
+    {
+     "name": "/models/car.glb",
+     "start": 20,
+     "end": 108,
+     "kb": 2052
+    },
+    {
+     "name": "/_next/static/chunks/103_o3v2fee5x.js",
+     "start": 21,
+     "end": 23,
+     "kb": 11
+    },
+    {
+     "name": "/_next/static/chunks/0yenm6rgh0wzh.js",
+     "start": 22,
+     "end": 25,
+     "kb": 2
+    },
+    {
+     "name": "/_next/static/chunks/277kqryst5vz8.js",
+     "start": 27,
+     "end": 29,
+     "kb": 0
+    },
+    {
+     "name": "/_next/static/chunks/3loc6izf4ows2.js",
+     "start": 28,
+     "end": 45,
+     "kb": 183
+    },
+    {
+     "name": "/_next/static/chunks/0i-5efvfrwjiv.js",
+     "start": 29,
+     "end": 40,
+     "kb": 99
+    },
+    {
+     "name": "/models/env/studio-512.hdr",
+     "start": 598,
+     "end": 601,
+     "kb": 401
+    },
+    {
+     "name": "/models/car-shadow.webp",
+     "start": 603,
+     "end": 606,
+     "kb": 14
+    },
+    {
+     "name": "/models/car-shadow-exploded.webp",
+     "start": 604,
+     "end": 606,
+     "kb": 20
+    },
+    {
+     "name": "/_next/static/chunks/0nvty3axw6gpe.js",
+     "start": 1154,
+     "end": 1158,
+     "kb": 27
+    },
+    {
+     "name": "/_next/static/chunks/0e7n8ktdpx6ij.js",
+     "start": 1732,
+     "end": 1734,
+     "kb": 3
+    }
+   ]
+  },
+  "loadedBeforeIntent": 26,
+  "glbBeforeIntent": [],
+  "afterIntent": 11,
+  "afterIntentModels": [
+   "/models/car.glb",
+   "/models/env/studio-512.hdr",
+   "/models/car-shadow.webp",
+   "/models/car-shadow-exploded.webp"
+  ],
+  "consoleErrors": [
+   "warning: THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+  ]
+ }
+]

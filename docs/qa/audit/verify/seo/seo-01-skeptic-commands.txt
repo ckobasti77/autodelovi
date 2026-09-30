@@ -1,0 +1,12 @@
+# seo-01 skeptic verification — 2026-09-30T16:58:15+02:00
+$ curl -s http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 | grep -o "<title>[^<]*"
+<title>Kočioni di k prednji 276 × 24 mm 5Q0 615 505 R | SKLOP
+$ curl -s http://localhost:3100/deo/kocione-plocice-prednje-sa-senzorom-demo-0009 | grep -oE "<title>[^<]*|og:title\" content=\"[^\"]*|twitter:title\" content=\"[^\"]*"
+<title>Kočione pločice prednje, a enzorom 1K0 698 406 F | SKLOP
+og:title" content="Kočione pločice prednje, a enzorom 1K0 698 406 F | SKLOP
+twitter:title" content="Kočione pločice prednje, a enzorom 1K0 698 406 F | SKLOP
+$ grep -n "replace(/s+/\|S\*\$/" lib/seo/templates.ts
+54:  const name = p.name.replace(/s+/g, " ").trim();
+88:  const vehicles = room > 12 ? p.fitmentSummary.slice(0, room).replace(/[s,;]+S*$/, "") : "";
+crawl (node scripts/qa/audit/verify-seo-01-skeptic.mjs): 157 product URLs, 87 names contain lowercase s, 87/87 titles mangled, 70/70 names without s intact, og:title == twitter:title == <title> on 157/157
+sibling (same root cause, line 88): 32 descriptions shortened with an ellipsis, 23 cut mid-word, e.g. 'za VW Golf VII, VW Go… Cena', 'VW Golf V, VW Golf VI i jo…'

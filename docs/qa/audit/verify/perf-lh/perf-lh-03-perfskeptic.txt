@@ -1,0 +1,31 @@
+perf-lh-03 — skeptic verification (analysis + layout-only emulation; no Lighthouse, no timing runs)
+
+1. Cause attribution
+- ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2 = Martian Mono latin subset (build CSS .next/static/chunks/1ims1_lcdan5r.css, @font-face font-family:Martian Mono, font-display:swap). lib/fonts.ts: mono preload:false.
+- next/font's generated fallback: @font-face{font-family:Martian Mono Fallback;src:local(Arial);ascent-override:63.69%;descent-override:12.74%;size-adjust:157.02%}.
+  --font-mono = var(--nf-mono), ui-monospace, ... so the first paint uses Arial @157 %.
+- Advance width per em (scripts/qa/audit/verify-perf-lh-03-perfskeptic-fallback.mjs -> perf-lh-03-perfskeptic-fallback.json):
+    Martian Mono: caps 0.700, digits 0.700, lower 0.700
+    next fallback: caps 1.064 (+52 %), digits 0.873 (+25 %), lower 0.713 (calibrated on lowercase only)
+  type-code-s is text-transform:uppercase and codes are caps+digits, so first paint is 32-37 % wider: chip code widths 107/110 px -> 81 px.
+- Font-swap emulation (swap --nf-mono to the fallback face and back, observe layout-shift) at 412x823 reproduces Lighthouse exactly:
+    mono only 0.0814 (LH devtools section.mt-12 0.08140), mono+Archivo600 0.0994 (LH simulate 0.1002), desktop 1350 both 0.0711 (LH 0.0738).
+  Desktop: nav stays 2 rows (113 px) but chips jump between rows (li 314->266 px) and sideways; LH names the h1 but the score is the chip reflow (mono alone 0.049).
+- A monospace fallback calibrated on the real advance (local("Courier New") size-adjust 116.65 %) gives identical widths: nav 305->305, CLS 0.0000.
+
+2. Scope (scripts/qa/audit/verify-perf-lh-03-perfskeptic.mjs, FAST=1, all 46 generation pages in sitemaps/vozila.xml, log perf-lh-03-perfskeptic-sweep-all.txt)
+    mono-swap CLS > 0.05:  360 px 0/46 · 390 px 12/46 · 412 px 43/46 · 430 px 35/46 (10 pages > 0.1, max 0.25: golf-8, passat-b5, caddy-5, a4-b5, a6-c5, octavia-4, superb-1, leon-4, formentor, cupra-leon)
+    no shift at 412: passat-b6, passat-b7, superb-2. Every generation page has 5-9 engine chips.
+    desktop (partial, 9 pages before a server timeout): golf-7/passat-b8 1350 0.049-0.071, golf-4 1350 0.476 (chip jumps from row 2 to row 1).
+  Separate root cause seen (not this finding): at 360 px the Archivo Expanded 600 fallback wraps the h1 to 3 lines on octavia-2/3/4, superb-3, formentor (d600-only swap CLS 0.12-0.13) — belongs to the font-preload item.
+
+3. Budget / method
+- BRIEF 9: mobile Lighthouse lab CLS <= 0.05; D112 budget method = applied throttling -> 0.082 in 3/3 (measurement verifier). Simulated 0.100 also fails.
+- Not a localhost artefact: localhost is the best case; preload:false means the font is requested only after CSS + layout, so a cold mobile load paints the fallback first. Only a warm HTTP cache (font fetched on an earlier page) avoids it.
+- Precedent: docs/qa/STOREFRONT.md SF-02 (same class on product, CLS 0.068) was P1 and fixed by D127; the generation-page chips were missed. DESIGN-SYSTEM 4.2 "size-adjusted fallbacks (no CLS)" is false for Martian Mono.
+
+4. Suggested-fix review
+- "inline-block w-[11ch]": ch = advance of "0", which is 0.873 em in the fallback vs 0.700 em in Martian Mono -> the width still changes 25 %; does not fix.
+- "code on its own line": chip width = max(name, code); fallback code line (107 px) is wider than several names -> chips can still re-flow; not guaranteed.
+- display:"optional": removes the shift but first-visit users see Arial-caps codes (DESIGN-SYSTEM 4.1 chose Martian for 0/O legibility).
+- Better: mono({ adjustFontFallback: false, fallback: [...] }) + own "Martian Mono Fallback" @font-face over 0.6-em system monos (Courier New, Menlo, Droid Sans Mono, DejaVu/Liberation Mono) with size-adjust ~116.7 % and matching ascent/descent -> CLS 0 in the emulation, fixes every mono usage (VIN line too). Optional safety net: engine chips in fixed grid tracks with nowrap.

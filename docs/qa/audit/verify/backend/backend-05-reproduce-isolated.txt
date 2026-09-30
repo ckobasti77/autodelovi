@@ -1,0 +1,14 @@
+=== isolated run 1: notify.test.ts + orders.test.ts ===
+     × reminders count working minutes, escalate once and stay quiet after hours 302ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL   convex  convex/notify.test.ts > crons (fake time, Europe/Belgrade) > reminders count working minutes, escalate once and stay quiet after hours
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 40 passed (41)
+   Duration  13.23s (tests 59%, import 35%, transform 6%, environment 1%)
+=== isolated run 2: notify.test.ts + orders.test.ts ===
+     × reminders count working minutes, escalate once and stay quiet after hours 277ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL   convex  convex/notify.test.ts > crons (fake time, Europe/Belgrade) > reminders count working minutes, escalate once and stay quiet after hours
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 40 passed (41)
+   Duration  8.01s (tests 80%, import 12%, transform 7%, environment 1%)

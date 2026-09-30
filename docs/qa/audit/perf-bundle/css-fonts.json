@@ -1,0 +1,105 @@
+{
+  "coverage": {
+    "home@390": {
+      "atLoad": [
+        {
+          "url": "/",
+          "bytes": 3215,
+          "used": 1695
+        },
+        {
+          "url": "/_next/static/chunks/1ims1_lcdan5r.css",
+          "bytes": 98804,
+          "used": 85891
+        }
+      ],
+      "afterScroll": [
+        {
+          "url": "/_next/static/chunks/1ims1_lcdan5r.css",
+          "bytes": 98804,
+          "used": 85891
+        },
+        {
+          "url": "/",
+          "bytes": 3215,
+          "used": 1731
+        }
+      ]
+    },
+    "home@1440": {
+      "atLoad": [
+        {
+          "url": "/",
+          "bytes": 3215,
+          "used": 1695
+        },
+        {
+          "url": "/_next/static/chunks/1ims1_lcdan5r.css",
+          "bytes": 98804,
+          "used": 85931
+        }
+      ],
+      "afterScroll": [
+        {
+          "url": "/_next/static/chunks/1ims1_lcdan5r.css",
+          "bytes": 98804,
+          "used": 85931
+        },
+        {
+          "url": "/",
+          "bytes": 3215,
+          "used": 1731
+        }
+      ]
+    }
+  },
+  "fontsAboveFold": {
+    "home": {
+      "display 700": "5: SKLOP | Rasklopi | auto. | Nađi",
+      "Public Sans 400": "26: Delovi | za | Volkswagen, | Audi,",
+      "Public Sans 600": "3: Pretraži | Izaberite vozilo | Nemate broj? Pošaljite broj ša",
+      "Public Sans 500": "2: Vaše vozilo | Izaberi",
+      "displaySemibold 600": "2: Sklopljen | automobil",
+      "Martian Mono 400": "5: 00 | · | 42 kategorije | ·"
+    },
+    "category": {
+      "display 700": "1: SKLOP",
+      "Public Sans 400": "28: Kočnice | Kočioni | diskovi | zajedno",
+      "displaySemibold 600": "2: Kočioni | diskovi",
+      "Public Sans 600": "16: Više | o | kategoriji | 9",
+      "Public Sans 500": "11: Brembo | · | OEM | kvalitet",
+      "Martian Mono 400": "4: 3C0 | 615 | 098 | 1K0 615 540 Q",
+      "condensed 600": "1: 7.490"
+    },
+    "product": {
+      "display 700": "1: SKLOP",
+      "Public Sans 400": "10: Kočioni diskovi | Febi | Bilstein | ·",
+      "Public Sans 500": "10: Ilustracija | kategorije | — | izgled",
+      "Public Sans 650": "7: Kočioni | disk | prednji | 276",
+      "Martian Mono 500": "1: 5Q0 615 505 R",
+      "Martian Mono 400": "2: DEMO-0004 | 57447",
+      "condensed 600": "1: 4.690",
+      "Public Sans 600": "1: RSD"
+    },
+    "landing": {
+      "display 700": "1: SKLOP",
+      "Public Sans 600": "12: Kočione pločice · Volkswagen G | Pošaljite upit | Izaberite vozilo | 6",
+      "displaySemibold 600": "10: Kočione | pločice | za | VW",
+      "Public Sans 400": "34: Prednje | i | zadnje | pločice",
+      "Public Sans 650": "1: Kočione pločice za Volkswagen "
+    },
+    "korpa": {
+      "display 700": "2: SKLOP | SKLOP",
+      "Public Sans 650": "1: Korpa",
+      "Public Sans 600": "5: Korpa | je | prazna | Pretražite po broju dela",
+      "Public Sans 400": "32: Dodajte | delove | iz | kataloga"
+    },
+    "prijava": {
+      "display 700": "2: SKLOP | SKLOP",
+      "Public Sans 650": "1: Prijava",
+      "Public Sans 400": "17: Nalog | nije | obavezan | za",
+      "Public Sans 500": "2: E-pošta | Lozinka",
+      "Public Sans 600": "1: Prijavi se"
+    }
+  }
+}

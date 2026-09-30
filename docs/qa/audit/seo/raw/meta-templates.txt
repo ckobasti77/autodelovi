@@ -1,0 +1,400 @@
+/delovi 
+  T: Svi delovi po sistemima vozila | SKLOP 
+  D: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra po sistemima: motor, kočnice, vešanje, hlađenje, elektrika, karoserija i servisni delovi. Cene sa PDV-om… 
+  H1: Delovi po sistemima | robots: index, follow | canon: http://localhost:3000/delovi
+/ 
+  T: Auto delovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Plaćanje pouzećem ili pri preuzimanju u radnji. 
+  H1: Rasklopiauto.Nađi deo. | robots: index, follow | canon: http://localhost:3000
+/vozila 
+  T: Delovi po vozilu — VW, Audi, Škoda, SEAT, Cupra | SKLOP 
+  D: Izaberite marku, model i generaciju vozila i pogledajte delove koji odgovaraju: kočnice, vešanje, motor, hlađenje, elektrika i servisni delovi. 
+  H1: Delovi po vozilu | robots: index, follow | canon: http://localhost:3000/vozila
+/za-majstore 
+  T: Delovi za auto servise — rabat i brza porudžbina | SKLOP 
+  D: Za majstore i auto servise: rabat po nivou saradnje, brza porudžbina po OEM brojevima, dostava u servis, istorija porudžbina i odloženo plaćanje po… 
+  H1: Za majstore | robots: index, follow | canon: http://localhost:3000/za-majstore
+/upit 
+  T: Upit za deo po broju šasije (VIN) | SKLOP 
+  D: Ne nalazite deo? Pošaljite broj šasije, opis i fotografiju starog dela — proverimo kod dobavljača i javimo ponudu u toku radnog dana. Odgovor telefonom… 
+  H1: Ne nalazite deo? | robots: index, follow | canon: http://localhost:3000/upit
+/o-nama 
+  T: O nama | SKLOP 
+  D: SKLOP je prodavnica delova za vozila grupe Volkswagen: Volkswagen, Audi, Škoda, SEAT i Cupra. Radimo sa majstorima i auto servisima i sa vozačima koji… 
+  H1: O nama | robots: index, follow | canon: http://localhost:3000/o-nama
+/kontakt 
+  T: Kontakt | SKLOP 
+  D: Najbrže je da nas pozovete ili pišete na Viber. Ako ne znate broj dela, pošaljite upit sa brojem šasije i fotografijom starog dela; odgovaramo u toku… 
+  H1: Kontakt | robots: index, follow | canon: http://localhost:3000/kontakt
+/dostava-i-placanje 
+  T: Dostava i plaćanje | SKLOP 
+  D: Na sajtu nema plaćanja karticom. Porudžbinu šaljete bez plaćanja, a mi je potvrđujemo telefonom ili e-poštom pre slanja. Načini dostave - Lično… 
+  H1: Dostava i plaćanje | robots: index, follow | canon: http://localhost:3000/dostava-i-placanje
+/reklamacije-i-povrat 
+  T: Reklamacije i povrat | SKLOP 
+  D: Ova pravila važe za kupce koji su potrošači u smislu Zakona o zaštiti potrošača. Za pravna lica i preduzetnike (servise) važe opšta pravila obligacionog… 
+  H1: Reklamacije i povrat | robots: index, follow | canon: http://localhost:3000/reklamacije-i-povrat
+/uslovi-koriscenja 
+  T: Uslovi korišćenja i kupovine | SKLOP 
+  D: Ovi uslovi uređuju korišćenje sajta localhost:3000 i kupovinu robe preko njega. Slanjem porudžbine potvrđujete da ste ih pročitali i da ih prihvatate… 
+  H1: Uslovi korišćenja i kupovine | robots: index, follow | canon: http://localhost:3000/uslovi-koriscenja
+/politika-privatnosti 
+  T: Politika privatnosti | SKLOP 
+  D: Ova politika objašnjava koje podatke o ličnosti obrađujemo, zašto, koliko dugo i koja su vaša prava, u skladu sa Zakonom o zaštiti podataka o ličnosti… 
+  H1: Politika privatnosti | robots: index, follow | canon: http://localhost:3000/politika-privatnosti
+/kolacici 
+  T: Kolačići | SKLOP 
+  D: Kolačići i slični zapisi (localStorage) su mali podaci koje sajt čuva u vašem pregledaču. Neophodni (uvek uključeni) | Naziv | Svrha | Trajanje |… 
+  H1: Kolačići | robots: index, follow | canon: http://localhost:3000/kolacici
+/delovi/motor-i-usis 
+  T: Motor i usis za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Motor i usis: delovi za VW, Audi, Škoda, SEAT i Cupra — pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. 
+  H1: Motor i usis | robots: index, follow | canon: http://localhost:3000/delovi/motor-i-usis
+/delovi/izduvni-sistem 
+  T: Izduvni sistem za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Izduvni sistem: delovi za VW, Audi, Škoda, SEAT i Cupra — pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. 
+  H1: Izduvni sistem | robots: index, follow | canon: http://localhost:3000/delovi/izduvni-sistem
+/delovi/hladjenje-i-klima 
+  T: Hlađenje i klima za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Hlađenje i klima: delovi za VW, Audi, Škoda, SEAT i Cupra — pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. 
+  H1: Hlađenje i klima | robots: index, follow | canon: http://localhost:3000/delovi/hladjenje-i-klima
+/delovi/transmisija 
+  T: Transmisija za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Transmisija: delovi za VW, Audi, Škoda, SEAT i Cupra — pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. 
+  H1: Transmisija | robots: index, follow | canon: http://localhost:3000/delovi/transmisija
+/delovi/vesanje-i-upravljanje 
+  T: Vešanje i upravljanje za VW, Audi, Škoda, SEAT i… | SKLOP 
+  D: Vešanje i upravljanje: delovi za VW, Audi, Škoda, SEAT i Cupra — pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. 
+  H1: Vešanje i upravljanje | robots: index, follow | canon: http://localhost:3000/delovi/vesanje-i-upravljanje
+/delovi/kocnice 
+  T: Kočnice za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Kočnice: delovi za VW, Audi, Škoda, SEAT i Cupra — pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. 
+  H1: Kočnice | robots: index, follow | canon: http://localhost:3000/delovi/kocnice
+/delovi/elektrika-i-svetla 
+  T: Elektrika i svetla za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Elektrika i svetla: delovi za VW, Audi, Škoda, SEAT i Cupra — pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. 
+  H1: Elektrika i svetla | robots: index, follow | canon: http://localhost:3000/delovi/elektrika-i-svetla
+/delovi/karoserija 
+  T: Karoserija za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Karoserija: delovi za VW, Audi, Škoda, SEAT i Cupra — pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. 
+  H1: Karoserija | robots: index, follow | canon: http://localhost:3000/delovi/karoserija
+/delovi/tockovi 
+  T: Točkovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Točkovi: delovi za VW, Audi, Škoda, SEAT i Cupra — pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. 
+  H1: Točkovi | robots: index, follow | canon: http://localhost:3000/delovi/tockovi
+/delovi/servis 
+  T: Servis i održavanje za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Servis i održavanje: delovi za VW, Audi, Škoda, SEAT i Cupra — pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. 
+  H1: Servis i održavanje | robots: index, follow | canon: http://localhost:3000/delovi/servis
+/delovi/motor 
+  T: Blok motora i glava za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Blok motora i glava za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Glave, zaptivke glave, ventili i delovi bloka. 
+  H1: Blok motora i glava | robots: index, follow | canon: http://localhost:3000/delovi/motor
+/delovi/turbina 
+  T: Turbina (turbopunjač) za VW, Audi, Škoda, SEAT i… | SKLOP 
+  D: Turbina (turbopunjač) za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Nove i reparirane turbine, setovi za montažu. 
+  H1: Turbina (turbopunjač) | robots: index, follow | canon: http://localhost:3000/delovi/turbina
+/delovi/interkuler 
+  T: Interkuler za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Interkuler za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Interkuleri, creva i obujmice. 
+  H1: Interkuler | robots: index, follow | canon: http://localhost:3000/delovi/interkuler
+/delovi/usisna-grana 
+  T: Usisna grana i kućište filtera za VW, Audi, Škoda… | SKLOP 
+  D: Usisna grana i kućište filtera za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Usisne grane, klapne i kućišta filtera. 
+  H1: Usisna grana i kućište filtera | robots: index, follow | canon: http://localhost:3000/delovi/usisna-grana
+/delovi/brizgaljke-pumpa-goriva 
+  T: Brizgaljke i pumpa goriva za VW, Audi, Škoda, SEAT… | SKLOP 
+  D: Brizgaljke i pumpa goriva za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Brizgaljke, pumpe visokog pritiska, podloške. 
+  H1: Brizgaljke i pumpa goriva | robots: index, follow | canon: http://localhost:3000/delovi/brizgaljke-pumpa-goriva
+/delovi/zupcasti-kais-vodena-pumpa 
+  T: Set zupčastog kaiša i vodena pumpa za VW, Audi… | SKLOP 
+  D: Set zupčastog kaiša i vodena pumpa za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Setovi kaiša sa vodenom pumpom i zatezačima. 
+  H1: Set zupčastog kaiša i vodena pumpa | robots: index, follow | canon: http://localhost:3000/delovi/zupcasti-kais-vodena-pumpa
+/delovi/kais-alternatora 
+  T: Kaiš alternatora i zatezači za VW, Audi, Škoda… | SKLOP 
+  D: Kaiš alternatora i zatezači za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Rebrasti kaiševi, zatezači i remenice. 
+  H1: Kaiš alternatora i zatezači | robots: index, follow | canon: http://localhost:3000/delovi/kais-alternatora
+/delovi/alternator 
+  T: Alternator za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Alternator za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Alternatori, regulatori i remenice. 
+  H1: Alternator | robots: index, follow | canon: http://localhost:3000/delovi/alternator
+/delovi/anlaser 
+  T: Anlaser za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Anlaser za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Anlaseri i automati anlasera. 
+  H1: Anlaser | robots: index, follow | canon: http://localhost:3000/delovi/anlaser
+/delovi/paljenje-grejaci 
+  T: Svećice, bobine i grejači za VW, Audi, Škoda, SEAT… | SKLOP 
+  D: Svećice, bobine i grejači za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Svećice, bobine i grejači. 
+  H1: Svećice, bobine i grejači | robots: index, follow | canon: http://localhost:3000/delovi/paljenje-grejaci
+/delovi/karter-dihtunzi 
+  T: Karter, pumpa ulja i dihtunzi za VW, Audi, Škoda… | SKLOP 
+  D: Karter, pumpa ulja i dihtunzi za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Karteri, pumpe ulja, dihtunzi i semerinzi. 
+  H1: Karter, pumpa ulja i dihtunzi | robots: index, follow | canon: http://localhost:3000/delovi/karter-dihtunzi
+/delovi/egr-ventil 
+  T: EGR ventil za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: EGR ventil za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. EGR ventili, hladnjaci i zaptivke. 
+  H1: EGR ventil | robots: index, follow | canon: http://localhost:3000/delovi/egr-ventil
+/delovi/nosaci-motora 
+  T: Nosači motora i menjača za VW, Audi, Škoda, SEAT i… | SKLOP 
+  D: Nosači motora i menjača za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Nosači motora, menjača i obrtni nosači. 
+  H1: Nosači motora i menjača | robots: index, follow | canon: http://localhost:3000/delovi/nosaci-motora
+/delovi/dpf-katalizator 
+  T: DPF i katalizator za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: DPF i katalizator za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. DPF filteri, katalizatori i montažni setovi. 
+  H1: DPF i katalizator | robots: index, follow | canon: http://localhost:3000/delovi/dpf-katalizator
+/delovi/auspuh 
+  T: Auspuh (lonci i cevi) za VW, Audi, Škoda, SEAT i… | SKLOP 
+  D: Auspuh (lonci i cevi) za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Lonci, cevi, obujmice i gumeni nosači. 
+  H1: Auspuh (lonci i cevi) | robots: index, follow | canon: http://localhost:3000/delovi/auspuh
+/delovi/hladnjak-ventilator 
+  T: Hladnjak i ventilator za VW, Audi, Škoda, SEAT i… | SKLOP 
+  D: Hladnjak i ventilator za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Hladnjaci motora, ventilatori i poklopci. 
+  H1: Hladnjak i ventilator | robots: index, follow | canon: http://localhost:3000/delovi/hladnjak-ventilator
+/delovi/termostat-creva 
+  T: Termostat i creva hlađenja za VW, Audi, Škoda… | SKLOP 
+  D: Termostat i creva hlađenja za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Termostati, kućišta i creva hlađenja. 
+  H1: Termostat i creva hlađenja | robots: index, follow | canon: http://localhost:3000/delovi/termostat-creva
+/delovi/klima 
+  T: Kompresor i kondenzator klime za VW, Audi, Škoda… | SKLOP 
+  D: Kompresor i kondenzator klime za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Kompresori, kondenzatori i sušači. 
+  H1: Kompresor i kondenzator klime | robots: index, follow | canon: http://localhost:3000/delovi/klima
+/delovi/kvacilo-zamajac 
+  T: Kvačilo i zamajac za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Kvačilo i zamajac za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Setovi kvačila, dvomaseni zamajci, potisni ležajevi. 
+  H1: Kvačilo i zamajac | robots: index, follow | canon: http://localhost:3000/delovi/kvacilo-zamajac
+/delovi/menjac 
+  T: Menjač (DSG) za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Menjač (DSG) za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Delovi menjača, filteri i ulja za DSG. 
+  H1: Menjač (DSG) | robots: index, follow | canon: http://localhost:3000/delovi/menjac
+/delovi/poluosovine 
+  T: Poluosovine i homokinetički zglobovi za VW, Audi… | SKLOP 
+  D: Poluosovine i homokinetički zglobovi za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Poluosovine, zglobovi i manžetne. 
+  H1: Poluosovine i homokinetički zglobovi | robots: index, follow | canon: http://localhost:3000/delovi/poluosovine
+/delovi/amortizeri-opruge 
+  T: Amortizeri i opruge za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Amortizeri i opruge za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Amortizeri, opruge i ležajevi amortizera. 
+  H1: Amortizeri i opruge | robots: index, follow | canon: http://localhost:3000/delovi/amortizeri-opruge
+/delovi/ramena-selen-blokovi 
+  T: Ramena i selen blokovi za VW, Audi, Škoda, SEAT i… | SKLOP 
+  D: Ramena i selen blokovi za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Ramena, selen blokovi i kugle. 
+  H1: Ramena i selen blokovi | robots: index, follow | canon: http://localhost:3000/delovi/ramena-selen-blokovi
+/delovi/spone-stabilizatori 
+  T: Spone i stabilizatori za VW, Audi, Škoda, SEAT i… | SKLOP 
+  D: Spone i stabilizatori za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Spone, krajevi spona i štangle stabilizatora. 
+  H1: Spone i stabilizatori | robots: index, follow | canon: http://localhost:3000/delovi/spone-stabilizatori
+/delovi/letva-volana 
+  T: Letva volana za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Letva volana za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Letve volana i manžetne. 
+  H1: Letva volana | robots: index, follow | canon: http://localhost:3000/delovi/letva-volana
+/delovi/lezaj-glavcina 
+  T: Ležaj točka i glavčina za VW, Audi, Škoda, SEAT i… | SKLOP 
+  D: Ležaj točka i glavčina za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Ležajevi točka i glavčine. 
+  H1: Ležaj točka i glavčina | robots: index, follow | canon: http://localhost:3000/delovi/lezaj-glavcina
+/delovi/kocioni-diskovi 
+  T: Kočioni diskovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Kočioni diskovi za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Prednji i zadnji diskovi, puni i ventilirani. 
+  H1: Kočioni diskovi | robots: index, follow | canon: http://localhost:3000/delovi/kocioni-diskovi
+/delovi/kocione-plocice 
+  T: Kočione pločice za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Kočione pločice za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Prednje i zadnje pločice, senzori habanja. 
+  H1: Kočione pločice | robots: index, follow | canon: http://localhost:3000/delovi/kocione-plocice
+/delovi/kocione-celjusti 
+  T: Kočione čeljusti za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Kočione čeljusti za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Čeljusti, setovi za reparaciju i klipovi. 
+  H1: Kočione čeljusti | robots: index, follow | canon: http://localhost:3000/delovi/kocione-celjusti
+/delovi/abs-senzori 
+  T: ABS senzori za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: ABS senzori za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. ABS senzori prednji i zadnji. 
+  H1: ABS senzori | robots: index, follow | canon: http://localhost:3000/delovi/abs-senzori
+/delovi/akumulator 
+  T: Akumulator za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Akumulator za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Akumulatori, EFB i AGM. 
+  H1: Akumulator | robots: index, follow | canon: http://localhost:3000/delovi/akumulator
+/delovi/farovi 
+  T: Farovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Farovi za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Farovi, sijalice i nosači. 
+  H1: Farovi | robots: index, follow | canon: http://localhost:3000/delovi/farovi
+/delovi/stop-svetla 
+  T: Stop svetla za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Stop svetla za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Stop svetla i nosači sijalica. 
+  H1: Stop svetla | robots: index, follow | canon: http://localhost:3000/delovi/stop-svetla
+/delovi/senzori 
+  T: Senzori (lambda, parking, temperatura) za VW, Audi, Škoda… 
+  D: Senzori (lambda, parking, temperatura) za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Lambda sonde, parking i temperaturni… 
+  H1: Senzori (lambda, parking, temperatura) | robots: index, follow | canon: http://localhost:3000/delovi/senzori
+/delovi/hauba 
+  T: Hauba za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Hauba za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Haube i delovi za montažu. 
+  H1: Hauba | robots: index, follow | canon: http://localhost:3000/delovi/hauba
+/delovi/branici 
+  T: Branici za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Branici za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Prednji i zadnji branici, nosači i maske. 
+  H1: Branici | robots: index, follow | canon: http://localhost:3000/delovi/branici
+/delovi/blatobrani 
+  T: Blatobrani za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Blatobrani za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Blatobrani i podbranici. 
+  H1: Blatobrani | robots: index, follow | canon: http://localhost:3000/delovi/blatobrani
+/delovi/vrata 
+  T: Vrata za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Vrata za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Vrata, brave i podizači stakala. 
+  H1: Vrata | robots: index, follow | canon: http://localhost:3000/delovi/vrata
+/delovi/retrovizori 
+  T: Retrovizori za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Retrovizori za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Retrovizori, stakla i kućišta. 
+  H1: Retrovizori | robots: index, follow | canon: http://localhost:3000/delovi/retrovizori
+/delovi/stakla 
+  T: Stakla za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Stakla za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Vetrobrani, zadnja i bočna stakla. 
+  H1: Stakla | robots: index, follow | canon: http://localhost:3000/delovi/stakla
+/delovi/brisaci 
+  T: Brisači za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Brisači za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Metlice brisača i motori brisača. 
+  H1: Brisači | robots: index, follow | canon: http://localhost:3000/delovi/brisaci
+/delovi/felne-gume 
+  T: Felne i gume za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Felne i gume za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Felne, gume i vijci točkova. 
+  H1: Felne i gume | robots: index, follow | canon: http://localhost:3000/delovi/felne-gume
+/delovi/filteri 
+  T: Filteri za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Filteri za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Filteri ulja, vazduha, goriva i kabine. 
+  H1: Filteri | robots: index, follow | canon: http://localhost:3000/delovi/filteri
+/delovi/ulja-tecnosti 
+  T: Ulja i tečnosti za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Ulja i tečnosti za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Motorna ulja, ulja za menjač, kočiona i rashladna tečnost. 
+  H1: Ulja i tečnosti | robots: index, follow | canon: http://localhost:3000/delovi/ulja-tecnosti
+/delovi/filter-ulja 
+  T: Filter ulja za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Filter ulja za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Filteri ulja i ulošci. 
+  H1: Filter ulja | robots: index, follow | canon: http://localhost:3000/delovi/filter-ulja
+/delovi/filter-vazduha 
+  T: Filter vazduha za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Filter vazduha za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Filteri vazduha motora. 
+  H1: Filter vazduha | robots: index, follow | canon: http://localhost:3000/delovi/filter-vazduha
+/delovi/filter-goriva 
+  T: Filter goriva za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Filter goriva za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Filteri goriva za dizel i benzin. 
+  H1: Filter goriva | robots: index, follow | canon: http://localhost:3000/delovi/filter-goriva
+/delovi/filter-kabine 
+  T: Filter kabine za VW, Audi, Škoda, SEAT i Cupra | SKLOP 
+  D: Filter kabine za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Filteri kabine i sa aktivnim ugljem. 
+  H1: Filter kabine | robots: index, follow | canon: http://localhost:3000/delovi/filter-kabine
+/vozila/volkswagen 
+  T: Delovi za Volkswagen — svi modeli | SKLOP 
+  D: Delovi za Volkswagen: Golf, Passat, Polo, Caddy, Touran, Tiguan i drugi modeli. Izaberite generaciju i pogledajte delove koji odgovaraju. 
+  H1: Delovi za Volkswagen | robots: index, follow | canon: http://localhost:3000/vozila/volkswagen
+/vozila/audi 
+  T: Delovi za Audi — svi modeli | SKLOP 
+  D: Delovi za Audi: A3, A4, A6 i drugi modeli. Izaberite generaciju i pogledajte delove koji odgovaraju. 
+  H1: Delovi za Audi | robots: index, follow | canon: http://localhost:3000/vozila/audi
+/vozila/skoda 
+  T: Delovi za Škoda — svi modeli | SKLOP 
+  D: Delovi za Škoda: Octavia, Fabia, Superb, Rapid, Kodiaq, Karoq i drugi modeli. Izaberite generaciju i pogledajte delove koji odgovaraju. 
+  H1: Delovi za Škoda | robots: index, follow | canon: http://localhost:3000/vozila/skoda
+/vozila/seat 
+  T: Delovi za SEAT — svi modeli | SKLOP 
+  D: Delovi za SEAT: Leon, Ibiza, Ateca i drugi modeli. Izaberite generaciju i pogledajte delove koji odgovaraju. 
+  H1: Delovi za SEAT | robots: index, follow | canon: http://localhost:3000/vozila/seat
+/vozila/cupra 
+  T: Delovi za Cupra — svi modeli | SKLOP 
+  D: Delovi za Cupra: Formentor, Leon, Ateca i drugi modeli. Izaberite generaciju i pogledajte delove koji odgovaraju. 
+  H1: Delovi za Cupra | robots: index, follow | canon: http://localhost:3000/vozila/cupra
+/vozila/volkswagen/golf 
+  T: Delovi za VW Golf — sve generacije | SKLOP 
+  D: Delovi za VW Golf: Golf IV (1997–2006), Golf V (2003–2009), Golf VI (2008–2013), Golf VII (2012–2020), Golf VIII (2019–). Izaberite generaciju i… 
+  H1: Delovi za Volkswagen Golf | robots: index, follow | canon: http://localhost:3000/vozila/volkswagen/golf
+/vozila/volkswagen/passat 
+  T: Delovi za VW Passat — sve generacije | SKLOP 
+  D: Delovi za VW Passat: Passat B5 (1996–2005), Passat B6 (2005–2010), Passat B7 (2010–2014), Passat B8 (2014–2023). Izaberite generaciju i pogledajte delove… 
+  H1: Delovi za Volkswagen Passat | robots: index, follow | canon: http://localhost:3000/vozila/volkswagen/passat
+/vozila/volkswagen/polo 
+  T: Delovi za VW Polo — sve generacije | SKLOP 
+  D: Delovi za VW Polo: Polo IV (2001–2009), Polo V (2009–2017), Polo VI (2017–). Izaberite generaciju i pogledajte delove po kategorijama. 
+  H1: Delovi za Volkswagen Polo | robots: index, follow | canon: http://localhost:3000/vozila/volkswagen/polo
+/vozila/volkswagen/caddy 
+  T: Delovi za VW Caddy — sve generacije | SKLOP 
+  D: Delovi za VW Caddy: Caddy III (2003–2020), Caddy V (2020–). Izaberite generaciju i pogledajte delove po kategorijama. 
+  H1: Delovi za Volkswagen Caddy | robots: index, follow | canon: http://localhost:3000/vozila/volkswagen/caddy
+/vozila/volkswagen/touran 
+  T: Delovi za VW Touran — sve generacije | SKLOP 
+  D: Delovi za VW Touran: Touran I (2003–2015), Touran II (2015–). Izaberite generaciju i pogledajte delove po kategorijama. 
+  H1: Delovi za Volkswagen Touran | robots: index, follow | canon: http://localhost:3000/vozila/volkswagen/touran
+/vozila/volkswagen/tiguan 
+  T: Delovi za VW Tiguan — sve generacije | SKLOP 
+  D: Delovi za VW Tiguan: Tiguan I (2007–2016), Tiguan II (2016–2024). Izaberite generaciju i pogledajte delove po kategorijama. 
+  H1: Delovi za Volkswagen Tiguan | robots: index, follow | canon: http://localhost:3000/vozila/volkswagen/tiguan
+/vozila/audi/a3 
+  T: Delovi za Audi A3 — sve generacije | SKLOP 
+  D: Delovi za Audi A3: A3 (8L) (1996–2003), A3 (8P) (2003–2013), A3 (8V) (2012–2020), A3 (8Y) (2020–). Izaberite generaciju i pogledajte delove po… 
+  H1: Delovi za Audi A3 | robots: index, follow | canon: http://localhost:3000/vozila/audi/a3
+/vozila/audi/a4 
+  T: Delovi za Audi A4 — sve generacije | SKLOP 
+  D: Delovi za Audi A4: A4 B5 (1994–2001), A4 B6 (2000–2004), A4 B7 (2004–2008), A4 B8 (2007–2015), A4 B9 (2015–). Izaberite generaciju i pogledajte delove po… 
+  H1: Delovi za Audi A4 | robots: index, follow | canon: http://localhost:3000/vozila/audi/a4
+/vozila/audi/a6 
+  T: Delovi za Audi A6 — sve generacije | SKLOP 
+  D: Delovi za Audi A6: A6 C5 (1997–2004), A6 C6 (2004–2011), A6 C7 (2011–2018), A6 C8 (2018–). Izaberite generaciju i pogledajte delove po kategorijama. 
+  H1: Delovi za Audi A6 | robots: index, follow | canon: http://localhost:3000/vozila/audi/a6
+/vozila/skoda/octavia 
+  T: Delovi za Škoda Octavia — sve generacije | SKLOP 
+  D: Delovi za Škoda Octavia: Octavia I (1996–2010), Octavia II (2004–2013), Octavia III (2012–2020), Octavia IV (2019–). Izaberite generaciju i pogledajte… 
+  H1: Delovi za Škoda Octavia | robots: index, follow | canon: http://localhost:3000/vozila/skoda/octavia
+/vozila/skoda/fabia 
+  T: Delovi za Škoda Fabia — sve generacije | SKLOP 
+  D: Delovi za Škoda Fabia: Fabia I (1999–2007), Fabia II (2007–2014), Fabia III (2014–2021), Fabia IV (2021–). Izaberite generaciju i pogledajte delove po… 
+  H1: Delovi za Škoda Fabia | robots: index, follow | canon: http://localhost:3000/vozila/skoda/fabia
+/vozila/skoda/superb 
+  T: Delovi za Škoda Superb — sve generacije | SKLOP 
+  D: Delovi za Škoda Superb: Superb I (2001–2008), Superb II (2008–2015), Superb III (2015–2024). Izaberite generaciju i pogledajte delove po kategorijama. 
+  H1: Delovi za Škoda Superb | robots: index, follow | canon: http://localhost:3000/vozila/skoda/superb
+/vozila/skoda/rapid 
+  T: Delovi za Škoda Rapid — sve generacije | SKLOP 
+  D: Delovi za Škoda Rapid: Rapid (2012–2019). Izaberite generaciju i pogledajte delove po kategorijama. 
+  H1: Delovi za Škoda Rapid | robots: index, follow | canon: http://localhost:3000/vozila/skoda/rapid
+/vozila/skoda/kodiaq 
+  T: Delovi za Škoda Kodiaq — sve generacije | SKLOP 
+  D: Delovi za Škoda Kodiaq: Kodiaq I (2016–2024). Izaberite generaciju i pogledajte delove po kategorijama. 
+  H1: Delovi za Škoda Kodiaq | robots: index, follow | canon: http://localhost:3000/vozila/skoda/kodiaq
+/vozila/skoda/karoq 
+  T: Delovi za Škoda Karoq — sve generacije | SKLOP 
+  D: Delovi za Škoda Karoq: Karoq (2017–). Izaberite generaciju i pogledajte delove po kategorijama. 
+  H1: Delovi za Škoda Karoq | robots: index, follow | canon: http://localhost:3000/vozila/skoda/karoq
+/vozila/seat/leon 
+  T: Delovi za SEAT Leon — sve generacije | SKLOP 
+  D: Delovi za SEAT Leon: Leon I (1999–2005), Leon II (2005–2012), Leon III (2012–2020), Leon IV (2020–). Izaberite generaciju i pogledajte delove po… 
+  H1: Delovi za SEAT Leon | robots: index, follow | canon: http://localhost:3000/vozila/seat/leon
+/vozila/seat/ibiza 
+  T: Delovi za SEAT Ibiza — sve generacije | SKLOP 
+  D: Delovi za SEAT Ibiza: Ibiza III (2002–2008), Ibiza IV (2008–2017), Ibiza V (2017–). Izaberite generaciju i pogledajte delove po kategorijama. 
+  H1: Delovi za SEAT Ibiza | robots: index, follow | canon: http://localhost:3000/vozila/seat/ibiza
+/vozila/seat/ateca 
+  T: Delovi za SEAT Ateca — sve generacije | SKLOP 
+  D: Delovi za SEAT Ateca: Ateca (2016–). Izaberite generaciju i pogledajte delove po kategorijama. 
+  H1: Delovi za SEAT Ateca | robots: index, follow | canon: http://localhost:3000/vozila/seat/ateca
+/vozila/cupra/formentor 
+  T: Delovi za Cupra Formentor — sve generacije | SKLOP 
+  D: Delovi za Cupra Formentor: Formentor (2020–). Izaberite generaciju i pogledajte delove po kategorijama. 
+  H1: Delovi za Cupra Formentor | robots: index, follow | canon: http://localhost:3000/vozila/cupra/formentor
+/vozila/cupra/leon 
+  T: Delovi za Cupra Leon — sve generacije | SKLOP 
+  D: Delovi za Cupra Leon: Leon (KL) (2020–). Izaberite generaciju i pogledajte delove po kategorijama. 
+  H1: Delovi za Cupra Leon | robots: index, follow | canon: http://localhost:3000/vozila/cupra/leon
+/vozila/cupra/ateca 
+  T: Delovi za Cupra Ateca — sve generacije | SKLOP 
+  D: Delovi za Cupra Ateca: Ateca (2018–). Izaberite generaciju i pogledajte delove po kategorijama. 
+  H1: Delovi za Cupra Ateca | robots: index, follow | canon: http://localhost:3000/vozila/cupra/ateca
+/vozila/volkswagen/golf/golf-4 
+  T: Delovi za VW Golf IV (1997–2006) | SKLOP 
+  D: Delovi za VW Golf IV: 18 artikala u 12 kategorija. Blok motora i glava, Filter ulja, Filter goriva, Brizgaljke i pumpa goriva. 
+  H1: Delovi za VW Golf IV | robots: index, follow | canon: http://localhost:3000/vozila/volkswagen/golf/golf-4
+/vozila/volkswagen/golf/golf-5 
+  T: Delovi za VW Golf V (2003–2009) | SKLOP 
+  D: Delovi za VW Golf V: 79 artikala u 38 kategorija. Blok motora i glava, Filter ulja, Filter vazduha, Turbina (turbopunjač). 
+  H1: Delovi za VW Golf V | robots: index, follow | canon: http://localhost:3000/vozila/volkswagen/golf/golf-5
+/vozila/volkswagen/golf/golf-6 
+  T: Delovi za VW Golf VI (2008–2013) | SKLOP 
+  D: Delovi za VW Golf VI: 80 artikala u 39 kategorija. Blok motora i glava, Filter ulja, Filter vazduha, Turbina (turbopunjač). 
+  H1: Delovi za VW Golf VI | robots: index, follow | canon: http://localhost:3000/vozila/volkswagen/golf/golf-6
+/vozila/volkswagen/golf/golf-7 
+  T: Delovi za VW Golf VII (2012–2020) | SKLOP 
+  D: Delovi za VW Golf VII: 61 artikal u 37 kategorija. Blok motora i glava, Filter ulja, Filter vazduha, Turbina (turbopunjač). 
+  H1: Delovi za VW Golf VII | robots: index, follow | canon: http://localhost:3000/vozila/volkswagen/golf/golf-7

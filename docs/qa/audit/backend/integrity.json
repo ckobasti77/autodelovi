@@ -1,0 +1,60 @@
+{
+  "orders": {
+    "listed": 99,
+    "checked": 99,
+    "problems": [],
+    "stockIssues": [
+      "SK-2026-000003/DEMO-0045: status ceka_deo but committedQty null"
+    ],
+    "stockIssueCount": 1,
+    "numbering": {
+      "SK-2026": {
+        "count": 99,
+        "min": 1,
+        "max": 99,
+        "duplicates": [],
+        "missing": []
+      }
+    }
+  },
+  "stock": {
+    "movements": 143,
+    "products": 114,
+    "arithmeticProblems": [],
+    "chainProblems": [],
+    "chainProblemCount": 0,
+    "clampedAtZero": [],
+    "stockWithoutAnyMovement": [],
+    "stockWithoutAnyMovementCount": 0,
+    "byReason": {
+      "order_cancelled": 6,
+      "order_confirmed": 23,
+      "receipt": 114
+    }
+  },
+  "products": {
+    "count": 168,
+    "active": 157,
+    "demo": 157,
+    "generationIdsKnown": 56,
+    "problems": [],
+    "problemCount": 0
+  },
+  "inquiries": {
+    "count": 58,
+    "byStatus": {
+      "nov": 42,
+      "ponuda_poslata": 12,
+      "u_obradi": 3,
+      "odbijena": 1
+    },
+    "numbering": {
+      "UP-2026": {
+        "count": 58,
+        "max": 58,
+        "duplicates": [],
+        "missing": []
+      }
+    }
+  }
+}

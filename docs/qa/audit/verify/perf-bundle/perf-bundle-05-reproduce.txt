@@ -1,0 +1,47 @@
+perf-bundle-05 verify — build 9b4K278NWK6BGwhVv5UCP, served :3100
+
+# Phosphor weight maps in first-load module JS per route: raw, raw after keeping only 'regular', in-chunk gzip saving (verify-perf-bundle-static.mjs)
+== /  scripts 24  module JS 329.1 KB gz
+  phosphor icons: 26 modules (25 distinct) raw 86.7 KB -> regular-only raw 36.1 KB; in-chunk gzip saving 13.3 KB; duplicates: ArrowCounterClockwiseIcon
+    XIcon CheckCircleIcon InfoIcon WarningIcon WarningCircleIcon ListIcon ListNumbersIcon UserCircleIcon WrenchIcon CaretDownIcon MagnifyingGlassIcon #52718 ArrowRightIcon ArrowSquareOutIcon CarIcon ChatCircleTextIcon EnvelopeIcon PhoneIcon ShoppingCartSimpleIcon WhatsappLogoIcon #86474 CaretLeftIcon CaretRightIcon CubeIcon ArrowCounterClockwiseIcon ArrowCounterClockwiseIcon
+== /delovi  scripts 23  module JS 313.3 KB gz
+  phosphor icons: 22 modules (21 distinct) raw 59.9 KB -> regular-only raw 15.1 KB; in-chunk gzip saving 11.9 KB; duplicates: ArrowCounterClockwiseIcon
+    XIcon CheckCircleIcon InfoIcon WarningIcon WarningCircleIcon ListIcon ListNumbersIcon UserCircleIcon WrenchIcon CaretDownIcon MagnifyingGlassIcon #52718 ArrowRightIcon ArrowSquareOutIcon CarIcon ChatCircleTextIcon EnvelopeIcon PhoneIcon ShoppingCartSimpleIcon WhatsappLogoIcon ArrowCounterClockwiseIcon ArrowCounterClockwiseIcon
+== /delovi/kocioni-diskovi  scripts 24  module JS 330.9 KB gz
+  phosphor icons: 29 modules (28 distinct) raw 84.9 KB -> regular-only raw 29.2 KB; in-chunk gzip saving 14.4 KB; duplicates: ArrowCounterClockwiseIcon
+    XIcon CheckCircleIcon InfoIcon WarningIcon WarningCircleIcon ListIcon ListNumbersIcon UserCircleIcon WrenchIcon CaretDownIcon MagnifyingGlassIcon #52718 ArrowRightIcon ArrowSquareOutIcon CarIcon ChatCircleTextIcon EnvelopeIcon PhoneIcon ShoppingCartSimpleIcon WhatsappLogoIcon #36506 CheckIcon MinusIcon BellIcon ClockIcon PlusIcon SquareHalfBottomIcon ArrowCounterClockwiseIcon ArrowCounterClockwiseIcon
+== /deo/kocioni-disk-prednji-276-24-mm-demo-0004  scripts 24  module JS 333.6 KB gz
+  phosphor icons: 32 modules (31 distinct) raw 83.3 KB -> regular-only raw 20.5 KB; in-chunk gzip saving 16.0 KB; duplicates: ArrowCounterClockwiseIcon
+    XIcon CheckCircleIcon InfoIcon WarningIcon WarningCircleIcon ListIcon ListNumbersIcon UserCircleIcon WrenchIcon CaretDownIcon MagnifyingGlassIcon #52718 ArrowRightIcon ArrowSquareOutIcon CarIcon ChatCircleTextIcon EnvelopeIcon PhoneIcon ShoppingCartSimpleIcon WhatsappLogoIcon ClockIcon CopyIcon MinusIcon QuestionIcon SquareHalfBottomIcon StarIcon XCircleIcon BellIcon CheckIcon PlusIcon ArrowCounterClockwiseIcon ArrowCounterClockwiseIcon
+== /pretraga?q=disk  scripts 24  module JS 324.7 KB gz
+  phosphor icons: 28 modules (27 distinct) raw 71.9 KB -> regular-only raw 18.0 KB; in-chunk gzip saving 13.9 KB; duplicates: ArrowCounterClockwiseIcon
+    XIcon CheckCircleIcon InfoIcon WarningIcon WarningCircleIcon ListIcon ListNumbersIcon UserCircleIcon WrenchIcon CaretDownIcon MagnifyingGlassIcon #52718 ArrowRightIcon ArrowSquareOutIcon CarIcon ChatCircleTextIcon EnvelopeIcon PhoneIcon ShoppingCartSimpleIcon WhatsappLogoIcon BellIcon CheckIcon ClockIcon MinusIcon PlusIcon SquareHalfBottomIcon ArrowCounterClockwiseIcon ArrowCounterClockwiseIcon
+== /vozila/volkswagen/golf/golf-7  scripts 24  module JS 324.7 KB gz
+  phosphor icons: 28 modules (27 distinct) raw 71.9 KB -> regular-only raw 18.0 KB; in-chunk gzip saving 13.9 KB; duplicates: ArrowCounterClockwiseIcon
+    XIcon CheckCircleIcon InfoIcon WarningIcon WarningCircleIcon ListIcon ListNumbersIcon UserCircleIcon WrenchIcon CaretDownIcon MagnifyingGlassIcon #52718 ArrowRightIcon ArrowSquareOutIcon CarIcon ChatCircleTextIcon EnvelopeIcon PhoneIcon ShoppingCartSimpleIcon WhatsappLogoIcon BellIcon CheckIcon ClockIcon MinusIcon PlusIcon SquareHalfBottomIcon ArrowCounterClockwiseIcon ArrowCounterClockwiseIcon
+== /ponuda/kocione-plocice-golf  scripts 24  module JS 340.2 KB gz
+  phosphor icons: 35 modules (27 distinct) raw 92.3 KB -> regular-only raw 22.4 KB; in-chunk gzip saving 18.2 KB; duplicates: CaretDownIcon,ChatCircleTextIcon,EnvelopeIcon,PhoneIcon,WhatsappLogoIcon,ArrowRightIcon,CarIcon,ShoppingCartSimpleIcon
+    XIcon CheckCircleIcon InfoIcon WarningIcon WarningCircleIcon #52718 ArrowRightIcon ArrowSquareOutIcon ShoppingCartSimpleIcon BellIcon PlusIcon CarIcon CaretDownIcon ChatCircleTextIcon CheckIcon ClockIcon EnvelopeIcon MinusIcon PhoneIcon SquareHalfBottomIcon WhatsappLogoIcon CaretDownIcon ChatCircleTextIcon EnvelopeIcon ListIcon ListNumbersIcon MagnifyingGlassIcon PhoneIcon UserCircleIcon WhatsappLogoIcon WrenchIcon ArrowRightIcon CarIcon ShoppingCartSimpleIcon ArrowCounterClockwiseIcon
+== /za-majstore  scripts 23  module JS 316.3 KB gz
+  phosphor icons: 22 modules (21 distinct) raw 59.9 KB -> regular-only raw 15.1 KB; in-chunk gzip saving 11.9 KB; duplicates: ArrowCounterClockwiseIcon
+    XIcon CheckCircleIcon InfoIcon WarningIcon WarningCircleIcon ListIcon ListNumbersIcon UserCircleIcon WrenchIcon CaretDownIcon MagnifyingGlassIcon #52718 ArrowRightIcon ArrowSquareOutIcon CarIcon ChatCircleTextIcon EnvelopeIcon PhoneIcon ShoppingCartSimpleIcon WhatsappLogoIcon ArrowCounterClockwiseIcon ArrowCounterClockwiseIcon
+== /upit  scripts 24  module JS 428.7 KB gz
+  phosphor icons: 26 modules (25 distinct) raw 84.7 KB -> regular-only raw 33.3 KB; in-chunk gzip saving 13.7 KB; duplicates: ArrowCounterClockwiseIcon
+    XIcon CheckCircleIcon InfoIcon WarningIcon WarningCircleIcon ListIcon ListNumbersIcon UserCircleIcon WrenchIcon CaretDownIcon MagnifyingGlassIcon #52718 ArrowRightIcon ArrowSquareOutIcon CarIcon ChatCircleTextIcon EnvelopeIcon PhoneIcon ShoppingCartSimpleIcon WhatsappLogoIcon ArrowCounterClockwiseIcon #43205 CheckIcon MinusIcon PaperPlaneTiltIcon ArrowCounterClockwiseIcon
+== /korpa  scripts 24  module JS 321.3 KB gz
+  phosphor icons: 25 modules (24 distinct) raw 65.1 KB -> regular-only raw 16.4 KB; in-chunk gzip saving 12.6 KB; duplicates: ArrowCounterClockwiseIcon
+    XIcon CheckCircleIcon InfoIcon WarningIcon WarningCircleIcon ListIcon ListNumbersIcon UserCircleIcon WrenchIcon CaretDownIcon MagnifyingGlassIcon #52718 ArrowRightIcon ArrowSquareOutIcon CarIcon ChatCircleTextIcon EnvelopeIcon PhoneIcon ShoppingCartSimpleIcon WhatsappLogoIcon ArrowCounterClockwiseIcon MinusIcon PlusIcon TrashIcon ArrowCounterClockwiseIcon
+== /porudzbina  scripts 24  module JS 429.9 KB gz
+  phosphor icons: 26 modules (25 distinct) raw 67.0 KB -> regular-only raw 16.8 KB; in-chunk gzip saving 13.4 KB; duplicates: ArrowCounterClockwiseIcon
+    XIcon CheckCircleIcon InfoIcon WarningIcon WarningCircleIcon ListIcon ListNumbersIcon UserCircleIcon WrenchIcon CaretDownIcon MagnifyingGlassIcon #52718 ArrowRightIcon ArrowSquareOutIcon CarIcon ChatCircleTextIcon EnvelopeIcon PhoneIcon ShoppingCartSimpleIcon WhatsappLogoIcon ArrowLeftIcon CheckIcon MinusIcon PaperPlaneTiltIcon ArrowCounterClockwiseIcon ArrowCounterClockwiseIcon
+== /prijava  scripts 23  module JS 308.7 KB gz
+  phosphor icons: 22 modules (21 distinct) raw 59.9 KB -> regular-only raw 15.1 KB; in-chunk gzip saving 11.9 KB; duplicates: ArrowCounterClockwiseIcon
+    XIcon CheckCircleIcon InfoIcon WarningIcon WarningCircleIcon ListIcon ListNumbersIcon UserCircleIcon WrenchIcon CaretDownIcon MagnifyingGlassIcon #52718 ArrowRightIcon ArrowSquareOutIcon CarIcon ChatCircleTextIcon EnvelopeIcon PhoneIcon ShoppingCartSimpleIcon WhatsappLogoIcon ArrowCounterClockwiseIcon ArrowCounterClockwiseIcon
+
+# Served PhoneIcon (0sgvhbpe5nb6s.js) weight keys:
+bold,duotone,fill,light,regular,thin
+
+# Phosphor ssr and csr builds share dist/defs/<Icon>.es.js (all weights):
+node_modules/@phosphor-icons/react/dist/defs/Phone.es.js
+"bold" "duotone" "fill" "light" "regular" "thin" 
+client components importing Phosphor: 98

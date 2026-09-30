@@ -1,0 +1,72 @@
+== /models/car.glb
+HTTP/1.1 200 OK
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 29 Sep 2026 20:36:05 GMT
+ETag: W/"3783f8-1a0eee1b787"
+Content-Type: model/gltf-binary
+Content-Length: 3638264
+== /models/car-lite.glb
+HTTP/1.1 200 OK
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 29 Sep 2026 20:36:06 GMT
+ETag: W/"281d74-1a0eee1baf4"
+Content-Type: model/gltf-binary
+Content-Length: 2628980
+== /models/env/studio-512.hdr
+HTTP/1.1 200 OK
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 29 Sep 2026 20:37:13 GMT
+ETag: W/"64494-1a0eee2c2bb"
+Content-Type: application/octet-stream
+Content-Length: 410772
+== /models/car.manifest.json
+HTTP/1.1 200 OK
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 29 Sep 2026 20:36:06 GMT
+ETag: W/"15685-1a0eee1bcbd"
+Content-Type: application/json; charset=UTF-8
+Content-Length: 87685
+== /models/car-shadow.webp
+HTTP/1.1 200 OK
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 29 Sep 2026 20:37:27 GMT
+ETag: W/"382a-1a0eee2f85d"
+Content-Type: image/webp
+Content-Length: 14378
+== /images/hero/car-assembled-1440.avif
+HTTP/1.1 200 OK
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 29 Sep 2026 20:37:16 GMT
+ETag: W/"3fd6-1a0eee2cce9"
+Content-Type: image/avif
+Content-Length: 16342
+== /images/hero/car-assembled-m-828.avif
+HTTP/1.1 200 OK
+Cache-Control: public, max-age=0
+Last-Modified: Tue, 29 Sep 2026 20:37:18 GMT
+ETag: W/"3833-1a0eee2d63f"
+Content-Type: image/avif
+Content-Length: 14387
+== /icon.svg
+HTTP/1.1 200 OK
+cache-control: public, max-age=0, must-revalidate
+content-type: image/svg+xml
+== /favicon.ico
+HTTP/1.1 200 OK
+cache-control: public, max-age=0, must-revalidate
+content-type: image/x-icon
+== /manifest.webmanifest
+HTTP/1.1 200 OK
+cache-control: public, max-age=0, must-revalidate
+content-type: application/manifest+json
+== /apple-icon.png
+HTTP/1.1 200 OK
+cache-control: public, max-age=0, must-revalidate
+content-type: image/png
+== /_next/static/chunks/25dplrt_qw3he.js
+HTTP/1.1 200 OK
+Cache-Control: public, max-age=31536000, immutable
+Last-Modified: Wed, 30 Sep 2026 13:30:15 GMT
+ETag: W/"4813-1a0f282384b"
+Content-Type: application/javascript; charset=UTF-8
+Content-Length: 18451

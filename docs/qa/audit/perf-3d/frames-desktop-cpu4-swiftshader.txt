@@ -1,0 +1,3 @@
+[desktop-cpu4-swiftshader run 0] ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver) tier=high · 188 frames · median 33.3 · p95 1049.9 · p99 1883.3 · worst 1933 ms · >33 ms 45.7 % · >50 ms 77 · >100 ms 70 · long tasks 13 (worst 586) · end p 1.00 ready
+    start: first draw +1181 ms · ready +2374 ms · long tasks 10 (sum>50 855 ms; worst 333 ms)
+    gl: draws/frame max 290 last 290 · tris/frame max 416272 last 416272 · GPU est 62.1 MB · contexts created 2 live 1 · heap 30 MB · canvas {"css":"1440x836","px":"1440x836"} · models after intent ["/models/car.glb","/models/env/studio-512.hdr","/models/car-shadow.webp","/models/car-shadow-exploded.webp"] · before intent []

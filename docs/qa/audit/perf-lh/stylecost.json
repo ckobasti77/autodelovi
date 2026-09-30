@@ -1,0 +1,1626 @@
+{
+ "base": "http://localhost:3200",
+ "cpuThrottle": 4,
+ "viewport": "390x844",
+ "rounds": 3,
+ "summary": [
+  {
+   "path": "/",
+   "variant": "baseline",
+   "n": 3,
+   "recalcStyleMs": 193,
+   "layoutMs": 243,
+   "scriptMs": 1301,
+   "taskMs": 2902,
+   "tbtLike": 434,
+   "domNodes": 775
+  },
+  {
+   "path": "/",
+   "variant": "noRevealCss",
+   "n": 3,
+   "recalcStyleMs": 179,
+   "layoutMs": 377,
+   "scriptMs": 745,
+   "taskMs": 2684,
+   "tbtLike": 896,
+   "domNodes": 770
+  },
+  {
+   "path": "/",
+   "variant": "noReveal",
+   "n": 3,
+   "recalcStyleMs": 157,
+   "layoutMs": 402,
+   "scriptMs": 920,
+   "taskMs": 3478,
+   "tbtLike": 907,
+   "domNodes": 769
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "variant": "baseline",
+   "n": 3,
+   "recalcStyleMs": 344,
+   "layoutMs": 423,
+   "scriptMs": 2161,
+   "taskMs": 4586,
+   "tbtLike": 1181,
+   "domNodes": 740
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "variant": "noRevealCss",
+   "n": 3,
+   "recalcStyleMs": 158,
+   "layoutMs": 325,
+   "scriptMs": 1252,
+   "taskMs": 3060,
+   "tbtLike": 1322,
+   "domNodes": 735
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "variant": "noReveal",
+   "n": 3,
+   "recalcStyleMs": 211,
+   "layoutMs": 473,
+   "scriptMs": 953,
+   "taskMs": 2338,
+   "tbtLike": 634,
+   "domNodes": 734
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "variant": "baseline",
+   "n": 3,
+   "recalcStyleMs": 253,
+   "layoutMs": 627,
+   "scriptMs": 1716,
+   "taskMs": 3684,
+   "tbtLike": 1039,
+   "domNodes": 716
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "variant": "noRevealCss",
+   "n": 3,
+   "recalcStyleMs": 275,
+   "layoutMs": 1254,
+   "scriptMs": 2170,
+   "taskMs": 5706,
+   "tbtLike": 3083,
+   "domNodes": 711
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "variant": "noReveal",
+   "n": 3,
+   "recalcStyleMs": 337,
+   "layoutMs": 1975,
+   "scriptMs": 1203,
+   "taskMs": 5122,
+   "tbtLike": 1372,
+   "domNodes": 710
+  },
+  {
+   "path": "/delovi",
+   "variant": "baseline",
+   "n": 3,
+   "recalcStyleMs": 198,
+   "layoutMs": 158,
+   "scriptMs": 969,
+   "taskMs": 2804,
+   "tbtLike": 486,
+   "domNodes": 652
+  },
+  {
+   "path": "/delovi",
+   "variant": "noRevealCss",
+   "n": 3,
+   "recalcStyleMs": 138,
+   "layoutMs": 234,
+   "scriptMs": 844,
+   "taskMs": 2221,
+   "tbtLike": 761,
+   "domNodes": 648
+  },
+  {
+   "path": "/delovi",
+   "variant": "noReveal",
+   "n": 3,
+   "recalcStyleMs": 129,
+   "layoutMs": 306,
+   "scriptMs": 1218,
+   "taskMs": 2705,
+   "tbtLike": 1408,
+   "domNodes": 647
+  }
+ ],
+ "results": [
+  {
+   "path": "/",
+   "variant": "baseline",
+   "round": 1,
+   "recalcStyleMs": 122,
+   "recalcStyleCount": 32,
+   "layoutMs": 171,
+   "scriptMs": 640,
+   "taskMs": 1658,
+   "fcp": 376,
+   "longTasks": [
+    [
+     565,
+     201
+    ],
+    [
+     876,
+     129
+    ],
+    [
+     1296,
+     110
+    ]
+   ],
+   "tbtLike": 290,
+   "domNodes": 775,
+   "hasTrJs": true,
+   "revealCss": true
+  },
+  {
+   "path": "/",
+   "variant": "noRevealCss",
+   "round": 1,
+   "recalcStyleMs": 137,
+   "recalcStyleCount": 43,
+   "layoutMs": 180,
+   "scriptMs": 537,
+   "taskMs": 1589,
+   "fcp": 432,
+   "longTasks": [
+    [
+     529,
+     198
+    ],
+    [
+     843,
+     409
+    ]
+   ],
+   "tbtLike": 507,
+   "domNodes": 770,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/",
+   "variant": "noReveal",
+   "round": 1,
+   "recalcStyleMs": 107,
+   "recalcStyleCount": 13,
+   "layoutMs": 402,
+   "scriptMs": 1694,
+   "taskMs": 3522,
+   "fcp": 780,
+   "longTasks": [
+    [
+     768,
+     426
+    ],
+    [
+     1268,
+     63
+    ],
+    [
+     1671,
+     148
+    ],
+    [
+     1819,
+     1263
+    ],
+    [
+     3312,
+     51
+    ]
+   ],
+   "tbtLike": 1325,
+   "domNodes": 769,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/",
+   "variant": "baseline",
+   "round": 2,
+   "recalcStyleMs": 193,
+   "recalcStyleCount": 16,
+   "layoutMs": 243,
+   "scriptMs": 1301,
+   "taskMs": 2902,
+   "fcp": 800,
+   "longTasks": [
+    [
+     357,
+     133
+    ],
+    [
+     791,
+     307
+    ],
+    [
+     1161,
+     72
+    ],
+    [
+     1251,
+     82
+    ],
+    [
+     1490,
+     281
+    ],
+    [
+     1896,
+     51
+    ],
+    [
+     2383,
+     198
+    ]
+   ],
+   "tbtLike": 434,
+   "domNodes": 775,
+   "hasTrJs": true,
+   "revealCss": true
+  },
+  {
+   "path": "/",
+   "variant": "noRevealCss",
+   "round": 2,
+   "recalcStyleMs": 179,
+   "recalcStyleCount": 38,
+   "layoutMs": 664,
+   "scriptMs": 745,
+   "taskMs": 2684,
+   "fcp": 1220,
+   "longTasks": [
+    [
+     1559,
+     429
+    ],
+    [
+     2112,
+     62
+    ],
+    [
+     2174,
+     555
+    ]
+   ],
+   "tbtLike": 896,
+   "domNodes": 770,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/",
+   "variant": "noReveal",
+   "round": 2,
+   "recalcStyleMs": 379,
+   "recalcStyleCount": 18,
+   "layoutMs": 912,
+   "scriptMs": 920,
+   "taskMs": 3478,
+   "fcp": 1276,
+   "longTasks": [
+    [
+     468,
+     177
+    ],
+    [
+     1264,
+     522
+    ],
+    [
+     2335,
+     119
+    ],
+    [
+     2587,
+     86
+    ],
+    [
+     2675,
+     849
+    ]
+   ],
+   "tbtLike": 904,
+   "domNodes": 769,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/",
+   "variant": "baseline",
+   "round": 3,
+   "recalcStyleMs": 370,
+   "recalcStyleCount": 16,
+   "layoutMs": 960,
+   "scriptMs": 1844,
+   "taskMs": 5104,
+   "fcp": 1444,
+   "longTasks": [
+    [
+     1388,
+     1247
+    ],
+    [
+     2894,
+     50
+    ],
+    [
+     2953,
+     425
+    ],
+    [
+     3451,
+     63
+    ],
+    [
+     3703,
+     95
+    ],
+    [
+     3814,
+     272
+    ],
+    [
+     4106,
+     213
+    ],
+    [
+     4455,
+     320
+    ]
+   ],
+   "tbtLike": 1088,
+   "domNodes": 775,
+   "hasTrJs": true,
+   "revealCss": true
+  },
+  {
+   "path": "/",
+   "variant": "noRevealCss",
+   "round": 3,
+   "recalcStyleMs": 286,
+   "recalcStyleCount": 13,
+   "layoutMs": 377,
+   "scriptMs": 1479,
+   "taskMs": 3200,
+   "fcp": 1556,
+   "longTasks": [
+    [
+     1042,
+     101
+    ],
+    [
+     1605,
+     454
+    ],
+    [
+     2127,
+     60
+    ],
+    [
+     2263,
+     74
+    ],
+    [
+     2338,
+     178
+    ],
+    [
+     2516,
+     1199
+    ]
+   ],
+   "tbtLike": 1715,
+   "domNodes": 770,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/",
+   "variant": "noReveal",
+   "round": 3,
+   "recalcStyleMs": 157,
+   "recalcStyleCount": 17,
+   "layoutMs": 258,
+   "scriptMs": 879,
+   "taskMs": 2174,
+   "fcp": 628,
+   "longTasks": [
+    [
+     693,
+     258
+    ],
+    [
+     1057,
+     703
+    ],
+    [
+     1853,
+     96
+    ]
+   ],
+   "tbtLike": 907,
+   "domNodes": 769,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "variant": "baseline",
+   "round": 1,
+   "recalcStyleMs": 517,
+   "recalcStyleCount": 95,
+   "layoutMs": 423,
+   "scriptMs": 2161,
+   "taskMs": 4670,
+   "fcp": 984,
+   "longTasks": [
+    [
+     1545,
+     300
+    ],
+    [
+     1983,
+     211
+    ],
+    [
+     2218,
+     197
+    ],
+    [
+     2491,
+     146
+    ],
+    [
+     2754,
+     114
+    ],
+    [
+     2887,
+     120
+    ],
+    [
+     3091,
+     54
+    ],
+    [
+     3187,
+     213
+    ],
+    [
+     3747,
+     155
+    ],
+    [
+     3941,
+     53
+    ],
+    [
+     4308,
+     185
+    ]
+   ],
+   "tbtLike": 1198,
+   "domNodes": 740,
+   "hasTrJs": true,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "variant": "noRevealCss",
+   "round": 1,
+   "recalcStyleMs": 158,
+   "recalcStyleCount": 29,
+   "layoutMs": 427,
+   "scriptMs": 1755,
+   "taskMs": 3756,
+   "fcp": 900,
+   "longTasks": [
+    [
+     901,
+     53
+    ],
+    [
+     1029,
+     720
+    ],
+    [
+     1764,
+     131
+    ],
+    [
+     1961,
+     1711
+    ]
+   ],
+   "tbtLike": 2415,
+   "domNodes": 735,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "variant": "noReveal",
+   "round": 1,
+   "recalcStyleMs": 138,
+   "recalcStyleCount": 56,
+   "layoutMs": 246,
+   "scriptMs": 982,
+   "taskMs": 2338,
+   "fcp": 584,
+   "longTasks": [
+    [
+     661,
+     309
+    ],
+    [
+     1050,
+     66
+    ],
+    [
+     1162,
+     65
+    ],
+    [
+     1470,
+     501
+    ]
+   ],
+   "tbtLike": 741,
+   "domNodes": 734,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "variant": "baseline",
+   "round": 2,
+   "recalcStyleMs": 344,
+   "recalcStyleCount": 97,
+   "layoutMs": 392,
+   "scriptMs": 2395,
+   "taskMs": 4586,
+   "fcp": 468,
+   "longTasks": [
+    [
+     1040,
+     254
+    ],
+    [
+     1301,
+     87
+    ],
+    [
+     1569,
+     257
+    ],
+    [
+     1999,
+     91
+    ],
+    [
+     2196,
+     80
+    ],
+    [
+     2375,
+     351
+    ],
+    [
+     3428,
+     325
+    ],
+    [
+     3819,
+     65
+    ],
+    [
+     4153,
+     121
+    ]
+   ],
+   "tbtLike": 1181,
+   "domNodes": 740,
+   "hasTrJs": true,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "variant": "noRevealCss",
+   "round": 2,
+   "recalcStyleMs": 129,
+   "recalcStyleCount": 28,
+   "layoutMs": 285,
+   "scriptMs": 1252,
+   "taskMs": 2397,
+   "fcp": 628,
+   "longTasks": [
+    [
+     696,
+     261
+    ],
+    [
+     1107,
+     1141
+    ]
+   ],
+   "tbtLike": 1302,
+   "domNodes": 735,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "variant": "noReveal",
+   "round": 2,
+   "recalcStyleMs": 304,
+   "recalcStyleCount": 49,
+   "layoutMs": 473,
+   "scriptMs": 653,
+   "taskMs": 2218,
+   "fcp": 1024,
+   "longTasks": [
+    [
+     295,
+     634
+    ],
+    [
+     1016,
+     191
+    ],
+    [
+     1382,
+     524
+    ]
+   ],
+   "tbtLike": 474,
+   "domNodes": 734,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "variant": "baseline",
+   "round": 3,
+   "recalcStyleMs": 277,
+   "recalcStyleCount": 84,
+   "layoutMs": 654,
+   "scriptMs": 886,
+   "taskMs": 3355,
+   "fcp": 424,
+   "longTasks": [
+    [
+     885,
+     60
+    ],
+    [
+     1073,
+     616
+    ],
+    [
+     1773,
+     107
+    ],
+    [
+     1985,
+     50
+    ],
+    [
+     2175,
+     106
+    ],
+    [
+     2570,
+     145
+    ],
+    [
+     3290,
+     106
+    ],
+    [
+     3397,
+     60
+    ]
+   ],
+   "tbtLike": 850,
+   "domNodes": 740,
+   "hasTrJs": true,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "variant": "noRevealCss",
+   "round": 3,
+   "recalcStyleMs": 175,
+   "recalcStyleCount": 33,
+   "layoutMs": 325,
+   "scriptMs": 1105,
+   "taskMs": 3060,
+   "fcp": 940,
+   "longTasks": [
+    [
+     1168,
+     487
+    ],
+    [
+     1678,
+     115
+    ],
+    [
+     1945,
+     55
+    ],
+    [
+     2000,
+     826
+    ],
+    [
+     3228,
+     89
+    ]
+   ],
+   "tbtLike": 1322,
+   "domNodes": 735,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "variant": "noReveal",
+   "round": 3,
+   "recalcStyleMs": 211,
+   "recalcStyleCount": 39,
+   "layoutMs": 698,
+   "scriptMs": 953,
+   "taskMs": 3210,
+   "fcp": 1360,
+   "longTasks": [
+    [
+     231,
+     625
+    ],
+    [
+     1346,
+     584
+    ],
+    [
+     1938,
+     82
+    ],
+    [
+     2046,
+     62
+    ],
+    [
+     2195,
+     66
+    ],
+    [
+     2262,
+     624
+    ]
+   ],
+   "tbtLike": 634,
+   "domNodes": 734,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "variant": "baseline",
+   "round": 1,
+   "recalcStyleMs": 245,
+   "recalcStyleCount": 68,
+   "layoutMs": 284,
+   "scriptMs": 1716,
+   "taskMs": 3684,
+   "fcp": 424,
+   "longTasks": [
+    [
+     734,
+     391
+    ],
+    [
+     1129,
+     56
+    ],
+    [
+     1462,
+     407
+    ],
+    [
+     2079,
+     104
+    ],
+    [
+     2419,
+     143
+    ],
+    [
+     2757,
+     117
+    ],
+    [
+     3276,
+     79
+    ],
+    [
+     3356,
+     132
+    ],
+    [
+     3564,
+     60
+    ]
+   ],
+   "tbtLike": 1039,
+   "domNodes": 716,
+   "hasTrJs": true,
+   "revealCss": true
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "variant": "noRevealCss",
+   "round": 1,
+   "recalcStyleMs": 374,
+   "recalcStyleCount": 26,
+   "layoutMs": 1084,
+   "scriptMs": 2170,
+   "taskMs": 5706,
+   "fcp": 788,
+   "longTasks": [
+    [
+     484,
+     105
+    ],
+    [
+     984,
+     128
+    ],
+    [
+     1563,
+     725
+    ],
+    [
+     2928,
+     152
+    ],
+    [
+     3184,
+     65
+    ],
+    [
+     3339,
+     59
+    ],
+    [
+     3399,
+     1803
+    ],
+    [
+     5202,
+     278
+    ],
+    [
+     5598,
+     60
+    ],
+    [
+     5680,
+     165
+    ],
+    [
+     5880,
+     148
+    ]
+   ],
+   "tbtLike": 3083,
+   "domNodes": 711,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "variant": "noReveal",
+   "round": 1,
+   "recalcStyleMs": 256,
+   "recalcStyleCount": 25,
+   "layoutMs": 773,
+   "scriptMs": 1806,
+   "taskMs": 4141,
+   "fcp": 1240,
+   "longTasks": [
+    [
+     589,
+     115
+    ],
+    [
+     1223,
+     608
+    ],
+    [
+     1899,
+     72
+    ],
+    [
+     2099,
+     80
+    ],
+    [
+     2179,
+     56
+    ],
+    [
+     2236,
+     1385
+    ],
+    [
+     3622,
+     235
+    ],
+    [
+     3870,
+     88
+    ]
+   ],
+   "tbtLike": 1616,
+   "domNodes": 710,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "variant": "baseline",
+   "round": 2,
+   "recalcStyleMs": 253,
+   "recalcStyleCount": 80,
+   "layoutMs": 627,
+   "scriptMs": 1141,
+   "taskMs": 3498,
+   "fcp": 1400,
+   "longTasks": [
+    [
+     419,
+     98
+    ],
+    [
+     1592,
+     390
+    ],
+    [
+     2122,
+     144
+    ],
+    [
+     2506,
+     110
+    ],
+    [
+     2765,
+     137
+    ],
+    [
+     2930,
+     113
+    ],
+    [
+     3252,
+     52
+    ]
+   ],
+   "tbtLike": 646,
+   "domNodes": 716,
+   "hasTrJs": true,
+   "revealCss": true
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "variant": "noRevealCss",
+   "round": 2,
+   "recalcStyleMs": 275,
+   "recalcStyleCount": 23,
+   "layoutMs": 1254,
+   "scriptMs": 4019,
+   "taskMs": 7130,
+   "fcp": 2684,
+   "longTasks": [
+    [
+     3169,
+     775
+    ],
+    [
+     4128,
+     52
+    ],
+    [
+     4228,
+     61
+    ],
+    [
+     4289,
+     320
+    ],
+    [
+     4610,
+     3446
+    ],
+    [
+     8056,
+     237
+    ],
+    [
+     8318,
+     57
+    ]
+   ],
+   "tbtLike": 4598,
+   "domNodes": 710,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "variant": "noReveal",
+   "round": 2,
+   "recalcStyleMs": 505,
+   "recalcStyleCount": 32,
+   "layoutMs": 3280,
+   "scriptMs": 1084,
+   "taskMs": 6999,
+   "fcp": 4352,
+   "longTasks": [
+    [
+     978,
+     122
+    ],
+    [
+     5112,
+     504
+    ],
+    [
+     5724,
+     217
+    ],
+    [
+     6107,
+     71
+    ],
+    [
+     6178,
+     744
+    ],
+    [
+     6923,
+     69
+    ]
+   ],
+   "tbtLike": 1355,
+   "domNodes": 710,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "variant": "baseline",
+   "round": 3,
+   "recalcStyleMs": 313,
+   "recalcStyleCount": 68,
+   "layoutMs": 799,
+   "scriptMs": 2034,
+   "taskMs": 4894,
+   "fcp": 1580,
+   "longTasks": [
+    [
+     2283,
+     163
+    ],
+    [
+     2459,
+     215
+    ],
+    [
+     2777,
+     448
+    ],
+    [
+     3274,
+     79
+    ],
+    [
+     3496,
+     53
+    ],
+    [
+     3574,
+     62
+    ],
+    [
+     3722,
+     258
+    ],
+    [
+     3983,
+     151
+    ],
+    [
+     4233,
+     187
+    ],
+    [
+     4455,
+     103
+    ],
+    [
+     4559,
+     54
+    ],
+    [
+     4958,
+     108
+    ],
+    [
+     5091,
+     64
+    ],
+    [
+     5199,
+     114
+    ]
+   ],
+   "tbtLike": 1359,
+   "domNodes": 716,
+   "hasTrJs": true,
+   "revealCss": true
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "variant": "noRevealCss",
+   "round": 3,
+   "recalcStyleMs": 203,
+   "recalcStyleCount": 22,
+   "layoutMs": 1320,
+   "scriptMs": 1697,
+   "taskMs": 4443,
+   "fcp": 2744,
+   "longTasks": [
+    [
+     2735,
+     329
+    ],
+    [
+     3294,
+     104
+    ],
+    [
+     3399,
+     1240
+    ],
+    [
+     4640,
+     187
+    ],
+    [
+     6187,
+     132
+    ],
+    [
+     7088,
+     157
+    ]
+   ],
+   "tbtLike": 1570,
+   "domNodes": 711,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "variant": "noReveal",
+   "round": 3,
+   "recalcStyleMs": 337,
+   "recalcStyleCount": 29,
+   "layoutMs": 1975,
+   "scriptMs": 1203,
+   "taskMs": 5122,
+   "fcp": 2892,
+   "longTasks": [
+    [
+     2927,
+     52
+    ],
+    [
+     3793,
+     65
+    ],
+    [
+     3866,
+     301
+    ],
+    [
+     4211,
+     97
+    ],
+    [
+     4311,
+     57
+    ],
+    [
+     4465,
+     52
+    ],
+    [
+     4517,
+     928
+    ],
+    [
+     5446,
+     104
+    ],
+    [
+     6511,
+     105
+    ],
+    [
+     6990,
+     106
+    ],
+    [
+     7398,
+     55
+    ]
+   ],
+   "tbtLike": 1372,
+   "domNodes": 710,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi",
+   "variant": "baseline",
+   "round": 1,
+   "recalcStyleMs": 198,
+   "recalcStyleCount": 73,
+   "layoutMs": 85,
+   "scriptMs": 969,
+   "taskMs": 2804,
+   "fcp": 848,
+   "longTasks": [
+    [
+     901,
+     480
+    ],
+    [
+     1447,
+     50
+    ],
+    [
+     1657,
+     165
+    ],
+    [
+     2104,
+     107
+    ],
+    [
+     2563,
+     127
+    ],
+    [
+     4665,
+     130
+    ]
+   ],
+   "tbtLike": 759,
+   "domNodes": 652,
+   "hasTrJs": true,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi",
+   "variant": "noRevealCss",
+   "round": 1,
+   "recalcStyleMs": 470,
+   "recalcStyleCount": 29,
+   "layoutMs": 354,
+   "scriptMs": 844,
+   "taskMs": 2802,
+   "fcp": 1808,
+   "longTasks": [
+    [
+     1219,
+     87
+    ],
+    [
+     1776,
+     74
+    ],
+    [
+     2323,
+     205
+    ],
+    [
+     2529,
+     58
+    ],
+    [
+     2674,
+     52
+    ],
+    [
+     2726,
+     601
+    ]
+   ],
+   "tbtLike": 716,
+   "domNodes": 648,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi",
+   "variant": "noReveal",
+   "round": 1,
+   "recalcStyleMs": 150,
+   "recalcStyleCount": 15,
+   "layoutMs": 760,
+   "scriptMs": 1218,
+   "taskMs": 4259,
+   "fcp": 1276,
+   "longTasks": [
+    [
+     297,
+     96
+    ],
+    [
+     1540,
+     53
+    ],
+    [
+     1599,
+     52
+    ],
+    [
+     1688,
+     216
+    ],
+    [
+     1904,
+     88
+    ],
+    [
+     2240,
+     206
+    ],
+    [
+     2448,
+     91
+    ],
+    [
+     2657,
+     938
+    ],
+    [
+     3596,
+     90
+    ],
+    [
+     3750,
+     185
+    ],
+    [
+     4015,
+     166
+    ],
+    [
+     4284,
+     61
+    ]
+   ],
+   "tbtLike": 1596,
+   "domNodes": 647,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi",
+   "variant": "baseline",
+   "round": 2,
+   "recalcStyleMs": 232,
+   "recalcStyleCount": 83,
+   "layoutMs": 158,
+   "scriptMs": 1181,
+   "taskMs": 2941,
+   "fcp": 348,
+   "longTasks": [
+    [
+     556,
+     200
+    ],
+    [
+     765,
+     79
+    ],
+    [
+     1125,
+     186
+    ],
+    [
+     1351,
+     131
+    ],
+    [
+     1803,
+     115
+    ],
+    [
+     1943,
+     56
+    ],
+    [
+     2534,
+     69
+    ]
+   ],
+   "tbtLike": 486,
+   "domNodes": 652,
+   "hasTrJs": true,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi",
+   "variant": "noRevealCss",
+   "round": 2,
+   "recalcStyleMs": 119,
+   "recalcStyleCount": 23,
+   "layoutMs": 222,
+   "scriptMs": 993,
+   "taskMs": 2221,
+   "fcp": 464,
+   "longTasks": [
+    [
+     676,
+     262
+    ],
+    [
+     1049,
+     89
+    ],
+    [
+     1139,
+     762
+    ]
+   ],
+   "tbtLike": 963,
+   "domNodes": 648,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi",
+   "variant": "noReveal",
+   "round": 2,
+   "recalcStyleMs": 118,
+   "recalcStyleCount": 12,
+   "layoutMs": 306,
+   "scriptMs": 1436,
+   "taskMs": 2705,
+   "fcp": 512,
+   "longTasks": [
+    [
+     664,
+     175
+    ],
+    [
+     840,
+     54
+    ],
+    [
+     979,
+     60
+    ],
+    [
+     1040,
+     1319
+    ]
+   ],
+   "tbtLike": 1408,
+   "domNodes": 647,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi",
+   "variant": "baseline",
+   "round": 3,
+   "recalcStyleMs": 171,
+   "recalcStyleCount": 83,
+   "layoutMs": 189,
+   "scriptMs": 587,
+   "taskMs": 1914,
+   "fcp": 400,
+   "longTasks": [
+    [
+     647,
+     232
+    ],
+    [
+     1000,
+     108
+    ],
+    [
+     1283,
+     62
+    ]
+   ],
+   "tbtLike": 252,
+   "domNodes": 652,
+   "hasTrJs": true,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi",
+   "variant": "noRevealCss",
+   "round": 3,
+   "recalcStyleMs": 138,
+   "recalcStyleCount": 28,
+   "layoutMs": 234,
+   "scriptMs": 745,
+   "taskMs": 2065,
+   "fcp": 476,
+   "longTasks": [
+    [
+     703,
+     270
+    ],
+    [
+     1086,
+     591
+    ]
+   ],
+   "tbtLike": 761,
+   "domNodes": 648,
+   "hasTrJs": false,
+   "revealCss": true
+  },
+  {
+   "path": "/delovi",
+   "variant": "noReveal",
+   "round": 3,
+   "recalcStyleMs": 129,
+   "recalcStyleCount": 26,
+   "layoutMs": 244,
+   "scriptMs": 874,
+   "taskMs": 2318,
+   "fcp": 508,
+   "longTasks": [
+    [
+     727,
+     330
+    ],
+    [
+     1212,
+     627
+    ]
+   ],
+   "tbtLike": 857,
+   "domNodes": 647,
+   "hasTrJs": false,
+   "revealCss": true
+  }
+ ]
+}

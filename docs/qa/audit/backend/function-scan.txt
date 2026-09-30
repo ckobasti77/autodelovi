@@ -1,0 +1,28 @@
+{
+  "files": 52,
+  "functions": 298,
+  "byKind": {
+    "sklop": 227,
+    "internal": 71
+  },
+  "byBuilder": {
+    "userQuery": 12,
+    "userMutation": 14,
+    "staffQuery": 65,
+    "internalMutation": 48,
+    "publicMutation": 15,
+    "internalQuery": 17,
+    "internalAction": 6,
+    "publicQuery": 40,
+    "staffMutation": 64,
+    "ownerMutation": 13,
+    "ownerQuery": 4
+  },
+  "internalWithoutReturns": 0,
+  "flags": 5
+}
+convex/catalog/vehiclesAdmin.ts:471  [] db .filter() .filter((q) => q.eq(q.field("generationId"), link.generationId))
+convex/exportsAdmin.ts:70  [] db .filter() .filter((q) => q.eq(q.field("deletedAt"), undefined))
+convex/privacy.ts:116 customerData [ownerQuery] wall clock read inside a query handler (direct) 
+convex/staff.ts:85 listInvites [ownerQuery] wall clock read inside a query handler (direct) 
+convex/staff.ts:265 inviteInfo [publicQuery] wall clock read inside a query handler (direct) 

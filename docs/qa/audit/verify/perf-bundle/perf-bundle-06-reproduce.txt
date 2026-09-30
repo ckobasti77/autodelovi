@@ -1,0 +1,16 @@
+== landing /ponuda/kocione-plocice-golf @390: 25 JS chunks fetched by load+1.5 s, 347.3 KB gz
+   chunks only in [project]/app/not-found (not in any other entry of this page): 1axg9-vmwkb-w.js(0.2) 1t0q0ok8maumv.js(7.8) 404ko09-15lhs.js(17.8) 00t-a16koa1p2.js(14.2)
+   of those fetched: 4/4 = 40.0 KB gz
+   chunks only in [project]/app/error: 1adhcvv0smcza.js(8.6); fetched 1
+== home / @390: 25 JS chunks fetched by load+1.5 s, 332.1 KB gz
+   chunks only in [project]/app/not-found (not in any other entry of this page): 1axg9-vmwkb-w.js(0.2) 404ko09-15lhs.js(17.8) 00t-a16koa1p2.js(14.2)
+   of those fetched: 0/3 = 0.0 KB gz
+   chunks only in [project]/app/error: 1adhcvv0smcza.js(8.6); fetched 1
+== category /delovi/kocioni-diskovi @390: 25 JS chunks fetched by load+1.5 s, 333.9 KB gz
+   chunks only in [project]/app/not-found (not in any other entry of this page): 1axg9-vmwkb-w.js(0.2) 404ko09-15lhs.js(17.8) 00t-a16koa1p2.js(14.2)
+   of those fetched: 0/3 = 0.0 KB gz
+   chunks only in [project]/app/error: 1adhcvv0smcza.js(8.6); fetched 1
+== product /deo/kocioni-disk-prednji-276-24-mm-demo-0004 @390: 25 JS chunks fetched by load+1.5 s, 336.6 KB gz
+   chunks only in [project]/app/not-found (not in any other entry of this page): 1axg9-vmwkb-w.js(0.2) 404ko09-15lhs.js(17.8) 00t-a16koa1p2.js(14.2)
+   of those fetched: 0/3 = 0.0 KB gz
+   chunks only in [project]/app/error: 1adhcvv0smcza.js(8.6); fetched 1

@@ -1,0 +1,26 @@
+== 1440px: / -> /delovi -> / (same context, HTTP cache warm)
+   visit 1 /images/hero/car-assembled-1440.avif status=200 conditional=false fromDiskCache=false memCache=false wireBytes=16979 cc=public, max-age=0
+   visit 1 /models/car.glb status=200 conditional=? fromDiskCache=false memCache=false wireBytes=2103480 cc=public, max-age=0
+   visit 1 /images/hero/car-exploded-1440.avif status=200 conditional=false fromDiskCache=false memCache=false wireBytes=18946 cc=public, max-age=0
+   visit 1 /models/car-shadow.webp status=200 conditional=false fromDiskCache=false memCache=false wireBytes=15015 cc=public, max-age=0
+   visit 1 /models/car-shadow-exploded.webp status=200 conditional=false fromDiskCache=false memCache=false wireBytes=20839 cc=public, max-age=0
+   visit 1 /models/env/studio-512.hdr status=200 conditional=? fromDiskCache=false memCache=false wireBytes=411425 cc=public, max-age=0
+   visit 2 /images/hero/car-assembled-1440.avif status=304 conditional=? fromDiskCache=false memCache=false wireBytes=598 cc=public, max-age=0
+   visit 2 /images/hero/car-exploded-1440.avif status=304 conditional=? fromDiskCache=false memCache=false wireBytes=598 cc=public, max-age=0
+   visit 2 /models/car.glb status=200 conditional=? fromDiskCache=false memCache=false wireBytes=600 cc=public, max-age=0
+   visit 2 /models/env/studio-512.hdr status=200 conditional=? fromDiskCache=false memCache=false wireBytes=599 cc=public, max-age=0
+   visit 2 /models/car-shadow.webp status=304 conditional=? fromDiskCache=false memCache=false wireBytes=598 cc=public, max-age=0
+   visit 2 /models/car-shadow-exploded.webp status=304 conditional=true fromDiskCache=false memCache=false wireBytes=598 cc=public, max-age=0
+   (control) visit 2 JS chunks: 33 requests, 0 revalidated, 0 from disk cache
+== 390px: / -> /delovi -> / (same context, HTTP cache warm)
+   visit 1 /images/hero/car-assembled-m-640.avif status=200 conditional=false fromDiskCache=false memCache=false wireBytes=11346 cc=public, max-age=0
+   visit 1 /models/car-lite.glb status=200 conditional=? fromDiskCache=false memCache=false wireBytes=1689013 cc=public, max-age=0
+   visit 1 /models/car-shadow.webp status=200 conditional=false fromDiskCache=false memCache=false wireBytes=15015 cc=public, max-age=0
+   visit 1 /models/car-shadow-exploded.webp status=200 conditional=false fromDiskCache=false memCache=false wireBytes=20839 cc=public, max-age=0
+   visit 1 /models/env/studio-512.hdr status=200 conditional=? fromDiskCache=false memCache=false wireBytes=411425 cc=public, max-age=0
+   visit 2 /images/hero/car-assembled-m-640.avif status=304 conditional=true fromDiskCache=false memCache=false wireBytes=598 cc=public, max-age=0
+   visit 2 /models/car-lite.glb status=200 conditional=? fromDiskCache=false memCache=false wireBytes=600 cc=public, max-age=0
+   visit 2 /models/car-shadow.webp status=304 conditional=true fromDiskCache=false memCache=false wireBytes=598 cc=public, max-age=0
+   visit 2 /models/car-shadow-exploded.webp status=304 conditional=true fromDiskCache=false memCache=false wireBytes=598 cc=public, max-age=0
+   visit 2 /models/env/studio-512.hdr status=200 conditional=? fromDiskCache=false memCache=false wireBytes=599 cc=public, max-age=0
+   (control) visit 2 JS chunks: 32 requests, 0 revalidated, 0 from disk cache

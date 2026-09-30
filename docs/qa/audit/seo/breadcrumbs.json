@@ -1,0 +1,6374 @@
+[
+ {
+  "url": "/delovi",
+  "ld": [
+   "Početna",
+   "Delovi"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/",
+  "ld": null,
+  "vis": null,
+  "match": true,
+  "lastHasItem": null,
+  "positionsOk": null
+ },
+ {
+  "url": "/vozila",
+  "ld": [
+   "Početna",
+   "Vozila"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/za-majstore",
+  "ld": [
+   "Početna",
+   "Za majstore"
+  ],
+  "vis": [
+   "Početna",
+   "Za majstore"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/upit",
+  "ld": null,
+  "vis": null,
+  "match": true,
+  "lastHasItem": null,
+  "positionsOk": null
+ },
+ {
+  "url": "/o-nama",
+  "ld": [
+   "Početna",
+   "O nama"
+  ],
+  "vis": [
+   "Početna",
+   "O nama"
+  ],
+  "match": true,
+  "lastHasItem": true,
+  "positionsOk": true
+ },
+ {
+  "url": "/kontakt",
+  "ld": [
+   "Početna",
+   "Kontakt"
+  ],
+  "vis": [
+   "Početna",
+   "Kontakt"
+  ],
+  "match": true,
+  "lastHasItem": true,
+  "positionsOk": true
+ },
+ {
+  "url": "/dostava-i-placanje",
+  "ld": [
+   "Početna",
+   "Dostava i plaćanje"
+  ],
+  "vis": [
+   "Početna",
+   "Dostava i plaćanje"
+  ],
+  "match": true,
+  "lastHasItem": true,
+  "positionsOk": true
+ },
+ {
+  "url": "/reklamacije-i-povrat",
+  "ld": [
+   "Početna",
+   "Reklamacije i povrat"
+  ],
+  "vis": [
+   "Početna",
+   "Reklamacije i povrat"
+  ],
+  "match": true,
+  "lastHasItem": true,
+  "positionsOk": true
+ },
+ {
+  "url": "/uslovi-koriscenja",
+  "ld": [
+   "Početna",
+   "Uslovi korišćenja i kupovine"
+  ],
+  "vis": [
+   "Početna",
+   "Uslovi korišćenja i kupovine"
+  ],
+  "match": true,
+  "lastHasItem": true,
+  "positionsOk": true
+ },
+ {
+  "url": "/politika-privatnosti",
+  "ld": [
+   "Početna",
+   "Politika privatnosti"
+  ],
+  "vis": [
+   "Početna",
+   "Politika privatnosti"
+  ],
+  "match": true,
+  "lastHasItem": true,
+  "positionsOk": true
+ },
+ {
+  "url": "/kolacici",
+  "ld": [
+   "Početna",
+   "Kolačići"
+  ],
+  "vis": [
+   "Početna",
+   "Kolačići"
+  ],
+  "match": true,
+  "lastHasItem": true,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/motor-i-usis",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Motor i usis"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Motor i usis"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/izduvni-sistem",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Izduvni sistem"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Izduvni sistem"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/hladjenje-i-klima",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Hlađenje i klima"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Hlađenje i klima"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/transmisija",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Transmisija"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Transmisija"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/vesanje-i-upravljanje",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Vešanje i upravljanje"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Vešanje i upravljanje"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocnice",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočnice"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočnice"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/elektrika-i-svetla",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Elektrika i svetla"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Elektrika i svetla"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/karoserija",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Karoserija"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Karoserija"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/servis",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Servis i održavanje"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Servis i održavanje"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/tockovi",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Točkovi"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Točkovi"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/motor",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Blok motora i glava"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Blok motora i glava"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/turbina",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Turbina (turbopunjač)"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Turbina (turbopunjač)"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/interkuler",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Interkuler"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Interkuler"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/usisna-grana",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Usisna grana i kućište filtera"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Usisna grana i kućište filtera"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/brizgaljke-pumpa-goriva",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Brizgaljke i pumpa goriva"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Brizgaljke i pumpa goriva"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/zupcasti-kais-vodena-pumpa",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Set zupčastog kaiša i vodena pumpa"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Set zupčastog kaiša i vodena pumpa"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kais-alternatora",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Kaiš alternatora i zatezači"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Kaiš alternatora i zatezači"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/alternator",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Alternator"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Alternator"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/anlaser",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Anlaser"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Anlaser"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/paljenje-grejaci",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Svećice, bobine i grejači"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Svećice, bobine i grejači"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/karter-dihtunzi",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Karter, pumpa ulja i dihtunzi"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Karter, pumpa ulja i dihtunzi"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/egr-ventil",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "EGR ventil"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "EGR ventil"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/nosaci-motora",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Nosači motora i menjača"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Motor i usis",
+   "Nosači motora i menjača"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/dpf-katalizator",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Izduvni sistem",
+   "DPF i katalizator"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Izduvni sistem",
+   "DPF i katalizator"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/auspuh",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Izduvni sistem",
+   "Auspuh (lonci i cevi)"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Izduvni sistem",
+   "Auspuh (lonci i cevi)"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/hladnjak-ventilator",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Hlađenje i klima",
+   "Hladnjak i ventilator"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Hlađenje i klima",
+   "Hladnjak i ventilator"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/termostat-creva",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Hlađenje i klima",
+   "Termostat i creva hlađenja"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Hlađenje i klima",
+   "Termostat i creva hlađenja"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/klima",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Hlađenje i klima",
+   "Kompresor i kondenzator klime"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Hlađenje i klima",
+   "Kompresor i kondenzator klime"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kvacilo-zamajac",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Transmisija",
+   "Kvačilo i zamajac"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Transmisija",
+   "Kvačilo i zamajac"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/menjac",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Transmisija",
+   "Menjač (DSG)"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Transmisija",
+   "Menjač (DSG)"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/poluosovine",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Transmisija",
+   "Poluosovine i homokinetički zglobovi"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Transmisija",
+   "Poluosovine i homokinetički zglobovi"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/amortizeri-opruge",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Vešanje i upravljanje",
+   "Amortizeri i opruge"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Vešanje i upravljanje",
+   "Amortizeri i opruge"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/ramena-selen-blokovi",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Vešanje i upravljanje",
+   "Ramena i selen blokovi"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Vešanje i upravljanje",
+   "Ramena i selen blokovi"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/spone-stabilizatori",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Vešanje i upravljanje",
+   "Spone i stabilizatori"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Vešanje i upravljanje",
+   "Spone i stabilizatori"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/letva-volana",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Vešanje i upravljanje",
+   "Letva volana"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Vešanje i upravljanje",
+   "Letva volana"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/lezaj-glavcina",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Vešanje i upravljanje",
+   "Ležaj točka i glavčina"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Vešanje i upravljanje",
+   "Ležaj točka i glavčina"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočnice",
+   "Kočioni diskovi"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočnice",
+   "Kočioni diskovi"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočnice",
+   "Kočione pločice"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočnice",
+   "Kočione pločice"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-celjusti",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočnice",
+   "Kočione čeljusti"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočnice",
+   "Kočione čeljusti"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/abs-senzori",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočnice",
+   "ABS senzori"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočnice",
+   "ABS senzori"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/akumulator",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Elektrika i svetla",
+   "Akumulator"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Elektrika i svetla",
+   "Akumulator"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/farovi",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Elektrika i svetla",
+   "Farovi"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Elektrika i svetla",
+   "Farovi"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/stop-svetla",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Elektrika i svetla",
+   "Stop svetla"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Elektrika i svetla",
+   "Stop svetla"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/senzori",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Elektrika i svetla",
+   "Senzori (lambda, parking, temperatura)"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Elektrika i svetla",
+   "Senzori (lambda, parking, temperatura)"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/hauba",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Karoserija",
+   "Hauba"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Karoserija",
+   "Hauba"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/branici",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Karoserija",
+   "Branici"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Karoserija",
+   "Branici"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/blatobrani",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Karoserija",
+   "Blatobrani"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Karoserija",
+   "Blatobrani"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/vrata",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Karoserija",
+   "Vrata"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Karoserija",
+   "Vrata"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/retrovizori",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Karoserija",
+   "Retrovizori"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Karoserija",
+   "Retrovizori"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/stakla",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Karoserija",
+   "Stakla"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Karoserija",
+   "Stakla"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/brisaci",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Karoserija",
+   "Brisači"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Karoserija",
+   "Brisači"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/felne-gume",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Točkovi",
+   "Felne i gume"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Točkovi",
+   "Felne i gume"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filteri",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Servis i održavanje",
+   "Filteri"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Servis i održavanje",
+   "Filteri"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/ulja-tecnosti",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Servis i održavanje",
+   "Ulja i tečnosti"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Servis i održavanje",
+   "Ulja i tečnosti"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filter-ulja",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Servis i održavanje",
+   "Filteri",
+   "Filter ulja"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Servis i održavanje",
+   "Filteri",
+   "Filter ulja"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filter-vazduha",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Servis i održavanje",
+   "Filteri",
+   "Filter vazduha"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Servis i održavanje",
+   "Filteri",
+   "Filter vazduha"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filter-goriva",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Servis i održavanje",
+   "Filteri",
+   "Filter goriva"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Servis i održavanje",
+   "Filteri",
+   "Filter goriva"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filter-kabine",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Servis i održavanje",
+   "Filteri",
+   "Filter kabine"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Servis i održavanje",
+   "Filteri",
+   "Filter kabine"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/audi",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Audi"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Audi"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/seat",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "SEAT"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "SEAT"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/cupra",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Cupra"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Cupra"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/golf",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Golf"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Golf"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/passat",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Passat"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Passat"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/polo",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Polo"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Polo"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/caddy",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Caddy"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Caddy"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/touran",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Touran"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Touran"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/tiguan",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Tiguan"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Tiguan"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/audi/a3",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A3"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A3"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/audi/a4",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A4"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A4"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/audi/a6",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A6"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A6"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/octavia",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Octavia"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Octavia"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/fabia",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Fabia"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Fabia"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/superb",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Superb"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Superb"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/rapid",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Rapid"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Rapid"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/kodiaq",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Kodiaq"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Kodiaq"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/karoq",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Karoq"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Karoq"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/seat/leon",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Leon"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Leon"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/seat/ibiza",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Ibiza"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Ibiza"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/seat/ateca",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Ateca"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Ateca"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/cupra/formentor",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Cupra",
+   "Formentor"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Cupra",
+   "Formentor"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/cupra/leon",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Cupra",
+   "Leon"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Cupra",
+   "Leon"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/cupra/ateca",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Cupra",
+   "Ateca"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Cupra",
+   "Ateca"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/golf/golf-4",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Golf",
+   "Golf IV"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Golf",
+   "Golf IV"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/golf/golf-5",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Golf",
+   "Golf V"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Golf",
+   "Golf V"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/golf/golf-6",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Golf",
+   "Golf VI"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Golf",
+   "Golf VI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/golf/golf-7",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Golf",
+   "Golf VII"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Golf",
+   "Golf VII"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/golf/golf-8",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Golf",
+   "Golf VIII"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Golf",
+   "Golf VIII"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/passat/passat-b5",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Passat",
+   "Passat B5"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Passat",
+   "Passat B5"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/passat/passat-b6",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Passat",
+   "Passat B6"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Passat",
+   "Passat B6"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/passat/passat-b7",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Passat",
+   "Passat B7"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Passat",
+   "Passat B7"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/passat/passat-b8",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Passat",
+   "Passat B8"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Passat",
+   "Passat B8"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/polo/polo-4",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Polo",
+   "Polo IV"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Polo",
+   "Polo IV"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/polo/polo-5",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Polo",
+   "Polo V"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Polo",
+   "Polo V"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/caddy/caddy-3",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Caddy",
+   "Caddy III"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Caddy",
+   "Caddy III"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/caddy/caddy-5",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Caddy",
+   "Caddy V"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Caddy",
+   "Caddy V"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/touran/touran-1",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Touran",
+   "Touran I"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Touran",
+   "Touran I"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/touran/touran-2",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Touran",
+   "Touran II"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Touran",
+   "Touran II"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/tiguan/tiguan-1",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Tiguan",
+   "Tiguan I"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Tiguan",
+   "Tiguan I"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/volkswagen/tiguan/tiguan-2",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Tiguan",
+   "Tiguan II"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Volkswagen",
+   "Tiguan",
+   "Tiguan II"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/audi/a3/a3-8l",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A3",
+   "A3 (8L)"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A3",
+   "A3 (8L)"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/audi/a3/a3-8p",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A3",
+   "A3 (8P)"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A3",
+   "A3 (8P)"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/audi/a3/a3-8v",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A3",
+   "A3 (8V)"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A3",
+   "A3 (8V)"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/audi/a3/a3-8y",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A3",
+   "A3 (8Y)"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A3",
+   "A3 (8Y)"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/audi/a4/a4-b5",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A4",
+   "A4 B5"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A4",
+   "A4 B5"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/audi/a6/a6-c5",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A6",
+   "A6 C5"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Audi",
+   "A6",
+   "A6 C5"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/octavia/octavia-1",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Octavia",
+   "Octavia I"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Octavia",
+   "Octavia I"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/octavia/octavia-2",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Octavia",
+   "Octavia II"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Octavia",
+   "Octavia II"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/octavia/octavia-3",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Octavia",
+   "Octavia III"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Octavia",
+   "Octavia III"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/octavia/octavia-4",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Octavia",
+   "Octavia IV"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Octavia",
+   "Octavia IV"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/fabia/fabia-1",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Fabia",
+   "Fabia I"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Fabia",
+   "Fabia I"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/fabia/fabia-2",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Fabia",
+   "Fabia II"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Fabia",
+   "Fabia II"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/fabia/fabia-3",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Fabia",
+   "Fabia III"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Fabia",
+   "Fabia III"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/superb/superb-1",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Superb",
+   "Superb I"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Superb",
+   "Superb I"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/superb/superb-2",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Superb",
+   "Superb II"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Superb",
+   "Superb II"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/superb/superb-3",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Superb",
+   "Superb III"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Superb",
+   "Superb III"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/rapid/rapid",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Rapid",
+   "Rapid"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Rapid",
+   "Rapid"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/kodiaq/kodiaq-1",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Kodiaq",
+   "Kodiaq I"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Kodiaq",
+   "Kodiaq I"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/skoda/karoq/karoq",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Karoq",
+   "Karoq"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Škoda",
+   "Karoq",
+   "Karoq"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/seat/leon/leon-1",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Leon",
+   "Leon I"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Leon",
+   "Leon I"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/seat/leon/leon-2",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Leon",
+   "Leon II"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Leon",
+   "Leon II"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/seat/leon/leon-3",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Leon",
+   "Leon III"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Leon",
+   "Leon III"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/seat/leon/leon-4",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Leon",
+   "Leon IV"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Leon",
+   "Leon IV"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/seat/ibiza/ibiza-3",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Ibiza",
+   "Ibiza III"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Ibiza",
+   "Ibiza III"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/seat/ibiza/ibiza-4",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Ibiza",
+   "Ibiza IV"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Ibiza",
+   "Ibiza IV"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/seat/ateca/ateca",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Ateca",
+   "Ateca"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "SEAT",
+   "Ateca",
+   "Ateca"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/cupra/formentor/formentor",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Cupra",
+   "Formentor",
+   "Formentor"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Cupra",
+   "Formentor",
+   "Formentor"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/cupra/leon/cupra-leon",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Cupra",
+   "Leon",
+   "Leon (KL)"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Cupra",
+   "Leon",
+   "Leon (KL)"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/vozila/cupra/ateca/cupra-ateca",
+  "ld": [
+   "Početna",
+   "Vozila",
+   "Cupra",
+   "Ateca",
+   "Ateca"
+  ],
+  "vis": [
+   "Početna",
+   "Vozila",
+   "Cupra",
+   "Ateca",
+   "Ateca"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/amortizeri-opruge/volkswagen/golf",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Volkswagen",
+   "Golf"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Volkswagen",
+   "Golf"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/amortizeri-opruge/volkswagen/touran",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Volkswagen",
+   "Touran"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Volkswagen",
+   "Touran"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/amortizeri-opruge/volkswagen/tiguan",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Volkswagen",
+   "Tiguan"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Volkswagen",
+   "Tiguan"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/amortizeri-opruge/audi/a3",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Audi",
+   "A3"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Audi",
+   "A3"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/amortizeri-opruge/skoda/octavia",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Škoda",
+   "Octavia"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Škoda",
+   "Octavia"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/amortizeri-opruge/seat/leon",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "SEAT",
+   "Leon"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "SEAT",
+   "Leon"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/zupcasti-kais-vodena-pumpa/volkswagen/golf",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Volkswagen",
+   "Golf"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Volkswagen",
+   "Golf"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/zupcasti-kais-vodena-pumpa/audi/a3",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Audi",
+   "A3"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Audi",
+   "A3"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/zupcasti-kais-vodena-pumpa/skoda/octavia",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Škoda",
+   "Octavia"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Škoda",
+   "Octavia"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/zupcasti-kais-vodena-pumpa/seat/leon",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "SEAT",
+   "Leon"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "SEAT",
+   "Leon"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/volkswagen/golf",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Volkswagen",
+   "Golf"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Volkswagen",
+   "Golf"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/volkswagen/touran",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Volkswagen",
+   "Touran"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Volkswagen",
+   "Touran"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/volkswagen/tiguan",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Volkswagen",
+   "Tiguan"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Volkswagen",
+   "Tiguan"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/audi/a3",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Audi",
+   "A3"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Audi",
+   "A3"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/skoda/octavia",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Škoda",
+   "Octavia"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Škoda",
+   "Octavia"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/seat/leon",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "SEAT",
+   "Leon"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "SEAT",
+   "Leon"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/volkswagen/caddy",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Volkswagen",
+   "Caddy"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Volkswagen",
+   "Caddy"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/volkswagen/touran",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Volkswagen",
+   "Touran"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Volkswagen",
+   "Touran"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/volkswagen/tiguan",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Volkswagen",
+   "Tiguan"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Volkswagen",
+   "Tiguan"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/skoda/kodiaq",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Škoda",
+   "Kodiaq"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Škoda",
+   "Kodiaq"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/skoda/karoq",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Škoda",
+   "Karoq"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Škoda",
+   "Karoq"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/seat/ateca",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "SEAT",
+   "Ateca"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "SEAT",
+   "Ateca"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/cupra/ateca",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Cupra",
+   "Ateca"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Cupra",
+   "Ateca"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/volkswagen/passat",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Volkswagen",
+   "Passat"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Volkswagen",
+   "Passat"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/skoda/superb",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Škoda",
+   "Superb"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Škoda",
+   "Superb"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/volkswagen/golf",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Volkswagen",
+   "Golf"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Volkswagen",
+   "Golf"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/audi/a3",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Audi",
+   "A3"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Audi",
+   "A3"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/skoda/octavia",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Škoda",
+   "Octavia"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Škoda",
+   "Octavia"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/seat/leon",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "SEAT",
+   "Leon"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "SEAT",
+   "Leon"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/seat",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "SEAT"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "SEAT"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/volkswagen",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Volkswagen"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Volkswagen"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocioni-diskovi/skoda",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Škoda"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Škoda"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/volkswagen/passat",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Volkswagen",
+   "Passat"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Volkswagen",
+   "Passat"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/audi",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Audi"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Audi"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/skoda/superb",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Škoda",
+   "Superb"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Škoda",
+   "Superb"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filteri/volkswagen/caddy",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Volkswagen",
+   "Caddy"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Volkswagen",
+   "Caddy"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/volkswagen",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Volkswagen"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Volkswagen"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/kocione-plocice/skoda",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Škoda"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Škoda"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filteri/volkswagen/passat",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Volkswagen",
+   "Passat"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Volkswagen",
+   "Passat"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filteri/volkswagen/touran",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Volkswagen",
+   "Touran"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Volkswagen",
+   "Touran"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filteri/volkswagen/tiguan",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Volkswagen",
+   "Tiguan"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Volkswagen",
+   "Tiguan"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filteri/skoda/superb",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Škoda",
+   "Superb"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Škoda",
+   "Superb"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filteri/volkswagen/golf",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Volkswagen",
+   "Golf"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Volkswagen",
+   "Golf"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filteri/audi/a3",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Audi",
+   "A3"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Audi",
+   "A3"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filteri/skoda/octavia",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Škoda",
+   "Octavia"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Škoda",
+   "Octavia"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filteri/seat/leon",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "SEAT",
+   "Leon"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "SEAT",
+   "Leon"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filteri/audi",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Audi"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Audi"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filteri/seat",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "SEAT"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "SEAT"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filteri/volkswagen",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Volkswagen"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Volkswagen"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/delovi/filteri/skoda",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Škoda"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filteri",
+   "Škoda"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocioni-disk-prednji-288-25-mm-ventilirani-demo-0001",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk prednji 288 × 25 mm, ventilirani"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk prednji 288 × 25 mm, ventilirani"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocioni-disk-zadnji-272-10-mm-puni-demo-0003",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk zadnji 272 × 10 mm, puni"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk zadnji 272 × 10 mm, puni"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk prednji 276 × 24 mm"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk prednji 276 × 24 mm"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk prednji 340 × 30 mm, GTI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk prednji 340 × 30 mm, GTI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocioni-disk-prednji-256-22-mm-demo-0006",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk prednji 256 × 22 mm"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk prednji 256 × 22 mm"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocioni-disk-prednji-312-25-mm-demo-0007",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk prednji 312 × 25 mm"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk prednji 312 × 25 mm"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocioni-disk-prednji-320-30-mm-demo-0008",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk prednji 320 × 30 mm"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk prednji 320 × 30 mm"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocione-plocice-prednje-sa-senzorom-demo-0009",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice prednje, sa senzorom"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice prednje, sa senzorom"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocione-plocice-zadnje-demo-0011",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice zadnje"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice zadnje"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocione-plocice-prednje-demo-0012",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice prednje"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice prednje"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice zadnje, elektronska ručna"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice zadnje, elektronska ručna"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocione-plocice-prednje-demo-0014",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice prednje"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice prednje"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocione-plocice-prednje-demo-0015",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice prednje"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice prednje"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocione-plocice-prednje-demo-0016",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice prednje"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice prednje"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kociona-celjust-prednja-leva-demo-0017",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione čeljusti",
+   "Kočiona čeljust prednja leva"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione čeljusti",
+   "Kočiona čeljust prednja leva"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/set-za-reparaciju-kocione-celjusti-prednji-demo-0019",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione čeljusti",
+   "Set za reparaciju kočione čeljusti, prednji"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione čeljusti",
+   "Set za reparaciju kočione čeljusti, prednji"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/abs-senzor-prednji-demo-0020",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "ABS senzori",
+   "ABS senzor prednji"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "ABS senzori",
+   "ABS senzor prednji"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/abs-senzor-prednji-demo-0022",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "ABS senzori",
+   "ABS senzor prednji"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "ABS senzori",
+   "ABS senzor prednji"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/amortizer-prednji-gasni-demo-0023",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Amortizer prednji, gasni"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Amortizer prednji, gasni"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/amortizer-zadnji-b4-demo-0025",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Amortizer zadnji B4"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Amortizer zadnji B4"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/opruga-prednja-demo-0026",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Opruga prednja"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Opruga prednja"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/lezaj-amortizera-sa-gumom-set-demo-0027",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Ležaj amortizera sa gumom, set"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Ležaj amortizera sa gumom, set"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/amortizer-prednji-demo-0028",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Amortizer prednji"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Amortizer prednji"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/rame-prednje-levo-sa-kuglom-demo-0029",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Ramena i selen blokovi",
+   "Rame prednje levo, sa kuglom"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Ramena i selen blokovi",
+   "Rame prednje levo, sa kuglom"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/rame-prednje-desno-sa-kuglom-demo-0030",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Ramena i selen blokovi",
+   "Rame prednje desno, sa kuglom"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Ramena i selen blokovi",
+   "Rame prednje desno, sa kuglom"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/selen-blok-zadnjeg-mosta-demo-0032",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Ramena i selen blokovi",
+   "Selen blok zadnjeg mosta"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Ramena i selen blokovi",
+   "Selen blok zadnjeg mosta"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/rame-prednje-gornje-demo-0033",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Ramena i selen blokovi",
+   "Rame prednje gornje"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Ramena i selen blokovi",
+   "Rame prednje gornje"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kraj-spone-demo-0034",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Spone i stabilizatori",
+   "Kraj spone"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Spone i stabilizatori",
+   "Kraj spone"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/stangla-stabilizatora-prednja-demo-0036",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Spone i stabilizatori",
+   "Štangla stabilizatora prednja"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Spone i stabilizatori",
+   "Štangla stabilizatora prednja"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/stangla-stabilizatora-prednja-hd-demo-0037",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Spone i stabilizatori",
+   "Štangla stabilizatora prednja HD"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Spone i stabilizatori",
+   "Štangla stabilizatora prednja HD"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/manzetna-letve-volana-set-demo-0038",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Letva volana",
+   "Manžetna letve volana, set"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Letva volana",
+   "Manžetna letve volana, set"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/lezaj-prednjeg-tocka-set-demo-0040",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Ležaj točka i glavčina",
+   "Ležaj prednjeg točka, set"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Ležaj točka i glavčina",
+   "Ležaj prednjeg točka, set"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/glavcina-zadnja-sa-lezajem-demo-0041",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Ležaj točka i glavčina",
+   "Glavčina zadnja sa ležajem"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Ležaj točka i glavčina",
+   "Glavčina zadnja sa ležajem"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/lezaj-prednjeg-tocka-set-demo-0043",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Ležaj točka i glavčina",
+   "Ležaj prednjeg točka, set"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Ležaj točka i glavčina",
+   "Ležaj prednjeg točka, set"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/dihtung-glave-motora-2-0-tdi-2-zareza-demo-0044",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Blok motora i glava",
+   "Dihtung glave motora 2.0 TDI, 2 zareza"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Blok motora i glava",
+   "Dihtung glave motora 2.0 TDI, 2 zareza"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/set-klipnih-karika-1-9-tdi-demo-0046",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Blok motora i glava",
+   "Set klipnih karika 1.9 TDI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Blok motora i glava",
+   "Set klipnih karika 1.9 TDI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/turbina-1-9-tdi-77-kw-nova-demo-0047",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Turbina (turbopunjač)",
+   "Turbina 1.9 TDI 77 kW, nova"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Turbina (turbopunjač)",
+   "Turbina 1.9 TDI 77 kW, nova"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/turbina-2-0-tdi-110-kw-nova-demo-0048",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Turbina (turbopunjač)",
+   "Turbina 2.0 TDI 110 kW, nova"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Turbina (turbopunjač)",
+   "Turbina 2.0 TDI 110 kW, nova"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/interkuler-demo-0050",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Interkuler",
+   "Interkuler"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Interkuler",
+   "Interkuler"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/motor-klapni-usisne-grane-2-0-tdi-demo-0052",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Usisna grana i kućište filtera",
+   "Motor klapni usisne grane 2.0 TDI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Usisna grana i kućište filtera",
+   "Motor klapni usisne grane 2.0 TDI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/crevo-usisa-od-filtera-vazduha-demo-0053",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Usisna grana i kućište filtera",
+   "Crevo usisa od filtera vazduha"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Usisna grana i kućište filtera",
+   "Crevo usisa od filtera vazduha"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/brizgaljka-common-rail-2-0-tdi-demo-0054",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Brizgaljke i pumpa goriva",
+   "Brizgaljka Common Rail 2.0 TDI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Brizgaljke i pumpa goriva",
+   "Brizgaljka Common Rail 2.0 TDI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/pumpa-visokog-pritiska-cp4-2-0-tdi-demo-0055",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Brizgaljke i pumpa goriva",
+   "Pumpa visokog pritiska CP4 2.0 TDI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Brizgaljke i pumpa goriva",
+   "Pumpa visokog pritiska CP4 2.0 TDI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/set-podlozki-brizgaljki-demo-0056",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Brizgaljke i pumpa goriva",
+   "Set podložki brizgaljki"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Brizgaljke i pumpa goriva",
+   "Set podložki brizgaljki"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-0057",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Set zupčastog kaiša sa vodenom pumpom 1.9 TDI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Set zupčastog kaiša sa vodenom pumpom 1.9 TDI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-2-0-tdi-demo-0058",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Set zupčastog kaiša sa vodenom pumpom 2.0 TDI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Set zupčastog kaiša sa vodenom pumpom 2.0 TDI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/set-zupcastog-kaisa-1-6-8v-demo-0059",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Set zupčastog kaiša 1.6 8V"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Set zupčastog kaiša 1.6 8V"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-6-tdi-demo-0060",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Set zupčastog kaiša sa vodenom pumpom 1.6 TDI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Set zupčastog kaiša sa vodenom pumpom 1.6 TDI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/set-zupcastog-kaisa-1-4-16v-demo-0061",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Set zupčastog kaiša 1.4 16V"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Set zupčastog kaiša 1.4 16V"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/rebrasti-kais-6pk1153-demo-0062",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kaiš alternatora i zatezači",
+   "Rebrasti kaiš 6PK1153"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kaiš alternatora i zatezači",
+   "Rebrasti kaiš 6PK1153"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/rebrasti-kais-6pk1070-demo-0063",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kaiš alternatora i zatezači",
+   "Rebrasti kaiš 6PK1070"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kaiš alternatora i zatezači",
+   "Rebrasti kaiš 6PK1070"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/zatezac-kaisa-alternatora-demo-0064",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kaiš alternatora i zatezači",
+   "Zatezač kaiša alternatora"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kaiš alternatora i zatezači",
+   "Zatezač kaiša alternatora"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/alternator-140-a-demo-0065",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Alternator",
+   "Alternator 140 A"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Alternator",
+   "Alternator 140 A"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/alternator-110-a-demo-0066",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Alternator",
+   "Alternator 110 A"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Alternator",
+   "Alternator 110 A"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/anlaser-2-0-kw-demo-0067",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Anlaser",
+   "Anlaser 2,0 kW"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Anlaser",
+   "Anlaser 2,0 kW"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/anlaser-1-1-kw-demo-0068",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Anlaser",
+   "Anlaser 1,1 kW"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Anlaser",
+   "Anlaser 1,1 kW"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/svecica-iridijumska-demo-0069",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Svećice, bobine i grejači",
+   "Svećica iridijumska"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Svećice, bobine i grejači",
+   "Svećica iridijumska"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/bobina-paljenja-demo-0070",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Svećice, bobine i grejači",
+   "Bobina paljenja"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Svećice, bobine i grejači",
+   "Bobina paljenja"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/grejac-duraterm-1-9-2-0-tdi-demo-0071",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Svećice, bobine i grejači",
+   "Grejač Duraterm 1.9/2.0 TDI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Svećice, bobine i grejači",
+   "Grejač Duraterm 1.9/2.0 TDI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/grejac-1-6-2-0-tdi-cr-demo-0072",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Svećice, bobine i grejači",
+   "Grejač 1.6/2.0 TDI CR"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Svećice, bobine i grejači",
+   "Grejač 1.6/2.0 TDI CR"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/cep-kartera-sa-podloskom-demo-0073",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Karter, pumpa ulja i dihtunzi",
+   "Čep kartera sa podloškom"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Karter, pumpa ulja i dihtunzi",
+   "Čep kartera sa podloškom"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/pumpa-ulja-2-0-tdi-demo-0074",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Karter, pumpa ulja i dihtunzi",
+   "Pumpa ulja 2.0 TDI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Karter, pumpa ulja i dihtunzi",
+   "Pumpa ulja 2.0 TDI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/semering-radilice-strana-zamajca-demo-0075",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Karter, pumpa ulja i dihtunzi",
+   "Semering radilice, strana zamajca"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Karter, pumpa ulja i dihtunzi",
+   "Semering radilice, strana zamajca"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/egr-ventil-1-9-2-0-tdi-demo-0076",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "EGR ventil",
+   "EGR ventil 1.9/2.0 TDI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "EGR ventil",
+   "EGR ventil 1.9/2.0 TDI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/egr-ventil-2-0-tdi-cr-demo-0077",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "EGR ventil",
+   "EGR ventil 2.0 TDI CR"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "EGR ventil",
+   "EGR ventil 2.0 TDI CR"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/nosac-motora-desni-hidraulicni-demo-0078",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Nosači motora i menjača",
+   "Nosač motora desni, hidraulični"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Nosači motora i menjača",
+   "Nosač motora desni, hidraulični"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/nosac-menjaca-levi-dsg-demo-0079",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Nosači motora i menjača",
+   "Nosač menjača levi, DSG"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Nosači motora i menjača",
+   "Nosač menjača levi, DSG"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/obrtni-nosac-motora-pas-demo-0080",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Nosači motora i menjača",
+   "Obrtni nosač motora (pas)"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Nosači motora i menjača",
+   "Obrtni nosač motora (pas)"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/katalizator-1-6-8v-demo-0081",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "DPF i katalizator",
+   "Katalizator 1.6 8V"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "DPF i katalizator",
+   "Katalizator 1.6 8V"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/dpf-filter-2-0-tdi-demo-0082",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "DPF i katalizator",
+   "DPF filter 2.0 TDI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "DPF i katalizator",
+   "DPF filter 2.0 TDI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/lonac-zadnji-demo-0083",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Auspuh (lonci i cevi)",
+   "Lonac zadnji"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Auspuh (lonci i cevi)",
+   "Lonac zadnji"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/lonac-srednji-demo-0084",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Auspuh (lonci i cevi)",
+   "Lonac srednji"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Auspuh (lonci i cevi)",
+   "Lonac srednji"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/gumeni-nosac-auspuha-demo-0085",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Auspuh (lonci i cevi)",
+   "Gumeni nosač auspuha"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Auspuh (lonci i cevi)",
+   "Gumeni nosač auspuha"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/hladnjak-motora-demo-0086",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Hladnjak i ventilator",
+   "Hladnjak motora"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Hladnjak i ventilator",
+   "Hladnjak motora"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/hladnjak-motora-demo-0087",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Hladnjak i ventilator",
+   "Hladnjak motora"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Hladnjak i ventilator",
+   "Hladnjak motora"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/ventilator-hladnjaka-sa-motorom-demo-0088",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Hladnjak i ventilator",
+   "Ventilator hladnjaka sa motorom"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Hladnjak i ventilator",
+   "Ventilator hladnjaka sa motorom"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/termostat-1-9-2-0-tdi-demo-0089",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Termostat i creva hlađenja",
+   "Termostat 1.9/2.0 TDI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Termostat i creva hlađenja",
+   "Termostat 1.9/2.0 TDI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/crevo-hladnjaka-gornje-demo-0090",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Termostat i creva hlađenja",
+   "Crevo hladnjaka gornje"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Termostat i creva hlađenja",
+   "Crevo hladnjaka gornje"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kuciste-termostata-sa-pumpom-1-4-tsi-demo-0091",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Termostat i creva hlađenja",
+   "Kućište termostata sa pumpom 1.4 TSI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Termostat i creva hlađenja",
+   "Kućište termostata sa pumpom 1.4 TSI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kompresor-klime-demo-0092",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kompresor i kondenzator klime",
+   "Kompresor klime"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kompresor i kondenzator klime",
+   "Kompresor klime"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kondenzator-klime-demo-0093",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kompresor i kondenzator klime",
+   "Kondenzator klime"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kompresor i kondenzator klime",
+   "Kondenzator klime"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/set-kvacila-1-9-tdi-demo-0094",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kvačilo i zamajac",
+   "Set kvačila 1.9 TDI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kvačilo i zamajac",
+   "Set kvačila 1.9 TDI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/dvomaseni-zamajac-2-0-tdi-demo-0095",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kvačilo i zamajac",
+   "Dvomaseni zamajac 2.0 TDI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kvačilo i zamajac",
+   "Dvomaseni zamajac 2.0 TDI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/set-kvacila-1-6-tdi-demo-0096",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kvačilo i zamajac",
+   "Set kvačila 1.6 TDI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kvačilo i zamajac",
+   "Set kvačila 1.6 TDI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/set-filtera-i-ulja-za-dsg-dq250-demo-0097",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Menjač (DSG)",
+   "Set filtera i ulja za DSG DQ250"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Menjač (DSG)",
+   "Set filtera i ulja za DSG DQ250"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/mehatronika-dq200-nova-demo-0098",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Menjač (DSG)",
+   "Mehatronika DQ200, nova"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Menjač (DSG)",
+   "Mehatronika DQ200, nova"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/homokineticki-zglob-spoljni-demo-0099",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Poluosovine i homokinetički zglobovi",
+   "Homokinetički zglob spoljni"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Poluosovine i homokinetički zglobovi",
+   "Homokinetički zglob spoljni"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/poluosovina-leva-demo-0100",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Poluosovine i homokinetički zglobovi",
+   "Poluosovina leva"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Poluosovine i homokinetički zglobovi",
+   "Poluosovina leva"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/manzetna-homokinetickog-zgloba-set-demo-0101",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Poluosovine i homokinetički zglobovi",
+   "Manžetna homokinetičkog zgloba, set"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Poluosovine i homokinetički zglobovi",
+   "Manžetna homokinetičkog zgloba, set"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/akumulator-60-ah-540-a-demo-0102",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Akumulator",
+   "Akumulator 60 Ah 540 A"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Akumulator",
+   "Akumulator 60 Ah 540 A"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/akumulator-efb-70-ah-760-a-start-stop-demo-0103",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Akumulator",
+   "Akumulator EFB 70 Ah 760 A, start-stop"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Akumulator",
+   "Akumulator EFB 70 Ah 760 A, start-stop"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/akumulator-agm-80-ah-800-a-demo-0104",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Akumulator",
+   "Akumulator AGM 80 Ah 800 A"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Akumulator",
+   "Akumulator AGM 80 Ah 800 A"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/far-levi-halogeni-demo-0105",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Farovi",
+   "Far levi, halogeni"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Farovi",
+   "Far levi, halogeni"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/far-desni-halogeni-demo-0106",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Farovi",
+   "Far desni, halogeni"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Farovi",
+   "Far desni, halogeni"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/stop-svetlo-levo-demo-0107",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Stop svetla",
+   "Stop svetlo levo"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Stop svetla",
+   "Stop svetlo levo"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/stop-svetlo-desno-karavan-demo-0108",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Stop svetla",
+   "Stop svetlo desno, karavan"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Stop svetla",
+   "Stop svetlo desno, karavan"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/lambda-sonda-pre-katalizatora-demo-0109",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Senzori (lambda, parking, temperatura)",
+   "Lambda sonda pre katalizatora"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Senzori (lambda, parking, temperatura)",
+   "Lambda sonda pre katalizatora"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/lambda-sonda-demo-0110",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Senzori (lambda, parking, temperatura)",
+   "Lambda sonda"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Senzori (lambda, parking, temperatura)",
+   "Lambda sonda"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/parking-senzor-demo-0111",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Senzori (lambda, parking, temperatura)",
+   "Parking senzor"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Senzori (lambda, parking, temperatura)",
+   "Parking senzor"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/senzor-temperature-rashladne-tecnosti-demo-0112",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Senzori (lambda, parking, temperatura)",
+   "Senzor temperature rashladne tečnosti"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Senzori (lambda, parking, temperatura)",
+   "Senzor temperature rashladne tečnosti"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/senzor-pritiska-izduvnih-gasova-dpf-demo-0113",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Senzori (lambda, parking, temperatura)",
+   "Senzor pritiska izduvnih gasova (DPF)"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Senzori (lambda, parking, temperatura)",
+   "Senzor pritiska izduvnih gasova (DPF)"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/hauba-demo-0114",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Hauba",
+   "Hauba"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Hauba",
+   "Hauba"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/branik-prednji-za-prskalice-farova-demo-0115",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Branici",
+   "Branik prednji, za prskalice farova"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Branici",
+   "Branik prednji, za prskalice farova"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/branik-zadnji-demo-0116",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Branici",
+   "Branik zadnji"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Branici",
+   "Branik zadnji"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/blatobran-levi-demo-0117",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Blatobrani",
+   "Blatobran levi"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Blatobrani",
+   "Blatobran levi"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/blatobran-desni-demo-0118",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Blatobrani",
+   "Blatobran desni"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Blatobrani",
+   "Blatobran desni"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/podizac-stakla-prednji-levi-sa-motorom-demo-0119",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Vrata",
+   "Podizač stakla prednji levi, sa motorom"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Vrata",
+   "Podizač stakla prednji levi, sa motorom"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/brava-prednjih-desnih-vrata-demo-0120",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Vrata",
+   "Brava prednjih desnih vrata"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Vrata",
+   "Brava prednjih desnih vrata"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/staklo-retrovizora-levo-grejano-demo-0121",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Retrovizori",
+   "Staklo retrovizora levo, grejano"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Retrovizori",
+   "Staklo retrovizora levo, grejano"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/poklopac-retrovizora-desni-demo-0122",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Retrovizori",
+   "Poklopac retrovizora desni"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Retrovizori",
+   "Poklopac retrovizora desni"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/vetrobransko-staklo-sa-nosacem-senzora-demo-0123",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Stakla",
+   "Vetrobransko staklo sa nosačem senzora"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Stakla",
+   "Vetrobransko staklo sa nosačem senzora"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/metlice-brisaca-aerotwin-600-475-set-demo-0124",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Brisači",
+   "Metlice brisača Aerotwin 600/475, set"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Brisači",
+   "Metlice brisača Aerotwin 600/475, set"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/metlica-zadnjeg-brisaca-280-mm-demo-0125",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Brisači",
+   "Metlica zadnjeg brisača 280 mm"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Brisači",
+   "Metlica zadnjeg brisača 280 mm"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/motor-prednjih-brisaca-demo-0126",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Brisači",
+   "Motor prednjih brisača"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Brisači",
+   "Motor prednjih brisača"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/guma-letnja-205-55-r16-91v-demo-0127",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Felne i gume",
+   "Guma letnja 205/55 R16 91V"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Felne i gume",
+   "Guma letnja 205/55 R16 91V"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/aluminijumska-felna-6-5j-16-et46-5-112-demo-0128",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Felne i gume",
+   "Aluminijumska felna 6,5J × 16 ET46, 5 × 112"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Felne i gume",
+   "Aluminijumska felna 6,5J × 16 ET46, 5 × 112"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/vijci-tocka-m14-1-5-set-20-kom-demo-0129",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Felne i gume",
+   "Vijci točka M14 × 1,5, set 20 kom"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Felne i gume",
+   "Vijci točka M14 × 1,5, set 20 kom"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/filter-ulja-demo-0130",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filter ulja",
+   "Filter ulja"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filter ulja",
+   "Filter ulja"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/filter-ulja-demo-0131",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filter ulja",
+   "Filter ulja"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filter ulja",
+   "Filter ulja"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/filter-ulja-demo-0132",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filter ulja",
+   "Filter ulja"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filter ulja",
+   "Filter ulja"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/filter-ulja-demo-0133",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filter ulja",
+   "Filter ulja"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filter ulja",
+   "Filter ulja"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/filter-ulja-demo-0134",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filter ulja",
+   "Filter ulja"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filter ulja",
+   "Filter ulja"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/filter-vazduha-demo-0135",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filter vazduha",
+   "Filter vazduha"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filter vazduha",
+   "Filter vazduha"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/filter-vazduha-demo-0136",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filter vazduha",
+   "Filter vazduha"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filter vazduha",
+   "Filter vazduha"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/filter-vazduha-demo-0137",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filter vazduha",
+   "Filter vazduha"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filter vazduha",
+   "Filter vazduha"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/filter-vazduha-demo-0138",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filter vazduha",
+   "Filter vazduha"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filter vazduha",
+   "Filter vazduha"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/filter-goriva-demo-0139",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filter goriva",
+   "Filter goriva"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filter goriva",
+   "Filter goriva"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/filter-goriva-demo-0140",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filter goriva",
+   "Filter goriva"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filter goriva",
+   "Filter goriva"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/filter-goriva-demo-0141",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filter goriva",
+   "Filter goriva"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filter goriva",
+   "Filter goriva"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/filter-kabine-sa-aktivnim-ugljem-demo-0142",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filter kabine",
+   "Filter kabine sa aktivnim ugljem"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filter kabine",
+   "Filter kabine sa aktivnim ugljem"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/filter-kabine-demo-0143",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filter kabine",
+   "Filter kabine"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filter kabine",
+   "Filter kabine"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/filter-kabine-demo-0144",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filter kabine",
+   "Filter kabine"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filter kabine",
+   "Filter kabine"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/filter-kabine-sa-aktivnim-ugljem-demo-0145",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Filter kabine",
+   "Filter kabine sa aktivnim ugljem"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Filter kabine",
+   "Filter kabine sa aktivnim ugljem"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/motorno-ulje-edge-5w-30-ll-5-l-demo-0146",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Ulja i tečnosti",
+   "Motorno ulje Edge 5W-30 LL, 5 L"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Ulja i tečnosti",
+   "Motorno ulje Edge 5W-30 LL, 5 L"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/motorno-ulje-magnatec-5w-40-4-l-demo-0147",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Ulja i tečnosti",
+   "Motorno ulje Magnatec 5W-40, 4 L"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Ulja i tečnosti",
+   "Motorno ulje Magnatec 5W-40, 4 L"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/rashladna-tecnost-g13-koncentrat-1-5-l-demo-0148",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Ulja i tečnosti",
+   "Rashladna tečnost G13, koncentrat 1,5 L"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Ulja i tečnosti",
+   "Rashladna tečnost G13, koncentrat 1,5 L"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kociona-tecnost-super-dot-4-1-l-demo-0149",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Ulja i tečnosti",
+   "Kočiona tečnost Super DOT 4, 1 L"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Ulja i tečnosti",
+   "Kočiona tečnost Super DOT 4, 1 L"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/ulje-za-dsg-menjac-1-l-demo-0150",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Ulja i tečnosti",
+   "Ulje za DSG menjač, 1 L"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Ulja i tečnosti",
+   "Ulje za DSG menjač, 1 L"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-0002",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk prednji 312 × 25 mm, ventilirani"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk prednji 312 × 25 mm, ventilirani"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocione-plocice-prednje-sistem-teves-demo-0010",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice prednje, sistem Teves"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice prednje, sistem Teves"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kociona-celjust-zadnja-desna-sa-motorom-rucne-demo-0018",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione čeljusti",
+   "Kočiona čeljust zadnja desna, sa motorom ručne"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione čeljusti",
+   "Kočiona čeljust zadnja desna, sa motorom ručne"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/abs-senzor-zadnji-demo-0021",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "ABS senzori",
+   "ABS senzor zadnji"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "ABS senzori",
+   "ABS senzor zadnji"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/amortizer-prednji-excel-g-demo-0024",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Amortizer prednji Excel-G"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Amortizer prednji Excel-G"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/rame-prednje-donje-hd-demo-0031",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Ramena i selen blokovi",
+   "Rame prednje donje HD"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Ramena i selen blokovi",
+   "Rame prednje donje HD"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/spona-aksijalna-demo-0035",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Spone i stabilizatori",
+   "Spona aksijalna"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Spone i stabilizatori",
+   "Spona aksijalna"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/letva-volana-hidraulicna-demo-0039",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Letva volana",
+   "Letva volana, hidraulična"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Letva volana",
+   "Letva volana, hidraulična"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/lezaj-prednjeg-tocka-demo-0042",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Ležaj točka i glavčina",
+   "Ležaj prednjeg točka"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Ležaj točka i glavčina",
+   "Ležaj prednjeg točka"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/dihtung-poklopca-ventila-1-9-tdi-demo-0045",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Blok motora i glava",
+   "Dihtung poklopca ventila 1.9 TDI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Blok motora i glava",
+   "Dihtung poklopca ventila 1.9 TDI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/turbina-1-4-tsi-90-kw-nova-demo-0049",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Turbina (turbopunjač)",
+   "Turbina 1.4 TSI 90 kW, nova"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Turbina (turbopunjač)",
+   "Turbina 1.4 TSI 90 kW, nova"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/interkuler-demo-0051",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Interkuler",
+   "Interkuler"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Interkuler",
+   "Interkuler"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-e001",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk prednji 312 × 25 mm, ventilirani"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočioni diskovi",
+   "Kočioni disk prednji 312 × 25 mm, ventilirani"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocione-plocice-prednje-sa-senzorom-demo-e002",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice prednje, sa senzorom"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice prednje, sa senzorom"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kocione-plocice-zadnje-demo-e003",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice zadnje"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Kočione pločice",
+   "Kočione pločice zadnje"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/amortizer-prednji-gasni-demo-e004",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Amortizer prednji, gasni"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Amortizeri i opruge",
+   "Amortizer prednji, gasni"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/kraj-spone-demo-e005",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Spone i stabilizatori",
+   "Kraj spone"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Spone i stabilizatori",
+   "Kraj spone"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/turbina-1-9-tdi-77-kw-nova-demo-e006",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Turbina (turbopunjač)",
+   "Turbina 1.9 TDI 77 kW, nova"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Turbina (turbopunjač)",
+   "Turbina 1.9 TDI 77 kW, nova"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ },
+ {
+  "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-e007",
+  "ld": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Set zupčastog kaiša sa vodenom pumpom 1.9 TDI"
+  ],
+  "vis": [
+   "Početna",
+   "Delovi",
+   "Set zupčastog kaiša i vodena pumpa",
+   "Set zupčastog kaiša sa vodenom pumpom 1.9 TDI"
+  ],
+  "match": true,
+  "lastHasItem": false,
+  "positionsOk": true
+ }
+]

@@ -1,0 +1,27 @@
+{
+  "legalVersionsInForce": {
+    "cookies": "2026-09-29",
+    "privacy": "2026-09-29",
+    "terms": "2026-09-29"
+  },
+  "inquiry": "UP-2026-000063",
+  "inquiryStoredConsent": {
+    "acceptedAt": 4070908800000,
+    "ads": false,
+    "analytics": false,
+    "marketingEmail": false,
+    "privacyVersion": "",
+    "termsVersion": ""
+  },
+  "inquiryCleanup": "inquiry closed",
+  "order": "SK-2026-000102",
+  "orderStoredConsent": {
+    "acceptedAt": 0,
+    "ads": false,
+    "analytics": false,
+    "marketingEmail": false,
+    "privacyVersion": "VERIFY-FORGED",
+    "termsVersion": "VERIFY-FORGED"
+  },
+  "orderCleanup": "order cancelled"
+}

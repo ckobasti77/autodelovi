@@ -1,0 +1,45 @@
+{
+ "base": "http://localhost:3200",
+ "rows": [
+  {
+   "path": "/upit",
+   "csp": [
+    {
+     "directive": "script-src",
+     "effective": "script-src",
+     "blocked": "eval",
+     "source": "http://localhost:3200/_next/static/chunks/1uyyf-z7kpx1w.js",
+     "line": 1,
+     "sample": "",
+     "disposition": "enforce"
+    }
+   ],
+   "console": [],
+   "pageErrors": []
+  },
+  {
+   "path": "/kontakt",
+   "csp": [],
+   "console": [],
+   "pageErrors": []
+  },
+  {
+   "path": "/za-majstore",
+   "csp": [],
+   "console": [],
+   "pageErrors": []
+  },
+  {
+   "path": "/",
+   "csp": [],
+   "console": [],
+   "pageErrors": []
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "csp": [],
+   "console": [],
+   "pageErrors": []
+  }
+ ]
+}

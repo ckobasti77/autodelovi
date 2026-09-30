@@ -1,0 +1,13 @@
+/ => http://localhost:3000/opengraph-image alt=SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra
+/delovi => http://localhost:3000/opengraph-image alt=SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra
+/delovi/kocnice => http://localhost:3000/delovi/kocnice/opengraph-image-cd3rrt?03ef4e5863a6c3ec alt=Kategorija auto delova — broj artikala i stanje
+/delovi/kocioni-diskovi => http://localhost:3000/delovi/kocioni-diskovi/opengraph-image-cd3rrt?03ef4e5863a6c3ec alt=Kategorija auto delova — broj artikala i stanje
+/delovi/kocioni-diskovi/volkswagen => http://localhost:3000/delovi/kocioni-diskovi/volkswagen/opengraph-image-170i3u?75df9d228d439aaa alt=Delovi po kategoriji za marku vozila — broj artikala i stanje
+/delovi/kocioni-diskovi/volkswagen/golf => http://localhost:3000/delovi/kocioni-diskovi/volkswagen/golf/opengraph-image-pk09ic?fde389036b970c96 alt=Delovi po kategoriji za model vozila — broj artikala i stanje
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 => http://localhost:3000/deo/kocioni-disk-prednji-276-24-mm-demo-0004/opengraph-image-138o9k?8074413d817059df alt=Auto deo — naziv, OEM broj i proizvođač
+/vozila/volkswagen/golf/golf-7 => http://localhost:3000/opengraph-image alt=SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra
+/vozila/volkswagen => http://localhost:3000/opengraph-image alt=SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra
+/za-majstore => http://localhost:3000/opengraph-image alt=SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra
+/upit => http://localhost:3000/opengraph-image alt=SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra
+/kontakt => http://localhost:3000/opengraph-image alt=SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra
+/delovi/kocioni-diskovi?marka=volkswagen&model=golf&generacija=golf-7 => http://localhost:3000/delovi/kocioni-diskovi/opengraph-image-cd3rrt?03ef4e5863a6c3ec alt=Kategorija auto delova — broj artikala i stanje

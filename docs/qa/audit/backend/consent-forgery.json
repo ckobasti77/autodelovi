@@ -1,0 +1,15 @@
+{
+  "inquiry": "UP-2026-000060",
+  "storedConsent": {
+    "acceptedAt": 946684800000,
+    "ads": true,
+    "analytics": true,
+    "marketingEmail": true,
+    "privacyVersion": "QA-FORGED",
+    "termsVersion": "QA-FORGED"
+  },
+  "storedCampaignLength": 200000,
+  "exportBytes": 201178,
+  "adminListCampaignLength": 200000,
+  "cleanup": "inquiry closed"
+}

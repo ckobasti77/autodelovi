@@ -1,0 +1,56 @@
+{
+  "seo:feedProducts": [],
+  "seo:feedProducts allKeys": [],
+  "seo:sitemapProducts": [],
+  "seo:sitemapProducts allKeys": [
+    ".images",
+    ".lastModified",
+    ".listed",
+    ".slug"
+  ],
+  "/feeds/google-merchant.xml": {
+    "status": 200,
+    "location": null,
+    "leak": false
+  },
+  "/feeds/meta-catalog.csv": {
+    "status": 200,
+    "location": null,
+    "leak": false
+  },
+  "/sitemap.xml": {
+    "status": 200,
+    "location": null,
+    "leak": false
+  },
+  "/majstor/cenovnik/preuzmi": {
+    "status": 307,
+    "location": "/prijava?next=%2Fmajstor%2Fcenovnik%2Fpreuzmi",
+    "leak": false
+  },
+  "/api/revalidate": {
+    "status": 405,
+    "location": null,
+    "leak": false
+  },
+  "/admin/porudzbine/SK-2026-000092/predracun": {
+    "status": 307,
+    "location": "/prijava?next=%2Fadmin%2Fporudzbine%2FSK-2026-000092%2Fpredracun",
+    "leak": false
+  },
+  "/admin/izvoz/porudzbine": {
+    "status": 307,
+    "location": "/prijava?next=%2Fadmin%2Fizvoz%2Fporudzbine",
+    "leak": false
+  },
+  "/admin/izvoz/kupci": {
+    "status": 307,
+    "location": "/prijava?next=%2Fadmin%2Fizvoz%2Fkupci",
+    "leak": false
+  },
+  "/admin/uvoz/sablon": {
+    "status": 307,
+    "location": "/prijava?next=%2Fadmin%2Fuvoz%2Fsablon",
+    "leak": false
+  }
+}

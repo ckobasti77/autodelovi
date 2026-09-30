@@ -1,0 +1,598 @@
+{
+ "base": "http://localhost:3100",
+ "nojs": false,
+ "width": 1440,
+ "role": "customer",
+ "log": {
+  "console": [
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "pageErrors": [],
+  "failedRequests": [],
+  "badResponses": [
+   "404 http://localhost:3100/nalog/omiljeno"
+  ]
+ },
+ "results": [
+  {
+   "url": "/nalog",
+   "status": 200,
+   "title": "Moj nalog | SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogTitle": "Moj nalog | SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Moj nalog | SKLOP",
+   "robots": "noindex, follow",
+   "h1": [
+    "Moj nalog"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\n\nPrijavljeni ste kao audit-kupac-5455287@primer.rs\n\nMoj nalog\nPregled\nPorudžbine\nUpiti\nVozila\nProfil\nOdjavi se\nPoslednje porudžbine\nSve\n\nJoš nemate porudžbina.\n\nPretražite delove\nVozila\nIzaberite vozilo, pa ga sačuvajte za sledeći put.\nIzaberite vozilo\n\nNemate sačuvana vozila.\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–14\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.\n\nUslovi korišćenja\nPolitika privatnosti\nKolačići\nPodešavanja kolačića",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Moj nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/"
+   ],
+   "jsonld": [],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/nalog/porudzbine",
+   "status": 200,
+   "title": "Porudžbine | SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogTitle": "Porudžbine | SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Porudžbine | SKLOP",
+   "robots": "noindex, follow",
+   "h1": [
+    "Moj nalog"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\n\nPrijavljeni ste kao audit-kupac-5455287@primer.rs\n\nMoj nalog\nPregled\nPorudžbine\nUpiti\nVozila\nProfil\nOdjavi se\n\nJoš nemate porudžbina.\n\nPretražite delove\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–14\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.\n\nUslovi korišćenja\nPolitika privatnosti\nKolačići\nPodešavanja kolačića",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Moj nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/"
+   ],
+   "jsonld": [],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/nalog/upiti",
+   "status": 200,
+   "title": "Upiti | SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogTitle": "Upiti | SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Upiti | SKLOP",
+   "robots": "noindex, follow",
+   "h1": [
+    "Moj nalog"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\n\nPrijavljeni ste kao audit-kupac-5455287@primer.rs\n\nMoj nalog\nPregled\nPorudžbine\nUpiti\nVozila\nProfil\nOdjavi se\n\nJoš niste slali upite. Ne nalazite deo? Pošaljite broj šasije.\n\nPošaljite upit\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–14\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.\n\nUslovi korišćenja\nPolitika privatnosti\nKolačići\nPodešavanja kolačića",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Moj nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/"
+   ],
+   "jsonld": [],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/nalog/vozila",
+   "status": 200,
+   "title": "Vozila | SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogTitle": "Vozila | SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Vozila | SKLOP",
+   "robots": "noindex, follow",
+   "h1": [
+    "Moj nalog"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\n\nPrijavljeni ste kao audit-kupac-5455287@primer.rs\n\nMoj nalog\nPregled\nPorudžbine\nUpiti\nVozila\nProfil\nOdjavi se\nIzaberite vozilo, pa ga sačuvajte za sledeći put.\nIzaberite vozilo\n\nNemate sačuvana vozila.\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–14\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.\n\nUslovi korišćenja\nPolitika privatnosti\nKolačići\nPodešavanja kolačića",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Moj nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/"
+   ],
+   "jsonld": [],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/nalog/omiljeno",
+   "status": 404,
+   "title": "Stranica nije pronađena · SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogTitle": "Stranica nije pronađena · SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Stranica nije pronađena · SKLOP",
+   "robots": "noindex",
+   "h1": [
+    "Stranica nije pronađena"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\nStranica nije pronađena\n\nAdresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas.\n\nPretraži\n\nBroj upišite kako god ga imate — razmaci, tačke i crtice ne smetaju.\n\nVaše vozilo\nIzaberite vozilo\nmarka, model, motor\nIzaberi\nČESTO TRAŽENE KATEGORIJE\nKočione pločice\nKočioni diskovi\nAmortizeri i opruge\nZupčasti kaiš i vodena pumpa\nFilteri\nTurbina\nSvi delovi\nPošaljite upit\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.\n\nUslovi korišćenja\nPolitika privatnosti\nKolačići\nPodešavanja kolačića",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Moj nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "input",
+     "attr": "aria-label",
+     "value": "Broj dela ili naziv"
+    },
+    {
+     "tag": "input",
+     "attr": "placeholder",
+     "value": "npr. 1K0 615 301 AA ili kočione pločice"
+    },
+    {
+     "tag": "ul",
+     "attr": "aria-label",
+     "value": "Broj dela ili naziv"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/",
+    "Izaberi"
+   ],
+   "jsonld": [],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/nalog/profil",
+   "status": 200,
+   "title": "Profil | SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogTitle": "Profil | SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Profil | SKLOP",
+   "robots": "noindex, follow",
+   "h1": [
+    "Moj nalog"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\n\nPrijavljeni ste kao audit-kupac-5455287@primer.rs\n\nMoj nalog\nPregled\nPorudžbine\nUpiti\nVozila\nProfil\nOdjavi se\nIme\nPrezime\nTelefon\nE-pošta\n\nAdresa naloga se ne menja ovde.\n\nSačuvaj\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–14\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.\n\nUslovi korišćenja\nPolitika privatnosti\nKolačići\nPodešavanja kolačića",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Moj nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/"
+   ],
+   "jsonld": [],
+   "lang": "sr-Latn-RS"
+  },
+  {
+   "url": "/korpa",
+   "status": 200,
+   "title": "Korpa | SKLOP",
+   "description": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogTitle": "Korpa | SKLOP",
+   "ogDescription": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",
+   "ogImageAlt": "SKLOP — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra",
+   "twitterTitle": "Korpa | SKLOP",
+   "robots": "noindex, follow",
+   "h1": [
+    "Korpa"
+   ],
+   "text": "Preskoči na sadržaj\nSKLOP\nDelovi\nVozila\nZa majstore\nUpit po broju šasije\nBroj dela ili naziv\n/\nIzaberite vozilo\nKorpa\nKorpa je prazna\n\nDodajte delove iz kataloga ili pretražite po OEM broju.\n\nPretražite po broju dela\n\nSKLOP\n\nDelovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.\n\nDELOVI\nSvi delovi\nDelovi po vozilu\nPretraga po broju dela\nUpit po broju šasije\nKUPOVINA\nDostava i plaćanje\nReklamacije i povrat\nZa majstore\nO nama\nKONTAKT\nPon–pet 8–17, sub 8–14\nPošaljite upit — javljamo se u toku radnog dana\n\n© 2026 SKLOP\n\nVolkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.\n\nUslovi korišćenja\nPolitika privatnosti\nKolačići\nPodešavanja kolačića",
+   "attrs": [
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Glavna navigacija"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Pretraga delova"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Moj nalog"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "Korpa"
+    },
+    {
+     "tag": "button",
+     "attr": "aria-label",
+     "value": "Otvori meni"
+    },
+    {
+     "tag": "a",
+     "attr": "aria-label",
+     "value": "SKLOP — početna"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Delovi"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Kupovina"
+    },
+    {
+     "tag": "nav",
+     "attr": "aria-label",
+     "value": "Pravne informacije"
+    },
+    {
+     "tag": "div",
+     "attr": "aria-label",
+     "value": "Obaveštenja (F8)"
+    }
+   ],
+   "hidden": [
+    "/"
+   ],
+   "jsonld": [],
+   "lang": "sr-Latn-RS"
+  }
+ ]
+}

@@ -1,0 +1,216 @@
+{
+ "base": "http://localhost:3200",
+ "path": "/vozila/volkswagen/golf/golf-7",
+ "rows": [
+  {
+   "width": 390,
+   "mono": "blocked",
+   "blockedHits": 2,
+   "fontUrls": [
+    "archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+    "archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+    "fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+    "fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+    "archivo_expanded_600-s.0-vwu0izeway0.woff2",
+    "ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2"
+   ],
+   "navHeight": 401,
+   "catsTop": 811,
+   "monoLoaded": true,
+   "chips": 9,
+   "cls": 0,
+   "shifts": [],
+   "fontsDone": 120,
+   "fcp": 544
+  },
+  {
+   "width": 390,
+   "mono": "loaded",
+   "blockedHits": 0,
+   "fontUrls": [
+    "archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+    "archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+    "fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+    "fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+    "archivo_expanded_600-s.0-vwu0izeway0.woff2",
+    "ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2"
+   ],
+   "navHeight": 401,
+   "catsTop": 811,
+   "monoLoaded": true,
+   "chips": 9,
+   "cls": 0,
+   "shifts": [
+    {
+     "at": 933,
+     "value": 0.0033,
+     "recent": true,
+     "sources": [
+      {
+       "node": "#text. “”",
+       "prev": [
+        140,
+        31
+       ],
+       "curr": [
+        140,
+        31
+       ]
+      },
+      {
+       "node": "#text. “”",
+       "prev": [
+        169,
+        31
+       ],
+       "curr": [
+        169,
+        31
+       ]
+      },
+      {
+       "node": "#text. “artikal”",
+       "prev": [
+        239,
+        19
+       ],
+       "curr": [
+        239,
+        19
+       ]
+      },
+      {
+       "node": "span.rw “Golf”",
+       "prev": [
+        167,
+        34
+       ],
+       "curr": [
+        170,
+        31
+       ]
+      },
+      {
+       "node": "span.rw “za”",
+       "prev": [
+        137,
+        34
+       ],
+       "curr": [
+        140,
+        31
+       ]
+      }
+     ]
+    }
+   ],
+   "fontsDone": 114,
+   "fcp": 716
+  },
+  {
+   "width": 1440,
+   "mono": "blocked",
+   "blockedHits": 2,
+   "fontUrls": [
+    "archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+    "archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+    "fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+    "fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+    "ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2",
+    "archivo_expanded_600-s.0-vwu0izeway0.woff2"
+   ],
+   "navHeight": 113,
+   "catsTop": 403,
+   "monoLoaded": true,
+   "chips": 9,
+   "cls": 0,
+   "shifts": [],
+   "fontsDone": 125,
+   "fcp": 496
+  },
+  {
+   "width": 1440,
+   "mono": "loaded",
+   "blockedHits": 0,
+   "fontUrls": [
+    "archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+    "archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+    "fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+    "fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+    "ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2",
+    "archivo_expanded_600-s.0-vwu0izeway0.woff2"
+   ],
+   "navHeight": 113,
+   "catsTop": 403,
+   "monoLoaded": true,
+   "chips": 9,
+   "cls": 0.0004,
+   "shifts": [
+    {
+     "at": 701,
+     "value": 0.0004,
+     "recent": false,
+     "sources": [
+      {
+       "node": "#text. “”",
+       "prev": [
+        130,
+        43
+       ],
+       "curr": [
+        130,
+        43
+       ]
+      },
+      {
+       "node": "span.rw “Golf”",
+       "prev": [
+        134,
+        48
+       ],
+       "curr": [
+        139,
+        43
+       ]
+      },
+      {
+       "node": "span.rw “VW”",
+       "prev": [
+        128,
+        47
+       ],
+       "curr": [
+        132,
+        43
+       ]
+      },
+      {
+       "node": "span.rw “VII”",
+       "prev": [
+        127,
+        47
+       ],
+       "curr": [
+        131,
+        43
+       ]
+      },
+      {
+       "node": "span.rw “za”",
+       "prev": [
+        132,
+        47
+       ],
+       "curr": [
+        136,
+        43
+       ]
+      }
+     ]
+    }
+   ],
+   "fontsDone": 179,
+   "fcp": 388
+  }
+ ]
+}

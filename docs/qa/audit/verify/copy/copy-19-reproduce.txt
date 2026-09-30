@@ -1,0 +1,17 @@
+# copy-19 verifier: source locations (grep, 2026-09-30T16:37:53+02:00)
+756:          help="Interna napomena vidi samo osoblje, osim ako je označeno drugačije."
+convex/lib/emailConfig.ts:66:    warnings.push("Nedostaje RESEND_API_KEY — poruke se samo beleže (režim log).");
+convex/notify.ts:67:        ? `E-pošta zabeležena (nije poslata, režim log): ${subject}`
+convex/notify.ts:87:        ? `E-pošta zabeležena (nije poslata, režim log): ${subject}`
+components/admin/system/EmailsAdmin.tsx:220:          ? "Poruka je ponovo zabeležena (režim log)."
+components/admin/system/EmailTemplatesAdmin.tsx:201:          ? `Probna poruka je zabeležena u poslatim porukama (režim log, ${res.to}).`
+166:  log: "Samo zapis",
+167:          <pre className="mx-auto max-w-[680px] whitespace-pre-wrap rounded-sm border border-line bg-surface-1 p-4 type-code-s text-ink-1">
+7:626-  text-transform: uppercase;
+52:        description="Svaki šablon sa primerom podataka i vašim podešavanjima (firma, kontakt, radno vreme) — tačno kako ga kupac ili zaposleni vidi."
+26:  staff: (ctx) => `Ovu poruku dobijate kao zaposleni u ${ctx.brandName}.`,
+237:    button("Otvorite kontrolnu tablu", d.dashboardUrl),
+55:        label: "Pregled",
+# adjacent: customer plain-text back_in_stock footer
+135:    manageLink: { label: "Odjavite sva obaveštenja o dolasku robe.", href: d.unsubscribeUrl },
+102:Ovu poruku ste dobili jer ste tražili da vam javimo kad artikal stigne. Odjavite sva obaveštenja o dolasku robe.: https://sklop.test/obavestenja/odjava/primer-tokena-za-pregled-sablona

@@ -1,0 +1,10 @@
+radix Tooltip+Popper (Providers)                               34.1 raw  13.2 gz Anchor Arrow
+radix Toast (Toaster)                                          15.3 raw   5.5 gz Action
+Sheet/Dialog stack (Dialog, RemoveScroll, FocusScope, DismissableLayer, Portal, Presence, focus-guards, aria-hidden)   33.2 raw  13.4 gz RemoveScroll Branch Sheet FocusScope Presence Dialog hideOthers useFocusGuards
+Consent banner + Switch                                        11.2 raw   5.3 gz Root ConsentBanner CONSENT_DEFAULT openConsentSettings ConsentSettingsButton ConsentInit
+MobileNav / HeaderSearch / SearchBox / Combobox                12.5 raw   6.1 gz SearchBox Combobox MobileNav HeaderSearch
+Convex client                                                  81.5 raw  23.1 gz ConvexProvider byteLength ConvexAuthNextjsClientProvider
+Auth provider                                                   6.4 raw   2.7 gz AuthProvider
+Analytics                                                       9.4 raw   4.2 gz AnalyticsManager captureAttribution analyticsItem
+GSAP                                                          121.4 raw  47.7 gz default
+unique modules 215 sum raw 616.6

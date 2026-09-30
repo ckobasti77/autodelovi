@@ -1,0 +1,24 @@
+{
+  "limit": "uploadUrl token bucket 20/h, key = SHA-256(salt|ip|UA) (convex/lib/functions.ts:31)",
+  "A_fixedUa_21_calls": {
+    "ok": 20,
+    "limited": 1,
+    "seq": "ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,RATE_LIMITED"
+  },
+  "B_newUaEachCall_10_calls": {
+    "ok": 10,
+    "limited": 0,
+    "seq": "ok,ok,ok,ok,ok,ok,ok,ok,ok,ok"
+  },
+  "C_control_fixedUaAgain": {
+    "ok": 0,
+    "limited": 2,
+    "seq": "RATE_LIMITED,RATE_LIMITED"
+  },
+  "D_fixedUaPlusTrailingSpace": {
+    "ok": 0,
+    "limited": 3,
+    "seq": "RATE_LIMITED,RATE_LIMITED,RATE_LIMITED"
+  },
+  "at": "2026-09-30T14:30:00.522Z"
+}

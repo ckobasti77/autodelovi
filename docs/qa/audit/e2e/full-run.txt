@@ -1,0 +1,124 @@
+
+Running 118 tests using 1 worker
+
+[1/118] [desktop-1440] › tests\e2e\admin.spec.ts:75:5 › dashboard, palette, bell and axe
+[2/118] [desktop-1440] › tests\e2e\admin.spec.ts:100:5 › create a product with an image, then edit it
+[3/118] [desktop-1440] › tests\e2e\admin.spec.ts:134:5 › order: nova → potvrđena → poslata with a tracking number
+[4/118] [desktop-1440] › tests\e2e\admin.spec.ts:163:5 › inquiry: answer with a quote
+[5/118] [desktop-1440] › tests\e2e\admin.spec.ts:192:5 › approve a mechanic with a tier
+[6/118] [desktop-1440] › tests\e2e\admin.spec.ts:223:5 › save settings (company) and restore
+[7/118] [desktop-1440] › tests\e2e\auth.spec.ts:32:7 › auth round trip › owner signs in, the server render sees the session, then signs out
+[8/118] [desktop-1440] › tests\e2e\auth.spec.ts:69:7 › auth round trip › a wrong password shows a Serbian error and keeps the visitor signed out
+[9/118] [desktop-1440] › tests\e2e\auth.spec.ts:80:5 › anonymous visitors are sent from account areas to sign-in with `next`
+[10/118] [desktop-1440] › tests\e2e\foundation.spec.ts:44:7 › styleguide › loads without console errors and reveals all copy
+[11/118] [desktop-1440] › tests\e2e\foundation.spec.ts:60:7 › styleguide › every tab stop has a visible focus indicator
+[12/118] [desktop-1440] › tests\e2e\foundation.spec.ts:101:7 › styleguide › reduced motion shows all copy immediately
+[13/118] [desktop-1440] › tests\e2e\foundation.spec.ts:113:7 › styleguide › without JavaScript nothing is hidden
+[14/118] [desktop-1440] › tests\e2e\foundation.spec.ts:126:7 › home placeholder › renders the statement and search without errors
+[15/118] [desktop-1440] › tests\e2e\foundation.spec.ts:136:7 › home placeholder › the old concept route redirects to the styleguide
+[16/118] [desktop-1440] › tests\e2e\foundation.spec.ts:141:7 › home placeholder › unknown routes render the branded 404
+[17/118] [desktop-1440] › tests\e2e\foundation.spec.ts:152:9 › accessibility (axe, WCAG 2.2 AA) › no violations on /
+[18/118] [desktop-1440] › tests\e2e\foundation.spec.ts:152:9 › accessibility (axe, WCAG 2.2 AA) › no violations on /styleguide
+[19/118] [desktop-1440] › tests\e2e\foundation.spec.ts:152:9 › accessibility (axe, WCAG 2.2 AA) › no violations on /ovo-ne-postoji
+[20/118] [desktop-1440] › tests\e2e\hero-3d.spec.ts:39:7 › 3D hero › poster first, live 3D after intent, crossfade, no console errors
+[21/118] [desktop-1440] › tests\e2e\hero-3d.spec.ts:65:7 › 3D hero › the parts list selects a category and opens the panel with products
+[22/118] [desktop-1440] › tests\e2e\hero-3d.spec.ts:91:7 › 3D hero › the test hook explodes the car and selects a part
+[23/118] [desktop-1440] › tests\e2e\hero-3d.spec.ts:116:7 › 3D hero › a deep link opens the right panel
+[24/118] [desktop-1440] › tests\e2e\hero-3d.spec.ts:130:7 › 3D hero › an unknown deep link is ignored
+[25/118] [desktop-1440] › tests\e2e\hero-3d.spec.ts:137:7 › 3D hero › the panel is accessible (axe) and every hero control shows focus
+[26/118] [desktop-1440] › tests\e2e\hero-3d.spec.ts:182:7 › 3D hero — fallbacks › reduced motion: no scroll track, „Rasklopi“ cuts to the exploded state
+[27/118] [desktop-1440] › tests\e2e\hero-3d.spec.ts:211:7 › 3D hero — fallbacks › low tier: posters only, the exploded poster follows the explode
+[28/118] [desktop-1440] › tests\e2e\hero-3d.spec.ts:229:7 › 3D hero — fallbacks › WebGL context loss hands the stage back to the posters
+[29/118] [desktop-1440] › tests\e2e\import.spec.ts:68:5 › template download has the five sheets and Serbian headers
+[30/118] [desktop-1440] › tests\e2e\import.spec.ts:84:5 › 500 rows: mapping → seeded errors → dry run → commit → rollback
+[31/118] [desktop-1440] › tests\e2e\import.spec.ts:148:5 › Windows-1250 CSV keeps č ć ž š đ through preview, commit and rollback
+[32/118] [desktop-1440] › tests\e2e\mechanics.spec.ts:106:7 › mechanics portal › register → approve → own prices → quick order → deferred order
+[33/118] [desktop-1440] › tests\e2e\mechanics.spec.ts:217:7 › mechanics portal › staff approve a registration in /admin/majstori
+[34/118] [desktop-1440] › tests\e2e\mechanics.spec.ts:251:7 › mechanics portal › axe and text reveal on the landing and the registration form
+[35/118] [desktop-1440] › tests\e2e\notifications.spec.ts:94:5 › a storefront order logs the customer and staff e-mails and rings the bell
+[36/118] [desktop-1440] › tests\e2e\notifications.spec.ts:170:5 › a status change logs the customer e-mail
+[37/118] [desktop-1440] › tests\e2e\notifications.spec.ts:201:5 › template gallery: previews, a test send and the four key e-mails
+[38/118] [desktop-1440] › tests\e2e\notifications.spec.ts:248:5 › the unsubscribe page rejects an unknown link
+[39/118] [desktop-1440] › tests\e2e\security.spec.ts:60:7 › headers › documents carry the static headers and a fresh nonce CSP; every script has the nonce
+[40/118] [desktop-1440] › tests\e2e\security.spec.ts:94:7 › headers › token pages send no Referer; static files still get the static headers
+[41/118] [desktop-1440] › tests\e2e\security.spec.ts:107:7 › no CSP violations › storefront: home with the live 3D hero, category, product, cart, inquiry, sign-in
+[42/118] [desktop-1440] › tests\e2e\security.spec.ts:127:7 › no CSP violations › analytics after consent load under the policy; token pages stay out of analytics
+[43/118] [desktop-1440] › tests\e2e\security.spec.ts:207:7 › admin under the policy › post-login redirect ignores /\host; admin screens, import worker and e-mail previews load
+[44/118] [desktop-1440] › tests\e2e\seo.spec.ts:65:7 › structured data and metadata › JSON-LD parses on home, category, landing, product and vehicle pages
+[45/118] [desktop-1440] › tests\e2e\seo.spec.ts:102:7 › structured data and metadata › titles ≤ 60, descriptions ≤ 155, canonicals and robots per route
+[46/118] [desktop-1440] › tests\e2e\seo.spec.ts:130:7 › structured data and metadata › OG images render as 1200 × 630 PNG
+[47/118] [desktop-1440] › tests\e2e\seo.spec.ts:145:7 › robots, sitemaps and feeds › robots.txt and every sitemap are valid and list only indexable URLs
+[48/118] [desktop-1440] › tests\e2e\seo.spec.ts:184:7 › robots, sitemaps and feeds › Merchant XML and Meta CSV carry the required fields
+[49/118] [desktop-1440] › tests\e2e\seo.spec.ts:292:7 › Consent Mode v2 and tags › no Google or Meta request before consent; defaults are denied
+[50/118] [desktop-1440] › tests\e2e\seo.spec.ts:320:7 › Consent Mode v2 and tags › „Odbij sve“ stores the choice and still loads nothing
+[51/118] [desktop-1440] › tests\e2e\seo.spec.ts:333:7 › Consent Mode v2 and tags › granular: analytics only loads gtag.js without Google Ads or the Pixel
+[52/118] [desktop-1440] › tests\e2e\seo.spec.ts:349:7 › Consent Mode v2 and tags › „Prihvati sve“: consent update, GA4 + Ads config, Pixel, ecommerce events
+[53/118] [desktop-1440] › tests\e2e\seo.spec.ts:417:7 › ads landing › /ponuda/[slug]: message-match H1, proof points, parts, noindex
+[54/118] [desktop-1440] › tests\e2e\storefront.spec.ts:103:7 › storefront › OEM search → product → cart → guest order with pouzeće lands in Convex
+[55/118] [desktop-1440] › tests\e2e\storefront.spec.ts:182:7 › storefront › category filtering by the selected vehicle
+[56/118] [desktop-1440] › tests\e2e\storefront.spec.ts:221:7 › storefront › VIN inquiry with a photo
+[57/118] [desktop-1440] › tests\e2e\storefront.spec.ts:251:7 › storefront › back-in-stock subscription on an unavailable product
+[58/118] [desktop-1440] › tests\e2e\storefront.spec.ts:269:7 › storefront — accessibility and reveal › axe: no serious or critical violations on six templates
+[59/118] [desktop-1440] › tests\e2e\storefront.spec.ts:294:7 › storefront — accessibility and reveal › text reveal leaves no copy hidden on home, category and product
+[60/118] [mobile-390] › tests\e2e\admin.spec.ts:75:5 › dashboard, palette, bell and axe
+[61/118] [mobile-390] › tests\e2e\admin.spec.ts:100:5 › create a product with an image, then edit it
+[62/118] [mobile-390] › tests\e2e\admin.spec.ts:134:5 › order: nova → potvrđena → poslata with a tracking number
+[63/118] [mobile-390] › tests\e2e\admin.spec.ts:163:5 › inquiry: answer with a quote
+[64/118] [mobile-390] › tests\e2e\admin.spec.ts:192:5 › approve a mechanic with a tier
+[65/118] [mobile-390] › tests\e2e\admin.spec.ts:223:5 › save settings (company) and restore
+[66/118] [mobile-390] › tests\e2e\auth.spec.ts:32:7 › auth round trip › owner signs in, the server render sees the session, then signs out
+[67/118] [mobile-390] › tests\e2e\auth.spec.ts:69:7 › auth round trip › a wrong password shows a Serbian error and keeps the visitor signed out
+[68/118] [mobile-390] › tests\e2e\auth.spec.ts:80:5 › anonymous visitors are sent from account areas to sign-in with `next`
+[69/118] [mobile-390] › tests\e2e\foundation.spec.ts:44:7 › styleguide › loads without console errors and reveals all copy
+[70/118] [mobile-390] › tests\e2e\foundation.spec.ts:60:7 › styleguide › every tab stop has a visible focus indicator
+[71/118] [mobile-390] › tests\e2e\foundation.spec.ts:101:7 › styleguide › reduced motion shows all copy immediately
+[72/118] [mobile-390] › tests\e2e\foundation.spec.ts:113:7 › styleguide › without JavaScript nothing is hidden
+[73/118] [mobile-390] › tests\e2e\foundation.spec.ts:126:7 › home placeholder › renders the statement and search without errors
+[74/118] [mobile-390] › tests\e2e\foundation.spec.ts:136:7 › home placeholder › the old concept route redirects to the styleguide
+[75/118] [mobile-390] › tests\e2e\foundation.spec.ts:141:7 › home placeholder › unknown routes render the branded 404
+[76/118] [mobile-390] › tests\e2e\foundation.spec.ts:152:9 › accessibility (axe, WCAG 2.2 AA) › no violations on /
+[77/118] [mobile-390] › tests\e2e\foundation.spec.ts:152:9 › accessibility (axe, WCAG 2.2 AA) › no violations on /styleguide
+[78/118] [mobile-390] › tests\e2e\foundation.spec.ts:152:9 › accessibility (axe, WCAG 2.2 AA) › no violations on /ovo-ne-postoji
+[79/118] [mobile-390] › tests\e2e\hero-3d.spec.ts:39:7 › 3D hero › poster first, live 3D after intent, crossfade, no console errors
+[80/118] [mobile-390] › tests\e2e\hero-3d.spec.ts:65:7 › 3D hero › the parts list selects a category and opens the panel with products
+[81/118] [mobile-390] › tests\e2e\hero-3d.spec.ts:91:7 › 3D hero › the test hook explodes the car and selects a part
+[82/118] [mobile-390] › tests\e2e\hero-3d.spec.ts:116:7 › 3D hero › a deep link opens the right panel
+[83/118] [mobile-390] › tests\e2e\hero-3d.spec.ts:130:7 › 3D hero › an unknown deep link is ignored
+[84/118] [mobile-390] › tests\e2e\hero-3d.spec.ts:137:7 › 3D hero › the panel is accessible (axe) and every hero control shows focus
+[85/118] [mobile-390] › tests\e2e\hero-3d.spec.ts:182:7 › 3D hero — fallbacks › reduced motion: no scroll track, „Rasklopi“ cuts to the exploded state
+[86/118] [mobile-390] › tests\e2e\hero-3d.spec.ts:211:7 › 3D hero — fallbacks › low tier: posters only, the exploded poster follows the explode
+[87/118] [mobile-390] › tests\e2e\hero-3d.spec.ts:229:7 › 3D hero — fallbacks › WebGL context loss hands the stage back to the posters
+[88/118] [mobile-390] › tests\e2e\import.spec.ts:68:5 › template download has the five sheets and Serbian headers
+[89/118] [mobile-390] › tests\e2e\import.spec.ts:84:5 › 500 rows: mapping → seeded errors → dry run → commit → rollback
+[90/118] [mobile-390] › tests\e2e\import.spec.ts:148:5 › Windows-1250 CSV keeps č ć ž š đ through preview, commit and rollback
+[91/118] [mobile-390] › tests\e2e\mechanics.spec.ts:106:7 › mechanics portal › register → approve → own prices → quick order → deferred order
+[92/118] [mobile-390] › tests\e2e\mechanics.spec.ts:217:7 › mechanics portal › staff approve a registration in /admin/majstori
+[93/118] [mobile-390] › tests\e2e\mechanics.spec.ts:251:7 › mechanics portal › axe and text reveal on the landing and the registration form
+[94/118] [mobile-390] › tests\e2e\notifications.spec.ts:94:5 › a storefront order logs the customer and staff e-mails and rings the bell
+[95/118] [mobile-390] › tests\e2e\notifications.spec.ts:170:5 › a status change logs the customer e-mail
+[96/118] [mobile-390] › tests\e2e\notifications.spec.ts:201:5 › template gallery: previews, a test send and the four key e-mails
+[97/118] [mobile-390] › tests\e2e\notifications.spec.ts:248:5 › the unsubscribe page rejects an unknown link
+[98/118] [mobile-390] › tests\e2e\security.spec.ts:60:7 › headers › documents carry the static headers and a fresh nonce CSP; every script has the nonce
+[99/118] [mobile-390] › tests\e2e\security.spec.ts:94:7 › headers › token pages send no Referer; static files still get the static headers
+[100/118] [mobile-390] › tests\e2e\security.spec.ts:107:7 › no CSP violations › storefront: home with the live 3D hero, category, product, cart, inquiry, sign-in
+[101/118] [mobile-390] › tests\e2e\security.spec.ts:127:7 › no CSP violations › analytics after consent load under the policy; token pages stay out of analytics
+[102/118] [mobile-390] › tests\e2e\security.spec.ts:207:7 › admin under the policy › post-login redirect ignores /\host; admin screens, import worker and e-mail previews load
+[103/118] [mobile-390] › tests\e2e\seo.spec.ts:65:7 › structured data and metadata › JSON-LD parses on home, category, landing, product and vehicle pages
+[104/118] [mobile-390] › tests\e2e\seo.spec.ts:102:7 › structured data and metadata › titles ≤ 60, descriptions ≤ 155, canonicals and robots per route
+[105/118] [mobile-390] › tests\e2e\seo.spec.ts:130:7 › structured data and metadata › OG images render as 1200 × 630 PNG
+[106/118] [mobile-390] › tests\e2e\seo.spec.ts:145:7 › robots, sitemaps and feeds › robots.txt and every sitemap are valid and list only indexable URLs
+[107/118] [mobile-390] › tests\e2e\seo.spec.ts:184:7 › robots, sitemaps and feeds › Merchant XML and Meta CSV carry the required fields
+[108/118] [mobile-390] › tests\e2e\seo.spec.ts:292:7 › Consent Mode v2 and tags › no Google or Meta request before consent; defaults are denied
+[109/118] [mobile-390] › tests\e2e\seo.spec.ts:320:7 › Consent Mode v2 and tags › „Odbij sve“ stores the choice and still loads nothing
+[110/118] [mobile-390] › tests\e2e\seo.spec.ts:333:7 › Consent Mode v2 and tags › granular: analytics only loads gtag.js without Google Ads or the Pixel
+[111/118] [mobile-390] › tests\e2e\seo.spec.ts:349:7 › Consent Mode v2 and tags › „Prihvati sve“: consent update, GA4 + Ads config, Pixel, ecommerce events
+[112/118] [mobile-390] › tests\e2e\seo.spec.ts:417:7 › ads landing › /ponuda/[slug]: message-match H1, proof points, parts, noindex
+[113/118] [mobile-390] › tests\e2e\storefront.spec.ts:103:7 › storefront › OEM search → product → cart → guest order with pouzeće lands in Convex
+[114/118] [mobile-390] › tests\e2e\storefront.spec.ts:182:7 › storefront › category filtering by the selected vehicle
+[115/118] [mobile-390] › tests\e2e\storefront.spec.ts:221:7 › storefront › VIN inquiry with a photo
+[116/118] [mobile-390] › tests\e2e\storefront.spec.ts:251:7 › storefront › back-in-stock subscription on an unavailable product
+[117/118] [mobile-390] › tests\e2e\storefront.spec.ts:269:7 › storefront — accessibility and reveal › axe: no serious or critical violations on six templates
+[118/118] [mobile-390] › tests\e2e\storefront.spec.ts:294:7 › storefront — accessibility and reveal › text reveal leaves no copy hidden on home, category and product
+  27 skipped
+  91 passed (11.6m)
+EXIT 0

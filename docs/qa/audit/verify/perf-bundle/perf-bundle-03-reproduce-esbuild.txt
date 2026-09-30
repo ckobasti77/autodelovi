@@ -1,0 +1,12 @@
+core_useGSAP                   raw   70.1 KB  gz  27.6 KB
+core_useGSAP_CustomEase        raw   77.1 KB  gz  30.7 KB
+core_useGSAP_ScrollTrigger     raw  113.6 KB  gz  44.8 KB
+core_useGSAP_ScrollToPlugin    raw   73.9 KB  gz  28.9 KB
+as_shipped_all_three           raw  124.3 KB  gz  49.3 KB
+
+plugins total (as shipped - core): 21.8 KB gz / 54.2 KB raw
+  ScrollTrigger    +17.2 KB gz
+  CustomEase       +3.1 KB gz
+  ScrollToPlugin   +1.4 KB gz
+
+served 1tr6a7zmh41cy.js raw 122.8 KB gz 48.4 KB; contains: ScrollTrigger=true scrollTo=true CustomEase=true refreshInit=true ignoreMobileResize=true

@@ -1,0 +1,36 @@
+{
+  "390": {
+    "faqText": "Mogu li da vratim deo? Kao potrošač možete odustati od kupovine u roku od 14 dana od prijema, ako deo nije ugrađivan i vraćate ga u originalnom pakovanju. Detalji su na stranici Reklamacije i povrat.",
+    "faqLinks": [],
+    "ldAnswer": "Kao potrošač možete odustati od kupovine u roku od 14 dana od prijema, ako deo nije ugrađivan i vraćate ga u originalnom pakovanju. Detalji su na stranici Reklamacije i povrat.",
+    "legal": "Odustanak od ugovora (14 dana)\nKod kupovine na daljinu imate pravo da odustanete od ugovora u roku od 14 dana od dana kada ste vi ili lice koje ste odredili preuzeli robu, bez navođenja razloga.\nPošaljite nam izjavu o odustanku e-poštom (adresa sa stranice Kontakt) ili pismom na adresu prodavca. Dovoljno je da navedete broj porudžbine, artikal i da odustajete od ugovora. Robu vratite najkasnije 14 dana od slanja izjave, neoštećenu i u originalnom pakovanju. Trošak vraćanja robe snosite vi. Novac za robu (i za osnovnu dostavu, ako ste je platili) vraćamo najkasnije u roku od 14 dana od prijema izjave, istim načinom plaćanja ili uplatom na vaš račun. Povraćaj možemo zadržati dok ne primimo robu ili dokaz da je poslata.\nPravo na odustanak nemate za robu izrađenu po vašoj specifikaciji ili jasno prilagođenu vama (na primer deo naručen specijalno za vaše vozilo po broju šasije, ako je to naglašeno u ponudi), kao ni za robu u zapečaćenom pakovanju koja iz zdravstvenih ili higijenskih razloga nije pogodna za vraćanje posle otvaranja. Za ugrađen deo koji je korišćen odgovarate za umanjenje vrednosti nastalo rukovanjem koje nije neophodno da bi se utvrdila priroda i svojstva robe.",
+    "shots": [
+      "docs/qa/audit/verify/copy/copy-03-reproduce-home-faq-390.webp",
+      "docs/qa/audit/verify/copy/copy-03-reproduce-home-faq-viewport-390.webp",
+      "docs/qa/audit/verify/copy/copy-03-reproduce-legal-390.webp"
+    ],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "1440": {
+    "faqText": "Mogu li da vratim deo? Kao potrošač možete odustati od kupovine u roku od 14 dana od prijema, ako deo nije ugrađivan i vraćate ga u originalnom pakovanju. Detalji su na stranici Reklamacije i povrat.",
+    "faqLinks": [],
+    "ldAnswer": "Kao potrošač možete odustati od kupovine u roku od 14 dana od prijema, ako deo nije ugrađivan i vraćate ga u originalnom pakovanju. Detalji su na stranici Reklamacije i povrat.",
+    "legal": "Odustanak od ugovora (14 dana)\nKod kupovine na daljinu imate pravo da odustanete od ugovora u roku od 14 dana od dana kada ste vi ili lice koje ste odredili preuzeli robu, bez navođenja razloga.\nPošaljite nam izjavu o odustanku e-poštom (adresa sa stranice Kontakt) ili pismom na adresu prodavca. Dovoljno je da navedete broj porudžbine, artikal i da odustajete od ugovora. Robu vratite najkasnije 14 dana od slanja izjave, neoštećenu i u originalnom pakovanju. Trošak vraćanja robe snosite vi. Novac za robu (i za osnovnu dostavu, ako ste je platili) vraćamo najkasnije u roku od 14 dana od prijema izjave, istim načinom plaćanja ili uplatom na vaš račun. Povraćaj možemo zadržati dok ne primimo robu ili dokaz da je poslata.\nPravo na odustanak nemate za robu izrađenu po vašoj specifikaciji ili jasno prilagođenu vama (na primer deo naručen specijalno za vaše vozilo po broju šasije, ako je to naglašeno u ponudi), kao ni za robu u zapečaćenom pakovanju koja iz zdravstvenih ili higijenskih razloga nije pogodna za vraćanje posle otvaranja. Za ugrađen deo koji je korišćen odgovarate za umanjenje vrednosti nastalo rukovanjem koje nije neophodno da bi se utvrdila priroda i svojstva robe.",
+    "shots": [
+      "docs/qa/audit/verify/copy/copy-03-reproduce-home-faq-1440.webp",
+      "docs/qa/audit/verify/copy/copy-03-reproduce-home-faq-viewport-1440.webp",
+      "docs/qa/audit/verify/copy/copy-03-reproduce-legal-1440.webp"
+    ],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+}

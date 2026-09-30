@@ -1,0 +1,151 @@
+{
+ "base": "http://localhost:3200",
+ "cpu": 4,
+ "network": "slow 4G applied",
+ "rows": [
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "round": 1,
+   "mode": "A-shipped",
+   "aborted": 0,
+   "docEnd": 765,
+   "cssEnd": [
+    1787
+   ],
+   "fcp": 2080,
+   "lcp": 2080
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "round": 1,
+   "mode": "B-no-preloads",
+   "aborted": 12,
+   "docEnd": 739,
+   "cssEnd": [
+    1342
+   ],
+   "fcp": 1768,
+   "lcp": 1768
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "round": 2,
+   "mode": "A-shipped",
+   "aborted": 0,
+   "docEnd": 747,
+   "cssEnd": [
+    1775
+   ],
+   "fcp": 2096,
+   "lcp": 2096
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "round": 2,
+   "mode": "B-no-preloads",
+   "aborted": 12,
+   "docEnd": 739,
+   "cssEnd": [
+    1345
+   ],
+   "fcp": 1780,
+   "lcp": 1780
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "round": 3,
+   "mode": "A-shipped",
+   "aborted": 0,
+   "docEnd": 750,
+   "cssEnd": [
+    1763
+   ],
+   "fcp": 2112,
+   "lcp": 2112
+  },
+  {
+   "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "round": 3,
+   "mode": "B-no-preloads",
+   "aborted": 12,
+   "docEnd": 743,
+   "cssEnd": [
+    1339
+   ],
+   "fcp": 1712,
+   "lcp": 1712
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "round": 1,
+   "mode": "A-shipped",
+   "aborted": 0,
+   "docEnd": 725,
+   "cssEnd": [
+    1739
+   ],
+   "fcp": 2016,
+   "lcp": 2016
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "round": 1,
+   "mode": "B-no-preloads",
+   "aborted": 13,
+   "docEnd": 737,
+   "cssEnd": [
+    1364
+   ],
+   "fcp": 1656,
+   "lcp": 1656
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "round": 2,
+   "mode": "A-shipped",
+   "aborted": 0,
+   "docEnd": 726,
+   "cssEnd": [
+    1764
+   ],
+   "fcp": 2008,
+   "lcp": 2008
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "round": 2,
+   "mode": "B-no-preloads",
+   "aborted": 13,
+   "docEnd": 722,
+   "cssEnd": [
+    1346
+   ],
+   "fcp": 1624,
+   "lcp": 1624
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "round": 3,
+   "mode": "A-shipped",
+   "aborted": 0,
+   "docEnd": 722,
+   "cssEnd": [
+    1734
+   ],
+   "fcp": 2012,
+   "lcp": 2012
+  },
+  {
+   "path": "/delovi/kocioni-diskovi",
+   "round": 3,
+   "mode": "B-no-preloads",
+   "aborted": 13,
+   "docEnd": 726,
+   "cssEnd": [
+    1336
+   ],
+   "fcp": 1648,
+   "lcp": 1648
+  }
+ ]
+}

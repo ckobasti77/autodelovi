@@ -1,0 +1,45 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.2 [39m[90mC:/Users/admin/Desktop/Web Dev Projects/autodelovi[39m
+
+ [31m❯[39m [30m[42m convex [49m[39m convex/orders.test.ts [2m([22m[2m21 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 14707[2mms[22m[39m
+   [31m❯[39m order submit [2m(12)[22m
+[31m     [31m×[31m approved mechanic orders at his price with a tier snapshot[39m[33m 6387[2mms[22m[39m
+ [31m❯[39m [30m[42m convex [49m[39m convex/notify.test.ts [2m([22m[2m20 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 11903[2mms[22m[39m
+   [31m❯[39m delivery modes [2m(2)[22m
+[31m     [31m×[31m test mode rewrites recipients and hands off to Resend; e2e orders stay logged[39m[33m 7223[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m [30m[42m convex [49m[39m convex/notify.test.ts[2m > [22mdelivery modes[2m > [22mtest mode rewrites recipients and hands off to Resend; e2e orders stay logged
+[31m[1mError[22m: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".[39m
+[36m [2m❯[22m convex/notify.test.ts:[2m328:3[22m[39m
+    [90m326|[39m   });
+    [90m327|[39m
+    [90m328|[39m   test("test mode rewrites recipients and hands off to Resend; e2e ord…
+    [90m   |[39m   [31m^[39m
+    [90m329|[39m     vi.stubEnv("EMAIL_MODE", "test");
+    [90m330|[39m     vi.stubEnv("RESEND_API_KEY", "re_test_key");
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m [30m[42m convex [49m[39m convex/orders.test.ts[2m > [22morder submit[2m > [22mapproved mechanic orders at his price with a tier snapshot
+[31m[1mError[22m: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".[39m
+[36m [2m❯[22m convex/orders.test.ts:[2m80:3[22m[39m
+    [90m 78|[39m   });
+    [90m 79|[39m
+    [90m 80|[39m   test("approved mechanic orders at his price with a tier snapshot", a…
+    [90m   |[39m   [31m^[39m
+    [90m 81|[39m     const t = makeT();
+    [90m 82|[39m     const w = await setupWorld(t);
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m58 passed[39m[22m[2m | [22m[33m1 skipped[39m[90m (61)[39m
+[2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m1090 passed[39m[22m[2m | [22m[33m4 skipped[39m[90m (1096)[39m
+[2m   Start at [22m 15:59:32
+[2m   Duration [22m 165.94s[2m (import 63%, tests 34%, environment 2%, transform 1%)[22m
+
+vitest exit 1

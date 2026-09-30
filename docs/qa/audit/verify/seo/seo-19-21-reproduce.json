@@ -1,0 +1,148 @@
+{
+ "base": "http://localhost:3100",
+ "at": "2026-09-30T14:59:18.951Z",
+ "seo19": [
+  {
+   "path": "/upit",
+   "width": 390,
+   "breadcrumbNav": null,
+   "jsonLdTypes": [],
+   "h1": "NE NALAZITE DEO?",
+   "robots": "index, follow",
+   "canonical": "http://localhost:3000/upit"
+  },
+  {
+   "path": "/za-majstore",
+   "width": 390,
+   "breadcrumbNav": "Početna",
+   "jsonLdTypes": [
+    "BreadcrumbList,FAQPage"
+   ],
+   "h1": "ZA MAJSTORE",
+   "robots": "index, follow",
+   "canonical": "http://localhost:3000/za-majstore"
+  },
+  {
+   "path": "/kontakt",
+   "width": 390,
+   "breadcrumbNav": "Početna",
+   "jsonLdTypes": [
+    "BreadcrumbList",
+    "Organization"
+   ],
+   "h1": "KONTAKT",
+   "robots": "index, follow",
+   "canonical": "http://localhost:3000/kontakt"
+  },
+  {
+   "path": "/upit",
+   "width": 1440,
+   "breadcrumbNav": null,
+   "jsonLdTypes": [],
+   "h1": "NE NALAZITE DEO?",
+   "robots": "index, follow",
+   "canonical": "http://localhost:3000/upit"
+  },
+  {
+   "path": "/za-majstore",
+   "width": 1440,
+   "breadcrumbNav": "Početna / Za majstore",
+   "jsonLdTypes": [
+    "BreadcrumbList,FAQPage"
+   ],
+   "h1": "ZA MAJSTORE",
+   "robots": "index, follow",
+   "canonical": "http://localhost:3000/za-majstore"
+  },
+  {
+   "path": "/kontakt",
+   "width": 1440,
+   "breadcrumbNav": "Početna / Kontakt",
+   "jsonLdTypes": [
+    "BreadcrumbList",
+    "Organization"
+   ],
+   "h1": "KONTAKT",
+   "robots": "index, follow",
+   "canonical": "http://localhost:3000/kontakt"
+  }
+ ],
+ "seo21": [
+  {
+   "path": "/Delovi/Kocioni-Diskovi",
+   "width": 390,
+   "status": 404,
+   "url": "/Delovi/Kocioni-Diskovi",
+   "title": "Stranica nije pronađena · SKLOP",
+   "h1": "Stranica nije pronađena",
+   "robots": "noindex",
+   "links": [
+    "/delovi/kocione-plocice",
+    "/delovi/kocioni-diskovi",
+    "/delovi/amortizeri-opruge",
+    "/delovi/zupcasti-kais-vodena-pumpa",
+    "/delovi/filteri",
+    "/delovi/turbina",
+    "/delovi",
+    "/upit"
+   ]
+  },
+  {
+   "path": "/deo/KOCIONI-DISK-PREDNJI-276-24-MM-DEMO-0004",
+   "width": 390,
+   "status": 404,
+   "url": "/deo/KOCIONI-DISK-PREDNJI-276-24-MM-DEMO-0004",
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": "Stranica nije pronađena",
+   "robots": "noindex",
+   "links": [
+    "/delovi/kocione-plocice",
+    "/delovi/kocioni-diskovi",
+    "/delovi/amortizeri-opruge",
+    "/delovi/zupcasti-kais-vodena-pumpa",
+    "/delovi/filteri",
+    "/delovi/turbina",
+    "/delovi",
+    "/upit"
+   ]
+  },
+  {
+   "path": "/Delovi/Kocioni-Diskovi",
+   "width": 1440,
+   "status": 404,
+   "url": "/Delovi/Kocioni-Diskovi",
+   "title": "Stranica nije pronađena · SKLOP",
+   "h1": "Stranica nije pronađena",
+   "robots": "noindex",
+   "links": [
+    "/delovi/kocione-plocice",
+    "/delovi/kocioni-diskovi",
+    "/delovi/amortizeri-opruge",
+    "/delovi/zupcasti-kais-vodena-pumpa",
+    "/delovi/filteri",
+    "/delovi/turbina",
+    "/delovi",
+    "/upit"
+   ]
+  },
+  {
+   "path": "/deo/KOCIONI-DISK-PREDNJI-276-24-MM-DEMO-0004",
+   "width": 1440,
+   "status": 404,
+   "url": "/deo/KOCIONI-DISK-PREDNJI-276-24-MM-DEMO-0004",
+   "title": "SKLOP — Rasklopi auto. Nađi deo.",
+   "h1": "Stranica nije pronađena",
+   "robots": "noindex",
+   "links": [
+    "/delovi/kocione-plocice",
+    "/delovi/kocioni-diskovi",
+    "/delovi/amortizeri-opruge",
+    "/delovi/zupcasti-kais-vodena-pumpa",
+    "/delovi/filteri",
+    "/delovi/turbina",
+    "/delovi",
+    "/upit"
+   ]
+  }
+ ]
+}

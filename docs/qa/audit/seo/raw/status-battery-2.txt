@@ -1,0 +1,28 @@
+/ponuda/kocione-plocice-golf | HTTP/1.1 200 OK | xr= | loc= | robots="noindex, follow" | canon="http://localhost:3000/ponuda/kocione-plocice-golf"
+/porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpz | HTTP/1.1 200 OK | xr= | loc= | robots="noindex, follow" | canon=
+/porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpz | HTTP/1.1 200 OK | xr= | loc= | robots="noindex, follow" | canon=
+/porudzbina/hvala/GVl2SHwvba1nbEDG8VWTGcg0IPXAbH | HTTP/1.1 200 OK | xr= | loc= | robots="noindex, follow" | canon=
+/upit/3UMmrdzw1RNGw5ToQh06cANjxl8c_-Ajvp7eBwA1ay | HTTP/1.1 200 OK | xr= | loc= | robots="noindex, follow" | canon=
+/upit/hvala/3UMmrdzw1RNGw5ToQh06cANjxl8c_-Ajvp7e | HTTP/1.1 200 OK | xr= | loc= | robots="noindex, follow" | canon=
+/porudzbina | HTTP/1.1 200 OK | xr= | loc= | robots="noindex, follow" | canon=
+/korpa | HTTP/1.1 200 OK | xr= | loc= | robots="noindex, follow" | canon=
+/prijava | HTTP/1.1 200 OK | xr= | loc= | robots="noindex, follow" | canon=
+/registracija | HTTP/1.1 200 OK | xr= | loc= | robots="noindex, follow" | canon=
+/nova-lozinka | HTTP/1.1 404 Not Found | xr= | loc= | robots="noindex" | canon=
+/za-majstore/hvala | HTTP/1.1 200 OK | xr= | loc= | robots="noindex, follow" | canon=
+/admin | HTTP/1.1 307 Temporary Redirect | xr= | loc=/prijava?next=%2Fadmin | robots= | canon=
+/admin/pozivnica/abc | HTTP/1.1 200 OK | xr= | loc= | robots="noindex, nofollow" | canon=
+/nalog | HTTP/1.1 307 Temporary Redirect | xr= | loc=/prijava?next=%2Fnalog | robots= | canon=
+/majstor | HTTP/1.1 307 Temporary Redirect | xr= | loc=/prijava?next=%2Fmajstor | robots= | canon=
+/majstor/cenovnik/preuzmi?kategorije=x | HTTP/1.1 307 Temporary Redirect | xr= | loc=/prijava?next=%2Fmajstor%2Fcenovnik%2Fpreuzmi%3Fkategorije%3Dx | robots= | canon=
+/api/zdravlje | HTTP/1.1 404 Not Found | xr= | loc= | robots="noindex" | canon=
+/manifest.webmanifest | HTTP/1.1 200 OK | xr= | loc= | robots= | canon=
+/favicon.ico | HTTP/1.1 200 OK | xr= | loc= | robots= | canon=
+/apple-icon.png | HTTP/1.1 200 OK | xr= | loc= | robots= | canon=
+/icon.png | HTTP/1.1 404 Not Found | xr= | loc= | robots="noindex" | canon=
+/opengraph-image | HTTP/1.1 200 OK | xr= | loc= | robots= | canon=
+/obavestenja/odjava/abc | HTTP/1.1 200 OK | xr= | loc= | robots="noindex, follow" | canon=
+/porudzbina/nevazeci-token | HTTP/1.1 404 Not Found | xr= | loc= | robots="noindex" | canon=
+/upit/nevazeci-token | HTTP/1.1 404 Not Found | xr= | loc= | robots="noindex" | canon=
+/llms.txt | HTTP/1.1 404 Not Found | xr= | loc= | robots="noindex" | canon=
+/.well-known/security.txt | HTTP/1.1 404 Not Found | xr= | loc= | robots="noindex" | canon=

@@ -1,0 +1,101 @@
+Lighthouse 13.5 verify runs against :3200 (30 valid, 0 runtime errors)
+
+/delovi/kocioni-diskovi | mobile | devtools  n=4 bench 3516/4114/3989/3635
+  perf 95 (95/95/84/95) · a11y 100 (100/100/100/100) · bp 100 (100/100/100/100) · LCP 2116 (2098/2139/2133/2068) · FCP 2116 (2098/2139/2133/2068) · TBT 170 (170/169/487/170) · CLS 0/0/0/0
+  JS 25 scripts 352.6 KB gz (1023.8 KB raw) · doc 28.2 KB gz / 237.4 KB raw · inline RSC 127.2 KB · failedA11y - · failedBp -
+  observed FCP/LCP/load 2098/2098/5348 · 2139/2139/5386 · 2133/2133/5305 · 2068/2068/5384 · scripts done before observed LCP 0/25 (0 KB) · 0/25 (0 KB) · 0/25 (0 KB) · 0/25 (0 KB)
+  CSS 640→1736 · 620→1725 · 634→1730 · 615→1721 · preloaded fonts end 1688,1672,1768,1704 · 1646,1662,1772,1710 · 1652,1668,1775,1714 · 1628,1643,1753,1690
+  unused JS 1tr6a7zmh41cy.js 27.3/48.5 KB, 0qy3sss5e6eww.js 23.9/71.6 KB
+  bootup 1tr6a7zmh41cy.js total 1632 script 611, 0qy3sss5e6eww.js total 1366 script 1198, kocioni-diskovi total 855 script 6, Unattributable total 351 script 21
+  shifts [{"score":0.0001776825066741669,"node":"div.px-page > header.mt-4 > div.flex > h1.type-display-l","causes":["Web font loaded http://localhost:3200/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2"]}]
+  long tasks (run 1) kocioni-diskovi@1759:207 kocioni-diskovi@1981:164 0qy3sss5e6eww.js@3304:139 0qy3sss5e6eww.js@5142:77 25dplrt_qw3he.js@5703:76 0qy3sss5e6eww.js@5563:76 kocioni-diskovi@2164:52
+
+/ | mobile | devtools  n=3 bench 4001/3634/4158
+  perf 89 (93/89/89) · a11y 97 (97/97/97) · bp 100 (100/100/100) · LCP 2134 (2326/2134/2128) · FCP 2134 (2326/2134/2128) · TBT 343 (171/353/343) · CLS 0.001/0.001/0.001
+  JS 25 scripts 351 KB gz (1022.2 KB raw) · doc 36.3 KB gz / 246.5 KB raw · inline RSC 136.5 KB · failedA11y target-size · failedBp -
+  observed FCP/LCP/load 2326/2326/5566 · 2134/2134/5483 · 2128/2128/5406 · scripts done before observed LCP 0/25 (0 KB) · 0/25 (0 KB) · 0/25 (0 KB)
+  CSS 637→1782 · 623→1771 · 610→1711 · preloaded fonts end 1690,1705,1844,1751 · 1676,1692,1818,1739 · 1649,1634,1739,1681
+  unused JS 1tr6a7zmh41cy.js 26.1/48.5 KB, 0qy3sss5e6eww.js 24.7/71.6 KB
+  bootup 0qy3sss5e6eww.js total 1446 script 1251, 1tr6a7zmh41cy.js total 1445 script 470,  total 793 script 8, Unattributable total 336 script 16
+  shifts [{"score":0.0005402093539010534,"node":"div.pointer-events-none > div.pointer-events-none > div.flex > p.type-code-s","causes":["Web font loaded http://localhost:3200/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2"]},{"score":0.00005704875577308681,"node":"div.pointer-events-none > div.flex > p.type-display-m > span.rw","causes":["Web font loaded http://localhost:3200/_next/static/media
+  long tasks (run 1) doc@1814:379 doc@2208:154 0qy3sss5e6eww.js@3384:151 0qy3sss5e6eww.js@5722:86 0qy3sss5e6eww.js@5226:84
+
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 | mobile | devtools  n=3 bench 4073/4076/3496
+  perf 94 (93/94/95) · a11y 100 (100/100/100) · bp 100 (100/100/100) · LCP 2235 (2205/2295/2235) · FCP 2235 (2205/2295/2235) · TBT 143 (217/143/135) · CLS 0/0/0
+  JS 25 scripts 355.3 KB gz (1032.9 KB raw) · doc 32.2 KB gz / 220.5 KB raw · inline RSC 134.7 KB · failedA11y - · failedBp -
+  observed FCP/LCP/load 2205/2205/5203 · 2295/2295/5301 · 2235/2235/5252 · scripts done before observed LCP 0/25 (0 KB) · 0/25 (0 KB) · 0/25 (0 KB)
+  CSS 618→1740 · 621→1738 · 619→1733 · preloaded fonts end 1647,1663,1771,1710 · 1645,1660,1765,1706 · 1655,1655,1764,1701
+  unused JS 1tr6a7zmh41cy.js 27.2/48.5 KB, 0qy3sss5e6eww.js 24.7/71.6 KB
+  bootup 0qy3sss5e6eww.js total 1290 script 1117, 1tr6a7zmh41cy.js total 1260 script 490, kocioni-disk-prednji-276-24-mm-demo-0004 total 782 script 5, Unattributable total 310 script 16
+  shifts [{"score":0.000269605091598586,"node":"dl.flex > div.flex > dd.flex > button.inline-flex","causes":["Web font loaded http://localhost:3200/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2"]}]
+  long tasks (run 1) kocioni-disk-predn@1760:378 kocioni-disk-predn@2158:207 0qy3sss5e6eww.js@3283:115 0qy3sss5e6eww.js@5044:81 0qy3sss5e6eww.js@5399:61
+
+/vozila/volkswagen/golf/golf-7 | mobile | devtools  n=3 bench 4049/4139/4117
+  perf 93 (95/92/93) · a11y 100 (100/100/100) · bp 100 (100/100/100) · LCP 2090 (2090/2147/2004) · FCP 2090 (2090/2147/2004) · TBT 191 (86/191/206) · CLS 0.082/0.082/0.082
+  JS 25 scripts 346.4 KB gz (1003.3 KB raw) · doc 32 KB gz / 325.2 KB raw · inline RSC 167 KB · failedA11y - · failedBp -
+  observed FCP/LCP/load 2090/2090/5440 · 2147/2147/5447 · 2004/2004/5412 · scripts done before observed LCP 0/25 (0 KB) · 0/25 (0 KB) · 0/25 (0 KB)
+  CSS 625→1699 · 623→1700 · 618→1702 · preloaded fonts end 1607,1622,1730,1668 · 1638,1638,1746,1685 · 1623,1639,1749,1686
+  unused JS 1tr6a7zmh41cy.js 33/48.5 KB, 0qy3sss5e6eww.js 25.1/71.6 KB
+  bootup 1tr6a7zmh41cy.js total 1553 script 576, 0qy3sss5e6eww.js total 1434 script 1247, golf-7 total 757 script 18, Unattributable total 462 script 35
+  shifts [{"score":0.08140405148402233,"node":"div.flex > main#sadrzaj > div.px-page > section.mt-12","causes":["Web font loaded http://localhost:3200/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2"]},{"score":0.0005018068760005302,"node":"div.px-page > div.mt-4 > div.flex > h1.type-display-l","causes":["Web font loaded http://localhost:3200/_next/static/media/archivo_expanded_600-s.0-vwu0izeway
+  long tasks (run 1) golf-7@1721:262 golf-7@2000:109 0qy3sss5e6eww.js@3195:108 0qy3sss5e6eww.js@5267:66 golf-7@2123:56 0qy3sss5e6eww.js@5616:56
+
+/upit | mobile | devtools  n=3 bench 4126/3810/4109
+  perf 92 (91/92/94) · a11y 100 (100/100/100) · bp 96 (96/96/96) · LCP 2100 (2100/2107/2071) · FCP 2100 (2100/2107/2071) · TBT 262 (297/262/217) · CLS 0/0/0
+  JS 25 scripts 450.5 KB gz (1436.2 KB raw) · doc 27.6 KB gz / 147.2 KB raw · inline RSC 94.3 KB · failedA11y - · failedBp inspector-issues
+  observed FCP/LCP/load 2100/2100/6001 · 2107/2107/5997 · 2071/2071/5966 · scripts done before observed LCP 0/25 (0 KB) · 0/25 (0 KB) · 0/25 (0 KB)
+  CSS 632→1714 · 634→1713 · 626→1713 · preloaded fonts end 1652,1637,1746,1698 · 1634,1650,1744,1698 · 1628,1636,1739,1681
+  unused JS 1uyyf-z7kpx1w.js 80.5/94.9 KB, 1tr6a7zmh41cy.js 33.4/48.5 KB, 0qy3sss5e6eww.js 24.1/71.6 KB
+  bootup 0qy3sss5e6eww.js total 2197 script 1870, 1tr6a7zmh41cy.js total 1113 script 454, upit total 655 script 10, Unattributable total 302 script 13
+  shifts []
+  long tasks (run 1) upit@1736:274 0qy3sss5e6eww.js@6409:149 0qy3sss5e6eww.js@6163:144 0qy3sss5e6eww.js@3237:127 upit@2032:93 0qy3sss5e6eww.js@6005:77
+
+/delovi/kocioni-diskovi/volkswagen/golf | mobile | devtools  n=3 bench 4024/3948/3990
+  perf 93 (93/95/93) · a11y 100 (100/100/100) · bp 100 (100/100/100) · LCP 2109 (2139/2109/2033) · FCP 2109 (2139/2109/2033) · TBT 218 (218/167/256) · CLS 0/0/0
+  JS 25 scripts 352.6 KB gz (1023.8 KB raw) · doc 31.4 KB gz / 248.2 KB raw · inline RSC 138.5 KB · failedA11y - · failedBp -
+  observed FCP/LCP/load 2139/2139/5282 · 2109/2109/5418 · 2033/2033/5299 · scripts done before observed LCP 0/25 (0 KB) · 0/25 (0 KB) · 0/25 (0 KB)
+  CSS 630→1735 · 621→1727 · 631→1707 · preloaded fonts end 1646,1661,1766,1704 · 1635,1666,1773,1711 · 1645,1645,1754,1691
+  unused JS 1tr6a7zmh41cy.js 27.3/48.5 KB, 0qy3sss5e6eww.js 23.9/71.6 KB
+  bootup 1tr6a7zmh41cy.js total 1434 script 495, 0qy3sss5e6eww.js total 1356 script 1179, golf total 822 script 6, Unattributable total 294 script 17
+  shifts [{"score":0.0002236941916067319,"node":"div.px-page > header.mt-4 > div.flex > h1.type-display-l","causes":["Web font loaded http://localhost:3200/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2"]}]
+  long tasks (run 1) golf@1755:337 golf@2122:168 0qy3sss5e6eww.js@3206:131 0qy3sss5e6eww.js@5082:73 0qy3sss5e6eww.js@5562:63
+
+/ponuda/kocione-plocice-golf | mobile | devtools  n=3 bench 4047/4171/4105
+  perf 95 (94/95/96) · a11y 100 (100/100/100) · bp 100 (100/100/100) · LCP 2105 (2099/2141/2105) · FCP 2105 (2099/2141/2105) · TBT 148 (182/148/99) · CLS 0.001/0.001/0.001
+  JS 25 scripts 366 KB gz (1068.1 KB raw) · doc 23.2 KB gz / 166.3 KB raw · inline RSC 104.7 KB · failedA11y - · failedBp -
+  observed FCP/LCP/load 2099/2099/5322 · 2141/2141/5428 · 2105/2105/5308 · scripts done before observed LCP 0/25 (0 KB) · 0/25 (0 KB) · 0/25 (0 KB)
+  CSS 622→1713 · 627→1728 · 624→1720 · preloaded fonts end 1635,1635,1760,1682 · 1634,1650,1754,1696 · 1633,1648,1754,1688
+  unused JS 1tr6a7zmh41cy.js 27.3/48.5 KB, 0qy3sss5e6eww.js 25/71.6 KB
+  bootup 0qy3sss5e6eww.js total 1324 script 1161, 1tr6a7zmh41cy.js total 1251 script 503, kocione-plocice-golf total 757 script 6, Unattributable total 327 script 14
+  shifts [{"score":0.0006340367182132755,"node":"div.px-page > section.grid > div.flex > h1.type-display-l","causes":["Web font loaded http://localhost:3200/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2"]}]
+  long tasks (run 1) kocione-plocice-go@1733:340 kocione-plocice-go@2097:118 0qy3sss5e6eww.js@3198:108 0qy3sss5e6eww.js@5391:72 0qy3sss5e6eww.js@5531:71 0qy3sss5e6eww.js@4716:66
+
+/ | mobile | simulate  n=3 bench 3346/4026/4069
+  perf 85 (84/85/85) · a11y 100 (100/100/100) · bp 100 (100/100/100) · LCP 4383 (4521/4383/4377) · FCP 1361 (1360/1364/1361) · TBT 44 (77/41/44) · CLS 0.001/0.001/0.001
+  JS 25 scripts 351 KB gz (1022.2 KB raw) · doc 36.3 KB gz / 246.5 KB raw · inline RSC 136.5 KB · failedA11y - · failedBp -
+  observed FCP/LCP/load 271/271/196 · 148/148/190 · 143/143/187 · scripts done before observed LCP 24/25 (347.2 KB) · 24/25 (347.2 KB) · 24/25 (347.2 KB)
+  CSS 40→46 · 34→39 · 36→42 · preloaded fonts end 34,33,34,34,116,117 · 32,34,32,34,110,110 · 38,38,37,38,108,109
+  unused JS 1tr6a7zmh41cy.js 26.1/48.5 KB, 0qy3sss5e6eww.js 25.7/71.6 KB
+  bootup 0qy3sss5e6eww.js total 533 script 395,  total 402 script 6, 1tr6a7zmh41cy.js total 201 script 64, Unattributable total 153 script 10
+  shifts [{"score":0.0010093040697536,"node":"div.pointer-events-none > div.pointer-events-none > div.flex > p.type-code-s","causes":["Web font loaded http://localhost:3200/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2","Web font loaded http://localhost:3200/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2"]}]
+  long tasks (run 1) doc@804:109 0qy3sss5e6eww.js@4367:108 0qy3sss5e6eww.js@4671:87
+
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 | mobile | simulate  n=3 bench 4055/3970/3950
+  perf 86 (86/86/86) · a11y 100 (100/100/100) · bp 100 (100/100/100) · LCP 4236 (4272/4226/4236) · FCP 1060 (1060/1062/1060) · TBT 20 (17/20/32) · CLS 0/0/0
+  JS 25 scripts 355.3 KB gz (1032.9 KB raw) · doc 32.2 KB gz / 220.5 KB raw · inline RSC 134.7 KB · failedA11y - · failedBp -
+  observed FCP/LCP/load 188/188/150 · 141/141/164 · 142/142/181 · scripts done before observed LCP 24/25 (351.6 KB) · 24/25 (351.6 KB) · 24/25 (351.6 KB)
+  CSS 34→39 · 33→38 · 32→35 · preloaded fonts end 32,31,32,32,81 · 32,32,35,33,88 · 28,28,28,28,94
+  unused JS 1tr6a7zmh41cy.js 27.5/48.5 KB, 0qy3sss5e6eww.js 25.7/71.6 KB
+  bootup 0qy3sss5e6eww.js total 364 script 314, kocioni-disk-prednji-276-24-mm-demo-0004 total 288 script 4, 1tr6a7zmh41cy.js total 205 script 76, Unattributable total 121 script 11
+  shifts [{"score":0.000269605091598586,"node":"dl.flex > div.flex > dd.flex > button.inline-flex","causes":["Web font loaded http://localhost:3200/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2"]}]
+  long tasks (run 1) 0qy3sss5e6eww.js@4213:83 kocioni-disk-predn@759:58
+
+/vozila/volkswagen/golf/golf-7 | desktop | simulate  n=2 bench 3601/3542
+  perf 98 (98/98) · a11y 100 (100/100) · bp 100 (100/100) · LCP 890 (904/876) · FCP 376 (375/376) · TBT 0 (0/0) · CLS 0.074/0.074
+  JS 25 scripts 346.4 KB gz (1003.3 KB raw) · doc 32 KB gz / 325.2 KB raw · inline RSC 167 KB · failedA11y - · failedBp -
+  observed FCP/LCP/load 277/277/238 · 214/214/275 · scripts done before observed LCP 24/25 (342.6 KB) · 24/25 (342.6 KB)
+  CSS 35→42 · 33→38 · preloaded fonts end 36,37,37,37,150,152 · 33,34,35,37,157,158
+  unused JS 1tr6a7zmh41cy.js 27.7/48.5 KB, 0qy3sss5e6eww.js 26.3/71.6 KB
+  bootup 0qy3sss5e6eww.js total 153 script 133, golf-7 total 121 script 4, 1tr6a7zmh41cy.js total 97 script 34, Unattributable total 71 script 8
+  shifts [{"score":0.07367504179496523,"node":"div.px-page > div.mt-4 > div.flex > h1.type-display-l","causes":["Web font loaded http://localhost:3200/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2","Web font loaded http://localhost:3200/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2"]}]
+  long tasks (run 1) 

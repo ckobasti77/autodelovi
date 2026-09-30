@@ -1,0 +1,3 @@
+_id                                | _creationTime      | fromPath                                                      | hits | kind      | toPath                                                            
+-----------------------------------|--------------------|---------------------------------------------------------------|---|-----------|-------------------------------------------------------------------
+"qs71t47ms6206nsdaa2pep9znd8fdj0g" | 1790780845396.8232 | "/deo/kocioni-disk-verifikacija-muo8o7sc-e2e-vseo08-muo8o7sc" | 0 | "product" | "/deo/kocioni-disk-verifikacija-muo8o7sc-e2e-vseo08-muo8o7sc-novi"

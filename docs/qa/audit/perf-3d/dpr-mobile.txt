@@ -1,0 +1,3 @@
+{"run":0,"cpu":4,"deviceScaleFactor":3,"tierMax":1.5,"ratioAtReady":1.5,"afterCrossfade":1.5,"afterScroll":1.5,"afterBackToTop":1.5}
+{"run":1,"cpu":4,"deviceScaleFactor":3,"tierMax":1.5,"ratioAtReady":1.5,"afterCrossfade":1.5,"afterScroll":1.5,"afterBackToTop":1.5}
+{"run":2,"cpu":4,"deviceScaleFactor":3,"tierMax":1.5,"ratioAtReady":1.5,"afterCrossfade":1.5,"afterScroll":1.25,"afterBackToTop":1.5}

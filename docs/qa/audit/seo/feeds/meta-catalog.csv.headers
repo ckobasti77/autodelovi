@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), bluetooth=(), hid=(), browsing-topics=()
+Cross-Origin-Opener-Policy: same-origin
+Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+cache-control: public, max-age=0, s-maxage=3600, stale-while-revalidate=86400
+content-disposition: inline; filename="meta-catalog.csv"
+content-type: text/csv; charset=utf-8
+x-robots-tag: noindex
+Date: Wed, 30 Sep 2026 14:12:31 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+

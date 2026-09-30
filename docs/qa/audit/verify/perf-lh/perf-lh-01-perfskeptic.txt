@@ -1,0 +1,372 @@
+# perf-lh-01 skeptic (analysis only, no new Lighthouse runs). Script: scripts/qa/audit/verify-perf-lh-01-skeptic.mjs
+# Recomputes TBT per long task with Lighthouse's rule (clip to FCP..TTI, minus 50 ms) and attributes it by script URL.
+# 0qy3sss5e6eww.js = react-dom (hydrateRoot; 73 KB gz) · 1tr6a7zmh41cy.js = GSAP core + ScrollTrigger (49 KB gz) · 25dplrt_qw3he.js = shell chunk (TextRevealGlobal observers, ConvexReactClient, radix; 7 KB gz) · 1uyyf-z7kpx1w.js = zod classic + RHF (/upit, 103 KB gz)
+# Build under test: .next/BUILD_ID mtime 2026-09-30 15:33 local; step-19 reports in .lighthouse/_delovi_kocioni-diskovi-mobile-devtools-1..3.json were written 13:33 local = before the step-20 commits (14:35-15:28) — not the same build, but react-dom/GSAP/shell chunk hashes are identical and the step-20 client diff is small (ConsentBanner +15 lines, Link, AnalyticsManager).
+
+## A. Finder's devtools runs (.lighthouse/perf-lh-audit, audit peak 15:53-16:28 local)
+.lighthouse/_-mobile-devtools-1.json 2026-09-30T13:53:01.716Z devtools cpu4 bench 994.5 perf 90 FCP 2246 LCP 2246 TTI 5885 TBT 297 (recomputed 297)
+   byUrl {"(none)":29,"0qy3sss5e6eww.js":268}
+   blocking (none)@2013:312→29 0qy3sss5e6eww.js@3267:183→133 0qy3sss5e6eww.js@5290:157→107 0qy3sss5e6eww.js@5807:78→28 (none)@3459:50→0
+   bootup 1tr6a7zmh41cy.js 1470/473 | 0qy3sss5e6eww.js 1437/1263 |  896/7 | Unattributable 399/22
+   main scriptEvaluation:1926 other:1642 styleLayout:576 paintCompositeRender:145 scriptParseCompile:104 garbageCollection:29 parseHTML:27
+.lighthouse/_-mobile-devtools-2.json 2026-09-30T13:53:41.009Z devtools cpu4 bench 1050.5 perf 0 FCP NaN LCP NaN TTI undefined TBT NaN (recomputed 0)
+   byUrl {}
+   blocking 
+   bootup 
+   main 
+.lighthouse/_delovi-mobile-devtools-1.json 2026-09-30T14:00:58.263Z devtools cpu4 bench 3971 perf 91 FCP 2274 LCP 2274 TTI 5933 TBT 246 (recomputed 246)
+   byUrl {"0qy3sss5e6eww.js":234,"25dplrt_qw3he.js":12}
+   blocking 0qy3sss5e6eww.js@3203:179→129 0qy3sss5e6eww.js@5172:117→67 0qy3sss5e6eww.js@5672:87→37 25dplrt_qw3he.js@5871:62→12
+   bootup 1tr6a7zmh41cy.js 2294/792 | 0qy3sss5e6eww.js 1339/1186 | delovi 921/21 | Unattributable 447/23
+   main scriptEvaluation:2255 other:2067 styleLayout:602 paintCompositeRender:268 scriptParseCompile:99 parseHTML:46 garbageCollection:14
+.lighthouse/_delovi_kocioni-diskovi-mobile-devtools-1.json 2026-09-30T13:54:24.917Z devtools cpu4 bench 1762.5 perf 74 FCP 2320 LCP 2320 TTI 6782 TBT 976 (recomputed 976)
+   byUrl {"0qy3sss5e6eww.js":666,"kocioni-diskovi":124,"25dplrt_qw3he.js":185,"1tr6a7zmh41cy.js":1}
+   blocking 0qy3sss5e6eww.js@3417:330→280 0qy3sss5e6eww.js@6049:301→251 25dplrt_qw3he.js@6547:235→185 0qy3sss5e6eww.js@5379:124→74 kocioni-diskovi@3751:116→66 0qy3sss5e6eww.js@5759:110→60 kocioni-diskovi@2375:76→26 kocioni-diskovi@3272:68→18 kocioni-diskovi@5246:64→14 0qy3sss5e6eww.js@4505:51→1 1tr6a7zmh41cy.js@4455:51→1
+   bootup 0qy3sss5e6eww.js 2003/1831 | 1tr6a7zmh41cy.js 2002/745 | kocioni-diskovi 1176/10 | Unattributable 498/38
+   main scriptEvaluation:3027 other:1888 styleLayout:902 paintCompositeRender:299 scriptParseCompile:198 parseHTML:36 garbageCollection:19
+.lighthouse/_delovi_kocioni-diskovi-mobile-devtools-2.json 2026-09-30T13:55:00.208Z devtools cpu4 bench 3540.5 perf 76 FCP 2196 LCP 2196 TTI 6515 TBT 863 (recomputed 863)
+   byUrl {"0qy3sss5e6eww.js":472,"kocioni-diskovi":253,"25dplrt_qw3he.js":113,"1tr6a7zmh41cy.js":25}
+   blocking 0qy3sss5e6eww.js@3258:234→184 kocioni-diskovi@2181:202→137 0qy3sss5e6eww.js@5137:178→128 0qy3sss5e6eww.js@6024:173→123 25dplrt_qw3he.js@6352:163→113 kocioni-diskovi@3497:95→45 0qy3sss5e6eww.js@5717:87→37 kocioni-diskovi@3166:81→31 1tr6a7zmh41cy.js@5334:75→25 kocioni-diskovi@2397:74→24 kocioni-diskovi@2502:66→16
+   bootup 1tr6a7zmh41cy.js 2284/824 | 0qy3sss5e6eww.js 1914/1721 | kocioni-diskovi 1281/11 | Unattributable 438/33
+   main scriptEvaluation:2940 other:2003 styleLayout:980 paintCompositeRender:328 scriptParseCompile:137 parseHTML:57 garbageCollection:18
+.lighthouse/_delovi_kocioni-diskovi-mobile-devtools-3.json 2026-09-30T13:55:30.152Z devtools cpu4 bench 3304.5 perf 77 FCP 2162 LCP 2162 TTI 6543 TBT 837 (recomputed 837)
+   byUrl {"0qy3sss5e6eww.js":436,"25dplrt_qw3he.js":179,"kocioni-diskovi":201,"0qimmyhv2_bjj.js":11,"1tr6a7zmh41cy.js":10}
+   blocking 0qy3sss5e6eww.js@3230:236→186 25dplrt_qw3he.js@6315:229→179 kocioni-diskovi@2155:180→123 0qy3sss5e6eww.js@5092:166→116 0qy3sss5e6eww.js@5953:148→98 kocioni-diskovi@2353:91→41 0qy3sss5e6eww.js@5576:86→36 kocioni-diskovi@3470:75→25 kocioni-diskovi@3135:62→12 0qimmyhv2_bjj.js@6179:61→11 1tr6a7zmh41cy.js@5277:58→8 1tr6a7zmh41cy.js@4269:52→2
+   bootup 1tr6a7zmh41cy.js 2184/809 | 0qy3sss5e6eww.js 1873/1708 | kocioni-diskovi 1174/11 | Unattributable 422/29
+   main scriptEvaluation:2982 other:1917 styleLayout:936 paintCompositeRender:290 scriptParseCompile:127 parseHTML:48 garbageCollection:16
+.lighthouse/_delovi_kocioni-diskovi_volkswagen_golf-mobile-devtools-1.json 2026-09-30T14:02:35.774Z devtools cpu4 bench 3901 perf 73 FCP 2356 LCP 2356 TTI 6465 TBT 1019 (recomputed 1019)
+   byUrl {"0qy3sss5e6eww.js":546,"golf":303,"1tr6a7zmh41cy.js":94,"25dplrt_qw3he.js":76}
+   blocking 0qy3sss5e6eww.js@3239:304→254 golf@2334:282→210 0qy3sss5e6eww.js@5980:182→132 0qy3sss5e6eww.js@5109:168→118 1tr6a7zmh41cy.js@5303:133→83 25dplrt_qw3he.js@6339:126→76 golf@3126:98→48 golf@3547:95→45 0qy3sss5e6eww.js@5729:92→42 1tr6a7zmh41cy.js@4277:61→11
+   bootup 1tr6a7zmh41cy.js 2450/803 | 0qy3sss5e6eww.js 1909/1711 | golf 1363/8 | Unattributable 438/28
+   main scriptEvaluation:2903 other:2140 styleLayout:1104 paintCompositeRender:328 scriptParseCompile:152 parseHTML:31 garbageCollection:17
+.lighthouse/_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1.json 2026-09-30T13:55:59.422Z devtools cpu4 bench 3496 perf 76 FCP 2533 LCP 2533 TTI 6198 TBT 699 (recomputed 699)
+   byUrl {"kocioni-disk-prednji-276":177,"0qy3sss5e6eww.js":497,"25dplrt_qw3he.js":12,"1tr6a7zmh41cy.js":13}
+   blocking kocioni-disk-prednji-276@2484:263→163 0qy3sss5e6eww.js@3123:261→211 0qy3sss5e6eww.js@4973:164→114 0qy3sss5e6eww.js@5743:140→90 0qy3sss5e6eww.js@5489:133→83 kocioni-disk-prednji-276@3387:65→15 25dplrt_qw3he.js@6136:62→12 1tr6a7zmh41cy.js@5275:60→10 1tr6a7zmh41cy.js@5891:53→3
+   bootup 1tr6a7zmh41cy.js 1905/730 | 0qy3sss5e6eww.js 1900/1700 | kocioni-disk-prednji-276 1245/6 | Unattributable 391/21
+   main scriptEvaluation:2763 other:1654 styleLayout:1036 paintCompositeRender:241 scriptParseCompile:140 parseHTML:39 garbageCollection:14
+.lighthouse/_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-2.json 2026-09-30T13:56:30.370Z devtools cpu4 bench 2064 perf 0 FCP NaN LCP NaN TTI undefined TBT NaN (recomputed 0)
+   byUrl {}
+   blocking 
+   bootup 
+   main 
+.lighthouse/_kontakt-mobile-devtools-1.json 2026-09-30T14:04:29.729Z devtools cpu4 bench 2731 perf 83 FCP 2443 LCP 2443 TTI 5492 TBT 454 (recomputed 454)
+   byUrl {"0qy3sss5e6eww.js":369,"kontakt":58,"25dplrt_qw3he.js":28}
+   blocking 0qy3sss5e6eww.js@3086:305→255 0qy3sss5e6eww.js@4692:134→84 kontakt@2451:108→58 0qy3sss5e6eww.js@5253:80→30 25dplrt_qw3he.js@5415:78→28
+   bootup 0qy3sss5e6eww.js 1485/1315 | 1tr6a7zmh41cy.js 1370/548 | kontakt 1007/7 | Unattributable 338/20
+   main scriptEvaluation:2180 other:1214 styleLayout:805 paintCompositeRender:254 scriptParseCompile:111 parseHTML:35 garbageCollection:15
+.lighthouse/_ponuda_kocione-plocice-golf-mobile-devtools-1.json 2026-09-30T14:03:56.548Z devtools cpu4 bench 1733 perf 75 FCP 2741 LCP 2741 TTI 5912 TBT 629 (recomputed 629)
+   byUrl {"0qy3sss5e6eww.js":424,"kocione-plocice-golf":170,"1tr6a7zmh41cy.js":20,"25dplrt_qw3he.js":15}
+   blocking 0qy3sss5e6eww.js@3180:276→226 kocione-plocice-golf@2743:220→170 0qy3sss5e6eww.js@4859:193→143 0qy3sss5e6eww.js@5661:98→48 1tr6a7zmh41cy.js@4311:70→20 25dplrt_qw3he.js@5847:65→15 0qy3sss5e6eww.js@5531:58→8
+   bootup 1tr6a7zmh41cy.js 1587/586 | 0qy3sss5e6eww.js 1533/1381 | kocione-plocice-golf 1396/24 | Unattributable 476/19
+   main scriptEvaluation:2237 other:1569 styleLayout:1183 paintCompositeRender:192 scriptParseCompile:137 garbageCollection:32 parseHTML:26
+.lighthouse/_pretraga-mobile-devtools-1.json 2026-09-30T14:01:32.640Z devtools cpu4 bench 3750 perf 82 FCP 1991 LCP 1991 TTI 5960 TBT 625 (recomputed 625)
+   byUrl {"0qy3sss5e6eww.js":433,"pretraga":186,"25dplrt_qw3he.js":6}
+   blocking 0qy3sss5e6eww.js@5566:235→185 pretraga@2311:218→168 0qy3sss5e6eww.js@3055:191→141 0qy3sss5e6eww.js@5150:143→93 pretraga@3306:68→18 0qy3sss5e6eww.js@5492:64→14 25dplrt_qw3he.js@5904:56→6
+   bootup 1tr6a7zmh41cy.js 1939/767 | 0qy3sss5e6eww.js 1828/1621 | pretraga?q=disk 981/21 | Unattributable 438/34
+   main scriptEvaluation:2763 other:1867 styleLayout:627 paintCompositeRender:220 scriptParseCompile:116 parseHTML:36 garbageCollection:15
+.lighthouse/_upit-mobile-devtools-1.json 2026-09-30T14:03:27.952Z devtools cpu4 bench 4102.5 perf 88 FCP 2196 LCP 2196 TTI 6521 TBT 371 (recomputed 371)
+   byUrl {"0qy3sss5e6eww.js":312,"upit":58}
+   blocking 0qy3sss5e6eww.js@6187:185→135 0qy3sss5e6eww.js@3228:142→92 upit@2188:116→58 0qy3sss5e6eww.js@6427:94→44 0qy3sss5e6eww.js@6004:91→41
+   bootup 0qy3sss5e6eww.js 2137/1808 | 1tr6a7zmh41cy.js 1174/477 | upit 791/9 | Unattributable 360/13
+   main scriptEvaluation:2410 other:1382 styleLayout:593 scriptParseCompile:141 paintCompositeRender:91 garbageCollection:39 parseHTML:28
+.lighthouse/_vozila_volkswagen_golf_golf-7-mobile-devtools-1.json 2026-09-30T14:02:00.956Z devtools cpu4 bench 3697.5 perf 78 FCP 2249 LCP 2249 TTI 6128 TBT 650 (recomputed 650)
+   byUrl {"0qy3sss5e6eww.js":430,"golf-7":220}
+   blocking 0qy3sss5e6eww.js@3216:285→235 golf-7@2247:170→119 0qy3sss5e6eww.js@5387:152→102 0qy3sss5e6eww.js@6021:107→57 golf-7@2433:100→50 0qy3sss5e6eww.js@5802:87→37 golf-7@3506:85→35 golf-7@3078:64→14 golf-7@5220:53→3
+   bootup 1tr6a7zmh41cy.js 2346/887 | 0qy3sss5e6eww.js 1970/1736 | golf-7 1194/22 | Unattributable 552/45
+   main scriptEvaluation:2941 other:2168 styleLayout:829 paintCompositeRender:280 scriptParseCompile:156 parseHTML:53 garbageCollection:23
+.lighthouse/_za-majstore-mobile-devtools-1.json 2026-09-30T14:03:03.119Z devtools cpu4 bench 3728.5 perf 90 FCP 2259 LCP 2259 TTI 5547 TBT 280 (recomputed 280)
+   byUrl {"0qy3sss5e6eww.js":203,"za-majstore":77,"25dplrt_qw3he.js":1}
+   blocking 0qy3sss5e6eww.js@3208:218→168 za-majstore@2254:129→75 0qy3sss5e6eww.js@4862:85→35 za-majstore@3432:52→2 25dplrt_qw3he.js@5497:51→1
+   bootup 1tr6a7zmh41cy.js 1397/542 | 0qy3sss5e6eww.js 1307/1147 | za-majstore 984/7 | Unattributable 359/16
+   main scriptEvaluation:1890 other:1312 styleLayout:789 paintCompositeRender:171 scriptParseCompile:112 parseHTML:27 garbageCollection:21
+kept/cat-dt-1790778003464-contended-_delovi_kocioni-diskovi-mobile-devtools-1.json 2026-09-30T14:19:18.899Z devtools cpu4 bench 1242 perf 81 FCP 2936 LCP 2936 TTI 7519 TBT 358 (recomputed 358)
+   byUrl {"0qy3sss5e6eww.js":275,"25dplrt_qw3he.js":56,"1tr6a7zmh41cy.js":22,"kocioni-diskovi":5}
+   blocking 0qy3sss5e6eww.js@4138:207→157 25dplrt_qw3he.js@6601:106→56 0qy3sss5e6eww.js@6410:105→55 0qy3sss5e6eww.js@5715:90→40 0qy3sss5e6eww.js@6176:73→23 1tr6a7zmh41cy.js@7447:72→22 kocioni-diskovi@5506:55→5
+   bootup 1tr6a7zmh41cy.js 1770/602 | 0qy3sss5e6eww.js 1599/1405 | kocioni-diskovi 1141/4 | Unattributable 388/28
+   main scriptEvaluation:2280 other:1635 styleLayout:942 paintCompositeRender:256 scriptParseCompile:94 garbageCollection:40 parseHTML:20
+kept/cat-dt-1790778081471-contended-_delovi_kocioni-diskovi-mobile-devtools-1.json 2026-09-30T14:20:10.611Z devtools cpu4 bench 1603.5 perf 53 FCP 3634 LCP 3634 TTI 29554 TBT 2267 (recomputed 2134)
+   byUrl {"1tr6a7zmh41cy.js":1126,"0qy3sss5e6eww.js":937,"kocioni-diskovi":70}
+   blocking 1tr6a7zmh41cy.js@14478:540→490 0qy3sss5e6eww.js@8407:492→442 1tr6a7zmh41cy.js@20594:195→145 0qy3sss5e6eww.js@8060:157→107 0qy3sss5e6eww.js@4728:155→105 1tr6a7zmh41cy.js@29406:148→98 1tr6a7zmh41cy.js@25691:147→97 0qy3sss5e6eww.js@9405:146→96 1tr6a7zmh41cy.js@29241:136→86 kocioni-diskovi@5483:120→70 0qy3sss5e6eww.js@7815:109→59 1tr6a7zmh41cy.js@12828:108→58 1tr6a7zmh41cy.js@25552:108→58 1tr6a7zmh41cy.js@19985:101→51 0qy3sss5e6eww.js@8911:97→47 1tr6a7zmh41cy.js@13817:93→43 0qy3sss5e6eww.js@6898:91→41 0qy3sss5e6eww.js@6399:90→40
+   bootup 1tr6a7zmh41cy.js 4596/1573 | 0qy3sss5e6eww.js 3973/3366 | kocioni-diskovi 1582/5 | Unattributable 798/33
+   main scriptEvaluation:5167 other:4237 styleLayout:1251 paintCompositeRender:353 garbageCollection:149 scriptParseCompile:122 parseHTML:19
+kept/cat-dt-1790778123995-contended-_delovi_kocioni-diskovi-mobile-devtools-1.json 2026-09-30T14:21:25.635Z devtools cpu4 bench 2712.5 perf 71 FCP 2953 LCP 2953 TTI 6165 TBT 741 (recomputed 741)
+   byUrl {"0qy3sss5e6eww.js":582,"25dplrt_qw3he.js":85,"kocioni-diskovi":62,"1tr6a7zmh41cy.js":13}
+   blocking 0qy3sss5e6eww.js@3272:475→425 25dplrt_qw3he.js@6030:135→85 0qy3sss5e6eww.js@5811:121→71 0qy3sss5e6eww.js@5193:119→69 kocioni-diskovi@3757:112→62 0qy3sss5e6eww.js@5573:67→17 1tr6a7zmh41cy.js@4342:63→13
+   bootup 0qy3sss5e6eww.js 1869/1721 | 1tr6a7zmh41cy.js 1622/599 | kocioni-diskovi 1446/12 | Unattributable 442/28
+   main scriptEvaluation:2647 other:1572 styleLayout:1151 paintCompositeRender:299 scriptParseCompile:117 parseHTML:44 garbageCollection:13
+kept/cat-dt-1790778166503-contended-_delovi_kocioni-diskovi-mobile-devtools-1.json 2026-09-30T14:22:16.233Z devtools cpu4 bench 796 perf 75 FCP 2454 LCP 2454 TTI 7331 TBT 821 (recomputed 821)
+   byUrl {"0qy3sss5e6eww.js":362,"25dplrt_qw3he.js":104,"1tr6a7zmh41cy.js":183,"kocioni-diskovi":173}
+   blocking 0qy3sss5e6eww.js@3444:210→160 25dplrt_qw3he.js@6340:154→104 0qy3sss5e6eww.js@6116:143→93 1tr6a7zmh41cy.js@7203:128→78 kocioni-diskovi@2528:125→75 1tr6a7zmh41cy.js@6860:122→72 kocioni-diskovi@2407:120→23 0qy3sss5e6eww.js@5491:116→66 kocioni-diskovi@5336:101→51 0qy3sss5e6eww.js@5848:93→43 1tr6a7zmh41cy.js@7085:77→27 kocioni-diskovi@3658:71→21 1tr6a7zmh41cy.js@4501:54→4 kocioni-diskovi@3367:52→2 1tr6a7zmh41cy.js@7031:51→1 1tr6a7zmh41cy.js@6715:51→1
+   bootup 1tr6a7zmh41cy.js 1945/657 | 0qy3sss5e6eww.js 1718/1557 | kocioni-diskovi 1297/8 | Unattributable 502/26
+   main scriptEvaluation:2572 other:1865 styleLayout:931 paintCompositeRender:433 scriptParseCompile:126 parseHTML:55 garbageCollection:16
+kept/cat-dt-1790778218705-ok-_delovi_kocioni-diskovi-mobile-devtools-1.json 2026-09-30T14:22:50.373Z devtools cpu4 bench 3100 perf 77 FCP 2513 LCP 2513 TTI 6304 TBT 674 (recomputed 674)
+   byUrl {"0qy3sss5e6eww.js":434,"25dplrt_qw3he.js":149,"kocioni-diskovi":48,"1tr6a7zmh41cy.js":43}
+   blocking 0qy3sss5e6eww.js@3219:221→171 25dplrt_qw3he.js@6049:199→149 0qy3sss5e6eww.js@5709:192→142 0qy3sss5e6eww.js@5092:171→121 kocioni-diskovi@2522:92→42 1tr6a7zmh41cy.js@5277:72→22 1tr6a7zmh41cy.js@4285:64→14 1tr6a7zmh41cy.js@6248:56→6 kocioni-diskovi@3122:56→6
+   bootup 1tr6a7zmh41cy.js 1857/663 | 0qy3sss5e6eww.js 1672/1496 | kocioni-diskovi 1205/8 | Unattributable 455/36
+   main scriptEvaluation:2587 other:1723 styleLayout:1030 paintCompositeRender:242 scriptParseCompile:149 parseHTML:49 garbageCollection:12
+kept/dt_delovi-1790778526362-contended-_delovi-mobile-devtools-1.json 2026-09-30T14:28:11.441Z devtools cpu4 bench 2893 perf 82 FCP 2442 LCP 2442 TTI 6320 TBT 491 (recomputed 491)
+   byUrl {"0qy3sss5e6eww.js":323,"delovi":126,"1tr6a7zmh41cy.js":19,"25dplrt_qw3he.js":18,"2jrozipxybei4.js":5}
+   blocking 0qy3sss5e6eww.js@3256:247→197 0qy3sss5e6eww.js@5378:176→126 delovi@2440:104→52 delovi@3106:96→46 delovi@5271:78→28 1tr6a7zmh41cy.js@6251:69→19 25dplrt_qw3he.js@6126:68→18 2jrozipxybei4.js@4465:55→5
+   bootup 1tr6a7zmh41cy.js 2178/700 | 0qy3sss5e6eww.js 1467/1297 | delovi 1102/30 | Unattributable 662/38
+   main scriptEvaluation:2413 other:2271 styleLayout:737 paintCompositeRender:309 scriptParseCompile:130 parseHTML:52 garbageCollection:24
+kept/dt_delovi-1790778565926-contended-_delovi-mobile-devtools-1.json 2026-09-30T14:28:50.634Z devtools cpu4 bench 911.5 perf 73 FCP 2797 LCP 2797 TTI 7561 TBT 755 (recomputed 755)
+   byUrl {"0qy3sss5e6eww.js":530,"delovi":193,"25dplrt_qw3he.js":23,"2jrozipxybei4.js":9}
+   blocking 0qy3sss5e6eww.js@6594:324→274 0qy3sss5e6eww.js@3973:252→202 delovi@2791:210→154 0qy3sss5e6eww.js@7306:98→48 delovi@3820:74→24 25dplrt_qw3he.js@7488:73→23 delovi@5670:65→15 2jrozipxybei4.js@5775:59→9 0qy3sss5e6eww.js@6246:56→6
+   bootup 1tr6a7zmh41cy.js 1977/665 | 0qy3sss5e6eww.js 1632/1474 | delovi 1255/138 | Unattributable 811/57
+   main scriptEvaluation:2615 other:2209 styleLayout:806 paintCompositeRender:271 scriptParseCompile:136 parseHTML:107 garbageCollection:33
+kept/home-dt-1790777316560-ok-_-mobile-devtools-1.json 2026-09-30T14:08:09.389Z devtools cpu4 bench 3391 perf 83 FCP 2519 LCP 2519 TTI 5794 TBT 425 (recomputed 425)
+   byUrl {"0qy3sss5e6eww.js":307,"(none)":118}
+   blocking 0qy3sss5e6eww.js@3291:226→176 (none)@2530:161→111 0qy3sss5e6eww.js@5678:116→66 0qy3sss5e6eww.js@5210:115→65 (none)@3523:57→7
+   bootup 1tr6a7zmh41cy.js 1600/511 | 0qy3sss5e6eww.js 1505/1336 |  1027/13 | Unattributable 359/18
+   main scriptEvaluation:2048 other:1609 styleLayout:741 paintCompositeRender:181 scriptParseCompile:116 parseHTML:56 garbageCollection:12
+kept/home-dt-1790777357058-ok-_-mobile-devtools-1.json 2026-09-30T14:08:39.666Z devtools cpu4 bench 3458.5 perf 83 FCP 2571 LCP 2571 TTI 6078 TBT 402 (recomputed 402)
+   byUrl {"0qy3sss5e6eww.js":393,"(none)":9,"1tr6a7zmh41cy.js":0}
+   blocking 0qy3sss5e6eww.js@3508:227→177 0qy3sss5e6eww.js@5426:183→133 0qy3sss5e6eww.js@5945:133→83 (none)@5328:59→9 1tr6a7zmh41cy.js@4504:50→0
+   bootup 0qy3sss5e6eww.js 1604/1431 | 1tr6a7zmh41cy.js 1561/499 |  788/7 | Unattributable 396/22
+   main scriptEvaluation:2170 other:1573 styleLayout:532 paintCompositeRender:245 scriptParseCompile:127 parseHTML:21 garbageCollection:16
+kept/home-dt-1790777401119-error-_-mobile-devtools-1.json 2026-09-30T14:09:25.043Z devtools cpu4 bench 1001.5 perf 0 FCP NaN LCP NaN TTI undefined TBT NaN (recomputed 0)
+   byUrl {}
+   blocking 
+   bootup 
+   main 
+kept/home-dt-1790777434008-error-_-mobile-devtools-1.json 2026-09-30T14:10:05.875Z devtools cpu4 bench 3095 perf 0 FCP NaN LCP NaN TTI undefined TBT NaN (recomputed 0)
+   byUrl {}
+   blocking 
+   bootup 
+   main 
+kept/home-dt-1790777466326-error-_-mobile-devtools-1.json 2026-09-30T14:10:39.616Z devtools cpu4 bench 1879 perf 0 FCP NaN LCP NaN TTI undefined TBT NaN (recomputed 0)
+   byUrl {}
+   blocking 
+   bootup 
+   main 
+kept/home-dt-1790777497559-contended-_-mobile-devtools-1.json 2026-09-30T14:11:09.547Z devtools cpu4 bench 2701 perf 93 FCP 2387 LCP 2387 TTI 5748 TBT 145 (recomputed 145)
+   byUrl {"(none)":0,"0qy3sss5e6eww.js":145}
+   blocking 0qy3sss5e6eww.js@3380:123→73 0qy3sss5e6eww.js@5652:96→46 0qy3sss5e6eww.js@5272:76→26
+   bootup 1tr6a7zmh41cy.js 1614/505 | 0qy3sss5e6eww.js 1331/1162 |  831/10 | Unattributable 361/17
+   main scriptEvaluation:1828 other:1659 styleLayout:581 paintCompositeRender:128 scriptParseCompile:98 parseHTML:48 garbageCollection:17
+kept/home-dt-1790777532529-ok-_-mobile-devtools-1.json 2026-09-30T14:11:40.448Z devtools cpu4 bench 3748.5 perf 78 FCP 2547 LCP 2547 TTI 6066 TBT 623 (recomputed 623)
+   byUrl {"0qy3sss5e6eww.js":505,"(none)":106,"1tr6a7zmh41cy.js":12}
+   blocking 0qy3sss5e6eww.js@3262:291→241 0qy3sss5e6eww.js@5875:191→141 0qy3sss5e6eww.js@5188:173→123 (none)@2561:147→97 1tr6a7zmh41cy.js@5377:62→12 (none)@3558:60→10
+   bootup 0qy3sss5e6eww.js 1809/1625 | 1tr6a7zmh41cy.js 1753/555 |  1130/17 | Unattributable 414/25
+   main scriptEvaluation:2453 other:1766 styleLayout:838 paintCompositeRender:191 scriptParseCompile:147 parseHTML:54 garbageCollection:15
+kept/home-dt-1790777565816-ok-_-mobile-devtools-1.json 2026-09-30T14:12:15.776Z devtools cpu4 bench 3083 perf 80 FCP 2455 LCP 2455 TTI 6245 TBT 553 (recomputed 553)
+   byUrl {"0qy3sss5e6eww.js":445,"(none)":54,"1tr6a7zmh41cy.js":54}
+   blocking 0qy3sss5e6eww.js@3307:284→234 (none)@2305:235→34 0qy3sss5e6eww.js@5250:176→126 0qy3sss5e6eww.js@6110:136→86 1tr6a7zmh41cy.js@5461:100→50 (none)@3224:68→18 1tr6a7zmh41cy.js@4359:54→4 (none)@3592:52→2
+   bootup 0qy3sss5e6eww.js 1829/1646 | 1tr6a7zmh41cy.js 1607/553 |  1222/13 | Unattributable 383/20
+   main scriptEvaluation:2452 other:1701 styleLayout:805 paintCompositeRender:227 scriptParseCompile:150 parseHTML:58 garbageCollection:11
+kept/home-dt-1790777596344-contended-_-mobile-devtools-1.json 2026-09-30T14:12:49.520Z devtools cpu4 bench 2602.5 perf 80 FCP 2413 LCP 2413 TTI 10971 TBT 569 (recomputed 569)
+   byUrl {"0qy3sss5e6eww.js":437,"(none)":121,"1tr6a7zmh41cy.js":11}
+   blocking 0qy3sss5e6eww.js@3285:311→261 0qy3sss5e6eww.js@5451:203→153 (none)@2420:119→69 (none)@5347:101→51 0qy3sss5e6eww.js@5884:73→23 1tr6a7zmh41cy.js@4360:57→7 1tr6a7zmh41cy.js@10917:54→4 (none)@3601:51→1
+   bootup 0qy3sss5e6eww.js 1624/1423 | 1tr6a7zmh41cy.js 1378/436 |  1150/7 | Unattributable 457/15
+   main scriptEvaluation:2063 other:1684 styleLayout:777 paintCompositeRender:182 scriptParseCompile:127 parseHTML:51 garbageCollection:23
+kept/home-dt-1790777626914-ok-_-mobile-devtools-1.json 2026-09-30T14:13:19.205Z devtools cpu4 bench 3136.5 perf 87 FCP 2490 LCP 2490 TTI 5781 TBT 334 (recomputed 334)
+   byUrl {"(none)":33,"0qy3sss5e6eww.js":300,"1tr6a7zmh41cy.js":1}
+   blocking (none)@2338:234→32 0qy3sss5e6eww.js@3285:221→171 0qy3sss5e6eww.js@5238:119→69 0qy3sss5e6eww.js@5671:111→61 1tr6a7zmh41cy.js@4346:51→1 (none)@3510:51→1
+   bootup 1tr6a7zmh41cy.js 1618/537 | 0qy3sss5e6eww.js 1460/1295 |  993/9 | Unattributable 368/17
+   main scriptEvaluation:2010 other:1629 styleLayout:721 paintCompositeRender:154 scriptParseCompile:115 parseHTML:54 garbageCollection:14
+kept/prod-dt-1790777663122-ok-_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1.json 2026-09-30T14:13:49.835Z devtools cpu4 bench 3085.5 perf 80 FCP 2497 LCP 2497 TTI 6109 TBT 551 (recomputed 551)
+   byUrl {"kocioni-disk-prednji-276":56,"0qy3sss5e6eww.js":431,"1tr6a7zmh41cy.js":63}
+   blocking kocioni-disk-prednji-276@2300:274→26 0qy3sss5e6eww.js@3278:255→205 0qy3sss5e6eww.js@5094:144→94 0qy3sss5e6eww.js@5705:119→69 0qy3sss5e6eww.js@5941:114→64 1tr6a7zmh41cy.js@5288:95→45 kocioni-disk-prednji-276@3538:80→30 1tr6a7zmh41cy.js@4333:63→13 1tr6a7zmh41cy.js@6054:55→5
+   bootup 1tr6a7zmh41cy.js 2248/798 | 0qy3sss5e6eww.js 1724/1548 | kocioni-disk-prednji-276 1081/11 | Unattributable 462/31
+   main scriptEvaluation:2609 other:1983 styleLayout:876 paintCompositeRender:204 scriptParseCompile:127 parseHTML:47 garbageCollection:14
+kept/prod-dt-1790777695733-contended-_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1.json 2026-09-30T14:14:26.702Z devtools cpu4 bench 1771 perf 80 FCP 2145 LCP 2145 TTI 6147 TBT 669 (recomputed 669)
+   byUrl {"0qy3sss5e6eww.js":454,"kocioni-disk-prednji-276":161,"1tr6a7zmh41cy.js":36,"25dplrt_qw3he.js":18}
+   blocking 0qy3sss5e6eww.js@3205:305→255 kocioni-disk-prednji-276@2067:249→121 0qy3sss5e6eww.js@5088:140→90 0qy3sss5e6eww.js@5566:111→61 0qy3sss5e6eww.js@5737:98→48 1tr6a7zmh41cy.js@5293:84→34 kocioni-disk-prednji-276@3515:82→32 25dplrt_qw3he.js@6079:68→18 kocioni-disk-prednji-276@2343:58→8 1tr6a7zmh41cy.js@4361:51→1
+   bootup 1tr6a7zmh41cy.js 1761/627 | 0qy3sss5e6eww.js 1602/1451 | kocioni-disk-prednji-276 971/13 | Unattributable 393/29
+   main scriptEvaluation:2412 other:1609 styleLayout:753 paintCompositeRender:190 scriptParseCompile:138 parseHTML:60 garbageCollection:16
+kept/prod-dt-1790777723969-error-_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1.json 2026-09-30T14:14:59.387Z devtools cpu4 bench 2729.5 perf 0 FCP NaN LCP NaN TTI undefined TBT NaN (recomputed 0)
+   byUrl {}
+   blocking 
+   bootup 
+   main 
+kept/prod-dt-1790777756596-error-_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1.json 2026-09-30T14:15:27.556Z devtools cpu4 bench 1730 perf 0 FCP NaN LCP NaN TTI undefined TBT NaN (recomputed 0)
+   byUrl {}
+   blocking 
+   bootup 
+   main 
+kept/prod-dt-1790777805519-contended-_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1.json 2026-09-30T14:16:00.316Z devtools cpu4 bench 2930.5 perf 78 FCP 2197 LCP 2197 TTI 6221 TBT 768 (recomputed 768)
+   byUrl {"kocioni-disk-prednji-276":304,"0qy3sss5e6eww.js":431,"1tr6a7zmh41cy.js":30,"25dplrt_qw3he.js":3}
+   blocking kocioni-disk-prednji-276@2085:352→191 0qy3sss5e6eww.js@3115:214→164 0qy3sss5e6eww.js@5027:174→124 kocioni-disk-prednji-276@2461:145→95 0qy3sss5e6eww.js@5842:130→80 0qy3sss5e6eww.js@5589:114→64 1tr6a7zmh41cy.js@5301:80→30 kocioni-disk-prednji-276@3333:68→18 25dplrt_qw3he.js@6168:53→3
+   bootup 0qy3sss5e6eww.js 1962/1751 | 1tr6a7zmh41cy.js 1690/617 | kocioni-disk-prednji-276 1161/9 | Unattributable 426/28
+   main scriptEvaluation:2711 other:1664 styleLayout:886 paintCompositeRender:228 scriptParseCompile:122 parseHTML:53 garbageCollection:25
+kept/prod-dt-1790777853819-error-_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1.json 2026-09-30T14:16:54.622Z devtools cpu4 bench 1998.5 perf 0 FCP NaN LCP NaN TTI undefined TBT NaN (recomputed 0)
+   byUrl {}
+   blocking 
+   bootup 
+   main 
+kept/prod-dt-1790777890588-contended-_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1.json 2026-09-30T14:17:37.762Z devtools cpu4 bench 2798 perf 84 FCP 2631 LCP 2631 TTI 6099 TBT 379 (recomputed 379)
+   byUrl {"0qy3sss5e6eww.js":358,"kocioni-disk-prednji-276":20}
+   blocking 0qy3sss5e6eww.js@5289:208→158 0qy3sss5e6eww.js@3273:179→129 0qy3sss5e6eww.js@6002:97→47 0qy3sss5e6eww.js@5834:74→24 kocioni-disk-prednji-276@2652:62→12 kocioni-disk-prednji-276@3456:59→9
+   bootup 0qy3sss5e6eww.js 1814/1512 | 1tr6a7zmh41cy.js 1130/418 | kocioni-disk-prednji-276 1072/5 | Unattributable 372/17
+   main scriptEvaluation:2143 other:1232 styleLayout:891 paintCompositeRender:196 scriptParseCompile:102 garbageCollection:73 parseHTML:56
+kept/prod-dt-1790777953218-contended-_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1.json 2026-09-30T14:18:17.591Z devtools cpu4 bench 790 perf 73 FCP 2890 LCP 2890 TTI 7276 TBT 678 (recomputed 678)
+   byUrl {"0qy3sss5e6eww.js":639,"1tr6a7zmh41cy.js":38,"kocioni-disk-prednji-276":1}
+   blocking 0qy3sss5e6eww.js@4134:373→323 0qy3sss5e6eww.js@6336:234→184 0qy3sss5e6eww.js@7153:122→72 0qy3sss5e6eww.js@6922:109→59 1tr6a7zmh41cy.js@5460:88→38 kocioni-disk-prednji-276@3815:51→1
+   bootup 1tr6a7zmh41cy.js 3751/1267 | 0qy3sss5e6eww.js 2026/1823 | kocioni-disk-prednji-276 1187/11 | Unattributable 592/54
+   main scriptEvaluation:3336 other:3025 styleLayout:933 paintCompositeRender:346 scriptParseCompile:161 garbageCollection:52 parseHTML:23
+
+## B. Earlier verifier's quiet devtools runs (%TEMP%/verify-perf-lh, 17:22-17:31 local, bench 3496-4171)
+verify-perf-lh/t0_delovi_kocioni-diskovi-mobile-devtools-1-1790781748571.json 2026-09-30T15:22:02.850Z devtools cpu4 bench 3515.5 perf 95 FCP 2098 LCP 2098 TTI 5779 TBT 170 (recomputed 170)
+   byUrl {"kocioni-diskovi":2,"0qy3sss5e6eww.js":142,"25dplrt_qw3he.js":26}
+   blocking 0qy3sss5e6eww.js@3304:139→89 0qy3sss5e6eww.js@5142:77→27 25dplrt_qw3he.js@5703:76→26 0qy3sss5e6eww.js@5563:76→26 kocioni-diskovi@2164:52→2
+   bootup 1tr6a7zmh41cy.js 1632/611 | 0qy3sss5e6eww.js 1366/1198 | kocioni-diskovi 855/6 | Unattributable 351/21
+   main scriptEvaluation:2018 other:1530 styleLayout:602 paintCompositeRender:203 scriptParseCompile:86 parseHTML:42 garbageCollection:16
+verify-perf-lh/v1_-mobile-devtools-1-1790781801748.json 2026-09-30T15:22:55.874Z devtools cpu4 bench 4001 perf 93 FCP 2326 LCP 2326 TTI 5808 TBT 171 (recomputed 171)
+   byUrl {"(none)":0,"0qy3sss5e6eww.js":171}
+   blocking 0qy3sss5e6eww.js@3384:151→101 0qy3sss5e6eww.js@5722:86→36 0qy3sss5e6eww.js@5226:84→34
+   bootup 0qy3sss5e6eww.js 1446/1251 | 1tr6a7zmh41cy.js 1445/470 |  793/8 | Unattributable 336/16
+   main scriptEvaluation:1880 other:1531 styleLayout:564 paintCompositeRender:124 scriptParseCompile:95 parseHTML:40 garbageCollection:14
+verify-perf-lh/v1_-mobile-devtools-2-1790781827288.json 2026-09-30T15:23:23.003Z devtools cpu4 bench 3634 perf 89 FCP 2134 LCP 2134 TTI 5735 TBT 353 (recomputed 353)
+   byUrl {"0qy3sss5e6eww.js":269,"(none)":81,"1tr6a7zmh41cy.js":2}
+   blocking 0qy3sss5e6eww.js@3366:238→188 (none)@2128:137→81 0qy3sss5e6eww.js@5222:96→46 0qy3sss5e6eww.js@5649:85→35 1tr6a7zmh41cy.js@5336:52→2
+   bootup 0qy3sss5e6eww.js 1476/1286 | 1tr6a7zmh41cy.js 1313/470 |  816/9 | Unattributable 305/16
+   main scriptEvaluation:1899 other:1395 styleLayout:528 paintCompositeRender:130 scriptParseCompile:96 parseHTML:41 garbageCollection:14
+verify-perf-lh/v1_-mobile-devtools-3-1790781853311.json 2026-09-30T15:23:48.483Z devtools cpu4 bench 4157.5 perf 89 FCP 2128 LCP 2128 TTI 5921 TBT 343 (recomputed 343)
+   byUrl {"0qy3sss5e6eww.js":298,"(none)":41,"1tr6a7zmh41cy.js":4}
+   blocking 0qy3sss5e6eww.js@5754:167→117 0qy3sss5e6eww.js@5146:158→108 0qy3sss5e6eww.js@3207:123→73 (none)@2125:94→41 1tr6a7zmh41cy.js@5314:54→4
+   bootup 0qy3sss5e6eww.js 1580/1411 | 1tr6a7zmh41cy.js 1212/447 |  740/8 | Unattributable 327/16
+   main scriptEvaluation:2041 other:1280 styleLayout:485 paintCompositeRender:157 scriptParseCompile:86 parseHTML:28 garbageCollection:19
+verify-perf-lh/v1_delovi_kocioni-diskovi-mobile-devtools-1-1790781879098.json 2026-09-30T15:24:14.482Z devtools cpu4 bench 4114 perf 95 FCP 2139 LCP 2139 TTI 5772 TBT 169 (recomputed 169)
+   byUrl {"0qy3sss5e6eww.js":143,"kocioni-diskovi":17,"25dplrt_qw3he.js":10}
+   blocking 0qy3sss5e6eww.js@3332:140→90 kocioni-diskovi@2088:117→17 0qy3sss5e6eww.js@5157:79→29 0qy3sss5e6eww.js@5577:74→24 25dplrt_qw3he.js@5712:60→10
+   bootup 1tr6a7zmh41cy.js 1481/578 | 0qy3sss5e6eww.js 1382/1212 | kocioni-diskovi 828/6 | Unattributable 331/24
+   main scriptEvaluation:1995 other:1411 styleLayout:595 paintCompositeRender:180 scriptParseCompile:90 parseHTML:27 garbageCollection:15
+verify-perf-lh/v1_delovi_kocioni-diskovi-mobile-devtools-2-1790781906024.json 2026-09-30T15:24:40.275Z devtools cpu4 bench 3989 perf 84 FCP 2133 LCP 2133 TTI 5665 TBT 487 (recomputed 487)
+   byUrl {"0qy3sss5e6eww.js":235,"kocioni-diskovi":246,"25dplrt_qw3he.js":6}
+   blocking 0qy3sss5e6eww.js@3236:254→204 kocioni-diskovi@2129:187→133 kocioni-diskovi@2455:99→49 kocioni-diskovi@2331:85→35 kocioni-diskovi@3140:78→28 0qy3sss5e6eww.js@5087:66→16 0qy3sss5e6eww.js@5492:65→15 25dplrt_qw3he.js@5609:56→6
+   bootup 0qy3sss5e6eww.js 1488/1298 | 1tr6a7zmh41cy.js 1456/556 | kocioni-diskovi 1116/8 | Unattributable 372/20
+   main scriptEvaluation:2053 other:1437 styleLayout:797 paintCompositeRender:248 scriptParseCompile:103 parseHTML:54 garbageCollection:22
+verify-perf-lh/v1_delovi_kocioni-diskovi-mobile-devtools-3-1790781932307.json 2026-09-30T15:25:07.208Z devtools cpu4 bench 3634.5 perf 95 FCP 2068 LCP 2068 TTI 5800 TBT 170 (recomputed 170)
+   byUrl {"0qy3sss5e6eww.js":111,"25dplrt_qw3he.js":40,"kocioni-diskovi":19}
+   blocking 0qy3sss5e6eww.js@3290:108→58 25dplrt_qw3he.js@5710:90→40 kocioni-diskovi@2051:87→19 0qy3sss5e6eww.js@5125:79→29 0qy3sss5e6eww.js@5582:74→24
+   bootup 1tr6a7zmh41cy.js 1424/531 | 0qy3sss5e6eww.js 1382/1195 | kocioni-diskovi 759/7 | Unattributable 300/15
+   main scriptEvaluation:1930 other:1361 styleLayout:557 paintCompositeRender:171 scriptParseCompile:72 parseHTML:31 garbageCollection:26
+verify-perf-lh/v1_delovi_kocioni-diskovi_volkswagen_golf-mobile-devtools-1-1790782209931.json 2026-09-30T15:29:45.229Z devtools cpu4 bench 4024 perf 93 FCP 2139 LCP 2139 TTI 5625 TBT 218 (recomputed 218)
+   byUrl {"golf":101,"0qy3sss5e6eww.js":117}
+   blocking golf@2122:168→101 0qy3sss5e6eww.js@3206:131→81 0qy3sss5e6eww.js@5082:73→23 0qy3sss5e6eww.js@5562:63→13
+   bootup 1tr6a7zmh41cy.js 1434/495 | 0qy3sss5e6eww.js 1356/1179 | golf 822/6 | Unattributable 294/17
+   main scriptEvaluation:1851 other:1400 styleLayout:598 paintCompositeRender:174 scriptParseCompile:73 parseHTML:29 garbageCollection:13
+verify-perf-lh/v1_delovi_kocioni-diskovi_volkswagen_golf-mobile-devtools-2-1790782235917.json 2026-09-30T15:30:11.104Z devtools cpu4 bench 3947.5 perf 95 FCP 2109 LCP 2109 TTI 5720 TBT 167 (recomputed 167)
+   byUrl {"0qy3sss5e6eww.js":108,"golf":59}
+   blocking 0qy3sss5e6eww.js@3308:130→80 golf@2092:126→59 0qy3sss5e6eww.js@5653:67→17 0qy3sss5e6eww.js@5128:60→10 0qy3sss5e6eww.js@5530:51→1
+   bootup 0qy3sss5e6eww.js 1437/1248 | 1tr6a7zmh41cy.js 1425/529 | golf 829/5 | Unattributable 336/21
+   main scriptEvaluation:1930 other:1430 styleLayout:573 paintCompositeRender:168 scriptParseCompile:82 parseHTML:31 garbageCollection:24
+verify-perf-lh/v1_delovi_kocioni-diskovi_volkswagen_golf-mobile-devtools-3-1790782261851.json 2026-09-30T15:30:37.130Z devtools cpu4 bench 3990 perf 93 FCP 2033 LCP 2033 TTI 5598 TBT 256 (recomputed 256)
+   byUrl {"0qy3sss5e6eww.js":173,"golf":82}
+   blocking 0qy3sss5e6eww.js@3244:186→136 golf@2028:129→74 0qy3sss5e6eww.js@5527:71→21 0qy3sss5e6eww.js@5041:67→17 golf@3435:58→8
+   bootup 1tr6a7zmh41cy.js 1468/539 | 0qy3sss5e6eww.js 1448/1268 | golf 870/6 | Unattributable 340/17
+   main scriptEvaluation:1967 other:1508 styleLayout:553 paintCompositeRender:185 scriptParseCompile:85 parseHTML:31 garbageCollection:24
+verify-perf-lh/v1_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1-1790781957132.json 2026-09-30T15:25:33.513Z devtools cpu4 bench 4073 perf 93 FCP 2205 LCP 2205 TTI 5460 TBT 217 (recomputed 217)
+   byUrl {"kocioni-disk-prednji-276":110,"0qy3sss5e6eww.js":107}
+   blocking kocioni-disk-prednji-276@2158:207→110 0qy3sss5e6eww.js@3283:115→65 0qy3sss5e6eww.js@5044:81→31 0qy3sss5e6eww.js@5399:61→11
+   bootup 0qy3sss5e6eww.js 1290/1117 | 1tr6a7zmh41cy.js 1260/490 | kocioni-disk-prednji-276 782/5 | Unattributable 310/16
+   main scriptEvaluation:1771 other:1213 styleLayout:590 paintCompositeRender:166 scriptParseCompile:80 parseHTML:32 garbageCollection:13
+verify-perf-lh/v1_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-2-1790781982750.json 2026-09-30T15:25:58.337Z devtools cpu4 bench 4075.5 perf 94 FCP 2295 LCP 2295 TTI 5521 TBT 143 (recomputed 143)
+   byUrl {"0qy3sss5e6eww.js":100,"kocioni-disk-prednji-276":44}
+   blocking 0qy3sss5e6eww.js@3244:116→66 kocioni-disk-prednji-276@2299:94→44 0qy3sss5e6eww.js@5019:71→21 0qy3sss5e6eww.js@5458:63→13
+   bootup 1tr6a7zmh41cy.js 1414/573 | 0qy3sss5e6eww.js 1270/1106 | kocioni-disk-prednji-276 777/8 | Unattributable 293/18
+   main scriptEvaluation:1850 other:1239 styleLayout:630 paintCompositeRender:143 scriptParseCompile:71 parseHTML:31 garbageCollection:14
+verify-perf-lh/v1_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-3-1790782008600.json 2026-09-30T15:26:24.022Z devtools cpu4 bench 3496 perf 95 FCP 2235 LCP 2235 TTI 5682 TBT 135 (recomputed 135)
+   byUrl {"0qy3sss5e6eww.js":132,"kocioni-disk-prednji-276":2}
+   blocking 0qy3sss5e6eww.js@3213:103→53 0qy3sss5e6eww.js@5579:103→53 kocioni-disk-prednji-276@2214:73→2 0qy3sss5e6eww.js@5433:64→14 0qy3sss5e6eww.js@5041:63→13
+   bootup 0qy3sss5e6eww.js 1357/1195 | 1tr6a7zmh41cy.js 1272/497 | kocioni-disk-prednji-276 697/5 | Unattributable 285/17
+   main scriptEvaluation:1879 other:1173 styleLayout:559 paintCompositeRender:145 scriptParseCompile:76 parseHTML:23 garbageCollection:14
+verify-perf-lh/v1_ponuda_kocione-plocice-golf-mobile-devtools-1-1790782286820.json 2026-09-30T15:31:03.062Z devtools cpu4 bench 4046.5 perf 94 FCP 2099 LCP 2099 TTI 5601 TBT 182 (recomputed 182)
+   byUrl {"kocione-plocice-golf":66,"0qy3sss5e6eww.js":116}
+   blocking kocione-plocice-golf@2097:118→66 0qy3sss5e6eww.js@3198:108→58 0qy3sss5e6eww.js@5391:72→22 0qy3sss5e6eww.js@5531:71→21 0qy3sss5e6eww.js@4716:66→16
+   bootup 0qy3sss5e6eww.js 1324/1161 | 1tr6a7zmh41cy.js 1251/503 | kocione-plocice-golf 757/6 | Unattributable 327/14
+   main scriptEvaluation:1840 other:1235 styleLayout:560 paintCompositeRender:139 scriptParseCompile:76 garbageCollection:24 parseHTML:24
+verify-perf-lh/v1_ponuda_kocione-plocice-golf-mobile-devtools-2-1790782311307.json 2026-09-30T15:31:28.082Z devtools cpu4 bench 4170.5 perf 95 FCP 2141 LCP 2141 TTI 5625 TBT 148 (recomputed 148)
+   byUrl {"0qy3sss5e6eww.js":118,"kocione-plocice-golf":30}
+   blocking 0qy3sss5e6eww.js@3207:111→61 0qy3sss5e6eww.js@4817:96→46 kocione-plocice-golf@2135:85→30 0qy3sss5e6eww.js@5563:61→11
+   bootup 0qy3sss5e6eww.js 1251/1099 | 1tr6a7zmh41cy.js 907/330 | kocione-plocice-golf 779/6 | Unattributable 278/13
+   main scriptEvaluation:1611 other:1001 styleLayout:594 paintCompositeRender:147 scriptParseCompile:83 parseHTML:22 garbageCollection:14
+verify-perf-lh/v1_ponuda_kocione-plocice-golf-mobile-devtools-3-1790782336621.json 2026-09-30T15:31:52.497Z devtools cpu4 bench 4105 perf 96 FCP 2105 LCP 2105 TTI 5531 TBT 99 (recomputed 99)
+   byUrl {"0qy3sss5e6eww.js":99,"kocione-plocice-golf":0}
+   blocking 0qy3sss5e6eww.js@3225:104→54 0qy3sss5e6eww.js@4752:76→26 0qy3sss5e6eww.js@5463:68→18 kocione-plocice-golf@2093:62→0
+   bootup 0qy3sss5e6eww.js 1279/1124 | 1tr6a7zmh41cy.js 882/329 | kocione-plocice-golf 662/5 | Unattributable 250/15
+   main scriptEvaluation:1606 other:948 styleLayout:490 paintCompositeRender:121 scriptParseCompile:68 parseHTML:26 garbageCollection:20
+verify-perf-lh/v1_upit-mobile-devtools-1-1790782134158.json 2026-09-30T15:28:30.666Z devtools cpu4 bench 4125.5 perf 91 FCP 2100 LCP 2100 TTI 6558 TBT 297 (recomputed 297)
+   byUrl {"0qy3sss5e6eww.js":297,"upit":0}
+   blocking 0qy3sss5e6eww.js@6409:149→99 0qy3sss5e6eww.js@6163:144→94 0qy3sss5e6eww.js@3237:127→77 0qy3sss5e6eww.js@6005:77→27
+   bootup 0qy3sss5e6eww.js 2197/1870 | 1tr6a7zmh41cy.js 1113/454 | upit 655/10 | Unattributable 302/13
+   main scriptEvaluation:2434 other:1313 styleLayout:458 scriptParseCompile:118 paintCompositeRender:91 garbageCollection:28 parseHTML:26
+verify-perf-lh/v1_upit-mobile-devtools-2-1790782159200.json 2026-09-30T15:28:55.363Z devtools cpu4 bench 3809.5 perf 92 FCP 2107 LCP 2107 TTI 6491 TBT 262 (recomputed 262)
+   byUrl {"0qy3sss5e6eww.js":255,"upit":6}
+   blocking 0qy3sss5e6eww.js@3278:133→83 0qy3sss5e6eww.js@6144:130→80 0qy3sss5e6eww.js@6365:125→75 0qy3sss5e6eww.js@6000:67→17 upit@2102:62→6
+   bootup 0qy3sss5e6eww.js 2119/1806 | 1tr6a7zmh41cy.js 1081/435 | upit 641/8 | Unattributable 315/13
+   main scriptEvaluation:2342 other:1282 styleLayout:447 scriptParseCompile:102 paintCompositeRender:99 parseHTML:30 garbageCollection:29
+verify-perf-lh/v1_upit-mobile-devtools-3-1790782184020.json 2026-09-30T15:29:20.379Z devtools cpu4 bench 4108.5 perf 94 FCP 2071 LCP 2071 TTI 6362 TBT 217 (recomputed 217)
+   byUrl {"0qy3sss5e6eww.js":191,"upit":26}
+   blocking 0qy3sss5e6eww.js@6111:129→79 0qy3sss5e6eww.js@3247:113→63 upit@2067:79→26 0qy3sss5e6eww.js@5971:75→25 0qy3sss5e6eww.js@6289:74→24
+   bootup 0qy3sss5e6eww.js 1990/1681 | 1tr6a7zmh41cy.js 941/368 | upit 641/5 | Unattributable 302/11
+   main scriptEvaluation:2135 other:1214 styleLayout:447 scriptParseCompile:107 paintCompositeRender:92 garbageCollection:26 parseHTML:25
+verify-perf-lh/v1_vozila_volkswagen_golf_golf-7-mobile-devtools-1-1790782045834.json 2026-09-30T15:26:54.091Z devtools cpu4 bench 4048.5 perf 95 FCP 2090 LCP 2090 TTI 5672 TBT 86 (recomputed 86)
+   byUrl {"golf-7":6,"0qy3sss5e6eww.js":80}
+   blocking 0qy3sss5e6eww.js@3195:108→58 0qy3sss5e6eww.js@5267:66→16 golf-7@2123:56→6 0qy3sss5e6eww.js@5616:56→6
+   bootup 1tr6a7zmh41cy.js 1553/576 | 0qy3sss5e6eww.js 1434/1247 | golf-7 757/18 | Unattributable 462/35
+   main scriptEvaluation:2042 other:1603 styleLayout:465 paintCompositeRender:202 scriptParseCompile:78 parseHTML:44 garbageCollection:18
+verify-perf-lh/v1_vozila_volkswagen_golf_golf-7-mobile-devtools-2-1790782077724.json 2026-09-30T15:27:27.027Z devtools cpu4 bench 4139 perf 92 FCP 2147 LCP 2147 TTI 5725 TBT 191 (recomputed 191)
+   byUrl {"0qy3sss5e6eww.js":108,"golf-7":83}
+   blocking 0qy3sss5e6eww.js@3213:112→62 golf-7@2154:95→45 golf-7@2263:88→38 0qy3sss5e6eww.js@5334:84→34 0qy3sss5e6eww.js@5663:62→12 0qy3sss5e6eww.js@5565:51→1
+   bootup 0qy3sss5e6eww.js 1554/1345 | 1tr6a7zmh41cy.js 1426/497 | golf-7 883/22 | Unattributable 442/28
+   main scriptEvaluation:2083 other:1531 styleLayout:607 paintCompositeRender:218 scriptParseCompile:88 parseHTML:42 garbageCollection:20
+verify-perf-lh/v1_vozila_volkswagen_golf_golf-7-mobile-devtools-3-1790782109469.json 2026-09-30T15:27:58.895Z devtools cpu4 bench 4117 perf 93 FCP 2004 LCP 2004 TTI 5654 TBT 206 (recomputed 206)
+   byUrl {"golf-7":115,"0qy3sss5e6eww.js":90}
+   blocking golf-7@2006:154→104 0qy3sss5e6eww.js@3183:112→62 0qy3sss5e6eww.js@5302:74→24 golf-7@3310:61→11 0qy3sss5e6eww.js@5510:53→3 0qy3sss5e6eww.js@5603:52→2
+   bootup 1tr6a7zmh41cy.js 1530/563 | 0qy3sss5e6eww.js 1389/1201 | golf-7 803/15 | Unattributable 460/37
+   main scriptEvaluation:1990 other:1586 styleLayout:507 paintCompositeRender:215 scriptParseCompile:91 parseHTML:39 garbageCollection:20
+
+## C. Step-19 category runs (pre-step-20 build, same client chunks, bench ~4070)
+.lighthouse/_delovi_kocioni-diskovi-mobile-devtools-1.json 2026-09-30T11:33:16.777Z devtools cpu4 bench 4079 perf 90 FCP 2333 LCP 2333 TTI 5826 TBT 264 (recomputed 264)
+   byUrl {"kocioni-diskovi":26,"0qy3sss5e6eww.js":177,"25dplrt_qw3he.js":61}
+   blocking kocioni-diskovi@2183:227→26 0qy3sss5e6eww.js@3145:161→111 25dplrt_qw3he.js@5715:111→61 0qy3sss5e6eww.js@5012:85→35 0qy3sss5e6eww.js@5526:82→32
+   bootup 1tr6a7zmh41cy.js 1839/696 | 0qy3sss5e6eww.js 1393/1220 | kocioni-diskovi 1055/11 | Unattributable 433/22
+   main scriptEvaluation:2219 other:1645 styleLayout:907 paintCompositeRender:192 scriptParseCompile:124 parseHTML:34 garbageCollection:18
+.lighthouse/_delovi_kocioni-diskovi-mobile-devtools-2.json 2026-09-30T11:33:44.598Z devtools cpu4 bench 4078.5 perf 86 FCP 2129 LCP 2129 TTI 5908 TBT 438 (recomputed 438)
+   byUrl {"0qy3sss5e6eww.js":250,"kocioni-diskovi":114,"25dplrt_qw3he.js":74}
+   blocking 0qy3sss5e6eww.js@3196:194→144 kocioni-diskovi@2127:166→114 25dplrt_qw3he.js@5784:124→74 0qy3sss5e6eww.js@5137:116→66 0qy3sss5e6eww.js@5609:90→40
+   bootup 1tr6a7zmh41cy.js 1790/667 | 0qy3sss5e6eww.js 1492/1316 | kocioni-diskovi 973/7 | Unattributable 460/19
+   main scriptEvaluation:2228 other:1724 styleLayout:778 paintCompositeRender:200 scriptParseCompile:97 parseHTML:51 garbageCollection:15
+.lighthouse/_delovi_kocioni-diskovi-mobile-devtools-3.json 2026-09-30T11:34:11.979Z devtools cpu4 bench 4068 perf 89 FCP 2030 LCP 2030 TTI 5911 TBT 352 (recomputed 352)
+   byUrl {"0qy3sss5e6eww.js":212,"kocioni-diskovi":117,"25dplrt_qw3he.js":23}
+   blocking 0qy3sss5e6eww.js@3201:185→135 kocioni-diskovi@2020:155→95 0qy3sss5e6eww.js@5634:95→45 0qy3sss5e6eww.js@5082:82→32 25dplrt_qw3he.js@5838:73→23 kocioni-diskovi@2202:72→22
+   bootup 1tr6a7zmh41cy.js 1990/747 | 0qy3sss5e6eww.js 1552/1365 | kocioni-diskovi 1001/7 | Unattributable 414/23
+   main scriptEvaluation:2346 other:1824 styleLayout:729 paintCompositeRender:233 scriptParseCompile:90 parseHTML:40 garbageCollection:17
+
+## D. Finder's simulated landing runs (the 'simulated TBT 274 ms' claim) — all labelled contended by the finder's own script
+kept/sim_delovi_kocioni_diskovi_volkswagen_golf-1790778248958-contended-_delovi_kocioni-diskovi_volkswagen_golf-mobile-simulate-1.json 2026-09-30T14:23:52.195Z simulate cpu4 bench 1930 perf 76 FCP 1369 LCP 4521 TTI 4824 TBT 334 (recomputed 327)
+   byUrl {"0qy3sss5e6eww.js":327}
+   blocking 0qy3sss5e6eww.js@4260:249→199 0qy3sss5e6eww.js@4664:123→73 0qy3sss5e6eww.js@4509:88→38 0qy3sss5e6eww.js@4597:67→17
+kept/sim_delovi_kocioni_diskovi_volkswagen_golf-1790778274420-error-_delovi_kocioni-diskovi_volkswagen_golf-mobile-simulate-1.json 2026-09-30T14:24:13.363Z simulate cpu4 bench 1589.5 perf 0 FCP NaN LCP NaN TTI undefined TBT NaN (recomputed 0)
+   byUrl {}
+   blocking 
+kept/sim_delovi_kocioni_diskovi_volkswagen_golf-1790778288487-contended-_delovi_kocioni-diskovi_volkswagen_golf-mobile-simulate-1.json 2026-09-30T14:24:37.502Z simulate cpu4 bench 2971 perf 67 FCP 1367 LCP 4844 TTI 5199 TBT 616 (recomputed 614)
+   byUrl {"0qy3sss5e6eww.js":561,"1tr6a7zmh41cy.js":53}
+   blocking 0qy3sss5e6eww.js@4235:476→426 0qy3sss5e6eww.js@5071:133→78 1tr6a7zmh41cy.js@4711:103→53 0qy3sss5e6eww.js@4814:78→28 0qy3sss5e6eww.js@4996:75→25 0qy3sss5e6eww.js@4892:53→3 0qy3sss5e6eww.js@4945:51→1
+kept/sim_delovi_kocioni_diskovi_volkswagen_golf-1790778302701-contended-_delovi_kocioni-diskovi_volkswagen_golf-mobile-simulate-1.json 2026-09-30T14:24:52.120Z simulate cpu4 bench 2723.5 perf 82 FCP 1368 LCP 4435 TTI 4533 TBT 161 (recomputed 148)
+   byUrl {"0qy3sss5e6eww.js":148}
+   blocking 0qy3sss5e6eww.js@4236:178→128 0qy3sss5e6eww.js@4474:62→10 0qy3sss5e6eww.js@4414:60→10
+kept/sim_delovi_kocioni_diskovi_volkswagen_golf-1790778315501-contended-_delovi_kocioni-diskovi_volkswagen_golf-mobile-simulate-1.json 2026-09-30T14:25:05.606Z simulate cpu4 bench 2977.5 perf 80 FCP 1370 LCP 4478 TTI 4732 TBT 215 (recomputed 219)
+   byUrl {"0qy3sss5e6eww.js":219}
+   blocking 0qy3sss5e6eww.js@4267:171→121 0qy3sss5e6eww.js@4632:142→50 0qy3sss5e6eww.js@4546:86→36 0qy3sss5e6eww.js@4484:62→12
+
+## E. Conclusions
+1. Contention, not code, explains most of the finder's numbers. The benchmarkIndex filter (>= 3000) is a single snapshot taken before the load, so it does not catch contention during the run. The root hydration task (react-dom, about 3.2 s) runs the same JS on the same data, yet:
+   - finder runs kept as "ok": 142–304 ms (median ~230): home 221–291, category 221–236, landing 304, product 255–261, Golf 7 285;
+   - quiet runs: 103–254 ms (median ~125).
+   TTI also moves: 5.8–6.8 s in the finder runs against 5.5–5.9 s in quiet runs. Category 837, landing 1019, product 551–699, /pretraga 625 and Golf 7 650 are inflated. /pretraga, /kontakt, /za-majstore and /delovi were each run once during the audit peak, so they are not established (audit rule: 3 reproductions).
+2. Quiet-run medians against BRIEF §9 (TBT <= 200 ms):
+   - over: home 343 (171/353/343) and /upit 262 (297/262/217, J11 inquiry bar 200, 3 of 3 over);
+   - marginal: landing 218 (218/167/256).
+   - within: category 170 (170/169/487/170); product 143, Golf 7 191, /ponuda 148.
+   The step-19 category runs on the same client chunks gave 264/438/352. Across all seven quiet category runs the median is 264, so category sits on the 200 ms line, and every run is over J11's 150 ms.
+3. Performance score: not reproduced in quiet runs. Home 89 (bar 85), category 95 (step-19 batch 89), product 94, landing 93. The misses in the 70s come from contended runs. The "simulated TBT 274 ms on the landing" also comes only from runs that the finder's own script labelled contended (bench 1930–2977). Quiet simulated TBT is 20–82 ms.
+4. Attribution in quiet runs:
+   - react-dom work loop: 99–298 ms of the TBT. This is the root hydration at about 3.2 s plus late tasks at 5.0–5.7 s. It is correct as the main driver.
+   - document parse/style/layout: 0–246 ms. It counts only when FCP lands before it, which makes run-to-run TBT bimodal. This is correct.
+   - GSAP chunk: 0–4 ms.
+   - shell chunk 25dplrt: 0–40 ms (not 51–300 ms).
+   The "GSAP ticker frames" do not contribute materially to TBT.
+5. /upit has its own cause. The zod-classic + RHF chunk (1uyyf-z7kpx1w.js, 102 KB transfer, 80.5 KB unused) arrives at about 5.95 s and is followed by react-dom tasks of 125–149 ms at 6.0–6.4 s. bootup: react-dom 2.0–2.2 s on /upit against 1.3–1.5 s elsewhere. None of the suggested fixes (ProductGrid islands, lazy header sheets, ConsentBanner, idle TextRevealGlobal) touch it. Candidate fixes: zod/mini or a lazily imported resolver.
+6. Method: devtools (applied) throttling is the documented budget method (D112; STOREFRONT SF-12; qa/SEO-ADS), so the finder's method is right. TBT is not a localhost artefact, because hydration cost does not depend on the network, and a fast host (bench ~4000) makes 4x gentler rather than harsher. Under Lighthouse's default Lantern throttling (what PSI uses), TBT passes on every page (20–82 ms), so the field/PSI risk is lower than the applied-throttling numbers suggest.

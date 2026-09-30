@@ -1,0 +1,49 @@
+14:08:36 home-dt attempt 1: ok bench 3391 perf 83 LCP 2519 TBT 425 → home-dt-1790777316560-ok-_-mobile-devtools-1.json
+14:09:17 home-dt attempt 2: ok bench 3458.5 perf 83 LCP 2571 TBT 402 → home-dt-1790777357058-ok-_-mobile-devtools-1.json
+14:10:01 home-dt attempt 3: error bench 1001.5 perf 0 LCP -1 TBT -1 → home-dt-1790777401119-error-_-mobile-devtools-1.json
+14:10:34 home-dt attempt 4: error bench 3095 perf 0 LCP -1 TBT -1 → home-dt-1790777434008-error-_-mobile-devtools-1.json
+14:11:06 home-dt attempt 5: error bench 1879 perf 0 LCP -1 TBT -1 → home-dt-1790777466326-error-_-mobile-devtools-1.json
+14:11:37 home-dt attempt 6: contended bench 2701 perf 93 LCP 2387 TBT 145 → home-dt-1790777497559-contended-_-mobile-devtools-1.json
+14:12:12 home-dt attempt 7: ok bench 3748.5 perf 78 LCP 2547 TBT 623 → home-dt-1790777532529-ok-_-mobile-devtools-1.json
+14:12:45 home-dt attempt 8: ok bench 3083 perf 80 LCP 2455 TBT 553 → home-dt-1790777565816-ok-_-mobile-devtools-1.json
+14:13:16 home-dt attempt 9: contended bench 2602.5 perf 80 LCP 2413 TBT 569 → home-dt-1790777596344-contended-_-mobile-devtools-1.json
+14:13:46 home-dt attempt 10: ok bench 3136.5 perf 87 LCP 2490 TBT 334 → home-dt-1790777626914-ok-_-mobile-devtools-1.json
+14:13:46 home-dt: 5/5 valid runs
+14:14:23 prod-dt attempt 1: ok bench 3085.5 perf 80 LCP 2497 TBT 551 → prod-dt-1790777663122-ok-_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1.json
+14:14:55 prod-dt attempt 2: contended bench 1771 perf 80 LCP 2145 TBT 669 → prod-dt-1790777695733-contended-_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1.json
+14:15:23 prod-dt attempt 3: error bench 2729.5 perf 0 LCP -1 TBT -1 → prod-dt-1790777723969-error-_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1.json
+14:15:56 prod-dt attempt 4: error bench 1730 perf 0 LCP -1 TBT -1 → prod-dt-1790777756596-error-_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1.json
+14:16:45 prod-dt attempt 5: contended bench 2930.5 perf 78 LCP 2197 TBT 768 → prod-dt-1790777805519-contended-_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1.json
+14:17:33 prod-dt attempt 6: error bench 1998.5 perf 0 LCP -1 TBT -1 → prod-dt-1790777853819-error-_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1.json
+14:18:10 prod-dt attempt 7: contended bench 2798 perf 84 LCP 2631 TBT 379 → prod-dt-1790777890588-contended-_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1.json
+14:19:13 prod-dt attempt 8: contended bench 790 perf 73 LCP 2890 TBT 678 → prod-dt-1790777953218-contended-_deo_kocioni-disk-prednji-276-24-mm-demo-0004-mobile-devtools-1.json
+14:19:13 prod-dt: 1/2 valid runs
+14:20:03 cat-dt attempt 1: contended bench 1242 perf 81 LCP 2936 TBT 358 → cat-dt-1790778003464-contended-_delovi_kocioni-diskovi-mobile-devtools-1.json
+14:21:21 cat-dt attempt 2: contended bench 1603.5 perf 53 LCP 3634 TBT 2267 → cat-dt-1790778081471-contended-_delovi_kocioni-diskovi-mobile-devtools-1.json
+14:22:04 cat-dt attempt 3: contended bench 2712.5 perf 71 LCP 2953 TBT 741 → cat-dt-1790778123995-contended-_delovi_kocioni-diskovi-mobile-devtools-1.json
+14:22:46 cat-dt attempt 4: contended bench 796 perf 75 LCP 2454 TBT 821 → cat-dt-1790778166503-contended-_delovi_kocioni-diskovi-mobile-devtools-1.json
+14:23:38 cat-dt attempt 5: ok bench 3100 perf 77 LCP 2513 TBT 674 → cat-dt-1790778218705-ok-_delovi_kocioni-diskovi-mobile-devtools-1.json
+14:23:38 cat-dt: 1/1 valid runs
+14:24:08 sim_delovi_kocioni_diskovi_volkswagen_golf attempt 1: contended bench 1930 perf 76 LCP 4521 TBT 334 → sim_delovi_kocioni_diskovi_volkswagen_golf-1790778248958-contended-_delovi_kocioni-diskovi_volkswagen_golf-mobile-simulate-1.json
+14:24:34 sim_delovi_kocioni_diskovi_volkswagen_golf attempt 2: error bench 1589.5 perf 0 LCP -1 TBT -1 → sim_delovi_kocioni_diskovi_volkswagen_golf-1790778274420-error-_delovi_kocioni-diskovi_volkswagen_golf-mobile-simulate-1.json
+14:24:48 sim_delovi_kocioni_diskovi_volkswagen_golf attempt 3: contended bench 2971 perf 67 LCP 4844 TBT 616 → sim_delovi_kocioni_diskovi_volkswagen_golf-1790778288487-contended-_delovi_kocioni-diskovi_volkswagen_golf-mobile-simulate-1.json
+14:25:02 sim_delovi_kocioni_diskovi_volkswagen_golf attempt 4: contended bench 2723.5 perf 82 LCP 4435 TBT 161 → sim_delovi_kocioni_diskovi_volkswagen_golf-1790778302701-contended-_delovi_kocioni-diskovi_volkswagen_golf-mobile-simulate-1.json
+14:25:15 sim_delovi_kocioni_diskovi_volkswagen_golf attempt 5: contended bench 2977.5 perf 80 LCP 4478 TBT 215 → sim_delovi_kocioni_diskovi_volkswagen_golf-1790778315501-contended-_delovi_kocioni-diskovi_volkswagen_golf-mobile-simulate-1.json
+14:25:15 sim_delovi_kocioni_diskovi_volkswagen_golf: 0/1 valid runs
+14:25:29 sim_za_majstore attempt 1: contended bench 2033 perf 83 LCP 4436 TBT 128 → sim_za_majstore-1790778329195-contended-_za-majstore-mobile-simulate-1.json
+14:25:54 sim_za_majstore attempt 2: contended bench 2428.5 perf 84 LCP 4415 TBT 105 → sim_za_majstore-1790778354244-contended-_za-majstore-mobile-simulate-1.json
+14:26:16 sim_za_majstore attempt 3: error bench 937.5 perf 0 LCP -1 TBT -1 → sim_za_majstore-1790778376679-error-_za-majstore-mobile-simulate-1.json
+14:26:28 sim_za_majstore attempt 4: contended bench 1219 perf 83 LCP 4445 TBT 140 → sim_za_majstore-1790778388487-contended-_za-majstore-mobile-simulate-1.json
+14:26:39 sim_za_majstore attempt 5: contended bench 2920.5 perf 85 LCP 4365 TBT 64 → sim_za_majstore-1790778399036-contended-_za-majstore-mobile-simulate-1.json
+14:26:39 sim_za_majstore: 0/1 valid runs
+14:26:50 sim_upit attempt 1: ok bench 3103.5 perf 79 LCP 5009 TBT 168 → sim_upit-1790778410563-ok-_upit-mobile-simulate-1.json
+14:26:50 sim_upit: 1/1 valid runs
+14:27:04 sim_ponuda_kocione_plocice_golf attempt 1: ok bench 3134 perf 82 LCP 4473 TBT 172 → sim_ponuda_kocione_plocice_golf-1790778424068-ok-_ponuda_kocione-plocice-golf-mobile-simulate-1.json
+14:27:04 sim_ponuda_kocione_plocice_golf: 1/1 valid runs
+14:27:15 sim_kontakt attempt 1: contended bench 2470.5 perf 84 LCP 4309 TBT 129 → sim_kontakt-1790778435827-contended-_kontakt-mobile-simulate-1.json
+14:27:37 sim_kontakt attempt 2: contended bench 2553 perf 85 LCP 4267 TBT 91 → sim_kontakt-1790778457011-contended-_kontakt-mobile-simulate-1.json
+14:27:56 sim_kontakt attempt 3: contended bench 892 perf 62 LCP 4157 TBT 1264 → sim_kontakt-1790778476897-contended-_kontakt-mobile-simulate-1.json
+14:28:07 sim_kontakt attempt 4: ok bench 3315 perf 86 LCP 4207 TBT 48 → sim_kontakt-1790778487563-ok-_kontakt-mobile-simulate-1.json
+14:28:07 sim_kontakt: 1/1 valid runs
+14:28:46 dt_delovi attempt 1: contended bench 2893 perf 82 LCP 2442 TBT 491 → dt_delovi-1790778526362-contended-_delovi-mobile-devtools-1.json
+14:29:25 dt_delovi attempt 2: contended bench 911.5 perf 73 LCP 2797 TBT 755 → dt_delovi-1790778565926-contended-_delovi-mobile-devtools-1.json

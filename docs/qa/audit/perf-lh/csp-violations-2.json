@@ -1,0 +1,33 @@
+{
+ "base": "http://localhost:3200",
+ "rows": [
+  {
+   "path": "/za-majstore/registracija",
+   "csp": [
+    {
+     "directive": "script-src",
+     "effective": "script-src",
+     "blocked": "eval",
+     "source": "http://localhost:3200/_next/static/chunks/1uyyf-z7kpx1w.js",
+     "line": 1,
+     "sample": "",
+     "disposition": "enforce"
+    }
+   ],
+   "console": [],
+   "pageErrors": []
+  },
+  {
+   "path": "/prijava",
+   "csp": [],
+   "console": [],
+   "pageErrors": []
+  },
+  {
+   "path": "/korpa",
+   "csp": [],
+   "console": [],
+   "pageErrors": []
+  }
+ ]
+}

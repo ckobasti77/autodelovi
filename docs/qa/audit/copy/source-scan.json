@@ -1,0 +1,1751 @@
+[
+ {
+  "file": "app/(landing)/ponuda/[slug]/page.tsx",
+  "line": 121,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Plaćanje pri preuzimanju"
+ },
+ {
+  "file": "app/(landing)/ponuda/[slug]/page.tsx",
+  "line": 122,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Ili lično preuzimanje u radnji, bez troška."
+ },
+ {
+  "file": "app/(landing)/ponuda/[slug]/page.tsx",
+  "line": 198,
+  "kind": "jsx-text",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Proverićemo za vas"
+ },
+ {
+  "file": "app/(shop)/deo/[slug]/page.tsx",
+  "line": 324,
+  "kind": "jsx-text",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Lično preuzimanje bez troška · plaćanje gotovinom ili karticom"
+ },
+ {
+  "file": "app/(shop)/majstor/cenovnik/preuzmi/route.ts",
+  "line": 25,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "private, no-store"
+ },
+ {
+  "file": "app/(shop)/page.tsx",
+  "line": 37,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Plaćanje pouzećem ili pri preuzimanju u radnji."
+ },
+ {
+  "file": "app/(shop)/page.tsx",
+  "line": 64,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Kurir {x}{x}; preuzimanje u radnji bez troška."
+ },
+ {
+  "file": "app/(shop)/porudzbina/hvala/[token]/page.tsx",
+  "line": 59,
+  "kind": "jsx-text",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "; javićemo se kad je potvrdimo."
+ },
+ {
+  "file": "app/(shop)/porudzbina/hvala/[token]/page.tsx",
+  "line": 63,
+  "kind": "jsx-text",
+  "rules": [
+   "english"
+  ],
+  "text": "Status pratite na"
+ },
+ {
+  "file": "app/(shop)/pretraga/page.tsx",
+  "line": 35,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Rezultati za „{x}“: delovi po OEM i zamenskom broju, sa cenama sa PDV-om i stanjem. Pouzeće ili preuzimanje u radnji."
+ },
+ {
+  "file": "app/(shop)/pretraga/page.tsx",
+  "line": 165,
+  "kind": "jsx-text",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "“ nemamo artikal u katalogu. Pošaljite upit — proverićemo kod dobavljača i javiti vam se u toku radnog dana."
+ },
+ {
+  "file": "app/(shop)/vozila/[marka]/[model]/[generacija]/page.tsx",
+  "line": 200,
+  "kind": "jsx-text",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "pošaljite broj šasije i šta vam treba — proverićemo kod dobavljača."
+ },
+ {
+  "file": "app/(shop)/za-majstore/hvala/page.tsx",
+  "line": 33,
+  "kind": "jsx-text",
+  "rules": [
+   "english"
+  ],
+  "text": "Status naloga"
+ },
+ {
+  "file": "app/(shop)/za-majstore/page.tsx",
+  "line": 38,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Kurir donosi na adresu servisa iz profila; adresu menjate pri svakoj porudžbini. Lično preuzimanje je bez troška."
+ },
+ {
+  "file": "app/(shop)/za-majstore/registracija/page.tsx",
+  "line": 66,
+  "kind": "jsx-text",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Registracija preko sajta je trenutno isključena. Pozovite nas ili pišite na Viber — otvorićemo nalog."
+ },
+ {
+  "file": "app/admin/(panel)/izvoz/[vrsta]/route.ts",
+  "line": 157,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "porudzbine-{x}.csv"
+ },
+ {
+  "file": "app/admin/(print)/porudzbine/[broj]/otpremnica/page.tsx",
+  "line": 15,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/admin/porudzbine/{x}/otpremnica"
+ },
+ {
+  "file": "app/admin/(print)/porudzbine/[broj]/predracun/page.tsx",
+  "line": 15,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/admin/porudzbine/{x}/predracun"
+ },
+ {
+  "file": "app/opengraph-image.tsx",
+  "line": 11,
+  "kind": "literal",
+  "rules": [
+   "title-case"
+  ],
+  "text": "Delovi za VW, Audi, Škoda, SEAT i Cupra"
+ },
+ {
+  "file": "app/opengraph-image.tsx",
+  "line": 13,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Pouzeće ili preuzimanje u radnji"
+ },
+ {
+  "file": "app/sitemaps/[file]/route.ts",
+  "line": 20,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Not found"
+ },
+ {
+  "file": "app/sitemaps/[file]/route.ts",
+  "line": 22,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Not found"
+ },
+ {
+  "file": "app/slike/deo/[file]/route.ts",
+  "line": 12,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Not found"
+ },
+ {
+  "file": "app/slike/deo/[file]/route.ts",
+  "line": 18,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Not found"
+ },
+ {
+  "file": "app/slike/deo/[file]/route.ts",
+  "line": 20,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Not found"
+ },
+ {
+  "file": "components/admin/catalog/CategoriesAdmin.tsx",
+  "line": 54,
+  "kind": "attr:description",
+  "rules": [
+   "ijekavian"
+  ],
+  "text": "Stablo kataloga, tekstovi za pretraživače, sličice i veza sa delovima 3D automobila."
+ },
+ {
+  "file": "components/admin/catalog/CategoriesAdmin.tsx",
+  "line": 270,
+  "kind": "attr:label",
+  "rules": [
+   "ijekavian"
+  ],
+  "text": "Naslov za pretraživače"
+ },
+ {
+  "file": "components/admin/catalog/CategoriesAdmin.tsx",
+  "line": 279,
+  "kind": "attr:label",
+  "rules": [
+   "ijekavian"
+  ],
+  "text": "Opis za pretraživače"
+ },
+ {
+  "file": "components/admin/catalog/CategoriesAdmin.tsx",
+  "line": 397,
+  "kind": "jsx-text",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Kategorija se vidi u katalogu i pretrazi, ali ne i na 3D automobilu."
+ },
+ {
+  "file": "components/admin/dashboard/Dashboard.tsx",
+  "line": 64,
+  "kind": "jsx-text",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "isto kao prošle nedelje"
+ },
+ {
+  "file": "components/admin/import/ImportBatchDetail.tsx",
+  "line": 74,
+  "kind": "jsx-text",
+  "rules": [
+   "english"
+  ],
+  "text": "Status"
+ },
+ {
+  "file": "components/admin/inquiries/InquiriesList.tsx",
+  "line": 227,
+  "kind": "attr:label",
+  "rules": [
+   "english"
+  ],
+  "text": "Status upita"
+ },
+ {
+  "file": "components/admin/MechanicsAdminList.tsx",
+  "line": 148,
+  "kind": "attr:label",
+  "rules": [
+   "english"
+  ],
+  "text": "Status registracije"
+ },
+ {
+  "file": "components/admin/orders/OrderDetail.tsx",
+  "line": 260,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Status nije promenjen."
+ },
+ {
+  "file": "components/admin/orders/OrdersList.tsx",
+  "line": 79,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Za preuzimanje"
+ },
+ {
+  "file": "components/admin/orders/OrdersList.tsx",
+  "line": 348,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "porudzbine-{x}.csv"
+ },
+ {
+  "file": "components/admin/products/ProductsList.tsx",
+  "line": 359,
+  "kind": "attr:label",
+  "rules": [
+   "english"
+  ],
+  "text": "Status artikla"
+ },
+ {
+  "file": "components/admin/products/SeoFields.tsx",
+  "line": 41,
+  "kind": "attr:label",
+  "rules": [
+   "ijekavian"
+  ],
+  "text": "Naslov za pretraživače"
+ },
+ {
+  "file": "components/admin/products/SeoFields.tsx",
+  "line": 52,
+  "kind": "attr:label",
+  "rules": [
+   "ijekavian"
+  ],
+  "text": "Opis za pretraživače"
+ },
+ {
+  "file": "components/admin/products/SeoFields.tsx",
+  "line": 73,
+  "kind": "jsx-text",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Pregled u pretrazi"
+ },
+ {
+  "file": "components/admin/products/StockDialog.tsx",
+  "line": 97,
+  "kind": "literal",
+  "rules": [
+   "ijekavian"
+  ],
+  "text": "Promena (+ prijem, − otpis)"
+ },
+ {
+  "file": "components/admin/settings/AdLandingsTab.tsx",
+  "line": 98,
+  "kind": "jsx-text",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Odredišne strane za oglase: naslov ponavlja obećanje iz oglasa, ispod su izabrani artikli (ili kategorija za izabrano vozilo), telefon, Viber i upit. Po pravilu nisu u Google pretrazi, da ne takmiče sa stranama kategorija. Izmena je vidljiv"
+ },
+ {
+  "file": "components/admin/settings/AdLandingsTab.tsx",
+  "line": 122,
+  "kind": "jsx-text",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "U pretrazi"
+ },
+ {
+  "file": "components/admin/settings/AdLandingsTab.tsx",
+  "line": 226,
+  "kind": "attr:label",
+  "rules": [
+   "ijekavian"
+  ],
+  "text": "Naslov stranice (u pretraživaču)"
+ },
+ {
+  "file": "components/admin/settings/AdLandingsTab.tsx",
+  "line": 353,
+  "kind": "attr:label",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Prikazati u Google pretrazi"
+ },
+ {
+  "file": "components/admin/settings/SeoPanels.tsx",
+  "line": 44,
+  "kind": "jsx-text",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "U pretrazi:"
+ },
+ {
+  "file": "components/admin/settings/SeoPanels.tsx",
+  "line": 67,
+  "kind": "attr:aria-label",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "U pretrazi"
+ },
+ {
+  "file": "components/admin/settings/SeoPanels.tsx",
+  "line": 94,
+  "kind": "literal",
+  "rules": [
+   "title-case"
+  ],
+  "text": "Google Merchant Center (XML)"
+ },
+ {
+  "file": "components/admin/shell/nav.ts",
+  "line": 59,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "dashboard pocetna"
+ },
+ {
+  "file": "components/admin/shell/nav.ts",
+  "line": 72,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "porudzbine narudzbine"
+ },
+ {
+  "file": "components/admin/shell/nav.ts",
+  "line": 202,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "firma dostava placanje pracenje"
+ },
+ {
+  "file": "components/admin/system/EmailsAdmin.tsx",
+  "line": 143,
+  "kind": "attr:aria-label",
+  "rules": [
+   "english"
+  ],
+  "text": "Status poruke"
+ },
+ {
+  "file": "components/cart/CartPageView.tsx",
+  "line": 59,
+  "kind": "jsx-text",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Bez plaćanja karticom na sajtu. Plaćate pouzećem, pri preuzimanju ili virmanom."
+ },
+ {
+  "file": "components/cart/CartView.tsx",
+  "line": 46,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Na stanju je još {x} Smanjite količinu."
+ },
+ {
+  "file": "components/cart/CartView.tsx",
+  "line": 222,
+  "kind": "literal",
+  "rules": [
+   "rsd-space"
+  ],
+  "text": "Preuzimanje 0 RSD"
+ },
+ {
+  "file": "components/catalog/AddToCartButton.tsx",
+  "line": 81,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "{x}#obavestenje"
+ },
+ {
+  "file": "components/catalog/CategoryListingView.tsx",
+  "line": 267,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Za {x} trenutno nemamo {x} na stanju. Pošaljite upit — proverićemo kod dobavljača i javiti vam se u toku radnog dana."
+ },
+ {
+  "file": "components/catalog/CategoryListingView.tsx",
+  "line": 268,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Promenite filtere ili pošaljite upit — proverićemo kod dobavljača."
+ },
+ {
+  "file": "components/checkout/CheckoutForm.tsx",
+  "line": 544,
+  "kind": "literal",
+  "rules": [
+   "rsd-space"
+  ],
+  "text": "0 RSD"
+ },
+ {
+  "file": "components/home/HomeSections.tsx",
+  "line": 26,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Upišite OEM broj kako god ga imate, izaberite vozilo i motor ili kliknite na deo na 3D prikazu."
+ },
+ {
+  "file": "components/home/HomeSections.tsx",
+  "line": 33,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Platite pri preuzimanju"
+ },
+ {
+  "file": "components/mechanic/MechanicProfileForm.tsx",
+  "line": 209,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Pouzeće, pri preuzimanju ili virman"
+ },
+ {
+  "file": "components/mechanic/PriceListPicker.tsx",
+  "line": 121,
+  "kind": "jsx-text",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Cene su sa PDV-om i vašim rabatom na dan preuzimanja. Najviše"
+ },
+ {
+  "file": "components/mechanic/QuickOrder.tsx",
+  "line": 481,
+  "kind": "jsx-text",
+  "rules": [
+   "english"
+  ],
+  "text": "Status upita"
+ },
+ {
+  "file": "components/mechanic/QuickOrder.tsx",
+  "line": 573,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Na stanju je još {x} kom."
+ },
+ {
+  "file": "components/mechanic/QuickOrder.tsx",
+  "line": 674,
+  "kind": "literal",
+  "rules": [
+   "x-dimension"
+  ],
+  "text": "5Q0 698 151 x4"
+ },
+ {
+  "file": "components/mechanic/QuickOrder.tsx",
+  "line": 675,
+  "kind": "literal",
+  "rules": [
+   "hyphen-range",
+   "x-dimension"
+  ],
+  "text": "2x 1K0-698-151"
+ },
+ {
+  "file": "components/mechanic/QuickOrderDemo.tsx",
+  "line": 12,
+  "kind": "literal",
+  "rules": [
+   "hyphen-range",
+   "x-dimension"
+  ],
+  "text": "1k0-615-301-aa 2 5Q0 698 151 x4 2x 1K0.698.151 OEM: 03L 115 562"
+ },
+ {
+  "file": "components/product/BackInStockForm.tsx",
+  "line": 57,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Već ste prijavljeni. Javićemo vam na {x} kad stigne."
+ },
+ {
+  "file": "components/product/BackInStockForm.tsx",
+  "line": 58,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Javićemo vam na {x} kad stigne."
+ },
+ {
+  "file": "components/product/FitmentBadge.tsx",
+  "line": 92,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Za {x} izaberite generaciju i motor"
+ },
+ {
+  "file": "components/product/RetiredProduct.tsx",
+  "line": 41,
+  "kind": "jsx-text",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": ") više ne prodajemo. Pogledajte zamenu u kategoriji ili nam pošaljite upit — proverićemo kod dobavljača."
+ },
+ {
+  "file": "components/three/canvas/materials.ts",
+  "line": 134,
+  "kind": "template",
+  "rules": [
+   "english"
+  ],
+  "text": "float xrNdv = abs( dot( normalize( vXrN ), normalize( vXrV ) ) ); float xrRim = clamp( pow( clamp( 1.0 - xrNdv, 0.0, 1.0 ), uXrRimPower ) * uXrRimScale, 0.0, 1.0 ); float xrHi = clamp( max( uHiHover * {x}, uHiSelect * {x} ), 0.0, 1.0 ); vec"
+ },
+ {
+  "file": "components/ui/Button.tsx",
+  "line": 14,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "aria-disabled:cursor-not-allowed aria-disabled:active:translate-y-0"
+ },
+ {
+  "file": "components/ui/Menu.tsx",
+  "line": 32,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "flex min-h-10 cursor-pointer select-none items-center gap-2.5 rounded-xs px-2.5 type-body-s outline-none data-[highlighted]:bg-surface-4 data-[disabled]:cursor-not-allowed data-[disabled]:text-ink-4"
+ },
+ {
+  "file": "lib/admin/format.ts",
+  "line": 108,
+  "kind": "template",
+  "rules": [
+   "straight-quotes"
+  ],
+  "text": "\"{x}\""
+ },
+ {
+  "file": "lib/catalog/partNotes.ts",
+  "line": 11,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Uz usisnu granu uvek uzmite nove dihtunge."
+ },
+ {
+  "file": "lib/catalog/partNotes.ts",
+  "line": 18,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Uz karter uzmite novi dihtung i zavrtanj za ispust ulja."
+ },
+ {
+  "file": "lib/catalog/taxonomy.ts",
+  "line": 564,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Filter ulja"
+ },
+ {
+  "file": "lib/catalog/taxonomy.ts",
+  "line": 571,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Filter vazduha"
+ },
+ {
+  "file": "lib/catalog/taxonomy.ts",
+  "line": 578,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Filter goriva"
+ },
+ {
+  "file": "lib/catalog/taxonomy.ts",
+  "line": 585,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Filter kabine"
+ },
+ {
+  "file": "lib/domain/attribution.ts",
+  "line": 50,
+  "kind": "literal",
+  "rules": [
+   "ijekavian"
+  ],
+  "text": "Pretraživač (organski)"
+ },
+ {
+  "file": "lib/domain/orderStateMachine.ts",
+  "line": 119,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "„Spremna za preuzimanje“ važi samo za lično preuzimanje."
+ },
+ {
+  "file": "lib/domain/vin/vagModelCodes.ts",
+  "line": 17,
+  "kind": "literal",
+  "rules": [
+   "title-case"
+  ],
+  "text": "Golf V / Golf VI, Jetta"
+ },
+ {
+  "file": "lib/domain/vin/wmi.ts",
+  "line": 30,
+  "kind": "literal",
+  "rules": [
+   "title-case"
+  ],
+  "text": "Audi Sport GmbH (quattro GmbH)"
+ },
+ {
+  "file": "lib/domain/vin/wmi.ts",
+  "line": 46,
+  "kind": "literal",
+  "rules": [
+   "title-case"
+  ],
+  "text": "Volkswagen, Južna Afrika"
+ },
+ {
+  "file": "lib/domain/vin/wmi.ts",
+  "line": 49,
+  "kind": "literal",
+  "rules": [
+   "title-case"
+  ],
+  "text": "Volkswagen Group Rus"
+ },
+ {
+  "file": "lib/email/catalog.ts",
+  "line": 27,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Spremna za preuzimanje"
+ },
+ {
+  "file": "lib/email/catalog.ts",
+  "line": 29,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Status → spremna za preuzimanje."
+ },
+ {
+  "file": "lib/email/html.ts",
+  "line": 342,
+  "kind": "template",
+  "rules": [
+   "english"
+  ],
+  "text": ":root { color-scheme: light dark; supported-color-schemes: light dark; } body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; } table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; } a[x-apple-data-detectors"
+ },
+ {
+  "file": "lib/email/html.ts",
+  "line": 379,
+  "kind": "template",
+  "rules": [
+   "english"
+  ],
+  "text": "<div style=\"display:none;max-height:0;max-width:0;overflow:hidden;opacity:0;mso-hide:all;font-size:1px;line-height:1px;color:{x};\">{x}{x}</div>"
+ },
+ {
+  "file": "lib/email/html.ts",
+  "line": 413,
+  "kind": "template",
+  "rules": [
+   "english"
+  ],
+  "text": "<!doctype html> <html lang=\"sr-Latn-RS\" xmlns=\"http://www.w3.org/1999/xhtml\"> <head> <meta charset=\"utf-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"> <meta nam"
+ },
+ {
+  "file": "lib/email/samples.ts",
+  "line": 45,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Filter ulja"
+ },
+ {
+  "file": "lib/email/samples.ts",
+  "line": 60,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "{x}/porudzbina/{x}"
+ },
+ {
+  "file": "lib/email/samples.ts",
+  "line": 83,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Plaćate kuriru gotovinom pri preuzimanju paketa."
+ },
+ {
+  "file": "lib/email/samples.ts",
+  "line": 121,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Set dihtunga za turbinu"
+ },
+ {
+  "file": "lib/email/samples.ts",
+  "line": 130,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Staru turbinu vratite pri preuzimanju — kaucija se ne naplaćuje."
+ },
+ {
+  "file": "lib/email/samples.ts",
+  "line": 168,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "{x}/porudzbina/{x}/predracun"
+ },
+ {
+  "file": "lib/email/samples.ts",
+  "line": 183,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Lično preuzimanje"
+ },
+ {
+  "file": "lib/email/samples.ts",
+  "line": 186,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Gotovinom pri preuzimanju"
+ },
+ {
+  "file": "lib/email/samples.ts",
+  "line": 216,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "{x}/deo/kocione-plocice-prednje-trw"
+ },
+ {
+  "file": "lib/email/samples.ts",
+  "line": 217,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "{x}/obavestenja/odjava/{x}"
+ },
+ {
+  "file": "lib/email/samples.ts",
+  "line": 241,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "{x}/admin/porudzbine/SK-2026-000187"
+ },
+ {
+  "file": "lib/email/samples.ts",
+  "line": 285,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "{x}/admin/porudzbine/SK-2026-000188"
+ },
+ {
+  "file": "lib/email/samples.ts",
+  "line": 303,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Filter ulja"
+ },
+ {
+  "file": "lib/email/samples.ts",
+  "line": 318,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "{x}/admin/porudzbine/SK-2026-000186"
+ },
+ {
+  "file": "lib/email/templates/customer.ts",
+  "line": 44,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Status upita"
+ },
+ {
+  "file": "lib/email/templates/customer.ts",
+  "line": 69,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Kad prihvatite ponudu, pravimo porudžbinu po ovim cenama. Plaćate pouzećem, pri preuzimanju ili virmanom — ništa unapred preko sajta."
+ },
+ {
+  "file": "lib/email/templates/customer.ts",
+  "line": 156,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Status registracije"
+ },
+ {
+  "file": "lib/email/templates/order.ts",
+  "line": 85,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Podaci za uplatu još nisu upisani u sistem; javićemo vam ih telefonom ili e-poštom."
+ },
+ {
+  "file": "lib/email/templates/order.ts",
+  "line": 131,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Javićemo vam kad bude spremna za preuzimanje."
+ },
+ {
+  "file": "lib/email/templates/order.ts",
+  "line": 171,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Ako vam deo treba hitno ili želite zamenu drugog proizvođača, javite se — proverićemo šta je odmah dostupno."
+ },
+ {
+  "file": "lib/email/templates/order.ts",
+  "line": 190,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Pri preuzimanju plaćate {x} ({x})."
+ },
+ {
+  "file": "lib/email/templates/order.ts",
+  "line": 195,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Porudžbina je spremna za preuzimanje."
+ },
+ {
+  "file": "lib/email/templates/order.ts",
+  "line": 213,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Porudžbina {x} je spremna za preuzimanje"
+ },
+ {
+  "file": "lib/email/templates/order.ts",
+  "line": 269,
+  "kind": "template",
+  "rules": [
+   "ijekavian"
+  ],
+  "text": "Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Uslovi i obrazac su na stranici [Reklamacije i povrat]({x})."
+ },
+ {
+  "file": "lib/email/templates/order.ts",
+  "line": 278,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Proverite deo pre ugradnje; reklamacije i povrat — uslovi u poruci."
+ },
+ {
+  "file": "lib/excel/importWorkbooks.ts",
+  "line": 94,
+  "kind": "literal",
+  "rules": [
+   "hyphen-range"
+  ],
+  "text": "Primena: vozila odvojena sa ;, npr. „VW Golf VII 2012-2020 [CRLB, DFGA]; Škoda Octavia III“. Nazive vidite na listu „Vozila“."
+ },
+ {
+  "file": "lib/excel/importWorkbooks.ts",
+  "line": 285,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Status reda"
+ },
+ {
+  "file": "lib/format/date.ts",
+  "line": 32,
+  "kind": "template",
+  "rules": [
+   "english"
+  ],
+  "text": "Invalid date: {x}"
+ },
+ {
+  "file": "lib/format/money.ts",
+  "line": 78,
+  "kind": "template",
+  "rules": [
+   "straight-quotes"
+  ],
+  "text": "Cannot read an amount from \"{x}\""
+ },
+ {
+  "file": "lib/i18n/sr/admin.ts",
+  "line": 14,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Za preuzimanje"
+ },
+ {
+  "file": "lib/i18n/sr/admin.ts",
+  "line": 27,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Spremna za preuzimanje"
+ },
+ {
+  "file": "lib/i18n/sr/admin.ts",
+  "line": 73,
+  "kind": "literal",
+  "rules": [
+   "ijekavian"
+  ],
+  "text": "Pretraživač"
+ },
+ {
+  "file": "lib/i18n/sr/admin.ts",
+  "line": 110,
+  "kind": "literal",
+  "rules": [
+   "ijekavian"
+  ],
+  "text": "Prijem robe"
+ },
+ {
+  "file": "lib/i18n/sr/mechanic.ts",
+  "line": 55,
+  "kind": "literal",
+  "rules": [
+   "hyphen-range",
+   "x-dimension"
+  ],
+  "text": "1K0615301AA 2 5Q0 698 151 x4 2x 1K0-698-151"
+ },
+ {
+  "file": "lib/i18n/sr/shop.ts",
+  "line": 30,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Spremna za preuzimanje"
+ },
+ {
+  "file": "lib/i18n/sr/shop.ts",
+  "line": 73,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Lično preuzimanje"
+ },
+ {
+  "file": "lib/i18n/sr/shop.ts",
+  "line": 79,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Gotovinom pri preuzimanju"
+ },
+ {
+  "file": "lib/i18n/sr/shop.ts",
+  "line": 80,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Karticom pri preuzimanju"
+ },
+ {
+  "file": "lib/i18n/sr/shop.ts",
+  "line": 90,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Plaćate pouzećem kuriru pri preuzimanju paketa."
+ },
+ {
+  "file": "lib/import/fields.ts",
+  "line": 144,
+  "kind": "literal",
+  "rules": [
+   "hyphen-range"
+  ],
+  "text": "Kataloški broj proizvođača dela (npr. ATE 24.0125-0158.1)."
+ },
+ {
+  "file": "lib/import/fields.ts",
+  "line": 245,
+  "kind": "literal",
+  "rules": [
+   "hyphen-range"
+  ],
+  "text": "Vozila odvojena sa ;, npr. „VW Golf VII 2012-2020 [CRLB, CUNA]; Škoda Octavia III“. Nazive vozila vidite na listu „Vozila“."
+ },
+ {
+  "file": "lib/import/fields.ts",
+  "line": 313,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "min kolicina"
+ },
+ {
+  "file": "lib/import/row.ts",
+  "line": 390,
+  "kind": "literal",
+  "rules": [
+   "rsd-space"
+  ],
+  "text": "Cena je 0 RSD — kupci će videti „cena na upit“."
+ },
+ {
+  "file": "lib/seo/feeds.ts",
+  "line": 46,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "available for order"
+ },
+ {
+  "file": "lib/seo/feeds.ts",
+  "line": 47,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "out of stock"
+ },
+ {
+  "file": "lib/seo/feeds.ts",
+  "line": 75,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Cena sa PDV-om. Plaćanje pouzećem ili pri preuzimanju u radnji."
+ },
+ {
+  "file": "lib/seo/feeds.ts",
+  "line": 146,
+  "kind": "template",
+  "rules": [
+   "straight-quotes"
+  ],
+  "text": "\"{x}\""
+ },
+ {
+  "file": "lib/seo/landingCopy.ts",
+  "line": 100,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Uporedite OEM broj sa starim delom — najtraženiji brojevi u ovoj grupi su {x}. Kad niste sigurni, pošaljite broj šasije (VIN) kroz upit i proverićemo umesto vas."
+ },
+ {
+  "file": "lib/seo/offlineConversions.ts",
+  "line": 9,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Google Click ID"
+ },
+ {
+  "file": "lib/seo/offlineConversions.ts",
+  "line": 10,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Conversion Name"
+ },
+ {
+  "file": "lib/seo/offlineConversions.ts",
+  "line": 11,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Conversion Time"
+ },
+ {
+  "file": "lib/seo/offlineConversions.ts",
+  "line": 16,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Zavrsena porudzbina"
+ },
+ {
+  "file": "lib/seo/templates.ts",
+  "line": 112,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Cene sa PDV-om, pouzeće ili preuzimanje u radnji."
+ },
+ {
+  "file": "lib/seo/templates.ts",
+  "line": 164,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Pouzeće ili preuzimanje u radnji."
+ },
+ {
+  "file": "lib/server/adminDownload.ts",
+  "line": 14,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "private, no-store"
+ },
+ {
+  "file": "lib/textRevealCss.ts",
+  "line": 20,
+  "kind": "template",
+  "rules": [
+   "english"
+  ],
+  "text": "html.{x}:not(.{x}) :is({x}):not([{x}=\"running\"]):not([{x}=\"done\"])"
+ },
+ {
+  "file": "lib/textRevealCss.ts",
+  "line": 21,
+  "kind": "template",
+  "rules": [
+   "english"
+  ],
+  "text": "@media screen and (prefers-reduced-motion: no-preference) { {x} { opacity: 0; } } .{x} { display: inline-block; } @media (scripting: none) { :is({x}) { opacity: 1 !important; } } .{x} { display: inline-block; } @media screen and (prefers-re"
+ },
+ {
+  "file": "convex/adminSearch.ts",
+  "line": 60,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/admin/porudzbine/{x}"
+ },
+ {
+  "file": "convex/adminSearch.ts",
+  "line": 151,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/admin/porudzbine/{x}"
+ },
+ {
+  "file": "convex/auth.ts",
+  "line": 51,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Password reset needs the Convex action context."
+ },
+ {
+  "file": "convex/carts.ts",
+  "line": 126,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Na stanju je još {x} kom."
+ },
+ {
+  "file": "convex/catalog/productsAdmin.ts",
+  "line": 442,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Na stanju je {x} kom."
+ },
+ {
+  "file": "convex/catalog/vehiclesAdmin.ts",
+  "line": 474,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Motor ima artikle za ovu generaciju — prvo izmenite kompatibilnost tih artikala."
+ },
+ {
+  "file": "convex/events.ts",
+  "line": 59,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/admin/porudzbine/{x}"
+ },
+ {
+  "file": "convex/events.ts",
+  "line": 132,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/admin/porudzbine/{x}"
+ },
+ {
+  "file": "convex/http.ts",
+  "line": 23,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Webhook secret is not configured."
+ },
+ {
+  "file": "convex/http.ts",
+  "line": 29,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Invalid webhook."
+ },
+ {
+  "file": "convex/lib/emailData.ts",
+  "line": 49,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/porudzbina/{x}{x}"
+ },
+ {
+  "file": "convex/lib/emailData.ts",
+  "line": 119,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Lično preuzimanje"
+ },
+ {
+  "file": "convex/lib/emailData.ts",
+  "line": 265,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/admin/porudzbine/{x}"
+ },
+ {
+  "file": "convex/lib/emailData.ts",
+  "line": 413,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/admin/porudzbine/{x}"
+ },
+ {
+  "file": "convex/lib/env.ts",
+  "line": 57,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "LINK_TOKEN_SECRET is not set on this deployment (docs/GO-LIVE-ENV.md)."
+ },
+ {
+  "file": "convex/lib/orders.ts",
+  "line": 409,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Spremna za preuzimanje"
+ },
+ {
+  "file": "convex/lib/settings.ts",
+  "line": 50,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Lično preuzimanje"
+ },
+ {
+  "file": "convex/lib/settings.ts",
+  "line": 70,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Plaćate kuriru gotovinom pri preuzimanju paketa."
+ },
+ {
+  "file": "convex/lib/settings.ts",
+  "line": 77,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Gotovinom pri preuzimanju"
+ },
+ {
+  "file": "convex/lib/settings.ts",
+  "line": 85,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Karticom pri preuzimanju"
+ },
+ {
+  "file": "convex/notify.ts",
+  "line": 201,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/admin/porudzbine/{x}"
+ },
+ {
+  "file": "convex/notify.ts",
+  "line": 265,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/obavestenja/odjava/{x}"
+ },
+ {
+  "file": "convex/notify.ts",
+  "line": 349,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/admin/porudzbine/{x}"
+ },
+ {
+  "file": "convex/notify.ts",
+  "line": 533,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/admin/porudzbine/{x}"
+ },
+ {
+  "file": "convex/orders.ts",
+  "line": 82,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "{x}: na stanju je još {x} kom."
+ },
+ {
+  "file": "convex/seed.ts",
+  "line": 531,
+  "kind": "literal",
+  "rules": [
+   "title-case"
+  ],
+  "text": "Demo Auto Servis"
+ },
+ {
+  "file": "convex/test.setup.ts",
+  "line": 189,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Filter ulja"
+ },
+ {
+  "file": "convex/testing.ts",
+  "line": 27,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "Test helpers are disabled on this deployment (set E2E_TEST_HELPERS=1 on dev)."
+ },
+ {
+  "file": "convex/users.ts",
+  "line": 101,
+  "kind": "literal",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "Korisnik je izmenio svoj profil"
+ },
+ {
+  "file": "constants/motion.ts",
+  "line": 76,
+  "kind": "literal",
+  "rules": [
+   "english"
+  ],
+  "text": "(prefers-reduced-motion: no-preference)"
+ },
+ {
+  "file": "constants/routes.ts",
+  "line": 28,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/majstor/brza-porudzbina?kodovi={x}"
+ },
+ {
+  "file": "constants/routes.ts",
+  "line": 30,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/majstor/porudzbine/{x}"
+ },
+ {
+  "file": "constants/routes.ts",
+  "line": 45,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/nalog/porudzbine/{x}"
+ },
+ {
+  "file": "constants/routes.ts",
+  "line": 49,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/porudzbina/hvala/{x}"
+ },
+ {
+  "file": "constants/routes.ts",
+  "line": 50,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/porudzbina/{x}"
+ },
+ {
+  "file": "constants/routes.ts",
+  "line": 51,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/porudzbina/{x}/predracun"
+ },
+ {
+  "file": "constants/routes.ts",
+  "line": 54,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/obavestenja/odjava/{x}"
+ },
+ {
+  "file": "constants/routes.ts",
+  "line": 73,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/admin/porudzbine/{x}"
+ },
+ {
+  "file": "constants/routes.ts",
+  "line": 74,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/admin/porudzbine/{x}/predracun"
+ },
+ {
+  "file": "constants/routes.ts",
+  "line": 76,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/admin/porudzbine/{x}/otpremnica"
+ },
+ {
+  "file": "constants/routes.ts",
+  "line": 92,
+  "kind": "template",
+  "rules": [
+   "ascii-diacritic"
+  ],
+  "text": "/admin/podesavanja?tab={x}"
+ },
+ {
+  "file": "constants/textRevealConfig.ts",
+  "line": 94,
+  "kind": "template",
+  "rules": [
+   "english"
+  ],
+  "text": ":is({x}):not(:has({x}))"
+ },
+ {
+  "file": "constants/textRevealConfig.ts",
+  "line": 101,
+  "kind": "template",
+  "rules": [
+   "english"
+  ],
+  "text": "{x}:not(:is({x}) *)"
+ },
+ {
+  "file": "constants/textRevealConfig.ts",
+  "line": 101,
+  "kind": "template",
+  "rules": [
+   "english"
+  ],
+  "text": ":not({x}):not(:is({x}) *)"
+ }
+]

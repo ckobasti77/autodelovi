@@ -1,0 +1,4 @@
+landing notFound values: 2 sizes 3150,4130 | inline 7280 B + referenced non-import rows 21051 B = 28331 B decoded; gz alone 3035 B; total rsc 97256
+home notFound values: 2 sizes 2216,4094 | inline 6310 B + referenced non-import rows 13111 B = 19421 B decoded; gz alone 2887 B; total rsc 127383
+korpa notFound values: 2 sizes 2218,4098 | inline 6316 B + referenced non-import rows 13136 B = 19452 B decoded; gz alone 2887 B; total rsc 58336
+product notFound values: 2 sizes 2218,4098 | inline 6316 B + referenced non-import rows 13136 B = 19452 B decoded; gz alone 2885 B; total rsc 124598

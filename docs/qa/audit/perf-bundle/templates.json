@@ -1,0 +1,4031 @@
+{
+  "home": {
+    "route": "/",
+    "status": 200,
+    "contentEncoding": "gzip",
+    "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+    "htmlTransfer": 34128,
+    "htmlRaw": 249493,
+    "htmlGzipLocal": 33549,
+    "htmlBrotliLocal": 20471,
+    "rscInlineBytes": 140190,
+    "jsonLdBytes": 3298,
+    "inlineStyleBytes": 4570,
+    "jsCount": 25,
+    "js": [
+      {
+        "src": "/_next/static/chunks/2h84ksv1mg5s9.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 30588,
+        "gz": 8077,
+        "br": 7106
+      },
+      {
+        "src": "/_next/static/chunks/0qimmyhv2_bjj.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 129338,
+        "gz": 34775,
+        "br": 29571
+      },
+      {
+        "src": "/_next/static/chunks/0qy3sss5e6eww.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 234172,
+        "gz": 73278,
+        "br": 62561
+      },
+      {
+        "src": "/_next/static/chunks/11we8zj_qz5aa.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 27411,
+        "gz": 8635,
+        "br": 7731
+      },
+      {
+        "src": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 10979,
+        "gz": 4319,
+        "br": 3876
+      },
+      {
+        "src": "/_next/static/chunks/3fntmmi971322.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 14377,
+        "gz": 3661,
+        "br": 3266
+      },
+      {
+        "src": "/_next/static/chunks/25dplrt_qw3he.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 18451,
+        "gz": 7011,
+        "br": 6292
+      },
+      {
+        "src": "/_next/static/chunks/14y-81z8a-w-u.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 26404,
+        "gz": 10408,
+        "br": 9384
+      },
+      {
+        "src": "/_next/static/chunks/2vm060vmiv-df.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 27602,
+        "gz": 9278,
+        "br": 8182
+      },
+      {
+        "src": "/_next/static/chunks/1tr6a7zmh41cy.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 125720,
+        "gz": 49588,
+        "br": 44376
+      },
+      {
+        "src": "/_next/static/chunks/0rklqt_vfe3_n.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 37952,
+        "gz": 12601,
+        "br": 11040
+      },
+      {
+        "src": "/_next/static/chunks/2jrozipxybei4.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 82591,
+        "gz": 22641,
+        "br": 20076
+      },
+      {
+        "src": "/_next/static/chunks/2f8qbt33jjpy3.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 6686,
+        "gz": 2753,
+        "br": 2421
+      },
+      {
+        "src": "/_next/static/chunks/1kcz530oz9u-o.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 550,
+        "gz": 287,
+        "br": 244
+      },
+      {
+        "src": "/_next/static/chunks/2g3bv_p29okud.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 32381,
+        "gz": 10351,
+        "br": 8970
+      },
+      {
+        "src": "/_next/static/chunks/120epkn8j_rkq.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 30585,
+        "gz": 10895,
+        "br": 9644
+      },
+      {
+        "src": "/_next/static/chunks/29atrq35xgs9f.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 5026,
+        "gz": 1721,
+        "br": 1512
+      },
+      {
+        "src": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 69125,
+        "gz": 22896,
+        "br": 19638
+      },
+      {
+        "src": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 22528,
+        "gz": 8008,
+        "br": 7111
+      },
+      {
+        "src": "/_next/static/chunks/1c6x4sv25ngo-.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 583,
+        "gz": 300,
+        "br": 257
+      },
+      {
+        "src": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 66220,
+        "gz": 21475,
+        "br": 18813
+      },
+      {
+        "src": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 7477,
+        "gz": 3151,
+        "br": 2726
+      },
+      {
+        "src": "/_next/static/chunks/1adhcvv0smcza.js",
+        "attrs": "async=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 23258,
+        "gz": 8829,
+        "br": 7751
+      },
+      {
+        "src": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+        "attrs": "noModule=\"\" nonce=\"xavEp5tissoU4vUVP7NhsQ==\"",
+        "raw": 112594,
+        "gz": 39627,
+        "br": 35158
+      },
+      {
+        "src": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "attrs": "nonce=\"xavEp5tissoU4vUVP7NhsQ==\" id=\"_R_\" async=\"\"",
+        "raw": 7637,
+        "gz": 2011,
+        "br": 1753
+      }
+    ],
+    "jsTotals": {
+      "raw": 1150235,
+      "gz": 376576,
+      "br": 329459
+    },
+    "css": [
+      {
+        "href": "/_next/static/chunks/1ims1_lcdan5r.css",
+        "raw": 98804,
+        "gz": 18948,
+        "br": 15136
+      }
+    ],
+    "cssTotals": {
+      "raw": 98804,
+      "gz": 18948,
+      "br": 15136
+    },
+    "fontPreloads": [
+      {
+        "href": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+        "raw": 16260,
+        "gz": 16283,
+        "br": 16264
+      },
+      {
+        "href": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+        "raw": 16384,
+        "gz": 16407,
+        "br": 16380
+      },
+      {
+        "href": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+        "raw": 26636,
+        "gz": 26664,
+        "br": 26632
+      },
+      {
+        "href": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+        "raw": 18372,
+        "gz": 18397,
+        "br": 18360
+      }
+    ],
+    "fontPreloadTotal": 77652,
+    "otherPreloads": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "media": "(min-width: 48rem)",
+        "fp": "high",
+        "imagesrcset": "/images/hero/car-assembled-1080.avif 1080w, /images/hero/car-assembled-1440.avif 1440w, /images/hero/car-assembled-1920.avif 1920w, /images/hero/car-assembled.avif 2560w"
+      },
+      {
+        "rel": "preload",
+        "href": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "as": "script",
+        "fp": "low"
+      }
+    ],
+    "imgs": [
+      {
+        "src": "/images/hero/car-assembled-1440.webp",
+        "srcset": false,
+        "loading": "eager",
+        "width": "2560",
+        "height": "1440",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffilteri.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fakumulator.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffarovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      }
+    ],
+    "sources": [
+      " media=\"(max-width: 47.999rem)\" type=\"image/avif\" srcSet=\"/images/hero/car-assembled-m-640.avif 640w, /images/hero/car-assembled-m-828.avif 828w, /images/hero/car-assembled-m-1080.avif 1080w\" sizes=\"100vw\"/",
+      " media=\"(max-width: 47.999rem)\" type=\"image/webp\" srcSet=\"/images/hero/car-assembled-m-640.webp 640w, /images/hero/car-assembled-m-828.webp 828w, /images/hero/car-assembled-m-1080.webp 1080w\" sizes=\"100vw\"/",
+      " type=\"image/avif\" srcSet=\"/images/hero/car-assembled-1080.avif 1080w, /images/hero/car-assembled-1440.avif 1440w, /images/hero/car-assembled-1920.avif 1920w, /images/hero/car-assembled.avif 2560w\" sizes=\"100vw\"/",
+      " type=\"image/webp\" srcSet=\"/images/hero/car-assembled-1080.webp 1080w, /images/hero/car-assembled-1440.webp 1440w, /images/hero/car-assembled-1920.webp 1920w, /images/hero/car-assembled.webp 2560w\" sizes=\"100vw\"/"
+    ],
+    "nonNextScripts": []
+  },
+  "delovi": {
+    "route": "/delovi",
+    "status": 200,
+    "contentEncoding": "gzip",
+    "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+    "htmlTransfer": 26659,
+    "htmlRaw": 265744,
+    "htmlGzipLocal": 26338,
+    "htmlBrotliLocal": 15386,
+    "rscInlineBytes": 140307,
+    "jsonLdBytes": 212,
+    "inlineStyleBytes": 4570,
+    "jsCount": 24,
+    "js": [
+      {
+        "src": "/_next/static/chunks/2h84ksv1mg5s9.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 30588,
+        "gz": 8077,
+        "br": 7106
+      },
+      {
+        "src": "/_next/static/chunks/0qimmyhv2_bjj.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 129338,
+        "gz": 34775,
+        "br": 29571
+      },
+      {
+        "src": "/_next/static/chunks/0qy3sss5e6eww.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 234172,
+        "gz": 73278,
+        "br": 62561
+      },
+      {
+        "src": "/_next/static/chunks/11we8zj_qz5aa.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 27411,
+        "gz": 8635,
+        "br": 7731
+      },
+      {
+        "src": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 10979,
+        "gz": 4319,
+        "br": 3876
+      },
+      {
+        "src": "/_next/static/chunks/3fntmmi971322.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 14377,
+        "gz": 3661,
+        "br": 3266
+      },
+      {
+        "src": "/_next/static/chunks/25dplrt_qw3he.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 18451,
+        "gz": 7011,
+        "br": 6292
+      },
+      {
+        "src": "/_next/static/chunks/14y-81z8a-w-u.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 26404,
+        "gz": 10408,
+        "br": 9384
+      },
+      {
+        "src": "/_next/static/chunks/2vm060vmiv-df.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 27602,
+        "gz": 9278,
+        "br": 8182
+      },
+      {
+        "src": "/_next/static/chunks/1tr6a7zmh41cy.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 125720,
+        "gz": 49588,
+        "br": 44376
+      },
+      {
+        "src": "/_next/static/chunks/0rklqt_vfe3_n.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 37952,
+        "gz": 12601,
+        "br": 11040
+      },
+      {
+        "src": "/_next/static/chunks/2jrozipxybei4.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 82591,
+        "gz": 22641,
+        "br": 20076
+      },
+      {
+        "src": "/_next/static/chunks/2f8qbt33jjpy3.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 6686,
+        "gz": 2753,
+        "br": 2421
+      },
+      {
+        "src": "/_next/static/chunks/1kcz530oz9u-o.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 550,
+        "gz": 287,
+        "br": 244
+      },
+      {
+        "src": "/_next/static/chunks/2g3bv_p29okud.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 32381,
+        "gz": 10351,
+        "br": 8970
+      },
+      {
+        "src": "/_next/static/chunks/120epkn8j_rkq.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 30585,
+        "gz": 10895,
+        "br": 9644
+      },
+      {
+        "src": "/_next/static/chunks/29atrq35xgs9f.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 5026,
+        "gz": 1721,
+        "br": 1512
+      },
+      {
+        "src": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 69125,
+        "gz": 22896,
+        "br": 19638
+      },
+      {
+        "src": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 22528,
+        "gz": 8008,
+        "br": 7111
+      },
+      {
+        "src": "/_next/static/chunks/0kkzmzjgzmcds.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 14795,
+        "gz": 5598,
+        "br": 4961
+      },
+      {
+        "src": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 7477,
+        "gz": 3151,
+        "br": 2726
+      },
+      {
+        "src": "/_next/static/chunks/1adhcvv0smcza.js",
+        "attrs": "async=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 23258,
+        "gz": 8829,
+        "br": 7751
+      },
+      {
+        "src": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+        "attrs": "noModule=\"\" nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\"",
+        "raw": 112594,
+        "gz": 39627,
+        "br": 35158
+      },
+      {
+        "src": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "attrs": "nonce=\"0UIc74/cxtq/GX+qfq2ZDQ==\" id=\"_R_\" async=\"\"",
+        "raw": 7637,
+        "gz": 2011,
+        "br": 1753
+      }
+    ],
+    "jsTotals": {
+      "raw": 1098227,
+      "gz": 360399,
+      "br": 315350
+    },
+    "css": [
+      {
+        "href": "/_next/static/chunks/1ims1_lcdan5r.css",
+        "raw": 98804,
+        "gz": 18948,
+        "br": 15136
+      }
+    ],
+    "cssTotals": {
+      "raw": 98804,
+      "gz": 18948,
+      "br": 15136
+    },
+    "fontPreloads": [
+      {
+        "href": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+        "raw": 16260,
+        "gz": 16283,
+        "br": 16264
+      },
+      {
+        "href": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+        "raw": 16384,
+        "gz": 16407,
+        "br": 16380
+      },
+      {
+        "href": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+        "raw": 26636,
+        "gz": 26664,
+        "br": 26632
+      },
+      {
+        "href": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+        "raw": 18372,
+        "gz": 18397,
+        "br": 18360
+      }
+    ],
+    "fontPreloadTotal": 77652,
+    "otherPreloads": [
+      {
+        "rel": "preload",
+        "href": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "as": "script",
+        "fp": "low"
+      }
+    ],
+    "imgs": [
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fmotor.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Finterkuler.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fusisna-grana.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkais-alternatora.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Falternator.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fanlaser.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fpaljenje-grejaci.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkarter-dihtunzi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fegr-ventil.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fnosaci-motora.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fdpf-katalizator.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fauspuh.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fklima.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fmenjac.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fpoluosovine.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fspone-stabilizatori.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fletva-volana.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Flezaj-glavcina.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-celjusti.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fabs-senzori.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fakumulator.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffarovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fstop-svetla.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fhauba.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbranici.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fblatobrani.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fvrata.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fretrovizori.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fstakla.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffilteri.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fulja-tecnosti.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      }
+    ],
+    "sources": [],
+    "nonNextScripts": []
+  },
+  "category": {
+    "route": "/delovi/kocioni-diskovi",
+    "status": 200,
+    "contentEncoding": "gzip",
+    "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+    "htmlTransfer": 25686,
+    "htmlRaw": 240102,
+    "htmlGzipLocal": 25128,
+    "htmlBrotliLocal": 17394,
+    "rscInlineBytes": 130630,
+    "jsonLdBytes": 1997,
+    "inlineStyleBytes": 4570,
+    "jsCount": 25,
+    "js": [
+      {
+        "src": "/_next/static/chunks/2h84ksv1mg5s9.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 30588,
+        "gz": 8077,
+        "br": 7106
+      },
+      {
+        "src": "/_next/static/chunks/0qimmyhv2_bjj.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 129338,
+        "gz": 34775,
+        "br": 29571
+      },
+      {
+        "src": "/_next/static/chunks/0qy3sss5e6eww.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 234172,
+        "gz": 73278,
+        "br": 62561
+      },
+      {
+        "src": "/_next/static/chunks/11we8zj_qz5aa.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 27411,
+        "gz": 8635,
+        "br": 7731
+      },
+      {
+        "src": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 10979,
+        "gz": 4319,
+        "br": 3876
+      },
+      {
+        "src": "/_next/static/chunks/3fntmmi971322.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 14377,
+        "gz": 3661,
+        "br": 3266
+      },
+      {
+        "src": "/_next/static/chunks/25dplrt_qw3he.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 18451,
+        "gz": 7011,
+        "br": 6292
+      },
+      {
+        "src": "/_next/static/chunks/14y-81z8a-w-u.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 26404,
+        "gz": 10408,
+        "br": 9384
+      },
+      {
+        "src": "/_next/static/chunks/2vm060vmiv-df.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 27602,
+        "gz": 9278,
+        "br": 8182
+      },
+      {
+        "src": "/_next/static/chunks/1tr6a7zmh41cy.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 125720,
+        "gz": 49588,
+        "br": 44376
+      },
+      {
+        "src": "/_next/static/chunks/0rklqt_vfe3_n.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 37952,
+        "gz": 12601,
+        "br": 11040
+      },
+      {
+        "src": "/_next/static/chunks/2jrozipxybei4.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 82591,
+        "gz": 22641,
+        "br": 20076
+      },
+      {
+        "src": "/_next/static/chunks/2f8qbt33jjpy3.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 6686,
+        "gz": 2753,
+        "br": 2421
+      },
+      {
+        "src": "/_next/static/chunks/1kcz530oz9u-o.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 550,
+        "gz": 287,
+        "br": 244
+      },
+      {
+        "src": "/_next/static/chunks/2g3bv_p29okud.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 32381,
+        "gz": 10351,
+        "br": 8970
+      },
+      {
+        "src": "/_next/static/chunks/120epkn8j_rkq.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 30585,
+        "gz": 10895,
+        "br": 9644
+      },
+      {
+        "src": "/_next/static/chunks/29atrq35xgs9f.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 5026,
+        "gz": 1721,
+        "br": 1512
+      },
+      {
+        "src": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 69125,
+        "gz": 22896,
+        "br": 19638
+      },
+      {
+        "src": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 22528,
+        "gz": 8008,
+        "br": 7111
+      },
+      {
+        "src": "/_next/static/chunks/1cggx7i-lhdg7.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 25932,
+        "gz": 8338,
+        "br": 7334
+      },
+      {
+        "src": "/_next/static/chunks/38o51x0kbbpcz.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 42487,
+        "gz": 15342,
+        "br": 13333
+      },
+      {
+        "src": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 7477,
+        "gz": 3151,
+        "br": 2726
+      },
+      {
+        "src": "/_next/static/chunks/1adhcvv0smcza.js",
+        "attrs": "async=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 23258,
+        "gz": 8829,
+        "br": 7751
+      },
+      {
+        "src": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+        "attrs": "noModule=\"\" nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\"",
+        "raw": 112594,
+        "gz": 39627,
+        "br": 35158
+      },
+      {
+        "src": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "attrs": "nonce=\"1LT9gcqsMVC0FS/sgLYB7A==\" id=\"_R_\" async=\"\"",
+        "raw": 7637,
+        "gz": 2011,
+        "br": 1753
+      }
+    ],
+    "jsTotals": {
+      "raw": 1151851,
+      "gz": 378481,
+      "br": 331056
+    },
+    "css": [
+      {
+        "href": "/_next/static/chunks/1ims1_lcdan5r.css",
+        "raw": 98804,
+        "gz": 18948,
+        "br": 15136
+      }
+    ],
+    "cssTotals": {
+      "raw": 98804,
+      "gz": 18948,
+      "br": 15136
+    },
+    "fontPreloads": [
+      {
+        "href": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+        "raw": 16260,
+        "gz": 16283,
+        "br": 16264
+      },
+      {
+        "href": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+        "raw": 16384,
+        "gz": 16407,
+        "br": 16380
+      },
+      {
+        "href": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+        "raw": 26636,
+        "gz": 26664,
+        "br": 26632
+      },
+      {
+        "href": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+        "raw": 18372,
+        "gz": 18397,
+        "br": 18360
+      }
+    ],
+    "fontPreloadTotal": 77652,
+    "otherPreloads": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "imagesrcset": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75 3840w"
+      },
+      {
+        "rel": "preload",
+        "href": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "as": "script",
+        "fp": "low"
+      }
+    ],
+    "imgs": [
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      }
+    ],
+    "sources": [],
+    "nonNextScripts": []
+  },
+  "product": {
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "status": 200,
+    "contentEncoding": "gzip",
+    "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+    "htmlTransfer": 29910,
+    "htmlRaw": 222841,
+    "htmlGzipLocal": 29392,
+    "htmlBrotliLocal": 19978,
+    "rscInlineBytes": 138306,
+    "jsonLdBytes": 1625,
+    "inlineStyleBytes": 4570,
+    "jsCount": 25,
+    "js": [
+      {
+        "src": "/_next/static/chunks/2h84ksv1mg5s9.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 30588,
+        "gz": 8077,
+        "br": 7106
+      },
+      {
+        "src": "/_next/static/chunks/0qimmyhv2_bjj.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 129338,
+        "gz": 34775,
+        "br": 29571
+      },
+      {
+        "src": "/_next/static/chunks/0qy3sss5e6eww.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 234172,
+        "gz": 73278,
+        "br": 62561
+      },
+      {
+        "src": "/_next/static/chunks/11we8zj_qz5aa.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 27411,
+        "gz": 8635,
+        "br": 7731
+      },
+      {
+        "src": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 10979,
+        "gz": 4319,
+        "br": 3876
+      },
+      {
+        "src": "/_next/static/chunks/3fntmmi971322.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 14377,
+        "gz": 3661,
+        "br": 3266
+      },
+      {
+        "src": "/_next/static/chunks/25dplrt_qw3he.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 18451,
+        "gz": 7011,
+        "br": 6292
+      },
+      {
+        "src": "/_next/static/chunks/14y-81z8a-w-u.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 26404,
+        "gz": 10408,
+        "br": 9384
+      },
+      {
+        "src": "/_next/static/chunks/2vm060vmiv-df.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 27602,
+        "gz": 9278,
+        "br": 8182
+      },
+      {
+        "src": "/_next/static/chunks/1tr6a7zmh41cy.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 125720,
+        "gz": 49588,
+        "br": 44376
+      },
+      {
+        "src": "/_next/static/chunks/0rklqt_vfe3_n.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 37952,
+        "gz": 12601,
+        "br": 11040
+      },
+      {
+        "src": "/_next/static/chunks/2jrozipxybei4.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 82591,
+        "gz": 22641,
+        "br": 20076
+      },
+      {
+        "src": "/_next/static/chunks/2f8qbt33jjpy3.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 6686,
+        "gz": 2753,
+        "br": 2421
+      },
+      {
+        "src": "/_next/static/chunks/1kcz530oz9u-o.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 550,
+        "gz": 287,
+        "br": 244
+      },
+      {
+        "src": "/_next/static/chunks/2g3bv_p29okud.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 32381,
+        "gz": 10351,
+        "br": 8970
+      },
+      {
+        "src": "/_next/static/chunks/120epkn8j_rkq.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 30585,
+        "gz": 10895,
+        "br": 9644
+      },
+      {
+        "src": "/_next/static/chunks/29atrq35xgs9f.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 5026,
+        "gz": 1721,
+        "br": 1512
+      },
+      {
+        "src": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 69125,
+        "gz": 22896,
+        "br": 19638
+      },
+      {
+        "src": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 22528,
+        "gz": 8008,
+        "br": 7111
+      },
+      {
+        "src": "/_next/static/chunks/1tkvz3oryrb1b.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 37445,
+        "gz": 11233,
+        "br": 9580
+      },
+      {
+        "src": "/_next/static/chunks/0iy1468xjorsv.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 40337,
+        "gz": 15207,
+        "br": 13270
+      },
+      {
+        "src": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 7477,
+        "gz": 3151,
+        "br": 2726
+      },
+      {
+        "src": "/_next/static/chunks/1adhcvv0smcza.js",
+        "attrs": "async=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 23258,
+        "gz": 8829,
+        "br": 7751
+      },
+      {
+        "src": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+        "attrs": "noModule=\"\" nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\"",
+        "raw": 112594,
+        "gz": 39627,
+        "br": 35158
+      },
+      {
+        "src": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "attrs": "nonce=\"D38FQwKKDbxnqTNXXc4sBQ==\" id=\"_R_\" async=\"\"",
+        "raw": 7637,
+        "gz": 2011,
+        "br": 1753
+      }
+    ],
+    "jsTotals": {
+      "raw": 1161214,
+      "gz": 381241,
+      "br": 333239
+    },
+    "css": [
+      {
+        "href": "/_next/static/chunks/1ims1_lcdan5r.css",
+        "raw": 98804,
+        "gz": 18948,
+        "br": 15136
+      }
+    ],
+    "cssTotals": {
+      "raw": 98804,
+      "gz": 18948,
+      "br": 15136
+    },
+    "fontPreloads": [
+      {
+        "href": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+        "raw": 16260,
+        "gz": 16283,
+        "br": 16264
+      },
+      {
+        "href": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+        "raw": 16384,
+        "gz": 16407,
+        "br": 16380
+      },
+      {
+        "href": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+        "raw": 26636,
+        "gz": 26664,
+        "br": 26632
+      },
+      {
+        "href": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+        "raw": 18372,
+        "gz": 18397,
+        "br": 18360
+      }
+    ],
+    "fontPreloadTotal": 77652,
+    "otherPreloads": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "imagesrcset": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75 3840w"
+      },
+      {
+        "rel": "preload",
+        "href": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "as": "script",
+        "fp": "low"
+      }
+    ],
+    "imgs": [
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1024px) 56vw, 100vw",
+        "decoding": "async",
+        "alt": "Kočioni disk prednji 276 × 24 mm — ilustracija kategorije ko"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      }
+    ],
+    "sources": [],
+    "nonNextScripts": []
+  },
+  "search": {
+    "route": "/pretraga?q=disk",
+    "status": 200,
+    "contentEncoding": "gzip",
+    "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+    "htmlTransfer": 27264,
+    "htmlRaw": 193092,
+    "htmlGzipLocal": 21251,
+    "htmlBrotliLocal": 15208,
+    "rscInlineBytes": 110994,
+    "jsonLdBytes": 0,
+    "inlineStyleBytes": 4570,
+    "jsCount": 25,
+    "js": [
+      {
+        "src": "/_next/static/chunks/2h84ksv1mg5s9.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 30588,
+        "gz": 8077,
+        "br": 7106
+      },
+      {
+        "src": "/_next/static/chunks/0qimmyhv2_bjj.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 129338,
+        "gz": 34775,
+        "br": 29571
+      },
+      {
+        "src": "/_next/static/chunks/0qy3sss5e6eww.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 234172,
+        "gz": 73278,
+        "br": 62561
+      },
+      {
+        "src": "/_next/static/chunks/11we8zj_qz5aa.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 27411,
+        "gz": 8635,
+        "br": 7731
+      },
+      {
+        "src": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 10979,
+        "gz": 4319,
+        "br": 3876
+      },
+      {
+        "src": "/_next/static/chunks/3fntmmi971322.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 14377,
+        "gz": 3661,
+        "br": 3266
+      },
+      {
+        "src": "/_next/static/chunks/25dplrt_qw3he.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 18451,
+        "gz": 7011,
+        "br": 6292
+      },
+      {
+        "src": "/_next/static/chunks/14y-81z8a-w-u.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 26404,
+        "gz": 10408,
+        "br": 9384
+      },
+      {
+        "src": "/_next/static/chunks/2vm060vmiv-df.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 27602,
+        "gz": 9278,
+        "br": 8182
+      },
+      {
+        "src": "/_next/static/chunks/1tr6a7zmh41cy.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 125720,
+        "gz": 49588,
+        "br": 44376
+      },
+      {
+        "src": "/_next/static/chunks/0rklqt_vfe3_n.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 37952,
+        "gz": 12601,
+        "br": 11040
+      },
+      {
+        "src": "/_next/static/chunks/2jrozipxybei4.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 82591,
+        "gz": 22641,
+        "br": 20076
+      },
+      {
+        "src": "/_next/static/chunks/2f8qbt33jjpy3.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 6686,
+        "gz": 2753,
+        "br": 2421
+      },
+      {
+        "src": "/_next/static/chunks/1kcz530oz9u-o.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 550,
+        "gz": 287,
+        "br": 244
+      },
+      {
+        "src": "/_next/static/chunks/2g3bv_p29okud.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 32381,
+        "gz": 10351,
+        "br": 8970
+      },
+      {
+        "src": "/_next/static/chunks/120epkn8j_rkq.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 30585,
+        "gz": 10895,
+        "br": 9644
+      },
+      {
+        "src": "/_next/static/chunks/29atrq35xgs9f.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 5026,
+        "gz": 1721,
+        "br": 1512
+      },
+      {
+        "src": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 69125,
+        "gz": 22896,
+        "br": 19638
+      },
+      {
+        "src": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 22528,
+        "gz": 8008,
+        "br": 7111
+      },
+      {
+        "src": "/_next/static/chunks/1nsy63apukn80.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 13881,
+        "gz": 5646,
+        "br": 4922
+      },
+      {
+        "src": "/_next/static/chunks/211aixs67p7-0.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 33863,
+        "gz": 11700,
+        "br": 10184
+      },
+      {
+        "src": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 7477,
+        "gz": 3151,
+        "br": 2726
+      },
+      {
+        "src": "/_next/static/chunks/1adhcvv0smcza.js",
+        "attrs": "async=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 23258,
+        "gz": 8829,
+        "br": 7751
+      },
+      {
+        "src": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+        "attrs": "noModule=\"\" nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\"",
+        "raw": 112594,
+        "gz": 39627,
+        "br": 35158
+      },
+      {
+        "src": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "attrs": "nonce=\"1e4G7zlOVVbUYmQTkQBUrg==\" id=\"_R_\" async=\"\"",
+        "raw": 7637,
+        "gz": 2011,
+        "br": 1753
+      }
+    ],
+    "jsTotals": {
+      "raw": 1131176,
+      "gz": 372147,
+      "br": 325495
+    },
+    "css": [
+      {
+        "href": "/_next/static/chunks/1ims1_lcdan5r.css",
+        "raw": 98804,
+        "gz": 18948,
+        "br": 15136
+      }
+    ],
+    "cssTotals": {
+      "raw": 98804,
+      "gz": 18948,
+      "br": 15136
+    },
+    "fontPreloads": [
+      {
+        "href": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+        "raw": 16260,
+        "gz": 16283,
+        "br": 16264
+      },
+      {
+        "href": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+        "raw": 16384,
+        "gz": 16407,
+        "br": 16380
+      },
+      {
+        "href": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+        "raw": 26636,
+        "gz": 26664,
+        "br": 26632
+      },
+      {
+        "href": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+        "raw": 18372,
+        "gz": 18397,
+        "br": 18360
+      }
+    ],
+    "fontPreloadTotal": 77652,
+    "otherPreloads": [
+      {
+        "rel": "preload",
+        "href": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "as": "script",
+        "fp": "low"
+      }
+    ],
+    "imgs": [
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      }
+    ],
+    "sources": [],
+    "nonNextScripts": []
+  },
+  "generation": {
+    "route": "/vozila/volkswagen/golf/golf-7",
+    "status": 200,
+    "contentEncoding": "gzip",
+    "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+    "htmlTransfer": 29550,
+    "htmlRaw": 330050,
+    "htmlGzipLocal": 29138,
+    "htmlBrotliLocal": 18730,
+    "rscInlineBytes": 171308,
+    "jsonLdBytes": 507,
+    "inlineStyleBytes": 4570,
+    "jsCount": 25,
+    "js": [
+      {
+        "src": "/_next/static/chunks/2h84ksv1mg5s9.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 30588,
+        "gz": 8077,
+        "br": 7106
+      },
+      {
+        "src": "/_next/static/chunks/0qimmyhv2_bjj.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 129338,
+        "gz": 34775,
+        "br": 29571
+      },
+      {
+        "src": "/_next/static/chunks/0qy3sss5e6eww.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 234172,
+        "gz": 73278,
+        "br": 62561
+      },
+      {
+        "src": "/_next/static/chunks/11we8zj_qz5aa.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 27411,
+        "gz": 8635,
+        "br": 7731
+      },
+      {
+        "src": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 10979,
+        "gz": 4319,
+        "br": 3876
+      },
+      {
+        "src": "/_next/static/chunks/3fntmmi971322.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 14377,
+        "gz": 3661,
+        "br": 3266
+      },
+      {
+        "src": "/_next/static/chunks/25dplrt_qw3he.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 18451,
+        "gz": 7011,
+        "br": 6292
+      },
+      {
+        "src": "/_next/static/chunks/14y-81z8a-w-u.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 26404,
+        "gz": 10408,
+        "br": 9384
+      },
+      {
+        "src": "/_next/static/chunks/2vm060vmiv-df.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 27602,
+        "gz": 9278,
+        "br": 8182
+      },
+      {
+        "src": "/_next/static/chunks/1tr6a7zmh41cy.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 125720,
+        "gz": 49588,
+        "br": 44376
+      },
+      {
+        "src": "/_next/static/chunks/0rklqt_vfe3_n.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 37952,
+        "gz": 12601,
+        "br": 11040
+      },
+      {
+        "src": "/_next/static/chunks/2jrozipxybei4.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 82591,
+        "gz": 22641,
+        "br": 20076
+      },
+      {
+        "src": "/_next/static/chunks/2f8qbt33jjpy3.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 6686,
+        "gz": 2753,
+        "br": 2421
+      },
+      {
+        "src": "/_next/static/chunks/1kcz530oz9u-o.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 550,
+        "gz": 287,
+        "br": 244
+      },
+      {
+        "src": "/_next/static/chunks/2g3bv_p29okud.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 32381,
+        "gz": 10351,
+        "br": 8970
+      },
+      {
+        "src": "/_next/static/chunks/120epkn8j_rkq.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 30585,
+        "gz": 10895,
+        "br": 9644
+      },
+      {
+        "src": "/_next/static/chunks/29atrq35xgs9f.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 5026,
+        "gz": 1721,
+        "br": 1512
+      },
+      {
+        "src": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 69125,
+        "gz": 22896,
+        "br": 19638
+      },
+      {
+        "src": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 22528,
+        "gz": 8008,
+        "br": 7111
+      },
+      {
+        "src": "/_next/static/chunks/3g2k0zrmq592z.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 13586,
+        "gz": 5579,
+        "br": 4855
+      },
+      {
+        "src": "/_next/static/chunks/211aixs67p7-0.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 33863,
+        "gz": 11700,
+        "br": 10184
+      },
+      {
+        "src": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 7477,
+        "gz": 3151,
+        "br": 2726
+      },
+      {
+        "src": "/_next/static/chunks/1adhcvv0smcza.js",
+        "attrs": "async=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 23258,
+        "gz": 8829,
+        "br": 7751
+      },
+      {
+        "src": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+        "attrs": "noModule=\"\" nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\"",
+        "raw": 112594,
+        "gz": 39627,
+        "br": 35158
+      },
+      {
+        "src": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "attrs": "nonce=\"Tvb2t1QbDyBcV0qKj4U0rg==\" id=\"_R_\" async=\"\"",
+        "raw": 7637,
+        "gz": 2011,
+        "br": 1753
+      }
+    ],
+    "jsTotals": {
+      "raw": 1130881,
+      "gz": 372080,
+      "br": 325428
+    },
+    "css": [
+      {
+        "href": "/_next/static/chunks/1ims1_lcdan5r.css",
+        "raw": 98804,
+        "gz": 18948,
+        "br": 15136
+      }
+    ],
+    "cssTotals": {
+      "raw": 98804,
+      "gz": 18948,
+      "br": 15136
+    },
+    "fontPreloads": [
+      {
+        "href": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+        "raw": 16260,
+        "gz": 16283,
+        "br": 16264
+      },
+      {
+        "href": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+        "raw": 16384,
+        "gz": 16407,
+        "br": 16380
+      },
+      {
+        "href": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+        "raw": 26636,
+        "gz": 26664,
+        "br": 26632
+      },
+      {
+        "href": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+        "raw": 18372,
+        "gz": 18397,
+        "br": 18360
+      }
+    ],
+    "fontPreloadTotal": 77652,
+    "otherPreloads": [
+      {
+        "rel": "preload",
+        "href": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "as": "script",
+        "fp": "low"
+      }
+    ],
+    "imgs": [
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fmotor.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-ulja.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-vazduha.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-goriva.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Finterkuler.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fusisna-grana.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffilter-kabine.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkais-alternatora.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fpaljenje-grejaci.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fegr-ventil.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fnosaci-motora.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fdpf-katalizator.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fklima.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fmenjac.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fpoluosovine.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fspone-stabilizatori.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Flezaj-glavcina.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-celjusti.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fabs-senzori.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffarovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fhauba.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fvrata.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fretrovizori.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fstakla.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      }
+    ],
+    "sources": [],
+    "nonNextScripts": []
+  },
+  "landing": {
+    "route": "/ponuda/kocione-plocice-golf",
+    "status": 200,
+    "contentEncoding": "gzip",
+    "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+    "htmlTransfer": 20623,
+    "htmlRaw": 167317,
+    "htmlGzipLocal": 20235,
+    "htmlBrotliLocal": 13970,
+    "rscInlineBytes": 107491,
+    "jsonLdBytes": 1196,
+    "inlineStyleBytes": 4570,
+    "jsCount": 25,
+    "js": [
+      {
+        "src": "/_next/static/chunks/2h84ksv1mg5s9.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 30588,
+        "gz": 8077,
+        "br": 7106
+      },
+      {
+        "src": "/_next/static/chunks/0qimmyhv2_bjj.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 129338,
+        "gz": 34775,
+        "br": 29571
+      },
+      {
+        "src": "/_next/static/chunks/0qy3sss5e6eww.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 234172,
+        "gz": 73278,
+        "br": 62561
+      },
+      {
+        "src": "/_next/static/chunks/11we8zj_qz5aa.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 27411,
+        "gz": 8635,
+        "br": 7731
+      },
+      {
+        "src": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 10979,
+        "gz": 4319,
+        "br": 3876
+      },
+      {
+        "src": "/_next/static/chunks/3fntmmi971322.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 14377,
+        "gz": 3661,
+        "br": 3266
+      },
+      {
+        "src": "/_next/static/chunks/25dplrt_qw3he.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 18451,
+        "gz": 7011,
+        "br": 6292
+      },
+      {
+        "src": "/_next/static/chunks/14y-81z8a-w-u.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 26404,
+        "gz": 10408,
+        "br": 9384
+      },
+      {
+        "src": "/_next/static/chunks/2vm060vmiv-df.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 27602,
+        "gz": 9278,
+        "br": 8182
+      },
+      {
+        "src": "/_next/static/chunks/1tr6a7zmh41cy.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 125720,
+        "gz": 49588,
+        "br": 44376
+      },
+      {
+        "src": "/_next/static/chunks/0rklqt_vfe3_n.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 37952,
+        "gz": 12601,
+        "br": 11040
+      },
+      {
+        "src": "/_next/static/chunks/2jrozipxybei4.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 82591,
+        "gz": 22641,
+        "br": 20076
+      },
+      {
+        "src": "/_next/static/chunks/2f8qbt33jjpy3.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 6686,
+        "gz": 2753,
+        "br": 2421
+      },
+      {
+        "src": "/_next/static/chunks/30febus0elr13.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 415,
+        "gz": 252,
+        "br": 208
+      },
+      {
+        "src": "/_next/static/chunks/29ikd2g3512r-.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 63655,
+        "gz": 22232,
+        "br": 19291
+      },
+      {
+        "src": "/_next/static/chunks/29atrq35xgs9f.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 5026,
+        "gz": 1721,
+        "br": 1512
+      },
+      {
+        "src": "/_next/static/chunks/3e96qux3-c6pe.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 31879,
+        "gz": 11982,
+        "br": 10514
+      },
+      {
+        "src": "/_next/static/chunks/1h9gpy0y5abu7.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 43470,
+        "gz": 13314,
+        "br": 11379
+      },
+      {
+        "src": "/_next/static/chunks/1axg9-vmwkb-w.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 416,
+        "gz": 247,
+        "br": 201
+      },
+      {
+        "src": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 22528,
+        "gz": 8008,
+        "br": 7111
+      },
+      {
+        "src": "/_next/static/chunks/404ko09-15lhs.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 57625,
+        "gz": 18202,
+        "br": 15445
+      },
+      {
+        "src": "/_next/static/chunks/00t-a16koa1p2.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 43301,
+        "gz": 14509,
+        "br": 12760
+      },
+      {
+        "src": "/_next/static/chunks/1adhcvv0smcza.js",
+        "attrs": "async=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 23258,
+        "gz": 8829,
+        "br": 7751
+      },
+      {
+        "src": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+        "attrs": "noModule=\"\" nonce=\"IngUdB7mCYw4zzyuLALX9g==\"",
+        "raw": 112594,
+        "gz": 39627,
+        "br": 35158
+      },
+      {
+        "src": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "attrs": "nonce=\"IngUdB7mCYw4zzyuLALX9g==\" id=\"_R_\" async=\"\"",
+        "raw": 7637,
+        "gz": 2011,
+        "br": 1753
+      }
+    ],
+    "jsTotals": {
+      "raw": 1184075,
+      "gz": 387959,
+      "br": 338965
+    },
+    "css": [
+      {
+        "href": "/_next/static/chunks/1ims1_lcdan5r.css",
+        "raw": 98804,
+        "gz": 18948,
+        "br": 15136
+      }
+    ],
+    "cssTotals": {
+      "raw": 98804,
+      "gz": 18948,
+      "br": 15136
+    },
+    "fontPreloads": [
+      {
+        "href": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+        "raw": 16260,
+        "gz": 16283,
+        "br": 16264
+      },
+      {
+        "href": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+        "raw": 16384,
+        "gz": 16407,
+        "br": 16380
+      },
+      {
+        "href": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+        "raw": 26636,
+        "gz": 26664,
+        "br": 26632
+      },
+      {
+        "href": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+        "raw": 18372,
+        "gz": 18397,
+        "br": 18360
+      }
+    ],
+    "fontPreloadTotal": 77652,
+    "otherPreloads": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "imagesrcset": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=256&amp;q=75 256w, /_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=384&amp;q=75 384w, /_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=640&amp;q=75 640w, /_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=750&amp;q=75 750w, /_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=828&amp;q=75 828w, /_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=1080&amp;q=75 1080w, /_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=1200&amp;q=75 1200w, /_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=1920&amp;q=75 1920w, /_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=2048&amp;q=75 2048w, /_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=3840&amp;q=75 3840w"
+      },
+      {
+        "rel": "preload",
+        "href": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "as": "script",
+        "fp": "low"
+      }
+    ],
+    "imgs": [
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&amp;w=3840&amp;q=75",
+        "srcset": true,
+        "sizes": "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw",
+        "loading": "lazy",
+        "decoding": "async",
+        "alt": ""
+      }
+    ],
+    "sources": [],
+    "nonNextScripts": []
+  },
+  "za-majstore": {
+    "route": "/za-majstore",
+    "status": 200,
+    "contentEncoding": "gzip",
+    "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+    "htmlTransfer": 21709,
+    "htmlRaw": 137006,
+    "htmlGzipLocal": 21093,
+    "htmlBrotliLocal": 14049,
+    "rscInlineBytes": 91622,
+    "jsonLdBytes": 2015,
+    "inlineStyleBytes": 4570,
+    "jsCount": 24,
+    "js": [
+      {
+        "src": "/_next/static/chunks/2h84ksv1mg5s9.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 30588,
+        "gz": 8077,
+        "br": 7106
+      },
+      {
+        "src": "/_next/static/chunks/0qimmyhv2_bjj.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 129338,
+        "gz": 34775,
+        "br": 29571
+      },
+      {
+        "src": "/_next/static/chunks/0qy3sss5e6eww.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 234172,
+        "gz": 73278,
+        "br": 62561
+      },
+      {
+        "src": "/_next/static/chunks/11we8zj_qz5aa.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 27411,
+        "gz": 8635,
+        "br": 7731
+      },
+      {
+        "src": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 10979,
+        "gz": 4319,
+        "br": 3876
+      },
+      {
+        "src": "/_next/static/chunks/3fntmmi971322.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 14377,
+        "gz": 3661,
+        "br": 3266
+      },
+      {
+        "src": "/_next/static/chunks/25dplrt_qw3he.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 18451,
+        "gz": 7011,
+        "br": 6292
+      },
+      {
+        "src": "/_next/static/chunks/14y-81z8a-w-u.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 26404,
+        "gz": 10408,
+        "br": 9384
+      },
+      {
+        "src": "/_next/static/chunks/2vm060vmiv-df.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 27602,
+        "gz": 9278,
+        "br": 8182
+      },
+      {
+        "src": "/_next/static/chunks/1tr6a7zmh41cy.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 125720,
+        "gz": 49588,
+        "br": 44376
+      },
+      {
+        "src": "/_next/static/chunks/0rklqt_vfe3_n.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 37952,
+        "gz": 12601,
+        "br": 11040
+      },
+      {
+        "src": "/_next/static/chunks/2jrozipxybei4.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 82591,
+        "gz": 22641,
+        "br": 20076
+      },
+      {
+        "src": "/_next/static/chunks/2f8qbt33jjpy3.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 6686,
+        "gz": 2753,
+        "br": 2421
+      },
+      {
+        "src": "/_next/static/chunks/1kcz530oz9u-o.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 550,
+        "gz": 287,
+        "br": 244
+      },
+      {
+        "src": "/_next/static/chunks/2g3bv_p29okud.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 32381,
+        "gz": 10351,
+        "br": 8970
+      },
+      {
+        "src": "/_next/static/chunks/120epkn8j_rkq.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 30585,
+        "gz": 10895,
+        "br": 9644
+      },
+      {
+        "src": "/_next/static/chunks/29atrq35xgs9f.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 5026,
+        "gz": 1721,
+        "br": 1512
+      },
+      {
+        "src": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 69125,
+        "gz": 22896,
+        "br": 19638
+      },
+      {
+        "src": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 22528,
+        "gz": 8008,
+        "br": 7111
+      },
+      {
+        "src": "/_next/static/chunks/3vb-0g8_hpcr0.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 22871,
+        "gz": 8756,
+        "br": 7803
+      },
+      {
+        "src": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 7477,
+        "gz": 3151,
+        "br": 2726
+      },
+      {
+        "src": "/_next/static/chunks/1adhcvv0smcza.js",
+        "attrs": "async=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 23258,
+        "gz": 8829,
+        "br": 7751
+      },
+      {
+        "src": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+        "attrs": "noModule=\"\" nonce=\"+cm/yC7kOmz30x8OLWBxBw==\"",
+        "raw": 112594,
+        "gz": 39627,
+        "br": 35158
+      },
+      {
+        "src": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "attrs": "nonce=\"+cm/yC7kOmz30x8OLWBxBw==\" id=\"_R_\" async=\"\"",
+        "raw": 7637,
+        "gz": 2011,
+        "br": 1753
+      }
+    ],
+    "jsTotals": {
+      "raw": 1106303,
+      "gz": 363557,
+      "br": 318192
+    },
+    "css": [
+      {
+        "href": "/_next/static/chunks/1ims1_lcdan5r.css",
+        "raw": 98804,
+        "gz": 18948,
+        "br": 15136
+      }
+    ],
+    "cssTotals": {
+      "raw": 98804,
+      "gz": 18948,
+      "br": 15136
+    },
+    "fontPreloads": [
+      {
+        "href": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+        "raw": 16260,
+        "gz": 16283,
+        "br": 16264
+      },
+      {
+        "href": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+        "raw": 16384,
+        "gz": 16407,
+        "br": 16380
+      },
+      {
+        "href": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+        "raw": 26636,
+        "gz": 26664,
+        "br": 26632
+      },
+      {
+        "href": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+        "raw": 18372,
+        "gz": 18397,
+        "br": 18360
+      }
+    ],
+    "fontPreloadTotal": 77652,
+    "otherPreloads": [
+      {
+        "rel": "preload",
+        "href": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "as": "script",
+        "fp": "low"
+      }
+    ],
+    "imgs": [],
+    "sources": [],
+    "nonNextScripts": []
+  },
+  "upit": {
+    "route": "/upit",
+    "status": 200,
+    "contentEncoding": "gzip",
+    "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+    "htmlTransfer": 25141,
+    "htmlRaw": 147816,
+    "htmlGzipLocal": 24724,
+    "htmlBrotliLocal": 18037,
+    "rscInlineBytes": 96816,
+    "jsonLdBytes": 0,
+    "inlineStyleBytes": 4570,
+    "jsCount": 25,
+    "js": [
+      {
+        "src": "/_next/static/chunks/2h84ksv1mg5s9.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 30588,
+        "gz": 8077,
+        "br": 7106
+      },
+      {
+        "src": "/_next/static/chunks/0qimmyhv2_bjj.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 129338,
+        "gz": 34775,
+        "br": 29571
+      },
+      {
+        "src": "/_next/static/chunks/0qy3sss5e6eww.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 234172,
+        "gz": 73278,
+        "br": 62561
+      },
+      {
+        "src": "/_next/static/chunks/11we8zj_qz5aa.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 27411,
+        "gz": 8635,
+        "br": 7731
+      },
+      {
+        "src": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 10979,
+        "gz": 4319,
+        "br": 3876
+      },
+      {
+        "src": "/_next/static/chunks/3fntmmi971322.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 14377,
+        "gz": 3661,
+        "br": 3266
+      },
+      {
+        "src": "/_next/static/chunks/25dplrt_qw3he.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 18451,
+        "gz": 7011,
+        "br": 6292
+      },
+      {
+        "src": "/_next/static/chunks/14y-81z8a-w-u.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 26404,
+        "gz": 10408,
+        "br": 9384
+      },
+      {
+        "src": "/_next/static/chunks/2vm060vmiv-df.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 27602,
+        "gz": 9278,
+        "br": 8182
+      },
+      {
+        "src": "/_next/static/chunks/1tr6a7zmh41cy.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 125720,
+        "gz": 49588,
+        "br": 44376
+      },
+      {
+        "src": "/_next/static/chunks/0rklqt_vfe3_n.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 37952,
+        "gz": 12601,
+        "br": 11040
+      },
+      {
+        "src": "/_next/static/chunks/2jrozipxybei4.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 82591,
+        "gz": 22641,
+        "br": 20076
+      },
+      {
+        "src": "/_next/static/chunks/2f8qbt33jjpy3.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 6686,
+        "gz": 2753,
+        "br": 2421
+      },
+      {
+        "src": "/_next/static/chunks/1kcz530oz9u-o.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 550,
+        "gz": 287,
+        "br": 244
+      },
+      {
+        "src": "/_next/static/chunks/2g3bv_p29okud.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 32381,
+        "gz": 10351,
+        "br": 8970
+      },
+      {
+        "src": "/_next/static/chunks/120epkn8j_rkq.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 30585,
+        "gz": 10895,
+        "br": 9644
+      },
+      {
+        "src": "/_next/static/chunks/29atrq35xgs9f.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 5026,
+        "gz": 1721,
+        "br": 1512
+      },
+      {
+        "src": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 69125,
+        "gz": 22896,
+        "br": 19638
+      },
+      {
+        "src": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 22528,
+        "gz": 8008,
+        "br": 7111
+      },
+      {
+        "src": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 7477,
+        "gz": 3151,
+        "br": 2726
+      },
+      {
+        "src": "/_next/static/chunks/301fp03vk_ndj.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 60703,
+        "gz": 20204,
+        "br": 17581
+      },
+      {
+        "src": "/_next/static/chunks/1uyyf-z7kpx1w.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 430078,
+        "gz": 103619,
+        "br": 84769
+      },
+      {
+        "src": "/_next/static/chunks/1adhcvv0smcza.js",
+        "attrs": "async=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 23258,
+        "gz": 8829,
+        "br": 7751
+      },
+      {
+        "src": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+        "attrs": "noModule=\"\" nonce=\"oMAXnDwECHgxDjjzBcrmbA==\"",
+        "raw": 112594,
+        "gz": 39627,
+        "br": 35158
+      },
+      {
+        "src": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "attrs": "nonce=\"oMAXnDwECHgxDjjzBcrmbA==\" id=\"_R_\" async=\"\"",
+        "raw": 7637,
+        "gz": 2011,
+        "br": 1753
+      }
+    ],
+    "jsTotals": {
+      "raw": 1574213,
+      "gz": 478624,
+      "br": 412739
+    },
+    "css": [
+      {
+        "href": "/_next/static/chunks/1ims1_lcdan5r.css",
+        "raw": 98804,
+        "gz": 18948,
+        "br": 15136
+      }
+    ],
+    "cssTotals": {
+      "raw": 98804,
+      "gz": 18948,
+      "br": 15136
+    },
+    "fontPreloads": [
+      {
+        "href": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+        "raw": 16260,
+        "gz": 16283,
+        "br": 16264
+      },
+      {
+        "href": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+        "raw": 16384,
+        "gz": 16407,
+        "br": 16380
+      },
+      {
+        "href": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+        "raw": 26636,
+        "gz": 26664,
+        "br": 26632
+      },
+      {
+        "href": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+        "raw": 18372,
+        "gz": 18397,
+        "br": 18360
+      }
+    ],
+    "fontPreloadTotal": 77652,
+    "otherPreloads": [
+      {
+        "rel": "preload",
+        "href": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "as": "script",
+        "fp": "low"
+      }
+    ],
+    "imgs": [],
+    "sources": [],
+    "nonNextScripts": []
+  },
+  "korpa": {
+    "route": "/korpa",
+    "status": 200,
+    "contentEncoding": "gzip",
+    "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+    "htmlTransfer": 13580,
+    "htmlRaw": 90530,
+    "htmlGzipLocal": 12772,
+    "htmlBrotliLocal": 9473,
+    "rscInlineBytes": 64355,
+    "jsonLdBytes": 0,
+    "inlineStyleBytes": 4570,
+    "jsCount": 25,
+    "js": [
+      {
+        "src": "/_next/static/chunks/2h84ksv1mg5s9.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 30588,
+        "gz": 8077,
+        "br": 7106
+      },
+      {
+        "src": "/_next/static/chunks/0qimmyhv2_bjj.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 129338,
+        "gz": 34775,
+        "br": 29571
+      },
+      {
+        "src": "/_next/static/chunks/0qy3sss5e6eww.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 234172,
+        "gz": 73278,
+        "br": 62561
+      },
+      {
+        "src": "/_next/static/chunks/11we8zj_qz5aa.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 27411,
+        "gz": 8635,
+        "br": 7731
+      },
+      {
+        "src": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 10979,
+        "gz": 4319,
+        "br": 3876
+      },
+      {
+        "src": "/_next/static/chunks/3fntmmi971322.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 14377,
+        "gz": 3661,
+        "br": 3266
+      },
+      {
+        "src": "/_next/static/chunks/25dplrt_qw3he.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 18451,
+        "gz": 7011,
+        "br": 6292
+      },
+      {
+        "src": "/_next/static/chunks/14y-81z8a-w-u.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 26404,
+        "gz": 10408,
+        "br": 9384
+      },
+      {
+        "src": "/_next/static/chunks/2vm060vmiv-df.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 27602,
+        "gz": 9278,
+        "br": 8182
+      },
+      {
+        "src": "/_next/static/chunks/1tr6a7zmh41cy.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 125720,
+        "gz": 49588,
+        "br": 44376
+      },
+      {
+        "src": "/_next/static/chunks/0rklqt_vfe3_n.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 37952,
+        "gz": 12601,
+        "br": 11040
+      },
+      {
+        "src": "/_next/static/chunks/2jrozipxybei4.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 82591,
+        "gz": 22641,
+        "br": 20076
+      },
+      {
+        "src": "/_next/static/chunks/2f8qbt33jjpy3.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 6686,
+        "gz": 2753,
+        "br": 2421
+      },
+      {
+        "src": "/_next/static/chunks/1kcz530oz9u-o.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 550,
+        "gz": 287,
+        "br": 244
+      },
+      {
+        "src": "/_next/static/chunks/2g3bv_p29okud.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 32381,
+        "gz": 10351,
+        "br": 8970
+      },
+      {
+        "src": "/_next/static/chunks/120epkn8j_rkq.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 30585,
+        "gz": 10895,
+        "br": 9644
+      },
+      {
+        "src": "/_next/static/chunks/29atrq35xgs9f.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 5026,
+        "gz": 1721,
+        "br": 1512
+      },
+      {
+        "src": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 69125,
+        "gz": 22896,
+        "br": 19638
+      },
+      {
+        "src": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 22528,
+        "gz": 8008,
+        "br": 7111
+      },
+      {
+        "src": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 7477,
+        "gz": 3151,
+        "br": 2726
+      },
+      {
+        "src": "/_next/static/chunks/1zwlbl_4jyzcb.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 2031,
+        "gz": 1011,
+        "br": 887
+      },
+      {
+        "src": "/_next/static/chunks/42-8_0nljx4ce.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 36747,
+        "gz": 12869,
+        "br": 11384
+      },
+      {
+        "src": "/_next/static/chunks/1adhcvv0smcza.js",
+        "attrs": "async=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 23258,
+        "gz": 8829,
+        "br": 7751
+      },
+      {
+        "src": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+        "attrs": "noModule=\"\" nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\"",
+        "raw": 112594,
+        "gz": 39627,
+        "br": 35158
+      },
+      {
+        "src": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "attrs": "nonce=\"Y3f/eFoN3MUOBiwRneKRgg==\" id=\"_R_\" async=\"\"",
+        "raw": 7637,
+        "gz": 2011,
+        "br": 1753
+      }
+    ],
+    "jsTotals": {
+      "raw": 1122210,
+      "gz": 368681,
+      "br": 322660
+    },
+    "css": [
+      {
+        "href": "/_next/static/chunks/1ims1_lcdan5r.css",
+        "raw": 98804,
+        "gz": 18948,
+        "br": 15136
+      }
+    ],
+    "cssTotals": {
+      "raw": 98804,
+      "gz": 18948,
+      "br": 15136
+    },
+    "fontPreloads": [
+      {
+        "href": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+        "raw": 16260,
+        "gz": 16283,
+        "br": 16264
+      },
+      {
+        "href": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+        "raw": 16384,
+        "gz": 16407,
+        "br": 16380
+      },
+      {
+        "href": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+        "raw": 26636,
+        "gz": 26664,
+        "br": 26632
+      },
+      {
+        "href": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+        "raw": 18372,
+        "gz": 18397,
+        "br": 18360
+      }
+    ],
+    "fontPreloadTotal": 77652,
+    "otherPreloads": [
+      {
+        "rel": "preload",
+        "href": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "as": "script",
+        "fp": "low"
+      }
+    ],
+    "imgs": [],
+    "sources": [],
+    "nonNextScripts": []
+  },
+  "porudzbina": {
+    "route": "/porudzbina",
+    "status": 200,
+    "contentEncoding": "gzip",
+    "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+    "htmlTransfer": 14203,
+    "htmlRaw": 92172,
+    "htmlGzipLocal": 13372,
+    "htmlBrotliLocal": 10027,
+    "rscInlineBytes": 66141,
+    "jsonLdBytes": 0,
+    "inlineStyleBytes": 4570,
+    "jsCount": 25,
+    "js": [
+      {
+        "src": "/_next/static/chunks/2h84ksv1mg5s9.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 30588,
+        "gz": 8077,
+        "br": 7106
+      },
+      {
+        "src": "/_next/static/chunks/0qimmyhv2_bjj.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 129338,
+        "gz": 34775,
+        "br": 29571
+      },
+      {
+        "src": "/_next/static/chunks/0qy3sss5e6eww.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 234172,
+        "gz": 73278,
+        "br": 62561
+      },
+      {
+        "src": "/_next/static/chunks/11we8zj_qz5aa.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 27411,
+        "gz": 8635,
+        "br": 7731
+      },
+      {
+        "src": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 10979,
+        "gz": 4319,
+        "br": 3876
+      },
+      {
+        "src": "/_next/static/chunks/3fntmmi971322.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 14377,
+        "gz": 3661,
+        "br": 3266
+      },
+      {
+        "src": "/_next/static/chunks/25dplrt_qw3he.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 18451,
+        "gz": 7011,
+        "br": 6292
+      },
+      {
+        "src": "/_next/static/chunks/14y-81z8a-w-u.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 26404,
+        "gz": 10408,
+        "br": 9384
+      },
+      {
+        "src": "/_next/static/chunks/2vm060vmiv-df.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 27602,
+        "gz": 9278,
+        "br": 8182
+      },
+      {
+        "src": "/_next/static/chunks/1tr6a7zmh41cy.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 125720,
+        "gz": 49588,
+        "br": 44376
+      },
+      {
+        "src": "/_next/static/chunks/0rklqt_vfe3_n.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 37952,
+        "gz": 12601,
+        "br": 11040
+      },
+      {
+        "src": "/_next/static/chunks/2jrozipxybei4.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 82591,
+        "gz": 22641,
+        "br": 20076
+      },
+      {
+        "src": "/_next/static/chunks/2f8qbt33jjpy3.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 6686,
+        "gz": 2753,
+        "br": 2421
+      },
+      {
+        "src": "/_next/static/chunks/1kcz530oz9u-o.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 550,
+        "gz": 287,
+        "br": 244
+      },
+      {
+        "src": "/_next/static/chunks/2g3bv_p29okud.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 32381,
+        "gz": 10351,
+        "br": 8970
+      },
+      {
+        "src": "/_next/static/chunks/120epkn8j_rkq.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 30585,
+        "gz": 10895,
+        "br": 9644
+      },
+      {
+        "src": "/_next/static/chunks/29atrq35xgs9f.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 5026,
+        "gz": 1721,
+        "br": 1512
+      },
+      {
+        "src": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 69125,
+        "gz": 22896,
+        "br": 19638
+      },
+      {
+        "src": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 22528,
+        "gz": 8008,
+        "br": 7111
+      },
+      {
+        "src": "/_next/static/chunks/0e-3apv4m0eih.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 66796,
+        "gz": 21420,
+        "br": 18667
+      },
+      {
+        "src": "/_next/static/chunks/1uyyf-z7kpx1w.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 430078,
+        "gz": 103619,
+        "br": 84769
+      },
+      {
+        "src": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 7477,
+        "gz": 3151,
+        "br": 2726
+      },
+      {
+        "src": "/_next/static/chunks/1adhcvv0smcza.js",
+        "attrs": "async=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 23258,
+        "gz": 8829,
+        "br": 7751
+      },
+      {
+        "src": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+        "attrs": "noModule=\"\" nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\"",
+        "raw": 112594,
+        "gz": 39627,
+        "br": 35158
+      },
+      {
+        "src": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "attrs": "nonce=\"gPIKtKqoSL2gHHyIFkWROQ==\" id=\"_R_\" async=\"\"",
+        "raw": 7637,
+        "gz": 2011,
+        "br": 1753
+      }
+    ],
+    "jsTotals": {
+      "raw": 1580306,
+      "gz": 479840,
+      "br": 413825
+    },
+    "css": [
+      {
+        "href": "/_next/static/chunks/1ims1_lcdan5r.css",
+        "raw": 98804,
+        "gz": 18948,
+        "br": 15136
+      }
+    ],
+    "cssTotals": {
+      "raw": 98804,
+      "gz": 18948,
+      "br": 15136
+    },
+    "fontPreloads": [
+      {
+        "href": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+        "raw": 16260,
+        "gz": 16283,
+        "br": 16264
+      },
+      {
+        "href": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+        "raw": 16384,
+        "gz": 16407,
+        "br": 16380
+      },
+      {
+        "href": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+        "raw": 26636,
+        "gz": 26664,
+        "br": 26632
+      },
+      {
+        "href": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+        "raw": 18372,
+        "gz": 18397,
+        "br": 18360
+      }
+    ],
+    "fontPreloadTotal": 77652,
+    "otherPreloads": [
+      {
+        "rel": "preload",
+        "href": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "as": "script",
+        "fp": "low"
+      }
+    ],
+    "imgs": [],
+    "sources": [],
+    "nonNextScripts": []
+  },
+  "prijava": {
+    "route": "/prijava",
+    "status": 200,
+    "contentEncoding": "gzip",
+    "cacheControl": "private, no-cache, no-store, max-age=0, must-revalidate",
+    "htmlTransfer": 14333,
+    "htmlRaw": 94824,
+    "htmlGzipLocal": 13482,
+    "htmlBrotliLocal": 10086,
+    "rscInlineBytes": 66783,
+    "jsonLdBytes": 0,
+    "inlineStyleBytes": 4570,
+    "jsCount": 24,
+    "js": [
+      {
+        "src": "/_next/static/chunks/2h84ksv1mg5s9.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 30588,
+        "gz": 8077,
+        "br": 7106
+      },
+      {
+        "src": "/_next/static/chunks/0qimmyhv2_bjj.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 129338,
+        "gz": 34775,
+        "br": 29571
+      },
+      {
+        "src": "/_next/static/chunks/0qy3sss5e6eww.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 234172,
+        "gz": 73278,
+        "br": 62561
+      },
+      {
+        "src": "/_next/static/chunks/11we8zj_qz5aa.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 27411,
+        "gz": 8635,
+        "br": 7731
+      },
+      {
+        "src": "/_next/static/chunks/turbopack-324-cyruufpbq.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 10979,
+        "gz": 4319,
+        "br": 3876
+      },
+      {
+        "src": "/_next/static/chunks/3fntmmi971322.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 14377,
+        "gz": 3661,
+        "br": 3266
+      },
+      {
+        "src": "/_next/static/chunks/25dplrt_qw3he.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 18451,
+        "gz": 7011,
+        "br": 6292
+      },
+      {
+        "src": "/_next/static/chunks/14y-81z8a-w-u.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 26404,
+        "gz": 10408,
+        "br": 9384
+      },
+      {
+        "src": "/_next/static/chunks/2vm060vmiv-df.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 27602,
+        "gz": 9278,
+        "br": 8182
+      },
+      {
+        "src": "/_next/static/chunks/1tr6a7zmh41cy.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 125720,
+        "gz": 49588,
+        "br": 44376
+      },
+      {
+        "src": "/_next/static/chunks/0rklqt_vfe3_n.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 37952,
+        "gz": 12601,
+        "br": 11040
+      },
+      {
+        "src": "/_next/static/chunks/2jrozipxybei4.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 82591,
+        "gz": 22641,
+        "br": 20076
+      },
+      {
+        "src": "/_next/static/chunks/2f8qbt33jjpy3.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 6686,
+        "gz": 2753,
+        "br": 2421
+      },
+      {
+        "src": "/_next/static/chunks/1kcz530oz9u-o.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 550,
+        "gz": 287,
+        "br": 244
+      },
+      {
+        "src": "/_next/static/chunks/2g3bv_p29okud.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 32381,
+        "gz": 10351,
+        "br": 8970
+      },
+      {
+        "src": "/_next/static/chunks/120epkn8j_rkq.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 30585,
+        "gz": 10895,
+        "br": 9644
+      },
+      {
+        "src": "/_next/static/chunks/29atrq35xgs9f.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 5026,
+        "gz": 1721,
+        "br": 1512
+      },
+      {
+        "src": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 69125,
+        "gz": 22896,
+        "br": 19638
+      },
+      {
+        "src": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 22528,
+        "gz": 8008,
+        "br": 7111
+      },
+      {
+        "src": "/_next/static/chunks/08lons-06ykpl.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 1840,
+        "gz": 912,
+        "br": 773
+      },
+      {
+        "src": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 7477,
+        "gz": 3151,
+        "br": 2726
+      },
+      {
+        "src": "/_next/static/chunks/1adhcvv0smcza.js",
+        "attrs": "async=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 23258,
+        "gz": 8829,
+        "br": 7751
+      },
+      {
+        "src": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+        "attrs": "noModule=\"\" nonce=\"fG31ApkRllr+t2pNzG/xWg==\"",
+        "raw": 112594,
+        "gz": 39627,
+        "br": 35158
+      },
+      {
+        "src": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "attrs": "nonce=\"fG31ApkRllr+t2pNzG/xWg==\" id=\"_R_\" async=\"\"",
+        "raw": 7637,
+        "gz": 2011,
+        "br": 1753
+      }
+    ],
+    "jsTotals": {
+      "raw": 1085272,
+      "gz": 355713,
+      "br": 311162
+    },
+    "css": [
+      {
+        "href": "/_next/static/chunks/1ims1_lcdan5r.css",
+        "raw": 98804,
+        "gz": 18948,
+        "br": 15136
+      }
+    ],
+    "cssTotals": {
+      "raw": 98804,
+      "gz": 18948,
+      "br": 15136
+    },
+    "fontPreloads": [
+      {
+        "href": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+        "raw": 16260,
+        "gz": 16283,
+        "br": 16264
+      },
+      {
+        "href": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+        "raw": 16384,
+        "gz": 16407,
+        "br": 16380
+      },
+      {
+        "href": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+        "raw": 26636,
+        "gz": 26664,
+        "br": 26632
+      },
+      {
+        "href": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+        "raw": 18372,
+        "gz": 18397,
+        "br": 18360
+      }
+    ],
+    "fontPreloadTotal": 77652,
+    "otherPreloads": [
+      {
+        "rel": "preload",
+        "href": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "as": "script",
+        "fp": "low"
+      }
+    ],
+    "imgs": [],
+    "sources": [],
+    "nonNextScripts": []
+  }
+}

@@ -1,0 +1,108 @@
+# backend-09 verification (code) — 2026-09-30T14:41:12Z
+## Every reader of domainEvents in convex/ (excluding _generated/tests): none is a staffQuery reading failed/dead
+--
+convex/automations.ts:180:      .query("domainEvents")
+convex/automations.ts-181-      .withIndex("by_type", (q) => q.eq("type", "stock.low").gt("_creationTime", since))
+convex/automations.ts-182-      .take(500);
+convex/automations.ts-183-    const seen = new Set<string>();
+--
+convex/automations.ts:401:    .query("domainEvents")
+convex/automations.ts-402-    .withIndex("by_status_and_nextAttemptAt", (q) =>
+convex/automations.ts-403-      q.eq("status", "done").lt("nextAttemptAt", now - RETENTION.eventsMs),
+convex/automations.ts-404-    )
+--
+convex/automations.ts:520:    .query("domainEvents")
+convex/automations.ts-521-    .withIndex("by_creation_time", (q) =>
+convex/automations.ts-522-      q.gt("_creationTime", capiMark.from).lt("_creationTime", now - RETENTION.capiContextMs),
+convex/automations.ts-523-    )
+--
+--
+--
+convex/demo.ts:53:    .query("domainEvents")
+convex/demo.ts-54-    .withIndex("by_aggregateType_and_aggregateId", (q) =>
+convex/demo.ts-55-      q.eq("aggregateType", aggregateType).eq("aggregateId", aggregateId),
+convex/demo.ts-56-    )
+--
+convex/events.ts:591:        .query("domainEvents")
+convex/events.ts-592-        .withIndex("by_status_and_nextAttemptAt", (q) =>
+convex/events.ts-593-          q.eq("status", status).lte("nextAttemptAt", now - 30_000),
+convex/events.ts-594-        )
+--
+convex/lib/events.ts:26:    .query("domainEvents")
+convex/lib/events.ts-27-    .withIndex("by_dedupeKey", (q) => q.eq("dedupeKey", input.dedupeKey))
+convex/lib/events.ts-28-    .first();
+convex/lib/events.ts-29-  if (existing) return existing._id;
+--
+--
+--
+--
+--
+--
+convex/testing.ts:54:      .query("domainEvents")
+convex/testing.ts-55-      .withIndex("by_aggregateType_and_aggregateId", (q) =>
+convex/testing.ts-56-        q.eq("aggregateType", "order").eq("aggregateId", order._id),
+convex/testing.ts-57-      )
+--
+convex/testing.ts:92:      .query("domainEvents")
+convex/testing.ts-93-      .withIndex("by_aggregateType_and_aggregateId", (q) =>
+convex/testing.ts-94-        q.eq("aggregateType", "inquiry").eq("aggregateId", inquiry._id),
+convex/testing.ts-95-      )
+--
+convex/testing.ts:303:      .query("domainEvents")
+convex/testing.ts-304-      .withIndex("by_aggregateType_and_aggregateId", (q) =>
+convex/testing.ts-305-        q.eq("aggregateType", "mechanic").eq("aggregateId", profile._id),
+convex/testing.ts-306-      )
+
+## Only writer of failed/dead (events.dispatch catch)
+export const dispatch = internalMutation({
+  args: { eventId: v.id("domainEvents") },
+  returns: v.null(),
+  handler: async (ctx, { eventId }) => {
+    const event = await ctx.db.get("domainEvents", eventId);
+    if (!event || event.status === "done" || event.status === "dead") return null;
+    const attempts = event.attempts + 1;
+    try {
+      await processEvent(ctx, event);
+      await ctx.db.patch("domainEvents", eventId, {
+        status: "done",
+        attempts,
+        processedAt: Date.now(),
+        lastError: undefined,
+      });
+    } catch (error) {
+      // Deliveries written before the failure stay (idempotent); the event retries later.
+      const message = error instanceof Error ? error.message : String(error);
+      const dead = attempts >= MAX_ATTEMPTS;
+      await ctx.db.patch("domainEvents", eventId, {
+        status: dead ? "dead" : "failed",
+        attempts,
+        lastError: message.slice(0, 500),
+        nextAttemptAt: Date.now() + retryDelayMs(attempts),
+      });
+    }
+    return null;
+  },
+});
+
+## Staff queries/mutations that mention domainEvents status failed/dead:
+convex/events.ts:557:    if (!event || event.status === "done" || event.status === "dead") return null;
+convex/events.ts:572:        status: dead ? "dead" : "failed",
+convex/events.ts:589:    for (const status of ["pending", "failed"] as const) {
+
+## Docs promise (docs/NOTIFICATIONS.md:10)
+10:`emitEvent(ctx, type, payload, dedupeKey)` inserts `domainEvents` (pending) **in the same transaction** as the business write and schedules `events.dispatch` with `runAfter(0)`. The dispatcher resolves recipients (settings + staff preferences), writes `notificationDeliveries` rows (unique per event × channel × recipient — idempotent), creates in-app `notifications`, and enqueues e-mails (`emails.render` → `emails.send`), CAPI (`capi.send`) and cache revalidation (`revalidate.notify`) through the `externalIo` workpool. Failures retry with exponential backoff (1 min, 5 min, 30 min, 2 h, 12 h) → `dead` after 5 attempts (visible in admin). `events.sweep` (every minute) re-dispatches stuck `pending`/`failed` events whose `nextAttemptAt` passed.
+
+## Admin outbox reads emailLog, not domainEvents
+62:export const outbox = staffQuery({
+63-  args: {
+64-    status: v.optional(statusV),
+65-    templateKey: v.optional(v.string()),
+66-    paginationOpts: paginationOptsValidator,
+67-  },
+68-  returns: paginationResultValidator(
+69-    v.object({
+70-      _id: v.id("emailLog"),
+71-      to: v.array(v.string()),
+72-      subject: v.string(),
+73-      templateKey: v.string(),
+74-      mode: modeV,

@@ -1,0 +1,15 @@
+# copy-04 source evidence (verifier)
+$ grep -rn '14 časova' convex/seedData/content.ts
+74:Porudžbine potvrđene radnim danom do 14 časova šaljemo istog dana, ako je deo na stanju. Rok isporuke kurirske službe je obično 1–2 radna dana. Za delove „po porudžbini“ rok piše na stranici artikla i u potvrdi porudžbine.
+258:      "Kurirska dostava je {{dostava.kurir.cena|navedena u korpi}}, a besplatna za porudžbine iznad {{dostava.besplatnoPreko|iznosa iz korpe}}. Delove na stanju šaljemo istog radnog dana za porudžbine potvrđene do 14 časova; kurir obično isporučuje za 1–2 radna dana. Lično preuzimanje je bez troška.",
+
+$ grep -rn shipCutoff (all app code, excl. _generated)
+convex/lib/settings.ts:44:    shipCutoff: "14:00",
+convex/lib/settingsSchema.ts:48:  shipCutoff: v.string(),
+convex/settings.ts:46:      shipCutoff: v.string(),
+convex/settings.ts:85:        shipCutoff: s.commerce.shipCutoff,
+components/admin/settings/SettingsAdmin.tsx:723:              value={c.shipCutoff}
+components/admin/settings/SettingsAdmin.tsx:724:              onChange={(e) => commerce.setDraft({ ...c, shipCutoff: e.target.value })}
+
+HUMAN-TODO §8:
+98:- [ ] **[P2]** Rok slanja za poruku „Šaljemo danas ako poručite do …“ — prikazuje se samo ako se unese u podešavanjima; potvrditi da li to želite i do kog sata.

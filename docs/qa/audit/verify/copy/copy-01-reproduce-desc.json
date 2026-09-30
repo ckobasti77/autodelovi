@@ -1,0 +1,207 @@
+{
+  "tally": {
+    "incomplete label (word boundary) + space before …": 2,
+    "dangling 'i' + space before …": 4,
+    "mid-word": 10,
+    "clean label boundary + space before …": 2,
+    "i još (count dropped) + space before …": 1,
+    "dangling 'i'": 3,
+    "clean label boundary": 2,
+    "i još (count dropped)": 6,
+    "incomplete label (word boundary)": 2
+  },
+  "result": [
+    {
+      "url": "/deo/kocioni-disk-prednji-288-25-mm-ventilirani-demo-0001",
+      "full": "VW Golf IV, VW Golf V i još 10",
+      "shown": "VW Golf IV, VW Golf ",
+      "kind": "incomplete label (word boundary) + space before …"
+    },
+    {
+      "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+      "full": "VW Golf VII, VW Passat B8 i još 13",
+      "shown": "VW Golf VII, VW Passat B8 i ",
+      "kind": "dangling 'i' + space before …"
+    },
+    {
+      "url": "/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005",
+      "full": "VW Golf VII, VW Golf VIII i još 17",
+      "shown": "VW Golf VII, VW Golf V",
+      "kind": "mid-word"
+    },
+    {
+      "url": "/deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013",
+      "full": "VW Golf VII, VW Golf VIII i još 17",
+      "shown": "VW Golf VII, VW Go",
+      "kind": "mid-word"
+    },
+    {
+      "url": "/deo/set-za-reparaciju-kocione-celjusti-prednji-demo-0019",
+      "full": "VW Golf V, VW Golf VI i još 21",
+      "shown": "VW Golf V, VW Gol",
+      "kind": "mid-word"
+    },
+    {
+      "url": "/deo/rame-prednje-desno-sa-kuglom-demo-0030",
+      "full": "VW Golf V, VW Golf VI i još 6",
+      "shown": "VW Golf V, VW Golf ",
+      "kind": "incomplete label (word boundary) + space before …"
+    },
+    {
+      "url": "/deo/dihtung-glave-motora-2-0-tdi-2-zareza-demo-0044",
+      "full": "VW Golf V, VW Golf VI i još 21",
+      "shown": "VW Golf V, VW Golf VI ",
+      "kind": "clean label boundary + space before …"
+    },
+    {
+      "url": "/deo/motor-klapni-usisne-grane-2-0-tdi-demo-0052",
+      "full": "VW Golf V, VW Golf VI i još 9",
+      "shown": "VW Golf V, VW Golf VI i jo",
+      "kind": "mid-word"
+    },
+    {
+      "url": "/deo/crevo-usisa-od-filtera-vazduha-demo-0053",
+      "full": "VW Golf VII, VW Passat B8 i još 10",
+      "shown": "VW Golf VII, VW Passat B8 i još ",
+      "kind": "i još (count dropped) + space before …"
+    },
+    {
+      "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-0057",
+      "full": "VW Golf IV, VW Golf V i još 17",
+      "shown": "VW Golf IV, VW Golf V i j",
+      "kind": "mid-word"
+    },
+    {
+      "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-2-0-tdi-demo-0058",
+      "full": "VW Golf V, VW Golf VI i još 21",
+      "shown": "VW Golf V, VW Golf V",
+      "kind": "mid-word"
+    },
+    {
+      "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-6-tdi-demo-0060",
+      "full": "VW Golf V, VW Golf VI i još 26",
+      "shown": "VW Golf V, VW Golf VI i",
+      "kind": "dangling 'i'"
+    },
+    {
+      "url": "/deo/semering-radilice-strana-zamajca-demo-0075",
+      "full": "VW Golf IV, VW Golf V i još 13",
+      "shown": "VW Golf IV, VW Golf V ",
+      "kind": "clean label boundary + space before …"
+    },
+    {
+      "url": "/deo/nosac-menjaca-levi-dsg-demo-0079",
+      "full": "VW Golf V, VW Golf VI i još 6",
+      "shown": "VW Golf V, VW Golf VI i j",
+      "kind": "mid-word"
+    },
+    {
+      "url": "/deo/crevo-hladnjaka-gornje-demo-0090",
+      "full": "VW Golf V, VW Golf VI i još 6",
+      "shown": "VW Golf V, VW Golf VI i ",
+      "kind": "dangling 'i' + space before …"
+    },
+    {
+      "url": "/deo/kuciste-termostata-sa-pumpom-1-4-tsi-demo-0091",
+      "full": "VW Golf VII, VW Golf VIII i još 17",
+      "shown": "VW Golf VII, VW Golf VIII",
+      "kind": "clean label boundary"
+    },
+    {
+      "url": "/deo/set-filtera-i-ulja-za-dsg-dq250-demo-0097",
+      "full": "VW Golf V, VW Golf VI i još 21",
+      "shown": "VW Golf V, VW Golf VI i još",
+      "kind": "i još (count dropped)"
+    },
+    {
+      "url": "/deo/manzetna-homokinetickog-zgloba-set-demo-0101",
+      "full": "VW Golf V, VW Golf VI i još 29",
+      "shown": "VW Golf V, VW Golf VI i još",
+      "kind": "i još (count dropped)"
+    },
+    {
+      "url": "/deo/senzor-temperature-rashladne-tecnosti-demo-0112",
+      "full": "VW Golf IV, VW Golf V i još 25",
+      "shown": "VW Golf IV, VW Golf V i j",
+      "kind": "mid-word"
+    },
+    {
+      "url": "/deo/brava-prednjih-desnih-vrata-demo-0120",
+      "full": "VW Golf VII, VW Passat B8 i još 10",
+      "shown": "VW Golf VII, VW Passat B8 i",
+      "kind": "dangling 'i'"
+    },
+    {
+      "url": "/deo/metlice-brisaca-aerotwin-600-475-set-demo-0124",
+      "full": "VW Golf VII, Škoda Octavia III i još 2",
+      "shown": "VW Golf VII, Škoda Octavia II",
+      "kind": "mid-word"
+    },
+    {
+      "url": "/deo/metlica-zadnjeg-brisaca-280-mm-demo-0125",
+      "full": "VW Golf V, VW Golf VI i još 6",
+      "shown": "VW Golf V, VW Golf VI i",
+      "kind": "dangling 'i'"
+    },
+    {
+      "url": "/deo/aluminijumska-felna-6-5j-16-et46-5-112-demo-0128",
+      "full": "VW Golf V, VW Golf VI i još 25",
+      "shown": "VW Golf V, VW Golf",
+      "kind": "incomplete label (word boundary)"
+    },
+    {
+      "url": "/deo/filter-kabine-sa-aktivnim-ugljem-demo-0142",
+      "full": "VW Golf V, VW Golf VI i još 9",
+      "shown": "VW Golf V, VW Golf VI i ",
+      "kind": "dangling 'i' + space before …"
+    },
+    {
+      "url": "/deo/filter-kabine-sa-aktivnim-ugljem-demo-0145",
+      "full": "VW Golf VIII, VW Caddy V i još 5",
+      "shown": "VW Golf VIII, VW Caddy V i još",
+      "kind": "i još (count dropped)"
+    },
+    {
+      "url": "/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-0002",
+      "full": "VW Golf V, VW Golf VI i još 18",
+      "shown": "VW Golf V, VW Golf VI",
+      "kind": "clean label boundary"
+    },
+    {
+      "url": "/deo/kocione-plocice-prednje-sistem-teves-demo-0010",
+      "full": "VW Golf VII, VW Passat B8 i još 10",
+      "shown": "VW Golf VII, VW Passat B8 i još",
+      "kind": "i još (count dropped)"
+    },
+    {
+      "url": "/deo/kociona-celjust-zadnja-desna-sa-motorom-rucne-demo-0018",
+      "full": "VW Golf VII, VW Passat B8 i još 10",
+      "shown": "VW Golf VII, VW Passat B",
+      "kind": "mid-word"
+    },
+    {
+      "url": "/deo/dihtung-poklopca-ventila-1-9-tdi-demo-0045",
+      "full": "VW Golf IV, VW Golf V i još 17",
+      "shown": "VW Golf IV, VW Golf V i još",
+      "kind": "i još (count dropped)"
+    },
+    {
+      "url": "/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-e001",
+      "full": "VW Golf V, VW Golf VI i još 18",
+      "shown": "VW Golf V, VW Golf VI i ",
+      "kind": "dangling 'i' + space before …"
+    },
+    {
+      "url": "/deo/kocione-plocice-prednje-sa-senzorom-demo-e002",
+      "full": "VW Golf V, VW Golf VI i još 18",
+      "shown": "VW Golf V, VW Golf VI i još",
+      "kind": "i još (count dropped)"
+    },
+    {
+      "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-e007",
+      "full": "VW Golf IV, VW Golf V i još 17",
+      "shown": "VW Golf IV, VW Golf",
+      "kind": "incomplete label (word boundary)"
+    }
+  ]
+}

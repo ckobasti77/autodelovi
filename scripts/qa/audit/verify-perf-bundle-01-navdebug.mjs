@@ -1,0 +1,26 @@
+// verify track (perf-bundle-01): debug when the zod chunk is requested in the cart -> checkout flow.
+import { BASE, launch, newContext } from "./kit.mjs";
+const browser = await launch("chromium");
+const ctx = await newContext(browser, { width: 390, height: 844, tag: "verify-pb01-navdebug" });
+const page = await ctx.newPage();
+const T = Date.now();
+const log = (s) => console.log(String(Date.now() - T).padStart(6), s);
+page.on("request", (r) => { if (/chunks\/.*\.js|_rsc|porudzbina/.test(r.url())) log(`REQ ${r.resourceType()} ${r.url().replace(BASE, "")}`); });
+page.on("requestfinished", (r) => { if (r.url().includes("1uyyf")) log(`DONE ${r.url().replace(BASE, "")}`); });
+page.on("framenavigated", (f) => { if (f === page.mainFrame()) log(`NAV ${f.url()}`); });
+await page.goto(BASE + "/deo/kocioni-disk-prednji-276-24-mm-demo-0004", { waitUntil: "load" });
+await page.getByRole("button", { name: /dodaj u korpu/i }).first().click();
+await page.waitForTimeout(1500);
+log("goto korpa");
+await page.goto(BASE + "/korpa", { waitUntil: "load" });
+await page.waitForTimeout(3000);
+const cdp = await ctx.newCDPSession(page);
+await cdp.send("Network.enable");
+await cdp.send("Network.emulateNetworkConditions", { offline: false, latency: 150, downloadThroughput: (1.6 * 1024 * 1024) / 8, uploadThroughput: (750 * 1024) / 8 });
+log("throttled; click");
+await page.locator('a[href="/porudzbina"]').filter({ visible: true }).first().click();
+log("clicked");
+await page.getByRole("heading", { name: "Kontakt" }).waitFor({ state: "visible", timeout: 30000 });
+log("Kontakt visible");
+await page.waitForTimeout(3000);
+await browser.close();

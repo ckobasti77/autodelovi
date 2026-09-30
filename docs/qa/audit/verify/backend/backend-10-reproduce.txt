@@ -1,0 +1,58 @@
+# backend-10 verification (code) — 2026-09-30T14:41:12Z
+## dashboard:kpis (reactive staffQuery on /admin)
+      .take(500);
+    const low = await ctx.db
+      .query("products")
+      .withIndex("by_stockState_and_active", (q) =>
+        q.eq("stockState", "low_stock").eq("active", true),
+      )
+      .take(1_000);
+    const out = await ctx.db
+      .query("products")
+      .withIndex("by_stockState_and_active", (q) =>
+        q.eq("stockState", "out_of_stock").eq("active", true),
+      )
+      .take(1_000);
+    const settings = await getSettings(ctx);
+128:      lowStock: low.length,
+129:      outOfStock: out.length,
+
+## daily digest (convex/lib/emailData.ts)
+  const low = await ctx.db
+    .query("products")
+    .withIndex("by_stockState_and_active", (q) =>
+      q.eq("stockState", "low_stock").eq("active", true),
+    )
+    .take(1000);
+  const out = await ctx.db
+    .query("products")
+    .withIndex("by_stockState_and_active", (q) =>
+      q.eq("stockState", "out_of_stock").eq("active", true),
+    )
+    .take(1000);
+  const searches = await ctx.db
+
+## Dashboard renders the raw number, no cap indicator (components/admin/dashboard/Dashboard.tsx)
+            <Kpi
+              href={ADMIN.stock}
+              label="Bez zaliha"
+              value={kpis.outOfStock}
+              sub={
+                kpis.lowStock > 0
+                  ? `još ${kpis.lowStock} sa malo zaliha`
+                  : "nijedan artikal sa malo zaliha"
+              }
+            />
+
+## Existing counters maintained by productWriter (category counts) — pattern exists
+237:async function adjustCounts(
+564:  await adjustCounts(ctx, input.categoryId, input.manufacturerId, counts.product, counts.inStock);
+820:    await adjustCounts(
+827:    await adjustCounts(ctx, saved.categoryId, saved.manufacturerId, after.product, after.inStock);
+829:    await adjustCounts(
+
+## Convex guideline
+333:- Never use `.collect().length` to count rows. Convex has no built-in count operator. For a simple total, maintain a denormalized counter document updated in your mutations. When queries need aggregates over many rows - counts, sums, ranks/positions, or offset access, whole-table or within a key range - use the `@convex-dev/aggregate` component (O(log n) reads; keep it updated in the same mutation as every source-table write).
+
+## D137 (admin lists) rejected an aggregate component 'at this catalogue size'; bounded counts only for open order/inquiry statuses (<=500)
+220:| 2026-09-30 | 15 | D137 — Admin lists use **one index as the access path** (status + `_creationTime` range, category, stock state, manufacturer, actor, or the search index with its filter fields) and apply the remaining filters (delivery, payment, customer type, source, campaign, kind, „samo majstori“, quality, demo) as Convex `.filter()` post-filters on the paginated range. Pagination 

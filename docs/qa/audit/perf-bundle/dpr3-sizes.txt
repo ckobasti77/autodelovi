@@ -1,0 +1,24 @@
+== category
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75
+   fetched 7423 /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75
+== search
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75
+   fetched 0 /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75
+== landing
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75
+   rendered 104 css px (needs 312 px) -> /_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75
+   fetched 5404 /_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75

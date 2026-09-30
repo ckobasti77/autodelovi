@@ -1,0 +1,38 @@
+# perf-3d-01 verify (RTX 4060 ANGLE D3D11, :3200)
+## start long tasks (frames runs, 4x CPU)
+    start: first draw +775 ms · ready +1804 ms · long tasks 6 (sum>50 936 ms; worst 520 ms)
+    start: first draw +758 ms · ready +1475 ms · long tasks 5 (sum>50 652 ms; worst 389 ms)
+    start: first draw +749 ms · ready +1184 ms · long tasks 6 (sum>50 381 ms; worst 230 ms)
+    start: first draw +712 ms · ready +2192 ms · long tasks 7 (sum>50 818 ms; worst 472 ms)
+    start: first draw +661 ms · ready +1641 ms · long tasks 5 (sum>50 324 ms; worst 199 ms)
+    start: first draw +747 ms · ready +1854 ms · long tasks 6 (sum>50 425 ms; worst 228 ms)
+## CPU profile desktop 1x, run 0 fresh browser (cold program cache), run 1 same browser (warm)
+[desktop cpu1 run 0] busy stretch at +484 ms: 390 ms
+  self: 350 ms getProgramParameter | 3 ms (garbage collector) | 3 ms ed 0i-5efvfrwjiv.js:1:84136 | 2 ms (anon) 3loc6izf4ows2.js:353:109695 | 2 ms rD 0i-5efvfrwjiv.js:1:228881 | 2 ms (anon) 0i-5efvfrwjiv.js:1:332304 | 2 ms bindVertexArray | 2 ms toHalfFloat 0i-
+  incl: 362 ms _fromTexture 3loc6izf4ows2.js:1:177308 | 362 ms fromEquirectangular 3loc6izf4ows2.js:1:176197 | 359 ms render 3loc6izf4ows2.js:342:46299 | 356 ms renderBufferDirect 3loc6izf4ows2.js:342:30244 | 350 ms getProgramParameter | 350 ms getUniforms 3lo
+--
+[desktop cpu1 run 0] busy stretch at +876 ms: 242 ms
+  self: 148 ms getProgramParameter | 14 ms bindBuffer | 13 ms texSubImage2D | 6 ms (garbage collector) | 4 ms shaderSource | 3 ms getParameters 3loc6izf4ows2.js:318:4231 | 3 ms e5 3loc6izf4ows2.js:342:42921 | 3 ms setup 3loc6izf4ows2.js:1:168195
+  incl: 180 ms render 3loc6izf4ows2.js:342:46299 | 160 ms renderBufferDirect 3loc6izf4ows2.js:342:30244 | 148 ms getUniforms 3loc6izf4ows2.js:318:2279 | 148 ms getProgramParameter | 20 ms compileAsync 3loc6izf4ows2.js:342:38716 | 20 ms traverse 0i-5efvfrwjiv.j
+--
+[desktop cpu1 run 0] busy stretch at +1133 ms: 43 ms
+[desktop cpu1 run 1] busy stretch at +526 ms: 76 ms
+  self: 21 ms getProgramParameter | 11 ms texSubImage2D | 5 ms (garbage collector) | 3 ms e5 3loc6izf4ows2.js:342:42921 | 2 ms tr 3loc6izf4ows2.js:296:10779 | 2 ms getParameters 3loc6izf4ows2.js:318:4
+  incl: 39 ms render 3loc6izf4ows2.js:342:46299 | 33 ms renderBufferDirect 3loc6izf4ows2.js:342:30244 | 21 ms getUniforms 3loc6izf4ows2.js:318:2279 | 21 ms getProgramParameter | 13 ms traverse 0i-5efv
+--
+[desktop cpu1 run 1] busy stretch at +468 ms: 44 ms
+  self: 3 ms getProgramParameter | 3 ms (anon) 3loc6izf4ows2.js:353:137546 | 3 ms parse 3loc6izf4ows2.js:353:108166 | 3 ms (garbage collector) | 2 ms (anon) 3loc6izf4ows2.js:353:110807 | 2 ms get 3loc
+  incl: 15 ms _fromTexture 3loc6izf4ows2.js:1:177308 | 15 ms fromEquirectangular 3loc6izf4ows2.js:1:176197 | 12 ms render 3loc6izf4ows2.js:342:46299 | 11 ms parse 3loc6izf4ows2.js:353:108166 | 8 ms re
+## CPU profile desktop 4x cold
+[desktop cpu4 run 0] busy stretch at +1003 ms: 558 ms
+  self: 367 ms getProgramParameter | 17 ms (anon) 3loc6izf4ows2.js:353:137546 | 12 ms (anon) 3loc6izf4ows2.js:353:110807 | 7 ms parse 3loc6izf4ows2.js:353:108166 | 6 ms (anon) 3loc6izf4ows2.js:353:109695 | 5 ms parse 3loc6izf4ows2.js:353:64521 | 4 ms ed 0i-5ef
+  incl: 429 ms _fromTexture 3loc6izf4ows2.js:1:177308 | 429 ms fromEquirectangular 3loc6izf4ows2.js:1:176197 | 417 ms render 3loc6izf4ows2.js:342:46299 | 400 ms renderBufferDirect 3loc6izf4ows2.js:342:30244 | 378 ms _applyPMREM 3loc6izf4ows2.js:165:1706 | 378 
+--
+[desktop cpu4 run 0] busy stretch at +1632 ms: 357 ms
+  self: 46 ms texSubImage2D | 45 ms getProgramParameter | 22 ms e5 3loc6izf4ows2.js:342:42921 | 16 ms rE 0i-5efvfrwjiv.js:1:224847 | 15 ms shaderSource | 13 ms getParameters 3loc6izf4ows2.js:318:4231 | 11 ms tr 3loc6izf4ows2.js:296:10779 | 8 ms (garbage collec
+  incl: 159 ms render 3loc6izf4ows2.js:342:46299 | 122 ms renderBufferDirect 3loc6izf4ows2.js:342:30244 | 107 ms traverse 0i-5efvfrwjiv.js:1:58737 | 107 ms compileAsync 3loc6izf4ows2.js:342:38716 | 106 ms compile 3loc6izf4ows2.js:342:37858 | 52 ms getUniforms 
+--
+[desktop cpu4 run 0] busy stretch at +2156 ms: 327 ms
+  self: 149 ms sN 0i-5efvfrwjiv.js:1:183806 | 23 ms (anon) 0nvty3axw6gpe.js:503:6395 | 23 ms er 0nvty3axw6gpe.js:503:969 | 22 ms (anon) 3loc6izf4ows2.js:451:4341 | 19 ms init 0nvty3axw6gpe.js:503:3663 | 16 ms computePrimitiveBounds 0nvty3axw6gpe.js:503:37953 |
+  incl: 114 ms init 0nvty3axw6gpe.js:503:14681 | 112 ms init 0nvty3axw6gpe.js:503:3663 | 27 ms computePrimitiveBounds 0nvty3axw6gpe.js:503:37953 | 14 ms getX 0i-5efvfrwjiv.js:1:103678 | 11 ms fromBufferAttribute 0i-5efvfrwjiv.js:1:19346 | 5 ms getZ 0i-5efvfrwj
+--

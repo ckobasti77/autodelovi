@@ -1,0 +1,15 @@
+# copy-02 source evidence (verifier)
+$ grep -n 'obrazac' lib/email/templates/order.ts
+269:            `Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Uslovi i obrazac su na stranici [Reklamacije i povrat](${d.complaintsUrl}).`,
+
+$ grep -n 'Viber\|Kontakt' convex/seedData/content.ts (kontakt / reklamacije / privatnost)
+60:    bodyMd: `Najbrže je da nas pozovete ili pišete na Viber. Ako ne znate broj dela, pošaljite upit sa brojem šasije i fotografijom starog dela; odgovaramo u toku radnog dana.
+97:1. Pošaljite nam izjavu o odustanku e-poštom ({{firma.email|adresa sa stranice Kontakt}}) ili pismom na adresu prodavca. Dovoljno je da navedete broj porudžbine, artikal i da odustajete od ugovora.
+165:- {{firma.naziv|Prodavac naveden na stranici Kontakt}}
+190:Imate pravo da zatražite pristup podacima, ispravku, brisanje, ograničenje obrade i prenosivost, pravo na prigovor i pravo da u svakom trenutku opozovete pristanak. Zahtev pošaljite na {{firma.email|e-poštu sa stranice Kontakt}}; odgovaramo najkasnije u roku od 30 dana. Imate pravo i da podnesete pritužbu Povereniku za informacije od javnog značaja i zaštitu podataka o ličnosti.
+
+$ grep -n 'Pozovite, pišite na Viber' components/home/HomeSections.tsx
+279:            Pozovite, pišite na Viber ili pošaljite upit sa brojem šasije.
+
+$ grep -n 'Pitanje o porudžbini' app/(shop)/porudzbina/[token]/page.tsx
+32:            <p className="type-body-s text-ink-2">Pitanje o porudžbini? Navedite njen broj.</p>

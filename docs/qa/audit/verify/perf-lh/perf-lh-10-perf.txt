@@ -1,0 +1,14 @@
+# perf-lh-10 (verify) static checks
+$ grep -n "const BUDGET" tests/lighthouse/run.mjs
+35:const BUDGET = { lcp: 2500, cls: 0.05, tbt: 300, performance: 0.85 };
+$ grep -n "const paths" tests/lighthouse/run.mjs
+29:const paths = args.filter((a, i) => a.startsWith("/") && !(args[i - 1] ?? "").startsWith("--"));
+$ grep -n "toFixed\|largest-contentful-paint-element\|runtimeError" tests/lighthouse/run.mjs
+70:        lcpElement: audits["largest-contentful-paint-element"]?.details?.items?.[0]?.items?.[0]?.node?.snippet ?? "",
+76:        `${url} run ${r + 1}: perf ${Math.round(run.performance * 100)} · LCP ${Math.round(run.lcp)} ms · CLS ${run.cls.toFixed(3)} · TBT ${Math.round(run.tbt)} ms · FCP ${Math.round(run.fcp)} ms · SI ${Math.round(run.si)} ms`,
+91:      `MEDIAN ${url} (${DESKTOP ? "desktop" : "mobile"}, ${THROTTLING} throttling, ${RUNS} runs): performance ${Math.round(m.performance * 100)} · accessibility ${Math.round(m.accessibility * 100)} · best practices ${Math.round(m.bestPractices * 100)} · SEO ${Math.round(m.seo * 100)} · LCP ${Math.round(m.lcp)} ms · CLS ${m.cls.toFixed(3)} · TBT ${Math.round(m.tbt)} ms · FCP ${Math.round(m.fcp)} ms · SI ${Math.round(m.si)} ms`,
+97:      if (m.cls > BUDGET.cls) misses.push(`CLS ${m.cls.toFixed(3)} > ${BUDGET.cls}`);
+$ ls node_modules/lighthouse/core/audits | grep -i "largest-contentful-paint-element"  (none in 13.5.0)
+0
+$ node -e parse simulation of args "--base X --runs 3 --desktop / /delovi/kocioni-diskovi"
+[ '/delovi/kocioni-diskovi' ]

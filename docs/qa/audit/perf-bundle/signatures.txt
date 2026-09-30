@@ -1,0 +1,176 @@
+
+== home first-load scripts (module only)
+     7.9 gz  2h84ksv1mg5s9.js         
+    34.0 gz  0qimmyhv2_bjj.js         next app router
+    71.6 gz  0qy3sss5e6eww.js         react-dom, core-js polyfills (nomodule)
+     8.4 gz  11we8zj_qz5aa.js         
+     4.2 gz  turbopack-324-cyruufpbq.js 
+     3.6 gz  3fntmmi971322.js         
+     6.8 gz  25dplrt_qw3he.js         react-dom, convex client, ScrollTrigger, @gsap/react useGSAP, radix DismissableLayer/FocusScope, radix Tooltip, text reveal
+    10.2 gz  14y-81z8a-w-u.js         
+     9.1 gz  2vm060vmiv-df.js         @gsap/react useGSAP, radix DismissableLayer/FocusScope, @phosphor-icons
+    48.4 gz  1tr6a7zmh41cy.js         gsap core, ScrollTrigger, ScrollToPlugin, CustomEase, @gsap/react useGSAP
+    12.3 gz  0rklqt_vfe3_n.js         @convex-dev/auth, radix Toast, @phosphor-icons
+    22.1 gz  2jrozipxybei4.js         convex client
+     2.7 gz  2f8qbt33jjpy3.js         
+     0.3 gz  1kcz530oz9u-o.js         
+    10.1 gz  2g3bv_p29okud.js         @phosphor-icons, mobile nav
+    10.6 gz  120epkn8j_rkq.js         radix Dialog, radix Switch/Checkbox/Radio, @phosphor-icons
+     1.7 gz  29atrq35xgs9f.js         
+    22.4 gz  0sgvhbpe5nb6s.js         gsap core, Draggable, InertiaPlugin, @gsap/react useGSAP, zustand, @phosphor-icons, analytics adapters (gtag/fbq), consent banner, vehicle picker, cart drawer
+     7.8 gz  1t0q0ok8maumv.js         radix Dialog, radix DismissableLayer/FocusScope, react-remove-scroll
+     0.3 gz  1c6x4sv25ngo-.js         
+    21.0 gz  0wnn3uk7fx3z2.js         ScrollTrigger, ScrollToPlugin, @gsap/react useGSAP, three, @phosphor-icons
+     3.1 gz  3k__gv_edg8eb.js         @phosphor-icons
+     8.6 gz  1adhcvv0smcza.js         @phosphor-icons
+     2.0 gz  41cvzcmlkfz4o.js         
+  total module JS: 329.1 KB gz
+
+== product first-load scripts (module only)
+     7.9 gz  2h84ksv1mg5s9.js         
+    34.0 gz  0qimmyhv2_bjj.js         next app router
+    71.6 gz  0qy3sss5e6eww.js         react-dom, core-js polyfills (nomodule)
+     8.4 gz  11we8zj_qz5aa.js         
+     4.2 gz  turbopack-324-cyruufpbq.js 
+     3.6 gz  3fntmmi971322.js         
+     6.8 gz  25dplrt_qw3he.js         react-dom, convex client, ScrollTrigger, @gsap/react useGSAP, radix DismissableLayer/FocusScope, radix Tooltip, text reveal
+    10.2 gz  14y-81z8a-w-u.js         
+     9.1 gz  2vm060vmiv-df.js         @gsap/react useGSAP, radix DismissableLayer/FocusScope, @phosphor-icons
+    48.4 gz  1tr6a7zmh41cy.js         gsap core, ScrollTrigger, ScrollToPlugin, CustomEase, @gsap/react useGSAP
+    12.3 gz  0rklqt_vfe3_n.js         @convex-dev/auth, radix Toast, @phosphor-icons
+    22.1 gz  2jrozipxybei4.js         convex client
+     2.7 gz  2f8qbt33jjpy3.js         
+     0.3 gz  1kcz530oz9u-o.js         
+    10.1 gz  2g3bv_p29okud.js         @phosphor-icons, mobile nav
+    10.6 gz  120epkn8j_rkq.js         radix Dialog, radix Switch/Checkbox/Radio, @phosphor-icons
+     1.7 gz  29atrq35xgs9f.js         
+    22.4 gz  0sgvhbpe5nb6s.js         gsap core, Draggable, InertiaPlugin, @gsap/react useGSAP, zustand, @phosphor-icons, analytics adapters (gtag/fbq), consent banner, vehicle picker, cart drawer
+     7.8 gz  1t0q0ok8maumv.js         radix Dialog, radix DismissableLayer/FocusScope, react-remove-scroll
+    11.0 gz  1tkvz3oryrb1b.js         @gsap/react useGSAP, radix Switch/Checkbox/Radio, @phosphor-icons
+    14.9 gz  0iy1468xjorsv.js         @phosphor-icons, cart drawer
+     3.1 gz  3k__gv_edg8eb.js         @phosphor-icons
+     8.6 gz  1adhcvv0smcza.js         @phosphor-icons
+     2.0 gz  41cvzcmlkfz4o.js         
+  total module JS: 333.6 KB gz
+
+== upit first-load scripts (module only)
+     7.9 gz  2h84ksv1mg5s9.js         
+    34.0 gz  0qimmyhv2_bjj.js         next app router
+    71.6 gz  0qy3sss5e6eww.js         react-dom, core-js polyfills (nomodule)
+     8.4 gz  11we8zj_qz5aa.js         
+     4.2 gz  turbopack-324-cyruufpbq.js 
+     3.6 gz  3fntmmi971322.js         
+     6.8 gz  25dplrt_qw3he.js         react-dom, convex client, ScrollTrigger, @gsap/react useGSAP, radix DismissableLayer/FocusScope, radix Tooltip, text reveal
+    10.2 gz  14y-81z8a-w-u.js         
+     9.1 gz  2vm060vmiv-df.js         @gsap/react useGSAP, radix DismissableLayer/FocusScope, @phosphor-icons
+    48.4 gz  1tr6a7zmh41cy.js         gsap core, ScrollTrigger, ScrollToPlugin, CustomEase, @gsap/react useGSAP
+    12.3 gz  0rklqt_vfe3_n.js         @convex-dev/auth, radix Toast, @phosphor-icons
+    22.1 gz  2jrozipxybei4.js         convex client
+     2.7 gz  2f8qbt33jjpy3.js         
+     0.3 gz  1kcz530oz9u-o.js         
+    10.1 gz  2g3bv_p29okud.js         @phosphor-icons, mobile nav
+    10.6 gz  120epkn8j_rkq.js         radix Dialog, radix Switch/Checkbox/Radio, @phosphor-icons
+     1.7 gz  29atrq35xgs9f.js         
+    22.4 gz  0sgvhbpe5nb6s.js         gsap core, Draggable, InertiaPlugin, @gsap/react useGSAP, zustand, @phosphor-icons, analytics adapters (gtag/fbq), consent banner, vehicle picker, cart drawer
+     7.8 gz  1t0q0ok8maumv.js         radix Dialog, radix DismissableLayer/FocusScope, react-remove-scroll
+     3.1 gz  3k__gv_edg8eb.js         @phosphor-icons
+    19.7 gz  301fp03vk_ndj.js         radix Switch/Checkbox/Radio, @phosphor-icons
+   101.2 gz  1uyyf-z7kpx1w.js         zod, react-hook-form
+     8.6 gz  1adhcvv0smcza.js         @phosphor-icons
+     2.0 gz  41cvzcmlkfz4o.js         
+  total module JS: 428.7 KB gz
+
+== porudzbina first-load scripts (module only)
+     7.9 gz  2h84ksv1mg5s9.js         
+    34.0 gz  0qimmyhv2_bjj.js         next app router
+    71.6 gz  0qy3sss5e6eww.js         react-dom, core-js polyfills (nomodule)
+     8.4 gz  11we8zj_qz5aa.js         
+     4.2 gz  turbopack-324-cyruufpbq.js 
+     3.6 gz  3fntmmi971322.js         
+     6.8 gz  25dplrt_qw3he.js         react-dom, convex client, ScrollTrigger, @gsap/react useGSAP, radix DismissableLayer/FocusScope, radix Tooltip, text reveal
+    10.2 gz  14y-81z8a-w-u.js         
+     9.1 gz  2vm060vmiv-df.js         @gsap/react useGSAP, radix DismissableLayer/FocusScope, @phosphor-icons
+    48.4 gz  1tr6a7zmh41cy.js         gsap core, ScrollTrigger, ScrollToPlugin, CustomEase, @gsap/react useGSAP
+    12.3 gz  0rklqt_vfe3_n.js         @convex-dev/auth, radix Toast, @phosphor-icons
+    22.1 gz  2jrozipxybei4.js         convex client
+     2.7 gz  2f8qbt33jjpy3.js         
+     0.3 gz  1kcz530oz9u-o.js         
+    10.1 gz  2g3bv_p29okud.js         @phosphor-icons, mobile nav
+    10.6 gz  120epkn8j_rkq.js         radix Dialog, radix Switch/Checkbox/Radio, @phosphor-icons
+     1.7 gz  29atrq35xgs9f.js         
+    22.4 gz  0sgvhbpe5nb6s.js         gsap core, Draggable, InertiaPlugin, @gsap/react useGSAP, zustand, @phosphor-icons, analytics adapters (gtag/fbq), consent banner, vehicle picker, cart drawer
+     7.8 gz  1t0q0ok8maumv.js         radix Dialog, radix DismissableLayer/FocusScope, react-remove-scroll
+    20.9 gz  0e-3apv4m0eih.js         radix Switch/Checkbox/Radio, @phosphor-icons, cart drawer
+   101.2 gz  1uyyf-z7kpx1w.js         zod, react-hook-form
+     3.1 gz  3k__gv_edg8eb.js         @phosphor-icons
+     8.6 gz  1adhcvv0smcza.js         @phosphor-icons
+     2.0 gz  41cvzcmlkfz4o.js         
+  total module JS: 429.9 KB gz
+
+== prijava first-load scripts (module only)
+     7.9 gz  2h84ksv1mg5s9.js         
+    34.0 gz  0qimmyhv2_bjj.js         next app router
+    71.6 gz  0qy3sss5e6eww.js         react-dom, core-js polyfills (nomodule)
+     8.4 gz  11we8zj_qz5aa.js         
+     4.2 gz  turbopack-324-cyruufpbq.js 
+     3.6 gz  3fntmmi971322.js         
+     6.8 gz  25dplrt_qw3he.js         react-dom, convex client, ScrollTrigger, @gsap/react useGSAP, radix DismissableLayer/FocusScope, radix Tooltip, text reveal
+    10.2 gz  14y-81z8a-w-u.js         
+     9.1 gz  2vm060vmiv-df.js         @gsap/react useGSAP, radix DismissableLayer/FocusScope, @phosphor-icons
+    48.4 gz  1tr6a7zmh41cy.js         gsap core, ScrollTrigger, ScrollToPlugin, CustomEase, @gsap/react useGSAP
+    12.3 gz  0rklqt_vfe3_n.js         @convex-dev/auth, radix Toast, @phosphor-icons
+    22.1 gz  2jrozipxybei4.js         convex client
+     2.7 gz  2f8qbt33jjpy3.js         
+     0.3 gz  1kcz530oz9u-o.js         
+    10.1 gz  2g3bv_p29okud.js         @phosphor-icons, mobile nav
+    10.6 gz  120epkn8j_rkq.js         radix Dialog, radix Switch/Checkbox/Radio, @phosphor-icons
+     1.7 gz  29atrq35xgs9f.js         
+    22.4 gz  0sgvhbpe5nb6s.js         gsap core, Draggable, InertiaPlugin, @gsap/react useGSAP, zustand, @phosphor-icons, analytics adapters (gtag/fbq), consent banner, vehicle picker, cart drawer
+     7.8 gz  1t0q0ok8maumv.js         radix Dialog, radix DismissableLayer/FocusScope, react-remove-scroll
+     0.9 gz  08lons-06ykpl.js         @convex-dev/auth
+     3.1 gz  3k__gv_edg8eb.js         @phosphor-icons
+     8.6 gz  1adhcvv0smcza.js         @phosphor-icons
+     2.0 gz  41cvzcmlkfz4o.js         
+  total module JS: 308.7 KB gz
+
+== library -> chunks (gz KB)
+react-dom                            2: 0qy3sss5e6eww.js(71.6) 25dplrt_qw3he.js(6.8)
+next app router                      1: 0qimmyhv2_bjj.js(34.0)
+core-js polyfills (nomodule)         1: 0qy3sss5e6eww.js(71.6)
+convex client                        2: 25dplrt_qw3he.js(6.8) 2jrozipxybei4.js(22.1)
+@convex-dev/auth                     8: 0-vqbywv1frs3.js(11.0) 08lons-06ykpl.js(0.9) 0a5m1a_57uplu.js(6.5) 0rklqt_vfe3_n.js(12.3) 133ojn598axd9.js(10.4) 1tr2-d9szn6d4.js(13.7) 2rtpgg8_7tivw.js(1.3) 3f_vfql_ja0s2.js(2.0)
+gsap core                            9: 00t-a16koa1p2.js(14.2) 039wpuq1o4-pc.js(15.8) 0sgvhbpe5nb6s.js(22.4) 1tr6a7zmh41cy.js(48.4) 2ls-pvzaio9fh.js(15.8) 2lujup_6ek0ah.js(7.2) 3--at0sfow7eb.js(11.6) 3p2plj6_z8m-n.js(12.8) 3ust1k_5l_aqb.js(2.9)
+ScrollTrigger                        3: 0wnn3uk7fx3z2.js(21.0) 1tr6a7zmh41cy.js(48.4) 25dplrt_qw3he.js(6.8)
+ScrollToPlugin                       2: 0wnn3uk7fx3z2.js(21.0) 1tr6a7zmh41cy.js(48.4)
+CustomEase                           1: 1tr6a7zmh41cy.js(48.4)
+Draggable                            7: 00t-a16koa1p2.js(14.2) 039wpuq1o4-pc.js(15.8) 0sgvhbpe5nb6s.js(22.4) 2ls-pvzaio9fh.js(15.8) 2lujup_6ek0ah.js(7.2) 3--at0sfow7eb.js(11.6) 3p2plj6_z8m-n.js(12.8)
+InertiaPlugin                        7: 00t-a16koa1p2.js(14.2) 039wpuq1o4-pc.js(15.8) 0sgvhbpe5nb6s.js(22.4) 2ls-pvzaio9fh.js(15.8) 2lujup_6ek0ah.js(7.2) 3--at0sfow7eb.js(11.6) 3ust1k_5l_aqb.js(2.9)
+@gsap/react useGSAP                  26: 0-3ot3zrablxh.js(19.8) 00t-a16koa1p2.js(14.2) 039wpuq1o4-pc.js(15.8) 085mnq86x2n79.js(7.4) 09y7i--_cjeik.js(21.4) 0ou5yv-jreb37.js(11.8) 0pf-zcwlcbqzw.js(13.8) 0sgvhbpe5nb6s.js(22.4) 0wnn3uk7fx3z2.js(21.0) 166afq9bunfnm.js(10.7) 18rl_xuz3dg7u.js(9.6) 1c3n1hzg8e883.js(10.3) 1tkvz3oryrb1b.js(11.0) 1tr2-d9szn6d4.js(13.7) …
+radix Dialog                         6: 120epkn8j_rkq.js(10.6) 1t0q0ok8maumv.js(7.8) 1tr2-d9szn6d4.js(13.7) 2lujup_6ek0ah.js(7.2) 2pjhq4x1l2uhj.js(9.7) 404ko09-15lhs.js(17.8)
+radix DismissableLayer/FocusScope    5: 085mnq86x2n79.js(7.4) 1t0q0ok8maumv.js(7.8) 25dplrt_qw3he.js(6.8) 2vm060vmiv-df.js(9.1) 3rc_lulm_urtg.js(9.3)
+radix Popover                        1: 085mnq86x2n79.js(7.4)
+radix Tooltip                        3: 1tr2-d9szn6d4.js(13.7) 25dplrt_qw3he.js(6.8) 2ls-pvzaio9fh.js(15.8)
+radix DropdownMenu/Menu              2: 085mnq86x2n79.js(7.4) 3rc_lulm_urtg.js(9.3)
+radix Tabs                           8: 0-3ot3zrablxh.js(19.8) 0pf-zcwlcbqzw.js(13.8) 166afq9bunfnm.js(10.7) 18rl_xuz3dg7u.js(9.6) 1c3n1hzg8e883.js(10.3) 2h-y4dlib-nif.js(8.5) 2pjhq4x1l2uhj.js(9.7) 3--at0sfow7eb.js(11.6)
+radix Toast                          1: 0rklqt_vfe3_n.js(12.3)
+radix Switch/Checkbox/Radio          35: 0-3ot3zrablxh.js(19.8) 0-vqbywv1frs3.js(11.0) 048nbqbn8dv24.js(15.1) 06vnfweidc98e.js(7.4) 085mnq86x2n79.js(7.4) 0a5m1a_57uplu.js(6.5) 0e-3apv4m0eih.js(20.9) 0exea7w37ftr3.js(4.6) 0gs_4hpv078zu.js(10.0) 0l429fxchg-_l.js(8.1) 0pf-zcwlcbqzw.js(13.8) 0tcefbmfvjepe.js(8.6) 120epkn8j_rkq.js(10.6) 166afq9bunfnm.js(10.7) …
+radix ScrollArea                     0: 
+react-remove-scroll                  3: 085mnq86x2n79.js(7.4) 1t0q0ok8maumv.js(7.8) 3rc_lulm_urtg.js(9.3)
+floating-ui                          2: 0i-5efvfrwjiv.js(98.8) 3loc6izf4ows2.js(183.0)
+zod                                  1: 1uyyf-z7kpx1w.js(101.2)
+react-hook-form                      1: 1uyyf-z7kpx1w.js(101.2)
+zustand                              8: 00t-a16koa1p2.js(14.2) 0sgvhbpe5nb6s.js(22.4) 1h9gpy0y5abu7.js(13.0) 29ikd2g3512r-.js(21.7) 2c6b-rwbc_yrc.js(15.4) 2ls-pvzaio9fh.js(15.8) 2lujup_6ek0ah.js(7.2) 3loc6izf4ows2.js(183.0)
+three                                3: 0i-5efvfrwjiv.js(98.8) 0wnn3uk7fx3z2.js(21.0) 3loc6izf4ows2.js(183.0)
+@react-three/fiber                   1: 3loc6izf4ows2.js(183.0)
+three-mesh-bvh                       2: 0nvty3axw6gpe.js(27.1) 3loc6izf4ows2.js(183.0)
+meshopt                              1: 3loc6izf4ows2.js(183.0)
+@tanstack/react-table                1: 2c6b-rwbc_yrc.js(15.4)
+cmdk                                 0: 
+xlsx (SheetJS)                       1: 3tw1wuop60-ik.js(160.2)
+@phosphor-icons                      95: 0-3ot3zrablxh.js(19.8) 0-qampgbw6743.js(11.7) 0-vqbywv1frs3.js(11.0) 00t-a16koa1p2.js(14.2) 039wpuq1o4-pc.js(15.8) 048nbqbn8dv24.js(15.1) 06vnfweidc98e.js(7.4) 088lv4ml-59ne.js(20.1) 09y7i--_cjeik.js(21.4) 0a5m1a_57uplu.js(6.5) 0e-3apv4m0eih.js(20.9) 0exea7w37ftr3.js(4.6) 0ge8njo51ig48.js(11.2) 0gsb7mmrvfdx4.js(11.7) …
+analytics adapters (gtag/fbq)        2: 0sgvhbpe5nb6s.js(22.4) 29ikd2g3512r-.js(21.7)
+text reveal                          1: 25dplrt_qw3he.js(6.8)
+consent banner                       5: 00t-a16koa1p2.js(14.2) 0sgvhbpe5nb6s.js(22.4) 1tr2-d9szn6d4.js(13.7) 29ikd2g3512r-.js(21.7) 2ls-pvzaio9fh.js(15.8)
+vehicle picker                       5: 00t-a16koa1p2.js(14.2) 0sgvhbpe5nb6s.js(22.4) 1tr2-d9szn6d4.js(13.7) 29ikd2g3512r-.js(21.7) 2ls-pvzaio9fh.js(15.8)
+cart drawer                          19: 00t-a16koa1p2.js(14.2) 039wpuq1o4-pc.js(15.8) 0e-3apv4m0eih.js(20.9) 0iy1468xjorsv.js(14.9) 0llt31orjtmuk.js(1.1) 0sgvhbpe5nb6s.js(22.4) 195l3wrz-pp8q.js(7.7) 1elqdw7vk-zee.js(11.3) 1nsy63apukn80.js(5.5) 29ikd2g3512r-.js(21.7) 2h0_euy2a7fng.js(10.6) 2ls-pvzaio9fh.js(15.8) 33wypvedk58a8.js(10.0) 38o51x0kbbpcz.js(15.0) …
+mobile nav                           3: 2g3bv_p29okud.js(10.1) 3s2if9929pfqk.js(14.1) 404ko09-15lhs.js(17.8)

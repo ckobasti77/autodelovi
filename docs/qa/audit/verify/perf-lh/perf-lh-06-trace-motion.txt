@@ -1,0 +1,36 @@
+/delovi/kocioni-diskovi r1: long tasks 8 (Σ>50 659 ms) · style 246 · layout 338 · rAF 449× 238 ms · load handler 0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/4/0/0/0/0/0/0/0/0/1 ms · gsap chunk {"evaluate":0,"functionCall":176,"forcedStyle":0,"forcedLayout":0}
+   @3 58 ms (style 0, layout 1) Layout 1 | UpdateLayoutTree 0 | EventDispatch:pagehide 0 | EventDispatch:visibilitychange 0
+   @125 301 ms (style 58, layout 209) Layout 209 | UpdateLayoutTree 58 | Paint 22 | PrePaint 5
+   @449 76 ms (style 10, layout 35) Layout 35 | Paint 20 | UpdateLayoutTree 10 | PrePaint 5
+   @798 233 ms (style 0, layout 0) EvaluateScript turbopack-324-cyruufpbq.js 228 | RunMicrotasks 219 | FunctionCall 0qy3sss5e6eww.js 4 | EventDispatch:load 4
+   @1111 108 ms (style 1, layout 1) FunctionCall 0qy3sss5e6eww.js 108 | Layout 1 | UpdateLayoutTree 0 | Layout 0
+   @1332 53 ms (style 0, layout 0) FunctionCall 0qy3sss5e6eww.js 52 | RunMicrotasks 0 | FunctionCall 0qy3sss5e6eww.js 0
+   @1524 119 ms (style 0, layout 0) FunctionCall 0qy3sss5e6eww.js 118 | RunMicrotasks 1 | FunctionCall 0qy3sss5e6eww.js 0 | FunctionCall 0qy3sss5e6eww.js 0
+   @1858 111 ms (style 16, layout 34) FunctionCall 25dplrt_qw3he.js 109 | Layout 8 | Layout 6 | Layout 5
+/delovi/kocioni-diskovi r2: long tasks 11 (Σ>50 1582 ms) · style 326 · layout 509 · rAF 407× 222 ms · load handler 0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/14/0/0/0/1/0/1 ms · gsap chunk {"evaluate":1,"functionCall":157,"forcedStyle":0,"forcedLayout":0}
+   @4 77 ms (style 0, layout 1) Layout 1 | UpdateLayoutTree 0 | EventDispatch:visibilitychange 0 | EventDispatch:pagehide 0
+   @182 276 ms (style 102, layout 138) Layout 137 | UpdateLayoutTree 102 | Paint 10 | PrePaint 6
+   @564 56 ms (style 16, layout 20) Layout 20 | UpdateLayoutTree 16 | Paint 5 | Commit 4
+   @688 92 ms (style 22, layout 23) Layout 23 | UpdateLayoutTree 22 | Paint 22 | Paint 22
+   @797 181 ms (style 16, layout 164) Layout 164 | UpdateLayoutTree 16
+   @1000 144 ms (style 7, layout 63) Layout 63 | Paint 50 | Commit 9 | UpdateLayoutTree 7
+   @1149 551 ms (style 0, layout 0) EvaluateScript 41cvzcmlkfz4o.js 537 | RunMicrotasks 536 | EventDispatch:load 14 | FunctionCall 0qy3sss5e6eww.js 13
+   @1866 319 ms (style 2, layout 3) FunctionCall 0qy3sss5e6eww.js 318 | Layout 2 | UpdateLayoutTree 1 | Layout 1
+   @2603 110 ms (style 0, layout 0) FunctionCall 0qy3sss5e6eww.js 109 | RunMicrotasks 0 | FunctionCall 0qy3sss5e6eww.js 0
+   @3016 126 ms (style 0, layout 0) FunctionCall 0qy3sss5e6eww.js 126 | RunMicrotasks 0 | FunctionCall 0qy3sss5e6eww.js 0 | FunctionCall 0qy3sss5e6eww.js 0
+   @3300 200 ms (style 23, layout 72) FunctionCall 25dplrt_qw3he.js 198 | Layout 33 | Layout 11 | Layout 9
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 r1: long tasks 6 (Σ>50 618 ms) · style 115 · layout 319 · rAF 458× 215 ms · load handler 0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/4/0/0/0/0/0/0/0/1 ms · gsap chunk {"evaluate":0,"functionCall":137,"forcedStyle":0,"forcedLayout":0}
+   @3 50 ms (style 0, layout 1) Layout 1 | UpdateLayoutTree 0 | EventDispatch:pagehide 0 | EventDispatch:visibilitychange 0
+   @127 400 ms (style 56, layout 285) Layout 178 | Layout 106 | Paint 44 | UpdateLayoutTree 35
+   @636 228 ms (style 0, layout 0) EvaluateScript 41cvzcmlkfz4o.js 223 | RunMicrotasks 223 | FunctionCall 0qy3sss5e6eww.js 4 | EventDispatch:load 4
+   @938 99 ms (style 1, layout 0) FunctionCall 0qy3sss5e6eww.js 99 | Layout 0 | UpdateLayoutTree 0 | UpdateLayoutTree 0
+   @1151 63 ms (style 0, layout 0) FunctionCall 0qy3sss5e6eww.js 62 | RunMicrotasks 0 | FunctionCall 0qy3sss5e6eww.js 0
+   @1293 78 ms (style 0, layout 0) FunctionCall 0qy3sss5e6eww.js 76 | RunMicrotasks 1 | FunctionCall 0qy3sss5e6eww.js 0 | FunctionCall 0qy3sss5e6eww.js 0
+/deo/kocioni-disk-prednji-276-24-mm-demo-0004 r2: long tasks 7 (Σ>50 458 ms) · style 115 · layout 242 · rAF 456× 232 ms · load handler 0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/0/3/0/0/0/0/0/0/0/0/0/0/0/1 ms · gsap chunk {"evaluate":26,"functionCall":161,"forcedStyle":0,"forcedLayout":0}
+   @3 55 ms (style 0, layout 0) Layout 0 | UpdateLayoutTree 0 | EventDispatch:pagehide 0 | EventDispatch:visibilitychange 0
+   @96 246 ms (style 47, layout 169) Layout 136 | Layout 33 | UpdateLayoutTree 27 | UpdateLayoutTree 20
+   @378 97 ms (style 8, layout 68) Layout 68 | Paint 11 | UpdateLayoutTree 8 | PrePaint 4
+   @487 178 ms (style 0, layout 0) EvaluateScript 0qy3sss5e6eww.js 178 | RunMicrotasks 177 | EventDispatch:load 0 | v8.compile 0qy3sss5e6eww.js 0
+   @786 92 ms (style 1, layout 1) FunctionCall 0qy3sss5e6eww.js 92 | UpdateLayoutTree 1 | Layout 0 | UpdateLayoutTree 0
+   @1001 63 ms (style 0, layout 0) FunctionCall 0qy3sss5e6eww.js 62 | RunMicrotasks 0 | FunctionCall 0qy3sss5e6eww.js 0
+   @1177 77 ms (style 0, layout 0) FunctionCall 0qy3sss5e6eww.js 77 | RunMicrotasks 1 | FunctionCall 0qy3sss5e6eww.js 0 | FunctionCall 0qy3sss5e6eww.js 0

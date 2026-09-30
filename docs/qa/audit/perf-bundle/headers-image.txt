@@ -1,0 +1,20 @@
+== /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+Vary: Accept
+Cache-Control: public, max-age=14400, must-revalidate
+Content-Type: image/avif
+Content-Disposition: attachment; filename="kocioni-diskovi.avif"
+X-Nextjs-Cache: HIT
+Content-Length: 7123
+bytes 7123
+== /_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=3840&q=75
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+Vary: Accept
+Cache-Control: public, max-age=14400, must-revalidate
+Content-Type: image/avif
+Content-Disposition: attachment; filename="kocioni-diskovi.avif"
+X-Nextjs-Cache: MISS
+Content-Length: 9658
+bytes 9658

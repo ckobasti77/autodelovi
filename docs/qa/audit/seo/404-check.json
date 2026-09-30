@@ -1,0 +1,108 @@
+[
+ {
+  "path": "/deo/ne-postoji-demo-9999",
+  "js": true,
+  "status": 404,
+  "title": "SKLOP — Rasklopi auto. Nađi deo.",
+  "h1": [
+   "Stranica nije pronađena"
+  ],
+  "main": "Stranica nije pronađena Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas. Pretraži Broj upišite kako god ga ",
+  "shot": "docs/qa/audit/seo/404-js-deo-ne-postoji-demo-9999-390.webp",
+  "console": [
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+ },
+ {
+  "path": "/delovi/nepostojeca-kategorija",
+  "js": true,
+  "status": 404,
+  "title": "SKLOP — Rasklopi auto. Nađi deo.",
+  "h1": [
+   "Stranica nije pronađena"
+  ],
+  "main": "Stranica nije pronađena Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas. Pretraži Broj upišite kako god ga ",
+  "shot": "docs/qa/audit/seo/404-js-delovi-nepostojeca-kategorija-390.webp",
+  "console": [
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+ },
+ {
+  "path": "/vozila/volkswagen/golf/golf-99",
+  "js": true,
+  "status": 404,
+  "title": "SKLOP — Rasklopi auto. Nađi deo.",
+  "h1": [
+   "Stranica nije pronađena"
+  ],
+  "main": "Stranica nije pronađena Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas. Pretraži Broj upišite kako god ga ",
+  "shot": "docs/qa/audit/seo/404-js-vozila-volkswagen-390.webp",
+  "console": [
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+ },
+ {
+  "path": "/ovo-ne-postoji",
+  "js": true,
+  "status": 404,
+  "title": "Stranica nije pronađena · SKLOP",
+  "h1": [
+   "Stranica nije pronađena"
+  ],
+  "main": "Stranica nije pronađena Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas. Pretraži Broj upišite kako god ga ",
+  "shot": "docs/qa/audit/seo/404-js-ovo-ne-postoji-390.webp",
+  "console": [
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+ },
+ {
+  "path": "/deo/ne-postoji-demo-9999",
+  "js": false,
+  "status": 404,
+  "title": "SKLOP — Rasklopi auto. Nađi deo.",
+  "h1": [],
+  "main": "",
+  "shot": "docs/qa/audit/seo/404-nojs-deo-ne-postoji-demo-9999-390.webp",
+  "console": [
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+ },
+ {
+  "path": "/delovi/nepostojeca-kategorija",
+  "js": false,
+  "status": 404,
+  "title": "SKLOP — Rasklopi auto. Nađi deo.",
+  "h1": [],
+  "main": "",
+  "shot": "docs/qa/audit/seo/404-nojs-delovi-nepostojeca-kategorija-390.webp",
+  "console": [
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+ },
+ {
+  "path": "/vozila/volkswagen/golf/golf-99",
+  "js": false,
+  "status": 404,
+  "title": "SKLOP — Rasklopi auto. Nađi deo.",
+  "h1": [],
+  "main": "",
+  "shot": "docs/qa/audit/seo/404-nojs-vozila-volkswagen-390.webp",
+  "console": [
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+ },
+ {
+  "path": "/ovo-ne-postoji",
+  "js": false,
+  "status": 404,
+  "title": "Stranica nije pronađena · SKLOP",
+  "h1": [
+   "Stranica nije pronađena"
+  ],
+  "main": "Stranica nije pronađena Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas. Pretraži Broj upišite kako god ga ",
+  "shot": "docs/qa/audit/seo/404-nojs-ovo-ne-postoji-390.webp",
+  "console": [
+   "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+ }
+]

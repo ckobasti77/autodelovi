@@ -1,0 +1,9 @@
+[mobile-cpu4-gpu-cold run 0] ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11) tier=null · 439 frames · median 16.7 · p95 50 · p99 83.3 · worst 683 ms · >33 ms 11.4 % · >50 ms 20 · >100 ms 4 · long tasks 25 (worst 627) · end p 1.00 ready
+    start: first draw +null ms · ready +2324 ms · long tasks 0 (sum>50 0 ms; worst 0 ms)
+    gl: draws/frame max 172 last 172 · tris/frame max 257044 last 257044 · GPU est 18.1 MB · contexts created 2 live 1 · heap 28 MB · canvas {"css":"390x672","px":"487x840"} · models after intent [] · before intent []
+[mobile-cpu4-gpu-cold run 1] ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11) tier=null · 525 frames · median 16.7 · p95 33.3 · p99 66.7 · worst 333 ms · >33 ms 4.2 % · >50 ms 7 · >100 ms 5 · long tasks 10 (worst 260) · end p 1.00 ready
+    start: first draw +null ms · ready +1331 ms · long tasks 0 (sum>50 0 ms; worst 0 ms)
+    gl: draws/frame max 172 last 172 · tris/frame max 257044 last 257044 · GPU est 16.9 MB · contexts created 2 live 1 · heap 30 MB · canvas {"css":"390x672","px":"390x672"} · models after intent [] · before intent []
+[mobile-cpu4-gpu-cold run 2] ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11) tier=null · 502 frames · median 16.7 · p95 33.4 · p99 66.7 · worst 300 ms · >33 ms 4.6 % · >50 ms 10 · >100 ms 4 · long tasks 12 (worst 243) · end p 1.00 ready
+    start: first draw +null ms · ready +1207 ms · long tasks 0 (sum>50 0 ms; worst 0 ms)
+    gl: draws/frame max 172 last 172 · tris/frame max 257044 last 257044 · GPU est 18.1 MB · contexts created 2 live 1 · heap 23 MB · canvas {"css":"390x672","px":"487x840"} · models after intent [] · before intent []
