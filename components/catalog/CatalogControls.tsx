@@ -118,7 +118,7 @@ function Group({
   const [open, setOpen] = useState(defaultOpen);
   return (
     <div className="border-b border-line py-3">
-      <h3 className="type-label uppercase text-ink-3">
+      <h2 className="type-label uppercase text-ink-3">
         <button
           type="button"
           aria-expanded={open}
@@ -132,7 +132,7 @@ function Group({
             className={cn("transition-transform duration-200", open && "rotate-180")}
           />
         </button>
-      </h3>
+      </h2>
       <div hidden={!open}>{children}</div>
     </div>
   );

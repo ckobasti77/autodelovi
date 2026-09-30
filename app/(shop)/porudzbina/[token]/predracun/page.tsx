@@ -5,6 +5,7 @@ import { api } from "@/convex/_generated/api";
 import { site } from "@/config/site";
 import { formatDate } from "@/lib/format/date";
 import { formatRSD } from "@/lib/format/money";
+import { formatPhone } from "@/lib/format/phone";
 import { privateMetadata } from "@/lib/seo/metadata";
 import { companyFromSettings, contactFromSettings } from "@/lib/settings/public";
 import { fetchPublic } from "@/lib/server/convex";
@@ -62,7 +63,7 @@ export default async function ProformaPage({ params }: PageProps<"/porudzbina/[t
             <p className="mt-1">
               {o.company ? o.company.name : `${o.contact.firstName} ${o.contact.lastName}`}
               {o.company ? <span className="block text-ink-2">PIB {o.company.pib}{o.company.mb ? ` · MB ${o.company.mb}` : ""}</span> : null}
-              <span className="block text-ink-2">{o.contact.phone} · {o.contact.email}</span>
+              <span className="block text-ink-2">{formatPhone(o.contact.phone)} · {o.contact.email}</span>
             </p>
           </div>
           <div>

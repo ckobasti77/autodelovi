@@ -6,7 +6,8 @@
 import { v } from "convex/values";
 
 import type { Doc } from "./_generated/dataModel";
-import { internalQuery } from "./_generated/server";
+import { internalMutation, internalQuery } from "./_generated/server";
+import { hashToken, randomToken } from "./lib/tokens";
 import { isAvailableNow } from "../lib/domain/stock";
 
 export const orderProbe = internalQuery({
@@ -187,5 +188,24 @@ export const samples = internalQuery({
       outOfStock: out ? { slug: out.slug, name: out.name } : null,
       vehicleCategory,
     };
+  },
+});
+
+/**
+ * QA only: a fresh status-page token for a demo inquiry that has a sent quote (the seed keeps
+ * only token hashes, so screenshots of `/upit/[token]` need a new capability).
+ */
+export const quotedInquiryToken = internalMutation({
+  args: {},
+  returns: v.union(v.null(), v.object({ number: v.string(), token: v.string() })),
+  handler: async (ctx) => {
+    const inquiry = await ctx.db
+      .query("inquiries")
+      .withIndex("by_status", (q) => q.eq("status", "ponuda_poslata"))
+      .first();
+    if (!inquiry || !inquiry.isDemo) return null;
+    const token = randomToken();
+    await ctx.db.patch("inquiries", inquiry._id, { publicTokenHash: await hashToken(token) });
+    return { number: inquiry.number, token };
   },
 });

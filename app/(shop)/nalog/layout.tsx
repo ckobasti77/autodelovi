@@ -12,7 +12,7 @@ export default async function AccountLayout({ children }: LayoutProps<"/nalog">)
   const viewer = await requireAccountPage(ROUTES.account);
   const name = viewer.firstName ?? viewer.name ?? viewer.email ?? "Nalog";
   return (
-    <div className="px-page pb-section pt-8">
+    <div className="px-page pb-(--space-section) pt-8">
       <RevealText as="p" className="type-body-s text-ink-3">
         {`Prijavljeni ste kao ${viewer.email ?? name}`}
       </RevealText>

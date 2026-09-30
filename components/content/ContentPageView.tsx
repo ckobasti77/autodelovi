@@ -46,7 +46,7 @@ export async function ContentPageView({
   const body = fillPlaceholders(page.bodyMd, placeholderValues(settings));
   const crumbs = [{ label: "Početna", href: ROUTES.home }, { label: page.title, href: path }];
   return (
-    <div className="px-page pb-section pt-6 lg:pt-8">
+    <div className="px-page pb-(--space-section) pt-6 lg:pt-8">
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
       <Breadcrumbs items={[crumbs[0], { label: page.title }]} />
       <div className="mt-4 max-w-(--container-reading)">

@@ -6,7 +6,7 @@
  * toast; `/korpa` stays the no-JS and deep-link fallback.
  */
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { MagnifyingGlassIcon, ShoppingCartSimpleIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { useCart } from "@/lib/cart/guestCart";
@@ -29,8 +29,12 @@ export function CartDrawer({ delivery }: { delivery: DeliveryInfo }) {
   const cart = useCart();
   const pathname = usePathname();
 
-  // Navigating away (checkout, a product) closes the drawer.
+  // Navigating away (checkout, a product) closes the drawer — not the first render, which is
+  // the very open that mounted this lazy chunk.
+  const lastPath = useRef(pathname);
   useEffect(() => {
+    if (lastPath.current === pathname) return;
+    lastPath.current = pathname;
     setOpen(false);
   }, [pathname, setOpen]);
 

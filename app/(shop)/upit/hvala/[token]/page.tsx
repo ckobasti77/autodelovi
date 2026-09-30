@@ -24,7 +24,7 @@ export default async function InquiryThanksPage({ params }: PageProps<"/upit/hva
   ]);
   if (!inquiry) notFound();
   return (
-    <div className="px-page pb-section pt-10">
+    <div className="px-page pb-(--space-section) pt-10">
       <LeadTracker leadType="inquiry" leadId={inquiry.number} />
       <div className="flex max-w-[48rem] flex-col gap-4">
         <CheckCircleIcon size={40} weight="fill" aria-hidden="true" className="text-success" />

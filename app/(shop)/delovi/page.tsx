@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { categoryProductCount } from "@/lib/catalog/types";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { getCategoryTree, getSettingsPublic } from "@/lib/server/catalog-cache";
@@ -27,7 +28,7 @@ const crumbs = [{ label: "Početna", href: ROUTES.home }, { label: "Delovi" }];
 export default async function PartsIndexPage() {
   const tree = await getCategoryTree();
   return (
-    <div className="px-page pb-section pt-6 lg:pt-8">
+    <div className="px-page pb-(--space-section) pt-6 lg:pt-8">
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
       <Breadcrumbs items={crumbs} />
       <div className="mt-4 grid gap-4 lg:grid-cols-12 lg:gap-x-(--gutter)">
@@ -57,7 +58,7 @@ export default async function PartsIndexPage() {
               <ul className="mt-5 grid grid-cols-2 gap-3 sm:gap-(--gutter) md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 3xl:grid-cols-6">
                 {categories.map((c) => (
                   <li key={c.slug}>
-                    <CategoryTile category={c} size="s" />
+                    <CategoryTile category={c} count={categoryProductCount(tree, c)} size="s" />
                   </li>
                 ))}
               </ul>

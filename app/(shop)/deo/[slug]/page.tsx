@@ -146,7 +146,7 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
         categorySlug={c.categorySlug}
         pricePara={c.retailPricePara}
       />
-      <div className="px-page pb-section pt-6 lg:pt-8">
+      <div className="px-page pb-(--space-section) pt-6 lg:pt-8">
         <Breadcrumbs items={crumbs} />
         <div className="mt-5 grid gap-8 lg:grid-cols-12 lg:gap-x-(--gutter)">
           {/* Gallery */}
@@ -200,7 +200,7 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
               <RevealText as="h1" className="type-h1 text-ink-1">
                 {c.name}
               </RevealText>
-              <dl className="flex flex-wrap items-center gap-x-5 gap-y-1 type-body-s" data-reveal="off">
+              <dl className="flex flex-col gap-1 type-body-s" data-reveal="off">
                 {c.oemPrimary ? (
                   <div className="flex items-center gap-1.5">
                     <dt className="text-ink-3">OEM</dt>
@@ -285,7 +285,7 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
         </div>
 
         {/* Details */}
-        <div className="mt-16 flex flex-col gap-14">
+        <div className="cv-auto mt-16 flex flex-col gap-14">
           <section aria-labelledby="fitment-title">
             <h2 id="fitment-title" className="type-h2 text-ink-1">
               Kompatibilnost

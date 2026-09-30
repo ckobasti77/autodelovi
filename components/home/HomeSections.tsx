@@ -4,7 +4,13 @@ import { contactLinkList, type Contact } from "@/config/site";
 import { Markdown } from "@/lib/content/markdown";
 import { formatNumber, formatPercent } from "@/lib/format/number";
 import { pluralSr } from "@/lib/format/plural";
-import type { CategorySummary, CategoryTree, VehicleTree } from "@/lib/catalog/types";
+import {
+  catalogProductCount,
+  categoryProductCount,
+  type CategorySummary,
+  type CategoryTree,
+  type VehicleTree,
+} from "@/lib/catalog/types";
 import { Button } from "@/components/ui/Button";
 import { Link } from "@/components/ui/Link";
 import { RouteLink } from "@/components/ui/RouteLink";
@@ -31,7 +37,7 @@ const STEPS = [
 
 export function HowOrdering({ courierLine }: { courierLine: string | null }) {
   return (
-    <section aria-labelledby="how-title" className="border-t border-line px-page py-section">
+    <section aria-labelledby="how-title" className="cv-auto border-t border-line px-page py-section">
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-x-(--gutter)">
         <div className="flex flex-col gap-4 lg:col-span-4">
           <h2 id="how-title" className="type-display-l uppercase text-ink-1">
@@ -84,9 +90,9 @@ export function HomeCategories({ tree }: { tree: CategoryTree }) {
   const all = [...tree.categories];
   const bySlug = new Map(all.map((c) => [c.slug, c]));
   const featured = FEATURED.map((s) => bySlug.get(s)).filter((c): c is CategorySummary => Boolean(c));
-  const total = tree.categories.reduce((n, c) => n + c.productCount, 0);
+  const total = catalogProductCount(tree).all;
   return (
-    <section aria-labelledby="cats-title" className="border-t border-line px-page py-section">
+    <section aria-labelledby="cats-title" className="cv-auto border-t border-line px-page py-section">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <h2 id="cats-title" className="type-display-l uppercase text-ink-1">
           Najtraženije kategorije
@@ -99,7 +105,7 @@ export function HomeCategories({ tree }: { tree: CategoryTree }) {
       <ul className="mt-10 grid grid-cols-2 gap-3 sm:gap-(--gutter) md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6">
         {featured.map((c) => (
           <li key={c.slug}>
-            <CategoryTile category={c} size="s" />
+            <CategoryTile category={c} count={categoryProductCount(tree, c)} size="s" />
           </li>
         ))}
       </ul>
@@ -123,7 +129,7 @@ export function MechanicsBand({
   return (
     <section
       aria-labelledby="mech-title"
-      className="border-t border-line bg-bg-raised px-page py-section"
+      className="cv-auto border-t border-line bg-bg-raised px-page py-section"
     >
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-x-(--gutter)">
         <div className="flex flex-col gap-5 lg:col-span-6">
@@ -175,7 +181,7 @@ export function MechanicsBand({
 
 export function MakesCovered({ tree }: { tree: VehicleTree }) {
   return (
-    <section aria-labelledby="makes-title" className="border-t border-line px-page py-section">
+    <section aria-labelledby="makes-title" className="cv-auto border-t border-line px-page py-section">
       <div className="grid gap-8 lg:grid-cols-12 lg:gap-x-(--gutter)">
         <h2 id="makes-title" className="type-display-l uppercase text-ink-1 lg:col-span-4">
           Vozila koja pokrivamo
@@ -185,7 +191,7 @@ export function MakesCovered({ tree }: { tree: VehicleTree }) {
             <li key={brand.slug} className="border-t border-line">
               <RouteLink
                 href={ROUTES.vehicleBrand(brand.slug)}
-                className="group flex min-h-16 items-center justify-between gap-3 py-3"
+                className="group flex min-h-16 flex-col justify-center gap-1 py-3"
               >
                 <span className="type-display-m uppercase text-ink-1 transition-control group-hover:text-accent">
                   {brand.name}
@@ -214,7 +220,7 @@ export function TrustFacts({
   const all = [...computed, ...facts];
   if (!all.length) return null;
   return (
-    <section aria-label="Činjenice" className="border-t border-line px-page py-12">
+    <section aria-label="Činjenice" className="cv-auto border-t border-line px-page py-12">
       <dl className="grid grid-cols-2 gap-x-(--gutter) gap-y-8 md:grid-cols-4">
         {all.slice(0, 8).map((f) => (
           <div key={f.label} className="flex flex-col gap-1 border-l border-line-strong pl-4">
@@ -232,7 +238,7 @@ export function TrustFacts({
 export function HomeFaq({ items }: { items: { question: string; answer: string }[] }) {
   if (!items.length) return null;
   return (
-    <section aria-labelledby="faq-title" className="border-t border-line px-page py-section">
+    <section aria-labelledby="faq-title" className="cv-auto border-t border-line px-page py-section">
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-x-(--gutter)">
         <h2 id="faq-title" className="type-display-l uppercase text-ink-1 lg:col-span-4">
           Česta pitanja
@@ -263,7 +269,7 @@ export function ContactStrip({ contact }: { contact: Contact }) {
   const links = contactLinkList(contact);
   const hasAddress = Boolean(contact.address.street && contact.address.city);
   return (
-    <section aria-labelledby="contact-title" className="border-t border-line bg-bg-raised px-page py-12">
+    <section aria-labelledby="contact-title" className="cv-auto border-t border-line bg-bg-raised px-page py-12">
       <div className="grid gap-8 lg:grid-cols-12 lg:items-center lg:gap-x-(--gutter)">
         <div className="flex flex-col gap-2 lg:col-span-4">
           <h2 id="contact-title" className="type-h2 text-ink-1">

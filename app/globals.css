@@ -706,6 +706,14 @@
 }
 
 /* Skeleton block with the §8.5 shimmer (static under reduced motion). */
+/* Below-the-fold sections skip style/layout/paint until they approach the viewport (TBT on
+   long pages); the intrinsic size keeps the scrollbar stable. Content stays in the
+   accessibility tree and in find-in-page. */
+@utility cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
 @utility skeleton {
   background-color: var(--color-surface-2);
   background-image: linear-gradient(

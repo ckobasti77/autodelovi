@@ -3,7 +3,7 @@ import { Skeleton, SkeletonRegion } from "@/components/ui/Skeleton";
 /** Category / search loading state: same geometry as the listing (no layout shift). */
 export function ListingSkeleton({ rail = true }: { rail?: boolean }) {
   return (
-    <SkeletonRegion label="Učitavaju se artikli" className="px-page pb-section pt-6 lg:pt-8">
+    <SkeletonRegion label="Učitavaju se artikli" className="px-page pb-(--space-section) pt-6 lg:pt-8">
       <Skeleton className="h-3.5 w-64" />
       <Skeleton className="mt-5 h-10 w-[min(28rem,80%)]" />
       <Skeleton className="mt-4 h-5 w-[min(40rem,90%)]" />

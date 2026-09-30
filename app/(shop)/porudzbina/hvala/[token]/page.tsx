@@ -28,7 +28,7 @@ export default async function OrderThanksPage({ params }: PageProps<"/porudzbina
   if (!order) notFound();
   const contacts = contactLinkList(contactFromSettings(settings));
   return (
-    <div className="px-page pb-section pt-8">
+    <div className="px-page pb-(--space-section) pt-8">
       <PurchaseTracker
         orderNumber={order.number}
         valuePara={order.totals.totalPara}

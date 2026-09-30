@@ -37,7 +37,7 @@ export default async function VehicleBrandPage({ params }: PageProps<"/vozila/[m
     { label: brand.brand.name },
   ];
   return (
-    <div className="px-page pb-section pt-6 lg:pt-8">
+    <div className="px-page pb-(--space-section) pt-6 lg:pt-8">
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
       <Breadcrumbs items={crumbs} />
       <RevealText as="h1" className="mt-4 type-display-l uppercase text-ink-1">

@@ -8,8 +8,9 @@
  * ponuda.vaziDana, radnoVreme.
  *
  * Every legal page is `needsLegalReview: true` until the owner's lawyer confirms it
- * (docs/HUMAN-TODO.md). Texts follow the Zakon o zaštiti potrošača (Sl. glasnik RS 88/2021),
- * Zakon o elektronskoj trgovini and Zakon o zaštiti podataka o ličnosti (Sl. glasnik RS 87/2018).
+ * (docs/HUMAN-TODO.md §3). Texts follow the Zakon o zaštiti potrošača (the 2026 law, Sl. glasnik
+ * RS 35/2026, in force from 2.8.2026 — deadlines to be confirmed by the lawyer), the Zakon o
+ * elektronskoj trgovini and the Zakon o zaštiti podataka o ličnosti (Sl. glasnik RS 87/2018).
  */
 
 export type SeedPage = {
@@ -105,7 +106,7 @@ Ako deo ima nedostatak, reklamaciju možete izjaviti u roku od dve godine od dan
 1. Javite nam se telefonom, e-poštom ili lično i dostavite račun ili drugi dokaz o kupovini (na primer broj porudžbine).
 2. Prijem reklamacije potvrđujemo i upisujemo je u evidenciju reklamacija.
 3. Na reklamaciju odgovaramo bez odlaganja, a najkasnije u roku od 8 dana od prijema, pisanim ili elektronskim putem.
-4. Reklamaciju rešavamo u roku koji ne može biti duži od 15 dana od podnošenja — popravkom, zamenom, umanjenjem cene ili raskidom ugovora, u skladu sa zakonom.
+4. Reklamaciju rešavamo u zakonskom roku od podnošenja (15 dana, odnosno 30 dana za tehničku robu) — popravkom, zamenom, umanjenjem cene ili raskidom ugovora, u skladu sa zakonom.
 
 Pre ugradnje proverite da li deo odgovara vozilu (OEM broj, oznaka motora, broj šasije). Nedostatak nastao nestručnom ugradnjom ili upotrebom suprotnom uputstvu proizvođača nije osnov za reklamaciju.
 

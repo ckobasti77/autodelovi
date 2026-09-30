@@ -29,3 +29,18 @@ export type FitmentRow = ProductDetail["fitments"][number];
 export function categoryImage(slug: string): string {
   return `/images/parts/${slug}.webp`;
 }
+
+/** Products of a category including its subcategories (parents like `filteri` hold none). */
+export function categoryProductCount(tree: CategoryTree, category: CategorySummary): number {
+  const children = tree.subcategories.filter((c) => c.parentId === category._id);
+  return children.length ? children.reduce((n, c) => n + c.productCount, 0) : category.productCount;
+}
+
+/** Every product in the catalog (leaf categories and subcategories). */
+export function catalogProductCount(tree: CategoryTree): { all: number; inStock: number } {
+  const leaves = [...tree.categories, ...tree.subcategories];
+  return {
+    all: leaves.reduce((n, c) => n + c.productCount, 0),
+    inStock: leaves.reduce((n, c) => n + c.inStockCount, 0),
+  };
+}

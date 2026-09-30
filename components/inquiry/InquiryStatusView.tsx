@@ -234,7 +234,7 @@ export function InquiryStatusView({
                 Ponuda{q.version > 1 ? ` (izmena ${q.version})` : ""}
               </h2>
               <span className={expired ? "type-body-s text-warning" : "type-body-s text-ink-3"}>
-                {expired ? `Istekla ${formatDate(q.validUntil)}.` : `Važi do ${formatDate(q.validUntil)}.`}
+                {expired ? `Istekla ${formatDate(q.validUntil)}` : `Važi do ${formatDate(q.validUntil)}`}
               </span>
             </div>
             <ul className="flex flex-col divide-y divide-line border-y border-line">

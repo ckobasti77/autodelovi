@@ -20,7 +20,6 @@ import { Button } from "@/components/ui/Button";
 import { Link } from "@/components/ui/Link";
 import { QuantityStepper } from "@/components/ui/QuantityStepper";
 import { toast } from "@/components/ui/Toast";
-import { useMediaQuery } from "@/components/ui/motion";
 import { useLiveProduct } from "@/components/catalog/LiveOverlay";
 import { ROUTES } from "@/constants/routes";
 import { TEST_IDS } from "@/constants/testIds";
@@ -66,7 +65,6 @@ export function AddToCartButton({
   const add = useAddToCart(source);
   const [state, setState] = useState<"idle" | "busy" | "added">("idle");
   const [quantity, setQuantity] = useState(1);
-  const isPhone = useMediaQuery("(max-width: 63.99rem)");
   const orderable = isOrderable(stockState, product.allowBackorder);
   const backorder = stockState === "on_order" || stockState === "out_of_stock";
 
@@ -109,7 +107,7 @@ export function AddToCartButton({
       });
       setState("added");
       announce(`Dodato u korpu: ${product.name}.`);
-      if (isPhone) {
+      if (window.matchMedia("(max-width: 63.99rem)").matches) {
         toast.success(`Dodato u korpu: ${product.name}.`, {
           action: { label: "Pogledaj korpu", onClick: openCartDrawer },
         });

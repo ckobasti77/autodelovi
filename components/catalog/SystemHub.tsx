@@ -1,4 +1,4 @@
-import type { CategoryDetail, CategoryTree } from "@/lib/catalog/types";
+import { categoryProductCount, type CategoryDetail, type CategoryTree } from "@/lib/catalog/types";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import { Breadcrumbs, type Crumb } from "@/components/ui/Breadcrumbs";
 import { RevealText } from "@/components/text-reveal/RevealText";
@@ -19,7 +19,7 @@ export function SystemHub({
     .filter((c) => c.parentId === category.category._id)
     .sort((a, b) => a.sortOrder - b.sortOrder);
   return (
-    <div className="px-page pb-section pt-6 lg:pt-8">
+    <div className="px-page pb-(--space-section) pt-6 lg:pt-8">
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
       <Breadcrumbs items={crumbs} />
       <RevealText as="h1" className="mt-4 type-display-l uppercase text-ink-1">
@@ -33,7 +33,7 @@ export function SystemHub({
       <ul className="mt-10 grid grid-cols-2 gap-3 sm:gap-(--gutter) md:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5">
         {children.map((c) => (
           <li key={c.slug}>
-            <CategoryTile category={c} headingLevel="h2" />
+            <CategoryTile category={c} count={categoryProductCount(tree, c)} headingLevel="h2" />
           </li>
         ))}
       </ul>

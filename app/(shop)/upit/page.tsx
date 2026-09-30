@@ -71,7 +71,7 @@ export default async function InquiryPage({ searchParams }: PageProps<"/upit">) 
   const contacts = contactLinkList(contactFromSettings(settings)).filter((l) => l.channel !== "email");
 
   return (
-    <div className="px-page pb-section pt-8 lg:pt-10">
+    <div className="px-page pb-(--space-section) pt-8 lg:pt-10">
       <div className="flex max-w-[48rem] flex-col gap-4">
         <RevealText as="h1" className="type-display-l uppercase text-ink-1">
           Ne nalazite deo?

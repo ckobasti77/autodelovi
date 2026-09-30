@@ -11,6 +11,7 @@ import { PrinterIcon, TruckIcon } from "@phosphor-icons/react/dist/ssr";
 import { api } from "@/convex/_generated/api";
 import { formatDateTime } from "@/lib/format/date";
 import { formatRSD } from "@/lib/format/money";
+import { formatPhone } from "@/lib/format/phone";
 import {
   DELIVERY_LABEL,
   ORDER_STATUS_LABEL,
@@ -152,7 +153,7 @@ export function OrderStatusView({
           <h2 className="type-h4 text-ink-1">Kupac</h2>
           <p className="mt-2 type-body-s text-ink-2">
             {o.contact.firstName} {o.contact.lastName}
-            <span className="block">{o.contact.phone}</span>
+            <span className="block">{formatPhone(o.contact.phone)}</span>
             <span className="block break-all">{o.contact.email}</span>
             {o.company ? <span className="block">{o.company.name} · PIB {o.company.pib}</span> : null}
           </p>

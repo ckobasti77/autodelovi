@@ -28,6 +28,13 @@ for (const w of widths) {
     deviceScaleFactor: 1,
     reducedMotion: "no-preference",
   });
+  if (process.env.CART_SLUG) {
+    const prep = await context.newPage();
+    await prep.goto(`${base}/deo/${process.env.CART_SLUG}`, { waitUntil: "networkidle", timeout: 90_000 });
+    await prep.locator("#buy-box").getByTestId("product-add-to-cart").click();
+    await prep.getByText("Dodato").first().waitFor({ timeout: 20_000 });
+    await prep.close();
+  }
   for (const p of pairs) {
     const page = await context.newPage();
     const errors = [];
@@ -56,7 +63,14 @@ for (const w of widths) {
       () => document.documentElement.scrollWidth - document.documentElement.clientWidth,
     );
     const file = path.join(outDir, `${p.name}-${w.tag}.png`);
-    await page.screenshot({ path: file, fullPage: true });
+    if (p.name.endsWith("-drawer")) {
+      await page.getByTestId("cart-button").click();
+      await page.getByTestId("cart-drawer").waitFor({ timeout: 20_000 });
+      await page.waitForTimeout(900);
+      await page.screenshot({ path: file, fullPage: false });
+    } else {
+      await page.screenshot({ path: file, fullPage: true });
+    }
     console.log(
       `${p.name}@${w.tag}: stuck=${stuck} overflowX=${overflow} errors=${errors.length}${errors.length ? ` → ${errors.slice(0, 3).join(" | ")}` : ""}`,
     );

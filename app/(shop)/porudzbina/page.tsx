@@ -52,7 +52,7 @@ export default async function CheckoutPage() {
   };
 
   return (
-    <div className="px-page pb-section pt-8">
+    <div className="px-page pb-(--space-section) pt-8">
       <RevealText as="h1" className="type-h1 text-ink-1">
         Porudžbina
       </RevealText>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { catalogProductCount } from "@/lib/catalog/types";
 import { fillPlaceholders } from "@/lib/content/placeholders";
 import { markdownToText } from "@/lib/content/markdown";
 import { formatNumber } from "@/lib/format/number";
@@ -59,8 +60,7 @@ export default async function HomePage() {
   const courierLine = courier
     ? `Kurir ${formatRSD(courier.pricePara)}${courier.freeOverPara ? `, besplatno iznad ${formatRSD(courier.freeOverPara)}` : ""}; preuzimanje u radnji bez troška.`
     : null;
-  const products = tree.categories.reduce((n, c) => n + c.productCount, 0);
-  const inStock = tree.categories.reduce((n, c) => n + c.inStockCount, 0);
+  const { all: products, inStock } = catalogProductCount(tree);
   const computed = [
     ...(products > 0 ? [{ label: "artikala u katalogu", value: formatNumber(products) }] : []),
     ...(inStock > 0 ? [{ label: "artikala na stanju", value: formatNumber(inStock) }] : []),

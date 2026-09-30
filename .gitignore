@@ -72,3 +72,4 @@ __pycache__/
 .next-start.log
 .next-build.log
 .e2e-full.log
+.e2e-logs/

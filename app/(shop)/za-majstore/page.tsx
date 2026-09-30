@@ -40,7 +40,7 @@ export default async function MechanicsPage() {
   const links = contactLinkList(contactFromSettings(settings));
   const crumbs = [{ label: "Početna", href: ROUTES.home }, { label: "Za majstore" }];
   return (
-    <div className="px-page pb-section pt-6 lg:pt-8">
+    <div className="px-page pb-(--space-section) pt-6 lg:pt-8">
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
       <Breadcrumbs items={crumbs} />
       <div className="mt-6 grid gap-10 lg:grid-cols-12 lg:gap-x-(--gutter)">

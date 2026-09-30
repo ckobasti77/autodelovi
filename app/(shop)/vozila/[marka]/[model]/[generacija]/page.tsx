@@ -108,7 +108,7 @@ export default async function VehicleGenerationPage({
       : { kind: "generation_only" as const, vehicle: generation.name };
 
   return (
-    <div className="px-page pb-section pt-6 lg:pt-8">
+    <div className="px-page pb-(--space-section) pt-6 lg:pt-8">
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
       <Breadcrumbs items={crumbs} />
       <div className="mt-4 grid gap-6 lg:grid-cols-12 lg:items-end lg:gap-x-(--gutter)">

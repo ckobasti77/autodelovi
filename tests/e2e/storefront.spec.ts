@@ -124,7 +124,13 @@ test.describe("storefront", () => {
     await expect(add).toContainText("Dodato", { timeout: 20_000 });
     await expect(page.getByTestId(TEST_IDS.cartCount)).toHaveText("1", { timeout: 20_000 });
 
-    await page.goto("/porudzbina");
+    // The header cart opens the drawer; its primary action leads to the checkout.
+    await page.getByTestId(TEST_IDS.cartButton).click();
+    const drawer = page.getByTestId("cart-drawer");
+    await expect(drawer).toBeVisible({ timeout: 20_000 });
+    await expect(drawer).toContainText(sample.name.slice(0, 12));
+    await drawer.getByTestId("cart-checkout").click();
+    await expect(page).toHaveURL(/\/porudzbina$/);
     await expect(page.getByTestId(TEST_IDS.checkoutStep("contact"))).toBeVisible({ timeout: 20_000 });
     const stamp = Date.now();
     await page.getByLabel("Ime", { exact: true }).fill("Nikola");
@@ -195,7 +201,11 @@ test.describe("storefront", () => {
     await picker.getByRole("button", { name: "Ne znam motor" }).click();
 
     await expect(page).toHaveURL(new RegExp(`generacija=${s.generationSlug}`), { timeout: 20_000 });
-    if (mobile) await page.keyboard.press("Escape");
+    if (mobile) {
+      // The filter sheet stays open with the new count; its footer closes it.
+      await page.getByRole("button", { name: /^Prikaži \d+ rezultat/ }).click();
+      await expect(page.getByRole("dialog", { name: "Filteri" })).toBeHidden();
+    }
     const cards = page.getByTestId(TEST_IDS.productCard);
     await expect(cards.first()).toBeVisible();
     const filtered = await cards.count();

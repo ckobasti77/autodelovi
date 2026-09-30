@@ -12,7 +12,7 @@ export default async function CartPage() {
   const settings = await getSettingsPublic();
   const courier = settings.deliveryMethods.find((d) => d.code === "courier");
   return (
-    <div className="px-page pb-section pt-8">
+    <div className="px-page pb-(--space-section) pt-8">
       <RevealText as="h1" className="type-h1 text-ink-1">
         Korpa
       </RevealText>

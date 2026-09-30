@@ -49,9 +49,15 @@ export function ShopChrome({ delivery }: { delivery: DeliveryInfo }) {
 
   useEffect(() => {
     captureAttribution();
+    // Warm the drawer chunk on the first sign of intent, never during page load (TBT).
     const warm = () => void loadDrawer();
-    if (document.readyState === "complete") window.setTimeout(warm, 2500);
-    else window.addEventListener("load", () => window.setTimeout(warm, 2500), { once: true });
+    const button = document.querySelector("[data-testid='cart-button']");
+    button?.addEventListener("pointerenter", warm, { once: true });
+    button?.addEventListener("focus", warm, { once: true });
+    return () => {
+      button?.removeEventListener("pointerenter", warm);
+      button?.removeEventListener("focus", warm);
+    };
   }, []);
 
   return (

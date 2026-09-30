@@ -152,7 +152,7 @@ export function CategoryListingView({
   const inquiryHref = ROUTES.inquiryWith({ deo: category.category.slug });
 
   return (
-    <div className="px-page pb-section pt-6 lg:pt-8">
+    <div className="px-page pb-(--space-section) pt-6 lg:pt-8">
       <JsonLd
         data={[
           breadcrumbJsonLd(crumbs),
@@ -197,6 +197,7 @@ export function CategoryListingView({
             <CatalogResults>
               {listing.items.length > 0 ? (
                 <>
+                  <h2 className="sr-only">Artikli</h2>
                   <TrackViewList
                     listId={`category:${category.category.slug}`}
                     listName={name}

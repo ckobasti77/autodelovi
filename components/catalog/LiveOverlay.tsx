@@ -31,11 +31,21 @@ export function LiveOverlayProvider({
 }) {
   const [enabled, setEnabled] = useState(false);
   useEffect(() => {
-    // Keep the subscription out of the hydration window (TBT); stock is fresh enough in SSR.
-    const idle = window.requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 300));
-    const cancel = window.cancelIdleCallback ?? window.clearTimeout;
-    const handle = idle(() => setEnabled(true));
-    return () => cancel(handle as number);
+    // Keep the subscription out of the load window (TBT): the cached SSR stock is at most a few
+    // minutes old, so the live values arrive on the first interaction or after a quiet moment.
+    const events = ["pointerdown", "keydown", "scroll", "touchstart"] as const;
+    let timer = 0;
+    const start = () => {
+      window.clearTimeout(timer);
+      for (const e of events) window.removeEventListener(e, start);
+      setEnabled(true);
+    };
+    for (const e of events) window.addEventListener(e, start, { once: true, passive: true });
+    timer = window.setTimeout(start, 6000);
+    return () => {
+      window.clearTimeout(timer);
+      for (const e of events) window.removeEventListener(e, start);
+    };
   }, []);
   const ids = useMemo(() => [...new Set(productIds)].slice(0, MAX_IDS), [productIds]);
   const rows = useQuery(

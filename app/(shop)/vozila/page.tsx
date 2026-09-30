@@ -26,7 +26,7 @@ const crumbs = [{ label: "Početna", href: ROUTES.home }, { label: "Vozila" }];
 export default async function VehiclesPage() {
   const tree = await getVehicleTree();
   return (
-    <div className="px-page pb-section pt-6 lg:pt-8">
+    <div className="px-page pb-(--space-section) pt-6 lg:pt-8">
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
       <Breadcrumbs items={crumbs} />
       <div className="mt-4 grid gap-4 lg:grid-cols-12 lg:gap-x-(--gutter)">

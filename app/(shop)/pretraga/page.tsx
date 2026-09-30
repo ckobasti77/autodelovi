@@ -44,7 +44,7 @@ export default async function SearchPage({ searchParams }: PageProps<"/pretraga"
 
   if (!q) {
     return (
-      <div className="px-page pb-section pt-10">
+      <div className="px-page pb-(--space-section) pt-10">
         <RevealText as="h1" className="type-display-l uppercase text-ink-1">
           Pretraga delova
         </RevealText>
@@ -82,7 +82,7 @@ export default async function SearchPage({ searchParams }: PageProps<"/pretraga"
   const phone = contactLinks.tel(contactFromSettings(settings).phone);
 
   return (
-    <div className="px-page pb-section pt-8">
+    <div className="px-page pb-(--space-section) pt-8">
       <SearchLogger query={q} resultsCount={total} exactCodeHit={result.exactCodeHit} />
       <div className="max-w-[48rem]">
         <SearchBox variant="hero" defaultQuery={q} testId="search-page-input" />
@@ -132,7 +132,7 @@ export default async function SearchPage({ searchParams }: PageProps<"/pretraga"
           className="mt-10"
           icon={<MagnifyingGlassIcon size={44} />}
           as="h2"
-          title="Proverićemo kod dobavljača"
+          title={normalized ? "Ovaj broj nije u katalogu" : "Ovaj deo nije u katalogu"}
           action={
             <>
               <Button asChild variant="primary" icon={<ChatCircleTextIcon size={20} />}>
