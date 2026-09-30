@@ -24,7 +24,7 @@ import { useMotionMedia } from "@/lib/gsap/useMotionMedia";
 import { onModelProgress, prefetchModel } from "@/lib/three/assets";
 import { cameraBlend, currentStage, stageEnd, stageWindows, type Timeline } from "@/lib/three/explode";
 import { categoryRevealStage, isPanelSlug } from "@/lib/three/stages";
-import { detectTier } from "@/lib/three/tier";
+import { detectTier, quickTier } from "@/lib/three/tier";
 import { HERO_COPY } from "@/lib/i18n/sr/hero";
 import { DUR, EASE, MEDIA, SHEET } from "@/constants/motion";
 import { TEST_IDS } from "@/constants/testIds";
@@ -37,17 +37,25 @@ import {
 } from "@/components/three/heroStore";
 import { heroDom } from "@/components/three/heroDom";
 import { HeroPicture } from "@/components/three/HeroPicture";
-import { HeroCallout } from "@/components/three/HeroCallout";
 import { StageStrip } from "@/components/three/StageStrip";
 import { StageCaption } from "@/components/three/StageCaption";
 import { HonestyLine, TitleBlock } from "@/components/three/TitleBlock";
-import { PartsListDialog } from "@/components/three/PartsListDialog";
-import { PartPanel } from "@/components/three/PartPanel";
 import { installTestHooks, tierOverride } from "@/components/three/testHooks";
+import { useLatched } from "@/lib/hooks/useLatched";
 
 const HeroCanvas = dynamic(() => import("@/components/three/canvas/HeroCanvas"), {
   ssr: false,
   loading: () => null,
+});
+
+// Overlays that nothing shows before an interaction stay out of the first-load JS; `start`
+// warms their chunks together with the model, so the first open does not wait on the network.
+const loadPanel = () => import("@/components/three/PartPanel");
+const loadPartsList = () => import("@/components/three/PartsListDialog");
+const PartPanel = dynamic(() => loadPanel().then((m) => m.PartPanel), { ssr: false });
+const PartsListDialog = dynamic(() => loadPartsList().then((m) => m.PartsListDialog), { ssr: false });
+const HeroCallout = dynamic(() => import("@/components/three/HeroCallout").then((m) => m.HeroCallout), {
+  ssr: false,
 });
 
 const windowsCache = new Map<Timeline, ReturnType<typeof stageWindows>>();
@@ -66,11 +74,17 @@ function publishProgress(p: number) {
   heroStore.setState(next !== stage ? { progress: p, stage: next } : { progress: p });
 }
 
+/** ScrollTrigger's own refresh flag (set by `_refreshAll` in 3.15; missing from its typings). */
+function isRefreshing(): boolean {
+  return (ScrollTrigger as unknown as { isRefreshing?: boolean }).isRefreshing === true;
+}
+
 function headerHeight(): number {
   const raw = getComputedStyle(document.documentElement).getPropertyValue("--header-h");
   return Number.parseFloat(raw) || 64;
 }
 
+const FINE_POINTER = "(hover: hover) and (pointer: fine)";
 const INTENT_SCROLL_PX = 40;
 const IDLE_AFTER_LOAD_MS = 4000;
 
@@ -90,7 +104,15 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
   const tier = useHeroStore((s) => s.tier);
   const status = useHeroStore((s) => s.status);
   const reduced = useHeroStore((s) => s.reducedMotion);
-  const posterMode = tier === "low" || status === "lost" || status === "failed";
+  const hasSelection = useHeroStore((s) => s.selected !== null);
+  const panelMounted = useLatched(hasSelection);
+  const listMounted = useLatched(listOpen);
+  const calloutMounted = useLatched(status === "ready");
+  // Posters carry the explode whenever the canvas cannot: the low tier, context loss, and the
+  // seconds while the model downloads (the exploded poster follows the scroll progress).
+  const posterMode = tier === "low" || status === "loading" || status === "lost" || status === "failed";
+  const explodedWanted = useHeroStore((s) => s.progress > 0.01);
+  const explodedMounted = useLatched(posterMode && explodedWanted);
   const showCanvas =
     (tier === "high" || tier === "mid") && (status === "loading" || status === "ready" || status === "lost");
 
@@ -109,9 +131,12 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
   }, []);
 
   // ---------------------------------------------------------------- tier, pointer
+  // Only the cheap signals here; the WebGL2 probe (a throwaway context, tens of ms on a phone)
+  // waits for `start` so it never lands in the hydration task.
   useEffect(() => {
-    const fine = window.matchMedia("(hover: hover) and (pointer: fine)");
-    heroStore.setState({ tier: tierOverride() ?? detectTier(), finePointer: fine.matches });
+    const fine = window.matchMedia(FINE_POINTER);
+    const early = tierOverride() ?? quickTier();
+    heroStore.setState(early ? { tier: early, finePointer: fine.matches } : { finePointer: fine.matches });
     const onPointer = () => heroStore.setState({ finePointer: fine.matches });
     fine.addEventListener("change", onPointer);
     return () => fine.removeEventListener("change", onPointer);
@@ -119,7 +144,7 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
 
   // ---------------------------------------------------------------- start on intent / idle
   useEffect(() => {
-    if (tier !== "high" && tier !== "mid") return;
+    if (tier === "low") return;
     if (heroStore.getState().status !== "idle") return;
     const hero = trackRef.current?.closest("section") ?? trackRef.current;
     let started = false;
@@ -130,7 +155,12 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
       if (started) return;
       started = true;
       cleanup();
-      void prefetchModel(tier).catch(() => heroStore.setState({ status: "failed" }));
+      const resolved = tier ?? detectTier();
+      if (resolved !== tier) heroStore.setState({ tier: resolved });
+      if (resolved === "low") return;
+      void prefetchModel(resolved).catch(() => heroStore.setState({ status: "failed" }));
+      void loadPanel();
+      void loadPartsList();
       heroStore.setState({ status: "loading" });
       setAnnounce(HERO_COPY.loading);
     };
@@ -163,8 +193,13 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
     hero?.addEventListener("touchstart", start, { passive: true });
     hero?.addEventListener("focusin", start);
     window.addEventListener("scroll", onScroll, { passive: true });
-    if (document.readyState === "complete") scheduleIdle();
-    else window.addEventListener("load", scheduleIdle, { once: true });
+    // Idle start only where a fine pointer exists (desktop class). A touch device starts on its
+    // first touch or scroll in the hero: the poster is a complete picture, and the ~2 MB
+    // download plus the GPU setup should not land on a phone that never touches the stage.
+    if (window.matchMedia(FINE_POINTER).matches) {
+      if (document.readyState === "complete") scheduleIdle();
+      else window.addEventListener("load", scheduleIdle, { once: true });
+    }
     return cleanup;
   }, [tier]);
 
@@ -197,18 +232,25 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
         {
           p: 1,
           ease: "none",
-          onUpdate: () => publishProgress(proxy.p),
+          // A refresh measures with the page scrolled to 0 and then restores the progress
+          // silently: its transient renders must not reach the store (the scene would show the
+          // assembled car mid-track); the restored value is published once it is done.
+          onUpdate: () => {
+            if (!isRefreshing()) publishProgress(proxy.p);
+          },
           scrollTrigger: {
             trigger: track,
             start: () => `top ${headerHeight()}px`,
             end: "bottom bottom",
             scrub: 0.6,
-            invalidateOnRefresh: true,
           },
         },
       );
+      const onRefreshed = () => publishProgress(proxy.p);
+      ScrollTrigger.addEventListener("refresh", onRefreshed);
       triggerRef.current = tween.scrollTrigger ?? null;
       return () => {
+        ScrollTrigger.removeEventListener("refresh", onRefreshed);
         triggerRef.current = null;
       };
     },
@@ -235,7 +277,9 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
         const y = trigger.start + target * (trigger.end - trigger.start);
         if (opts?.instant || heroStore.getState().reducedMotion) {
           gsap.killTweensOf(window, "scrollTo");
-          window.scrollTo(0, y);
+          // Through ScrollTrigger: it caches scroll positions per frame, so a plain
+          // window.scrollTo would leave this update reading the old position.
+          trigger.scroll(y);
           ScrollTrigger.update();
           trigger.getTween()?.progress(1);
           publishProgress(target);
@@ -294,9 +338,9 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
     { dependencies: [status, reduced] },
   );
 
-  // Low tier / fallback: the exploded poster crossfades with the explode progress.
+  // Poster mode: the exploded poster crossfades with the explode progress.
   useEffect(() => {
-    if (!posterMode) return;
+    if (!posterMode || !explodedMounted) return;
     const apply = () => {
       const el = explodedRef.current;
       if (el) el.style.opacity = String(cameraBlend(heroStore.getState().progress));
@@ -305,7 +349,7 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
     return heroStore.subscribe((state, prev) => {
       if (state.progress !== prev.progress) apply();
     });
-  }, [posterMode]);
+  }, [posterMode, explodedMounted]);
 
   // Scrim behind the copy while a part is selected (desktop).
   useEffect(() => {
@@ -410,11 +454,14 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
               role="img"
               aria-label={HERO_COPY.canvasLabel}
               tabIndex={-1}
-              className="absolute inset-0 outline-none"
+              // Focus lands here when a panel opened from the car closes; a keyboard user sees it.
+              className="absolute inset-0 focus-ring-inset"
             >
               <div ref={posterRef} className="absolute inset-0" data-testid={TEST_IDS.heroPoster}>
                 {poster}
-                {posterMode ? (
+                {/* Stays mounted once used, so the poster → canvas crossfade never flashes the
+                    assembled car under an exploded scene. */}
+                {explodedMounted ? (
                   <div ref={explodedRef} className="absolute inset-0" style={{ opacity: 0 }}>
                     <HeroPicture state="exploded" />
                   </div>
@@ -439,7 +486,7 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
               className="pointer-events-none absolute inset-0 hidden bg-[linear-gradient(90deg,var(--color-bg)_0%,var(--color-bg)_30%,transparent_50%)] lg:block"
               style={{ opacity: 0 }}
             />
-            <HeroCallout />
+            {calloutMounted ? <HeroCallout /> : null}
 
             {/* Drawing furniture — phones: caption on top, honesty line at the bottom;
                 ≥ 1024 px: a 12-column overlay, the stage frame on columns 6–12. */}
@@ -471,8 +518,8 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
         </div>
       </div>
 
-      <PartsListDialog open={listOpen} onOpenChange={setListOpen} />
-      <PartPanel />
+      {listMounted ? <PartsListDialog open={listOpen} onOpenChange={setListOpen} /> : null}
+      {panelMounted ? <PartPanel /> : null}
       <span role="status" aria-live="polite" className="sr-only">
         {announce}
       </span>

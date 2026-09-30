@@ -106,3 +106,5 @@ Oznaka: **seed – proveriti**. Podaci su uneti po opšte poznatim podacima o vo
 - [ ] **[P1] Kod za novu lozinku** se do povezivanja Resend-a (korak 18) ne šalje mejlom — vidi se samo u Admin → Mejlovi (tabela `emailLog`).
 
 - [ ] **[P2] 3D automobil – pregled izgleda**: pogledajte slike `public/images/hero/car-assembled.webp` i `car-exploded.webp` (sklopljen i rasklopljen automobil) i sličice delova u `public/images/parts/` i javite ako neki deo treba da izgleda drugačije. Automobil je namerno generički (bez oznaka bilo koje marke). Ako kasnije kupite 3D model nekog dela, može da zameni generisani deo (uputstvo za programera: `docs/3d/BUILD-NOTES.md`, odeljak 3; proverite licencu za komercijalnu upotrebu na sajtu).
+- [ ] **[P2] Brzina početne strane posle objavljivanja** — kada sajt bude na pravoj adresi, otvorite https://pagespeed.web.dev, unesite adresu početne strane i pogledajte ocenu za mobilni telefon (cilj: 85 ili više, LCP ispod 2,5 s). Lokalna merenja iz koraka 10 su u `docs/3d/WEB-QA.md`; programer tamo ima objašnjenje zašto se lokalni „simulirani“ broj razlikuje.
+

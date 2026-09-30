@@ -41,3 +41,19 @@
 - Done: detail pass on the largest visible parts (engine block and head with ribs, bosses, freeze plugs, sensors, port flanges with studs, bolted cam cover; turbo with studded flanges, V-band, CHRA ports, wastegate lever; open ribbed bellhousing with bolted bosses, rib bands, mechatronic, mount pad, torque-rod lug; caliper rebuilt with pistons, fingers, guide pins, bleed nipple; radiator tanks, thermostat, intake manifold, EGR, airbox, alternator B+ and plug, battery details); starter, crank damper, tensioners and clutch cover rebuilt after the final review found them bare; headlamp inner bezel; doors with window sashes; cast normal map (D90), `DETAIL_MERGE` (D91), explode clearance rule + local-search solver (D92); plan-view top camera and `3d/scripts/qa-closeups.mjs` (D95); posters, 48 thumbnails and QA renders regenerated after the last change; `docs/3d/QA.md` rewritten (rounds R9–R13).
 - Verified: `node 3d/scripts/validate.mjs` → PASS (desktop 3.64 MB / 343 982 tris / 213 draws / 200 nodes / 5 textures; lite 2.63 MB / 233 664 tris / 149 draws); explode reports: 0 undeclared packaging contacts, 0 opaque overlaps and 0 pairs < 20 mm at p = 1, 0 visibility errors; `node 3d/scripts/preview.mjs` → both GLBs load with meshopt, 0 missing nodes, 0 errors; every final render opened and judged (6 views, 18 close-ups, 48 thumbnails; no open P0/P1).
 - Remains (P2/P3, see `docs/3d/QA.md`): dense engine bay in projection, brief pass-throughs while exploding, X-ray values with step 10's shader, flat block face. Step 10 implements the runtime.
+
+## 2026-09-30 — Step 10 · 3D exploded car on the web
+- Done:
+  - Home hero with the X-ray car (`components/three/**`, `lib/three/**`, `constants/xray.ts`). SSR `<picture>` poster and LCP-safe headline come first; the canvas (three + R3F 9, no drei) loads on intent, or in idle time with a fine pointer, and crossfades in with pixel parity (Blender-semantics X-ray shader, drafting edges).
+  - Scroll explode from the manifest: CSS sticky track, ScrollTrigger progress scrub, desktop and mobile timelines, 8-stage strip and captions, Rasklopi/Sklopi, reduced-motion cuts.
+  - Hover callout (fine pointer, lazy BVH); click/tap → telephoto focus + PartPanel (drawer/sheet, Convex `catalog.partPanel`, role-aware price, stock, cart, inquiry).
+  - Parts list dialog; deep links `?deo=`; shared vehicle picker (header + hero); tiers (high/mid/low with poster mode); context-loss fallback; test hooks.
+  - Performance pass: lazy overlays, deferred WebGL probe, intent-only start on touch, yielding init, adaptive-DPR fix. Decisions D97–D112.
+- Verified:
+  - `npx tsc --noEmit` exit 0; `npm run lint` clean; `npx vitest run` → 32 files, 659 tests passed; `npm run build` exit 0.
+  - `npx playwright test` → 44 passed (hero spec at 1440 + 390: poster → 3D, list and hook → panel with Convex products, deep link, axe + focus, reduced motion, low tier, context loss, no console errors).
+  - Lighthouse mobile with applied throttling (5 runs): perf 89 · LCP 2393 ms · CLS 0.001 · TBT 264 ms. Desktop preset: perf 99 · LCP 885 ms.
+  - Default simulated mobile: perf 86 · LCP 4213 ms · TBT 20 ms. The LCP is a localhost Lantern artefact (`/prijava` without 3D: 3.9 s), analysed in `docs/3d/WEB-QA.md`.
+  - 3D chunk 281.8 KB gzip. Explode scroll at 4× CPU on a real GPU: median 16.7 ms/frame.
+  - Screenshots reviewed (`docs/3d/web-qa/`), impeccable detector 0 findings, no P0/P1.
+- Remains: P2 — shell first-load JS and font preloads versus simulated LCP (step 21/22; PSI after deployment in HUMAN-TODO); P2 — tighter mobile camera and posters (3D pipeline); P3 — a single GPU hitch on the first explode frames. Step 11+ builds the catalog pages the panel links to (`/delovi/<slug>`, `/deo/<slug>`). Per-segment `loading.tsx` files belong to those steps (D108).

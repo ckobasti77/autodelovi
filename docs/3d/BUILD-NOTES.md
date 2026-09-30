@@ -122,3 +122,11 @@ D91). Fine casting texture comes from the tiling `tex_cast_n` normal map (D90), 
 - The body is a stylised parametric shell (no licensed car); panels are single surfaces with hems, no inner panels.
 - Several routed parts pass briefly through neighbours while exploding (listed in `motion.json`); nothing overlaps at p = 1.
 - The X-ray look follows DESIGN-SYSTEM §7.2 exactly; see `docs/DECISIONS.md` D88 before changing it (posters must be re-rendered with the same values the runtime uses).
+
+## 7. Web runtime (step 10) — what the pipeline must keep in sync
+
+- **X-ray values** live twice: `3d/blender/config/xray.py` (posters) and `constants/xray.ts` (runtime). `tests/unit/three/xray-parity.test.ts` parses the Python file and fails when they drift; change both, re-render the posters (`npm run 3d`) and re-run `node scripts/qa/hero-parity.mjs` (mean poster ↔ canvas difference should stay near 2/255, see `docs/3d/WEB-QA.md`).
+- **Cameras**: the canvas reproduces the posters' framing from the manifest cameras (`object-fit: contain` via `setViewOffset`); a camera change needs new posters, or the crossfade jumps.
+- **Nodes and manifest**: the runtime reads only what `lib/three/manifestGuard.ts` checks (node names, categories, pivots, explode vectors/stages/order, label anchors, bboxes, focus, cameras). A new clickable node needs a taxonomy entry, a manifest entry and a `PART_NOTES` line (`lib/catalog/partNotes.ts`) for the hover callout.
+- **Shadows and environment**: `public/models/car-shadow*.webp` and `public/models/env/studio-512.hdr` are loaded by the runtime as they are; keep their orientation (F7.7).
+

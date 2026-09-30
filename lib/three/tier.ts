@@ -63,7 +63,20 @@ export function hasWebGL2(): boolean {
   return webgl2Cache;
 }
 
-/** Reads the browser signals (client only). */
+/**
+ * The tier as far as it is known without the WebGL2 probe: `"low"` when a cheap signal already
+ * decides it, otherwise `null` (the probe runs when the 3D actually starts, not during hydration).
+ */
+export function quickTier(): Tier | null {
+  if (typeof window === "undefined") return null;
+  if (typeof WebGL2RenderingContext === "undefined") return "low";
+  const nav = navigator as NavigatorWithHints;
+  if (nav.connection?.saveData === true) return "low";
+  if (nav.deviceMemory !== undefined && nav.deviceMemory < 3) return "low";
+  return null;
+}
+
+/** Reads the browser signals (client only). Creates a throwaway WebGL2 context once. */
 export function detectTier(): Tier {
   if (typeof window === "undefined") return "low";
   const nav = navigator as NavigatorWithHints;

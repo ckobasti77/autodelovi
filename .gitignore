@@ -69,3 +69,6 @@ __pycache__/
 
 # Local dev server logs
 .next-dev.log
+.next-start.log
+.next-build.log
+.e2e-full.log

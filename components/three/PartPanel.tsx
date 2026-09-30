@@ -174,7 +174,8 @@ function ProductRow({
         <Link
           href={ROUTES.product(card.slug)}
           variant="unstyled"
-          className="truncate text-[0.9375rem] font-semibold leading-snug text-ink-1 hover:underline hover:decoration-accent hover:underline-offset-4"
+          // Two lines: the end of a name („…, nova“, the engine code) is what tells articles apart.
+          className="line-clamp-2 text-[0.9375rem] font-semibold leading-snug text-ink-1 hover:underline hover:decoration-accent hover:underline-offset-4"
         >
           {card.name}
         </Link>

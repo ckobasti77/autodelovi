@@ -44,3 +44,10 @@ export function runInIdleSlices(
     cancelIdle(handle);
   };
 }
+
+/** Ends the current task so input and rendering get a turn (`scheduler.yield` where available). */
+export function yieldToMain(): Promise<void> {
+  const scheduler = (globalThis as { scheduler?: { yield?: () => Promise<void> } }).scheduler;
+  if (scheduler?.yield) return scheduler.yield();
+  return new Promise((resolve) => setTimeout(resolve, 0));
+}

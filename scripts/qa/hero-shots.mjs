@@ -7,6 +7,7 @@
 import { mkdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { chromium } from "@playwright/test";
+import sharp from "sharp";
 
 const args = process.argv.slice(2);
 const arg = (name, fallback) => {
@@ -18,6 +19,13 @@ const OUT = resolve(arg("out", "docs/3d/web-qa"));
 const ONLY = arg("only", "");
 const PART = arg("part", "turbina");
 mkdirSync(OUT, { recursive: true });
+
+/** Screenshots are stored as WebP (q 85) — QA evidence in git at a fraction of the PNG size. */
+async function shot(page, file) {
+  const png = await page.screenshot();
+  await sharp(png).webp({ quality: 85 }).toFile(`${OUT}/${file}.webp`);
+}
+
 
 const VIEWPORTS = [
   { name: "desktop", viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 },
@@ -54,7 +62,7 @@ try {
     const t0 = Date.now();
     await page.goto(`${BASE}/`, { waitUntil: "load" });
     await settle(page, 1200);
-    await page.screenshot({ path: `${OUT}/${vp.name}-0-poster.png` });
+    await shot(page, `${vp.name}-0-poster`);
 
     // Intent: pointer over the hero (desktop) / touch (mobile) starts the 3D.
     if (vp.name === "desktop") await page.mouse.move(vp.viewport.width * 0.7, vp.viewport.height * 0.5);
@@ -70,16 +78,16 @@ try {
       });
       await settle(page, 1200);
     }
-    await page.screenshot({ path: `${OUT}/${vp.name}-1-assembled.png` });
+    await shot(page, `${vp.name}-1-assembled`);
 
     for (const p of [0.3, 0.6]) {
       await page.evaluate((v) => window.__sklop3d.explode(v), p);
       await settle(page, 900);
-      await page.screenshot({ path: `${OUT}/${vp.name}-2-explode-${Math.round(p * 100)}.png` });
+      await shot(page, `${vp.name}-2-explode-${Math.round(p * 100)}`);
     }
     await page.evaluate(() => window.__sklop3d.explode(1));
     await settle(page, 1200);
-    await page.screenshot({ path: `${OUT}/${vp.name}-3-exploded.png` });
+    await shot(page, `${vp.name}-3-exploded`);
 
     await page.evaluate((slug) => window.__sklop3d.selectPart(slug), PART);
     await page.waitForSelector('[data-testid="part-panel"]', { timeout: 20_000 });
@@ -87,7 +95,7 @@ try {
       .waitForSelector('[data-testid="part-panel-product"]', { timeout: 20_000 })
       .catch(() => null);
     await settle(page, 1500);
-    await page.screenshot({ path: `${OUT}/${vp.name}-4-selected-${PART}.png` });
+    await shot(page, `${vp.name}-4-selected-${PART}`);
     const state = await page.evaluate(() => window.__sklop3d.getState());
     const products = await page.locator('[data-testid="part-panel-product"]').count();
 

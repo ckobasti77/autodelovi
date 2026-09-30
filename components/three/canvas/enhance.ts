@@ -1,6 +1,9 @@
 /**
  * Work that follows the first frame, in idle slices (contract F7.3, DESIGN-SYSTEM §7.2):
- * - BVH per geometry for fast raycasts (three-mesh-bvh; shared geometries built once);
+ * - BVH per geometry for fast hover raycasts (three-mesh-bvh, loaded on demand; shared
+ *   geometries built once). Fine pointers only: touch devices raycast once per tap, where
+ *   three's plain raycast is fast enough and the build (the largest meshes take 150–200 ms
+ *   each on a 4x-throttled CPU) would be pure main-thread cost;
  * - X-ray edge lines on the high tier: EdgesGeometry(shell, 28°) as LineSegments children of
  *   each shell mesh, so they move with exploded panels.
  */
@@ -14,24 +17,24 @@ import {
   Mesh,
   MeshBasicMaterial,
 } from "three";
-import { acceleratedRaycast, computeBoundsTree, disposeBoundsTree } from "three-mesh-bvh";
 
 import { XRAY_RUNTIME } from "@/constants/xray";
 import { runInIdleSlices } from "@/components/three/canvas/idle";
 
-let patched = false;
+let bvh: Promise<void> | null = null;
 
-/** Installs the BVH raycast on three's prototypes (canvas chunk only). */
-export function installBvh(): void {
-  if (patched) return;
-  patched = true;
-  const proto = BufferGeometry.prototype as BufferGeometry & {
-    computeBoundsTree: typeof computeBoundsTree;
-    disposeBoundsTree: typeof disposeBoundsTree;
-  };
-  proto.computeBoundsTree = computeBoundsTree;
-  proto.disposeBoundsTree = disposeBoundsTree;
-  Mesh.prototype.raycast = acceleratedRaycast;
+/** Loads three-mesh-bvh (own chunk) and installs its raycast on three's prototypes, once. */
+export function loadBvh(): Promise<void> {
+  bvh ??= import("three-mesh-bvh").then(({ acceleratedRaycast, computeBoundsTree, disposeBoundsTree }) => {
+    const proto = BufferGeometry.prototype as BufferGeometry & {
+      computeBoundsTree: typeof computeBoundsTree;
+      disposeBoundsTree: typeof disposeBoundsTree;
+    };
+    proto.computeBoundsTree = computeBoundsTree;
+    proto.disposeBoundsTree = disposeBoundsTree;
+    Mesh.prototype.raycast = acceleratedRaycast;
+  });
+  return bvh;
 }
 
 type BvhGeometry = BufferGeometry & { boundsTree?: unknown; computeBoundsTree?: () => void };

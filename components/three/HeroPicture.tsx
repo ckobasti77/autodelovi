@@ -7,7 +7,13 @@
  *
  * No hooks — renders on the server (assembled poster, LCP) and on the client (exploded poster
  * for the low tier and the context-loss fallback).
+ *
+ * Priority is split by viewport: from 768 px the poster is the LCP element and gets a
+ * media-scoped high-priority preload; on phones the headline is the LCP and the poster sits
+ * below it, so it loads eagerly at normal priority instead of competing with CSS and fonts.
  */
+import { preload } from "react-dom";
+
 import { cn } from "@/lib/cn";
 
 type PosterState = "assembled" | "exploded";
@@ -40,6 +46,16 @@ export function HeroPicture({
   testId?: string;
 }) {
   const mobileQuery = "(max-width: 47.999rem)";
+  if (priority) {
+    preload(`/images/hero/car-${state}-1440.avif`, {
+      as: "image",
+      type: "image/avif",
+      imageSrcSet: srcSet(state, DESKTOP, "avif"),
+      imageSizes: "100vw",
+      media: "(min-width: 48rem)",
+      fetchPriority: "high",
+    });
+  }
   return (
     <picture
       className={cn("absolute inset-y-0 left-0 right-0 block lg:left-[8%]", className)}
@@ -56,7 +72,6 @@ export function HeroPicture({
         height={1440}
         decoding="async"
         loading={priority ? "eager" : "lazy"}
-        fetchPriority={priority ? "high" : "auto"}
         draggable={false}
         className="absolute inset-0 h-full w-full select-none object-contain object-[50%_100%] lg:object-[100%_100%]"
       />

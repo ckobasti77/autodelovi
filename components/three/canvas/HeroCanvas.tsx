@@ -26,9 +26,10 @@ import {
   buildBvhInIdle,
   buildEdgesInIdle,
   createEdgeMaterials,
-  installBvh,
+  loadBvh,
   type EdgeMaterials,
 } from "@/components/three/canvas/enhance";
+import { yieldToMain } from "@/components/three/canvas/idle";
 import { loadCarScene, type CarScene } from "@/components/three/canvas/loadCar";
 import { usePointerPicking } from "@/components/three/canvas/usePointerPicking";
 
@@ -58,7 +59,12 @@ export default function HeroCanvas({ tier }: HeroCanvasProps) {
         toneMappingExposure: 1,
         outputColorSpace: SRGBColorSpace,
       }}
-      onCreated={({ gl }) => gl.setClearColor(0x000000, 0)}
+      onCreated={({ gl }) => {
+        gl.setClearColor(0x000000, 0);
+        // Reading the program log forces every compile to finish synchronously, which defeats
+        // KHR_parallel_shader_compile behind compileAsync; the shaders are fixed at build time.
+        gl.debug.checkShaderErrors = process.env.NODE_ENV !== "production";
+      }}
       style={{ touchAction: "pan-y" }}
     >
       <HeroScene tier={tier} />
@@ -84,7 +90,6 @@ function HeroScene({ tier }: HeroCanvasProps) {
     let cancelled = false;
     let loaded: CarScene | null = null;
     heroStore.setState({ status: "loading" });
-    installBvh();
     loadCarScene({ tier, renderer: gl })
       .then(async (result) => {
         if (cancelled) {
@@ -101,14 +106,23 @@ function HeroScene({ tier }: HeroCanvasProps) {
           reducedMotion: heroStore.getState().reducedMotion,
         });
         controllerRef.current = controller;
-        // Upload textures and compile every program before the first visible frame.
-        for (const texture of result.textures) gl.initTexture(texture);
+        // Upload textures and compile every program before the first visible frame — one
+        // upload per task, so a phone never sees one long block of GPU uploads.
+        for (const texture of result.textures) {
+          await yieldToMain();
+          if (cancelled) return;
+          gl.initTexture(texture);
+        }
+        await yieldToMain();
+        if (cancelled) return;
         scene.add(result.root);
         const { width, height } = gl.domElement.getBoundingClientRect();
         controller.setLayout({ width, height, ...currentFraming() });
         controller.buildExplode(heroStore.getState().timeline);
         controller.setProgress(heroStore.getState().progress);
         controller.updateCamera();
+        await yieldToMain();
+        if (cancelled) return;
         await gl.compileAsync(scene, camera);
         if (cancelled) return;
         setCar(result);
@@ -199,7 +213,23 @@ function HeroScene({ tier }: HeroCanvasProps) {
   const edgesReady = useRef(tier !== "high");
   useEffect(() => {
     if (!car) return;
-    const cancelBvh = buildBvhInIdle(car.pickables);
+    let cancelBvh = () => {};
+    let disposed = false;
+    const startBvh = () => {
+      void loadBvh().then(() => {
+        if (!disposed) cancelBvh = buildBvhInIdle(car.pickables);
+      });
+    };
+    // Hover raycasts only: a touch-only device keeps three's plain raycast (see enhance.ts).
+    let unsubscribePointer = () => {};
+    if (heroStore.getState().finePointer) startBvh();
+    else {
+      unsubscribePointer = heroStore.subscribe((state) => {
+        if (!state.finePointer) return;
+        unsubscribePointer();
+        startBvh();
+      });
+    }
     let cancelEdges = () => {};
     let fallback = 0;
     if (tier === "high" && car.shellMeshes.length > 0) {
@@ -220,6 +250,8 @@ function HeroScene({ tier }: HeroCanvasProps) {
       invalidate();
     }
     return () => {
+      disposed = true;
+      unsubscribePointer();
       cancelBvh();
       cancelEdges();
       window.clearTimeout(fallback);
@@ -252,7 +284,7 @@ function HeroScene({ tier }: HeroCanvasProps) {
 
   // ---------------------------------------------------------------- frame
   const anchor = useRef<HeroAnchor>({ slug: "", x: 0, y: 0, visible: false });
-  const perf = useRef({ last: 0, sum: 0, count: 0, dpr: TIER_MAX_DPR[tier] });
+  const perf = useRef({ last: 0, sum: 0, count: 0 });
 
   // Priority 1: this callback renders the frame itself (normal pass + the selected on-top pass).
   useFrame(({ gl: renderer, scene: frameScene }) => {
@@ -298,10 +330,10 @@ function HeroScene({ tier }: HeroCanvasProps) {
         const average = p.sum / p.count;
         p.sum = 0;
         p.count = 0;
-        if (average > 22 && p.dpr > 1) {
-          p.dpr = Math.max(1, p.dpr - 0.25);
-          setDpr(p.dpr);
-        }
+        // Step down from the pixel ratio actually in use (a DPR-1 screen starts at 1, not at
+        // the tier maximum), never below 1; every change reallocates the drawing buffer.
+        const current = renderer.getPixelRatio();
+        if (average > 22 && current > 1) setDpr(Math.max(1, current - 0.25));
       }
     }
 

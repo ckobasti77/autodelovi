@@ -153,6 +153,10 @@ test.describe("accessibility (axe, WCAG 2.2 AA)", () => {
       await page.goto(path);
       await page.evaluate(() => document.fonts.ready);
       await scrollEndToEnd(page);
+      // Back to the top: at the end position some links sit under the sticky header, which axe
+      // reports as obscured targets (a scroll-position artefact, not a size defect).
+      await page.evaluate(() => window.scrollTo(0, 0));
+      await page.waitForTimeout(400);
       const results = await new AxeBuilder({ page })
         .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"])
         // Next.js dev tools overlay (development server only).

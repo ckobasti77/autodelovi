@@ -40,7 +40,10 @@ test.describe("3D hero", () => {
     const errors = collectErrors(page);
     await page.goto("/");
     const poster = page.getByTestId("hero-poster-image").locator("img").first();
-    await expect(poster).toHaveAttribute("fetchpriority", "high");
+    await expect(poster).toHaveAttribute("loading", "eager");
+    // High priority only where the poster is the LCP element (≥ 768 px), via a scoped preload.
+    const preload = page.locator('head link[rel="preload"][as="image"][fetchpriority="high"]');
+    await expect(preload).toHaveAttribute("media", "(min-width: 48rem)");
     await expect(poster).toHaveJSProperty("complete", true);
     // Nothing 3D before intent: no canvas element, no model request.
     await expect(page.getByTestId(TEST_IDS.heroCanvas).locator("canvas")).toHaveCount(0);
@@ -143,6 +146,14 @@ test.describe("3D hero", () => {
     ).toEqual([]);
 
     await page.keyboard.press("Escape");
+    await expect(page.getByTestId(TEST_IDS.partPanel)).toBeHidden();
+    // Focus went back to the stage (deep-link source) — with a visible ring for the keyboard.
+    await expect(page.getByRole("img", { name: /Interaktivni 3D prikaz/ })).toBeFocused();
+    const stageRing = await page.evaluate(() => {
+      const s = getComputedStyle(document.activeElement as HTMLElement);
+      return s.outlineStyle !== "none" && parseFloat(s.outlineWidth) >= 2;
+    });
+    expect(stageRing).toBe(true);
     // Keyboard only: Tab through the hero until the explode toggle, checking every stop.
     const toggle = page.getByTestId(TEST_IDS.explodeToggle);
     const unfocusedRing: string[] = [];

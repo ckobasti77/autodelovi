@@ -24,7 +24,8 @@ import { MeshoptDecoder } from "three/examples/jsm/libs/meshopt_decoder.module.j
 
 import manifestJson from "@/public/models/car.manifest.json";
 import { ENV_URL, prefetchModel, SHADOW_URL } from "@/lib/three/assets";
-import { parseCarManifest, type CarManifest, type ManifestPart } from "@/lib/three/manifest";
+import type { CarManifest, ManifestPart } from "@/lib/three/manifest";
+import { readCarManifest } from "@/lib/three/manifestGuard";
 import type { Tier } from "@/lib/three/tier";
 import {
   createHighlightUniforms,
@@ -36,6 +37,7 @@ import {
   type SharedUniforms,
 } from "@/components/three/canvas/materials";
 import { createFloor } from "@/components/three/canvas/floor";
+import { yieldToMain } from "@/components/three/canvas/idle";
 
 export type PartEntry = {
   name: string;
@@ -94,6 +96,7 @@ function startDecoderWorkers() {
 async function loadEnvironment(renderer: WebGLRenderer): Promise<Texture> {
   const hdr = await new HDRLoader().loadAsync(ENV_URL);
   hdr.mapping = EquirectangularReflectionMapping;
+  await yieldToMain(); // RGBE decode and PMREM prefilter in separate tasks
   const pmrem = new PMREMGenerator(renderer);
   const target = pmrem.fromEquirectangular(hdr);
   hdr.dispose();
@@ -140,7 +143,7 @@ export async function loadCarScene(options: {
   const { tier, renderer } = options;
   const mobile = tier === "mid";
   startDecoderWorkers();
-  const manifest = parseCarManifest(manifestJson);
+  const manifest = readCarManifest(manifestJson);
 
   const [buffer, environment, shadowA, shadowB] = await Promise.all([
     prefetchModel(tier),
@@ -152,6 +155,7 @@ export async function loadCarScene(options: {
   const loader = new GLTFLoader();
   loader.setMeshoptDecoder(MeshoptDecoder);
   const gltf = await loader.parseAsync(buffer, "");
+  await yieldToMain();
   const root = gltf.scene;
   root.name = "sklop_car";
 
