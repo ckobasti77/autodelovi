@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { api } from "@/convex/_generated/api";
+import { requireStaffPage } from "@/lib/server/auth";
 import { fetchAsUser } from "@/lib/server/convex";
 import { ProformaDocument } from "@/components/admin/print/OrderPrint";
 
@@ -11,6 +12,7 @@ export default async function AdminProformaPage({
   params,
 }: PageProps<"/admin/porudzbine/[broj]/predracun">) {
   const { broj } = await params;
+  await requireStaffPage(`/admin/porudzbine/${broj}/predracun`);
   const [data, settings] = await Promise.all([
     fetchAsUser(api.ordersAdmin.get, { number: decodeURIComponent(broj) }),
     fetchAsUser(api.settings.getAdmin, {}),

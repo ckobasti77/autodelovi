@@ -476,7 +476,7 @@ export default defineSchema({
   })
     .index("by_userId_and_status", ["userId", "status"])
     .index("by_guestTokenHash", ["guestTokenHash"])
-    .index("by_status_and_updatedAt", ["status", "updatedAt"])
+    .index("by_ownerType_and_status_and_updatedAt", ["ownerType", "status", "updatedAt"])
     .index("by_isDemo", ["isDemo"]),
 
   cartItems: defineTable({
@@ -666,6 +666,7 @@ export default defineSchema({
     .index("by_status", ["status"])
     .index("by_userId", ["userId"])
     .index("by_vin", ["vin"])
+    .index("by_contact_email", ["contact.email"])
     .index("by_assignedTo_and_status", ["assignedTo", "status"])
     .index("by_isDemo", ["isDemo"])
     .searchIndex("search_inquiries", {
@@ -1158,7 +1159,9 @@ export default defineSchema({
     at: v.number(),
     uaHash: v.optional(v.string()),
     userId: v.optional(v.id("users")),
-  }).index("by_consentId", ["consentId"]),
+  })
+    .index("by_consentId", ["consentId"])
+    .index("by_userId", ["userId"]),
 
   /**
    * Programmatic landing candidates (SEO-ADS §J4), recomputed hourly by `landings.recompute`

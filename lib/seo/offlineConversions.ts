@@ -22,6 +22,9 @@ export function offlineConversionsCsv(
   const name = conversionName?.trim() || DEFAULT_OFFLINE_CONVERSION_NAME;
   const lines = ["Parameters:TimeZone=Europe/Belgrade", OFFLINE_HEADER.join(",")];
   for (const r of rows) {
+    // Click ids come from a URL parameter; anything outside the gclid alphabet is not a real id
+    // (and could be a spreadsheet formula), so the row is left out.
+    if (!/^[A-Za-z0-9_-]{8,512}$/.test(r.gclid)) continue;
     lines.push(
       [r.gclid, name, r.time, (r.valuePara / 100).toFixed(2), "RSD"].map(csvField).join(","),
     );

@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 
 import { privateMetadata } from "@/lib/seo/metadata";
+import { requireAccountPage } from "@/lib/server/auth";
 import { Link } from "@/components/ui/Link";
 import { OrdersList, SavedVehicles } from "@/components/account/AccountViews";
 import { ROUTES } from "@/constants/routes";
 
 export const metadata: Metadata = privateMetadata("Moj nalog");
 
-export default function AccountPage() {
+export default async function AccountPage() {
+  await requireAccountPage(ROUTES.account);
   return (
     <div className="grid gap-12 lg:grid-cols-12 lg:gap-x-(--gutter)">
       <section aria-labelledby="recent-title" className="lg:col-span-7">

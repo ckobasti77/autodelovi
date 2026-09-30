@@ -6,7 +6,7 @@
 import type { Doc, Id } from "../_generated/dataModel";
 import type { MutationCtx, QueryCtx } from "../_generated/server";
 import { canTransitionMechanic, type MechanicStatus } from "../../lib/domain/inquiryStateMachine";
-import { audit } from "./audit";
+import { audit, diffFields } from "./audit";
 import { fail, invalid, notFound } from "./errors";
 import { emitEvent } from "./events";
 import type { Actor } from "./validators";
@@ -80,7 +80,15 @@ export async function changeMechanicStatus(
     entityType: "mechanicProfile",
     entityId: input.profileId,
     summary: `${profile.companyName}: ${MECHANIC_STATUS_LABEL_SR[profile.status]} → ${MECHANIC_STATUS_LABEL_SR[input.to]}${input.tierName ? ` · razred ${input.tierName}` : ""}`,
-    diff: [{ field: "status", before: profile.status, after: input.to }],
+    diff: [
+      { field: "status", before: profile.status, after: input.to },
+      // Terms set with the transition (tier, personal rules, credit) with before/after values.
+      ...diffFields(
+        profile,
+        input.patch,
+        Object.keys(input.patch).filter((k) => k !== "rejectionReason"),
+      ),
+    ],
   });
 }
 

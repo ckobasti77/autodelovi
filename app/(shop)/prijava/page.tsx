@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { Link } from "@/components/ui/Link";
 import { ROUTES } from "@/constants/routes";
 import { TEST_IDS } from "@/constants/testIds";
+import { safeNextPath } from "@/lib/domain/redirect";
 import { privateMetadata } from "@/lib/seo/metadata";
 import { getViewer, type ServerViewer } from "@/lib/server/auth";
 
@@ -20,15 +21,11 @@ function roleLabel(viewer: ServerViewer): string {
   return "kupac";
 }
 
-/** Only same-site relative paths are allowed as `next` (no open redirects). */
-function safeNext(value: string | string[] | undefined): string {
-  const next = Array.isArray(value) ? value[0] : value;
-  return next && next.startsWith("/") && !next.startsWith("//") ? next : "/prijava";
-}
 
 export default async function SignInPage({ searchParams }: PageProps<"/prijava">) {
   const [viewer, params] = await Promise.all([getViewer(), searchParams]);
-  const next = safeNext(params.next);
+  // Only same-origin relative paths are allowed as `next` (no open redirects).
+  const next = safeNextPath(params.next, "/prijava");
 
   if (viewer) {
     return (

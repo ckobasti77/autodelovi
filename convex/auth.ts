@@ -12,6 +12,7 @@ import { ConvexError } from "convex/values";
 import { internal } from "./_generated/api";
 import type { DataModel } from "./_generated/dataModel";
 import { isValidEmail, normalizeEmail } from "../lib/domain/identifiers";
+import { enforceRateLimit } from "./lib/rateLimits";
 
 export const PASSWORD_MIN_LENGTH = 10;
 
@@ -81,6 +82,14 @@ export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
   jwt: { durationMs: 60 * 60 * 1000 },
   signIn: { maxFailedAttempsPerHour: 10 },
   callbacks: {
+    // New accounts: sign-ups come through the Next /api/auth proxy (one server IP), so the cap
+    // is global — a burst of 30, then 60 per hour; throwing rolls the new user back. Every new
+    // account is an explicit customer (the admin customer list reads the `by_role` index).
+    async afterUserCreatedOrUpdated(ctx, { userId, existingUserId }) {
+      if (existingUserId !== null) return;
+      await enforceRateLimit(ctx, "signUpGlobal", "global");
+      await ctx.db.patch("users", userId, { role: "customer" });
+    },
     async beforeSessionCreation(ctx, { userId }) {
       const user = await ctx.db.get("users", userId);
       if (user && (user as { status?: string }).status === "blocked") {

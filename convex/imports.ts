@@ -439,6 +439,13 @@ export const cancel = staffMutation({
       conflict("Otkazati se može samo uvoz koji još nije pokrenut.");
     await ctx.db.patch("importBatches", batchId, { status: "cancelled", updatedAt: Date.now() });
     await ctx.scheduler.runAfter(0, internal.importCommit.purgeRows, { batchId });
+    await audit(ctx, {
+      actor: actorOf(ctx.viewer),
+      action: "import.cancel",
+      entityType: "importBatch",
+      entityId: batchId,
+      summary: `Otkazan uvoz „${batch.fileName}“`,
+    });
     return null;
   },
 });
@@ -469,6 +476,16 @@ export const commit = staffMutation({
       updatedAt: Date.now(),
     });
     await ctx.scheduler.runAfter(0, internal.importCommit.commitChunk, { batchId });
+    // Recorded at request time too: a commit that stalls still leaves a trace (the job
+    // writes its own entry with the counts when it finishes).
+    await audit(ctx, {
+      actor: actorOf(ctx.viewer),
+      action: "import.commit_requested",
+      entityType: "importBatch",
+      entityId: batchId,
+      summary: `Pokrenut upis uvoza „${batch.fileName}“${deactivateMissing ? " uz deaktiviranje artikala kojih nema u fajlu" : ""}`,
+      diff: [{ field: "deactivateMissing", after: String(deactivateMissing) }],
+    });
     return null;
   },
 });
@@ -504,6 +521,13 @@ export const rollback = staffMutation({
       updatedAt: Date.now(),
     });
     await ctx.scheduler.runAfter(0, internal.importCommit.rollbackChunk, { batchId });
+    await audit(ctx, {
+      actor: actorOf(ctx.viewer),
+      action: "import.rollback_requested",
+      entityType: "importBatch",
+      entityId: batchId,
+      summary: `Pokrenuto poništavanje uvoza „${batch.fileName}“`,
+    });
     return null;
   },
 });

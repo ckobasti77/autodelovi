@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { api } from "@/convex/_generated/api";
+import { requireStaffPage } from "@/lib/server/auth";
 import { fetchAsUser } from "@/lib/server/convex";
 import { DeliveryNoteDocument } from "@/components/admin/print/OrderPrint";
 
@@ -10,6 +11,7 @@ export const metadata: Metadata = { title: "Otpremnice" };
 export default async function AdminBulkDeliveryNotesPage({
   searchParams,
 }: PageProps<"/admin/stampa/otpremnice">) {
+  await requireStaffPage("/admin/porudzbine");
   const { brojevi } = await searchParams;
   const numbers = (typeof brojevi === "string" ? brojevi : "")
     .split(",")

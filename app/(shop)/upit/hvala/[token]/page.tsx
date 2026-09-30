@@ -4,7 +4,7 @@ import { CheckCircleIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
 import { contactLinkList } from "@/config/site";
-import { privateMetadata } from "@/lib/seo/metadata";
+import { tokenPageMetadata } from "@/lib/seo/metadata";
 import { contactFromSettings } from "@/lib/settings/public";
 import { fetchPublic } from "@/lib/server/convex";
 import { getSettingsPublic } from "@/lib/server/catalog-cache";
@@ -14,7 +14,7 @@ import { ContactActions } from "@/components/shell/ContactActions";
 import { LeadTracker } from "@/components/inquiry/LeadTracker";
 import { ROUTES } from "@/constants/routes";
 
-export const metadata: Metadata = privateMetadata("Upit je primljen");
+export const metadata: Metadata = tokenPageMetadata("Upit je primljen");
 
 export default async function InquiryThanksPage({ params }: PageProps<"/upit/hvala/[token]">) {
   const { token } = await params;
@@ -40,7 +40,7 @@ export default async function InquiryThanksPage({ params }: PageProps<"/upit/hva
         </p>
         <p className="type-body text-ink-2">
           Ponudu vidite i na{" "}
-          <Link href={ROUTES.inquiryStatus(token)} variant="inline">
+          <Link href={ROUTES.inquiryStatus(token)} variant="inline" reloadDocument>
             stranici upita
           </Link>{" "}
           — sačuvajte link.

@@ -29,7 +29,7 @@ import { ADMIN } from "@/constants/routes";
 
 import { ConfirmDialog, useConfirm } from "../ConfirmDialog";
 import { useNowMinute } from "../hooks";
-import { useAdminCrumb } from "../shell/context";
+import { useAdminCrumb, useAdminShell } from "../shell/context";
 import {
   ActorLabel,
   DefinitionList,
@@ -160,6 +160,7 @@ export function CustomersList() {
 }
 
 export function CustomerDetail({ userId }: { userId: Id<"users"> }) {
+  const { viewer } = useAdminShell();
   const data = useQuery(api.customersAdmin.get, { userId });
   const nowMinute = useNowMinute();
   const addNote = useMutation(api.customersAdmin.addNote);
@@ -374,6 +375,19 @@ export function CustomerDetail({ userId }: { userId: Id<"users"> }) {
                   </li>
                 ))}
               </ul>
+            </Section>
+          ) : null}
+          {viewer.isOwner && isCustomer ? (
+            <Section title="Lični podaci">
+              <p className="type-body-s text-ink-2">
+                Zahtev kupca za uvid ili brisanje podataka (ZZPL).
+              </p>
+              <RouteLink
+                href={ADMIN.privacyFor(u._id)}
+                className="mt-2 inline-flex min-h-9 items-center type-body-s text-accent-text underline-offset-2 hover:underline"
+              >
+                Izvoz ili anonimizacija
+              </RouteLink>
             </Section>
           ) : null}
           <Section title="Beleške osoblja">

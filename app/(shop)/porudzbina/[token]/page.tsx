@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 import { api } from "@/convex/_generated/api";
 import { contactLinkList } from "@/config/site";
-import { privateMetadata } from "@/lib/seo/metadata";
+import { tokenPageMetadata } from "@/lib/seo/metadata";
 import { contactFromSettings } from "@/lib/settings/public";
 import { fetchPublic } from "@/lib/server/convex";
 import { getSettingsPublic } from "@/lib/server/catalog-cache";
@@ -11,7 +11,7 @@ import { RevealText } from "@/components/text-reveal/RevealText";
 import { ContactActions } from "@/components/shell/ContactActions";
 import { OrderStatusView } from "@/components/order/OrderStatusView";
 
-export const metadata: Metadata = privateMetadata("Status porudžbine");
+export const metadata: Metadata = tokenPageMetadata("Status porudžbine");
 
 /** Tokenized order status with a live timeline (§10.6). The token is the capability. */
 export default async function OrderStatusPage({ params }: PageProps<"/porudzbina/[token]">) {

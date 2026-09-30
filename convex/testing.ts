@@ -17,6 +17,17 @@ import { statusLinkToken } from "./lib/linkTokens";
 import { hashToken, randomToken } from "./lib/tokens";
 import { isAvailableNow } from "../lib/domain/stock";
 
+/**
+ * Writers and token readers run only where the deployment opted in (dev + e2e):
+ * `npx convex env set E2E_TEST_HELPERS 1`. Production never sets it, so a CLI call pointed at
+ * the wrong deployment fails instead of creating test orders or reading status tokens.
+ */
+function assertTestDeployment(): void {
+  if (process.env.E2E_TEST_HELPERS !== "1") {
+    throw new Error("Test helpers are disabled on this deployment (set E2E_TEST_HELPERS=1 on dev).");
+  }
+}
+
 export const orderProbe = internalQuery({
   args: { number: v.string() },
   returns: v.union(
@@ -213,6 +224,7 @@ export const quotedInquiryToken = internalMutation({
   args: {},
   returns: v.union(v.null(), v.object({ number: v.string(), token: v.string() })),
   handler: async (ctx) => {
+    assertTestDeployment();
     const inquiry = await ctx.db
       .query("inquiries")
       .withIndex("by_status", (q) => q.eq("status", "ponuda_poslata"))
@@ -237,6 +249,7 @@ export const approveMechanic = internalMutation({
   },
   returns: v.object({ profileId: v.id("mechanicProfiles"), tierName: v.string() }),
   handler: async (ctx, args) => {
+    assertTestDeployment();
     const user = await ctx.db
       .query("users")
       .withIndex("email", (q) => q.eq("email", args.email.trim().toLowerCase()))
@@ -359,6 +372,7 @@ export const createTestOrder = internalMutation({
   args: { tag: v.string() },
   returns: v.object({ number: v.string() }),
   handler: async (ctx, { tag }) => {
+    assertTestDeployment();
     const settings = await getSettings(ctx);
     const products = await ctx.db
       .query("products")
@@ -426,6 +440,7 @@ export const createTestInquiry = internalMutation({
   args: { tag: v.string() },
   returns: v.object({ number: v.string() }),
   handler: async (ctx, { tag }) => {
+    assertTestDeployment();
     const settings = await getSettings(ctx);
     const { number, inquiryId } = await insertInquiry(ctx, {
       kind: "part",
@@ -453,6 +468,7 @@ export const createPendingMechanic = internalMutation({
   args: { tag: v.string(), pib: v.string(), mb: v.string() },
   returns: v.object({ profileId: v.id("mechanicProfiles"), companyName: v.string() }),
   handler: async (ctx, { tag, pib, mb }) => {
+    assertTestDeployment();
     const email = `majstor-admin-${tag}@primer.rs`;
     const companyName = `Servis Admin ${tag}`;
     const userId = await ctx.db.insert("users", {
@@ -550,6 +566,7 @@ export const deactivateE2EProducts = internalMutation({
   args: {},
   returns: v.number(),
   handler: async (ctx) => {
+    assertTestDeployment();
     const rows = await ctx.db
       .query("products")
       .withIndex("by_active_and_contentUpdatedAt", (q) => q.eq("active", true))
@@ -573,6 +590,7 @@ export const purgeImportFixtures = internalMutation({
   args: {},
   returns: v.object({ products: v.number(), batches: v.number() }),
   handler: async (ctx) => {
+    assertTestDeployment();
     const rows = await ctx.db
       .query("products")
       .withIndex("by_sku", (q) => q.gte("sku", "IMP-").lt("sku", "IMP."))
@@ -667,7 +685,10 @@ export const emailProbe = internalQuery({
 export const orderStatusToken = internalQuery({
   args: { number: v.string() },
   returns: v.string(),
-  handler: async (_ctx, { number }) => await statusLinkToken("order", number),
+  handler: async (_ctx, { number }) => {
+    assertTestDeployment();
+    return await statusLinkToken("order", number);
+  },
 });
 
 /**
@@ -683,6 +704,7 @@ export const setTracking = internalMutation({
   },
   returns: v.string(),
   handler: async (ctx, args) => {
+    assertTestDeployment();
     const doc = await ctx.db
       .query("settings")
       .withIndex("by_key", (q) => q.eq("key", "global"))

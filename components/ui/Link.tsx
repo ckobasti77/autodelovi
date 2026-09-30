@@ -25,6 +25,11 @@ export type LinkProps = Omit<ComponentProps<typeof NextLink>, "href"> & {
   external?: boolean;
   /** Replace the default trailing icon of the standalone variant. */
   icon?: ReactNode;
+  /**
+   * Full page load instead of client navigation — for capability-token pages, so analytics
+   * only ever see the redacted URL they get on load (lib/analytics/redact).
+   */
+  reloadDocument?: boolean;
 };
 
 const isExternal = (href: string) => /^https?:\/\//i.test(href);
@@ -39,6 +44,7 @@ export function Link({
   variant = "inline",
   external,
   icon,
+  reloadDocument,
   className,
   children,
   ...rest
@@ -58,7 +64,7 @@ export function Link({
       </span>
     ) : null;
 
-  if (opensNewTab || isScheme) {
+  if (opensNewTab || isScheme || reloadDocument) {
     return (
       <a
         href={href}

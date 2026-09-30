@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { api } from "@/convex/_generated/api";
-import { privateMetadata } from "@/lib/seo/metadata";
+import { tokenPageMetadata } from "@/lib/seo/metadata";
 import { fetchPublic } from "@/lib/server/convex";
 import { getSettingsPublic } from "@/lib/server/catalog-cache";
 import { RevealText } from "@/components/text-reveal/RevealText";
 import { InquiryStatusView } from "@/components/inquiry/InquiryStatusView";
 
-export const metadata: Metadata = privateMetadata("Upit i ponuda");
+export const metadata: Metadata = tokenPageMetadata("Upit i ponuda");
 
 /** Inquiry status + quote with accept / decline / renewal (ARCHITECTURE §A2). */
 export default async function InquiryStatusPage({ params }: PageProps<"/upit/[token]">) {

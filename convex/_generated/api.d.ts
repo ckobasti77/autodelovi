@@ -81,6 +81,7 @@ import type * as notify from "../notify.js";
 import type * as orders from "../orders.js";
 import type * as ordersAdmin from "../ordersAdmin.js";
 import type * as pricing from "../pricing.js";
+import type * as privacy from "../privacy.js";
 import type * as revalidate from "../revalidate.js";
 import type * as search from "../search.js";
 import type * as seed from "../seed.js";
@@ -177,6 +178,7 @@ declare const fullApi: ApiFromModules<{
   orders: typeof orders;
   ordersAdmin: typeof ordersAdmin;
   pricing: typeof pricing;
+  privacy: typeof privacy;
   revalidate: typeof revalidate;
   search: typeof search;
   seed: typeof seed;

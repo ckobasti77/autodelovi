@@ -114,3 +114,26 @@ export const rekeyStatusLinks = internalMutation({
     return { updated, done: page.isDone };
   },
 });
+
+/**
+ * One-off (step 20): accounts created before sign-up set `role: "customer"` had no role and
+ * were missing from Admin → Kupci and the customer export (both read the `by_role` index).
+ * Run: `npx convex run maintenance:backfillCustomerRole` (self-continuing, idempotent).
+ */
+export const backfillCustomerRole = internalMutation({
+  args: { cursor: v.optional(v.union(v.string(), v.null())) },
+  returns: v.object({ updated: v.number(), done: v.boolean() }),
+  handler: async (ctx, { cursor }) => {
+    const page = await ctx.db
+      .query("users")
+      .withIndex("by_role", (q) => q.eq("role", undefined))
+      .paginate({ numItems: BATCH, cursor: cursor ?? null });
+    for (const user of page.page) await ctx.db.patch("users", user._id, { role: "customer" });
+    if (!page.isDone) {
+      await ctx.scheduler.runAfter(0, internal.maintenance.backfillCustomerRole, {
+        cursor: page.continueCursor,
+      });
+    }
+    return { updated: page.page.length, done: page.isDone };
+  },
+});

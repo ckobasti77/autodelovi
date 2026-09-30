@@ -6,13 +6,13 @@ import { site } from "@/config/site";
 import { formatDate } from "@/lib/format/date";
 import { formatRSD } from "@/lib/format/money";
 import { formatPhone } from "@/lib/format/phone";
-import { privateMetadata } from "@/lib/seo/metadata";
+import { tokenPageMetadata } from "@/lib/seo/metadata";
 import { companyFromSettings, contactFromSettings } from "@/lib/settings/public";
 import { fetchPublic } from "@/lib/server/convex";
 import { getSettingsPublic } from "@/lib/server/catalog-cache";
 import { PrintButton } from "@/components/order/PrintButton";
 
-export const metadata: Metadata = privateMetadata("Predračun");
+export const metadata: Metadata = tokenPageMetadata("Predračun");
 
 /**
  * Printable predračun (pro-forma, ROUTES §B1): print theme, black on white; the seller block

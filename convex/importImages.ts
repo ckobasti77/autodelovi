@@ -1,7 +1,8 @@
 /**
  * Image URLs from an import (docs/IMPORT.md §K4 step 5): fetched after commit, three at a
  * time with a pause between groups, 10 s timeout, ≤ 10 MB, JPEG/PNG/WebP verified from the
- * bytes (never the Content-Type), private/loopback hosts refused. Failures are recorded on
+ * bytes (never the Content-Type), private/loopback hosts refused on every redirect hop
+ * (lib/import/remoteUrl), the body read with a byte cap. Failures are recorded on
  * the job and shown on the import page. The action re-schedules itself before the action
  * time limit.
  */
@@ -16,6 +17,7 @@ import {
   type MutationCtx,
 } from "./_generated/server";
 import { sniffImage } from "../lib/import/imageSniff";
+import { fetchableUrl } from "../lib/import/remoteUrl";
 import { SYSTEM_ACTOR } from "./lib/authz";
 import { MAX_PRODUCT_IMAGES, setProductImages } from "./lib/productWriter";
 
@@ -25,38 +27,7 @@ const MAX_BYTES = 10 * 1024 * 1024;
 const PAUSE_MS = 300;
 const ACTION_BUDGET_MS = 5 * 60_000;
 const MAX_ATTEMPTS = 2;
-
-/** Literal private, loopback and link-local hosts (no DNS in the runtime — literal checks). */
-export function isForbiddenHost(hostname: string): boolean {
-  const h = hostname.toLowerCase().replace(/^\[|\]$/g, "");
-  if (
-    h === "localhost" ||
-    h.endsWith(".localhost") ||
-    h.endsWith(".local") ||
-    h.endsWith(".internal")
-  )
-    return true;
-  if (
-    h === "::1" ||
-    h === "::" ||
-    h.startsWith("fc") ||
-    h.startsWith("fd") ||
-    h.startsWith("fe80:")
-  )
-    return true;
-  const m = /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/.exec(h);
-  if (!m) return false;
-  const [a, b] = [Number(m[1]), Number(m[2])];
-  return (
-    a === 0 ||
-    a === 10 ||
-    a === 127 ||
-    (a === 169 && b === 254) ||
-    (a === 172 && b >= 16 && b <= 31) ||
-    (a === 192 && b === 168) ||
-    (a === 100 && b >= 64 && b <= 127)
-  );
-}
+const MAX_REDIRECTS = 3;
 
 export const nextJobs = internalQuery({
   args: { batchId: v.id("importBatches"), limit: v.number() },
@@ -75,30 +46,83 @@ export const nextJobs = internalQuery({
 type Fetched =
   { ok: true; blob: Blob; width: number; height: number } | { ok: false; error: string };
 
-async function fetchImage(url: string): Promise<Fetched> {
-  let parsed: URL;
-  try {
-    parsed = new URL(url);
-  } catch {
-    return { ok: false, error: "Adresa nije ispravna." };
+/** One message for every network-level failure, so job errors cannot map hosts or ports. */
+const FETCH_FAILED = "Slika nije mogla da se preuzme.";
+
+/**
+ * GET with redirects followed by hand (at most `MAX_REDIRECTS` hops), re-checking every
+ * target against the private-host rules — `redirect: "follow"` would only check the first URL.
+ */
+async function fetchPublic(
+  start: URL,
+  signal: AbortSignal,
+): Promise<{ ok: true; res: Response } | { ok: false; error: string }> {
+  let url = start;
+  for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
+    const res = await fetch(url.toString(), {
+      signal,
+      redirect: "manual",
+      headers: { Accept: "image/jpeg,image/png,image/webp;q=0.9,*/*;q=0.1" },
+    });
+    if (res.type === "opaqueredirect") return { ok: false, error: FETCH_FAILED };
+    if (res.status < 300 || res.status > 399) return { ok: true, res };
+    const location = res.headers.get("location");
+    await res.body?.cancel();
+    const next = location ? fetchableUrl(location, url) : null;
+    if (!next) return { ok: false, error: "Adresa preusmerava na nedozvoljenu adresu." };
+    url = next;
   }
-  if (parsed.protocol !== "https:" && parsed.protocol !== "http:")
-    return { ok: false, error: "Dozvoljene su samo http(s) adrese." };
-  if (isForbiddenHost(parsed.hostname))
-    return { ok: false, error: "Adresa vodi na privatnu mrežu." };
+  return { ok: false, error: "Previše preusmeravanja." };
+}
+
+/** Reads at most `max` bytes (a missing or false Content-Length cannot exhaust memory). */
+async function readCapped(res: Response, max: number): Promise<Uint8Array<ArrayBuffer> | null> {
+  if (!res.body) {
+    const whole = new Uint8Array(await res.arrayBuffer());
+    return whole.byteLength > max ? null : whole;
+  }
+  const reader = res.body.getReader();
+  const chunks: Uint8Array[] = [];
+  let total = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    total += value.byteLength;
+    if (total > max) {
+      await reader.cancel();
+      return null;
+    }
+    chunks.push(value);
+  }
+  const out = new Uint8Array(total);
+  let offset = 0;
+  for (const chunk of chunks) {
+    out.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  return out;
+}
+
+async function fetchImage(url: string): Promise<Fetched> {
+  const parsed = fetchableUrl(url);
+  if (!parsed) return { ok: false, error: "Adresa nije ispravna ili vodi na privatnu mrežu." };
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
-    const res = await fetch(parsed.toString(), {
-      signal: controller.signal,
-      redirect: "follow",
-      headers: { Accept: "image/jpeg,image/png,image/webp;q=0.9,*/*;q=0.1" },
-    });
-    if (!res.ok) return { ok: false, error: `Server je odgovorio ${res.status}.` };
+    const fetched = await fetchPublic(parsed, controller.signal);
+    if (!fetched.ok) return fetched;
+    const res = fetched.res;
+    if (!res.ok) {
+      await res.body?.cancel();
+      return { ok: false, error: FETCH_FAILED };
+    }
     const declared = Number(res.headers.get("content-length") ?? "0");
-    if (declared > MAX_BYTES) return { ok: false, error: "Slika je veća od 10 MB." };
-    const buffer = new Uint8Array(await res.arrayBuffer());
-    if (buffer.byteLength > MAX_BYTES) return { ok: false, error: "Slika je veća od 10 MB." };
+    if (declared > MAX_BYTES) {
+      await res.body?.cancel();
+      return { ok: false, error: "Slika je veća od 10 MB." };
+    }
+    const buffer = await readCapped(res, MAX_BYTES);
+    if (!buffer) return { ok: false, error: "Slika je veća od 10 MB." };
     const sniffed = sniffImage(buffer);
     if (!sniffed) return { ok: false, error: "Sadržaj nije JPEG, PNG ni WebP slika." };
     if (sniffed.width < 50 || sniffed.height < 50)
@@ -109,12 +133,8 @@ async function fetchImage(url: string): Promise<Fetched> {
       width: sniffed.width,
       height: sniffed.height,
     };
-  } catch (error) {
-    const aborted = error instanceof Error && error.name === "AbortError";
-    return {
-      ok: false,
-      error: aborted ? "Isteklo je 10 s čekanja." : "Slika nije mogla da se preuzme.",
-    };
+  } catch {
+    return { ok: false, error: FETCH_FAILED };
   } finally {
     clearTimeout(timer);
   }

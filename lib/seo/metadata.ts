@@ -107,3 +107,11 @@ export function buildMetadata(input: PageMetaInput): Metadata {
 export function privateMetadata(title: string): Metadata {
   return { title: { absolute: pageTitle(title) }, robots: { index: false, follow: true } };
 }
+
+/**
+ * Capability-token pages (order/inquiry status): private, and no Referer at all, so the
+ * token in the URL never reaches another site (SECURITY §L2).
+ */
+export function tokenPageMetadata(title: string): Metadata {
+  return { ...privateMetadata(title), referrer: "no-referrer" };
+}

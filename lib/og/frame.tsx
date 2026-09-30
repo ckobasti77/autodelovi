@@ -58,6 +58,24 @@ function loadFonts(): Promise<Font[]> {
  * A PNG data URI for a `/public` path or an absolute URL (Convex storage); null when the
  * image cannot be read — the frame then shows the empty drawing box.
  */
+/** Remote OG inputs come only from this deployment's Convex file storage (no open fetch). */
+function isConvexStorageUrl(src: string): boolean {
+  try {
+    const url = new URL(src);
+    const convex = process.env.NEXT_PUBLIC_CONVEX_URL;
+    return (
+      url.protocol === "https:" &&
+      !!convex &&
+      url.host === new URL(convex).host &&
+      url.pathname.startsWith("/api/storage/")
+    );
+  } catch {
+    return false;
+  }
+}
+
+const MAX_REMOTE_BYTES = 10 * 1024 * 1024;
+
 export async function ogImageData(
   src: string | null | undefined,
   box = 440,
@@ -66,9 +84,12 @@ export async function ogImageData(
   try {
     let input: Buffer;
     if (/^https?:\/\//.test(src)) {
-      const res = await fetch(src, { cache: "no-store" });
+      if (!isConvexStorageUrl(src)) return null;
+      const res = await fetch(src, { cache: "no-store", redirect: "error" });
       if (!res.ok) return null;
+      if (Number(res.headers.get("content-length") ?? "0") > MAX_REMOTE_BYTES) return null;
       input = Buffer.from(await res.arrayBuffer());
+      if (input.byteLength > MAX_REMOTE_BYTES) return null;
     } else if (src.startsWith("/") && !src.includes("..")) {
       input = await readFile(join(process.cwd(), "public", src));
     } else {

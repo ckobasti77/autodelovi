@@ -90,10 +90,21 @@ export function marginBp(
   return Math.round(((net - costNetPara) / net) * 10_000);
 }
 
+/**
+ * A text cell Excel would evaluate as a formula (`=`, `+`, `-`, `@`, tab, CR at the start)
+ * gets a leading apostrophe — customer names, company names and UTM values reach these
+ * exports verbatim (CSV injection). Plain numbers such as `-1.250,00` stay untouched.
+ */
+export function neutralizeCsvFormula(text: string): string {
+  if (!/^[=+\-@\t\r]/.test(text)) return text;
+  return /^[-+]?[\d.,\s]+$/.test(text) ? text : `'${text}`;
+}
+
 /** CSV for Excel (Serbian locale): `;` separators, quoted cells, UTF-8 BOM, CRLF. */
 export function toCsv(rows: readonly (readonly (string | number | null | undefined)[])[]): string {
   const cell = (v: string | number | null | undefined) => {
-    const text = v === null || v === undefined ? "" : String(v);
+    const text =
+      v === null || v === undefined ? "" : typeof v === "number" ? String(v) : neutralizeCsvFormula(v);
     return /[";\r\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
   };
   return `﻿${rows.map((r) => r.map(cell).join(";")).join("\r\n")}`;

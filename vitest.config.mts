@@ -37,6 +37,8 @@ export default defineConfig({
           name: "convex",
           include: ["convex/**/*.test.ts"],
           environment: "edge-runtime",
+          // convex/testing.ts helpers refuse to run unless the deployment opted in.
+          env: { E2E_TEST_HELPERS: "1" },
           server: {
             deps: {
               inline: [

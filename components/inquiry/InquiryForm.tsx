@@ -7,7 +7,6 @@
  */
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "convex/react";
-import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Controller, useForm, useWatch } from "react-hook-form";
 import {
@@ -66,7 +65,6 @@ export type InquiryConfig = {
 };
 
 export function InquiryForm({ config }: { config: InquiryConfig }) {
-  const router = useRouter();
   const submit = useMutation(api.inquiries.submit);
   const stored = useSelectedVehicle();
   const [photos, setPhotos] = useState<PhotoItem[]>([]);
@@ -203,7 +201,8 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
         firstName: v.name.split(/s+/)[0],
         lastName: v.name.split(/s+/).slice(1).join(" "),
       });
-      router.push(ROUTES.inquiryThanks(result.token));
+      // Full load: analytics must only see the token page through its redacted URL.
+      window.location.assign(ROUTES.inquiryThanks(result.token));
     } catch (error) {
       setBusy(false);
       setServerError(

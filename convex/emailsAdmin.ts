@@ -38,14 +38,25 @@ const statusV = v.union(
 
 const modeV = v.union(v.literal("log"), v.literal("test"), v.literal("live"));
 
-/** Secrets never leave the server in clear text, not even to staff (codes, invite links). */
-function maskSecrets(templateKey: string, relatedType: string | undefined, text: string): string {
+/**
+ * Secrets never leave the server in clear text, not even to staff: reset codes, invite links
+ * and the customer's status/unsubscribe links (staff act on orders and quotes in the admin,
+ * audited under their own name — never through the customer's capability link).
+ */
+export function maskSecrets(
+  templateKey: string,
+  relatedType: string | undefined,
+  text: string,
+): string {
   let out = text;
   if (relatedType === "auth" || templateKey === "password_reset_code")
     out = out.replace(/\b\d{6,8}\b/g, "••••••••");
   if (templateKey === "staff_invite")
     out = out.replace(/(\/admin\/pozivnica\/)[A-Za-z0-9_-]{22,64}/g, "$1••••••••");
-  return out;
+  return out.replace(
+    /(\/(?:porudzbina|upit|obavestenja\/odjava)\/(?:hvala\/)?)[A-Za-z0-9_-]{22,64}/g,
+    "$1••••••••",
+  );
 }
 
 export const outbox = staffQuery({
@@ -273,6 +284,7 @@ export const resend = staffMutation({
     if (!m) return notFound("Poruka ne postoji.");
     if (!isResendable(m.templateKey, m.relatedType))
       invalid("Kodovi i pozivnice se ne šalju ponovo — zatražite novi.");
+    await enforceRateLimit(ctx, "emailResend", ctx.viewer.userId);
     const settings = await getSettings(ctx);
     const result = await sendEmail(ctx, settings, {
       to: m.originalTo ?? m.to,

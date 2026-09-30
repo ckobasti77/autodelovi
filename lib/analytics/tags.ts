@@ -12,6 +12,7 @@ import {
   metaEventId,
   type AdsLabels,
 } from "@/lib/analytics/mapping";
+import { isTokenPath, redactedPageUrl } from "@/lib/analytics/redact";
 import type { AnalyticsAdapter } from "@/lib/analytics/track";
 
 export type TagIds = {
@@ -28,6 +29,8 @@ type Fbq = ((...args: unknown[]) => void) & {
   loaded?: boolean;
   version?: string;
   push?: Fbq;
+  /** Stops fbevents.js from sending its own PageView on history changes. */
+  disablePushState?: boolean;
 };
 
 declare global {
@@ -73,6 +76,16 @@ export function updateConsentMode(choice: ConsentChoice): void {
 
 let googleConfigured = { ga4: false, ads: false };
 
+/** Page fields with capability tokens replaced (lib/analytics/redact). */
+function googlePageFields(): Record<string, string> {
+  const referrer = document.referrer;
+  return {
+    page_location: redactedPageUrl(location.href),
+    ...(referrer ? { page_referrer: redactedPageUrl(referrer) } : {}),
+  };
+}
+
+
 /** Loads gtag.js once and configures GA4 / Ads for the granted categories. */
 export function loadGoogleTag(ids: TagIds, choice: ConsentChoice): boolean {
   const ga4 = choice.analytics && ids.ga4Id ? ids.ga4Id : null;
@@ -82,11 +95,11 @@ export function loadGoogleTag(ids: TagIds, choice: ConsentChoice): boolean {
   if (!googleConfigured.ga4 && !googleConfigured.ads) gtag("js", new Date());
   injectScript(`${GTAG_SRC}?id=${encodeURIComponent((ga4 ?? ads)!)}`, "sk-gtag");
   if (ga4 && !googleConfigured.ga4) {
-    gtag("config", ga4);
+    gtag("config", ga4, googlePageFields());
     googleConfigured.ga4 = true;
   }
   if (ads && !googleConfigured.ads) {
-    gtag("config", ads, { allow_enhanced_conversions: true });
+    gtag("config", ads, { allow_enhanced_conversions: true, ...googlePageFields() });
     googleConfigured.ads = true;
   }
   return true;
@@ -105,18 +118,24 @@ export function loadMetaPixel(pixelId: string): void {
     fbq.loaded = true;
     fbq.version = "2.0";
     fbq.queue = [];
+    // Page views are sent by AnalyticsManager (never on token pages), not by the library.
+    fbq.disablePushState = true;
     window.fbq = fbq;
     window._fbq = fbq;
   }
   injectScript(FBQ_SRC, "sk-fbq");
   window.fbq("consent", "grant");
   if (pixelInitialised !== pixelId) {
+    // No automatic button-click / metadata events: they would carry the page URL.
+    window.fbq("set", "autoConfig", false, pixelId);
     window.fbq("init", pixelId);
     pixelInitialised = pixelId;
   }
 }
 
+/** The Pixel sends the full page URL, which cannot be overridden — silent on token pages. */
 export function metaPageView(): void {
+  if (isTokenPath(location.pathname)) return;
   window.fbq?.("track", "PageView");
 }
 
@@ -148,7 +167,7 @@ export function googleAdapter(ids: TagIds, choice: ConsentChoice): AnalyticsAdap
 export function metaAdapter(): AnalyticsAdapter {
   return (event, opts) => {
     const mapped = toMeta(event);
-    if (!mapped || !window.fbq) return;
+    if (!mapped || !window.fbq || isTokenPath(location.pathname)) return;
     const eventID = metaEventId(event, opts.eventId);
     window.fbq("track", mapped[0], mapped[1], ...(eventID ? [{ eventID }] : []));
   };

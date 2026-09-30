@@ -184,4 +184,16 @@ describe("offline conversions CSV", () => {
     ]);
     expect(offlineConversionsCsv([], null)).toContain("Google Click ID");
   });
+
+  test("rows whose click id is not a real gclid are left out (CSV injection)", () => {
+    const csv = offlineConversionsCsv(
+      [
+        { gclid: '=HYPERLINK("https://x.test")', time: "2026-09-30 14:05:09", valuePara: 100 },
+        { gclid: "Cj0KCQjw_ok-1", time: "2026-09-30 14:05:09", valuePara: 100 },
+      ],
+      null,
+    );
+    expect(csv).not.toContain("HYPERLINK");
+    expect(csv).toContain("Cj0KCQjw_ok-1");
+  });
 });

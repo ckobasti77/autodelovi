@@ -7,6 +7,7 @@
 import { Fragment, type ReactNode } from "react";
 
 import { RouteLink } from "@/components/ui/RouteLink";
+import { isSafeRelativePath } from "@/lib/domain/redirect";
 
 type Block =
   | { kind: "heading"; level: 2 | 3; text: string }
@@ -78,7 +79,7 @@ export function parseMarkdown(md: string): Block[] {
 const INLINE = /(\*\*[^*]+\*\*|\[[^\]]+\]\([^)\s]+\))/g;
 
 function safeHref(href: string): string | null {
-  if (href.startsWith("/") && !href.startsWith("//")) return href;
+  if (href.startsWith("/")) return isSafeRelativePath(href) ? href : null;
   if (/^https:\/\//.test(href) || /^mailto:/.test(href) || /^tel:/.test(href)) return href;
   return null;
 }

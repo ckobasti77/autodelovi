@@ -7,7 +7,6 @@
  */
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "convex/react";
-import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Controller, useForm, useWatch, type FieldErrors } from "react-hook-form";
 import {
@@ -157,7 +156,6 @@ function ErrorSummary({ errors, fields }: { errors: FieldErrors<CheckoutValues>;
 }
 
 export function CheckoutForm({ config }: { config: CheckoutConfig }) {
-  const router = useRouter();
   const cart = useCart();
   const cartArgs = useCartArgs();
   const submitOrder = useMutation(api.orders.submit);
@@ -343,7 +341,8 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
         // ignore
       }
       resetGuestToken();
-      router.push(ROUTES.orderThanks(result.token));
+      // Full load: analytics must only see the token page through its redacted URL.
+      window.location.assign(ROUTES.orderThanks(result.token));
     } catch (error) {
       setSubmitting(false);
       const code = convexErrorCode(error);

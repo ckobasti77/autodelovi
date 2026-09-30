@@ -5,7 +5,7 @@
  *   npx convex run seed:stats        row counts per table
  * Reference rows are upserted by natural keys (`source: "seed"`); demo rows are `isDemo`.
  */
-import { createAccount } from "@convex-dev/auth/server";
+import { createAccount, retrieveAccount } from "@convex-dev/auth/server";
 import { v } from "convex/values";
 
 import { internal } from "./_generated/api";
@@ -14,6 +14,7 @@ import {
   internalAction,
   internalMutation,
   internalQuery,
+  type ActionCtx,
   type MutationCtx,
 } from "./_generated/server";
 import { CATEGORIES, SUBCATEGORIES, SYSTEMS } from "../lib/catalog/taxonomy";
@@ -1087,11 +1088,29 @@ export const promoteOwner = internalMutation({
   },
 });
 
-/** Creates (or re-promotes) the owner from SEED_ADMIN_EMAIL / SEED_ADMIN_PASSWORD. Never logs the password. */
+/**
+ * Creates (or re-promotes) the owner from SEED_ADMIN_EMAIL / SEED_ADMIN_PASSWORD. Never logs
+ * the password. Sign-up has no e-mail verification, so an existing account with that address
+ * may belong to someone else: it is promoted only when it holds the seed password.
+ */
+/** True when the password account `email` accepts `secret` (retrieveAccount throws otherwise). */
+async function holdsPassword(ctx: ActionCtx, email: string, secret: string): Promise<boolean> {
+  try {
+    return (await retrieveAccount(ctx, { provider: "password", account: { id: email, secret } })) !== null;
+  } catch {
+    return false;
+  }
+}
+
 export const createOwner = internalAction({
   args: {},
   returns: v.object({
-    status: v.union(v.literal("created"), v.literal("exists"), v.literal("missing_env")),
+    status: v.union(
+      v.literal("created"),
+      v.literal("exists"),
+      v.literal("missing_env"),
+      v.literal("password_mismatch"),
+    ),
     email: v.union(v.string(), v.null()),
   }),
   handler: async (ctx) => {
@@ -1103,6 +1122,9 @@ export const createOwner = internalAction({
       { email },
     );
     if (existing) {
+      if (existing.role !== "owner" && !(await holdsPassword(ctx, email, creds.password))) {
+        return { status: "password_mismatch" as const, email };
+      }
       await ctx.runMutation(internal.seed.promoteOwner, { userId: existing.userId });
       return { status: "exists" as const, email };
     }

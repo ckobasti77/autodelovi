@@ -19,7 +19,7 @@ import {
 } from "./lib/carts";
 import { isListed, productCardV, toCard } from "./lib/catalog";
 import { fail, invalid, notFound } from "./lib/errors";
-import { publicMutation, publicQuery, userMutation } from "./lib/functions";
+import { publicMutation, publicQuery, userMutation, type ClientInfo } from "./lib/functions";
 import { enforceRateLimit } from "./lib/rateLimits";
 import { hashToken, isTokenShape } from "./lib/tokens";
 import { cartItemSourceV } from "./lib/validators";
@@ -170,13 +170,16 @@ async function touch(ctx: MutationCtx, cart: Doc<"carts">): Promise<void> {
 }
 
 async function writableCart(
-  ctx: MutationCtx & { viewer: Viewer | null },
+  ctx: MutationCtx & { viewer: Viewer | null; client: ClientInfo },
   guestToken: string | undefined,
   create: boolean,
 ): Promise<Doc<"carts"> | null> {
-  const cart = create
-    ? await getOrCreateCart(ctx, ctx.viewer, guestToken)
-    : await findCart(ctx, ctx.viewer, guestToken);
+  let cart = await findCart(ctx, ctx.viewer, guestToken);
+  if (!cart && create) {
+    // Every fresh guest token would otherwise mint a new cart row without limit.
+    if (!ctx.viewer) await enforceRateLimit(ctx, "cartCreate", ctx.client.key);
+    cart = await getOrCreateCart(ctx, ctx.viewer, guestToken);
+  }
   if (cart) await enforceRateLimit(ctx, "cartWrite", cart._id);
   return cart;
 }

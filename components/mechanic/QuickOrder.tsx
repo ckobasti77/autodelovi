@@ -477,7 +477,7 @@ export function QuickOrder({
             <CheckCircleIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0 text-success" />
             <span>
               Upit {sentInquiry.number} je poslat.{" "}
-              <Link href={ROUTES.inquiryStatus(sentInquiry.token)} variant="inline">
+              <Link href={ROUTES.inquiryStatus(sentInquiry.token)} variant="inline" reloadDocument>
                 Status upita
               </Link>
             </span>

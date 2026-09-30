@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+import { staticSecurityHeaders, TOKEN_ROUTE_SOURCES } from "./lib/security/headers";
+
 /** Convex file storage host for next/image (ARCHITECTURE §G7, §G11). */
 function convexImageHost(): URL | null {
   const raw = process.env.NEXT_PUBLIC_CONVEX_URL;
@@ -33,7 +35,14 @@ const nextConfig: NextConfig = {
     ];
   },
   async headers() {
+    // Security headers on every response (SECURITY §L3); the nonce CSP is set per request in
+    // proxy.ts. Later entries override earlier ones for the same key.
     return [
+      { source: "/:path*", headers: staticSecurityHeaders(process.env.NODE_ENV === "production") },
+      ...TOKEN_ROUTE_SOURCES.map((source) => ({
+        source,
+        headers: [{ key: "Referrer-Policy", value: "no-referrer" }],
+      })),
       {
         source: "/styleguide",
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],

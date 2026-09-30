@@ -7,7 +7,6 @@
  */
 import { useMutation, useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
-import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import {
   CheckCircleIcon,
@@ -65,7 +64,6 @@ function AcceptForm({
   inquiry: InquiryView;
   config: AcceptConfig;
 }) {
-  const router = useRouter();
   const accept = useMutation(api.inquiries.acceptQuote);
   const [first, ...rest] = inquiry.contactName.split(" ");
   const [v, setV] = useState({
@@ -126,7 +124,8 @@ function AcceptForm({
         payment: { method: payment },
         consent: buildConsent(config.legal),
       });
-      router.push(ROUTES.orderThanks(r.orderToken));
+      // Full load: analytics must only see the token page through its redacted URL.
+      window.location.assign(ROUTES.orderThanks(r.orderToken));
     } catch (err) {
       setBusy(false);
       setError(

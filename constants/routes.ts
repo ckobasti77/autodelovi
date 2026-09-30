@@ -92,6 +92,8 @@ export const ADMIN = {
   settingsTab: (tab: string) => `/admin/podesavanja?tab=${tab}`,
   users: "/admin/korisnici",
   audit: "/admin/revizija",
+  privacy: "/admin/privatnost",
+  privacyFor: (userId: string) => `/admin/privatnost?kupac=${userId}`,
   emails: "/admin/mejlovi",
   emailTemplates: "/admin/mejlovi/sabloni",
   searches: "/admin/pretrage",

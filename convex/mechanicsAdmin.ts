@@ -5,11 +5,12 @@
  */
 import { v } from "convex/values";
 
-import type { Doc } from "./_generated/dataModel";
+import type { Doc, Id } from "./_generated/dataModel";
+import type { QueryCtx } from "./_generated/server";
 import { classifyAttribution } from "../lib/domain/attribution";
-import { audit } from "./lib/audit";
-import { actorOf } from "./lib/authz";
-import { invalid, notFound } from "./lib/errors";
+import { audit, diffFields } from "./lib/audit";
+import { actorOf, type Viewer } from "./lib/authz";
+import { fail, invalid, notFound } from "./lib/errors";
 import {
   approveMechanic,
   assertCreditLimit,
@@ -171,6 +172,21 @@ export const get = staffQuery({
   },
 });
 
+/**
+ * Staff may not grant themselves mechanic prices or credit: approving, reactivating or
+ * changing the terms of one's own profile is left to the owner.
+ */
+async function assertNotOwnProfile(
+  ctx: QueryCtx & { viewer: Viewer },
+  profileId: Id<"mechanicProfiles">,
+): Promise<void> {
+  if (ctx.viewer.isOwner) return;
+  const profile = await ctx.db.get("mechanicProfiles", profileId);
+  if (profile && profile.userId === ctx.viewer.userId) {
+    fail("FORBIDDEN", "Svoj profil majstora ne možete odobriti ni menjati. To radi vlasnik.");
+  }
+}
+
 export const approve = staffMutation({
   args: {
     profileId: v.id("mechanicProfiles"),
@@ -182,6 +198,7 @@ export const approve = staffMutation({
   },
   returns: v.null(),
   handler: async (ctx, args) => {
+    await assertNotOwnProfile(ctx, args.profileId);
     await approveMechanic(ctx, actorOf(ctx.viewer), ctx.viewer.userId, args);
     return null;
   },
@@ -226,6 +243,7 @@ export const reactivate = staffMutation({
   args: { profileId: v.id("mechanicProfiles") },
   returns: v.null(),
   handler: async (ctx, { profileId }) => {
+    await assertNotOwnProfile(ctx, profileId);
     const profile = await ctx.db.get("mechanicProfiles", profileId);
     if (!profile) return notFound("Profil majstora ne postoji.");
     const tier = profile.tierId ? await ctx.db.get("priceTiers", profile.tierId) : null;
@@ -269,6 +287,7 @@ export const update = staffMutation({
   },
   returns: v.null(),
   handler: async (ctx, args) => {
+    await assertNotOwnProfile(ctx, args.profileId);
     const profile = await ctx.db.get("mechanicProfiles", args.profileId);
     if (!profile) return notFound("Profil majstora ne postoji.");
     if (args.tierId) {
@@ -301,9 +320,12 @@ export const update = staffMutation({
       entityType: "mechanicProfile",
       entityId: args.profileId,
       summary: `${profile.companyName}: izmenjeni uslovi`,
-      diff: Object.keys(patch)
-        .filter((k) => k !== "updatedAt")
-        .map((field) => ({ field })),
+      // Before/after values, so the owner sees which discount or credit limit was set.
+      diff: diffFields(
+        profile,
+        patch,
+        Object.keys(patch).filter((k) => k !== "updatedAt"),
+      ),
     });
     return null;
   },

@@ -1,3 +1,4 @@
+import { createHash, timingSafeEqual } from "node:crypto";
 import { revalidateTag } from "next/cache";
 
 /**
@@ -8,9 +9,16 @@ import { revalidateTag } from "next/cache";
  */
 const IMMEDIATE = new Set(["settings", "faqs"]);
 
+/** Constant-time comparison (both digests have the same length whatever the input). */
+function secretMatches(given: string | null, secret: string): boolean {
+  if (!given) return false;
+  const digest = (value: string) => createHash("sha256").update(value).digest();
+  return timingSafeEqual(digest(given), digest(secret));
+}
+
 export async function POST(request: Request) {
   const secret = process.env.REVALIDATE_SECRET?.trim();
-  if (!secret || request.headers.get("x-revalidate-secret") !== secret) {
+  if (!secret || !secretMatches(request.headers.get("x-revalidate-secret"), secret)) {
     return Response.json({ ok: false }, { status: 401 });
   }
   let tags: unknown;

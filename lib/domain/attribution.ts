@@ -132,7 +132,10 @@ export function googleClickIds(a: AttributionLike): {
   gbraid?: string;
   wbraid?: string;
 } {
-  const pick = (k: "gclid" | "gbraid" | "wbraid") => a?.last?.[k] ?? a?.first?.[k];
+  const pick = (k: "gclid" | "gbraid" | "wbraid") => {
+    const id = a?.last?.[k] ?? a?.first?.[k];
+    return id === PRUNED_CLICK_ID ? undefined : id;
+  };
   const gclid = pick("gclid");
   const gbraid = pick("gbraid");
   const wbraid = pick("wbraid");
@@ -141,4 +144,53 @@ export function googleClickIds(a: AttributionLike): {
     ...(gbraid ? { gbraid } : {}),
     ...(wbraid ? { wbraid } : {}),
   };
+}
+
+// Retention (docs/SECURITY.md §L5: click ids pruned after 180 days) -----------------------
+
+/**
+ * Stored in place of a click id once its retention window has passed: the channel
+ * classification (`gclid` present → Google Ads) keeps working, the identifier is gone.
+ */
+export const PRUNED_CLICK_ID = "pruned";
+
+const CLICK_ID_KEYS = ["gclid", "gbraid", "wbraid", "fbclid", "msclkid"] as const;
+
+type PrunableAttribution = {
+  first?: TouchLike;
+  last?: TouchLike;
+  fbp?: string;
+  fbc?: string;
+  gaClientId?: string;
+};
+
+function pruneTouch<T extends TouchLike>(touch: T): T {
+  const out = { ...touch };
+  for (const key of CLICK_ID_KEYS) if (out[key] !== undefined) out[key] = PRUNED_CLICK_ID;
+  return out;
+}
+
+function touchHasIds(touch: TouchLike | undefined): boolean {
+  return CLICK_ID_KEYS.some((k) => touch?.[k] !== undefined && touch[k] !== PRUNED_CLICK_ID);
+}
+
+/**
+ * Attribution with click ids masked and the browser identifiers (`fbp`, `fbc`, GA client id)
+ * removed; `null` when there is nothing left to prune.
+ */
+export function pruneAttributionIds<A extends PrunableAttribution>(a: A): A | null {
+  const dirty =
+    touchHasIds(a.first) ||
+    touchHasIds(a.last) ||
+    a.fbp !== undefined ||
+    a.fbc !== undefined ||
+    a.gaClientId !== undefined;
+  if (!dirty) return null;
+  const out: A = { ...a };
+  delete out.fbp;
+  delete out.fbc;
+  delete out.gaClientId;
+  if (a.first) out.first = pruneTouch(a.first);
+  if (a.last) out.last = pruneTouch(a.last);
+  return out;
 }

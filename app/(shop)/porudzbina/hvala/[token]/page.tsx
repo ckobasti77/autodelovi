@@ -4,7 +4,7 @@ import { CheckCircleIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
 import { contactLinkList } from "@/config/site";
-import { privateMetadata } from "@/lib/seo/metadata";
+import { tokenPageMetadata } from "@/lib/seo/metadata";
 import { contactFromSettings } from "@/lib/settings/public";
 import { fetchPublic } from "@/lib/server/convex";
 import { getSettingsPublic } from "@/lib/server/catalog-cache";
@@ -16,7 +16,7 @@ import { OrderStatusView } from "@/components/order/OrderStatusView";
 import { PurchaseTracker } from "@/components/order/PurchaseTracker";
 import { ROUTES } from "@/constants/routes";
 
-export const metadata: Metadata = privateMetadata("Porudžbina je primljena");
+export const metadata: Metadata = tokenPageMetadata("Porudžbina je primljena");
 
 /** Confirmation (§11.5): order number, what happens next, the live status below. */
 export default async function OrderThanksPage({ params }: PageProps<"/porudzbina/hvala/[token]">) {
@@ -61,7 +61,7 @@ export default async function OrderThanksPage({ params }: PageProps<"/porudzbina
         <p className="type-body text-ink-2">{PAYMENT_REMINDER[order.payment.method]}</p>
         <p className="type-body-s text-ink-3">
           Status pratite na{" "}
-          <Link href={ROUTES.orderStatus(token)} variant="inline">
+          <Link href={ROUTES.orderStatus(token)} variant="inline" reloadDocument>
             stranici porudžbine
           </Link>{" "}
           — sačuvajte link.

@@ -61,8 +61,10 @@ export function AnalyticsManager({ ids }: { ids: TagIds }) {
     return () => cleanups.forEach((fn) => fn());
   }, [decided, analytics, ads, ids]);
 
-  // Meta counts page views itself only on full loads; client navigations are sent here
-  // (GA4 enhanced measurement tracks history changes on its own).
+  // Client navigations: the Pixel's own history tracking is off, so its page view is sent
+  // here (never on token pages). GA4 enhanced measurement tracks history changes itself;
+  // token pages are only ever reached by a full load, where the config call already carries
+  // the redacted page location (lib/analytics/redact).
   useEffect(() => {
     if (firstPath.current) {
       firstPath.current = false;

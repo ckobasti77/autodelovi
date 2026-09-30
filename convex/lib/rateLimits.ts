@@ -5,7 +5,6 @@
 import { DAY, HOUR, MINUTE, RateLimiter } from "@convex-dev/rate-limiter";
 
 import { components } from "../_generated/api";
-import type { MutationCtx } from "../_generated/server";
 import { fail } from "./errors";
 
 export const rateLimiter = new RateLimiter(components.rateLimiter, {
@@ -22,9 +21,13 @@ export const rateLimiter = new RateLimiter(components.rateLimiter, {
   tokenAction: { kind: "token bucket", rate: 10, period: HOUR, capacity: 10 },
   consentLog: { kind: "token bucket", rate: 20, period: HOUR, capacity: 20 },
   passwordReset: { kind: "fixed window", rate: 3, period: HOUR },
+  passwordResetGlobal: { kind: "fixed window", rate: 60, period: HOUR },
+  signUpGlobal: { kind: "token bucket", rate: 60, period: HOUR, capacity: 30 },
+  cartCreate: { kind: "token bucket", rate: 100, period: HOUR, capacity: 100 },
   quickOrderMatch: { kind: "token bucket", rate: 30, period: MINUTE, capacity: 30 },
   importStage: { kind: "token bucket", rate: 600, period: MINUTE, capacity: 600 },
   emailTest: { kind: "fixed window", rate: 10, period: HOUR },
+  emailResend: { kind: "fixed window", rate: 30, period: HOUR },
 });
 
 export type RateLimitName =
@@ -41,13 +44,20 @@ export type RateLimitName =
   | "tokenAction"
   | "consentLog"
   | "passwordReset"
+  | "passwordResetGlobal"
+  | "signUpGlobal"
+  | "cartCreate"
   | "quickOrderMatch"
   | "importStage"
-  | "emailTest";
+  | "emailTest"
+  | "emailResend";
+
+/** Any mutation ctx, including the Convex Auth callbacks (generic data model). */
+type LimitCtx = Parameters<typeof rateLimiter.limit>[0];
 
 /** Consumes one unit or throws RATE_LIMITED with the retry delay. */
 export async function enforceRateLimit(
-  ctx: MutationCtx,
+  ctx: LimitCtx,
   name: RateLimitName,
   key: string,
 ): Promise<void> {
@@ -61,7 +71,7 @@ export async function enforceRateLimit(
 
 /** Consumes one unit; returns false instead of throwing (silently dropped writes). */
 export async function tryRateLimit(
-  ctx: MutationCtx,
+  ctx: LimitCtx,
   name: RateLimitName,
   key: string,
 ): Promise<boolean> {

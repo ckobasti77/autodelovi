@@ -487,10 +487,16 @@ describe("commit and rollback", () => {
       vi.fn(async (url: string) =>
         String(url).includes("dobra")
           ? new Response(png, { status: 200, headers: { "content-type": "image/png" } })
-          : new Response("<html>nije slika</html>", {
-              status: 200,
-              headers: { "content-type": "image/png" },
-            }),
+          : String(url).includes("preusmeri")
+            ? // A public URL that redirects into the metadata service (SSRF via redirect).
+              new Response(null, {
+                status: 302,
+                headers: { location: "http://169.254.169.254/latest/meta-data" },
+              })
+            : new Response("<html>nije slika</html>", {
+                status: 200,
+                headers: { "content-type": "image/png" },
+              }),
       ),
     );
     const t = makeT();
@@ -519,7 +525,7 @@ describe("commit and rollback", () => {
             manufacturer: "ATE",
             priceRetail: "3.000",
             images:
-              "https://cdn.primer.rs/dobra.png; https://cdn.primer.rs/losa.png; http://127.0.0.1/x.png",
+              "https://cdn.primer.rs/dobra.png; https://cdn.primer.rs/losa.png; http://127.0.0.1/x.png; https://cdn.primer.rs/preusmeri.png",
           },
         },
       ],
@@ -531,10 +537,11 @@ describe("commit and rollback", () => {
     const created = (await product(t, "IMP-IMG"))!;
     expect(created.imageCount).toBe(1);
     const batch = (await w.asStaff.query(api.imports.batch, { batchId }))!;
-    expect(batch.images).toEqual({ total: 3, done: 1, failed: 2 });
+    expect(batch.images).toEqual({ total: 4, done: 1, failed: 3 });
     const jobs = await w.asStaff.query(api.imports.imageJobs, { batchId });
     expect(jobs.failed.map((j) => j.error).sort()).toEqual([
-      "Adresa vodi na privatnu mrežu.",
+      "Adresa nije ispravna ili vodi na privatnu mrežu.",
+      "Adresa preusmerava na nedozvoljenu adresu.",
       "Sadržaj nije JPEG, PNG ni WebP slika.",
     ]);
 

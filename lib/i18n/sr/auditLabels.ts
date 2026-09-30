@@ -130,4 +130,11 @@ export const AUDIT_ACTION_LABEL: Readonly<Record<string, string>> = {
   "user.update_profile": "Korisnik: izmena profila",
   "demo.remove_requested": "Demo podaci: zahtev za brisanje",
   "demo.removed": "Demo podaci: obrisani",
+  "import.commit": "Uvoz: upisan",
+  "import.commit_requested": "Uvoz: pokrenut upis",
+  "import.cancel": "Uvoz: otkazan",
+  "import.rollback": "Uvoz: poništen",
+  "import.rollback_requested": "Uvoz: pokrenuto poništavanje",
+  "privacy.export": "Privatnost: izvoz podataka kupca",
+  "privacy.anonymize": "Privatnost: anonimizacija kupca",
 };

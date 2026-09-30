@@ -246,6 +246,11 @@ export const finish = internalMutation({
           }
         : { lastError: detail?.slice(0, 500) }),
     });
+    // The send is final: the visitor's IP and user agent are no longer needed (SECURITY §L5).
+    const event = await ctx.db.get("domainEvents", delivery.eventId);
+    if (event?.capiContext) {
+      await ctx.db.patch("domainEvents", event._id, { capiContext: undefined });
+    }
     return null;
   },
 });

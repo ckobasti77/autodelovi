@@ -9,6 +9,7 @@ import { components, internal } from "./_generated/api";
 import type { Doc, Id } from "./_generated/dataModel";
 import { internalMutation, type MutationCtx } from "./_generated/server";
 import { isWithinOpeningHours, reminderLevelFor, workingMinutesBetween } from "../lib/domain/sla";
+import { pruneAttributionIds } from "../lib/domain/attribution";
 import { isAvailableNow } from "../lib/domain/stock";
 import { belgradeDay, belgradeParts, DAY_MS } from "../lib/domain/time";
 import { SYSTEM_ACTOR } from "./lib/authz";
@@ -305,6 +306,8 @@ const RETENTION = {
   cronRunsMs: 90 * DAY_MS,
   guestCartMs: 30 * DAY_MS,
   orphanUploadMs: DAY_MS,
+  capiContextMs: 7 * DAY_MS,
+  clickIdsMs: 180 * DAY_MS,
 } as const;
 
 type PruneCounts = Record<string, number>;
@@ -466,30 +469,95 @@ async function pruneSimple(ctx: MutationCtx, now: number, counts: PruneCounts) {
   }
   counts.cronRuns = runsDeleted;
 
-  const carts = await ctx.db
-    .query("carts")
-    .withIndex("by_status_and_updatedAt", (q) =>
-      q.eq("status", "active").lt("updatedAt", now - RETENTION.guestCartMs),
-    )
-    .take(100);
+  // Guest carts in every state: idle active ones, and the empty merged/converted shells.
   let cartsDeleted = 0;
-  for (const cart of carts) {
-    if (cart.ownerType !== "guest") continue;
-    const items = await ctx.db
-      .query("cartItems")
-      .withIndex("by_cartId", (q) => q.eq("cartId", cart._id))
-      .take(200);
-    for (const item of items) await ctx.db.delete("cartItems", item._id);
-    await ctx.db.delete("carts", cart._id);
-    cartsDeleted++;
+  for (const status of ["active", "merged", "converted", "abandoned"] as const) {
+    const carts = await ctx.db
+      .query("carts")
+      .withIndex("by_ownerType_and_status_and_updatedAt", (q) =>
+        q
+          .eq("ownerType", "guest")
+          .eq("status", status)
+          .lt("updatedAt", now - RETENTION.guestCartMs),
+      )
+      .take(50);
+    for (const cart of carts) {
+      const items = await ctx.db
+        .query("cartItems")
+        .withIndex("by_cartId", (q) => q.eq("cartId", cart._id))
+        .take(200);
+      for (const item of items) await ctx.db.delete("cartItems", item._id);
+      await ctx.db.delete("carts", cart._id);
+      cartsDeleted++;
+    }
+    more ||= carts.length === 50;
   }
   counts.guestCarts = cartsDeleted;
   return more;
 }
 
+/** Creation-time watermark of a pruning pass (a `cronRuns` row with localKey `cursor`). */
+async function watermark(ctx: MutationCtx, job: string) {
+  const row = await lastRun(ctx, job);
+  return {
+    from: row?.ranAt ?? 0,
+    async save(ranAt: number) {
+      if (row) await ctx.db.patch("cronRuns", row._id, { ranAt });
+      else await ctx.db.insert("cronRuns", { job, localKey: "cursor", ranAt });
+    },
+  };
+}
+
+/**
+ * Tracking data (SECURITY §L5): the Meta CAPI context (IP, user agent) of an event is kept at
+ * most 7 days (`capi.finish` already clears it once the send is final); click ids and
+ * browser ids on orders, inquiries and mechanic profiles are masked after 180 days.
+ */
+async function pruneTracking(ctx: MutationCtx, now: number, counts: PruneCounts) {
+  let more = false;
+  const capiMark = await watermark(ctx, "capiContext");
+  const events = await ctx.db
+    .query("domainEvents")
+    .withIndex("by_creation_time", (q) =>
+      q.gt("_creationTime", capiMark.from).lt("_creationTime", now - RETENTION.capiContextMs),
+    )
+    .take(BATCH);
+  let capi = 0;
+  for (const event of events) {
+    if (event.capiContext === undefined) continue;
+    await ctx.db.patch("domainEvents", event._id, { capiContext: undefined });
+    capi++;
+  }
+  const lastEvent = events[events.length - 1];
+  if (lastEvent) await capiMark.save(lastEvent._creationTime);
+  counts.capiContext = capi;
+  more ||= events.length === BATCH;
+
+  let clickIds = 0;
+  const until = now - RETENTION.clickIdsMs;
+  for (const table of ["orders", "inquiries", "mechanicProfiles"] as const) {
+    const mark = await watermark(ctx, `clickIds:${table}`);
+    const rows = await ctx.db
+      .query(table)
+      .withIndex("by_creation_time", (q) => q.gt("_creationTime", mark.from).lt("_creationTime", until))
+      .take(BATCH);
+    for (const row of rows) {
+      const pruned = row.attribution ? pruneAttributionIds(row.attribution) : null;
+      if (!pruned) continue;
+      await ctx.db.patch(table, row._id, { attribution: pruned });
+      clickIds++;
+    }
+    const last = rows[rows.length - 1];
+    if (last) await mark.save(last._creationTime);
+    more ||= rows.length === BATCH;
+  }
+  counts.clickIds = clickIds;
+  return more;
+}
+
 /**
  * 02:30/03:30 Belgrade: orphaned uploads (no `uploads` row after 24 h), retention pruning
- * (docs/SECURITY.md §L5), stale guest carts and the Resend component's own cleanup. Each
+ * (docs/SECURITY.md §L5) incl. tracking identifiers, stale guest carts and the Resend component's own cleanup. Each
  * part works in bounded batches and the job re-schedules itself (≤ 10 rounds) while a batch
  * came back full.
  */
@@ -502,6 +570,7 @@ export const nightly = internalMutation({
     const moreUploads = await pruneOrphanUploads(ctx, now, counts);
     const moreEmail = await pruneEmailLog(ctx, now, counts);
     const moreSimple = await pruneSimple(ctx, now, counts);
+    const moreTracking = await pruneTracking(ctx, now, counts);
     if (round === 0 && resendConfigured().apiKey) {
       await ctx.scheduler.runAfter(0, components.resend.lib.cleanupOldEmails, {
         olderThan: 7 * DAY_MS,
@@ -510,7 +579,7 @@ export const nightly = internalMutation({
         olderThan: 28 * DAY_MS,
       });
     }
-    if ((moreUploads || moreEmail || moreSimple) && round < 10) {
+    if ((moreUploads || moreEmail || moreSimple || moreTracking) && round < 10) {
       await ctx.scheduler.runAfter(60_000, internal.automations.nightly, { round: round + 1 });
     }
     return counts;
