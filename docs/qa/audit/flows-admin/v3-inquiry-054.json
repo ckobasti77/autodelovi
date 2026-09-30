@@ -1,0 +1,91 @@
+{
+  "NUM": "UP-2026-000054",
+  "steps": [
+    {
+      "name": "free line default availability",
+      "at": "2026-09-30T20:08:31.955Z",
+      "v": "in_stock"
+    },
+    {
+      "name": "confirm dialog with invalid line",
+      "at": "2026-09-30T20:08:32.048Z",
+      "text": "Poslati ponudu kupcu?Upit Test audit21 dobija ponudu na 4.690 RSD sa linkom za prihvatanje. Ponuda važi 7 dana.OdustaniPošalji ponudu"
+    },
+    {
+      "name": "after confirm (invalid)",
+      "at": "2026-09-30T20:08:34.157Z",
+      "dialogOpen": true,
+      "composerAlerts": [],
+      "ariaInvalid": 0,
+      "focus": "BUTTON Pošalji ponudu",
+      "composerInert": true
+    },
+    {
+      "name": "composer total",
+      "at": "2026-09-30T20:08:35.327Z",
+      "total": "Ukupno: 12.140 RSD · važi 7 dana od slanja"
+    },
+    {
+      "name": "send dialog",
+      "at": "2026-09-30T20:08:35.440Z",
+      "text": "Poslati ponudu kupcu?Upit Test audit21 dobija ponudu na 12.140 RSD sa linkom za prihvatanje. Ponuda važi 7 dana.OdustaniPošalji ponudu"
+    },
+    {
+      "name": "after send",
+      "at": "2026-09-30T20:08:40.576Z",
+      "dialogOpen": false,
+      "toasts": [],
+      "head": "UpitiUpit UP-2026-000054Ponuda poslataTraži deo · primljen 30.09. 15:38Preuzmi upitZatvori upitPretvori u porudžbinuNova verzija ponudeUpitTreba mi set kvačila za Golf 7 2.0 TDI (test audit21).PonudeVerzija 1Poslata 30.09. 22:08 · važi do 07.10.2026.12.140 RSDStavke ponude, verzija 1Kočioni disk prednji 276 × 24 mm5Q0 615 505 R · Febi Bilstein · na stanju1 ×4.690 RSDSenzor ABS prednji levi (dobavljač)wht 003 856 · po porudžbini, 3 d1 ×7.450 RSDDeo stiže za 3 radna dana od potvrde.Istorija30.09. 22:08Ponuda br. 1 poslataVlasnik30.09. 22:08Ponuda je poslata (važi do 07.10.2026.).Vlasnik30.09. 16:17U obradiVlasnik30.09. 15:38Upit je primljen.Upit Test audit21 · KupacKontaktImeUpit Test audit21T"
+    },
+    {
+      "name": "probe after send",
+      "at": "2026-09-30T20:08:44.558Z",
+      "inquiryStatus": "ponuda_poslata",
+      "legalName": "",
+      "quoteStatus": "sent",
+      "quoteTotalPara": 1214000
+    },
+    {
+      "name": "emails",
+      "at": "2026-09-30T20:08:46.905Z",
+      "emails": []
+    },
+    {
+      "name": "convert visible",
+      "at": "2026-09-30T20:08:46.910Z",
+      "v": true
+    },
+    {
+      "name": "convert dialog",
+      "at": "2026-09-30T20:08:47.820Z",
+      "text": "Pretvori ponudu u porudžbinuKupac je prihvatio ponudu telefonom ili u radnji. Porudžbina na 12.140 RSD dobija sve stavke iz ponude; upit se zatvara kao prihvaćen.Ime (obavezno)Prezime (obavezno)Telefon (obavezno)E-pošta (obavezno)DostavaLično preuzimanjeKurirska službaPlaćanjeGotovinom pri preuzimanjuKarticom pri preuzimanjuOdloženo plaćanjeOdustaniKreiraj porudžbinu"
+    },
+    {
+      "name": "after convert submit",
+      "at": "2026-09-30T20:08:51.199Z",
+      "url": "http://localhost:3100/admin/upiti/UP-2026-000054",
+      "dialogOpen": true,
+      "alerts": [],
+      "dialogText": "Pretvori ponudu u porudžbinuKupac je prihvatio ponudu telefonom ili u radnji. Porudžbina na 12.140 RSD dobija sve stavke iz ponude; upit se zatvara kao prihvaćen.Ime (obavezno)Prezime (obavezno)Telefon (obavezno)E-pošta (obavezno)DostavaLično preuzimanjeKurirska službaPlaćanjeGotovinom pri preuzimanjuKarticom pri preuzimanjuOdloženo plaćanjeOdustaniKreiraj porudžbinu"
+    },
+    {
+      "name": "errors",
+      "at": "2026-09-30T20:08:51.964Z",
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  ],
+  "final": {
+    "eventTypes": [
+      "inquiry.created",
+      "inquiry.status_changed",
+      "inquiry.status_changed"
+    ],
+    "kind": "part",
+    "photoCount": 0,
+    "status": "ponuda_poslata",
+    "vin": null
+  }
+}

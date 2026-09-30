@@ -1,0 +1,128 @@
+[
+  {
+    "kind": "direct",
+    "engine": "chromium",
+    "width": 390,
+    "route": "/admin",
+    "status": 200,
+    "location": "/prijava?next=%2Fadmin",
+    "url": "http://localhost:3100/admin",
+    "title": "",
+    "bodyTextLen": 0,
+    "htmlLen": 39,
+    "lang": "",
+    "cookiesAfter": [
+      "sk_consent"
+    ],
+    "shot": "docs/qa/audit/verify/a11y-app/a11y-app-01-reproduce-chromium-390-admin.webp",
+    "afterReload": {
+      "url": "http://localhost:3100/prijava?next=%2Fadmin",
+      "title": "Prijava | SKLOP"
+    }
+  },
+  {
+    "kind": "direct",
+    "engine": "chromium",
+    "width": 1440,
+    "route": "/majstor/brza-porudzbina",
+    "status": 200,
+    "location": "/prijava?next=%2Fmajstor%2Fbrza-porudzbina",
+    "url": "http://localhost:3100/majstor/brza-porudzbina",
+    "title": "",
+    "bodyTextLen": 0,
+    "htmlLen": 39,
+    "lang": "",
+    "cookiesAfter": [
+      "sk_consent"
+    ],
+    "shot": "docs/qa/audit/verify/a11y-app/a11y-app-01-reproduce-chromium-1440-majstor.webp",
+    "afterReload": {
+      "url": "http://localhost:3100/prijava?next=%2Fmajstor%2Fbrza-porudzbina",
+      "title": "Prijava | SKLOP"
+    }
+  },
+  {
+    "kind": "direct",
+    "engine": "chromium",
+    "width": 1440,
+    "route": "/nalog/porudzbine",
+    "status": 200,
+    "location": "/prijava?next=%2Fnalog%2Fporudzbine",
+    "url": "http://localhost:3100/nalog/porudzbine",
+    "title": "",
+    "bodyTextLen": 0,
+    "htmlLen": 39,
+    "lang": "",
+    "cookiesAfter": [
+      "sk_consent"
+    ],
+    "shot": "docs/qa/audit/verify/a11y-app/a11y-app-01-reproduce-chromium-1440-nalog-porudzbine.webp",
+    "afterReload": {
+      "url": "http://localhost:3100/prijava?next=%2Fnalog%2Fporudzbine",
+      "title": "Prijava | SKLOP"
+    }
+  },
+  {
+    "kind": "direct",
+    "engine": "webkit",
+    "width": 390,
+    "route": "/nalog",
+    "status": 200,
+    "location": "/prijava?next=%2Fnalog",
+    "url": "http://localhost:3100/nalog",
+    "title": "",
+    "bodyTextLen": 0,
+    "htmlLen": 39,
+    "lang": "",
+    "cookiesAfter": [
+      "sk_consent"
+    ],
+    "shot": "docs/qa/audit/verify/a11y-app/a11y-app-01-reproduce-webkit-390-nalog.webp",
+    "afterReload": {
+      "url": "http://localhost:3100/prijava?next=%2Fnalog",
+      "title": "Prijava | SKLOP"
+    }
+  },
+  {
+    "kind": "direct",
+    "engine": "firefox",
+    "width": 1440,
+    "route": "/admin/porudzbine",
+    "status": 200,
+    "location": "/prijava?next=%2Fadmin%2Fporudzbine",
+    "url": "http://localhost:3100/admin/porudzbine",
+    "title": "",
+    "bodyTextLen": 0,
+    "htmlLen": 124,
+    "lang": "",
+    "cookiesAfter": [
+      "sk_consent"
+    ],
+    "shot": "docs/qa/audit/verify/a11y-app/a11y-app-01-reproduce-firefox-1440-admin-porudzbine.webp",
+    "afterReload": {
+      "url": "http://localhost:3100/prijava?next=%2Fadmin%2Fporudzbine",
+      "title": "Prijava | SKLOP"
+    }
+  },
+  {
+    "kind": "client-nav",
+    "engine": "chromium",
+    "width": 1440,
+    "from": "/",
+    "clicked": "a[href=\"/nalog\"]",
+    "linkVisible": true,
+    "url": "http://localhost:3100/prijava?next=%2Fnalog",
+    "title": "Prijava | SKLOP",
+    "bodyTextLen": 972,
+    "h1": [
+      "Prijava"
+    ],
+    "responses": [
+      "200 http://localhost:3100/nalog?_rsc=17Cd7X3fmgO-xy4T loc=/prijava?next=%2Fnalog",
+      "307 http://localhost:3100/nalog loc=/prijava?next=%2Fnalog",
+      "307 http://localhost:3100/nalog?_rsc=5CB68i4pnAekjehf loc=/prijava?next=%2Fnalog",
+      "307 http://localhost:3100/nalog?_rsc=LK0jzu7GOXR-wcUe loc=/prijava?next=%2Fnalog"
+    ],
+    "shot": "docs/qa/audit/verify/a11y-app/a11y-app-01-reproduce-clientnav-chromium-1440.webp"
+  }
+]

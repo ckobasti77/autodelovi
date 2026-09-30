@@ -1,0 +1,84 @@
+{
+  "12": {
+    "home-390": {
+      "fixed": [
+        "header[site-header] pos=sticky top=0 bottom=57 h=57 text=\"SKLOP\"",
+        "div pos=sticky top=56 bottom=844 h=788 text=\"MOTOR, TURBINA, GORIVO, PALJENJE 05 · 8 KATEGORIJA · 11 DELO\""
+      ],
+      "contactLinks": [],
+      "bottomControls": [
+        "Sklopi",
+        "Lista delova"
+      ],
+      "scrollY": 1700
+    },
+    "product-390": {
+      "fixed": [
+        "header[site-header] pos=sticky top=0 bottom=57 h=57 text=\"SKLOP\""
+      ],
+      "contactLinks": [],
+      "bottomControls": [],
+      "scrollY": 1700
+    },
+    "category-390": {
+      "fixed": [
+        "header[site-header] pos=sticky top=0 bottom=57 h=57 text=\"SKLOP\""
+      ],
+      "contactLinks": [],
+      "bottomControls": [],
+      "scrollY": 1700
+    },
+    "landing-390": {
+      "fixed": [
+        "header pos=sticky top=0 bottom=57 h=57 text=\"SKLOP\""
+      ],
+      "contactLinks": [],
+      "bottomControls": [],
+      "scrollY": 1222
+    },
+    "inquiry-390": {
+      "fixed": [
+        "header[site-header] pos=sticky top=0 bottom=57 h=57 text=\"SKLOP\""
+      ],
+      "contactLinks": [],
+      "bottomControls": [],
+      "scrollY": 1700
+    },
+    "product-360": {
+      "fixed": [
+        "header[site-header] pos=sticky top=0 bottom=57 h=57 text=\"SKLOP\""
+      ],
+      "contactLinks": [],
+      "bottomControls": [
+        "Kopiraj OEM broj 5Q0 615 505 R"
+      ],
+      "scrollY": 1700
+    },
+    "landing-360": {
+      "fixed": [
+        "header pos=sticky top=0 bottom=57 h=57 text=\"SKLOP\""
+      ],
+      "contactLinks": [],
+      "bottomControls": [
+        "U korpu : Kočione pločice prednje, siste"
+      ],
+      "scrollY": 1355
+    },
+    "product-768": {
+      "fixed": [
+        "header[site-header] pos=sticky top=0 bottom=57 h=57 text=\"SKLOP\""
+      ],
+      "contactLinks": [],
+      "bottomControls": [],
+      "scrollY": 1700
+    },
+    "landing-768": {
+      "fixed": [
+        "header pos=sticky top=0 bottom=57 h=57 text=\"SKLOP\""
+      ],
+      "contactLinks": [],
+      "bottomControls": [],
+      "scrollY": 1310
+    }
+  }
+}

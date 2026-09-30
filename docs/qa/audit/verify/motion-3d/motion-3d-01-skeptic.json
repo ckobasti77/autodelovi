@@ -1,0 +1,414 @@
+[
+  {
+    "config": "360x780",
+    "viewport": "360x780",
+    "trackTop": 605,
+    "stageTopAtScroll0": 661,
+    "vh": 780,
+    "statusAtPoster": "loading",
+    "poster": {
+      "stage": {
+        "w": 360,
+        "h": 608,
+        "aspect": 0.592
+      },
+      "header": 56,
+      "poster": "car-assembled-m-640.avif",
+      "captionBottomInStage": 85,
+      "car": {
+        "x": 37,
+        "y": 310,
+        "w": 302,
+        "h": 214
+      },
+      "emptyBandCaptionToCar": 225,
+      "carTopPctOfStage": 51,
+      "carPctStageH": 35.2,
+      "carPctStageW": 83.9,
+      "carCentreOffsetX": 8,
+      "carBottomAboveViewportBottom": 201
+    },
+    "carTopAtScroll0": 971,
+    "carVisibleAtScroll0": false,
+    "errors": {
+      "console": 0,
+      "page": 0
+    }
+  },
+  {
+    "config": "390x844",
+    "viewport": "390x844",
+    "trackTop": 607,
+    "stageTopAtScroll0": 663,
+    "vh": 844,
+    "statusAtPoster": "loading",
+    "poster": {
+      "stage": {
+        "w": 390,
+        "h": 672,
+        "aspect": 0.58
+      },
+      "header": 56,
+      "poster": "car-assembled-m-640.avif",
+      "captionBottomInStage": 85,
+      "car": {
+        "x": 41,
+        "y": 349,
+        "w": 326,
+        "h": 232
+      },
+      "emptyBandCaptionToCar": 264,
+      "carTopPctOfStage": 51.9,
+      "carPctStageH": 34.5,
+      "carPctStageW": 83.6,
+      "carCentreOffsetX": 9,
+      "carBottomAboveViewportBottom": 208
+    },
+    "carTopAtScroll0": 1012,
+    "carVisibleAtScroll0": false,
+    "canvas": {
+      "tier": "mid",
+      "progress": 0,
+      "status": "ready",
+      "stage": {
+        "w": 390,
+        "h": 672,
+        "aspect": 0.58
+      },
+      "header": 56,
+      "poster": "car-assembled-m-640.avif",
+      "captionBottomInStage": 85,
+      "car": {
+        "x": 41,
+        "y": 350,
+        "w": 326,
+        "h": 231
+      },
+      "emptyBandCaptionToCar": 265,
+      "carTopPctOfStage": 52.1,
+      "carPctStageH": 34.4,
+      "carPctStageW": 83.6,
+      "carCentreOffsetX": 9,
+      "carBottomAboveViewportBottom": 208,
+      "meanAbsDiffVsPoster": 2.42
+    },
+    "errors": {
+      "console": 0,
+      "page": 0
+    }
+  },
+  {
+    "config": "430x932",
+    "viewport": "430x932",
+    "trackTop": 610,
+    "stageTopAtScroll0": 666,
+    "vh": 932,
+    "statusAtPoster": "loading",
+    "poster": {
+      "stage": {
+        "w": 430,
+        "h": 760,
+        "aspect": 0.566
+      },
+      "header": 56,
+      "poster": "car-assembled-m-640.avif",
+      "captionBottomInStage": 86,
+      "car": {
+        "x": 45,
+        "y": 404,
+        "w": 360,
+        "h": 256
+      },
+      "emptyBandCaptionToCar": 318,
+      "carTopPctOfStage": 53.2,
+      "carPctStageH": 33.7,
+      "carPctStageW": 83.7,
+      "carCentreOffsetX": 10,
+      "carBottomAboveViewportBottom": 217
+    },
+    "carTopAtScroll0": 1070,
+    "carVisibleAtScroll0": false,
+    "errors": {
+      "console": 0,
+      "page": 0
+    }
+  },
+  {
+    "config": "768x1024",
+    "viewport": "768x1024",
+    "trackTop": 529,
+    "stageTopAtScroll0": 585,
+    "vh": 1024,
+    "statusAtPoster": "loading",
+    "poster": {
+      "stage": {
+        "w": 768,
+        "h": 852,
+        "aspect": 0.901
+      },
+      "header": 56,
+      "poster": "car-assembled-1080.avif",
+      "captionBottomInStage": 88,
+      "car": {
+        "x": 303,
+        "y": 518,
+        "w": 395,
+        "h": 247
+      },
+      "emptyBandCaptionToCar": 430,
+      "carTopPctOfStage": 60.8,
+      "carPctStageH": 29,
+      "carPctStageW": 51.4,
+      "carCentreOffsetX": 117,
+      "carBottomAboveViewportBottom": 204
+    },
+    "carTopAtScroll0": 1103,
+    "carVisibleAtScroll0": false,
+    "errors": {
+      "console": 0,
+      "page": 0
+    }
+  },
+  {
+    "config": "iphone13-390x664",
+    "viewport": "390x664",
+    "trackTop": 607,
+    "stageTopAtScroll0": 663,
+    "vh": 664,
+    "statusAtPoster": "loading",
+    "poster": {
+      "stage": {
+        "w": 390,
+        "h": 492,
+        "aspect": 0.793
+      },
+      "header": 56,
+      "poster": "car-assembled-m-640.avif",
+      "captionBottomInStage": 85,
+      "car": {
+        "x": 41,
+        "y": 169,
+        "w": 326,
+        "h": 232
+      },
+      "emptyBandCaptionToCar": 84,
+      "carTopPctOfStage": 34.3,
+      "carPctStageH": 47.2,
+      "carPctStageW": 83.6,
+      "carCentreOffsetX": 9,
+      "carBottomAboveViewportBottom": 208
+    },
+    "carTopAtScroll0": 832,
+    "carVisibleAtScroll0": false,
+    "canvas": {
+      "tier": "mid",
+      "progress": 0,
+      "status": "ready",
+      "stage": {
+        "w": 390,
+        "h": 492,
+        "aspect": 0.793
+      },
+      "header": 56,
+      "poster": "car-assembled-m-640.avif",
+      "captionBottomInStage": 85,
+      "car": {
+        "x": 41,
+        "y": 170,
+        "w": 326,
+        "h": 231
+      },
+      "emptyBandCaptionToCar": 85,
+      "carTopPctOfStage": 34.6,
+      "carPctStageH": 47,
+      "carPctStageW": 83.6,
+      "carCentreOffsetX": 9,
+      "carBottomAboveViewportBottom": 208,
+      "meanAbsDiffVsPoster": 3.3
+    },
+    "errors": {
+      "console": 0,
+      "page": 0
+    }
+  },
+  {
+    "config": "iphone15pm-430x739",
+    "viewport": "430x739",
+    "trackTop": 610,
+    "stageTopAtScroll0": 666,
+    "vh": 739,
+    "statusAtPoster": "loading",
+    "poster": {
+      "stage": {
+        "w": 430,
+        "h": 567,
+        "aspect": 0.758
+      },
+      "header": 56,
+      "poster": "car-assembled-m-640.avif",
+      "captionBottomInStage": 86,
+      "car": {
+        "x": 45,
+        "y": 211,
+        "w": 360,
+        "h": 256
+      },
+      "emptyBandCaptionToCar": 125,
+      "carTopPctOfStage": 37.2,
+      "carPctStageH": 45.1,
+      "carPctStageW": 83.7,
+      "carCentreOffsetX": 10,
+      "carBottomAboveViewportBottom": 217
+    },
+    "carTopAtScroll0": 877,
+    "carVisibleAtScroll0": false,
+    "errors": {
+      "console": 0,
+      "page": 0
+    }
+  },
+  {
+    "config": "pixel7-412x839",
+    "viewport": "412x839",
+    "trackTop": 609,
+    "stageTopAtScroll0": 665,
+    "vh": 839,
+    "statusAtPoster": "loading",
+    "poster": {
+      "stage": {
+        "w": 412,
+        "h": 667,
+        "aspect": 0.618
+      },
+      "header": 56,
+      "poster": "car-assembled-m-640.avif",
+      "captionBottomInStage": 86,
+      "car": {
+        "x": 43,
+        "y": 326,
+        "w": 345,
+        "h": 245
+      },
+      "emptyBandCaptionToCar": 240,
+      "carTopPctOfStage": 48.9,
+      "carPctStageH": 36.7,
+      "carPctStageW": 83.7,
+      "carCentreOffsetX": 10,
+      "carBottomAboveViewportBottom": 213
+    },
+    "carTopAtScroll0": 991,
+    "carVisibleAtScroll0": false,
+    "errors": {
+      "console": 0,
+      "page": 0
+    }
+  },
+  {
+    "config": "galaxys8-360x740",
+    "viewport": "360x740",
+    "trackTop": 605,
+    "stageTopAtScroll0": 661,
+    "vh": 740,
+    "statusAtPoster": "loading",
+    "poster": {
+      "stage": {
+        "w": 360,
+        "h": 568,
+        "aspect": 0.634
+      },
+      "header": 56,
+      "poster": "car-assembled-m-640.avif",
+      "captionBottomInStage": 85,
+      "car": {
+        "x": 37,
+        "y": 270,
+        "w": 302,
+        "h": 214
+      },
+      "emptyBandCaptionToCar": 185,
+      "carTopPctOfStage": 47.5,
+      "carPctStageH": 37.7,
+      "carPctStageW": 83.9,
+      "carCentreOffsetX": 8,
+      "carBottomAboveViewportBottom": 201
+    },
+    "carTopAtScroll0": 931,
+    "carVisibleAtScroll0": false,
+    "errors": {
+      "console": 0,
+      "page": 0
+    }
+  },
+  {
+    "config": "motog4-360x640",
+    "viewport": "360x640",
+    "trackTop": 605,
+    "stageTopAtScroll0": 661,
+    "vh": 640,
+    "statusAtPoster": "loading",
+    "poster": {
+      "stage": {
+        "w": 360,
+        "h": 468,
+        "aspect": 0.769
+      },
+      "header": 56,
+      "poster": "car-assembled-m-640.avif",
+      "captionBottomInStage": 85,
+      "car": {
+        "x": 37,
+        "y": 170,
+        "w": 302,
+        "h": 214
+      },
+      "emptyBandCaptionToCar": 85,
+      "carTopPctOfStage": 36.3,
+      "carPctStageH": 45.7,
+      "carPctStageW": 83.9,
+      "carCentreOffsetX": 8,
+      "carBottomAboveViewportBottom": 201
+    },
+    "carTopAtScroll0": 831,
+    "carVisibleAtScroll0": false,
+    "errors": {
+      "console": 0,
+      "page": 0
+    }
+  },
+  {
+    "config": "1440x900",
+    "viewport": "1440x900",
+    "trackTop": 1,
+    "stageTopAtScroll0": 65,
+    "vh": 900,
+    "statusAtPoster": "loading",
+    "poster": {
+      "stage": {
+        "w": 1440,
+        "h": 836,
+        "aspect": 1.722
+      },
+      "header": 64,
+      "poster": "car-assembled-1440.avif",
+      "captionBottomInStage": 109,
+      "car": {
+        "x": 48,
+        "y": 116,
+        "w": 1344,
+        "h": 690
+      },
+      "emptyBandCaptionToCar": 7,
+      "carTopPctOfStage": 13.9,
+      "carPctStageH": 82.5,
+      "carPctStageW": 93.3,
+      "carCentreOffsetX": 0,
+      "carBottomAboveViewportBottom": 31
+    },
+    "carTopAtScroll0": 181,
+    "carVisibleAtScroll0": true,
+    "errors": {
+      "console": 0,
+      "page": 0
+    }
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "adminRows": [
+    {
+      "href": "/admin/proizvodi/novi",
+      "text": "Novi artikal"
+    }
+  ],
+  "sticky": [
+    {
+      "scrollY": 3500,
+      "buyBoxBottom": -2495.390625,
+      "bars": [
+        {
+          "vis": "visible",
+          "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+          "top": 850.5,
+          "text": "4.690 RSD sa PDV-om U korpu : Kočioni disk prednji 276 × 24 "
+        }
+      ]
+    },
+    {
+      "scrollY": 3500,
+      "buyBoxBottom": -2495.390625,
+      "bars": [
+        {
+          "vis": "visible",
+          "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+          "top": 850.5,
+          "text": "4.690 RSD sa PDV-om U korpu : Kočioni disk prednji 276 × 24 "
+        }
+      ]
+    },
+    {
+      "scrollY": 3500,
+      "buyBoxBottom": -2495.390625,
+      "bars": [
+        {
+          "vis": "visible",
+          "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+          "top": 850.5,
+          "text": "4.690 RSD sa PDV-om U korpu : Kočioni disk prednji 276 × 24 "
+        }
+      ]
+    }
+  ],
+  "log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

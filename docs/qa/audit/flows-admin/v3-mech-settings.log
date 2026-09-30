@@ -1,0 +1,16 @@
+﻿tier options {"opts":["Izaberite","Majstor · 10 %","Majstor Plus · 15 %","Partner · 20 %"]}
+approve with limit -5 {"toasts":[],"alerts":["Limit mora biti iznos u dinarima.",""],"invalid":0}
+approve with 150.000 {"toasts":[],"alerts":[""]}
+suspend (no confirm?) {"dialog":false,"toasts":[]}
+reactivated {"toasts":[]}
+settings tabs {"tabs":["Firma","Radno vreme","Dostava i plaćanje","Obaveštenja","SEO","Praćenje","Oglasne strane","Pravni tekstovi","Funkcije","Opasna zona"]}
+settings axe (last tab) {"ax":[]}
+dirty savebar {"bar":""}
+switch tab while dirty {"dialog":false,"selected":"SEO"}
+slogan after switching back {"value":"Rasklopi auto. Nađi deo."}
+saved slogan {"toasts":[]}
+restored slogan {"toasts":[],"value":"Rasklopi auto. Nađi deo.","orig":"Rasklopi auto. Nađi deo."}
+invalid PIB save {"toasts":[],"alerts":["Podešavanja"],"invalid":0,"pibOrig":""}
+pib after discard {"value":"","pibOrig":""}
+danger zone {"text":"Obriši demo podatkeBriše sve probne artikle (šifre DEMO-), porudžbine, upite, naloge i majstore označene kao demo. Marke, modeli, kategorije i podešavanja ostaju. Radnja se ne može poništiti.Artikli157Porudžbine8Upiti4Nalozi2Majstori1Obriši demo podatke"}
+errors S {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}

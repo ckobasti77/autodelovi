@@ -1,0 +1,132 @@
+{
+  "PID": "qh7cqja340240s4jq1fsawnc3s8fctej",
+  "SKU": "AUDIT-FA-852021",
+  "steps": [
+    {
+      "name": "Audit disk prednji 852021 (tab A)",
+      "at": "2026-09-30T20:41:05.203Z",
+      "active": false,
+      "retailPricePara": 499000,
+      "source": "manual",
+      "stockQty": 0
+    },
+    {
+      "name": "S1 initial UI",
+      "at": "2026-09-30T20:41:11.333Z",
+      "name0": "Audit disk prednji 852021 (tab A)",
+      "price0": "4990"
+    },
+    {
+      "name": "S1 A dirty",
+      "at": "2026-09-30T20:41:11.858Z",
+      "bar": [
+        "Imate nesačuvane izmene."
+      ]
+    },
+    {
+      "name": "S1 B saved",
+      "at": "2026-09-30T20:41:16.911Z",
+      "toastsB": [],
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A)",
+        "retailPricePara": 649000,
+        "source": "manual",
+        "stockQty": 0
+      }
+    },
+    {
+      "name": "S1 A before save",
+      "at": "2026-09-30T20:41:18.442Z",
+      "priceA": "4990",
+      "nameA": "Audit disk prednji 852021 (tab A) V",
+      "bar": [
+        "Imate nesačuvane izmene."
+      ],
+      "alerts": [
+        ""
+      ]
+    },
+    {
+      "name": "S1 A saved",
+      "at": "2026-09-30T20:41:23.990Z",
+      "toastsA": [],
+      "priceA": "4990",
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A) V",
+        "retailPricePara": 499000,
+        "source": "manual",
+        "stockQty": 0
+      }
+    },
+    {
+      "name": "S1 audit rows",
+      "at": "2026-09-30T20:41:28.608Z",
+      "rows": [
+        "30.09. 22:41AUDIT-FA-852021: naziv, cenaVlasnik · Artikal: izmenaIzmene (2)",
+        "30.09. 22:41AUDIT-FA-852021: cenaVlasnik · Artikal: izmenaIzmene (1)",
+        "30.09. 22:23AUDIT-FA-852021: stanje 2 → 0 (correction)Vlasnik · Lager: promena stanjaIzmene (1)",
+        "30.09. 22:23AUDIT-FA-852021: stanje 0 → 2 (receipt)Vlasnik · Lager: promena stanjaIzmene (1)",
+        "30.09. 22:09AUDIT-FA-852021: nazivVlasnik · Artikal: izmenaIzmene (1)",
+        "30.09. 22:09AUDIT-FA-852021: naziv, cenaVlasnik · Artikal: izmenaIzmene (2)"
+      ]
+    },
+    {
+      "name": "S2 initial UI",
+      "at": "2026-09-30T20:41:35.391Z",
+      "nameBefore2": "Audit disk prednji 852021 (tab A) V",
+      "priceBefore2": "6490"
+    },
+    {
+      "name": "S2 B saved name",
+      "at": "2026-09-30T20:41:40.597Z",
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A) V B2",
+        "retailPricePara": 649000,
+        "source": "manual",
+        "stockQty": 0
+      }
+    },
+    {
+      "name": "S2 A before save",
+      "at": "2026-09-30T20:41:42.116Z",
+      "nameA": "Audit disk prednji 852021 (tab A) V",
+      "bar": [
+        "Imate nesačuvane izmene."
+      ]
+    },
+    {
+      "name": "S2 A saved",
+      "at": "2026-09-30T20:41:47.515Z",
+      "toastsA": [],
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A) V",
+        "retailPricePara": 599000,
+        "source": "manual",
+        "stockQty": 0
+      }
+    },
+    {
+      "name": "console/page errors A",
+      "at": "2026-09-30T20:41:47.515Z",
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "name": "restored",
+      "at": "2026-09-30T20:41:52.883Z",
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A)",
+        "retailPricePara": 499000,
+        "source": "manual",
+        "stockQty": 0
+      }
+    }
+  ]
+}

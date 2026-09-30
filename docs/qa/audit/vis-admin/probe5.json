@@ -1,0 +1,51 @@
+{
+  "mechanic": {
+    "url": "http://localhost:3100/admin/majstori?status=odobreni",
+    "f": "docs/qa/audit/vis-admin/probe5/1440-majstor-detail.webp"
+  },
+  "1920 /admin/upiti": {
+    "client": 1630,
+    "scroll": 1630,
+    "over": 0
+  },
+  "1920 /admin/proizvodi": {
+    "client": 1630,
+    "scroll": 1630,
+    "over": 0
+  },
+  "1920 /admin/porudzbine?status=sve": {
+    "client": 1630,
+    "scroll": 1630,
+    "over": 0
+  },
+  "2560 /admin/upiti": {
+    "client": 1630,
+    "scroll": 1630,
+    "over": 0
+  },
+  "2560 /admin/proizvodi": {
+    "client": 1630,
+    "scroll": 1630,
+    "over": 0
+  },
+  "2560 /admin/porudzbine?status=sve": {
+    "client": 1630,
+    "scroll": 1630,
+    "over": 0
+  },
+  "drawer": {
+    "f": "docs/qa/audit/vis-admin/probe5/390-drawer.webp"
+  },
+  "palette": {
+    "f": "docs/qa/audit/vis-admin/probe5/390-palette.webp"
+  },
+  "dialog": {
+    "f": "docs/qa/audit/vis-admin/probe5/390-cancel-dialog.webp",
+    "box": {
+      "x": 16,
+      "y": 173,
+      "w": 358,
+      "h": 498
+    }
+  }
+}

@@ -1,0 +1,162 @@
+[
+  {
+    "label": "home-to-category",
+    "href": "/delovi/kocione-plocice",
+    "at700ms": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "wordParents0": []
+    },
+    "landed": "/delovi/kocione-plocice",
+    "scrollYAtLanding": 0,
+    "hiddenInViewportAt2500ms": [],
+    "afterScroll": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    }
+  },
+  {
+    "label": "category-to-product",
+    "href": "/deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013",
+    "at700ms": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "wordParents0": []
+    },
+    "landed": "/deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013",
+    "scrollYAtLanding": 0,
+    "hiddenInViewportAt2500ms": [],
+    "afterScroll": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    }
+  },
+  {
+    "label": "product-to-category",
+    "href": "/delovi/kocione-plocice",
+    "at700ms": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "wordParents0": []
+    },
+    "landed": "/delovi/kocione-plocice",
+    "scrollYAtLanding": 0,
+    "hiddenInViewportAt2500ms": [],
+    "afterScroll": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    }
+  },
+  {
+    "label": "vozila-to-brand",
+    "href": "/vozila/volkswagen",
+    "at700ms": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "wordParents0": []
+    },
+    "landed": "/vozila/volkswagen",
+    "scrollYAtLanding": 0,
+    "hiddenInViewportAt2500ms": [],
+    "afterScroll": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    }
+  },
+  {
+    "label": "brand-to-model",
+    "href": "/vozila/volkswagen/golf",
+    "at700ms": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "wordParents0": []
+    },
+    "landed": "/vozila/volkswagen/golf",
+    "scrollYAtLanding": 0,
+    "hiddenInViewportAt2500ms": [],
+    "afterScroll": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    }
+  },
+  {
+    "label": "model-to-footer-majstori",
+    "href": "/za-majstore",
+    "at700ms": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "wordParents0": []
+    },
+    "landed": "/za-majstore",
+    "scrollYAtLanding": 0,
+    "hiddenInViewportAt2500ms": [],
+    "afterScroll": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    }
+  },
+  {
+    "label": "majstori-to-footer-dostava",
+    "href": "/dostava-i-placanje",
+    "at700ms": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "wordParents0": []
+    },
+    "landed": "/dostava-i-placanje",
+    "scrollYAtLanding": 0,
+    "hiddenInViewportAt2500ms": [],
+    "afterScroll": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    }
+  },
+  {
+    "label": "footer-to-home",
+    "href": "/",
+    "at700ms": {
+      "stuck": [],
+      "pending": 0,
+      "words": 14,
+      "wordParents0": [
+        "p[-](in off): Sklopljen automobil",
+        "p[-](in off): 00 · 42 kategorije · 91 deo",
+        "p[-](in off): Skrolujte i auto se rasklapa po sistemim"
+      ]
+    },
+    "landed": "/",
+    "scrollYAtLanding": 0,
+    "hiddenInViewportAt2500ms": [],
+    "afterScroll": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    }
+  },
+  {
+    "label": "home-to-footer-kontakt",
+    "error": "TimeoutError: locator.scrollIntoViewIfNeeded: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('footer a[href=\"/kontakt\"]').first()\n"
+  },
+  {
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+]

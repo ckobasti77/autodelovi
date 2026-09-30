@@ -1,0 +1,46 @@
+{
+  "ponuda360": {
+    "vw": 360,
+    "scrollW": 360,
+    "headerItems": [
+      "SKLOP — početna[16-129 flex]",
+      "Korpa[300-344 flex]"
+    ]
+  },
+  "guest360-phoneOnly": {
+    "vw": 360,
+    "scrollW": 369,
+    "menuL": 325,
+    "menuR": 369,
+    "scrollXAfterScrollTo200": 0,
+    "vvScale": 1,
+    "meta": "width=device-width, initial-scale=1, viewport-fit=cover"
+  },
+  "guest360-phoneViber": {
+    "vw": 360,
+    "scrollW": 415,
+    "menuL": 371,
+    "menuR": 415,
+    "scrollXAfterScrollTo200": 0,
+    "vvScale": 1,
+    "meta": "width=device-width, initial-scale=1, viewport-fit=cover"
+  },
+  "guest390-phoneOnly": {
+    "vw": 390,
+    "scrollW": 390,
+    "menuL": 330,
+    "menuR": 374,
+    "scrollXAfterScrollTo200": 0,
+    "vvScale": 1,
+    "meta": "width=device-width, initial-scale=1, viewport-fit=cover"
+  },
+  "guest390-phoneViber": {
+    "vw": 390,
+    "scrollW": 415,
+    "menuL": 371,
+    "menuR": 415,
+    "scrollXAfterScrollTo200": 0,
+    "vvScale": 1,
+    "meta": "width=device-width, initial-scale=1, viewport-fit=cover"
+  }
+}

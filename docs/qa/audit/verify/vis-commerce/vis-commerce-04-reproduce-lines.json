@@ -1,0 +1,23 @@
+{
+  "2lines-360": {
+    "lines": 2,
+    "vh": 780,
+    "asideTop": 625,
+    "ctaTop": 766,
+    "ctaBottom": 818
+  },
+  "2lines-390": {
+    "lines": 2,
+    "vh": 844,
+    "asideTop": 626,
+    "ctaTop": 746,
+    "ctaBottom": 798
+  },
+  "2lines-430": {
+    "lines": 2,
+    "vh": 932,
+    "asideTop": 626,
+    "ctaTop": 746,
+    "ctaBottom": 798
+  }
+}

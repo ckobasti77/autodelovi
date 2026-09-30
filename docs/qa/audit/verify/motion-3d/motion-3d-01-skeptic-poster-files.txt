@@ -1,0 +1,4 @@
+{"f":"public/images/hero/car-assembled-m-1080.webp","W":1080,"H":1350,"bg":[14,16,17,255],"car":{"x":113,"y":456,"w":904,"h":642},"topPct":33.8,"bottomGapPct":18.7,"hPct":47.6,"wPct":83.7,"centreXPct":52.3,"centreYPct":57.6}
+{"f":"public/images/hero/car-exploded-m-1080.webp","W":1080,"H":1350,"bg":[14,16,17,255],"car":{"x":95,"y":375,"w":884,"h":612},"topPct":27.8,"bottomGapPct":26.9,"hPct":45.3,"wPct":81.9,"centreXPct":49.7,"centreYPct":50.4}
+{"f":"public/images/hero/car-assembled-1080.webp","W":1080,"H":608,"bg":[14,16,17,255],"car":{"x":427,"y":139,"w":554,"h":346},"topPct":22.9,"bottomGapPct":20.2,"hPct":56.9,"wPct":51.3,"centreXPct":65.2,"centreYPct":51.3}
+{"f":"public/images/hero/car-exploded-1080.webp","W":1080,"H":608,"bg":[14,16,17,255],"car":{"x":413,"y":100,"w":592,"h":411},"topPct":16.4,"bottomGapPct":16,"hPct":67.6,"wPct":54.8,"centreXPct":65.6,"centreYPct":50.2}

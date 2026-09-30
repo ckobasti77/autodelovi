@@ -1,0 +1,440 @@
+{
+  "1440 /admin/porudzbine": {
+    "same-spot": {
+      "rowTopsBefore": [
+        316,
+        364,
+        412
+      ],
+      "rowTopsAfter": [
+        334,
+        382,
+        430
+      ],
+      "tableTopBefore": 280,
+      "tableTopAfter": 298,
+      "bulkBarH": 54,
+      "checkbox": {
+        "yBefore": 328,
+        "yAfter": 347,
+        "h": 20
+      },
+      "firstClickState": "checked",
+      "secondClickAt": [
+        279,
+        338
+      ],
+      "underSecondClick": "td role= tdIndex=0 rowIndex=0",
+      "navigated": true,
+      "urlAfter": "/admin/porudzbine/SK-2026-000140",
+      "secondRowStateIfStayed": null
+    },
+    "next-row": {
+      "rowTopsBefore": [
+        316,
+        364,
+        412
+      ],
+      "rowTopsAfter": [
+        334,
+        382,
+        430
+      ],
+      "tableTopBefore": 280,
+      "tableTopAfter": 298,
+      "bulkBarH": 54,
+      "checkbox": {
+        "yBefore": 328,
+        "yAfter": 347,
+        "h": 20
+      },
+      "firstClickState": "checked",
+      "secondClickAt": [
+        279,
+        386
+      ],
+      "underSecondClick": "td role= tdIndex=0 rowIndex=1",
+      "navigated": true,
+      "urlAfter": "/admin/porudzbine/SK-2026-000135",
+      "secondRowStateIfStayed": null
+    },
+    "selectCellEdgeClick": {
+      "tdBox": {
+        "y": 316,
+        "h": 48,
+        "w": 40
+      },
+      "cbBox": {
+        "y": 328,
+        "h": 20
+      },
+      "navigated": true,
+      "urlAfter": "/admin/porudzbine/SK-2026-000140"
+    }
+  },
+  "1440 /admin/proizvodi": {
+    "same-spot": {
+      "rowTopsBefore": [
+        316,
+        364,
+        412
+      ],
+      "rowTopsAfter": [
+        334,
+        382,
+        430
+      ],
+      "tableTopBefore": 280,
+      "tableTopAfter": 298,
+      "bulkBarH": 54,
+      "checkbox": {
+        "yBefore": 328,
+        "yAfter": 347,
+        "h": 20
+      },
+      "firstClickState": "checked",
+      "secondClickAt": [
+        279,
+        338
+      ],
+      "underSecondClick": "td role= tdIndex=0 rowIndex=0",
+      "navigated": true,
+      "urlAfter": "/admin/proizvodi/qh7dckwh7evpxbsce1vdhp0cd18fcjr4",
+      "secondRowStateIfStayed": null
+    },
+    "next-row": {
+      "rowTopsBefore": [
+        316,
+        364,
+        412
+      ],
+      "rowTopsAfter": [
+        334,
+        382,
+        430
+      ],
+      "tableTopBefore": 280,
+      "tableTopAfter": 298,
+      "bulkBarH": 54,
+      "checkbox": {
+        "yBefore": 328,
+        "yAfter": 347,
+        "h": 20
+      },
+      "firstClickState": "checked",
+      "secondClickAt": [
+        279,
+        386
+      ],
+      "underSecondClick": "td role= tdIndex=0 rowIndex=1",
+      "navigated": true,
+      "urlAfter": "/admin/proizvodi/qh727wgvrhbnrc8x6mjx5k76bs8fd084",
+      "secondRowStateIfStayed": null
+    },
+    "selectCellEdgeClick": {
+      "tdBox": {
+        "y": 316,
+        "h": 48,
+        "w": 40
+      },
+      "cbBox": {
+        "y": 328,
+        "h": 20
+      },
+      "navigated": true,
+      "urlAfter": "/admin/proizvodi/qh7dckwh7evpxbsce1vdhp0cd18fcjr4"
+    }
+  },
+  "1280 /admin/porudzbine": {
+    "same-spot": {
+      "rowTopsBefore": [
+        316,
+        364,
+        412
+      ],
+      "rowTopsAfter": [
+        334,
+        382,
+        430
+      ],
+      "tableTopBefore": 280,
+      "tableTopAfter": 298,
+      "bulkBarH": 54,
+      "checkbox": {
+        "yBefore": 328,
+        "yAfter": 347,
+        "h": 20
+      },
+      "firstClickState": "checked",
+      "secondClickAt": [
+        111,
+        338
+      ],
+      "underSecondClick": "td role= tdIndex=0 rowIndex=0",
+      "navigated": true,
+      "urlAfter": "/admin/porudzbine/SK-2026-000140",
+      "secondRowStateIfStayed": null
+    },
+    "next-row": {
+      "rowTopsBefore": [
+        316,
+        364,
+        412
+      ],
+      "rowTopsAfter": [
+        334,
+        382,
+        430
+      ],
+      "tableTopBefore": 280,
+      "tableTopAfter": 298,
+      "bulkBarH": 54,
+      "checkbox": {
+        "yBefore": 328,
+        "yAfter": 347,
+        "h": 20
+      },
+      "firstClickState": "checked",
+      "secondClickAt": [
+        111,
+        386
+      ],
+      "underSecondClick": "td role= tdIndex=0 rowIndex=1",
+      "navigated": true,
+      "urlAfter": "/admin/porudzbine/SK-2026-000135",
+      "secondRowStateIfStayed": null
+    },
+    "selectCellEdgeClick": {
+      "tdBox": {
+        "y": 316,
+        "h": 48,
+        "w": 40
+      },
+      "cbBox": {
+        "y": 328,
+        "h": 20
+      },
+      "navigated": true,
+      "urlAfter": "/admin/porudzbine/SK-2026-000140"
+    }
+  },
+  "1280 /admin/proizvodi": {
+    "same-spot": {
+      "rowTopsBefore": [
+        316,
+        364,
+        412
+      ],
+      "rowTopsAfter": [
+        334,
+        382,
+        430
+      ],
+      "tableTopBefore": 280,
+      "tableTopAfter": 298,
+      "bulkBarH": 54,
+      "checkbox": {
+        "yBefore": 328,
+        "yAfter": 347,
+        "h": 20
+      },
+      "firstClickState": "checked",
+      "secondClickAt": [
+        111,
+        338
+      ],
+      "underSecondClick": "td role= tdIndex=0 rowIndex=0",
+      "navigated": true,
+      "urlAfter": "/admin/proizvodi/qh7dckwh7evpxbsce1vdhp0cd18fcjr4",
+      "secondRowStateIfStayed": null
+    },
+    "next-row": {
+      "rowTopsBefore": [
+        316,
+        364,
+        412
+      ],
+      "rowTopsAfter": [
+        334,
+        382,
+        430
+      ],
+      "tableTopBefore": 280,
+      "tableTopAfter": 298,
+      "bulkBarH": 54,
+      "checkbox": {
+        "yBefore": 328,
+        "yAfter": 347,
+        "h": 20
+      },
+      "firstClickState": "checked",
+      "secondClickAt": [
+        111,
+        386
+      ],
+      "underSecondClick": "td role= tdIndex=0 rowIndex=1",
+      "navigated": true,
+      "urlAfter": "/admin/proizvodi/qh727wgvrhbnrc8x6mjx5k76bs8fd084",
+      "secondRowStateIfStayed": null
+    },
+    "selectCellEdgeClick": {
+      "tdBox": {
+        "y": 316,
+        "h": 48,
+        "w": 40
+      },
+      "cbBox": {
+        "y": 328,
+        "h": 20
+      },
+      "navigated": true,
+      "urlAfter": "/admin/proizvodi/qh7dckwh7evpxbsce1vdhp0cd18fcjr4"
+    }
+  },
+  "1024 /admin/porudzbine": {
+    "same-spot": {
+      "rowTopsBefore": [
+        316,
+        364,
+        412
+      ],
+      "rowTopsAfter": [
+        334,
+        382,
+        430
+      ],
+      "tableTopBefore": 280,
+      "tableTopAfter": 298,
+      "bulkBarH": 54,
+      "checkbox": {
+        "yBefore": 328,
+        "yAfter": 347,
+        "h": 20
+      },
+      "firstClickState": "checked",
+      "secondClickAt": [
+        111,
+        338
+      ],
+      "underSecondClick": "td role= tdIndex=0 rowIndex=0",
+      "navigated": true,
+      "urlAfter": "/admin/porudzbine/SK-2026-000140",
+      "secondRowStateIfStayed": null
+    },
+    "next-row": {
+      "rowTopsBefore": [
+        316,
+        364,
+        412
+      ],
+      "rowTopsAfter": [
+        334,
+        382,
+        430
+      ],
+      "tableTopBefore": 280,
+      "tableTopAfter": 298,
+      "bulkBarH": 54,
+      "checkbox": {
+        "yBefore": 328,
+        "yAfter": 347,
+        "h": 20
+      },
+      "firstClickState": "checked",
+      "secondClickAt": [
+        111,
+        386
+      ],
+      "underSecondClick": "td role= tdIndex=0 rowIndex=1",
+      "navigated": true,
+      "urlAfter": "/admin/porudzbine/SK-2026-000135",
+      "secondRowStateIfStayed": null
+    },
+    "selectCellEdgeClick": {
+      "tdBox": {
+        "y": 316,
+        "h": 48,
+        "w": 40
+      },
+      "cbBox": {
+        "y": 328,
+        "h": 20
+      },
+      "navigated": true,
+      "urlAfter": "/admin/porudzbine/SK-2026-000140"
+    }
+  },
+  "1024 /admin/proizvodi": {
+    "same-spot": {
+      "rowTopsBefore": [
+        316,
+        364,
+        412
+      ],
+      "rowTopsAfter": [
+        334,
+        382,
+        430
+      ],
+      "tableTopBefore": 280,
+      "tableTopAfter": 298,
+      "bulkBarH": 54,
+      "checkbox": {
+        "yBefore": 328,
+        "yAfter": 347,
+        "h": 20
+      },
+      "firstClickState": "checked",
+      "secondClickAt": [
+        111,
+        338
+      ],
+      "underSecondClick": "td role= tdIndex=0 rowIndex=0",
+      "navigated": true,
+      "urlAfter": "/admin/proizvodi/qh7dckwh7evpxbsce1vdhp0cd18fcjr4",
+      "secondRowStateIfStayed": null
+    },
+    "next-row": {
+      "rowTopsBefore": [
+        316,
+        364,
+        412
+      ],
+      "rowTopsAfter": [
+        334,
+        382,
+        430
+      ],
+      "tableTopBefore": 280,
+      "tableTopAfter": 298,
+      "bulkBarH": 54,
+      "checkbox": {
+        "yBefore": 328,
+        "yAfter": 347,
+        "h": 20
+      },
+      "firstClickState": "checked",
+      "secondClickAt": [
+        111,
+        386
+      ],
+      "underSecondClick": "td role= tdIndex=0 rowIndex=1",
+      "navigated": true,
+      "urlAfter": "/admin/proizvodi/qh727wgvrhbnrc8x6mjx5k76bs8fd084",
+      "secondRowStateIfStayed": null
+    },
+    "selectCellEdgeClick": {
+      "tdBox": {
+        "y": 316,
+        "h": 48,
+        "w": 40
+      },
+      "cbBox": {
+        "y": 328,
+        "h": 20
+      },
+      "navigated": true,
+      "urlAfter": "/admin/proizvodi/qh7dckwh7evpxbsce1vdhp0cd18fcjr4"
+    }
+  }
+}

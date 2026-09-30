@@ -1,0 +1,958 @@
+{
+  "guest-360-/delovi/kocioni-diskovi": {
+    "real": {
+      "vw": 360,
+      "scrollW": 360,
+      "headerScrollW": 360,
+      "menu": {
+        "label": "Otvori meni",
+        "L": 300,
+        "R": 344
+      },
+      "items": [
+        {
+          "tag": "a",
+          "label": "SKLOP — početna",
+          "display": "flex",
+          "L": 16,
+          "R": 129,
+          "cls": ""
+        },
+        {
+          "tag": "button",
+          "label": "Pretraga delova",
+          "display": "flex",
+          "L": 162,
+          "R": 206,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Moj nalog",
+          "display": "flex",
+          "L": 208,
+          "R": 252,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Korpa",
+          "display": "flex",
+          "L": 254,
+          "R": 298,
+          "cls": ""
+        },
+        {
+          "tag": "div",
+          "label": "Otvori meni",
+          "display": "block",
+          "L": 300,
+          "R": 344,
+          "cls": ""
+        }
+      ]
+    },
+    "simPhoneViber": {
+      "vw": 360,
+      "scrollW": 415,
+      "headerScrollW": 415,
+      "menu": {
+        "label": "Otvori meni",
+        "L": 371,
+        "R": 415
+      },
+      "items": [
+        {
+          "tag": "a",
+          "label": "SKLOP — početna",
+          "display": "flex",
+          "L": 16,
+          "R": 129,
+          "cls": ""
+        },
+        {
+          "tag": "button",
+          "label": "Pretraga delova",
+          "display": "flex",
+          "L": 141,
+          "R": 185,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Pozovite (sim)",
+          "display": "flex",
+          "L": 187,
+          "R": 231,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Viber (sim)",
+          "display": "flex",
+          "L": 233,
+          "R": 277,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Moj nalog",
+          "display": "flex",
+          "L": 279,
+          "R": 323,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Korpa",
+          "display": "flex",
+          "L": 325,
+          "R": 369,
+          "cls": ""
+        },
+        {
+          "tag": "div",
+          "label": "Otvori meni",
+          "display": "block",
+          "L": 371,
+          "R": 415,
+          "cls": ""
+        }
+      ]
+    },
+    "simIfHiddenWorked": {
+      "vw": 360,
+      "scrollW": 360,
+      "headerScrollW": 360,
+      "menu": {
+        "label": "Otvori meni",
+        "L": 300,
+        "R": 344
+      },
+      "items": [
+        {
+          "tag": "a",
+          "label": "SKLOP — početna",
+          "display": "flex",
+          "L": 16,
+          "R": 129,
+          "cls": ""
+        },
+        {
+          "tag": "button",
+          "label": "Pretraga delova",
+          "display": "flex",
+          "L": 162,
+          "R": 206,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Pozovite (sim)",
+          "display": "flex",
+          "L": 208,
+          "R": 252,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Korpa",
+          "display": "flex",
+          "L": 254,
+          "R": 298,
+          "cls": ""
+        },
+        {
+          "tag": "div",
+          "label": "Otvori meni",
+          "display": "block",
+          "L": 300,
+          "R": 344,
+          "cls": ""
+        }
+      ]
+    }
+  },
+  "guest-390-/delovi/kocioni-diskovi": {
+    "real": {
+      "vw": 390,
+      "scrollW": 390,
+      "headerScrollW": 390,
+      "menu": {
+        "label": "Otvori meni",
+        "L": 330,
+        "R": 374
+      },
+      "items": [
+        {
+          "tag": "a",
+          "label": "SKLOP — početna",
+          "display": "flex",
+          "L": 16,
+          "R": 129,
+          "cls": ""
+        },
+        {
+          "tag": "button",
+          "label": "Pretraga delova",
+          "display": "flex",
+          "L": 192,
+          "R": 236,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Moj nalog",
+          "display": "flex",
+          "L": 238,
+          "R": 282,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Korpa",
+          "display": "flex",
+          "L": 284,
+          "R": 328,
+          "cls": ""
+        },
+        {
+          "tag": "div",
+          "label": "Otvori meni",
+          "display": "block",
+          "L": 330,
+          "R": 374,
+          "cls": ""
+        }
+      ]
+    },
+    "simPhoneViber": {
+      "vw": 390,
+      "scrollW": 415,
+      "headerScrollW": 415,
+      "menu": {
+        "label": "Otvori meni",
+        "L": 371,
+        "R": 415
+      },
+      "items": [
+        {
+          "tag": "a",
+          "label": "SKLOP — početna",
+          "display": "flex",
+          "L": 16,
+          "R": 129,
+          "cls": ""
+        },
+        {
+          "tag": "button",
+          "label": "Pretraga delova",
+          "display": "flex",
+          "L": 141,
+          "R": 185,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Pozovite (sim)",
+          "display": "flex",
+          "L": 187,
+          "R": 231,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Viber (sim)",
+          "display": "flex",
+          "L": 233,
+          "R": 277,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Moj nalog",
+          "display": "flex",
+          "L": 279,
+          "R": 323,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Korpa",
+          "display": "flex",
+          "L": 325,
+          "R": 369,
+          "cls": ""
+        },
+        {
+          "tag": "div",
+          "label": "Otvori meni",
+          "display": "block",
+          "L": 371,
+          "R": 415,
+          "cls": ""
+        }
+      ]
+    },
+    "simIfHiddenWorked": {
+      "vw": 390,
+      "scrollW": 390,
+      "headerScrollW": 390,
+      "menu": {
+        "label": "Otvori meni",
+        "L": 330,
+        "R": 374
+      },
+      "items": [
+        {
+          "tag": "a",
+          "label": "SKLOP — početna",
+          "display": "flex",
+          "L": 16,
+          "R": 129,
+          "cls": ""
+        },
+        {
+          "tag": "button",
+          "label": "Pretraga delova",
+          "display": "flex",
+          "L": 192,
+          "R": 236,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Pozovite (sim)",
+          "display": "flex",
+          "L": 238,
+          "R": 282,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Korpa",
+          "display": "flex",
+          "L": 284,
+          "R": 328,
+          "cls": ""
+        },
+        {
+          "tag": "div",
+          "label": "Otvori meni",
+          "display": "block",
+          "L": 330,
+          "R": 374,
+          "cls": ""
+        }
+      ]
+    }
+  },
+  "guest-430-/delovi/kocioni-diskovi": {
+    "real": {
+      "vw": 430,
+      "scrollW": 430,
+      "headerScrollW": 430,
+      "menu": {
+        "label": "Otvori meni",
+        "L": 369,
+        "R": 413
+      },
+      "items": [
+        {
+          "tag": "a",
+          "label": "SKLOP — početna",
+          "display": "flex",
+          "L": 17,
+          "R": 130,
+          "cls": ""
+        },
+        {
+          "tag": "button",
+          "label": "Pretraga delova",
+          "display": "flex",
+          "L": 231,
+          "R": 275,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Moj nalog",
+          "display": "flex",
+          "L": 277,
+          "R": 321,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Korpa",
+          "display": "flex",
+          "L": 323,
+          "R": 367,
+          "cls": ""
+        },
+        {
+          "tag": "div",
+          "label": "Otvori meni",
+          "display": "block",
+          "L": 369,
+          "R": 413,
+          "cls": ""
+        }
+      ]
+    },
+    "simPhoneViber": {
+      "vw": 430,
+      "scrollW": 430,
+      "headerScrollW": 430,
+      "menu": {
+        "label": "Otvori meni",
+        "L": 372,
+        "R": 416
+      },
+      "items": [
+        {
+          "tag": "a",
+          "label": "SKLOP — početna",
+          "display": "flex",
+          "L": 17,
+          "R": 130,
+          "cls": ""
+        },
+        {
+          "tag": "button",
+          "label": "Pretraga delova",
+          "display": "flex",
+          "L": 142,
+          "R": 186,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Pozovite (sim)",
+          "display": "flex",
+          "L": 188,
+          "R": 232,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Viber (sim)",
+          "display": "flex",
+          "L": 234,
+          "R": 278,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Moj nalog",
+          "display": "flex",
+          "L": 280,
+          "R": 324,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Korpa",
+          "display": "flex",
+          "L": 326,
+          "R": 370,
+          "cls": ""
+        },
+        {
+          "tag": "div",
+          "label": "Otvori meni",
+          "display": "block",
+          "L": 372,
+          "R": 416,
+          "cls": ""
+        }
+      ]
+    },
+    "simIfHiddenWorked": {
+      "vw": 430,
+      "scrollW": 430,
+      "headerScrollW": 430,
+      "menu": {
+        "label": "Otvori meni",
+        "L": 369,
+        "R": 413
+      },
+      "items": [
+        {
+          "tag": "a",
+          "label": "SKLOP — početna",
+          "display": "flex",
+          "L": 17,
+          "R": 130,
+          "cls": ""
+        },
+        {
+          "tag": "button",
+          "label": "Pretraga delova",
+          "display": "flex",
+          "L": 231,
+          "R": 275,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Pozovite (sim)",
+          "display": "flex",
+          "L": 277,
+          "R": 321,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Korpa",
+          "display": "flex",
+          "L": 323,
+          "R": 367,
+          "cls": ""
+        },
+        {
+          "tag": "div",
+          "label": "Otvori meni",
+          "display": "block",
+          "L": 369,
+          "R": 413,
+          "cls": ""
+        }
+      ]
+    }
+  },
+  "guest-360-/": {
+    "real": {
+      "vw": 360,
+      "scrollW": 360,
+      "headerScrollW": 360,
+      "menu": {
+        "label": "Otvori meni",
+        "L": 300,
+        "R": 344
+      },
+      "items": [
+        {
+          "tag": "a",
+          "label": "SKLOP — početna",
+          "display": "flex",
+          "L": 16,
+          "R": 129,
+          "cls": ""
+        },
+        {
+          "tag": "button",
+          "label": "Pretraga delova",
+          "display": "flex",
+          "L": 162,
+          "R": 206,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Moj nalog",
+          "display": "flex",
+          "L": 208,
+          "R": 252,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Korpa",
+          "display": "flex",
+          "L": 254,
+          "R": 298,
+          "cls": ""
+        },
+        {
+          "tag": "div",
+          "label": "Otvori meni",
+          "display": "block",
+          "L": 300,
+          "R": 344,
+          "cls": ""
+        }
+      ]
+    }
+  },
+  "mechanic-360-/delovi": {
+    "real": {
+      "vw": 360,
+      "scrollW": 369,
+      "headerScrollW": 369,
+      "menu": {
+        "label": "Otvori meni",
+        "L": 325,
+        "R": 369
+      },
+      "items": [
+        {
+          "tag": "a",
+          "label": "SKLOP — početna",
+          "display": "flex",
+          "L": 16,
+          "R": 129,
+          "cls": ""
+        },
+        {
+          "tag": "button",
+          "label": "Pretraga delova",
+          "display": "flex",
+          "L": 141,
+          "R": 185,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Brza porudžbina",
+          "display": "flex",
+          "L": 187,
+          "R": 231,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Majstorski portal",
+          "display": "flex",
+          "L": 233,
+          "R": 277,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Korpa",
+          "display": "flex",
+          "L": 279,
+          "R": 323,
+          "cls": ""
+        },
+        {
+          "tag": "div",
+          "label": "Otvori meni",
+          "display": "block",
+          "L": 325,
+          "R": 369,
+          "cls": ""
+        }
+      ]
+    },
+    "simPhoneViber": {
+      "vw": 360,
+      "scrollW": 461,
+      "headerScrollW": 461,
+      "menu": {
+        "label": "Otvori meni",
+        "L": 417,
+        "R": 461
+      },
+      "items": [
+        {
+          "tag": "a",
+          "label": "SKLOP — početna",
+          "display": "flex",
+          "L": 16,
+          "R": 129,
+          "cls": ""
+        },
+        {
+          "tag": "button",
+          "label": "Pretraga delova",
+          "display": "flex",
+          "L": 141,
+          "R": 185,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Pozovite (sim)",
+          "display": "flex",
+          "L": 187,
+          "R": 231,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Viber (sim)",
+          "display": "flex",
+          "L": 233,
+          "R": 277,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Brza porudžbina",
+          "display": "flex",
+          "L": 279,
+          "R": 323,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Majstorski portal",
+          "display": "flex",
+          "L": 325,
+          "R": 369,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Korpa",
+          "display": "flex",
+          "L": 371,
+          "R": 415,
+          "cls": ""
+        },
+        {
+          "tag": "div",
+          "label": "Otvori meni",
+          "display": "block",
+          "L": 417,
+          "R": 461,
+          "cls": ""
+        }
+      ]
+    },
+    "simIfHiddenWorked": {
+      "vw": 360,
+      "scrollW": 360,
+      "headerScrollW": 360,
+      "menu": {
+        "label": "Otvori meni",
+        "L": 300,
+        "R": 344
+      },
+      "items": [
+        {
+          "tag": "a",
+          "label": "SKLOP — početna",
+          "display": "flex",
+          "L": 16,
+          "R": 129,
+          "cls": ""
+        },
+        {
+          "tag": "button",
+          "label": "Pretraga delova",
+          "display": "flex",
+          "L": 162,
+          "R": 206,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Pozovite (sim)",
+          "display": "flex",
+          "L": 208,
+          "R": 252,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Korpa",
+          "display": "flex",
+          "L": 254,
+          "R": 298,
+          "cls": ""
+        },
+        {
+          "tag": "div",
+          "label": "Otvori meni",
+          "display": "block",
+          "L": 300,
+          "R": 344,
+          "cls": ""
+        }
+      ]
+    }
+  },
+  "mechanic-390-/delovi": {
+    "real": {
+      "vw": 390,
+      "scrollW": 390,
+      "headerScrollW": 390,
+      "menu": {
+        "label": "Otvori meni",
+        "L": 330,
+        "R": 374
+      },
+      "items": [
+        {
+          "tag": "a",
+          "label": "SKLOP — početna",
+          "display": "flex",
+          "L": 16,
+          "R": 129,
+          "cls": ""
+        },
+        {
+          "tag": "button",
+          "label": "Pretraga delova",
+          "display": "flex",
+          "L": 146,
+          "R": 190,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Brza porudžbina",
+          "display": "flex",
+          "L": 192,
+          "R": 236,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Majstorski portal",
+          "display": "flex",
+          "L": 238,
+          "R": 282,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Korpa",
+          "display": "flex",
+          "L": 284,
+          "R": 328,
+          "cls": ""
+        },
+        {
+          "tag": "div",
+          "label": "Otvori meni",
+          "display": "block",
+          "L": 330,
+          "R": 374,
+          "cls": ""
+        }
+      ]
+    },
+    "simPhoneViber": {
+      "vw": 390,
+      "scrollW": 461,
+      "headerScrollW": 461,
+      "menu": {
+        "label": "Otvori meni",
+        "L": 417,
+        "R": 461
+      },
+      "items": [
+        {
+          "tag": "a",
+          "label": "SKLOP — početna",
+          "display": "flex",
+          "L": 16,
+          "R": 129,
+          "cls": ""
+        },
+        {
+          "tag": "button",
+          "label": "Pretraga delova",
+          "display": "flex",
+          "L": 141,
+          "R": 185,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Pozovite (sim)",
+          "display": "flex",
+          "L": 187,
+          "R": 231,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Viber (sim)",
+          "display": "flex",
+          "L": 233,
+          "R": 277,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Brza porudžbina",
+          "display": "flex",
+          "L": 279,
+          "R": 323,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Majstorski portal",
+          "display": "flex",
+          "L": 325,
+          "R": 369,
+          "cls": "hidden sm:inline-flex"
+        },
+        {
+          "tag": "a",
+          "label": "Korpa",
+          "display": "flex",
+          "L": 371,
+          "R": 415,
+          "cls": ""
+        },
+        {
+          "tag": "div",
+          "label": "Otvori meni",
+          "display": "block",
+          "L": 417,
+          "R": 461,
+          "cls": ""
+        }
+      ]
+    },
+    "simIfHiddenWorked": {
+      "vw": 390,
+      "scrollW": 390,
+      "headerScrollW": 390,
+      "menu": {
+        "label": "Otvori meni",
+        "L": 330,
+        "R": 374
+      },
+      "items": [
+        {
+          "tag": "a",
+          "label": "SKLOP — početna",
+          "display": "flex",
+          "L": 16,
+          "R": 129,
+          "cls": ""
+        },
+        {
+          "tag": "button",
+          "label": "Pretraga delova",
+          "display": "flex",
+          "L": 192,
+          "R": 236,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Pozovite (sim)",
+          "display": "flex",
+          "L": 238,
+          "R": 282,
+          "cls": ""
+        },
+        {
+          "tag": "a",
+          "label": "Korpa",
+          "display": "flex",
+          "L": 284,
+          "R": 328,
+          "cls": ""
+        },
+        {
+          "tag": "div",
+          "label": "Otvori meni",
+          "display": "block",
+          "L": 330,
+          "R": 374,
+          "cls": ""
+        }
+      ]
+    }
+  }
+}

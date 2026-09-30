@@ -1,0 +1,83 @@
+{
+  "chromium-1440": {
+    "brand": "",
+    "brandTag": "SELECT",
+    "error": "TimeoutError: locator.waitFor: Timeout 45000ms exceeded. | Call log: |   - waiting for locator('[data-testid=\"inquiry-photo\"][data-status=\"done\"]').first() to be visible",
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "chromium-390": {
+    "brand": "",
+    "brandTag": "SELECT",
+    "error": "TimeoutError: locator.waitFor: Timeout 45000ms exceeded. | Call log: |   - waiting for locator('[data-testid=\"inquiry-photo\"][data-status=\"done\"]').first() to be visible",
+    "csp": [
+      "script-src eval http://localhost:3100/_next/static/chunks/1uyyf-z7kpx1w.js:1"
+    ],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "firefox-1440": {
+    "error": "TimeoutError: locator.inputValue: Timeout 30000ms exceeded. | Call log: |   - waiting for getByLabel('Marka')",
+    "csp": [
+      "script-src eval http://localhost:3100/_next/static/chunks/1uyyf-z7kpx1w.js:1"
+    ],
+    "log": {
+      "console": [
+        "[JavaScript Error: \"Content-Security-Policy: The page’s settings blocked a JavaScript eval (script-src) from being executed because it violates the following directive: “script-src 'self' 'nonce-0QOqUdNLM3TJoxpwxfE9QA==' 'strict-dynamic' 'wasm-unsafe-eval'” (Missing 'unsafe-eval')\" {file: \"http://localhost:3100/_next/static/chunks/1uyyf-z7kpx1w.js\" line: 1}]"
+      ],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "firefox-390": {
+    "error": "TimeoutError: page.screenshot: Timeout 30000ms exceeded. | Call log: |   - taking page screenshot",
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "webkit-1440": {
+    "error": "TimeoutError: page.screenshot: Timeout 30000ms exceeded. | Call log: |   - taking page screenshot",
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "webkit-390": {
+    "brand": "",
+    "brandTag": "SELECT",
+    "number": "UP-2026-000066",
+    "probe": {
+      "eventTypes": [
+        "inquiry.created"
+      ],
+      "kind": "part",
+      "photoCount": 1,
+      "status": "nov",
+      "vin": null
+    },
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+}

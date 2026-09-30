@@ -1,0 +1,8 @@
+﻿initial {"price":"4990","name":"Audit disk prednji 852021 (tab A)"}
+tab B saved {"priceB":"6490","toastsB":[],"server":{"active":false,"name":"Audit disk prednji 852021 (tab A)","retailPricePara":649000,"source":"manual","stockQty":0}}
+tab A before save {"priceA":"4990","warning":[""],"status":["Imate nesačuvane izmene."]}
+after tab A save {"toastsA":[],"priceA":"4990","server":{"active":false,"name":"Audit disk prednji 852021 (tab A) (v3)","retailPricePara":499000,"source":"manual","stockQty":0}}
+history {"text":"IstorijaIzmene (7)Cene (4)Stanje (0)30.09. 22:09AUDIT-FA-852021: naziv, cenaVlasnik30.09. 22:09AUDIT-FA-852021: cenaVlasnik30.09. 20:49AUDIT-FA-852021: deaktiviranVlasnik30.09. 20:46AUDIT-FA-852021: naziv, cenaVlasnik30.09. 20:46AUDIT-FA-852021: cenaVlasnik30.09. 20:46Dodata slika: Audit disk prednji 852021Vlasnik30.09. 20:46Novi artikal AUDIT-FA-852021 — Audit disk prednji 852021Vlasnik"}
+errors {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+new save button {"label":"Sačuvaj artikal"}
+empty save {"focus":"BUTTON  ","toasts":[],"invalid":5,"describedBy":"f_R_65hbsnpfkcnpfclb_-msg"}

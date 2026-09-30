@@ -1,0 +1,59 @@
+{
+  "steps": [
+    {
+      "name": "after convert",
+      "at": "2026-09-30T20:26:09.164Z",
+      "url": "http://localhost:3100/admin/porudzbine/SK-2026-000142",
+      "dialogOpen": false,
+      "alerts": [
+        ""
+      ]
+    },
+    {
+      "name": "inquiry after",
+      "at": "2026-09-30T20:26:12.694Z",
+      "eventTypes": [
+        "inquiry.created",
+        "inquiry.status_changed",
+        "inquiry.status_changed",
+        "inquiry.status_changed"
+      ],
+      "kind": "part",
+      "photoCount": 0,
+      "status": "prihvacena",
+      "vin": null
+    },
+    {
+      "name": "order",
+      "at": "2026-09-30T20:26:22.511Z",
+      "text": "PorudžbinePorudžbina SK-2026-000142NovaPrimljena 30.09. 22:26 · Administracija · iz upita UP-2026-000054PredračunOtpremnicaPromeni statusPotvrdiStavkeIzmeni stavkeStavke porudžbine SK-2026-000142ArtikalKol.CenaRabatIznosKočioni disk prednji 276 × 24 mm5Q0 615 505 R · OEM 5Q0 615 505 R · Febi BilsteinBilo na stanju · sada 2 kom.14.690 RSD—4.690 RSDSenzor ABS prednji levi (dobavljač)wht 003 856 · Po porudžbini, rok 3 d17.450 RSD—7.450 RSDArtikli12.140 RSDDostavaBesplatnoUkupno sa PDV-om12.140 RSDod toga PDV2.023,33 RSDNapomenaNova napomena0 / 1.000Interna napomena vidi samo osoblje, osim ako je označeno drugačije.Vidljivo kupcu na stranici porudžbineDodaj napomenuIstorija30.09. 22:26E-pošta zabeležena (nije poslata, režim log): Porudžbina SK-2026-000142 je primljenaSistem30.09. 22:26Nova — Porudžbina je primljena.VlasnikE-pošta30.09. 22:26Nova porudžbina SK-2026-000142 — 12.140 RSDZabeleženo30.09. 22:26Porudžbina SK-2026-000142 je primljenaZabeleženoKupacImeUpit Test audit21TipGostTelefon+381 64 333 4455E-poštaaudit-flows-admin-2-963966@primer.rsPozoviViberWhatsAppDostavaNačinLično preuzimanjeCenaBesplatnoPlaćanjeOznači kao plaćenoNačinGotovinom pri preuzimanjuStatusNije plaćenoPoziv",
+      "probe": {
+        "customerType": "guest",
+        "deliveryMethod": "pickup",
+        "eventTypes": [
+          "order.created"
+        ],
+        "hasAttribution": false,
+        "itemCount": 2,
+        "paymentMethod": "pickup_cash",
+        "source": "admin",
+        "status": "nova",
+        "totalPara": 1214000
+      }
+    },
+    {
+      "name": "cancelled",
+      "at": "2026-09-30T20:26:30.634Z",
+      "head": "PorudžbinePorudžbina SK-2026-000142OtkazanaPrimljena 30.09. 22:26 · Administracija · iz upita UP-2026-000054PredračunOtpremnica Otkazana: Probna porud"
+    },
+    {
+      "name": "errors",
+      "at": "2026-09-30T20:26:30.634Z",
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  ],
+  "number": "SK-2026-000142"
+}

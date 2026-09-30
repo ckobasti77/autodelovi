@@ -1,0 +1,287 @@
+{
+  "nojs": [
+    {
+      "route": "/prijava",
+      "form": {
+        "method": null,
+        "action": null,
+        "names": [
+          "email",
+          "password"
+        ]
+      },
+      "url": "/prijava?email=audit-a11y-app-nojs%40primer.rs&password=TajnaLozinka-555",
+      "navRequests": [
+        "GET /prijava",
+        "GET /prijava?email=audit-a11y-app-nojs%40primer.rs&password=TajnaLozinka-555"
+      ],
+      "ev": "docs/qa/audit/a11y-app/v-nojs-prijava-390.webp"
+    },
+    {
+      "route": "/registracija",
+      "form": {
+        "method": null,
+        "action": null,
+        "names": [
+          "name",
+          "email",
+          "password"
+        ]
+      },
+      "url": "/registracija?name=Audit+Nojs&email=audit-a11y-app-nojs%40primer.rs&password=TajnaLozinka-555",
+      "navRequests": [
+        "GET /registracija",
+        "GET /registracija?name=Audit+Nojs&email=audit-a11y-app-nojs%40primer.rs&password=TajnaLozinka-555"
+      ],
+      "ev": "docs/qa/audit/a11y-app/v-nojs-registracija-390.webp"
+    }
+  ],
+  "rail1024": {
+    "links": [
+      {
+        "name": "SKLOP — početna",
+        "visibleText": "",
+        "title": null,
+        "size": "0x0",
+        "badges": []
+      },
+      {
+        "name": "Pregled",
+        "visibleText": "",
+        "title": null,
+        "size": "40x40",
+        "badges": []
+      },
+      {
+        "name": "Pregled",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      },
+      {
+        "name": "Porudžbine99+ novih",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": [
+          {
+            "text": "99+",
+            "color": "rgb(13, 15, 17)",
+            "bg": "rgb(255, 107, 26)",
+            "ratio": "6.74",
+            "fontSize": "11px",
+            "ariaHidden": false
+          }
+        ]
+      },
+      {
+        "name": "Upiti52 novih",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": [
+          {
+            "text": "52",
+            "color": "rgb(13, 15, 17)",
+            "bg": "rgb(255, 107, 26)",
+            "ratio": "6.74",
+            "fontSize": "11px",
+            "ariaHidden": false
+          }
+        ]
+      },
+      {
+        "name": "Kupci",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      },
+      {
+        "name": "Majstori",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      },
+      {
+        "name": "Proizvodi",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      },
+      {
+        "name": "Uvoz iz Excela",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      },
+      {
+        "name": "Kategorije",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      },
+      {
+        "name": "Vozila",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      },
+      {
+        "name": "Proizvođači",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      },
+      {
+        "name": "Lager15 bez zaliha",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      },
+      {
+        "name": "Pretrage",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      },
+      {
+        "name": "Izvori",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      },
+      {
+        "name": "E-pošta",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      },
+      {
+        "name": "Izvoz",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      },
+      {
+        "name": "Revizija",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      },
+      {
+        "name": "Privatnost",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      },
+      {
+        "name": "Cenovni razredi",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      },
+      {
+        "name": "Korisnici",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      },
+      {
+        "name": "Podešavanja",
+        "visibleText": "",
+        "title": null,
+        "size": "47x40",
+        "badges": []
+      }
+    ],
+    "tip": [
+      "Lager",
+      "Lager"
+    ],
+    "focus": {
+      "tag": "a",
+      "role": "",
+      "name": "Lager15 bez zaliha",
+      "id": "",
+      "href": "/admin/lager",
+      "outline": "solid 2px rgb(255, 107, 26) off -2px",
+      "shadow": "",
+      "rect": [
+        8,
+        492,
+        47,
+        40
+      ],
+      "inViewport": true
+    },
+    "ev": "docs/qa/audit/a11y-app/v-rail-1024-lager-focus.webp",
+    "_ms": 12143
+  },
+  "staleSession": [
+    {
+      "route": "/admin",
+      "first": {
+        "status": 200,
+        "location": "/prijava?next=%2Fadmin",
+        "url": "/admin",
+        "title": "",
+        "bodyText": 0
+      },
+      "ev": "docs/qa/audit/a11y-app/v-stale-session-admin-390.webp",
+      "afterReload": {
+        "status": 200,
+        "url": "/prijava?next=%2Fadmin",
+        "title": "Prijava | SKLOP"
+      }
+    },
+    {
+      "route": "/nalog",
+      "first": {
+        "status": 200,
+        "location": "/prijava?next=%2Fnalog",
+        "url": "/nalog",
+        "title": "",
+        "bodyText": 0
+      },
+      "ev": "docs/qa/audit/a11y-app/v-stale-session-nalog-390.webp",
+      "afterReload": {
+        "status": 200,
+        "url": "/prijava?next=%2Fnalog",
+        "title": "Prijava | SKLOP"
+      }
+    },
+    {
+      "route": "/majstor/brza-porudzbina",
+      "first": {
+        "status": 200,
+        "location": "/prijava?next=%2Fmajstor%2Fbrza-porudzbina",
+        "url": "/majstor/brza-porudzbina",
+        "title": "",
+        "bodyText": 0
+      },
+      "ev": "docs/qa/audit/a11y-app/v-stale-session-majstor-brza-porudzbina-390.webp",
+      "afterReload": {
+        "status": 200,
+        "url": "/prijava?next=%2Fmajstor%2Fbrza-porudzbina",
+        "title": "Prijava | SKLOP"
+      }
+    }
+  ]
+}

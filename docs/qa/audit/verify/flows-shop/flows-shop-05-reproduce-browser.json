@@ -1,0 +1,89 @@
+{
+  "nojs /deo/ne-postoji-demo-9999": {
+    "status": 404,
+    "title": "SKLOP — Rasklopi auto. Nađi deo.",
+    "h1": null,
+    "bodyText": "",
+    "shot": "docs/qa/audit/verify/flows-shop/flows-shop-05-reproduce-nojs-deo-390.webp"
+  },
+  "nojs /delovi/ne-postoji-kategorija": {
+    "status": 404,
+    "title": "SKLOP — Rasklopi auto. Nađi deo.",
+    "h1": null,
+    "bodyText": ""
+  },
+  "nojs /upit/losToken123": {
+    "status": 404,
+    "title": "SKLOP — Rasklopi auto. Nađi deo.",
+    "h1": null,
+    "bodyText": ""
+  },
+  "nojs /ovo-ne-postoji": {
+    "status": 404,
+    "title": "Stranica nije pronađena · SKLOP",
+    "h1": "Stranica nije pronađena",
+    "bodyText": "Preskoči na sadržaj\nSKLOP\nStranica nije pronađena\n\nAdresa je možda promenjena ili deo više nije u ponudi. Potražite ga p",
+    "shot": "docs/qa/audit/verify/flows-shop/flows-shop-05-reproduce-nojs-ovo-ne-postoji-390.webp"
+  },
+  "js run0 /deo/ne-postoji-demo-9999": {
+    "status": 404,
+    "tH1": 1943,
+    "tLoad": 1945,
+    "title": "SKLOP — Rasklopi auto. Nađi deo.",
+    "h1": "Stranica nije pronađena",
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ],
+    "shot": "docs/qa/audit/verify/flows-shop/flows-shop-05-reproduce-js-deo-390.webp"
+  },
+  "js run0 /ovo-ne-postoji": {
+    "status": 404,
+    "tH1": 4707,
+    "tLoad": 6839,
+    "title": "Stranica nije pronađena · SKLOP",
+    "h1": "Stranica nije pronađena",
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "js run1 /deo/ne-postoji-demo-9999": {
+    "status": 404,
+    "tH1": 3126,
+    "tLoad": 3126,
+    "title": "SKLOP — Rasklopi auto. Nađi deo.",
+    "h1": "Stranica nije pronađena",
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "js run1 /ovo-ne-postoji": {
+    "status": 404,
+    "tH1": 343,
+    "tLoad": 433,
+    "title": "Stranica nije pronađena · SKLOP",
+    "h1": "Stranica nije pronađena",
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "js run2 /deo/ne-postoji-demo-9999": {
+    "status": 404,
+    "tH1": 754,
+    "tLoad": 755,
+    "title": "SKLOP — Rasklopi auto. Nađi deo.",
+    "h1": "Stranica nije pronađena",
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  },
+  "js run2 /ovo-ne-postoji": {
+    "status": 404,
+    "tH1": 737,
+    "tLoad": 807,
+    "title": "Stranica nije pronađena · SKLOP",
+    "h1": "Stranica nije pronađena",
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    ]
+  }
+}

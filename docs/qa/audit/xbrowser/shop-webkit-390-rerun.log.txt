@@ -1,0 +1,1 @@
+webkit-390 {"steps":["home:ok","header-search:ok","search-results:ok","product:ok","add-to-cart:ok","category-vehicle-filter:ok","cart-drawer:ok","checkout:ok"],"number":"SK-2026-000134","probe":{"status":"nova","pay":"cod","del":"courier"},"csp":0,"console":[],"pageErrors":[],"bad":[]}

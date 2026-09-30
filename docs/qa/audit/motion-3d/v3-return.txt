@@ -1,0 +1,13 @@
+#1 home before leaving {"y":900,"trackTop":65,"s":{"progress":0.312153,"stage":2,"status":"ready"},"current":"02Točkovi"}
+#1 home via logo link +300ms {"y":0,"trackTop":65,"s":{"progress":0,"stage":0,"status":"loading"},"current":"00Sklopljeno"}
+#1 home via logo link +1500ms {"y":0,"trackTop":65,"s":{"progress":0,"stage":0,"status":"loading"},"current":"00Sklopljeno"}
+#1 home via logo link +4000ms {"y":0,"trackTop":65,"s":{"progress":0,"stage":0,"status":"ready"},"current":"00Sklopljeno"}
+#2 home before leaving {"y":1800,"trackTop":65,"s":{"progress":0.624653,"stage":5,"status":"ready"},"current":"05Motor i turbina"}
+#2 home via back +300ms {"y":1342,"trackTop":65,"s":{"progress":0.465625,"stage":4,"status":"loading"},"current":"04Agregati i hlađenje"}
+#2 home via back +1500ms {"y":1342,"trackTop":65,"s":{"progress":0.465625,"stage":4,"status":"loading"},"current":"04Agregati i hlađenje"}
+#2 home via back +4000ms {"y":1342,"trackTop":65,"s":{"progress":0.465625,"stage":4,"status":"ready"},"current":"04Agregati i hlađenje"}
+#3 home before leaving {"y":4042,"trackTop":65,"s":{"progress":1,"stage":7,"status":"ready"},"current":"07Izduvni sistem"}
+#3 home via logo link +300ms {"y":0,"trackTop":65,"s":{"progress":0,"stage":0,"status":"loading"},"current":"00Sklopljeno"}
+#3 home via logo link +1500ms {"y":0,"trackTop":65,"s":{"progress":0,"stage":0,"status":"loading"},"current":"00Sklopljeno"}
+#3 home via logo link +4000ms {"y":0,"trackTop":65,"s":{"progress":0,"stage":0,"status":"ready"},"current":"00Sklopljeno"}
+errors {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}

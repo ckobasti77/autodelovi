@@ -1,0 +1,27 @@
+motion-3d-01 independent reproduction (2026-09-30), http://localhost:3100/, consent pre-answered.
+Script: scripts/qa/audit/verify-motion-3d-01.mjs (poster: decoded currentSrc file mapped through object-fit/position; canvas: stage screenshot at progress 0, furniture hidden)
+        scripts/qa/audit/verify-motion-3d-01-posters.mjs (car bbox inside the poster files)
+
+width  viewport   stage     poster file                car (x,y,w,h)       %H    %W    %area  carTop%  centreX off  caption->car gap  stageTop@scroll0  canvas %H/%W (tier)
+360    360x780    360x608   car-assembled-m-640.avif   38,310,301,214      35.2  83.6  29.4   51.0     +8           225 px            661               35.2/83.6 (mid)
+390    390x844    390x672   car-assembled-m-640.avif   41,349,326,232      34.5  83.6  28.8   51.9     +9           264 px            663               34.4/83.6 (mid)
+412    412x915    412x743   car-assembled-m-640.avif   43,402,344,245      32.9  83.6  27.5   54.1     +9           316 px            665               33.0/83.7 (mid)
+430    430x932    430x760   car-assembled-m-640.avif   45,404,359,255      33.6  83.6  28.1   53.1     +10          318 px            666               33.6/83.7 (mid)
+768    768x1024   768x852   car-assembled-1080.avif    304,518,394,246     28.9  51.3  14.8   60.9     +117         431 px            585               28.8/51.2 (mid)
+820    820x1180   820x1008  car-assembled-1080.avif    324,652,421,263     26.1  51.3  13.4   64.7     +125         564 px            588               26.1/51.3 (mid)
+1024   1024x768   1024x704  car-assembled-1080.avif    454,295,483,302     42.9  47.2  20.2   41.9     (copy column)
+1440   1440x900   1440x836  car-assembled-1440.avif    639,261,680,424     50.7  47.2  24.0   31.2     (copy column)
+WebKit 390 / 768 (poster, .webp): identical to Chromium (34.5 % / 28.9 % H, gap 264 / 431 px).
+
+First screen at scrollY 0: the stage starts at 663 px (390x844), 661 (360x780), 585 (768x1024), 588 (820x1180);
+the car top sits at stageTop + carTop = 1012 / 971 / 1103 / 1240 px -> no part of the car is visible on the first screen
+at any phone or tablet width; the visible part of the stage is the caption plus empty dark stage.
+
+Poster files (car bbox as % of the poster): car-assembled-m-640 top 33.8 % bottom 81.1 %; car-exploded-m-640 top 27.8 % bottom 72.9 %
+-> even the exploded state leaves the top ~28 % of the 4:5 poster empty, so the headroom is not used at p = 1 either.
+car-assembled-1080 x 39.5-90.7 % (right-offset desktop composition reused on 768-1023 px).
+
+Spec: DESIGN-SYSTEM 7.6 — <768 px "portrait 4:5 stage", car length ~92 % of width; 768-1023 px "32 deg, centred horizontally, ~82 %".
+Actual: phone stage is 100svh - header (390x672, aspect 0.58, not 4:5) with the 4:5 poster bottom-anchored (185 px extra band);
+tablet uses the 28 deg desktop camera, car 51 % wide and 117-125 px right of centre (lib/three/framing.ts 768-1023 branch).
+Known: docs/3d/WEB-QA.md line 141 records it as P2 deferred to step 21 ("large empty band between the stage caption and the car").

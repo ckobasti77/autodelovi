@@ -1,0 +1,20 @@
+# Next server log summary (step 21 audit; raw logs not committed)
+## .qa-server.log (6149 lines)
+     36 Uncaught Error: Uncaught
+     31 ⨯ TypeError: fetch failed
+     30 ⨯ Error: The destination stream closed early.
+     30 Hit error while running `auth:signIn`
+     12 Uncaught Error: InvalidAccountId
+      9 Uncaught ConvexError: {"code":"INVALID_EMAIL"
+      7 ⨯ uncaughtException:  Error: aborted
+      7 Ready (server start)
+      2 Uncaught Error: InvalidSecret
+      1 Uncaught ConvexError: {"code":"WEAK_PASSWORD"
+## .qa-server-perf.log (5 lines)
+      1 Ready (server start)
+## watchdog restarts
+20:11:04 3100 down — restarting
+20:23:08 3100 down — restarting
+21:44:18 3100 down — (re)starting
+22:00:25 3100 down — (re)starting
+22:01:20 3100 down — (re)starting

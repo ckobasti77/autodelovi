@@ -1,0 +1,144 @@
+{
+  "engine": "webkit",
+  "width": 390,
+  "meta": "width=device-width, initial-scale=1, viewport-fit=cover",
+  "routes": {
+    "/upit": {
+      "total": 11,
+      "under16": [
+        {
+          "id": "Dodaj kategoriju",
+          "tag": "select",
+          "type": "select-one",
+          "size": 14,
+          "font": "Public Sans",
+          "cls": "h-full w-full cursor-pointer appearance-none bg-transparent pl-3 pr-9 text-ink-1 outline-none focus-visible:outline-none disabled:cursor-not-allowed type-body-s"
+        }
+      ]
+    },
+    "/za-majstore": {
+      "total": 1,
+      "under16": [
+        {
+          "id": "qod-input",
+          "tag": "textarea",
+          "type": "textarea",
+          "size": 15,
+          "font": "Martian Mono",
+          "cls": "w-full resize-y rounded-xs border border-control bg-surface-2 px-3 py-2.5 font-mono text-[0.9375rem] leading-relaxed text-ink-1 transition-control hover:border-"
+        }
+      ]
+    },
+    "/prijava": {
+      "total": 2,
+      "under16": []
+    },
+    "/registracija": {
+      "total": 3,
+      "under16": []
+    },
+    "/za-majstore/registracija": {
+      "total": 9,
+      "under16": []
+    },
+    "/kontakt": {
+      "total": 0,
+      "under16": []
+    },
+    "/pretraga?q=disk": {
+      "total": 1,
+      "under16": []
+    },
+    "/delovi/kocioni-diskovi": {
+      "total": 1,
+      "under16": []
+    },
+    "/deo/kocioni-disk-prednji-276-24-mm-demo-0004": {
+      "total": 1,
+      "under16": []
+    },
+    "/zaboravljena-lozinka": {
+      "total": 1,
+      "under16": []
+    },
+    "/korpa": {
+      "total": 1,
+      "under16": []
+    },
+    "/porudzbina": {
+      "total": 5,
+      "under16": []
+    },
+    "/majstor": {
+      "total": 1,
+      "under16": [
+        {
+          "id": "qo-input",
+          "tag": "textarea",
+          "type": "textarea",
+          "size": 15,
+          "font": "Martian Mono",
+          "cls": "min-h-32 w-full resize-y rounded-xs border border-control bg-surface-2 px-3 py-2.5 font-mono text-[0.9375rem] leading-relaxed text-ink-1 transition-control plac"
+        }
+      ]
+    },
+    "/majstor/brza-porudzbina": {
+      "total": 1,
+      "under16": [
+        {
+          "id": "qo-input",
+          "tag": "textarea",
+          "type": "textarea",
+          "size": 15,
+          "font": "Martian Mono",
+          "cls": "min-h-32 w-full resize-y rounded-xs border border-control bg-surface-2 px-3 py-2.5 font-mono text-[0.9375rem] leading-relaxed text-ink-1 transition-control plac"
+        }
+      ]
+    },
+    "/majstor/porudzbine": {
+      "total": 0,
+      "under16": []
+    },
+    "/majstor/vozila": {
+      "total": 0,
+      "under16": []
+    },
+    "/majstor/cenovnik": {
+      "total": 0,
+      "under16": []
+    },
+    "/majstor/upiti": {
+      "total": 0,
+      "under16": []
+    },
+    "/majstor/profil": {
+      "total": 4,
+      "under16": []
+    },
+    "/majstor/omiljeno": {
+      "total": 1,
+      "under16": []
+    }
+  },
+  "upitSelect": {
+    "size": "14px",
+    "box": {
+      "x": 17,
+      "y": 444.609375,
+      "width": 356,
+      "height": 34
+    },
+    "scaleAfterFocus": 1
+  },
+  "qo": {
+    "size": "15px",
+    "font": "Martian Mono, Martian Mono Fallback, ui-monospace, Cascadia Mono, Consolas, monospace",
+    "box": {
+      "x": 33,
+      "y": 296.671875,
+      "width": 324,
+      "height": 217
+    },
+    "scaleAfterFocus": 1
+  }
+}

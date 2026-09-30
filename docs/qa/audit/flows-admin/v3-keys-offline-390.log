@@ -1,0 +1,14 @@
+﻿g p (h1 clicked) {"url":"http://localhost:3100/admin/porudzbine","active":"MAIN"}
+g u {"url":"http://localhost:3100/admin/upiti"}
+arrows {"active":"<main id=\"sadrzaj\" tabindex=\"-1\" class=\"mx-auto w-full max-w-[1680px] flex-1 px-4 py-6 outline-none lg:px-6 print:p-0\"><div class=\"flex flex-col gap-4\"><div class=\"mb-6 flex flex-wrap items-start just","selectedRows":0}
+enter {"url":"http://localhost:3100/admin/porudzbine?status=sve"}
+offline after submit {"btnBusy":"true","btnDisabled":true,"textarea":"Offline beleška (audit flows-admin).","toasts":[],"alerts":[""],"offlineBanner":""}
+offline confirm {"dialogOpen":true,"dialogBusy":"true","head":"PorudžbinePorudžbina SK-2026-000141NovaPrimljena 30.09. 22:19 · SajtPredračunOtpremnicaPromeni statusPotvrdiStavkeIzmeni"}
+back online {"noteInHistory":true,"head":"PorudžbinePorudžbina SK-2026-000141PotvrđenaPrimljena 30.09. 22:19 · SajtPredračunOtpremnicaPromeni statusOznači kao pos","dialogOpen":false,"toasts":[]}
+offline errors {"console":["WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED","WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED","WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED","WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED","WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::
+390 /admin {"url":"http://localhost:3100/admin","ov":{"over":0,"offenders":[]},"ax":[]}
+390 /admin/porudzbine {"url":"http://localhost:3100/prijava?next=%2Fadmin%2Fporudzbine","ov":{"over":0,"offenders":[]},"ax":[]}
+390 /admin/porudzbine/SK-2026-000141 {"url":"http://localhost:3100/prijava?next=%2Fadmin%2Fporudzbine%2FSK-2026-000141","ov":{"over":0,"offenders":[]},"ax":[]}
+390 /admin/upiti/UP-2026-000054 {"url":"http://localhost:3100/prijava?next=%2Fadmin%2Fupiti%2FUP-2026-000054","ov":{"over":0,"offenders":[]},"ax":[]}
+390 /admin/proizvodi/qh7cqja340240s4jq1fsawnc3s8fctej {"url":"http://localhost:3100/prijava?next=%2Fadmin%2Fproizvodi%2Fqh7cqja340240s4jq1fsawnc3s8fctej","ov":{"over":0,"offenders":[]},"ax":[]}
+390 /admin/podesavanja {"url":"http://localhost:3100/prijava?next=%2Fadmin%2Fpodesavanja","ov":{"over":0,"offenders":[]},"ax":[]}

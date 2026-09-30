@@ -1,0 +1,220 @@
+{
+  "registracija-390": {
+    "checkbox": {
+      "id": "cb_R_cinpfd9fclb_",
+      "ariaInvalid": null,
+      "describedby": null,
+      "ariaErrormessage": null,
+      "required": null
+    },
+    "consentError": {
+      "id": null,
+      "role": null,
+      "hasIcon": false,
+      "text": "Potrebna je saglasnost sa uslovima korišćenja.",
+      "liveAncestor": false
+    },
+    "textInputs": [
+      {
+        "name": "name",
+        "invalid": "true",
+        "describedby": "f_R_1inpfd9fclb_-msg",
+        "descText": [
+          "Upišite ime i prezime."
+        ]
+      },
+      {
+        "name": "email",
+        "invalid": "true",
+        "describedby": "f_R_2inpfd9fclb_-msg",
+        "descText": [
+          "E-mail adresa nije ispravna. Primer: ime@primer.rs"
+        ]
+      },
+      {
+        "name": "password",
+        "invalid": "true",
+        "describedby": "f_R_3inpfd9fclb_-msg",
+        "descText": [
+          "Lozinka mora imati najmanje 10 znakova."
+        ]
+      },
+      {
+        "name": "",
+        "invalid": null,
+        "describedby": null,
+        "descText": []
+      }
+    ],
+    "errorSummary": null,
+    "focusAfterSubmit": "button Napravi nalog",
+    "checkboxSnapshot": "- checkbox \"Prihvatam uslove korišćenja i politiku privatnosti.\"",
+    "shot": "docs/qa/audit/verify/a11y-app/a11y-app-06-reproduce-registracija-390.webp"
+  },
+  "registracija-1440": {
+    "checkbox": {
+      "id": "cb_R_cinpfd9fclb_",
+      "ariaInvalid": null,
+      "describedby": null,
+      "ariaErrormessage": null,
+      "required": null
+    },
+    "consentError": {
+      "id": null,
+      "role": null,
+      "hasIcon": false,
+      "text": "Potrebna je saglasnost sa uslovima korišćenja.",
+      "liveAncestor": false
+    },
+    "textInputs": [
+      {
+        "name": "name",
+        "invalid": "true",
+        "describedby": "f_R_1inpfd9fclb_-msg",
+        "descText": [
+          "Upišite ime i prezime."
+        ]
+      },
+      {
+        "name": "email",
+        "invalid": "true",
+        "describedby": "f_R_2inpfd9fclb_-msg",
+        "descText": [
+          "E-mail adresa nije ispravna. Primer: ime@primer.rs"
+        ]
+      },
+      {
+        "name": "password",
+        "invalid": "true",
+        "describedby": "f_R_3inpfd9fclb_-msg",
+        "descText": [
+          "Lozinka mora imati najmanje 10 znakova."
+        ]
+      },
+      {
+        "name": "",
+        "invalid": null,
+        "describedby": null,
+        "descText": []
+      }
+    ],
+    "errorSummary": null,
+    "focusAfterSubmit": "button Napravi nalog",
+    "checkboxSnapshot": "- checkbox \"Prihvatam uslove korišćenja i politiku privatnosti.\"",
+    "shot": "docs/qa/audit/verify/a11y-app/a11y-app-06-reproduce-registracija-1440.webp"
+  },
+  "majstori-390": {
+    "checkbox": {
+      "id": "cb_R_5phbsnpfd9fclb_",
+      "ariaInvalid": null,
+      "describedby": null,
+      "ariaErrormessage": null,
+      "required": null
+    },
+    "consentError": {
+      "id": null,
+      "role": null,
+      "hasIcon": false,
+      "text": "Potrebna je saglasnost sa uslovima korišćenja.",
+      "liveAncestor": false
+    },
+    "textInputs": [
+      {
+        "name": "email",
+        "invalid": "true",
+        "describedby": "mr-email-msg",
+        "descText": [
+          "E-mail adresa nije ispravna. Primer: ime@primer.rs"
+        ]
+      },
+      {
+        "name": "password",
+        "invalid": "true",
+        "describedby": "mr-password-msg",
+        "descText": [
+          "Lozinka mora imati najmanje 10 znakova."
+        ]
+      },
+      {
+        "name": "companyName",
+        "invalid": "true",
+        "describedby": "mr-companyName-msg",
+        "descText": [
+          "Upišite naziv servisa ili firme."
+        ]
+      },
+      {
+        "name": "pib",
+        "invalid": "true",
+        "describedby": "mr-pib-msg",
+        "descText": [
+          "PIB ima 9 cifara i kontrolni broj ne odgovara. Pro"
+        ]
+      }
+    ],
+    "errorSummary": {
+      "text": "Proverite označena polja:E-mail adresa nije ispravna. Primer: ime@primer.rs.Lozinka mora imati najmanje 10 znakova.Upišite naziv servisa ili firme.PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja.Matični broj ima 8 cifara.Upišite ime i prezime kontakt osobe.Upišite broj telef",
+      "consentLinkHref": "#mr-terms"
+    },
+    "focusAfterSubmit": "input ",
+    "checkboxSnapshot": "- checkbox \"Prihvatam uslove korišćenja i politiku privatnosti.\"",
+    "shot": "docs/qa/audit/verify/a11y-app/a11y-app-06-reproduce-majstori-390.webp"
+  },
+  "majstori-1440": {
+    "checkbox": {
+      "id": "cb_R_5phbsnpfd9fclb_",
+      "ariaInvalid": null,
+      "describedby": null,
+      "ariaErrormessage": null,
+      "required": null
+    },
+    "consentError": {
+      "id": null,
+      "role": null,
+      "hasIcon": false,
+      "text": "Potrebna je saglasnost sa uslovima korišćenja.",
+      "liveAncestor": false
+    },
+    "textInputs": [
+      {
+        "name": "email",
+        "invalid": "true",
+        "describedby": "mr-email-msg",
+        "descText": [
+          "E-mail adresa nije ispravna. Primer: ime@primer.rs"
+        ]
+      },
+      {
+        "name": "password",
+        "invalid": "true",
+        "describedby": "mr-password-msg",
+        "descText": [
+          "Lozinka mora imati najmanje 10 znakova."
+        ]
+      },
+      {
+        "name": "companyName",
+        "invalid": "true",
+        "describedby": "mr-companyName-msg",
+        "descText": [
+          "Upišite naziv servisa ili firme."
+        ]
+      },
+      {
+        "name": "pib",
+        "invalid": "true",
+        "describedby": "mr-pib-msg",
+        "descText": [
+          "PIB ima 9 cifara i kontrolni broj ne odgovara. Pro"
+        ]
+      }
+    ],
+    "errorSummary": {
+      "text": "Proverite označena polja:E-mail adresa nije ispravna. Primer: ime@primer.rs.Lozinka mora imati najmanje 10 znakova.Upišite naziv servisa ili firme.PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja.Matični broj ima 8 cifara.Upišite ime i prezime kontakt osobe.Upišite broj telef",
+      "consentLinkHref": "#mr-terms"
+    },
+    "focusAfterSubmit": "input ",
+    "checkboxSnapshot": "- checkbox \"Prihvatam uslove korišćenja i politiku privatnosti.\"",
+    "shot": "docs/qa/audit/verify/a11y-app/a11y-app-06-reproduce-majstori-1440.webp"
+  }
+}

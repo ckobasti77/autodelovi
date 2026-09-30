@@ -1,0 +1,12 @@
+{
+  "steps": [
+    "/Volkswagen/i -> Volkswagen",
+    "/^Golf/i -> Golf",
+    "/Golf 7|VII|Mk7/i -> Golf VII2012–20205G",
+    "/Ne znam motor/i -> Ne znam motor"
+  ],
+  "dialogsLeft": 0,
+  "afterSelect": "BODY  \"Preskoči na sadržajSKLOPDeloviVozilaZa m\"",
+  "chip": "Golf VII",
+  "afterTab": "A skip-link \"Preskoči na sadržaj\""
+}

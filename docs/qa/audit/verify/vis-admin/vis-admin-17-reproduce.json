@@ -1,0 +1,622 @@
+{
+  "1440/admin/porudzbine": {
+    "header": {
+      "x": 232,
+      "r": 1440,
+      "y": 0,
+      "w": 1208
+    },
+    "crumbFirst": {
+      "x": 256,
+      "r": 318,
+      "y": 17,
+      "w": 62
+    },
+    "crumbText": "Pregled/Porudžbine",
+    "search": {
+      "x": 898,
+      "r": 1258,
+      "y": 10,
+      "w": 360
+    },
+    "account": {
+      "x": 1322,
+      "r": 1416,
+      "y": 8,
+      "w": 94
+    },
+    "main": {
+      "x": 232,
+      "r": 1440,
+      "y": 56,
+      "w": 1208
+    },
+    "mainInner": {
+      "x": 256,
+      "r": 1416
+    },
+    "h1": {
+      "x": 256,
+      "r": 371,
+      "y": 80,
+      "w": 115
+    },
+    "h1Text": "Porudžbine",
+    "table": {
+      "x": 257,
+      "r": 1415,
+      "y": 280,
+      "w": 1158
+    },
+    "leftOffset": 0,
+    "rightOffset": 0
+  },
+  "1440/admin": {
+    "header": {
+      "x": 232,
+      "r": 1440,
+      "y": 0,
+      "w": 1208
+    },
+    "crumbFirst": {
+      "x": 256,
+      "r": 308,
+      "y": 17,
+      "w": 52
+    },
+    "crumbText": "Pregled",
+    "search": {
+      "x": 898,
+      "r": 1258,
+      "y": 10,
+      "w": 360
+    },
+    "account": {
+      "x": 1322,
+      "r": 1416,
+      "y": 8,
+      "w": 94
+    },
+    "main": {
+      "x": 232,
+      "r": 1440,
+      "y": 56,
+      "w": 1208
+    },
+    "mainInner": {
+      "x": 256,
+      "r": 1416
+    },
+    "h1": {
+      "x": 256,
+      "r": 336,
+      "y": 80,
+      "w": 80
+    },
+    "h1Text": "Pregled",
+    "table": {
+      "x": 0,
+      "r": 0,
+      "y": 0,
+      "w": 0
+    },
+    "leftOffset": 0,
+    "rightOffset": 0
+  },
+  "1440/admin/podesavanja": {
+    "header": {
+      "x": 232,
+      "r": 1440,
+      "y": 0,
+      "w": 1208
+    },
+    "crumbFirst": {
+      "x": 256,
+      "r": 318,
+      "y": 17,
+      "w": 62
+    },
+    "crumbText": "Pregled/Podešavanja",
+    "search": {
+      "x": 898,
+      "r": 1258,
+      "y": 10,
+      "w": 360
+    },
+    "account": {
+      "x": 1322,
+      "r": 1416,
+      "y": 8,
+      "w": 94
+    },
+    "main": {
+      "x": 232,
+      "r": 1440,
+      "y": 56,
+      "w": 1208
+    },
+    "mainInner": {
+      "x": 256,
+      "r": 1416
+    },
+    "h1": {
+      "x": 256,
+      "r": 385,
+      "y": 80,
+      "w": 129
+    },
+    "h1Text": "Podešavanja",
+    "table": null,
+    "leftOffset": 0,
+    "rightOffset": 0
+  },
+  "1440-log": {
+    "console": [],
+    "pageErrors": []
+  },
+  "1920/admin/porudzbine": {
+    "header": {
+      "x": 232,
+      "r": 1920,
+      "y": 0,
+      "w": 1688
+    },
+    "crumbFirst": {
+      "x": 256,
+      "r": 318,
+      "y": 17,
+      "w": 62
+    },
+    "crumbText": "Pregled/Porudžbine",
+    "search": {
+      "x": 1378,
+      "r": 1738,
+      "y": 10,
+      "w": 360
+    },
+    "account": {
+      "x": 1802,
+      "r": 1896,
+      "y": 8,
+      "w": 94
+    },
+    "main": {
+      "x": 236,
+      "r": 1916,
+      "y": 56,
+      "w": 1680
+    },
+    "mainInner": {
+      "x": 260,
+      "r": 1892
+    },
+    "h1": {
+      "x": 260,
+      "r": 375,
+      "y": 80,
+      "w": 115
+    },
+    "h1Text": "Porudžbine",
+    "table": {
+      "x": 261,
+      "r": 1891,
+      "y": 280,
+      "w": 1630
+    },
+    "leftOffset": 4,
+    "rightOffset": 4
+  },
+  "1920/admin": {
+    "header": {
+      "x": 232,
+      "r": 1920,
+      "y": 0,
+      "w": 1688
+    },
+    "crumbFirst": {
+      "x": 256,
+      "r": 308,
+      "y": 17,
+      "w": 52
+    },
+    "crumbText": "Pregled",
+    "search": {
+      "x": 1378,
+      "r": 1738,
+      "y": 10,
+      "w": 360
+    },
+    "account": {
+      "x": 1802,
+      "r": 1896,
+      "y": 8,
+      "w": 94
+    },
+    "main": {
+      "x": 236,
+      "r": 1916,
+      "y": 56,
+      "w": 1680
+    },
+    "mainInner": {
+      "x": 260,
+      "r": 1892
+    },
+    "h1": {
+      "x": 260,
+      "r": 340,
+      "y": 80,
+      "w": 80
+    },
+    "h1Text": "Pregled",
+    "table": {
+      "x": 0,
+      "r": 0,
+      "y": 0,
+      "w": 0
+    },
+    "leftOffset": 4,
+    "rightOffset": 4
+  },
+  "1920/admin/podesavanja": {
+    "header": {
+      "x": 232,
+      "r": 1920,
+      "y": 0,
+      "w": 1688
+    },
+    "crumbFirst": {
+      "x": 256,
+      "r": 318,
+      "y": 17,
+      "w": 62
+    },
+    "crumbText": "Pregled/Podešavanja",
+    "search": {
+      "x": 1378,
+      "r": 1738,
+      "y": 10,
+      "w": 360
+    },
+    "account": {
+      "x": 1802,
+      "r": 1896,
+      "y": 8,
+      "w": 94
+    },
+    "main": {
+      "x": 236,
+      "r": 1916,
+      "y": 56,
+      "w": 1680
+    },
+    "mainInner": {
+      "x": 260,
+      "r": 1892
+    },
+    "h1": {
+      "x": 260,
+      "r": 389,
+      "y": 80,
+      "w": 129
+    },
+    "h1Text": "Podešavanja",
+    "table": null,
+    "leftOffset": 4,
+    "rightOffset": 4
+  },
+  "1920-log": {
+    "console": [],
+    "pageErrors": []
+  },
+  "2200/admin/porudzbine": {
+    "header": {
+      "x": 232,
+      "r": 2200,
+      "y": 0,
+      "w": 1968
+    },
+    "crumbFirst": {
+      "x": 256,
+      "r": 318,
+      "y": 17,
+      "w": 62
+    },
+    "crumbText": "Pregled/Porudžbine",
+    "search": {
+      "x": 1658,
+      "r": 2018,
+      "y": 10,
+      "w": 360
+    },
+    "account": {
+      "x": 2082,
+      "r": 2176,
+      "y": 8,
+      "w": 94
+    },
+    "main": {
+      "x": 376,
+      "r": 2056,
+      "y": 56,
+      "w": 1680
+    },
+    "mainInner": {
+      "x": 400,
+      "r": 2032
+    },
+    "h1": {
+      "x": 400,
+      "r": 515,
+      "y": 80,
+      "w": 115
+    },
+    "h1Text": "Porudžbine",
+    "table": {
+      "x": 401,
+      "r": 2031,
+      "y": 280,
+      "w": 1630
+    },
+    "leftOffset": 144,
+    "rightOffset": 144
+  },
+  "2200/admin": {
+    "header": {
+      "x": 232,
+      "r": 2200,
+      "y": 0,
+      "w": 1968
+    },
+    "crumbFirst": {
+      "x": 256,
+      "r": 308,
+      "y": 17,
+      "w": 52
+    },
+    "crumbText": "Pregled",
+    "search": {
+      "x": 1658,
+      "r": 2018,
+      "y": 10,
+      "w": 360
+    },
+    "account": {
+      "x": 2082,
+      "r": 2176,
+      "y": 8,
+      "w": 94
+    },
+    "main": {
+      "x": 376,
+      "r": 2056,
+      "y": 56,
+      "w": 1680
+    },
+    "mainInner": {
+      "x": 400,
+      "r": 2032
+    },
+    "h1": {
+      "x": 400,
+      "r": 480,
+      "y": 80,
+      "w": 80
+    },
+    "h1Text": "Pregled",
+    "table": {
+      "x": 0,
+      "r": 0,
+      "y": 0,
+      "w": 0
+    },
+    "leftOffset": 144,
+    "rightOffset": 144
+  },
+  "2200/admin/podesavanja": {
+    "header": {
+      "x": 232,
+      "r": 2200,
+      "y": 0,
+      "w": 1968
+    },
+    "crumbFirst": {
+      "x": 256,
+      "r": 318,
+      "y": 17,
+      "w": 62
+    },
+    "crumbText": "Pregled/Podešavanja",
+    "search": {
+      "x": 1658,
+      "r": 2018,
+      "y": 10,
+      "w": 360
+    },
+    "account": {
+      "x": 2082,
+      "r": 2176,
+      "y": 8,
+      "w": 94
+    },
+    "main": {
+      "x": 376,
+      "r": 2056,
+      "y": 56,
+      "w": 1680
+    },
+    "mainInner": {
+      "x": 400,
+      "r": 2032
+    },
+    "h1": {
+      "x": 400,
+      "r": 529,
+      "y": 80,
+      "w": 129
+    },
+    "h1Text": "Podešavanja",
+    "table": null,
+    "leftOffset": 144,
+    "rightOffset": 144
+  },
+  "2200-log": {
+    "console": [],
+    "pageErrors": []
+  },
+  "2560/admin/porudzbine": {
+    "header": {
+      "x": 232,
+      "r": 2560,
+      "y": 0,
+      "w": 2328
+    },
+    "crumbFirst": {
+      "x": 256,
+      "r": 318,
+      "y": 17,
+      "w": 62
+    },
+    "crumbText": "Pregled/Porudžbine",
+    "search": {
+      "x": 2018,
+      "r": 2378,
+      "y": 10,
+      "w": 360
+    },
+    "account": {
+      "x": 2442,
+      "r": 2536,
+      "y": 8,
+      "w": 94
+    },
+    "main": {
+      "x": 556,
+      "r": 2236,
+      "y": 56,
+      "w": 1680
+    },
+    "mainInner": {
+      "x": 580,
+      "r": 2212
+    },
+    "h1": {
+      "x": 580,
+      "r": 695,
+      "y": 80,
+      "w": 115
+    },
+    "h1Text": "Porudžbine",
+    "table": {
+      "x": 581,
+      "r": 2211,
+      "y": 280,
+      "w": 1630
+    },
+    "leftOffset": 324,
+    "rightOffset": 324
+  },
+  "2560/admin": {
+    "header": {
+      "x": 232,
+      "r": 2560,
+      "y": 0,
+      "w": 2328
+    },
+    "crumbFirst": {
+      "x": 256,
+      "r": 308,
+      "y": 17,
+      "w": 52
+    },
+    "crumbText": "Pregled",
+    "search": {
+      "x": 2018,
+      "r": 2378,
+      "y": 10,
+      "w": 360
+    },
+    "account": {
+      "x": 2442,
+      "r": 2536,
+      "y": 8,
+      "w": 94
+    },
+    "main": {
+      "x": 556,
+      "r": 2236,
+      "y": 56,
+      "w": 1680
+    },
+    "mainInner": {
+      "x": 580,
+      "r": 2212
+    },
+    "h1": {
+      "x": 580,
+      "r": 660,
+      "y": 80,
+      "w": 80
+    },
+    "h1Text": "Pregled",
+    "table": {
+      "x": 0,
+      "r": 0,
+      "y": 0,
+      "w": 0
+    },
+    "leftOffset": 324,
+    "rightOffset": 324
+  },
+  "2560/admin/podesavanja": {
+    "header": {
+      "x": 232,
+      "r": 2560,
+      "y": 0,
+      "w": 2328
+    },
+    "crumbFirst": {
+      "x": 256,
+      "r": 318,
+      "y": 17,
+      "w": 62
+    },
+    "crumbText": "Pregled/Podešavanja",
+    "search": {
+      "x": 2018,
+      "r": 2378,
+      "y": 10,
+      "w": 360
+    },
+    "account": {
+      "x": 2442,
+      "r": 2536,
+      "y": 8,
+      "w": 94
+    },
+    "main": {
+      "x": 556,
+      "r": 2236,
+      "y": 56,
+      "w": 1680
+    },
+    "mainInner": {
+      "x": 580,
+      "r": 2212
+    },
+    "h1": {
+      "x": 580,
+      "r": 709,
+      "y": 80,
+      "w": 129
+    },
+    "h1Text": "Podešavanja",
+    "table": null,
+    "leftOffset": 324,
+    "rightOffset": 324
+  },
+  "2560-log": {
+    "console": [],
+    "pageErrors": []
+  }
+}

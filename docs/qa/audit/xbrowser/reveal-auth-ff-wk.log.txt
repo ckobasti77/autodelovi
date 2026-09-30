@@ -1,0 +1,16 @@
+firefox-1440-/nalog {"scrollH":1020,"stuck":0,"pending":0,"words":0,"detail":[],"stuckS":[]}
+firefox-1440-/nalog/porudzbine {"scrollH":978,"stuck":0,"pending":0,"words":0,"detail":[],"stuckS":[]}
+firefox-1440-/majstor {"scrollH":1739,"stuck":0,"pending":0,"words":0,"detail":[],"stuckS":[]}
+firefox-1440-/majstor/brza-porudzbina {"scrollH":1252,"stuck":0,"pending":0,"words":0,"detail":[],"stuckS":[]}
+firefox-390-/nalog {"scrollH":1969,"stuck":0,"pending":0,"words":0,"detail":[],"stuckS":[]}
+firefox-390-/nalog/porudzbine {"scrollH":1658,"stuck":0,"pending":0,"words":0,"detail":[],"stuckS":[]}
+firefox-390-/majstor {"scrollH":3264,"stuck":0,"pending":0,"words":0,"detail":[],"stuckS":[]}
+firefox-390-/majstor/brza-porudzbina {"scrollH":2248,"stuck":0,"pending":0,"words":0,"detail":[],"stuckS":[]}
+webkit-1440-/nalog {"scrollH":1020,"stuck":0,"pending":0,"words":0,"detail":[],"stuckS":[]}
+webkit-1440-/nalog/porudzbine {"scrollH":978,"stuck":0,"pending":0,"words":0,"detail":[],"stuckS":[]}
+webkit-1440-/majstor {"scrollH":1739,"stuck":0,"pending":0,"words":0,"detail":[],"stuckS":[]}
+webkit-1440-/majstor/brza-porudzbina {"scrollH":1252,"stuck":0,"pending":0,"words":0,"detail":[],"stuckS":[]}
+webkit-390-/nalog {"scrollH":1969,"stuck":0,"pending":0,"words":0,"detail":[],"stuckS":[]}
+webkit-390-/nalog/porudzbine {"scrollH":1658,"stuck":0,"pending":0,"words":0,"detail":[],"stuckS":[]}
+webkit-390-/majstor {"scrollH":3264,"stuck":0,"pending":0,"words":0,"detail":[],"stuckS":[]}
+webkit-390-/majstor/brza-porudzbina {"scrollH":2248,"stuck":0,"pending":0,"words":0,"detail":[],"stuckS":[]}

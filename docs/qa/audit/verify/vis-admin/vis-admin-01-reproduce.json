@@ -1,0 +1,889 @@
+{
+  "360": {
+    "vw": 360,
+    "docW": 1628,
+    "bodyW": 1628,
+    "htmlOverflowX": "visible",
+    "bodyOverflowX": "visible",
+    "scrollXAfter": 188,
+    "sections": [
+      {
+        "title": "Red čekanja",
+        "left": 16,
+        "right": 692,
+        "width": 676
+      },
+      {
+        "title": "Aktivnost",
+        "left": 16,
+        "right": 692,
+        "width": 676
+      },
+      {
+        "title": "Porudžbine po danima",
+        "left": 16,
+        "right": 1628,
+        "width": 1612
+      },
+      {
+        "title": "Traženo, a nemamo",
+        "left": 16,
+        "right": 1628,
+        "width": 1612
+      },
+      {
+        "title": "Porudžbine po sistemima",
+        "left": 16,
+        "right": 344,
+        "width": 328
+      }
+    ],
+    "queueRows": [
+      {
+        "text": "SK-2026-000001PorudžbinaPetar Demo · 15.270 RSD9 h 28 min — kasniprimljeno 29.09. 16:31",
+        "leftCol": [
+          37,
+          510
+        ],
+        "rightCol": [
+          522,
+          671
+        ],
+        "rightVisible": false
+      },
+      {
+        "text": "UP-2026-000002UpitDemo Kupac · Traži deo · Pumpa za vodu za Octavia III 1.6 TDI, ima li na stanju?9 h 28 min — kasniprim",
+        "leftCol": [
+          37,
+          510
+        ],
+        "rightCol": [
+          522,
+          671
+        ],
+        "rightVisible": false
+      },
+      {
+        "text": "SK-2026-000009PorudžbinaNikola Stanković · 7.740 RSD9 h — kasniprimljeno 30.09. 03:39",
+        "leftCol": [
+          37,
+          510
+        ],
+        "rightCol": [
+          522,
+          671
+        ],
+        "rightVisible": false
+      },
+      {
+        "text": "UP-2026-000005UpitMarko Jovanović · Po broju šasije · Volkswagen Golf V (2008)9 h — kasniprimljeno 30.09. 03:41",
+        "leftCol": [
+          37,
+          510
+        ],
+        "rightCol": [
+          522,
+          671
+        ],
+        "rightVisible": false
+      }
+    ],
+    "queueGrid": {
+      "cls": "grid gap-6 xl:grid-cols-2",
+      "gridTemplateColumns": "675.953px",
+      "width": 328
+    },
+    "offenders": [
+      {
+        "tag": "section",
+        "cls": "rounded-sm border border-line bg-surface-1",
+        "right": 692
+      },
+      {
+        "tag": "div",
+        "cls": "flex min-h-12 items-center justify-between gap-3 border-b bo",
+        "right": 691
+      },
+      {
+        "tag": "div",
+        "cls": "flex items-center gap-2",
+        "right": 675
+      },
+      {
+        "tag": "span",
+        "cls": "type-caption text-ink-3",
+        "right": 675
+      },
+      {
+        "tag": "div",
+        "cls": "p-4",
+        "right": 691
+      },
+      {
+        "tag": "ul",
+        "cls": "flex flex-col divide-y divide-line-faint",
+        "right": 675
+      },
+      {
+        "tag": "li",
+        "cls": "",
+        "right": 675
+      },
+      {
+        "tag": "a",
+        "cls": "flex items-center gap-3 px-1 py-2.5 transition-control hover",
+        "right": 675
+      },
+      {
+        "tag": "span",
+        "cls": "flex min-w-0 flex-1 flex-col",
+        "right": 510
+      },
+      {
+        "tag": "span",
+        "cls": "flex items-center gap-2",
+        "right": 510
+      },
+      {
+        "tag": "span",
+        "cls": "truncate type-caption text-ink-2",
+        "right": 510
+      },
+      {
+        "tag": "span",
+        "cls": "flex shrink-0 flex-col items-end",
+        "right": 671
+      }
+    ],
+    "errors": []
+  },
+  "390": {
+    "vw": 390,
+    "docW": 1628,
+    "bodyW": 1628,
+    "htmlOverflowX": "visible",
+    "bodyOverflowX": "visible",
+    "scrollXAfter": 68,
+    "sections": [
+      {
+        "title": "Red čekanja",
+        "left": 16,
+        "right": 692,
+        "width": 676
+      },
+      {
+        "title": "Aktivnost",
+        "left": 16,
+        "right": 692,
+        "width": 676
+      },
+      {
+        "title": "Porudžbine po danima",
+        "left": 16,
+        "right": 1628,
+        "width": 1612
+      },
+      {
+        "title": "Traženo, a nemamo",
+        "left": 16,
+        "right": 1628,
+        "width": 1612
+      },
+      {
+        "title": "Porudžbine po sistemima",
+        "left": 16,
+        "right": 374,
+        "width": 358
+      }
+    ],
+    "queueRows": [
+      {
+        "text": "SK-2026-000001PorudžbinaPetar Demo · 15.270 RSD9 h 28 min — kasniprimljeno 29.09. 16:31",
+        "leftCol": [
+          37,
+          510
+        ],
+        "rightCol": [
+          522,
+          671
+        ],
+        "rightVisible": false
+      },
+      {
+        "text": "UP-2026-000002UpitDemo Kupac · Traži deo · Pumpa za vodu za Octavia III 1.6 TDI, ima li na stanju?9 h 28 min — kasniprim",
+        "leftCol": [
+          37,
+          510
+        ],
+        "rightCol": [
+          522,
+          671
+        ],
+        "rightVisible": false
+      },
+      {
+        "text": "SK-2026-000009PorudžbinaNikola Stanković · 7.740 RSD9 h — kasniprimljeno 30.09. 03:39",
+        "leftCol": [
+          37,
+          510
+        ],
+        "rightCol": [
+          522,
+          671
+        ],
+        "rightVisible": false
+      },
+      {
+        "text": "UP-2026-000005UpitMarko Jovanović · Po broju šasije · Volkswagen Golf V (2008)9 h — kasniprimljeno 30.09. 03:41",
+        "leftCol": [
+          37,
+          510
+        ],
+        "rightCol": [
+          522,
+          671
+        ],
+        "rightVisible": false
+      }
+    ],
+    "queueGrid": {
+      "cls": "grid gap-6 xl:grid-cols-2",
+      "gridTemplateColumns": "675.953px",
+      "width": 358
+    },
+    "offenders": [
+      {
+        "tag": "section",
+        "cls": "rounded-sm border border-line bg-surface-1",
+        "right": 692
+      },
+      {
+        "tag": "div",
+        "cls": "flex min-h-12 items-center justify-between gap-3 border-b bo",
+        "right": 691
+      },
+      {
+        "tag": "div",
+        "cls": "flex items-center gap-2",
+        "right": 675
+      },
+      {
+        "tag": "span",
+        "cls": "type-caption text-ink-3",
+        "right": 675
+      },
+      {
+        "tag": "div",
+        "cls": "p-4",
+        "right": 691
+      },
+      {
+        "tag": "ul",
+        "cls": "flex flex-col divide-y divide-line-faint",
+        "right": 675
+      },
+      {
+        "tag": "li",
+        "cls": "",
+        "right": 675
+      },
+      {
+        "tag": "a",
+        "cls": "flex items-center gap-3 px-1 py-2.5 transition-control hover",
+        "right": 675
+      },
+      {
+        "tag": "span",
+        "cls": "flex min-w-0 flex-1 flex-col",
+        "right": 510
+      },
+      {
+        "tag": "span",
+        "cls": "flex items-center gap-2",
+        "right": 510
+      },
+      {
+        "tag": "span",
+        "cls": "truncate type-caption text-ink-2",
+        "right": 510
+      },
+      {
+        "tag": "span",
+        "cls": "flex shrink-0 flex-col items-end",
+        "right": 671
+      }
+    ],
+    "errors": []
+  },
+  "768": {
+    "vw": 768,
+    "docW": 1263,
+    "bodyW": 1263,
+    "htmlOverflowX": "visible",
+    "bodyOverflowX": "visible",
+    "scrollXAfter": 0,
+    "sections": [
+      {
+        "title": "Red čekanja",
+        "left": 16,
+        "right": 752,
+        "width": 736
+      },
+      {
+        "title": "Aktivnost",
+        "left": 16,
+        "right": 752,
+        "width": 736
+      },
+      {
+        "title": "Porudžbine po danima",
+        "left": 16,
+        "right": 1263,
+        "width": 1247
+      },
+      {
+        "title": "Traženo, a nemamo",
+        "left": 16,
+        "right": 1263,
+        "width": 1247
+      },
+      {
+        "title": "Porudžbine po sistemima",
+        "left": 16,
+        "right": 752,
+        "width": 736
+      }
+    ],
+    "queueRows": [
+      {
+        "text": "SK-2026-000001PorudžbinaPetar Demo · 15.270 RSD9 h 28 min — kasniprimljeno 29.09. 16:31",
+        "leftCol": [
+          37,
+          570
+        ],
+        "rightCol": [
+          582,
+          731
+        ],
+        "rightVisible": true
+      },
+      {
+        "text": "UP-2026-000002UpitDemo Kupac · Traži deo · Pumpa za vodu za Octavia III 1.6 TDI, ima li na stanju?9 h 28 min — kasniprim",
+        "leftCol": [
+          37,
+          570
+        ],
+        "rightCol": [
+          582,
+          731
+        ],
+        "rightVisible": true
+      },
+      {
+        "text": "SK-2026-000009PorudžbinaNikola Stanković · 7.740 RSD9 h — kasniprimljeno 30.09. 03:39",
+        "leftCol": [
+          37,
+          570
+        ],
+        "rightCol": [
+          582,
+          731
+        ],
+        "rightVisible": true
+      },
+      {
+        "text": "UP-2026-000005UpitMarko Jovanović · Po broju šasije · Volkswagen Golf V (2008)9 h — kasniprimljeno 30.09. 03:41",
+        "leftCol": [
+          37,
+          570
+        ],
+        "rightCol": [
+          582,
+          731
+        ],
+        "rightVisible": true
+      }
+    ],
+    "queueGrid": {
+      "cls": "grid gap-6 xl:grid-cols-2",
+      "gridTemplateColumns": "736px",
+      "width": 736
+    },
+    "offenders": [
+      {
+        "tag": "section",
+        "cls": "rounded-sm border border-line bg-surface-1",
+        "right": 1263
+      },
+      {
+        "tag": "div",
+        "cls": "flex min-h-12 items-center justify-between gap-3 border-b bo",
+        "right": 1262
+      },
+      {
+        "tag": "div",
+        "cls": "flex items-center gap-2",
+        "right": 1246
+      },
+      {
+        "tag": "span",
+        "cls": "type-caption text-ink-3",
+        "right": 1246
+      },
+      {
+        "tag": "div",
+        "cls": "p-4",
+        "right": 1262
+      },
+      {
+        "tag": "div",
+        "cls": "flex flex-col gap-2",
+        "right": 1246
+      },
+      {
+        "tag": "div",
+        "cls": "relative w-full",
+        "right": 1246
+      },
+      {
+        "tag": "svg",
+        "cls": "",
+        "right": 1246
+      },
+      {
+        "tag": "g",
+        "cls": "",
+        "right": 1246
+      },
+      {
+        "tag": "line",
+        "cls": "",
+        "right": 1246
+      },
+      {
+        "tag": "g",
+        "cls": "",
+        "right": 1246
+      },
+      {
+        "tag": "line",
+        "cls": "",
+        "right": 1246
+      }
+    ],
+    "errors": []
+  },
+  "1023": {
+    "vw": 1023,
+    "docW": 1263,
+    "bodyW": 1263,
+    "htmlOverflowX": "visible",
+    "bodyOverflowX": "visible",
+    "scrollXAfter": 0,
+    "sections": [
+      {
+        "title": "Red čekanja",
+        "left": 16,
+        "right": 1007,
+        "width": 991
+      },
+      {
+        "title": "Aktivnost",
+        "left": 16,
+        "right": 1007,
+        "width": 991
+      },
+      {
+        "title": "Porudžbine po danima",
+        "left": 16,
+        "right": 1263,
+        "width": 1247
+      },
+      {
+        "title": "Traženo, a nemamo",
+        "left": 16,
+        "right": 1263,
+        "width": 1247
+      },
+      {
+        "title": "Porudžbine po sistemima",
+        "left": 16,
+        "right": 1007,
+        "width": 991
+      }
+    ],
+    "queueRows": [
+      {
+        "text": "SK-2026-000001PorudžbinaPetar Demo · 15.270 RSD9 h 28 min — kasniprimljeno 29.09. 16:31",
+        "leftCol": [
+          37,
+          825
+        ],
+        "rightCol": [
+          837,
+          986
+        ],
+        "rightVisible": true
+      },
+      {
+        "text": "UP-2026-000002UpitDemo Kupac · Traži deo · Pumpa za vodu za Octavia III 1.6 TDI, ima li na stanju?9 h 28 min — kasniprim",
+        "leftCol": [
+          37,
+          825
+        ],
+        "rightCol": [
+          837,
+          986
+        ],
+        "rightVisible": true
+      },
+      {
+        "text": "SK-2026-000009PorudžbinaNikola Stanković · 7.740 RSD9 h — kasniprimljeno 30.09. 03:39",
+        "leftCol": [
+          37,
+          825
+        ],
+        "rightCol": [
+          837,
+          986
+        ],
+        "rightVisible": true
+      },
+      {
+        "text": "UP-2026-000005UpitMarko Jovanović · Po broju šasije · Volkswagen Golf V (2008)9 h — kasniprimljeno 30.09. 03:41",
+        "leftCol": [
+          37,
+          825
+        ],
+        "rightCol": [
+          837,
+          986
+        ],
+        "rightVisible": true
+      }
+    ],
+    "queueGrid": {
+      "cls": "grid gap-6 xl:grid-cols-2",
+      "gridTemplateColumns": "991px",
+      "width": 991
+    },
+    "offenders": [
+      {
+        "tag": "section",
+        "cls": "rounded-sm border border-line bg-surface-1",
+        "right": 1263
+      },
+      {
+        "tag": "div",
+        "cls": "flex min-h-12 items-center justify-between gap-3 border-b bo",
+        "right": 1262
+      },
+      {
+        "tag": "div",
+        "cls": "flex items-center gap-2",
+        "right": 1246
+      },
+      {
+        "tag": "span",
+        "cls": "type-caption text-ink-3",
+        "right": 1246
+      },
+      {
+        "tag": "div",
+        "cls": "p-4",
+        "right": 1262
+      },
+      {
+        "tag": "div",
+        "cls": "flex flex-col gap-2",
+        "right": 1246
+      },
+      {
+        "tag": "div",
+        "cls": "relative w-full",
+        "right": 1246
+      },
+      {
+        "tag": "svg",
+        "cls": "",
+        "right": 1246
+      },
+      {
+        "tag": "g",
+        "cls": "",
+        "right": 1246
+      },
+      {
+        "tag": "line",
+        "cls": "",
+        "right": 1246
+      },
+      {
+        "tag": "g",
+        "cls": "",
+        "right": 1246
+      },
+      {
+        "tag": "line",
+        "cls": "",
+        "right": 1246
+      }
+    ],
+    "errors": []
+  },
+  "1024": {
+    "vw": 1024,
+    "docW": 1335,
+    "bodyW": 1335,
+    "htmlOverflowX": "visible",
+    "bodyOverflowX": "visible",
+    "scrollXAfter": 311,
+    "sections": [
+      {
+        "title": "Red čekanja",
+        "left": 88,
+        "right": 1000,
+        "width": 912
+      },
+      {
+        "title": "Aktivnost",
+        "left": 88,
+        "right": 1000,
+        "width": 912
+      },
+      {
+        "title": "Porudžbine po danima",
+        "left": 88,
+        "right": 1335,
+        "width": 1247
+      },
+      {
+        "title": "Traženo, a nemamo",
+        "left": 88,
+        "right": 1335,
+        "width": 1247
+      },
+      {
+        "title": "Porudžbine po sistemima",
+        "left": 88,
+        "right": 1000,
+        "width": 912
+      }
+    ],
+    "queueRows": [
+      {
+        "text": "SK-2026-000001PorudžbinaPetar Demo · 15.270 RSD9 h 28 min — kasniprimljeno 29.09. 16:31",
+        "leftCol": [
+          109,
+          818
+        ],
+        "rightCol": [
+          830,
+          979
+        ],
+        "rightVisible": true
+      },
+      {
+        "text": "UP-2026-000002UpitDemo Kupac · Traži deo · Pumpa za vodu za Octavia III 1.6 TDI, ima li na stanju?9 h 28 min — kasniprim",
+        "leftCol": [
+          109,
+          818
+        ],
+        "rightCol": [
+          830,
+          979
+        ],
+        "rightVisible": true
+      },
+      {
+        "text": "SK-2026-000009PorudžbinaNikola Stanković · 7.740 RSD9 h — kasniprimljeno 30.09. 03:39",
+        "leftCol": [
+          109,
+          818
+        ],
+        "rightCol": [
+          830,
+          979
+        ],
+        "rightVisible": true
+      },
+      {
+        "text": "UP-2026-000005UpitMarko Jovanović · Po broju šasije · Volkswagen Golf V (2008)9 h — kasniprimljeno 30.09. 03:41",
+        "leftCol": [
+          109,
+          818
+        ],
+        "rightCol": [
+          830,
+          979
+        ],
+        "rightVisible": true
+      }
+    ],
+    "queueGrid": {
+      "cls": "grid gap-6 xl:grid-cols-2",
+      "gridTemplateColumns": "912px",
+      "width": 912
+    },
+    "offenders": [
+      {
+        "tag": "section",
+        "cls": "rounded-sm border border-line bg-surface-1",
+        "right": 1335
+      },
+      {
+        "tag": "div",
+        "cls": "flex min-h-12 items-center justify-between gap-3 border-b bo",
+        "right": 1334
+      },
+      {
+        "tag": "div",
+        "cls": "flex items-center gap-2",
+        "right": 1318
+      },
+      {
+        "tag": "span",
+        "cls": "type-caption text-ink-3",
+        "right": 1318
+      },
+      {
+        "tag": "div",
+        "cls": "p-4",
+        "right": 1334
+      },
+      {
+        "tag": "div",
+        "cls": "flex flex-col gap-2",
+        "right": 1318
+      },
+      {
+        "tag": "div",
+        "cls": "relative w-full",
+        "right": 1318
+      },
+      {
+        "tag": "svg",
+        "cls": "",
+        "right": 1318
+      },
+      {
+        "tag": "g",
+        "cls": "",
+        "right": 1318
+      },
+      {
+        "tag": "line",
+        "cls": "",
+        "right": 1318
+      },
+      {
+        "tag": "g",
+        "cls": "",
+        "right": 1318
+      },
+      {
+        "tag": "line",
+        "cls": "",
+        "right": 1318
+      }
+    ],
+    "errors": []
+  },
+  "1280": {
+    "vw": 1280,
+    "docW": 1280,
+    "bodyW": 1280,
+    "htmlOverflowX": "visible",
+    "bodyOverflowX": "visible",
+    "scrollXAfter": 0,
+    "sections": [
+      {
+        "title": "Red čekanja",
+        "left": 88,
+        "right": 660,
+        "width": 572
+      },
+      {
+        "title": "Aktivnost",
+        "left": 684,
+        "right": 1256,
+        "width": 572
+      },
+      {
+        "title": "Porudžbine po danima",
+        "left": 88,
+        "right": 851,
+        "width": 763
+      },
+      {
+        "title": "Traženo, a nemamo",
+        "left": 875,
+        "right": 1256,
+        "width": 381
+      },
+      {
+        "title": "Porudžbine po sistemima",
+        "left": 88,
+        "right": 1256,
+        "width": 1168
+      }
+    ],
+    "queueRows": [
+      {
+        "text": "SK-2026-000001PorudžbinaPetar Demo · 15.270 RSD9 h 28 min — kasniprimljeno 29.09. 16:31",
+        "leftCol": [
+          109,
+          478
+        ],
+        "rightCol": [
+          490,
+          639
+        ],
+        "rightVisible": true
+      },
+      {
+        "text": "UP-2026-000002UpitDemo Kupac · Traži deo · Pumpa za vodu za Octavia III 1.6 TDI, ima li na stanju?9 h 28 min — kasniprim",
+        "leftCol": [
+          109,
+          478
+        ],
+        "rightCol": [
+          490,
+          639
+        ],
+        "rightVisible": true
+      },
+      {
+        "text": "SK-2026-000009PorudžbinaNikola Stanković · 7.740 RSD9 h — kasniprimljeno 30.09. 03:39",
+        "leftCol": [
+          109,
+          478
+        ],
+        "rightCol": [
+          490,
+          639
+        ],
+        "rightVisible": true
+      },
+      {
+        "text": "UP-2026-000005UpitMarko Jovanović · Po broju šasije · Volkswagen Golf V (2008)9 h — kasniprimljeno 30.09. 03:41",
+        "leftCol": [
+          109,
+          478
+        ],
+        "rightCol": [
+          490,
+          639
+        ],
+        "rightVisible": true
+      }
+    ],
+    "queueGrid": {
+      "cls": "grid gap-6 xl:grid-cols-2",
+      "gridTemplateColumns": "572px 572px",
+      "width": 1168
+    },
+    "offenders": [],
+    "errors": []
+  }
+}

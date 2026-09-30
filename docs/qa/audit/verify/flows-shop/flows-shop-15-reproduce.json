@@ -1,0 +1,8 @@
+{
+  "15": {
+    "accept": "image/jpeg,image/png,image/webp",
+    "wrongType": "Fotografija je prevelika ili nije JPG, PNG ili WebP. Najviše 8 MB po fotografiji.",
+    "tooBig": "Fotografija je prevelika ili nije JPG, PNG ili WebP. Najviše 8 MB po fotografiji.",
+    "photosAdded": 0
+  }
+}

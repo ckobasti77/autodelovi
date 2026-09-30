@@ -1,0 +1,510 @@
+{
+  "token": "3UMmrd…",
+  "390 hasAccept": 1,
+  "390 beforeSubmit": {
+    "alerts": [],
+    "invalid": 0,
+    "inputs": [
+      {
+        "label": "Ime",
+        "describedby": null,
+        "invalid": null,
+        "value": "Demo"
+      },
+      {
+        "label": "Prezime",
+        "describedby": null,
+        "invalid": null,
+        "value": "Majstor"
+      },
+      {
+        "label": "Telefon",
+        "describedby": null,
+        "invalid": null,
+        "value": ""
+      },
+      {
+        "label": "E-pošta",
+        "describedby": null,
+        "invalid": null,
+        "value": ""
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "courier"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup_cash"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup_card"
+      },
+      {
+        "label": "checkbox",
+        "describedby": null,
+        "invalid": null,
+        "value": false
+      }
+    ],
+    "focus": "BODY Preskoči na sadržajSKLOPDeloviVozilaZa m"
+  },
+  "390 emptySubmit": {
+    "alerts": [
+      "Broj telefona nije ispravan. Primer: 064 123 4567."
+    ],
+    "invalid": 0,
+    "inputs": [
+      {
+        "label": "Ime",
+        "describedby": null,
+        "invalid": null,
+        "value": "Demo"
+      },
+      {
+        "label": "Prezime",
+        "describedby": null,
+        "invalid": null,
+        "value": "Majstor"
+      },
+      {
+        "label": "Telefon",
+        "describedby": null,
+        "invalid": null,
+        "value": ""
+      },
+      {
+        "label": "E-pošta",
+        "describedby": null,
+        "invalid": null,
+        "value": ""
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "courier"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup_cash"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup_card"
+      },
+      {
+        "label": "checkbox",
+        "describedby": null,
+        "invalid": null,
+        "value": false
+      }
+    ],
+    "focus": "BUTTON Pošalji porudžbinu po ponudi"
+  },
+  "390 shotEmpty": "docs/qa/audit/verify/flows-shop/flows-shop-07-reproduce-empty-390.webp",
+  "390 shotFields": "docs/qa/audit/verify/flows-shop/flows-shop-07-reproduce-fields-390.webp",
+  "390 afterPhoneFix": {
+    "alerts": [
+      "E-mail adresa nije ispravna. Primer: ime@primer.rs."
+    ],
+    "invalid": 0,
+    "inputs": [
+      {
+        "label": "Ime",
+        "describedby": null,
+        "invalid": null,
+        "value": "Demo"
+      },
+      {
+        "label": "Prezime",
+        "describedby": null,
+        "invalid": null,
+        "value": "Majstor"
+      },
+      {
+        "label": "Telefon",
+        "describedby": null,
+        "invalid": null,
+        "value": "064 123 4567"
+      },
+      {
+        "label": "E-pošta",
+        "describedby": null,
+        "invalid": null,
+        "value": ""
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "courier"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup_cash"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup_card"
+      },
+      {
+        "label": "checkbox",
+        "describedby": null,
+        "invalid": null,
+        "value": false
+      }
+    ],
+    "focus": "BUTTON Pošalji porudžbinu po ponudi"
+  },
+  "390 afterEmailFix(terms still unchecked)": {
+    "alerts": [
+      "Potrebna je saglasnost sa uslovima kupovine."
+    ],
+    "invalid": 0,
+    "inputs": [
+      {
+        "label": "Ime",
+        "describedby": null,
+        "invalid": null,
+        "value": "Demo"
+      },
+      {
+        "label": "Prezime",
+        "describedby": null,
+        "invalid": null,
+        "value": "Majstor"
+      },
+      {
+        "label": "Telefon",
+        "describedby": null,
+        "invalid": null,
+        "value": "064 123 4567"
+      },
+      {
+        "label": "E-pošta",
+        "describedby": null,
+        "invalid": null,
+        "value": "audit-verify-07@primer.rs"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "courier"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup_cash"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup_card"
+      },
+      {
+        "label": "checkbox",
+        "describedby": null,
+        "invalid": null,
+        "value": false
+      }
+    ],
+    "focus": "BUTTON Pošalji porudžbinu po ponudi"
+  },
+  "390 shotTerms": "docs/qa/audit/verify/flows-shop/flows-shop-07-reproduce-terms-390.webp",
+  "390 errors": [],
+  "1440 hasAccept": 1,
+  "1440 beforeSubmit": {
+    "alerts": [],
+    "invalid": 0,
+    "inputs": [
+      {
+        "label": "Ime",
+        "describedby": null,
+        "invalid": null,
+        "value": "Demo"
+      },
+      {
+        "label": "Prezime",
+        "describedby": null,
+        "invalid": null,
+        "value": "Majstor"
+      },
+      {
+        "label": "Telefon",
+        "describedby": null,
+        "invalid": null,
+        "value": ""
+      },
+      {
+        "label": "E-pošta",
+        "describedby": null,
+        "invalid": null,
+        "value": ""
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "courier"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup_cash"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup_card"
+      },
+      {
+        "label": "checkbox",
+        "describedby": null,
+        "invalid": null,
+        "value": false
+      }
+    ],
+    "focus": "BODY Preskoči na sadržajSKLOPDeloviVozilaZa m"
+  },
+  "1440 emptySubmit": {
+    "alerts": [
+      "Broj telefona nije ispravan. Primer: 064 123 4567."
+    ],
+    "invalid": 0,
+    "inputs": [
+      {
+        "label": "Ime",
+        "describedby": null,
+        "invalid": null,
+        "value": "Demo"
+      },
+      {
+        "label": "Prezime",
+        "describedby": null,
+        "invalid": null,
+        "value": "Majstor"
+      },
+      {
+        "label": "Telefon",
+        "describedby": null,
+        "invalid": null,
+        "value": ""
+      },
+      {
+        "label": "E-pošta",
+        "describedby": null,
+        "invalid": null,
+        "value": ""
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "courier"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup_cash"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup_card"
+      },
+      {
+        "label": "checkbox",
+        "describedby": null,
+        "invalid": null,
+        "value": false
+      }
+    ],
+    "focus": "BUTTON Pošalji porudžbinu po ponudi"
+  },
+  "1440 afterPhoneFix": {
+    "alerts": [
+      "E-mail adresa nije ispravna. Primer: ime@primer.rs."
+    ],
+    "invalid": 0,
+    "inputs": [
+      {
+        "label": "Ime",
+        "describedby": null,
+        "invalid": null,
+        "value": "Demo"
+      },
+      {
+        "label": "Prezime",
+        "describedby": null,
+        "invalid": null,
+        "value": "Majstor"
+      },
+      {
+        "label": "Telefon",
+        "describedby": null,
+        "invalid": null,
+        "value": "064 123 4567"
+      },
+      {
+        "label": "E-pošta",
+        "describedby": null,
+        "invalid": null,
+        "value": ""
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "courier"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup_cash"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup_card"
+      },
+      {
+        "label": "checkbox",
+        "describedby": null,
+        "invalid": null,
+        "value": false
+      }
+    ],
+    "focus": "BUTTON Pošalji porudžbinu po ponudi"
+  },
+  "1440 afterEmailFix(terms still unchecked)": {
+    "alerts": [
+      "Potrebna je saglasnost sa uslovima kupovine."
+    ],
+    "invalid": 0,
+    "inputs": [
+      {
+        "label": "Ime",
+        "describedby": null,
+        "invalid": null,
+        "value": "Demo"
+      },
+      {
+        "label": "Prezime",
+        "describedby": null,
+        "invalid": null,
+        "value": "Majstor"
+      },
+      {
+        "label": "Telefon",
+        "describedby": null,
+        "invalid": null,
+        "value": "064 123 4567"
+      },
+      {
+        "label": "E-pošta",
+        "describedby": null,
+        "invalid": null,
+        "value": "audit-verify-07@primer.rs"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "courier"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup_cash"
+      },
+      {
+        "label": "radio",
+        "describedby": null,
+        "invalid": null,
+        "value": "pickup_card"
+      },
+      {
+        "label": "checkbox",
+        "describedby": null,
+        "invalid": null,
+        "value": false
+      }
+    ],
+    "focus": "BUTTON Pošalji porudžbinu po ponudi"
+  },
+  "1440 errors": []
+}

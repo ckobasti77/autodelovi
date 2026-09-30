@@ -1,0 +1,121 @@
+{
+  "1024": {
+    "porudzbine-sve": {
+      "overflowPx": 120,
+      "wrapRight": 999,
+      "stickyLeft": 943,
+      "cols": [
+        "(blank) [89-129]",
+        "Broj [129-274]",
+        "Kupac [274-559]",
+        "Status [559-712]",
+        "Ukupno [712-820]",
+        "Plaćanje · dostava [820-1063] (CUT)",
+        "Radnje [943-999]"
+      ],
+      "hint": [
+        [
+          967,
+          999
+        ]
+      ],
+      "docOver": 0
+    }
+  },
+  "1280": {
+    "porudzbine-sve": {
+      "overflowPx": 109,
+      "wrapRight": 1255,
+      "stickyLeft": 1199,
+      "cols": [
+        "(blank) [89-129]",
+        "Broj [129-274]",
+        "Primljena [274-380]",
+        "Kupac [380-665]",
+        "Status [665-894]",
+        "Kom. [894-957]",
+        "Ukupno [957-1064]",
+        "Plaćanje · dostava [1064-1308] (CUT)",
+        "Radnje [1199-1255]"
+      ],
+      "hint": [
+        [
+          1223,
+          1255
+        ]
+      ],
+      "docOver": 0
+    }
+  },
+  "1366": {
+    "porudzbine-sve": {
+      "overflowPx": 191,
+      "wrapRight": 1341,
+      "stickyLeft": 1285,
+      "cols": [
+        "(blank) [257-297]",
+        "Broj [297-442]",
+        "Primljena [442-548]",
+        "Kupac [548-833]",
+        "Status [833-1062]",
+        "Kom. [1062-1125]",
+        "Ukupno [1125-1232]",
+        "Plaćanje · dostava [1232-1476] (CUT)",
+        "Radnje [1285-1341]"
+      ],
+      "hint": [
+        [
+          1309,
+          1341
+        ]
+      ],
+      "docOver": 0
+    }
+  },
+  "1440": {
+    "porudzbine-sve": {
+      "overflowPx": 117,
+      "wrapRight": 1415,
+      "stickyLeft": 1359,
+      "cols": [
+        "(blank) [257-297]",
+        "Broj [297-442]",
+        "Primljena [442-548]",
+        "Kupac [548-833]",
+        "Status [833-1062]",
+        "Kom. [1062-1125]",
+        "Ukupno [1125-1232]",
+        "Plaćanje · dostava [1232-1476] (CUT)",
+        "Radnje [1359-1415]"
+      ],
+      "hint": [
+        [
+          1383,
+          1415
+        ]
+      ],
+      "docOver": 0
+    }
+  },
+  "1920": {
+    "porudzbine-sve": {
+      "overflowPx": 0,
+      "wrapRight": 1891,
+      "stickyLeft": 1835,
+      "cols": [
+        "(blank) [261-301]",
+        "Broj [301-462]",
+        "Primljena [462-579]",
+        "Kupac [579-894]",
+        "Status [894-1147]",
+        "Kom. [1147-1217]",
+        "Ukupno [1217-1336]",
+        "Plaćanje · dostava [1336-1605]",
+        "Izvor [1605-1835]",
+        "Radnje [1835-1891]"
+      ],
+      "hint": [],
+      "docOver": 0
+    }
+  }
+}

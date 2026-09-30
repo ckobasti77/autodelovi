@@ -1,0 +1,37 @@
+[
+ {
+  "width": 320,
+  "url": "/majstor",
+  "over": 3,
+  "offscreen": [
+   {
+    "name": "Otvori meni",
+    "left": 279,
+    "right": 323,
+    "w": 44
+   }
+  ],
+  "ev": "docs/qa/audit/a11y-app/hdr-mechanic-320.webp"
+ },
+ {
+  "width": 360,
+  "url": "/majstor",
+  "over": 0,
+  "offscreen": [],
+  "ev": "docs/qa/audit/a11y-app/hdr-mechanic-360.webp"
+ },
+ {
+  "width": 375,
+  "url": "/majstor",
+  "over": 0,
+  "offscreen": [],
+  "ev": "docs/qa/audit/a11y-app/hdr-mechanic-375.webp"
+ },
+ {
+  "width": 390,
+  "url": "/majstor",
+  "over": 0,
+  "offscreen": [],
+  "ev": "docs/qa/audit/a11y-app/hdr-mechanic-390.webp"
+ }
+]

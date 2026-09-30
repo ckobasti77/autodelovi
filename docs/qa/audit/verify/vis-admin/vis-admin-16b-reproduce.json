@@ -1,0 +1,115 @@
+{
+  "audit-majstor-5455287@primer.rs": {
+    "390": [
+      {
+        "email": "audit-majstor-5455287@primer.rs",
+        "frags": [
+          "audit-majstor-5455287@prim",
+          "er.rs"
+        ],
+        "aWordBreak": "break-all",
+        "ddWidth": 196
+      }
+    ],
+    "1024": [
+      {
+        "email": "audit-majstor-5455287@primer.rs",
+        "frags": [
+          "audit-majstor-5455287",
+          "@primer.rs"
+        ],
+        "aWordBreak": "break-all",
+        "ddWidth": 158
+      }
+    ],
+    "1280": [
+      {
+        "email": "audit-majstor-5455287@primer.rs",
+        "frags": [
+          "audit-majstor-5455287@primer.",
+          "rs"
+        ],
+        "aWordBreak": "break-all",
+        "ddWidth": 218
+      }
+    ],
+    "1440": [
+      {
+        "email": "audit-majstor-5455287@primer.rs",
+        "frags": [
+          "audit-majstor-5455287@primer.",
+          "rs"
+        ],
+        "aWordBreak": "break-all",
+        "ddWidth": 218
+      }
+    ],
+    "1920": [
+      {
+        "email": "audit-majstor-5455287@primer.rs",
+        "frags": [
+          "audit-majstor-5455287@primer.",
+          "rs"
+        ],
+        "aWordBreak": "break-all",
+        "ddWidth": 218
+      }
+    ],
+    "url": "/admin/kupci/s17266em9mn1gjbxcre9kfzbws8fcv6y"
+  },
+  "audit-kupac-5455287@primer.rs": {
+    "390": [
+      {
+        "email": "audit-kupac-5455287@primer.rs",
+        "frags": [
+          "audit-kupac-5455287@prime",
+          "r.rs"
+        ],
+        "aWordBreak": "break-all",
+        "ddWidth": 196
+      }
+    ],
+    "1024": [
+      {
+        "email": "audit-kupac-5455287@primer.rs",
+        "frags": [
+          "audit-kupac-5455287@",
+          "primer.rs"
+        ],
+        "aWordBreak": "break-all",
+        "ddWidth": 158
+      }
+    ],
+    "1280": [
+      {
+        "email": "audit-kupac-5455287@primer.rs",
+        "frags": [
+          "audit-kupac-5455287@primer.rs"
+        ],
+        "aWordBreak": "break-all",
+        "ddWidth": 218
+      }
+    ],
+    "1440": [
+      {
+        "email": "audit-kupac-5455287@primer.rs",
+        "frags": [
+          "audit-kupac-5455287@primer.rs"
+        ],
+        "aWordBreak": "break-all",
+        "ddWidth": 218
+      }
+    ],
+    "1920": [
+      {
+        "email": "audit-kupac-5455287@primer.rs",
+        "frags": [
+          "audit-kupac-5455287@primer.rs"
+        ],
+        "aWordBreak": "break-all",
+        "ddWidth": 218
+      }
+    ],
+    "url": "/admin/kupci/s1712stkbrxcrqbgax3c7720rh8fcp6q"
+  }
+}

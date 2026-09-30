@@ -1,0 +1,12 @@
+{
+  "before": "123",
+  "barButtons": [
+    "Odbaci izmene",
+    "Sačuvaj"
+  ],
+  "after": "",
+  "barVisibleDirty": true,
+  "dialogOnSwitch": false,
+  "sloganAfterSwitch": "Rasklopi auto. Nađi deo.",
+  "sloganOrig": "Rasklopi auto. Nađi deo."
+}

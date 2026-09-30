@@ -1,0 +1,217 @@
+[
+ {
+  "w": 1440,
+  "h": 900,
+  "bg": 15,
+  "drawnCar": {
+   "minX": 639,
+   "maxX": 1317
+  },
+  "overRightTicks": -75,
+  "ticks": {
+   "x": 618,
+   "y": 81,
+   "r": 1392,
+   "b": 813
+  },
+  "titleBlock": {
+   "x": 1024,
+   "y": 97,
+   "r": 1376,
+   "b": 207
+  },
+  "posterImg": {
+   "x": 115,
+   "y": 65,
+   "r": 1440,
+   "b": 901
+  },
+  "posterSrc": "http://localhost:3100/images/hero/car-assembled-1440.avif",
+  "canvasOpacity": "0",
+  "canvasStatus": "idle",
+  "cart": {
+   "x": 1348,
+   "y": 10,
+   "r": 1392,
+   "b": 54
+  },
+  "frame": {
+   "x": 0,
+   "y": 65,
+   "r": 1440,
+   "b": 901
+  }
+ },
+ {
+  "w": 1680,
+  "h": 1050,
+  "bg": 15,
+  "drawnCar": {
+   "minX": 745,
+   "maxX": 1537
+  },
+  "overRightTicks": -23,
+  "ticks": {
+   "x": 730,
+   "y": 81,
+   "r": 1560,
+   "b": 963
+  },
+  "titleBlock": {
+   "x": 1192,
+   "y": 97,
+   "r": 1544,
+   "b": 207
+  },
+  "posterImg": {
+   "x": 134,
+   "y": 65,
+   "r": 1680,
+   "b": 1051
+  },
+  "posterSrc": "http://localhost:3100/images/hero/car-assembled-1920.avif",
+  "canvasOpacity": "0",
+  "canvasStatus": "loading",
+  "cart": {
+   "x": 1516,
+   "y": 10,
+   "r": 1560,
+   "b": 54
+  },
+  "frame": {
+   "x": 0,
+   "y": 65,
+   "r": 1680,
+   "b": 1051
+  }
+ },
+ {
+  "w": 1920,
+  "h": 1080,
+  "bg": 15,
+  "drawnCar": {
+   "minX": 853,
+   "maxX": 1757
+  },
+  "overRightTicks": 77,
+  "ticks": {
+   "x": 853,
+   "y": 81,
+   "r": 1680,
+   "b": 993
+  },
+  "titleBlock": {
+   "x": 1312,
+   "y": 97,
+   "r": 1664,
+   "b": 207
+  },
+  "posterImg": {
+   "x": 154,
+   "y": 65,
+   "r": 1920,
+   "b": 1081
+  },
+  "posterSrc": "http://localhost:3100/images/hero/car-assembled-1920.avif",
+  "canvasOpacity": "0",
+  "canvasStatus": "loading",
+  "cart": {
+   "x": 1636,
+   "y": 10,
+   "r": 1680,
+   "b": 54
+  },
+  "frame": {
+   "x": 0,
+   "y": 65,
+   "r": 1920,
+   "b": 1081
+  }
+ },
+ {
+  "w": 2560,
+  "h": 1440,
+  "bg": 15,
+  "drawnCar": {
+   "minX": 1137,
+   "maxX": 2343
+  },
+  "overRightTicks": 343,
+  "ticks": {
+   "x": 1173,
+   "y": 81,
+   "r": 2000,
+   "b": 1353
+  },
+  "titleBlock": {
+   "x": 1632,
+   "y": 97,
+   "r": 1984,
+   "b": 207
+  },
+  "posterImg": {
+   "x": 205,
+   "y": 65,
+   "r": 2560,
+   "b": 1441
+  },
+  "posterSrc": "http://localhost:3100/images/hero/car-assembled.avif",
+  "canvasOpacity": "0",
+  "canvasStatus": "loading",
+  "cart": {
+   "x": 1956,
+   "y": 10,
+   "r": 2000,
+   "b": 54
+  },
+  "frame": {
+   "x": 0,
+   "y": 65,
+   "r": 2560,
+   "b": 1441
+  }
+ },
+ {
+  "w": 3440,
+  "h": 1440,
+  "bg": 15,
+  "drawnCar": {
+   "minX": 1962,
+   "maxX": 3214
+  },
+  "overRightTicks": 774,
+  "ticks": {
+   "x": 1613,
+   "y": 81,
+   "r": 2440,
+   "b": 1353
+  },
+  "titleBlock": {
+   "x": 2072,
+   "y": 97,
+   "r": 2424,
+   "b": 207
+  },
+  "posterImg": {
+   "x": 275,
+   "y": 65,
+   "r": 3440,
+   "b": 1441
+  },
+  "posterSrc": "http://localhost:3100/images/hero/car-assembled.avif",
+  "canvasOpacity": "0",
+  "canvasStatus": "loading",
+  "cart": {
+   "x": 2396,
+   "y": 10,
+   "r": 2440,
+   "b": 54
+  },
+  "frame": {
+   "x": 0,
+   "y": 65,
+   "r": 3440,
+   "b": 1441
+  }
+ }
+]

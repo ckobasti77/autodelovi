@@ -1,0 +1,24 @@
+[
+  {
+    "name": "before",
+    "at": "2026-09-30T20:46:42.217Z",
+    "label": "Obaveštenja, nepročitano: 100",
+    "badge": "9+"
+  },
+  {
+    "name": "created order",
+    "at": "2026-09-30T20:46:52.466Z",
+    "number": "SK-2026-000143"
+  },
+  {
+    "name": "after",
+    "at": "2026-09-30T20:46:59.507Z",
+    "label": "Obaveštenja, nepročitano: 100",
+    "badge": "9+"
+  },
+  {
+    "name": "panel first row",
+    "at": "2026-09-30T20:47:01.422Z",
+    "top": "Nova porudžbina SK-2026-000143upravo · Ukupno 18.900 RSD"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "real": [],
+  "scope": {
+    "/prijava": {
+      "hydratedBeforeTyping": false,
+      "domAfterTyping": "kupac@primer.rs",
+      "after": "kupac@primer.rs"
+    },
+    "/registracija": {
+      "hydratedBeforeTyping": false,
+      "domAfterTyping": "kupac@primer.rs",
+      "after": "kupac@primer.rs"
+    },
+    "/za-majstore/registracija": {
+      "hydratedBeforeTyping": false,
+      "domAfterTyping": "servis@primer.rs",
+      "after": ""
+    },
+    "/pretraga?q=disk": {
+      "hydratedBeforeTyping": false,
+      "domAfterTyping": "disk5Q0615505R",
+      "after": "disk"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+﻿cat new buttons {"n":54}
+cat dialog {"text":"Nova kategorija u „Motor i usis“NazivAdresa (slug) se pravi iz naziva i posle se ne menja.OdustaniNapravi","submitDisabled":true,"submitLabel":"Napravi"}
+cat errors {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+proizvodjaci buttons {"btns":["Novi proizvođač","Proizvođač","Kvalitet","Zemlja","Artikala"]}
+proizvodjaci new dialog {"label":"Novi proizvođač","text":"Novi proizvođačNazivDrugi naziviRazdvojte zarezom.Podrazumevani kvalitetOriginal VAGOEM kvalitetAftermarketZemljaOriginalni VAG deloviAktivanOdustaniSačuvaj","submitDisabled":true}
+proizvodjaci errors {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+vozila buttons {"btns":["Marke, modeli, generacije","Motori (25)","Volkswagen6","Audi3","Škoda6","SEAT3","Cupra3","Golf","Passat","Polo","Caddy","Touran","Tiguan","Model","Nova generacija","Dodaj","Dodaj","Dodaj","Dodaj","Dodaj"]}
+vozila new dialog {"label":"","text":"Nova markaNazivWMI kodovi (VIN, prva 3 znaka)Razdvojte zarezom: WVW, WVGDrugi naziviZa pretragu i uvoz: npr. „Golf 7, Golf VII“Vidljivo na sajtuOdustaniSačuvaj","submitDisabled":true}
+vozila errors {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+razredi buttons {"btns":["Novi razred","MajstorPodrazumevan10 %","Majstor Plus15 %","Partner20 %","Arhiviraj","Dodaj kategoriju","Dodaj proizvođača"]}
+razredi errors {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+kupci buttons {"btns":["Svi","Majstori","Blokirani","Kupac","Porudžbine","Registrovan","Učitaj još 50"]}
+kupci errors {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+invite created {"text":"Pozivnica je napravljenaPošaljite ovaj link osobi na audit-flows-admin-invite-547405@primer.rs (Viber, SMS, e-pošta). Link se prikazuje samo sada i važi 7 dana. Osoba se registruje ili prijavi tom adresom i prihvati pozivnicu.http://localhost:3100/admin/pozivnica/F7QXN7PTmnHNIIEz_LO1GrR-5TbBNjZ8-03ns2GSVmMGotovo"}
+revoke confirm {"text":"Povući pozivnicu za audit-flows-admin-invite-547405@primer.rs?Link prestaje da radi. Uvek možete poslati novu pozivnicu.OdustaniPovuci pozivnicu"}
+revoked {"row":"audit-flows-admin-invite-547405@primer.rs · Zaposleni · poslao Vlasnik 30.09.Povučena"}
+users errors {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+products list {"rows":50,"moreBtns":1,"footer":"EMO-0124Demo3.490 RSD5G0 955 985 BNBrisačiBoschOEM kvalitetVetrobransko staklo sa nosačem senzoraDEMO-0123Demo42.900 RSD5G0 845 759 NStaklaOriginal VAGOriginal VAGPoklopac retrovizora desniDEMO-0122DemoPo porudžbini2.990 RSD5E0 857 198 ARetrovizoriHellaOEM kvalitetPrikazano: 50 artikalaUčitaj još 50"}
+products after more {"rows":100}

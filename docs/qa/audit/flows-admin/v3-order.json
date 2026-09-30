@@ -1,0 +1,91 @@
+{
+  "steps": [
+    {
+      "name": "bell realtime",
+      "at": "2026-09-30T20:08:13.945Z",
+      "number": "SK-2026-000135",
+      "before": "Obaveštenja, nepročitano: 100",
+      "after": "Obaveštenja, nepročitano: 100",
+      "navBefore": "Porudžbine99+ novih",
+      "navAfter": "Porudžbine99+ novih"
+    },
+    {
+      "name": "bell panel",
+      "at": "2026-09-30T20:08:15.294Z",
+      "text": "ObaveštenjaOznači sve kao pročitanoNova porudžbina SK-2026-000135upravo · Ukupno 18.900 RSDNova porudžbina SK-2026-000134upravo · Ukupno 5.140 RSDPonuda odbijena — UP-2026-000067pre 13 min · Kupac je odbio ponudu.Nova porudžbina SK-2026-000133pre 13 min · Ukupno 4.690 RSDPonuda prihvaćena — UP-2026-000068pre 13 min · Kupac je prihvatio ponudu; porudžbina je kreirana.Novi upit UP-2026-000068pre 14 min · Kupac čeka ponudu.Nova porudžbina SK-2026-000132pre 20 min · Ukupno 4.690 RSDNovi upit UP-2026-000067pre 1 h · Kupac čeka ponudu.Nova porudžbina SK-2026-000131pre 1 h · Ukupno 16.041 RSDNova por"
+    },
+    {
+      "name": "shortcuts dialog",
+      "at": "2026-09-30T20:08:16.813Z",
+      "text": "Prečice na tastaturiCtrl+KPretraga i komande (na Macu ⌘ K)/Pretraga na stranici?Ova listagzatimdIdi na: PregledgzatimpIdi na: PorudžbinegzatimuIdi na: UpitigzatimkIdi na: KupcigzatimmIdi na: MajstorigzatimaIdi na: ProizvodigzatimiIdi na: Uvoz iz ExcelagzatimlIdi na: LagergzatimsIdi na: PodešavanjanzatimaNovi artikal↑zatim↓Kretanje kroz redove tabeleEnterOtvori izabrani redRazmakIzaberi red (grupne radnje)"
+    },
+    {
+      "name": "palette",
+      "at": "2026-09-30T20:08:20.430Z",
+      "text": "Pretraga i komandePorudžbineSK-2026-000135Admin Test fa3-884947 · +381643334455Nova↑ ↓ izborEnter otvoriEsc zatvori"
+    },
+    {
+      "name": "errors dash",
+      "at": "2026-09-30T20:08:21.433Z",
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "name": "print predracun",
+      "at": "2026-09-30T20:08:27.694Z",
+      "url": "http://localhost:3100/admin/porudzbine/SK-2026-000135/predracun",
+      "title": "Predračun · Administracija",
+      "text": "Preskoči na sadržajNazadŠtampajPodaci o firmi nisu popunjeni: pun naziv firme, PIB, adresa sedišta, telefon, tekući račun. Predračun, otpremnica i podnožje sajta ih prikazuju. Popuni u podešavanjimaSKLOPPredračunSK-2026-000135Datum: 30.09.2026.Porudžbina od 30.09.2026.KupacAdmin Test fa3-884947+381 64 333 4455 · admin-e2e-fa3-884947@primer.rsUplataPoziv na broj: 2026000135Način plaćanja: PouzećemR. br.ŠifraNazivKol.Cena sa PDVIznos1.DEMO-0005Kočioni disk prednji 340 × 30 mm, GTIOriginal VAG · OEM 5Q0 615 666 A118.900 RSD18.900 RSDDostava — Kurirska služba0 RSDOsnovica15.750 RSDPDV 20 %3.150 RSDZa uplatu18.900 RSDPredračun nije fiskalni račun. Robu rezervišemo do uplate; račun izdajemo pri isporuci.(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n3:I[39756,[\\\"/_next/static/chunks/3fntmmi971322.js\\\"],\\\"default\\\"]\\n4:I[37457,[\\\"/_next/static/chunks/3",
+      "errors": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    {
+      "name": "print otpremnica",
+      "at": "2026-09-30T20:08:33.402Z",
+      "url": "http://localhost:3100/admin/porudzbine/SK-2026-000135/otpremnica",
+      "title": "Otpremnica · Administracija",
+      "text": "Preskoči na sadržajNazadŠtampajPodaci o firmi nisu popunjeni: pun naziv firme, PIB, adresa sedišta, telefon. Predračun, otpremnica i podnožje sajta ih prikazuju. Popuni u podešavanjimaSKLOPOtpremnicaSK-2026-000135Datum: 30.09.2026.Porudžbina od 30.09.2026.PrimalacAdmin Test fa3-884947+381 64 333 4455 · admin-e2e-fa3-884947@primer.rsIsporukaKurirska službaTest ulica 5, 11000 BeogradPlaćanje: PouzećemR. br.ŠifraOEMNazivKol.Izdato1.DEMO-00055Q0 615 666 AKočioni disk prednji 340 × 30 mm, GTIOriginal VAG1Ukupno komada: 1Robu izdaoRobu primio(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n3:I[39756,[\\\"/_next/static/chunks/3fntmmi971322.js\\\"],\\\"default\\\"]\\n4:I[37457,[\\\"/_next/static/chunks/3fntmmi971322.js\\\"],\\\"default\\\"]\\n7:I[97367,[\\\"/_next/static/chunks/3fntmmi971322.js\\\"],\\\"OutletBoundary\\\"]\\n8:\\\"$Sreact.suspense\\\"\\nb:I[97367,[\\\"/_next/static/chunks",
+      "errors": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    {
+      "name": "print bulk",
+      "at": "2026-09-30T20:08:39.236Z",
+      "url": "http://localhost:3100/admin/stampa/otpremnice?brojevi=SK-2026-000135,SK-2026-000112",
+      "title": "Otpremnice · Administracija",
+      "text": "Preskoči na sadržajNazadŠtampajPodaci o firmi nisu popunjeni: pun naziv firme, PIB, adresa sedišta, telefon. Predračun, otpremnica i podnožje sajta ih prikazuju. Popuni u podešavanjimaSKLOPOtpremnicaSK-2026-000135Datum: 30.09.2026.Porudžbina od 30.09.2026.PrimalacAdmin Test fa3-884947+381 64 333 4455 · admin-e2e-fa3-884947@primer.rsIsporukaKurirska službaTest ulica 5, 11000 BeogradPlaćanje: PouzećemR. br.ŠifraOEMNazivKol.Izdato1.DEMO-00055Q0 615 666 AKočioni disk prednji 340 × 30 mm, GTIOriginal VAG1Ukupno komada: 1Robu izdaoRobu primioSKLOPOtpremnicaSK-2026-000112Datum: 30.09.2026.Porudžbina od 30.09.2026.PrimalacAdmin Test fa1-86712+381 64 333 4455 · admin-e2e-fa1-86712@primer.rsIsporukaKurirska službaTest ulica 5, 11000 BeogradBroj pošiljke: RS87976548SRPlaćanje: PouzećemR. br.ŠifraOEMNazivKol.Izdato1.DEMO-00045Q0 615 505 RKočioni disk prednji 276 × 24 mmFebi Bilstein22.E2E-5232824—Ko",
+      "errors": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    {
+      "name": "mejlovi",
+      "at": "2026-09-30T20:08:43.712Z",
+      "text": "E-poštaSve poruke koje sistem pravi za kupce, majstore i osoblje — sa statusom isporuke.PorukeŠabloni i probne porukeRežim slanja: Samo zapis. Poruke se samo beleže ovde — ništa ne odlazi kupcima ni osoblju.Promenite režim slanjaSvi statusiZabeleženoU reduPoslatoIsporučenoKasniOdbijenoPrijavljenoGreškaOtvorenoKliknutoSvi šabloniPorudžbine · Porudžbina primljenaPorudžbine · Porudžbina potvrđena (predračun)Porudžbine · Porudžbina čeka deoPorudžbine · Spremna za preuzimanjePorudžbine · Porudžbina poslataPorudžbine · Isporučena / preuzetaPorudžbine · Porudžbina otkazanaUpiti i ponude · Upit primljenUpiti i ponude · Ponuda spremnaUpiti i ponude · Ponuda uskoro ističeUpiti i ponude · Deo je ponovo na stanjuMajstori · Registracija majstora primljenaMajstori · Majstor odobren (razred)Majstori · Registracija odbijenaMajstori · Majstorski nalog pauziranNalog · Kod za novu lozinkuNalog · Pozivnica "
+    },
+    {
+      "name": "lager",
+      "at": "2026-09-30T20:08:47.959Z",
+      "text": "LagerArtikli bez zaliha i sa malo zaliha (prag 3 kom. ako artikal nema svoj) i svaka promena stanja sa razlogom. Količinu i prag menjate direktno u redu.Bez zaliha (15)Malo na stanju (29)Kretanje zalihaAktivni artikli bez zalihaArtikalStanjeKom.PragKočione pločice prednjeDEMO-0012Nema na stanju0Rame prednje desno, sa kuglomDEMO-0030Nema na stanju0Kraj sponeDEMO-0034Nema na stanju0Ležaj prednjeg točka, setDEMO-0040Nema na stanju0Alternator 140 ADEMO-0065Nema na stanju0Alternator 110 ADEMO-0066Nema na stanju0Nosač menjača levi, DSGDEMO-0079Nema na stanju0Lonac zadnjiDEMO-0083Nema na stanju0Crevo hladnjaka gornjeDEMO-0090Nema na stanju0Kompresor klimeDEMO-0092Nema na stanju0HaubaDEMO-0114Nema na stanju0Metlica zadnjeg brisača 280 mmDEMO-0125Nema na stanju0Filter uljaDEMO-0134Nema na stanju0Kočiona tečnost Super DOT 4, 1 LDEMO-0149Nema na stanju0Ulje za DSG menjač, 1 LDEMO-0150Nema na stanju"
+    },
+    {
+      "name": "FAILED",
+      "at": "2026-09-30T20:14:50.837Z",
+      "error": "TimeoutError: locator.fill: Timeout 120000ms exceeded.\nCall log:\n  - waiting for getByTestId('auth-email')\n"
+    }
+  ],
+  "number": "SK-2026-000135"
+}

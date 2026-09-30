@@ -1,0 +1,38 @@
+[
+  {
+    "engine": "chromium",
+    "width": 1440,
+    "mode": "focus",
+    "target": 1800,
+    "via": "/delovi",
+    "before": {
+      "y": 1800,
+      "stage": 5
+    },
+    "events": [
+      {
+        "ev": "scroll",
+        "y": 1342
+      },
+      {
+        "ev": "click",
+        "y": 1342
+      },
+      {
+        "ev": "pushState",
+        "y": 1342,
+        "url": "/delovi"
+      },
+      {
+        "ev": "scroll",
+        "y": 0
+      }
+    ],
+    "after": {
+      "y": 1342,
+      "stage": 4,
+      "cur": "04Agregati i hlađenje",
+      "docH": 13394
+    }
+  }
+]

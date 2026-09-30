@@ -1,0 +1,128 @@
+[
+  {
+    "run": 1,
+    "how": "wheel",
+    "samples": [
+      {
+        "t": 2526,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 0.8823;"
+      },
+      {
+        "t": 2768,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;"
+      },
+      {
+        "t": 3002,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;"
+      },
+      {
+        "t": 3209,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;"
+      },
+      {
+        "t": 3431,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;"
+      },
+      {
+        "t": 3844,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;"
+      },
+      {
+        "t": 4075,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;"
+      },
+      {
+        "t": 4300,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;"
+      },
+      {
+        "t": 4578,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;"
+      },
+      {
+        "t": 4849,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;"
+      },
+      {
+        "t": 5071,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;"
+      },
+      {
+        "t": 5287,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;"
+      },
+      {
+        "t": 5514,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;"
+      },
+      {
+        "t": 5727,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;"
+      },
+      {
+        "t": 5940,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;"
+      }
+    ]
+  }
+]

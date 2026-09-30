@@ -1,0 +1,155 @@
+{
+  "mechanic 390 /majstor/cenovnik": {
+    "role": "mechanic",
+    "width": 390,
+    "route": "/majstor/cenovnik",
+    "tabs": 45,
+    "fullyHidden": 8,
+    "partly": 2,
+    "hits": [
+      {
+        "i": 14,
+        "name": "Brizgaljke i pumpa goriva",
+        "rect": [
+          725,
+          745
+        ],
+        "covered": 100,
+        "by": "div.sticky.bottom-0.z-sticky [715-844]",
+        "inView": true
+      },
+      {
+        "i": 15,
+        "name": "Set zupčastog kaiša i vodena pumpa",
+        "rect": [
+          773,
+          793
+        ],
+        "covered": 100,
+        "by": "div.sticky.bottom-0.z-sticky [715-844]",
+        "inView": true
+      },
+      {
+        "i": 16,
+        "name": "Kaiš alternatora i zatezači",
+        "rect": [
+          821,
+          841
+        ],
+        "covered": 100,
+        "by": "div.sticky.bottom-0.z-sticky [715-844]",
+        "inView": true
+      },
+      {
+        "i": 23,
+        "name": "Izduvni sistem — sve kategorije",
+        "rect": [
+          781,
+          801
+        ],
+        "covered": 100,
+        "by": "div.sticky.bottom-0.z-sticky [715-844]",
+        "inView": true
+      },
+      {
+        "i": 24,
+        "name": "DPF i katalizator",
+        "rect": [
+          824,
+          844
+        ],
+        "covered": 98,
+        "by": "div.sticky.bottom-0.z-sticky [715-844]",
+        "inView": true
+      },
+      {
+        "i": 30,
+        "name": "Transmisija — sve kategorije",
+        "rect": [
+          774,
+          794
+        ],
+        "covered": 100,
+        "by": "div.sticky.bottom-0.z-sticky [715-844]",
+        "inView": true
+      },
+      {
+        "i": 31,
+        "name": "Kvačilo i zamajac",
+        "rect": [
+          822,
+          842
+        ],
+        "covered": 100,
+        "by": "div.sticky.bottom-0.z-sticky [715-844]",
+        "inView": true
+      },
+      {
+        "i": 37,
+        "name": "Spone i stabilizatori",
+        "rect": [
+          733,
+          753
+        ],
+        "covered": 100,
+        "by": "div.sticky.bottom-0.z-sticky [715-844]",
+        "inView": true
+      },
+      {
+        "i": 38,
+        "name": "Letva volana",
+        "rect": [
+          781,
+          801
+        ],
+        "covered": 100,
+        "by": "div.sticky.bottom-0.z-sticky [715-844]",
+        "inView": true
+      },
+      {
+        "i": 39,
+        "name": "Ležaj točka i glavčina",
+        "rect": [
+          824,
+          844
+        ],
+        "covered": 98,
+        "by": "div.sticky.bottom-0.z-sticky [715-844]",
+        "inView": true
+      }
+    ],
+    "ev": "docs/qa/audit/a11y-app/obscured-mechanic-390-majstor-cenovnik.webp"
+  },
+  "anon 390 /za-majstore/registracija": {
+    "role": "anon",
+    "width": 390,
+    "route": "/za-majstore/registracija",
+    "tabs": 40,
+    "fullyHidden": 0,
+    "partly": 0,
+    "hits": [],
+    "ev": null
+  },
+  "customer 390 /nalog/profil": {
+    "role": "customer",
+    "width": 390,
+    "route": "/nalog/profil",
+    "tabs": 25,
+    "fullyHidden": 1,
+    "partly": 0,
+    "hits": [
+      {
+        "i": 20,
+        "name": "Preskoči na sadržaj",
+        "rect": [
+          12,
+          51
+        ],
+        "covered": 100,
+        "by": "header.sticky.top-0.z-header [0-57]",
+        "inView": true
+      }
+    ],
+    "ev": "docs/qa/audit/a11y-app/obscured-customer-390-nalog-profil.webp"
+  }
+}

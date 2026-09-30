@@ -1,0 +1,71 @@
+[
+  {
+    "jsOnly": false,
+    "engine": "chromium",
+    "mode": "cdp",
+    "route": "home",
+    "width": 390,
+    "run": 0,
+    "visibleAt": 2463,
+    "hydratedAtVisible": false,
+    "hydratedDuringTyping": true,
+    "valueBeforeHydration": "5Q0615505R",
+    "typedAt": 6691,
+    "hydratedAt": 6811,
+    "timeline": [
+      {
+        "at": 23,
+        "v": "5Q0615505R"
+      }
+    ],
+    "after": "5Q0615505R",
+    "focused": true,
+    "shot": "docs/qa/audit/verify/xbrowser/xbrowser-01-skeptic-chromium-cdp-390-home-after.webp",
+    "consoleErrors": []
+  },
+  {
+    "jsOnly": false,
+    "engine": "chromium",
+    "mode": "cdp",
+    "route": "home",
+    "width": 390,
+    "run": 1,
+    "visibleAt": 6399,
+    "hydratedAtVisible": false,
+    "hydratedDuringTyping": true,
+    "valueBeforeHydration": "",
+    "typedAt": 10960,
+    "hydratedAt": 11805,
+    "timeline": [],
+    "after": "",
+    "focused": true,
+    "consoleErrors": []
+  },
+  {
+    "jsOnly": false,
+    "engine": "chromium",
+    "mode": "cdp",
+    "route": "home",
+    "width": 390,
+    "run": 2,
+    "visibleAt": 2101,
+    "hydratedAtVisible": false,
+    "hydratedDuringTyping": false,
+    "valueBeforeHydration": "5Q0615505R",
+    "typedAt": 3754,
+    "hydratedAt": 4379,
+    "timeline": [
+      {
+        "at": 9,
+        "v": "5Q0615505R"
+      },
+      {
+        "at": 429,
+        "v": ""
+      }
+    ],
+    "after": "",
+    "focused": true,
+    "consoleErrors": []
+  }
+]

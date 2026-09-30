@@ -1,0 +1,214 @@
+{
+  "cart-added-1440": 3,
+  "13-korpa-1440": [
+    {
+      "lineH": 165,
+      "lineTop": 170,
+      "trash": {
+        "x": 82,
+        "y": 104,
+        "w": 44,
+        "h": 44
+      },
+      "stepper": {
+        "x": 666,
+        "y": 38,
+        "w": 130,
+        "h": 36
+      },
+      "total": {
+        "x": 808,
+        "y": 46,
+        "w": 80,
+        "text": "4.690 RSD"
+      }
+    },
+    {
+      "lineH": 165,
+      "lineTop": 335,
+      "trash": {
+        "x": 82,
+        "y": 104,
+        "w": 44,
+        "h": 44
+      },
+      "stepper": {
+        "x": 666,
+        "y": 38,
+        "w": 130,
+        "h": 36
+      },
+      "total": {
+        "x": 808,
+        "y": 46,
+        "w": 80,
+        "text": "7.490 RSD"
+      }
+    },
+    {
+      "lineH": 164,
+      "lineTop": 500,
+      "trash": {
+        "x": 82,
+        "y": 104,
+        "w": 44,
+        "h": 44
+      },
+      "stepper": {
+        "x": 666,
+        "y": 38,
+        "w": 130,
+        "h": 36
+      },
+      "total": {
+        "x": 808,
+        "y": 46,
+        "w": 80,
+        "text": "3.890 RSD"
+      }
+    }
+  ],
+  "13-drawer-1440": [
+    {
+      "lineH": 196,
+      "trashY": 135,
+      "trashX": 66
+    },
+    {
+      "lineH": 196,
+      "trashY": 135,
+      "trashX": 66
+    },
+    {
+      "lineH": 195,
+      "trashY": 135,
+      "trashX": 66
+    }
+  ],
+  "11-step1-1440": {
+    "outer": "<a class=\"inline-flex items-center gap-1.5 font-semibold text-ink-1 underline underline-offset-4 decoration-1 decoration-line-strong transition-control hover:decoration-accent cursor-pointer rounded-xs\" href=\"/korpa\">Korpa<span aria-hidden=\"true\" class=\"inline-flex\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"14\" fill=\"currentColor\" viewBox=\"0 0 256 256\"><path d=\"M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z\"></path></svg></span></a>",
+    "kids": [
+      "text:Korpa",
+      "span[svg]:"
+    ],
+    "svgX": 99,
+    "textX": 48,
+    "textRight": 93,
+    "linkX": 48,
+    "linkW": 65,
+    "linkH": 25
+  },
+  "11-step2-1440": "did not reach step 2",
+  "log-1440": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  },
+  "cart-added-390": 3,
+  "13-korpa-390": [
+    {
+      "lineH": 222,
+      "lineTop": 151,
+      "trash": {
+        "x": 66,
+        "y": 161,
+        "w": 44,
+        "h": 44
+      },
+      "stepper": {
+        "x": 76,
+        "y": 91,
+        "w": 130,
+        "h": 36
+      },
+      "total": {
+        "x": 76,
+        "y": 135,
+        "w": 282,
+        "text": "4.690 RSD"
+      }
+    },
+    {
+      "lineH": 222,
+      "lineTop": 373,
+      "trash": {
+        "x": 66,
+        "y": 161,
+        "w": 44,
+        "h": 44
+      },
+      "stepper": {
+        "x": 76,
+        "y": 91,
+        "w": 130,
+        "h": 36
+      },
+      "total": {
+        "x": 76,
+        "y": 135,
+        "w": 282,
+        "text": "7.490 RSD"
+      }
+    },
+    {
+      "lineH": 221,
+      "lineTop": 595,
+      "trash": {
+        "x": 66,
+        "y": 161,
+        "w": 44,
+        "h": 44
+      },
+      "stepper": {
+        "x": 76,
+        "y": 91,
+        "w": 130,
+        "h": 36
+      },
+      "total": {
+        "x": 76,
+        "y": 135,
+        "w": 282,
+        "text": "3.890 RSD"
+      }
+    }
+  ],
+  "13-drawer-390": [
+    {
+      "lineH": 196,
+      "trashY": 135,
+      "trashX": 66
+    },
+    {
+      "lineH": 196,
+      "trashY": 135,
+      "trashX": 66
+    },
+    {
+      "lineH": 195,
+      "trashY": 135,
+      "trashX": 66
+    }
+  ],
+  "11-step1-390": {
+    "outer": "<a class=\"inline-flex items-center gap-1.5 font-semibold text-ink-1 underline underline-offset-4 decoration-1 decoration-line-strong transition-control hover:decoration-accent cursor-pointer rounded-xs\" href=\"/korpa\">Korpa<span aria-hidden=\"true\" class=\"inline-flex\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"14\" height=\"14\" fill=\"currentColor\" viewBox=\"0 0 256 256\"><path d=\"M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z\"></path></svg></span></a>",
+    "kids": [
+      "text:Korpa",
+      "span[svg]:"
+    ],
+    "svgX": 67,
+    "textX": 16,
+    "textRight": 61,
+    "linkX": 16,
+    "linkW": 65,
+    "linkH": 25
+  },
+  "11-step2-390": "did not reach step 2",
+  "log-390": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

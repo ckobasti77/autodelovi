@@ -1,0 +1,96 @@
+{
+ "co focus after submit without terms": "div[alert]# \"Proverite jedno polje:Potrebna je saglas\"",
+ "co #co-terms attrs": {
+  "ariaInvalid": "true",
+  "ariaDescribedby": null,
+  "alertsInMain": [
+   "live=polite: 4.690 RSD",
+   "alert: Proverite jedno polje:Potrebna je saglasnost sa uslovima kup",
+   "live=polite: 4.690 RSD",
+   "live=polite: ",
+   "status: "
+  ]
+ },
+ "co #co-terms AX": {
+  "role": "checkbox",
+  "name": "Prihvatam uslove kupovine i politiku privatnosti.",
+  "description": "",
+  "invalid": "true"
+ },
+ "co error p": [
+  {
+   "id": "",
+   "role": null,
+   "text": "Proverite jedno polje:"
+  },
+  {
+   "id": "",
+   "role": null,
+   "text": "Potrebna je saglasnost sa uslovima kupovine."
+  }
+ ],
+ "iq focus after empty submit": "textarea#iq-message \"\"",
+ "iq consent attrs": {
+  "ariaInvalid": "true",
+  "ariaDescribedby": null,
+  "alertsInMain": [
+   "alert: Proverite označena polja:Napišite šta vam treba — naziv dela",
+   "live=polite: ",
+   "status: "
+  ]
+ },
+ "iq consent AX": {
+  "role": "checkbox",
+  "name": "Slažem se da podatke iz upita koristite za odgovor, premapolitici privatnosti.",
+  "description": "",
+  "invalid": "true"
+ },
+ "iq name field AX (comparison)": {
+  "role": "textbox",
+  "name": "Ime",
+  "description": "Upišite ime.",
+  "invalid": "true"
+ },
+ "iq consent error p": {
+  "id": "",
+  "role": null,
+  "text": "Potrebna je saglasnost da podatke koristimo za odgovor na upit."
+ },
+ "mr focus after empty submit": "input#mr-email \"\"",
+ "mr terms attrs": {
+  "ariaInvalid": null,
+  "ariaDescribedby": null,
+  "alertsInMain": [
+   "alert: Proverite označena polja:E-mail adresa nije ispravna. Primer",
+   "live=polite: ",
+   "status: "
+  ]
+ },
+ "mr terms AX": {
+  "role": "checkbox",
+  "name": "Prihvatamuslove korišćenjaipolitiku privatnosti.",
+  "description": "",
+  "invalid": "false"
+ },
+ "mr terms error p": {
+  "id": "",
+  "role": null,
+  "text": "Potrebna je saglasnost sa uslovima korišćenja."
+ },
+ "oos A focus after empty submit": "button# \"Obavesti me\"",
+ "oos A email input AX": {
+  "role": "textbox",
+  "name": "E-pošta",
+  "description": "E-mail adresa nije ispravna. Primer: ime@primer.rs.",
+  "invalid": "true"
+ },
+ "oos A added nodes": [
+  "P role=null live=null inLive=false E-mail adresa nije ispravna. Primer: ime@primer.rs."
+ ],
+ "oos B focus after invalid email submit": "button# \"Obavesti me\"",
+ "oos B added nodes": [],
+ "oos C focus after no-consent submit": "button# \"Obavesti me\"",
+ "oos C added nodes": [
+  "P role=alert live=null inLive=false Potrebna je saglasnost da vam pošaljemo obaveštenje."
+ ]
+}

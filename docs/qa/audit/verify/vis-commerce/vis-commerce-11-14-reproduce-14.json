@@ -1,0 +1,205 @@
+{
+  "14-/nalog-360": {
+    "nav": {
+      "y": 189,
+      "bottom": 233,
+      "right": 344
+    },
+    "signOut": {
+      "x": 16,
+      "y": 244,
+      "w": 98,
+      "h": 44
+    },
+    "firstHeading": {
+      "text": "Poslednje porudžbine",
+      "y": 327
+    },
+    "signOutBelowNav": true,
+    "allSignOut": [
+      {
+        "vis": true,
+        "inHeader": false
+      }
+    ]
+  },
+  "14-/nalog/profil-360": {
+    "nav": {
+      "y": 189,
+      "bottom": 233,
+      "right": 344
+    },
+    "signOut": {
+      "x": 16,
+      "y": 244,
+      "w": 98,
+      "h": 44
+    },
+    "signOutBelowNav": true,
+    "allSignOut": [
+      {
+        "vis": true,
+        "inHeader": false
+      }
+    ]
+  },
+  "14-menu-360": [
+    "",
+    "Delovi",
+    "Vozila",
+    "Za majstore",
+    "Upit po broju šasije",
+    "Moj nalog",
+    "Pošaljite upit po broju šasije"
+  ],
+  "14-/nalog-390": {
+    "nav": {
+      "y": 168,
+      "bottom": 212,
+      "right": 344
+    },
+    "signOut": {
+      "x": 16,
+      "y": 223,
+      "w": 98,
+      "h": 44
+    },
+    "firstHeading": {
+      "text": "Poslednje porudžbine",
+      "y": 306
+    },
+    "signOutBelowNav": true,
+    "allSignOut": [
+      {
+        "vis": true,
+        "inHeader": false
+      }
+    ]
+  },
+  "14-/nalog/profil-390": {
+    "nav": {
+      "y": 168,
+      "bottom": 212,
+      "right": 344
+    },
+    "signOut": {
+      "x": 16,
+      "y": 223,
+      "w": 98,
+      "h": 44
+    },
+    "signOutBelowNav": true,
+    "allSignOut": [
+      {
+        "vis": true,
+        "inHeader": false
+      }
+    ]
+  },
+  "14-menu-390": [
+    "",
+    "Delovi",
+    "Vozila",
+    "Za majstore",
+    "Upit po broju šasije",
+    "Moj nalog",
+    "Pošaljite upit po broju šasije"
+  ],
+  "14-/nalog-768": {
+    "nav": {
+      "y": 179,
+      "bottom": 223,
+      "right": 359
+    },
+    "signOut": {
+      "x": 639,
+      "y": 172,
+      "w": 98,
+      "h": 44
+    },
+    "firstHeading": {
+      "text": "Poslednje porudžbine",
+      "y": 255
+    },
+    "signOutBelowNav": false,
+    "allSignOut": [
+      {
+        "vis": true,
+        "inHeader": false
+      }
+    ]
+  },
+  "14-/nalog/profil-768": {
+    "nav": {
+      "y": 179,
+      "bottom": 223,
+      "right": 359
+    },
+    "signOut": {
+      "x": 639,
+      "y": 172,
+      "w": 98,
+      "h": 44
+    },
+    "signOutBelowNav": false,
+    "allSignOut": [
+      {
+        "vis": true,
+        "inHeader": false
+      }
+    ]
+  },
+  "14-menu-768": [
+    "",
+    "Delovi",
+    "Vozila",
+    "Za majstore",
+    "Upit po broju šasije",
+    "Moj nalog",
+    "Pošaljite upit po broju šasije"
+  ],
+  "14-/nalog-1440": {
+    "nav": {
+      "y": 194,
+      "bottom": 238,
+      "right": 376
+    },
+    "signOut": {
+      "x": 1294,
+      "y": 187,
+      "w": 98,
+      "h": 44
+    },
+    "firstHeading": {
+      "text": "Poslednje porudžbine",
+      "y": 270
+    },
+    "signOutBelowNav": false,
+    "allSignOut": [
+      {
+        "vis": true,
+        "inHeader": false
+      }
+    ]
+  },
+  "14-/nalog/profil-1440": {
+    "nav": {
+      "y": 194,
+      "bottom": 238,
+      "right": 376
+    },
+    "signOut": {
+      "x": 1294,
+      "y": 187,
+      "w": 98,
+      "h": 44
+    },
+    "signOutBelowNav": false,
+    "allSignOut": [
+      {
+        "vis": true,
+        "inHeader": false
+      }
+    ]
+  }
+}

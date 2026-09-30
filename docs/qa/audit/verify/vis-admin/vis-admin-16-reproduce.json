@@ -1,0 +1,52 @@
+{
+  "16": {
+    "customerHref": null,
+    "order-1024": [
+      {
+        "email": "admin-e2e-audit21@primer.rs",
+        "lines": 2,
+        "frags": [
+          "admin-e2e-audit21@pri",
+          "mer.rs"
+        ],
+        "aWordBreak": "break-all",
+        "aOverflowWrap": "break-word",
+        "ddOverflowWrap": "break-word",
+        "ddWidth": 158
+      }
+    ],
+    "order-1280": [
+      {
+        "email": "admin-e2e-audit21@primer.rs",
+        "lines": 1,
+        "frags": [],
+        "aWordBreak": "break-all",
+        "aOverflowWrap": "break-word",
+        "ddOverflowWrap": "break-word",
+        "ddWidth": 218
+      }
+    ],
+    "order-1440": [
+      {
+        "email": "admin-e2e-audit21@primer.rs",
+        "lines": 1,
+        "frags": [],
+        "aWordBreak": "break-all",
+        "aOverflowWrap": "break-word",
+        "ddOverflowWrap": "break-word",
+        "ddWidth": 218
+      }
+    ],
+    "inquiry-1440": [
+      {
+        "email": "majstor.demo@sklop.test",
+        "lines": 1,
+        "frags": [],
+        "aWordBreak": "break-all",
+        "aOverflowWrap": "break-word",
+        "ddOverflowWrap": "break-word",
+        "ddWidth": 218
+      }
+    ]
+  }
+}

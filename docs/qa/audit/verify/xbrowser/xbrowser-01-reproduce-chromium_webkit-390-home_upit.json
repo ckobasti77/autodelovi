@@ -1,0 +1,65 @@
+{
+  "chromium-390-home": {
+    "delay": 6000,
+    "visibleAt": 6555,
+    "hydratedBeforeTyping": false,
+    "typedAt": 7129,
+    "domAfterTyping": "5Q0615505R",
+    "hydratedRightAfterTyping": false,
+    "error": "Error: page.waitForFunction: EvalError: Evaluating a string as JavaScript violates the following Content Security Policy directive because 'unsafe-eval' is not an allowed source of script: script-src 'self' 'nonce-DaZEZTmbMi2fecaIWu7JmA==' 'strict-dynamic' 'wasm-unsafe-eval'\". |  |     at eval (<anonymous>)",
+    "chunkRequestsDelayed": 25
+  },
+  "chromium-390-upit": {
+    "delay": 6000,
+    "visibleAt": 6518,
+    "hydratedBeforeTyping": false,
+    "typedAt": 7942,
+    "domAfterTyping": {
+      "vin": "WVWZZZ1KZ8W123456",
+      "msg": "Turbina za Golf 7, dizel."
+    },
+    "hydratedRightAfterTyping": false,
+    "error": "Error: page.waitForFunction: EvalError: Evaluating a string as JavaScript violates the following Content Security Policy directive because 'unsafe-eval' is not an allowed source of script: script-src 'self' 'nonce-zgrYEwS088jUbBZfDlktKA==' 'strict-dynamic' 'wasm-unsafe-eval'\". |  |     at eval (<anonymous>)",
+    "chunkRequestsDelayed": 25
+  },
+  "webkit-390-home": {
+    "delay": 6000,
+    "visibleAt": 6581,
+    "hydratedBeforeTyping": false,
+    "typedAt": 7617,
+    "domAfterTyping": "5Q0615505R",
+    "hydratedRightAfterTyping": true,
+    "hydratedAt": 7625,
+    "after": {
+      "value": "5Q0615505R",
+      "sameNode": true,
+      "focused": true
+    },
+    "chunkRequestsDelayed": 31
+  },
+  "webkit-390-upit": {
+    "delay": 6000,
+    "visibleAt": 6653,
+    "hydratedBeforeTyping": false,
+    "typedAt": 9696,
+    "domAfterTyping": {
+      "vin": "WVWZZZ1KZ8W123456",
+      "msg": "Turbina za Golf 7, dizel."
+    },
+    "hydratedRightAfterTyping": true,
+    "hydratedAt": 9739,
+    "after": {
+      "vin": "WVWZZZ1KZ8W123456",
+      "sameNode": true,
+      "msg": "Turbina za Golf 7, dizel.",
+      "vinCounter": "",
+      "msgCounter": "25 / 2.000",
+      "brand": "volkswagen"
+    },
+    "afterSubmit": {
+      "url": "/upit/hvala/HLrhZJB0ZB1saNpOOfwT_TPvKpAiPzGMpMBUB56KgoQ",
+      "alerts": []
+    },
+    "chunkRequestsDelayed": 49
+  }
+}

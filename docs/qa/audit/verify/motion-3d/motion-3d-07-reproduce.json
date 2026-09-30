@@ -1,0 +1,191 @@
+[
+ {
+  "width": 1440,
+  "route": "/",
+  "sel": "#faq-title ~ div details summary",
+  "label": "Kako da budem siguran da deo odgovara mom autu?",
+  "h0": 65,
+  "firstFrame": {
+   "t": 54,
+   "h": 188,
+   "op": "1",
+   "rot": "none"
+  },
+  "distinctHeights": [
+   188
+  ],
+  "h1500": 188.1875,
+  "framesSampled": 10,
+  "iconTransition": "transform, translate, scale, rotate 0.2s linear",
+  "iconFinal": "none",
+  "gsapTweensOnBox": "n/a"
+ },
+ {
+  "width": 1440,
+  "route": "/za-majstore",
+  "sel": "details summary",
+  "label": "Ko može da dobije majstorski nalog?",
+  "h0": 65,
+  "firstFrame": {
+   "t": 3,
+   "h": 139,
+   "op": "1",
+   "rot": "none"
+  },
+  "distinctHeights": [
+   139
+  ],
+  "h1500": 138.59375,
+  "framesSampled": 43,
+  "iconTransition": "transform, translate, scale, rotate 0.2s linear",
+  "iconFinal": "none",
+  "gsapTweensOnBox": "n/a"
+ },
+ {
+  "width": 1440,
+  "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "sel": "details summary",
+  "label": "Prikaži još 3Prikaži manje",
+  "h0": 44,
+  "firstFrame": {
+   "t": 18,
+   "h": 217,
+   "op": "1",
+   "rot": null
+  },
+  "distinctHeights": [
+   217
+  ],
+  "h1500": 217.1875,
+  "framesSampled": 43,
+  "iconTransition": null,
+  "iconFinal": null,
+  "gsapTweensOnBox": "n/a"
+ },
+ {
+  "width": 1440,
+  "route": "/delovi/kocioni-diskovi",
+  "sel": "details summary",
+  "label": "Više o kategorijiManje",
+  "h0": 44,
+  "firstFrame": {
+   "t": 2,
+   "h": 176,
+   "op": "1",
+   "rot": null
+  },
+  "distinctHeights": [
+   176
+  ],
+  "h1500": 175.984375,
+  "framesSampled": 43,
+  "iconTransition": null,
+  "iconFinal": null,
+  "gsapTweensOnBox": "n/a"
+ },
+ {
+  "width": 1440,
+  "route": "/delovi/kocioni-diskovi",
+  "sel": "aside h2 button[aria-expanded], h2 > button[aria-expanded]",
+  "label": "Vozilo",
+  "h0": 117,
+  "firstFrame": {
+   "t": 14,
+   "h": 69,
+   "op": null,
+   "rot": "none"
+  },
+  "distinctHeights": [
+   69
+  ],
+  "h1500": 69,
+  "framesSampled": 43,
+  "iconTransition": "transform, translate, scale, rotate 0.2s linear",
+  "iconFinal": "none",
+  "gsapTweensOnBox": "n/a"
+ },
+ {
+  "width": 390,
+  "route": "/",
+  "sel": "#faq-title ~ div details summary",
+  "label": "Kako da budem siguran da deo odgovara mom autu?",
+  "h0": 76.1875,
+  "firstFrame": {
+   "t": 17,
+   "h": 274,
+   "op": "1",
+   "rot": "none"
+  },
+  "distinctHeights": [
+   274
+  ],
+  "h1500": 273.765625,
+  "framesSampled": 42,
+  "iconTransition": "transform, translate, scale, rotate 0.2s linear",
+  "iconFinal": "none",
+  "gsapTweensOnBox": "n/a"
+ },
+ {
+  "width": 390,
+  "route": "/za-majstore",
+  "sel": "details summary",
+  "label": "Ko može da dobije majstorski nalog?",
+  "h0": 65,
+  "firstFrame": {
+   "t": 4,
+   "h": 188,
+   "op": "1",
+   "rot": "none"
+  },
+  "distinctHeights": [
+   188
+  ],
+  "h1500": 188.1875,
+  "framesSampled": 43,
+  "iconTransition": "transform, translate, scale, rotate 0.2s linear",
+  "iconFinal": "none",
+  "gsapTweensOnBox": "n/a"
+ },
+ {
+  "width": 390,
+  "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "sel": "details summary",
+  "label": "Prikaži još 3Prikaži manje",
+  "h0": 44,
+  "firstFrame": {
+   "t": 13,
+   "h": 272,
+   "op": "1",
+   "rot": null
+  },
+  "distinctHeights": [
+   272
+  ],
+  "h1500": 271.75,
+  "framesSampled": 43,
+  "iconTransition": null,
+  "iconFinal": null,
+  "gsapTweensOnBox": "n/a"
+ },
+ {
+  "width": 390,
+  "route": "/delovi/kocioni-diskovi",
+  "sel": "details summary",
+  "label": "Više o kategorijiManje",
+  "h0": 44,
+  "firstFrame": {
+   "t": 17,
+   "h": 275,
+   "op": "1",
+   "rot": null
+  },
+  "distinctHeights": [
+   275
+  ],
+  "h1500": 275.171875,
+  "framesSampled": 42,
+  "iconTransition": null,
+  "iconFinal": null,
+  "gsapTweensOnBox": "n/a"
+ }
+]

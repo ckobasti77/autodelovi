@@ -1,0 +1,297 @@
+{
+  "09": {
+    "/majstor 320": {
+      "over": 49,
+      "offenders": [
+        "div.ml-auto.flex",
+        "a.relative.inline-flex",
+        "div.lg:hidden"
+      ],
+      "menu": {
+        "left": 325,
+        "right": 369,
+        "vw": 320
+      },
+      "headerItems": [
+        "SKLOP — početna@16-129",
+        "Pretraga delova@141-185",
+        "Brza porudžbina@187-231",
+        "Majstorski portal@233-277",
+        "Korpa, 1 artikal@279-323",
+        "Otvori meni@325-369"
+      ]
+    },
+    "/majstor 360": {
+      "over": 9,
+      "offenders": [
+        "div.ml-auto.flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex"
+      ],
+      "menu": {
+        "left": 325,
+        "right": 369,
+        "vw": 360
+      },
+      "headerItems": [
+        "SKLOP — početna@16-129",
+        "Pretraga delova@141-185",
+        "Brza porudžbina@187-231",
+        "Majstorski portal@233-277",
+        "Korpa, 1 artikal@279-323",
+        "Otvori meni@325-369"
+      ]
+    },
+    "/majstor 375": {
+      "over": 0,
+      "offenders": [],
+      "menu": {
+        "left": 325,
+        "right": 369,
+        "vw": 375
+      }
+    },
+    "/majstor 390": {
+      "over": 0,
+      "offenders": [],
+      "menu": {
+        "left": 330,
+        "right": 374,
+        "vw": 390
+      }
+    },
+    "/majstor/cenovnik 320": {
+      "over": 49,
+      "offenders": [
+        "div.ml-auto.flex",
+        "a.relative.inline-flex",
+        "div.lg:hidden"
+      ],
+      "menu": {
+        "left": 325,
+        "right": 369,
+        "vw": 320
+      },
+      "headerItems": [
+        "SKLOP — početna@16-129",
+        "Pretraga delova@141-185",
+        "Brza porudžbina@187-231",
+        "Majstorski portal@233-277",
+        "Korpa, 1 artikal@279-323",
+        "Otvori meni@325-369"
+      ]
+    },
+    "/majstor/cenovnik 360": {
+      "over": 9,
+      "offenders": [
+        "div.ml-auto.flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex"
+      ],
+      "menu": {
+        "left": 325,
+        "right": 369,
+        "vw": 360
+      },
+      "headerItems": [
+        "SKLOP — početna@16-129",
+        "Pretraga delova@141-185",
+        "Brza porudžbina@187-231",
+        "Majstorski portal@233-277",
+        "Korpa, 1 artikal@279-323",
+        "Otvori meni@325-369"
+      ]
+    },
+    "/majstor/cenovnik 375": {
+      "over": 0,
+      "offenders": [],
+      "menu": {
+        "left": 325,
+        "right": 369,
+        "vw": 375
+      }
+    },
+    "/majstor/cenovnik 390": {
+      "over": 0,
+      "offenders": [],
+      "menu": {
+        "left": 330,
+        "right": 374,
+        "vw": 390
+      }
+    },
+    "/ 320": {
+      "over": 49,
+      "offenders": [
+        "div.ml-auto.flex",
+        "a.relative.inline-flex",
+        "div.lg:hidden"
+      ],
+      "menu": {
+        "left": 325,
+        "right": 369,
+        "vw": 320
+      },
+      "headerItems": [
+        "SKLOP — početna@16-129",
+        "Pretraga delova@141-185",
+        "Brza porudžbina@187-231",
+        "Majstorski portal@233-277",
+        "Korpa, 1 artikal@279-323",
+        "Otvori meni@325-369"
+      ]
+    },
+    "/ 360": {
+      "over": 9,
+      "offenders": [
+        "div.ml-auto.flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex"
+      ],
+      "menu": {
+        "left": 325,
+        "right": 369,
+        "vw": 360
+      },
+      "headerItems": [
+        "SKLOP — početna@16-129",
+        "Pretraga delova@141-185",
+        "Brza porudžbina@187-231",
+        "Majstorski portal@233-277",
+        "Korpa, 1 artikal@279-323",
+        "Otvori meni@325-369"
+      ]
+    },
+    "/ 375": {
+      "over": 0,
+      "offenders": [],
+      "menu": {
+        "left": 325,
+        "right": 369,
+        "vw": 375
+      }
+    },
+    "/ 390": {
+      "over": 0,
+      "offenders": [],
+      "menu": {
+        "left": 330,
+        "right": 374,
+        "vw": 390
+      }
+    },
+    "/delovi/kocioni-diskovi 320": {
+      "over": 49,
+      "offenders": [
+        "div.ml-auto.flex",
+        "a.relative.inline-flex",
+        "div.lg:hidden"
+      ],
+      "menu": {
+        "left": 325,
+        "right": 369,
+        "vw": 320
+      },
+      "headerItems": [
+        "SKLOP — početna@16-129",
+        "Pretraga delova@141-185",
+        "Brza porudžbina@187-231",
+        "Majstorski portal@233-277",
+        "Korpa, 1 artikal@279-323",
+        "Otvori meni@325-369"
+      ]
+    },
+    "/delovi/kocioni-diskovi 360": {
+      "over": 9,
+      "offenders": [
+        "div.ml-auto.flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex"
+      ],
+      "menu": {
+        "left": 325,
+        "right": 369,
+        "vw": 360
+      },
+      "headerItems": [
+        "SKLOP — početna@16-129",
+        "Pretraga delova@141-185",
+        "Brza porudžbina@187-231",
+        "Majstorski portal@233-277",
+        "Korpa, 1 artikal@279-323",
+        "Otvori meni@325-369"
+      ]
+    },
+    "/delovi/kocioni-diskovi 375": {
+      "over": 0,
+      "offenders": [],
+      "menu": {
+        "left": 325,
+        "right": 369,
+        "vw": 375
+      }
+    },
+    "/delovi/kocioni-diskovi 390": {
+      "over": 0,
+      "offenders": [],
+      "menu": {
+        "left": 330,
+        "right": 374,
+        "vw": 390
+      }
+    },
+    "anon / 320": {
+      "over": 3,
+      "offenders": [
+        "div.ml-auto.flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex"
+      ]
+    },
+    "anon / 360": {
+      "over": 0,
+      "offenders": []
+    },
+    "anon /prijava 320": {
+      "over": 3,
+      "offenders": [
+        "div.ml-auto.flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex"
+      ]
+    },
+    "anon /prijava 360": {
+      "over": 0,
+      "offenders": []
+    },
+    "anon /registracija 320": {
+      "over": 3,
+      "offenders": [
+        "div.ml-auto.flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex"
+      ]
+    },
+    "anon /registracija 360": {
+      "over": 0,
+      "offenders": []
+    },
+    "anon /delovi/kocioni-diskovi 320": {
+      "over": 3,
+      "offenders": [
+        "div.ml-auto.flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex",
+        "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+        "button.relative.inline-flex",
+        "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+        "button.relative.inline-flex",
+        "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]"
+      ]
+    },
+    "anon /delovi/kocioni-diskovi 360": {
+      "over": 0,
+      "offenders": []
+    }
+  }
+}

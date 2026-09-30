@@ -1,0 +1,22 @@
+{
+  "/upit": [
+    {
+      "id": "Dodaj kategoriju",
+      "tag": "select",
+      "type": "select-one",
+      "size": 14
+    }
+  ],
+  "/prijava": [],
+  "/za-majstore/registracija": [],
+  "/delovi/kocioni-diskovi": [],
+  "search-dialog": [],
+  "/majstor/brza-porudzbina": [
+    {
+      "id": "qo-input",
+      "tag": "textarea",
+      "type": "textarea",
+      "size": 15
+    }
+  ]
+}

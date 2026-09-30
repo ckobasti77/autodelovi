@@ -1,0 +1,1 @@
+palette {"error":"TimeoutError: locator.focus: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('header button').filter({ hasText: 'Broj porudžbine' }).first()\n","_ms":274296}

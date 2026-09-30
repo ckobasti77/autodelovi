@@ -1,0 +1,73 @@
+{
+  "out": [
+    {
+      "name": "mb-bad-checksum",
+      "pib": "154552870",
+      "mb": "64552873",
+      "errs": {
+        "mr-pib": {
+          "value": "154552870",
+          "invalid": null,
+          "described": [
+            "PIB je ispravan."
+          ]
+        },
+        "mr-mb": {
+          "value": "64552873",
+          "invalid": "true",
+          "described": [
+            "Matični broj ima 8 cifara."
+          ]
+        }
+      }
+    },
+    {
+      "name": "pib-empty-mb-empty",
+      "pib": "",
+      "mb": "",
+      "errs": {
+        "mr-pib": {
+          "value": "",
+          "invalid": "true",
+          "described": [
+            "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja."
+          ]
+        },
+        "mr-mb": {
+          "value": "",
+          "invalid": "true",
+          "described": [
+            "Matični broj ima 8 cifara."
+          ]
+        }
+      }
+    },
+    {
+      "name": "pib-8digits",
+      "pib": "15455287",
+      "mb": "64552872",
+      "errs": {
+        "mr-pib": {
+          "value": "15455287",
+          "invalid": "true",
+          "described": [
+            "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja."
+          ]
+        },
+        "mr-mb": {
+          "value": "64552872",
+          "invalid": null,
+          "described": [
+            "Matični broj je ispravan."
+          ]
+        }
+      }
+    }
+  ],
+  "log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

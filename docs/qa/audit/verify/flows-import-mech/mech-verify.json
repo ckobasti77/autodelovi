@@ -1,0 +1,279 @@
+{
+  "pricelist": {
+    "ne-postoji": {
+      "status": 200,
+      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "disposition": "attachment; filename=\"cenovnik-audit-servis-d-o-o-2026-09-30.xlsx\"; filename*=UTF-8''cenovnik-audit-servis-d-o-o-2026-09-30.xlsx",
+      "sheets": [
+        "Cenovnik"
+      ],
+      "range": "A1:L5",
+      "nonEmptyRows": 4,
+      "firstRows": [
+        [
+          "Cenovnik — Audit servis d.o.o."
+        ],
+        [
+          "Nivo: Majstor Plus · osnovni rabat 15 %"
+        ],
+        [
+          "Na dan 30.09.2026. · cene su u dinarima sa PDV-om · za pojedine kategorije i proizvođače rabat može biti drugačiji"
+        ],
+        [
+          "Šifra",
+          "Naziv",
+          "Proizvođač",
+          "Kvalitet",
+          "OEM broj",
+          "Kategorija",
+          "MP cena (RSD)",
+          "Vaša cena (RSD)",
+          "Rabat",
+          "Stanje",
+          "Rok (dana)",
+          "Link"
+        ]
+      ]
+    },
+    "(none)": {
+      "status": 400,
+      "type": "text/plain; charset=utf-8",
+      "disposition": null,
+      "body": "Izaberite bar jednu kategoriju."
+    },
+    "kocioni-diskovi": {
+      "status": 200,
+      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "disposition": "attachment; filename=\"cenovnik-audit-servis-d-o-o-2026-09-30.xlsx\"; filename*=UTF-8''cenovnik-audit-servis-d-o-o-2026-09-30.xlsx",
+      "sheets": [
+        "Cenovnik"
+      ],
+      "range": "A1:L14",
+      "nonEmptyRows": 13,
+      "firstRows": [
+        [
+          "Cenovnik — Audit servis d.o.o."
+        ],
+        [
+          "Nivo: Majstor Plus · osnovni rabat 15 %"
+        ],
+        [
+          "Na dan 30.09.2026. · cene su u dinarima sa PDV-om · za pojedine kategorije i proizvođače rabat može biti drugačiji"
+        ],
+        [
+          "Šifra",
+          "Naziv",
+          "Proizvođač",
+          "Kvalitet",
+          "OEM broj",
+          "Kategorija",
+          "MP cena (RSD)",
+          "Vaša cena (RSD)",
+          "Rabat",
+          "Stanje",
+          "Rok (dana)",
+          "Link"
+        ],
+        [
+          "DEMO-0007",
+          "Kočioni disk prednji 312 × 25 mm",
+          "Brembo",
+          "OEM kvalitet",
+          "3C0 615 098",
+          "Kočioni diskovi",
+          7490,
+          6367,
+          0.15,
+          "Na stanju",
+          null,
+          "http://localhost:3000/deo/kocioni-disk-prednji-312-25-mm-demo-0007"
+        ],
+        [
+          "DEMO-0001",
+          "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "ATE",
+          "OEM kvalitet",
+          "1K0 615 868 F",
+          "Kočioni diskovi",
+          5490,
+          4667,
+          0.15,
+          "Po porudžbini",
+          6,
+          "http://localhost:3000/deo/kocioni-disk-prednji-288-25-mm-ventilirani-demo-0001"
+        ]
+      ]
+    },
+    "kocioni-diskovi,ne-postoji": {
+      "status": 200,
+      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "disposition": "attachment; filename=\"cenovnik-audit-servis-d-o-o-2026-09-30.xlsx\"; filename*=UTF-8''cenovnik-audit-servis-d-o-o-2026-09-30.xlsx",
+      "sheets": [
+        "Cenovnik"
+      ],
+      "range": "A1:L14",
+      "nonEmptyRows": 13,
+      "firstRows": [
+        [
+          "Cenovnik — Audit servis d.o.o."
+        ],
+        [
+          "Nivo: Majstor Plus · osnovni rabat 15 %"
+        ],
+        [
+          "Na dan 30.09.2026. · cene su u dinarima sa PDV-om · za pojedine kategorije i proizvođače rabat može biti drugačiji"
+        ],
+        [
+          "Šifra",
+          "Naziv",
+          "Proizvođač",
+          "Kvalitet",
+          "OEM broj",
+          "Kategorija",
+          "MP cena (RSD)",
+          "Vaša cena (RSD)",
+          "Rabat",
+          "Stanje",
+          "Rok (dana)",
+          "Link"
+        ],
+        [
+          "DEMO-0007",
+          "Kočioni disk prednji 312 × 25 mm",
+          "Brembo",
+          "OEM kvalitet",
+          "3C0 615 098",
+          "Kočioni diskovi",
+          7490,
+          6367,
+          0.15,
+          "Na stanju",
+          null,
+          "http://localhost:3000/deo/kocioni-disk-prednji-312-25-mm-demo-0007"
+        ],
+        [
+          "DEMO-0001",
+          "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "ATE",
+          "OEM kvalitet",
+          "1K0 615 868 F",
+          "Kočioni diskovi",
+          5490,
+          4667,
+          0.15,
+          "Po porudžbini",
+          6,
+          "http://localhost:3000/deo/kocioni-disk-prednji-288-25-mm-ventilirani-demo-0001"
+        ]
+      ]
+    },
+    "stari-slug-kategorije,jos-jedan": {
+      "status": 200,
+      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "disposition": "attachment; filename=\"cenovnik-audit-servis-d-o-o-2026-09-30.xlsx\"; filename*=UTF-8''cenovnik-audit-servis-d-o-o-2026-09-30.xlsx",
+      "sheets": [
+        "Cenovnik"
+      ],
+      "range": "A1:L5",
+      "nonEmptyRows": 4,
+      "firstRows": [
+        [
+          "Cenovnik — Audit servis d.o.o."
+        ],
+        [
+          "Nivo: Majstor Plus · osnovni rabat 15 %"
+        ],
+        [
+          "Na dan 30.09.2026. · cene su u dinarima sa PDV-om · za pojedine kategorije i proizvođače rabat može biti drugačiji"
+        ],
+        [
+          "Šifra",
+          "Naziv",
+          "Proizvođač",
+          "Kvalitet",
+          "OEM broj",
+          "Kategorija",
+          "MP cena (RSD)",
+          "Vaša cena (RSD)",
+          "Rabat",
+          "Stanje",
+          "Rok (dana)",
+          "Link"
+        ]
+      ]
+    },
+    "kocnice": {
+      "status": 200,
+      "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "disposition": "attachment; filename=\"cenovnik-audit-servis-d-o-o-2026-09-30.xlsx\"; filename*=UTF-8''cenovnik-audit-servis-d-o-o-2026-09-30.xlsx",
+      "sheets": [
+        "Cenovnik"
+      ],
+      "range": "A1:L30",
+      "nonEmptyRows": 29,
+      "firstRows": [
+        [
+          "Cenovnik — Audit servis d.o.o."
+        ],
+        [
+          "Nivo: Majstor Plus · osnovni rabat 15 %"
+        ],
+        [
+          "Na dan 30.09.2026. · cene su u dinarima sa PDV-om · za pojedine kategorije i proizvođače rabat može biti drugačiji"
+        ],
+        [
+          "Šifra",
+          "Naziv",
+          "Proizvođač",
+          "Kvalitet",
+          "OEM broj",
+          "Kategorija",
+          "MP cena (RSD)",
+          "Vaša cena (RSD)",
+          "Rabat",
+          "Stanje",
+          "Rok (dana)",
+          "Link"
+        ],
+        [
+          "DEMO-0007",
+          "Kočioni disk prednji 312 × 25 mm",
+          "Brembo",
+          "OEM kvalitet",
+          "3C0 615 098",
+          "Kočioni diskovi",
+          7490,
+          6367,
+          0.15,
+          "Na stanju",
+          null,
+          "http://localhost:3000/deo/kocioni-disk-prednji-312-25-mm-demo-0007"
+        ],
+        [
+          "DEMO-0001",
+          "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "ATE",
+          "OEM kvalitet",
+          "1K0 615 868 F",
+          "Kočioni diskovi",
+          5490,
+          4667,
+          0.15,
+          "Po porudžbini",
+          6,
+          "http://localhost:3000/deo/kocioni-disk-prednji-288-25-mm-ventilirani-demo-0001"
+        ]
+      ]
+    }
+  },
+  "token": "OwS599…",
+  "thanks": "PORUDŽBINA JE PRIMLJENA.\nBroj porudžbine je SK-2026-000131. Poslali smo potvrdu na audit-majstor-5455287@primer.rs; javićemo se kad je potvrdimo.\nPlaćate po dogovorenom roku za odloženo plaćanje.\nStatus pratite na stranici porudžbine — sačuvajte link.\nSK-2026-000131\nPrimljena\n30.09.2026. 20:41\nTok porudžbine\nPrimljena\n— trenutno\n30.09.2026. 20:41\nPotvrđena\n— čeka\nPoslata\n— čeka\nIsporučena\n— čeka\nStavke\nKočioni disk prednji 276 × 24 mm\nFebi Bilstein · OEM 5Q0 615 505 R · 2 × 3.987 RSD\n7.974 RSD\nSet zupčastog kaiša 1.4 16V\nGates · OEM 036 121 959 P · 1 × 8.067 RSD\n8.067 RSD\nArtikli\n16.041 RSD\nDostava\n0 RSD\nUkupno\n16.041 RSD\nUračunat PDV: 2.673,50 RSD\nDostava\nKurirska služba · Kralja Petra I 12, 34000 Kragujevac\nPlaćanje\nOdloženo plaćanje\nObaveštenja\nSvaku promenu vidite na ovoj stranici — osvežava se sama, bez ponovnog učitavanja.\nKupac\nDragan Jović\n+381 64 555 1234\naudit-majstor-5455287@primer.rs\nAudit servis d.o.o. · PIB 154552870",
+  "statusPage": "Porudžbina\nSK-2026-000131\nPrimljena\n30.09.2026. 20:41\nPitanje o porudžbini? Navedite njen broj.\nTok porudžbine\nPrimljena\n— trenutno\n30.09.2026. 20:41\nPotvrđena\n— čeka\nPoslata\n— čeka\nIsporučena\n— čeka\nStavke\nKočioni disk prednji 276 × 24 mm\nFebi Bilstein · OEM 5Q0 615 505 R · 2 × 3.987 RSD\n7.974 RSD\nSet zupčastog kaiša 1.4 16V\nGates · OEM 036 121 959 P · 1 × 8.067 RSD\n8.067 RSD\nArtikli\n16.041 RSD\nDostava\n0 RSD\nUkupno\n16.041 RSD\nUračunat PDV: 2.673,50 RSD\nDostava\nKurirska služba · Kralja Petra I 12, 34000 Kragujevac\nPlaćanje\nOdloženo plaćanje\nObaveštenja\nSvaku promenu vidite na ovoj stranici — osvežava se sama, bez ponovnog učitavanja.\nKupac\nDragan Jović\n+381 64 555 1234\naudit-majstor-5455287@primer.rs\nAudit servis d.o.o. · PIB 154552870",
+  "history": "Audit servis d.o.o.\nMajstorski portal\nPregled\nBrza porudžbina\nPorudžbine\nOmiljeno\nVozila mušterija\nCenovnik\nUpiti\nProfil\nOdjavi se\nSve\n8\nU toku\n5\nZavršene\n0\nOtkazane\n3\nSK-2026-000131\nPrimljena\n30.09.2026. · 3 kom. · Odloženo plaćanje do 15.10.2026.\n16.041 RSD\nPoruči ponovo\nSK-2026-000122\nPrimljena\n30.09.2026. · 1 kom. · Karticom pri preuzimanju\n1.267 RSD\nPoruči ponovo\nSK-2026-000121\nPrimljena\n30.09.2026. · 2 kom. · Virmanom uz predračun\n4.854 RSD\nPoruči ponovo\nSK-2026-000120\nPrimljena\n30.09.2026. · 1 kom. · Odloženo plaćanje do 15.10.2026.\n10.115 RSD\nPoruči pono",
+  "log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

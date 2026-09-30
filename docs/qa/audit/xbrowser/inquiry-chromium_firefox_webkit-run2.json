@@ -1,0 +1,138 @@
+{
+  "chromium-1440": {
+    "hydrateMs": 178,
+    "brand": "volkswagen",
+    "brandTag": "SELECT",
+    "number": "UP-2026-000069",
+    "probe": {
+      "eventTypes": [
+        "inquiry.created"
+      ],
+      "kind": "vin",
+      "photoCount": 1,
+      "status": "nov",
+      "vin": "WVWZZZ1KZ8W123456"
+    },
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "chromium-390": {
+    "hydrateMs": 2917,
+    "brand": "volkswagen",
+    "brandTag": "SELECT",
+    "number": "UP-2026-000070",
+    "probe": {
+      "eventTypes": [
+        "inquiry.created"
+      ],
+      "kind": "vin",
+      "photoCount": 1,
+      "status": "nov",
+      "vin": "WVWZZZ1KZ8W123456"
+    },
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "firefox-1440": {
+    "hydrateMs": 139,
+    "brand": "volkswagen",
+    "brandTag": "SELECT",
+    "number": "UP-2026-000071",
+    "probe": {
+      "eventTypes": [
+        "inquiry.created"
+      ],
+      "kind": "vin",
+      "photoCount": 1,
+      "status": "nov",
+      "vin": "WVWZZZ1KZ8W123456"
+    },
+    "csp": [],
+    "log": {
+      "console": [
+        "[JavaScript Error: \"Content-Security-Policy: The page’s settings blocked a JavaScript eval (script-src) from being executed because it violates the following directive: “script-src 'self' 'nonce-h82qzks9PwIONF0lhoZNFQ==' 'strict-dynamic' 'wasm-unsafe-eval'” (Missing 'unsafe-eval')\" {file: \"http://localhost:3100/_next/static/chunks/1uyyf-z7kpx1w.js\" line: 1}]"
+      ],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "firefox-390": {
+    "hydrateMs": 101,
+    "brand": "volkswagen",
+    "brandTag": "SELECT",
+    "number": "UP-2026-000072",
+    "probe": {
+      "eventTypes": [
+        "inquiry.created"
+      ],
+      "kind": "vin",
+      "photoCount": 1,
+      "status": "nov",
+      "vin": "WVWZZZ1KZ8W123456"
+    },
+    "csp": [],
+    "log": {
+      "console": [
+        "[JavaScript Error: \"Content-Security-Policy: The page’s settings blocked a JavaScript eval (script-src) from being executed because it violates the following directive: “script-src 'self' 'nonce-ph2ftqnlJDYGdCQD71THaQ==' 'strict-dynamic' 'wasm-unsafe-eval'” (Missing 'unsafe-eval')\" {file: \"http://localhost:3100/_next/static/chunks/1uyyf-z7kpx1w.js\" line: 1}]"
+      ],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "webkit-1440": {
+    "hydrateMs": 408,
+    "brand": "volkswagen",
+    "brandTag": "SELECT",
+    "number": "UP-2026-000073",
+    "probe": {
+      "eventTypes": [
+        "inquiry.created"
+      ],
+      "kind": "vin",
+      "photoCount": 1,
+      "status": "nov",
+      "vin": "WVWZZZ1KZ8W123456"
+    },
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "webkit-390": {
+    "hydrateMs": 472,
+    "brand": "volkswagen",
+    "brandTag": "SELECT",
+    "number": "UP-2026-000074",
+    "probe": {
+      "eventTypes": [
+        "inquiry.created"
+      ],
+      "kind": "vin",
+      "photoCount": 1,
+      "status": "nov",
+      "vin": "WVWZZZ1KZ8W123456"
+    },
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+}

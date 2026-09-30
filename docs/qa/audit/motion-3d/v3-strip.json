@@ -1,0 +1,136 @@
+[
+  {
+    "k": "A click 01",
+    "v": {
+      "y": 672,
+      "stage": 1,
+      "p": 0.213063,
+      "current": "01Karoserija i svetla"
+    }
+  },
+  {
+    "k": "A click 02",
+    "v": {
+      "y": 683,
+      "stage": 1,
+      "p": 0.226102,
+      "current": "01Karoserija i svetla"
+    }
+  },
+  {
+    "k": "A click 03",
+    "v": {
+      "y": 688,
+      "stage": 1,
+      "p": 0.234234,
+      "current": "01Karoserija i svetla"
+    }
+  },
+  {
+    "k": "A click 04",
+    "v": {
+      "y": 737,
+      "stage": 2,
+      "p": 0.244228,
+      "current": "02Točkovi"
+    }
+  },
+  {
+    "k": "A click 05",
+    "v": {
+      "y": 774,
+      "stage": 2,
+      "p": 0.257906,
+      "current": "02Točkovi"
+    }
+  },
+  {
+    "k": "A click 06",
+    "v": {
+      "y": 838,
+      "stage": 2,
+      "p": 0.276271,
+      "current": "02Točkovi"
+    }
+  },
+  {
+    "k": "A click 07",
+    "v": {
+      "y": 2651,
+      "stage": 7,
+      "p": 0.915445,
+      "current": "07Izduvni sistem"
+    }
+  },
+  {
+    "k": "A click 00",
+    "v": {
+      "y": 2542,
+      "stage": 7,
+      "p": 0.907997,
+      "current": "07Izduvni sistem"
+    }
+  },
+  {
+    "k": "B tab with drawer open",
+    "v": [
+      {
+        "el": "button \"07 Izduvni sistem\"",
+        "rect": [
+          957,
+          828,
+          130,
+          64
+        ],
+        "visibleAtCenter": false,
+        "coveredByPanel": true,
+        "panelOpen": true
+      },
+      {
+        "el": "button \"Rasklopi\"",
+        "rect": [
+          1111,
+          838,
+          123,
+          44
+        ],
+        "visibleAtCenter": false,
+        "coveredByPanel": true,
+        "panelOpen": true
+      },
+      {
+        "el": "button \"Lista delova\"",
+        "rect": [
+          1246,
+          838,
+          146,
+          44
+        ],
+        "visibleAtCenter": false,
+        "coveredByPanel": true,
+        "panelOpen": true
+      },
+      {
+        "el": "a \"Dostava i plaćanje\"",
+        "rect": [
+          48,
+          478,
+          156,
+          25
+        ],
+        "visibleAtCenter": true,
+        "coveredByPanel": false,
+        "panelOpen": true
+      }
+    ]
+  },
+  {
+    "k": "errors",
+    "v": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+]

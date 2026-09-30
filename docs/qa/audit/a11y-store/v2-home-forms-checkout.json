@@ -1,0 +1,50 @@
+{
+ "home1440 h1": "- heading \"Rasklopi auto. Nađi deo.\" [level=1]",
+ "home1440 h1 innerText": "RASKLOPI\nAUTO.\nNAĐI DEO.",
+ "home1440 hero buttons": [
+  "button \"Pretraži\" pressed=null current=null exp=null 103x56",
+  "button \"Izaberite vozilomarka, model, motorIzabe\" pressed=null current=null exp=null 510x50",
+  "a \"Nemate broj? Pošaljite broj šasije\" pressed=null current=null exp=null 270x25",
+  "button \"00 Sklopljen automobil\" pressed=null current=step exp=null 130x64",
+  "button \"01 Karoserija, stakla i svetla\" pressed=null current=null exp=null 130x64",
+  "button \"02 Točkovi\" pressed=null current=null exp=null 130x64",
+  "button \"03 Kočnice, vešanje, upravljanje\" pressed=null current=null exp=null 130x64",
+  "button \"04 Pomoćni agregati, hlađenje, usis\" pressed=null current=null exp=null 130x64",
+  "button \"05 Motor, turbina, gorivo, paljenje\" pressed=null current=null exp=null 130x64",
+  "button \"06 Menjač, kvačilo, poluosovine\" pressed=null current=null exp=null 130x64",
+  "button \"07 Izduvni sistem\" pressed=null current=null exp=null 130x64",
+  "button \"Rasklopi\" pressed=false current=null exp=null 123x44",
+  "button \"Lista delova\" pressed=null current=null exp=null 146x44"
+ ],
+ "home390 h1": "- heading \"Rasklopi auto. Nađi deo.\" [level=1]",
+ "home390 h1 innerText": "RASKLOPI\nAUTO.\nNAĐI DEO.",
+ "home390 hero buttons": [
+  "button \"Pretraži\" pressed=null current=null exp=null 358x56",
+  "button \"Izaberite vozilomarka, model, motorIzabe\" pressed=null current=null exp=null 356x50",
+  "a \"Nemate broj? Pošaljite broj šasije\" pressed=null current=null exp=null 270x25",
+  "button \"Prethodna faza\" pressed=null current=null exp=null 44x44",
+  "button \"Sledeća faza\" pressed=null current=null exp=null 44x44",
+  "button \"Rasklopi\" pressed=false current=null exp=null 175x44",
+  "button \"Lista delova\" pressed=null current=null exp=null 175x44"
+ ],
+ "upit radios/checkboxes": [
+  "button type=button name= aria-label=null labelledby=null label=\"Telefonom\" hidden=null tabindex=-1 req=null",
+  "input type=radio name= aria-label=null labelledby=null label=\"\" hidden=true tabindex=-1 req=null",
+  "button type=button name= aria-label=null labelledby=null label=\"Viber\" hidden=null tabindex=-1 req=null",
+  "input type=radio name= aria-label=null labelledby=null label=\"\" hidden=true tabindex=-1 req=null",
+  "button type=button name= aria-label=null labelledby=null label=\"WhatsApp\" hidden=null tabindex=-1 req=null",
+  "input type=radio name= aria-label=null labelledby=null label=\"\" hidden=true tabindex=-1 req=null",
+  "button type=button name= aria-label=null labelledby=null label=\"E-poštom\" hidden=null tabindex=-1 req=null",
+  "input type=radio name= aria-label=null labelledby=null label=\"\" hidden=true tabindex=-1 req=null",
+  "button type=button name= aria-label=null labelledby=null label=\"Slažem se da podatke iz upita koristite za odgovor, prema po\" hidden=null tabindex=0 req=null",
+  "input type=checkbox name= aria-label=null labelledby=null label=\"\" hidden=true tabindex=-1 req=null"
+ ],
+ "upit radiogroup aria": "- group \"Vozilo\":\n  - text: Vozilo Broj šasije (VIN) (nije obavezno)\n  - textbox \"Broj šasije (VIN) (nije obavezno)\":\n    - /placeholder: WVWZZZ1KZ8W000001\n  - paragraph: 0 / 17 znakova · bez slova I, O i Q\n  - text: Marka\n  - combobox \"Marka\":\n    - option \"Izaberite\" [selected]\n    - option \"Volkswagen\"\n    - option \"Audi\"\n    - option \"Škoda\"\n    - option \"SEAT\"\n    - option \"Cupra\"\n  - text: Model\n  - combobox \"Model\" [disabled]:\n    - option \"Prvo marku\" [selected]\n  - text: Generacija\n  - combobox \"Generacija\" [disabled]:\n    - option \"Prvo model\" [selected]\n  - text: Godište (nije obavezno)\n  - textbox \"Godište (nije obavezno)\":\n    - /placeholder: \"2016\"",
+ "upit consent aria": "- checkbox \"Slažem se da podatke iz upita koristite za odgovor, prema politici privatnosti.\"",
+ "registracija checkbox": [
+  "BUTTON role=checkbox labels=1 name=\"Prihvatam uslove korišćenja i politiku privatnosti.\" req=null",
+  "INPUT role=null labels=0 name=\"\" req=null"
+ ],
+ "registracija form aria": "- text: Ime i prezime\n- textbox \"Ime i prezime\"\n- text: E-pošta\n- textbox \"E-pošta\"\n- text: Lozinka\n- textbox \"Lozinka\"\n- paragraph: Najmanje 10 znakova, bar jedno slovo i jedna cifra.\n- checkbox \"Prihvatam uslove korišćenja i politiku privatnosti.\"\n- text: Prihvatam\n- link \"uslove korišćenja\":\n  - /url: /uslovi-koriscenja\n- text: i\n- link \"politiku privatnosti\":\n  - /url: /politika-privatnosti\n- text: .\n- button \"Napravi nalog\"",
+ "checkout error": "TimeoutError: locator.waitFor: Timeout 120000ms exceeded.\nCall log:\n  - waiting for locator('#co-firstName') to be visible\n"
+}

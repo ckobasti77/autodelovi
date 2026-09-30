@@ -1,0 +1,903 @@
+{
+  "routes": {
+    "/admin": {
+      "status": 200,
+      "url": "/admin",
+      "h1": "Pregled",
+      "h2": [
+        "Red čekanja",
+        "Aktivnost",
+        "Porudžbine po danima",
+        "Traženo, a nemamo",
+        "Porudžbine po sistemima"
+      ],
+      "busy": 0,
+      "docH": 1760,
+      "f": "docs/qa/audit/vis-admin/recheck/1440-pregled.webp",
+      "console": [],
+      "bad": []
+    },
+    "/admin/uvoz/istorija": {
+      "status": 200,
+      "url": "/admin/uvoz/istorija",
+      "h1": "Istorija uvoza",
+      "h2": [],
+      "busy": 0,
+      "docH": 1292,
+      "f": "docs/qa/audit/vis-admin/recheck/1440-uvoz_istorija.webp",
+      "console": [],
+      "bad": []
+    },
+    "/admin/revizija": {
+      "status": 200,
+      "url": "/admin/revizija",
+      "h1": "Revizija",
+      "h2": [],
+      "busy": 0,
+      "docH": 900,
+      "f": "docs/qa/audit/vis-admin/recheck/1440-revizija.webp",
+      "console": [],
+      "bad": []
+    },
+    "/admin/izvoz": {
+      "status": 200,
+      "url": "/admin/izvoz",
+      "h1": "Izvoz",
+      "h2": [
+        "Proizvodi (.xlsx)",
+        "Porudžbine (.csv)",
+        "Kupci (.csv)",
+        "Majstori (.csv)"
+      ],
+      "busy": 0,
+      "docH": 900,
+      "f": "docs/qa/audit/vis-admin/recheck/1440-izvoz.webp",
+      "console": [],
+      "bad": []
+    },
+    "/admin/podesavanja?tab=firma": {
+      "status": 200,
+      "url": "/admin/podesavanja?tab=firma",
+      "h1": "Podešavanja",
+      "h2": [
+        "Podaci o firmi",
+        "Brend i brojevi dokumenata",
+        "Činjenice o radnji"
+      ],
+      "busy": 0,
+      "docH": 1540,
+      "f": "docs/qa/audit/vis-admin/recheck/1440-podesavanja_tab_firma.webp",
+      "console": [],
+      "bad": []
+    },
+    "/admin/podesavanja?tab=radno-vreme": {
+      "status": 200,
+      "url": "/admin/podesavanja?tab=radno-vreme",
+      "h1": "Podešavanja",
+      "h2": [
+        "Radno vreme",
+        "Neradni dani"
+      ],
+      "busy": 0,
+      "docH": 1003,
+      "f": "docs/qa/audit/vis-admin/recheck/1440-podesavanja_tab_radno-vreme.webp",
+      "console": [],
+      "bad": []
+    },
+    "/admin/podesavanja?tab=prodaja": {
+      "status": 200,
+      "url": "/admin/podesavanja?tab=prodaja",
+      "h1": "Podešavanja",
+      "h2": [
+        "Prodaja",
+        "Načini dostave",
+        "Načini plaćanja",
+        "Kurirske službe"
+      ],
+      "busy": 0,
+      "docH": 2282,
+      "f": "docs/qa/audit/vis-admin/recheck/1440-podesavanja_tab_prodaja.webp",
+      "console": [],
+      "bad": []
+    },
+    "/admin/podesavanja?tab=obavestenja": {
+      "status": 200,
+      "url": "/admin/podesavanja?tab=obavestenja",
+      "h1": "Podešavanja",
+      "h2": [
+        "Obaveštenja osoblju",
+        "Slanje e-pošte",
+        "Moja obaveštenja"
+      ],
+      "busy": 0,
+      "docH": 1731,
+      "f": "docs/qa/audit/vis-admin/recheck/1440-podesavanja_tab_obavestenja.webp",
+      "console": [],
+      "bad": []
+    },
+    "/admin/podesavanja?tab=seo": {
+      "status": 200,
+      "url": "/admin/podesavanja?tab=seo",
+      "h1": "Podešavanja",
+      "h2": [
+        "SEO podrazumevano",
+        "Odredišne strane kategorija × vozilo"
+      ],
+      "busy": 0,
+      "docH": 1717,
+      "f": "docs/qa/audit/vis-admin/recheck/1440-podesavanja_tab_seo.webp",
+      "console": [],
+      "bad": []
+    },
+    "/admin/podesavanja?tab=pracenje": {
+      "status": 200,
+      "url": "/admin/podesavanja?tab=pracenje",
+      "h1": "Podešavanja",
+      "h2": [
+        "Praćenje i oglasi",
+        "Status servera i adrese za oglasne naloge"
+      ],
+      "busy": 0,
+      "docH": 1070,
+      "f": "docs/qa/audit/vis-admin/recheck/1440-podesavanja_tab_pracenje.webp",
+      "console": [],
+      "bad": []
+    },
+    "/admin/podesavanja?tab=pravni-tekstovi": {
+      "status": 200,
+      "url": "/admin/podesavanja?tab=pravni-tekstovi",
+      "h1": "Podešavanja",
+      "h2": [
+        "Stranice",
+        "Dostava i plaćanje",
+        "Načini dostave",
+        "Načini plaćanja",
+        "Cene",
+        "Pregled paketa"
+      ],
+      "busy": 0,
+      "docH": 1914,
+      "f": "docs/qa/audit/vis-admin/recheck/1440-podesavanja_tab_pravni-tekstovi.webp",
+      "console": [],
+      "bad": []
+    },
+    "/admin/podesavanja?tab=funkcije": {
+      "status": 200,
+      "url": "/admin/podesavanja?tab=funkcije",
+      "h1": "Podešavanja",
+      "h2": [
+        "Funkcije"
+      ],
+      "busy": 0,
+      "docH": 900,
+      "f": "docs/qa/audit/vis-admin/recheck/1440-podesavanja_tab_funkcije.webp",
+      "console": [],
+      "bad": []
+    },
+    "/admin/podesavanja?tab=oglasne-strane": {
+      "status": 200,
+      "url": "/admin/podesavanja?tab=oglasne-strane",
+      "h1": "Podešavanja",
+      "h2": [
+        "Oglasne strane (/ponuda/…)"
+      ],
+      "busy": 0,
+      "docH": 900,
+      "f": "docs/qa/audit/vis-admin/recheck/1440-podesavanja_tab_oglasne-strane.webp",
+      "console": [],
+      "bad": []
+    },
+    "/admin/podesavanja?tab=opasna-zona": {
+      "status": 200,
+      "url": "/admin/podesavanja?tab=opasna-zona",
+      "h1": "Podešavanja",
+      "h2": [
+        "Obriši demo podatke"
+      ],
+      "busy": 0,
+      "docH": 900,
+      "f": "docs/qa/audit/vis-admin/recheck/1440-podesavanja_tab_opasna-zona.webp",
+      "console": [],
+      "bad": []
+    }
+  },
+  "tables": {
+    "1440 /admin/porudzbine": {
+      "table": true,
+      "wrapperClient": 1158,
+      "tableScroll": 1158,
+      "overflowPx": 0,
+      "ths": [
+        "·:257-297",
+        "BROJ:297-445",
+        "PRIMLJENA:445-553",
+        "KUPAC:553-776",
+        "STATUS:776-1008",
+        "KOM.:1008-1073",
+        "UKUPNO:1073-1172",
+        "PLAĆANJE · DOSTAVA:1172-1359",
+        "RADNJE:1359-1415"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 0,
+      "truncatedNoTitle": 0,
+      "truncatedSample": []
+    },
+    "1440 /admin/porudzbine?status=sve": {
+      "table": true,
+      "wrapperClient": 1158,
+      "tableScroll": 1275,
+      "overflowPx": 117,
+      "ths": [
+        "·:257-297",
+        "BROJ:297-442",
+        "PRIMLJENA:442-548",
+        "KUPAC:548-833",
+        "STATUS:833-1062",
+        "KOM.:1062-1125",
+        "UKUPNO:1125-1232",
+        "PLAĆANJE · DOSTAVA:1232-1476(OFF)",
+        "RADNJE:1359-1415"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 0,
+      "truncatedNoTitle": 0,
+      "truncatedSample": []
+    },
+    "1440 /admin/upiti": {
+      "table": true,
+      "wrapperClient": 1158,
+      "tableScroll": 1403,
+      "overflowPx": 245,
+      "ths": [
+        "BROJ:257-487",
+        "STATUS:487-648",
+        "PRIMLJEN:648-788",
+        "KONTAKT:788-992",
+        "TRAŽI:992-1392",
+        "IZVOR:1392-1568(OFF)",
+        "PREUZEO:1568-1660(OFF)"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 21,
+      "truncatedNoTitle": 21,
+      "truncatedSample": [
+        {
+          "text": "Brza porudžbina — ove brojeve nismo našli u katalogu: 5Q0615505R 0 — 1",
+          "title": false
+        },
+        {
+          "text": "Treba mi prednji kočioni disk 276 mm za Golf 7 (verifikacija flows-sho",
+          "title": false
+        },
+        {
+          "text": "Treba mi prednji kočioni disk 276 mm za Golf 7 (audit flows-shop, ponu",
+          "title": false
+        },
+        {
+          "text": "Treba mi set kočionih diskova i pločica napred za Golf 7 (audit flows-",
+          "title": false
+        }
+      ],
+      "f": "docs/qa/audit/vis-admin/recheck/table-1440-upiti.webp"
+    },
+    "1440 /admin/proizvodi": {
+      "table": true,
+      "wrapperClient": 1158,
+      "tableScroll": 1231,
+      "overflowPx": 73,
+      "ths": [
+        "·:257-297",
+        "ARTIKAL:297-673",
+        "STANJE:673-901",
+        "CENA:901-999",
+        "OEM:999-1129",
+        "KATEGORIJA:1129-1321",
+        "PROIZVOĐAČ:1321-1432(OFF)",
+        "RADNJE:1359-1415"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 1,
+      "truncatedNoTitle": 0,
+      "truncatedSample": [
+        {
+          "text": "Set zupčastog kaiša i vodena pumpa",
+          "title": true
+        }
+      ],
+      "f": "docs/qa/audit/vis-admin/recheck/table-1440-proizvodi.webp"
+    },
+    "1440 /admin/kupci": {
+      "table": true,
+      "wrapperClient": 1158,
+      "tableScroll": 1158,
+      "overflowPx": 0,
+      "ths": [
+        "KUPAC:257-642",
+        "TELEFON:642-854",
+        "NALOG:854-1081",
+        "PORUDŽBINE:1081-1240",
+        "REGISTROVAN:1240-1415"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 0,
+      "truncatedNoTitle": 0,
+      "truncatedSample": []
+    },
+    "1440 /admin/mejlovi": {
+      "table": true,
+      "wrapperClient": 1158,
+      "tableScroll": 1158,
+      "overflowPx": 0,
+      "ths": [
+        "VREME:257-378",
+        "PRIMA:378-676",
+        "NASLOV:676-1192",
+        "NAČIN:1192-1287",
+        "STATUS:1287-1415"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 11,
+      "truncatedNoTitle": 11,
+      "truncatedSample": [
+        {
+          "text": "audit-verify-fs16-1790799649551@primer.rs",
+          "title": false
+        },
+        {
+          "text": "audit-verify-fs16-1790799649551@primer.rs",
+          "title": false
+        },
+        {
+          "text": "admin-e2e-xb-webkit-1790799111827@primer.rs",
+          "title": false
+        },
+        {
+          "text": "admin-e2e-xb-webkit-1790799111827@primer.rs",
+          "title": false
+        }
+      ]
+    },
+    "1440 /admin/lager": {
+      "table": true,
+      "wrapperClient": 1158,
+      "tableScroll": 1158,
+      "overflowPx": 0,
+      "ths": [
+        "ARTIKAL:257-738",
+        "STANJE:738-1068",
+        "KOM.:1068-1237",
+        "PRAG:1237-1415"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 0,
+      "truncatedNoTitle": 0,
+      "truncatedSample": []
+    },
+    "1280 /admin/porudzbine": {
+      "table": true,
+      "wrapperClient": 1166,
+      "tableScroll": 1166,
+      "overflowPx": 0,
+      "ths": [
+        "·:89-129",
+        "BROJ:129-278",
+        "PRIMLJENA:278-387",
+        "KUPAC:387-611",
+        "STATUS:611-846",
+        "KOM.:846-910",
+        "UKUPNO:910-1011",
+        "PLAĆANJE · DOSTAVA:1011-1199",
+        "RADNJE:1199-1255"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 0,
+      "truncatedNoTitle": 0,
+      "truncatedSample": []
+    },
+    "1280 /admin/porudzbine?status=sve": {
+      "table": true,
+      "wrapperClient": 1166,
+      "tableScroll": 1275,
+      "overflowPx": 109,
+      "ths": [
+        "·:89-129",
+        "BROJ:129-274",
+        "PRIMLJENA:274-380",
+        "KUPAC:380-665",
+        "STATUS:665-894",
+        "KOM.:894-957",
+        "UKUPNO:957-1064",
+        "PLAĆANJE · DOSTAVA:1064-1308(OFF)",
+        "RADNJE:1199-1255"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 0,
+      "truncatedNoTitle": 0,
+      "truncatedSample": []
+    },
+    "1280 /admin/upiti": {
+      "table": true,
+      "wrapperClient": 1166,
+      "tableScroll": 1403,
+      "overflowPx": 237,
+      "ths": [
+        "BROJ:89-319",
+        "STATUS:319-480",
+        "PRIMLJEN:480-620",
+        "KONTAKT:620-824",
+        "TRAŽI:824-1224",
+        "IZVOR:1224-1400(OFF)",
+        "PREUZEO:1400-1492(OFF)"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 21,
+      "truncatedNoTitle": 21,
+      "truncatedSample": [
+        {
+          "text": "Brza porudžbina — ove brojeve nismo našli u katalogu: 5Q0615505R 0 — 1",
+          "title": false
+        },
+        {
+          "text": "Treba mi prednji kočioni disk 276 mm za Golf 7 (verifikacija flows-sho",
+          "title": false
+        },
+        {
+          "text": "Treba mi prednji kočioni disk 276 mm za Golf 7 (audit flows-shop, ponu",
+          "title": false
+        },
+        {
+          "text": "Treba mi set kočionih diskova i pločica napred za Golf 7 (audit flows-",
+          "title": false
+        }
+      ],
+      "f": "docs/qa/audit/vis-admin/recheck/table-1280-upiti.webp"
+    },
+    "1280 /admin/proizvodi": {
+      "table": true,
+      "wrapperClient": 1166,
+      "tableScroll": 1231,
+      "overflowPx": 65,
+      "ths": [
+        "·:89-129",
+        "ARTIKAL:129-505",
+        "STANJE:505-733",
+        "CENA:733-831",
+        "OEM:831-961",
+        "KATEGORIJA:961-1153",
+        "PROIZVOĐAČ:1153-1264(OFF)",
+        "RADNJE:1199-1255"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 1,
+      "truncatedNoTitle": 0,
+      "truncatedSample": [
+        {
+          "text": "Set zupčastog kaiša i vodena pumpa",
+          "title": true
+        }
+      ],
+      "f": "docs/qa/audit/vis-admin/recheck/table-1280-proizvodi.webp"
+    },
+    "1280 /admin/kupci": {
+      "table": true,
+      "wrapperClient": 1166,
+      "tableScroll": 1166,
+      "overflowPx": 0,
+      "ths": [
+        "KUPAC:89-477",
+        "TELEFON:477-690",
+        "NALOG:690-919",
+        "PORUDŽBINE:919-1079",
+        "REGISTROVAN:1079-1255"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 0,
+      "truncatedNoTitle": 0,
+      "truncatedSample": []
+    },
+    "1280 /admin/mejlovi": {
+      "table": true,
+      "wrapperClient": 1166,
+      "tableScroll": 1166,
+      "overflowPx": 0,
+      "ths": [
+        "VREME:89-210",
+        "PRIMA:210-511",
+        "NASLOV:511-1030",
+        "NAČIN:1030-1126",
+        "STATUS:1126-1255"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 11,
+      "truncatedNoTitle": 11,
+      "truncatedSample": [
+        {
+          "text": "audit-verify-fs16-1790799649551@primer.rs",
+          "title": false
+        },
+        {
+          "text": "audit-verify-fs16-1790799649551@primer.rs",
+          "title": false
+        },
+        {
+          "text": "admin-e2e-xb-webkit-1790799111827@primer.rs",
+          "title": false
+        },
+        {
+          "text": "admin-e2e-xb-webkit-1790799111827@primer.rs",
+          "title": false
+        }
+      ]
+    },
+    "1280 /admin/lager": {
+      "table": true,
+      "wrapperClient": 1166,
+      "tableScroll": 1166,
+      "overflowPx": 0,
+      "ths": [
+        "ARTIKAL:89-574",
+        "STANJE:574-905",
+        "KOM.:905-1076",
+        "PRAG:1076-1255"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 0,
+      "truncatedNoTitle": 0,
+      "truncatedSample": []
+    },
+    "1024 /admin/porudzbine": {
+      "table": true,
+      "wrapperClient": 910,
+      "tableScroll": 910,
+      "overflowPx": 0,
+      "ths": [
+        "·:89-129",
+        "BROJ:129-277",
+        "KUPAC:277-500",
+        "STATUS:500-656",
+        "UKUPNO:656-756",
+        "PLAĆANJE · DOSTAVA:756-943",
+        "RADNJE:943-999"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 0,
+      "truncatedNoTitle": 0,
+      "truncatedSample": []
+    },
+    "1024 /admin/porudzbine?status=sve": {
+      "table": true,
+      "wrapperClient": 910,
+      "tableScroll": 1030,
+      "overflowPx": 120,
+      "ths": [
+        "·:89-129",
+        "BROJ:129-274",
+        "KUPAC:274-559",
+        "STATUS:559-712",
+        "UKUPNO:712-820",
+        "PLAĆANJE · DOSTAVA:820-1063(OFF)",
+        "RADNJE:943-999"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 0,
+      "truncatedNoTitle": 0,
+      "truncatedSample": []
+    },
+    "1024 /admin/upiti": {
+      "table": true,
+      "wrapperClient": 910,
+      "tableScroll": 910,
+      "overflowPx": 0,
+      "ths": [
+        "BROJ:89-240",
+        "STATUS:240-403",
+        "PRIMLJEN:403-545",
+        "KONTAKT:545-752",
+        "TRAŽI:752-999"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 67,
+      "truncatedNoTitle": 67,
+      "truncatedSample": [
+        {
+          "text": "Brza porudžbina — ove brojeve nismo našli u katalogu: 5Q0615505R 0 — 1",
+          "title": false
+        },
+        {
+          "text": "Treba mi prednji kočioni disk 276 mm za Golf 7 (verifikacija flows-sho",
+          "title": false
+        },
+        {
+          "text": "Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456",
+          "title": false
+        },
+        {
+          "text": "Volkswagen Golf V (2008) · WVWZZZ1KZ8W123456",
+          "title": false
+        }
+      ]
+    },
+    "1024 /admin/proizvodi": {
+      "table": true,
+      "wrapperClient": 910,
+      "tableScroll": 1231,
+      "overflowPx": 321,
+      "ths": [
+        "·:89-129",
+        "ARTIKAL:129-505",
+        "STANJE:505-733",
+        "CENA:733-831",
+        "OEM:831-961",
+        "KATEGORIJA:961-1153(OFF)",
+        "PROIZVOĐAČ:1153-1264(OFF)",
+        "RADNJE:943-999"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 1,
+      "truncatedNoTitle": 0,
+      "truncatedSample": [
+        {
+          "text": "Set zupčastog kaiša i vodena pumpa",
+          "title": true
+        }
+      ],
+      "f": "docs/qa/audit/vis-admin/recheck/table-1024-proizvodi.webp"
+    },
+    "1024 /admin/kupci": {
+      "table": true,
+      "wrapperClient": 910,
+      "tableScroll": 910,
+      "overflowPx": 0,
+      "ths": [
+        "KUPAC:89-392",
+        "TELEFON:392-558",
+        "NALOG:558-737",
+        "PORUDŽBINE:737-862",
+        "REGISTROVAN:862-999"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 0,
+      "truncatedNoTitle": 0,
+      "truncatedSample": []
+    },
+    "1024 /admin/mejlovi": {
+      "table": true,
+      "wrapperClient": 910,
+      "tableScroll": 1056,
+      "overflowPx": 146,
+      "ths": [
+        "VREME:89-199",
+        "PRIMA:199-471",
+        "NASLOV:471-942",
+        "NAČIN:942-1029(OFF)",
+        "STATUS:1029-1145(OFF)"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 11,
+      "truncatedNoTitle": 11,
+      "truncatedSample": [
+        {
+          "text": "audit-verify-fs16-1790799649551@primer.rs",
+          "title": false
+        },
+        {
+          "text": "audit-verify-fs16-1790799649551@primer.rs",
+          "title": false
+        },
+        {
+          "text": "admin-e2e-xb-webkit-1790799111827@primer.rs",
+          "title": false
+        },
+        {
+          "text": "admin-e2e-xb-webkit-1790799111827@primer.rs",
+          "title": false
+        }
+      ]
+    },
+    "1024 /admin/lager": {
+      "table": true,
+      "wrapperClient": 910,
+      "tableScroll": 910,
+      "overflowPx": 0,
+      "ths": [
+        "ARTIKAL:89-467",
+        "STANJE:467-726",
+        "KOM.:726-859",
+        "PRAG:859-999"
+      ],
+      "rows": [
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "truncatedCount": 0,
+      "truncatedNoTitle": 0,
+      "truncatedSample": []
+    }
+  },
+  "shell": {
+    "1440x900": {
+      "asideW": 232,
+      "scroller": {
+        "sh": 985,
+        "ch": 844,
+        "mask": "none",
+        "scrollbarWidth": "auto"
+      },
+      "links": 22,
+      "hidden": [
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ]
+    },
+    "1366x768": {
+      "asideW": 232,
+      "scroller": {
+        "sh": 985,
+        "ch": 712,
+        "mask": "none",
+        "scrollbarWidth": "auto"
+      },
+      "links": 22,
+      "hidden": [
+        "Izvoz",
+        "Revizija",
+        "Privatnost",
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ]
+    },
+    "1280x800": {
+      "asideW": 64,
+      "scroller": {
+        "sh": 884,
+        "ch": 744,
+        "mask": "none",
+        "scrollbarWidth": "auto"
+      },
+      "links": 22,
+      "hidden": [
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ]
+    },
+    "1920x1080": {
+      "asideW": 232,
+      "scroller": null,
+      "links": 22,
+      "hidden": []
+    },
+    "f1440": "docs/qa/audit/vis-admin/recheck/shell-1440x900.webp"
+  },
+  "log": {
+    "console": [],
+    "bad": [],
+    "pageErrors": []
+  }
+}

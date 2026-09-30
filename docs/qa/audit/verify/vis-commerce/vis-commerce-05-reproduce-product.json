@@ -1,0 +1,8 @@
+{
+  "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "viewport": "390x844",
+  "steppers": [
+    "Smanji količinu 44x44",
+    "Povećaj količinu 44x44"
+  ]
+}

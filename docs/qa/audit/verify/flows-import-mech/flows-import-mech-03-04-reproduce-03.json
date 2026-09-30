@@ -1,0 +1,40 @@
+{
+  "03:rowText": "Porudžbina SK-2026-000144 je primljena",
+  "03:sheetPre": {
+    "textTransform": "uppercase",
+    "className": "mt-3 max-h-[60dvh] overflow-auto whitespace-pre-wrap rounded-sm border border-line bg-surface-2 p-3 type-code-s",
+    "clientWidth": 429,
+    "scrollWidth": 586,
+    "overflowX": "auto",
+    "textContentHead": "Porudžbina je primljena.\n========================\n\nPrimili smo porudžbinu SK-2026-000144. Proveravamo stanje i javljamo se kad je potvrdimo. Ništa ne plaćate unapred.\n\n- Kočioni disk prednji 340 × 30 mm, GTI\n  5Q0 615 666 A\n  Original VAG\n  1 × 18.900 RSD = 18",
+    "innerTextHead": "PORUDŽBINA JE PRIMLJENA.\n========================\n\nPRIMILI SMO PORUDŽBINU SK-2026-000144. PROVERAVAMO STANJE I JAVLJAMO SE KAD JE POTVRDIMO. NIŠTA NE PLAĆATE UNAPRED.\n\n- KOČIONI DISK PREDNJI 340 × 30 MM, GTI\n  5Q0 615 666 A\n  ORIGINAL VAG\n  1 × 18.900 RSD = 18",
+    "longestLine": "Pogledajte status porudžbine: http://localhost:3000/porudzbina/••••••••?utm_source=email&utm_medium=transactional&utm_campaign=order_received"
+  },
+  "03:galleryPre": {
+    "textTransform": "uppercase",
+    "className": "mx-auto max-w-[680px] whitespace-pre-wrap rounded-sm border border-line bg-surface-1 p-4 type-code-s text-ink-1",
+    "clientWidth": 678,
+    "scrollWidth": 678,
+    "overflowX": "visible",
+    "textContentHead": "Porudžbina je primljena.\n========================\n\nPrimili smo porudžbinu SK-2026-000187. Proveravamo stanje i javljamo se kad je potvrdimo. Ništa ne plaćate unapred.\n\n- Set zupčastog kaiša sa vodenom pumpom\n  04L198119A\n  INA\n  1 × 18.990 RSD = 18.990 RSD\n- K",
+    "innerTextHead": "PORUDŽBINA JE PRIMLJENA.\n========================\n\nPRIMILI SMO PORUDŽBINU SK-2026-000187. PROVERAVAMO STANJE I JAVLJAMO SE KAD JE POTVRDIMO. NIŠTA NE PLAĆATE UNAPRED.\n\n- SET ZUPČASTOG KAIŠA SA VODENOM PUMPOM\n  04L198119A\n  INA\n  1 × 18.990 RSD = 18.990 RSD\n- K",
+    "longestLine": "Primili smo porudžbinu SK-2026-000187. Proveravamo stanje i javljamo se kad je potvrdimo. Ništa ne plaćate unapred."
+  },
+  "03:galleryIntro": "blon sa primerom podataka i vašim podešavanjima (firma, kontakt, radno vreme) — tačno kako ga kupac ili zaposleni vidi.",
+  "03:galleryStaffPre": {
+    "textTransform": "uppercase",
+    "className": "mx-auto max-w-[680px] whitespace-pre-wrap rounded-sm border border-line bg-surface-1 p-4 type-code-s text-ink-1",
+    "clientWidth": 678,
+    "scrollWidth": 678,
+    "overflowX": "visible",
+    "textContentHead": "Nova porudžbina SK-2026-000187\n==============================\n\n[Majstorska porudžbina · razred Majstor Plus]\nAuto servis Primer\n\nKupac: Petar Petrović (majstor)\nTelefon: +381 64 123 4567: tel:+381641234567\nE-pošta: petar@primer.rs\nDostava: Kurirska služba\nPlać",
+    "innerTextHead": "NOVA PORUDŽBINA SK-2026-000187\n==============================\n\n[MAJSTORSKA PORUDŽBINA · RAZRED MAJSTOR PLUS]\nAUTO SERVIS PRIMER\n\nKUPAC: PETAR PETROVIĆ (MAJSTOR)\nTELEFON: +381 64 123 4567: TEL:+381641234567\nE-POŠTA: PETAR@PRIMER.RS\nDOSTAVA: KURIRSKA SLUŽBA\nPLAĆ",
+    "longestLine": "Ovu poruku dobijate kao zaposleni u SKLOP. Podešavanja obaveštenja: http://localhost:3000/admin/podesavanja?tab=obavestenja"
+  },
+  "watch": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

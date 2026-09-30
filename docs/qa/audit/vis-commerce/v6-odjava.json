@@ -1,0 +1,26 @@
+{
+  "360": {
+    "main": "Odjava obaveštenja\n\nLink nije ispravan ili je već iskorišćen. Ako i dalje dobijate poruke, javite nam se.\n\nKontakt",
+    "alerts": [
+      "Link nije ispravan ili je već iskorišćen. Ako i dalje dobijate poruke, javite nam se.Kontakt"
+    ],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "1440": {
+    "main": "Odjava obaveštenja\n\nLink nije ispravan ili je već iskorišćen. Ako i dalje dobijate poruke, javite nam se.\n\nKontakt",
+    "alerts": [
+      "Link nije ispravan ili je već iskorišćen. Ako i dalje dobijate poruke, javite nam se.Kontakt"
+    ],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+}

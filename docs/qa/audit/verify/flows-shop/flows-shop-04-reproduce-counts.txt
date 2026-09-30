@@ -1,0 +1,5 @@
+total 171 active 157 hasSearchText 171 keys _creationTime,_id,active,allowBackorder,categoryId,contentUpdatedAt,fitmentCount,imageCount,isDemo,manufacturerId,manufacturerName,name,oemPrimary,popularity,quality,retailPricePara,searchText,sku,slug,source,stockQty,stockState,systemSlug,universal,updatedAt
+searchText contains golf: 119
+amortizer: 7
+contains a token-start: 129
+disk: 9

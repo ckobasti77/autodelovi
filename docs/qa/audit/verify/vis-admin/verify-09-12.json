@@ -1,0 +1,231 @@
+{
+  "v09": {
+    "390": {
+      "statusChip": "Porudžbine\nPorudžbina\nSK-2026-000092\nNOVA\n\nPrimljena 30.09. 15:38 · Sajt\n\nPredračun\nOtpremnica\nPromeni status\nPotvrdi\nStavke\nIzmeni stavke\nStavke porudžbine SK-2026-000092\nARTIKAL\tKOL.\tCENA\tRABAT\tIZNOS\n\nKočioni disk prednji 276 × 24 mm\nDEMO-0004 · OEM 5Q0 615 505 R · Febi Bilstein\nBilo na stanju · s",
+      "mouseAt50": {
+        "tag": "BUTTON",
+        "label": "Zatvori",
+        "text": "",
+        "inDialog": true,
+        "focusVisible": true
+      },
+      "mouse": {
+        "tag": "BUTTON",
+        "label": "Zatvori",
+        "text": "",
+        "inDialog": true,
+        "focusVisible": true
+      },
+      "mouseShot": "docs/qa/audit/verify/vis-admin/vis-admin-09-reproduce-390-mouse.webp",
+      "menuItems": [
+        "Čeka deo",
+        "Otkaži porudžbinu"
+      ],
+      "keyboard": {
+        "tag": "BUTTON",
+        "label": "Zatvori",
+        "text": "",
+        "inDialog": true,
+        "focusVisible": true
+      },
+      "keyboardShot": "docs/qa/audit/verify/vis-admin/vis-admin-09-reproduce-390-keyboard.webp",
+      "primaryTestId": "admin-order-transition-potvrdjena",
+      "primary": {
+        "tag": "BUTTON",
+        "label": "Zatvori",
+        "text": "",
+        "inDialog": true,
+        "focusVisible": false
+      },
+      "primaryDialog": "Potvrdi — SK-2026-000092\n\nStanje se umanjuje za artikle iz porudžbine (1 stavka); kupac dobija potvrdu.\n\nOdustani\nPotvrdi"
+    },
+    "1440": {
+      "statusChip": "Porudžbine\nPorudžbina\nSK-2026-000092\nNOVA\n\nPrimljena 30.09. 15:38 · Sajt\n\nPredračun\nOtpremnica\nPromeni status\nPotvrdi\nStavke\nIzmeni stavke\nStavke porudžbine SK-2026-000092\nARTIKAL\tKOL.\tCENA\tRABAT\tIZNOS\n\nKočioni disk prednji 276 × 24 mm\nDEMO-0004 · OEM 5Q0 615 505 R · Febi Bilstein\nBilo na stanju · s",
+      "mouseAt50": {
+        "tag": "BUTTON",
+        "label": "Zatvori",
+        "text": "",
+        "inDialog": true,
+        "focusVisible": true
+      },
+      "mouse": {
+        "tag": "BUTTON",
+        "label": "Zatvori",
+        "text": "",
+        "inDialog": true,
+        "focusVisible": true
+      },
+      "mouseShot": "docs/qa/audit/verify/vis-admin/vis-admin-09-reproduce-1440-mouse.webp",
+      "menuItems": [
+        "Čeka deo",
+        "Otkaži porudžbinu"
+      ],
+      "keyboard": {
+        "tag": "BUTTON",
+        "label": "Zatvori",
+        "text": "",
+        "inDialog": true,
+        "focusVisible": true
+      },
+      "keyboardShot": "docs/qa/audit/verify/vis-admin/vis-admin-09-reproduce-1440-keyboard.webp",
+      "primaryTestId": "admin-order-transition-potvrdjena",
+      "primary": {
+        "tag": "BUTTON",
+        "label": "Zatvori",
+        "text": "",
+        "inDialog": true,
+        "focusVisible": false
+      },
+      "primaryDialog": "Potvrdi — SK-2026-000092\n\nStanje se umanjuje za artikle iz porudžbine (1 stavka); kupac dobija potvrdu.\n\nOdustani\nPotvrdi"
+    }
+  },
+  "v12": {
+    "predracun": {
+      "route": "/admin/porudzbine/SK-2026-000033/predracun",
+      "css": {
+        "html": "rgb(255, 255, 255)",
+        "body": "rgba(0, 0, 0, 0)",
+        "htmlTheme": null,
+        "bodyClass": "",
+        "wrapper": "rgb(243, 244, 245)",
+        "wrapperH": 1123,
+        "docH": 1123,
+        "rootBgVar": "#fff",
+        "wrapperVars": {
+          "--color-bg": "#f3f4f5",
+          "--color-ink-1": "#121518",
+          "--color-ink-2": "#3d444c",
+          "--color-ink-3": "#5d6570",
+          "--color-line": "#dadde1"
+        },
+        "wrapperClass": "min-h-dvh bg-bg px-4 py-8 text-ink-1 print:bg-white print:p-0"
+      },
+      "file": "docs/qa/audit/verify/vis-admin/vis-admin-12-reproduce-predracun-print.webp",
+      "px_400_1000": [
+        243,
+        244,
+        245
+      ],
+      "px_400_1100": [
+        243,
+        244,
+        245
+      ],
+      "px_400_200": [
+        255,
+        255,
+        255
+      ],
+      "px_5_5": [
+        179,
+        177,
+        180
+      ],
+      "pdf": "docs/qa/audit/verify/vis-admin/vis-admin-12-reproduce-predracun.pdf"
+    },
+    "otpremnica": {
+      "route": "/admin/porudzbine/SK-2026-000092/otpremnica",
+      "css": {
+        "html": "rgb(255, 255, 255)",
+        "body": "rgba(0, 0, 0, 0)",
+        "htmlTheme": null,
+        "bodyClass": "",
+        "wrapper": "rgb(243, 244, 245)",
+        "wrapperH": 1123,
+        "docH": 1123,
+        "rootBgVar": "#fff",
+        "wrapperVars": {
+          "--color-bg": "#f3f4f5",
+          "--color-ink-1": "#121518",
+          "--color-ink-2": "#3d444c",
+          "--color-ink-3": "#5d6570",
+          "--color-line": "#dadde1"
+        },
+        "wrapperClass": "min-h-dvh bg-bg px-4 py-8 text-ink-1 print:bg-white print:p-0"
+      },
+      "file": "docs/qa/audit/verify/vis-admin/vis-admin-12-reproduce-otpremnica-print.webp",
+      "px_400_1000": [
+        243,
+        244,
+        245
+      ],
+      "px_400_1100": [
+        243,
+        244,
+        245
+      ],
+      "px_400_200": [
+        255,
+        255,
+        255
+      ],
+      "px_5_5": [
+        179,
+        177,
+        180
+      ],
+      "pdf": "docs/qa/audit/verify/vis-admin/vis-admin-12-reproduce-otpremnica.pdf"
+    }
+  },
+  "v09b": {
+    "buttons": [
+      "Broj porudžbine, OEM, telefon…\nCtrl K",
+      "9+",
+      "Vlasnik",
+      "Dodaj belešku"
+    ]
+  },
+  "v10": {
+    "dashboard": {
+      "primljenaArrow": [
+        "SK-2026-000144: Primljena → Potvrđena"
+      ],
+      "novaChips": 0
+    },
+    "dashboardShot": "docs/qa/audit/verify/vis-admin/vis-admin-10-reproduce-pregled.webp",
+    "revizija": {
+      "primljenaArrow": [
+        "SK-2026-000144: Primljena → Potvrđena",
+        "SK-2026-000143: Primljena → Potvrđena",
+        "SK-2026-000142: Primljena → Otkazana",
+        "SK-2026-000141: Primljena → Potvrđena",
+        "SK-2026-000139: Primljena → Potvrđena"
+      ],
+      "novaChips": 0
+    },
+    "revizijaShot": "docs/qa/audit/verify/vis-admin/vis-admin-10-reproduce-revizija.webp",
+    "historyOrder": "SK-2026-000144",
+    "history": "Istorija\n30.09. 22:51\nE-pošta zabeležena (nije poslata, režim log): Porudžbina SK-2026-000144 je potvrđena\nSistem\n30.09. 22:51\nPotvrđena — Potvrđena\nVlasnik\n30.09. 22:51\nOffline beleška verifikacija 1451359\nVlasnik · interno\n30.09. 22:50\nE-pošta zabeležena (nije poslata, režim log): Porudžbina SK-2026-000144 je primljena\nSistem\n30.09. 22:50\nNova — Porudžbina je primljena.\nAdmin Test vfa08-1451359 · Kupac",
+    "historyHasPrimljenaStatus": false,
+    "historyShot": "docs/qa/audit/verify/vis-admin/vis-admin-10-reproduce-history.webp"
+  },
+  "v11": {
+    "chips": {
+      "Potvrđena": "<path d=\"M176.49,95.51a12,12,0,0,1,0,17l-56,56a12,12,0,0,1-17,0l-24-24a12,12,0,1,1,17-17L112,143l47.51-47.52A12,12,0,0,1",
+      "Otkazana": "<path d=\"M168.49,104.49,145,128l23.52,23.51a12,12,0,0,1-17,17L128,145l-23.51,23.52a12,12,0,0,1-17-17L111,128,87.51,104.4",
+      "Nova": "<path d=\"M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20Zm0,192a84,84,0,1,1,84-84A84.09,84.09,0,0,1,128,212Zm-1",
+      "Završena": "<path d=\"M68,100A12,12,0,0,1,80,88h96a12,12,0,0,1,0,24H80A12,12,0,0,1,68,100Zm12,52h96a12,12,0,0,0,0-24H80a12,12,0,0,0,0"
+    },
+    "ZavršenaShot": "docs/qa/audit/verify/vis-admin/vis-admin-11-reproduce-zavrsena.webp",
+    "Čeka deoMissing": true,
+    "cekaDeoTab": "Porudžbine\n\nSve porudžbine sa sajta, iz upita i brze porudžbine majstora.\n\nNove\n104\nSve\nPotvrđene\n8\nČeka deo\n1\nZa preuzimanje\n1\nPoslate\n12\nZavršene\nOtkazane\nPretraga porudžbina\n/\nFilteri\nIzvoz za Excel\nPorudžbine\n\tBROJ\n\tPRIMLJENA\n\tKUPAC\n\tSTATUS\n\tKOM.\n\tUKUPNO\n\tPLAĆANJE · DOSTAVA\t\nRADNJE\n\n\t\nSK-2026-000003\nDEMO\n\t29.09. 16:31\t\nDemo Firma d.o.o.\nNikola Demo · Gost\n\t\nČEKA DEO\n\t1\t2.440 RSD\t\nVirmanom uz p",
+    "cekaDeoSvg": "<path d=\"M204,75.64V40a20,20,0,0,0-20-20H72A20,20,0,0,0,52,40V76a20.1,20.1,0,0,0,8,16l48,36L60,164a20.1,20.1,0,0,0-8,16v",
+    "cekaDeoShot": "docs/qa/audit/verify/vis-admin/vis-admin-11-reproduce-ceka-deo.webp",
+    "inquiryChips": {
+      "U obradi": "<path d=\"M204,75.64V40a20,20,0,0,0-20-20H72A20,20,0,0,0,52,40V76a20.1,20.1,0,0,0,8,16l48,36L60,164a20.1,20.1,0,0,0-8,16v"
+    }
+  },
+  "v09c": {
+    "href": "http://localhost:3100/admin/kupci/s173fnaam7ewavy9cqc6m307ex8fcqkv",
+    "hasBlock": true,
+    "active": {
+      "tag": "TEXTAREA",
+      "label": null,
+      "text": "",
+      "inDialog": true,
+      "focusVisible": true
+    },
+    "shot": "docs/qa/audit/verify/vis-admin/vis-admin-09-reproduce-confirmdialog-reason.webp",
+    "dialogClosed": true
+  }
+}

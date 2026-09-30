@@ -1,0 +1,8 @@
+node scripts/qa/audit/verify-vis-commerce-0306.mjs predracun  (Chromium, isMobile < 1024, guest, 2026-09-30)
+route /porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw/predracun
+360x780  tableW 268  heads Artikal w65 / Kol. w40 / Cena sa PDV w87 / Iznos w75, header row h43 (2 lines)  first item cell w65 h213 ~9 lines, SKU+OEM span 5 lines; overflow 0
+390x844  tableW 294  heads Artikal w90 / Kol. w40 / Cena sa PDV w88 / Iznos w75, header h43  first item cell w90 h156 ~7 lines, SKU+OEM span 3 lines
+430x932  tableW 332  heads Artikal w126 / 40 / 90 / 75, header h43  first item cell w126 h135 ~6 lines, SKU+OEM span 3 lines
+768x1024 tableW 643  heads Artikal w335 / 59 / 138 / 111, header h30  first item cell h56, 2 lines, OEM on 1 line  (fine)
+1440x900 tableW 768  heads Artikal w400 / 71 / 165 / 133  first item cell h56  (fine)
+console errors: none

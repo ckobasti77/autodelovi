@@ -1,0 +1,870 @@
+{
+ "chromium-320-mobile-home": {
+  "overflow": {
+   "over": 3,
+   "offenders": [
+    "div.ml-auto.flex",
+    "div.lg:hidden",
+    "button.relative.inline-flex"
+   ]
+  },
+  "header": {
+   "vw": 320,
+   "sw": 323,
+   "rowScrollW": 323,
+   "rowClientW": 320,
+   "wordmark": "16-129",
+   "clusterRight": 322.5,
+   "items": [
+    "button[Pretraga delova] 141-185",
+    "a[Moj nalog] 187-231",
+    "a[Korpa] 233-277",
+    "div[] 279-323"
+   ]
+  }
+ },
+ "chromium-320-mobile-category": {
+  "overflow": {
+   "over": 3,
+   "offenders": [
+    "div.ml-auto.flex",
+    "div.lg:hidden",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]"
+   ]
+  },
+  "header": {
+   "vw": 320,
+   "sw": 323,
+   "rowScrollW": 323,
+   "rowClientW": 320,
+   "wordmark": "16-129",
+   "clusterRight": 322.5,
+   "items": [
+    "button[Pretraga delova] 141-185",
+    "a[Moj nalog] 187-231",
+    "a[Korpa] 233-277",
+    "div[] 279-323"
+   ]
+  },
+  "cards": [
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočioni disk prednji 312 × 25 mm\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 3C0 615 098\" sw158/cw158 truncated=false",
+    "title": "\"Kočioni disk prednji 312 × 25 mm\" sh43/ch43 clamped=false"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočioni disk zadnji 272 × 10 mm, puni\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 615 540 Q\" sw158/cw158 truncated=false",
+    "title": "\"Kočioni disk zadnji 272 × 10 mm, puni\" sh43/ch43 clamped=false"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočioni disk prednji 256 × 22 mm\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 6R0 615 645\" sw158/cw158 truncated=false",
+    "title": "\"Kočioni disk prednji 256 × 22 mm\" sh43/ch43 clamped=false"
+   }
+  ],
+  "cardsSpacing": [
+   {
+    "card": "16-304 w288",
+    "btn": "235-355 \"U korpu: Kočioni disk prednji 312 × 25 mm\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 3C0 615 098\" sw162/cw158 truncated=true",
+    "title": "\"Kočioni disk prednji 312 × 25 mm\" sh72/ch48 clamped=true"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "235-355 \"U korpu: Kočioni disk zadnji 272 × 10 mm, puni\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 615 540 Q\" sw186/cw158 truncated=true",
+    "title": "\"Kočioni disk zadnji 272 × 10 mm, puni\" sh72/ch48 clamped=true"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "235-355 \"U korpu: Kočioni disk prednji 256 × 22 mm\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 6R0 615 645\" sw162/cw158 truncated=true",
+    "title": "\"Kočioni disk prednji 256 × 22 mm\" sh72/ch48 clamped=true"
+   }
+  ],
+  "overflowSpacing": {
+   "over": 6,
+   "offenders": [
+    "div.ml-auto.flex",
+    "div.lg:hidden",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "span.inline-flex.items-center",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex"
+   ]
+  }
+ },
+ "chromium-320-mobile-product": {
+  "overflow": {
+   "over": 3,
+   "offenders": [
+    "div.ml-auto.flex",
+    "div.lg:hidden",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]"
+   ]
+  },
+  "header": {
+   "vw": 320,
+   "sw": 323,
+   "rowScrollW": 323,
+   "rowClientW": 320,
+   "wordmark": "16-129",
+   "clusterRight": 322.5,
+   "items": [
+    "button[Pretraga delova] 141-185",
+    "a[Moj nalog] 187-231",
+    "a[Korpa] 233-277",
+    "div[] 279-323"
+   ]
+  }
+ },
+ "chromium-320-mobile-search": {
+  "overflow": {
+   "over": 3,
+   "offenders": [
+    "div.ml-auto.flex",
+    "div.lg:hidden",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]"
+   ]
+  },
+  "header": {
+   "vw": 320,
+   "sw": 323,
+   "rowScrollW": 323,
+   "rowClientW": 320,
+   "wordmark": "16-129",
+   "clusterRight": 322.5,
+   "items": [
+    "button[Pretraga delova] 141-185",
+    "a[Moj nalog] 187-231",
+    "a[Korpa] 233-277",
+    "div[] 279-323"
+   ]
+  },
+  "cards": [
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"Poruči: Kočioni disk prednji 320 × 30 mm\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 8K0 615 085\" sw158/cw158 truncated=false",
+    "title": "\"Kočioni disk prednji 320 × 30 mm\" sh43/ch43 clamped=false"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočioni disk prednji 312 × 25 mm\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 3C0 615 098\" sw158/cw158 truncated=false",
+    "title": "\"Kočioni disk prednji 312 × 25 mm\" sh43/ch43 clamped=false"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočioni disk prednji 256 × 22 mm\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 6R0 615 645\" sw158/cw158 truncated=false",
+    "title": "\"Kočioni disk prednji 256 × 22 mm\" sh43/ch43 clamped=false"
+   }
+  ]
+ },
+ "chromium-320-mobile-vehicle": {
+  "overflow": {
+   "over": 3,
+   "offenders": [
+    "div.ml-auto.flex",
+    "div.lg:hidden",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "span.inline-flex.items-center"
+   ]
+  },
+  "header": {
+   "vw": 320,
+   "sw": 323,
+   "rowScrollW": 323,
+   "rowClientW": 320,
+   "wordmark": "16-129",
+   "clusterRight": 322.5,
+   "items": [
+    "button[Pretraga delova] 141-185",
+    "a[Moj nalog] 187-231",
+    "a[Korpa] 233-277",
+    "div[] 279-323"
+   ]
+  },
+  "cards": [
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Metlice brisača Aerotwin 600/475, set\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 5G0 955 985 BN\" sw162/cw158 truncated=true",
+    "title": "\"Metlice brisača Aerotwin 600/475, set\" sh65/ch43 clamped=true"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "229-349 \"U korpu: Set kvačila 1.6 TDI\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 04L 105 204 K\" sw158/cw158 truncated=false",
+    "title": "\"Set kvačila 1.6 TDI\" sh22/ch22 clamped=false"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočione pločice zadnje, elektronska ručna\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 5Q0 698 782 KA\" sw162/cw158 truncated=true",
+    "title": "\"Kočione pločice zadnje, elektronska ručna\" sh65/ch43 clamped=true"
+   }
+  ]
+ },
+ "chromium-320-mobile-checkout": {
+  "overflow": {
+   "over": 3,
+   "offenders": [
+    "div.ml-auto.flex",
+    "div.lg:hidden",
+    "button.relative.inline-flex"
+   ]
+  },
+  "header": {
+   "vw": 320,
+   "sw": 323,
+   "rowScrollW": 323,
+   "rowClientW": 320,
+   "wordmark": "16-129",
+   "clusterRight": 322.5,
+   "items": [
+    "button[Pretraga delova] 141-185",
+    "a[Moj nalog] 187-231",
+    "a[Korpa] 233-277",
+    "div[] 279-323"
+   ]
+  }
+ },
+ "chromium-320-mobile-inquiry": {
+  "overflow": {
+   "over": 3,
+   "offenders": [
+    "div.ml-auto.flex",
+    "div.lg:hidden",
+    "button.relative.inline-flex"
+   ]
+  },
+  "header": {
+   "vw": 320,
+   "sw": 323,
+   "rowScrollW": 323,
+   "rowClientW": 320,
+   "wordmark": "16-129",
+   "clusterRight": 322.5,
+   "items": [
+    "button[Pretraga delova] 141-185",
+    "a[Moj nalog] 187-231",
+    "a[Korpa] 233-277",
+    "div[] 279-323"
+   ]
+  }
+ },
+ "chromium-320-mobile-landing": {
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "header": {
+   "vw": 320,
+   "sw": 320,
+   "rowScrollW": 320,
+   "rowClientW": 320,
+   "wordmark": "16-129",
+   "clusterRight": null,
+   "items": []
+  },
+  "cards": [
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočione pločice zadnje, elektronska ručna\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 5Q0 698 782 KA\" sw162/cw158 truncated=true",
+    "title": "\"Kočione pločice zadnje, elektronska ručna\" sh65/ch43 clamped=true"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočione pločice zadnje\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 698 569\" sw158/cw158 truncated=false",
+    "title": "\"Kočione pločice zadnje\" sh43/ch43 clamped=false"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočione pločice prednje, sa senzorom\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 698 406 F\" sw158/cw158 truncated=false",
+    "title": "\"Kočione pločice prednje, sa senzorom\" sh65/ch43 clamped=true"
+   }
+  ],
+  "cardsSpacing": [
+   {
+    "card": "16-304 w288",
+    "btn": "235-355 \"U korpu: Kočione pločice zadnje, elektronska ručna\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 5Q0 698 782 KA\" sw196/cw158 truncated=true",
+    "title": "\"Kočione pločice zadnje, elektronska ručna\" sh96/ch48 clamped=true"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "235-355 \"U korpu: Kočione pločice zadnje\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 698 569\" sw162/cw158 truncated=true",
+    "title": "\"Kočione pločice zadnje\" sh48/ch48 clamped=false"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "235-355 \"U korpu: Kočione pločice prednje, sa senzorom\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 698 406 F\" sw186/cw158 truncated=true",
+    "title": "\"Kočione pločice prednje, sa senzorom\" sh72/ch48 clamped=true"
+   }
+  ],
+  "overflowSpacing": {
+   "over": 0,
+   "offenders": []
+  }
+ },
+ "chromium-320-desktopzoom-home": {
+  "overflow": {
+   "over": 3,
+   "offenders": [
+    "div.ml-auto.flex",
+    "div.lg:hidden",
+    "button.relative.inline-flex"
+   ]
+  },
+  "header": {
+   "vw": 320,
+   "sw": 323,
+   "rowScrollW": 323,
+   "rowClientW": 320,
+   "wordmark": "16-129",
+   "clusterRight": 322.5,
+   "items": [
+    "button[Pretraga delova] 141-185",
+    "a[Moj nalog] 187-231",
+    "a[Korpa] 233-277",
+    "div[] 279-323"
+   ]
+  }
+ },
+ "chromium-320-desktopzoom-category": {
+  "overflow": {
+   "over": 3,
+   "offenders": [
+    "div.ml-auto.flex",
+    "div.lg:hidden",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]"
+   ]
+  },
+  "header": {
+   "vw": 320,
+   "sw": 323,
+   "rowScrollW": 323,
+   "rowClientW": 320,
+   "wordmark": "16-129",
+   "clusterRight": 322.5,
+   "items": [
+    "button[Pretraga delova] 141-185",
+    "a[Moj nalog] 187-231",
+    "a[Korpa] 233-277",
+    "div[] 279-323"
+   ]
+  },
+  "cards": [
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočioni disk prednji 312 × 25 mm\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 3C0 615 098\" sw158/cw158 truncated=false",
+    "title": "\"Kočioni disk prednji 312 × 25 mm\" sh43/ch43 clamped=false"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočioni disk zadnji 272 × 10 mm, puni\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 615 540 Q\" sw158/cw158 truncated=false",
+    "title": "\"Kočioni disk zadnji 272 × 10 mm, puni\" sh43/ch43 clamped=false"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočioni disk prednji 256 × 22 mm\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 6R0 615 645\" sw158/cw158 truncated=false",
+    "title": "\"Kočioni disk prednji 256 × 22 mm\" sh43/ch43 clamped=false"
+   }
+  ],
+  "cardsSpacing": [
+   {
+    "card": "16-304 w288",
+    "btn": "235-355 \"U korpu: Kočioni disk prednji 312 × 25 mm\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 3C0 615 098\" sw162/cw158 truncated=true",
+    "title": "\"Kočioni disk prednji 312 × 25 mm\" sh72/ch48 clamped=true"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "235-355 \"U korpu: Kočioni disk zadnji 272 × 10 mm, puni\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 615 540 Q\" sw186/cw158 truncated=true",
+    "title": "\"Kočioni disk zadnji 272 × 10 mm, puni\" sh72/ch48 clamped=true"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "235-355 \"U korpu: Kočioni disk prednji 256 × 22 mm\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 6R0 615 645\" sw162/cw158 truncated=true",
+    "title": "\"Kočioni disk prednji 256 × 22 mm\" sh72/ch48 clamped=true"
+   }
+  ],
+  "overflowSpacing": {
+   "over": 6,
+   "offenders": [
+    "div.ml-auto.flex",
+    "div.lg:hidden",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "span.inline-flex.items-center",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex"
+   ]
+  }
+ },
+ "chromium-320-desktopzoom-product": {
+  "overflow": {
+   "over": 3,
+   "offenders": [
+    "div.ml-auto.flex",
+    "div.lg:hidden",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]"
+   ]
+  },
+  "header": {
+   "vw": 320,
+   "sw": 323,
+   "rowScrollW": 323,
+   "rowClientW": 320,
+   "wordmark": "16-129",
+   "clusterRight": 322.5,
+   "items": [
+    "button[Pretraga delova] 141-185",
+    "a[Moj nalog] 187-231",
+    "a[Korpa] 233-277",
+    "div[] 279-323"
+   ]
+  }
+ },
+ "chromium-320-desktopzoom-search": {
+  "overflow": {
+   "over": 3,
+   "offenders": [
+    "div.ml-auto.flex",
+    "div.lg:hidden",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]"
+   ]
+  },
+  "header": {
+   "vw": 320,
+   "sw": 323,
+   "rowScrollW": 323,
+   "rowClientW": 320,
+   "wordmark": "16-129",
+   "clusterRight": 322.5,
+   "items": [
+    "button[Pretraga delova] 141-185",
+    "a[Moj nalog] 187-231",
+    "a[Korpa] 233-277",
+    "div[] 279-323"
+   ]
+  },
+  "cards": [
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"Poruči: Kočioni disk prednji 320 × 30 mm\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 8K0 615 085\" sw158/cw158 truncated=false",
+    "title": "\"Kočioni disk prednji 320 × 30 mm\" sh43/ch43 clamped=false"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočioni disk prednji 312 × 25 mm\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 3C0 615 098\" sw158/cw158 truncated=false",
+    "title": "\"Kočioni disk prednji 312 × 25 mm\" sh43/ch43 clamped=false"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočioni disk prednji 256 × 22 mm\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 6R0 615 645\" sw158/cw158 truncated=false",
+    "title": "\"Kočioni disk prednji 256 × 22 mm\" sh43/ch43 clamped=false"
+   }
+  ]
+ },
+ "chromium-320-desktopzoom-vehicle": {
+  "overflow": {
+   "over": 3,
+   "offenders": [
+    "div.ml-auto.flex",
+    "div.lg:hidden",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "div.@min-[17rem]:w-auto.@min-[17rem]:min-w-[7.5rem]",
+    "button.relative.inline-flex",
+    "span.inline-flex.items-center"
+   ]
+  },
+  "header": {
+   "vw": 320,
+   "sw": 323,
+   "rowScrollW": 323,
+   "rowClientW": 320,
+   "wordmark": "16-129",
+   "clusterRight": 322.5,
+   "items": [
+    "button[Pretraga delova] 141-185",
+    "a[Moj nalog] 187-231",
+    "a[Korpa] 233-277",
+    "div[] 279-323"
+   ]
+  },
+  "cards": [
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Metlice brisača Aerotwin 600/475, set\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 5G0 955 985 BN\" sw162/cw158 truncated=true",
+    "title": "\"Metlice brisača Aerotwin 600/475, set\" sh65/ch43 clamped=true"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "229-349 \"U korpu: Set kvačila 1.6 TDI\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 04L 105 204 K\" sw158/cw158 truncated=false",
+    "title": "\"Set kvačila 1.6 TDI\" sh22/ch22 clamped=false"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočione pločice zadnje, elektronska ručna\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 5Q0 698 782 KA\" sw162/cw158 truncated=true",
+    "title": "\"Kočione pločice zadnje, elektronska ručna\" sh65/ch43 clamped=true"
+   }
+  ]
+ },
+ "chromium-320-desktopzoom-checkout": {
+  "overflow": {
+   "over": 3,
+   "offenders": [
+    "div.ml-auto.flex",
+    "div.lg:hidden",
+    "button.relative.inline-flex"
+   ]
+  },
+  "header": {
+   "vw": 320,
+   "sw": 323,
+   "rowScrollW": 323,
+   "rowClientW": 320,
+   "wordmark": "16-129",
+   "clusterRight": 322.5,
+   "items": [
+    "button[Pretraga delova] 141-185",
+    "a[Moj nalog] 187-231",
+    "a[Korpa] 233-277",
+    "div[] 279-323"
+   ]
+  }
+ },
+ "chromium-320-desktopzoom-inquiry": {
+  "overflow": {
+   "over": 3,
+   "offenders": [
+    "div.ml-auto.flex",
+    "div.lg:hidden",
+    "button.relative.inline-flex"
+   ]
+  },
+  "header": {
+   "vw": 320,
+   "sw": 323,
+   "rowScrollW": 323,
+   "rowClientW": 320,
+   "wordmark": "16-129",
+   "clusterRight": 322.5,
+   "items": [
+    "button[Pretraga delova] 141-185",
+    "a[Moj nalog] 187-231",
+    "a[Korpa] 233-277",
+    "div[] 279-323"
+   ]
+  }
+ },
+ "chromium-320-desktopzoom-landing": {
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "header": {
+   "vw": 320,
+   "sw": 320,
+   "rowScrollW": 320,
+   "rowClientW": 320,
+   "wordmark": "16-129",
+   "clusterRight": null,
+   "items": []
+  },
+  "cards": [
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočione pločice zadnje, elektronska ručna\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 5Q0 698 782 KA\" sw162/cw158 truncated=true",
+    "title": "\"Kočione pločice zadnje, elektronska ručna\" sh65/ch43 clamped=true"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočione pločice zadnje\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 698 569\" sw158/cw158 truncated=false",
+    "title": "\"Kočione pločice zadnje\" sh43/ch43 clamped=false"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "219-339 \"U korpu: Kočione pločice prednje, sa senzorom\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 698 406 F\" sw158/cw158 truncated=false",
+    "title": "\"Kočione pločice prednje, sa senzorom\" sh65/ch43 clamped=true"
+   }
+  ],
+  "cardsSpacing": [
+   {
+    "card": "16-304 w288",
+    "btn": "235-355 \"U korpu: Kočione pločice zadnje, elektronska ručna\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 5Q0 698 782 KA\" sw196/cw158 truncated=true",
+    "title": "\"Kočione pločice zadnje, elektronska ručna\" sh96/ch48 clamped=true"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "235-355 \"U korpu: Kočione pločice zadnje\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 698 569\" sw162/cw158 truncated=true",
+    "title": "\"Kočione pločice zadnje\" sh48/ch48 clamped=false"
+   },
+   {
+    "card": "16-304 w288",
+    "btn": "235-355 \"U korpu: Kočione pločice prednje, sa senzorom\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 698 406 F\" sw186/cw158 truncated=true",
+    "title": "\"Kočione pločice prednje, sa senzorom\" sh72/ch48 clamped=true"
+   }
+  ],
+  "overflowSpacing": {
+   "over": 0,
+   "offenders": []
+  }
+ },
+ "chromium-330-threshold": {
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "header": {
+   "vw": 330,
+   "sw": 330,
+   "rowScrollW": 330,
+   "rowClientW": 330,
+   "wordmark": "16-129",
+   "clusterRight": null,
+   "items": []
+  },
+  "cards": [
+   {
+    "card": "16-314 w298",
+    "btn": "219-339 \"U korpu: Kočione pločice zadnje, elektronska ručna\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 5Q0 698 782 KA\" sw168/cw168 truncated=false",
+    "title": "\"Kočione pločice zadnje, elektronska ručna\" sh65/ch43 clamped=true"
+   },
+   {
+    "card": "16-314 w298",
+    "btn": "219-339 \"U korpu: Kočione pločice zadnje\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 698 569\" sw168/cw168 truncated=false",
+    "title": "\"Kočione pločice zadnje\" sh43/ch43 clamped=false"
+   },
+   {
+    "card": "16-314 w298",
+    "btn": "219-339 \"U korpu: Kočione pločice prednje, sa senzorom\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 698 406 F\" sw168/cw168 truncated=false",
+    "title": "\"Kočione pločice prednje, sa senzorom\" sh43/ch43 clamped=false"
+   }
+  ]
+ },
+ "chromium-340-threshold": {
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "header": {
+   "vw": 340,
+   "sw": 340,
+   "rowScrollW": 340,
+   "rowClientW": 340,
+   "wordmark": "16-129",
+   "clusterRight": null,
+   "items": []
+  },
+  "cards": [
+   {
+    "card": "16-324 w308",
+    "btn": "219-339 \"U korpu: Kočione pločice zadnje, elektronska ručna\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 5Q0 698 782 KA\" sw178/cw178 truncated=false",
+    "title": "\"Kočione pločice zadnje, elektronska ručna\" sh43/ch43 clamped=false"
+   },
+   {
+    "card": "16-324 w308",
+    "btn": "219-339 \"U korpu: Kočione pločice zadnje\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 698 569\" sw178/cw178 truncated=false",
+    "title": "\"Kočione pločice zadnje\" sh22/ch22 clamped=false"
+   },
+   {
+    "card": "16-324 w308",
+    "btn": "219-339 \"U korpu: Kočione pločice prednje, sa senzorom\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 698 406 F\" sw178/cw178 truncated=false",
+    "title": "\"Kočione pločice prednje, sa senzorom\" sh43/ch43 clamped=false"
+   }
+  ]
+ },
+ "chromium-350-threshold": {
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "header": {
+   "vw": 350,
+   "sw": 350,
+   "rowScrollW": 350,
+   "rowClientW": 350,
+   "wordmark": "16-129",
+   "clusterRight": null,
+   "items": []
+  },
+  "cards": [
+   {
+    "card": "16-334 w318",
+    "btn": "219-339 \"U korpu: Kočione pločice zadnje, elektronska ručna\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 5Q0 698 782 KA\" sw188/cw188 truncated=false",
+    "title": "\"Kočione pločice zadnje, elektronska ručna\" sh43/ch43 clamped=false"
+   },
+   {
+    "card": "16-334 w318",
+    "btn": "219-339 \"U korpu: Kočione pločice zadnje\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 698 569\" sw188/cw188 truncated=false",
+    "title": "\"Kočione pločice zadnje\" sh22/ch22 clamped=false"
+   },
+   {
+    "card": "16-334 w318",
+    "btn": "219-339 \"U korpu: Kočione pločice prednje, sa senzorom\" sw118/cw118",
+    "btnOverflowsCard": true,
+    "oem": "\"OEM 1K0 698 406 F\" sw188/cw188 truncated=false",
+    "title": "\"Kočione pločice prednje, sa senzorom\" sh43/ch43 clamped=false"
+   }
+  ]
+ },
+ "chromium-360-threshold": {
+  "overflow": {
+   "over": 0,
+   "offenders": []
+  },
+  "header": {
+   "vw": 360,
+   "sw": 360,
+   "rowScrollW": 360,
+   "rowClientW": 360,
+   "wordmark": "16-129",
+   "clusterRight": null,
+   "items": []
+  },
+  "cards": [
+   {
+    "card": "16-344 w328",
+    "btn": "219-339 \"U korpu: Kočione pločice zadnje, elektronska ručna\" sw118/cw118",
+    "btnOverflowsCard": false,
+    "oem": "\"OEM 5Q0 698 782 KA\" sw198/cw198 truncated=false",
+    "title": "\"Kočione pločice zadnje, elektronska ručna\" sh43/ch43 clamped=false"
+   },
+   {
+    "card": "16-344 w328",
+    "btn": "219-339 \"U korpu: Kočione pločice zadnje\" sw118/cw118",
+    "btnOverflowsCard": false,
+    "oem": "\"OEM 1K0 698 569\" sw198/cw198 truncated=false",
+    "title": "\"Kočione pločice zadnje\" sh22/ch22 clamped=false"
+   },
+   {
+    "card": "16-344 w328",
+    "btn": "219-339 \"U korpu: Kočione pločice prednje, sa senzorom\" sw118/cw118",
+    "btnOverflowsCard": false,
+    "oem": "\"OEM 1K0 698 406 F\" sw198/cw198 truncated=false",
+    "title": "\"Kočione pločice prednje, sa senzorom\" sh43/ch43 clamped=false"
+   }
+  ]
+ }
+}

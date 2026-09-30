@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "kocioni-diskovi",
+    "selected": "kocioni-diskovi",
+    "stage": 4,
+    "progress": 0.520142,
+    "y": 1485,
+    "strip": "04 / 07"
+  },
+  {
+    "slug": "turbina",
+    "selected": "turbina",
+    "stage": 5,
+    "progress": 0.739929,
+    "y": 1856,
+    "strip": "05 / 07"
+  },
+  {
+    "slug": "akumulator",
+    "selected": "akumulator",
+    "stage": 5,
+    "progress": 0.632109,
+    "y": 1674,
+    "strip": "05 / 07"
+  }
+]

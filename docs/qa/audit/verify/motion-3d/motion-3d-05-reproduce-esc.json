@@ -1,0 +1,12 @@
+{
+ "before": {
+  "focus": "Rasklopi",
+  "sel": "kocioni-diskovi"
+ },
+ "after": {
+  "focus": "Interaktivni 3D prikaz automob",
+  "tag": "DIV",
+  "sel": null,
+  "panel": false
+ }
+}

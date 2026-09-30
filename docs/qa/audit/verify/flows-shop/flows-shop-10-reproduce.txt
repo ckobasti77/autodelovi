@@ -1,0 +1,56 @@
+flows-shop-10 static verification (2026-09-30T20:22:03Z)
+== convex/schema.ts cartItems (no price snapshot) ==
+482:  cartItems: defineTable({
+483-    cartId: v.id("carts"),
+484-    productId: v.id("products"),
+485-    quantity: v.number(),
+486-    source: cartItemSourceV,
+487-    addedAt: v.number(),
+488-  })
+489-    .index("by_cartId", ["cartId"])
+== convex/carts.ts notice kinds ==
+const noticeV = v.union(
+  v.null(),
+  v.object({ kind: v.literal("unavailable") }),
+  v.object({ kind: v.literal("insufficient_stock"), available: v.number() }),
+  v.object({
+    kind: v.literal("backorder"),
+    available: v.number(),
+    leadTimeDays: v.union(v.number(), v.null()),
+  }),
+);
+== components/cart/CartView.tsx LineNotice ==
+function LineNotice({ line }: { line: CartLine }) {
+  const n = line.notice;
+  if (!n) return null;
+  const text =
+    n.kind === "unavailable"
+      ? "Artikal više nije dostupan. Uklonite ga iz korpe."
+      : n.kind === "insufficient_stock"
+        ? n.available > 0
+          ? `Na stanju je još ${formatQuantity(n.available)} Smanjite količinu.`
+          : "Artikal trenutno nije na stanju."
+        : `Deo ide po porudžbini${n.leadTimeDays ? ` · ${leadTimeLabel(n.leadTimeDays)}` : ""}.`;
+  const tone = n.kind === "backorder" ? "text-info" : "text-warning";
+== components/checkout/CheckoutForm.tsx expectedTotalPara comes from the live cart query ==
+238:  const itemsPara = cart?.itemsPara ?? 0;
+240:  const totalPara = itemsPara + shippingPara;
+334:        expectedTotalPara: totalPara,
+== convex/orders.ts PRICE_CHANGED (race-only guard) ==
+    if (args.expectedTotalPara !== undefined) {
+      const itemsPara = lines.reduce((s, l) => s + l.unitPricePara * l.quantity, 0);
+      const free = checkout.deliveryConfig.freeOverPara;
+      const delivery =
+        free !== undefined && itemsPara >= free ? 0 : checkout.deliveryConfig.pricePara;
+      if (itemsPara + delivery !== args.expectedTotalPara) {
+        fail(
+          "PRICE_CHANGED",
+          "Cene ili stanje su se promenili. Proverite korpu i potvrdite ponovo.",
+          {
+            totalPara: itemsPara + delivery,
+          },
+== usages of spec copy 'Cena je promenjena' in app code ==
+(none)
+== spec ==
+65:Edge cases: **out of stock** → add-to-cart disabled unless `po porudžbini` (lead time shown), offers „Javi mi kad stigne" + „Pošalji upit"; **stock/price changed since adding** → review s
+940:| Price changed | „Cena je promenjena u međuvremenu. Proverite stavke pre slanja.“ |

@@ -1,0 +1,25 @@
+{
+  "numbers": [
+    "SK-2026-000144",
+    "SK-2026-000143",
+    "SK-2026-000141",
+    "SK-2026-000139",
+    "SK-2026-000137",
+    "SK-2026-000136",
+    "SK-2026-000127",
+    "SK-2026-000002"
+  ],
+  "tried": [],
+  "order": "SK-2026-000144",
+  "seq": [
+    "BUTTON admin-order-transition-poslata",
+    "INPUT admin-order-tracking-input"
+  ],
+  "active": {
+    "tag": "INPUT",
+    "label": null,
+    "testid": "admin-order-tracking-input"
+  },
+  "shot": "docs/qa/audit/verify/vis-admin/vis-admin-09-reproduce-poslata-button.webp",
+  "closed": true
+}

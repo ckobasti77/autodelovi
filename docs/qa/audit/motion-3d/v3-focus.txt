@@ -1,0 +1,13 @@
+FAIL 1440 header search (Escape) open=true inside=input[combobox] "Broj dela ili naziv" stillOpen=false after=BODY nextTab=a[skip-link] "Preskoči na sadržaj"
+FAIL 1440 header vehicle picker (Escape) open=true inside=button[] "Zatvori" stillOpen=false after=BODY nextTab=a[skip-link] "Preskoči na sadržaj"
+FAIL 1440 header vehicle picker (kbd-close) open=true inside=button[] "Zatvori" stillOpen=false after=BODY nextTab=a[skip-link] "Preskoči na sadržaj"
+FAIL 1440 hero vehicle field (Escape) open=true inside=button[] "Zatvori" stillOpen=false after=BODY nextTab=a[skip-link] "Preskoči na sadržaj"
+FAIL 1440 parts list (Escape) open=true inside=button[] "Zatvori" stillOpen=false after=BODY nextTab=a[skip-link] "Preskoči na sadržaj"
+FAIL 1440 parts list (kbd-close) open=true inside=button[] "Zatvori" stillOpen=false after=BODY nextTab=a[skip-link] "Preskoči na sadržaj"
+FAIL 1440 parts list (click) open=true inside=button[] "Zatvori" stillOpen=false after=BODY nextTab=a[skip-link] "Preskoči na sadržaj"
+SKIP 390 header search
+ok   390 mobile menu (Escape) open=true inside=button[] "Zatvori" stillOpen=false after=button[mobile-menu-trigger] "Otvori meni" nextTab=a[] "Kočnice"
+ok   390 catalog filters (Escape) open=true inside=button[] "Smanji panel" stillOpen=false after=button[] "Filteri" nextTab=select[] "Sortiraj"
+ok   390 catalog filters (kbd-close) open=true inside=button[] "Smanji panel" stillOpen=false after=button[] "Filteri" nextTab=select[] "Sortiraj"
+FAIL 390 hero vehicle field (Escape) open=true inside=button[] "Smanji panel" stillOpen=false after=BODY nextTab=a[skip-link] "Preskoči na sadržaj"
+FAIL 390 parts list (kbd-close) open=true inside=button[] "Zatvori" stillOpen=false after=BODY nextTab=a[skip-link] "Preskoči na sadržaj"

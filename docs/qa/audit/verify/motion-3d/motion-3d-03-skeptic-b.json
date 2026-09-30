@@ -1,0 +1,59 @@
+[
+  {
+    "engine": "chromium",
+    "w": 768,
+    "target": 1931,
+    "scrollY": 1931,
+    "vh": 1024,
+    "top": 1102,
+    "bottom": 1167,
+    "h": 65,
+    "tf": "matrix(1, 0, 0, 1, 0, 143)",
+    "vis": "hidden",
+    "aria": "true",
+    "inert": true,
+    "buyBoxBottom": -200,
+    "controls": [
+      "BUTTON:U korpu: Kočioni disk prednji "
+    ],
+    "img": "docs/qa/audit/verify/motion-3d/motion-3d-03-skeptic-chromium-768.webp"
+  },
+  {
+    "engine": "webkit",
+    "w": 390,
+    "target": 1204,
+    "scrollY": 1204,
+    "vh": 844,
+    "top": 850.515625,
+    "bottom": 915.515625,
+    "h": 65,
+    "tf": "matrix(1, 0, 0, 1, 0, 71.515535)",
+    "vis": "visible",
+    "aria": "false",
+    "inert": false,
+    "buyBoxBottom": -200,
+    "controls": [
+      "BUTTON:U korpu: Kočioni disk prednji "
+    ],
+    "img": "docs/qa/audit/verify/motion-3d/motion-3d-03-skeptic-webkit-390.webp"
+  },
+  {
+    "engine": "chromium",
+    "w": 360,
+    "target": 1260,
+    "scrollY": 1260,
+    "vh": 780,
+    "top": 786.5,
+    "bottom": 851.5,
+    "h": 65,
+    "tf": "matrix(1, 0, 0, 1, 0, 71.5)",
+    "vis": "visible",
+    "aria": "false",
+    "inert": false,
+    "buyBoxBottom": -200,
+    "controls": [
+      "BUTTON:U korpu: Kočioni disk prednji "
+    ],
+    "img": "docs/qa/audit/verify/motion-3d/motion-3d-03-skeptic-chromium-360.webp"
+  }
+]

@@ -1,0 +1,35 @@
+{
+ "stage": {
+  "1024": [],
+  "1280": [
+   {
+    "text": "Karoserija i svetla",
+    "sw": 107,
+    "cw": 98,
+    "y": 768
+   },
+   {
+    "text": "Kočnice i vešanje",
+    "sw": 103,
+    "cw": 98,
+    "y": 768
+   },
+   {
+    "text": "Agregati i hlađenje",
+    "sw": 114,
+    "cw": 98,
+    "y": 768
+   }
+  ],
+  "1366": [
+   {
+    "text": "Agregati i hlađenje",
+    "sw": 114,
+    "cw": 109,
+    "y": 768
+   }
+  ],
+  "1440": [],
+  "1920": []
+ }
+}

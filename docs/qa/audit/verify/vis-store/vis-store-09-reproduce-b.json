@@ -1,0 +1,57 @@
+[
+  {
+    "url": "/delovi/kocioni-diskovi?marka=volkswagen&model=golf&generacija=golf-7",
+    "leadTexts": [
+      "Kočioni diskovi zajedno sa pločicama pretvaraju kretanje u toplotu i zaustavljaju vozilo. Vibracije pri kočenju, ivica na disku ili debljina",
+      "Diskove menjajte u paru i uvek sa novim pločicama; proverite prečnik diska (npr. 288 ili 312 mm). U katalogu tražite po OEM ili kataloškom b"
+    ],
+    "leadBottom": 321,
+    "cardTop": 577,
+    "nameBottom": 657,
+    "priceBottom": 789,
+    "btnBottom": 813,
+    "vh": 780,
+    "name": "catf-360"
+  },
+  {
+    "url": "/delovi/kocioni-diskovi?marka=volkswagen&model=golf&generacija=golf-7",
+    "leadTexts": [
+      "Kočioni diskovi zajedno sa pločicama pretvaraju kretanje u toplotu i zaustavljaju vozilo. Vibracije pri kočenju, ivica na disku ili debljina",
+      "Diskove menjajte u paru i uvek sa novim pločicama; proverite prečnik diska (npr. 288 ili 312 mm). U katalogu tražite po OEM ili kataloškom b"
+    ],
+    "leadBottom": 295,
+    "cardTop": 551,
+    "nameBottom": 631,
+    "priceBottom": 762,
+    "btnBottom": 786,
+    "vh": 844,
+    "name": "catf-390"
+  },
+  {
+    "url": "/delovi/kocioni-diskovi/volkswagen/golf",
+    "leadTexts": [
+      "Za VW Golf imamo 6 artikala iz grupe „Kočioni diskovi“, 5 odmah na stanju, u rasponu od 3.890 RSD do 18.900 RSD sa PDV-om. Pokrivene generac"
+    ],
+    "leadBottom": 432,
+    "cardTop": 628,
+    "nameBottom": 709,
+    "priceBottom": 798,
+    "btnBottom": 821,
+    "vh": 664,
+    "name": "landm-390x664"
+  },
+  {
+    "url": "/delovi/kocioni-diskovi",
+    "leadTexts": [
+      "Kočioni diskovi zajedno sa pločicama pretvaraju kretanje u toplotu i zaustavljaju vozilo. Vibracije pri kočenju, ivica na disku ili debljina",
+      "Diskove menjajte u paru i uvek sa novim pločicama; proverite prečnik diska (npr. 288 ili 312 mm). U katalogu tražite po OEM ili kataloškom b"
+    ],
+    "leadBottom": 295,
+    "cardTop": 507,
+    "nameBottom": 587,
+    "priceBottom": 676,
+    "btnBottom": 700,
+    "vh": 664,
+    "name": "cat-390x664"
+  }
+]

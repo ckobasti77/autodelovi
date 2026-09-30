@@ -1,0 +1,817 @@
+{
+  "07": [
+    {
+      "route": "/delovi/kocioni-diskovi",
+      "width": 1440,
+      "total": 36,
+      "broken": 9,
+      "examples": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "h3",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "a",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        }
+      ],
+      "sampleOk": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "312 × 25 mm"
+          ],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        }
+      ]
+    },
+    {
+      "route": "/delovi/kocioni-diskovi",
+      "width": 390,
+      "total": 36,
+      "broken": 9,
+      "examples": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "h3",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "a",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        }
+      ],
+      "sampleOk": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "312 × 25 mm"
+          ],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        }
+      ]
+    },
+    {
+      "route": "/delovi/kocioni-diskovi",
+      "width": 360,
+      "total": 36,
+      "broken": 9,
+      "examples": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "h3",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "a",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        }
+      ],
+      "sampleOk": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "312 × 25 mm"
+          ],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        }
+      ]
+    },
+    {
+      "route": "/delovi/kocioni-diskovi",
+      "width": 1280,
+      "total": 36,
+      "broken": 0,
+      "examples": [],
+      "sampleOk": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "312 × 25 mm"
+          ],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        }
+      ]
+    },
+    {
+      "route": "/delovi/kocioni-diskovi",
+      "width": 768,
+      "total": 36,
+      "broken": 9,
+      "examples": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "h3",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "a",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        }
+      ],
+      "sampleOk": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        }
+      ]
+    },
+    {
+      "route": "/pretraga?q=disk",
+      "width": 1440,
+      "total": 36,
+      "broken": 9,
+      "examples": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "h3",
+          "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "a",
+          "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        }
+      ],
+      "sampleOk": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 320 × 30 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 320 × 30 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        }
+      ]
+    },
+    {
+      "route": "/pretraga?q=disk",
+      "width": 1920,
+      "total": 36,
+      "broken": 9,
+      "examples": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "h3",
+          "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "a",
+          "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        }
+      ],
+      "sampleOk": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 320 × 30 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "320 × 30 mm"
+          ],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 320 × 30 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        }
+      ]
+    },
+    {
+      "route": "/pretraga?q=disk",
+      "width": 390,
+      "total": 36,
+      "broken": 9,
+      "examples": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "h3",
+          "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "a",
+          "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        }
+      ],
+      "sampleOk": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 320 × 30 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "320 × 30 mm"
+          ],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 320 × 30 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        }
+      ]
+    },
+    {
+      "route": "/delovi/kocioni-diskovi/volkswagen/golf",
+      "width": 390,
+      "total": 24,
+      "broken": 9,
+      "examples": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "h3",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "a",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        }
+      ],
+      "sampleOk": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk zadnji 272 × 10 mm, puni",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "272 × 10 mm,"
+          ],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk zadnji 272 × 10 mm, puni",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        }
+      ]
+    },
+    {
+      "route": "/delovi/kocioni-diskovi/volkswagen/golf",
+      "width": 1440,
+      "total": 24,
+      "broken": 9,
+      "examples": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "h3",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "a",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        }
+      ],
+      "sampleOk": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk zadnji 272 × 10 mm, puni",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "272 × 10 mm,"
+          ],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "li",
+          "text": "Kočioni disk zadnji 272 × 10 mm, puni",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        }
+      ]
+    },
+    {
+      "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+      "width": 360,
+      "total": 19,
+      "broken": 3,
+      "examples": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "h3",
+          "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "a",
+          "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        }
+      ],
+      "sampleOk": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 276 × 24 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "h1",
+          "text": "×",
+          "spaceBeforeX": "NaN",
+          "spaceAfterX": "NaN",
+          "lineStarts": [],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        }
+      ]
+    },
+    {
+      "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+      "width": 1440,
+      "total": 19,
+      "broken": 3,
+      "examples": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "h3",
+          "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "a",
+          "text": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [
+            "× 25 mm, ven"
+          ],
+          "breaksAtX": true,
+          "breaksAfterX": false
+        }
+      ],
+      "sampleOk": [
+        {
+          "tag": "li",
+          "text": "Kočioni disk prednji 276 × 24 mm",
+          "spaceBeforeX": "20",
+          "spaceAfterX": "20",
+          "lineStarts": [],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        },
+        {
+          "tag": "h1",
+          "text": "×",
+          "spaceBeforeX": "NaN",
+          "spaceAfterX": "NaN",
+          "lineStarts": [],
+          "breaksAtX": false,
+          "breaksAfterX": false
+        }
+      ]
+    }
+  ]
+}

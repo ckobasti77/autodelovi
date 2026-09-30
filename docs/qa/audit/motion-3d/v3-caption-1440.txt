@@ -1,0 +1,33 @@
+hard +0.7s {"scrollY":0,"state":{"ready":true,"tier":"high","status":"ready","progress":0,"stage":0,"selected":null,"hovered":null,"timeline":"desktop","reducedMotion":false},"words":0,"invisibleWords":0,"parents":[],"currentStep":"00Sklopljeno"}
+hard +3s {"scrollY":0,"state":{"ready":true,"tier":"high","status":"ready","progress":0,"stage":0,"selected":null,"hovered":null,"timeline":"desktop","reducedMotion":false},"words":0,"invisibleWords":0,"parents":[],"currentStep":"00Sklopljeno"}
+hard +6s {"scrollY":0,"state":{"ready":true,"tier":"high","status":"ready","progress":0,"stage":0,"selected":null,"hovered":null,"timeline":"desktop","reducedMotion":false},"words":0,"invisibleWords":0,"parents":[],"currentStep":"00Sklopljeno"}
+hard revealCheck +6s {"stuck":[],"pending":0,"words":0}
+hard errors {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+clientnav +0.7s {"scrollY":0,"state":{"ready":true,"tier":"high","status":"ready","progress":0.067892,"stage":0,"selected":null,"hovered":null,"timeline":"desktop","reducedMotion":false},"words":14,"invisibleWords":14,"parents":["p.type-display-m.text-ink-1[-] op=1: Sklopljenautomobil","p.type-code-s.uppercase[-] op=1: 00 · 42 kategorije ·91 deo","p.max-w-[40ch].type-body-s[-] op=1: Skrolujte i auto se rasklapa posistemima."],"currentStep":"00Sklopljeno"}
+clientnav +3s {"scrollY":0,"state":{"ready":true,"tier":"high","status":"ready","progress":0.0265,"stage":0,"selected":null,"hovered":null,"timeline":"desktop","reducedMotion":false},"words":14,"invisibleWords":9,"parents":["p.type-display-m.text-ink-1[-] op=1: Sklopljenautomobil","p.type-code-s.uppercase[-] op=1: 00 · 42 kategorije ·91 deo","p.max-w-[40ch].type-body-s[-] op=1: Skrolujte i auto se rasklapa posistemima."],"currentStep":"00Sklopljeno"}
+clientnav +6s {"scrollY":0,"state":{"ready":true,"tier":"high","status":"ready","progress":0,"stage":0,"selected":null,"hovered":null,"timeline":"desktop","reducedMotion":false},"words":0,"invisibleWords":0,"parents":[],"currentStep":"00Sklopljeno"}
+clientnav revealCheck +6s {"stuck":[],"pending":0,"words":0}
+clientnav errors {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}
+deeplink kocioni-diskovi {"selected":"kocioni-diskovi","stage":4,"progress":0.460069,"currentStep":"04Agregati i hlađenje","scrollY":1326}
+deeplink abs-senzori {"selected":"abs-senzori","stage":4,"progress":0.460069,"currentStep":"04Agregati i hlađenje","scrollY":1326}
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.screenshot: Timeout 30000ms exceeded.
+Call log:
+  - taking page screenshot
+  - waiting for fonts to load...
+  - fonts loaded
+
+    at shot (C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\audit\kit.mjs:168:22)
+    at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\audit\motion-3d-v3-caption.mjs:75:9 {
+  log: [
+    '  - taking page screenshot',
+    '  - waiting for fonts to load...',
+    '  - fonts loaded'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.23.2

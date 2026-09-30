@@ -1,0 +1,98 @@
+{
+  "chromium-1440-/nalog": {
+    "polls": [
+      {
+        "stuck": [],
+        "pending": 0,
+        "words": 0,
+        "detail": []
+      }
+    ],
+    "scrollH": 1020,
+    "vh": 900
+  },
+  "chromium-1440-/nalog/porudzbine": {
+    "polls": [
+      {
+        "stuck": [],
+        "pending": 0,
+        "words": 0,
+        "detail": []
+      }
+    ],
+    "scrollH": 978,
+    "vh": 900
+  },
+  "chromium-1440-/majstor": {
+    "polls": [
+      {
+        "stuck": [],
+        "pending": 0,
+        "words": 0,
+        "detail": []
+      }
+    ],
+    "scrollH": 1739,
+    "vh": 900
+  },
+  "chromium-1440-/majstor/brza-porudzbina": {
+    "polls": [
+      {
+        "stuck": [],
+        "pending": 0,
+        "words": 0,
+        "detail": []
+      }
+    ],
+    "scrollH": 1252,
+    "vh": 900
+  },
+  "chromium-390-/nalog": {
+    "polls": [
+      {
+        "stuck": [],
+        "pending": 0,
+        "words": 0,
+        "detail": []
+      }
+    ],
+    "scrollH": 1969,
+    "vh": 844
+  },
+  "chromium-390-/nalog/porudzbine": {
+    "polls": [
+      {
+        "stuck": [],
+        "pending": 0,
+        "words": 0,
+        "detail": []
+      }
+    ],
+    "scrollH": 1658,
+    "vh": 844
+  },
+  "chromium-390-/majstor": {
+    "polls": [
+      {
+        "stuck": [],
+        "pending": 0,
+        "words": 0,
+        "detail": []
+      }
+    ],
+    "scrollH": 3264,
+    "vh": 844
+  },
+  "chromium-390-/majstor/brza-porudzbina": {
+    "polls": [
+      {
+        "stuck": [],
+        "pending": 0,
+        "words": 0,
+        "detail": []
+      }
+    ],
+    "scrollH": 2248,
+    "vh": 844
+  }
+}

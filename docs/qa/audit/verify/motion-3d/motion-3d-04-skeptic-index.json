@@ -1,0 +1,56 @@
+[
+  {
+    "scenario": "index button 03",
+    "tag": "index-1440",
+    "width": 1440,
+    "dpr": 1,
+    "state": {
+      "scrollY": 1326,
+      "dpr": 1,
+      "progress": 0.460069,
+      "stage": 4,
+      "selected": null,
+      "timeline": "desktop",
+      "reducedMotion": false,
+      "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+      "phoneLabel": "04 / 07 Agregati i hlađenje"
+    },
+    "img": "docs/qa/audit/verify/motion-3d/motion-3d-04-skeptic-index-1440-btn03.webp"
+  },
+  {
+    "scenario": "index button 02",
+    "tag": "index-1440",
+    "width": 1440,
+    "dpr": 1,
+    "state": {
+      "scrollY": 923,
+      "dpr": 1,
+      "progress": 0.32141,
+      "stage": 3,
+      "selected": null,
+      "timeline": "desktop",
+      "reducedMotion": false,
+      "ariaCurrent": "03 Kočnice, vešanje, upravljanje",
+      "phoneLabel": "03 / 07 Kočnice i vešanje"
+    },
+    "img": null
+  },
+  {
+    "scenario": "index button 05",
+    "tag": "index-1440",
+    "width": 1440,
+    "dpr": 1,
+    "state": {
+      "scrollY": 2075,
+      "dpr": 1,
+      "progress": 0.662221,
+      "stage": 5,
+      "selected": null,
+      "timeline": "desktop",
+      "reducedMotion": false,
+      "ariaCurrent": "05 Motor, turbina, gorivo, paljenje",
+      "phoneLabel": "05 / 07 Motor i turbina"
+    },
+    "img": null
+  }
+]

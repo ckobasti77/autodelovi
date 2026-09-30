@@ -1,0 +1,21 @@
+ok   home-to-category → /delovi/kocione-plocice hiddenInView=0 [] after={"stuck":0,"pending":0,"words":0,"s":[]}
+ok   category-to-product → /deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013 hiddenInView=0 [] after={"stuck":0,"pending":0,"words":0,"s":[]}
+ERR  product-to-category TimeoutError: locator.scrollIntoViewIfNeeded: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator('main a[href="/delovi/kocioni-disk
+ERR  category-to-header-vozila TimeoutError: locator.scrollIntoViewIfNeeded: Timeout 14930.826000000001ms exceeded.
+Call log:
+  - attempting scroll into view action
+    2 
+ERR  vozila-to-brand TimeoutError: locator.scrollIntoViewIfNeeded: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator('main a[href="/vozila/volkswagen"]
+ERR  brand-to-model TimeoutError: locator.scrollIntoViewIfNeeded: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator('main a[href^="/vozila/volkswagen/
+ERR  model-to-header-majstori TimeoutError: locator.scrollIntoViewIfNeeded: Timeout 14991.76000000001ms exceeded.
+Call log:
+  - attempting scroll into view action
+    2 ×
+ok   majstori-to-footer-dostava → /dostava-i-placanje hiddenInView=0 [] after={"stuck":0,"pending":0,"words":0,"s":[]}
+FAIL footer-to-home → / hiddenInView=0 [] after={"stuck":0,"pending":0,"words":14,"s":[]}

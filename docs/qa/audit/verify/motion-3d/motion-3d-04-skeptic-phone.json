@@ -1,0 +1,111 @@
+[
+  {
+    "scenario": "phone stepper",
+    "tag": "phone-390-dpr3",
+    "width": 390,
+    "dpr": 3,
+    "engine": "chromium",
+    "seq": [
+      {
+        "step": "start",
+        "scrollY": 0,
+        "dpr": 3,
+        "progress": 0,
+        "stage": 0,
+        "selected": null,
+        "timeline": "mobile",
+        "reducedMotion": false,
+        "ariaCurrent": "00 Sklopljen automobil",
+        "phoneLabel": "00 / 07 Sklopljeno"
+      },
+      {
+        "step": "next#1",
+        "scrollY": 980,
+        "dpr": 3,
+        "progress": 0.220972,
+        "stage": 1,
+        "selected": null,
+        "timeline": "mobile",
+        "reducedMotion": false,
+        "ariaCurrent": "01 Karoserija, stakla i svetla",
+        "phoneLabel": "01 / 07 Karoserija i svetla"
+      },
+      {
+        "step": "next#2",
+        "scrollY": 1147,
+        "dpr": 3,
+        "progress": 0.319905,
+        "stage": 2,
+        "selected": null,
+        "timeline": "mobile",
+        "reducedMotion": false,
+        "ariaCurrent": "02 Točkovi",
+        "phoneLabel": "02 / 07 Točkovi"
+      },
+      {
+        "step": "next#3",
+        "scrollY": 1485,
+        "dpr": 3,
+        "progress": 0.520142,
+        "stage": 4,
+        "selected": null,
+        "timeline": "mobile",
+        "reducedMotion": false,
+        "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+        "phoneLabel": "04 / 07 Agregati i hlađenje"
+      },
+      {
+        "step": "next#4",
+        "scrollY": 1856,
+        "dpr": 3,
+        "progress": 0.739929,
+        "stage": 5,
+        "selected": null,
+        "timeline": "mobile",
+        "reducedMotion": false,
+        "ariaCurrent": "05 Motor, turbina, gorivo, paljenje",
+        "phoneLabel": "05 / 07 Motor i turbina"
+      },
+      {
+        "step": "prev#1",
+        "scrollY": 1674,
+        "dpr": 3,
+        "progress": 0.632109,
+        "stage": 5,
+        "selected": null,
+        "timeline": "mobile",
+        "reducedMotion": false,
+        "ariaCurrent": "05 Motor, turbina, gorivo, paljenje",
+        "phoneLabel": "05 / 07 Motor i turbina"
+      },
+      {
+        "step": "prev#2",
+        "scrollY": 1674,
+        "dpr": 3,
+        "progress": 0.632109,
+        "stage": 5,
+        "selected": null,
+        "timeline": "mobile",
+        "reducedMotion": false,
+        "ariaCurrent": "05 Motor, turbina, gorivo, paljenje",
+        "phoneLabel": "05 / 07 Motor i turbina"
+      },
+      {
+        "step": "prev#3",
+        "scrollY": 1674,
+        "dpr": 3,
+        "progress": 0.632109,
+        "stage": 5,
+        "selected": null,
+        "timeline": "mobile",
+        "reducedMotion": false,
+        "ariaCurrent": "05 Motor, turbina, gorivo, paljenje",
+        "phoneLabel": "05 / 07 Motor i turbina"
+      }
+    ],
+    "img": [
+      "docs/qa/audit/verify/motion-3d/motion-3d-04-skeptic-phone-390-dpr3-after-next.webp",
+      "docs/qa/audit/verify/motion-3d/motion-3d-04-skeptic-phone-390-dpr3-after-prev.webp"
+    ]
+  }
+]

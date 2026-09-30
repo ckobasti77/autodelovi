@@ -1,0 +1,22 @@
+{
+  "source": "node node_modules/convex/bin/main.js data products --limit 400 --format jsonLines (read-only), 2026-09-30",
+  "searchTextExcerpts": {
+    "Akumulator EFB 70 Ah 760 A, start-stop (rank 1 for 'golf 7')": "akumulator efb 70 ah 760 a, start-stop akumulator efb 70 ah 760 a start stop varta akumulator demo-0103 demo 0103 762 912 989 762912989",
+    "Motor klapni usisne grane 2.0 TDI": "... pierburg ... 7.45878.77.0 7 45878 77 0 745878770 03l 129 304 h ... vw golf v vw golf vi vw passat b6 ...",
+    "EGR ventil 1.9/2.0 TDI": "... 7.26542.85.0 7 26542 85 0 726542850 ... vw golf iv vw golf v vw golf vi ...",
+    "Kočione pločice zadnje (fits Golf 7)": "... vw golf v vw golf vi vw golf vii vw passat b8 ..."
+  },
+  "tokenStats": {
+    "battery": { "golfTokens": 0, "tokensStartingWith7": 6, "vehicleLabels": 0 },
+    "productsWithLabel_golf_vii": 63,
+    "productsWithLabel_golf_7": 0
+  },
+  "cliProbes_search_run_firstNamedPartPosition": {
+    "pločice golf 7": 7, "pločice 7": 7, "kočione pločice golf 7": 4, "kočioni disk golf 7": 3,
+    "amortizer golf 7": 2, "filter ulja golf 7": 2, "filter golf 7 1.6 tdi": 9, "golf 7 pločice": 4,
+    "pločice golf 5": 2, "pločice golf 8": 2,
+    "pločice golf vii": 1, "pločice golf mk7": 1, "pločice golf7": 1, "plocice golf": 1, "disk golf": 1,
+    "pločice passat b8": 1, "disk audi a3": 1, "amortizer passat b7": 1, "pločice octavia 3": 1, "pločice polo 6": 1, "disk": 1,
+    "<b>disk</b>": "7 (wiper blades first; literal HTML tags)"
+  }
+}

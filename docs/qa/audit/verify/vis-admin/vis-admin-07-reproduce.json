@@ -1,0 +1,159 @@
+{
+  "1024": {
+    "items": [
+      {
+        "href": "/admin/porudzbine",
+        "badge": "99+",
+        "icon": [
+          22,
+          130,
+          20,
+          20
+        ],
+        "badgeRect": [
+          21,
+          122,
+          30,
+          18
+        ],
+        "overlapPx": "20x10",
+        "iconAreaCoveredPct": 50
+      },
+      {
+        "href": "/admin/upiti",
+        "badge": "52",
+        "icon": [
+          22,
+          170,
+          20,
+          20
+        ],
+        "badgeRect": [
+          28,
+          162,
+          23,
+          18
+        ],
+        "overlapPx": "14x10",
+        "iconAreaCoveredPct": 35
+      },
+      {
+        "href": "/admin/majstori",
+        "badge": "1",
+        "icon": [
+          22,
+          250,
+          20,
+          20
+        ],
+        "badgeRect": [
+          33,
+          242,
+          18,
+          18
+        ],
+        "overlapPx": "9x10",
+        "iconAreaCoveredPct": 21
+      },
+      {
+        "href": "/admin/lager",
+        "badge": "15",
+        "icon": [
+          22,
+          502,
+          20,
+          20
+        ],
+        "badgeRect": [
+          33,
+          494,
+          16,
+          15
+        ],
+        "overlapPx": "8x7",
+        "iconAreaCoveredPct": 15
+      }
+    ],
+    "f": "docs/qa/audit/verify/vis-admin/vis-admin-07-reproduce-1024-rail.webp"
+  },
+  "1280": {
+    "items": [
+      {
+        "href": "/admin/porudzbine",
+        "badge": "99+",
+        "icon": [
+          22,
+          130,
+          20,
+          20
+        ],
+        "badgeRect": [
+          21,
+          122,
+          30,
+          18
+        ],
+        "overlapPx": "20x10",
+        "iconAreaCoveredPct": 50
+      },
+      {
+        "href": "/admin/upiti",
+        "badge": "52",
+        "icon": [
+          22,
+          170,
+          20,
+          20
+        ],
+        "badgeRect": [
+          28,
+          162,
+          23,
+          18
+        ],
+        "overlapPx": "14x10",
+        "iconAreaCoveredPct": 35
+      },
+      {
+        "href": "/admin/majstori",
+        "badge": "1",
+        "icon": [
+          22,
+          250,
+          20,
+          20
+        ],
+        "badgeRect": [
+          33,
+          242,
+          18,
+          18
+        ],
+        "overlapPx": "9x10",
+        "iconAreaCoveredPct": 21
+      },
+      {
+        "href": "/admin/lager",
+        "badge": "15",
+        "icon": [
+          22,
+          502,
+          20,
+          20
+        ],
+        "badgeRect": [
+          33,
+          494,
+          16,
+          15
+        ],
+        "overlapPx": "8x7",
+        "iconAreaCoveredPct": 15
+      }
+    ],
+    "f": "docs/qa/audit/verify/vis-admin/vis-admin-07-reproduce-1280-rail.webp"
+  },
+  "1366": {
+    "items": []
+  }
+}

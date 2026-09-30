@@ -1,0 +1,67 @@
+{
+ "width": 1440,
+ "base": "http://localhost:3100",
+ "CTL after Tab from Ime (no prior attempt)": "input#co-lastName \"\"",
+ "CTL after Tab from Prezime": "input#co-phone \"\"",
+ "CTL values": {
+  "co-firstName": "Petar",
+  "co-lastName": "Petrovic",
+  "co-phone": "",
+  "co-email": ""
+ },
+ "CTL summary present": 1,
+ "CTL console": {
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "badResponses": []
+ },
+ "start values": {
+  "co-firstName": "",
+  "co-lastName": "",
+  "co-phone": "",
+  "co-email": ""
+ },
+ "0 after empty Dalje (expected summary)": "div[alert]# \"Proverite 4 polja:Upišite ime.Upišite pr\"",
+ "A while typing Ime": "input#co-firstName \"\"",
+ "A after Tab from fixed Ime (expected co-lastName)": "div[alert]# \"Proverite 3 polja:Upišite prezime.Upišit\"",
+ "A values after typing 'Jovan'": {
+  "co-firstName": "Petar",
+  "co-lastName": "",
+  "co-phone": "",
+  "co-email": ""
+ },
+ "B after click into Telefon (expected co-phone)": "div[alert]# \"Proverite 2 polja:Upišite broj telefona.\"",
+ "B values after typing digits": {
+  "co-firstName": "Petar",
+  "co-lastName": "Petrovic",
+  "co-phone": "",
+  "co-email": ""
+ },
+ "C after blur of invalid phone (count may stay)": "input#co-email \"\"",
+ "C focus after each keystroke in Telefon": [
+  "0:input#co-phone \"\"",
+  "6:input#co-phone \"\"",
+  "4:input#co-phone \"\"",
+  "1:input#co-phone \"\"",
+  "2:input#co-phone \"\"",
+  "3:input#co-phone \"\"",
+  "4:input#co-phone \"\"",
+  "5:input#co-phone \"\"",
+  "6:div[alert]# \"Proverite",
+  "7:div[alert]# \"Proverite"
+ ],
+ "C values": {
+  "co-firstName": "Petar",
+  "co-lastName": "Petrovic",
+  "co-phone": "064123456",
+  "co-email": ""
+ },
+ "C summary text": "Proverite jedno polje:Upišite e-mail adresu.",
+ "console": {
+  "console": [],
+  "pageErrors": [],
+  "failedRequests": [],
+  "badResponses": []
+ }
+}

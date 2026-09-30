@@ -1,0 +1,124 @@
+{
+  "08": {
+    "360": {
+      "total": 70,
+      "fullCount": 16,
+      "full": [
+        "Brizgaljke i pumpa goriva [750-770]",
+        "Set zupčastog kaiša i vodena pumpa [798-818]",
+        "Nosači motora i menjača [762-782]",
+        "Izduvni sistem — sve kategorije [846-866]",
+        "Kompresor i kondenzator klime [755-775]",
+        "Transmisija — sve kategorije [844-864]",
+        "Ramena i selen blokovi [755-775]",
+        "Spone i stabilizatori [803-823]",
+        "Letva volana [846-866]",
+        "ABS senzori [755-775]",
+        "Elektrika i svetla — sve kategorije [844-864]",
+        "Hauba [755-775]",
+        "Branici [803-823]",
+        "Blatobrani [846-866]",
+        "Felne i gume [755-775]",
+        "Servis i održavanje — sve kategorije [844-864]"
+      ],
+      "partial": [
+        "Usisna grana i kućište filtera 17%",
+        "EGR ventil 77%",
+        "Termostat i creva hlađenja 42%",
+        "Amortizeri i opruge 42%",
+        "Kočione čeljusti 42%",
+        "Karoserija — sve kategorije 42%",
+        "Točkovi — sve kategorije 42%"
+      ],
+      "bar": {
+        "top": 718,
+        "bottom": 866,
+        "h": 148
+      },
+      "firstHidden": "Brizgaljke i pumpa goriva",
+      "scrollPaddingBottom": "auto"
+    },
+    "390": {
+      "total": 70,
+      "fullCount": 15,
+      "full": [
+        "Brizgaljke i pumpa goriva [725-745]",
+        "Set zupčastog kaiša i vodena pumpa [773-793]",
+        "Kaiš alternatora i zatezači [821-841]",
+        "Izduvni sistem — sve kategorije [781-801]",
+        "Transmisija — sve kategorije [774-794]",
+        "Kvačilo i zamajac [822-842]",
+        "Spone i stabilizatori [733-753]",
+        "Letva volana [781-801]",
+        "Elektrika i svetla — sve kategorije [733-753]",
+        "Akumulator [781-801]",
+        "Blatobrani [733-753]",
+        "Vrata [781-801]",
+        "Servis i održavanje — sve kategorije [726-746]",
+        "Filteri [774-794]",
+        "Ulja i tečnosti [822-842]"
+      ],
+      "partial": [
+        "DPF i katalizator 98%",
+        "Ležaj točka i glavčina 98%",
+        "Farovi 98%",
+        "Retrovizori 98%"
+      ],
+      "bar": {
+        "top": 715,
+        "bottom": 844,
+        "h": 129
+      },
+      "firstHidden": "Brizgaljke i pumpa goriva",
+      "scrollPaddingBottom": "auto"
+    },
+    "768": {
+      "total": 70,
+      "fullCount": 11,
+      "full": [
+        "Anlaser [926-946]",
+        "Svećice, bobine i grejači [974-994]",
+        "Karter, pumpa ulja i dihtunzi [1004-1024]",
+        "Spone i stabilizatori [919-939]",
+        "Letva volana [967-987]",
+        "Ležaj točka i glavčina [1004-1024]",
+        "ABS senzori [956-976]",
+        "Točkovi — sve kategorije [967-987]",
+        "Felne i gume [1004-1024]",
+        "Servis i održavanje — sve kategorije [956-976]",
+        "Filteri [1004-1024]"
+      ],
+      "partial": [
+        "Kočione čeljusti 74%"
+      ],
+      "bar": {
+        "top": 913,
+        "bottom": 1024,
+        "h": 111
+      },
+      "firstHidden": "Anlaser",
+      "scrollPaddingBottom": "auto"
+    },
+    "1440": {
+      "total": 70,
+      "fullCount": 4,
+      "full": [
+        "Alternator [838-858]",
+        "Anlaser [880-900]",
+        "Akumulator [857-877]",
+        "Filteri [857-877]"
+      ],
+      "partial": [
+        "Elektrika i svetla — sve kategorije 29%",
+        "Servis i održavanje — sve kategorije 29%"
+      ],
+      "bar": {
+        "top": 823,
+        "bottom": 900,
+        "h": 77
+      },
+      "firstHidden": "Alternator",
+      "scrollPaddingBottom": "auto"
+    }
+  }
+}

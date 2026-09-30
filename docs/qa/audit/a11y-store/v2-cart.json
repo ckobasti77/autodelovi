@@ -1,0 +1,43 @@
+{
+ "1440 focus after add": "button \"Dodaj u korpu: Kočioni disk prednji 276 × 24 mm\" top=570",
+ "1440 live regions after add": [
+  "/polite: Dodato u korpu: Kočioni disk prednji 276 × 24 mm."
+ ],
+ "1440 cart control": "a \"Korpa, 1 artikal\" top=10",
+ "1440 focus after open cart": "button \"Zatvori\" top=12 in-dialog=Korpa (1)",
+ "1440 url after cart Enter": "http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+ "1440 dialogs visible": 1,
+ "1440 drawer axe": [],
+ "1440 focus after Escape drawer": "BODY",
+ "1440 korpa live after +1": [
+  "/polite: 9.380 RSD"
+ ],
+ "1440 korpa remove buttons": 1,
+ "1440 focus after remove": "BODY",
+ "1440 live after remove": [],
+ "390 focus after add": "button \"Dodaj u korpu: Kočioni disk prednji 276 × 24 mm\" top=436",
+ "390 live regions after add": [
+  "/polite: Dodato u korpu: Kočioni disk prednji 276 × 24 mm."
+ ],
+ "390 cart control": "a \"Korpa, 1 artikal\" top=6",
+ "390 focus after open cart": "button \"Zatvori\" top=12 in-dialog=Korpa (1)",
+ "390 url after cart Enter": "http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+ "390 dialogs visible": 1,
+ "390 drawer axe": [],
+ "390 focus after Escape drawer": "BODY",
+ "390 korpa live after +1": [
+  "/polite: 9.380 RSD"
+ ],
+ "390 korpa remove buttons": 1,
+ "390 focus after remove": "BODY",
+ "390 live after remove": [],
+ "390 search open focus": "input#cbx_r_0_-input \"Broj dela ili naziv\" top=154 in-dialog=Pretraga delova",
+ "390 search combobox": {
+  "role": "combobox",
+  "expanded": "true",
+  "options": 7
+ },
+ "390 search axe": [],
+ "390 after Escape 1": "BODY",
+ "390 after Escape 2": "BODY"
+}

@@ -1,0 +1,29 @@
+{
+  "/majstor": [
+    "H1:Majstorski portal",
+    "H2:Brza porudžbina",
+    "H2:Poslednje porudžbine"
+  ],
+  "/majstor/porudzbine": [
+    "H1:Majstorski portal"
+  ],
+  "/majstor/upiti": [
+    "H1:Majstorski portal"
+  ],
+  "/majstor/vozila": [
+    "H1:Majstorski portal"
+  ],
+  "/majstor/profil": [
+    "H1:Majstorski portal"
+  ],
+  "/majstor/cenovnik": [
+    "H1:Majstorski portal"
+  ],
+  "/majstor/omiljeno": [
+    "H1:Majstorski portal"
+  ],
+  "/majstor/brza-porudzbina": [
+    "H1:Majstorski portal",
+    "H2:Brza porudžbina"
+  ]
+}

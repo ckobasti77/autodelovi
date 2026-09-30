@@ -1,0 +1,8 @@
+{
+ "route": "/delovi/kocioni-diskovi",
+ "w": 1440,
+ "before": "button \"Izaberite vozilo\"",
+ "afterOpen": "button \"Zatvori\"",
+ "afterClose": "BODY",
+ "afterNextTab": "a \"Preskoči na sadržaj\""
+}

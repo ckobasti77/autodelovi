@@ -1,0 +1,97 @@
+{
+  "long": [
+    {
+      "width": 360,
+      "q": "5Q0615505R5Q0615505R",
+      "len": 40,
+      "ov": {
+        "over": 337,
+        "offenders": [
+          "span.rw",
+          "span.type-code.text-ink-2",
+          "div.flex.max-w-[44ch]",
+          "h2.type-h4.text-ink-1",
+          "p.type-body.text-ink-2",
+          "ol.pointer-events-none.fixed"
+        ]
+      },
+      "h1": {
+        "w": 681,
+        "cw": 328,
+        "right": 344
+      }
+    },
+    {
+      "width": 360,
+      "q": "xxxxxxxxxxxxxxxxxxxx",
+      "len": 120,
+      "ov": {
+        "over": 1432,
+        "offenders": [
+          "span.rw",
+          "div.flex.max-w-[44ch]",
+          "h2.type-h4.text-ink-1",
+          "p.type-body.text-ink-2",
+          "ol.pointer-events-none.fixed"
+        ]
+      },
+      "h1": {
+        "w": 1776,
+        "cw": 328,
+        "right": 344
+      }
+    },
+    {
+      "width": 390,
+      "q": "5Q0615505R5Q0615505R",
+      "len": 40,
+      "ov": {
+        "over": 315,
+        "offenders": [
+          "span.rw",
+          "div.flex.max-w-[44ch]",
+          "h2.type-h4.text-ink-1",
+          "p.type-body.text-ink-2",
+          "ol.pointer-events-none.fixed"
+        ]
+      },
+      "h1": {
+        "w": 689,
+        "cw": 358,
+        "right": 374
+      }
+    },
+    {
+      "width": 390,
+      "q": "xxxxxxxxxxxxxxxxxxxx",
+      "len": 120,
+      "ov": {
+        "over": 1421,
+        "offenders": [
+          "span.rw",
+          "div.flex.max-w-[44ch]",
+          "h2.type-h4.text-ink-1",
+          "p.type-body.text-ink-2",
+          "ol.pointer-events-none.fixed"
+        ]
+      },
+      "h1": {
+        "w": 1795,
+        "cw": 358,
+        "right": 374
+      }
+    }
+  ],
+  "log360": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  },
+  "log390": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

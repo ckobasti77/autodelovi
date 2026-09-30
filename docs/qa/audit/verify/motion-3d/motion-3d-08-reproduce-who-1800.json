@@ -1,0 +1,83 @@
+[
+  {
+    "t": 627,
+    "label": "scroll-event",
+    "path": "/",
+    "y": 1342
+  },
+  {
+    "t": 5040,
+    "label": "pushState",
+    "path": "/",
+    "y": 1342,
+    "args": "/delovi"
+  },
+  {
+    "t": 5144,
+    "label": "scrollTop=",
+    "path": "/delovi",
+    "y": 1342,
+    "args": "0",
+    "stack": "    at dontForceLayout (http://localhost:3100/_next/static/chunks/3fntmmi971322.js:1:6988) |     at n (http://localhost:3100/_next/static/chunks/3fntmmi971322.js:1:14074) |     at http://localhost:3100/_next/static/chunks/3fntmmi971322.js:1:6642 |     at iw (http://localhost:3100/_next/static/chunks/0qy3sss5e6eww.js:31:101730)"
+  },
+  {
+    "t": 5145,
+    "label": "el.scrollIntoView",
+    "path": "/delovi",
+    "y": 0,
+    "args": "[null]",
+    "stack": "    at cM.scrollIntoView (http://localhost:3100/_next/static/chunks/0qy3sss5e6eww.js:31:188394) |     at dontForceLayout (http://localhost:3100/_next/static/chunks/3fntmmi971322.js:1:7007) |     at n (http://localhost:3100/_next/static/chunks/3fntmmi971322.js:1:14074) |     at http://localhost:3100/_next/static/chunks/3fntmmi971322.js:1:6642"
+  },
+  {
+    "t": 5535,
+    "label": "scroll-event",
+    "path": "/delovi",
+    "y": 0
+  },
+  {
+    "label": "---- goBack ----"
+  },
+  {
+    "t": 7602,
+    "label": "popstate",
+    "path": "/",
+    "y": 0,
+    "docH": 13394
+  },
+  {
+    "t": 7606,
+    "label": "scroll-event",
+    "path": "/",
+    "y": 1342
+  },
+  {
+    "t": 7616,
+    "label": "window.scrollTo",
+    "path": "/",
+    "y": 1342,
+    "args": "[0,0]",
+    "stack": "    at http://localhost:3100/_next/static/chunks/1tr6a7zmh41cy.js:1:82871 |     at r (http://localhost:3100/_next/static/chunks/1tr6a7zmh41cy.js:1:82362) |     at http://localhost:3100/_next/static/chunks/1tr6a7zmh41cy.js:1:97034 |     at Array.forEach (<anonymous>)"
+  },
+  {
+    "t": 7616,
+    "label": "window.scrollTo",
+    "path": "/",
+    "y": 0,
+    "args": "[0,0]",
+    "stack": "    at http://localhost:3100/_next/static/chunks/1tr6a7zmh41cy.js:1:82675 |     at r (http://localhost:3100/_next/static/chunks/1tr6a7zmh41cy.js:1:82362) |     at http://localhost:3100/_next/static/chunks/1tr6a7zmh41cy.js:1:97034 |     at Array.forEach (<anonymous>)"
+  },
+  {
+    "t": 7617,
+    "label": "window.scrollTo",
+    "path": "/",
+    "y": 0,
+    "args": "[0,1342]",
+    "stack": "    at http://localhost:3100/_next/static/chunks/1tr6a7zmh41cy.js:1:82871 |     at r (http://localhost:3100/_next/static/chunks/1tr6a7zmh41cy.js:1:82362) |     at http://localhost:3100/_next/static/chunks/1tr6a7zmh41cy.js:1:97685 |     at Array.forEach (<anonymous>)"
+  },
+  {
+    "t": 7630,
+    "label": "scroll-event",
+    "path": "/",
+    "y": 1342
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "chromium-390-/prijava": {
+    "typed": [
+      "kupac@primer.rs",
+      "lozinka12345"
+    ],
+    "after": [
+      "kupac@primer.rs",
+      "lozinka12345"
+    ],
+    "hydratedAtType": false
+  },
+  "chromium-390-/": {
+    "typed": [
+      "5Q0615505R"
+    ],
+    "after": [
+      ""
+    ],
+    "hydratedAtType": false
+  },
+  "webkit-390-/prijava": {
+    "typed": [
+      "kupac@primer.rs",
+      "lozinka12345"
+    ],
+    "after": [
+      "kupac@primer.rs",
+      "lozinka12345"
+    ],
+    "hydratedAtType": true
+  },
+  "webkit-390-/": {
+    "typed": [
+      "5Q0615505R"
+    ],
+    "after": [
+      "5Q0615505R"
+    ],
+    "hydratedAtType": false
+  }
+}

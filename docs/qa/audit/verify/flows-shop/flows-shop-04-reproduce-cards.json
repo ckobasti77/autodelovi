@@ -1,0 +1,58 @@
+{
+  "golf 7": {
+    "meta": "48 artikala",
+    "gridTag": "UL",
+    "gridItems": 48,
+    "articles": 48,
+    "sampleHrefs": [
+      "/deo/akumulator-efb-70-ah-760-a-start-stop-demo-0103",
+      "/deo/motor-klapni-usisne-grane-2-0-tdi-demo-0052",
+      "/deo/egr-ventil-1-9-2-0-tdi-demo-0076",
+      "/deo/turbina-1-9-tdi-77-kw-nova-demo-0047",
+      "/deo/turbina-2-0-tdi-110-kw-nova-demo-0048",
+      "/deo/egr-ventil-2-0-tdi-cr-demo-0077"
+    ]
+  },
+  "a": {
+    "meta": "48 artikala",
+    "gridTag": "UL",
+    "gridItems": 48,
+    "articles": 48,
+    "sampleHrefs": [
+      "/deo/akumulator-agm-80-ah-800-a-demo-0104",
+      "/deo/akumulator-efb-70-ah-760-a-start-stop-demo-0103",
+      "/deo/akumulator-60-ah-540-a-demo-0102",
+      "/deo/alternator-140-a-demo-0065",
+      "/deo/alternator-140-a-demo-0065#obavestenje",
+      "/deo/gumeni-nosac-auspuha-demo-0085"
+    ]
+  },
+  "golf": {
+    "meta": "48 artikala",
+    "gridTag": "UL",
+    "gridItems": 48,
+    "articles": 48,
+    "sampleHrefs": [
+      "/deo/podizac-stakla-prednji-levi-sa-motorom-demo-0119",
+      "/deo/lambda-sonda-demo-0110",
+      "/deo/interkuler-demo-0050",
+      "/deo/set-klipnih-karika-1-9-tdi-demo-0046",
+      "/deo/amortizer-prednji-gasni-demo-e004",
+      "/deo/hladnjak-motora-demo-0086"
+    ]
+  },
+  "amortizer golf": {
+    "meta": "48 artikala",
+    "gridTag": "UL",
+    "gridItems": 48,
+    "articles": 48,
+    "sampleHrefs": [
+      "/deo/amortizer-prednji-gasni-demo-e004",
+      "/deo/amortizer-prednji-gasni-demo-0023",
+      "/deo/amortizer-prednji-excel-g-demo-0024",
+      "/deo/amortizer-prednji-demo-0028",
+      "/deo/amortizer-zadnji-b4-demo-0025",
+      "/deo/podizac-stakla-prednji-levi-sa-motorom-demo-0119"
+    ]
+  }
+}

@@ -1,0 +1,642 @@
+[
+  {
+    "route": "/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005",
+    "reducedMotion": "no-preference",
+    "rep": 1,
+    "before": {
+      "found": true,
+      "scrollY": 0,
+      "vh": 844,
+      "top": 922,
+      "bottom": 987,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 143)",
+      "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none;",
+      "visibility": "hidden",
+      "opacity": "1",
+      "ariaHidden": "true",
+      "inert": true,
+      "buyBoxBottom": 980
+    },
+    "after": {
+      "found": true,
+      "scrollY": 1200,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -220
+    },
+    "after4s": {
+      "found": true,
+      "scrollY": 1200,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -220
+    },
+    "barFocusables": [
+      {
+        "tag": "BUTTON",
+        "text": "U korpu: Kočioni disk prednji 340 × 30 m",
+        "tabIndex": 0,
+        "disabled": false
+      }
+    ],
+    "focusHit": {
+      "press": 86,
+      "inBar": true,
+      "tag": "BUTTON",
+      "text": "U korpu: Kočioni disk prednji 340 × 30 m",
+      "top": 861.9854736328125,
+      "bottom": 905.9854736328125,
+      "vh": 844
+    },
+    "shot": "docs/qa/audit/verify/flows-shop/flows-shop-01-skeptic-no-preference-p0-390.webp",
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "route": "/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005",
+    "reducedMotion": "no-preference",
+    "rep": 2,
+    "before": {
+      "found": true,
+      "scrollY": 0,
+      "vh": 844,
+      "top": 922,
+      "bottom": 987,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 143)",
+      "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none;",
+      "visibility": "hidden",
+      "opacity": "1",
+      "ariaHidden": "true",
+      "inert": true,
+      "buyBoxBottom": 980
+    },
+    "after": {
+      "found": true,
+      "scrollY": 1200,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -220
+    },
+    "after4s": {
+      "found": true,
+      "scrollY": 1200,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -220
+    },
+    "barFocusables": [
+      {
+        "tag": "BUTTON",
+        "text": "U korpu: Kočioni disk prednji 340 × 30 m",
+        "tabIndex": 0,
+        "disabled": false
+      }
+    ],
+    "focusHit": {
+      "press": 36,
+      "inBar": true,
+      "tag": "BUTTON",
+      "text": "U korpu: Kočioni disk prednji 340 × 30 m",
+      "top": 862.2763671875,
+      "bottom": 906.2763671875,
+      "vh": 844
+    },
+    "shot": null,
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "route": "/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005",
+    "reducedMotion": "no-preference",
+    "rep": 3,
+    "before": {
+      "found": true,
+      "scrollY": 0,
+      "vh": 844,
+      "top": 922,
+      "bottom": 987,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 143)",
+      "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none;",
+      "visibility": "hidden",
+      "opacity": "1",
+      "ariaHidden": "true",
+      "inert": true,
+      "buyBoxBottom": 980
+    },
+    "after": {
+      "found": true,
+      "scrollY": 1200,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -220
+    },
+    "after4s": {
+      "found": true,
+      "scrollY": 1200,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -220
+    },
+    "barFocusables": [
+      {
+        "tag": "BUTTON",
+        "text": "U korpu: Kočioni disk prednji 340 × 30 m",
+        "tabIndex": 0,
+        "disabled": false
+      }
+    ],
+    "focusHit": {
+      "press": 86,
+      "inBar": true,
+      "tag": "BUTTON",
+      "text": "U korpu: Kočioni disk prednji 340 × 30 m",
+      "top": 862.0562744140625,
+      "bottom": 906.0562744140625,
+      "vh": 844
+    },
+    "shot": null,
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "reducedMotion": "no-preference",
+    "rep": 1,
+    "before": {
+      "found": true,
+      "scrollY": 0,
+      "vh": 844,
+      "top": 922,
+      "bottom": 987,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 143)",
+      "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none;",
+      "visibility": "hidden",
+      "opacity": "1",
+      "ariaHidden": "true",
+      "inert": true,
+      "buyBoxBottom": 1005
+    },
+    "after": {
+      "found": true,
+      "scrollY": 1350,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -345
+    },
+    "after4s": {
+      "found": true,
+      "scrollY": 1350,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -345
+    },
+    "barFocusables": [
+      {
+        "tag": "BUTTON",
+        "text": "U korpu: Kočioni disk prednji 276 × 24 m",
+        "tabIndex": 0,
+        "disabled": false
+      }
+    ],
+    "focusHit": {
+      "press": 36,
+      "inBar": true,
+      "tag": "BUTTON",
+      "text": "U korpu: Kočioni disk prednji 276 × 24 m",
+      "top": 861.5298461914062,
+      "bottom": 905.5298461914062,
+      "vh": 844
+    },
+    "shot": "docs/qa/audit/verify/flows-shop/flows-shop-01-skeptic-no-preference-p1-390.webp",
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "route": "/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005",
+    "reducedMotion": "reduce",
+    "rep": 1,
+    "before": {
+      "found": true,
+      "scrollY": 0,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: hidden; transform: translateY(110%); opacity: 0;",
+      "visibility": "hidden",
+      "opacity": "0",
+      "ariaHidden": "true",
+      "inert": true,
+      "buyBoxBottom": 980
+    },
+    "after": {
+      "found": true,
+      "scrollY": 1200,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -220
+    },
+    "after4s": {
+      "found": true,
+      "scrollY": 1200,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -220
+    },
+    "barFocusables": [
+      {
+        "tag": "BUTTON",
+        "text": "U korpu: Kočioni disk prednji 340 × 30 m",
+        "tabIndex": 0,
+        "disabled": false
+      }
+    ],
+    "focusHit": {
+      "press": 86,
+      "inBar": true,
+      "tag": "BUTTON",
+      "text": "U korpu: Kočioni disk prednji 340 × 30 m",
+      "top": 861.5,
+      "bottom": 905.5,
+      "vh": 844
+    },
+    "shot": "docs/qa/audit/verify/flows-shop/flows-shop-01-skeptic-reduce-p0-390.webp",
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "route": "/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005",
+    "reducedMotion": "reduce",
+    "rep": 2,
+    "before": {
+      "found": true,
+      "scrollY": 0,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: hidden; transform: translateY(110%); opacity: 0;",
+      "visibility": "hidden",
+      "opacity": "0",
+      "ariaHidden": "true",
+      "inert": true,
+      "buyBoxBottom": 980
+    },
+    "after": {
+      "found": true,
+      "scrollY": 1200,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -220
+    },
+    "after4s": {
+      "found": true,
+      "scrollY": 1200,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -220
+    },
+    "barFocusables": [
+      {
+        "tag": "BUTTON",
+        "text": "U korpu: Kočioni disk prednji 340 × 30 m",
+        "tabIndex": 0,
+        "disabled": false
+      }
+    ],
+    "focusHit": {
+      "press": 36,
+      "inBar": true,
+      "tag": "BUTTON",
+      "text": "U korpu: Kočioni disk prednji 340 × 30 m",
+      "top": 861.5,
+      "bottom": 905.5,
+      "vh": 844
+    },
+    "shot": null,
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "route": "/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005",
+    "reducedMotion": "reduce",
+    "rep": 3,
+    "before": {
+      "found": true,
+      "scrollY": 0,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: hidden; transform: translateY(110%); opacity: 0;",
+      "visibility": "hidden",
+      "opacity": "0",
+      "ariaHidden": "true",
+      "inert": true,
+      "buyBoxBottom": 980
+    },
+    "after": {
+      "found": true,
+      "scrollY": 1200,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -220
+    },
+    "after4s": {
+      "found": true,
+      "scrollY": 1200,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -220
+    },
+    "barFocusables": [
+      {
+        "tag": "BUTTON",
+        "text": "U korpu: Kočioni disk prednji 340 × 30 m",
+        "tabIndex": 0,
+        "disabled": false
+      }
+    ],
+    "focusHit": {
+      "press": 36,
+      "inBar": true,
+      "tag": "BUTTON",
+      "text": "U korpu: Kočioni disk prednji 340 × 30 m",
+      "top": 861.5,
+      "bottom": 905.5,
+      "vh": 844
+    },
+    "shot": null,
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "reducedMotion": "reduce",
+    "rep": 1,
+    "before": {
+      "found": true,
+      "scrollY": 0,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: hidden; transform: translateY(110%); opacity: 0;",
+      "visibility": "hidden",
+      "opacity": "0",
+      "ariaHidden": "true",
+      "inert": true,
+      "buyBoxBottom": 1005
+    },
+    "after": {
+      "found": true,
+      "scrollY": 1350,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -345
+    },
+    "after4s": {
+      "found": true,
+      "scrollY": 1350,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewport": false,
+      "visibleHeightPx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -345
+    },
+    "barFocusables": [
+      {
+        "tag": "BUTTON",
+        "text": "U korpu: Kočioni disk prednji 276 × 24 m",
+        "tabIndex": 0,
+        "disabled": false
+      }
+    ],
+    "focusHit": {
+      "press": 36,
+      "inBar": true,
+      "tag": "BUTTON",
+      "text": "U korpu: Kočioni disk prednji 276 × 24 m",
+      "top": 861.5,
+      "bottom": 905.5,
+      "vh": 844
+    },
+    "shot": "docs/qa/audit/verify/flows-shop/flows-shop-01-skeptic-reduce-p1-390.webp",
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+]

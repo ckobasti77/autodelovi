@@ -1,0 +1,770 @@
+{
+  "engine": "webkit",
+  "guest": {
+    "360": {
+      "vw": 360,
+      "scrollW": 360,
+      "accountClass": "inline-flex size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 hidden sm:inline-flex",
+      "accountDisplay": "flex",
+      "menu": {
+        "L": 300,
+        "R": 344,
+        "clippedPx": 0
+      },
+      "items": [
+        {
+          "label": "SKLOP — početna",
+          "L": 16,
+          "R": 129,
+          "display": "flex"
+        },
+        {
+          "label": "Pretraga delova",
+          "L": 162,
+          "R": 206,
+          "display": "flex"
+        },
+        {
+          "label": "Moj nalog",
+          "L": 208,
+          "R": 252,
+          "display": "flex"
+        },
+        {
+          "label": "Korpa",
+          "L": 254,
+          "R": 298,
+          "display": "flex"
+        },
+        {
+          "label": "Otvori meni",
+          "L": 300,
+          "R": 344,
+          "display": "inline-flex"
+        }
+      ]
+    },
+    "390": {
+      "vw": 390,
+      "scrollW": 390,
+      "accountClass": "inline-flex size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 hidden sm:inline-flex",
+      "accountDisplay": "flex",
+      "menu": {
+        "L": 330,
+        "R": 374,
+        "clippedPx": 0
+      },
+      "items": [
+        {
+          "label": "SKLOP — početna",
+          "L": 16,
+          "R": 129,
+          "display": "flex"
+        },
+        {
+          "label": "Pretraga delova",
+          "L": 192,
+          "R": 236,
+          "display": "flex"
+        },
+        {
+          "label": "Moj nalog",
+          "L": 238,
+          "R": 282,
+          "display": "flex"
+        },
+        {
+          "label": "Korpa",
+          "L": 284,
+          "R": 328,
+          "display": "flex"
+        },
+        {
+          "label": "Otvori meni",
+          "L": 330,
+          "R": 374,
+          "display": "inline-flex"
+        }
+      ]
+    },
+    "479": {
+      "vw": 479,
+      "scrollW": 479,
+      "accountClass": "inline-flex size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 hidden sm:inline-flex",
+      "accountDisplay": "flex",
+      "menu": {
+        "L": 416,
+        "R": 460,
+        "clippedPx": 0
+      },
+      "items": [
+        {
+          "label": "SKLOP — početna",
+          "L": 19,
+          "R": 132,
+          "display": "flex"
+        },
+        {
+          "label": "Pretraga delova",
+          "L": 278,
+          "R": 322,
+          "display": "flex"
+        },
+        {
+          "label": "Moj nalog",
+          "L": 324,
+          "R": 368,
+          "display": "flex"
+        },
+        {
+          "label": "Korpa",
+          "L": 370,
+          "R": 414,
+          "display": "flex"
+        },
+        {
+          "label": "Otvori meni",
+          "L": 416,
+          "R": 460,
+          "display": "inline-flex"
+        }
+      ]
+    },
+    "480": {
+      "vw": 480,
+      "scrollW": 480,
+      "accountClass": "inline-flex size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 hidden sm:inline-flex",
+      "accountDisplay": "flex",
+      "menu": {
+        "L": 417,
+        "R": 461,
+        "clippedPx": 0
+      },
+      "items": [
+        {
+          "label": "SKLOP — početna",
+          "L": 19,
+          "R": 132,
+          "display": "flex"
+        },
+        {
+          "label": "Pretraga delova",
+          "L": 279,
+          "R": 323,
+          "display": "flex"
+        },
+        {
+          "label": "Moj nalog",
+          "L": 325,
+          "R": 369,
+          "display": "flex"
+        },
+        {
+          "label": "Korpa",
+          "L": 371,
+          "R": 415,
+          "display": "flex"
+        },
+        {
+          "label": "Otvori meni",
+          "L": 417,
+          "R": 461,
+          "display": "inline-flex"
+        }
+      ]
+    }
+  },
+  "sim": {
+    "360": {
+      "vw": 360,
+      "scrollW": 611,
+      "accountClass": "inline-flex size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 hidden sm:inline-flex",
+      "accountDisplay": "flex",
+      "menu": {
+        "L": 567,
+        "R": 611,
+        "clippedPx": 251
+      },
+      "items": [
+        {
+          "label": "SKLOP — početna",
+          "L": 16,
+          "R": 129,
+          "display": "flex"
+        },
+        {
+          "label": "Pretraga delova",
+          "L": 141,
+          "R": 185,
+          "display": "flex"
+        },
+        {
+          "label": "Pozovite",
+          "L": 187,
+          "R": 294,
+          "display": "flex"
+        },
+        {
+          "label": "Pozovite +381 64 123 4567",
+          "L": 296,
+          "R": 340,
+          "display": "flex"
+        },
+        {
+          "label": "Viber",
+          "L": 342,
+          "R": 427,
+          "display": "flex"
+        },
+        {
+          "label": "Viber +381 64 123 4567",
+          "L": 429,
+          "R": 473,
+          "display": "flex"
+        },
+        {
+          "label": "Moj nalog",
+          "L": 475,
+          "R": 519,
+          "display": "flex"
+        },
+        {
+          "label": "Korpa",
+          "L": 521,
+          "R": 565,
+          "display": "flex"
+        },
+        {
+          "label": "Otvori meni",
+          "L": 567,
+          "R": 611,
+          "display": "inline-flex"
+        }
+      ]
+    },
+    "390": {
+      "vw": 390,
+      "scrollW": 611,
+      "accountClass": "inline-flex size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 hidden sm:inline-flex",
+      "accountDisplay": "flex",
+      "menu": {
+        "L": 567,
+        "R": 611,
+        "clippedPx": 221
+      },
+      "items": [
+        {
+          "label": "SKLOP — početna",
+          "L": 16,
+          "R": 129,
+          "display": "flex"
+        },
+        {
+          "label": "Pretraga delova",
+          "L": 141,
+          "R": 185,
+          "display": "flex"
+        },
+        {
+          "label": "Pozovite",
+          "L": 187,
+          "R": 294,
+          "display": "flex"
+        },
+        {
+          "label": "Pozovite +381 64 123 4567",
+          "L": 296,
+          "R": 340,
+          "display": "flex"
+        },
+        {
+          "label": "Viber",
+          "L": 342,
+          "R": 427,
+          "display": "flex"
+        },
+        {
+          "label": "Viber +381 64 123 4567",
+          "L": 429,
+          "R": 473,
+          "display": "flex"
+        },
+        {
+          "label": "Moj nalog",
+          "L": 475,
+          "R": 519,
+          "display": "flex"
+        },
+        {
+          "label": "Korpa",
+          "L": 521,
+          "R": 565,
+          "display": "flex"
+        },
+        {
+          "label": "Otvori meni",
+          "L": 567,
+          "R": 611,
+          "display": "inline-flex"
+        }
+      ]
+    },
+    "479": {
+      "vw": 479,
+      "scrollW": 614,
+      "accountClass": "inline-flex size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 hidden sm:inline-flex",
+      "accountDisplay": "flex",
+      "menu": {
+        "L": 570,
+        "R": 614,
+        "clippedPx": 135
+      },
+      "items": [
+        {
+          "label": "SKLOP — početna",
+          "L": 19,
+          "R": 132,
+          "display": "flex"
+        },
+        {
+          "label": "Pretraga delova",
+          "L": 144,
+          "R": 188,
+          "display": "flex"
+        },
+        {
+          "label": "Pozovite",
+          "L": 190,
+          "R": 297,
+          "display": "flex"
+        },
+        {
+          "label": "Pozovite +381 64 123 4567",
+          "L": 299,
+          "R": 343,
+          "display": "flex"
+        },
+        {
+          "label": "Viber",
+          "L": 345,
+          "R": 430,
+          "display": "flex"
+        },
+        {
+          "label": "Viber +381 64 123 4567",
+          "L": 432,
+          "R": 476,
+          "display": "flex"
+        },
+        {
+          "label": "Moj nalog",
+          "L": 478,
+          "R": 522,
+          "display": "flex"
+        },
+        {
+          "label": "Korpa",
+          "L": 524,
+          "R": 568,
+          "display": "flex"
+        },
+        {
+          "label": "Otvori meni",
+          "L": 570,
+          "R": 614,
+          "display": "inline-flex"
+        }
+      ]
+    },
+    "480": {
+      "vw": 480,
+      "scrollW": 614,
+      "accountClass": "inline-flex size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 hidden sm:inline-flex",
+      "accountDisplay": "flex",
+      "menu": {
+        "L": 570,
+        "R": 614,
+        "clippedPx": 134
+      },
+      "items": [
+        {
+          "label": "SKLOP — početna",
+          "L": 19,
+          "R": 132,
+          "display": "flex"
+        },
+        {
+          "label": "Pretraga delova",
+          "L": 144,
+          "R": 188,
+          "display": "flex"
+        },
+        {
+          "label": "Pozovite",
+          "L": 190,
+          "R": 297,
+          "display": "flex"
+        },
+        {
+          "label": "Pozovite +381 64 123 4567",
+          "L": 299,
+          "R": 343,
+          "display": "flex"
+        },
+        {
+          "label": "Viber",
+          "L": 345,
+          "R": 430,
+          "display": "flex"
+        },
+        {
+          "label": "Viber +381 64 123 4567",
+          "L": 432,
+          "R": 476,
+          "display": "flex"
+        },
+        {
+          "label": "Moj nalog",
+          "L": 478,
+          "R": 522,
+          "display": "flex"
+        },
+        {
+          "label": "Korpa",
+          "L": 524,
+          "R": 568,
+          "display": "flex"
+        },
+        {
+          "label": "Otvori meni",
+          "L": 570,
+          "R": 614,
+          "display": "inline-flex"
+        }
+      ]
+    },
+    "768": {
+      "vw": 768,
+      "scrollW": 768,
+      "accountClass": "inline-flex size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 hidden sm:inline-flex",
+      "accountDisplay": "flex",
+      "menu": {
+        "L": 693,
+        "R": 737,
+        "clippedPx": 0
+      },
+      "items": [
+        {
+          "label": "SKLOP — početna",
+          "L": 31,
+          "R": 143,
+          "display": "flex"
+        },
+        {
+          "label": "Pretraga delova",
+          "L": 267,
+          "R": 311,
+          "display": "flex"
+        },
+        {
+          "label": "Pozovite",
+          "L": 313,
+          "R": 420,
+          "display": "flex"
+        },
+        {
+          "label": "Pozovite +381 64 123 4567",
+          "L": 422,
+          "R": 466,
+          "display": "flex"
+        },
+        {
+          "label": "Viber",
+          "L": 468,
+          "R": 553,
+          "display": "flex"
+        },
+        {
+          "label": "Viber +381 64 123 4567",
+          "L": 555,
+          "R": 599,
+          "display": "flex"
+        },
+        {
+          "label": "Moj nalog",
+          "L": 601,
+          "R": 645,
+          "display": "flex"
+        },
+        {
+          "label": "Korpa",
+          "L": 647,
+          "R": 691,
+          "display": "flex"
+        },
+        {
+          "label": "Otvori meni",
+          "L": 693,
+          "R": 737,
+          "display": "inline-flex"
+        }
+      ]
+    },
+    "1024": {
+      "vw": 1024,
+      "scrollW": 1024,
+      "accountClass": "inline-flex size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 hidden sm:inline-flex",
+      "accountDisplay": "flex",
+      "menu": {
+        "L": 0,
+        "R": 0,
+        "clippedPx": 0
+      },
+      "items": [
+        {
+          "label": "SKLOP — početna",
+          "L": 41,
+          "R": 158,
+          "display": "flex"
+        },
+        {
+          "label": "Delovi",
+          "L": 186,
+          "R": 253,
+          "display": "flex"
+        },
+        {
+          "label": "Vozila",
+          "L": 257,
+          "R": 323,
+          "display": "flex"
+        },
+        {
+          "label": "Za majstore",
+          "L": 327,
+          "R": 413,
+          "display": "flex"
+        },
+        {
+          "label": "Upit po broju šasije",
+          "L": 417,
+          "R": 510,
+          "display": "flex"
+        },
+        {
+          "label": "Pretraga delova",
+          "L": 522,
+          "R": 566,
+          "display": "flex"
+        },
+        {
+          "label": "Pozovite",
+          "L": 574,
+          "R": 681,
+          "display": "flex"
+        },
+        {
+          "label": "Pozovite +381 64 123 4567",
+          "L": 689,
+          "R": 733,
+          "display": "flex"
+        },
+        {
+          "label": "Viber",
+          "L": 741,
+          "R": 827,
+          "display": "flex"
+        },
+        {
+          "label": "Viber +381 64 123 4567",
+          "L": 835,
+          "R": 879,
+          "display": "flex"
+        },
+        {
+          "label": "Moj nalog",
+          "L": 887,
+          "R": 931,
+          "display": "flex"
+        },
+        {
+          "label": "Korpa",
+          "L": 939,
+          "R": 983,
+          "display": "flex"
+        }
+      ]
+    },
+    "1280": {
+      "vw": 1280,
+      "scrollW": 1291,
+      "accountClass": "inline-flex size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 hidden sm:inline-flex",
+      "accountDisplay": "flex",
+      "menu": {
+        "L": 0,
+        "R": 0,
+        "clippedPx": 0
+      },
+      "items": [
+        {
+          "label": "SKLOP — početna",
+          "L": 48,
+          "R": 165,
+          "display": "flex"
+        },
+        {
+          "label": "Delovi",
+          "L": 193,
+          "R": 260,
+          "display": "flex"
+        },
+        {
+          "label": "Vozila",
+          "L": 264,
+          "R": 330,
+          "display": "flex"
+        },
+        {
+          "label": "Za majstore",
+          "L": 334,
+          "R": 420,
+          "display": "flex"
+        },
+        {
+          "label": "Upit po broju šasije",
+          "L": 424,
+          "R": 488,
+          "display": "flex"
+        },
+        {
+          "label": "Broj dela ili naziv/",
+          "L": 500,
+          "R": 731,
+          "display": "flex"
+        },
+        {
+          "label": "Izaberite vozilo",
+          "L": 739,
+          "R": 874,
+          "display": "inline-flex"
+        },
+        {
+          "label": "Pozovite",
+          "L": 882,
+          "R": 989,
+          "display": "flex"
+        },
+        {
+          "label": "Pozovite +381 64 123 4567",
+          "L": 997,
+          "R": 1041,
+          "display": "flex"
+        },
+        {
+          "label": "Viber",
+          "L": 1049,
+          "R": 1135,
+          "display": "flex"
+        },
+        {
+          "label": "Viber +381 64 123 4567",
+          "L": 1143,
+          "R": 1187,
+          "display": "flex"
+        },
+        {
+          "label": "Moj nalog",
+          "L": 1195,
+          "R": 1239,
+          "display": "flex"
+        },
+        {
+          "label": "Korpa",
+          "L": 1247,
+          "R": 1291,
+          "display": "flex"
+        }
+      ]
+    },
+    "1440": {
+      "vw": 1440,
+      "scrollW": 1440,
+      "accountClass": "inline-flex size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 hidden sm:inline-flex",
+      "accountDisplay": "flex",
+      "menu": {
+        "L": 0,
+        "R": 0,
+        "clippedPx": 0
+      },
+      "items": [
+        {
+          "label": "SKLOP — početna",
+          "L": 48,
+          "R": 165,
+          "display": "flex"
+        },
+        {
+          "label": "Delovi",
+          "L": 193,
+          "R": 260,
+          "display": "flex"
+        },
+        {
+          "label": "Vozila",
+          "L": 264,
+          "R": 330,
+          "display": "flex"
+        },
+        {
+          "label": "Za majstore",
+          "L": 334,
+          "R": 442,
+          "display": "flex"
+        },
+        {
+          "label": "Upit po broju šasije",
+          "L": 446,
+          "R": 603,
+          "display": "flex"
+        },
+        {
+          "label": "Broj dela ili naziv/",
+          "L": 665,
+          "R": 921,
+          "display": "flex"
+        },
+        {
+          "label": "Izaberite vozilo",
+          "L": 929,
+          "R": 1079,
+          "display": "inline-flex"
+        },
+        {
+          "label": "Pozovite",
+          "L": 1087,
+          "R": 1194,
+          "display": "flex"
+        },
+        {
+          "label": "Viber",
+          "L": 1202,
+          "R": 1288,
+          "display": "flex"
+        },
+        {
+          "label": "Moj nalog",
+          "L": 1296,
+          "R": 1340,
+          "display": "flex"
+        },
+        {
+          "label": "Korpa",
+          "L": 1348,
+          "R": 1392,
+          "display": "flex"
+        }
+      ]
+    }
+  },
+  "mechanic": {}
+}

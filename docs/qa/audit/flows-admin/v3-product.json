@@ -1,0 +1,73 @@
+{
+  "PID": "qh7cqja340240s4jq1fsawnc3s8fctej",
+  "steps": [
+    {
+      "name": "Audit disk prednji 852021 (tab A)",
+      "at": "2026-09-30T20:09:06.439Z",
+      "price": "4990"
+    },
+    {
+      "name": "tab B saved",
+      "at": "2026-09-30T20:09:12.761Z",
+      "priceB": "6490",
+      "toastsB": [],
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A)",
+        "retailPricePara": 649000,
+        "source": "manual",
+        "stockQty": 0
+      }
+    },
+    {
+      "name": "tab A before save",
+      "at": "2026-09-30T20:09:14.322Z",
+      "priceA": "4990",
+      "warning": [
+        ""
+      ],
+      "status": [
+        "Imate nesačuvane izmene."
+      ]
+    },
+    {
+      "name": "after tab A save",
+      "at": "2026-09-30T20:09:21.609Z",
+      "toastsA": [],
+      "priceA": "4990",
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A) (v3)",
+        "retailPricePara": 499000,
+        "source": "manual",
+        "stockQty": 0
+      }
+    },
+    {
+      "name": "history",
+      "at": "2026-09-30T20:09:23.825Z",
+      "text": "IstorijaIzmene (7)Cene (4)Stanje (0)30.09. 22:09AUDIT-FA-852021: naziv, cenaVlasnik30.09. 22:09AUDIT-FA-852021: cenaVlasnik30.09. 20:49AUDIT-FA-852021: deaktiviranVlasnik30.09. 20:46AUDIT-FA-852021: naziv, cenaVlasnik30.09. 20:46AUDIT-FA-852021: cenaVlasnik30.09. 20:46Dodata slika: Audit disk prednji 852021Vlasnik30.09. 20:46Novi artikal AUDIT-FA-852021 — Audit disk prednji 852021Vlasnik"
+    },
+    {
+      "name": "errors",
+      "at": "2026-09-30T20:09:27.136Z",
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "name": "new save button",
+      "at": "2026-09-30T20:09:32.329Z",
+      "label": "Sačuvaj artikal"
+    },
+    {
+      "name": "empty save",
+      "at": "2026-09-30T20:09:33.923Z",
+      "focus": "BUTTON  ",
+      "toasts": [],
+      "invalid": 5,
+      "describedBy": "f_R_65hbsnpfkcnpfclb_-msg"
+    }
+  ]
+}

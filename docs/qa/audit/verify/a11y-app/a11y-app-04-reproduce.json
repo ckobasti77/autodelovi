@@ -1,0 +1,46 @@
+{
+  "chromium1440": {
+    "results": {
+      "options": 11,
+      "liveInDialog": [],
+      "liveInPage": [
+        {
+          "role": null,
+          "live": "polite",
+          "inDialog": false,
+          "text": ""
+        }
+      ],
+      "activedescendant": "_r_1_-0"
+    },
+    "noResults": {
+      "listboxText": "Nema rezultata za „qqqzzzxx“.",
+      "emptyRole": "presentation",
+      "emptyLiveAncestor": false,
+      "liveTexts": [],
+      "activedescendant": null
+    }
+  },
+  "firefox1440": {
+    "results": {
+      "options": 11,
+      "liveInDialog": [],
+      "liveInPage": [
+        {
+          "role": null,
+          "live": "polite",
+          "inDialog": false,
+          "text": ""
+        }
+      ],
+      "activedescendant": "_r_1_-0"
+    },
+    "noResults": {
+      "listboxText": "Nema rezultata za „qqqzzzxx“.",
+      "emptyRole": "presentation",
+      "emptyLiveAncestor": false,
+      "liveTexts": [],
+      "activedescendant": null
+    }
+  }
+}

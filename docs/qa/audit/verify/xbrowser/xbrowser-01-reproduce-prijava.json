@@ -1,0 +1,15 @@
+{
+  "hydratedBeforeTyping": false,
+  "domAfterHydration": {
+    "email": "nepostoji-verify@primer.rs",
+    "passwordLen": 20
+  },
+  "afterSubmit": {
+    "url": "/prijava",
+    "email": "nepostoji-verify@primer.rs",
+    "messages": [
+      "invalid:password",
+      "Pogrešan e-mail ili lozinka. Proverite podatke i pokušajte ponovo."
+    ]
+  }
+}

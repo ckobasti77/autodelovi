@@ -1,0 +1,59 @@
+{
+  "samples": [
+    {
+      "t": 60,
+      "toast": null,
+      "btn": "Dodaj u korpu: Kočioni disk pr"
+    },
+    {
+      "t": 160,
+      "toast": {
+        "op": "0",
+        "tr": "matrix(1, 0, 0, 1, 0, 16)",
+        "top": 749,
+        "bottom": 844,
+        "text": "Dodato u korpu: Kočioni disk prednji 276 × 24 mm.Pogledaj ko"
+      },
+      "btn": "Dodato: Kočioni disk prednji 2"
+    },
+    {
+      "t": 320,
+      "toast": {
+        "op": "0.9998",
+        "tr": "matrix(1, 0, 0, 1, 0, 0.0026)",
+        "top": 733,
+        "bottom": 828,
+        "text": "Dodato u korpu: Kočioni disk prednji 276 × 24 mm.Pogledaj ko"
+      },
+      "btn": "Dodato: Kočioni disk prednji 2"
+    },
+    {
+      "t": 700,
+      "toast": {
+        "op": "1",
+        "tr": "matrix(1, 0, 0, 1, 0, 0)",
+        "top": 733,
+        "bottom": 828,
+        "text": "Dodato u korpu: Kočioni disk prednji 276 × 24 mm.Pogledaj ko"
+      },
+      "btn": "Dodato: Kočioni disk prednji 2"
+    },
+    {
+      "t": 1500,
+      "toast": {
+        "op": "1",
+        "tr": "matrix(1, 0, 0, 1, 0, 0)",
+        "top": 733,
+        "bottom": 828,
+        "text": "Dodato u korpu: Kočioni disk prednji 276 × 24 mm.Pogledaj ko"
+      },
+      "btn": "Dodato: Kočioni disk prednji 2"
+    }
+  ],
+  "log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

@@ -1,0 +1,5 @@
+chromium-1440-customer {"steps":["sign-in:ok"],"csp":[],"console":[],"pageErrors":[],"bad":[],"failed":[]}
+chromium-1440-mechanic {"steps":["sign-in:ok","quick-order:ok","cart-clear:ok"],"csp":[],"console":[],"pageErrors":[],"bad":[],"failed":[]}
+chromium-1440-admin {"steps":["create-test-order:ok","sign-in:ok","orders-list:ok","status-change:ok"],"csp":[],"console":[],"pageErrors":[],"bad":[],"failed":[]}
+chromium-390-customer {"steps":["sign-in:ok"],"csp":[],"console":[],"pageErrors":[],"bad":[],"failed":[]}
+chromium-390-mechanic {"steps":["sign-in:ok","quick-order:ok","cart-clear:ok"],"csp":[],"console":[],"pageErrors":[],"bad":[],"failed":[]}

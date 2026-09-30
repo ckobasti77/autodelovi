@@ -1,0 +1,48 @@
+{
+  "steps": [
+    {
+      "tab": 0,
+      "y": 1800,
+      "stage": 5,
+      "el": "body  Preskoči na sadržajSKLOP",
+      "top": -1800,
+      "h": 13394,
+      "inHeader": false,
+      "scrollPaddingTop": "80px"
+    },
+    {
+      "tab": 1,
+      "y": 1800,
+      "stage": 5,
+      "el": "a #sadrzaj Preskoči na sadržaj",
+      "top": 12,
+      "h": 39,
+      "inHeader": false,
+      "scrollPaddingTop": "80px"
+    },
+    {
+      "tab": 2,
+      "y": 1800,
+      "stage": 5,
+      "el": "a / SKLOP",
+      "top": 10,
+      "h": 44,
+      "inHeader": true,
+      "scrollPaddingTop": "80px"
+    },
+    {
+      "tab": 3,
+      "y": 1800,
+      "stage": 5,
+      "el": "a /delovi Delovi",
+      "top": 10,
+      "h": 44,
+      "inHeader": true,
+      "scrollPaddingTop": "80px"
+    }
+  ],
+  "after": {
+    "y": 1800,
+    "stage": 5
+  }
+}

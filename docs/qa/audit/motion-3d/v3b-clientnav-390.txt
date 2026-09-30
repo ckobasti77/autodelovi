@@ -1,0 +1,11 @@
+ok   home-to-category → /delovi/kocione-plocice hiddenInView=0 [] after={"stuck":0,"pending":0,"words":0,"s":[]}
+ok   category-to-product → /deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013 hiddenInView=0 [] after={"stuck":0,"pending":0,"words":0,"s":[]}
+ok   product-to-category → /delovi/kocione-plocice hiddenInView=0 [] after={"stuck":0,"pending":0,"words":0,"s":[]}
+ok   vozila-to-brand → /vozila/volkswagen hiddenInView=0 [] after={"stuck":0,"pending":0,"words":0,"s":[]}
+ok   brand-to-model → /vozila/volkswagen/golf hiddenInView=0 [] after={"stuck":0,"pending":0,"words":0,"s":[]}
+ok   model-to-footer-majstori → /za-majstore hiddenInView=0 [] after={"stuck":0,"pending":0,"words":0,"s":[]}
+ok   majstori-to-footer-dostava → /dostava-i-placanje hiddenInView=0 [] after={"stuck":0,"pending":0,"words":0,"s":[]}
+ok   footer-to-home → / hiddenInView=0 [] after={"stuck":0,"pending":0,"words":0,"s":[]}
+ERR  home-to-footer-kontakt TimeoutError: locator.scrollIntoViewIfNeeded: Timeout 15000ms exceeded.
+Call log:
+  - waiting for locator('footer a[href="/kontakt"]').first

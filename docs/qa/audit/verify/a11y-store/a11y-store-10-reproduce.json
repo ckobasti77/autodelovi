@@ -1,0 +1,107 @@
+{
+ "checkout fields": [
+  "website [Veb sajt] required=false aria-required=-",
+  "co-firstName [Ime] required=false aria-required=-",
+  "co-lastName [Prezime] required=false aria-required=-",
+  "co-phone [Telefon] required=false aria-required=-",
+  "co-email [E-pošta] required=false aria-required=-",
+  "co-isCompany [Kupujem kao firmaUnesite podatke firme za rač] required=- aria-required=-",
+  "input [] required=false aria-required=-"
+ ],
+ "checkout instructions mentioning obavezn*": [],
+ "checkout AX required": {
+  "co-firstName": "textbox \"Ime\" required=false",
+  "co-lastName": "textbox \"Prezime\" required=false",
+  "co-phone": "textbox \"Telefon\" required=false",
+  "co-email": "textbox \"E-pošta\" required=false"
+ },
+ "inquiry fields": [
+  "website [Veb sajt] required=false aria-required=-",
+  "iq-vin [Broj šasije (VIN) (nije obavezno)] required=false aria-required=-",
+  "iq-brandSlug [Marka] required=false aria-required=-",
+  "iq-modelSlug [Model] required=false aria-required=-",
+  "iq-generationSlug [Generacija] required=false aria-required=-",
+  "iq-year [Godište (nije obavezno)] required=false aria-required=-",
+  "iq-message [Opis] required=false aria-required=-",
+  "select [Dodaj kategoriju] required=false aria-required=-",
+  "_R_mhinpfd9fclb_ [Dodaj fotografijuStari deo, pločica sa brojem] required=false aria-required=-",
+  "iq-name [Ime] required=false aria-required=-",
+  "iq-phone [Telefon] required=false aria-required=-",
+  "iq-email [E-pošta (nije obavezno)] required=false aria-required=-",
+  "input [] required=false aria-required=-",
+  "input [] required=false aria-required=-",
+  "input [] required=false aria-required=-",
+  "input [] required=false aria-required=-",
+  "cb_R_clinpfd9fclb_ [Slažem se da podatke iz upita koristite za od] required=- aria-required=-",
+  "input [] required=false aria-required=-"
+ ],
+ "inquiry instructions mentioning obavezn*": [
+  "(nije obavezno)",
+  "(nije obavezno)",
+  "Kategorija (nije obavezno)",
+  "Fotografije (nije obavezno)",
+  "(nije obavezno)"
+ ],
+ "inquiry AX required": {
+  "iq-name": "textbox \"Ime\" required=false",
+  "iq-phone": "textbox \"Telefon\" required=false"
+ },
+ "signup fields": [
+  "f_R_1inpfd9fclb_ [Ime i prezime] required=false aria-required=-",
+  "f_R_2inpfd9fclb_ [E-pošta] required=false aria-required=-",
+  "f_R_3inpfd9fclb_ [Lozinka] required=false aria-required=-",
+  "cb_R_cinpfd9fclb_ [Prihvatam uslove korišćenja i politiku privat] required=- aria-required=-",
+  "input [] required=false aria-required=-"
+ ],
+ "signup instructions mentioning obavezn*": [],
+ "mechanic-register fields": [
+  "mr-email [E-pošta] required=false aria-required=-",
+  "mr-password [Lozinka] required=false aria-required=-",
+  "mr-companyName [Naziv servisa ili firme] required=false aria-required=-",
+  "mr-pib [PIB] required=false aria-required=-",
+  "mr-mb [Matični broj] required=false aria-required=-",
+  "mr-contactPerson [Kontakt osoba] required=false aria-required=-",
+  "mr-phone [Telefon] required=false aria-required=-",
+  "mr-city [Mesto] required=false aria-required=-",
+  "mr-address [Adresa servisa] required=false aria-required=-",
+  "button [Mehanika] required=- aria-required=-",
+  "input [Mehanika] required=false aria-required=-",
+  "button [Autoelektrika] required=- aria-required=-",
+  "input [Autoelektrika] required=false aria-required=-",
+  "button [Dijagnostika] required=- aria-required=-",
+  "input [Dijagnostika] required=false aria-required=-",
+  "button [Klima] required=- aria-required=-",
+  "input [Klima] required=false aria-required=-",
+  "button [Limarija i farbanje] required=- aria-required=-",
+  "input [Limarija i farbanje] required=false aria-required=-",
+  "button [Vulkanizer] required=- aria-required=-",
+  "input [Vulkanizer] required=false aria-required=-",
+  "button [Ostalo] required=- aria-required=-",
+  "input [Ostalo] required=false aria-required=-",
+  "button [Volkswagen] required=- aria-required=-",
+  "input [Volkswagen] required=false aria-required=-",
+  "button [Audi] required=- aria-required=-",
+  "input [Audi] required=false aria-required=-",
+  "button [Škoda] required=- aria-required=-",
+  "input [Škoda] required=false aria-required=-",
+  "button [SEAT] required=- aria-required=-",
+  "input [SEAT] required=false aria-required=-",
+  "button [Cupra] required=- aria-required=-",
+  "input [Cupra] required=false aria-required=-",
+  "cb_R_5phbsnpfd9fclb_ [Prihvatam uslove korišćenja i politiku privat] required=- aria-required=-",
+  "input [] required=false aria-required=-"
+ ],
+ "mechanic-register instructions mentioning obavezn*": [
+  "(nije obavezno)"
+ ],
+ "mechanic-register AX required": {
+  "mr-email": "textbox \"E-pošta\" required=false",
+  "mr-contactPerson": "textbox \"Kontakt osoba\" required=false",
+  "mr-city": "textbox \"Mesto\" required=false"
+ },
+ "signin fields": [
+  "f_R_1inpfd9fclb_ [E-pošta] required=true aria-required=-",
+  "f_R_2inpfd9fclb_ [Lozinka] required=true aria-required=-"
+ ],
+ "signin instructions mentioning obavezn*": []
+}

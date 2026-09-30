@@ -1,0 +1,395 @@
+{
+  "1440x900": {
+    "/admin/podesavanja?tab=firma": {
+      "scrollHeight": 985,
+      "clientHeight": 844,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ],
+      "active": {
+        "label": "Podešavanja",
+        "top": 977,
+        "bottom": 1017,
+        "visible": false
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    },
+    "/admin/korisnici": {
+      "scrollHeight": 985,
+      "clientHeight": 844,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ],
+      "active": {
+        "label": "Korisnici",
+        "top": 937,
+        "bottom": 977,
+        "visible": false
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    },
+    "/admin": {
+      "scrollHeight": 985,
+      "clientHeight": 844,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ],
+      "active": {
+        "label": "Pregled",
+        "top": 68,
+        "bottom": 108,
+        "visible": true
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    }
+  },
+  "1366x768": {
+    "/admin/podesavanja?tab=firma": {
+      "scrollHeight": 985,
+      "clientHeight": 712,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [
+        "Izvoz",
+        "Revizija",
+        "Privatnost",
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ],
+      "active": {
+        "label": "Podešavanja",
+        "top": 977,
+        "bottom": 1017,
+        "visible": false
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    },
+    "/admin/korisnici": {
+      "scrollHeight": 985,
+      "clientHeight": 712,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [
+        "Izvoz",
+        "Revizija",
+        "Privatnost",
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ],
+      "active": {
+        "label": "Korisnici",
+        "top": 937,
+        "bottom": 977,
+        "visible": false
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    },
+    "/admin": {
+      "scrollHeight": 985,
+      "clientHeight": 712,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [
+        "Izvoz",
+        "Revizija",
+        "Privatnost",
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ],
+      "active": {
+        "label": "Pregled",
+        "top": 68,
+        "bottom": 108,
+        "visible": true
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    }
+  },
+  "1536x864": {
+    "/admin/podesavanja?tab=firma": {
+      "scrollHeight": 985,
+      "clientHeight": 808,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ],
+      "active": {
+        "label": "Podešavanja",
+        "top": 977,
+        "bottom": 1017,
+        "visible": false
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    },
+    "/admin/korisnici": {
+      "scrollHeight": 985,
+      "clientHeight": 808,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ],
+      "active": {
+        "label": "Korisnici",
+        "top": 937,
+        "bottom": 977,
+        "visible": false
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    },
+    "/admin": {
+      "scrollHeight": 985,
+      "clientHeight": 808,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ],
+      "active": {
+        "label": "Pregled",
+        "top": 68,
+        "bottom": 108,
+        "visible": true
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    }
+  },
+  "1280x800": {
+    "/admin/podesavanja?tab=firma": {
+      "scrollHeight": 884,
+      "clientHeight": 744,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ],
+      "active": {
+        "label": "Podešavanja",
+        "top": 876,
+        "bottom": 916,
+        "visible": false
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    },
+    "/admin/korisnici": {
+      "scrollHeight": 884,
+      "clientHeight": 744,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ],
+      "active": {
+        "label": "Korisnici",
+        "top": 836,
+        "bottom": 876,
+        "visible": false
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    },
+    "/admin": {
+      "scrollHeight": 884,
+      "clientHeight": 744,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ],
+      "active": {
+        "label": "Pregled",
+        "top": 68,
+        "bottom": 108,
+        "visible": true
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    }
+  },
+  "1280x720": {
+    "/admin/podesavanja?tab=firma": {
+      "scrollHeight": 884,
+      "clientHeight": 664,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [
+        "Revizija",
+        "Privatnost",
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ],
+      "active": {
+        "label": "Podešavanja",
+        "top": 876,
+        "bottom": 916,
+        "visible": false
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    },
+    "/admin/korisnici": {
+      "scrollHeight": 884,
+      "clientHeight": 664,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [
+        "Revizija",
+        "Privatnost",
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ],
+      "active": {
+        "label": "Korisnici",
+        "top": 836,
+        "bottom": 876,
+        "visible": false
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    },
+    "/admin": {
+      "scrollHeight": 884,
+      "clientHeight": 664,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [
+        "Revizija",
+        "Privatnost",
+        "Cenovni razredi",
+        "Korisnici",
+        "Podešavanja"
+      ],
+      "active": {
+        "label": "Pregled",
+        "top": 68,
+        "bottom": 108,
+        "visible": true
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    }
+  },
+  "1920x1080": {
+    "/admin/podesavanja?tab=firma": {
+      "scrollHeight": 1024,
+      "clientHeight": 1024,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [],
+      "active": {
+        "label": "Podešavanja",
+        "top": 977,
+        "bottom": 1017,
+        "visible": true
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    },
+    "/admin/korisnici": {
+      "scrollHeight": 1024,
+      "clientHeight": 1024,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [],
+      "active": {
+        "label": "Korisnici",
+        "top": 937,
+        "bottom": 977,
+        "visible": true
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    },
+    "/admin": {
+      "scrollHeight": 1024,
+      "clientHeight": 1024,
+      "scrollTop": 0,
+      "links": 20,
+      "hidden": [],
+      "active": {
+        "label": "Pregled",
+        "top": 68,
+        "bottom": 108,
+        "visible": true
+      },
+      "mask": "none",
+      "scrollbarWidth": "auto",
+      "scrollbarColor": "rgb(67, 74, 82) rgba(0, 0, 0, 0)",
+      "thumbGutter": 0
+    }
+  }
+}

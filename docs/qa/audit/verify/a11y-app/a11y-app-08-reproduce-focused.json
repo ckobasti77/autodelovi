@@ -1,0 +1,12 @@
+{
+  "label": "Brizgaljke i pumpa goriva",
+  "rect": [
+    48,
+    725,
+    20,
+    20
+  ],
+  "scrollY": 0,
+  "topmostAtCenter": "button.relative inline-flex select-none items-center justify-center gap-2 whitespace-no",
+  "topmostIsFocused": false
+}

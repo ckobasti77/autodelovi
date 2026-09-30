@@ -1,0 +1,17 @@
+/admin/kategorije {"ms":2451,"contentReady":true,"skeletonsLeft":0}
+/admin/vozila {"ms":1854,"contentReady":true,"skeletonsLeft":0}
+/admin/cenovni-razredi {"ms":1538,"contentReady":true,"skeletonsLeft":0}
+/admin/pretrage {"ms":1294,"contentReady":true,"skeletonsLeft":0}
+/admin/izvori {"ms":1458,"contentReady":true,"skeletonsLeft":0}
+/admin/obavestenja {"ms":1189,"contentReady":true,"skeletonsLeft":0}
+/admin/korisnici {"ms":1235,"contentReady":true,"skeletonsLeft":0}
+/admin/revizija {"ms":1308,"contentReady":true,"skeletonsLeft":0}
+/admin/mejlovi/sabloni {"ms":1288,"contentReady":true,"skeletonsLeft":0}
+/admin/porudzbine/SK-2026-000092 {"ms":1256,"contentReady":true,"skeletonsLeft":0}
+/admin/upiti/UP-2026-000003 {"ms":1430,"contentReady":true,"skeletonsLeft":0}
+/admin/upiti/UP-2026-000054 {"ms":1184,"contentReady":true,"skeletonsLeft":0}
+revizija x3 [{"ms":1338,"contentReady":true,"skeletonsLeft":0},{"ms":1262,"contentReady":true,"skeletonsLeft":0},{"ms":1306,"contentReady":true,"skeletonsLeft":0}]
+uvoz-zapis /admin/uvoz/n57a3024zrkpk7bzqdg00r7nyn8fdcef {"ms":2188,"contentReady":true,"skeletonsLeft":0}
+rail {"asideW":64,"tooltip":"Porudžbine"}
+phone {"f":"docs/qa/audit/vis-admin/probe3/390-pregled-queue-scrolled-right.webp","scrollX":0,"docW":1263}
+DONE

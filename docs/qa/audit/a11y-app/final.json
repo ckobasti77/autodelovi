@@ -1,0 +1,307 @@
+{
+  "adminKeyboard": {
+    "menuTrigger": {
+      "tag": "button",
+      "role": "",
+      "name": "Radnje za SK-2026-000140",
+      "id": "radix-_r_0_",
+      "href": "",
+      "outline": "solid 2px rgb(184, 71, 10) off 2px",
+      "shadow": "",
+      "rect": [
+        1367,
+        322,
+        36,
+        36
+      ],
+      "inViewport": true
+    },
+    "menuOpen": null,
+    "menuEv": "docs/qa/audit/a11y-app/f-orders-row-menu.webp",
+    "menuArrow": {
+      "tag": "body"
+    },
+    "menuAfterEsc": {
+      "tag": "body"
+    },
+    "Dodaj napomenu": {
+      "info": null,
+      "tabOutside": 0,
+      "afterEsc": {
+        "tag": "body"
+      },
+      "ev": null,
+      "url": "/admin/porudzbine/SK-2026-000092"
+    },
+    "Promeni status": {
+      "info": {
+        "role": "menu",
+        "name": "Promeni status",
+        "modal": null,
+        "focusIn": true,
+        "focus": "div[menuitem] \"Čeka deo\"",
+        "items": [
+          "Čeka deo",
+          "Otkaži porudžbinu"
+        ]
+      },
+      "tabOutside": 0,
+      "afterEsc": {
+        "tag": "button",
+        "role": "",
+        "name": "Promeni status",
+        "id": "radix-_r_0_",
+        "href": "",
+        "outline": "solid 2px rgb(184, 71, 10) off 2px",
+        "shadow": "",
+        "rect": [
+          1189,
+          140,
+          147,
+          36
+        ],
+        "inViewport": true
+      },
+      "ev": "docs/qa/audit/a11y-app/f-order-promeni-status.webp",
+      "url": "/admin/porudzbine/SK-2026-000092"
+    },
+    "Izmeni stavke": {
+      "info": null,
+      "tabOutside": 0,
+      "afterEsc": {
+        "tag": "body"
+      },
+      "ev": null,
+      "url": "/admin/porudzbine/SK-2026-000092"
+    },
+    "bell": {
+      "role": "dialog",
+      "name": null,
+      "heading": false
+    },
+    "bellEv": "docs/qa/audit/a11y-app/f-bell-open.webp",
+    "bellAfterEsc": {
+      "tag": "button",
+      "role": "",
+      "name": "Obaveštenja, nepročitano: 100",
+      "id": "",
+      "href": "",
+      "outline": "solid 2px rgb(184, 71, 10) off -2px",
+      "shadow": "",
+      "rect": [
+        1270,
+        8,
+        40,
+        40
+      ],
+      "inViewport": true
+    },
+    "spacingClipped": [
+      "span.sr-only \"novih\" 43/1",
+      "span.sr-only \"novih\" 43/1",
+      "span.sr-only \"bez zaliha\" 78/1",
+      "span.sr-only \"— kasni\" 68/1",
+      "span.truncate.type-caption \"Demo Kupac · Traži deo · Pumpa za vodu z\" 628/328",
+      "span.sr-only \"— kasni\" 68/1",
+      "span.sr-only \"— kasni\" 68/1",
+      "span.truncate.type-caption \"Marko Jovanović · Po broju šasije · Volk\" 477/328",
+      "span.sr-only \"— kasni\" 68/1",
+      "span.sr-only \"— kasni\" 68/1",
+      "span.truncate.type-caption \"Marko Jovanović · Po broju šasije · Volk\" 477/328",
+      "span.sr-only \"— kasni\" 68/1"
+    ],
+    "spacingEv": "docs/qa/audit/a11y-app/f-admin-text-spacing-1440.webp",
+    "_ms": 24066
+  },
+  "reflow320": [
+    {
+      "role": "anon",
+      "r": "/prijava",
+      "status": 200,
+      "url": "/prijava",
+      "over": 3,
+      "offenders": [
+        "div.ml-auto.flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex"
+      ],
+      "ev": "docs/qa/audit/a11y-app/f-reflow-320-prijava.webp"
+    },
+    {
+      "role": "anon",
+      "r": "/registracija",
+      "status": 200,
+      "url": "/registracija",
+      "over": 3,
+      "offenders": [
+        "div.ml-auto.flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex"
+      ],
+      "ev": "docs/qa/audit/a11y-app/f-reflow-320-registracija.webp"
+    },
+    {
+      "role": "anon",
+      "r": "/zaboravljena-lozinka",
+      "status": 200,
+      "url": "/zaboravljena-lozinka",
+      "over": 3,
+      "offenders": [
+        "div.ml-auto.flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex"
+      ],
+      "ev": "docs/qa/audit/a11y-app/f-reflow-320-zaboravljena-lozinka.webp"
+    },
+    {
+      "role": "anon",
+      "r": "/za-majstore/registracija",
+      "status": 200,
+      "url": "/za-majstore/registracija",
+      "over": 3,
+      "offenders": [
+        "div.ml-auto.flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex"
+      ],
+      "ev": "docs/qa/audit/a11y-app/f-reflow-320-za-majstore-registracija.webp"
+    },
+    {
+      "role": "customer",
+      "r": "/nalog",
+      "status": 200,
+      "url": "/nalog",
+      "over": 3,
+      "offenders": [
+        "div.ml-auto.flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex"
+      ],
+      "ev": "docs/qa/audit/a11y-app/f-reflow-320-nalog.webp"
+    },
+    {
+      "role": "customer",
+      "r": "/nalog/porudzbine",
+      "status": 200,
+      "url": "/nalog/porudzbine",
+      "over": 3,
+      "offenders": [
+        "div.ml-auto.flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex",
+        "ul.flex.gap-6"
+      ],
+      "ev": "docs/qa/audit/a11y-app/f-reflow-320-nalog-porudzbine.webp"
+    },
+    {
+      "role": "customer",
+      "r": "/nalog/profil",
+      "status": 200,
+      "url": "/nalog/profil",
+      "over": 3,
+      "offenders": [
+        "div.ml-auto.flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex",
+        "ul.flex.gap-6"
+      ],
+      "ev": "docs/qa/audit/a11y-app/f-reflow-320-nalog-profil.webp"
+    },
+    {
+      "role": "mechanic",
+      "r": "/majstor",
+      "status": 200,
+      "url": "/majstor",
+      "over": 49,
+      "offenders": [
+        "div.ml-auto.flex",
+        "a.relative.inline-flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex"
+      ],
+      "ev": "docs/qa/audit/a11y-app/f-reflow-320-majstor.webp"
+    },
+    {
+      "role": "mechanic",
+      "r": "/majstor/brza-porudzbina",
+      "status": 200,
+      "url": "/majstor/brza-porudzbina",
+      "over": 49,
+      "offenders": [
+        "div.ml-auto.flex",
+        "a.relative.inline-flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex"
+      ],
+      "ev": "docs/qa/audit/a11y-app/f-reflow-320-majstor-brza-porudzbina.webp"
+    },
+    {
+      "role": "mechanic",
+      "r": "/majstor/cenovnik",
+      "status": 200,
+      "url": "/majstor/cenovnik",
+      "over": 49,
+      "offenders": [
+        "div.ml-auto.flex",
+        "a.relative.inline-flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex"
+      ],
+      "ev": "docs/qa/audit/a11y-app/f-reflow-320-majstor-cenovnik.webp"
+    },
+    {
+      "role": "mechanic",
+      "r": "/majstor/porudzbine",
+      "status": 200,
+      "url": "/majstor/porudzbine",
+      "over": 49,
+      "offenders": [
+        "div.ml-auto.flex",
+        "a.relative.inline-flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex"
+      ],
+      "ev": "docs/qa/audit/a11y-app/f-reflow-320-majstor-porudzbine.webp"
+    },
+    {
+      "role": "admin",
+      "r": "/admin",
+      "status": 200,
+      "url": "/admin",
+      "over": 3,
+      "offenders": [
+        "div.ml-auto.flex",
+        "div.lg:hidden",
+        "button.relative.inline-flex"
+      ],
+      "ev": "docs/qa/audit/a11y-app/f-reflow-320-admin.webp"
+    },
+    {
+      "role": "admin",
+      "r": "/admin/porudzbine/SK-2026-000092",
+      "status": 200,
+      "url": "/admin/porudzbine/SK-2026-000092",
+      "over": 0,
+      "offenders": [],
+      "ev": null
+    },
+    {
+      "role": "admin",
+      "r": "/admin/upiti/UP-2026-000054",
+      "status": 200,
+      "url": "/admin/upiti/UP-2026-000054",
+      "over": 0,
+      "offenders": [],
+      "ev": null
+    },
+    {
+      "role": "admin",
+      "r": "/admin/podesavanja",
+      "status": 200,
+      "url": "/admin/podesavanja",
+      "over": 0,
+      "offenders": [],
+      "ev": null
+    }
+  ]
+}

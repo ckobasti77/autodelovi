@@ -1,0 +1,426 @@
+{
+  "360": {
+    "engine": "chromium",
+    "viewport": "360x780",
+    "mobile": true,
+    "atLoad": {
+      "scrollY": 630,
+      "vh": 800,
+      "bar": {
+        "top": 582,
+        "h": 218,
+        "pctOfVh": 27,
+        "bg": "oklab(0.193825 -0.00283895 -0.00712426 / 0.95)",
+        "shadow": "none",
+        "borderTop": "1px rgb(67, 74, 82)",
+        "cls": "sticky bottom-0 z-sticky -mx-page mt-2 flex flex-col gap-3 border-t border-line-strong bg-bg-raised/95 px-page pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-header sm:mx-0 sm:px-0 sm:bg-bg/95"
+      },
+      "rows": 13,
+      "statuses": "exact,exact,ambiguous,exact,exact,ambiguous,ambiguous,exact,exact,exact,not_found,exact,exact",
+      "rowsBehindBar": [
+        {
+          "i": 2,
+          "status": "exact",
+          "top": 399,
+          "bottom": 585,
+          "overlap": 3,
+          "full": false
+        },
+        {
+          "i": 3,
+          "status": "ambiguous",
+          "top": 585,
+          "bottom": 997,
+          "overlap": 215,
+          "full": false
+        }
+      ],
+      "htmlScrollPad": {
+        "top": "80px",
+        "bottom": "auto"
+      }
+    },
+    "firstHidden": {
+      "tag": "a",
+      "type": "",
+      "label": "Kočioni disk prednji 276 × 24 mm",
+      "row": 1,
+      "inBar": false,
+      "top": 680,
+      "bottom": 701,
+      "barTop": 606,
+      "byBar": 5,
+      "off": 0,
+      "scrollY": 204
+    },
+    "tabStops": 63,
+    "stopsOutsideBar": 61,
+    "fullyHidden": 26,
+    "partlyHidden": 4,
+    "fullyHiddenList": [
+      "r1 a \"Kočioni disk prednji 276 × 24 mm\" top680 barTop606",
+      "r1 button:button \"Smanji količinu\" top762 barTop606",
+      "r1 input:number \"Količina\" top762 barTop606",
+      "r1 button:button \"Povećaj količinu\" top762 barTop606",
+      "r1 button:button \"Ukloni red 5Q0 615 505 R\" top756 barTop605",
+      "r3 input:radio \"qo-3\" top665 barTop582",
+      "r3 a \"Set zupčastog kaiša sa vodenom pumpom 1.9 TDI\" top661 barTop582",
+      "r3 a \"Set zupčastog kaiša sa vodenom pumpom 1.9 TDI\" top758 barTop582",
+      "r4 button:button \"Smanji količinu\" top646 barTop582",
+      "r4 input:number \"Količina\" top646 barTop582",
+      "r4 button:button \"Povećaj količinu\" top646 barTop582",
+      "r4 button:button \"Ukloni red 1K0 615 868 F\" top641 barTop582",
+      "r5 a \"Kočioni disk zadnji 272 × 10 mm, puni\" top756 barTop582",
+      "r6 a \"Amortizer prednji, gasni\" top690 barTop582",
+      "r7 a \"Kočione pločice prednje, sa senzorom\" top732 barTop582",
+      "r8 input:number \"Količina\" top618 barTop582",
+      "r8 button:button \"Povećaj količinu\" top618 barTop582",
+      "r8 button:button \"Ukloni red 3C0 413 232\" top613 barTop582",
+      "r9 a \"Hladnjak motora\" top722 barTop582",
+      "r10 button:button \"Smanji količinu\" top645 barTop582",
+      "r10 input:number \"Količina\" top645 barTop582",
+      "r10 button:button \"Ukloni red 03L 115 549 DA\" top640 barTop582",
+      "r12 input:number \"Količina\" top618 barTop582",
+      "r12 button:button \"Povećaj količinu\" top618 barTop582",
+      "r12 button:button \"Ukloni red 1K0 121 753 QN\" top613 barTop582",
+      "r13 a \"Set kvačila 1.6 TDI\" top722 barTop582"
+    ],
+    "atEnd": {
+      "lastRowBottom": -534,
+      "barTop": -526,
+      "clear": true
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "bad": []
+    }
+  },
+  "390": {
+    "engine": "chromium",
+    "viewport": "390x844",
+    "mobile": true,
+    "atLoad": {
+      "scrollY": 632,
+      "vh": 844,
+      "bar": {
+        "top": 647,
+        "h": 197,
+        "pctOfVh": 23,
+        "bg": "oklab(0.193825 -0.00283895 -0.00712426 / 0.95)",
+        "shadow": "none",
+        "borderTop": "1px rgb(67, 74, 82)",
+        "cls": "sticky bottom-0 z-sticky -mx-page mt-2 flex flex-col gap-3 border-t border-line-strong bg-bg-raised/95 px-page pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-header sm:mx-0 sm:px-0 sm:bg-bg/95"
+      },
+      "rows": 13,
+      "statuses": "exact,exact,ambiguous,exact,exact,ambiguous,ambiguous,exact,exact,exact,not_found,exact,exact",
+      "rowsBehindBar": [
+        {
+          "i": 3,
+          "status": "ambiguous",
+          "top": 565,
+          "bottom": 978,
+          "overlap": 197,
+          "full": false
+        }
+      ],
+      "htmlScrollPad": {
+        "top": "80px",
+        "bottom": "auto"
+      }
+    },
+    "firstHidden": {
+      "tag": "a",
+      "type": "",
+      "label": "Kočioni disk prednji 276 × 24 mm",
+      "row": 1,
+      "inBar": false,
+      "top": 711,
+      "bottom": 732,
+      "barTop": 647,
+      "byBar": 5,
+      "off": 0,
+      "scrollY": 155
+    },
+    "tabStops": 63,
+    "stopsOutsideBar": 61,
+    "fullyHidden": 27,
+    "partlyHidden": 7,
+    "fullyHiddenList": [
+      "r1 a \"Kočioni disk prednji 276 × 24 mm\" top711 barTop647",
+      "r1 button:button \"Smanji količinu\" top793 barTop647",
+      "r1 input:number \"Količina\" top793 barTop647",
+      "r1 button:button \"Povećaj količinu\" top793 barTop647",
+      "r1 button:button \"Ukloni red 5Q0 615 505 R\" top788 barTop647",
+      "r3 input:radio \"qo-3\" top677 barTop647",
+      "r3 a \"Set zupčastog kaiša sa vodenom pumpom 1.9 TDI\" top673 barTop647",
+      "r3 a \"Set zupčastog kaiša sa vodenom pumpom 1.9 TDI\" top802 barTop647",
+      "r4 button:button \"Smanji količinu\" top657 barTop647",
+      "r4 input:number \"Količina\" top657 barTop647",
+      "r4 button:button \"Povećaj količinu\" top657 barTop647",
+      "r4 button:button \"Ukloni red 1K0 615 868 F\" top652 barTop647",
+      "r5 a \"Kočioni disk zadnji 272 × 10 mm, puni\" top768 barTop647",
+      "r6 a \"Amortizer prednji, gasni\" top702 barTop647",
+      "r6 input:number \"Količina\" top810 barTop647",
+      "r6 button:button \"Povećaj količinu\" top808 barTop647",
+      "r6 button:button \"Ukloni red 1K0 413 165 G\" top800 barTop647",
+      "r7 button:button \"Smanji količinu\" top723 barTop647",
+      "r7 input:number \"Količina\" top723 barTop647",
+      "r7 button:button \"Povećaj količinu\" top723 barTop647",
+      "r7 button:button \"Ukloni red 1K0 698 406 F\" top718 barTop647",
+      "r8 a \"Amortizer prednji\" top823 barTop647",
+      "r10 a \"Filter ulja\" top736 barTop647",
+      "r12 a \"Hladnjak motora\" top718 barTop647",
+      "r12 input:number \"Količina\" top800 barTop647",
+      "r12 button:button \"Povećaj količinu\" top800 barTop647",
+      "r12 button:button \"Ukloni red 1K0 121 753 QN\" top795 barTop647"
+    ],
+    "atEnd": {
+      "lastRowBottom": -470,
+      "barTop": -462,
+      "clear": true
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "bad": []
+    }
+  },
+  "768": {
+    "engine": "chromium",
+    "viewport": "768x1024",
+    "mobile": true,
+    "atLoad": {
+      "scrollY": 620,
+      "vh": 1024,
+      "bar": {
+        "top": 910,
+        "h": 114,
+        "pctOfVh": 11,
+        "bg": "oklab(0.167059 -0.00197043 -0.00492857 / 0.95)",
+        "shadow": "none",
+        "borderTop": "1px rgb(67, 74, 82)",
+        "cls": "sticky bottom-0 z-sticky -mx-page mt-2 flex flex-col gap-3 border-t border-line-strong bg-bg-raised/95 px-page pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-header sm:mx-0 sm:px-0 sm:bg-bg/95"
+      },
+      "rows": 13,
+      "statuses": "exact,exact,ambiguous,exact,exact,ambiguous,ambiguous,exact,exact,exact,not_found,exact,exact",
+      "rowsBehindBar": [
+        {
+          "i": 5,
+          "status": "exact",
+          "top": 891,
+          "bottom": 1021,
+          "overlap": 111,
+          "full": false
+        },
+        {
+          "i": 6,
+          "status": "ambiguous",
+          "top": 1021,
+          "bottom": 1299,
+          "overlap": 3,
+          "full": false
+        }
+      ],
+      "htmlScrollPad": {
+        "top": "80px",
+        "bottom": "auto"
+      }
+    },
+    "firstHidden": {
+      "tag": "a",
+      "type": "",
+      "label": "Kočioni disk zadnji 272 × 10 mm, puni",
+      "row": 5,
+      "inBar": false,
+      "top": 940,
+      "bottom": 961,
+      "barTop": 910,
+      "byBar": 5,
+      "off": 0,
+      "scrollY": 619
+    },
+    "tabStops": 63,
+    "stopsOutsideBar": 61,
+    "fullyHidden": 8,
+    "partlyHidden": 0,
+    "fullyHiddenList": [
+      "r5 a \"Kočioni disk zadnji 272 × 10 mm, puni\" top940 barTop910",
+      "r5 input:number \"Količina\" top913 barTop910",
+      "r5 button:button \"Ukloni red 1K0 615 540 Q\" top908 barTop910",
+      "r7 a \"Kočione pločice prednje, sa senzorom\" top917 barTop910",
+      "r11 button:button \"Smanji količinu\" top932 barTop910",
+      "r11 input:number \"Količina\" top932 barTop910",
+      "r11 button:button \"Povećaj količinu\" top932 barTop910",
+      "r11 button:button \"Ukloni red ZZ9999999\" top927 barTop910"
+    ],
+    "atEnd": {
+      "lastRowBottom": 153,
+      "barTop": 161,
+      "clear": true
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "bad": []
+    }
+  },
+  "1440": {
+    "engine": "chromium",
+    "viewport": "1440x900",
+    "mobile": false,
+    "atLoad": {
+      "scrollY": 0,
+      "vh": 900,
+      "bar": {
+        "top": 783,
+        "h": 117,
+        "pctOfVh": 13,
+        "bg": "oklab(0.167059 -0.00197043 -0.00492857 / 0.95)",
+        "shadow": "none",
+        "borderTop": "1px rgb(67, 74, 82)",
+        "cls": "sticky bottom-0 z-sticky -mx-page mt-2 flex flex-col gap-3 border-t border-line-strong bg-bg-raised/95 px-page pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-header sm:mx-0 sm:px-0 sm:bg-bg/95"
+      },
+      "rows": 13,
+      "statuses": "exact,exact,ambiguous,exact,exact,ambiguous,ambiguous,exact,exact,exact,not_found,exact,exact",
+      "rowsBehindBar": [
+        {
+          "i": 3,
+          "status": "ambiguous",
+          "top": 576,
+          "bottom": 854,
+          "overlap": 71,
+          "full": false
+        },
+        {
+          "i": 4,
+          "status": "exact",
+          "top": 854,
+          "bottom": 1011,
+          "overlap": 46,
+          "full": false
+        }
+      ],
+      "htmlScrollPad": {
+        "top": "80px",
+        "bottom": "auto"
+      }
+    },
+    "firstHidden": {
+      "tag": "input",
+      "type": "radio",
+      "label": "qo-6",
+      "row": 6,
+      "inBar": false,
+      "top": 805,
+      "bottom": 821,
+      "barTop": 783,
+      "byBar": 5,
+      "off": 0,
+      "scrollY": 423
+    },
+    "tabStops": 63,
+    "stopsOutsideBar": 61,
+    "fullyHidden": 6,
+    "partlyHidden": 0,
+    "fullyHiddenList": [
+      "r6 input:radio \"qo-6\" top805 barTop783",
+      "r6 a \"Amortizer prednji, gasni\" top801 barTop783",
+      "r11 button:button \"Smanji količinu\" top864 barTop783",
+      "r11 input:number \"Količina\" top864 barTop783",
+      "r11 button:button \"Povećaj količinu\" top864 barTop783",
+      "r11 button:button \"Ukloni red ZZ9999999\" top856 barTop783"
+    ],
+    "atEnd": {
+      "lastRowBottom": 239,
+      "barTop": 247,
+      "clear": true
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "bad": []
+    }
+  },
+  "1920": {
+    "engine": "chromium",
+    "viewport": "1920x1080",
+    "mobile": false,
+    "atLoad": {
+      "scrollY": 0,
+      "vh": 1080,
+      "bar": {
+        "top": 963,
+        "h": 117,
+        "pctOfVh": 11,
+        "bg": "oklab(0.167059 -0.00197043 -0.00492857 / 0.95)",
+        "shadow": "none",
+        "borderTop": "1px rgb(67, 74, 82)",
+        "cls": "sticky bottom-0 z-sticky -mx-page mt-2 flex flex-col gap-3 border-t border-line-strong bg-bg-raised/95 px-page pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-header sm:mx-0 sm:px-0 sm:bg-bg/95"
+      },
+      "rows": 13,
+      "statuses": "exact,exact,ambiguous,exact,exact,ambiguous,ambiguous,exact,exact,exact,not_found,exact,exact",
+      "rowsBehindBar": [
+        {
+          "i": 4,
+          "status": "exact",
+          "top": 854,
+          "bottom": 1011,
+          "overlap": 48,
+          "full": false
+        },
+        {
+          "i": 5,
+          "status": "exact",
+          "top": 1011,
+          "bottom": 1141,
+          "overlap": 69,
+          "full": false
+        }
+      ],
+      "htmlScrollPad": {
+        "top": "80px",
+        "bottom": "auto"
+      }
+    },
+    "firstHidden": {
+      "tag": "a",
+      "type": "",
+      "label": "Kočioni disk zadnji 272 × 10 mm, puni",
+      "row": 5,
+      "inBar": false,
+      "top": 1059,
+      "bottom": 1080,
+      "barTop": 963,
+      "byBar": 5,
+      "off": 0,
+      "scrollY": 0
+    },
+    "tabStops": 63,
+    "stopsOutsideBar": 61,
+    "fullyHidden": 10,
+    "partlyHidden": 2,
+    "fullyHiddenList": [
+      "r5 a \"Kočioni disk zadnji 272 × 10 mm, puni\" top1059 barTop963",
+      "r5 input:number \"Količina\" top1032 barTop963",
+      "r5 button:button \"Ukloni red 1K0 615 540 Q\" top1027 barTop963",
+      "r11 button:button \"Smanji količinu\" top960 barTop963",
+      "r11 input:number \"Količina\" top960 barTop963",
+      "r11 button:button \"Povećaj količinu\" top960 barTop963",
+      "r12 a \"Hladnjak motora\" top1059 barTop963",
+      "r12 input:number \"Količina\" top1032 barTop963",
+      "r12 button:button \"Povećaj količinu\" top1032 barTop963",
+      "r12 button:button \"Ukloni red 1K0 121 753 QN\" top1027 barTop963"
+    ],
+    "atEnd": {
+      "lastRowBottom": 419,
+      "barTop": 427,
+      "clear": true
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "bad": []
+    }
+  }
+}

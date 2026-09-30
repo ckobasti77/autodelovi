@@ -1,0 +1,59 @@
+{
+  "webkit": {
+    "rm": {
+      "first": {
+        "stuck": 0,
+        "pending": 0,
+        "words": 0,
+        "hiddenFirst": []
+      },
+      "after": {
+        "stuck": 0,
+        "pending": 0,
+        "words": 0
+      },
+      "state": {
+        "ready": false,
+        "tier": "mid",
+        "status": "loading",
+        "progress": 0,
+        "stage": 0,
+        "selected": null,
+        "hovered": null,
+        "timeline": "mobile",
+        "reducedMotion": true
+      },
+      "canvas": 1,
+      "console": [],
+      "pageErrors": []
+    },
+    "nojs": {
+      "/": {
+        "hidden": [],
+        "htmlClass": false
+      },
+      "/deo/kocioni-disk-prednji-276-24-mm-demo-0004": {
+        "hidden": [],
+        "htmlClass": false
+      }
+    },
+    "focus": [
+      "button[Broj dela ili naziv/] outline=solid 2px rgb(255, 107, 26) shadow=none",
+      "button[Izaberite vozilo] outline=solid 2px rgb(255, 107, 26) shadow=none",
+      "button[Kopiraj OEM broj 5Q0 615] outline=solid 2px rgb(255, 107, 26) shadow=none",
+      "button[Izaberite vozilo da prov] outline=solid 2px rgb(255, 107, 26) shadow=none",
+      "input[Količina] outline=none 2px rgb(255, 107, 26) shadow=yes",
+      "button[Povećaj količinu] outline=solid 2px rgb(255, 107, 26) shadow=none"
+    ],
+    "sticky": [
+      "a.fixed fixed top=-66 h=39",
+      "header.sticky sticky top=0 h=57",
+      "div.fixed fixed top=851 h=65"
+    ],
+    "print": {
+      "h": 900,
+      "hidden": 0,
+      "header": false
+    }
+  }
+}

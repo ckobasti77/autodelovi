@@ -1,0 +1,326 @@
+{
+ "1024": {
+  "testids": [
+   "part-panel",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product"
+  ],
+  "stops": [
+   {
+    "name": "06 Menjač, kvačilo, poluosovine",
+    "x": [
+     519,
+     599
+    ],
+    "y": [
+     696,
+     760
+    ],
+    "hitSelf": true,
+    "hitDesc": "button.group flex h-16 w-full min-w-0 cursor-pointer flex 06Menjač i kvačilo",
+    "panelLeft": 584
+   },
+   {
+    "name": "07 Izduvni sistem",
+    "x": [
+     599,
+     678
+    ],
+    "y": [
+     696,
+     760
+    ],
+    "hitSelf": false,
+    "hitDesc": "a.cursor-pointer rounded-xs relative inline-flex sel Pošaljite upit",
+    "panelLeft": 584
+   },
+   {
+    "name": "Rasklopi",
+    "x": [
+     702,
+     825
+    ],
+    "y": [
+     706,
+     750
+    ],
+    "hitSelf": false,
+    "hitDesc": "a.cursor-pointer rounded-xs relative inline-flex sel Pošaljite upit",
+    "panelLeft": 584
+   },
+   {
+    "name": "Lista delova",
+    "x": [
+     837,
+     983
+    ],
+    "y": [
+     706,
+     750
+    ],
+    "hitSelf": false,
+    "hitDesc": "a.cursor-pointer rounded-xs relative inline-flex sel Pošaljite upit",
+    "panelLeft": 584
+   }
+  ],
+  "tabsFromListToPanel": 88,
+  "trailTail": [
+   "Pošaljite upit — javljamo se u",
+   "Uslovi korišćenja",
+   "Politika privatnosti",
+   "Kolačići",
+   "Podešavanja kolačića",
+   "Izaberite vozilo za tačno pokl"
+  ]
+ },
+ "1280": {
+  "testids": [
+   "part-panel",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product"
+  ],
+  "stops": [
+   {
+    "name": "06 Menjač, kvačilo, poluosovine",
+    "x": [
+     707,
+     817
+    ],
+    "y": [
+     728,
+     792
+    ],
+    "hitSelf": true,
+    "hitDesc": "button.group flex h-16 w-full min-w-0 cursor-pointer flex 06Menjač i kvačilo",
+    "panelLeft": 800
+   },
+   {
+    "name": "07 Izduvni sistem",
+    "x": [
+     817,
+     927
+    ],
+    "y": [
+     728,
+     792
+    ],
+    "hitSelf": false,
+    "hitDesc": "a.cursor-pointer rounded-xs relative inline-flex sel Pošaljite upit",
+    "panelLeft": 800
+   },
+   {
+    "name": "Rasklopi",
+    "x": [
+     951,
+     1074
+    ],
+    "y": [
+     738,
+     782
+    ],
+    "hitSelf": false,
+    "hitDesc": "a.cursor-pointer rounded-xs relative inline-flex sel Pošaljite upit",
+    "panelLeft": 800
+   },
+   {
+    "name": "Lista delova",
+    "x": [
+     1086,
+     1232
+    ],
+    "y": [
+     738,
+     782
+    ],
+    "hitSelf": false,
+    "hitDesc": "a.cursor-pointer rounded-xs relative inline-flex sel Pošaljite upit",
+    "panelLeft": 800
+   }
+  ],
+  "tabsFromListToPanel": 88,
+  "trailTail": [
+   "Pošaljite upit — javljamo se u",
+   "Uslovi korišćenja",
+   "Politika privatnosti",
+   "Kolačići",
+   "Podešavanja kolačića",
+   "Izaberite vozilo za tačno pokl"
+  ]
+ },
+ "1440": {
+  "testids": [
+   "part-panel",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product"
+  ],
+  "stops": [
+   {
+    "name": "06 Menjač, kvačilo, poluosovine",
+    "x": [
+     827,
+     957
+    ],
+    "y": [
+     828,
+     892
+    ],
+    "hitSelf": true,
+    "hitDesc": "button.group flex h-16 w-full min-w-0 cursor-pointer flex 06Menjač i kvačilo",
+    "panelLeft": 960
+   },
+   {
+    "name": "07 Izduvni sistem",
+    "x": [
+     957,
+     1087
+    ],
+    "y": [
+     828,
+     892
+    ],
+    "hitSelf": false,
+    "hitDesc": "a.cursor-pointer rounded-xs relative inline-flex sel Pošaljite upit",
+    "panelLeft": 960
+   },
+   {
+    "name": "Rasklopi",
+    "x": [
+     1111,
+     1234
+    ],
+    "y": [
+     838,
+     882
+    ],
+    "hitSelf": false,
+    "hitDesc": "a.cursor-pointer rounded-xs relative inline-flex sel Pošaljite upit",
+    "panelLeft": 960
+   },
+   {
+    "name": "Lista delova",
+    "x": [
+     1246,
+     1392
+    ],
+    "y": [
+     838,
+     882
+    ],
+    "hitSelf": false,
+    "hitDesc": "a.cursor-pointer rounded-xs relative inline-flex sel Pošaljite upit",
+    "panelLeft": 960
+   }
+  ],
+  "tabsFromListToPanel": 88,
+  "trailTail": [
+   "Pošaljite upit — javljamo se u",
+   "Uslovi korišćenja",
+   "Politika privatnosti",
+   "Kolačići",
+   "Podešavanja kolačića",
+   "Izaberite vozilo za tačno pokl"
+  ]
+ },
+ "1920": {
+  "testids": [
+   "part-panel",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product",
+   "part-panel-product"
+  ],
+  "stops": [
+   {
+    "name": "06 Menjač, kvačilo, poluosovine",
+    "x": [
+     1091,
+     1233
+    ],
+    "y": [
+     1008,
+     1072
+    ],
+    "hitSelf": true,
+    "hitDesc": "button.group flex h-16 w-full min-w-0 cursor-pointer flex 06Menjač i kvačilo",
+    "panelLeft": 1440
+   },
+   {
+    "name": "07 Izduvni sistem",
+    "x": [
+     1233,
+     1375
+    ],
+    "y": [
+     1008,
+     1072
+    ],
+    "hitSelf": true,
+    "hitDesc": "button.group flex h-16 w-full min-w-0 cursor-pointer flex 07Izduvni sistem",
+    "panelLeft": 1440
+   },
+   {
+    "name": "Rasklopi",
+    "x": [
+     1399,
+     1522
+    ],
+    "y": [
+     1018,
+     1062
+    ],
+    "hitSelf": false,
+    "hitDesc": "div.flex flex-col gap-3 border-t border-line px-6 py-4 Svi delovi: Kočioni diskovi (9",
+    "panelLeft": 1440
+   },
+   {
+    "name": "Lista delova",
+    "x": [
+     1534,
+     1680
+    ],
+    "y": [
+     1018,
+     1062
+    ],
+    "hitSelf": false,
+    "hitDesc": "a.cursor-pointer rounded-xs relative inline-flex sel Pošaljite upit",
+    "panelLeft": 1440
+   }
+  ],
+  "tabsFromListToPanel": 88,
+  "trailTail": [
+   "Pošaljite upit — javljamo se u",
+   "Uslovi korišćenja",
+   "Politika privatnosti",
+   "Kolačići",
+   "Podešavanja kolačića",
+   "Izaberite vozilo za tačno pokl"
+  ]
+ }
+}

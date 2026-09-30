@@ -1,0 +1,236 @@
+[
+  {
+    "vp": "1440",
+    "name": "header search",
+    "url": "/delovi/kocioni-diskovi",
+    "closeWith": "Escape",
+    "openerDesc": "button[header-search-trigger] \"Broj dela ili naziv/\"",
+    "open": true,
+    "focusInside": "input[combobox] \"Broj dela ili naziv\"",
+    "stillOpen": false,
+    "focusAfter": "BODY",
+    "returnedToOpener": false,
+    "nextTab": "a[skip-link] \"Preskoči na sadržaj\"",
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "vp": "1440",
+    "name": "header vehicle picker",
+    "url": "/delovi/kocioni-diskovi",
+    "closeWith": "Escape",
+    "openerDesc": "button[vehicle-picker-trigger] \"Izaberite vozilo\"",
+    "open": true,
+    "focusInside": "button[] \"Zatvori\"",
+    "stillOpen": false,
+    "focusAfter": "BODY",
+    "returnedToOpener": false,
+    "nextTab": "a[skip-link] \"Preskoči na sadržaj\"",
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "vp": "1440",
+    "name": "header vehicle picker",
+    "url": "/delovi/kocioni-diskovi",
+    "closeWith": "kbd-close",
+    "openerDesc": "button[vehicle-picker-trigger] \"Izaberite vozilo\"",
+    "open": true,
+    "focusInside": "button[] \"Zatvori\"",
+    "stillOpen": false,
+    "focusAfter": "BODY",
+    "returnedToOpener": false,
+    "nextTab": "a[skip-link] \"Preskoči na sadržaj\"",
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "vp": "1440",
+    "name": "hero vehicle field",
+    "url": "/",
+    "closeWith": "Escape",
+    "openerDesc": "button[vehicle-picker-trigger] \"Izaberite vozilomarka, model, motorIzabe\"",
+    "open": true,
+    "focusInside": "button[] \"Zatvori\"",
+    "stillOpen": false,
+    "focusAfter": "BODY",
+    "returnedToOpener": false,
+    "nextTab": "a[skip-link] \"Preskoči na sadržaj\"",
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "vp": "1440",
+    "name": "parts list",
+    "url": "/",
+    "closeWith": "Escape",
+    "openerDesc": "button[parts-list-trigger] \"Lista delova\"",
+    "open": true,
+    "focusInside": "button[] \"Zatvori\"",
+    "stillOpen": false,
+    "focusAfter": "BODY",
+    "returnedToOpener": false,
+    "nextTab": "a[skip-link] \"Preskoči na sadržaj\"",
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "vp": "1440",
+    "name": "parts list",
+    "url": "/",
+    "closeWith": "kbd-close",
+    "openerDesc": "button[parts-list-trigger] \"Lista delova\"",
+    "open": true,
+    "focusInside": "button[] \"Zatvori\"",
+    "stillOpen": false,
+    "focusAfter": "BODY",
+    "returnedToOpener": false,
+    "nextTab": "a[skip-link] \"Preskoči na sadržaj\"",
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "vp": "1440",
+    "name": "parts list",
+    "url": "/",
+    "closeWith": "click",
+    "openerDesc": "button[parts-list-trigger] \"Lista delova\"",
+    "open": true,
+    "focusInside": "button[] \"Zatvori\"",
+    "stillOpen": false,
+    "focusAfter": "BODY",
+    "returnedToOpener": false,
+    "nextTab": "a[skip-link] \"Preskoči na sadržaj\"",
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "vp": "390",
+    "name": "header search",
+    "closeWith": "Escape",
+    "skipped": "opener not visible"
+  },
+  {
+    "vp": "390",
+    "name": "mobile menu",
+    "url": "/delovi/kocioni-diskovi",
+    "closeWith": "Escape",
+    "openerDesc": "button[mobile-menu-trigger] \"Otvori meni\"",
+    "open": true,
+    "focusInside": "button[] \"Zatvori\"",
+    "stillOpen": false,
+    "focusAfter": "button[mobile-menu-trigger] \"Otvori meni\"",
+    "returnedToOpener": true,
+    "nextTab": "a[] \"Kočnice\"",
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "vp": "390",
+    "name": "catalog filters",
+    "url": "/delovi/kocioni-diskovi",
+    "closeWith": "Escape",
+    "openerDesc": "button[] \"Filteri\"",
+    "open": true,
+    "focusInside": "button[] \"Smanji panel\"",
+    "stillOpen": false,
+    "focusAfter": "button[] \"Filteri\"",
+    "returnedToOpener": true,
+    "nextTab": "select[] \"Sortiraj\"",
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "vp": "390",
+    "name": "catalog filters",
+    "url": "/delovi/kocioni-diskovi",
+    "closeWith": "kbd-close",
+    "openerDesc": "button[] \"Filteri\"",
+    "open": true,
+    "focusInside": "button[] \"Smanji panel\"",
+    "stillOpen": false,
+    "focusAfter": "button[] \"Filteri\"",
+    "returnedToOpener": true,
+    "nextTab": "select[] \"Sortiraj\"",
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "vp": "390",
+    "name": "hero vehicle field",
+    "url": "/",
+    "closeWith": "Escape",
+    "openerDesc": "button[vehicle-picker-trigger] \"Izaberite vozilomarka, model, motorIzabe\"",
+    "open": true,
+    "focusInside": "button[] \"Smanji panel\"",
+    "stillOpen": false,
+    "focusAfter": "BODY",
+    "returnedToOpener": false,
+    "nextTab": "a[skip-link] \"Preskoči na sadržaj\"",
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "vp": "390",
+    "name": "parts list",
+    "url": "/",
+    "closeWith": "kbd-close",
+    "openerDesc": "button[parts-list-trigger] \"Lista delova\"",
+    "open": true,
+    "focusInside": "button[] \"Zatvori\"",
+    "stillOpen": false,
+    "focusAfter": "BODY",
+    "returnedToOpener": false,
+    "nextTab": "a[skip-link] \"Preskoči na sadržaj\"",
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+]

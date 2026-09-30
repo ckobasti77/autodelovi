@@ -1,0 +1,12 @@
+﻿free line default availability {"v":"in_stock"}
+confirm dialog with invalid line {"text":"Poslati ponudu kupcu?Upit Test audit21 dobija ponudu na 4.690 RSD sa linkom za prihvatanje. Ponuda važi 7 dana.OdustaniPošalji ponudu"}
+after confirm (invalid) {"dialogOpen":true,"composerAlerts":[],"ariaInvalid":0,"focus":"BUTTON Pošalji ponudu","composerInert":true}
+composer total {"total":"Ukupno: 12.140 RSD · važi 7 dana od slanja"}
+send dialog {"text":"Poslati ponudu kupcu?Upit Test audit21 dobija ponudu na 12.140 RSD sa linkom za prihvatanje. Ponuda važi 7 dana.OdustaniPošalji ponudu"}
+after send {"dialogOpen":false,"toasts":[],"head":"UpitiUpit UP-2026-000054Ponuda poslataTraži deo · primljen 30.09. 15:38Preuzmi upitZatvori upitPretvori u porudžbinuNova verzija ponudeUpitTreba mi set kvačila za Golf 7 2.0 TDI (test audit21).PonudeVerzija 1Poslata 30.09. 22:08 · važi do 07.10.2026.12.140 RSDStavke ponude, verzija 1Kočioni disk prednji 276 × 24 mm5Q0 615 505 R · Febi Bilstein · na stanju1 ×4.690 RSDSenzor ABS prednji levi (dobavljač)wht 003 856 · po porudžbini, 3 d1 ×7.450 RSDDeo stiže za 3 radna dana od potvrde.Istorija30.09. 22:08Ponuda br. 1 poslataVlasnik30.09. 22:08Ponuda je poslat
+probe after send {"inquiryStatus":"ponuda_poslata","legalName":"","quoteStatus":"sent","quoteTotalPara":1214000}
+emails {"emails":[]}
+convert visible {"v":true}
+convert dialog {"text":"Pretvori ponudu u porudžbinuKupac je prihvatio ponudu telefonom ili u radnji. Porudžbina na 12.140 RSD dobija sve stavke iz ponude; upit se zatvara kao prihvaćen.Ime (obavezno)Prezime (obavezno)Telefon (obavezno)E-pošta (obavezno)DostavaLično preuzimanjeKurirska službaPlaćanjeGotovinom pri preuzimanjuKarticom pri preuzimanjuOdloženo plaćanjeOdustaniKreiraj porudžbinu"}
+after convert submit {"url":"http://localhost:3100/admin/upiti/UP-2026-000054","dialogOpen":true,"alerts":[],"dialogText":"Pretvori ponudu u porudžbinuKupac je prihvatio ponudu telefonom ili u radnji. Porudžbina na 12.140 RSD dobija sve stavke iz ponude; upit se zatvara kao prihvaćen.Ime (obavezno)Prezime (obavezno)Telefon (obavezno)E-pošta (obavezno)DostavaLično preuzimanjeKurirska službaPlaćanjeGotovinom pri preuzimanjuKarticom pri preuzimanjuOdloženo plaćanjeOdustaniKreiraj porudžbinu"}
+errors {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}

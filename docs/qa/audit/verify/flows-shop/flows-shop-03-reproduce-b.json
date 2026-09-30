@@ -1,0 +1,42 @@
+{
+ "catGolf7": {
+  "url": "/delovi/kocioni-diskovi?marka=volkswagen&model=golf&generacija=golf-7",
+  "h1": "Kočioni diskovi",
+  "cards": 5,
+  "cardNames": [
+   "Kočioni disk zadnji 272 × 10 mm, puni",
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 276 × 24 mm",
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 340 × 30 mm, GTI"
+  ],
+  "fitBadges": [
+   "Odgovara za Golf VII — proverite motor",
+   "Odgovara za Golf VII — proverite motor",
+   "Odgovara za Golf VII — proverite motor",
+   "Odgovara za Golf VII — proverite motor",
+   "Odgovara za Golf VII — proverite motor"
+  ]
+ },
+ "catPadsGolf7": {
+  "url": "/delovi/kocione-plocice?marka=volkswagen&model=golf&generacija=golf-7",
+  "h1": "Kočione pločice",
+  "cards": 6,
+  "cardNames": [
+   "Kočione pločice zadnje, elektronska ručna",
+   "Kočione pločice zadnje",
+   "Kočione pločice prednje, sa senzorom",
+   "Kočione pločice zadnje",
+   "Kočione pločice prednje, sistem Teves",
+   "Kočione pločice prednje, sa senzorom"
+  ],
+  "fitBadges": [
+   "Odgovara za Golf VII — proverite motor",
+   "Odgovara za Golf VII — proverite motor",
+   "Odgovara za Golf VII — proverite motor",
+   "Odgovara za Golf VII — proverite motor",
+   "Odgovara za Golf VII — proverite motor",
+   "Odgovara za Golf VII — proverite motor"
+  ]
+ }
+}

@@ -1,0 +1,23 @@
+motion-3d-01 skeptic verification (2026-09-30), build at http://localhost:3100, Chromium SwiftShader, isMobile+hasTouch below 1024.
+Scripts: scripts/qa/audit/verify-motion-3d-01-skeptic.mjs (DOM + pixel bbox below the caption, poster and canvas)
+         scripts/qa/audit/verify-motion-3d-01-skeptic-poster.mjs (bbox inside the poster files, layout-independent)
+Raw: docs/qa/audit/verify/motion-3d/motion-3d-01-skeptic.json, motion-3d-01-skeptic-poster-files.txt
+
+Poster files: car-assembled-m-1080 (4:5): car 83.7 % W, 47.6 % H, top at 33.8 %, centre at 57.6 % H (DS 7.6: "58 % height", "~92 %" length).
+              car-assembled-1080 (16:9, used from 768 px): car centre at 65.2 % W (desktop right-offset composition).
+
+Stage = 100svh - header - strip; poster object-fit contain, object-position 50% 100% (bottom-centred) below 1024.
+
+viewport                stage     aspect  car %H  car %W  caption->car gap  centre dx
+360x780 (reviewer)      360x608   0.592   35.2    83.9    225 px            +8
+390x844 (reviewer)      390x672   0.580   34.5    83.6    264 px            +9
+430x932 (reviewer)      430x760   0.566   33.7    83.7    318 px            +10
+768x1024 (reviewer)     768x852   0.901   29.0    51.4    430 px            +117
+iPhone 13/14 390x664    390x492   0.793   47.2    83.6     84 px            +9
+iPhone 15 PM 430x739    430x567   0.758   45.1    83.7    125 px            +10
+Moto G4 360x640         360x468   0.769   45.7    83.9     85 px            +8
+Pixel 7 412x839         412x667   0.618   36.7    83.7    240 px            +10
+Galaxy S8 360x740       360x568   0.634   37.7    83.9    185 px            +8
+Canvas (tier mid, progress 0) vs poster: 390x844 bbox +-1 px, mean abs diff 2.42/255; 390x664 bbox +-1 px, 3.30/255.
+Scroll 0: the car is below the first screen at every phone size (car top 831-1070 px); copy + search first by design.
+(1440 pixel bbox in the json is invalid: the desktop copy column/furniture overlap the stage; not used.)

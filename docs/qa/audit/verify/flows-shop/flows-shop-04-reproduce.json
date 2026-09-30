@@ -1,0 +1,128 @@
+{
+  "golf 7": {
+    "width": 390,
+    "status": 200,
+    "h1": "Rezultati za „golf 7“",
+    "meta": "48 artikala",
+    "productLinks": 50,
+    "moreButtons": [
+      "Prikaži sve rezultate za „golf 7“",
+      "Semering radilice, strana zamajca",
+      "Poruči: Semering radilice, strana zamajca"
+    ],
+    "pager": 1,
+    "chips": [],
+    "groups": [
+      "Proizvodi"
+    ],
+    "errors": [],
+    "shotTop": "docs/qa/audit/verify/flows-shop/flows-shop-04-reproduce-top-390.webp",
+    "shotEnd": "docs/qa/audit/verify/flows-shop/flows-shop-04-reproduce-end-390.webp"
+  },
+  "a": {
+    "width": 1440,
+    "status": 200,
+    "h1": "Rezultati za „a“",
+    "meta": "48 artikala",
+    "productLinks": 53,
+    "moreButtons": [
+      "Prikaži sve rezultate za „a“"
+    ],
+    "pager": 1,
+    "chips": [],
+    "groups": [
+      "Proizvodi"
+    ],
+    "errors": []
+  },
+  "amortizer golf": {
+    "width": 390,
+    "status": 200,
+    "h1": "Rezultati za „amortizer golf“",
+    "meta": "48 artikala",
+    "productLinks": 56,
+    "moreButtons": [
+      "Prikaži sve rezultate za „amortizer golf“",
+      "Semering radilice, strana zamajca",
+      "Poruči: Semering radilice, strana zamajca"
+    ],
+    "pager": 1,
+    "chips": [],
+    "groups": [
+      "Proizvodi"
+    ],
+    "errors": []
+  },
+  "pločice golf 7": {
+    "width": 1440,
+    "status": 200,
+    "h1": "Rezultati za „pločice golf 7“",
+    "meta": "48 artikala",
+    "productLinks": 51,
+    "moreButtons": [
+      "Prikaži sve rezultate za „pločice golf 7“",
+      "Semering radilice, strana zamajca",
+      "Poruči: Semering radilice, strana zamajca"
+    ],
+    "pager": 1,
+    "chips": [],
+    "groups": [
+      "Proizvodi"
+    ],
+    "errors": []
+  },
+  "disk": {
+    "width": 390,
+    "status": 200,
+    "h1": "Rezultati za „disk“",
+    "meta": "9 artikala",
+    "productLinks": 9,
+    "moreButtons": [
+      "Prikaži sve rezultate za „disk“"
+    ],
+    "pager": 1,
+    "chips": [
+      "Kočioni diskovi9"
+    ],
+    "groups": [
+      "Proizvodi"
+    ],
+    "errors": []
+  },
+  "golf": {
+    "width": 1440,
+    "status": 200,
+    "h1": "Rezultati za „golf“",
+    "meta": "48 artikala",
+    "productLinks": 56,
+    "moreButtons": [
+      "Prikaži sve rezultate za „golf“",
+      "Semering radilice, strana zamajca",
+      "Poruči: Semering radilice, strana zamajca"
+    ],
+    "pager": 1,
+    "chips": [],
+    "groups": [
+      "Proizvodi"
+    ],
+    "errors": []
+  },
+  "kočioni": {
+    "width": 390,
+    "status": 200,
+    "h1": "Rezultati za „kočioni“",
+    "meta": "9 artikala",
+    "productLinks": 9,
+    "moreButtons": [
+      "Prikaži sve rezultate za „kočioni“"
+    ],
+    "pager": 1,
+    "chips": [
+      "Kočioni diskovi9"
+    ],
+    "groups": [
+      "Proizvodi"
+    ],
+    "errors": []
+  }
+}

@@ -1,0 +1,87 @@
+[
+  {
+    "name": "1440-header-vehicle-Escape",
+    "url": "/delovi/kocioni-diskovi",
+    "openerLabel": "Izaberite vozilo",
+    "tabsToOpener": 8,
+    "beforeOpen": "BUTTON[vehicle-picker-trigger] \"Izaberite vozilo\"",
+    "dialogTitle": "Izaberite vozilo",
+    "afterOpen": "BUTTON \"Zatvori\"",
+    "dialogsLeft": 0,
+    "afterClose": "BODY \"Preskoči na sadržajSKLOPDeloviVozilaZa m\"",
+    "openerFocused": false,
+    "afterTab": "A[skip-link] \"Preskoči na sadržaj\"",
+    "pageErrors": []
+  },
+  {
+    "name": "1440-header-vehicle-kbdClose",
+    "url": "/delovi/kocioni-diskovi",
+    "openerLabel": "Izaberite vozilo",
+    "tabsToOpener": 8,
+    "beforeOpen": "BUTTON[vehicle-picker-trigger] \"Izaberite vozilo\"",
+    "dialogTitle": "Izaberite vozilo",
+    "afterOpen": "BUTTON \"Zatvori\"",
+    "dialogsLeft": 0,
+    "afterClose": "BODY \"Preskoči na sadržajSKLOPDeloviVozilaZa m\"",
+    "openerFocused": false,
+    "afterTab": "A[skip-link] \"Preskoči na sadržaj\"",
+    "pageErrors": []
+  },
+  {
+    "name": "1440-catalog-vehicle-button-Escape",
+    "url": "/delovi/kocioni-diskovi",
+    "openerLabel": "Vozilo",
+    "tabsToOpener": 15,
+    "beforeOpen": "BUTTON \"Vozilo\"",
+    "error": "TimeoutError: locator.waitFor: Timeout 10000ms exceeded.\nCall log:\n  - waiting for getByRole('dialog').last() to be visible\n",
+    "pageErrors": []
+  },
+  {
+    "name": "390-catalog-header-vehicle-Escape",
+    "url": "/delovi/kocioni-diskovi",
+    "error": "TimeoutError: locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /Izaberite vozilo/i }).first() to be visible\n",
+    "pageErrors": []
+  },
+  {
+    "name": "390-home-hero-vehicle-sheet-Escape",
+    "url": "/",
+    "openerLabel": "Izaberite vozilomarka, model, motorIzabe",
+    "tabsToOpener": 9,
+    "beforeOpen": "BUTTON[vehicle-picker-trigger] \"Izaberite vozilomarka, model, motorIzabe\"",
+    "dialogTitle": "Izaberite vozilo",
+    "afterOpen": "BUTTON \"Smanji panel\"",
+    "dialogsLeft": 0,
+    "afterClose": "BODY \"Preskoči na sadržajSKLOPDeloviVozilaZa m\"",
+    "openerFocused": false,
+    "afterTab": "A[skip-link] \"Preskoči na sadržaj\"",
+    "pageErrors": []
+  },
+  {
+    "name": "1440-home-hero-vehicle-Escape",
+    "url": "/",
+    "openerLabel": "Izaberite vozilomarka, model, motorIzabe",
+    "tabsToOpener": 13,
+    "beforeOpen": "BUTTON[vehicle-picker-trigger] \"Izaberite vozilomarka, model, motorIzabe\"",
+    "dialogTitle": "Izaberite vozilo",
+    "afterOpen": "BUTTON \"Zatvori\"",
+    "dialogsLeft": 0,
+    "afterClose": "BODY \"Preskoči na sadržajSKLOPDeloviVozilaZa m\"",
+    "openerFocused": false,
+    "afterTab": "A[skip-link] \"Preskoči na sadržaj\"",
+    "pageErrors": []
+  },
+  {
+    "name": "1440-product-fitment-vehicle-Escape",
+    "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "openerLabel": "Izaberite vozilo da proverimo da li deo ",
+    "tabsToOpener": 15,
+    "beforeOpen": "BUTTON \"Izaberite vozilo da proverimo da li deo \"",
+    "dialogTitle": "Izaberite vozilo",
+    "afterOpen": "BUTTON \"Zatvori\"",
+    "dialogsLeft": 0,
+    "afterClose": "BODY \"Preskoči na sadržajSKLOPDeloviVozilaZa m\"",
+    "openerFocused": false,
+    "afterTab": "A[skip-link] \"Preskoči na sadržaj\"",
+    "pageErrors": []
+  }
+]

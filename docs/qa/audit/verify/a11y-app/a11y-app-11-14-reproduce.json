@@ -1,0 +1,453 @@
+{
+  "s11": {
+    "/admin/porudzbine": {
+      "tabsToRow": 47,
+      "table": {
+        "role": null,
+        "caption": "Porudžbine"
+      },
+      "tableAX": {
+        "role": "table",
+        "name": "Porudžbine",
+        "ignored": false,
+        "props": {}
+      },
+      "rowAXBefore": {
+        "role": "row",
+        "name": "",
+        "ignored": false,
+        "props": {
+          "focusable": true,
+          "focused": true
+        }
+      },
+      "checkbox": {
+        "tabindex": "-1",
+        "ariaChecked": "false",
+        "label": "Izaberi SK-2026-000140"
+      },
+      "liveBefore": [
+        {
+          "tag": "span",
+          "role": "",
+          "live": "polite",
+          "text": "",
+          "inMain": false
+        }
+      ],
+      "afterSpace": {
+        "activeElement": "tr SK-2026-00014030.09. 22:12Admin Test fa3bellGostNova118.900 ",
+        "rowAriaSelected": "true",
+        "rowAX": {
+          "role": "row",
+          "name": "",
+          "ignored": false,
+          "props": {
+            "focusable": true,
+            "focused": true
+          }
+        },
+        "checkboxAX": {
+          "role": "checkbox",
+          "name": "Izaberi SK-2026-000140",
+          "ignored": false,
+          "props": {
+            "invalid": "false",
+            "focusable": true,
+            "checked": "true"
+          }
+        },
+        "bulkBar": {
+          "text": "1 izabranoPotvrdiŠtampaj otpremnicePoništi izbor",
+          "live": null,
+          "inLive": false
+        },
+        "liveRegions": [
+          {
+            "tag": "span",
+            "role": "",
+            "live": "polite",
+            "text": "",
+            "inMain": false
+          }
+        ],
+        "liveChanges": []
+      },
+      "shot": "docs/qa/audit/verify/a11y-app/a11y-app-11-reproduce-porudzbine.webp",
+      "afterUndo": {
+        "rowAriaSelected": "false",
+        "bulkBar": false,
+        "liveChanges": []
+      }
+    },
+    "/admin/proizvodi": {
+      "tabsToRow": 41,
+      "table": {
+        "role": null,
+        "caption": "Proizvodi"
+      },
+      "tableAX": {
+        "role": "table",
+        "name": "Proizvodi",
+        "ignored": false,
+        "props": {}
+      },
+      "rowAXBefore": {
+        "role": "row",
+        "name": "",
+        "ignored": false,
+        "props": {
+          "focusable": true,
+          "focused": true
+        }
+      },
+      "checkbox": {
+        "tabindex": "-1",
+        "ariaChecked": "false",
+        "label": "Izaberi VFY-SKEPTIC-FA01-984519 Verifikacija skeptik FA01 (A2)"
+      },
+      "liveBefore": [
+        {
+          "tag": "span",
+          "role": "",
+          "live": "polite",
+          "text": "",
+          "inMain": false
+        }
+      ],
+      "afterSpace": {
+        "activeElement": "tr Verifikacija skeptik FA01 (A2)VFY-SKEPTIC-FA01-984519Neaktiv",
+        "rowAriaSelected": "true",
+        "rowAX": {
+          "role": "row",
+          "name": "",
+          "ignored": false,
+          "props": {
+            "focusable": true,
+            "focused": true
+          }
+        },
+        "checkboxAX": {
+          "role": "checkbox",
+          "name": "Izaberi VFY-SKEPTIC-FA01-984519 Verifikacija skeptik FA01 (A2)",
+          "ignored": false,
+          "props": {
+            "invalid": "false",
+            "focusable": true,
+            "checked": "true"
+          }
+        },
+        "bulkBar": {
+          "text": "1 izabranoAktivirajDeaktivirajPromeni kategorijuPromeni cene %Poništi izbor",
+          "live": null,
+          "inLive": false
+        },
+        "liveRegions": [
+          {
+            "tag": "span",
+            "role": "",
+            "live": "polite",
+            "text": "",
+            "inMain": false
+          }
+        ],
+        "liveChanges": []
+      },
+      "shot": "docs/qa/audit/verify/a11y-app/a11y-app-11-reproduce-proizvodi.webp",
+      "afterUndo": {
+        "rowAriaSelected": "false",
+        "bulkBar": false,
+        "liveChanges": []
+      }
+    }
+  },
+  "s12": {
+    "fileStep": {
+      "live": [
+        {
+          "tag": "span",
+          "role": "",
+          "live": "polite",
+          "text": "",
+          "inMain": false
+        }
+      ]
+    },
+    "fileInput": {
+      "tabindex": "-1",
+      "type": "file"
+    },
+    "afterParse": {
+      "active": "body Preskoči na sadržajSKLOPPregledProdajaPorudžbine99+ novihUpi",
+      "live": [
+        {
+          "tag": "span",
+          "role": "",
+          "live": "polite",
+          "text": "",
+          "inMain": false
+        }
+      ],
+      "liveChanges": [
+        "ADDED-LIVE:Čitam fajl"
+      ]
+    },
+    "afterStepChange": {
+      "active": "body Preskoči na sadržajSKLOPPregledProdajaPorudžbine99+ novihUpi",
+      "currentStep": "2Korak 2: Kolone",
+      "live": [
+        {
+          "tag": "span",
+          "role": "",
+          "live": "polite",
+          "text": "",
+          "inMain": false
+        }
+      ],
+      "liveChanges": []
+    },
+    "shotMapping": "docs/qa/audit/verify/a11y-app/a11y-app-12-reproduce-mapping.webp",
+    "batchHref": "/admin/uvoz/n57bmszdyhqr8a9sxaw852qp2h8fck2e",
+    "batchPage": {
+      "live": [
+        {
+          "tag": "span",
+          "role": "",
+          "live": "polite",
+          "text": "",
+          "inMain": false
+        }
+      ],
+      "result": null,
+      "progressbars": []
+    },
+    "shotBatch": "docs/qa/audit/verify/a11y-app/a11y-app-12-reproduce-batch.webp"
+  },
+  "s13": {
+    "/admin": {
+      "bellLabel": "Obaveštenja, nepročitano: 100",
+      "badge": "9+",
+      "dialog": {
+        "role": "dialog",
+        "ariaLabel": null,
+        "labelledby": null,
+        "describedby": null,
+        "headings": [],
+        "titleEl": "<p class=\"type-body-s font-semibold\">Obaveštenja</p>",
+        "items": 8,
+        "itemTitles": [
+          "Nova porudžbina SK-2026-000144pre 2 min · Ukupno 18.900 RSD",
+          "Nova porudžbina SK-2026-000143pre 6 min · Ukupno 18.900 RSD",
+          "Novi upit UP-2026-000082pre 8 min · Kupac čeka ponudu.",
+          "Novi upit UP-2026-000081pre 11 min · Kupac čeka ponudu.",
+          "Novi upit UP-2026-000080pre 11 min · Kupac čeka ponudu.",
+          "Nova porudžbina SK-2026-000142pre 26 min · Ukupno 12.140 RSD",
+          "Ponuda prihvaćena — UP-2026-000054pre 26 min · Kupac je prihvatio ponu",
+          "Novi upit UP-2026-000079pre 29 min · Kupac čeka ponudu."
+        ]
+      },
+      "dialogAX": {
+        "role": "dialog",
+        "name": "",
+        "ignored": false,
+        "props": {
+          "focusable": true,
+          "modal": false
+        }
+      },
+      "activeInside": "button Označi sve kao pročitano",
+      "shot": "docs/qa/audit/verify/a11y-app/a11y-app-13-reproduce.webp",
+      "afterEsc": "button Obaveštenja, nepročitano: 100"
+    },
+    "/admin/porudzbine": {
+      "bellLabel": "Obaveštenja, nepročitano: 100",
+      "badge": "9+",
+      "dialog": {
+        "role": "dialog",
+        "ariaLabel": null,
+        "labelledby": null,
+        "describedby": null,
+        "headings": [],
+        "titleEl": "<p class=\"type-body-s font-semibold\">Obaveštenja</p>",
+        "items": 8,
+        "itemTitles": [
+          "Nova porudžbina SK-2026-000144pre 2 min · Ukupno 18.900 RSD",
+          "Nova porudžbina SK-2026-000143pre 6 min · Ukupno 18.900 RSD",
+          "Novi upit UP-2026-000082pre 8 min · Kupac čeka ponudu.",
+          "Novi upit UP-2026-000081pre 11 min · Kupac čeka ponudu.",
+          "Novi upit UP-2026-000080pre 11 min · Kupac čeka ponudu.",
+          "Nova porudžbina SK-2026-000142pre 26 min · Ukupno 12.140 RSD",
+          "Ponuda prihvaćena — UP-2026-000054pre 26 min · Kupac je prihvatio ponu",
+          "Novi upit UP-2026-000079pre 29 min · Kupac čeka ponudu."
+        ]
+      },
+      "dialogAX": {
+        "role": "dialog",
+        "name": "",
+        "ignored": false,
+        "props": {
+          "focusable": true,
+          "modal": false
+        }
+      },
+      "activeInside": "button Označi sve kao pročitano",
+      "afterEsc": "button Obaveštenja, nepročitano: 100"
+    }
+  },
+  "s14": {
+    "390": {
+      "/nalog": {
+        "title": "Moj nalog | SKLOP",
+        "headings": [
+          "H1:Moj nalog",
+          "H2:Poslednje porudžbine",
+          "H2:Vozila"
+        ],
+        "allHeadings": [
+          "H1:Moj nalog",
+          "H2:Poslednje porudžbine",
+          "H2:Vozila",
+          "H2:Delovi",
+          "H2:Kupovina",
+          "H2:Kontakt"
+        ],
+        "currentTab": "Pregled",
+        "legends": []
+      },
+      "/nalog/porudzbine": {
+        "title": "Porudžbine | SKLOP",
+        "headings": [
+          "H1:Moj nalog"
+        ],
+        "allHeadings": [
+          "H1:Moj nalog",
+          "H2:Delovi",
+          "H2:Kupovina",
+          "H2:Kontakt"
+        ],
+        "currentTab": "Porudžbine",
+        "legends": []
+      },
+      "/nalog/upiti": {
+        "title": "Upiti | SKLOP",
+        "headings": [
+          "H1:Moj nalog"
+        ],
+        "allHeadings": [
+          "H1:Moj nalog",
+          "H2:Delovi",
+          "H2:Kupovina",
+          "H2:Kontakt"
+        ],
+        "currentTab": "Upiti",
+        "legends": []
+      },
+      "/nalog/vozila": {
+        "title": "Vozila | SKLOP",
+        "headings": [
+          "H1:Moj nalog"
+        ],
+        "allHeadings": [
+          "H1:Moj nalog",
+          "H2:Delovi",
+          "H2:Kupovina",
+          "H2:Kontakt"
+        ],
+        "currentTab": "Vozila",
+        "legends": []
+      },
+      "shot390": "docs/qa/audit/verify/a11y-app/a11y-app-14-reproduce-vozila-390.webp",
+      "/nalog/profil": {
+        "title": "Profil | SKLOP",
+        "headings": [
+          "H1:Moj nalog"
+        ],
+        "allHeadings": [
+          "H1:Moj nalog",
+          "H2:Delovi",
+          "H2:Kupovina",
+          "H2:Kontakt"
+        ],
+        "currentTab": "Profil",
+        "legends": []
+      }
+    },
+    "1440": {
+      "/nalog": {
+        "title": "Moj nalog | SKLOP",
+        "headings": [
+          "H1:Moj nalog",
+          "H2:Poslednje porudžbine",
+          "H2:Vozila"
+        ],
+        "allHeadings": [
+          "H1:Moj nalog",
+          "H2:Poslednje porudžbine",
+          "H2:Vozila",
+          "H2:Delovi",
+          "H2:Kupovina",
+          "H2:Kontakt"
+        ],
+        "currentTab": "Pregled",
+        "legends": []
+      },
+      "/nalog/porudzbine": {
+        "title": "Porudžbine | SKLOP",
+        "headings": [
+          "H1:Moj nalog"
+        ],
+        "allHeadings": [
+          "H1:Moj nalog",
+          "H2:Delovi",
+          "H2:Kupovina",
+          "H2:Kontakt"
+        ],
+        "currentTab": "Porudžbine",
+        "legends": []
+      },
+      "shot1440": "docs/qa/audit/verify/a11y-app/a11y-app-14-reproduce-porudzbine-1440.webp",
+      "/nalog/upiti": {
+        "title": "Upiti | SKLOP",
+        "headings": [
+          "H1:Moj nalog"
+        ],
+        "allHeadings": [
+          "H1:Moj nalog",
+          "H2:Delovi",
+          "H2:Kupovina",
+          "H2:Kontakt"
+        ],
+        "currentTab": "Upiti",
+        "legends": []
+      },
+      "/nalog/vozila": {
+        "title": "Vozila | SKLOP",
+        "headings": [
+          "H1:Moj nalog"
+        ],
+        "allHeadings": [
+          "H1:Moj nalog",
+          "H2:Delovi",
+          "H2:Kupovina",
+          "H2:Kontakt"
+        ],
+        "currentTab": "Vozila",
+        "legends": []
+      },
+      "/nalog/profil": {
+        "title": "Profil | SKLOP",
+        "headings": [
+          "H1:Moj nalog"
+        ],
+        "allHeadings": [
+          "H1:Moj nalog",
+          "H2:Delovi",
+          "H2:Kupovina",
+          "H2:Kontakt"
+        ],
+        "currentTab": "Profil",
+        "legends": []
+      }
+    }
+  }
+}

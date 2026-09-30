@@ -1,0 +1,10 @@
+{
+  "labels": [
+    "Telefon",
+    "E-pošta (nije obavezno)",
+    "Telefonom",
+    "E-poštom",
+    "Slažem se da podatke iz upita koristite za odgovor, prema politici privatnosti."
+  ],
+  "emailRequired": false
+}

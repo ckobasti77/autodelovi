@@ -1,0 +1,73 @@
+{
+ "product pw": [
+  "- 'button \"Dodaj u korpu : Kočioni disk prednji 276 × 24 mm\"'",
+  "- 'button \"U korpu : Kočioni disk prednji 312 × 25 mm\"'",
+  "- 'button \"Poruči : Kočioni disk prednji 288 × 25 mm, ventilirani\"'",
+  "- 'button \"U korpu : Kočioni disk zadnji 272 × 10 mm, puni\"'",
+  "- 'button \"U korpu : Kočioni disk prednji 256 × 22 mm\"'"
+ ],
+ "product native": [
+  "button \"Dodaj u korpu : Kočioni disk prednji 276 × 24 mm\"",
+  "button \"U korpu : Kočioni disk prednji 312 × 25 mm\"",
+  "button \"Poruči : Kočioni disk prednji 288 × 25 mm, ventilirani\"",
+  "button \"U korpu : Kočioni disk zadnji 272 × 10 mm, puni\"",
+  "button \"U korpu : Kočioni disk prednji 256 × 22 mm\""
+ ],
+ "product srInfo": [
+  "\": Kočioni disk prednji 276 × 2\" display=block position=absolute parentDisplay=flex parentTag=SPAN",
+  "\": Kočioni disk prednji 312 × 2\" display=block position=absolute parentDisplay=flex parentTag=SPAN",
+  "\": Kočioni disk prednji 288 × 2\" display=block position=absolute parentDisplay=flex parentTag=SPAN",
+  "\": Kočioni disk zadnji 272 × 10\" display=block position=absolute parentDisplay=flex parentTag=SPAN"
+ ],
+ "product button innerText": "Dodaj u korpu\n: Kočioni disk prednji 276 × 24 mm",
+ "product button textContent": "Dodaj u korpu: Kočioni disk prednji 276 × 24 mm",
+ "oos pdp pw": [
+  "- 'button \"U korpu : Kočione pločice zadnje, elektronska ručna\"'",
+  "- 'button \"U korpu : Kočione pločice zadnje\"'",
+  "- 'button \"U korpu : Kočione pločice prednje, sa senzorom\"'",
+  "- 'button \"U korpu : Kočione pločice prednje\"'"
+ ],
+ "oos pdp native": [
+  "button \"U korpu : Kočione pločice zadnje, elektronska ručna\"",
+  "button \"U korpu : Kočione pločice zadnje\"",
+  "button \"U korpu : Kočione pločice prednje, sa senzorom\"",
+  "button \"U korpu : Kočione pločice prednje\""
+ ],
+ "listing pw": [
+  "- 'button \"U korpu : Kočioni disk prednji 312 × 25 mm\"'",
+  "- 'button \"U korpu : Kočioni disk zadnji 272 × 10 mm, puni\"'",
+  "- 'button \"U korpu : Kočioni disk prednji 256 × 22 mm\"'",
+  "- 'button \"U korpu : Kočioni disk prednji 312 × 25 mm, ventilirani\"'"
+ ],
+ "listing native": [
+  "button \"U korpu : Kočioni disk prednji 312 × 25 mm\"",
+  "button \"U korpu : Kočioni disk zadnji 272 × 10 mm, puni\"",
+  "button \"U korpu : Kočioni disk prednji 256 × 22 mm\"",
+  "button \"U korpu : Kočioni disk prednji 312 × 25 mm, ventilirani\""
+ ],
+ "stepper pw": "- navigation \"Koraci porudžbine\":\n  - list:\n    - listitem:\n      - text: \"Korak 1, završen: Kontakt\"\n      - 'button \"Izmeni : Kontakt\"'\n    - listitem:\n      - text: \"Korak 2, završen: Dostava\"\n      - 'button \"Izmeni : Dostava\"'\n    - listitem: \"Korak 3: Plaćanje\"\n    - listitem: \"Korak 4: Pregled\"",
+ "stepper native": [
+  "button \"Izmeni : Kontakt\"",
+  "button \"Izmeni : Dostava\""
+ ],
+ "stepper srInfo": [
+  "\": Kontakt\" display=block position=absolute parentDisplay=block parentTag=BUTTON",
+  "\": Dostava\" display=block position=absolute parentDisplay=block parentTag=BUTTON"
+ ],
+ "mechanic pdp pw": [
+  "- 'button \"Dodaj u korpu : Kočioni disk prednji 276 × 24 mm\"'",
+  "- 'button \"Sačuvaj u omiljeno : Kočioni disk prednji 276 × 24 mm\"'",
+  "- 'button \"U korpu : Kočioni disk prednji 312 × 25 mm\"'",
+  "- 'button \"Poruči : Kočioni disk prednji 288 × 25 mm, ventilirani\"'",
+  "- 'button \"U korpu : Kočioni disk zadnji 272 × 10 mm, puni\"'",
+  "- 'button \"U korpu : Kočioni disk prednji 256 × 22 mm\"'"
+ ],
+ "mechanic pdp native": [
+  "button \"Dodaj u korpu : Kočioni disk prednji 276 × 24 mm\"",
+  "button \"Sačuvaj u omiljeno : Kočioni disk prednji 276 × 24 mm\"",
+  "button \"U korpu : Kočioni disk prednji 312 × 25 mm\"",
+  "button \"Poruči : Kočioni disk prednji 288 × 25 mm, ventilirani\"",
+  "button \"U korpu : Kočioni disk zadnji 272 × 10 mm, puni\"",
+  "button \"U korpu : Kočioni disk prednji 256 × 22 mm\""
+ ]
+}

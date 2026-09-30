@@ -1,0 +1,114 @@
+{
+  "url": "http://localhost:3100/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005",
+  "engine": "webkit",
+  "width": 390,
+  "height": 844,
+  "motion": "no-preference",
+  "states": {
+    "initial": {
+      "found": true,
+      "scrollY": 0,
+      "vh": 844,
+      "top": 922,
+      "bottom": 987,
+      "height": 65,
+      "inViewportPx": 0,
+      "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none;",
+      "transform": "matrix(1, 0, 0, 1, 0, 143)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "true",
+      "inert": true,
+      "button": {
+        "text": "U korpu: Kočioni disk prednji 340 × 30 m",
+        "top": 933,
+        "bottom": 977
+      },
+      "buyBoxBottom": 979.34375
+    },
+    "afterWheel": {
+      "found": true,
+      "scrollY": 1800,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewportPx": 0,
+      "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "visible",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "false",
+      "inert": false,
+      "button": {
+        "text": "U korpu: Kočioni disk prednji 340 × 30 m",
+        "top": 861.5,
+        "bottom": 905.5
+      },
+      "buyBoxBottom": -820.65625
+    },
+    "at3500": {
+      "found": true,
+      "scrollY": 3500,
+      "vh": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "inViewportPx": 0,
+      "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "visible",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "false",
+      "inert": false,
+      "button": {
+        "text": "U korpu: Kočioni disk prednji 340 × 30 m",
+        "top": 861.5,
+        "bottom": 905.5
+      },
+      "buyBoxBottom": -2520.65625
+    },
+    "backTop": {
+      "found": true,
+      "scrollY": 0,
+      "vh": 844,
+      "top": 922,
+      "bottom": 987,
+      "height": 65,
+      "inViewportPx": 0,
+      "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "transform": "matrix(1, 0, 0, 1, 0, 143)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "true",
+      "inert": true,
+      "button": {
+        "text": "U korpu: Kočioni disk prednji 340 × 30 m",
+        "top": 933,
+        "bottom": 977
+      },
+      "buyBoxBottom": 979.34375
+    }
+  },
+  "keyboard": {
+    "prev": "A Kočioni diskovi za SEAT Leon",
+    "after": {
+      "active": "BUTTON U korpu: Kočioni disk prednji 340 × 30 m",
+      "inBar": true,
+      "top": 861.5,
+      "bottom": 905.5,
+      "vh": 844,
+      "scrollY": 3500
+    }
+  },
+  "log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

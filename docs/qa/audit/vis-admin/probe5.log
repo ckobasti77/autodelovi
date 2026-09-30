@@ -1,0 +1,9 @@
+mechanic http://localhost:3100/admin/majstori?status=odobreni
+1920 /admin/upiti {"client":1630,"scroll":1630,"over":0}
+1920 /admin/proizvodi {"client":1630,"scroll":1630,"over":0}
+1920 /admin/porudzbine?status=sve {"client":1630,"scroll":1630,"over":0}
+2560 /admin/upiti {"client":1630,"scroll":1630,"over":0}
+2560 /admin/proizvodi {"client":1630,"scroll":1630,"over":0}
+2560 /admin/porudzbine?status=sve {"client":1630,"scroll":1630,"over":0}
+390 {"x":16,"y":173,"w":358,"h":498}
+DONE

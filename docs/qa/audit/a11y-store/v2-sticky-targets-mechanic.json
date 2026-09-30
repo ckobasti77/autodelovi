@@ -1,0 +1,118 @@
+{
+ "sticky 1440 /delovi/kocioni-diskovi": {
+  "scrollPaddingTop": "80px",
+  "hits": [
+   {
+    "name": "Preskoči na sadržaj",
+    "top": 12,
+    "h": 39,
+    "hdrBottom": 65,
+    "pos": "sticky",
+    "coveredPct": 100
+   }
+  ],
+  "total": 1,
+  "full": 1
+ },
+ "sticky 1440 /deo/kocioni-disk-prednji-276-24-mm-demo-0004": {
+  "scrollPaddingTop": "80px",
+  "hits": [
+   {
+    "name": "Preskoči na sadržaj",
+    "top": 12,
+    "h": 39,
+    "hdrBottom": 65,
+    "pos": "sticky",
+    "coveredPct": 100
+   },
+   {
+    "name": "Preskoči na sadržaj",
+    "top": 12,
+    "h": 39,
+    "hdrBottom": 65,
+    "pos": "sticky",
+    "coveredPct": 100
+   }
+  ],
+  "total": 2,
+  "full": 2
+ },
+ "sticky 390 /delovi/kocioni-diskovi": {
+  "scrollPaddingTop": "80px",
+  "hits": [
+   {
+    "name": "Preskoči na sadržaj",
+    "top": 12,
+    "h": 39,
+    "hdrBottom": 57,
+    "pos": "sticky",
+    "coveredPct": 100
+   },
+   {
+    "name": "Preskoči na sadržaj",
+    "top": 12,
+    "h": 39,
+    "hdrBottom": 57,
+    "pos": "sticky",
+    "coveredPct": 100
+   }
+  ],
+  "total": 2,
+  "full": 2
+ },
+ "sticky 390 /deo/kocioni-disk-prednji-276-24-mm-demo-0004": {
+  "scrollPaddingTop": "80px",
+  "hits": [
+   {
+    "name": "Preskoči na sadržaj",
+    "top": 12,
+    "h": 39,
+    "hdrBottom": 57,
+    "pos": "sticky",
+    "coveredPct": 100
+   },
+   {
+    "name": "Preskoči na sadržaj",
+    "top": 12,
+    "h": 39,
+    "hdrBottom": 57,
+    "pos": "sticky",
+    "coveredPct": 100
+   }
+  ],
+  "total": 2,
+  "full": 2
+ },
+ "targets390 /": [
+  "a \"Pošaljite upit\" 107x21 spacingConflict=false"
+ ],
+ "axe390 /": [],
+ "targets390 /delovi/kocioni-diskovi": [],
+ "axe390 /delovi/kocioni-diskovi": [],
+ "targets390 /deo/kocioni-disk-prednji-276-24-mm-demo-0004": [],
+ "axe390 /deo/kocioni-disk-prednji-276-24-mm-demo-0004": [],
+ "targets390 /upit": [
+  "button \"\" 20x20 spacingConflict=true",
+  "button \"\" 20x20 spacingConflict=true",
+  "button \"\" 20x20 spacingConflict=true",
+  "button \"\" 20x20 spacingConflict=true",
+  "button \"\" 20x20 spacingConflict=true"
+ ],
+ "axe390 /upit": [],
+ "targets390 /porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw": [],
+ "axe390 /porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw": [],
+ "prijava paste": {
+  "notPrevented": true,
+  "autocomplete": "current-password",
+  "showToggle": false
+ },
+ "mech buybox aria": ". proizvođača\n  - definition: \"57447\"\n  - button \"Izaberite vozilo da proverimo da li deo odgovara\"\n  - text: \"Maloprodajna cena: 4.690 RSD Vaša cena · rabat 15 % 3.987 RSD sa PDV-om Malo na stanju · 3 kom. · Isporuka za 1–2 radna dana\"\n  - 'group \"Količina: Kočioni disk prednji 276 × 24 mm\"':\n    - button \"Smanji količinu\" [disabled]\n    - spinbutton \"Količina\": \"1\"\n    - button \"Povećaj količinu\"\n  - 'button \"Dodaj u korpu : Kočioni disk prednji 276 × 24 mm\"'\n  - link \"Pošaljite upit\":\n    - /url: /upit?proizvod=kocioni-disk-prednji-276-24-mm-demo-0004\n  - 'button \"Sačuvaj u omiljeno : Kočioni disk prednji 276 × 24 mm\"'\n  - list:\n    - listitem: Kurir 450 RSD, besplatno iznad 10.000 RSD · pouzećem ili virmanom\n    - listitem: Lično preuzimanje bez troška · plaćanje gotovinom ili karticom\n    - listitem:\n      - text: Bez plaćanja na sajtu.\n      - link \"Dostava i plaćanje\":\n        - /url: /dostava-i-placanje\n  - region \"Kompatibilnost\":\n    - heading \"Kompatibilnost\" [level=2]\n    - paragraph:\n      - text: Pre ugradnje uporedite OEM broj sa starim delom. Kad niste sigurni,\n      - link \"pošaljite broj šasije\":\n        - /url: /upit?proizvod=kocioni-disk-prednji-276-24-mm-demo-0004\n      - text: .\n    - table \"Vozila za koja deo odgovara\":\n      - caption: Vozila za koja deo odgovara\n      - rowgroup:\n        - row \"Marka Model / generacija Godine Motor Napomena\":\n          - columnheader \"Marka\"\n          - columnheader \"M",
+ "mech price region": [
+  "DIV product-your-price aria-label=null \"MPMaloprodajna cena: 4.690 RSDVaša cena · rabat 15 %3.987RSDsa PDV-om\"",
+  "DIV product-your-price aria-label=null \"MPMaloprodajna cena: 7.490 RSDVaša cena6.367RSDsa PDV-om\"",
+  "DIV product-your-price aria-label=null \"MPMaloprodajna cena: 5.490 RSDVaša cena4.667RSDsa PDV-om\"",
+  "DIV product-your-price aria-label=null \"MPMaloprodajna cena: 3.890 RSDVaša cena3.307RSDsa PDV-om\"",
+  "DIV product-your-price aria-label=null \"MPMaloprodajna cena: 3.990 RSDVaša cena3.392RSDsa PDV-om\"",
+  "DIV product-your-price aria-label=null \"MPMaloprodajna cena: 4.690 RSDVaša cena3.987RSDsa PDV-om\""
+ ]
+}

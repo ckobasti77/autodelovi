@@ -1,0 +1,104 @@
+{
+  "390": {
+    "wrapperLeft": 17,
+    "wrapperRight": 373,
+    "wrapperW": 356,
+    "tableScrollW": 640,
+    "overflowX": "auto",
+    "ths": [
+      "Artikal:17-360",
+      "Kol.:360-405(CLIPPED)",
+      "Cena:405-494(CLIPPED)",
+      "Rabat:494-551(CLIPPED)",
+      "Iznos:551-657(CLIPPED)"
+    ],
+    "sectionTop": 315,
+    "docOverflow": 0,
+    "f": "docs/qa/audit/verify/vis-admin/vis-admin-06-reproduce-390.webp"
+  },
+  "768": {
+    "wrapperLeft": 17,
+    "wrapperRight": 751,
+    "wrapperW": 734,
+    "tableScrollW": 734,
+    "overflowX": "auto",
+    "ths": [
+      "Artikal:17-410",
+      "Kol.:410-462",
+      "Cena:462-564",
+      "Rabat:564-630",
+      "Iznos:630-751"
+    ],
+    "sectionTop": 271,
+    "docOverflow": 0,
+    "f": "docs/qa/audit/verify/vis-admin/vis-admin-06-reproduce-768.webp"
+  },
+  "1024": {
+    "wrapperLeft": 89,
+    "wrapperRight": 655,
+    "wrapperW": 566,
+    "tableScrollW": 640,
+    "overflowX": "auto",
+    "ths": [
+      "Artikal:89-432",
+      "Kol.:432-477",
+      "Cena:477-566",
+      "Rabat:566-623",
+      "Iznos:623-729(CLIPPED)"
+    ],
+    "sectionTop": 219,
+    "docOverflow": 0,
+    "f": "docs/qa/audit/verify/vis-admin/vis-admin-06-reproduce-1024.webp"
+  },
+  "1152": {
+    "wrapperLeft": 89,
+    "wrapperRight": 783,
+    "wrapperW": 694,
+    "tableScrollW": 694,
+    "overflowX": "auto",
+    "ths": [
+      "Artikal:89-461",
+      "Kol.:461-509",
+      "Cena:509-606",
+      "Rabat:606-668",
+      "Iznos:668-783"
+    ],
+    "sectionTop": 219,
+    "docOverflow": 0,
+    "f": "docs/qa/audit/verify/vis-admin/vis-admin-06-reproduce-1152.webp"
+  },
+  "1280": {
+    "wrapperLeft": 89,
+    "wrapperRight": 851,
+    "wrapperW": 762,
+    "tableScrollW": 762,
+    "overflowX": "auto",
+    "ths": [
+      "Artikal:89-497",
+      "Kol.:497-551",
+      "Cena:551-657",
+      "Rabat:657-725",
+      "Iznos:725-851"
+    ],
+    "sectionTop": 219,
+    "docOverflow": 0,
+    "f": "docs/qa/audit/verify/vis-admin/vis-admin-06-reproduce-1280.webp"
+  },
+  "1440": {
+    "wrapperLeft": 257,
+    "wrapperRight": 1011,
+    "wrapperW": 754,
+    "tableScrollW": 754,
+    "overflowX": "auto",
+    "ths": [
+      "Artikal:257-661",
+      "Kol.:661-714",
+      "Cena:714-819",
+      "Rabat:819-886",
+      "Iznos:886-1011"
+    ],
+    "sectionTop": 219,
+    "docOverflow": 0,
+    "f": "docs/qa/audit/verify/vis-admin/vis-admin-06-reproduce-1440.webp"
+  }
+}

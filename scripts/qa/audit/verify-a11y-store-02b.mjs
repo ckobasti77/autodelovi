@@ -1,0 +1,21 @@
+/** a11y-store-02 verify: vehicle picker opened from the category sidebar button (1440). */
+import { writeFileSync } from "node:fs";
+import { launch, newContext, BASE } from "./kit.mjs";
+const browser = await launch();
+const ctx = await newContext(browser, { width: 1440, height: 900, tag: "ver02b" });
+const page = await ctx.newPage();
+const act = () => page.evaluate(() => { const e = document.activeElement; return !e || e === document.body ? "BODY" : `${e.tagName.toLowerCase()} "${(e.getAttribute("aria-label") || e.textContent || "").trim().slice(0, 40)}"`; });
+await page.goto(BASE + "/delovi/kocioni-diskovi", { waitUntil: "load", timeout: 180000 });
+await page.waitForTimeout(2500);
+const btn = page.locator("main").getByRole("button", { name: "Izaberite vozilo" }).first();
+await btn.focus();
+const rec = { route: "/delovi/kocioni-diskovi", w: 1440, before: await act() };
+await page.keyboard.press("Enter"); await page.waitForTimeout(1800);
+rec.afterOpen = await act();
+await page.keyboard.press("Escape"); await page.waitForTimeout(1000);
+rec.afterClose = await act();
+await page.keyboard.press("Tab"); await page.waitForTimeout(250);
+rec.afterNextTab = await act();
+console.log(JSON.stringify(rec));
+writeFileSync("docs/qa/audit/verify/a11y-store/a11y-store-02-reproduce-category-sidebar.json", JSON.stringify(rec, null, 1));
+await browser.close();

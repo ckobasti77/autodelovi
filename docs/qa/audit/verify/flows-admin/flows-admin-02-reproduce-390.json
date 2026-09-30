@@ -1,0 +1,78 @@
+{
+  "NUM": "UP-2026-000082",
+  "width": 390,
+  "steps": [
+    {
+      "name": "contact",
+      "text": "KontaktImeUpit Test verify-fa02-390Telefon+381 64 333 4455Želi odgovorTelefonomPozoviViberWhatsAppDodelaRadi na upituNikoVlasnikInterna beleška0 / 1.000Dodaj beleškuIzvorBez podataka o izvoru (direktan dolazak ili stari pregledač)."
+    },
+    {
+      "name": "send dialog",
+      "text": "Poslati ponudu kupcu?Upit Test verify-fa02-390 dobija ponudu na 4.690 RSD sa linkom za prihvatanje. Ponuda važi 7 dana.OdustaniPošalji ponudu"
+    },
+    {
+      "name": "after send (share options)",
+      "statusLinks": [],
+      "viberWa": [
+        "viber://chat?number=%2B+381643334455",
+        "https://wa.me/+381643334455"
+      ],
+      "telLinks": [
+        "tel:+381643334455",
+        "tel:+381643334455"
+      ],
+      "copyButtons": [],
+      "buttons": [
+        "Preuzmi upit",
+        "Zatvori upit",
+        "Pretvori u porudžbinu",
+        "Nova verzija ponude",
+        "Dodaj belešku"
+      ]
+    },
+    {
+      "name": "history",
+      "text": "Istorija30.09. 22:46Ponuda br. 1 poslataVlasnik30.09. 22:46Ponuda je poslata (važi do 07.10.2026.).Vlasnik30.09. 22:46U obradiVlasnik30.09. 22:44Upit je primljen.Upit Test verify-fa02-390 · Kupac"
+    },
+    {
+      "name": "mentions e-mail after send",
+      "emailWordInMain": false
+    },
+    {
+      "name": "outbox mentions inquiry",
+      "found": true,
+      "sample": "E-poštaSve poruke koje sistem pravi za kupce, majstore i osoblje — sa statusom isporuke.PorukeŠabloni i probne porukeRežim slanja: Samo zapis. Poruke se samo beleže ovde — ništa ne odlazi kupcima ni osoblju.Promenite režim slanjaSvi statusiZabeleženoU reduPoslatoIsporučenoKasniOdbijenoPrijavljenoGre"
+    },
+    {
+      "name": "convert dialog",
+      "text": "Pretvori ponudu u porudžbinuKupac je prihvatio ponudu telefonom ili u radnji. Porudžbina na 4.690 RSD dobija sve stavke iz ponude; upit se zatvara kao prihvaćen.Ime (obavezno)Prezime (obavezno)Telefon (obavezno)E-pošta (obavezno)DostavaLično preuzimanjeKurirska službaPlaćanjeGotovinom pri preuzimanjuKarticom pri preuzimanjuOdloženo plaćanjeOdustaniKreiraj porudžbinu",
+      "emailValue": "",
+      "emailRequiredAttr": true,
+      "phoneValue": "+381643334455"
+    },
+    {
+      "name": "native validation",
+      "validationMessage": "Please fill out this field.",
+      "valid": false,
+      "dialogOpen": true,
+      "url": "http://localhost:3100/admin/upiti/UP-2026-000082"
+    },
+    {
+      "name": "server validation",
+      "alerts": [
+        "Upišite ispravnu e-mail adresu."
+      ],
+      "dialogOpen": true,
+      "url": "http://localhost:3100/admin/upiti/UP-2026-000082"
+    },
+    {
+      "name": "errors",
+      "console": [
+        "[CONVEX M(inquiriesAdmin:convertToOrder)] [Request ID: 916664d059d54a22] Server Error\nUncaught ConvexError: {\"field\":\"contact.email\",\"code\":\"INVALID\",\"message\":\"Upišite ispravnu e-mail adresu.\"}\n    at handler (../convex/inquiriesAdmin.ts:672:6)\n"
+      ],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  ]
+}

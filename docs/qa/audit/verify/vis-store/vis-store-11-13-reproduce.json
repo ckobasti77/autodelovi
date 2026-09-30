@@ -1,0 +1,380 @@
+{
+  "vis-store-11": [
+    {
+      "url": "/delovi/kocioni-diskovi",
+      "width": 1440,
+      "height": 900,
+      "a": {
+        "scrollY": 0,
+        "asideTop": 341,
+        "asideBottom": 1815,
+        "asideHeight": 1474,
+        "asidePosition": "static",
+        "stickyAncestor": null,
+        "resultsHeight": 1474,
+        "samoNaStanjuTop": 514,
+        "docHeight": 2711,
+        "cards": 9
+      },
+      "b": {
+        "scrollY": 900,
+        "asideTop": -559,
+        "asideBottom": 915,
+        "asideHeight": 1474,
+        "asidePosition": "static",
+        "stickyAncestor": null,
+        "resultsHeight": 1474,
+        "samoNaStanjuTop": -386,
+        "docHeight": 2711,
+        "cards": 9
+      },
+      "c": {
+        "scrollY": 1800,
+        "asideTop": -1459,
+        "asideBottom": 15,
+        "asideHeight": 1474,
+        "asidePosition": "static",
+        "stickyAncestor": null,
+        "resultsHeight": 1474,
+        "samoNaStanjuTop": -1286,
+        "docHeight": 2711,
+        "cards": 9
+      },
+      "img": "docs/qa/audit/verify/vis-store/vis-store-11-reproduce-cat-1440-scrolled.webp",
+      "console": [],
+      "pageErrors": []
+    },
+    {
+      "url": "/delovi/kocioni-diskovi",
+      "width": 1280,
+      "height": 800,
+      "a": {
+        "scrollY": 0,
+        "asideTop": 338,
+        "asideBottom": 1720,
+        "asideHeight": 1382,
+        "asidePosition": "static",
+        "stickyAncestor": null,
+        "resultsHeight": 1382,
+        "samoNaStanjuTop": 511,
+        "docHeight": 2639,
+        "cards": 9
+      },
+      "b": {
+        "scrollY": 900,
+        "asideTop": -562,
+        "asideBottom": 820,
+        "asideHeight": 1382,
+        "asidePosition": "static",
+        "stickyAncestor": null,
+        "resultsHeight": 1382,
+        "samoNaStanjuTop": -389,
+        "docHeight": 2639,
+        "cards": 9
+      },
+      "c": {
+        "scrollY": 1800,
+        "asideTop": -1462,
+        "asideBottom": -80,
+        "asideHeight": 1382,
+        "asidePosition": "static",
+        "stickyAncestor": null,
+        "resultsHeight": 1382,
+        "samoNaStanjuTop": -1289,
+        "docHeight": 2639,
+        "cards": 9
+      },
+      "img": "docs/qa/audit/verify/vis-store/vis-store-11-reproduce-cat-1280-scrolled.webp",
+      "console": [],
+      "pageErrors": []
+    },
+    {
+      "url": "/delovi/kocioni-diskovi/volkswagen/golf",
+      "width": 1440,
+      "height": 900,
+      "a": {
+        "scrollY": 0,
+        "asideTop": 341,
+        "asideBottom": 1381,
+        "asideHeight": 1040,
+        "asidePosition": "static",
+        "stickyAncestor": null,
+        "resultsHeight": 1040,
+        "samoNaStanjuTop": 568,
+        "docHeight": 3105,
+        "cards": 6
+      },
+      "b": {
+        "scrollY": 900,
+        "asideTop": -559,
+        "asideBottom": 481,
+        "asideHeight": 1040,
+        "asidePosition": "static",
+        "stickyAncestor": null,
+        "resultsHeight": 1040,
+        "samoNaStanjuTop": -332,
+        "docHeight": 3105,
+        "cards": 6
+      },
+      "c": {
+        "scrollY": 1800,
+        "asideTop": -1459,
+        "asideBottom": -419,
+        "asideHeight": 1040,
+        "asidePosition": "static",
+        "stickyAncestor": null,
+        "resultsHeight": 1040,
+        "samoNaStanjuTop": -1232,
+        "docHeight": 3105,
+        "cards": 6
+      },
+      "img": "docs/qa/audit/verify/vis-store/vis-store-11-reproduce-landing-1440-scrolled.webp",
+      "console": [],
+      "pageErrors": []
+    },
+    {
+      "url": "/delovi/kocione-plocice?stanje=na-stanju",
+      "width": 1920,
+      "height": 1080,
+      "a": {
+        "scrollY": 0,
+        "asideTop": 345,
+        "asideBottom": 1286,
+        "asideHeight": 941,
+        "asidePosition": "static",
+        "stickyAncestor": null,
+        "resultsHeight": 941,
+        "samoNaStanjuTop": 518,
+        "docHeight": 2215,
+        "cards": 11
+      },
+      "b": {
+        "scrollY": 900,
+        "asideTop": -555,
+        "asideBottom": 386,
+        "asideHeight": 941,
+        "asidePosition": "static",
+        "stickyAncestor": null,
+        "resultsHeight": 941,
+        "samoNaStanjuTop": -382,
+        "docHeight": 2215,
+        "cards": 11
+      },
+      "c": {
+        "scrollY": 1135,
+        "asideTop": -790,
+        "asideBottom": 151,
+        "asideHeight": 941,
+        "asidePosition": "static",
+        "stickyAncestor": null,
+        "resultsHeight": 941,
+        "samoNaStanjuTop": -617,
+        "docHeight": 2215,
+        "cards": 11
+      },
+      "img": "docs/qa/audit/verify/vis-store/vis-store-11-reproduce-plocice-1920-scrolled.webp",
+      "console": [],
+      "pageErrors": []
+    }
+  ],
+  "vis-store-12": [
+    {
+      "w": 1440,
+      "info": {
+        "badgeCount": 1,
+        "visibleBadges": 1,
+        "badge": {
+          "top": 495,
+          "left": 846,
+          "fontSize": "13px",
+          "color": "rgb(150, 144, 136)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "height": 18,
+          "icon": {
+            "w": 14,
+            "h": 14
+          }
+        },
+        "checkbox": {
+          "top": 673,
+          "left": 863,
+          "w": 20,
+          "h": 20,
+          "border": "rgb(110, 118, 127)",
+          "radius": "2px",
+          "label": "Pošaljite mi jedno obaveštenje kad artikal stigne."
+        },
+        "gapPx": 160,
+        "primaryButtons": [
+          "Pošaljite upit",
+          "Pošaljite upit — javljamo se u toku radn"
+        ]
+      },
+      "img": "docs/qa/audit/verify/vis-store/vis-store-12-reproduce-1440.webp",
+      "crop": "docs/qa/audit/verify/vis-store/vis-store-12-reproduce-1440-crop.webp",
+      "console": []
+    },
+    {
+      "w": 390,
+      "info": {
+        "badgeCount": 1,
+        "visibleBadges": 1,
+        "badge": {
+          "top": 807,
+          "left": 16,
+          "fontSize": "13px",
+          "color": "rgb(150, 144, 136)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "height": 18,
+          "icon": {
+            "w": 14,
+            "h": 14
+          }
+        },
+        "checkbox": {
+          "top": 986,
+          "left": 33,
+          "w": 20,
+          "h": 20,
+          "border": "rgb(110, 118, 127)",
+          "radius": "2px",
+          "label": "Pošaljite mi jedno obaveštenje kad artikal stigne."
+        },
+        "gapPx": 160,
+        "primaryButtons": [
+          "Pošaljite upit",
+          "Pošaljite upit — javljamo se u toku radn"
+        ]
+      },
+      "img": "docs/qa/audit/verify/vis-store/vis-store-12-reproduce-390.webp",
+      "crop": "docs/qa/audit/verify/vis-store/vis-store-12-reproduce-390-crop.webp",
+      "console": []
+    }
+  ],
+  "vis-store-13": [
+    {
+      "q": "qqzzvvkk",
+      "w": 390,
+      "info": {
+        "h1": "Nema rezultata za „qqzzvvkk“",
+        "h1Font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial,",
+        "tried": [
+          "Za „qqzzvvkk“ nemamo artikal u katalogu. Pošaljite upit — proverićemo kod dobavljača i javiti vam se u toku radnog dana."
+        ],
+        "monoEcho": [],
+        "telLinks": [],
+        "mainActions": [
+          "button  -> ",
+          "button Pretraži -> ",
+          "a Pošaljite upit -> /upit?q=qqzzvvkk"
+        ],
+        "categoryNav": false
+      },
+      "img": "docs/qa/audit/verify/vis-store/vis-store-13-reproduce-text-390.webp",
+      "console": []
+    },
+    {
+      "q": "qqzzvvkk",
+      "w": 1440,
+      "info": {
+        "h1": "Nema rezultata za „qqzzvvkk“",
+        "h1Font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial,",
+        "tried": [
+          "Za „qqzzvvkk“ nemamo artikal u katalogu. Pošaljite upit — proverićemo kod dobavljača i javiti vam se u toku radnog dana."
+        ],
+        "monoEcho": [],
+        "telLinks": [],
+        "mainActions": [
+          "button  -> ",
+          "button Pretraži -> ",
+          "a Pošaljite upit -> /upit?q=qqzzvvkk"
+        ],
+        "categoryNav": false
+      },
+      "img": "docs/qa/audit/verify/vis-store/vis-store-13-reproduce-text-1440.webp",
+      "console": []
+    },
+    {
+      "q": "1K0999999ZZ",
+      "w": 390,
+      "info": {
+        "h1": "Nema rezultata za „1K0999999ZZ“",
+        "h1Font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial,",
+        "tried": [
+          "Tražili smo broj 1K0999999ZZ u OEM, zamenskim i kataloškim brojevima.",
+          "Za „1K0999999ZZ“ nemamo artikal u katalogu. Pošaljite upit — proverićemo kod dobavljača i javiti vam se u toku radnog dana."
+        ],
+        "monoEcho": [
+          "1K0999999ZZ"
+        ],
+        "telLinks": [],
+        "mainActions": [
+          "button  -> ",
+          "button Pretraži -> ",
+          "a Pošaljite upit -> /upit?q=1K0999999ZZ&kodovi=1K0999999ZZ"
+        ],
+        "categoryNav": false
+      },
+      "img": "docs/qa/audit/verify/vis-store/vis-store-13-reproduce-code-390.webp",
+      "console": []
+    },
+    {
+      "q": "kocioni zzqq",
+      "w": 390,
+      "info": {
+        "h1": "Rezultati za „kocioni zzqq“",
+        "h1Font": "\"Public Sans\", \"Public Sans Fallback\", \"Public Sans\", Arial,",
+        "tried": [],
+        "monoEcho": [
+          "8K0 615 085",
+          "3C0 615 098",
+          "6R0 615 645",
+          "5Q0 615 505 R",
+          "1K0 615 868 F",
+          "5Q0 615 666 A",
+          "1K0 615 540 Q",
+          "1K0 615 591 E",
+          "1K0 615 591 E"
+        ],
+        "telLinks": [],
+        "mainActions": [
+          "button  -> ",
+          "button Pretraži -> ",
+          "a Kočioni disk prednji 320 × 30 mm -> /deo/kocioni-disk-prednji-320-30-mm-demo-0008",
+          "button Poruči: Kočioni disk prednji 320 × 30 mm -> ",
+          "a Kočioni disk prednji 312 × 25 mm -> /deo/kocioni-disk-prednji-312-25-mm-demo-0007",
+          "button U korpu: Kočioni disk prednji 312 × 25 mm -> ",
+          "a Kočioni disk prednji 256 × 22 mm -> /deo/kocioni-disk-prednji-256-22-mm-demo-0006",
+          "button U korpu: Kočioni disk prednji 256 × 22 mm -> ",
+          "a Kočioni disk prednji 276 × 24 mm -> /deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+          "button U korpu: Kočioni disk prednji 276 × 24 mm -> ",
+          "a Kočioni disk prednji 288 × 25 mm, ventilirani -> /deo/kocioni-disk-prednji-288-25-mm-ventilirani-demo-0001",
+          "button Poruči: Kočioni disk prednji 288 × 25 mm, ventilir -> ",
+          "a Kočioni disk prednji 340 × 30 mm, GTI -> /deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005",
+          "button U korpu: Kočioni disk prednji 340 × 30 mm, GTI -> ",
+          "a Kočioni disk zadnji 272 × 10 mm, puni -> /deo/kocioni-disk-zadnji-272-10-mm-puni-demo-0003",
+          "button U korpu: Kočioni disk zadnji 272 × 10 mm, puni -> ",
+          "a Kočioni disk prednji 312 × 25 mm, ventilirani -> /deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-e001",
+          "button U korpu: Kočioni disk prednji 312 × 25 mm, ventili -> ",
+          "a Kočioni disk prednji 312 × 25 mm, ventilirani -> /deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-0002",
+          "button U korpu: Kočioni disk prednji 312 × 25 mm, ventili -> "
+        ],
+        "categoryNav": false
+      },
+      "img": "docs/qa/audit/verify/vis-store/vis-store-13-reproduce-mixed-390.webp",
+      "console": []
+    }
+  ],
+  "vis-store-13-404": [
+    "Pretraži",
+    "Izaberite vozilomarka, model, motorIzabe",
+    "Kočione pločice",
+    "Kočioni diskovi",
+    "Amortizeri i opruge",
+    "Zupčasti kaiš i vodena pumpa",
+    "Filteri",
+    "Turbina",
+    "Svi delovi",
+    "Pošaljite upit"
+  ]
+}

@@ -1,0 +1,125 @@
+[
+  {
+    "label": "home-to-category",
+    "href": "/delovi/kocione-plocice",
+    "landed": "/delovi/kocione-plocice",
+    "scrollYAtLanding": 0,
+    "hiddenInViewportAt2500ms": [],
+    "afterScroll": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    }
+  },
+  {
+    "label": "category-to-product",
+    "href": "/deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013",
+    "landed": "/deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013",
+    "scrollYAtLanding": 0,
+    "hiddenInViewportAt2500ms": [],
+    "afterScroll": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    }
+  },
+  {
+    "label": "product-to-category",
+    "error": "TimeoutError: locator.scrollIntoViewIfNeeded: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('main a[href=\"/delovi/kocioni-diskovi\"]').first()\n"
+  },
+  {
+    "label": "category-to-header-vozila",
+    "href": "/vozila",
+    "landed": "/vozila",
+    "scrollYAtLanding": 0,
+    "hiddenInViewportAt2500ms": [],
+    "afterScroll": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    }
+  },
+  {
+    "label": "vozila-to-brand",
+    "href": "/vozila/volkswagen",
+    "landed": "/vozila/volkswagen",
+    "scrollYAtLanding": 0,
+    "hiddenInViewportAt2500ms": [],
+    "afterScroll": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    }
+  },
+  {
+    "label": "brand-to-model",
+    "href": "/vozila/volkswagen/golf",
+    "landed": "/vozila/volkswagen/golf",
+    "scrollYAtLanding": 0,
+    "hiddenInViewportAt2500ms": [],
+    "afterScroll": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    }
+  },
+  {
+    "label": "model-to-header-majstori",
+    "href": "/za-majstore",
+    "landed": "/za-majstore",
+    "scrollYAtLanding": 0,
+    "hiddenInViewportAt2500ms": [],
+    "afterScroll": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    }
+  },
+  {
+    "label": "majstori-to-footer-dostava",
+    "href": "/dostava-i-placanje",
+    "landed": "/dostava-i-placanje",
+    "scrollYAtLanding": 0,
+    "hiddenInViewportAt2500ms": [],
+    "afterScroll": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    }
+  },
+  {
+    "label": "footer-to-home",
+    "href": "/",
+    "landed": "/",
+    "scrollYAtLanding": 0,
+    "hiddenInViewportAt2500ms": [],
+    "afterScroll": {
+      "stuck": [
+        "span: Karoserija,",
+        "span: stakla",
+        "span: i",
+        "span: svetla",
+        "span: 01",
+        "span: ·",
+        "span: 10 kategorija",
+        "span: ·",
+        "span: 20 delova",
+        "span: se",
+        "span: skidaju",
+        "span: stakla",
+        "span: i",
+        "span: svetla."
+      ],
+      "pending": 0,
+      "words": 16
+    }
+  },
+  {
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "04:fileRowCount": "3 redova",
+  "04:fileLine": "CSV · 1 KB · 3 redova · razdvajanje „;“",
+  "04:mappingEvidence": "Prepoznato iz fajla: srpski zapis (2 ćelija).",
+  "04:check": "Ništa se još ne upisuje. Upisaće se najviše 3 redova.",
+  "04:dryrun": {
+    "warning": "1 redova sa upozorenjem",
+    "writes": "3 artikala se upisuje; redovi sa greškom se preskaču.",
+    "head": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\nKorak 1, završen:\nDatoteka\nKorak 2, završen:\nKolone\nKorak 3, završen:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\nNovi artikli\n0\nIzmene\n3\nBez promena\n0\nPreskočeni\n0\nGreške\n0\n1 redova sa upozorenjem\nProbni rezultat\nIzveštaj\nSvi redovi\nNovi (0)\nIzmene (3)\nGreške (0)\nPreskočeni (0)\n\nNema redova ove vrste.\n\nOtkaži uvoz\n3 artikala se upisuje; redovi sa greškom se preskaču.\nUpiši u katalog"
+  },
+  "04:cancelled": "Uvoz iz Excela\n\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\n\nŠablon (.xlsx)\nIstorija\n1\nKorak 1:\nDatoteka\n2\nKorak 2:\nKolone\n3\nKorak 3:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\n\nPrevucite fajl ovde\n\nxlsx, xls ili csv · do 25 MB i 50.000 red",
+  "04:history": [
+    "3 redova",
+    "4 redova",
+    "169 redova",
+    "3 redova",
+    "12 redova",
+    "20 redova",
+    "500 redova",
+    "20 redova",
+    "500 redova",
+    "20 redova"
+  ],
+  "watch": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

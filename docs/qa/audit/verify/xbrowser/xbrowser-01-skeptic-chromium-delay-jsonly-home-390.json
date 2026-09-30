@@ -1,0 +1,57 @@
+[
+  {
+    "jsOnly": true,
+    "engine": "chromium",
+    "mode": "delay",
+    "route": "home",
+    "width": 390,
+    "run": 0,
+    "visibleAt": 727,
+    "hydratedAtVisible": false,
+    "hydratedDuringTyping": false,
+    "valueBeforeHydration": "5Q0615505R",
+    "typedAt": 2690,
+    "hydratedAt": 14049,
+    "timeline": [
+      {
+        "at": 28,
+        "v": "5Q0615505R"
+      },
+      {
+        "at": 213,
+        "v": ""
+      }
+    ],
+    "after": "",
+    "focused": true,
+    "shot": "docs/qa/audit/verify/xbrowser/xbrowser-01-skeptic-chromium-delay-390-home-after.webp",
+    "consoleErrors": []
+  },
+  {
+    "jsOnly": true,
+    "engine": "chromium",
+    "mode": "delay",
+    "route": "home",
+    "width": 390,
+    "run": 1,
+    "visibleAt": 6401,
+    "hydratedAtVisible": false,
+    "hydratedDuringTyping": false,
+    "valueBeforeHydration": "5Q0615505R",
+    "typedAt": 7414,
+    "hydratedAt": 11982,
+    "timeline": [
+      {
+        "at": 9,
+        "v": "5Q0615505R"
+      },
+      {
+        "at": 248,
+        "v": ""
+      }
+    ],
+    "after": "",
+    "focused": true,
+    "consoleErrors": []
+  }
+]

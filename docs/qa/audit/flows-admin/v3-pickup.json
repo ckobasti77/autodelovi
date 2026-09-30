@@ -1,0 +1,124 @@
+{
+  "steps": [
+    {
+      "name": "placed",
+      "at": "2026-09-30T20:11:41.205Z",
+      "number": "SK-2026-000138",
+      "total": "4.690 RSD"
+    },
+    {
+      "name": "A confirmed",
+      "at": "2026-09-30T20:11:53.414Z",
+      "headA": "PorudžbinePorudžbina SK-2026-000138PotvrđenaPrimljena 30.09. 22:11 · SajtPredračunOtpremnicaPromeni statusSpremna za pre"
+    },
+    {
+      "name": "B confirm after A",
+      "at": "2026-09-30T20:11:58.194Z",
+      "bDialogStill": true,
+      "bDialogText": "Potvrdi — SK-2026-000138Stanje se umanjuje za artikle iz porudžbine (1 stavka); kupac dobija potvrdu.OdustaniPotvrdi",
+      "headB": "PorudžbinePorudžbina SK-2026-000138PotvrđenaPrimljena 30.09. 22:11 · SajtPredračunOtpremnicaPromeni statusSpremna za preuzimanjeStavkeStavke se menjaju samo dok",
+      "alertsB": [
+        "Porudžbina je u međuvremenu izmenjena. Osvežite prikaz."
+      ],
+      "toastsB": [],
+      "probe": [
+        "order.created",
+        "order.status_changed"
+      ]
+    },
+    {
+      "name": "-> Spremna za preuzimanje",
+      "at": "2026-09-30T20:12:02.045Z",
+      "dialog": "Spremna za preuzimanje — SK-2026-000138Kupac dobija obaveštenje o promeni statusa.OdustaniSpremna za preuzimanje",
+      "head": "PorudžbinePorudžbina SK-2026-000138Za preuzimanjePrimljena 30.09. 22:11 · SajtPredračunOtpremnicaPromeni statusOznači kao preuzetoStavkeStav"
+    },
+    {
+      "name": "customer page after Spremna za preuzimanje",
+      "at": "2026-09-30T20:12:04.884Z",
+      "text": "PorudžbinaSK-2026-000138Spremna za preuzimanje30.09.2026. 22:11Pitanje o porudžbini? Navedite njen broj.Tok porudžbinePrimljena — završeno30.09.2026. 22:11Potvrđena — završeno30.09.2026. 22:11Spremna za preuzimanje — trenutno30.09.2026. 22:11Preuzeta — čekaStavkeKočioni disk prednji 276 × 24 mmFebi Bilstein · OEM 5Q0 615 505 R · 1 × 4.690 RSD4.690 RSDArtikli4.690 RSDDostava0 RSDUkupno4.690 RSDUrač"
+    },
+    {
+      "name": "-> Označi kao preuzeto",
+      "at": "2026-09-30T20:12:08.767Z",
+      "dialog": "Označi kao preuzeto — SK-2026-000138Kupac dobija obaveštenje o promeni statusa.OdustaniOznači kao preuzeto",
+      "head": "PorudžbinePorudžbina SK-2026-000138PreuzetaPrimljena 30.09. 22:11 · SajtPredračunOtpremnicaZavršiStavkeStavke se menjaju samo dok je porudžb"
+    },
+    {
+      "name": "customer page after Označi kao preuzeto",
+      "at": "2026-09-30T20:12:11.871Z",
+      "text": "PorudžbinaSK-2026-000138Preuzeta30.09.2026. 22:11Pitanje o porudžbini? Navedite njen broj.Tok porudžbinePrimljena — završeno30.09.2026. 22:11Potvrđena — završeno30.09.2026. 22:11Spremna za preuzimanje — završeno30.09.2026. 22:11Preuzeta — završeno30.09.2026. 22:12StavkeKočioni disk prednji 276 × 24 mmFebi Bilstein · OEM 5Q0 615 505 R · 1 × 4.690 RSD4.690 RSDArtikli4.690 RSDDostava0 RSDUkupno4.690 "
+    },
+    {
+      "name": "-> Završi",
+      "at": "2026-09-30T20:12:15.553Z",
+      "dialog": "Završi — SK-2026-000138Porudžbina se zatvara; posle toga se više ne menja.OdustaniZavrši",
+      "head": "PorudžbinePorudžbina SK-2026-000138ZavršenaPrimljena 30.09. 22:11 · SajtPredračunOtpremnicaStavkeStavke se menjaju samo dok je porudžbina no"
+    },
+    {
+      "name": "customer page after Završi",
+      "at": "2026-09-30T20:12:18.426Z",
+      "text": "PorudžbinaSK-2026-000138Završena30.09.2026. 22:11Pitanje o porudžbini? Navedite njen broj.Tok porudžbinePrimljena — završeno30.09.2026. 22:11Potvrđena — završeno30.09.2026. 22:11Spremna za preuzimanje — završeno30.09.2026. 22:11Preuzeta — završeno30.09.2026. 22:12StavkeKočioni disk prednji 276 × 24 mmFebi Bilstein · OEM 5Q0 615 505 R · 1 × 4.690 RSD4.690 RSDArtikli4.690 RSDDostava0 RSDUkupno4.690 "
+    },
+    {
+      "name": "pay dialog",
+      "at": "2026-09-30T20:14:20.059Z",
+      "dlg": false,
+      "text": ""
+    },
+    {
+      "name": "final",
+      "at": "2026-09-30T20:14:23.586Z",
+      "head": "PorudžbinePorudžbina SK-2026-000138ZavršenaPrimljena 30.09. 22:11 · SajtPredračunOtpremnicaStavkeStavke se menjaju samo dok je porudžbina nova.Stavke porudžbine SK-2026-000138ArtikalKol.CenaRabatIznosKočioni disk prednji 276 × 24 mmDEMO-0004 · OEM 5Q0 615 505 R · Febi BilsteinBilo na stanju · sada 2 kom. · skinuto 114.690 RSD—4.690 RSDArtikli4.690 RSDDostavaBesplatnoUkupno sa PDV-om4.690 RSDod toga PDV781,67 RSDNapomenaNova napomena0 / 1.000Interna napomena vidi samo osoblje, osim ako je označeno drugačije.Vidljivo kupcu na stranici porudžbineDodaj napomenuIstorija30.09. 22:12Uplata je evidentirana.Vlasnik30.09. 22:12Završena — ZavršenaVlasnik30.09. 22:12E-pošta zabeležena (nije poslata, režim log): Porudžbina SK-2026-000138 je preuzetaSistem30.09. 22:12Preuzeta — PreuzetaVlasnik30.09. 22:11E-pošta zabeležena (nije poslata, režim log): Porudžbina SK-2026-000138 je spremna za preuzimanjeS"
+    },
+    {
+      "name": "emails",
+      "at": "2026-09-30T20:14:33.132Z",
+      "e": [
+        "order_delivered logged Porudžbina SK-2026-000138 je preuzeta",
+        "order_ready_pickup logged Porudžbina SK-2026-000138 je spremna za preuzimanje",
+        "order_confirmed logged Porudžbina SK-2026-000138 je potvrđena",
+        "staff_order_new logged Nova porudžbina SK-2026-000138 — 4.690 RSD",
+        "order_received logged Porudžbina SK-2026-000138 je primljena"
+      ]
+    },
+    {
+      "name": "probe",
+      "at": "2026-09-30T20:14:36.393Z",
+      "customerType": "guest",
+      "deliveryMethod": "pickup",
+      "eventTypes": [
+        "order.created",
+        "order.status_changed",
+        "order.status_changed",
+        "order.status_changed",
+        "order.status_changed"
+      ],
+      "hasAttribution": true,
+      "itemCount": 1,
+      "paymentMethod": "pickup_cash",
+      "source": "web",
+      "status": "zavrsena",
+      "totalPara": 469000
+    },
+    {
+      "name": "errors A",
+      "at": "2026-09-30T20:14:36.393Z",
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "name": "errors B",
+      "at": "2026-09-30T20:14:36.393Z",
+      "console": [
+        "[CONVEX M(ordersAdmin:transition)] [Request ID: 4e9bbaa5bfc78ff6] Server Error\nUncaught ConvexError: {\"error\":\"same_status\",\"code\":\"CONFLICT\",\"message\":\"Porudžbina je već u tom statusu.\"}\n    at async handler (../convex/ordersAdmin.ts:448:31)\n"
+      ],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  ],
+  "number": "SK-2026-000138",
+  "token": "I7fbr76wZ7Jayt3_T15R_9rAnk80HstGcrtJzkUrmNo"
+}

@@ -1,0 +1,31 @@
+{
+  "url": "/admin/podesavanja?tab=prodaja",
+  "activeTab": "Dostava i plaćanje",
+  "tabs": [
+    "Firma",
+    "Radno vreme",
+    "Dostava i plaćanje",
+    "Obaveštenja",
+    "SEO",
+    "Praćenje",
+    "Oglasne strane",
+    "Pravni tekstovi",
+    "Funkcije",
+    "Opasna zona"
+  ],
+  "headings": [
+    "Prodaja",
+    "Načini dostave",
+    "Načini plaćanja",
+    "Kurirske službe"
+  ],
+  "mobile": {
+    "activeTab": "Dostava i plaćanje",
+    "headings": [
+      "Prodaja",
+      "Načini dostave",
+      "Načini plaćanja",
+      "Kurirske službe"
+    ]
+  }
+}

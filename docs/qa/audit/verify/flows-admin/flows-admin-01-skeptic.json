@@ -1,0 +1,115 @@
+{
+  "SRC": "qh7cqja340240s4jq1fsawnc3s8fctej",
+  "SKU": "VFY-SKEPTIC-FA01-984519",
+  "steps": [
+    {
+      "name": "private copy",
+      "at": "2026-09-30T20:43:21.435Z",
+      "PID": "qh7dckwh7evpxbsce1vdhp0cd18fcjr4",
+      "SKU": "VFY-SKEPTIC-FA01-984519",
+      "server": {
+        "active": false,
+        "name": "Verifikacija skeptik FA01",
+        "retailPricePara": 499000,
+        "source": "manual",
+        "stockQty": 0
+      }
+    },
+    {
+      "name": "initial",
+      "at": "2026-09-30T20:43:42.139Z",
+      "name0": "Verifikacija skeptik FA01",
+      "price0": "4990",
+      "note0": "",
+      "server": {
+        "active": false,
+        "name": "Verifikacija skeptik FA01",
+        "retailPricePara": 499000,
+        "source": "manual",
+        "stockQty": 0
+      }
+    },
+    {
+      "name": "v1 A dirty",
+      "at": "2026-09-30T20:43:42.771Z",
+      "saveBar": true
+    },
+    {
+      "name": "v1 B saved price",
+      "at": "2026-09-30T20:43:54.483Z",
+      "server": {
+        "active": false,
+        "name": "Verifikacija skeptik FA01",
+        "retailPricePara": 649000,
+        "source": "manual",
+        "stockQty": 0
+      }
+    },
+    {
+      "name": "v1 A before save",
+      "at": "2026-09-30T20:43:56.376Z",
+      "priceAshown": "4990",
+      "nameA": "Verifikacija skeptik FA01 (A)",
+      "alerts": [],
+      "statuses": [
+        "Imate nesačuvane izmene."
+      ]
+    },
+    {
+      "name": "v1 A saved",
+      "at": "2026-09-30T20:44:16.159Z",
+      "priceAshown": "4990",
+      "server": {
+        "active": false,
+        "name": "Verifikacija skeptik FA01 (A)",
+        "retailPricePara": 499000,
+        "source": "manual",
+        "stockQty": 0
+      }
+    },
+    {
+      "name": "v1 B after A save",
+      "at": "2026-09-30T20:44:17.749Z",
+      "priceBshown": "4990"
+    },
+    {
+      "name": "v2 B saved note",
+      "at": "2026-09-30T20:44:24.204Z",
+      "noteBshown": "skeptic note 1790801059906"
+    },
+    {
+      "name": "v2 A before save",
+      "at": "2026-09-30T20:44:25.739Z",
+      "noteAshown": ""
+    },
+    {
+      "name": "v2 A saved",
+      "at": "2026-09-30T20:44:52.074Z",
+      "noteAshown": "",
+      "server": {
+        "active": false,
+        "name": "Verifikacija skeptik FA01 (A2)",
+        "retailPricePara": 499000,
+        "source": "manual",
+        "stockQty": 0
+      }
+    },
+    {
+      "name": "Verifikacija skeptik FA01 (A2)",
+      "at": "2026-09-30T20:44:57.765Z",
+      "price": "4990",
+      "note": ""
+    },
+    {
+      "name": "audit rows",
+      "at": "2026-09-30T20:45:03.797Z",
+      "rows": [
+        "30.09. 22:44VFY-SKEPTIC-FA01-984519: naziv, interna beleškaVlasnik · Artikal: izmenaIzmene (2)",
+        "30.09. 22:44VFY-SKEPTIC-FA01-984519: interna beleškaVlasnik · Artikal: izmenaIzmene (1)",
+        "30.09. 22:43VFY-SKEPTIC-FA01-984519: naziv, cenaVlasnik · Artikal: izmenaIzmene (2)",
+        "30.09. 22:43VFY-SKEPTIC-FA01-984519: cenaVlasnik · Artikal: izmenaIzmene (1)"
+      ]
+    }
+  ],
+  "PID": "qh7dckwh7evpxbsce1vdhp0cd18fcjr4"
+}

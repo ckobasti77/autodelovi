@@ -1,0 +1,143 @@
+{
+  "stamp": "1252384",
+  "steps": [
+    {
+      "name": "created M1",
+      "companyName": "Servis Admin vfa07a-1252384",
+      "profileId": "p578kw7hbjketatm4m797haym98fda3w",
+      "email": "majstor-admin-vfa07a-1252384@primer.rs"
+    },
+    {
+      "name": "10a empty reason → click reject",
+      "dialogs": 0,
+      "alert": "Upišite razlog.",
+      "ariaInvalidCount": 0,
+      "reasonAriaInvalid": null,
+      "reasonDescribedBy": "f_r_4_-msg f_r_4_-count",
+      "reasonDescribedByText": [
+        "Majstor dobija razlog e-poštom.",
+        "0 / 500"
+      ],
+      "focused": "<button type=\"button\" class=\"relative inline-flex select-none items-center justify-center gap-2 whitespace-nowrap rounde",
+      "consoleErrors": [
+        "[CONVEX M(mechanicsAdmin:reject)] [Request ID: 96673296a9743158] Server Error\nUncaught ConvexError: {\"field\":\"reason\",\"code\":\"INVALID\",\"message\":\"Upišite razlog.\"}\n    at handler (../convex/mechanicsAdmin.ts:213:31)\n"
+      ],
+      "probe": {
+        "status": "pending",
+        "tierName": null
+      },
+      "alertBox": {
+        "x": 848,
+        "y": 78.46875,
+        "width": 568,
+        "height": 45
+      },
+      "rejectBox": {
+        "x": 869,
+        "y": 879.96875,
+        "width": 155.390625,
+        "height": 44
+      },
+      "reasonBox": {
+        "x": 882,
+        "y": 710.59375,
+        "width": 500,
+        "height": 96
+      }
+    },
+    {
+      "name": "10b limit -5 → approve",
+      "alert": "Limit mora biti iznos u dinarima.",
+      "ariaInvalidCount": 0,
+      "limitAriaInvalid": null,
+      "alertBox": {
+        "x": 848,
+        "y": 249.46875,
+        "width": 568,
+        "height": 45
+      },
+      "limitBox": {
+        "x": 881,
+        "y": 741.59375,
+        "width": 193.3125,
+        "height": 42
+      },
+      "probe": {
+        "status": "pending",
+        "tierName": null
+      }
+    },
+    {
+      "name": "07a reject with reason",
+      "dialogsSeenWithin1_5s": 0,
+      "msToRejectedUi": 1567,
+      "badge": "Odbijen",
+      "probe": {
+        "status": "rejected",
+        "tierName": null
+      },
+      "events": [
+        "mechanic.rejected"
+      ]
+    },
+    {
+      "name": "07a outbox",
+      "emailRowFound": true,
+      "around": "aOsoblje · Osoblje: traži se nova ponudaOsoblje · Osoblje: malo na stanjuOsoblje · Osoblje: dnevni pregledOsoblje · Osoblje: podsetnikPoslate i zabeležene porukeVremePrimaNaslovNačinStatus30.09. 22:49majstor-admin-vfa07a-1252384@primer.rsRegistracija nije odobrenaRegistracija odbijena · MajstorSamo zapisZabeleženo30.09"
+    },
+    {
+      "name": "created M2",
+      "companyName": "Servis Admin vfa07b-1252384",
+      "profileId": "p57516gc2n2gmwa145z99z3bk18fd0x4",
+      "email": "majstor-admin-vfa07b-1252384@primer.rs"
+    },
+    {
+      "name": "M2 approved",
+      "probe": {
+        "status": "approved",
+        "tierName": "Majstor"
+      }
+    },
+    {
+      "name": "07b suspend at 1440",
+      "dialogsSeenWithin1_5s": 0,
+      "probe": {
+        "status": "suspended",
+        "tierName": "Majstor"
+      },
+      "events": [
+        "mechanic.approved",
+        "mechanic.suspended"
+      ]
+    },
+    {
+      "name": "M2 reactivated (restore)",
+      "probe": {
+        "status": "approved",
+        "tierName": "Majstor"
+      }
+    },
+    {
+      "name": "07c suspend at 390",
+      "dialogsSeenWithin1_5s": 0,
+      "probe": {
+        "status": "suspended",
+        "tierName": "Majstor"
+      }
+    },
+    {
+      "name": "M2 reactivated again (restore)",
+      "probe": {
+        "status": "approved",
+        "tierName": "Majstor"
+      },
+      "events": [
+        "mechanic.approved",
+        "mechanic.suspended",
+        "mechanic.approved",
+        "mechanic.suspended",
+        "mechanic.approved"
+      ]
+    }
+  ]
+}

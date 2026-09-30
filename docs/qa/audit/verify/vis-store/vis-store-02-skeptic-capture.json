@@ -1,0 +1,122 @@
+{
+ "home-1440": [
+  {
+   "src": "/images/parts/kocione-plocice.webp",
+   "w": 316,
+   "h": 253
+  },
+  {
+   "src": "/images/parts/kocioni-diskovi.webp",
+   "w": 316,
+   "h": 253
+  },
+  {
+   "src": "/images/parts/amortizeri-opruge.webp",
+   "w": 316,
+   "h": 253
+  },
+  {
+   "src": "/images/parts/ramena-selen-blokovi.webp",
+   "w": 316,
+   "h": 253
+  },
+  {
+   "src": "/images/parts/zupcasti-kais-vodena-pumpa.webp",
+   "w": 316,
+   "h": 253
+  },
+  {
+   "src": "/images/parts/kvacilo-zamajac.webp",
+   "w": 316,
+   "h": 253
+  },
+  {
+   "src": "/images/parts/turbina.webp",
+   "w": 316,
+   "h": 253
+  },
+  {
+   "src": "/images/parts/filteri.webp",
+   "w": 316,
+   "h": 253
+  },
+  {
+   "src": "/images/parts/akumulator.webp",
+   "w": 316,
+   "h": 253
+  },
+  {
+   "src": "/images/parts/farovi.webp",
+   "w": 316,
+   "h": 253
+  },
+  {
+   "src": "/images/parts/hladnjak-ventilator.webp",
+   "w": 316,
+   "h": 253
+  },
+  {
+   "src": "/images/parts/brizgaljke-pumpa-goriva.webp",
+   "w": 316,
+   "h": 253
+  }
+ ],
+ "pdp-pads-1440-dpr1": [
+  {
+   "src": "calhost:3100/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=828&q=75",
+   "natural": "747x747",
+   "box": "772x579",
+   "contentBox": "710x517",
+   "paintedCss": "517x517",
+   "dpr": 1,
+   "paintedDevicePx": 517
+  },
+  {
+   "src": "calhost:3100/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+   "natural": "359x359",
+   "box": "316x237",
+   "contentBox": "291x212",
+   "paintedCss": "212x212",
+   "dpr": 1,
+   "paintedDevicePx": 212
+  },
+  {
+   "src": "calhost:3100/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+   "natural": "359x359",
+   "box": "316x237",
+   "contentBox": "291x212",
+   "paintedCss": "212x212",
+   "dpr": 1,
+   "paintedDevicePx": 212
+  }
+ ],
+ "pdp-pads-1440-dpr2": [
+  {
+   "src": "alhost:3100/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=1920&q=75",
+   "natural": "322x322",
+   "box": "772x579",
+   "contentBox": "710x517",
+   "paintedCss": "517x517",
+   "dpr": 2,
+   "paintedDevicePx": 1035
+  },
+  {
+   "src": "alhost:3100/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=1920&q=75",
+   "natural": "144x144",
+   "box": "316x237",
+   "contentBox": "291x212",
+   "paintedCss": "212x212",
+   "dpr": 2,
+   "paintedDevicePx": 424
+  },
+  {
+   "src": "alhost:3100/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=1920&q=75",
+   "natural": "144x144",
+   "box": "316x237",
+   "contentBox": "291x212",
+   "paintedCss": "212x212",
+   "dpr": 2,
+   "paintedDevicePx": 424
+  }
+ ]
+}

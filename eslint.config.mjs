@@ -45,6 +45,8 @@ const eslintConfig = defineConfig([
     "convex/_generated/**",
     "test-results/**",
     "playwright-report/**",
+    // Step 21 audit reproduction scripts (evidence for docs/qa/AUDIT.md, not project source).
+    "scripts/qa/audit/**",
   ]),
 ]);
 

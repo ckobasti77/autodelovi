@@ -161,3 +161,11 @@ Oznaka: **seed – proveriti**. Podaci su uneti po opšte poznatim podacima o vo
 - [ ] **[P2] Praćenje grešaka na produkciji** (Convex → Settings → Integrations → log stream ili Sentry) — da greške vidite pre kupaca.
 - [ ] **[P2] Skrivene cene**: ako u podešavanjima isključite javne cene, isključite i kupovinu bez naloga — inače gost koji doda artikal u korpu vidi njegovu cenu.
 - [ ] **[P2] Zaposleni koji je i majstor**: svoj majstorski profil ne može sam da odobri niti da sebi menja rabat i odloženo plaćanje — to radi vlasnik.
+
+## 13. QA audit (korak 21)
+Ceo izveštaj je u `docs/qa/AUDIT.md`: 180 potvrđenih nalaza (bez P0, 18 P1). Korak 22 ih ispravlja; ovde su samo stvari koje traže vašu odluku.
+- [ ] **[P1] Pravo na odustanak u čestim pitanjima (nalaz COPY-02)**: odgovor na „Mogu li da vratim deo?“ na početnoj strani sužava zakonsko pravo kupca da odustane od kupovine na daljinu u roku od 14 dana i ne slaže se sa stranom „Reklamacije i povrat“. Korak 22 usklađuje tekst sa pravnom stranom; konačnu formulaciju neka potvrdi pravnik.
+- [ ] **[P2] Obećanje o slanju istog dana (nalaz COPY-04)**: u sadržaju piše „porudžbine potvrđene do 14 časova šaljemo istog dana“. To nije vaš potvrđen podatak — potvrdite satnicu ili će rečenica biti uklonjena.
+- [ ] **[P2] Kontakt podaci (nalazi COPY-03 i VIS-03)**: tekstovi na sajtu upućuju na telefon, Viber, e-poštu, adresu i obrazac za odustanak, ali dok ih ne upišete u Podešavanja → Firma, ništa od toga se ne prikazuje. Kada ih upišete, proverite zaglavlje na telefonu (korak 22 popravlja da meni ne ispadne sa ekrana).
+- [ ] **[P2] Slike kategorija (nalaz VIS-01)**: dok ne stignu vaše fotografije artikala, jedine slike su naši renderi kategorija; korak 22 ih ujednačava. Prave fotografije (po uputstvu iz `docs/design/DESIGN-SYSTEM.md` §6.3) najviše podižu utisak prodavnice.
+- [ ] **[P3] Posle puštanja uživo**: proverite brzinu na PageSpeed Insights (telefon) za početnu, jednu kategoriju i jedan artikal — laboratorijska merenja na lokalnom računaru nisu isto što i pravi saobraćaj.

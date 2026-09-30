@@ -1,0 +1,128 @@
+[
+  {
+    "width": 390,
+    "viewport": "390x844",
+    "firstScreen": {
+      "stageTop": 663,
+      "vh": 844
+    },
+    "trackTop": 606,
+    "geo": {
+      "stage": {
+        "x": 0,
+        "y": 57.203125,
+        "w": 390,
+        "h": 672
+      },
+      "img": {
+        "x": 0,
+        "y": 57.203125,
+        "w": 390,
+        "h": 672
+      },
+      "fit": "contain",
+      "pos": "50% 100%",
+      "captionBottom": 85.46875,
+      "captionText": "Sklopljen automobil00 · 42 kategorije · 91 deoSkrolujte i au | ",
+      "frameH": 788,
+      "scrollY": 606,
+      "status": "loading"
+    },
+    "poster": {
+      "file": "car-assembled-m-640.webp",
+      "natural": [
+        640,
+        800
+      ],
+      "posterDrawn": {
+        "x": 0,
+        "y": 185,
+        "w": 390,
+        "h": 488
+      },
+      "car": {
+        "x": 41,
+        "y": 349,
+        "w": 327,
+        "h": 232
+      },
+      "pctH": 34.5,
+      "pctW": 83.8,
+      "pctArea": 28.9,
+      "carTopPctOfStage": 51.9,
+      "carCentreXOffset": 9,
+      "carCentreYPct": 69.2,
+      "gapCaptionToCar": 264
+    },
+    "canvas": {
+      "error": "Error: canvas skipped"
+    },
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "width": 768,
+    "viewport": "768x1024",
+    "firstScreen": {
+      "stageTop": 585,
+      "vh": 1024
+    },
+    "trackTop": 528,
+    "geo": {
+      "stage": {
+        "x": 0,
+        "y": 57.015625,
+        "w": 768,
+        "h": 852
+      },
+      "img": {
+        "x": 0,
+        "y": 57.015625,
+        "w": 768,
+        "h": 852
+      },
+      "fit": "contain",
+      "pos": "50% 100%",
+      "captionBottom": 87.78125,
+      "captionText": "Sklopljen automobil00 · 42 kategorije · 91 deoSkrolujte i au | ",
+      "frameH": 968,
+      "scrollY": 528,
+      "status": "loading"
+    },
+    "poster": {
+      "file": "car-assembled-1080.webp",
+      "natural": [
+        1080,
+        608
+      ],
+      "posterDrawn": {
+        "x": 0,
+        "y": 420,
+        "w": 768,
+        "h": 432
+      },
+      "car": {
+        "x": 304,
+        "y": 518,
+        "w": 394,
+        "h": 246
+      },
+      "pctH": 28.9,
+      "pctW": 51.3,
+      "pctArea": 14.8,
+      "carTopPctOfStage": 60.9,
+      "carCentreXOffset": 117,
+      "carCentreYPct": 75.3,
+      "gapCaptionToCar": 431
+    },
+    "canvas": {
+      "error": "Error: canvas skipped"
+    },
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  }
+]

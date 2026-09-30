@@ -1,0 +1,14 @@
+{
+  "customerContactSentence": {
+    "input": "Pitanja? Pozovite [+381 64 123 4567](tel:+381641234567) ili pišite na [Viber](viber://chat?number=%2B381641234567) ili odgovorite na ovu poruku.",
+    "text": "Pitanja? Pozovite +381 64 123 4567: tel:+381641234567 ili pišite na Viber: viber://chat?number=%2B381641234567 ili odgovorite na ovu poruku."
+  },
+  "staffPhone": {
+    "input": "[+381 64 123 4567](tel:+381641234567)",
+    "text": "+381 64 123 4567: tel:+381641234567"
+  },
+  "mailto": {
+    "input": "[info@sklop.rs](mailto:info@sklop.rs)",
+    "text": "info@sklop.rs"
+  }
+}

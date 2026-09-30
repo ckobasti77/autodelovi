@@ -1,0 +1,310 @@
+{
+  "360": {
+    "/o-nama": {
+      "maxParaW": 328,
+      "approxCharsPerLine": 41,
+      "h1": "O nama",
+      "h1Size": "28px",
+      "over": 0,
+      "inputs": [],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/kontakt": {
+      "maxParaW": 328,
+      "approxCharsPerLine": 41,
+      "h1": "Kontakt",
+      "h1Size": "28px",
+      "over": 0,
+      "inputs": [],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/dostava-i-placanje": {
+      "maxParaW": 328,
+      "approxCharsPerLine": 41,
+      "h1": "Dostava i plaćanje",
+      "h1Size": "28px",
+      "over": 0,
+      "inputs": [],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/reklamacije-i-povrat": {
+      "maxParaW": 328,
+      "approxCharsPerLine": 41,
+      "h1": "Reklamacije i povrat",
+      "h1Size": "28px",
+      "over": 0,
+      "inputs": [],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/uslovi-koriscenja": {
+      "maxParaW": 328,
+      "approxCharsPerLine": 41,
+      "h1": "Uslovi korišćenja i kupovine",
+      "h1Size": "28px",
+      "over": 0,
+      "inputs": [],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/politika-privatnosti": {
+      "maxParaW": 328,
+      "approxCharsPerLine": 41,
+      "h1": "Politika privatnosti",
+      "h1Size": "28px",
+      "over": 0,
+      "inputs": [],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/kolacici": {
+      "maxParaW": 328,
+      "approxCharsPerLine": 41,
+      "h1": "Kolačići",
+      "h1Size": "28px",
+      "over": 0,
+      "inputs": [],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/za-majstore/registracija": {
+      "maxParaW": 328,
+      "approxCharsPerLine": 36,
+      "h1": "Registrujte servis",
+      "h1Size": "28px",
+      "over": 0,
+      "inputs": [
+        "mr-email:302x42/16px",
+        "mr-password:302x42/16px",
+        "mr-companyName:302x42/16px",
+        "mr-pib:302x42/16px",
+        "mr-mb:302x42/16px",
+        "mr-contactPerson:302x42/16px",
+        "mr-phone:302x42/16px",
+        "mr-city:302x42/16px",
+        "mr-address:302x42/16px"
+      ],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/zaboravljena-lozinka": {
+      "maxParaW": 0,
+      "approxCharsPerLine": 0,
+      "h1": "Nova lozinka",
+      "h1Size": "26.0056px",
+      "over": 0,
+      "inputs": [
+        "f_R_2inpfd9fclb_:302x42/16px"
+      ],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/registracija": {
+      "maxParaW": 0,
+      "approxCharsPerLine": 0,
+      "h1": "Novi nalog",
+      "h1Size": "26.0056px",
+      "over": 0,
+      "inputs": [
+        "f_R_1inpfd9fclb_:302x42/16px",
+        "f_R_2inpfd9fclb_:302x42/16px",
+        "f_R_3inpfd9fclb_:302x42/16px"
+      ],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "2560": {
+    "/o-nama": {
+      "maxParaW": 720,
+      "approxCharsPerLine": 90,
+      "h1": "O nama",
+      "h1Size": "44px",
+      "over": 0,
+      "inputs": [],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/kontakt": {
+      "maxParaW": 720,
+      "approxCharsPerLine": 90,
+      "h1": "Kontakt",
+      "h1Size": "44px",
+      "over": 0,
+      "inputs": [],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/dostava-i-placanje": {
+      "maxParaW": 720,
+      "approxCharsPerLine": 90,
+      "h1": "Dostava i plaćanje",
+      "h1Size": "44px",
+      "over": 0,
+      "inputs": [],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/reklamacije-i-povrat": {
+      "maxParaW": 720,
+      "approxCharsPerLine": 90,
+      "h1": "Reklamacije i povrat",
+      "h1Size": "44px",
+      "over": 0,
+      "inputs": [],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/uslovi-koriscenja": {
+      "maxParaW": 720,
+      "approxCharsPerLine": 90,
+      "h1": "Uslovi korišćenja i kupovine",
+      "h1Size": "44px",
+      "over": 0,
+      "inputs": [],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/politika-privatnosti": {
+      "maxParaW": 720,
+      "approxCharsPerLine": 90,
+      "h1": "Politika privatnosti",
+      "h1Size": "44px",
+      "over": 0,
+      "inputs": [],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/kolacici": {
+      "maxParaW": 720,
+      "approxCharsPerLine": 90,
+      "h1": "Kolačići",
+      "h1Size": "44px",
+      "over": 0,
+      "inputs": [],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/za-majstore/registracija": {
+      "maxParaW": 768,
+      "approxCharsPerLine": 77,
+      "h1": "Registrujte servis",
+      "h1Size": "44px",
+      "over": 0,
+      "inputs": [
+        "mr-email:311x42/16px",
+        "mr-password:311x42/16px",
+        "mr-companyName:667x42/16px",
+        "mr-pib:311x42/16px",
+        "mr-mb:311x42/16px",
+        "mr-contactPerson:311x42/16px",
+        "mr-phone:311x42/16px",
+        "mr-city:198x42/16px",
+        "mr-address:423x42/16px"
+      ],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/zaboravljena-lozinka": {
+      "maxParaW": 0,
+      "approxCharsPerLine": 0,
+      "h1": "Nova lozinka",
+      "h1Size": "36px",
+      "over": 0,
+      "inputs": [
+        "f_R_2inpfd9fclb_:422x42/16px"
+      ],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "/registracija": {
+      "maxParaW": 0,
+      "approxCharsPerLine": 0,
+      "h1": "Novi nalog",
+      "h1Size": "36px",
+      "over": 0,
+      "inputs": [
+        "f_R_1inpfd9fclb_:422x42/16px",
+        "f_R_2inpfd9fclb_:422x42/16px",
+        "f_R_3inpfd9fclb_:422x42/16px"
+      ],
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+}

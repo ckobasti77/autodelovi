@@ -1,0 +1,179 @@
+{
+ "strip": [
+  {
+   "button": 1,
+   "samples": [
+    "692/0.237424/st1",
+    "692/0.239931/st1",
+    "692/0.239931/st1",
+    "692/0.239931/st1",
+    "692/0.239931/st1"
+   ],
+   "final": {
+    "scrollY": 692,
+    "progress": 0.239931,
+    "stage": 1,
+    "status": "loading",
+    "ariaCurrent": "01 Karoserija, stakla i svetla"
+   }
+  },
+  {
+   "button": 2,
+   "samples": [
+    "530/0.102773/st1",
+    "923/0.320139/st3",
+    "923/0.320139/st3",
+    "923/0.320139/st3",
+    "923/0.320139/st3"
+   ],
+   "final": {
+    "scrollY": 923,
+    "progress": 0.320139,
+    "stage": 3,
+    "status": "loading",
+    "ariaCurrent": "03 Kočnice, vešanje, upravljanje"
+   }
+  },
+  {
+   "button": 3,
+   "samples": [
+    "1326/0.45906/st3",
+    "1326/0.460069/st4",
+    "1326/0.460069/st4",
+    "1326/0.460069/st4",
+    "1326/0.460069/st4"
+   ],
+   "final": {
+    "scrollY": 1326,
+    "progress": 0.460069,
+    "stage": 4,
+    "status": "loading",
+    "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis"
+   }
+  },
+  {
+   "button": 4,
+   "samples": [
+    "1671/0.568723/st4",
+    "1671/0.579861/st4",
+    "1671/0.579861/st4",
+    "1671/0.579861/st4",
+    "1671/0.579861/st4"
+   ],
+   "final": {
+    "scrollY": 1671,
+    "progress": 0.579861,
+    "stage": 4,
+    "status": "loading",
+    "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis"
+   }
+  },
+  {
+   "button": 5,
+   "samples": [
+    "2075/0.715326/st5",
+    "2075/0.720139/st6",
+    "2075/0.720139/st6",
+    "2075/0.720139/st6",
+    "2075/0.720139/st6"
+   ],
+   "final": {
+    "scrollY": 2075,
+    "progress": 0.720139,
+    "stage": 6,
+    "status": "loading",
+    "ariaCurrent": "06 Menjač, kvačilo, poluosovine"
+   }
+  },
+  {
+   "button": 6,
+   "samples": [
+    "2420/0.83439/st6",
+    "2420/0.839931/st6",
+    "2420/0.839931/st6",
+    "2420/0.839931/st6",
+    "2420/0.839931/st6"
+   ],
+   "final": {
+    "scrollY": 2420,
+    "progress": 0.839931,
+    "stage": 6,
+    "status": "loading",
+    "ariaCurrent": "06 Menjač, kvačilo, poluosovine"
+   }
+  },
+  {
+   "button": 7,
+   "samples": [
+    "2651/0.889897/st7",
+    "2651/0.920139/st7",
+    "2651/0.920139/st7",
+    "2651/0.920139/st7",
+    "2651/0.920139/st7"
+   ],
+   "final": {
+    "scrollY": 2651,
+    "progress": 0.920139,
+    "stage": 7,
+    "status": "loading",
+    "ariaCurrent": "07 Izduvni sistem"
+   }
+  }
+ ],
+ "phone": [
+  {
+   "press": "next",
+   "scrollY": 980,
+   "progress": 0.220972,
+   "stage": 1,
+   "status": "ready",
+   "ariaCurrent": "01 Karoserija, stakla i svetla",
+   "label": "01 / 07 Karoserija i svetla"
+  },
+  {
+   "press": "next",
+   "scrollY": 1147,
+   "progress": 0.319905,
+   "stage": 2,
+   "status": "ready",
+   "ariaCurrent": "02 Točkovi",
+   "label": "02 / 07 Točkovi"
+  },
+  {
+   "press": "next",
+   "scrollY": 1485,
+   "progress": 0.520142,
+   "stage": 4,
+   "status": "ready",
+   "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+   "label": "04 / 07 Agregati i hlađenje"
+  },
+  {
+   "press": "prev",
+   "scrollY": 1485,
+   "progress": 0.520142,
+   "stage": 4,
+   "status": "ready",
+   "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+   "label": "04 / 07 Agregati i hlađenje"
+  },
+  {
+   "press": "prev",
+   "scrollY": 1485,
+   "progress": 0.520142,
+   "stage": 4,
+   "status": "ready",
+   "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+   "label": "04 / 07 Agregati i hlađenje"
+  },
+  {
+   "press": "prev",
+   "scrollY": 1485,
+   "progress": 0.520142,
+   "stage": 4,
+   "status": "ready",
+   "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+   "label": "04 / 07 Agregati i hlađenje"
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+node scripts/qa/audit/verify-vis-commerce-0306.mjs cart  (Chromium, guest cart built via product pages: DEMO-0004 x2, DEMO-0007, DEMO-0003 = 3 lines, 4 pcs, 20.760 RSD)
+/korpa
+360x780  ctaTop 988 ctaBottom 1040 asideTop 847  line heights 222/222/221  fixed/sticky: skip link, header only  steppers 36x36, qty input 56x34, trash 44x44
+390x844  ctaTop 968 ctaBottom 1020 asideTop 847  same  | drawer (header cart button): CTA 724-776 (pinned, visible), steppers 36x36
+430x932  ctaTop 968 ctaBottom 1020 asideTop 848
+768x1024 ctaTop 802 ctaBottom 854  (visible)
+1440x900 ctaTop 295, summary card sticky (visible) | drawer steppers 36x36
+2 lines (verify-vis-commerce-04b.mjs): 360x780 ctaTop 766 ctaBottom 818 (cut) · 390x844 746/798 (visible) · 430x932 746/798 (visible)
+/porudzbina mobile summary (<summary>, lg:hidden)
+360/390/430/768: text "Ukupno 20.760 RSD", svgs 0, list-style none, ::before/::after none, no aria-expanded attr; h48
+opened: 2 visible "Ukupno" labels inside the details (summary row + inner dl total)
+1440: summary hidden (right column summary instead)
+console errors: none

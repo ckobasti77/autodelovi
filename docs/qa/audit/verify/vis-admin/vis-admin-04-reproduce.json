@@ -1,0 +1,416 @@
+{
+  "360": {
+    "SK-2026-000092": {
+      "before": {
+        "vw": 360,
+        "innerWidth": 360,
+        "vv": 360,
+        "dialog": {
+          "left": 16,
+          "right": 344,
+          "width": 328
+        },
+        "close": {
+          "left": 283,
+          "right": 327,
+          "onScreen": true
+        },
+        "options": 22,
+        "widest": [
+          {
+            "t": "Pregled",
+            "sw": 310,
+            "right": 335
+          },
+          {
+            "t": "Porudžbine",
+            "sw": 310,
+            "right": 335
+          },
+          {
+            "t": "Upiti",
+            "sw": 310,
+            "right": 335
+          }
+        ]
+      },
+      "after": {
+        "vw": 360,
+        "innerWidth": 360,
+        "vv": 360,
+        "dialog": {
+          "left": 16,
+          "right": 442,
+          "width": 426
+        },
+        "close": {
+          "left": 381,
+          "right": 425,
+          "onScreen": false
+        },
+        "options": 10,
+        "widest": [
+          {
+            "t": "SK-2026-000092Admin Test audit21Nova",
+            "sw": 408,
+            "right": 433
+          },
+          {
+            "t": "SK-2026-000101QA Verifikacija · +381641234567Otkazana",
+            "sw": 408,
+            "right": 433
+          },
+          {
+            "t": "SK-2026-000100QA Audit · +381641234567Otkazana",
+            "sw": 408,
+            "right": 433
+          }
+        ]
+      }
+    },
+    "Golf": {
+      "before": {
+        "vw": 360,
+        "innerWidth": 360,
+        "vv": 360,
+        "dialog": {
+          "left": 16,
+          "right": 344,
+          "width": 328
+        },
+        "close": {
+          "left": 283,
+          "right": 327,
+          "onScreen": true
+        },
+        "options": 22,
+        "widest": [
+          {
+            "t": "Pregled",
+            "sw": 310,
+            "right": 335
+          },
+          {
+            "t": "Porudžbine",
+            "sw": 310,
+            "right": 335
+          },
+          {
+            "t": "Upiti",
+            "sw": 310,
+            "right": 335
+          }
+        ]
+      },
+      "after": {
+        "vw": 360,
+        "innerWidth": 360,
+        "vv": 360,
+        "dialog": {
+          "left": 16,
+          "right": 410,
+          "width": 394
+        },
+        "close": {
+          "left": 349,
+          "right": 393,
+          "onScreen": false
+        },
+        "options": 10,
+        "widest": [
+          {
+            "t": "UP-2026-000081Verifikacija Test · WVWZZZ1KZ8W123456Nov",
+            "sw": 376,
+            "right": 401
+          },
+          {
+            "t": "UP-2026-000077Marko Jovanović · WVWZZZ1KZ8W123456Nov",
+            "sw": 376,
+            "right": 401
+          },
+          {
+            "t": "UP-2026-000076Marko Jovanović · WVWZZZ1KZ8W123456Nov",
+            "sw": 376,
+            "right": 401
+          }
+        ]
+      }
+    }
+  },
+  "390": {
+    "SK-2026-000092": {
+      "before": {
+        "vw": 390,
+        "innerWidth": 390,
+        "vv": 390,
+        "dialog": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "close": {
+          "left": 313,
+          "right": 357,
+          "onScreen": true
+        },
+        "options": 22,
+        "widest": [
+          {
+            "t": "Pregled",
+            "sw": 340,
+            "right": 365
+          },
+          {
+            "t": "Porudžbine",
+            "sw": 340,
+            "right": 365
+          },
+          {
+            "t": "Upiti",
+            "sw": 340,
+            "right": 365
+          }
+        ]
+      },
+      "after": {
+        "vw": 390,
+        "innerWidth": 390,
+        "vv": 390,
+        "dialog": {
+          "left": 16,
+          "right": 442,
+          "width": 426
+        },
+        "close": {
+          "left": 381,
+          "right": 425,
+          "onScreen": false
+        },
+        "options": 10,
+        "widest": [
+          {
+            "t": "SK-2026-000092Admin Test audit21Nova",
+            "sw": 408,
+            "right": 433
+          },
+          {
+            "t": "SK-2026-000101QA Verifikacija · +381641234567Otkazana",
+            "sw": 408,
+            "right": 433
+          },
+          {
+            "t": "SK-2026-000100QA Audit · +381641234567Otkazana",
+            "sw": 408,
+            "right": 433
+          }
+        ]
+      }
+    },
+    "Golf": {
+      "before": {
+        "vw": 390,
+        "innerWidth": 390,
+        "vv": 390,
+        "dialog": {
+          "left": 16,
+          "right": 374,
+          "width": 358
+        },
+        "close": {
+          "left": 313,
+          "right": 357,
+          "onScreen": true
+        },
+        "options": 22,
+        "widest": [
+          {
+            "t": "Pregled",
+            "sw": 340,
+            "right": 365
+          },
+          {
+            "t": "Porudžbine",
+            "sw": 340,
+            "right": 365
+          },
+          {
+            "t": "Upiti",
+            "sw": 340,
+            "right": 365
+          }
+        ]
+      },
+      "after": {
+        "vw": 390,
+        "innerWidth": 390,
+        "vv": 390,
+        "dialog": {
+          "left": 16,
+          "right": 410,
+          "width": 394
+        },
+        "close": {
+          "left": 349,
+          "right": 393,
+          "onScreen": false
+        },
+        "options": 10,
+        "widest": [
+          {
+            "t": "UP-2026-000081Verifikacija Test · WVWZZZ1KZ8W123456Nov",
+            "sw": 376,
+            "right": 401
+          },
+          {
+            "t": "UP-2026-000077Marko Jovanović · WVWZZZ1KZ8W123456Nov",
+            "sw": 376,
+            "right": 401
+          },
+          {
+            "t": "UP-2026-000076Marko Jovanović · WVWZZZ1KZ8W123456Nov",
+            "sw": 376,
+            "right": 401
+          }
+        ]
+      }
+    }
+  },
+  "768": {
+    "SK-2026-000092": {
+      "before": {
+        "vw": 768,
+        "innerWidth": 768,
+        "vv": 768,
+        "dialog": {
+          "left": 64,
+          "right": 704,
+          "width": 640
+        },
+        "close": {
+          "left": 643,
+          "right": 687,
+          "onScreen": true
+        },
+        "options": 22,
+        "widest": [
+          {
+            "t": "Pregled",
+            "sw": 622,
+            "right": 695
+          },
+          {
+            "t": "Porudžbine",
+            "sw": 622,
+            "right": 695
+          },
+          {
+            "t": "Upiti",
+            "sw": 622,
+            "right": 695
+          }
+        ]
+      },
+      "after": {
+        "vw": 768,
+        "innerWidth": 768,
+        "vv": 768,
+        "dialog": {
+          "left": 64,
+          "right": 704,
+          "width": 640
+        },
+        "close": {
+          "left": 643,
+          "right": 687,
+          "onScreen": true
+        },
+        "options": 10,
+        "widest": [
+          {
+            "t": "SK-2026-000092Admin Test audit21Nova",
+            "sw": 622,
+            "right": 695
+          },
+          {
+            "t": "SK-2026-000101QA Verifikacija · +381641234567Otkazana",
+            "sw": 622,
+            "right": 695
+          },
+          {
+            "t": "SK-2026-000100QA Audit · +381641234567Otkazana",
+            "sw": 622,
+            "right": 695
+          }
+        ]
+      }
+    },
+    "Golf": {
+      "before": {
+        "vw": 768,
+        "innerWidth": 768,
+        "vv": 768,
+        "dialog": {
+          "left": 64,
+          "right": 704,
+          "width": 640
+        },
+        "close": {
+          "left": 643,
+          "right": 687,
+          "onScreen": true
+        },
+        "options": 22,
+        "widest": [
+          {
+            "t": "Pregled",
+            "sw": 622,
+            "right": 695
+          },
+          {
+            "t": "Porudžbine",
+            "sw": 622,
+            "right": 695
+          },
+          {
+            "t": "Upiti",
+            "sw": 622,
+            "right": 695
+          }
+        ]
+      },
+      "after": {
+        "vw": 768,
+        "innerWidth": 768,
+        "vv": 768,
+        "dialog": {
+          "left": 64,
+          "right": 704,
+          "width": 640
+        },
+        "close": {
+          "left": 643,
+          "right": 687,
+          "onScreen": true
+        },
+        "options": 10,
+        "widest": [
+          {
+            "t": "UP-2026-000081Verifikacija Test · WVWZZZ1KZ8W123456Nov",
+            "sw": 622,
+            "right": 695
+          },
+          {
+            "t": "UP-2026-000077Marko Jovanović · WVWZZZ1KZ8W123456Nov",
+            "sw": 622,
+            "right": 695
+          },
+          {
+            "t": "UP-2026-000076Marko Jovanović · WVWZZZ1KZ8W123456Nov",
+            "sw": 622,
+            "right": 695
+          }
+        ]
+      }
+    }
+  }
+}

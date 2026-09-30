@@ -1,0 +1,162 @@
+{
+  "390": {
+    "engine": "firefox",
+    "viewport": "390x844",
+    "mobile": true,
+    "atLoad": {
+      "scrollY": 632,
+      "vh": 844,
+      "bar": {
+        "top": 647,
+        "h": 197,
+        "pctOfVh": 23,
+        "bg": "oklab(0.193827 -0.00284777 -0.00712827 / 0.95)",
+        "shadow": "none",
+        "borderTop": "1px rgb(67, 74, 82)",
+        "cls": "sticky bottom-0 z-sticky -mx-page mt-2 flex flex-col gap-3 border-t border-line-strong bg-bg-raised/95 px-page pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-header sm:mx-0 sm:px-0 sm:bg-bg/95"
+      },
+      "rows": 13,
+      "statuses": "exact,exact,ambiguous,exact,exact,ambiguous,ambiguous,exact,exact,exact,not_found,exact,exact",
+      "rowsBehindBar": [
+        {
+          "i": 3,
+          "status": "ambiguous",
+          "top": 565,
+          "bottom": 978,
+          "overlap": 197,
+          "full": false
+        }
+      ],
+      "htmlScrollPad": {
+        "top": "80px",
+        "bottom": "auto"
+      }
+    },
+    "firstHidden": {
+      "tag": "a",
+      "type": "",
+      "label": "Kočioni disk prednji 276 × 24 mm",
+      "row": 1,
+      "inBar": false,
+      "top": 711,
+      "bottom": 732,
+      "barTop": 647,
+      "byBar": 5,
+      "off": 0,
+      "scrollY": 155
+    },
+    "tabStops": 63,
+    "stopsOutsideBar": 61,
+    "fullyHidden": 24,
+    "partlyHidden": 7,
+    "fullyHiddenList": [
+      "r1 a \"Kočioni disk prednji 276 × 24 mm\" top711 barTop647",
+      "r1 button:button \"Smanji količinu\" top793 barTop647",
+      "r1 input:number \"Količina\" top793 barTop647",
+      "r1 button:button \"Povećaj količinu\" top793 barTop647",
+      "r1 button:button \"Ukloni red 5Q0 615 505 R\" top788 barTop647",
+      "r3 input:radio \"qo-3\" top677 barTop647",
+      "r3 a \"Set zupčastog kaiša sa vodenom pumpom 1.9 TDI\" top673 barTop647",
+      "r4 button:button \"Smanji količinu\" top657 barTop647",
+      "r4 input:number \"Količina\" top657 barTop647",
+      "r4 button:button \"Povećaj količinu\" top657 barTop647",
+      "r4 button:button \"Ukloni red 1K0 615 868 F\" top652 barTop647",
+      "r5 a \"Kočioni disk zadnji 272 × 10 mm, puni\" top768 barTop647",
+      "r6 a \"Amortizer prednji, gasni\" top702 barTop647",
+      "r7 button:button \"Smanji količinu\" top723 barTop647",
+      "r7 input:number \"Količina\" top723 barTop647",
+      "r7 button:button \"Povećaj količinu\" top723 barTop647",
+      "r7 button:button \"Ukloni red 1K0 698 406 F\" top718 barTop647",
+      "r9 input:number \"Količina\" top720 barTop647",
+      "r9 button:button \"Povećaj količinu\" top720 barTop647",
+      "r9 button:button \"Ukloni red 5Q0 121 200 E\" top715 barTop647",
+      "r12 a \"Hladnjak motora\" top717 barTop647",
+      "r12 input:number \"Količina\" top800 barTop647",
+      "r12 button:button \"Povećaj količinu\" top800 barTop647",
+      "r12 button:button \"Ukloni red 1K0 121 753 QN\" top795 barTop647"
+    ],
+    "atEnd": {
+      "lastRowBottom": -470,
+      "barTop": -462,
+      "clear": true
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "bad": []
+    }
+  },
+  "1440": {
+    "engine": "firefox",
+    "viewport": "1440x900",
+    "mobile": false,
+    "atLoad": {
+      "scrollY": 0,
+      "vh": 900,
+      "bar": {
+        "top": 784,
+        "h": 117,
+        "pctOfVh": 13,
+        "bg": "oklab(0.167061 -0.00197805 -0.00493199 / 0.95)",
+        "shadow": "none",
+        "borderTop": "1px rgb(67, 74, 82)",
+        "cls": "sticky bottom-0 z-sticky -mx-page mt-2 flex flex-col gap-3 border-t border-line-strong bg-bg-raised/95 px-page pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-header sm:mx-0 sm:px-0 sm:bg-bg/95"
+      },
+      "rows": 13,
+      "statuses": "exact,exact,ambiguous,exact,exact,ambiguous,ambiguous,exact,exact,exact,not_found,exact,exact",
+      "rowsBehindBar": [
+        {
+          "i": 3,
+          "status": "ambiguous",
+          "top": 576,
+          "bottom": 854,
+          "overlap": 71,
+          "full": false
+        },
+        {
+          "i": 4,
+          "status": "exact",
+          "top": 854,
+          "bottom": 1011,
+          "overlap": 46,
+          "full": false
+        }
+      ],
+      "htmlScrollPad": {
+        "top": "80px",
+        "bottom": "auto"
+      }
+    },
+    "firstHidden": {
+      "tag": "input",
+      "type": "radio",
+      "label": "qo-6",
+      "row": 6,
+      "inBar": false,
+      "top": 805,
+      "bottom": 821,
+      "barTop": 784,
+      "byBar": 5,
+      "off": 0,
+      "scrollY": 423
+    },
+    "tabStops": 63,
+    "stopsOutsideBar": 61,
+    "fullyHidden": 2,
+    "partlyHidden": 4,
+    "fullyHiddenList": [
+      "r6 input:radio \"qo-6\" top805 barTop784",
+      "r6 a \"Amortizer prednji, gasni\" top801 barTop784"
+    ],
+    "atEnd": {
+      "lastRowBottom": 239,
+      "barTop": 247,
+      "clear": true
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "bad": []
+    }
+  }
+}

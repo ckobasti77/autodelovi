@@ -1,0 +1,41 @@
+{
+ "S0 after Tab through empty Ime (no submit yet): focus": "div[alert]# \"Proverite 2 polja:Upišite ime.Upišite pr\"",
+ "S0 summary": "Proverite 2 polja:",
+ "A1 after Dalje: focus": "div[alert]# \"Proverite 4 polja:Upišite ime.Upišite pr\"",
+ "A1 summary": "Proverite 4 polja:",
+ "A2 while typing Ime focus": "input#co-firstName \"\"",
+ "A3 after Tab from fixed Ime (expected #co-lastName)": "div[alert]# \"Proverite 3 polja:Upišite prezime.Upišit\"",
+ "A3 summary": "Proverite 3 polja:",
+ "A4 values after typing": {
+  "co-firstName": "Petar",
+  "co-lastName": "",
+  "co-phone": "",
+  "co-email": ""
+ },
+ "B0 focus after click Prezime": "input#co-lastName \"\"",
+ "B1 per-keystroke focus while typing Prezime": [
+  "P:div[alert]# \"Proverite 2 polja",
+  "e:div[alert]# \"Proverite 2 polja",
+  "t:div[alert]# \"Proverite 2 polja",
+  "r:div[alert]# \"Proverite 2 polja",
+  "o:div[alert]# \"Proverite 2 polja",
+  "v:div[alert]# \"Proverite 2 polja",
+  "i:div[alert]# \"Proverite 2 polja",
+  "c:div[alert]# \"Proverite 2 polja"
+ ],
+ "B1 values": {
+  "co-firstName": "Petar",
+  "co-lastName": "P",
+  "co-phone": "",
+  "co-email": ""
+ },
+ "B1 summary": "Proverite 2 polja:",
+ "B2 after click Telefon (expected #co-phone)": "input#co-phone \"\"",
+ "B3 values": {
+  "co-firstName": "Petar",
+  "co-lastName": "P",
+  "co-phone": "0641234567",
+  "co-email": ""
+ },
+ "B3 summary": "Proverite 2 polja:"
+}

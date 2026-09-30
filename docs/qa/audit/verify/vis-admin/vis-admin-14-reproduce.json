@@ -1,0 +1,333 @@
+{
+  "14": {
+    "upiti-1440": {
+      "total": 21,
+      "summary": {
+        "Traži|titled=false": 19,
+        "Izvor|titled=false": 2
+      },
+      "sample": [
+        {
+          "col": "Traži",
+          "titled": false,
+          "text": "Brza porudžbina — ove brojeve nismo našli u katalogu:\n5Q0615505R 0 — 1 kom.\n5Q06",
+          "sw": 803,
+          "cw": 384
+        },
+        {
+          "col": "Traži",
+          "titled": false,
+          "text": "Treba mi prednji kočioni disk 276 mm za Golf 7 (verifikacija flows-shop-16).",
+          "sw": 456,
+          "cw": 384
+        },
+        {
+          "col": "Traži",
+          "titled": false,
+          "text": "Treba mi prednji kočioni disk 276 mm za Golf 7 (audit flows-shop, ponuda).",
+          "sw": 455,
+          "cw": 384
+        },
+        {
+          "col": "Traži",
+          "titled": false,
+          "text": "Treba mi set kočionih diskova i pločica napred za Golf 7 (audit flows-shop).",
+          "sw": 454,
+          "cw": 384
+        },
+        {
+          "col": "Traži",
+          "titled": false,
+          "text": "QA audit (verify backend-01) — test upit, ponuda iznad limita. Ne obrađivati.",
+          "sw": 463,
+          "cw": 384
+        },
+        {
+          "col": "Traži",
+          "titled": false,
+          "text": "QA audit (verify backend-01 C) — provera ponuđenih načina plaćanja. Ne obrađivat",
+          "sw": 511,
+          "cw": 384
+        }
+      ]
+    },
+    "upiti-hoverTooltipVisible": false,
+    "mejlovi-1440": {
+      "total": 13,
+      "summary": {
+        "Prima|titled=false": 13
+      },
+      "sample": [
+        {
+          "col": "Prima",
+          "titled": false,
+          "text": "majstor-admin-vfa07b-1252384@primer.rs",
+          "sw": 266,
+          "cw": 256
+        },
+        {
+          "col": "Prima",
+          "titled": false,
+          "text": "majstor-admin-vfa07b-1252384@primer.rs",
+          "sw": 266,
+          "cw": 256
+        },
+        {
+          "col": "Prima",
+          "titled": false,
+          "text": "majstor-admin-vfa07b-1252384@primer.rs",
+          "sw": 266,
+          "cw": 256
+        },
+        {
+          "col": "Prima",
+          "titled": false,
+          "text": "majstor-admin-vfa07b-1252384@primer.rs",
+          "sw": 266,
+          "cw": 256
+        },
+        {
+          "col": "Prima",
+          "titled": false,
+          "text": "majstor-admin-vfa07b-1252384@primer.rs",
+          "sw": 266,
+          "cw": 256
+        },
+        {
+          "col": "Prima",
+          "titled": false,
+          "text": "majstor-admin-vfa07a-1252384@primer.rs",
+          "sw": 265,
+          "cw": 256
+        }
+      ]
+    },
+    "mejlovi-hoverTooltipVisible": false,
+    "dashboard-1440": {
+      "total": 8,
+      "summary": {
+        "(no td)|titled=false": 5,
+        "(no td)|titled=true": 3
+      },
+      "sample": [
+        {
+          "col": null,
+          "titled": false,
+          "text": "Demo Kupac · Traži deo · Pumpa za vodu za Octavia III 1.6 TDI, ima li na stanju?",
+          "sw": 473,
+          "cw": 365
+        },
+        {
+          "col": null,
+          "titled": false,
+          "text": "Marko Jovanović · Po broju šasije · Volkswagen Golf V (2008)",
+          "sw": 367,
+          "cw": 365
+        },
+        {
+          "col": null,
+          "titled": false,
+          "text": "Marko Jovanović · Po broju šasije · Volkswagen Golf V (2008)",
+          "sw": 367,
+          "cw": 365
+        },
+        {
+          "col": null,
+          "titled": false,
+          "text": "Marko Jovanović · Po broju šasije · Volkswagen Golf V (2008)",
+          "sw": 367,
+          "cw": 365
+        },
+        {
+          "col": null,
+          "titled": false,
+          "text": "Servis Admin vfa07b-1252384: na čekanju → odobren · razred Majstor (10 %)",
+          "sw": 498,
+          "cw": 442
+        },
+        {
+          "col": null,
+          "titled": true,
+          "text": "5Q0615505R5Q0615505R5Q0615505R5Q0615505R",
+          "sw": 369,
+          "cw": 239
+        }
+      ]
+    },
+    "proizvodi-1440": {
+      "total": 1,
+      "summary": {
+        "Kategorija|titled=true": 1
+      },
+      "sample": [
+        {
+          "col": "Kategorija",
+          "titled": true,
+          "text": "Set zupčastog kaiša i vodena pumpa",
+          "sw": 227,
+          "cw": 176
+        }
+      ]
+    },
+    "upiti-1280": {
+      "total": 21,
+      "summary": {
+        "Traži|titled=false": 19,
+        "Izvor|titled=false": 2
+      },
+      "sample": [
+        {
+          "col": "Traži",
+          "titled": false,
+          "text": "Brza porudžbina — ove brojeve nismo našli u katalogu:\n5Q0615505R 0 — 1 kom.\n5Q06",
+          "sw": 803,
+          "cw": 384
+        },
+        {
+          "col": "Traži",
+          "titled": false,
+          "text": "Treba mi prednji kočioni disk 276 mm za Golf 7 (verifikacija flows-shop-16).",
+          "sw": 456,
+          "cw": 384
+        },
+        {
+          "col": "Traži",
+          "titled": false,
+          "text": "Treba mi prednji kočioni disk 276 mm za Golf 7 (audit flows-shop, ponuda).",
+          "sw": 455,
+          "cw": 384
+        },
+        {
+          "col": "Traži",
+          "titled": false,
+          "text": "Treba mi set kočionih diskova i pločica napred za Golf 7 (audit flows-shop).",
+          "sw": 454,
+          "cw": 384
+        },
+        {
+          "col": "Traži",
+          "titled": false,
+          "text": "QA audit (verify backend-01) — test upit, ponuda iznad limita. Ne obrađivati.",
+          "sw": 463,
+          "cw": 384
+        },
+        {
+          "col": "Traži",
+          "titled": false,
+          "text": "QA audit (verify backend-01 C) — provera ponuđenih načina plaćanja. Ne obrađivat",
+          "sw": 511,
+          "cw": 384
+        }
+      ]
+    },
+    "mejlovi-1280": {
+      "total": 13,
+      "summary": {
+        "Prima|titled=false": 13
+      },
+      "sample": [
+        {
+          "col": "Prima",
+          "titled": false,
+          "text": "majstor-admin-vfa07b-1252384@primer.rs",
+          "sw": 266,
+          "cw": 256
+        },
+        {
+          "col": "Prima",
+          "titled": false,
+          "text": "majstor-admin-vfa07b-1252384@primer.rs",
+          "sw": 266,
+          "cw": 256
+        },
+        {
+          "col": "Prima",
+          "titled": false,
+          "text": "majstor-admin-vfa07b-1252384@primer.rs",
+          "sw": 266,
+          "cw": 256
+        },
+        {
+          "col": "Prima",
+          "titled": false,
+          "text": "majstor-admin-vfa07b-1252384@primer.rs",
+          "sw": 266,
+          "cw": 256
+        },
+        {
+          "col": "Prima",
+          "titled": false,
+          "text": "majstor-admin-vfa07b-1252384@primer.rs",
+          "sw": 266,
+          "cw": 256
+        },
+        {
+          "col": "Prima",
+          "titled": false,
+          "text": "majstor-admin-vfa07a-1252384@primer.rs",
+          "sw": 265,
+          "cw": 256
+        }
+      ]
+    },
+    "dashboard-1280": {
+      "total": 5,
+      "summary": {
+        "(no td)|titled=false": 2,
+        "(no td)|titled=true": 3
+      },
+      "sample": [
+        {
+          "col": null,
+          "titled": false,
+          "text": "Demo Kupac · Traži deo · Pumpa za vodu za Octavia III 1.6 TDI, ima li na stanju?",
+          "sw": 473,
+          "cw": 369
+        },
+        {
+          "col": null,
+          "titled": false,
+          "text": "Servis Admin vfa07b-1252384: na čekanju → odobren · razred Majstor (10 %)",
+          "sw": 498,
+          "cw": 446
+        },
+        {
+          "col": null,
+          "titled": true,
+          "text": "5Q0615505R5Q0615505R5Q0615505R5Q0615505R",
+          "sw": 369,
+          "cw": 242
+        },
+        {
+          "col": null,
+          "titled": true,
+          "text": "5Q0615505R5Q0615505R5Q0615505R5Q0615505R5Q0615505R5Q0615505R5Q0615505R5Q0615505R",
+          "sw": 1108,
+          "cw": 242
+        },
+        {
+          "col": null,
+          "titled": true,
+          "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+          "sw": 1108,
+          "cw": 242
+        }
+      ]
+    },
+    "proizvodi-1280": {
+      "total": 1,
+      "summary": {
+        "Kategorija|titled=true": 1
+      },
+      "sample": [
+        {
+          "col": "Kategorija",
+          "titled": true,
+          "text": "Set zupčastog kaiša i vodena pumpa",
+          "sw": 227,
+          "cw": 176
+        }
+      ]
+    }
+  }
+}

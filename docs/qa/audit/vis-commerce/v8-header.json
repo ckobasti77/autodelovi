@@ -1,0 +1,30 @@
+{
+  "360": {
+    "accountDisplay": "flex",
+    "hasHidden": true,
+    "hasSmInline": true,
+    "cls": "inline-flex size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 hidden sm:inline-flex",
+    "scrollW": 360,
+    "vw": 360,
+    "simulated": {
+      "scrollW": 415,
+      "vw": 360,
+      "menuLeft": 371,
+      "menuRight": 415
+    }
+  },
+  "390": {
+    "accountDisplay": "flex",
+    "hasHidden": true,
+    "hasSmInline": true,
+    "cls": "inline-flex size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 hidden sm:inline-flex",
+    "scrollW": 390,
+    "vw": 390,
+    "simulated": {
+      "scrollW": 415,
+      "vw": 390,
+      "menuLeft": 371,
+      "menuRight": 415
+    }
+  }
+}

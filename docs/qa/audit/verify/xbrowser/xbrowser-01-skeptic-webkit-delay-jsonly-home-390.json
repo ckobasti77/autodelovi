@@ -1,0 +1,53 @@
+[
+  {
+    "jsOnly": true,
+    "engine": "webkit",
+    "mode": "delay",
+    "route": "home",
+    "width": 390,
+    "run": 0,
+    "visibleAt": 906,
+    "hydratedAtVisible": false,
+    "hydratedDuringTyping": false,
+    "valueBeforeHydration": "5Q0615505R",
+    "typedAt": 3069,
+    "hydratedAt": 8915,
+    "timeline": [
+      {
+        "at": 127,
+        "v": "5Q0615505R"
+      },
+      {
+        "at": 391,
+        "v": ""
+      }
+    ],
+    "after": "",
+    "focused": true,
+    "shot": "docs/qa/audit/verify/xbrowser/xbrowser-01-skeptic-webkit-delay-390-home-after.webp",
+    "consoleErrors": []
+  },
+  {
+    "jsOnly": true,
+    "engine": "webkit",
+    "mode": "delay",
+    "route": "home",
+    "width": 390,
+    "run": 1,
+    "visibleAt": 3450,
+    "hydratedAtVisible": false,
+    "hydratedDuringTyping": true,
+    "valueBeforeHydration": "R",
+    "typedAt": 13959,
+    "hydratedAt": 14140,
+    "timeline": [
+      {
+        "at": 4,
+        "v": "R"
+      }
+    ],
+    "after": "R",
+    "focused": true,
+    "consoleErrors": []
+  }
+]

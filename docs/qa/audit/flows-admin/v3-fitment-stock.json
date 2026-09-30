@@ -1,0 +1,55 @@
+{
+  "steps": [
+    {
+      "name": "fitment inverted years",
+      "at": "2026-09-30T20:23:11.757Z",
+      "brand": "Volkswagen",
+      "model": "Golf",
+      "gen": "Golf IV (1J) · 1997–2006",
+      "alert": "Godina „do“ je pre godine „od“.",
+      "rows": "KompatibilnostUniverzalno (sva vozila)Artikal još nema vozila. Bez kompatibilnosti ga kupci ne vide kad izaberu vozilo.Dodaj voziloMarkaIzaberiteVolkswagenAudiŠkodaSEATCupraModelIzaberiteGolfPassatPoloCaddyTouranTiguanGeneracijaIzaberiteGolf IV (1J) · 1997–2006Golf V (1K) · 2003–2009Golf VI (5K) · 2008–2013Golf VII (5G) · 2012–2020Golf VIII (CD) · 2019–danasMotorSvi motori1.4 16V 55 kW · AXP, BCA1"
+    },
+    {
+      "name": "fitment year abc",
+      "at": "2026-09-30T20:23:13.035Z",
+      "alert": "Godine su celi brojevi."
+    },
+    {
+      "name": "dirty after fitment",
+      "at": "2026-09-30T20:23:13.040Z",
+      "dirty": false
+    },
+    {
+      "name": "stock -5",
+      "at": "2026-09-30T20:23:14.507Z",
+      "error": "Stanje ne može biti manje od nule.",
+      "saveDisabled": true,
+      "text": "Promena stanja — AUDIT-FA-852021Trenutno na stanju: 0 kom.Kako upisujetePromena (+ prijem, − otpis)Novo stanje (popis)Promena u komadimakom.Stanje ne može biti manje od nule.RazlogPrijem robeKorekcija (popis)PovratRučna izmenaNapomenanpr. broj prijemnice ili dobavljačOdustaniSačuvaj stanje"
+    },
+    {
+      "name": "stock +2",
+      "at": "2026-09-30T20:23:22.268Z",
+      "server": 2,
+      "dialogOpen": false
+    },
+    {
+      "name": "stock -2 (restore)",
+      "at": "2026-09-30T20:23:31.597Z",
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A)",
+        "retailPricePara": 499000,
+        "source": "manual",
+        "stockQty": 0
+      }
+    },
+    {
+      "name": "errors",
+      "at": "2026-09-30T20:23:31.597Z",
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+ "oos A focus after empty submit": "button# \"Obavesti me\"",
+ "oos A email input AX": {
+  "role": "textbox",
+  "name": "E-pošta",
+  "description": "E-mail adresa nije ispravna. Primer: ime@primer.rs.",
+  "invalid": "true"
+ },
+ "oos A added nodes": [
+  "P role=null live=null inLive=false E-mail adresa nije ispravna. Primer: ime@primer.rs."
+ ],
+ "oos B focus after invalid email submit": "button# \"Obavesti me\"",
+ "oos B added nodes": [],
+ "oos C focus after no-consent submit": "button# \"Obavesti me\"",
+ "oos C added nodes": [
+  "P role=alert live=null inLive=false Potrebna je saglasnost da vam pošaljemo obaveštenje."
+ ]
+}

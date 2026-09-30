@@ -1,0 +1,29 @@
+{
+  "kategorije": [
+    {
+      "text": "Opis za pretraživače 138 / 170 Do 155 znakova se vidi ceo. 138 / 155",
+      "counts": [
+        "138 / 170",
+        "138 / 155"
+      ]
+    }
+  ],
+  "proizvodNovi": [
+    {
+      "text": "Opis za pretraživače 160 / 170 Do 155 znakova: šta je deo, za koja vozila, cena i stanje. 160 / 155",
+      "counts": [
+        "160 / 170",
+        "160 / 155"
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "text": "Podrazumevani opis 114 / 170 114/155",
+      "counts": [
+        "114 / 170",
+        "114/155"
+      ]
+    }
+  ]
+}

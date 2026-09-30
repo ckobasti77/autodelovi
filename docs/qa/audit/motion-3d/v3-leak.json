@@ -1,0 +1,168 @@
+[
+  {
+    "k": "home live, scrolled 900",
+    "v": {
+      "path": "/",
+      "canvases": 1,
+      "hook": "object",
+      "state": {
+        "ready": true,
+        "tier": "high",
+        "status": "ready",
+        "progress": 0.312153,
+        "stage": 2,
+        "selected": null,
+        "hovered": null,
+        "timeline": "desktop",
+        "reducedMotion": false
+      },
+      "pinSpacers": 0,
+      "rafPerSec": 61
+    }
+  },
+  {
+    "k": "/delovi #1",
+    "v": {
+      "before": {
+        "path": "/delovi",
+        "canvases": 0,
+        "hook": "undefined",
+        "state": null,
+        "pinSpacers": 0,
+        "rafPerSec": 62
+      },
+      "afterScroll1500": {
+        "path": "/delovi",
+        "canvases": 0,
+        "hook": "undefined",
+        "state": null,
+        "pinSpacers": 0,
+        "rafPerSec": 61
+      }
+    }
+  },
+  {
+    "k": "home again #1",
+    "v": {
+      "path": "/",
+      "canvases": 1,
+      "hook": "object",
+      "state": {
+        "ready": true,
+        "tier": "high",
+        "status": "ready",
+        "progress": 0.215786,
+        "stage": 1,
+        "selected": null,
+        "hovered": null,
+        "timeline": "desktop",
+        "reducedMotion": false
+      },
+      "pinSpacers": 0,
+      "rafPerSec": 61
+    }
+  },
+  {
+    "k": "/delovi #2",
+    "v": {
+      "before": {
+        "path": "/delovi",
+        "canvases": 0,
+        "hook": "undefined",
+        "state": null,
+        "pinSpacers": 0,
+        "rafPerSec": 61
+      },
+      "afterScroll1500": {
+        "path": "/delovi",
+        "canvases": 0,
+        "hook": "undefined",
+        "state": null,
+        "pinSpacers": 0,
+        "rafPerSec": 60
+      }
+    }
+  },
+  {
+    "k": "home again #2",
+    "v": {
+      "path": "/",
+      "canvases": 1,
+      "hook": "object",
+      "state": {
+        "ready": true,
+        "tier": "high",
+        "status": "ready",
+        "progress": 0.241873,
+        "stage": 2,
+        "selected": null,
+        "hovered": null,
+        "timeline": "desktop",
+        "reducedMotion": false
+      },
+      "pinSpacers": 0,
+      "rafPerSec": 61
+    }
+  },
+  {
+    "k": "/delovi #3",
+    "v": {
+      "before": {
+        "path": "/delovi",
+        "canvases": 0,
+        "hook": "undefined",
+        "state": null,
+        "pinSpacers": 0,
+        "rafPerSec": 61
+      },
+      "afterScroll1500": {
+        "path": "/delovi",
+        "canvases": 0,
+        "hook": "undefined",
+        "state": null,
+        "pinSpacers": 0,
+        "rafPerSec": 61
+      }
+    }
+  },
+  {
+    "k": "home again #3",
+    "v": {
+      "path": "/",
+      "canvases": 1,
+      "hook": "object",
+      "state": {
+        "ready": true,
+        "tier": "high",
+        "status": "ready",
+        "progress": 0.256095,
+        "stage": 2,
+        "selected": null,
+        "hovered": null,
+        "timeline": "desktop",
+        "reducedMotion": false
+      },
+      "pinSpacers": 0,
+      "rafPerSec": 61
+    }
+  },
+  {
+    "k": "warnings",
+    "v": [
+      "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+      "THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.",
+      "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+      "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+      "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+    ]
+  },
+  {
+    "k": "errors",
+    "v": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "engine": "firefox",
+    "width": 1440,
+    "mode": "mouse",
+    "target": 1800,
+    "via": "/delovi",
+    "before": {
+      "y": 1800,
+      "stage": 5
+    },
+    "events": [
+      {
+        "ev": "pointerdown",
+        "y": 1800
+      },
+      {
+        "ev": "click",
+        "y": 1800
+      },
+      {
+        "ev": "pushState",
+        "y": 1800,
+        "url": "/delovi"
+      },
+      {
+        "ev": "scroll",
+        "y": 0
+      }
+    ],
+    "after": {
+      "y": 1800,
+      "stage": 5,
+      "cur": "05Motor i turbina",
+      "docH": 13394
+    }
+  },
+  {
+    "engine": "firefox",
+    "width": 1440,
+    "mode": "locator",
+    "target": 1800,
+    "via": "/delovi",
+    "before": {
+      "y": 1800,
+      "stage": 5
+    },
+    "events": [
+      {
+        "ev": "pointerdown",
+        "y": 1800
+      },
+      {
+        "ev": "click",
+        "y": 1800
+      },
+      {
+        "ev": "pushState",
+        "y": 1800,
+        "url": "/delovi"
+      },
+      {
+        "ev": "scroll",
+        "y": 0
+      }
+    ],
+    "after": {
+      "y": 1800,
+      "stage": 5,
+      "cur": "05Motor i turbina",
+      "docH": 13394
+    }
+  }
+]

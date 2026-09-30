@@ -1,0 +1,34 @@
+{
+  "mech": {
+    "390": {
+      "quick": {
+        "steppers": [
+          "36x36"
+        ],
+        "remove": [
+          "44x44"
+        ],
+        "gapStepperToRemove": 5
+      },
+      "fav": {
+        "count": 0,
+        "sizes": []
+      }
+    },
+    "1440": {
+      "quick": {
+        "steppers": [
+          "36x36"
+        ],
+        "remove": [
+          "44x44"
+        ],
+        "gapStepperToRemove": 5
+      },
+      "fav": {
+        "count": 0,
+        "sizes": []
+      }
+    }
+  }
+}

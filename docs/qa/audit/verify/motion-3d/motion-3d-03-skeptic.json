@@ -1,0 +1,590 @@
+[
+  {
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "mode": "wheel-1",
+    "width": 390,
+    "before": {
+      "scrollY": 0,
+      "vh": 844,
+      "rect": {
+        "top": 922,
+        "bottom": 987,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": 749,
+        "bottom": 1005
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 143)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none;",
+      "ariaHidden": "true",
+      "inert": true,
+      "gsapCache": {
+        "y": "71.5px",
+        "yPercent": 110
+      },
+      "visiblePx": 0,
+      "elementAtBottom": "div.flex flex-col gap-4 border-y border-line py-5"
+    },
+    "after": {
+      "scrollY": 1300,
+      "vh": 844,
+      "rect": {
+        "top": 850.5,
+        "bottom": 915.5,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": -551,
+        "bottom": -295
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "visible",
+      "opacity": "1",
+      "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "ariaHidden": "false",
+      "inert": false,
+      "gsapCache": {
+        "y": "71.5px",
+        "yPercent": 0
+      },
+      "visiblePx": 0,
+      "elementAtBottom": "div.flex flex-col gap-3"
+    },
+    "after2": {
+      "scrollY": 1300,
+      "vh": 844,
+      "rect": {
+        "top": 850.5,
+        "bottom": 915.5,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": -551,
+        "bottom": -295
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "visible",
+      "opacity": "1",
+      "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "ariaHidden": "false",
+      "inert": false,
+      "gsapCache": {
+        "y": "71.5px",
+        "yPercent": 0
+      },
+      "visiblePx": 0,
+      "elementAtBottom": "div.flex flex-col gap-3"
+    },
+    "back": {
+      "scrollY": 0,
+      "vh": 844,
+      "rect": {
+        "top": 922,
+        "bottom": 987,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": 749,
+        "bottom": 1005
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 143)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "ariaHidden": "true",
+      "inert": true,
+      "gsapCache": {
+        "y": "71.5px",
+        "yPercent": 110
+      },
+      "visiblePx": 0,
+      "elementAtBottom": "div.flex flex-col gap-4 border-y border-line py-5"
+    },
+    "focusProbe": [
+      {
+        "tag": "BUTTON",
+        "label": "U korpu: Kočioni disk prednji 276 × 24 m",
+        "focused": true,
+        "top": 862,
+        "bottom": 906,
+        "vh": 844
+      }
+    ],
+    "img": "docs/qa/audit/verify/motion-3d/motion-3d-03-skeptic-wheel-1.webp",
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "mode": "wheel-2",
+    "width": 390,
+    "before": {
+      "scrollY": 0,
+      "vh": 844,
+      "rect": {
+        "top": 922,
+        "bottom": 987,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": 749,
+        "bottom": 1005
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 143)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none;",
+      "ariaHidden": "true",
+      "inert": true,
+      "gsapCache": {
+        "y": "71.5px",
+        "yPercent": 110
+      },
+      "visiblePx": 0,
+      "elementAtBottom": "div.flex flex-col gap-4 border-y border-line py-5"
+    },
+    "after": {
+      "scrollY": 1300,
+      "vh": 844,
+      "rect": {
+        "top": 850.5,
+        "bottom": 915.5,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": -551,
+        "bottom": -295
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "visible",
+      "opacity": "1",
+      "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "ariaHidden": "false",
+      "inert": false,
+      "gsapCache": {
+        "y": "71.5px",
+        "yPercent": 0
+      },
+      "visiblePx": 0,
+      "elementAtBottom": "div.flex flex-col gap-3"
+    },
+    "after2": {
+      "scrollY": 1300,
+      "vh": 844,
+      "rect": {
+        "top": 850.5,
+        "bottom": 915.5,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": -551,
+        "bottom": -295
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "visible",
+      "opacity": "1",
+      "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "ariaHidden": "false",
+      "inert": false,
+      "gsapCache": {
+        "y": "71.5px",
+        "yPercent": 0
+      },
+      "visiblePx": 0,
+      "elementAtBottom": "div.flex flex-col gap-3"
+    },
+    "back": {
+      "scrollY": 0,
+      "vh": 844,
+      "rect": {
+        "top": 922,
+        "bottom": 987,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": 749,
+        "bottom": 1005
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 143)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "ariaHidden": "true",
+      "inert": true,
+      "gsapCache": {
+        "y": "71.5px",
+        "yPercent": 110
+      },
+      "visiblePx": 0,
+      "elementAtBottom": "div.flex flex-col gap-4 border-y border-line py-5"
+    },
+    "focusProbe": [
+      {
+        "tag": "BUTTON",
+        "label": "U korpu: Kočioni disk prednji 276 × 24 m",
+        "focused": true,
+        "top": 862,
+        "bottom": 906,
+        "vh": 844
+      }
+    ],
+    "img": "docs/qa/audit/verify/motion-3d/motion-3d-03-skeptic-wheel-2.webp",
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "mode": "scrollTo-3",
+    "width": 390,
+    "before": {
+      "scrollY": 0,
+      "vh": 844,
+      "rect": {
+        "top": 922,
+        "bottom": 987,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": 749,
+        "bottom": 1005
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 143)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none;",
+      "ariaHidden": "true",
+      "inert": true,
+      "gsapCache": {
+        "y": "71.5px",
+        "yPercent": 110
+      },
+      "visiblePx": 0,
+      "elementAtBottom": "div.flex flex-col gap-4 border-y border-line py-5"
+    },
+    "after": {
+      "scrollY": 1300,
+      "vh": 844,
+      "rect": {
+        "top": 850.5,
+        "bottom": 915.5,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": -551,
+        "bottom": -295
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "visible",
+      "opacity": "1",
+      "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "ariaHidden": "false",
+      "inert": false,
+      "gsapCache": {
+        "y": "71.5px",
+        "yPercent": 0
+      },
+      "visiblePx": 0,
+      "elementAtBottom": "div.flex flex-col gap-3"
+    },
+    "after2": {
+      "scrollY": 1300,
+      "vh": 844,
+      "rect": {
+        "top": 850.5,
+        "bottom": 915.5,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": -551,
+        "bottom": -295
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "visible",
+      "opacity": "1",
+      "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "ariaHidden": "false",
+      "inert": false,
+      "gsapCache": {
+        "y": "71.5px",
+        "yPercent": 0
+      },
+      "visiblePx": 0,
+      "elementAtBottom": "div.flex flex-col gap-3"
+    },
+    "back": {
+      "scrollY": 0,
+      "vh": 844,
+      "rect": {
+        "top": 922,
+        "bottom": 987,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": 749,
+        "bottom": 1005
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 143)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "ariaHidden": "true",
+      "inert": true,
+      "gsapCache": {
+        "y": "71.5px",
+        "yPercent": 110
+      },
+      "visiblePx": 0,
+      "elementAtBottom": "div.flex flex-col gap-4 border-y border-line py-5"
+    },
+    "focusProbe": [
+      {
+        "tag": "BUTTON",
+        "label": "U korpu: Kočioni disk prednji 276 × 24 m",
+        "focused": true,
+        "top": 862,
+        "bottom": 906,
+        "vh": 844
+      }
+    ],
+    "img": "docs/qa/audit/verify/motion-3d/motion-3d-03-skeptic-scrollTo-3.webp",
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "mode": "reduced",
+    "width": 390,
+    "before": {
+      "scrollY": 0,
+      "vh": 844,
+      "rect": {
+        "top": 850.5,
+        "bottom": 915.5,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": 749,
+        "bottom": 1005
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "hidden",
+      "opacity": "0",
+      "inlineStyle": "visibility: hidden; transform: translateY(110%); opacity: 0;",
+      "ariaHidden": "true",
+      "inert": true,
+      "gsapCache": {},
+      "visiblePx": 0,
+      "elementAtBottom": "div.flex flex-col gap-4 border-y border-line py-5"
+    },
+    "after": {
+      "scrollY": 1300,
+      "vh": 844,
+      "rect": {
+        "top": 850.5,
+        "bottom": 915.5,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": -551,
+        "bottom": -295
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "visible",
+      "opacity": "1",
+      "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;",
+      "ariaHidden": "false",
+      "inert": false,
+      "gsapCache": {},
+      "visiblePx": 0,
+      "elementAtBottom": "div.flex flex-col gap-3"
+    },
+    "after2": {
+      "scrollY": 1300,
+      "vh": 844,
+      "rect": {
+        "top": 850.5,
+        "bottom": 915.5,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": -551,
+        "bottom": -295
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "visible",
+      "opacity": "1",
+      "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;",
+      "ariaHidden": "false",
+      "inert": false,
+      "gsapCache": {},
+      "visiblePx": 0,
+      "elementAtBottom": "div.flex flex-col gap-3"
+    },
+    "back": {
+      "scrollY": 0,
+      "vh": 844,
+      "rect": {
+        "top": 850.5,
+        "bottom": 915.5,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": 749,
+        "bottom": 1005
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "hidden",
+      "opacity": "0",
+      "inlineStyle": "visibility: hidden; transform: translateY(110%); opacity: 0;",
+      "ariaHidden": "true",
+      "inert": true,
+      "gsapCache": {},
+      "visiblePx": 0,
+      "elementAtBottom": "div.flex flex-col gap-4 border-y border-line py-5"
+    },
+    "focusProbe": [
+      {
+        "tag": "BUTTON",
+        "label": "U korpu: Kočioni disk prednji 276 × 24 m",
+        "focused": true,
+        "top": 862,
+        "bottom": 906,
+        "vh": 844
+      }
+    ],
+    "img": "docs/qa/audit/verify/motion-3d/motion-3d-03-skeptic-reduced.webp",
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "mode": "768-wheel",
+    "width": 768,
+    "before": {
+      "scrollY": 0,
+      "vh": 1024,
+      "rect": {
+        "top": 1102,
+        "bottom": 1167,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": 1473,
+        "bottom": 1731
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 143)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none;",
+      "ariaHidden": "true",
+      "inert": true,
+      "gsapCache": {
+        "y": "71.5px",
+        "yPercent": 110
+      },
+      "visiblePx": 0,
+      "elementAtBottom": "circle.[object SVGAnimatedString]"
+    },
+    "after": {
+      "scrollY": 1300,
+      "vh": 1024,
+      "rect": {
+        "top": 1102,
+        "bottom": 1167,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": 173,
+        "bottom": 431
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 143)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none;",
+      "ariaHidden": "true",
+      "inert": true,
+      "gsapCache": {
+        "y": "71.5px",
+        "yPercent": 110
+      },
+      "visiblePx": 0,
+      "elementAtBottom": "td.px-3 py-2.5 text-ink-1"
+    },
+    "after2": {
+      "scrollY": 1300,
+      "vh": 1024,
+      "rect": {
+        "top": 1102,
+        "bottom": 1167,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": 173,
+        "bottom": 431
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 143)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none;",
+      "ariaHidden": "true",
+      "inert": true,
+      "gsapCache": {
+        "y": "71.5px",
+        "yPercent": 110
+      },
+      "visiblePx": 0,
+      "elementAtBottom": "td.px-3 py-2.5 text-ink-1"
+    },
+    "back": {
+      "scrollY": 0,
+      "vh": 1024,
+      "rect": {
+        "top": 1102,
+        "bottom": 1167,
+        "height": 65
+      },
+      "buyBoxRect": {
+        "top": 1473,
+        "bottom": 1731
+      },
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 143)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none;",
+      "ariaHidden": "true",
+      "inert": true,
+      "gsapCache": {
+        "y": "71.5px",
+        "yPercent": 110
+      },
+      "visiblePx": 0,
+      "elementAtBottom": "circle.[object SVGAnimatedString]"
+    },
+    "focusProbe": [
+      {
+        "tag": "BUTTON",
+        "label": "U korpu: Kočioni disk prednji 276 × 24 m",
+        "focused": false,
+        "top": 1113,
+        "bottom": 1157,
+        "vh": 1024
+      }
+    ],
+    "img": "docs/qa/audit/verify/motion-3d/motion-3d-03-skeptic-768-wheel.webp",
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "base": "http://localhost:3100",
+  "inquiry": {
+    "number": "UP-2026-000078",
+    "token": "OGiDo0AHnqc_7VCWdd116ZcssJRL4_yT3vv4K03M5yU",
+    "sentPhone": "064 765 4321",
+    "sentEmail": "audit-verify-fs16-1790799649551@primer.rs",
+    "sentName": "Verifikacija Prefill"
+  },
+  "adminContactText": [
+    "Verifikacija Prefill · Kupac",
+    "Verifikacija Prefill",
+    "audit-verify-fs16-1790799649551@primer.rs"
+  ],
+  "probeAfterQuote": {
+    "eventTypes": [
+      "inquiry.created",
+      "inquiry.status_changed",
+      "inquiry.status_changed"
+    ],
+    "kind": "part",
+    "photoCount": 0,
+    "status": "ponuda_poslata",
+    "vin": null
+  },
+  "fresh390": [
+    {
+      "label": "Ime",
+      "type": "text",
+      "autocomplete": "given-name",
+      "value": "Verifikacija"
+    },
+    {
+      "label": "Prezime",
+      "type": "text",
+      "autocomplete": "family-name",
+      "value": "Prefill"
+    },
+    {
+      "label": "Telefon",
+      "type": "tel",
+      "autocomplete": "tel",
+      "value": ""
+    },
+    {
+      "label": "E-pošta",
+      "type": "email",
+      "autocomplete": "email",
+      "value": ""
+    }
+  ],
+  "shot390": "docs/qa/audit/verify/flows-shop/flows-shop-16-reproduce-accept-form-390.webp",
+  "seed1440": [
+    {
+      "label": "Ime",
+      "type": "text",
+      "autocomplete": "given-name",
+      "value": "Demo"
+    },
+    {
+      "label": "Prezime",
+      "type": "text",
+      "autocomplete": "family-name",
+      "value": "Majstor"
+    },
+    {
+      "label": "Telefon",
+      "type": "tel",
+      "autocomplete": "tel",
+      "value": ""
+    },
+    {
+      "label": "E-pošta",
+      "type": "email",
+      "autocomplete": "email",
+      "value": ""
+    }
+  ],
+  "shot1440": "docs/qa/audit/verify/flows-shop/flows-shop-16-reproduce-accept-form-seed-1440.webp"
+}

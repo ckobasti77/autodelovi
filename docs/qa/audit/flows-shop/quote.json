@@ -1,0 +1,160 @@
+{
+  "steps": [
+    {
+      "sent": "UP-2026-000068",
+      "probe": {
+        "eventTypes": [
+          "inquiry.created",
+          "inquiry.status_changed",
+          "inquiry.status_changed"
+        ],
+        "kind": "part",
+        "photoCount": 0,
+        "status": "ponuda_poslata",
+        "vin": null
+      }
+    },
+    {
+      "sent": "UP-2026-000067",
+      "probe": {
+        "eventTypes": [
+          "inquiry.created",
+          "inquiry.status_changed",
+          "inquiry.status_changed"
+        ],
+        "kind": "vin",
+        "photoCount": 5,
+        "status": "ponuda_poslata",
+        "vin": "WVWZZZAUZGW123456"
+      }
+    }
+  ],
+  "A": {
+    "token": "jpyYGbSE08TEh7SLzivDRN9lHJvs0Slxd8BdgYBnBiM",
+    "number": "UP-2026-000068"
+  },
+  "aQuote": "Upit i ponuda UP-2026-000068 Ponuda poslata 30.09.2026. 21:53 Ponuda Važi do 07.10.2026. Kočioni disk prednji 276 × 24 mm Febi Bilstein · na stanju · 1 × 4.690 RSD 4.690 RSD Ukupno 4.690 RSD Prihvati ponudu Odbij ponudu Vaš upit Treba mi prednji kočioni disk 276 mm za Golf 7 (audit flows-shop, ponuda). Tok upita Upit je primljen. 30.09.2026. 21:53 U obradi 30.09.2026. 21:53 Ponuda je poslata (važi do 07.10.2026.). 30.09.2026. 21:53 Ponudu i svaku promenu vidite na ovoj stranici — osvežava se sama.",
+  "aFormFields": [
+    {
+      "label": "Ime",
+      "type": "text",
+      "value": "Audit",
+      "autocomplete": "given-name"
+    },
+    {
+      "label": "Prezime",
+      "type": "text",
+      "value": "Ponuda",
+      "autocomplete": "family-name"
+    },
+    {
+      "label": "Telefon",
+      "type": "tel",
+      "value": "",
+      "autocomplete": "tel"
+    },
+    {
+      "label": "E-pošta",
+      "type": "email",
+      "value": "",
+      "autocomplete": "email"
+    },
+    {
+      "type": "radio",
+      "value": "pickup",
+      "autocomplete": null
+    },
+    {
+      "type": "radio",
+      "value": "courier",
+      "autocomplete": null
+    },
+    {
+      "type": "radio",
+      "value": "pickup_cash",
+      "autocomplete": null
+    },
+    {
+      "type": "radio",
+      "value": "pickup_card",
+      "autocomplete": null
+    },
+    {
+      "type": "checkbox",
+      "value": "on",
+      "autocomplete": null
+    }
+  ],
+  "aRadios": [
+    "Lično preuzimanje · 0 RSD",
+    "Kurirska služba · 450 RSD",
+    "Gotovinom pri preuzimanju",
+    "Karticom pri preuzimanju"
+  ],
+  "aEmptySubmit": {
+    "alerts": [
+      "Broj telefona nije ispravan. Primer: 064 123 4567."
+    ],
+    "invalid": 0,
+    "focus": "BUTTON#|Pošalji porudžbinu po ponudi"
+  },
+  "aBadPhone": [
+    "Broj telefona nije ispravan. Primer: 064 123 4567."
+  ],
+  "aAfter": {
+    "url": "http://localhost:3100/porudzbina/hvala/8ODuVhQIQ_Ec65-ergFlwSDRq-IXP8yW87Jpyza5_1U",
+    "text": "PORUDŽBINA JE PRIMLJENA. Broj porudžbine je SK-2026-000133. Poslali smo potvrdu na audit-flows-quote-1790798068361@primer.rs; javićemo se kad je potvrdimo. Plaćate gotovinom u radnji kada preuzimate deo. Status pratite na stranici porudžbine — sačuvajte link. SK-2026-000133 Primljena 30.09.2026. 21:54 Tok porudžbine Primljena — trenutno 30.09.2026. 21:54 Potvrđena — čeka Spremna za preuzimanje — čeka Preuzeta — čeka Stavke Kočioni disk prednji 276 × 24 mm Febi Bilstein · OEM 5Q0 615 505 R · 1 × 4.690 RSD 4.690 RSD Artikli 4.690 RSD Dostava 0 RSD Ukupno 4.690 RSD Uračunat PDV: 781,67 RSD Dostava Lično preuzimanje Plaćanje Gotovinom pri preuzimanju Obaveštenja Svaku promenu vidite na ovoj stra"
+  },
+  "aOrderProbe": {
+    "customerType": "guest",
+    "deliveryMethod": "pickup",
+    "eventTypes": [
+      "order.created"
+    ],
+    "hasAttribution": true,
+    "itemCount": 1,
+    "paymentMethod": "pickup_cash",
+    "source": "inquiry",
+    "status": "nova",
+    "totalPara": 469000
+  },
+  "aStatusAfter": "Upit i ponuda UP-2026-000068 Prihvaćena 30.09.2026. 21:53 Ponuda Važi do 07.10.2026. Kočioni disk prednji 276 × 24 mm Febi Bilstein · na stanju · 1 × 4.690 RSD 4.690 RSD Ukupno 4.690 RSD Ponuda je prihvaćena — porudžbina SK-2026-000133. Vaš upit Treba mi prednji kočioni disk 276 mm za Golf 7 (audit flows-shop, ponuda). Tok upita Upit je primljen. 30.09.2026. 21:53 U obradi 30.09.2026. 21:53 Ponuda je poslata (važi do 07.10.2026.). 30.09.2026. 21:53 Ponuda je prihvaćena — porudžbina SK-2026-000133. 30.09.2026. 21:54 Ponudu i svaku promenu vidite na ovoj stranici — osvežava se sama.",
+  "aProbe": {
+    "eventTypes": [
+      "inquiry.created",
+      "inquiry.status_changed",
+      "inquiry.status_changed",
+      "inquiry.status_changed"
+    ],
+    "kind": "part",
+    "photoCount": 0,
+    "status": "prihvacena",
+    "vin": null
+  },
+  "aLog": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  },
+  "bDeclineForm": "Upit i ponuda UP-2026-000067 Ponuda poslata 30.09.2026. 20:43 Ponuda Važi do 07.10.2026. Kočioni disk prednji 276 × 24 mm Febi Bilstein · na stanju · 1 × 4.690 RSD 4.690 RSD Ukupno 4.690 RSD Razlog (nije obavezno) 0 / 500 Odbij ponudu Nazad Vaš upit Volkswagen Golf VII (2016) WVWZZZAUZGW123456 Treba mi set kočionih diskova i pločica napred za Golf 7 (audit flows-shop). Fotografija: 5 Tok upita Upit je primljen. 30.09.2026. 20:43 U obradi 30.09.2026. 21:54 Ponuda je poslata (važi do 07.10.2026.). 30.09.2026. 21:54 Ponudu i svaku promenu vidite na ovoj stranici — osvežava se sama.",
+  "bAfter": "Upit i ponuda UP-2026-000067 Odbijena 30.09.2026. 20:43 Ponuda Važi do 07.10.2026. Kočioni disk prednji 276 × 24 mm Febi Bilstein · na stanju · 1 × 4.690 RSD 4.690 RSD Ukupno 4.690 RSD Napomena: Kupac je odbio ponudu. Vaš upit Volkswagen Golf VII (2016) WVWZZZAUZGW123456 Treba mi set kočionih diskova i pločica napred za Golf 7 (audit flows-shop). Fotografija: 5 Tok upita Upit je primljen. 30.09.2026. 20:43 U obradi 30.09.2026. 21:54 Ponuda je poslata (važi do 07.10.2026.). 30.09.2026. 21:54 Ponuda je odbijena. 30.09.2026. 21:54 Ponudu i svaku promenu vidite na ovoj stranici — osvežava se sama.",
+  "bProbe": {
+    "eventTypes": [
+      "inquiry.created",
+      "inquiry.status_changed",
+      "inquiry.status_changed",
+      "inquiry.status_changed"
+    ],
+    "kind": "vin",
+    "photoCount": 5,
+    "status": "odbijena",
+    "vin": "WVWZZZAUZGW123456"
+  },
+  "bLog": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

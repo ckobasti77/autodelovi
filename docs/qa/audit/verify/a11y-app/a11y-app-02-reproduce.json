@@ -1,0 +1,163 @@
+[
+  {
+    "label": "chromium-nojs-390 /prijava",
+    "route": "/prijava",
+    "form": [
+      {
+        "method": null,
+        "action": null,
+        "names": [
+          "email",
+          "password"
+        ],
+        "hasPassword": true
+      }
+    ],
+    "navAfterSubmit": [
+      "GET /prijava?email=verify-a11y-02%40primer.rs&password=VerifyLozinka-777"
+    ],
+    "finalUrl": "/prijava?email=verify-a11y-02%40primer.rs&password=VerifyLozinka-777",
+    "leaked": true,
+    "evidence": "docs/qa/audit/verify/a11y-app/a11y-app-02-reproduce-nojs-prijava-390.webp"
+  },
+  {
+    "label": "chromium-nojs-390 /registracija",
+    "route": "/registracija",
+    "form": [
+      {
+        "method": null,
+        "action": null,
+        "names": [
+          "name",
+          "email",
+          "password"
+        ],
+        "hasPassword": true
+      }
+    ],
+    "navAfterSubmit": [
+      "GET /registracija?name=Verify+Tester&email=verify-a11y-02%40primer.rs&password=VerifyLozinka-777"
+    ],
+    "finalUrl": "/registracija?name=Verify+Tester&email=verify-a11y-02%40primer.rs&password=VerifyLozinka-777",
+    "leaked": true,
+    "evidence": "docs/qa/audit/verify/a11y-app/a11y-app-02-reproduce-nojs-registracija-390.webp"
+  },
+  {
+    "label": "chromium-nojs-390 /za-majstore/registracija",
+    "route": "/za-majstore/registracija",
+    "form": [
+      {
+        "method": null,
+        "action": null,
+        "names": [
+          "email",
+          "password",
+          "companyName",
+          "pib",
+          "mb",
+          "contactPerson",
+          "phone",
+          "city",
+          "address"
+        ],
+        "hasPassword": true
+      }
+    ],
+    "navAfterSubmit": [
+      "GET /za-majstore/registracija?email=verify-a11y-02%40primer.rs&password=VerifyLozinka-777&companyName=&pib=&mb=&contactPerson=&phone=&city=&address="
+    ],
+    "finalUrl": "/za-majstore/registracija?email=verify-a11y-02%40primer.rs&password=VerifyLozinka-777&companyName=&pib=&mb=&contactPerson=&phone=&city=&address=",
+    "leaked": true,
+    "evidence": "docs/qa/audit/verify/a11y-app/a11y-app-02-reproduce-nojs-majstor-390.webp"
+  },
+  {
+    "label": "chromium-nojs-390 /zaboravljena-lozinka",
+    "route": "/zaboravljena-lozinka",
+    "form": [],
+    "navAfterSubmit": [
+      "GET /zaboravljena-lozinka?"
+    ],
+    "finalUrl": "/zaboravljena-lozinka?",
+    "leaked": false,
+    "evidence": null
+  },
+  {
+    "label": "chromium-nojs-1440 /prijava",
+    "route": "/prijava",
+    "form": [
+      {
+        "method": null,
+        "action": null,
+        "names": [
+          "email",
+          "password"
+        ],
+        "hasPassword": true
+      }
+    ],
+    "navAfterSubmit": [
+      "GET /prijava?email=verify-a11y-02%40primer.rs&password=VerifyLozinka-777"
+    ],
+    "finalUrl": "/prijava?email=verify-a11y-02%40primer.rs&password=VerifyLozinka-777",
+    "leaked": true,
+    "evidence": null
+  },
+  {
+    "label": "chromium-js-prehydration-390 /prijava (Enter)",
+    "heldChunks": 46,
+    "hydratedAtSubmit": false,
+    "navAfterSubmit": [
+      "GET /prijava?email=verify-a11y-02%40primer.rs&password=VerifyLozinka-777"
+    ],
+    "finalUrl": "/prijava?email=verify-a11y-02%40primer.rs&password=VerifyLozinka-777",
+    "leaked": true
+  },
+  {
+    "label": "chromium-js-hydrated-390 /prijava (control)",
+    "navAfterSubmit": [],
+    "finalUrl": "/prijava",
+    "leaked": false
+  },
+  {
+    "label": "firefox-nojs-390 /prijava",
+    "route": "/prijava",
+    "form": [
+      {
+        "method": null,
+        "action": null,
+        "names": [
+          "email",
+          "password"
+        ],
+        "hasPassword": true
+      }
+    ],
+    "navAfterSubmit": [
+      "GET /prijava?email=verify-a11y-02%40primer.rs&password=VerifyLozinka-777"
+    ],
+    "finalUrl": "/prijava?email=verify-a11y-02%40primer.rs&password=VerifyLozinka-777",
+    "leaked": true,
+    "evidence": null
+  },
+  {
+    "label": "webkit-nojs-390 /prijava",
+    "route": "/prijava",
+    "form": [
+      {
+        "method": null,
+        "action": null,
+        "names": [
+          "email",
+          "password"
+        ],
+        "hasPassword": true
+      }
+    ],
+    "navAfterSubmit": [
+      "GET /prijava?email=verify-a11y-02%40primer.rs&password=VerifyLozinka-777"
+    ],
+    "finalUrl": "/prijava?email=verify-a11y-02%40primer.rs&password=VerifyLozinka-777",
+    "leaked": true,
+    "evidence": "docs/qa/audit/verify/a11y-app/a11y-app-02-reproduce-nojs-prijava-webkit-390.webp"
+  }
+]

@@ -1,0 +1,82 @@
+{
+  "steps": [
+    {
+      "name": "created order",
+      "at": "2026-09-30T20:50:53.610Z",
+      "number": "SK-2026-000144",
+      "probe": {
+        "customerType": "guest",
+        "deliveryMethod": "courier",
+        "eventTypes": [
+          "order.created"
+        ],
+        "hasAttribution": false,
+        "itemCount": 1,
+        "paymentMethod": "cod",
+        "source": "web",
+        "status": "nova",
+        "totalPara": 1890000
+      }
+    },
+    {
+      "name": "offline, before any write",
+      "at": "2026-09-30T20:51:00.917Z",
+      "connectionText": [
+        "Offline beleška verifikacija 1451359"
+      ]
+    },
+    {
+      "name": "offline 6 s after 'Dodaj napomenu'",
+      "at": "2026-09-30T20:51:08.071Z",
+      "btnBusy": "true",
+      "connectionText": [
+        "Offline beleška verifikacija 1451359"
+      ],
+      "statusRegions": [],
+      "serverNoteSaved": "order.created"
+    },
+    {
+      "name": "offline 6 s after dialog 'Potvrdi'",
+      "at": "2026-09-30T20:51:15.555Z",
+      "dialogOpen": true,
+      "confirmBusy": "true",
+      "cancelDisabled": true,
+      "connectionText": [
+        "Offline beleška verifikacija 1451359"
+      ],
+      "serverStatus": "nova"
+    },
+    {
+      "name": "offline: Escape pressed",
+      "at": "2026-09-30T20:51:16.727Z",
+      "dialogOpen": true
+    },
+    {
+      "name": "back online 12 s",
+      "at": "2026-09-30T20:51:30.009Z",
+      "noteInHistory": true,
+      "head": "PorudžbinePorudžbina SK-2026-000144PotvrđenaPrimljena 30.09. 22:50 · SajtPredračunOtpremnicaPromeni statusOznači kao poslatoStavkeStavke se ",
+      "dialogOpen": false,
+      "serverStatus": "potvrdjena",
+      "toasts": []
+    },
+    {
+      "name": "errors",
+      "at": "2026-09-30T20:51:30.257Z",
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "name": "dashboard offline 8 s",
+      "at": "2026-09-30T20:51:41.825Z",
+      "connectionText": []
+    },
+    {
+      "name": "shop /delovi offline 2.5 s",
+      "at": "2026-09-30T20:51:48.064Z",
+      "connectionText": []
+    }
+  ]
+}

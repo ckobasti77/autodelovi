@@ -1,0 +1,29 @@
+{
+ "iq focus after empty submit": "textarea#iq-message \"\"",
+ "iq consent attrs": {
+  "ariaInvalid": "true",
+  "ariaDescribedby": null,
+  "alertsInMain": [
+   "alert: Proverite označena polja:Napišite šta vam treba — naziv dela",
+   "live=polite: ",
+   "status: "
+  ]
+ },
+ "iq consent AX": {
+  "role": "checkbox",
+  "name": "Slažem se da podatke iz upita koristite za odgovor, premapolitici privatnosti.",
+  "description": "",
+  "invalid": "true"
+ },
+ "iq name field AX (comparison)": {
+  "role": "textbox",
+  "name": "Ime",
+  "description": "Upišite ime.",
+  "invalid": "true"
+ },
+ "iq consent error p": {
+  "id": "",
+  "role": null,
+  "text": "Potrebna je saglasnost da podatke koristimo za odgovor na upit."
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "chromium": {
+  "tag": "DIV",
+  "cls": "my-6 overflow-x-auto rounded-sm border border-line",
+  "outline": "solid 2px rgb(255, 107, 26)",
+  "boxShadow": "none",
+  "focusVisible": true
+ },
+ "chromiumAria": "- table:\n  - rowgroup:\n    - row \"Naziv Svrha Trajanje\":\n      - columnheader \"Naziv\"\n      - columnheader \"Svrha\"\n      - columnheader \"Trajanje\"\n  - rowgroup:\n    - row \"Kolačići prijave Održavanje prijave na nalog Do 30 dana\":\n      - cell \"Kolačići prijave\"\n      - cell \"Održavanje prijave na na",
+ "firefox": {
+  "tag": "DIV",
+  "cls": "my-6 overflow-x-auto rounded-sm border border-line",
+  "outline": "solid 2px rgb(255, 107, 26)",
+  "boxShadow": "none",
+  "focusVisible": true
+ }
+}

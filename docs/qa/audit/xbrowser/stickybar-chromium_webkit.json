@@ -1,0 +1,116 @@
+{
+  "chromium": [
+    {
+      "y": 0,
+      "top": 922,
+      "h": 65,
+      "transform": "matrix(1, 0, 0, 1, 0, 143)",
+      "vis": "hidden",
+      "op": "1",
+      "inert": true,
+      "ariaHidden": "true",
+      "text": "4.690RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm"
+    },
+    {
+      "y": 700,
+      "top": 922,
+      "h": 65,
+      "transform": "matrix(1, 0, 0, 1, 0, 143)",
+      "vis": "hidden",
+      "op": "1",
+      "inert": true,
+      "ariaHidden": "true",
+      "text": "4.690RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm"
+    },
+    {
+      "y": 1100,
+      "top": 851,
+      "h": 65,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "vis": "visible",
+      "op": "1",
+      "inert": false,
+      "ariaHidden": "false",
+      "text": "4.690RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm"
+    },
+    {
+      "y": 1400,
+      "top": 851,
+      "h": 65,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "vis": "visible",
+      "op": "1",
+      "inert": false,
+      "ariaHidden": "false",
+      "text": "4.690RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm"
+    },
+    {
+      "y": 2200,
+      "top": 851,
+      "h": 65,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "vis": "visible",
+      "op": "1",
+      "inert": false,
+      "ariaHidden": "false",
+      "text": "4.690RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm"
+    }
+  ],
+  "webkit": [
+    {
+      "y": 0,
+      "top": 922,
+      "h": 65,
+      "transform": "matrix(1, 0, 0, 1, 0, 143)",
+      "vis": "hidden",
+      "op": "1",
+      "inert": true,
+      "ariaHidden": "true",
+      "text": "4.690RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm"
+    },
+    {
+      "y": 700,
+      "top": 922,
+      "h": 65,
+      "transform": "matrix(1, 0, 0, 1, 0, 143)",
+      "vis": "hidden",
+      "op": "1",
+      "inert": true,
+      "ariaHidden": "true",
+      "text": "4.690RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm"
+    },
+    {
+      "y": 1100,
+      "top": 922,
+      "h": 65,
+      "transform": "matrix(1, 0, 0, 1, 0, 143)",
+      "vis": "hidden",
+      "op": "1",
+      "inert": true,
+      "ariaHidden": "true",
+      "text": "4.690RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm"
+    },
+    {
+      "y": 1400,
+      "top": 851,
+      "h": 65,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "vis": "visible",
+      "op": "1",
+      "inert": false,
+      "ariaHidden": "false",
+      "text": "4.690RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm"
+    },
+    {
+      "y": 2200,
+      "top": 851,
+      "h": 65,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "vis": "visible",
+      "op": "1",
+      "inert": false,
+      "ariaHidden": "false",
+      "text": "4.690RSDsa PDV-omU korpu: Kočioni disk prednji 276 × 24 mm"
+    }
+  ]
+}

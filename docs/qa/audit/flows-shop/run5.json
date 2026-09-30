@@ -1,0 +1,32 @@
+[
+  {
+    "reducedMotion": "no-preference",
+    "bbBottom": 979.609375,
+    "st": {
+      "scrollY": 1200,
+      "vh": 844,
+      "vis": "visible",
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;",
+      "top": 850.5,
+      "height": 65,
+      "ariaHidden": "false"
+    }
+  },
+  {
+    "reducedMotion": "reduce",
+    "bbBottom": 979.609375,
+    "st": {
+      "scrollY": 1200,
+      "vh": 844,
+      "vis": "visible",
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineStyle": "visibility: visible; transform: translateY(110%); opacity: 1;",
+      "top": 850.5,
+      "height": 65,
+      "ariaHidden": "false"
+    }
+  }
+]

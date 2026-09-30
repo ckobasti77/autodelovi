@@ -1,0 +1,263 @@
+{
+ "chromium-390/kolacici scrollers": [
+  {
+   "i": 0,
+   "sw": 512,
+   "cw": 356,
+   "tabindex": null,
+   "role": null,
+   "label": null,
+   "focusablesInside": 0,
+   "caption": null,
+   "firstHead": "Naziv | Svrha | Trajanje"
+  },
+  {
+   "i": 1,
+   "sw": 512,
+   "cw": 356,
+   "tabindex": null,
+   "role": null,
+   "label": null,
+   "focusablesInside": 0,
+   "caption": null,
+   "firstHead": "Naziv | Ko ga postavlja | Svrha | Trajanje"
+  },
+  {
+   "i": 2,
+   "sw": 512,
+   "cw": 356,
+   "tabindex": null,
+   "role": null,
+   "label": null,
+   "focusablesInside": 0,
+   "caption": null,
+   "firstHead": "Naziv | Ko ga postavlja | Svrha | Trajanje"
+  }
+ ],
+ "chromium-390/kolacici axe": [
+  {
+   "id": "scrollable-region-focusable",
+   "impact": "serious",
+   "help": "Scrollable region must have keyboard access",
+   "nodes": 3,
+   "targets": [
+    "div[data-v09=\"0\"]",
+    "div[data-v09=\"1\"]",
+    "div[data-v09=\"2\"]"
+   ],
+   "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+  }
+ ],
+ "chromium-390/kolacici tab stops before footer": 11,
+ "chromium-390/kolacici tab hits on scrollers": [
+  "7:div(scroller itself)#0",
+  "8:div(scroller itself)#1",
+  "9:div(scroller itself)#2"
+ ],
+ "chromium-390/kolacici arrow scroll": "0 -> 156",
+ "chromium-390/dostava-i-placanje scrollers": [
+  {
+   "i": 0,
+   "sw": 480,
+   "cw": 356,
+   "tabindex": null,
+   "role": null,
+   "label": null,
+   "focusablesInside": 0,
+   "caption": "Načini dostave i cene",
+   "firstHead": "Dostava | Cena | Rok | Plaćanje | Lično preuzimanje | Kurirska služba"
+  }
+ ],
+ "chromium-390/dostava-i-placanje axe": [
+  {
+   "id": "scrollable-region-focusable",
+   "impact": "serious",
+   "help": "Scrollable region must have keyboard access",
+   "nodes": 1,
+   "targets": [
+    ".overflow-x-auto"
+   ],
+   "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+  }
+ ],
+ "chromium-390/dostava-i-placanje tab stops before footer": 9,
+ "chromium-390/dostava-i-placanje tab hits on scrollers": [
+  "7:div(scroller itself)#0"
+ ],
+ "chromium-390/dostava-i-placanje arrow scroll": "0 -> 124",
+ "chromium-390/politika-privatnosti scrollers": [
+  {
+   "i": 0,
+   "sw": 512,
+   "cw": 356,
+   "tabindex": null,
+   "role": null,
+   "label": null,
+   "focusablesInside": 0,
+   "caption": null,
+   "firstHead": "Podaci | Svrha | Pravni osnov"
+  }
+ ],
+ "chromium-390/politika-privatnosti axe": [
+  {
+   "id": "scrollable-region-focusable",
+   "impact": "serious",
+   "help": "Scrollable region must have keyboard access",
+   "nodes": 1,
+   "targets": [
+    ".my-6"
+   ],
+   "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+  }
+ ],
+ "chromium-390/politika-privatnosti tab stops before footer": 9,
+ "chromium-390/politika-privatnosti tab hits on scrollers": [
+  "7:div(scroller itself)#0"
+ ],
+ "chromium-390/politika-privatnosti arrow scroll": "0 -> 156",
+ "firefox-390/kolacici scrollers": [
+  {
+   "i": 0,
+   "sw": 512,
+   "cw": 356,
+   "tabindex": null,
+   "role": null,
+   "label": null,
+   "focusablesInside": 0,
+   "caption": null,
+   "firstHead": "Naziv | Svrha | Trajanje"
+  },
+  {
+   "i": 1,
+   "sw": 512,
+   "cw": 356,
+   "tabindex": null,
+   "role": null,
+   "label": null,
+   "focusablesInside": 0,
+   "caption": null,
+   "firstHead": "Naziv | Ko ga postavlja | Svrha | Trajanje"
+  },
+  {
+   "i": 2,
+   "sw": 512,
+   "cw": 356,
+   "tabindex": null,
+   "role": null,
+   "label": null,
+   "focusablesInside": 0,
+   "caption": null,
+   "firstHead": "Naziv | Ko ga postavlja | Svrha | Trajanje"
+  }
+ ],
+ "firefox-390/kolacici tab stops before footer": 11,
+ "firefox-390/kolacici tab hits on scrollers": [
+  "7:div(scroller itself)#0",
+  "8:div(scroller itself)#1",
+  "9:div(scroller itself)#2"
+ ],
+ "firefox-390/kolacici arrow scroll": "0 -> 156",
+ "firefox-390/dostava-i-placanje scrollers": [
+  {
+   "i": 0,
+   "sw": 480,
+   "cw": 356,
+   "tabindex": null,
+   "role": null,
+   "label": null,
+   "focusablesInside": 0,
+   "caption": "Načini dostave i cene",
+   "firstHead": "Dostava | Cena | Rok | Plaćanje | Lično preuzimanje | Kurirska služba"
+  }
+ ],
+ "firefox-390/dostava-i-placanje tab stops before footer": 9,
+ "firefox-390/dostava-i-placanje tab hits on scrollers": [
+  "7:div(scroller itself)#0"
+ ],
+ "firefox-390/dostava-i-placanje arrow scroll": "0 -> 124",
+ "firefox-390/politika-privatnosti scrollers": [
+  {
+   "i": 0,
+   "sw": 512,
+   "cw": 356,
+   "tabindex": null,
+   "role": null,
+   "label": null,
+   "focusablesInside": 0,
+   "caption": null,
+   "firstHead": "Podaci | Svrha | Pravni osnov"
+  }
+ ],
+ "firefox-390/politika-privatnosti tab stops before footer": 9,
+ "firefox-390/politika-privatnosti tab hits on scrollers": [
+  "7:div(scroller itself)#0"
+ ],
+ "firefox-390/politika-privatnosti arrow scroll": "0 -> 156",
+ "webkit-390/kolacici scrollers": [
+  {
+   "i": 0,
+   "sw": 512,
+   "cw": 356,
+   "tabindex": null,
+   "role": null,
+   "label": null,
+   "focusablesInside": 0,
+   "caption": null,
+   "firstHead": "Naziv | Svrha | Trajanje"
+  },
+  {
+   "i": 1,
+   "sw": 512,
+   "cw": 356,
+   "tabindex": null,
+   "role": null,
+   "label": null,
+   "focusablesInside": 0,
+   "caption": null,
+   "firstHead": "Naziv | Ko ga postavlja | Svrha | Trajanje"
+  },
+  {
+   "i": 2,
+   "sw": 512,
+   "cw": 356,
+   "tabindex": null,
+   "role": null,
+   "label": null,
+   "focusablesInside": 0,
+   "caption": null,
+   "firstHead": "Naziv | Ko ga postavlja | Svrha | Trajanje"
+  }
+ ],
+ "webkit-390/kolacici tab stops before footer": 3,
+ "webkit-390/kolacici tab hits on scrollers": [],
+ "webkit-390/dostava-i-placanje scrollers": [
+  {
+   "i": 0,
+   "sw": 480,
+   "cw": 356,
+   "tabindex": null,
+   "role": null,
+   "label": null,
+   "focusablesInside": 0,
+   "caption": "Načini dostave i cene",
+   "firstHead": "Dostava | Cena | Rok | Plaćanje | Lično preuzimanje | Kurirska služba"
+  }
+ ],
+ "webkit-390/dostava-i-placanje tab stops before footer": 3,
+ "webkit-390/dostava-i-placanje tab hits on scrollers": [],
+ "webkit-390/politika-privatnosti scrollers": [
+  {
+   "i": 0,
+   "sw": 512,
+   "cw": 356,
+   "tabindex": null,
+   "role": null,
+   "label": null,
+   "focusablesInside": 0,
+   "caption": null,
+   "firstHead": "Podaci | Svrha | Pravni osnov"
+  }
+ ],
+ "webkit-390/politika-privatnosti tab stops before footer": 3,
+ "webkit-390/politika-privatnosti tab hits on scrollers": []
+}

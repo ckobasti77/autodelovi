@@ -1,0 +1,240 @@
+[
+  {
+    "A": [
+      {
+        "t": 6239,
+        "y": 0,
+        "docH": 9694,
+        "p": 0.120476,
+        "stage": 1,
+        "cur": "01Karoserija i"
+      },
+      {
+        "t": 6846,
+        "y": 0,
+        "docH": 9694,
+        "p": 0.120476,
+        "stage": 1,
+        "cur": "01Karoserija i"
+      },
+      {
+        "t": 7363,
+        "y": 0,
+        "docH": 9694,
+        "p": 0.120476,
+        "stage": 1,
+        "cur": "01Karoserija i"
+      },
+      {
+        "t": 7871,
+        "y": 0,
+        "docH": 9694,
+        "p": 0.120476,
+        "stage": 1,
+        "cur": "01Karoserija i"
+      },
+      {
+        "t": 8385,
+        "y": 0,
+        "docH": 9694,
+        "p": 0.120476,
+        "stage": 1,
+        "cur": "01Karoserija i"
+      },
+      {
+        "t": 8903,
+        "y": 0,
+        "docH": 9694,
+        "p": 0.120476,
+        "stage": 1,
+        "cur": "01Karoserija i"
+      },
+      {
+        "t": 9429,
+        "y": 0,
+        "docH": 9694,
+        "p": 0.120476,
+        "stage": 1,
+        "cur": "01Karoserija i"
+      },
+      {
+        "t": 9961,
+        "y": 0,
+        "docH": 9694,
+        "p": 0.120476,
+        "stage": 1,
+        "cur": "01Karoserija i"
+      },
+      {
+        "t": 10476,
+        "y": 0,
+        "docH": 9694,
+        "p": 0.120476,
+        "stage": 1,
+        "cur": "01Karoserija i"
+      },
+      {
+        "t": 10986,
+        "y": 0,
+        "docH": 9694,
+        "p": 0.120476,
+        "stage": 1,
+        "cur": "01Karoserija i"
+      },
+      {
+        "t": 11556,
+        "y": 0,
+        "docH": 9694,
+        "p": 0.120476,
+        "stage": 1,
+        "cur": "01Karoserija i"
+      },
+      {
+        "t": 12094,
+        "y": 0,
+        "docH": 9694,
+        "p": 0.120476,
+        "stage": 1,
+        "cur": "01Karoserija i"
+      },
+      {
+        "t": 12598,
+        "y": 0,
+        "docH": 9694,
+        "p": 0.120476,
+        "stage": 1,
+        "cur": "01Karoserija i"
+      },
+      {
+        "t": 13117,
+        "y": 0,
+        "docH": 9694,
+        "p": 0.120476,
+        "stage": 1,
+        "cur": "01Karoserija i"
+      },
+      {
+        "t": 13665,
+        "y": 0,
+        "docH": 9694,
+        "p": 0.120476,
+        "stage": 1,
+        "cur": "01Karoserija i"
+      },
+      {
+        "t": 14199,
+        "y": 0,
+        "docH": 9694,
+        "p": 0.120476,
+        "stage": 1,
+        "cur": "01Karoserija i"
+      }
+    ],
+    "Bbefore": {
+      "t": 18706,
+      "y": 1800,
+      "docH": 9694,
+      "p": 0.624653,
+      "stage": 5,
+      "cur": "05Motor i turb"
+    },
+    "B": [
+      {
+        "t": 24345,
+        "y": 1342,
+        "docH": 13394,
+        "p": 0.465625,
+        "stage": 4,
+        "cur": "04Agregati i h"
+      },
+      {
+        "t": 24870,
+        "y": 1342,
+        "docH": 13394,
+        "p": 0.465625,
+        "stage": 4,
+        "cur": "04Agregati i h"
+      },
+      {
+        "t": 25432,
+        "y": 1342,
+        "docH": 13394,
+        "p": 0.465625,
+        "stage": 4,
+        "cur": "04Agregati i h"
+      },
+      {
+        "t": 25992,
+        "y": 1342,
+        "docH": 13394,
+        "p": 0.465625,
+        "stage": 4,
+        "cur": "04Agregati i h"
+      },
+      {
+        "t": 26517,
+        "y": 1342,
+        "docH": 13394,
+        "p": 0.465625,
+        "stage": 4,
+        "cur": "04Agregati i h"
+      },
+      {
+        "t": 27145,
+        "y": 1342,
+        "docH": 13394,
+        "p": 0.465625,
+        "stage": 4,
+        "cur": "04Agregati i h"
+      },
+      {
+        "t": 27684,
+        "y": 1342,
+        "docH": 13394,
+        "p": 0.465625,
+        "stage": 4,
+        "cur": "04Agregati i h"
+      },
+      {
+        "t": 28256,
+        "y": 1342,
+        "docH": 13394,
+        "p": 0.465625,
+        "stage": 4,
+        "cur": "04Agregati i h"
+      },
+      {
+        "t": 28774,
+        "y": 1342,
+        "docH": 13394,
+        "p": 0.465625,
+        "stage": 4,
+        "cur": "04Agregati i h"
+      },
+      {
+        "t": 29288,
+        "y": 1342,
+        "docH": 13394,
+        "p": 0.465625,
+        "stage": 4,
+        "cur": "04Agregati i h"
+      },
+      {
+        "t": 29802,
+        "y": 1342,
+        "docH": 13394,
+        "p": 0.465625,
+        "stage": 4,
+        "cur": "04Agregati i h"
+      },
+      {
+        "t": 30317,
+        "y": 1342,
+        "docH": 13394,
+        "p": 0.465625,
+        "stage": 4,
+        "cur": "04Agregati i h"
+      }
+    ]
+  }
+]

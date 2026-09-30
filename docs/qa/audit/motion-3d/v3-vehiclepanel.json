@@ -1,0 +1,66 @@
+[
+  {
+    "withVehicle": false,
+    "r": {
+      "header": "9 artikala",
+      "vehicleBtn": [
+        "Izaberite vozilo za tačno poklapanje"
+      ],
+      "products": 9,
+      "names": [
+        "Brembo · OEM kvalitetKočioni disk prednji 312 × 25 mmOEM 3C0 615 098Na",
+        "TRW · OEM kvalitetKočioni disk zadnji 272 × 10 mm, puniOEM 1K0 615 540",
+        "Bosch · OEM kvalitetKočioni disk prednji 256 × 22 mmOEM 6R0 615 645Na ",
+        "Brembo · OEM kvalitetKočioni disk prednji 312 × 25 mm, ventiliraniOEM ",
+        "Febi Bilstein · AftermarketKočioni disk prednji 276 × 24 mmOEM 5Q0 615",
+        "ATE · OEM kvalitetKočioni disk prednji 312 × 25 mm, ventiliraniOEM 1K0",
+        "Original VAG · Original VAGKočioni disk prednji 340 × 30 mm, GTIOEM 5Q",
+        "ATE · OEM kvalitetKočioni disk prednji 288 × 25 mm, ventiliraniOEM 1K0",
+        "ATE · OEM kvalitetKočioni disk prednji 320 × 30 mmOEM 8K0 615 085Po po"
+      ],
+      "footer": [
+        "Svi delovi: Kočioni diskovi (9) -> /delovi/kocioni-diskovi",
+        "Pošaljite upit -> /upit?deo=kocioni-diskovi"
+      ],
+      "headerChip": null
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "withVehicle": true,
+    "r": {
+      "header": "9 artikala",
+      "vehicleBtn": [
+        "Golf VII. Promeni vozilo"
+      ],
+      "products": 9,
+      "names": [
+        "TRW · OEM kvalitetKočioni disk zadnji 272 × 10 mm, puniOEM 1K0 615 540",
+        "Brembo · OEM kvalitetKočioni disk prednji 312 × 25 mm, ventiliraniOEM ",
+        "Febi Bilstein · AftermarketKočioni disk prednji 276 × 24 mmOEM 5Q0 615",
+        "ATE · OEM kvalitetKočioni disk prednji 312 × 25 mm, ventiliraniOEM 1K0",
+        "Original VAG · Original VAGKočioni disk prednji 340 × 30 mm, GTIOEM 5Q",
+        "Brembo · OEM kvalitetKočioni disk prednji 312 × 25 mmOEM 3C0 615 098Na",
+        "Bosch · OEM kvalitetKočioni disk prednji 256 × 22 mmOEM 6R0 615 645Na ",
+        "ATE · OEM kvalitetKočioni disk prednji 288 × 25 mm, ventiliraniOEM 1K0",
+        "ATE · OEM kvalitetKočioni disk prednji 320 × 30 mmOEM 8K0 615 085Po po"
+      ],
+      "footer": [
+        "Svi delovi: Kočioni diskovi (9) -> /delovi/kocioni-diskovi?marka=volkswagen&model=golf&generacija=golf-7",
+        "Pošaljite upit -> /upit?deo=kocioni-diskovi"
+      ],
+      "headerChip": "Golf "
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+]

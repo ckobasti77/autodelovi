@@ -1,0 +1,308 @@
+{
+ "390": {
+  "pick": {
+   "genNames": [
+    "Golf IV 1997–20061J",
+    "Golf V 2003–20091K",
+    "Golf VI 2008–20135K",
+    "Golf VII 2012–20205G",
+    "Golf VIII 2019–danasCD"
+   ],
+   "stored": "{\"state\":{\"vehicle\":{\"brand\":{\"slug\":\"volkswagen\",\"name\":\"Volkswagen\"},\"model\":{\"slug\":\"golf\",\"name\":\"Golf\"},\"generation\":{\"slug\":\"golf-7\",\"name\":\"Golf VII\",\"yearFrom\":2012,\"yearTo\":2020},\"engine\":null}},\"version\":1}"
+  },
+  "withVehicle:kočioni disk": {
+   "url": "/pretraga?q=ko%C4%8Dioni%20disk",
+   "h1": "Rezultati za „kočioni disk“",
+   "meta": "9 artikala",
+   "cards": 9,
+   "cardNames": [
+    "Kočioni disk prednji 320 × 30 mm",
+    "Kočioni disk prednji 312 × 25 mm",
+    "Kočioni disk prednji 256 × 22 mm",
+    "Kočioni disk prednji 276 × 24 mm",
+    "Kočioni disk prednji 288 × 25 mm, ventilirani",
+    "Kočioni disk prednji 340 × 30 mm, GTI",
+    "Kočioni disk zadnji 272 × 10 mm, puni",
+    "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "Kočioni disk prednji 312 × 25 mm, ventilirani"
+   ],
+   "fitBadges": 0,
+   "vehicleMention": false,
+   "chipInHeader": [
+    "Vozilo: Golf VII. Promeni vozilo"
+   ],
+   "toggle": [
+    "Prikaži sve rezultate za „kočioni disk“"
+   ]
+  },
+  "withVehicle:pločice": {
+   "url": "/pretraga?q=plo%C4%8Dice",
+   "h1": "Rezultati za „pločice“",
+   "meta": "10 artikala",
+   "cards": 10,
+   "cardNames": [
+    "Kočione pločice prednje",
+    "Kočione pločice prednje",
+    "Kočione pločice prednje",
+    "Kočione pločice prednje",
+    "Kočione pločice prednje, sistem Teves",
+    "Kočione pločice zadnje",
+    "Kočione pločice zadnje",
+    "Kočione pločice prednje, sa senzorom",
+    "Kočione pločice zadnje, elektronska ručna",
+    "Kočione pločice prednje, sa senzorom"
+   ],
+   "fitBadges": 0,
+   "vehicleMention": false,
+   "chipInHeader": [
+    "Vozilo: Golf VII. Promeni vozilo"
+   ],
+   "toggle": [
+    "Prikaži sve rezultate za „kočioni disk“"
+   ]
+  },
+  "categoryWithVehicle": {
+   "url": "/delovi/kocioni-diskovi",
+   "h1": "Kočioni diskovi",
+   "countText": "9 artikal",
+   "cards": 9,
+   "cardNames": [
+    "Kočioni disk prednji 312 × 25 mm",
+    "Kočioni disk zadnji 272 × 10 mm, puni",
+    "Kočioni disk prednji 256 × 22 mm",
+    "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "Kočioni disk prednji 276 × 24 mm",
+    "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "Kočioni disk prednji 340 × 30 mm, GTI",
+    "Kočioni disk prednji 288 × 25 mm, ventilirani",
+    "Kočioni disk prednji 320 × 30 mm"
+   ],
+   "fitBadges": 0
+  },
+  "landingGolf": {
+   "url": "/delovi/kocioni-diskovi/volkswagen/golf",
+   "h1": "Kočioni diskovi za VW Golf",
+   "countText": "6 artikal",
+   "cards": 6,
+   "cardNames": [
+    "Kočioni disk zadnji 272 × 10 mm, puni",
+    "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "Kočioni disk prednji 276 × 24 mm",
+    "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "Kočioni disk prednji 340 × 30 mm, GTI",
+    "Kočioni disk prednji 288 × 25 mm, ventilirani"
+   ],
+   "fitBadges": 0
+  },
+  "log": {
+   "console": [],
+   "pageErrors": [],
+   "failedRequests": [],
+   "badResponses": []
+  },
+  "noVehicle:kočioni disk": {
+   "url": "/pretraga?q=ko%C4%8Dioni%20disk",
+   "h1": "Rezultati za „kočioni disk“",
+   "meta": "9 artikala",
+   "cards": 9,
+   "cardNames": [
+    "Kočioni disk prednji 320 × 30 mm",
+    "Kočioni disk prednji 312 × 25 mm",
+    "Kočioni disk prednji 256 × 22 mm",
+    "Kočioni disk prednji 276 × 24 mm",
+    "Kočioni disk prednji 288 × 25 mm, ventilirani",
+    "Kočioni disk prednji 340 × 30 mm, GTI",
+    "Kočioni disk zadnji 272 × 10 mm, puni",
+    "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "Kočioni disk prednji 312 × 25 mm, ventilirani"
+   ],
+   "fitBadges": 0,
+   "vehicleMention": false,
+   "chipInHeader": [
+    "Izaberite vozilo"
+   ],
+   "toggle": [
+    "Prikaži sve rezultate za „kočioni disk“"
+   ]
+  },
+  "noVehicle:pločice": {
+   "url": "/pretraga?q=plo%C4%8Dice",
+   "h1": "Rezultati za „pločice“",
+   "meta": "10 artikala",
+   "cards": 10,
+   "cardNames": [
+    "Kočione pločice prednje",
+    "Kočione pločice prednje",
+    "Kočione pločice prednje",
+    "Kočione pločice prednje",
+    "Kočione pločice prednje, sistem Teves",
+    "Kočione pločice zadnje",
+    "Kočione pločice zadnje",
+    "Kočione pločice prednje, sa senzorom",
+    "Kočione pločice zadnje, elektronska ručna",
+    "Kočione pločice prednje, sa senzorom"
+   ],
+   "fitBadges": 0,
+   "vehicleMention": false,
+   "chipInHeader": [
+    "Izaberite vozilo"
+   ],
+   "toggle": [
+    "Prikaži sve rezultate za „kočioni disk“"
+   ]
+  }
+ },
+ "1440": {
+  "pick": {
+   "genNames": [
+    "Golf IV 1997–20061J",
+    "Golf V 2003–20091K",
+    "Golf VI 2008–20135K",
+    "Golf VII 2012–20205G",
+    "Golf VIII 2019–danasCD"
+   ],
+   "stored": "{\"state\":{\"vehicle\":{\"brand\":{\"slug\":\"volkswagen\",\"name\":\"Volkswagen\"},\"model\":{\"slug\":\"golf\",\"name\":\"Golf\"},\"generation\":{\"slug\":\"golf-7\",\"name\":\"Golf VII\",\"yearFrom\":2012,\"yearTo\":2020},\"engine\":null}},\"version\":1}"
+  },
+  "withVehicle:kočioni disk": {
+   "url": "/pretraga?q=ko%C4%8Dioni%20disk",
+   "h1": "Rezultati za „kočioni disk“",
+   "meta": "9 artikala",
+   "cards": 9,
+   "cardNames": [
+    "Kočioni disk prednji 320 × 30 mm",
+    "Kočioni disk prednji 312 × 25 mm",
+    "Kočioni disk prednji 256 × 22 mm",
+    "Kočioni disk prednji 276 × 24 mm",
+    "Kočioni disk prednji 288 × 25 mm, ventilirani",
+    "Kočioni disk prednji 340 × 30 mm, GTI",
+    "Kočioni disk zadnji 272 × 10 mm, puni",
+    "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "Kočioni disk prednji 312 × 25 mm, ventilirani"
+   ],
+   "fitBadges": 0,
+   "vehicleMention": false,
+   "chipInHeader": [
+    "Vozilo: Golf VII. Promeni vozilo"
+   ],
+   "toggle": [
+    "Prikaži sve rezultate za „kočioni disk“"
+   ]
+  },
+  "withVehicle:pločice": {
+   "url": "/pretraga?q=plo%C4%8Dice",
+   "h1": "Rezultati za „pločice“",
+   "meta": "10 artikala",
+   "cards": 10,
+   "cardNames": [
+    "Kočione pločice prednje",
+    "Kočione pločice prednje",
+    "Kočione pločice prednje",
+    "Kočione pločice prednje",
+    "Kočione pločice prednje, sistem Teves",
+    "Kočione pločice zadnje",
+    "Kočione pločice zadnje",
+    "Kočione pločice prednje, sa senzorom",
+    "Kočione pločice zadnje, elektronska ručna",
+    "Kočione pločice prednje, sa senzorom"
+   ],
+   "fitBadges": 0,
+   "vehicleMention": false,
+   "chipInHeader": [
+    "Vozilo: Golf VII. Promeni vozilo"
+   ],
+   "toggle": [
+    "Prikaži sve rezultate za „kočioni disk“"
+   ]
+  },
+  "categoryWithVehicle": {
+   "url": "/delovi/kocioni-diskovi",
+   "h1": "Kočioni diskovi",
+   "countText": "9 artikal",
+   "cards": 9,
+   "cardNames": [
+    "Kočioni disk prednji 312 × 25 mm",
+    "Kočioni disk zadnji 272 × 10 mm, puni",
+    "Kočioni disk prednji 256 × 22 mm",
+    "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "Kočioni disk prednji 276 × 24 mm",
+    "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "Kočioni disk prednji 340 × 30 mm, GTI",
+    "Kočioni disk prednji 288 × 25 mm, ventilirani",
+    "Kočioni disk prednji 320 × 30 mm"
+   ],
+   "fitBadges": 0
+  },
+  "landingGolf": {
+   "url": "/delovi/kocioni-diskovi/volkswagen/golf",
+   "h1": "Kočioni diskovi za VW Golf",
+   "countText": "6 artikal",
+   "cards": 6,
+   "cardNames": [
+    "Kočioni disk zadnji 272 × 10 mm, puni",
+    "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "Kočioni disk prednji 276 × 24 mm",
+    "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "Kočioni disk prednji 340 × 30 mm, GTI",
+    "Kočioni disk prednji 288 × 25 mm, ventilirani"
+   ],
+   "fitBadges": 0
+  },
+  "log": {
+   "console": [],
+   "pageErrors": [],
+   "failedRequests": [],
+   "badResponses": []
+  },
+  "noVehicle:kočioni disk": {
+   "url": "/pretraga?q=ko%C4%8Dioni%20disk",
+   "h1": "Rezultati za „kočioni disk“",
+   "meta": "9 artikala",
+   "cards": 9,
+   "cardNames": [
+    "Kočioni disk prednji 320 × 30 mm",
+    "Kočioni disk prednji 312 × 25 mm",
+    "Kočioni disk prednji 256 × 22 mm",
+    "Kočioni disk prednji 276 × 24 mm",
+    "Kočioni disk prednji 288 × 25 mm, ventilirani",
+    "Kočioni disk prednji 340 × 30 mm, GTI",
+    "Kočioni disk zadnji 272 × 10 mm, puni",
+    "Kočioni disk prednji 312 × 25 mm, ventilirani",
+    "Kočioni disk prednji 312 × 25 mm, ventilirani"
+   ],
+   "fitBadges": 0,
+   "vehicleMention": false,
+   "chipInHeader": [
+    "Izaberite vozilo"
+   ],
+   "toggle": [
+    "Prikaži sve rezultate za „kočioni disk“"
+   ]
+  },
+  "noVehicle:pločice": {
+   "url": "/pretraga?q=plo%C4%8Dice",
+   "h1": "Rezultati za „pločice“",
+   "meta": "10 artikala",
+   "cards": 10,
+   "cardNames": [
+    "Kočione pločice prednje",
+    "Kočione pločice prednje",
+    "Kočione pločice prednje",
+    "Kočione pločice prednje",
+    "Kočione pločice prednje, sistem Teves",
+    "Kočione pločice zadnje",
+    "Kočione pločice zadnje",
+    "Kočione pločice prednje, sa senzorom",
+    "Kočione pločice zadnje, elektronska ručna",
+    "Kočione pločice prednje, sa senzorom"
+   ],
+   "fitBadges": 0,
+   "vehicleMention": false,
+   "chipInHeader": [
+    "Izaberite vozilo"
+   ],
+   "toggle": [
+    "Prikaži sve rezultate za „kočioni disk“"
+   ]
+  }
+ }
+}

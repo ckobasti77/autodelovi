@@ -1,0 +1,107 @@
+[
+  {
+    "k": "A run 1 logo from /delovi@1500",
+    "v": {
+      "y": 0,
+      "docH": 9694,
+      "s": {
+        "progress": 0.03916,
+        "stage": 0,
+        "status": "idle"
+      }
+    }
+  },
+  {
+    "k": "B run 1 back",
+    "v": {
+      "before": {
+        "y": 1800,
+        "docH": 9694,
+        "s": {
+          "progress": 0.624653,
+          "stage": 5,
+          "status": "loading"
+        }
+      },
+      "after": {
+        "y": 1342,
+        "docH": 13394,
+        "s": {
+          "progress": 0.465625,
+          "stage": 4,
+          "status": "loading"
+        }
+      }
+    }
+  },
+  {
+    "k": "A run 2 logo from /delovi@1500",
+    "v": {
+      "y": 0,
+      "docH": 9694,
+      "s": {
+        "progress": 0.042225,
+        "stage": 0,
+        "status": "idle"
+      }
+    }
+  },
+  {
+    "k": "B run 2 back",
+    "v": {
+      "before": {
+        "y": 1800,
+        "docH": 9694,
+        "s": {
+          "progress": 0.624653,
+          "stage": 5,
+          "status": "loading"
+        }
+      },
+      "after": {
+        "y": 1342,
+        "docH": 13394,
+        "s": {
+          "progress": 0.465625,
+          "stage": 4,
+          "status": "loading"
+        }
+      }
+    }
+  },
+  {
+    "k": "A run 3 logo from /delovi@1500",
+    "v": {
+      "y": 0,
+      "docH": 9694,
+      "s": {
+        "progress": 0.102494,
+        "stage": 1,
+        "status": "idle"
+      }
+    }
+  },
+  {
+    "k": "B run 3 back",
+    "v": {
+      "before": {
+        "y": 1800,
+        "docH": 9694,
+        "s": {
+          "progress": 0.624653,
+          "stage": 5,
+          "status": "loading"
+        }
+      },
+      "after": {
+        "y": 1342,
+        "docH": 13394,
+        "s": {
+          "progress": 0.465625,
+          "stage": 4,
+          "status": "loading"
+        }
+      }
+    }
+  }
+]

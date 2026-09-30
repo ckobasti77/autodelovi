@@ -1,0 +1,375 @@
+{
+  "1024": {
+    "upiti": {
+      "overflowPx": 0,
+      "wrapRight": 999,
+      "stickyLeft": 999,
+      "cols": [
+        "Broj [89-240]",
+        "Status [240-403]",
+        "Primljen [403-545]",
+        "Kontakt [545-752]",
+        "Traži [752-999]"
+      ],
+      "hint": [],
+      "docOver": 0
+    },
+    "proizvodi": {
+      "overflowPx": 321,
+      "wrapRight": 999,
+      "stickyLeft": 943,
+      "cols": [
+        "(blank) [89-129]",
+        "Artikal [129-505]",
+        "Stanje [505-733]",
+        "Cena [733-831]",
+        "OEM [831-961] (CUT)",
+        "Kategorija [961-1153] (CUT)",
+        "Proizvođač [1153-1264] (CUT)",
+        "Radnje [943-999]"
+      ],
+      "hint": [
+        [
+          967,
+          999
+        ]
+      ],
+      "docOver": 0
+    },
+    "porudzbine-default": {
+      "overflowPx": 0,
+      "wrapRight": 999,
+      "stickyLeft": 943,
+      "cols": [
+        "(blank) [89-129]",
+        "Broj [129-277]",
+        "Kupac [277-500]",
+        "Status [500-656]",
+        "Ukupno [656-756]",
+        "Plaćanje · dostava [756-943]",
+        "Radnje [943-999]"
+      ],
+      "hint": [],
+      "docOver": 0
+    },
+    "porudzbine-sve": {
+      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('tab', { name: /^Sve/ }).first()\n"
+    },
+    "mejlovi": {
+      "overflowPx": 146,
+      "wrapRight": 999,
+      "stickyLeft": 999,
+      "cols": [
+        "Vreme [89-199]",
+        "Prima [199-471]",
+        "Naslov [471-942]",
+        "Način [942-1029] (CUT)",
+        "Status [1029-1145] (CUT)"
+      ],
+      "hint": [
+        [
+          967,
+          999
+        ]
+      ],
+      "docOver": 0
+    }
+  },
+  "1280": {
+    "upiti": {
+      "overflowPx": 237,
+      "wrapRight": 1255,
+      "stickyLeft": 1255,
+      "cols": [
+        "Broj [89-319]",
+        "Status [319-480]",
+        "Primljen [480-620]",
+        "Kontakt [620-824]",
+        "Traži [824-1224]",
+        "Izvor [1224-1400] (CUT)",
+        "Preuzeo [1400-1492] (CUT)"
+      ],
+      "hint": [
+        [
+          1223,
+          1255
+        ]
+      ],
+      "docOver": 0
+    },
+    "proizvodi": {
+      "overflowPx": 65,
+      "wrapRight": 1255,
+      "stickyLeft": 1199,
+      "cols": [
+        "(blank) [89-129]",
+        "Artikal [129-505]",
+        "Stanje [505-733]",
+        "Cena [733-831]",
+        "OEM [831-961]",
+        "Kategorija [961-1153]",
+        "Proizvođač [1153-1264] (CUT)",
+        "Radnje [1199-1255]"
+      ],
+      "hint": [
+        [
+          1223,
+          1255
+        ]
+      ],
+      "docOver": 0
+    },
+    "porudzbine-default": {
+      "overflowPx": 0,
+      "wrapRight": 1255,
+      "stickyLeft": 1199,
+      "cols": [
+        "(blank) [89-129]",
+        "Broj [129-278]",
+        "Primljena [278-387]",
+        "Kupac [387-611]",
+        "Status [611-846]",
+        "Kom. [846-910]",
+        "Ukupno [910-1011]",
+        "Plaćanje · dostava [1011-1199]",
+        "Radnje [1199-1255]"
+      ],
+      "hint": [],
+      "docOver": 0
+    },
+    "porudzbine-sve": {
+      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('tab', { name: /^Sve/ }).first()\n"
+    },
+    "mejlovi": {
+      "overflowPx": 0,
+      "wrapRight": 1255,
+      "stickyLeft": 1255,
+      "cols": [
+        "Vreme [89-210]",
+        "Prima [210-511]",
+        "Naslov [511-1030]",
+        "Način [1030-1126]",
+        "Status [1126-1255]"
+      ],
+      "hint": [],
+      "docOver": 0
+    }
+  },
+  "1366": {
+    "upiti": {
+      "overflowPx": 319,
+      "wrapRight": 1341,
+      "stickyLeft": 1341,
+      "cols": [
+        "Broj [257-487]",
+        "Status [487-648]",
+        "Primljen [648-788]",
+        "Kontakt [788-992]",
+        "Traži [992-1392] (CUT)",
+        "Izvor [1392-1568] (CUT)",
+        "Preuzeo [1568-1660] (CUT)"
+      ],
+      "hint": [
+        [
+          1309,
+          1341
+        ]
+      ],
+      "docOver": 0
+    },
+    "proizvodi": {
+      "overflowPx": 147,
+      "wrapRight": 1341,
+      "stickyLeft": 1285,
+      "cols": [
+        "(blank) [257-297]",
+        "Artikal [297-673]",
+        "Stanje [673-901]",
+        "Cena [901-999]",
+        "OEM [999-1129]",
+        "Kategorija [1129-1321] (CUT)",
+        "Proizvođač [1321-1432] (CUT)",
+        "Radnje [1285-1341]"
+      ],
+      "hint": [
+        [
+          1309,
+          1341
+        ]
+      ],
+      "docOver": 0
+    },
+    "porudzbine-default": {
+      "overflowPx": 55,
+      "wrapRight": 1341,
+      "stickyLeft": 1285,
+      "cols": [
+        "(blank) [257-297]",
+        "Broj [297-442]",
+        "Primljena [442-548]",
+        "Kupac [548-767]",
+        "Status [767-996]",
+        "Kom. [996-1059]",
+        "Ukupno [1059-1157]",
+        "Plaćanje · dostava [1157-1340] (CUT)",
+        "Radnje [1285-1341]"
+      ],
+      "hint": [
+        [
+          1309,
+          1341
+        ]
+      ],
+      "docOver": 0
+    },
+    "porudzbine-sve": {
+      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('tab', { name: /^Sve/ }).first()\n"
+    },
+    "mejlovi": {
+      "overflowPx": 0,
+      "wrapRight": 1341,
+      "stickyLeft": 1341,
+      "cols": [
+        "Vreme [257-370]",
+        "Prima [370-649]",
+        "Naslov [649-1132]",
+        "Način [1132-1221]",
+        "Status [1221-1341]"
+      ],
+      "hint": [],
+      "docOver": 0
+    }
+  },
+  "1440": {
+    "upiti": {
+      "overflowPx": 245,
+      "wrapRight": 1415,
+      "stickyLeft": 1415,
+      "cols": [
+        "Broj [257-487]",
+        "Status [487-648]",
+        "Primljen [648-788]",
+        "Kontakt [788-992]",
+        "Traži [992-1392]",
+        "Izvor [1392-1568] (CUT)",
+        "Preuzeo [1568-1660] (CUT)"
+      ],
+      "hint": [
+        [
+          1383,
+          1415
+        ]
+      ],
+      "docOver": 0
+    },
+    "proizvodi": {
+      "overflowPx": 73,
+      "wrapRight": 1415,
+      "stickyLeft": 1359,
+      "cols": [
+        "(blank) [257-297]",
+        "Artikal [297-673]",
+        "Stanje [673-901]",
+        "Cena [901-999]",
+        "OEM [999-1129]",
+        "Kategorija [1129-1321]",
+        "Proizvođač [1321-1432] (CUT)",
+        "Radnje [1359-1415]"
+      ],
+      "hint": [
+        [
+          1383,
+          1415
+        ]
+      ],
+      "docOver": 0
+    },
+    "porudzbine-default": {
+      "overflowPx": 0,
+      "wrapRight": 1415,
+      "stickyLeft": 1359,
+      "cols": [
+        "(blank) [257-297]",
+        "Broj [297-445]",
+        "Primljena [445-553]",
+        "Kupac [553-776]",
+        "Status [776-1008]",
+        "Kom. [1008-1073]",
+        "Ukupno [1073-1172]",
+        "Plaćanje · dostava [1172-1359]",
+        "Radnje [1359-1415]"
+      ],
+      "hint": [],
+      "docOver": 0
+    },
+    "porudzbine-sve": {
+      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('tab', { name: /^Sve/ }).first()\n"
+    },
+    "mejlovi": {
+      "overflowPx": 0,
+      "wrapRight": 1415,
+      "stickyLeft": 1415,
+      "cols": [
+        "Vreme [257-378]",
+        "Prima [378-676]",
+        "Naslov [676-1192]",
+        "Način [1192-1287]",
+        "Status [1287-1415]"
+      ],
+      "hint": [],
+      "docOver": 0
+    }
+  },
+  "1920": {
+    "upiti": {
+      "overflowPx": 0,
+      "wrapRight": 1891,
+      "stickyLeft": 1891,
+      "cols": [
+        "Broj [261-528]",
+        "Status [528-715]",
+        "Primljen [715-878]",
+        "Kontakt [878-1115]",
+        "Traži [1115-1579]",
+        "Izvor [1579-1784]",
+        "Preuzeo [1784-1891]"
+      ],
+      "hint": [],
+      "docOver": 0
+    },
+    "proizvodi": {
+      "overflowPx": 0,
+      "wrapRight": 1891,
+      "stickyLeft": 1835,
+      "cols": [
+        "(blank) [261-301]",
+        "Artikal [301-810]",
+        "Stanje [810-1117]",
+        "Cena [1117-1250]",
+        "OEM [1250-1425]",
+        "Kategorija [1425-1685]",
+        "Proizvođač [1685-1835]",
+        "Radnje [1835-1891]"
+      ],
+      "hint": [],
+      "docOver": 0
+    },
+    "porudzbine-sve": {
+      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('tab', { name: /^Sve/ }).first()\n"
+    },
+    "mejlovi": {
+      "overflowPx": 0,
+      "wrapRight": 1891,
+      "stickyLeft": 1891,
+      "cols": [
+        "Vreme [261-431]",
+        "Prima [431-851]",
+        "Naslov [851-1577]",
+        "Način [1577-1711]",
+        "Status [1711-1891]"
+      ],
+      "hint": [],
+      "docOver": 0
+    }
+  }
+}

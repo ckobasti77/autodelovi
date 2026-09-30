@@ -1,0 +1,380 @@
+[
+  {
+    "run": 1,
+    "how": "wheel",
+    "samples": [
+      {
+        "t": 2406,
+        "vis": "visible",
+        "tr": "0, 76.8794",
+        "top": 856,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0%, 8.276%) translate3d(0px, 71.5px, 0px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 2872,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 3172,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 3476,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 3797,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 4151,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 4436,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 4711,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 4955,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 5255,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 5489,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 5694,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 5914,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 6128,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 6345,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      }
+    ]
+  },
+  {
+    "run": 2,
+    "how": "wheel",
+    "samples": [
+      {
+        "t": 2124,
+        "vis": "hidden",
+        "tr": "0, 143",
+        "top": 922,
+        "h": 65,
+        "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none;"
+      },
+      {
+        "t": 2331,
+        "vis": "visible",
+        "tr": "0, 73.3917",
+        "top": 852,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0%, 2.9103%) translate3d(0px, 71.5px, 0px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 2552,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 2770,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 2983,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 3187,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 3406,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 3621,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 3826,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 4043,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 4261,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 4481,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 4698,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 4912,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 5123,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      }
+    ]
+  },
+  {
+    "run": 3,
+    "how": "scrollTo",
+    "samples": [
+      {
+        "t": 2216,
+        "vis": "hidden",
+        "tr": "0, 143",
+        "top": 922,
+        "h": 65,
+        "inlineStyle": "visibility: hidden; transform: translate(0%, 110%) translate(0px, 71.5px); translate: none; rotate: none; scale: none;"
+      },
+      {
+        "t": 2427,
+        "vis": "visible",
+        "tr": "0, 72.7797",
+        "top": 852,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0%, 1.9688%) translate3d(0px, 71.5px, 0px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 2636,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 2849,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 3065,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 3284,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 3487,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 3703,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 3917,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 4120,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 4322,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 4538,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 4742,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 4958,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      },
+      {
+        "t": 5164,
+        "vis": "visible",
+        "tr": "0, 71.5",
+        "top": 851,
+        "h": 65,
+        "inlineStyle": "visibility: visible; transform: translate(0px, 71.5px); translate: none; rotate: none; scale: none; opacity: 1;"
+      }
+    ]
+  }
+]

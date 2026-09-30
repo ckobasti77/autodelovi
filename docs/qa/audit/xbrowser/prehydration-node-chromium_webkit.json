@@ -1,0 +1,16 @@
+{
+  "chromium": {
+    "sameInput": true,
+    "sameForm": true,
+    "oldConnected": true,
+    "value": "",
+    "consoleErrorsOrWarnings": []
+  },
+  "webkit": {
+    "sameInput": true,
+    "sameForm": true,
+    "oldConnected": true,
+    "value": "WVWZZZ1KZ8W123456",
+    "consoleErrorsOrWarnings": []
+  }
+}

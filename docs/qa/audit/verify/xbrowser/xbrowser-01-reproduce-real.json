@@ -1,0 +1,35 @@
+{
+  "real": [
+    {
+      "run": 0,
+      "visibleAt": 2491,
+      "hydratedBeforeTyping": false,
+      "typedAt": 10336,
+      "domAfterTyping": "5505R",
+      "hydratedRightAfterTyping": true,
+      "hydratedAt": 10797,
+      "after": "5505R"
+    },
+    {
+      "run": 1,
+      "visibleAt": 9793,
+      "hydratedBeforeTyping": false,
+      "typedAt": 14069,
+      "domAfterTyping": "5Q0615505R",
+      "hydratedRightAfterTyping": false,
+      "hydratedAt": 15729,
+      "after": ""
+    },
+    {
+      "run": 2,
+      "visibleAt": 1985,
+      "hydratedBeforeTyping": false,
+      "typedAt": 4042,
+      "domAfterTyping": "5Q0615505R",
+      "hydratedRightAfterTyping": false,
+      "hydratedAt": 6061,
+      "after": ""
+    }
+  ],
+  "scope": {}
+}

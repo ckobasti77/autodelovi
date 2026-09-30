@@ -1,0 +1,41 @@
+[
+  {
+    "k": "after select",
+    "v": {
+      "y": 1485,
+      "sel": "kocioni-diskovi",
+      "bodyOverflow": "visible",
+      "htmlOverflow": "visible",
+      "bodyStyle": null,
+      "scrollLock": false,
+      "sheetTop": 490,
+      "elAt200": "CANVAS ta=auto"
+    }
+  },
+  {
+    "k": "after swipe up on car above sheet",
+    "v": {
+      "y": 1700,
+      "sel": "kocioni-diskovi",
+      "bodyOverflow": "visible",
+      "htmlOverflow": "visible",
+      "bodyStyle": null,
+      "scrollLock": false,
+      "sheetTop": 490,
+      "elAt200": "CANVAS ta=auto"
+    }
+  },
+  {
+    "k": "after swipe down on car above sheet",
+    "v": {
+      "y": 1485,
+      "sel": "kocioni-diskovi",
+      "bodyOverflow": "visible",
+      "htmlOverflow": "visible",
+      "bodyStyle": null,
+      "scrollLock": false,
+      "sheetTop": 490,
+      "elAt200": "CANVAS ta=auto"
+    }
+  }
+]

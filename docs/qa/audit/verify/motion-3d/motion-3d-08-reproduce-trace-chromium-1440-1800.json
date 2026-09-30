@@ -1,0 +1,62 @@
+[
+  {
+    "t": 37,
+    "why": "raf",
+    "path": "/delovi",
+    "y": 0,
+    "docH": 5770,
+    "maxY": 4870,
+    "trackH": null,
+    "main": 5183
+  },
+  {
+    "t": 1023,
+    "why": "popstate",
+    "path": "/",
+    "y": 0,
+    "docH": 13394,
+    "maxY": 12494,
+    "trackH": 3716,
+    "main": 12808
+  },
+  {
+    "t": 1147,
+    "why": "scroll",
+    "path": "/",
+    "y": 1342,
+    "docH": 13394,
+    "maxY": 12494,
+    "trackH": 3716,
+    "main": 12808
+  },
+  {
+    "t": 1155,
+    "why": "raf",
+    "path": "/",
+    "y": 1342,
+    "docH": 13394,
+    "maxY": 12494,
+    "trackH": 3716,
+    "main": 12808
+  },
+  {
+    "t": 1366,
+    "why": "scroll",
+    "path": "/",
+    "y": 1342,
+    "docH": 13394,
+    "maxY": 12494,
+    "trackH": 3716,
+    "main": 12808
+  },
+  {
+    "t": 1383,
+    "why": "raf",
+    "path": "/",
+    "y": 1342,
+    "docH": 13394,
+    "maxY": 12494,
+    "trackH": 3716,
+    "main": 12808
+  }
+]

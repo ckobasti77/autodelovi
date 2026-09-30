@@ -1,0 +1,1 @@
+{"tabsToChip":8,"hit":true,"focusVisibleBefore":true,"after":"BODY"}  (node scripts/qa/audit/verify-a11y-store-02-skeptic-tab.mjs, 1440x900, /, real Tab walk -> Enter -> Escape)

@@ -1,0 +1,234 @@
+{
+  "10": [
+    {
+      "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+      "width": 360,
+      "dpr": 2,
+      "m": {
+        "text": "Ilustracija kategorije — izgled dela može se razlikovati",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "color": "rgb(150, 144, 136)",
+        "bg": "oklab(0.167059 -0.00197043 -0.00492857 / 0.8)",
+        "lines": 2,
+        "insetLeft": 13,
+        "insetRight": 1,
+        "insetBottom": 13,
+        "capH": 40,
+        "frameW": 328,
+        "frameH": 247,
+        "capTopInFrame": 193,
+        "imgFit": "contain",
+        "imgNatural": [
+          360,
+          360
+        ],
+        "imgRect": [
+          326,
+          245
+        ]
+      }
+    },
+    {
+      "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+      "width": 390,
+      "dpr": 2,
+      "m": {
+        "text": "Ilustracija kategorije — izgled dela može se razlikovati",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "color": "rgb(150, 144, 136)",
+        "bg": "oklab(0.167059 -0.00197043 -0.00492857 / 0.8)",
+        "lines": 1,
+        "insetLeft": 13,
+        "insetRight": 22,
+        "insetBottom": 13,
+        "capH": 24,
+        "frameW": 358,
+        "frameH": 269,
+        "capTopInFrame": 232,
+        "imgFit": "contain",
+        "imgNatural": [
+          361,
+          361
+        ],
+        "imgRect": [
+          356,
+          267
+        ]
+      }
+    },
+    {
+      "route": "/deo/kociona-celjust-zadnja-desna-sa-motorom-rucne-demo-0018",
+      "width": 360,
+      "dpr": 2,
+      "m": {
+        "text": "Ilustracija kategorije — izgled dela može se razlikovati",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "color": "rgb(150, 144, 136)",
+        "bg": "oklab(0.167059 -0.00197043 -0.00492857 / 0.8)",
+        "lines": 2,
+        "insetLeft": 13,
+        "insetRight": 1,
+        "insetBottom": 13,
+        "capH": 40,
+        "frameW": 328,
+        "frameH": 247,
+        "capTopInFrame": 193,
+        "imgFit": "contain",
+        "imgNatural": [
+          360,
+          360
+        ],
+        "imgRect": [
+          326,
+          245
+        ]
+      }
+    },
+    {
+      "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+      "width": 1440,
+      "dpr": 1,
+      "m": {
+        "text": "Ilustracija kategorije — izgled dela može se razlikovati",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "color": "rgb(150, 144, 136)",
+        "bg": "oklab(0.167059 -0.00197043 -0.00492857 / 0.8)",
+        "lines": 1,
+        "insetLeft": 13,
+        "insetRight": 438,
+        "insetBottom": 13,
+        "capH": 24,
+        "frameW": 774,
+        "frameH": 581,
+        "capTopInFrame": 544,
+        "imgFit": "contain",
+        "imgNatural": [
+          747,
+          747
+        ],
+        "imgRect": [
+          772,
+          579
+        ]
+      }
+    }
+  ],
+  "09": [
+    {
+      "h1": "Kočioni diskovi za VW Golf",
+      "leadText": "Za VW Golf imamo 6 artikala iz grupe „Kočioni diskovi“, 5 odmah na stanju, u rasponu od 3.890 RSD do 18.900 RSD sa PDV-om. Pokrivene generacije: Golf VII (2012–2020), Golf V (2003–2009), Golf VI (2008–2013) i Golf IV (1997–2006). Proizvođači: ATE (2), Brembo (1), Febi Bilstein (1) i Original VAG (1)",
+      "leadLines": 9,
+      "leadBottom": 458,
+      "hasDetails": false,
+      "cardTop": 654,
+      "priceBottom": 823,
+      "btnBottom": 847,
+      "vh": 780,
+      "robots": "index, follow",
+      "route": "/delovi/kocioni-diskovi/volkswagen/golf",
+      "status": 200
+    },
+    {
+      "h1": "Kočioni diskovi za VW Golf",
+      "leadText": "Za VW Golf imamo 6 artikala iz grupe „Kočioni diskovi“, 5 odmah na stanju, u rasponu od 3.890 RSD do 18.900 RSD sa PDV-om. Pokrivene generacije: Golf VII (2012–2020), Golf V (2003–2009), Golf VI (2008–2013) i Golf IV (1997–2006). Proizvođači: ATE (2), Brembo (1), Febi Bilstein (1) i Original VAG (1)",
+      "leadLines": 8,
+      "leadBottom": 432,
+      "hasDetails": false,
+      "cardTop": 628,
+      "priceBottom": 798,
+      "btnBottom": 821,
+      "vh": 844,
+      "robots": "index, follow",
+      "route": "/delovi/kocioni-diskovi/volkswagen/golf",
+      "status": 200
+    },
+    {
+      "h1": "Kočioni diskovi za Volkswagen",
+      "leadText": "Za Volkswagen vozila imamo 8 artikala iz grupe „Kočioni diskovi“, 7 odmah na stanju, u rasponu od 3.890 RSD do 18.900 RSD sa PDV-om. Najviše delova ima za Golf VII, Passat B8, Touran II i Tiguan II. Proizvođači: ATE (2), Brembo (2), Bosch (1) i Febi Bilstein (1) i još 2.",
+      "leadLines": 7,
+      "leadBottom": 404,
+      "hasDetails": false,
+      "cardTop": 600,
+      "priceBottom": 769,
+      "btnBottom": 793,
+      "vh": 780,
+      "robots": "index, follow",
+      "route": "/delovi/kocioni-diskovi/volkswagen",
+      "status": 200
+    },
+    {
+      "h1": "Kočioni diskovi za Volkswagen",
+      "leadText": "Za Volkswagen vozila imamo 8 artikala iz grupe „Kočioni diskovi“, 7 odmah na stanju, u rasponu od 3.890 RSD do 18.900 RSD sa PDV-om. Najviše delova ima za Golf VII, Passat B8, Touran II i Tiguan II. Proizvođači: ATE (2), Brembo (2), Bosch (1) i Febi Bilstein (1) i još 2.",
+      "leadLines": 7,
+      "leadBottom": 405,
+      "hasDetails": false,
+      "cardTop": 601,
+      "priceBottom": 770,
+      "btnBottom": 794,
+      "vh": 844,
+      "robots": "index, follow",
+      "route": "/delovi/kocioni-diskovi/volkswagen",
+      "status": 200
+    },
+    {
+      "h1": "Kočioni diskovi",
+      "leadText": "Kočioni diskovi zajedno sa pločicama pretvaraju kretanje u toplotu i zaustavljaju vozilo. Vibracije pri kočenju, ivica na disku ili debljina ispod minimalne znače zamenu.",
+      "leadLines": 5,
+      "leadBottom": 321,
+      "hasDetails": true,
+      "cardTop": 533,
+      "priceBottom": 702,
+      "btnBottom": 726,
+      "vh": 780,
+      "robots": "index, follow",
+      "route": "/delovi/kocioni-diskovi",
+      "status": 200
+    },
+    {
+      "h1": "Kočioni diskovi",
+      "leadText": "Kočioni diskovi zajedno sa pločicama pretvaraju kretanje u toplotu i zaustavljaju vozilo. Vibracije pri kočenju, ivica na disku ili debljina ispod minimalne znače zamenu.",
+      "leadLines": 4,
+      "leadBottom": 295,
+      "hasDetails": true,
+      "cardTop": 507,
+      "priceBottom": 676,
+      "btnBottom": 700,
+      "vh": 844,
+      "robots": "index, follow",
+      "route": "/delovi/kocioni-diskovi",
+      "status": 200
+    },
+    {
+      "h1": "Kočione pločice za VW Golf",
+      "leadText": "Za VW Golf imamo 7 artikala iz grupe „Kočione pločice“, 6 odmah na stanju, u rasponu od 2.600 RSD do 8.900 RSD sa PDV-om. Pokrivene generacije: Golf VII (2012–2020), Golf V (2003–2009), Golf VI (2008–2013) i Golf VIII (od 2019). Proizvođači: Febi Bilstein (2), ATE (1), Bosch (1) i Brembo (1) i još 2",
+      "leadLines": 8,
+      "leadBottom": 460,
+      "hasDetails": false,
+      "cardTop": 656,
+      "priceBottom": 825,
+      "btnBottom": 849,
+      "vh": 780,
+      "robots": "index, follow",
+      "route": "/delovi/kocione-plocice/volkswagen/golf",
+      "status": 200
+    },
+    {
+      "h1": "Kočione pločice za VW Golf",
+      "leadText": "Za VW Golf imamo 7 artikala iz grupe „Kočione pločice“, 6 odmah na stanju, u rasponu od 2.600 RSD do 8.900 RSD sa PDV-om. Pokrivene generacije: Golf VII (2012–2020), Golf V (2003–2009), Golf VI (2008–2013) i Golf VIII (od 2019). Proizvođači: Febi Bilstein (2), ATE (1), Bosch (1) i Brembo (1) i još 2",
+      "leadLines": 8,
+      "leadBottom": 432,
+      "hasDetails": false,
+      "cardTop": 628,
+      "priceBottom": 798,
+      "btnBottom": 821,
+      "vh": 844,
+      "robots": "index, follow",
+      "route": "/delovi/kocione-plocice/volkswagen/golf",
+      "status": 200
+    }
+  ]
+}

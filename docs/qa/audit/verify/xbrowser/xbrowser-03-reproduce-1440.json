@@ -1,0 +1,439 @@
+{
+  "width": 1440,
+  "height": 900,
+  "route": "/delovi/kocioni-diskovi",
+  "engines": {
+    "chromium": {
+      "steps": [
+        {
+          "label": "0-brand",
+          "final": {
+            "t": 1516,
+            "top": 289,
+            "h": 323,
+            "title": 310,
+            "crumb": 387,
+            "skel": false
+          },
+          "distinct": [
+            {
+              "t": 420,
+              "top": 223,
+              "h": 455,
+              "title": 244,
+              "crumb": 321,
+              "skel": true
+            },
+            {
+              "t": 484,
+              "top": 289,
+              "h": 323,
+              "title": 310,
+              "crumb": 387,
+              "skel": false
+            }
+          ]
+        },
+        {
+          "label": "1-model",
+          "final": {
+            "t": 1512,
+            "top": 216,
+            "h": 468,
+            "title": 237,
+            "crumb": 314,
+            "skel": false
+          },
+          "distinct": [
+            {
+              "t": 11,
+              "top": 289,
+              "h": 323,
+              "title": 310,
+              "crumb": 387,
+              "skel": false
+            },
+            {
+              "t": 44,
+              "top": 223,
+              "h": 455,
+              "title": 244,
+              "crumb": 321,
+              "skel": true
+            },
+            {
+              "t": 111,
+              "top": 216,
+              "h": 468,
+              "title": 237,
+              "crumb": 314,
+              "skel": false
+            }
+          ]
+        },
+        {
+          "label": "2-generation",
+          "final": {
+            "t": 1505,
+            "top": 238,
+            "h": 424,
+            "title": 259,
+            "crumb": 336,
+            "skel": false
+          },
+          "distinct": [
+            {
+              "t": 6,
+              "top": 216,
+              "h": 468,
+              "title": 237,
+              "crumb": 314,
+              "skel": false
+            },
+            {
+              "t": 40,
+              "top": 223,
+              "h": 455,
+              "title": 244,
+              "crumb": 321,
+              "skel": true
+            },
+            {
+              "t": 106,
+              "top": 238,
+              "h": 424,
+              "title": 259,
+              "crumb": 336,
+              "skel": false
+            }
+          ]
+        },
+        {
+          "label": "3-engine",
+          "final": {
+            "t": 1512,
+            "top": 149,
+            "h": 601,
+            "title": 170,
+            "crumb": 247,
+            "skel": false
+          },
+          "distinct": [
+            {
+              "t": 13,
+              "top": 238,
+              "h": 424,
+              "title": 259,
+              "crumb": 336,
+              "skel": false
+            },
+            {
+              "t": 47,
+              "top": 223,
+              "h": 455,
+              "title": 244,
+              "crumb": 321,
+              "skel": true
+            },
+            {
+              "t": 130,
+              "top": 149,
+              "h": 601,
+              "title": 170,
+              "crumb": 247,
+              "skel": false
+            }
+          ]
+        }
+      ]
+    },
+    "firefox": {
+      "steps": [
+        {
+          "label": "0-brand",
+          "final": {
+            "t": 1502,
+            "top": 289,
+            "h": 323,
+            "title": 310,
+            "crumb": 387,
+            "skel": false
+          },
+          "distinct": [
+            {
+              "t": 434,
+              "top": 223,
+              "h": 455,
+              "title": 244,
+              "crumb": 321,
+              "skel": true
+            },
+            {
+              "t": 470,
+              "top": 289,
+              "h": 323,
+              "title": 310,
+              "crumb": 387,
+              "skel": false
+            }
+          ]
+        },
+        {
+          "label": "1-model",
+          "final": {
+            "t": 1503,
+            "top": 216,
+            "h": 468,
+            "title": 237,
+            "crumb": 314,
+            "skel": false
+          },
+          "distinct": [
+            {
+              "t": 9,
+              "top": 289,
+              "h": 323,
+              "title": 310,
+              "crumb": 387,
+              "skel": false
+            },
+            {
+              "t": 47,
+              "top": 223,
+              "h": 455,
+              "title": 244,
+              "crumb": 321,
+              "skel": true
+            },
+            {
+              "t": 101,
+              "top": 216,
+              "h": 468,
+              "title": 237,
+              "crumb": 314,
+              "skel": false
+            }
+          ]
+        },
+        {
+          "label": "2-generation",
+          "final": {
+            "t": 1500,
+            "top": 238,
+            "h": 424,
+            "title": 259,
+            "crumb": 336,
+            "skel": false
+          },
+          "distinct": [
+            {
+              "t": 0,
+              "top": 216,
+              "h": 468,
+              "title": 237,
+              "crumb": 314,
+              "skel": false
+            },
+            {
+              "t": 57,
+              "top": 223,
+              "h": 455,
+              "title": 244,
+              "crumb": 321,
+              "skel": true
+            },
+            {
+              "t": 119,
+              "top": 238,
+              "h": 424,
+              "title": 259,
+              "crumb": 336,
+              "skel": false
+            }
+          ]
+        },
+        {
+          "label": "3-engine",
+          "final": {
+            "t": 1503,
+            "top": 149,
+            "h": 601,
+            "title": 170,
+            "crumb": 247,
+            "skel": false
+          },
+          "distinct": [
+            {
+              "t": 11,
+              "top": 238,
+              "h": 424,
+              "title": 259,
+              "crumb": 336,
+              "skel": false
+            },
+            {
+              "t": 41,
+              "top": 223,
+              "h": 455,
+              "title": 244,
+              "crumb": 321,
+              "skel": true
+            },
+            {
+              "t": 101,
+              "top": 149,
+              "h": 601,
+              "title": 170,
+              "crumb": 247,
+              "skel": false
+            }
+          ]
+        }
+      ]
+    },
+    "webkit": {
+      "steps": [
+        {
+          "label": "0-brand",
+          "final": {
+            "t": 1507,
+            "top": 289,
+            "h": 323,
+            "title": 310,
+            "crumb": 387,
+            "skel": false
+          },
+          "distinct": [
+            {
+              "t": 668,
+              "top": 223,
+              "h": 455,
+              "title": 244,
+              "crumb": 321,
+              "skel": true
+            },
+            {
+              "t": 713,
+              "top": 289,
+              "h": 323,
+              "title": 310,
+              "crumb": 387,
+              "skel": false
+            }
+          ]
+        },
+        {
+          "label": "1-model",
+          "final": {
+            "t": 1504,
+            "top": 216,
+            "h": 468,
+            "title": 237,
+            "crumb": 314,
+            "skel": false
+          },
+          "distinct": [
+            {
+              "t": 8,
+              "top": 289,
+              "h": 323,
+              "title": 310,
+              "crumb": 387,
+              "skel": false
+            },
+            {
+              "t": 163,
+              "top": 223,
+              "h": 455,
+              "title": 244,
+              "crumb": 321,
+              "skel": true
+            },
+            {
+              "t": 257,
+              "top": 216,
+              "h": 468,
+              "title": 237,
+              "crumb": 314,
+              "skel": false
+            }
+          ]
+        },
+        {
+          "label": "2-generation",
+          "final": {
+            "t": 1502,
+            "top": 238,
+            "h": 424,
+            "title": 259,
+            "crumb": 336,
+            "skel": false
+          },
+          "distinct": [
+            {
+              "t": 1,
+              "top": 216,
+              "h": 468,
+              "title": 237,
+              "crumb": 314,
+              "skel": false
+            },
+            {
+              "t": 112,
+              "top": 223,
+              "h": 455,
+              "title": 244,
+              "crumb": 321,
+              "skel": true
+            },
+            {
+              "t": 220,
+              "top": 238,
+              "h": 424,
+              "title": 259,
+              "crumb": 336,
+              "skel": false
+            }
+          ]
+        },
+        {
+          "label": "3-engine",
+          "final": {
+            "t": 1517,
+            "top": 149,
+            "h": 601,
+            "title": 170,
+            "crumb": 247,
+            "skel": false
+          },
+          "distinct": [
+            {
+              "t": 12,
+              "top": 238,
+              "h": 424,
+              "title": 259,
+              "crumb": 336,
+              "skel": false
+            },
+            {
+              "t": 121,
+              "top": 223,
+              "h": 455,
+              "title": 244,
+              "crumb": 321,
+              "skel": true
+            },
+            {
+              "t": 216,
+              "top": 149,
+              "h": 601,
+              "title": 170,
+              "crumb": 247,
+              "skel": false
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

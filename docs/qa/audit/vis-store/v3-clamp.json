@@ -1,0 +1,54 @@
+{
+ "/delovi/kocioni-diskovi@1024": {
+  "cards": 9,
+  "cardWidth": 203,
+  "cols": 1,
+  "clamped": [
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 288 × 25 mm, ventilirani"
+  ]
+ },
+ "/delovi/kocioni-diskovi@1280": {
+  "cards": 9,
+  "cardWidth": 204,
+  "cols": 1,
+  "clamped": [
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 288 × 25 mm, ventilirani"
+  ]
+ },
+ "/delovi/kocioni-diskovi@1440": {
+  "cards": 9,
+  "cardWidth": 242,
+  "cols": 1,
+  "clamped": []
+ },
+ "/delovi/kocioni-diskovi@1920": {
+  "cards": 9,
+  "cardWidth": 200,
+  "cols": 1,
+  "clamped": [
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 288 × 25 mm, ventilirani"
+  ]
+ },
+ "/delovi/kocioni-diskovi@2560": {
+  "cards": 9,
+  "cardWidth": 200,
+  "cols": 1,
+  "clamped": [
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 288 × 25 mm, ventilirani"
+  ]
+ },
+ "/pretraga?q=disk@1920": {
+  "cards": 9,
+  "cardWidth": 262,
+  "cols": 1,
+  "clamped": []
+ }
+}

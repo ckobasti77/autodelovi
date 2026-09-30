@@ -1,0 +1,130 @@
+{
+  "ORDER": "SK-2026-000141",
+  "steps": [
+    {
+      "name": "g p (h1 clicked)",
+      "at": "2026-09-30T20:19:40.289Z",
+      "url": "http://localhost:3100/admin/porudzbine",
+      "active": "MAIN"
+    },
+    {
+      "name": "g u",
+      "at": "2026-09-30T20:19:43.463Z",
+      "url": "http://localhost:3100/admin/upiti"
+    },
+    {
+      "name": "arrows",
+      "at": "2026-09-30T20:19:47.880Z",
+      "active": "<main id=\"sadrzaj\" tabindex=\"-1\" class=\"mx-auto w-full max-w-[1680px] flex-1 px-4 py-6 outline-none lg:px-6 print:p-0\"><div class=\"flex flex-col gap-4\"><div class=\"mb-6 flex flex-wrap items-start just",
+      "selectedRows": 0
+    },
+    {
+      "name": "enter",
+      "at": "2026-09-30T20:19:50.658Z",
+      "url": "http://localhost:3100/admin/porudzbine?status=sve"
+    },
+    {
+      "name": "offline after submit",
+      "at": "2026-09-30T20:22:04.112Z",
+      "btnBusy": "true",
+      "btnDisabled": true,
+      "textarea": "Offline beleška (audit flows-admin).",
+      "toasts": [],
+      "alerts": [
+        ""
+      ],
+      "offlineBanner": ""
+    },
+    {
+      "name": "offline confirm",
+      "at": "2026-09-30T20:22:10.645Z",
+      "dialogOpen": true,
+      "dialogBusy": "true",
+      "head": "PorudžbinePorudžbina SK-2026-000141NovaPrimljena 30.09. 22:19 · SajtPredračunOtpremnicaPromeni statusPotvrdiStavkeIzmeni"
+    },
+    {
+      "name": "back online",
+      "at": "2026-09-30T20:22:21.007Z",
+      "noteInHistory": true,
+      "head": "PorudžbinePorudžbina SK-2026-000141PotvrđenaPrimljena 30.09. 22:19 · SajtPredračunOtpremnicaPromeni statusOznači kao pos",
+      "dialogOpen": false,
+      "toasts": []
+    },
+    {
+      "name": "offline errors",
+      "at": "2026-09-30T20:22:21.231Z",
+      "console": [
+        "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+        "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+        "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+        "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+        "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+        "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED",
+        "WebSocket connection to 'wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync' failed: Error in connection establishment: net::ERR_INTERNET_DISCONNECTED"
+      ],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "name": "390 /admin",
+      "at": "2026-09-30T20:22:27.701Z",
+      "url": "http://localhost:3100/admin",
+      "ov": {
+        "over": 0,
+        "offenders": []
+      },
+      "ax": []
+    },
+    {
+      "name": "390 /admin/porudzbine",
+      "at": "2026-09-30T20:22:32.659Z",
+      "url": "http://localhost:3100/prijava?next=%2Fadmin%2Fporudzbine",
+      "ov": {
+        "over": 0,
+        "offenders": []
+      },
+      "ax": []
+    },
+    {
+      "name": "390 /admin/porudzbine/SK-2026-000141",
+      "at": "2026-09-30T20:22:37.187Z",
+      "url": "http://localhost:3100/prijava?next=%2Fadmin%2Fporudzbine%2FSK-2026-000141",
+      "ov": {
+        "over": 0,
+        "offenders": []
+      },
+      "ax": []
+    },
+    {
+      "name": "390 /admin/upiti/UP-2026-000054",
+      "at": "2026-09-30T20:22:42.899Z",
+      "url": "http://localhost:3100/prijava?next=%2Fadmin%2Fupiti%2FUP-2026-000054",
+      "ov": {
+        "over": 0,
+        "offenders": []
+      },
+      "ax": []
+    },
+    {
+      "name": "390 /admin/proizvodi/qh7cqja340240s4jq1fsawnc3s8fctej",
+      "at": "2026-09-30T20:22:50.052Z",
+      "url": "http://localhost:3100/prijava?next=%2Fadmin%2Fproizvodi%2Fqh7cqja340240s4jq1fsawnc3s8fctej",
+      "ov": {
+        "over": 0,
+        "offenders": []
+      },
+      "ax": []
+    },
+    {
+      "name": "390 /admin/podesavanja",
+      "at": "2026-09-30T20:23:02.799Z",
+      "url": "http://localhost:3100/prijava?next=%2Fadmin%2Fpodesavanja",
+      "ov": {
+        "over": 0,
+        "offenders": []
+      },
+      "ax": []
+    }
+  ]
+}

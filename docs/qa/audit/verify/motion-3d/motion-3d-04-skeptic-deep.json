@@ -1,0 +1,226 @@
+[
+  {
+    "scenario": "deeplink kocioni-diskovi",
+    "tag": "deeplink-1440-dpr1",
+    "width": 1440,
+    "height": 900,
+    "dpr": 1,
+    "reducedMotion": "no-preference",
+    "engine": "chromium",
+    "first": {
+      "scrollY": 1326,
+      "dpr": 1,
+      "progress": 0.460069,
+      "stage": 4,
+      "selected": "kocioni-diskovi",
+      "timeline": "desktop",
+      "reducedMotion": false,
+      "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+      "phoneLabel": "04 / 07 Agregati i hlađenje"
+    },
+    "settled": {
+      "scrollY": 1326,
+      "dpr": 1,
+      "progress": 0.460069,
+      "stage": 4,
+      "selected": "kocioni-diskovi",
+      "timeline": "desktop",
+      "reducedMotion": false,
+      "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+      "phoneLabel": "04 / 07 Agregati i hlađenje"
+    },
+    "img": "docs/qa/audit/verify/motion-3d/motion-3d-04-skeptic-deeplink-1440-dpr1.webp"
+  },
+  {
+    "scenario": "deeplink kocioni-diskovi",
+    "tag": "deeplink-1440-dpr2",
+    "width": 1440,
+    "height": 900,
+    "dpr": 2,
+    "reducedMotion": "no-preference",
+    "engine": "chromium",
+    "first": {
+      "scrollY": 1326,
+      "dpr": 2,
+      "progress": 0.460069,
+      "stage": 4,
+      "selected": "kocioni-diskovi",
+      "timeline": "desktop",
+      "reducedMotion": false,
+      "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+      "phoneLabel": "04 / 07 Agregati i hlađenje"
+    },
+    "settled": {
+      "scrollY": 1326,
+      "dpr": 2,
+      "progress": 0.460069,
+      "stage": 4,
+      "selected": "kocioni-diskovi",
+      "timeline": "desktop",
+      "reducedMotion": false,
+      "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+      "phoneLabel": "04 / 07 Agregati i hlađenje"
+    },
+    "img": null
+  },
+  {
+    "scenario": "deeplink kocioni-diskovi",
+    "tag": "deeplink-1920-dpr1",
+    "width": 1920,
+    "height": 1080,
+    "dpr": 1,
+    "reducedMotion": "no-preference",
+    "engine": "chromium",
+    "first": {
+      "scrollY": 1591,
+      "dpr": 1,
+      "progress": 0.460069,
+      "stage": 4,
+      "selected": "kocioni-diskovi",
+      "timeline": "desktop",
+      "reducedMotion": false,
+      "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+      "phoneLabel": "04 / 07 Agregati i hlađenje"
+    },
+    "settled": {
+      "scrollY": 1591,
+      "dpr": 1,
+      "progress": 0.460069,
+      "stage": 4,
+      "selected": "kocioni-diskovi",
+      "timeline": "desktop",
+      "reducedMotion": false,
+      "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+      "phoneLabel": "04 / 07 Agregati i hlađenje"
+    },
+    "img": null
+  },
+  {
+    "scenario": "deeplink kocioni-diskovi",
+    "tag": "deeplink-1280-dpr1",
+    "width": 1280,
+    "height": 800,
+    "dpr": 1,
+    "reducedMotion": "no-preference",
+    "engine": "chromium",
+    "first": {
+      "scrollY": 1179,
+      "dpr": 1,
+      "progress": 0.460156,
+      "stage": 4,
+      "selected": "kocioni-diskovi",
+      "timeline": "desktop",
+      "reducedMotion": false,
+      "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+      "phoneLabel": "04 / 07 Agregati i hlađenje"
+    },
+    "settled": {
+      "scrollY": 1179,
+      "dpr": 1,
+      "progress": 0.460156,
+      "stage": 4,
+      "selected": "kocioni-diskovi",
+      "timeline": "desktop",
+      "reducedMotion": false,
+      "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+      "phoneLabel": "04 / 07 Agregati i hlađenje"
+    },
+    "img": null
+  },
+  {
+    "scenario": "deeplink kocioni-diskovi",
+    "tag": "deeplink-390-dpr3",
+    "width": 390,
+    "height": 844,
+    "dpr": 3,
+    "reducedMotion": "no-preference",
+    "engine": "chromium",
+    "first": {
+      "scrollY": 1485,
+      "dpr": 3,
+      "progress": 0.520142,
+      "stage": 4,
+      "selected": "kocioni-diskovi",
+      "timeline": "mobile",
+      "reducedMotion": false,
+      "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+      "phoneLabel": "04 / 07 Agregati i hlađenje"
+    },
+    "settled": {
+      "scrollY": 1485,
+      "dpr": 3,
+      "progress": 0.520142,
+      "stage": 4,
+      "selected": "kocioni-diskovi",
+      "timeline": "mobile",
+      "reducedMotion": false,
+      "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+      "phoneLabel": "04 / 07 Agregati i hlađenje"
+    },
+    "img": "docs/qa/audit/verify/motion-3d/motion-3d-04-skeptic-deeplink-390-dpr3.webp"
+  },
+  {
+    "scenario": "deeplink kocioni-diskovi",
+    "tag": "deeplink-1440-reduced",
+    "width": 1440,
+    "height": 900,
+    "dpr": 1,
+    "reducedMotion": "reduce",
+    "engine": "chromium",
+    "first": {
+      "scrollY": 0,
+      "dpr": 1,
+      "progress": 0.46,
+      "stage": 3,
+      "selected": "kocioni-diskovi",
+      "timeline": "desktop",
+      "reducedMotion": true,
+      "ariaCurrent": "03 Kočnice, vešanje, upravljanje",
+      "phoneLabel": "03 / 07 Kočnice i vešanje"
+    },
+    "settled": {
+      "scrollY": 0,
+      "dpr": 1,
+      "progress": 0.46,
+      "stage": 3,
+      "selected": "kocioni-diskovi",
+      "timeline": "desktop",
+      "reducedMotion": true,
+      "ariaCurrent": "03 Kočnice, vešanje, upravljanje",
+      "phoneLabel": "03 / 07 Kočnice i vešanje"
+    },
+    "img": null
+  },
+  {
+    "scenario": "deeplink abs-senzori",
+    "tag": "deeplink-abs-1440",
+    "width": 1440,
+    "height": 900,
+    "dpr": 1,
+    "reducedMotion": "no-preference",
+    "engine": "chromium",
+    "first": {
+      "scrollY": 1326,
+      "dpr": 1,
+      "progress": 0.460069,
+      "stage": 4,
+      "selected": "abs-senzori",
+      "timeline": "desktop",
+      "reducedMotion": false,
+      "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+      "phoneLabel": "04 / 07 Agregati i hlađenje"
+    },
+    "settled": {
+      "scrollY": 1326,
+      "dpr": 1,
+      "progress": 0.460069,
+      "stage": 4,
+      "selected": "abs-senzori",
+      "timeline": "desktop",
+      "reducedMotion": false,
+      "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+      "phoneLabel": "04 / 07 Agregati i hlađenje"
+    },
+    "img": null
+  }
+]

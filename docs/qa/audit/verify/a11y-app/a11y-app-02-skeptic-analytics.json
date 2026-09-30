@@ -1,0 +1,12 @@
+{
+  "at": "2026-09-30T21:09:05.775Z",
+  "submitNavigation": "GET http://localhost:3100/prijava?email=audit-verify-a11y02-an%40primer.rs&password=TajnaLozinka-888",
+  "href": "http://localhost:3100/prijava?email=audit-verify-a11y02-an%40primer.rs&password=TajnaLozinka-888",
+  "hydrated": true,
+  "dataLayerLength": 4,
+  "dataLayerHasPassword": false,
+  "dataLayerExcerpt": null,
+  "gtagLoaded": false,
+  "fbq": "undefined",
+  "thirdPartyRequestsWithPassword": []
+}

@@ -1,0 +1,94 @@
+{
+  "steps": [
+    {
+      "name": "1440 /admin/obavestenja",
+      "linkInTextBlock": {
+        "id": "link-in-text-block",
+        "impact": "serious",
+        "help": "Links must be distinguishable without relying on color",
+        "nodes": 1,
+        "targets": [
+          ".text-accent-text"
+        ],
+        "summary": "Fix any of the following:\n  The link has insufficient color contrast of 1.1:1 with the surrounding text. (Minimum contrast is 3:1, link text: #b8470a, surrounding text: #5d6570)\n  The link has no styling (such as underline) to distinguish it from the surrounding text"
+      },
+      "allViolations": [
+        "link-in-text-block:1"
+      ],
+      "style": {
+        "text": "podešavanjima",
+        "decoration": "none",
+        "color": "rgb(184, 71, 10)",
+        "parentColor": "rgb(93, 101, 112)",
+        "fontWeight": "400",
+        "parentWeight": "400"
+      }
+    },
+    {
+      "name": "1440 hover",
+      "decoration": "underline"
+    },
+    {
+      "name": "1440 /admin/porudzbine/SK-2026-000142",
+      "linkInTextBlock": {
+        "id": "link-in-text-block",
+        "impact": "serious",
+        "help": "Links must be distinguishable without relying on color",
+        "nodes": 1,
+        "targets": [
+          ".text-accent-text"
+        ],
+        "summary": "Fix any of the following:\n  The link has insufficient color contrast of 1.1:1 with the surrounding text. (Minimum contrast is 3:1, link text: #b8470a, surrounding text: #5d6570)\n  The link has no styling (such as underline) to distinguish it from the surrounding text"
+      },
+      "allViolations": [
+        "link-in-text-block:1"
+      ],
+      "style": null
+    },
+    {
+      "name": "1440 /admin/upiti/UP-2026-000054",
+      "linkInTextBlock": {
+        "id": "link-in-text-block",
+        "impact": "serious",
+        "help": "Links must be distinguishable without relying on color",
+        "nodes": 1,
+        "targets": [
+          ".text-accent-text"
+        ],
+        "summary": "Fix any of the following:\n  The link has insufficient color contrast of 1.1:1 with the surrounding text. (Minimum contrast is 3:1, link text: #b8470a, surrounding text: #5d6570)\n  The link has no styling (such as underline) to distinguish it from the surrounding text"
+      },
+      "allViolations": [
+        "link-in-text-block:1"
+      ],
+      "style": null
+    },
+    {
+      "name": "390 /admin/obavestenja",
+      "linkInTextBlock": {
+        "id": "link-in-text-block",
+        "impact": "serious",
+        "help": "Links must be distinguishable without relying on color",
+        "nodes": 1,
+        "targets": [
+          ".text-accent-text"
+        ],
+        "summary": "Fix any of the following:\n  The link has insufficient color contrast of 1.1:1 with the surrounding text. (Minimum contrast is 3:1, link text: #b8470a, surrounding text: #5d6570)\n  The link has no styling (such as underline) to distinguish it from the surrounding text"
+      },
+      "allViolations": [
+        "link-in-text-block:1"
+      ],
+      "style": {
+        "text": "podešavanjima",
+        "decoration": "none",
+        "color": "rgb(184, 71, 10)",
+        "parentColor": "rgb(93, 101, 112)",
+        "fontWeight": "400",
+        "parentWeight": "400"
+      }
+    },
+    {
+      "name": "390 hover",
+      "decoration": "none"
+    }
+  ]
+}

@@ -6,23 +6,62 @@
     "Browsers: Playwright 1.63 with Chromium 1243, Firefox 1543 and WebKit 2359 installed for the audit.",
     "**Full e2e suite on the production build after the step 20 CSP/header changes: 118 tests — 91 passed, 27 skipped, 0 failed, 0 flaky (11.6 min).** All 27 skips are intentional (admin/import desktop-only, HTTP-level and run-once checks skipped on the mobile-390 project). Evidence: [audit/e2e/full-run.txt](audit/e2e/full-run.txt), [audit/e2e/full-run.json](audit/e2e/full-run.json). The suite covers Chromium only; Firefox/WebKit are the cross-browser track.",
     "Lighthouse: Lighthouse 13.5 through `tests/lighthouse/run.mjs` against :3200 (fresh profile, so the cookie banner is visible as on a first ad click). Runs whose CPU benchmarkIndex showed machine contention were excluded and are listed in `audit/perf-lh/lighthouse.md`; timing claims were re-measured by an independent verifier.",
-    "Incidents: (1) the :3100 `next start` process exited with code 1 at about 17:50 without an error in its log; it was restarted at 17:56 and guarded by a watchdog for the rest of the audit (no restart was needed). No verdict was produced against the dead server. (2) The first audit run lost all ten browser-heavy reviewers (visual, motion/3D, accessibility, cross-browser, flows) and the completeness critic to API network errors (ECONNRESET / ENOTFOUND) at about 19:40. Those tracks were re-run in a second workflow that reused the evidence already on disk; the completeness-critic phase was dropped to stay within the step's time limit."
+    "Incidents: (1) the :3100 `next start` process exited several times (about 17:50, 20:11, 20:23, 22:00 and 22:01) without an error of its own in the log, while free RAM was down to about 1.4 GB of 16 GB with ~15 browser agents running; a watchdog restarted it within a minute each time and verifiers were told to retry transient failures. A targeted test (12 aborted POST/GET requests, incl. /api/auth and a server action, against a separate instance) did not crash the server, so no product finding was recorded — step 22 should still watch the self-hosted server log. (2) The machine changed networks during the audit (192.168.0.6 → a phone hotspot 172.20.10.2 → 192.168.111.26). The first run therefore lost all ten browser-heavy reviewers and the completeness critic to API network errors (ECONNRESET / ENOTFOUND); a second attempt failed on the account usage limit; after the pipeline restarted the step at 21:40, a third run (five reviewers at a time, reusing the evidence already on disk) completed all ten tracks with the same verification protocol. The completeness-critic phase was not repeated — per-reviewer coverage and gaps are listed in Appendix B."
   ],
   "notes": [
     "Evidence paths are relative to `docs/qa/`. Reviewer scripts in `scripts/qa/audit/` re-create most measurements (`kit.mjs` is the shared helper).",
     "Lab numbers come from localhost on a Windows desktop; PageSpeed Insights on the deployed site remains the owner's check (HUMAN-TODO)."
   ],
   "knownItems": [
-    { "item": "Mobile hero framing at 360–430 px (empty band above the car)", "match": "hero framing", "fallback": "see motion/3D findings" },
-    { "item": "Shared shell first-load JS ~303 KB gzip", "match": "first-load js" },
-    { "item": "Default simulated mobile LCP ~4.2 s on home (D112 applied throttling)", "match": "simulated mobile lcp" },
-    { "item": "Phone TBT over budget on home, category and product", "match": "tbt" },
-    { "item": "Font preloads", "match": "font preload" },
-    { "item": "Globally registered GSAP plugins", "match": "gsap plugins" },
-    { "item": "Search not narrowed by the selected vehicle", "match": "narrowed", "fallback": "see flows findings" },
-    { "item": "Mobile filter row not sticky", "match": "filter row", "fallback": "see flows findings" },
-    { "item": "Mobile sticky contact bar not built", "match": "contact bar", "fallback": "see flows findings" },
-    { "item": "Mechanics quick order at 1440: last row behind the summary bar", "match": "quick order", "fallback": "see visual findings" },
-    { "item": "Full e2e suite re-run after the step 20 CSP changes", "match": "__none__", "fallback": "118 tests: 91 passed, 27 skipped (intentional), 0 failed — no finding" }
+    {
+      "item": "Mobile hero framing at 360–430 px (empty band above the car)",
+      "match": "hero framing",
+      "fallback": "see motion/3D findings"
+    },
+    {
+      "item": "Shared shell first-load JS ~303 KB gzip",
+      "match": "first-load js"
+    },
+    {
+      "item": "Default simulated mobile LCP ~4.2 s on home (D112 applied throttling)",
+      "match": "simulated mobile lcp"
+    },
+    {
+      "item": "Phone TBT over budget on home, category and product",
+      "match": "tbt"
+    },
+    {
+      "item": "Font preloads",
+      "match": "font preload"
+    },
+    {
+      "item": "Globally registered GSAP plugins",
+      "match": "gsap plugins"
+    },
+    {
+      "item": "Search not narrowed by the selected vehicle",
+      "match": "narrowed",
+      "fallback": "see flows findings"
+    },
+    {
+      "item": "Mobile filter row not sticky",
+      "match": "filter row",
+      "fallback": "see flows findings"
+    },
+    {
+      "item": "Mobile sticky contact bar not built",
+      "match": "contact bar",
+      "fallback": "see flows findings"
+    },
+    {
+      "item": "Mechanics quick order at 1440: last row behind the summary bar",
+      "match": "quick order",
+      "fallback": "see visual findings"
+    },
+    {
+      "item": "Full e2e suite re-run after the step 20 CSP changes",
+      "match": "__none__",
+      "fallback": "118 tests: 91 passed, 27 skipped (intentional), 0 failed — no finding"
+    }
   ]
 }

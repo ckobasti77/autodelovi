@@ -1,0 +1,186 @@
+{
+  "flows-admin-12": [
+    {
+      "name": "before",
+      "at": "2026-09-30T20:46:42.217Z",
+      "label": "Obaveštenja, nepročitano: 100",
+      "badge": "9+"
+    },
+    {
+      "name": "created order",
+      "at": "2026-09-30T20:46:52.466Z",
+      "number": "SK-2026-000143"
+    },
+    {
+      "name": "after",
+      "at": "2026-09-30T20:46:59.507Z",
+      "label": "Obaveštenja, nepročitano: 100",
+      "badge": "9+"
+    },
+    {
+      "name": "panel first row",
+      "at": "2026-09-30T20:47:01.422Z",
+      "top": "Nova porudžbina SK-2026-000143upravo · Ukupno 18.900 RSD"
+    }
+  ],
+  "orderFor11": "SK-2026-000143",
+  "flows-admin-11": [
+    {
+      "name": "order",
+      "at": "2026-09-30T20:47:02.048Z",
+      "number": "SK-2026-000143"
+    },
+    {
+      "name": "B dialog still open after A confirmed",
+      "at": "2026-09-30T20:47:24.638Z",
+      "bStill": true
+    },
+    {
+      "name": "B after confirm",
+      "at": "2026-09-30T20:47:28.248Z",
+      "alerts": [
+        "Porudžbina je u međuvremenu izmenjena. Osvežite prikaz."
+      ],
+      "toasts": [],
+      "console": [
+        "[CONVEX M(ordersAdmin:transition)] [Request ID: 369bab5b1a08292a] Server Error\nUncaught ConvexError: {\"error\":\"same_status\",\"code\":\"CONFLICT\",\"message\":\"Porudžbina je već u tom statusu.\"}\n    at async handler (../convex/ordersAdmin.ts:448:31)\n"
+      ],
+      "pageErrors": []
+    },
+    {
+      "name": "A console",
+      "at": "2026-09-30T20:47:28.977Z",
+      "console": []
+    },
+    {
+      "name": "pending mechanic",
+      "at": "2026-09-30T20:47:32.113Z",
+      "companyName": "Servis Admin vfa11-249110",
+      "profileId": "p5715t64h0ybg1a3acgypwez4n8fd6zm"
+    },
+    {
+      "name": "mechanic reject empty",
+      "at": "2026-09-30T20:47:42.859Z",
+      "alerts": [
+        "Upišite razlog.",
+        ""
+      ],
+      "toasts": [],
+      "console": [
+        "[CONVEX M(mechanicsAdmin:reject)] [Request ID: ba9adc953f97d23e] Server Error\nUncaught ConvexError: {\"field\":\"reason\",\"code\":\"INVALID\",\"message\":\"Upišite razlog.\"}\n    at handler (../convex/mechanicsAdmin.ts:213:31)\n"
+      ]
+    },
+    {
+      "name": "storefront wrong sign-in",
+      "at": "2026-09-30T20:47:52.496Z",
+      "alerts": [
+        "Pogrešan e-mail ili lozinka. Proverite podatke i pokušajte ponovo.",
+        ""
+      ],
+      "console": [
+        "Failed to load resource: the server responded with a status of 400 (Bad Request)"
+      ],
+      "url": "http://localhost:3100/prijava"
+    }
+  ],
+  "flows-admin-13": [
+    {
+      "name": "click save",
+      "at": "2026-09-30T20:47:58.825Z",
+      "btnBox": {
+        "x": 1279.125,
+        "y": 844,
+        "width": 136.875,
+        "height": 44
+      },
+      "focus": "BUTTON Sačuvaj artikal",
+      "invalid": 5,
+      "summaryText": "Upišite šifru artikla.Upišite naziv.Izaberite kategoriju.Izaberite proizvođača.Upišite cenu sa PDV-om.",
+      "summaryTabIndex": null,
+      "summaryInViewport": true,
+      "summaryTop": 240.5,
+      "scrollY": 0
+    },
+    {
+      "name": "keyboard Enter on save",
+      "at": "2026-09-30T20:48:05.858Z",
+      "focus": "BUTTON Sačuvaj artikal",
+      "invalid": 5
+    },
+    {
+      "name": "next Tab",
+      "at": "2026-09-30T20:48:05.866Z",
+      "focus": "LI Proverite označena polja."
+    },
+    {
+      "name": "ctrl+s",
+      "at": "2026-09-30T20:48:12.153Z",
+      "focus": "INPUT ",
+      "invalid": 5
+    }
+  ],
+  "flows-admin-14": [
+    {
+      "name": "dialog fields (initial)",
+      "at": "2026-09-30T20:48:22.624Z",
+      "fields": [
+        {
+          "label": "Ime (obavezno)",
+          "value": "Demo",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "label": "Prezime (obavezno)",
+          "value": "Majstor",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "label": "Telefon (obavezno)",
+          "value": "+381640000001",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "label": "E-pošta (obavezno)",
+          "value": "majstor.demo@sklop.test",
+          "required": true,
+          "type": "email"
+        }
+      ]
+    },
+    {
+      "name": "form validity after clearing e-mail",
+      "at": "2026-09-30T20:48:22.961Z",
+      "valid": false
+    },
+    {
+      "name": "after submit",
+      "at": "2026-09-30T20:48:25.016Z",
+      "focus": "INPUT E-pošta (obavezno)",
+      "nativeMessages": [
+        "E-pošta (obavezno): Please fill out this field."
+      ],
+      "ariaInvalid": 0,
+      "inlineErrors": [],
+      "novalidate": false,
+      "dialogOpen": true,
+      "url": "http://localhost:3100/admin/upiti/UP-2026-000003"
+    },
+    {
+      "name": "bad format e-mail",
+      "at": "2026-09-30T20:48:27.351Z",
+      "msg": "Please include an '@' in the email address. 'nije-adresa' is missing an '@'.",
+      "ariaInvalid": null
+    },
+    {
+      "name": "probe after (unchanged)",
+      "at": "2026-09-30T20:48:35.247Z",
+      "inquiryStatus": "ponuda_poslata",
+      "legalName": "",
+      "quoteStatus": "sent",
+      "quoteTotalPara": 1548100
+    }
+  ]
+}

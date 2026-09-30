@@ -1,0 +1,36 @@
+[
+  {
+    "name": "click save",
+    "at": "2026-09-30T20:47:58.825Z",
+    "btnBox": {
+      "x": 1279.125,
+      "y": 844,
+      "width": 136.875,
+      "height": 44
+    },
+    "focus": "BUTTON Sačuvaj artikal",
+    "invalid": 5,
+    "summaryText": "Upišite šifru artikla.Upišite naziv.Izaberite kategoriju.Izaberite proizvođača.Upišite cenu sa PDV-om.",
+    "summaryTabIndex": null,
+    "summaryInViewport": true,
+    "summaryTop": 240.5,
+    "scrollY": 0
+  },
+  {
+    "name": "keyboard Enter on save",
+    "at": "2026-09-30T20:48:05.858Z",
+    "focus": "BUTTON Sačuvaj artikal",
+    "invalid": 5
+  },
+  {
+    "name": "next Tab",
+    "at": "2026-09-30T20:48:05.866Z",
+    "focus": "LI Proverite označena polja."
+  },
+  {
+    "name": "ctrl+s",
+    "at": "2026-09-30T20:48:12.153Z",
+    "focus": "INPUT ",
+    "invalid": 5
+  }
+]

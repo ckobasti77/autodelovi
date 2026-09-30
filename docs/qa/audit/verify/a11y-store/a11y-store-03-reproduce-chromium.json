@@ -1,0 +1,3480 @@
+{
+ "engine": "chromium",
+ "cases": [
+  {
+   "route": "/delovi/kocioni-diskovi",
+   "w": 390,
+   "h": 844,
+   "env": {
+    "banner": [
+     12,
+     530,
+     366,
+     302
+    ],
+    "bannerPctOfViewport": 36,
+    "scrollPaddingTop": "80px",
+    "scrollPaddingBottom": "auto"
+   },
+   "stops": [
+    {
+     "tab": 1,
+     "name": "Preskoči na sadržaj",
+     "tag": "a",
+     "rect": [
+      12,
+      12,
+      168,
+      39
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 2,
+     "name": "Više o kolačićima",
+     "inBanner": true
+    },
+    {
+     "tab": 3,
+     "name": "Prihvati sve",
+     "inBanner": true
+    },
+    {
+     "tab": 4,
+     "name": "Odbij sve",
+     "inBanner": true
+    },
+    {
+     "tab": 5,
+     "name": "Podešavanja",
+     "inBanner": true
+    },
+    {
+     "tab": 6,
+     "name": "SKLOP — početna",
+     "tag": "a",
+     "rect": [
+      16,
+      6,
+      113,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 7,
+     "name": "Pretraga delova",
+     "tag": "button",
+     "rect": [
+      192,
+      6,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 8,
+     "name": "Moj nalog",
+     "tag": "a",
+     "rect": [
+      238,
+      6,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 9,
+     "name": "Korpa",
+     "tag": "a",
+     "rect": [
+      284,
+      6,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 10,
+     "name": "Otvori meni",
+     "tag": "button",
+     "rect": [
+      330,
+      6,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 11,
+     "name": "Kočnice",
+     "tag": "a",
+     "rect": [
+      16,
+      81,
+      68,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 12,
+     "name": "Više o kategorijiManje",
+     "tag": "summary",
+     "rect": [
+      16,
+      311,
+      106,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 13,
+     "name": "Filteri",
+     "tag": "button",
+     "rect": [
+      270,
+      387,
+      104,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 14,
+     "name": "Sortiraj",
+     "tag": "select",
+     "rect": [
+      17,
+      444,
+      182,
+      42
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 15,
+     "name": "Kočioni disk prednji 312 × 25 mm",
+     "tag": "a",
+     "rect": [
+      133,
+      544,
+      228,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 0
+    },
+    {
+     "tab": 16,
+     "name": "U korpu: Kočioni disk prednji 312 × 25 m",
+     "tag": "button",
+     "rect": [
+      241,
+      656,
+      120,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 0
+    },
+    {
+     "tab": 17,
+     "name": "Kočioni disk zadnji 272 × 10 mm, puni",
+     "tag": "a",
+     "rect": [
+      133,
+      762,
+      228,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 0
+    },
+    {
+     "tab": 18,
+     "name": "U korpu: Kočioni disk zadnji 272 × 10 mm",
+     "tag": "button",
+     "rect": [
+      241,
+      440,
+      120,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 434
+    },
+    {
+     "tab": 19,
+     "name": "Kočioni disk prednji 256 × 22 mm",
+     "tag": "a",
+     "rect": [
+      133,
+      546,
+      228,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 434
+    },
+    {
+     "tab": 20,
+     "name": "U korpu: Kočioni disk prednji 256 × 22 m",
+     "tag": "button",
+     "rect": [
+      241,
+      658,
+      120,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 434
+    },
+    {
+     "tab": 21,
+     "name": "Kočioni disk prednji 312 × 25 mm, ventil",
+     "tag": "a",
+     "rect": [
+      133,
+      764,
+      228,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 434
+    },
+    {
+     "tab": 22,
+     "name": "U korpu: Kočioni disk prednji 312 × 25 m",
+     "tag": "button",
+     "rect": [
+      241,
+      440,
+      120,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 870
+    },
+    {
+     "tab": 23,
+     "name": "Kočioni disk prednji 276 × 24 mm",
+     "tag": "a",
+     "rect": [
+      133,
+      546,
+      228,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 870
+    },
+    {
+     "tab": 24,
+     "name": "U korpu: Kočioni disk prednji 276 × 24 m",
+     "tag": "button",
+     "rect": [
+      241,
+      658,
+      120,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 870
+    },
+    {
+     "tab": 25,
+     "name": "Kočioni disk prednji 312 × 25 mm, ventil",
+     "tag": "a",
+     "rect": [
+      133,
+      764,
+      228,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 870
+    },
+    {
+     "tab": 26,
+     "name": "U korpu: Kočioni disk prednji 312 × 25 m",
+     "tag": "button",
+     "rect": [
+      241,
+      440,
+      120,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 1306
+    },
+    {
+     "tab": 27,
+     "name": "Kočioni disk prednji 340 × 30 mm, GTI",
+     "tag": "a",
+     "rect": [
+      133,
+      546,
+      228,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 1306
+    },
+    {
+     "tab": 28,
+     "name": "U korpu: Kočioni disk prednji 340 × 30 m",
+     "tag": "button",
+     "rect": [
+      241,
+      658,
+      120,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 1306
+    },
+    {
+     "tab": 29,
+     "name": "Kočioni disk prednji 288 × 25 mm, ventil",
+     "tag": "a",
+     "rect": [
+      133,
+      764,
+      228,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 1306
+    },
+    {
+     "tab": 30,
+     "name": "Poruči: Kočioni disk prednji 288 × 25 mm",
+     "tag": "button",
+     "rect": [
+      241,
+      440,
+      120,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 1742
+    },
+    {
+     "tab": 31,
+     "name": "Kočioni disk prednji 320 × 30 mm",
+     "tag": "a",
+     "rect": [
+      133,
+      546,
+      228,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 1742
+    },
+    {
+     "tab": 32,
+     "name": "Poruči: Kočioni disk prednji 320 × 30 mm",
+     "tag": "button",
+     "rect": [
+      241,
+      658,
+      120,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 1742
+    },
+    {
+     "tab": 33,
+     "name": "Kočioni diskovi za Volkswagen",
+     "tag": "a",
+     "rect": [
+      16,
+      450,
+      246,
+      25
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 2144
+    },
+    {
+     "tab": 34,
+     "name": "Kočioni diskovi za Škoda",
+     "tag": "a",
+     "rect": [
+      16,
+      483,
+      203,
+      25
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 2144
+    },
+    {
+     "tab": 35,
+     "name": "Kočioni diskovi za VW Passat",
+     "tag": "a",
+     "rect": [
+      16,
+      515,
+      236,
+      25
+     ],
+     "coveredPct": 39,
+     "topIsBanner": false,
+     "scrollY": 2144
+    },
+    {
+     "tab": 36,
+     "name": "Kočioni diskovi za Škoda Superb",
+     "tag": "a",
+     "rect": [
+      16,
+      548,
+      262,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2144
+    },
+    {
+     "tab": 37,
+     "name": "Kočioni diskovi za SEAT Leon",
+     "tag": "a",
+     "rect": [
+      16,
+      581,
+      237,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2144
+    },
+    {
+     "tab": 38,
+     "name": "Kočioni diskovi za VW Golf",
+     "tag": "a",
+     "rect": [
+      16,
+      614,
+      218,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2144
+    },
+    {
+     "tab": 39,
+     "name": "Kočioni diskovi za VW Tiguan",
+     "tag": "a",
+     "rect": [
+      16,
+      647,
+      237,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2144
+    },
+    {
+     "tab": 40,
+     "name": "Kočioni diskovi za VW Touran",
+     "tag": "a",
+     "rect": [
+      16,
+      679,
+      237,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2144
+    },
+    {
+     "tab": 41,
+     "name": "Kočioni diskovi za Audi A3",
+     "tag": "a",
+     "rect": [
+      16,
+      712,
+      216,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2144
+    },
+    {
+     "tab": 42,
+     "name": "Kočioni diskovi za Škoda Octavia",
+     "tag": "a",
+     "rect": [
+      16,
+      745,
+      263,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2144
+    },
+    {
+     "tab": 43,
+     "name": "Kočione pločice",
+     "tag": "a",
+     "rect": [
+      16,
+      449,
+      138,
+      25
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 2601
+    },
+    {
+     "tab": 44,
+     "name": "Kočione čeljusti",
+     "tag": "a",
+     "rect": [
+      178,
+      449,
+      140,
+      25
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 2601
+    },
+    {
+     "tab": 45,
+     "name": "ABS senzori",
+     "tag": "a",
+     "rect": [
+      16,
+      482,
+      111,
+      25
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 2601
+    },
+    {
+     "tab": 46,
+     "name": "Ležaj točka i glavčina",
+     "tag": "a",
+     "rect": [
+      151,
+      482,
+      180,
+      25
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 2601
+    },
+    {
+     "tab": 47,
+     "name": "SKLOP — početna",
+     "tag": "a",
+     "rect": [
+      16,
+      630,
+      358,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2601
+    },
+    {
+     "tab": 48,
+     "name": "Svi delovi",
+     "tag": "a",
+     "rect": [
+      16,
+      812,
+      62,
+      32
+     ],
+     "coveredPct": 63,
+     "topIsBanner": true,
+     "scrollY": 2607
+    },
+    {
+     "tab": 49,
+     "name": "Delovi po vozilu",
+     "tag": "a",
+     "rect": [
+      16,
+      446,
+      100,
+      32
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 3009
+    },
+    {
+     "tab": 50,
+     "name": "Pretraga po broju dela",
+     "tag": "a",
+     "rect": [
+      16,
+      482,
+      145,
+      32
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 3009
+    }
+   ],
+   "firstFullyCoveredTab": 15,
+   "shot": "docs/qa/audit/verify/a11y-store/a11y-store-03-reproduce-chromium-390-kocioni-diskovi.webp",
+   "fullyCovered": 22,
+   "fullyCoveredConsecutiveMax": 7,
+   "partiallyCovered": 2,
+   "bannerVisibleAfterEscapeFocusInPage": true,
+   "bannerVisibleAfterEscapeFocusInBanner": true,
+   "settingsShot": "docs/qa/audit/verify/a11y-store/a11y-store-04-reproduce-chromium-390.webp",
+   "settings_Enter": {
+    "before": "Podešavanja",
+    "after": "BODY",
+    "switches": 3,
+    "liveOrAnnounce": 0,
+    "nextTab": "HEADER OUTSIDE a[] SKLOP — početna"
+   },
+   "settings_Space": {
+    "before": "Podešavanja",
+    "after": "BODY",
+    "switches": 3,
+    "liveOrAnnounce": 0,
+    "nextTab": "HEADER OUTSIDE a[] SKLOP — početna"
+   }
+  },
+  {
+   "route": "/delovi/kocioni-diskovi",
+   "w": 1440,
+   "h": 900,
+   "env": {
+    "banner": [
+     144,
+     741,
+     1152,
+     135
+    ],
+    "bannerPctOfViewport": 15,
+    "scrollPaddingTop": "80px",
+    "scrollPaddingBottom": "auto"
+   },
+   "stops": [
+    {
+     "tab": 1,
+     "name": "Preskoči na sadržaj",
+     "tag": "a",
+     "rect": [
+      12,
+      12,
+      168,
+      39
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 2,
+     "name": "Više o kolačićima",
+     "inBanner": true
+    },
+    {
+     "tab": 3,
+     "name": "Prihvati sve",
+     "inBanner": true
+    },
+    {
+     "tab": 4,
+     "name": "Odbij sve",
+     "inBanner": true
+    },
+    {
+     "tab": 5,
+     "name": "Podešavanja",
+     "inBanner": true
+    },
+    {
+     "tab": 6,
+     "name": "SKLOP — početna",
+     "tag": "a",
+     "rect": [
+      48,
+      10,
+      117,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 7,
+     "name": "Delovi",
+     "tag": "a",
+     "rect": [
+      193,
+      10,
+      67,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 8,
+     "name": "Vozila",
+     "tag": "a",
+     "rect": [
+      264,
+      10,
+      66,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 9,
+     "name": "Za majstore",
+     "tag": "a",
+     "rect": [
+      334,
+      10,
+      107,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 10,
+     "name": "Upit po broju šasije",
+     "tag": "a",
+     "rect": [
+      446,
+      10,
+      158,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 11,
+     "name": "Broj dela ili naziv/",
+     "tag": "button",
+     "rect": [
+      873,
+      12,
+      256,
+      40
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 12,
+     "name": "Izaberite vozilo",
+     "tag": "button",
+     "rect": [
+      1137,
+      14,
+      151,
+      36
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 13,
+     "name": "Moj nalog",
+     "tag": "a",
+     "rect": [
+      1296,
+      10,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 14,
+     "name": "Korpa",
+     "tag": "a",
+     "rect": [
+      1348,
+      10,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 15,
+     "name": "Početna",
+     "tag": "a",
+     "rect": [
+      48,
+      97,
+      50,
+      18
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 16,
+     "name": "Delovi",
+     "tag": "a",
+     "rect": [
+      118,
+      97,
+      37,
+      18
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 17,
+     "name": "Kočnice",
+     "tag": "a",
+     "rect": [
+      176,
+      97,
+      48,
+      18
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 18,
+     "name": "Više o kategorijiManje",
+     "tag": "summary",
+     "rect": [
+      48,
+      265,
+      106,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 19,
+     "name": "Vozilo",
+     "tag": "button",
+     "rect": [
+      48,
+      353,
+      280,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 20,
+     "name": "Izaberite vozilo",
+     "tag": "button",
+     "rect": [
+      48,
+      401,
+      280,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 21,
+     "name": "Dostupnost",
+     "tag": "button",
+     "rect": [
+      48,
+      470,
+      280,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 22,
+     "name": "",
+     "tag": "button",
+     "rect": [
+      48,
+      526,
+      20,
+      20
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 23,
+     "name": "Proizvođač",
+     "tag": "button",
+     "rect": [
+      48,
+      583,
+      280,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 24,
+     "name": "",
+     "tag": "button",
+     "rect": [
+      48,
+      639,
+      20,
+      20
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 25,
+     "name": "",
+     "tag": "button",
+     "rect": [
+      48,
+      683,
+      20,
+      20
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 26,
+     "name": "",
+     "tag": "button",
+     "rect": [
+      48,
+      727,
+      20,
+      20
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 27,
+     "name": "",
+     "tag": "button",
+     "rect": [
+      48,
+      771,
+      20,
+      20
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 28,
+     "name": "",
+     "tag": "button",
+     "rect": [
+      48,
+      815,
+      20,
+      20
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 29,
+     "name": "",
+     "tag": "button",
+     "rect": [
+      48,
+      859,
+      20,
+      20
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 30,
+     "name": "Kvalitet",
+     "tag": "button",
+     "rect": [
+      48,
+      468,
+      280,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 448
+    },
+    {
+     "tab": 31,
+     "name": "",
+     "tag": "button",
+     "rect": [
+      48,
+      524,
+      20,
+      20
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 448
+    },
+    {
+     "tab": 32,
+     "name": "",
+     "tag": "button",
+     "rect": [
+      48,
+      579,
+      20,
+      20
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 448
+    },
+    {
+     "tab": 33,
+     "name": "",
+     "tag": "button",
+     "rect": [
+      48,
+      652,
+      20,
+      20
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 448
+    },
+    {
+     "tab": 34,
+     "name": "Cena",
+     "tag": "button",
+     "rect": [
+      48,
+      739,
+      280,
+      44
+     ],
+     "coveredPct": 62,
+     "topIsBanner": true,
+     "scrollY": 448
+    },
+    {
+     "tab": 35,
+     "name": "Sortiraj",
+     "tag": "select",
+     "rect": [
+      1209,
+      342,
+      182,
+      42
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 36,
+     "name": "Kočioni disk prednji 312 × 25 mm",
+     "tag": "a",
+     "rect": [
+      369,
+      626,
+      208,
+      43
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 37,
+     "name": "U korpu: Kočioni disk prednji 312 × 25 m",
+     "tag": "button",
+     "rect": [
+      369,
+      798,
+      208,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 0
+    },
+    {
+     "tab": 38,
+     "name": "Kočioni disk zadnji 272 × 10 mm, puni",
+     "tag": "a",
+     "rect": [
+      635,
+      626,
+      208,
+      43
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 39,
+     "name": "U korpu: Kočioni disk zadnji 272 × 10 mm",
+     "tag": "button",
+     "rect": [
+      635,
+      798,
+      208,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 0
+    },
+    {
+     "tab": 40,
+     "name": "Kočioni disk prednji 256 × 22 mm",
+     "tag": "a",
+     "rect": [
+      901,
+      626,
+      208,
+      43
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 41,
+     "name": "U korpu: Kočioni disk prednji 256 × 22 m",
+     "tag": "button",
+     "rect": [
+      901,
+      798,
+      208,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 0
+    },
+    {
+     "tab": 42,
+     "name": "Kočioni disk prednji 312 × 25 mm, ventil",
+     "tag": "a",
+     "rect": [
+      1167,
+      626,
+      208,
+      43
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 43,
+     "name": "U korpu: Kočioni disk prednji 312 × 25 m",
+     "tag": "button",
+     "rect": [
+      1167,
+      798,
+      208,
+      44
+     ],
+     "coveredPct": 62,
+     "topIsBanner": true,
+     "scrollY": 0
+    },
+    {
+     "tab": 44,
+     "name": "Kočioni disk prednji 276 × 24 mm",
+     "tag": "a",
+     "rect": [
+      369,
+      468,
+      208,
+      43
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 636
+    },
+    {
+     "tab": 45,
+     "name": "U korpu: Kočioni disk prednji 276 × 24 m",
+     "tag": "button",
+     "rect": [
+      369,
+      640,
+      208,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 636
+    },
+    {
+     "tab": 46,
+     "name": "Kočioni disk prednji 312 × 25 mm, ventil",
+     "tag": "a",
+     "rect": [
+      635,
+      468,
+      208,
+      43
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 636
+    },
+    {
+     "tab": 47,
+     "name": "U korpu: Kočioni disk prednji 312 × 25 m",
+     "tag": "button",
+     "rect": [
+      635,
+      640,
+      208,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 636
+    },
+    {
+     "tab": 48,
+     "name": "Kočioni disk prednji 340 × 30 mm, GTI",
+     "tag": "a",
+     "rect": [
+      901,
+      468,
+      208,
+      43
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 636
+    },
+    {
+     "tab": 49,
+     "name": "U korpu: Kočioni disk prednji 340 × 30 m",
+     "tag": "button",
+     "rect": [
+      901,
+      640,
+      208,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 636
+    },
+    {
+     "tab": 50,
+     "name": "Kočioni disk prednji 288 × 25 mm, ventil",
+     "tag": "a",
+     "rect": [
+      1167,
+      468,
+      208,
+      43
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 636
+    }
+   ],
+   "firstFullyCoveredTab": 37,
+   "shot": "docs/qa/audit/verify/a11y-store/a11y-store-03-reproduce-chromium-1440-kocioni-diskovi.webp",
+   "fullyCovered": 3,
+   "fullyCoveredConsecutiveMax": 1,
+   "partiallyCovered": 2,
+   "bannerVisibleAfterEscapeFocusInPage": true,
+   "bannerVisibleAfterEscapeFocusInBanner": true,
+   "settingsShot": "docs/qa/audit/verify/a11y-store/a11y-store-04-reproduce-chromium-1440.webp",
+   "settings_Enter": {
+    "before": "Podešavanja",
+    "after": "BODY",
+    "switches": 3,
+    "liveOrAnnounce": 0,
+    "nextTab": "HEADER OUTSIDE a[] SKLOP — početna"
+   },
+   "settings_Space": {
+    "before": "Podešavanja",
+    "after": "BODY",
+    "switches": 3,
+    "liveOrAnnounce": 0,
+    "nextTab": "HEADER OUTSIDE a[] SKLOP — početna"
+   }
+  },
+  {
+   "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "w": 390,
+   "h": 844,
+   "env": {
+    "banner": [
+     12,
+     530,
+     366,
+     302
+    ],
+    "bannerPctOfViewport": 36,
+    "scrollPaddingTop": "80px",
+    "scrollPaddingBottom": "auto"
+   },
+   "stops": [
+    {
+     "tab": 1,
+     "name": "Preskoči na sadržaj",
+     "tag": "a",
+     "rect": [
+      12,
+      12,
+      168,
+      39
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 2,
+     "name": "Više o kolačićima",
+     "inBanner": true
+    },
+    {
+     "tab": 3,
+     "name": "Prihvati sve",
+     "inBanner": true
+    },
+    {
+     "tab": 4,
+     "name": "Odbij sve",
+     "inBanner": true
+    },
+    {
+     "tab": 5,
+     "name": "Podešavanja",
+     "inBanner": true
+    },
+    {
+     "tab": 6,
+     "name": "SKLOP — početna",
+     "tag": "a",
+     "rect": [
+      16,
+      6,
+      113,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 7,
+     "name": "Pretraga delova",
+     "tag": "button",
+     "rect": [
+      192,
+      6,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 8,
+     "name": "Moj nalog",
+     "tag": "a",
+     "rect": [
+      238,
+      6,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 9,
+     "name": "Korpa",
+     "tag": "a",
+     "rect": [
+      284,
+      6,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 10,
+     "name": "Otvori meni",
+     "tag": "button",
+     "rect": [
+      330,
+      6,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 11,
+     "name": "Kočioni diskovi",
+     "tag": "a",
+     "rect": [
+      16,
+      81,
+      110,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 12,
+     "name": "Kopiraj OEM broj 5Q0 615 505 R",
+     "tag": "button",
+     "rect": [
+      205,
+      559,
+      44,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 0
+    },
+    {
+     "tab": 13,
+     "name": "Izaberite vozilo da proverimo da li deo ",
+     "tag": "button",
+     "rect": [
+      16,
+      669,
+      358,
+      64
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 0
+    },
+    {
+     "tab": 14,
+     "name": "Količina",
+     "tag": "input",
+     "rect": [
+      61,
+      441,
+      56,
+      42
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 432
+    },
+    {
+     "tab": 15,
+     "name": "Povećaj količinu",
+     "tag": "button",
+     "rect": [
+      117,
+      441,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 432
+    },
+    {
+     "tab": 16,
+     "name": "Dodaj u korpu: Kočioni disk prednji 276 ",
+     "tag": "button",
+     "rect": [
+      174,
+      440,
+      200,
+      52
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 432
+    },
+    {
+     "tab": 17,
+     "name": "Pošaljite upit",
+     "tag": "a",
+     "rect": [
+      16,
+      508,
+      155,
+      44
+     ],
+     "coveredPct": 48,
+     "topIsBanner": true,
+     "scrollY": 432
+    },
+    {
+     "tab": 18,
+     "name": "Dostava i plaćanje",
+     "tag": "a",
+     "rect": [
+      193,
+      737,
+      118,
+      16
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 432
+    },
+    {
+     "tab": 19,
+     "name": "pošaljite broj šasije",
+     "tag": "a",
+     "rect": [
+      103,
+      454,
+      126,
+      16
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 868
+    },
+    {
+     "tab": 20,
+     "name": "Prikaži još 3Prikaži manje",
+     "tag": "summary",
+     "rect": [
+      16,
+      440,
+      80,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 1691
+    },
+    {
+     "tab": 21,
+     "name": "Kopiraj OEM broj 5Q0 615 505 R",
+     "tag": "button",
+     "rect": [
+      330,
+      614,
+      44,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 1691
+    },
+    {
+     "tab": 22,
+     "name": "Kopiraj broj OX 408D",
+     "tag": "button",
+     "rect": [
+      330,
+      726,
+      44,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 1691
+    },
+    {
+     "tab": 23,
+     "name": "Svi: Kočioni diskovi",
+     "tag": "a",
+     "rect": [
+      212,
+      450,
+      162,
+      25
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 2519
+    },
+    {
+     "tab": 24,
+     "name": "Kočioni disk prednji 312 × 25 mm",
+     "tag": "a",
+     "rect": [
+      133,
+      532,
+      228,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2519
+    },
+    {
+     "tab": 25,
+     "name": "U korpu: Kočioni disk prednji 312 × 25 m",
+     "tag": "button",
+     "rect": [
+      241,
+      643,
+      120,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2519
+    },
+    {
+     "tab": 26,
+     "name": "Kočioni disk prednji 288 × 25 mm, ventil",
+     "tag": "a",
+     "rect": [
+      133,
+      750,
+      228,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2519
+    },
+    {
+     "tab": 27,
+     "name": "Poruči: Kočioni disk prednji 288 × 25 mm",
+     "tag": "button",
+     "rect": [
+      241,
+      440,
+      120,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 2941
+    },
+    {
+     "tab": 28,
+     "name": "Kočioni disk zadnji 272 × 10 mm, puni",
+     "tag": "a",
+     "rect": [
+      133,
+      546,
+      228,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2941
+    },
+    {
+     "tab": 29,
+     "name": "U korpu: Kočioni disk zadnji 272 × 10 mm",
+     "tag": "button",
+     "rect": [
+      241,
+      658,
+      120,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2941
+    },
+    {
+     "tab": 30,
+     "name": "Kočioni disk prednji 256 × 22 mm",
+     "tag": "a",
+     "rect": [
+      133,
+      764,
+      228,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2941
+    },
+    {
+     "tab": 31,
+     "name": "U korpu: Kočioni disk prednji 256 × 22 m",
+     "tag": "button",
+     "rect": [
+      241,
+      440,
+      120,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 3377
+    },
+    {
+     "tab": 32,
+     "name": "Kočioni diskovi za VW Passat",
+     "tag": "a",
+     "rect": [
+      16,
+      595,
+      236,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 3377
+    },
+    {
+     "tab": 33,
+     "name": "Kočioni diskovi za Škoda Superb",
+     "tag": "a",
+     "rect": [
+      16,
+      628,
+      262,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 3377
+    },
+    {
+     "tab": 34,
+     "name": "Kočioni diskovi za VW Golf",
+     "tag": "a",
+     "rect": [
+      16,
+      661,
+      218,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 3377
+    },
+    {
+     "tab": 35,
+     "name": "Kočioni diskovi za VW Touran",
+     "tag": "a",
+     "rect": [
+      16,
+      694,
+      237,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 3377
+    },
+    {
+     "tab": 36,
+     "name": "Kočioni diskovi za VW Tiguan",
+     "tag": "a",
+     "rect": [
+      16,
+      726,
+      237,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 3377
+    },
+    {
+     "tab": 37,
+     "name": "Kočioni diskovi za Audi A3",
+     "tag": "a",
+     "rect": [
+      16,
+      759,
+      216,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 3377
+    },
+    {
+     "tab": 38,
+     "name": "Kočioni diskovi za Škoda Octavia",
+     "tag": "a",
+     "rect": [
+      16,
+      792,
+      263,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 3377
+    },
+    {
+     "tab": 39,
+     "name": "Kočioni diskovi za SEAT Leon",
+     "tag": "a",
+     "rect": [
+      16,
+      819,
+      237,
+      25
+     ],
+     "coveredPct": 53,
+     "topIsBanner": true,
+     "scrollY": 3383
+    },
+    {
+     "tab": 40,
+     "name": "U korpu: Kočioni disk prednji 276 × 24 m",
+     "tag": "button",
+     "rect": [
+      93,
+      862,
+      281,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 3383
+    },
+    {
+     "tab": 41,
+     "name": "SKLOP — početna",
+     "tag": "a",
+     "rect": [
+      16,
+      440,
+      358,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 3909
+    },
+    {
+     "tab": 42,
+     "name": "Svi delovi",
+     "tag": "a",
+     "rect": [
+      16,
+      629,
+      62,
+      32
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 3909
+    },
+    {
+     "tab": 43,
+     "name": "Delovi po vozilu",
+     "tag": "a",
+     "rect": [
+      16,
+      665,
+      100,
+      32
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 3909
+    },
+    {
+     "tab": 44,
+     "name": "Pretraga po broju dela",
+     "tag": "a",
+     "rect": [
+      16,
+      701,
+      145,
+      32
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 3909
+    },
+    {
+     "tab": 45,
+     "name": "Upit po broju šasije",
+     "tag": "a",
+     "rect": [
+      16,
+      737,
+      125,
+      32
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 3909
+    },
+    {
+     "tab": 46,
+     "name": "Dostava i plaćanje",
+     "tag": "a",
+     "rect": [
+      16,
+      812,
+      118,
+      32
+     ],
+     "coveredPct": 63,
+     "topIsBanner": true,
+     "scrollY": 3931
+    },
+    {
+     "tab": 47,
+     "name": "Reklamacije i povrat",
+     "tag": "a",
+     "rect": [
+      16,
+      446,
+      132,
+      32
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 4333
+    },
+    {
+     "tab": 48,
+     "name": "Za majstore",
+     "tag": "a",
+     "rect": [
+      16,
+      482,
+      78,
+      32
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 4333
+    },
+    {
+     "tab": 49,
+     "name": "O nama",
+     "tag": "a",
+     "rect": [
+      16,
+      518,
+      50,
+      32
+     ],
+     "coveredPct": 60,
+     "topIsBanner": true,
+     "scrollY": 4333
+    },
+    {
+     "tab": 50,
+     "name": "Pošaljite upit — javljamo se u toku radn",
+     "tag": "a",
+     "rect": [
+      16,
+      653,
+      314,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 4333
+    }
+   ],
+   "firstFullyCoveredTab": 12,
+   "shot": "docs/qa/audit/verify/a11y-store/a11y-store-03-reproduce-chromium-390-kocioni-disk-prednji.webp",
+   "fullyCovered": 23,
+   "fullyCoveredConsecutiveMax": 7,
+   "partiallyCovered": 4,
+   "bannerVisibleAfterEscapeFocusInPage": true,
+   "bannerVisibleAfterEscapeFocusInBanner": true
+  },
+  {
+   "route": "/",
+   "w": 768,
+   "h": 1024,
+   "env": {
+    "banner": [
+     24,
+     805,
+     720,
+     195
+    ],
+    "bannerPctOfViewport": 19,
+    "scrollPaddingTop": "80px",
+    "scrollPaddingBottom": "auto"
+   },
+   "stops": [
+    {
+     "tab": 1,
+     "name": "Preskoči na sadržaj",
+     "tag": "a",
+     "rect": [
+      12,
+      12,
+      168,
+      39
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 2,
+     "name": "Više o kolačićima",
+     "inBanner": true
+    },
+    {
+     "tab": 3,
+     "name": "Prihvati sve",
+     "inBanner": true
+    },
+    {
+     "tab": 4,
+     "name": "Odbij sve",
+     "inBanner": true
+    },
+    {
+     "tab": 5,
+     "name": "Podešavanja",
+     "inBanner": true
+    },
+    {
+     "tab": 6,
+     "name": "SKLOP — početna",
+     "tag": "a",
+     "rect": [
+      31,
+      6,
+      113,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 7,
+     "name": "Pretraga delova",
+     "tag": "button",
+     "rect": [
+      555,
+      6,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 8,
+     "name": "Moj nalog",
+     "tag": "a",
+     "rect": [
+      601,
+      6,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 9,
+     "name": "Korpa",
+     "tag": "a",
+     "rect": [
+      647,
+      6,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 10,
+     "name": "Otvori meni",
+     "tag": "button",
+     "rect": [
+      693,
+      6,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 11,
+     "name": "Broj dela ili naziv",
+     "tag": "input",
+     "rect": [
+      72,
+      329,
+      379,
+      54
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 12,
+     "name": "Pretraži",
+     "tag": "button",
+     "rect": [
+      471,
+      328,
+      103,
+      56
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 13,
+     "name": "Izaberite vozilomarka, model, motorIzabe",
+     "tag": "button",
+     "rect": [
+      32,
+      457,
+      542,
+      50
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 14,
+     "name": "Nemate broj? Pošaljite broj šasije",
+     "tag": "a",
+     "rect": [
+      31,
+      528,
+      270,
+      25
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 15,
+     "name": "Sledeća faza",
+     "tag": "button",
+     "rect": [
+      693,
+      916,
+      44,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 915
+    },
+    {
+     "tab": 16,
+     "name": "Rasklopi",
+     "tag": "button",
+     "rect": [
+      31,
+      968,
+      349,
+      44
+     ],
+     "coveredPct": 73,
+     "topIsBanner": true,
+     "scrollY": 915
+    },
+    {
+     "tab": 17,
+     "name": "Lista delova",
+     "tag": "button",
+     "rect": [
+      388,
+      968,
+      349,
+      44
+     ],
+     "coveredPct": 73,
+     "topIsBanner": true,
+     "scrollY": 915
+    },
+    {
+     "tab": 18,
+     "name": "Dostava i plaćanje",
+     "tag": "a",
+     "rect": [
+      31,
+      539,
+      156,
+      25
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 3299
+    },
+    {
+     "tab": 19,
+     "name": "Svih 44 kategorija · 157 artikala",
+     "tag": "a",
+     "rect": [
+      31,
+      540,
+      256,
+      25
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 3975
+    },
+    {
+     "tab": 20,
+     "name": "Kočione pločice10 artikala",
+     "tag": "a",
+     "rect": [
+      31,
+      605,
+      225,
+      257
+     ],
+     "coveredPct": 22,
+     "topIsBanner": false,
+     "scrollY": 3975
+    },
+    {
+     "tab": 21,
+     "name": "Kočioni diskovi9 artikala",
+     "tag": "a",
+     "rect": [
+      272,
+      605,
+      225,
+      257
+     ],
+     "coveredPct": 22,
+     "topIsBanner": false,
+     "scrollY": 3975
+    },
+    {
+     "tab": 22,
+     "name": "Amortizeri i opruge7 artikala",
+     "tag": "a",
+     "rect": [
+      512,
+      605,
+      225,
+      257
+     ],
+     "coveredPct": 22,
+     "topIsBanner": false,
+     "scrollY": 3975
+    },
+    {
+     "tab": 23,
+     "name": "Ramena i selen blokovi5 artikala",
+     "tag": "a",
+     "rect": [
+      31,
+      746,
+      225,
+      279
+     ],
+     "coveredPct": 70,
+     "topIsBanner": true,
+     "scrollY": 4107
+    },
+    {
+     "tab": 24,
+     "name": "Set zupčastog kaiša i vodena pumpa6 arti",
+     "tag": "a",
+     "rect": [
+      272,
+      746,
+      225,
+      279
+     ],
+     "coveredPct": 70,
+     "topIsBanner": true,
+     "scrollY": 4107
+    },
+    {
+     "tab": 25,
+     "name": "Kvačilo i zamajac3 artikla",
+     "tag": "a",
+     "rect": [
+      512,
+      746,
+      225,
+      279
+     ],
+     "coveredPct": 70,
+     "topIsBanner": true,
+     "scrollY": 4107
+    },
+    {
+     "tab": 26,
+     "name": "Turbina (turbopunjač)4 artikla",
+     "tag": "a",
+     "rect": [
+      31,
+      424,
+      225,
+      257
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 4724
+    },
+    {
+     "tab": 27,
+     "name": "Filteri16 artikala",
+     "tag": "a",
+     "rect": [
+      272,
+      424,
+      225,
+      257
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 4724
+    },
+    {
+     "tab": 28,
+     "name": "Akumulator3 artikla",
+     "tag": "a",
+     "rect": [
+      512,
+      424,
+      225,
+      257
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 4724
+    },
+    {
+     "tab": 29,
+     "name": "Farovi2 artikla",
+     "tag": "a",
+     "rect": [
+      31,
+      697,
+      225,
+      257
+     ],
+     "coveredPct": 58,
+     "topIsBanner": true,
+     "scrollY": 4724
+    },
+    {
+     "tab": 30,
+     "name": "Hladnjak i ventilator3 artikla",
+     "tag": "a",
+     "rect": [
+      272,
+      697,
+      225,
+      257
+     ],
+     "coveredPct": 58,
+     "topIsBanner": true,
+     "scrollY": 4724
+    },
+    {
+     "tab": 31,
+     "name": "Brizgaljke i pumpa goriva3 artikla",
+     "tag": "a",
+     "rect": [
+      512,
+      697,
+      225,
+      257
+     ],
+     "coveredPct": 58,
+     "topIsBanner": true,
+     "scrollY": 4724
+    },
+    {
+     "tab": 32,
+     "name": "Blok motora i glava",
+     "tag": "a",
+     "rect": [
+      31,
+      534,
+      132,
+      36
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 5429
+    },
+    {
+     "tab": 33,
+     "name": "Turbina (turbopunjač)",
+     "tag": "a",
+     "rect": [
+      31,
+      570,
+      150,
+      36
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 5429
+    },
+    {
+     "tab": 34,
+     "name": "Interkuler",
+     "tag": "a",
+     "rect": [
+      31,
+      606,
+      68,
+      36
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 5429
+    },
+    {
+     "tab": 35,
+     "name": "Usisna grana i kućište filtera",
+     "tag": "a",
+     "rect": [
+      31,
+      642,
+      197,
+      36
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 5429
+    },
+    {
+     "tab": 36,
+     "name": "Brizgaljke i pumpa goriva",
+     "tag": "a",
+     "rect": [
+      31,
+      678,
+      175,
+      36
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 5429
+    },
+    {
+     "tab": 37,
+     "name": "Set zupčastog kaiša i vodena pumpa",
+     "tag": "a",
+     "rect": [
+      31,
+      714,
+      252,
+      36
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 5429
+    },
+    {
+     "tab": 38,
+     "name": "Kaiš alternatora i zatezači",
+     "tag": "a",
+     "rect": [
+      31,
+      750,
+      178,
+      36
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 5429
+    },
+    {
+     "tab": 39,
+     "name": "Alternator",
+     "tag": "a",
+     "rect": [
+      31,
+      786,
+      71,
+      36
+     ],
+     "coveredPct": 46,
+     "topIsBanner": false,
+     "scrollY": 5429
+    },
+    {
+     "tab": 40,
+     "name": "Anlaser",
+     "tag": "a",
+     "rect": [
+      31,
+      822,
+      54,
+      36
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 5429
+    },
+    {
+     "tab": 41,
+     "name": "Svećice, bobine i grejači",
+     "tag": "a",
+     "rect": [
+      31,
+      858,
+      168,
+      36
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 5429
+    },
+    {
+     "tab": 42,
+     "name": "Karter, pumpa ulja i dihtunzi",
+     "tag": "a",
+     "rect": [
+      31,
+      894,
+      193,
+      36
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 5429
+    },
+    {
+     "tab": 43,
+     "name": "EGR ventil",
+     "tag": "a",
+     "rect": [
+      31,
+      930,
+      72,
+      36
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 5429
+    },
+    {
+     "tab": 44,
+     "name": "Nosači motora i menjača",
+     "tag": "a",
+     "rect": [
+      31,
+      966,
+      170,
+      36
+     ],
+     "coveredPct": 94,
+     "topIsBanner": true,
+     "scrollY": 5429
+    },
+    {
+     "tab": 45,
+     "name": "DPF i katalizator",
+     "tag": "a",
+     "rect": [
+      392,
+      534,
+      114,
+      36
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 5429
+    },
+    {
+     "tab": 46,
+     "name": "Auspuh (lonci i cevi)",
+     "tag": "a",
+     "rect": [
+      392,
+      570,
+      138,
+      36
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 5429
+    },
+    {
+     "tab": 47,
+     "name": "Hladnjak i ventilator",
+     "tag": "a",
+     "rect": [
+      31,
+      534,
+      140,
+      36
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 5971
+    },
+    {
+     "tab": 48,
+     "name": "Termostat i creva hlađenja",
+     "tag": "a",
+     "rect": [
+      31,
+      570,
+      183,
+      36
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 5971
+    },
+    {
+     "tab": 49,
+     "name": "Kompresor i kondenzator klime",
+     "tag": "a",
+     "rect": [
+      31,
+      606,
+      216,
+      36
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 5971
+    },
+    {
+     "tab": 50,
+     "name": "Kvačilo i zamajac",
+     "tag": "a",
+     "rect": [
+      392,
+      534,
+      118,
+      36
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 5971
+    }
+   ],
+   "firstFullyCoveredTab": 15,
+   "shot": "docs/qa/audit/verify/a11y-store/a11y-store-03-reproduce-chromium-768-home.webp",
+   "fullyCovered": 5,
+   "fullyCoveredConsecutiveMax": 4,
+   "partiallyCovered": 13,
+   "bannerVisibleAfterEscapeFocusInPage": true,
+   "bannerVisibleAfterEscapeFocusInBanner": true
+  },
+  {
+   "route": "/delovi/kocioni-diskovi",
+   "w": 360,
+   "h": 780,
+   "env": {
+    "banner": [
+     12,
+     466,
+     336,
+     302
+    ],
+    "bannerPctOfViewport": 39,
+    "scrollPaddingTop": "80px",
+    "scrollPaddingBottom": "auto"
+   },
+   "stops": [
+    {
+     "tab": 1,
+     "name": "Preskoči na sadržaj",
+     "tag": "a",
+     "rect": [
+      12,
+      12,
+      168,
+      39
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 2,
+     "name": "Više o kolačićima",
+     "inBanner": true
+    },
+    {
+     "tab": 3,
+     "name": "Prihvati sve",
+     "inBanner": true
+    },
+    {
+     "tab": 4,
+     "name": "Odbij sve",
+     "inBanner": true
+    },
+    {
+     "tab": 5,
+     "name": "Podešavanja",
+     "inBanner": true
+    },
+    {
+     "tab": 6,
+     "name": "SKLOP — početna",
+     "tag": "a",
+     "rect": [
+      16,
+      6,
+      113,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 7,
+     "name": "Pretraga delova",
+     "tag": "button",
+     "rect": [
+      162,
+      6,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 8,
+     "name": "Moj nalog",
+     "tag": "a",
+     "rect": [
+      208,
+      6,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 9,
+     "name": "Korpa",
+     "tag": "a",
+     "rect": [
+      254,
+      6,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 10,
+     "name": "Otvori meni",
+     "tag": "button",
+     "rect": [
+      300,
+      6,
+      44,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 11,
+     "name": "Kočnice",
+     "tag": "a",
+     "rect": [
+      16,
+      81,
+      68,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 12,
+     "name": "Više o kategorijiManje",
+     "tag": "summary",
+     "rect": [
+      16,
+      337,
+      106,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 13,
+     "name": "Filteri",
+     "tag": "button",
+     "rect": [
+      240,
+      413,
+      104,
+      44
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 0
+    },
+    {
+     "tab": 14,
+     "name": "Sortiraj",
+     "tag": "select",
+     "rect": [
+      17,
+      470,
+      182,
+      42
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 0
+    },
+    {
+     "tab": 15,
+     "name": "Kočioni disk prednji 312 × 25 mm",
+     "tag": "a",
+     "rect": [
+      133,
+      570,
+      198,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 0
+    },
+    {
+     "tab": 16,
+     "name": "U korpu: Kočioni disk prednji 312 × 25 m",
+     "tag": "button",
+     "rect": [
+      219,
+      682,
+      120,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 0
+    },
+    {
+     "tab": 17,
+     "name": "Kočioni disk zadnji 272 × 10 mm, puni",
+     "tag": "a",
+     "rect": [
+      133,
+      408,
+      198,
+      43
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 380
+    },
+    {
+     "tab": 18,
+     "name": "U korpu: Kočioni disk zadnji 272 × 10 mm",
+     "tag": "button",
+     "rect": [
+      219,
+      520,
+      120,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 380
+    },
+    {
+     "tab": 19,
+     "name": "Kočioni disk prednji 256 × 22 mm",
+     "tag": "a",
+     "rect": [
+      133,
+      626,
+      198,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 380
+    },
+    {
+     "tab": 20,
+     "name": "U korpu: Kočioni disk prednji 256 × 22 m",
+     "tag": "button",
+     "rect": [
+      219,
+      736,
+      120,
+      44
+     ],
+     "coveredPct": 72,
+     "topIsBanner": true,
+     "scrollY": 382
+    },
+    {
+     "tab": 21,
+     "name": "Kočioni disk prednji 312 × 25 mm, ventil",
+     "tag": "a",
+     "rect": [
+      133,
+      408,
+      198,
+      43
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 816
+    },
+    {
+     "tab": 22,
+     "name": "U korpu: Kočioni disk prednji 312 × 25 m",
+     "tag": "button",
+     "rect": [
+      219,
+      520,
+      120,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 816
+    },
+    {
+     "tab": 23,
+     "name": "Kočioni disk prednji 276 × 24 mm",
+     "tag": "a",
+     "rect": [
+      133,
+      627,
+      198,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 816
+    },
+    {
+     "tab": 24,
+     "name": "U korpu: Kočioni disk prednji 276 × 24 m",
+     "tag": "button",
+     "rect": [
+      219,
+      736,
+      120,
+      44
+     ],
+     "coveredPct": 72,
+     "topIsBanner": true,
+     "scrollY": 818
+    },
+    {
+     "tab": 25,
+     "name": "Kočioni disk prednji 312 × 25 mm, ventil",
+     "tag": "a",
+     "rect": [
+      133,
+      409,
+      198,
+      43
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 1252
+    },
+    {
+     "tab": 26,
+     "name": "U korpu: Kočioni disk prednji 312 × 25 m",
+     "tag": "button",
+     "rect": [
+      219,
+      520,
+      120,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 1252
+    },
+    {
+     "tab": 27,
+     "name": "Kočioni disk prednji 340 × 30 mm, GTI",
+     "tag": "a",
+     "rect": [
+      133,
+      627,
+      198,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 1252
+    },
+    {
+     "tab": 28,
+     "name": "U korpu: Kočioni disk prednji 340 × 30 m",
+     "tag": "button",
+     "rect": [
+      229,
+      736,
+      120,
+      44
+     ],
+     "coveredPct": 73,
+     "topIsBanner": true,
+     "scrollY": 1255
+    },
+    {
+     "tab": 29,
+     "name": "Kočioni disk prednji 288 × 25 mm, ventil",
+     "tag": "a",
+     "rect": [
+      133,
+      409,
+      198,
+      43
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 1688
+    },
+    {
+     "tab": 30,
+     "name": "Poruči: Kočioni disk prednji 288 × 25 mm",
+     "tag": "button",
+     "rect": [
+      219,
+      521,
+      120,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 1688
+    },
+    {
+     "tab": 31,
+     "name": "Kočioni disk prednji 320 × 30 mm",
+     "tag": "a",
+     "rect": [
+      133,
+      627,
+      198,
+      43
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 1688
+    },
+    {
+     "tab": 32,
+     "name": "Poruči: Kočioni disk prednji 320 × 30 mm",
+     "tag": "button",
+     "rect": [
+      219,
+      736,
+      120,
+      44
+     ],
+     "coveredPct": 73,
+     "topIsBanner": true,
+     "scrollY": 1691
+    },
+    {
+     "tab": 33,
+     "name": "Kočioni diskovi za Volkswagen",
+     "tag": "a",
+     "rect": [
+      16,
+      418,
+      246,
+      25
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 2202
+    },
+    {
+     "tab": 34,
+     "name": "Kočioni diskovi za Škoda",
+     "tag": "a",
+     "rect": [
+      16,
+      451,
+      203,
+      25
+     ],
+     "coveredPct": 37,
+     "topIsBanner": false,
+     "scrollY": 2202
+    },
+    {
+     "tab": 35,
+     "name": "Kočioni diskovi za VW Passat",
+     "tag": "a",
+     "rect": [
+      16,
+      484,
+      236,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2202
+    },
+    {
+     "tab": 36,
+     "name": "Kočioni diskovi za Škoda Superb",
+     "tag": "a",
+     "rect": [
+      16,
+      516,
+      262,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2202
+    },
+    {
+     "tab": 37,
+     "name": "Kočioni diskovi za SEAT Leon",
+     "tag": "a",
+     "rect": [
+      16,
+      549,
+      237,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2202
+    },
+    {
+     "tab": 38,
+     "name": "Kočioni diskovi za VW Golf",
+     "tag": "a",
+     "rect": [
+      16,
+      582,
+      218,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2202
+    },
+    {
+     "tab": 39,
+     "name": "Kočioni diskovi za VW Tiguan",
+     "tag": "a",
+     "rect": [
+      16,
+      615,
+      237,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2202
+    },
+    {
+     "tab": 40,
+     "name": "Kočioni diskovi za VW Touran",
+     "tag": "a",
+     "rect": [
+      16,
+      648,
+      237,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2202
+    },
+    {
+     "tab": 41,
+     "name": "Kočioni diskovi za Audi A3",
+     "tag": "a",
+     "rect": [
+      16,
+      680,
+      216,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2202
+    },
+    {
+     "tab": 42,
+     "name": "Kočioni diskovi za Škoda Octavia",
+     "tag": "a",
+     "rect": [
+      16,
+      713,
+      263,
+      25
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2202
+    },
+    {
+     "tab": 43,
+     "name": "Kočione pločice",
+     "tag": "a",
+     "rect": [
+      16,
+      417,
+      138,
+      25
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 2659
+    },
+    {
+     "tab": 44,
+     "name": "Kočione čeljusti",
+     "tag": "a",
+     "rect": [
+      178,
+      417,
+      140,
+      25
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 2659
+    },
+    {
+     "tab": 45,
+     "name": "ABS senzori",
+     "tag": "a",
+     "rect": [
+      16,
+      450,
+      111,
+      25
+     ],
+     "coveredPct": 35,
+     "topIsBanner": false,
+     "scrollY": 2659
+    },
+    {
+     "tab": 46,
+     "name": "Ležaj točka i glavčina",
+     "tag": "a",
+     "rect": [
+      151,
+      450,
+      180,
+      25
+     ],
+     "coveredPct": 35,
+     "topIsBanner": false,
+     "scrollY": 2659
+    },
+    {
+     "tab": 47,
+     "name": "SKLOP — početna",
+     "tag": "a",
+     "rect": [
+      16,
+      596,
+      328,
+      44
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 2659
+    },
+    {
+     "tab": 48,
+     "name": "Svi delovi",
+     "tag": "a",
+     "rect": [
+      16,
+      414,
+      62,
+      32
+     ],
+     "coveredPct": 0,
+     "topIsBanner": false,
+     "scrollY": 3029
+    },
+    {
+     "tab": 49,
+     "name": "Delovi po vozilu",
+     "tag": "a",
+     "rect": [
+      16,
+      450,
+      100,
+      32
+     ],
+     "coveredPct": 49,
+     "topIsBanner": true,
+     "scrollY": 3029
+    },
+    {
+     "tab": 50,
+     "name": "Pretraga po broju dela",
+     "tag": "a",
+     "rect": [
+      16,
+      486,
+      145,
+      32
+     ],
+     "coveredPct": 100,
+     "topIsBanner": true,
+     "scrollY": 3029
+    }
+   ],
+   "firstFullyCoveredTab": 14,
+   "shot": "docs/qa/audit/verify/a11y-store/a11y-store-03-reproduce-chromium-360-kocioni-diskovi.webp",
+   "fullyCovered": 21,
+   "fullyCoveredConsecutiveMax": 8,
+   "partiallyCovered": 8,
+   "bannerVisibleAfterEscapeFocusInPage": true,
+   "bannerVisibleAfterEscapeFocusInBanner": true
+  }
+ ]
+}

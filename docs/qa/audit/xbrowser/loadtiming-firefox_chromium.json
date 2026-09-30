@@ -1,0 +1,74 @@
+{
+  "firefoxC:/Program Files/Git/#0": {
+    "wall": 140,
+    "err": "Error: page.goto: Protocol error (Page.navigate): Invalid url: \"http://localhost:3100C:/Program Files/Git/\"\nCall log:\n  ",
+    "nav": {
+      "dcl": 41,
+      "load": 43,
+      "ttfb": 0,
+      "slowest": []
+    },
+    "pending": [],
+    "slowReq": []
+  },
+  "firefoxC:/Program Files/Git/#1": {
+    "wall": 14,
+    "err": "Error: page.goto: Protocol error (Page.navigate): Invalid url: \"http://localhost:3100C:/Program Files/Git/\"\nCall log:\n  ",
+    "nav": {
+      "dcl": 14,
+      "load": 15,
+      "ttfb": 0,
+      "slowest": []
+    },
+    "pending": [],
+    "slowReq": []
+  },
+  "firefoxC:/Program Files/Git/#2": {
+    "wall": 39,
+    "err": "Error: page.goto: Protocol error (Page.navigate): Invalid url: \"http://localhost:3100C:/Program Files/Git/\"\nCall log:\n  ",
+    "nav": {
+      "dcl": 115,
+      "load": 117,
+      "ttfb": 0,
+      "slowest": []
+    },
+    "pending": [],
+    "slowReq": []
+  },
+  "chromiumC:/Program Files/Git/#0": {
+    "wall": 5,
+    "err": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n  - navigating to \"http://loc",
+    "nav": {
+      "dcl": 99,
+      "load": 100,
+      "ttfb": 0,
+      "slowest": []
+    },
+    "pending": [],
+    "slowReq": []
+  },
+  "chromiumC:/Program Files/Git/#1": {
+    "wall": 7,
+    "err": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n  - navigating to \"http://loc",
+    "nav": {
+      "dcl": 114,
+      "load": 114,
+      "ttfb": 0,
+      "slowest": []
+    },
+    "pending": [],
+    "slowReq": []
+  },
+  "chromiumC:/Program Files/Git/#2": {
+    "wall": 2,
+    "err": "Error: page.goto: Protocol error (Page.navigate): Cannot navigate to invalid URL\nCall log:\n  - navigating to \"http://loc",
+    "nav": {
+      "dcl": 111,
+      "load": 112,
+      "ttfb": 0,
+      "slowest": []
+    },
+    "pending": [],
+    "slowReq": []
+  }
+}

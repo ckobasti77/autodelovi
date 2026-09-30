@@ -1,0 +1,28 @@
+{
+  "10": {
+    "link": {
+      "color": "rgb(184, 71, 10)",
+      "deco": "none",
+      "weight": "400",
+      "parentTag": "P",
+      "parentColor": "rgb(93, 101, 112)",
+      "parentWeight": "400",
+      "theme": "paper",
+      "bg": "rgb(243, 244, 245)"
+    },
+    "axe": [
+      {
+        "id": "link-in-text-block",
+        "impact": "serious",
+        "help": "Links must be distinguishable without relying on color",
+        "nodes": 1,
+        "targets": [
+          ".text-accent-text"
+        ],
+        "summary": "Fix any of the following:\n  The link has insufficient color contrast of 1.1:1 with the surrounding text. (Minimum contrast is 3:1, link text: #b8470a, surrounding text: #5d6570)\n  The link has no styling (such as underline) to distinguish it from the surrounding text"
+      }
+    ],
+    "hoverDeco": "underline",
+    "otherInlineNoUnderline": []
+  }
+}

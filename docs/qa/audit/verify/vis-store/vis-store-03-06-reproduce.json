@@ -1,0 +1,820 @@
+{
+ "stage": [
+  {
+   "w": 1280,
+   "h": 800,
+   "dpr": 1,
+   "clipped": [
+    "01 Karoserija i svetla 107>98",
+    "03 Kočnice i vešanje 103>98",
+    "04 Agregati i hlađenje 114>98"
+   ],
+   "items": [
+    {
+     "num": "00",
+     "label": "Sklopljeno",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 98,
+     "clientW": 98,
+     "clipped": false,
+     "liW": 110
+    },
+    {
+     "num": "01",
+     "label": "Karoserija i svetla",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 107,
+     "clientW": 98,
+     "clipped": true,
+     "liW": 110
+    },
+    {
+     "num": "02",
+     "label": "Točkovi",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 98,
+     "clientW": 98,
+     "clipped": false,
+     "liW": 110
+    },
+    {
+     "num": "03",
+     "label": "Kočnice i vešanje",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 103,
+     "clientW": 98,
+     "clipped": true,
+     "liW": 110
+    },
+    {
+     "num": "04",
+     "label": "Agregati i hlađenje",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 114,
+     "clientW": 98,
+     "clipped": true,
+     "liW": 110
+    },
+    {
+     "num": "05",
+     "label": "Motor i turbina",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 98,
+     "clientW": 98,
+     "clipped": false,
+     "liW": 110
+    },
+    {
+     "num": "06",
+     "label": "Menjač i kvačilo",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 98,
+     "clientW": 98,
+     "clipped": false,
+     "liW": 110
+    },
+    {
+     "num": "07",
+     "label": "Izduvni sistem",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 98,
+     "clientW": 98,
+     "clipped": false,
+     "liW": 110
+    }
+   ]
+  },
+  {
+   "w": 1280,
+   "h": 800,
+   "dpr": 2,
+   "clipped": [
+    "01 Karoserija i svetla 107>98",
+    "03 Kočnice i vešanje 103>98",
+    "04 Agregati i hlađenje 114>98"
+   ],
+   "items": [
+    {
+     "num": "00",
+     "label": "Sklopljeno",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 98,
+     "clientW": 98,
+     "clipped": false,
+     "liW": 110
+    },
+    {
+     "num": "01",
+     "label": "Karoserija i svetla",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 107,
+     "clientW": 98,
+     "clipped": true,
+     "liW": 110
+    },
+    {
+     "num": "02",
+     "label": "Točkovi",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 98,
+     "clientW": 98,
+     "clipped": false,
+     "liW": 110
+    },
+    {
+     "num": "03",
+     "label": "Kočnice i vešanje",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 103,
+     "clientW": 98,
+     "clipped": true,
+     "liW": 110
+    },
+    {
+     "num": "04",
+     "label": "Agregati i hlađenje",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 114,
+     "clientW": 98,
+     "clipped": true,
+     "liW": 110
+    },
+    {
+     "num": "05",
+     "label": "Motor i turbina",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 98,
+     "clientW": 98,
+     "clipped": false,
+     "liW": 110
+    },
+    {
+     "num": "06",
+     "label": "Menjač i kvačilo",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 98,
+     "clientW": 98,
+     "clipped": false,
+     "liW": 110
+    },
+    {
+     "num": "07",
+     "label": "Izduvni sistem",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 98,
+     "clientW": 98,
+     "clipped": false,
+     "liW": 110
+    }
+   ]
+  },
+  {
+   "w": 1366,
+   "h": 768,
+   "dpr": 1,
+   "clipped": [
+    "04 Agregati i hlađenje 114>109"
+   ],
+   "items": [
+    {
+     "num": "00",
+     "label": "Sklopljeno",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 109,
+     "clientW": 109,
+     "clipped": false,
+     "liW": 121
+    },
+    {
+     "num": "01",
+     "label": "Karoserija i svetla",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 109,
+     "clientW": 109,
+     "clipped": false,
+     "liW": 121
+    },
+    {
+     "num": "02",
+     "label": "Točkovi",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 109,
+     "clientW": 109,
+     "clipped": false,
+     "liW": 121
+    },
+    {
+     "num": "03",
+     "label": "Kočnice i vešanje",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 109,
+     "clientW": 109,
+     "clipped": false,
+     "liW": 121
+    },
+    {
+     "num": "04",
+     "label": "Agregati i hlađenje",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 114,
+     "clientW": 109,
+     "clipped": true,
+     "liW": 121
+    },
+    {
+     "num": "05",
+     "label": "Motor i turbina",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 109,
+     "clientW": 109,
+     "clipped": false,
+     "liW": 121
+    },
+    {
+     "num": "06",
+     "label": "Menjač i kvačilo",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 109,
+     "clientW": 109,
+     "clipped": false,
+     "liW": 121
+    },
+    {
+     "num": "07",
+     "label": "Izduvni sistem",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 109,
+     "clientW": 109,
+     "clipped": false,
+     "liW": 121
+    }
+   ]
+  },
+  {
+   "w": 1366,
+   "h": 800,
+   "dpr": 1,
+   "clipped": [
+    "04 Agregati i hlađenje 114>109"
+   ],
+   "items": [
+    {
+     "num": "00",
+     "label": "Sklopljeno",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 109,
+     "clientW": 109,
+     "clipped": false,
+     "liW": 121
+    },
+    {
+     "num": "01",
+     "label": "Karoserija i svetla",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 109,
+     "clientW": 109,
+     "clipped": false,
+     "liW": 121
+    },
+    {
+     "num": "02",
+     "label": "Točkovi",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 109,
+     "clientW": 109,
+     "clipped": false,
+     "liW": 121
+    },
+    {
+     "num": "03",
+     "label": "Kočnice i vešanje",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 109,
+     "clientW": 109,
+     "clipped": false,
+     "liW": 121
+    },
+    {
+     "num": "04",
+     "label": "Agregati i hlađenje",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 114,
+     "clientW": 109,
+     "clipped": true,
+     "liW": 121
+    },
+    {
+     "num": "05",
+     "label": "Motor i turbina",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 109,
+     "clientW": 109,
+     "clipped": false,
+     "liW": 121
+    },
+    {
+     "num": "06",
+     "label": "Menjač i kvačilo",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 109,
+     "clientW": 109,
+     "clipped": false,
+     "liW": 121
+    },
+    {
+     "num": "07",
+     "label": "Izduvni sistem",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 109,
+     "clientW": 109,
+     "clipped": false,
+     "liW": 121
+    }
+   ]
+  },
+  {
+   "w": 1400,
+   "h": 900,
+   "dpr": 1,
+   "clipped": [
+    "04 Agregati i hlađenje 114>113"
+   ],
+   "items": [
+    {
+     "num": "00",
+     "label": "Sklopljeno",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 113,
+     "clientW": 113,
+     "clipped": false,
+     "liW": 125
+    },
+    {
+     "num": "01",
+     "label": "Karoserija i svetla",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 113,
+     "clientW": 113,
+     "clipped": false,
+     "liW": 125
+    },
+    {
+     "num": "02",
+     "label": "Točkovi",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 113,
+     "clientW": 113,
+     "clipped": false,
+     "liW": 125
+    },
+    {
+     "num": "03",
+     "label": "Kočnice i vešanje",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 113,
+     "clientW": 113,
+     "clipped": false,
+     "liW": 125
+    },
+    {
+     "num": "04",
+     "label": "Agregati i hlađenje",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 114,
+     "clientW": 113,
+     "clipped": true,
+     "liW": 125
+    },
+    {
+     "num": "05",
+     "label": "Motor i turbina",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 113,
+     "clientW": 113,
+     "clipped": false,
+     "liW": 125
+    },
+    {
+     "num": "06",
+     "label": "Menjač i kvačilo",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 113,
+     "clientW": 113,
+     "clipped": false,
+     "liW": 125
+    },
+    {
+     "num": "07",
+     "label": "Izduvni sistem",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 113,
+     "clientW": 113,
+     "clipped": false,
+     "liW": 125
+    }
+   ]
+  },
+  {
+   "w": 1440,
+   "h": 900,
+   "dpr": 1,
+   "clipped": [],
+   "items": [
+    {
+     "num": "00",
+     "label": "Sklopljeno",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 118,
+     "clientW": 118,
+     "clipped": false,
+     "liW": 130
+    },
+    {
+     "num": "01",
+     "label": "Karoserija i svetla",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 118,
+     "clientW": 118,
+     "clipped": false,
+     "liW": 130
+    },
+    {
+     "num": "02",
+     "label": "Točkovi",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 118,
+     "clientW": 118,
+     "clipped": false,
+     "liW": 130
+    },
+    {
+     "num": "03",
+     "label": "Kočnice i vešanje",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 118,
+     "clientW": 118,
+     "clipped": false,
+     "liW": 130
+    },
+    {
+     "num": "04",
+     "label": "Agregati i hlađenje",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 118,
+     "clientW": 118,
+     "clipped": false,
+     "liW": 130
+    },
+    {
+     "num": "05",
+     "label": "Motor i turbina",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 118,
+     "clientW": 118,
+     "clipped": false,
+     "liW": 130
+    },
+    {
+     "num": "06",
+     "label": "Menjač i kvačilo",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 118,
+     "clientW": 118,
+     "clipped": false,
+     "liW": 130
+    },
+    {
+     "num": "07",
+     "label": "Izduvni sistem",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 118,
+     "clientW": 118,
+     "clipped": false,
+     "liW": 130
+    }
+   ]
+  },
+  {
+   "w": 1536,
+   "h": 864,
+   "dpr": 1,
+   "clipped": [],
+   "items": [
+    {
+     "num": "00",
+     "label": "Sklopljeno",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 130,
+     "clientW": 130,
+     "clipped": false,
+     "liW": 142
+    },
+    {
+     "num": "01",
+     "label": "Karoserija i svetla",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 130,
+     "clientW": 130,
+     "clipped": false,
+     "liW": 142
+    },
+    {
+     "num": "02",
+     "label": "Točkovi",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 130,
+     "clientW": 130,
+     "clipped": false,
+     "liW": 142
+    },
+    {
+     "num": "03",
+     "label": "Kočnice i vešanje",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 130,
+     "clientW": 130,
+     "clipped": false,
+     "liW": 142
+    },
+    {
+     "num": "04",
+     "label": "Agregati i hlađenje",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 130,
+     "clientW": 130,
+     "clipped": false,
+     "liW": 142
+    },
+    {
+     "num": "05",
+     "label": "Motor i turbina",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 130,
+     "clientW": 130,
+     "clipped": false,
+     "liW": 142
+    },
+    {
+     "num": "06",
+     "label": "Menjač i kvačilo",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 130,
+     "clientW": 130,
+     "clipped": false,
+     "liW": 142
+    },
+    {
+     "num": "07",
+     "label": "Izduvni sistem",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 130,
+     "clientW": 130,
+     "clipped": false,
+     "liW": 142
+    }
+   ]
+  },
+  {
+   "w": 1920,
+   "h": 1080,
+   "dpr": 1,
+   "clipped": [],
+   "items": [
+    {
+     "num": "00",
+     "label": "Sklopljeno",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 130,
+     "clientW": 130,
+     "clipped": false,
+     "liW": 142
+    },
+    {
+     "num": "01",
+     "label": "Karoserija i svetla",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 130,
+     "clientW": 130,
+     "clipped": false,
+     "liW": 142
+    },
+    {
+     "num": "02",
+     "label": "Točkovi",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 130,
+     "clientW": 130,
+     "clipped": false,
+     "liW": 142
+    },
+    {
+     "num": "03",
+     "label": "Kočnice i vešanje",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 130,
+     "clientW": 130,
+     "clipped": false,
+     "liW": 142
+    },
+    {
+     "num": "04",
+     "label": "Agregati i hlađenje",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 130,
+     "clientW": 130,
+     "clipped": false,
+     "liW": 142
+    },
+    {
+     "num": "05",
+     "label": "Motor i turbina",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 130,
+     "clientW": 130,
+     "clipped": false,
+     "liW": 142
+    },
+    {
+     "num": "06",
+     "label": "Menjač i kvačilo",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 130,
+     "clientW": 130,
+     "clipped": false,
+     "liW": 142
+    },
+    {
+     "num": "07",
+     "label": "Izduvni sistem",
+     "display": "block",
+     "fontSize": "13px",
+     "scrollW": 130,
+     "clientW": 130,
+     "clipped": false,
+     "liW": 142
+    }
+   ]
+  }
+ ],
+ "product": [
+  {
+   "w": 360,
+   "h": 780,
+   "h1Top": 461,
+   "h1Left": 16,
+   "drawingTop": 0,
+   "drawingH": 0,
+   "buyBoxTop": 726,
+   "buyButtonTop": 927,
+   "priceText": "4.690RSD",
+   "vh": 780
+  },
+  {
+   "w": 390,
+   "h": 844,
+   "h1Top": 483,
+   "h1Left": 16,
+   "drawingTop": 0,
+   "drawingH": 0,
+   "buyBoxTop": 749,
+   "buyButtonTop": 872,
+   "priceText": "4.690RSD",
+   "vh": 844
+  },
+  {
+   "w": 480,
+   "h": 900,
+   "h1Top": 900,
+   "h1Left": 19,
+   "drawingTop": 493,
+   "drawingH": 338,
+   "buyBoxTop": 1116,
+   "buyButtonTop": 1238,
+   "priceText": "4.690RSD",
+   "vh": 900
+  },
+  {
+   "w": 600,
+   "h": 960,
+   "h1Top": 1058,
+   "h1Left": 24,
+   "drawingTop": 576,
+   "drawingH": 413,
+   "buyBoxTop": 1275,
+   "buyButtonTop": 1399,
+   "priceText": "4.690RSD",
+   "vh": 960
+  },
+  {
+   "w": 768,
+   "h": 1024,
+   "h1Top": 1253,
+   "h1Left": 31,
+   "drawingTop": 666,
+   "drawingH": 519,
+   "buyBoxTop": 1473,
+   "buyButtonTop": 1598,
+   "priceText": "4.690RSD",
+   "vh": 1024
+  },
+  {
+   "w": 820,
+   "h": 1180,
+   "h1Top": 1322,
+   "h1Left": 33,
+   "drawingTop": 701,
+   "drawingH": 551,
+   "buyBoxTop": 1542,
+   "buyButtonTop": 1667,
+   "priceText": "4.690RSD",
+   "vh": 1180
+  },
+  {
+   "w": 1000,
+   "h": 800,
+   "h1Top": 1559,
+   "h1Left": 40,
+   "drawingTop": 826,
+   "drawingH": 664,
+   "buyBoxTop": 1781,
+   "buyButtonTop": 1907,
+   "priceText": "4.690RSD",
+   "vh": 800
+  },
+  {
+   "w": 1024,
+   "h": 768,
+   "h1Top": 172,
+   "h1Left": 601,
+   "drawingTop": 558,
+   "drawingH": 407,
+   "buyBoxTop": 431,
+   "buyButtonTop": 558,
+   "priceText": "4.690RSD",
+   "vh": 768
+  }
+ ]
+}

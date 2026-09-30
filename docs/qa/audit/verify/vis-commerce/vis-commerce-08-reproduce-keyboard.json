@@ -1,0 +1,36 @@
+{
+  "webkit/dostava-i-placanje": {
+    "reached": false,
+    "firstStops": [
+      "BUTTON:Podešavanja kolačića",
+      "BODY:Preskoči na sadržajS",
+      "BUTTON:",
+      "BUTTON:",
+      "BUTTON:Podešavanja kolačića",
+      "BODY:Preskoči na sadržajS"
+    ]
+  },
+  "webkit/kolacici": {
+    "reached": false,
+    "firstStops": [
+      "BUTTON:Podešavanja kolačića",
+      "BODY:Preskoči na sadržajS",
+      "BUTTON:",
+      "BUTTON:",
+      "BUTTON:Podešavanja kolačića",
+      "BODY:Preskoči na sadržajS"
+    ]
+  },
+  "firefox/dostava-i-placanje": {
+    "reached": true,
+    "firstStops": [
+      "DIV:Načini dostave i cen"
+    ]
+  },
+  "firefox/kolacici": {
+    "reached": true,
+    "firstStops": [
+      "DIV:NazivSvrhaTrajanjeKo"
+    ]
+  }
+}

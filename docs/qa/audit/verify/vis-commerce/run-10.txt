@@ -1,0 +1,88 @@
+{
+ "10": {
+  "status-320": [
+   {
+    "el": "span.type-code",
+    "lines": 2,
+    "ws": "normal"
+   }
+  ],
+  "predracun-320": [
+   {
+    "el": "span.block type-caption text-ink-3",
+    "lines": 2,
+    "ws": "normal"
+   }
+  ],
+  "hvala-320": [
+   {
+    "el": "span.type-code",
+    "lines": 2,
+    "ws": "normal"
+   }
+  ],
+  "status-360": [
+   {
+    "el": "span.type-code",
+    "lines": 2,
+    "ws": "normal"
+   }
+  ],
+  "predracun-360": [
+   {
+    "el": "span.block type-caption text-ink-3",
+    "lines": 2,
+    "ws": "normal"
+   }
+  ],
+  "hvala-360": [
+   {
+    "el": "span.type-code",
+    "lines": 2,
+    "ws": "normal"
+   }
+  ],
+  "status-390": [
+   {
+    "el": "span.type-code",
+    "lines": 1,
+    "ws": "normal"
+   }
+  ],
+  "predracun-390": [
+   {
+    "el": "span.block type-caption text-ink-3",
+    "lines": 2,
+    "ws": "normal"
+   }
+  ],
+  "hvala-390": [
+   {
+    "el": "span.type-code",
+    "lines": 1,
+    "ws": "normal"
+   }
+  ],
+  "status-430": [
+   {
+    "el": "span.type-code",
+    "lines": 1,
+    "ws": "normal"
+   }
+  ],
+  "predracun-430": [
+   {
+    "el": "span.block type-caption text-ink-3",
+    "lines": 2,
+    "ws": "normal"
+   }
+  ],
+  "hvala-430": [
+   {
+    "el": "span.type-code",
+    "lines": 1,
+    "ws": "normal"
+   }
+  ]
+ }
+}

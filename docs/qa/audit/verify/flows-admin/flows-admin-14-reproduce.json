@@ -1,0 +1,64 @@
+[
+  {
+    "name": "dialog fields (initial)",
+    "at": "2026-09-30T20:48:22.624Z",
+    "fields": [
+      {
+        "label": "Ime (obavezno)",
+        "value": "Demo",
+        "required": true,
+        "type": "text"
+      },
+      {
+        "label": "Prezime (obavezno)",
+        "value": "Majstor",
+        "required": true,
+        "type": "text"
+      },
+      {
+        "label": "Telefon (obavezno)",
+        "value": "+381640000001",
+        "required": true,
+        "type": "text"
+      },
+      {
+        "label": "E-pošta (obavezno)",
+        "value": "majstor.demo@sklop.test",
+        "required": true,
+        "type": "email"
+      }
+    ]
+  },
+  {
+    "name": "form validity after clearing e-mail",
+    "at": "2026-09-30T20:48:22.961Z",
+    "valid": false
+  },
+  {
+    "name": "after submit",
+    "at": "2026-09-30T20:48:25.016Z",
+    "focus": "INPUT E-pošta (obavezno)",
+    "nativeMessages": [
+      "E-pošta (obavezno): Please fill out this field."
+    ],
+    "ariaInvalid": 0,
+    "inlineErrors": [],
+    "novalidate": false,
+    "dialogOpen": true,
+    "url": "http://localhost:3100/admin/upiti/UP-2026-000003"
+  },
+  {
+    "name": "bad format e-mail",
+    "at": "2026-09-30T20:48:27.351Z",
+    "msg": "Please include an '@' in the email address. 'nije-adresa' is missing an '@'.",
+    "ariaInvalid": null
+  },
+  {
+    "name": "probe after (unchanged)",
+    "at": "2026-09-30T20:48:35.247Z",
+    "inquiryStatus": "ponuda_poslata",
+    "legalName": "",
+    "quoteStatus": "sent",
+    "quoteTotalPara": 1548100
+  }
+]

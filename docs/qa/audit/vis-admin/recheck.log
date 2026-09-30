@@ -1,0 +1,40 @@
+/admin 200 Pregled /admin 
+/admin/uvoz/istorija 200 Istorija uvoza /admin/uvoz/istorija 
+/admin/revizija 200 Revizija /admin/revizija 
+/admin/izvoz 200 Izvoz /admin/izvoz 
+/admin/podesavanja?tab=firma 200 Podešavanja /admin/podesavanja?tab=firma 
+/admin/podesavanja?tab=radno-vreme 200 Podešavanja /admin/podesavanja?tab=radno-vreme 
+/admin/podesavanja?tab=prodaja 200 Podešavanja /admin/podesavanja?tab=prodaja 
+/admin/podesavanja?tab=obavestenja 200 Podešavanja /admin/podesavanja?tab=obavestenja 
+/admin/podesavanja?tab=seo 200 Podešavanja /admin/podesavanja?tab=seo 
+/admin/podesavanja?tab=pracenje 200 Podešavanja /admin/podesavanja?tab=pracenje 
+/admin/podesavanja?tab=pravni-tekstovi 200 Podešavanja /admin/podesavanja?tab=pravni-tekstovi 
+/admin/podesavanja?tab=funkcije 200 Podešavanja /admin/podesavanja?tab=funkcije 
+/admin/podesavanja?tab=oglasne-strane 200 Podešavanja /admin/podesavanja?tab=oglasne-strane 
+/admin/podesavanja?tab=opasna-zona 200 Podešavanja /admin/podesavanja?tab=opasna-zona 
+1440 /admin/porudzbine overflow 0 trunc 0 noTitle 0 
+1440 /admin/porudzbine?status=sve overflow 117 trunc 0 noTitle 0 PLAĆANJE · DOSTAVA:1232-1476(OFF)
+1440 /admin/upiti overflow 245 trunc 21 noTitle 21 IZVOR:1392-1568(OFF) PREUZEO:1568-1660(OFF)
+1440 /admin/proizvodi overflow 73 trunc 1 noTitle 0 PROIZVOĐAČ:1321-1432(OFF)
+1440 /admin/kupci overflow 0 trunc 0 noTitle 0 
+1440 /admin/mejlovi overflow 0 trunc 11 noTitle 11 
+1440 /admin/lager overflow 0 trunc 0 noTitle 0 
+1280 /admin/porudzbine overflow 0 trunc 0 noTitle 0 
+1280 /admin/porudzbine?status=sve overflow 109 trunc 0 noTitle 0 PLAĆANJE · DOSTAVA:1064-1308(OFF)
+1280 /admin/upiti overflow 237 trunc 21 noTitle 21 IZVOR:1224-1400(OFF) PREUZEO:1400-1492(OFF)
+1280 /admin/proizvodi overflow 65 trunc 1 noTitle 0 PROIZVOĐAČ:1153-1264(OFF)
+1280 /admin/kupci overflow 0 trunc 0 noTitle 0 
+1280 /admin/mejlovi overflow 0 trunc 11 noTitle 11 
+1280 /admin/lager overflow 0 trunc 0 noTitle 0 
+1024 /admin/porudzbine overflow 0 trunc 0 noTitle 0 
+1024 /admin/porudzbine?status=sve overflow 120 trunc 0 noTitle 0 PLAĆANJE · DOSTAVA:820-1063(OFF)
+1024 /admin/upiti overflow 0 trunc 67 noTitle 67 
+1024 /admin/proizvodi overflow 321 trunc 1 noTitle 0 KATEGORIJA:961-1153(OFF) PROIZVOĐAČ:1153-1264(OFF)
+1024 /admin/kupci overflow 0 trunc 0 noTitle 0 
+1024 /admin/mejlovi overflow 146 trunc 11 noTitle 11 NAČIN:942-1029(OFF) STATUS:1029-1145(OFF)
+1024 /admin/lager overflow 0 trunc 0 noTitle 0 
+shell 1440 {"asideW":232,"scroller":{"sh":985,"ch":844,"mask":"none","scrollbarWidth":"auto"},"links":22,"hidden":["Cenovni razredi","Korisnici","Podešavanja"]}
+shell 1366 {"asideW":232,"scroller":{"sh":985,"ch":712,"mask":"none","scrollbarWidth":"auto"},"links":22,"hidden":["Izvoz","Revizija","Privatnost","Cenovni razredi","Korisnici","Podešavanja"]}
+shell 1280 {"asideW":64,"scroller":{"sh":884,"ch":744,"mask":"none","scrollbarWidth":"auto"},"links":22,"hidden":["Cenovni razredi","Korisnici","Podešavanja"]}
+shell 1920 {"asideW":232,"scroller":null,"links":22,"hidden":[]}
+DONE

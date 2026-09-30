@@ -1,0 +1,75 @@
+=== /admin NO COOKIES
+HTTP/1.1 307 Temporary Redirect
+location: /prijava?next=%2Fadmin
+BODYSIZE 22
+=== /admin INVALID COOKIES
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+location: /prijava?next=%2Fadmin
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+BODYSIZE 0
+=== /nalog NO COOKIES
+HTTP/1.1 307 Temporary Redirect
+location: /prijava?next=%2Fnalog
+BODYSIZE 22
+=== /nalog INVALID COOKIES
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+location: /prijava?next=%2Fnalog
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+BODYSIZE 0
+=== /majstor/brza-porudzbina NO COOKIES
+HTTP/1.1 307 Temporary Redirect
+location: /prijava?next=%2Fmajstor%2Fbrza-porudzbina
+BODYSIZE 42
+=== /majstor/brza-porudzbina INVALID COOKIES
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+location: /prijava?next=%2Fmajstor%2Fbrza-porudzbina
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+BODYSIZE 0
+=== /nalog/porudzbine NO COOKIES
+HTTP/1.1 307 Temporary Redirect
+location: /prijava?next=%2Fnalog%2Fporudzbine
+BODYSIZE 35
+=== /nalog/porudzbine INVALID COOKIES
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+location: /prijava?next=%2Fnalog%2Fporudzbine
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+BODYSIZE 0
+=== /majstor/cenovnik NO COOKIES
+HTTP/1.1 307 Temporary Redirect
+location: /prijava?next=%2Fmajstor%2Fcenovnik
+BODYSIZE 35
+=== /majstor/cenovnik INVALID COOKIES
+HTTP/1.1 200 OK
+X-Content-Type-Options: nosniff
+location: /prijava?next=%2Fmajstor%2Fcenovnik
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+BODYSIZE 0
+== realistic expired JWT (iat/exp) + id|session-format refresh token, /admin
+HTTP/1.1 200 OK
+location: /prijava?next=%2Fadmin
+BODYSIZE 0
+== only refresh-token cookie, /nalog
+HTTP/1.1 200 OK
+location: /prijava?next=%2Fnalog
+BODYSIZE 0
+== only JWT cookie, /majstor
+HTTP/1.1 200 OK
+location: /prijava?next=%2Fmajstor
+BODYSIZE 0
+== /admin/pozivnica/x (public admin page) with stale cookies
+HTTP/1.1 200 OK
+BODYSIZE 53043

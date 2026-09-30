@@ -1,0 +1,275 @@
+[
+ {
+  "i": 0,
+  "from": "/delovi",
+  "scroll": 1500,
+  "width": 1440,
+  "startY": 1500,
+  "samples": [
+   {
+    "t": 500,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.090183,
+    "stage": 1,
+    "status": "idle",
+    "ariaCurrent": "01 Karoserija, stakla i svetla",
+    "phone": "01 / 07 Karoserija i svetla"
+   },
+   {
+    "t": 2500,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.090183,
+    "stage": 1,
+    "status": "idle",
+    "ariaCurrent": "01 Karoserija, stakla i svetla",
+    "phone": "01 / 07 Karoserija i svetla"
+   },
+   {
+    "t": 8000,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.090183,
+    "stage": 1,
+    "status": "ready",
+    "ariaCurrent": "01 Karoserija, stakla i svetla",
+    "phone": "01 / 07 Karoserija i svetla"
+   }
+  ]
+ },
+ {
+  "i": 1,
+  "from": "/delovi",
+  "scroll": 1500,
+  "width": 1440,
+  "startY": 1500,
+  "samples": [
+   {
+    "t": 500,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.13207,
+    "stage": 1,
+    "status": "idle",
+    "ariaCurrent": "01 Karoserija, stakla i svetla",
+    "phone": "01 / 07 Karoserija i svetla"
+   },
+   {
+    "t": 2500,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.13207,
+    "stage": 1,
+    "status": "idle",
+    "ariaCurrent": "01 Karoserija, stakla i svetla",
+    "phone": "01 / 07 Karoserija i svetla"
+   },
+   {
+    "t": 8000,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.13207,
+    "stage": 1,
+    "status": "ready",
+    "ariaCurrent": "01 Karoserija, stakla i svetla",
+    "phone": "01 / 07 Karoserija i svetla"
+   }
+  ]
+ },
+ {
+  "i": 2,
+  "from": "/delovi",
+  "scroll": 1500,
+  "width": 1440,
+  "startY": 1500,
+  "samples": [
+   {
+    "t": 500,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.029916,
+    "stage": 0,
+    "status": "idle",
+    "ariaCurrent": "00 Sklopljen automobil",
+    "phone": "00 / 07 Sklopljeno"
+   },
+   {
+    "t": 2500,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.029916,
+    "stage": 0,
+    "status": "idle",
+    "ariaCurrent": "00 Sklopljen automobil",
+    "phone": "00 / 07 Sklopljeno"
+   },
+   {
+    "t": 8000,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.029916,
+    "stage": 0,
+    "status": "ready",
+    "ariaCurrent": "00 Sklopljen automobil",
+    "phone": "00 / 07 Sklopljeno"
+   }
+  ]
+ },
+ {
+  "i": 3,
+  "from": "/delovi",
+  "scroll": 1500,
+  "width": 1440,
+  "startY": 1500,
+  "samples": [
+   {
+    "t": 500,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.153255,
+    "stage": 1,
+    "status": "idle",
+    "ariaCurrent": "01 Karoserija, stakla i svetla",
+    "phone": "01 / 07 Karoserija i svetla"
+   },
+   {
+    "t": 2500,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.153255,
+    "stage": 1,
+    "status": "idle",
+    "ariaCurrent": "01 Karoserija, stakla i svetla",
+    "phone": "01 / 07 Karoserija i svetla"
+   },
+   {
+    "t": 8000,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.153255,
+    "stage": 1,
+    "status": "ready",
+    "ariaCurrent": "01 Karoserija, stakla i svetla",
+    "phone": "01 / 07 Karoserija i svetla"
+   }
+  ]
+ },
+ {
+  "i": 4,
+  "from": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "scroll": 1200,
+  "width": 1440,
+  "startY": 1200,
+  "samples": [
+   {
+    "t": 500,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.088766,
+    "stage": 1,
+    "status": "idle",
+    "ariaCurrent": "01 Karoserija, stakla i svetla",
+    "phone": "01 / 07 Karoserija i svetla"
+   },
+   {
+    "t": 2500,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.088766,
+    "stage": 1,
+    "status": "idle",
+    "ariaCurrent": "01 Karoserija, stakla i svetla",
+    "phone": "01 / 07 Karoserija i svetla"
+   },
+   {
+    "t": 8000,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.088766,
+    "stage": 1,
+    "status": "ready",
+    "ariaCurrent": "01 Karoserija, stakla i svetla",
+    "phone": "01 / 07 Karoserija i svetla"
+   }
+  ]
+ },
+ {
+  "i": 5,
+  "from": "/delovi",
+  "scroll": 0,
+  "width": 1440,
+  "startY": 0,
+  "samples": [
+   {
+    "t": 500,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0,
+    "stage": 0,
+    "status": "idle",
+    "ariaCurrent": "00 Sklopljen automobil",
+    "phone": "00 / 07 Sklopljeno"
+   },
+   {
+    "t": 2500,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0,
+    "stage": 0,
+    "status": "idle",
+    "ariaCurrent": "00 Sklopljen automobil",
+    "phone": "00 / 07 Sklopljeno"
+   },
+   {
+    "t": 8000,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0,
+    "stage": 0,
+    "status": "ready",
+    "ariaCurrent": "00 Sklopljen automobil",
+    "phone": "00 / 07 Sklopljeno"
+   }
+  ]
+ },
+ {
+  "i": 10,
+  "from": "/delovi",
+  "scroll": 1500,
+  "width": 390,
+  "startY": 1500,
+  "samples": [
+   {
+    "t": 500,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.017496,
+    "stage": 0,
+    "status": "idle",
+    "ariaCurrent": "00 Sklopljen automobil",
+    "phone": "00 / 07 Sklopljeno"
+   },
+   {
+    "t": 2500,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.017496,
+    "stage": 0,
+    "status": "idle",
+    "ariaCurrent": "00 Sklopljen automobil",
+    "phone": "00 / 07 Sklopljeno"
+   },
+   {
+    "t": 8000,
+    "path": "/",
+    "scrollY": 0,
+    "progress": 0.017496,
+    "stage": 0,
+    "status": "idle",
+    "ariaCurrent": "00 Sklopljen automobil",
+    "phone": "00 / 07 Sklopljeno"
+   }
+  ]
+ }
+]

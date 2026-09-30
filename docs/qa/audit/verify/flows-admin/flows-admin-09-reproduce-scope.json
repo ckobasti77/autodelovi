@@ -1,0 +1,16 @@
+{
+  "/admin/porudzbine/SK-2026-000142": [
+    {
+      "html": "<a class=\"text-accent-text underline-offset-2 hover:underline\" href=\"/admin/upiti/UP-2026-000054\">UP-2026-000054</a>",
+      "parentText": null
+    }
+  ],
+  "/admin/porudzbine/SK-2026-000142 parent": "Primljena 30.09. 22:26 · Administracija · iz upita UP-2026-000054",
+  "/admin/upiti/UP-2026-000054": [
+    {
+      "html": "<a class=\"text-accent-text underline-offset-2 hover:underline\" href=\"/admin/porudzbine/SK-2026-000142\">SK-2026-000142</a>",
+      "parentText": null
+    }
+  ],
+  "/admin/upiti/UP-2026-000054 parent": "Traži deo · primljen 30.09. 15:38 · porudžbina SK-2026-000142"
+}

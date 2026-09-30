@@ -1,0 +1,79 @@
+[
+  {
+    "label": "768-past-buybox",
+    "scrollY": 2031,
+    "vh": 1024,
+    "barTop": 1102,
+    "barHeight": 65,
+    "transform": "matrix(1, 0, 0, 1, 0, 143)",
+    "visibility": "hidden",
+    "ariaHidden": "true",
+    "inert": true,
+    "visiblePx": 0
+  },
+  {
+    "label": "390-other-product",
+    "route": "/deo/kocione-plocice-prednje-demo-0016",
+    "scrollY": 1274,
+    "vh": 844,
+    "barTop": 850.5,
+    "barHeight": 65,
+    "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+    "visibility": "visible",
+    "ariaHidden": "false",
+    "inert": false,
+    "visiblePx": 0
+  },
+  {
+    "label": "390-real-tab",
+    "before": {
+      "scrollY": 1305,
+      "vh": 844,
+      "barTop": 850.5,
+      "barHeight": 65,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "visible",
+      "ariaHidden": "false",
+      "inert": false,
+      "visiblePx": 0
+    },
+    "tabs": [
+      {
+        "tag": "BUTTON",
+        "name": "U korpu: Kočioni disk prednji 276 × 24 mm",
+        "inBar": true,
+        "top": 861.5,
+        "bottom": 905.5,
+        "vh": 844,
+        "fullyOffscreen": true
+      },
+      {
+        "tag": "A",
+        "name": "SKLOP — početna",
+        "inBar": false,
+        "top": 440.390625,
+        "bottom": 484.390625,
+        "vh": 844,
+        "fullyOffscreen": false
+      },
+      {
+        "tag": "A",
+        "name": "Svi delovi",
+        "inBar": false,
+        "top": 628.578125,
+        "bottom": 660.578125,
+        "vh": 844,
+        "fullyOffscreen": false
+      },
+      {
+        "tag": "A",
+        "name": "Delovi po vozilu",
+        "inBar": false,
+        "top": 664.578125,
+        "bottom": 696.578125,
+        "vh": 844,
+        "fullyOffscreen": false
+      }
+    ]
+  }
+]

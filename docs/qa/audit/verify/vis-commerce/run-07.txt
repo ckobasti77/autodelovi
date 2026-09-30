@@ -1,0 +1,294 @@
+{
+ "07": {
+  "upit-360": [
+   {
+    "tag": "input",
+    "id": "",
+    "label": "website",
+    "font": "16px",
+    "h": 25
+   },
+   {
+    "tag": "input",
+    "id": "iq-vin",
+    "label": "Broj šasije (VIN) (nije obavezno)",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "select",
+    "id": "iq-brandSlug",
+    "label": "Marka",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "select",
+    "id": "iq-modelSlug",
+    "label": "Model",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "select",
+    "id": "iq-generationSlug",
+    "label": "Generacija",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "input",
+    "id": "iq-year",
+    "label": "Godište (nije obavezno)",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "textarea",
+    "id": "iq-message",
+    "label": "Opis",
+    "font": "16px",
+    "h": 120
+   },
+   {
+    "tag": "select",
+    "id": "",
+    "label": "Dodaj kategoriju",
+    "font": "14px",
+    "h": 34
+   },
+   {
+    "tag": "input",
+    "id": "_R_mhinpfd9fclb_",
+    "label": "Dodaj fotografijuStari deo, pločica sa brojem ili ",
+    "font": "16px",
+    "h": 1
+   },
+   {
+    "tag": "input",
+    "id": "iq-name",
+    "label": "Ime",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "input",
+    "id": "iq-phone",
+    "label": "Telefon",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "input",
+    "id": "iq-email",
+    "label": "E-pošta (nije obavezno)",
+    "font": "16px",
+    "h": 42
+   }
+  ],
+  "upit-390": [
+   {
+    "tag": "input",
+    "id": "",
+    "label": "website",
+    "font": "16px",
+    "h": 25
+   },
+   {
+    "tag": "input",
+    "id": "iq-vin",
+    "label": "Broj šasije (VIN) (nije obavezno)",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "select",
+    "id": "iq-brandSlug",
+    "label": "Marka",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "select",
+    "id": "iq-modelSlug",
+    "label": "Model",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "select",
+    "id": "iq-generationSlug",
+    "label": "Generacija",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "input",
+    "id": "iq-year",
+    "label": "Godište (nije obavezno)",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "textarea",
+    "id": "iq-message",
+    "label": "Opis",
+    "font": "16px",
+    "h": 120
+   },
+   {
+    "tag": "select",
+    "id": "",
+    "label": "Dodaj kategoriju",
+    "font": "14px",
+    "h": 34
+   },
+   {
+    "tag": "input",
+    "id": "_R_mhinpfd9fclb_",
+    "label": "Dodaj fotografijuStari deo, pločica sa brojem ili ",
+    "font": "16px",
+    "h": 1
+   },
+   {
+    "tag": "input",
+    "id": "iq-name",
+    "label": "Ime",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "input",
+    "id": "iq-phone",
+    "label": "Telefon",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "input",
+    "id": "iq-email",
+    "label": "E-pošta (nije obavezno)",
+    "font": "16px",
+    "h": 42
+   }
+  ],
+  "upit-767": [
+   {
+    "tag": "input",
+    "id": "",
+    "label": "website",
+    "font": "16px",
+    "h": 25
+   },
+   {
+    "tag": "input",
+    "id": "iq-vin",
+    "label": "Broj šasije (VIN) (nije obavezno)",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "select",
+    "id": "iq-brandSlug",
+    "label": "Marka",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "select",
+    "id": "iq-modelSlug",
+    "label": "Model",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "select",
+    "id": "iq-generationSlug",
+    "label": "Generacija",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "input",
+    "id": "iq-year",
+    "label": "Godište (nije obavezno)",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "textarea",
+    "id": "iq-message",
+    "label": "Opis",
+    "font": "16px",
+    "h": 120
+   },
+   {
+    "tag": "select",
+    "id": "",
+    "label": "Dodaj kategoriju",
+    "font": "14px",
+    "h": 34
+   },
+   {
+    "tag": "input",
+    "id": "_R_mhinpfd9fclb_",
+    "label": "Dodaj fotografijuStari deo, pločica sa brojem ili ",
+    "font": "16px",
+    "h": 1
+   },
+   {
+    "tag": "input",
+    "id": "iq-name",
+    "label": "Ime",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "input",
+    "id": "iq-phone",
+    "label": "Telefon",
+    "font": "16px",
+    "h": 42
+   },
+   {
+    "tag": "input",
+    "id": "iq-email",
+    "label": "E-pošta (nije obavezno)",
+    "font": "16px",
+    "h": 42
+   }
+  ],
+  "/majstor-390": [
+   {
+    "tag": "textarea",
+    "id": "qo-input",
+    "label": "Brojevi delova i količine",
+    "font": "15px",
+    "h": 144
+   },
+   {
+    "tag": "input",
+    "id": "",
+    "label": "Otpremi CSV",
+    "font": "16px",
+    "h": 1
+   }
+  ],
+  "/majstor/brza-porudzbina-390": [
+   {
+    "tag": "textarea",
+    "id": "qo-input",
+    "label": "Brojevi delova i količine",
+    "font": "15px",
+    "h": 217
+   },
+   {
+    "tag": "input",
+    "id": "",
+    "label": "Otpremi CSV",
+    "font": "16px",
+    "h": 1
+   }
+  ]
+ }
+}

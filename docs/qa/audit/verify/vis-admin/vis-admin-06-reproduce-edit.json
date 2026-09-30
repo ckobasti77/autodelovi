@@ -1,0 +1,57 @@
+{
+  "1024": {
+    "view": {
+      "wrapperW": 566,
+      "scrollW": 640,
+      "clipped": [
+        "Iznos"
+      ]
+    },
+    "edit": {
+      "wrapperW": 566,
+      "scrollW": 640,
+      "clipped": [
+        "Iznos",
+        "Ukloni"
+      ]
+    },
+    "f": "docs/qa/audit/verify/vis-admin/vis-admin-06-reproduce-edit-1024.webp"
+  },
+  "1100": {
+    "view": {
+      "wrapperW": 642,
+      "scrollW": 642,
+      "clipped": []
+    },
+    "edit": {
+      "wrapperW": 642,
+      "scrollW": 642,
+      "clipped": []
+    }
+  },
+  "1280": {
+    "view": {
+      "wrapperW": 762,
+      "scrollW": 762,
+      "clipped": []
+    },
+    "edit": {
+      "wrapperW": 762,
+      "scrollW": 762,
+      "clipped": []
+    },
+    "f": "docs/qa/audit/verify/vis-admin/vis-admin-06-reproduce-edit-1280.webp"
+  },
+  "1440": {
+    "view": {
+      "wrapperW": 754,
+      "scrollW": 754,
+      "clipped": []
+    },
+    "edit": {
+      "wrapperW": 754,
+      "scrollW": 754,
+      "clipped": []
+    }
+  }
+}

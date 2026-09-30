@@ -1,0 +1,42 @@
+{
+  "13": {
+    "stepper": {
+      "value": "1",
+      "max": "1"
+    },
+    "toastsAfterFirst": [
+      {
+        "text": "Dodato u korpu: Kočioni disk zadnji 272 × 10 mm, puni. Pogledaj korpu",
+        "state": "open"
+      }
+    ],
+    "toastsBeforeSecond": [],
+    "toastsAfterSecond": [
+      {
+        "text": "Na stanju je još 1 kom.",
+        "state": "open"
+      }
+    ],
+    "buttonAfterSecond": {
+      "text": "Dodaj u korpu\n: Kočioni disk zadnji 272 × 10 mm, puni",
+      "disabled": false,
+      "ariaDisabled": null
+    },
+    "productStepperTyped5": "1",
+    "cartBefore": "1",
+    "cartAfter99": "24",
+    "cartLineText": "ABS senzor prednji Meyle · OEM 6R0 927 986 S 2.590 RSD × 24 62.160 RSD",
+    "cartToasts": [],
+    "cartLive": [
+      "66.050 RSD"
+    ],
+    "log": {
+      "console": [
+        "[CONVEX M(carts:addItem)] [Request ID: 08766703b4380be9] Server Error\nUncaught ConvexError: {\"available\":1,\"code\":\"OUT_OF_STOCK\",\"message\":\"Na stanju je još 1 kom.\"}\n    at loadOrderableProduct (../convex/carts.ts:123:6)\n    at async upsertLine (../convex/carts.ts:157:37)\n    at async handler (../convex/carts.ts:194:11)\n"
+      ],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+}

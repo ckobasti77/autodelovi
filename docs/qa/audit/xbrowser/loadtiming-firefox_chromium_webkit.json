@@ -1,0 +1,638 @@
+{
+  "firefox/#0": {
+    "wall": 15415,
+    "err": null,
+    "nav": {
+      "dcl": 7720,
+      "load": 15340,
+      "ttfb": 2428,
+      "slowest": [
+        {
+          "n": "/icon.svg?icon.24sl7jooz2sy4.svg",
+          "start": 4640,
+          "end": 15425,
+          "type": "other"
+        },
+        {
+          "n": "/apple-icon.png?apple-icon.3z32289h0pox2.png",
+          "start": 4639,
+          "end": 15419,
+          "type": "other"
+        },
+        {
+          "n": "/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2",
+          "start": 7717,
+          "end": 15246,
+          "type": "other"
+        },
+        {
+          "n": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+          "start": 14829,
+          "end": 15217,
+          "type": "other"
+        },
+        {
+          "n": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+          "start": 14829,
+          "end": 15211,
+          "type": "other"
+        },
+        {
+          "n": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+          "start": 14829,
+          "end": 15120,
+          "type": "other"
+        }
+      ]
+    },
+    "pending": [
+      "/delovi?_rsc=5CB68i4pnAekjehf",
+      "/vozila?_rsc=5CB68i4pnAekjehf",
+      "/za-majstore?_rsc=5CB68i4pnAekjehf",
+      "/upit?_rsc=5CB68i4pnAekjehf",
+      "/_next/static/chunks/1hvkbf0l88mq3.js"
+    ],
+    "slowReq": [
+      {
+        "u": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "ms": 8316
+      },
+      {
+        "u": "/_next/static/chunks/1adhcvv0smcza.js",
+        "ms": 8304
+      },
+      {
+        "u": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "ms": 8114
+      },
+      {
+        "u": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+        "ms": 7941
+      },
+      {
+        "u": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "ms": 7934
+      }
+    ]
+  },
+  "firefox/#1": {
+    "wall": 7486,
+    "err": null,
+    "nav": {
+      "dcl": 4757,
+      "load": 7443,
+      "ttfb": 601,
+      "slowest": [
+        {
+          "n": "/icon.svg?icon.24sl7jooz2sy4.svg",
+          "start": 991,
+          "end": 7534,
+          "type": "other"
+        },
+        {
+          "n": "/apple-icon.png?apple-icon.3z32289h0pox2.png",
+          "start": 990,
+          "end": 7528,
+          "type": "other"
+        },
+        {
+          "n": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+          "start": 7401,
+          "end": 7526,
+          "type": "other"
+        },
+        {
+          "n": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+          "start": 7400,
+          "end": 7521,
+          "type": "other"
+        },
+        {
+          "n": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+          "start": 7397,
+          "end": 7512,
+          "type": "other"
+        },
+        {
+          "n": "/_next/static/media/archivo_condensed_600-s.p.2bx-vxa0zhitt.woff2",
+          "start": 7395,
+          "end": 7504,
+          "type": "other"
+        }
+      ]
+    },
+    "pending": [],
+    "slowReq": [
+      {
+        "u": "/_next/static/chunks/41cvzcmlkfz4o.js",
+        "ms": 5010
+      },
+      {
+        "u": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+        "ms": 4375
+      },
+      {
+        "u": "/_next/static/chunks/1adhcvv0smcza.js",
+        "ms": 4353
+      },
+      {
+        "u": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "ms": 4309
+      },
+      {
+        "u": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "ms": 4233
+      }
+    ]
+  },
+  "firefox/#2": {
+    "wall": 5245,
+    "err": null,
+    "nav": {
+      "dcl": 3199,
+      "load": 5138,
+      "ttfb": 605,
+      "slowest": [
+        {
+          "n": "/icon.svg?icon.24sl7jooz2sy4.svg",
+          "start": 1276,
+          "end": 5158,
+          "type": "other"
+        },
+        {
+          "n": "/apple-icon.png?apple-icon.3z32289h0pox2.png",
+          "start": 1275,
+          "end": 5153,
+          "type": "other"
+        },
+        {
+          "n": "/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2",
+          "start": 3181,
+          "end": 5114,
+          "type": "other"
+        },
+        {
+          "n": "/_next/static/chunks/1adhcvv0smcza.js",
+          "start": 1095,
+          "end": 5082,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/3k__gv_edg8eb.js",
+          "start": 1095,
+          "end": 5066,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2",
+          "start": 3181,
+          "end": 5055,
+          "type": "other"
+        }
+      ]
+    },
+    "pending": [],
+    "slowReq": [
+      {
+        "u": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "ms": 3149
+      },
+      {
+        "u": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "ms": 3099
+      },
+      {
+        "u": "/_next/static/chunks/1adhcvv0smcza.js",
+        "ms": 3095
+      },
+      {
+        "u": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+        "ms": 3088
+      },
+      {
+        "u": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "ms": 3039
+      }
+    ]
+  },
+  "chromium/#0": {
+    "wall": 5404,
+    "err": null,
+    "nav": {
+      "dcl": 1196,
+      "load": 5362,
+      "ttfb": 334,
+      "slowest": [
+        {
+          "n": "/_next/static/chunks/1adhcvv0smcza.js",
+          "start": 491,
+          "end": 5350,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+          "start": 491,
+          "end": 5259,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/3k__gv_edg8eb.js",
+          "start": 491,
+          "end": 5217,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+          "start": 491,
+          "end": 4911,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/1t0q0ok8maumv.js",
+          "start": 491,
+          "end": 4856,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/29atrq35xgs9f.js",
+          "start": 491,
+          "end": 4807,
+          "type": "script"
+        }
+      ]
+    },
+    "pending": [],
+    "slowReq": [
+      {
+        "u": "/_next/static/chunks/1adhcvv0smcza.js",
+        "ms": 4844
+      },
+      {
+        "u": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+        "ms": 4751
+      },
+      {
+        "u": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "ms": 4716
+      },
+      {
+        "u": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "ms": 4406
+      },
+      {
+        "u": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "ms": 4367
+      }
+    ]
+  },
+  "chromium/#1": {
+    "wall": 7110,
+    "err": null,
+    "nav": {
+      "dcl": 2322,
+      "load": 7106,
+      "ttfb": 339,
+      "slowest": [
+        {
+          "n": "/_next/static/chunks/1adhcvv0smcza.js",
+          "start": 668,
+          "end": 7094,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+          "start": 668,
+          "end": 7011,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/3k__gv_edg8eb.js",
+          "start": 668,
+          "end": 6917,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+          "start": 668,
+          "end": 6781,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/1c6x4sv25ngo-.js",
+          "start": 668,
+          "end": 6644,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/1t0q0ok8maumv.js",
+          "start": 668,
+          "end": 6634,
+          "type": "script"
+        }
+      ]
+    },
+    "pending": [],
+    "slowReq": [
+      {
+        "u": "/_next/static/chunks/1adhcvv0smcza.js",
+        "ms": 6197
+      },
+      {
+        "u": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+        "ms": 6114
+      },
+      {
+        "u": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "ms": 6017
+      },
+      {
+        "u": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "ms": 5881
+      },
+      {
+        "u": "/_next/static/chunks/1c6x4sv25ngo-.js",
+        "ms": 5749
+      }
+    ]
+  },
+  "chromium/#2": {
+    "wall": 6400,
+    "err": null,
+    "nav": {
+      "dcl": 2497,
+      "load": 6386,
+      "ttfb": 842,
+      "slowest": [
+        {
+          "n": "/_next/static/chunks/1adhcvv0smcza.js",
+          "start": 1587,
+          "end": 6374,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/3k__gv_edg8eb.js",
+          "start": 1587,
+          "end": 6199,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+          "start": 1587,
+          "end": 6198,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+          "start": 1587,
+          "end": 5862,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/1t0q0ok8maumv.js",
+          "start": 1587,
+          "end": 5426,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/1c6x4sv25ngo-.js",
+          "start": 1587,
+          "end": 4508,
+          "type": "script"
+        }
+      ]
+    },
+    "pending": [],
+    "slowReq": [
+      {
+        "u": "/_next/static/chunks/1adhcvv0smcza.js",
+        "ms": 4780
+      },
+      {
+        "u": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "ms": 4678
+      },
+      {
+        "u": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+        "ms": 4591
+      },
+      {
+        "u": "/_next/static/chunks/0sgvhbpe5nb6s.js",
+        "ms": 4268
+      },
+      {
+        "u": "/_next/static/chunks/1t0q0ok8maumv.js",
+        "ms": 3821
+      }
+    ]
+  },
+  "webkit/#0": {
+    "wall": 3011,
+    "err": null,
+    "nav": {
+      "dcl": 1848,
+      "load": 2992,
+      "ttfb": 305,
+      "slowest": [
+        {
+          "n": "/manifest.webmanifest",
+          "start": 2691,
+          "end": 2727,
+          "type": "other"
+        },
+        {
+          "n": "/images/hero/car-assembled-1440.webp",
+          "start": 1821,
+          "end": 2716,
+          "type": "img"
+        },
+        {
+          "n": "/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2",
+          "start": 1234,
+          "end": 2690,
+          "type": "css"
+        },
+        {
+          "n": "/_next/static/chunks/1adhcvv0smcza.js",
+          "start": 760,
+          "end": 2667,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+          "start": 760,
+          "end": 2666,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2",
+          "start": 1234,
+          "end": 2646,
+          "type": "css"
+        }
+      ]
+    },
+    "pending": [],
+    "slowReq": [
+      {
+        "u": "/manifest.webmanifest",
+        "ms": 2005
+      },
+      {
+        "u": "/images/hero/car-assembled-1440.webp",
+        "ms": 2003
+      },
+      {
+        "u": "/_next/static/chunks/1adhcvv0smcza.js",
+        "ms": 1985
+      },
+      {
+        "u": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+        "ms": 1982
+      },
+      {
+        "u": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "ms": 1880
+      }
+    ]
+  },
+  "webkit/#1": {
+    "wall": 782,
+    "err": null,
+    "nav": {
+      "dcl": 269,
+      "load": 746,
+      "ttfb": 45,
+      "slowest": [
+        {
+          "n": "/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2",
+          "start": 391,
+          "end": 398,
+          "type": "css"
+        },
+        {
+          "n": "/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2",
+          "start": 391,
+          "end": 397,
+          "type": "css"
+        },
+        {
+          "n": "/images/hero/car-assembled-1440.webp",
+          "start": 253,
+          "end": 257,
+          "type": "img"
+        },
+        {
+          "n": "/manifest.webmanifest",
+          "start": 252,
+          "end": 256,
+          "type": "other"
+        },
+        {
+          "n": "/_next/static/chunks/1adhcvv0smcza.js",
+          "start": 212,
+          "end": 253,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+          "start": 211,
+          "end": 252,
+          "type": "script"
+        }
+      ]
+    },
+    "pending": [],
+    "slowReq": [
+      {
+        "u": "/",
+        "ms": 209
+      },
+      {
+        "u": "/images/hero/car-assembled-1440.webp",
+        "ms": 196
+      },
+      {
+        "u": "/manifest.webmanifest",
+        "ms": 195
+      },
+      {
+        "u": "/_next/static/chunks/1adhcvv0smcza.js",
+        "ms": 179
+      },
+      {
+        "u": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+        "ms": 178
+      }
+    ]
+  },
+  "webkit/#2": {
+    "wall": 3386,
+    "err": null,
+    "nav": {
+      "dcl": 1176,
+      "load": 3345,
+      "ttfb": 97,
+      "slowest": [
+        {
+          "n": "/manifest.webmanifest",
+          "start": 1625,
+          "end": 1641,
+          "type": "other"
+        },
+        {
+          "n": "/images/hero/car-assembled-1440.webp",
+          "start": 1405,
+          "end": 1634,
+          "type": "img"
+        },
+        {
+          "n": "/_next/static/chunks/1adhcvv0smcza.js",
+          "start": 523,
+          "end": 1625,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2",
+          "start": 1363,
+          "end": 1624,
+          "type": "css"
+        },
+        {
+          "n": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+          "start": 523,
+          "end": 1619,
+          "type": "script"
+        },
+        {
+          "n": "/_next/static/chunks/3k__gv_edg8eb.js",
+          "start": 523,
+          "end": 1611,
+          "type": "script"
+        }
+      ]
+    },
+    "pending": [],
+    "slowReq": [
+      {
+        "u": "/manifest.webmanifest",
+        "ms": 1259
+      },
+      {
+        "u": "/images/hero/car-assembled-1440.webp",
+        "ms": 1255
+      },
+      {
+        "u": "/_next/static/chunks/1adhcvv0smcza.js",
+        "ms": 1252
+      },
+      {
+        "u": "/_next/static/chunks/0wnn3uk7fx3z2.js",
+        "ms": 1097
+      },
+      {
+        "u": "/_next/static/chunks/3k__gv_edg8eb.js",
+        "ms": 1092
+      }
+    ]
+  }
+}

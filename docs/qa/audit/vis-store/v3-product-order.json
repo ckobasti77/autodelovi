@@ -1,0 +1,57 @@
+{
+ "360": {
+  "vh": 780,
+  "galleryTop": 146,
+  "drawingTop": 0,
+  "h1Top": 461,
+  "buyBoxTop": 726,
+  "buyButtonTop": 927,
+  "buyButtonBottom": 979,
+  "buyButtonAboveFold": false,
+  "h1AboveFold": true
+ },
+ "390": {
+  "vh": 844,
+  "galleryTop": 146,
+  "drawingTop": 0,
+  "h1Top": 483,
+  "buyBoxTop": 749,
+  "buyButtonTop": 872,
+  "buyButtonBottom": 924,
+  "buyButtonAboveFold": false,
+  "h1AboveFold": true
+ },
+ "768": {
+  "vh": 1024,
+  "galleryTop": 120,
+  "drawingTop": 683,
+  "h1Top": 1253,
+  "buyBoxTop": 1473,
+  "buyButtonTop": 1598,
+  "buyButtonBottom": 1650,
+  "buyButtonAboveFold": false,
+  "h1AboveFold": false
+ },
+ "1024": {
+  "vh": 768,
+  "galleryTop": 136,
+  "drawingTop": 575,
+  "h1Top": 172,
+  "buyBoxTop": 431,
+  "buyButtonTop": 558,
+  "buyButtonBottom": 610,
+  "buyButtonAboveFold": true,
+  "h1AboveFold": true
+ },
+ "1440": {
+  "vh": 900,
+  "galleryTop": 136,
+  "drawingTop": 749,
+  "h1Top": 172,
+  "buyBoxTop": 440,
+  "buyButtonTop": 570,
+  "buyButtonBottom": 622,
+  "buyButtonAboveFold": true,
+  "h1AboveFold": true
+ }
+}

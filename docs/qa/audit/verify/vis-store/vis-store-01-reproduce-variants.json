@@ -1,0 +1,39 @@
+{
+  "product2Initial": {
+    "top": 922,
+    "visiblePx": 0,
+    "inline": "translate(0%, 110%) translate(0px, 71.5px)",
+    "vis": "hidden",
+    "ariaHidden": "true"
+  },
+  "product2AfterScroll": {
+    "top": 850.5,
+    "visiblePx": 0,
+    "inline": "translate(0px, 71.5px)",
+    "vis": "visible",
+    "ariaHidden": "false"
+  },
+  "product2BackUp": {
+    "top": 922,
+    "visiblePx": 0,
+    "inline": "translate(0%, 110%) translate(0px, 71.5px)",
+    "vis": "hidden",
+    "ariaHidden": "true"
+  },
+  "product2DownAgain": {
+    "top": 850.5,
+    "visiblePx": 0,
+    "inline": "translate(0px, 71.5px)",
+    "vis": "visible",
+    "ariaHidden": "false"
+  },
+  "shotBroken": "docs/qa/audit/verify/vis-store/vis-store-01-reproduce-product2-390.webp",
+  "controlAfterClearingY": {
+    "top": 779,
+    "visiblePx": 65,
+    "inline": "none",
+    "vis": "visible",
+    "ariaHidden": "false"
+  },
+  "shotControl": "docs/qa/audit/verify/vis-store/vis-store-01-reproduce-control-y0-390.webp"
+}

@@ -1,0 +1,6 @@
+dostava {"headers":["Dostava","Cena","Rok","Plaćanje","Lično preuzimanje","Kurirska služba"],"cells":[["Lično preuzimanje w110 h172","bez troška w115 h172","Obično isti ili sledeći radni  w87 h172","Gotovinom pri preuzimanju, Kar w168 h172"],["Kurirska služba w110 h100","450 RSDbesplatno iznad 10.000  w115 h100","1–2 radna dana w87 h100","Pouzećem, Virmanom uz predraču w168 h100"]],"tableW":480,"wrapperW":328,"wrapperScrollW":480,"wrapperTabindex":null,"wrapperRole":null,"wrapperLabel":null,"vw":360}
+predracun {"heads":["Artikal w65","Kol. w40","Cena sa PDV w87","Iznos w75"],"firstCellW":65,"firstCellH":213,"approxLines":10}
+account 1440 {"/nalog":{"h1":"Moj nalog","chips":["74x24 flex"],"over":0,"landed":"/nalog"},"/nalog/porudzbine":{"h1":"Moj nalog","chips":["74x24 flex"],"over":0,"landed":"/nalog/porudzbine"},"/nalog/profil":{"h1":"Moj nalog","chips":[],"over":0,"landed":"/nalog/profil"},"log":{"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}}
+account 360 {"/nalog":{"h1":"Prijava","chips":[],"over":0,"landed":"/nalog"},"/nalog/porudzbine":{"h1":"Prijava","chips":[],"over":0,"landed":"/prijava"},"/nalog/profil":{"h1":"Prijava","chips":[],"over":0,"landed":"/prijava"},"log":{"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}}
+done
+exit 0

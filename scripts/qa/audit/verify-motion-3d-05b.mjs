@@ -1,0 +1,17 @@
+import { writeFileSync } from "node:fs";
+import { BASE, launch, newContext } from "./kit.mjs";
+const browser = await launch();
+const ctx = await newContext(browser, { width: 1440, height: 900, tag: "v05b" });
+const page = await ctx.newPage();
+await page.goto(`${BASE}/?deo=kocioni-diskovi`, { waitUntil: "load" });
+await page.waitForFunction(() => window.__sklop3d?.getState().selected, null, { timeout: 30000 }).catch(() => {});
+await page.waitForTimeout(3500);
+await page.getByTestId("explode-toggle").focus().catch(async () => { await page.locator("nav ol li button").nth(7).focus(); await page.keyboard.press("Tab"); });
+const before = await page.evaluate(() => ({ focus: document.activeElement.textContent.trim().slice(0, 30), sel: window.__sklop3d.getState().selected }));
+await page.keyboard.press("Escape");
+await page.waitForTimeout(1200);
+const after = await page.evaluate(() => ({ focus: (document.activeElement.getAttribute("aria-label") || document.activeElement.textContent.trim()).slice(0, 30), tag: document.activeElement.tagName, sel: window.__sklop3d.getState().selected, panel: !!document.querySelector('[data-testid="part-panel"]') }));
+const res = { before, after };
+writeFileSync("docs/qa/audit/verify/motion-3d/motion-3d-05-reproduce-esc.json", JSON.stringify(res, null, 1));
+console.log(JSON.stringify(res));
+await browser.close();

@@ -1,0 +1,16 @@
+{
+ "co cart link": "Korpa, 1 artikal",
+ "co after Dalje": "div \"Proverite 4 polja:Upišite ime.Upišite prezime.Upiš\" top=346",
+ "co tab1": "a \"Upišite ime.\" top=394",
+ "co after Enter on summary link": "input#co-firstName \"\" top=80",
+ "co url": "http://localhost:3100/porudzbina#co-firstName",
+ "co tab after summary link": "input#co-lastName \"\" top=80",
+ "co step2 focus": "h2#step-title \"Dostava\" top=248",
+ "co step2 aria": "- main:\n  - heading \"Porudžbina\" [level=1]\n  - paragraph: Bez plaćanja na sajtu. Potvrdu šaljemo e-poštom, a pre slanja vas zovemo ako nešto treba proveriti.\n  - navigation \"Koraci porudžbine\":\n    - list:\n      - listitem:\n        - text: \"Korak 1, završen: Kontakt\"\n        - 'button \"Izmeni : Kontakt\"'\n      - listitem: \"Korak 2: Dostava\"\n      - listitem: \"Korak 3: Plaćanje\"\n      - listitem: \"Korak 4: Pregled\"\n  - region \"Dostava\":\n    - heading \"Dostava\" [level=2]\n    - text: Način dostave\n    - radiogroup \"Način dostave\":\n      - radio \"Lično preuzimanje 0 RSD Deo preuzimate u radnji kada vam javimo da je spreman. Obično isti ili sledeći radni dan.\" [checked]\n      - text: Lično preuzimanje 0 RSD Deo preuzimate u radnji kada vam javimo da je spreman. Obično isti ili sledeći radni dan.\n      - radio \"Kurirska služba 450 RSD Plaćanje pouzećem ili virmanom; kurir dostavlja na adresu. 1–2 radna dana.\"\n      - text: Kurirska služba 450 RSD Plaćanje pouzećem ili virmanom; kurir dostavlja na adresu. 1–2 radna dana.\n    - button \"Nazad\"\n    - button \"Dalje\"\n  - complementary \"Pregled porudžbine\":\n    - heading \"Vaša porudžbina\" [level=2]\n    - list:\n      - listitem: Kočioni disk prednji 276 × 24 mm × 1 4.690 RSD\n    - term: Međuzbir\n    - definition: 4.690 RSD\n    - term: Dostava · lično preuzimanje\n    - definition: 0 RSD\n    - term: Ukupno\n    - definition: 4.690 RSD\n    - paragraph: \"U cenu je uračunat PDV 20 %: 781,67 RSD\"\n  - paragraph\n  - status",
+ "co step2 tabbables": [
+  "button role=null tabindex=null label= \"Izmeni: Kontakt\"",
+  "div role=radiogroup tabindex=0 label= \"Lično preuzimanje0 RSDDeo preuzimate u r\"",
+  "button role=null tabindex=null label= \"Nazad\"",
+  "button role=null tabindex=null label= \"Dalje\""
+ ]
+}

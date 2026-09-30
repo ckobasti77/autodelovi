@@ -1,0 +1,457 @@
+{
+  "08": {
+    "/dostava-i-placanje-360": [
+      {
+        "tableW": 480,
+        "wrapW": 328,
+        "wrapScrollW": 480,
+        "wrapClass": "overflow-x-auto rounded-sm border border-line",
+        "overflowX": "auto",
+        "maskImage": "none",
+        "tabindex": null,
+        "role": null,
+        "ariaLabel": null,
+        "focusableInside": 0,
+        "heads": [
+          {
+            "text": "Dostava",
+            "left": 1,
+            "w": 110,
+            "visible": 110
+          },
+          {
+            "text": "Cena",
+            "left": 111,
+            "w": 115,
+            "visible": 115
+          },
+          {
+            "text": "Rok",
+            "left": 225,
+            "w": 87,
+            "visible": 87
+          },
+          {
+            "text": "Plaćanje",
+            "left": 313,
+            "w": 168,
+            "visible": 15
+          }
+        ],
+        "rowHeights": [
+          172,
+          100
+        ],
+        "fontSize": "14px"
+      }
+    ],
+    "/dostava-i-placanje-360-chromiumTabReachesScroller": true,
+    "/dostava-i-placanje-360-axe": [
+      {
+        "id": "scrollable-region-focusable",
+        "impact": "serious",
+        "help": "Scrollable region must have keyboard access",
+        "nodes": 1,
+        "targets": [
+          ".overflow-x-auto"
+        ],
+        "summary": "Fix any of the following:\n  Element should have focusable content\n  Element should be focusable"
+      }
+    ],
+    "/dostava-i-placanje-390": [
+      {
+        "tableW": 480,
+        "wrapW": 358,
+        "wrapScrollW": 480,
+        "wrapClass": "overflow-x-auto rounded-sm border border-line",
+        "overflowX": "auto",
+        "maskImage": "none",
+        "tabindex": null,
+        "role": null,
+        "ariaLabel": null,
+        "focusableInside": 0,
+        "heads": [
+          {
+            "text": "Dostava",
+            "left": 1,
+            "w": 110,
+            "visible": 110
+          },
+          {
+            "text": "Cena",
+            "left": 111,
+            "w": 115,
+            "visible": 115
+          },
+          {
+            "text": "Rok",
+            "left": 225,
+            "w": 87,
+            "visible": 87
+          },
+          {
+            "text": "Plaćanje",
+            "left": 313,
+            "w": 168,
+            "visible": 45
+          }
+        ],
+        "rowHeights": [
+          172,
+          100
+        ],
+        "fontSize": "14px"
+      }
+    ],
+    "/politika-privatnosti-360": [
+      {
+        "tableW": 512,
+        "wrapW": 328,
+        "wrapScrollW": 512,
+        "wrapClass": "my-6 overflow-x-auto rounded-sm border border-line",
+        "overflowX": "auto",
+        "maskImage": "none",
+        "tabindex": null,
+        "role": null,
+        "ariaLabel": null,
+        "focusableInside": 0,
+        "heads": [
+          {
+            "text": "Podaci",
+            "left": 1,
+            "w": 168,
+            "visible": 168
+          },
+          {
+            "text": "Svrha",
+            "left": 169,
+            "w": 187,
+            "visible": 159
+          },
+          {
+            "text": "Pravni osnov",
+            "left": 357,
+            "w": 156,
+            "visible": 0
+          }
+        ],
+        "rowHeights": [
+          84,
+          63,
+          63,
+          84,
+          63,
+          84,
+          63
+        ],
+        "fontSize": "14px"
+      }
+    ],
+    "/politika-privatnosti-360-chromiumTabReachesScroller": true,
+    "/politika-privatnosti-390": [
+      {
+        "tableW": 512,
+        "wrapW": 358,
+        "wrapScrollW": 512,
+        "wrapClass": "my-6 overflow-x-auto rounded-sm border border-line",
+        "overflowX": "auto",
+        "maskImage": "none",
+        "tabindex": null,
+        "role": null,
+        "ariaLabel": null,
+        "focusableInside": 0,
+        "heads": [
+          {
+            "text": "Podaci",
+            "left": 1,
+            "w": 168,
+            "visible": 168
+          },
+          {
+            "text": "Svrha",
+            "left": 169,
+            "w": 187,
+            "visible": 187
+          },
+          {
+            "text": "Pravni osnov",
+            "left": 357,
+            "w": 156,
+            "visible": 1
+          }
+        ],
+        "rowHeights": [
+          84,
+          63,
+          63,
+          84,
+          63,
+          84,
+          63
+        ],
+        "fontSize": "14px"
+      }
+    ],
+    "/kolacici-360": [
+      {
+        "tableW": 512,
+        "wrapW": 328,
+        "wrapScrollW": 512,
+        "wrapClass": "my-6 overflow-x-auto rounded-sm border border-line",
+        "overflowX": "auto",
+        "maskImage": "none",
+        "tabindex": null,
+        "role": null,
+        "ariaLabel": null,
+        "focusableInside": 0,
+        "heads": [
+          {
+            "text": "Naziv",
+            "left": 1,
+            "w": 147,
+            "visible": 147
+          },
+          {
+            "text": "Svrha",
+            "left": 148,
+            "w": 233,
+            "visible": 180
+          },
+          {
+            "text": "Trajanje",
+            "left": 381,
+            "w": 132,
+            "visible": 0
+          }
+        ],
+        "rowHeights": [
+          42,
+          63,
+          63,
+          63,
+          84
+        ],
+        "fontSize": "14px"
+      },
+      {
+        "tableW": 512,
+        "wrapW": 328,
+        "wrapScrollW": 512,
+        "wrapClass": "my-6 overflow-x-auto rounded-sm border border-line",
+        "overflowX": "auto",
+        "maskImage": "none",
+        "tabindex": null,
+        "role": null,
+        "ariaLabel": null,
+        "focusableInside": 0,
+        "heads": [
+          {
+            "text": "Naziv",
+            "left": 1,
+            "w": 79,
+            "visible": 79
+          },
+          {
+            "text": "Ko ga postavlja",
+            "left": 80,
+            "w": 117,
+            "visible": 117
+          },
+          {
+            "text": "Svrha",
+            "left": 197,
+            "w": 224,
+            "visible": 131
+          },
+          {
+            "text": "Trajanje",
+            "left": 422,
+            "w": 92,
+            "visible": 0
+          }
+        ],
+        "rowHeights": [
+          63,
+          63
+        ],
+        "fontSize": "14px"
+      },
+      {
+        "tableW": 512,
+        "wrapW": 328,
+        "wrapScrollW": 512,
+        "wrapClass": "my-6 overflow-x-auto rounded-sm border border-line",
+        "overflowX": "auto",
+        "maskImage": "none",
+        "tabindex": null,
+        "role": null,
+        "ariaLabel": null,
+        "focusableInside": 0,
+        "heads": [
+          {
+            "text": "Naziv",
+            "left": 1,
+            "w": 103,
+            "visible": 103
+          },
+          {
+            "text": "Ko ga postavlja",
+            "left": 104,
+            "w": 142,
+            "visible": 142
+          },
+          {
+            "text": "Svrha",
+            "left": 246,
+            "w": 184,
+            "visible": 82
+          },
+          {
+            "text": "Trajanje",
+            "left": 430,
+            "w": 83,
+            "visible": 0
+          }
+        ],
+        "rowHeights": [
+          63,
+          63
+        ],
+        "fontSize": "14px"
+      }
+    ],
+    "/kolacici-360-chromiumTabReachesScroller": true,
+    "/kolacici-390": [
+      {
+        "tableW": 512,
+        "wrapW": 358,
+        "wrapScrollW": 512,
+        "wrapClass": "my-6 overflow-x-auto rounded-sm border border-line",
+        "overflowX": "auto",
+        "maskImage": "none",
+        "tabindex": null,
+        "role": null,
+        "ariaLabel": null,
+        "focusableInside": 0,
+        "heads": [
+          {
+            "text": "Naziv",
+            "left": 1,
+            "w": 147,
+            "visible": 147
+          },
+          {
+            "text": "Svrha",
+            "left": 148,
+            "w": 233,
+            "visible": 210
+          },
+          {
+            "text": "Trajanje",
+            "left": 381,
+            "w": 132,
+            "visible": 0
+          }
+        ],
+        "rowHeights": [
+          42,
+          63,
+          63,
+          63,
+          84
+        ],
+        "fontSize": "14px"
+      },
+      {
+        "tableW": 512,
+        "wrapW": 358,
+        "wrapScrollW": 512,
+        "wrapClass": "my-6 overflow-x-auto rounded-sm border border-line",
+        "overflowX": "auto",
+        "maskImage": "none",
+        "tabindex": null,
+        "role": null,
+        "ariaLabel": null,
+        "focusableInside": 0,
+        "heads": [
+          {
+            "text": "Naziv",
+            "left": 1,
+            "w": 79,
+            "visible": 79
+          },
+          {
+            "text": "Ko ga postavlja",
+            "left": 80,
+            "w": 117,
+            "visible": 117
+          },
+          {
+            "text": "Svrha",
+            "left": 197,
+            "w": 224,
+            "visible": 161
+          },
+          {
+            "text": "Trajanje",
+            "left": 422,
+            "w": 92,
+            "visible": 0
+          }
+        ],
+        "rowHeights": [
+          63,
+          63
+        ],
+        "fontSize": "14px"
+      },
+      {
+        "tableW": 512,
+        "wrapW": 358,
+        "wrapScrollW": 512,
+        "wrapClass": "my-6 overflow-x-auto rounded-sm border border-line",
+        "overflowX": "auto",
+        "maskImage": "none",
+        "tabindex": null,
+        "role": null,
+        "ariaLabel": null,
+        "focusableInside": 0,
+        "heads": [
+          {
+            "text": "Naziv",
+            "left": 1,
+            "w": 103,
+            "visible": 103
+          },
+          {
+            "text": "Ko ga postavlja",
+            "left": 104,
+            "w": 142,
+            "visible": 142
+          },
+          {
+            "text": "Svrha",
+            "left": 246,
+            "w": 184,
+            "visible": 112
+          },
+          {
+            "text": "Trajanje",
+            "left": 430,
+            "w": 83,
+            "visible": 0
+          }
+        ],
+        "rowHeights": [
+          63,
+          63
+        ],
+        "fontSize": "14px"
+      }
+    ],
+    "/reklamacije-i-povrat-360": [],
+    "/reklamacije-i-povrat-390": [],
+    "/uslovi-koriscenja-360": [],
+    "/uslovi-koriscenja-390": []
+  }
+}

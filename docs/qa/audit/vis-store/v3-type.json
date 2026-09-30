@@ -1,0 +1,85 @@
+{
+ "/@390": {
+  "small": [],
+  "prices": [
+   "00 tabular-nums",
+   "01 tabular-nums",
+   "02 tabular-nums",
+   "03 tabular-nums",
+   "04 tabular-nums"
+  ]
+ },
+ "/delovi/kocioni-diskovi@390": {
+  "small": [],
+  "prices": [
+   "7.490RSD tabular-nums",
+   "3.890RSD tabular-nums",
+   "3.990RSD tabular-nums",
+   "7.290RSD tabular-nums",
+   "4.690RSD tabular-nums"
+  ]
+ },
+ "/deo/kocioni-disk-prednji-276-24-mm-demo-0004@390": {
+  "small": [
+   [
+    "12px 500 rgb(150, 144, 136) :: Ilustracija kategorije — izgled dela može se razlikovati",
+    1
+   ]
+  ],
+  "prices": [
+   "4.690RSD tabular-nums",
+   "7.490RSD tabular-nums",
+   "5.490RSD tabular-nums",
+   "3.890RSD tabular-nums",
+   "3.990RSD tabular-nums"
+  ]
+ },
+ "/deo/kocioni-disk-prednji-276-24-mm-demo-0004@1440": {
+  "small": [
+   [
+    "12px 500 rgb(150, 144, 136) :: Ilustracija kategorije — izgled dela može se razlikovati",
+    1
+   ],
+   [
+    "12px 500 rgb(196, 190, 180) :: OEM kvalitet",
+    4
+   ]
+  ],
+  "prices": [
+   "4.690RSD tabular-nums",
+   "7.490RSD tabular-nums",
+   "5.490RSD tabular-nums",
+   "3.890RSD tabular-nums",
+   "3.990RSD tabular-nums"
+  ]
+ },
+ "/@1440": {
+  "small": [],
+  "prices": [
+   "00 tabular-nums",
+   "01 tabular-nums",
+   "02 tabular-nums",
+   "03 tabular-nums",
+   "04 tabular-nums"
+  ]
+ },
+ "/vozila/volkswagen/golf/golf-7@1440": {
+  "small": [
+   [
+    "12px 500 rgb(196, 190, 180) :: OEM kvalitet",
+    4
+   ],
+   [
+    "12px 500 rgb(196, 190, 180) :: Original VAG",
+    3
+   ]
+  ],
+  "prices": [
+   "3.490RSD tabular-nums",
+   "19.900RSD tabular-nums",
+   "3.490RSD tabular-nums",
+   "24.900RSD tabular-nums",
+   "22.900RSD tabular-nums"
+  ]
+ }
+}

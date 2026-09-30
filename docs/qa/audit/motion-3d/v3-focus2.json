@@ -1,0 +1,22 @@
+[
+  {
+    "how": "Escape",
+    "inside": "button[] Zatvori",
+    "after": "BODY"
+  },
+  {
+    "how": "Escape",
+    "inside": "button[] Zatvori",
+    "after": "BODY"
+  },
+  {
+    "how": "close",
+    "inside": "button[] Zatvori",
+    "after": "BODY"
+  },
+  {
+    "how": "header vehicle Escape",
+    "inside": "button[] Zatvori",
+    "after": "BODY"
+  }
+]

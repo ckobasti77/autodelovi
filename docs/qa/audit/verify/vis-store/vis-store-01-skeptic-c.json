@@ -1,0 +1,235 @@
+{
+  "hit": {
+    "tabPresses": 24,
+    "tag": "BUTTON",
+    "name": "U korpu: Kočioni disk prednji 276 × 24 mm",
+    "top": 467.5,
+    "bottom": 511.5,
+    "vh": 450,
+    "inBar": true,
+    "scrollY": 4048
+  },
+  "final": {
+    "top": 467.5,
+    "bottom": 511.5,
+    "vh": 450
+  },
+  "steps": [
+    {
+      "tag": "A",
+      "name": "Pošaljite upit",
+      "top": 306.8,
+      "bottom": 350.8,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 1320
+    },
+    {
+      "tag": "A",
+      "name": "Dostava i plaćanje",
+      "top": 256.8,
+      "bottom": 272.8,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 1559
+    },
+    {
+      "tag": "A",
+      "name": "pošaljite broj šasije",
+      "top": 391.6,
+      "bottom": 407.6,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 1559
+    },
+    {
+      "tag": "SUMMARY",
+      "name": "Prikaži još 3Prikaži manje",
+      "top": 242.8,
+      "bottom": 286.8,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 2298
+    },
+    {
+      "tag": "BUTTON",
+      "name": "Kopiraj OEM broj 5Q0 615 505 R",
+      "top": 405.8,
+      "bottom": 449.8,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 2312
+    },
+    {
+      "tag": "BUTTON",
+      "name": "Kopiraj broj OX 408D",
+      "top": 405.8,
+      "bottom": 449.8,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 2312
+    },
+    {
+      "tag": "A",
+      "name": "Svi: Kočioni diskovi",
+      "top": 252.2,
+      "bottom": 277,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 2997
+    },
+    {
+      "tag": "A",
+      "name": "Kočioni disk prednji 312 × 25 mm",
+      "top": 253.9,
+      "bottom": 275.5,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 3333
+    },
+    {
+      "tag": "BUTTON",
+      "name": "U korpu: Kočioni disk prednji 312 × 25 mm",
+      "top": 355.9,
+      "bottom": 399.9,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 3333
+    },
+    {
+      "tag": "A",
+      "name": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+      "top": 243.1,
+      "bottom": 286.3,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 3333
+    },
+    {
+      "tag": "BUTTON",
+      "name": "Poruči: Kočioni disk prednji 288 × 25 mm, ventilir",
+      "top": 355.9,
+      "bottom": 399.9,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 3333
+    },
+    {
+      "tag": "A",
+      "name": "Kočioni disk zadnji 272 × 10 mm, puni",
+      "top": 254,
+      "bottom": 275.6,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 3794
+    },
+    {
+      "tag": "BUTTON",
+      "name": "U korpu: Kočioni disk zadnji 272 × 10 mm, puni",
+      "top": 345.3,
+      "bottom": 389.3,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 3794
+    },
+    {
+      "tag": "A",
+      "name": "Kočioni disk prednji 256 × 22 mm",
+      "top": 254,
+      "bottom": 275.6,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 3794
+    },
+    {
+      "tag": "BUTTON",
+      "name": "U korpu: Kočioni disk prednji 256 × 22 mm",
+      "top": 345.3,
+      "bottom": 389.3,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 3794
+    },
+    {
+      "tag": "A",
+      "name": "Kočioni diskovi za VW Passat",
+      "top": 253.1,
+      "bottom": 277.9,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 4048
+    },
+    {
+      "tag": "A",
+      "name": "Kočioni diskovi za Škoda Superb",
+      "top": 253.1,
+      "bottom": 277.9,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 4048
+    },
+    {
+      "tag": "A",
+      "name": "Kočioni diskovi za VW Golf",
+      "top": 285.9,
+      "bottom": 310.7,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 4048
+    },
+    {
+      "tag": "A",
+      "name": "Kočioni diskovi za VW Touran",
+      "top": 285.9,
+      "bottom": 310.7,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 4048
+    },
+    {
+      "tag": "A",
+      "name": "Kočioni diskovi za VW Tiguan",
+      "top": 318.7,
+      "bottom": 343.5,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 4048
+    },
+    {
+      "tag": "A",
+      "name": "Kočioni diskovi za Audi A3",
+      "top": 318.7,
+      "bottom": 343.5,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 4048
+    },
+    {
+      "tag": "A",
+      "name": "Kočioni diskovi za Škoda Octavia",
+      "top": 351.5,
+      "bottom": 376.3,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 4048
+    },
+    {
+      "tag": "A",
+      "name": "Kočioni diskovi za SEAT Leon",
+      "top": 351.5,
+      "bottom": 376.3,
+      "vh": 450,
+      "inBar": false,
+      "scrollY": 4048
+    },
+    {
+      "tag": "BUTTON",
+      "name": "U korpu: Kočioni disk prednji 276 × 24 mm",
+      "top": 467.5,
+      "bottom": 511.5,
+      "vh": 450,
+      "inBar": true,
+      "scrollY": 4048
+    }
+  ]
+}

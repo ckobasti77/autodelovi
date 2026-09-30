@@ -1,0 +1,58 @@
+{
+  "tpl_staff_order_new": {
+    "url": "http://localhost:3100/admin/mejlovi/sabloni?sablon=staff_order_new&prikaz=tekst",
+    "telLines": [
+      "Telefon: +381 64 123 4567: tel:+381641234567"
+    ],
+    "pre": "Nova porudžbina SK-2026-000187\n==============================\n\n[Majstorska porudžbina · razred Majstor Plus]\nAuto servis Primer\n\nKupac: Petar Petrović (majstor)\nTelefon: +381 64 123 4567: tel:+381641234567\nE-pošta: petar@primer.rs\nDostava: Kurirska služba\nPlaćanje: Odloženo plaćanje\nIzvor: Google Ads · kočioni-diskovi\nNapomena kupca: Pozvati pre slanja.\n\n- Set zupčastog kaiša sa vodenom pumpom\n  04L198119A\n  INA\n  1 × 18.990 RSD = 18.990 RSD\n- Kočioni disk prednji, 312 mm\n  5Q0615301F\n  ATE\n  2 × 6.490 RSD = 12.980 RSD\n- Filter ulja\n  03N115562B\n  MANN-FILTER\n  1 × 1.290 RSD = 1.290 RSD\n\nUkupno sa PDV-om: 33.260 RSD\n\nOtvorite porudžbinu: http://localhost:3000/admin/porudzbine/SK-2026-000187\n\n--\nSKLOP\n\nOvu poruku dobijate kao zaposleni u SKLOP. Podešavanja obaveštenja: http://localhost:3000/admin/podesavanja?tab=obavestenja\n"
+  },
+  "tpl_order_received": {
+    "url": "http://localhost:3100/admin/mejlovi/sabloni?sablon=order_received&prikaz=tekst",
+    "telLines": [],
+    "pre": "Porudžbina je primljena.\n========================\n\nPrimili smo porudžbinu SK-2026-000187. Proveravamo stanje i javljamo se kad je potvrdimo. Ništa ne plaćate unapred.\n\n- Set zupčastog kaiša sa vodenom pumpom\n  04L198119A\n  INA\n  1 × 18.990 RSD = 18.990 RSD\n- Kočioni disk prednji, 312 mm\n  5Q0615301F\n  ATE\n  2 × 6.490 RSD = 12.980 RSD\n- Filter ulja\n  03N115562B\n  MANN-FILTER\n  1 × 1.290 RSD = 1.290 RSD\n\nArtikli: 33.260 RSD\nDostava: bez naknade\nUkupno sa PDV-om: 33.260 RSD\nU tome PDV: 5.543,33 RSD\n\nDostava: Kurirska služba\nAdresa: Bulevar oslobođenja 12, 21000 Novi Sad\nPlaćanje: Pouzećem\n\nPlaćate kuriru gotovinom pri preuzimanju paketa.\n\nPogledajte status porudžbine: http://localhost:3000/porudzbina/primer-tokena-za-pregled-sablona\n\nPitanja? Odgovorite na ovu poruku.\n\n--\nSKLOP\nRadno vreme: Pon–pet 8–17, sub 8–14\n\nOvu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu SKLOP.\n"
+  },
+  "tpl_mechanic_approved": {
+    "url": "http://localhost:3100/admin/mejlovi/sabloni?sablon=mechanic_approved&prikaz=tekst",
+    "telLines": [],
+    "pre": "Nalog je odobren.\n=================\n\nOd sada na celom sajtu vidite svoje cene: maloprodajna je precrtana, a pored nje piše „Vaša cena“.\n\nServis: Auto servis Primer\nRazred: Majstor Plus (15 %)\nOdloženo plaćanje: odobreno, rok 15 dana\n\n\nŠTA DOBIJATE U PORTALU\n\n- Brza porudžbina — nalepite listu OEM brojeva sa količinama, sistem nalazi delove.\n- Istorija i „Poruči ponovo“ — ista porudžbina u dva klika.\n- Vozila mušterija — VIN, tablice i beleške na jednom mestu.\n- Cenovnik u Excelu — sa vašim cenama za izabrane kategorije.\n\nOtvorite portal za majstore: http://localhost:3000/majstor\n\nPrijavljujete se adresom servis@primer.rs i lozinkom koju ste izabrali pri registraciji. Prijava: http://localhost:3000/prijava\n\n--\nSKLOP\nRadno vreme: Pon–pet 8–17, sub 8–14\n\nOvu poruku ste dobili zbog naloga na sajtu SKLOP.\n"
+  },
+  "tpl_staff_inquiry_new": {
+    "url": "http://localhost:3100/admin/mejlovi/sabloni?sablon=staff_inquiry_new&prikaz=tekst",
+    "telLines": [
+      "Telefon: +381 60 123 4567: tel:+381601234567"
+    ],
+    "pre": "Novi upit UP-2026-000045\n========================\n\nKupac: Marko Jovanović\nTelefon: +381 60 123 4567: tel:+381601234567\nE-pošta: marko@primer.rs\nOdgovor želi: na Viber\nVozilo: Golf VII\nVIN: WVWZZZAUZFW123456\nTraži: turbina\nBrojevi: 04L253016H\nFotografije: 2\n\n[Poruka]\nTreba mi turbina, stara duva ulje. Motor CRLB.\n\nOtvorite upit: http://localhost:3000/admin/upiti/UP-2026-000045\n\n--\nSKLOP\n\nOvu poruku dobijate kao zaposleni u SKLOP. Podešavanja obaveštenja: http://localhost:3000/admin/podesavanja?tab=obavestenja\n"
+  },
+  "sheet": "row not found",
+  "fixtureCells": [
+    {
+      "a": "B2",
+      "t": "s",
+      "v": "=HYPERLINK(\"http://evil.example/x\",\"Klikni\")",
+      "f": null
+    },
+    {
+      "a": "B3",
+      "t": "s",
+      "v": "+cmd|' /C calc'!A0",
+      "f": null
+    },
+    {
+      "a": "B4",
+      "t": "s",
+      "v": "@SUM(A1:A2)",
+      "f": null
+    }
+  ],
+  "check": "Uvoz iz Excela\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\nŠablon (.xlsx)\nIstorija\nKorak 1, završen:\nDatoteka\nIzmeni\n: Datoteka\nKorak 2, završen:\nKolone\nIzmeni\n: Kolone\n3\nKorak 3:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\nRedova u fajlu\n4\nIspravnih\n4\nSa upozorenjem\n0\nuvoze se\nSa greškom\n0\npreskaču se\nPonovljenih šifara\n0\nRedovi sa napomenama\nSvi redovi su ispravni.\nNazad na kolone\nNišta se još ne upisuje. Upisaće se najviše 4 redova.\nPokreni probni uvoz",
+  "dryrun": "Uvoz iz Excela\nCenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje.\nŠablon (.xlsx)\nIstorija\nKorak 1, završen:\nDatoteka\nKorak 2, završen:\nKolone\nKorak 3, završen:\nProvera\n4\nKorak 4:\nProbni uvoz\n5\nKorak 5:\nUpis\nNovi artikli\n4\nIzmene\n0\nBez promena\n0\nPreskočeni\n0\nGreške\n0\nProbni rezultat\nIzveštaj\nSvi redovi\nNovi (4)\nIzmene (0)\nGreške (0)\nPreskočeni (0)\nPrimeri: Novi\nRED\tŠIFRA\tNAZIV\tKATEGORIJA · CENA · STANJE\n2\tIMP-V-9701\t=HYPERLINK(\"http://evil.example/x\",\"Klikni\")\t\nKočioni diskovi · 5.990 RSD · 1 kom.\n3\tIMP-V-9702\t+cmd|' /C calc'!A0\t\nKočioni diskovi · 3.990 RSD · 1 kom.\n4\tIMP-V-9703\t@SUM(A1:A2)\t\nKočioni diskovi · 3.990 RSD · 1 kom.\n5\tIMP-V-9704\tKočioni disk prednji verifikacija\t\nKočioni diskovi · 4.990 RSD · 1 kom.\nArtikli kojih nema u fajlu\nDeaktiviraj aktivne artikle kojih nema u ovom fajlu\nBiće deaktivirano 0 artikala. Demo artikli se ne diraju; poništavanje uvoza ih vraća.\nOtkaži uvoz\n4 artikala se upisuje; redovi sa greškom se preskaču.\nUpiši u katalog",
+  "batchUrl": "http://localhost:3100/admin/uvoz?uvoz=n57ey3x163czxbeygnhb7k6g0x8fdaxm",
+  "tab Novi (4)": "Primeri: Novi\nRED\tŠIFRA\tNAZIV\tKATEGORIJA · CENA · STANJE\n2\tIMP-V-9701\t=HYPERLINK(\"http://evil.example/x\",\"Klikni\")\t\nKočioni diskovi · 5.990 RSD · 1 kom.\n\n3\tIMP-V-9702\t+cmd|' /C calc'!A0\t\nKočioni diskovi · 3.990 RSD · 1 kom.\n\n4\tIMP-V-9703\t@SUM(A1:A2)\t\nKočioni diskovi · 3.990 RSD · 1 kom.\n\n5\tIMP-V-9704\tKočioni disk prednji verifikacija\t\nKočioni diskovi · 4.990 RSD · 1 kom.",
+  "afterCancelUrl": "http://localhost:3100/admin/uvoz",
+  "log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

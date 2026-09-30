@@ -1,0 +1,204 @@
+{
+  "firefox-1440-customer": {
+    "steps": [
+      {
+        "name": "sign-in",
+        "ok": true,
+        "ms": 10108,
+        "url": "/nalog",
+        "reveal": {
+          "stuck": [
+            "p: © 2026 SKLOP",
+            "p: Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi"
+          ],
+          "pending": 2,
+          "words": 0
+        }
+      }
+    ],
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "firefox-1440-mechanic": {
+    "steps": [
+      {
+        "name": "sign-in",
+        "ok": true,
+        "ms": 5074,
+        "url": "/majstor"
+      },
+      {
+        "name": "quick-order",
+        "ok": true,
+        "ms": 6565,
+        "statuses": [
+          "pending",
+          "pending"
+        ],
+        "enabled": true,
+        "count": "2",
+        "textarea": {
+          "tag": "TEXTAREA",
+          "h": 217,
+          "w": 390,
+          "font": "\"Martian Mono\", \"Martian Mono Fallback\",",
+          "size": "15px",
+          "resize": "vertical"
+        },
+        "reveal": {
+          "stuck": [
+            "p: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pret",
+            "h2: Kontakt",
+            "li: Pon–pet 8–17, sub 8–14",
+            "li: Pošaljite upit — javljamo se u toku radnog dana",
+            "p: © 2026 SKLOP",
+            "p: Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi"
+          ],
+          "pending": 8,
+          "words": 0
+        }
+      },
+      {
+        "name": "cart-clear",
+        "ok": true,
+        "ms": 4164,
+        "removed": 1
+      }
+    ],
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "firefox-1440-admin": {
+    "steps": [
+      {
+        "name": "create-test-order",
+        "ok": true,
+        "ms": 3125,
+        "number": "SK-2026-000137"
+      },
+      {
+        "name": "sign-in",
+        "ok": true,
+        "ms": 6871,
+        "url": "/admin"
+      },
+      {
+        "name": "orders-list",
+        "ok": true,
+        "ms": 4621,
+        "rows": 50
+      },
+      {
+        "name": "status-change",
+        "ok": true,
+        "ms": 10196,
+        "probeStatus": "potvrdjena",
+        "events": [
+          "order.created",
+          "order.status_changed"
+        ]
+      }
+    ],
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [
+        "NS_BASE_STREAM_CLOSED http://localhost:3100/admin/pretrage?_rsc=ukjykHT7V5zNrw8t"
+      ],
+      "badResponses": []
+    }
+  },
+  "firefox-390-customer": {
+    "steps": [
+      {
+        "name": "sign-in",
+        "ok": true,
+        "ms": 7564,
+        "url": "/nalog",
+        "reveal": {
+          "stuck": [
+            "p: Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pret",
+            "h2: Kontakt",
+            "li: Pon–pet 8–17, sub 8–14",
+            "li: Pošaljite upit — javljamo se u toku radnog dana",
+            "p: © 2026 SKLOP",
+            "p: Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi"
+          ],
+          "pending": 6,
+          "words": 0
+        }
+      }
+    ],
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "firefox-390-mechanic": {
+    "steps": [
+      {
+        "name": "sign-in",
+        "ok": true,
+        "ms": 4765,
+        "url": "/majstor"
+      },
+      {
+        "name": "quick-order",
+        "ok": true,
+        "ms": 6855,
+        "statuses": [
+          "exact",
+          "not_found"
+        ],
+        "enabled": true,
+        "count": "2",
+        "textarea": {
+          "tag": "TEXTAREA",
+          "h": 217,
+          "w": 324,
+          "font": "\"Martian Mono\", \"Martian Mono Fallback\",",
+          "size": "15px",
+          "resize": "vertical"
+        },
+        "reveal": {
+          "stuck": [
+            "h2: Kontakt",
+            "li: Pon–pet 8–17, sub 8–14",
+            "li: Pošaljite upit — javljamo se u toku radnog dana",
+            "p: © 2026 SKLOP",
+            "p: Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi"
+          ],
+          "pending": 7,
+          "words": 0
+        }
+      },
+      {
+        "name": "cart-clear",
+        "ok": true,
+        "ms": 3722,
+        "removed": 1
+      }
+    ],
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+}

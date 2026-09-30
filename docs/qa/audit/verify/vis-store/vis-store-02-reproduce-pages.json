@@ -1,0 +1,236 @@
+{
+ "hubTiles": 4,
+ "hubImgs": [
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75",
+   "natural": "316x316",
+   "box": "316x237",
+   "x": 49,
+   "y": 214
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+   "natural": "316x316",
+   "box": "316x237",
+   "x": 391,
+   "y": 214
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-celjusti.webp&w=384&q=75",
+   "natural": "316x316",
+   "box": "316x237",
+   "x": 733,
+   "y": 214
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fabs-senzori.webp&w=384&q=75",
+   "natural": "316x316",
+   "box": "316x237",
+   "x": 1075,
+   "y": 214
+  }
+ ],
+ "homeHeading-1440": 1,
+ "homeImgs-1440": [
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75",
+   "natural": "230x230",
+   "box": "316x253",
+   "x": 49,
+   "y": 4645
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+   "natural": "230x230",
+   "box": "316x253",
+   "x": 391,
+   "y": 4645
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&w=256&q=75",
+   "natural": "230x230",
+   "box": "316x253",
+   "x": 733,
+   "y": 4645
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&w=256&q=75",
+   "natural": "230x230",
+   "box": "316x253",
+   "x": 1075,
+   "y": 4645
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=256&q=75",
+   "natural": "230x230",
+   "box": "316x253",
+   "x": 49,
+   "y": 5001
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=256&q=75",
+   "natural": "230x230",
+   "box": "316x253",
+   "x": 391,
+   "y": 5001
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&w=256&q=75",
+   "natural": "230x230",
+   "box": "316x253",
+   "x": 733,
+   "y": 5001
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Ffilteri.webp&w=256&q=75",
+   "natural": "230x230",
+   "box": "316x253",
+   "x": 1075,
+   "y": 5001
+  }
+ ],
+ "homeHeading-390": 1,
+ "homeImgs-390": [
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75",
+   "natural": "195x195",
+   "box": "171x137",
+   "x": 17,
+   "y": 4210
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+   "natural": "195x195",
+   "box": "171x137",
+   "x": 202,
+   "y": 4210
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&w=256&q=75",
+   "natural": "195x195",
+   "box": "171x137",
+   "x": 17,
+   "y": 4430
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&w=256&q=75",
+   "natural": "195x195",
+   "box": "171x137",
+   "x": 202,
+   "y": 4430
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=256&q=75",
+   "natural": "195x195",
+   "box": "171x137",
+   "x": 17,
+   "y": 4671
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=256&q=75",
+   "natural": "195x195",
+   "box": "171x137",
+   "x": 202,
+   "y": 4671
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&w=256&q=75",
+   "natural": "195x195",
+   "box": "171x137",
+   "x": 17,
+   "y": 4934
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Ffilteri.webp&w=256&q=75",
+   "natural": "195x195",
+   "box": "171x137",
+   "x": 202,
+   "y": 4934
+  }
+ ],
+ "pdpImgs-1440-dpr1": [
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=828&q=75",
+   "natural": "747x747",
+   "box": "772x579",
+   "x": 49,
+   "y": 136
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=828&q=75",
+   "natural": "333x333",
+   "box": "316x237",
+   "x": 49,
+   "y": 2068
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=828&q=75",
+   "natural": "333x333",
+   "box": "316x237",
+   "x": 391,
+   "y": 2068
+  }
+ ],
+ "pdpImgs-1440-dpr2": [
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=1920&q=75",
+   "natural": "322x322",
+   "box": "772x579",
+   "x": 49,
+   "y": 136
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=1920&q=75",
+   "natural": "144x144",
+   "box": "316x237",
+   "x": 49,
+   "y": 2068
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=1920&q=75",
+   "natural": "144x144",
+   "box": "316x237",
+   "x": 391,
+   "y": 2068
+  }
+ ],
+ "pdpImgs-390-dpr2": [
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=828&q=75",
+   "natural": "361x361",
+   "box": "356x267",
+   "x": 17,
+   "y": 146
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+   "natural": "195x195",
+   "box": "104x204",
+   "x": 17,
+   "y": 2899
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+   "natural": "195x195",
+   "box": "104x182",
+   "x": 17,
+   "y": 3117
+  }
+ ],
+ "pdpE007": [
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=828&q=75",
+   "natural": "747x747",
+   "box": "772x579",
+   "x": 49,
+   "y": 136
+  },
+  {
+   "src": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=384&q=75",
+   "natural": "359x359",
+   "box": "316x237",
+   "x": 49,
+   "y": 2360
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+-- start values {"co-firstName":"","co-lastName":"","co-phone":"","co-email":""}
+-- summary before anything 0
+-- D after moving Ime -> Telefon without typing (expected co-phone) "div[alert]# \"Proverite jedno polje:Upišite ime.\""
+-- D values after typing phone {"co-firstName":"","co-lastName":"","co-phone":"","co-email":""}
+-- D summary "Proverite jedno polje:Upišite ime."

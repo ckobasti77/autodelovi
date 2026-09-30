@@ -1,0 +1,123 @@
+[
+ {
+  "name": "vehicle-first-escape-1440",
+  "w": 1440,
+  "url": "/",
+  "before": "button[vehicle-picker-trigger]",
+  "dialogsOpen": 1,
+  "focusInside": "button[Zatvori]",
+  "dialogsAfter": 0,
+  "after": "BODY",
+  "shot": "docs/qa/audit/verify/a11y-store/a11y-store-02-skeptic-vehicle-1440.webp",
+  "nextTab": "a[skip-link]"
+ },
+ {
+  "name": "vehicle-last-zatvori-1440",
+  "w": 1440,
+  "url": "/",
+  "before": "button[vehicle-picker-trigger]",
+  "dialogsOpen": 1,
+  "focusInside": "button[Zatvori]",
+  "dialogsAfter": 0,
+  "after": "BODY",
+  "nextTab": "a[skip-link]"
+ },
+ {
+  "name": "vehicle-first-escape-product-1440",
+  "w": 1440,
+  "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "before": "button[vehicle-picker-trigger]",
+  "dialogsOpen": 1,
+  "focusInside": "button[Zatvori]",
+  "dialogsAfter": 0,
+  "after": "BODY",
+  "nextTab": "a[skip-link]"
+ },
+ {
+  "name": "cart-escape-1440",
+  "w": 1440,
+  "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "before": "a[Korpa, 1 artikal]",
+  "dialogsOpen": 1,
+  "focusInside": "button[Zatvori]",
+  "dialogsAfter": 0,
+  "after": "BODY",
+  "shot": "docs/qa/audit/verify/a11y-store/a11y-store-02-skeptic-cart-1440.webp",
+  "nextTab": "a[skip-link]"
+ },
+ {
+  "name": "search-escape-1440",
+  "w": 1440,
+  "url": "/delovi/kocioni-diskovi",
+  "before": "button[header-search-trigger]",
+  "dialogsOpen": 1,
+  "focusInside": "input[Broj dela ili naziv]",
+  "focusTyped": "input[Broj dela ili naziv]",
+  "dialogsAfter": 0,
+  "after": "BODY",
+  "nextTab": "a[skip-link]"
+ },
+ {
+  "name": "vehicle-first-escape-390",
+  "w": 390,
+  "url": "/",
+  "before": "button[vehicle-picker-trigger]",
+  "dialogsOpen": 1,
+  "focusInside": "button[Smanji panel]",
+  "dialogsAfter": 0,
+  "after": "BODY",
+  "nextTab": "a[skip-link]"
+ },
+ {
+  "name": "vehicle-last-zatvori-390",
+  "w": 390,
+  "url": "/",
+  "before": "button[vehicle-picker-trigger]",
+  "dialogsOpen": 1,
+  "focusInside": "button[Smanji panel]",
+  "dialogsAfter": 0,
+  "after": "BODY",
+  "nextTab": "a[skip-link]"
+ },
+ {
+  "name": "vehicle-first-escape-product-390",
+  "w": 390,
+  "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "error": "TimeoutError: locator.focus: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('[data-testid=vehicle-picker-trigger]:visible').first()\n"
+ },
+ {
+  "name": "cart-escape-390",
+  "w": 390,
+  "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "before": "a[Korpa, 1 artikal]",
+  "dialogsOpen": 1,
+  "focusInside": "button[Zatvori]",
+  "dialogsAfter": 0,
+  "after": "BODY",
+  "shot": "docs/qa/audit/verify/a11y-store/a11y-store-02-skeptic-cart-390.webp",
+  "nextTab": "a[skip-link]"
+ },
+ {
+  "name": "search-escape-390",
+  "w": 390,
+  "url": "/delovi/kocioni-diskovi",
+  "before": "button[Pretraga delova]",
+  "dialogsOpen": 1,
+  "focusInside": "input[Broj dela ili naziv]",
+  "focusTyped": "input[Broj dela ili naziv]",
+  "dialogsAfter": 0,
+  "after": "BODY",
+  "nextTab": "a[skip-link]"
+ },
+ {
+  "name": "control-mobilemenu-390",
+  "w": 390,
+  "url": "/",
+  "before": "button[Otvori meni]",
+  "dialogsOpen": 1,
+  "focusInside": "button[Zatvori]",
+  "dialogsAfter": 0,
+  "after": "button[Otvori meni]",
+  "nextTab": "input[Broj dela ili naziv]"
+ }
+]

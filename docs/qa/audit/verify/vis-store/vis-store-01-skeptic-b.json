@@ -1,0 +1,54 @@
+{
+  "webkit": {
+    "addToCartInline": {
+      "x": 174,
+      "y": 871.34375,
+      "width": 200,
+      "height": 52
+    },
+    "before": {
+      "top": 850.5,
+      "bottom": 915.5,
+      "vh": 844,
+      "style": "translate(0px, 71.5px)",
+      "cs": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "vis": "visible",
+      "ariaHidden": "false"
+    },
+    "afterClearingTransform": {
+      "top": 779,
+      "bottom": 844,
+      "vh": 844,
+      "style": "none",
+      "cs": "none",
+      "vis": "visible",
+      "ariaHidden": "false"
+    }
+  },
+  "chromium": {
+    "addToCartInline": {
+      "x": 174,
+      "y": 871.609375,
+      "width": 200,
+      "height": 52
+    },
+    "before": {
+      "top": 850.5,
+      "bottom": 915.5,
+      "vh": 844,
+      "style": "translate(0px, 71.5px)",
+      "cs": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "vis": "visible",
+      "ariaHidden": "false"
+    },
+    "afterClearingTransform": {
+      "top": 779,
+      "bottom": 844,
+      "vh": 844,
+      "style": "none",
+      "cs": "none",
+      "vis": "visible",
+      "ariaHidden": "false"
+    }
+  }
+}

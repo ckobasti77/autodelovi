@@ -1,0 +1,5 @@
+/deo/ne-postoji-demo-9999	status=404	h1_in_html=0	text_in_html=false	title=SKLOP — Rasklopi auto. Nađi deo.
+/delovi/ne-postoji-kategorija	status=404	h1_in_html=0	text_in_html=false	title=SKLOP — Rasklopi auto. Nađi deo.
+/porudzbina/nevazeci-token	status=404	h1_in_html=0	text_in_html=false	title=SKLOP — Rasklopi auto. Nađi deo.
+/upit/nevazeci-token	status=404	h1_in_html=0	text_in_html=false	title=SKLOP — Rasklopi auto. Nađi deo.
+/ovo-ne-postoji	status=404	h1_in_html=1	text_in_html=true	title=Stranica nije pronađena · SKLOP

@@ -1,0 +1,35 @@
+{
+  "before": {
+    "bg": "rgb(255, 107, 26)",
+    "color": "rgb(13, 15, 17)",
+    "focusVisible": false,
+    "focus": false,
+    "hover": false,
+    "disabled": false,
+    "ariaDisabled": null,
+    "busy": null,
+    "mqHover": false
+  },
+  "afterTapOnInvalid": {
+    "bg": "rgb(255, 107, 26)",
+    "color": "rgb(13, 15, 17)",
+    "focusVisible": false,
+    "focus": false,
+    "hover": true,
+    "disabled": false,
+    "ariaDisabled": null,
+    "busy": null,
+    "mqHover": false
+  },
+  "afterTyping": {
+    "bg": "rgb(255, 107, 26)",
+    "color": "rgb(13, 15, 17)",
+    "focusVisible": false,
+    "focus": false,
+    "hover": true,
+    "disabled": false,
+    "ariaDisabled": null,
+    "busy": null,
+    "mqHover": false
+  }
+}

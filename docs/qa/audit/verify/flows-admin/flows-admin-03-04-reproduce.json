@@ -1,0 +1,77 @@
+{
+  "steps": [
+    {
+      "name": "original values",
+      "origSlogan": "Rasklopi auto. Nađi deo.",
+      "origPib": "",
+      "origMb": ""
+    },
+    {
+      "name": "dirty status bars",
+      "bars": [
+        "Brend nije sačuvan."
+      ]
+    },
+    {
+      "name": "after click SEO",
+      "url": "http://localhost:3100/admin/podesavanja?tab=seo",
+      "dialogVisible": false,
+      "selected": "SEO"
+    },
+    {
+      "name": "after back to Firma",
+      "sloganAfter": "Rasklopi auto. Nađi deo.",
+      "lost": true,
+      "barsAfter": []
+    },
+    {
+      "name": "variant Radno vreme",
+      "hBefore": "08:00",
+      "hBars": [],
+      "hAfter": "08:00",
+      "lost": true
+    },
+    {
+      "name": "variant reload while dirty",
+      "dialogs": [],
+      "hasBeforeUnloadProp": false
+    },
+    {
+      "name": "company bar",
+      "text": "Podaci o firmi nisu sačuvani.Odbaci izmeneSačuvaj",
+      "pibInvalid": null
+    },
+    {
+      "name": "after save invalid PIB",
+      "toasts": [],
+      "fieldErrors": 0
+    },
+    {
+      "name": "stored after reload",
+      "pib": "123",
+      "mb": "12"
+    },
+    {
+      "name": "print predracun",
+      "snippet": "Predračun, otpremnica i podnožje sajta ih prikazuju. Popuni u podešavanjimaSKLOPPIB 123MB 12PredračunSK-2026-000112Datum: 30.09.2026.Porudžbina od 30.09.2026.Ku"
+    },
+    {
+      "name": "print otpremnica",
+      "snippet": "Predračun, otpremnica i podnožje sajta ih prikazuju. Popuni u podešavanjimaSKLOPPIB 123MB 12OtpremnicaSK-2026-000112Datum: 30.09.2026.Porudžbina od 30.09.2026.P"
+    },
+    {
+      "name": "restored",
+      "pib": "",
+      "mb": "",
+      "origPib": "",
+      "origMb": ""
+    },
+    {
+      "name": "errors",
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  ]
+}

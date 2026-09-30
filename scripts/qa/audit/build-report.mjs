@@ -79,13 +79,13 @@ const idOf = (key) => byKey.get(mergedInto.get(key) ?? key)?.id ?? key;
 
 // ---- helpers
 const esc = (s) => String(s ?? "").replace(/\|/g, "\\|").replace(/\r?\n/g, " ");
-const link = (e) => {
+const link = (e, rest = 400) => {
   const s = String(e).trim();
-  const m = s.match(/^(docs\/qa\/)(audit\/[^\s)]+)(.*)$/);
-  if (m) return `[${m[2]}](${m[2]})${m[3]}`;
-  return s.length > 400 ? `${s.slice(0, 400)}…` : s;
+  const m = s.match(/^(docs\/qa\/)(audit\/[^\s)]+?)([,:;.]*(?:\s.*)?)$/);
+  if (m) return `[${m[2]}](${m[2]})${m[3].length > rest ? `${m[3].slice(0, rest)}…` : m[3]}`;
+  return s.length > rest ? `${s.slice(0, rest)}…` : s;
 };
-const short = (s, n) => { const t = String(s ?? "").replace(/s+/g, " ").trim(); return t.length > n ? `${t.slice(0, n)}…` : t; };
+const short = (s, n) => { const t = String(s ?? "").replace(/\s+/g, " ").trim(); return t.length > n ? `${t.slice(0, n)}…` : t; };
 const bullet = (xs) => (xs ?? []).map((x) => `- ${x}`).join("\n");
 const groupName = (g) => GROUPS.find((x) => x.group === g)?.name ?? g;
 
@@ -196,15 +196,24 @@ if (extra.knownItems?.length) {
           ? `merged into ${idOf(m.key)}`
           : m.status === "unverified" || m.status === "disputed"
             ? `[${m.id}](#${m.id.toLowerCase()}) ${m.severity} — ${esc(m.title)} (${m.status}, section 6)`
-            : `not confirmed (${m.key}, Appendix A)`,
+            : `not a confirmed defect — ${(m.votes ?? []).map((v) => v.verdict).join("/") || "unverified"} (${m.key}, Appendix A)`,
     );
-    out.push(`| ${esc(k.item)} | ${cells.length ? cells.join("<br>") : esc(k.fallback ?? "see findings")} |`);
+    const uniq = [...new Set(cells)].filter((c, _, all) => !(c.startsWith("merged into ") && all.some((o) => o.startsWith(`[${c.slice(12)}]`))));
+    out.push(`| ${esc(k.item)} | ${uniq.length ? uniq.join("<br>") : esc(k.fallback ?? "see findings")} |`);
   }
   out.push("");
 }
 
 // Findings
 out.push("## 5. Findings");
+out.push("");
+out.push("### Index");
+out.push("");
+out.push("| ID | Severity | Track | Title | Route |");
+out.push("|---|---|---|---|---|");
+for (const f of [...confirmed].sort((a, b) => sevIdx(a.severity) - sevIdx(b.severity) || GROUPS.findIndex((g) => g.group === a.group) - GROUPS.findIndex((g) => g.group === b.group) || a.id.localeCompare(b.id))) {
+  out.push(`| [${f.id}](#${f.id.toLowerCase()}) | ${f.severity} | ${groupName(f.group).replace(/^\d+\. /, "")} | ${esc(short(f.title, 150))} | ${esc(short(f.route, 70))} |`);
+}
 out.push("");
 for (const s of SEV) {
   const fs = confirmed.filter((f) => f.severity === s);
@@ -235,7 +244,7 @@ for (const s of SEV) {
     out.push(`- **Suggested fix:** ${f.suggested_fix}`);
     out.push(
       `- **Verification:** ${(f.votes ?? [])
-        .map((v) => `${v.lens} → ${v.verdict} (${v.severity}): ${short(v.notes, 320)}${v.evidence?.length ? ` [${v.evidence.slice(0, 2).map((e) => link(short(e, 160))).join(", ")}]` : ""}`)
+        .map((v) => `${v.lens} → ${v.verdict} (${v.severity}): ${short(v.notes, 320)}${v.evidence?.length ? ` [${v.evidence.slice(0, 2).map((e) => link(String(e).replace(/\s+/g, " "), 120)).join(", ")}]` : ""}`)
         .join(" — ")}`,
     );
     if (f.alsoReported?.length) {

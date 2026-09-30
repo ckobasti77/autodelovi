@@ -1,0 +1,4 @@
+curl /delovi/kocioni-diskovi?marka=volkswagen&model=golf&generacija=golf-7 -> 5 artikala (Golf VII)
+curl /delovi/kocioni-diskovi/volkswagen/golf -> 6 artikala (model landing, all Golf generations)
+curl /delovi/kocioni-diskovi/volkswagen/golf/golf-7 -> 404 (no generation landing)
+testing:samples vehicleCategory.fitting = 5 (golf-7)

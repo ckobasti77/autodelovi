@@ -1,0 +1,32 @@
+{
+  "chromium-390": {
+    "hydratedAtType": false,
+    "domAfterTyping": {
+      "vin": "WVWZZZ1KZ8W123456",
+      "msg": "Turbina za Golf 7, dizel."
+    },
+    "afterHydration": {
+      "vinDom": "",
+      "vinCounter": "0 / 17 znakova",
+      "brand": "",
+      "msgDom": "",
+      "msgCounter": "0 / 2.000"
+    },
+    "afterSubmit": {
+      "url": "/upit",
+      "errors": [
+        "Proverite označena polja:Napišite šta vam treba — naziv dela ili kvar.",
+        "invalid:iq-message"
+      ]
+    },
+    "csp": [
+      "script-src eval http://localhost:3100/_next/static/chunks/1uyyf-z7kpx1w.js:1"
+    ],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+}

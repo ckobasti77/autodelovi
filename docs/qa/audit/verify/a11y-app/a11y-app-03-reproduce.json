@@ -1,0 +1,96 @@
+{
+  "chromium1440": {
+    "triggerReachedByTab": {
+      "tabs": 23,
+      "tag": "button",
+      "role": "",
+      "name": "Broj porudžbine, OEM, telefon…Ctrl K"
+    },
+    "openFocus": {
+      "tag": "input",
+      "role": "combobox",
+      "name": "Pretraga: broj porudžbine, OEM, šifra, telefon, e-"
+    },
+    "afterEsc": {
+      "tag": "body"
+    },
+    "tabAfterEsc": {
+      "tag": "a",
+      "role": "",
+      "name": "Preskoči na sadržaj"
+    },
+    "before2": {
+      "tag": "a",
+      "role": "",
+      "name": "Popuni u podešavanjima"
+    },
+    "open2": {
+      "tag": "input",
+      "role": "combobox",
+      "name": "Pretraga: broj porudžbine, OEM, šifra, telefon, e-"
+    },
+    "afterEsc2": {
+      "tag": "body"
+    },
+    "focusBeforeCloseBtn": {
+      "tag": "button",
+      "role": "",
+      "name": "Zatvori"
+    },
+    "afterCloseBtn": {
+      "tag": "body"
+    },
+    "menuReturn": {
+      "tag": "button",
+      "role": "",
+      "name": "Nalog: Vlasnik"
+    }
+  },
+  "firefox1440": {
+    "triggerReachedByTab": {
+      "tabs": 24,
+      "tag": "button",
+      "role": "",
+      "name": "Broj porudžbine, OEM, telefon…Ctrl K"
+    },
+    "openFocus": {
+      "tag": "input",
+      "role": "combobox",
+      "name": "Pretraga: broj porudžbine, OEM, šifra, telefon, e-"
+    },
+    "afterEsc": {
+      "tag": "body"
+    },
+    "tabAfterEsc": {
+      "tag": "a",
+      "role": "",
+      "name": "Preskoči na sadržaj"
+    },
+    "before2": {
+      "tag": "a",
+      "role": "",
+      "name": "Popuni u podešavanjima"
+    },
+    "open2": {
+      "tag": "input",
+      "role": "combobox",
+      "name": "Pretraga: broj porudžbine, OEM, šifra, telefon, e-"
+    },
+    "afterEsc2": {
+      "tag": "body"
+    },
+    "focusBeforeCloseBtn": {
+      "tag": "button",
+      "role": "",
+      "name": "Zatvori"
+    },
+    "afterCloseBtn": {
+      "tag": "body"
+    },
+    "menuReturn": {
+      "tag": "button",
+      "role": "",
+      "name": "Nalog: Vlasnik"
+    }
+  }
+}

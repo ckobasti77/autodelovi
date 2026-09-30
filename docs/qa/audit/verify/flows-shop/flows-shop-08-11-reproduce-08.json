@@ -1,0 +1,168 @@
+{
+  "08": {
+    "guest": {
+      "status": "Upit i ponuda\nUP-2026-000003\nPonuda poslata\n29.09.2026. 16:31\nPonuda\nVaži do 06.10.2026.\nNosač motora desni, hidraulični\nLemförder · na stanju · 1 × 8.991 RSD\n8.991 RSD\nNosač menjača, po porudžbini\npo porudžbini · 3 dana · 1 × 6.490 RSD\n6.490 RSD\n\nUkupno\n15.48",
+      "acceptVisible": true,
+      "pickup": {
+        "groups": [
+          {
+            "label": "Dostava",
+            "options": [
+              "pickup",
+              "pickup",
+              "courier",
+              "courier"
+            ]
+          },
+          {
+            "label": "Plaćanje",
+            "options": [
+              "pickup_cash",
+              "pickup_cash",
+              "pickup_card",
+              "pickup_card"
+            ]
+          }
+        ],
+        "labels": [
+          "Ime",
+          "Prezime",
+          "Telefon",
+          "E-pošta",
+          "Lično preuzimanje · 0 RSD",
+          "Kurirska služba · 450 RSD",
+          "Gotovinom pri preuzimanju",
+          "Karticom pri preuzimanju",
+          "Prihvatam uslove kupovine."
+        ],
+        "hasCompany": false,
+        "hasDeferred": false
+      },
+      "shotPickup": "docs/qa/audit/verify/flows-shop/flows-shop-08-reproduce-guest-pickup-390.webp",
+      "courier": {
+        "groups": [
+          {
+            "label": "Dostava",
+            "options": [
+              "pickup",
+              "pickup",
+              "courier",
+              "courier"
+            ]
+          },
+          {
+            "label": "Plaćanje",
+            "options": [
+              "cod",
+              "cod"
+            ]
+          }
+        ],
+        "labels": [
+          "Ime",
+          "Prezime",
+          "Telefon",
+          "E-pošta",
+          "Lično preuzimanje · 0 RSD",
+          "Kurirska služba · 450 RSD",
+          "Ulica i broj",
+          "Poštanski broj",
+          "Mesto",
+          "Pouzećem",
+          "Prihvatam uslove kupovine."
+        ],
+        "hasCompany": false,
+        "hasDeferred": false
+      },
+      "shotCourier": "docs/qa/audit/verify/flows-shop/flows-shop-08-reproduce-guest-courier-390.webp",
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    "mechanic": {
+      "status": "Upit i ponuda\nUP-2026-000003\nPonuda poslata\n29.09.2026. 16:31\nPonuda\nVaži do 06.10.2026.\nNosač motora desni, hidraulični\nLemförder · na stanju · 1 × 8.991 RSD\n8.991 RSD\nNosač menjača, po porudžbini\npo porudžbini · 3 dana · 1 × 6.490 RSD\n6.490 RSD\n\nUkupno\n15.48",
+      "acceptVisible": true,
+      "pickup": {
+        "groups": [
+          {
+            "label": "Dostava",
+            "options": [
+              "pickup",
+              "pickup",
+              "courier",
+              "courier"
+            ]
+          },
+          {
+            "label": "Plaćanje",
+            "options": [
+              "pickup_cash",
+              "pickup_cash",
+              "pickup_card",
+              "pickup_card"
+            ]
+          }
+        ],
+        "labels": [
+          "Ime",
+          "Prezime",
+          "Telefon",
+          "E-pošta",
+          "Lično preuzimanje · 0 RSD",
+          "Kurirska služba · 450 RSD",
+          "Gotovinom pri preuzimanju",
+          "Karticom pri preuzimanju",
+          "Prihvatam uslove kupovine."
+        ],
+        "hasCompany": false,
+        "hasDeferred": false
+      },
+      "shotPickup": "docs/qa/audit/verify/flows-shop/flows-shop-08-reproduce-mechanic-pickup-390.webp",
+      "courier": {
+        "groups": [
+          {
+            "label": "Dostava",
+            "options": [
+              "pickup",
+              "pickup",
+              "courier",
+              "courier"
+            ]
+          },
+          {
+            "label": "Plaćanje",
+            "options": [
+              "cod",
+              "cod"
+            ]
+          }
+        ],
+        "labels": [
+          "Ime",
+          "Prezime",
+          "Telefon",
+          "E-pošta",
+          "Lično preuzimanje · 0 RSD",
+          "Kurirska služba · 450 RSD",
+          "Ulica i broj",
+          "Poštanski broj",
+          "Mesto",
+          "Pouzećem",
+          "Prihvatam uslove kupovine."
+        ],
+        "hasCompany": false,
+        "hasDeferred": false
+      },
+      "shotCourier": "docs/qa/audit/verify/flows-shop/flows-shop-08-reproduce-mechanic-courier-390.webp",
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    }
+  }
+}

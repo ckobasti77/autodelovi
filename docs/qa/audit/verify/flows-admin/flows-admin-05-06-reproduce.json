@@ -1,0 +1,96 @@
+{
+  "steps": [
+    {
+      "name": "inquiry",
+      "NUM": "UP-2026-000084"
+    },
+    {
+      "name": "Kočioni disk prednji 276 × 24 mm",
+      "sifra": "5Q0 615 505 R",
+      "price": "4690"
+    },
+    {
+      "name": "free line default availability",
+      "v": "in_stock"
+    },
+    {
+      "name": "variant: save draft invalid",
+      "alerts": [
+        "Stavka 2: količina 1–999."
+      ],
+      "focus": "BUTTON Sačuvaj nacrt",
+      "ariaInvalid": 0
+    },
+    {
+      "name": "confirm dialog (invalid line present)",
+      "text": "Poslati ponudu kupcu?Upit Test vfa-950241 dobija ponudu na 4.690 RSD sa linkom za prihvatanje. Ponuda važi 7 dana.OdustaniPošalji ponudu"
+    },
+    {
+      "name": "after confirm (invalid)",
+      "dialogOpen": true,
+      "dialogText": "Poslati ponudu kupcu?Upit Test vfa-950241 dobija ponudu na 4.690 RSD sa linkom za prihvatanje. Ponuda važi 7 dana.OdustaniPošalji ponudu",
+      "composerAlerts": [],
+      "alertInAriaTree": false,
+      "composerHidden": true,
+      "focus": "BUTTON Pošalji ponudu"
+    },
+    {
+      "name": "after Escape",
+      "dialogOpen": false,
+      "composerAlerts": [
+        "Stavka 2: količina 1–999."
+      ]
+    },
+    {
+      "name": "valid send dialog",
+      "text": "Poslati ponudu kupcu?Upit Test vfa-950241 dobija ponudu na 12.140 RSD sa linkom za prihvatanje. Ponuda važi 7 dana.OdustaniPošalji ponudu"
+    },
+    {
+      "name": "after valid send",
+      "dialogOpen": false,
+      "probe": {
+        "inquiryStatus": "ponuda_poslata",
+        "legalName": "",
+        "quoteStatus": "sent",
+        "quoteTotalPara": 1214000
+      }
+    },
+    {
+      "name": "converted",
+      "url": "http://localhost:3100/admin/porudzbine/SK-2026-000145",
+      "number": "SK-2026-000145",
+      "alerts": [
+        ""
+      ]
+    },
+    {
+      "name": "order detail line",
+      "snippet": " SK-2026-000145ArtikalKol.CenaRabatIznosKočioni disk prednji 276 × 24 mm5Q0 615 505 R · OEM 5Q0 615 505 R · Febi BilsteinBilo na stanju · sada 2 kom.14.690 RSD—4.690 RSDSenzor ABS prednji levi (dobavljač)WHT 003 856 · Po porudžbini, rok 3 d17.450 RSD—7.450 RSDArtikli12.140 RSDDostavaBesplatnoUkupno "
+    },
+    {
+      "name": "otpremnica rows",
+      "head": "R. br.ŠifraOEMNazivKol.Izdato",
+      "rows": [
+        "R. br.ŠifraOEMNazivKol.Izdato",
+        "1.5Q0 615 505 R5Q0 615 505 RKočioni disk prednji 276 × 24 mmFebi Bilstein1",
+        "2.WHT 003 856—Senzor ABS prednji levi (dobavljač)1"
+      ]
+    },
+    {
+      "name": "Kočioni disk prednji 276 × 24 mm",
+      "active": true,
+      "retailPricePara": 469000,
+      "source": "seed",
+      "stockQty": 2
+    },
+    {
+      "name": "errors",
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  ],
+  "inquiry": "UP-2026-000084",
+  "order": "SK-2026-000145"
+}

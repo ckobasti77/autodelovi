@@ -1,0 +1,46 @@
+{
+  "13": {
+    "products": {
+      "hasSearch": true,
+      "url": "/admin/proizvodi?q=zzqqxx999",
+      "emptyText": "Nema artikala za ovu pretragu i filtere.",
+      "actionsInEmptyCell": [],
+      "searchValue": "zzqqxx999",
+      "searchCancelAppearance": "auto",
+      "filtersButton": "Filteri",
+      "rows": 1,
+      "afterEscape": {
+        "value": "",
+        "url": "/admin/proizvodi"
+      }
+    },
+    "orders": {
+      "hasSearch": true,
+      "url": "/admin/porudzbine?q=zzqqxx999",
+      "emptyText": "Nema porudžbina za ovu pretragu i filtere.",
+      "actionsInEmptyCell": [],
+      "searchValue": "zzqqxx999",
+      "searchCancelAppearance": "auto",
+      "filtersButton": "Filteri",
+      "rows": 1,
+      "afterEscape": {
+        "value": "",
+        "url": "/admin/porudzbine"
+      }
+    },
+    "inquiries": {
+      "hasSearch": true,
+      "url": "/admin/upiti?q=zzqqxx999",
+      "emptyText": "Nema upita za ovaj izbor.",
+      "actionsInEmptyCell": [],
+      "searchValue": "zzqqxx999",
+      "searchCancelAppearance": "auto",
+      "filtersButton": null,
+      "rows": 1,
+      "afterEscape": {
+        "value": "",
+        "url": "/admin/upiti"
+      }
+    }
+  }
+}

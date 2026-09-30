@@ -58,11 +58,354 @@
     "_ms": 61945
   },
   "palette": {
-    "error": "TimeoutError: locator.focus: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /Broj porudžbine/ }).first()\n",
-    "_ms": 276056
+    "trig": {
+      "tag": "button",
+      "role": "",
+      "name": "Broj porudžbine, OEM, telefon…Ctrl K",
+      "id": "",
+      "href": "",
+      "outline": "solid 2px rgb(184, 71, 10) off -2px",
+      "shadow": "",
+      "rect": [
+        898,
+        10,
+        360,
+        36
+      ],
+      "inViewport": true
+    },
+    "openFocus": {
+      "tag": "input",
+      "role": "combobox",
+      "name": "Pretraga: broj porudžbine, OEM, šifra, telefon, e-",
+      "id": "",
+      "href": "",
+      "outline": "none 2px rgb(184, 71, 10) off 2px",
+      "shadow": "",
+      "rect": [
+        457,
+        153,
+        558,
+        40
+      ],
+      "inViewport": true
+    },
+    "active": {
+      "text": "SK-2026-000099Nikola Stanković · +381641",
+      "optionBg": "rgb(238, 241, 244)",
+      "dialogBg": "rgb(255, 255, 255)",
+      "outline": "none",
+      "inputOutline": "none",
+      "inputBorder": "rgb(218, 221, 225)"
+    },
+    "live": [],
+    "ev": "docs/qa/audit/a11y-app/deep-palette-active-option.webp",
+    "noResults": {
+      "listbox": "Nema rezultata za „qqqzzzxx“.",
+      "liveTexts": [],
+      "activedescendant": null
+    },
+    "afterEsc": {
+      "tag": "body"
+    },
+    "before2": {
+      "tag": "a",
+      "role": "",
+      "name": "Popuni u podešavanjima",
+      "id": "",
+      "href": "/admin/podesavanja?tab=firma",
+      "outline": "solid 2px rgb(184, 71, 10) off 2px",
+      "shadow": "",
+      "rect": [
+        1214,
+        196,
+        160,
+        16
+      ],
+      "inViewport": true
+    },
+    "afterEsc2": {
+      "tag": "body"
+    },
+    "_ms": 43002
   },
   "orders": {
-    "error": "TimeoutError: locator.waitFor: Timeout 90000ms exceeded.\nCall log:\n  - waiting for locator('tbody tr[data-row]').first() to be visible\n",
-    "_ms": 394340
+    "caption": "Porudžbine",
+    "headers": [
+      {
+        "text": "",
+        "sort": null,
+        "btn": true,
+        "btnName": "Izaberi sve redove"
+      },
+      {
+        "text": "Broj",
+        "sort": "none",
+        "btn": true,
+        "btnName": "Broj"
+      },
+      {
+        "text": "Primljena",
+        "sort": "none",
+        "btn": true,
+        "btnName": "Primljena"
+      },
+      {
+        "text": "Kupac",
+        "sort": "none",
+        "btn": true,
+        "btnName": "Kupac"
+      },
+      {
+        "text": "Status",
+        "sort": "none",
+        "btn": true,
+        "btnName": "Status"
+      },
+      {
+        "text": "Kom.",
+        "sort": "none",
+        "btn": true,
+        "btnName": "Kom."
+      },
+      {
+        "text": "Ukupno",
+        "sort": "none",
+        "btn": true,
+        "btnName": "Ukupno"
+      },
+      {
+        "text": "Plaćanje · dostava",
+        "sort": null,
+        "btn": false
+      },
+      {
+        "text": "Radnje",
+        "sort": null,
+        "btn": false
+      }
+    ],
+    "stops": [
+      "button[checkbox] \"Izaberi sve redove\" solid 2px rgb(184, 71, 10) off 2px",
+      "button \"Broj\" solid 2px rgb(184, 71, 10) off -2px",
+      "button \"Primljena\" solid 2px rgb(184, 71, 10) off -2px",
+      "button \"Kupac\" solid 2px rgb(184, 71, 10) off -2px",
+      "button \"Status\" solid 2px rgb(184, 71, 10) off -2px",
+      "button \"Kom.\" solid 2px rgb(184, 71, 10) off -2px",
+      "button \"Ukupno\" solid 2px rgb(184, 71, 10) off -2px",
+      "tr \"SK-2026-00014030.09. 22:12Admin Test fa3\" solid 2px rgb(184, 71, 10) off -2px",
+      "button \"Radnje za SK-2026-000140\" solid 2px rgb(184, 71, 10) off 2px",
+      "button \"Radnje za SK-2026-000135\" solid 2px rgb(184, 71, 10) off 2px",
+      "button \"Radnje za SK-2026-000134\" solid 2px rgb(184, 71, 10) off 2px",
+      "button \"Radnje za SK-2026-000133\" solid 2px rgb(184, 71, 10) off 2px",
+      "button \"Radnje za SK-2026-000132\" solid 2px rgb(184, 71, 10) off 2px",
+      "button \"Radnje za SK-2026-000131\" solid 2px rgb(184, 71, 10) off 2px"
+    ],
+    "rowFocus": {
+      "tag": "TR",
+      "outline": "solid 2px rgb(184, 71, 10) -2px",
+      "shadow": "none",
+      "tdShadow": "none",
+      "name": null,
+      "selected": "false"
+    },
+    "evRow": "docs/qa/audit/a11y-app/deep-orders-row-focus.webp",
+    "afterSpace": {
+      "selectedRows": 1,
+      "live": [],
+      "toolbar": [],
+      "focusStill": "TR"
+    },
+    "evBulk": "docs/qa/audit/a11y-app/deep-orders-bulk.webp",
+    "badges": [
+      " | SK-2026-000140 | 30.09. 22:12 | Admin Test fa3bellGost | Nova | 1 | 18.900 RSD | PouzećemKurirska služb | ",
+      " | SK-2026-000135 | 30.09. 22:08 | Admin Test fa3-884947G | Nova | 1 | 18.900 RSD | PouzećemKurirska služb | ",
+      " | SK-2026-000134 | 30.09. 22:08 | Nikola StankovićGost | Nova | 1 | 5.140 RSD | PouzećemKurirska služb | ",
+      " | SK-2026-000133 | 30.09. 21:54 | Audit PonudaGost | Nova | 1 | 4.690 RSD | Gotovinom pri preuzima | ",
+      " | SK-2026-000132 | 30.09. 21:47 | Petarć PetrovićGost | Nova | 1 | 4.690 RSD | Gotovinom pri preuzima | ",
+      " | SK-2026-000131 | 30.09. 20:41 | Audit servis d.o.o.Dra | Nova | 3 | 16.041 RSD | Odloženo plaćanjeKurir | "
+    ],
+    "_ms": 35013
+  },
+  "settings": {
+    "tl": [
+      {
+        "label": "Podešavanja",
+        "orient": "horizontal",
+        "tabs": [
+          "Firma* tabindex=-1",
+          "Radno vreme tabindex=-1",
+          "Dostava i plaćanje tabindex=-1",
+          "Obaveštenja tabindex=-1",
+          "SEO tabindex=-1",
+          "Praćenje tabindex=-1",
+          "Oglasne strane tabindex=-1",
+          "Pravni tekstovi tabindex=-1",
+          "Funkcije tabindex=-1",
+          "Opasna zona tabindex=-1"
+        ]
+      }
+    ],
+    "nav": [],
+    "arrows": {
+      "a0": {
+        "tag": "button",
+        "role": "tab",
+        "name": "Firma",
+        "id": "radix-_r_0_-trigger-firma",
+        "href": "",
+        "outline": "solid 2px rgb(184, 71, 10) off -2px",
+        "shadow": "",
+        "rect": [
+          256,
+          173,
+          40,
+          44
+        ],
+        "inViewport": true
+      },
+      "a1": {
+        "tag": "button",
+        "role": "tab",
+        "name": "Radno vreme",
+        "id": "radix-_r_0_-trigger-radno-vreme",
+        "href": "",
+        "outline": "solid 2px rgb(184, 71, 10) off -2px",
+        "shadow": "",
+        "rect": [
+          320,
+          173,
+          92,
+          44
+        ],
+        "inViewport": true
+      },
+      "sel": [
+        "Radno vreme"
+      ],
+      "url": "/admin/podesavanja?tab=radno-vreme"
+    },
+    "ev": "docs/qa/audit/a11y-app/deep-settings-tabs.webp",
+    "ax": [],
+    "_ms": 46965
+  },
+  "import": {
+    "inputs": [
+      {
+        "id": "",
+        "ariaLabel": null,
+        "labelledby": null,
+        "tabindex": "-1",
+        "disabled": false,
+        "accept": ".xlsx,.xls,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,text/csv",
+        "clip": "absolute 1pxx1px auto op=1"
+      }
+    ],
+    "stops": [
+      "a \"Šablon (.xlsx)\" solid 2px rgb(184, 71, 10) off 2px ",
+      "a \"Istorija\" solid 2px rgb(184, 71, 10) off 2px ",
+      "button \"Izaberi fajl\" solid 2px rgb(18, 21, 24) off 2px ",
+      "a \"Preuzmite šablon\" solid 2px rgb(184, 71, 10) off 2px ",
+      "a \"Istorija uvoza\" solid 2px rgb(184, 71, 10) off 2px ",
+      "a \"export-export-products.xlsxOtkazan30.09.\" solid 2px rgb(184, 71, 10) off -2px ",
+      "a \"lager-audit.xlsxPoništen30.09. 18:18 · S\" solid 2px rgb(184, 71, 10) off -2px ",
+      "a \"ivicni-slucajevi.xlsxPoništen30.09. 18:1\" solid 2px rgb(184, 71, 10) off -2px ",
+      "a \"proizvodi-1250.csvPoništen30.09. 15:38 ·\" solid 2px rgb(184, 71, 10) off -2px ",
+      "a \"proizvodi-500.xlsxPoništen30.09. 15:37 ·\" solid 2px rgb(184, 71, 10) off -2px "
+    ],
+    "live": [],
+    "steps": {
+      "html": "<nav aria-label=\"Koraci uvoza\" data-reveal=\"off\"><div class=\"flex flex-col gap-2 md:hidden\"><p class=\"type-body-s text-ink-2\">Korak <!-- -->1<!-- --> od <!-- -->5<span class=\"text-ink-1\"> · <!-- -->Datoteka</span></p><div class=\"grid gap-1\" style=\"grid-template-columns:repeat(5, minmax(0, 1fr))\" aria-hidden=\"true\"><span class=\"h-1 rounded-xs bg-accent\"></span><span class=\"h-1 rounded-xs bg-line-strong\"></span><span class=\"h-1 rounded-xs bg-line-strong\"></span><span class=\"h-1 rounded-xs bg-line-strong\"></span><span class=\"h-1 rounded-xs bg-line-strong\"></span></div></div><ol class=\"hidden item",
+      "current": [
+        "1Korak 1: Datoteka=step"
+      ]
+    },
+    "_ms": 6209
+  },
+  "_chartTableShot": "docs/qa/audit/a11y-app/deep-dashboard-chart-table.webp",
+  "charts": {
+    "charts": [
+      {
+        "role": "img",
+        "label": "Porudžbine po danima: ukupno 84 porudžbina za 30 dana. Tabela je ispod.",
+        "labelledby": null,
+        "focusables": 0,
+        "w": 723,
+        "region": "Porudžbine po danima"
+      }
+    ],
+    "toggles": [
+      {
+        "text": "Prikaži tabelu",
+        "expanded": "false",
+        "pressed": null,
+        "controls": "_r_0_"
+      }
+    ],
+    "after": {
+      "focus": "Preskoči na sadržajSKLOPDeloviVozilaZa m",
+      "tables": []
+    },
+    "evChart": "docs/qa/audit/a11y-app/deep-dashboard-bottom.webp",
+    "tableShot": "docs/qa/audit/a11y-app/deep-dashboard-chart-table.webp",
+    "_ms": 27684
+  },
+  "orderDetail": {
+    "unlabeled": [
+      {
+        "tag": "input",
+        "role": null,
+        "type": "checkbox",
+        "id": "",
+        "name": "",
+        "hidden": "true",
+        "tabindex": "-1"
+      }
+    ],
+    "buttons": [
+      "Promeni status",
+      "Potvrdi",
+      "Izmeni stavke",
+      "",
+      "Dodaj napomenu",
+      "Upiši broj pošiljke",
+      "Označi kao plaćeno"
+    ],
+    "statusRegion": [],
+    "dialog": null,
+    "ev": "docs/qa/audit/a11y-app/deep-order-detail-1024.webp",
+    "_ms": 14334
+  },
+  "bell": {
+    "counts": {
+      "side": [
+        {
+          "text": "Porudžbine99+ novih",
+          "aria": null,
+          "live": false
+        },
+        {
+          "text": "Upiti52 novih",
+          "aria": null,
+          "live": false
+        },
+        {
+          "text": "Lager15 bez zaliha",
+          "aria": null,
+          "live": false
+        }
+      ],
+      "bell": {
+        "label": "Obaveštenja, nepročitano: 100",
+        "visible": "9+",
+        "expanded": "false",
+        "haspopup": "dialog"
+      },
+      "bellLive": [
+        ""
+      ]
+    },
+    "pop": null,
+    "_ms": 24156
   }
 }

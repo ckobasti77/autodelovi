@@ -1,0 +1,24 @@
+import { writeFileSync } from "node:fs";
+import { BASE, launch, newContext, scrollThrough, shot } from "./kit.mjs";
+const browser = await launch("chromium");
+const ctx = await newContext(browser, { width: 1440, height: 900, tag: "verify-vis-store-11b" });
+const page = await ctx.newPage();
+await page.goto(`${BASE}/delovi/kocioni-diskovi`, { waitUntil: "networkidle" });
+await scrollThrough(page);
+const m = () => page.evaluate(() => {
+  const aside = document.querySelector('aside[aria-label="Filteri"]');
+  const inner = aside.firstElementChild.getBoundingClientRect();
+  const header = document.querySelector("body > div header, header")?.getBoundingClientRect();
+  const cards = [...document.querySelectorAll("main a[href^='/deo/']")].map((a) => a.getBoundingClientRect()).filter((r) => r.bottom > 0 && r.top < innerHeight).length;
+  return { scrollY: Math.round(scrollY), railContentTop: Math.round(inner.top), railContentBottom: Math.round(inner.bottom), railContentHeight: Math.round(inner.height), headerBottom: header ? Math.round(header.bottom) : null, productLinksInViewport: cards };
+});
+const out = { top: await m() };
+out.topShot = await shot(page, "verify/vis-store/vis-store-11-reproduce-1440-top");
+await page.mouse.move(720, 450);
+await page.mouse.wheel(0, 900);
+await page.waitForTimeout(1000);
+out.after900 = await m();
+out.after900Shot = await shot(page, "verify/vis-store/vis-store-11-reproduce-1440-after900");
+await browser.close();
+writeFileSync("docs/qa/audit/verify/vis-store/vis-store-11-reproduce.json", JSON.stringify(out, null, 2));
+console.log(JSON.stringify(out, null, 2));

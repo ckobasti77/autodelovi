@@ -1,0 +1,134 @@
+[
+  {
+    "engine": "chromium",
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "tag": "390",
+    "width": 390,
+    "height": 844,
+    "rm": "no-preference",
+    "buyBoxTop": 749.4375,
+    "buyBtnTop": 872.609375,
+    "scrollH": 4813,
+    "probe": {
+      "found": true,
+      "count": 1,
+      "scrollY": 1500,
+      "innerHeight": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "visiblePx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineTransform": "translate(0px, 71.5px)",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -495.390625
+    },
+    "focusInBar": {
+      "focused": true,
+      "rect": 861.5
+    },
+    "img": "docs/qa/audit/verify/vis-store/vis-store-01-reproduce-chromium-390.webp"
+  },
+  {
+    "engine": "chromium",
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "tag": "390rm",
+    "width": 390,
+    "height": 844,
+    "rm": "reduce",
+    "buyBoxTop": 749.4375,
+    "buyBtnTop": 872.609375,
+    "scrollH": 4813,
+    "probe": {
+      "found": true,
+      "count": 1,
+      "scrollY": 1500,
+      "innerHeight": 844,
+      "top": 850.5,
+      "bottom": 915.5,
+      "height": 65,
+      "visiblePx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineTransform": "translateY(110%)",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -495.390625
+    },
+    "focusInBar": {
+      "focused": true,
+      "rect": 861.5
+    },
+    "img": "docs/qa/audit/verify/vis-store/vis-store-01-reproduce-chromium-390rm.webp"
+  },
+  {
+    "engine": "chromium",
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "tag": "360",
+    "width": 360,
+    "height": 780,
+    "rm": "no-preference",
+    "buyBoxTop": 726.28125,
+    "buyBtnTop": 871.640625,
+    "scrollH": 4968,
+    "probe": {
+      "found": true,
+      "count": 1,
+      "scrollY": 1500,
+      "innerHeight": 780,
+      "top": 786.5,
+      "bottom": 851.5,
+      "height": 65,
+      "visiblePx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineTransform": "translate(0px, 71.5px)",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -440.359375
+    },
+    "focusInBar": {
+      "focused": true,
+      "rect": 797.5
+    },
+    "img": "docs/qa/audit/verify/vis-store/vis-store-01-reproduce-chromium-360.webp"
+  },
+  {
+    "engine": "chromium",
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "tag": "768",
+    "width": 768,
+    "height": 1024,
+    "rm": "no-preference",
+    "buyBoxTop": 1472.59375,
+    "buyBtnTop": 1598.765625,
+    "scrollH": 5107,
+    "probe": {
+      "found": true,
+      "count": 1,
+      "scrollY": 2100,
+      "innerHeight": 1024,
+      "top": 1030.5,
+      "bottom": 1095.5,
+      "height": 65,
+      "visiblePx": 0,
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inlineTransform": "translate(0px, 71.5px)",
+      "visibility": "visible",
+      "opacity": "1",
+      "ariaHidden": "false",
+      "inert": false,
+      "buyBoxBottom": -369.234375
+    },
+    "focusInBar": {
+      "focused": true,
+      "rect": 1041.5
+    },
+    "img": "docs/qa/audit/verify/vis-store/vis-store-01-reproduce-chromium-768.webp"
+  }
+]

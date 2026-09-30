@@ -1,0 +1,56 @@
+{
+  "07": {
+    "registracija-390": {
+      "tabsToSubmit": 6,
+      "focus": "button \"Napravi nalog\"",
+      "live": [],
+      "before": [],
+      "invalid": [
+        "name",
+        "email",
+        "password"
+      ],
+      "errorsText": [
+        "Upišite ime i prezime.",
+        "E-mail adresa nije ispravna. Primer: ime@primer.rs.",
+        "Lozinka mora imati najmanje 10 znakova.",
+        "Potrebna je saglasnost sa uslovima korišćenja."
+      ],
+      "submitTop": 677.90625,
+      "firstFieldTop": 273.78125,
+      "vh": 844
+    },
+    "registracija-1440": {
+      "tabsToSubmit": 6,
+      "focus": "button \"Napravi nalog\"",
+      "live": [],
+      "before": [],
+      "invalid": [
+        "name",
+        "email",
+        "password"
+      ],
+      "errorsText": [
+        "Upišite ime i prezime.",
+        "E-mail adresa nije ispravna. Primer: ime@primer.rs.",
+        "Lozinka mora imati najmanje 10 znakova.",
+        "Potrebna je saglasnost sa uslovima korišćenja."
+      ],
+      "submitTop": 759.296875,
+      "firstFieldTop": 355.171875,
+      "vh": 900
+    },
+    "za-majstore-390": {
+      "focus": "input[name=email] \"\"",
+      "live": [
+        "alert:Proverite označena polja:E-mail adresa nije ispravna. Primer: ime@primer.rs.Lozi"
+      ]
+    },
+    "prijava-390": {
+      "focus": "button \"Prijavi se\"",
+      "live": [
+        "alert:Pogrešan e-mail ili lozinka. Proverite podatke i pokušajte ponovo."
+      ]
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "A": "p5719p5rtqxhwj4jta5g42tzah8fdkgq",
+  "R": "p57ebhht71h3cekvbc42nc30vx8fcasy",
+  "steps": [
+    {
+      "name": "tier options",
+      "at": "2026-09-30T20:09:06.169Z",
+      "opts": [
+        "Izaberite",
+        "Majstor · 10 %",
+        "Majstor Plus · 15 %",
+        "Partner · 20 %"
+      ]
+    },
+    {
+      "name": "approve with limit -5",
+      "at": "2026-09-30T20:09:10.419Z",
+      "toasts": [],
+      "alerts": [
+        "Limit mora biti iznos u dinarima.",
+        ""
+      ],
+      "invalid": 0
+    },
+    {
+      "name": "approve with 150.000",
+      "at": "2026-09-30T20:09:14.575Z",
+      "toasts": [],
+      "alerts": [
+        ""
+      ]
+    },
+    {
+      "name": "suspend (no confirm?)",
+      "at": "2026-09-30T20:09:18.345Z",
+      "dialog": false,
+      "toasts": []
+    },
+    {
+      "name": "reactivated",
+      "at": "2026-09-30T20:09:21.456Z",
+      "toasts": []
+    },
+    {
+      "name": "settings tabs",
+      "at": "2026-09-30T20:09:27.677Z",
+      "tabs": [
+        "Firma",
+        "Radno vreme",
+        "Dostava i plaćanje",
+        "Obaveštenja",
+        "SEO",
+        "Praćenje",
+        "Oglasne strane",
+        "Pravni tekstovi",
+        "Funkcije",
+        "Opasna zona"
+      ]
+    },
+    {
+      "name": "settings axe (last tab)",
+      "at": "2026-09-30T20:09:51.988Z",
+      "ax": []
+    },
+    {
+      "name": "dirty savebar",
+      "at": "2026-09-30T20:11:53.597Z",
+      "bar": ""
+    },
+    {
+      "name": "switch tab while dirty",
+      "at": "2026-09-30T20:11:54.837Z",
+      "dialog": false,
+      "selected": "SEO"
+    },
+    {
+      "name": "slogan after switching back",
+      "at": "2026-09-30T20:11:55.891Z",
+      "value": "Rasklopi auto. Nađi deo."
+    },
+    {
+      "name": "saved slogan",
+      "at": "2026-09-30T20:11:58.968Z",
+      "toasts": []
+    },
+    {
+      "name": "restored slogan",
+      "at": "2026-09-30T20:12:02.094Z",
+      "toasts": [],
+      "value": "Rasklopi auto. Nađi deo.",
+      "orig": "Rasklopi auto. Nađi deo."
+    },
+    {
+      "name": "invalid PIB save",
+      "at": "2026-09-30T20:12:04.732Z",
+      "toasts": [],
+      "alerts": [
+        "Podešavanja"
+      ],
+      "invalid": 0,
+      "pibOrig": ""
+    },
+    {
+      "name": "pib after discard",
+      "at": "2026-09-30T20:12:06.465Z",
+      "value": "",
+      "pibOrig": ""
+    },
+    {
+      "name": "danger zone",
+      "at": "2026-09-30T20:12:08.006Z",
+      "text": "Obriši demo podatkeBriše sve probne artikle (šifre DEMO-), porudžbine, upite, naloge i majstore označene kao demo. Marke, modeli, kategorije i podešavanja ostaju. Radnja se ne može poništiti.Artikli157Porudžbine8Upiti4Nalozi2Majstori1Obriši demo podatke"
+    },
+    {
+      "name": "errors S",
+      "at": "2026-09-30T20:12:08.006Z",
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  ]
+}

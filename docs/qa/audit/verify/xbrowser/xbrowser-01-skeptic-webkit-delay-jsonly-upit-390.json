@@ -1,0 +1,90 @@
+[
+  {
+    "jsOnly": true,
+    "engine": "webkit",
+    "mode": "delay",
+    "route": "upit",
+    "width": 390,
+    "run": 0,
+    "visibleAt": 1307,
+    "hydratedAtVisible": false,
+    "vinTyping": {
+      "hydratedDuringTyping": false,
+      "valueBeforeHydration": "WVWZZZ1KZ8W123456"
+    },
+    "msgTyping": {
+      "hydratedDuringTyping": false,
+      "valueBeforeHydration": "Turbina za Golf 7, dizel."
+    },
+    "typedAt": 7212,
+    "hydratedAt": 11533,
+    "timeline": [
+      {
+        "at": 5,
+        "v": "WVWZZZ1KZ8W123456 | Turbina za Golf 7, dizel."
+      },
+      {
+        "at": 477,
+        "v": " | "
+      }
+    ],
+    "after": {
+      "vin": "",
+      "msg": "",
+      "counters": [
+        "0 / 17 znakova",
+        "0 / 2.000"
+      ],
+      "brand": ""
+    },
+    "shot": "docs/qa/audit/verify/xbrowser/xbrowser-01-skeptic-webkit-delay-390-upit-after.webp",
+    "submit": {
+      "url": "/upit",
+      "alerts": [
+        "Proverite označena polja:Napišite šta vam treba — naziv dela ili kvar."
+      ]
+    },
+    "submitShot": "docs/qa/audit/verify/xbrowser/xbrowser-01-skeptic-webkit-delay-390-upit-submit.webp",
+    "consoleErrors": []
+  },
+  {
+    "jsOnly": true,
+    "engine": "webkit",
+    "mode": "delay",
+    "route": "upit",
+    "width": 390,
+    "run": 1,
+    "visibleAt": 642,
+    "hydratedAtVisible": false,
+    "vinTyping": {
+      "hydratedDuringTyping": false,
+      "valueBeforeHydration": "WVWZZZ1KZ8W123456"
+    },
+    "msgTyping": {
+      "hydratedDuringTyping": false,
+      "valueBeforeHydration": "Turbina za Golf 7, dizel."
+    },
+    "typedAt": 3688,
+    "hydratedAt": 8989,
+    "timeline": [
+      {
+        "at": 2,
+        "v": "WVWZZZ1KZ8W123456 | Turbina za Golf 7, dizel."
+      },
+      {
+        "at": 207,
+        "v": " | "
+      }
+    ],
+    "after": {
+      "vin": "",
+      "msg": "",
+      "counters": [
+        "0 / 17 znakova",
+        "0 / 2.000"
+      ],
+      "brand": ""
+    },
+    "consoleErrors": []
+  }
+]

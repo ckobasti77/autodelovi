@@ -1,0 +1,331 @@
+{
+ "buybar": [
+  {
+   "scrollY": 2400,
+   "vh": 844,
+   "buyBoxBottom": -1395,
+   "ariaHidden": "false",
+   "inert": false,
+   "visibility": "visible",
+   "opacity": "1",
+   "inlineTransform": "translate(0px, 71.5px)",
+   "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+   "barTop": 851,
+   "barHeight": 65,
+   "visiblePx": 0,
+   "w": 390,
+   "reducedMotion": "no-preference"
+  },
+  {
+   "scrollY": 2400,
+   "vh": 844,
+   "buyBoxBottom": -1395,
+   "ariaHidden": "false",
+   "inert": false,
+   "visibility": "visible",
+   "opacity": "1",
+   "inlineTransform": "translateY(110%)",
+   "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+   "barTop": 851,
+   "barHeight": 65,
+   "visiblePx": 0,
+   "w": 390,
+   "reducedMotion": "reduce"
+  },
+  {
+   "scrollY": 2400,
+   "vh": 780,
+   "buyBoxBottom": -1340,
+   "ariaHidden": "false",
+   "inert": false,
+   "visibility": "visible",
+   "opacity": "1",
+   "inlineTransform": "translate(0px, 71.5px)",
+   "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+   "barTop": 787,
+   "barHeight": 65,
+   "visiblePx": 0,
+   "w": 360,
+   "reducedMotion": "no-preference"
+  }
+ ],
+ "thumb": {
+  "1440": {
+   "img": {
+    "l": 353,
+    "t": 406,
+    "w": 240,
+    "h": 180
+   },
+   "frame": {
+    "l": 353,
+    "t": 406,
+    "w": 240,
+    "h": 180
+   },
+   "chip": {
+    "l": 353,
+    "t": 406,
+    "w": 240,
+    "h": 180
+   },
+   "objectFit": "contain",
+   "objectPosition": "50% 50%",
+   "natural": "359x359",
+   "src": "mage?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+  },
+  "2560": {
+   "img": {
+    "l": 873,
+    "t": 410,
+    "w": 198,
+    "h": 149
+   },
+   "frame": {
+    "l": 873,
+    "t": 410,
+    "w": 198,
+    "h": 149
+   },
+   "chip": {
+    "l": 873,
+    "t": 410,
+    "w": 198,
+    "h": 149
+   },
+   "objectFit": "contain",
+   "objectPosition": "50% 50%",
+   "natural": "359x359",
+   "src": "mage?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75"
+  }
+ },
+ "vozila": {
+  "/vozila": [
+   {
+    "text": "Volkswagen",
+    "link": "189x22",
+    "row": "358x1373",
+    "rowTag": "DIV"
+   },
+   {
+    "text": "Golf1997–",
+    "link": "358x44",
+    "row": "358x45",
+    "rowTag": "LI"
+   },
+   {
+    "text": "Passat1996–2023",
+    "link": "358x44",
+    "row": "358x45",
+    "rowTag": "LI"
+   },
+   {
+    "text": "Polo2001–",
+    "link": "358x44",
+    "row": "358x45",
+    "rowTag": "LI"
+   },
+   {
+    "text": "Caddy2003–",
+    "link": "358x44",
+    "row": "358x45",
+    "rowTag": "LI"
+   },
+   {
+    "text": "Touran2003–",
+    "link": "358x44",
+    "row": "358x45",
+    "rowTag": "LI"
+   },
+   {
+    "text": "Tiguan2007–2024",
+    "link": "358x44",
+    "row": "358x45",
+    "rowTag": "LI"
+   },
+   {
+    "text": "Audi",
+    "link": "64x22",
+    "row": "358x1373",
+    "rowTag": "DIV"
+   },
+   {
+    "text": "A31996–",
+    "link": "358x44",
+    "row": "358x45",
+    "rowTag": "LI"
+   },
+   {
+    "text": "A41994–",
+    "link": "358x44",
+    "row": "358x45",
+    "rowTag": "LI"
+   },
+   {
+    "text": "A61997–",
+    "link": "358x44",
+    "row": "358x45",
+    "rowTag": "LI"
+   },
+   {
+    "text": "Škoda",
+    "link": "92x22",
+    "row": "358x1373",
+    "rowTag": "DIV"
+   }
+  ],
+  "/vozila/volkswagen": [
+   {
+    "text": "Golf",
+    "link": "36x21",
+    "row": "358x1235",
+    "rowTag": "DIV"
+   },
+   {
+    "text": "Golf IV1997–2006",
+    "link": "358x44",
+    "row": "358x44",
+    "rowTag": "LI"
+   },
+   {
+    "text": "Golf V2003–2009",
+    "link": "358x44",
+    "row": "358x44",
+    "rowTag": "LI"
+   },
+   {
+    "text": "Golf VI2008–2013",
+    "link": "358x44",
+    "row": "358x44",
+    "rowTag": "LI"
+   },
+   {
+    "text": "Golf VII2012–2020",
+    "link": "358x44",
+    "row": "358x44",
+    "rowTag": "LI"
+   },
+   {
+    "text": "Golf VIII2019–",
+    "link": "358x44",
+    "row": "358x44",
+    "rowTag": "LI"
+   },
+   {
+    "text": "Passat",
+    "link": "57x21",
+    "row": "358x1235",
+    "rowTag": "DIV"
+   },
+   {
+    "text": "Passat B51996–2005",
+    "link": "358x44",
+    "row": "358x44",
+    "rowTag": "LI"
+   },
+   {
+    "text": "Passat B62005–2010",
+    "link": "358x44",
+    "row": "358x44",
+    "rowTag": "LI"
+   },
+   {
+    "text": "Passat B72010–2014",
+    "link": "358x44",
+    "row": "358x44",
+    "rowTag": "LI"
+   },
+   {
+    "text": "Passat B82014–2023",
+    "link": "358x44",
+    "row": "358x44",
+    "rowTag": "LI"
+   },
+   {
+    "text": "Polo",
+    "link": "37x21",
+    "row": "358x1235",
+    "rowTag": "DIV"
+   }
+  ]
+ },
+ "hub": {
+  "/delovi/kocnice@1440": {
+   "h1": "Kočnice",
+   "paragraphsOver40": 0,
+   "footerTop": 657,
+   "docH": 1065,
+   "tiles": 4
+  },
+  "/delovi/kocioni-diskovi@1440": {
+   "h1": "Kočioni diskovi",
+   "paragraphsOver40": 2,
+   "footerTop": 2303,
+   "docH": 2824,
+   "tiles": 0
+  },
+  "/delovi@1440": {
+   "h1": "Delovi po sistemima",
+   "paragraphsOver40": 1,
+   "footerTop": 5249,
+   "docH": 5770,
+   "tiles": 44
+  },
+  "/delovi/kocnice@1920": {
+   "h1": "Kočnice",
+   "paragraphsOver40": 0,
+   "footerTop": 672,
+   "docH": 1080,
+   "tiles": 4
+  }
+ },
+ "sections": {
+  "docH": 12213,
+  "vh": 844,
+  "secs": [
+   {
+    "h": 3082,
+    "links": 1
+   },
+   {
+    "heading": "Kako se poručuje",
+    "h": 864,
+    "links": 1
+   },
+   {
+    "heading": "Najtraženije kategorije",
+    "h": 1686,
+    "links": 13
+   },
+   {
+    "heading": "Delovi po sistemima",
+    "h": 2869,
+    "links": 44
+   },
+   {
+    "heading": "Za majstore i servise",
+    "h": 822,
+    "links": 1
+   },
+   {
+    "heading": "Vozila koja pokrivamo",
+    "h": 570,
+    "links": 5
+   },
+   {
+    "h": 240,
+    "links": 0
+   },
+   {
+    "heading": "Česta pitanja",
+    "h": 745,
+    "links": 0
+   },
+   {
+    "heading": "Pitanje za majstora?",
+    "h": 234,
+    "links": 1
+   }
+  ]
+ }
+}

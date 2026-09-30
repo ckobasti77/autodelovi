@@ -1,0 +1,85 @@
+{
+  "base": "http://localhost:3100",
+  "runs": [
+    {
+      "viewport": 390,
+      "step1": {
+        "tag": "a",
+        "text": "Korpa",
+        "childOrder": [
+          "text:Korpa",
+          "icon"
+        ],
+        "iconLeftOfText": false,
+        "iconX": 51,
+        "width": 65,
+        "rowRect": {
+          "x": 16,
+          "y": 867.125,
+          "width": 358,
+          "height": 73
+        }
+      },
+      "step1Shot": "docs/qa/audit/verify/flows-shop/flows-shop-17-reproduce-step1-390.webp",
+      "step2Heading": "Dostava",
+      "step2": {
+        "tag": "button",
+        "text": "Nazad",
+        "childOrder": [
+          "icon",
+          "el:Nazad"
+        ],
+        "iconLeftOfText": false,
+        "iconX": 16,
+        "width": 103,
+        "rowRect": {
+          "x": 16,
+          "y": 567.75,
+          "width": 358,
+          "height": 73
+        }
+      },
+      "step2Shot": "docs/qa/audit/verify/flows-shop/flows-shop-17-reproduce-step2-390.webp"
+    },
+    {
+      "viewport": 1440,
+      "step1": {
+        "tag": "a",
+        "text": "Korpa",
+        "childOrder": [
+          "text:Korpa",
+          "icon"
+        ],
+        "iconLeftOfText": false,
+        "iconX": 51,
+        "width": 65,
+        "rowRect": {
+          "x": 48,
+          "y": 627.734375,
+          "width": 888,
+          "height": 73
+        }
+      },
+      "step1Shot": "docs/qa/audit/verify/flows-shop/flows-shop-17-reproduce-step1-1440.webp",
+      "step2Heading": "Dostava",
+      "step2": {
+        "tag": "button",
+        "text": "Nazad",
+        "childOrder": [
+          "icon",
+          "el:Nazad"
+        ],
+        "iconLeftOfText": false,
+        "iconX": 16,
+        "width": 103,
+        "rowRect": {
+          "x": 48,
+          "y": 498.546875,
+          "width": 888,
+          "height": 73
+        }
+      },
+      "step2Shot": "docs/qa/audit/verify/flows-shop/flows-shop-17-reproduce-step2-1440.webp"
+    }
+  ]
+}

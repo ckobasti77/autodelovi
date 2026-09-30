@@ -1,0 +1,199 @@
+{
+  "product404": {
+    "390": {
+      "status": 404,
+      "title": "SKLOP — Rasklopi auto. Nađi deo.",
+      "h1": 1,
+      "bodyText": "Preskoči na sadržaj SKLOP Stranica nije pronađena Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas. Pretraži",
+      "bodyChildren": 8,
+      "htmlClass": "display_57a2f1e9-module__yAkwwW__variable displaysemibold_66077e30-module__u41IVa__variable condensed_ac4bd985-module__SOzDNq__variable public_sans_cf90169f-module__aFbQTG__variable martian_mono_b35e5d72-module__bZkIpW__variable",
+      "visibleEls": 145,
+      "log": {
+        "console": [
+          "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        ],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": [
+          "404 http://localhost:3100/deo/ne-postoji-demo-9999"
+        ]
+      }
+    },
+    "1440": {
+      "status": 404,
+      "title": "SKLOP — Rasklopi auto. Nađi deo.",
+      "h1": 1,
+      "bodyText": "Preskoči na sadržaj SKLOP Delovi Vozila Za majstore Upit po broju šasije Broj dela ili naziv / Izaberite vozilo Stranica nije pronađena Adresa je možda promenjena ili deo više nije u ponudi. Potražite",
+      "bodyChildren": 8,
+      "htmlClass": "display_57a2f1e9-module__yAkwwW__variable displaysemibold_66077e30-module__u41IVa__variable condensed_ac4bd985-module__SOzDNq__variable public_sans_cf90169f-module__aFbQTG__variable martian_mono_b35e5d72-module__bZkIpW__variable",
+      "visibleEls": 155,
+      "log": {
+        "console": [
+          "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        ],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": [
+          "404 http://localhost:3100/deo/ne-postoji-demo-9999"
+        ]
+      }
+    }
+  },
+  "search": [
+    {
+      "q": "pločice golf 7",
+      "meta": "48 artikala",
+      "cards": 48,
+      "first8": [
+        "Akumulator EFB 70 Ah 760 A, start-stop",
+        "Motor klapni usisne grane 2.0 TDI",
+        "EGR ventil 1.9/2.0 TDI",
+        "Turbina 1.9 TDI 77 kW, nova",
+        "Turbina 2.0 TDI 110 kW, nova",
+        "EGR ventil 2.0 TDI CR",
+        "Kočione pločice zadnje",
+        "Kočione pločice zadnje, elektronska ručna"
+      ],
+      "more": 0,
+      "pager": 0
+    },
+    {
+      "q": "kočioni disk golf 7",
+      "meta": "48 artikala",
+      "cards": 48,
+      "first8": [
+        "Akumulator EFB 70 Ah 760 A, start-stop",
+        "Motor klapni usisne grane 2.0 TDI",
+        "Kočioni disk prednji 320 × 30 mm",
+        "EGR ventil 1.9/2.0 TDI",
+        "Turbina 1.9 TDI 77 kW, nova",
+        "Kočioni disk prednji 256 × 22 mm",
+        "Kočioni disk prednji 312 × 25 mm, ventilirani",
+        "EGR ventil 2.0 TDI CR"
+      ],
+      "more": 0,
+      "pager": 0
+    },
+    {
+      "q": "amortizer golf 7",
+      "meta": "48 artikala",
+      "cards": 48,
+      "first8": [
+        "Akumulator EFB 70 Ah 760 A, start-stop",
+        "Amortizer prednji, gasni",
+        "Motor klapni usisne grane 2.0 TDI",
+        "EGR ventil 1.9/2.0 TDI",
+        "Turbina 1.9 TDI 77 kW, nova",
+        "Amortizer prednji, gasni",
+        "Turbina 2.0 TDI 110 kW, nova",
+        "Amortizer prednji"
+      ],
+      "more": 0,
+      "pager": 0
+    },
+    {
+      "q": "plocice golf",
+      "meta": "48 artikala",
+      "cards": 48,
+      "first8": [
+        "Kočione pločice prednje",
+        "Kočione pločice prednje",
+        "Kočione pločice prednje",
+        "Kočione pločice prednje, sistem Teves",
+        "Kočione pločice prednje",
+        "Kočione pločice zadnje",
+        "Kočione pločice zadnje",
+        "Kočione pločice prednje, sa senzorom"
+      ],
+      "more": 0,
+      "pager": 0
+    },
+    {
+      "q": "a",
+      "meta": "48 artikala",
+      "cards": 48,
+      "first8": [
+        "Akumulator AGM 80 Ah 800 A",
+        "Akumulator EFB 70 Ah 760 A, start-stop",
+        "Akumulator 60 Ah 540 A",
+        "Alternator 140 A",
+        "Gumeni nosač auspuha",
+        "Alternator 110 A",
+        "Ležaj amortizera sa gumom, set",
+        "Kočioni disk prednji 320 × 30 mm"
+      ],
+      "more": 0,
+      "pager": 0
+    },
+    {
+      "q": "golf 7",
+      "meta": "48 artikala",
+      "cards": 48,
+      "first8": [
+        "Akumulator EFB 70 Ah 760 A, start-stop",
+        "Motor klapni usisne grane 2.0 TDI",
+        "EGR ventil 1.9/2.0 TDI",
+        "Turbina 1.9 TDI 77 kW, nova",
+        "Turbina 2.0 TDI 110 kW, nova",
+        "EGR ventil 2.0 TDI CR",
+        "Crevo hladnjaka gornje",
+        "Amortizer prednji, gasni"
+      ],
+      "more": 0,
+      "pager": 0
+    }
+  ],
+  "repeat": [
+    {
+      "i": 0,
+      "q": "5Q0615",
+      "h1": "Rezultati za „5Q0615“"
+    },
+    {
+      "i": 0,
+      "q": "5Q06",
+      "h1": "Rezultati za „5Q06“"
+    },
+    {
+      "i": 0,
+      "q": "1K0615",
+      "h1": "Rezultati za „1K0615“"
+    },
+    {
+      "i": 1,
+      "q": "5Q0615",
+      "h1": "Rezultati za „5Q0615“"
+    },
+    {
+      "i": 1,
+      "q": "5Q06",
+      "h1": "Rezultati za „5Q06“"
+    },
+    {
+      "i": 1,
+      "q": "1K0615",
+      "h1": "Rezultati za „1K0615“"
+    },
+    {
+      "i": 2,
+      "q": "5Q0615",
+      "h1": "Rezultati za „5Q0615“"
+    },
+    {
+      "i": 2,
+      "q": "5Q06",
+      "h1": "Rezultati za „5Q06“"
+    },
+    {
+      "i": 2,
+      "q": "1K0615",
+      "h1": "Rezultati za „1K0615“"
+    }
+  ],
+  "searchLog": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

@@ -1,0 +1,42 @@
+-- co cart link Korpa, 1 artikal
+-- co after Dalje div "Proverite 4 polja:Upišite ime.Upišite prezime.Upiš" top=346
+-- co tab1 a "Upišite ime." top=394
+-- co after Enter on summary link input#co-firstName "" top=80
+-- co url http://localhost:3100/porudzbina#co-firstName
+-- co tab after summary link input#co-lastName "" top=80
+-- co step2 focus h2#step-title "Dostava" top=248
+-- co step2 aria - main:
+  - heading "Porudžbina" [level=1]
+  - paragraph: Bez plaćanja na sajtu. Potvrdu šaljemo e-poštom, a pre slanja vas zovemo ako nešto treba proveriti.
+  - navigation "Koraci porudžbine":
+    - list:
+      - listitem:
+        - text: "Korak 1, završen: Kontakt"
+        - 'button "Izmeni : Kontakt"'
+      - listitem: "Korak 2: Dostava"
+      - listitem: "Korak 3: Plaćanje"
+      - listitem: "Korak 4: Pregled"
+  - region "Dostava":
+    - heading "Dostava" [level=2]
+    - text: Način dostave
+    - radiogroup "Način dostave":
+      - radio "Lično preuzimanje 0 RSD Deo preuzimate u radnji kada vam javimo da je spreman. Obično isti ili sledeći radni dan." [checked]
+      - text: Lično preuzimanje 0 RSD Deo preuzimate u radnji kada vam javimo da je spreman. Obično isti ili sledeći radni dan.
+      - radio "Kurirska služba 450 RSD Plaćanje pouzećem ili virmanom; kurir dostavlja na adresu. 1–2 radna dana."
+      - text: Kurirska služba 450 RSD Plaćanje pouzećem ili virmanom; kurir dostavlja na adresu. 1–2 radna dana.
+    - button "Nazad"
+    - button "Dalje"
+  - complementary "Pregled porudžbine":
+    - heading "Vaša porudžbina" [level=2]
+    - list:
+      - listitem: Kočioni disk prednji 276 × 24 mm × 1 4.690 RSD
+    - term: Međuzbir
+    - definition: 4.690 RSD
+    - term: Dostava · lično preuzimanje
+    - definition: 0 RSD
+    - term: Ukupno
+    - definition: 4.690 RSD
+    - paragraph: "U cenu je uračunat PDV 20 %: 781,67 RSD"
+  - paragraph
+  - status
+-- co step2 tabbables ["button role=null tabindex=null label= \"Izmeni: Kontakt\"","div role=radiogroup tabindex=0 label= \"Lično preuzimanje0 RSDDeo preuzimate u r\"","button role=null tabindex=null label= \"Nazad\"","button role=null tabindex=null label= \"Dalje\""]

@@ -1,0 +1,48 @@
+{
+ "chromium-1440 A live after +1": [
+  "/polite#: 9.380 RSD"
+ ],
+ "chromium-1440 A focus after +1": "button \"Povećaj količinu\"",
+ "chromium-1440 A tabs to remove": "4 -> button \"Ukloni Kočioni disk prednji 276 × 24 mm\"",
+ "chromium-1440 A focus after remove": "BODY",
+ "chromium-1440 A live after remove": [],
+ "chromium-1440 A empty state h2": {
+  "text": "Korpa je prazna",
+  "tabindex": null
+ },
+ "chromium-1440 A first Tab after remove": "a \"Pretražite po broju dela\"",
+ "chromium-1440 B lines": 2,
+ "chromium-1440 B tabs to remove": "3 -> button \"Ukloni Kočioni disk prednji 276 × 24 mm\"",
+ "chromium-1440 B lines after": 1,
+ "chromium-1440 B focus after remove": "BODY",
+ "chromium-1440 B live after remove": [
+  "/polite#: 7.490 RSD"
+ ],
+ "chromium-1440 B first Tab after remove": "a \"Kočioni disk prednji 312 × 25 mm\"",
+ "chromium-1440 C drawer open": 1,
+ "chromium-1440 C drawer focus after remove": "div#radix-_r_0_ \"KorpaKorpa je prazna.Pretražite po broju dela\"",
+ "chromium-1440 C drawer live after remove": [],
+ "chromium-390 A live after +1": [
+  "/polite#: 9.380 RSD"
+ ],
+ "chromium-390 A focus after +1": "button \"Povećaj količinu\"",
+ "chromium-390 A tabs to remove": "4 -> button \"Ukloni Kočioni disk prednji 276 × 24 mm\"",
+ "chromium-390 A focus after remove": "BODY",
+ "chromium-390 A live after remove": [],
+ "chromium-390 A empty state h2": {
+  "text": "Korpa je prazna",
+  "tabindex": null
+ },
+ "chromium-390 A first Tab after remove": "a \"Pretražite po broju dela\"",
+ "chromium-390 B lines": 2,
+ "chromium-390 B tabs to remove": "3 -> button \"Ukloni Kočioni disk prednji 276 × 24 mm\"",
+ "chromium-390 B lines after": 1,
+ "chromium-390 B focus after remove": "BODY",
+ "chromium-390 B live after remove": [
+  "/polite#: 7.490 RSD"
+ ],
+ "chromium-390 B first Tab after remove": "a \"Kočioni disk prednji 312 × 25 mm\"",
+ "chromium-390 C drawer open": 1,
+ "chromium-390 C drawer focus after remove": "div#radix-_r_6_ \"KorpaKorpa je prazna.Pretražite po broju dela\"",
+ "chromium-390 C drawer live after remove": []
+}

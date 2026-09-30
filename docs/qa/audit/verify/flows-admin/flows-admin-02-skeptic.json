@@ -1,0 +1,90 @@
+{
+  "steps": [
+    {
+      "name": "channel checked",
+      "viber": "true",
+      "emailOptionalLabel": ""
+    },
+    {
+      "name": "thanks page",
+      "NUM": "UP-2026-000085",
+      "statusHref": "/upit/j1O-OTMFf3GqDoA3x97GXz0Ie40qn8pO__vTY5EM2kE",
+      "main": "Upit je primljen.Broj upita je UP-2026-000085. Odgovaramo u toku radnog dana.Ponudu vidite i na stranici upita — sačuvajte link."
+    },
+    {
+      "name": "contact panel",
+      "text": "Kontakt",
+      "viberHref": "viber://chat?number=%2B+381645550202",
+      "waHref": "https://wa.me/+381645550202",
+      "telHref": "tel:+381645550202"
+    },
+    {
+      "name": "send dialog",
+      "text": "Poslati ponudu kupcu?Verify Skeptik dobija ponudu na 4.690 RSD sa linkom za prihvatanje. Ponuda važi 7 dana.OdustaniPošalji ponudu"
+    },
+    {
+      "name": "after send",
+      "dialogOpen": false,
+      "toasts": [],
+      "statusBadge": "Ponuda poslata",
+      "upitLinksOnPage": [],
+      "copyButtons": 0,
+      "historyHasEmail": false
+    },
+    {
+      "name": "customer status page",
+      "main": "Upit i ponudaUP-2026-000085Ponuda poslata30.09.2026. 22:59PonudaVaži do 07.10.2026.Kočioni disk prednji 276 × 24 mmFebi Bilstein · na stanju · 1 × 4.690 RSD4.690 RSDUkupno4.690 RSDPrihvati ponuduOdbij ponuduVaš upitTreba mi prednji kočioni disk za Golf 7, 2016 (verify skeptic 02).Tok upitaUpit je primljen.30.09.2026. 22:59U obradi30.09.2026. 22:59Ponuda je poslata (važi do 07.10.2026.).30.09.2026. 22:59Ponudu i svaku promenu vidite na ovoj stranici — osvežava se sama.",
+      "acceptBtn": 1
+    },
+    {
+      "name": "convert dialog",
+      "text": "Pretvori ponudu u porudžbinuKupac je prihvatio ponudu telefonom ili u radnji. Porudžbina na 4.690 RSD dobija sve stavke iz ponude; upit se zatvara kao prihvaćen.Ime (obavezno)Prezime (obavezno)Telefon (obavezno)E-pošta (obavezno)DostavaLično preuzimanjeKurirska službaPlaćanjeGotovinom pri preuzimanjuKarticom pri preuzimanjuOdloženo plaćanjeOdustaniKreiraj porudžbinu",
+      "emailValue": "",
+      "emailRequiredAttr": true,
+      "phoneValue": "+381645550202"
+    },
+    {
+      "name": "submit with empty e-mail (native)",
+      "validationMessage": "Please fill out this field.",
+      "dialogOpen": true,
+      "url": "http://localhost:3100/admin/upiti/UP-2026-000085"
+    },
+    {
+      "name": "submit with empty e-mail (server)",
+      "alerts": [
+        "Upišite ispravnu e-mail adresu."
+      ],
+      "dialogOpen": true,
+      "url": "http://localhost:3100/admin/upiti/UP-2026-000085"
+    },
+    {
+      "name": "probe",
+      "eventTypes": [
+        "inquiry.created",
+        "inquiry.status_changed",
+        "inquiry.status_changed"
+      ],
+      "kind": "part",
+      "photoCount": 0,
+      "status": "ponuda_poslata",
+      "vin": null
+    },
+    {
+      "name": "errors",
+      "customer": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      },
+      "admin": {
+        "console": [
+          "[CONVEX M(inquiriesAdmin:convertToOrder)] [Request ID: 8f0455de9557852c] Server Error\nUncaught ConvexError: {\"field\":\"contact.email\",\"code\":\"INVALID\",\"message\":\"Upišite ispravnu e-mail adresu.\"}\n    at handler (../convex/inquiriesAdmin.ts:672:6)\n"
+        ],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    }
+  ]
+}

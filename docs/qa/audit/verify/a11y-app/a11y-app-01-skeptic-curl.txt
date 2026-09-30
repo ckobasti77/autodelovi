@@ -1,0 +1,126 @@
+=== /admin [none]
+HTTP/1.1 307 Temporary Redirect
+location: /prijava?next=%2Fadmin
+body bytes: 22
+=== /admin [stale]
+HTTP/1.1 200 OK
+location: /prijava?next=%2Fadmin
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body bytes: 0
+=== /admin [onlyrefresh]
+HTTP/1.1 200 OK
+location: /prijava?next=%2Fadmin
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body bytes: 0
+=== /nalog [none]
+HTTP/1.1 307 Temporary Redirect
+location: /prijava?next=%2Fnalog
+body bytes: 22
+=== /nalog [stale]
+HTTP/1.1 200 OK
+location: /prijava?next=%2Fnalog
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body bytes: 0
+=== /nalog [onlyrefresh]
+HTTP/1.1 200 OK
+location: /prijava?next=%2Fnalog
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body bytes: 0
+=== /majstor/brza-porudzbina [none]
+HTTP/1.1 307 Temporary Redirect
+location: /prijava?next=%2Fmajstor%2Fbrza-porudzbina
+body bytes: 42
+=== /majstor/brza-porudzbina [stale]
+HTTP/1.1 200 OK
+location: /prijava?next=%2Fmajstor%2Fbrza-porudzbina
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body bytes: 0
+=== /majstor/brza-porudzbina [onlyrefresh]
+HTTP/1.1 200 OK
+location: /prijava?next=%2Fmajstor%2Fbrza-porudzbina
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body bytes: 0
+=== /nalog/porudzbine [none]
+HTTP/1.1 307 Temporary Redirect
+location: /prijava?next=%2Fnalog%2Fporudzbine
+body bytes: 35
+=== /nalog/porudzbine [stale]
+HTTP/1.1 200 OK
+location: /prijava?next=%2Fnalog%2Fporudzbine
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body bytes: 0
+=== /nalog/porudzbine [onlyrefresh]
+HTTP/1.1 200 OK
+location: /prijava?next=%2Fnalog%2Fporudzbine
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body bytes: 0
+=== /majstor/cenovnik [none]
+HTTP/1.1 307 Temporary Redirect
+location: /prijava?next=%2Fmajstor%2Fcenovnik
+body bytes: 35
+=== /majstor/cenovnik [stale]
+HTTP/1.1 200 OK
+location: /prijava?next=%2Fmajstor%2Fcenovnik
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body bytes: 0
+=== /majstor/cenovnik [onlyrefresh]
+HTTP/1.1 200 OK
+location: /prijava?next=%2Fmajstor%2Fcenovnik
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body bytes: 0
+=== /admin/porudzbine [none]
+HTTP/1.1 307 Temporary Redirect
+location: /prijava?next=%2Fadmin%2Fporudzbine
+body bytes: 35
+=== /admin/porudzbine [stale]
+HTTP/1.1 200 OK
+location: /prijava?next=%2Fadmin%2Fporudzbine
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body bytes: 0
+=== /admin/porudzbine [onlyrefresh]
+HTTP/1.1 200 OK
+location: /prijava?next=%2Fadmin%2Fporudzbine
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body bytes: 0
+=== / [stale]
+HTTP/1.1 200 OK
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body bytes: 252445
+=== /prijava [stale]
+HTTP/1.1 200 OK
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body bytes: 97776
+=== /delovi [stale]
+HTTP/1.1 200 OK
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body bytes: 268696

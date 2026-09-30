@@ -1,0 +1,60 @@
+[
+  {
+    "run": 1,
+    "engine": "chromium",
+    "width": 1440,
+    "height": 900,
+    "target": 900,
+    "via": "/delovi",
+    "before": {
+      "path": "/",
+      "y": 900,
+      "docH": 13394,
+      "maxY": 12494,
+      "trackH": 3716,
+      "p": 0.312153,
+      "stage": 2,
+      "status": "loading",
+      "cur": "02Točkovi",
+      "restoration": "auto"
+    },
+    "onVia": {
+      "path": "/delovi",
+      "y": 0,
+      "docH": 5770,
+      "maxY": 4870,
+      "trackH": null,
+      "restoration": "auto"
+    },
+    "afterBack": {
+      "path": "/",
+      "y": 442,
+      "docH": 13394,
+      "maxY": 12494,
+      "trackH": 3716,
+      "p": 0.153125,
+      "stage": 1,
+      "status": "loading",
+      "cur": "01Karoserija i svetla",
+      "restoration": "auto"
+    },
+    "after6s": {
+      "path": "/",
+      "y": 442,
+      "docH": 13394,
+      "maxY": 12494,
+      "trackH": 3716,
+      "p": 0.153125,
+      "stage": 1,
+      "status": "ready",
+      "cur": "01Karoserija i svetla",
+      "restoration": "auto"
+    },
+    "errors": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+]

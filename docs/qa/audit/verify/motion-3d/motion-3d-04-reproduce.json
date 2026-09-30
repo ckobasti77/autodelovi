@@ -1,0 +1,548 @@
+{
+ "runs": [
+  {
+   "kind": "deeplink",
+   "slug": "kocioni-diskovi",
+   "width": 1440,
+   "reducedMotion": "no-preference",
+   "scrollY": 1326,
+   "progress": 0.460069,
+   "stage": 4,
+   "status": "ready",
+   "selected": "kocioni-diskovi",
+   "timeline": "desktop",
+   "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+   "phoneLabel": "04 / 07 Agregati i hlađenje",
+   "panelHeading": "Kočioni diskovi"
+  },
+  {
+   "kind": "deeplink",
+   "slug": "abs-senzori",
+   "width": 1440,
+   "reducedMotion": "no-preference",
+   "scrollY": 1326,
+   "progress": 0.460069,
+   "stage": 4,
+   "status": "ready",
+   "selected": "abs-senzori",
+   "timeline": "desktop",
+   "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+   "phoneLabel": "04 / 07 Agregati i hlađenje",
+   "panelHeading": "ABS senzori"
+  },
+  {
+   "kind": "deeplink",
+   "slug": "amortizeri-opruge",
+   "width": 1440,
+   "reducedMotion": "no-preference",
+   "scrollY": 1326,
+   "progress": 0.460069,
+   "stage": 4,
+   "status": "ready",
+   "selected": "amortizeri-opruge",
+   "timeline": "desktop",
+   "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+   "phoneLabel": "04 / 07 Agregati i hlađenje",
+   "panelHeading": "Amortizeri i opruge"
+  },
+  {
+   "kind": "deeplink",
+   "slug": "kocioni-diskovi",
+   "width": 1440,
+   "reducedMotion": "reduce",
+   "scrollY": 0,
+   "progress": 0.46,
+   "stage": 3,
+   "status": "ready",
+   "selected": "kocioni-diskovi",
+   "timeline": "desktop",
+   "ariaCurrent": "03 Kočnice, vešanje, upravljanje",
+   "phoneLabel": "03 / 07 Kočnice i vešanje",
+   "panelHeading": "Kočioni diskovi"
+  },
+  {
+   "kind": "deeplink",
+   "slug": "kocioni-diskovi",
+   "width": 390,
+   "reducedMotion": "no-preference",
+   "scrollY": 1485,
+   "progress": 0.520142,
+   "stage": 4,
+   "status": "ready",
+   "selected": "kocioni-diskovi",
+   "timeline": "mobile",
+   "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+   "phoneLabel": "04 / 07 Agregati i hlađenje",
+   "panelHeading": "Kočioni diskovi"
+  },
+  {
+   "kind": "deeplink",
+   "slug": "kocioni-diskovi",
+   "width": 1280,
+   "reducedMotion": "no-preference",
+   "scrollY": 1179,
+   "progress": 0.460156,
+   "stage": 4,
+   "status": "loading",
+   "selected": "kocioni-diskovi",
+   "timeline": "desktop",
+   "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+   "phoneLabel": "04 / 07 Agregati i hlađenje",
+   "panelHeading": "Kočioni diskovi"
+  },
+  {
+   "kind": "deeplink",
+   "slug": "farovi",
+   "width": 1440,
+   "reducedMotion": "no-preference",
+   "scrollY": 692,
+   "progress": 0.239931,
+   "stage": 1,
+   "status": "ready",
+   "selected": "farovi",
+   "timeline": "desktop",
+   "ariaCurrent": "01 Karoserija, stakla i svetla",
+   "phoneLabel": "01 / 07 Karoserija i svetla",
+   "panelHeading": "Farovi"
+  },
+  {
+   "kind": "deeplink",
+   "slug": "interkuler",
+   "width": 1440,
+   "reducedMotion": "no-preference",
+   "scrollY": 1671,
+   "progress": 0.579861,
+   "stage": 4,
+   "status": "ready",
+   "selected": "interkuler",
+   "timeline": "desktop",
+   "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+   "phoneLabel": "04 / 07 Agregati i hlađenje",
+   "panelHeading": "Interkuler"
+  },
+  {
+   "kind": "deeplink",
+   "slug": "motor",
+   "width": 1440,
+   "reducedMotion": "no-preference",
+   "scrollY": 2075,
+   "progress": 0.720139,
+   "stage": 6,
+   "status": "ready",
+   "selected": "motor",
+   "timeline": "desktop",
+   "ariaCurrent": "06 Menjač, kvačilo, poluosovine",
+   "phoneLabel": "06 / 07 Menjač i kvačilo",
+   "panelHeading": "Blok motora i glava"
+  },
+  {
+   "kind": "deeplink",
+   "slug": "menjac",
+   "width": 1440,
+   "reducedMotion": "no-preference",
+   "scrollY": 2420,
+   "progress": 0.839931,
+   "stage": 6,
+   "status": "ready",
+   "selected": "menjac",
+   "timeline": "desktop",
+   "ariaCurrent": "06 Menjač, kvačilo, poluosovine",
+   "phoneLabel": "06 / 07 Menjač i kvačilo",
+   "panelHeading": "Menjač (DSG)"
+  },
+  {
+   "kind": "deeplink",
+   "slug": "auspuh",
+   "width": 1440,
+   "reducedMotion": "no-preference",
+   "scrollY": 2651,
+   "progress": 0.920139,
+   "stage": 7,
+   "status": "loading",
+   "selected": "auspuh",
+   "timeline": "desktop",
+   "ariaCurrent": "07 Izduvni sistem",
+   "phoneLabel": "07 / 07 Izduvni sistem",
+   "panelHeading": "Auspuh (lonci i cevi)"
+  },
+  {
+   "kind": "strip",
+   "button": 1,
+   "samples": [
+    {
+     "t": 1200,
+     "scrollY": 692,
+     "progress": 0.239871,
+     "stage": 1,
+     "status": "loading",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "01 Karoserija, stakla i svetla",
+     "phoneLabel": "01 / 07 Karoserija i svetla",
+     "panelHeading": null
+    },
+    {
+     "t": 2000,
+     "scrollY": 692,
+     "progress": 0.239931,
+     "stage": 1,
+     "status": "loading",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "01 Karoserija, stakla i svetla",
+     "phoneLabel": "01 / 07 Karoserija i svetla",
+     "panelHeading": null
+    },
+    {
+     "t": 3500,
+     "scrollY": 692,
+     "progress": 0.239931,
+     "stage": 1,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "01 Karoserija, stakla i svetla",
+     "phoneLabel": "01 / 07 Karoserija i svetla",
+     "panelHeading": null
+    }
+   ]
+  },
+  {
+   "kind": "strip",
+   "button": 2,
+   "samples": [
+    {
+     "t": 1200,
+     "scrollY": 923,
+     "progress": 0.320136,
+     "stage": 3,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "03 Kočnice, vešanje, upravljanje",
+     "phoneLabel": "03 / 07 Kočnice i vešanje",
+     "panelHeading": null
+    },
+    {
+     "t": 2000,
+     "scrollY": 923,
+     "progress": 0.320139,
+     "stage": 3,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "03 Kočnice, vešanje, upravljanje",
+     "phoneLabel": "03 / 07 Kočnice i vešanje",
+     "panelHeading": null
+    },
+    {
+     "t": 3500,
+     "scrollY": 923,
+     "progress": 0.320139,
+     "stage": 3,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "03 Kočnice, vešanje, upravljanje",
+     "phoneLabel": "03 / 07 Kočnice i vešanje",
+     "panelHeading": null
+    }
+   ]
+  },
+  {
+   "kind": "strip",
+   "button": 3,
+   "samples": [
+    {
+     "t": 1200,
+     "scrollY": 10,
+     "progress": 0.001023,
+     "stage": 0,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "00 Sklopljen automobil",
+     "phoneLabel": "00 / 07 Sklopljeno",
+     "panelHeading": null
+    },
+    {
+     "t": 2000,
+     "scrollY": 810,
+     "progress": 0.041589,
+     "stage": 0,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "00 Sklopljen automobil",
+     "phoneLabel": "00 / 07 Sklopljeno",
+     "panelHeading": null
+    },
+    {
+     "t": 3500,
+     "scrollY": 1154,
+     "progress": 0.27823,
+     "stage": 2,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "02 Točkovi",
+     "phoneLabel": "02 / 07 Točkovi",
+     "panelHeading": null
+    }
+   ]
+  },
+  {
+   "kind": "strip",
+   "button": 4,
+   "samples": [
+    {
+     "t": 1200,
+     "scrollY": 1671,
+     "progress": 0.579589,
+     "stage": 4,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+     "phoneLabel": "04 / 07 Agregati i hlađenje",
+     "panelHeading": null
+    },
+    {
+     "t": 2000,
+     "scrollY": 1671,
+     "progress": 0.579758,
+     "stage": 4,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+     "phoneLabel": "04 / 07 Agregati i hlađenje",
+     "panelHeading": null
+    },
+    {
+     "t": 3500,
+     "scrollY": 1671,
+     "progress": 0.579849,
+     "stage": 4,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+     "phoneLabel": "04 / 07 Agregati i hlađenje",
+     "panelHeading": null
+    }
+   ]
+  },
+  {
+   "kind": "strip",
+   "button": 5,
+   "samples": [
+    {
+     "t": 1200,
+     "scrollY": 45,
+     "progress": 0.042417,
+     "stage": 0,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "00 Sklopljen automobil",
+     "phoneLabel": "00 / 07 Sklopljeno",
+     "panelHeading": null
+    },
+    {
+     "t": 2000,
+     "scrollY": 381,
+     "progress": 0.059425,
+     "stage": 0,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "00 Sklopljen automobil",
+     "phoneLabel": "00 / 07 Sklopljeno",
+     "panelHeading": null
+    },
+    {
+     "t": 3500,
+     "scrollY": 772,
+     "progress": 0.135076,
+     "stage": 1,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "01 Karoserija, stakla i svetla",
+     "phoneLabel": "01 / 07 Karoserija i svetla",
+     "panelHeading": null
+    }
+   ]
+  },
+  {
+   "kind": "strip",
+   "button": 6,
+   "samples": [
+    {
+     "t": 1200,
+     "scrollY": 39,
+     "progress": 0.026052,
+     "stage": 0,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "00 Sklopljen automobil",
+     "phoneLabel": "00 / 07 Sklopljeno",
+     "panelHeading": null
+    },
+    {
+     "t": 2000,
+     "scrollY": 39,
+     "progress": 0.026052,
+     "stage": 0,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "00 Sklopljen automobil",
+     "phoneLabel": "00 / 07 Sklopljeno",
+     "panelHeading": null
+    },
+    {
+     "t": 3500,
+     "scrollY": 106,
+     "progress": 0.022397,
+     "stage": 0,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "00 Sklopljen automobil",
+     "phoneLabel": "00 / 07 Sklopljeno",
+     "panelHeading": null
+    }
+   ]
+  },
+  {
+   "kind": "strip",
+   "button": 7,
+   "samples": [
+    {
+     "t": 1200,
+     "scrollY": 1724,
+     "progress": 0,
+     "stage": 0,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "00 Sklopljen automobil",
+     "phoneLabel": "00 / 07 Sklopljeno",
+     "panelHeading": null
+    },
+    {
+     "t": 2000,
+     "scrollY": 2522,
+     "progress": 0.610558,
+     "stage": 5,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "05 Motor, turbina, gorivo, paljenje",
+     "phoneLabel": "05 / 07 Motor i turbina",
+     "panelHeading": null
+    },
+    {
+     "t": 3500,
+     "scrollY": 2651,
+     "progress": 0.920139,
+     "stage": 7,
+     "status": "ready",
+     "selected": null,
+     "timeline": "desktop",
+     "ariaCurrent": "07 Izduvni sistem",
+     "phoneLabel": "07 / 07 Izduvni sistem",
+     "panelHeading": null
+    }
+   ]
+  },
+  {
+   "kind": "phone-next",
+   "seq": [
+    {
+     "scrollY": 980,
+     "progress": 0.220972,
+     "stage": 1,
+     "status": "loading",
+     "selected": null,
+     "timeline": "mobile",
+     "ariaCurrent": "01 Karoserija, stakla i svetla",
+     "phoneLabel": "01 / 07 Karoserija i svetla",
+     "panelHeading": null
+    },
+    {
+     "scrollY": 1147,
+     "progress": 0.319905,
+     "stage": 2,
+     "status": "loading",
+     "selected": null,
+     "timeline": "mobile",
+     "ariaCurrent": "02 Točkovi",
+     "phoneLabel": "02 / 07 Točkovi",
+     "panelHeading": null
+    },
+    {
+     "scrollY": 1485,
+     "progress": 0.520142,
+     "stage": 4,
+     "status": "ready",
+     "selected": null,
+     "timeline": "mobile",
+     "ariaCurrent": "04 Pomoćni agregati, hlađenje, usis",
+     "phoneLabel": "04 / 07 Agregati i hlađenje",
+     "panelHeading": null
+    },
+    {
+     "scrollY": 1856,
+     "progress": 0.739929,
+     "stage": 5,
+     "status": "ready",
+     "selected": null,
+     "timeline": "mobile",
+     "ariaCurrent": "05 Motor, turbina, gorivo, paljenje",
+     "phoneLabel": "05 / 07 Motor i turbina",
+     "panelHeading": null
+    },
+    {
+     "scrollY": 2008,
+     "progress": 0.829976,
+     "stage": 6,
+     "status": "ready",
+     "selected": null,
+     "timeline": "mobile",
+     "ariaCurrent": "06 Menjač, kvačilo, poluosovine",
+     "phoneLabel": "06 / 07 Menjač i kvačilo",
+     "panelHeading": null
+    },
+    {
+     "scrollY": 2160,
+     "progress": 0.920024,
+     "stage": 7,
+     "status": "ready",
+     "selected": null,
+     "timeline": "mobile",
+     "ariaCurrent": "07 Izduvni sistem",
+     "phoneLabel": "07 / 07 Izduvni sistem",
+     "panelHeading": null
+    },
+    {
+     "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /Sledeća fa"
+    },
+    {
+     "scrollY": 2160,
+     "progress": 0.920024,
+     "stage": 7,
+     "status": "ready",
+     "selected": null,
+     "timeline": "mobile",
+     "ariaCurrent": "07 Izduvni sistem",
+     "phoneLabel": "07 / 07 Izduvni sistem",
+     "panelHeading": null
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+a: "Dodaj u korpu : Disk"
+b: "Dodaj u korpu : Disk"
+c: "Izmeni : Kontakt"
+d: "Dodaj u korpu: Disk"
+e: "Dodaj u korpu : Disk"

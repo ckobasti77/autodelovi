@@ -1,0 +1,260 @@
+[
+ {
+  "route": "/delovi/kocioni-diskovi",
+  "w": 1024,
+  "h": 768,
+  "cards": 9,
+  "cols": 3,
+  "cardW": 203,
+  "gridW": 645,
+  "railW": 280,
+  "clamped": [
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 288 × 25 mm, ventilirani"
+  ],
+  "total": 9,
+  "chip": {
+   "imgW": 201,
+   "imgH": 151,
+   "chipBottom": 151,
+   "chipRight": 201
+  }
+ },
+ {
+  "route": "/delovi/kocioni-diskovi",
+  "w": 1280,
+  "h": 800,
+  "cards": 9,
+  "cols": 4,
+  "cardW": 204,
+  "gridW": 882,
+  "railW": 280,
+  "clamped": [
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 288 × 25 mm, ventilirani"
+  ],
+  "total": 9,
+  "chip": {
+   "imgW": 202,
+   "imgH": 152,
+   "chipBottom": 152,
+   "chipRight": 202
+  }
+ },
+ {
+  "route": "/delovi/kocioni-diskovi",
+  "w": 1440,
+  "h": 900,
+  "cards": 9,
+  "cols": 4,
+  "cardW": 242,
+  "gridW": 1040,
+  "railW": 280,
+  "clamped": [],
+  "total": 9,
+  "chip": {
+   "imgW": 240,
+   "imgH": 180,
+   "chipBottom": 180,
+   "chipRight": 240
+  }
+ },
+ {
+  "route": "/delovi/kocioni-diskovi",
+  "w": 1536,
+  "h": 864,
+  "cards": 9,
+  "cols": 4,
+  "cardW": 266,
+  "gridW": 1136,
+  "railW": 280,
+  "clamped": [],
+  "total": 9,
+  "chip": {
+   "imgW": 264,
+   "imgH": 198,
+   "chipBottom": 198,
+   "chipRight": 264
+  }
+ },
+ {
+  "route": "/delovi/kocioni-diskovi",
+  "w": 1920,
+  "h": 1080,
+  "cards": 9,
+  "cols": 5,
+  "cardW": 200,
+  "gridW": 1128,
+  "railW": 280,
+  "clamped": [
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 288 × 25 mm, ventilirani"
+  ],
+  "total": 9,
+  "chip": {
+   "imgW": 198,
+   "imgH": 149,
+   "chipBottom": 149,
+   "chipRight": 198
+  }
+ },
+ {
+  "route": "/delovi/kocioni-diskovi",
+  "w": 2560,
+  "h": 1440,
+  "cards": 9,
+  "cols": 5,
+  "cardW": 200,
+  "gridW": 1128,
+  "railW": 280,
+  "clamped": [
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 288 × 25 mm, ventilirani"
+  ],
+  "total": 9,
+  "chip": {
+   "imgW": 198,
+   "imgH": 149,
+   "chipBottom": 149,
+   "chipRight": 198
+  }
+ },
+ {
+  "route": "/delovi/kocioni-diskovi/volkswagen",
+  "w": 1440,
+  "h": 900,
+  "cards": 8,
+  "cols": 4,
+  "cardW": 242,
+  "gridW": 1040,
+  "railW": 280,
+  "clamped": [],
+  "total": 8,
+  "chip": {
+   "imgW": 240,
+   "imgH": 180,
+   "chipBottom": 180,
+   "chipRight": 240
+  }
+ },
+ {
+  "route": "/delovi/kocioni-diskovi/volkswagen",
+  "w": 1920,
+  "h": 1080,
+  "cards": 8,
+  "cols": 5,
+  "cardW": 200,
+  "gridW": 1128,
+  "railW": 280,
+  "clamped": [
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 288 × 25 mm, ventilirani"
+  ],
+  "total": 8,
+  "chip": {
+   "imgW": 198,
+   "imgH": 149,
+   "chipBottom": 149,
+   "chipRight": 198
+  }
+ },
+ {
+  "route": "/delovi/kocioni-diskovi/volkswagen",
+  "w": 2560,
+  "h": 1440,
+  "cards": 8,
+  "cols": 5,
+  "cardW": 200,
+  "gridW": 1128,
+  "railW": 280,
+  "clamped": [
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "Kočioni disk prednji 288 × 25 mm, ventilirani"
+  ],
+  "total": 8,
+  "chip": {
+   "imgW": 198,
+   "imgH": 149,
+   "chipBottom": 149,
+   "chipRight": 198
+  }
+ },
+ {
+  "route": "/pretraga?q=disk",
+  "w": 1440,
+  "h": 900,
+  "cards": 9,
+  "cols": 4,
+  "cardW": 318,
+  "gridW": 1344,
+  "railW": null,
+  "clamped": [],
+  "total": 9,
+  "chip": {
+   "imgW": 316,
+   "imgH": 237,
+   "chipBottom": 237,
+   "chipRight": 316
+  }
+ },
+ {
+  "route": "/pretraga?q=disk",
+  "w": 1920,
+  "h": 1080,
+  "cards": 9,
+  "cols": 5,
+  "cardW": 262,
+  "gridW": 1440,
+  "railW": null,
+  "clamped": [],
+  "total": 9,
+  "chip": {
+   "imgW": 260,
+   "imgH": 195,
+   "chipBottom": 195,
+   "chipRight": 260
+  }
+ },
+ {
+  "route": "/pretraga?q=disk",
+  "w": 2560,
+  "h": 1440,
+  "cards": 9,
+  "cols": 5,
+  "cardW": 262,
+  "gridW": 1440,
+  "railW": null,
+  "clamped": [],
+  "total": 9,
+  "chip": {
+   "imgW": 260,
+   "imgH": 195,
+   "chipBottom": 195,
+   "chipRight": 260
+  }
+ },
+ {
+  "route": "/delovi/kocnice",
+  "w": 1440,
+  "h": 900,
+  "cards": 0
+ },
+ {
+  "route": "/delovi/kocnice",
+  "w": 1920,
+  "h": 1080,
+  "cards": 0
+ },
+ {
+  "route": "/delovi/kocnice",
+  "w": 2560,
+  "h": 1440,
+  "cards": 0
+ }
+]

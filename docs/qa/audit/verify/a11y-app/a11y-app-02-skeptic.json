@@ -1,0 +1,170 @@
+{
+  "at": "2026-09-30T21:08:26.147Z",
+  "base": "http://localhost:3100",
+  "results": [
+    {
+      "label": "nojs-prijava",
+      "route": "/prijava",
+      "js": false,
+      "delayChunksMs": 0,
+      "submitAfterMs": 1499,
+      "hydratedAtSubmit": false,
+      "chunkRequests": 0,
+      "form": {
+        "method": null,
+        "action": null,
+        "named": [
+          "email:email",
+          "password:password"
+        ],
+        "submitDisabled": false
+      },
+      "submitNavigation": "GET http://localhost:3100/prijava?email=audit-verify-a11y02-1790802487178%40primer.rs&password=TajnaLozinka-777",
+      "finalUrl": "http://localhost:3100/prijava?email=audit-verify-a11y02-1790802487178%40primer.rs&password=TajnaLozinka-777",
+      "passwordInUrl": true,
+      "referrerPolicyOnResult": "strict-origin-when-cross-origin",
+      "navs": [
+        "GET http://localhost:3100/prijava",
+        "GET http://localhost:3100/prijava?email=audit-verify-a11y02-1790802487178%40primer.rs&password=TajnaLozinka-777"
+      ]
+    },
+    {
+      "label": "nojs-registracija",
+      "route": "/registracija",
+      "js": false,
+      "delayChunksMs": 0,
+      "submitAfterMs": 1507,
+      "hydratedAtSubmit": false,
+      "chunkRequests": 0,
+      "form": {
+        "method": null,
+        "action": null,
+        "named": [
+          "name:text",
+          "email:email",
+          "password:password"
+        ],
+        "submitDisabled": false
+      },
+      "submitNavigation": "GET http://localhost:3100/registracija?name=Verifikacija+Skeptik&email=audit-verify-a11y02-1790802487178%40primer.rs&password=TajnaLozinka-777",
+      "finalUrl": "http://localhost:3100/registracija?name=Verifikacija+Skeptik&email=audit-verify-a11y02-1790802487178%40primer.rs&password=TajnaLozinka-777",
+      "passwordInUrl": true,
+      "referrerPolicyOnResult": "strict-origin-when-cross-origin",
+      "navs": [
+        "GET http://localhost:3100/registracija",
+        "GET http://localhost:3100/registracija?name=Verifikacija+Skeptik&email=audit-verify-a11y02-1790802487178%40primer.rs&password=TajnaLozinka-777"
+      ]
+    },
+    {
+      "label": "nojs-za-majstore-registracija",
+      "route": "/za-majstore/registracija",
+      "js": false,
+      "delayChunksMs": 0,
+      "submitAfterMs": 1658,
+      "hydratedAtSubmit": false,
+      "chunkRequests": 0,
+      "form": {
+        "method": null,
+        "action": null,
+        "named": [
+          "email:email",
+          "password:password",
+          "companyName:text",
+          "pib:text",
+          "mb:text",
+          "contactPerson:text",
+          "phone:tel",
+          "city:text",
+          "address:text"
+        ],
+        "submitDisabled": false
+      },
+      "submitNavigation": "GET http://localhost:3100/za-majstore/registracija?email=audit-verify-a11y02-1790802487178%40primer.rs&password=TajnaLozinka-777&companyName=&pib=&mb=&contactPerson=&phone=&city=&address=",
+      "finalUrl": "http://localhost:3100/za-majstore/registracija?email=audit-verify-a11y02-1790802487178%40primer.rs&password=TajnaLozinka-777&companyName=&pib=&mb=&contactPerson=&phone=&city=&address=",
+      "passwordInUrl": true,
+      "referrerPolicyOnResult": "strict-origin-when-cross-origin",
+      "navs": [
+        "GET http://localhost:3100/za-majstore/registracija",
+        "GET http://localhost:3100/za-majstore/registracija?email=audit-verify-a11y02-1790802487178%40primer.rs&password=TajnaLozinka-777&companyName=&pib=&mb=&contactPerson=&phone=&city=&address="
+      ]
+    },
+    {
+      "label": "prehydration-prijava",
+      "route": "/prijava?next=%2Fnalog",
+      "js": true,
+      "delayChunksMs": 12000,
+      "submitAfterMs": 1519,
+      "hydratedAtSubmit": false,
+      "chunkRequests": 46,
+      "form": {
+        "method": null,
+        "action": null,
+        "named": [
+          "email:email",
+          "password:password"
+        ],
+        "submitDisabled": false
+      },
+      "submitNavigation": "GET http://localhost:3100/prijava?email=audit-verify-a11y02-1790802487178%40primer.rs&password=TajnaLozinka-777",
+      "finalUrl": "http://localhost:3100/prijava?email=audit-verify-a11y02-1790802487178%40primer.rs&password=TajnaLozinka-777",
+      "passwordInUrl": true,
+      "referrerPolicyOnResult": "strict-origin-when-cross-origin",
+      "navs": [
+        "GET http://localhost:3100/prijava?next=%2Fnalog",
+        "GET http://localhost:3100/prijava?email=audit-verify-a11y02-1790802487178%40primer.rs&password=TajnaLozinka-777"
+      ]
+    },
+    {
+      "label": "prehydration-registracija",
+      "route": "/registracija",
+      "js": true,
+      "delayChunksMs": 12000,
+      "submitAfterMs": 1497,
+      "hydratedAtSubmit": false,
+      "chunkRequests": 46,
+      "form": {
+        "method": null,
+        "action": null,
+        "named": [
+          "name:text",
+          "email:email",
+          "password:password"
+        ],
+        "submitDisabled": false
+      },
+      "submitNavigation": "GET http://localhost:3100/registracija?name=Verifikacija+Skeptik&email=audit-verify-a11y02-1790802487178%40primer.rs&password=TajnaLozinka-777",
+      "finalUrl": "http://localhost:3100/registracija?name=Verifikacija+Skeptik&email=audit-verify-a11y02-1790802487178%40primer.rs&password=TajnaLozinka-777",
+      "passwordInUrl": true,
+      "referrerPolicyOnResult": "strict-origin-when-cross-origin",
+      "navs": [
+        "GET http://localhost:3100/registracija",
+        "GET http://localhost:3100/registracija?name=Verifikacija+Skeptik&email=audit-verify-a11y02-1790802487178%40primer.rs&password=TajnaLozinka-777"
+      ]
+    },
+    {
+      "label": "hydrated-prijava-control",
+      "route": "/prijava",
+      "js": true,
+      "delayChunksMs": 0,
+      "submitAfterMs": 10080,
+      "hydratedAtSubmit": false,
+      "chunkRequests": 0,
+      "form": {
+        "method": null,
+        "action": null,
+        "named": [
+          "email:email",
+          "password:password"
+        ],
+        "submitDisabled": false
+      },
+      "submitNavigation": null,
+      "finalUrl": "http://localhost:3100/prijava",
+      "passwordInUrl": false,
+      "referrerPolicyOnResult": null,
+      "navs": [
+        "GET http://localhost:3100/prijava"
+      ]
+    }
+  ]
+}

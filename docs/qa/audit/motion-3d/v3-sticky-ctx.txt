@@ -1,0 +1,6 @@
+A inline buy button top 872
+A bar at top {"vis":"hidden","op":"1","tr":"matrix(1, 0, 0, 1, 0, 143)","ariaHidden":"true"}
+A bar after scrolling past {"scrollY":1172,"bar":{"vis":"visible","op":"1","tr":"matrix(1, 0, 0, 1, 0, 71.5)","ariaHidden":"false"}}
+A bar after scrolling back {"scrollY":0,"bar":{"vis":"hidden","op":"1","tr":"matrix(1, 0, 0, 1, 0, 143)","ariaHidden":"true"}}
+B after loss + scroll {"state":{"ready":false,"tier":"high","status":"lost","progress":0.416319,"stage":3,"selected":null,"hovered":null,"timeline":"desktop","reducedMotion":false},"canvasPresent":true,"canvasChain":["canvas op=1 z=auto vis=visible disp=block","div op=1 z=auto vis=visible disp=block","div op=1 z=auto vis=visible disp=block","div op=0 z=auto vis=visible disp=block","div op=1 z=auto vis=visible disp=block","div op=1 z=auto vis=visible disp=block","div op=1 z=auto vis=visible disp=flex"],"topAtCar":"canvas."}
+B errors {"console":[],"pageErrors":[],"failedRequests":[],"badResponses":[]}

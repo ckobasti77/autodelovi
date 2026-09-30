@@ -1,0 +1,44 @@
+{
+  "chromium-1440-home": {
+    "delay": 6000,
+    "visibleAt": 789,
+    "hydratedBeforeTyping": false,
+    "typedAt": 1613,
+    "domAfterTyping": "5Q0615505R",
+    "hydratedRightAfterTyping": false,
+    "hydratedAt": 10294,
+    "after": {
+      "value": "",
+      "sameNode": true,
+      "focused": true
+    },
+    "chunkRequestsDelayed": 25
+  },
+  "chromium-1440-upit": {
+    "delay": 6000,
+    "visibleAt": 1244,
+    "hydratedBeforeTyping": false,
+    "typedAt": 2697,
+    "domAfterTyping": {
+      "vin": "WVWZZZ1KZ8W123456",
+      "msg": "Turbina za Golf 7, dizel."
+    },
+    "hydratedRightAfterTyping": false,
+    "hydratedAt": 7017,
+    "after": {
+      "vin": "",
+      "sameNode": true,
+      "msg": "",
+      "vinCounter": "0 / 17 znakova",
+      "msgCounter": "0 / 2.000",
+      "brand": ""
+    },
+    "afterSubmit": {
+      "url": "/upit",
+      "alerts": [
+        "Proverite označena polja:Napišite šta vam treba — naziv dela ili kvar."
+      ]
+    },
+    "chunkRequestsDelayed": 25
+  }
+}

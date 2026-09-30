@@ -1,0 +1,108 @@
+{
+  "customerBaseline": [],
+  "zeroH1": "Nema rezultata za „zzflowsmuoiu0fg“",
+  "guestAfterAdd": [
+    "ABS senzor prednji Meyle · OEM 6R0 927 986 S 2.590 RSD × 1 2.590 RSD"
+  ],
+  "guestAfterReload": [
+    "ABS senzor prednji Meyle · OEM 6R0 927 986 S 2.590 RSD × 1 2.590 RSD"
+  ],
+  "onOrderBuyBox": "5.490 RSD sa PDV-om Po porudžbini · 6 dana Poruči : Kočioni disk prednji 288 × 25 mm, ventilirani Pošaljite upit",
+  "guestWithOnOrder": [
+    "ABS senzor prednji Meyle · OEM 6R0 927 986 S 2.590 RSD × 1 2.590 RSD",
+    "Kočioni disk prednji 288 × 25 mm, ventilirani ATE · OEM 1K0 615 868 F 5.490 RSD × 1 Deo ide po porudžbini · 6 dana. 5.490 RSD"
+  ],
+  "qtyAttrs": {
+    "type": "number",
+    "inputmode": "numeric",
+    "max": "24",
+    "ariaMax": null
+  },
+  "qtyAfter99": {
+    "value": "24",
+    "line": "ABS senzor prednji Meyle · OEM 6R0 927 986 S 2.590 RSD × 24 62.160 RSD",
+    "toasts": []
+  },
+  "inputs": [
+    {
+      "label": "Ime",
+      "type": "text",
+      "inputmode": null,
+      "autocomplete": "given-name",
+      "maxlength": null,
+      "required": null
+    },
+    {
+      "label": "Prezime",
+      "type": "text",
+      "inputmode": null,
+      "autocomplete": "family-name",
+      "maxlength": null,
+      "required": null
+    },
+    {
+      "label": "Telefon",
+      "type": "tel",
+      "inputmode": "tel",
+      "autocomplete": "tel",
+      "maxlength": null,
+      "required": null
+    },
+    {
+      "label": "E-pošta",
+      "type": "email",
+      "inputmode": "email",
+      "autocomplete": "email",
+      "maxlength": null,
+      "required": null
+    },
+    {
+      "type": "checkbox",
+      "inputmode": null,
+      "autocomplete": null,
+      "maxlength": null,
+      "required": null
+    },
+    {
+      "label": "Naziv firme",
+      "type": "text",
+      "inputmode": null,
+      "autocomplete": "organization",
+      "maxlength": null,
+      "required": null
+    },
+    {
+      "label": "PIB",
+      "type": "text",
+      "inputmode": "numeric",
+      "autocomplete": "off",
+      "maxlength": null,
+      "required": null
+    },
+    {
+      "label": "Matični broj (nije obavezno)",
+      "type": "text",
+      "inputmode": "numeric",
+      "autocomplete": "off",
+      "maxlength": null,
+      "required": null
+    }
+  ],
+  "afterSignIn": [
+    "ABS senzor prednji Meyle · OEM 6R0 927 986 S 2.590 RSD × 24 62.160 RSD",
+    "Kočioni disk prednji 288 × 25 mm, ventilirani ATE · OEM 1K0 615 868 F 5.490 RSD × 1 Deo ide po porudžbini · 6 dana. 5.490 RSD"
+  ],
+  "afterRemove": [],
+  "log": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  },
+  "admin": {
+    "stamp": "zzflowsmuoiu0fg",
+    "found": true,
+    "idx": 968,
+    "context": "ckym5\t2\t30.09. 19:02\t\nU katalogu\nDodaj artikal\n\nzzzqqq\t2\t30.09. 18:48\t\nU katalogu\nDodaj artikal\n\nqqqzzz999\t2\t30.09. 18:04\t\nU katalogu\nDodaj artikal\n\nqqzz9981\t2\t30.09. 15:58\t\nU katalogu\nDodaj artikal\n\nzzflowsmuoiu0fg\t1\t30.09. 21:51\t\nU katalogu\nDodaj artikal\n\n1K0698151\t1\t30.09. 20:"
+  }
+}

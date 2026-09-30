@@ -1,0 +1,95 @@
+{
+  "webkit-390": {
+    "steps": [
+      {
+        "name": "home",
+        "ok": true,
+        "ms": 4222
+      },
+      {
+        "name": "header-search",
+        "ok": true,
+        "ms": 4754,
+        "focused": "combobox",
+        "url": "/pretraga?q=5q0-615-505-r"
+      },
+      {
+        "name": "search-results",
+        "ok": true,
+        "ms": 3447,
+        "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004"
+      },
+      {
+        "name": "product",
+        "ok": true,
+        "ms": 2816,
+        "qtyFound": true,
+        "qtyType": "number",
+        "qtyBox": {
+          "x": 61,
+          "y": 872.34375,
+          "width": 56,
+          "height": 42
+        },
+        "qtyStyle": {
+          "appearance": "textfield",
+          "h": 42,
+          "w": 56,
+          "font": "16px"
+        },
+        "qtyAfter": "2",
+        "overflow": {
+          "over": 0,
+          "offenders": []
+        }
+      },
+      {
+        "name": "add-to-cart",
+        "ok": true,
+        "ms": 1806,
+        "count": "1"
+      },
+      {
+        "name": "category-vehicle-filter",
+        "ok": true,
+        "ms": 14330,
+        "cards": 5,
+        "url": "/delovi/kocioni-diskovi?marka=volkswagen&model=golf&generacija=golf-7"
+      },
+      {
+        "name": "cart-drawer",
+        "ok": true,
+        "ms": 2764
+      },
+      {
+        "name": "checkout",
+        "ok": true,
+        "ms": 16651,
+        "codChecked": true,
+        "number": "SK-2026-000134"
+      }
+    ],
+    "email": "audit-xbrowser-webkit-390-1790798876076@primer.rs",
+    "number": "SK-2026-000134",
+    "probe": {
+      "customerType": "guest",
+      "deliveryMethod": "courier",
+      "eventTypes": [
+        "order.created"
+      ],
+      "hasAttribution": true,
+      "itemCount": 1,
+      "paymentMethod": "cod",
+      "source": "web",
+      "status": "nova",
+      "totalPara": 514000
+    },
+    "csp": [],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+}

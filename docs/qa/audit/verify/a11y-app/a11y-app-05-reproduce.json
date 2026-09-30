@@ -1,0 +1,56 @@
+{
+  "chromium1440": {
+    "text": "SK-2026-000099Nikola Stanković · +381641234567Nova",
+    "optionBg": "rgb(238, 241, 244)",
+    "otherOptionBg": "rgba(0, 0, 0, 0)",
+    "dialogBg": "rgb(255, 255, 255)",
+    "outline": "none 3px",
+    "boxShadow": "none",
+    "borderLeft": "0px solid rgb(18, 21, 24)",
+    "color": "rgb(18, 21, 24)",
+    "otherColor": "rgb(61, 68, 76)",
+    "labelColor": "rgb(18, 21, 24)",
+    "otherLabelColor": "rgb(18, 21, 24)",
+    "inputOutline": "none 2px",
+    "rect": {
+      "x": 409,
+      "y": 287.1875,
+      "width": 622,
+      "height": 44
+    },
+    "dlgRect": {
+      "x": 400,
+      "y": 72,
+      "width": 640,
+      "height": 656.1875
+    },
+    "contrastBgVsDialog": 1.13
+  },
+  "firefox1440": {
+    "text": "SK-2026-000099Nikola Stanković · +381641234567Nova",
+    "optionBg": "rgb(238, 241, 244)",
+    "otherOptionBg": "rgba(0, 0, 0, 0)",
+    "dialogBg": "rgb(255, 255, 255)",
+    "outline": "none 3px",
+    "boxShadow": "none",
+    "borderLeft": "0px solid rgb(18, 21, 24)",
+    "color": "rgb(18, 21, 24)",
+    "otherColor": "rgb(61, 68, 76)",
+    "labelColor": "rgb(18, 21, 24)",
+    "otherLabelColor": "rgb(18, 21, 24)",
+    "inputOutline": "none 2px",
+    "rect": {
+      "x": 409,
+      "y": 287.20001220703125,
+      "width": 622,
+      "height": 44
+    },
+    "dlgRect": {
+      "x": 400,
+      "y": 72,
+      "width": 640,
+      "height": 656
+    },
+    "contrastBgVsDialog": 1.13
+  }
+}

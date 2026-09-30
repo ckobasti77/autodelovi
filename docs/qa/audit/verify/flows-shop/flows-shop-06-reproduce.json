@@ -1,0 +1,311 @@
+{
+  "chromium 360 len40": {
+    "over": 337,
+    "offenders": [
+      "span.rw",
+      "span.type-code.text-ink-2",
+      "div.flex.max-w-[44ch]",
+      "h2.type-h4.text-ink-1",
+      "p.type-body.text-ink-2",
+      "ol.pointer-events-none.fixed"
+    ],
+    "vw": 360,
+    "scrollW": 697,
+    "h1": [
+      {
+        "sel": "main h1",
+        "left": 16,
+        "right": 344,
+        "text": "Nema rezultata za „5Q0615505R5Q0615505R5Q0615505R5"
+      }
+    ],
+    "h2": [
+      {
+        "sel": "main h2",
+        "left": -26,
+        "right": 386,
+        "text": "Ovaj broj nije u katalogu"
+      }
+    ],
+    "p": [
+      {
+        "sel": "main h2 ~ p, main h2 + *",
+        "left": -26,
+        "right": 386,
+        "text": "Za „5Q0615505R5Q0615505R5Q0615505R5Q0615505R“ nema"
+      }
+    ],
+    "bodyOverflowX": "visible",
+    "htmlOverflowX": "visible",
+    "shot": "docs/qa/audit/verify/flows-shop/flows-shop-06-reproduce-chromium-360-len40.webp",
+    "scrollXAfter": 0
+  },
+  "chromium 390 len40": {
+    "over": 315,
+    "offenders": [
+      "span.rw",
+      "div.flex.max-w-[44ch]",
+      "h2.type-h4.text-ink-1",
+      "p.type-body.text-ink-2",
+      "ol.pointer-events-none.fixed"
+    ],
+    "vw": 390,
+    "scrollW": 705,
+    "h1": [
+      {
+        "sel": "main h1",
+        "left": 16,
+        "right": 374,
+        "text": "Nema rezultata za „5Q0615505R5Q0615505R5Q0615505R5"
+      }
+    ],
+    "h2": [
+      {
+        "sel": "main h2",
+        "left": -11,
+        "right": 401,
+        "text": "Ovaj broj nije u katalogu"
+      }
+    ],
+    "p": [
+      {
+        "sel": "main h2 ~ p, main h2 + *",
+        "left": -11,
+        "right": 401,
+        "text": "Za „5Q0615505R5Q0615505R5Q0615505R5Q0615505R“ nema"
+      }
+    ],
+    "bodyOverflowX": "visible",
+    "htmlOverflowX": "visible",
+    "shot": "docs/qa/audit/verify/flows-shop/flows-shop-06-reproduce-chromium-390-len40.webp",
+    "scrollXAfter": 0,
+    "shotScrolled": "docs/qa/audit/verify/flows-shop/flows-shop-06-reproduce-chromium-390-len40-scrolled.webp"
+  },
+  "chromium 390 len120": {
+    "over": 1644,
+    "offenders": [
+      "span.rw",
+      "span.type-code.text-ink-2",
+      "div.flex.max-w-[44ch]",
+      "h2.type-h4.text-ink-1",
+      "p.type-body.text-ink-2",
+      "ol.pointer-events-none.fixed"
+    ],
+    "vw": 390,
+    "scrollW": 2034,
+    "h1": [
+      {
+        "sel": "main h1",
+        "left": 16,
+        "right": 374,
+        "text": "Nema rezultata za „5Q0615505R5Q0615505R5Q0615505R5"
+      }
+    ],
+    "h2": [
+      {
+        "sel": "main h2",
+        "left": -20,
+        "right": 410,
+        "text": "Ovaj broj nije u katalogu"
+      }
+    ],
+    "p": [
+      {
+        "sel": "main h2 ~ p, main h2 + *",
+        "left": -20,
+        "right": 410,
+        "text": "Za „5Q0615505R5Q0615505R5Q0615505R5Q0615505R5Q0615"
+      }
+    ],
+    "bodyOverflowX": "visible",
+    "htmlOverflowX": "visible",
+    "scrollXAfter": 474
+  },
+  "chromium 390 len24": {
+    "over": 52,
+    "offenders": [
+      "span.rw",
+      "ol.pointer-events-none.fixed"
+    ],
+    "vw": 390,
+    "scrollW": 442,
+    "h1": [
+      {
+        "sel": "main h1",
+        "left": 16,
+        "right": 374,
+        "text": "Nema rezultata za „5Q0615505R5Q0615505R5Q06“"
+      }
+    ],
+    "h2": [
+      {
+        "sel": "main h2",
+        "left": 32,
+        "right": 358,
+        "text": "Ovaj broj nije u katalogu"
+      }
+    ],
+    "p": [
+      {
+        "sel": "main h2 ~ p, main h2 + *",
+        "left": 32,
+        "right": 358,
+        "text": "Za „5Q0615505R5Q0615505R5Q06“ nemamo artikal u kat"
+      }
+    ],
+    "bodyOverflowX": "visible",
+    "htmlOverflowX": "visible",
+    "shot": "docs/qa/audit/verify/flows-shop/flows-shop-06-reproduce-chromium-390-len24.webp",
+    "scrollXAfter": 0
+  },
+  "chromium 390 len32": {
+    "over": 59,
+    "offenders": [
+      "span.rw",
+      "ol.pointer-events-none.fixed"
+    ],
+    "vw": 390,
+    "scrollW": 449,
+    "h1": [
+      {
+        "sel": "main h1",
+        "left": 16,
+        "right": 374,
+        "text": "Nema rezultata za „amortizerzaprednjiostakovanitra"
+      }
+    ],
+    "h2": [
+      {
+        "sel": "main h2",
+        "left": 32,
+        "right": 358,
+        "text": "Ovaj deo nije u katalogu"
+      }
+    ],
+    "p": [
+      {
+        "sel": "main h2 ~ p, main h2 + *",
+        "left": 32,
+        "right": 358,
+        "text": "Za „amortizerzaprednjiostakovanitrap“ nemamo artik"
+      }
+    ],
+    "bodyOverflowX": "visible",
+    "htmlOverflowX": "visible",
+    "scrollXAfter": 0
+  },
+  "chromium 768 len120": {
+    "over": 1549,
+    "offenders": [
+      "span.rw",
+      "span.type-code.text-ink-2",
+      "ol.pointer-events-none.fixed"
+    ],
+    "vw": 768,
+    "scrollW": 2317,
+    "h1": [
+      {
+        "sel": "main h1",
+        "left": 31,
+        "right": 737,
+        "text": "Nema rezultata za „5Q0615505R5Q0615505R5Q0615505R5"
+      }
+    ],
+    "h2": [
+      {
+        "sel": "main h2",
+        "left": 169,
+        "right": 599,
+        "text": "Ovaj broj nije u katalogu"
+      }
+    ],
+    "p": [
+      {
+        "sel": "main h2 ~ p, main h2 + *",
+        "left": 169,
+        "right": 599,
+        "text": "Za „5Q0615505R5Q0615505R5Q0615505R5Q0615505R5Q0615"
+      }
+    ],
+    "bodyOverflowX": "visible",
+    "htmlOverflowX": "visible",
+    "scrollXAfter": 0
+  },
+  "chromium 1440 len120": {
+    "over": 1372,
+    "offenders": [
+      "span.rw"
+    ],
+    "vw": 1440,
+    "scrollW": 2812,
+    "h1": [
+      {
+        "sel": "main h1",
+        "left": 48,
+        "right": 1392,
+        "text": "Nema rezultata za „5Q0615505R5Q0615505R5Q0615505R5"
+      }
+    ],
+    "h2": [
+      {
+        "sel": "main h2",
+        "left": 505,
+        "right": 935,
+        "text": "Ovaj broj nije u katalogu"
+      }
+    ],
+    "p": [
+      {
+        "sel": "main h2 ~ p, main h2 + *",
+        "left": 505,
+        "right": 935,
+        "text": "Za „5Q0615505R5Q0615505R5Q0615505R5Q0615505R5Q0615"
+      }
+    ],
+    "bodyOverflowX": "visible",
+    "htmlOverflowX": "visible",
+    "shot": "docs/qa/audit/verify/flows-shop/flows-shop-06-reproduce-chromium-1440-len120.webp",
+    "scrollXAfter": 500
+  },
+  "04-end": "docs/qa/audit/verify/flows-shop/flows-shop-04-reproduce-listend-390.webp",
+  "webkit 390 len40": {
+    "over": 315,
+    "offenders": [
+      "span.rw",
+      "div.flex.max-w-[44ch]",
+      "h2.type-h4.text-ink-1",
+      "p.type-body.text-ink-2"
+    ],
+    "vw": 390,
+    "scrollW": 705,
+    "h1": [
+      {
+        "sel": "main h1",
+        "left": 16,
+        "right": 374,
+        "text": "Nema rezultata za „5Q0615505R5Q0615505R5Q0615505R5"
+      }
+    ],
+    "h2": [
+      {
+        "sel": "main h2",
+        "left": -11,
+        "right": 401,
+        "text": "Ovaj broj nije u katalogu"
+      }
+    ],
+    "p": [
+      {
+        "sel": "main h2 ~ p, main h2 + *",
+        "left": -11,
+        "right": 401,
+        "text": "Za „5Q0615505R5Q0615505R5Q0615505R5Q0615505R“ nema"
+      }
+    ],
+    "bodyOverflowX": "visible",
+    "htmlOverflowX": "visible",
+    "shot": "docs/qa/audit/verify/flows-shop/flows-shop-06-reproduce-webkit-390-len40.webp",
+    "scrollXAfter": 315,
+    "shotScrolled": "docs/qa/audit/verify/flows-shop/flows-shop-06-reproduce-webkit-390-len40-scrolled.webp"
+  }
+}

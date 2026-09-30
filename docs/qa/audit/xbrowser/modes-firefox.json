@@ -1,0 +1,59 @@
+{
+  "firefox": {
+    "rm": {
+      "first": {
+        "stuck": 0,
+        "pending": 0,
+        "words": 0,
+        "hiddenFirst": []
+      },
+      "after": {
+        "stuck": 0,
+        "pending": 0,
+        "words": 0
+      },
+      "state": {
+        "ready": true,
+        "tier": "mid",
+        "status": "ready",
+        "progress": 0,
+        "stage": 0,
+        "selected": null,
+        "hovered": null,
+        "timeline": "mobile",
+        "reducedMotion": true
+      },
+      "canvas": 1,
+      "console": [],
+      "pageErrors": []
+    },
+    "nojs": {
+      "/": {
+        "hidden": [],
+        "htmlClass": false
+      },
+      "/deo/kocioni-disk-prednji-276-24-mm-demo-0004": {
+        "hidden": [],
+        "htmlClass": false
+      }
+    },
+    "focus": [
+      "a[Preskoči na sadržaj] outline=solid 2px rgb(241, 236, 227) shadow=none",
+      "a[SKLOP] outline=solid 2px rgb(255, 107, 26) shadow=none",
+      "a[Delovi] outline=solid 2px rgb(255, 107, 26) shadow=none",
+      "a[Vozila] outline=solid 2px rgb(255, 107, 26) shadow=none",
+      "a[Za majstore] outline=solid 2px rgb(255, 107, 26) shadow=none",
+      "a[Upit po broju šasije] outline=solid 2px rgb(255, 107, 26) shadow=none"
+    ],
+    "sticky": [
+      "a.fixed fixed top=-66 h=39",
+      "header.sticky sticky top=0 h=57",
+      "div.fixed fixed top=851 h=65"
+    ],
+    "print": {
+      "h": 900,
+      "hidden": 0,
+      "header": false
+    }
+  }
+}

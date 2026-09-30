@@ -1,0 +1,153 @@
+{
+  "09": {
+    "checkout": [
+      {
+        "name": "pib-valid-mb-bad-checksum",
+        "pib": "154552870",
+        "mb": "64552873",
+        "stillContact": true,
+        "errs": {
+          "co-pib": {
+            "invalid": null,
+            "value": "154552870",
+            "described": [
+              "9 cifara, proveravamo kontrolni broj."
+            ]
+          },
+          "co-mb": {
+            "invalid": "true",
+            "value": "64552873",
+            "described": [
+              "Matični broj ima 8 cifara."
+            ]
+          }
+        },
+        "visibleText": [
+          "Matični broj ima 8 cifara.",
+          "PIB",
+          "9 cifara, proveravamo kontrolni broj.",
+          "Matični broj (nije obavezno)",
+          "Matični broj ima 8 cifara."
+        ]
+      },
+      {
+        "name": "pib-bad-checksum-mb-7digits",
+        "pib": "154552871",
+        "mb": "6455287",
+        "stillContact": true,
+        "errs": {
+          "co-pib": {
+            "invalid": "true",
+            "value": "154552871",
+            "described": [
+              "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja."
+            ]
+          },
+          "co-mb": {
+            "invalid": "true",
+            "value": "6455287",
+            "described": [
+              "Matični broj ima 8 cifara."
+            ]
+          }
+        },
+        "visibleText": [
+          "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja.",
+          "Matični broj ima 8 cifara.",
+          "PIB",
+          "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja.",
+          "Matični broj (nije obavezno)",
+          "Matični broj ima 8 cifara."
+        ]
+      },
+      {
+        "name": "pib-empty-mb-valid",
+        "pib": "",
+        "mb": "64552872",
+        "stillContact": true,
+        "errs": {
+          "co-pib": {
+            "invalid": "true",
+            "value": "",
+            "described": [
+              "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja."
+            ]
+          },
+          "co-mb": {
+            "invalid": null,
+            "value": "64552872",
+            "described": []
+          }
+        },
+        "visibleText": [
+          "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja.",
+          "PIB",
+          "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja.",
+          "Matični broj (nije obavezno)"
+        ]
+      },
+      {
+        "name": "pib-8digits-mb-valid",
+        "pib": "15455287",
+        "mb": "64552872",
+        "stillContact": true,
+        "errs": {
+          "co-pib": {
+            "invalid": "true",
+            "value": "15455287",
+            "described": [
+              "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja."
+            ]
+          },
+          "co-mb": {
+            "invalid": null,
+            "value": "64552872",
+            "described": []
+          }
+        },
+        "visibleText": [
+          "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja.",
+          "PIB",
+          "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja.",
+          "Matični broj (nije obavezno)"
+        ]
+      },
+      {
+        "name": "pib-letters",
+        "pib": "ABCDEFGHI",
+        "mb": "",
+        "stillContact": true,
+        "errs": {
+          "co-pib": {
+            "invalid": "true",
+            "value": "ABCDEFGHI",
+            "described": [
+              "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja."
+            ]
+          },
+          "co-mb": {
+            "invalid": null,
+            "value": "",
+            "described": []
+          }
+        },
+        "visibleText": [
+          "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja.",
+          "PIB",
+          "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja.",
+          "Matični broj (nije obavezno)"
+        ]
+      }
+    ],
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    "registration": {
+      "fields": [],
+      "cases": []
+    }
+  }
+}

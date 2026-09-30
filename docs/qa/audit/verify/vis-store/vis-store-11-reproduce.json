@@ -1,0 +1,20 @@
+{
+  "top": {
+    "scrollY": 0,
+    "railContentTop": 341,
+    "railContentBottom": 1244,
+    "railContentHeight": 903,
+    "headerBottom": 65,
+    "productLinksInViewport": 4
+  },
+  "topShot": "docs/qa/audit/verify/vis-store/vis-store-11-reproduce-1440-top.webp",
+  "after900": {
+    "scrollY": 900,
+    "railContentTop": -559,
+    "railContentBottom": 344,
+    "railContentHeight": 903,
+    "headerBottom": 65,
+    "productLinksInViewport": 5
+  },
+  "after900Shot": "docs/qa/audit/verify/vis-store/vis-store-11-reproduce-1440-after900.webp"
+}
