@@ -3,9 +3,16 @@
  * The only module that reads `process.env` in Convex functions.
  */
 
-/** Salt for hashing IP + user agent into rate-limit keys (never stored raw). */
+/**
+ * Salt for hashing IP + user agent into rate-limit keys (never stored raw). Without
+ * IP_HASH_SALT a salt derived from LINK_TOKEN_SECRET is used, so a deployment with the link
+ * secret never falls back to the public dev constant.
+ */
 export function ipHashSalt(): string {
-  return process.env.IP_HASH_SALT ?? "sklop-dev-salt";
+  const salt = process.env.IP_HASH_SALT?.trim();
+  if (salt) return salt;
+  const link = process.env.LINK_TOKEN_SECRET?.trim();
+  return link ? `ip-hash|${link}` : "sklop-dev-salt";
 }
 
 export function seedAdminCredentials(): { email: string; password: string } | null {
@@ -38,9 +45,27 @@ export function emailFrom(): string {
 
 const DEV_LINK_SECRET = "sklop-dev-link-secret-change-me";
 
-/** Secret for status-link tokens (lib/linkTokens). Missing ⇒ a dev value, flagged in admin. */
+/**
+ * Secret for status-link tokens (lib/linkTokens). Missing ⇒ a dev value, flagged in admin —
+ * but only on a local site URL: anywhere else the dev value would let anyone compute the
+ * status link (contact data, address) of every order, so it fails closed instead.
+ */
 export function linkTokenSecret(): string {
-  return process.env.LINK_TOKEN_SECRET?.trim() || DEV_LINK_SECRET;
+  const secret = process.env.LINK_TOKEN_SECRET?.trim();
+  if (secret) return secret;
+  if (!isLocalSite()) {
+    throw new Error("LINK_TOKEN_SECRET is not set on this deployment (docs/GO-LIVE-ENV.md).");
+  }
+  return DEV_LINK_SECRET;
+}
+
+function isLocalSite(): boolean {
+  try {
+    const host = new URL(siteUrl()).hostname;
+    return host === "localhost" || host === "127.0.0.1" || host.endsWith(".localhost");
+  } catch {
+    return false;
+  }
 }
 
 export function linkTokenSecretIsSet(): boolean {

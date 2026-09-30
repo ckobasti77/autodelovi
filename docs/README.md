@@ -15,6 +15,10 @@ Business intent: [`pipeline/BRIEF.md`](../pipeline/BRIEF.md) (wins for intent). 
 | [SEO-ADS.md](SEO-ADS.md) | Metadata, JSON-LD, sitemaps, landings guard, consent, event map, attribution, feeds, CWV budgets | §J |
 | [IMPORT.md](IMPORT.md) | Excel/CSV import pipeline, synonyms, validation, rollback, templates, exports | §K |
 | [SECURITY.md](SECURITY.md) | Auth (Convex Auth), roles, enforcement layers, price visibility, abuse, CSP, secrets, privacy/retention, backups | §D, L |
+| [SECURITY-AUDIT.md](SECURITY-AUDIT.md) | Step-20 audit: findings with severity, fix and evidence, CSP as built, secrets scan, readiness score, accepted risks | — |
+| [GO-LIVE-ENV.md](GO-LIVE-ENV.md) | (sr) Every environment variable (Convex / Vercel), secret or not, required or not | — |
+| [PRIVACY-PROCESS.md](PRIVACY-PROCESS.md) | (sr) Data inventory, retention as implemented, access/erasure requests (Admin → Privatnost), consent logging | — |
+| [BACKUPS.md](BACKUPS.md) | (sr) Convex export, schedule, monthly restore drill, emergency restore | — |
 | [TESTING.md](TESTING.md) | Vitest (unit + convex-test), Playwright, axe, Lighthouse, DoD | §M |
 | [ROADMAP.md](ROADMAP.md) | Steps 02–23 with deliverables, measurable acceptance, risks; goal-step conditions | §N |
 | [DECISIONS.md](DECISIONS.md) | D1–D25 + risks, defaults, log format for new decisions | §0.1, O |

@@ -77,16 +77,18 @@ test.describe("headers", () => {
     const again = (await request.get("/")).headers()["content-security-policy"];
     expect(nonceOf(again)).not.toBe(nonceOf(csp));
 
-    const response = await page.goto("/delovi");
-    const nonce = nonceOf(response?.headers()["content-security-policy"]);
+    // Server HTML: every executable <script> carries the nonce (chunks loaded later by those
+    // scripts are trusted through 'strict-dynamic' and need none).
+    const doc = await request.get("/delovi");
+    const nonce = nonceOf(doc.headers()["content-security-policy"]);
     expect(nonce).toBeTruthy();
-    const scripts = await page.evaluate(() =>
-      [...document.querySelectorAll("script")]
-        .filter((s) => !s.type || s.type === "text/javascript" || s.type === "module")
-        .map((s) => s.nonce),
-    );
-    expect(scripts.length).toBeGreaterThan(3);
-    expect(scripts.every((n) => n === nonce)).toBe(true);
+    const tags = [...(await doc.text()).matchAll(/<script\b[^>]*>/g)]
+      .map((m) => m[0])
+      .filter((tag) => !/type="application\/(ld\+)?json"/.test(tag));
+    expect(tags.length).toBeGreaterThan(3);
+    expect(tags.filter((tag) => !tag.includes(`nonce="${nonce}"`))).toEqual([]);
+    await page.goto("/delovi");
+    await expect(page.locator("h1").first()).toBeVisible();
   });
 
   test("token pages send no Referer; static files still get the static headers", async ({ request }) => {

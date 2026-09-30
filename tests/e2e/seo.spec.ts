@@ -341,7 +341,7 @@ test.describe("Consent Mode v2 and tags", () => {
     await expect.poll(() => requests.filter((u) => u.includes("gtag/js")).length).toBe(1);
     const layer = await dataLayer(page);
     expect(layer).toContainEqual(["consent", "update", expect.objectContaining({ analytics_storage: "granted", ad_storage: "denied" })]);
-    expect(layer).toContainEqual(["config", "G-E2ETEST01"]);
+    expect(layer).toContainEqual(["config", "G-E2ETEST01", expect.objectContaining({ page_location: expect.any(String) })]);
     expect(layer.some((e) => e[0] === "config" && e[1] === "AW-123456789")).toBe(false);
     expect(requests.some((u) => u.includes("fbevents"))).toBe(false);
   });

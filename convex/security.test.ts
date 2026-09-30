@@ -358,6 +358,22 @@ describe("test helpers", () => {
   });
 });
 
+describe("status-link secret", () => {
+  test("off localhost a missing LINK_TOKEN_SECRET fails closed instead of using the dev value", async () => {
+    const t = makeT();
+    await setupWorld(t);
+    vi.stubEnv("LINK_TOKEN_SECRET", "");
+    vi.stubEnv("SITE_URL", "https://sklop.rs");
+    expect(await errorCode(() => t.query(internal.testing.orderStatusToken, { number: "SK-1" }))).toMatch(
+      /^PLAIN:.*LINK_TOKEN_SECRET/,
+    );
+    vi.stubEnv("SITE_URL", "http://localhost:3000");
+    expect(await t.query(internal.testing.orderStatusToken, { number: "SK-1" })).toMatch(
+      /^[A-Za-z0-9_-]{43}$/,
+    );
+  });
+});
+
 describe("outbox masking", () => {
   test("status, proforma and unsubscribe links are masked for staff", () => {
     const text = [

@@ -89,7 +89,7 @@ Do kraja ovih koraka sajt radi u režimu **„Samo zapis“**: svaka poruka (i k
 - [ ] **[P0]** Upisati adresu sajta u `NEXT_PUBLIC_SITE_URL` (npr. `https://www.domen.rs`) — koristi se za kanonske adrese i slike za deljenje; do tada sajt koristi `http://localhost:3000`.
 - [ ] **[P1]** Dok podešavanja u adminu ne postoje, kontakt se može privremeno upisati kao promenljive okruženja: `NEXT_PUBLIC_CONTACT_PHONE`, `NEXT_PUBLIC_CONTACT_VIBER`, `NEXT_PUBLIC_CONTACT_WHATSAPP`, `NEXT_PUBLIC_CONTACT_EMAIL`. Prazno polje = kanal se ne prikazuje (Viber se prikazuje samo ako je upisan poseban Viber broj).
 - [ ] **[P0]** Nalog vlasnika (lozinka iz `pipeline/env/ADMIN-CREDENTIALS.txt` se menja pri prvoj prijavi).
-- [ ] **[P1]** Raspored backupa baze (Convex export).
+- [ ] **[P1]** Raspored backupa baze (Convex export) — postupak u `docs/BACKUPS.md`, vidi §12.
 
 ## 8. Dizajn i brend (korak 03)
 - [ ] **[P1]** Pogledati vizuelni pravac „Rendgen“ na `/styleguide` (stara adresa `/lab/koncept` preusmerava tamo) i potvrditi: tamna prodavnica, jedna narandžasta boja (#FF6B1A) za akcije i izbor, svetla radna površina u adminu. Obrazloženje je u `docs/design/DESIGN-SYSTEM.md`.
@@ -150,3 +150,14 @@ Oznaka: **seed – proveriti**. Podaci su uneti po opšte poznatim podacima o vo
 - [ ] **[P2] Kategorije iz programa**: nazivi grupa artikala iz programa se jednom povežu sa kategorijama sajta u koraku „Provera“. Ako su grupe u programu drugačije od kategorija na sajtu, pošaljite spisak da napravimo stalno mapiranje.
 - [ ] **[P2] Deaktiviranje artikala kojih nema u fajlu**: koristite samo sa punim cenovnikom (ne sa delom lagera). Traži upis reči DEAKTIVIRAJ i može se poništiti.
 - [ ] **[P3] Slike sa adresa**: slike se preuzimaju samo za artikle koji još nemaju slike, do 12 po artiklu, do 10 MB, JPEG/PNG/WebP.
+
+## 12. Bezbednost, privatnost i rezervne kopije (korak 20)
+- [ ] **[P0] Promenljive okruženja za produkciju** — sve iz `docs/GO-LIVE-ENV.md`. Bez `LINK_TOKEN_SECRET` produkcija namerno **ne prima porudžbine ni upite** (inače bi linkovi ka statusu mogli da se izračunaju). Produkcijsku Convex bazu napraviti u EU regionu (kao razvojnu).
+- [ ] **[P0] Nalog vlasnika na produkciji**: `npx convex run --prod seed:createOwner` pokrenuti **pre** nego što sajt bude javno dostupan; zatim se prijaviti, promeniti lozinku i obrisati `SEED_ADMIN_EMAIL` / `SEED_ADMIN_PASSWORD` (`npx convex env remove --prod …`). Ako komanda javi `password_mismatch`, neko je već registrovao tu adresu — javiti se programeru.
+- [ ] **[P1] Potvrda e-pošte pri registraciji**: kad Resend proradi (§4), uključiti slanje koda za potvrdu adrese pri otvaranju naloga (sada svako može da otvori nalog na bilo koju adresu; podaci se nikad ne povezuju sa nalogom po adresi, pa to nije curenje, ali pozivnice za zaposlene su sigurnije uz potvrdu).
+- [ ] **[P1] Rezervne kopije baze** po `docs/BACKUPS.md`: dnevno + nedeljno + mesečno, čuvanje van računara u radnji, i **jednom mesečno vežba vraćanja** (§3). Zamenjuje stavku „Raspored backupa“ iz §7.
+- [ ] **[P1] Pravnik**: popis podataka, rokovi čuvanja i postupak po zahtevima kupaca u `docs/PRIVACY-PROCESS.md` (uvid u podatke, brisanje — Admin → Privatnost, samo vlasnik); isti rokovi moraju biti u politici privatnosti.
+- [ ] **[P1] Evidencija zahteva kupaca** (tabela: datum, ko, šta, kada odgovoreno) i godišnji pregled starih naloga/upita (PRIVACY-PROCESS §4).
+- [ ] **[P2] Praćenje grešaka na produkciji** (Convex → Settings → Integrations → log stream ili Sentry) — da greške vidite pre kupaca.
+- [ ] **[P2] Skrivene cene**: ako u podešavanjima isključite javne cene, isključite i kupovinu bez naloga — inače gost koji doda artikal u korpu vidi njegovu cenu.
+- [ ] **[P2] Zaposleni koji je i majstor**: svoj majstorski profil ne može sam da odobri niti da sebi menja rabat i odloženo plaćanje — to radi vlasnik.

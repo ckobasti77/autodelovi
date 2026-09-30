@@ -150,3 +150,17 @@
   - Lighthouse mobile (applied throttling, 3-run medians): SEO 100 on home, category and product; performance 88/89/88, CLS 0.001, LCP 2.1–2.2 s, TBT ~355 ms (noisy on this machine, see `docs/qa/SEO-ADS.md`).
   - Screens at 1440 + 390 (admin 1440) reviewed, 9 findings fixed (`docs/qa/SEO-ADS.md`), zero console errors.
 - Remains: owner accounts and ids (GA4, Ads, Pixel, CAPI token, offline conversion name, `REVALIDATE_SECRET`) — HUMAN-TODO §5 and ADS-PLAYBOOK; Merchant Center unavailable for Serbia; Meta catalog RSD to verify in Commerce Manager; TBT above budget on phones (step 22); legal review of the cookie/privacy texts.
+
+## 2026-09-30 — Step 20 · Security, privacy and backend audit
+- Done:
+  - Audit of the whole Convex surface (authz scan, reviewer checklist, dev insights) and the Next server surface (route handlers, server action, proxy, guards); findings, fixes and evidence in `docs/SECURITY-AUDIT.md` (S01–S23 fixed, R01–R11 accepted).
+  - P1 fixes: owner seed no longer promotes a pre-registered account without the seed password; open redirect `/prijava?next=/\evil.com` closed (`lib/domain/redirect.ts`); security headers in `next.config.ts` + per-request nonce CSP in `proxy.ts` (`lib/security/headers.ts`); `LINK_TOKEN_SECRET` fails closed off localhost; reset-code e-mails rate-limited.
+  - P2 fixes: staff cannot approve/change their own mechanic profile (audit with values); SSRF-hardened import image fetcher (`lib/import/remoteUrl.ts`, manual redirects, byte cap); CSV formula injection neutralised; status tokens kept out of GA4/Meta and Referer; sign-ups get `role: customer` (+ backfill); sign-up, guest-cart and resend limits; retention for CAPI IP/UA (7 d), click ids (180 d), guest carts in all states.
+  - Privacy (ZZPL): owner tools `/admin/privatnost` (`convex/privacy.ts`: JSON export by account or e-mail, anonymization keeping accounting data), `docs/PRIVACY-PROCESS.md` (inventory, retention, request process), consent logging unchanged (already per decision).
+  - Backups: dev snapshot export + offline restore drill (`tests/unit/backup/restoreDrill.test.ts`), `docs/BACKUPS.md` (schedule, monthly drill, emergency restore); `docs/GO-LIVE-ENV.md` lists every variable.
+- Verified:
+  - `npx tsc --noEmit` exit 0; `npm run lint` 0 problems; `NEXT_PUBLIC_TEST_HOOKS=1 npm run build` ok (every HTML route dynamic); `npm audit --omit=dev` 0 vulnerabilities; `.next/static` secrets scan clean.
+  - `npm test` → 60 files, 1 092 passed, 4 skipped (backup drill without `BACKUP_DIR`); new `convex/security.test.ts` 13; one run had a 5 s timeout in `notify.test.ts` under load, passes alone and in the re-run.
+  - Playwright on the production build: full suite 88 passed, 27 skipped, 2 test-side failures fixed; final build re-run of security + storefront + auth + seo: 35 passed, 13 skipped; zero CSP violations incl. the live 3D hero, analytics after consent and the admin.
+  - Backup drill on the dev export: 4/4 (schema-valid documents, files, counts = `seed:stats`); corrupted copy fails as expected. `npx convex insights` (dev): healthy.
+- Remains: e-mail verification at sign-up with Resend (R01, D212); owner steps in HUMAN-TODO §12 (prod env incl. `LINK_TOKEN_SECRET`, owner seed before opening, backup schedule + monthly restore into a throwaway deployment, legal review of retention); prod error capture; next 16.3.7 / react 19.3.0 patch updates for step 22/23.
