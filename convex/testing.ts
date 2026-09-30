@@ -11,7 +11,7 @@ import { SYSTEM_ACTOR } from "./lib/authz";
 import { approveMechanic as approveMechanicProfile } from "./lib/mechanics";
 import { insertInquiry } from "./lib/inquiries";
 import { createOrder, validateCheckout } from "./lib/orders";
-import { updateProduct } from "./lib/productWriter";
+import { deleteProductHard, updateProduct } from "./lib/productWriter";
 import { getSettings } from "./lib/settings";
 import { hashToken, randomToken } from "./lib/tokens";
 import { isAvailableNow } from "../lib/domain/stock";
@@ -561,5 +561,66 @@ export const deactivateE2EProducts = internalMutation({
       count++;
     }
     return count;
+  },
+});
+
+/**
+ * E2E cleanup (step 16): removes products created by the import fixtures (SKU `IMP-T-…`,
+ * `IMP-C-…`) that a failed run left behind, and cancels their unfinished batches.
+ */
+export const purgeImportFixtures = internalMutation({
+  args: {},
+  returns: v.object({ products: v.number(), batches: v.number() }),
+  handler: async (ctx) => {
+    const rows = await ctx.db
+      .query("products")
+      .withIndex("by_sku", (q) => q.gte("sku", "IMP-").lt("sku", "IMP."))
+      .take(40); // ~60 reads per hard delete; the caller repeats until 0
+    let products = 0;
+    for (const p of rows) {
+      if (!p.sku.startsWith("IMP-T-") && !p.sku.startsWith("IMP-C-")) continue;
+      await deleteProductHard(ctx, p._id);
+      products++;
+    }
+    let batches = 0;
+    for (const status of ["staging", "validated"] as const) {
+      for (const b of await ctx.db
+        .query("importBatches")
+        .withIndex("by_status", (q) => q.eq("status", status))
+        .take(100)) {
+        if (!/^proizvodi-(500|1250)\./.test(b.fileName)) continue;
+        await ctx.db.patch("importBatches", b._id, { status: "cancelled" });
+        batches++;
+      }
+    }
+    return { products, batches };
+  },
+});
+
+/** E2E probe (step 16): a product by SKU — existence, active flag, price, stock, source. */
+export const productBySku = internalQuery({
+  args: { sku: v.string() },
+  returns: v.union(
+    v.null(),
+    v.object({
+      active: v.boolean(),
+      retailPricePara: v.number(),
+      stockQty: v.number(),
+      source: v.string(),
+    }),
+  ),
+  handler: async (ctx, { sku }) => {
+    const p = await ctx.db
+      .query("products")
+      .withIndex("by_sku", (q) => q.eq("sku", sku))
+      .first();
+    return p
+      ? {
+          active: p.active,
+          retailPricePara: p.retailPricePara,
+          stockQty: p.stockQty,
+          source: p.source,
+        }
+      : null;
   },
 });

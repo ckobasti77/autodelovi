@@ -54,6 +54,9 @@ const SEGMENTS: Record<string, string> = {
   mejlovi: "E-pošta",
   pretrage: "Pretrage",
   obavestenja: "Obaveštenja",
+  uvoz: "Uvoz iz Excela",
+  istorija: "Istorija",
+  izvoz: "Izvoz",
 };
 
 /** `/admin/porudzbine/SK-2026-000187` → Pregled / Porudžbine / SK-2026-000187. */

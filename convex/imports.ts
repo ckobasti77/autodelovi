@@ -10,6 +10,7 @@ import { v } from "convex/values";
 import { internal } from "./_generated/api";
 import type { Doc, Id } from "./_generated/dataModel";
 import type { QueryCtx } from "./_generated/server";
+import { formatRsdPlain } from "../lib/domain/money";
 import { IMPORT_FIELDS } from "../lib/import/fields";
 import { createIssues, validateRow, type RawRow } from "../lib/import/row";
 import { actorOf } from "./lib/authz";
@@ -685,6 +686,8 @@ export const samples = staffQuery({
             }),
           ),
           issues: v.array(issueV),
+          /** New products: category · price · stock. */
+          details: v.union(v.string(), v.null()),
         }),
       ),
     }),
@@ -718,6 +721,18 @@ export const samples = staffQuery({
           name,
           changes,
           issues: action === "error" ? r.errors.slice(0, 3) : r.warnings.slice(0, 3),
+          details:
+            action === "create"
+              ? [
+                  r.data.categoryLabel,
+                  r.data.retailPricePara !== undefined
+                    ? formatRsdPlain(r.data.retailPricePara)
+                    : undefined,
+                  `${r.data.stockQty ?? 0} kom.`,
+                ]
+                  .filter(Boolean)
+                  .join(" · ")
+              : null,
         });
       }
       out.push({ action, rows: rowsOut });
@@ -806,5 +821,16 @@ export const imageJobs = staffQuery({
       pending: pending.length,
       failed: failed.map((j) => ({ url: j.url, error: j.error ?? null, productId: j.productId })),
     };
+  },
+});
+
+/** Signed URL of the original uploaded file (records). */
+export const sourceFileUrl = staffQuery({
+  args: { batchId: v.id("importBatches") },
+  returns: v.union(v.string(), v.null()),
+  handler: async (ctx, { batchId }) => {
+    const b = await ctx.db.get("importBatches", batchId);
+    if (!b?.sourceFileId) return null;
+    return await ctx.storage.getUrl(b.sourceFileId);
   },
 });

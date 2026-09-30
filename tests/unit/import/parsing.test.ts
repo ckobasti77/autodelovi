@@ -40,7 +40,15 @@ describe("headers", () => {
   });
 
   it("auto-maps a real export and uses each field once", () => {
-    const mapped = autoMap(["Šifra", "Naziv artikla", "Kat. br.", "Brend", "MPC", "Lager", "Šifra"]);
+    const mapped = autoMap([
+      "Šifra",
+      "Naziv artikla",
+      "Kat. br.",
+      "Brend",
+      "MPC",
+      "Lager",
+      "Šifra",
+    ]);
     expect(mapped.map((m) => m.field)).toEqual([
       "sku",
       "name",
@@ -95,7 +103,11 @@ describe("numbers", () => {
   it("parses Serbian and English formats", () => {
     expect(parseNumber("1.234,56", "sr")).toEqual({ ok: true, value: 1234.56, ambiguous: false });
     expect(parseNumber("1,234.56", "en")).toEqual({ ok: true, value: 1234.56, ambiguous: false });
-    expect(parseNumber("12 990,00 RSD", "sr")).toEqual({ ok: true, value: 12990, ambiguous: false });
+    expect(parseNumber("12 990,00 RSD", "sr")).toEqual({
+      ok: true,
+      value: 12990,
+      ambiguous: false,
+    });
     expect(parseNumber("1.234.567", "sr")).toEqual({ ok: true, value: 1234567, ambiguous: false });
     expect(parseNumber(12990, "sr")).toEqual({ ok: true, value: 12990, ambiguous: false });
   });

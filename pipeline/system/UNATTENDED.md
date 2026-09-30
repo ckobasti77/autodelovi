@@ -37,6 +37,10 @@ You are one step of an automated, sequential build pipeline running **unattended
 ## Verification discipline
 - Never claim success without evidence. Before finishing, run the checks relevant to your step (`npx tsc --noEmit`, `npm run lint`, `npm run build`, unit / Convex tests, Playwright) and include the key output lines in your report.
 - Look at what you build: take Playwright screenshots and open them with the Read tool; open Blender renders; fix what looks wrong.
+- **This is a headless one-shot run.** When you end your turn the process exits: every background task is killed and scheduled wake-ups never fire. So never call ScheduleWakeup, and never end your turn while a background command is still running.
+  - Run long checks (full e2e, builds, Lighthouse) in the foreground with a long timeout (up to 60 minutes).
+  - Or start them in the background and poll with sleep plus a look at their output until they finish.
+  - End only after the step's verification has finished and your Step report is written.
 
 ## Memory across long work (your context may be compacted)
 - For long steps keep a checklist in docs/progress/<step-id>.md and update it as you go.

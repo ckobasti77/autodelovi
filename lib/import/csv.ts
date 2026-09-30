@@ -23,8 +23,7 @@ export function decodeCsvBytes(bytes: Uint8Array, override?: CsvEncoding): Decod
   }
 }
 
-const CANDIDATES = [";", ",", "\t"] as const;
-export type Delimiter = (typeof CANDIDATES)[number];
+export type Delimiter = ";" | "," | "\t";
 
 /** Counts delimiter occurrences outside double quotes, per line. */
 function countOutsideQuotes(line: string, delimiter: string): number {

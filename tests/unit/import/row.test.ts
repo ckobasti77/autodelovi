@@ -12,8 +12,22 @@ describe("fitment text", () => {
     const { fitments, unmatched } = parseFitmentText(index, "VW Golf VII 2014-2020 [CRLB, CAYC]");
     expect(unmatched).toEqual([]);
     expect(fitments).toEqual([
-      { brandId: "b-vw", modelId: "m-golf", generationId: "g-golf7", yearFrom: 2014, yearTo: 2020, engineId: "e-20tdi110" },
-      { brandId: "b-vw", modelId: "m-golf", generationId: "g-golf7", yearFrom: 2014, yearTo: 2020, engineId: "e-16tdi77" },
+      {
+        brandId: "b-vw",
+        modelId: "m-golf",
+        generationId: "g-golf7",
+        yearFrom: 2014,
+        yearTo: 2020,
+        engineId: "e-20tdi110",
+      },
+      {
+        brandId: "b-vw",
+        modelId: "m-golf",
+        generationId: "g-golf7",
+        yearFrom: 2014,
+        yearTo: 2020,
+        engineId: "e-16tdi77",
+      },
     ]);
   });
 
@@ -95,7 +109,9 @@ describe("validateRow", () => {
 
   it("reports the seeded error kinds", () => {
     const ctx = context();
-    expect(validateRow({ sku: "A", priceRetail: "12,99a" }, ctx).errors[0]?.code).toBe("PRICE_INVALID");
+    expect(validateRow({ sku: "A", priceRetail: "12,99a" }, ctx).errors[0]?.code).toBe(
+      "PRICE_INVALID",
+    );
     expect(validateRow({ sku: "A", stock: "-3" }, ctx).errors[0]?.code).toBe("STOCK_NEGATIVE");
     const unknown = validateRow({ sku: "A", category: "Nepostojeća kategorija" }, ctx);
     expect(unknown.errors[0]?.code).toBe("CATEGORY_UNKNOWN");
@@ -106,8 +122,12 @@ describe("validateRow", () => {
 
   it("asks for the group when a category name repeats", () => {
     const ctx = context();
-    expect(validateRow({ sku: "A", category: "Senzori" }, ctx).errors[0]?.code).toBe("CATEGORY_AMBIGUOUS");
-    expect(validateRow({ sku: "A", category: "Motor › Senzori" }, ctx).data.categoryId).toBe("c-senzori-a");
+    expect(validateRow({ sku: "A", category: "Senzori" }, ctx).errors[0]?.code).toBe(
+      "CATEGORY_AMBIGUOUS",
+    );
+    expect(validateRow({ sku: "A", category: "Motor › Senzori" }, ctx).data.categoryId).toBe(
+      "c-senzori-a",
+    );
   });
 
   it("uses value maps for unknown categories and manufacturers", () => {
@@ -116,7 +136,11 @@ describe("validateRow", () => {
     });
     const r = validateRow({ sku: "A", category: "Diskovi", manufacturer: "Novi Maker" }, ctx);
     expect(r.errors).toEqual([]);
-    expect(r.data).toMatchObject({ categoryId: "c-disk", newManufacturer: true, manufacturerName: "Novi Maker" });
+    expect(r.data).toMatchObject({
+      categoryId: "c-disk",
+      newManufacturer: true,
+      manufacturerName: "Novi Maker",
+    });
   });
 
   it("derives the retail price from the net price", () => {
@@ -135,7 +159,10 @@ describe("validateRow", () => {
 
   it("warns on ambiguous numbers only when asked", () => {
     expect(validateRow({ sku: "A", priceRetail: "12.990" }, context()).warnings).toEqual([]);
-    const warned = validateRow({ sku: "A", priceRetail: "12.990" }, context({ warnAmbiguous: true }));
+    const warned = validateRow(
+      { sku: "A", priceRetail: "12.990" },
+      context({ warnAmbiguous: true }),
+    );
     expect(warned.warnings[0]?.code).toBe("AMBIGUOUS_NUMBER");
   });
 
@@ -153,7 +180,12 @@ describe("validateRow", () => {
   });
 
   it("splits multi-value cells without breaking codes", () => {
-    expect(splitMulti("1K0 615 301 AA; 5Q0/615/301|X-1\nY")).toEqual(["1K0 615 301 AA", "5Q0/615/301", "X-1", "Y"]);
+    expect(splitMulti("1K0 615 301 AA; 5Q0/615/301|X-1\nY")).toEqual([
+      "1K0 615 301 AA",
+      "5Q0/615/301",
+      "X-1",
+      "Y",
+    ]);
   });
 
   it("suggests close category names", () => {

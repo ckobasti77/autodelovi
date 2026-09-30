@@ -126,3 +126,10 @@ Oznaka: **seed – proveriti**. Podaci su uneti po opšte poznatim podacima o vo
 - [ ] **[P1] Pravni tekstovi**: posle pregleda pravnika uključite „Pravnik je pregledao ovu verziju“ za svaku stranicu (Admin → Podešavanja → Pravni tekstovi) i ažurirajte datume verzija.
 - [ ] **[P1] Predračun i otpremnica**: pogledajte izgled (Porudžbina → „Predračun“ / „Otpremnica“) sa knjigovođom — naziv dokumenta, obavezni podaci i napomena „Predračun nije fiskalni račun“.
 - [ ] **[P2] Majstor sa odloženim plaćanjem i porudžbina telefonom**: ponudu koju kupac prihvati telefonom pretvarate u porudžbinu dugmetom „Pretvori u porudžbinu“ na upitu; odloženo plaćanje je tada dostupno samo ako je upit poslao odobreni majstor sa tom opcijom.
+
+## 11. Uvoz iz Excela (korak 16)
+- [ ] **[P1] Pravi izvoz iz vašeg programa**: pošaljite jedan stvaran cenovnik ili lager izvezen iz knjigovodstvenog programa (može sa izmišljenim cenama). Proverićemo da se kolone same prepoznaju; ako ne, u koraku „Kolone“ ih povežite jednom i kliknite „Sačuvaj mapiranje“ — sledeći put se prepoznaju same.
+- [ ] **[P1] Cena u fajlu**: da li program izvozi maloprodajnu cenu sa PDV-om (MP) ili veleprodajnu bez PDV-a (VP)? Ako je samo VP, uvoz računa MP = VP × 1,2 i to prikazuje kao upozorenje.
+- [ ] **[P2] Kategorije iz programa**: nazivi grupa artikala iz programa se jednom povežu sa kategorijama sajta u koraku „Provera“. Ako su grupe u programu drugačije od kategorija na sajtu, pošaljite spisak da napravimo stalno mapiranje.
+- [ ] **[P2] Deaktiviranje artikala kojih nema u fajlu**: koristite samo sa punim cenovnikom (ne sa delom lagera). Traži upis reči DEAKTIVIRAJ i može se poništiti.
+- [ ] **[P3] Slike sa adresa**: slike se preuzimaju samo za artikle koji još nemaju slike, do 12 po artiklu, do 10 MB, JPEG/PNG/WebP.

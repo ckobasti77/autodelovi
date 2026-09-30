@@ -4,7 +4,14 @@ import { describe, expect, it } from "vitest";
 import { encodeWindows1250 } from "@/lib/import/csv";
 import { autoMap } from "@/lib/import/headers";
 import { validateRow } from "@/lib/import/row";
-import { dataRows, guessHeaderRow, headersOf, loadWorkbook, mapRow, pickSheet } from "@/lib/excel/importSheet";
+import {
+  dataRows,
+  guessHeaderRow,
+  headersOf,
+  loadWorkbook,
+  mapRow,
+  pickSheet,
+} from "@/lib/excel/importSheet";
 import {
   buildProductsWorkbook,
   buildReportWorkbook,
@@ -47,7 +54,13 @@ describe("template", () => {
       vehicles: VEHICLES,
     });
     const wb = loadWorkbook(bytes, "sablon.xlsx");
-    expect([...wb.sheets.keys()]).toEqual(["Proizvodi", "Uputstvo", "Kategorije", "Proizvođači", "Vozila"]);
+    expect([...wb.sheets.keys()]).toEqual([
+      "Proizvodi",
+      "Uputstvo",
+      "Kategorije",
+      "Proizvođači",
+      "Vozila",
+    ]);
     expect(pickSheet(wb)).toBe("Proizvodi");
     const rows = wb.sheets.get("Proizvodi")!;
     const mapped = autoMap(headersOf(rows, 0));
@@ -97,7 +110,8 @@ describe("product export round-trip", () => {
 
 describe("csv loading", () => {
   it("reads a Windows-1250 file with `;` and keeps text cells as written", () => {
-    const text = "Šifra;Naziv;MP cena;Količina\r\n00123;Kočione pločice „ŽŠĐ“;12.990,00;3\r\n;;;\r\nX-2;Čep ćevapa;1.234,5;0\r\n";
+    const text =
+      "Šifra;Naziv;MP cena;Količina\r\n00123;Kočione pločice „ŽŠĐ“;12.990,00;3\r\n;;;\r\nX-2;Čep ćevapa;1.234,5;0\r\n";
     const wb = loadWorkbook(encodeWindows1250(text), "lager.csv");
     expect(wb).toMatchObject({ format: "csv", encoding: "windows-1250", delimiter: ";" });
     const rows = wb.sheets.get("CSV")!;
@@ -119,7 +133,14 @@ describe("error report", () => {
       },
     ]);
     const rows = loadWorkbook(bytes, "r.xlsx").sheets.get("Greške i upozorenja")!;
-    expect(rows[1]).toEqual([7, "A-1", "Greška", "Greška", "MP cena (sa PDV)", "Cena „12,99a“ nije ispravan broj."]);
+    expect(rows[1]).toEqual([
+      7,
+      "A-1",
+      "Greška",
+      "Greška",
+      "MP cena (sa PDV)",
+      "Cena „12,99a“ nije ispravan broj.",
+    ]);
     expect(rows[2]?.[3]).toBe("Upozorenje");
   });
 });

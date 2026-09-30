@@ -13,6 +13,8 @@ export type StepperProps = {
   hrefFor?: (step: Step, index: number) => string;
   /** Client-state flows: completed steps get an „Izmeni“ button instead of a link. */
   onSelect?: (index: number) => void;
+  /** Accessible name of the step list (default „Koraci porudžbine“). */
+  label?: string;
   className?: string;
 };
 
@@ -21,10 +23,17 @@ export type StepperProps = {
  * „Izmeni“ link, the current step has a 2 px accent underline and aria-current="step".
  * Phones: „Korak 2 od 4 · Dostava“ + a 4-segment bar.
  */
-export function Stepper({ steps, current, hrefFor, onSelect, className }: StepperProps) {
+export function Stepper({
+  steps,
+  current,
+  hrefFor,
+  onSelect,
+  label = "Koraci porudžbine",
+  className,
+}: StepperProps) {
   const active = steps[current];
   return (
-    <nav aria-label="Koraci porudžbine" className={className} data-reveal="off">
+    <nav aria-label={label} className={className} data-reveal="off">
       <div className="flex flex-col gap-2 md:hidden">
         <p className="type-body-s text-ink-2">
           Korak {current + 1} od {steps.length}

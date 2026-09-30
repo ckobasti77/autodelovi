@@ -221,6 +221,12 @@ Decisions D137–D160; tests `convex/admin.test.ts` (17), `tests/unit/domain/{sl
 - **Shared helpers**: `lib/pricing#pricingContextForProfile`, `lib/authz#viewerForUser` (server-side decisions on behalf of a customer only), `lib/inquiries#currentSentQuote/quoteOrderLines/completeQuoteAcceptance`, `lib/domain/sla.ts`; `lib/audit#diffFields` compares full values (D146).
 - **Frontend**: `components/admin/**` — `shell/` (AdminShell, AdminSidebar, AdminTopBar, CommandPalette, NotificationBell, ShortcutsDialog, hotkeys, breadcrumb context), `ui.tsx` (PageHeader, Section, DefinitionList, status badges, DocNumber, SegmentedFilter, SearchField, LoadMoreFooter, SaveBar), `ConfirmDialog` (reason / typed phrase), `FiltersPopover`, `ProductPicker`, `Attribution`, `charts`, feature folders (dashboard, orders, inquiries, products, catalog, customers, settings, system, print); `lib/admin/format.ts`; `lib/i18n/sr/admin.ts`.
 
+### E12. Excel import and exports (step 16)
+Decisions D161–D170; details in [IMPORT §K6](IMPORT.md). Tests `convex/imports.test.ts` (12), `tests/unit/import/*` (43), e2e `tests/e2e/import.spec.ts`.
+- **Modules**: `imports` (reference, presets, generateUploadUrl, createBatch, stageRows, finalizeStaging, cancel, commit, resume, rollback, batch, history, rows, samples, changes, imageJobs, sourceFileUrl — all `staffQuery/staffMutation`), `importCommit` (internal: commitChunk, commitRow, deactivateOne, countMissingChunk, rollbackChunk, rollbackOne, purgeRows), `importImages` (internal action + attach/fail), `exportsAdmin` (productsPage, ordersPage, customersPage, mechanicsPage); `lib/importModel` (reference loading, matching, diff, create input, ensureManufacturer, history summary), `lib/importValidators`.
+- **Shared pure code**: `lib/import/*` and `lib/domain/productRules.ts` run in the browser worker, the route handlers and Convex.
+- **Frontend**: `components/admin/import/{ImportWizard,FileStep,MappingStep,CheckStep,BatchSteps,ImportHistory,ImportBatchDetail,parts,useImportWorker}.tsx`, `components/admin/export/ExportsAdmin.tsx`; the worker (`new Worker(new URL("../../../lib/excel/import.worker.ts", import.meta.url), { type: "module" })`) holds the workbook; route handlers use `lib/server/adminDownload.ts`.
+
 ## G. Frontend architecture
 
 ### G1. Folder structure (repo root, no `src/`)
