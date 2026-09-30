@@ -263,4 +263,40 @@ export const SEED_FAQS: readonly SeedFaq[] = [
     answerMd:
       "Na stranici artikla uključite „Javi mi kad stigne“ ili pošaljite upit — često možemo da nabavimo deo ili ponudimo zamenu drugog proizvođača sa istim OEM brojem.",
   },
+  {
+    scope: "za-majstore",
+    question: "Ko može da dobije majstorski nalog?",
+    answerMd:
+      "Registrovani auto servisi, vulkanizeri, autoelektričari i limari koji kupuju delove za vozila svojih mušterija. Potrebni su naziv firme ili radnje, PIB i matični broj.",
+  },
+  {
+    scope: "za-majstore",
+    question: "Koliko traje odobrenje?",
+    answerMd:
+      "Registraciju proveravamo u toku radnog dana. Kad nalog odobrimo, stiže vam e-mail sa nivoom rabata, a cene na sajtu se odmah menjaju u vaše.",
+  },
+  {
+    scope: "za-majstore",
+    question: "Kako se računa rabat?",
+    answerMd:
+      "Rabat se računa od maloprodajne cene sa PDV-om, po nivou saradnje. Za pojedine proizvođače i kategorije procenat može biti drugačiji; tačnu cenu uvek vidite na artiklu, u korpi i u cenovniku koji preuzimate iz portala.",
+  },
+  {
+    scope: "za-majstore",
+    question: "Kako radi brza porudžbina?",
+    answerMd:
+      "Nalepite brojeve delova, jedan po redu, sa količinom (npr. `1K0615301AA 2`) ili otpremite CSV. Sistem prepoznaje brojeve sa razmacima, tačkama i crticama, pokaže šta je na stanju i po kojoj ceni, a brojeve koje nemamo šaljete kao upit jednim klikom.",
+  },
+  {
+    scope: "za-majstore",
+    question: "Mogu li da platim kasnije?",
+    answerMd:
+      "Odloženo plaćanje uključujemo servisima sa kojima redovno radimo, uz dogovoreni rok i limit. Do tada plaćate pouzećem, pri preuzimanju ili virmanom uz predračun.",
+  },
+  {
+    scope: "za-majstore",
+    question: "Da li dostavljate u servis?",
+    answerMd:
+      "Da. Kurir dostavlja na adresu servisa iz vašeg profila; adresu možete promeniti pri svakoj porudžbini. Lično preuzimanje u radnji je bez troška.",
+  },
 ];

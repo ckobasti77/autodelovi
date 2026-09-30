@@ -144,3 +144,32 @@ describe("price visibility matrix (docs/SECURITY.md §D4)", () => {
     expect((await live(w, "asPending"))[w.products.disc].yourPricePara).toBe(900_000);
   });
 });
+
+describe("no other role's price in cart, search, panel or portal payloads", () => {
+  test("customers and other mechanics never receive mechanic prices", async () => {
+    const t = makeT();
+    const w = await setupWorld(t);
+    await w.asCustomerA.mutation(api.carts.addItem, { productId: w.products.disc, quantity: 1 });
+    const cart = await w.asCustomerA.query(api.carts.get, {});
+    expect(cart.lines[0]).toMatchObject({ unitPricePara: 1_000_000, discountBp: 0 });
+    expect(cart.discountPara).toBe(0);
+
+    const panel = await w.asCustomerA.query(api.catalog.products.partPanel, {
+      categorySlug: "kocioni-diskovi",
+    });
+    expect(panel?.items.every((i) => i.yourPricePara === null)).toBe(true);
+
+    const search = await w.asMechA.query(api.search.run, { q: "5Q0615301F" });
+    const text = JSON.stringify(search);
+    for (const forbidden of ["yourPricePara", "costNetPara", "900000", "750000", "500000"]) {
+      expect(text).not.toContain(forbidden);
+    }
+
+    // Mechanic B's favorites and quick order carry B's price only.
+    await w.asMechB.mutation(api.account.toggleFavorite, { productId: w.products.disc });
+    const favB = await w.asMechB.query(api.account.favorites, {});
+    expect(favB[0]?.unitPricePara).toBe(750_000);
+    const favA = await w.asMechA.query(api.account.favorites, {});
+    expect(favA).toEqual([]);
+  });
+});

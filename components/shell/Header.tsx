@@ -1,10 +1,9 @@
-import { RouteLink as NextLink } from "@/components/ui/RouteLink";
 import type { ReactNode } from "react";
-import { ChatCircleTextIcon, PhoneIcon, UserCircleIcon } from "@phosphor-icons/react/dist/ssr";
+import { ChatCircleTextIcon, PhoneIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { contactLinkList, contactLinks, resolveContact, type Contact } from "@/config/site";
-import { ROUTES } from "@/constants/routes";
 import { TEST_IDS } from "@/constants/testIds";
+import { AccountLink } from "@/components/shell/AccountLink";
 import { Wordmark } from "@/components/shell/BrandMark";
 import { CartButton } from "@/components/shell/CartButton";
 import { CartButtonLive } from "@/components/shell/CartButtonLive";
@@ -81,14 +80,7 @@ export function Header({ vehicleSlot, cartCount, contact }: HeaderProps) {
               </a>
             </>
           ) : null}
-          <NextLink
-            href={ROUTES.account}
-            aria-label="Moj nalog"
-            data-testid={TEST_IDS.accountButton}
-            className={`${iconLink} hidden sm:inline-flex`}
-          >
-            <UserCircleIcon size={24} aria-hidden="true" />
-          </NextLink>
+          <AccountLink className={`${iconLink} hidden sm:inline-flex`} />
           {cartCount === undefined ? <CartButtonLive /> : <CartButton count={cartCount} />}
           <MobileNav contacts={contactLinkList(resolved)} className="lg:hidden" />
         </div>

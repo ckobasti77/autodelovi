@@ -10,9 +10,10 @@ import { canOrderQuantity } from "../lib/domain/stock";
 import { actorOf } from "./lib/authz";
 import { cartItems, findCart, getOrCreateCart, MAX_LINE_QTY, priceLines } from "./lib/carts";
 import { isListed } from "./lib/catalog";
-import { fail, notFound } from "./lib/errors";
+import { fail, invalid, notFound } from "./lib/errors";
 import { publicMutation, publicQuery, userMutation, userQuery } from "./lib/functions";
 import { createOrder, validateCheckout, type NewOrderLine } from "./lib/orders";
+import { creditStatus, formatDinarsSr } from "./lib/mechanics";
 import { enforceRateLimit } from "./lib/rateLimits";
 import { getSettings } from "./lib/settings";
 import { hashToken, isTokenShape } from "./lib/tokens";
@@ -127,6 +128,19 @@ export const submit = publicMutation({
       if (profile?.tierId) {
         const tier = await ctx.db.get("priceTiers", profile.tierId);
         if (tier) tierSnapshot = { tierId: tier._id, name: tier.name };
+      }
+      if (profile && checkout.payment.method === "deferred") {
+        const credit = await creditStatus(ctx, profile);
+        const itemsPara = lines.reduce((s, l) => s + l.unitPricePara * l.quantity, 0);
+        const free = checkout.deliveryConfig.freeOverPara;
+        const deliveryPara =
+          free !== undefined && itemsPara >= free ? 0 : checkout.deliveryConfig.pricePara;
+        if (credit.availablePara !== null && itemsPara + deliveryPara > credit.availablePara) {
+          invalid(
+            `Limit za odloženo plaćanje nije dovoljan: preostalo je ${formatDinarsSr(credit.availablePara)}. Izaberite drugi način plaćanja ili nas pozovite.`,
+            "payment.method",
+          );
+        }
       }
     }
 
@@ -312,6 +326,10 @@ export const myOrders = userQuery({
       createdAt: v.number(),
       totalPara: v.number(),
       itemCount: v.number(),
+      paymentMethod: paymentMethodV,
+      paymentStatus: v.union(v.literal("unpaid"), v.literal("paid"), v.literal("refunded")),
+      dueAt: v.union(v.number(), v.null()),
+      deliveryMethod: deliveryMethodV,
     }),
   ),
   handler: async (ctx) => {
@@ -326,6 +344,10 @@ export const myOrders = userQuery({
       createdAt: o._creationTime,
       totalPara: o.totals.totalPara,
       itemCount: o.itemCount,
+      paymentMethod: o.payment.method,
+      paymentStatus: o.payment.status,
+      dueAt: o.payment.dueAt ?? null,
+      deliveryMethod: o.delivery.method,
     }));
   },
 });

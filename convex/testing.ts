@@ -7,6 +7,8 @@ import { v } from "convex/values";
 
 import type { Doc } from "./_generated/dataModel";
 import { internalMutation, internalQuery } from "./_generated/server";
+import { SYSTEM_ACTOR } from "./lib/authz";
+import { approveMechanic as approveMechanicProfile } from "./lib/mechanics";
 import { hashToken, randomToken } from "./lib/tokens";
 import { isAvailableNow } from "../lib/domain/stock";
 
@@ -207,5 +209,125 @@ export const quotedInquiryToken = internalMutation({
     const token = randomToken();
     await ctx.db.patch("inquiries", inquiry._id, { publicTokenHash: await hashToken(token) });
     return { number: inquiry.number, token };
+  },
+});
+
+/**
+ * E2E helper (step 14): approves the mechanic registered with `email` exactly like staff
+ * would (same helper as `mechanicsAdmin.approve`), and flags the account `isTest`.
+ */
+export const approveMechanic = internalMutation({
+  args: {
+    email: v.string(),
+    tierSlug: v.optional(v.string()),
+    creditEnabled: v.boolean(),
+    creditLimitPara: v.optional(v.number()),
+  },
+  returns: v.object({ profileId: v.id("mechanicProfiles"), tierName: v.string() }),
+  handler: async (ctx, args) => {
+    const user = await ctx.db
+      .query("users")
+      .withIndex("email", (q) => q.eq("email", args.email.trim().toLowerCase()))
+      .first();
+    if (!user) throw new Error(`No user ${args.email}`);
+    const profile = await ctx.db
+      .query("mechanicProfiles")
+      .withIndex("by_userId", (q) => q.eq("userId", user._id))
+      .first();
+    if (!profile) throw new Error(`No mechanic profile for ${args.email}`);
+    const tier = await ctx.db
+      .query("priceTiers")
+      .withIndex("by_slug", (q) => q.eq("slug", args.tierSlug ?? "majstor"))
+      .unique();
+    if (!tier) throw new Error(`No tier ${args.tierSlug ?? "majstor"}`);
+    await approveMechanicProfile(ctx, SYSTEM_ACTOR, undefined, {
+      profileId: profile._id,
+      tierId: tier._id,
+      creditEnabled: args.creditEnabled,
+      ...(args.creditLimitPara !== undefined ? { creditLimitPara: args.creditLimitPara } : {}),
+    });
+    await ctx.db.patch("users", user._id, { isTest: true });
+    return { profileId: profile._id, tierName: tier.name };
+  },
+});
+
+export const mechanicProbe = internalQuery({
+  args: { email: v.string() },
+  returns: v.union(
+    v.null(),
+    v.object({
+      status: v.string(),
+      companyName: v.string(),
+      pib: v.string(),
+      creditEnabled: v.boolean(),
+      eventTypes: v.array(v.string()),
+    }),
+  ),
+  handler: async (ctx, { email }) => {
+    const user = await ctx.db
+      .query("users")
+      .withIndex("email", (q) => q.eq("email", email.trim().toLowerCase()))
+      .first();
+    if (!user) return null;
+    const profile = await ctx.db
+      .query("mechanicProfiles")
+      .withIndex("by_userId", (q) => q.eq("userId", user._id))
+      .first();
+    if (!profile) return null;
+    const events = await ctx.db
+      .query("domainEvents")
+      .withIndex("by_aggregateType_and_aggregateId", (q) =>
+        q.eq("aggregateType", "mechanic").eq("aggregateId", profile._id),
+      )
+      .take(20);
+    return {
+      status: profile.status,
+      companyName: profile.companyName,
+      pib: profile.pib,
+      creditEnabled: profile.creditEnabled,
+      eventTypes: events.map((e) => e.type),
+    };
+  },
+});
+
+/**
+ * Quick-order fixtures from the seeded catalogue: an OEM code that matches exactly one
+ * listed, in-stock product, and a code shared by several listed products (ambiguous).
+ */
+export const quickOrderSamples = internalQuery({
+  args: {},
+  returns: v.object({
+    exact: v.union(v.null(), v.object({ code: v.string(), slug: v.string(), name: v.string() })),
+    ambiguous: v.union(v.null(), v.object({ code: v.string(), count: v.number() })),
+  }),
+  handler: async (ctx) => {
+    const rows = await ctx.db.query("productCodes").withIndex("by_code").take(4_000);
+    const byCode = new Map<string, { raw: string; kind: string; productIds: Set<string> }>();
+    for (const r of rows) {
+      if (!r.active) continue;
+      const entry = byCode.get(r.code) ?? { raw: r.raw, kind: r.kind, productIds: new Set() };
+      entry.productIds.add(r.productId);
+      byCode.set(r.code, entry);
+    }
+    let exact: { code: string; slug: string; name: string } | null = null;
+    let ambiguous: { code: string; count: number } | null = null;
+    for (const [code, entry] of byCode) {
+      if (!exact && entry.kind === "oem" && entry.productIds.size === 1) {
+        const p = await ctx.db.get("products", [...entry.productIds][0] as Doc<"products">["_id"]);
+        if (p && p.active && p.deletedAt === undefined && p.stockQty >= 5 && isAvailableNow(p.stockState)) {
+          exact = { code: entry.raw || code, slug: p.slug, name: p.name };
+        }
+      }
+      if (!ambiguous && entry.productIds.size >= 2) {
+        let listed = 0;
+        for (const id of entry.productIds) {
+          const p = await ctx.db.get("products", id as Doc<"products">["_id"]);
+          if (p && p.active && p.deletedAt === undefined) listed++;
+        }
+        if (listed >= 2) ambiguous = { code: entry.raw || code, count: listed };
+      }
+      if (exact && ambiguous) break;
+    }
+    return { exact, ambiguous };
   },
 });

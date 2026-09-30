@@ -6,11 +6,14 @@ import {
   ChatCircleTextIcon,
   EnvelopeIcon,
   ListIcon,
+  ListNumbersIcon,
   PhoneIcon,
   UserCircleIcon,
   WhatsappLogoIcon,
+  WrenchIcon,
 } from "@phosphor-icons/react/dist/ssr";
 
+import { isMechanicViewer, useViewer } from "@/lib/auth/useViewer";
 import { IconButton } from "@/components/ui/IconButton";
 import { Sheet } from "@/components/ui/Sheet";
 import { NavLinks } from "@/components/shell/NavLinks";
@@ -42,6 +45,9 @@ export function MobileNav({
 }) {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
+  const viewer = useViewer();
+  const mechanic = isMechanicViewer(viewer);
+  const approved = mechanic && viewer?.mechanicStatus === "approved";
 
   return (
     <div className={className}>
@@ -62,13 +68,27 @@ export function MobileNav({
         <nav aria-label="Glavna navigacija">
           <NavLinks layout="column" onNavigate={close} />
         </nav>
+        {approved ? (
+          <NextLink
+            href={ROUTES.mechanicQuickOrderPage}
+            onClick={close}
+            className="mt-6 flex min-h-11 items-center gap-3 type-body font-semibold text-ink-1"
+          >
+            <ListNumbersIcon size={24} aria-hidden="true" className="text-accent" />
+            Brza porudžbina
+          </NextLink>
+        ) : null}
         <NextLink
-          href={ROUTES.account}
+          href={mechanic ? ROUTES.mechanicPortal : ROUTES.account}
           onClick={close}
-          className="mt-6 flex min-h-11 items-center gap-3 type-body font-semibold text-ink-1"
+          className={`${approved ? "mt-1" : "mt-6"} flex min-h-11 items-center gap-3 type-body font-semibold text-ink-1`}
         >
-          <UserCircleIcon size={24} aria-hidden="true" className="text-ink-2" />
-          Moj nalog
+          {mechanic ? (
+            <WrenchIcon size={24} aria-hidden="true" className="text-ink-2" />
+          ) : (
+            <UserCircleIcon size={24} aria-hidden="true" className="text-ink-2" />
+          )}
+          {mechanic ? "Majstorski portal" : "Moj nalog"}
         </NextLink>
         <div className="mt-8 flex flex-col gap-1 border-t border-line pt-6">
           <p className="mb-2 type-label text-ink-3">Kontakt</p>

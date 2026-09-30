@@ -88,6 +88,17 @@ export type CheckoutConfig = {
     email: string;
     phone: string;
     creditEnabled: boolean;
+    /** Approved mechanic: saved company + workshop address, deferred-payment terms. */
+    mechanic?: {
+      companyName: string;
+      pib: string;
+      mb: string;
+      address: string;
+      city: string;
+      paymentTermsDays: number;
+      /** Remaining deferred-payment limit; null = no limit. */
+      availablePara: number | null;
+    };
   } | null;
   vatRateBp: number;
 };
@@ -160,7 +171,12 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
   const top = useRef<HTMLDivElement>(null);
   const tracked = useRef(false);
 
-  const firstDelivery = config.deliveryMethods[0]?.code ?? "pickup";
+  const mechanic = config.viewer?.mechanic;
+  // Mechanics: delivery to the workshop by default (address from the profile).
+  const firstDelivery =
+    mechanic && config.deliveryMethods.some((d) => d.code === "courier")
+      ? "courier"
+      : (config.deliveryMethods[0]?.code ?? "pickup");
   const form = useForm<CheckoutValues>({
     resolver: zodResolver(checkoutSchema),
     mode: "onTouched",
@@ -169,13 +185,13 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
       lastName: config.viewer?.lastName ?? "",
       phone: config.viewer?.phone ?? "",
       email: config.viewer?.email ?? "",
-      isCompany: false,
-      companyName: "",
-      pib: "",
-      mb: "",
+      isCompany: Boolean(mechanic),
+      companyName: mechanic?.companyName ?? "",
+      pib: mechanic?.pib ?? "",
+      mb: mechanic?.mb ?? "",
       deliveryMethod: firstDelivery,
-      street: "",
-      city: "",
+      street: mechanic?.address ?? "",
+      city: mechanic?.city ?? "",
       postalCode: "",
       addressNote: "",
       paymentMethod: firstDelivery === "courier" ? "cod" : "pickup_cash",
@@ -574,15 +590,27 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
                     value={field.value}
                     onValueChange={(v) => field.onChange(v)}
                     error={errors.paymentMethod?.message}
-                    options={payments.map((p) => ({
-                      value: p.code,
-                      label: p.label,
-                      description:
-                        p.requires === "company" && !values.isCompany
-                          ? `${p.instructions} Samo za firme — u koraku Kontakt uključite „Kupujem kao firma“.`
-                          : p.instructions,
-                      disabled: p.requires === "company" && !values.isCompany,
-                    }))}
+                    options={payments.map((p) => {
+                      const overLimit =
+                        p.requires === "mechanic_credit" &&
+                        mechanic?.availablePara !== undefined &&
+                        mechanic.availablePara !== null &&
+                        totalPara > mechanic.availablePara;
+                      const credit =
+                        p.requires === "mechanic_credit" && mechanic
+                          ? ` Rok ${mechanic.paymentTermsDays} dana${mechanic.availablePara !== null ? `, preostali limit ${formatRSD(mechanic.availablePara)}` : ""}.`
+                          : "";
+                      return {
+                        value: p.code,
+                        label: p.label,
+                        description: overLimit
+                          ? `Iznos porudžbine prelazi preostali limit (${formatRSD(mechanic!.availablePara!)}). Izaberite drugi način ili nas pozovite.`
+                          : p.requires === "company" && !values.isCompany
+                            ? `${p.instructions} Samo za firme — u koraku Kontakt uključite „Kupujem kao firma“.`
+                            : `${p.instructions}${credit}`,
+                        disabled: (p.requires === "company" && !values.isCompany) || overLimit,
+                      };
+                    })}
                   />
                 )}
               />

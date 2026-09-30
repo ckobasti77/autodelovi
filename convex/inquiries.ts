@@ -8,23 +8,19 @@ import { internal } from "./_generated/api";
 import type { Doc, Id } from "./_generated/dataModel";
 import type { MutationCtx } from "./_generated/server";
 import { normalizeCode } from "../lib/domain/codes";
-import { formatDocumentNumber, isValidEmail, normalizeEmail } from "../lib/domain/identifiers";
+import { isValidEmail, normalizeEmail } from "../lib/domain/identifiers";
 import { checkQuoteAccept, QUOTE_ACCEPT_ERRORS_SR } from "../lib/domain/inquiryStateMachine";
-import { buildSearchText } from "../lib/domain/search";
-import { belgradeYear } from "../lib/domain/time";
 import { decodeVin } from "../lib/domain/vin";
 import { normalizePhone } from "../lib/format/phone";
 import { actorOf } from "./lib/authz";
-import { nextCounter } from "./lib/counters";
 import { fail, invalid, notFound } from "./lib/errors";
 import { emitEvent } from "./lib/events";
 import { publicMutation, publicQuery, userQuery } from "./lib/functions";
-import { logInquiryEvent, setInquiryStatus } from "./lib/inquiries";
+import { insertInquiry, logInquiryEvent, setInquiryStatus } from "./lib/inquiries";
 import { createOrder, validateCheckout, type NewOrderLine } from "./lib/orders";
 import { enforceRateLimit } from "./lib/rateLimits";
 import { getSettings } from "./lib/settings";
-import { bumpStatsDaily } from "./lib/stats";
-import { hashToken, isTokenShape, randomToken } from "./lib/tokens";
+import { hashToken, isTokenShape } from "./lib/tokens";
 import {
   addressV,
   attributionV,
@@ -175,20 +171,8 @@ export const submit = publicMutation({
       if (!product) invalid("Artikal ne postoji.", "productId");
     }
 
-    const settings = await getSettings(ctx);
-    const year = belgradeYear(now);
-    const seq = await nextCounter(ctx, `inquiry:${year}`);
-    const number = formatDocumentNumber(settings.brand.inquiryPrefix, year, seq);
-    const token = randomToken();
     const viewer = ctx.viewer;
-    const actor = viewer ? actorOf(viewer) : { type: "customer" as const, name };
-
-    const inquiryId = await ctx.db.insert("inquiries", {
-      number,
-      year,
-      seq,
-      publicTokenHash: await hashToken(token),
-      status: "nov",
+    const { inquiryId, number, token } = await insertInquiry(ctx, {
       kind: args.kind,
       ...(vin ? { vin } : {}),
       ...(vinInfo ? { vinInfo } : {}),
@@ -211,38 +195,9 @@ export const submit = publicMutation({
       ...(viewer?.mechanic ? { mechanicProfileId: viewer.mechanic.profileId } : {}),
       ...(args.attribution ? { attribution: args.attribution } : {}),
       consent: args.consent,
-      reminderLevel: 0,
-      searchText: buildSearchText([
-        number,
-        name,
-        email,
-        phone,
-        vin,
-        message.slice(0, 300),
-        ...requestedCodes.slice(0, 10),
-      ]),
-      isDemo: false,
-      updatedAt: now,
+      actor: viewer ? actorOf(viewer) : { type: "customer" as const, name },
     });
     await attachPhotos(ctx, photos, ctx.client.key, inquiryId);
-    await ctx.db.insert("inquiryEvents", {
-      inquiryId,
-      type: "created",
-      toStatus: "nov",
-      message: "Upit je primljen.",
-      visibleToCustomer: true,
-      actor,
-      at: now,
-    });
-    await emitEvent(ctx, {
-      type: "inquiry.created",
-      aggregateType: "inquiry",
-      aggregateId: inquiryId,
-      payload: { kind: "inquiry", inquiryId, number },
-      dedupeKey: `inquiry.created:${inquiryId}`,
-      actor,
-    });
-    await bumpStatsDaily(ctx, now, { inquiriesCount: 1 });
     return { number, token };
   },
 });

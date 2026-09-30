@@ -19,7 +19,7 @@ import {
 import { lookupCodes } from "./catalog/codes";
 import { publicMutation, publicQuery, staffQuery } from "./lib/functions";
 import { tryRateLimit } from "./lib/rateLimits";
-import { bumpStatsDaily } from "./lib/stats";
+import { recordSearch, searchUserType } from "./lib/searchLog";
 import { getSettings } from "./lib/settings";
 
 const TEXT_LIMIT = 48;
@@ -222,58 +222,17 @@ export const log = publicMutation({
   },
   returns: v.null(),
   handler: async (ctx, args) => {
-    const query = args.query.slice(0, SEARCH_QUERY_MAX).trim();
-    if (!query) return null;
+    if (!args.query.trim()) return null;
     if (!(await tryRateLimit(ctx, "searchLog", ctx.client.key))) return null;
-    const classified = classifyQuery(query);
-    const normalized =
-      classified.kind === "code" ? (classified.codes[0] ?? classified.folded) : classified.folded;
-    const now = Date.now();
-    const viewer = ctx.viewer;
-    const userType = !viewer
-      ? "anon"
-      : viewer.isStaff
-        ? "staff"
-        : viewer.mechanic?.status === "approved"
-          ? "mechanic"
-          : "customer";
-    const resultsCount = Math.max(0, Math.floor(args.resultsCount));
-    await ctx.db.insert("searchLogs", {
-      query,
-      normalized: normalized.slice(0, 200),
-      kind: classified.kind,
-      resultsCount,
+    await recordSearch(ctx, {
+      query: args.query,
+      resultsCount: args.resultsCount,
       exactCodeHit: args.exactCodeHit,
-      userType,
-      ...(args.generationId ? { generationId: args.generationId } : {}),
       source: args.source,
-      ...(args.sessionHash ? { sessionHash: args.sessionHash.slice(0, 64) } : {}),
-      at: now,
+      userType: searchUserType(ctx.viewer),
+      ...(args.generationId ? { generationId: args.generationId } : {}),
+      ...(args.sessionHash ? { sessionHash: args.sessionHash } : {}),
     });
-    const day = belgradeDay(now);
-    const daily = await ctx.db
-      .query("searchDaily")
-      .withIndex("by_day_and_normalized", (q) =>
-        q.eq("day", day).eq("normalized", normalized.slice(0, 200)),
-      )
-      .unique();
-    if (daily) {
-      await ctx.db.patch("searchDaily", daily._id, {
-        count: daily.count + 1,
-        zeroCount: daily.zeroCount + (resultsCount === 0 ? 1 : 0),
-        lastAt: now,
-      });
-    } else {
-      await ctx.db.insert("searchDaily", {
-        day,
-        normalized: normalized.slice(0, 200),
-        sample: query,
-        count: 1,
-        zeroCount: resultsCount === 0 ? 1 : 0,
-        lastAt: now,
-      });
-    }
-    if (resultsCount === 0) await bumpStatsDaily(ctx, now, { zeroSearches: 1 });
     return null;
   },
 });

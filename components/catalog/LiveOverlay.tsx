@@ -5,7 +5,7 @@
  * product on the page. Server HTML (cached, anonymous) renders first; after idle time the
  * overlay swaps in live stock and — for approved mechanics — „Vaša cena“.
  */
-import { useQuery } from "convex/react";
+import { useConvexAuth, useQuery } from "convex/react";
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
 import { api } from "@/convex/_generated/api";
@@ -30,6 +30,10 @@ export function LiveOverlayProvider({
   children: ReactNode;
 }) {
   const [enabled, setEnabled] = useState(false);
+  // Signed-in viewers (mechanics above all) get their own prices at once; anonymous visitors
+  // wait for the first interaction so the subscription stays out of the load window.
+  const { isAuthenticated } = useConvexAuth();
+  const live = enabled || isAuthenticated;
   useEffect(() => {
     // Keep the subscription out of the load window (TBT): the cached SSR stock is at most a few
     // minutes old, so the live values arrive on the first interaction or after a quiet moment.
@@ -50,7 +54,7 @@ export function LiveOverlayProvider({
   const ids = useMemo(() => [...new Set(productIds)].slice(0, MAX_IDS), [productIds]);
   const rows = useQuery(
     api.catalog.products.liveState,
-    enabled && ids.length > 0 ? { productIds: ids as Id<"products">[] } : "skip",
+    live && ids.length > 0 ? { productIds: ids as Id<"products">[] } : "skip",
   );
   const map = useMemo(() => {
     const m = new Map<string, LiveRow>();

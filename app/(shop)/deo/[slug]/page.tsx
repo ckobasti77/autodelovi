@@ -27,6 +27,7 @@ import { Link } from "@/components/ui/Link";
 import { RevealText } from "@/components/text-reveal/RevealText";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { AddToCartButton } from "@/components/catalog/AddToCartButton";
+import { FavoriteButton } from "@/components/mechanic/FavoriteButton";
 import { isOrderable } from "@/lib/catalog/orderable";
 import { LiveOverlayProvider } from "@/components/catalog/LiveOverlay";
 import { ProductGrid } from "@/components/catalog/ProductGrid";
@@ -245,11 +246,14 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
                   <BackInStockForm productId={c._id} productName={c.name} />
                 )}
                 <div className="flex flex-col gap-3">
-                  <Button asChild variant="secondary" icon={<ChatCircleTextIcon size={20} />} className="self-start">
-                    <Link href={ROUTES.inquiryWith({ proizvod: c.slug })} variant="unstyled">
-                      Pošaljite upit
-                    </Link>
-                  </Button>
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                    <Button asChild variant="secondary" icon={<ChatCircleTextIcon size={20} />}>
+                      <Link href={ROUTES.inquiryWith({ proizvod: c.slug })} variant="unstyled">
+                        Pošaljite upit
+                      </Link>
+                    </Button>
+                    <FavoriteButton productId={c._id} productName={c.name} />
+                  </div>
                   <ContactActions links={contacts} location="product" />
                 </div>
               </div>

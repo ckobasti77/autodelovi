@@ -3,9 +3,16 @@
  */
 import type { Doc, Id } from "../_generated/dataModel";
 import type { MutationCtx } from "../_generated/server";
+import { formatDocumentNumber } from "../../lib/domain/identifiers";
 import { canTransitionInquiry, type InquiryStatus } from "../../lib/domain/inquiryStateMachine";
+import { buildSearchText } from "../../lib/domain/search";
+import { belgradeYear } from "../../lib/domain/time";
+import { nextCounter } from "./counters";
 import { fail } from "./errors";
 import { emitEvent } from "./events";
+import { getSettings } from "./settings";
+import { bumpStatsDaily } from "./stats";
+import { hashToken, randomToken } from "./tokens";
 import type { Actor } from "./validators";
 
 export const INQUIRY_STATUS_LABEL_SR: Record<InquiryStatus, string> = {
@@ -88,4 +95,76 @@ export async function logInquiryEvent(
 
 export function quoteTotal(lines: readonly { quantity: number; unitPricePara: number }[]): number {
   return lines.reduce((sum, l) => sum + l.quantity * l.unitPricePara, 0);
+}
+
+export type NewInquiry = Omit<
+  Doc<"inquiries">,
+  | "_id"
+  | "_creationTime"
+  | "number"
+  | "year"
+  | "seq"
+  | "publicTokenHash"
+  | "status"
+  | "reminderLevel"
+  | "searchText"
+  | "isDemo"
+  | "updatedAt"
+> & { actor: Actor };
+
+/**
+ * Inserts a validated inquiry (`nov`) with its number, capability token, `created` history
+ * row, `inquiry.created` outbox event and daily stats — shared by the public form and the
+ * mechanic quick-order „nepronađeni brojevi“ shortcut. Callers validate and attach photos.
+ */
+export async function insertInquiry(
+  ctx: MutationCtx,
+  input: NewInquiry,
+): Promise<{ inquiryId: Id<"inquiries">; number: string; token: string }> {
+  const { actor, ...fields } = input;
+  const now = Date.now();
+  const settings = await getSettings(ctx);
+  const year = belgradeYear(now);
+  const seq = await nextCounter(ctx, `inquiry:${year}`);
+  const number = formatDocumentNumber(settings.brand.inquiryPrefix, year, seq);
+  const token = randomToken();
+  const inquiryId = await ctx.db.insert("inquiries", {
+    ...fields,
+    number,
+    year,
+    seq,
+    publicTokenHash: await hashToken(token),
+    status: "nov",
+    reminderLevel: 0,
+    searchText: buildSearchText([
+      number,
+      fields.contact.name,
+      fields.contact.email,
+      fields.contact.phone,
+      fields.vin,
+      fields.message.slice(0, 300),
+      ...fields.requestedCodes.slice(0, 10),
+    ]),
+    isDemo: false,
+    updatedAt: now,
+  });
+  await ctx.db.insert("inquiryEvents", {
+    inquiryId,
+    type: "created",
+    toStatus: "nov",
+    message: "Upit je primljen.",
+    visibleToCustomer: true,
+    actor,
+    at: now,
+  });
+  await emitEvent(ctx, {
+    type: "inquiry.created",
+    aggregateType: "inquiry",
+    aggregateId: inquiryId,
+    payload: { kind: "inquiry", inquiryId, number },
+    dedupeKey: `inquiry.created:${inquiryId}`,
+    actor,
+  });
+  await bumpStatsDaily(ctx, now, { inquiriesCount: 1 });
+  return { inquiryId, number, token };
 }

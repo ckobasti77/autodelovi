@@ -20,8 +20,23 @@ export const ROUTES = {
     return query ? `/upit?${query}` : "/upit";
   },
   mechanics: "/za-majstore",
+  mechanicsRegister: "/za-majstore/registracija",
+  mechanicsThanks: "/za-majstore/hvala",
+  mechanicPortal: "/majstor",
+  mechanicQuickOrderPage: "/majstor/brza-porudzbina",
   mechanicQuickOrder: (codes: string[]) =>
     `/majstor/brza-porudzbina?kodovi=${encodeURIComponent(codes.join(","))}`,
+  mechanicOrders: "/majstor/porudzbine",
+  mechanicOrder: (number: string) => `/majstor/porudzbine/${encodeURIComponent(number)}`,
+  mechanicInquiries: "/majstor/upiti",
+  mechanicFavorites: "/majstor/omiljeno",
+  mechanicVehicles: "/majstor/vozila",
+  mechanicPriceList: "/majstor/cenovnik",
+  mechanicPriceListDownload: (categorySlugs: string[]) =>
+    `/majstor/cenovnik/preuzmi?kategorije=${encodeURIComponent(categorySlugs.join(","))}`,
+  mechanicProfile: "/majstor/profil",
+  adminMechanics: "/admin/majstori",
+  adminMechanic: (id: string) => `/admin/majstori/${id}`,
   signIn: "/prijava",
   signUp: "/registracija",
   forgotPassword: "/zaboravljena-lozinka",
@@ -85,6 +100,8 @@ export const LIVE_ROUTES: ReadonlySet<string> = new Set<string>([
   ROUTES.privacy,
   ROUTES.cookies,
   ROUTES.mechanics,
+  ROUTES.mechanicPortal,
+  ROUTES.adminMechanics,
 ]);
 
 /** True when the path (query and hash ignored) belongs to a shipped page. */

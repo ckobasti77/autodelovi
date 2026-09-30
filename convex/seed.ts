@@ -18,6 +18,7 @@ import {
 } from "./_generated/server";
 import { CATEGORIES, SUBCATEGORIES, SYSTEMS } from "../lib/catalog/taxonomy";
 import { formatDocumentNumber, mbCheckDigit, pibCheckDigit } from "../lib/domain/identifiers";
+import { normalizeOem } from "../lib/domain/codes";
 import { belgradeYear, endOfBelgradeDay } from "../lib/domain/time";
 import { SYSTEM_ACTOR } from "./lib/authz";
 import { nextCounter } from "./lib/counters";
@@ -29,12 +30,12 @@ import {
   validateCheckout,
   type NewOrderLine,
 } from "./lib/orders";
-import { createProduct } from "./lib/productWriter";
+import { createProduct, updateProduct } from "./lib/productWriter";
 import { DEFAULT_SETTINGS, getSettings, getSettingsDoc } from "./lib/settings";
 import { hashToken, randomToken } from "./lib/tokens";
 import { buildIntro, seoDescription, seoTitle } from "./seedData/categories";
 import { MANUFACTURERS } from "./seedData/manufacturers";
-import { buildProductSeeds, type ProductSeed } from "./seedData/products";
+import { buildEquivalentSeeds, buildProductSeeds, type ProductSeed } from "./seedData/products";
 import { BRANDS, ENGINES, MODELS, type PlatformGroup } from "./seedData/vehicles";
 
 const PRODUCT_BATCH = 25;
@@ -339,6 +340,60 @@ async function fitmentsFor(ctx: MutationCtx, seed: ProductSeed) {
   return fitments.slice(0, 200);
 }
 
+/** Creates one demo product from its seed row (reference data must exist). */
+async function insertSeedProduct(ctx: MutationCtx, seed: ProductSeed): Promise<void> {
+  const category = await ctx.db
+    .query("categories")
+    .withIndex("by_slug", (q) => q.eq("slug", seed.category))
+    .unique();
+  const manufacturer = await ctx.db
+    .query("manufacturers")
+    .withIndex("by_slug", (q) => q.eq("slug", seed.manufacturer))
+    .unique();
+  if (!category || !manufacturer)
+    throw new Error(
+      `Seed reference missing for ${seed.sku} (${seed.category}/${seed.manufacturer})`,
+    );
+  const crossNumbers = [];
+  for (const c of seed.crossNumbers) {
+    const m = await ctx.db
+      .query("manufacturers")
+      .withIndex("by_slug", (q) => q.eq("slug", c.manufacturerSlug))
+      .unique();
+    crossNumbers.push({ manufacturer: m?.name ?? c.manufacturerSlug, raw: c.raw });
+  }
+  await createProduct(
+    ctx,
+    {
+      sku: seed.sku,
+      name: seed.name,
+      categoryId: category._id,
+      manufacturerId: manufacturer._id,
+      ...(seed.quality ? { quality: seed.quality } : {}),
+      ...(seed.mpn ? { mpn: seed.mpn } : {}),
+      oemNumbers: seed.oemNumbers,
+      crossNumbers,
+      retailPricePara: seed.retailPricePara,
+      stockQty: seed.stockQty,
+      ...(seed.leadTimeDays !== undefined ? { leadTimeDays: seed.leadTimeDays } : {}),
+      allowBackorder: seed.allowBackorder,
+      universal: seed.universal,
+      fitments: await fitmentsFor(ctx, seed),
+      description: seed.description,
+      specs: seed.specs,
+      notes: "Demo artikal — podaci služe za prikaz.",
+      warrantyMonths: 24,
+      costNetPara: seed.costNetPara,
+      supplierName: "Demo dobavljač",
+      popularity: seed.popularity,
+      active: true,
+      isDemo: true,
+      source: "seed",
+    },
+    { actor: SYSTEM_ACTOR, emit: false, stockReason: "receipt" },
+  );
+}
+
 export const seedProducts = internalMutation({
   args: { from: v.number(), to: v.number() },
   returns: v.object({ created: v.number(), skipped: v.number() }),
@@ -355,59 +410,62 @@ export const seedProducts = internalMutation({
         skipped++;
         continue;
       }
-      const category = await ctx.db
-        .query("categories")
-        .withIndex("by_slug", (q) => q.eq("slug", seed.category))
-        .unique();
-      const manufacturer = await ctx.db
-        .query("manufacturers")
-        .withIndex("by_slug", (q) => q.eq("slug", seed.manufacturer))
-        .unique();
-      if (!category || !manufacturer)
-        throw new Error(
-          `Seed reference missing for ${seed.sku} (${seed.category}/${seed.manufacturer})`,
-        );
-      const crossNumbers = [];
-      for (const c of seed.crossNumbers) {
-        const m = await ctx.db
-          .query("manufacturers")
-          .withIndex("by_slug", (q) => q.eq("slug", c.manufacturerSlug))
-          .unique();
-        crossNumbers.push({ manufacturer: m?.name ?? c.manufacturerSlug, raw: c.raw });
-      }
-      await createProduct(
-        ctx,
-        {
-          sku: seed.sku,
-          name: seed.name,
-          categoryId: category._id,
-          manufacturerId: manufacturer._id,
-          ...(seed.quality ? { quality: seed.quality } : {}),
-          ...(seed.mpn ? { mpn: seed.mpn } : {}),
-          oemNumbers: seed.oemNumbers,
-          crossNumbers,
-          retailPricePara: seed.retailPricePara,
-          stockQty: seed.stockQty,
-          ...(seed.leadTimeDays !== undefined ? { leadTimeDays: seed.leadTimeDays } : {}),
-          allowBackorder: seed.allowBackorder,
-          universal: seed.universal,
-          fitments: await fitmentsFor(ctx, seed),
-          description: seed.description,
-          specs: seed.specs,
-          notes: "Demo artikal — podaci služe za prikaz.",
-          warrantyMonths: 24,
-          costNetPara: seed.costNetPara,
-          supplierName: "Demo dobavljač",
-          popularity: seed.popularity,
-          active: true,
-          isDemo: true,
-          source: "seed",
-        },
-        { actor: SYSTEM_ACTOR, emit: false, stockReason: "receipt" },
-      );
+      await insertSeedProduct(ctx, seed);
       created++;
     }
     return { created, skipped };
+  },
+});
+
+/**
+ * Demo equivalents (step 14, D135): the same part from another maker under the source's
+ * VAG OEM number (`buildEquivalentSeeds`). Idempotent. Also removes OEM numbers an earlier
+ * version of this step copied between unrelated demo products (reconciles to the seed).
+ */
+export const seedAlternatives = internalMutation({
+  args: {},
+  returns: v.object({ created: v.number(), repaired: v.number() }),
+  handler: async (ctx) => {
+    const base = buildProductSeeds();
+    const baseCodes = new Set(base.flatMap((s) => s.oemNumbers.map((o) => normalizeOem(o.raw))));
+    let repaired = 0;
+    for (const seed of base) {
+      const product = await ctx.db
+        .query("products")
+        .withIndex("by_sku", (q) => q.eq("sku", seed.sku))
+        .first();
+      if (!product || !product.isDemo) continue;
+      const content = await ctx.db
+        .query("productContent")
+        .withIndex("by_productId", (q) => q.eq("productId", product._id))
+        .unique();
+      const expected = new Set(seed.oemNumbers.map((o) => normalizeOem(o.raw)));
+      const current = content?.oemNumbers ?? [];
+      const extras = current.filter((o) => !expected.has(o.normalized));
+      if (extras.length === 0 || !extras.every((o) => baseCodes.has(o.normalized))) continue;
+      await updateProduct(
+        ctx,
+        product._id,
+        {
+          oemNumbers: current
+            .filter((o) => expected.has(o.normalized))
+            .map((o) => ({ raw: o.raw, ...(o.brand ? { brand: o.brand } : {}) })),
+        },
+        { actor: SYSTEM_ACTOR, emit: false },
+      );
+      repaired++;
+    }
+    let created = 0;
+    for (const seed of buildEquivalentSeeds(base)) {
+      const exists = await ctx.db
+        .query("products")
+        .withIndex("by_sku", (q) => q.eq("sku", seed.sku))
+        .first();
+      if (exists) continue;
+      await insertSeedProduct(ctx, seed);
+      created++;
+    }
+    return { created, repaired };
   },
 });
 
@@ -961,6 +1019,7 @@ export const run = internalAction({
       productsCreated += r.created;
       productsSkipped += r.skipped;
     }
+    await ctx.runMutation(internal.seed.seedAlternatives, {});
     await ctx.runMutation(internal.content.seedContent, {});
     await ctx.runMutation(internal.seed.seedDemoAccounts, {});
     const orders: { created: number } = await ctx.runMutation(internal.seed.seedDemoOrders, {});

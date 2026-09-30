@@ -1,12 +1,14 @@
 /**
- * Customer account data (ARCHITECTURE §E2 `account`): saved vehicles. Every function is a
- * user function — the owner is always `ctx.viewer`, never an argument.
+ * Customer account data (ARCHITECTURE §E2 `account`): saved vehicles and favorites. Every
+ * function is a user function — the owner is always `ctx.viewer`, never an argument.
  */
 import { v } from "convex/values";
 
 import { normalizeVin, validateVin } from "../lib/domain/vin";
+import { isListed, productCardV, toCard } from "./lib/catalog";
 import { invalid, notFound } from "./lib/errors";
 import { userMutation, userQuery } from "./lib/functions";
+import { loadPricingContext, priceForViewer, type CategoryPathCache } from "./lib/pricing";
 
 const MAX_SAVED_VEHICLES = 30;
 
@@ -154,5 +156,122 @@ export const removeSavedVehicle = userMutation({
     if (!row || row.userId !== ctx.viewer.userId) return notFound("Vozilo nije pronađeno.");
     await ctx.db.delete("savedVehicles", id);
     return null;
+  },
+});
+
+export const updateSavedVehicle = userMutation({
+  args: {
+    id: v.id("savedVehicles"),
+    label: v.optional(v.string()),
+    vin: v.optional(v.string()),
+    plate: v.optional(v.string()),
+    note: v.optional(v.string()),
+  },
+  returns: v.null(),
+  handler: async (ctx, { id, ...args }) => {
+    const row = await ctx.db.get("savedVehicles", id);
+    if (!row || row.userId !== ctx.viewer.userId) return notFound("Vozilo nije pronađeno.");
+    let vin: string | undefined;
+    if (args.vin?.trim()) {
+      vin = normalizeVin(args.vin);
+      if (!validateVin(vin).valid) invalid("Broj šasije ima 17 znakova (bez slova I, O i Q).", "vin");
+    }
+    const text = (value: string | undefined, max: number) =>
+      value === undefined ? undefined : value.trim().slice(0, max) || undefined;
+    await ctx.db.patch("savedVehicles", id, {
+      ...(args.label !== undefined ? { label: text(args.label, 60) } : {}),
+      ...(args.vin !== undefined ? { vin } : {}),
+      ...(args.plate !== undefined ? { plate: text(args.plate, 16)?.toUpperCase() } : {}),
+      ...(args.note !== undefined ? { note: text(args.note, 200) } : {}),
+    });
+    return null;
+  },
+});
+
+// ------------------------------------------------------------------ favorites
+
+const MAX_FAVORITES = 200;
+
+/** Own favorites as product cards with the viewer's price (mechanics: their own). */
+export const favorites = userQuery({
+  args: {},
+  returns: v.array(
+    v.object({
+      productId: v.id("products"),
+      addedAt: v.number(),
+      card: productCardV,
+      unitPricePara: v.number(),
+      discountBp: v.number(),
+      listed: v.boolean(),
+    }),
+  ),
+  handler: async (ctx) => {
+    const rows = await ctx.db
+      .query("favorites")
+      .withIndex("by_userId_and_productId", (q) => q.eq("userId", ctx.viewer.userId))
+      .take(MAX_FAVORITES);
+    const pc = await loadPricingContext(ctx, ctx.viewer);
+    const cache: CategoryPathCache = new Map();
+    const out = [];
+    for (const row of rows) {
+      const product = await ctx.db.get("products", row.productId);
+      if (!product) continue;
+      const price = await priceForViewer(ctx, pc, product, cache);
+      out.push({
+        productId: product._id,
+        addedAt: row._creationTime,
+        card: await toCard(ctx, product, true),
+        unitPricePara: price.yourPricePara ?? product.retailPricePara,
+        discountBp: price.discountBp,
+        listed: isListed(product),
+      });
+    }
+    return out.sort((a, b) => b.addedAt - a.addedAt);
+  },
+});
+
+/** Which of the given products are the viewer's favorites (heart state on cards/product). */
+export const favoriteIds = userQuery({
+  args: { productIds: v.array(v.id("products")) },
+  returns: v.array(v.id("products")),
+  handler: async (ctx, { productIds }) => {
+    if (productIds.length > 60) invalid("Najviše 60 artikala po upitu.");
+    const out = [];
+    for (const productId of new Set(productIds)) {
+      const row = await ctx.db
+        .query("favorites")
+        .withIndex("by_userId_and_productId", (q) =>
+          q.eq("userId", ctx.viewer.userId).eq("productId", productId),
+        )
+        .first();
+      if (row) out.push(productId);
+    }
+    return out;
+  },
+});
+
+export const toggleFavorite = userMutation({
+  args: { productId: v.id("products") },
+  returns: v.object({ favorite: v.boolean() }),
+  handler: async (ctx, { productId }) => {
+    const existing = await ctx.db
+      .query("favorites")
+      .withIndex("by_userId_and_productId", (q) =>
+        q.eq("userId", ctx.viewer.userId).eq("productId", productId),
+      )
+      .first();
+    if (existing) {
+      await ctx.db.delete("favorites", existing._id);
+      return { favorite: false };
+    }
+    const product = await ctx.db.get("products", productId);
+    if (!product || !isListed(product)) return notFound("Artikal više nije u ponudi.");
+    const count = await ctx.db
+      .query("favorites")
+      .withIndex("by_userId_and_productId", (q) => q.eq("userId", ctx.viewer.userId))
+      .take(MAX_FAVORITES);
+    if (count.length >= MAX_FAVORITES) invalid("Najviše 200 omiljenih artikala.");
+    await ctx.db.insert("favorites", { userId: ctx.viewer.userId, productId });
+    return { favorite: true };
   },
 });

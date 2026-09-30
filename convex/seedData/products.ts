@@ -467,3 +467,53 @@ export function buildProductSeeds(): ProductSeed[] {
 
 export const DEMO_PRODUCT_COUNT = ROWS.length;
 export { ALL as ALL_GROUPS };
+
+/**
+ * Demo equivalents (step 14, D135): the same part from another maker, carrying the source
+ * product's VAG OEM reference — the way aftermarket parts cross-reference one original.
+ * Makes „više opcija“ in the quick order and same-OEM alternatives demonstrable.
+ * [source name, source maker, alternative maker, price factor]
+ */
+const EQUIVALENTS: [string, string, string, number][] = [
+  ["Kočioni disk prednji 312 × 25 mm, ventilirani", "brembo", "ate", 0.92],
+  ["Kočione pločice prednje, sa senzorom", "ate", "bosch", 0.9],
+  ["Kočione pločice zadnje", "trw", "febi-bilstein", 0.82],
+  ["Amortizer prednji, gasni", "sachs", "kyb", 0.95],
+  ["Kraj spone", "lemforder", "meyle", 0.8],
+  ["Turbina 1.9 TDI 77 kW, nova", "garrett", "borgwarner", 0.94],
+  ["Set zupčastog kaiša sa vodenom pumpom 1.9 TDI", "ina", "gates", 0.96],
+];
+
+export function buildEquivalentSeeds(base: ProductSeed[] = buildProductSeeds()): ProductSeed[] {
+  const out: ProductSeed[] = [];
+  EQUIVALENTS.forEach(([name, maker, alternative, factor], i) => {
+    const source = base.find((s) => s.name === name && s.manufacturer === maker);
+    const oem = source?.oemNumbers[0];
+    if (!source || !oem) return;
+    const r = rng(90_000 + i * 104_729);
+    const retailPricePara = Math.round((source.retailPricePara * factor) / 10_000) * 10_000;
+    const inStock = r() < 0.8;
+    const rest: ProductSeed = { ...source };
+    delete rest.quality;
+    delete rest.mpn;
+    delete rest.leadTimeDays;
+    const mpn = mpnFor(alternative, r) || undefined;
+    out.push({
+      ...rest,
+      index: base.length + i,
+      sku: `DEMO-E${String(i + 1).padStart(3, "0")}`,
+      manufacturer: alternative,
+      retailPricePara,
+      costNetPara: Math.round((retailPricePara / 1.2) * (0.6 + r() * 0.12)),
+      stockQty: inStock ? 3 + Math.floor(r() * 12) : 0,
+      ...(inStock ? {} : { leadTimeDays: 3 }),
+      allowBackorder: !inStock,
+      ...(mpn ? { mpn } : {}),
+      oemNumbers: [oem],
+      crossNumbers: [],
+      description: `${name}. Zamena drugog proizvođača za isti originalni broj. ${DEMO_NOTE}`,
+      popularity: Math.floor(r() * 60),
+    });
+  });
+  return out;
+}

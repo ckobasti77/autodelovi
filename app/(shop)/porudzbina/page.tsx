@@ -5,6 +5,8 @@ import { privateMetadata } from "@/lib/seo/metadata";
 import { contactFromSettings } from "@/lib/settings/public";
 import { getSettingsPublic } from "@/lib/server/catalog-cache";
 import { getViewer, viewerNames } from "@/lib/server/auth";
+import { fetchAsUser } from "@/lib/server/convex";
+import { api } from "@/convex/_generated/api";
 import { Button } from "@/components/ui/Button";
 import { Link } from "@/components/ui/Link";
 import { RevealText } from "@/components/text-reveal/RevealText";
@@ -16,6 +18,8 @@ export const metadata: Metadata = privateMetadata("Porudžbina");
 /** Checkout `/porudzbina` (§10.5): SSR shell, client form; noindex. */
 export default async function CheckoutPage() {
   const [settings, viewer] = await Promise.all([getSettingsPublic(), getViewer()]);
+  const mechanic =
+    viewer?.mechanicStatus === "approved" ? await fetchAsUser(api.mechanicPortal.overview, {}) : null;
   const contact = contactFromSettings(settings);
   const address = [contact.address.street, [contact.address.postalCode, contact.address.city].filter(Boolean).join(" ")]
     .filter(Boolean)
@@ -46,6 +50,19 @@ export default async function CheckoutPage() {
           email: viewer.email ?? "",
           phone: viewer.phone ? formatPhone(viewer.phone) : "",
           creditEnabled: viewer.creditEnabled,
+          ...(mechanic && mechanic.status === "approved"
+            ? {
+                mechanic: {
+                  companyName: mechanic.companyName,
+                  pib: mechanic.pib,
+                  mb: mechanic.mb,
+                  address: mechanic.address,
+                  city: mechanic.city,
+                  paymentTermsDays: mechanic.credit.paymentTermsDays,
+                  availablePara: mechanic.credit.availablePara,
+                },
+              }
+            : {}),
         }
       : null,
     vatRateBp: settings.commerce.vatRateBp,
