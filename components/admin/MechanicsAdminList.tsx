@@ -8,13 +8,22 @@ import { useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import { HourglassIcon, ProhibitIcon, SealCheckIcon, XCircleIcon } from "@phosphor-icons/react/dist/ssr";
+import {
+  HourglassIcon,
+  ProhibitIcon,
+  SealCheckIcon,
+  XCircleIcon,
+} from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/cn";
 import { formatDateShort } from "@/lib/format/date";
 import { formatPhone } from "@/lib/format/phone";
-import { MECHANIC_STATUS_LABEL, MECHANIC_STATUS_TONE, type MechanicStatus } from "@/lib/i18n/sr/mechanic";
+import {
+  MECHANIC_STATUS_LABEL,
+  MECHANIC_STATUS_TONE,
+  type MechanicStatus,
+} from "@/lib/i18n/sr/mechanic";
 import { Badge } from "@/components/ui/Badge";
 import { DataTable, type ColumnDef } from "@/components/ui/DataTable";
 import { ROUTES } from "@/constants/routes";
@@ -69,14 +78,18 @@ export function MechanicsAdminList() {
         cell: ({ row }) => (
           <span className="flex flex-col">
             <span>{row.original.contactPerson}</span>
-            <span className="type-caption tabular-nums text-ink-3">{formatPhone(row.original.phone)}</span>
+            <span className="type-caption tabular-nums text-ink-3">
+              {formatPhone(row.original.phone)}
+            </span>
           </span>
         ),
       },
       {
         accessorKey: "createdAt",
         header: "Registrovan",
-        cell: ({ getValue }) => <span className="tabular-nums text-ink-2">{formatDateShort(Number(getValue()))}</span>,
+        cell: ({ getValue }) => (
+          <span className="tabular-nums text-ink-2">{formatDateShort(Number(getValue()))}</span>
+        ),
       },
       {
         id: "tier",
@@ -94,7 +107,10 @@ export function MechanicsAdminList() {
         header: "Status",
         enableSorting: false,
         cell: ({ row }) => (
-          <Badge tone={MECHANIC_STATUS_TONE[row.original.status]} icon={MECHANIC_STATUS_ICON[row.original.status]}>
+          <Badge
+            tone={MECHANIC_STATUS_TONE[row.original.status]}
+            icon={MECHANIC_STATUS_ICON[row.original.status]}
+          >
             {MECHANIC_STATUS_LABEL[row.original.status]}
           </Badge>
         ),
@@ -127,7 +143,9 @@ export function MechanicsAdminList() {
               )}
             >
               {f.label}
-              {count !== undefined ? <span className="tabular-nums text-ink-3">{count}</span> : null}
+              {count !== undefined ? (
+                <span className="tabular-nums text-ink-3">{count}</span>
+              ) : null}
             </button>
           );
         })}
@@ -140,7 +158,11 @@ export function MechanicsAdminList() {
         getRowId={(r) => r._id}
         rowLabel={(r) => r.companyName}
         onRowOpen={(r) => router.push(ROUTES.adminMechanic(r._id))}
-        empty={<p className="py-10 text-center type-body-s text-ink-2">Nema registracija sa ovim statusom.</p>}
+        empty={
+          <p className="py-10 text-center type-body-s text-ink-2">
+            Nema registracija sa ovim statusom.
+          </p>
+        }
       />
     </div>
   );

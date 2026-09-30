@@ -5,7 +5,10 @@ import { getCategoryTree, getManufacturers } from "@/lib/server/catalog-cache";
 import { MechanicAdminDetail } from "@/components/admin/MechanicAdminDetail";
 import { ROUTES } from "@/constants/routes";
 
-export const metadata: Metadata = { title: { absolute: "Majstor · Administracija" }, robots: { index: false } };
+export const metadata: Metadata = {
+  title: { absolute: "Majstor · Administracija" },
+  robots: { index: false },
+};
 
 export default async function AdminMechanicPage({ params }: PageProps<"/admin/majstori/[id]">) {
   const { id } = await params;
@@ -18,7 +21,9 @@ export default async function AdminMechanicPage({ params }: PageProps<"/admin/ma
     <MechanicAdminDetail
       profileId={id}
       categories={categories}
-      manufacturers={manufacturers.map((m) => ({ id: m._id, name: m.name })).sort((a, b) => a.name.localeCompare(b.name, "sr"))}
+      manufacturers={manufacturers
+        .map((m) => ({ id: m._id, name: m.name }))
+        .sort((a, b) => a.name.localeCompare(b.name, "sr"))}
     />
   );
 }

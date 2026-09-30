@@ -808,3 +808,14 @@
     height: calc(100svh - var(--header-h) + 320vh);
   }
 }
+
+/* Admin print documents (predračun, otpremnica): A4, one document per sheet. */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 12mm;
+  }
+  .print-sheet + .print-sheet {
+    break-before: page;
+  }
+}

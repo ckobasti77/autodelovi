@@ -65,6 +65,38 @@ export const ROUTES = {
   styleguide: "/styleguide",
 } as const;
 
+/** Admin routes (docs/ROUTES.md §B2). */
+export const ADMIN = {
+  home: "/admin",
+  orders: "/admin/porudzbine",
+  order: (number: string) => `/admin/porudzbine/${encodeURIComponent(number)}`,
+  orderProforma: (number: string) => `/admin/porudzbine/${encodeURIComponent(number)}/predracun`,
+  orderDeliveryNote: (number: string) =>
+    `/admin/porudzbine/${encodeURIComponent(number)}/otpremnica`,
+  inquiries: "/admin/upiti",
+  inquiry: (number: string) => `/admin/upiti/${encodeURIComponent(number)}`,
+  products: "/admin/proizvodi",
+  productNew: "/admin/proizvodi/novi",
+  product: (id: string) => `/admin/proizvodi/${id}`,
+  categories: "/admin/kategorije",
+  vehicles: "/admin/vozila",
+  manufacturers: "/admin/proizvodjaci",
+  stock: "/admin/lager",
+  customers: "/admin/kupci",
+  customer: (id: string) => `/admin/kupci/${id}`,
+  mechanics: "/admin/majstori",
+  mechanic: (id: string) => `/admin/majstori/${id}`,
+  tiers: "/admin/cenovni-razredi",
+  settings: "/admin/podesavanja",
+  settingsTab: (tab: string) => `/admin/podesavanja?tab=${tab}`,
+  users: "/admin/korisnici",
+  audit: "/admin/revizija",
+  emails: "/admin/mejlovi",
+  searches: "/admin/pretrage",
+  notifications: "/admin/obavestenja",
+  invite: (token: string) => `/admin/pozivnica/${token}`,
+} as const;
+
 /** Primary navigation (header, mobile menu). */
 export const PRIMARY_NAV = [
   { href: ROUTES.parts, label: "Delovi" },
@@ -101,7 +133,7 @@ export const LIVE_ROUTES: ReadonlySet<string> = new Set<string>([
   ROUTES.cookies,
   ROUTES.mechanics,
   ROUTES.mechanicPortal,
-  ROUTES.adminMechanics,
+  "/admin",
 ]);
 
 /** True when the path (query and hash ignored) belongs to a shipped page. */

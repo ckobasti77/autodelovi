@@ -10,14 +10,23 @@
 import { useMutation, useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
 import { useState } from "react";
-import { ArrowLeftIcon, PlusIcon, TrashIcon, WarningCircleIcon } from "@phosphor-icons/react/dist/ssr";
+import {
+  ArrowLeftIcon,
+  PlusIcon,
+  TrashIcon,
+  WarningCircleIcon,
+} from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
 import type { Id } from "@/convex/_generated/dataModel";
 import { formatDate, formatDateTime } from "@/lib/format/date";
 import { formatRSD } from "@/lib/format/money";
 import { formatPhone } from "@/lib/format/phone";
-import { MECHANIC_STATUS_LABEL, MECHANIC_STATUS_TONE, SERVICE_TYPE_LABEL } from "@/lib/i18n/sr/mechanic";
+import {
+  MECHANIC_STATUS_LABEL,
+  MECHANIC_STATUS_TONE,
+  SERVICE_TYPE_LABEL,
+} from "@/lib/i18n/sr/mechanic";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -48,7 +57,8 @@ type Terms = {
   paymentTermsDays: string;
 };
 
-const toPercent = (bp: number | undefined | null) => (bp === undefined || bp === null ? "" : String(bp / 100).replace(".", ","));
+const toPercent = (bp: number | undefined | null) =>
+  bp === undefined || bp === null ? "" : String(bp / 100).replace(".", ",");
 
 /** „12,5“ → 1250 bp; empty → undefined; invalid → NaN (caught by validation). */
 function toBp(text: string): number | undefined {
@@ -82,14 +92,18 @@ function RulesEditor({
             placeholder="Izaberite"
             value={row.id}
             options={options.map((o) => ({ value: o.id, label: o.name }))}
-            onChange={(e) => onChange(rows.map((r, j) => (j === i ? { ...r, id: e.target.value } : r)))}
+            onChange={(e) =>
+              onChange(rows.map((r, j) => (j === i ? { ...r, id: e.target.value } : r)))
+            }
           />
           <Input
             aria-label={`${label}: rabat ${i + 1}`}
             inputMode="decimal"
             suffix="%"
             value={row.percent}
-            onChange={(e) => onChange(rows.map((r, j) => (j === i ? { ...r, percent: e.target.value } : r)))}
+            onChange={(e) =>
+              onChange(rows.map((r, j) => (j === i ? { ...r, percent: e.target.value } : r)))
+            }
             className="h-9"
           />
           <IconButton
@@ -123,8 +137,14 @@ function initialTerms(data: Detail, tiers: Tier[]): Terms {
   return {
     tierId: data.profile.tierId ?? defaultTier?._id ?? "",
     personalPercent: toPercent(rules?.defaultDiscountBp),
-    categoryRules: (rules?.categoryRules ?? []).map((r) => ({ id: r.categoryId, percent: toPercent(r.discountBp) })),
-    manufacturerRules: (rules?.manufacturerRules ?? []).map((r) => ({ id: r.manufacturerId, percent: toPercent(r.discountBp) })),
+    categoryRules: (rules?.categoryRules ?? []).map((r) => ({
+      id: r.categoryId,
+      percent: toPercent(r.discountBp),
+    })),
+    manufacturerRules: (rules?.manufacturerRules ?? []).map((r) => ({
+      id: r.manufacturerId,
+      percent: toPercent(r.discountBp),
+    })),
     creditEnabled: data.profile.creditEnabled,
     creditLimit: data.creditLimitPara !== null ? String(data.creditLimitPara / 100) : "",
     paymentTermsDays: String(data.paymentTermsDays),
@@ -191,15 +211,32 @@ function DetailView({
 
   const buildTerms = () => {
     const personalDefault = toBp(terms.personalPercent);
-    const cat = terms.categoryRules.filter((r) => r.id).map((r) => ({ categoryId: r.id as Id<"categories">, discountBp: toBp(r.percent) ?? Number.NaN }));
-    const man = terms.manufacturerRules.filter((r) => r.id).map((r) => ({ manufacturerId: r.id as Id<"manufacturers">, discountBp: toBp(r.percent) ?? Number.NaN }));
-    const bps = [personalDefault, ...cat.map((c) => c.discountBp), ...man.map((m) => m.discountBp)].filter((b) => b !== undefined);
-    if (bps.some((b) => Number.isNaN(b) || b! < 0 || b! > 9_000)) throw new Error("Rabat mora biti broj između 0 i 90 %.");
+    const cat = terms.categoryRules
+      .filter((r) => r.id)
+      .map((r) => ({
+        categoryId: r.id as Id<"categories">,
+        discountBp: toBp(r.percent) ?? Number.NaN,
+      }));
+    const man = terms.manufacturerRules
+      .filter((r) => r.id)
+      .map((r) => ({
+        manufacturerId: r.id as Id<"manufacturers">,
+        discountBp: toBp(r.percent) ?? Number.NaN,
+      }));
+    const bps = [
+      personalDefault,
+      ...cat.map((c) => c.discountBp),
+      ...man.map((m) => m.discountBp),
+    ].filter((b) => b !== undefined);
+    if (bps.some((b) => Number.isNaN(b) || b! < 0 || b! > 9_000))
+      throw new Error("Rabat mora biti broj između 0 i 90 %.");
     const limitText = terms.creditLimit.trim().replace(/\./g, "").replace(",", ".");
     const limit = limitText ? Math.round(Number(limitText) * 100) : undefined;
-    if (limit !== undefined && (!Number.isFinite(limit) || limit < 0)) throw new Error("Limit mora biti iznos u dinarima.");
+    if (limit !== undefined && (!Number.isFinite(limit) || limit < 0))
+      throw new Error("Limit mora biti iznos u dinarima.");
     const days = Number(terms.paymentTermsDays);
-    if (!Number.isInteger(days) || days < 0 || days > 90) throw new Error("Rok plaćanja je od 0 do 90 dana.");
+    if (!Number.isInteger(days) || days < 0 || days > 90)
+      throw new Error("Rok plaćanja je od 0 do 90 dana.");
     const hasPersonal = personalDefault !== undefined || cat.length > 0 || man.length > 0;
     return {
       personalRules: hasPersonal
@@ -221,7 +258,10 @@ function DetailView({
       await action();
       toast.success(success);
     } catch (err) {
-      const message = err instanceof Error && !("data" in err) ? err.message : convexErrorMessage(err, "Radnja nije uspela.");
+      const message =
+        err instanceof Error && !("data" in err)
+          ? err.message
+          : convexErrorMessage(err, "Radnja nije uspela.");
       setError(message);
     } finally {
       setBusy(null);
@@ -263,19 +303,28 @@ function DetailView({
       "Uslovi su sačuvani.",
     );
 
-  const tierOptions = tiers.filter((t) => t.active).map((t) => ({ value: t._id, label: `${t.name} · ${t.defaultDiscountBp / 100} %` }));
+  const tierOptions = tiers
+    .filter((t) => t.active)
+    .map((t) => ({ value: t._id, label: `${t.name} · ${t.defaultDiscountBp / 100} %` }));
   const editable = p.status === "pending" || p.status === "approved" || p.status === "suspended";
   const source = data.attribution?.first ?? data.attribution?.last;
 
   return (
     <div className="flex flex-col gap-6" data-reveal="off">
-      <RouteLink href={ROUTES.adminMechanics} className="inline-flex min-h-11 items-center gap-2 self-start type-body-s text-ink-2 hover:text-ink-1">
+      <RouteLink
+        href={ROUTES.adminMechanics}
+        className="inline-flex min-h-11 items-center gap-2 self-start type-body-s text-ink-2 hover:text-ink-1"
+      >
         <ArrowLeftIcon size={16} aria-hidden="true" />
         Svi majstori
       </RouteLink>
       <div className="flex flex-wrap items-center gap-3">
         <h1 className="type-h1 text-ink-1">{p.companyName}</h1>
-        <Badge tone={MECHANIC_STATUS_TONE[p.status]} icon={MECHANIC_STATUS_ICON[p.status]} size="text">
+        <Badge
+          tone={MECHANIC_STATUS_TONE[p.status]}
+          icon={MECHANIC_STATUS_ICON[p.status]}
+          size="text"
+        >
           {MECHANIC_STATUS_LABEL[p.status]}
         </Badge>
         {p.isDemo ? <Badge tone="outline">Demo</Badge> : null}
@@ -298,21 +347,33 @@ function DetailView({
             <dt className="type-caption text-ink-3">Kontakt</dt>
             <dd className="type-body-s text-ink-1">
               {p.contactPerson} ·{" "}
-              <a href={`tel:${p.phone}`} className="underline decoration-line-strong underline-offset-4">
+              <a
+                href={`tel:${p.phone}`}
+                className="underline decoration-line-strong underline-offset-4"
+              >
                 {formatPhone(p.phone)}
               </a>
             </dd>
             <dt className="type-caption text-ink-3">E-pošta</dt>
             <dd className="break-all type-body-s text-ink-1">
-              <a href={`mailto:${p.email}`} className="underline decoration-line-strong underline-offset-4">
+              <a
+                href={`mailto:${p.email}`}
+                className="underline decoration-line-strong underline-offset-4"
+              >
                 {p.email}
               </a>
-              {data.userEmail && data.userEmail !== p.email ? <span className="text-ink-3"> · nalog {data.userEmail}</span> : null}
+              {data.userEmail && data.userEmail !== p.email ? (
+                <span className="text-ink-3"> · nalog {data.userEmail}</span>
+              ) : null}
             </dd>
             <dt className="type-caption text-ink-3">Vrsta servisa</dt>
-            <dd className="type-body-s text-ink-1">{data.serviceTypes.map((s) => SERVICE_TYPE_LABEL[s]).join(", ")}</dd>
+            <dd className="type-body-s text-ink-1">
+              {data.serviceTypes.map((s) => SERVICE_TYPE_LABEL[s]).join(", ")}
+            </dd>
             <dt className="type-caption text-ink-3">Marke</dt>
-            <dd className="type-body-s text-ink-1">{data.brandNames.length ? data.brandNames.join(", ") : "—"}</dd>
+            <dd className="type-body-s text-ink-1">
+              {data.brandNames.length ? data.brandNames.join(", ") : "—"}
+            </dd>
             <dt className="type-caption text-ink-3">Registrovan</dt>
             <dd className="type-body-s tabular-nums text-ink-1">{formatDateTime(p.createdAt)}</dd>
             {p.reviewedAt ? (
@@ -324,13 +385,22 @@ function DetailView({
             <dt className="type-caption text-ink-3">Porudžbine</dt>
             <dd className="type-body-s tabular-nums text-ink-1">
               {data.orderCount}
-              {data.credit.openCount > 0 ? ` · otvoreno odloženo ${formatRSD(data.credit.usedPara)}` : ""}
+              {data.credit.openCount > 0
+                ? ` · otvoreno odloženo ${formatRSD(data.credit.usedPara)}`
+                : ""}
             </dd>
             {source ? (
               <>
                 <dt className="type-caption text-ink-3">Izvor</dt>
                 <dd className="break-all type-body-s text-ink-1">
-                  {[source.source, source.medium, source.campaign, source.gclid ? "gclid" : null, source.fbclid ? "fbclid" : null, source.landingPath]
+                  {[
+                    source.source,
+                    source.medium,
+                    source.campaign,
+                    source.gclid ? "gclid" : null,
+                    source.fbclid ? "fbclid" : null,
+                    source.landingPath,
+                  ]
                     .filter(Boolean)
                     .join(" · ") || "direktno"}
                 </dd>
@@ -345,14 +415,25 @@ function DetailView({
           </dl>
           <div className="flex flex-col gap-2">
             <Field label="Interna beleška" help="Vidi samo osoblje.">
-              <Textarea rows={3} maxLength={1_000} value={note} onChange={(e) => setNote(e.target.value)} />
+              <Textarea
+                rows={3}
+                maxLength={1_000}
+                value={note}
+                onChange={(e) => setNote(e.target.value)}
+              />
             </Field>
             <Button
               variant="secondary"
               size="sm"
               className="self-start"
               loading={busy === "note"}
-              onClick={() => void run("note", () => update({ profileId: id, internalNote: note }), "Beleška je sačuvana.")}
+              onClick={() =>
+                void run(
+                  "note",
+                  () => update({ profileId: id, internalNote: note }),
+                  "Beleška je sačuvana.",
+                )
+              }
             >
               Sačuvaj belešku
             </Button>
@@ -364,7 +445,10 @@ function DetailView({
             {p.status === "pending" ? "Odluka" : "Uslovi"}
           </h2>
           {error ? (
-            <p role="alert" className="flex items-start gap-2 rounded-sm bg-danger-subtle p-3 type-body-s text-danger">
+            <p
+              role="alert"
+              className="flex items-start gap-2 rounded-sm bg-danger-subtle p-3 type-body-s text-danger"
+            >
               <WarningCircleIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0" />
               {error}
             </p>
@@ -373,10 +457,24 @@ function DetailView({
             <div className="flex flex-col gap-5 rounded-sm bg-surface-1 p-5 shadow-[0_1px_2px_rgb(18_21_24/.10),0_8px_24px_-6px_rgb(18_21_24/.18)]">
               <div className="grid gap-5 sm:grid-cols-2">
                 <Field label="Nivo rabata">
-                  <Select value={terms.tierId} placeholder="Izaberite" options={tierOptions} onChange={(e) => set({ tierId: e.target.value })} />
+                  <Select
+                    value={terms.tierId}
+                    placeholder="Izaberite"
+                    options={tierOptions}
+                    onChange={(e) => set({ tierId: e.target.value })}
+                  />
                 </Field>
-                <Field label="Lični osnovni rabat" optional help="Menja osnovni rabat nivoa samo za ovaj servis.">
-                  <Input inputMode="decimal" suffix="%" value={terms.personalPercent} onChange={(e) => set({ personalPercent: e.target.value })} />
+                <Field
+                  label="Lični osnovni rabat"
+                  optional
+                  help="Menja osnovni rabat nivoa samo za ovaj servis."
+                >
+                  <Input
+                    inputMode="decimal"
+                    suffix="%"
+                    value={terms.personalPercent}
+                    onChange={(e) => set({ personalPercent: e.target.value })}
+                  />
                 </Field>
               </div>
               <RulesEditor
@@ -403,17 +501,31 @@ function DetailView({
                 {terms.creditEnabled ? (
                   <div className="grid gap-5 sm:grid-cols-2">
                     <Field label="Limit" optional help="Prazno = bez limita.">
-                      <Input inputMode="decimal" suffix="RSD" value={terms.creditLimit} onChange={(e) => set({ creditLimit: e.target.value })} />
+                      <Input
+                        inputMode="decimal"
+                        suffix="RSD"
+                        value={terms.creditLimit}
+                        onChange={(e) => set({ creditLimit: e.target.value })}
+                      />
                     </Field>
                     <Field label="Rok plaćanja">
-                      <Input inputMode="numeric" suffix="dana" value={terms.paymentTermsDays} onChange={(e) => set({ paymentTermsDays: e.target.value })} />
+                      <Input
+                        inputMode="numeric"
+                        suffix="dana"
+                        value={terms.paymentTermsDays}
+                        onChange={(e) => set({ paymentTermsDays: e.target.value })}
+                      />
                     </Field>
                   </div>
                 ) : null}
               </div>
               <div className="flex flex-wrap gap-3 border-t border-line pt-4">
                 {p.status === "pending" ? (
-                  <Button loading={busy === "approve"} onClick={() => void onApprove()} data-testid={TEST_IDS.adminMechanicApprove}>
+                  <Button
+                    loading={busy === "approve"}
+                    onClick={() => void onApprove()}
+                    data-testid={TEST_IDS.adminMechanicApprove}
+                  >
                     Odobri nalog
                   </Button>
                 ) : (
@@ -422,7 +534,17 @@ function DetailView({
                   </Button>
                 )}
                 {p.status === "suspended" ? (
-                  <Button variant="secondary" loading={busy === "reactivate"} onClick={() => void run("reactivate", () => reactivate({ profileId: id }), "Nalog je ponovo aktivan.")}>
+                  <Button
+                    variant="secondary"
+                    loading={busy === "reactivate"}
+                    onClick={() =>
+                      void run(
+                        "reactivate",
+                        () => reactivate({ profileId: id }),
+                        "Nalog je ponovo aktivan.",
+                      )
+                    }
+                  >
                     Aktiviraj ponovo
                   </Button>
                 ) : null}
@@ -434,9 +556,18 @@ function DetailView({
             <div className="flex flex-col gap-3 rounded-sm border border-line p-5">
               <Field
                 label={p.status === "pending" ? "Razlog odbijanja" : "Razlog pauze"}
-                help={p.status === "pending" ? "Majstor dobija razlog e-poštom." : "Nije obavezno; majstor vidi maloprodajne cene dok je nalog pauziran."}
+                help={
+                  p.status === "pending"
+                    ? "Majstor dobija razlog e-poštom."
+                    : "Nije obavezno; majstor vidi maloprodajne cene dok je nalog pauziran."
+                }
               >
-                <Textarea rows={2} maxLength={500} value={reason} onChange={(e) => setReason(e.target.value)} />
+                <Textarea
+                  rows={2}
+                  maxLength={500}
+                  value={reason}
+                  onChange={(e) => setReason(e.target.value)}
+                />
               </Field>
               {p.status === "pending" ? (
                 <Button
@@ -444,7 +575,13 @@ function DetailView({
                   className="self-start"
                   loading={busy === "reject"}
                   data-testid={TEST_IDS.adminMechanicReject}
-                  onClick={() => void run("reject", () => reject({ profileId: id, reason }), "Registracija je odbijena.")}
+                  onClick={() =>
+                    void run(
+                      "reject",
+                      () => reject({ profileId: id, reason }),
+                      "Registracija je odbijena.",
+                    )
+                  }
                 >
                   Odbij registraciju
                 </Button>
@@ -453,7 +590,13 @@ function DetailView({
                   variant="danger"
                   className="self-start"
                   loading={busy === "suspend"}
-                  onClick={() => void run("suspend", () => suspend({ profileId: id, ...(reason.trim() ? { reason } : {}) }), "Nalog je pauziran.")}
+                  onClick={() =>
+                    void run(
+                      "suspend",
+                      () => suspend({ profileId: id, ...(reason.trim() ? { reason } : {}) }),
+                      "Nalog je pauziran.",
+                    )
+                  }
                 >
                   Pauziraj nalog
                 </Button>
@@ -463,8 +606,21 @@ function DetailView({
 
           {p.status === "rejected" ? (
             <div className="flex flex-col items-start gap-3 rounded-sm border border-line p-5">
-              <p className="type-body-s text-ink-2">Registracija je odbijena. Ako su podaci ispravljeni, vratite je na čekanje i odlučite ponovo.</p>
-              <Button variant="secondary" loading={busy === "reopen"} onClick={() => void run("reopen", () => reopen({ profileId: id }), "Registracija je vraćena na čekanje.")}>
+              <p className="type-body-s text-ink-2">
+                Registracija je odbijena. Ako su podaci ispravljeni, vratite je na čekanje i
+                odlučite ponovo.
+              </p>
+              <Button
+                variant="secondary"
+                loading={busy === "reopen"}
+                onClick={() =>
+                  void run(
+                    "reopen",
+                    () => reopen({ profileId: id }),
+                    "Registracija je vraćena na čekanje.",
+                  )
+                }
+              >
                 Vrati na čekanje
               </Button>
             </div>

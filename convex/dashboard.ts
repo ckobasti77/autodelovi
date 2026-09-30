@@ -323,3 +323,40 @@ export const searchedNotFound = staffQuery({
       .map((r) => ({ ...r, previousZeroCount: previous.get(r.normalized) ?? 0 }));
   },
 });
+
+/** Sidebar badges: work waiting for staff (each bounded at 100). */
+export const navCounts = staffQuery({
+  args: {},
+  returns: v.object({
+    orders: v.number(),
+    inquiries: v.number(),
+    mechanics: v.number(),
+    lowStock: v.number(),
+  }),
+  handler: async (ctx) => {
+    const orders = await ctx.db
+      .query("orders")
+      .withIndex("by_status", (q) => q.eq("status", "nova"))
+      .take(100);
+    const inquiries = await ctx.db
+      .query("inquiries")
+      .withIndex("by_status", (q) => q.eq("status", "nov"))
+      .take(100);
+    const mechanics = await ctx.db
+      .query("mechanicProfiles")
+      .withIndex("by_status", (q) => q.eq("status", "pending"))
+      .take(100);
+    const out = await ctx.db
+      .query("products")
+      .withIndex("by_stockState_and_active", (q) =>
+        q.eq("stockState", "out_of_stock").eq("active", true),
+      )
+      .take(100);
+    return {
+      orders: orders.length,
+      inquiries: inquiries.length,
+      mechanics: mechanics.length,
+      lowStock: out.length,
+    };
+  },
+});
