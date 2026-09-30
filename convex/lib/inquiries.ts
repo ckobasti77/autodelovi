@@ -4,12 +4,18 @@
 import type { Doc, Id } from "../_generated/dataModel";
 import type { MutationCtx } from "../_generated/server";
 import { formatDocumentNumber } from "../../lib/domain/identifiers";
-import { canTransitionInquiry, type InquiryStatus } from "../../lib/domain/inquiryStateMachine";
+import {
+  canTransitionInquiry,
+  checkQuoteAccept,
+  QUOTE_ACCEPT_ERRORS_SR,
+  type InquiryStatus,
+} from "../../lib/domain/inquiryStateMachine";
 import { buildSearchText } from "../../lib/domain/search";
 import { belgradeYear } from "../../lib/domain/time";
 import { nextCounter } from "./counters";
-import { fail } from "./errors";
+import { fail, notFound } from "./errors";
 import { emitEvent } from "./events";
+import type { NewOrderLine } from "./orders";
 import { getSettings } from "./settings";
 import { bumpStatsDaily } from "./stats";
 import { hashToken, randomToken } from "./tokens";
@@ -167,4 +173,106 @@ export async function insertInquiry(
   });
   await bumpStatsDaily(ctx, now, { inquiriesCount: 1 });
   return { inquiryId, number, token };
+}
+
+/** The inquiry's current, sent, unexpired quote (the only one that may become an order). */
+export async function currentSentQuote(
+  ctx: MutationCtx,
+  inquiry: Doc<"inquiries">,
+  quoteId: Id<"quotes">,
+): Promise<Doc<"quotes">> {
+  const quote = await ctx.db.get("quotes", quoteId);
+  if (!quote || quote.inquiryId !== inquiry._id) return notFound("Ponuda nije pronađena.");
+  const check = checkQuoteAccept(quote, Date.now());
+  if (!check.ok)
+    fail(check.error === "expired" ? "EXPIRED" : "CONFLICT", QUOTE_ACCEPT_ERRORS_SR[check.error], {
+      error: check.error,
+    });
+  if (inquiry.currentQuoteId !== quote._id)
+    fail("CONFLICT", QUOTE_ACCEPT_ERRORS_SR.superseded, { error: "superseded" });
+  return quote;
+}
+
+/** Quote lines → order lines (catalogue lines keep their product; free lines are custom). */
+export async function quoteOrderLines(
+  ctx: MutationCtx,
+  quote: Doc<"quotes">,
+): Promise<NewOrderLine[]> {
+  const lines: NewOrderLine[] = [];
+  for (const l of quote.lines) {
+    const product = l.productId ? await ctx.db.get("products", l.productId) : null;
+    const unitRetailPara = Math.max(l.unitPricePara, product?.retailPricePara ?? l.unitPricePara);
+    const quality = l.quality ?? product?.quality;
+    lines.push({
+      ...(product ? { productId: product._id, categoryId: product.categoryId } : {}),
+      sku: l.sku ?? product?.sku ?? "UPIT",
+      name: l.name,
+      manufacturerName: l.manufacturer ?? product?.manufacturerName ?? "",
+      ...(quality ? { quality } : {}),
+      ...(product?.oemPrimary ? { oem: product.oemPrimary } : {}),
+      quantity: l.quantity,
+      unitRetailPara,
+      unitPricePara: l.unitPricePara,
+      discountBp:
+        unitRetailPara > 0
+          ? Math.round(((unitRetailPara - l.unitPricePara) * 10_000) / unitRetailPara)
+          : 0,
+      availabilityAtOrder: l.availability === "in_stock" ? "in_stock" : "on_order",
+      ...(l.leadTimeDays !== undefined ? { leadTimeDays: l.leadTimeDays } : {}),
+      isCustomLine: !product,
+      ...(l.note ? { note: l.note } : {}),
+    });
+  }
+  return lines;
+}
+
+/** Marks the quote accepted, closes the inquiry as `prihvacena` and emits `quote.accepted`. */
+export async function completeQuoteAcceptance(
+  ctx: MutationCtx,
+  input: {
+    inquiry: Doc<"inquiries">;
+    quote: Doc<"quotes">;
+    order: { orderId: Id<"orders">; number: string };
+    actor: Actor;
+    staff: boolean;
+  },
+): Promise<void> {
+  const { inquiry, quote, order, actor, staff } = input;
+  const now = Date.now();
+  await ctx.db.patch("quotes", quote._id, {
+    status: "accepted",
+    acceptedAt: now,
+    orderId: order.orderId,
+  });
+  await setInquiryStatus(ctx, inquiry, "prihvacena", {
+    actor,
+    staff,
+    message: `Ponuda je prihvaćena — porudžbina ${order.number}.`,
+    extra: { orderId: order.orderId },
+  });
+  await logInquiryEvent(
+    ctx,
+    inquiry._id,
+    "quote_accepted",
+    actor,
+    staff
+      ? `Ponuda v${quote.version} pretvorena u porudžbinu ${order.number}`
+      : `Prihvaćena ponuda v${quote.version}`,
+    false,
+  );
+  await emitEvent(ctx, {
+    type: "quote.accepted",
+    aggregateType: "quote",
+    aggregateId: quote._id,
+    payload: {
+      kind: "inquiry",
+      inquiryId: inquiry._id,
+      number: inquiry.number,
+      quoteId: quote._id,
+      version: quote.version,
+      orderId: order.orderId,
+    },
+    dedupeKey: `quote.accepted:${quote._id}`,
+    actor,
+  });
 }

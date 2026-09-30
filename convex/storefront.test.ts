@@ -14,7 +14,11 @@ describe("content pages and FAQs (step 12)", () => {
     expect(again).toEqual({ pages: 0, faqs: 0 });
 
     const terms = await t.query(api.content.pageBySlug, { slug: "uslovi-koriscenja" });
-    expect(terms).toMatchObject({ title: "Uslovi korišćenja i kupovine", needsLegalReview: true, version: 1 });
+    expect(terms).toMatchObject({
+      title: "Uslovi korišćenja i kupovine",
+      needsLegalReview: true,
+      version: 1,
+    });
     expect(terms!.bodyMd).toContain("{{firma.naziv}}");
 
     // An owner-edited page (version > 1) is never overwritten by the seed.
@@ -26,7 +30,9 @@ describe("content pages and FAQs (step 12)", () => {
       await ctx.db.patch("contentPages", page!._id, { bodyMd: "Vlasnikov tekst.", version: 2 });
     });
     await t.mutation(internal.content.seedContent, {});
-    expect((await t.query(api.content.pageBySlug, { slug: "o-nama" }))!.bodyMd).toBe("Vlasnikov tekst.");
+    expect((await t.query(api.content.pageBySlug, { slug: "o-nama" }))!.bodyMd).toBe(
+      "Vlasnikov tekst.",
+    );
 
     const faqs = await t.query(api.content.faqs, { scope: "home" });
     expect(faqs.length).toBeGreaterThanOrEqual(6);
@@ -41,7 +47,10 @@ describe("vehicle pages and retired products", () => {
     const all = await w.anon.query(api.catalog.products.forVehicle, { generationId: w.golf7 });
     // disc (all engines) + pads (2.0 TDI 110 kW only) fit the Golf VII.
     expect(all.total).toBe(2);
-    expect(all.categories.map((c) => c.category.slug).sort()).toEqual(["kocione-plocice", "kocioni-diskovi"]);
+    expect(all.categories.map((c) => c.category.slug).sort()).toEqual([
+      "kocione-plocice",
+      "kocioni-diskovi",
+    ]);
     expect(all.top.map((p) => p._id).sort()).toEqual([w.products.disc, w.products.pads].sort());
     // Anonymous projection: no role price, no cost.
     for (const card of all.top) {
@@ -77,7 +86,9 @@ describe("vehicle pages and retired products", () => {
     expect(retired).toMatchObject({ manufacturerName: expect.any(String) });
     expect(retired!.category).not.toBeNull();
 
-    const liveSlug = await t.run(async (ctx) => (await ctx.db.get("products", w.products.disc))!.slug);
+    const liveSlug = await t.run(
+      async (ctx) => (await ctx.db.get("products", w.products.disc))!.slug,
+    );
     expect(await w.anon.query(api.catalog.products.retired, { slug: liveSlug })).toBeNull();
   });
 
@@ -97,7 +108,9 @@ describe("saved vehicles (account)", () => {
     const t = makeT();
     const w = await setupWorld(t);
     expect(
-      await errorCode(() => w.anon.mutation(api.account.addSavedVehicle, { brandSlug: "volkswagen" })),
+      await errorCode(() =>
+        w.anon.mutation(api.account.addSavedVehicle, { brandSlug: "volkswagen" }),
+      ),
     ).toBe("UNAUTHENTICATED");
 
     const id = await w.asCustomerA.mutation(api.account.addSavedVehicle, {
@@ -128,12 +141,15 @@ describe("saved vehicles (account)", () => {
       plate: "NS 123-AB",
     });
     expect(await w.asCustomerB.query(api.account.savedVehicles, {})).toEqual([]);
-    expect(await errorCode(() => w.asCustomerB.mutation(api.account.removeSavedVehicle, { id }))).toBe(
-      "NOT_FOUND",
-    );
+    expect(
+      await errorCode(() => w.asCustomerB.mutation(api.account.removeSavedVehicle, { id })),
+    ).toBe("NOT_FOUND");
     expect(
       await errorCode(() =>
-        w.asCustomerA.mutation(api.account.addSavedVehicle, { brandSlug: "volkswagen", vin: "KRATAK" }),
+        w.asCustomerA.mutation(api.account.addSavedVehicle, {
+          brandSlug: "volkswagen",
+          vin: "KRATAK",
+        }),
       ),
     ).toBe("INVALID");
 

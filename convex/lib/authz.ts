@@ -33,6 +33,15 @@ export type Viewer = {
 export async function getViewer(ctx: QueryCtx): Promise<Viewer | null> {
   const userId = await getAuthUserId(ctx);
   if (userId === null) return null;
+  return await viewerForUser(ctx, userId);
+}
+
+/**
+ * The viewer shape of a given account. Only for server-side decisions made on behalf of a
+ * customer by staff (e.g. which payment methods a mechanic may use when staff convert a
+ * quote); never an authorization source for the caller.
+ */
+export async function viewerForUser(ctx: QueryCtx, userId: Id<"users">): Promise<Viewer | null> {
   const user = await ctx.db.get("users", userId);
   if (user === null) return null;
   const role: ViewerRole = user.role ?? "customer";

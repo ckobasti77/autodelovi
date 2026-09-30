@@ -93,6 +93,14 @@ export default defineSchema({
     .index("by_tokenHash", ["tokenHash"])
     .index("by_emailLower", ["emailLower"]),
 
+  /** Staff notes on a customer account (append-only; step 15). */
+  customerNotes: defineTable({
+    userId: v.id("users"),
+    message: v.string(),
+    actor: actorV,
+    at: v.number(),
+  }).index("by_userId_and_at", ["userId", "at"]),
+
   // §C2 Settings and content -----------------------------------------------------------
   settings: defineTable(settingsFields).index("by_key", ["key"]),
 

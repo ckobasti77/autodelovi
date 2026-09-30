@@ -289,3 +289,87 @@ export const categoryScope = publicQuery({
     return c && c.active ? toCategorySummary(c) : null;
   },
 });
+
+/**
+ * Staff search analytics (`/admin/pretrage`): totals per day, top queries and top misses for
+ * the last `days` days (≤ 400 `searchDaily` rows per day), plus the 30 latest misses with
+ * their source.
+ */
+export const analytics = staffQuery({
+  args: { days: v.number(), nowMs: v.number() },
+  returns: v.object({
+    perDay: v.array(v.object({ day: v.string(), searches: v.number(), zero: v.number() })),
+    top: v.array(
+      v.object({
+        normalized: v.string(),
+        sample: v.string(),
+        count: v.number(),
+        zeroCount: v.number(),
+        lastAt: v.number(),
+      }),
+    ),
+    misses: v.array(
+      v.object({
+        normalized: v.string(),
+        sample: v.string(),
+        count: v.number(),
+        zeroCount: v.number(),
+        lastAt: v.number(),
+      }),
+    ),
+    recentMisses: v.array(
+      v.object({ query: v.string(), source: v.string(), userType: v.string(), at: v.number() }),
+    ),
+  }),
+  handler: async (ctx, { days, nowMs }) => {
+    const span = Math.min(90, Math.max(1, Math.floor(days)));
+    type Row = {
+      normalized: string;
+      sample: string;
+      count: number;
+      zeroCount: number;
+      lastAt: number;
+    };
+    const totals = new Map<string, Row>();
+    const perDay = [];
+    for (let i = span - 1; i >= 0; i--) {
+      const day = belgradeDay(nowMs - i * 86_400_000);
+      const rows = await ctx.db
+        .query("searchDaily")
+        .withIndex("by_day_and_normalized", (q) => q.eq("day", day))
+        .take(400);
+      let searches = 0;
+      let zero = 0;
+      for (const r of rows) {
+        searches += r.count;
+        zero += r.zeroCount;
+        const t = totals.get(r.normalized) ?? {
+          normalized: r.normalized,
+          sample: r.sample,
+          count: 0,
+          zeroCount: 0,
+          lastAt: 0,
+        };
+        t.count += r.count;
+        t.zeroCount += r.zeroCount;
+        t.lastAt = Math.max(t.lastAt, r.lastAt);
+        totals.set(r.normalized, t);
+      }
+      perDay.push({ day, searches, zero });
+    }
+    const all = [...totals.values()];
+    const recent = await ctx.db.query("searchLogs").withIndex("by_at").order("desc").take(300);
+    return {
+      perDay,
+      top: [...all].sort((a, b) => b.count - a.count).slice(0, 30),
+      misses: all
+        .filter((r) => r.zeroCount > 0)
+        .sort((a, b) => b.zeroCount - a.zeroCount || b.lastAt - a.lastAt)
+        .slice(0, 30),
+      recentMisses: recent
+        .filter((r) => r.resultsCount === 0)
+        .slice(0, 30)
+        .map((r) => ({ query: r.query, source: r.source, userType: r.userType, at: r.at })),
+    };
+  },
+});

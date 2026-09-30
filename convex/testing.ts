@@ -132,7 +132,9 @@ export const samples = internalQuery({
   handler: async (ctx) => {
     const inStockRows = await ctx.db
       .query("products")
-      .withIndex("by_stockState_and_active", (q) => q.eq("stockState", "in_stock").eq("active", true))
+      .withIndex("by_stockState_and_active", (q) =>
+        q.eq("stockState", "in_stock").eq("active", true),
+      )
       .take(100);
     const inStock = inStockRows.find(
       (p) => p.oemPrimary && p.stockQty >= 5 && p.deletedAt === undefined,
@@ -185,7 +187,12 @@ export const samples = internalQuery({
     }
     return {
       inStock: inStock
-        ? { slug: inStock.slug, name: inStock.name, oem: inStock.oemPrimary!, stockQty: inStock.stockQty }
+        ? {
+            slug: inStock.slug,
+            name: inStock.name,
+            oem: inStock.oemPrimary!,
+            stockQty: inStock.stockQty,
+          }
         : null,
       outOfStock: out ? { slug: out.slug, name: out.name } : null,
       vehicleCategory,
@@ -314,7 +321,13 @@ export const quickOrderSamples = internalQuery({
     for (const [code, entry] of byCode) {
       if (!exact && entry.kind === "oem" && entry.productIds.size === 1) {
         const p = await ctx.db.get("products", [...entry.productIds][0] as Doc<"products">["_id"]);
-        if (p && p.active && p.deletedAt === undefined && p.stockQty >= 5 && isAvailableNow(p.stockState)) {
+        if (
+          p &&
+          p.active &&
+          p.deletedAt === undefined &&
+          p.stockQty >= 5 &&
+          isAvailableNow(p.stockState)
+        ) {
           exact = { code: entry.raw || code, slug: p.slug, name: p.name };
         }
       }

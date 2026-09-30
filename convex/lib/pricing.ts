@@ -29,7 +29,19 @@ export async function loadPricingContext(
 ): Promise<PricingContext | null> {
   if (!viewer?.mechanic || viewer.mechanic.status !== "approved" || viewer.blocked) return null;
   const profile = await ctx.db.get("mechanicProfiles", viewer.mechanic.profileId);
-  if (!profile || profile.userId !== viewer.userId || profile.status !== "approved") return null;
+  if (!profile || profile.userId !== viewer.userId) return null;
+  return await pricingContextForProfile(ctx, profile);
+}
+
+/**
+ * Pricing context of a mechanic profile (staff pricing a line for that mechanic's order);
+ * `null` unless the profile is approved.
+ */
+export async function pricingContextForProfile(
+  ctx: QueryCtx,
+  profile: Doc<"mechanicProfiles">,
+): Promise<PricingContext | null> {
+  if (profile.status !== "approved") return null;
   const settings = await getSettings(ctx);
   let tier: PricingContext["tier"];
   if (profile.tierId) {

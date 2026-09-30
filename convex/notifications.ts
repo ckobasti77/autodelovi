@@ -5,7 +5,9 @@ import { paginationOptsValidator, paginationResultValidator } from "convex/serve
 import { v } from "convex/values";
 
 import { notFound } from "./lib/errors";
-import { userMutation, userQuery } from "./lib/functions";
+import { audit } from "./lib/audit";
+import { actorOf } from "./lib/authz";
+import { staffMutation, staffQuery, userMutation, userQuery } from "./lib/functions";
 
 const notificationV = v.object({
   _id: v.id("notifications"),
@@ -76,5 +78,75 @@ export const markAllRead = userMutation({
     const now = Date.now();
     for (const n of rows) await ctx.db.patch("notifications", n._id, { read: true, readAt: now });
     return { marked: rows.length };
+  },
+});
+
+const prefsV = v.object({
+  email: v.object({
+    orderNew: v.boolean(),
+    inquiryNew: v.boolean(),
+    mechanicNew: v.boolean(),
+    lowStock: v.boolean(),
+    reminders: v.boolean(),
+    digest: v.boolean(),
+  }),
+  inApp: v.object({
+    orderNew: v.boolean(),
+    inquiryNew: v.boolean(),
+    mechanicNew: v.boolean(),
+    lowStock: v.boolean(),
+    reminders: v.boolean(),
+  }),
+});
+
+const DEFAULT_PREFS = {
+  email: {
+    orderNew: true,
+    inquiryNew: true,
+    mechanicNew: true,
+    lowStock: true,
+    reminders: true,
+    digest: true,
+  },
+  inApp: { orderNew: true, inquiryNew: true, mechanicNew: true, lowStock: true, reminders: true },
+};
+
+/** The signed-in staff member's notification preferences (defaults: everything on). */
+export const preferences = staffQuery({
+  args: {},
+  returns: prefsV,
+  handler: async (ctx) => {
+    const row = await ctx.db
+      .query("staffPreferences")
+      .withIndex("by_userId", (q) => q.eq("userId", ctx.viewer.userId))
+      .unique();
+    return row ? { email: row.email, inApp: row.inApp } : DEFAULT_PREFS;
+  },
+});
+
+export const setPreferences = staffMutation({
+  args: prefsV.fields,
+  returns: v.null(),
+  handler: async (ctx, prefs) => {
+    const row = await ctx.db
+      .query("staffPreferences")
+      .withIndex("by_userId", (q) => q.eq("userId", ctx.viewer.userId))
+      .unique();
+    const now = Date.now();
+    if (row) await ctx.db.patch("staffPreferences", row._id, { ...prefs, updatedAt: now });
+    else
+      await ctx.db.insert("staffPreferences", {
+        userId: ctx.viewer.userId,
+        ...prefs,
+        updatedAt: now,
+      });
+    await audit(ctx, {
+      actor: actorOf(ctx.viewer),
+      action: "notifications.preferences",
+      entityType: "user",
+      entityId: ctx.viewer.userId,
+      summary: "Izmenjena podešavanja obaveštenja",
+    });
+    return null;
   },
 });

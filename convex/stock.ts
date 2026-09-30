@@ -14,6 +14,8 @@ import { actorV, stockReasonV, stockStateV } from "./lib/validators";
 const movementV = v.object({
   _id: v.id("stockMovements"),
   productId: v.id("products"),
+  sku: v.string(),
+  name: v.string(),
   delta: v.number(),
   qtyBefore: v.number(),
   qtyAfter: v.number(),
@@ -25,25 +27,35 @@ const movementV = v.object({
 });
 
 export const movements = staffQuery({
-  args: { productId: v.optional(v.id("products")), paginationOpts: paginationOptsValidator },
+  args: {
+    productId: v.optional(v.id("products")),
+    reason: v.optional(stockReasonV),
+    paginationOpts: paginationOptsValidator,
+  },
   returns: paginationResultValidator(movementV),
-  handler: async (ctx, { productId, paginationOpts }) => {
-    const result = productId
-      ? await ctx.db
+  handler: async (ctx, { productId, reason, paginationOpts }) => {
+    const base = productId
+      ? ctx.db
           .query("stockMovements")
           .withIndex("by_productId_and_at", (q) => q.eq("productId", productId))
           .order("desc")
-          .paginate(paginationOpts)
-      : await ctx.db
-          .query("stockMovements")
-          .withIndex("by_at")
-          .order("desc")
-          .paginate(paginationOpts);
+      : ctx.db.query("stockMovements").withIndex("by_at").order("desc");
+    const result = await (
+      reason ? base.filter((q) => q.eq(q.field("reason"), reason)) : base
+    ).paginate(paginationOpts);
+    const labels = new Map<string, { sku: string; name: string }>();
+    for (const m of result.page) {
+      if (labels.has(m.productId)) continue;
+      const p = await ctx.db.get("products", m.productId);
+      labels.set(m.productId, { sku: p?.sku ?? "—", name: p?.name ?? "Obrisan artikal" });
+    }
     return {
       ...result,
       page: result.page.map((m) => ({
         _id: m._id,
         productId: m.productId,
+        sku: labels.get(m.productId)!.sku,
+        name: labels.get(m.productId)!.name,
         delta: m.delta,
         qtyBefore: m.qtyBefore,
         qtyAfter: m.qtyAfter,

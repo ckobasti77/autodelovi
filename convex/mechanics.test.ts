@@ -120,16 +120,24 @@ describe("registration", () => {
     const w = await setupWorld(t);
     const badPib = `${PIB_2.slice(0, 8)}${(Number(PIB_2[8]) + 1) % 10}`;
     expect(
-      await errorCode(() => w.asCustomerA.mutation(api.mechanics.register, registration({ pib: badPib }))),
+      await errorCode(() =>
+        w.asCustomerA.mutation(api.mechanics.register, registration({ pib: badPib })),
+      ),
     ).toBe("INVALID");
     expect(
-      await errorCode(() => w.asCustomerA.mutation(api.mechanics.register, registration({ mb: "123" }))),
+      await errorCode(() =>
+        w.asCustomerA.mutation(api.mechanics.register, registration({ mb: "123" })),
+      ),
     ).toBe("INVALID");
     expect(
-      await errorCode(() => w.asCustomerA.mutation(api.mechanics.register, registration({ phone: "12" }))),
+      await errorCode(() =>
+        w.asCustomerA.mutation(api.mechanics.register, registration({ phone: "12" })),
+      ),
     ).toBe("INVALID");
     // The world's mechanics already use VALID_PIB.
-    const taken = await t.run(async (ctx) => (await ctx.db.get("mechanicProfiles", w.mechA.profileId))!.pib);
+    const taken = await t.run(
+      async (ctx) => (await ctx.db.get("mechanicProfiles", w.mechA.profileId))!.pib,
+    );
     expect(
       await errorCode(() =>
         w.asCustomerA.mutation(api.mechanics.register, registration({ pib: taken, mb: VALID_MB })),
@@ -148,9 +156,9 @@ describe("registration", () => {
     await w.asOwner.mutation(api.settings.updateSection, {
       update: { section: "flags", value: { ...s.flags, mechanicRegistration: false } },
     });
-    expect(await errorCode(() => w.asCustomerA.mutation(api.mechanics.register, registration()))).toBe(
-      "DISABLED",
-    );
+    expect(
+      await errorCode(() => w.asCustomerA.mutation(api.mechanics.register, registration())),
+    ).toBe("DISABLED");
   });
 });
 
@@ -159,8 +167,12 @@ describe("approval authorization", () => {
     const t = makeT();
     const w = await setupWorld(t);
     for (const who of ["asCustomerA", "asPending", "asMechA"] as const) {
-      expect(await errorCode(() => w[who].query(api.mechanicsAdmin.list, {})), who).toBe("FORBIDDEN");
-      expect(await errorCode(() => w[who].query(api.mechanicsAdmin.counts, {})), who).toBe("FORBIDDEN");
+      expect(await errorCode(() => w[who].query(api.mechanicsAdmin.list, {})), who).toBe(
+        "FORBIDDEN",
+      );
+      expect(await errorCode(() => w[who].query(api.mechanicsAdmin.counts, {})), who).toBe(
+        "FORBIDDEN",
+      );
       expect(
         await errorCode(() =>
           w[who].mutation(api.mechanicsAdmin.approve, {
@@ -173,12 +185,17 @@ describe("approval authorization", () => {
       ).toBe("FORBIDDEN");
       expect(
         await errorCode(() =>
-          w[who].mutation(api.mechanicsAdmin.reject, { profileId: w.pending.profileId, reason: "Ne" }),
+          w[who].mutation(api.mechanicsAdmin.reject, {
+            profileId: w.pending.profileId,
+            reason: "Ne",
+          }),
         ),
         who,
       ).toBe("FORBIDDEN");
     }
-    expect(await errorCode(() => w.anon.query(api.mechanicsAdmin.list, {}))).toBe("UNAUTHENTICATED");
+    expect(await errorCode(() => w.anon.query(api.mechanicsAdmin.list, {}))).toBe(
+      "UNAUTHENTICATED",
+    );
     const counts = await w.asStaff.query(api.mechanicsAdmin.counts, {});
     expect(counts).toEqual({ pending: 1, approved: 2, rejected: 0, suspended: 1 });
   });
@@ -206,7 +223,9 @@ describe("approval authorization", () => {
     });
     // Personal default 12 % wins over the tier default 10 %.
     expect(live[0]?.yourPricePara).toBe(440_000);
-    const detail = await w.asStaff.query(api.mechanicsAdmin.get, { profileId: w.pending.profileId });
+    const detail = await w.asStaff.query(api.mechanicsAdmin.get, {
+      profileId: w.pending.profileId,
+    });
     expect(detail?.tierName).toBe("Majstor");
     const [events, audits] = await t.run(async (ctx) => [
       await ctx.db
@@ -231,7 +250,10 @@ describe("approval authorization", () => {
     const w = await setupWorld(t);
     expect(
       await errorCode(() =>
-        w.asStaff.mutation(api.mechanicsAdmin.reject, { profileId: w.pending.profileId, reason: " " }),
+        w.asStaff.mutation(api.mechanicsAdmin.reject, {
+          profileId: w.pending.profileId,
+          reason: " ",
+        }),
       ),
     ).toBe("INVALID");
     await w.asStaff.mutation(api.mechanicsAdmin.reject, {
@@ -239,7 +261,10 @@ describe("approval authorization", () => {
       reason: "PIB ne odgovara nazivu firme.",
     });
     const rejected = await w.asPending.query(api.mechanicPortal.overview, {});
-    expect(rejected).toMatchObject({ status: "rejected", rejectionReason: "PIB ne odgovara nazivu firme." });
+    expect(rejected).toMatchObject({
+      status: "rejected",
+      rejectionReason: "PIB ne odgovara nazivu firme.",
+    });
     // A rejected profile cannot be approved directly.
     expect(
       await errorCode(() =>
@@ -276,7 +301,12 @@ describe("quick order", () => {
     expect(discs!.status).toBe("ambiguous");
     expect(discs!.options.map((o) => o.card.sku)).toEqual(["T-DISC", "T-DISC-TRW"]);
     expect(discs!.options.map((o) => o.unitPricePara)).toEqual([900_000, 720_000]);
-    expect(missing).toMatchObject({ status: "not_found", code: "ZZ9999999", quantity: 3, options: [] });
+    expect(missing).toMatchObject({
+      status: "not_found",
+      code: "ZZ9999999",
+      quantity: 3,
+      options: [],
+    });
     expect(mpn).toMatchObject({ status: "exact", quantity: 2 });
     expect(mpn!.options[0]).toMatchObject({ matchKind: "mpn", card: { sku: "T-DISC" } });
     // Misses are logged for „Traženo, a nemamo“.
@@ -292,7 +322,11 @@ describe("quick order", () => {
     const result = await w.asMechA.mutation(api.mechanicPortal.quickOrderMatch, {
       items: items("5Q0698151B 4"),
     });
-    expect(result.rows[0]).toMatchObject({ status: "exact", quantity: 4, normalized: "5Q0698151B" });
+    expect(result.rows[0]).toMatchObject({
+      status: "exact",
+      quantity: 4,
+      normalized: "5Q0698151B",
+    });
   });
 
   test("quantities above stock are flagged not orderable; backorder items are orderable", async () => {
@@ -403,14 +437,21 @@ describe("quick order", () => {
       status: "nov",
       requestedCodes: ["ZZ9999999", "YY1234567"],
       mechanicProfileId: w.mechA.profileId,
-      contact: { name: "Majstor", phone: "+381641234567", email: "mech-a@sklop.test", preferredChannel: "phone" },
+      contact: {
+        name: "Majstor",
+        phone: "+381641234567",
+        email: "mech-a@sklop.test",
+        preferredChannel: "phone",
+      },
     });
     expect(inquiry?.message).toContain("ZZ9 999 999 — 3 kom.");
     const mine = await w.asMechA.query(api.inquiries.mine, {});
     expect(mine.map((i) => i.number)).toContain(number);
     expect(
       await errorCode(() =>
-        w.asPending.mutation(api.mechanicPortal.inquireMissing, { items: [{ code: "ZZ9999999", quantity: 1 }] }),
+        w.asPending.mutation(api.mechanicPortal.inquireMissing, {
+          items: [{ code: "ZZ9999999", quantity: 1 }],
+        }),
       ),
     ).toBe("FORBIDDEN");
   });
@@ -427,7 +468,11 @@ describe("price list", () => {
       });
     const a = await page("asMechA");
     const b = await page("asMechB");
-    expect(a.page[0]).toMatchObject({ sku: "T-DISC", retailPricePara: 1_000_000, unitPricePara: 900_000 });
+    expect(a.page[0]).toMatchObject({
+      sku: "T-DISC",
+      retailPricePara: 1_000_000,
+      unitPricePara: 900_000,
+    });
     expect(b.page[0]).toMatchObject({ unitPricePara: 750_000, discountBp: 2_500 });
     expect(JSON.stringify(a)).not.toMatch(/cost|supplier|500000/i);
     const meta = await w.asMechB.query(api.mechanicPortal.priceListMeta, {});
@@ -458,19 +503,27 @@ describe("favorites and customer vehicles", () => {
   test("toggle, list with own price, scoped to the owner", async () => {
     const t = makeT();
     const w = await setupWorld(t);
-    expect(await w.asMechA.mutation(api.account.toggleFavorite, { productId: w.products.disc })).toEqual({
+    expect(
+      await w.asMechA.mutation(api.account.toggleFavorite, { productId: w.products.disc }),
+    ).toEqual({
       favorite: true,
     });
     await w.asCustomerA.mutation(api.account.toggleFavorite, { productId: w.products.disc });
     const mech = await w.asMechA.query(api.account.favorites, {});
     expect(mech.map((f) => [f.card.sku, f.unitPricePara])).toEqual([["T-DISC", 900_000]]);
     const customer = await w.asCustomerA.query(api.account.favorites, {});
-    expect(customer.map((f) => [f.card.sku, f.unitPricePara, f.discountBp])).toEqual([["T-DISC", 1_000_000, 0]]);
+    expect(customer.map((f) => [f.card.sku, f.unitPricePara, f.discountBp])).toEqual([
+      ["T-DISC", 1_000_000, 0],
+    ]);
     expect(await w.asCustomerB.query(api.account.favorites, {})).toEqual([]);
     expect(
-      await w.asMechA.query(api.account.favoriteIds, { productIds: [w.products.disc, w.products.pads] }),
+      await w.asMechA.query(api.account.favoriteIds, {
+        productIds: [w.products.disc, w.products.pads],
+      }),
     ).toEqual([w.products.disc]);
-    expect(await w.asMechA.mutation(api.account.toggleFavorite, { productId: w.products.disc })).toEqual({
+    expect(
+      await w.asMechA.mutation(api.account.toggleFavorite, { productId: w.products.disc }),
+    ).toEqual({
       favorite: false,
     });
     expect(await errorCode(() => w.anon.query(api.account.favorites, {}))).toBe("UNAUTHENTICATED");
@@ -490,7 +543,9 @@ describe("favorites and customer vehicles", () => {
       await errorCode(() => w.asMechA.mutation(api.account.updateSavedVehicle, { id, vin: "123" })),
     ).toBe("INVALID");
     expect(
-      await errorCode(() => w.asCustomerB.mutation(api.account.updateSavedVehicle, { id, note: "x" })),
+      await errorCode(() =>
+        w.asCustomerB.mutation(api.account.updateSavedVehicle, { id, note: "x" }),
+      ),
     ).toBe("NOT_FOUND");
     await w.asMechA.mutation(api.account.updateSavedVehicle, { id, plate: "ns 555-cc", note: "" });
     const [row] = await w.asMechA.query(api.account.savedVehicles, {});
@@ -561,7 +616,10 @@ describe("deferred payment", () => {
       ),
     ).toBe("INVALID");
     // Other methods still work.
-    const ok = await w.asMechA.mutation(api.orders.submit, checkoutArgs({ payment: { method: "cod" } }));
+    const ok = await w.asMechA.mutation(
+      api.orders.submit,
+      checkoutArgs({ payment: { method: "cod" } }),
+    );
     expect(ok.number).toMatch(/^SK-/);
   });
 });

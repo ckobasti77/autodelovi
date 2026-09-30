@@ -123,7 +123,8 @@ export const addSavedVehicle = userMutation({
     let vin: string | undefined;
     if (args.vin?.trim()) {
       vin = normalizeVin(args.vin);
-      if (!validateVin(vin).valid) invalid("Broj šasije ima 17 znakova (bez slova I, O i Q).", "vin");
+      if (!validateVin(vin).valid)
+        invalid("Broj šasije ima 17 znakova (bez slova I, O i Q).", "vin");
     }
     const same = existing.find(
       (row) =>
@@ -174,7 +175,8 @@ export const updateSavedVehicle = userMutation({
     let vin: string | undefined;
     if (args.vin?.trim()) {
       vin = normalizeVin(args.vin);
-      if (!validateVin(vin).valid) invalid("Broj šasije ima 17 znakova (bez slova I, O i Q).", "vin");
+      if (!validateVin(vin).valid)
+        invalid("Broj šasije ima 17 znakova (bez slova I, O i Q).", "vin");
     }
     const text = (value: string | undefined, max: number) =>
       value === undefined ? undefined : value.trim().slice(0, max) || undefined;

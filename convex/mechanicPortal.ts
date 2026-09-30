@@ -311,8 +311,7 @@ export const inquireMissing = userMutation({
       normalized: normalizeCode(i.code.slice(0, 60)),
       quantity: Math.min(QUICK_ORDER_MAX_QTY, Math.max(1, Math.floor(i.quantity))),
     }));
-    if (lines.some((l) => !isPlausibleOem(l.normalized)))
-      invalid("Neispravan broj dela.", "items");
+    if (lines.some((l) => !isPlausibleOem(l.normalized))) invalid("Neispravan broj dela.", "items");
     const note = args.note?.trim().slice(0, 400);
     const message = [
       "Brza porudžbina — ove brojeve nismo našli u katalogu:",

@@ -9,20 +9,27 @@
  */
 
 import type * as account from "../account.js";
+import type * as adminSearch from "../adminSearch.js";
 import type * as audit from "../audit.js";
 import type * as auth from "../auth.js";
 import type * as authEmails from "../authEmails.js";
 import type * as backInStock from "../backInStock.js";
 import type * as carts from "../carts.js";
 import type * as catalog_categories from "../catalog/categories.js";
+import type * as catalog_categoriesAdmin from "../catalog/categoriesAdmin.js";
 import type * as catalog_codes from "../catalog/codes.js";
 import type * as catalog_manufacturers from "../catalog/manufacturers.js";
+import type * as catalog_manufacturersAdmin from "../catalog/manufacturersAdmin.js";
 import type * as catalog_products from "../catalog/products.js";
 import type * as catalog_productsAdmin from "../catalog/productsAdmin.js";
 import type * as catalog_vehicles from "../catalog/vehicles.js";
+import type * as catalog_vehiclesAdmin from "../catalog/vehiclesAdmin.js";
 import type * as content from "../content.js";
 import type * as crons from "../crons.js";
+import type * as customersAdmin from "../customersAdmin.js";
+import type * as dashboard from "../dashboard.js";
 import type * as demo from "../demo.js";
+import type * as emailsAdmin from "../emailsAdmin.js";
 import type * as events from "../events.js";
 import type * as files from "../files.js";
 import type * as http from "../http.js";
@@ -66,6 +73,7 @@ import type * as seedData_manufacturers from "../seedData/manufacturers.js";
 import type * as seedData_products from "../seedData/products.js";
 import type * as seedData_vehicles from "../seedData/vehicles.js";
 import type * as settings from "../settings.js";
+import type * as staff from "../staff.js";
 import type * as stock from "../stock.js";
 import type * as testing from "../testing.js";
 import type * as users from "../users.js";
@@ -78,20 +86,27 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   account: typeof account;
+  adminSearch: typeof adminSearch;
   audit: typeof audit;
   auth: typeof auth;
   authEmails: typeof authEmails;
   backInStock: typeof backInStock;
   carts: typeof carts;
   "catalog/categories": typeof catalog_categories;
+  "catalog/categoriesAdmin": typeof catalog_categoriesAdmin;
   "catalog/codes": typeof catalog_codes;
   "catalog/manufacturers": typeof catalog_manufacturers;
+  "catalog/manufacturersAdmin": typeof catalog_manufacturersAdmin;
   "catalog/products": typeof catalog_products;
   "catalog/productsAdmin": typeof catalog_productsAdmin;
   "catalog/vehicles": typeof catalog_vehicles;
+  "catalog/vehiclesAdmin": typeof catalog_vehiclesAdmin;
   content: typeof content;
   crons: typeof crons;
+  customersAdmin: typeof customersAdmin;
+  dashboard: typeof dashboard;
   demo: typeof demo;
+  emailsAdmin: typeof emailsAdmin;
   events: typeof events;
   files: typeof files;
   http: typeof http;
@@ -135,6 +150,7 @@ declare const fullApi: ApiFromModules<{
   "seedData/products": typeof seedData_products;
   "seedData/vehicles": typeof seedData_vehicles;
   settings: typeof settings;
+  staff: typeof staff;
   stock: typeof stock;
   testing: typeof testing;
   users: typeof users;

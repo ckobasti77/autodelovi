@@ -9,15 +9,21 @@ import type { Doc, Id } from "./_generated/dataModel";
 import type { MutationCtx } from "./_generated/server";
 import { normalizeCode } from "../lib/domain/codes";
 import { isValidEmail, normalizeEmail } from "../lib/domain/identifiers";
-import { checkQuoteAccept, QUOTE_ACCEPT_ERRORS_SR } from "../lib/domain/inquiryStateMachine";
 import { decodeVin } from "../lib/domain/vin";
 import { normalizePhone } from "../lib/format/phone";
 import { actorOf } from "./lib/authz";
 import { fail, invalid, notFound } from "./lib/errors";
 import { emitEvent } from "./lib/events";
 import { publicMutation, publicQuery, userQuery } from "./lib/functions";
-import { insertInquiry, logInquiryEvent, setInquiryStatus } from "./lib/inquiries";
-import { createOrder, validateCheckout, type NewOrderLine } from "./lib/orders";
+import {
+  completeQuoteAcceptance,
+  currentSentQuote,
+  insertInquiry,
+  logInquiryEvent,
+  quoteOrderLines,
+  setInquiryStatus,
+} from "./lib/inquiries";
+import { createOrder, validateCheckout } from "./lib/orders";
 import { enforceRateLimit } from "./lib/rateLimits";
 import { getSettings } from "./lib/settings";
 import { hashToken, isTokenShape } from "./lib/tokens";
@@ -331,23 +337,6 @@ async function inquiryByToken(ctx: MutationCtx, token: string): Promise<Doc<"inq
   return inquiry ?? notFound("Upit nije pronađen.");
 }
 
-async function currentSentQuote(
-  ctx: MutationCtx,
-  inquiry: Doc<"inquiries">,
-  quoteId: Id<"quotes">,
-): Promise<Doc<"quotes">> {
-  const quote = await ctx.db.get("quotes", quoteId);
-  if (!quote || quote.inquiryId !== inquiry._id) return notFound("Ponuda nije pronađena.");
-  const check = checkQuoteAccept(quote, Date.now());
-  if (!check.ok)
-    fail(check.error === "expired" ? "EXPIRED" : "CONFLICT", QUOTE_ACCEPT_ERRORS_SR[check.error], {
-      error: check.error,
-    });
-  if (inquiry.currentQuoteId !== quote._id)
-    fail("CONFLICT", QUOTE_ACCEPT_ERRORS_SR.superseded, { error: "superseded" });
-  return quote;
-}
-
 export const acceptQuote = publicMutation({
   args: {
     token: v.string(),
@@ -378,30 +367,7 @@ export const acceptQuote = publicMutation({
       settings,
       viewer,
     );
-    const lines: NewOrderLine[] = [];
-    for (const l of quote.lines) {
-      const product = l.productId ? await ctx.db.get("products", l.productId) : null;
-      const unitRetailPara = Math.max(l.unitPricePara, product?.retailPricePara ?? l.unitPricePara);
-      lines.push({
-        ...(product ? { productId: product._id, categoryId: product.categoryId } : {}),
-        sku: l.sku ?? product?.sku ?? "UPIT",
-        name: l.name,
-        manufacturerName: l.manufacturer ?? product?.manufacturerName ?? "",
-        ...((l.quality ?? product?.quality) ? { quality: (l.quality ?? product?.quality)! } : {}),
-        ...(product?.oemPrimary ? { oem: product.oemPrimary } : {}),
-        quantity: l.quantity,
-        unitRetailPara,
-        unitPricePara: l.unitPricePara,
-        discountBp:
-          unitRetailPara > 0
-            ? Math.round(((unitRetailPara - l.unitPricePara) * 10_000) / unitRetailPara)
-            : 0,
-        availabilityAtOrder: l.availability === "in_stock" ? "in_stock" : "on_order",
-        ...(l.leadTimeDays !== undefined ? { leadTimeDays: l.leadTimeDays } : {}),
-        isCustomLine: !product,
-        ...(l.note ? { note: l.note } : {}),
-      });
-    }
+    const lines = await quoteOrderLines(ctx, quote);
     const isMechanic = viewer?.mechanic?.status === "approved";
     const actor = viewer
       ? actorOf(viewer)
@@ -419,41 +385,7 @@ export const acceptQuote = publicMutation({
       isDemo: inquiry.isDemo,
       actor,
     });
-    const now = Date.now();
-    await ctx.db.patch("quotes", quote._id, {
-      status: "accepted",
-      acceptedAt: now,
-      orderId: order.orderId,
-    });
-    await setInquiryStatus(ctx, inquiry, "prihvacena", {
-      actor,
-      staff: false,
-      message: `Ponuda je prihvaćena — porudžbina ${order.number}.`,
-      extra: { orderId: order.orderId },
-    });
-    await logInquiryEvent(
-      ctx,
-      inquiry._id,
-      "quote_accepted",
-      actor,
-      `Prihvaćena ponuda v${quote.version}`,
-      false,
-    );
-    await emitEvent(ctx, {
-      type: "quote.accepted",
-      aggregateType: "quote",
-      aggregateId: quote._id,
-      payload: {
-        kind: "inquiry",
-        inquiryId: inquiry._id,
-        number: inquiry.number,
-        quoteId: quote._id,
-        version: quote.version,
-        orderId: order.orderId,
-      },
-      dedupeKey: `quote.accepted:${quote._id}`,
-      actor,
-    });
+    await completeQuoteAcceptance(ctx, { inquiry, quote, order, actor, staff: false });
     return { orderNumber: order.number, orderToken: order.token };
   },
 });

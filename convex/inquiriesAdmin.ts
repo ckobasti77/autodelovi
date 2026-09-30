@@ -4,15 +4,38 @@
 import { paginationOptsValidator, paginationResultValidator } from "convex/server";
 import { v } from "convex/values";
 
+import type { Doc } from "./_generated/dataModel";
+import { foldForSearch } from "../lib/domain/search";
 import { endOfBelgradeDay, formatBelgradeDate } from "../lib/domain/time";
+import { normalizePhone } from "../lib/format/phone";
 import { audit } from "./lib/audit";
-import { actorOf } from "./lib/authz";
+import { actorOf, viewerForUser } from "./lib/authz";
 import { fail, invalid, notFound } from "./lib/errors";
 import { emitEvent } from "./lib/events";
 import { staffMutation, staffQuery } from "./lib/functions";
-import { logInquiryEvent, quoteTotal, setInquiryStatus } from "./lib/inquiries";
+import {
+  completeQuoteAcceptance,
+  currentSentQuote,
+  logInquiryEvent,
+  quoteOrderLines,
+  quoteTotal,
+  setInquiryStatus,
+} from "./lib/inquiries";
+import { createOrder, validateCheckout } from "./lib/orders";
 import { getSettings } from "./lib/settings";
-import { actorV, inquiryKindV, inquiryStatusV, qualityV, quoteStatusV } from "./lib/validators";
+import {
+  actorV,
+  addressV,
+  attributionV,
+  companyV,
+  contactV,
+  deliveryMethodV,
+  inquiryKindV,
+  inquiryStatusV,
+  paymentMethodV,
+  qualityV,
+  quoteStatusV,
+} from "./lib/validators";
 
 const listRowV = v.object({
   _id: v.id("inquiries"),
@@ -20,58 +43,147 @@ const listRowV = v.object({
   status: inquiryStatusV,
   kind: inquiryKindV,
   contactName: v.string(),
+  phone: v.union(v.string(), v.null()),
+  preferredChannel: v.string(),
   vin: v.union(v.string(), v.null()),
   vehicleLabel: v.union(v.string(), v.null()),
   message: v.string(),
   photoCount: v.number(),
   assignedTo: v.union(v.id("users"), v.null()),
+  assigneeName: v.union(v.string(), v.null()),
+  isMechanic: v.boolean(),
   createdAt: v.number(),
   firstResponseAt: v.union(v.number(), v.null()),
   isDemo: v.boolean(),
 });
 
+function staffName(u: Doc<"users"> | null): string | null {
+  if (!u) return null;
+  return [u.firstName, u.lastName].filter(Boolean).join(" ") || u.name || u.email || null;
+}
+
+/**
+ * Inquiries list: status via index, full-text search via the search index; kind and
+ * „mechanics only“ (priority) are post-filters on the bounded page (D137); „assigned to
+ * me“ uses `by_assignedTo_and_status`.
+ */
 export const list = staffQuery({
   args: {
     status: v.optional(inquiryStatusV),
     search: v.optional(v.string()),
+    kind: v.optional(inquiryKindV),
+    mine: v.optional(v.boolean()),
+    mechanicsOnly: v.optional(v.boolean()),
     paginationOpts: paginationOptsValidator,
   },
   returns: paginationResultValidator(listRowV),
-  handler: async (ctx, { status, search, paginationOpts }) => {
-    const term = search?.trim().slice(0, 100).toLowerCase();
-    const result = term
-      ? await ctx.db
-          .query("inquiries")
-          .withSearchIndex("search_inquiries", (q) =>
-            status
-              ? q.search("searchText", term).eq("status", status)
-              : q.search("searchText", term),
-          )
-          .paginate(paginationOpts)
-      : status
-        ? await ctx.db
+  handler: async (ctx, args) => {
+    const term = args.search?.trim().slice(0, 100);
+    const base = term
+      ? ctx.db.query("inquiries").withSearchIndex("search_inquiries", (q) => {
+          const phone = normalizePhone(term);
+          const s = q.search("searchText", phone ? phone.replace(/\D/g, "") : foldForSearch(term));
+          if (args.status && args.kind) return s.eq("status", args.status).eq("kind", args.kind);
+          if (args.status) return s.eq("status", args.status);
+          if (args.kind) return s.eq("kind", args.kind);
+          return s;
+        })
+      : args.mine
+        ? ctx.db
             .query("inquiries")
-            .withIndex("by_status", (q) => q.eq("status", status))
+            .withIndex("by_assignedTo_and_status", (q) =>
+              args.status
+                ? q.eq("assignedTo", ctx.viewer.userId).eq("status", args.status)
+                : q.eq("assignedTo", ctx.viewer.userId),
+            )
             .order("desc")
-            .paginate(paginationOpts)
-        : await ctx.db.query("inquiries").order("desc").paginate(paginationOpts);
-    return {
-      ...result,
-      page: result.page.map((i) => ({
+        : args.status
+          ? ctx.db
+              .query("inquiries")
+              .withIndex("by_status", (q) => q.eq("status", args.status!))
+              .order("desc")
+          : ctx.db.query("inquiries").order("desc");
+    const kindFilter = !term && args.kind;
+    const mineFilter = Boolean(term) && args.mine;
+    const query =
+      kindFilter || args.mechanicsOnly || mineFilter
+        ? base.filter((q) =>
+            q.and(
+              kindFilter ? q.eq(q.field("kind"), args.kind) : true,
+              args.mechanicsOnly ? q.neq(q.field("mechanicProfileId"), undefined) : true,
+              mineFilter ? q.eq(q.field("assignedTo"), ctx.viewer.userId) : true,
+            ),
+          )
+        : base;
+    const result = await query.paginate(args.paginationOpts);
+    const names = new Map<string, string | null>();
+    const page = [];
+    for (const i of result.page) {
+      let assigneeName: string | null = null;
+      if (i.assignedTo) {
+        if (!names.has(i.assignedTo))
+          names.set(i.assignedTo, staffName(await ctx.db.get("users", i.assignedTo)));
+        assigneeName = names.get(i.assignedTo) ?? null;
+      }
+      page.push({
         _id: i._id,
         number: i.number,
         status: i.status,
         kind: i.kind,
         contactName: i.contact.name,
+        phone: i.contact.phone ?? null,
+        preferredChannel: i.contact.preferredChannel,
         vin: i.vin ?? null,
         vehicleLabel: i.vehicle?.label ?? null,
         message: i.message.slice(0, 240),
         photoCount: i.photos.length,
         assignedTo: i.assignedTo ?? null,
+        assigneeName,
+        isMechanic: i.mechanicProfileId !== undefined,
         createdAt: i._creationTime,
         firstResponseAt: i.firstResponseAt ?? null,
         isDemo: i.isDemo,
-      })),
+      });
+    }
+    return { ...result, page };
+  },
+});
+
+/** Counts for the status tabs (open statuses, bounded at 500 each). */
+export const statusCounts = staffQuery({
+  args: {},
+  returns: v.object({
+    nov: v.number(),
+    u_obradi: v.number(),
+    ponuda_poslata: v.number(),
+    istekla: v.number(),
+    mine: v.number(),
+  }),
+  handler: async (ctx) => {
+    const count = async (status: Doc<"inquiries">["status"]) =>
+      (
+        await ctx.db
+          .query("inquiries")
+          .withIndex("by_status", (q) => q.eq("status", status))
+          .take(500)
+      ).length;
+    let mine = 0;
+    for (const status of ["nov", "u_obradi", "ponuda_poslata"] as const) {
+      mine += (
+        await ctx.db
+          .query("inquiries")
+          .withIndex("by_assignedTo_and_status", (q) =>
+            q.eq("assignedTo", ctx.viewer.userId).eq("status", status),
+          )
+          .take(500)
+      ).length;
+    }
+    return {
+      nov: await count("nov"),
+      u_obradi: await count("u_obradi"),
+      ponuda_poslata: await count("ponuda_poslata"),
+      istekla: await count("istekla"),
+      mine,
     };
   },
 });
@@ -111,11 +223,33 @@ export const get = staffQuery({
           preferredChannel: v.string(),
         }),
         assignedTo: v.union(v.id("users"), v.null()),
+        assigneeName: v.union(v.string(), v.null()),
         orderId: v.union(v.id("orders"), v.null()),
+        orderNumber: v.union(v.string(), v.null()),
         currentQuoteId: v.union(v.id("quotes"), v.null()),
         createdAt: v.number(),
         updatedAt: v.number(),
+        firstResponseAt: v.union(v.number(), v.null()),
         closedReason: v.union(v.string(), v.null()),
+        userId: v.union(v.id("users"), v.null()),
+        mechanic: v.union(
+          v.null(),
+          v.object({
+            profileId: v.id("mechanicProfiles"),
+            companyName: v.string(),
+            status: v.string(),
+            tierName: v.union(v.string(), v.null()),
+          }),
+        ),
+        product: v.union(
+          v.null(),
+          v.object({ _id: v.id("products"), sku: v.string(), name: v.string() }),
+        ),
+        searchQuery: v.union(v.string(), v.null()),
+        vinBrandGuess: v.union(v.string(), v.null()),
+        vinYearHint: v.union(v.number(), v.null()),
+        attribution: v.union(attributionV, v.null()),
+        isDemo: v.boolean(),
       }),
       photos: v.array(
         v.object({ storageId: v.id("_storage"), url: v.union(v.string(), v.null()) }),
@@ -164,6 +298,11 @@ export const get = staffQuery({
       .query("inquiryEvents")
       .withIndex("by_inquiryId_and_at", (q) => q.eq("inquiryId", inquiry._id))
       .take(200);
+    const order = inquiry.orderId ? await ctx.db.get("orders", inquiry.orderId) : null;
+    const profile = inquiry.mechanicProfileId
+      ? await ctx.db.get("mechanicProfiles", inquiry.mechanicProfileId)
+      : null;
+    const product = inquiry.productId ? await ctx.db.get("products", inquiry.productId) : null;
     const sameVin = inquiry.vin
       ? (
           await ctx.db
@@ -187,11 +326,33 @@ export const get = staffQuery({
         categorySlugs: inquiry.categorySlugs,
         contact: inquiry.contact,
         assignedTo: inquiry.assignedTo ?? null,
+        assigneeName: inquiry.assignedTo
+          ? staffName(await ctx.db.get("users", inquiry.assignedTo))
+          : null,
         orderId: inquiry.orderId ?? null,
+        orderNumber: order?.number ?? null,
         currentQuoteId: inquiry.currentQuoteId ?? null,
         createdAt: inquiry._creationTime,
         updatedAt: inquiry.updatedAt,
+        firstResponseAt: inquiry.firstResponseAt ?? null,
         closedReason: inquiry.closedReason ?? null,
+        userId: inquiry.userId ?? null,
+        mechanic: profile
+          ? {
+              profileId: profile._id,
+              companyName: profile.companyName,
+              status: profile.status,
+              tierName: profile.tierId
+                ? ((await ctx.db.get("priceTiers", profile.tierId))?.name ?? null)
+                : null,
+            }
+          : null,
+        product: product ? { _id: product._id, sku: product.sku, name: product.name } : null,
+        searchQuery: inquiry.searchQuery ?? null,
+        vinBrandGuess: inquiry.vinInfo?.brandGuess ?? null,
+        vinYearHint: inquiry.vinInfo?.modelYearHint ?? null,
+        attribution: inquiry.attribution ?? null,
+        isDemo: inquiry.isDemo,
       },
       photos,
       quotes: quotes.map((q) => ({
@@ -459,5 +620,78 @@ export const addNote = staffMutation({
       summary: `${inquiry.number}: napomena`,
     });
     return null;
+  },
+});
+
+/**
+ * Staff converts the current sent quote into an order (the customer accepted by phone,
+ * Viber or in the shop). Same line mapping and bookkeeping as the customer's accept link;
+ * payment rules are checked for the inquiry's account (deferred only for its mechanic).
+ */
+export const convertToOrder = staffMutation({
+  args: {
+    quoteId: v.id("quotes"),
+    contact: contactV,
+    company: v.optional(companyV),
+    delivery: v.object({ method: deliveryMethodV, address: v.optional(addressV) }),
+    payment: v.object({ method: paymentMethodV }),
+    note: v.optional(v.string()),
+  },
+  returns: v.object({ orderNumber: v.string() }),
+  handler: async (ctx, args) => {
+    const quote = await ctx.db.get("quotes", args.quoteId);
+    if (!quote) return notFound("Ponuda ne postoji.");
+    const inquiry = await ctx.db.get("inquiries", quote.inquiryId);
+    if (!inquiry) return notFound("Upit ne postoji.");
+    await currentSentQuote(ctx, inquiry, quote._id);
+    const settings = await getSettings(ctx);
+    const customer = inquiry.userId ? await viewerForUser(ctx, inquiry.userId) : null;
+    const checkout = validateCheckout(
+      {
+        contact: args.contact,
+        ...(args.company ? { company: args.company } : {}),
+        delivery: args.delivery,
+        payment: args.payment,
+        ...(inquiry.vehicle ? { vehicle: inquiry.vehicle } : {}),
+        ...(args.note ? { note: args.note } : {}),
+        consent: {
+          termsVersion: settings.legalVersions.terms,
+          privacyVersion: settings.legalVersions.privacy,
+          acceptedAt: Date.now(),
+          marketingEmail: false,
+          analytics: false,
+          ads: false,
+        },
+      },
+      settings,
+      customer,
+    );
+    const lines = await quoteOrderLines(ctx, quote);
+    const isMechanic = customer?.mechanic?.status === "approved";
+    const actor = actorOf(ctx.viewer);
+    const order = await createOrder(ctx, {
+      checkout,
+      lines,
+      customerType: isMechanic ? "mechanic" : inquiry.userId ? "customer" : "guest",
+      ...(inquiry.userId ? { userId: inquiry.userId } : {}),
+      ...(isMechanic && customer?.mechanic
+        ? { mechanicProfileId: customer.mechanic.profileId }
+        : {}),
+      ...(inquiry.attribution ? { attribution: inquiry.attribution } : {}),
+      source: "admin",
+      inquiryId: inquiry._id,
+      quoteId: quote._id,
+      isDemo: inquiry.isDemo,
+      actor,
+    });
+    await completeQuoteAcceptance(ctx, { inquiry, quote, order, actor, staff: true });
+    await audit(ctx, {
+      actor,
+      action: "quote.convert",
+      entityType: "inquiry",
+      entityId: inquiry._id,
+      summary: `${inquiry.number}: ponuda v${quote.version} → porudžbina ${order.number}`,
+    });
+    return { orderNumber: order.number };
   },
 });

@@ -238,9 +238,9 @@ export const tree = publicQuery({
     }),
   ),
   handler: async (ctx) => {
-    const brandRows = (await ctx.db.query("vehicleBrands").withIndex("by_sortOrder").take(50)).filter(
-      (b) => b.active,
-    );
+    const brandRows = (
+      await ctx.db.query("vehicleBrands").withIndex("by_sortOrder").take(50)
+    ).filter((b) => b.active);
     const out = [];
     for (const brand of brandRows) {
       const models = (
