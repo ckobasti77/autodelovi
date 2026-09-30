@@ -56,6 +56,7 @@ export async function generateMetadata({
       description: category.seoDescription ?? text.description,
       path,
       titleSuffix: settings.seo.titleSuffix,
+      ogFile: true,
     });
   }
   const filters = parseCatalogFilters(await searchParams);
@@ -76,6 +77,7 @@ export async function generateMetadata({
     // Empty categories stay reachable but out of the index (no thin pages).
     noindex: !index || counts.productCount === 0,
     titleSuffix: settings.seo.titleSuffix,
+    ogFile: true,
   });
 }
 

@@ -198,14 +198,14 @@ type FeedRow = FunctionReturnType<typeof api.seo.feedProducts>["page"][number];
 
 /** Every feed row (active products with a public price), paged through Convex. */
 export const getFeedRows = cached(
-  async (): Promise<{ pricesPublic: boolean; rows: FeedRow[] }> => {
+  async (includeDemo: boolean): Promise<{ pricesPublic: boolean; rows: FeedRow[] }> => {
     const rows: FeedRow[] = [];
     let cursor: string | null = null;
     let pricesPublic = true;
     for (;;) {
       const page: FunctionReturnType<typeof api.seo.feedProducts> = await fetchPublic(
         api.seo.feedProducts,
-        { paginationOpts: { numItems: 200, cursor } },
+        { paginationOpts: { numItems: 200, cursor }, includeDemo },
       );
       pricesPublic = page.pricesPublic;
       rows.push(...page.page);

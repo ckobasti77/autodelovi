@@ -74,3 +74,6 @@ __pycache__/
 .e2e-full.log
 .e2e-logs/
 .tmp-email/
+
+# Playwright global state (consent cookie for specs that do not test the banner)
+.playwright/

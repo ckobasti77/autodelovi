@@ -6,7 +6,7 @@
  */
 import { formatRSD } from "@/lib/format/money";
 import { pluralSr } from "@/lib/format/plural";
-import { DESCRIPTION_MAX } from "@/lib/seo/metadata";
+import { clampText, defaultTitleSuffix, DESCRIPTION_MAX, TITLE_MAX } from "@/lib/seo/metadata";
 
 export type MetaText = { title: string; description: string };
 
@@ -42,6 +42,30 @@ function stockSentence(state: StockState): string {
   }
 }
 
+/**
+ * Product title (≤ 60 with the suffix): „{Naziv} {Proizvođač} {OEM}“, shortened smartly —
+ * the OEM number is what buyers type, so the brand suffix and then the manufacturer go
+ * first, and only then the name is cut (never the code).
+ */
+export function productTitle(
+  p: { name: string; manufacturer: string; code: string | null },
+  suffix: string = defaultTitleSuffix(),
+): string {
+  const name = p.name.replace(/s+/g, " ").trim();
+  const code = p.code?.trim() ?? "";
+  const withCode = (base: string) => (code ? `${base} ${code}` : base);
+  const candidates = [
+    `${withCode(`${name} ${p.manufacturer}`)}${suffix}`,
+    code ? `${withCode(name)}${suffix}` : null,
+    withCode(`${name} ${p.manufacturer}`),
+    code ? withCode(name) : null,
+  ].filter((t): t is string => t !== null);
+  const fits = candidates.find((t) => t.length <= TITLE_MAX);
+  if (fits) return fits;
+  const room = TITLE_MAX - (code ? code.length + 1 : 0);
+  return withCode(clampText(name, Math.max(20, room)));
+}
+
 export function productMeta(p: {
   name: string;
   manufacturer: string;
@@ -50,22 +74,22 @@ export function productMeta(p: {
   fitmentSummary: string | null;
   pricePara: number | null;
   stockState: StockState;
+  titleSuffix?: string;
 }): MetaText {
-  const title = `${p.name} ${p.manufacturer}${p.code ? ` ${p.code}` : ""}`;
+  const title = productTitle(p, p.titleSuffix);
   const head = `${p.name} (${p.manufacturer}, ${p.qualityLabel})`;
-  const withVehicles = p.fitmentSummary ? `${head} za ${p.fitmentSummary}.` : `${head}.`;
   const price = p.pricePara !== null ? `Cena ${formatRSD(p.pricePara)} sa PDV-om.` : "";
   const code = p.code ? `Kat. br. ${p.code}.` : "";
-  const tail = [price, stockSentence(p.stockState), code].filter(Boolean);
-  let description = [withVehicles, ...tail].join(" ");
-  if (description.length > DESCRIPTION_MAX && p.fitmentSummary) {
-    // Shorten the vehicle list first — price, stock and the code matter more.
-    const room = DESCRIPTION_MAX - [`${head} za`, "…", ...tail].join(" ").length - 2;
-    const vehicles =
-      room > 12 ? `${p.fitmentSummary.slice(0, room).replace(/[\s,;]+\S*$/, "")}…` : "";
-    description = [vehicles ? `${head} za ${vehicles}.` : `${head}.`, ...tail].join(" ");
-  }
-  return { title, description };
+  const tail = [price, stockSentence(p.stockState), code].filter(Boolean).join(" ");
+  const full = p.fitmentSummary ? `${head} za ${p.fitmentSummary}. ${tail}` : `${head}. ${tail}`;
+  if (full.length <= DESCRIPTION_MAX || !p.fitmentSummary) return { title, description: full };
+  // Shorten the vehicle list first — price, stock and the code matter more.
+  const room = DESCRIPTION_MAX - `${head} za … ${tail}`.length;
+  const vehicles = room > 12 ? p.fitmentSummary.slice(0, room).replace(/[s,;]+S*$/, "") : "";
+  return {
+    title,
+    description: vehicles ? `${head} za ${vehicles}… ${tail}` : `${head}. ${tail}`,
+  };
 }
 
 export function categoryMeta(c: {

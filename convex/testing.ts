@@ -669,3 +669,48 @@ export const orderStatusToken = internalQuery({
   returns: v.string(),
   handler: async (_ctx, { number }) => await statusLinkToken("order", number),
 });
+
+/**
+ * Step 19 e2e: sets the browser tag ids (GA4, Google Ads, Meta Pixel) and returns the previous
+ * tracking section so the spec can restore it. Internal only.
+ */
+export const setTracking = internalMutation({
+  args: {
+    ga4Id: v.optional(v.string()),
+    gadsId: v.optional(v.string()),
+    metaPixelId: v.optional(v.string()),
+    restore: v.optional(v.string()),
+  },
+  returns: v.string(),
+  handler: async (ctx, args) => {
+    const doc = await ctx.db
+      .query("settings")
+      .withIndex("by_key", (q) => q.eq("key", "global"))
+      .unique();
+    if (!doc) return "{}";
+    const previous = JSON.stringify(doc.tracking);
+    const tracking = args.restore
+      ? (JSON.parse(args.restore) as Doc<"settings">["tracking"])
+      : {
+          ...doc.tracking,
+          ga4Id: args.ga4Id,
+          gadsId: args.gadsId,
+          metaPixelId: args.metaPixelId,
+          gadsLabels: { ...doc.tracking.gadsLabels, purchase: args.gadsId ? "e2ePurchase" : undefined },
+        };
+    await ctx.db.patch("settings", doc._id, { tracking });
+    return previous;
+  },
+});
+
+export const consentRecordCount = internalQuery({
+  args: { consentId: v.string() },
+  returns: v.number(),
+  handler: async (ctx, { consentId }) =>
+    (
+      await ctx.db
+        .query("consentRecords")
+        .withIndex("by_consentId", (q) => q.eq("consentId", consentId))
+        .take(50)
+    ).length,
+});

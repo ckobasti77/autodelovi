@@ -8,14 +8,14 @@ import type { FeedProduct, FeedShipping } from "@/lib/seo/feeds";
 import { googleCategoryFor } from "@/lib/seo/googleCategories";
 import { getCategoryTree, getFeedRows, getSettingsPublic } from "@/lib/server/catalog-cache";
 
-export async function loadFeed(): Promise<{
+export async function loadFeed(includeDemo = false): Promise<{
   products: FeedProduct[];
   shipping: FeedShipping;
   storeName: string;
   pricesPublic: boolean;
 }> {
   const [{ rows, pricesPublic }, tree, settings] = await Promise.all([
-    getFeedRows(),
+    getFeedRows(includeDemo),
     getCategoryTree(),
     getSettingsPublic(),
   ]);

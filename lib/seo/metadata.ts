@@ -19,6 +19,13 @@ export type PageMetaInput = {
   /** Title suffix from settings (`" | SKLOP"`); defaults to the config brand. */
   titleSuffix?: string;
   ogImage?: { url: string; width: number; height: number; alt: string };
+  /** The title already carries (or deliberately drops) the suffix — used as is (≤ 60). */
+  titleIsFinal?: boolean;
+  /**
+   * The route segment has its own `opengraph-image` file (product, category, landings):
+   * no image is set here, because a config image would replace the generated one.
+   */
+  ogFile?: boolean;
   type?: "website" | "article";
 };
 
@@ -55,8 +62,22 @@ export function pageDescription(description: string): string {
   return clampText(description, DESCRIPTION_MAX);
 }
 
+/**
+ * The site-wide OG image (`app/opengraph-image.tsx`). A page that sets `openGraph` replaces
+ * the parent's file-based image, so the default is referenced explicitly — except in segments
+ * with their own `opengraph-image` file (`ogFile`), where a config image would win.
+ */
+export const DEFAULT_OG_IMAGE = {
+  url: "/opengraph-image",
+  width: 1200,
+  height: 630,
+  alt: `${site.brand.name} — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra`,
+} as const;
+
 export function buildMetadata(input: PageMetaInput): Metadata {
-  const title = pageTitle(input.title, input.titleSuffix);
+  const title = input.titleIsFinal
+    ? clampText(input.title, TITLE_MAX)
+    : pageTitle(input.title, input.titleSuffix);
   const description = pageDescription(input.description);
   return {
     title: { absolute: title },
@@ -70,12 +91,13 @@ export function buildMetadata(input: PageMetaInput): Metadata {
       url: input.path,
       siteName: site.brand.name,
       locale: "sr_RS",
-      ...(input.ogImage ? { images: [input.ogImage] } : {}),
+      ...(input.ogFile && !input.ogImage ? {} : { images: [input.ogImage ?? DEFAULT_OG_IMAGE] }),
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      // Without twitter:image, X/Twitter uses og:image (so segment OG files apply there too).
       ...(input.ogImage ? { images: [input.ogImage.url] } : {}),
     },
   };

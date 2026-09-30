@@ -275,7 +275,11 @@ export const sitemapProducts = publicQuery({
 // Feeds
 
 export const feedProducts = publicQuery({
-  args: { paginationOpts: paginationOptsValidator },
+  args: {
+    paginationOpts: paginationOptsValidator,
+    /** Demo items (fake numbers and prices) stay out of ad feeds unless previewed. */
+    includeDemo: v.optional(v.boolean()),
+  },
   returns: v.object({
     pricesPublic: v.boolean(),
     page: v.array(
@@ -301,7 +305,7 @@ export const feedProducts = publicQuery({
     isDone: v.boolean(),
     continueCursor: v.string(),
   }),
-  handler: async (ctx, { paginationOpts }) => {
+  handler: async (ctx, { paginationOpts, includeDemo }) => {
     const settings = await getSettings(ctx);
     const pricesPublic = settings.flags.publicPrices;
     const result = await ctx.db
@@ -312,7 +316,7 @@ export const feedProducts = publicQuery({
     const page = [];
     if (pricesPublic) {
       for (const p of result.page) {
-        if (!isListed(p) || p.retailPricePara <= 0) continue;
+        if (!isListed(p) || p.retailPricePara <= 0 || (p.isDemo && !includeDemo)) continue;
         let categorySlug = slugs.get(p.categoryId);
         if (categorySlug === undefined) {
           categorySlug = (await ctx.db.get("categories", p.categoryId))?.slug ?? "";

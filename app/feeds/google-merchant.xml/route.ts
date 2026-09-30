@@ -6,8 +6,9 @@ import { FEED_CACHE, loadFeed } from "@/lib/server/feeds";
  * supports Serbia (D21, docs/ADS-PLAYBOOK.md) — valid and ready to submit. Only active
  * products with a public price; cached for an hour.
  */
-export async function GET() {
-  const feed = await loadFeed();
+export async function GET(request: Request) {
+  // `?demo=1` previews the feed with demo items (never submit that URL to an ad platform).
+  const feed = await loadFeed(new URL(request.url).searchParams.get("demo") === "1");
   return new Response(merchantFeedXml(feed.products, feed), {
     headers: {
       "Content-Type": "application/xml; charset=utf-8",

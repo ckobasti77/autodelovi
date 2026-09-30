@@ -104,6 +104,7 @@ export async function landingMetadata(
     path,
     noindex: !s?.indexable || hasParams,
     titleSuffix: settings.seo.titleSuffix,
+    ogFile: true,
   });
 }
 

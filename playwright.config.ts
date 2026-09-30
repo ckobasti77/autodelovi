@@ -10,6 +10,7 @@ const baseURL = externalBaseUrl ?? "http://localhost:3100";
 
 export default defineConfig({
   testDir: "./tests/e2e",
+  globalSetup: "./tests/e2e/global-setup.ts",
   fullyParallel: false,
   workers: 1,
   retries: 0,
@@ -19,6 +20,8 @@ export default defineConfig({
   outputDir: "test-results",
   use: {
     baseURL,
+    // Visitors who already answered the cookie banner (global-setup.ts); seo.spec opts out.
+    storageState: ".playwright/consent-state.json",
     locale: "sr-Latn-RS",
     timezoneId: "Europe/Belgrade",
     trace: "retain-on-failure",
@@ -48,7 +51,11 @@ export default defineConfig({
     : {
         command: "npm run build && npm run start -- -p 3100",
         // window.__sklop3d test hooks (never set for a real production build).
-        env: { NEXT_PUBLIC_TEST_HOOKS: "1" },
+        env: {
+          NEXT_PUBLIC_TEST_HOOKS: "1",
+          // Lets the SEO spec purge the settings cache after changing tag ids.
+          REVALIDATE_SECRET: process.env.REVALIDATE_SECRET ?? "e2e-revalidate-secret",
+        },
         url: "http://localhost:3100",
         reuseExistingServer: true,
         timeout: 900_000,

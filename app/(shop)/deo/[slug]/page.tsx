@@ -49,9 +49,13 @@ import { ContactActions } from "@/components/shell/ContactActions";
 import { RetiredProduct } from "@/components/product/RetiredProduct";
 import { ROUTES } from "@/constants/routes";
 
-function productMetaText(p: NonNullable<Awaited<ReturnType<typeof getProductBySlug>>>) {
+function productMetaText(
+  p: NonNullable<Awaited<ReturnType<typeof getProductBySlug>>>,
+  titleSuffix?: string,
+) {
   const c = p.product;
   return productMeta({
+    ...(titleSuffix !== undefined ? { titleSuffix } : {}),
     name: c.name,
     manufacturer: c.manufacturerName,
     qualityLabel: QUALITY_LABEL[c.quality],
@@ -74,13 +78,16 @@ export async function generateMetadata({ params }: PageProps<"/deo/[slug]">): Pr
           path: ROUTES.product(slug),
           noindex: true,
           titleSuffix: settings.seo.titleSuffix,
+          ogFile: true,
         })
       : {};
   }
   const c = data.product;
-  const text = productMetaText(data);
+  const text = productMetaText(data, settings.seo.titleSuffix);
   return buildMetadata({
     title: data.seoTitle ?? text.title,
+    titleIsFinal: !data.seoTitle,
+    ogFile: true,
     description: data.seoDescription ?? text.description,
     path: ROUTES.product(c.slug),
     titleSuffix: settings.seo.titleSuffix,
