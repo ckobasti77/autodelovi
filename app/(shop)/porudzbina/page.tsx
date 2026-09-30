@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
+import { formatPhone } from "@/lib/format/phone";
 import { privateMetadata } from "@/lib/seo/metadata";
 import { contactFromSettings } from "@/lib/settings/public";
 import { getSettingsPublic } from "@/lib/server/catalog-cache";
-import { getViewer } from "@/lib/server/auth";
+import { getViewer, viewerNames } from "@/lib/server/auth";
 import { Button } from "@/components/ui/Button";
 import { Link } from "@/components/ui/Link";
 import { RevealText } from "@/components/text-reveal/RevealText";
@@ -41,10 +42,9 @@ export default async function CheckoutPage() {
     store: address ? { address, hours: contact.hours } : null,
     viewer: viewer
       ? {
-          firstName: viewer.firstName ?? "",
-          lastName: viewer.lastName ?? "",
+          ...viewerNames(viewer),
           email: viewer.email ?? "",
-          phone: viewer.phone ?? "",
+          phone: viewer.phone ? formatPhone(viewer.phone) : "",
           creditEnabled: viewer.creditEnabled,
         }
       : null,

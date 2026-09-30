@@ -19,9 +19,13 @@ Severity: **P0** blocks a purchase or breaks the page · **P1** visible defect o
 | Vehicle hubs (4 levels) | `vehicles-*`, `vehicle-brand-*`, `vehicle-model-*`, `vehicle-gen-*` | 0 | 0 | 0 |
 | Auth: prijava, registracija, zaboravljena lozinka | `signin-*`, `signup-*`, `forgot-*` | 0 | 0 | 0 |
 | Static & legal (7) + `/za-majstore` | `about-*`, `contact-*`, `delivery-*`, `returns-*`, `terms-*`, `privacy-*`, `cookies-*`, `mechanics-*` | 0 | 0 | 0 |
-| 404 | `notfound-*` | 0 | 0 | 1 (the document's own 404 status, expected) |
+| Search without a query | `search-empty-*` | 0 | 0 | 0 |
+| 404 (unknown URL, unknown product) | `notfound-*`, `product-missing-*` | 0 | 0 | 1 (the document's own 404 status, expected) |
+| Account: overview, orders, order detail, inquiries, vehicles, profile, signed-in `/prijava` | `account-*`, `signin-signed-*` | 0 | 0 | 0 |
 
-Account pages (`/nalog…`) need a session; they are covered by the component review and the proxy/guard (auth e2e), not by screenshots in this step.
+Account pages are captured with `node scripts/qa/account-shots.mjs` (registers a customer through the UI, orders while signed in, saves a vehicle, then signs in per viewport — Convex Auth rotates refresh tokens, so a copied session expires).
+
+**Final round (goal verification, production build):** every page above re-captured at 390 and 1440 after the last change and reviewed; no open P0/P1.
 
 ## Findings
 
@@ -42,6 +46,10 @@ Account pages (`/nalog…`) need a session; they are covered by the component re
 | SF-13 | P2 | Search | Results are not narrowed or annotated by the selected vehicle (the category and product pages are). | OPEN — needs `search.run` with a vehicle filter (ARCHITECTURE §E2 lists `vehicle?`); step 13/21. |
 | SF-14 | P3 | Mobile shell | The sticky bottom contact bar on scroll-up (DS §10.1 mobile) is not built; contact is in the header menu, the footer and every product/checkout page. | OPEN — P3. |
 | SF-15 | P3 | Confirmation copy | „Poslali smo potvrdu na {e-mail}“ is true once step 18 sends e-mails (log mode until the owner connects Resend). | NOTE — step 18. |
+
+| SF-17 | P2 | Checkout, profile (signed in) | First/last name empty after registration (sign-up stores only the full name). | FIXED — `viewerNames` splits the account name for prefills. |
+| SF-18 | P2 | Profile, checkout (signed in) | Saved phone prefilled as raw E.164. | FIXED — `formatPhone` (`+381 64 222 3344`). |
+| SF-19 | P3 | Search without a query | Sparse page (field only). | OPEN — popular categories could follow (step 21). |
 
 No open P0 or P1.
 

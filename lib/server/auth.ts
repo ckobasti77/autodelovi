@@ -45,3 +45,12 @@ export async function requireStaffPage(next: string): Promise<ServerViewer> {
 export async function requireMechanicPage(next: string): Promise<ServerViewer> {
   return await requireAccountPage(next);
 }
+
+/** First/last name for form prefills; falls back to splitting the account name from sign-up. */
+export function viewerNames(viewer: ServerViewer): { firstName: string; lastName: string } {
+  if (viewer.firstName || viewer.lastName) {
+    return { firstName: viewer.firstName ?? "", lastName: viewer.lastName ?? "" };
+  }
+  const [first = "", ...rest] = (viewer.name ?? "").trim().split(/\s+/);
+  return { firstName: first, lastName: rest.join(" ") };
+}

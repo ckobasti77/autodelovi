@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
+import { formatPhone } from "@/lib/format/phone";
 import { privateMetadata } from "@/lib/seo/metadata";
-import { requireAccountPage } from "@/lib/server/auth";
+import { requireAccountPage, viewerNames } from "@/lib/server/auth";
 import { ProfileForm } from "@/components/account/AccountViews";
 import { ROUTES } from "@/constants/routes";
 
@@ -12,9 +13,8 @@ export default async function AccountProfilePage() {
   return (
     <ProfileForm
       initial={{
-        firstName: viewer.firstName ?? "",
-        lastName: viewer.lastName ?? "",
-        phone: viewer.phone ?? "",
+        ...viewerNames(viewer),
+        phone: viewer.phone ? formatPhone(viewer.phone) : "",
         email: viewer.email ?? "",
       }}
     />
