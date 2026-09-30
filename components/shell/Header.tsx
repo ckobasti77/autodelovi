@@ -41,7 +41,7 @@ export function Header({ vehicleSlot, cartCount, contact }: HeaderProps) {
     <header
       data-reveal="off"
       data-testid={TEST_IDS.header}
-      className="sticky top-0 z-header border-b border-line bg-bg/88 backdrop-blur-header reduced-transparency:bg-bg-raised reduced-transparency:backdrop-blur-none"
+      className="sticky top-0 z-header border-b print:hidden border-line bg-bg/88 backdrop-blur-header reduced-transparency:bg-bg-raised reduced-transparency:backdrop-blur-none"
     >
       <div className="flex h-header items-center gap-1 px-page lg:gap-3">
         <Wordmark className="mr-2 lg:mr-4" />
@@ -82,8 +82,8 @@ export function Header({ vehicleSlot, cartCount, contact }: HeaderProps) {
             </>
           ) : null}
           <NextLink
-            href={ROUTES.signIn}
-            aria-label="Prijava"
+            href={ROUTES.account}
+            aria-label="Moj nalog"
             data-testid={TEST_IDS.accountButton}
             className={`${iconLink} hidden sm:inline-flex`}
           >

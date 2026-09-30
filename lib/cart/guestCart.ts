@@ -6,8 +6,8 @@
  * korpu“ and passed to every cart function. Only its hash is stored in Convex. After sign-in
  * the cart step merges it into the user's cart (`carts.mergeGuest`).
  */
-import { useMutation, useQuery } from "convex/react";
-import { useCallback, useEffect } from "react";
+import { useConvexAuth, useMutation, useQuery } from "convex/react";
+import { useCallback, useEffect, useRef } from "react";
 import { create } from "zustand";
 
 import { api } from "@/convex/_generated/api";
@@ -54,6 +54,16 @@ export function ensureGuestToken(): string {
   return token;
 }
 
+/** Forget the guest token (after an order converted the cart, or after a merge on sign-in). */
+export function resetGuestToken(): void {
+  try {
+    localStorage.removeItem(KEY);
+  } catch {
+    // Storage unavailable — the in-memory token is dropped below anyway.
+  }
+  useGuestCartStore.setState({ token: null, loaded: true });
+}
+
 /** Current token after mount (null before the first add). */
 export function useGuestToken(): string | null {
   const { token, loaded } = useGuestCartStore();
@@ -63,11 +73,43 @@ export function useGuestToken(): string | null {
   return token;
 }
 
+/** `carts.get` args for this visitor, or "skip" when no cart can exist yet. */
+export function useCartArgs(): { guestToken?: string } | "skip" {
+  const token = useGuestToken();
+  const { isAuthenticated, isLoading } = useConvexAuth();
+  if (isLoading) return "skip";
+  if (isAuthenticated) return {};
+  return token ? { guestToken: token } : "skip";
+}
+
+/** The visitor's cart, priced for them (undefined while loading, null when none exists). */
+export function useCart() {
+  const args = useCartArgs();
+  const cart = useQuery(api.carts.get, args);
+  return args === "skip" ? null : cart;
+}
+
 /** Live item count for the header badge; no subscription until a cart exists. */
 export function useCartCount(): number {
+  return useCart()?.itemCount ?? 0;
+}
+
+/**
+ * After sign-in the guest cart moves into the user's cart (quantities summed, capped by
+ * stock) and the guest token is forgotten. Mounted once in the shop layout.
+ */
+export function useMergeGuestCartOnSignIn(): void {
+  const { isAuthenticated } = useConvexAuth();
   const token = useGuestToken();
-  const cart = useQuery(api.carts.get, token ? { guestToken: token } : "skip");
-  return cart?.itemCount ?? 0;
+  const merge = useMutation(api.carts.mergeGuest);
+  const done = useRef(false);
+  useEffect(() => {
+    if (!isAuthenticated || !token || done.current) return;
+    done.current = true;
+    merge({ guestToken: token })
+      .catch(() => undefined)
+      .finally(() => resetGuestToken());
+  }, [isAuthenticated, token, merge]);
 }
 
 export type AddSource = "catalog" | "three_d" | "quick_order" | "reorder" | "quote" | "search";
@@ -75,11 +117,20 @@ export type AddSource = "catalog" | "three_d" | "quick_order" | "reorder" | "quo
 /** `addToCart(productId, quantity)` for guests and signed-in users alike. */
 export function useAddToCart(source: AddSource) {
   const add = useMutation(api.carts.addItem);
+  const { isAuthenticated } = useConvexAuth();
   return useCallback(
     async (productId: Id<"products">, quantity = 1) => {
-      const guestToken = ensureGuestToken();
-      await add({ guestToken, productId, quantity, source });
+      const guestToken = isAuthenticated ? undefined : ensureGuestToken();
+      try {
+        await add({ ...(guestToken ? { guestToken } : {}), productId, quantity, source });
+      } catch (error) {
+        // A token whose cart was already ordered: start a fresh guest cart once.
+        const code = (error as { data?: { code?: unknown } }).data?.code;
+        if (!guestToken || code !== "CONFLICT") throw error;
+        resetGuestToken();
+        await add({ guestToken: ensureGuestToken(), productId, quantity, source });
+      }
     },
-    [add, source],
+    [add, source, isAuthenticated],
   );
 }

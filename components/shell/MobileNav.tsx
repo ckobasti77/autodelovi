@@ -63,12 +63,12 @@ export function MobileNav({
           <NavLinks layout="column" onNavigate={close} />
         </nav>
         <NextLink
-          href={ROUTES.signIn}
+          href={ROUTES.account}
           onClick={close}
           className="mt-6 flex min-h-11 items-center gap-3 type-body font-semibold text-ink-1"
         >
           <UserCircleIcon size={24} aria-hidden="true" className="text-ink-2" />
-          Prijava i nalog
+          Moj nalog
         </NextLink>
         <div className="mt-8 flex flex-col gap-1 border-t border-line pt-6">
           <p className="mb-2 type-label text-ink-3">Kontakt</p>

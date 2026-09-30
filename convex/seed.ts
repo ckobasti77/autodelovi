@@ -961,6 +961,7 @@ export const run = internalAction({
       productsCreated += r.created;
       productsSkipped += r.skipped;
     }
+    await ctx.runMutation(internal.content.seedContent, {});
     await ctx.runMutation(internal.seed.seedDemoAccounts, {});
     const orders: { created: number } = await ctx.runMutation(internal.seed.seedDemoOrders, {});
     const inquiries: { created: number } = await ctx.runMutation(

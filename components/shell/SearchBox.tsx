@@ -9,8 +9,17 @@
  * - A pasted list of several codes is recognised („Prepoznato 3 broja — otvori brzu
  *   porudžbinu“).
  */
+import { useConvex } from "convex/react";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useRef, useState, type FormEvent, type ReactNode } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type FormEvent,
+  type ReactNode,
+} from "react";
 import { ArrowRightIcon, MagnifyingGlassIcon, XIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { cn } from "@/lib/cn";
@@ -20,6 +29,8 @@ import { Button } from "@/components/ui/Button";
 import { Combobox, type ComboboxItem } from "@/components/ui/Combobox";
 import { useMediaQuery } from "@/components/ui/motion";
 import { ROUTES } from "@/constants/routes";
+import { api } from "@/convex/_generated/api";
+import { formatNumber } from "@/lib/format/number";
 
 export type SearchSuggestion = ComboboxItem & { href: string };
 
@@ -33,8 +44,45 @@ export type SearchBoxProps = {
   testId?: string;
   /** Results in the flow under the field (header search dialog). */
   inlineResults?: boolean;
+  /** Initial query (the search results page). */
+  defaultQuery?: string;
   className?: string;
 };
+
+/** Convex-backed suggestions (§9.5): exact code hits, categories, products. */
+function useConvexSuggestions() {
+  const convex = useConvex();
+  return useCallback(
+    async (query: string): Promise<SearchSuggestion[]> => {
+      const r = await convex.query(api.search.suggest, { q: query });
+      return [
+        ...r.codes.map((c) => ({
+          id: `code-${c.productId}`,
+          label: c.name,
+          description: c.manufacturerName,
+          meta: <span className="type-code text-ink-2">{c.code}</span>,
+          group: "Tačno poklapanje",
+          href: ROUTES.product(c.slug),
+        })),
+        ...r.categories.map((c) => ({
+          id: `cat-${c.slug}`,
+          label: c.name,
+          meta: <span className="tabular-nums">{formatNumber(c.productCount)}</span>,
+          group: "Kategorije",
+          href: ROUTES.category(c.slug),
+        })),
+        ...r.products.map((p) => ({
+          id: `p-${p.productId}`,
+          label: p.name,
+          description: p.manufacturerName,
+          group: "Proizvodi",
+          href: ROUTES.product(p.slug),
+        })),
+      ];
+    },
+    [convex],
+  );
+}
 
 const NO_SUGGESTIONS: SearchSuggestion[] = [];
 const RECENT_KEY = "sk.recentSearches.v1";
@@ -68,10 +116,13 @@ export function SearchBox({
   onNavigate,
   testId,
   inlineResults = false,
+  defaultQuery = "",
   className,
 }: SearchBoxProps) {
   const router = useRouter();
-  const [query, setQuery] = useState("");
+  const convexSuggestions = useConvexSuggestions();
+  const suggest = fetchSuggestions ?? convexSuggestions;
+  const [query, setQuery] = useState(defaultQuery);
   const [suggestions, setSuggestions] = useState<SearchSuggestion[]>([]);
   const [loading, setLoading] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -93,15 +144,15 @@ export function SearchBox({
   const codes = useMemo(() => parsePastedOemList(query), [query]);
   const isList = codes.length >= 2;
 
-  const applicable = Boolean(fetchSuggestions) && trimmed.length >= 2 && !isList;
+  const applicable = trimmed.length >= 2 && !isList && trimmed !== defaultQuery.trim();
 
   useEffect(() => {
-    if (!applicable || !fetchSuggestions) return;
+    if (!applicable) return;
     const controller = new AbortController();
     const timer = window.setTimeout(() => {
       setLoading(true);
       setFailed(false);
-      fetchSuggestions(trimmed, controller.signal)
+      suggest(trimmed, controller.signal)
         .then((items) => {
           if (!controller.signal.aborted) setSuggestions(items);
         })
@@ -116,7 +167,7 @@ export function SearchBox({
       controller.abort();
       window.clearTimeout(timer);
     };
-  }, [applicable, fetchSuggestions, trimmed]);
+  }, [applicable, suggest, trimmed]);
 
   const shownSuggestions = applicable ? suggestions : NO_SUGGESTIONS;
 

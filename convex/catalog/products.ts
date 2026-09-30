@@ -279,6 +279,7 @@ const fitmentRowV = v.object({
   generationSlug: v.string(),
   generationId: v.id("vehicleGenerations"),
   engineName: v.union(v.string(), v.null()),
+  engineSlug: v.union(v.string(), v.null()),
   engineCodes: v.array(v.string()),
   engineId: v.union(v.id("engines"), v.null()),
   yearFrom: v.union(v.number(), v.null()),
@@ -366,6 +367,7 @@ export const bySlug = publicQuery({
         generationSlug: generation.slug,
         generationId: generation._id,
         engineName: engine?.name ?? null,
+        engineSlug: engine?.slug ?? null,
         engineCodes: engine?.codes ?? [],
         engineId: engine?._id ?? null,
         yearFrom: f.yearFrom ?? generation.yearFrom,
@@ -565,5 +567,106 @@ export const liveState = publicQuery({
       });
     }
     return out;
+  },
+});
+
+const VEHICLE_FITMENT_LIMIT = 3_000;
+const VEHICLE_HYDRATE_LIMIT = 400;
+
+/**
+ * Vehicle page (`/vozila/[marka]/[model]/[generacija]`, ARCHITECTURE §E9): fitting products of
+ * one generation (optionally one engine) counted per category, plus the most useful few
+ * (available first, then popularity). Universal parts are not counted — they fit everything.
+ */
+export const forVehicle = publicQuery({
+  args: {
+    generationId: v.id("vehicleGenerations"),
+    engineId: v.optional(v.id("engines")),
+    topLimit: v.optional(v.number()),
+  },
+  returns: v.object({
+    total: v.number(),
+    truncated: v.boolean(),
+    categories: v.array(v.object({ category: categorySummaryV, count: v.number() })),
+    top: v.array(productCardV),
+  }),
+  handler: async (ctx, { generationId, engineId, topLimit }) => {
+    const fitments = await ctx.db
+      .query("fitments")
+      .withIndex("by_generationId_and_categoryId_and_active", (q) =>
+        q.eq("generationId", generationId),
+      )
+      .take(VEHICLE_FITMENT_LIMIT);
+    const truncated = fitments.length === VEHICLE_FITMENT_LIMIT;
+    const byCategory = new Map<Id<"categories">, Set<Id<"products">>>();
+    const productIds: Id<"products">[] = [];
+    const seen = new Set<Id<"products">>();
+    for (const f of fitments) {
+      if (!f.active) continue;
+      if (engineId && f.engineId && f.engineId !== engineId) continue;
+      const set = byCategory.get(f.categoryId) ?? new Set<Id<"products">>();
+      set.add(f.productId);
+      byCategory.set(f.categoryId, set);
+      if (!seen.has(f.productId)) {
+        seen.add(f.productId);
+        productIds.push(f.productId);
+      }
+    }
+    const categories = [];
+    for (const [categoryId, ids] of byCategory) {
+      const category = await ctx.db.get("categories", categoryId);
+      if (category && category.active) {
+        categories.push({ category: toCategorySummary(category), count: ids.size });
+      }
+    }
+    categories.sort((a, b) => a.category.sortOrder - b.category.sortOrder);
+
+    const settings = await getSettings(ctx);
+    const retailVisible = showRetail(settings, ctx.viewer);
+    const hydrated: Doc<"products">[] = [];
+    for (const id of productIds.slice(0, VEHICLE_HYDRATE_LIMIT)) {
+      const p = await ctx.db.get("products", id);
+      if (p && isListed(p)) hydrated.push(p);
+    }
+    hydrated.sort(
+      (a, b) =>
+        Number(isAvailableNow(b.stockState)) - Number(isAvailableNow(a.stockState)) ||
+        b.popularity - a.popularity,
+    );
+    const max = Math.min(24, Math.max(0, Math.floor(topLimit ?? 8)));
+    const top = [];
+    for (const p of hydrated.slice(0, max)) top.push(await toCard(ctx, p, retailVisible));
+    return { total: seen.size, truncated, categories, top };
+  },
+});
+
+/**
+ * A product that is no longer sold (inactive or soft-deleted): the page answers 200 with
+ * „Artikal više nije u ponudi“ and alternatives instead of a 404 (ROUTES §B1).
+ */
+export const retired = publicQuery({
+  args: { slug: v.string() },
+  returns: v.union(
+    v.null(),
+    v.object({
+      name: v.string(),
+      manufacturerName: v.string(),
+      oemPrimary: v.union(v.string(), v.null()),
+      category: v.union(categorySummaryV, v.null()),
+    }),
+  ),
+  handler: async (ctx, { slug }) => {
+    const product = await ctx.db
+      .query("products")
+      .withIndex("by_slug", (q) => q.eq("slug", slug.slice(0, 120)))
+      .unique();
+    if (!product || isListed(product)) return null;
+    const category = await ctx.db.get("categories", product.categoryId);
+    return {
+      name: product.name,
+      manufacturerName: product.manufacturerName,
+      oemPrimary: product.oemPrimary ?? null,
+      category: category && category.active ? toCategorySummary(category) : null,
+    };
   },
 });

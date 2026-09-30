@@ -11,6 +11,8 @@ export type StepperProps = {
   current: number;
   /** Link to revisit a completed step („Izmeni“); omit to render completed steps as text. */
   hrefFor?: (step: Step, index: number) => string;
+  /** Client-state flows: completed steps get an „Izmeni“ button instead of a link. */
+  onSelect?: (index: number) => void;
   className?: string;
 };
 
@@ -19,7 +21,7 @@ export type StepperProps = {
  * „Izmeni“ link, the current step has a 2 px accent underline and aria-current="step".
  * Phones: „Korak 2 od 4 · Dostava“ + a 4-segment bar.
  */
-export function Stepper({ steps, current, hrefFor, className }: StepperProps) {
+export function Stepper({ steps, current, hrefFor, onSelect, className }: StepperProps) {
   const active = steps[current];
   return (
     <nav aria-label="Koraci porudžbine" className={className} data-reveal="off">
@@ -80,6 +82,14 @@ export function Stepper({ steps, current, hrefFor, className }: StepperProps) {
                 >
                   Izmeni<span className="sr-only">: {step.label}</span>
                 </NextLink>
+              ) : done && onSelect ? (
+                <button
+                  type="button"
+                  onClick={() => onSelect(index)}
+                  className="cursor-pointer type-caption font-normal text-ink-2 underline decoration-line-strong underline-offset-4 transition-control hover:text-ink-1 hover:decoration-accent"
+                >
+                  Izmeni<span className="sr-only">: {step.label}</span>
+                </button>
               ) : null}
             </li>
           );

@@ -224,3 +224,43 @@ export const resolve = publicQuery({
     };
   },
 });
+
+/**
+ * The whole vehicle tree for the hubs (`/vozila…`) and the picker's search: brands → models →
+ * generations (reference data, a few hundred rows, cached by Next for an hour).
+ */
+export const tree = publicQuery({
+  args: {},
+  returns: v.array(
+    v.object({
+      brand: brandV,
+      models: v.array(v.object({ model: modelV, generations: v.array(generationV) })),
+    }),
+  ),
+  handler: async (ctx) => {
+    const brandRows = (await ctx.db.query("vehicleBrands").withIndex("by_sortOrder").take(50)).filter(
+      (b) => b.active,
+    );
+    const out = [];
+    for (const brand of brandRows) {
+      const models = (
+        await ctx.db
+          .query("vehicleModels")
+          .withIndex("by_brandId_and_sortOrder", (q) => q.eq("brandId", brand._id))
+          .take(200)
+      ).filter((m) => m.active);
+      const withGenerations = [];
+      for (const model of models) {
+        const generations = (
+          await ctx.db
+            .query("vehicleGenerations")
+            .withIndex("by_modelId_and_yearFrom", (q) => q.eq("modelId", model._id))
+            .take(50)
+        ).filter((g) => g.active);
+        withGenerations.push({ model: toModel(model), generations: generations.map(toGeneration) });
+      }
+      out.push({ brand: toBrand(brand), models: withGenerations });
+    }
+    return out;
+  },
+});

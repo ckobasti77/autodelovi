@@ -1,8 +1,7 @@
 "use client";
 
 /**
- * Minimal e-mail + password sign-in (step 05 proves the Convex Auth round trip on Next 16;
- * step 12 builds the full auth pages: registration, reset, error summary).
+ * E-mail + password sign-in (Convex Auth). Registration and reset live in AuthForms.tsx.
  */
 import { useAuthActions } from "@convex-dev/auth/react";
 import { useRouter } from "next/navigation";
@@ -37,7 +36,7 @@ export function SignInForm({ next }: { next: string }) {
 
   return (
     <form onSubmit={onSubmit} noValidate className="flex flex-col gap-5" data-reveal="off">
-      <Field label="E-mail" required>
+      <Field label="E-pošta" required>
         <Input
           name="email"
           type="email"

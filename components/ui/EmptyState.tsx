@@ -12,7 +12,7 @@ export type EmptyStateProps = {
   /** One action — usually the inquiry. */
   action?: ReactNode;
   /** Heading level for the title (keeps the outline correct). */
-  as?: "h2" | "h3" | "p";
+  as?: "h1" | "h2" | "h3" | "p";
   className?: string;
 };
 

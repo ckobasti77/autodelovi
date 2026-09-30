@@ -103,7 +103,7 @@ export function Footer({ contact, company }: FooterProps) {
   const makesList = `${makes.slice(0, -1).join(", ")} i ${makes[makes.length - 1]}`;
 
   return (
-    <footer data-testid={TEST_IDS.footer} className="border-t border-line bg-bg-raised">
+    <footer data-testid={TEST_IDS.footer} className="border-t border-line bg-bg-raised print:hidden">
       <div className="grid gap-10 px-page py-14 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.3fr] lg:gap-8">
         <div className="flex flex-col gap-4">
           <Wordmark size="footer" />

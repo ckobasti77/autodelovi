@@ -16,6 +16,8 @@ export const productCardV = v.object({
   sku: v.string(),
   name: v.string(),
   categoryId: v.id("categories"),
+  /** Leaf category slug (thumbnail render `/images/parts/<slug>.webp`, analytics). */
+  categorySlug: v.string(),
   systemSlug: v.string(),
   manufacturerId: v.id("manufacturers"),
   manufacturerName: v.string(),
@@ -46,6 +48,21 @@ export async function imageUrl(
   return storageId ? await ctx.storage.getUrl(storageId) : null;
 }
 
+const categorySlugs = new WeakMap<QueryCtx, Map<Id<"categories">, string>>();
+
+async function categorySlugOf(ctx: QueryCtx, id: Id<"categories">): Promise<string> {
+  let cache = categorySlugs.get(ctx);
+  if (!cache) {
+    cache = new Map();
+    categorySlugs.set(ctx, cache);
+  }
+  const hit = cache.get(id);
+  if (hit !== undefined) return hit;
+  const slug = (await ctx.db.get("categories", id))?.slug ?? "";
+  cache.set(id, slug);
+  return slug;
+}
+
 export async function toCard(
   ctx: QueryCtx,
   p: Doc<"products">,
@@ -57,6 +74,7 @@ export async function toCard(
     sku: p.sku,
     name: p.name,
     categoryId: p.categoryId,
+    categorySlug: await categorySlugOf(ctx, p.categoryId),
     systemSlug: p.systemSlug,
     manufacturerId: p.manufacturerId,
     manufacturerName: p.manufacturerName,

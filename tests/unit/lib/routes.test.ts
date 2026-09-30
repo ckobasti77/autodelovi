@@ -8,9 +8,12 @@ describe("isLiveRoute", () => {
     ["/styleguide", true],
     ["/styleguide#boje", true],
     ["/styleguide?strana=2", true],
-    ["/delovi", false],
-    ["/delovi/kocnice", false],
-    [ROUTES.searchFor("1K0 615"), false],
+    ["/delovi", true],
+    ["/delovi/kocnice", true],
+    [ROUTES.searchFor("1K0 615"), true],
+    ["/majstor", false],
+    ["/za-majstore", true],
+    ["/za-majstore/registracija", true],
     ["/stylegui", false],
   ])("%s → %s", (href, expected) => {
     expect(isLiveRoute(href)).toBe(expected);

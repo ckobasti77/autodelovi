@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 
 import { SignInForm, SignOutButton } from "@/components/auth/SignInForm";
-import { RevealText } from "@/components/text-reveal/RevealText";
+import { AuthFrame } from "@/components/auth/AuthFrame";
+import { Button } from "@/components/ui/Button";
+import { Link } from "@/components/ui/Link";
+import { ROUTES } from "@/constants/routes";
 import { TEST_IDS } from "@/constants/testIds";
+import { privateMetadata } from "@/lib/seo/metadata";
 import { getViewer, type ServerViewer } from "@/lib/server/auth";
 
-export const metadata: Metadata = {
-  title: "Prijava",
-  robots: { index: false, follow: false },
-};
+export const metadata: Metadata = privateMetadata("Prijava");
 
 function roleLabel(viewer: ServerViewer): string {
   if (viewer.isOwner) return "vlasnik";
@@ -25,35 +26,50 @@ function safeNext(value: string | string[] | undefined): string {
   return next && next.startsWith("/") && !next.startsWith("//") ? next : "/prijava";
 }
 
-export default async function SignInPage({
-  searchParams,
-}: {
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
-}) {
+export default async function SignInPage({ searchParams }: PageProps<"/prijava">) {
   const [viewer, params] = await Promise.all([getViewer(), searchParams]);
   const next = safeNext(params.next);
 
-  return (
-    <section className="px-page py-section" aria-labelledby="signin-title">
-      <div className="mx-auto flex w-full max-w-[26rem] flex-col gap-8">
-        <RevealText as="h1" id="signin-title" className="type-h1 text-ink-1">
-          {viewer ? "Prijavljeni ste" : "Prijava"}
-        </RevealText>
-        {viewer ? (
-          <div className="flex flex-col gap-6">
-            <p
-              className="type-body text-ink-2"
-              data-testid={TEST_IDS.authViewer}
-              data-role={viewer.role}
-            >
-              {viewer.email ?? viewer.name ?? "Nalog"} · {roleLabel(viewer)}
-            </p>
+  if (viewer) {
+    return (
+      <AuthFrame title="Prijavljeni ste">
+        <div className="flex flex-col gap-6">
+          <p className="type-body text-ink-2" data-testid={TEST_IDS.authViewer} data-role={viewer.role}>
+            {viewer.email ?? viewer.name ?? "Nalog"} · {roleLabel(viewer)}
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Button asChild variant="primary">
+              <Link href={ROUTES.account} variant="unstyled">
+                Moj nalog
+              </Link>
+            </Button>
             <SignOutButton />
           </div>
-        ) : (
-          <SignInForm next={next} />
-        )}
-      </div>
-    </section>
+        </div>
+      </AuthFrame>
+    );
+  }
+  return (
+    <AuthFrame
+      title="Prijava"
+      lead="Nalog nije obavezan za kupovinu — služi za istoriju porudžbina i sačuvana vozila."
+      footer={
+        <>
+          <p>
+            Nemate nalog?{" "}
+            <Link href={`${ROUTES.signUp}${next !== "/prijava" ? `?next=${encodeURIComponent(next)}` : ""}`} variant="inline">
+              Napravite nalog
+            </Link>
+          </p>
+          <p>
+            <Link href={ROUTES.forgotPassword} variant="inline">
+              Zaboravljena lozinka
+            </Link>
+          </p>
+        </>
+      }
+    >
+      <SignInForm next={next} />
+    </AuthFrame>
   );
 }

@@ -8,6 +8,7 @@
  * @module
  */
 
+import type * as account from "../account.js";
 import type * as audit from "../audit.js";
 import type * as auth from "../auth.js";
 import type * as authEmails from "../authEmails.js";
@@ -19,6 +20,7 @@ import type * as catalog_manufacturers from "../catalog/manufacturers.js";
 import type * as catalog_products from "../catalog/products.js";
 import type * as catalog_productsAdmin from "../catalog/productsAdmin.js";
 import type * as catalog_vehicles from "../catalog/vehicles.js";
+import type * as content from "../content.js";
 import type * as crons from "../crons.js";
 import type * as demo from "../demo.js";
 import type * as events from "../events.js";
@@ -56,11 +58,13 @@ import type * as pricing from "../pricing.js";
 import type * as search from "../search.js";
 import type * as seed from "../seed.js";
 import type * as seedData_categories from "../seedData/categories.js";
+import type * as seedData_content from "../seedData/content.js";
 import type * as seedData_manufacturers from "../seedData/manufacturers.js";
 import type * as seedData_products from "../seedData/products.js";
 import type * as seedData_vehicles from "../seedData/vehicles.js";
 import type * as settings from "../settings.js";
 import type * as stock from "../stock.js";
+import type * as testing from "../testing.js";
 import type * as users from "../users.js";
 
 import type {
@@ -70,6 +74,7 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  account: typeof account;
   audit: typeof audit;
   auth: typeof auth;
   authEmails: typeof authEmails;
@@ -81,6 +86,7 @@ declare const fullApi: ApiFromModules<{
   "catalog/products": typeof catalog_products;
   "catalog/productsAdmin": typeof catalog_productsAdmin;
   "catalog/vehicles": typeof catalog_vehicles;
+  content: typeof content;
   crons: typeof crons;
   demo: typeof demo;
   events: typeof events;
@@ -118,11 +124,13 @@ declare const fullApi: ApiFromModules<{
   search: typeof search;
   seed: typeof seed;
   "seedData/categories": typeof seedData_categories;
+  "seedData/content": typeof seedData_content;
   "seedData/manufacturers": typeof seedData_manufacturers;
   "seedData/products": typeof seedData_products;
   "seedData/vehicles": typeof seedData_vehicles;
   settings: typeof settings;
   stock: typeof stock;
+  testing: typeof testing;
   users: typeof users;
 }>;
 

@@ -1,4 +1,5 @@
 import { RouteLink as NextLink } from "@/components/ui/RouteLink";
+import type { ComponentProps } from "react";
 import { ShoppingCartSimpleIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { cn } from "@/lib/cn";
@@ -10,7 +11,15 @@ import { TEST_IDS } from "@/constants/testIds";
  * Header cart entry. Links to /korpa (the cart drawer takes over in the cart step); the
  * count badge is a live value (never revealed, never animated in).
  */
-export function CartButton({ count = 0, className }: { count?: number; className?: string }) {
+export function CartButton({
+  count = 0,
+  className,
+  onClick,
+}: {
+  count?: number;
+  className?: string;
+  onClick?: ComponentProps<"a">["onClick"];
+}) {
   const label =
     count > 0 ? `Korpa, ${countSr(count, ["artikal", "artikla", "artikala"])}` : "Korpa";
   return (
@@ -18,6 +27,7 @@ export function CartButton({ count = 0, className }: { count?: number; className
       href={ROUTES.cart}
       aria-label={label}
       data-testid={TEST_IDS.cartButton}
+      onClick={onClick}
       className={cn(
         "relative inline-flex size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 active:translate-y-px",
         className,
