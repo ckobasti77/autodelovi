@@ -13,6 +13,7 @@ import { insertInquiry } from "./lib/inquiries";
 import { createOrder, validateCheckout } from "./lib/orders";
 import { deleteProductHard, updateProduct } from "./lib/productWriter";
 import { getSettings } from "./lib/settings";
+import { statusLinkToken } from "./lib/linkTokens";
 import { hashToken, randomToken } from "./lib/tokens";
 import { isAvailableNow } from "../lib/domain/stock";
 
@@ -625,4 +626,46 @@ export const productBySku = internalQuery({
         }
       : null;
   },
+});
+
+/** E2E probe (step 18): e-mails logged for an order (customer + staff), newest first. */
+export const emailProbe = internalQuery({
+  args: { number: v.string() },
+  returns: v.array(
+    v.object({
+      templateKey: v.string(),
+      to: v.array(v.string()),
+      mode: v.string(),
+      status: v.string(),
+      subject: v.string(),
+    }),
+  ),
+  handler: async (ctx, { number }) => {
+    const order = await ctx.db
+      .query("orders")
+      .withIndex("by_number", (q) => q.eq("number", number))
+      .unique();
+    if (!order) return [];
+    const rows = await ctx.db
+      .query("emailLog")
+      .withIndex("by_relatedType_and_relatedId", (q) =>
+        q.eq("relatedType", "order").eq("relatedId", order._id),
+      )
+      .order("desc")
+      .take(50);
+    return rows.map((r) => ({
+      templateKey: r.templateKey,
+      to: r.originalTo ?? r.to,
+      mode: r.mode,
+      status: r.status,
+      subject: r.subject,
+    }));
+  },
+});
+
+/** QA only: the status-page token of an order (derived, lib/linkTokens). */
+export const orderStatusToken = internalQuery({
+  args: { number: v.string() },
+  returns: v.string(),
+  handler: async (_ctx, { number }) => await statusLinkToken("order", number),
 });

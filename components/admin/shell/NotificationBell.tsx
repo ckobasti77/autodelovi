@@ -9,8 +9,10 @@ import { useMutation, usePaginatedQuery, useQuery } from "convex/react";
 import { Popover } from "radix-ui";
 import { useEffect, useRef, useState } from "react";
 import {
+  AlarmIcon,
   BellIcon,
   ChatCircleTextIcon,
+  EnvelopeSimpleIcon,
   PackageIcon,
   ReceiptIcon,
   WrenchIcon,
@@ -28,6 +30,8 @@ import { DISTANCE, DUR, EASE } from "@/constants/motion";
 import { TEST_IDS } from "@/constants/testIds";
 
 function kindIcon(kind: string) {
+  if (kind === "reminder") return <AlarmIcon size={18} />;
+  if (kind.startsWith("email_")) return <EnvelopeSimpleIcon size={18} />;
   if (kind.startsWith("order") || kind.startsWith("quote_accepted"))
     return <ReceiptIcon size={18} />;
   if (kind.startsWith("inquiry") || kind.startsWith("quote"))

@@ -51,6 +51,8 @@ Blocked users (`status = blocked`) fail every authenticated function.
 ### L1. Authorization rules
 Every Convex function authorizes through the builders (§D3); public functions return anonymous projections or act on unguessable token capabilities (256-bit, stored as SHA-256); ownership checked on every fetch by id/token; identity never from args; `returns` validators on all public functions; staff writes audited; owner-only: settings danger zone, users/invites/roles, tier editing, demo removal, e-mail mode. Admin pages guarded in proxy (UX) + server layout/page (`requireStaffPage`) + Convex (authoritative).
 
+Order and inquiry status tokens (step 18, D171) are HMAC-SHA-256(`LINK_TOKEN_SECRET`, `<kind>:<number>`) — still 256-bit capabilities stored only as SHA-256, but re-derivable so every later e-mail can link to the status page. The secret is a deployment env var (never in code or git); rotating it invalidates all links issued before (`maintenance:rekeyStatusLinks` re-hashes). E-mail content with secrets (reset codes, invite links) is masked in the admin outbox and never resent.
+
 ### L2. Abuse protection
 Rate limits (§E6) on every public write; honeypot + 3 s minimum form time; payload caps (message 2 000 chars, quick-order lines 200, cart lines 100, search query 200, list page size ≤ 60); upload validation (§E7); token pages `Referrer-Policy: no-referrer`; e-mail enumeration avoided on reset („Ako nalog postoji, poslali smo kod").
 

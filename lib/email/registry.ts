@@ -278,11 +278,23 @@ export function renderTemplate<K extends TemplateKey>(
   return def.render(data, ctx);
 }
 
-/** Renders a template with its sample data (gallery, test send). */
+/**
+ * Renders a template with its sample data (gallery, test send). Predračun data comes from the
+ * real settings when they exist, so the owner previews the account numbers customers will see.
+ */
 export function renderSample(key: TemplateKey, ctx: EmailContext): RenderedEmail {
   const def = TEMPLATES[key] as TemplateDef<typeof key>;
-  return (def.render as (d: unknown, c: EmailContext) => RenderedEmail)(
-    def.sample(ctx.siteUrl),
-    ctx,
-  );
+  let data = def.sample(ctx.siteUrl) as TemplateDataMap[TemplateKey];
+  if ("bank" in data && data.bank) {
+    const recipient = ctx.company.legalName.trim() || ctx.company.displayName?.trim();
+    data = {
+      ...data,
+      bank: {
+        ...data.bank,
+        ...(recipient ? { recipient } : {}),
+        ...(ctx.company.bankAccounts.length ? { accounts: ctx.company.bankAccounts } : {}),
+      },
+    };
+  }
+  return (def.render as (d: unknown, c: EmailContext) => RenderedEmail)(data, ctx);
 }

@@ -84,6 +84,14 @@ function parseInline(source: string): Inline[] {
   return out;
 }
 
+/** Document numbers (SK-2026-000187, UP-…) never break at their hyphens. */
+function keepCodes(escaped: string): string {
+  return escaped.replace(
+    /\b([A-Z]{1,4}-\d{4}-\d{6})\b/g,
+    '<span style="white-space:nowrap;">$1</span>',
+  );
+}
+
 function linkStyle(color: string = PAPER.accentText): string {
   return `color:${color};text-decoration:underline;`;
 }
@@ -92,7 +100,7 @@ function linkStyle(color: string = PAPER.accentText): string {
 export function inlineHtml(source: string): string {
   return parseInline(source)
     .map((part) => {
-      const value = escapeHtml(part.value).replace(/\n/g, "<br>");
+      const value = keepCodes(escapeHtml(part.value)).replace(/\n/g, "<br>");
       if (part.kind === "bold") return `<strong style="font-weight:700;">${value}</strong>`;
       if (part.kind === "link")
         return `<a href="${escapeHtml(safeHref(part.href))}" class="sk-link" style="${linkStyle()}">${value}</a>`;
@@ -118,7 +126,7 @@ export function inlineText(source: string): string {
 
 export function heading(value: string): Block {
   return {
-    html: `<h1 class="sk-ink1" style="margin:0 0 12px;font-family:${FONT_UI};font-size:24px;line-height:1.25;font-weight:700;color:${PAPER.ink1};letter-spacing:-0.01em;">${escapeHtml(value)}</h1>`,
+    html: `<h1 class="sk-ink1" style="margin:0 0 12px;font-family:${FONT_UI};font-size:24px;line-height:1.25;font-weight:700;color:${PAPER.ink1};letter-spacing:-0.01em;">${keepCodes(escapeHtml(value))}</h1>`,
     text: `${value}\n${"=".repeat(Math.min(value.length, 60))}`,
   };
 }

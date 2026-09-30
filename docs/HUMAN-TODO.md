@@ -49,9 +49,21 @@ Oznake: **[P0]** potrebno pre puštanja uživo · **[P1]** potrebno u prvim nede
 - [ ] **[P2] „O nama“ i „Kontakt“** — tekstovi su opšti i bez izmišljenih podataka; dopunite ih pravim podacima o radnji (adresa, radno vreme, telefon, Viber; kanali bez podataka se na sajtu ne prikazuju).
 
 ## 4. E-mail (Resend)
-- [ ] **[P0]** Nalog na Resend-u, verifikovan domen (SPF, DKIM, DMARC), `RESEND_API_KEY`, `RESEND_WEBHOOK_SECRET`, adresa pošiljaoca (`EMAIL_FROM`).
-- [ ] **[P0]** Do tada sajt radi u režimu `log`: mejlovi (i kodovi za reset lozinke) vide se samo u Admin → Mejlovi.
-- [ ] **[P1]** Adrese zaposlenih za obaveštenja i dnevni izveštaj u 08:00.
+Do kraja ovih koraka sajt radi u režimu **„Samo zapis“**: svaka poruka (i kod za novu lozinku) napravi se i vidi u Admin → E-pošta, ali ništa ne odlazi. Tako je bezbedno.
+
+- [ ] **[P0]** Otvoriti nalog na [resend.com](https://resend.com) (proveriti plan i ograničenja slanja za vaš obim).
+- [ ] **[P0]** U Resend-u dodati domen sajta (Domains → Add domain) i kod registrara domena upisati DNS zapise koje Resend prikaže (SPF, DKIM, a preporučeno i DMARC). Sačekati da domen dobije status „Verified“.
+- [ ] **[P0]** Napraviti API ključ (API Keys → Create, dozvola „Sending access“) i upisati ga u Convex **produkcioni** deployment: `npx convex env set RESEND_API_KEY re_…` (ključ se nikad ne upisuje u kod ni u git).
+- [ ] **[P0]** Adresa pošiljaoca na verifikovanom domenu, npr. `prodaja@vasdomen.rs`: `npx convex env set EMAIL_FROM prodaja@vasdomen.rs`. Ime pošiljaoca i adresu za odgovore menjate u Admin → Podešavanja → Obaveštenja → Slanje e-pošte.
+- [ ] **[P0]** Webhook za status isporuke: u Resend-u Webhooks → Add endpoint, URL `https://<vaš-deployment>.convex.site/resend-webhook` (tačna adresa piše u Admin → Podešavanja → Obaveštenja), događaji `email.*`. Kopirati „Signing secret“ i upisati: `npx convex env set RESEND_WEBHOOK_SECRET whsec_…`. Bez ovoga poruke se šalju, ali status ostaje „U redu“ i odbijene adrese se ne prijavljuju.
+- [ ] **[P0]** Tajni ključ za linkove ka statusu porudžbine i upita na **produkciji** (nasumična vrednost od bar 32 znaka): `npx convex env set LINK_TOKEN_SECRET <vrednost>`. Postaviti **pre prve prave porudžbine** i posle toga ga ne menjati — promena poništava linkove iz već poslatih mejlova. (Na razvojnom deploymentu je već postavljen.)
+- [ ] **[P0]** Probno slanje: Podešavanja → Obaveštenja → Slanje e-pošte → **Test** → sačuvati; zatim E-pošta → Šabloni → „Pošalji probnu poruku“ za nekoliko šablona i proveriti ih u Resend-u (Emails). Zatim prebaciti na **Uživo**.
+- [ ] **[P0]** Pre „Uživo“ popuniti Podešavanja → Firma (pun naziv, adresa, PIB, MB, telefon, Viber, WhatsApp, e-pošta, tekući račun): ti podaci idu u podnožje svakog mejla i u predračun u mejlu „Porudžbina je potvrđena“.
+- [ ] **[P0]** Obrisati demo podatke pre „Uživo“ (Podešavanja → Opasna zona). Demo porudžbine i upiti se nikad ne šalju, ali ne treba da budu u dnevnom pregledu.
+- [ ] **[P1]** Adrese osoblja (zajednička adresa, npr. prodaja@…) i sat dnevnog pregleda (podrazumevano 08:00) u Podešavanja → Obaveštenja; svaki zaposleni bira šta dobija (ili vlasnik u Korisnici → Obaveštenja).
+- [ ] **[P1]** Proveriti radno vreme i neradne dane (Podešavanja → Radno vreme): podsetnici za neodgovorene porudžbine i upite računaju samo radno vreme (prvi posle 120 min, drugi 2 sata kasnije — podesivo).
+- [ ] **[P1]** Pravni pregled rečenice u mejlu „Porudžbina je isporučena“ o pravu potrošača da odustane u roku od 14 dana i o reklamacijama (šablon: E-pošta → Šabloni → „Isporučena / preuzeta“).
+- [ ] **[P2]** SMS i Telegram nisu deo prve verzije; ako zatrebaju, dodaju se kao novi kanal obaveštenja (plaćeni SMS servis).
 
 ## 5. Oglasi i analitika
 - [ ] **[P1]** GA4 ID, Google Ads ID i oznake konverzija (porudžbina, upit, registracija majstora).
