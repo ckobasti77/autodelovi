@@ -43,7 +43,7 @@ for (const width of [1440, 1024]) {
   for (const p of paths.length ? paths : ["/admin"]) {
     errors.length = 0;
     await page.goto(`${base}${p}`, { waitUntil: "networkidle" });
-    await page.waitForTimeout(1200);
+    await page.waitForTimeout(Number(process.env.SHOT_WAIT ?? 1500));
     const file = path.join(outDir, `${name(p)}-${width}.png`);
     await page.screenshot({ path: file, fullPage: true });
     console.log(

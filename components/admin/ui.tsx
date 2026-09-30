@@ -195,7 +195,9 @@ export function ActorLabel({
   return (
     <span className="text-ink-2">
       {actor.name ?? type}
-      {actor.name && actor.type !== "system" ? <span className="text-ink-3"> · {type}</span> : null}
+      {actor.name && actor.type !== "system" && actor.name !== type ? (
+        <span className="text-ink-3"> · {type}</span>
+      ) : null}
     </span>
   );
 }
