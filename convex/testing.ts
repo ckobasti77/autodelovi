@@ -603,6 +603,7 @@ export const productBySku = internalQuery({
   returns: v.union(
     v.null(),
     v.object({
+      name: v.string(),
       active: v.boolean(),
       retailPricePara: v.number(),
       stockQty: v.number(),
@@ -616,6 +617,7 @@ export const productBySku = internalQuery({
       .first();
     return p
       ? {
+          name: p.name,
           active: p.active,
           retailPricePara: p.retailPricePara,
           stockQty: p.stockQty,

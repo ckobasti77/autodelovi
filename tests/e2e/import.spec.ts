@@ -144,3 +144,43 @@ test("500 rows: mapping → seeded errors → dry run → commit → rollback", 
 
   expect(errors).toEqual([]);
 });
+
+test("Windows-1250 CSV keeps č ć ž š đ through preview, commit and rollback", async ({ page }) => {
+  test.setTimeout(300_000);
+  const errors = collectErrors(page);
+  await signIn(page);
+  await page
+    .getByTestId("import-file-input")
+    .setInputFiles(path.resolve("tests/fixtures/import/proizvodi-1250.csv"));
+  await expect(page.getByTestId("import-row-count")).toHaveText("20 redova", { timeout: 30_000 });
+  await expect(page.getByLabel("Kodna strana")).toHaveValue("windows-1250");
+  const expectedName = "Ćevap držač „test“ – čćžšđ 1";
+  await expect(page.getByRole("table", { name: "Prvi redovi fajla" })).toContainText(expectedName);
+
+  await page.getByTestId("import-to-mapping").click();
+  await expect(
+    page
+      .getByTestId("import-mapping")
+      .getByRole("combobox", { name: "Polje za kolonu Proizvođač" }),
+  ).toHaveValue("manufacturer");
+  await page.getByTestId("import-to-check").click();
+  await expect(page.getByText("Svi redovi su ispravni.")).toBeVisible({ timeout: 60_000 });
+  await page.getByTestId("import-start-dry-run").click();
+  await expect(page.getByTestId("import-commit")).toBeVisible({ timeout: 120_000 });
+  await expect(page.getByText("20 artikala se upisuje")).toBeVisible();
+  await page.getByTestId("import-commit").click();
+  await expect(page.getByTestId("import-result")).toBeVisible({ timeout: 180_000 });
+
+  const created = convexRun<{ name: string; active: boolean } | null>("productBySku", {
+    sku: "IMP-C-001",
+  });
+  expect(created?.name).toBe(expectedName);
+  for (const letter of ["č", "ć", "ž", "š", "đ", "Ć"]) expect(created?.name).toContain(letter);
+  expect(created?.active).toBe(false);
+
+  await page.getByTestId("import-rollback").click();
+  await page.getByRole("alertdialog").getByRole("button", { name: "Poništi uvoz" }).click();
+  await expect(page.getByTestId("import-rolled-back")).toBeVisible({ timeout: 180_000 });
+  expect(convexRun("productBySku", { sku: "IMP-C-001" })).toBeNull();
+  expect(errors).toEqual([]);
+});

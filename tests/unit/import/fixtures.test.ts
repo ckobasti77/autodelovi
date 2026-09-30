@@ -106,6 +106,7 @@ describe("proizvodi-1250.csv", () => {
       "oem",
       "priceRetail",
       "stock",
+      "active",
     ]);
     const data = dataRows(rows, 0);
     expect(data).toHaveLength(20);

@@ -6,7 +6,7 @@
  *                       missing name ×2 (error only for new products), invalid image URL ×2
  *                       (warning), unknown vehicle ×3 (warning). All rows are „Aktivan: ne“,
  *                       so a test import never shows on the storefront.
- *   proizvodi-1250.csv  Windows-1250, `;`, every Serbian letter, sr numbers (20 rows)
+ *   proizvodi-1250.csv  Windows-1250, `;`, every Serbian letter, sr numbers (20 rows, inactive)
  *   lager-cene.xlsx     stock / price only for seeded demo SKUs + 2 unknown SKUs
  * Deterministic: re-running produces the same content.
  *   node scripts/make-import-fixtures.mjs
@@ -156,7 +156,7 @@ function encode1250(text) {
   return Buffer.from(bytes);
 }
 const csvRows = [
-  ["Šifra", "Naziv", "Kategorija", "Proizvođač", "OEM broj", "Cena sa PDV", "Količina"],
+  ["Šifra", "Naziv", "Kategorija", "Proizvođač", "OEM broj", "Cena sa PDV", "Količina", "Aktivan"],
 ];
 const words = ["Čep", "Ćevap", "Žica", "Šelna", "Đon", "ČĆŽŠĐ"];
 for (let i = 1; i <= 20; i++) {
@@ -168,6 +168,7 @@ for (let i = 1; i <= 20; i++) {
     `1K0 ${200 + i} 301 A`,
     srMoney(1_000 + i * 123.45),
     String(i),
+    "ne",
   ]);
 }
 const csv = csvRows

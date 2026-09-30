@@ -780,7 +780,7 @@ function Invoke-ClaudeTask {
   $continueTpl = Read-TextFile $ContinueTplPath
   $currentSession = $InitialResumeId
   $isPlan = ($Mode -eq 'plan')
-  $failures = 0; $transient = 0; $mismatch = 0
+  $failures = 0; $transient = 0; $mismatch = 0; $incomplete = 0
   $continuation = $false
   $lastReason = ''
   if ($StartWithContinue -and $InitialResumeId) { $continuation = $true; $lastReason = $ContinueReason }
@@ -819,7 +819,20 @@ function Invoke-ClaudeTask {
     if ($run.Denials -gt 30) { Write-PLog ('Mnogo odbijenih akcija ({0}) — proveri log {1}.jsonl' -f $run.Denials, $logBase) 'WARN' }
     Save-State
 
-    if ($outcome -eq 'success') { return @{ Outcome = 'completed'; Run = $run; SessionId = $currentSession } }
+    if ($outcome -eq 'success') {
+      # An auto step whose final message has no Step report ended early (typically it ended its turn while a
+      # background test run was still going; in -p mode that run is killed and no wake-up ever comes).
+      $noReport = ($Mode -eq 'auto') -and ([string]$run.ResultText -notmatch '(?im)^\s*#{1,4}\s*Step report')
+      if ($noReport -and $incomplete -lt 2) {
+        $incomplete++
+        Write-PLog ('Korak {0}{1} je završio bez Step report-a (verovatno čekao test u pozadini) — nastavljam istu sesiju ({2}/2).' -f $StepId, $LogTag, $incomplete) 'WARN'
+        $continuation = $true
+        $lastReason = 'your previous turn ended before the step was finished (your final message had no Step report). In this headless run the process exits when a turn ends, so any background command you were waiting for was killed and no wake-up will come. Re-run in the foreground whatever verification had not finished, complete the Definition of Done, and end with the Step report'
+        continue
+      }
+      if ($noReport) { Write-PLog ('Korak {0}{1}: ni posle 2 nastavka nema Step report-a — prihvatam rezultat i idem dalje.' -f $StepId, $LogTag) 'WARN' }
+      return @{ Outcome = 'completed'; Run = $run; SessionId = $currentSession }
+    }
 
     if ($outcome -eq 'limit') {
       Wait-ForLimit ($run.ResultText + "`n" + $run.Stderr)
