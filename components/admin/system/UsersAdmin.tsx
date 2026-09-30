@@ -271,7 +271,10 @@ function InviteDialog({ onClose }: { onClose: () => void }) {
             ili prijavi tom adresom i prihvati pozivnicu.
           </p>
           <div className="flex items-center gap-2 rounded-xs border border-line bg-surface-2 p-2">
-            <code className="min-w-0 flex-1 break-all type-code-s" data-testid="admin-invite-link">
+            <code
+              className="min-w-0 flex-1 break-all type-code-s normal-case"
+              data-testid="admin-invite-link"
+            >
               {link}
             </code>
             <CopyButton value={link} label="Kopiraj link" />

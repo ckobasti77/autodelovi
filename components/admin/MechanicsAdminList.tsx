@@ -16,7 +16,6 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
-import { cn } from "@/lib/cn";
 import { formatDateShort } from "@/lib/format/date";
 import { formatPhone } from "@/lib/format/phone";
 import {
@@ -27,6 +26,7 @@ import {
 import { Badge } from "@/components/ui/Badge";
 import { DataTable, type ColumnDef } from "@/components/ui/DataTable";
 import { ROUTES } from "@/constants/routes";
+import { SegmentedFilter } from "@/components/admin/ui";
 import { TEST_IDS } from "@/constants/testIds";
 
 type Row = FunctionReturnType<typeof api.mechanicsAdmin.list>[number];
@@ -121,35 +121,20 @@ export function MechanicsAdminList() {
 
   return (
     <div className="flex flex-col gap-5">
-      <div role="group" aria-label="Status registracije" className="flex flex-wrap gap-2">
-        {FILTERS.map((f) => {
-          const count =
+      <SegmentedFilter
+        label="Status registracije"
+        value={filter}
+        onChange={setFilter}
+        options={FILTERS.map((f) => ({
+          ...f,
+          count:
             f.value === "all"
               ? counts
                 ? counts.pending + counts.approved + counts.rejected + counts.suspended
                 : undefined
-              : counts?.[f.value];
-          return (
-            <button
-              key={f.value}
-              type="button"
-              aria-pressed={filter === f.value}
-              onClick={() => setFilter(f.value)}
-              className={cn(
-                "inline-flex h-9 cursor-pointer items-center gap-2 rounded-xs border px-3 type-body-s transition-control",
-                filter === f.value
-                  ? "border-ink-1 bg-surface-3 text-ink-1"
-                  : "border-line-strong bg-surface-1 text-ink-2 hover:text-ink-1",
-              )}
-            >
-              {f.label}
-              {count !== undefined ? (
-                <span className="tabular-nums text-ink-3">{count}</span>
-              ) : null}
-            </button>
-          );
-        })}
-      </div>
+              : counts?.[f.value],
+        }))}
+      />
       <DataTable
         caption="Registracije servisa"
         columns={columns}

@@ -114,3 +114,8 @@ export function downloadText(
   a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1_000);
 }
+
+/** Engine label: seeded names already carry the power („1.9 TDI 77 kW“); others get it added. */
+export function engineLabel(name: string, powerKw: number): string {
+  return /\bkW\b/.test(name) ? name : `${name} · ${powerKw} kW`;
+}

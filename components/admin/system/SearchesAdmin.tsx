@@ -139,7 +139,9 @@ export function SearchesAdmin() {
                   <tbody>
                     {data.misses.map((m) => (
                       <tr key={m.normalized} className="border-b border-line-faint">
-                        <td className="max-w-[16rem] truncate py-1.5 type-code-s">{m.sample}</td>
+                        <td className="max-w-[16rem] truncate py-1.5 type-code-s normal-case">
+                          {m.sample}
+                        </td>
                         <td className="py-1.5 text-right tabular-nums">{m.zeroCount}</td>
                         <td className="py-1.5 text-right tabular-nums text-ink-3">
                           {compactDateTime(m.lastAt, nowMinute)}
@@ -188,7 +190,7 @@ export function SearchesAdmin() {
                           href={ROUTES.searchFor(m.sample)}
                           target="_blank"
                           rel="noopener"
-                          className="type-code-s hover:underline"
+                          className="type-code-s normal-case hover:underline"
                         >
                           {m.sample}
                         </a>
@@ -213,7 +215,9 @@ export function SearchesAdmin() {
                     <span className="w-28 shrink-0 tabular-nums text-ink-3">
                       {compactDateTime(m.at, nowMinute)}
                     </span>
-                    <span className="min-w-0 flex-1 truncate type-code-s">{m.query}</span>
+                    <span className="min-w-0 flex-1 truncate type-code-s normal-case">
+                      {m.query}
+                    </span>
                     <span className="type-caption text-ink-3">
                       {SEARCH_SOURCE_LABEL[m.source] ?? m.source} ·{" "}
                       {USER_TYPE_LABEL[m.userType] ?? m.userType}

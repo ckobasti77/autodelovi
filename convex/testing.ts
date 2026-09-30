@@ -9,6 +9,9 @@ import type { Doc } from "./_generated/dataModel";
 import { internalMutation, internalQuery } from "./_generated/server";
 import { SYSTEM_ACTOR } from "./lib/authz";
 import { approveMechanic as approveMechanicProfile } from "./lib/mechanics";
+import { insertInquiry } from "./lib/inquiries";
+import { createOrder, validateCheckout } from "./lib/orders";
+import { getSettings } from "./lib/settings";
 import { hashToken, randomToken } from "./lib/tokens";
 import { isAvailableNow } from "../lib/domain/stock";
 
@@ -342,5 +345,200 @@ export const quickOrderSamples = internalQuery({
       if (exact && ambiguous) break;
     }
     return { exact, ambiguous };
+  },
+});
+
+/**
+ * E2E helpers (step 15, internal): a fresh guest order (`nova`, courier + pouzeće), a VIN
+ * inquiry (`nov`) and a pending mechanic registration, created through the same library
+ * code as the storefront so the admin spec starts from real documents. All flagged `isTest`.
+ */
+export const createTestOrder = internalMutation({
+  args: { tag: v.string() },
+  returns: v.object({ number: v.string() }),
+  handler: async (ctx, { tag }) => {
+    const settings = await getSettings(ctx);
+    const products = await ctx.db
+      .query("products")
+      .withIndex("by_stockState_and_active", (q) =>
+        q.eq("stockState", "in_stock").eq("active", true),
+      )
+      .take(20);
+    const product = products.find((p) => p.stockQty >= 3);
+    if (!product) throw new Error("No in-stock product");
+    const checkout = validateCheckout(
+      {
+        contact: {
+          firstName: "Admin",
+          lastName: `Test ${tag}`,
+          email: `admin-e2e-${tag}@primer.rs`,
+          phone: "064 333 4455",
+        },
+        delivery: {
+          method: "courier",
+          address: { street: "Test ulica 5", city: "Beograd", postalCode: "11000" },
+        },
+        payment: { method: "cod" },
+        consent: {
+          termsVersion: settings.legalVersions.terms,
+          privacyVersion: settings.legalVersions.privacy,
+          acceptedAt: Date.now(),
+          marketingEmail: false,
+          analytics: false,
+          ads: false,
+        },
+      },
+      settings,
+      null,
+    );
+    const order = await createOrder(ctx, {
+      checkout,
+      lines: [
+        {
+          productId: product._id,
+          categoryId: product.categoryId,
+          sku: product.sku,
+          name: product.name,
+          manufacturerName: product.manufacturerName,
+          quality: product.quality,
+          ...(product.oemPrimary ? { oem: product.oemPrimary } : {}),
+          quantity: 1,
+          unitRetailPara: product.retailPricePara,
+          unitPricePara: product.retailPricePara,
+          discountBp: 0,
+          availabilityAtOrder: product.stockState,
+          isCustomLine: false,
+        },
+      ],
+      customerType: "guest",
+      source: "web",
+      isDemo: false,
+      isTest: true,
+      actor: { type: "customer", name: `Admin Test ${tag}` },
+    });
+    return { number: order.number };
+  },
+});
+
+export const createTestInquiry = internalMutation({
+  args: { tag: v.string() },
+  returns: v.object({ number: v.string() }),
+  handler: async (ctx, { tag }) => {
+    const settings = await getSettings(ctx);
+    const { number, inquiryId } = await insertInquiry(ctx, {
+      kind: "part",
+      message: `Treba mi set kvačila za Golf 7 2.0 TDI (test ${tag}).`,
+      categorySlugs: [],
+      requestedCodes: [],
+      photos: [],
+      contact: { name: `Upit Test ${tag}`, phone: "+381643334455", preferredChannel: "phone" },
+      consent: {
+        termsVersion: settings.legalVersions.terms,
+        privacyVersion: settings.legalVersions.privacy,
+        acceptedAt: Date.now(),
+        marketingEmail: false,
+        analytics: false,
+        ads: false,
+      },
+      actor: { type: "customer", name: `Upit Test ${tag}` },
+    });
+    await ctx.db.patch("inquiries", inquiryId, { isTest: true });
+    return { number };
+  },
+});
+
+export const createPendingMechanic = internalMutation({
+  args: { tag: v.string(), pib: v.string(), mb: v.string() },
+  returns: v.object({ profileId: v.id("mechanicProfiles"), companyName: v.string() }),
+  handler: async (ctx, { tag, pib, mb }) => {
+    const email = `majstor-admin-${tag}@primer.rs`;
+    const companyName = `Servis Admin ${tag}`;
+    const userId = await ctx.db.insert("users", {
+      email,
+      name: `Majstor ${tag}`,
+      role: "customer",
+      status: "active",
+      isTest: true,
+    });
+    const settings = await getSettings(ctx);
+    const profileId = await ctx.db.insert("mechanicProfiles", {
+      userId,
+      status: "pending",
+      companyName,
+      pib,
+      mb,
+      contactPerson: `Majstor ${tag}`,
+      phone: "+381643334456",
+      email,
+      city: "Novi Sad",
+      address: "Radionička 1",
+      serviceTypes: ["mehanika"],
+      brandsServiced: [],
+      creditEnabled: false,
+      paymentTermsDays: 15,
+      consent: {
+        termsVersion: settings.legalVersions.terms,
+        privacyVersion: settings.legalVersions.privacy,
+        acceptedAt: Date.now(),
+        marketingEmail: false,
+        analytics: false,
+        ads: false,
+      },
+      isDemo: false,
+      updatedAt: Date.now(),
+    });
+    await ctx.db.patch("users", userId, {
+      mechanicStatus: "pending",
+      mechanicProfileId: profileId,
+    });
+    return { profileId, companyName };
+  },
+});
+
+/** E2E probe: status, tier and credit of a mechanic profile. */
+export const mechanicProfileProbe = internalQuery({
+  args: { profileId: v.id("mechanicProfiles") },
+  returns: v.union(
+    v.null(),
+    v.object({ status: v.string(), tierName: v.union(v.string(), v.null()) }),
+  ),
+  handler: async (ctx, { profileId }) => {
+    const p = await ctx.db.get("mechanicProfiles", profileId);
+    if (!p) return null;
+    const tier = p.tierId ? await ctx.db.get("priceTiers", p.tierId) : null;
+    return { status: p.status, tierName: tier?.name ?? null };
+  },
+});
+
+/** E2E probe: the latest quote of an inquiry and settings values the admin spec edits. */
+export const adminProbe = internalQuery({
+  args: { inquiryNumber: v.optional(v.string()) },
+  returns: v.object({
+    inquiryStatus: v.union(v.string(), v.null()),
+    quoteStatus: v.union(v.string(), v.null()),
+    quoteTotalPara: v.union(v.number(), v.null()),
+    legalName: v.string(),
+  }),
+  handler: async (ctx, { inquiryNumber }) => {
+    const settings = await getSettings(ctx);
+    const inquiry = inquiryNumber
+      ? await ctx.db
+          .query("inquiries")
+          .withIndex("by_number", (q) => q.eq("number", inquiryNumber))
+          .unique()
+      : null;
+    const quote = inquiry
+      ? await ctx.db
+          .query("quotes")
+          .withIndex("by_inquiryId_and_version", (q) => q.eq("inquiryId", inquiry._id))
+          .order("desc")
+          .first()
+      : null;
+    return {
+      inquiryStatus: inquiry?.status ?? null,
+      quoteStatus: quote?.status ?? null,
+      quoteTotalPara: quote?.totalPara ?? null,
+      legalName: settings.company.legalName,
+    };
   },
 });

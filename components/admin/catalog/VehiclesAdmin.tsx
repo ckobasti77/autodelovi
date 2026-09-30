@@ -12,6 +12,7 @@ import { PencilSimpleIcon, PlusIcon, XIcon } from "@phosphor-icons/react/dist/ss
 
 import { api } from "@/convex/_generated/api";
 import type { Id } from "@/convex/_generated/dataModel";
+import { engineLabel } from "@/lib/admin/format";
 import { cn } from "@/lib/cn";
 import { FUEL_LABEL } from "@/lib/i18n/sr/admin";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
@@ -274,7 +275,7 @@ export function VehiclesAdmin() {
                           </td>
                           <td className="px-2 py-2">
                             <IconButton
-                              label={`Izmeni ${e.name} ${e.powerKw} kW`}
+                              label={`Izmeni ${engineLabel(e.name, e.powerKw)}`}
                               icon={<PencilSimpleIcon size={16} />}
                               size="sm"
                               onClick={() => setDialog({ kind: "engine", engine: e })}
@@ -341,10 +342,10 @@ function GenerationRow({
             key={e.linkId}
             className="inline-flex h-7 items-center gap-1 rounded-xs border border-line bg-surface-1 pl-2 type-caption"
           >
-            {e.name} · {e.powerKw} kW
+            {engineLabel(e.name, e.powerKw)}
             <button
               type="button"
-              aria-label={`Ukloni motor ${e.name} ${e.powerKw} kW iz ${g.name}`}
+              aria-label={`Ukloni motor ${engineLabel(e.name, e.powerKw)} iz ${g.name}`}
               className="inline-flex size-7 cursor-pointer items-center justify-center rounded-xs text-ink-3 hover:bg-surface-2 hover:text-danger focus-ring-inset"
               onClick={() =>
                 void unlink({ linkId: e.linkId }).catch((err) =>
@@ -367,7 +368,7 @@ function GenerationRow({
               .filter((e) => !linked.has(e._id))
               .map((e) => ({
                 value: e._id,
-                label: `${e.name} · ${e.powerKw} kW · ${FUEL_LABEL[e.fuel]}`,
+                label: `${engineLabel(e.name, e.powerKw)} · ${FUEL_LABEL[e.fuel]}`,
               }))}
             className="w-60"
           />

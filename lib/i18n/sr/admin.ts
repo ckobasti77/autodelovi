@@ -123,6 +123,7 @@ export const ENTITY_TYPE_LABEL: Readonly<Record<string, string>> = {
   category: "Kategorija",
   manufacturer: "Proizvođač",
   mechanic: "Majstor",
+  mechanicProfile: "Majstor",
   user: "Korisnik",
   settings: "Podešavanja",
   tier: "Cenovni razred",

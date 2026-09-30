@@ -5,10 +5,7 @@ import { getCategoryTree, getManufacturers } from "@/lib/server/catalog-cache";
 import { MechanicAdminDetail } from "@/components/admin/MechanicAdminDetail";
 import { ROUTES } from "@/constants/routes";
 
-export const metadata: Metadata = {
-  title: { absolute: "Majstor · Administracija" },
-  robots: { index: false },
-};
+export const metadata: Metadata = { title: "Majstor" };
 
 export default async function AdminMechanicPage({ params }: PageProps<"/admin/majstori/[id]">) {
   const { id } = await params;

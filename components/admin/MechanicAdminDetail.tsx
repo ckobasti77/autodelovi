@@ -319,7 +319,9 @@ function DetailView({
         Svi majstori
       </RouteLink>
       <div className="flex flex-wrap items-center gap-3">
-        <h1 className="type-h1 text-ink-1">{p.companyName}</h1>
+        <h1 className="text-[1.375rem] font-[650] leading-tight tracking-[-0.01em] text-ink-1">
+          {p.companyName}
+        </h1>
         <Badge
           tone={MECHANIC_STATUS_TONE[p.status]}
           icon={MECHANIC_STATUS_ICON[p.status]}

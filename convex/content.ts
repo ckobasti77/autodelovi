@@ -170,13 +170,20 @@ export const updatePage = ownerMutation({
     if (title.length < 2) invalid("Upišite naslov.", "title");
     const bodyMd = args.bodyMd.replace(/\r\n/g, "\n").slice(0, 60_000);
     if (bodyMd.trim().length < 20) invalid("Tekst je prekratak.", "bodyMd");
+    // Compare raw values: the audit diff caps strings at 500 characters, so it cannot tell
+    // whether a long legal text changed after its first 500 characters.
+    const unchanged =
+      page.title === title &&
+      page.bodyMd === bodyMd &&
+      page.published === args.published &&
+      page.needsLegalReview === args.needsLegalReview;
+    if (unchanged) return { version: page.version };
     const diff = diffFields(page, {
       title,
       bodyMd,
       published: args.published,
       needsLegalReview: args.needsLegalReview,
     });
-    if (diff.length === 0) return { version: page.version };
     const now = Date.now();
     const version = page.version + 1;
     await ctx.db.patch("contentPages", page._id, {

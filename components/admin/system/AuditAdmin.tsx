@@ -155,7 +155,7 @@ export function AuditAdmin() {
                       <span className="type-caption text-ink-3">
                         <ActorLabel actor={r.actor} /> ·{" "}
                         {ENTITY_TYPE_LABEL[r.entityType] ?? r.entityType} ·{" "}
-                        <span className="type-code-s">{r.action}</span>
+                        <span className="type-code-s normal-case">{r.action}</span>
                       </span>
                     </span>
                     {r.diff && r.diff.length > 0 ? (
@@ -193,7 +193,9 @@ export function AuditAdmin() {
                       <tbody>
                         {r.diff.map((d, i) => (
                           <tr key={i} className="border-t border-line-faint align-top">
-                            <td className="py-1 pr-2 type-code-s text-ink-2">{d.field}</td>
+                            <td className="py-1 pr-2 type-code-s normal-case text-ink-2">
+                              {d.field}
+                            </td>
                             <td className="break-all py-1 pr-2 text-ink-3">{d.before ?? "—"}</td>
                             <td className="break-all py-1 text-ink-1">{d.after ?? "—"}</td>
                           </tr>

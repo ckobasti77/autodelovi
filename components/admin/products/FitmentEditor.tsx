@@ -10,6 +10,7 @@ import { useMemo, useState } from "react";
 import { PlusIcon, TrashIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
+import { engineLabel as formatEngine } from "@/lib/admin/format";
 import type { Id } from "@/convex/_generated/dataModel";
 import { Button } from "@/components/ui/Button";
 import { Field } from "@/components/ui/Field";
@@ -107,7 +108,7 @@ export function FitmentEditor({
         yearTo: yt,
         note: note.trim(),
         label: `${brand.brand.name} ${model.model.name} ${g.name}`,
-        engineLabel: engine ? `${engine.name} · ${engine.powerKw} kW` : null,
+        engineLabel: engine ? formatEngine(engine.name, engine.powerKw) : null,
       });
     }
     if (next.length > MAX) return setError(`Najviše ${MAX} vozila po artiklu.`);
@@ -237,7 +238,7 @@ export function FitmentEditor({
               onChange={(e) => setEngineId(e.target.value)}
               options={(engines ?? []).map((en) => ({
                 value: en._id,
-                label: `${en.name} · ${en.powerKw} kW${en.codes.length ? ` · ${en.codes.slice(0, 3).join(", ")}` : ""}`,
+                label: `${formatEngine(en.name, en.powerKw)}${en.codes.length ? ` · ${en.codes.slice(0, 3).join(", ")}` : ""}`,
               }))}
             />
           </Field>

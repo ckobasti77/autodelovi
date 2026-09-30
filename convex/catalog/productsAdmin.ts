@@ -780,7 +780,11 @@ export const getFull = staffQuery({
         yearTo: f.yearTo ?? null,
         note: f.note ?? null,
         label: [brandNames.get(f.brandId), model?.name, generation?.name].filter(Boolean).join(" "),
-        engineLabel: engine ? `${engine.name} · ${engine.powerKw} kW` : null,
+        engineLabel: engine
+          ? /kW/.test(engine.name)
+            ? engine.name
+            : `${engine.name} · ${engine.powerKw} kW`
+          : null,
       });
     }
     const images = [];

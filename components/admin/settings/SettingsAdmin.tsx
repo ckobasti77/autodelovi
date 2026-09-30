@@ -122,7 +122,7 @@ export function SettingsAdmin() {
     <div className="flex flex-col gap-4">
       <PageHeader
         title="Podešavanja"
-        description={`Poslednja izmena: ${settings.updatedAt ? formatDate(settings.updatedAt) : "još nema"}.${can ? "" : ` ${ADMIN_COPY.ownerOnly}`}`}
+        description={`Poslednja izmena: ${settings.updatedAt ? formatDate(settings.updatedAt) : "još nema."}${can ? "" : ` ${ADMIN_COPY.ownerOnly}`}`}
       />
       <Tabs
         label="Podešavanja"

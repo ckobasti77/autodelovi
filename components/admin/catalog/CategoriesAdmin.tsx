@@ -240,7 +240,7 @@ function CategoryForm({ node }: { node: Node }) {
         title={node.name}
         actions={
           <span className="flex items-center gap-2 type-caption text-ink-3">
-            <span className="type-code-s">/{node.slug}</span>
+            <span className="type-code-s normal-case">/{node.slug}</span>
             <Badge tone="neutral">
               {node.productCount} art. · {node.inStockCount} na stanju
             </Badge>
@@ -386,7 +386,7 @@ function CategoryForm({ node }: { node: Node }) {
                     <li
                       key={i.instance}
                       title={i.labelSr}
-                      className="rounded-xs border border-line bg-surface-2 px-1.5 py-0.5 type-code-s text-ink-2"
+                      className="rounded-xs border border-line bg-surface-2 px-1.5 py-0.5 type-code-s normal-case text-ink-2"
                     >
                       {partNodeName(taxonomy.slug, i.instance)}
                     </li>

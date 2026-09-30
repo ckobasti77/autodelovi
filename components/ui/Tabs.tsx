@@ -6,7 +6,7 @@
  * edge fade. Segmented tabs (admin filters) carry counts. Radix handles arrow keys and ARIA.
  */
 import { Tabs as TabsPrimitive } from "radix-ui";
-import { useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
 import { gsap, prefersReducedMotion, useGSAP } from "@/lib/gsap/client";
@@ -54,6 +54,29 @@ export function Tabs({
   const listRef = useRef<HTMLDivElement>(null);
   const indicatorRef = useRef<HTMLSpanElement>(null);
   const firstPaint = useRef(true);
+  // Edge fade only where the strip actually overflows (never over the first or last tab at rest).
+  const [fade, setFade] = useState({ start: false, end: false });
+  useEffect(() => {
+    const list = listRef.current;
+    if (!list) return;
+    const update = () => {
+      const start = list.scrollLeft > 1;
+      const end = list.scrollLeft + list.clientWidth < list.scrollWidth - 1;
+      setFade((f) => (f.start === start && f.end === end ? f : { start, end }));
+    };
+    update();
+    list.addEventListener("scroll", update, { passive: true });
+    const observer = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(update);
+    observer?.observe(list);
+    return () => {
+      list.removeEventListener("scroll", update);
+      observer?.disconnect();
+    };
+  }, []);
+  const mask =
+    fade.start || fade.end
+      ? `linear-gradient(90deg, ${fade.start ? "transparent 0, #000 16px" : "#000 0"}, ${fade.end ? "#000 calc(100% - 16px), transparent 100%" : "#000 100%"})`
+      : undefined;
 
   // Slide the indicator to the active tab (instant on first paint and on resize).
   useGSAP(
@@ -90,8 +113,9 @@ export function Tabs({
         <TabsPrimitive.List
           ref={listRef}
           aria-label={label}
+          style={mask ? { maskImage: mask, WebkitMaskImage: mask } : undefined}
           className={cn(
-            "relative flex scroll-fade-x",
+            "relative flex overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
             variant === "underline"
               ? "gap-6"
               : "gap-1 rounded-xs border border-line bg-surface-1 p-1",

@@ -61,7 +61,7 @@ export function EmailsAdmin() {
         cell: ({ row }) => (
           <span className="flex max-w-[28rem] flex-col">
             <span className="truncate text-ink-1">{row.original.subject}</span>
-            <span className="type-code-s text-ink-3">{row.original.templateKey}</span>
+            <span className="type-code-s normal-case text-ink-3">{row.original.templateKey}</span>
           </span>
         ),
       },
@@ -139,7 +139,7 @@ function EmailView({ id }: { id: Id<"emailLog"> }) {
         <dt className="text-ink-3">Naslov</dt>
         <dd>{m.subject}</dd>
         <dt className="text-ink-3">Šablon</dt>
-        <dd className="type-code-s">{m.templateKey}</dd>
+        <dd className="type-code-s normal-case">{m.templateKey}</dd>
         {m.error ? (
           <>
             <dt className="text-ink-3">Greška</dt>
