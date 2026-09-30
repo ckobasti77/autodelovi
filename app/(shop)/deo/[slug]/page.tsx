@@ -48,7 +48,8 @@ import { ROUTES } from "@/constants/routes";
 function productDescription(p: NonNullable<Awaited<ReturnType<typeof getProductBySlug>>>) {
   const c = p.product;
   const vehicles = c.fitmentSummary ? ` za ${c.fitmentSummary}` : "";
-  const price = c.retailPricePara !== null ? ` Cena ${formatRSD(c.retailPricePara)} sa PDV-om.` : "";
+  const price =
+    c.retailPricePara !== null ? ` Cena ${formatRSD(c.retailPricePara)} sa PDV-om.` : "";
   const stock =
     c.stockState === "in_stock" || c.stockState === "low_stock"
       ? " Na stanju."
@@ -103,7 +104,9 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
     .filter((r) => r.card._id !== c._id && (r.match === "exact_code" || r.match === "cross_code"))
     .map((r) => r.card)
     .slice(0, 6);
-  const relatedCards = related.filter((r) => !alternatives.some((a) => a._id === r._id)).slice(0, 4);
+  const relatedCards = related
+    .filter((r) => !alternatives.some((a) => a._id === r._id))
+    .slice(0, 4);
 
   const crumbs: Crumb[] = [
     { label: "Početna", href: ROUTES.home },
@@ -111,7 +114,10 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
     { label: data.category.name, href: ROUTES.category(data.category.slug) },
     { label: c.name },
   ];
-  const contacts = contactLinkList(contactFromSettings(settings)).filter((l) => l.channel !== "email");
+  const contacts = contactLinkList(
+    contactFromSettings(settings),
+    `${c.name}${c.oemPrimary ? ` (OEM ${c.oemPrimary})` : ""}`,
+  ).filter((l) => l.channel !== "email");
   const courier = settings.deliveryMethods.find((d) => d.code === "courier");
   const pickup = settings.deliveryMethods.find((d) => d.code === "pickup");
   const disc = discDimensions(data.specs);
@@ -132,7 +138,9 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
             manufacturer: c.manufacturerName,
             category: data.category.name,
             description: data.description ?? productDescription(data),
-            images: images.length ? images.map((i) => i.url!) : [`/images/parts/${c.categorySlug}.webp`],
+            images: images.length
+              ? images.map((i) => i.url!)
+              : [`/images/parts/${c.categorySlug}.webp`],
             pricePara: c.retailPricePara,
             stockState: c.stockState,
             shippingPara: courier?.pricePara ?? null,
@@ -228,7 +236,12 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
               </dl>
               <FitmentBadge fitments={data.fitments} universal={c.universal} productSlug={c.slug} />
               <div id="buy-box" className="flex flex-col gap-4 border-y border-line py-5">
-                <ProductPrice productId={c._id} retailPricePara={c.retailPricePara} size="l" showDiscount />
+                <ProductPrice
+                  productId={c._id}
+                  retailPricePara={c.retailPricePara}
+                  size="l"
+                  showDiscount
+                />
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                   <ProductStock
                     productId={c._id}
@@ -237,7 +250,9 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
                     leadTimeDays={c.leadTimeDays}
                   />
                   {c.stockState === "in_stock" || c.stockState === "low_stock" ? (
-                    <span className="type-caption font-normal text-ink-3">· {settings.commerce.etaText}</span>
+                    <span className="type-caption font-normal text-ink-3">
+                      · {settings.commerce.etaText}
+                    </span>
                   ) : null}
                 </div>
                 {orderable ? (
@@ -260,22 +275,36 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
               <ul className="flex flex-col divide-y divide-line" data-reveal="off">
                 {courier ? (
                   <li className={FACTS_CLASS}>
-                    <TruckIcon size={20} aria-hidden="true" className="mt-0.5 shrink-0 text-ink-3" />
+                    <TruckIcon
+                      size={20}
+                      aria-hidden="true"
+                      className="mt-0.5 shrink-0 text-ink-3"
+                    />
                     <span>
                       Kurir {formatRSD(courier.pricePara)}
-                      {courier.freeOverPara ? `, besplatno iznad ${formatRSD(courier.freeOverPara)}` : ""} ·
-                      pouzećem ili virmanom
+                      {courier.freeOverPara
+                        ? `, besplatno iznad ${formatRSD(courier.freeOverPara)}`
+                        : ""}{" "}
+                      · pouzećem ili virmanom
                     </span>
                   </li>
                 ) : null}
                 {pickup ? (
                   <li className={FACTS_CLASS}>
-                    <StorefrontIcon size={20} aria-hidden="true" className="mt-0.5 shrink-0 text-ink-3" />
+                    <StorefrontIcon
+                      size={20}
+                      aria-hidden="true"
+                      className="mt-0.5 shrink-0 text-ink-3"
+                    />
                     <span>Lično preuzimanje bez troška · plaćanje gotovinom ili karticom</span>
                   </li>
                 ) : null}
                 <li className={FACTS_CLASS}>
-                  <ArrowRightIcon size={20} aria-hidden="true" className="mt-0.5 shrink-0 text-ink-3" />
+                  <ArrowRightIcon
+                    size={20}
+                    aria-hidden="true"
+                    className="mt-0.5 shrink-0 text-ink-3"
+                  />
                   <span>
                     Bez plaćanja na sajtu.{" "}
                     <Link href={ROUTES.delivery} variant="inline">
@@ -305,9 +334,13 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
               {data.fitments.length ? (
                 <FitmentTable rows={data.fitments} />
               ) : c.universal ? (
-                <p className="type-body text-ink-2">Univerzalni deo — odgovara za sva vozila po specifikaciji.</p>
+                <p className="type-body text-ink-2">
+                  Univerzalni deo — odgovara za sva vozila po specifikaciji.
+                </p>
               ) : (
-                <p className="type-body text-ink-2">Kompatibilnost nije uneta. Proverite po OEM broju ili pošaljite upit.</p>
+                <p className="type-body text-ink-2">
+                  Kompatibilnost nije uneta. Proverite po OEM broju ili pošaljite upit.
+                </p>
               )}
             </div>
           </section>
@@ -365,7 +398,8 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
                 Isti deo, drugi proizvođači
               </h2>
               <p className="mt-2 type-body-s text-ink-3">
-                Artikli sa istim OEM brojem <span className="type-code text-ink-2">{c.oemPrimary}</span>.
+                Artikli sa istim OEM brojem{" "}
+                <span className="type-code text-ink-2">{c.oemPrimary}</span>.
               </p>
               <div className="mt-5">
                 <ProductGrid items={alternatives} headingLevel="h3" />

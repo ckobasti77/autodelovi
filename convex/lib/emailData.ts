@@ -114,7 +114,9 @@ export async function orderEmailData(
     },
     delivery: {
       method: order.delivery.method,
-      label: delivery?.label ?? (order.delivery.method === "pickup" ? "Lično preuzimanje" : "Kurirska služba"),
+      label:
+        delivery?.label ??
+        (order.delivery.method === "pickup" ? "Lično preuzimanje" : "Kurirska služba"),
       ...(order.delivery.address ? { address: addressText(order.delivery.address) } : {}),
       ...(courier ? { courierName: courier.name } : {}),
       ...(order.delivery.trackingNumber ? { trackingNumber: order.delivery.trackingNumber } : {}),
@@ -134,7 +136,9 @@ export async function orderEmailData(
       ? {
           bank: {
             recipient:
-              settings.company.legalName.trim() || settings.company.displayName?.trim() || ectx.brandName,
+              settings.company.legalName.trim() ||
+              settings.company.displayName?.trim() ||
+              ectx.brandName,
             accounts: settings.company.bankAccounts,
             reference: order.payment.reference,
             amountPara: order.totals.totalPara,
@@ -375,7 +379,9 @@ export async function digestData(
     .take(20);
   const low = await ctx.db
     .query("products")
-    .withIndex("by_stockState_and_active", (q) => q.eq("stockState", "low_stock").eq("active", true))
+    .withIndex("by_stockState_and_active", (q) =>
+      q.eq("stockState", "low_stock").eq("active", true),
+    )
     .take(1000);
   const out = await ctx.db
     .query("products")
@@ -415,7 +421,10 @@ export async function digestData(
     openInquiryCount: openInquiries.length,
     pendingMechanics: pending
       .slice(0, 5)
-      .map((p) => ({ companyName: p.companyName, url: adminLink(ectx, `/admin/majstori/${p._id}`) })),
+      .map((p) => ({
+        companyName: p.companyName,
+        url: adminLink(ectx, `/admin/majstori/${p._id}`),
+      })),
     lowStockCount: low.length,
     outOfStockCount: out.length,
     zeroSearches: zero,

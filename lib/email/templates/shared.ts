@@ -21,7 +21,8 @@ export const dateTime = formatBelgradeDateTime;
 export type Audience = "customer" | "staff" | "account";
 
 const REASON: Record<Audience, (ctx: EmailContext) => string> = {
-  customer: (ctx) => `Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu ${ctx.brandName}.`,
+  customer: (ctx) =>
+    `Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu ${ctx.brandName}.`,
   staff: (ctx) => `Ovu poruku dobijate kao zaposleni u ${ctx.brandName}.`,
   account: (ctx) => `Ovu poruku ste dobili zbog naloga na sajtu ${ctx.brandName}.`,
 };

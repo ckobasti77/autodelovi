@@ -294,7 +294,12 @@ export const SAMPLES = {
   }),
   staffLowStock: (siteUrl: string): StaffLowStockEmailData => ({
     items: [
-      { sku: "DEMO-KD-0031", name: "Kočioni disk prednji, 288 mm", qty: 1, url: `${siteUrl}/admin/lager` },
+      {
+        sku: "DEMO-KD-0031",
+        name: "Kočioni disk prednji, 288 mm",
+        qty: 1,
+        url: `${siteUrl}/admin/lager`,
+      },
       { sku: "DEMO-FU-0007", name: "Filter ulja", qty: 0, url: `${siteUrl}/admin/lager` },
       { sku: "DEMO-SV-0112", name: "Svećica, iridijum", qty: 2, url: `${siteUrl}/admin/lager` },
     ],
@@ -307,12 +312,24 @@ export const SAMPLES = {
     inquiriesReceived: 4,
     registrations: 1,
     openOrders: [
-      { number: "SK-2026-000186", ageLabel: "3 h 20 min", url: `${siteUrl}/admin/porudzbine/SK-2026-000186` },
+      {
+        number: "SK-2026-000186",
+        ageLabel: "3 h 20 min",
+        url: `${siteUrl}/admin/porudzbine/SK-2026-000186`,
+      },
     ],
     openOrderCount: 1,
     openInquiries: [
-      { number: "UP-2026-000044", ageLabel: "5 h 10 min", url: `${siteUrl}/admin/upiti/UP-2026-000044` },
-      { number: "UP-2026-000045", ageLabel: "40 min", url: `${siteUrl}/admin/upiti/UP-2026-000045` },
+      {
+        number: "UP-2026-000044",
+        ageLabel: "5 h 10 min",
+        url: `${siteUrl}/admin/upiti/UP-2026-000044`,
+      },
+      {
+        number: "UP-2026-000045",
+        ageLabel: "40 min",
+        url: `${siteUrl}/admin/upiti/UP-2026-000045`,
+      },
     ],
     openInquiryCount: 2,
     pendingMechanics: [{ companyName: "Auto servis Primer", url: `${siteUrl}/admin/majstori` }],

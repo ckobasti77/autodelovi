@@ -64,7 +64,9 @@ export function staffOrderNew(d: StaffOrderEmailData, ctx: EmailContext): Render
       ["Izvor", d.source],
       ["Napomena kupca", d.note ?? ""],
     ]),
-    d.hasBackorder ? notice("warning", "Ima stavki po porudžbini", "Proverite rok kod dobavljača pre potvrde.") : null,
+    d.hasBackorder
+      ? notice("warning", "Ima stavki po porudžbini", "Proverite rok kod dobavljača pre potvrde.")
+      : null,
     linesBlock(d.lines, d.moreLines, [["Ukupno sa PDV-om", rsd(d.totalPara), { strong: true }]]),
     button("Otvorite porudžbinu", d.adminUrl),
   );
@@ -173,7 +175,10 @@ export function staffLowStock(d: StaffLowStockEmailData, ctx: EmailContext): Ren
     facts(
       shown.map(
         (i) =>
-          [i.sku, `[${i.name}](${i.url}) — ${i.qty === 0 ? "nema na stanju" : `ostalo ${i.qty} kom`}`] as const,
+          [
+            i.sku,
+            `[${i.name}](${i.url}) — ${i.qty === 0 ? "nema na stanju" : `ostalo ${i.qty} kom`}`,
+          ] as const,
       ),
     ),
     d.total > shown.length
@@ -214,7 +219,9 @@ export function staffDailyDigest(d: StaffDigestEmailData, ctx: EmailContext): Re
     d.openInquiries.length
       ? bullets(d.openInquiries.map((o) => `[${o.number}](${o.url}) — ${o.ageLabel}`))
       : paragraph("Svi upiti imaju odgovor.", { muted: true }),
-    d.pendingMechanics.length ? subheading(`Majstori čekaju odobrenje (${d.pendingMechanics.length})`) : null,
+    d.pendingMechanics.length
+      ? subheading(`Majstori čekaju odobrenje (${d.pendingMechanics.length})`)
+      : null,
     d.pendingMechanics.length
       ? bullets(d.pendingMechanics.map((m) => `[${m.companyName}](${m.url})`))
       : null,
@@ -225,9 +232,7 @@ export function staffDailyDigest(d: StaffDigestEmailData, ctx: EmailContext): Re
         : "Nema artikala ispod praga.",
     ),
     d.zeroSearches.length ? subheading("Traženo, a nemamo") : null,
-    d.zeroSearches.length
-      ? bullets(d.zeroSearches.map((s) => `${s.query} — ${s.count}×`))
-      : null,
+    d.zeroSearches.length ? bullets(d.zeroSearches.map((s) => `${s.query} — ${s.count}×`)) : null,
     d.zeroSearches.length ? paragraph(`[Sve pretrage](${d.searchesUrl})`, { muted: true }) : null,
     button("Otvorite kontrolnu tablu", d.dashboardUrl),
   );

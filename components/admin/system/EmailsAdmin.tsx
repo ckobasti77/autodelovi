@@ -1,41 +1,75 @@
 "use client";
 
 /**
- * `/admin/mejlovi` — e-mail outbox: every message the system produced (log mode until a
- * provider key and a verified domain exist), status, recipient, the rendered message in a
- * sandboxed frame and its plain-text version. Template previews and test sends: step 18.
+ * `/admin/mejlovi` — e-mail outbox: every message the system produced, the delivery mode it
+ * went out in, its status (updated by the Resend webhook), filters by status and template,
+ * the rendered message in a sandboxed frame with its plain-text twin, and „Pošalji ponovo“.
  */
-import { usePaginatedQuery, useQuery } from "convex/react";
+import { useMutation, usePaginatedQuery, useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
 import { useMemo, useState } from "react";
+import { ArrowCounterClockwiseIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
 import type { Id } from "@/convex/_generated/dataModel";
 import { compactDateTime } from "@/lib/admin/format";
+import {
+  TEMPLATE_GROUP_LABEL,
+  TEMPLATE_INFO,
+  TEMPLATE_KEYS,
+  templateLabel,
+} from "@/lib/email/catalog";
 import { EMAIL_MODE_LABEL, EMAIL_STATUS_LABEL } from "@/lib/i18n/sr/admin";
+import { convexErrorMessage } from "@/lib/i18n/sr/shop";
 import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
 import { DataTable, type ColumnDef } from "@/components/ui/DataTable";
 import { Select } from "@/components/ui/Select";
 import { Sheet } from "@/components/ui/Sheet";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { Tabs } from "@/components/ui/Tabs";
+import { toast } from "@/components/ui/Toast";
 
 import { useNowMinute } from "../hooks";
-import { LoadMoreFooter, PageHeader } from "../ui";
+import { DemoTag, LoadMoreFooter, PageHeader } from "../ui";
+import { useUrlFilters } from "../useUrlFilters";
+import { DeliveryBanner, EmailsNav } from "./EmailDelivery";
 
 type Row = FunctionReturnType<typeof api.emailsAdmin.outbox>["page"][number];
 
+const RELATED_LABEL: Readonly<Record<string, string>> = {
+  order: "Porudžbina",
+  inquiry: "Upit",
+  mechanic: "Majstor",
+  user: "Nalog",
+  product: "Artikal",
+  digest: "Pregled",
+  test: "Proba",
+  auth: "Prijava",
+};
+
+const TEMPLATE_OPTIONS = (
+  Object.keys(TEMPLATE_GROUP_LABEL) as (keyof typeof TEMPLATE_GROUP_LABEL)[]
+).flatMap((group) =>
+  TEMPLATE_KEYS.filter((k) => TEMPLATE_INFO[k].group === group).map((k) => ({
+    value: k,
+    label: `${TEMPLATE_GROUP_LABEL[group]} · ${TEMPLATE_INFO[k].label}`,
+  })),
+);
+
 export function EmailsAdmin() {
   const nowMinute = useNowMinute();
-  const [status, setStatus] = useState("");
+  const [filters, setFilters] = useUrlFilters(["status", "sablon"] as const);
   const [openId, setOpenId] = useState<string | null>(null);
+  const args = {
+    ...(filters.status ? { status: filters.status as Row["status"] } : {}),
+    ...(filters.sablon ? { templateKey: filters.sablon } : {}),
+  };
   const {
     results,
     status: loadStatus,
     loadMore,
-  } = usePaginatedQuery(api.emailsAdmin.outbox, status ? { status: status as Row["status"] } : {}, {
-    initialNumItems: 50,
-  });
+  } = usePaginatedQuery(api.emailsAdmin.outbox, args, { initialNumItems: 50 });
   const columns = useMemo<ColumnDef<Row, unknown>[]>(
     () => [
       {
@@ -52,16 +86,22 @@ export function EmailsAdmin() {
         header: "Prima",
         enableSorting: false,
         cell: ({ row }) => (
-          <span className="max-w-[16rem] truncate">{row.original.to.join(", ")}</span>
+          <span className="block max-w-[16rem] truncate">{row.original.to.join(", ")}</span>
         ),
       },
       {
         accessorKey: "subject",
         header: "Naslov",
         cell: ({ row }) => (
-          <span className="flex max-w-[28rem] flex-col">
+          <span className="flex max-w-[30rem] flex-col">
             <span className="truncate text-ink-1">{row.original.subject}</span>
-            <span className="type-code-s normal-case text-ink-3">{row.original.templateKey}</span>
+            <span className="flex items-center gap-2 type-caption text-ink-3">
+              {templateLabel(row.original.templateKey)}
+              {row.original.relatedType
+                ? ` · ${RELATED_LABEL[row.original.relatedType] ?? ""}`
+                : ""}
+              {row.original.isDemo ? <DemoTag /> : null}
+            </span>
           </span>
         ),
       },
@@ -69,7 +109,9 @@ export function EmailsAdmin() {
         accessorKey: "mode",
         header: "Način",
         cell: ({ row }) => (
-          <span className="text-ink-2">{EMAIL_MODE_LABEL[row.original.mode]}</span>
+          <span className="whitespace-nowrap text-ink-2">
+            {EMAIL_MODE_LABEL[row.original.mode]}
+          </span>
         ),
       },
       {
@@ -90,20 +132,43 @@ export function EmailsAdmin() {
     <div className="flex flex-col gap-4">
       <PageHeader
         title="E-pošta"
-        description="Sve poruke koje sistem šalje kupcima i osoblju. Dok slanje nije podešeno (ključ i domen — vidi listu za vlasnika), poruke se samo beleže ovde."
+        description="Sve poruke koje sistem pravi za kupce, majstore i osoblje — sa statusom isporuke."
       />
-      <div className="w-52">
-        <Select
-          size="sm"
-          aria-label="Status poruke"
-          placeholder="Svi statusi"
-          value={status}
-          onChange={(e) => setStatus(e.target.value)}
-          options={Object.entries(EMAIL_STATUS_LABEL).map(([value, s]) => ({
-            value,
-            label: s.label,
-          }))}
-        />
+      <EmailsNav />
+      <DeliveryBanner />
+      <div className="flex flex-wrap items-end gap-3">
+        <div className="w-52">
+          <Select
+            size="sm"
+            aria-label="Status poruke"
+            placeholder="Svi statusi"
+            value={filters.status}
+            onChange={(e) => setFilters({ status: e.target.value })}
+            options={Object.entries(EMAIL_STATUS_LABEL).map(([value, s]) => ({
+              value,
+              label: s.label,
+            }))}
+          />
+        </div>
+        <div className="w-80 max-w-full">
+          <Select
+            size="sm"
+            aria-label="Šablon"
+            placeholder="Svi šabloni"
+            value={filters.sablon}
+            onChange={(e) => setFilters({ sablon: e.target.value })}
+            options={TEMPLATE_OPTIONS}
+          />
+        </div>
+        {filters.status || filters.sablon ? (
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setFilters({ status: null, sablon: null })}
+          >
+            Poništi filtere
+          </Button>
+        ) : null}
       </div>
       <DataTable
         caption="Poslate i zabeležene poruke"
@@ -112,7 +177,11 @@ export function EmailsAdmin() {
         getRowId={(r) => r._id}
         loading={loadStatus === "LoadingFirstPage"}
         onRowOpen={(r) => setOpenId(r._id)}
-        empty={<p className="py-10 text-center type-body-s text-ink-2">Još nema poruka.</p>}
+        empty={
+          <p className="py-10 text-center type-body-s text-ink-2">
+            {filters.status || filters.sablon ? "Nema poruka za ove filtere." : "Još nema poruka."}
+          </p>
+        }
       />
       <LoadMoreFooter
         shown={results.length}
@@ -127,25 +196,63 @@ export function EmailsAdmin() {
         side="right"
         size="md"
       >
-        {openId ? <EmailView id={openId as Id<"emailLog">} /> : null}
+        {openId ? (
+          <EmailView id={openId as Id<"emailLog">} onResent={(id) => setOpenId(id)} />
+        ) : null}
       </Sheet>
     </div>
   );
 }
 
-function EmailView({ id }: { id: Id<"emailLog"> }) {
+function EmailView({ id, onResent }: { id: Id<"emailLog">; onResent: (id: string) => void }) {
   const m = useQuery(api.emailsAdmin.get, { emailLogId: id });
+  const resend = useMutation(api.emailsAdmin.resend);
+  const [busy, setBusy] = useState(false);
   if (m === undefined) return <Skeleton className="h-96 w-full" />;
   if (m === null) return <p className="type-body-s text-ink-2">Poruka ne postoji.</p>;
+  const status = EMAIL_STATUS_LABEL[m.status] ?? { label: m.status, tone: "neutral" as const };
+  const onResend = async () => {
+    setBusy(true);
+    try {
+      const res = await resend({ emailLogId: m._id });
+      toast.success(
+        res.mode === "log"
+          ? "Poruka je ponovo zabeležena (režim log)."
+          : "Poruka je ponovo poslata.",
+      );
+      onResent(res.emailLogId);
+    } catch (error) {
+      toast.error(convexErrorMessage(error, "Poruka nije poslata."));
+    } finally {
+      setBusy(false);
+    }
+  };
   return (
     <div className="flex flex-col gap-4" data-theme="paper">
-      <dl className="grid grid-cols-[6rem_minmax(0,1fr)] gap-x-3 gap-y-1 type-body-s">
+      <dl className="grid grid-cols-[7rem_minmax(0,1fr)] gap-x-3 gap-y-1.5 type-body-s">
         <dt className="text-ink-3">Prima</dt>
         <dd className="break-all">{m.to.join(", ")}</dd>
+        {m.deliveredTo.join() !== m.to.join() ? (
+          <>
+            <dt className="text-ink-3">Isporučeno na</dt>
+            <dd className="break-all">{m.deliveredTo.join(", ")} (probni režim)</dd>
+          </>
+        ) : null}
         <dt className="text-ink-3">Naslov</dt>
         <dd>{m.subject}</dd>
+        {m.preheader ? (
+          <>
+            <dt className="text-ink-3">Pregled</dt>
+            <dd className="text-ink-2">{m.preheader}</dd>
+          </>
+        ) : null}
         <dt className="text-ink-3">Šablon</dt>
-        <dd className="type-code-s normal-case">{m.templateKey}</dd>
+        <dd>{templateLabel(m.templateKey)}</dd>
+        <dt className="text-ink-3">Način · status</dt>
+        <dd className="flex flex-wrap items-center gap-2">
+          {EMAIL_MODE_LABEL[m.mode as keyof typeof EMAIL_MODE_LABEL] ?? m.mode}
+          <Badge tone={status.tone}>{status.label}</Badge>
+        </dd>
         {m.error ? (
           <>
             <dt className="text-ink-3">Greška</dt>
@@ -153,6 +260,19 @@ function EmailView({ id }: { id: Id<"emailLog"> }) {
           </>
         ) : null}
       </dl>
+      {m.resendable ? (
+        <div>
+          <Button
+            variant="secondary"
+            size="sm"
+            icon={<ArrowCounterClockwiseIcon size={16} aria-hidden="true" />}
+            loading={busy}
+            onClick={() => void onResend()}
+          >
+            Pošalji ponovo
+          </Button>
+        </div>
+      ) : null}
       <Tabs
         label="Prikaz poruke"
         items={[

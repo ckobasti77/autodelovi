@@ -19,7 +19,13 @@ export function PurchaseTracker({
   valuePara: number;
   shippingPara: number;
   taxPara: number;
-  items: { sku: string; name: string; manufacturerName: string; unitPricePara: number; quantity: number }[];
+  items: {
+    sku: string;
+    name: string;
+    manufacturerName: string;
+    unitPricePara: number;
+    quantity: number;
+  }[];
 }) {
   useEffect(() => {
     const key = `sk_tracked_${orderNumber}`;

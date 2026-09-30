@@ -34,7 +34,12 @@ const FULL: EmailSettingsLike = {
 
 const EMPTY: EmailSettingsLike = {
   brand: { name: "SKLOP" },
-  company: { legalName: "", address: { street: "", city: "", postalCode: "" }, phones: [], bankAccounts: [] },
+  company: {
+    legalName: "",
+    address: { street: "", city: "", postalCode: "" },
+    phones: [],
+    bankAccounts: [],
+  },
   hours: [],
 };
 
@@ -43,12 +48,16 @@ const emptyCtx = emailContext(EMPTY, SITE);
 
 describe("html helpers", () => {
   it("escapes markup and keeps only safe link schemes", () => {
-    expect(escapeHtml(`<b>"x" & 'y'</b>`)).toBe("&lt;b&gt;&quot;x&quot; &amp; &#39;y&#39;&lt;/b&gt;");
+    expect(escapeHtml(`<b>"x" & 'y'</b>`)).toBe(
+      "&lt;b&gt;&quot;x&quot; &amp; &#39;y&#39;&lt;/b&gt;",
+    );
     expect(safeHref("javascript:alert(1)")).toBe("#");
     expect(safeHref("viber://chat?number=%2B381")).toBe("viber://chat?number=%2B381");
     expect(inlineHtml("**<b>**")).toContain("&lt;b&gt;");
     expect(inlineHtml("[x](javascript:alert(1))")).toContain('href="#"');
-    expect(inlineText("Vidi [status](https://a.test/x) i **ovo**")).toBe("Vidi status: https://a.test/x i ovo");
+    expect(inlineText("Vidi [status](https://a.test/x) i **ovo**")).toBe(
+      "Vidi status: https://a.test/x i ovo",
+    );
   });
 });
 
@@ -103,8 +112,13 @@ describe("content rules", () => {
   });
 
   it("bank transfer without accounts says the data follows", () => {
-    const data = { ...SAMPLES.orderBankTransfer(SITE), bank: { ...SAMPLES.orderBankTransfer(SITE).bank!, accounts: [] } };
-    expect(renderTemplate("order_confirmed", data, ctx).text).toContain("Broj računa šaljemo odvojeno");
+    const data = {
+      ...SAMPLES.orderBankTransfer(SITE),
+      bank: { ...SAMPLES.orderBankTransfer(SITE).bank!, accounts: [] },
+    };
+    expect(renderTemplate("order_confirmed", data, ctx).text).toContain(
+      "Broj računa šaljemo odvojeno",
+    );
   });
 
   it("consumers get the 14-day withdrawal note, companies and mechanics do not", () => {
@@ -116,15 +130,27 @@ describe("content rules", () => {
       ctx,
     );
     expect(company.text).not.toContain("14 dana");
-    const picked = renderTemplate("order_delivered", { ...SAMPLES.orderDelivered(SITE), status: "preuzeta" }, ctx);
+    const picked = renderTemplate(
+      "order_delivered",
+      { ...SAMPLES.orderDelivered(SITE), status: "preuzeta" },
+      ctx,
+    );
     expect(picked.subject).toBe("Porudžbina SK-2026-000187 je preuzeta");
   });
 
   it("subjects follow the design system (§11.6)", () => {
-    expect(renderSample("order_received", ctx).subject).toBe("Porudžbina SK-2026-000187 je primljena");
-    expect(renderSample("staff_order_new", ctx).subject).toBe("Nova porudžbina SK-2026-000187 — 33.260 RSD");
-    expect(renderSample("staff_inquiry_new", ctx).subject).toBe("Novi upit UP-2026-000045 — Golf VII, turbina");
-    expect(renderSample("mechanic_approved", ctx).subject).toBe("Nalog je odobren — Majstor Plus (15 %)");
+    expect(renderSample("order_received", ctx).subject).toBe(
+      "Porudžbina SK-2026-000187 je primljena",
+    );
+    expect(renderSample("staff_order_new", ctx).subject).toBe(
+      "Nova porudžbina SK-2026-000187 — 33.260 RSD",
+    );
+    expect(renderSample("staff_inquiry_new", ctx).subject).toBe(
+      "Novi upit UP-2026-000045 — Golf VII, turbina",
+    );
+    expect(renderSample("mechanic_approved", ctx).subject).toBe(
+      "Nalog je odobren — Majstor Plus (15 %)",
+    );
     expect(renderSample("back_in_stock", ctx).subject).toBe("Stiglo je: Kočione pločice prednje");
     expect(renderSample("staff_low_stock", ctx).subject).toBe("Malo na stanju: 3 artikla");
     expect(renderSample("staff_daily_digest", ctx).subject).toBe(

@@ -93,12 +93,13 @@ export const rekeyStatusLinks = internalMutation({
   },
   returns: v.object({ updated: v.number(), done: v.boolean() }),
   handler: async (ctx, { table, cursor }) => {
-    const page = await ctx.db
-      .query(table)
-      .paginate({ numItems: BATCH, cursor: cursor ?? null });
+    const page = await ctx.db.query(table).paginate({ numItems: BATCH, cursor: cursor ?? null });
     let updated = 0;
     for (const doc of page.page) {
-      const { tokenHash } = await issueStatusLink(table === "orders" ? "order" : "inquiry", doc.number);
+      const { tokenHash } = await issueStatusLink(
+        table === "orders" ? "order" : "inquiry",
+        doc.number,
+      );
       if (doc.publicTokenHash !== tokenHash) {
         await ctx.db.patch(table, doc._id, { publicTokenHash: tokenHash });
         updated++;

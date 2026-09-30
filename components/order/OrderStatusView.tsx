@@ -87,7 +87,9 @@ export function OrderStatusView({
                     {item.quantity} × {formatRSD(item.unitPricePara)}
                   </span>
                 </span>
-                <span className="shrink-0 tabular-nums text-ink-1">{formatRSD(item.lineTotalPara)}</span>
+                <span className="shrink-0 tabular-nums text-ink-1">
+                  {formatRSD(item.lineTotalPara)}
+                </span>
               </li>
             ))}
           </ul>
@@ -102,10 +104,14 @@ export function OrderStatusView({
             </div>
             <div className="flex items-baseline justify-between border-t border-line pt-2">
               <dt className="font-semibold text-ink-1">Ukupno</dt>
-              <dd className="type-numeral-m tabular-nums text-ink-1">{formatRSD(o.totals.totalPara)}</dd>
+              <dd className="type-numeral-m tabular-nums text-ink-1">
+                {formatRSD(o.totals.totalPara)}
+              </dd>
             </div>
           </dl>
-          <p className="mt-1 type-caption font-normal text-ink-3">Uračunat PDV: {formatRSD(o.totals.vatPara)}</p>
+          <p className="mt-1 type-caption font-normal text-ink-3">
+            Uračunat PDV: {formatRSD(o.totals.vatPara)}
+          </p>
         </section>
       </div>
       <aside className="flex flex-col gap-6 lg:col-span-5">
@@ -149,17 +155,65 @@ export function OrderStatusView({
             </p>
           ) : null}
         </section>
+        <OrderNotices order={o} />
         <section className="rounded-sm border border-line bg-surface-1 p-5">
           <h2 className="type-h4 text-ink-1">Kupac</h2>
           <p className="mt-2 type-body-s text-ink-2">
             {o.contact.firstName} {o.contact.lastName}
             <span className="block">{formatPhone(o.contact.phone)}</span>
             <span className="block break-all">{o.contact.email}</span>
-            {o.company ? <span className="block">{o.company.name} · PIB {o.company.pib}</span> : null}
+            {o.company ? (
+              <span className="block">
+                {o.company.name} · PIB {o.company.pib}
+              </span>
+            ) : null}
           </p>
-          {o.vehicle ? <p className="mt-2 type-caption font-normal text-ink-3">Vozilo: {o.vehicle.label}</p> : null}
+          {o.vehicle ? (
+            <p className="mt-2 type-caption font-normal text-ink-3">Vozilo: {o.vehicle.label}</p>
+          ) : null}
         </section>
       </aside>
     </div>
+  );
+}
+
+/**
+ * Customer notices: where status news arrives and the e-mails already sent (history rows
+ * `email_sent`, visible only when delivery is test/live — log mode never claims a sent mail).
+ */
+function OrderNotices({ order }: { order: OrderView }) {
+  const sent = order.timeline
+    .filter((e) => e.type === "email_sent")
+    .slice(-3)
+    .reverse();
+  return (
+    <section
+      className="rounded-sm border border-line bg-surface-1 p-5"
+      aria-labelledby="notices-title"
+      data-testid="order-notices"
+    >
+      <h2 id="notices-title" className="type-h4 text-ink-1">
+        Obaveštenja
+      </h2>
+      <p className="mt-2 type-body-s text-ink-2">
+        {order.emailUpdates
+          ? `Svaku promenu javljamo i e-poštom na ${order.contact.email}. Ova stranica se osvežava sama.`
+          : "Svaku promenu vidite na ovoj stranici — osvežava se sama, bez ponovnog učitavanja."}
+      </p>
+      {sent.length ? (
+        <ul className="mt-3 flex flex-col gap-2 border-t border-line pt-3">
+          {sent.map((e) => (
+            <li key={e.at} className="flex flex-col">
+              <span className="type-body-s text-ink-1">
+                {(e.message ?? "").replace(/^Poslata e-pošta: /, "")}
+              </span>
+              <span className="type-caption font-normal tabular-nums text-ink-3">
+                E-pošta · {formatDateTime(e.at)}
+              </span>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+    </section>
   );
 }

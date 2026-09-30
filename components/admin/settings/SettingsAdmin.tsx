@@ -18,7 +18,10 @@ import { Markdown } from "@/lib/content/markdown";
 import { moneyInputValue, parseMoneyInput, parsePercent } from "@/lib/admin/format";
 import { formatDate } from "@/lib/format/date";
 import { normalizePhone } from "@/lib/format/phone";
-import { ADMIN_COPY, WEEKDAY_LABEL } from "@/lib/i18n/sr/admin";
+import { ADMIN_COPY, EMAIL_MODE_LABEL, WEEKDAY_LABEL } from "@/lib/i18n/sr/admin";
+import { cn } from "@/lib/cn";
+import { RouteLink } from "@/components/ui/RouteLink";
+import { ADMIN } from "@/constants/routes";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
 import { placeholderValues } from "@/lib/settings/public";
 import { Badge } from "@/components/ui/Badge";
@@ -36,6 +39,7 @@ import { toast } from "@/components/ui/Toast";
 
 import { ConfirmDialog, useConfirm } from "../ConfirmDialog";
 import { useAdminShell } from "../shell/context";
+import { NotificationPrefsMatrix } from "./NotificationPrefsMatrix";
 import { PageHeader, SaveBar, Section } from "../ui";
 import { useUrlFilters } from "../useUrlFilters";
 
@@ -950,13 +954,6 @@ function NotificationsTab({ s, can }: { s: Settings; can: boolean }) {
   const setPrefs = useMutation(api.notifications.setPreferences);
   const [emails, setEmails] = useState(s.notifications.staffEmails.join(", "));
   const d = n.draft;
-  const prefRows = [
-    ["orderNew", "Nova porudžbina"],
-    ["inquiryNew", "Novi upit"],
-    ["mechanicNew", "Nova registracija majstora"],
-    ["lowStock", "Malo na stanju"],
-    ["reminders", "Podsetnici za neodgovorene"],
-  ] as const;
   return (
     <div className="flex flex-col gap-6">
       <fieldset disabled={!can}>
@@ -1023,72 +1020,124 @@ function NotificationsTab({ s, can }: { s: Settings; can: boolean }) {
           ) : null}
         </Group>
       </fieldset>
+      <EmailDeliveryGroup s={s} can={can} />
       <Group title="Moja obaveštenja" description="Šta vi dobijate — važi samo za vaš nalog.">
         {!prefs ? (
           <Skeleton className="h-40 w-full" />
         ) : (
-          <table className="w-full max-w-xl border-collapse type-body-s">
-            <thead>
-              <tr className="border-b border-line text-left type-label uppercase text-ink-3">
-                <th scope="col" className="py-2">
-                  Događaj
-                </th>
-                <th scope="col" className="py-2 text-center">
-                  U aplikaciji
-                </th>
-                <th scope="col" className="py-2 text-center">
-                  E-pošta
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {prefRows.map(([key, label]) => (
-                <tr key={key} className="border-b border-line-faint">
-                  <th scope="row" className="py-1 text-left font-normal">
-                    {label}
-                  </th>
-                  {(["inApp", "email"] as const).map((ch) => (
-                    <td key={ch} className="py-1 text-center">
-                      <span className="inline-flex">
-                        <Checkbox
-                          label={
-                            <span className="sr-only">{`${label}, ${ch === "inApp" ? "u aplikaciji" : "e-pošta"}`}</span>
-                          }
-                          checked={prefs[ch][key]}
-                          onCheckedChange={(v) =>
-                            void setPrefs({
-                              ...prefs,
-                              [ch]: { ...prefs[ch], [key]: v === true },
-                            }).then(() => toast.success(ADMIN_COPY.saved))
-                          }
-                        />
-                      </span>
-                    </td>
-                  ))}
-                </tr>
-              ))}
-              <tr>
-                <th scope="row" className="py-1 text-left font-normal">
-                  Dnevni pregled
-                </th>
-                <td />
-                <td className="py-1 text-center">
-                  <span className="inline-flex">
-                    <Checkbox
-                      label={<span className="sr-only">Dnevni pregled, e-pošta</span>}
-                      checked={prefs.email.digest}
-                      onCheckedChange={(v) =>
-                        void setPrefs({ ...prefs, email: { ...prefs.email, digest: v === true } })
-                      }
-                    />
-                  </span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <NotificationPrefsMatrix
+            prefs={prefs}
+            onChange={(next) => void setPrefs(next).then(() => toast.success(ADMIN_COPY.saved))}
+          />
         )}
       </Group>
     </div>
+  );
+}
+
+const MODE_HELP = {
+  log: "Poruke se samo beleže u E-pošti; ništa ne odlazi. Bezbedno dok firma, domen i ključ nisu spremni.",
+  test: "Poruke idu kroz Resend, ali stižu na delivered@resend.dev — provera da slanje radi.",
+  live: "Poruke stižu kupcima, majstorima i osoblju. Potrebni su ključ, verifikovan domen i adresa pošiljaoca.",
+} as const;
+
+/** Owner: delivery mode, sender name and reply-to (settings `email`, falls back to EMAIL_MODE). */
+function EmailDeliveryGroup({ s, can }: { s: Settings; can: boolean }) {
+  const config = useQuery(api.emailsAdmin.config, {});
+  const current = s.email ?? { mode: config?.requested ?? "log" };
+  const e = useSection("email", current);
+  const d = e.draft;
+  return (
+    <fieldset disabled={!can}>
+      <Group
+        title="Slanje e-pošte"
+        description={
+          <>
+            Režim važi za sve poruke. Sadržaj i izgled poruka vidite u delu{" "}
+            <RouteLink
+              href={ADMIN.emailTemplates}
+              className="text-accent-text underline underline-offset-2"
+            >
+              E-pošta → Šabloni
+            </RouteLink>
+            .
+          </>
+        }
+      >
+        <div className="flex max-w-2xl flex-col gap-2" role="radiogroup" aria-label="Režim slanja">
+          {(["log", "test", "live"] as const).map((mode) => {
+            const blocked = config?.available[mode] ?? null;
+            return (
+              <label
+                key={mode}
+                className={cn(
+                  "flex cursor-pointer items-start gap-3 rounded-sm border px-3 py-2.5",
+                  d.mode === mode ? "border-accent bg-accent-subtle" : "border-line",
+                  blocked && d.mode !== mode && "opacity-70",
+                )}
+              >
+                <input
+                  type="radio"
+                  name="email-mode"
+                  value={mode}
+                  checked={d.mode === mode}
+                  onChange={() => e.setDraft({ ...d, mode })}
+                  className="mt-1 size-4 accent-[var(--color-accent)]"
+                />
+                <span className="flex flex-col gap-0.5">
+                  <span className="type-body-s font-semibold text-ink-1">
+                    {EMAIL_MODE_LABEL[mode]}
+                    {config?.effective === mode ? (
+                      <span className="ml-2 font-normal text-success">— sada aktivno</span>
+                    ) : null}
+                  </span>
+                  <span className="type-caption text-ink-2">{MODE_HELP[mode]}</span>
+                  {blocked ? <span className="type-caption text-warning">{blocked}</span> : null}
+                </span>
+              </label>
+            );
+          })}
+        </div>
+        <div className="mt-4 grid max-w-2xl gap-4 md:grid-cols-2">
+          <Field label="Ime pošiljaoca" help={`Prazno: ${s.brand.name}.`}>
+            <Input
+              value={d.fromName ?? ""}
+              onChange={(ev) => e.setDraft({ ...d, fromName: opt(ev.target.value) })}
+              maxLength={60}
+            />
+          </Field>
+          <Field
+            label="Odgovori stižu na"
+            help={
+              s.company.email
+                ? `Prazno: ${s.company.email}.`
+                : "Prazno: e-pošta firme iz podešavanja."
+            }
+          >
+            <Input
+              type="email"
+              value={d.replyTo ?? ""}
+              onChange={(ev) => e.setDraft({ ...d, replyTo: opt(ev.target.value) })}
+            />
+          </Field>
+        </div>
+        {config && config.webhookUrl ? (
+          <p className="mt-3 type-caption text-ink-3">
+            Adresa za Resend webhook (status isporuke):{" "}
+            <span className="type-code-s normal-case text-ink-2">{config.webhookUrl}</span>
+          </p>
+        ) : null}
+        {can ? (
+          <SaveBar
+            dirty={e.dirty}
+            saving={e.saving}
+            onSave={() => void e.save(d)}
+            onDiscard={e.reset}
+            message="Režim slanja nije sačuvan."
+          />
+        ) : null}
+      </Group>
+    </fieldset>
   );
 }
 

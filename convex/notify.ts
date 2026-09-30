@@ -63,7 +63,9 @@ async function orderHistory(
     orderId,
     type: "email_sent",
     message:
-      mode === "log" ? `E-pošta zabeležena (nije poslata, režim log): ${subject}` : `Poslata e-pošta: ${subject}`,
+      mode === "log"
+        ? `E-pošta zabeležena (nije poslata, režim log): ${subject}`
+        : `Poslata e-pošta: ${subject}`,
     // The customer sees the notice only when the message really went out.
     visibleToCustomer: mode !== "log",
     actor: SYSTEM_ACTOR,
@@ -81,7 +83,9 @@ async function inquiryHistory(
     inquiryId,
     type: "email_sent",
     message:
-      mode === "log" ? `E-pošta zabeležena (nije poslata, režim log): ${subject}` : `Poslata e-pošta: ${subject}`,
+      mode === "log"
+        ? `E-pošta zabeležena (nije poslata, režim log): ${subject}`
+        : `Poslata e-pošta: ${subject}`,
     visibleToCustomer: mode !== "log",
     actor: SYSTEM_ACTOR,
     at: Date.now(),
@@ -133,7 +137,11 @@ async function build(
       return {
         kind: "send",
         to,
-        rendered: renderTemplate(templateKey, await staffOrderData(ctx, order, settings, ectx), ectx),
+        rendered: renderTemplate(
+          templateKey,
+          await staffOrderData(ctx, order, settings, ectx),
+          ectx,
+        ),
         related: { type: "order", id: order._id },
         ...flagsOf(order),
       };

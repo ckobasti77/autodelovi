@@ -14,11 +14,17 @@ export async function sendTemplateNow<K extends TemplateKey>(
   key: K,
   data: TemplateDataMap[K],
   to: readonly string[],
-  opts: { related?: { type: RelatedType; id?: string }; subjectPrefix?: string; forceLog?: boolean } = {},
+  opts: {
+    related?: { type: RelatedType; id?: string };
+    subjectPrefix?: string;
+    forceLog?: boolean;
+  } = {},
 ): Promise<SendEmailResult> {
   const settings = await getSettings(ctx);
   const rendered = renderTemplate(key, data, emailContext(settings, siteUrl()));
-  const subject = opts.subjectPrefix ? `${opts.subjectPrefix}${rendered.subject}` : rendered.subject;
+  const subject = opts.subjectPrefix
+    ? `${opts.subjectPrefix}${rendered.subject}`
+    : rendered.subject;
   return await sendEmail(ctx, settings, {
     to,
     rendered: { ...rendered, subject },

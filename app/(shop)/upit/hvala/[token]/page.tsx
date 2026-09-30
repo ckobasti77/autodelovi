@@ -32,8 +32,11 @@ export default async function InquiryThanksPage({ params }: PageProps<"/upit/hva
           Upit je primljen.
         </RevealText>
         <p className="type-lead text-ink-2" data-reveal="off">
-          Broj upita je <span className="type-code-l text-ink-1" data-testid="inquiry-number">{inquiry.number}</span>.
-          Odgovaramo u toku radnog dana.
+          Broj upita je{" "}
+          <span className="type-code-l text-ink-1" data-testid="inquiry-number">
+            {inquiry.number}
+          </span>
+          . Odgovaramo u toku radnog dana.
         </p>
         <p className="type-body text-ink-2">
           Ponudu vidite i na{" "}
@@ -42,7 +45,10 @@ export default async function InquiryThanksPage({ params }: PageProps<"/upit/hva
           </Link>{" "}
           — sačuvajte link.
         </p>
-        <ContactActions links={contactLinkList(contactFromSettings(settings))} location="inquiry_thanks" />
+        <ContactActions
+          links={contactLinkList(contactFromSettings(settings), `Upit ${inquiry.number}`)}
+          location="inquiry_thanks"
+        />
       </div>
     </div>
   );

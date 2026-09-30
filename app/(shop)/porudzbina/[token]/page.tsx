@@ -30,7 +30,10 @@ export default async function OrderStatusPage({ params }: PageProps<"/porudzbina
         <OrderStatusView token={token} initial={order}>
           <div className="flex flex-col gap-2">
             <p className="type-body-s text-ink-2">Pitanje o porudžbini? Navedite njen broj.</p>
-            <ContactActions links={contactLinkList(contactFromSettings(settings))} location="order_status" />
+            <ContactActions
+              links={contactLinkList(contactFromSettings(settings), `Porudžbina ${order.number}`)}
+              location="order_status"
+            />
           </div>
         </OrderStatusView>
       </div>

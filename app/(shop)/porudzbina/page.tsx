@@ -19,9 +19,14 @@ export const metadata: Metadata = privateMetadata("Porudžbina");
 export default async function CheckoutPage() {
   const [settings, viewer] = await Promise.all([getSettingsPublic(), getViewer()]);
   const mechanic =
-    viewer?.mechanicStatus === "approved" ? await fetchAsUser(api.mechanicPortal.overview, {}) : null;
+    viewer?.mechanicStatus === "approved"
+      ? await fetchAsUser(api.mechanicPortal.overview, {})
+      : null;
   const contact = contactFromSettings(settings);
-  const address = [contact.address.street, [contact.address.postalCode, contact.address.city].filter(Boolean).join(" ")]
+  const address = [
+    contact.address.street,
+    [contact.address.postalCode, contact.address.city].filter(Boolean).join(" "),
+  ]
     .filter(Boolean)
     .join(", ");
   const guestBlocked = !viewer && !settings.flags.guestCheckout;
@@ -74,14 +79,20 @@ export default async function CheckoutPage() {
         Porudžbina
       </RevealText>
       <p className="mt-2 max-w-[60ch] type-body-s text-ink-3" data-reveal="off">
-        Bez plaćanja na sajtu. Potvrdu šaljemo e-poštom, a pre slanja vas zovemo ako nešto treba proveriti.
+        Bez plaćanja na sajtu. Potvrdu šaljemo e-poštom, a pre slanja vas zovemo ako nešto treba
+        proveriti.
       </p>
       <div className="mt-8">
         {guestBlocked ? (
           <div className="flex flex-col items-start gap-4 rounded-sm border border-line bg-surface-1 p-6">
-            <p className="type-body text-ink-2">Prijavite se da biste poručili. Korpa ostaje sačuvana.</p>
+            <p className="type-body text-ink-2">
+              Prijavite se da biste poručili. Korpa ostaje sačuvana.
+            </p>
             <Button asChild variant="primary">
-              <Link href={`${ROUTES.signIn}?next=${encodeURIComponent(ROUTES.checkout)}`} variant="unstyled">
+              <Link
+                href={`${ROUTES.signIn}?next=${encodeURIComponent(ROUTES.checkout)}`}
+                variant="unstyled"
+              >
                 Prijava
               </Link>
             </Button>

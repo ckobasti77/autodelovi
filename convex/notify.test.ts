@@ -6,7 +6,6 @@
 import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 
 import { api, internal } from "./_generated/api";
-import type { Id } from "./_generated/dataModel";
 import { TEMPLATES } from "../lib/email/registry";
 import { belgradeLocalToUtc } from "../lib/domain/time";
 import { SYSTEM_ACTOR } from "./lib/authz";
@@ -183,7 +182,10 @@ describe("preferences", () => {
     await w.asOwner.mutation(api.settings.updateSection, {
       update: {
         section: "notifications",
-        value: { ...settings.notifications, staffEmails: ["prodaja@primer.rs", "STAFF@sklop.test"] },
+        value: {
+          ...settings.notifications,
+          staffEmails: ["prodaja@primer.rs", "STAFF@sklop.test"],
+        },
       },
     });
     await placeOrder(w);
@@ -218,7 +220,9 @@ describe("preferences", () => {
         inApp: current!.inApp,
       }),
     ).rejects.toThrow();
-    expect(await w.asOwner.query(api.notifications.preferencesFor, { userId: w.customerA })).toBeNull();
+    expect(
+      await w.asOwner.query(api.notifications.preferencesFor, { userId: w.customerA }),
+    ).toBeNull();
   });
 });
 
@@ -237,7 +241,9 @@ describe("idempotency and retries", () => {
     await drain(t);
     expect((await emails(t)).length).toBe(before);
     const deliveries = await t.run(async (ctx) =>
-      (await ctx.db.query("notificationDeliveries").take(100)).filter((d) => d.eventId === event!._id),
+      (await ctx.db.query("notificationDeliveries").take(100)).filter(
+        (d) => d.eventId === event!._id,
+      ),
     );
     const keys = deliveries.map((d) => `${d.channel}:${d.recipient}`);
     expect(new Set(keys).size).toBe(keys.length);
@@ -331,7 +337,8 @@ describe("delivery modes", () => {
     const deliveries = await t.run(async (ctx) =>
       (await ctx.db.query("notificationDeliveries").take(100)).filter((d) => d.channel === "email"),
     );
-    for (const d of deliveries) await t.mutation(internal.notify.deliverEmail, { deliveryId: d._id });
+    for (const d of deliveries)
+      await t.mutation(internal.notify.deliverEmail, { deliveryId: d._id });
     const received = (await emails(t)).find((m) => m.templateKey === "order_received")!;
     expect(received.mode).toBe("test");
     expect(received.status).toBe("queued");
@@ -362,7 +369,9 @@ describe("admin outbox", () => {
     expect(list.length).toBe(25);
     const preview = await w.asStaff.query(api.emailsAdmin.preview, { key: "order_confirmed" });
     expect(preview!.subject).toContain("potvrđena");
-    await expect(w.asCustomerA.query(api.emailsAdmin.preview, { key: "order_confirmed" })).rejects.toThrow();
+    await expect(
+      w.asCustomerA.query(api.emailsAdmin.preview, { key: "order_confirmed" }),
+    ).rejects.toThrow();
 
     const sent = await w.asStaff.mutation(api.emailsAdmin.sendTest, { key: "back_in_stock" });
     expect(sent).toMatchObject({ mode: "log", to: "staff@sklop.test" });
@@ -409,7 +418,11 @@ describe("webhook feedback", () => {
     await drain(t);
     const received = (await emails(t)).find((m) => m.templateKey === "order_received")!;
     await t.run(async (ctx) =>
-      ctx.db.patch("emailLog", received._id, { resendEmailId: "email_1", status: "queued", mode: "live" }),
+      ctx.db.patch("emailLog", received._id, {
+        resendEmailId: "email_1",
+        status: "queued",
+        mode: "live",
+      }),
     );
     const common = {
       created_at: "2026-09-30T10:00:00.000Z",
@@ -425,11 +438,16 @@ describe("webhook feedback", () => {
       } as never);
     await fire({ type: "email.delivered", created_at: common.created_at, data: common });
     await fire({ type: "email.sent", created_at: common.created_at, data: common });
-    expect((await t.run(async (ctx) => ctx.db.get("emailLog", received._id)))!.status).toBe("delivered");
+    expect((await t.run(async (ctx) => ctx.db.get("emailLog", received._id)))!.status).toBe(
+      "delivered",
+    );
     await fire({
       type: "email.bounced",
       created_at: common.created_at,
-      data: { ...common, bounce: { message: "Mailbox does not exist", subType: "General", type: "Permanent" } },
+      data: {
+        ...common,
+        bounce: { message: "Mailbox does not exist", subType: "General", type: "Permanent" },
+      },
     });
     await drain(t);
     const after = await t.run(async (ctx) => ctx.db.get("emailLog", received._id));
@@ -574,7 +592,9 @@ describe("crons (fake time, Europe/Belgrade)", () => {
         .take(10),
     );
     expect(subs.map((s) => s.status).sort()).toEqual(["cancelled", "notified"]);
-    expect(await hashToken(token)).toBe(subs.find((s) => s.status === "notified")!.unsubscribeTokenHash);
+    expect(await hashToken(token)).toBe(
+      subs.find((s) => s.status === "notified")!.unsubscribeTokenHash,
+    );
   });
 
   test("quotes expiring within 24 h remind the customer once", async () => {
@@ -593,7 +613,9 @@ describe("crons (fake time, Europe/Belgrade)", () => {
         version: 1,
         status: "sent",
         validUntil: now + 20 * 3_600_000,
-        lines: [{ name: "Turbina", quantity: 1, unitPricePara: 8_990_000, availability: "in_stock" }],
+        lines: [
+          { name: "Turbina", quantity: 1, unitPricePara: 8_990_000, availability: "in_stock" },
+        ],
         totalPara: 8_990_000,
         sentAt: now - 6 * 86_400_000,
       });

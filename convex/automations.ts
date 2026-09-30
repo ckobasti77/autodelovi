@@ -188,7 +188,12 @@ export const lowStockSweep = internalMutation({
       // Only products that are still low or out now (a receipt may have fixed it).
       if (!product || !product.active) continue;
       if (product.stockState !== "low_stock" && product.stockState !== "out_of_stock") continue;
-      items.push({ productId: product._id, sku: product.sku, name: product.name, qty: product.stockQty });
+      items.push({
+        productId: product._id,
+        sku: product.sku,
+        name: product.name,
+        qty: product.stockQty,
+      });
     }
     if (items.length === 0) return { items: 0 };
     await emitEvent(ctx, {
@@ -251,7 +256,10 @@ export const quoteExpiringSweep = internalMutation({
     const due = await ctx.db
       .query("quotes")
       .withIndex("by_status_and_validUntil", (q) =>
-        q.eq("status", "sent").gt("validUntil", now).lte("validUntil", now + 24 * HOUR_MS),
+        q
+          .eq("status", "sent")
+          .gt("validUntil", now)
+          .lte("validUntil", now + 24 * HOUR_MS),
       )
       .take(100);
     let reminded = 0;
@@ -325,7 +333,12 @@ async function pruneOrphanUploads(ctx: MutationCtx, now: number, counts: PruneCo
   if (last) {
     // The watermark is a cronRuns row whose `ranAt` holds the last scanned creation time.
     if (cursor) await ctx.db.patch("cronRuns", cursor._id, { ranAt: last._creationTime });
-    else await ctx.db.insert("cronRuns", { job: "orphanScan", localKey: "cursor", ranAt: last._creationTime });
+    else
+      await ctx.db.insert("cronRuns", {
+        job: "orphanScan",
+        localKey: "cursor",
+        ranAt: last._creationTime,
+      });
   }
   counts.orphanUploads = deleted;
   return files.length === BATCH;
@@ -337,7 +350,9 @@ async function pruneEmailLog(ctx: MutationCtx, now: number, counts: PruneCounts)
   const rows = await ctx.db
     .query("emailLog")
     .withIndex("by_creation_time", (q) =>
-      q.gt("_creationTime", htmlCursor?.ranAt ?? 0).lt("_creationTime", now - RETENTION.emailHtmlMs),
+      q
+        .gt("_creationTime", htmlCursor?.ranAt ?? 0)
+        .lt("_creationTime", now - RETENTION.emailHtmlMs),
     )
     .take(BATCH);
   let stripped = 0;
@@ -350,7 +365,12 @@ async function pruneEmailLog(ctx: MutationCtx, now: number, counts: PruneCounts)
   const last = rows[rows.length - 1];
   if (last) {
     if (htmlCursor) await ctx.db.patch("cronRuns", htmlCursor._id, { ranAt: last._creationTime });
-    else await ctx.db.insert("cronRuns", { job: "emailHtml", localKey: "cursor", ranAt: last._creationTime });
+    else
+      await ctx.db.insert("cronRuns", {
+        job: "emailHtml",
+        localKey: "cursor",
+        ranAt: last._creationTime,
+      });
   }
   more ||= rows.length === BATCH;
   const old = await ctx.db
@@ -401,13 +421,17 @@ async function pruneSimple(ctx: MutationCtx, now: number, counts: PruneCounts) {
 
   let subs = 0;
   for (const status of ["notified", "cancelled", "active"] as const) {
-    const cutoff = status === "active" ? RETENTION.subscriptionMaxMs : RETENTION.subscriptionAfterNotifyMs;
+    const cutoff =
+      status === "active" ? RETENTION.subscriptionMaxMs : RETENTION.subscriptionAfterNotifyMs;
     const rows = await ctx.db
       .query("backInStockSubscriptions")
       .withIndex("by_status", (q) => q.eq("status", status).lt("_creationTime", now - cutoff))
       .take(BATCH);
     for (const row of rows) {
-      if (status === "notified" && (row.notifiedAt ?? 0) > now - RETENTION.subscriptionAfterNotifyMs)
+      if (
+        status === "notified" &&
+        (row.notifiedAt ?? 0) > now - RETENTION.subscriptionAfterNotifyMs
+      )
         continue;
       await ctx.db.delete("backInStockSubscriptions", row._id);
       subs++;

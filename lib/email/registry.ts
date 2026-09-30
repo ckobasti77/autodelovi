@@ -3,6 +3,14 @@
  * (admin gallery previews, „Pošalji probnu poruku“, snapshot tests). Keys are stored in
  * `emailLog.templateKey` and `notificationDeliveries.templateKey` — never rename one.
  */
+import {
+  isTemplateKey,
+  TEMPLATE_GROUP_LABEL,
+  TEMPLATE_INFO,
+  TEMPLATE_KEYS,
+  type TemplateGroup,
+  type TemplateKey,
+} from "./catalog";
 import type { EmailContext } from "./context";
 import type { RenderedEmail } from "./html";
 import { SAMPLES } from "./samples";
@@ -81,9 +89,7 @@ export type TemplateDataMap = {
   staff_reminder: StaffReminderEmailData;
 };
 
-export type TemplateKey = keyof TemplateDataMap;
-
-export type TemplateGroup = "orders" | "inquiries" | "mechanics" | "account" | "staff";
+export type { TemplateGroup, TemplateKey };
 
 export type TemplateDef<K extends TemplateKey> = {
   key: K;
@@ -97,223 +103,170 @@ export type TemplateDef<K extends TemplateKey> = {
 
 type Registry = { [K in TemplateKey]: TemplateDef<K> };
 
+// Every catalogue key needs a data type (compile-time check).
+type _Complete = [TemplateKey] extends [keyof TemplateDataMap]
+  ? [keyof TemplateDataMap] extends [TemplateKey]
+    ? true
+    : never
+  : never;
+const _complete: _Complete = true;
+void _complete;
+
 /** Mutable on purpose: tests replace a renderer to simulate failures (see notify.test.ts). */
 export const TEMPLATES: Registry = {
   order_received: {
     key: "order_received",
-    label: "Porudžbina primljena",
-    group: "orders",
-    trigger: "Kupac pošalje porudžbinu (i kad prihvati ponudu).",
+    ...TEMPLATE_INFO.order_received,
     render: orderReceived,
     sample: SAMPLES.orderCourierCod,
   },
   order_confirmed: {
     key: "order_confirmed",
-    label: "Porudžbina potvrđena (predračun)",
-    group: "orders",
-    trigger: "Status → potvrđena. Uz virman ide predračun i poziv na broj.",
+    ...TEMPLATE_INFO.order_confirmed,
     render: orderConfirmed,
     sample: SAMPLES.orderBankTransfer,
   },
   order_backordered: {
     key: "order_backordered",
-    label: "Porudžbina čeka deo",
-    group: "orders",
-    trigger: "Status → čeka deo.",
+    ...TEMPLATE_INFO.order_backordered,
     render: orderBackordered,
     sample: SAMPLES.orderBackorder,
   },
   order_ready_pickup: {
     key: "order_ready_pickup",
-    label: "Spremna za preuzimanje",
-    group: "orders",
-    trigger: "Status → spremna za preuzimanje.",
+    ...TEMPLATE_INFO.order_ready_pickup,
     render: orderReadyPickup,
     sample: SAMPLES.orderPickup,
   },
   order_shipped: {
     key: "order_shipped",
-    label: "Porudžbina poslata",
-    group: "orders",
-    trigger: "Status → poslata (kurir i broj pošiljke).",
+    ...TEMPLATE_INFO.order_shipped,
     render: orderShipped,
     sample: SAMPLES.orderShipped,
   },
   order_delivered: {
     key: "order_delivered",
-    label: "Isporučena / preuzeta",
-    group: "orders",
-    trigger: "Status → isporučena ili preuzeta (reklamacije i odustanak).",
+    ...TEMPLATE_INFO.order_delivered,
     render: orderDelivered,
     sample: SAMPLES.orderDelivered,
   },
   order_cancelled: {
     key: "order_cancelled",
-    label: "Porudžbina otkazana",
-    group: "orders",
-    trigger: "Status → otkazana (sa razlogom).",
+    ...TEMPLATE_INFO.order_cancelled,
     render: orderCancelled,
     sample: SAMPLES.orderCancelled,
   },
   inquiry_received: {
     key: "inquiry_received",
-    label: "Upit primljen",
-    group: "inquiries",
-    trigger: "Kupac pošalje upit (VIN, deo, brza porudžbina).",
+    ...TEMPLATE_INFO.inquiry_received,
     render: inquiryReceived,
     sample: SAMPLES.inquiry,
   },
   quote_ready: {
     key: "quote_ready",
-    label: "Ponuda spremna",
-    group: "inquiries",
-    trigger: "Osoblje pošalje ponudu (link za prihvatanje).",
+    ...TEMPLATE_INFO.quote_ready,
     render: quoteReady,
     sample: SAMPLES.inquiryWithQuote,
   },
   quote_expiring: {
     key: "quote_expiring",
-    label: "Ponuda uskoro ističe",
-    group: "inquiries",
-    trigger: "24 sata pre isteka poslate ponude.",
+    ...TEMPLATE_INFO.quote_expiring,
     render: quoteExpiring,
     sample: SAMPLES.inquiryWithQuote,
   },
   back_in_stock: {
     key: "back_in_stock",
-    label: "Deo je ponovo na stanju",
-    group: "inquiries",
-    trigger: "Artikal sa prijavama „Javi mi kad stigne“ dobije zalihu.",
+    ...TEMPLATE_INFO.back_in_stock,
     render: backInStock,
     sample: SAMPLES.backInStock,
   },
   mechanic_registration_received: {
     key: "mechanic_registration_received",
-    label: "Registracija majstora primljena",
-    group: "mechanics",
-    trigger: "Servis pošalje registraciju.",
+    ...TEMPLATE_INFO.mechanic_registration_received,
     render: mechanicRegistrationReceived,
     sample: SAMPLES.mechanic,
   },
   mechanic_approved: {
     key: "mechanic_approved",
-    label: "Majstor odobren (razred)",
-    group: "mechanics",
-    trigger: "Osoblje odobri registraciju ili ponovo aktivira nalog.",
+    ...TEMPLATE_INFO.mechanic_approved,
     render: mechanicApproved,
     sample: SAMPLES.mechanicApproved,
   },
   mechanic_rejected: {
     key: "mechanic_rejected",
-    label: "Registracija odbijena",
-    group: "mechanics",
-    trigger: "Osoblje odbije registraciju (sa razlogom).",
+    ...TEMPLATE_INFO.mechanic_rejected,
     render: mechanicRejected,
     sample: SAMPLES.mechanicRejected,
   },
   mechanic_suspended: {
     key: "mechanic_suspended",
-    label: "Majstorski nalog pauziran",
-    group: "mechanics",
-    trigger: "Osoblje pauzira majstorski nalog.",
+    ...TEMPLATE_INFO.mechanic_suspended,
     render: mechanicSuspended,
     sample: SAMPLES.mechanic,
   },
   password_reset_code: {
     key: "password_reset_code",
-    label: "Kod za novu lozinku",
-    group: "account",
-    trigger: "Korisnik zatraži novu lozinku.",
+    ...TEMPLATE_INFO.password_reset_code,
     render: passwordResetCode,
     sample: SAMPLES.passwordReset,
   },
   staff_invite: {
     key: "staff_invite",
-    label: "Pozivnica za administraciju",
-    group: "account",
-    trigger: "Vlasnik pozove zaposlenog (samo kad je slanje uživo).",
+    ...TEMPLATE_INFO.staff_invite,
     render: staffInvite,
     sample: SAMPLES.staffInvite,
   },
   staff_order_new: {
     key: "staff_order_new",
-    label: "Osoblje: nova porudžbina",
-    group: "staff",
-    trigger: "Stigne nova porudžbina.",
+    ...TEMPLATE_INFO.staff_order_new,
     render: staffOrderNew,
     sample: SAMPLES.staffOrder,
   },
   staff_inquiry_new: {
     key: "staff_inquiry_new",
-    label: "Osoblje: novi upit",
-    group: "staff",
-    trigger: "Stigne novi upit.",
+    ...TEMPLATE_INFO.staff_inquiry_new,
     render: staffInquiryNew,
     sample: SAMPLES.staffInquiry,
   },
   staff_mechanic_new: {
     key: "staff_mechanic_new",
-    label: "Osoblje: nova registracija majstora",
-    group: "staff",
-    trigger: "Servis pošalje registraciju.",
+    ...TEMPLATE_INFO.staff_mechanic_new,
     render: staffMechanicNew,
     sample: SAMPLES.staffMechanic,
   },
   staff_quote_accepted: {
     key: "staff_quote_accepted",
-    label: "Osoblje: ponuda prihvaćena",
-    group: "staff",
-    trigger: "Kupac prihvati ponudu (nastaje porudžbina).",
+    ...TEMPLATE_INFO.staff_quote_accepted,
     render: staffQuoteAccepted,
     sample: SAMPLES.staffQuoteAccepted,
   },
   staff_quote_renewal: {
     key: "staff_quote_renewal",
-    label: "Osoblje: traži se nova ponuda",
-    group: "staff",
-    trigger: "Kupac zatraži obnovljenu ponudu posle isteka.",
+    ...TEMPLATE_INFO.staff_quote_renewal,
     render: staffQuoteRenewal,
     sample: SAMPLES.staffQuoteRenewal,
   },
   staff_low_stock: {
     key: "staff_low_stock",
-    label: "Osoblje: malo na stanju",
-    group: "staff",
-    trigger: "Najviše jednom na sat, za artikle koji su pali na prag.",
+    ...TEMPLATE_INFO.staff_low_stock,
     render: staffLowStock,
     sample: SAMPLES.staffLowStock,
   },
   staff_daily_digest: {
     key: "staff_daily_digest",
-    label: "Osoblje: dnevni pregled",
-    group: "staff",
-    trigger: "Svakog dana u zadati sat (podrazumevano 08:00).",
+    ...TEMPLATE_INFO.staff_daily_digest,
     render: staffDailyDigest,
     sample: SAMPLES.staffDigest,
   },
   staff_reminder: {
     key: "staff_reminder",
-    label: "Osoblje: podsetnik",
-    group: "staff",
-    trigger: "Porudžbina ili upit bez odgovora duže od zadatog radnog vremena.",
+    ...TEMPLATE_INFO.staff_reminder,
     render: staffReminder,
     sample: SAMPLES.staffReminder,
   },
 };
 
-export const TEMPLATE_KEYS = Object.keys(TEMPLATES) as TemplateKey[];
-
-export const TEMPLATE_GROUP_LABEL: Record<TemplateGroup, string> = {
-  orders: "Porudžbine",
-  inquiries: "Upiti i ponude",
-  mechanics: "Majstori",
-  account: "Nalog",
-  staff: "Osoblje",
-};
-
-export function isTemplateKey(value: string): value is TemplateKey {
-  return Object.prototype.hasOwnProperty.call(TEMPLATES, value);
-}
+export { isTemplateKey, TEMPLATE_GROUP_LABEL, TEMPLATE_KEYS };
 
 /** Renders a template with typed data (the only entry point used by Convex). */
 export function renderTemplate<K extends TemplateKey>(
@@ -328,5 +281,8 @@ export function renderTemplate<K extends TemplateKey>(
 /** Renders a template with its sample data (gallery, test send). */
 export function renderSample(key: TemplateKey, ctx: EmailContext): RenderedEmail {
   const def = TEMPLATES[key] as TemplateDef<typeof key>;
-  return (def.render as (d: unknown, c: EmailContext) => RenderedEmail)(def.sample(ctx.siteUrl), ctx);
+  return (def.render as (d: unknown, c: EmailContext) => RenderedEmail)(
+    def.sample(ctx.siteUrl),
+    ctx,
+  );
 }

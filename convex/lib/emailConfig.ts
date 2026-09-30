@@ -6,7 +6,14 @@
  * `test` needs `RESEND_API_KEY`; `live` also needs `EMAIL_FROM` (an address on a domain
  * verified in Resend). In `log` the Resend component is never called.
  */
-import { emailFrom, emailModeFromEnv, linkTokenSecretIsSet, resendConfigured, siteUrl, type EmailMode } from "./env";
+import {
+  emailFrom,
+  emailModeFromEnv,
+  linkTokenSecretIsSet,
+  resendConfigured,
+  siteUrl,
+  type EmailMode,
+} from "./env";
 import type { Settings } from "./settingsSchema";
 
 export const RESEND_TEST_RECIPIENT = "delivered@resend.dev";
@@ -63,10 +70,14 @@ export function resolveEmailConfig(settings: Settings): EmailDeliveryConfig {
     warnings.push("Nedostaje EMAIL_FROM (adresa na verifikovanom domenu) — poruke se samo beleže.");
   }
   if (effective !== "log" && !capabilities.webhookSecret) {
-    warnings.push("Nedostaje RESEND_WEBHOOK_SECRET — status isporuke (isporučeno, odbijeno) se ne ažurira.");
+    warnings.push(
+      "Nedostaje RESEND_WEBHOOK_SECRET — status isporuke (isporučeno, odbijeno) se ne ažurira.",
+    );
   }
   if (!capabilities.linkSecret) {
-    warnings.push("Nedostaje LINK_TOKEN_SECRET — linkovi ka statusu porudžbine koriste razvojni ključ.");
+    warnings.push(
+      "Nedostaje LINK_TOKEN_SECRET — linkovi ka statusu porudžbine koriste razvojni ključ.",
+    );
   }
   const name = displayName(settings);
   const from =

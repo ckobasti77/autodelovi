@@ -1,9 +1,9 @@
 "use client";
 
 /**
- * `/admin/korisnici` (owner): staff accounts with role and block controls, and invites.
- * An invite shows its one-time setup link once, with a copy button — it works without
- * e-mail delivery (the e-mail itself arrives with step 18).
+ * `/admin/korisnici` (owner): staff accounts with role, block controls and notification
+ * preferences per person, and invites. An invite shows its one-time setup link once, with a
+ * copy button — it works without e-mail delivery; in live mode it is also e-mailed.
  */
 import { useMutation, useQuery } from "convex/react";
 import { useState } from "react";
@@ -12,7 +12,7 @@ import { PlusIcon } from "@phosphor-icons/react/dist/ssr";
 import { api } from "@/convex/_generated/api";
 import type { Id } from "@/convex/_generated/dataModel";
 import { compactDate, compactDateTime } from "@/lib/admin/format";
-import { ROLE_LABEL } from "@/lib/i18n/sr/admin";
+import { ADMIN_COPY, ROLE_LABEL } from "@/lib/i18n/sr/admin";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -28,6 +28,7 @@ import { ADMIN } from "@/constants/routes";
 import { ConfirmDialog, useConfirm } from "../ConfirmDialog";
 import { useNowMinute } from "../hooks";
 import { useAdminShell } from "../shell/context";
+import { NotificationPrefsMatrix } from "../settings/NotificationPrefsMatrix";
 import { PageHeader, Section } from "../ui";
 
 const INVITE_STATUS = {
@@ -47,6 +48,7 @@ export function UsersAdmin() {
   const confirm = useConfirm();
   const nowMinute = useNowMinute();
   const [inviting, setInviting] = useState(false);
+  const [prefsFor, setPrefsFor] = useState<{ id: Id<"users">; name: string } | null>(null);
 
   if (!viewer.isOwner)
     return <p className="type-body text-ink-2">Korisnike i pozivnice uređuje samo vlasnik.</p>;
@@ -133,40 +135,51 @@ export function UsersAdmin() {
                       {u.lastSeenAt ? compactDateTime(u.lastSeenAt, nowMinute) : "—"}
                     </td>
                     <td className="px-4 py-2 text-right">
-                      {u.isSelf ? null : u.blocked ? (
-                        <Button
-                          size="sm"
-                          variant="secondary"
-                          onClick={() => void setBlocked({ userId: u._id, blocked: false })}
-                        >
-                          Odblokiraj
-                        </Button>
-                      ) : (
-                        <Button
-                          size="sm"
-                          variant="danger"
-                          onClick={() =>
-                            confirm.ask({
-                              title: `Blokirati ${u.name}?`,
-                              description: "Nalog odmah gubi pristup; može se odblokirati.",
-                              confirmLabel: "Blokiraj",
-                              danger: true,
-                              onConfirm: async () => {
-                                await setBlocked({ userId: u._id, blocked: true });
-                                toast.success(`${u.name} je blokiran.`, {
-                                  action: {
-                                    label: "Poništi",
-                                    onClick: () =>
-                                      void setBlocked({ userId: u._id, blocked: false }),
-                                  },
-                                });
-                              },
-                            })
-                          }
-                        >
-                          Blokiraj
-                        </Button>
-                      )}
+                      <span className="inline-flex flex-wrap items-center justify-end gap-2">
+                        {!u.blocked ? (
+                          <Button
+                            size="sm"
+                            variant="ghost"
+                            onClick={() => setPrefsFor({ id: u._id as Id<"users">, name: u.name })}
+                          >
+                            Obaveštenja
+                          </Button>
+                        ) : null}
+                        {u.isSelf ? null : u.blocked ? (
+                          <Button
+                            size="sm"
+                            variant="secondary"
+                            onClick={() => void setBlocked({ userId: u._id, blocked: false })}
+                          >
+                            Odblokiraj
+                          </Button>
+                        ) : (
+                          <Button
+                            size="sm"
+                            variant="danger"
+                            onClick={() =>
+                              confirm.ask({
+                                title: `Blokirati ${u.name}?`,
+                                description: "Nalog odmah gubi pristup; može se odblokirati.",
+                                confirmLabel: "Blokiraj",
+                                danger: true,
+                                onConfirm: async () => {
+                                  await setBlocked({ userId: u._id, blocked: true });
+                                  toast.success(`${u.name} je blokiran.`, {
+                                    action: {
+                                      label: "Poništi",
+                                      onClick: () =>
+                                        void setBlocked({ userId: u._id, blocked: false }),
+                                    },
+                                  });
+                                },
+                              })
+                            }
+                          >
+                            Blokiraj
+                          </Button>
+                        )}
+                      </span>
                     </td>
                   </tr>
                 ))}
@@ -219,8 +232,51 @@ export function UsersAdmin() {
         )}
       </Section>
       {inviting ? <InviteDialog onClose={() => setInviting(false)} /> : null}
+      {prefsFor ? (
+        <PrefsDialog userId={prefsFor.id} name={prefsFor.name} onClose={() => setPrefsFor(null)} />
+      ) : null}
       <ConfirmDialog {...confirm.props} />
     </div>
+  );
+}
+
+function PrefsDialog({
+  userId,
+  name,
+  onClose,
+}: {
+  userId: Id<"users">;
+  name: string;
+  onClose: () => void;
+}) {
+  const prefs = useQuery(api.notifications.preferencesFor, { userId });
+  const save = useMutation(api.notifications.setPreferencesFor);
+  return (
+    <Dialog
+      open
+      onOpenChange={(v) => !v && onClose()}
+      title={`Obaveštenja — ${name}`}
+      description="Šta ova osoba dobija u aplikaciji i e-poštom. Izmene se čuvaju odmah."
+      footer={<Button onClick={onClose}>Gotovo</Button>}
+    >
+      {prefs === undefined ? (
+        <Skeleton className="h-48 w-full" />
+      ) : prefs === null ? (
+        <p className="type-body-s text-ink-2">Ovaj nalog nema pristup administraciji.</p>
+      ) : (
+        <NotificationPrefsMatrix
+          prefs={prefs}
+          who={`, ${name}`}
+          onChange={(next) =>
+            void save({ userId, ...next })
+              .then(() => toast.success(ADMIN_COPY.saved))
+              .catch((err: unknown) =>
+                toast.error(convexErrorMessage(err, ADMIN_COPY.genericError)),
+              )
+          }
+        />
+      )}
+    </Dialog>
   );
 }
 
@@ -230,6 +286,7 @@ function InviteDialog({ onClose }: { onClose: () => void }) {
   const [role, setRole] = useState<"staff" | "owner">("staff");
   const [busy, setBusy] = useState(false);
   const [link, setLink] = useState<string | null>(null);
+  const [emailed, setEmailed] = useState(false);
   return (
     <Dialog
       open
@@ -251,6 +308,7 @@ function InviteDialog({ onClose }: { onClose: () => void }) {
                 try {
                   const res = await create({ email, role });
                   setLink(`${window.location.origin}${ADMIN.invite(res.token)}`);
+                  setEmailed(res.emailed);
                 } catch (err) {
                   toast.error(convexErrorMessage(err, "Pozivnica nije napravljena."));
                 } finally {
@@ -267,9 +325,20 @@ function InviteDialog({ onClose }: { onClose: () => void }) {
       {link ? (
         <div className="flex flex-col gap-3">
           <p className="type-body-s text-ink-2">
-            Pošaljite ovaj link osobi na <span className="font-semibold text-ink-1">{email}</span>{" "}
-            (Viber, SMS, e-pošta). Link se prikazuje samo sada i važi 7 dana. Osoba se registruje
-            ili prijavi tom adresom i prihvati pozivnicu.
+            {emailed ? (
+              <>
+                Pozivnica je poslata e-poštom na{" "}
+                <span className="font-semibold text-ink-1">{email}</span>. Link možete poslati i
+                sami (Viber, SMS).
+              </>
+            ) : (
+              <>
+                Pošaljite ovaj link osobi na{" "}
+                <span className="font-semibold text-ink-1">{email}</span> (Viber, SMS, e-pošta).
+              </>
+            )}{" "}
+            Link se prikazuje samo sada i važi 7 dana. Osoba se registruje ili prijavi tom adresom i
+            prihvati pozivnicu.
           </p>
           <div className="flex items-center gap-2 rounded-xs border border-line bg-surface-2 p-2">
             <code

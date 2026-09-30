@@ -138,7 +138,10 @@ export function backInStock(d: BackInStockEmailData, ctx: EmailContext): Rendere
 
 // Mechanics -----------------------------------------------------------------------------
 
-export function mechanicRegistrationReceived(d: MechanicEmailData, ctx: EmailContext): RenderedEmail {
+export function mechanicRegistrationReceived(
+  d: MechanicEmailData,
+  ctx: EmailContext,
+): RenderedEmail {
   const body = join(
     heading("Registracija je primljena."),
     paragraph(

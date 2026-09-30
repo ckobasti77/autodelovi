@@ -152,12 +152,16 @@ export const contactLinks = {
   },
 };
 
-/** All available contact links for a contact record, in display order (phone, Viber, WhatsApp, e-mail). */
-export function contactLinkList(contact: Contact): ContactLink[] {
+/**
+ * All available contact links for a contact record, in display order (phone, Viber, WhatsApp,
+ * e-mail). `topic` (e.g. „Porudžbina SK-2026-000187“) pre-fills the WhatsApp message and the
+ * e-mail subject so the question arrives with its number.
+ */
+export function contactLinkList(contact: Contact, topic?: string): ContactLink[] {
   return [
     contactLinks.tel(contact.phone),
     contactLinks.viber(contact.viber),
-    contactLinks.whatsapp(contact.whatsapp),
-    contactLinks.email(contact.email),
+    contactLinks.whatsapp(contact.whatsapp, topic),
+    contactLinks.email(contact.email, topic),
   ].filter((link): link is ContactLink => link !== null);
 }

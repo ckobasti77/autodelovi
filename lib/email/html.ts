@@ -65,7 +65,8 @@ export function safeHref(href: string): string {
   return /^(https?:\/\/|mailto:|tel:|viber:\/\/)/i.test(trimmed) ? trimmed : "#";
 }
 
-type Inline = { kind: "text" | "bold"; value: string } | { kind: "link"; value: string; href: string };
+type Inline =
+  { kind: "text" | "bold"; value: string } | { kind: "link"; value: string; href: string };
 
 const INLINE_RE = /\*\*([^*]+)\*\*|\[([^\]]+)\]\(([^)\s]+)\)/g;
 
@@ -153,7 +154,11 @@ export function linkLine(label: string, href: string): Block {
   return paragraph(`[${label}](${href})`);
 }
 
-export type FactRow = readonly [label: string, value: string, opts?: { mono?: boolean; strong?: boolean }];
+export type FactRow = readonly [
+  label: string,
+  value: string,
+  opts?: { mono?: boolean; strong?: boolean },
+];
 
 /** Label / value „title block“ (a hairline between rows). Empty values are skipped. */
 export function facts(rows: readonly FactRow[]): Block {
@@ -385,7 +390,9 @@ export function layout(input: LayoutInput): RenderedEmail {
       ? `<div class="sk-ink2" style="font-weight:600;color:${PAPER.ink2};">${company.map(escapeHtml).join("<br>")}</div>`
       : `<div class="sk-ink2" style="font-weight:600;color:${PAPER.ink2};">${escapeHtml(input.brandName)}</div>`,
     contactsHtml ? `<div style="margin-top:6px;">${contactsHtml}</div>` : "",
-    input.hoursText ? `<div style="margin-top:6px;">Radno vreme: ${escapeHtml(input.hoursText)}</div>` : "",
+    input.hoursText
+      ? `<div style="margin-top:6px;">Radno vreme: ${escapeHtml(input.hoursText)}</div>`
+      : "",
     `<div style="margin-top:12px;">${escapeHtml(input.reason)}${
       input.manageLink
         ? ` <a href="${escapeHtml(safeHref(input.manageLink.href))}" class="sk-link" style="${linkStyle()}">${escapeHtml(input.manageLink.label)}</a>`

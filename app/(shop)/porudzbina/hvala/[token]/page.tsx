@@ -26,7 +26,7 @@ export default async function OrderThanksPage({ params }: PageProps<"/porudzbina
     getSettingsPublic(),
   ]);
   if (!order) notFound();
-  const contacts = contactLinkList(contactFromSettings(settings));
+  const contacts = contactLinkList(contactFromSettings(settings), `Porudžbina ${order.number}`);
   return (
     <div className="px-page pb-(--space-section) pt-8">
       <PurchaseTracker
@@ -48,8 +48,8 @@ export default async function OrderThanksPage({ params }: PageProps<"/porudzbina
           Porudžbina je primljena.
         </RevealText>
         <p className="type-lead text-ink-2" data-reveal="off">
-          Broj porudžbine je <span className="type-code-l text-ink-1">{order.number}</span>. Poslali smo
-          potvrdu na {order.contact.email}; javićemo se kad je potvrdimo.
+          Broj porudžbine je <span className="type-code-l text-ink-1">{order.number}</span>. Poslali
+          smo potvrdu na {order.contact.email}; javićemo se kad je potvrdimo.
         </p>
         <p className="type-body text-ink-2">{PAYMENT_REMINDER[order.payment.method]}</p>
         <p className="type-body-s text-ink-3">

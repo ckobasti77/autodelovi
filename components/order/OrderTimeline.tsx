@@ -5,7 +5,12 @@ import { formatDateTime } from "@/lib/format/date";
 import { ORDER_STATUS_LABEL, type OrderStatus } from "@/lib/i18n/sr/shop";
 import { TEST_IDS } from "@/constants/testIds";
 
-type TimelineEvent = { type: string; toStatus: OrderStatus | null; message: string | null; at: number };
+type TimelineEvent = {
+  type: string;
+  toStatus: OrderStatus | null;
+  message: string | null;
+  at: number;
+};
 
 const PATH: Record<"pickup" | "courier", OrderStatus[]> = {
   pickup: ["nova", "potvrdjena", "spremna_za_preuzimanje", "preuzeta"],
@@ -28,13 +33,21 @@ export function OrderTimeline({
   events: TimelineEvent[];
 }) {
   const reachedAt = new Map<OrderStatus, number>([["nova", createdAt]]);
-  for (const e of events) if (e.toStatus && !reachedAt.has(e.toStatus)) reachedAt.set(e.toStatus, e.at);
+  for (const e of events)
+    if (e.toStatus && !reachedAt.has(e.toStatus)) reachedAt.set(e.toStatus, e.at);
   const path = PATH[deliveryMethod];
   const currentIndex =
-    status === "zavrsena" ? path.length - 1 : Math.max(0, path.indexOf(status === "ceka_deo" ? "potvrdjena" : status));
+    status === "zavrsena"
+      ? path.length - 1
+      : Math.max(0, path.indexOf(status === "ceka_deo" ? "potvrdjena" : status));
   const cancelled = status === "otkazana";
 
-  const rows: { key: string; label: string; at?: number; state: "done" | "current" | "future" | "cancelled" | "waiting" }[] = [];
+  const rows: {
+    key: string;
+    label: string;
+    at?: number;
+    state: "done" | "current" | "future" | "cancelled" | "waiting";
+  }[] = [];
   path.forEach((s, i) => {
     const at = reachedAt.get(s);
     const state = cancelled
@@ -71,7 +84,10 @@ export function OrderTimeline({
       {rows.map((row, i) => (
         <li key={row.key} className="relative flex gap-4 pb-6 last:pb-0">
           {i < rows.length - 1 ? (
-            <span aria-hidden="true" className="absolute top-4 left-[7px] h-[calc(100%-0.5rem)] w-px bg-line-strong" />
+            <span
+              aria-hidden="true"
+              className="absolute top-4 left-[7px] h-[calc(100%-0.5rem)] w-px bg-line-strong"
+            />
           ) : null}
           <span
             aria-hidden="true"
@@ -97,11 +113,19 @@ export function OrderTimeline({
             >
               {row.label}
               <span className="sr-only">
-                {row.state === "done" ? " — završeno" : row.state === "current" ? " — trenutno" : row.state === "future" ? " — čeka" : ""}
+                {row.state === "done"
+                  ? " — završeno"
+                  : row.state === "current"
+                    ? " — trenutno"
+                    : row.state === "future"
+                      ? " — čeka"
+                      : ""}
               </span>
             </span>
             {row.at ? (
-              <span className="type-caption font-normal tabular-nums text-ink-3">{formatDateTime(row.at)}</span>
+              <span className="type-caption font-normal tabular-nums text-ink-3">
+                {formatDateTime(row.at)}
+              </span>
             ) : null}
           </div>
         </li>

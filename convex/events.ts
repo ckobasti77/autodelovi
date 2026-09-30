@@ -237,7 +237,10 @@ export function staffEmailFor(
 type AggregateFlags = { isDemo: boolean; isTest: boolean };
 
 /** Demo notifications are removable; demo and e2e aggregates are only ever logged. */
-async function aggregateFlags(ctx: MutationCtx, event: Doc<"domainEvents">): Promise<AggregateFlags> {
+async function aggregateFlags(
+  ctx: MutationCtx,
+  event: Doc<"domainEvents">,
+): Promise<AggregateFlags> {
   const p = event.payload;
   const flags = (doc: { isDemo?: boolean; isTest?: boolean } | null | undefined) => ({
     isDemo: doc?.isDemo ?? false,
@@ -394,7 +397,11 @@ async function customerEmails(
     case "order.status_changed": {
       if (p.kind !== "order") return [];
       const templateKey =
-        event.type === "order.created" ? "order_received" : p.to ? ORDER_STATUS_TEMPLATE[p.to] : undefined;
+        event.type === "order.created"
+          ? "order_received"
+          : p.to
+            ? ORDER_STATUS_TEMPLATE[p.to]
+            : undefined;
       if (!templateKey) return [];
       const order = await ctx.db.get("orders", p.orderId);
       return order ? [{ recipient: normalizeEmail(order.contact.email), templateKey }] : [];
@@ -439,7 +446,10 @@ async function customerEmails(
         )
         .take(MAX_BACK_IN_STOCK_PER_EVENT);
       // One delivery per subscription; the recipient key carries the subscription id.
-      return subs.map((s) => ({ recipient: `sub:${s._id}`, templateKey: "back_in_stock" as const }));
+      return subs.map((s) => ({
+        recipient: `sub:${s._id}`,
+        templateKey: "back_in_stock" as const,
+      }));
     }
     default:
       return [];

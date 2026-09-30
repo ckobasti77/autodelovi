@@ -19,7 +19,8 @@ import { RESEND_TEST_RECIPIENT, resolveEmailConfig } from "./emailConfig";
 import type { EmailMode } from "./env";
 import type { Settings } from "./settingsSchema";
 
-export type RelatedType = "order" | "inquiry" | "mechanic" | "user" | "product" | "digest" | "test" | "auth";
+export type RelatedType =
+  "order" | "inquiry" | "mechanic" | "user" | "product" | "digest" | "test" | "auth";
 
 export type SendEmailInput = {
   to: readonly string[];
@@ -39,7 +40,13 @@ export type SendEmailInput = {
 
 export type SendEmailResult =
   | { ok: true; emailLogId: Id<"emailLog">; mode: EmailMode }
-  | { ok: false; emailLogId: Id<"emailLog"> | null; mode: EmailMode; error: string; permanent: boolean };
+  | {
+      ok: false;
+      emailLogId: Id<"emailLog"> | null;
+      mode: EmailMode;
+      error: string;
+      permanent: boolean;
+    };
 
 /** HTML is capped so a runaway template can never hit the document size limit. */
 const MAX_HTML = 400_000;
@@ -94,7 +101,11 @@ export async function sendEmail(
   let emailLogId: Id<"emailLog">;
   if (input.existingLogId && (await ctx.db.get("emailLog", input.existingLogId))) {
     emailLogId = input.existingLogId;
-    await ctx.db.patch("emailLog", emailLogId, { ...row, error: undefined, resendEmailId: undefined });
+    await ctx.db.patch("emailLog", emailLogId, {
+      ...row,
+      error: undefined,
+      resendEmailId: undefined,
+    });
   } else {
     emailLogId = await ctx.db.insert("emailLog", row);
   }

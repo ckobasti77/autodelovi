@@ -82,7 +82,8 @@ export const outbox = staffQuery({
             .order("desc")
         : ctx.db.query("emailLog").order("desc");
     // Template is the access path when both are set; status then post-filters (D137).
-    const query = templateKey && status ? base.filter((q) => q.eq(q.field("status"), status)) : base;
+    const query =
+      templateKey && status ? base.filter((q) => q.eq(q.field("status"), status)) : base;
     const result = await query.paginate(paginationOpts);
     return {
       ...result,
@@ -154,7 +155,11 @@ export const get = staffQuery({
 
 function isResendable(templateKey: string, relatedType: string | undefined): boolean {
   // Codes expire and invite links are shown once: those are requested again, not resent.
-  return relatedType !== "auth" && templateKey !== "password_reset_code" && templateKey !== "staff_invite";
+  return (
+    relatedType !== "auth" &&
+    templateKey !== "password_reset_code" &&
+    templateKey !== "staff_invite"
+  );
 }
 
 /** Delivery configuration for the outbox banner and the settings switch. */
@@ -271,7 +276,12 @@ export const resend = staffMutation({
     const settings = await getSettings(ctx);
     const result = await sendEmail(ctx, settings, {
       to: m.originalTo ?? m.to,
-      rendered: { subject: m.subject, preheader: m.preheader ?? "", html: m.html ?? "", text: m.text },
+      rendered: {
+        subject: m.subject,
+        preheader: m.preheader ?? "",
+        html: m.html ?? "",
+        text: m.text,
+      },
       templateKey: m.templateKey,
       ...(m.relatedType
         ? { related: { type: m.relatedType, ...(m.relatedId ? { id: m.relatedId } : {}) } }

@@ -66,7 +66,11 @@ function bankBlock(d: OrderEmailData): Block {
     ["Primalac", d.bank.recipient],
     ...accounts.map(
       (a, i) =>
-        [accounts.length > 1 ? `Račun ${i + 1}` : "Račun", `${a.account} (${a.bank})`, { mono: true }] as FactRow,
+        [
+          accounts.length > 1 ? `Račun ${i + 1}` : "Račun",
+          `${a.account} (${a.bank})`,
+          { mono: true },
+        ] as FactRow,
     ),
     ["Iznos", rsd(d.bank.amountPara), { strong: true }],
     ["Poziv na broj", d.bank.reference, { mono: true }],
@@ -102,7 +106,11 @@ export function orderReceived(d: OrderEmailData, ctx: EmailContext): RenderedEma
     orderBody(d),
     facts(deliveryFacts(d)),
     d.payment.method === "bank_transfer"
-      ? notice("info", "Predračun stiže uz potvrdu", "Podatke za uplatu šaljemo kad potvrdimo stanje.")
+      ? notice(
+          "info",
+          "Predračun stiže uz potvrdu",
+          "Podatke za uplatu šaljemo kad potvrdimo stanje.",
+        )
       : paragraph(d.payment.instructions, { muted: true }),
     statusButton(d),
     questions(ctx),
@@ -189,7 +197,10 @@ export function orderReadyPickup(d: OrderEmailData, ctx: EmailContext): Rendered
       `Porudžbina **${d.number}** vas čeka u radnji. Ponesite broj porudžbine ili pokažite ovu poruku.`,
     ),
     facts([
-      ["Adresa", address ? (ctx.company.mapUrl ? `[${address}](${ctx.company.mapUrl})` : address) : ""],
+      [
+        "Adresa",
+        address ? (ctx.company.mapUrl ? `[${address}](${ctx.company.mapUrl})` : address) : "",
+      ],
       ["Radno vreme", ctx.hoursText],
       ["Za plaćanje", payNote ? rsd(d.totals.totalPara) : "", { strong: true }],
     ]),
@@ -278,7 +289,9 @@ export function orderCancelled(d: OrderEmailData, ctx: EmailContext): RenderedEm
     paragraph(`Porudžbina **${d.number}** je otkazana.`),
     facts([["Razlog", d.cancelReason ?? ""]]),
     d.payment.method === "bank_transfer"
-      ? paragraph("Ako ste već uplatili, javite se — vraćamo novac na račun sa kog je uplata stigla.")
+      ? paragraph(
+          "Ako ste već uplatili, javite se — vraćamo novac na račun sa kog je uplata stigla.",
+        )
       : null,
     paragraph(
       `Ako je otkazivanje greška ili vam treba zamenski deo, ${contactSentence(ctx).charAt(0).toLowerCase()}${contactSentence(ctx).slice(1)}`,

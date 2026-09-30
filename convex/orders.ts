@@ -15,6 +15,7 @@ import { publicMutation, publicQuery, userMutation, userQuery } from "./lib/func
 import { createOrder, validateCheckout, type NewOrderLine } from "./lib/orders";
 import { creditStatus, formatDinarsSr } from "./lib/mechanics";
 import { enforceRateLimit } from "./lib/rateLimits";
+import { resolveEmailConfig } from "./lib/emailConfig";
 import { getSettings } from "./lib/settings";
 import { hashToken, isTokenShape } from "./lib/tokens";
 import {
@@ -235,6 +236,8 @@ const orderViewV = v.object({
   customerNote: v.union(v.string(), v.null()),
   cancelReason: v.union(v.string(), v.null()),
   hasBackorder: v.boolean(),
+  /** True when status e-mails really go out (delivery mode test/live). */
+  emailUpdates: v.boolean(),
 });
 
 async function orderView(ctx: QueryCtx, order: Doc<"orders">) {
@@ -299,6 +302,8 @@ async function orderView(ctx: QueryCtx, order: Doc<"orders">) {
     customerNote: order.customerNote ?? null,
     cancelReason: order.cancelReason ?? null,
     hasBackorder: order.hasBackorder,
+    emailUpdates:
+      resolveEmailConfig(settings).effective !== "log" && !order.isDemo && !order.isTest,
   };
 }
 

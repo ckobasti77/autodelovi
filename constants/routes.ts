@@ -51,6 +51,7 @@ export const ROUTES = {
   orderProforma: (token: string) => `/porudzbina/${token}/predracun`,
   inquiryThanks: (token: string) => `/upit/hvala/${token}`,
   inquiryStatus: (token: string) => `/upit/${token}`,
+  unsubscribe: (token: string) => `/obavestenja/odjava/${token}`,
   vehicleBrand: (brand: string) => `/vozila/${brand}`,
   vehicleModel: (brand: string, model: string) => `/vozila/${brand}/${model}`,
   vehicleGeneration: (brand: string, model: string, generation: string) =>
@@ -92,6 +93,7 @@ export const ADMIN = {
   users: "/admin/korisnici",
   audit: "/admin/revizija",
   emails: "/admin/mejlovi",
+  emailTemplates: "/admin/mejlovi/sabloni",
   searches: "/admin/pretrage",
   notifications: "/admin/obavestenja",
   imports: "/admin/uvoz",

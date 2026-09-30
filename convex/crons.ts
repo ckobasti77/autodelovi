@@ -12,7 +12,12 @@ crons.interval("retry due outbox events", { minutes: 1 }, internal.events.sweep,
 crons.cron("reminders (working hours)", "*/15 * * * *", internal.automations.runReminders, {});
 crons.cron("daily digest (Belgrade digestHour)", "0 * * * *", internal.automations.runDigest, {});
 crons.cron("expire quotes", "*/15 * * * *", internal.maintenance.expireQuotes, {});
-crons.cron("quotes expiring in 24 h", "7,22,37,52 * * * *", internal.automations.quoteExpiringSweep, {});
+crons.cron(
+  "quotes expiring in 24 h",
+  "7,22,37,52 * * * *",
+  internal.automations.quoteExpiringSweep,
+  {},
+);
 crons.cron("low stock e-mail batch", "5 * * * *", internal.automations.lowStockSweep, {});
 crons.cron("back in stock safety sweep", "10 * * * *", internal.automations.backInStockSweep, {});
 crons.cron("auto-complete orders", "30 1 * * *", internal.maintenance.autoCompleteOrders, {});

@@ -25,6 +25,7 @@ import {
 } from "./lib/inquiries";
 import { createOrder, validateCheckout } from "./lib/orders";
 import { enforceRateLimit } from "./lib/rateLimits";
+import { resolveEmailConfig } from "./lib/emailConfig";
 import { getSettings } from "./lib/settings";
 import { hashToken, isTokenShape } from "./lib/tokens";
 import {
@@ -256,6 +257,8 @@ export const getByToken = publicQuery({
       timeline: v.array(
         v.object({ type: v.string(), message: v.union(v.string(), v.null()), at: v.number() }),
       ),
+      /** True when the quote and changes also go out by e-mail (address given, mode test/live). */
+      emailUpdates: v.boolean(),
     }),
   ),
   handler: async (ctx, { token }) => {
@@ -322,6 +325,11 @@ export const getByToken = publicQuery({
       timeline: events
         .filter((e) => e.visibleToCustomer)
         .map((e) => ({ type: e.type, message: e.message ?? null, at: e.at })),
+      emailUpdates:
+        Boolean(inquiry.contact.email) &&
+        !inquiry.isDemo &&
+        !inquiry.isTest &&
+        resolveEmailConfig(await getSettings(ctx)).effective !== "log",
     };
   },
 });

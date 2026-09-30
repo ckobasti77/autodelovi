@@ -9,7 +9,11 @@ import { useMutation, useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
 import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
-import { CheckCircleIcon, ClockCounterClockwiseIcon, XCircleIcon } from "@phosphor-icons/react/dist/ssr";
+import {
+  CheckCircleIcon,
+  ClockCounterClockwiseIcon,
+  XCircleIcon,
+} from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
 import { buildConsent } from "@/lib/validation/consent";
@@ -43,7 +47,12 @@ export type InquiryView = NonNullable<FunctionReturnType<typeof api.inquiries.ge
 
 export type AcceptConfig = {
   deliveryMethods: { code: DeliveryCode; label: string; pricePara: number }[];
-  paymentMethods: { code: PaymentCode; label: string; requires: string; deliveryCodes: DeliveryCode[] }[];
+  paymentMethods: {
+    code: PaymentCode;
+    label: string;
+    requires: string;
+    deliveryCodes: DeliveryCode[];
+  }[];
   legal: { terms: string; privacy: string };
 };
 
@@ -84,7 +93,10 @@ function AcceptForm({
     if (!v.firstName.trim() || !v.lastName.trim()) return setError("Upišite ime i prezime.");
     if (!normalizePhone(v.phone)) return setError(ERRORS.phone);
     if (!isValidEmail(normalizeEmail(v.email))) return setError(ERRORS.email);
-    if (v.delivery === "courier" && (!v.street.trim() || !v.city.trim() || !isValidPostalCode(v.postalCode)))
+    if (
+      v.delivery === "courier" &&
+      (!v.street.trim() || !v.city.trim() || !isValidPostalCode(v.postalCode))
+    )
       return setError("Upišite adresu za dostavu (ulica, poštanski broj, mesto).");
     if (!payment) return setError("Izaberite način plaćanja.");
     if (!v.terms) return setError("Potrebna je saglasnost sa uslovima kupovine.");
@@ -102,7 +114,13 @@ function AcceptForm({
         delivery: {
           method: v.delivery,
           ...(v.delivery === "courier"
-            ? { address: { street: v.street.trim(), city: v.city.trim(), postalCode: v.postalCode.trim() } }
+            ? {
+                address: {
+                  street: v.street.trim(),
+                  city: v.city.trim(),
+                  postalCode: v.postalCode.trim(),
+                },
+              }
             : {}),
         },
         payment: { method: payment },
@@ -111,40 +129,77 @@ function AcceptForm({
       router.push(ROUTES.orderThanks(r.orderToken));
     } catch (err) {
       setBusy(false);
-      setError(convexErrorMessage(err, "Ponuda nije prihvaćena. Pokušajte ponovo ili nas pozovite."));
+      setError(
+        convexErrorMessage(err, "Ponuda nije prihvaćena. Pokušajte ponovo ili nas pozovite."),
+      );
     }
   };
 
   return (
-    <form onSubmit={onSubmit} noValidate className="flex flex-col gap-5 rounded-sm border border-line bg-surface-1 p-5" data-reveal="off">
+    <form
+      onSubmit={onSubmit}
+      noValidate
+      className="flex flex-col gap-5 rounded-sm border border-line bg-surface-1 p-5"
+      data-reveal="off"
+    >
       <h3 className="type-h4 text-ink-1">Podaci za porudžbinu</h3>
       <div className="grid gap-4 sm:grid-cols-2">
         <Field label="Ime">
-          <Input autoComplete="given-name" value={v.firstName} onChange={(e) => setV({ ...v, firstName: e.target.value })} />
+          <Input
+            autoComplete="given-name"
+            value={v.firstName}
+            onChange={(e) => setV({ ...v, firstName: e.target.value })}
+          />
         </Field>
         <Field label="Prezime">
-          <Input autoComplete="family-name" value={v.lastName} onChange={(e) => setV({ ...v, lastName: e.target.value })} />
+          <Input
+            autoComplete="family-name"
+            value={v.lastName}
+            onChange={(e) => setV({ ...v, lastName: e.target.value })}
+          />
         </Field>
         <Field label="Telefon">
-          <Input type="tel" autoComplete="tel" value={v.phone} onChange={(e) => setV({ ...v, phone: e.target.value })} />
+          <Input
+            type="tel"
+            autoComplete="tel"
+            value={v.phone}
+            onChange={(e) => setV({ ...v, phone: e.target.value })}
+          />
         </Field>
         <Field label="E-pošta">
-          <Input type="email" autoComplete="email" value={v.email} onChange={(e) => setV({ ...v, email: e.target.value })} />
+          <Input
+            type="email"
+            autoComplete="email"
+            value={v.email}
+            onChange={(e) => setV({ ...v, email: e.target.value })}
+          />
         </Field>
       </div>
       <RadioGroup
         label="Dostava"
         value={v.delivery}
         onValueChange={(d) => setV({ ...v, delivery: d as DeliveryCode })}
-        options={config.deliveryMethods.map((d) => ({ value: d.code, label: `${d.label} · ${formatRSD(d.pricePara)}` }))}
+        options={config.deliveryMethods.map((d) => ({
+          value: d.code,
+          label: `${d.label} · ${formatRSD(d.pricePara)}`,
+        }))}
       />
       {v.delivery === "courier" ? (
         <div className="grid gap-4 sm:grid-cols-6">
           <Field label="Ulica i broj" className="sm:col-span-6">
-            <Input autoComplete="street-address" value={v.street} onChange={(e) => setV({ ...v, street: e.target.value })} />
+            <Input
+              autoComplete="street-address"
+              value={v.street}
+              onChange={(e) => setV({ ...v, street: e.target.value })}
+            />
           </Field>
           <Field label="Poštanski broj" className="sm:col-span-2">
-            <Input inputMode="numeric" maxLength={5} value={v.postalCode} onChange={(e) => setV({ ...v, postalCode: e.target.value })} />
+            <Input
+              inputMode="numeric"
+              maxLength={5}
+              value={v.postalCode}
+              onChange={(e) => setV({ ...v, postalCode: e.target.value })}
+            />
           </Field>
           <Field label="Mesto" className="sm:col-span-4">
             <Input value={v.city} onChange={(e) => setV({ ...v, city: e.target.value })} />
@@ -175,7 +230,14 @@ function AcceptForm({
           {error}
         </p>
       ) : null}
-      <Button type="submit" variant="primary" size="lg" loading={busy} data-testid="quote-accept-submit" className="self-start">
+      <Button
+        type="submit"
+        variant="primary"
+        size="lg"
+        loading={busy}
+        data-testid="quote-accept-submit"
+        className="self-start"
+      >
         Pošalji porudžbinu po ponudi
       </Button>
     </form>
@@ -234,7 +296,9 @@ export function InquiryStatusView({
                 Ponuda{q.version > 1 ? ` (izmena ${q.version})` : ""}
               </h2>
               <span className={expired ? "type-body-s text-warning" : "type-body-s text-ink-3"}>
-                {expired ? `Istekla ${formatDate(q.validUntil)}` : `Važi do ${formatDate(q.validUntil)}`}
+                {expired
+                  ? `Istekla ${formatDate(q.validUntil)}`
+                  : `Važi do ${formatDate(q.validUntil)}`}
               </span>
             </div>
             <ul className="flex flex-col divide-y divide-line border-y border-line">
@@ -251,42 +315,85 @@ export function InquiryStatusView({
                       )}
                     </span>
                     <span className="block type-caption text-ink-3">
-                      {[l.manufacturer, l.availability === "in_stock" ? "na stanju" : `po porudžbini${l.leadTimeDays ? ` · ${leadTimeLabel(l.leadTimeDays)}` : ""}`]
+                      {[
+                        l.manufacturer,
+                        l.availability === "in_stock"
+                          ? "na stanju"
+                          : `po porudžbini${l.leadTimeDays ? ` · ${leadTimeLabel(l.leadTimeDays)}` : ""}`,
+                      ]
                         .filter(Boolean)
                         .join(" · ")}
                       {" · "}
                       {l.quantity} × {formatRSD(l.unitPricePara)}
                     </span>
-                    {l.note ? <span className="block type-caption text-ink-3">{l.note}</span> : null}
+                    {l.note ? (
+                      <span className="block type-caption text-ink-3">{l.note}</span>
+                    ) : null}
                   </span>
-                  <span className="shrink-0 tabular-nums text-ink-1">{formatRSD(l.lineTotalPara)}</span>
+                  <span className="shrink-0 tabular-nums text-ink-1">
+                    {formatRSD(l.lineTotalPara)}
+                  </span>
                 </li>
               ))}
             </ul>
             <p className="flex items-baseline justify-between">
               <span className="font-semibold text-ink-1">Ukupno</span>
-              <span className="type-numeral-m tabular-nums text-ink-1">{formatRSD(q.totalPara)}</span>
+              <span className="type-numeral-m tabular-nums text-ink-1">
+                {formatRSD(q.totalPara)}
+              </span>
             </p>
             {q.deliveryNote ? <p className="type-body-s text-ink-2">{q.deliveryNote}</p> : null}
 
             {open && mode === "idle" ? (
               <div className="flex flex-wrap gap-3">
-                <Button variant="primary" size="lg" icon={<CheckCircleIcon size={20} />} onClick={() => setMode("accept")} data-testid={TEST_IDS.quoteAccept}>
+                <Button
+                  variant="primary"
+                  size="lg"
+                  icon={<CheckCircleIcon size={20} />}
+                  onClick={() => setMode("accept")}
+                  data-testid={TEST_IDS.quoteAccept}
+                >
                   Prihvati ponudu
                 </Button>
-                <Button variant="secondary" size="lg" icon={<XCircleIcon size={20} />} onClick={() => setMode("decline")}>
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  icon={<XCircleIcon size={20} />}
+                  onClick={() => setMode("decline")}
+                >
                   Odbij ponudu
                 </Button>
               </div>
             ) : null}
-            {open && mode === "accept" ? <AcceptForm token={token} inquiry={i} config={config} /> : null}
+            {open && mode === "accept" ? (
+              <AcceptForm token={token} inquiry={i} config={config} />
+            ) : null}
             {open && mode === "decline" ? (
               <div className="flex flex-col gap-3 rounded-sm border border-line bg-surface-1 p-5">
                 <Field label="Razlog" optional>
-                  <Textarea rows={3} maxLength={500} value={reason} onChange={(e) => setReason(e.target.value)} />
+                  <Textarea
+                    rows={3}
+                    maxLength={500}
+                    value={reason}
+                    onChange={(e) => setReason(e.target.value)}
+                  />
                 </Field>
                 <div className="flex gap-3">
-                  <Button variant="danger" loading={busy} onClick={() => run(() => decline({ token, quoteId: q.quoteId, ...(reason.trim() ? { reason: reason.trim() } : {}) }), "Ponuda je odbijena.")}>
+                  <Button
+                    variant="danger"
+                    loading={busy}
+                    onClick={() =>
+                      run(
+                        () =>
+                          decline({
+                            token,
+                            quoteId: q.quoteId,
+                            ...(reason.trim() ? { reason: reason.trim() } : {}),
+                          }),
+                        "Ponuda je odbijena.",
+                      )
+                    }
+                  >
                     Odbij ponudu
                   </Button>
                   <Button variant="ghost" onClick={() => setMode("idle")}>
@@ -300,7 +407,12 @@ export function InquiryStatusView({
                 variant="primary"
                 icon={<ClockCounterClockwiseIcon size={20} />}
                 loading={busy}
-                onClick={() => run(() => renew({ token }), "Zatražili ste novu ponudu. Javljamo se u toku radnog dana.")}
+                onClick={() =>
+                  run(
+                    () => renew({ token }),
+                    "Zatražili ste novu ponudu. Javljamo se u toku radnog dana.",
+                  )
+                }
                 className="self-start"
               >
                 Zatraži novu ponudu
@@ -308,7 +420,8 @@ export function InquiryStatusView({
             ) : null}
             {i.orderNumber ? (
               <p className="type-body text-success">
-                Ponuda je prihvaćena — porudžbina <span className="type-code">{i.orderNumber}</span>.
+                Ponuda je prihvaćena — porudžbina <span className="type-code">{i.orderNumber}</span>
+                .
               </p>
             ) : null}
           </section>
@@ -316,7 +429,9 @@ export function InquiryStatusView({
           <section className="rounded-sm border border-line bg-surface-1 p-5">
             <h2 className="type-h4 text-ink-1">Ponuda još nije spremna</h2>
             <p className="mt-2 type-body-s text-ink-2">
-              Proveravamo kod dobavljača. Odgovor stiže kanalom koji ste izabrali ({PREFERRED_CHANNEL_LABEL[i.preferredChannel].toLowerCase()}), a ponuda će se pojaviti i ovde.
+              Proveravamo kod dobavljača. Odgovor stiže kanalom koji ste izabrali (
+              {PREFERRED_CHANNEL_LABEL[i.preferredChannel].toLowerCase()}), a ponuda će se pojaviti
+              i ovde.
             </p>
           </section>
         )}
@@ -340,10 +455,17 @@ export function InquiryStatusView({
             {i.timeline.map((e, idx) => (
               <li key={idx} className="flex flex-col">
                 <span className="type-body-s text-ink-1">{e.message ?? "Izmena"}</span>
-                <span className="type-caption font-normal tabular-nums text-ink-3">{formatDateTime(e.at)}</span>
+                <span className="type-caption font-normal tabular-nums text-ink-3">
+                  {formatDateTime(e.at)}
+                </span>
               </li>
             ))}
           </ol>
+          <p className="mt-3 type-caption font-normal text-ink-3">
+            {i.emailUpdates
+              ? "Ponudu i svaku promenu šaljemo i e-poštom. Ova stranica se osvežava sama."
+              : "Ponudu i svaku promenu vidite na ovoj stranici — osvežava se sama."}
+          </p>
         </section>
       </aside>
     </div>

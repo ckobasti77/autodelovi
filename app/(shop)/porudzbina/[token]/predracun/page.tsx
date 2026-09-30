@@ -41,7 +41,11 @@ export default async function ProformaPage({ params }: PageProps<"/porudzbina/[t
   const net = o.totals.totalPara - o.totals.vatPara;
 
   return (
-    <div data-theme="paper" data-reveal="off" className="bg-bg px-page py-10 text-ink-1 print:bg-white print:p-0">
+    <div
+      data-theme="paper"
+      data-reveal="off"
+      className="bg-bg px-page py-10 text-ink-1 print:bg-white print:p-0"
+    >
       <div className="mx-auto flex max-w-[52rem] flex-col gap-8 rounded-md bg-surface-1 p-8 print:rounded-none print:p-0">
         <div className="flex flex-wrap items-start justify-between gap-6">
           <div className="flex flex-col gap-1 type-body-s text-ink-2">
@@ -62,8 +66,15 @@ export default async function ProformaPage({ params }: PageProps<"/porudzbina/[t
             <p className="type-label uppercase text-ink-3">Kupac</p>
             <p className="mt-1">
               {o.company ? o.company.name : `${o.contact.firstName} ${o.contact.lastName}`}
-              {o.company ? <span className="block text-ink-2">PIB {o.company.pib}{o.company.mb ? ` · MB ${o.company.mb}` : ""}</span> : null}
-              <span className="block text-ink-2">{formatPhone(o.contact.phone)} · {o.contact.email}</span>
+              {o.company ? (
+                <span className="block text-ink-2">
+                  PIB {o.company.pib}
+                  {o.company.mb ? ` · MB ${o.company.mb}` : ""}
+                </span>
+              ) : null}
+              <span className="block text-ink-2">
+                {formatPhone(o.contact.phone)} · {o.contact.email}
+              </span>
             </p>
           </div>
           <div>
@@ -88,10 +99,18 @@ export default async function ProformaPage({ params }: PageProps<"/porudzbina/[t
         <table className="w-full border-collapse type-body-s">
           <thead>
             <tr className="border-b border-line-strong text-left type-label uppercase text-ink-3">
-              <th scope="col" className="py-2 pr-3">Artikal</th>
-              <th scope="col" className="py-2 pr-3 text-right">Kol.</th>
-              <th scope="col" className="py-2 pr-3 text-right">Cena sa PDV</th>
-              <th scope="col" className="py-2 text-right">Iznos</th>
+              <th scope="col" className="py-2 pr-3">
+                Artikal
+              </th>
+              <th scope="col" className="py-2 pr-3 text-right">
+                Kol.
+              </th>
+              <th scope="col" className="py-2 pr-3 text-right">
+                Cena sa PDV
+              </th>
+              <th scope="col" className="py-2 text-right">
+                Iznos
+              </th>
             </tr>
           </thead>
           <tbody>
