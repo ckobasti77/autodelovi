@@ -12,8 +12,8 @@ Date: 2026-09-30 · production build (`next build` + `next start -p 3100`) · Wi
 | Part selection | via the parts list and via `__sklop3d.selectPart` → panel with Convex products at 1440 (drawer) and 390 (sheet) | Pass |
 | Deep link `/?deo=<slug>` | explodes to the part's stage, selects, opens the panel; unknown slug ignored | Pass (fixed a ScrollTrigger refresh race, §6) |
 | Console | 0 errors on every hero flow (e2e + capture scripts) | Pass |
-| Lighthouse mobile (applied throttling, the budget method — D112) | perf **89**, LCP **2393 ms**, CLS **0.001**, TBT **264 ms** | Pass (thin LCP margin) |
-| Lighthouse mobile (default simulated) | perf 86, LCP 4213 ms, CLS 0.001, TBT 20 ms | LCP over budget — Lantern artefact on localhost, §2.2 (P2, step 21) |
+| Lighthouse mobile (applied throttling, the budget method — D112) | latest 5-run medians: perf **92**, LCP **2263 ms**, CLS **0.001**, TBT **226 ms** (previous batch: 90 / 2269 ms / 0.001 / 297 ms) | Pass |
+| Lighthouse mobile (default simulated) | perf 85, LCP 4312 ms, CLS 0.001, TBT 26 ms | LCP over budget — Lantern artefact on localhost, §2.2 (P2, step 21) |
 | Lighthouse desktop preset | perf 99, LCP 885 ms, CLS 0, TBT 0 ms | Pass |
 | 3D chunk budget (≤ 350 KB gzip) | 281.8 KB (+ 27.1 KB three-mesh-bvh, fine pointers only) | Pass |
 | Scroll smoothness (4× CPU, integrated GPU) | median 16.7 ms, p95 33 ms, ≤ 6 % frames over 33 ms | Pass |
@@ -24,7 +24,18 @@ Date: 2026-09-30 · production build (`next build` + `next start -p 3100`) · Wi
 
 `node tests/lighthouse/run.mjs [--runs N] [--throttling devtools|simulate] [--desktop] /` (median of N; JSON in `.lighthouse/`).
 
-### 2.1 Mobile, applied throttling (budget method), 5 runs
+### 2.1 Mobile, applied throttling (budget method)
+
+Latest two 5-run batches (after D113, lazy drag plugins; `node tests/lighthouse/run.mjs --runs 5 --throttling devtools /`):
+
+| Batch | Runs (perf · LCP · TBT) | Median perf | Median LCP | Median CLS | Median TBT |
+|---|---|---|---|---|---|
+| A | 92·2335·218 · 91·2263·270 · 82·2781·372 · 86·2140·447 · 90·2269·297 | 90 | 2269 ms | 0.001 | 297 ms |
+| B | 90·2483·235 · 81·2035·644 · 93·2209·195 · 92·2263·226 · 92·2264·225 | **92** | **2263 ms** | **0.001** | **226 ms** |
+
+TBT varies run to run (195–644 ms): the document's parse/style/layout tasks land just before or just after FCP, and under throttling the late first-load chunks hydrate as separate tasks at ~4.8–5.3 s. Before D113 the medians were 264–363 ms.
+
+Earlier batch (before D113), for reference:
 
 | Run | Perf | LCP | CLS | TBT | FCP |
 |---|---|---|---|---|---|
@@ -39,7 +50,7 @@ Accessibility 100 · Best practices 100 · SEO 100. The page really loads on slo
 
 ### 2.2 Mobile, default simulated throttling (Lantern), 5 runs
 
-Median: perf **86** · LCP **4213 ms** · CLS 0.001 · TBT 20 ms · FCP 1360 ms (runs: LCP 4212–4400 ms).
+Median: perf **86** · LCP **4213 ms** · CLS 0.001 · TBT 20 ms · FCP 1360 ms (runs: LCP 4212–4400 ms); latest 3-run check: perf 85 · LCP 4312 ms · TBT 26 ms.
 
 Why the simulated LCP is not the page's LCP (measured with traces during this step):
 
@@ -54,6 +65,7 @@ Median: perf **99** · LCP **885 ms** (the poster, preloaded ≥ 768 px) · CLS 
 ### 2.4 What this step changed for load performance
 | Change | Effect |
 |---|---|
+| Draggable + InertiaPlugin load with the first bottom sheet instead of in every first load — D113 | first-load JS 321.6 → 303.2 KB gzip; applied-throttling TBT medians 264–363 → 226–297 ms |
 | Canvas never in the first load; overlays (panel, parts list, callout, vehicle picker) lazy — D106 | first-load JS 339 → 324 KB gzip on home, less hydration work |
 | WebGL2 probe moved from hydration to 3D start — D105 | −13 ms main thread at hydration (≈ −53 ms at 4×) |
 | 3D starts in idle time only with a fine pointer — D105 | phones no longer download ~2 MB / run the GPU setup unasked; applied-throttling TTI 24 s → 5.4 s, TBT 2.1 s → 0.26 s |
@@ -62,8 +74,8 @@ Median: perf **99** · LCP **885 ms** (the poster, preloaded ≥ 768 px) · CLS 
 | zod-free manifest guard — D102 | 3D chunk 381 → 291 KB gzip (now 282 KB after the BVH split) |
 
 ### 2.5 Remaining (systemic, step 21/22 — P2)
-The rest of the gap to the simulated LCP is the shared shell, not the hero. First-load JS: React DOM 72 KB, GSAP with every plugin registered globally (incl. Draggable/Inertia) 63 KB, Next runtime 34 KB, Convex 21 KB. Fonts: four preloads, 76 KB. Candidates:
-- split Draggable/Inertia out of `lib/gsap/client` and mount the header sheets lazily;
+The rest of the gap to the simulated LCP is the shared shell, not the hero. First-load JS: React DOM 72 KB, GSAP ~44 KB (Draggable/Inertia now lazy, D113), Next runtime 34 KB, Convex 21 KB. Fonts: four preloads, 76 KB. Candidates:
+- mount the header sheets lazily (radix Dialog stays in the first load);
 - review which fonts need preloading;
 - measure PSI on the deployed site.
 
@@ -71,7 +83,7 @@ The rest of the gap to the simulated LCP is the shared shell, not the hero. Firs
 
 | Item | Size |
 |---|---|
-| First-load JS, home (22 scripts, hooks build) | 321.6 KB gzip |
+| First-load JS, home (21 scripts, hooks build) | 303.2 KB gzip (321.6 before D113) |
 | Canvas chunks (three + R3F + loaders + scene) | 183.0 + 98.8 = 281.8 KB gzip |
 | three-mesh-bvh (fine pointer only) | 27.1 KB gzip |
 | Overlay chunks warmed at start | ≈ 16 KB gzip |
@@ -94,7 +106,7 @@ The rest of the gap to the simulated LCP is the shared shell, not the hero. Firs
 `node scripts/qa/hero-parity.mjs`: mean absolute difference at the crossfade 1.84/255 (desktop), 2.13/255 (mobile) after the Blender-semantics shader and drafting edges (D99). They started at 3.60 and 4.68. The swap is invisible at normal viewing.
 
 ## 6. Playwright
-`npx playwright test` (production build with `NEXT_PUBLIC_TEST_HOOKS=1`, projects desktop-1440 and mobile-390): **44 passed**. `tests/e2e/hero-3d.spec.ts` covers, at both widths:
+`npx playwright test` (production build with `NEXT_PUBLIC_TEST_HOOKS=1`, projects desktop-1440 and mobile-390): **44 passed** (re-run after D113; `tests/e2e/hero-3d.spec.ts` alone: 18 passed). The bottom-sheet drag-to-dismiss was re-checked by hand after D113 (panel closes, selection cleared, 0 console errors). `tests/e2e/hero-3d.spec.ts` covers, at both widths:
 - poster first → 3D after intent → crossfade, no console errors;
 - parts list → panel with products, URL `?deo=`, Esc returns focus;
 - hook explode/select + unknown slug;
@@ -111,6 +123,8 @@ Fixed on the way:
 - the axe home test ran with links under the sticky header after the end-to-end scroll and now scans from the top.
 
 ## 7. Screens and critique (impeccable, design-taste-frontend)
+
+Re-captured and re-reviewed on the final build (2026-09-30): assembled / exploded / selected at 1440 and 390 — verdicts below unchanged; the two-line product names are visible in `mobile-4-selected-turbina.webp`.
 
 Files in `docs/3d/web-qa/`:
 - `desktop-*` / `mobile-*`: 0 poster, 1 assembled, 2 explode 30/60 %, 3 exploded, 4 selected (turbina), 5 hover (desktop), 6 vehicle picker, 7 parts list, 8 low tier (mobile), 9 reduced motion (desktop);

@@ -66,7 +66,7 @@ Also `document.querySelectorAll('[data-reveal-state="pending"]').length === 0` a
 
 ## Motion (GSAP)
 
-- Import `gsap`, plugins and `useGSAP` from `@/lib/gsap/client` only — it registers ScrollTrigger, ScrollToPlugin, Draggable, InertiaPlugin, CustomEase and the `sk.*` eases once.
+- Import `gsap`, plugins and `useGSAP` from `@/lib/gsap/client` only — it registers ScrollTrigger, ScrollToPlugin, CustomEase and the `sk.*` eases once. Draggable + InertiaPlugin load on demand via `loadDragPlugins()` from `@/lib/gsap/drag` (bottom-sheet drag only, D113).
 - All tweens inside `useGSAP({ scope })`; event handlers through `contextSafe`; reduced motion and breakpoints through `useMotionMedia` (`gsap.matchMedia`) or `prefersReducedMotion()` at animation time.
 - `ScrollTriggerRefresher` (root layout) refreshes after route changes and `document.fonts.ready`; call `requestScrollTriggerRefresh()` after any other layout change (poster → canvas swap).
 - CSS transitions are allowed only for state feedback (hover colour 80 ms, press 1 px 140 ms `sk.snap`, switch knob) and loops (spinner, skeleton shimmer); every entrance/exit uses GSAP (`components/ui/motion.ts` for overlays).

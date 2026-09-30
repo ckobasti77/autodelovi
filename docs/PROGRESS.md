@@ -57,3 +57,7 @@
   - 3D chunk 281.8 KB gzip. Explode scroll at 4× CPU on a real GPU: median 16.7 ms/frame.
   - Screenshots reviewed (`docs/3d/web-qa/`), impeccable detector 0 findings, no P0/P1.
 - Remains: P2 — shell first-load JS and font preloads versus simulated LCP (step 21/22; PSI after deployment in HUMAN-TODO); P2 — tighter mobile camera and posters (3D pipeline); P3 — a single GPU hitch on the first explode frames. Step 11+ builds the catalog pages the panel links to (`/delovi/<slug>`, `/deo/<slug>`). Per-segment `loading.tsx` files belong to those steps (D108).
+- Addendum (goal re-verification, 2026-09-30):
+  - D113: GSAP Draggable + InertiaPlugin load with the first bottom sheet. First-load JS 321.6 → 303.2 KB gzip.
+  - Lighthouse mobile, applied throttling (5 runs): perf 92 · LCP 2263 ms · CLS 0.001 · TBT 226 ms (previous batch 90 / 2269 / 0.001 / 297). Default simulated: perf 85 · LCP 4312 ms (Lantern artefact, WEB-QA §2.2).
+  - `tsc` 0, lint clean, build 0, vitest 659 passed, Playwright 44 passed (3D spec 18/18 at 1440 + 390). Screenshots re-captured and re-reviewed.

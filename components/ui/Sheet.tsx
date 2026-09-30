@@ -18,7 +18,8 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { XIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { cn } from "@/lib/cn";
-import { Draggable, gsap, InertiaPlugin, prefersReducedMotion, useGSAP } from "@/lib/gsap/client";
+import { gsap, prefersReducedMotion, useGSAP } from "@/lib/gsap/client";
+import { loadDragPlugins, type DraggableInstance } from "@/lib/gsap/drag";
 import { IconButton } from "@/components/ui/IconButton";
 import {
   useControllableOpen,
@@ -309,32 +310,41 @@ function BottomSheet({
       const handle = handleRef.current;
       if (!panel || !handle || !open) return;
 
-      const [draggable] = Draggable.create(panel, {
-        type: "y",
-        trigger: handle,
-        inertia: true,
-        edgeResistance: SHEET.resistance,
-        bounds: { minY: 0, maxY: offsetFor("closed") },
-        allowContextMenu: true,
-        dragClickables: true,
-        clickableTest: (element: Element) => element.closest("[data-no-drag]") !== null,
-        snap: {
-          y(endValue: number) {
-            const closed = offsetFor("closed");
-            const velocity = InertiaPlugin.getVelocity(panel, "y");
-            const visible = (closed - endValue) / window.innerHeight;
-            if (velocity > SHEET.flickVelocity || visible < SHEET.dismissBelow) return closed;
-            const peek = offsetFor("peek");
-            return Math.abs(endValue - peek) < Math.abs(endValue) ? peek : 0;
+      // The drag plugins load with the first open sheet (a few KB, well before a finger moves).
+      let draggable: DraggableInstance | undefined;
+      let cancelled = false;
+      void loadDragPlugins().then(({ Draggable, InertiaPlugin }) => {
+        if (cancelled) return;
+        [draggable] = Draggable.create(panel, {
+          type: "y",
+          trigger: handle,
+          inertia: true,
+          edgeResistance: SHEET.resistance,
+          bounds: { minY: 0, maxY: offsetFor("closed") },
+          allowContextMenu: true,
+          dragClickables: true,
+          clickableTest: (element: Element) => element.closest("[data-no-drag]") !== null,
+          snap: {
+            y(endValue: number) {
+              const closed = offsetFor("closed");
+              const velocity = InertiaPlugin.getVelocity(panel, "y");
+              const visible = (closed - endValue) / window.innerHeight;
+              if (velocity > SHEET.flickVelocity || visible < SHEET.dismissBelow) return closed;
+              const peek = offsetFor("peek");
+              return Math.abs(endValue - peek) < Math.abs(endValue) ? peek : 0;
+            },
           },
-        },
-        onThrowComplete() {
-          const y = Number(gsap.getProperty(panel, "y"));
-          if (Math.abs(y - offsetFor("closed")) < 2) dismissRef.current();
-          else setSnap(y === 0 ? "full" : "peek");
-        },
+          onThrowComplete() {
+            const y = Number(gsap.getProperty(panel, "y"));
+            if (Math.abs(y - offsetFor("closed")) < 2) dismissRef.current();
+            else setSnap(y === 0 ? "full" : "peek");
+          },
+        });
       });
-      return () => draggable?.kill();
+      return () => {
+        cancelled = true;
+        draggable?.kill();
+      };
     },
     { dependencies: [open] },
   );
