@@ -60,10 +60,12 @@ export function InquiriesList() {
     if (debounced !== f.q) setF({ q: debounced });
   }, [debounced, f.q, setF]);
   const mine = f.status === "moji";
+  // An unknown `?status=` (old link, typo) lists everything instead of failing the query.
+  const knownStatus = TABS.some((t) => t.value === f.status);
   const { results, status, loadMore } = usePaginatedQuery(
     api.inquiriesAdmin.list,
     {
-      ...(f.status && !mine ? { status: f.status as InquiryStatus } : {}),
+      ...(f.status && knownStatus && !mine ? { status: f.status as InquiryStatus } : {}),
       ...(mine ? { mine: true } : {}),
       ...(f.q ? { search: f.q } : {}),
       ...(f.vrsta ? { kind: f.vrsta as keyof typeof INQUIRY_KIND_LABEL } : {}),

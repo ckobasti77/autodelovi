@@ -76,12 +76,13 @@ export function ConsentBanner({ serverOpen }: { serverOpen: boolean }) {
   );
 
   async function decide(choice: ConsentChoice) {
+    // Buttons are disabled while saving (focus drops to <body>), so remember it first.
+    const hadFocus = panel.current?.contains(document.activeElement) ?? false;
     setPending(true);
     setError(null);
     try {
       const saved = await saveConsent(choice);
       // The banner is about to disappear: hand focus to the page instead of losing it.
-      const hadFocus = panel.current?.contains(document.activeElement) ?? false;
       setRecord(saved);
       if (hadFocus) document.getElementById(MAIN_ID)?.focus({ preventScroll: true });
       void recordConsent({ consentId: saved.id, analytics: saved.analytics, ads: saved.ads }).catch(
@@ -125,7 +126,7 @@ export function ConsentBanner({ serverOpen }: { serverOpen: boolean }) {
       <form
         action={saveConsentForm}
         onSubmit={onSubmit}
-        className="mx-auto flex max-w-[64rem] flex-col gap-4 rounded-sm border border-line-strong bg-surface-2 p-4 shadow-drawer sm:p-5 lg:flex-row lg:items-end lg:gap-8"
+        className="mx-auto flex max-w-[72rem] flex-col gap-4 rounded-sm border border-line-strong bg-surface-2 p-4 shadow-drawer sm:p-5 lg:flex-row lg:items-center lg:gap-8"
       >
         <div className="flex min-w-0 flex-1 flex-col gap-2">
           <h2 id={titleId} className="type-h4 text-ink-1">
@@ -172,7 +173,7 @@ export function ConsentBanner({ serverOpen }: { serverOpen: boolean }) {
             </p>
           ) : null}
         </div>
-        <div className="flex flex-wrap gap-2 sm:flex-nowrap lg:flex-col lg:items-stretch">
+        <div className="flex flex-wrap gap-2 sm:flex-nowrap">
           {detailed ? (
             <Button
               type="submit"
@@ -181,7 +182,7 @@ export function ConsentBanner({ serverOpen }: { serverOpen: boolean }) {
               variant="quiet"
               disabled={pending}
               data-consent-focus
-              className="min-w-40 flex-1 lg:flex-none"
+              className="min-w-36 flex-1 lg:flex-none"
             >
               Sačuvaj izbor
             </Button>
@@ -193,7 +194,7 @@ export function ConsentBanner({ serverOpen }: { serverOpen: boolean }) {
             variant="quiet"
             disabled={pending}
             data-consent-focus={detailed ? undefined : true}
-            className="min-w-40 flex-1 lg:flex-none"
+            className="min-w-36 flex-1 lg:flex-none"
           >
             Prihvati sve
           </Button>
@@ -203,7 +204,7 @@ export function ConsentBanner({ serverOpen }: { serverOpen: boolean }) {
             value="none"
             variant="quiet"
             disabled={pending}
-            className="min-w-40 flex-1 lg:flex-none"
+            className="min-w-36 flex-1 lg:flex-none"
           >
             Odbij sve
           </Button>
@@ -212,7 +213,7 @@ export function ConsentBanner({ serverOpen }: { serverOpen: boolean }) {
               type="button"
               variant="ghost"
               onClick={() => setDetailed(true)}
-              className="min-w-40 flex-1 lg:flex-none"
+              className="min-w-36 flex-1 lg:flex-none"
             >
               Podešavanja
             </Button>

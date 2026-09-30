@@ -90,7 +90,7 @@ if (email && password) {
     ["admin-seo", "/admin/podesavanja?tab=seo"],
     ["admin-pracenje", "/admin/podesavanja?tab=pracenje"],
     ["admin-oglasne-strane", "/admin/podesavanja?tab=oglasne-strane"],
-    ["admin-upiti", "/admin/upiti?status=sve"],
+    ["admin-upiti", "/admin/upiti"],
   ]) {
     await page.goto(`${base}${url}`, { waitUntil: "networkidle" });
     await page.waitForTimeout(1500);

@@ -11,6 +11,7 @@
 import { execFileSync } from "node:child_process";
 import path from "node:path";
 
+import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type APIRequestContext, type Page } from "@playwright/test";
 
 import { extractJsonLd } from "../../lib/seo/jsonld";
@@ -212,6 +213,29 @@ test.describe("robots, sitemaps and feeds", () => {
   });
 });
 
+/** Scrolls the page end to end and lets the text reveal finish (axe checks final colours). */
+async function settle(page: Page) {
+  await page.evaluate(() => document.fonts.ready);
+  await page.evaluate(async () => {
+    const step = Math.round(window.innerHeight * 0.6);
+    for (let y = 0; y <= document.documentElement.scrollHeight; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((r) => setTimeout(r, 110));
+    }
+    window.scrollTo(0, document.documentElement.scrollHeight);
+  });
+  await page.waitForTimeout(1800);
+}
+
+async function seriousAxe(page: Page): Promise<string[]> {
+  const result = await new AxeBuilder({ page })
+    .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+    .analyze();
+  return result.violations
+    .filter((v) => v.impact === "serious" || v.impact === "critical")
+    .map((v) => `${v.id}: ${v.nodes.map((n) => n.target.join(" ")).slice(0, 3).join(", ")}`);
+}
+
 // ---------------------------------------------------------------------------------------
 // Consent Mode v2 + tags (fresh visitors: no consent cookie)
 
@@ -272,6 +296,9 @@ test.describe("Consent Mode v2 and tags", () => {
     await expect(banner).toBeVisible();
     await expect(banner.getByRole("heading", { name: "Kolačići" })).toBeVisible();
     await expect(banner.getByRole("link", { name: "Više o kolačićima" })).toHaveAttribute("href", "/kolacici");
+    expect(await seriousAxe(page)).toEqual([]);
+    await banner.getByRole("button", { name: "Podešavanja" }).click();
+    expect(await seriousAxe(page)).toEqual([]);
     await page.goto("/delovi/kocioni-diskovi");
     await page.waitForLoadState("networkidle");
     expect(requests).toEqual([]);
@@ -386,6 +413,9 @@ test.describe("ads landing", () => {
     await expect(page.getByRole("heading", { level: 1 })).toContainText("Kočione pločice za VW Golf");
     await expect(page.getByRole("link", { name: "Pošaljite upit" }).first()).toBeVisible();
     await expect(page.getByRole("heading", { level: 2, name: /Kočione pločice/ })).toBeVisible();
+    await settle(page);
+    await expect(page.locator('[data-reveal-state="pending"]')).toHaveCount(0);
+    expect(await seriousAxe(page)).toEqual([]);
     expect((await request.get("/ponuda/ne-postoji")).status()).toBe(404);
   });
 });
