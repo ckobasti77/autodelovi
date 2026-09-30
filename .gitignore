@@ -73,3 +73,4 @@ __pycache__/
 .next-build.log
 .e2e-full.log
 .e2e-logs/
+.tmp-email/
