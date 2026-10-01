@@ -1,0 +1,48 @@
+{
+  "base": "http://localhost:3001",
+  "at": "2026-10-01T03:47:59.806Z",
+  "validSession": [
+    {
+      "case": "fresh customer session",
+      "status": 200,
+      "chain": [
+        "200 /nalog/porudzbine"
+      ],
+      "url": "/nalog/porudzbine",
+      "title": "Porudžbine | SKLOP",
+      "lang": "sr-Latn-RS",
+      "bodyTextLen": 1098,
+      "h1": "Moj nalog",
+      "signInForm": false
+    },
+    {
+      "case": "expired JWT + valid refresh token",
+      "status": 200,
+      "chain": [
+        "200 /nalog/porudzbine"
+      ],
+      "setCookies": [
+        "__convexAuthJWT=eyJhbGciOiJS…",
+        "__convexAuthRefreshToken=jn78kgpvpn0q…",
+        "__convexAuthOAuthVerifier="
+      ],
+      "url": "/nalog/porudzbine",
+      "title": "Porudžbine | SKLOP",
+      "lang": "sr-Latn-RS",
+      "bodyTextLen": 1098,
+      "h1": "Moj nalog",
+      "signInForm": false,
+      "shot": "docs/qa/fix/routing-errors-gates/verify/a11y03-refreshed-session-nalog-1440.webp"
+    },
+    {
+      "case": "owner session /admin/porudzbine",
+      "status": 200,
+      "url": "/admin/porudzbine",
+      "title": "Porudžbine · Administracija",
+      "lang": "sr-Latn-RS",
+      "bodyTextLen": 602,
+      "h1": "Porudžbine",
+      "signInForm": false
+    }
+  ]
+}

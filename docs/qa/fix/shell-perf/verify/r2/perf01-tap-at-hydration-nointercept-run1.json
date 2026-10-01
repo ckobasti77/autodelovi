@@ -1,0 +1,298 @@
+{
+  "mode": "tap",
+  "delayMs": 0,
+  "offsetMs": 0,
+  "console": [
+    "1284 info: %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "1376 log: [HMR] connected",
+    "3068 log: [Fast Refresh] rebuilding",
+    "4430 log: [Fast Refresh] done in 1463ms"
+  ],
+  "posts": [
+    {
+      "at": 2481,
+      "url": "/delovi/kocioni-diskovi",
+      "action": "4031ffb752639a740ade374535527f3cc1f61cce78",
+      "type": "fetch",
+      "body": "[{\"analytics\":true,\"ads\":true}]",
+      "status": 200,
+      "setCookie": "sk_consent=%7B%22v%22%3A1%2C%22analytics%22%3Atrue%2C%22ads%22%3Atrue%2C%22at%22%3A1790825224684%2C%22id%22%3A%226ffdf0e",
+      "respondedAt": 4425
+    }
+  ],
+  "requests": [
+    {
+      "at": 10,
+      "url": "/delovi/kocioni-diskovi",
+      "m": "GET",
+      "done": 823
+    },
+    {
+      "at": 817,
+      "url": "/_next/static/media/archivo_expanded_700-s.p.34q6w5xege1wi.woff2",
+      "m": "GET",
+      "done": 824
+    },
+    {
+      "at": 817,
+      "url": "/_next/static/media/fa0520225c6f3d07-s.p.33u8lzvd44aqk.woff2",
+      "m": "GET",
+      "done": 1069
+    },
+    {
+      "at": 819,
+      "url": "/_next/static/media/fc2699ecc8323b38-s.p.1gwygi6ipeo67.woff2",
+      "m": "GET",
+      "done": 1081
+    },
+    {
+      "at": 819,
+      "url": "/_next/static/chunks/%5Broot-of-the-server%5D__0ulpvp1._.css",
+      "m": "GET",
+      "done": 1072
+    },
+    {
+      "at": 819,
+      "url": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+      "m": "GET",
+      "done": 1063
+    },
+    {
+      "at": 819,
+      "url": "/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_1di75ot._.js",
+      "m": "GET",
+      "done": 1081
+    },
+    {
+      "at": 820,
+      "url": "/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jm.js",
+      "m": "GET",
+      "done": 1237
+    },
+    {
+      "at": 820,
+      "url": "/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+      "m": "GET",
+      "done": 1232
+    },
+    {
+      "at": 820,
+      "url": "/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.",
+      "m": "GET",
+      "done": 1203
+    },
+    {
+      "at": 820,
+      "url": "/_next/static/chunks/node_modules_next_dist_compiled_1amofcm._.js",
+      "m": "GET",
+      "done": 1205
+    },
+    {
+      "at": 820,
+      "url": "/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+      "m": "GET",
+      "done": 1232
+    },
+    {
+      "at": 820,
+      "url": "/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js",
+      "m": "GET",
+      "done": 1205
+    },
+    {
+      "at": 820,
+      "url": "/_next/static/chunks/node_modules_%40swc_helpers_cjs_1r9vbqw._.js",
+      "m": "GET",
+      "done": 1206
+    },
+    {
+      "at": 820,
+      "url": "/_next/static/chunks/_1anvha4._.js",
+      "m": "GET",
+      "done": 1206
+    },
+    {
+      "at": 820,
+      "url": "/_next/static/chunks/turbopack-_08bm286._.js",
+      "m": "GET",
+      "done": 1207
+    },
+    {
+      "at": 820,
+      "url": "/_next/static/chunks/_1lyabxn._.js",
+      "m": "GET",
+      "done": 1206
+    },
+    {
+      "at": 822,
+      "url": "/_next/static/chunks/node_modules_next_dist_20wefz_._.js",
+      "m": "GET",
+      "done": 1207
+    },
+    {
+      "at": 822,
+      "url": "/_next/static/chunks/components_providers_ToastViewport_tsx_13kbwlg._.js",
+      "m": "GET",
+      "done": 1207
+    },
+    {
+      "at": 822,
+      "url": "/_next/static/chunks/node_modules_1h6ogl2._.js",
+      "m": "GET",
+      "done": 1236
+    },
+    {
+      "at": 822,
+      "url": "/_next/static/chunks/_0cahquo._.js",
+      "m": "GET",
+      "done": 1207
+    },
+    {
+      "at": 822,
+      "url": "/_next/static/chunks/_0a5b-bs._.js",
+      "m": "GET",
+      "done": 1207
+    },
+    {
+      "at": 822,
+      "url": "/_next/static/chunks/components_06rw4pc._.js",
+      "m": "GET",
+      "done": 1232
+    },
+    {
+      "at": 822,
+      "url": "/_next/static/chunks/_076s3jn._.js",
+      "m": "GET",
+      "done": 1356
+    },
+    {
+      "at": 822,
+      "url": "/_next/static/chunks/node_modules_0txeot1._.js",
+      "m": "GET",
+      "done": 1356
+    },
+    {
+      "at": 822,
+      "url": "/_next/static/chunks/_0x3lejq._.js",
+      "m": "GET",
+      "done": 1354
+    },
+    {
+      "at": 822,
+      "url": "/_next/static/chunks/_1yjhfuh._.js",
+      "m": "GET",
+      "done": 1354
+    },
+    {
+      "at": 822,
+      "url": "/_next/static/chunks/node_modules_0kz38xq._.js",
+      "m": "GET",
+      "done": 1356
+    },
+    {
+      "at": 822,
+      "url": "/_next/static/chunks/%5Broot-of-the-server%5D__1_dg91z._.js",
+      "m": "GET",
+      "done": 1354
+    },
+    {
+      "at": 822,
+      "url": "/_next/static/chunks/node_modules_gsap_1_i59ao._.js",
+      "m": "GET",
+      "done": 1356
+    },
+    {
+      "at": 822,
+      "url": "/_next/static/chunks/_1h5szyx._.js",
+      "m": "GET",
+      "done": 1356
+    },
+    {
+      "at": 822,
+      "url": "/_next/static/chunks/node_modules_09cz6wh._.js",
+      "m": "GET",
+      "done": 1357
+    },
+    {
+      "at": 1190,
+      "url": "/_next/static/media/archivo_expanded_600-s.0-vwu0izeway0.woff2",
+      "m": "GET",
+      "done": 1210
+    },
+    {
+      "at": 1190,
+      "url": "/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2",
+      "m": "GET",
+      "done": 1220
+    },
+    {
+      "at": 1190,
+      "url": "/_next/static/media/archivo_condensed_600-s.2bx-vxa0zhitt.woff2",
+      "m": "GET",
+      "done": 1221
+    },
+    {
+      "at": 1353,
+      "url": "/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_1mojsay._.js",
+      "m": "GET",
+      "done": 2010
+    },
+    {
+      "at": 2275,
+      "url": "/_next/static/chunks/components_consent_ConsentDetails_tsx_1zulkli._.js",
+      "m": "GET",
+      "done": 2364
+    },
+    {
+      "at": 2277,
+      "url": "/_next/static/chunks/_0-oycki._.js",
+      "m": "GET",
+      "done": 2433
+    },
+    {
+      "at": 2482,
+      "url": "/delovi/kocioni-diskovi",
+      "m": "POST",
+      "done": 5220
+    },
+    {
+      "at": 2731,
+      "url": "/__nextjs_font/geist-latin.woff2",
+      "m": "GET",
+      "done": 4473
+    }
+  ],
+  "hydratedSeenAt": 2224,
+  "chunkRequestedAt": null,
+  "actionAt": 2239,
+  "end": {
+    "at": 9439,
+    "banner": 0,
+    "bannerStatic": false,
+    "sameDocument": true,
+    "cookie": {
+      "v": 1,
+      "analytics": true,
+      "ads": true,
+      "at": 1790825224684,
+      "id": "6ffdf0ef-9517-45c7-860c-e224be7d3488"
+    },
+    "events": [
+      "2374 pointerdown on button[all] prevented=false",
+      "2405 touchstart on button[all] prevented=false",
+      "2406 pointerup on button[all] prevented=false",
+      "2406 touchend on button[all] prevented=false",
+      "2409 mousedown on button[all] prevented=false",
+      "2410 click on button[all] prevented=true",
+      "2434 click on button[all] prevented=false",
+      "2434 submit on form prevented=false",
+      "2472 action fetch start",
+      "4415 action fetch resolved 200"
+    ],
+    "devOverlay": [
+      ""
+    ],
+    "pendingRequests": [],
+    "bannerState": null
+  }
+}

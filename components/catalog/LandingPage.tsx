@@ -272,7 +272,7 @@ function splitFirstSentence(text: string): [string, string] {
 }
 
 /**
- * Landing lead (VIS-21, D259): the first sentence (count, stock, price from) stays under the
+ * Landing lead (VIS-21, D262): the first sentence (count, stock, price from) stays under the
  * H1; the generated facts (generations, makers) sit behind „Više o ponudi“, as the category
  * intro does behind „Više o kategoriji“, so the first product reaches the first phone viewport.
  */

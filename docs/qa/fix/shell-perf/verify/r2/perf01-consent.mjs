@@ -9,6 +9,29 @@ import { writeFileSync } from "node:fs";
 import sharp from "sharp";
 import { BASE, launch, newContext, watch, scrollThrough, revealCheck, shot } from "../../../../../../scripts/qa/audit/kit.mjs";
 
+
+/** Dev HMR socket proxy: forwards everything until the returned freeze() is called (after
+ *  hydration), then drops server pushes, so
+ *  Fast Refresh from other agents' edits cannot reset client state mid-test. */
+async function hmrGuard(page) {
+  // Off by default: in Next 16 dev the Flight debug channel of every server action response
+  // travels over this socket, so dropping pushes leaves the action promise pending forever
+  // (verified while building this check). R2_FREEZE=1 only for that experiment.
+  if (process.env.R2_FREEZE !== "1") return () => {};
+  let open = true;
+  await page.routeWebSocket((url) => url.pathname.startsWith("/_next/") && url.pathname.includes("hmr"), (ws) => {
+    open = true; // a new document (reload) needs the initial sync again
+    const server = ws.connectToServer();
+    ws.onMessage((m) => server.send(m));
+    server.onMessage((m) => {
+      if (open) ws.send(m);
+    });
+  });
+  return () => {
+    open = false;
+  };
+}
+
 const DIR = "docs/qa/fix/shell-perf/verify/r2";
 const BANNER = "[data-testid='consent-banner']";
 const DEF = (p) => `[project]/${p} [app-client] (ecmascript)", ((__turbopack_context__`;
@@ -101,6 +124,7 @@ async function instrument(page, { delayBannerMs = 0, abortBanner = false, delayA
   page.on("response", (res) => {
     if (res.request().resourceType() === "document") res.text().then((t) => (html = t)).catch(() => {});
   });
+  page.__freezeHmr = await hmrGuard(page);
   await page.addInitScript(PROBE);
   return {
     async report() {
@@ -129,7 +153,10 @@ const cookieOf = async (ctx) => {
   const c = (await ctx.cookies()).find((x) => x.name === "sk_consent");
   return c ? JSON.parse(decodeURIComponent(c.value)) : null;
 };
-const hydrated = (page) => page.waitForFunction(() => window.__r2 && window.__r2.hydratedAt !== null, null, { timeout: 60000 });
+const hydrated = async (page) => {
+  await page.waitForFunction(() => window.__r2 && window.__r2.hydratedAt !== null, null, { timeout: 60000 });
+  page.__freezeHmr?.();
+};
 const focused = (page) =>
   page.evaluate(() => {
     const e = document.activeElement;
@@ -148,9 +175,11 @@ const markStatic = (page) =>
 const isStatic = (page) => page.evaluate(() => document.querySelector("[data-testid='consent-banner']")?.__r2static === true);
 const errs = (log) => [...log.console, ...log.pageErrors];
 
-const out = {};
+// R2_FROM7=1 keeps scenarios 1–6 from the previous run and reruns 7–10.
+const out = process.env.R2_FROM7 === "1" ? JSON.parse((await import("node:fs")).readFileSync(`${DIR}/perf01-consent.json`, "utf8")) : {};
 const browser = await launch();
 try {
+  if (process.env.R2_FROM7 !== "1") {
   // 1 · First visit on every listed template (390) + 1440 on the category: idle swap.
   out.firstVisit = {};
   for (const [route, width] of [...ROUTES.map((r) => [r, 390]), ["/delovi/kocioni-diskovi", 1440]]) {
@@ -314,6 +343,8 @@ try {
     await ctx.close();
   }
 
+  }
+
   // 7 · Returning visitor: nothing of the banner in the first load; footer reopens it.
   out.returning = {};
   for (const route of ["/delovi/kocioni-diskovi", "/"]) {
@@ -338,7 +369,7 @@ try {
       res.switches = await page.locator(`${BANNER} [role=switch]`).count();
       res.opacity = await page.locator(BANNER).evaluate((e) => getComputedStyle(e).opacity);
       await shot(page, "../fix/shell-perf/verify/r2/consent-reopen-390");
-      await page.locator(`${BANNER} [role=switch]`).first().click();
+      await page.locator(`${BANNER} [role=switch]:not([disabled])`).first().click();
       await page.locator(BANNER).getByRole("button", { name: "Sačuvaj izbor" }).click();
       await page.locator(BANNER).waitFor({ state: "detached", timeout: 15000 }).catch(() => {});
       res.bannerAfterSave = await page.locator(BANNER).count();
@@ -356,6 +387,7 @@ try {
     const ctx = await newContext(browser, { width: 390, height: 844, consent: false, tag: "r2p1-nav" });
     const page = await ctx.newPage();
     const log = watch(page);
+    page.__freezeHmr = await hmrGuard(page);
     await page.addInitScript(PROBE);
     await page.goto(`${BASE}/delovi/kocioni-diskovi`, { waitUntil: "load" });
     await hydrated(page);
@@ -376,7 +408,7 @@ try {
     await page.locator(BANNER).waitFor({ timeout: 15000 }).catch(() => {});
     await page.waitForTimeout(600);
     const reopenFocus = await focused(page);
-    const analyticsChecked = await page.locator(`${BANNER} [role=switch]`).first().getAttribute("aria-checked").catch(() => null);
+    const analyticsChecked = await page.locator(`${BANNER} [role=switch]:not([disabled])`).first().getAttribute("aria-checked").catch(() => null);
     await page.keyboard.press("Escape");
     await page.waitForTimeout(300);
     const collapsed = (await page.locator(`${BANNER}[data-collapsed]`).count()) === 1;

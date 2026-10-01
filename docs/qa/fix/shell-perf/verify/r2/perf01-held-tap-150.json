@@ -1,0 +1,48 @@
+{
+  "mode": "tap",
+  "delayMs": 3000,
+  "offsetMs": 150,
+  "console": [
+    "3714 info: %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "4010 log: [HMR] connected"
+  ],
+  "posts": [
+    {
+      "at": 7890,
+      "url": "/delovi/kocioni-diskovi",
+      "action": "4031ffb752639a740ade374535527f3cc1f61cce78",
+      "type": "fetch",
+      "body": "[{\"analytics\":true,\"ads\":true}]",
+      "status": 200,
+      "setCookie": "sk_consent=%7B%22v%22%3A1%2C%22analytics%22%3Atrue%2C%22ads%22%3Atrue%2C%22at%22%3A1790824360142%2C%22id%22%3A%22ac19ed4",
+      "respondedAt": 9408
+    }
+  ],
+  "hydratedSeenAt": 4715,
+  "chunkRequestedAt": 4824,
+  "actionAt": 4885,
+  "chunkDeliveredAt": 7837,
+  "end": {
+    "at": 12173,
+    "banner": 0,
+    "bannerStatic": false,
+    "sameDocument": true,
+    "cookie": {
+      "v": 1,
+      "analytics": true,
+      "ads": true,
+      "at": 1790824360142,
+      "id": "ac19ed41-2d88-4d8b-9d42-d5de3c980cbf"
+    },
+    "events": [
+      "5083 pointerdown on button[all] prevented=false",
+      "5097 touchstart on button[all] prevented=false",
+      "5098 pointerup on button[all] prevented=false",
+      "5098 touchend on button[all] prevented=false",
+      "5123 mousedown on button[all] prevented=false",
+      "5129 click on button[all] prevented=true",
+      "7834 click on button[all] prevented=false",
+      "7835 submit on form prevented=false"
+    ]
+  }
+}

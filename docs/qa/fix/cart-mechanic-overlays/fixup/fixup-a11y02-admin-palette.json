@@ -1,0 +1,48 @@
+[
+ {
+  "w": 1440,
+  "case": "Ctrl+K from main link",
+  "before": "button \"Nove108\" (OPENER) :focus-visible",
+  "dialogOpen": 1,
+  "afterOpen": "input \"Pretraga: broj porudžbine, OEM, šifra, t\" :focus-visible",
+  "after": "button \"Nove108\" (OPENER) :focus-visible",
+  "afterNextTab": "button \"Sve\" :focus-visible"
+ },
+ {
+  "w": 1440,
+  "case": "top-bar palette button",
+  "before": "button \"Broj porudžbine, OEM, telefon…Ctrl K\" (OPENER) :focus-visible",
+  "dialogOpen": 1,
+  "after": "button \"Broj porudžbine, OEM, telefon…Ctrl K\" (OPENER) :focus-visible"
+ },
+ {
+  "w": 1440,
+  "case": "Ctrl+K from body",
+  "before": "BODY",
+  "dialogOpen": 1,
+  "after": "main#sadrzaj \"PregledDanas 01.10.2026. — stanje u real\" :focus-visible"
+ },
+ {
+  "w": 390,
+  "case": "Ctrl+K from main link",
+  "before": "button \"Nove108\" (OPENER) :focus-visible",
+  "dialogOpen": 1,
+  "afterOpen": "input \"Pretraga: broj porudžbine, OEM, šifra, t\" :focus-visible",
+  "after": "button \"Nove108\" (OPENER) :focus-visible",
+  "afterNextTab": "button \"Sve\" :focus-visible"
+ },
+ {
+  "w": 390,
+  "case": "top-bar palette button",
+  "before": "button \"Pretraga\" (OPENER) :focus-visible",
+  "dialogOpen": 1,
+  "after": "button \"Pretraga\" (OPENER) :focus-visible"
+ },
+ {
+  "w": 390,
+  "case": "Ctrl+K from body",
+  "before": "BODY",
+  "dialogOpen": 1,
+  "after": "main#sadrzaj \"PregledDanas 01.10.2026. — stanje u real\" :focus-visible"
+ }
+]

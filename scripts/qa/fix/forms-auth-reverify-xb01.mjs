@@ -153,6 +153,35 @@ for (const engine of ENGINES) {
           ]);
           await page.waitForTimeout(1000);
           r.afterSubmitUrl = decodeURIComponent(page.url().replace(BASE, ""));
+        } else if (scen === "real-home" || scen === "real-upit") {
+          // The audit's method (a), Chromium only: Slow 4G (150 ms RTT, 1.6 Mbps) + 4x CPU via CDP.
+          const cdp = await ctx.newCDPSession(page);
+          await cdp.send("Network.enable");
+          await cdp.send("Network.emulateNetworkConditions", {
+            offline: false,
+            latency: 150,
+            downloadThroughput: (1.6 * 1024 * 1024) / 8,
+            uploadThroughput: (750 * 1024) / 8,
+          });
+          await cdp.send("Emulation.setCPUThrottlingRate", { rate: 4 });
+          if (scen === "real-home") {
+            const sel = "[data-testid=hero-search-input] input";
+            await typeBeforeHydration(page, r, "/", [[sel, "5Q0615505R"]], sel);
+          } else {
+            await typeBeforeHydration(
+              page,
+              r,
+              "/upit",
+              [
+                ["#iq-vin", VIN],
+                ["#iq-message", "Turbina za Golf 7, dizel."],
+              ],
+              "#iq-vin",
+            );
+            const v = r.after.rhf ?? {};
+            r.stateKept = v.vin === VIN && v.message === "Turbina za Golf 7, dizel.";
+          }
+          await shot(page, `../fix/forms-auth/verify/xb01-reverify-${key}`);
         } else if (scen === "upit") {
           const sent = captureMutations(page);
           await delayJs(page);
@@ -348,14 +377,18 @@ for (const engine of ENGINES) {
         } else if (scen === "admin") {
           await loginAdmin(page);
           await page.goto(`${BASE}/admin/upiti`, { waitUntil: "load", timeout: 120_000 });
-          const link = page.locator("a[href^='/admin/upiti/']").first();
-          await link.waitFor({ state: "visible", timeout: 60_000 });
-          await link.click();
+          // Rows open the detail through router.push (onRowOpen): go to the first row's number.
+          const row = page.locator("tr[data-row]").first();
+          await row.waitFor({ state: "visible", timeout: 60_000 });
+          const num = ((await row.textContent()) ?? "").match(/[A-Z]{2,}-\d{4}-\d{6}/)?.[0];
+          r.inquiry = num;
+          await page.goto(`${BASE}/admin/upiti/${num}`, { waitUntil: "load", timeout: 120_000 });
           const ta = page.getByLabel("Nova beleška", { exact: true });
           await ta.waitFor({ state: "visible", timeout: 60_000 });
           await page.waitForTimeout(800);
-          const cid = (await ta.getAttribute("aria-describedby"))?.split(" ").find((x) => x.endsWith("-count"));
-          const c = () => page.locator(`[id="${cid}"]`).textContent();
+          // This note field has an aria-label and no Field id, so its counter has no id: take the
+          // <p> after the field frame inside the Textarea wrapper.
+          const c = () => ta.locator("xpath=ancestor::div[2]/p").textContent();
           r.initial = await c();
           await ta.click();
           await page.keyboard.type("Proveriti dostupnost");

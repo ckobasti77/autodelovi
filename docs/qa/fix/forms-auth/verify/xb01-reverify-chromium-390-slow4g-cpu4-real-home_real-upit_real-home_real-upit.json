@@ -1,0 +1,71 @@
+{
+  "chromium-390-real-home": {
+    "visibleAt": 3718,
+    "hydratedBeforeTyping": false,
+    "typedAt": 4489,
+    "hydratedRightAfterTyping": false,
+    "validTiming": true,
+    "hydratedAt": 15990,
+    "after": {
+      "fields": {
+        "[data-testid=hero-search-input] input": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        }
+      },
+      "rhf": null,
+      "msgCounter": null,
+      "vinHelp": null,
+      "brand": null,
+      "pibMsg": null,
+      "mbMsg": null,
+      "active": "cbx_R_lkklrdabmqalb_-input"
+    },
+    "domKept": true,
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "chromium-390-real-upit": {
+    "visibleAt": 1371,
+    "hydratedBeforeTyping": false,
+    "typedAt": 2955,
+    "hydratedRightAfterTyping": false,
+    "validTiming": true,
+    "hydratedAt": 11917,
+    "after": {
+      "fields": {
+        "#iq-vin": {
+          "dom": "WVWZZZ1KZ8W123456",
+          "reactValue": "(uncontrolled)"
+        },
+        "#iq-message": {
+          "dom": "Turbina za Golf 7, dizel.",
+          "reactValue": "(uncontrolled)"
+        }
+      },
+      "rhf": {
+        "vin": "WVWZZZ1KZ8W123456",
+        "brandSlug": "volkswagen",
+        "modelSlug": "golf",
+        "generationSlug": "golf-5",
+        "year": "2008",
+        "message": "Turbina za Golf 7, dizel.",
+        "name": "",
+        "phone": "",
+        "email": "",
+        "channel": "phone",
+        "consent": false
+      },
+      "msgCounter": "25 / 2.000",
+      "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?",
+      "brand": "volkswagen",
+      "pibMsg": null,
+      "mbMsg": null,
+      "active": "iq-message"
+    },
+    "domKept": true,
+    "stateKept": true,
+    "consoleErrors": [],
+    "pageErrors": []
+  }
+}

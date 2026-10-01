@@ -1,0 +1,2 @@
+{"round":1,"after":"button[product-add-to-cart] \"Dodaj u korpu: Kočioni disk pr\"","addRect":{"top":436,"bottom":488,"connected":true,"vh":844}}
+{"round":2,"after":"button[product-add-to-cart] \"Dodaj u korpu: Kočioni disk pr\"","addRect":{"top":436,"bottom":488,"connected":true,"vh":844}}

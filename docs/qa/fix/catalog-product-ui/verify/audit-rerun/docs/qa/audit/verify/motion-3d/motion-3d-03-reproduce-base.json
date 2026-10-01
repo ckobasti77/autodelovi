@@ -1,0 +1,402 @@
+[
+  {
+    "label": "390-wheel-run1",
+    "engine": "chromium",
+    "width": 390,
+    "height": 844,
+    "reducedMotion": "no-preference",
+    "mode": "wheel",
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "atLoad": {
+      "scrollY": 0,
+      "vh": 844,
+      "buyBoxRect": {
+        "top": 776,
+        "bottom": 1031
+      },
+      "barTop": 850.5,
+      "barBottom": 915.5,
+      "barHeight": 65,
+      "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "true",
+      "inert": true,
+      "visiblePx": 0
+    },
+    "after1s": {
+      "scrollY": 1300,
+      "vh": 844,
+      "buyBoxRect": {
+        "top": -524,
+        "bottom": -269
+      },
+      "barTop": 779,
+      "barBottom": 844,
+      "barHeight": 65,
+      "inlineStyle": "visibility: visible; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);",
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 0)",
+      "visibility": "visible",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "false",
+      "inert": false,
+      "visiblePx": 65
+    },
+    "after3s": {
+      "scrollY": 1300,
+      "vh": 844,
+      "buyBoxRect": {
+        "top": -524,
+        "bottom": -269
+      },
+      "barTop": 779,
+      "barBottom": 844,
+      "barHeight": 65,
+      "inlineStyle": "visibility: visible; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);",
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 0)",
+      "visibility": "visible",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "false",
+      "inert": false,
+      "visiblePx": 65
+    },
+    "shotPast": "docs/qa/audit/verify/motion-3d/motion-3d-03-reproduce-390-wheel-run1-past.webp",
+    "programmaticFocus": {
+      "focusedInBar": true,
+      "tag": "BUTTON",
+      "label": "U korpu: Kočioni disk prednji 276 × 24 mm",
+      "rectTop": 790,
+      "rectBottom": 834,
+      "vh": 844
+    },
+    "backTop": {
+      "scrollY": 0,
+      "vh": 844,
+      "buyBoxRect": {
+        "top": 776,
+        "bottom": 1031
+      },
+      "barTop": 850.5,
+      "barBottom": 915.5,
+      "barHeight": 65,
+      "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "true",
+      "inert": true,
+      "visiblePx": 0
+    },
+    "console": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "label": "390-wheel-run2",
+    "engine": "chromium",
+    "width": 390,
+    "height": 844,
+    "reducedMotion": "no-preference",
+    "mode": "wheel",
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "atLoad": {
+      "scrollY": 0,
+      "vh": 844,
+      "buyBoxRect": {
+        "top": 776,
+        "bottom": 1031
+      },
+      "barTop": 850.5,
+      "barBottom": 915.5,
+      "barHeight": 65,
+      "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "true",
+      "inert": true,
+      "visiblePx": 0
+    },
+    "after1s": {
+      "scrollY": 1300,
+      "vh": 844,
+      "buyBoxRect": {
+        "top": -524,
+        "bottom": -269
+      },
+      "barTop": 779,
+      "barBottom": 844,
+      "barHeight": 65,
+      "inlineStyle": "visibility: visible; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);",
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 0)",
+      "visibility": "visible",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "false",
+      "inert": false,
+      "visiblePx": 65
+    },
+    "after3s": {
+      "scrollY": 1300,
+      "vh": 844,
+      "buyBoxRect": {
+        "top": -524,
+        "bottom": -269
+      },
+      "barTop": 779,
+      "barBottom": 844,
+      "barHeight": 65,
+      "inlineStyle": "visibility: visible; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);",
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 0)",
+      "visibility": "visible",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "false",
+      "inert": false,
+      "visiblePx": 65
+    },
+    "shotPast": "docs/qa/audit/verify/motion-3d/motion-3d-03-reproduce-390-wheel-run2-past.webp",
+    "programmaticFocus": {
+      "focusedInBar": true,
+      "tag": "BUTTON",
+      "label": "U korpu: Kočioni disk prednji 276 × 24 mm",
+      "rectTop": 790,
+      "rectBottom": 834,
+      "vh": 844
+    },
+    "backTop": {
+      "scrollY": 0,
+      "vh": 844,
+      "buyBoxRect": {
+        "top": 776,
+        "bottom": 1031
+      },
+      "barTop": 850.5,
+      "barBottom": 915.5,
+      "barHeight": 65,
+      "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "true",
+      "inert": true,
+      "visiblePx": 0
+    },
+    "console": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "label": "390-scrollto-run3",
+    "engine": "chromium",
+    "width": 390,
+    "height": 844,
+    "reducedMotion": "no-preference",
+    "mode": "scrollTo",
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "atLoad": {
+      "scrollY": 0,
+      "vh": 844,
+      "buyBoxRect": {
+        "top": 776,
+        "bottom": 1031
+      },
+      "barTop": 850.5,
+      "barBottom": 915.5,
+      "barHeight": 65,
+      "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "true",
+      "inert": true,
+      "visiblePx": 0
+    },
+    "after1s": {
+      "scrollY": 1300,
+      "vh": 844,
+      "buyBoxRect": {
+        "top": -524,
+        "bottom": -269
+      },
+      "barTop": 779,
+      "barBottom": 844,
+      "barHeight": 65,
+      "inlineStyle": "visibility: visible; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);",
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 0)",
+      "visibility": "visible",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "false",
+      "inert": false,
+      "visiblePx": 65
+    },
+    "after3s": {
+      "scrollY": 1300,
+      "vh": 844,
+      "buyBoxRect": {
+        "top": -524,
+        "bottom": -269
+      },
+      "barTop": 779,
+      "barBottom": 844,
+      "barHeight": 65,
+      "inlineStyle": "visibility: visible; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);",
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 0)",
+      "visibility": "visible",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "false",
+      "inert": false,
+      "visiblePx": 65
+    },
+    "shotPast": "docs/qa/audit/verify/motion-3d/motion-3d-03-reproduce-390-scrollto-run3-past.webp",
+    "programmaticFocus": {
+      "focusedInBar": true,
+      "tag": "BUTTON",
+      "label": "U korpu: Kočioni disk prednji 276 × 24 mm",
+      "rectTop": 790,
+      "rectBottom": 834,
+      "vh": 844
+    },
+    "backTop": {
+      "scrollY": 0,
+      "vh": 844,
+      "buyBoxRect": {
+        "top": 776,
+        "bottom": 1031
+      },
+      "barTop": 850.5,
+      "barBottom": 915.5,
+      "barHeight": 65,
+      "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "true",
+      "inert": true,
+      "visiblePx": 0
+    },
+    "console": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  {
+    "label": "390-reduced",
+    "engine": "chromium",
+    "width": 390,
+    "height": 844,
+    "reducedMotion": "reduce",
+    "mode": "wheel",
+    "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+    "atLoad": {
+      "scrollY": 0,
+      "vh": 844,
+      "buyBoxRect": {
+        "top": 776,
+        "bottom": 1031
+      },
+      "barTop": 850.5,
+      "barBottom": 915.5,
+      "barHeight": 65,
+      "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "true",
+      "inert": true,
+      "visiblePx": 0
+    },
+    "after1s": {
+      "scrollY": 1300,
+      "vh": 844,
+      "buyBoxRect": {
+        "top": -524,
+        "bottom": -269
+      },
+      "barTop": 779,
+      "barBottom": 844,
+      "barHeight": 65,
+      "inlineStyle": "visibility: visible; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);",
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 0)",
+      "visibility": "visible",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "false",
+      "inert": false,
+      "visiblePx": 65
+    },
+    "after3s": {
+      "scrollY": 1300,
+      "vh": 844,
+      "buyBoxRect": {
+        "top": -524,
+        "bottom": -269
+      },
+      "barTop": 779,
+      "barBottom": 844,
+      "barHeight": 65,
+      "inlineStyle": "visibility: visible; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);",
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 0)",
+      "visibility": "visible",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "false",
+      "inert": false,
+      "visiblePx": 65
+    },
+    "shotPast": "docs/qa/audit/verify/motion-3d/motion-3d-03-reproduce-390-reduced-past.webp",
+    "programmaticFocus": {
+      "focusedInBar": true,
+      "tag": "BUTTON",
+      "label": "U korpu: Kočioni disk prednji 276 × 24 mm",
+      "rectTop": 790,
+      "rectBottom": 834,
+      "vh": 844
+    },
+    "backTop": {
+      "scrollY": 0,
+      "vh": 844,
+      "buyBoxRect": {
+        "top": 776,
+        "bottom": 1031
+      },
+      "barTop": 850.5,
+      "barBottom": 915.5,
+      "barHeight": 65,
+      "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+      "computedTransform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "visibility": "hidden",
+      "opacity": "1",
+      "display": "block",
+      "ariaHidden": "true",
+      "inert": true,
+      "visiblePx": 0
+    },
+    "console": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  }
+]

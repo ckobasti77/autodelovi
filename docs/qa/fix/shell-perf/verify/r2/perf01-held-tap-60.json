@@ -1,0 +1,53 @@
+{
+  "mode": "tap",
+  "delayMs": 3000,
+  "offsetMs": 60,
+  "console": [
+    "3902 info: %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "4009 log: [HMR] connected",
+    "4198 log: [Fast Refresh] rebuilding",
+    "4779 log: [Fast Refresh] done in 702ms",
+    "5938 log: [Fast Refresh] rebuilding",
+    "6414 log: [Fast Refresh] done in 576ms",
+    "7448 log: [Fast Refresh] rebuilding"
+  ],
+  "posts": [
+    {
+      "at": 7611,
+      "url": "/delovi/kocioni-diskovi",
+      "action": "4031ffb752639a740ade374535527f3cc1f61cce78",
+      "type": "fetch",
+      "body": "[{\"analytics\":true,\"ads\":true}]",
+      "status": 200,
+      "setCookie": "sk_consent=%7B%22v%22%3A1%2C%22analytics%22%3Atrue%2C%22ads%22%3Atrue%2C%22at%22%3A1790824340822%2C%22id%22%3A%2289e706c",
+      "respondedAt": 7854
+    }
+  ],
+  "hydratedSeenAt": 4331,
+  "chunkRequestedAt": null,
+  "actionAt": 4412,
+  "chunkDeliveredAt": 7517,
+  "end": {
+    "at": 11524,
+    "banner": 0,
+    "bannerStatic": false,
+    "sameDocument": true,
+    "cookie": {
+      "v": 1,
+      "analytics": true,
+      "ads": true,
+      "at": 1790824340822,
+      "id": "89e706c6-ba7a-424c-afdf-16b587bdf309"
+    },
+    "events": [
+      "4449 pointerdown on button[all] prevented=false",
+      "4453 touchstart on button[all] prevented=false",
+      "4453 pointerup on button[all] prevented=false",
+      "4454 touchend on button[all] prevented=false",
+      "4456 mousedown on button[all] prevented=false",
+      "4457 click on button[all] prevented=true",
+      "7473 click on button[all] prevented=false",
+      "7507 submit on form prevented=false"
+    ]
+  }
+}

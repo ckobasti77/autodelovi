@@ -1,0 +1,339 @@
+{
+  "base": "http://localhost:3001",
+  "at": "2026-10-01T03:43:42.287Z",
+  "direct": [
+    {
+      "engine": "chromium",
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "route": "/admin",
+      "label": "admin",
+      "finalStatus": 200,
+      "chain": [
+        "307 /admin -> /prijava?next=%2Fadmin",
+        "200 /prijava?next=%2Fadmin",
+        "200 /prijava?next=%2Fadmin"
+      ],
+      "url": "/prijava?next=%2Fadmin",
+      "title": "Prijava | SKLOP",
+      "lang": "sr-Latn-RS",
+      "bodyTextLen": 894,
+      "h1": "Prijava",
+      "signInForm": true,
+      "authCookiesLeft": [],
+      "nextParam": "/admin",
+      "shot": "docs/qa/fix/routing-errors-gates/verify/a11y03-admin-chromium-390.webp",
+      "emailReachableByTab": true,
+      "afterReload": {
+        "url": "/prijava?next=%2Fadmin",
+        "title": "Prijava | SKLOP"
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "badResponses": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "reducedMotion": "no-preference",
+      "route": "/admin",
+      "label": "admin",
+      "finalStatus": 200,
+      "chain": [
+        "307 /admin -> /prijava?next=%2Fadmin",
+        "200 /prijava?next=%2Fadmin",
+        "200 /prijava?next=%2Fadmin"
+      ],
+      "url": "/prijava?next=%2Fadmin",
+      "title": "Prijava | SKLOP",
+      "lang": "sr-Latn-RS",
+      "bodyTextLen": 980,
+      "h1": "Prijava",
+      "signInForm": true,
+      "authCookiesLeft": [],
+      "nextParam": "/admin",
+      "shot": "docs/qa/fix/routing-errors-gates/verify/a11y03-admin-chromium-1440.webp",
+      "emailReachableByTab": true,
+      "afterReload": {
+        "url": "/prijava?next=%2Fadmin",
+        "title": "Prijava | SKLOP"
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "badResponses": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "reducedMotion": "no-preference",
+      "route": "/majstor/brza-porudzbina",
+      "label": "majstor-brza",
+      "finalStatus": 200,
+      "chain": [
+        "307 /majstor/brza-porudzbina -> /prijava?next=%2Fmajstor%2Fbrza-porudzbina",
+        "200 /prijava?next=%2Fmajstor%2Fbrza-porudzbina",
+        "200 /prijava?next=%2Fmajstor%2Fbrza-porudzbina"
+      ],
+      "url": "/prijava?next=%2Fmajstor%2Fbrza-porudzbina",
+      "title": "Prijava | SKLOP",
+      "lang": "sr-Latn-RS",
+      "bodyTextLen": 980,
+      "h1": "Prijava",
+      "signInForm": true,
+      "authCookiesLeft": [],
+      "nextParam": "/majstor/brza-porudzbina",
+      "emailReachableByTab": true,
+      "afterReload": {
+        "url": "/prijava?next=%2Fmajstor%2Fbrza-porudzbina",
+        "title": "Prijava | SKLOP"
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "badResponses": []
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "route": "/majstor/cenovnik",
+      "label": "majstor-cenovnik",
+      "finalStatus": 200,
+      "chain": [
+        "307 /majstor/cenovnik -> /prijava?next=%2Fmajstor%2Fcenovnik",
+        "200 /prijava?next=%2Fmajstor%2Fcenovnik",
+        "200 /prijava?next=%2Fmajstor%2Fcenovnik"
+      ],
+      "url": "/prijava?next=%2Fmajstor%2Fcenovnik",
+      "title": "Prijava | SKLOP",
+      "lang": "sr-Latn-RS",
+      "bodyTextLen": 894,
+      "h1": "Prijava",
+      "signInForm": true,
+      "authCookiesLeft": [],
+      "nextParam": "/majstor/cenovnik",
+      "emailReachableByTab": true,
+      "afterReload": {
+        "url": "/prijava?next=%2Fmajstor%2Fcenovnik",
+        "title": "Prijava | SKLOP"
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "badResponses": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "reducedMotion": "no-preference",
+      "route": "/nalog/porudzbine",
+      "label": "nalog-porudzbine",
+      "finalStatus": 200,
+      "chain": [
+        "307 /nalog/porudzbine -> /prijava?next=%2Fnalog%2Fporudzbine",
+        "200 /prijava?next=%2Fnalog%2Fporudzbine",
+        "200 /prijava?next=%2Fnalog%2Fporudzbine"
+      ],
+      "url": "/prijava?next=%2Fnalog%2Fporudzbine",
+      "title": "Prijava | SKLOP",
+      "lang": "sr-Latn-RS",
+      "bodyTextLen": 980,
+      "h1": "Prijava",
+      "signInForm": true,
+      "authCookiesLeft": [],
+      "nextParam": "/nalog/porudzbine",
+      "emailReachableByTab": true,
+      "afterReload": {
+        "url": "/prijava?next=%2Fnalog%2Fporudzbine",
+        "title": "Prijava | SKLOP"
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "badResponses": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "reducedMotion": "no-preference",
+      "route": "/admin/porudzbine/SK-2026-000092",
+      "label": "admin-order-emaillink",
+      "finalStatus": 200,
+      "chain": [
+        "307 /admin/porudzbine/SK-2026-000092 -> /prijava?next=%2Fadmin%2Fporudzbine%2FSK-2026-000092",
+        "200 /prijava?next=%2Fadmin%2Fporudzbine%2FSK-2026-000092",
+        "200 /prijava?next=%2Fadmin%2Fporudzbine%2FSK-2026-000092"
+      ],
+      "url": "/prijava?next=%2Fadmin%2Fporudzbine%2FSK-2026-000092",
+      "title": "Prijava | SKLOP",
+      "lang": "sr-Latn-RS",
+      "bodyTextLen": 980,
+      "h1": "Prijava",
+      "signInForm": true,
+      "authCookiesLeft": [],
+      "nextParam": "/admin/porudzbine/SK-2026-000092",
+      "emailReachableByTab": true,
+      "afterReload": {
+        "url": "/prijava?next=%2Fadmin%2Fporudzbine%2FSK-2026-000092",
+        "title": "Prijava | SKLOP"
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "badResponses": []
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "reducedMotion": "reduce",
+      "route": "/majstor",
+      "label": "majstor-reduced",
+      "finalStatus": 200,
+      "chain": [
+        "307 /majstor -> /prijava?next=%2Fmajstor",
+        "200 /prijava?next=%2Fmajstor",
+        "200 /prijava?next=%2Fmajstor"
+      ],
+      "url": "/prijava?next=%2Fmajstor",
+      "title": "Prijava | SKLOP",
+      "lang": "sr-Latn-RS",
+      "bodyTextLen": 894,
+      "h1": "Prijava",
+      "signInForm": true,
+      "authCookiesLeft": [],
+      "nextParam": "/majstor",
+      "emailReachableByTab": true,
+      "afterReload": {
+        "url": "/prijava?next=%2Fmajstor",
+        "title": "Prijava | SKLOP"
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "badResponses": []
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "route": "/nalog",
+      "label": "nalog-refresh-only",
+      "finalStatus": 200,
+      "chain": [
+        "307 /nalog -> /prijava?next=%2Fnalog",
+        "200 /prijava?next=%2Fnalog",
+        "200 /prijava?next=%2Fnalog"
+      ],
+      "url": "/prijava?next=%2Fnalog",
+      "title": "Prijava | SKLOP",
+      "lang": "sr-Latn-RS",
+      "bodyTextLen": 894,
+      "h1": "Prijava",
+      "signInForm": true,
+      "authCookiesLeft": [],
+      "nextParam": "/nalog",
+      "emailReachableByTab": true,
+      "afterReload": {
+        "url": "/prijava?next=%2Fnalog",
+        "title": "Prijava | SKLOP"
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "badResponses": []
+    },
+    {
+      "engine": "chromium",
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "route": "/nalog",
+      "label": "nalog-jwt-only",
+      "finalStatus": 200,
+      "chain": [
+        "307 /nalog -> /prijava?next=%2Fnalog",
+        "200 /prijava?next=%2Fnalog",
+        "200 /prijava?next=%2Fnalog"
+      ],
+      "url": "/prijava?next=%2Fnalog",
+      "title": "Prijava | SKLOP",
+      "lang": "sr-Latn-RS",
+      "bodyTextLen": 894,
+      "h1": "Prijava",
+      "signInForm": true,
+      "authCookiesLeft": [],
+      "nextParam": "/nalog",
+      "emailReachableByTab": true,
+      "afterReload": {
+        "url": "/prijava?next=%2Fnalog",
+        "title": "Prijava | SKLOP"
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "badResponses": []
+    },
+    {
+      "engine": "webkit",
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "route": "/nalog",
+      "label": "nalog",
+      "finalStatus": 200,
+      "chain": [
+        "307 /nalog -> /prijava?next=%2Fnalog",
+        "200 /prijava?next=%2Fnalog",
+        "200 /prijava?next=%2Fnalog",
+        "200 /prijava?next=%2Fnalog"
+      ],
+      "url": "/prijava?next=%2Fnalog",
+      "title": "Prijava | SKLOP",
+      "lang": "sr-Latn-RS",
+      "bodyTextLen": 894,
+      "h1": "Prijava",
+      "signInForm": true,
+      "authCookiesLeft": [],
+      "nextParam": "/nalog",
+      "shot": "docs/qa/fix/routing-errors-gates/verify/a11y03-nalog-webkit-390.webp",
+      "emailReachableByTab": true,
+      "afterReload": {
+        "url": "/prijava?next=%2Fnalog",
+        "title": "Prijava | SKLOP"
+      },
+      "consoleErrors": [],
+      "pageErrors": [
+        "Unhandled Promise Rejection: ChunkLoadError: Failed to load chunk /_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_1mojsay._.js from module [turbopack]/browser/dev/hmr-client/hmr-client.ts [app-client] (e...",
+        "Unhandled Promise Rejection: ChunkLoadError: Failed to load chunk /_next/static/chunks/%5Broot-of-the-server%5D__1_dg91z._.js from module [project]/node_modules/next/dist/compiled/react-server-dom-turbopack/cjs/react-server-dom-t...",
+        "Unhandled Promise Rejection: ChunkLoadError: Failed to load chunk /_next/static/chunks/_1mwa3bx._.js from module [project]/components/shell/HeaderSearchPanel.tsx [app-client] (ecmascript, async loader)",
+        "Fetch API cannot load http: /localhost:3001/__nextjs_original-stack-frames due to access control checks.",
+        "Unhandled Promise Rejection: ChunkLoadError: Failed to load chunk /_next/static/chunks/_0p-f-m5._.js from module [project]/components/shell/MobileNavPanel.tsx [app-client] (ecmascript, async loader)",
+        "Fetch API cannot load http: /localhost:3001/__nextjs_original-stack-frames due to access control checks."
+      ],
+      "badResponses": []
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "reducedMotion": "no-preference",
+      "route": "/admin/porudzbine",
+      "label": "admin-porudzbine",
+      "finalStatus": 200,
+      "chain": [
+        "307 /admin/porudzbine -> /prijava?next=%2Fadmin%2Fporudzbine",
+        "200 /prijava?next=%2Fadmin%2Fporudzbine",
+        "200 /prijava?next=%2Fadmin%2Fporudzbine"
+      ],
+      "url": "/prijava?next=%2Fadmin%2Fporudzbine",
+      "title": "Prijava | SKLOP",
+      "lang": "sr-Latn-RS",
+      "bodyTextLen": 980,
+      "h1": "Prijava",
+      "signInForm": true,
+      "authCookiesLeft": [],
+      "nextParam": "/admin/porudzbine",
+      "shot": "docs/qa/fix/routing-errors-gates/verify/a11y03-admin-porudzbine-firefox-1440.webp",
+      "emailReachableByTab": true,
+      "afterReload": {
+        "url": "/prijava?next=%2Fadmin%2Fporudzbine",
+        "title": "Prijava | SKLOP"
+      },
+      "consoleErrors": [
+        "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the serv"
+      ],
+      "pageErrors": [],
+      "badResponses": []
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+[
+  {
+    "id": "A11Y-03",
+    "status": "FIXED",
+    "summary": "proxy.ts wraps convexAuthNextjsMiddleware: a response with Location but no 3xx status (the library's NextResponse.next(response) re-wrap after a failed refresh) is returned as a real 307 to the same target carrying the same cookie-clearing Set-Cookie headers. No Convex call added to the hot path (D265).",
+    "files": [
+      "proxy.ts",
+      "tests/unit/lib/routes.test.ts"
+    ],
+    "verification": "curl -H 'Cookie: __convexAuthJWT=<expired>; __convexAuthRefreshToken=bogus' on /admin, /nalog, /majstor/brza-porudzbina, /nalog/porudzbine -> 'HTTP/1.1 307 Temporary Redirect' + 'location: /prijava?next=%2Fadmin' + 3 clearing set-cookie (before: 'HTTP/1.1 200 OK', 0-byte body). Browser: AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/routing-errors-gates-verify.mjs staleSession -> chain ['307 /admin','200 /prijava?next=%2Fadmin'], title 'Prijava | SKLOP', h1 'Prijava' for all three routes (docs/qa/fix/routing-errors-gates/verify.json, a11y03-stale-admin-390.webp). npx vitest run tests/unit/lib/routes.test.ts -> 'Tests 28 passed (28)' incl. 'turns the library's 200 + Location after a failed refresh back into a 307' (docs/qa/fix/routing-errors-gates/vitest-routes.txt)."
+  },
+  {
+    "id": "FLOW-05",
+    "status": "OPEN",
+    "summary": "Root cause found and documented (D266): React Fizz has no server-side error boundaries, so any notFound() thrown while rendering a page aborts the HTML shell and Next 16 falls back to its error shell (<html id=\"__next_error__\"> with an empty body, next/dist/server/app-render/app-render.js getErrorRSCPayload); the not-found UI is then client-rendered from the RSC payload. Only URLs matching no route are server-rendered via /_not-found. This is framework behaviour, not a Suspense/loading boundary in this app, and cannot be changed from page code or the proxy without a per-request existence lookup. Fixed in this package: 404 title (both not-found files export privateMetadata('Stranica nije pronađena') -> server HTML title 'Stranica nije pronađena | SKLOP' on every dynamic 404 instead of the home title), and the error shell now bootstraps the much lighter /_not-found entry so the client paint comes sooner. Unknown URLs keep a fully server-rendered 404 (h1, GET search form, categories) with status 404. Open part: an h1 in the server HTML of thrown 404s on /deo, /delovi, /vozila, /porudzbina, /upit is not achievable with Next 16's notFound() contract.",
+    "files": [
+      "app/not-found.tsx",
+      "app/(shop)/not-found.tsx",
+      "components/shell/NotFoundContent.tsx"
+    ],
+    "verification": "curl http://localhost:3001/deo/ne-postoji-demo-9999 -> 404, '<title>Stranica nije pronađena | SKLOP</title>' + 'noindex' (before: 'SKLOP — Rasklopi auto. Nađi deo.'); same for /delovi/ne-postoji-kategorija; body still the Next error shell with data-next-error-message=\"NEXT_HTTP_ERROR_FALLBACK;404\". Experiment: a (shop)/[...nepostojece] catch-all calling notFound() turned /ovo-ne-postoji-2 into the same empty error shell (404, no h1), proving the cause is the thrown notFound itself. curl /ovo-ne-postoji -> 404, h1 'Stranica nije pronađena', role=\"search\", title 'Stranica nije pronađena | SKLOP'. Browser after hydration: verify.json notFound -> /deo/ne-postoji-demo-9999 title 'Stranica nije pronađena | SKLOP', h1 'Stranica nije pronađena' at 390 and 1440."
+  },
+  {
+    "id": "PERF-13",
+    "status": "FIXED",
+    "summary": "Root app/not-found.tsx is server-only and light (BareShell: wordmark header + NotFoundContent with a plain GET search form; no SiteShell, no VehiclePickerLazy, no client islands). NotFoundContent no longer imports SearchBox/HeroVehicleField; the shop 404 passes them in through a slot. The planned (shop)/[...nepostojece] catch-all was built, measured and removed because a thrown notFound() regresses /ovo-ne-postoji to the empty error shell; (landing)/not-found is unnecessary because the light root 404 is self-contained (D266).",
+    "files": [
+      "app/not-found.tsx",
+      "app/(shop)/not-found.tsx",
+      "components/shell/NotFoundContent.tsx"
+    ],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/routing-errors-gates-rsc.mjs (docs/qa/fix/routing-errors-gates/perf13-rsc-count.txt): '\"site-header\": rsc 1 / html 1' on home, category and /korpa (audit: rsc 2 / html 1); landing '\"site-header\": rsc 0', 'SearchBox: rsc 0', 'MobileNav: rsc 0' (audit: header serialized 2x on the landing). curl /ovo-ne-postoji: 102191 -> 64630 bytes, still 404 with server-rendered h1. Chunk-level re-measure (verify-perf-bundle-chunks.mjs) needs a production build, which this phase must not run."
+  },
+  {
+    "id": "COPY-06",
+    "status": "FIXED",
+    "summary": "Added app/forbidden.tsx and app/unauthorized.tsx (static Serbian status pages, titles 'Nemate pristup' / 'Potrebna je prijava') and app/admin/forbidden.tsx (shows the signed-in e-mail via the per-request cached getViewer, 'Nazad u administraciju' for staff on owner-only pages, 'Odjavi se'). /slike/deo/* 404 body is 'Nije pronađeno' (text/plain; charset=utf-8, no-store); the sitemaps route was already fixed by seo-content-email (D267). Remaining nit: after hydration the browser tab shows the admin page's own title (e.g. 'Pregled · Administracija') because the guard throws in the page/layout, not in metadata — requested from the admin owner (cross_package_requests).",
+    "files": [
+      "app/forbidden.tsx",
+      "app/unauthorized.tsx",
+      "app/admin/forbidden.tsx",
+      "app/slike/deo/[file]/route.ts",
+      "components/shell/NotFoundContent.tsx"
+    ],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/routing-errors-gates-verify.mjs forbidden (customer account, 390 + 1440, /admin and /admin/porudzbine): status 403, h1 'Nemate pristup ovoj strani', text 'Prijavljeni ste kao audit-kupac-…@primer.rs. Taj nalog nema pristup administraciji…', 'Početna', 'Odjavi se', axe [] (copy06-admin-403-390.webp, copy06-admin-403-1440.webp). Server HTML: node scripts/qa/fix/routing-errors-gates-403-html.mjs -> '/admin 403 [\"Nemate pristup · Administracija\"]', '/admin/korisnici 403 [\"Nemate pristup · Administracija\"]'. curl -i /slike/deo/nepostoji-1-abc.jpg -> 404, 'content-type: text/plain; charset=utf-8', body 'Nije pronađeno'."
+  },
+  {
+    "id": "PERF-07",
+    "status": "FIXED",
+    "summary": "tests/lighthouse/run.mjs rewritten: per-template budgets from SEO-ADS §J11 (home; /delovi*, /deo/*, /ponuda/*; /korpa, /porudzbina*, /upit*; BRIEF §9 fallback), accessibility/best-practices/SEO >= 95 on every run (SEO skipped for noindex via is-crawlable), first-load JS gate (script transfer size before the load event, lazy 3D chunk excluded), runs with lhr.runtimeError / thrown errors / benchmarkIndex below --min-benchmark are discarded and retried up to 2x --runs (no crash on NO_NAVSTART), LCP node from audits['lcp-breakdown-insight'], only --base/--runs/--throttling/--min-benchmark consume a value, benchmarkIndex recorded, summary JSON in .lighthouse/ (D269).",
+    "files": [
+      "tests/lighthouse/run.mjs"
+    ],
+    "verification": "node --check tests/lighthouse/run.mjs -> OK; one dev smoke: MSYS_NO_PATHCONV=1 node tests/lighthouse/run.mjs --base http://localhost:3001 --runs 1 --desktop /kontakt --min-benchmark 0 -> path after --desktop measured, 'first-load JS 1092 KB · benchmarkIndex 1856', 'LCP element: div.fixed > form.mx-auto > div.flex > p#_r_1_ <p …>' (no longer empty), 'BUDGET MISSED: SEO 92 < 95' (dev-server numbers; the Performance phase runs the real gate on :3100)."
+  },
+  {
+    "id": "PERF-20",
+    "status": "FIXED",
+    "summary": "app/error.tsx is a plain client boundary (react + RouteLink only, no UI kit, no config/site); ErrorState stays in app/(shop)/error.tsx (D267).",
+    "files": [
+      "app/error.tsx"
+    ],
+    "verification": "npx eslint app/error.tsx -> clean; npx tsc --noEmit -> 0 errors in owned files. Chunk dedupe re-measure (perf-bundle-dupes.mjs) needs a production build (Performance phase)."
+  },
+  {
+    "id": "SEO-12",
+    "status": "FIXED",
+    "summary": "GET /api/zdravlje: { ok, build, convex, ms }, Cache-Control no-store, 200 or 503 after a 3 s-bounded settings.getPublic read; build id from .next/BUILD_ID (Vercel deployment id fallback, 'development' in dev) (D268). Owner monitoring item added to HUMAN-TODO.",
+    "files": [
+      "app/api/zdravlje/route.ts",
+      "docs/HUMAN-TODO.md"
+    ],
+    "verification": "curl -i http://localhost:3001/api/zdravlje -> 'HTTP/1.1 200 OK', 'cache-control: no-store', '{\"ok\":true,…,\"convex\":\"ok\",\"ms\":144}'."
+  },
+  {
+    "id": "SEO-16",
+    "status": "FIXED",
+    "summary": "proxy.ts 308s GET/HEAD paths whose first segment is a lowercase-only section (deo, delovi, vozila, ponuda, pretraga, za-majstore, static content pages) to the lowercased path with the query kept, before any auth work; token and order-number routes are never touched (D268).",
+    "files": [
+      "proxy.ts",
+      "tests/unit/lib/routes.test.ts"
+    ],
+    "verification": "curl: /deo/KOCIONI-DISK-PREDNJI-276-24-MM-DEMO-0004 -> 308 /deo/kocioni-disk-prednji-276-24-mm-demo-0004; /DEO/… -> 308; /Delovi/Kocioni-Diskovi?marka=VW -> 308 /delovi/kocioni-diskovi?marka=VW; /porudzbina/AbC123 -> 404 (untouched); /admin/porudzbine/SK-2026-000092 -> 307 sign-in (untouched). vitest routes.test.ts 'Tests 28 passed'."
+  },
+  {
+    "id": "FLOW-26",
+    "status": "FIXED",
+    "summary": "app/(shop)/porudzbina/[token]/not-found.tsx and app/(shop)/upit/[token]/not-found.tsx: 'Link porudžbine/upita nije ispravan', guidance to reopen the e-mail link or contact with the SK-/UP- number, links Kontakt / Moje porudžbine / Pošaljite nov upit. /porudzbina/hvala/<token> is outside owned paths (cross-package request).",
+    "files": [
+      "app/(shop)/porudzbina/[token]/not-found.tsx",
+      "app/(shop)/upit/[token]/not-found.tsx"
+    ],
+    "verification": "curl /porudzbina/losToken123 -> 404 '<title>Link porudžbine nije ispravan | SKLOP</title>'; /porudzbina/losToken123/predracun -> same; /upit/losToken123 -> 404 'Link upita nije ispravan | SKLOP'; node scripts/qa/fix/routing-errors-gates-reveal.mjs -> '/upit/losToken123 {\"stuck\":[],\"pending\":0,\"words\":0} h1: Link upita nije ispravan'."
+  },
+  {
+    "id": "COPY-17",
+    "status": "FIXED",
+    "summary": "404 titles go through pageTitle via privateMetadata ('Stranica nije pronađena | SKLOP', no more ' · SKLOP'); popular-category labels are read from lib/catalog/taxonomy.ts ('Set zupčastog kaiša i vodena pumpa', 'Turbina (turbopunjač)'). The /dostava-i-placanje list part belongs to seo-content-email.",
+    "files": [
+      "components/shell/NotFoundContent.tsx",
+      "app/not-found.tsx",
+      "app/(shop)/not-found.tsx"
+    ],
+    "verification": "verify.json notFound: title 'Stranica nije pronađena | SKLOP' at 390/1440; 404-ovo-ne-postoji-390.webp shows 'Set zupčastog kaiša i vodena pumpa' and 'Turbina (turbopunjač)'."
+  },
+  {
+    "id": "BE-08",
+    "status": "OPEN",
+    "summary": "Diagnosed (D269): convex 1.46 AuthenticationManager confirms the cached JWT from ConvexAuthNextjsServerProvider and then calls fetchToken({ forceRefreshToken: true }) unless the ConvexReactClient option initialAuthTokenReuse is true (default false) -> one /api/auth refresh + refresh-token rotation per signed-in page load. Fix belongs in components/providers/ConvexClientProvider.tsx (shell-perf), requested via cross_package_requests.",
+    "files": [],
+    "verification": "node_modules/convex/dist/esm/browser/sync/authentication_manager.js:95-101 ('if (this.initialAuthTokenReuse && cachedToken) scheduleTokenRefetch … else void this.refetchToken()'); client.d.ts documents initialAuthTokenReuse (experimental)."
+  }
+]

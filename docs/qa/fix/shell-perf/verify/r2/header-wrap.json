@@ -1,0 +1,254 @@
+{
+  "guest 1024": {
+    "real": {
+      "vw": 1024,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1024,
+      "headerH": 65,
+      "wrapped": []
+    }
+  },
+  "guest 1180": {
+    "real": {
+      "vw": 1180,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1180,
+      "headerH": 65,
+      "wrapped": []
+    }
+  },
+  "guest 1279": {
+    "real": {
+      "vw": 1279,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1279,
+      "headerH": 65,
+      "wrapped": []
+    }
+  },
+  "guest 1280": {
+    "real": {
+      "vw": 1280,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1280,
+      "headerH": 65,
+      "wrapped": [
+        "Za majstore (44px)",
+        "Upit po broju šasije (44px)",
+        "Izaberite vozilo (36px)"
+      ]
+    }
+  },
+  "guest 1320": {
+    "real": {
+      "vw": 1320,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1320,
+      "headerH": 65,
+      "wrapped": []
+    }
+  },
+  "guest 1366": {
+    "real": {
+      "vw": 1366,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1366,
+      "headerH": 65,
+      "wrapped": []
+    }
+  },
+  "guest 1400": {
+    "real": {
+      "vw": 1400,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1400,
+      "headerH": 65,
+      "wrapped": []
+    }
+  },
+  "guest 1439": {
+    "real": {
+      "vw": 1439,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1439,
+      "headerH": 65,
+      "wrapped": []
+    }
+  },
+  "guest 1440": {
+    "real": {
+      "vw": 1440,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1440,
+      "headerH": 65,
+      "wrapped": []
+    }
+  },
+  "guest 1536": {
+    "real": {
+      "vw": 1536,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1536,
+      "headerH": 65,
+      "wrapped": []
+    }
+  },
+  "mechanic 1024": {
+    "real": {
+      "vw": 1024,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1024,
+      "headerH": 65,
+      "wrapped": []
+    }
+  },
+  "mechanic 1180": {
+    "real": {
+      "vw": 1180,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1180,
+      "headerH": 65,
+      "wrapped": []
+    }
+  },
+  "mechanic 1279": {
+    "real": {
+      "vw": 1279,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1279,
+      "headerH": 65,
+      "wrapped": []
+    }
+  },
+  "mechanic 1280": {
+    "real": {
+      "vw": 1280,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1280,
+      "headerH": 65,
+      "wrapped": [
+        "Za majstore (44px)",
+        "Upit po broju šasije (44px)",
+        "Izaberite vozilo (36px)"
+      ]
+    }
+  },
+  "mechanic 1320": {
+    "real": {
+      "vw": 1320,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1320,
+      "headerH": 65,
+      "wrapped": [
+        "Za majstore (44px)",
+        "Upit po broju šasije (44px)",
+        "Izaberite vozilo (36px)"
+      ]
+    }
+  },
+  "mechanic 1366": {
+    "real": {
+      "vw": 1366,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1366,
+      "headerH": 65,
+      "wrapped": []
+    }
+  },
+  "mechanic 1400": {
+    "real": {
+      "vw": 1400,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1400,
+      "headerH": 65,
+      "wrapped": []
+    }
+  },
+  "mechanic 1439": {
+    "real": {
+      "vw": 1439,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1439,
+      "headerH": 65,
+      "wrapped": []
+    }
+  },
+  "mechanic 1440": {
+    "real": {
+      "vw": 1440,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1440,
+      "headerH": 65,
+      "wrapped": []
+    }
+  },
+  "mechanic 1536": {
+    "real": {
+      "vw": 1536,
+      "headerH": 65,
+      "wrapped": []
+    },
+    "sim": {
+      "vw": 1536,
+      "headerH": 65,
+      "wrapped": []
+    }
+  }
+}

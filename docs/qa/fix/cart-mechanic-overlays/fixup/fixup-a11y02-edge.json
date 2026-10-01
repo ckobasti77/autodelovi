@@ -1,0 +1,81 @@
+[
+ {
+  "case": "choose vehicle",
+  "w": 1440,
+  "route": "/",
+  "opener": "header chip",
+  "before": "button[vehicle-picker-trigger] \"Izaberite vozilo\" (OPENER)",
+  "after": "button[vehicle-picker-trigger] \"Vozilo: Golf VII. Promeni vozilo\"",
+  "openerStillConnected": false,
+  "shot": "docs/qa/fix/cart-mechanic-overlays/fixup/fixup-a11y02-edge-choose-header-chip-1440.webp",
+  "afterNextTab": "button[] \"Ukloni izabrano vozilo\""
+ },
+ {
+  "case": "choose",
+  "w": 1024,
+  "h": 768,
+  "url": "/",
+  "name": "header chip",
+  "skipped": "opener not visible"
+ },
+ {
+  "case": "choose vehicle",
+  "w": 1440,
+  "route": "/",
+  "opener": "hero field",
+  "before": "button[vehicle-picker-trigger] \"Izaberite vozilomarka, model, motorIzabe\" (OPENER)",
+  "after": "button[vehicle-picker-trigger] \"VW Golf VIIPromeni\" (OPENER)",
+  "openerStillConnected": true,
+  "shot": "docs/qa/fix/cart-mechanic-overlays/fixup/fixup-a11y02-edge-choose-hero-field-1440.webp",
+  "afterNextTab": "button[] \"Ukloni izabrano vozilo\""
+ },
+ {
+  "case": "choose vehicle",
+  "w": 1440,
+  "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "opener": "product fitment badge",
+  "before": "button[] \"Izaberite vozilo da proverimo da li deo \" (OPENER)",
+  "after": "input[] \"Količina\"",
+  "openerStillConnected": false,
+  "shot": "docs/qa/fix/cart-mechanic-overlays/fixup/fixup-a11y02-edge-choose-product-fitment-badge-1440.webp",
+  "afterNextTab": "button[] \"Povećaj količinu\""
+ },
+ {
+  "case": "choose vehicle",
+  "w": 390,
+  "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "opener": "product fitment badge",
+  "before": "button[] \"Izaberite vozilo da proverimo da li deo \" (OPENER)",
+  "after": "input[] \"Količina\"",
+  "openerStillConnected": false,
+  "shot": "docs/qa/fix/cart-mechanic-overlays/fixup/fixup-a11y02-edge-choose-product-fitment-badge-390.webp",
+  "afterNextTab": "button[] \"Povećaj količinu\""
+ },
+ {
+  "case": "toast → drawer",
+  "w": 390,
+  "before": "button[] \"Pogledaj korpu\"",
+  "afterOpen": "button[] \"Zatvori\"",
+  "toastButtonConnected": 0,
+  "after": "button[product-add-to-cart] \"Dodaj u korpu: Kočioni disk prednji 276 \" (OPENER)",
+  "trace": [
+   "15 out button[product-add-to-cart]\"Dodato: Kočioni disk pre\" -> button[]\"Pogledaj korpu\"",
+   "16 in button[]\"Pogledaj korpu\"",
+   "20 out button[]\"Pogledaj korpu\" -> ol[]\"Dodato u korpu: Kočioni \"",
+   "20 in ol[]\"Dodato u korpu: Kočioni \"",
+   "718 out ol[]\"\" -> button[]\"Zatvori\"",
+   "718 in button[]\"Zatvori\"",
+   "2511 out button[]\"Zatvori\" -> BODY",
+   "2523 in button[product-add-to-cart]\"Dodaj u korpu: Kočioni d\""
+  ],
+  "afterNextTab": "a[] \"Pošaljite upit\""
+ },
+ {
+  "case": "picker from part panel",
+  "w": 1440,
+  "before": "button[] \"Izaberite vozilo za tačno poklapanje\" (OPENER)",
+  "afterOpen": "button[] \"Zatvori\"",
+  "after": "button[] \"Izaberite vozilo za tačno poklapanje\" (OPENER)",
+  "panelStillOpen": true
+ }
+]

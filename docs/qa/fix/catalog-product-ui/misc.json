@@ -1,0 +1,27 @@
+{
+ "landing": {
+  "detailsSummary": "Više o ponudiManje",
+  "detailsOpen": false,
+  "firstCardTop": 573,
+  "firstPriceBottom": 703,
+  "vh": 780
+ },
+ "a11y19": {
+  "names": [
+   "U korpu: Kočioni disk zadnji 272 × 10 mm, puni",
+   "U korpu: Kočioni disk prednji 312 × 25 mm, ventilirani",
+   "U korpu: Kočioni disk prednji 276 × 24 mm"
+  ],
+  "axName": "U korpu: Kočioni disk zadnji 272 × 10 mm, puni",
+  "strayColonSpace": false
+ },
+ "addToCart": {
+  "live": "Dodato u korpu: Kočioni disk zadnji 272 × 10 mm, puni."
+ },
+ "reveal": {
+  "stuck": [],
+  "pending": 0,
+  "words": 0
+ },
+ "errors": []
+}

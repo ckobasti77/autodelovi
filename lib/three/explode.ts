@@ -95,15 +95,40 @@ export function partSlot(window: StageWindow, order: number): { start: number; d
  * yet (0 while the assembled car is held, 7 through the exploded hold). Windows overlap, so
  * „the latest stage that started“ would label the end of stage 1 as stage 2 — landing on a
  * stage's end must show that stage. Boundaries are hard cuts (DS §7.7).
+ *
+ * `tolerance` is how far past a stage's end still counts as that stage. The scroll position is
+ * a whole (device) pixel, so a stage end that falls between two pixels can land up to one
+ * pixel late (MOT-03: 0.46 → 1325.8 px → 1326 px → p 0.460069 → „04“); pass one scroll pixel
+ * in progress units (`progressPerPixel`) so a detent always names the stage it was aimed at.
  */
-export function currentStage(p: number, windows: Map<number, StageWindow>): number {
+export function currentStage(
+  p: number,
+  windows: Map<number, StageWindow>,
+  tolerance = 1e-6,
+): number {
   const first = windows.get(1);
   if (!first || p < first[0] + 1e-6) return 0;
   const ordered = [...windows.entries()].sort((a, b) => a[0] - b[0]);
   for (const [k, [, end]] of ordered) {
-    if (p <= end + 1e-6) return k;
+    if (p <= end + tolerance) return k;
   }
   return ordered[ordered.length - 1]?.[0] ?? 0;
+}
+
+/** One scroll pixel in progress units for a track scrolled from `start` to `end` (px). */
+export function progressPerPixel(start: number, end: number): number {
+  return 1 / Math.max(1, end - start);
+}
+
+/**
+ * Whole-pixel scroll position for progress `p` on a track scrolled from `start` to `end`.
+ * Rounded down: a fractional target is rounded by the browser (usually up), which would land a
+ * stage-end detent one pixel inside the next stage; one pixel early stays inside the stage
+ * (windows are hundreds of pixels long). Never before `start` (progress 0 stays 0).
+ */
+export function scrollTargetFor(p: number, start: number, end: number): number {
+  const exact = start + clamp01(p) * (end - start);
+  return Math.max(Math.ceil(start), Math.floor(exact));
 }
 
 /** Progress at which a stage is fully exploded (deep links and the stage index jump here). */

@@ -136,6 +136,25 @@ describe("Google Merchant feed", () => {
     expect(text(items[1]!, "g:availability")).toBe("backorder");
     expect(text(items[1]!, "g:identifier_exists")).toBe("no");
     expect(text(items[0]!, "g:identifier_exists")).toBeNull();
+    // No lead time → no invented date.
+    expect(text(items[1]!, "g:availability_date")).toBeNull();
+  });
+
+  test("SEO-10: a backorder item with a lead time carries g:availability_date", () => {
+    const now = Date.UTC(2026, 9, 1, 10, 0); // 1 Oct 2026, Belgrade summer time
+    const xml = merchantFeedXml(
+      [
+        item({ sku: "SK-3", stockState: "on_order", allowBackorder: true, leadTimeDays: 7 }),
+        item({ sku: "SK-4", leadTimeDays: 7 }),
+        item({ sku: "SK-5", stockState: "on_order", allowBackorder: true, leadTimeDays: 40 }),
+      ],
+      { shipping: null, storeName: "SKLOP", origin: ORIGIN, now },
+    );
+    const items = [...parseXml(xml).getElementsByTagName("item")];
+    const date = (el: Element) => el.getElementsByTagName("g:availability_date")[0]?.textContent ?? null;
+    expect(date(items[0]!)).toBe("2026-10-08T00:00+02:00");
+    expect(date(items[1]!)).toBeNull();
+    expect(date(items[2]!)).toBe("2026-11-10T00:00+01:00");
   });
 
   test("availability, price and title formats", () => {

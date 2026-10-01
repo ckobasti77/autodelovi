@@ -1,0 +1,688 @@
+{
+  "firstVisit": {
+    "/delovi/kocioni-diskovi 390": {
+      "bannerInServerHtml": true,
+      "modules": {
+        "ConsentGate": [
+          {
+            "f": "static/chunks/_076s3jn._.js",
+            "inHtml": true
+          }
+        ],
+        "ConsentBanner": [
+          {
+            "f": "static/chunks/_0-oycki._.js",
+            "inHtml": false
+          }
+        ],
+        "ConsentPanel": [
+          {
+            "f": "static/chunks/_0-oycki._.js",
+            "inHtml": false
+          }
+        ]
+      },
+      "hydratedAt": 2820,
+      "loadAt": 3107,
+      "bannerChunkRequestedAt": 3025,
+      "banners": [
+        {
+          "t": 1855,
+          "hydrated": false
+        },
+        {
+          "t": 3107,
+          "hydrated": true
+        }
+      ],
+      "shifts": [
+        {
+          "t": 2116,
+          "v": 0.0002,
+          "input": false
+        }
+      ],
+      "minOpacity": 1,
+      "rects": [
+        {
+          "t": 1847,
+          "rect": "571/261"
+        }
+      ],
+      "swapAfterHydrationMs": 287,
+      "liveAfterIdle": true,
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "bannerAfterAccept": 0,
+      "cookie": {
+        "v": 1,
+        "analytics": true,
+        "ads": true,
+        "at": 1790825327861,
+        "id": "41557dab-5f45-48e3-be0d-41532c4f39e7"
+      },
+      "errors": []
+    },
+    "/ 390": {
+      "bannerInServerHtml": true,
+      "modules": {
+        "ConsentGate": [
+          {
+            "f": "static/chunks/_076s3jn._.js",
+            "inHtml": true
+          }
+        ],
+        "ConsentBanner": [
+          {
+            "f": "static/chunks/_0-oycki._.js",
+            "inHtml": false
+          }
+        ],
+        "ConsentPanel": [
+          {
+            "f": "static/chunks/_0-oycki._.js",
+            "inHtml": false
+          }
+        ]
+      },
+      "hydratedAt": 16209,
+      "loadAt": 15863,
+      "bannerChunkRequestedAt": 16457,
+      "banners": [
+        {
+          "t": 3357,
+          "hydrated": false
+        },
+        {
+          "t": 16521,
+          "hydrated": true
+        }
+      ],
+      "shifts": [
+        {
+          "t": 3353,
+          "v": 0.087,
+          "input": true
+        },
+        {
+          "t": 4275,
+          "v": 0.0005,
+          "input": false
+        },
+        {
+          "t": 4286,
+          "v": 0,
+          "input": false
+        }
+      ],
+      "minOpacity": 1,
+      "rects": [
+        {
+          "t": 3253,
+          "rect": "798/34"
+        },
+        {
+          "t": 3352,
+          "rect": "571/261"
+        }
+      ],
+      "swapAfterHydrationMs": 312,
+      "liveAfterIdle": true,
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "bannerAfterAccept": 0,
+      "cookie": {
+        "v": 1,
+        "analytics": true,
+        "ads": true,
+        "at": 1790825355866,
+        "id": "f0fc971f-bda7-468a-99e9-d557ff39abf4"
+      },
+      "errors": []
+    },
+    "/deo/kocioni-disk-prednji-276-24-mm-demo-0004 390": {
+      "bannerInServerHtml": true,
+      "modules": {
+        "ConsentGate": [
+          {
+            "f": "static/chunks/_076s3jn._.js",
+            "inHtml": true
+          }
+        ],
+        "ConsentBanner": [
+          {
+            "f": "static/chunks/_0-oycki._.js",
+            "inHtml": false
+          }
+        ],
+        "ConsentPanel": [
+          {
+            "f": "static/chunks/_0-oycki._.js",
+            "inHtml": false
+          }
+        ]
+      },
+      "hydratedAt": 2474,
+      "loadAt": 2334,
+      "bannerChunkRequestedAt": 2636,
+      "banners": [
+        {
+          "t": 1762,
+          "hydrated": false
+        },
+        {
+          "t": 2665,
+          "hydrated": true
+        }
+      ],
+      "shifts": [
+        {
+          "t": 1811,
+          "v": 0.0003,
+          "input": true
+        }
+      ],
+      "minOpacity": 1,
+      "rects": [
+        {
+          "t": 1712,
+          "rect": "571/261"
+        }
+      ],
+      "swapAfterHydrationMs": 191,
+      "liveAfterIdle": true,
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "bannerAfterAccept": 0,
+      "cookie": {
+        "v": 1,
+        "analytics": true,
+        "ads": true,
+        "at": 1790825367918,
+        "id": "20aeb426-0725-4162-8375-457dd9fa764b"
+      },
+      "errors": []
+    },
+    "/upit 390": {
+      "bannerInServerHtml": true,
+      "modules": {
+        "ConsentGate": [
+          {
+            "f": "static/chunks/_076s3jn._.js",
+            "inHtml": true
+          }
+        ],
+        "ConsentBanner": [
+          {
+            "f": "static/chunks/_0-oycki._.js",
+            "inHtml": false
+          }
+        ],
+        "ConsentPanel": [
+          {
+            "f": "static/chunks/_0-oycki._.js",
+            "inHtml": false
+          }
+        ]
+      },
+      "hydratedAt": 2184,
+      "loadAt": 2133,
+      "bannerChunkRequestedAt": 3093,
+      "banners": [
+        {
+          "t": 1416,
+          "hydrated": false
+        },
+        {
+          "t": 3126,
+          "hydrated": true
+        }
+      ],
+      "shifts": [],
+      "minOpacity": 1,
+      "rects": [
+        {
+          "t": 1408,
+          "rect": "571/261"
+        }
+      ],
+      "swapAfterHydrationMs": 942,
+      "liveAfterIdle": true,
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "bannerAfterAccept": 0,
+      "cookie": {
+        "v": 1,
+        "analytics": true,
+        "ads": true,
+        "at": 1790825378869,
+        "id": "b4b9796c-095b-45cc-b3e3-086d8fa6a83e"
+      },
+      "errors": []
+    },
+    "/ponuda/kocione-plocice-golf 390": {
+      "bannerInServerHtml": true,
+      "modules": {
+        "ConsentGate": [
+          {
+            "f": "static/chunks/_1dpnm3k._.js",
+            "inHtml": true
+          }
+        ],
+        "ConsentBanner": [
+          {
+            "f": "static/chunks/_10at_q-._.js",
+            "inHtml": false
+          }
+        ],
+        "ConsentPanel": [
+          {
+            "f": "static/chunks/_10at_q-._.js",
+            "inHtml": false
+          }
+        ]
+      },
+      "hydratedAt": 3842,
+      "loadAt": 3574,
+      "bannerChunkRequestedAt": 3889,
+      "banners": [
+        {
+          "t": 2470,
+          "hydrated": false
+        },
+        {
+          "t": 4065,
+          "hydrated": true
+        }
+      ],
+      "shifts": [
+        {
+          "t": 3130,
+          "v": 0.0006,
+          "input": false
+        }
+      ],
+      "minOpacity": 1,
+      "rects": [
+        {
+          "t": 2461,
+          "rect": "571/261"
+        }
+      ],
+      "swapAfterHydrationMs": 223,
+      "liveAfterIdle": true,
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "bannerAfterAccept": 0,
+      "cookie": {
+        "v": 1,
+        "analytics": true,
+        "ads": true,
+        "at": 1790825394374,
+        "id": "2f95beb9-1362-416e-9ccb-f551e1212c5d"
+      },
+      "errors": []
+    },
+    "/delovi/kocioni-diskovi 1440": {
+      "bannerInServerHtml": true,
+      "modules": {
+        "ConsentGate": [
+          {
+            "f": "static/chunks/_076s3jn._.js",
+            "inHtml": true
+          }
+        ],
+        "ConsentBanner": [
+          {
+            "f": "static/chunks/_0-oycki._.js",
+            "inHtml": false
+          }
+        ],
+        "ConsentPanel": [
+          {
+            "f": "static/chunks/_0-oycki._.js",
+            "inHtml": false
+          }
+        ]
+      },
+      "hydratedAt": 4158,
+      "loadAt": 4071,
+      "bannerChunkRequestedAt": 4310,
+      "banners": [
+        {
+          "t": 3135,
+          "hydrated": false
+        },
+        {
+          "t": 4344,
+          "hydrated": true
+        }
+      ],
+      "shifts": [
+        {
+          "t": 3237,
+          "v": 0.0001,
+          "input": false
+        }
+      ],
+      "minOpacity": 1,
+      "rects": [
+        {
+          "t": 3122,
+          "rect": "709/167"
+        }
+      ],
+      "swapAfterHydrationMs": 186,
+      "liveAfterIdle": true,
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "bannerAfterAccept": 0,
+      "cookie": {
+        "v": 1,
+        "analytics": true,
+        "ads": true,
+        "at": 1790825408090,
+        "id": "d7a1e424-2746-4108-a2d5-583f25822f46"
+      },
+      "errors": []
+    }
+  },
+  "look": {
+    "static": "390x273",
+    "live": "390x273",
+    "sameSize": true,
+    "differingChannelValues": 0
+  },
+  "held-click": {
+    "rightAfter": {
+      "banner": 1,
+      "static": true,
+      "postsSoFar": 0,
+      "cookie": null
+    },
+    "bannerGoneAfterMs": 3601,
+    "bannerNow": 0,
+    "sameDocument": true,
+    "posts": [
+      {
+        "url": "/delovi/kocioni-diskovi",
+        "action": true,
+        "doc": false,
+        "at": 2853
+      }
+    ],
+    "cookie": {
+      "v": 1,
+      "analytics": false,
+      "ads": false,
+      "at": 1790825422849,
+      "id": "5ed84c31-7e62-49d4-807b-cd880fc46931"
+    },
+    "bannerChunkRequestedAt": 3117,
+    "hydratedAt": 2979,
+    "errors": []
+  },
+  "held-tap": {
+    "rightAfter": {
+      "banner": 1,
+      "static": true,
+      "postsSoFar": 0,
+      "cookie": null
+    },
+    "bannerGoneAfterMs": 4169,
+    "bannerNow": 0,
+    "sameDocument": true,
+    "posts": [
+      {
+        "url": "/delovi/kocioni-diskovi",
+        "action": true,
+        "doc": false,
+        "at": 2843
+      }
+    ],
+    "cookie": {
+      "v": 1,
+      "analytics": true,
+      "ads": true,
+      "at": 1790825429390,
+      "id": "901de64d-1cc1-41ae-8cf3-e5e1e357028a"
+    },
+    "bannerChunkRequestedAt": 2187,
+    "hydratedAt": 2067,
+    "errors": []
+  },
+  "keyboard": {
+    "path": [
+      {
+        "key": null,
+        "role": null,
+        "text": "Preskoči na sadržaj",
+        "inBanner": false,
+        "staticNode": false,
+        "focusVisible": true
+      },
+      {
+        "key": "more",
+        "role": null,
+        "text": "Više o kolačićima",
+        "inBanner": true,
+        "staticNode": true,
+        "focusVisible": true
+      },
+      {
+        "key": "settings",
+        "role": null,
+        "text": "Podešavanja",
+        "inBanner": true,
+        "staticNode": true,
+        "focusVisible": true
+      }
+    ],
+    "afterSwap": {
+      "key": "settings",
+      "role": null,
+      "text": "Podešavanja",
+      "inBanner": true,
+      "staticNode": false,
+      "focusVisible": true
+    },
+    "afterSettings": {
+      "key": null,
+      "role": "switch",
+      "text": "",
+      "inBanner": true,
+      "staticNode": false,
+      "focusVisible": true
+    },
+    "collapsedAfterEscape": true,
+    "tabsAfterCollapse": [
+      {
+        "key": "more",
+        "role": null,
+        "text": "Više o kolačićima",
+        "inBanner": true,
+        "staticNode": false,
+        "focusVisible": true
+      },
+      {
+        "key": "settings",
+        "role": null,
+        "text": "Podešavanja",
+        "inBanner": true,
+        "staticNode": false,
+        "focusVisible": true
+      },
+      {
+        "key": "all",
+        "role": null,
+        "text": "Prihvati sve",
+        "inBanner": true,
+        "staticNode": false,
+        "focusVisible": true
+      },
+      {
+        "key": "none",
+        "role": null,
+        "text": "Odbij sve",
+        "inBanner": true,
+        "staticNode": false,
+        "focusVisible": true
+      }
+    ],
+    "errors": []
+  },
+  "earlyEscape": {
+    "collapsedBeforeSwap": false,
+    "collapsedAfterSwap": true,
+    "errors": []
+  },
+  "chunkFailure": {
+    "bannerAfter": 0,
+    "cookie": {
+      "v": 1,
+      "analytics": false,
+      "ads": false,
+      "at": 1790825451193,
+      "id": "f8e47507-01da-4e78-855e-f666723d7634"
+    },
+    "posts": [
+      {
+        "action": true,
+        "doc": false
+      }
+    ],
+    "errors": [],
+    "allErrors": 2
+  },
+  "returning": {
+    "/delovi/kocioni-diskovi": {
+      "bannerInDom": 0,
+      "modulesBeforeReopen": {
+        "ConsentGate": [
+          {
+            "f": "static/chunks/_076s3jn._.js",
+            "inHtml": true
+          }
+        ]
+      },
+      "focusOnReopen": {
+        "key": "save",
+        "role": null,
+        "text": "Sačuvaj izbor",
+        "inBanner": true,
+        "staticNode": false,
+        "focusVisible": false
+      },
+      "switches": 3,
+      "opacity": "1",
+      "bannerAfterSave": 0,
+      "cookieAfterSave": {
+        "v": 1,
+        "analytics": true,
+        "ads": false,
+        "at": 1790825707993,
+        "id": "audit-r2p1-ret-0001"
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "errors": []
+    },
+    "/": {
+      "bannerInDom": 0,
+      "modulesBeforeReopen": {
+        "ConsentGate": [
+          {
+            "f": "static/chunks/_076s3jn._.js",
+            "inHtml": true
+          }
+        ]
+      },
+      "errors": []
+    }
+  },
+  "afterDecision": {
+    "afterNav": {
+      "url": "/kontakt",
+      "sameDocument": true,
+      "banner": 0
+    },
+    "reopenFocus": {
+      "key": "save",
+      "role": null,
+      "text": "Sačuvaj izbor",
+      "inBanner": true,
+      "staticNode": false,
+      "focusVisible": false
+    },
+    "analyticsCheckedOnReopen": "true",
+    "collapsed": true,
+    "cookie": {
+      "v": 1,
+      "analytics": false,
+      "ads": false,
+      "at": 1790825734274,
+      "id": "61957ec7-8c9a-4744-8d21-ca1465746613"
+    },
+    "bannerAfterReload": 0,
+    "errors": []
+  },
+  "reducedMotion": {
+    "banners": [
+      {
+        "t": 3263,
+        "hydrated": false
+      },
+      {
+        "t": 5151,
+        "hydrated": true
+      }
+    ],
+    "shifts": [
+      {
+        "t": 3541,
+        "v": 0.0002,
+        "input": true
+      }
+    ],
+    "minOpacity": 1,
+    "bannerAfter": 0,
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "errors": []
+  },
+  "noJs": {
+    "visible": true,
+    "cookie": {
+      "v": 1,
+      "analytics": false,
+      "ads": false,
+      "at": 1790825754236,
+      "id": "1fbdd09c-e9b2-494a-9f22-4ca1f0006950"
+    },
+    "bannerAfterPost": 0
+  }
+}

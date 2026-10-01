@@ -1,0 +1,781 @@
+{
+ "mot03": [
+  {
+   "kind": "deeplink",
+   "width": 1440,
+   "slug": "kocioni-diskovi",
+   "want": 3,
+   "y": 1325,
+   "p": 0.4597222222222222,
+   "stage": 3,
+   "selected": "kocioni-diskovi",
+   "current": "03 Kočnice, vešanje, upravljanje",
+   "ok": true
+  },
+  {
+   "kind": "deeplink",
+   "width": 1440,
+   "slug": "abs-senzori",
+   "want": 3,
+   "y": 1325,
+   "p": 0.4597222222222222,
+   "stage": 3,
+   "selected": "abs-senzori",
+   "current": "03 Kočnice, vešanje, upravljanje",
+   "ok": true
+  },
+  {
+   "kind": "deeplink",
+   "width": 1440,
+   "slug": "amortizeri-opruge",
+   "want": 3,
+   "y": 1325,
+   "p": 0.4597222222222222,
+   "stage": 3,
+   "selected": "amortizeri-opruge",
+   "current": "03 Kočnice, vešanje, upravljanje",
+   "ok": true
+  },
+  {
+   "kind": "deeplink",
+   "width": 1440,
+   "slug": "motor",
+   "want": 5,
+   "y": 2074,
+   "p": 0.7197916666666667,
+   "stage": 5,
+   "selected": "motor",
+   "current": "05 Motor, turbina, gorivo, paljenje",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1440,
+   "want": 1,
+   "y": 692,
+   "p": 0.239931,
+   "stage": 1,
+   "selected": null,
+   "current": "01 Karoserija, stakla i svetla",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1440,
+   "want": 2,
+   "y": 922,
+   "p": 0.319792,
+   "stage": 2,
+   "selected": null,
+   "current": "02 Točkovi",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1440,
+   "want": 3,
+   "y": 1325,
+   "p": 0.459722,
+   "stage": 3,
+   "selected": null,
+   "current": "03 Kočnice, vešanje, upravljanje",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1440,
+   "want": 4,
+   "y": 1671,
+   "p": 0.579861,
+   "stage": 4,
+   "selected": null,
+   "current": "04 Pomoćni agregati, hlađenje, usis",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1440,
+   "want": 5,
+   "y": 2074,
+   "p": 0.719792,
+   "stage": 5,
+   "selected": null,
+   "current": "05 Motor, turbina, gorivo, paljenje",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1440,
+   "want": 6,
+   "y": 2420,
+   "p": 0.839931,
+   "stage": 6,
+   "selected": null,
+   "current": "06 Menjač, kvačilo, poluosovine",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1440,
+   "want": 7,
+   "y": 2650,
+   "p": 0.919792,
+   "stage": 7,
+   "selected": null,
+   "current": "07 Izduvni sistem",
+   "ok": true
+  },
+  {
+   "kind": "deeplink",
+   "width": 1280,
+   "slug": "kocioni-diskovi",
+   "want": 3,
+   "y": 1178,
+   "p": 0.459765625,
+   "stage": 3,
+   "selected": "kocioni-diskovi",
+   "current": "03 Kočnice, vešanje, upravljanje",
+   "ok": true
+  },
+  {
+   "kind": "deeplink",
+   "width": 1280,
+   "slug": "abs-senzori",
+   "want": 3,
+   "y": 1178,
+   "p": 0.459765625,
+   "stage": 3,
+   "selected": "abs-senzori",
+   "current": "03 Kočnice, vešanje, upravljanje",
+   "ok": true
+  },
+  {
+   "kind": "deeplink",
+   "width": 1280,
+   "slug": "amortizeri-opruge",
+   "want": 3,
+   "y": 1178,
+   "p": 0.459765625,
+   "stage": 3,
+   "selected": "amortizeri-opruge",
+   "current": "03 Kočnice, vešanje, upravljanje",
+   "ok": true
+  },
+  {
+   "kind": "deeplink",
+   "width": 1280,
+   "slug": "motor",
+   "want": 5,
+   "y": 1844,
+   "p": 0.719921875,
+   "stage": 5,
+   "selected": "motor",
+   "current": "05 Motor, turbina, gorivo, paljenje",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1280,
+   "want": 1,
+   "y": 615,
+   "p": 0.239844,
+   "stage": 1,
+   "selected": null,
+   "current": "01 Karoserija, stakla i svetla",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1280,
+   "want": 2,
+   "y": 820,
+   "p": 0.319922,
+   "stage": 2,
+   "selected": null,
+   "current": "02 Točkovi",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1280,
+   "want": 3,
+   "y": 1178,
+   "p": 0.459766,
+   "stage": 3,
+   "selected": null,
+   "current": "03 Kočnice, vešanje, upravljanje",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1280,
+   "want": 4,
+   "y": 1485,
+   "p": 0.579688,
+   "stage": 4,
+   "selected": null,
+   "current": "04 Pomoćni agregati, hlađenje, usis",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1280,
+   "want": 5,
+   "y": 1844,
+   "p": 0.719922,
+   "stage": 5,
+   "selected": null,
+   "current": "05 Motor, turbina, gorivo, paljenje",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1280,
+   "want": 6,
+   "y": 2151,
+   "p": 0.839844,
+   "stage": 6,
+   "selected": null,
+   "current": "06 Menjač, kvačilo, poluosovine",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1280,
+   "want": 7,
+   "y": 2356,
+   "p": 0.919922,
+   "stage": 7,
+   "selected": null,
+   "current": "07 Izduvni sistem",
+   "ok": true
+  },
+  {
+   "kind": "deeplink",
+   "width": 1920,
+   "slug": "kocioni-diskovi",
+   "want": 3,
+   "y": 1590,
+   "p": 0.4597800925925926,
+   "stage": 3,
+   "selected": "kocioni-diskovi",
+   "current": "03 Kočnice, vešanje, upravljanje",
+   "ok": true
+  },
+  {
+   "kind": "deeplink",
+   "width": 1920,
+   "slug": "abs-senzori",
+   "want": 3,
+   "y": 1590,
+   "p": 0.4597800925925926,
+   "stage": 3,
+   "selected": "abs-senzori",
+   "current": "03 Kočnice, vešanje, upravljanje",
+   "ok": true
+  },
+  {
+   "kind": "deeplink",
+   "width": 1920,
+   "slug": "amortizeri-opruge",
+   "want": 3,
+   "y": 1590,
+   "p": 0.4597800925925926,
+   "stage": 3,
+   "selected": "amortizeri-opruge",
+   "current": "03 Kočnice, vešanje, upravljanje",
+   "ok": true
+  },
+  {
+   "kind": "deeplink",
+   "width": 1920,
+   "slug": "motor",
+   "want": 5,
+   "y": 2489,
+   "p": 0.7199074074074074,
+   "stage": 5,
+   "selected": "motor",
+   "current": "05 Motor, turbina, gorivo, paljenje",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1920,
+   "want": 1,
+   "y": 830,
+   "p": 0.239873,
+   "stage": 1,
+   "selected": null,
+   "current": "01 Karoserija, stakla i svetla",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1920,
+   "want": 2,
+   "y": 1106,
+   "p": 0.319734,
+   "stage": 2,
+   "selected": null,
+   "current": "02 Točkovi",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1920,
+   "want": 3,
+   "y": 1590,
+   "p": 0.45978,
+   "stage": 3,
+   "selected": null,
+   "current": "03 Kočnice, vešanje, upravljanje",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1920,
+   "want": 4,
+   "y": 2005,
+   "p": 0.579861,
+   "stage": 4,
+   "selected": null,
+   "current": "04 Pomoćni agregati, hlađenje, usis",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1920,
+   "want": 5,
+   "y": 2489,
+   "p": 0.719907,
+   "stage": 5,
+   "selected": null,
+   "current": "05 Motor, turbina, gorivo, paljenje",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1920,
+   "want": 6,
+   "y": 2904,
+   "p": 0.839988,
+   "stage": 6,
+   "selected": null,
+   "current": "06 Menjač, kvačilo, poluosovine",
+   "ok": true
+  },
+  {
+   "kind": "index",
+   "width": 1920,
+   "want": 7,
+   "y": 3180,
+   "p": 0.91985,
+   "stage": 7,
+   "selected": null,
+   "current": "07 Izduvni sistem",
+   "ok": true
+  },
+  {
+   "kind": "deeplink",
+   "width": 390,
+   "slug": "kocioni-diskovi",
+   "want": 3,
+   "y": 1484,
+   "p": 0.5195497630331753,
+   "stage": 3,
+   "selected": "kocioni-diskovi",
+   "current": "03 / 07 Kočnice i vešanje",
+   "ok": true
+  },
+  {
+   "kind": "deeplink",
+   "width": 390,
+   "slug": "abs-senzori",
+   "want": 3,
+   "y": 1484,
+   "p": 0.5195497630331753,
+   "stage": 3,
+   "selected": "abs-senzori",
+   "current": "03 / 07 Kočnice i vešanje",
+   "ok": true
+  },
+  {
+   "kind": "deeplink",
+   "width": 390,
+   "slug": "amortizeri-opruge",
+   "want": 3,
+   "y": 1484,
+   "p": 0.5195497630331753,
+   "stage": 3,
+   "selected": "amortizeri-opruge",
+   "current": "03 / 07 Kočnice i vešanje",
+   "ok": true
+  },
+  {
+   "kind": "deeplink",
+   "width": 390,
+   "slug": "motor",
+   "want": 5,
+   "y": 1856,
+   "p": 0.7399289099526066,
+   "stage": 5,
+   "selected": "motor",
+   "current": "05 / 07 Motor i turbina",
+   "ok": true
+  },
+  {
+   "kind": "next",
+   "width": 390,
+   "want": 1,
+   "y": 980,
+   "p": 0.220972,
+   "stage": 1,
+   "selected": null,
+   "current": "01 / 07 Karoserija i svetla",
+   "ok": true
+  },
+  {
+   "kind": "next",
+   "width": 390,
+   "want": 2,
+   "y": 1147,
+   "p": 0.319905,
+   "stage": 2,
+   "selected": null,
+   "current": "02 / 07 Točkovi",
+   "ok": true
+  },
+  {
+   "kind": "next",
+   "width": 390,
+   "want": 3,
+   "y": 1484,
+   "p": 0.51955,
+   "stage": 3,
+   "selected": null,
+   "current": "03 / 07 Kočnice i vešanje",
+   "ok": true
+  },
+  {
+   "kind": "next",
+   "width": 390,
+   "want": 4,
+   "y": 1673,
+   "p": 0.631517,
+   "stage": 4,
+   "selected": null,
+   "current": "04 / 07 Agregati i hlađenje",
+   "ok": true
+  },
+  {
+   "kind": "next",
+   "width": 390,
+   "want": 5,
+   "y": 1856,
+   "p": 0.739929,
+   "stage": 5,
+   "selected": null,
+   "current": "05 / 07 Motor i turbina",
+   "ok": true
+  },
+  {
+   "kind": "next",
+   "width": 390,
+   "want": 6,
+   "y": 2008,
+   "p": 0.829976,
+   "stage": 6,
+   "selected": null,
+   "current": "06 / 07 Menjač i kvačilo",
+   "ok": true
+  },
+  {
+   "kind": "next",
+   "width": 390,
+   "want": 7,
+   "y": 2159,
+   "p": 0.919431,
+   "stage": 7,
+   "selected": null,
+   "current": "07 / 07 Izduvni sistem",
+   "ok": true
+  },
+  {
+   "kind": "prev",
+   "width": 390,
+   "want": 6,
+   "y": 2008,
+   "p": 0.829976,
+   "stage": 6,
+   "selected": null,
+   "current": "06 / 07 Menjač i kvačilo",
+   "ok": true
+  },
+  {
+   "kind": "prev",
+   "width": 390,
+   "want": 5,
+   "y": 1856,
+   "p": 0.739929,
+   "stage": 5,
+   "selected": null,
+   "current": "05 / 07 Motor i turbina",
+   "ok": true
+  },
+  {
+   "kind": "prev",
+   "width": 390,
+   "want": 4,
+   "y": 1673,
+   "p": 0.631517,
+   "stage": 4,
+   "selected": null,
+   "current": "04 / 07 Agregati i hlađenje",
+   "ok": true
+  },
+  {
+   "kind": "prev",
+   "width": 390,
+   "want": 3,
+   "y": 1484,
+   "p": 0.51955,
+   "stage": 3,
+   "selected": null,
+   "current": "03 / 07 Kočnice i vešanje",
+   "ok": true
+  },
+  {
+   "kind": "prev",
+   "width": 390,
+   "want": 2,
+   "y": 1147,
+   "p": 0.319905,
+   "stage": 2,
+   "selected": null,
+   "current": "02 / 07 Točkovi",
+   "ok": true
+  },
+  {
+   "kind": "prev",
+   "width": 390,
+   "want": 1,
+   "y": 980,
+   "p": 0.220972,
+   "stage": 1,
+   "selected": null,
+   "current": "01 / 07 Karoserija i svetla",
+   "ok": true
+  },
+  {
+   "kind": "prev",
+   "width": 390,
+   "want": 0,
+   "y": 607,
+   "p": 0,
+   "stage": 0,
+   "selected": null,
+   "current": "00 / 07 Sklopljeno",
+   "ok": true
+  }
+ ],
+ "mot05": [
+  {
+   "from": "/delovi",
+   "scroll": 1500,
+   "width": 1440,
+   "height": 900,
+   "samples": [
+    {
+     "t": 500,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 Sklopljen automobil"
+    },
+    {
+     "t": 2500,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 Sklopljen automobil"
+    },
+    {
+     "t": 6000,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 Sklopljen automobil"
+    }
+   ],
+   "ok": true
+  },
+  {
+   "from": "/delovi",
+   "scroll": 1500,
+   "width": 1440,
+   "height": 900,
+   "samples": [
+    {
+     "t": 500,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 Sklopljen automobil"
+    },
+    {
+     "t": 2500,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 Sklopljen automobil"
+    },
+    {
+     "t": 6000,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 Sklopljen automobil"
+    }
+   ],
+   "ok": true
+  },
+  {
+   "from": "/delovi",
+   "scroll": 1500,
+   "width": 1440,
+   "height": 900,
+   "samples": [
+    {
+     "t": 500,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 Sklopljen automobil"
+    },
+    {
+     "t": 2500,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 Sklopljen automobil"
+    },
+    {
+     "t": 6000,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 Sklopljen automobil"
+    }
+   ],
+   "ok": true
+  },
+  {
+   "from": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+   "scroll": 1200,
+   "width": 1440,
+   "height": 900,
+   "samples": [
+    {
+     "t": 500,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 Sklopljen automobil"
+    },
+    {
+     "t": 2500,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 Sklopljen automobil"
+    },
+    {
+     "t": 6000,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 Sklopljen automobil"
+    }
+   ],
+   "ok": true
+  },
+  {
+   "from": "/delovi",
+   "scroll": 0,
+   "width": 1440,
+   "height": 900,
+   "samples": [
+    {
+     "t": 500,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 Sklopljen automobil"
+    },
+    {
+     "t": 2500,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 Sklopljen automobil"
+    },
+    {
+     "t": 6000,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 Sklopljen automobil"
+    }
+   ],
+   "ok": true
+  },
+  {
+   "from": "/delovi",
+   "scroll": 1500,
+   "width": 390,
+   "height": 844,
+   "samples": [
+    {
+     "t": 500,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 / 07 Sklopljeno"
+    },
+    {
+     "t": 2500,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 / 07 Sklopljeno"
+    },
+    {
+     "t": 6000,
+     "y": 0,
+     "p": 0,
+     "stage": 0,
+     "selected": null,
+     "current": "00 / 07 Sklopljeno"
+    }
+   ],
+   "ok": true
+  }
+ ]
+}

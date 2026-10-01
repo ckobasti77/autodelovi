@@ -1,0 +1,93 @@
+[
+  {
+    "id": "MOT-02",
+    "status": "FIXED",
+    "summary": "Root cause: the inline style transform translateY(110%) was parsed by GSAP into y: 71.5px, which the show tween (yPercent only) never cleared. StickyBuyBar now ships visibility:hidden only; useGSAP sets the resting state { y: 0, yPercent: 110, visibility: hidden }, shows with { y: 0, yPercent: 0 } (360 ms sk.out) and hides back to the same state; reduced motion places the bar on screen at once and fades only opacity. While shown the bar registers with useBottomInset (scroll-padding-bottom + focus clearance, WCAG 2.4.11). aria-hidden/inert follow the shown state as before (D259).",
+    "files": ["components/product/StickyBuyBar.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/catalog-product-ui-sticky.mjs -> 390, 390-reduced and 360 all \"pass\": true; after scrolling past #buy-box: top 779, bottom 844 (= innerHeight 844), transform matrix(1, 0, 0, 1, 0, 0), visibility visible, inert false, scrollPaddingBottom 81px; scrolled back: visibility hidden, inert true, inset removed; no console errors. Evidence docs/qa/fix/catalog-product-ui/mot02-sticky.json, mot02-390-past.webp (bar on screen), mot02-390-reduced-past.webp."
+  },
+  {
+    "id": "A11Y-10",
+    "status": "FIXED",
+    "summary": "Card part (the 3 px header overflow is VIS-03 of shell-perf; measured 0 px now). The card footer's size container wraps only the footer, so @min-[17rem] measures the body column instead of the whole card: in the 104 px list layout at 320 px the price and a full-width „U korpu“ stack (before: the card was ≥ 17rem, so price + button sat side by side in a ~180 px column and the button clipped). OEM line wraps (break-words) instead of truncate; names are not clamped in the list layout (3 lines in the grid); the inline StockBadge may wrap (chip variant stays one line), so the stock line no longer clips under the 1.4.12 text-spacing override. The container sits on the footer only because container-type implies layout containment, which would trap the name link's card-wide ::after (D260).",
+    "files": ["components/catalog/ProductCard.tsx", "components/ui/StockBadge.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 ONLY=a11y10,vis05 node scripts/qa/fix/catalog-product-ui-layout.mjs -> at 320x800 on /ponuda/kocione-plocice-golf, /delovi/kocioni-diskovi and /pretraga?q=disk, normal and with the WCAG 1.4.12 spacing stylesheet: clipped 0, clamped 0, overX 0, thumbLinked = cards (whole card still one link). Evidence docs/qa/fix/catalog-product-ui/layout-a11y10-vis05.json, a11y10-card-320.webp, a11y10-card-320-spacing.webp (full name, wrapped OEM, full-width U korpu)."
+  },
+  {
+    "id": "FLOW-11",
+    "status": "FIXED",
+    "summary": "Below lg the [Filteri (n)] [Sortiraj] row is sticky at top: var(--header-h), z-sticky, bg-bg/95 + header blur (solid with reduced transparency), bleeding to the page edges (-mx-page px-page) with a bottom rule. It fits one line on phones: the count („9 artikala“, still the role=status live region) moved above the row; the sort select takes the remaining width. The toolbar wrapper is display: contents below lg so the row's sticky range is the whole results column; desktop keeps count left / sort right / chips below in a grid (D261).",
+    "files": ["components/catalog/CatalogControls.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 ONLY=flow11 node scripts/qa/fix/catalog-product-ui-layout.mjs -> /delovi/kocioni-diskovi at 360, 390, 768: Filteri button top 454/428/382 at scrollY 0 and 64 at scrollY 1400 (header bottom 57), rowPos sticky, filter sheet opens from the stuck row (sheet true), overX 0, text-reveal check at 390 {stuck: [], pending: 0, words: 0}. Evidence docs/qa/fix/catalog-product-ui/layout-flow11.json, flow11-390-scrolled.webp (one-line sticky row under the header)."
+  },
+  {
+    "id": "VIS-05",
+    "status": "FIXED",
+    "summary": "ProductGrid withRail uses lg:grid-cols-[repeat(auto-fill,minmax(15rem,1fr))], so cards beside the 280 px rail never drop below 240 px (before: fixed 3/4/5 columns gave 203 px at 1024/1280 and 200 px at 1920/2560). Grid names get up to 3 lines and go through typographer() (NBSP around „×“, VIS-19), so „Kočioni disk prednji 312 × 25 mm, ventilirani“ is shown whole; the 4:3 thumbnail reserves the chip row (pt-9) so the „OEM kvalitet“ chip never sits on the render (D260).",
+    "files": ["components/catalog/ProductGrid.tsx", "components/catalog/ProductCard.tsx", "lib/format/nbsp.ts"],
+    "verification": "AUDIT_BASE=http://localhost:3001 ONLY=a11y10,vis05 node scripts/qa/fix/catalog-product-ui-layout.mjs -> /delovi/kocioni-diskovi card width/columns: 1024 314 px/2, 1280 280/3, 1440 242/4, 1920 258/4, 2560 258/4; clamped names 0, chipOverlap 0, clipped 0 at every width. Evidence docs/qa/fix/catalog-product-ui/layout-a11y10-vis05.json, vis05-1920.webp (full names, chip above the render)."
+  },
+  {
+    "id": "VIS-08",
+    "status": "FIXED",
+    "summary": "FilterRail is lg:sticky at top: calc(var(--header-h) + 1.5rem), lg:self-start, max-height calc(100dvh - header - 3rem), overflow-y auto with overscroll-behavior contain and a thin scrollbar; 4 px inline padding keeps the focus rings of full-width rows inside the scrollport. On a landing whose results are shorter than the rail, the rail sticks while its grid row is in view and leaves with it (a sticky box cannot outlive its row) (D261).",
+    "files": ["components/catalog/CatalogControls.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 ONLY=vis08 node scripts/qa/fix/catalog-product-ui-layout.mjs -> /delovi/kocioni-diskovi 1440x900: before scroll top 341; after a 900 px wheel position sticky, top 88 (header bottom 65), bottom 876 <= 900, pass true; wheel over the rail scrolls the rail (railScroll 123) while the page stays at scrollY 900. node scripts/qa/fix/catalog-product-ui-rail-landing.mjs (golf landing 1280x800, 6 cards): rail top 88 at scrollY 400 and 600, leaves with the row end at 900. Evidence docs/qa/fix/catalog-product-ui/layout-vis08.json, vis08-landing-1280.json, vis08-1440-scrolled.webp."
+  },
+  {
+    "id": "VIS-19",
+    "status": "FIXED",
+    "summary": "Card part: lib/format/nbsp.ts gains nbspDimensions ((\\d)\\s*×\\s*(\\d) -> NBSP × NBSP), included in typographer(); ProductCard renders typographer(card.name). The /deo H1 is an assist for search-catalog-content (call typographer on the product name there).",
+    "files": ["lib/format/nbsp.ts", "tests/unit/format/nbsp.test.ts", "components/catalog/ProductCard.tsx"],
+    "verification": "npx vitest run tests/unit/format/nbsp.test.ts -> Tests 31 passed (new nbspDimensions cases incl. „Kočioni disk prednji 312 × 25 mm, ventilirani“ -> 312\\u00a0×\\u00a025\\u00a0mm and the non-numeric „Set × 2“ case). vis05-1920.webp shows „312 × 25 mm“ kept on one line."
+  },
+  {
+    "id": "PERF-21",
+    "status": "FIXED",
+    "summary": "ProductCard sizes per layout: responsive '(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, (min-width: 480px) 50vw, 104px' (480 px is this project's sm, where the list card becomes a grid card; the planner's 640 would give 104 px to 2-column grid cards between 480 and 640), grid variant ends in 100vw, list stays 104px.",
+    "files": ["components/catalog/ProductCard.tsx"],
+    "verification": "curl http://localhost:3001/delovi/kocioni-diskovi -> card <img sizes=\"(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, (min-width: 480px) 50vw, 104px\"> and the same imageSizes on the first-card preload link; npx tsc --noEmit clean for owned files."
+  },
+  {
+    "id": "A11Y-19",
+    "status": "FIXED",
+    "summary": "AddToCartButton part: the card, product and „Obavesti me“ controls get aria-label „<label>: <naziv>“ instead of the visible label plus an sr-only span (the absolutely positioned span is block-level, so the name became „U korpu : …“). The visible label still starts the name (2.5.3). Stepper (forms-auth) and FavoriteButton (cart-mechanic-overlays) are their packages' parts.",
+    "files": ["components/catalog/AddToCartButton.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/catalog-product-ui-misc.mjs -> a11y19.names [\"U korpu: Kočioni disk zadnji 272 × 10 mm, puni\", …], getByRole('button', { name: /^U korpu: / }) resolves, strayColonSpace false; clicking it still adds (cart-live „Dodato u korpu: Kočioni disk zadnji 272 × 10 mm, puni.“). Evidence docs/qa/fix/catalog-product-ui/misc.json."
+  },
+  {
+    "id": "VIS-21",
+    "status": "FIXED",
+    "summary": "LandingPage shows only the first sentence of the generated intro (count, stock, price range) under the H1 and puts the facts (generations, makers) behind a native <details> „Više o ponudi“ / „Manje“, at every width — the same pattern as „Više o kategoriji“ (D262). The planner suggested collapsing only below 768 px; that needs the text twice in the HTML or a client island, so the landing now matches the category page instead.",
+    "files": ["components/catalog/LandingPage.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/catalog-product-ui-misc.mjs -> /delovi/kocioni-diskovi/volkswagen/golf at 360x780: details closed with summary „Više o ponudi“, first card top 573 and its name, OEM, stock and price 3.890 RSD inside the first viewport (vis21-landing-360.webp); the „U korpu“ button is ~60 px below the fold; text-reveal check {stuck: [], pending: 0, words: 0}."
+  },
+  {
+    "id": "PERF-17",
+    "status": "OPEN",
+    "summary": "Item 1 done: ProductCard passes AddToCartButton only the CartProduct fields (cartProduct()), not the whole ProductCardData, so card data is no longer serialised twice. Item 2 (collapse ProductStock/ProductPrice/AddToCartButton into one delegated client island per ProductGrid) is not done in this pass: it is a structural rewrite of the card (live values patched into server markup, delegated click handling, the „Dodato“ state and toasts) that needs its own measured change and e2e coverage of add-to-cart on every listing; the public props stay as they are so consumers are unaffected when it lands.",
+    "files": ["components/catalog/ProductCard.tsx"],
+    "verification": "npx tsc --noEmit -> no errors in owned files (CartProduct built from ProductCardData); catalog-product-ui-misc.mjs add-to-cart from a card still works (cart-live announcement)."
+  },
+  {
+    "id": "FLOW-25",
+    "status": "OPEN",
+    "summary": "Not done. Disabling „U korpu“ when the cart already holds all stock needs the cart line quantity per product in every card button (a cart subscription per AddToCartButton, which the deferred-socket work for anonymous visitors avoids) and the carts.ts OUT_OF_STOCK message change owned by backend-orders-quotes. Best done together with the one-island-per-grid rewrite (PERF-17 item 2), where one cart lookup can serve the whole grid.",
+    "files": [],
+    "verification": "n/a (not changed)."
+  },
+  {
+    "id": "PERF-03",
+    "status": "OPEN",
+    "summary": "Assist only. The responsive card's sizes now end in 104px below 480 px, so the first-two-card preload on phones fetches the small list-thumbnail candidate instead of a 50vw image. A media-scoped preload (ReactDOM.preload with media from the Server Component) was tried and reverted: React's server renderer emits its own head preload without media for every eager <img>, which wins the dedupe. The LCP finding itself stays with its owner.",
+    "files": ["components/catalog/ProductCard.tsx", "components/catalog/ProductGrid.tsx"],
+    "verification": "curl http://localhost:3001/delovi/kocioni-diskovi -> one <link rel=preload as=image> with imageSizes ending in '(min-width: 480px) 50vw, 104px'."
+  },
+  {
+    "id": "MOT-06",
+    "status": "OPEN",
+    "summary": "Assist not applied: components/ui/Disclosure.tsx (home-hero-sections) does not exist yet in the tree, so „Više o kategoriji“ (CategoryListingView), „Više o ponudi“ (LandingPage) and „Prikaži još N“ (FitmentTable) remain native <details>. Once it exists, swap those three <details> for it (same summary copy).",
+    "files": [],
+    "verification": "ls components/ui/Disclosure.tsx -> No such file or directory (checked at the end of the pass)."
+  }
+]

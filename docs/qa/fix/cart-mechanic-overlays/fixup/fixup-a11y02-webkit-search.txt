@@ -1,0 +1,16 @@
+{
+ "yStart": 1200,
+ "yAfter": 1200,
+ "jump": 0,
+ "dlg": [],
+ "secondEscape": false,
+ "active": "BUTTON[header-search-trigger]",
+ "log": [
+  "in INPUT[]",
+  "INPUT[cbx_r_6_-input] top=158 h=42 ok=true",
+  "INPUT[cbx_r_6_-input] top=158 h=42 ok=true",
+  "--- open done, active=INPUT dialogs=1 expanded=true",
+  "in BUTTON[header-search-trigger]",
+  "BUTTON[header-search-trigger] top=12 h=40 ok=true"
+ ]
+}

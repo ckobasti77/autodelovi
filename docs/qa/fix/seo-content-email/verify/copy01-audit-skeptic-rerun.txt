@@ -1,0 +1,453 @@
+copy-01 skeptic verification — 2026-10-01T03:49:17.777Z — http://localhost:3001
+{
+  "base": "http://localhost:3001",
+  "products": 157,
+  "h1WithLowercaseS": 87,
+  "titlesMissingLowercaseS": 0,
+  "hasSButTitleOk": [
+    {
+      "url": "/deo/kocioni-disk-prednji-288-25-mm-ventilirani-demo-0001",
+      "h1": "Kočioni disk prednji 288 × 25 mm, ventilirani",
+      "title": "Kočioni disk prednji 288 × 25 mm ATE 1K0 615 868 F"
+    },
+    {
+      "url": "/deo/kocioni-disk-zadnji-272-10-mm-puni-demo-0003",
+      "h1": "Kočioni disk zadnji 272 × 10 mm, puni",
+      "title": "Kočioni disk zadnji 272 × 10 mm, puni TRW 1K0 615 540 Q"
+    },
+    {
+      "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+      "h1": "Kočioni disk prednji 276 × 24 mm",
+      "title": "Kočioni disk prednji 276 × 24 mm Febi Bilstein 5Q0 615 505 R"
+    },
+    {
+      "url": "/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005",
+      "h1": "Kočioni disk prednji 340 × 30 mm, GTI",
+      "title": "Kočioni disk prednji 340 × 30 mm Original VAG 5Q0 615 666 A"
+    },
+    {
+      "url": "/deo/kocioni-disk-prednji-256-22-mm-demo-0006",
+      "h1": "Kočioni disk prednji 256 × 22 mm",
+      "title": "Kočioni disk prednji 256 × 22 mm Bosch 6R0 615 645 | SKLOP"
+    },
+    {
+      "url": "/deo/kocioni-disk-prednji-312-25-mm-demo-0007",
+      "h1": "Kočioni disk prednji 312 × 25 mm",
+      "title": "Kočioni disk prednji 312 × 25 mm Brembo 3C0 615 098 | SKLOP"
+    },
+    {
+      "url": "/deo/kocioni-disk-prednji-320-30-mm-demo-0008",
+      "h1": "Kočioni disk prednji 320 × 30 mm",
+      "title": "Kočioni disk prednji 320 × 30 mm ATE 8K0 615 085 | SKLOP"
+    },
+    {
+      "url": "/deo/kocione-plocice-prednje-sa-senzorom-demo-0009",
+      "h1": "Kočione pločice prednje, sa senzorom",
+      "title": "Kočione pločice prednje, sa senzorom ATE 1K0 698 406 F"
+    },
+    {
+      "url": "/deo/kocione-plocice-zadnje-elektronska-rucna-demo-0013",
+      "h1": "Kočione pločice zadnje, elektronska ručna",
+      "title": "Kočione pločice zadnje Febi Bilstein 5Q0 698 782 KA"
+    },
+    {
+      "url": "/deo/kociona-celjust-prednja-leva-demo-0017",
+      "h1": "Kočiona čeljust prednja leva",
+      "title": "Kočiona čeljust prednja leva TRW 1K0 615 411 G | SKLOP"
+    },
+    {
+      "url": "/deo/set-za-reparaciju-kocione-celjusti-prednji-demo-0019",
+      "h1": "Set za reparaciju kočione čeljusti, prednji",
+      "title": "Set za reparaciju kočione Febi Bilstein 1K0 615 324 H"
+    },
+    {
+      "url": "/deo/abs-senzor-prednji-demo-0020",
+      "h1": "ABS senzor prednji",
+      "title": "ABS senzor prednji Bosch 5Q0 927 403 K | SKLOP"
+    },
+    {
+      "url": "/deo/abs-senzor-prednji-demo-0022",
+      "h1": "ABS senzor prednji",
+      "title": "ABS senzor prednji Meyle 6R0 927 986 S | SKLOP"
+    },
+    {
+      "url": "/deo/amortizer-prednji-gasni-demo-0023",
+      "h1": "Amortizer prednji, gasni",
+      "title": "Amortizer prednji, gasni Sachs 1K0 413 165 G | SKLOP"
+    },
+    {
+      "url": "/deo/lezaj-amortizera-sa-gumom-set-demo-0027",
+      "h1": "Ležaj amortizera sa gumom, set",
+      "title": "Ležaj amortizera sa gumom, set Meyle 1K0 413 883 E | SKLOP"
+    },
+    {
+      "url": "/deo/rame-prednje-levo-sa-kuglom-demo-0029",
+      "h1": "Rame prednje levo, sa kuglom",
+      "title": "Rame prednje levo, sa kuglom Lemförder 1K0 407 497 | SKLOP"
+    },
+    {
+      "url": "/deo/rame-prednje-desno-sa-kuglom-demo-0030",
+      "h1": "Rame prednje desno, sa kuglom",
+      "title": "Rame prednje desno, sa kuglom Lemförder 1K0 407 176 RD"
+    },
+    {
+      "url": "/deo/selen-blok-zadnjeg-mosta-demo-0032",
+      "h1": "Selen blok zadnjeg mosta",
+      "title": "Selen blok zadnjeg mosta Febi Bilstein 1K0 407 009 | SKLOP"
+    },
+    {
+      "url": "/deo/kraj-spone-demo-0034",
+      "h1": "Kraj spone",
+      "title": "Kraj spone Lemförder 1K0 411 042 HC | SKLOP"
+    },
+    {
+      "url": "/deo/stangla-stabilizatora-prednja-demo-0036",
+      "h1": "Štangla stabilizatora prednja",
+      "title": "Štangla stabilizatora prednja Febi Bilstein 1K0 411 027"
+    },
+    {
+      "url": "/deo/stangla-stabilizatora-prednja-hd-demo-0037",
+      "h1": "Štangla stabilizatora prednja HD",
+      "title": "Štangla stabilizatora prednja HD Meyle 6R0 411 337 K | SKLOP"
+    },
+    {
+      "url": "/deo/manzetna-letve-volana-set-demo-0038",
+      "h1": "Manžetna letve volana, set",
+      "title": "Manžetna letve volana, set Original VAG 1K0 423 878 | SKLOP"
+    },
+    {
+      "url": "/deo/lezaj-prednjeg-tocka-set-demo-0040",
+      "h1": "Ležaj prednjeg točka, set",
+      "title": "Ležaj prednjeg točka, set SKF 1K0 498 045 T | SKLOP"
+    },
+    {
+      "url": "/deo/glavcina-zadnja-sa-lezajem-demo-0041",
+      "h1": "Glavčina zadnja sa ležajem",
+      "title": "Glavčina zadnja sa ležajem SKF 5Q0 498 502 L | SKLOP"
+    },
+    {
+      "url": "/deo/lezaj-prednjeg-tocka-set-demo-0043",
+      "h1": "Ležaj prednjeg točka, set",
+      "title": "Ležaj prednjeg točka, set SKF 8K0 498 466 | SKLOP"
+    },
+    {
+      "url": "/deo/motor-klapni-usisne-grane-2-0-tdi-demo-0052",
+      "h1": "Motor klapni usisne grane 2.0 TDI",
+      "title": "Motor klapni usisne grane 2.0 TDI Pierburg 03L 129 304 H"
+    },
+    {
+      "url": "/deo/crevo-usisa-od-filtera-vazduha-demo-0053",
+      "h1": "Crevo usisa od filtera vazduha",
+      "title": "Crevo usisa od filtera vazduha Original VAG 5Q0 129 790"
+    },
+    {
+      "url": "/deo/pumpa-visokog-pritiska-cp4-2-0-tdi-demo-0055",
+      "h1": "Pumpa visokog pritiska CP4 2.0 TDI",
+      "title": "Pumpa visokog pritiska CP4 2.0 TDI Bosch 03L 130 215 P"
+    },
+    {
+      "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-0057",
+      "h1": "Set zupčastog kaiša sa vodenom pumpom 1.9 TDI",
+      "title": "Set zupčastog kaiša sa vodenom pumpom 1.9 INA 038 121 662"
+    },
+    {
+      "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-2-0-tdi-demo-0058",
+      "h1": "Set zupčastog kaiša sa vodenom pumpom 2.0 TDI",
+      "title": "Set zupčastog kaiša sa vodenom pumpom Gates 04L 121 248 DR"
+    },
+    {
+      "url": "/deo/set-zupcastog-kaisa-1-6-8v-demo-0059",
+      "h1": "Set zupčastog kaiša 1.6 8V",
+      "title": "Set zupčastog kaiša 1.6 8V ContiTech 06A 121 365 | SKLOP"
+    },
+    {
+      "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-6-tdi-demo-0060",
+      "h1": "Set zupčastog kaiša sa vodenom pumpom 1.6 TDI",
+      "title": "Set zupčastog kaiša sa vodenom pumpom 1.6 SKF 04L 121 911 B"
+    },
+    {
+      "url": "/deo/set-zupcastog-kaisa-1-4-16v-demo-0061",
+      "h1": "Set zupčastog kaiša 1.4 16V",
+      "title": "Set zupčastog kaiša 1.4 16V Gates 036 121 959 P | SKLOP"
+    },
+    {
+      "url": "/deo/rebrasti-kais-6pk1153-demo-0062",
+      "h1": "Rebrasti kaiš 6PK1153",
+      "title": "Rebrasti kaiš 6PK1153 Gates 1K0 903 702 | SKLOP"
+    },
+    {
+      "url": "/deo/rebrasti-kais-6pk1070-demo-0063",
+      "h1": "Rebrasti kaiš 6PK1070",
+      "title": "Rebrasti kaiš 6PK1070 ContiTech 5Q0 903 664 | SKLOP"
+    },
+    {
+      "url": "/deo/anlaser-2-0-kw-demo-0067",
+      "h1": "Anlaser 2,0 kW",
+      "title": "Anlaser 2,0 kW Bosch 1K0 911 972 M | SKLOP"
+    },
+    {
+      "url": "/deo/anlaser-1-1-kw-demo-0068",
+      "h1": "Anlaser 1,1 kW",
+      "title": "Anlaser 1,1 kW Valeo 6R0 911 802 L | SKLOP"
+    },
+    {
+      "url": "/deo/svecica-iridijumska-demo-0069",
+      "h1": "Svećica iridijumska",
+      "title": "Svećica iridijumska NGK 04E 905 559 ND | SKLOP"
+    },
+    {
+      "url": "/deo/cep-kartera-sa-podloskom-demo-0073",
+      "h1": "Čep kartera sa podloškom",
+      "title": "Čep kartera sa podloškom Febi Bilstein 35939 | SKLOP"
+    },
+    {
+      "url": "/deo/semering-radilice-strana-zamajca-demo-0075",
+      "h1": "Semering radilice, strana zamajca",
+      "title": "Semering radilice, strana Febi Bilstein 038 115 925 GE"
+    },
+    {
+      "url": "/deo/nosac-motora-desni-hidraulicni-demo-0078",
+      "h1": "Nosač motora desni, hidraulični",
+      "title": "Nosač motora desni, hidraulični Lemförder 1K0 199 286"
+    },
+    {
+      "url": "/deo/nosac-menjaca-levi-dsg-demo-0079",
+      "h1": "Nosač menjača levi, DSG",
+      "title": "Nosač menjača levi, DSG Febi Bilstein 1K0 199 520 | SKLOP"
+    },
+    {
+      "url": "/deo/obrtni-nosac-motora-pas-demo-0080",
+      "h1": "Obrtni nosač motora (pas)",
+      "title": "Obrtni nosač motora (pas) Meyle 5Q0 199 368 CB | SKLOP"
+    },
+    {
+      "url": "/deo/lonac-srednji-demo-0084",
+      "h1": "Lonac srednji",
+      "title": "Lonac srednji Walker 6R0 253 073 F | SKLOP"
+    },
+    {
+      "url": "/deo/gumeni-nosac-auspuha-demo-0085",
+      "h1": "Gumeni nosač auspuha",
+      "title": "Gumeni nosač auspuha Febi Bilstein 51589 | SKLOP"
+    },
+    {
+      "url": "/deo/ventilator-hladnjaka-sa-motorom-demo-0088",
+      "h1": "Ventilator hladnjaka sa motorom",
+      "title": "Ventilator hladnjaka sa motorom Nissens 1K0 121 806 TJ"
+    },
+    {
+      "url": "/deo/termostat-1-9-2-0-tdi-demo-0089",
+      "h1": "Termostat 1.9/2.0 TDI",
+      "title": "Termostat 1.9/2.0 TDI Mahle 038 121 752 T | SKLOP"
+    },
+    {
+      "url": "/deo/kuciste-termostata-sa-pumpom-1-4-tsi-demo-0091",
+      "h1": "Kućište termostata sa pumpom 1.4 TSI",
+      "title": "Kućište termostata sa pumpom 1.4 Original VAG 04E 121 315"
+    },
+    {
+      "url": "/deo/kompresor-klime-demo-0092",
+      "h1": "Kompresor klime",
+      "title": "Kompresor klime Denso 1K0 820 029 H | SKLOP"
+    },
+    {
+      "url": "/deo/dvomaseni-zamajac-2-0-tdi-demo-0095",
+      "h1": "Dvomaseni zamajac 2.0 TDI",
+      "title": "Dvomaseni zamajac 2.0 TDI LuK 03L 105 921 FL | SKLOP"
+    },
+    {
+      "url": "/deo/homokineticki-zglob-spoljni-demo-0099",
+      "h1": "Homokinetički zglob spoljni",
+      "title": "Homokinetički zglob spoljni Febi Bilstein 1K0 498 735 CA"
+    },
+    {
+      "url": "/deo/poluosovina-leva-demo-0100",
+      "h1": "Poluosovina leva",
+      "title": "Poluosovina leva Meyle 6R0 498 783 | SKLOP"
+    },
+    {
+      "url": "/deo/manzetna-homokinetickog-zgloba-set-demo-0101",
+      "h1": "Manžetna homokinetičkog zgloba, set",
+      "title": "Manžetna homokinetičkog zgloba Febi Bilstein 1K0 498 509"
+    },
+    {
+      "url": "/deo/akumulator-efb-70-ah-760-a-start-stop-demo-0103",
+      "h1": "Akumulator EFB 70 Ah 760 A, start-stop",
+      "title": "Akumulator EFB 70 Ah 760 A, start-stop Varta 762 912 989"
+    },
+    {
+      "url": "/deo/far-desni-halogeni-demo-0106",
+      "h1": "Far desni, halogeni",
+      "title": "Far desni, halogeni Valeo 5E0 941 203 | SKLOP"
+    },
+    {
+      "url": "/deo/stop-svetlo-levo-demo-0107",
+      "h1": "Stop svetlo levo",
+      "title": "Stop svetlo levo Hella 5K0 945 184 Q | SKLOP"
+    },
+    {
+      "url": "/deo/stop-svetlo-desno-karavan-demo-0108",
+      "h1": "Stop svetlo desno, karavan",
+      "title": "Stop svetlo desno, karavan Valeo 1Z0 945 143 | SKLOP"
+    },
+    {
+      "url": "/deo/lambda-sonda-pre-katalizatora-demo-0109",
+      "h1": "Lambda sonda pre katalizatora",
+      "title": "Lambda sonda pre katalizatora Bosch 04E 906 207 M | SKLOP"
+    },
+    {
+      "url": "/deo/lambda-sonda-demo-0110",
+      "h1": "Lambda sonda",
+      "title": "Lambda sonda NGK 06A 906 786 G | SKLOP"
+    },
+    {
+      "url": "/deo/parking-senzor-demo-0111",
+      "h1": "Parking senzor",
+      "title": "Parking senzor Original VAG 1K0 906 861 EQ | SKLOP"
+    },
+    {
+      "url": "/deo/senzor-temperature-rashladne-tecnosti-demo-0112",
+      "h1": "Senzor temperature rashladne tečnosti",
+      "title": "Senzor temperature rashladne Febi Bilstein 1J0 906 761"
+    },
+    {
+      "url": "/deo/senzor-pritiska-izduvnih-gasova-dpf-demo-0113",
+      "h1": "Senzor pritiska izduvnih gasova (DPF)",
+      "title": "Senzor pritiska izduvnih gasova (DPF) Bosch 04L 906 235"
+    },
+    {
+      "url": "/deo/branik-prednji-za-prskalice-farova-demo-0115",
+      "h1": "Branik prednji, za prskalice farova",
+      "title": "Branik prednji, za prskalice Original VAG 5E0 807 443 JJ"
+    },
+    {
+      "url": "/deo/blatobran-desni-demo-0118",
+      "h1": "Blatobran desni",
+      "title": "Blatobran desni Original VAG 3C0 821 404 G | SKLOP"
+    },
+    {
+      "url": "/deo/podizac-stakla-prednji-levi-sa-motorom-demo-0119",
+      "h1": "Podizač stakla prednji levi, sa motorom",
+      "title": "Podizač stakla prednji levi Febi Bilstein 1K0 837 449 K"
+    },
+    {
+      "url": "/deo/brava-prednjih-desnih-vrata-demo-0120",
+      "h1": "Brava prednjih desnih vrata",
+      "title": "Brava prednjih desnih vrata Original VAG 5Q0 837 241 CL"
+    },
+    {
+      "url": "/deo/poklopac-retrovizora-desni-demo-0122",
+      "h1": "Poklopac retrovizora desni",
+      "title": "Poklopac retrovizora desni Hella 5E0 857 198 A | SKLOP"
+    },
+    {
+      "url": "/deo/vetrobransko-staklo-sa-nosacem-senzora-demo-0123",
+      "h1": "Vetrobransko staklo sa nosačem senzora",
+      "title": "Vetrobransko staklo sa nosačem Original VAG 5G0 845 759 N"
+    },
+    {
+      "url": "/deo/metlice-brisaca-aerotwin-600-475-set-demo-0124",
+      "h1": "Metlice brisača Aerotwin 600/475, set",
+      "title": "Metlice brisača Aerotwin 600/475, set Bosch 5G0 955 985 BN"
+    },
+    {
+      "url": "/deo/metlica-zadnjeg-brisaca-280-mm-demo-0125",
+      "h1": "Metlica zadnjeg brisača 280 mm",
+      "title": "Metlica zadnjeg brisača 280 mm Bosch 1K0 955 897 M | SKLOP"
+    },
+    {
+      "url": "/deo/motor-prednjih-brisaca-demo-0126",
+      "h1": "Motor prednjih brisača",
+      "title": "Motor prednjih brisača Valeo 1K0 955 857 | SKLOP"
+    },
+    {
+      "url": "/deo/aluminijumska-felna-6-5j-16-et46-5-112-demo-0128",
+      "h1": "Aluminijumska felna 6,5J × 16 ET46, 5 × 112",
+      "title": "Aluminijumska felna 6,5J × 16 ET46 Original VAG 1K0 601 701"
+    },
+    {
+      "url": "/deo/vijci-tocka-m14-1-5-set-20-kom-demo-0129",
+      "h1": "Vijci točka M14 × 1,5, set 20 kom",
+      "title": "Vijci točka M14 × 1,5, set 20 kom Febi Bilstein 19031"
+    },
+    {
+      "url": "/deo/filter-kabine-sa-aktivnim-ugljem-demo-0142",
+      "h1": "Filter kabine sa aktivnim ugljem",
+      "title": "Filter kabine sa aktivnim ugljem Mann-Filter 1K0 819 072 BD"
+    },
+    {
+      "url": "/deo/filter-kabine-sa-aktivnim-ugljem-demo-0145",
+      "h1": "Filter kabine sa aktivnim ugljem",
+      "title": "Filter kabine sa aktivnim ugljem Febi Bilstein 5WA 819 778"
+    },
+    {
+      "url": "/deo/rashladna-tecnost-g13-koncentrat-1-5-l-demo-0148",
+      "h1": "Rashladna tečnost G13, koncentrat 1,5 L",
+      "title": "Rashladna tečnost G13, koncentrat 1,5 L Original VAG | SKLOP"
+    },
+    {
+      "url": "/deo/kociona-tecnost-super-dot-4-1-l-demo-0149",
+      "h1": "Kočiona tečnost Super DOT 4, 1 L",
+      "title": "Kočiona tečnost Super DOT 4, 1 L ATE 24.0140-8566.1 | SKLOP"
+    },
+    {
+      "url": "/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-0002",
+      "h1": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+      "title": "Kočioni disk prednji 312 × 25 mm Brembo 1K0 615 591 E"
+    },
+    {
+      "url": "/deo/kocione-plocice-prednje-sistem-teves-demo-0010",
+      "h1": "Kočione pločice prednje, sistem Teves",
+      "title": "Kočione pločice prednje, sistem Teves Brembo 5Q0 698 172"
+    },
+    {
+      "url": "/deo/kociona-celjust-zadnja-desna-sa-motorom-rucne-demo-0018",
+      "h1": "Kočiona čeljust zadnja desna, sa motorom ručne",
+      "title": "Kočiona čeljust zadnja desna, sa motorom ATE 5Q0 615 723"
+    },
+    {
+      "url": "/deo/abs-senzor-zadnji-demo-0021",
+      "h1": "ABS senzor zadnji",
+      "title": "ABS senzor zadnji Febi Bilstein 1K0 927 153 K | SKLOP"
+    },
+    {
+      "url": "/deo/spona-aksijalna-demo-0035",
+      "h1": "Spona aksijalna",
+      "title": "Spona aksijalna TRW 5Q0 411 636 B | SKLOP"
+    },
+    {
+      "url": "/deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-e001",
+      "h1": "Kočioni disk prednji 312 × 25 mm, ventilirani",
+      "title": "Kočioni disk prednji 312 × 25 mm ATE 1K0 615 591 E"
+    },
+    {
+      "url": "/deo/kocione-plocice-prednje-sa-senzorom-demo-e002",
+      "h1": "Kočione pločice prednje, sa senzorom",
+      "title": "Kočione pločice prednje, sa senzorom Bosch 1K0 698 406 F"
+    },
+    {
+      "url": "/deo/amortizer-prednji-gasni-demo-e004",
+      "h1": "Amortizer prednji, gasni",
+      "title": "Amortizer prednji, gasni KYB 1K0 413 165 G | SKLOP"
+    },
+    {
+      "url": "/deo/kraj-spone-demo-e005",
+      "h1": "Kraj spone",
+      "title": "Kraj spone Meyle 1K0 411 042 HC | SKLOP"
+    },
+    {
+      "url": "/deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-e007",
+      "h1": "Set zupčastog kaiša sa vodenom pumpom 1.9 TDI",
+      "title": "Set zupčastog kaiša sa vodenom pumpom 1.9 Gates 038 121 662"
+    }
+  ],
+  "ogTitleMismatch": 0,
+  "twTitleMismatch": 0,
+  "descriptionsWithEllipsis": 0,
+  "jsonLdDescriptionsWithEllipsis": 0,
+  "jsonLdNameEqualsH1": 157
+}
+
+== Titles that lost the lowercase s (h1 → <title>) ==
+
+== Descriptions with an ellipsis (last 40 chars before …) ==

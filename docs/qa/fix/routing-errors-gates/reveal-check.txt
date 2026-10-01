@@ -1,0 +1,3 @@
+AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/routing-errors-gates-reveal.mjs
+/ovo-ne-postoji {"stuck":[],"pending":0,"words":0} h1: Stranica nije pronađena
+/upit/losToken123 {"stuck":[],"pending":0,"words":0} h1: Link upita nije ispravan

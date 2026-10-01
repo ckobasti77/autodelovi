@@ -1,0 +1,523 @@
+[
+ {
+  "check": "trace",
+  "tag": "390",
+  "initial": {
+   "scrollY": 0,
+   "vh": 844,
+   "top": 850.5,
+   "bottom": 915.5,
+   "height": 65,
+   "display": "block",
+   "visibility": "hidden",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+   "inert": true,
+   "ariaHidden": "true",
+   "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+   "scrollPaddingBottom": null,
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": null
+  },
+  "shown": {
+   "scrollY": 1331,
+   "vh": 844,
+   "top": 779,
+   "bottom": 844,
+   "height": 65,
+   "display": "block",
+   "visibility": "visible",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 0)",
+   "inert": false,
+   "ariaHidden": "false",
+   "inlineStyle": "visibility: visible; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);",
+   "scrollPaddingBottom": "81px",
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": true
+  },
+  "hidden": {
+   "scrollY": 0,
+   "vh": 844,
+   "top": 850.5,
+   "bottom": 915.5,
+   "height": 65,
+   "display": "block",
+   "visibility": "hidden",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+   "inert": true,
+   "ariaHidden": "true",
+   "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+   "scrollPaddingBottom": null,
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": null
+  },
+  "show": {
+   "firstVisibleAt": 129,
+   "firstVisibleTop": 850.5,
+   "firstVisibleOpacity": 1,
+   "settledAt": 357,
+   "distinctVisibleTops": 12,
+   "distinctVisibleOpacities": 1,
+   "minVisibleOpacity": 1,
+   "last": {
+    "t": 907,
+    "top": 779,
+    "op": 1,
+    "vis": "visible"
+   }
+  },
+  "hide": {
+   "last": {
+    "t": 907,
+    "top": 850.5,
+    "op": 1,
+    "vis": "hidden"
+   },
+   "hiddenAt": 257,
+   "distinctTops": 16,
+   "minOp": 1
+  },
+  "console": [],
+  "pageErrors": [],
+  "warnings": []
+ },
+ {
+  "check": "trace",
+  "tag": "390-reduced",
+  "initial": {
+   "scrollY": 0,
+   "vh": 844,
+   "top": 850.5,
+   "bottom": 915.5,
+   "height": 65,
+   "display": "block",
+   "visibility": "hidden",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+   "inert": true,
+   "ariaHidden": "true",
+   "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+   "scrollPaddingBottom": null,
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": null
+  },
+  "shown": {
+   "scrollY": 1331,
+   "vh": 844,
+   "top": 779,
+   "bottom": 844,
+   "height": 65,
+   "display": "block",
+   "visibility": "visible",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 0)",
+   "inert": false,
+   "ariaHidden": "false",
+   "inlineStyle": "visibility: visible; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);",
+   "scrollPaddingBottom": "81px",
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": true
+  },
+  "hidden": {
+   "scrollY": 0,
+   "vh": 844,
+   "top": 850.5,
+   "bottom": 915.5,
+   "height": 65,
+   "display": "block",
+   "visibility": "hidden",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+   "inert": true,
+   "ariaHidden": "true",
+   "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+   "scrollPaddingBottom": null,
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": null
+  },
+  "show": {
+   "firstVisibleAt": 31,
+   "firstVisibleTop": 779,
+   "firstVisibleOpacity": 0,
+   "settledAt": 157,
+   "distinctVisibleTops": 1,
+   "distinctVisibleOpacities": 8,
+   "minVisibleOpacity": 0,
+   "last": {
+    "t": 907,
+    "top": 779,
+    "op": 1,
+    "vis": "visible"
+   }
+  },
+  "hide": {
+   "last": {
+    "t": 905,
+    "top": 850.5,
+    "op": 1,
+    "vis": "hidden"
+   },
+   "hiddenAt": 170,
+   "distinctTops": 2,
+   "minOp": 0
+  },
+  "console": [],
+  "pageErrors": [],
+  "warnings": []
+ },
+ {
+  "check": "trace",
+  "tag": "360",
+  "initial": {
+   "scrollY": 0,
+   "vh": 780,
+   "top": 786.5,
+   "bottom": 851.5,
+   "height": 65,
+   "display": "block",
+   "visibility": "hidden",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+   "inert": true,
+   "ariaHidden": "true",
+   "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+   "scrollPaddingBottom": null,
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": null
+  },
+  "shown": {
+   "scrollY": 1405,
+   "vh": 780,
+   "top": 715,
+   "bottom": 780,
+   "height": 65,
+   "display": "block",
+   "visibility": "visible",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 0)",
+   "inert": false,
+   "ariaHidden": "false",
+   "inlineStyle": "visibility: visible; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);",
+   "scrollPaddingBottom": "81px",
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": true
+  },
+  "hidden": {
+   "scrollY": 0,
+   "vh": 780,
+   "top": 786.5,
+   "bottom": 851.5,
+   "height": 65,
+   "display": "block",
+   "visibility": "hidden",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+   "inert": true,
+   "ariaHidden": "true",
+   "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+   "scrollPaddingBottom": null,
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": null
+  },
+  "show": {
+   "firstVisibleAt": 40,
+   "firstVisibleTop": 786.5,
+   "firstVisibleOpacity": 1,
+   "settledAt": 349,
+   "distinctVisibleTops": 19,
+   "distinctVisibleOpacities": 1,
+   "minVisibleOpacity": 1,
+   "last": {
+    "t": 916,
+    "top": 715,
+    "op": 1,
+    "vis": "visible"
+   }
+  },
+  "hide": {
+   "last": {
+    "t": 904,
+    "top": 786.5,
+    "op": 1,
+    "vis": "hidden"
+   },
+   "hiddenAt": 254,
+   "distinctTops": 16,
+   "minOp": 1
+  },
+  "console": [],
+  "pageErrors": [],
+  "warnings": []
+ },
+ {
+  "check": "trace",
+  "tag": "360-reduced",
+  "initial": {
+   "scrollY": 0,
+   "vh": 780,
+   "top": 786.5,
+   "bottom": 851.5,
+   "height": 65,
+   "display": "block",
+   "visibility": "hidden",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+   "inert": true,
+   "ariaHidden": "true",
+   "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+   "scrollPaddingBottom": null,
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": null
+  },
+  "shown": {
+   "scrollY": 1405,
+   "vh": 780,
+   "top": 715,
+   "bottom": 780,
+   "height": 65,
+   "display": "block",
+   "visibility": "visible",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 0)",
+   "inert": false,
+   "ariaHidden": "false",
+   "inlineStyle": "visibility: visible; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);",
+   "scrollPaddingBottom": "81px",
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": true
+  },
+  "hidden": {
+   "scrollY": 0,
+   "vh": 780,
+   "top": 786.5,
+   "bottom": 851.5,
+   "height": 65,
+   "display": "block",
+   "visibility": "hidden",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+   "inert": true,
+   "ariaHidden": "true",
+   "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+   "scrollPaddingBottom": null,
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": null
+  },
+  "show": {
+   "firstVisibleAt": 27,
+   "firstVisibleTop": 715,
+   "firstVisibleOpacity": 0.52,
+   "settledAt": 123,
+   "distinctVisibleTops": 1,
+   "distinctVisibleOpacities": 7,
+   "minVisibleOpacity": 0.52,
+   "last": {
+    "t": 905,
+    "top": 715,
+    "op": 1,
+    "vis": "visible"
+   }
+  },
+  "hide": {
+   "last": {
+    "t": 907,
+    "top": 786.5,
+    "op": 1,
+    "vis": "hidden"
+   },
+   "hiddenAt": 190,
+   "distinctTops": 2,
+   "minOp": 0
+  },
+  "console": [],
+  "pageErrors": [],
+  "warnings": []
+ },
+ {
+  "check": "rapid-toggle",
+  "reducedMotion": "no-preference",
+  "endShown": {
+   "scrollY": 1331,
+   "vh": 844,
+   "top": 779,
+   "bottom": 844,
+   "height": 65,
+   "display": "block",
+   "visibility": "visible",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 0)",
+   "inert": false,
+   "ariaHidden": "false",
+   "inlineStyle": "visibility: visible; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);",
+   "scrollPaddingBottom": "81px",
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": true
+  },
+  "endHidden": {
+   "scrollY": 0,
+   "vh": 844,
+   "top": 850.5,
+   "bottom": 915.5,
+   "height": 65,
+   "display": "block",
+   "visibility": "hidden",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+   "inert": true,
+   "ariaHidden": "true",
+   "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+   "scrollPaddingBottom": null,
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": null
+  },
+  "endShown2": {
+   "scrollY": 1331,
+   "vh": 844,
+   "top": 779,
+   "bottom": 844,
+   "height": 65,
+   "display": "block",
+   "visibility": "visible",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 0)",
+   "inert": false,
+   "ariaHidden": "false",
+   "inlineStyle": "visibility: visible; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);",
+   "scrollPaddingBottom": "81px",
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": true
+  },
+  "console": [],
+  "pageErrors": [],
+  "warnings": []
+ },
+ {
+  "check": "rapid-toggle",
+  "reducedMotion": "reduce",
+  "endShown": {
+   "scrollY": 1331,
+   "vh": 844,
+   "top": 779,
+   "bottom": 844,
+   "height": 65,
+   "display": "block",
+   "visibility": "visible",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 0)",
+   "inert": false,
+   "ariaHidden": "false",
+   "inlineStyle": "visibility: visible; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);",
+   "scrollPaddingBottom": "81px",
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": true
+  },
+  "endHidden": {
+   "scrollY": 0,
+   "vh": 844,
+   "top": 850.5,
+   "bottom": 915.5,
+   "height": 65,
+   "display": "block",
+   "visibility": "hidden",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+   "inert": true,
+   "ariaHidden": "true",
+   "inlineStyle": "visibility: hidden; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0%, 110%);",
+   "scrollPaddingBottom": null,
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": null
+  },
+  "endShown2": {
+   "scrollY": 1331,
+   "vh": 844,
+   "top": 779,
+   "bottom": 844,
+   "height": 65,
+   "display": "block",
+   "visibility": "visible",
+   "opacity": "1",
+   "transform": "matrix(1, 0, 0, 1, 0, 0)",
+   "inert": false,
+   "ariaHidden": "false",
+   "inlineStyle": "visibility: visible; translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);",
+   "scrollPaddingBottom": "81px",
+   "buttonLabel": "U korpu: Kočioni disk prednji 276 × 24 mm",
+   "topmostIsButton": true
+  },
+  "console": [],
+  "pageErrors": [],
+  "warnings": []
+ },
+ {
+  "check": "reload-scrolled",
+  "error": "Error: page.reload: net::ERR_CONNECTION_REFUSED\nCall log:\n  - waiting for navigation until \"load\"\n",
+  "console": [
+   "WebSocket connection to 'ws://localhost:3001/_next/hmr?id=55YsufQT2ixY6m7XLKbWW' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED"
+  ],
+  "pageErrors": [],
+  "warnings": []
+ },
+ {
+  "check": "keyboard",
+  "tag": "390",
+  "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/deo/kocioni-disk-prednji-276-24-mm-demo-0004\nCall log:\n  - navigating to \"http://localhost:3001/deo/kocioni-disk-prednji-276-24-mm-demo-0004\", waiting until \"load\"\n",
+  "console": [],
+  "pageErrors": [],
+  "warnings": []
+ },
+ {
+  "check": "keyboard",
+  "tag": "360",
+  "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/deo/kocioni-disk-prednji-276-24-mm-demo-0004\nCall log:\n  - navigating to \"http://localhost:3001/deo/kocioni-disk-prednji-276-24-mm-demo-0004\", waiting until \"load\"\n",
+  "console": [],
+  "pageErrors": [],
+  "warnings": []
+ },
+ {
+  "check": "desktop",
+  "tag": "1024",
+  "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/deo/kocioni-disk-prednji-276-24-mm-demo-0004\nCall log:\n  - navigating to \"http://localhost:3001/deo/kocioni-disk-prednji-276-24-mm-demo-0004\", waiting until \"load\"\n",
+  "console": [],
+  "pageErrors": [],
+  "warnings": []
+ },
+ {
+  "check": "desktop",
+  "tag": "1440",
+  "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/deo/kocioni-disk-prednji-276-24-mm-demo-0004\nCall log:\n  - navigating to \"http://localhost:3001/deo/kocioni-disk-prednji-276-24-mm-demo-0004\", waiting until \"load\"\n",
+  "console": [],
+  "pageErrors": [],
+  "warnings": []
+ },
+ {
+  "check": "resize-while-shown",
+  "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/deo/kocioni-disk-prednji-276-24-mm-demo-0004\nCall log:\n  - navigating to \"http://localhost:3001/deo/kocioni-disk-prednji-276-24-mm-demo-0004\", waiting until \"load\"\n",
+  "console": [],
+  "pageErrors": [],
+  "warnings": []
+ },
+ {
+  "check": "client-nav",
+  "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005\nCall log:\n  - navigating to \"http://localhost:3001/deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005\", waiting until \"load\"\n",
+  "console": [],
+  "pageErrors": [],
+  "warnings": []
+ },
+ {
+  "check": "consent-banner-open",
+  "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/deo/kocioni-disk-prednji-276-24-mm-demo-0004\nCall log:\n  - navigating to \"http://localhost:3001/deo/kocioni-disk-prednji-276-24-mm-demo-0004\", waiting until \"load\"\n",
+  "console": [],
+  "pageErrors": [],
+  "warnings": []
+ },
+ {
+  "check": "reveal-contract",
+  "error": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3001/deo/kocioni-disk-prednji-276-24-mm-demo-0004\nCall log:\n  - navigating to \"http://localhost:3001/deo/kocioni-disk-prednji-276-24-mm-demo-0004\", waiting until \"load\"\n",
+  "console": [],
+  "pageErrors": [],
+  "warnings": []
+ }
+]

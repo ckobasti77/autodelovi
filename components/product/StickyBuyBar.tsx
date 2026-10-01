@@ -6,7 +6,7 @@
  *
  * GSAP owns the transform. The server markup is hidden with `visibility` only: an inline
  * `translateY(110%)` is parsed by GSAP into a pixel `y` that a `yPercent` tween never clears,
- * which left the bar 7 px below the viewport while focusable (MOT-02, D255). The resting hidden
+ * which left the bar 7 px below the viewport while focusable (MOT-02, D259). The resting hidden
  * state is set in `useGSAP`; showing animates `y` and `yPercent` to 0. Reduced motion → the bar
  * is placed on screen at once and only its opacity animates. While shown, its height is a
  * bottom inset, so focused controls further up the page never sit under it (WCAG 2.4.11).

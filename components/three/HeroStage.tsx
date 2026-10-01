@@ -18,11 +18,20 @@
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap/client";
+import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap/scroll";
 import { requestScrollTriggerRefresh } from "@/lib/gsap/refresh";
 import { useMotionMedia } from "@/lib/gsap/useMotionMedia";
 import { onModelProgress, prefetchModel } from "@/lib/three/assets";
-import { cameraBlend, currentStage, stageEnd, stageWindows, type Timeline } from "@/lib/three/explode";
+import {
+  cameraBlend,
+  clamp01,
+  currentStage,
+  progressPerPixel,
+  scrollTargetFor,
+  stageEnd,
+  stageWindows,
+  type Timeline,
+} from "@/lib/three/explode";
 import { categoryRevealStage, isPanelSlug } from "@/lib/three/stages";
 import { detectTier, quickTier } from "@/lib/three/tier";
 import { HERO_COPY } from "@/lib/i18n/sr/hero";
@@ -68,11 +77,17 @@ function windowsFor(timeline: Timeline) {
   return w;
 }
 
+/** One scroll pixel of the live track in progress units (MOT-03; 1e-6 without a track). */
+let stageTolerance = 1e-6;
+
 function publishProgress(p: number) {
   const { timeline, stage } = heroStore.getState();
-  const next = currentStage(p, windowsFor(timeline));
+  const next = currentStage(p, windowsFor(timeline), stageTolerance);
   heroStore.setState(next !== stage ? { progress: p, stage: next } : { progress: p });
 }
+
+/** Seconds the explode needs to catch up with the scroll (ScrollTrigger's `scrub: 0.6`). */
+const SCRUB_S = 0.6;
 
 /** ScrollTrigger's own refresh flag (set by `_refreshAll` in 3.15; missing from its typings). */
 function isRefreshing(): boolean {
@@ -98,6 +113,7 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
   const stripRef = useRef<HTMLDivElement>(null);
   const scrimRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<ScrollTrigger | null>(null);
+  const syncRef = useRef<(() => void) | null>(null);
   const [listOpen, setListOpen] = useState(false);
   const [announce, setAnnounce] = useState("");
 
@@ -215,6 +231,12 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
   }, [status]);
 
   // ---------------------------------------------------------------- scroll → progress
+  // The explode follows the scroll through our own catch-up tween instead of ScrollTrigger's
+  // internal scrub, so it can be cut straight to the measured position whenever the scroll is
+  // known to have jumped (MOT-05): a refresh interrupts an in-flight scrub and never resumes it
+  // when the progress did not change across the refresh — after a client navigation to „/“
+  // (trigger created while the previous page's offset still applied, then reset to 0) the
+  // hero stayed on „01“ over an assembled car until the user scrolled.
   useMotionMedia(
     ({ motionOk, desktop }) => {
       const timeline: Timeline = desktop ? "desktop" : "mobile";
@@ -222,36 +244,65 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
       const track = trackRef.current;
       if (!track || !motionOk) {
         triggerRef.current = null;
+        syncRef.current = null;
+        stageTolerance = 1e-6;
         publishProgress(heroStore.getState().progress);
         return;
       }
       const proxy = { p: 0 };
-      const tween = gsap.fromTo(
-        proxy,
-        { p: 0 },
-        {
-          p: 1,
-          ease: "none",
-          // A refresh measures with the page scrolled to 0 and then restores the progress
-          // silently: its transient renders must not reach the store (the scene would show the
-          // assembled car mid-track); the restored value is published once it is done.
-          onUpdate: () => {
-            if (!isRefreshing()) publishProgress(proxy.p);
-          },
-          scrollTrigger: {
-            trigger: track,
-            start: () => `top ${headerHeight()}px`,
-            end: "bottom bottom",
-            scrub: 0.6,
-          },
+      let follow: gsap.core.Tween | null = null;
+      // Until the first sync the scroll may still be the previous page's (client navigation).
+      let settled = false;
+      const measured = (self: ScrollTrigger) =>
+        self.end > self.start ? clamp01((window.scrollY - self.start) / (self.end - self.start)) : 0;
+      const trigger = ScrollTrigger.create({
+        trigger: track,
+        start: () => `top ${headerHeight()}px`,
+        end: "bottom bottom",
+        // A refresh measures with the page scrolled to 0 and then restores the position: its
+        // transient updates must not reach the store (the scene would show the assembled car
+        // mid-track). The `refresh` listener below cuts to the restored position instead.
+        onUpdate: (self) => {
+          if (!settled || isRefreshing()) return;
+          follow = gsap.to(proxy, {
+            p: self.progress,
+            duration: SCRUB_S,
+            ease: "power3.out",
+            overwrite: true,
+            onUpdate: () => publishProgress(proxy.p),
+          });
         },
-      );
-      const onRefreshed = () => publishProgress(proxy.p);
-      ScrollTrigger.addEventListener("refresh", onRefreshed);
-      triggerRef.current = tween.scrollTrigger ?? null;
+      });
+      /** Cut the explode to the current scroll position (no catch-up). */
+      const sync = () => {
+        follow?.kill();
+        follow = null;
+        stageTolerance = progressPerPixel(trigger.start, trigger.end);
+        proxy.p = measured(trigger);
+        settled = true;
+        publishProgress(proxy.p);
+      };
+      ScrollTrigger.addEventListener("refresh", sync);
+      triggerRef.current = trigger;
+      syncRef.current = sync;
+      // Next resets the scroll of a client navigation after this layout effect, so the first
+      // measurement waits for a frame with the final position (and does not depend on a global
+      // refresh): publishing now could flash the previous page's offset as an explode stage.
+      let frame = requestAnimationFrame(() => {
+        frame = requestAnimationFrame(() => {
+          frame = 0;
+          ScrollTrigger.update();
+          sync();
+        });
+      });
       return () => {
-        ScrollTrigger.removeEventListener("refresh", onRefreshed);
+        cancelAnimationFrame(frame);
+        ScrollTrigger.removeEventListener("refresh", sync);
+        follow?.kill();
+        trigger.kill();
         triggerRef.current = null;
+        syncRef.current = null;
+        stageTolerance = 1e-6;
       };
     },
     { scope: trackRef },
@@ -274,14 +325,15 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
           dipCanvas();
           return;
         }
-        const y = trigger.start + target * (trigger.end - trigger.start);
+        // Whole pixel, rounded down: a stage-end detent must not land in the next stage (MOT-03).
+        const y = scrollTargetFor(target, trigger.start, trigger.end);
         if (opts?.instant || heroStore.getState().reducedMotion) {
           gsap.killTweensOf(window, "scrollTo");
           // Through ScrollTrigger: it caches scroll positions per frame, so a plain
           // window.scrollTo would leave this update reading the old position.
           trigger.scroll(y);
           ScrollTrigger.update();
-          trigger.getTween()?.progress(1);
+          syncRef.current?.();
           publishProgress(target);
           return;
         }

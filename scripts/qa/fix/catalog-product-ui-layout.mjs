@@ -41,6 +41,17 @@ const cardAudit = (page) =>
       const contentTop = ir.top + parseFloat(getComputedStyle(img).paddingTop);
       if (chip.getBoundingClientRect().bottom > contentTop + 0.5) chipOverlap++;
     }
+    // The whole card is one link: a point on the thumbnail hits the name link's ::after.
+    let thumbLinked = 0;
+    for (const c of cards) {
+      const img = c.querySelector("img");
+      if (!img) continue;
+      const r = img.getBoundingClientRect();
+      const x = r.left + r.width / 2;
+      const y = r.top + r.height / 2;
+      if (y < 0 || y > innerHeight) { thumbLinked++; continue; }
+      if (document.elementFromPoint(x, y)?.closest("a[data-card-link]")) thumbLinked++;
+    }
     const ul = cards[0]?.closest("ul");
     return {
       cards: cards.length,
@@ -50,6 +61,7 @@ const cardAudit = (page) =>
       clipped: clipped.slice(0, 8),
       clamped,
       chipOverlap,
+      thumbLinked,
       overX: document.documentElement.scrollWidth - document.documentElement.clientWidth,
     };
   });

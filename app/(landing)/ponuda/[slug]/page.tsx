@@ -37,7 +37,8 @@ import { ROUTES } from "@/constants/routes";
 export async function generateMetadata({ params }: PageProps<"/ponuda/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const [data, settings] = await Promise.all([getAdLanding(slug), getSettingsPublic()]);
-  if (!data) return {};
+  // Resolved before the page streams, so an unknown landing is a real 404 (FLOW-05).
+  if (!data) notFound();
   return buildMetadata({
     title: data.title,
     description: data.subhead ?? data.headline,
@@ -190,7 +191,9 @@ export default async function AdLandingPage({ params }: PageProps<"/ponuda/[slug
           </div>
           <TrackViewList listId={`ponuda:${data.slug}`} listName={data.title} items={products} />
           <div className="mt-5">
-            <ProductGrid items={products} headingLevel="h3" preloadFirst />
+            {/* No image preload: on a phone the cards sit below the hero, and a preload would take
+              slow-4G bandwidth from the render-blocking stylesheet (PERF-03). */}
+            <ProductGrid items={products} headingLevel="h3" />
           </div>
         </section>
       ) : (

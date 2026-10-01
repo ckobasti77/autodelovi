@@ -44,11 +44,13 @@ function loadFonts(): Promise<Font[]> {
     return [
       { name: "Archivo Expanded", data: expanded700, weight: 700, style: "normal" },
       { name: "Archivo Condensed", data: condensed600, weight: 600, style: "normal" },
-      // Latin + Latin Extended files share a family name; the renderer falls back per glyph.
+      // The Latin Extended files get their own family names, listed after the Latin ones in
+      // every font-family stack: two files under one name made the renderer take „Š“ from a
+      // different font instead of the extended file (SEO-08).
       { name: "Martian Mono", data: monoLatin, weight: 400, style: "normal" },
-      { name: "Martian Mono", data: monoExt, weight: 400, style: "normal" },
+      { name: "Martian Mono Ext", data: monoExt, weight: 400, style: "normal" },
       { name: "Public Sans", data: sansLatin, weight: 600, style: "normal" },
-      { name: "Public Sans", data: sansExt, weight: 600, style: "normal" },
+      { name: "Public Sans Ext", data: sansExt, weight: 600, style: "normal" },
     ];
   })();
   return fonts;
@@ -123,7 +125,27 @@ export type OgFrameInput = {
   image?: string | null;
   brandName?: string;
   tagline?: string;
+  /**
+   * `upper` (default) sets the title in display caps like category and landing H1s;
+   * `sentence` keeps it as written — product names, whose H1 is sentence case and whose units
+   * must not turn into „MM“ (COPY-15).
+   */
+  titleCase?: "upper" | "sentence";
 };
+
+const MONO = "Martian Mono, Martian Mono Ext";
+const SANS = "Public Sans, Public Sans Ext";
+const NBSP = String.fromCharCode(0xa0);
+
+/**
+ * Keeps a dimension or a value with its unit on one line: „2.0 TDI“ stays breakable, but
+ * „24 mm“, „110 kW“ and „276 × 24“ never wrap apart (COPY-15).
+ */
+export function glueUnits(text: string): string {
+  return text
+    .replace(/(\d)\s+×\s+(?=\d)/g, `$1${NBSP}×${NBSP}`)
+    .replace(/(\d)\s+(mm|cm|m|kW|KS|V|Ah|A|W|l|kg|Nm|°)(?=$|[\s,.;)])/g, `$1${NBSP}$2`);
+}
 
 function Mark() {
   return (
@@ -164,7 +186,8 @@ const tick = (pos: Record<string, number>, borders: Record<string, string>) => (
 );
 
 export async function ogFrame(input: OgFrameInput): Promise<ImageResponse> {
-  const title = input.title.length > 70 ? `${input.title.slice(0, 68).trim()}…` : input.title;
+  const raw = input.title.length > 70 ? `${input.title.slice(0, 68).trim()}…` : input.title;
+  const title = glueUnits(raw);
   const titleSize = title.length > 44 ? 42 : title.length > 28 ? 48 : 52;
   const domain = domainLabel();
   const border = `1px solid ${LINE_STRONG}`;
@@ -177,7 +200,7 @@ export async function ogFrame(input: OgFrameInput): Promise<ImageResponse> {
         position: "relative",
         background: BG,
         color: INK_1,
-        fontFamily: "Public Sans",
+        fontFamily: SANS,
       }}
     >
       <div
@@ -229,7 +252,7 @@ export async function ogFrame(input: OgFrameInput): Promise<ImageResponse> {
             fontFamily: "Archivo Expanded",
             fontSize: titleSize,
             lineHeight: 1.02,
-            textTransform: "uppercase",
+            textTransform: input.titleCase === "sentence" ? "none" : "uppercase",
             marginBottom: 6,
             display: "flex",
           }}
@@ -240,7 +263,7 @@ export async function ogFrame(input: OgFrameInput): Promise<ImageResponse> {
           <div
             style={{
               display: "flex",
-              fontFamily: "Martian Mono",
+              fontFamily: MONO,
               fontSize: 22,
               color: INK_3,
               gap: 10,
@@ -289,7 +312,7 @@ export async function ogFrame(input: OgFrameInput): Promise<ImageResponse> {
             left: 72,
             bottom: 44,
             display: "flex",
-            fontFamily: "Martian Mono",
+            fontFamily: MONO,
             fontSize: 16,
             color: INK_3,
             letterSpacing: "0.04em",

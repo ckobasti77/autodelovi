@@ -61,9 +61,9 @@ const SIZES = {
  * chip never sits on the render), maker, name (the whole card is one link via the name's
  * `::after`, focus ring around the card; up to 3 lines in the grid, never clamped in the list),
  * OEM (wraps, never truncated), fitment, stock, footer rule, price + action. List (phones,
- * search): 104 px thumbnail column and a full-width labelled button. The body is the size
- * container: below 17rem of body width the price and a full-width button stack, so nothing is
- * clipped at 320 px (WCAG 1.4.10). Price and stock are live values over the cached HTML.
+ * search): 104 px thumbnail column and a full-width labelled button. The footer measures the
+ * body column, not the card: below 17rem the price and a full-width button stack, so nothing
+ * is clipped at 320 px (WCAG 1.4.10). Price and stock are live values over the cached HTML.
  */
 export function ProductCard({
   card,
@@ -126,7 +126,7 @@ export function ProductCard({
           {QUALITY_LABEL[card.quality]}
         </span>
       </div>
-      <div className="@container flex min-w-0 flex-col gap-1.5 p-3 sm:p-4">
+      <div className="flex min-w-0 flex-col gap-1.5 p-3 sm:p-4">
         <p className="type-caption text-ink-3">
           {card.manufacturerName}
           <span className={variant === "grid" ? "hidden" : variant === "responsive" ? "sm:hidden" : ""}>
@@ -158,10 +158,14 @@ export function ProductCard({
           stockQty={card.stockQty}
           leadTimeDays={card.leadTimeDays}
         />
-        <div className="mt-auto flex flex-col gap-3 border-t border-line pt-3 @min-[17rem]:flex-row @min-[17rem]:items-end @min-[17rem]:justify-between">
-          <ProductPrice productId={card._id} retailPricePara={card.retailPricePara} />
-          <div className="@min-[17rem]:w-auto @min-[17rem]:min-w-[7.5rem]">
-            <AddToCartButton product={cartProduct(card)} />
+        {/* The size container wraps only the footer: container-type implies layout containment,
+            which would make it the containing block of the name link's card-wide `::after`. */}
+        <div className="@container mt-auto">
+          <div className="flex flex-col gap-3 border-t border-line pt-3 @min-[17rem]:flex-row @min-[17rem]:items-end @min-[17rem]:justify-between">
+            <ProductPrice productId={card._id} retailPricePara={card.retailPricePara} />
+            <div className="@min-[17rem]:w-auto @min-[17rem]:min-w-[7.5rem]">
+              <AddToCartButton product={cartProduct(card)} />
+            </div>
           </div>
         </div>
       </div>

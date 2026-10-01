@@ -2,6 +2,9 @@ import { MagnifyingGlassIcon } from "@phosphor-icons/react/dist/ssr";
 import type { ReactNode } from "react";
 
 import { ROUTES } from "@/constants/routes";
+import { Wordmark } from "@/components/shell/BrandMark";
+import { MAIN_ID } from "@/components/shell/SkipLink";
+import { Button } from "@/components/ui/Button";
 import { Link } from "@/components/ui/Link";
 import { findCategory } from "@/lib/catalog/taxonomy";
 
@@ -29,26 +32,29 @@ const POPULAR = POPULAR_SLUGS.flatMap((slug) => {
  * 404 content (§G8): search first, then popular categories and the inquiry. Server-only on
  * purpose: the root `app/not-found.tsx` is part of every route's client manifest and RSC payload,
  * so the interactive search (and the vehicle field) come in through `search` from the shop 404
- * only (PERF-13, D261).
+ * only (PERF-13, D266).
  */
 export function NotFoundContent({
+  icon = <MagnifyingGlassIcon size={40} aria-hidden="true" className="text-ink-3" />,
   title = NOT_FOUND_TITLE,
   lead = NOT_FOUND_LEAD,
   search,
   aside,
 }: {
+  /** 40 px decorative icon above the title. */
+  icon?: ReactNode;
   title?: string;
   lead?: ReactNode;
   /** The live `SearchBox` (+ vehicle field) in the shop; `NotFoundSearchForm` elsewhere. */
   search?: ReactNode;
-  /** Replaces the popular-categories column (order and inquiry links have their own help). */
+  /** Replaces the popular-categories column (order links, 403 pages have their own help). */
   aside?: ReactNode;
 }) {
   return (
     <section className="px-page py-16 lg:py-24" aria-labelledby="nf-title">
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-x-(--gutter)">
         <div className="flex max-w-[640px] flex-col gap-5 lg:col-span-7">
-          <MagnifyingGlassIcon size={40} aria-hidden="true" className="text-ink-3" />
+          {icon}
           <h1 id="nf-title" className="type-h1 text-ink-1">
             {title}
           </h1>
@@ -94,7 +100,8 @@ function PopularCategories() {
 
 /**
  * The search as a plain GET form to `/pretraga`: works before (and without) JavaScript and adds
- * no client code. Field styling mirrors `Input` size `xl` and the hero `SearchBox`.
+ * no client code. The field mirrors `Input` size `xl` (a client module, so its classes cannot be
+ * imported here) and the hero `SearchBox`.
  */
 export function NotFoundSearchForm() {
   return (
@@ -102,7 +109,7 @@ export function NotFoundSearchForm() {
       <div className="flex flex-col gap-2 sm:flex-row">
         <label
           className={
-            "flex h-14 w-full min-w-0 flex-1 items-center gap-2 rounded-xs border border-control bg-surface-2 px-3 text-ink-1 " +
+            "flex h-14 w-full min-w-0 items-center gap-2 rounded-xs sm:flex-1 border border-control bg-surface-2 px-3 text-ink-1 " +
             "transition-control hover:border-ink-3 focus-within:border-focus focus-within:shadow-[inset_0_0_0_1px_var(--color-focus)] focus-within:hover:border-focus"
           }
         >
@@ -118,13 +125,29 @@ export function NotFoundSearchForm() {
             className="h-full min-w-0 flex-1 bg-transparent text-[1rem] leading-normal text-inherit outline-none placeholder:text-ink-3 focus-visible:outline-none"
           />
         </label>
-        <button
-          type="submit"
-          className="inline-flex h-14 cursor-pointer items-center justify-center rounded-xs bg-accent px-6 type-button text-on-accent transition-control hover:bg-accent-hover"
-        >
+        <Button type="submit" size="xl" className="sm:w-auto">
           Pretraži
-        </button>
+        </Button>
       </div>
     </form>
+  );
+}
+
+/**
+ * Self-contained frame (wordmark header + `main`) for status pages rendered outside any route
+ * group layout: the root 404, 403 and 401. No client islands (see `NotFoundContent`).
+ */
+export function BareShell({ children }: { children: ReactNode }) {
+  return (
+    <div className="flex min-h-dvh flex-col">
+      <header data-reveal="off" className="border-b border-line bg-bg print:hidden">
+        <div className="flex h-header items-center px-page">
+          <Wordmark />
+        </div>
+      </header>
+      <main id={MAIN_ID} tabIndex={-1} className="flex-1 outline-none">
+        {children}
+      </main>
+    </div>
   );
 }

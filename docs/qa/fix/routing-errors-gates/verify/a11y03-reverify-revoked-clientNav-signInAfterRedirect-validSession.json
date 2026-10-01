@@ -1,0 +1,66 @@
+{
+  "base": "http://localhost:3001",
+  "at": "2026-10-01T03:46:47.984Z",
+  "revoked": {
+    "engine": "chromium",
+    "width": 390,
+    "reducedMotion": "no-preference",
+    "route": "/nalog/porudzbine",
+    "label": "nalog-real-revoked",
+    "finalStatus": 200,
+    "chain": [
+      "307 /nalog/porudzbine -> /prijava?next=%2Fnalog%2Fporudzbine",
+      "200 /prijava?next=%2Fnalog%2Fporudzbine",
+      "200 /prijava?next=%2Fnalog%2Fporudzbine"
+    ],
+    "url": "/prijava?next=%2Fnalog%2Fporudzbine",
+    "title": "Prijava | SKLOP",
+    "lang": "sr-Latn-RS",
+    "bodyTextLen": 894,
+    "h1": "Prijava",
+    "signInForm": true,
+    "authCookiesLeft": [],
+    "nextParam": "/nalog/porudzbine",
+    "shot": "docs/qa/fix/routing-errors-gates/verify/a11y03-nalog-real-revoked-chromium-390.webp",
+    "emailReachableByTab": true,
+    "errorsBeforeReload": {
+      "console": [],
+      "pageErrors": []
+    },
+    "afterReload": {
+      "url": "/prijava?next=%2Fnalog%2Fporudzbine",
+      "title": "Prijava | SKLOP"
+    },
+    "consoleErrors": [],
+    "pageErrors": [],
+    "badResponses": []
+  },
+  "clientNav": {
+    "linkVisible": true,
+    "responses": [
+      "307 /nalog?_rsc=6p_3Y7nTQHgAjzJP -> /prijava?next=%2Fnalog",
+      "307 /prijava?next=%2Fnalog -> /prijava?next=%2Fnalog&_rsc=6p_3Y7nTQHgAjzJP",
+      "200 /prijava?next=%2Fnalog&_rsc=6p_3Y7nTQHgAjzJP"
+    ],
+    "url": "/prijava?next=%2Fnalog",
+    "title": "Prijava | SKLOP",
+    "lang": "sr-Latn-RS",
+    "bodyTextLen": 980,
+    "h1": "Prijava",
+    "signInForm": true,
+    "shot": "docs/qa/fix/routing-errors-gates/verify/a11y03-clientnav-chromium-1440.webp",
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "signInAfterRedirect": {
+    "landed": "/prijava?next=%2Fnalog%2Fporudzbine",
+    "after": {
+      "url": "/nalog/porudzbine",
+      "title": "Porudžbine | SKLOP",
+      "lang": "sr-Latn-RS",
+      "bodyTextLen": 856,
+      "h1": "Moj nalog",
+      "signInForm": false
+    }
+  }
+}

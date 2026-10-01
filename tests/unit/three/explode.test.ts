@@ -11,6 +11,8 @@ import {
   partFactor,
   partSlot,
   power2InOut,
+  progressPerPixel,
+  scrollTargetFor,
   shellFade,
   stageEnd,
   stageLocal,
@@ -102,6 +104,57 @@ describe("stage index", () => {
     }
     // just past the end of stage 1 the caption moves on to stage 2
     expect(currentStage(0.25, w)).toBe(2);
+  });
+
+  // MOT-03: a detent (deep link, index button, phone stepper) scrolls to a whole pixel. The
+  // track is 320 vh (≥ 1024 px) or 200 vh long and starts 1 px under the header; viewports are
+  // the audited ones plus a sweep, with fractional lengths (1366×768 → 2457.6 px).
+  const tracks: Array<{ name: string; timeline: "desktop" | "mobile"; start: number; length: number }> = [
+    { name: "1440×900", timeline: "desktop", start: 1, length: 2880 },
+    { name: "1280×800", timeline: "desktop", start: 1, length: 2560 },
+    { name: "1366×768", timeline: "desktop", start: 1, length: 2457.6 },
+    { name: "1920×1080", timeline: "desktop", start: 1, length: 3456 },
+    { name: "1024×768", timeline: "desktop", start: 1, length: 2457.6 },
+    { name: "390×844", timeline: "mobile", start: 1, length: 1688 },
+    { name: "360×640", timeline: "mobile", start: 1, length: 1280 },
+    { name: "768×1024", timeline: "mobile", start: 1, length: 2048 },
+  ];
+  for (let h = 500; h <= 1600; h += 37) {
+    tracks.push({ name: `desktop h${h}`, timeline: "desktop", start: 0.5, length: 3.2 * h });
+    tracks.push({ name: `mobile h${h}`, timeline: "mobile", start: 0.5, length: 2 * h });
+  }
+
+  test("every stage detent lands on its own stage over the real track lengths", () => {
+    for (const t of tracks) {
+      const windows = stageWindows(t.timeline);
+      const end = t.start + t.length;
+      const tolerance = progressPerPixel(t.start, end);
+      for (let k = 0; k <= 7; k++) {
+        const y = scrollTargetFor(stageEnd(k, windows), t.start, end);
+        expect(Number.isInteger(y), `${t.name} stage ${k} target ${y}`).toBe(true);
+        const p = Math.max(0, (y - t.start) / t.length);
+        expect(currentStage(p, windows, tolerance), `${t.name} stage ${k} y ${y} p ${p}`).toBe(k);
+        // Even when the browser rounds a fractional target up, one pixel of tolerance keeps it.
+        const exact = t.start + stageEnd(k, windows) * t.length;
+        const pUp = Math.max(0, (Math.ceil(exact) - t.start) / t.length);
+        expect(currentStage(pUp, windows, tolerance), `${t.name} stage ${k} rounded up`).toBe(k);
+      }
+    }
+  });
+
+  test("the audited case: 0.46 on a 2880 px track rounds up to stage 4 without the fixes", () => {
+    const windows = stageWindows("desktop");
+    const late = (Math.round(1 + 0.46 * 2880) - 1) / 2880; // 1326 px → 0.460069
+    expect(currentStage(late, windows)).toBe(4);
+    expect(currentStage(late, windows, progressPerPixel(1, 2881))).toBe(3);
+    expect(scrollTargetFor(0.46, 1, 2881)).toBe(1325);
+  });
+
+  test("scroll targets stay inside the track", () => {
+    expect(scrollTargetFor(0, 0.5, 2000)).toBe(1);
+    expect(scrollTargetFor(-1, 10, 2000)).toBe(10);
+    expect(scrollTargetFor(1, 10, 2000.4)).toBe(2000);
+    expect(scrollTargetFor(2, 10, 2000)).toBe(2000);
   });
 
   test("local progress inside the current stage", () => {

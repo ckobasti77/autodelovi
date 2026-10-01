@@ -1,0 +1,45 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator('[data-testid=\'consent-banner\'] [role=switch]').first()
+    - locator resolved to <button disabled value="on" id="sw_r_5_" type="button" role="switch" data-disabled="" aria-checked="true" data-state="checked" aria-describedby="sw_r_5_-desc" class="group inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border p-0.5 transition-control border-control bg-surface-3 data-[state=checked]:border-accent-edge data-[state=checked]:bg-accent data-[state=checked]:focus-ring-inverse disabled:cursor-not-allowed disabled:border-line disabled:bg-surface-2">…</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is not enabled
+    - retrying click action
+      - waiting 100ms
+    56 × waiting for element to be visible, enabled and stable
+       - element is not enabled
+     - retrying click action
+       - waiting 500ms
+
+    at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\docs\qa\fix\shell-perf\verify\r2\perf01-consent.mjs:368:61 {
+  log: [
+    "  - waiting for locator('[data-testid=\\'consent-banner\\'] [role=switch]').first()",
+    '    - locator resolved to <button disabled value="on" id="sw_r_5_" type="button" role="switch" data-disabled="" aria-checked="true" data-state="checked" aria-describedby="sw_r_5_-desc" class="group inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border p-0.5 transition-control border-control bg-surface-3 data-[state=checked]:border-accent-edge data-[state=checked]:bg-accent data-[state=checked]:focus-ring-inverse disabled:cursor-not-allowed disabled:border-line disabled:bg-surface-2">…</button>',
+    '  - attempting click action',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is not enabled',
+    '    - retrying click action',
+    '    - waiting 20ms',
+    '    2 × waiting for element to be visible, enabled and stable',
+    '      - element is not enabled',
+    '    - retrying click action',
+    '      - waiting 100ms',
+    '    56 × waiting for element to be visible, enabled and stable',
+    '       - element is not enabled',
+    '     - retrying click action',
+    '       - waiting 500ms'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.23.2
+exit 1

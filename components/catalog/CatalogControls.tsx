@@ -408,7 +408,7 @@ export function CatalogToolbar({
 
   return (
     // Phones and tablets: the [Filteri (n)] [Sortiraj] row sticks under the header on one line
-    // (§10.2, FLOW-11, D258); the count sits above it. The wrapper is `display: contents` there,
+    // (§10.2, FLOW-11, D261); the count sits above it. The wrapper is `display: contents` there,
     // so the row's sticky range is the whole results column, not this short wrapper. Desktop:
     // count left, sort right, chips below (grid).
     <div

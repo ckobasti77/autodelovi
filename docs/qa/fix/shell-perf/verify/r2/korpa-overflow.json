@@ -1,0 +1,15 @@
+{
+  "korpa360": {
+    "vw": 360,
+    "scrollW": 379,
+    "offenders": [
+      {
+        "el": "span.type-numeral-s.tabular-nums.text-ink-1.sm:min-w-[7.5rem]",
+        "L": 298,
+        "R": 379,
+        "inHeader": false,
+        "text": "12.734 RSD"
+      }
+    ]
+  }
+}

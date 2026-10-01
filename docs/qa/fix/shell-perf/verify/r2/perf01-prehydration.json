@@ -1,0 +1,36 @@
+{
+  "Odbij sve": {
+    "hydratedBeforeClick": false,
+    "documents": [
+      "GET /delovi/kocioni-diskovi",
+      "POST /delovi/kocioni-diskovi"
+    ],
+    "cookie": {
+      "v": 1,
+      "analytics": false,
+      "ads": false,
+      "at": 1790825278585,
+      "id": "863d43b1-598e-4763-b01f-5447bbfe20ea"
+    },
+    "bannerAfter": 0,
+    "url": "/delovi/kocioni-diskovi",
+    "errors": []
+  },
+  "Prihvati sve": {
+    "hydratedBeforeClick": false,
+    "documents": [
+      "GET /delovi/kocioni-diskovi",
+      "POST /delovi/kocioni-diskovi"
+    ],
+    "cookie": {
+      "v": 1,
+      "analytics": true,
+      "ads": true,
+      "at": 1790825298121,
+      "id": "36f7d1aa-fa32-4f8c-95c1-41d741b4d91e"
+    },
+    "bannerAfter": 0,
+    "url": "/delovi/kocioni-diskovi",
+    "errors": []
+  }
+}

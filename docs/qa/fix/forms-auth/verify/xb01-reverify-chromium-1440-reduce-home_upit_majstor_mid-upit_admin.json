@@ -1,0 +1,205 @@
+{
+  "chromium-1440-reduce-home": {
+    "visibleAt": 890,
+    "hydratedBeforeTyping": false,
+    "typedAt": 1308,
+    "hydratedRightAfterTyping": false,
+    "validTiming": true,
+    "hydratedAt": 7400,
+    "after": {
+      "fields": {
+        "[data-testid=hero-search-input] input": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        }
+      },
+      "rhf": null,
+      "msgCounter": null,
+      "vinHelp": null,
+      "brand": null,
+      "pibMsg": null,
+      "mbMsg": null,
+      "active": "cbx_R_lkklrdabmqalb_-input"
+    },
+    "domKept": true,
+    "focusKept": true,
+    "afterSubmitUrl": "/pretraga?q=5Q0615505R",
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "chromium-1440-reduce-upit": {
+    "visibleAt": 828,
+    "hydratedBeforeTyping": false,
+    "typedAt": 3252,
+    "hydratedRightAfterTyping": false,
+    "validTiming": true,
+    "hydratedAt": 7501,
+    "after": {
+      "fields": {
+        "#iq-vin": {
+          "dom": "WVWZZZ1KZ8W123456",
+          "reactValue": "(uncontrolled)"
+        },
+        "#iq-message": {
+          "dom": "Turbina za Golf 7, dizel.",
+          "reactValue": "(uncontrolled)"
+        },
+        "#iq-name": {
+          "dom": "Verifikacija XB01",
+          "reactValue": "(uncontrolled)"
+        },
+        "#iq-phone": {
+          "dom": "065 987 6543",
+          "reactValue": "(uncontrolled)"
+        }
+      },
+      "rhf": {
+        "vin": "WVWZZZ1KZ8W123456",
+        "brandSlug": "volkswagen",
+        "modelSlug": "golf",
+        "generationSlug": "golf-5",
+        "year": "2008",
+        "message": "Turbina za Golf 7, dizel.",
+        "name": "Verifikacija XB01",
+        "phone": "065 987 6543",
+        "email": "",
+        "channel": "phone",
+        "consent": false
+      },
+      "msgCounter": "25 / 2.000",
+      "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?",
+      "brand": "volkswagen",
+      "pibMsg": null,
+      "mbMsg": null,
+      "active": "iq-phone"
+    },
+    "domKept": true,
+    "stateKept": true,
+    "errorsWithoutConsent": [
+      "Potrebna je saglasnost da podatke koristimo za odgovor na upit."
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "chromium-1440-reduce-majstor": {
+    "visibleAt": 1414,
+    "hydratedBeforeTyping": false,
+    "typedAt": 3983,
+    "hydratedRightAfterTyping": false,
+    "validTiming": true,
+    "hydratedAt": 7648,
+    "after": {
+      "fields": {
+        "#mr-email": {
+          "dom": "servis.rv01@primer.rs",
+          "reactValue": "(uncontrolled)"
+        },
+        "#mr-password": {
+          "dom": "(hidden)",
+          "reactValue": "(uncontrolled)"
+        },
+        "#mr-companyName": {
+          "dom": "Servis RV01",
+          "reactValue": "(uncontrolled)"
+        },
+        "#mr-pib": {
+          "dom": "101234569",
+          "reactValue": "(uncontrolled)"
+        },
+        "#mr-mb": {
+          "dom": "17123459",
+          "reactValue": "(uncontrolled)"
+        },
+        "#mr-phone": {
+          "dom": "0641234567",
+          "reactValue": "(uncontrolled)"
+        }
+      },
+      "rhf": {
+        "email": "servis.rv01@primer.rs",
+        "password": "(set)",
+        "companyName": "Servis RV01",
+        "pib": "101234569",
+        "mb": "17123459",
+        "contactPerson": "",
+        "phone": "0641234567",
+        "city": "",
+        "address": "",
+        "serviceTypes": [],
+        "brandsServiced": [],
+        "terms": false
+      },
+      "msgCounter": null,
+      "vinHelp": null,
+      "brand": null,
+      "pibMsg": "PIB je ispravan.",
+      "mbMsg": "Matični broj je ispravan.",
+      "active": "mr-phone"
+    },
+    "domKept": true,
+    "stateKept": true,
+    "watchersFollow": true,
+    "summaryAfterSubmit": [
+      "Upišite ime i prezime kontakt osobe.",
+      "Upišite mesto.",
+      "Upišite adresu servisa.",
+      "Izaberite bar jednu vrstu servisa.",
+      "Potrebna je saglasnost sa uslovima korišćenja."
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "chromium-1440-reduce-mid-upit": {
+    "runs": [
+      {
+        "dom": "Turbina za Golf 7, dizel, curi ulje.",
+        "state": "Turbina za Golf 7, dizel, curi ulje.",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "000111111111111111111111",
+        "msgCounter": "36 / 2.000",
+        "counterOk": true,
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?"
+      },
+      {
+        "dom": "Turbina za Golf 7, dizel, curi ulje.",
+        "state": "Turbina za Golf 7, dizel, curi ulje.",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "001111111111111111111111",
+        "msgCounter": "36 / 2.000",
+        "counterOk": true,
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?"
+      },
+      {
+        "dom": "Turbina za Golf 7, dizel, curi ulje.",
+        "state": "Turbina za Golf 7, dizel, curi ulje.",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "011111111111111111111111",
+        "msgCounter": "36 / 2.000",
+        "counterOk": true,
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?"
+      }
+    ],
+    "summary": {
+      "runs": 3,
+      "domKept": 3,
+      "stateKept": 3,
+      "hydrationDuringTyping": 3
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "chromium-1440-reduce-admin": {
+    "error": "TimeoutError: locator.waitFor: Timeout 60000ms exceeded. | Call log: |   - waiting for locator('a[href^=\\'/admin/upiti/\\']').first() to be visible",
+    "consoleErrors": [],
+    "pageErrors": []
+  }
+}

@@ -1,0 +1,463 @@
+{
+ "method": "scripts/qa/fix/forms-auth-reverify-xb01.mjs (JS-only chunk delay 6 s / gated JS for mid-typing / CDP Slow 4G+4x CPU; RHF state read from the form fiber) + scripts/qa/fix/forms-auth-verify-xb01.mjs for sign-up/reset/back-in-stock/pretraga; AUDIT_BASE=http://localhost:3001; 2026-10-01",
+ "scenarios": {
+  "chromium-1440-admin :: chromium-1440-admin": {
+   "typed": "20 / 1.000",
+   "cleared": "0 / 1.000",
+   "initial": "0 / 1.000",
+   "backspace": "19 / 1.000",
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-1440-reduce-home_upit_majstor_mid-upit_admin :: chromium-1440-reduce-home": {
+   "validTiming": true,
+   "domKept": true,
+   "focusKept": true,
+   "afterSubmitUrl": "/pretraga?q=5Q0615505R",
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-1440-reduce-home_upit_majstor_mid-upit_admin :: chromium-1440-reduce-upit": {
+   "validTiming": true,
+   "domKept": true,
+   "stateKept": true,
+   "msgCounter": "25 / 2.000",
+   "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?",
+   "errorsWithoutConsent": [
+    "Potrebna je saglasnost da podatke koristimo za odgovor na upit."
+   ],
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-1440-reduce-home_upit_majstor_mid-upit_admin :: chromium-1440-reduce-majstor": {
+   "validTiming": true,
+   "domKept": true,
+   "stateKept": true,
+   "watchersFollow": true,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-1440-reduce-home_upit_majstor_mid-upit_admin :: chromium-1440-reduce-mid-upit": {
+   "runs": 3,
+   "domKept": 3,
+   "stateKept": 3,
+   "hydrationDuringTyping": 3,
+   "counterOk": 3,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-1440-reduce-home_upit_majstor_mid-upit_admin :: chromium-1440-reduce-admin": {
+   "error": "TimeoutError: locator.waitFor: Timeout 60000ms exceeded. | Call log: |   - waiting for locator('a[href^=\\'/admin/upiti/\\']').first() to be visible",
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav_styleguide :: chromium-390-home": {
+   "validTiming": true,
+   "domKept": true,
+   "focusKept": true,
+   "afterSubmitUrl": "/pretraga?q=5Q0615505R",
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav_styleguide :: chromium-390-upit": {
+   "validTiming": true,
+   "domKept": true,
+   "stateKept": true,
+   "afterSubmitUrl": "/upit/hvala/<token>",
+   "msgCounter": "25 / 2.000",
+   "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?",
+   "submittedArgs": {
+    "udfPath": "inquiries:submit",
+    "vin": "WVWZZZ1KZ8W123456",
+    "message": "Turbina za Golf 7, dizel.",
+    "name": "Verifikacija XB01",
+    "phone": "+381659876543",
+    "vehicle": "Volkswagen Golf V (2008)"
+   },
+   "errorsWithoutConsent": [
+    "Potrebna je saglasnost da podatke koristimo za odgovor na upit."
+   ],
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav_styleguide :: chromium-390-majstor": {
+   "validTiming": true,
+   "domKept": true,
+   "stateKept": true,
+   "watchersFollow": true,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav_styleguide :: chromium-390-mid-upit": {
+   "runs": 4,
+   "domKept": 4,
+   "stateKept": 4,
+   "hydrationDuringTyping": 3,
+   "counterOk": 4,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav_styleguide :: chromium-390-mid-vin": {
+   "runs": 4,
+   "domKept": 4,
+   "stateKept": 4,
+   "hydrationDuringTyping": 1,
+   "vinDecoded": 4,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav_styleguide :: chromium-390-mid-majstor": {
+   "runs": 4,
+   "domKept": 4,
+   "stateKept": 4,
+   "hydrationDuringTyping": 0,
+   "pibSuccessShown": 4,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav_styleguide :: chromium-390-mid-home": {
+   "runs": 4,
+   "domKept": 4,
+   "stateKept": 4,
+   "hydrationDuringTyping": 0,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav_styleguide :: chromium-390-counter": {
+   "prefill": {
+    "value": "Tražim: turbina golf 7",
+    "counter": "22 / 2.000"
+   },
+   "typed": "29 / 2.000",
+   "backspace2": "27 / 2.000",
+   "cleared": {
+    "value": "",
+    "counter": "0 / 2.000"
+   },
+   "retyped": "5 / 2.000",
+   "rhfAfter": "Pumpa",
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav_styleguide :: chromium-390-clientnav": {
+   "rhfAfter": "Kocioni diskovi",
+   "initial": {
+    "msgCounter": "0 / 2.000",
+    "rhfMessage": ""
+   },
+   "typedCounter": "15 / 2.000",
+   "softNav": true,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav_styleguide :: chromium-390-styleguide": {
+   "typed": "10 / 1.000",
+   "initial": "0 / 1.000",
+   "backspace": "9 / 1.000",
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-390-rerun-mid-majstor_mid-home :: chromium-390-mid-majstor": {
+   "runs": 5,
+   "domKept": 5,
+   "stateKept": 5,
+   "hydrationDuringTyping": 0,
+   "pibSuccessShown": 5,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-390-rerun-mid-majstor_mid-home :: chromium-390-mid-home": {
+   "runs": 5,
+   "domKept": 5,
+   "stateKept": 5,
+   "hydrationDuringTyping": 4,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-390-slow4g-cpu4-real-home_real-upit_real-home_real-upit :: chromium-390-real-home": {
+   "validTiming": true,
+   "domKept": true,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium-390-slow4g-cpu4-real-home_real-upit_real-home_real-upit :: chromium-390-real-upit": {
+   "validTiming": true,
+   "domKept": true,
+   "stateKept": true,
+   "msgCounter": "25 / 2.000",
+   "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?",
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium_webkit-390-registracija_reset_bis_pretraga :: chromium-390-registracija": {
+   "validTiming": true,
+   "kept": true,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium_webkit-390-registracija_reset_bis_pretraga :: chromium-390-reset": {
+   "validTiming": true,
+   "kept": true,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium_webkit-390-registracija_reset_bis_pretraga :: chromium-390-bis": {
+   "validTiming": true,
+   "kept": true,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium_webkit-390-registracija_reset_bis_pretraga :: chromium-390-pretraga": {
+   "validTiming": true,
+   "kept": true,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium_webkit-390-registracija_reset_bis_pretraga :: webkit-390-registracija": {
+   "validTiming": true,
+   "kept": true,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium_webkit-390-registracija_reset_bis_pretraga :: webkit-390-reset": {
+   "validTiming": true,
+   "kept": true,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium_webkit-390-registracija_reset_bis_pretraga :: webkit-390-bis": {
+   "validTiming": true,
+   "kept": true,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "chromium_webkit-390-registracija_reset_bis_pretraga :: webkit-390-pretraga": {
+   "validTiming": true,
+   "kept": true,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "firefox-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: firefox-390-home": {
+   "validTiming": true,
+   "domKept": true,
+   "focusKept": true,
+   "afterSubmitUrl": "/pretraga?q=5Q0615505R",
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "firefox-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: firefox-390-upit": {
+   "validTiming": true,
+   "domKept": true,
+   "stateKept": true,
+   "afterSubmitUrl": "/upit/hvala/<token>",
+   "msgCounter": "25 / 2.000",
+   "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?",
+   "submittedArgs": {
+    "udfPath": "inquiries:submit",
+    "vin": "WVWZZZ1KZ8W123456",
+    "message": "Turbina za Golf 7, dizel.",
+    "name": "Verifikacija XB01",
+    "phone": "+381659876543",
+    "vehicle": "Volkswagen Golf V (2008)"
+   },
+   "errorsWithoutConsent": [
+    "Potrebna je saglasnost da podatke koristimo za odgovor na upit."
+   ],
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "firefox-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: firefox-390-majstor": {
+   "validTiming": true,
+   "domKept": true,
+   "stateKept": true,
+   "watchersFollow": true,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "firefox-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: firefox-390-mid-upit": {
+   "runs": 5,
+   "domKept": 5,
+   "stateKept": 5,
+   "hydrationDuringTyping": 5,
+   "counterOk": 5,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "firefox-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: firefox-390-mid-vin": {
+   "runs": 5,
+   "domKept": 5,
+   "stateKept": 5,
+   "hydrationDuringTyping": 5,
+   "vinDecoded": 5,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "firefox-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: firefox-390-mid-majstor": {
+   "runs": 5,
+   "domKept": 5,
+   "stateKept": 5,
+   "hydrationDuringTyping": 0,
+   "pibSuccessShown": 5,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "firefox-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: firefox-390-mid-home": {
+   "runs": 5,
+   "domKept": 5,
+   "stateKept": 5,
+   "hydrationDuringTyping": 2,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "firefox-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: firefox-390-counter": {
+   "prefill": {
+    "value": "Tražim: turbina golf 7",
+    "counter": "22 / 2.000"
+   },
+   "typed": "29 / 2.000",
+   "backspace2": "27 / 2.000",
+   "cleared": {
+    "value": "",
+    "counter": "0 / 2.000"
+   },
+   "retyped": "5 / 2.000",
+   "rhfAfter": "Pumpa",
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "firefox-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: firefox-390-clientnav": {
+   "rhfAfter": "Kocioni diskovi",
+   "initial": {
+    "msgCounter": "0 / 2.000",
+    "rhfMessage": ""
+   },
+   "typedCounter": "15 / 2.000",
+   "softNav": true,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "webkit-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: webkit-390-home": {
+   "validTiming": true,
+   "domKept": true,
+   "focusKept": true,
+   "afterSubmitUrl": "/pretraga?q=5Q0615505R",
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "webkit-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: webkit-390-upit": {
+   "validTiming": true,
+   "domKept": true,
+   "stateKept": true,
+   "afterSubmitUrl": "/upit/hvala/<token>",
+   "msgCounter": "25 / 2.000",
+   "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?",
+   "submittedArgs": {
+    "udfPath": "inquiries:submit",
+    "vin": "WVWZZZ1KZ8W123456",
+    "message": "Turbina za Golf 7, dizel.",
+    "name": "Verifikacija XB01",
+    "phone": "+381659876543",
+    "vehicle": "Volkswagen Golf V (2008)"
+   },
+   "errorsWithoutConsent": [
+    "Potrebna je saglasnost da podatke koristimo za odgovor na upit."
+   ],
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "webkit-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: webkit-390-majstor": {
+   "validTiming": true,
+   "domKept": true,
+   "stateKept": true,
+   "watchersFollow": true,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "webkit-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: webkit-390-mid-upit": {
+   "runs": 1,
+   "domKept": 1,
+   "stateKept": 1,
+   "hydrationDuringTyping": 0,
+   "counterOk": 1,
+   "error": "TimeoutError: page.waitForFunction: Timeout 120000ms exceeded.",
+   "consoleErrors": 2,
+   "pageErrors": 0
+  },
+  "webkit-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: webkit-390-mid-vin": {
+   "runs": 5,
+   "domKept": 5,
+   "stateKept": 5,
+   "hydrationDuringTyping": 1,
+   "vinDecoded": 5,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "webkit-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: webkit-390-mid-majstor": {
+   "runs": 5,
+   "domKept": 5,
+   "stateKept": 5,
+   "hydrationDuringTyping": 4,
+   "pibSuccessShown": 5,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "webkit-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: webkit-390-mid-home": {
+   "runs": 0,
+   "domKept": 0,
+   "stateKept": 0,
+   "hydrationDuringTyping": 0,
+   "error": "TimeoutError: locator.click: Timeout 60000ms exceeded. | Call log: |   - waiting for locator('[data-testid=hero-search-input] input').first()",
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "webkit-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: webkit-390-counter": {
+   "prefill": {
+    "value": "Tražim: turbina golf 7",
+    "counter": "22 / 2.000"
+   },
+   "typed": "29 / 2.000",
+   "backspace2": "27 / 2.000",
+   "cleared": {
+    "value": "",
+    "counter": "0 / 2.000"
+   },
+   "retyped": "5 / 2.000",
+   "rhfAfter": "Pumpa",
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "webkit-390-home_upit_majstor_mid-upit_mid-vin_mid-majstor_mid-home_counter_clientnav :: webkit-390-clientnav": {
+   "rhfAfter": "Kocioni diskovi",
+   "initial": {
+    "msgCounter": "0 / 2.000",
+    "rhfMessage": ""
+   },
+   "typedCounter": "15 / 2.000",
+   "softNav": true,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "webkit-390-rerun-mid-upit_mid-home :: webkit-390-mid-upit": {
+   "runs": 5,
+   "domKept": 5,
+   "stateKept": 5,
+   "hydrationDuringTyping": 5,
+   "counterOk": 5,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  },
+  "webkit-390-rerun-mid-upit_mid-home :: webkit-390-mid-home": {
+   "runs": 5,
+   "domKept": 5,
+   "stateKept": 5,
+   "hydrationDuringTyping": 5,
+   "consoleErrors": 0,
+   "pageErrors": 0
+  }
+ },
+ "harnessNotes": [
+  "chromium-1440-reduce admin: first selector (a[href^=/admin/upiti/]) was wrong (rows open via router.push); rerun with the fixed scenario in xb01-reverify-chromium-1440-admin.json passes (0 -> 20 -> 19 -> 0 / 1.000).",
+  "webkit-390 mid-upit (run 2) and mid-home timed out while the shared dev server was recompiling (HMR websocket errors 56/7 in the console); rerun in xb01-reverify-webkit-390-rerun-mid-upit_mid-home.json: 5/5 + 5/5 kept, hydration landed mid-typing in all 10 runs.",
+  "slow4g-cpu4 file: the scenario list repeated real-home/real-upit, so the JSON keeps the second pair; all four runs logged validTiming true and kept (console output)."
+ ]
+}

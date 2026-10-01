@@ -156,6 +156,8 @@ export type ProductLdInput = {
   freeOverPara?: number | null;
   /** Withdrawal window for distance sales (Zakon o zaštiti potrošača: 14 days). */
   returnDays?: number;
+  /** Shop name from settings; the config brand otherwise. */
+  sellerName?: string;
 };
 
 /** Valid EAN-13 (GS1 check digit). */
@@ -190,7 +192,13 @@ export function productJsonLd(p: ProductLdInput): JsonLd {
           price: decimal(p.pricePara),
           availability: availabilityUrl(p.stockState),
           itemCondition: "https://schema.org/NewCondition",
-          seller: { "@id": ORGANIZATION_ID() },
+          // Inline, not only a reference: the Organization node lives on / and /kontakt, so a
+          // bare @id leaves the seller unresolved on a product page (SEO-09).
+          seller: {
+            "@type": "Organization",
+            "@id": ORGANIZATION_ID(),
+            name: p.sellerName ?? site.brand.name,
+          },
           shippingDetails:
             shippingPara !== null
               ? {

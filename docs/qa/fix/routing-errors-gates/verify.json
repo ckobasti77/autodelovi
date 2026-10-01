@@ -1,0 +1,132 @@
+{
+  "staleSession": [
+    {
+      "route": "/admin",
+      "chain": [
+        "307 /admin",
+        "200 /prijava?next=%2Fadmin"
+      ],
+      "url": "/prijava?next=%2Fadmin",
+      "title": "Prijava | SKLOP",
+      "h1": "Prijava",
+      "ev": "docs/qa/fix/routing-errors-gates/a11y03-stale-admin-390.webp"
+    },
+    {
+      "route": "/nalog",
+      "chain": [
+        "307 /nalog",
+        "200 /prijava?next=%2Fnalog"
+      ],
+      "url": "/prijava?next=%2Fnalog",
+      "title": "Prijava | SKLOP",
+      "h1": "Prijava"
+    },
+    {
+      "route": "/majstor/brza-porudzbina",
+      "chain": [
+        "307 /majstor/brza-porudzbina",
+        "200 /prijava?next=%2Fmajstor%2Fbrza-porudzbina"
+      ],
+      "url": "/prijava?next=%2Fmajstor%2Fbrza-porudzbina",
+      "title": "Prijava | SKLOP",
+      "h1": "Prijava"
+    }
+  ],
+  "forbidden": [
+    {
+      "width": 390,
+      "route": "/admin",
+      "status": 403,
+      "title": "Pregled · Administracija",
+      "h1": "Nemate pristup ovoj strani",
+      "text": "Nemate pristup ovoj strani\n\nPrijavljeni ste kao audit-kupac-5455287@primer.rs. Taj nalog nema pristup administraciji. Ako treba da radite u njoj, vlasnik radnje vam šalje pozivnicu.\n\nPočetna\nOdjavi se",
+      "ev": "docs/qa/fix/routing-errors-gates/copy06-admin-403-390.webp",
+      "axe": [],
+      "consoleErrors": [
+        "Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template)."
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/admin/porudzbine",
+      "status": 403,
+      "title": "Porudžbine · Administracija",
+      "h1": "Nemate pristup ovoj strani",
+      "text": "Nemate pristup ovoj strani\n\nPrijavljeni ste kao audit-kupac-5455287@primer.rs. Taj nalog nema pristup administraciji. Ako treba da radite u njoj, vlasnik radnje vam šalje pozivnicu.\n\nPočetna\nOdjavi se",
+      "consoleErrors": [
+        "Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template)."
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/admin",
+      "status": 403,
+      "title": "Pregled · Administracija",
+      "h1": "Nemate pristup ovoj strani",
+      "text": "Nemate pristup ovoj strani\n\nPrijavljeni ste kao audit-kupac-5455287@primer.rs. Taj nalog nema pristup administraciji. Ako treba da radite u njoj, vlasnik radnje vam šalje pozivnicu.\n\nPočetna\nOdjavi se",
+      "ev": "docs/qa/fix/routing-errors-gates/copy06-admin-403-1440.webp",
+      "axe": [],
+      "consoleErrors": [
+        "Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template)."
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/admin/porudzbine",
+      "status": 403,
+      "title": "Porudžbine · Administracija",
+      "h1": "Nemate pristup ovoj strani",
+      "text": "Nemate pristup ovoj strani\n\nPrijavljeni ste kao audit-kupac-5455287@primer.rs. Taj nalog nema pristup administraciji. Ako treba da radite u njoj, vlasnik radnje vam šalje pozivnicu.\n\nPočetna\nOdjavi se",
+      "consoleErrors": [
+        "Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template)."
+      ]
+    }
+  ],
+  "notFound": [
+    {
+      "width": 390,
+      "route": "/ovo-ne-postoji",
+      "status": 404,
+      "title": "Stranica nije pronađena | SKLOP",
+      "h1": "Stranica nije pronađena",
+      "ev": "docs/qa/fix/routing-errors-gates/404-ovo-ne-postoji-390.webp",
+      "axe": [],
+      "consoleErrors": [],
+      "searchFieldHeight": 56
+    },
+    {
+      "width": 390,
+      "route": "/deo/ne-postoji-demo-9999",
+      "status": 404,
+      "title": "Stranica nije pronađena | SKLOP",
+      "h1": "Stranica nije pronađena",
+      "ev": "docs/qa/fix/routing-errors-gates/404-deo-ne-postoji-demo-9999-390.webp",
+      "consoleErrors": [
+        "Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template)."
+      ],
+      "searchFieldHeight": 54
+    },
+    {
+      "width": 1440,
+      "route": "/ovo-ne-postoji",
+      "status": 404,
+      "title": "Stranica nije pronađena | SKLOP",
+      "h1": "Stranica nije pronađena",
+      "ev": "docs/qa/fix/routing-errors-gates/404-ovo-ne-postoji-1440.webp",
+      "axe": [],
+      "consoleErrors": [],
+      "searchFieldHeight": 56
+    },
+    {
+      "width": 1440,
+      "route": "/deo/ne-postoji-demo-9999",
+      "status": 404,
+      "title": "Stranica nije pronađena | SKLOP",
+      "h1": "Stranica nije pronađena",
+      "consoleErrors": [
+        "Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template)."
+      ],
+      "searchFieldHeight": 54
+    }
+  ]
+}

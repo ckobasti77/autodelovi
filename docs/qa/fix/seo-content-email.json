@@ -1,0 +1,163 @@
+[
+  {
+    "id": "COPY-01",
+    "status": "FIXED",
+    "summary": "productTitle normalises whitespace with /\\s+/g (no more lost „s“); productMeta shortens the vehicle list only by whole vehicles („VW Golf VII i još 11“) via parseFitmentSummary + listMoreSr, so descriptions never end mid-word.",
+    "files": ["lib/seo/templates.ts", "tests/unit/seo/metadata.test.ts"],
+    "verification": "npx vitest run tests/unit/seo → 47 passed (tests „COPY-01: product titles keep every letter“, „a long vehicle list is cut at whole vehicles“). AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/seo-content-email-titles.mjs → 342 sitemap URLs, productTitleLostS 0, titleOver60 0; descriptionCutWord only /za-majstore and /upit (static copy outside this package). /deo/kocioni-disk-prednji-276-24-mm-demo-0004 <title> „Kočioni disk prednji 276 × 24 mm Febi Bilstein 5Q0 615 505 R“. Evidence: docs/qa/fix/seo-content-email/titles-crawl.json"
+  },
+  {
+    "id": "PERF-02",
+    "status": "FIXED",
+    "summary": "Engine selector on the generation page is a fixed-column grid of two-line cells (name in the preloaded UI font, codes on their own truncated type-code-s line), so the row count no longer depends on Martian Mono's late swap (D254). lib/fonts.ts untouched.",
+    "files": ["app/(shop)/vozila/[marka]/[model]/[generacija]/page.tsx", "scripts/qa/fix/seo-content-email-cls-mono.mjs"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/seo-content-email-cls-mono.mjs → golf-7 390: probeDelta 0, navDelta 0 (nav 337 px both with the web font and with code spans forced to „Martian Mono Fallback“); 1440: 0/0; /vozila/skoda/octavia (VIN codes) 390/1440: 0. Evidence: docs/qa/fix/seo-content-email/cls-mono.json, engines-golf7-390.webp"
+  },
+  {
+    "id": "SEO-01",
+    "status": "FIXED",
+    "summary": "productTitle order is now name+maker+OEM+suffix → name+maker+OEM → whole-word-shortened name+maker+OEM → name+OEM (D253), so parts with the same OEM number from different makers keep distinct titles; no ellipsis in titles.",
+    "files": ["lib/seo/templates.ts", "lib/seo/metadata.ts", "tests/unit/seo/metadata.test.ts"],
+    "verification": "Unit test „SEO-01: same OEM number from two makers gives two titles“ passes. Crawl of all 342 sitemap URLs (scripts/qa/fix/seo-content-email-titles.mjs): duplicateTitles 0 (was 3 product pairs). Evidence: docs/qa/fix/seo-content-email/titles-crawl.json"
+  },
+  {
+    "id": "SEO-02",
+    "status": "FIXED",
+    "summary": "/delovi/[kategorija] loads the listing in generateMetadata and calls notFound() when ?strana exceeds pageCount (also in the page), so out-of-range pages are real 404s before streaming (D258).",
+    "files": ["app/(shop)/delovi/[kategorija]/page.tsx"],
+    "verification": "curl http://localhost:3001/delovi/kocioni-diskovi?strana=2 → 404; ?strana=500 → 404; /delovi/filteri?strana=2 → 404; ?strana=1 → 200 „index, follow“."
+  },
+  {
+    "id": "SEO-03",
+    "status": "FIXED",
+    "summary": "Titles carry a kept tail (MetaText.titleKeep → buildMetadata titleKeep → pageTitle): the page number and the vehicle survive, only the category name is shortened (parenthetical first, whole words, no „…“). Owner seoTitle still wins but keeps „— strana n“. Category descriptions use real counts, min price and makers from the listing facets; system descriptions list their categories with counts. Seed cleanup of seoTitle/seoDescription is search-catalog-content's assist.",
+    "files": ["lib/seo/metadata.ts", "lib/seo/templates.ts", "app/(shop)/delovi/[kategorija]/page.tsx", "tests/unit/seo/metadata.test.ts"],
+    "verification": "Unit test „SEO-03: the vehicle and the page number survive shortening“ (e.g. „Senzori za VW, Audi, Škoda, SEAT — strana 2“, „Senzori i prekidači za Škodu Octaviju“). Crawl of 342 sitemap URLs: titleOver60 0, titleEllipsis 0, duplicateTitles 0, duplicate descriptions 0, boilerplate category descriptions 0. /delovi/kocioni-diskovi description „… 9 artikala, 7 na stanju, od 3.890 RSD. Proizvođači: ATE, Brembo, Bosch, Febi Bilstein i još 2.“"
+  },
+  {
+    "id": "SEO-04",
+    "status": "FIXED",
+    "summary": "System hubs: data intro (unless owner text), category tiles, „Najtraženiji delovi“ grid with ItemList, landings of their categories. Model hubs: part count + top categories per generation and a data intro; single-generation models 308 to the generation (resolved in generateMetadata), are dropped from vozila.xml, and /vozila + brand hub link straight to the generation (modelHref); the generation page drops the redirecting model crumb (D255). Brand hubs: intro with counts, part count per generation, „Najviše delova za {Marku}“ category links. /vozila: catalogue counts per make.",
+    "files": ["components/catalog/SystemHub.tsx", "app/(shop)/delovi/[kategorija]/page.tsx", "app/(shop)/vozila/page.tsx", "app/(shop)/vozila/[marka]/page.tsx", "app/(shop)/vozila/[marka]/[model]/page.tsx", "app/(shop)/vozila/[marka]/[model]/[generacija]/page.tsx", "app/sitemaps/[file]/route.ts", "lib/vehicle/hub.ts", "lib/seo/templates.ts", "scripts/qa/fix/seo-content-email-hubs.mjs"],
+    "verification": "Crawl (scripts/qa/fix/seo-content-email-titles.mjs): only /vozila was still under 60 words (54); after the per-make facts it has 76 (hubs.json). AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/seo-content-email-hubs.mjs → /delovi/kocnice 280 words (390/1440), /vozila/skoda/octavia 131, /vozila/cupra 66, /vozila 76; reveal stuck 0, overflow 0, axe [] , no console errors. curl /vozila/cupra/formentor → 308 → /vozila/cupra/formentor/formentor; vozila.xml contains 0 single-generation model hubs. Screens: docs/qa/fix/seo-content-email/system-kocnice-1440.webp, system-kocnice-390.webp, model-octavia-390.webp, brand-cupra-1440.webp"
+  },
+  {
+    "id": "SEO-07",
+    "status": "FIXED",
+    "summary": "listMoreSr: comma list ending „i još N“ (one „i“), names the single remaining item instead of „i još 1“; landing generations top-4 by parts told in model-year order; productMeta drops the quality label when it repeats the maker and cuts the vehicle list at whole entries.",
+    "files": ["lib/seo/templates.ts", "lib/seo/landingCopy.ts", "tests/unit/seo/landing.test.ts", "tests/unit/seo/metadata.test.ts"],
+    "verification": "Unit tests „SEO-07: makers end with „i još N“ once, generations in model-year order“ and „lists“ pass. Crawl: doubledMaker 0, doubleI 0, descriptionCutWord 0 on product/landing pages."
+  },
+  {
+    "id": "COPY-05",
+    "status": "FIXED",
+    "summary": "accusativeSr() declines capitalised names ending in -a after „za“ (Škodu, Cupru, Octaviju, Ibizu; VW/Audi/SEAT/Golf unchanged). Used by landing titles/descriptions, vehicleText (H1, intro, FAQ, OG of landings), landingLabel anchors, product descriptions, the vozila brand/model/generation pages and generationMeta (D256). No schema change.",
+    "files": ["lib/seo/templates.ts", "lib/seo/landingCopy.ts", "lib/seo/landingLinks.ts", "app/(shop)/vozila/[marka]/page.tsx", "app/(shop)/vozila/[marka]/[model]/page.tsx", "app/(shop)/vozila/[marka]/[model]/[generacija]/page.tsx", "tests/unit/seo/metadata.test.ts", "tests/unit/seo/landing.test.ts"],
+    "verification": "Crawl of 342 URLs: brandNominativeAfterZa 0 (title, H1, description). /vozila/skoda H1 „Delovi za Škodu“, /delovi/kocioni-diskovi/cupra H1 „Kočioni diskovi za Cupru“, landing OG image docs/qa/fix/seo-content-email/og-landing-skoda.webp („KOČIONI DISKOVI ZA ŠKODU“)."
+  },
+  {
+    "id": "VIS-13",
+    "status": "FIXED",
+    "summary": "New components/content/StackedTable.tsx (used by Markdown tables and the live delivery table): below sm each row is a stacked card (row header + aria-hidden „LABEL value“ lines), explicit ARIA table roles, no horizontal scroller; normal table from sm up (D257).",
+    "files": ["components/content/StackedTable.tsx", "lib/content/markdown.tsx", "app/(shop)/dostava-i-placanje/page.tsx", "scripts/qa/fix/seo-content-email-tables.mjs"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/seo-content-email-tables.mjs → /dostava-i-placanje 360: tableW 326 = wrapW 328, scrollW 326, rows display flex, labels visible, axe [] (was scrollable-region-focusable); /kolacici and /politika-privatnosti 360 likewise; 1440 normal table rows; reveal stuck 0. Evidence: docs/qa/fix/seo-content-email/tables.json, table-dostava-360.webp, table-dostava-1440.webp"
+  },
+  {
+    "id": "COPY-10",
+    "status": "FIXED",
+    "summary": "Content page meta descriptions are whole sentences from the paragraphs only (markdownDescription), never headings, lists or tables; ContentPageView also 404s a missing page in generateMetadata. /delovi description shortened to fit.",
+    "files": ["lib/content/markdown.tsx", "components/content/ContentPageView.tsx", "app/(shop)/delovi/page.tsx", "tests/unit/seo/contentDescription.test.ts"],
+    "verification": "tests/unit/seo/contentDescription.test.ts 3 passed. curl /dostava-i-placanje description „Na sajtu nema plaćanja karticom. Porudžbinu šaljete bez plaćanja, …“ (no table text); crawl descriptionCutWord 0 on content pages."
+  },
+  {
+    "id": "COPY-11",
+    "status": "OPEN",
+    "summary": "Own e-mail part fixed: preheader „važi do 06.10.2026.“ (no double period), back-in-stock preheader „Ponovo na stanju: …“, unsubscribe label without „.:“, staff „4 kom.“/„ostalo 1 kom.“ via formatQuantity, plain-text contact links printed once. Cart/checkout/predračun/print/QuoteComposer parts belong to other packages.",
+    "files": ["lib/email/templates/customer.ts", "lib/email/templates/staff.ts", "lib/email/html.ts", "tests/unit/email/templates.test.ts", "tests/unit/email/__snapshots__/templates.test.ts.snap"],
+    "verification": "npx vitest run tests/unit/email → 89 passed; 24 snapshot updates reviewed line by line (only the listed copy changes). Reaches the Convex deployment with the next convex push."
+  },
+  {
+    "id": "FLOW-34",
+    "status": "FIXED",
+    "summary": "inlineText prints tel:/mailto:/viber: links as their readable value once (label + value in brackets only when the label differs and the value was not printed yet); web links keep „label: URL“ without a colon after a sentence-ending label.",
+    "files": ["lib/email/html.ts", "tests/unit/email/templates.test.ts"],
+    "verification": "Test „FLOW-34: phone, e-mail and Viber links print their value once“ passes; snapshots now read „Pitanja? Pozovite +381 64 123 4567 ili pišite na Viber ili odgovorite na ovu poruku.“ and „Telefon: +381 64 123 4567“."
+  },
+  {
+    "id": "SEO-08",
+    "status": "OPEN",
+    "summary": "Fixed: latin-ext font files registered under their own family names (Martian Mono Ext, Public Sans Ext) and listed in every OG font stack, so „Š/Đ“ no longer fall back. Open: per-page og:image:alt needs generateImageMetadata in the opengraph-image routes (changes the image URLs) — left for a follow-up.",
+    "files": ["lib/og/frame.tsx"],
+    "verification": "Landing OG renders „KOČIONI DISKOVI ZA ŠKODU“ and „Nađi“ correctly: docs/qa/fix/seo-content-email/og-landing-skoda.webp (from /delovi/kocioni-diskovi/skoda/opengraph-image-170i3u → 200 image/png)."
+  },
+  {
+    "id": "SEO-09",
+    "status": "OPEN",
+    "summary": "Fixed: Offer seller is inlined (@type Organization + name + @id). Open: deliveryTime (handling/transit days) and returnFees/returnMethod need owner data that settings do not hold (only the free text „1–2 radna dana“, no return-cost rule) — HUMAN-TODO entry added.",
+    "files": ["lib/seo/jsonld.ts", "docs/HUMAN-TODO.md"],
+    "verification": "npx vitest run tests/unit/seo/jsonld.test.ts passes; HUMAN-TODO „[P3] Korak 22 — rokovi dostave i troškovi povrata za Google (nalaz SEO-09)“."
+  },
+  {
+    "id": "SEO-10",
+    "status": "FIXED",
+    "summary": "Merchant feed emits g:availability_date for backorder items from the product's lead time (Belgrade day, real +01:00/+02:00 offset); items without a lead time get no invented date (D264, HUMAN-TODO asks the owner to fill „Rok isporuke“).",
+    "files": ["lib/seo/feeds.ts", "tests/unit/seo/sitemapFeeds.test.ts", "docs/HUMAN-TODO.md"],
+    "verification": "Test „SEO-10: a backorder item with a lead time carries g:availability_date“ → „2026-10-08T00:00+02:00“ and „2026-11-10T00:00+01:00“; in-stock and no-lead-time items have none. 10 passed."
+  },
+  {
+    "id": "COPY-15",
+    "status": "OPEN",
+    "summary": "Own part: ogFrame gains titleCase: \"sentence\" and glues number+unit and „276 × 24“ with no-break spaces for every OG title. The product OG route (app/(shop)/deo/[slug]/opengraph-image.tsx, not owned) must pass titleCase: \"sentence\" — cross-package request.",
+    "files": ["lib/og/frame.tsx"],
+    "verification": "npx tsc --noEmit: no errors in lib/og; eslint clean. Product OG unchanged until the caller passes titleCase."
+  },
+  {
+    "id": "FLOW-05",
+    "status": "OPEN",
+    "summary": "Assist done for this package's routes: notFound() in generateMetadata of /delovi/[kategorija], /vozila/[marka], /vozila/[marka]/[model], /vozila/.../[generacija], /ponuda/[slug] and content pages (ContentPageView). deo/[slug], porudzbina, upit belong to other packages.",
+    "files": ["app/(shop)/delovi/[kategorija]/page.tsx", "app/(shop)/vozila/[marka]/page.tsx", "app/(shop)/vozila/[marka]/[model]/page.tsx", "app/(shop)/vozila/[marka]/[model]/[generacija]/page.tsx", "app/(landing)/ponuda/[slug]/page.tsx", "components/content/ContentPageView.tsx"],
+    "verification": "curl /delovi/nepostoji → 404, /ponuda/nepostoji → 404, /delovi/kocioni-diskovi?strana=2 → 404."
+  },
+  {
+    "id": "PERF-03",
+    "status": "OPEN",
+    "summary": "Assist done: /ponuda no longer preloads card images (cards sit below the hero on phones). Font preload choices (lib/fonts.ts) and ProductGrid media-scoped preload belong to shell-perf / catalog packages.",
+    "files": ["app/(landing)/ponuda/[slug]/page.tsx"],
+    "verification": "ProductGrid on /ponuda rendered without preloadFirst; tsc/eslint clean."
+  },
+  {
+    "id": "COPY-06",
+    "status": "OPEN",
+    "summary": "Assist done: sitemap route bodies are „Nije pronađeno“ (text/plain; charset=utf-8). forbidden/unauthorized pages belong to another package.",
+    "files": ["app/sitemaps/[file]/route.ts"],
+    "verification": "curl /sitemaps/nema.xml → 404, body „Nije pronađeno“."
+  },
+  {
+    "id": "COPY-17",
+    "status": "OPEN",
+    "summary": "Assist done: delivery table payment column in sentence case joined with „ili“, deferred payment marked „(odobreni majstori)“. 404 title/labels belong to another package.",
+    "files": ["app/(shop)/dostava-i-placanje/page.tsx"],
+    "verification": "docs/qa/fix/seo-content-email/table-dostava-360.webp: „Gotovinom pri preuzimanju, karticom pri preuzimanju, virmanom uz predračun ili odloženo plaćanje (odobreni majstori)“."
+  },
+  {
+    "id": "COPY-16",
+    "status": "OPEN",
+    "summary": "Assist done: staff e-mail footer „Ovu poruku dobijate jer imate nalog osoblja na sajtu SKLOP.“; digest button „Otvorite pregled“. Admin UI and convex/notify parts belong to other packages.",
+    "files": ["lib/email/templates/shared.ts", "lib/email/templates/staff.ts"],
+    "verification": "Reviewed snapshot diff in tests/unit/email (8 staff footers, digest button); 89 passed."
+  },
+  {
+    "id": "FLOW-35",
+    "status": "OPEN",
+    "summary": "Assist done: order_received e-mail for a deferred order shows „Rok plaćanja: <datum> (<n> dana)“ from the stored dueAt instead of the generic method text. Thank-you page part belongs to another package.",
+    "files": ["lib/email/templates/order.ts", "tests/unit/email/templates.test.ts"],
+    "verification": "Test „FLOW-35: a deferred-payment order states its due date and term“ passes (matches „Rok plaćanja: dd.mm.yyyy. (15 dana)“)."
+  },
+  {
+    "id": "COPY-03",
+    "status": "OPEN",
+    "summary": "Assist done: the delivered-order e-mail no longer promises a withdrawal form („Kako se to radi, piše na stranici Reklamacije i povrat“). Content seed, home and order page parts belong to other packages.",
+    "files": ["lib/email/templates/order.ts"],
+    "verification": "Reviewed snapshot diff (order_delivered plain text); 89 passed."
+  }
+]

@@ -1,0 +1,53 @@
+=== GET / [stale both]
+HTTP/1.1 200 OK
+content-security-policy: default-src 'self'; script-src 'self' 'nonce-px5yVN4BspGFIRZQDyok4w==' 'strict-dynamic' 'wasm-unsafe-eval' 'unsafe-
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body-bytes: 301427; title: <title>Auto delovi za VW, Audi, Škoda, SEAT i Cupra | SKLOP</title>
+=== GET /delovi [stale both]
+HTTP/1.1 200 OK
+content-security-policy: default-src 'self'; script-src 'self' 'nonce-O1vMxypqvp2Gq2+3cb/amg==' 'strict-dynamic' 'wasm-unsafe-eval' 'unsafe-
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body-bytes: 314536; title: <title>Svi delovi po sistemima vozila | SKLOP</title>
+=== GET /prijava [stale both]
+HTTP/1.1 200 OK
+content-security-policy: default-src 'self'; script-src 'self' 'nonce-8SbzgzwntboGupXah0U12A==' 'strict-dynamic' 'wasm-unsafe-eval' 'unsafe-
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body-bytes: 128888; title: <title>Prijava | SKLOP</title>
+=== GET /admin/pozivnica/AbC123xYz [stale both]
+HTTP/1.1 200 OK
+content-security-policy: default-src 'self'; script-src 'self' 'nonce-rjYMW+Tt8kX5Eu5dBHlcXQ==' 'strict-dynamic' 'wasm-unsafe-eval' 'unsafe-
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body-bytes: 63777; title: <title>Pozivnica za administraciju</title>
+=== HEAD /admin [stale both]
+HTTP/1.1 307 Temporary Redirect
+location: /prijava?next=%2Fadmin
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+=== RSC GET /nalog [stale both] (RSC: 1, Next-Router-State-Tree absent)
+HTTP/1.1 307 Temporary Redirect
+location: /prijava?next=%2Fnalog
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body-bytes: 22
+=== POST /nalog/profil [stale both] (Next-Action: bogus)
+HTTP/1.1 307 Temporary Redirect
+location: /prijava?next=%2Fnalog%2Fprofil
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+=== POST /api/auth [stale both] (signOut)
+HTTP/1.1 200 OK
+set-cookie: __convexAuthJWT=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthRefreshToken=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+set-cookie: __convexAuthOAuthVerifier=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly; SameSite=lax
+body: null

@@ -20,6 +20,8 @@ export type FeedProduct = {
   pricePara: number;
   stockState: FeedStockState;
   allowBackorder: boolean;
+  /** Supplier lead time of an orderable product that is not in stock (days), when known. */
+  leadTimeDays?: number | null;
   description: string | null;
   fitmentSummary: string | null;
   /** Image paths (`/slike/deo/…`); the category render is the fallback. */
@@ -34,6 +36,30 @@ export type FeedShipping = { pricePara: number; freeOverPara: number | null } | 
 
 /** „12990.00 RSD“ — the Merchant Center / Meta price format. */
 export const feedPrice = (para: number) => `${(para / 100).toFixed(2)} RSD`;
+
+/**
+ * `g:availability_date` of a backorder item (required by Merchant Center, SEO-10): the day in
+ * Belgrade the product's lead time from now, ISO 8601 with the offset. Only from a real lead time
+ * — without one the date would be invented (HUMAN-TODO: lead times for orderable items).
+ */
+export function availabilityDate(
+  p: Pick<FeedProduct, "stockState" | "allowBackorder" | "leadTimeDays">,
+  now: number,
+): string | null {
+  if (merchantAvailability(p) !== "backorder" || !p.leadTimeDays || p.leadTimeDays < 1) return null;
+  const day = new Date(now + Math.min(p.leadTimeDays, 365) * 86_400_000);
+  // The calendar day in Belgrade, at local midnight, with that day's offset (+01:00 / +02:00).
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/Belgrade",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    timeZoneName: "longOffset",
+  }).formatToParts(day);
+  const part = (type: Intl.DateTimeFormatPartTypes) => parts.find((x) => x.type === type)?.value ?? "";
+  const offset = part("timeZoneName").replace("GMT", "") || "+00:00";
+  return `${part("year")}-${part("month")}-${part("day")}T00:00${offset}`;
+}
 
 export function merchantAvailability(p: Pick<FeedProduct, "stockState" | "allowBackorder">) {
   if (p.stockState === "in_stock" || p.stockState === "low_stock") return "in_stock";
@@ -96,9 +122,10 @@ const tag = (name: string, value: string | number) =>
 
 export function merchantFeedXml(
   products: FeedProduct[],
-  opts: { shipping: FeedShipping; storeName: string; origin?: string },
+  opts: { shipping: FeedShipping; storeName: string; origin?: string; now?: number },
 ): string {
   const origin = opts.origin ?? site.url;
+  const now = opts.now ?? Date.now();
   const out = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">',
@@ -120,6 +147,8 @@ export function merchantFeedXml(
     out.push(tag("g:image_link", image!));
     for (const extra of additional.slice(0, 10)) out.push(tag("g:additional_image_link", extra));
     out.push(tag("g:availability", merchantAvailability(p)));
+    const availableOn = availabilityDate(p, now);
+    if (availableOn) out.push(tag("g:availability_date", availableOn));
     out.push(tag("g:price", feedPrice(p.pricePara)));
     out.push(tag("g:brand", p.manufacturerName));
     if (gtin) out.push(tag("g:gtin", gtin));

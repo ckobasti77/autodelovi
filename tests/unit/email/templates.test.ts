@@ -121,6 +121,35 @@ describe("content rules", () => {
     );
   });
 
+  it("FLOW-35: a deferred-payment order states its due date and term", () => {
+    const base = SAMPLES.orderCourierCod(SITE);
+    const data = {
+      ...base,
+      payment: {
+        ...base.payment,
+        method: "deferred" as const,
+        label: "Odloženo plaćanje",
+        dueAt: base.createdAt + 15 * 86_400_000,
+      },
+    };
+    const text = renderTemplate("order_received", data, ctx).text;
+    expect(text).toMatch(/Rok plaćanja: \d{2}\.\d{2}\.\d{4}\. \(15 dana\)/);
+  });
+
+  it("FLOW-34: phone, e-mail and Viber links print their value once in plain text", () => {
+    expect(
+      inlineText(
+        "Pozovite [+381 64 123 4567](tel:+381641234567) ili pišite na [Viber](viber://chat?number=%2B381641234567).",
+      ),
+    ).toBe("Pozovite +381 64 123 4567 ili pišite na Viber.");
+    // formatPhone keeps the groups together with no-break spaces.
+    expect(
+      inlineText("Pišite na [Viber](viber://chat?number=%2B381601234567).").replace(/ /g, " "),
+    ).toBe("Pišite na Viber (+381 60 123 4567).");
+    expect(inlineText("[prodaja@primer.rs](mailto:prodaja@primer.rs)")).toBe("prodaja@primer.rs");
+    expect(inlineText("[Odjava.](https://a.test/o)")).toBe("Odjava. https://a.test/o");
+  });
+
   it("consumers get the 14-day withdrawal note, companies and mechanics do not", () => {
     const consumer = renderTemplate("order_delivered", SAMPLES.orderDelivered(SITE), ctx);
     expect(consumer.text).toContain("14 dana");

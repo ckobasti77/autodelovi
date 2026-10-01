@@ -1,0 +1,214 @@
+{
+  "chromium-390-registracija": {
+    "delay": 6000,
+    "visibleAt": 4088,
+    "hydratedBeforeTyping": false,
+    "typedAt": 6052,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "Petar Petrović",
+      "petar.xb01@primer.rs",
+      "TajnaLozinka-555"
+    ],
+    "hydratedAt": 10469,
+    "after": {
+      "#su-name": {
+        "dom": "Petar Petrović",
+        "reactValue": "Petar Petrović"
+      },
+      "#su-email": {
+        "dom": "petar.xb01@primer.rs",
+        "reactValue": "petar.xb01@primer.rs"
+      },
+      "#su-password": {
+        "dom": "TajnaLozinka-555",
+        "reactValue": "TajnaLozinka-555"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "summaryWithoutTerms": [
+      "Potrebna je saglasnost sa uslovima korišćenja."
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "chromium-390-reset": {
+    "delay": 6000,
+    "visibleAt": 1136,
+    "hydratedBeforeTyping": false,
+    "typedAt": 1795,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "petar.xb01@primer.rs"
+    ],
+    "hydratedAt": 7500,
+    "after": {
+      "#rp-email": {
+        "dom": "petar.xb01@primer.rs",
+        "reactValue": "petar.xb01@primer.rs"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "chromium-390-bis": {
+    "delay": 6000,
+    "visibleAt": 1042,
+    "hydratedBeforeTyping": false,
+    "typedAt": 1750,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "kupac.xb01@primer.rs"
+    ],
+    "hydratedAt": 7383,
+    "after": {
+      "#bis-email": {
+        "dom": "kupac.xb01@primer.rs",
+        "reactValue": "kupac.xb01@primer.rs"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "afterSubmit": {
+      "emailMsg": null,
+      "focus": "cb_R_rmjinebn5rdabmqalb_",
+      "consentInvalid": "true"
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "chromium-390-pretraga": {
+    "delay": 6000,
+    "visibleAt": 1277,
+    "hydratedBeforeTyping": false,
+    "typedAt": 1725,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "plocice golf"
+    ],
+    "hydratedAt": 7628,
+    "after": {
+      "[data-testid=search-page-input] input": {
+        "dom": "plocice golf",
+        "reactValue": "plocice golf"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "afterRerender": {
+      "dom": "plocice golf",
+      "reactValue": "plocice golf"
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "webkit-390-registracija": {
+    "delay": 6000,
+    "visibleAt": 694,
+    "hydratedBeforeTyping": false,
+    "typedAt": 2812,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "Petar Petrović",
+      "petar.xb01@primer.rs",
+      "TajnaLozinka-555"
+    ],
+    "hydratedAt": 7336,
+    "after": {
+      "#su-name": {
+        "dom": "Petar Petrović",
+        "reactValue": "Petar Petrović"
+      },
+      "#su-email": {
+        "dom": "petar.xb01@primer.rs",
+        "reactValue": "petar.xb01@primer.rs"
+      },
+      "#su-password": {
+        "dom": "TajnaLozinka-555",
+        "reactValue": "TajnaLozinka-555"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "summaryWithoutTerms": [
+      "Potrebna je saglasnost sa uslovima korišćenja."
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "webkit-390-reset": {
+    "delay": 6000,
+    "visibleAt": 634,
+    "hydratedBeforeTyping": false,
+    "typedAt": 1369,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "petar.xb01@primer.rs"
+    ],
+    "hydratedAt": 7217,
+    "after": {
+      "#rp-email": {
+        "dom": "petar.xb01@primer.rs",
+        "reactValue": "petar.xb01@primer.rs"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "webkit-390-bis": {
+    "delay": 6000,
+    "visibleAt": 1214,
+    "hydratedBeforeTyping": false,
+    "typedAt": 3882,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "kupac.xb01@primer.rs"
+    ],
+    "hydratedAt": 8932,
+    "after": {
+      "#bis-email": {
+        "dom": "kupac.xb01@primer.rs",
+        "reactValue": "kupac.xb01@primer.rs"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "afterSubmit": {
+      "emailMsg": null,
+      "focus": "cb_R_rmjinebn5rdabmqalb_",
+      "consentInvalid": "true"
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "webkit-390-pretraga": {
+    "delay": 6000,
+    "visibleAt": 912,
+    "hydratedBeforeTyping": false,
+    "typedAt": 1493,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "plocice golf"
+    ],
+    "hydratedAt": 8074,
+    "after": {
+      "[data-testid=search-page-input] input": {
+        "dom": "plocice golf",
+        "reactValue": "plocice golf"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "afterRerender": {
+      "dom": "plocice golf",
+      "reactValue": "plocice golf"
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  }
+}

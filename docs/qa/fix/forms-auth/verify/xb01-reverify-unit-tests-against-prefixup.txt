@@ -1,0 +1,18 @@
+# The three new XB-01 tests from tests/unit/components/ui.test.tsx, run against components/ui/Field.tsx + Textarea.tsx from 35f55c7 (before the D251 fix-up), copied to a temp dir and removed afterwards. All three FAIL there; on the current tree all 20 tests in ui.test.tsx pass.
+     × keeps keys pressed up to the hydration commit and syncs form state and counter 69ms
+     × updates the counter even when nothing in the form watches the restored field 7ms
+     × counts an uncontrolled value written by register() without an input event 8ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL   unit  tests/unit/__xb01_tmp__/old.test.tsx > text typed before hydration (XB-01) > keeps keys pressed up to the hydration commit and syncs form state and counter
+AssertionError: expected '0 / 2.000' to be '6 / 2.000' // Object.is equality
+Expected: "6 / 2.000"
+Received: "0 / 2.000"
+ FAIL   unit  tests/unit/__xb01_tmp__/old.test.tsx > text typed before hydration (XB-01) > updates the counter even when nothing in the form watches the restored field
+AssertionError: expected 'Golf' to be 'Golf 7' // Object.is equality
+Expected: "Golf 7"
+Received: "Golf"
+ FAIL   unit  tests/unit/__xb01_tmp__/old.test.tsx > text typed before hydration (XB-01) > counts an uncontrolled value written by register() without an input event
+AssertionError: expected '0 / 2.000' to be '14 / 2.000' // Object.is equality
+Expected: "14 / 2.000"
+Received: "0 / 2.000"
+      Tests  3 failed (3)

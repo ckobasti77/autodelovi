@@ -1,0 +1,455 @@
+{
+  "390": {
+    "upiti": {
+      "over": 581,
+      "docOver": 527,
+      "cols": "Broj:149 Status:161 Primljen:140(CUT) Kontakt:243(CUT) Traži:244(CUT)",
+      "hint": [
+        [
+          341,
+          373
+        ]
+      ],
+      "stickyLeft": 373
+    },
+    "proizvodi": {
+      "over": 875,
+      "docOver": 0,
+      "cols": "·:40 Artikal:376(CUT) Stanje:228(CUT) Cena:98(CUT) OEM:130(CUT) Kategorija:192(CUT) Proizvođač:111(CUT) Radnje:56",
+      "hint": [
+        [
+          341,
+          373
+        ]
+      ],
+      "stickyLeft": 317
+    },
+    "porudzbine": {
+      "over": 538,
+      "docOver": 0,
+      "cols": "·:40 Broj:145 Kupac:219(CUT) Status:153(CUT) Ukupno:98(CUT) Plaćanje · dos:183(CUT) Radnje:56",
+      "hint": [
+        [
+          341,
+          373
+        ]
+      ],
+      "stickyLeft": 317
+    },
+    "porudzbine-sve": {
+      "over": 674,
+      "docOver": 0,
+      "cols": "·:40 Broj:145 Kupac:285(CUT) Status:153(CUT) Ukupno:107(CUT) Plaćanje · dos:243(CUT) Radnje:56",
+      "hint": [
+        [
+          341,
+          373
+        ]
+      ],
+      "stickyLeft": 317
+    },
+    "mejlovi": {
+      "over": 701,
+      "docOver": 0,
+      "cols": "Vreme:110 Prima:272(CUT) Naslov:471(CUT) Način:87(CUT) Status:116(CUT)",
+      "hint": [
+        [
+          341,
+          373
+        ]
+      ],
+      "stickyLeft": 373
+    },
+    "dashboard": {
+      "docOver": 883,
+      "wide": []
+    }
+  },
+  "768": {
+    "upiti": {
+      "over": 203,
+      "docOver": 149,
+      "cols": "Broj:149 Status:161 Primljen:140 Kontakt:243 Traži:244(CUT)",
+      "hint": [
+        [
+          719,
+          751
+        ]
+      ],
+      "stickyLeft": 751
+    },
+    "proizvodi": {
+      "over": 497,
+      "docOver": 0,
+      "cols": "·:40 Artikal:376 Stanje:228 Cena:98(CUT) OEM:130(CUT) Kategorija:192(CUT) Proizvođač:111(CUT) Radnje:56",
+      "hint": [
+        [
+          719,
+          751
+        ]
+      ],
+      "stickyLeft": 695
+    },
+    "porudzbine": {
+      "over": 160,
+      "docOver": 0,
+      "cols": "·:40 Broj:145 Kupac:219 Status:153 Ukupno:98 Plaćanje · dos:183(CUT) Radnje:56",
+      "hint": [
+        [
+          719,
+          751
+        ]
+      ],
+      "stickyLeft": 695
+    },
+    "porudzbine-sve": {
+      "over": 296,
+      "docOver": 0,
+      "cols": "·:40 Broj:145 Kupac:285 Status:153 Ukupno:107(CUT) Plaćanje · dos:243(CUT) Radnje:56",
+      "hint": [
+        [
+          719,
+          751
+        ]
+      ],
+      "stickyLeft": 695
+    },
+    "mejlovi": {
+      "over": 323,
+      "docOver": 0,
+      "cols": "Vreme:110 Prima:272 Naslov:471(CUT) Način:87(CUT) Status:116(CUT)",
+      "hint": [
+        [
+          719,
+          751
+        ]
+      ],
+      "stickyLeft": 751
+    },
+    "dashboard": {
+      "docOver": 505,
+      "wide": []
+    }
+  },
+  "1024": {
+    "upiti": {
+      "over": 27,
+      "docOver": 0,
+      "cols": "Broj:149 Status:161 Primljen:140 Kontakt:243 Traži:244(CUT)",
+      "hint": [
+        [
+          967,
+          999
+        ]
+      ],
+      "stickyLeft": 999
+    },
+    "proizvodi": {
+      "over": 321,
+      "docOver": 0,
+      "cols": "·:40 Artikal:376 Stanje:228 Cena:98 OEM:130(CUT) Kategorija:192(CUT) Proizvođač:111(CUT) Radnje:56",
+      "hint": [
+        [
+          967,
+          999
+        ]
+      ],
+      "stickyLeft": 943
+    },
+    "porudzbine": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Broj:148 Kupac:223 Status:156 Ukupno:100 Plaćanje · dos:187 Radnje:56",
+      "hint": [],
+      "stickyLeft": 943
+    },
+    "porudzbine-sve": {
+      "over": 120,
+      "docOver": 0,
+      "cols": "·:40 Broj:145 Kupac:285 Status:153 Ukupno:107 Plaćanje · dos:243(CUT) Radnje:56",
+      "hint": [
+        [
+          967,
+          999
+        ]
+      ],
+      "stickyLeft": 943
+    },
+    "mejlovi": {
+      "over": 147,
+      "docOver": 0,
+      "cols": "Vreme:110 Prima:272 Naslov:471 Način:87(CUT) Status:116(CUT)",
+      "hint": [
+        [
+          967,
+          999
+        ]
+      ],
+      "stickyLeft": 999
+    },
+    "dashboard": {
+      "docOver": 321,
+      "wide": [
+        "SECTION.rounded-sm border border-line bg-surface r=1181",
+        "LI. r=1164",
+        "LI. r=1164",
+        "LI. r=1164"
+      ]
+    }
+  },
+  "1280": {
+    "upiti": {
+      "over": 276,
+      "docOver": 0,
+      "cols": "Broj:230 Status:161 Primljen:140 Kontakt:243 Traži:400(CUT) Izvor:176(CUT) Preuzeo:92(CUT)",
+      "hint": [
+        [
+          1223,
+          1255
+        ]
+      ],
+      "stickyLeft": 1255
+    },
+    "proizvodi": {
+      "over": 65,
+      "docOver": 0,
+      "cols": "·:40 Artikal:376 Stanje:228 Cena:98 OEM:130 Kategorija:192 Proizvođač:111(CUT) Radnje:56",
+      "hint": [
+        [
+          1223,
+          1255
+        ]
+      ],
+      "stickyLeft": 1199
+    },
+    "porudzbine": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Broj:149 Primljena:109 Kupac:225 Status:234 Kom.:65 Ukupno:101 Plaćanje · dos:188 Radnje:56",
+      "hint": [],
+      "stickyLeft": 1199
+    },
+    "porudzbine-sve": {
+      "over": 109,
+      "docOver": 0,
+      "cols": "·:40 Broj:145 Primljena:106 Kupac:285 Status:228 Kom.:63 Ukupno:107 Plaćanje · dos:243(CUT) Radnje:56",
+      "hint": [
+        [
+          1223,
+          1255
+        ]
+      ],
+      "stickyLeft": 1199
+    },
+    "mejlovi": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "Vreme:121 Prima:300 Naslov:520 Način:96 Status:128",
+      "hint": [],
+      "stickyLeft": 1255
+    },
+    "dashboard": {
+      "docOver": 0,
+      "wide": []
+    }
+  },
+  "1366": {
+    "upiti": {
+      "over": 358,
+      "docOver": 11,
+      "cols": "Broj:230 Status:161 Primljen:140 Kontakt:243 Traži:400(CUT) Izvor:176(CUT) Preuzeo:92(CUT)",
+      "hint": [
+        [
+          1309,
+          1341
+        ]
+      ],
+      "stickyLeft": 1341
+    },
+    "proizvodi": {
+      "over": 147,
+      "docOver": 0,
+      "cols": "·:40 Artikal:376 Stanje:228 Cena:98 OEM:130 Kategorija:192(CUT) Proizvođač:111(CUT) Radnje:56",
+      "hint": [
+        [
+          1309,
+          1341
+        ]
+      ],
+      "stickyLeft": 1285
+    },
+    "porudzbine": {
+      "over": 55,
+      "docOver": 0,
+      "cols": "·:40 Broj:145 Primljena:106 Kupac:219 Status:228 Kom.:63 Ukupno:98 Plaćanje · dos:183(CUT) Radnje:56",
+      "hint": [
+        [
+          1309,
+          1341
+        ]
+      ],
+      "stickyLeft": 1285
+    },
+    "porudzbine-sve": {
+      "over": 191,
+      "docOver": 0,
+      "cols": "·:40 Broj:145 Primljena:106 Kupac:285 Status:228 Kom.:63 Ukupno:107 Plaćanje · dos:243(CUT) Radnje:56",
+      "hint": [
+        [
+          1309,
+          1341
+        ]
+      ],
+      "stickyLeft": 1285
+    },
+    "mejlovi": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "Vreme:113 Prima:279 Naslov:483 Način:89 Status:119",
+      "hint": [],
+      "stickyLeft": 1341
+    },
+    "dashboard": {
+      "docOver": 0,
+      "wide": []
+    }
+  },
+  "1440": {
+    "upiti": {
+      "over": 284,
+      "docOver": 0,
+      "cols": "Broj:230 Status:161 Primljen:140 Kontakt:243 Traži:400(CUT) Izvor:176(CUT) Preuzeo:92(CUT)",
+      "hint": [
+        [
+          1383,
+          1415
+        ]
+      ],
+      "stickyLeft": 1415
+    },
+    "proizvodi": {
+      "over": 73,
+      "docOver": 0,
+      "cols": "·:40 Artikal:376 Stanje:228 Cena:98 OEM:130 Kategorija:192 Proizvođač:111(CUT) Radnje:56",
+      "hint": [
+        [
+          1383,
+          1415
+        ]
+      ],
+      "stickyLeft": 1359
+    },
+    "porudzbine": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Broj:148 Primljena:108 Kupac:223 Status:232 Kom.:64 Ukupno:100 Plaćanje · dos:187 Radnje:56",
+      "hint": [],
+      "stickyLeft": 1359
+    },
+    "porudzbine-sve": {
+      "over": 117,
+      "docOver": 0,
+      "cols": "·:40 Broj:145 Primljena:106 Kupac:285 Status:228 Kom.:63 Ukupno:107 Plaćanje · dos:243(CUT) Radnje:56",
+      "hint": [
+        [
+          1383,
+          1415
+        ]
+      ],
+      "stickyLeft": 1359
+    },
+    "mejlovi": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "Vreme:121 Prima:298 Naslov:516 Način:96 Status:128",
+      "hint": [],
+      "stickyLeft": 1415
+    },
+    "dashboard": {
+      "docOver": 0,
+      "wide": []
+    }
+  },
+  "1920": {
+    "upiti": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "Broj:260 Status:182 Primljen:158 Kontakt:275 Traži:452 Izvor:199 Preuzeo:104",
+      "hint": [],
+      "stickyLeft": 1891
+    },
+    "proizvodi": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Artikal:509 Stanje:308 Cena:132 OEM:176 Kategorija:259 Proizvođač:150 Radnje:56",
+      "hint": [],
+      "stickyLeft": 1835
+    },
+    "porudzbine": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Broj:194 Primljena:142 Kupac:292 Status:305 Kom.:84 Ukupno:131 Plaćanje · dos:245 Izvor:141 Radnje:56",
+      "hint": [],
+      "stickyLeft": 1835
+    },
+    "porudzbine-sve": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Broj:173 Primljena:127 Kupac:341 Status:273 Kom.:76 Ukupno:128 Plaćanje · dos:291 Izvor:126 Radnje:56",
+      "hint": [],
+      "stickyLeft": 1835
+    },
+    "mejlovi": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "Vreme:170 Prima:419 Naslov:727 Način:134 Status:180",
+      "hint": [],
+      "stickyLeft": 1891
+    },
+    "dashboard": {
+      "docOver": 0,
+      "wide": []
+    }
+  },
+  "2560": {
+    "upiti": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "Broj:260 Status:182 Primljen:158 Kontakt:275 Traži:452 Izvor:199 Preuzeo:104",
+      "hint": [],
+      "stickyLeft": 2211
+    },
+    "proizvodi": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Artikal:509 Stanje:308 Cena:132 OEM:176 Kategorija:259 Proizvođač:150 Radnje:56",
+      "hint": [],
+      "stickyLeft": 2155
+    },
+    "porudzbine": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Broj:194 Primljena:142 Kupac:292 Status:305 Kom.:84 Ukupno:131 Plaćanje · dos:245 Izvor:141 Radnje:56",
+      "hint": [],
+      "stickyLeft": 2155
+    },
+    "porudzbine-sve": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Broj:173 Primljena:127 Kupac:341 Status:273 Kom.:76 Ukupno:128 Plaćanje · dos:291 Izvor:126 Radnje:56",
+      "hint": [],
+      "stickyLeft": 2155
+    },
+    "mejlovi": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "Vreme:170 Prima:419 Naslov:727 Način:134 Status:180",
+      "hint": [],
+      "stickyLeft": 2211
+    },
+    "dashboard": {
+      "docOver": 0,
+      "wide": []
+    }
+  }
+}

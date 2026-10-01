@@ -2,23 +2,15 @@
 
 import { useCallback, useLayoutEffect, useRef } from "react";
 
+import {
+  FOCUSABLE_SELECTOR,
+  installFocusHistory,
+  OVERLAY_SELECTOR,
+  recentControls,
+} from "@/lib/dom/focusHistory";
+
 /** Skip-link target; every shell renders `<main id="sadrzaj" tabIndex={-1}>`. */
 const FALLBACK_ID = "sadrzaj";
-const OVERLAY_SELECTOR = '[role="dialog"], [role="alertdialog"]';
-const FOCUSABLE_SELECTOR = [
-  "a[href]",
-  "area[href]",
-  "button",
-  'input:not([type="hidden"])',
-  "select",
-  "textarea",
-  "summary",
-  "iframe",
-  '[contenteditable]:not([contenteditable="false"])',
-  "[tabindex]",
-].join(",");
-/** Recently used controls, kept as fallbacks for an opener that is gone when the panel closes. */
-const HISTORY_SIZE = 4;
 /** Upper bound for the document-order walks (a product page has a few thousand elements). */
 const WALK_LIMIT = 5000;
 
@@ -76,39 +68,8 @@ function inViewport(el: HTMLElement): boolean {
   );
 }
 
-/**
- * Last controls the user focused or pressed outside any overlay, newest first. Covers panels
- * that focus a control themselves (an `autoFocus` attribute is applied before any effect runs),
- * Safari (a clicked button is never focused) and openers that vanish while the panel is open
- * (the toast action that opened the cart drawer). Programmatic focus targets (`tabIndex=-1`:
- * the main landmark, the toast list) are not controls and are not recorded.
- */
-let recent: HTMLElement[] = [];
-function remember(el: HTMLElement): void {
-  if (el.tabIndex < 0 || el.closest(OVERLAY_SELECTOR)) return;
-  recent = [el, ...recent.filter((other) => other !== el && other.isConnected)].slice(
-    0,
-    HISTORY_SIZE,
-  );
-}
-if (typeof document !== "undefined") {
-  document.addEventListener(
-    "focusin",
-    (event) => {
-      if (event.target instanceof HTMLElement) remember(event.target);
-    },
-    true,
-  );
-  document.addEventListener(
-    "pointerdown",
-    (event) => {
-      const control =
-        event.target instanceof Element ? event.target.closest(FOCUSABLE_SELECTOR) : null;
-      if (control instanceof HTMLElement) remember(control);
-    },
-    true,
-  );
-}
+// Normally installed long before by the eager open-state stores; this covers any other opener.
+installFocusHistory();
 
 /**
  * The visible control that declares it opened a dialog. Covers panels in a lazily loaded
@@ -126,7 +87,10 @@ function expandedOpener(): HTMLElement | null {
 
 type Candidate = {
   el: HTMLElement;
-  /** Older history entry: used only while it is on screen, so a stale control never scrolls the page. */
+  /**
+   * History entry (not the focused element at open): used only while it is on screen, so a
+   * control pressed long ago never scrolls the page back to itself.
+   */
   onScreenOnly: boolean;
 };
 
@@ -159,7 +123,7 @@ function restore(el: HTMLElement, panel: Node | null, onScreenOnly: boolean): bo
 /**
  * Focus return for overlays opened from global state (vehicle picker, cart drawer, header
  * search, parts list, command palette). Radix returns focus only to its own `Trigger`; without
- * one, focus falls to `<body>` on close (A11Y-02, D246, D259).
+ * one, focus falls to `<body>` on close (A11Y-02, D246, D270).
  *
  * The opener is recorded in a layout effect when `open` turns true: that runs before any
  * passive effect, so a panel child that focuses its input in `useEffect` (SearchBox) has not
@@ -171,8 +135,8 @@ function restore(el: HTMLElement, panel: Node | null, onScreenOnly: boolean): bo
  * 2. if the opener re-rendered as a new element (the header chip and the fitment badge after a
  *    vehicle choice), the control now in its slot of the Tab sequence — the first tabbable
  *    control after the one that preceded the opener;
- * 3. a recently used control that is still on screen (the add-to-cart button when the drawer was
- *    opened from a toast that has since closed);
+ * 3. a recently used control that is still on screen (the button Safari did not focus on click;
+ *    the add-to-cart button when the drawer was opened from a toast that has since closed);
  * 4. the main landmark.
  * Nothing is restored when the user has already put focus elsewhere (non-modal sheet, click
  * outside): focus is only taken back from `<body>` or from the panel. The page never scrolls to
@@ -189,7 +153,7 @@ export function useFocusReturn(enabled: boolean, open: boolean) {
       if (el && !list.some((c) => c.el === el)) list.push({ el, onScreenOnly });
     };
     add(active instanceof HTMLElement && active !== document.body ? active : null, false);
-    recent.forEach((el, index) => add(el, index > 0));
+    recentControls().forEach((el) => add(el, true));
     add(expandedOpener(), false);
     const opener = list.find((c) => c.el.isConnected && c.el.tabIndex >= 0)?.el ?? null;
     recorded.current = {
