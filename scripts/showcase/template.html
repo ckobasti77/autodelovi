@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="sr-Latn-RS">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0D0F11">
+<title>SKLOP · prikaz radne verzije</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='7' y='2.5' width='10' height='5' rx='.75' fill='%23FF6B1A'/%3E%3Cpath d='M3 14h4v2.5h10V14h4v7H3z' fill='%23F1ECE3'/%3E%3C/svg%3E">
+<style>
+{{fonts}}
+:root {
+  --field: #0D0F11; --raised: #121518; --card: #16191D; --input: #1C2025; --overlay: #23282E;
+  --hairline: #2C3238; --hairline-strong: #434A52; --edge: #6E767F;
+  --ink: #F1ECE3; --ink-2: #C4BEB4; --ink-meta: #969088;
+  --accent: #FF6B1A; --accent-hover: #FF8A4A; --accent-tint: #2A1A12;
+  --display: "Archivo Expanded", Arial, sans-serif;
+  --condensed: "Archivo Condensed", "Arial Narrow", sans-serif;
+  --ui: "Public Sans", system-ui, sans-serif;
+  --mono: "Martian Mono", ui-monospace, monospace;
+  --margin: clamp(16px, 0.5rem + 2.5vw, 48px);
+  --pad: max(var(--margin), calc((100% - 1440px) / 2));
+  --section: clamp(4rem, 2.667rem + 5.926vw, 8rem);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--field); color: var(--ink); scrollbar-color: var(--hairline-strong) var(--field); -webkit-text-size-adjust: 100%; }
+body { margin: 0; font: 400 1rem/1.55 var(--ui); font-feature-settings: "tnum" 0; text-rendering: optimizeLegibility; }
+::selection { background: var(--accent); color: var(--field); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em; }
+a:hover { color: var(--accent-hover); }
+img { display: block; max-width: 100%; height: auto; }
+.skip { position: absolute; left: var(--margin); top: -60px; z-index: 30; background: var(--accent); color: var(--field); padding: 10px 14px; font-weight: 600; border-radius: 2px; }
+.skip:focus { top: 12px; }
+.mono { font-family: var(--mono); font-size: .8125rem; letter-spacing: .01em; }
+
+/* Header -------------------------------------------------------------------------------- */
+.bar { position: sticky; top: 0; z-index: 20; background: rgb(18 21 24 / .9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--hairline); }
+.bar-in { display: flex; align-items: center; gap: 32px; height: 64px; padding-inline: var(--pad); }
+.wordmark { display: inline-flex; align-items: flex-end; gap: 10px; font: 700 18px/1 var(--display); letter-spacing: .08em; text-decoration: none; }
+.wordmark svg { transform: translateY(-2px); }
+.bar nav { display: flex; gap: 4px; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
+.bar nav a { position: relative; padding: 10px 12px; font-size: 15px; font-weight: 500; color: var(--ink-2); text-decoration: none; white-space: nowrap; }
+.bar nav a:hover { color: var(--ink); }
+.bar nav a[aria-current="true"] { color: var(--ink); }
+.bar nav a[aria-current="true"]::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 2px; height: 2px; background: var(--accent); }
+
+/* Title block --------------------------------------------------------------------------- */
+.intro { padding: clamp(48px, 7vw, 104px) var(--pad) 0; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 4vw, 64px); align-items: end; }
+h1 { margin: 0; font: 700 clamp(2.5rem, 1.6rem + 3.8vw, 5.25rem)/.98 var(--display); letter-spacing: .005em; text-transform: uppercase; text-wrap: balance; }
+.lead { margin: 28px 0 0; max-width: 60ch; font-size: clamp(1.125rem, 1.083rem + .185vw, 1.25rem); line-height: 1.5; color: var(--ink-2); }
+.titleblock { border: 1px solid var(--hairline-strong); display: grid; grid-template-columns: 1fr 1fr; font-size: 14px; }
+.titleblock div { padding: 12px 14px; border-top: 1px solid var(--hairline); }
+.titleblock div:nth-child(-n+2) { border-top: 0; }
+.titleblock div:nth-child(odd) { border-right: 1px solid var(--hairline); }
+.titleblock .wide { grid-column: 1 / -1; border-right: 0 !important; }
+.titleblock dt { font: 600 .6875rem/1.2 var(--ui); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-meta); }
+.titleblock dd { margin: 6px 0 0; color: var(--ink); }
+
+/* Stage (assembled ↔ exploded) ---------------------------------------------------------- */
+.stage { padding: clamp(40px, 5vw, 72px) var(--pad) 0; }
+.compare { position: relative; border: 1px solid var(--hairline); background: var(--field); overflow: hidden; touch-action: pan-y; }
+.compare img { width: 100%; }
+.compare .top { position: absolute; inset: 0; clip-path: inset(0 0 0 var(--split, 50%)); }
+.compare .seam { position: absolute; top: 0; bottom: 0; left: var(--split, 50%); width: 2px; margin-left: -1px; background: var(--accent); pointer-events: none; }
+.compare .knob { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 44px; height: 44px; border-radius: 2px; background: var(--accent); color: var(--field); }
+.compare .tag { position: absolute; top: 16px; padding: 6px 10px; font: 600 .6875rem/1.2 var(--ui); letter-spacing: .06em; text-transform: uppercase; background: rgb(13 15 17 / .85); border: 1px solid var(--hairline-strong); pointer-events: none; }
+.compare .tag.l { left: 16px; } .compare .tag.r { right: 16px; }
+.compare input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; }
+.compare:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 3px; }
+.stage-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 4vw, 64px); align-items: end; }
+.stage-copy > p { margin: 20px 0 28px; max-width: 52ch; color: var(--ink-2); font-size: 1.0625rem; }
+.stage-copy .titleblock dd.num { margin-top: 8px; font-size: 1.625rem; }
+.stage-copy .hint { display: flex; align-items: center; gap: 10px; margin: 20px 0 0; font-size: 14px; color: var(--ink-meta); }
+
+/* Sections ------------------------------------------------------------------------------ */
+.chapter { padding: var(--section) var(--pad) 0; }
+.chapter-head { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(16px, 4vw, 64px); align-items: end; padding-bottom: 28px; border-bottom: 1px solid var(--hairline-strong); margin-bottom: clamp(32px, 4vw, 56px); }
+h2 { margin: 0; font: 600 clamp(1.75rem, 1.5rem + 1.111vw, 2.75rem)/1.04 var(--display); letter-spacing: .005em; text-transform: uppercase; text-wrap: balance; }
+.chapter-head p { margin: 0; max-width: 62ch; color: var(--ink-2); font-size: 1.0625rem; }
+h3 { margin: 0; font: 600 1.125rem/1.3 var(--ui); letter-spacing: -.005em; }
+
+.row { display: grid; gap: clamp(16px, 2vw, 32px); align-items: end; margin-bottom: clamp(48px, 6vw, 88px); }
+.row.pair { grid-template-columns: minmax(0, 3.1fr) minmax(0, 1fr); }
+.row.trio { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+.row.phones { grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: start; }
+.row.two { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+.row.mail { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); align-items: start; }
+
+figure { margin: 0; min-width: 0; }
+.frame { position: relative; display: block; width: 100%; padding: 0; border: 1px solid var(--hairline); background: var(--card); cursor: zoom-in; color: inherit; font: inherit; border-radius: 0; }
+.frame::before, .frame::after { content: ""; position: absolute; width: 14px; height: 14px; border-color: var(--edge); border-style: solid; pointer-events: none; transition: border-color 80ms linear; }
+.frame::before { top: -7px; left: -7px; border-width: 1px 0 0 1px; }
+.frame::after { bottom: -7px; right: -7px; border-width: 0 1px 1px 0; }
+.frame:hover::before, .frame:hover::after { border-color: var(--accent); }
+.frame.tall { max-height: 720px; overflow: hidden; }
+.frame.tall img { object-fit: cover; object-position: top; }
+figcaption { display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; margin-top: 14px; }
+figcaption .mono { grid-row: span 2; color: var(--ink-meta); padding-top: 2px; }
+figcaption strong { font-weight: 600; }
+figcaption span { color: var(--ink-2); font-size: 14px; line-height: 1.5; }
+.steps { counter-reset: s; }
+
+/* Facts --------------------------------------------------------------------------------- */
+.facts { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 64px); }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+caption { text-align: left; padding-bottom: 12px; }
+th, td { text-align: left; padding: 12px 0; border-top: 1px solid var(--hairline); vertical-align: top; }
+th { font-weight: 500; color: var(--ink-2); width: 42%; padding-right: 16px; }
+td { font-variant-numeric: tabular-nums; }
+.num { font: 600 1.25rem/1 var(--condensed); font-feature-settings: "tnum"; }
+ul.plain { margin: 0; padding: 0; list-style: none; }
+ul.plain li { padding: 12px 0 12px 22px; border-top: 1px solid var(--hairline); position: relative; color: var(--ink-2); }
+ul.plain li::before { content: ""; position: absolute; left: 0; top: 21px; width: 10px; height: 1px; background: var(--edge); }
+ul.plain li strong { color: var(--ink); font-weight: 600; }
+.docs { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; height: 44px; padding: 0 18px; border-radius: 2px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid var(--edge); background: var(--input); color: var(--ink); }
+.btn:hover { background: var(--overlay); color: var(--ink); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--field); }
+.btn.primary:hover { background: var(--accent-hover); color: var(--field); }
+
+footer { margin-top: var(--section); padding: 32px var(--pad) 48px; border-top: 1px solid var(--hairline); color: var(--ink-meta); font-size: 13px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; }
+footer p { margin: 0; max-width: 80ch; }
+
+/* Lightbox ------------------------------------------------------------------------------ */
+dialog { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgb(13 15 17 / .96); color: var(--ink); }
+dialog::backdrop { background: transparent; }
+.lb { display: grid; grid-template-rows: auto minmax(0, 1fr); height: 100%; }
+.lb-bar { display: flex; align-items: center; gap: 12px; padding: 12px var(--margin); border-bottom: 1px solid var(--hairline); }
+.lb-bar p { margin: 0 auto 0 0; font-size: 15px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lb-bar .mono { color: var(--ink-meta); margin-right: 12px; }
+.icon-btn { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--edge); border-radius: 2px; background: var(--input); color: var(--ink); cursor: pointer; }
+.icon-btn:hover { background: var(--overlay); }
+.lb-body { overflow: auto; padding: clamp(12px, 3vw, 40px); overscroll-behavior: contain; }
+.lb-body img { margin-inline: auto; max-width: min(100%, 1600px); border: 1px solid var(--hairline); }
+
+@media (max-width: 1023px) {
+  .intro, .chapter-head, .facts, .stage-grid { grid-template-columns: 1fr; }
+  .row.phones > figure[style] { grid-column: 1 / -1 !important; }
+  .row.pair, .row.mail { grid-template-columns: 1fr; }
+  .row.pair > figure:last-child, .row.mail > figure:last-child { max-width: 360px; }
+  .row.phones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .row.trio { grid-template-columns: 1fr; }
+  .bar nav a { padding-inline: 8px; }
+  .bar nav a[aria-current="true"]::after { left: 8px; right: 8px; }
+}
+@media (max-width: 640px) {
+  .bar-in { gap: 12px; }
+  .wordmark span { display: none; }
+  .row.two { grid-template-columns: 1fr; }
+  .compare .tag { top: 8px; font-size: .625rem; } .compare .tag.l { left: 8px; } .compare .tag.r { right: 8px; }
+  .intro .titleblock { grid-template-columns: 1fr; }
+  .intro .titleblock div { border-right: 0 !important; border-top: 1px solid var(--hairline) !important; }
+  .intro .titleblock div:first-child { border-top: 0 !important; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media print { .bar, dialog, .skip { display: none; } .frame { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#sadrzaj">Preskoči na sadržaj</a>
+<header class="bar">
+  <div class="bar-in">
+    <a class="wordmark" href="#vrh" aria-label="SKLOP, na vrh">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="7" y="2.5" width="10" height="5" rx=".75" fill="#FF6B1A"/><path d="M12 8.5v4.5" stroke="currentColor" stroke-width="1.25" stroke-dasharray="1.3 1.1"/><path d="M3 14h4v2.5h10V14h4v7H3z" fill="currentColor"/></svg>
+      <span>SKLOP</span>
+    </a>
+    <nav aria-label="Delovi prikaza">
+      <a href="#pocetna">3D auto</a>
+      <a href="#kupac">Kupac</a>
+      <a href="#majstor">Majstor</a>
+      <a href="#radnja">Radnja</a>
+      <a href="#objava">Pre objave</a>
+    </nav>
+  </div>
+</header>
+
+<main id="sadrzaj">
+<section class="intro" id="vrh" aria-labelledby="naslov">
+  <div>
+    <h1 id="naslov">Rasklopi auto. Nađi deo.</h1>
+    <p class="lead">Prodavnica, portal za majstore i admin za prodavca delova za Volkswagen, Audi, Škodu, SEAT i Cupru. Na snimcima je radna verzija sa demo artiklima: tako će izgledati kad se unesu pravi podaci.</p>
+  </div>
+  <dl class="titleblock">
+    <div><dt>Projekat</dt><dd>SKLOP, radni naziv</dd></div>
+    <div><dt>Snimljeno</dt><dd>{{date}}</dd></div>
+    <div><dt>Ekrani</dt><dd>1440 px i telefon 390 px</dd></div>
+    <div><dt>Plaćanje</dt><dd>Pouzećem, pri preuzimanju ili po predračunu</dd></div>
+    <div class="wide"><dt>Podaci</dt><dd>Demo artikli sa šiframa <span class="mono">DEMO-…</span> i izmišljenim kataloškim brojevima. Brišu se jednim klikom pre objave.</dd></div>
+  </dl>
+</section>
+
+<section class="stage" id="pocetna" aria-labelledby="pocetna-naslov">
+  <div class="stage-grid">
+    <div class="stage-copy">
+      <h2 id="pocetna-naslov">3D auto na početnoj</h2>
+      <p>Auto u rendgen prikazu: karoserija je providna, delovi unutra su puni. Dok se stranica skroluje, auto se rasklapa po sistemima, a svaki deo vodi do artikala na stanju.</p>
+      <dl class="titleblock">
+        <div><dt>Faze rasklapanja</dt><dd class="num">7</dd></div>
+        <div><dt>Delova za klik</dt><dd class="num">91</dd></div>
+        <div><dt>Kategorija u modelu</dt><dd class="num">44</dd></div>
+        <div><dt>Model</dt><dd>Generički hečbek, bez oznaka marke</dd></div>
+      </dl>
+      <p class="hint"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 5 2 10l5 5M13 5l5 5-5 5" stroke="currentColor" stroke-width="1.6"/></svg>Prevucite granicu preko slike.</p>
+    </div>
+    <div class="compare" style="--split: 50%">
+      {{img home-stage-assembled.webp "3D auto u rendgen prikazu, sklopljen"}}
+      <div class="top">{{img home-stage-exploded.webp "Isti auto rasklopljen po sistemima"}}</div>
+      <span class="tag l">Sklopljeno</span><span class="tag r">Rasklopljeno</span>
+      <span class="seam"><span class="knob"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 5 2 10l5 5M13 5l5 5-5 5" stroke="currentColor" stroke-width="1.75"/></svg></span></span>
+      <input type="range" min="0" max="100" value="50" aria-label="Pomerite granicu između sklopljenog i rasklopljenog auta" id="split">
+    </div>
+  </div>
+
+  <div class="row pair" style="margin-top: clamp(48px, 6vw, 88px)">
+    <figure>
+      <button class="frame" type="button">{{img home-assembled-desktop.webp "Prvi ekran početne strane: naslov, pretraga po broju dela, izbor vozila i 3D auto"}}</button>
+      <figcaption><span class="mono">00</span><strong>Prvi ekran</strong><span>Pretraga po kataloškom broju (razmaci, tačke i crtice ne smetaju), izbor vozila i upit po broju šasije. Prva slika je poster; 3D se učitava tek kad posetilac krene da skroluje, pa stranica ostaje brza.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img home-assembled-mobile.webp "Početna na telefonu, auto sklopljen"}}</button>
+      <figcaption><span class="mono">00</span><strong>Telefon</strong><span>Na telefonu je pozornica uspravna, faze se biraju i strelicama.</span></figcaption>
+    </figure>
+  </div>
+
+  <div class="row pair">
+    <figure>
+      <button class="frame" type="button">{{img home-part-desktop.webp "Klik na turbinu: panel sa turbinama na stanju, cenom i dugmetom za korpu"}}</button>
+      <figcaption><span class="mono">01</span><strong>Klik na deo</strong><span>Panel prikazuje artikle te kategorije koji su na stanju, sa cenom i stanjem. Kad je izabrano vozilo, ostaju samo delovi koji mu odgovaraju.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img home-part-mobile.webp "Isti panel na telefonu, kao donji list"}}</button>
+      <figcaption><span class="mono">01</span><strong>Telefon</strong><span>Panel izlazi odozdo i zatvara se prevlačenjem.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row phones">
+    <figure>
+      <button class="frame" type="button">{{img home-exploded-mobile.webp "Početna na telefonu, auto rasklopljen"}}</button>
+      <figcaption><span class="mono">02</span><strong>Rasklopljeno na telefonu</strong><span>Isti auto, iste faze, kadar prilagođen uspravnom ekranu.</span></figcaption>
+    </figure>
+    <figure style="grid-column: span 3">
+      <button class="frame tall" type="button">{{img home-page-desktop.webp "Cela početna strana ispod 3D prikaza"}}</button>
+      <figcaption><span class="mono">03</span><strong>Ostatak početne</strong><span>Kako se poručuje, kategorije sa renderima delova, deo za majstore, marke, česta pitanja i kontakt. Kontakt i podaci firme se prikazuju tek kad se unesu u podešavanjima.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="chapter" id="kupac" aria-labelledby="kupac-naslov">
+  <div class="chapter-head">
+    <h2 id="kupac-naslov">Kupac sa oglasa</h2>
+    <p>Dolazi sa Google ili Meta oglasa sa jednim pitanjem: imate li deo za moj auto, koliko košta i kada stiže. Na svakom koraku vidi cenu sa PDV-om, stanje i rok, a poručuje bez plaćanja na sajtu.</p>
+  </div>
+  <div class="row pair">
+    <figure>
+      <button class="frame" type="button">{{img category-desktop.webp "Kategorija kočioni diskovi sa filterima po vozilu, proizvođaču, kvalitetu i stanju"}}</button>
+      <figcaption><span class="mono">05</span><strong>Kategorija</strong><span>Filteri po vozilu (marka, model, generacija, motor), proizvođaču, kvalitetu, stanju i ceni. Filteri ostaju u adresi, pa se link može poslati.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img category-mobile.webp "Kategorija na telefonu"}}</button>
+      <figcaption><span class="mono">05</span><strong>Telefon</strong><span>Filteri u donjem listu.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row pair">
+    <figure>
+      <button class="frame" type="button">{{img product-desktop.webp "Strana artikla: kataloški broj, cena sa PDV-om, stanje, dugme za korpu i upit"}}</button>
+      <figcaption><span class="mono">06</span><strong>Artikal</strong><span>Kataloški i zamenski brojevi sa dugmetom za kopiranje, tabela vozila, cena sa PDV-om, stanje i rok, korpa, upit, poziv i Viber.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img product-mobile.webp "Strana artikla na telefonu"}}</button>
+      <figcaption><span class="mono">06</span><strong>Telefon</strong><span>Dugme za korpu ostaje pri dnu ekrana.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row two">
+    <figure>
+      <button class="frame" type="button">{{img checkout-contact-desktop.webp "Porudžbina, korak 1: kontakt"}}</button>
+      <figcaption><span class="mono">07</span><strong>Porudžbina, korak 1 od 4</strong><span>Može i bez naloga. Firma može da upiše PIB i matični broj; PIB se proverava kontrolnom cifrom.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img checkout-review-desktop.webp "Porudžbina, korak 4: pregled pre slanja"}}</button>
+      <figcaption><span class="mono">08</span><strong>Pregled pre slanja</strong><span>Dostava i plaćanje se biraju iz podešavanja: lično preuzimanje ili kurir, pouzeće, gotovina ili kartica u radnji, predračun za firme.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row pair">
+    <figure>
+      <button class="frame" type="button">{{img inquiry-desktop.webp "Upit po broju šasije sa prepoznatom markom i modelom"}}</button>
+      <figcaption><span class="mono">09</span><strong>Ne nalazite deo?</strong><span>Upit po broju šasije: iz VIN-a se prepoznaju marka i godina, može do 5 fotografija. Kupac dobija link na kom vidi ponudu i prihvata je jednim klikom, a ponuda postaje porudžbina.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img inquiry-mobile.webp "Upit na telefonu"}}</button>
+      <figcaption><span class="mono">09</span><strong>Telefon</strong><span>Isti obrazac, jedna kolona.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row phones">
+    <figure>
+      <button class="frame" type="button">{{img checkout-contact-mobile.webp "Porudžbina na telefonu, kontakt"}}</button>
+      <figcaption><span class="mono">07</span><strong>Kontakt</strong><span>Iznos je uvek vidljiv na vrhu.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img checkout-review-mobile.webp "Porudžbina na telefonu, pregled"}}</button>
+      <figcaption><span class="mono">08</span><strong>Pregled</strong><span>Broj šasije je opcija, za proveru pre slanja.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img email-order-confirmed-mobile.webp "E-pošta: porudžbina je potvrđena, na telefonu"}}</button>
+      <figcaption><span class="mono">10</span><strong>Potvrda e-poštom</strong><span>Kad radnja potvrdi porudžbinu, kupac dobija mejl sa podacima za uplatu.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="chapter" id="majstor" aria-labelledby="majstor-naslov">
+  <div class="chapter-head">
+    <h2 id="majstor-naslov">Majstor</h2>
+    <p>Servis se registruje sa PIB-om i matičnim brojem, radnja ga odobri i dodeli mu nivo rabata. Od tada vidi svoju cenu na svakom artiklu. Cena se računa na serveru i nikad ne stiže do drugih kupaca.</p>
+  </div>
+  <div class="row pair">
+    <figure>
+      <button class="frame" type="button">{{img mechanic-quick-order-desktop.webp "Brza porudžbina: nalepljeni brojevi, tačno poklapanje, više opcija i nepronađen broj"}}</button>
+      <figcaption><span class="mono">11</span><strong>Brza porudžbina</strong><span>Majstor nalepi spisak kao što mu je stigao na Viber. Sistem prepozna brojeve bez obzira na razmake i crtice. Ono čega nema postaje upit jednim klikom.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img mechanic-quick-order-mobile.webp "Brza porudžbina na telefonu"}}</button>
+      <figcaption><span class="mono">11</span><strong>Telefon</strong><span>Za radionicu, sa telefona.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row pair">
+    <figure>
+      <button class="frame" type="button">{{img mechanic-price-desktop.webp "Artikal kako ga vidi majstor: precrtana maloprodajna i njegova cena"}}</button>
+      <figcaption><span class="mono">12</span><strong>Vaša cena</strong><span>Maloprodajna cena je precrtana, ispod je cena sa rabatom. Rabat može da se razlikuje po kategoriji i proizvođaču, i nikad ne ide ispod nabavne cene i minimalne marže.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img mechanic-price-mobile.webp "Cena za majstora na telefonu"}}</button>
+      <figcaption><span class="mono">12</span><strong>Telefon</strong><span>Ista cena na svakom ekranu.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row pair">
+    <figure>
+      <button class="frame" type="button">{{img mechanic-dashboard-desktop.webp "Majstorski portal: pregled, nivo rabata, odloženo plaćanje"}}</button>
+      <figcaption><span class="mono">13</span><strong>Majstorski portal</strong><span>Istorija porudžbina sa ponovnim poručivanjem, omiljeni artikli, vozila mušterija, cenovnik u Excelu i odloženo plaćanje kada ga radnja odobri.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img mechanic-dashboard-mobile.webp "Majstorski portal na telefonu"}}</button>
+      <figcaption><span class="mono">13</span><strong>Telefon</strong><span>Portal ima iste kartice i na telefonu.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="chapter" id="radnja" aria-labelledby="radnja-naslov">
+  <div class="chapter-head">
+    <h2 id="radnja-naslov">Radnja</h2>
+    <p>Admin za vlasnika i zaposlene: porudžbine, upiti, artikli, lager, majstori i podešavanja na jednom mestu. Nova porudžbina ili upit stiže odmah u zvonce i na mejl, a svaka izmena se beleži sa imenom i vremenom.</p>
+  </div>
+  <div class="row two">
+    <figure>
+      <button class="frame" type="button">{{img admin-dashboard-desktop.webp "Admin pregled: porudžbine danas, upiti bez odgovora, red čekanja i aktivnost"}}</button>
+      <figcaption><span class="mono">14</span><strong>Pregled</strong><span>Porudžbine i promet danas, upiti koji čekaju odgovor sa vremenom čekanja u radnom vremenu, majstori na odobrenju i artikli bez zaliha.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img admin-orders-desktop.webp "Lista porudžbina sa filterima i izvozom u Excel"}}</button>
+      <figcaption><span class="mono">15</span><strong>Porudžbine</strong><span>Pretraga po broju, imenu, telefonu ili PIB-u, filteri po statusu i izvoru posete.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row two">
+    <figure>
+      <button class="frame" type="button">{{img admin-order-detail-desktop.webp "Detalj porudžbine: stavke, kupac, dostava, plaćanje, predračun i otpremnica"}}</button>
+      <figcaption><span class="mono">16</span><strong>Detalj porudžbine</strong><span>Promena statusa šalje mejl kupcu. Predračun i otpremnica se štampaju iz pregledača.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img admin-inquiry-detail-desktop.webp "Detalj upita sa fotografijom i kontaktom kupca"}}</button>
+      <figcaption><span class="mono">17</span><strong>Upit i ponuda</strong><span>Odgovor je ponuda sa artiklima iz kataloga ili slobodnim stavkama, cenom, rokom i važenjem. Kupac je prihvata preko linka.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row trio steps">
+    <figure>
+      <button class="frame" type="button">{{img admin-import-file-desktop.webp "Uvoz iz Excela, korak 1: fajl sa 500 redova"}}</button>
+      <figcaption><span class="mono">18</span><strong>Uvoz iz Excela: fajl</strong><span>xlsx, xls ili csv, i Windows-1250 iz starijih knjigovodstvenih programa.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img admin-import-mapping-desktop.webp "Uvoz iz Excela, korak 2: kolone prepoznate same"}}</button>
+      <figcaption><span class="mono">19</span><strong>Kolone</strong><span>Kolone se prepoznaju po nazivu, na srpskom ili engleskom. Mapiranje se čuva za sledeći put.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img admin-import-check-desktop.webp "Uvoz iz Excela, korak 3: provera sa greškama po redu"}}</button>
+      <figcaption><span class="mono">20</span><strong>Provera</strong><span>Greške i upozorenja po redu pre upisa, zatim probni uvoz. Ceo uvoz može da se poništi.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row mail">
+    <figure>
+      <button class="frame" type="button">{{img email-order-confirmed-desktop.webp "Primer mejla: porudžbina je potvrđena, sa podacima za uplatu i stavkama"}}</button>
+      <figcaption><span class="mono">21</span><strong>Primer mejla</strong><span>25 šablona na srpskom, svaki i kao običan tekst. Dok se ne poveže Resend, mejlovi se samo beleže u adminu i ništa ne odlazi.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img email-quote-ready-desktop.webp "Primer mejla: ponuda je spremna, sa dugmetom za prihvatanje"}}</button>
+      <figcaption><span class="mono">22</span><strong>Ponuda je spremna</strong><span>Kupac otvara ponudu i prihvata je sa linka iz mejla.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row two">
+    <figure>
+      <button class="frame" type="button">{{img admin-settings-desktop.webp "Podešavanja: podaci o firmi"}}</button>
+      <figcaption><span class="mono">23</span><strong>Podešavanja</strong><span>Podaci firme, radno vreme, dostava i plaćanje, obaveštenja, SEO, ID-jevi za Google i Metu, pravni tekstovi.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img admin-searches-desktop.webp "Pretrage: šta su ljudi tražili, a nismo imali"}}</button>
+      <figcaption><span class="mono">24</span><strong>Traženo, a nemamo</strong><span>Svaka pretraga bez rezultata se beleži. To je spisak šta vredi nabaviti.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row phones">
+    <figure>
+      <button class="frame" type="button">{{img admin-dashboard-mobile.webp "Admin pregled na telefonu"}}</button>
+      <figcaption><span class="mono">14</span><strong>Admin na telefonu</strong><span>Za brzu proveru van radnje.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img admin-orders-mobile.webp "Porudžbine na telefonu"}}</button>
+      <figcaption><span class="mono">15</span><strong>Porudžbine</strong><span>Lista i pretraga rade i na telefonu.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="chapter" id="objava" aria-labelledby="objava-naslov">
+  <div class="chapter-head">
+    <h2 id="objava-naslov">Pre objave</h2>
+    <p>Sajt radi na razvojnoj bazi. Za objavu treba domen, nalog na Vercelu, produkciona Convex baza, Resend za mejlove i podaci firme. Ceo spisak je u dokumentu GO-LIVE.</p>
+  </div>
+  <div class="facts">
+    <table>
+      <caption><h3>Šta je provereno</h3></caption>
+      <tbody>
+        {{facts}}
+      </tbody>
+    </table>
+    <div>
+      <h3 style="padding-bottom:12px">Šta je još privremeno</h3>
+      <ul class="plain">
+        <li><strong>Demo artikli, porudžbine i upiti.</strong> Šifre počinju sa <span class="mono">DEMO-</span>. Brišu se u Podešavanja → Opasna zona.</li>
+        <li><strong>Podaci firme i kontakt.</strong> Polja su prazna i sajt ih ne prikazuje dok se ne unesu.</li>
+        <li><strong>Mejlovi.</strong> Režim „Samo zapis“: sve se vidi u adminu, ništa ne odlazi do povezivanja Resend-a.</li>
+        <li><strong>Pravni tekstovi.</strong> Šabloni po srpskim zakonima, čekaju pregled pravnika.</li>
+        <li><strong>Oglasi i analitika.</strong> Polja za GA4, Google Ads i Meta Pixel su prazna, pa sajt ne učitava nijedan kod za praćenje.</li>
+        <li><strong>Fotografije artikala.</strong> Do tada se koriste renderi kategorija iz 3D modela.</li>
+      </ul>
+      <div class="docs">
+        <a class="btn primary" href="../GO-LIVE.md">Spisak za objavu</a>
+        <a class="btn" href="../PREDAJA.md">Uputstvo za predaju</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da označimo vozila kojima su delovi namenjeni.</p>
+  <p class="mono">Snimci: {{date}} · produkcioni build · Chromium</p>
+</footer>
+
+<dialog id="lb" aria-labelledby="lb-title">
+  <div class="lb">
+    <div class="lb-bar">
+      <p id="lb-title"><span class="mono" id="lb-code"></span><span id="lb-text"></span></p>
+      <button class="icon-btn" type="button" data-step="-1" aria-label="Prethodni snimak"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" stroke="currentColor" stroke-width="1.75"/></svg></button>
+      <button class="icon-btn" type="button" data-step="1" aria-label="Sledeći snimak"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m7.5 4 6 6-6 6" stroke="currentColor" stroke-width="1.75"/></svg></button>
+      <button class="icon-btn" type="button" data-close aria-label="Zatvori"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" stroke="currentColor" stroke-width="1.75"/></svg></button>
+    </div>
+    <div class="lb-body"><img id="lb-img" alt=""></div>
+  </div>
+</dialog>
+
+<script>
+(() => {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Assembled ↔ exploded: the range input drives the clip of the exploded frame.
+  const compare = document.querySelector(".compare");
+  const range = document.getElementById("split");
+  const set = (v) => { compare.style.setProperty("--split", v + "%"); range.value = String(Math.round(v)); range.setAttribute("aria-valuetext", Math.round(100 - v) + " % rasklopljeno"); };
+  let touched = false;
+  range.addEventListener("input", () => { touched = true; set(Number(range.value)); });
+  set(50);
+  // One sweep when the stage first comes into view, from mostly assembled to mostly exploded.
+  if (!reduce && "IntersectionObserver" in window) {
+    set(88);
+    const io = new IntersectionObserver((entries) => {
+      if (!entries[0].isIntersecting) return;
+      io.disconnect();
+      const from = 88, to = 22, ms = 1800, t0 = performance.now();
+      const tick = (t) => {
+        if (touched) return;
+        const p = Math.min(1, (t - t0) / ms);
+        set(from + (to - from) * (1 - Math.pow(2, -10 * p)));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      setTimeout(() => requestAnimationFrame(tick), 350);
+    }, { threshold: 0.5 });
+    io.observe(compare);
+  }
+
+  // Current section in the header.
+  const links = [...document.querySelectorAll(".bar nav a")];
+  const sections = links.map((a) => document.querySelector(a.getAttribute("href")));
+  const nav = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (!e.isIntersecting) continue;
+      links.forEach((a) => a.removeAttribute("aria-current"));
+      links[sections.indexOf(e.target)]?.setAttribute("aria-current", "true");
+    }
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  sections.forEach((s) => s && nav.observe(s));
+
+  // Lightbox over every framed screenshot.
+  const frames = [...document.querySelectorAll(".frame")];
+  const dialog = document.getElementById("lb");
+  const img = document.getElementById("lb-img");
+  let index = 0, opener = null;
+  const show = (i) => {
+    index = (i + frames.length) % frames.length;
+    const source = frames[index].querySelector("img");
+    const fig = frames[index].closest("figure");
+    img.src = source.currentSrc || source.src;
+    img.alt = source.alt;
+    img.width = source.width; img.height = source.height;
+    document.getElementById("lb-code").textContent = fig.querySelector(".mono")?.textContent ?? "";
+    document.getElementById("lb-text").textContent = fig.querySelector("strong")?.textContent ?? source.alt;
+    dialog.querySelector(".lb-body").scrollTop = 0;
+  };
+  frames.forEach((f, i) => {
+    f.setAttribute("aria-label", "Uvećaj: " + (f.querySelector("img")?.alt ?? "snimak"));
+    f.addEventListener("click", () => { opener = f; show(i); dialog.showModal(); });
+  });
+  dialog.addEventListener("click", (e) => {
+    const step = e.target.closest("[data-step]");
+    if (step) show(index + Number(step.dataset.step));
+    else if (e.target.closest("[data-close]") || e.target === dialog) dialog.close();
+  });
+  dialog.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") { e.preventDefault(); show(index + 1); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); show(index - 1); }
+  });
+  dialog.addEventListener("close", () => opener?.focus());
+})();
+</script>
+</body>
+</html>

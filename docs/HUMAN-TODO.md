@@ -1,5 +1,7 @@
 # SKLOP — Šta mora da obezbedi vlasnik / klijent
 
+> **Spojeno u [`GO-LIVE.md`](GO-LIVE.md) (korak 23, 01.10.2026.).** Tamo je ista lista bez duplikata, poređana po redosledu rada, sa oznakom ko šta radi. Ovaj fajl ostaje kao istorija po koracima (npr. §9 sa punim spiskom podataka o vozilima za proveru); nove stavke upisujte u GO-LIVE.
+
 > Deo SKLOP dokumentacije — indeks: [README](README.md). Ova lista se dopunjuje u svakom koraku; na kraju (korak 23) spaja se u `docs/GO-LIVE.md`. Ništa odavde se ne prikazuje na sajtu kao „TODO" — sajt sakriva prazna polja dok se ne popune u podešavanjima.
 
 Oznake: **[P0]** potrebno pre puštanja uživo · **[P1]** potrebno u prvim nedeljama · **[P2]** kada bude vremena.

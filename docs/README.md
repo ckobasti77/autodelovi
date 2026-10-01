@@ -1,6 +1,6 @@
 # SKLOP — Documentation index
 
-Business intent: [`pipeline/BRIEF.md`](../pipeline/BRIEF.md) (wins for intent). These docs win for implementation details. Unabridged source: [plans/01-master-plan.md](plans/01-master-plan.md).
+Developer setup: [`../README.md`](../README.md). Build report: [`../pipeline/REPORT.md`](../pipeline/REPORT.md). Business intent: [`pipeline/BRIEF.md`](../pipeline/BRIEF.md) (wins for intent). These docs win for implementation details. Unabridged source: [plans/01-master-plan.md](plans/01-master-plan.md).
 
 | Doc | What it holds | Plan section |
 |---|---|---|
@@ -23,6 +23,9 @@ Business intent: [`pipeline/BRIEF.md`](../pipeline/BRIEF.md) (wins for intent). 
 | [ROADMAP.md](ROADMAP.md) | Steps 02–23 with deliverables, measurable acceptance, risks; goal-step conditions | §N |
 | [DECISIONS.md](DECISIONS.md) | D1–D25 + risks, defaults, log format for new decisions | §0.1, O |
 | [PROGRESS.md](PROGRESS.md) | Dated log per step | — |
-| [HUMAN-TODO.md](HUMAN-TODO.md) | (sr) What only the owner/client can provide; „potvrditi sa klijentom" | — |
+| [HUMAN-TODO.md](HUMAN-TODO.md) | (sr) Per-step history of owner items; merged into GO-LIVE in step 23 | — |
+| [PREDAJA.md](PREDAJA.md) | (sr) Handoff for developer and client: modules, admin step by step with screenshots, import, order and inquiry flows, notifications, mechanics, temporary data, demo removal, demo script | — |
+| [GO-LIVE.md](GO-LIVE.md) | (sr) Launch checklist: client inputs, business rules, domain, Vercel, Convex prod, owner, Resend, settings, legal, ads, feeds, GBP, Search Console, test orders, backups, follow-ups | — |
+| [showcase/index.html](showcase/index.html) | (sr) Self-contained screenshot tour for the client demo (rebuild: `scripts/showcase/`) | — |
 
 Created later: `docs/3d/*` (steps 07–11), `docs/qa/*` (steps 12–22), `docs/progress/<step>.md` (checklists), `docs/ADS-PLAYBOOK.md` (19), `docs/SECURITY-AUDIT.md`, `docs/GO-LIVE-ENV.md`, `docs/PRIVACY-PROCESS.md`, `docs/BACKUPS.md` (20), `docs/PREDAJA.md`, `docs/GO-LIVE.md`, `docs/showcase/` (23).
