@@ -47,6 +47,7 @@ Breaking changes versus Next 13–15 (source: `node_modules/next/dist/docs/01-ap
 17. `next/dynamic` with `ssr: false` is not allowed in Server Components.
 18. React 19.2: `<Activity>`, `useEffectEvent`, `<ViewTransition>` exist — do not use ViewTransition for motion (GSAP rule).
 19. Keep the `<!-- BEGIN:nextjs-agent-rules -->` block that `next dev` writes into AGENTS.md.
+20. `npm run build` is `next build` plus `scripts/build/compile-hints.mjs`, which adds the V8 compile hint `//# allFunctionsCalledOnLoad` to the framework chunks (`rootMainFiles`) after the build (D294). Build with `npm run build`, not a bare `next build`, or the framework boot task returns to the main thread.
 
 Project rules on top: pages are dynamic (D2) — never read `cookies()`/`headers()` inside a cached function (pass values as arguments); `fetchMutation` only from Server Actions/POST handlers (no side effects on GET); JSON-LD via `<script type="application/ld+json">` with `JSON.stringify(data).replace(/</g, '\\u003c')`; the CSP nonce is read in the root layout with `(await headers()).get('x-nonce')` and passed to `next/script` and the two inline scripts; use `after()` for non-blocking logging; route handlers for sitemaps/feeds/OG use `export const revalidate = 3600` (previous-model ISR) and never touch cookies.
 

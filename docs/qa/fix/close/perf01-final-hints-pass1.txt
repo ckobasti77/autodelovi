@@ -1,0 +1,16 @@
+http://localhost:3100/ run 1: perf 96 · LCP 2265 ms · CLS 0.001 · TBT 23 ms · FCP 2115 ms · SI 2118 ms · JS 298 KB · benchmarkIndex 4147
+http://localhost:3100/ run 2: perf 97 · LCP 2150 ms · CLS 0.001 · TBT 99 ms · FCP 1984 ms · SI 1994 ms · JS 298 KB · benchmarkIndex 4065
+http://localhost:3100/ run 3: perf 96 · LCP 2175 ms · CLS 0.001 · TBT 103 ms · FCP 2008 ms · SI 2020 ms · JS 298 KB · benchmarkIndex 4094
+http://localhost:3100/ run 4: perf 97 · LCP 2186 ms · CLS 0.001 · TBT 70 ms · FCP 2037 ms · SI 2048 ms · JS 298 KB · benchmarkIndex 4128
+http://localhost:3100/ run 5: perf 97 · LCP 2121 ms · CLS 0.001 · TBT 87 ms · FCP 1955 ms · SI 1970 ms · JS 298 KB · benchmarkIndex 4090
+MEDIAN http://localhost:3100/ (home, mobile, devtools throttling, 5 runs): performance 97 · accessibility 100 · best practices 100 · SEO 100 · LCP 2175 ms · CLS 0.001 · TBT 87 ms · FCP 2008 ms · SI 2020 ms · first-load JS 298 KB · benchmarkIndex 4094
+  LCP element: div.absolute > div.absolute > picture.absolute > img.absolute <img src="http://localhost:3100/images/hero/car-assembled-m-828.avif" alt="" width="2560" height="1440" decoding="async" loading="eager" draggable="false" class="absolute inset-y-0 left-0 h-full w-full select-none object-contain object-…">
+  BUDGET MISSED: first-load JS 298 KB > 180 KB
+http://localhost:3100/delovi/kocioni-diskovi run 1: perf 97 · LCP 2022 ms · CLS 0.000 · TBT 48 ms · FCP 2022 ms · SI 2112 ms · JS 290 KB · benchmarkIndex 4223
+http://localhost:3100/delovi/kocioni-diskovi run 2: perf 98 · LCP 1997 ms · CLS 0.000 · TBT 63 ms · FCP 1997 ms · SI 2096 ms · JS 290 KB · benchmarkIndex 4152
+http://localhost:3100/delovi/kocioni-diskovi run 3: perf 97 · LCP 2005 ms · CLS 0.000 · TBT 89 ms · FCP 2005 ms · SI 2098 ms · JS 290 KB · benchmarkIndex 4077
+http://localhost:3100/delovi/kocioni-diskovi run 4: perf 98 · LCP 1993 ms · CLS 0.000 · TBT 43 ms · FCP 1993 ms · SI 2087 ms · JS 290 KB · benchmarkIndex 4071
+http://localhost:3100/delovi/kocioni-diskovi run 5: perf 98 · LCP 1945 ms · CLS 0.000 · TBT 41 ms · FCP 1945 ms · SI 2042 ms · JS 290 KB · benchmarkIndex 4208
+MEDIAN http://localhost:3100/delovi/kocioni-diskovi (catalog, mobile, devtools throttling, 5 runs): performance 98 · accessibility 100 · best practices 100 · SEO 100 · LCP 1997 ms · CLS 0.000 · TBT 48 ms · FCP 1997 ms · SI 2096 ms · first-load JS 290 KB · benchmarkIndex 4152
+  LCP element: div.fixed > form.mx-auto > div.flex > p#consent-desc <p id="consent-desc" class="max-w-[68ch] type-body-s text-ink-2">
+  BUDGET MISSED: first-load JS 290 KB > 160 KB

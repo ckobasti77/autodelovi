@@ -370,3 +370,163 @@ Lighthouse rows „last build“ above come from this build (`perf01-closeout-fi
     perf01-closeout-final-check: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 2: perf 96 · LCP 2034 ms · CLS 0.000 · TBT 151 ms · FCP 2034 ms · SI 2178 ms · JS 279 KB · benchmarkIndex 4119
     perf01-closeout-final-check: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 3: perf 96 · LCP 2128 ms · CLS 0.000 · TBT 124 ms · FCP 2128 ms · SI 2260 ms · JS 279 KB · benchmarkIndex 4119
 ```
+
+## PERF-01 final re-measure (2026-10-01)
+
+A fresh re-measure of the close-out's final build (same method: production build on :3100, Lighthouse 13 mobile,
+applied throttling `--throttling devtools` = the budget method (D112), fresh profile per run, consent banner open)
+did not reproduce the close-out's home and category numbers (141 and 153 ms from 3 runs). Before, 5 runs each,
+benchmarkIndex 3,833–4,211:
+
+```
+    before: /                        TBT 219 · 288 · 314 · 242 · 226 ms → median 242 ms, performance 91
+    before: /delovi/kocioni-diskovi  TBT 237 · 380 · 261 · 227 · 365 ms → median 261 ms, performance 93
+    before: product                  TBT 146–169 ms
+```
+
+So the close-out's 3-run medians were favourable runs, not a regression: the long tasks were the same in kind.
+
+### Where the time went (before)
+
+Lighthouse JSON (`long-tasks`, `bootup-time`), Lighthouse traces (`.lighthouse/lh-trace.mjs`, summarised by
+`lhsum.mjs`) and CDP traces with JS samples under the same throttling (`trace-probe.mjs`, `modcost.mjs`; all
+git-ignored). Every task over 50 ms after FCP on home and category, per run:
+
+1. **Framework boot, ≈ 3.1–3.2 s, 126–254 ms (TBT 76–204 ms).** `EvaluateScript` of the framework chunk (React DOM
+   19.3 canary + the Next app router, 74 KB gzip) once it arrives. In the sampled traces about 60 % of the task is
+   self time of the Turbopack runtime's instantiate frame — V8 compiling module factories lazily on the main thread
+   the first time they run (React DOM's factory alone ≈ 22 ms at 4×) — and the rest is evaluating them. No app
+   module runs in it; `/kontakt` has the same task (104–132 ms). It was the largest and steadiest contributor.
+2. **Render at FCP, ≈ 1.95–2.2 s, 95–317 ms (TBT 0–246 ms).** The render-blocking CSS lands at ≈ 1.65 s; the parser
+   yields after 10 ms and the first frame lays out the partial document (180–290 layout objects, 190–260 ms with
+   first-use font and text costs). Public Sans latin (27 KB, the largest of the three preloaded faces) shares the
+   slow-4G link with the CSS and finishes 250–350 ms after it; its swap relays out the whole document (530–605
+   objects, 60–180 ms). When Chromium holds the first frame for the preloaded font, that relayout is part of FCP and
+   costs nothing; when the first frame is presented first, the relayout lands after FCP. The rest of the HTML
+   (footer, inline RSC payload) is parsed in separate 10–25 ms tasks, so the inline payload is not what makes this
+   task long.
+3. **End of hydration, ≈ 5.1–5.5 s, 51–98 ms (TBT 1–48 ms).** When the last page chunks arrive: on home GSAP and
+   ScrollTrigger are evaluated and registered inside the hydration render (HeroStage); on the category page the
+   hydration commit. Small fonts loaded on demand (Archivo Expanded 600, Archivo Condensed, Martian Mono) add one
+   or two 27–41 ms relayouts at 3.0–3.4 s.
+
+### Change
+
+**V8 explicit compile hints on the framework chunks (D294).** `scripts/build/compile-hints.mjs`, run by
+`npm run build` after `next build`, prepends `//# allFunctionsCalledOnLoad` (Chrome 136+,
+[v8.dev/blog/explicit-compile-hints](https://v8.dev/blog/explicit-compile-hints)) to the build manifest's
+`rootMainFiles` — the Turbopack runtime, React DOM and the Next router that every App Router page evaluates on load.
+V8 then compiles those files eagerly on the script-streaming thread instead of function by function on the main
+thread; other browsers read a comment. Page chunks keep lazy compilation. In the sampled trace the 86–93 ms boot
+task disappears (no task over 40 ms between 3.0 and 3.5 s); under Lighthouse it is absent in 12 of the 15 final
+runs and 53–97 ms in the other three. Unit test: `tests/unit/build/compile-hints.test.ts`.
+
+**Tried and not shipped (D295):** `<link rel="expect" href="#sadrzaj" blocking="render">` in the root layout, so
+the first frame waits for `<main>` (the technique React's own Fizz uses behind a flag). With the compile hints in both
+builds: home 74 ms (20–158), category 100 ms (50–272), FCP up to 200 ms later in some runs
+(`perf01-final-expect-experiment.txt`) against 87 and 48 ms without it (`perf01-final-hints-pass1.txt`) — no
+better, and it delays first paint, so the root layout is unchanged. Font loading is unchanged too: making Public Sans
+latin win the race against the CSS would mean dropping the latin-ext or display preload (another swap later) or
+`font-display: optional` (fallback text on a first slow visit), both design-system changes for a task that now
+costs 0–100 ms.
+
+### Applied throttling (budget method) — final build, 5-run medians
+
+| Page | Runs | Perf | A11y | BP | SEO | LCP ms | CLS | TBT ms (runs) |
+|---|---|---|---|---|---|---|---|---|
+| `/` | 5 | 96 | 100 | 100 | 100 | 2228 | 0.001 | 88 (39–98) |
+| `/delovi/kocioni-diskovi` | 5 | 98 | 100 | 100 | 100 | 1959 | 0.000 | 77 (42–101) |
+| `/deo/kocioni-disk-prednji-276-24-mm-demo-0004` | 5 | 97 | 100 | 100 | 100 | 2048 | 0.000 | 47 (0–56) |
+| `/`, first pass on the same build | 5 | 97 | — | — | — | 2175 | 0.001 | 87 (23–103) |
+| `/delovi/kocioni-diskovi`, first pass | 5 | 98 | — | — | — | 1997 | 0.000 | 48 (41–89) |
+
+benchmarkIndex 4,034–4,223, no run discarded. Every page is under 200 ms with performance ≥ 85, accessibility ≥ 95
+and SEO ≥ 95; the slowest of the twenty home and category runs on this build is 103 ms. What remains is task 2 above
+when the first frame is presented before the font swap, plus 0–13 ms from the end of hydration. The other templates
+were last measured in the close-out (above), before the compile hints, which only remove main-thread work. The runner
+still exits 1 on the internal J11 lab budgets (first-load JS 279–298 KB against 160–180 KB; product LCP 2048 ms
+against 2000 ms) — not gate criteria.
+
+### Simulated throttling (Lantern, reference) — final build, 3 runs
+
+| Page | Perf | A11y | BP | SEO | LCP ms | CLS | TBT ms |
+|---|---|---|---|---|---|---|---|
+| `/` | 86 | 100 | 100 | 100 | 4214 | 0.001 | 0 |
+| `/delovi/kocioni-diskovi` | 87 | 100 | 100 | 100 | 4070 | 0.000 | 0 |
+| `/deo/kocioni-disk-prednji-276-24-mm-demo-0004` | 88 | 100 | 100 | 100 | 3917 | 0.000 | 0 |
+
+`/kontakt` ran first as the warm-up URL (see the close-out on Chrome's cold-start stall); its first run was clean
+this time.
+
+### Raw runs — applied throttling (final build)
+
+```
+    perf01-final-devtools: / run 1: perf 96 · LCP 2306 ms · CLS 0.001 · TBT 39 ms · FCP 2122 ms · SI 2123 ms · JS 298 KB · benchmarkIndex 4140
+    perf01-final-devtools: / run 2: perf 97 · LCP 2205 ms · CLS 0.001 · TBT 88 ms · FCP 2039 ms · SI 2046 ms · JS 298 KB · benchmarkIndex 4085
+    perf01-final-devtools: / run 3: perf 96 · LCP 2228 ms · CLS 0.001 · TBT 92 ms · FCP 2062 ms · SI 2074 ms · JS 298 KB · benchmarkIndex 4040
+    perf01-final-devtools: / run 4: perf 96 · LCP 2179 ms · CLS 0.001 · TBT 98 ms · FCP 2013 ms · SI 2024 ms · JS 298 KB · benchmarkIndex 4108
+    perf01-final-devtools: / run 5: perf 96 · LCP 2240 ms · CLS 0.001 · TBT 86 ms · FCP 2073 ms · SI 2083 ms · JS 298 KB · benchmarkIndex 4049
+    perf01-final-devtools: /delovi/kocioni-diskovi run 1: perf 98 · LCP 1912 ms · CLS 0.000 · TBT 77 ms · FCP 1912 ms · SI 2011 ms · JS 290 KB · benchmarkIndex 4167
+    perf01-final-devtools: /delovi/kocioni-diskovi run 2: perf 97 · LCP 1979 ms · CLS 0.000 · TBT 69 ms · FCP 1979 ms · SI 2072 ms · JS 290 KB · benchmarkIndex 4034
+    perf01-final-devtools: /delovi/kocioni-diskovi run 3: perf 97 · LCP 1959 ms · CLS 0.000 · TBT 101 ms · FCP 1959 ms · SI 2059 ms · JS 290 KB · benchmarkIndex 4126
+    perf01-final-devtools: /delovi/kocioni-diskovi run 4: perf 98 · LCP 1877 ms · CLS 0.000 · TBT 82 ms · FCP 1877 ms · SI 1973 ms · JS 290 KB · benchmarkIndex 4123
+    perf01-final-devtools: /delovi/kocioni-diskovi run 5: perf 98 · LCP 1970 ms · CLS 0.000 · TBT 42 ms · FCP 1970 ms · SI 2070 ms · JS 290 KB · benchmarkIndex 4190
+    perf01-final-devtools: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 1: perf 97 · LCP 2061 ms · CLS 0.000 · TBT 0 ms · FCP 2061 ms · SI 2189 ms · JS 279 KB · benchmarkIndex 4157
+    perf01-final-devtools: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 2: perf 97 · LCP 2031 ms · CLS 0.000 · TBT 52 ms · FCP 2031 ms · SI 2169 ms · JS 279 KB · benchmarkIndex 4170
+    perf01-final-devtools: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 3: perf 97 · LCP 2050 ms · CLS 0.000 · TBT 20 ms · FCP 2050 ms · SI 2190 ms · JS 279 KB · benchmarkIndex 4083
+    perf01-final-devtools: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 4: perf 97 · LCP 2048 ms · CLS 0.000 · TBT 47 ms · FCP 2048 ms · SI 2187 ms · JS 279 KB · benchmarkIndex 4156
+    perf01-final-devtools: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 5: perf 98 · LCP 1991 ms · CLS 0.000 · TBT 56 ms · FCP 1991 ms · SI 2132 ms · JS 279 KB · benchmarkIndex 4116
+    perf01-final-hints-pass1: / run 1: perf 96 · LCP 2265 ms · CLS 0.001 · TBT 23 ms · FCP 2115 ms · SI 2118 ms · JS 298 KB · benchmarkIndex 4147
+    perf01-final-hints-pass1: / run 2: perf 97 · LCP 2150 ms · CLS 0.001 · TBT 99 ms · FCP 1984 ms · SI 1994 ms · JS 298 KB · benchmarkIndex 4065
+    perf01-final-hints-pass1: / run 3: perf 96 · LCP 2175 ms · CLS 0.001 · TBT 103 ms · FCP 2008 ms · SI 2020 ms · JS 298 KB · benchmarkIndex 4094
+    perf01-final-hints-pass1: / run 4: perf 97 · LCP 2186 ms · CLS 0.001 · TBT 70 ms · FCP 2037 ms · SI 2048 ms · JS 298 KB · benchmarkIndex 4128
+    perf01-final-hints-pass1: / run 5: perf 97 · LCP 2121 ms · CLS 0.001 · TBT 87 ms · FCP 1955 ms · SI 1970 ms · JS 298 KB · benchmarkIndex 4090
+    perf01-final-hints-pass1: /delovi/kocioni-diskovi run 1: perf 97 · LCP 2022 ms · CLS 0.000 · TBT 48 ms · FCP 2022 ms · SI 2112 ms · JS 290 KB · benchmarkIndex 4223
+    perf01-final-hints-pass1: /delovi/kocioni-diskovi run 2: perf 98 · LCP 1997 ms · CLS 0.000 · TBT 63 ms · FCP 1997 ms · SI 2096 ms · JS 290 KB · benchmarkIndex 4152
+    perf01-final-hints-pass1: /delovi/kocioni-diskovi run 3: perf 97 · LCP 2005 ms · CLS 0.000 · TBT 89 ms · FCP 2005 ms · SI 2098 ms · JS 290 KB · benchmarkIndex 4077
+    perf01-final-hints-pass1: /delovi/kocioni-diskovi run 4: perf 98 · LCP 1993 ms · CLS 0.000 · TBT 43 ms · FCP 1993 ms · SI 2087 ms · JS 290 KB · benchmarkIndex 4071
+    perf01-final-hints-pass1: /delovi/kocioni-diskovi run 5: perf 98 · LCP 1945 ms · CLS 0.000 · TBT 41 ms · FCP 1945 ms · SI 2042 ms · JS 290 KB · benchmarkIndex 4208
+```
+
+### Raw runs — simulated throttling (final build)
+
+```
+    perf01-final-simulate: /kontakt run 1: perf 87 · LCP 3932 ms · CLS 0.000 · TBT 0 ms · FCP 1366 ms · SI 1366 ms · JS 218 KB · benchmarkIndex 4066
+    perf01-final-simulate: /kontakt run 2: perf 92 · LCP 3318 ms · CLS 0.000 · TBT 0 ms · FCP 1364 ms · SI 1364 ms · JS 218 KB · benchmarkIndex 4213
+    perf01-final-simulate: /kontakt run 3: perf 92 · LCP 3324 ms · CLS 0.000 · TBT 0 ms · FCP 1368 ms · SI 1368 ms · JS 218 KB · benchmarkIndex 4030
+    perf01-final-simulate: / run 1: perf 85 · LCP 4228 ms · CLS 0.001 · TBT 0 ms · FCP 1510 ms · SI 1510 ms · JS 298 KB · benchmarkIndex 4109
+    perf01-final-simulate: / run 2: perf 86 · LCP 4213 ms · CLS 0.001 · TBT 0 ms · FCP 1510 ms · SI 1510 ms · JS 298 KB · benchmarkIndex 4107
+    perf01-final-simulate: / run 3: perf 86 · LCP 4214 ms · CLS 0.001 · TBT 0 ms · FCP 1511 ms · SI 1511 ms · JS 298 KB · benchmarkIndex 4143
+    perf01-final-simulate: /delovi/kocioni-diskovi run 1: perf 86 · LCP 4078 ms · CLS 0.000 · TBT 0 ms · FCP 1513 ms · SI 1513 ms · JS 290 KB · benchmarkIndex 4070
+    perf01-final-simulate: /delovi/kocioni-diskovi run 2: perf 87 · LCP 4066 ms · CLS 0.000 · TBT 0 ms · FCP 1510 ms · SI 1510 ms · JS 290 KB · benchmarkIndex 4151
+    perf01-final-simulate: /delovi/kocioni-diskovi run 3: perf 87 · LCP 4070 ms · CLS 0.000 · TBT 0 ms · FCP 1514 ms · SI 1514 ms · JS 290 KB · benchmarkIndex 4167
+    perf01-final-simulate: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 1: perf 88 · LCP 3925 ms · CLS 0.000 · TBT 0 ms · FCP 1362 ms · SI 1362 ms · JS 279 KB · benchmarkIndex 4172
+    perf01-final-simulate: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 2: perf 88 · LCP 3916 ms · CLS 0.000 · TBT 0 ms · FCP 1361 ms · SI 1361 ms · JS 279 KB · benchmarkIndex 4175
+    perf01-final-simulate: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 3: perf 88 · LCP 3917 ms · CLS 0.000 · TBT 0 ms · FCP 1361 ms · SI 1361 ms · JS 279 KB · benchmarkIndex 4184
+```
+
+### Raw runs — rejected `<link rel="expect">` build (D295)
+
+```
+    perf01-final-expect-experiment: / run 1: perf 95 · LCP 2465 ms · CLS 0.001 · TBT 24 ms · FCP 2332 ms · SI 2327 ms · JS 298 KB · benchmarkIndex 3918
+    perf01-final-expect-experiment: / run 2: perf 94 · LCP 2355 ms · CLS 0.001 · TBT 158 ms · FCP 2172 ms · SI 2182 ms · JS 298 KB · benchmarkIndex 3604
+    perf01-final-expect-experiment: / run 3: perf 96 · LCP 2209 ms · CLS 0.001 · TBT 120 ms · FCP 2042 ms · SI 2068 ms · JS 298 KB · benchmarkIndex 3861
+    perf01-final-expect-experiment: / attempt 4: discarded (benchmarkIndex 3106 < 3500 (machine too busy))
+    perf01-final-expect-experiment: / attempt 5: discarded (benchmarkIndex 1855 < 3500 (machine too busy))
+    perf01-final-expect-experiment: / run 4: perf 97 · LCP 2194 ms · CLS 0.001 · TBT 20 ms · FCP 2094 ms · SI 2093 ms · JS 298 KB · benchmarkIndex 4036
+    perf01-final-expect-experiment: / run 5: perf 97 · LCP 2153 ms · CLS 0.001 · TBT 74 ms · FCP 2019 ms · SI 2027 ms · JS 298 KB · benchmarkIndex 3986
+    perf01-final-expect-experiment: /delovi/kocioni-diskovi run 1: perf 92 · LCP 2061 ms · CLS 0.000 · TBT 272 ms · FCP 2061 ms · SI 2175 ms · JS 290 KB · benchmarkIndex 3888
+    perf01-final-expect-experiment: /delovi/kocioni-diskovi run 2: perf 97 · LCP 1936 ms · CLS 0.000 · TBT 96 ms · FCP 1936 ms · SI 2036 ms · JS 290 KB · benchmarkIndex 4068
+    perf01-final-expect-experiment: /delovi/kocioni-diskovi run 3: perf 96 · LCP 1985 ms · CLS 0.000 · TBT 126 ms · FCP 1985 ms · SI 2092 ms · JS 290 KB · benchmarkIndex 4039
+    perf01-final-expect-experiment: /delovi/kocioni-diskovi run 4: perf 98 · LCP 1904 ms · CLS 0.000 · TBT 100 ms · FCP 1904 ms · SI 2009 ms · JS 290 KB · benchmarkIndex 4063
+    perf01-final-expect-experiment: /delovi/kocioni-diskovi run 5: perf 98 · LCP 1947 ms · CLS 0.000 · TBT 50 ms · FCP 1947 ms · SI 2045 ms · JS 290 KB · benchmarkIndex 4115
+```
+
+### Gates on the final code
+
+`NEXT_PUBLIC_TEST_HOOKS=1 npm run build` exit 0 (the compile-hint step reports the six root main files) ·
+`npx tsc --noEmit` exit 0 · `npm run lint` 0 errors, 0 warnings · `npm test` 70 files passed + 1 skipped, 1223 tests
+passed + 4 skipped · Playwright on :3100: 105 passed, 27 skipped by design, 0 failed in 9.4 min
+(`docs/qa/fix/e2e-final.txt`). On home, category and product at 390 px after scrolling end to end: no console errors
+or warnings, no copy left at opacity 0, no `pending` reveal state, no `.reveal-word`, and the served runtime chunk
+starts with the hint. No UI change, so no new screenshots.

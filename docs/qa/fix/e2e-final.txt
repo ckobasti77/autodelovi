@@ -134,4 +134,4 @@ Running 132 tests using 1 worker
 [131/132] [mobile-390] › tests\e2e\storefront.spec.ts:269:7 › storefront — accessibility and reveal › axe: no serious or critical violations on six templates
 [132/132] [mobile-390] › tests\e2e\storefront.spec.ts:294:7 › storefront — accessibility and reveal › text reveal leaves no copy hidden on home, category and product
   27 skipped
-  105 passed (9.7m)
+  105 passed (9.4m)

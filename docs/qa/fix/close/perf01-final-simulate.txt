@@ -1,0 +1,24 @@
+http://localhost:3100/kontakt run 1: perf 87 · LCP 3932 ms · CLS 0.000 · TBT 0 ms · FCP 1366 ms · SI 1366 ms · JS 218 KB · benchmarkIndex 4066
+http://localhost:3100/kontakt run 2: perf 92 · LCP 3318 ms · CLS 0.000 · TBT 0 ms · FCP 1364 ms · SI 1364 ms · JS 218 KB · benchmarkIndex 4213
+http://localhost:3100/kontakt run 3: perf 92 · LCP 3324 ms · CLS 0.000 · TBT 0 ms · FCP 1368 ms · SI 1368 ms · JS 218 KB · benchmarkIndex 4030
+MEDIAN http://localhost:3100/kontakt (other, mobile, simulate throttling, 3 runs): performance 92 · accessibility 100 · best practices 100 · SEO 92 · LCP 3324 ms · CLS 0.000 · TBT 0 ms · FCP 1366 ms · SI 1366 ms · first-load JS 218 KB · benchmarkIndex 4066
+  LCP element: div.fixed > form.mx-auto > div.flex > p#consent-desc <p id="consent-desc" class="max-w-[68ch] type-body-s text-ink-2">
+  BUDGET MISSED: SEO 92 < 95, LCP 3324 > 2500
+http://localhost:3100/ run 1: perf 85 · LCP 4228 ms · CLS 0.001 · TBT 0 ms · FCP 1510 ms · SI 1510 ms · JS 298 KB · benchmarkIndex 4109
+http://localhost:3100/ run 2: perf 86 · LCP 4213 ms · CLS 0.001 · TBT 0 ms · FCP 1510 ms · SI 1510 ms · JS 298 KB · benchmarkIndex 4107
+http://localhost:3100/ run 3: perf 86 · LCP 4214 ms · CLS 0.001 · TBT 0 ms · FCP 1511 ms · SI 1511 ms · JS 298 KB · benchmarkIndex 4143
+MEDIAN http://localhost:3100/ (home, mobile, simulate throttling, 3 runs): performance 86 · accessibility 100 · best practices 100 · SEO 100 · LCP 4214 ms · CLS 0.001 · TBT 0 ms · FCP 1510 ms · SI 1510 ms · first-load JS 298 KB · benchmarkIndex 4109
+  LCP element: div.absolute > div.absolute > picture.absolute > img.absolute <img src="http://localhost:3100/images/hero/car-assembled-m-828.avif" alt="" width="2560" height="1440" decoding="async" loading="eager" draggable="false" class="absolute inset-y-0 left-0 h-full w-full select-none object-contain object-…">
+  BUDGET MISSED: LCP 4214 > 2500, first-load JS 298 KB > 180 KB
+http://localhost:3100/delovi/kocioni-diskovi run 1: perf 86 · LCP 4078 ms · CLS 0.000 · TBT 0 ms · FCP 1513 ms · SI 1513 ms · JS 290 KB · benchmarkIndex 4070
+http://localhost:3100/delovi/kocioni-diskovi run 2: perf 87 · LCP 4066 ms · CLS 0.000 · TBT 0 ms · FCP 1510 ms · SI 1510 ms · JS 290 KB · benchmarkIndex 4151
+http://localhost:3100/delovi/kocioni-diskovi run 3: perf 87 · LCP 4070 ms · CLS 0.000 · TBT 0 ms · FCP 1514 ms · SI 1514 ms · JS 290 KB · benchmarkIndex 4167
+MEDIAN http://localhost:3100/delovi/kocioni-diskovi (catalog, mobile, simulate throttling, 3 runs): performance 87 · accessibility 100 · best practices 100 · SEO 100 · LCP 4070 ms · CLS 0.000 · TBT 0 ms · FCP 1513 ms · SI 1513 ms · first-load JS 290 KB · benchmarkIndex 4151
+  LCP element: div.fixed > form.mx-auto > div.flex > p#consent-desc <p id="consent-desc" class="max-w-[68ch] type-body-s text-ink-2">
+  BUDGET MISSED: performance 87 < 90, LCP 4070 > 2000, first-load JS 290 KB > 160 KB
+http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 1: perf 88 · LCP 3925 ms · CLS 0.000 · TBT 0 ms · FCP 1362 ms · SI 1362 ms · JS 279 KB · benchmarkIndex 4172
+http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 2: perf 88 · LCP 3916 ms · CLS 0.000 · TBT 0 ms · FCP 1361 ms · SI 1361 ms · JS 279 KB · benchmarkIndex 4175
+http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 3: perf 88 · LCP 3917 ms · CLS 0.000 · TBT 0 ms · FCP 1361 ms · SI 1361 ms · JS 279 KB · benchmarkIndex 4184
+MEDIAN http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 (catalog, mobile, simulate throttling, 3 runs): performance 88 · accessibility 100 · best practices 100 · SEO 100 · LCP 3917 ms · CLS 0.000 · TBT 0 ms · FCP 1361 ms · SI 1361 ms · first-load JS 279 KB · benchmarkIndex 4175
+  LCP element: figure > div.relative > div.relative > img.object-contain <img alt="Kočioni disk prednji 276 × 24 mm — ilustracija kategorije kočioni diskovi" decoding="async" data-nimg="fill" class="object-contain transition-transform duration-[600ms] ease-sk-out p-[4%]" style="position: absolute; height: 100%; width: 100%; inset: 0px;" sizes="(min-width: 1024px) 56vw, 100vw" srcset="/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=384&amp;q=75 384w,…" src="http://localhost:3100/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.…">
+  BUDGET MISSED: performance 88 < 90, LCP 3917 > 2000, first-load JS 279 KB > 160 KB
