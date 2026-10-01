@@ -145,6 +145,31 @@ test.describe("home placeholder", () => {
       page.getByRole("heading", { level: 1, name: "Stranica nije pronađena" }),
     ).toBeVisible();
   });
+
+  // FLOW-05 / D266 / D289: a notFound() thrown by a page aborts the server shell, so Next answers
+  // with its error shell (status, title and noindex are already right) and the client renders the
+  // branded 404 from the RSC payload. Both halves must hold in the production build.
+  test("a notFound() from a page answers 404 with the branded title and 404 view", async ({
+    page,
+    request,
+  }) => {
+    const url = "/deo/nepostojeci-deo-e2e";
+    const raw = await request.get(url);
+    expect(raw.status()).toBe(404);
+    const html = await raw.text();
+    expect(html).toContain("<title>Stranica nije pronađena | SKLOP</title>");
+    expect(html).toMatch(/<meta name="robots" content="noindex/);
+
+    const errors: string[] = [];
+    page.on("pageerror", (e) => errors.push(e.message));
+    const response = await page.goto(url);
+    expect(response?.status()).toBe(404);
+    await expect(
+      page.getByRole("heading", { level: 1, name: "Stranica nije pronađena" }),
+    ).toBeVisible();
+    await expect(page).toHaveTitle("Stranica nije pronađena | SKLOP");
+    expect(errors).toEqual([]);
+  });
 });
 
 test.describe("accessibility (axe, WCAG 2.2 AA)", () => {

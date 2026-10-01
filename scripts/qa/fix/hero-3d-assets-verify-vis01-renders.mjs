@@ -13,13 +13,12 @@ const lin = (c) => { const s = c / 255; return s <= 0.04045 ? s / 12.92 : ((s + 
 const L = (r, g, b) => 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
 const cr = (a, b) => (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
 const g3 = L(0x23, 0x28, 0x2e); // ground at the radial centre
-const g1 = L(0x16, 0x19, 0x1d);
 const rows = [];
 const files = readdirSync(dir).filter((x) => x.endsWith(".webp")).sort();
 for (const f of files) {
   const { data, info } = await sharp(path.join(dir, f)).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   const { width: w, height: h } = info;
-  let minX = w, minY = h, maxX = 0, maxY = 0, n = 0, cy = 0, shadowN = 0;
+  let minX = w, minY = h, maxX = 0, maxY = 0, n = 0, cy = 0;
   let aMinX = w, aMinY = h, aMaxX = 0, aMaxY = 0;
   const lums = [];
   for (let y = 0; y < h; y++)
@@ -31,7 +30,7 @@ for (const f of files) {
         n++; cy += y;
         lums.push(L(data[i], data[i + 1], data[i + 2]));
         if (x < minX) minX = x; if (y < minY) minY = y; if (x > maxX) maxX = x; if (y > maxY) maxY = y;
-      } else if (a > 24) shadowN++;
+      }
     }
   lums.sort((a, b) => a - b);
   const q = (p) => lums[Math.min(lums.length - 1, Math.floor(p * lums.length))];

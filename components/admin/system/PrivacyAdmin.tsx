@@ -63,7 +63,7 @@ export function PrivacyAdmin({ userId }: { userId: Id<"users"> | null }) {
     if (userId) return { userId };
     const clean = normalizeEmail(email);
     if (!isValidEmail(clean)) {
-      setError("Upišite ispravnu e-mail adresu.");
+      setError("Adresa e-pošte nije ispravna. Primer: ime@primer.rs.");
       return null;
     }
     return { email: clean };

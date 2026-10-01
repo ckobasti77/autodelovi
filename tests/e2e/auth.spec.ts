@@ -73,7 +73,7 @@ test.describe("auth round trip", () => {
     await page.getByTestId(TEST_IDS.authEmail).fill(email!);
     await page.getByTestId(TEST_IDS.authPassword).fill("pogresna-lozinka-123");
     await page.getByTestId(TEST_IDS.authSubmit).click();
-    await expect(page.getByTestId(TEST_IDS.authError)).toContainText("Pogrešan e-mail ili lozinka");
+    await expect(page.getByTestId(TEST_IDS.authError)).toContainText("Pogrešna adresa e-pošte ili lozinka");
   });
 });
 

@@ -8,8 +8,9 @@
  *
  * Never part of the first load (PERF-01/PERF-11): on a first visit the server renders the
  * static `ConsentPanel` (readable at first paint, decisions work as a form post without
- * JavaScript) and `ConsentGate` swaps this module in after hydration — in idle time or on the
- * first interaction; returning visitors load it only when the footer reopens it.
+ * JavaScript) and `ConsentGate` swaps this module in on the first interaction (warmed in idle
+ * time; never swapped without input, so the swap cannot be a late LCP); returning visitors load
+ * it only when the footer reopens it.
  *
  * While mounted it registers its height as a bottom inset (A11Y-05), so focused page controls
  * scroll above it; Escape collapses it to the title and the decision buttons. The granular

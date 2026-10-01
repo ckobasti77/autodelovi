@@ -280,7 +280,7 @@ test.describe("mechanics portal", () => {
     // Client-side PIB checksum.
     await page.getByTestId(TEST_IDS.mechanicRegPib).fill("123456789");
     await page.getByTestId(TEST_IDS.mechanicRegMb).click();
-    await expect(page.locator("#mr-pib-msg")).toContainText("PIB ima 9 cifara i kontrolni broj ne odgovara");
+    await expect(page.locator("#mr-pib-msg")).toContainText("PIB nije ispravan — kontrolna cifra ne odgovara");
     // No error summary before the first send attempt.
     await expect(page.getByTestId(TEST_IDS.mechanicRegistrationForm).getByRole("alert")).toHaveCount(0);
     expect(await seriousAxe(page)).toEqual([]);

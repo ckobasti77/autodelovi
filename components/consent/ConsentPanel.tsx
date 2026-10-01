@@ -10,8 +10,8 @@ import { ROUTES } from "@/constants/routes";
  * - `ConsentRoot` renders it on the server for a first visit, with no handlers. It is readable
  *   at first paint and „Prihvati sve“ / „Odbij sve“ work as a plain form post to the Server
  *   Action, so nothing about it needs JavaScript and it costs no client component hydration.
- * - `ConsentBanner` (client, loaded by `ConsentGate` after hydration in idle time or on the
- *   first interaction) renders the same markup with state and handlers and replaces it.
+ * - `ConsentBanner` (client, warmed by `ConsentGate` in idle time and swapped in on the first
+ *   interaction) renders the same markup with state and handlers and replaces it.
  * No hooks here, so it renders in both worlds; every control carries `data-consent-key`
  * (`consentDom.ts`).
  */

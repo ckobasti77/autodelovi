@@ -14,8 +14,8 @@ import { AnalyticsManager } from "@/components/consent/AnalyticsManager";
  *
  * First visit: the banner is server-rendered markup (`ConsentPanel`, a Server Component here) —
  * part of the first HTML (no shift, no flash), working as a form post without JavaScript and
- * with no client component to hydrate. `ConsentGate` loads the interactive banner after
- * hydration and swaps it in (PERF-01). Once a choice is on record nothing of the banner is in
+ * with no client component to hydrate. `ConsentGate` warms the interactive banner after
+ * hydration and swaps it in on the first interaction (PERF-01, D287). Once a choice is on record nothing of the banner is in
  * the page: the gate loads it only when the footer reopens the settings (PERF-11).
  */
 export async function ConsentRoot() {

@@ -107,7 +107,7 @@ export function Footer({ contact, company }: FooterProps) {
   return (
     <footer
       data-testid={TEST_IDS.footer}
-      className="cv-auto border-t border-line bg-bg-raised print:hidden [contain-intrinsic-size:auto_520px]"
+      className="cv-auto border-t border-line bg-bg-raised print:hidden [contain-intrinsic-size:auto_1040px] md:[contain-intrinsic-size:auto_700px] lg:[contain-intrinsic-size:auto_440px]"
     >
       <div className="grid gap-10 px-page py-14 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.3fr] lg:gap-8">
         <div className="flex flex-col gap-4">

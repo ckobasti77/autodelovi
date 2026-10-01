@@ -8,7 +8,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
-import { AUDIT_DIR, BASE, launch, newContext, shot } from "../audit/kit.mjs";
+import { BASE, launch, newContext, shot } from "../audit/kit.mjs";
 
 const DELAY = Number(process.env.V_DELAY ?? 6000);
 const WIDTH = Number(process.env.V_WIDTH ?? 390);

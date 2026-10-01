@@ -42,7 +42,7 @@ export function AdminTopBar({
   const trail = breadcrumbTrail(pathname, crumb);
 
   return (
-    <header className="sticky top-0 z-sticky h-14 shrink-0 border-b border-line bg-surface-1 print:hidden">
+    <header data-sticky-header="" className="sticky top-0 z-sticky h-14 shrink-0 border-b border-line bg-surface-1 print:hidden">
       {/* Same 1680 px column as <main>, so the bar lines up with the workspace at 2560 (VIS-39). */}
       <div className="mx-auto flex h-full w-full max-w-[1680px] items-center gap-3 px-4 lg:px-6">
         <button

@@ -7,8 +7,6 @@ import {
   launch,
   newContext,
   watch,
-  scrollThrough,
-  revealCheck,
   shot,
   loginWith,
 } from "../audit/kit.mjs";
@@ -107,44 +105,6 @@ async function headerMetrics(page) {
       controls,
     };
   });
-}
-
-// Script chunks: which lazily loaded modules were downloaded (Turbopack dev module ids).
-const MARKERS = {
-  HeaderSearchPanel:
-    'components/shell/HeaderSearchPanel.tsx [app-client] (ecmascript)", ((__turbopack_context__)',
-  MobileNavPanel:
-    'components/shell/MobileNavPanel.tsx [app-client] (ecmascript)", ((__turbopack_context__)',
-  ConsentBanner:
-    'components/consent/ConsentBanner.tsx [app-client] (ecmascript)", ((__turbopack_context__)',
-  ConsentDetails:
-    'components/consent/ConsentDetails.tsx [app-client] (ecmascript)", ((__turbopack_context__)',
-  SearchBox: 'components/shell/SearchBox.tsx [app-client] (ecmascript)", ((__turbopack_context__)',
-  Sheet: 'components/ui/Sheet.tsx [app-client] (ecmascript)", ((__turbopack_context__)',
-  Dialog: 'components/ui/Dialog.tsx [app-client] (ecmascript)", ((__turbopack_context__)',
-  Switch: 'components/ui/Switch.tsx [app-client] (ecmascript)", ((__turbopack_context__)',
-};
-function trackChunks(page) {
-  const loaded = new Set();
-  const pending = [];
-  page.on("response", (res) => {
-    if (res.request().resourceType() !== "script") return;
-    pending.push(
-      res
-        .text()
-        .then((body) => {
-          for (const [name, marker] of Object.entries(MARKERS))
-            if (body.includes(marker)) loaded.add(name);
-        })
-        .catch(() => {}),
-    );
-  });
-  return {
-    async snapshot() {
-      await Promise.all(pending);
-      return [...loaded].sort();
-    },
-  };
 }
 
 const active = (page) =>

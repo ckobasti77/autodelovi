@@ -18,9 +18,16 @@ type BannerComponent = ComponentType<{ serverOpen: boolean; animateIn?: boolean 
 const loadBanner = (): Promise<BannerComponent> =>
   import("@/components/consent/ConsentBanner").then((m) => m.ConsentBanner);
 
-/** Interactions that upgrade the static first-visit panel at once (instead of in idle time). */
+/**
+ * Interactions that upgrade the static first-visit panel. Nothing else does: the swap replaces
+ * the panel's DOM, and a swap without user input would paint the banner copy a second time as a
+ * new, late Largest Contentful Paint (Chromium stops recording LCP at the first input).
+ */
 const INTENT_EVENTS = ["pointerdown", "keydown", "focusin", "touchstart"] as const;
 const IDLE_TIMEOUT_MS = 3000;
+
+/** Fetches and evaluates the banner module ahead of the swap; a failure surfaces on the swap. */
+const warmBanner = () => void loadBanner().catch(() => undefined);
 
 function whenIdle(callback: () => void): () => void {
   if (typeof window.requestIdleCallback === "function") {
@@ -46,10 +53,12 @@ function keyOf(el: Element | null): string | null {
  * Loads the interactive consent banner without putting it on the hydration path (PERF-01):
  *
  * - First visit (`firstVisit`, `children` = the server-rendered `ConsentPanel`): the static panel
- *   stays as it is through hydration; the banner module is fetched in idle time or on the first
- *   interaction and replaces it in one commit. Focus inside the panel moves to the same control,
- *   and a click on a decision button made before the swap is held (no form post) and replayed
- *   on the live button; an Escape is replayed too.
+ *   stays as it is through hydration and paints with the first frame. The banner module is
+ *   warmed in idle time (or when a pointer reaches the panel) and replaces the panel in one
+ *   commit on the first interaction — never before it, so the swap cannot become a late LCP.
+ *   A press inside the panel does not swap: its click on a decision button is held (no form
+ *   post) and replayed on the live button, so the pressed control is never replaced under the
+ *   pointer. Focus inside the panel moves to the same control; an Escape is replayed too.
  * - Returning visitor: renders nothing until `openConsentSettings()` (footer) opens the store,
  *   then loads the banner and keeps it mounted (PERF-11).
  */
@@ -73,27 +82,39 @@ export function ConsentGate({
 
   const wanted = startedOpen ? upgrade : reopened;
 
-  // First visit: upgrade in idle time after hydration, or at once on any interaction.
+  // First visit: warm the module in idle time, swap on the first interaction.
   useEffect(() => {
     if (!startedOpen) return;
     const request = () => setUpgrade(true);
+    // A press that started inside the panel: its focus waits for the click (held below).
+    let pressInPanel = false;
     const onIntent = (event: Event) => {
-      // Escape for the banner, not for a modal overlay that owns it (as the banner decides).
-      if (
-        event instanceof KeyboardEvent &&
-        event.key === "Escape" &&
-        !document.querySelector('[role="dialog"][aria-modal="true"], [role="alertdialog"]')
-      ) {
-        escape.current = true;
+      const inPanel =
+        event.target instanceof Element && event.target.closest(CONSENT_BANNER_SELECTOR) !== null;
+      if (event instanceof KeyboardEvent) {
+        pressInPanel = false;
+        // Escape for the banner, not for a modal overlay that owns it (as the banner decides).
+        if (
+          event.key === "Escape" &&
+          !document.querySelector('[role="dialog"][aria-modal="true"], [role="alertdialog"]')
+        ) {
+          escape.current = true;
+        }
+        request();
+      } else if (event.type === "focusin") {
+        if (!(inPanel && pressInPanel)) request();
+      } else {
+        pressInPanel = inPanel;
+        if (inPanel) warmBanner();
+        else request();
       }
-      request();
     };
     const onHover = (event: Event) => {
       if (event.target instanceof Element && event.target.closest(CONSENT_BANNER_SELECTOR)) {
-        request();
+        warmBanner();
       }
     };
-    const cancelIdle = whenIdle(request);
+    const cancelIdle = whenIdle(warmBanner);
     for (const type of INTENT_EVENTS) {
       document.addEventListener(type, onIntent, { capture: true, passive: true });
     }

@@ -102,7 +102,9 @@ export function HomeCategories({ tree }: { tree: CategoryTree }) {
   return (
     <section
       aria-labelledby="cats-title"
-      className="cv-auto border-t border-line px-page py-section"
+      // Twelve tiles in 6/4/3/2 rows: the generic 900 px estimate is far too short, so the skipped
+      // grid would overflow onto the systems index below it (Lighthouse target-size, scroll jump).
+      className="cv-auto border-t border-line px-page py-section [contain-intrinsic-size:auto_1580px] md:[contain-intrinsic-size:auto_1250px] lg:[contain-intrinsic-size:auto_1120px] 2xl:[contain-intrinsic-size:auto_820px]"
     >
       <div className="flex flex-wrap items-end justify-between gap-4">
         <h2 id="cats-title" className="type-display-l uppercase text-ink-1">

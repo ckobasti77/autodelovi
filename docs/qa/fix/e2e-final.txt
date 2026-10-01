@@ -1,0 +1,285 @@
+
+Running 130 tests using 1 worker
+
+[1/130] [desktop-1440] › tests\e2e\admin.spec.ts:75:5 › dashboard, palette, bell and axe
+[2/130] [desktop-1440] › tests\e2e\admin.spec.ts:100:5 › create a product with an image, then edit it
+[3/130] [desktop-1440] › tests\e2e\admin.spec.ts:134:5 › order: nova → potvrđena → poslata with a tracking number
+[4/130] [desktop-1440] › tests\e2e\admin.spec.ts:163:5 › inquiry: answer with a quote
+[5/130] [desktop-1440] › tests\e2e\admin.spec.ts:192:5 › approve a mechanic with a tier
+[6/130] [desktop-1440] › tests\e2e\admin.spec.ts:223:5 › save settings (company) and restore
+[7/130] [desktop-1440] › tests\e2e\auth.spec.ts:32:7 › auth round trip › owner signs in, the server render sees the session, then signs out
+[8/130] [desktop-1440] › tests\e2e\auth.spec.ts:69:7 › auth round trip › a wrong password shows a Serbian error and keeps the visitor signed out
+  1) [desktop-1440] › tests\e2e\auth.spec.ts:69:7 › auth round trip › a wrong password shows a Serbian error and keeps the visitor signed out 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('auth-error')
+    Expected substring: "Pogrešan e-mail ili lozinka"
+    Received string:    "Pogrešna adresa e-pošte ili lozinka. Proverite podatke i pokušajte ponovo."
+    Timeout: 10000ms
+
+    Call log:
+      - Expect "toContainText" getByTestId('auth-error') with timeout 10000ms
+      - waiting for getByTestId('auth-error')
+        19 × locator resolved to <p role="alert" class="sr-only" data-testid="auth-error">Pogrešna adresa e-pošte ili lozinka. Proverite po…</p>
+           - unexpected value "Pogrešna adresa e-pošte ili lozinka. Proverite podatke i pokušajte ponovo."
+
+
+      74 |     await page.getByTestId(TEST_IDS.authPassword).fill("pogresna-lozinka-123");
+      75 |     await page.getByTestId(TEST_IDS.authSubmit).click();
+    > 76 |     await expect(page.getByTestId(TEST_IDS.authError)).toContainText("Pogrešan e-mail ili lozinka");
+         |                                                        ^
+      77 |   });
+      78 | });
+      79 |
+        at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\tests\e2e\auth.spec.ts:76:56
+
+    Error Context: test-results\auth-auth-round-trip-a-wro-ee99b-eeps-the-visitor-signed-out-desktop-1440\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\auth-auth-round-trip-a-wro-ee99b-eeps-the-visitor-signed-out-desktop-1440\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\auth-auth-round-trip-a-wro-ee99b-eeps-the-visitor-signed-out-desktop-1440\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[9/130] [desktop-1440] › tests\e2e\auth.spec.ts:80:5 › anonymous visitors are sent from account areas to sign-in with `next`
+[10/130] [desktop-1440] › tests\e2e\focus-return.spec.ts:82:7 › focus returns to the opener when a store overlay closes (A11Y-02) › vehicle picker: Escape returns focus to its trigger
+[11/130] [desktop-1440] › tests\e2e\focus-return.spec.ts:97:7 › focus returns to the opener when a store overlay closes (A11Y-02) › vehicle picker: choosing a vehicle focuses the updated trigger
+[12/130] [desktop-1440] › tests\e2e\focus-return.spec.ts:115:7 › focus returns to the opener when a store overlay closes (A11Y-02) › cart drawer: Escape returns focus to the header cart without scrolling
+[13/130] [desktop-1440] › tests\e2e\focus-return.spec.ts:130:7 › focus returns to the opener when a store overlay closes (A11Y-02) › header search: typing then Escape returns focus to the search control without scrolling
+[14/130] [desktop-1440] › tests\e2e\foundation.spec.ts:44:7 › styleguide › loads without console errors and reveals all copy
+[15/130] [desktop-1440] › tests\e2e\foundation.spec.ts:60:7 › styleguide › every tab stop has a visible focus indicator
+[16/130] [desktop-1440] › tests\e2e\foundation.spec.ts:101:7 › styleguide › reduced motion shows all copy immediately
+[17/130] [desktop-1440] › tests\e2e\foundation.spec.ts:113:7 › styleguide › without JavaScript nothing is hidden
+[18/130] [desktop-1440] › tests\e2e\foundation.spec.ts:126:7 › home placeholder › renders the statement and search without errors
+[19/130] [desktop-1440] › tests\e2e\foundation.spec.ts:136:7 › home placeholder › the old concept route redirects to the styleguide
+[20/130] [desktop-1440] › tests\e2e\foundation.spec.ts:141:7 › home placeholder › unknown routes render the branded 404
+[21/130] [desktop-1440] › tests\e2e\foundation.spec.ts:152:9 › accessibility (axe, WCAG 2.2 AA) › no violations on /
+[22/130] [desktop-1440] › tests\e2e\foundation.spec.ts:152:9 › accessibility (axe, WCAG 2.2 AA) › no violations on /styleguide
+[23/130] [desktop-1440] › tests\e2e\foundation.spec.ts:152:9 › accessibility (axe, WCAG 2.2 AA) › no violations on /ovo-ne-postoji
+[24/130] [desktop-1440] › tests\e2e\hero-3d.spec.ts:49:7 › 3D hero › poster first, live 3D after intent, crossfade, no console errors
+[25/130] [desktop-1440] › tests\e2e\hero-3d.spec.ts:97:7 › 3D hero › the parts list selects a category and opens the panel with products
+[26/130] [desktop-1440] › tests\e2e\hero-3d.spec.ts:125:7 › 3D hero › the test hook explodes the car and selects a part
+[27/130] [desktop-1440] › tests\e2e\hero-3d.spec.ts:152:7 › 3D hero › a deep link opens the right panel
+[28/130] [desktop-1440] › tests\e2e\hero-3d.spec.ts:181:7 › 3D hero › the stage keeps the poster's aspect below 1024 px, so the car fills it
+[29/130] [desktop-1440] › tests\e2e\hero-3d.spec.ts:216:7 › 3D hero › an unknown deep link is ignored
+[30/130] [desktop-1440] › tests\e2e\hero-3d.spec.ts:223:7 › 3D hero › the panel is accessible (axe) and every hero control shows focus
+[31/130] [desktop-1440] › tests\e2e\hero-3d.spec.ts:272:7 › 3D hero — fallbacks › reduced motion: no scroll track, „Rasklopi“ cuts to the exploded state
+[32/130] [desktop-1440] › tests\e2e\hero-3d.spec.ts:303:7 › 3D hero — fallbacks › low tier: posters only, the exploded poster follows the explode
+[33/130] [desktop-1440] › tests\e2e\hero-3d.spec.ts:323:7 › 3D hero — fallbacks › a software WebGL renderer gets the posters only
+[34/130] [desktop-1440] › tests\e2e\hero-3d.spec.ts:337:7 › 3D hero — fallbacks › WebGL context loss hands the stage back to the posters
+[35/130] [desktop-1440] › tests\e2e\import.spec.ts:68:5 › template download has the five sheets and Serbian headers
+[36/130] [desktop-1440] › tests\e2e\import.spec.ts:84:5 › 500 rows: mapping → seeded errors → dry run → commit → rollback
+[37/130] [desktop-1440] › tests\e2e\import.spec.ts:148:5 › Windows-1250 CSV keeps č ć ž š đ through preview, commit and rollback
+[38/130] [desktop-1440] › tests\e2e\mechanics.spec.ts:106:7 › mechanics portal › register → approve → own prices → quick order → deferred order
+[39/130] [desktop-1440] › tests\e2e\mechanics.spec.ts:217:7 › mechanics portal › staff approve a registration in /admin/majstori
+[40/130] [desktop-1440] › tests\e2e\mechanics.spec.ts:251:7 › mechanics portal › axe and text reveal on the landing and the registration form
+  2) [desktop-1440] › tests\e2e\mechanics.spec.ts:251:7 › mechanics portal › axe and text reveal on the landing and the registration form 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('#mr-pib-msg')
+    Expected substring: "PIB ima 9 cifara i kontrolni broj ne odgovara"
+    Received string:    "PIB nije ispravan — kontrolna cifra ne odgovara. Proverite broj sa rešenja."
+    Timeout: 10000ms
+
+    Call log:
+      - Expect "toContainText" locator('#mr-pib-msg') with timeout 10000ms
+      - waiting for locator('#mr-pib-msg')
+        23 × locator resolved to <p id="mr-pib-msg" data-reveal="off" class="flex items-start gap-1.5 type-caption text-danger">…</p>
+           - unexpected value "PIB nije ispravan — kontrolna cifra ne odgovara. Proverite broj sa rešenja."
+
+
+      281 |     await page.getByTestId(TEST_IDS.mechanicRegPib).fill("123456789");
+      282 |     await page.getByTestId(TEST_IDS.mechanicRegMb).click();
+    > 283 |     await expect(page.locator("#mr-pib-msg")).toContainText("PIB ima 9 cifara i kontrolni broj ne odgovara");
+          |                                               ^
+      284 |     // No error summary before the first send attempt.
+      285 |     await expect(page.getByTestId(TEST_IDS.mechanicRegistrationForm).getByRole("alert")).toHaveCount(0);
+      286 |     expect(await seriousAxe(page)).toEqual([]);
+        at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\tests\e2e\mechanics.spec.ts:283:47
+
+    Error Context: test-results\mechanics-mechanics-portal-af8b8-g-and-the-registration-form-desktop-1440\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\mechanics-mechanics-portal-af8b8-g-and-the-registration-form-desktop-1440\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\mechanics-mechanics-portal-af8b8-g-and-the-registration-form-desktop-1440\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[41/130] [desktop-1440] › tests\e2e\notifications.spec.ts:94:5 › a storefront order logs the customer and staff e-mails and rings the bell
+[42/130] [desktop-1440] › tests\e2e\notifications.spec.ts:170:5 › a status change logs the customer e-mail
+[43/130] [desktop-1440] › tests\e2e\notifications.spec.ts:201:5 › template gallery: previews, a test send and the four key e-mails
+[44/130] [desktop-1440] › tests\e2e\notifications.spec.ts:248:5 › the unsubscribe page rejects an unknown link
+[45/130] [desktop-1440] › tests\e2e\security.spec.ts:60:7 › headers › documents carry the static headers and a fresh nonce CSP; every script has the nonce
+[46/130] [desktop-1440] › tests\e2e\security.spec.ts:94:7 › headers › token pages send no Referer; static files still get the static headers
+[47/130] [desktop-1440] › tests\e2e\security.spec.ts:107:7 › no CSP violations › storefront: home with the live 3D hero, category, product, cart, inquiry, sign-in
+[48/130] [desktop-1440] › tests\e2e\security.spec.ts:127:7 › no CSP violations › analytics after consent load under the policy; token pages stay out of analytics
+[49/130] [desktop-1440] › tests\e2e\security.spec.ts:207:7 › admin under the policy › post-login redirect ignores /\host; admin screens, import worker and e-mail previews load
+[50/130] [desktop-1440] › tests\e2e\seo.spec.ts:65:7 › structured data and metadata › JSON-LD parses on home, category, landing, product and vehicle pages
+[51/130] [desktop-1440] › tests\e2e\seo.spec.ts:102:7 › structured data and metadata › titles ≤ 60, descriptions ≤ 155, canonicals and robots per route
+[52/130] [desktop-1440] › tests\e2e\seo.spec.ts:130:7 › structured data and metadata › OG images render as 1200 × 630 PNG
+[53/130] [desktop-1440] › tests\e2e\seo.spec.ts:145:7 › robots, sitemaps and feeds › robots.txt and every sitemap are valid and list only indexable URLs
+[54/130] [desktop-1440] › tests\e2e\seo.spec.ts:184:7 › robots, sitemaps and feeds › Merchant XML and Meta CSV carry the required fields
+[55/130] [desktop-1440] › tests\e2e\seo.spec.ts:292:7 › Consent Mode v2 and tags › no Google or Meta request before consent; defaults are denied
+[56/130] [desktop-1440] › tests\e2e\seo.spec.ts:320:7 › Consent Mode v2 and tags › „Odbij sve“ stores the choice and still loads nothing
+[57/130] [desktop-1440] › tests\e2e\seo.spec.ts:333:7 › Consent Mode v2 and tags › granular: analytics only loads gtag.js without Google Ads or the Pixel
+[58/130] [desktop-1440] › tests\e2e\seo.spec.ts:349:7 › Consent Mode v2 and tags › „Prihvati sve“: consent update, GA4 + Ads config, Pixel, ecommerce events
+[59/130] [desktop-1440] › tests\e2e\seo.spec.ts:417:7 › ads landing › /ponuda/[slug]: message-match H1, proof points, parts, noindex
+[60/130] [desktop-1440] › tests\e2e\storefront.spec.ts:103:7 › storefront › OEM search → product → cart → guest order with pouzeće lands in Convex
+[61/130] [desktop-1440] › tests\e2e\storefront.spec.ts:182:7 › storefront › category filtering by the selected vehicle
+[62/130] [desktop-1440] › tests\e2e\storefront.spec.ts:221:7 › storefront › VIN inquiry with a photo
+[63/130] [desktop-1440] › tests\e2e\storefront.spec.ts:251:7 › storefront › back-in-stock subscription on an unavailable product
+[64/130] [desktop-1440] › tests\e2e\storefront.spec.ts:269:7 › storefront — accessibility and reveal › axe: no serious or critical violations on six templates
+[65/130] [desktop-1440] › tests\e2e\storefront.spec.ts:294:7 › storefront — accessibility and reveal › text reveal leaves no copy hidden on home, category and product
+[66/130] [mobile-390] › tests\e2e\admin.spec.ts:75:5 › dashboard, palette, bell and axe
+[67/130] [mobile-390] › tests\e2e\admin.spec.ts:100:5 › create a product with an image, then edit it
+[68/130] [mobile-390] › tests\e2e\admin.spec.ts:134:5 › order: nova → potvrđena → poslata with a tracking number
+[69/130] [mobile-390] › tests\e2e\admin.spec.ts:163:5 › inquiry: answer with a quote
+[70/130] [mobile-390] › tests\e2e\admin.spec.ts:192:5 › approve a mechanic with a tier
+[71/130] [mobile-390] › tests\e2e\admin.spec.ts:223:5 › save settings (company) and restore
+[72/130] [mobile-390] › tests\e2e\auth.spec.ts:32:7 › auth round trip › owner signs in, the server render sees the session, then signs out
+[73/130] [mobile-390] › tests\e2e\auth.spec.ts:69:7 › auth round trip › a wrong password shows a Serbian error and keeps the visitor signed out
+  3) [mobile-390] › tests\e2e\auth.spec.ts:69:7 › auth round trip › a wrong password shows a Serbian error and keeps the visitor signed out 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByTestId('auth-error')
+    Expected substring: "Pogrešan e-mail ili lozinka"
+    Received string:    "Pogrešna adresa e-pošte ili lozinka. Proverite podatke i pokušajte ponovo."
+    Timeout: 10000ms
+
+    Call log:
+      - Expect "toContainText" getByTestId('auth-error') with timeout 10000ms
+      - waiting for getByTestId('auth-error')
+        19 × locator resolved to <p role="alert" class="sr-only" data-testid="auth-error">Pogrešna adresa e-pošte ili lozinka. Proverite po…</p>
+           - unexpected value "Pogrešna adresa e-pošte ili lozinka. Proverite podatke i pokušajte ponovo."
+
+
+      74 |     await page.getByTestId(TEST_IDS.authPassword).fill("pogresna-lozinka-123");
+      75 |     await page.getByTestId(TEST_IDS.authSubmit).click();
+    > 76 |     await expect(page.getByTestId(TEST_IDS.authError)).toContainText("Pogrešna adresa e-pošte ili lozinka");
+         |                                                        ^
+      77 |   });
+      78 | });
+      79 |
+        at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\tests\e2e\auth.spec.ts:76:56
+
+    Error Context: test-results\auth-auth-round-trip-a-wro-ee99b-eeps-the-visitor-signed-out-mobile-390\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\auth-auth-round-trip-a-wro-ee99b-eeps-the-visitor-signed-out-mobile-390\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\auth-auth-round-trip-a-wro-ee99b-eeps-the-visitor-signed-out-mobile-390\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[74/130] [mobile-390] › tests\e2e\auth.spec.ts:80:5 › anonymous visitors are sent from account areas to sign-in with `next`
+[75/130] [mobile-390] › tests\e2e\focus-return.spec.ts:82:7 › focus returns to the opener when a store overlay closes (A11Y-02) › vehicle picker: Escape returns focus to its trigger
+[76/130] [mobile-390] › tests\e2e\focus-return.spec.ts:97:7 › focus returns to the opener when a store overlay closes (A11Y-02) › vehicle picker: choosing a vehicle focuses the updated trigger
+[77/130] [mobile-390] › tests\e2e\focus-return.spec.ts:115:7 › focus returns to the opener when a store overlay closes (A11Y-02) › cart drawer: Escape returns focus to the header cart without scrolling
+[78/130] [mobile-390] › tests\e2e\focus-return.spec.ts:130:7 › focus returns to the opener when a store overlay closes (A11Y-02) › header search: typing then Escape returns focus to the search control without scrolling
+[79/130] [mobile-390] › tests\e2e\foundation.spec.ts:44:7 › styleguide › loads without console errors and reveals all copy
+[80/130] [mobile-390] › tests\e2e\foundation.spec.ts:60:7 › styleguide › every tab stop has a visible focus indicator
+[81/130] [mobile-390] › tests\e2e\foundation.spec.ts:101:7 › styleguide › reduced motion shows all copy immediately
+[82/130] [mobile-390] › tests\e2e\foundation.spec.ts:113:7 › styleguide › without JavaScript nothing is hidden
+[83/130] [mobile-390] › tests\e2e\foundation.spec.ts:126:7 › home placeholder › renders the statement and search without errors
+[84/130] [mobile-390] › tests\e2e\foundation.spec.ts:136:7 › home placeholder › the old concept route redirects to the styleguide
+[85/130] [mobile-390] › tests\e2e\foundation.spec.ts:141:7 › home placeholder › unknown routes render the branded 404
+[86/130] [mobile-390] › tests\e2e\foundation.spec.ts:152:9 › accessibility (axe, WCAG 2.2 AA) › no violations on /
+[87/130] [mobile-390] › tests\e2e\foundation.spec.ts:152:9 › accessibility (axe, WCAG 2.2 AA) › no violations on /styleguide
+[88/130] [mobile-390] › tests\e2e\foundation.spec.ts:152:9 › accessibility (axe, WCAG 2.2 AA) › no violations on /ovo-ne-postoji
+[89/130] [mobile-390] › tests\e2e\hero-3d.spec.ts:49:7 › 3D hero › poster first, live 3D after intent, crossfade, no console errors
+[90/130] [mobile-390] › tests\e2e\hero-3d.spec.ts:97:7 › 3D hero › the parts list selects a category and opens the panel with products
+[91/130] [mobile-390] › tests\e2e\hero-3d.spec.ts:125:7 › 3D hero › the test hook explodes the car and selects a part
+[92/130] [mobile-390] › tests\e2e\hero-3d.spec.ts:152:7 › 3D hero › a deep link opens the right panel
+[93/130] [mobile-390] › tests\e2e\hero-3d.spec.ts:181:7 › 3D hero › the stage keeps the poster's aspect below 1024 px, so the car fills it
+[94/130] [mobile-390] › tests\e2e\hero-3d.spec.ts:216:7 › 3D hero › an unknown deep link is ignored
+[95/130] [mobile-390] › tests\e2e\hero-3d.spec.ts:223:7 › 3D hero › the panel is accessible (axe) and every hero control shows focus
+[96/130] [mobile-390] › tests\e2e\hero-3d.spec.ts:272:7 › 3D hero — fallbacks › reduced motion: no scroll track, „Rasklopi“ cuts to the exploded state
+[97/130] [mobile-390] › tests\e2e\hero-3d.spec.ts:303:7 › 3D hero — fallbacks › low tier: posters only, the exploded poster follows the explode
+[98/130] [mobile-390] › tests\e2e\hero-3d.spec.ts:323:7 › 3D hero — fallbacks › a software WebGL renderer gets the posters only
+[99/130] [mobile-390] › tests\e2e\hero-3d.spec.ts:337:7 › 3D hero — fallbacks › WebGL context loss hands the stage back to the posters
+[100/130] [mobile-390] › tests\e2e\import.spec.ts:68:5 › template download has the five sheets and Serbian headers
+[101/130] [mobile-390] › tests\e2e\import.spec.ts:84:5 › 500 rows: mapping → seeded errors → dry run → commit → rollback
+[102/130] [mobile-390] › tests\e2e\import.spec.ts:148:5 › Windows-1250 CSV keeps č ć ž š đ through preview, commit and rollback
+[103/130] [mobile-390] › tests\e2e\mechanics.spec.ts:106:7 › mechanics portal › register → approve → own prices → quick order → deferred order
+[104/130] [mobile-390] › tests\e2e\mechanics.spec.ts:217:7 › mechanics portal › staff approve a registration in /admin/majstori
+[105/130] [mobile-390] › tests\e2e\mechanics.spec.ts:251:7 › mechanics portal › axe and text reveal on the landing and the registration form
+  4) [mobile-390] › tests\e2e\mechanics.spec.ts:251:7 › mechanics portal › axe and text reveal on the landing and the registration form 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('#mr-pib-msg')
+    Expected substring: "PIB ima 9 cifara i kontrolni broj ne odgovara"
+    Received string:    "PIB nije ispravan — kontrolna cifra ne odgovara. Proverite broj sa rešenja."
+    Timeout: 10000ms
+
+    Call log:
+      - Expect "toContainText" locator('#mr-pib-msg') with timeout 10000ms
+      - waiting for locator('#mr-pib-msg')
+        23 × locator resolved to <p id="mr-pib-msg" data-reveal="off" class="flex items-start gap-1.5 type-caption text-danger">…</p>
+           - unexpected value "PIB nije ispravan — kontrolna cifra ne odgovara. Proverite broj sa rešenja."
+
+
+      281 |     await page.getByTestId(TEST_IDS.mechanicRegPib).fill("123456789");
+      282 |     await page.getByTestId(TEST_IDS.mechanicRegMb).click();
+    > 283 |     await expect(page.locator("#mr-pib-msg")).toContainText("PIB nije ispravan — kontrolna cifra ne odgovara");
+          |                                               ^
+      284 |     // No error summary before the first send attempt.
+      285 |     await expect(page.getByTestId(TEST_IDS.mechanicRegistrationForm).getByRole("alert")).toHaveCount(0);
+      286 |     expect(await seriousAxe(page)).toEqual([]);
+        at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\tests\e2e\mechanics.spec.ts:283:47
+
+    Error Context: test-results\mechanics-mechanics-portal-af8b8-g-and-the-registration-form-mobile-390\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\mechanics-mechanics-portal-af8b8-g-and-the-registration-form-mobile-390\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\mechanics-mechanics-portal-af8b8-g-and-the-registration-form-mobile-390\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[106/130] [mobile-390] › tests\e2e\notifications.spec.ts:94:5 › a storefront order logs the customer and staff e-mails and rings the bell
+[107/130] [mobile-390] › tests\e2e\notifications.spec.ts:170:5 › a status change logs the customer e-mail
+[108/130] [mobile-390] › tests\e2e\notifications.spec.ts:201:5 › template gallery: previews, a test send and the four key e-mails
+[109/130] [mobile-390] › tests\e2e\notifications.spec.ts:248:5 › the unsubscribe page rejects an unknown link
+[110/130] [mobile-390] › tests\e2e\security.spec.ts:60:7 › headers › documents carry the static headers and a fresh nonce CSP; every script has the nonce
+[111/130] [mobile-390] › tests\e2e\security.spec.ts:94:7 › headers › token pages send no Referer; static files still get the static headers
+[112/130] [mobile-390] › tests\e2e\security.spec.ts:107:7 › no CSP violations › storefront: home with the live 3D hero, category, product, cart, inquiry, sign-in
+[113/130] [mobile-390] › tests\e2e\security.spec.ts:127:7 › no CSP violations › analytics after consent load under the policy; token pages stay out of analytics
+[114/130] [mobile-390] › tests\e2e\security.spec.ts:207:7 › admin under the policy › post-login redirect ignores /\host; admin screens, import worker and e-mail previews load
+[115/130] [mobile-390] › tests\e2e\seo.spec.ts:65:7 › structured data and metadata › JSON-LD parses on home, category, landing, product and vehicle pages
+[116/130] [mobile-390] › tests\e2e\seo.spec.ts:102:7 › structured data and metadata › titles ≤ 60, descriptions ≤ 155, canonicals and robots per route
+[117/130] [mobile-390] › tests\e2e\seo.spec.ts:130:7 › structured data and metadata › OG images render as 1200 × 630 PNG
+[118/130] [mobile-390] › tests\e2e\seo.spec.ts:145:7 › robots, sitemaps and feeds › robots.txt and every sitemap are valid and list only indexable URLs
+[119/130] [mobile-390] › tests\e2e\seo.spec.ts:184:7 › robots, sitemaps and feeds › Merchant XML and Meta CSV carry the required fields
+[120/130] [mobile-390] › tests\e2e\seo.spec.ts:292:7 › Consent Mode v2 and tags › no Google or Meta request before consent; defaults are denied
+[121/130] [mobile-390] › tests\e2e\seo.spec.ts:320:7 › Consent Mode v2 and tags › „Odbij sve“ stores the choice and still loads nothing
+[122/130] [mobile-390] › tests\e2e\seo.spec.ts:333:7 › Consent Mode v2 and tags › granular: analytics only loads gtag.js without Google Ads or the Pixel
+[123/130] [mobile-390] › tests\e2e\seo.spec.ts:349:7 › Consent Mode v2 and tags › „Prihvati sve“: consent update, GA4 + Ads config, Pixel, ecommerce events
+[124/130] [mobile-390] › tests\e2e\seo.spec.ts:417:7 › ads landing › /ponuda/[slug]: message-match H1, proof points, parts, noindex
+[125/130] [mobile-390] › tests\e2e\storefront.spec.ts:103:7 › storefront › OEM search → product → cart → guest order with pouzeće lands in Convex
+[126/130] [mobile-390] › tests\e2e\storefront.spec.ts:182:7 › storefront › category filtering by the selected vehicle
+[127/130] [mobile-390] › tests\e2e\storefront.spec.ts:221:7 › storefront › VIN inquiry with a photo
+[128/130] [mobile-390] › tests\e2e\storefront.spec.ts:251:7 › storefront › back-in-stock subscription on an unavailable product
+[129/130] [mobile-390] › tests\e2e\storefront.spec.ts:269:7 › storefront — accessibility and reveal › axe: no serious or critical violations on six templates
+[130/130] [mobile-390] › tests\e2e\storefront.spec.ts:294:7 › storefront — accessibility and reveal › text reveal leaves no copy hidden on home, category and product
+  4 failed
+    [desktop-1440] › tests\e2e\auth.spec.ts:69:7 › auth round trip › a wrong password shows a Serbian error and keeps the visitor signed out 
+    [desktop-1440] › tests\e2e\mechanics.spec.ts:251:7 › mechanics portal › axe and text reveal on the landing and the registration form 
+    [mobile-390] › tests\e2e\auth.spec.ts:69:7 › auth round trip › a wrong password shows a Serbian error and keeps the visitor signed out 
+    [mobile-390] › tests\e2e\mechanics.spec.ts:251:7 › mechanics portal › axe and text reveal on the landing and the registration form 
+  27 skipped
+  99 passed (10.2m)
+PLAYWRIGHT EXIT 1

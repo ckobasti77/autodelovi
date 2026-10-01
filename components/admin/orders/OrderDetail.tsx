@@ -9,7 +9,7 @@
  */
 import { useMutation, useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   ArrowLeftIcon,
   CaretDownIcon,
@@ -56,7 +56,7 @@ import { ADMIN } from "@/constants/routes";
 import { TEST_IDS } from "@/constants/testIds";
 
 import { AttributionView } from "../Attribution";
-import { useNowMinute } from "../hooks";
+import { useConnectionLost, useNowMinute } from "../hooks";
 import { ProductPicker, type PickedProduct } from "../ProductPicker";
 import { useAdminCrumb } from "../shell/context";
 import {
@@ -233,12 +233,18 @@ function TransitionBar({ order, itemCount }: { order: Order; itemCount: number }
   const [tracking, setTracking] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // FLOW-19: offline, the write waits for the connection; staff may close the dialog meanwhile
+  // (same pattern as ConfirmDialog). A later failure then reaches them as a toast.
+  const { lost } = useConnectionLost();
+  const waiting = busy && lost;
+  const detached = useRef(false);
   const next = nextOrderStatuses(order.status, order.deliveryMethod);
   const primary =
     next.find((s) => s !== "otkazana" && s !== "ceka_deo") ?? next.find((s) => s !== "otkazana");
   const others = next.filter((s) => s !== primary);
 
   const open = (to: OrderStatus) => {
+    detached.current = false;
     setPending({ to });
     setReason("");
     setCourier(order.courierCode ?? settings?.couriers[0]?.code ?? "");
@@ -261,9 +267,11 @@ function TransitionBar({ order, itemCount }: { order: Order; itemCount: number }
           : {}),
       });
       toast.success(`${order.number}: ${ADMIN_ORDER_STATUS[pending.to].label.toLowerCase()}.`);
-      setPending(null);
+      if (!detached.current) setPending(null);
     } catch (err) {
-      setError(errorText(err, "Status nije promenjen."));
+      const message = errorText(err, "Status nije promenjen.");
+      if (detached.current) toast.error(message);
+      else setError(message);
     } finally {
       setBusy(false);
     }
@@ -328,10 +336,14 @@ function TransitionBar({ order, itemCount }: { order: Order; itemCount: number }
       ) : null}
       <Dialog
         open={pending !== null}
-        onOpenChange={(v) => !v && !busy && setPending(null)}
+        onOpenChange={(v) => {
+          if (v || (busy && !lost)) return;
+          if (busy) detached.current = true;
+          setPending(null);
+        }}
         title={to ? `${ORDER_TRANSITION_VERB[to]} — ${order.number}` : ""}
         role="alertdialog"
-        dismissible={!busy}
+        dismissible={!busy || lost}
       >
         <form
           className="flex flex-col gap-4"
@@ -380,6 +392,11 @@ function TransitionBar({ order, itemCount }: { order: Order; itemCount: number }
               </Field>
             </>
           ) : null}
+          <p role="status" className={waiting ? "type-body-s text-ink-2" : "sr-only"}>
+            {waiting
+              ? "Nema veze sa serverom. Radnja čeka i biće izvršena čim se veza vrati; prozor možete zatvoriti."
+              : ""}
+          </p>
           {error ? (
             <p role="alert" className="type-body-s text-danger">
               {error}
@@ -389,10 +406,13 @@ function TransitionBar({ order, itemCount }: { order: Order; itemCount: number }
             <Button
               type="button"
               variant="secondary"
-              onClick={() => setPending(null)}
-              disabled={busy}
+              onClick={() => {
+                if (busy) detached.current = true;
+                setPending(null);
+              }}
+              disabled={busy && !lost}
             >
-              Odustani
+              {waiting ? "Zatvori" : "Odustani"}
             </Button>
             <Button
               type="submit"
@@ -401,7 +421,7 @@ function TransitionBar({ order, itemCount }: { order: Order; itemCount: number }
               disabled={!valid}
               data-testid="admin-order-transition-confirm"
             >
-              {to ? ORDER_TRANSITION_VERB[to] : "Potvrdi"}
+              {waiting ? "Čeka vezu…" : to ? ORDER_TRANSITION_VERB[to] : "Potvrdi"}
             </Button>
           </div>
         </form>

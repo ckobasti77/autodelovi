@@ -36,8 +36,3 @@ export function prefersReducedMotion(): boolean {
 }
 
 export { gsap, useGSAP };
-
-// TRANSITIONAL (PERF-10): components/three/HeroStage.tsx still imports ScrollTrigger from this
-// module. Remove this line as soon as it imports from "@/lib/gsap/scroll" — until then every
-// page still loads ScrollTrigger. Keep it last: lib/gsap/scroll imports this module back.
-export { ScrollTrigger } from "@/lib/gsap/scroll";

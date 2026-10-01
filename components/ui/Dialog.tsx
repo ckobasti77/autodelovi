@@ -87,7 +87,7 @@ export function Dialog({
           />
           <div
             className={cn(
-              "pointer-events-none fixed inset-0 z-dialog grid justify-items-center p-4",
+              "pointer-events-none fixed inset-0 z-dialog grid grid-cols-[minmax(0,1fr)] justify-items-center p-4",
               position === "center" ? "items-center" : "items-start pt-[max(1rem,8vh)]",
             )}
           >
@@ -99,7 +99,7 @@ export function Dialog({
               onEscapeKeyDown={guard}
               onPointerDownOutside={guard}
               className={cn(
-                "pointer-events-auto flex max-h-[min(88dvh,720px)] w-full flex-col rounded-md border border-edge-overlay bg-surface-3 text-ink-1 shadow-drawer outline-none",
+                "pointer-events-auto flex max-h-[min(88dvh,720px)] w-full min-w-0 flex-col rounded-md border border-edge-overlay bg-surface-3 text-ink-1 shadow-drawer outline-none",
                 size === "sm" ? "max-w-[480px]" : "max-w-[640px]",
                 className,
               )}

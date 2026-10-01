@@ -3,7 +3,7 @@
 // below 480 px? Then simulate the phone + Viber icons the header adds once the owner sets them.
 import { writeFileSync } from "node:fs";
 import { BASE, launch, newContext, shot } from "../../../../../../scripts/qa/audit/kit.mjs";
-import { OUT, harden, settle } from "../../../../../../scripts/qa/audit/vis-commerce-lib.mjs";
+import { harden, settle } from "../../../../../../scripts/qa/audit/vis-commerce-lib.mjs";
 const browser = await launch();
 const res = {};
 for (const [w, h] of [[360, 780], [390, 844]]) {
