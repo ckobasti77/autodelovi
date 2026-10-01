@@ -26,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({
     title: "Upit za deo po broju šasije (VIN)",
     description:
-      "Ne nalazite deo? Pošaljite broj šasije, opis i fotografiju starog dela — proverimo kod dobavljača i javimo ponudu u toku radnog dana. Odgovor telefonom, Viberom ili e-poštom.",
+      "Ne nalazite deo? Pošaljite broj šasije, opis i fotografiju starog dela. Proverimo kod dobavljača i javimo ponudu u toku radnog dana.",
     path: ROUTES.inquiry,
     titleSuffix: settings.seo.titleSuffix,
   });
@@ -73,7 +73,9 @@ export default async function InquiryPage({ searchParams }: PageProps<"/upit">) 
   };
 
   const name = [viewer?.firstName, viewer?.lastName].filter(Boolean).join(" ");
-  const contacts = contactLinkList(contactFromSettings(settings)).filter((l) => l.channel !== "email");
+  const contacts = contactLinkList(contactFromSettings(settings)).filter(
+    (l) => l.channel !== "email",
+  );
 
   return (
     <div className="px-page pb-(--space-section) pt-6 lg:pt-8">
@@ -96,8 +98,13 @@ export default async function InquiryPage({ searchParams }: PageProps<"/upit">) 
                 .filter((c) => c.kind !== "system")
                 .sort((a, b) => a.name.localeCompare(b.name, "sr"))
                 .map((c) => ({ slug: c.slug, name: c.name })),
-              legal: { terms: settings.legalVersions.terms, privacy: settings.legalVersions.privacy },
-              viewer: viewer ? { name, email: viewer.email ?? "", phone: viewer.phone ?? "" } : null,
+              legal: {
+                terms: settings.legalVersions.terms,
+                privacy: settings.legalVersions.privacy,
+              },
+              viewer: viewer
+                ? { name, email: viewer.email ?? "", phone: viewer.phone ?? "" }
+                : null,
               prefill,
             }}
           />

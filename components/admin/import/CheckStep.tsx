@@ -12,6 +12,7 @@ import type { ValidationSummary } from "@/lib/excel/importProtocol";
 import { normalizeHeader } from "@/lib/import/headers";
 import type { RefCategory, RefManufacturer } from "@/lib/import/row";
 import { formatNumber } from "@/lib/format/number";
+import { ROWS, countImport } from "@/lib/i18n/sr/import";
 import { Button } from "@/components/ui/Button";
 import { Select } from "@/components/ui/Select";
 
@@ -304,7 +305,7 @@ export function CheckStep({
         </Button>
         <div className="flex flex-wrap items-center gap-3">
           <span className="type-caption text-ink-3">
-            Ništa se još ne upisuje. Upisaće se najviše {formatNumber(importable)} redova.
+            Ništa se još ne upisuje. Upisaće se najviše {countImport(importable, ROWS)}.
           </span>
           <Button
             onClick={onStart}

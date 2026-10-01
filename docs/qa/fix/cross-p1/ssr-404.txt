@@ -1,0 +1,6 @@
+{"route":"nema-ove-strane-xyz","status":404,"titles":["Stranica nije pronađena | SKLOP"],"h1":"Stranica nije pronađena","errorFallback":false}
+{"route":"deo/nepostoji-xyz","status":404,"titles":["Stranica nije pronađena | SKLOP"],"h1":null,"errorFallback":true}
+{"route":"upit/xxxxxxxxxxxxxxxxxxxx","status":404,"titles":["Link upita nije ispravan | SKLOP"],"h1":null,"errorFallback":true}
+{"route":"porudzbina/xxxxxxxxxxxxxxxxxxxxxxxx","status":404,"titles":["Link porudžbine nije ispravan | SKLOP"],"h1":null,"errorFallback":true}
+{"route":"porudzbina/hvala/xxxxxxxxxxxxxxxxxxxxxxxx","status":404,"titles":["Link porudžbine nije ispravan | SKLOP"],"h1":null,"errorFallback":true}
+{"route":"delovi/nepostoji-kat","status":404,"titles":["Stranica nije pronađena | SKLOP"],"h1":null,"errorFallback":true}

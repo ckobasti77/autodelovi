@@ -1,0 +1,105 @@
+{
+  "palette-390": {
+    "geo": {
+      "vw": 390,
+      "dialog": [
+        16,
+        374
+      ],
+      "close": [
+        313,
+        357
+      ],
+      "closeOnScreen": true,
+      "docOver": 0
+    },
+    "statusResults": "10 rezultata",
+    "active": {
+      "label": "SK-2026-000147Upit Test fix22-",
+      "outline": "solid 2px rgb(184, 71, 10) offset -2px",
+      "bg": "rgb(238, 241, 244)"
+    },
+    "statusNone": "Nema rezultata za „qqqzzzxx“.",
+    "errors": []
+  },
+  "palette-1440": {
+    "geo": {
+      "vw": 1440,
+      "dialog": [
+        400,
+        1040
+      ],
+      "close": [
+        979,
+        1023
+      ],
+      "closeOnScreen": true,
+      "docOver": 0
+    },
+    "statusResults": "10 rezultata",
+    "active": {
+      "label": "SK-2026-000147Upit Test fix22-",
+      "outline": "solid 2px rgb(184, 71, 10) offset -2px",
+      "bg": "rgb(238, 241, 244)"
+    },
+    "statusNone": "Nema rezultata za „qqqzzzxx“.",
+    "errors": []
+  },
+  "bulk/admin/porudzbine": {
+    "before": [
+      328,
+      381,
+      429
+    ],
+    "after": [
+      328,
+      381,
+      429
+    ],
+    "shifted": false,
+    "status1": "Izabrano: 1",
+    "navigated": false,
+    "status2": "Izbor poništen",
+    "firstRowSelectedAfterSecondClick": "false",
+    "status3": "Izabrano: 1",
+    "errors": []
+  },
+  "bulk/admin/proizvodi": {
+    "before": [
+      328,
+      389,
+      450
+    ],
+    "after": [
+      328,
+      389,
+      450
+    ],
+    "shifted": false,
+    "status1": "Izabrano: 1",
+    "navigated": false,
+    "status2": "Izbor poništen",
+    "firstRowSelectedAfterSecondClick": "false",
+    "status3": "Izabrano: 1",
+    "errors": []
+  },
+  "text": {
+    "gallery": {
+      "transform": "none",
+      "wrap": "anywhere",
+      "overflow": 0,
+      "visibleStart": "Porudžbina je primljena.\n==============="
+    },
+    "linkDecoration": "underline",
+    "linkInTextBlock": 0,
+    "errors": []
+  },
+  "offline": {
+    "idle": "",
+    "offline": "Veza sa serverom je prekinuta — pokušavamo ponovo. Izmene će biti sačuvane kad se veza vrati; podaci na ekranu možda nisu najnoviji.",
+    "role": "status",
+    "sticky": "sticky",
+    "back": "",
+    "errors": []
+  }
+}

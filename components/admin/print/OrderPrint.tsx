@@ -40,7 +40,8 @@ function buyerLines(o: Detail["order"]): string[] {
     c?.address ? `${c.address.street}, ${c.address.postalCode} ${c.address.city}` : "",
     c ? `PIB ${c.pib}${c.mb ? ` · MB ${c.mb}` : ""}` : "",
     c ? `Kontakt: ${person}` : "",
-    `${formatPhone(o.contact.phone)} · ${o.contact.email}`,
+    // A customer without e-mail (phone order) gets the phone alone, not a dangling „ · “.
+    [formatPhone(o.contact.phone), o.contact.email].filter(Boolean).join(" · "),
   ].filter(Boolean);
 }
 
@@ -123,7 +124,7 @@ export function ProformaDocument({ data, settings }: { data: Detail; settings: S
               Kol.
             </th>
             <th scope="col" className="py-2 pr-2 text-right">
-              Cena sa PDV
+              Cena sa PDV-om
             </th>
             <th scope="col" className="py-2 text-right">
               Iznos

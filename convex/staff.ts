@@ -135,7 +135,8 @@ export const createInvite = ownerMutation({
   returns: v.object({ token: v.string(), expiresAt: v.number(), emailed: v.boolean() }),
   handler: async (ctx, { email, role }) => {
     const emailLower = normalizeEmail(email);
-    if (!isValidEmail(emailLower)) invalid("Upišite ispravnu e-mail adresu.", "email");
+    if (!isValidEmail(emailLower))
+      invalid("Adresa e-pošte nije ispravna. Primer: ime@primer.rs.", "email");
     for (const candidate of new Set([email.trim(), emailLower])) {
       const existing = await ctx.db
         .query("users")
@@ -318,7 +319,7 @@ export const acceptInvite = userMutation({
     if (invite.expiresAt < Date.now()) fail("EXPIRED", "Pozivnica je istekla. Zatražite novu.");
     const email = normalizeEmail(ctx.viewer.user.email ?? "");
     if (email !== invite.emailLower)
-      fail("FORBIDDEN", "Prijavite se nalogom sa e-mail adresom na koju je poslata pozivnica.");
+      fail("FORBIDDEN", "Prijavite se nalogom sa adresom e-pošte na koju je poslata pozivnica.");
     const current = ctx.viewer.user.role ?? "customer";
     const role = current === "owner" ? "owner" : invite.role;
     const now = Date.now();

@@ -84,7 +84,7 @@ export default async function ProformaPage({ params }: PageProps<"/porudzbina/[t
                 </span>
               ) : null}
               <span className="block text-ink-2">
-                {formatPhone(o.contact.phone)} · {o.contact.email}
+                {[formatPhone(o.contact.phone), o.contact.email].filter(Boolean).join(" · ")}
               </span>
             </p>
           </div>
@@ -111,10 +111,7 @@ export default async function ProformaPage({ params }: PageProps<"/porudzbina/[t
             The four-column table takes over from sm and always in print. */}
         <ul className="flex flex-col type-body-s sm:hidden print:hidden" aria-label="Stavke">
           {o.items.map((i, idx) => (
-            <li
-              key={idx}
-              className="flex flex-col gap-1 border-b border-line py-3"
-            >
+            <li key={idx} className="flex flex-col gap-1 border-b border-line py-3">
               <span className="text-ink-1">{i.name}</span>
               <span className="type-caption text-ink-3">
                 {i.sku}

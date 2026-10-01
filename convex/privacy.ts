@@ -35,7 +35,8 @@ async function resolveSubject(
 ): Promise<Subject> {
   let user = args.userId ? await ctx.db.get("users", args.userId) : null;
   let email = args.email?.trim() ? normalizeEmail(args.email) : null;
-  if (email && !isValidEmail(email)) invalid("Upišite ispravnu e-mail adresu.", "email");
+  if (email && !isValidEmail(email))
+    invalid("Adresa e-pošte nije ispravna. Primer: ime@primer.rs.", "email");
   if (!user && email) {
     const e = email;
     user = await ctx.db
@@ -44,7 +45,7 @@ async function resolveSubject(
       .first();
   }
   if (!email && user?.email) email = normalizeEmail(user.email);
-  if (!user && !email) invalid("Izaberite kupca ili upišite e-mail adresu.");
+  if (!user && !email) invalid("Izaberite kupca ili upišite adresu e-pošte.");
   return { user, email };
 }
 
@@ -315,7 +316,9 @@ async function anonymizeOrder(ctx: MutationCtx, order: Doc<"orders">): Promise<v
     contact: { firstName: ANON_NAME, lastName: "", email: "", phone: "" },
     delivery: {
       ...order.delivery,
-      ...(address ? { address: { street: "—", city: address.city, postalCode: address.postalCode } } : {}),
+      ...(address
+        ? { address: { street: "—", city: address.city, postalCode: address.postalCode } }
+        : {}),
     },
     vehicle: withoutVin(order.vehicle),
     customerNote: undefined,
@@ -328,7 +331,10 @@ async function anonymizeOrder(ctx: MutationCtx, order: Doc<"orders">): Promise<v
 }
 
 /** An inquiry that became an order stays (anonymized); any other one is deleted. */
-async function eraseInquiry(ctx: MutationCtx, inquiry: Doc<"inquiries">): Promise<"kept" | "deleted"> {
+async function eraseInquiry(
+  ctx: MutationCtx,
+  inquiry: Doc<"inquiries">,
+): Promise<"kept" | "deleted"> {
   for (const photo of inquiry.photos) await deleteStorageFile(ctx, photo);
   await deleteEmailCopies(ctx, "inquiry", inquiry._id);
   if (inquiry.orderId) {
@@ -361,11 +367,10 @@ async function eraseInquiry(ctx: MutationCtx, inquiry: Doc<"inquiries">): Promis
 }
 
 /** Deletes every row of `rows` (already bounded). */
-async function deleteAll<T extends "savedVehicles" | "favorites" | "notifications" | "customerNotes" | "backInStockSubscriptions">(
-  ctx: MutationCtx,
-  table: T,
-  rows: Doc<T>[],
-): Promise<number> {
+async function deleteAll<
+  T extends
+    "savedVehicles" | "favorites" | "notifications" | "customerNotes" | "backInStockSubscriptions",
+>(ctx: MutationCtx, table: T, rows: Doc<T>[]): Promise<number> {
   for (const row of rows) await ctx.db.delete(table, row._id);
   return rows.length;
 }
@@ -437,8 +442,7 @@ export const anonymize = ownerMutation({
 
     // A full batch means there may be more: the account stays until everything is done, so
     // the next pass still finds the records through it.
-    const more =
-      orders.length >= LIMIT || inquiries.length >= LIMIT || counts.backInStock >= LIMIT;
+    const more = orders.length >= LIMIT || inquiries.length >= LIMIT || counts.backInStock >= LIMIT;
 
     if (user && !more) {
       const userId = user._id;

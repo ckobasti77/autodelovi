@@ -46,13 +46,15 @@ function cartProduct(card: ProductCardData): CartProduct {
     stockState: card.stockState,
     stockQty: card.stockQty,
     allowBackorder: card.allowBackorder,
+    leadTimeDays: card.leadTimeDays,
   };
 }
 
 /** Image candidates per layout (PERF-21): 104 px list thumbnail below 480 px (`sm`). */
 const SIZES = {
   grid: "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, (min-width: 480px) 50vw, 100vw",
-  responsive: "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, (min-width: 480px) 50vw, 104px",
+  responsive:
+    "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, (min-width: 480px) 50vw, 104px",
   list: "104px",
 } as const;
 
@@ -92,10 +94,12 @@ export function ProductCard({
       : variant === "responsive"
         ? "h-full min-h-[6.5rem] sm:aspect-[4/3] sm:h-auto sm:min-h-0"
         : "aspect-[4/3]";
-  const chipVisible = variant === "grid" ? "flex" : variant === "responsive" ? "hidden sm:flex" : "hidden";
+  const chipVisible =
+    variant === "grid" ? "flex" : variant === "responsive" ? "hidden sm:flex" : "hidden";
   // Reserve the chip row (top 10 px + 24 px chip + 2 px) above the render.
   const chipRow = variant === "grid" ? "pt-9" : variant === "responsive" ? "sm:pt-9" : "";
-  const nameClamp = variant === "grid" ? "line-clamp-3" : variant === "responsive" ? "sm:line-clamp-3" : "";
+  const nameClamp =
+    variant === "grid" ? "line-clamp-3" : variant === "responsive" ? "sm:line-clamp-3" : "";
 
   return (
     <article
@@ -129,7 +133,9 @@ export function ProductCard({
       <div className="flex min-w-0 flex-col gap-1.5 p-3 sm:p-4">
         <p className="type-caption text-ink-3">
           {card.manufacturerName}
-          <span className={variant === "grid" ? "hidden" : variant === "responsive" ? "sm:hidden" : ""}>
+          <span
+            className={variant === "grid" ? "hidden" : variant === "responsive" ? "sm:hidden" : ""}
+          >
             {" · "}
             {QUALITY_LABEL[card.quality]}
           </span>

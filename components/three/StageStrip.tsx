@@ -7,7 +7,8 @@
  * `numeral-s`, labels from 1280 px; the active cell has a 2 px accent bar that fills with the
  * progress inside the stage (written straight to the DOM, never through React state), an
  * accent number and `aria-current="step"`. Phones: „03 / 07 Kočnice i vešanje“ with previous /
- * next buttons (44 px). Both end with „Rasklopi / Sklopi“ and „Lista delova“.
+ * next buttons (44 px). Both end with „Rasklopi / Sklopi“ and „Lista delova“. Below 1024 px a
+ * tall screen also gets the `StageLegend` between the stage and this strip.
  */
 import { useEffect, useRef } from "react";
 import {
@@ -21,9 +22,11 @@ import { cn } from "@/lib/cn";
 import { STAGES } from "@/lib/catalog/taxonomy";
 import { stageLocal, stageWindows } from "@/lib/three/explode";
 import { STAGE_SHORT, HERO_COPY } from "@/lib/i18n/sr/hero";
+import { MEDIA } from "@/constants/motion";
 import { TEST_IDS } from "@/constants/testIds";
 import { Button } from "@/components/ui/Button";
 import { IconButton } from "@/components/ui/IconButton";
+import { useMediaQuery } from "@/components/ui/motion";
 import { heroStore, useHeroStore } from "@/components/three/heroStore";
 import { heroDom } from "@/components/three/heroDom";
 
@@ -41,6 +44,8 @@ export function StageStrip({
 }) {
   const stage = useHeroStore((s) => s.stage);
   const exploded = useHeroStore((s) => s.progress >= 0.5);
+  // With the part drawer open the index is narrower: numbers only, as from 1024 px (MOT-04).
+  const panelOpen = useHeroStore((s) => s.selected !== null);
   const barRefs = useRef<Array<HTMLSpanElement | null>>([]);
   const mobileBar = useRef<HTMLSpanElement | null>(null);
   const listRef = useRef<HTMLButtonElement | null>(null);
@@ -85,10 +90,7 @@ export function StageStrip({
             const active = s.stage === stage;
             return (
               <li key={s.stage} className="relative min-w-0">
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-x-0 top-0 h-px bg-line-strong"
-                />
+                <span aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-line-strong" />
                 <span
                   aria-hidden="true"
                   ref={(el) => {
@@ -114,7 +116,14 @@ export function StageStrip({
                   >
                     {pad(s.stage)}
                   </span>
-                  <span className="hidden w-full truncate text-[0.8125rem] leading-tight xl:block">
+                  {/* Two balanced lines rather than an ellipsis: at 1280–1439 px a cell is
+                      ~98 px and „Agregati i hlađenje“ needs ~114 (VIS-04). */}
+                  <span
+                    className={cn(
+                      "hidden w-full text-balance text-[0.8125rem] leading-tight",
+                      !panelOpen && "xl:block",
+                    )}
+                  >
                     {STAGE_SHORT[s.key]}
                   </span>
                 </button>
@@ -175,5 +184,58 @@ export function StageStrip({
         </Button>
       </div>
     </div>
+  );
+}
+
+/**
+ * Stage legend below 1024 px (MOT-01, DESIGN-SYSTEM §5.7): the stage keeps the poster's aspect,
+ * so a tall screen leaves spare height between the drawing and the strip. That height lists the
+ * stages as detents — numbers in one row from 3.5 rem, numbers with names in two columns from
+ * 9.5 rem — and the legend is gone when there is no room (most phones with browser chrome).
+ * Sized by its container (`container-type: size` on the parent), not by the viewport.
+ */
+export function StageLegend({ onStage }: { onStage: (stage: number) => void }) {
+  const stage = useHeroStore((s) => s.stage);
+  // ≥ 1024 px the strip carries the index: keep a single „Faze rasklapanja“ nav in the DOM.
+  const desktop = useMediaQuery(MEDIA.desktop);
+  if (desktop) return null;
+  return (
+    <nav
+      data-reveal="off"
+      aria-label={HERO_COPY.stageNavLabel}
+      className="hidden h-full flex-col justify-center [@container(min-height:3.5rem)]:flex"
+    >
+      <ol className="grid grid-cols-8 [@container(min-height:9.5rem)]:grid-cols-2 [@container(min-height:9.5rem)]:gap-x-(--gutter)">
+        {STAGES.map((s) => {
+          const active = s.stage === stage;
+          return (
+            <li key={s.stage} className="min-w-0">
+              <button
+                type="button"
+                onClick={() => onStage(s.stage)}
+                aria-current={active ? "step" : undefined}
+                aria-label={`${pad(s.stage)} ${s.labelSr}`}
+                className={cn(
+                  "flex h-11 w-full min-w-0 cursor-pointer items-center justify-center gap-2 rounded-xs text-left transition-control focus-ring-inset [@container(min-height:9.5rem)]:h-9 [@container(min-height:9.5rem)]:justify-start",
+                  active ? "text-ink-1" : "text-ink-3 hover:text-ink-1",
+                )}
+              >
+                <span
+                  className={cn(
+                    "type-numeral-s tabular-nums",
+                    active ? "text-accent" : "text-ink-2",
+                  )}
+                >
+                  {pad(s.stage)}
+                </span>
+                <span className="hidden min-w-0 text-balance type-caption leading-tight [@container(min-height:9.5rem)]:block">
+                  {STAGE_SHORT[s.key]}
+                </span>
+              </button>
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
   );
 }

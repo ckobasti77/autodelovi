@@ -8,6 +8,7 @@
 import type { ReactNode } from "react";
 import {
   CheckCircleIcon,
+  CheckSquareIcon,
   ClockIcon,
   SquareHalfBottomIcon,
   SquareIcon,
@@ -15,7 +16,6 @@ import {
   HourglassIcon,
   PackageIcon,
   PaperPlaneTiltIcon,
-  ReceiptIcon,
   TruckIcon,
   WarningCircleIcon,
   WarningIcon,
@@ -90,7 +90,8 @@ export function Section({
     <section
       id={id}
       aria-labelledby={title && id ? `${id}-title` : undefined}
-      className={cn(panel && "rounded-sm border border-line bg-surface-1", className)}
+      // min-w-0: a section is usually a grid/flex item; its truncating rows must not widen it.
+      className={cn("min-w-0", panel && "rounded-sm border border-line bg-surface-1", className)}
     >
       {title || actions ? (
         <div
@@ -147,12 +148,12 @@ export function DefinitionList({
 const ORDER_ICON: Record<OrderStatus, ReactNode> = {
   nova: <WarningCircleIcon size={14} weight="bold" />,
   potvrdjena: <CheckCircleIcon size={14} weight="bold" />,
-  ceka_deo: <HourglassIcon size={14} weight="bold" />,
+  ceka_deo: <WarningIcon size={14} weight="bold" />,
   spremna_za_preuzimanje: <PackageIcon size={14} weight="bold" />,
   poslata: <TruckIcon size={14} weight="bold" />,
   preuzeta: <CheckCircleIcon size={14} weight="bold" />,
   isporucena: <CheckCircleIcon size={14} weight="bold" />,
-  zavrsena: <ReceiptIcon size={14} weight="bold" />,
+  zavrsena: <CheckSquareIcon size={14} weight="bold" />,
   otkazana: <XCircleIcon size={14} weight="bold" />,
 };
 
@@ -363,12 +364,21 @@ export function ErrorBanner({ children, onRetry }: { children: ReactNode; onRetr
 }
 
 /** „52 / 60“ — characters used of the visible limit; over the limit turns warning. */
-export function CharCount({ value, max }: { value: string; max: number }) {
+/** `n / max`; turns to a warning past `warnAt` (default `max`), e.g. 170 allowed, 155 shown by Google. */
+export function CharCount({
+  value,
+  max,
+  warnAt = max,
+}: {
+  value: string;
+  max: number;
+  warnAt?: number;
+}) {
   return (
     <span
       className={cn(
         "whitespace-nowrap type-caption tabular-nums",
-        value.length > max ? "font-semibold text-warning" : "text-ink-3",
+        value.length > warnAt ? "font-semibold text-warning" : "text-ink-3",
       )}
     >
       {value.length}&nbsp;/&nbsp;{max}

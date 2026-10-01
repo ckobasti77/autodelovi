@@ -1,0 +1,23 @@
+{
+  "align": {
+    "barInner": [
+      556,
+      2236
+    ],
+    "main": [
+      556,
+      2236
+    ]
+  },
+  "trend": [
+    "prethodnih 7 dana: 0",
+    "prethodnih 7 dana: 0"
+  ],
+  "bellLabel": "Obaveštenja, nepročitano: više od 99",
+  "popover": {
+    "labelledby": true,
+    "tag": "H2",
+    "text": "Obaveštenja"
+  },
+  "statusIcons": {}
+}

@@ -1,0 +1,32 @@
+{
+  "FLOW-18-suspend": {
+    "alertText": "Pauzirati nalog servisa „Audit servis d.o.o.“?Majstor odmah vidi maloprodajne cene i ne može da poručuje po svojim uslovima dok nalog ne aktivirate ponovo.OdustaniPauziraj nalog",
+    "statusAfterCancel": "approved"
+  },
+  "FLOW-24+A11Y-17-wizard": {
+    "rows": "22 reda",
+    "detected": null,
+    "most": "Ništa se još ne upisuje. Upisaće se najviše 22 reda.",
+    "writes": "20 artikala se upisuje; redovi sa greškom se preskaču.",
+    "warnHint": "2 reda sa upozorenjem",
+    "focusStep2": {
+      "tag": "H2",
+      "text": "Korak 2 od 5: Kolone"
+    },
+    "focusStep3": "Korak 3 od 5: Provera",
+    "focusStep4": "Korak 4 od 5: Probni uvoz",
+    "focusAfterCancel": "Korak 1 od 5: Datoteka"
+  },
+  "A11Y-17-batch": {
+    "href": "/admin/uvoz/n57bgbdadm8z3bhn10y5zvj9z18ffw9z",
+    "role": "status",
+    "text": "Uvoz je otkazan.",
+    "description": "Samo lager i cene · 22 reda · 01.10. 08:24"
+  },
+  "consoleErrors": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

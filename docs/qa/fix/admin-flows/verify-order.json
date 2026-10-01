@@ -1,0 +1,110 @@
+{
+  "VIS-18": {
+    "390": {
+      "heads": [
+        "Artikal",
+        "Iznos"
+      ],
+      "cells": [
+        "Kočioni disk prednji 276 × 24 mm DEMO-0004 · OEM 5Q0 615 505 R · Febi Bilstein Bilo na stanju · sada 2 kom. 1 × 4.690 RS",
+        "4.690 RSD"
+      ],
+      "tableW": 356,
+      "wrapClient": 356,
+      "wrapScroll": 356,
+      "overflows": false,
+      "tableRightInsideCard": true
+    },
+    "1024": {
+      "heads": [
+        "Artikal",
+        "Iznos"
+      ],
+      "cells": [
+        "Kočioni disk prednji 276 × 24 mm DEMO-0004 · OEM 5Q0 615 505 R · Febi Bilstein Bilo na stanju · sada 2 kom. 1 × 4.690 RS",
+        "4.690 RSD"
+      ],
+      "tableW": 566,
+      "wrapClient": 566,
+      "wrapScroll": 566,
+      "overflows": false,
+      "tableRightInsideCard": true
+    },
+    "1100": {
+      "heads": [
+        "Artikal",
+        "Iznos"
+      ],
+      "cells": [
+        "Kočioni disk prednji 276 × 24 mm DEMO-0004 · OEM 5Q0 615 505 R · Febi Bilstein Bilo na stanju · sada 2 kom. 1 × 4.690 RS",
+        "4.690 RSD"
+      ],
+      "tableW": 642,
+      "wrapClient": 642,
+      "wrapScroll": 642,
+      "overflows": false,
+      "tableRightInsideCard": true
+    },
+    "1440": {
+      "heads": [
+        "Artikal",
+        "Kol.",
+        "Cena",
+        "Iznos"
+      ],
+      "cells": [
+        "Kočioni disk prednji 276 × 24 mm DEMO-0004 · OEM 5Q0 615 505 R · Febi Bilstein Bilo na stanju · sada 2 kom.",
+        "1",
+        "4.690 RSD",
+        "4.690 RSD"
+      ],
+      "tableW": 754,
+      "wrapClient": 754,
+      "wrapScroll": 754,
+      "overflows": false,
+      "tableRightInsideCard": true
+    },
+    "1024-edit": {
+      "heads": [
+        "Artikal",
+        "Kol.",
+        "Cena",
+        "Iznos",
+        "Ukloni"
+      ],
+      "tableW": 566,
+      "wrapClient": 566,
+      "overflows": false
+    },
+    "1100-edit": {
+      "heads": [
+        "Artikal",
+        "Kol.",
+        "Cena",
+        "Iznos",
+        "Ukloni"
+      ],
+      "tableW": 642,
+      "wrapClient": 642,
+      "overflows": false
+    },
+    "1440-edit": {
+      "heads": [
+        "Artikal",
+        "Kol.",
+        "Cena",
+        "Iznos",
+        "Ukloni"
+      ],
+      "tableW": 754,
+      "wrapClient": 754,
+      "overflows": false
+    }
+  },
+  "consoleErrors": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

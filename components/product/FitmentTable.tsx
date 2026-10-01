@@ -1,4 +1,5 @@
 import type { FitmentRow } from "@/lib/catalog/types";
+import { Disclosure } from "@/components/ui/Disclosure";
 
 const years = (r: FitmentRow) => (r.yearFrom ? `${r.yearFrom}–${r.yearTo ?? ""}` : "");
 
@@ -37,15 +38,21 @@ function Table({ rows, caption }: { rows: FitmentRow[]; caption?: string }) {
               <td className="px-3 py-2.5 text-ink-2">{r.brandName}</td>
               <td className="px-3 py-2.5 text-ink-1">
                 {r.generationName}
-                <span className="block type-caption font-normal text-ink-3 sm:hidden">{years(r)}</span>
+                <span className="block type-caption font-normal text-ink-3 sm:hidden">
+                  {years(r)}
+                </span>
               </td>
-              <td className="hidden px-3 py-2.5 tabular-nums text-ink-2 sm:table-cell">{years(r)}</td>
+              <td className="hidden px-3 py-2.5 tabular-nums text-ink-2 sm:table-cell">
+                {years(r)}
+              </td>
               <td className="px-3 py-2.5 text-ink-2">
                 {r.engineName ? (
                   <>
                     {r.engineName}
                     {r.engineCodes.length ? (
-                      <span className="block type-code-s text-ink-3">{r.engineCodes.join(", ")}</span>
+                      <span className="block type-code-s text-ink-3">
+                        {r.engineCodes.join(", ")}
+                      </span>
                     ) : null}
                   </>
                 ) : (
@@ -75,15 +82,19 @@ export function FitmentTable({ rows }: { rows: FitmentRow[] }) {
     <div className="flex flex-col gap-3" data-reveal="off">
       <Table rows={first} caption="Vozila za koja deo odgovara" />
       {rest.length ? (
-        <details className="group">
-          <summary className="inline-flex min-h-11 cursor-pointer list-none items-center type-body-s font-semibold text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent [&::-webkit-details-marker]:hidden">
-            <span className="group-open:hidden">Prikaži još {rest.length}</span>
-            <span className="hidden group-open:inline">Prikaži manje</span>
-          </summary>
-          <div className="mt-3">
-            <Table rows={rest} />
-          </div>
-        </details>
+        <Disclosure
+          className="group"
+          summaryClassName="inline-flex min-h-11 items-center type-body-s font-semibold text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent"
+          summary={
+            <>
+              <span className="group-open:hidden">Prikaži još {rest.length}</span>
+              <span className="hidden group-open:inline">Prikaži manje</span>
+            </>
+          }
+          contentClassName="pt-3"
+        >
+          <Table rows={rest} />
+        </Disclosure>
       ) : null}
     </div>
   );

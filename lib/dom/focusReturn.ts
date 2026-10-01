@@ -139,7 +139,8 @@ function restore(el: HTMLElement, panel: Node | null, onScreenOnly: boolean): bo
  *    the add-to-cart button when the drawer was opened from a toast that has since closed);
  * 4. the main landmark.
  * Nothing is restored when the user has already put focus elsewhere (non-modal sheet, click
- * outside): focus is only taken back from `<body>` or from the panel. The page never scrolls to
+ * outside): focus is only taken back from `<body>`, from the panel, or from the container of an
+ * outer overlay (where Radix parks focus when that overlay's content re-renders). The page never scrolls to
  * return focus to a visible control.
  */
 export function useFocusReturn(enabled: boolean, open: boolean) {
@@ -171,7 +172,17 @@ export function useFocusReturn(enabled: boolean, open: boolean) {
       const { candidates, opener, previous } = recorded.current;
       recorded.current = EMPTY;
       const active = document.activeElement;
-      if (active && active !== document.body && !panel?.contains(active)) return;
+      // Focus the user put elsewhere stays. A dialog container itself is not such a place: it is
+      // the fallback Radix focuses when content under a still-open outer overlay re-renders (the
+      // filter sheet after a vehicle choice made from inside it).
+      if (
+        active &&
+        active !== document.body &&
+        !panel?.contains(active) &&
+        !active.matches(OVERLAY_SELECTOR)
+      ) {
+        return;
+      }
       for (const { el, onScreenOnly } of candidates) {
         if (restore(el, panel, onScreenOnly)) return;
         if (el === opener && !el.isConnected && previous?.isConnected) {

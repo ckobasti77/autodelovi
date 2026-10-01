@@ -1,0 +1,140 @@
+[
+ {
+  "id": "hero-field-390-esc",
+  "before": "button[vehicle-picker-trigger] \"Izaberite vozilomarka, model, motorIzaberi\" (OPENER) fv=true",
+  "afterOpen": "button[] \"Smanji panel\" fv=true",
+  "url": "/",
+  "dialogsOpen": 0,
+  "dialogNames": [],
+  "after": "button[vehicle-picker-trigger] \"Izaberite vozilomarka, model, motorIzaberi\" (OPENER) fv=true",
+  "scrollDelta": 0,
+  "openerStillConnected": true,
+  "afterNextTab": "a[] \"Nemate broj? Pošaljite broj šasije\" fv=true",
+  "errors": []
+ },
+ {
+  "id": "hero-field-390-choose",
+  "before": "button[vehicle-picker-trigger] \"Izaberite vozilomarka, model, motorIzaberi\" (OPENER) fv=true",
+  "afterOpen": "button[] \"Smanji panel\" fv=true",
+  "url": "/",
+  "dialogsOpen": 0,
+  "dialogNames": [],
+  "after": "button[vehicle-picker-trigger] \"VW Golf VIIPromeni\" (OPENER) fv=true",
+  "scrollDelta": 0,
+  "openerStillConnected": true,
+  "afterNextTab": "button[] \"Ukloni izabrano vozilo\" fv=true",
+  "errors": []
+ },
+ {
+  "id": "catalog-btn-1440-esc",
+  "before": "button[] \"Izaberite vozilo\" (OPENER) fv=true",
+  "afterOpen": "button[] \"Zatvori\" fv=true",
+  "url": "/delovi/kocioni-diskovi",
+  "dialogsOpen": 0,
+  "dialogNames": [],
+  "after": "button[] \"Izaberite vozilo\" (OPENER) fv=true",
+  "scrollDelta": 0,
+  "openerStillConnected": true,
+  "afterNextTab": "button[] \"Dostupnost\" fv=true",
+  "errors": []
+ },
+ {
+  "id": "catalog-btn-1440-choose",
+  "before": "button[] \"Izaberite vozilo\" (OPENER) fv=true",
+  "afterOpen": "button[] \"Zatvori\" fv=true",
+  "url": "/delovi/kocioni-diskovi?marka=volkswagen&model=golf&generacija=golf-7",
+  "dialogsOpen": 0,
+  "dialogNames": [],
+  "after": "button[] \"Promeni vozilo\" (OPENER) fv=true",
+  "scrollDelta": 0,
+  "openerStillConnected": true,
+  "afterNextTab": "button[] \"Dostupnost\" fv=true",
+  "errors": []
+ },
+ {
+  "id": "catalog-btn-390-esc",
+  "before": "button[] \"Izaberite vozilo\" (OPENER) fv=true",
+  "afterOpen": "button[] \"Smanji panel\" fv=true",
+  "url": "/delovi/kocioni-diskovi",
+  "dialogsOpen": 1,
+  "dialogNames": [
+   "Filteri"
+  ],
+  "after": "button[] \"Izaberite vozilo\" (OPENER) fv=true",
+  "scrollDelta": 0,
+  "openerStillConnected": true,
+  "afterNextTab": "button[] \"Dostupnost\" fv=true",
+  "errors": []
+ },
+ {
+  "id": "catalog-btn-390-choose",
+  "before": "button[] \"Izaberite vozilo\" (OPENER) fv=true",
+  "afterOpen": "button[] \"Smanji panel\" fv=true",
+  "url": "/delovi/kocioni-diskovi?marka=volkswagen&model=golf&generacija=golf-7",
+  "dialogsOpen": 1,
+  "dialogNames": [
+   "Filteri"
+  ],
+  "after": "button[] \"Promeni vozilo\" (OPENER) fv=true",
+  "scrollDelta": 0,
+  "openerStillConnected": true,
+  "afterNextTab": "button[] \"Dostupnost\" fv=true",
+  "errors": []
+ },
+ {
+  "id": "header-chip-1440-close-btn",
+  "before": "button[vehicle-picker-trigger] \"Izaberite vozilo\" (OPENER) fv=true",
+  "afterOpen": "button[] \"Zatvori\" fv=true",
+  "url": "/delovi/kocioni-diskovi",
+  "dialogsOpen": 0,
+  "dialogNames": [],
+  "after": "button[vehicle-picker-trigger] \"Izaberite vozilo\" (OPENER) fv=true",
+  "scrollDelta": 0,
+  "openerStillConnected": true,
+  "afterNextTab": "a[account-button] \"Moj nalog\" fv=true",
+  "errors": []
+ },
+ {
+  "id": "search-1440-suggestion",
+  "before": "button[header-search-trigger] \"Broj dela ili naziv/\" (OPENER) fv=true",
+  "afterOpen": "input#cbx_r_6_-input[] \"Broj dela ili naziv\" fv=true",
+  "url": "/delovi/kocioni-diskovi",
+  "dialogsOpen": 0,
+  "dialogNames": [],
+  "after": "button[header-search-trigger] \"Broj dela ili naziv/\" (OPENER) fv=true",
+  "scrollDelta": 0,
+  "openerStillConnected": true,
+  "afterNextTab": "button[vehicle-picker-trigger] \"Izaberite vozilo\" fv=true",
+  "errors": []
+ },
+ {
+  "id": "search-390-submit",
+  "before": "button[] \"Pretraga delova\" (OPENER) fv=true",
+  "afterOpen": "input#cbx_r_6_-input[] \"Broj dela ili naziv\" fv=true",
+  "url": "/pretraga?q=disk",
+  "dialogsOpen": 0,
+  "dialogNames": [],
+  "after": "button[] \"Pretraga delova\" (OPENER) fv=true",
+  "scrollDelta": 0,
+  "openerStillConnected": true,
+  "afterNextTab": "a[cart-button] \"Korpa\" fv=true",
+  "errors": []
+ },
+ {
+  "id": "checkout-edit-cart-1440",
+  "skipped": "opener not found"
+ },
+ {
+  "id": "cart-drawer-checkout-link-1440",
+  "before": "a[cart-button] \"Korpa, 1 artikal\" (OPENER) fv=true",
+  "afterOpen": "button[] \"Zatvori\" fv=true",
+  "url": "/porudzbina",
+  "dialogsOpen": 0,
+  "dialogNames": [],
+  "after": "a[cart-button] \"Korpa, 1 artikal\" (OPENER) fv=true",
+  "scrollDelta": 0,
+  "openerStillConnected": true,
+  "afterNextTab": "input#co-firstName[] \"\" fv=true",
+  "errors": []
+ }
+]

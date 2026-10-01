@@ -26,6 +26,10 @@ const url = process.env.NEXT_PUBLIC_CONVEX_URL;
 export const convexClient: ConvexReactClient | null = url
   ? new ConvexReactClient(url, {
       webSocketConstructor: DeferredWebSocket as unknown as typeof WebSocket,
+      // Reuse the token the page was rendered with instead of refreshing it right after the
+      // first Authenticate: saves one /api/auth round trip and a re-run of every authenticated
+      // query per page load; a refresh is still scheduled before the token expires (BE-08, D285).
+      initialAuthTokenReuse: true,
     })
   : null;
 

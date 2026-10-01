@@ -279,13 +279,15 @@ function CategoryForm({ node }: { node: Node }) {
             label="Opis za pretraživače"
             help={
               <>
-                Do 155 znakova se vidi ceo. <CharCount value={form.seoDescription} max={155} />
+                Do 155 znakova se vidi ceo.{" "}
+                <CharCount value={form.seoDescription} max={170} warnAt={155} />
               </>
             }
           >
             <Textarea
               rows={2}
               maxLength={170}
+              showCount={false}
               value={form.seoDescription}
               onChange={(e) => setForm({ ...form, seoDescription: e.target.value })}
             />

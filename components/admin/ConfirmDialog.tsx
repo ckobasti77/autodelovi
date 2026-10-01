@@ -3,9 +3,11 @@
 /**
  * Confirmation for destructive or irreversible staff actions (DESIGN-SYSTEM §9.14):
  * explicit verb on the button, optional required reason, optional typed phrase for owner
- * actions („OBRIŠI DEMO“). Esc / scrim are blocked while the action runs.
+ * actions („OBRIŠI DEMO“). „Odustani“ is locked while the action runs — except when the
+ * connection is lost (FLOW-19): the write is queued and replays on reconnect, so the dialog
+ * says so and can be closed („Zatvori“); a later failure still reaches staff as a toast.
  */
-import { useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
 import { Button } from "@/components/ui/Button";
@@ -13,6 +15,9 @@ import { Dialog } from "@/components/ui/Dialog";
 import { Field } from "@/components/ui/Field";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
+import { toast } from "@/components/ui/Toast";
+
+import { useConnectionLost } from "./hooks";
 
 export type ConfirmOptions = {
   title: string;
@@ -55,6 +60,16 @@ function Body({ options, close }: { options: ConfirmOptions; close: () => void }
   const [phrase, setPhrase] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const { lost } = useConnectionLost();
+  const waiting = busy && lost;
+  // Closed while the write waited for the connection: a later failure becomes a toast.
+  const detached = useRef(false);
+  useEffect(() => {
+    detached.current = false;
+    return () => {
+      detached.current = true;
+    };
+  }, []);
   const reasonOk = !options.reasonLabel || reason.trim().length >= 3;
   const phraseOk = !options.phrase || phrase.trim() === options.phrase;
 
@@ -66,7 +81,9 @@ function Body({ options, close }: { options: ConfirmOptions; close: () => void }
       await options.onConfirm(reason.trim());
       close();
     } catch (err) {
-      setError(convexErrorMessage(err, "Radnja nije izvršena. Pokušajte ponovo."));
+      const message = convexErrorMessage(err, "Radnja nije izvršena. Pokušajte ponovo.");
+      if (detached.current) toast.error(message);
+      else setError(message);
     } finally {
       setBusy(false);
     }
@@ -111,6 +128,11 @@ function Body({ options, close }: { options: ConfirmOptions; close: () => void }
           />
         </Field>
       ) : null}
+      <p role="status" className={waiting ? "type-body-s text-ink-2" : "sr-only"}>
+        {waiting
+          ? "Nema veze sa serverom. Radnja čeka i biće izvršena čim se veza vrati; prozor možete zatvoriti."
+          : ""}
+      </p>
       {error ? (
         <p role="alert" className="type-body-s text-danger">
           {error}
@@ -122,10 +144,10 @@ function Body({ options, close }: { options: ConfirmOptions; close: () => void }
           type="button"
           variant="secondary"
           onClick={close}
-          disabled={busy}
+          disabled={busy && !lost}
           autoFocus={!hasInputs && options.danger}
         >
-          Odustani
+          {waiting ? "Zatvori" : "Odustani"}
         </Button>
         <Button
           type="submit"
@@ -134,7 +156,7 @@ function Body({ options, close }: { options: ConfirmOptions; close: () => void }
           disabled={!reasonOk || !phraseOk}
           autoFocus={!hasInputs && !options.danger}
         >
-          {options.confirmLabel}
+          {waiting ? "Čeka vezu…" : options.confirmLabel}
         </Button>
       </div>
     </form>

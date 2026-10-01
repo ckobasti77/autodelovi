@@ -22,6 +22,7 @@ import { api } from "@/convex/_generated/api";
 import type { Id } from "@/convex/_generated/dataModel";
 import { nextOrderStatuses, type OrderStatus } from "@/lib/domain/orderStateMachine";
 import { compactDateTime, moneyInputValue, parseMoneyInput } from "@/lib/admin/format";
+import { cn } from "@/lib/cn";
 import { formatRSD } from "@/lib/format/money";
 import { formatPhone } from "@/lib/format/phone";
 import {
@@ -70,6 +71,11 @@ import {
 
 type Detail = NonNullable<FunctionReturnType<typeof api.ordersAdmin.get>>;
 type Order = Detail["order"];
+
+/** 1000 bp → „10 %“, 1250 bp → „12,5 %“. */
+function discountText(bp: number) {
+  return `${String(bp / 100).replace(".", ",")}\u00a0%`;
+}
 
 function errorText(err: unknown, fallback: string) {
   return convexErrorCode(err) === "CONFLICT"
@@ -473,6 +479,11 @@ function ItemsSection({ data }: { data: Detail }) {
     }
   };
 
+  // VIS-18: below 1280 px (the two-column lg layout and phones) the read-only table folds to
+  // Artikal | Iznos with „2 × 4.690 RSD“ under the name; Rabat only when a line has one.
+  const showRabat = data.items.some((i) => i.discountBp > 0);
+  const wide = editing ? undefined : "hidden xl:table-cell";
+
   return (
     <Section
       title="Stavke"
@@ -489,22 +500,24 @@ function ItemsSection({ data }: { data: Detail }) {
       }
     >
       <div className="-mx-4 overflow-x-auto">
-        <table className="w-full min-w-[640px] border-collapse text-cell">
+        <table className={cn("w-full border-collapse text-cell", editing && "min-w-[560px]")}>
           <caption className="sr-only">Stavke porudžbine {o.number}</caption>
           <thead>
             <tr className="border-b border-line text-left type-label uppercase text-ink-3">
               <th scope="col" className="px-4 py-2">
                 Artikal
               </th>
-              <th scope="col" className="px-2 py-2 text-right">
+              <th scope="col" className={cn("px-2 py-2 text-right", wide)}>
                 Kol.
               </th>
-              <th scope="col" className="px-2 py-2 text-right">
+              <th scope="col" className={cn("px-2 py-2 text-right", wide)}>
                 Cena
               </th>
-              <th scope="col" className="px-2 py-2 text-right">
-                Rabat
-              </th>
+              {showRabat ? (
+                <th scope="col" className={cn("px-2 py-2 text-right", wide)}>
+                  Rabat
+                </th>
+              ) : null}
               <th scope="col" className="px-4 py-2 text-right">
                 Iznos
               </th>
@@ -556,9 +569,15 @@ function ItemsSection({ data }: { data: Detail }) {
                         {i.currentStock !== null ? ` · sada ${i.currentStock} kom.` : ""}
                         {i.committedQty ? ` · skinuto ${i.committedQty}` : ""}
                       </span>
+                      {editing ? null : (
+                        <span className="mt-0.5 type-body-s tabular-nums text-ink-2 xl:hidden">
+                          {i.quantity} × {formatRSD(i.unitPricePara)}
+                          {i.discountBp > 0 ? ` · rabat ${discountText(i.discountBp)}` : ""}
+                        </span>
+                      )}
                     </span>
                   </td>
-                  <td className="px-2 py-2.5 text-right tabular-nums">
+                  <td className={cn("px-2 py-2.5 text-right tabular-nums", wide)}>
                     {editing && e ? (
                       <input
                         aria-label={`Količina, ${i.sku}`}
@@ -574,7 +593,7 @@ function ItemsSection({ data }: { data: Detail }) {
                       i.quantity
                     )}
                   </td>
-                  <td className="px-2 py-2.5 text-right tabular-nums">
+                  <td className={cn("px-2 py-2.5 text-right tabular-nums", wide)}>
                     {editing && e ? (
                       <input
                         aria-label={`Cena po komadu, ${i.sku}`}
@@ -597,9 +616,11 @@ function ItemsSection({ data }: { data: Detail }) {
                       </span>
                     )}
                   </td>
-                  <td className="px-2 py-2.5 text-right tabular-nums text-ink-2">
-                    {i.discountBp > 0 ? `${String(i.discountBp / 100).replace(".", ",")} %` : "—"}
-                  </td>
+                  {showRabat ? (
+                    <td className={cn("px-2 py-2.5 text-right tabular-nums text-ink-2", wide)}>
+                      {i.discountBp > 0 ? discountText(i.discountBp) : "—"}
+                    </td>
+                  ) : null}
                   <td className="px-4 py-2.5 text-right font-medium tabular-nums">
                     {formatRSD(i.lineTotalPara)}
                   </td>
@@ -646,7 +667,10 @@ function ItemsSection({ data }: { data: Detail }) {
                         className="h-9 w-16 rounded-xs border border-control bg-surface-1 px-2 text-right tabular-nums"
                       />
                     </td>
-                    <td className="px-2 py-2.5 text-right type-caption text-ink-3" colSpan={3}>
+                    <td
+                      className="px-2 py-2.5 text-right type-caption text-ink-3"
+                      colSpan={showRabat ? 3 : 2}
+                    >
                       Cena po cenovniku kupca pri čuvanju
                     </td>
                     <td className="px-2 py-2.5">
@@ -817,10 +841,12 @@ function CustomerSection({ order: o }: { order: Order }) {
           },
           {
             label: "E-pošta",
-            value: (
+            value: o.contact.email ? (
               <a href={`mailto:${o.contact.email}`} className="break-all hover:underline">
                 {o.contact.email}
               </a>
+            ) : (
+              <span className="text-ink-3">kupac bez e-pošte</span>
             ),
           },
           { label: "Firma", value: o.company?.name, hidden: !o.company },

@@ -1,0 +1,166 @@
+{
+  "1024": {
+    "upiti": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "Broj:150 Status:162 Primljen:107 Kontakt:245 Traži:246",
+      "hint": [],
+      "stickyLeft": 999
+    },
+    "proizvodi": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Artikal:277 Stanje:159 Cena:100 OEM:132 Kategorija:147 Radnje:56",
+      "hint": [],
+      "stickyLeft": 943
+    },
+    "porudzbine": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Broj:148 Kupac:223 Status:156 Ukupno:100 Plaćanje · dos:187 Radnje:56",
+      "hint": [],
+      "stickyLeft": 943
+    },
+    "porudzbine-sve": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Broj:145 Kupac:224 Status:153 Ukupno:107 Plaćanje · dos:184 Radnje:56",
+      "hint": [],
+      "stickyLeft": 943
+    },
+    "mejlovi": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "Vreme:116 Prima:286 Naslov:386 Status:122",
+      "hint": [],
+      "stickyLeft": 999
+    },
+    "dashboard": {
+      "docOver": 0,
+      "wide": []
+    }
+  },
+  "1280": {
+    "upiti": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "Broj:165 Status:178 Primljen:117 Kontakt:269 Traži:336 Preuzeo:102",
+      "hint": [],
+      "stickyLeft": 1255
+    },
+    "proizvodi": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Artikal:393 Stanje:238 Cena:102 OEM:136 Kategorija:201 Radnje:56",
+      "hint": [],
+      "stickyLeft": 1199
+    },
+    "porudzbine": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Broj:161 Primljena:117 Kupac:242 Status:169 Kom.:70 Ukupno:108 Plaćanje · dos:203 Radnje:56",
+      "hint": [],
+      "stickyLeft": 1199
+    },
+    "porudzbine-sve": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Broj:149 Primljena:109 Kupac:230 Status:157 Kom.:65 Ukupno:110 Plaćanje · dos:250 Radnje:56",
+      "hint": [],
+      "stickyLeft": 1199
+    },
+    "mejlovi": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "Vreme:123 Prima:305 Naslov:509 Način:98 Status:131",
+      "hint": [],
+      "stickyLeft": 1255
+    },
+    "dashboard": {
+      "docOver": 0,
+      "wide": []
+    }
+  },
+  "1366": {
+    "upiti": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "Broj:153 Status:165 Primljen:109 Kontakt:250 Traži:312 Preuzeo:95",
+      "hint": [],
+      "stickyLeft": 1341
+    },
+    "proizvodi": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Artikal:391 Stanje:162 Cena:102 OEM:135 Kategorija:199 Radnje:56",
+      "hint": [],
+      "stickyLeft": 1285
+    },
+    "porudzbine": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Broj:148 Primljena:108 Kupac:224 Status:156 Kom.:65 Ukupno:100 Plaćanje · dos:187 Radnje:56",
+      "hint": [],
+      "stickyLeft": 1285
+    },
+    "porudzbine-sve": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Broj:145 Primljena:106 Kupac:224 Status:153 Kom.:63 Ukupno:107 Plaćanje · dos:189 Radnje:56",
+      "hint": [],
+      "stickyLeft": 1285
+    },
+    "mejlovi": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "Vreme:115 Prima:284 Naslov:473 Način:91 Status:122",
+      "hint": [],
+      "stickyLeft": 1341
+    },
+    "dashboard": {
+      "docOver": 0,
+      "wide": []
+    }
+  },
+  "1440": {
+    "upiti": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "Broj:164 Status:176 Primljen:116 Kontakt:267 Traži:334 Preuzeo:101",
+      "hint": [],
+      "stickyLeft": 1415
+    },
+    "proizvodi": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Artikal:390 Stanje:236 Cena:102 OEM:135 Kategorija:199 Radnje:56",
+      "hint": [],
+      "stickyLeft": 1359
+    },
+    "porudzbine": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Broj:159 Primljena:116 Kupac:240 Status:168 Kom.:69 Ukupno:108 Plaćanje · dos:201 Radnje:56",
+      "hint": [],
+      "stickyLeft": 1359
+    },
+    "porudzbine-sve": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "·:40 Broj:148 Primljena:108 Kupac:228 Status:156 Kom.:64 Ukupno:110 Plaćanje · dos:248 Radnje:56",
+      "hint": [],
+      "stickyLeft": 1359
+    },
+    "mejlovi": {
+      "over": 0,
+      "docOver": 0,
+      "cols": "Vreme:123 Prima:303 Naslov:505 Način:97 Status:130",
+      "hint": [],
+      "stickyLeft": 1415
+    },
+    "dashboard": {
+      "docOver": 0,
+      "wide": []
+    }
+  }
+}

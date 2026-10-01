@@ -41,7 +41,8 @@ export const DEFAULT_SETTINGS: Omit<Settings, "updatedAt"> = {
     quoteValidityDays: 7,
     minMarginBp: 800,
     autoCompleteDays: 15,
-    shipCutoff: "14:00",
+    // Empty until the owner confirms an hour: the same-day dispatch sentence stays hidden.
+    shipCutoff: "",
     etaText: "Isporuka za 1–2 radna dana",
   },
   deliveryMethods: [

@@ -31,6 +31,7 @@ import { Field } from "@/components/ui/Field";
 import { IconButton } from "@/components/ui/IconButton";
 import { Input } from "@/components/ui/Input";
 import { Menu } from "@/components/ui/Menu";
+import { useMediaQuery } from "@/components/ui/motion";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { Select } from "@/components/ui/Select";
 import { toast } from "@/components/ui/Toast";
@@ -157,6 +158,11 @@ export function ProductsList() {
     fitments: false,
     updatedAt: false,
   });
+  // Width budget (DS §9.15, D159): „Proizvođač“ is on by default only from 1536 px; the column
+  // chooser shows it anywhere, and an explicit choice wins over the breakpoint.
+  const wideList = useMediaQuery("(min-width: 1536px)");
+  const stickyName = useMediaQuery("(min-width: 768px)");
+  const columnVisibility: VisibilityState = { manufacturer: wideList, ...visibility };
   const [density, setDensity] = useState<"default" | "compact">("default");
   const [dialog, setDialog] = useState<"category" | "price" | null>(null);
   const [bulkCategoryId, setBulkCategoryId] = useState("");
@@ -200,12 +206,13 @@ export function ProductsList() {
         id: "product",
         accessorKey: "name",
         header: "Artikal",
-        meta: { sticky: "left", label: "Artikal" },
+        // Sticky only from 768 px: on a phone the name column would cover the whole viewport.
+        meta: { sticky: stickyName ? "left" : undefined, label: "Artikal" },
         cell: ({ row }) => {
           const p = row.original;
           const thumb = p.thumbUrl ?? p.categoryThumb;
           return (
-            <span className="flex min-w-[16rem] items-center gap-3">
+            <span className="flex min-w-[16rem] max-w-[16rem] items-center gap-3 xl:max-w-[24rem] 2xl:max-w-[32rem]">
               <span className="flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-xs border border-line-faint bg-surface-2">
                 {thumb ? (
                   // eslint-disable-next-line @next/next/no-img-element -- 40 px admin thumbnail (Convex URL or category render)
@@ -213,7 +220,9 @@ export function ProductsList() {
                 ) : null}
               </span>
               <span className="flex min-w-0 flex-col">
-                <span className="truncate font-medium text-ink-1">{p.name}</span>
+                <span className="truncate font-medium text-ink-1" title={p.name}>
+                  {p.name}
+                </span>
                 <span className="flex items-center gap-1.5 type-caption text-ink-3">
                   <span className="type-code-s">{p.sku}</span>
                   {p.isDemo ? <DemoTag /> : null}
@@ -230,7 +239,8 @@ export function ProductsList() {
         header: "Stanje",
         meta: { align: "right" },
         cell: ({ row }) => (
-          <span className="flex items-center justify-end gap-2">
+          // The state badge stacks over the quantity when the table is narrower than 72rem.
+          <span className="flex flex-col items-end gap-1 @min-[72rem]:flex-row @min-[72rem]:items-center @min-[72rem]:justify-end @min-[72rem]:gap-2">
             {row.original.stockState !== "in_stock" ? (
               <StockStateBadge state={row.original.stockState} />
             ) : null}
@@ -264,7 +274,7 @@ export function ProductsList() {
         header: "Kategorija",
         cell: ({ row }) => (
           <span
-            className="block max-w-[11rem] truncate text-ink-2"
+            className="block max-w-[8rem] truncate text-ink-2 xl:max-w-[11rem]"
             title={row.original.categoryName}
           >
             {row.original.categoryName}
@@ -335,7 +345,7 @@ export function ProductsList() {
         ),
       },
     ],
-    [duplicate, nowMinute, router],
+    [duplicate, nowMinute, router, stickyName],
   );
 
   const percentValue = parsePercent(percent);
@@ -367,7 +377,7 @@ export function ProductsList() {
       />
       {selectedIds.length > 0 ? (
         <div
-          className="flex min-h-12 flex-wrap items-center gap-2 rounded-sm border border-line-strong bg-surface-1 px-3 py-2"
+          className="flex min-h-12 flex-wrap items-center gap-2 rounded-sm border border-line-strong bg-surface-1 px-3 py-1"
           role="region"
           aria-label="Grupne radnje"
         >
@@ -407,7 +417,8 @@ export function ProductsList() {
           </Button>
         </div>
       ) : (
-        <div className="flex flex-wrap items-center gap-2">
+        // Same 48 px slot as the bulk bar: selecting a row must not move the rows under the pointer.
+        <div className="flex min-h-12 flex-wrap items-center gap-2">
           <SearchField
             value={search}
             onChange={setSearch}
@@ -500,9 +511,9 @@ export function ProductsList() {
                       fitments: "Broj vozila",
                       updatedAt: "Izmenjen",
                     }[id],
-                    checked: visibility[id] !== false,
+                    checked: columnVisibility[id] !== false,
                     onCheckedChange: (checked: boolean) =>
-                      setVisibility({ ...visibility, [id]: checked }),
+                      setVisibility({ ...columnVisibility, [id]: checked }),
                   }),
                 ),
               ]}
@@ -527,7 +538,7 @@ export function ProductsList() {
         enableRowSelection
         rowSelection={selection}
         onRowSelectionChange={setSelection}
-        columnVisibility={visibility}
+        columnVisibility={columnVisibility}
         onColumnVisibilityChange={setVisibility}
         density={density}
         loading={status === "LoadingFirstPage"}

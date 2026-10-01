@@ -54,8 +54,8 @@ export function UnsubscribeForm({ token }: { token: string }) {
   return (
     <div className="flex flex-col items-start gap-5">
       <p className="type-body text-ink-2">
-        Posle odjave više vam ne šaljemo poruke „Stiglo je“ za artikle koje pratite na ovoj
-        e-adresi. Porudžbine i upiti ovo ne menja.
+        Posle odjave više vam ne šaljemo poruke „Stiglo je“ za artikle koje pratite na ovoj adresi
+        e-pošte. Porudžbine i upiti ovo ne menja.
       </p>
       <Button
         loading={state === "busy"}

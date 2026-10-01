@@ -7,6 +7,7 @@ import { formatNumber } from "@/lib/format/number";
 import { pluralSr } from "@/lib/format/plural";
 import { buildMetadata, privateMetadata } from "@/lib/seo/metadata";
 import { isCuratedSearch, normalizeCuratedQuery } from "@/lib/seo/templates";
+import { TERMS } from "@/lib/i18n/sr/shop";
 import { contactFromSettings } from "@/lib/settings/public";
 import { getSearchResults, getSettingsPublic } from "@/lib/server/catalog-cache";
 import type { ProductCardData } from "@/lib/catalog/types";
@@ -111,7 +112,7 @@ export default async function SearchPage({ searchParams }: PageProps<"/pretraga"
       items: by("cross_code"),
     },
     { key: "prefix", title: "Brojevi koji počinju tako", items: by("prefix_code") },
-    { key: "text", title: "Proizvodi", items: by("text") },
+    { key: "text", title: TERMS.items, items: by("text") },
   ].filter((g) => g.items.length > 0);
   const total = result.results.length;
   const phone = contactLinks.tel(contactFromSettings(settings).phone);

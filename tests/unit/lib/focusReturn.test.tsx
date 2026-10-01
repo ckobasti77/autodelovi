@@ -137,6 +137,16 @@ describe("useFocusReturn (A11Y-02)", () => {
     expect(Element.prototype.scrollIntoView).not.toHaveBeenCalled();
   });
 
+  it("takes focus back from an outer overlay container (picker opened from the filter sheet)", () => {
+    document.body.insertAdjacentHTML(
+      "beforeend",
+      '<div role="dialog" id="sheet" tabindex="-1"><button type="button" id="in-sheet">Izaberite vozilo</button></div>',
+    );
+    byId("in-sheet").focus();
+    openAndClose(() => byId("sheet").focus());
+    expect(document.activeElement?.id).toBe("in-sheet");
+  });
+
   it("leaves focus alone when the user already moved it outside the panel", () => {
     byId("chip").focus();
     openAndClose(() => byId("add").focus());

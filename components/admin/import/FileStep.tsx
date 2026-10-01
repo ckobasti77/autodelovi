@@ -12,6 +12,7 @@ import type { CsvEncoding } from "@/lib/import/csv";
 import type { ParsedSheet } from "@/lib/excel/importProtocol";
 import type { CellValue } from "@/lib/import/row";
 import { formatNumber } from "@/lib/format/number";
+import { ROWS, countImport } from "@/lib/i18n/sr/import";
 import { Button } from "@/components/ui/Button";
 import { Field } from "@/components/ui/Field";
 import { Select } from "@/components/ui/Select";
@@ -143,7 +144,7 @@ export function SheetPreview({
           <p className="type-body-s text-ink-2">
             {sheet.format.toUpperCase()} · {kb(file.size)} ·{" "}
             <span className="font-semibold text-ink-1" data-testid="import-row-count">
-              {formatNumber(sheet.rowCount)} redova
+              {countImport(sheet.rowCount, ROWS)}
             </span>
             {sheet.delimiter
               ? ` · razdvajanje „${sheet.delimiter === "\t" ? "tab" : sheet.delimiter}“`

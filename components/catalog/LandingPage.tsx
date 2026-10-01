@@ -25,10 +25,13 @@ import {
   getCategory,
   getLanding,
   getSettingsPublic,
+  getVehicleTree,
   resolveVehicle,
 } from "@/lib/server/catalog-cache";
+import { findBrand, findModel, modelHref } from "@/lib/vehicle/hub";
 import type { Crumb } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
+import { Disclosure } from "@/components/ui/Disclosure";
 import { Link } from "@/components/ui/Link";
 import { RevealText } from "@/components/text-reveal/RevealText";
 import { CategoryListingView, loadListing } from "@/components/catalog/CategoryListingView";
@@ -149,9 +152,14 @@ export async function LandingPage({
   const faq = copy ? landingFaq(copy) : [];
   const vehicleName = copy ? vehicleText(copy) : vehicle.brand.name;
   const title = `${category.category.name} za ${vehicleName}`;
-  const vehicleHref = vehicle.model
-    ? ROUTES.vehicleModel(marka, vehicle.model.slug)
-    : ROUTES.vehicleBrand(marka);
+  // A single-generation model links straight to its generation (its hub URL is a 308, SEO-04).
+  const treeBrand = vehicle.model ? findBrand(await getVehicleTree(), marka) : null;
+  const treeModel = vehicle.model && treeBrand ? findModel(treeBrand, vehicle.model.slug) : null;
+  const vehicleHref = treeModel
+    ? modelHref(marka, treeModel)
+    : vehicle.model
+      ? ROUTES.vehicleModel(marka, vehicle.model.slug)
+      : ROUTES.vehicleBrand(marka);
 
   return (
     <CategoryListingView
@@ -284,13 +292,18 @@ function LandingLead({ text }: { text: string }) {
         {first}
       </RevealText>
       {rest ? (
-        <details className="group max-w-[72ch]">
-          <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1 type-body-s font-semibold text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent [&::-webkit-details-marker]:hidden">
-            <span className="group-open:hidden">Više o ponudi</span>
-            <span className="hidden group-open:inline">Manje</span>
-          </summary>
-          <p className="mt-2 type-body text-ink-2">{rest}</p>
-        </details>
+        <Disclosure
+          className="group max-w-[72ch]"
+          summaryClassName="inline-flex min-h-11 items-center gap-1 type-body-s font-semibold text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent"
+          summary={
+            <>
+              <span className="group-open:hidden">Više o ponudi</span>
+              <span className="hidden group-open:inline">Manje</span>
+            </>
+          }
+        >
+          <p className="pt-2 type-body text-ink-2">{rest}</p>
+        </Disclosure>
       ) : null}
     </>
   );

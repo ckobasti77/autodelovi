@@ -1,0 +1,67 @@
+[
+  {
+    "id": "MOT-01",
+    "status": "FIXED",
+    "summary": "Below 1024 px the hero stage box now takes the poster/camera aspect (aspect-[4/5] on phones, aspect-square at 768-1023 px; it shrinks with contain on short screens) instead of a screen-tall box, so the 4:5 m-* poster and the live canvas fill it. Cameras and posters were not changed (the hero-3d-assets crops already match the new boxes), so no re-render was needed and poster = canvas holds. The sticky frame stays one screen tall with the strip docked at the bottom; the spare height between stage and strip is a size container that shows a StageLegend (stage detents: numbers in one row from 3.5 rem, numbers + names in two columns from 9.5 rem, nothing on phones with browser chrome). Explode stages and the selected-part view checked at 390x844 (D279).",
+    "files": [
+      "components/three/HeroStage.tsx",
+      "components/three/StageStrip.tsx",
+      "components/three/StageCaption.tsx",
+      "tests/e2e/hero-3d.spec.ts",
+      "scripts/qa/fix/hero-stage-framing.mjs",
+      "scripts/qa/fix/hero-stage-parity.mjs",
+      "scripts/qa/fix/hero-stage-e2e.config.ts",
+      "docs/DECISIONS.md"
+    ],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-stage-framing.mjs (caption/honesty overlays hidden before the pixel pass). BEFORE: 360x780 49.9 % H / 96.1 % W / empty band beside caption 16.4 %; 390x844 48.9 / 95.9 / 18.1 (stage 390x672); 412x915 46.6 / 95.9 / 20.3; 430x932 47.7 / 95.8 / 20.1; 768x1024 57.4 / 89.1 / 15.7 (docs/qa/fix/hero-stage/before-poster.jsonl, before/framing-*.webp). AFTER: 360x780 67.4 % H / 96.1 % W / 4.7 %; 390x844 67.4 / 95.9 / 6.1 (stage 390x488); 412x915 67.2 / 95.9 / 7.2; 430x932 67.2 / 95.8 / 7.8; 390x664 67.4 / 95.9 / 6.1; 768x1024 63.7 / 89.1 / 12.0 (after-poster.jsonl, framing-*-poster.webp). Parity: node scripts/qa/fix/hero-stage-parity.mjs 390x844 360x780 768x1024 -> poster car {x9,y115,374x329} = canvas car {x9,y115,374x329} at 390x844, within 1 px at 360 and 768, mean abs diff 4.05-4.96 (parity.jsonl). Explode p=0.3 / p=1 and selected kocioni-diskovi fit the 4:5 stage: framing-390x844-canvas-p0.3.webp, framing-390x844-canvas-p1.webp, framing-390x844-canvas-p0-kocioni-diskovi.webp. Legend states (p2-final.txt): 360/390/412/430 two columns, 768x1024 one row, 390x664 hidden, 1440 not rendered (one stage nav in the DOM). E2E: E2E_BASE_URL=http://localhost:3001 npx playwright test -c scripts/qa/fix/hero-stage-e2e.config.ts -> '22 passed (1.5m)' (e2e-run2.txt), including the new aspect test."
+  },
+  {
+    "id": "VIS-04",
+    "status": "FIXED",
+    "summary": "Desktop stage index labels wrap to two balanced lines (text-wrap: balance) instead of truncating with an ellipsis; with the part drawer open they are hidden (numbers only, as at 1024-1279 px).",
+    "files": ["components/three/StageStrip.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-stage-p2.mjs vis04 -> '1280x800 ok' (Karoserija i svetla, Kočnice i vešanje, Agregati i hlađenje on 2 lines, no horizontal overflow, nothing clipped in the 64 px button), '1366x800 ok', '1440x900 ok' (all on 1 line) (docs/qa/fix/hero-stage/p2-final.txt)."
+  },
+  {
+    "id": "MOT-03",
+    "status": "FIXED",
+    "summary": "Stage-end detents land in their own stage: goToProgress scrolls to a whole pixel rounded down (scrollTargetFor) and currentStage takes one scroll pixel in progress units as its tolerance (progressPerPixel). Implemented in the earlier wip checkpoint (lib/three/explode.ts, HeroStage.tsx); verified here and covered in the e2e deep-link test.",
+    "files": ["lib/three/explode.ts", "components/three/HeroStage.tsx", "tests/unit/three/explode.test.ts", "tests/e2e/hero-3d.spec.ts"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/home-hero-sections-stages.mjs all docs/qa/fix/hero-stage/stages.json -> 'SUMMARY mot03 51/51 ok' (deep links kocioni-diskovi / abs-senzori / amortizeri-opruge -> 03 at 1440 and 390, motor -> 05; index 01-07 at 1440 and 1920; phone next 01..07 and prev 06..00). npx vitest run tests/unit/three -> '38 passed'. The e2e deep-link test now asserts stage 4 exactly for ?deo=akumulator (passed in both projects)."
+  },
+  {
+    "id": "MOT-05",
+    "status": "FIXED",
+    "summary": "The hero ScrollTrigger drives the explode through its own catch-up tween and cuts straight to the measured position on every refresh and two frames after mount, so a client navigation to / from a scrolled page lands on progress 0. Implemented in the earlier wip checkpoint; verified here.",
+    "files": ["components/three/HeroStage.tsx"],
+    "verification": "node scripts/qa/fix/home-hero-sections-stages.mjs all -> 'mot05 6/6 ok' (/delovi scrolled to 1500 -> header logo -> y0 p0 stage 0 at 500 / 2500 / 6000 ms at 1440 and 390, also from a product page); node scripts/qa/fix/home-hero-sections-refresh-race.mjs -> 'SUMMARY 4/4 ok'."
+  },
+  {
+    "id": "MOT-04",
+    "status": "FIXED",
+    "summary": "With the part drawer open at >= 1024 px the hero strip gets padding-right equal to the drawer width (440 px, 480 px from xl) plus the page margin, and the index drops its labels, so the index, Rasklopi and Lista delova reflow left of the drawer and nothing focusable sits under it (WCAG 2.4.11).",
+    "files": ["components/three/HeroStage.tsx", "components/three/StageStrip.tsx", "tests/e2e/hero-3d.spec.ts"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-stage-p2.mjs mot04 on /?deo=kocioni-diskovi -> '1440x900 ok' (panel left 960, Lista delova ends at 912), '1280x800 ok' (panel 800, ends 752); 1024x768: every control ends left of the panel (584, Lista delova ends 543), the only hit-test miss is 00 under the Next.js dev indicator (NEXTJS-PORTAL, dev only). The e2e deep-link test asserts every visible strip button ends left of the drawer (desktop-1440 passed)."
+  },
+  {
+    "id": "MOT-06",
+    "status": "FIXED",
+    "summary": "New components/ui/Disclosure.tsx: native details/summary; only the content wrapper is animated with GSAP (height 0 <-> auto 280 ms sk.inOut, opacity 180 ms; a close animates before open = false; reopening mid-close continues from the current height); reduced motion and no-JS toggle natively; the copy itself is never animated (the text reveal owns it). DisclosureCaret turns 180 degrees in 220 ms sk.snap from CSS state. HomeFaq (/ and /za-majstore) uses it. The other native details (category, landing, fitment, checkout) are cross-package adoptions.",
+    "files": ["components/ui/Disclosure.tsx", "components/home/HomeSections.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-stage-p2.mjs mot06 (height sampled every frame): 1440 open 65 -> 69 -> 100 -> ... -> 188 px over ~300 ms with opacity 0.85 -> 1; close 188 -> 174 -> 114 -> ... -> 65 px, then closed; 390 open 76 -> 274 px over ~300 ms; reduced motion 65 -> 188 px in one frame. Text reveal after scrolling / at 390 and 1440: stuck [], pending 0, words 0, no console errors (p2-final.txt). npx eslint components/ui/Disclosure.tsx -> 0 problems."
+  },
+  {
+    "id": "COPY-08",
+    "status": "FIXED",
+    "summary": "The home category link reads „Sve kategorije (44) · 157 artikala“, a neutral form that agrees with any count (was „Svih 44 kategorija“).",
+    "files": ["components/home/HomeSections.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-stage-p2.mjs legend -> 'COPY08 \"Sve kategorije (44) · 157 artikala\"' at every width from 360 to 1440 (p2-final.txt)."
+  },
+  {
+    "id": "MOT-07",
+    "status": "OPEN",
+    "summary": "Root cause is outside this package. Tabbing into the sticky header scrolls the page: html has scroll-padding-top: 80px and the header controls sit inside that band, so Chromium scrolls up about 458 px on each focus before the link is activated. Back then restores that shifted position correctly. The fix belongs in app/globals.css or components/shell/Header.tsx (shell-perf): give header focusables scroll-margin-top: -80px. Requested as a cross-package change.",
+    "files": ["scripts/qa/fix/hero-stage-mot07.mjs"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-stage-mot07.mjs -> '{\"patch\":false,\"log\":[1800,\"1800:Preskoči na sadr\",\"1342:SKLOP\",\"884:Delovi\"]}'; with an injected `header a, header button { scroll-margin-top: -80px; }` -> '{\"patch\":true,\"log\":[1800,\"1800:Preskoči na sadr\",\"1800:SKLOP\",\"1800:Delovi\"]}'."
+  }
+]

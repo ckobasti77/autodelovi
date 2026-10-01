@@ -185,7 +185,7 @@ exports[`snapshots > mechanic_registration_received plain text 1`] = `
   "text": "Registracija je primljena.
 ==========================
 
-Proveravamo podatke servisa Auto servis Primer. Kad odobrimo nalog, stiže vam e-mail i od tada na celom sajtu vidite svoje cene.
+Proveravamo podatke servisa Auto servis Primer. Kad odobrimo nalog, javljamo vam e-poštom i od tada na celom sajtu vidite svoje cene.
 
 Servis: Auto servis Primer
 Kontakt osoba: Nikola Petrović
@@ -907,7 +907,7 @@ Dobili ste pristup administraciji sajta SKLOP (uloga: zaposleni).
 
 Prihvatite pozivnicu: https://sklop.test/admin/pozivnica/primer-tokena-za-pregled-sablona
 
-Link važi do 06.10.2026. 10:42. Prijavite se ili napravite nalog sa ovom e-adresom — pozivnica važi samo za nju.
+Link važi do 06.10.2026. 10:42. Prijavite se ili napravite nalog sa ovom adresom e-pošte — pozivnica važi samo za nju.
 
 --
 Primer d.o.o.

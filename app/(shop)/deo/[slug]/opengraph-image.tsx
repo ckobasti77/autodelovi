@@ -19,6 +19,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   const code = c.oemPrimary ?? data.mpn;
   return ogFrame({
     title: c.name,
+    titleCase: "sentence",
     meta: { label: code ? "OEM" : undefined, code: code ?? undefined, after: c.manufacturerName },
     count: QUALITY_LABEL[c.quality],
     image: await ogImageData(photo ?? `/images/parts/${c.categorySlug}.webp`),

@@ -1,0 +1,15 @@
+{
+  "confirm": {
+    "number": "SK-2026-000157",
+    "buttons": [
+      "|false",
+      "Zatvori|false",
+      "Čeka vezu…Čeka vezu…|false"
+    ],
+    "dialogStatus": "Nema veze sa serverom. Radnja čeka i biće izvršena čim se veza vrati; prozor možete zatvoriti.",
+    "banner": "Veza sa serverom je prekinuta — pokušavamo ponovo. Na čekanju: 1 izmena. Ne zatvarajte stranicu — sve će biti sačuvano čim se veza vrati.",
+    "dialogClosed": true,
+    "appliedAfterReconnect": true,
+    "errors": []
+  }
+}

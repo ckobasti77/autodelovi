@@ -21,7 +21,7 @@ import type { AutoMapped } from "@/lib/import/headers";
 import { parseMoney, type FormatEvidence, type NumberFormat } from "@/lib/import/numbers";
 import type { CellValue } from "@/lib/import/row";
 import { formatRSD } from "@/lib/format/money";
-import { CONFIDENCE_LABEL, IMPORT_MODE_LABEL } from "@/lib/i18n/sr/import";
+import { CELLS, CONFIDENCE_LABEL, IMPORT_MODE_LABEL, countImport } from "@/lib/i18n/sr/import";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
@@ -88,7 +88,7 @@ export function MappingStep({
   const parsedSample = priceSample !== undefined ? parseMoney(priceSample, numberFormat) : null;
   const detected =
     evidence && (evidence.sr > 0 || evidence.en > 0)
-      ? `Prepoznato iz fajla: ${evidence.format === "sr" ? "srpski" : "engleski"} zapis (${evidence.format === "sr" ? evidence.sr : evidence.en} ćelija).`
+      ? `Prepoznato iz fajla: ${evidence.format === "sr" ? "srpski" : "engleski"} zapis (${countImport(evidence.format === "sr" ? evidence.sr : evidence.en, CELLS)}).`
       : "Fajl ne pokazuje jasno format brojeva — proverite primer.";
   const suggested = presets.filter((p) => p.score >= 0.8);
 

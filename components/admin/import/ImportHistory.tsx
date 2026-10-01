@@ -9,7 +9,7 @@ import { useMemo } from "react";
 import { api } from "@/convex/_generated/api";
 import { compactDateTime } from "@/lib/admin/format";
 import { formatNumber } from "@/lib/format/number";
-import { IMPORT_MODE_LABEL } from "@/lib/i18n/sr/import";
+import { IMPORT_MODE_LABEL, ROWS, countImport } from "@/lib/i18n/sr/import";
 import { DataTable, type ColumnDef } from "@/components/ui/DataTable";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { ADMIN } from "@/constants/routes";
@@ -61,7 +61,7 @@ export function ImportHistory() {
             <span className="type-caption text-ink-3">
               {IMPORT_MODE_LABEL[row.original.mode]}
               {row.original.deactivateMissing ? " · deaktiviranje" : ""} ·{" "}
-              {formatNumber(row.original.counts.total)} redova
+              {countImport(row.original.counts.total, ROWS)}
             </span>
           </span>
         ),

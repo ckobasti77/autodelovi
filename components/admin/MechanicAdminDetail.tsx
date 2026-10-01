@@ -9,7 +9,7 @@
  */
 import { useMutation, useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   ArrowLeftIcon,
   PlusIcon,
@@ -39,6 +39,7 @@ import { Skeleton, SkeletonRegion } from "@/components/ui/Skeleton";
 import { Switch } from "@/components/ui/Switch";
 import { Textarea } from "@/components/ui/Textarea";
 import { toast } from "@/components/ui/Toast";
+import { ConfirmDialog, useConfirm } from "@/components/admin/ConfirmDialog";
 import { MECHANIC_STATUS_ICON } from "@/components/admin/MechanicsAdminList";
 import { ROUTES } from "@/constants/routes";
 import { TEST_IDS } from "@/constants/testIds";
@@ -202,6 +203,9 @@ function DetailView({
 
   const [terms, setTerms] = useState<Terms>(() => initialTerms(data, tiers));
   const [reason, setReason] = useState("");
+  const [reasonError, setReasonError] = useState<string | null>(null);
+  const reasonRef = useRef<HTMLTextAreaElement>(null);
+  const confirm = useConfirm();
   const [note, setNote] = useState(data.internalNote ?? "");
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -557,6 +561,7 @@ function DetailView({
             <div className="flex flex-col gap-3 rounded-sm border border-line p-5">
               <Field
                 label={p.status === "pending" ? "Razlog odbijanja" : "Razlog pauze"}
+                error={reasonError ?? undefined}
                 help={
                   p.status === "pending"
                     ? "Majstor dobija razlog e-poštom."
@@ -564,25 +569,47 @@ function DetailView({
                 }
               >
                 <Textarea
+                  ref={reasonRef}
                   rows={2}
                   maxLength={500}
                   value={reason}
-                  onChange={(e) => setReason(e.target.value)}
+                  onChange={(e) => {
+                    setReason(e.target.value);
+                    if (reasonError && e.target.value.trim().length >= 3) setReasonError(null);
+                  }}
                 />
               </Field>
               {p.status === "pending" ? (
                 <Button
                   variant="danger"
                   className="self-start"
-                  loading={busy === "reject"}
                   data-testid={TEST_IDS.adminMechanicReject}
-                  onClick={() =>
-                    void run(
-                      "reject",
-                      () => reject({ profileId: id, reason }),
-                      "Registracija je odbijena.",
-                    )
-                  }
+                  onClick={() => {
+                    const text = reason.trim();
+                    if (text.length < 3) {
+                      setReasonError("Upišite razlog odbijanja (najmanje 3 znaka).");
+                      reasonRef.current?.focus();
+                      return;
+                    }
+                    confirm.ask({
+                      title: `Odbiti registraciju servisa „${p.companyName}“?`,
+                      description: (
+                        <>
+                          <p>Majstor odmah dobija e-poruku sa ovim razlogom:</p>
+                          <blockquote className="mt-2 border-l-2 border-line pl-3 text-ink-1">
+                            {text}
+                          </blockquote>
+                        </>
+                      ),
+                      confirmLabel: "Odbij registraciju",
+                      danger: true,
+                      onConfirm: async () => {
+                        await reject({ profileId: id, reason: text });
+                        setReason("");
+                        toast.success("Registracija je odbijena.");
+                      },
+                    });
+                  }}
                 >
                   Odbij registraciju
                 </Button>
@@ -590,14 +617,32 @@ function DetailView({
                 <Button
                   variant="danger"
                   className="self-start"
-                  loading={busy === "suspend"}
-                  onClick={() =>
-                    void run(
-                      "suspend",
-                      () => suspend({ profileId: id, ...(reason.trim() ? { reason } : {}) }),
-                      "Nalog je pauziran.",
-                    )
-                  }
+                  onClick={() => {
+                    const text = reason.trim();
+                    confirm.ask({
+                      title: `Pauzirati nalog servisa „${p.companyName}“?`,
+                      description: (
+                        <>
+                          <p>
+                            Majstor odmah vidi maloprodajne cene i ne može da poručuje po svojim
+                            uslovima dok nalog ne aktivirate ponovo.
+                          </p>
+                          {text ? (
+                            <blockquote className="mt-2 border-l-2 border-line pl-3 text-ink-1">
+                              {text}
+                            </blockquote>
+                          ) : null}
+                        </>
+                      ),
+                      confirmLabel: "Pauziraj nalog",
+                      danger: true,
+                      onConfirm: async () => {
+                        await suspend({ profileId: id, ...(text ? { reason: text } : {}) });
+                        setReason("");
+                        toast.success("Nalog je pauziran.");
+                      },
+                    });
+                  }}
                 >
                   Pauziraj nalog
                 </Button>
@@ -628,6 +673,7 @@ function DetailView({
           ) : null}
         </section>
       </div>
+      <ConfirmDialog {...confirm.props} />
     </div>
   );
 }

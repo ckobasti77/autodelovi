@@ -13,6 +13,7 @@ import { breadcrumbJsonLd, itemListJsonLd, type JsonLd as JsonLdData } from "@/l
 import { getCategoryListing, getManufacturers, resolveVehicle } from "@/lib/server/catalog-cache";
 import { Breadcrumbs, type Crumb } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
+import { Disclosure } from "@/components/ui/Disclosure";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { Link } from "@/components/ui/Link";
 import { Pagination } from "@/components/ui/Pagination";
@@ -189,13 +190,18 @@ export function CategoryListingView({
             </RevealText>
           ) : null}
           {!lead && introRest ? (
-            <details className="group max-w-[72ch]">
-              <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1 type-body-s font-semibold text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent [&::-webkit-details-marker]:hidden">
-                <span className="group-open:hidden">Više o kategoriji</span>
-                <span className="hidden group-open:inline">Manje</span>
-              </summary>
-              <p className="mt-2 type-body text-ink-2">{introRest}</p>
-            </details>
+            <Disclosure
+              className="group max-w-[72ch]"
+              summaryClassName="inline-flex min-h-11 items-center gap-1 type-body-s font-semibold text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent"
+              summary={
+                <>
+                  <span className="group-open:hidden">Više o kategoriji</span>
+                  <span className="hidden group-open:inline">Manje</span>
+                </>
+              }
+            >
+              <p className="pt-2 type-body text-ink-2">{introRest}</p>
+            </Disclosure>
           ) : null}
         </div>
       </header>

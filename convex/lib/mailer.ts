@@ -73,7 +73,7 @@ export async function sendEmail(
       ok: false,
       emailLogId: null,
       mode,
-      error: "Nema ispravne e-mail adrese primaoca.",
+      error: "Nema ispravne adrese e-pošte primaoca.",
       permanent: true,
     };
   }

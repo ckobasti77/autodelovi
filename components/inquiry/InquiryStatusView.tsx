@@ -277,34 +277,30 @@ function AcceptForm({
       <h3 className="type-h4 text-ink-1">Podaci za porudžbinu</h3>
       <AcceptErrorSummary errors={errors} attempt={attempt} />
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Ime" error={errors.firstName}>
+        <Field id={fieldId("firstName")} label="Ime" error={errors.firstName}>
           <Input
-            id={fieldId("firstName")}
             autoComplete="given-name"
             value={v.firstName}
             onChange={(e) => update({ firstName: e.target.value })}
           />
         </Field>
-        <Field label="Prezime" error={errors.lastName}>
+        <Field id={fieldId("lastName")} label="Prezime" error={errors.lastName}>
           <Input
-            id={fieldId("lastName")}
             autoComplete="family-name"
             value={v.lastName}
             onChange={(e) => update({ lastName: e.target.value })}
           />
         </Field>
-        <Field label="Telefon" error={errors.phone}>
+        <Field id={fieldId("phone")} label="Telefon" error={errors.phone}>
           <Input
-            id={fieldId("phone")}
             type="tel"
             autoComplete="tel"
             value={v.phone}
             onChange={(e) => update({ phone: e.target.value })}
           />
         </Field>
-        <Field label="E-pošta" error={errors.email}>
+        <Field id={fieldId("email")} label="E-pošta" error={errors.email}>
           <Input
-            id={fieldId("email")}
             type="email"
             autoComplete="email"
             value={v.email}
@@ -319,26 +315,28 @@ function AcceptForm({
       />
       {v.isCompany ? (
         <div className="grid gap-4 sm:grid-cols-2">
-          <Field label="Naziv firme" error={errors.companyName} className="sm:col-span-2">
+          <Field
+            id={fieldId("companyName")}
+            label="Naziv firme"
+            error={errors.companyName}
+            className="sm:col-span-2"
+          >
             <Input
-              id={fieldId("companyName")}
               autoComplete="organization"
               value={v.companyName}
               onChange={(e) => update({ companyName: e.target.value })}
             />
           </Field>
-          <Field label="PIB" error={errors.pib}>
+          <Field id={fieldId("pib")} label="PIB" error={errors.pib}>
             <Input
-              id={fieldId("pib")}
               inputMode="numeric"
               maxLength={9}
               value={v.pib}
               onChange={(e) => update({ pib: e.target.value })}
             />
           </Field>
-          <Field label="Matični broj" optional error={errors.mb}>
+          <Field id={fieldId("mb")} label="Matični broj" optional error={errors.mb}>
             <Input
-              id={fieldId("mb")}
               inputMode="numeric"
               maxLength={8}
               value={v.mb}
@@ -358,17 +356,25 @@ function AcceptForm({
       />
       {v.delivery === "courier" ? (
         <div className="grid gap-4 sm:grid-cols-6">
-          <Field label="Ulica i broj" className="sm:col-span-6" error={errors.street}>
+          <Field
+            id={fieldId("street")}
+            label="Ulica i broj"
+            className="sm:col-span-6"
+            error={errors.street}
+          >
             <Input
-              id={fieldId("street")}
               autoComplete="street-address"
               value={v.street}
               onChange={(e) => update({ street: e.target.value })}
             />
           </Field>
-          <Field label="Poštanski broj" className="sm:col-span-2" error={errors.postalCode}>
+          <Field
+            id={fieldId("postalCode")}
+            label="Poštanski broj"
+            className="sm:col-span-2"
+            error={errors.postalCode}
+          >
             <Input
-              id={fieldId("postalCode")}
               inputMode="numeric"
               autoComplete="postal-code"
               maxLength={5}
@@ -376,9 +382,8 @@ function AcceptForm({
               onChange={(e) => update({ postalCode: e.target.value })}
             />
           </Field>
-          <Field label="Mesto" className="sm:col-span-4" error={errors.city}>
+          <Field id={fieldId("city")} label="Mesto" className="sm:col-span-4" error={errors.city}>
             <Input
-              id={fieldId("city")}
               autoComplete="address-level2"
               value={v.city}
               onChange={(e) => update({ city: e.target.value })}

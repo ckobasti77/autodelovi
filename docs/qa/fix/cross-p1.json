@@ -1,0 +1,163 @@
+[
+  {
+    "id": "BE-01",
+    "status": "FIXED",
+    "summary": "Regression on /admin/upiti/[broj] (compose/send quote): QuoteComposer gave Input an explicit id for error focusing while Field kept its own generated id, so <label htmlFor> of „Naziv“, „Količina“, „Cena sa PDV-om“, „Rok (dana)“ pointed at nothing (no accessible name; the e2e getByLabel('Naziv') timed out). The id now goes on Field, which passes it to the control through context. Same bug fixed in the customer quote-acceptance form (InquiryStatusView, 10 fields). D281.",
+    "files": ["components/admin/inquiries/QuoteComposer.tsx", "components/inquiry/InquiryStatusView.tsx", "docs/DECISIONS.md"],
+    "verification": "E2E_BASE_URL=http://localhost:3001 npx playwright test tests/e2e/admin.spec.ts -g \"inquiry: answer with a quote\" --project=desktop-1440 -> '1 passed (11.6s)' (docs/qa/fix/cross-p1/be01-e2e-admin-inquiry.txt). Static scan of app/ and components/ for <Field> children that override id without a Field id: 0 left."
+  },
+  {
+    "id": "A11Y-02",
+    "status": "FIXED",
+    "summary": "All three failures of the verifier re-checked after D270 and closed: (1) no page jump on close; (2) a vehicle choice returns focus to the updated control: the fitment badge's „Odgovara za …“ verdict now carries a „Promeni vozilo“ button described by the verdict (D283), so focus returns into the badge instead of „Količina“; (3) toast -> drawer returns to add-to-cart. Opener paths the earlier runs skipped are now covered: hero field at 390, catalog rail „Izaberite vozilo“ at 1440, the same button inside the Filteri sheet at 390 (this one failed: Radix parked focus on the filter sheet container when its content re-rendered after the choice, and useFocusReturn took that for focus the user had moved; a dialog container no longer counts as such), header search suggestion and submit, drawer checkout link. Sticky-header focus no longer scrolls the page (D284).",
+    "files": ["lib/dom/focusReturn.ts", "tests/unit/lib/focusReturn.test.tsx", "components/product/FitmentBadge.tsx", "app/globals.css", "components/shell/Header.tsx"],
+    "verification": "npx vitest run tests/unit/lib/focusReturn.test.tsx -> 'Tests 10 passed (10)' (new case: outer overlay container). AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cross-p1-a11y02-paths.mjs -> docs/qa/fix/cross-p1/a11y02-paths.json: 10 cases, each ends on the opener or its updated control with :focus-visible, scrollDelta 0 (catalog-btn-390-choose: 'button \"Promeni vozilo\" (OPENER)'). scripts/qa/fix/cross-p1-a11y02-scroll.mjs chromium -> a11y02-scrolljump-chromium.json: 6 cases 'jump':0. scripts/qa/fix/cross-p1-a11y02-edge.mjs -> a11y02-edge.json: header chip 1440 -> 'Vozilo: Golf VII. Promeni vozilo'; fitment badge 1440/390 -> 'button \"Promeni vozilo\"'; toast -> drawer 390 -> add-to-cart (OPENER)."
+  },
+  {
+    "id": "MOT-07",
+    "status": "FIXED",
+    "summary": "Root cause requested by hero-stage: html scroll-padding-top 80px made Chromium scroll about 458 px whenever a control in the sticky header got focus, which also shifted the position restored on Back. Focusables inside [data-sticky-header] get scroll-margin-top: -80px; the shop Header carries data-sticky-header. D284.",
+    "files": ["app/globals.css", "components/shell/Header.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-stage-mot07.mjs -> '{\"patch\":false,\"log\":[1800,\"1800:Preskoči na sadr\",\"1800:SKLOP\",\"1800:Delovi\"]}' (before: 1342 / 884), docs/qa/fix/cross-p1/mot07-header-focus.txt."
+  },
+  {
+    "id": "FLOW-25",
+    "status": "FIXED",
+    "summary": "AddToCartButton reads the cart (useCart, the same deduplicated query as the header badge, skipped while no cart exists). When stock caps the product (no backorder, no supplier lead time, as in canOrderQuantity) the stepper max is stock minus the cart quantity, the button is disabled with „Sve je u korpi“, and the product variant shows a polite status („U korpi: N kom. Možete dodati još M kom.“ / „U korpi je sva količina sa stanja (N kom.).“). ProductCard passes leadTimeDays. The server messages (cross requests #26 and #34) were already in convex/carts.ts. D282.",
+    "files": ["components/catalog/AddToCartButton.tsx", "components/catalog/ProductCard.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cross-p1-ui-checks.mjs -> '{\"check\":\"stock cap\",\"max\":\"2\",\"buttonText\":\"Sve je u korpi\",\"disabled\":true,\"status\":\"U korpi je sva količina sa stanja (2 kom.).\",\"errors\":[]}' (docs/qa/fix/cross-p1/ui-checks.json)."
+  },
+  {
+    "id": "MOT-06",
+    "status": "FIXED",
+    "summary": "Native <details> replaced by the shared Disclosure (GSAP height and opacity, native under reduced motion): checkout mobile order summary (with DisclosureCaret), „Više o kategoriji“ (CategoryListingView), „Više o ponudi“ (LandingPage), „Prikaži još N“ (FitmentTable). Content spacing moved to padding so the animated height includes it.",
+    "files": ["components/checkout/CheckoutForm.tsx", "components/catalog/CategoryListingView.tsx", "components/catalog/LandingPage.tsx", "components/product/FitmentTable.tsx"],
+    "verification": "ui-checks.json (keyboard Enter on the summary, 390): /delovi/kocioni-diskovi „Više o kategoriji“ openAfterEnter true, contentHeight 231, openAfterSecondEnter false; product page „Prikaži još 3“ true / 228 / false."
+  },
+  {
+    "id": "COPY-09",
+    "status": "FIXED",
+    "summary": "Glossary applied to Convex errors and the remaining UI and e-mail copy: „Adresa e-pošte nije ispravna. Primer: ime@primer.rs.“ (auth, backInStock, emailsAdmin, inquiries, lib/orders, mechanics, privacy, staff), „Ostavite telefon ili adresu e-pošte…“, „Za odgovor e-poštom upišite adresu e-pošte.“, the staff invite FORBIDDEN text, the mailer error; MechanicStatusScreen, za-majstore/hvala, UnsubscribeForm and the customer e-mail templates („javljamo vam e-poštom“, „adresom e-pošte“); the search results group is „Artikli“ (TERMS.items). Convex pushed under the lock.",
+    "files": ["convex/auth.ts", "convex/backInStock.ts", "convex/emailsAdmin.ts", "convex/inquiries.ts", "convex/lib/orders.ts", "convex/mechanics.ts", "convex/privacy.ts", "convex/staff.ts", "convex/lib/mailer.ts", "components/mechanic/MechanicStatusScreen.tsx", "app/(shop)/za-majstore/hvala/page.tsx", "components/notifications/UnsubscribeForm.tsx", "lib/email/templates/customer.ts", "tests/unit/email/__snapshots__/templates.test.ts.snap", "app/(shop)/pretraga/page.tsx"],
+    "verification": "npx vitest run tests/unit/email/templates.test.ts -u -> 'Snapshots 2 updated', 'Tests 90 passed (90)' (the diff was only the two reworded lines); npx convex dev --once -> 'Convex functions ready!' (docs/qa/fix/cross-p1/convex-push.txt); /pretraga?q=disk -> '<h2 id=\"g-text\" …>Artikli' (curl-checks.txt). Left: components/admin/system/PrivacyAdmin.tsx (other owner, cross request)."
+  },
+  {
+    "id": "BE-12",
+    "status": "FIXED",
+    "summary": "Server rule already present, no change: the Password profile in convex/auth.ts throws WEAK_PASSWORD „Lozinka ne sme biti ista kao adresa e-pošte.“ for sign-up and reset when normalizeEmail(password) equals the e-mail.",
+    "files": ["convex/auth.ts"],
+    "verification": "Code check of profile() in convex/auth.ts (signUp password / reset-verification newPassword compared with normalizeEmail). npx vitest run convex/inquiries.test.ts convex/security.test.ts convex/admin.test.ts tests/unit/lib/focusReturn.test.tsx tests/unit/email tests/unit/content -> 'Tests 153 passed (153)' (docs/qa/fix/cross-p1/vitest.txt)."
+  },
+  {
+    "id": "BE-08",
+    "status": "FIXED",
+    "summary": "ConvexReactClient gets initialAuthTokenReuse: true: the server-rendered JWT is reused until shortly before it expires instead of a forced refresh right after the first Authenticate (one /api/auth POST, a refresh-token rotation and a re-run of every authenticated query per signed-in page load). D285.",
+    "files": ["components/providers/ConvexClientProvider.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cross-p1-be08-auth-posts.mjs (signed-in customer) -> '/nalog authPosts 0', '/delovi/kocioni-diskovi authPosts 0', '/nalog/porudzbine authPosts 0' (docs/qa/fix/cross-p1/be08-auth-posts.json)."
+  },
+  {
+    "id": "COPY-04",
+    "status": "FIXED",
+    "summary": "DEFAULT_SETTINGS.commerce.shipCutoff is now \"\", so the same-day dispatch sentence stays hidden until the owner confirms an hour. The live value is left to the owner (the HUMAN-TODO §13 item already asks to confirm or clear it).",
+    "files": ["convex/lib/settings.ts"],
+    "verification": "npx convex dev --once -> 'Convex functions ready!'; cutoffLabel('') returns '' and lib/content/placeholders.ts drops the sentence; tests/unit/content pass (vitest.txt)."
+  },
+  {
+    "id": "FLOW-13",
+    "status": "FIXED",
+    "summary": "The pro-forma (predračun) contact line leaves out ' · e-mail' when the order has no e-mail (phone-only inquiry conversion).",
+    "files": ["app/(shop)/porudzbina/[token]/predracun/page.tsx"],
+    "verification": "Code: [formatPhone(phone), email].filter(Boolean).join(' · '); npx tsc --noEmit exit 0 (docs/qa/fix/cross-p1/tsc.txt)."
+  },
+  {
+    "id": "FLOW-26",
+    "status": "FIXED",
+    "summary": "/porudzbina/hvala/<bad token> uses the order-link 404 (re-export of ../../[token]/not-found) instead of the parts 404.",
+    "files": ["app/(shop)/porudzbina/hvala/[token]/not-found.tsx"],
+    "verification": "node scripts/qa/fix/cross-p1-ssr-404.mjs -> 'porudzbina/hvala/… 404 titles [\"Link porudžbine nije ispravan | SKLOP\"]'; ui-checks.json after hydration: h1 'Link porudžbine nije ispravan'."
+  },
+  {
+    "id": "FLOW-05",
+    "status": "OPEN",
+    "summary": "Cross requests #20 and #24: in dev every notFound()/forbidden() thrown while rendering a page answers with Next's error shell (no server-rendered h1; the titles are right), while the unmatched-URL 404 renders fully. No loading or Suspense boundary sits above the token pages, so moving one is not the fix (root cause in D266). Needs a check on the production build in the gates phase. D286.",
+    "files": [],
+    "verification": "node scripts/qa/fix/cross-p1-ssr-404.mjs -> 'nema-ove-strane-xyz 404 h1 \"Stranica nije pronađena\" errorFallback false'; 'upit/…', 'porudzbina/…', 'deo/nepostoji-xyz', 'delovi/nepostoji-kat' -> 404, h1 null, errorFallback true (docs/qa/fix/cross-p1/ssr-404.txt)."
+  },
+  {
+    "id": "COPY-06",
+    "status": "WONTFIX",
+    "summary": "Cross request #41 (forbidden() in generateMetadata of the admin layout and the owner-only page) tried and reverted: in dev the 403 then answered with an empty error shell and no <title> at all, worse than today's server title „Nemate pristup · Administracija“. D286.",
+    "files": [],
+    "verification": "With the change: ui-checks run '{\"check\":\"admin 403\",\"url\":\"/admin\",\"status\":403,\"title\":\"\"…}' and routing-errors-gates-403-html.mjs -> '/admin 403 []'; after the revert -> '/admin 403 [\"Nemate pristup · Administracija\"]' (docs/qa/fix/cross-p1/admin-403-html-after-revert.txt)."
+  },
+  {
+    "id": "COPY-15",
+    "status": "FIXED",
+    "summary": "The product OG image passes titleCase: \"sentence\", so names keep the H1's case and units are not uppercased.",
+    "files": ["app/(shop)/deo/[slug]/opengraph-image.tsx"],
+    "verification": "npx tsc --noEmit exit 0; eslint exit 0 (docs/qa/fix/cross-p1/eslint.txt)."
+  },
+  {
+    "id": "SEO-09",
+    "status": "OPEN",
+    "summary": "Own part done: productJsonLd gets sellerName from settings.brand.name. deliveryTime and return fees still need owner data (seo-content-email record).",
+    "files": ["app/(shop)/deo/[slug]/page.tsx"],
+    "verification": "npx tsc --noEmit exit 0; eslint exit 0."
+  },
+  {
+    "id": "VIS-19",
+    "status": "FIXED",
+    "summary": "The product H1 already went through typographer(); the visible breadcrumbs now do too (JSON-LD keeps the raw name), so „276 × 24 mm“ never breaks around ×.",
+    "files": ["app/(shop)/deo/[slug]/page.tsx"],
+    "verification": "npx tsc --noEmit exit 0; eslint exit 0."
+  },
+  {
+    "id": "SEO-04",
+    "status": "FIXED",
+    "summary": "The landing link „Svi delovi za …“ uses modelHref() from the cached vehicle tree, so a single-generation model links straight to its generation (no 308 hop). CustomerVehicles (#36, optional) is left: its rows have no generation list and a model-only row is rare.",
+    "files": ["components/catalog/LandingPage.tsx"],
+    "verification": "ui-checks.json: /delovi/kocioni-diskovi/volkswagen/golf -> href '/vozila/volkswagen/golf' (a multi-generation model, so the hub link is right)."
+  },
+  {
+    "id": "COPY-10",
+    "status": "FIXED",
+    "summary": "Meta descriptions of /za-majstore (148 characters) and /upit (132) rewritten as whole sentences of at most 155 characters.",
+    "files": ["app/(shop)/za-majstore/page.tsx", "app/(shop)/upit/page.tsx"],
+    "verification": "docs/qa/fix/cross-p1/curl-checks.txt: 'za-majstore 148 …', 'upit 132 …'."
+  },
+  {
+    "id": "PERF-01",
+    "status": "OPEN",
+    "summary": "Cross request #27 applied: the shop 404 loads SearchBox and HeroVehicleField through components/shell/NotFoundSearch.tsx (next/dynamic, still server-rendered), so they are no longer in every shop route's client manifest. PERF-01 itself is measured by the performance gate.",
+    "files": ["components/shell/NotFoundSearch.tsx", "app/(shop)/not-found.tsx"],
+    "verification": "npx tsc --noEmit exit 0; eslint exit 0."
+  },
+  {
+    "id": "PERF-12",
+    "status": "FIXED",
+    "summary": "Phosphor subset rebuilt after other packages added icons (CheckSquare, LinkBreak, LockSimple).",
+    "files": ["lib/icons/phosphor/index.ts", "lib/icons/phosphor/CheckSquare.ts", "lib/icons/phosphor/LinkBreak.ts", "lib/icons/phosphor/LockSimple.ts"],
+    "verification": "node scripts/brand/build-phosphor.mjs -> 'lib/icons/phosphor: 96 icons'; --check -> 'lib/icons/phosphor is up to date'."
+  },
+  {
+    "id": "VIS-10",
+    "status": "FIXED",
+    "summary": "Documentation cross requests: DESIGN-SYSTEM §9.2 stepper (sm 36 px only from lg with a fine pointer, max = stock minus the cart, D247), §5.5 bottom bars (edge + 24 px fade, useBottomInset, D245), §7.6 tablet and phone rows plus the exploded camera, the three crops and the 1680 px cap, §7.8 poster set per crop (hero-3d-assets #8 and #31); PROGRESS gets a step 22 section (hero-3d-assets #9, cross-p1).",
+    "files": ["docs/design/DESIGN-SYSTEM.md", "docs/PROGRESS.md"],
+    "verification": "Diff reviewed; the §5.5 paragraph sits after the elevation table, which stays intact."
+  },
+  {
+    "id": "FLOW-03",
+    "status": "WONTFIX",
+    "summary": "Optional cross request #13 (add vozilo= in the SearchBox submit) not applied: the server decides whether the query names a vehicle (that vehicle wins); repeating that rule on the client risks a wrong scope, and SearchVehicleScope already handles it.",
+    "files": [],
+    "verification": "n/a (no change)."
+  },
+  {
+    "id": "PERF-05",
+    "status": "WONTFIX",
+    "summary": "Cross requests #1 and #28 target .claude/rules/architecture.md and .claude/skills/text-reveal/SKILL.md (project agent configuration). An agent does not edit these; forwarded to the owner or the close phase.",
+    "files": [],
+    "verification": "n/a (forwarded in cross_package_requests)."
+  }
+]

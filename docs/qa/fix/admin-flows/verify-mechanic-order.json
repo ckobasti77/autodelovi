@@ -1,0 +1,88 @@
+{
+  "FLOW-18-reject": {
+    "profileId": "p575erp91crnjmx1e9zc8tgg4s8ff9ap",
+    "emptyReason": {
+      "dialog": 0,
+      "focusedTag": "TEXTAREA",
+      "fieldInvalid": "true"
+    },
+    "alertText": "Odbiti registraciju servisa „Servis Admin fixaf5752144“?Majstor odmah dobija e-poruku sa ovim razlogom:Nedostaje rešenje iz APR-a.OdustaniOdbij registraciju",
+    "statusAfterCancel": "pending",
+    "statusAfterConfirm": "rejected"
+  },
+  "FLOW-18-suspend": {
+    "skipped": "approved mechanic has no suspend button"
+  },
+  "VIS-18": {
+    "390": {
+      "heads": [
+        "Artikal",
+        "Iznos"
+      ],
+      "cells": [
+        "Kočioni disk prednji 276 × 24 mm DEMO-0004 · OEM 5Q0 615 505 R · Febi Bilstein Bilo na stanju · sada 2 kom. 1 × 4.690 RS",
+        "4.690 RSD"
+      ],
+      "tableW": 356,
+      "wrapClient": 356,
+      "wrapScroll": 356,
+      "overflows": false,
+      "tableRightInsideCard": true
+    },
+    "1024": {
+      "heads": [
+        "Artikal",
+        "Iznos"
+      ],
+      "cells": [
+        "Kočioni disk prednji 276 × 24 mm DEMO-0004 · OEM 5Q0 615 505 R · Febi Bilstein Bilo na stanju · sada 2 kom. 1 × 4.690 RS",
+        "4.690 RSD"
+      ],
+      "tableW": 566,
+      "wrapClient": 566,
+      "wrapScroll": 566,
+      "overflows": false,
+      "tableRightInsideCard": true
+    },
+    "1100": {
+      "heads": [
+        "Artikal",
+        "Iznos"
+      ],
+      "cells": [
+        "Kočioni disk prednji 276 × 24 mm DEMO-0004 · OEM 5Q0 615 505 R · Febi Bilstein Bilo na stanju · sada 2 kom. 1 × 4.690 RS",
+        "4.690 RSD"
+      ],
+      "tableW": 642,
+      "wrapClient": 642,
+      "wrapScroll": 642,
+      "overflows": false,
+      "tableRightInsideCard": true
+    },
+    "1440": {
+      "heads": [
+        "Artikal",
+        "Kol.",
+        "Cena",
+        "Iznos"
+      ],
+      "cells": [
+        "Kočioni disk prednji 276 × 24 mm DEMO-0004 · OEM 5Q0 615 505 R · Febi Bilstein Bilo na stanju · sada 2 kom.",
+        "1",
+        "4.690 RSD",
+        "4.690 RSD"
+      ],
+      "tableW": 754,
+      "wrapClient": 754,
+      "wrapScroll": 754,
+      "overflows": false,
+      "tableRightInsideCard": true
+    }
+  },
+  "consoleErrors": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

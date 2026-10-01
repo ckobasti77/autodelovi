@@ -1,0 +1,5 @@
+▌ [Development] ckobasti77:autodelovi:dev/jovan-milojevic (dev) (dashboard: https://dashboard.convex.dev/t/ckobasti77/autodelovi/tame-impala-374)
+▌ └─ https://tame-impala-374.eu-west-1.convex.cloud
+- Preparing Convex functions...
+
+✔ 08:41:34 Convex functions ready! (9.09s)

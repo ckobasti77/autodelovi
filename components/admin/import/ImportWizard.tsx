@@ -7,7 +7,7 @@
  */
 import { useMutation, usePaginatedQuery, useQuery } from "convex/react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ClockCounterClockwiseIcon, DownloadSimpleIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
@@ -24,8 +24,7 @@ import {
   type AutoMapped,
 } from "@/lib/import/headers";
 import type { FormatEvidence, NumberFormat } from "@/lib/import/numbers";
-import { formatNumber } from "@/lib/format/number";
-import { IMPORT_MODE_LABEL, IMPORT_STEPS } from "@/lib/i18n/sr/import";
+import { IMPORT_MODE_LABEL, IMPORT_STEPS, ROWS, countImport } from "@/lib/i18n/sr/import";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { Stepper } from "@/components/ui/Stepper";
@@ -103,7 +102,7 @@ function RecentImports() {
               </span>
               <span className="type-caption text-ink-3">
                 {compactDateTime(b._creationTime, now)} · {IMPORT_MODE_LABEL[b.mode]} ·{" "}
-                {formatNumber(b.counts.total)} redova
+                {countImport(b.counts.total, ROWS)}
               </span>
             </RouteLink>
           </li>
@@ -341,6 +340,18 @@ export function ImportWizard() {
       : 3
     : step;
 
+  // A11Y-17: the control that advanced the wizard unmounts with its step, so focus moves to
+  // the step heading („Korak 2 od 5: Kolone“) on every step change after the first render.
+  const shownStep = batchId && !batch ? null : currentStep;
+  const stepHeading = useRef<HTMLHeadingElement>(null);
+  const lastStep = useRef<number | null>(null);
+  useEffect(() => {
+    if (shownStep === null) return;
+    const previous = lastStep.current;
+    lastStep.current = shownStep;
+    if (previous !== null && previous !== shownStep) stepHeading.current?.focus();
+  }, [shownStep]);
+
   return (
     <div className="flex flex-col gap-5">
       <PageHeader
@@ -373,6 +384,11 @@ export function ImportWizard() {
         current={currentStep}
         {...(!batchId ? { onSelect: (i: number) => i < step && setStep(i) } : {})}
       />
+      {shownStep !== null ? (
+        <h2 ref={stepHeading} tabIndex={-1} className="sr-only" data-reveal="off">
+          Korak {shownStep + 1} od {IMPORT_STEPS.length}: {IMPORT_STEPS[shownStep]?.label}
+        </h2>
+      ) : null}
 
       {batchId ? (
         batch === undefined ? (

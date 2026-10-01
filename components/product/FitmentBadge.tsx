@@ -10,6 +10,7 @@ import {
   QuestionIcon,
   XCircleIcon,
 } from "@phosphor-icons/react/dist/ssr";
+import { useId } from "react";
 
 import { cn } from "@/lib/cn";
 import type { FitmentRow } from "@/lib/catalog/types";
@@ -48,6 +49,7 @@ export function FitmentBadge({
   className?: string;
 }) {
   const vehicle = useSelectedVehicle();
+  const verdictId = useId();
   const base = cn("flex items-start gap-2 rounded-xs px-3 py-2.5 type-body-s", className);
   if (!vehicle) {
     return (
@@ -68,22 +70,42 @@ export function FitmentBadge({
   const name = vehicleShortName(vehicle);
   const engine = vehicle.engine ? ` ${vehicle.engine.name}` : "";
   if (verdict === "fits" || verdict === "universal") {
+    // „Promeni vozilo“ keeps a control in the badge's place in the Tab order: after a choice
+    // made from this badge, focus returns here with the verdict as its description (A11Y-02).
     return (
-      <p className={cn(base, "bg-success-subtle text-success")} data-testid="fitment-badge" data-fit="fits">
-        <CheckCircleIcon size={18} weight="fill" aria-hidden="true" className="mt-0.5 shrink-0" />
-        <span>
-          {verdict === "universal" ? "Univerzalni deo — odgovara za " : "Odgovara za "}
-          <strong className="font-semibold">
-            {name}
-            {engine}
-          </strong>
-        </span>
-      </p>
+      <div
+        className={cn(base, "flex-col gap-1 bg-success-subtle text-success")}
+        data-testid="fitment-badge"
+        data-fit="fits"
+      >
+        <p id={verdictId} className="flex items-start gap-2">
+          <CheckCircleIcon size={18} weight="fill" aria-hidden="true" className="mt-0.5 shrink-0" />
+          <span>
+            {verdict === "universal" ? "Univerzalni deo — odgovara za " : "Odgovara za "}
+            <strong className="font-semibold">
+              {name}
+              {engine}
+            </strong>
+          </span>
+        </p>
+        <button
+          type="button"
+          onClick={openVehiclePicker}
+          aria-describedby={verdictId}
+          className="ml-6.5 inline-flex min-h-8 cursor-pointer self-start type-caption font-semibold text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent"
+        >
+          Promeni vozilo
+        </button>
+      </div>
     );
   }
   if (verdict === "generation_only" || verdict === "choose_generation") {
     return (
-      <div className={cn(base, "flex-col gap-1 bg-warning-subtle text-warning")} data-testid="fitment-badge" data-fit="check">
+      <div
+        className={cn(base, "flex-col gap-1 bg-warning-subtle text-warning")}
+        data-testid="fitment-badge"
+        data-fit="check"
+      >
         <p className="flex items-start gap-2">
           <QuestionIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0" />
           <span>
@@ -103,10 +125,17 @@ export function FitmentBadge({
     );
   }
   return (
-    <div className={cn(base, "flex-col gap-1 bg-danger-subtle text-danger")} data-testid="fitment-badge" data-fit="no">
+    <div
+      className={cn(base, "flex-col gap-1 bg-danger-subtle text-danger")}
+      data-testid="fitment-badge"
+      data-fit="no"
+    >
       <p className="flex items-start gap-2">
         <XCircleIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0" />
-        <span>Ne odgovara za {name}{engine} prema našim podacima</span>
+        <span>
+          Ne odgovara za {name}
+          {engine} prema našim podacima
+        </span>
       </p>
       <Link
         href={ROUTES.inquiryWith({ proizvod: productSlug })}

@@ -1,0 +1,49 @@
+[
+ {
+  "check": "stock cap",
+  "max": "2",
+  "buttonText": "Sve je u korpi",
+  "disabled": true,
+  "status": "U korpi je sva količina sa stanja (2 kom.).",
+  "errors": []
+ },
+ {
+  "check": "disclosure",
+  "url": "/delovi/kocioni-diskovi",
+  "label0": "Više o kategoriji",
+  "openAfterEnter": true,
+  "contentHeight": 231,
+  "openAfterSecondEnter": false
+ },
+ {
+  "check": "disclosure",
+  "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "label0": "Prikaži još 3",
+  "openAfterEnter": true,
+  "contentHeight": 228,
+  "openAfterSecondEnter": false
+ },
+ {
+  "check": "hvala 404",
+  "title": "Link porudžbine nije ispravan | SKLOP",
+  "h1": "Link porudžbine nije ispravan"
+ },
+ {
+  "check": "landing vehicle link",
+  "href": "/vozila/volkswagen/golf"
+ },
+ {
+  "check": "admin 403",
+  "url": "/admin",
+  "status": 403,
+  "title": "",
+  "h1": "Nemate pristup ovoj strani"
+ },
+ {
+  "check": "admin 403",
+  "url": "/admin/porudzbine",
+  "status": 403,
+  "title": "",
+  "h1": "Nemate pristup ovoj strani"
+ }
+]

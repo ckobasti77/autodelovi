@@ -13,6 +13,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } fro
 import { XIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
+import { useHydrated } from "@/components/ui/Field";
 import { IconButton } from "@/components/ui/IconButton";
 import { useControllableOpen, useOverlayMotion, usePresence } from "@/components/ui/motion";
 import { DISTANCE, DUR } from "@/constants/motion";
@@ -21,6 +22,7 @@ import { useNowMinute } from "../hooks";
 import { AdminSidebar } from "./AdminSidebar";
 import { AdminTopBar } from "./AdminTopBar";
 import { CommandPalette } from "./CommandPalette";
+import { ConnectionBanner } from "./ConnectionBanner";
 import { AdminShellContext, type AdminViewer } from "./context";
 import { navItems } from "./nav";
 import { ShortcutsDialog } from "./ShortcutsDialog";
@@ -87,6 +89,8 @@ export function AdminShell({ viewer, children }: { viewer: AdminViewer; children
   const [menuOpen, setMenuOpen] = useState(false);
   const [crumb, setCrumbState] = useState<string | null>(null);
   const nowMinute = useNowMinute();
+  // The connection strip reads the browser and the Convex socket: client only, after hydration.
+  const hydrated = useHydrated();
   const pathname = usePathname();
   const items = useMemo(() => navItems(viewer.isOwner), [viewer.isOwner]);
 
@@ -140,6 +144,7 @@ export function AdminShell({ viewer, children }: { viewer: AdminViewer; children
             onMenu={() => setMenuOpen(true)}
             onShortcuts={openShortcuts}
           />
+          {hydrated ? <ConnectionBanner /> : null}
           <main
             id="sadrzaj"
             tabIndex={-1}

@@ -14,7 +14,14 @@ import { api } from "@/convex/_generated/api";
 import type { Id } from "@/convex/_generated/dataModel";
 import { compactDateTime } from "@/lib/admin/format";
 import { formatNumber } from "@/lib/format/number";
-import { IMPORT_MODE_LABEL, ROW_ACTION, type RowActionKey } from "@/lib/i18n/sr/import";
+import {
+  IMAGES,
+  IMPORT_MODE_LABEL,
+  ROW_ACTION,
+  ROWS,
+  countImport,
+  type RowActionKey,
+} from "@/lib/i18n/sr/import";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { Tabs } from "@/components/ui/Tabs";
 import { ADMIN } from "@/constants/routes";
@@ -227,7 +234,7 @@ function ImagesTab({ batchId }: { batchId: Id<"importBatches"> }) {
   return (
     <div className="mt-3 flex flex-col gap-2">
       {jobs.pending > 0 ? (
-        <p className="type-body-s text-ink-2">Na čekanju: {formatNumber(jobs.pending)} slika.</p>
+        <p className="type-body-s text-ink-2">Na čekanju: {countImport(jobs.pending, IMAGES)}.</p>
       ) : null}
       {jobs.failed.length === 0 ? (
         <p className="type-body-s text-ink-2">Nema neuspelih slika.</p>
@@ -266,7 +273,7 @@ export function ImportBatchDetail({ batchId }: { batchId: Id<"importBatches"> })
       <PageHeader
         title={batch.fileName}
         meta={<ImportStatusBadge status={batch.status} />}
-        description={`${IMPORT_MODE_LABEL[batch.mode]} · ${formatNumber(c.total)} redova · ${compactDateTime(batch._creationTime, now)}`}
+        description={`${IMPORT_MODE_LABEL[batch.mode]} · ${countImport(c.total, ROWS)} · ${compactDateTime(batch._creationTime, now)}`}
         actions={
           <>
             <a

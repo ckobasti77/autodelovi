@@ -13,7 +13,15 @@ import { ArrowRightIcon, DownloadSimpleIcon } from "@phosphor-icons/react/dist/s
 import { api } from "@/convex/_generated/api";
 import type { Id } from "@/convex/_generated/dataModel";
 import { formatNumber } from "@/lib/format/number";
-import { COMMIT_PHASE_LABEL, ROW_ACTION, type RowActionKey } from "@/lib/i18n/sr/import";
+import {
+  COMMIT_PHASE_LABEL,
+  ROW_ACTION,
+  productsNotRestored,
+  productsToDeactivate,
+  productsWritten,
+  rowsWithWarning,
+  type RowActionKey,
+} from "@/lib/i18n/sr/import";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
 import { Button } from "@/components/ui/Button";
 import { Field } from "@/components/ui/Field";
@@ -155,7 +163,7 @@ export function DiffStep({ batch, onNew }: { batch: Batch; onNew: () => void }) 
             label: "Greške",
             value: c.error,
             tone: "danger",
-            hint: c.warning > 0 ? `${formatNumber(c.warning)} redova sa upozorenjem` : undefined,
+            hint: c.warning > 0 ? rowsWithWarning(c.warning) : undefined,
           },
         ]}
       />
@@ -214,7 +222,7 @@ export function DiffStep({ batch, onNew }: { batch: Batch; onNew: () => void }) 
               label="Deaktiviraj aktivne artikle kojih nema u ovom fajlu"
               description={
                 batch.missing?.done
-                  ? `Biće deaktivirano ${formatNumber(batch.missing.count)} artikala. Demo artikli se ne diraju; poništavanje uvoza ih vraća.`
+                  ? `${productsToDeactivate(batch.missing.count)}. Demo artikli se ne diraju; poništavanje uvoza ih vraća.`
                   : "Brojim artikle kojih nema u fajlu…"
               }
               checked={deactivate}
@@ -261,7 +269,7 @@ export function DiffStep({ batch, onNew }: { batch: Batch; onNew: () => void }) 
         </Button>
         <div className="flex flex-wrap items-center gap-3">
           <span className="type-caption text-ink-3">
-            {formatNumber(writes)} artikala se upisuje; redovi sa greškom se preskaču.
+            {productsWritten(writes)}; redovi sa greškom se preskaču.
           </span>
           <Button
             loading={busy}
@@ -292,6 +300,42 @@ export function DiffStep({ batch, onNew }: { batch: Batch; onNew: () => void }) 
   );
 }
 
+/** Quarter milestones only, so a screen reader hears 25 / 50 / 75 / 100 %, not every chunk. */
+function milestone(done: number, total: number): number {
+  if (total <= 0) return 0;
+  return Math.min(100, Math.floor((done / total) * 4) * 25);
+}
+
+/**
+ * What the polite status region says for a batch past the dry run (A11Y-17): the phase with
+ * quarter milestones while it runs, then the result. Counts use label form („Novih artikala:
+ * 12“), which needs no plural agreement.
+ */
+export function importAnnouncement(batch: Batch): string {
+  const c = batch.counts;
+  const result = `Novih artikala: ${formatNumber(c.created ?? 0)}, izmenjenih: ${formatNumber(c.updated ?? 0)}, neuspelih: ${formatNumber(c.failed + c.error)}.`;
+  switch (batch.status) {
+    case "committing":
+      return `Upis u toku: ${milestone(batch.progress.committedRows, c.total)} %.`;
+    case "committed":
+      return `Uvoz je upisan u katalog. ${result}`;
+    case "failed":
+      return `Upis je prekinut. ${result}`;
+    case "rolling_back": {
+      const total = Math.max((c.created ?? 0) + (c.updated ?? 0) + c.deactivated, 1);
+      return `Poništavanje u toku: ${milestone(batch.progress.rolledBackRows, total)} %.`;
+    }
+    case "rolled_back":
+      return c.rollbackSkipped
+        ? `Uvoz je poništen. ${productsNotRestored(c.rollbackSkipped)} jer su menjani posle uvoza.`
+        : "Uvoz je poništen. Sve vrednosti su vraćene.";
+    case "cancelled":
+      return "Uvoz je otkazan.";
+    default:
+      return "";
+  }
+}
+
 export function CommitStep({ batch, onNew }: { batch: Batch; onNew?: () => void }) {
   const rollback = useMutation(api.imports.rollback);
   const resume = useMutation(api.imports.resume);
@@ -304,6 +348,9 @@ export function CommitStep({ batch, onNew }: { batch: Batch; onNew?: () => void 
 
   return (
     <div className="flex flex-col gap-4" data-testid="import-commit-step">
+      <p role="status" className="sr-only" data-testid="import-status">
+        {importAnnouncement(batch)}
+      </p>
       {batch.status === "committing" ? (
         <Section title="Upis u toku">
           <div className="flex flex-col gap-3">
@@ -371,7 +418,7 @@ export function CommitStep({ batch, onNew }: { batch: Batch; onNew?: () => void 
         <p className="type-body text-ink-1" data-testid="import-rolled-back">
           Uvoz je poništen.
           {c.rollbackSkipped
-            ? ` ${formatNumber(c.rollbackSkipped)} artikala nije vraćeno jer su menjani posle uvoza — spisak je u zapisu uvoza.`
+            ? ` ${productsNotRestored(c.rollbackSkipped)} jer su menjani posle uvoza — spisak je u zapisu uvoza.`
             : " Sve vrednosti su vraćene."}
         </p>
       ) : null}

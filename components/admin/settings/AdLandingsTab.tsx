@@ -26,6 +26,7 @@ import { Textarea } from "@/components/ui/Textarea";
 import { toast } from "@/components/ui/Toast";
 
 import { ConfirmDialog, useConfirm } from "../ConfirmDialog";
+import { useUnsavedFlag } from "./unsaved";
 import { ProductPicker } from "../ProductPicker";
 import { Section } from "../ui";
 
@@ -153,6 +154,9 @@ function Editor({ initial, onClose }: { initial: Draft; onClose: () => void }) {
   const [d, setD] = useState<Draft>(initial);
   const [saving, setSaving] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  useUnsavedFlag(
+    JSON.stringify(d) !== JSON.stringify(initial) ? "Oglasna strana nije sačuvana." : null,
+  );
   const set = <K extends keyof Draft>(key: K, value: Draft[K]) =>
     setD((x) => ({ ...x, [key]: value }));
 
@@ -245,7 +249,7 @@ function Editor({ initial, onClose }: { initial: Draft; onClose: () => void }) {
         </Field>
         <Field
           label="Podnaslov"
-         
+
           error={errors.subhead}
           className="md:col-span-2"
         >
@@ -333,7 +337,7 @@ function Editor({ initial, onClose }: { initial: Draft; onClose: () => void }) {
         </div>
         <Field
           label="Dodatni tekst (Markdown, nije obavezan)"
-         
+
           className="md:col-span-2"
         >
           <Textarea

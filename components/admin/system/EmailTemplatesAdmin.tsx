@@ -164,7 +164,7 @@ function TemplatePreview({
         ) : preview === null ? (
           <p className="type-body-s text-ink-2">Šablon ne postoji.</p>
         ) : view === "text" ? (
-          <pre className="mx-auto max-w-[680px] whitespace-pre-wrap rounded-sm border border-line bg-surface-1 p-4 type-code-s text-ink-1">
+          <pre className="mx-auto max-w-[680px] whitespace-pre-wrap rounded-sm border border-line bg-surface-1 p-4 type-code text-ink-1 [overflow-wrap:anywhere]">
             {preview.text}
           </pre>
         ) : (
@@ -198,7 +198,7 @@ function TestSendForm({ templateKey }: { templateKey: TemplateKey }) {
       const res = await send({ key: templateKey, ...(to.trim() ? { to: to.trim() } : {}) });
       toast.success(
         res.mode === "log"
-          ? `Probna poruka je zabeležena u poslatim porukama (režim log, ${res.to}).`
+          ? `Probna poruka je zabeležena u poslatim porukama (režim „Samo zapis“, ${res.to}).`
           : res.mode === "test"
             ? `Probna poruka je predata Resend-u u probnom režimu (${res.to}).`
             : `Probna poruka je poslata na ${res.to}.`,

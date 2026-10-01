@@ -374,6 +374,13 @@
     accent-color: var(--color-accent);
   }
 
+  /* Controls of the sticky page header sit inside the scroll-padding band above. Without a
+     matching negative margin, Chromium scrolls the page up by about the padding whenever one of
+     them receives focus (Tab into the header, focus returning from an overlay): MOT-07, A11Y-02. */
+  [data-sticky-header] :where(a[href], button, input, select, textarea, summary, [tabindex]) {
+    scroll-margin-top: -80px;
+  }
+
   body {
     font-size: var(--text-body);
     line-height: var(--text-body--line-height);

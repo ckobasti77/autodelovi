@@ -16,7 +16,9 @@ export const metadata: Metadata = privateMetadata("Registracija primljena");
 /** `/za-majstore/hvala` — confirmation after registration (DESIGN-SYSTEM §11.5 copy). */
 export default async function MechanicThanksPage() {
   const settings = await getSettingsPublic();
-  const contacts = contactLinkList(contactFromSettings(settings)).filter((l) => l.channel !== "email");
+  const contacts = contactLinkList(contactFromSettings(settings)).filter(
+    (l) => l.channel !== "email",
+  );
   return (
     <div className="px-page pb-(--space-section) pt-10 lg:pt-16">
       <div className="flex max-w-[44rem] flex-col items-start gap-5">
@@ -25,7 +27,8 @@ export default async function MechanicThanksPage() {
           Registracija je primljena
         </RevealText>
         <RevealText as="p" className="type-lead text-ink-2">
-          Nalog odobravamo u toku radnog dana; stići će vam e-mail. Do tada možete da poručujete po maloprodajnim cenama.
+          Nalog odobravamo u toku radnog dana; javićemo vam e-poštom. Do tada možete da poručujete
+          po maloprodajnim cenama.
         </RevealText>
         <div className="mt-2 flex flex-wrap gap-3">
           <Button asChild size="lg">

@@ -34,7 +34,7 @@ export function NotificationsAdmin() {
             Nove porudžbine, upiti, registracije i zalihe. Šta dobijate birate u{" "}
             <RouteLink
               href={ADMIN.settingsTab("obavestenja")}
-              className="text-accent-text underline-offset-2 hover:underline"
+              className="text-accent-text underline underline-offset-2"
             >
               podešavanjima
             </RouteLink>

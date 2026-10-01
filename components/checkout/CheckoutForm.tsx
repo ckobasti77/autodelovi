@@ -12,7 +12,6 @@ import { Controller, useForm, useWatch, type FieldErrors } from "react-hook-form
 import {
   ArrowLeftIcon,
   ArrowRightIcon,
-  CaretDownIcon,
   CarIcon,
   PaperPlaneTiltIcon,
   ShoppingCartSimpleIcon,
@@ -52,6 +51,7 @@ import {
 } from "@/lib/validation/checkout";
 import { Button } from "@/components/ui/Button";
 import { Checkbox } from "@/components/ui/Checkbox";
+import { Disclosure, DisclosureCaret } from "@/components/ui/Disclosure";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { Field, RequiredUnlessOptional } from "@/components/ui/Field";
 import { Input } from "@/components/ui/Input";
@@ -507,28 +507,27 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
           <Stepper steps={[...CHECKOUT_STEPS]} current={step} onSelect={goTo} />
           {/* Mobile order summary (VIS-11): the caret and the item count say it opens; the
             total lives on the summary line only, so it is not repeated inside. */}
-          <details
-            className="group rounded-sm border border-line bg-surface-1 lg:hidden"
+          <Disclosure
+            className="rounded-sm border border-line bg-surface-1 lg:hidden"
             data-reveal="off"
-          >
-            <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-4 [&::-webkit-details-marker]:hidden">
-              <span className="inline-flex items-center gap-1.5 type-body-s text-ink-2">
-                Stavke ({itemCount})
-                <CaretDownIcon
-                  size={16}
-                  aria-hidden="true"
-                  className="transition-control group-open:rotate-180"
-                />
-              </span>
-              <span className="flex items-baseline gap-2">
-                <span className="type-caption font-normal text-ink-3">Ukupno</span>
-                <span className="type-numeral-s tabular-nums text-ink-1">
-                  {formatRSD(totalPara)}
+            summaryClassName="flex min-h-12 items-center justify-between gap-3 px-4"
+            summary={
+              <>
+                <span className="inline-flex items-center gap-1.5 type-body-s text-ink-2">
+                  Stavke ({itemCount})
+                  <DisclosureCaret size={16} />
                 </span>
-              </span>
-            </summary>
+                <span className="flex items-baseline gap-2">
+                  <span className="type-caption font-normal text-ink-3">Ukupno</span>
+                  <span className="type-numeral-s tabular-nums text-ink-1">
+                    {formatRSD(totalPara)}
+                  </span>
+                </span>
+              </>
+            }
+          >
             <div className="border-t border-line p-4">{renderSummary(false)}</div>
-          </details>
+          </Disclosure>
 
           <section
             data-testid={TEST_IDS.checkoutStep(stepName)}

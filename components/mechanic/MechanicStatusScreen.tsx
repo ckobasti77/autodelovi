@@ -1,8 +1,17 @@
-import { HourglassIcon, ProhibitIcon, SealCheckIcon, XCircleIcon } from "@phosphor-icons/react/dist/ssr";
+import {
+  HourglassIcon,
+  ProhibitIcon,
+  SealCheckIcon,
+  XCircleIcon,
+} from "@phosphor-icons/react/dist/ssr";
 
 import type { ContactLink } from "@/config/site";
 import { formatDate } from "@/lib/format/date";
-import { MECHANIC_STATUS_LABEL, MECHANIC_STATUS_TONE, type MechanicStatus } from "@/lib/i18n/sr/mechanic";
+import {
+  MECHANIC_STATUS_LABEL,
+  MECHANIC_STATUS_TONE,
+  type MechanicStatus,
+} from "@/lib/i18n/sr/mechanic";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Link } from "@/components/ui/Link";
@@ -29,7 +38,7 @@ const ICON: Record<MechanicStatus, React.ReactNode> = {
 const COPY: Record<Exclude<MechanicStatus, "approved">, { title: string; body: string }> = {
   pending: {
     title: "Registracija je primljena",
-    body: "Podatke servisa proveravamo u toku radnog dana; kad odobrimo nalog, stiže vam e-mail sa nivoom rabata i cene na sajtu postaju vaše. Do tada možete da poručujete po maloprodajnim cenama.",
+    body: "Podatke servisa proveravamo u toku radnog dana; kad odobrimo nalog, stiže vam poruka e-poštom sa nivoom rabata i cene na sajtu postaju vaše. Do tada možete da poručujete po maloprodajnim cenama.",
   },
   rejected: {
     title: "Registracija nije odobrena",
@@ -54,13 +63,18 @@ export function MechanicStatusScreen({
 }) {
   if (!profile) {
     return (
-      <section aria-labelledby="ms-title" className="flex max-w-[44rem] flex-col items-start gap-5" data-testid={TEST_IDS.mechanicStatus} data-status="none">
+      <section
+        aria-labelledby="ms-title"
+        className="flex max-w-[44rem] flex-col items-start gap-5"
+        data-testid={TEST_IDS.mechanicStatus}
+        data-status="none"
+      >
         <h2 id="ms-title" className="type-h2 text-ink-1">
           Ovaj nalog nema registrovan servis
         </h2>
         <p className="type-body text-ink-2">
-          Majstorski portal — brza porudžbina po OEM brojevima, vaša cena sa rabatom i cenovnik — otvara se posle
-          registracije servisa i odobrenja.
+          Majstorski portal — brza porudžbina po OEM brojevima, vaša cena sa rabatom i cenovnik —
+          otvara se posle registracije servisa i odobrenja.
         </p>
         <div className="flex flex-wrap gap-3">
           <Button asChild size="lg">

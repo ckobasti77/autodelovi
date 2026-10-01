@@ -1,0 +1,3 @@
+{"size":"390x844","tier":"mid","posterCar":{"x":9,"y":115,"w":374,"h":329},"canvasCar":{"x":9,"y":115,"w":374,"h":329},"meanAbsDiff":4.88}
+{"size":"360x780","tier":"mid","posterCar":{"x":8,"y":106,"w":346,"h":304},"canvasCar":{"x":9,"y":107,"w":344,"h":303},"meanAbsDiff":4.96}
+{"size":"768x1024","tier":"mid","posterCar":{"x":50,"y":180,"w":684,"h":490},"canvasCar":{"x":50,"y":181,"w":683,"h":489},"meanAbsDiff":4.05}

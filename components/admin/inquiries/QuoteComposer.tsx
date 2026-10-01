@@ -271,9 +271,8 @@ export function QuoteComposer({
               />
             </div>
             <div className="grid gap-3 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]">
-              <Field label="Naziv" error={lineErrors[l.key]?.name}>
+              <Field label="Naziv" id={inputId(l.key, "name")} error={lineErrors[l.key]?.name}>
                 <Input
-                  id={inputId(l.key, "name")}
                   value={l.name}
                   onChange={(e) => set(l.key, { name: e.target.value })}
                   className="h-9"
@@ -308,9 +307,12 @@ export function QuoteComposer({
                   }))}
                 />
               </Field>
-              <Field label="Količina" error={lineErrors[l.key]?.quantity}>
+              <Field
+                label="Količina"
+                id={inputId(l.key, "quantity")}
+                error={lineErrors[l.key]?.quantity}
+              >
                 <Input
-                  id={inputId(l.key, "quantity")}
                   value={l.quantity}
                   inputMode="numeric"
                   onChange={(e) => set(l.key, { quantity: e.target.value })}
@@ -318,9 +320,12 @@ export function QuoteComposer({
                   inputClassName="text-right tabular-nums"
                 />
               </Field>
-              <Field label="Cena sa PDV-om" error={lineErrors[l.key]?.price}>
+              <Field
+                label="Cena sa PDV-om"
+                id={inputId(l.key, "price")}
+                error={lineErrors[l.key]?.price}
+              >
                 <Input
-                  id={inputId(l.key, "price")}
                   value={l.price}
                   inputMode="decimal"
                   suffix="RSD"
@@ -342,9 +347,12 @@ export function QuoteComposer({
                   ]}
                 />
               </Field>
-              <Field label="Rok (dana)" error={lineErrors[l.key]?.leadTimeDays}>
+              <Field
+                label="Rok (dana)"
+                id={inputId(l.key, "leadTimeDays")}
+                error={lineErrors[l.key]?.leadTimeDays}
+              >
                 <Input
-                  id={inputId(l.key, "leadTimeDays")}
                   value={l.leadTimeDays}
                   inputMode="numeric"
                   onChange={(e) => set(l.key, { leadTimeDays: e.target.value })}

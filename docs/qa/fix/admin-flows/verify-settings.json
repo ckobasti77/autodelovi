@@ -1,0 +1,35 @@
+{
+  "FLOW-14": {
+    "original": "Rasklopi auto. Nađi deo.",
+    "alertText": "Odbaciti nesačuvane izmene?Brend nije sačuvan.Prelaskom na drugu karticu ove izmene se gube. Da biste ih zadržali, kliknite „Odustani“, pa „Sačuvaj“ na dnu odeljka.OdustaniOdbaci i pređi",
+    "afterStay": {
+      "url": "",
+      "slogan": "Rasklopi auto. Nađi deo. QA",
+      "firmaSelected": "true"
+    },
+    "beforeUnload": 1,
+    "stillDirty": "Rasklopi auto. Nađi deo. QA",
+    "afterDiscard": {
+      "url": "?tab=firma",
+      "slogan": "Rasklopi auto. Nađi deo."
+    }
+  },
+  "FLOW-15": {
+    "pibBefore": "",
+    "pibInvalid": "true",
+    "pibMessage": "PIB ima 9 cifara.",
+    "focusedAfterSave": "admin-settings-pib",
+    "toastText": true,
+    "okText": true,
+    "pibValidInvalidAttr": null,
+    "mbInvalid": "true",
+    "bankInvalid": "true",
+    "pibAfterDiscard": ""
+  },
+  "consoleErrors": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

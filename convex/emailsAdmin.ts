@@ -253,7 +253,7 @@ export const sendTest = staffMutation({
   handler: async (ctx, { key, to }) => {
     if (!isTemplateKey(key)) return notFound("Šablon ne postoji.");
     const target = validRecipients([to ?? ctx.viewer.user.email ?? ""])[0];
-    if (!target) invalid("Upišite ispravnu e-mail adresu.", "to");
+    if (!target) invalid("Adresa e-pošte nije ispravna. Primer: ime@primer.rs.", "to");
     await enforceRateLimit(ctx, "emailTest", ctx.viewer.userId);
     const settings = await getSettings(ctx);
     const rendered = renderSample(key as TemplateKey, emailContext(settings, siteUrl()));

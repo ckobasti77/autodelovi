@@ -45,6 +45,7 @@ export function Header({ vehicleSlot, cartCount, contact }: HeaderProps) {
   return (
     <header
       data-reveal="off"
+      data-sticky-header=""
       data-testid={TEST_IDS.header}
       className="sticky top-0 z-header border-b print:hidden border-line bg-bg/88 backdrop-blur-header reduced-transparency:bg-bg-raised reduced-transparency:backdrop-blur-none"
     >

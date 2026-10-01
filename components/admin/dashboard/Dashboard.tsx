@@ -58,21 +58,23 @@ function Kpi({
 }
 
 function Trend({ now, before }: { now: number; before: number }) {
+  // Nothing to compare against: „više nego (0)“ says nothing (VIS-40).
+  if (before === 0 && now > 0) return <span className="text-ink-3">prethodnih 7 dana: 0</span>;
   if (now === before)
     return (
-      <span className="inline-flex items-center gap-0.5 text-ink-3">
-        <MinusIcon size={12} weight="bold" aria-hidden="true" /> isto kao prošle nedelje
+      <span className="inline-flex items-start gap-1 text-ink-3">
+        <MinusIcon size={12} weight="bold" aria-hidden="true" className="mt-[0.2em] shrink-0" />
+        <span>isto kao prošle nedelje</span>
       </span>
     );
   const up = now > before;
+  const Icon = up ? ArrowUpIcon : ArrowDownIcon;
   return (
-    <span className="inline-flex items-center gap-0.5 text-ink-2">
-      {up ? (
-        <ArrowUpIcon size={12} weight="bold" aria-hidden="true" />
-      ) : (
-        <ArrowDownIcon size={12} weight="bold" aria-hidden="true" />
-      )}
-      {up ? "više" : "manje"} nego prethodnih 7 dana ({before})
+    <span className="inline-flex items-start gap-1 text-ink-2">
+      <Icon size={12} weight="bold" aria-hidden="true" className="mt-[0.2em] shrink-0" />
+      <span>
+        {up ? "više" : "manje"} nego prethodnih 7 dana ({before})
+      </span>
     </span>
   );
 }
@@ -166,7 +168,9 @@ export function Dashboard() {
         )}
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-2">
+      {/* grid-cols-1 = minmax(0, 1fr): the implicit auto track would grow to the min-content
+          of the nowrap queue rows and push the SLA column off a phone screen (VIS-14). */}
+      <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
         <Section
           title="Red čekanja"
           actions={
@@ -232,7 +236,10 @@ export function Dashboard() {
                             <span className="type-caption text-ink-3">{row.kind}</span>
                             {row.priority ? <Badge tone="info">Majstor</Badge> : null}
                           </span>
-                          <span className="truncate type-caption text-ink-2">
+                          <span
+                            className="truncate type-caption text-ink-2"
+                            title={`${row.who} · ${row.what}`}
+                          >
                             {row.who} · {row.what}
                           </span>
                         </span>
@@ -300,7 +307,7 @@ export function Dashboard() {
         </Section>
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+      <div className="grid grid-cols-1 gap-6 xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
         <Section
           title="Porudžbine po danima"
           actions={<span className="type-caption text-ink-3">poslednjih 30 dana</span>}

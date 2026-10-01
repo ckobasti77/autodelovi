@@ -1,0 +1,184 @@
+[
+  {
+    "id": "VIS-14",
+    "status": "FIXED",
+    "summary": "Dashboard panel grids get an explicit grid-cols-1 (minmax(0,1fr)) below xl and the shared admin Section is min-w-0, so the nowrap queue rows truncate inside the card and the SLA age column (shrink-0) stays visible at 390/768/1024.",
+    "files": ["components/admin/dashboard/Dashboard.tsx", "components/admin/ui.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-lists-shell-tables.mjs after → docs/qa/fix/admin-lists-shell/tables-after.json: dashboard docOver 0 at 390, 768, 1024 (before 883/505/321, tables-before.json); screenshot docs/qa/fix/admin-lists-shell/390-pregled-queue.jpg shows „⚠ 10 h 4 min / primljeno 29.09. 16:31“ on screen."
+  },
+  {
+    "id": "VIS-15",
+    "status": "FIXED",
+    "summary": "DataTable is now table.w-full (auto layout) inside an @container wrapper, so wrapping cells fold before anything scrolls; each list got a width budget (Upiti: Izvor from 1600 px, Traži capped 14/18/24 rem, tags stacked below 1536; Proizvodi: Proizvođač default-on from 1536 px with chooser override, name 16/24/32 rem with title, category 8/11 rem, stock badge stacks over qty when the table is < 72rem; Porudžbine: Kupac capped + truncated with title, Plaćanje · dostava wraps, backorder tag stacks below 1536; E-pošta: Način from 1280 px, subject 22/30 rem). Edge hints are drawn at the inner edge of the sticky columns; the scroller is relative so absolutely positioned sr-only cell text no longer widens the document; a sticky data column after the selection column sticks at left-10; Proizvodi' name column is sticky only from 768 px.",
+    "files": [
+      "components/ui/DataTable.tsx",
+      "components/admin/inquiries/InquiriesList.tsx",
+      "components/admin/products/ProductsList.tsx",
+      "components/admin/orders/OrdersList.tsx",
+      "components/admin/system/EmailsAdmin.tsx"
+    ],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-lists-shell-tables.mjs after → tables-after.json: wrapper over 0 for upiti/proizvodi/porudzbine/porudzbine-sve/mejlovi at 1024, 1280, 1366, 1440, 1920, 2560 (before e.g. upiti 284 @1440, proizvodi 321 @1024, porudzbine-sve 191 @1366, mejlovi 147 @1024); docOver 0 at every width incl. 390 upiti (before 527); hint at the seam below 1024, e.g. 390 proizvodi hint [285,317] with stickyLeft 317. tables-after-c.json re-checks proizvodi after the container query: over 0 at 1440/1366/1280/1024, Stanje inline (236 px) at 1440/1280 and stacked (162 px) at 1366/1024."
+  },
+  {
+    "id": "VIS-16",
+    "status": "FIXED",
+    "summary": "The palette dialog is min-w-0 overflow-hidden, so the overlay grid track can no longer grow to the result rows' min-content; rows already truncate (min-w-0 added on the option row).",
+    "files": ["components/admin/shell/CommandPalette.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-lists-shell-verify.mjs → docs/qa/fix/admin-lists-shell/verify.json palette-390: dialog [16,374] with results for „SK-2026-000092“, close [313,357] closeOnScreen true, docOver 0 (before 16–442, close 381–425)."
+  },
+  {
+    "id": "VIS-17",
+    "status": "FIXED",
+    "summary": "List toolbar and bulk bar share one 48 px slot (min-h-12; bulk bar py-1) in Porudžbine and Proizvodi, so rows do not move when the first row is selected; DataTable additionally ignores row-open clicks within 300 ms of a selection change.",
+    "files": [
+      "components/admin/orders/OrdersList.tsx",
+      "components/admin/products/ProductsList.tsx",
+      "components/ui/DataTable.tsx"
+    ],
+    "verification": "verify.json bulk/admin/porudzbine: row tops before [328,381,429] = after [328,381,429], shifted false; a second real mouse click at the same spot navigated false and deselected (aria-selected false, status „Izbor poništen“). Same for /admin/proizvodi ([328,389,450] both)."
+  },
+  {
+    "id": "A11Y-11",
+    "status": "FIXED",
+    "summary": "CommandPalette has a sr-only role=status that announces, 400 ms after typing and the query settle, „N rezultata“ (countSr), „Nema rezultata za „…“.“ or „Traži se…“; the spinner is decorative now so nothing is announced twice.",
+    "files": ["components/admin/shell/CommandPalette.tsx"],
+    "verification": "verify.json palette-1440 and palette-390: statusResults „10 rezultata“, statusNone „Nema rezultata za „qqqzzzxx“.“ inside the dialog's p[role=status]."
+  },
+  {
+    "id": "A11Y-12",
+    "status": "FIXED",
+    "summary": "The active option (aria-selected=true) gets a 2 px inset outline in --color-focus on top of the selected tint.",
+    "files": ["components/admin/shell/CommandPalette.tsx"],
+    "verification": "verify.json palette-1440 active option after ArrowDown: outline „solid 2px rgb(184, 71, 10) offset -2px“ (paper --color-focus), bg rgb(238,241,244) (before: outline none)."
+  },
+  {
+    "id": "A11Y-15",
+    "status": "FIXED",
+    "summary": "The inline „podešavanjima“ link in the Obaveštenja intro sentence is always underlined; the other admin sentence links in owned files (CompanySetupNotice, SourcesAdmin) already were.",
+    "files": ["components/admin/system/NotificationsAdmin.tsx"],
+    "verification": "verify.json text: linkDecoration „underline“, axe link-in-text-block violations 0 on /admin/obavestenja (before: 1, serious)."
+  },
+  {
+    "id": "A11Y-16",
+    "status": "FIXED",
+    "summary": "DataTable with enableRowSelection renders a polite sr-only role=status that announces every change of the selected count („Izabrano: N“, „Izbor poništen“), derived during render so external clears are announced too.",
+    "files": ["components/ui/DataTable.tsx"],
+    "verification": "verify.json bulk/admin/porudzbine and /admin/proizvodi: status after mouse select „Izabrano: 1“, after deselect „Izbor poništen“, after keyboard focus + Space „Izabrano: 1“."
+  },
+  {
+    "id": "FLOW-19",
+    "status": "FIXED",
+    "summary": "useConnectionLost() (browser offline, or a Convex socket that had connected staying down > 1.5 s; pending = in-flight mutations + actions) drives a sticky role=status strip under the admin top bar („Veza sa serverom je prekinuta — pokušavamo ponovo.“ + „Na čekanju: N izmena. Ne zatvarajte stranicu — sve će biti sačuvano čim se veza vrati.“, then „Veza je ponovo uspostavljena.“ for 4 s). The shared ConfirmDialog unlocks its secondary button as „Zatvori“ while the write waits (primary „Čeka vezu…“, inline status); the write stays queued and a failure after closing becomes a toast. The order-detail transition dialog (OrderDetail.tsx, not owned) needs the same 3 lines — see cross_package_requests.",
+    "files": [
+      "components/admin/hooks.ts",
+      "components/admin/shell/ConnectionBanner.tsx",
+      "components/admin/shell/AdminShell.tsx",
+      "components/admin/ConfirmDialog.tsx"
+    ],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-lists-shell-verify.mjs offline → verify-offline.json: offline strip text „Veza sa serverom je prekinuta — pokušavamo ponovo. …“, role status, position sticky; after reconnect „Veza je ponovo uspostavljena.“ for ~3 s then empty. … verify.mjs confirm → verify-confirm.json (test order SK-2026-000157, bulk „Potvrdi“ offline): buttons „Zatvori|false“ and „Čeka vezu…“, dialog status „Nema veze sa serverom. Radnja čeka …“, banner „… Na čekanju: 1 izmena. …“, dialogClosed true, appliedAfterReconnect true; errors []."
+  },
+  {
+    "id": "FLOW-23",
+    "status": "FIXED",
+    "summary": "The plain-text previews in the outbox sheet and the template gallery use type-code (no text-transform) with overflow-wrap:anywhere instead of the uppercase type-code-s.",
+    "files": ["components/admin/system/EmailsAdmin.tsx", "components/admin/system/EmailTemplatesAdmin.tsx"],
+    "verification": "verify.json text.gallery (/admin/mejlovi/sabloni?sablon=order_received&prikaz=tekst): textTransform none, overflowWrap anywhere, horizontal overflow 0, visible text starts „Porudžbina je primljena.“ (before „PORUDŽBINA JE PRIMLJENA.“)."
+  },
+  {
+    "id": "COPY-16",
+    "status": "FIXED",
+    "summary": "Owned part: „režim log“ → „režim „Samo zapis““ in the outbox resend toast and the template test-send toast (cross-request from backend-orders-quotes), and the plain-text preview no longer renders in capitals (FLOW-23). OrderDetail:756 and the e-mail template/notify wording belong to other packages.",
+    "files": ["components/admin/system/EmailsAdmin.tsx", "components/admin/system/EmailTemplatesAdmin.tsx"],
+    "verification": "grep -n \"Samo zapis\" components/admin/system/EmailsAdmin.tsx components/admin/system/EmailTemplatesAdmin.tsx → EmailsAdmin.tsx „Poruka je ponovo zabeležena (režim „Samo zapis“).“, EmailTemplatesAdmin.tsx „(režim „Samo zapis“, ${res.to})“; npx eslint … → no output; npx tsc --noEmit → 0 errors."
+  },
+  {
+    "id": "VIS-31",
+    "status": "FIXED",
+    "summary": "Cross-request: CategoriesAdmin shows one SEO description counter „n / 170“ that turns to a warning past 155 (CharCount gained warnAt), and the Textarea's own counter is off (showCount={false}), the same as products/SeoFields.tsx.",
+    "files": ["components/admin/catalog/CategoriesAdmin.tsx", "components/admin/ui.tsx"],
+    "verification": "npx eslint components/admin/catalog/CategoriesAdmin.tsx components/admin/ui.tsx → no output; npx tsc --noEmit → 0 errors (error TS count 0)."
+  },
+  {
+    "id": "FLOW-13",
+    "status": "FIXED",
+    "summary": "Cross-request: OrderPrint's customer contact line is [formatPhone(phone), email].filter(Boolean).join(' · '), so a customer without e-mail gets no dangling „ · “.",
+    "files": ["components/admin/print/OrderPrint.tsx"],
+    "verification": "npx eslint components/admin/print/OrderPrint.tsx → no output; npx tsc --noEmit → 0 errors."
+  },
+  {
+    "id": "COPY-11",
+    "status": "FIXED",
+    "summary": "Assist (owned part): OrderPrint items table header „Cena sa PDV“ → „Cena sa PDV-om“.",
+    "files": ["components/admin/print/OrderPrint.tsx"],
+    "verification": "grep -n \"Cena sa PDV-om\" components/admin/print/OrderPrint.tsx → 1 match; npx tsc --noEmit → 0 errors."
+  },
+  {
+    "id": "VIS-34",
+    "status": "FIXED",
+    "summary": "ORDER_ICON: ceka_deo → WarningIcon, zavrsena → CheckSquareIcon (ReceiptIcon import dropped). CheckSquareIcon is new to the Phosphor barrel — run node scripts/brand/build-phosphor.mjs (cross-request).",
+    "files": ["components/admin/ui.tsx"],
+    "verification": "npx tsc --noEmit → 0 errors; npx eslint components/admin/ui.tsx → no output."
+  },
+  {
+    "id": "VIS-36",
+    "status": "FIXED",
+    "summary": "title with the full text on truncating cells: Upiti message, outbox recipients and subject, dashboard queue summary, orders Kupac, product name.",
+    "files": [
+      "components/admin/inquiries/InquiriesList.tsx",
+      "components/admin/system/EmailsAdmin.tsx",
+      "components/admin/dashboard/Dashboard.tsx",
+      "components/admin/orders/OrdersList.tsx",
+      "components/admin/products/ProductsList.tsx"
+    ],
+    "verification": "npx eslint (touched files) → no output; npx tsc --noEmit → 0 errors."
+  },
+  {
+    "id": "VIS-39",
+    "status": "FIXED",
+    "summary": "The top bar keeps its full-width sticky border/background, but its content sits in the same mx-auto max-w-[1680px] px-4 lg:px-6 column as <main>.",
+    "files": ["components/admin/shell/AdminTopBar.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-lists-shell-p3.mjs → p3.json align at 2560: barInner [556,2236] = main [556,2236]."
+  },
+  {
+    "id": "VIS-40",
+    "status": "FIXED",
+    "summary": "KPI Trend: the arrow is aligned with the first text line (items-start + mt-[0.2em]) and, when the previous 7 days had 0, the tile says „prethodnih 7 dana: 0“ instead of „više nego … (0)“.",
+    "files": ["components/admin/dashboard/Dashboard.tsx"],
+    "verification": "p3.json trend: [„prethodnih 7 dana: 0“]; screenshot 390-pregled-queue.jpg (Poslednjih 7 dana 95 / prethodnih 7 dana: 0)."
+  },
+  {
+    "id": "A11Y-20",
+    "status": "FIXED",
+    "summary": "The bell popover (Radix role=dialog) is labelled by its header, now an h2 „Obaveštenja“ (aria-labelledby via useId).",
+    "files": ["components/admin/shell/NotificationBell.tsx"],
+    "verification": "p3.json popover: getByRole('dialog', { name: 'Obaveštenja' }) found, labelledby true, tag H2, text „Obaveštenja“."
+  },
+  {
+    "id": "FLOW-32",
+    "status": "FIXED",
+    "summary": "UI part: notifications.unreadCount stops at take(100), so at 100 the bell label says „Obaveštenja, nepročitano: više od 99“ (UNREAD_CAP). The backend { count, capped } refactor was not needed for the label.",
+    "files": ["components/admin/shell/NotificationBell.tsx"],
+    "verification": "p3.json bellLabel „Obaveštenja, nepročitano: više od 99“ on the demo deployment (unread at the 100 cap)."
+  },
+  {
+    "id": "VIS-29",
+    "status": "OPEN",
+    "summary": "Not attempted in this run (sidebar compaction on short viewports, pinned settings group, scroll fade, active item scroll-into-view): not a trivial P3 within the time budget.",
+    "files": ["components/admin/shell/AdminSidebar.tsx"],
+    "verification": "No change made."
+  },
+  {
+    "id": "VIS-30",
+    "status": "OPEN",
+    "summary": "Not attempted (rail badge offsets, stock as a dot). The bell already caps at „9+“ and the sidebar at „99+“ (seen in 1440-proizvodi.jpg).",
+    "files": ["components/admin/shell/AdminSidebar.tsx"],
+    "verification": "No change made."
+  },
+  {
+    "id": "VIS-38",
+    "status": "OPEN",
+    "summary": "Not attempted (<wbr> after „@“ in DefinitionList e-mails).",
+    "files": ["components/admin/ui.tsx"],
+    "verification": "No change made."
+  }
+]

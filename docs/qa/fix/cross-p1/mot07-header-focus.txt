@@ -1,0 +1,2 @@
+{"patch":false,"log":[1800,"1800:Preskoči na sadr","1800:SKLOP","1800:Delovi"]}
+{"patch":true,"log":[1800,"1800:Preskoči na sadr","1800:SKLOP","1800:Delovi"]}

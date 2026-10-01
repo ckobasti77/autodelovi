@@ -1,0 +1,5 @@
+
+Running 1 test using 1 worker
+
+[1/1] [desktop-1440] › tests\e2e\admin.spec.ts:163:5 › inquiry: answer with a quote
+  1 passed (11.6s)

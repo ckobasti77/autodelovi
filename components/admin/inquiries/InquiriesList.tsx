@@ -76,8 +76,10 @@ export function InquiriesList() {
   );
   const counts = useQuery(api.inquiriesAdmin.statusCounts, {});
   const kpis = useQuery(api.dashboard.kpis, { nowMinute });
-  // Below 1280 px the tags stack under the number and „Preuzeo“ hides (no sideways scroll).
+  // Width budget (DS §9.15, D159): below 1536 px the tags stack under the number and „Traži“ is
+  // capped; „Preuzeo“ shows from 1280 px and „Izvor“ from 1600 px, so nothing scrolls sideways.
   const roomy = useMediaQuery("(min-width: 1280px)");
+  const wide = useMediaQuery("(min-width: 1600px)");
 
   const columns = useMemo<ColumnDef<Row, unknown>[]>(
     () => [
@@ -87,7 +89,7 @@ export function InquiriesList() {
         header: "Broj",
         meta: { sticky: "left" },
         cell: ({ row }) => (
-          <span className="flex flex-col items-start gap-1 min-[1280px]:flex-row min-[1280px]:items-center min-[1280px]:gap-2">
+          <span className="flex flex-col items-start gap-1 2xl:flex-row 2xl:items-center 2xl:gap-2">
             <DocNumber number={row.original.number} />
             {row.original.isMechanic ? <Badge tone="info">Majstor</Badge> : null}
             {row.original.isDemo ? <DemoTag /> : null}
@@ -164,7 +166,7 @@ export function InquiriesList() {
         header: "Traži",
         enableSorting: false,
         cell: ({ row }) => (
-          <span className="flex max-w-[14rem] flex-col xl:max-w-[24rem]">
+          <span className="flex max-w-[14rem] flex-col xl:max-w-[18rem] 2xl:max-w-[24rem]">
             <span className="flex min-w-0 items-center gap-2">
               <span className="truncate text-ink-1">
                 {row.original.vehicleLabel ?? INQUIRY_KIND_LABEL[row.original.kind]}
@@ -183,7 +185,9 @@ export function InquiriesList() {
                 </span>
               ) : null}
             </span>
-            <span className="truncate type-caption text-ink-3">{row.original.message}</span>
+            <span className="truncate type-caption text-ink-3" title={row.original.message}>
+              {row.original.message}
+            </span>
           </span>
         ),
       },
@@ -277,7 +281,7 @@ export function InquiriesList() {
       <DataTable
         caption="Upiti"
         columns={columns}
-        columnVisibility={{ assignee: roomy, source: roomy }}
+        columnVisibility={{ assignee: roomy, source: wide }}
         data={results}
         getRowId={(r) => r._id}
         rowLabel={(r) => r.number}

@@ -1,0 +1,22 @@
+VIS04 1280x800 ok  ["Sklopljeno:1","Karoserija i svetla:2","Točkovi:1","Kočnice i vešanje:2","Agregati i hlađenje:2","Motor i turbina:1","Menjač i kvačilo:1","Izduvni sistem:1"] 
+VIS04 1366x800 ok  ["Sklopljeno:1","Karoserija i svetla:1","Točkovi:1","Kočnice i vešanje:1","Agregati i hlađenje:2","Motor i turbina:1","Menjač i kvačilo:1","Izduvni sistem:1"] 
+VIS04 1440x900 ok  ["Sklopljeno:1","Karoserija i svetla:1","Točkovi:1","Kočnice i vešanje:1","Agregati i hlađenje:1","Motor i turbina:1","Menjač i kvačilo:1","Izduvni sistem:1"] 
+MOT04 1024x768 BAD panelLeft 584 ["00 Sklopljen automobil 41-66","01 Karoserija, stakla  66-90","02 Točkovi 90-115","03 Kočnice, vešanje, u 115-140","04 Pomoćni agregati, h 140-164","05 Motor, turbina, gor 164-189","06 Menjač, kvačilo, po 189-214","07 Izduvni sistem 214-238","Rasklopi 262-385","Lista delova 397-543"] [{"name":"00 Sklopljen automobil","x":"41-66","visibleAtCenter":false,"hit":"NEXTJS-PORTAL.","coveredByPanel":false,"panelLeft":584}]
+MOT04 1280x800 ok  panelLeft 800 ["00 Sklopljen automobil 48-98","01 Karoserija, stakla  98-148","02 Točkovi 148-198","03 Kočnice, vešanje, u 198-248","04 Pomoćni agregati, h 248-297","05 Motor, turbina, gor 297-347","06 Menjač, kvačilo, po 347-397","07 Izduvni sistem 397-447","Rasklopi 471-594","Lista delova 606-752"] 
+MOT04 1440x900 ok  panelLeft 960 ["00 Sklopljen automobil 48-118","01 Karoserija, stakla  118-188","02 Točkovi 188-258","03 Kočnice, vešanje, u 258-328","04 Pomoćni agregati, h 328-397","05 Motor, turbina, gor 397-467","06 Menjač, kvačilo, po 467-537","07 Izduvni sistem 537-607","Rasklopi 631-754","Lista delova 766-912"] 
+MOT06 1440x900 motion open 16 heights ["16ms:65px/o1/closed","84ms:69px/o0.85/open","150ms:100px/o0.99/open","217ms:168px/o1/open","284ms:187px/o1/open","350ms:188px/o1/open","417ms:188px/o1/open","484ms:188px/o1/open","549ms:188px/o1/open","618ms:188px/o1/open"]
+MOT06 1440x900 motion close 15 heights ["12ms:188px/o0.99/open","78ms:174px/o0.88/open","143ms:114px/o0.55/open","227ms:68px/o0/open","328ms:65px/o1/closed","394ms:65px/o1/closed","461ms:65px/o1/closed","527ms:65px/o1/closed","593ms:65px/o1/closed","610ms:65px/o1/closed"]
+MOT06 390x844 motion open 18 heights ["15ms:76px/o1/closed","82ms:83px/o0.85/open","148ms:132px/o0.99/open","215ms:241px/o1/open","282ms:272px/o1/open","348ms:274px/o1/open","415ms:274px/o1/open","482ms:274px/o1/open","549ms:274px/o1/open","615ms:274px/o1/open"]
+MOT06 390x844 motion close 17 heights ["2ms:274px/o1/open","68ms:262px/o0.93/open","135ms:191px/o0.67/open","202ms:96px/o0/open","269ms:76px/o0/open","335ms:76px/o1/closed","402ms:76px/o1/closed","468ms:76px/o1/closed","536ms:76px/o1/closed","603ms:76px/o1/closed"]
+MOT06 1440x900 reduced open 2 heights ["10ms:65px/o1/closed","77ms:188px/o1/open","143ms:188px/o1/open","209ms:188px/o1/open","276ms:188px/o1/open","343ms:188px/o1/open","410ms:188px/o1/open","476ms:188px/o1/open","542ms:188px/o1/open","609ms:188px/o1/open"]
+MOT06 1440x900 reduced close 1 heights ["5ms:65px/o1/closed","71ms:65px/o1/closed","138ms:65px/o1/closed","205ms:65px/o1/closed","271ms:65px/o1/closed","337ms:65px/o1/closed","404ms:65px/o1/closed","471ms:65px/o1/closed","538ms:65px/o1/closed","604ms:65px/o1/closed"]
+LEGEND 360x780 {"navsInDom":2,"visibleNavs":1,"legend":"2 cols, 158px"} | COPY08 "Sve kategorije (44) · 157 artikala"
+LEGEND 390x844 {"navsInDom":2,"visibleNavs":1,"legend":"2 cols, 185px"} | COPY08 "Sve kategorije (44) · 157 artikala"
+LEGEND 390x664 {"navsInDom":2,"visibleNavs":0,"legend":"hidden"} | COPY08 "Sve kategorije (44) · 157 artikala"
+LEGEND 412x915 {"navsInDom":2,"visibleNavs":1,"legend":"2 cols, 228px"} | COPY08 "Sve kategorije (44) · 157 artikala"
+LEGEND 430x932 {"navsInDom":2,"visibleNavs":1,"legend":"2 cols, 223px"} | COPY08 "Sve kategorije (44) · 157 artikala"
+LEGEND 768x1024 {"navsInDom":2,"visibleNavs":1,"legend":"8 cols, 84px"} | COPY08 "Sve kategorije (44) · 157 artikala"
+LEGEND 820x1180 {"navsInDom":2,"visibleNavs":1,"legend":"2 cols, 188px"} | COPY08 "Sve kategorije (44) · 157 artikala"
+LEGEND 1440x900 {"navsInDom":1,"visibleNavs":1,"legend":"none"} | COPY08 "Sve kategorije (44) · 157 artikala"
+REVEAL 390x844 {"stuck":[],"pending":0,"words":0} errors {"c":[],"p":[]}
+REVEAL 1440x900 {"stuck":[],"pending":0,"words":0} errors {"c":[],"p":[]}

@@ -145,7 +145,7 @@ export function mechanicRegistrationReceived(
   const body = join(
     heading("Registracija je primljena."),
     paragraph(
-      `Proveravamo podatke servisa **${d.companyName}**. Kad odobrimo nalog, stiže vam e-mail i od tada na celom sajtu vidite svoje cene.`,
+      `Proveravamo podatke servisa **${d.companyName}**. Kad odobrimo nalog, javljamo vam e-poštom i od tada na celom sajtu vidite svoje cene.`,
     ),
     facts([
       ["Servis", d.companyName],
@@ -270,7 +270,7 @@ export function staffInvite(d: StaffInviteEmailData, ctx: EmailContext): Rendere
     ),
     button("Prihvatite pozivnicu", d.inviteUrl),
     paragraph(
-      `Link važi do ${dateTime(d.expiresAt)}. Prijavite se ili napravite nalog sa ovom e-adresom — pozivnica važi samo za nju.`,
+      `Link važi do ${dateTime(d.expiresAt)}. Prijavite se ili napravite nalog sa ovom adresom e-pošte — pozivnica važi samo za nju.`,
       { muted: true },
     ),
   );

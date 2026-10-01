@@ -65,7 +65,7 @@ export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
         if (!isValidEmail(email)) {
           throw new ConvexError({
             code: "INVALID_EMAIL",
-            message: "Upišite ispravnu e-mail adresu.",
+            message: "Adresa e-pošte nije ispravna. Primer: ime@primer.rs.",
           });
         }
         // A new password (sign-up or reset) must not be the e-mail address itself.

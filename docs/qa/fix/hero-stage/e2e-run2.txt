@@ -1,0 +1,26 @@
+
+Running 22 tests using 1 worker
+
+[1/22] [desktop-1440] › tests\e2e\hero-3d.spec.ts:49:7 › 3D hero › poster first, live 3D after intent, crossfade, no console errors
+[2/22] [desktop-1440] › tests\e2e\hero-3d.spec.ts:97:7 › 3D hero › the parts list selects a category and opens the panel with products
+[3/22] [desktop-1440] › tests\e2e\hero-3d.spec.ts:125:7 › 3D hero › the test hook explodes the car and selects a part
+[4/22] [desktop-1440] › tests\e2e\hero-3d.spec.ts:152:7 › 3D hero › a deep link opens the right panel
+[5/22] [desktop-1440] › tests\e2e\hero-3d.spec.ts:181:7 › 3D hero › the stage keeps the poster's aspect below 1024 px, so the car fills it
+[6/22] [desktop-1440] › tests\e2e\hero-3d.spec.ts:216:7 › 3D hero › an unknown deep link is ignored
+[7/22] [desktop-1440] › tests\e2e\hero-3d.spec.ts:223:7 › 3D hero › the panel is accessible (axe) and every hero control shows focus
+[8/22] [desktop-1440] › tests\e2e\hero-3d.spec.ts:272:7 › 3D hero — fallbacks › reduced motion: no scroll track, „Rasklopi“ cuts to the exploded state
+[9/22] [desktop-1440] › tests\e2e\hero-3d.spec.ts:303:7 › 3D hero — fallbacks › low tier: posters only, the exploded poster follows the explode
+[10/22] [desktop-1440] › tests\e2e\hero-3d.spec.ts:323:7 › 3D hero — fallbacks › a software WebGL renderer gets the posters only
+[11/22] [desktop-1440] › tests\e2e\hero-3d.spec.ts:337:7 › 3D hero — fallbacks › WebGL context loss hands the stage back to the posters
+[12/22] [mobile-390] › tests\e2e\hero-3d.spec.ts:49:7 › 3D hero › poster first, live 3D after intent, crossfade, no console errors
+[13/22] [mobile-390] › tests\e2e\hero-3d.spec.ts:97:7 › 3D hero › the parts list selects a category and opens the panel with products
+[14/22] [mobile-390] › tests\e2e\hero-3d.spec.ts:125:7 › 3D hero › the test hook explodes the car and selects a part
+[15/22] [mobile-390] › tests\e2e\hero-3d.spec.ts:152:7 › 3D hero › a deep link opens the right panel
+[16/22] [mobile-390] › tests\e2e\hero-3d.spec.ts:181:7 › 3D hero › the stage keeps the poster's aspect below 1024 px, so the car fills it
+[17/22] [mobile-390] › tests\e2e\hero-3d.spec.ts:216:7 › 3D hero › an unknown deep link is ignored
+[18/22] [mobile-390] › tests\e2e\hero-3d.spec.ts:223:7 › 3D hero › the panel is accessible (axe) and every hero control shows focus
+[19/22] [mobile-390] › tests\e2e\hero-3d.spec.ts:272:7 › 3D hero — fallbacks › reduced motion: no scroll track, „Rasklopi“ cuts to the exploded state
+[20/22] [mobile-390] › tests\e2e\hero-3d.spec.ts:303:7 › 3D hero — fallbacks › low tier: posters only, the exploded poster follows the explode
+[21/22] [mobile-390] › tests\e2e\hero-3d.spec.ts:323:7 › 3D hero — fallbacks › a software WebGL renderer gets the posters only
+[22/22] [mobile-390] › tests\e2e\hero-3d.spec.ts:337:7 › 3D hero — fallbacks › WebGL context loss hands the stage back to the posters
+  22 passed (1.5m)

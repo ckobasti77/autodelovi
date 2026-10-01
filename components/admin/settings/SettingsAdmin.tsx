@@ -9,7 +9,7 @@
  */
 import { useMutation, useQuery } from "convex/react";
 import type { FunctionArgs, FunctionReturnType } from "convex/server";
-import { useState, type ReactNode } from "react";
+import { useState, type ComponentProps, type ReactNode } from "react";
 import { PlusIcon, TrashIcon, WarningIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
@@ -22,7 +22,10 @@ import { ADMIN_COPY, EMAIL_MODE_LABEL, WEEKDAY_LABEL } from "@/lib/i18n/sr/admin
 import { cn } from "@/lib/cn";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { ADMIN } from "@/constants/routes";
-import { convexErrorMessage } from "@/lib/i18n/sr/shop";
+import { convexErrorField, convexErrorMessage } from "@/lib/i18n/sr/shop";
+import { isValidBankAccount } from "@/lib/domain/company";
+import { normalizeMb, normalizePib } from "@/lib/domain/identifiers";
+import { mbProblem, pibProblem } from "@/lib/validation/identifiers";
 import { placeholderValues } from "@/lib/settings/public";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -42,12 +45,19 @@ import { useAdminShell } from "../shell/context";
 import { AdLandingsTab } from "./AdLandingsTab";
 import { NotificationPrefsMatrix } from "./NotificationPrefsMatrix";
 import { LandingOverview, TrackingStatus } from "./SeoPanels";
+import { UnsavedProvider, useUnsavedFlag, useUnsavedRegistry } from "./unsaved";
 import { PageHeader, SaveBar, Section } from "../ui";
 import { useUrlFilters } from "../useUrlFilters";
 
 type Settings = FunctionReturnType<typeof api.settings.getAdmin>;
 type Update = FunctionArgs<typeof api.settings.updateSection>["update"];
 type SectionName = Update["section"];
+
+/** SaveBar that also registers its section as unsaved while it shows (FLOW-14). */
+function SettingsSaveBar(props: ComponentProps<typeof SaveBar>) {
+  useUnsavedFlag(props.dirty ? (props.message ?? "Imate nesačuvane izmene.") : null);
+  return <SaveBar {...props} />;
+}
 
 /** Draft of one settings section + dirty flag + owner-only save. */
 function useSection<T>(section: SectionName, value: T) {
@@ -61,13 +71,16 @@ function useSection<T>(section: SectionName, value: T) {
     setBase(value);
   }
   const dirty = JSON.stringify(draft) !== JSON.stringify(base);
-  const save = async (next: T = draft) => {
+  /** Resolves to the error when the save failed (already shown as a toast), else null. */
+  const save = async (next: T = draft): Promise<unknown> => {
     setSaving(true);
     try {
       await updateSection({ update: { section, value: next } as Update });
       toast.success(ADMIN_COPY.saved);
+      return null;
     } catch (err) {
       toast.error(convexErrorMessage(err, ADMIN_COPY.genericError));
+      return err;
     } finally {
       setSaving(false);
     }
@@ -94,12 +107,74 @@ function Group({
 
 const opt = (s: string) => (s.trim() ? s.trim() : undefined);
 
+type Company = Settings["company"];
+
+/** Bank rows the user added but left empty are dropped on save, not reported. */
+const blankAccount = (a: Company["bankAccounts"][number]) => !a.bank.trim() && !a.account.trim();
+
+/**
+ * Client mirror of the server check in settings.updateSection (FLOW-15): PIB and MB with
+ * their check digits, bank accounts as 18 digits with the MOD 97 pair. Keys: `pib`, `mb`,
+ * `bank<i>`; empty optional fields are fine.
+ */
+function companyProblems(c: Company): Record<string, string> {
+  const out: Record<string, string> = {};
+  const pib = c.pib?.trim() ? pibProblem(c.pib) : null;
+  if (pib) out.pib = pib;
+  const mb = c.mb?.trim() ? mbProblem(c.mb) : null;
+  if (mb) out.mb = mb;
+  c.bankAccounts.forEach((a, i) => {
+    if (blankAccount(a)) return;
+    if (!a.account.trim()) out[`bank${i}`] = "Upišite broj računa.";
+    else if (!isValidBankAccount(a.account))
+      out[`bank${i}`] =
+        "Račun nije ispravan: 18 cifara (npr. 160-0000000123456-78), kontrolni broj ne odgovara.";
+  });
+  return out;
+}
+
+/** `company.bankAccounts.2` → `bank2`, `company.pib` → `pib`. */
+function companyErrorKey(field: string | null): string | null {
+  if (!field?.startsWith("company.")) return null;
+  const rest = field.slice("company.".length);
+  const bank = /^bankAccounts\.(\d+)$/.exec(rest);
+  return bank ? `bank${bank[1]}` : rest;
+}
+
+const companyFieldId = (key: string) => `settings-company-${key}`;
+
 export function SettingsAdmin() {
   const settings = useQuery(api.settings.getAdmin, {});
   const { viewer } = useAdminShell();
   const [f, setF] = useUrlFilters(["tab"] as const);
   const tab = f.tab || "firma";
+  const unsaved = useUnsavedRegistry();
+  const confirm = useConfirm();
   if (!settings) return <Skeleton className="h-[640px] w-full" />;
+  // FLOW-14: a tab switch unmounts the current panel and its drafts — ask first.
+  const changeTab = (next: string) => {
+    const pending = unsaved.pending();
+    if (pending.length === 0) return setF({ tab: next });
+    confirm.ask({
+      title: "Odbaciti nesačuvane izmene?",
+      description: (
+        <>
+          <ul className="flex list-disc flex-col gap-1 pl-5">
+            {pending.map((m) => (
+              <li key={m}>{m}</li>
+            ))}
+          </ul>
+          <p className="mt-3">
+            Prelaskom na drugu karticu ove izmene se gube. Da biste ih zadržali, kliknite
+            „Odustani“, pa „Sačuvaj“ na dnu odeljka.
+          </p>
+        </>
+      ),
+      confirmLabel: "Odbaci i pređi",
+      danger: true,
+      onConfirm: () => setF({ tab: next }),
+    });
+  };
   const can = viewer.isOwner;
   const tabs = [
     { value: "firma", label: "Firma", content: <CompanyTab s={settings} can={can} /> },
@@ -126,21 +201,24 @@ export function SettingsAdmin() {
     ...(can ? [{ value: "opasna-zona", label: "Opasna zona", content: <DangerTab /> }] : []),
   ];
   return (
-    <div className="flex flex-col gap-4">
-      <PageHeader
-        title="Podešavanja"
-        description={`Poslednja izmena: ${settings.updatedAt ? formatDate(settings.updatedAt) : "još nema."}${can ? "" : ` ${ADMIN_COPY.ownerOnly}`}`}
-      />
-      <Tabs
-        label="Podešavanja"
-        value={tab}
-        onValueChange={(v) => setF({ tab: v })}
-        items={tabs.map((t) => ({
-          ...t,
-          content: <div className="mt-5 flex flex-col gap-6">{t.content}</div>,
-        }))}
-      />
-    </div>
+    <UnsavedProvider value={unsaved}>
+      <div className="flex flex-col gap-4">
+        <PageHeader
+          title="Podešavanja"
+          description={`Poslednja izmena: ${settings.updatedAt ? formatDate(settings.updatedAt) : "još nema."}${can ? "" : ` ${ADMIN_COPY.ownerOnly}`}`}
+        />
+        <Tabs
+          label="Podešavanja"
+          value={tab}
+          onValueChange={changeTab}
+          items={tabs.map((t) => ({
+            ...t,
+            content: <div className="mt-5 flex flex-col gap-6">{t.content}</div>,
+          }))}
+        />
+        <ConfirmDialog {...confirm.props} />
+      </div>
+    </UnsavedProvider>
   );
 }
 
@@ -149,10 +227,48 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
   const brand = useSection("brand", s.brand);
   const facts = useSection("trustFacts", s.trustFacts);
   const c = company.draft;
-  const setC = (patch: Partial<typeof c>) => company.setDraft({ ...c, ...patch });
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [serverError, setServerError] = useState<{ key: string; message: string } | null>(null);
+  const setC = (patch: Partial<typeof c>) => {
+    setServerError(null);
+    company.setDraft({ ...c, ...patch });
+  };
+  const touch = (key: string) => () => setTouched((t) => (t[key] ? t : { ...t, [key]: true }));
   const phoneErrors = c.phones.map((p) =>
     p.e164 && !normalizePhone(p.e164) ? "Neispravan broj" : undefined,
   );
+  const problems = companyProblems(c);
+  const errorFor = (key: string) =>
+    (touched[key] ? problems[key] : undefined) ??
+    (serverError?.key === key ? serverError.message : undefined);
+  const focusField = (key: string) => document.getElementById(companyFieldId(key))?.focus();
+  const saveCompany = () => {
+    if (phoneErrors.some(Boolean)) return toast.error("Proverite brojeve telefona.");
+    const keys = Object.keys(problems);
+    if (keys.length > 0) {
+      setTouched((t) => ({ ...t, ...Object.fromEntries(keys.map((k) => [k, true])) }));
+      focusField(keys[0]!);
+      return toast.error("Proverite označena polja.");
+    }
+    void company
+      .save({
+        ...c,
+        ...(c.pib?.trim() ? { pib: normalizePib(c.pib.trim()) } : {}),
+        ...(c.mb?.trim() ? { mb: normalizeMb(c.mb.trim()) } : {}),
+        phones: c.phones
+          .filter((p) => p.e164.trim())
+          .map((p) => ({ ...p, e164: normalizePhone(p.e164) ?? p.e164 })),
+        bankAccounts: c.bankAccounts
+          .filter((a) => !blankAccount(a))
+          .map((a) => ({ bank: a.bank.trim(), account: a.account.trim() })),
+      })
+      .then((err) => {
+        const key = companyErrorKey(convexErrorField(err));
+        if (!key) return;
+        setServerError({ key, message: convexErrorMessage(err, ADMIN_COPY.genericError) });
+        focusField(key);
+      });
+  };
   return (
     <fieldset disabled={!can} className="flex flex-col gap-6">
       <Group
@@ -173,20 +289,39 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
               onChange={(e) => setC({ displayName: opt(e.target.value) })}
             />
           </Field>
-          <Field label="PIB">
+          <Field
+            id={companyFieldId("pib")}
+            label="PIB"
+            help="9 cifara"
+            error={errorFor("pib")}
+            success={c.pib?.trim() && !problems.pib ? "PIB je ispravan." : undefined}
+          >
             <Input
               value={c.pib ?? ""}
               onChange={(e) => setC({ pib: opt(e.target.value) })}
+              onBlur={touch("pib")}
               inputMode="numeric"
+              autoComplete="off"
+              maxLength={11}
               inputClassName="font-mono"
+              data-testid="admin-settings-pib"
             />
           </Field>
-          <Field label="Matični broj">
+          <Field
+            id={companyFieldId("mb")}
+            label="Matični broj"
+            help="8 cifara"
+            error={errorFor("mb")}
+          >
             <Input
               value={c.mb ?? ""}
               onChange={(e) => setC({ mb: opt(e.target.value) })}
+              onBlur={touch("mb")}
               inputMode="numeric"
+              autoComplete="off"
+              maxLength={10}
               inputClassName="font-mono"
+              data-testid="admin-settings-mb"
             />
           </Field>
           <Field label="Ulica i broj">
@@ -309,7 +444,7 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
             {c.bankAccounts.map((a, i) => (
               <div
                 key={i}
-                className="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)_auto] items-center gap-2"
+                className="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)_auto] items-start gap-2"
               >
                 <Input
                   aria-label={`Banka ${i + 1}`}
@@ -324,20 +459,28 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
                   }
                   className="h-9"
                 />
-                <Input
-                  aria-label={`Račun ${i + 1}`}
-                  value={a.account}
-                  placeholder="160-0000000000000-00"
-                  onChange={(e) =>
-                    setC({
-                      bankAccounts: c.bankAccounts.map((x, j) =>
-                        j === i ? { ...x, account: e.target.value } : x,
-                      ),
-                    })
-                  }
-                  className="h-9"
-                  inputClassName="font-mono"
-                />
+                <Field
+                  id={companyFieldId(`bank${i}`)}
+                  label={`Račun ${i + 1}`}
+                  hideLabel
+                  error={errorFor(`bank${i}`)}
+                >
+                  <Input
+                    value={a.account}
+                    placeholder="160-0000000000000-00"
+                    onChange={(e) =>
+                      setC({
+                        bankAccounts: c.bankAccounts.map((x, j) =>
+                          j === i ? { ...x, account: e.target.value } : x,
+                        ),
+                      })
+                    }
+                    onBlur={touch(`bank${i}`)}
+                    className="h-9"
+                    inputClassName="font-mono"
+                    data-testid={`admin-settings-bank-${i}`}
+                  />
+                </Field>
                 <IconButton
                   label={`Ukloni račun ${i + 1}`}
                   icon={<TrashIcon size={16} />}
@@ -358,19 +501,15 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
           </fieldset>
         </div>
         {can ? (
-          <SaveBar
+          <SettingsSaveBar
             dirty={company.dirty}
             saving={company.saving}
-            onSave={() => {
-              if (phoneErrors.some(Boolean)) return toast.error("Proverite brojeve telefona.");
-              void company.save({
-                ...c,
-                phones: c.phones
-                  .filter((p) => p.e164.trim())
-                  .map((p) => ({ ...p, e164: normalizePhone(p.e164) ?? p.e164 })),
-              });
+            onSave={saveCompany}
+            onDiscard={() => {
+              setTouched({});
+              setServerError(null);
+              company.reset();
             }}
-            onDiscard={company.reset}
             message="Podaci o firmi nisu sačuvani."
           />
         ) : null}
@@ -415,7 +554,7 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
           </Field>
         </div>
         {can ? (
-          <SaveBar
+          <SettingsSaveBar
             dirty={brand.dirty}
             saving={brand.saving}
             onSave={() => void brand.save()}
@@ -478,7 +617,7 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
           ) : null}
         </div>
         {can ? (
-          <SaveBar
+          <SettingsSaveBar
             dirty={facts.dirty}
             saving={facts.saving}
             onSave={() =>
@@ -554,7 +693,7 @@ function HoursTab({ s, can }: { s: Settings; can: boolean }) {
           </tbody>
         </table>
         {can ? (
-          <SaveBar
+          <SettingsSaveBar
             dirty={hours.dirty}
             saving={hours.saving}
             onSave={() => void hours.save(ordered)}
@@ -614,7 +753,7 @@ function HoursTab({ s, can }: { s: Settings; can: boolean }) {
           </Button>
         </div>
         {can ? (
-          <SaveBar
+          <SettingsSaveBar
             dirty={holidays.dirty}
             saving={holidays.saving}
             onSave={() =>
@@ -738,7 +877,7 @@ function CommerceTab({ s, can }: { s: Settings; can: boolean }) {
           onCheckedChange={(v) => commerce.setDraft({ ...c, restockOnCancel: v })}
         />
         {can ? (
-          <SaveBar
+          <SettingsSaveBar
             dirty={
               commerce.dirty ||
               vat !== String(s.commerce.vatRateBp / 100) ||
@@ -841,7 +980,7 @@ function CommerceTab({ s, can }: { s: Settings; can: boolean }) {
           })}
         </div>
         {can ? (
-          <SaveBar
+          <SettingsSaveBar
             dirty={delivery.dirty}
             saving={delivery.saving}
             onSave={() => void delivery.save()}
@@ -890,7 +1029,7 @@ function CommerceTab({ s, can }: { s: Settings; can: boolean }) {
           })}
         </div>
         {can ? (
-          <SaveBar
+          <SettingsSaveBar
             dirty={payment.dirty}
             saving={payment.saving}
             onSave={() => void payment.save()}
@@ -938,7 +1077,7 @@ function CommerceTab({ s, can }: { s: Settings; can: boolean }) {
           ))}
         </div>
         {can ? (
-          <SaveBar
+          <SettingsSaveBar
             dirty={couriers.dirty}
             saving={couriers.saving}
             onSave={() => void couriers.save()}
@@ -1005,7 +1144,7 @@ function NotificationsTab({ s, can }: { s: Settings; can: boolean }) {
             />
           </div>
           {can ? (
-            <SaveBar
+            <SettingsSaveBar
               dirty={n.dirty || emails !== s.notifications.staffEmails.join(", ")}
               saving={n.saving}
               onSave={() =>
@@ -1131,7 +1270,7 @@ function EmailDeliveryGroup({ s, can }: { s: Settings; can: boolean }) {
           </p>
         ) : null}
         {can ? (
-          <SaveBar
+          <SettingsSaveBar
             dirty={e.dirty}
             saving={e.saving}
             onSave={() => void e.save(d)}
@@ -1174,12 +1313,26 @@ function SeoTab({ s, can }: { s: Settings; can: boolean }) {
           </Field>
           <Field
             label="Podrazumevani opis"
-            help={`${d.defaultDescription.length}/155`}
+            help={
+              // VIS-31: one counter against the 170-character limit, warning past what Google shows.
+              <>
+                Do 155 znakova se vidi ceo u rezultatima pretrage.{" "}
+                <span
+                  className={cn(
+                    "whitespace-nowrap type-caption tabular-nums",
+                    d.defaultDescription.length > 155 ? "font-semibold text-warning" : "text-ink-3",
+                  )}
+                >
+                  {d.defaultDescription.length}&nbsp;/&nbsp;170
+                </span>
+              </>
+            }
             className="md:col-span-2"
           >
             <Textarea
               rows={2}
               maxLength={170}
+              showCount={false}
               value={d.defaultDescription}
               onChange={(e) => seo.setDraft({ ...d, defaultDescription: e.target.value })}
             />
@@ -1226,7 +1379,7 @@ function SeoTab({ s, can }: { s: Settings; can: boolean }) {
           </Field>
         </div>
         {can ? (
-          <SaveBar
+          <SettingsSaveBar
             dirty={seo.dirty}
             saving={seo.saving}
             onSave={() => void seo.save()}
@@ -1349,7 +1502,7 @@ function TrackingTab({ s, can }: { s: Settings; can: boolean }) {
           onCheckedChange={(v) => t.setDraft({ ...d, metaCapiEnabled: v })}
         />
         {can ? (
-          <SaveBar
+          <SettingsSaveBar
             dirty={t.dirty}
             saving={t.saving}
             onSave={() =>
@@ -1411,7 +1564,7 @@ function FlagsTab({ s, can }: { s: Settings; can: boolean }) {
           ))}
         </div>
         {can ? (
-          <SaveBar
+          <SettingsSaveBar
             dirty={flags.dirty}
             saving={flags.saving}
             onSave={() => void flags.save()}
@@ -1485,7 +1638,7 @@ function LegalTab({ s, can }: { s: Settings; can: boolean }) {
             ))}
           </div>
           {can ? (
-            <SaveBar
+            <SettingsSaveBar
               dirty={versions.dirty}
               saving={versions.saving}
               onSave={() => void versions.save()}
@@ -1570,7 +1723,7 @@ function PageEditor({
         </div>
       </fieldset>
       {can ? (
-        <SaveBar
+        <SettingsSaveBar
           dirty={dirty}
           saving={saving}
           onSave={async () => {

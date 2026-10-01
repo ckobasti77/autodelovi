@@ -2,7 +2,7 @@
  * admin-lists-shell (step 22): VIS-15 table width budgets + VIS-14 dashboard reflow.
  * Measures the DataTable wrapper overflow (scrollWidth - clientWidth), every header's extent
  * against the sticky right column and the document's horizontal overflow.
- *   AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-lists-shell-tables.mjs [label]
+ *   AUDIT_BASE=http://localhost:3001 [SIZES=1366,1024] node scripts/qa/fix/admin-lists-shell-tables.mjs [label]
  */
 import { writeFileSync } from "node:fs";
 import { BASE, launch, newContext, loginAdmin } from "../audit/kit.mjs";
@@ -26,10 +26,11 @@ const routes = [
   { key: "mejlovi", path: "/admin/mejlovi" },
   { key: "dashboard", path: "/admin", dashboard: true },
 ];
+const only = process.env.SIZES ? process.env.SIZES.split(",") : null;
 const out = {};
 const browser = await launch("chromium");
 try {
-  for (const s of sizes) {
+  for (const s of sizes.filter((x) => !only || only.includes(x.tag))) {
     const ctx = await newContext(browser, { width: s.width, height: s.height });
     const page = await ctx.newPage();
     await loginAdmin(page);

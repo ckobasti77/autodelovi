@@ -1,0 +1,19 @@
+{
+  "offline": {
+    "idle": "",
+    "offline": "Veza sa serverom je prekinuta — pokušavamo ponovo. Izmene će biti sačuvane kad se veza vrati; podaci na ekranu možda nisu najnoviji.",
+    "role": "status",
+    "sticky": "sticky",
+    "back": [
+      "Veza je ponovo uspostavljena.",
+      "Veza je ponovo uspostavljena.",
+      "Veza je ponovo uspostavljena.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "errors": []
+  }
+}

@@ -188,11 +188,20 @@ export function OrdersList() {
         header: "Kupac",
         meta: { label: "Kupac" },
         cell: ({ row }) => (
-          <span className="flex min-w-[10rem] flex-col">
-            <span className="font-medium text-ink-1">
+          // Capped and truncated (full name in the tooltip) so a long company name never pushes
+          // the list into sideways scrolling (VIS-15).
+          <span
+            className="flex min-w-[10rem] max-w-[13rem] flex-col 2xl:max-w-[18rem]"
+            title={
+              row.original.companyName
+                ? `${row.original.companyName} · ${row.original.customerName}`
+                : row.original.customerName
+            }
+          >
+            <span className="truncate font-medium text-ink-1">
               {row.original.companyName ?? row.original.customerName}
             </span>
-            <span className="type-caption text-ink-3">
+            <span className="truncate type-caption text-ink-3">
               {row.original.companyName ? `${row.original.customerName} · ` : ""}
               {CUSTOMER_TYPE_LABEL[row.original.customerType]}
             </span>
@@ -204,7 +213,7 @@ export function OrdersList() {
         accessorKey: "status",
         header: "Status",
         cell: ({ row }) => (
-          <span className="flex flex-col items-start gap-1 min-[1280px]:flex-row min-[1280px]:items-center min-[1280px]:gap-1.5">
+          <span className="flex flex-col items-start gap-1 2xl:flex-row 2xl:items-center 2xl:gap-1.5">
             <OrderStatusBadge status={row.original.status} />
             {row.original.hasBackorder && row.original.status === "nova" ? (
               <Badge tone="warning">Ima po porudžbini</Badge>
@@ -236,7 +245,8 @@ export function OrdersList() {
         enableSorting: false,
         meta: { label: "Plaćanje i dostava" },
         cell: ({ row }) => (
-          <span className="flex flex-col whitespace-nowrap">
+          // Wraps instead of widening the table: „Gotovinom pri preuzimanju · Plaćeno“ (VIS-15).
+          <span className="flex min-w-[9rem] flex-col">
             <span className="text-ink-1">
               {PAYMENT_LABEL[row.original.paymentMethod]}
               {row.original.paymentStatus === "paid" ? (
@@ -409,7 +419,7 @@ export function OrdersList() {
       />
       {selected.length > 0 ? (
         <div
-          className="flex min-h-12 flex-wrap items-center gap-3 rounded-sm border border-line-strong bg-surface-1 px-3 py-2"
+          className="flex min-h-12 flex-wrap items-center gap-3 rounded-sm border border-line-strong bg-surface-1 px-3 py-1"
           role="region"
           aria-label="Grupne radnje"
         >
@@ -439,7 +449,8 @@ export function OrdersList() {
           </Button>
         </div>
       ) : (
-        <div className="flex flex-wrap items-center gap-2">
+        // Same 48 px slot as the bulk bar: selecting a row must not move the rows under the pointer.
+        <div className="flex min-h-12 flex-wrap items-center gap-2">
           <SearchField
             value={search}
             onChange={setSearch}

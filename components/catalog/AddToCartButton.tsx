@@ -11,7 +11,7 @@ import { BellIcon, CheckIcon, ShoppingCartSimpleIcon } from "@phosphor-icons/rea
 import type { Id } from "@/convex/_generated/dataModel";
 import { cn } from "@/lib/cn";
 import { analyticsItem, track } from "@/lib/analytics/track";
-import { useAddToCart, type AddSource } from "@/lib/cart/guestCart";
+import { useAddToCart, useCart, type AddSource } from "@/lib/cart/guestCart";
 import { openCartDrawer } from "@/lib/cart/drawer";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
 import type { StockState } from "@/lib/i18n/sr/catalog";
@@ -36,6 +36,8 @@ export type CartProduct = {
   stockState: StockState;
   stockQty: number;
   allowBackorder: boolean;
+  /** Supplier lead time: the server accepts quantities past stock when it is set (canOrderQuantity). */
+  leadTimeDays?: number | null;
 };
 
 /**
@@ -73,6 +75,8 @@ export function AddToCartButton({
   const add = useAddToCart(source);
   const [state, setState] = useState<"idle" | "busy" | "added">("idle");
   const [quantity, setQuantity] = useState(1);
+  const cart = useCart();
+  const inCart = cart?.lines.find((line) => line.productId === product._id)?.quantity ?? 0;
   const orderable = isOrderable(stockState, product.allowBackorder);
   const backorder = stockState === "on_order" || stockState === "out_of_stock";
 
@@ -97,14 +101,20 @@ export function AddToCartButton({
     );
   }
 
-  const max = backorder ? 99 : Math.max(1, Math.min(99, stockQty));
+  // The server refuses more than the stock unless the part can be ordered past it (backorder or a
+  // supplier lead time, canOrderQuantity): what the cart already holds counts (FLOW-25).
+  const capped = !backorder && !product.allowBackorder && !((product.leadTimeDays ?? 0) > 0);
+  const remaining = capped ? Math.max(0, Math.floor(stockQty) - inCart) : 99;
+  const full = capped && remaining === 0 && state !== "added";
+  const max = Math.max(1, Math.min(99, remaining));
+  const chosen = Math.min(quantity, max);
 
   const onAdd = async () => {
     if (state === "busy") return;
     setState("busy");
     try {
-      await add(product._id as Id<"products">, variant === "product" ? quantity : 1);
-      const qty = variant === "product" ? quantity : 1;
+      const qty = variant === "product" ? chosen : 1;
+      await add(product._id as Id<"products">, qty);
       track({
         name: "add_to_cart",
         item: analyticsItem({
@@ -136,15 +146,23 @@ export function AddToCartButton({
     }
   };
 
-  const label = state === "added" ? "Dodato" : backorder ? "Poruči" : variant === "product" ? "Dodaj u korpu" : "U korpu";
-  const icon =
-    state === "added" ? <CheckIcon size={20} /> : <ShoppingCartSimpleIcon size={20} />;
+  const label =
+    state === "added"
+      ? "Dodato"
+      : full
+        ? "Sve je u korpi"
+        : backorder
+          ? "Poruči"
+          : variant === "product"
+            ? "Dodaj u korpu"
+            : "U korpu";
+  const icon = state === "added" ? <CheckIcon size={20} /> : <ShoppingCartSimpleIcon size={20} />;
 
   if (variant === "product") {
     return (
       <div className={cn("flex flex-wrap items-stretch gap-3", className)}>
         <QuantityStepper
-          value={quantity}
+          value={chosen}
           onChange={setQuantity}
           min={1}
           max={max}
@@ -155,6 +173,7 @@ export function AddToCartButton({
           size="lg"
           icon={icon}
           loading={state === "busy"}
+          disabled={full}
           onClick={onAdd}
           data-testid={TEST_IDS.productAddToCart}
           aria-label={accessibleName(label, product.name)}
@@ -162,6 +181,13 @@ export function AddToCartButton({
         >
           {label}
         </Button>
+        {capped && inCart > 0 ? (
+          <p role="status" className="w-full type-body-s text-ink-2" data-reveal="off">
+            {full
+              ? `U korpi je sva količina sa stanja (${inCart} kom.).`
+              : `U korpi: ${inCart} kom. Možete dodati još ${remaining} kom.`}
+          </p>
+        ) : null}
       </div>
     );
   }
@@ -172,6 +198,7 @@ export function AddToCartButton({
       size="md"
       icon={icon}
       loading={state === "busy"}
+      disabled={full}
       onClick={onAdd}
       fullWidth
       data-testid={TEST_IDS.productAddToCart}

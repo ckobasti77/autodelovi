@@ -77,7 +77,8 @@ export const register = userMutation({
     const phone = normalizePhone(args.phone);
     if (!phone) invalid("Upišite ispravan broj telefona.", "phone");
     const email = normalizeEmail(args.email ?? viewer.user.email ?? "");
-    if (!isValidEmail(email)) invalid("Upišite ispravnu e-mail adresu.", "email");
+    if (!isValidEmail(email))
+      invalid("Adresa e-pošte nije ispravna. Primer: ime@primer.rs.", "email");
     const city = args.city.trim().slice(0, 60);
     const address = args.address.trim().slice(0, 160);
     if (!city || !address) invalid("Upišite grad i adresu servisa.", "address");

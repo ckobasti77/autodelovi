@@ -23,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({
     title: "Delovi za auto servise — rabat i brza porudžbina",
     description:
-      "Za majstore i auto servise: rabat po nivou saradnje, brza porudžbina po OEM brojevima, dostava u servis, istorija porudžbina i odloženo plaćanje po dogovoru. VW, Audi, Škoda, SEAT, Cupra.",
+      "Za auto servise: rabat po nivou saradnje, brza porudžbina po OEM brojevima, dostava u servis i odloženo plaćanje po dogovoru. VW, Audi, Škoda, SEAT.",
     path: ROUTES.mechanics,
     titleSuffix: settings.seo.titleSuffix,
   });

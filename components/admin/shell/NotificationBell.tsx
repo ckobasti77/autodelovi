@@ -7,7 +7,7 @@
  */
 import { useMutation, usePaginatedQuery, useQuery } from "convex/react";
 import { Popover } from "radix-ui";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import {
   AlarmIcon,
   BellIcon,
@@ -29,6 +29,9 @@ import { ADMIN } from "@/constants/routes";
 import { DISTANCE, DUR, EASE } from "@/constants/motion";
 import { TEST_IDS } from "@/constants/testIds";
 
+// notifications.unreadCount stops counting at 100 (take(100)): at the cap the exact number is unknown.
+const UNREAD_CAP = 100;
+
 function kindIcon(kind: string) {
   if (kind === "reminder") return <AlarmIcon size={18} />;
   if (kind.startsWith("email_")) return <EnvelopeSimpleIcon size={18} />;
@@ -42,6 +45,7 @@ function kindIcon(kind: string) {
 
 export function NotificationBell({ nowMinute }: { nowMinute: number }) {
   const unread = useQuery(api.notifications.unreadCount, {}) ?? 0;
+  const titleId = useId();
   const { results } = usePaginatedQuery(api.notifications.mine, {}, { initialNumItems: 8 });
   const markRead = useMutation(api.notifications.markRead);
   const markAll = useMutation(api.notifications.markAllRead);
@@ -96,7 +100,13 @@ export function NotificationBell({ nowMinute }: { nowMinute: number }) {
         <button
           type="button"
           data-testid={TEST_IDS.adminNotificationBell}
-          aria-label={unread > 0 ? `Obaveštenja, nepročitano: ${unread}` : "Obaveštenja"}
+          aria-label={
+            unread >= UNREAD_CAP
+              ? "Obaveštenja, nepročitano: više od 99"
+              : unread > 0
+                ? `Obaveštenja, nepročitano: ${unread}`
+                : "Obaveštenja"
+          }
           className="relative inline-flex size-10 cursor-pointer items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 focus-ring-inset"
         >
           <BellIcon size={20} aria-hidden="true" />
@@ -115,10 +125,13 @@ export function NotificationBell({ nowMinute }: { nowMinute: number }) {
           collisionPadding={12}
           data-theme="paper"
           data-reveal="off"
+          aria-labelledby={titleId}
           className="z-dropdown w-[min(380px,calc(100vw-24px))] rounded-md bg-surface-3 text-ink-1 shadow-overlay outline-none"
         >
           <div className="flex items-center justify-between gap-3 border-b border-line px-4 py-3">
-            <p className="type-body-s font-semibold">Obaveštenja</p>
+            <h2 id={titleId} className="type-body-s font-semibold">
+              Obaveštenja
+            </h2>
             {unread > 0 ? (
               <button
                 type="button"

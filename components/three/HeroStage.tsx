@@ -46,7 +46,8 @@ import {
 } from "@/components/three/heroStore";
 import { heroDom } from "@/components/three/heroDom";
 import { HeroPicture } from "@/components/three/HeroPicture";
-import { StageStrip } from "@/components/three/StageStrip";
+import { StageLegend, StageStrip } from "@/components/three/StageStrip";
+import { cn } from "@/lib/cn";
 import { StageCaption } from "@/components/three/StageCaption";
 import { HonestyLine, TitleBlock } from "@/components/three/TitleBlock";
 import { installTestHooks, tierOverride } from "@/components/three/testHooks";
@@ -62,10 +63,15 @@ const HeroCanvas = dynamic(() => import("@/components/three/canvas/HeroCanvas"),
 const loadPanel = () => import("@/components/three/PartPanel");
 const loadPartsList = () => import("@/components/three/PartsListDialog");
 const PartPanel = dynamic(() => loadPanel().then((m) => m.PartPanel), { ssr: false });
-const PartsListDialog = dynamic(() => loadPartsList().then((m) => m.PartsListDialog), { ssr: false });
-const HeroCallout = dynamic(() => import("@/components/three/HeroCallout").then((m) => m.HeroCallout), {
+const PartsListDialog = dynamic(() => loadPartsList().then((m) => m.PartsListDialog), {
   ssr: false,
 });
+const HeroCallout = dynamic(
+  () => import("@/components/three/HeroCallout").then((m) => m.HeroCallout),
+  {
+    ssr: false,
+  },
+);
 
 const windowsCache = new Map<Timeline, ReturnType<typeof stageWindows>>();
 function windowsFor(timeline: Timeline) {
@@ -126,11 +132,13 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
   const calloutMounted = useLatched(status === "ready");
   // Posters carry the explode whenever the canvas cannot: the low tier, context loss, and the
   // seconds while the model downloads (the exploded poster follows the scroll progress).
-  const posterMode = tier === "low" || status === "loading" || status === "lost" || status === "failed";
+  const posterMode =
+    tier === "low" || status === "loading" || status === "lost" || status === "failed";
   const explodedWanted = useHeroStore((s) => s.progress > 0.01);
   const explodedMounted = useLatched(posterMode && explodedWanted);
   const showCanvas =
-    (tier === "high" || tier === "mid") && (status === "loading" || status === "ready" || status === "lost");
+    (tier === "high" || tier === "mid") &&
+    (status === "loading" || status === "ready" || status === "lost");
 
   // ---------------------------------------------------------------- DOM registry
   useEffect(() => {
@@ -152,7 +160,9 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
   useEffect(() => {
     const fine = window.matchMedia(FINE_POINTER);
     const early = tierOverride() ?? quickTier();
-    heroStore.setState(early ? { tier: early, finePointer: fine.matches } : { finePointer: fine.matches });
+    heroStore.setState(
+      early ? { tier: early, finePointer: fine.matches } : { finePointer: fine.matches },
+    );
     const onPointer = () => heroStore.setState({ finePointer: fine.matches });
     fine.addEventListener("change", onPointer);
     return () => fine.removeEventListener("change", onPointer);
@@ -254,7 +264,9 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
       // Until the first sync the scroll may still be the previous page's (client navigation).
       let settled = false;
       const measured = (self: ScrollTrigger) =>
-        self.end > self.start ? clamp01((window.scrollY - self.start) / (self.end - self.start)) : 0;
+        self.end > self.start
+          ? clamp01((window.scrollY - self.start) / (self.end - self.start))
+          : 0;
       const trigger = ScrollTrigger.create({
         trigger: track,
         start: () => `top ${headerHeight()}px`,
@@ -500,7 +512,11 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
     <>
       <div ref={trackRef} className="hero-track relative" data-testid="hero-track">
         <div className="hero-frame sticky top-header flex flex-col overflow-hidden">
-          <div className="relative min-h-0 flex-1 lg:absolute lg:inset-0">
+          {/* Below 1024 px the stage takes the poster's aspect (4:5 phones, 1:1 tablets) so the
+              car fills it instead of floating in a screen-tall box; it shrinks (contain) when the
+              screen is shorter than that, and spare height opens between it and the strip, which
+              stays docked at the bottom (MOT-01, D279). ≥ 1024 px: the whole frame. */}
+          <div className="relative aspect-[4/5] min-h-0 w-full shrink md:aspect-square lg:absolute lg:inset-0 lg:aspect-auto">
             <div
               ref={mediaRef}
               role="img"
@@ -527,7 +543,9 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
                 className="absolute inset-0"
                 style={{ opacity: 0 }}
               >
-                {showCanvas && (tier === "high" || tier === "mid") ? <HeroCanvas tier={tier} /> : null}
+                {showCanvas && (tier === "high" || tier === "mid") ? (
+                  <HeroCanvas tier={tier} />
+                ) : null}
               </div>
             </div>
 
@@ -561,11 +579,27 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
             />
           </div>
 
+          {/* Spare height below the poster-aspect stage (tall phones, tablets): the legend. */}
+          <div className="min-h-0 flex-1 px-page [container-type:size] lg:hidden">
+            <StageLegend onStage={onStage} />
+          </div>
+
           <div
             ref={stripRef}
-            className="relative z-[4] bg-bg px-page pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-1 lg:absolute lg:inset-x-0 lg:bottom-0 lg:bg-transparent lg:pb-2"
+            data-stage-strip=""
+            className={cn(
+              "relative z-[4] bg-bg px-page pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-1 lg:absolute lg:inset-x-0 lg:bottom-0 lg:bg-transparent lg:pb-2",
+              // The part panel is a non-modal right drawer (440 / 480 px, Sheet size md): the
+              // index and actions reflow into the space left of it, so nothing focusable sits
+              // under the drawer (MOT-04, WCAG 2.4.11).
+              hasSelection && "lg:pr-[calc(440px+var(--margin))] xl:pr-[calc(480px+var(--margin))]",
+            )}
           >
-            <StageStrip onStage={onStage} onToggle={onToggle} onOpenList={() => setListOpen(true)} />
+            <StageStrip
+              onStage={onStage}
+              onToggle={onToggle}
+              onOpenList={() => setListOpen(true)}
+            />
           </div>
         </div>
       </div>

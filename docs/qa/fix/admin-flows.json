@@ -1,0 +1,72 @@
+[
+  {
+    "id": "FLOW-14",
+    "status": "FIXED",
+    "summary": "Settings tab switch no longer drops drafts silently: every settings save bar (and the ad-landing editor) registers its unsaved message in a page registry (components/admin/settings/unsaved.tsx); Tabs.onValueChange opens the ConfirmDialog 'Odbaciti nesačuvane izmene?' listing the pending sections with 'Odustani' / 'Odbaci i pređi', and a beforeunload guard covers reload/close (D275).",
+    "files": [
+      "components/admin/settings/unsaved.tsx",
+      "components/admin/settings/SettingsAdmin.tsx",
+      "components/admin/settings/AdLandingsTab.tsx"
+    ],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-flows-verify.mjs settings -> FLOW-14 {alertText:'Odbaciti nesačuvane izmene?Brend nije sačuvan.…', afterStay:{url:'', slogan:'Rasklopi auto. Nađi deo. QA', firmaSelected:'true'}, beforeUnload:1, afterDiscard:{url:'?tab=firma', slogan:'Rasklopi auto. Nađi deo.'}}, no console errors (docs/qa/fix/admin-flows/verify-settings.json)."
+  },
+  {
+    "id": "FLOW-15",
+    "status": "FIXED",
+    "summary": "Firma tab validates PIB/MB with pibProblem/mbProblem and bank accounts with isValidBankAccount (mirror of convex/settings.ts checkedCompany); errors after blur or a save attempt (aria-invalid + aria-describedby via Field), save focuses the first invalid field and is blocked, blank bank rows are dropped, 'PIB je ispravan.' success state, server INVALID field (company.pib / company.mb / company.bankAccounts.<i>) maps to the same Field error (D276).",
+    "files": ["components/admin/settings/SettingsAdmin.tsx"],
+    "verification": "admin-flows-verify.mjs settings -> FLOW-15 {pibInvalid:'true', pibMessage:'PIB ima 9 cifara.', focusedAfterSave:'admin-settings-pib', toastText:true, okText:true (valid PIB 154552870), mbInvalid:'true', bankInvalid:'true', pibAfterDiscard:''} — nothing saved (docs/qa/fix/admin-flows/verify-settings.json)."
+  },
+  {
+    "id": "FLOW-18",
+    "status": "FIXED",
+    "summary": "'Odbij registraciju' and 'Pauziraj nalog' go through ConfirmDialog (danger, alertdialog, 'Odustani' focused) with the company name and the reason quoted; reject with an empty/short reason shows a field error and focuses the textarea instead of calling the server.",
+    "files": ["components/admin/MechanicAdminDetail.tsx"],
+    "verification": "admin-flows-verify.mjs mechanic / suspend -> FLOW-18-reject {emptyReason:{dialog:0, focusedTag:'TEXTAREA', fieldInvalid:'true'}, alertText:'Odbiti registraciju servisa „Servis Admin fixaf5752144“?Majstor odmah dobija e-poruku sa ovim razlogom:…', statusAfterCancel:'pending', statusAfterConfirm:'rejected'}; FLOW-18-suspend {alertText:'Pauzirati nalog servisa „Audit servis d.o.o.“?…', statusAfterCancel:'approved'} (docs/qa/fix/admin-flows/verify-mechanic-order.json, verify-suspend-import.json)."
+  },
+  {
+    "id": "FLOW-24",
+    "status": "FIXED",
+    "summary": "Import copy uses countImport (grouped number + pluralSr, no-break space) and phrase helpers with verb agreement in lib/i18n/sr/import.ts: file row count, 'N reda sa upozorenjem', 'Upisaće se najviše N reda', '(N ćelije)', 'N artikla se upisuju', 'Biće deaktivirana N artikla', 'N artikla nisu vraćena', history/batch/wizard row counts, 'N slike'. Server audit summary (convex/importCommit.ts) was already fixed by search-catalog-content.",
+    "files": [
+      "lib/i18n/sr/import.ts",
+      "components/admin/import/BatchSteps.tsx",
+      "components/admin/import/CheckStep.tsx",
+      "components/admin/import/FileStep.tsx",
+      "components/admin/import/MappingStep.tsx",
+      "components/admin/import/ImportBatchDetail.tsx",
+      "components/admin/import/ImportHistory.tsx",
+      "components/admin/import/ImportWizard.tsx",
+      "tests/unit/import/copy.test.ts"
+    ],
+    "verification": "npx vitest run tests/unit/import -> 'Tests 77 passed (77)' (new copy.test.ts covers 1/2/5/11/21/1.250 forms and verb agreement); admin-flows-verify.mjs import -> {rows:'22 reda', most:'… Upisaće se najviše 22 reda.', warnHint:'2 reda sa upozorenjem', writes:'20 artikala se upisuje; …'}; batch description 'Samo lager i cene · 22 reda · …' (docs/qa/fix/admin-flows/verify-suspend-import.json)."
+  },
+  {
+    "id": "A11Y-17",
+    "status": "FIXED",
+    "summary": "Wizard step changes move focus to a visually hidden h2 'Korak N od 5: …' (tabIndex -1, data-reveal off; not on first render or reload). CommitStep (wizard and /admin/uvoz/[id]) has one sr-only role=status derived from the batch: 'Upis u toku: 25 %.' quarter milestones, result as labels ('Uvoz je upisan u katalog. Novih artikala: 12, izmenjenih: 30, neuspelih: 3.'), rollback progress/result, cancel (D277).",
+    "files": ["components/admin/import/ImportWizard.tsx", "components/admin/import/BatchSteps.tsx"],
+    "verification": "admin-flows-verify.mjs import -> focusStep2 {tag:'H2', text:'Korak 2 od 5: Kolone'} after Enter on 'Dalje: kolone', focusStep3 'Korak 3 od 5: Provera', focusStep4 'Korak 4 od 5: Probni uvoz', focusAfterCancel 'Korak 1 od 5: Datoteka'; A11Y-17-batch {role:'status', text:'Uvoz je otkazan.'}; commit milestones by code (no live commit run, to leave demo data untouched) (docs/qa/fix/admin-flows/verify-suspend-import.json)."
+  },
+  {
+    "id": "VIS-18",
+    "status": "FIXED",
+    "summary": "Order 'Stavke' folds below 1280 px to Artikal | Iznos with '1 × 4.690 RSD' (and '· rabat N %') under the item; Kol./Cena/Rabat from xl, Rabat only when a line has a discount; edit mode keeps all columns with a 560 px minimum (D278).",
+    "files": ["components/admin/orders/OrderDetail.tsx"],
+    "verification": "admin-flows-verify.mjs order -> 390/1024/1100: heads ['Artikal','Iznos'], table 356/566/642 = wrapper, overflows false; 1440: ['Artikal','Kol.','Cena','Iznos'] 754=754; edit mode 1024/1100/1440: ['Artikal','Kol.','Cena','Iznos','Ukloni'] overflows false; no console errors (docs/qa/fix/admin-flows/verify-order.json)."
+  },
+  {
+    "id": "VIS-31",
+    "status": "FIXED",
+    "summary": "Cross request (search-catalog-content): settings SEO 'Podrazumevani opis' shows one counter 'N / 170' (warning tone past 155) in the help line; the Textarea counter is off.",
+    "files": ["components/admin/settings/SettingsAdmin.tsx"],
+    "verification": "admin-flows-verify.mjs seo -> VIS-31 {counters:['114 / 170']} (docs/qa/fix/admin-flows/verify-seo.json)."
+  },
+  {
+    "id": "FLOW-13",
+    "status": "FIXED",
+    "summary": "Cross request (backend-orders-quotes): order detail contact shows muted 'kupac bez e-pošte' instead of an empty mailto link when contact.email is ''.",
+    "files": ["components/admin/orders/OrderDetail.tsx"],
+    "verification": "npx tsc --noEmit -> no output (0 errors); npx eslint components/admin/orders/OrderDetail.tsx -> clean; conditional render by code (no order without e-mail in demo data)."
+  }
+]

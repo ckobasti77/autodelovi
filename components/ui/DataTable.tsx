@@ -10,7 +10,11 @@
  * - Numbers right-aligned and tabular (column meta `align: "right"`).
  * - Keyboard: rows are a roving tab stop — ↑/↓/Home/End move, Enter opens, Space selects;
  *   Shift+click selects a range. Sortable headers are buttons with aria-sort on the <th>.
- * - Sticky first/last columns via meta `sticky: "left" | "right"` for horizontal scrolling.
+ * - Sticky first/last columns via meta `sticky: "left" | "right"` for horizontal scrolling; the
+ *   edge hints sit on the seam next to a sticky column, where content actually disappears.
+ * - The table is as wide as its container (`w-full`, auto layout): wrapping cells fold before
+ *   anything scrolls; only nowrap / capped content can force sideways scrolling (D159).
+ * - Selection changes are announced through a polite status („Izabrano: 3“, „Izbor poništen“).
  * - States: loading (skeleton rows keep the column widths), empty (per-filter message).
  */
 import {
@@ -102,6 +106,11 @@ export function DataTable<T>({
   // Edge hints: columns hidden to the right/left of a horizontally scrolling table.
   const scrollRef = useRef<HTMLDivElement>(null);
   const [overflow, setOverflow] = useState({ start: false, end: false });
+  // Widths of the sticky left/right columns: the hints are drawn at their inner edges.
+  const [insets, setInsets] = useState({ start: 0, end: 0 });
+  // A click that lands on a row right after a selection change is a stale double-click aimed
+  // at the checkbox, not a request to open the record (VIS-17).
+  const selectionChangedAt = useRef(-Infinity);
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
@@ -109,6 +118,19 @@ export function DataTable<T>({
       const start = el.scrollLeft > 1;
       const end = el.scrollLeft + el.clientWidth < el.scrollWidth - 1;
       setOverflow((o) => (o.start === start && o.end === end ? o : { start, end }));
+      let startInset = 0;
+      let endInset = 0;
+      const box = el.getBoundingClientRect();
+      for (const th of el.querySelectorAll<HTMLElement>("thead th[data-sticky]")) {
+        const r = th.getBoundingClientRect();
+        if (th.dataset.sticky === "left") startInset = Math.max(startInset, r.right - box.left);
+        else endInset = Math.max(endInset, box.right - r.left);
+      }
+      startInset = Math.round(startInset);
+      endInset = Math.round(endInset);
+      setInsets((i) =>
+        i.start === startInset && i.end === endInset ? i : { start: startInset, end: endInset },
+      );
     };
     update();
     el.addEventListener("scroll", update, { passive: true });
@@ -163,6 +185,7 @@ export function DataTable<T>({
     onSortingChange: setSorting,
     onRowSelectionChange: (updater) => {
       const next = typeof updater === "function" ? updater(rowSelection) : updater;
+      selectionChangedAt.current = performance.now();
       if (rowSelectionProp === undefined) setSelectionState(next);
       onRowSelectionChange?.(next);
     },
@@ -176,6 +199,16 @@ export function DataTable<T>({
   });
 
   const rows = table.getRowModel().rows;
+
+  // Status for screen readers: the row checkbox is not a tab stop and <tr aria-selected> is
+  // not exposed inside a plain table, so every change of the selected count is announced.
+  const selectedCount = enableRowSelection ? Object.values(rowSelection).filter(Boolean).length : 0;
+  const [announcedCount, setAnnouncedCount] = useState(selectedCount);
+  const [selectionNote, setSelectionNote] = useState("");
+  if (announcedCount !== selectedCount) {
+    setAnnouncedCount(selectedCount);
+    setSelectionNote(selectedCount > 0 ? `Izabrano: ${selectedCount}` : "Izbor poništen");
+  }
 
   function handleSelectClick(row: Row<T>, shift: boolean) {
     const index = rows.findIndex((r) => r.id === row.id);
@@ -237,9 +270,12 @@ export function DataTable<T>({
   };
 
   const cellPad = density === "compact" ? "h-9" : "h-12";
-  const stickyClass = (sticky?: "left" | "right") =>
+  // A sticky-left data column sits right of the 40 px (w-10) selection column, not under it.
+  const stickyClass = (sticky?: "left" | "right", columnId?: string) =>
     sticky === "left"
-      ? "sticky left-0 z-raised"
+      ? enableRowSelection && columnId !== "__select"
+        ? "sticky left-10 z-raised"
+        : "sticky left-0 z-raised"
       : sticky === "right"
         ? "sticky right-0 z-raised"
         : "";
@@ -247,11 +283,15 @@ export function DataTable<T>({
 
   return (
     <div
-      className={cn("relative rounded-sm border border-line bg-surface-1", className)}
+      // @container: cells can fold on the table's own width (the sidebar makes viewport
+      // breakpoints a poor proxy: 1366 px has less room than 1280 px).
+      className={cn("@container relative rounded-sm border border-line bg-surface-1", className)}
       data-reveal="off"
     >
-      <div ref={scrollRef} className="overflow-x-auto rounded-sm">
-        <table className="w-max min-w-full border-collapse text-left text-cell text-ink-1">
+      {/* relative: absolutely positioned cell content (sr-only text) is clipped by the scroller
+          instead of widening the document on phones. */}
+      <div ref={scrollRef} className="relative overflow-x-auto rounded-sm">
+        <table className="w-full border-collapse text-left text-cell text-ink-1">
           <caption className="sr-only">{caption}</caption>
           <thead className="sticky top-0 z-raised">
             {table.getHeaderGroups().map((group) => (
@@ -264,6 +304,7 @@ export function DataTable<T>({
                     <th
                       key={header.id}
                       scope="col"
+                      data-sticky={meta?.sticky}
                       aria-sort={
                         sorted === "asc"
                           ? "ascending"
@@ -277,7 +318,7 @@ export function DataTable<T>({
                         "h-9 whitespace-nowrap border-b border-line-strong bg-surface-2 px-2 type-label text-ink-3 first:pl-3 last:pr-3",
                         meta?.align === "right" && "text-right",
                         meta?.widthClass,
-                        stickyClass(meta?.sticky),
+                        stickyClass(meta?.sticky, header.column.id),
                       )}
                     >
                       {header.isPlaceholder ? null : canSort ? (
@@ -354,6 +395,7 @@ export function DataTable<T>({
                     onKeyDown={(event) => onRowKeyDown(event, row, index)}
                     onClick={(event) => {
                       if (!onRowOpen) return;
+                      if (performance.now() - selectionChangedAt.current < 300) return;
                       const target = event.target as HTMLElement;
                       if (target.closest("a, button, input, [role=checkbox], [role=menuitem]"))
                         return;
@@ -377,7 +419,7 @@ export function DataTable<T>({
                             meta?.widthClass,
                             meta?.sticky &&
                               cn(
-                                stickyClass(meta.sticky),
+                                stickyClass(meta.sticky, cell.column.id),
                                 selected
                                   ? "bg-selected"
                                   : "bg-surface-1 group-hover/row:bg-surface-2",
@@ -398,14 +440,27 @@ export function DataTable<T>({
       {overflow.end ? (
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 right-0 w-8 rounded-r-sm bg-linear-to-l from-ink-1/12 to-transparent"
+          style={{ right: insets.end }}
+          className={cn(
+            "pointer-events-none absolute inset-y-0 w-8 bg-linear-to-l from-ink-1/12 to-transparent",
+            insets.end === 0 && "rounded-r-sm",
+          )}
         />
       ) : null}
       {overflow.start ? (
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute inset-y-0 left-0 w-8 rounded-l-sm bg-linear-to-r from-ink-1/8 to-transparent"
+          style={{ left: insets.start }}
+          className={cn(
+            "pointer-events-none absolute inset-y-0 w-8 bg-linear-to-r from-ink-1/8 to-transparent",
+            insets.start === 0 && "rounded-l-sm",
+          )}
         />
+      ) : null}
+      {enableRowSelection ? (
+        <p role="status" className="sr-only">
+          {selectionNote}
+        </p>
       ) : null}
     </div>
   );

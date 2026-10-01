@@ -1,4 +1,4 @@
-import { ArrowRightIcon, ClockIcon, MapPinIcon, PlusIcon } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRightIcon, ClockIcon, MapPinIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { contactLinkList, type Contact } from "@/config/site";
 import { Markdown } from "@/lib/content/markdown";
@@ -12,6 +12,7 @@ import {
   type VehicleTree,
 } from "@/lib/catalog/types";
 import { Button } from "@/components/ui/Button";
+import { Disclosure, DisclosureCaret } from "@/components/ui/Disclosure";
 import { Link } from "@/components/ui/Link";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { CategoryTile } from "@/components/catalog/CategoryTile";
@@ -37,7 +38,10 @@ const STEPS = [
 
 export function HowOrdering({ courierLine }: { courierLine: string | null }) {
   return (
-    <section aria-labelledby="how-title" className="cv-auto border-t border-line px-page py-section">
+    <section
+      aria-labelledby="how-title"
+      className="cv-auto border-t border-line px-page py-section"
+    >
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-x-(--gutter)">
         <div className="flex flex-col gap-4 lg:col-span-4">
           <h2 id="how-title" className="type-display-l uppercase text-ink-1">
@@ -60,7 +64,9 @@ export function HowOrdering({ courierLine }: { courierLine: string | null }) {
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="type-h3 text-ink-1">{s.title}</h3>
-              <p className="col-start-2 mt-1 type-body text-ink-2 sm:col-start-3 sm:mt-0">{s.body}</p>
+              <p className="col-start-2 mt-1 type-body text-ink-2 sm:col-start-3 sm:mt-0">
+                {s.body}
+              </p>
             </li>
           ))}
         </ol>
@@ -89,17 +95,25 @@ const FEATURED = [
 export function HomeCategories({ tree }: { tree: CategoryTree }) {
   const all = [...tree.categories];
   const bySlug = new Map(all.map((c) => [c.slug, c]));
-  const featured = FEATURED.map((s) => bySlug.get(s)).filter((c): c is CategorySummary => Boolean(c));
+  const featured = FEATURED.map((s) => bySlug.get(s)).filter((c): c is CategorySummary =>
+    Boolean(c),
+  );
   const total = catalogProductCount(tree).all;
   return (
-    <section aria-labelledby="cats-title" className="cv-auto border-t border-line px-page py-section">
+    <section
+      aria-labelledby="cats-title"
+      className="cv-auto border-t border-line px-page py-section"
+    >
       <div className="flex flex-wrap items-end justify-between gap-4">
         <h2 id="cats-title" className="type-display-l uppercase text-ink-1">
           Najtraženije kategorije
         </h2>
         <Link href={ROUTES.parts} variant="standalone">
-          Svih {tree.categories.length} kategorija
-          {total > 0 ? ` · ${formatNumber(total)} ${pluralSr(total, ["artikal", "artikla", "artikala"])}` : ""}
+          {/* Neutral form: agrees with any count („Svih 44 kategorija“ did not, COPY-08). */}
+          Sve kategorije ({formatNumber(tree.categories.length)})
+          {total > 0
+            ? ` · ${formatNumber(total)} ${pluralSr(total, ["artikal", "artikla", "artikala"])}`
+            : ""}
         </Link>
       </div>
       <ul className="mt-10 grid grid-cols-2 gap-3 sm:gap-(--gutter) md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6">
@@ -115,11 +129,7 @@ export function HomeCategories({ tree }: { tree: CategoryTree }) {
 
 // ------------------------------------------------------------------ mechanics band
 
-export function MechanicsBand({
-  tiers,
-}: {
-  tiers: { name: string; defaultDiscountBp: number }[];
-}) {
+export function MechanicsBand({ tiers }: { tiers: { name: string; defaultDiscountBp: number }[] }) {
   const points = [
     "Vaša cena sa rabatom na celom sajtu, odmah posle odobrenja naloga.",
     "Brza porudžbina: nalepite listu OEM brojeva sa količinama, mi pronađemo artikle.",
@@ -144,7 +154,13 @@ export function MechanicsBand({
               </li>
             ))}
           </ul>
-          <Button asChild variant="primary" size="lg" trailingIcon={<ArrowRightIcon size={16} />} className="self-start">
+          <Button
+            asChild
+            variant="primary"
+            size="lg"
+            trailingIcon={<ArrowRightIcon size={16} />}
+            className="self-start"
+          >
             <Link href={ROUTES.mechanics} variant="unstyled">
               Uslovi za servise
             </Link>
@@ -153,7 +169,9 @@ export function MechanicsBand({
         {tiers.length ? (
           <div className="lg:col-span-5 lg:col-start-8">
             <table className="w-full border-collapse" data-reveal="off">
-              <caption className="mb-3 text-left type-label uppercase text-ink-3">Nivoi rabata</caption>
+              <caption className="mb-3 text-left type-label uppercase text-ink-3">
+                Nivoi rabata
+              </caption>
               <tbody>
                 {tiers.map((t) => (
                   <tr key={t.name} className="border-t border-line last:border-b">
@@ -181,7 +199,10 @@ export function MechanicsBand({
 
 export function MakesCovered({ tree }: { tree: VehicleTree }) {
   return (
-    <section aria-labelledby="makes-title" className="cv-auto border-t border-line px-page py-section">
+    <section
+      aria-labelledby="makes-title"
+      className="cv-auto border-t border-line px-page py-section"
+    >
       <div className="grid gap-8 lg:grid-cols-12 lg:gap-x-(--gutter)">
         <h2 id="makes-title" className="type-display-l uppercase text-ink-1 lg:col-span-4">
           Vozila koja pokrivamo
@@ -238,24 +259,29 @@ export function TrustFacts({
 export function HomeFaq({ items }: { items: { question: string; answer: string }[] }) {
   if (!items.length) return null;
   return (
-    <section aria-labelledby="faq-title" className="cv-auto border-t border-line px-page py-section">
+    <section
+      aria-labelledby="faq-title"
+      className="cv-auto border-t border-line px-page py-section"
+    >
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-x-(--gutter)">
         <h2 id="faq-title" className="type-display-l uppercase text-ink-1 lg:col-span-4">
           Česta pitanja
         </h2>
         <div className="flex flex-col lg:col-span-8">
           {items.map((f) => (
-            <details key={f.question} className="group border-t border-line last:border-b">
-              <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-4 py-4 type-h4 text-ink-1 transition-control hover:text-accent [&::-webkit-details-marker]:hidden">
-                {f.question}
-                <PlusIcon
-                  size={20}
-                  aria-hidden="true"
-                  className="shrink-0 text-ink-3 transition-transform duration-200 group-open:rotate-45"
-                />
-              </summary>
+            <Disclosure
+              key={f.question}
+              className="border-t border-line last:border-b"
+              summaryClassName="flex min-h-16 items-center justify-between gap-4 py-4 type-h4 text-ink-1 transition-control hover:text-accent"
+              summary={
+                <>
+                  {f.question}
+                  <DisclosureCaret className="text-ink-3" />
+                </>
+              }
+            >
               <Markdown source={f.answer} className="max-w-[65ch] pb-6 [&>p]:my-0" />
-            </details>
+            </Disclosure>
           ))}
         </div>
       </div>
@@ -269,7 +295,10 @@ export function ContactStrip({ contact }: { contact: Contact }) {
   const links = contactLinkList(contact);
   const hasAddress = Boolean(contact.address.street && contact.address.city);
   return (
-    <section aria-labelledby="contact-title" className="cv-auto border-t border-line bg-bg-raised px-page py-12">
+    <section
+      aria-labelledby="contact-title"
+      className="cv-auto border-t border-line bg-bg-raised px-page py-12"
+    >
       <div className="grid gap-8 lg:grid-cols-12 lg:items-center lg:gap-x-(--gutter)">
         <div className="flex flex-col gap-2 lg:col-span-4">
           <h2 id="contact-title" className="type-h2 text-ink-1">
@@ -280,7 +309,9 @@ export function ContactStrip({ contact }: { contact: Contact }) {
           </p>
         </div>
         <div className="flex flex-col gap-4 lg:col-span-8">
-          {links.length ? <ContactActions links={links} location="home_strip" variant="buttons" showValue /> : null}
+          {links.length ? (
+            <ContactActions links={links} location="home_strip" variant="buttons" showValue />
+          ) : null}
           <div className="flex flex-wrap gap-x-8 gap-y-3 type-body-s text-ink-2">
             {contact.hours ? (
               <span className="inline-flex items-center gap-2">

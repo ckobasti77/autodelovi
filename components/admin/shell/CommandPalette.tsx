@@ -4,6 +4,7 @@
  * Command palette (Ctrl/⌘ + K): one field for order and inquiry numbers, OEM / SKU / cross
  * numbers, product names, phone, e-mail and PIB (`adminSearch.run`), plus sections and
  * actions. Combobox pattern: the input owns focus, ↑/↓ move the active option, Enter opens.
+ * A polite status line announces the result count once the search settles (WCAG 4.1.3).
  */
 import { useQuery } from "convex/react";
 import { useRouter } from "next/navigation";
@@ -22,6 +23,7 @@ import {
 import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/cn";
 import { foldForSearch } from "@/lib/domain/search";
+import { countSr } from "@/lib/format/plural";
 import { ADMIN_INQUIRY_STATUS, ADMIN_ORDER_STATUS } from "@/lib/i18n/sr/admin";
 import { Badge } from "@/components/ui/Badge";
 import { Dialog } from "@/components/ui/Dialog";
@@ -87,6 +89,9 @@ export function CommandPalette({
       title="Pretraga i komande"
       size="md"
       position="top"
+      // min-width 0: the overlay grid track no longer grows to the result rows' min-content,
+      // so rows truncate inside the viewport instead of pushing the close button off a phone.
+      className="min-w-0 overflow-hidden"
     >
       {open ? (
         <PaletteBody items={items} close={() => onOpenChange(false)} onShortcuts={onShortcuts} />
@@ -177,6 +182,17 @@ function PaletteBody({
 
   const current = Math.min(active, Math.max(0, options.length - 1));
 
+  // Announced once typing and the query settle; nothing below two characters.
+  const status =
+    term.length < 2
+      ? ""
+      : searching
+        ? "Traži se…"
+        : options.length === 0
+          ? `Nema rezultata za „${term}“.`
+          : countSr(options.length, ["rezultat", "rezultata", "rezultata"]);
+  const announced = useDebounced(status, 400);
+
   const onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "ArrowDown") {
       event.preventDefault();
@@ -212,8 +228,11 @@ function PaletteBody({
           onKeyDown={onKeyDown}
           className="h-10 min-w-0 flex-1 bg-transparent text-[1rem] text-ink-1 outline-none placeholder:text-ink-3"
         />
-        {searching ? <Spinner size={16} label="Traži se" /> : null}
+        {searching ? <Spinner size={16} /> : null}
       </div>
+      <p role="status" className="sr-only">
+        {announced}
+      </p>
       <ul
         id={listId}
         role="listbox"
@@ -244,8 +263,11 @@ function PaletteBody({
                 onMouseMove={() => setActive(index)}
                 onClick={() => o.run()}
                 className={cn(
-                  "mx-2 flex min-h-11 cursor-pointer items-center gap-3 rounded-xs px-4 type-body-s",
-                  index === current ? "bg-selected text-ink-1" : "text-ink-2",
+                  "mx-2 flex min-h-11 min-w-0 cursor-pointer items-center gap-3 rounded-xs px-4 type-body-s",
+                  // The active option stands in for keyboard focus: focus-ring outline, not a tint alone.
+                  index === current
+                    ? "bg-selected text-ink-1 outline-2 -outline-offset-2 outline-focus"
+                    : "text-ink-2",
                 )}
               >
                 <span className="shrink-0 text-ink-3" aria-hidden="true">

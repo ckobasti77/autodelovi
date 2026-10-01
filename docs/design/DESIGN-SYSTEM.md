@@ -407,6 +407,8 @@ Print ramp (predračun, otpremnica — fixed sizes, because the fluid clamps dep
 | 3 | `surface-3` + 1 px `line-strong`, **no shadow** | `#FFF`, **no border**, `0 1px 2px rgb(18 21 24 / .10), 0 8px 24px -6px rgb(18 21 24 / .18)` | Popovers, combobox lists, callouts, menus |
 | 4 | `surface-3` + 1 px `line-strong` on the open edge + scrim `rgb(7 8 10 / .72)` (cart, dialogs) or no scrim (3D part panel) | `#FFF`, no border, `0 24px 64px -16px rgb(18 21 24 / .28)` + scrim `rgb(18 21 24 / .4)` | Drawers, sheets, dialogs |
 
+Bottom bars (sticky buy bar, quick-order summary, price-list bar, mobile cart total, consent banner) use the edge plus a 24 px fade above it, never a shadow, and register with `useBottomInset` (`lib/dom/bottomInset.ts`) so anchor jumps and keyboard focus stay above them (WCAG 2.4.11, D245).
+
 Header: `bg` at 88 % + `backdrop-filter: blur(12px)` — functional (content, including the 3D stage, scrolls beneath). `prefers-reduced-transparency: reduce` → solid `bg-raised`.
 
 ### 5.6 Z-index scale
@@ -526,15 +528,17 @@ selection        when a category is selected: uBaseAlpha → 0.06 over 300 ms (r
 |---|---|---|---|
 | ≥ 1280 px | 28° | centred at 64 % of the width, 52 % of the stage height (right of the copy column) | ≈ 56 % of the viewport width |
 | 1024–1279 px | 30° | centred at 62 % | ≈ 60 % |
-| 768–1023 px (stacked) | 32° | centred horizontally, below the copy | ≈ 82 % |
-| < 768 px (portrait 4:5 stage) | 38° | three-quarter front, centred, 58 % height | ≈ 92 % |
-Exploded camera: dolly out + ≈ 12° orbit (mobile 6°) so the whole exploded layout fits with 8 % margin at p = 1 and reads as a clean drawing (no overlaps).
+| 768–1023 px (stacked) | 30° | own centred 1:1 camera (az 30°, el 18°) and poster set car-*-t-*, centred horizontally and vertically in the stage below the copy | ≈ 89 % |
+| < 768 px (portrait 4:5 stage) | 31° | three-quarter front (az 25°, el 24°), centred horizontally and vertically in the stage | ≈ 96 % (≈ 2 % side margin) |
+Exploded camera: dolly out + orbit (desktop ≈ 12°; tablet and phone re-solved per crop, phone az 36° / el 21°) so the whole exploded layout fits at p = 1 (8 % margin on desktop, ≈ 2 % side margin on phones) and reads as a clean drawing; 3d/blender/explode.py -- --audit checks every crop (D240). Source of truth: the CAMERAS table in 3d/blender/lib/views.py and public/models/car.manifest.json.
+
+Crops (stage framing box, lib/three/framing.ts, D240/D242): phones get a 4:5 crop centred in the stage (anchor 50 %/50 %); tablets 768–1023 px a centred 1:1 poster and camera without edge lines; ≥ 1024 px a 16:9 crop with an 8 % left inset, anchored bottom-right. The framing box is capped at 1680 px wide, so at ≥ 1920 px the car stays inside the corner ticks. Poster and canvas use the same crop per breakpoint (§7.8).
 
 ### 7.7 Explode choreography
 Stages, windows and grouping exactly as in 3D-CONTRACT §F6. Node motion `pivot + dir × distance × power2.inOut(local)` staggered by `explode.order` (≤ 0.35 of the stage window). Scrub smoothing `scrub: 0.6`. Stage captions (HTML, bottom-left above the stage index): `display-m` system title, `code-s` line „{n} kategorija · {m} delova“, one sentence `body-s` `ink-2`; captions change by hard cut at the stage boundary with the text-reveal replay (words, ≤ 450 ms). The stage index mirrors progress: 2 px accent bar fills the current stage cell; clicking a stage scrolls to that stage's end (ScrollToPlugin, 0.9 s `sk.inOut`). Hold at 0.92–1.00 shows „Kliknite na deo“ (desktop) / „Dodirnite deo“ (mobile).
 
 ### 7.8 Poster → 3D
-Poster SSR (`preload`, `fetchPriority="high"`) → on intent/idle the canvas mounts behind the poster → first frame ready → **600 ms opacity crossfade `sk.inOut`** poster → canvas (no scale, no blur — the car must not jump); poster stays underneath for context loss. Loading indicator: a 2 px `accent` hairline along the bottom edge of the stage frame (scaleX = real progress, linear), SR text „Učitava se 3D prikaz“ only after intent.
+Poster SSR (`preload`, `fetchPriority="high"`; the poster set matches the breakpoint crop of §7.6, so the crossfade never reframes the car) → on intent/idle the canvas mounts behind the poster → first frame ready → **600 ms opacity crossfade `sk.inOut`** poster → canvas (no scale, no blur — the car must not jump); poster stays underneath for context loss. Loading indicator: a 2 px `accent` hairline along the bottom edge of the stage frame (scaleX = real progress, linear), SR text „Učitava se 3D prikaz“ only after intent.
 
 ### 7.9 Mobile simplifications (mid tier)
 Lite GLB, DPR ≤ 1.5, rim power 2.2, no edge lines, no hover (tap selects), 200 vh track with grouped stages, orbit 6°, only the selected category label, bottom sheet instead of drawer, stage index collapsed to `03 / 07 Kočnice i vešanje` with previous/next buttons (44 px).
@@ -652,7 +656,7 @@ Paper theme: primary keeps the orange fill with `#121518` label; focus rings use
 ### 9.2 Inputs (text, search, number, textarea)
 Anatomy: label (13 px 500 `ink-2`, always visible, above) → field (height 44, hero 56; `surface-2`; 1 px `control`; radius 2; text 16 px `ink-1`; placeholder `ink-3`; optional prefix icon 20 `ink-3` / suffix unit „kom.“, „RSD“) → help or error (13 px, `ink-3` / `danger`, linked with `aria-describedby`).
 States: default · hover (border `ink-3`) · focus (border `accent` + 1 px inner ring `accent`, caret `accent`) · filled · disabled (`surface-1`, border `line`, text `ink-4`) · read-only (no border, `surface-1`) · error (border `danger`, message with `WarningCircle` 16 + text, `aria-invalid="true"`) · success only where a check is meaningful (PIB checksum ok: `CheckCircle` `success` + „PIB je ispravan“). Validation on blur, not on every keystroke; the form-level error summary receives focus on submit. `inputmode`/`autocomplete` always set (tel, email, `postal-code`, `organization`, `one-time-code`).
-- Quantity stepper: [−] [ 2 ] [+] 44 px buttons, input 56 px wide tabular, min 1, max from stock (or 99 for „po porudžbini“), keyboard ↑/↓.
+- Quantity stepper: [−] [ 2 ] [+] 44 px buttons, input 56 px wide tabular, min 1, max from stock minus what the cart already holds (or 99 for „po porudžbini“), keyboard ↑/↓. Size `sm` (36 px, dense lists) applies only from `lg` with a fine pointer; everywhere else it stays 44 px (D247).
 - Textarea: min 4 rows, character counter `ink-3` when a limit exists („142 / 1.000“).
 
 ### 9.3 Select and combobox

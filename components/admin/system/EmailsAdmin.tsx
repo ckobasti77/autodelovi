@@ -24,6 +24,7 @@ import { convexErrorMessage } from "@/lib/i18n/sr/shop";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { DataTable, type ColumnDef } from "@/components/ui/DataTable";
+import { useMediaQuery } from "@/components/ui/motion";
 import { Select } from "@/components/ui/Select";
 import { Sheet } from "@/components/ui/Sheet";
 import { Skeleton } from "@/components/ui/Skeleton";
@@ -61,6 +62,8 @@ export function EmailsAdmin() {
   const nowMinute = useNowMinute();
   const [filters, setFilters] = useUrlFilters(["status", "sablon"] as const);
   const [openId, setOpenId] = useState<string | null>(null);
+  // Below 1280 px „Način“ hides and the subject is capped, so the list fits a 1024 px laptop.
+  const roomy = useMediaQuery("(min-width: 1280px)");
   const args = {
     ...(filters.status ? { status: filters.status as Row["status"] } : {}),
     ...(filters.sablon ? { templateKey: filters.sablon } : {}),
@@ -86,15 +89,19 @@ export function EmailsAdmin() {
         header: "Prima",
         enableSorting: false,
         cell: ({ row }) => (
-          <span className="block max-w-[16rem] truncate">{row.original.to.join(", ")}</span>
+          <span className="block max-w-[16rem] truncate" title={row.original.to.join(", ")}>
+            {row.original.to.join(", ")}
+          </span>
         ),
       },
       {
         accessorKey: "subject",
         header: "Naslov",
         cell: ({ row }) => (
-          <span className="flex max-w-[30rem] flex-col">
-            <span className="truncate text-ink-1">{row.original.subject}</span>
+          <span className="flex max-w-[22rem] flex-col xl:max-w-[30rem]">
+            <span className="truncate text-ink-1" title={row.original.subject}>
+              {row.original.subject}
+            </span>
             <span className="flex items-center gap-2 type-caption text-ink-3">
               {templateLabel(row.original.templateKey)}
               {row.original.relatedType
@@ -175,6 +182,7 @@ export function EmailsAdmin() {
         columns={columns}
         data={results}
         getRowId={(r) => r._id}
+        columnVisibility={{ mode: roomy }}
         loading={loadStatus === "LoadingFirstPage"}
         onRowOpen={(r) => setOpenId(r._id)}
         empty={
@@ -217,7 +225,7 @@ function EmailView({ id, onResent }: { id: Id<"emailLog">; onResent: (id: string
       const res = await resend({ emailLogId: m._id });
       toast.success(
         res.mode === "log"
-          ? "Poruka je ponovo zabeležena (režim log)."
+          ? "Poruka je ponovo zabeležena (režim „Samo zapis“)."
           : "Poruka je ponovo poslata.",
       );
       onResent(res.emailLogId);
@@ -296,7 +304,7 @@ function EmailView({ id, onResent }: { id: Id<"emailLog">; onResent: (id: string
             value: "text",
             label: "Običan tekst",
             content: (
-              <pre className="mt-3 max-h-[60dvh] overflow-auto whitespace-pre-wrap rounded-sm border border-line bg-surface-2 p-3 type-code-s">
+              <pre className="mt-3 max-h-[60dvh] overflow-auto whitespace-pre-wrap rounded-sm border border-line bg-surface-2 p-3 type-code [overflow-wrap:anywhere]">
                 {m.text}
               </pre>
             ),

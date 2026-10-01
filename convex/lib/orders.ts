@@ -102,7 +102,7 @@ export function validateCheckout(
   if (!lastName) invalid("Upišite prezime.", "contact.lastName");
   const email = normalizeEmail(input.contact.email);
   if (!(opts.emailOptional && email === "") && !isValidEmail(email))
-    invalid("Upišite ispravnu e-mail adresu.", "contact.email");
+    invalid("Adresa e-pošte nije ispravna. Primer: ime@primer.rs.", "contact.email");
   const phone = normalizePhone(input.contact.phone);
   if (!phone) invalid("Upišite ispravan broj telefona.", "contact.phone");
 

@@ -28,7 +28,8 @@ export const subscribe = publicMutation({
     if (!settings.flags.backInStock) fail("DISABLED", "Obaveštenja o dolasku robe su isključena.");
     if (!args.consent) invalid("Potrebna je saglasnost da vam pošaljemo obaveštenje.", "consent");
     const email = normalizeEmail(args.email);
-    if (!isValidEmail(email)) invalid("Upišite ispravnu e-mail adresu.", "email");
+    if (!isValidEmail(email))
+      invalid("Adresa e-pošte nije ispravna. Primer: ime@primer.rs.", "email");
     await enforceRateLimit(ctx, "backInStock", ctx.client.key);
     await enforceRateLimit(ctx, "backInStockEmail", email);
     const product = await ctx.db.get("products", args.productId);

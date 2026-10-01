@@ -140,14 +140,15 @@ export const submit = publicMutation({
     const name = args.contact.name.trim().slice(0, 80);
     if (!name) invalid("Upišite ime.", "contact.name");
     const email = args.contact.email?.trim() ? normalizeEmail(args.contact.email) : undefined;
-    if (email && !isValidEmail(email)) invalid("Upišite ispravnu e-mail adresu.", "contact.email");
+    if (email && !isValidEmail(email))
+      invalid("Adresa e-pošte nije ispravna. Primer: ime@primer.rs.", "contact.email");
     const phone = args.contact.phone?.trim() ? normalizePhone(args.contact.phone) : undefined;
     if (args.contact.phone?.trim() && !phone)
       invalid("Upišite ispravan broj telefona.", "contact.phone");
     if (!email && !phone)
-      invalid("Ostavite telefon ili e-mail da bismo vam odgovorili.", "contact");
+      invalid("Ostavite telefon ili adresu e-pošte da bismo vam odgovorili.", "contact");
     if (args.contact.preferredChannel === "email" && !email)
-      invalid("Za odgovor e-mailom upišite e-mail adresu.", "contact.email");
+      invalid("Za odgovor e-poštom upišite adresu e-pošte.", "contact.email");
     if (args.contact.preferredChannel !== "email" && !phone)
       invalid("Za odgovor telefonom ili porukom upišite broj telefona.", "contact.phone");
 

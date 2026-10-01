@@ -176,6 +176,7 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
             stockState: c.stockState,
             shippingPara: courier?.pricePara ?? null,
             freeOverPara: courier?.freeOverPara ?? settings.commerce.freeShippingOverPara ?? null,
+            sellerName: settings.brand.name || undefined,
           }),
         ]}
       />
@@ -188,7 +189,9 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
         pricePara={c.retailPricePara}
       />
       <div className="px-page pb-(--space-section) pt-6 lg:pt-8">
-        <Breadcrumbs items={crumbs} />
+        <Breadcrumbs
+          items={crumbs.map((crumb) => ({ ...crumb, label: typographer(crumb.label) }))}
+        />
         <div className="mt-5 grid gap-8 lg:grid-cols-12 lg:grid-rows-[auto_1fr] lg:gap-x-(--gutter)">
           {/* Gallery */}
           <div className="flex flex-col gap-4 lg:col-span-7">

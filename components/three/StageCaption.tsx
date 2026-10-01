@@ -70,14 +70,20 @@ function CaptionBody({
   );
 
   if (!summary) return null;
-  const title = hold ? (touch ? HERO_COPY.holdHintTouch : HERO_COPY.holdHintPointer) : summary.labelSr;
+  const title = hold
+    ? touch
+      ? HERO_COPY.holdHintTouch
+      : HERO_COPY.holdHintPointer
+    : summary.labelSr;
   const sentence = hold ? HERO_COPY.holdHintSub : STAGE_SENTENCE[summary.key];
   const counts = `${pad(stage)} · ${countSr(summary.categories, ["kategorija", "kategorije", "kategorija"])} · ${countSr(summary.parts, ["deo", "dela", "delova"])}`;
   if (initial) {
     return (
       <div ref={ref} className="flex flex-col gap-1.5">
         <RevealText className="type-display-m text-ink-1">{title}</RevealText>
-        {!hold ? <RevealText className="type-code-s uppercase text-ink-3">{counts}</RevealText> : null}
+        {!hold ? (
+          <RevealText className="type-code-s uppercase text-ink-3">{counts}</RevealText>
+        ) : null}
         <RevealText className="max-w-[40ch] type-body-s text-ink-2">{sentence}</RevealText>
       </div>
     );
@@ -112,9 +118,16 @@ export function StageCaption({ className }: { className?: string }) {
   return (
     <div
       data-reveal="off"
+      data-stage-caption=""
       className={cn("pointer-events-none", stage === 0 && "lg:hidden", className)}
     >
-      <CaptionBody key={key} stage={stage} hold={hold} touch={touch} initial={!changed && key === firstKey} />
+      <CaptionBody
+        key={key}
+        stage={stage}
+        hold={hold}
+        touch={touch}
+        initial={!changed && key === firstKey}
+      />
     </div>
   );
 }
