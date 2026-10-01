@@ -1,0 +1,52 @@
+{
+ "vis08 1440 /delovi/kocioni-diskovi": {
+  "a": {
+   "scrollY": 0,
+   "top": 341,
+   "bottom": 1129,
+   "vh": 900,
+   "position": "sticky",
+   "scrollable": true,
+   "header": 65
+  },
+  "b": {
+   "scrollY": 900,
+   "top": 88,
+   "bottom": 876,
+   "vh": 900,
+   "position": "sticky",
+   "scrollable": true,
+   "header": 65
+  },
+  "c": {
+   "scrollY": 900,
+   "railScroll": 123
+  },
+  "pass": true
+ },
+ "vis08 1280 /delovi/kocioni-diskovi/volkswagen/golf": {
+  "a": {
+   "scrollY": 0,
+   "top": 337,
+   "bottom": 1025,
+   "vh": 800,
+   "position": "sticky",
+   "scrollable": true,
+   "header": 65
+  },
+  "b": {
+   "scrollY": 900,
+   "top": -159,
+   "bottom": 529,
+   "vh": 800,
+   "position": "sticky",
+   "scrollable": true,
+   "header": 65
+  },
+  "c": {
+   "scrollY": 2379,
+   "railScroll": 0
+  },
+  "pass": false
+ }
+}

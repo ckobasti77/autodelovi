@@ -1,0 +1,279 @@
+{
+  "base": "http://localhost:3001",
+  "convex": "https://tame-impala-374.eu-west-1.convex.cloud",
+  "startedAt": "2026-10-01T02:34:08.625Z",
+  "steps": [
+    {
+      "step": "A: shared mechanic credit before",
+      "availablePara": 17000200,
+      "enabled": true,
+      "limitPara": 20000000,
+      "openCount": 3,
+      "paymentTermsDays": 15,
+      "usedPara": 2999800
+    },
+    {
+      "step": "A: quote sent",
+      "number": "UP-2026-000101",
+      "quotePara": 22000200,
+      "availablePara": 17000200
+    },
+    {
+      "step": "A: mechanic acceptQuote deferred over the limit",
+      "ok": false,
+      "code": "INVALID",
+      "message": "Limit za odloženo plaćanje nije dovoljan: preostalo je 170.002 RSD. Izaberite drugi način plaćanja ili nas pozovite.",
+      "field": "payment.method",
+      "creditLimit": true
+    },
+    {
+      "step": "A: credit after",
+      "availablePara": 17000200,
+      "enabled": true,
+      "limitPara": 20000000,
+      "openCount": 3,
+      "paymentTermsDays": 15,
+      "usedPara": 2999800
+    },
+    {
+      "step": "B: staff+mechanic account ready",
+      "email": "qa-reverify-be01-1790822050089@primer.rs",
+      "role": "staff",
+      "isStaff": true,
+      "isOwner": false,
+      "mechanicStatus": "approved",
+      "tier": "Majstor",
+      "credit": {
+        "availablePara": 1000000,
+        "enabled": true,
+        "limitPara": 1000000,
+        "openCount": 0,
+        "paymentTermsDays": 15,
+        "usedPara": 0
+      }
+    },
+    {
+      "step": "B: own inquiry quoted",
+      "number": "UP-2026-000102",
+      "quotePara": 2000000
+    },
+    {
+      "step": "B/API: staff converts own inquiry with creditOverride",
+      "ok": false,
+      "code": "FORBIDDEN",
+      "message": "Prekoračenje limita na svom upitu ne možete odobriti. To radi vlasnik.",
+      "field": "payment.method",
+      "creditLimit": null
+    },
+    {
+      "step": "B/API: staff converts own inquiry without override",
+      "ok": false,
+      "code": "INVALID",
+      "message": "Limit za odloženo plaćanje nije dovoljan: preostalo je 10.000 RSD. Izaberite drugi način plaćanja ili nas pozovite.",
+      "field": "payment.method",
+      "creditLimit": true
+    },
+    {
+      "step": "B: staff credit after refusals",
+      "availablePara": 1000000,
+      "enabled": true,
+      "limitPara": 1000000,
+      "openCount": 0,
+      "paymentTermsDays": 15,
+      "usedPara": 0
+    },
+    {
+      "step": "B/UI 1440: staff on own inquiry, deferred over the limit",
+      "paymentOptions": [
+        "Gotovinom pri preuzimanju",
+        "Karticom pri preuzimanju",
+        "Odloženo plaćanje"
+      ],
+      "overrideCheckboxCount": 0,
+      "tabFromPaymentLandsOn": {
+        "tag": "BUTTON",
+        "role": null,
+        "text": "Odustani"
+      },
+      "alert": "Porudžbina nije kreirana. Proverite polje „Plaćanje“.",
+      "paymentField": {
+        "ariaInvalid": "true",
+        "describedByText": [
+          "Limit za odloženo plaćanje nije dovoljan: preostalo je 10.000 RSD. Izaberite drugi način plaćanja ili nas pozovite."
+        ]
+      },
+      "url": "http://localhost:3001/admin/upiti/UP-2026-000102",
+      "overflowX": 0,
+      "emailHelp": {
+        "helpBefore": 1,
+        "helpAfter": 0,
+        "emailDescribedBefore": "f_r_a_-msg",
+        "emailDescribedAfter": null,
+        "danglingDescribedBy": []
+      },
+      "shot": "docs/qa/fix/backend-orders-quotes/verify/r2-be01-staffself-1440-refused.webp"
+    },
+    {
+      "step": "B/UI 1440: courier with empty Mesto (alert pointer probe)",
+      "alert": "Porudžbina nije kreirana. Proverite polje „Ulica i broj“.",
+      "invalidFields": [
+        {
+          "label": "Ulica i broj (obavezno)",
+          "describedBy": [
+            "Upišite adresu za dostavu."
+          ]
+        }
+      ],
+      "shot": "docs/qa/fix/backend-orders-quotes/verify/r2-be01-staffself-1440-city-probe.webp"
+    },
+    {
+      "step": "B/UI 1440: console",
+      "console": [
+        "[CONVEX M(inquiriesAdmin:convertToOrder)] [Request ID: 75ba21047f67f6f9] Server Error\nUncaught ConvexError: {\"field\":\"payment.method\",\"creditLimit\":true,\"availablePara\":1000000,\"code\":\"INVALID\",\"message\":\"Limit za odloženo plaćanje nije dovoljan: preostalo je 10.000 RSD. Izaberite drugi način plaćanja ili nas pozovite.\"}\n    at async handler (../convex/inquiriesAdmin.ts:733:32)\n",
+        "[CONVEX M(inquiriesAdmin:convertToOrder)] [Request ID: fa69e5b4728ee05f] Server Error\nUncaught ConvexError: {\"field\":\"delivery.address\",\"code\":\"INVALID\",\"message\":\"Upišite adresu za dostavu.\"}\n    at handler (../convex/inquiriesAdmin.ts:710:6)\n"
+      ],
+      "pageErrors": []
+    },
+    {
+      "step": "B/UI 390: staff on own inquiry, deferred over the limit",
+      "paymentOptions": [
+        "Gotovinom pri preuzimanju",
+        "Karticom pri preuzimanju",
+        "Odloženo plaćanje"
+      ],
+      "overrideCheckboxCount": 0,
+      "tabFromPaymentLandsOn": {
+        "tag": "BUTTON",
+        "role": null,
+        "text": "Odustani"
+      },
+      "alert": "Porudžbina nije kreirana. Proverite polje „Plaćanje“.",
+      "paymentField": {
+        "ariaInvalid": "true",
+        "describedByText": [
+          "Limit za odloženo plaćanje nije dovoljan: preostalo je 10.000 RSD. Izaberite drugi način plaćanja ili nas pozovite."
+        ]
+      },
+      "url": "http://localhost:3001/admin/upiti/UP-2026-000102",
+      "overflowX": 0,
+      "emailHelp": {
+        "helpBefore": 1,
+        "helpAfter": 1,
+        "emailDescribedBefore": "f_r_s_-msg",
+        "emailDescribedAfter": "f_r_s_-msg",
+        "danglingDescribedBy": []
+      },
+      "shot": "docs/qa/fix/backend-orders-quotes/verify/r2-be01-staffself-390-refused.webp"
+    },
+    {
+      "step": "B/UI 390: console",
+      "console": [
+        "[CONVEX M(inquiriesAdmin:convertToOrder)] [Request ID: a9c176db054fdc1a] Server Error\nUncaught ConvexError: {\"field\":\"payment.method\",\"creditLimit\":true,\"availablePara\":1000000,\"code\":\"INVALID\",\"message\":\"Limit za odloženo plaćanje nije dovoljan: preostalo je 10.000 RSD. Izaberite drugi način plaćanja ili nas pozovite.\"}\n    at async handler (../convex/inquiriesAdmin.ts:733:32)\n"
+      ],
+      "pageErrors": []
+    },
+    {
+      "step": "B/UI 390-rm: staff on own inquiry, deferred over the limit",
+      "paymentOptions": [
+        "Gotovinom pri preuzimanju",
+        "Karticom pri preuzimanju",
+        "Odloženo plaćanje"
+      ],
+      "overrideCheckboxCount": 0,
+      "tabFromPaymentLandsOn": {
+        "tag": "BUTTON",
+        "role": null,
+        "text": "Odustani"
+      },
+      "alert": "Porudžbina nije kreirana. Proverite polje „Plaćanje“.",
+      "paymentField": {
+        "ariaInvalid": "true",
+        "describedByText": [
+          "Limit za odloženo plaćanje nije dovoljan: preostalo je 10.000 RSD. Izaberite drugi način plaćanja ili nas pozovite."
+        ]
+      },
+      "url": "http://localhost:3001/admin/upiti/UP-2026-000102",
+      "overflowX": 0,
+      "emailHelp": {
+        "helpBefore": 1,
+        "helpAfter": 1,
+        "emailDescribedBefore": "f_r_s_-msg",
+        "emailDescribedAfter": "f_r_s_-msg",
+        "danglingDescribedBy": []
+      },
+      "shot": "docs/qa/fix/backend-orders-quotes/verify/r2-be01-staffself-390-rm-refused.webp"
+    },
+    {
+      "step": "B/UI 390-rm: console",
+      "console": [
+        "[CONVEX M(inquiriesAdmin:convertToOrder)] [Request ID: deff7f6cdefbaed6] Server Error\nUncaught ConvexError: {\"field\":\"payment.method\",\"creditLimit\":true,\"availablePara\":1000000,\"code\":\"INVALID\",\"message\":\"Limit za odloženo plaćanje nije dovoljan: preostalo je 10.000 RSD. Izaberite drugi način plaćanja ili nas pozovite.\"}\n    at async handler (../convex/inquiriesAdmin.ts:733:32)\n"
+      ],
+      "pageErrors": []
+    },
+    {
+      "step": "A/UI 1440: non-owner staff on another mechanic's inquiry",
+      "overrideCheckboxVisible": true,
+      "alert": "Porudžbina nije kreirana. Proverite polje „Plaćanje“.",
+      "paymentField": {
+        "ariaInvalid": "true",
+        "describedByText": [
+          "Limit za odloženo plaćanje nije dovoljan: preostalo je 170.002 RSD. Izaberite drugi način plaćanja ili nas pozovite."
+        ]
+      },
+      "shot": "docs/qa/fix/backend-orders-quotes/verify/r2-be01-staff-other-1440.webp",
+      "console": [
+        "[CONVEX M(inquiriesAdmin:convertToOrder)] [Request ID: fc40f6e090752036] Server Error\nUncaught ConvexError: {\"field\":\"payment.method\",\"creditLimit\":true,\"availablePara\":17000200,\"code\":\"INVALID\",\"message\":\"Limit za odloženo plaćanje nije dovoljan: preostalo je 170.002 RSD. Izaberite drugi način plaćanja ili nas pozovite.\"}\n    at async handler (../convex/inquiriesAdmin.ts:733:32)\n"
+      ],
+      "pageErrors": []
+    },
+    {
+      "step": "A: cleanup — quote declined"
+    },
+    {
+      "step": "B/UI owner 1440: refused, then override by keyboard",
+      "alert": "Porudžbina nije kreirana. Proverite polje „Plaćanje“.",
+      "overrideCheckboxVisible": true,
+      "ariaCheckedAfterSpace": "true",
+      "shot": "docs/qa/fix/backend-orders-quotes/verify/r2-be01-owner-on-staff-inquiry-1440.webp"
+    },
+    {
+      "step": "B/UI owner 1440: order created with override",
+      "orderNumber": "SK-2026-000155",
+      "customerType": "mechanic",
+      "paymentMethod": "deferred",
+      "totalPara": 2000000,
+      "tierName": "Majstor",
+      "dueInDays": 14.99999999673349,
+      "auditSummary": "UP-2026-000102: ponuda br. 1 → porudžbina SK-2026-000155 (prekoračen limit odloženog plaćanja (preostalo 10.000 RSD, porudžbina 20.000 RSD))",
+      "console": [
+        "[CONVEX M(inquiriesAdmin:convertToOrder)] [Request ID: aaf6e2a79f107746] Server Error\nUncaught ConvexError: {\"field\":\"payment.method\",\"creditLimit\":true,\"availablePara\":1000000,\"code\":\"INVALID\",\"message\":\"Limit za odloženo plaćanje nije dovoljan: preostalo je 10.000 RSD. Izaberite drugi način plaćanja ili nas pozovite.\"}\n    at async handler (../convex/inquiriesAdmin.ts:733:32)\n"
+      ],
+      "pageErrors": []
+    },
+    {
+      "step": "B: cleanup — order cancelled",
+      "creditAfter": {
+        "availablePara": 1000000,
+        "enabled": true,
+        "limitPara": 1000000,
+        "openCount": 0,
+        "paymentTermsDays": 15,
+        "usedPara": 0
+      }
+    },
+    {
+      "step": "finally: test account demoted to customer, mechanic profile suspended",
+      "email": "qa-reverify-be01-1790822050089@primer.rs"
+    },
+    {
+      "step": "finally: shared mechanic credit",
+      "availablePara": 17000200,
+      "enabled": true,
+      "limitPara": 20000000,
+      "openCount": 3,
+      "paymentTermsDays": 15,
+      "usedPara": 2999800
+    }
+  ],
+  "finishedAt": "2026-10-01T02:35:07.724Z"
+}

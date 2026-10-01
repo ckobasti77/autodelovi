@@ -1,0 +1,118 @@
+{
+ "a11y10 /ponuda/kocione-plocice-golf": {
+  "normal": {
+   "cards": 7,
+   "cardWidth": 288,
+   "cols": 1,
+   "minCardWidth": 288,
+   "clipped": [],
+   "clamped": [],
+   "chipOverlap": 0,
+   "overX": 0
+  },
+  "spacing": {
+   "cards": 7,
+   "cardWidth": 288,
+   "cols": 1,
+   "minCardWidth": 288,
+   "clipped": [],
+   "clamped": [],
+   "chipOverlap": 0,
+   "overX": 0
+  }
+ },
+ "a11y10 /delovi/kocioni-diskovi": {
+  "normal": {
+   "cards": 9,
+   "cardWidth": 288,
+   "cols": 1,
+   "minCardWidth": 288,
+   "clipped": [],
+   "clamped": [],
+   "chipOverlap": 0,
+   "overX": 0
+  },
+  "spacing": {
+   "cards": 9,
+   "cardWidth": 288,
+   "cols": 1,
+   "minCardWidth": 288,
+   "clipped": [],
+   "clamped": [],
+   "chipOverlap": 0,
+   "overX": 0
+  }
+ },
+ "a11y10 /pretraga?q=disk": {
+  "normal": {
+   "cards": 9,
+   "cardWidth": 288,
+   "cols": 1,
+   "minCardWidth": 288,
+   "clipped": [],
+   "clamped": [],
+   "chipOverlap": 0,
+   "overX": 0
+  },
+  "spacing": {
+   "cards": 9,
+   "cardWidth": 288,
+   "cols": 1,
+   "minCardWidth": 288,
+   "clipped": [],
+   "clamped": [],
+   "chipOverlap": 0,
+   "overX": 0
+  }
+ },
+ "vis05 1024": {
+  "cards": 9,
+  "cardWidth": 314,
+  "cols": 2,
+  "minCardWidth": 314,
+  "clipped": [],
+  "clamped": [],
+  "chipOverlap": 0,
+  "overX": 0
+ },
+ "vis05 1280": {
+  "cards": 9,
+  "cardWidth": 280,
+  "cols": 3,
+  "minCardWidth": 280,
+  "clipped": [],
+  "clamped": [],
+  "chipOverlap": 0,
+  "overX": 0
+ },
+ "vis05 1440": {
+  "cards": 9,
+  "cardWidth": 242,
+  "cols": 4,
+  "minCardWidth": 242,
+  "clipped": [],
+  "clamped": [],
+  "chipOverlap": 0,
+  "overX": 0
+ },
+ "vis05 1920": {
+  "cards": 9,
+  "cardWidth": 258,
+  "cols": 4,
+  "minCardWidth": 258,
+  "clipped": [],
+  "clamped": [],
+  "chipOverlap": 0,
+  "overX": 0
+ },
+ "vis05 2560": {
+  "cards": 9,
+  "cardWidth": 258,
+  "cols": 4,
+  "minCardWidth": 258,
+  "clipped": [],
+  "clamped": [],
+  "chipOverlap": 0,
+  "overX": 0
+ }
+}

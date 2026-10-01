@@ -2,19 +2,31 @@
 
 /**
  * Phones (< 1024 px): once the inline buy box has scrolled out of view, a 64 px bar with the
- * price and „Dodaj u korpu“ rises from the bottom edge (§10.3). GSAP only; reduced motion →
- * opacity. The bar leaves the way it came.
+ * price and „Dodaj u korpu“ rises from the bottom edge (§10.3) and leaves the way it came.
+ *
+ * GSAP owns the transform. The server markup is hidden with `visibility` only: an inline
+ * `translateY(110%)` is parsed by GSAP into a pixel `y` that a `yPercent` tween never clears,
+ * which left the bar 7 px below the viewport while focusable (MOT-02, D255). The resting hidden
+ * state is set in `useGSAP`; showing animates `y` and `yPercent` to 0. Reduced motion → the bar
+ * is placed on screen at once and only its opacity animates. While shown, its height is a
+ * bottom inset, so focused controls further up the page never sit under it (WCAG 2.4.11).
  */
 import { useEffect, useRef, useState } from "react";
 
 import { gsap, prefersReducedMotion, useGSAP } from "@/lib/gsap/client";
+import { useBottomInset } from "@/lib/dom/bottomInset";
 import { MEDIA } from "@/constants/motion";
 import { AddToCartButton, type CartProduct } from "@/components/catalog/AddToCartButton";
 import { ProductPrice } from "@/components/catalog/ProductPrice";
 
+/** Resting hidden state: below the viewport, invisible, opaque for the next slide-in. */
+const HIDDEN = { y: 0, yPercent: 110, opacity: 1, visibility: "hidden" } as const;
+
 export function StickyBuyBar({ product, targetId }: { product: CartProduct; targetId: string }) {
   const bar = useRef<HTMLDivElement>(null);
   const [shown, setShown] = useState(false);
+  const applied = useRef(false);
+  useBottomInset(bar, shown);
 
   useEffect(() => {
     const target = document.getElementById(targetId);
@@ -32,16 +44,30 @@ export function StickyBuyBar({ product, targetId }: { product: CartProduct; targ
     () => {
       const el = bar.current;
       if (!el) return;
+      if (shown === applied.current) {
+        // First run (and StrictMode re-runs): put the bar in its resting hidden state.
+        if (!shown) gsap.set(el, HIDDEN);
+        return;
+      }
+      applied.current = shown;
       const reduced = prefersReducedMotion();
       if (shown) {
-        gsap.set(el, { visibility: "visible" });
-        gsap.to(el, reduced ? { opacity: 1, duration: 0.16 } : { yPercent: 0, opacity: 1, duration: 0.36, ease: "sk.out" });
-      } else {
-        gsap.to(el, {
-          ...(reduced ? { opacity: 0, duration: 0.16 } : { yPercent: 110, duration: 0.24, ease: "sk.in" }),
-          onComplete: () => gsap.set(el, { visibility: "hidden" }),
-        });
+        if (reduced) {
+          gsap.set(el, { y: 0, yPercent: 0, opacity: 0, visibility: "visible" });
+          gsap.to(el, { opacity: 1, duration: 0.16, overwrite: true });
+        } else {
+          gsap.set(el, { opacity: 1, visibility: "visible" });
+          gsap.to(el, { y: 0, yPercent: 0, duration: 0.36, ease: "sk.out", overwrite: true });
+        }
+        return;
       }
+      gsap.to(el, {
+        ...(reduced ? { opacity: 0, duration: 0.16 } : { yPercent: 110, duration: 0.24, ease: "sk.in" }),
+        overwrite: true,
+        onComplete: () => {
+          gsap.set(el, HIDDEN);
+        },
+      });
     },
     { dependencies: [shown], scope: bar },
   );
@@ -52,7 +78,8 @@ export function StickyBuyBar({ product, targetId }: { product: CartProduct; targ
       aria-hidden={!shown}
       inert={!shown}
       data-reveal="off"
-      style={{ visibility: "hidden", transform: "translateY(110%)" }}
+      data-testid="sticky-buy-bar"
+      style={{ visibility: "hidden" }}
       className="fixed inset-x-0 bottom-0 z-sticky border-t border-line-strong bg-bg-raised px-page pt-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] lg:hidden"
     >
       <div className="flex items-center gap-3">

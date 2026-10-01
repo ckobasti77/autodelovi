@@ -1,0 +1,81 @@
+[
+ {
+  "case": "choose vehicle",
+  "w": 1440,
+  "route": "/",
+  "opener": "header chip",
+  "before": "button[vehicle-picker-trigger] \"Izaberite vozilo\" (OPENER)",
+  "after": "main#sadrzaj[] \"[{\"@context\":\"https://schema.org\",\"@type\"",
+  "openerStillConnected": false,
+  "shot": "docs/qa/fix/cart-mechanic-overlays/verify/a11y02-edge-choose-header-chip-1440.webp",
+  "afterNextTab": "input#cbx_R_lkklrdabmqalb_-input[] \"Broj dela ili naziv\""
+ },
+ {
+  "case": "choose",
+  "w": 1024,
+  "h": 768,
+  "url": "/",
+  "name": "header chip",
+  "skipped": "opener not visible"
+ },
+ {
+  "case": "choose vehicle",
+  "w": 1440,
+  "route": "/",
+  "opener": "hero field",
+  "before": "button[vehicle-picker-trigger] \"Izaberite vozilomarka, model, motorIzabe\" (OPENER)",
+  "after": "button[vehicle-picker-trigger] \"VW Golf VIIPromeni\" (OPENER)",
+  "openerStillConnected": true,
+  "shot": "docs/qa/fix/cart-mechanic-overlays/verify/a11y02-edge-choose-hero-field-1440.webp",
+  "afterNextTab": "button[] \"Ukloni izabrano vozilo\""
+ },
+ {
+  "case": "choose vehicle",
+  "w": 1440,
+  "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "opener": "product fitment badge",
+  "before": "button[] \"Izaberite vozilo da proverimo da li deo \" (OPENER)",
+  "after": "main#sadrzaj[] \"[{\"@context\":\"https://schema.org\",\"@type\"",
+  "openerStillConnected": false,
+  "shot": "docs/qa/fix/cart-mechanic-overlays/verify/a11y02-edge-choose-product-fitment-badge-1440.webp",
+  "afterNextTab": "a[] \"Početna\""
+ },
+ {
+  "case": "choose vehicle",
+  "w": 390,
+  "route": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "opener": "product fitment badge",
+  "before": "button[] \"Izaberite vozilo da proverimo da li deo \" (OPENER)",
+  "after": "main#sadrzaj[] \"[{\"@context\":\"https://schema.org\",\"@type\"",
+  "openerStillConnected": false,
+  "shot": "docs/qa/fix/cart-mechanic-overlays/verify/a11y02-edge-choose-product-fitment-badge-390.webp",
+  "afterNextTab": "a[] \"Kočioni diskovi\""
+ },
+ {
+  "case": "toast → drawer",
+  "w": 390,
+  "before": "button[] \"Pogledaj korpu\"",
+  "afterOpen": "button[] \"Zatvori\"",
+  "toastButtonConnected": 0,
+  "after": "ol[] \"\"",
+  "trace": [
+   "11 out button[product-add-to-cart]\"Dodato: Kočioni disk pre\" -> button[]\"Pogledaj korpu\"",
+   "12 in button[]\"Pogledaj korpu\"",
+   "14 out button[]\"Pogledaj korpu\" -> ol[]\"Dodato u korpu: Kočioni \"",
+   "14 in ol[]\"Dodato u korpu: Kočioni \"",
+   "389 out ol[]\"\" -> button[]\"Zatvori\"",
+   "389 in button[]\"Zatvori\"",
+   "2507 out button[]\"Zatvori\" -> BODY",
+   "2517 in ol[]\"\""
+  ],
+  "afterNextTab": "a[skip-link] \"Preskoči na sadržaj\""
+ },
+ {
+  "case": "picker from part panel",
+  "w": 1440,
+  "before": "button[] \"Izaberite vozilo za tačno poklapanje\" (OPENER)",
+  "afterOpen": "button[] \"Zatvori\"",
+  "after": "button[] \"Izaberite vozilo za tačno poklapanje\" (OPENER)",
+  "panelStillOpen": true
+ }
+]

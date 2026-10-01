@@ -1,0 +1,51 @@
+
+ RUN  v5.0.2 C:/Users/admin/Desktop/Web Dev Projects/autodelovi
+
+stdout | scripts/qa/audit/verify-backend-01.test.ts > backend-01: credit limit / terms / tier on quote paths
+BACKEND01_RESULT {
+  "creditBefore": {
+    "availablePara": 500000,
+    "enabled": true,
+    "limitPara": 500000,
+    "openCount": 0,
+    "paymentTermsDays": 30,
+    "usedPara": 0
+  },
+  "control": {
+    "submitDeferred": "INVALID"
+  },
+  "customerAcceptQuote": {
+    "inquiryUserIdSet": true,
+    "result": "REFUSED",
+    "code": "INVALID"
+  },
+  "creditAfterCustomerPath": {
+    "availablePara": 500000,
+    "enabled": true,
+    "limitPara": 500000,
+    "openCount": 0,
+    "paymentTermsDays": 30,
+    "usedPara": 0
+  },
+  "staffConvertToOrder": {
+    "result": "REFUSED",
+    "code": "INVALID"
+  },
+  "creditAfterStaffPath": {
+    "availablePara": 500000,
+    "enabled": true,
+    "limitPara": 500000,
+    "openCount": 0,
+    "paymentTermsDays": 30,
+    "usedPara": 0
+  },
+  "guestAcceptDeferred": "INVALID"
+}
+
+ ✓ scripts/qa/audit/verify-backend-01.test.ts > backend-01: credit limit / terms / tier on quote paths 2336ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  04:28:32
+   Duration  8.44s (tests 64%, import 22%, transform 11%, environment 2%)
+

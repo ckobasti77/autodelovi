@@ -1,0 +1,1992 @@
+{
+  "injected": 4,
+  "runs": {
+    "guest-sim /delovi/kocioni-diskovi 320": {
+      "vw": 320,
+      "docScrollW": 320,
+      "rowScrollW": 320,
+      "rowClientW": 320,
+      "menu": "260-304",
+      "account": "none",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[168-212]",
+        "Korpa[214-258]",
+        "Otvori meni[260-304]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 320": {
+      "vw": 320,
+      "docScrollW": 320,
+      "rowScrollW": 320,
+      "rowClientW": 320,
+      "menu": "260-304",
+      "account": "none",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[168-212]",
+        "Korpa, 2 artikla[214-258]",
+        "Otvori meni[260-304]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "guest-sim /delovi/kocioni-diskovi 360": {
+      "vw": 360,
+      "docScrollW": 360,
+      "rowScrollW": 360,
+      "rowClientW": 360,
+      "menu": "300-344",
+      "account": "none",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[208-252]",
+        "Korpa[254-298]",
+        "Otvori meni[300-344]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 360": {
+      "vw": 360,
+      "docScrollW": 360,
+      "rowScrollW": 360,
+      "rowClientW": 360,
+      "menu": "300-344",
+      "account": "none",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[208-252]",
+        "Korpa, 2 artikla[254-298]",
+        "Otvori meni[300-344]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "guest-sim /delovi/kocioni-diskovi 375": {
+      "vw": 375,
+      "docScrollW": 375,
+      "rowScrollW": 375,
+      "rowClientW": 375,
+      "menu": "315-359",
+      "account": "none",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[223-267]",
+        "Korpa[269-313]",
+        "Otvori meni[315-359]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 375": {
+      "vw": 375,
+      "docScrollW": 375,
+      "rowScrollW": 375,
+      "rowClientW": 375,
+      "menu": "315-359",
+      "account": "none",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[223-267]",
+        "Korpa, 2 artikla[269-313]",
+        "Otvori meni[315-359]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "guest-sim /delovi/kocioni-diskovi 390": {
+      "vw": 390,
+      "docScrollW": 390,
+      "rowScrollW": 390,
+      "rowClientW": 390,
+      "menu": "330-374",
+      "account": "none",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[238-282]",
+        "Korpa[284-328]",
+        "Otvori meni[330-374]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 390": {
+      "vw": 390,
+      "docScrollW": 390,
+      "rowScrollW": 390,
+      "rowClientW": 390,
+      "menu": "330-374",
+      "account": "none",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[238-282]",
+        "Korpa, 2 artikla[284-328]",
+        "Otvori meni[330-374]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "guest-sim /delovi/kocioni-diskovi 412": {
+      "vw": 412,
+      "docScrollW": 412,
+      "rowScrollW": 412,
+      "rowClientW": 412,
+      "menu": "352-396",
+      "account": "none",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[260-304]",
+        "Korpa[306-350]",
+        "Otvori meni[352-396]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 412": {
+      "vw": 412,
+      "docScrollW": 412,
+      "rowScrollW": 412,
+      "rowClientW": 412,
+      "menu": "352-396",
+      "account": "none",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[260-304]",
+        "Korpa, 2 artikla[306-350]",
+        "Otvori meni[352-396]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "guest-sim /delovi/kocioni-diskovi 430": {
+      "vw": 430,
+      "docScrollW": 430,
+      "rowScrollW": 430,
+      "rowClientW": 430,
+      "menu": "369-413",
+      "account": "none",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[17-130]",
+        "Pretraga delova[277-321]",
+        "Korpa[323-367]",
+        "Otvori meni[369-413]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 430": {
+      "vw": 430,
+      "docScrollW": 430,
+      "rowScrollW": 430,
+      "rowClientW": 430,
+      "menu": "369-413",
+      "account": "none",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[17-130]",
+        "Pretraga delova[277-321]",
+        "Korpa, 2 artikla[323-367]",
+        "Otvori meni[369-413]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi",
+      "attempts": 2
+    },
+    "guest-sim /delovi/kocioni-diskovi 479": {
+      "vw": 479,
+      "docScrollW": 479,
+      "rowScrollW": 479,
+      "rowClientW": 479,
+      "menu": "416-460",
+      "account": "none",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[19-132]",
+        "Pretraga delova[324-368]",
+        "Korpa[370-414]",
+        "Otvori meni[416-460]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 479": {
+      "vw": 479,
+      "docScrollW": 479,
+      "rowScrollW": 479,
+      "rowClientW": 479,
+      "menu": "416-460",
+      "account": "none",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[19-132]",
+        "Pretraga delova[324-368]",
+        "Korpa, 2 artikla[370-414]",
+        "Otvori meni[416-460]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "guest-sim /delovi/kocioni-diskovi 480": {
+      "vw": 480,
+      "docScrollW": 480,
+      "rowScrollW": 480,
+      "rowClientW": 480,
+      "menu": "417-461",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[19-132]",
+        "Pretraga delova[187-231]",
+        "Pozovite +381 64 123 4567[233-277]",
+        "Viber +381 64 123 4567[279-323]",
+        "Moj nalog[325-369]",
+        "Korpa[371-415]",
+        "Otvori meni[417-461]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 480": {
+      "vw": 480,
+      "docScrollW": 480,
+      "rowScrollW": 480,
+      "rowClientW": 480,
+      "menu": "420-464",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[19-132]",
+        "Pretraga delova[144-188]",
+        "Pozovite +381 64 123 4567[190-234]",
+        "Viber +381 64 123 4567[236-280]",
+        "Brza porudžbina[282-326]",
+        "Majstorski portal[328-372]",
+        "Korpa, 2 artikla[374-418]",
+        "Otvori meni[420-464]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "guest-sim /delovi/kocioni-diskovi 540": {
+      "vw": 540,
+      "docScrollW": 540,
+      "rowScrollW": 540,
+      "rowClientW": 540,
+      "menu": "474-518",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[22-134]",
+        "Pretraga delova[244-288]",
+        "Pozovite +381 64 123 4567[290-334]",
+        "Viber +381 64 123 4567[336-380]",
+        "Moj nalog[382-426]",
+        "Korpa[428-472]",
+        "Otvori meni[474-518]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 540": {
+      "vw": 540,
+      "docScrollW": 540,
+      "rowScrollW": 540,
+      "rowClientW": 540,
+      "menu": "474-518",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[22-134]",
+        "Pretraga delova[198-242]",
+        "Pozovite +381 64 123 4567[244-288]",
+        "Viber +381 64 123 4567[290-334]",
+        "Brza porudžbina[336-380]",
+        "Majstorski portal[382-426]",
+        "Korpa, 2 artikla[428-472]",
+        "Otvori meni[474-518]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "guest-sim /delovi/kocioni-diskovi 640": {
+      "vw": 640,
+      "docScrollW": 640,
+      "rowScrollW": 640,
+      "rowClientW": 640,
+      "menu": "570-614",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[26-138]",
+        "Pretraga delova[340-384]",
+        "Pozovite +381 64 123 4567[386-430]",
+        "Viber +381 64 123 4567[432-476]",
+        "Moj nalog[478-522]",
+        "Korpa[524-568]",
+        "Otvori meni[570-614]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 640": {
+      "vw": 640,
+      "docScrollW": 640,
+      "rowScrollW": 640,
+      "rowClientW": 640,
+      "menu": "570-614",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[26-138]",
+        "Pretraga delova[294-338]",
+        "Pozovite +381 64 123 4567[340-384]",
+        "Viber +381 64 123 4567[386-430]",
+        "Brza porudžbina[432-476]",
+        "Majstorski portal[478-522]",
+        "Korpa, 2 artikla[524-568]",
+        "Otvori meni[570-614]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "guest-sim /delovi/kocioni-diskovi 768": {
+      "vw": 768,
+      "docScrollW": 768,
+      "rowScrollW": 768,
+      "rowClientW": 768,
+      "menu": "693-737",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[31-143]",
+        "Pretraga delova[463-507]",
+        "Pozovite +381 64 123 4567[509-553]",
+        "Viber +381 64 123 4567[555-599]",
+        "Moj nalog[601-645]",
+        "Korpa[647-691]",
+        "Otvori meni[693-737]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 768": {
+      "vw": 768,
+      "docScrollW": 768,
+      "rowScrollW": 768,
+      "rowClientW": 768,
+      "menu": "693-737",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[31-143]",
+        "Pretraga delova[417-461]",
+        "Pozovite +381 64 123 4567[463-507]",
+        "Viber +381 64 123 4567[509-553]",
+        "Brza porudžbina[555-599]",
+        "Majstorski portal[601-645]",
+        "Korpa, 2 artikla[647-691]",
+        "Otvori meni[693-737]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "guest-sim /delovi/kocioni-diskovi 1023": {
+      "vw": 1023,
+      "docScrollW": 1023,
+      "rowScrollW": 1023,
+      "rowClientW": 1023,
+      "menu": "938-982",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[41-153]",
+        "Pretraga delova[708-752]",
+        "Pozovite +381 64 123 4567[754-798]",
+        "Viber +381 64 123 4567[800-844]",
+        "Moj nalog[846-890]",
+        "Korpa[892-936]",
+        "Otvori meni[938-982]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 1023": {
+      "vw": 1023,
+      "docScrollW": 1023,
+      "rowScrollW": 1023,
+      "rowClientW": 1023,
+      "menu": "938-982",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[41-153]",
+        "Pretraga delova[662-706]",
+        "Pozovite +381 64 123 4567[708-752]",
+        "Viber +381 64 123 4567[754-798]",
+        "Brza porudžbina[800-844]",
+        "Majstorski portal[846-890]",
+        "Korpa, 2 artikla[892-936]",
+        "Otvori meni[938-982]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "guest-sim /delovi/kocioni-diskovi 1024": {
+      "vw": 1024,
+      "docScrollW": 1024,
+      "rowScrollW": 1024,
+      "rowClientW": 1024,
+      "menu": "0-0",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[41-158]",
+        "Delovi[186-253]",
+        "Vozila[257-323]",
+        "Za majstore[327-435]",
+        "Upit po broju šasije[439-596]",
+        "Pretraga delova[731-775]",
+        "Pozovite +381 64 123 4567[783-827]",
+        "Viber +381 64 123 4567[835-879]",
+        "Moj nalog[887-931]",
+        "Korpa[939-983]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 1024": {
+      "vw": 1024,
+      "docScrollW": 1024,
+      "rowScrollW": 1024,
+      "rowClientW": 1024,
+      "menu": "0-0",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[41-158]",
+        "Delovi[186-253]",
+        "Vozila[257-323]",
+        "Za majstore[327-435]",
+        "Upit po broju šasije[439-596]",
+        "Pretraga delova[679-723]",
+        "Pozovite +381 64 123 4567[731-775]",
+        "Viber +381 64 123 4567[783-827]",
+        "Brza porudžbina[835-879]",
+        "Majstorski portal[887-931]",
+        "Korpa, 2 artikla[939-983]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "guest-sim /delovi/kocioni-diskovi 1279": {
+      "vw": 1279,
+      "docScrollW": 1279,
+      "rowScrollW": 1279,
+      "rowClientW": 1279,
+      "menu": "0-0",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[48-165]",
+        "Delovi[193-260]",
+        "Vozila[264-330]",
+        "Za majstore[334-442]",
+        "Upit po broju šasije[446-603]",
+        "Pretraga delova[979-1023]",
+        "Pozovite +381 64 123 4567[1031-1075]",
+        "Viber +381 64 123 4567[1083-1127]",
+        "Moj nalog[1135-1179]",
+        "Korpa[1187-1231]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 1279": {
+      "vw": 1279,
+      "docScrollW": 1279,
+      "rowScrollW": 1279,
+      "rowClientW": 1279,
+      "menu": "0-0",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[48-165]",
+        "Delovi[193-260]",
+        "Vozila[264-330]",
+        "Za majstore[334-442]",
+        "Upit po broju šasije[446-603]",
+        "Pretraga delova[927-971]",
+        "Pozovite +381 64 123 4567[979-1023]",
+        "Viber +381 64 123 4567[1031-1075]",
+        "Brza porudžbina[1083-1127]",
+        "Majstorski portal[1135-1179]",
+        "Korpa, 2 artikla[1187-1231]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "guest-sim /delovi/kocioni-diskovi 1280": {
+      "vw": 1280,
+      "docScrollW": 1280,
+      "rowScrollW": 1280,
+      "rowClientW": 1280,
+      "menu": "0-0",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[48-165]",
+        "Delovi[193-260]",
+        "Vozila[264-330]",
+        "Za majstore[334-441]",
+        "Upit po broju šasije[445-601]",
+        "Broj dela ili naziv/[613-867]",
+        "Izaberite vozilo[875-1024]",
+        "Pozovite +381 64 123 4567[1032-1076]",
+        "Viber +381 64 123 4567[1084-1128]",
+        "Moj nalog[1136-1180]",
+        "Korpa[1188-1232]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 1280": {
+      "vw": 1280,
+      "docScrollW": 1280,
+      "rowScrollW": 1280,
+      "rowClientW": 1280,
+      "menu": "0-0",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[48-165]",
+        "Delovi[193-260]",
+        "Vozila[264-330]",
+        "Za majstore[334-433]",
+        "Upit po broju šasije[437-581]",
+        "Broj dela ili naziv/[593-828]",
+        "Izaberite vozilo[836-972]",
+        "Pozovite +381 64 123 4567[980-1024]",
+        "Viber +381 64 123 4567[1032-1076]",
+        "Brza porudžbina[1084-1128]",
+        "Majstorski portal[1136-1180]",
+        "Korpa, 2 artikla[1188-1232]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "guest-sim /delovi/kocioni-diskovi 1366": {
+      "vw": 1366,
+      "docScrollW": 1366,
+      "rowScrollW": 1366,
+      "rowClientW": 1366,
+      "menu": "0-0",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[48-165]",
+        "Delovi[193-260]",
+        "Vozila[264-330]",
+        "Za majstore[334-442]",
+        "Upit po broju šasije[446-603]",
+        "Broj dela ili naziv/[695-951]",
+        "Izaberite vozilo[959-1110]",
+        "Pozovite +381 64 123 4567[1118-1162]",
+        "Viber +381 64 123 4567[1170-1214]",
+        "Moj nalog[1222-1266]",
+        "Korpa[1274-1318]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 1366": {
+      "vw": 1366,
+      "docScrollW": 1366,
+      "rowScrollW": 1366,
+      "rowClientW": 1366,
+      "menu": "0-0",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[48-165]",
+        "Delovi[193-260]",
+        "Vozila[264-330]",
+        "Za majstore[334-442]",
+        "Upit po broju šasije[446-603]",
+        "Broj dela ili naziv/[643-899]",
+        "Izaberite vozilo[907-1058]",
+        "Pozovite +381 64 123 4567[1066-1110]",
+        "Viber +381 64 123 4567[1118-1162]",
+        "Brza porudžbina[1170-1214]",
+        "Majstorski portal[1222-1266]",
+        "Korpa, 2 artikla[1274-1318]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "guest-sim /delovi/kocioni-diskovi 1439": {
+      "vw": 1439,
+      "docScrollW": 1439,
+      "rowScrollW": 1439,
+      "rowClientW": 1439,
+      "menu": "0-0",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[48-165]",
+        "Delovi[193-260]",
+        "Vozila[264-330]",
+        "Za majstore[334-442]",
+        "Upit po broju šasije[446-603]",
+        "Broj dela ili naziv/[768-1024]",
+        "Izaberite vozilo[1032-1183]",
+        "Pozovite +381 64 123 4567[1191-1235]",
+        "Viber +381 64 123 4567[1243-1287]",
+        "Moj nalog[1295-1339]",
+        "Korpa[1347-1391]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 1439": {
+      "vw": 1439,
+      "docScrollW": 1439,
+      "rowScrollW": 1439,
+      "rowClientW": 1439,
+      "menu": "0-0",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "none"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-text",
+          "display": "none"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "flex"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[48-165]",
+        "Delovi[193-260]",
+        "Vozila[264-330]",
+        "Za majstore[334-442]",
+        "Upit po broju šasije[446-603]",
+        "Broj dela ili naziv/[716-972]",
+        "Izaberite vozilo[980-1131]",
+        "Pozovite +381 64 123 4567[1139-1183]",
+        "Viber +381 64 123 4567[1191-1235]",
+        "Brza porudžbina[1243-1287]",
+        "Majstorski portal[1295-1339]",
+        "Korpa, 2 artikla[1347-1391]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "guest-sim /delovi/kocioni-diskovi 1440": {
+      "vw": 1440,
+      "docScrollW": 1440,
+      "rowScrollW": 1440,
+      "rowClientW": 1440,
+      "menu": "0-0",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "flex"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[48-165]",
+        "Delovi[193-260]",
+        "Vozila[264-330]",
+        "Za majstore[334-442]",
+        "Upit po broju šasije[446-603]",
+        "Broj dela ili naziv/[673-929]",
+        "Izaberite vozilo[937-1087]",
+        "Pozovite[1095-1198]",
+        "Viber[1206-1288]",
+        "Moj nalog[1296-1340]",
+        "Korpa[1348-1392]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 1440": {
+      "vw": 1440,
+      "docScrollW": 1440,
+      "rowScrollW": 1440,
+      "rowClientW": 1440,
+      "menu": "0-0",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "flex"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[48-165]",
+        "Delovi[193-260]",
+        "Vozila[264-330]",
+        "Za majstore[334-442]",
+        "Upit po broju šasije[446-603]",
+        "Broj dela ili naziv/[621-877]",
+        "Izaberite vozilo[885-1035]",
+        "Pozovite[1043-1146]",
+        "Viber[1154-1236]",
+        "Brza porudžbina[1244-1288]",
+        "Majstorski portal[1296-1340]",
+        "Korpa, 2 artikla[1348-1392]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "guest-sim /delovi/kocioni-diskovi 1920": {
+      "vw": 1920,
+      "docScrollW": 1920,
+      "rowScrollW": 1920,
+      "rowClientW": 1920,
+      "menu": "0-0",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "flex"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[240-357]",
+        "Delovi[385-452]",
+        "Vozila[456-522]",
+        "Za majstore[526-634]",
+        "Upit po broju šasije[638-795]",
+        "Broj dela ili naziv/[929-1217]",
+        "Izaberite vozilo[1225-1375]",
+        "Pozovite[1383-1486]",
+        "Viber[1494-1576]",
+        "Moj nalog[1584-1628]",
+        "Korpa[1636-1680]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/delovi/kocioni-diskovi"
+    },
+    "mechanic-sim /delovi 1920": {
+      "vw": 1920,
+      "docScrollW": 1920,
+      "rowScrollW": 1920,
+      "rowClientW": 1920,
+      "menu": "0-0",
+      "account": "flex",
+      "contact": [
+        {
+          "kind": "phone-text",
+          "display": "flex"
+        },
+        {
+          "kind": "phone-icon",
+          "display": "none"
+        },
+        {
+          "kind": "viber-text",
+          "display": "flex"
+        },
+        {
+          "kind": "viber-icon",
+          "display": "none"
+        }
+      ],
+      "controls": [
+        "SKLOP — početna[240-357]",
+        "Delovi[385-452]",
+        "Vozila[456-522]",
+        "Za majstore[526-634]",
+        "Upit po broju šasije[638-795]",
+        "Broj dela ili naziv/[877-1165]",
+        "Izaberite vozilo[1173-1323]",
+        "Pozovite[1331-1434]",
+        "Viber[1442-1524]",
+        "Brza porudžbina[1532-1576]",
+        "Majstorski portal[1584-1628]",
+        "Korpa, 2 artikla[1636-1680]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/delovi"
+    },
+    "mechanic-real / 320": {
+      "vw": 320,
+      "docScrollW": 320,
+      "rowScrollW": 320,
+      "rowClientW": 320,
+      "menu": "260-304",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[168-212]",
+        "Korpa, 2 artikla[214-258]",
+        "Otvori meni[260-304]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/"
+    },
+    "mechanic-real /korpa 320": {
+      "vw": 320,
+      "docScrollW": 379,
+      "rowScrollW": 320,
+      "rowClientW": 320,
+      "menu": "260-304",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[168-212]",
+        "Korpa, 2 artikla[214-258]",
+        "Otvori meni[260-304]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/korpa"
+    },
+    "mechanic-real /majstor 320": {
+      "vw": 320,
+      "docScrollW": 320,
+      "rowScrollW": 320,
+      "rowClientW": 320,
+      "menu": "260-304",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[168-212]",
+        "Korpa, 2 artikla[214-258]",
+        "Otvori meni[260-304]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/majstor"
+    },
+    "mechanic-real /majstor/cenovnik 320": {
+      "vw": 320,
+      "docScrollW": 320,
+      "rowScrollW": 320,
+      "rowClientW": 320,
+      "menu": "260-304",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[168-212]",
+        "Korpa, 2 artikla[214-258]",
+        "Otvori meni[260-304]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/majstor/cenovnik"
+    },
+    "guest-real / 320": {
+      "vw": 320,
+      "docScrollW": 320,
+      "rowScrollW": 320,
+      "rowClientW": 320,
+      "menu": "260-304",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[168-212]",
+        "Korpa[214-258]",
+        "Otvori meni[260-304]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/"
+    },
+    "guest-real /korpa 320": {
+      "vw": 320,
+      "docScrollW": 320,
+      "rowScrollW": 320,
+      "rowClientW": 320,
+      "menu": "260-304",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[168-212]",
+        "Korpa[214-258]",
+        "Otvori meni[260-304]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/korpa"
+    },
+    "guest-real /nalog 320": {
+      "vw": 320,
+      "docScrollW": 320,
+      "rowScrollW": 320,
+      "rowClientW": 320,
+      "menu": "260-304",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[168-212]",
+        "Korpa[214-258]",
+        "Otvori meni[260-304]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/prijava"
+    },
+    "guest-real /upit 320": {
+      "vw": 320,
+      "docScrollW": 320,
+      "rowScrollW": 320,
+      "rowClientW": 320,
+      "menu": "260-304",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[168-212]",
+        "Korpa[214-258]",
+        "Otvori meni[260-304]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/upit"
+    },
+    "mechanic-real / 360": {
+      "vw": 360,
+      "docScrollW": 360,
+      "rowScrollW": 360,
+      "rowClientW": 360,
+      "menu": "300-344",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[208-252]",
+        "Korpa, 2 artikla[254-298]",
+        "Otvori meni[300-344]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/"
+    },
+    "mechanic-real /korpa 360": {
+      "vw": 360,
+      "docScrollW": 379,
+      "rowScrollW": 360,
+      "rowClientW": 360,
+      "menu": "300-344",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[208-252]",
+        "Korpa, 2 artikla[254-298]",
+        "Otvori meni[300-344]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/korpa"
+    },
+    "mechanic-real /majstor 360": {
+      "vw": 360,
+      "docScrollW": 360,
+      "rowScrollW": 360,
+      "rowClientW": 360,
+      "menu": "300-344",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[208-252]",
+        "Korpa, 2 artikla[254-298]",
+        "Otvori meni[300-344]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/majstor"
+    },
+    "mechanic-real /majstor/cenovnik 360": {
+      "vw": 360,
+      "docScrollW": 360,
+      "rowScrollW": 360,
+      "rowClientW": 360,
+      "menu": "300-344",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[208-252]",
+        "Korpa, 2 artikla[254-298]",
+        "Otvori meni[300-344]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/majstor/cenovnik"
+    },
+    "guest-real / 360": {
+      "vw": 360,
+      "docScrollW": 360,
+      "rowScrollW": 360,
+      "rowClientW": 360,
+      "menu": "300-344",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[208-252]",
+        "Korpa[254-298]",
+        "Otvori meni[300-344]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/"
+    },
+    "guest-real /korpa 360": {
+      "vw": 360,
+      "docScrollW": 360,
+      "rowScrollW": 360,
+      "rowClientW": 360,
+      "menu": "300-344",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[208-252]",
+        "Korpa[254-298]",
+        "Otvori meni[300-344]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/korpa"
+    },
+    "guest-real /nalog 360": {
+      "vw": 360,
+      "docScrollW": 360,
+      "rowScrollW": 360,
+      "rowClientW": 360,
+      "menu": "300-344",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[208-252]",
+        "Korpa[254-298]",
+        "Otvori meni[300-344]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/prijava"
+    },
+    "guest-real /upit 360": {
+      "vw": 360,
+      "docScrollW": 360,
+      "rowScrollW": 360,
+      "rowClientW": 360,
+      "menu": "300-344",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[208-252]",
+        "Korpa[254-298]",
+        "Otvori meni[300-344]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/upit"
+    },
+    "mechanic-real / 390": {
+      "vw": 390,
+      "docScrollW": 390,
+      "rowScrollW": 390,
+      "rowClientW": 390,
+      "menu": "330-374",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[238-282]",
+        "Korpa, 2 artikla[284-328]",
+        "Otvori meni[330-374]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/"
+    },
+    "mechanic-real /korpa 390": {
+      "vw": 390,
+      "docScrollW": 390,
+      "rowScrollW": 390,
+      "rowClientW": 390,
+      "menu": "330-374",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[238-282]",
+        "Korpa, 2 artikla[284-328]",
+        "Otvori meni[330-374]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/korpa"
+    },
+    "mechanic-real /majstor 390": {
+      "vw": 390,
+      "docScrollW": 390,
+      "rowScrollW": 390,
+      "rowClientW": 390,
+      "menu": "330-374",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[238-282]",
+        "Korpa, 2 artikla[284-328]",
+        "Otvori meni[330-374]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/majstor"
+    },
+    "mechanic-real /majstor/cenovnik 390": {
+      "vw": 390,
+      "docScrollW": 390,
+      "rowScrollW": 390,
+      "rowClientW": 390,
+      "menu": "330-374",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[238-282]",
+        "Korpa, 2 artikla[284-328]",
+        "Otvori meni[330-374]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "mechanicViewer": true,
+      "url": "/majstor/cenovnik"
+    },
+    "guest-real / 390": {
+      "vw": 390,
+      "docScrollW": 390,
+      "rowScrollW": 390,
+      "rowClientW": 390,
+      "menu": "330-374",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[238-282]",
+        "Korpa[284-328]",
+        "Otvori meni[330-374]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/"
+    },
+    "guest-real /korpa 390": {
+      "vw": 390,
+      "docScrollW": 390,
+      "rowScrollW": 390,
+      "rowClientW": 390,
+      "menu": "330-374",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[238-282]",
+        "Korpa[284-328]",
+        "Otvori meni[330-374]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/korpa"
+    },
+    "guest-real /nalog 390": {
+      "vw": 390,
+      "docScrollW": 390,
+      "rowScrollW": 390,
+      "rowClientW": 390,
+      "menu": "330-374",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[238-282]",
+        "Korpa[284-328]",
+        "Otvori meni[330-374]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/prijava"
+    },
+    "guest-real /upit 390": {
+      "vw": 390,
+      "docScrollW": 390,
+      "rowScrollW": 390,
+      "rowClientW": 390,
+      "menu": "330-374",
+      "account": "none",
+      "contact": [],
+      "controls": [
+        "SKLOP — početna[16-129]",
+        "Pretraga delova[238-282]",
+        "Korpa[284-328]",
+        "Otvori meni[330-374]"
+      ],
+      "outOfView": [],
+      "overlaps": [],
+      "url": "/upit"
+    }
+  },
+  "keyboard-and-menu-guest-360": {
+    "tabOrder": [
+      "Preskoči na sadržaj[12-180]",
+      "SKLOP — početna[16-129]",
+      "Pretraga delova[208-252]",
+      "Korpa[254-298]",
+      "Otvori meni[300-344]",
+      "Kočnice[16-84]"
+    ],
+    "menuLinks": [
+      "Delovi",
+      "Vozila",
+      "Za majstore",
+      "Upit po broju šasije",
+      "Moj nalog",
+      "Pošaljite upit po broju šasije",
+      "Svi podaci za kontakt"
+    ]
+  },
+  "keyboard-and-menu-mechanic-360": {
+    "tabOrder": [
+      "Preskoči na sadržaj[12-180]",
+      "SKLOP — početna[16-129]",
+      "Pretraga delova[208-252]",
+      "Korpa, 2 artikla[254-298]",
+      "Otvori meni[300-344]",
+      "Kočnice[16-84]"
+    ],
+    "menuLinks": [
+      "Delovi",
+      "Vozila",
+      "Za majstore",
+      "Upit po broju šasije",
+      "Brza porudžbina",
+      "Majstorski portal",
+      "Pošaljite upit po broju šasije",
+      "Svi podaci za kontakt"
+    ]
+  },
+  "errors": [
+    "guest /delovi/kocioni-diskovi 320: Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template).",
+    "mechanic /delovi 430: WebSocket connection to 'ws://localhost:3001/_next/hmr?id=aSQZci1PRPsCmFEZAJ0SJ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED",
+    "mechanic /delovi 430: WebSocket connection to 'ws://localhost:3001/_next/hmr?id=aSQZci1PRPsCmFEZAJ0SJ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED",
+    "mechanic /delovi 430: WebSocket connection to 'ws://localhost:3001/_next/hmr?id=aSQZci1PRPsCmFEZAJ0SJ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED",
+    "mechanic /delovi 430: WebSocket connection to 'ws://localhost:3001/_next/hmr?id=aSQZci1PRPsCmFEZAJ0SJ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED",
+    "mechanic /delovi 430: WebSocket connection to 'ws://localhost:3001/_next/hmr?id=aSQZci1PRPsCmFEZAJ0SJ' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED",
+    "mechanic / 320: %o\n\n%s ReferenceError: DIMENSION is not defined\n    at nbspDimensions (about://React/Server/file:///C:/Users/admin/Desktop/Web%2520Dev%2520Projects/autodelovi/.next/dev/server/chunks/ssr/%255Broot-of-the-server%255D__10d-iov._.js?id=%255Bproject%255D/lib/format/nbsp.ts+%255Bapp-rsc%255D+(ecmascript)?258:34:25)\n    at typographer (about://React/Server/file:///C:/Users/admin/Desktop/Web%2520Dev%2520",
+    "mechanic / 320: ReferenceError: DIMENSION is not defined\n    at nbspDimensions (about://React/Server/file:///C:/Users/admin/Desktop/Web%2520Dev%2520Projects/autodelovi/.next/dev/server/chunks/ssr/%255Broot-of-the-server%255D__10d-iov._.js?id=%255Bproject%255D/lib/format/nbsp.ts+%255Bapp-rsc%255D+(ecmascript)?258:34:25)\n    at typographer (about://React/Server/file:///C:/Users/admin/Desktop/Web%2520Dev%2520Project",
+    "mechanic / 320: ReferenceError: DIMENSION is not defined\n    at nbspDimensions (about://React/Server/file:///C:/Users/admin/Desktop/Web%2520Dev%2520Projects/autodelovi/.next/dev/server/chunks/ssr/%255Broot-of-the-server%255D__10d-iov._.js?id=%255Bproject%255D/lib/format/nbsp.ts+%255Bapp-rsc%255D+(ecmascript)?258:34:25)\n    at typographer (about://React/Server/file:///C:/Users/admin/Desktop/Web%2520Dev%2520Project"
+  ],
+  "summary": {
+    "runs": 62,
+    "failing": [
+      "mechanic-real /korpa 320: doc 379/320 row 320/320 out  overlaps ",
+      "mechanic-real /korpa 360: doc 379/360 row 360/360 out  overlaps "
+    ]
+  }
+}

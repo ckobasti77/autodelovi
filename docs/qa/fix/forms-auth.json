@@ -3,140 +3,234 @@
     "id": "A11Y-01",
     "status": "FIXED",
     "summary": "Checkout ErrorSummary focuses in an effect keyed on a failed-attempt counter (incremented only when „Dalje“ or „Pošalji porudžbinu“ fails validation), not on the error count; blur/change revalidation never moves focus.",
-    "files": ["components/checkout/CheckoutForm.tsx"],
+    "files": [
+      "components/checkout/CheckoutForm.tsx"
+    ],
     "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/forms-auth-checkout.mjs 390 → \"A after empty Dalje (expect summary) div[alert]\", \"A after Tab from fixed Ime (expect co-lastName) input#co-lastName\", \"B after click Telefon (expect co-phone) input#co-phone\", values [\"co-firstName=Petar\",\"co-lastName=Petrović\",\"co-phone=0641234567\"], \"A second failed Dalje (expect summary again) div[alert]\", console errors []"
   },
   {
     "id": "A11Y-04",
     "status": "FIXED",
     "summary": "Sign-in, sign-up, both reset forms, mechanic registration, VIN inquiry and back-in-stock render method=\"post\", keep the submit disabled until hydration (useHydrated) and show a <noscript> notice (FormNoScript); a native submit can no longer put the password or contact data in a GET URL (D225).",
-    "files": ["components/auth/SignInForm.tsx", "components/auth/AuthForms.tsx", "components/mechanic/MechanicRegistrationForm.tsx", "components/inquiry/InquiryForm.tsx", "components/product/BackInStockForm.tsx", "components/ui/Field.tsx"],
+    "files": [
+      "components/auth/SignInForm.tsx",
+      "components/auth/AuthForms.tsx",
+      "components/mechanic/MechanicRegistrationForm.tsx",
+      "components/inquiry/InquiryForm.tsx",
+      "components/product/BackInStockForm.tsx",
+      "components/ui/Field.tsx"
+    ],
     "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/forms-auth-misc.mjs (JS disabled) → \"nojs /prijava {method:post, submitDisabled:true, notice:noscript}\" (same for /registracija, /zaboravljena-lozinka, /za-majstore/registracija), \"nojs /prijava URL after Enter (no password) /prijava\"; forms-auth-prehydration.mjs → \"reg submit disabled before hydration true\", \"reg navigations (no GET with password) [GET /registracija]\""
   },
   {
     "id": "XB-01",
     "status": "FIXED",
-    "summary": "Text typed before hydration survives in every engine: RHF forms (InquiryForm, MechanicRegistrationForm) read the server-rendered DOM values in a useState initializer (readPrehydrationValues) and setValue them in a layout effect; controlled inputs (SearchBox, sign-up, reset, back-in-stock) adopt the DOM value in a mount layout effect. SearchBox props API unchanged. Checkout is client-only (skeleton until the cart loads), nothing to preserve (D226).",
-    "files": ["components/shell/SearchBox.tsx", "components/inquiry/InquiryForm.tsx", "components/mechanic/MechanicRegistrationForm.tsx", "components/auth/AuthForms.tsx", "components/product/BackInStockForm.tsx", "components/ui/Field.tsx"],
-    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/forms-auth-prehydration.mjs chromium (JS chunks held until typing ends) → \"hero before→after {before:[5Q0615505R], after:[5Q0615505R], kept:true}\", \"upit before→after … kept:true\", \"upit VIN help (decoded, not 0 / 17) Volkswagen · Golf V / Golf VI, Jetta · model 2008?\", upit errors after submit list no Opis error, \"reg values after hydration [14,15,16]\", console errors []; same result with `… webkit`"
+    "summary": "Text typed before hydration survives in every engine, including keys pressed while hydration lands. Fix-up (D251, refines D226): RHF forms (InquiryForm, MechanicRegistrationForm) spread keep(register(name)) from useKeepTypedBeforeHydration (components/ui/Field.tsx) — the wrapped ref reads the DOM value in the hydration commit right before RHF writes the default, and the form layout effect (after its useWatch calls) restores it with setValue and renders once more before paint. Textarea derives its counter from the element on every commit, so values written by register() defaults, setValue (the restore) or reset are counted (/upit Opis shows 25 / 2.000 after restore, 22 / 2.000 for ?q= prefill). Controlled inputs (SearchBox, sign-up, reset, back-in-stock) keep adopting the DOM value in a mount layout effect (they already read at commit). SearchBox props API unchanged. Checkout is client-only, nothing to preserve.",
+    "files": [
+      "components/ui/Field.tsx",
+      "components/ui/Textarea.tsx",
+      "components/inquiry/InquiryForm.tsx",
+      "components/mechanic/MechanicRegistrationForm.tsx",
+      "components/shell/SearchBox.tsx",
+      "components/auth/AuthForms.tsx",
+      "components/product/BackInStockForm.tsx",
+      "tests/unit/components/ui.test.tsx",
+      "docs/DECISIONS.md"
+    ],
+    "verification": "Verifier method (only /_next/static/chunks/*.js delayed 6 s, CSS passes, type as soon as painted): V_ENGINES=webkit V_ROUTES=upit,mid-upit,majstor V_RUNS=9 AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/forms-auth-verify-xb01.mjs → mid-upit 9/9 kept (8 with hydration landing mid-typing; before: 3 of 9 lost characters), upit msgCounter \"25 / 2.000\", VIN → Volkswagen, majstor kept with only the expected empty-field errors (docs/qa/fix/forms-auth/verify/xb01-fixup-webkit-390-upit_mid-upit_majstor.json). Same with V_ENGINES=firefox,chromium V_RUNS=6 → mid-upit 6/6 kept in both, msgCounter \"25 / 2.000\", 0 console/page errors (xb01-fixup-firefox_chromium-390-upit_mid-upit_majstor.json). V_ROUTES=upit-prefill-control → {messageLength:22, counter:\"22 / 2.000\"} (xb01-fixup-chromium-390-upit-prefill-control.json). npx vitest run tests/unit/components/ui.test.tsx → 20 passed (new: keys pressed between the hydration render and its commit are kept with form state + counter in sync; counter updates when nothing watches the field; counter counts a register() default). eslint + tsc clean for the touched files. The requested e2e spec is in cross_package_requests (tests/e2e is owned by the gates phase)."
   },
   {
     "id": "A11Y-07",
     "status": "FIXED",
     "summary": "Checkbox takes `error` and `required`: renders the message with an id, merges it into aria-describedby, sets aria-invalid/aria-required and a danger border, with a stable DOM so the box keeps focus when the error disappears. Used for checkout terms, /upit consent, mechanic terms, sign-up terms and back-in-stock consent; the summary anchors (#iq-consent, #mr-terms) now point at the checkbox itself.",
-    "files": ["components/ui/Checkbox.tsx", "components/checkout/CheckoutForm.tsx", "components/inquiry/InquiryForm.tsx", "components/mechanic/MechanicRegistrationForm.tsx", "components/auth/AuthForms.tsx", "components/product/BackInStockForm.tsx", "tests/unit/components/ui.test.tsx"],
+    "files": [
+      "components/ui/Checkbox.tsx",
+      "components/checkout/CheckoutForm.tsx",
+      "components/inquiry/InquiryForm.tsx",
+      "components/mechanic/MechanicRegistrationForm.tsx",
+      "components/auth/AuthForms.tsx",
+      "components/product/BackInStockForm.tsx",
+      "tests/unit/components/ui.test.tsx"
+    ],
     "verification": "forms-auth-checkout.mjs 390 → \"C terms a11y {invalid:true, required:true, description:Potrebna je saglasnost sa uslovima kupovine.}\", \"C focus stays on terms after checking it button[checkbox]#co-terms\"; forms-auth-misc.mjs → \"upit consent a11y {invalid:true, required:true, desc:Potrebna je saglasnost da podatke koristimo za odgovor na upit.}\", \"mech terms a11y {invalid:true, desc:Potrebna je saglasnost sa uslovima korišćenja.}\"; npx vitest run tests/unit/components/ui.test.tsx → 17 passed; docs/qa/fix/forms-auth/upit-consent-390.webp, checkout-terms-390.webp"
   },
   {
     "id": "A11Y-08",
     "status": "FIXED",
     "summary": "BackInStockForm focuses the e-mail input on a validation failure (its message is the input's description) and the consent checkbox when consent is missing; server errors render in their own role=\"alert\" paragraph; empty vs invalid address have separate messages.",
-    "files": ["components/product/BackInStockForm.tsx"],
+    "files": [
+      "components/product/BackInStockForm.tsx"
+    ],
     "verification": "forms-auth-misc.mjs → \"bis empty → focus + message {focus:input#bis-email, msg:Upišite adresu e-pošte.}\", \"bis bad → message Adresa e-pošte nije ispravna. Primer: ime@primer.rs.\", \"bis no consent → focus + description {role:checkbox, invalid:true, desc:Potrebna je saglasnost da vam pošaljemo obaveštenje.}\""
   },
   {
     "id": "A11Y-13",
     "status": "FIXED",
     "summary": "Sign-up form gets the mechanic-registration pattern: a role=\"alert\" error summary listing every problem with links to the fields, which takes focus on a failed submit (and on a server error).",
-    "files": ["components/auth/AuthForms.tsx"],
+    "files": [
+      "components/auth/AuthForms.tsx"
+    ],
     "verification": "forms-auth-prehydration.mjs chromium → \"reg summary {focus:alert, items:[Potrebna je saglasnost sa uslovima korišćenja.]}\""
   },
   {
     "id": "PERF-08",
     "status": "FIXED",
     "summary": "lib/validation/{checkout,inquiry,mechanicRegistration}.ts use `import * as z from \"zod\"` (exported names/types unchanged); field-level checks shared with plain forms moved to zod-free lib/validation/identifiers.ts so sign-up/reset/back-in-stock import no zod (D228). Production chunk re-measure belongs to the Performance phase.",
-    "files": ["lib/validation/checkout.ts", "lib/validation/inquiry.ts", "lib/validation/mechanicRegistration.ts", "lib/validation/identifiers.ts"],
+    "files": [
+      "lib/validation/checkout.ts",
+      "lib/validation/inquiry.ts",
+      "lib/validation/mechanicRegistration.ts",
+      "lib/validation/identifiers.ts"
+    ],
     "verification": "npx esbuild lib/validation/checkout.ts --bundle --minify --format=esm → \"checkout 92243 bytes, gz 28020, polish-locale=0\" vs HEAD version \"old checkout 460439 gz 95655 polish=1\" (inquiry 27288 gz, mechanicRegistration 27201 gz); production: scripts/qa/audit/perf-bundle-signatures.mjs in the Performance phase"
   },
   {
     "id": "FLOW-09",
     "status": "FIXED",
     "summary": "ERRORS.pib / ERRORS.mb split into required / length / checksum; pibProblem/mbProblem pick the message by case and are used by both the checkout and the mechanic registration schemas.",
-    "files": ["lib/i18n/sr/shop.ts", "lib/validation/identifiers.ts", "lib/validation/checkout.ts", "lib/validation/mechanicRegistration.ts", "tests/unit/lib/validation.test.ts"],
+    "files": [
+      "lib/i18n/sr/shop.ts",
+      "lib/validation/identifiers.ts",
+      "lib/validation/checkout.ts",
+      "lib/validation/mechanicRegistration.ts",
+      "tests/unit/lib/validation.test.ts"
+    ],
     "verification": "npx vitest run tests/unit/lib/validation.test.ts → 13 passed (\"PIB / MB messages by case\"); forms-auth-checkout.mjs → \"FLOW-09 messages [PIB nije ispravan — kontrolna cifra ne odgovara. …, Matični broj nije ispravan — kontrolna cifra ne odgovara. …]\" for 104052136 / 64552873; forms-auth-misc.mjs mech summary → \"Upišite PIB.\", \"Matični broj nije ispravan — kontrolna cifra ne odgovara. …\""
   },
   {
     "id": "VIS-11",
     "status": "FIXED",
     "summary": "Mobile checkout summary line: „Stavke (n)“ with a caret that turns when open (transition-control token), „Ukupno“ + amount on the right; the inner summary no longer repeats the Ukupno row. MOT-06 Disclosure did not exist yet, so the native <details> stays.",
-    "files": ["components/checkout/CheckoutForm.tsx"],
+    "files": [
+      "components/checkout/CheckoutForm.tsx"
+    ],
     "verification": "forms-auth-checkout.mjs 390 → \"mobile summary (closed) Stavke (1) / Ukupno / 4.690 RSD\", \"mobile summary (open) has inner Ukupno false\"; docs/qa/fix/forms-auth/checkout-summary-390.webp (reviewed)"
   },
   {
     "id": "VIS-12",
     "status": "FIXED",
     "summary": "Root cause sub-16 px controls: Select size=\"sm\" now renders 16 px text below md (covers every compact select), and the /upit „Dodaj kategoriju“ select uses size md (h-11). The quick-order textarea (components/mechanic/QuickOrder.tsx) is the cart-mechanic-overlays assist.",
-    "files": ["components/ui/Select.tsx", "components/inquiry/InquiryForm.tsx", "tests/unit/components/ui.test.tsx"],
+    "files": [
+      "components/ui/Select.tsx",
+      "components/inquiry/InquiryForm.tsx",
+      "tests/unit/components/ui.test.tsx"
+    ],
     "verification": "forms-auth-misc.mjs at 390 → \"upit control font sizes < md []\" (every visible input/select/textarea ≥ 16 px), \"upit 'Dodaj kategoriju' height 42\" (inside the 44 px frame); vitest ui.test.tsx \"renders the compact select with 16 px text below md\" passed"
   },
   {
     "id": "A11Y-18",
     "status": "FIXED",
     "summary": "Field context drives aria-required: inside <RequiredUnlessOptional> (checkout, /upit, sign-up, reset, mechanic registration, back-in-stock) every Field without `optional` is announced as required (aria only, no native bubble); markRequired fields are announced too; Field outside the provider (admin filters) unchanged (D227).",
-    "files": ["components/ui/Field.tsx", "components/checkout/CheckoutForm.tsx", "components/inquiry/InquiryForm.tsx", "components/auth/AuthForms.tsx", "components/mechanic/MechanicRegistrationForm.tsx", "components/product/BackInStockForm.tsx", "tests/unit/components/ui.test.tsx"],
+    "files": [
+      "components/ui/Field.tsx",
+      "components/checkout/CheckoutForm.tsx",
+      "components/inquiry/InquiryForm.tsx",
+      "components/auth/AuthForms.tsx",
+      "components/mechanic/MechanicRegistrationForm.tsx",
+      "components/product/BackInStockForm.tsx",
+      "tests/unit/components/ui.test.tsx"
+    ],
     "verification": "forms-auth-checkout.mjs → \"aria-required [co-firstName:true, co-lastName:true, co-phone:true, co-email:true]\"; forms-auth-misc.mjs → \"upit required [iq-message:true, iq-name:true, iq-phone:true, iq-email:null, iq-vin:null]\" (e-mail optional for phone replies, VIN optional); vitest ui.test.tsx 2 tests on the provider passed"
   },
   {
     "id": "COPY-09",
     "status": "OPEN",
     "summary": "Glossary TERMS added (lib/i18n/sr/shop.ts: „E-pošta“, „adresa e-pošte“, „Artikli“) and used by every string in this package: ERRORS.email/emailRequired, sign-in error, sign-up/reset/back-in-stock/checkout/inquiry/mechanic labels and messages, SearchBox group „Artikli“, /za-majstore/registracija intro; DESIGN-SYSTEM §11.4 examples + glossary paragraph updated. Remaining occurrences are in files of other packages (see cross_package_requests).",
-    "files": ["lib/i18n/sr/shop.ts", "components/shell/SearchBox.tsx", "components/auth/SignInForm.tsx", "components/auth/AuthForms.tsx", "components/product/BackInStockForm.tsx", "components/mechanic/MechanicRegistrationForm.tsx", "lib/validation/checkout.ts", "lib/validation/inquiry.ts", "app/(shop)/za-majstore/registracija/page.tsx", "docs/design/DESIGN-SYSTEM.md"],
+    "files": [
+      "lib/i18n/sr/shop.ts",
+      "components/shell/SearchBox.tsx",
+      "components/auth/SignInForm.tsx",
+      "components/auth/AuthForms.tsx",
+      "components/product/BackInStockForm.tsx",
+      "components/mechanic/MechanicRegistrationForm.tsx",
+      "lib/validation/checkout.ts",
+      "lib/validation/inquiry.ts",
+      "app/(shop)/za-majstore/registracija/page.tsx",
+      "docs/design/DESIGN-SYSTEM.md"
+    ],
     "verification": "grep -rn -i \"e-mail adres\\|\\\"Proizvodi\\\"\" over the owned files → no user-facing hit; forms-auth-misc.mjs → \"bis bad → message Adresa e-pošte nije ispravna. Primer: ime@primer.rs.\""
   },
   {
     "id": "COPY-13",
     "status": "FIXED",
     "summary": "VIN label „Broj šasije — VIN (nije obavezno)“ in checkout and /upit (no doubled parentheses); select placeholders „Prvo izaberite marku/model“; required before format for e-mail (emailProblem → „Upišite adresu e-pošte.“) in sign-up, reset, mechanic registration and back-in-stock; empty password → „Upišite lozinku.“.",
-    "files": ["components/checkout/CheckoutForm.tsx", "components/inquiry/InquiryForm.tsx", "components/auth/AuthForms.tsx", "lib/validation/identifiers.ts", "lib/validation/mechanicRegistration.ts"],
+    "files": [
+      "components/checkout/CheckoutForm.tsx",
+      "components/inquiry/InquiryForm.tsx",
+      "components/auth/AuthForms.tsx",
+      "lib/validation/identifiers.ts",
+      "lib/validation/mechanicRegistration.ts"
+    ],
     "verification": "forms-auth-misc.mjs mech summary → \"Upišite adresu e-pošte.\", \"Upišite lozinku.\"; vitest validation.test.ts \"orders e-mail messages required → format\" passed"
   },
   {
     "id": "FLOW-27",
     "status": "FIXED",
     "summary": "PhotoPicker names every rejected file with its reason: „racun.pdf nije fotografija (JPG, PNG ili WebP).“ / „velika.jpg ima 9,2 MB — najviše 8 MB po fotografiji.“; upload failures say „Fotografija nije učitana“ (no shipping verb „otpremiti“).",
-    "files": ["components/inquiry/PhotoPicker.tsx", "lib/i18n/sr/shop.ts", "components/inquiry/InquiryForm.tsx"],
+    "files": [
+      "components/inquiry/PhotoPicker.tsx",
+      "lib/i18n/sr/shop.ts",
+      "components/inquiry/InquiryForm.tsx"
+    ],
     "verification": "forms-auth-misc.mjs → \"upit photo rejections racun.pdf nije fotografija (JPG, PNG ili WebP). velika.jpg ima 9,2 MB — najviše 8 MB po fotografiji.\""
   },
   {
     "id": "FLOW-29",
     "status": "FIXED",
     "summary": "Checkout step 1 back link is the same ghost button style as „Nazad“ with the arrow first („← Korpa“).",
-    "files": ["components/checkout/CheckoutForm.tsx"],
+    "files": [
+      "components/checkout/CheckoutForm.tsx"
+    ],
     "verification": "forms-auth-checkout.mjs → \"back link {text:Korpa, firstChildIsIcon:true}\""
   },
   {
     "id": "SEO-14",
     "status": "FIXED",
     "summary": "/upit renders the shared Breadcrumbs (Početna / Upit po broju šasije) and its BreadcrumbList JSON-LD.",
-    "files": ["app/(shop)/upit/page.tsx"],
+    "files": [
+      "app/(shop)/upit/page.tsx"
+    ],
     "verification": "forms-auth-misc.mjs → \"upit breadcrumbs {nav:Početna/Upit po broju šasije, jsonld:true}\""
   },
   {
     "id": "COPY-11",
     "status": "FIXED",
     "summary": "Assist, forms-auth part only: CheckoutForm delivery price uses formatRSD(0). CartView, predračun, print, QuoteComposer and e-mail templates belong to other packages.",
-    "files": ["components/checkout/CheckoutForm.tsx"],
+    "files": [
+      "components/checkout/CheckoutForm.tsx"
+    ],
     "verification": "Code: `d.pricePara === 0 ? formatRSD(0)` in the delivery RadioGroup; tsc/eslint clean"
   },
   {
     "id": "A11Y-19",
     "status": "FIXED",
     "summary": "Assist, Stepper part only: the edit button reads „Izmeni korak Kontakt“ (no colon that Chrome separates around the absolutely positioned sr-only span). AddToCartButton and FavoriteButton belong to other packages.",
-    "files": ["components/ui/Stepper.tsx", "tests/unit/components/ui.test.tsx"],
+    "files": [
+      "components/ui/Stepper.tsx",
+      "tests/unit/components/ui.test.tsx"
+    ],
     "verification": "npx vitest run tests/unit/components/ui.test.tsx → \"names the edit button as one phrase, without a stray colon\" passed (17 passed)"
   },
   {
     "id": "COPY-14",
     "status": "FIXED",
     "summary": "Assist, forms-auth lines: mechanic registration „Na ovu adresu šaljemo delove. Adresu možete da promenite u svakoj porudžbini.“; reset „Upišite e-poštu naloga — poslaćemo kod od 8 cifara (važi 15 minuta).“. Other lines (za-majstore page, mechanic.ts csv, AccountViews, seed content) belong to other packages.",
-    "files": ["components/mechanic/MechanicRegistrationForm.tsx", "components/auth/AuthForms.tsx"],
+    "files": [
+      "components/mechanic/MechanicRegistrationForm.tsx",
+      "components/auth/AuthForms.tsx"
+    ],
     "verification": "grep \"Adresu možete da promenite\" components/mechanic/MechanicRegistrationForm.tsx → line 418; tsc/eslint clean"
   },
   {
     "id": "BE-12",
     "status": "OPEN",
     "summary": "Client mirror done: passwordProblem(password, email) rejects a password equal to the e-mail with ERRORS.passwordIsEmail in sign-up, reset and mechanic registration. The server rule in convex/auth.ts (Password provider) is not in this package (no convex access) — see cross_package_requests.",
-    "files": ["lib/validation/identifiers.ts", "lib/validation/mechanicRegistration.ts", "components/auth/AuthForms.tsx", "lib/i18n/sr/shop.ts"],
+    "files": [
+      "lib/validation/identifiers.ts",
+      "lib/validation/mechanicRegistration.ts",
+      "components/auth/AuthForms.tsx",
+      "lib/i18n/sr/shop.ts"
+    ],
     "verification": "npx vitest run tests/unit/lib/validation.test.ts → \"rejects a password equal to the e-mail address\" passed"
   },
   {

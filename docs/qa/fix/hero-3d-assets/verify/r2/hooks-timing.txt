@@ -1,0 +1,6 @@
+{"viewport":"1440x900?3d=high","run":0,"gotoMs":965,"hooksPresentWhenGotoResolved":false,"hooksAfterGotoMs":246,"loadEventEnd":960,"domContentLoaded":783}
+{"viewport":"1440x900?3d=high","run":1,"gotoMs":586,"hooksPresentWhenGotoResolved":false,"hooksAfterGotoMs":401,"loadEventEnd":585,"domContentLoaded":384}
+{"viewport":"1440x900?3d=high","run":2,"gotoMs":573,"hooksPresentWhenGotoResolved":false,"hooksAfterGotoMs":374,"loadEventEnd":571,"domContentLoaded":374}
+{"viewport":"390x844?3d=mid","run":0,"gotoMs":592,"hooksPresentWhenGotoResolved":false,"hooksAfterGotoMs":372,"loadEventEnd":589,"domContentLoaded":409}
+{"viewport":"390x844?3d=mid","run":1,"gotoMs":571,"hooksPresentWhenGotoResolved":false,"hooksAfterGotoMs":366,"loadEventEnd":566,"domContentLoaded":379}
+{"viewport":"390x844?3d=mid","run":2,"gotoMs":681,"hooksPresentWhenGotoResolved":false,"hooksAfterGotoMs":393,"loadEventEnd":677,"domContentLoaded":465}

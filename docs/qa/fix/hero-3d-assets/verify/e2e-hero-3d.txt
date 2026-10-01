@@ -1,0 +1,24 @@
+Step 22 verifier — tests/e2e/hero-3d.spec.ts against the dev server (2026-10-01)
+Command: E2E_BASE_URL=http://localhost:3001 npx playwright test tests/e2e/hero-3d.spec.ts --workers=1 --reporter=line
+Result: 7 failed, 11 passed (9.8 min)
+
+Failed:
+  [desktop-1440] hero-3d.spec.ts:39  poster first, live 3D after intent, crossfade, no console errors
+  [desktop-1440] hero-3d.spec.ts:91  the test hook explodes the car and selects a part
+  [desktop-1440] hero-3d.spec.ts:182 reduced motion: no scroll track, „Rasklopi“ cuts to the exploded state
+  [desktop-1440] hero-3d.spec.ts:229 WebGL context loss hands the stage back to the posters
+  [mobile-390]   hero-3d.spec.ts:39  poster first, live 3D after intent, crossfade, no console errors
+  [mobile-390]   hero-3d.spec.ts:91  the test hook explodes the car and selects a part
+  [mobile-390]   hero-3d.spec.ts:229 WebGL context loss hands the stage back to the posters
+
+Cause 1 (MOT-01, HeroPicture now emits a tablet AND a desktop media-scoped preload):
+  hero-3d.spec.ts:46  expect(page.locator('head link[rel="preload"][as="image"][fetchpriority="high"]'))
+                        .toHaveAttribute("media", "(min-width: 48rem)")
+  -> strict mode violation: resolved to 2 elements:
+     1) media="(min-width: 48rem) and (max-width: 63.999rem)" imagesrcset="/images/hero/car-assembled-t-768.avif 768w, …-t-1080.avif 1080w, …-t-1536.avif 1536w"
+     2) media="(min-width: 64rem)" imagesrcset="/images/hero/car-assembled-1080.avif 1080w, …-1440 1440w, …-1920 1920w, …car-assembled.avif 2560w"
+  (re-run with -g "poster first": same failure at line 46 in both projects, before any 3D wait)
+
+Cause 2 (PERF-23, same package): startAndWaitFor3d() loads "/" without ?3d=high|mid; SwiftShader is
+now classified low (posters only), so window.__sklop3d.ready never turns true -> 120 s timeouts at
+hero-3d.spec.ts:31. Only the low-tier test already passes ?3d=low.

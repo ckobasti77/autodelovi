@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({
     title: "Svi delovi po sistemima vozila",
     description:
-      "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra po sistemima: motor, kočnice, vešanje, hlađenje, elektrika, karoserija i servisni delovi. Cene sa PDV-om i stanje.",
+      "Delovi za VAG vozila po sistemima: motor, kočnice, vešanje, hlađenje, elektrika, karoserija i servisni delovi. Cene sa PDV-om i stanje na lageru.",
     path: ROUTES.parts,
     titleSuffix: settings.seo.titleSuffix,
   });

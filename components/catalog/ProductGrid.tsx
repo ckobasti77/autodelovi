@@ -6,8 +6,10 @@ import { LiveOverlayProvider } from "@/components/catalog/LiveOverlay";
 import { ProductCard, type CardFit } from "@/components/catalog/ProductCard";
 
 /**
- * Card grid (§10.2): list cards on phones, 2 columns ≥ 480, 3 ≥ 1024 (with the filter rail),
- * 4 ≥ 1280, 5 ≥ 1920 when there is no rail. One live subscription for the whole grid.
+ * Card grid (§10.2): list cards on phones, 2 columns ≥ 480. Without the rail: 3 ≥ 1024,
+ * 4 ≥ 1280, 5 ≥ 1920. Beside the 280 px filter rail the column count follows the space left
+ * (`auto-fill`, 15rem minimum), so cards never shrink below 240 px on wide screens (VIS-05,
+ * D257). One live subscription for the whole grid.
  */
 export function ProductGrid({
   items,
@@ -31,7 +33,9 @@ export function ProductGrid({
       <ul
         className={cn(
           "grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-(--gutter)",
-          withRail ? "lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5" : "lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5",
+          withRail
+            ? "lg:grid-cols-[repeat(auto-fill,minmax(15rem,1fr))]"
+            : "lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5",
           className,
         )}
       >

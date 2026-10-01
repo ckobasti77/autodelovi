@@ -136,14 +136,14 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
       terms: false,
     },
   });
+  const pib = useWatch({ control, name: "pib" });
+  const mb = useWatch({ control, name: "mb" });
   // XB-01: text typed before hydration is read by each control's ref in the hydration commit
   // (before register() writes the defaults) and restored in the same commit, before paint.
+  // After the watchers: they subscribe in layout effects, which run in declaration order.
   const keep = useKeepTypedBeforeHydration<TextField>((name, value) =>
     setValue(name, value, { shouldDirty: true }),
   );
-
-  const pib = useWatch({ control, name: "pib" });
-  const mb = useWatch({ control, name: "mb" });
   const pibOk = pib && isValidPib(normalizePib(pib));
   const mbOk = mb && isValidMb(normalizeMb(mb));
 

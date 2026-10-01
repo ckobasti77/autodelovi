@@ -214,6 +214,70 @@ describe("BE-01 edge cases", () => {
     ).toBe("INVALID");
   });
 
+  test("self-dealing probe: a staff member who is also a mechanic overrides his own limit", async () => {
+    const t = makeT();
+    const w = await setupWorld(t);
+    // The staff user gets an owner-approved mechanic profile: credit on, limit 5.000 RSD.
+    const profileId = await t.run(async (ctx) => {
+      const id = await ctx.db.insert("mechanicProfiles", {
+        userId: w.staff,
+        status: "approved",
+        companyName: "Servis zaposlenog",
+        pib: "100000003",
+        mb: "21122233",
+        contactPerson: "Zaposleni",
+        phone: "+381641234567",
+        email: "staff@sklop.test",
+        city: "Beograd",
+        address: "Ulica 2",
+        serviceTypes: ["mehanika"],
+        brandsServiced: [],
+        tierId: w.tiers.majstor,
+        creditEnabled: true,
+        creditLimitPara: 500_000,
+        paymentTermsDays: 15,
+        consent: CONSENT,
+        isDemo: false,
+        updatedAt: 0,
+      });
+      await ctx.db.patch("users", w.staff, { mechanicProfileId: id, mechanicStatus: "approved" });
+      return id;
+    });
+    // Changing his own limit is forbidden (P2 self-dealing rule)…
+    expect(
+      await errorCode(() =>
+        w.asStaff.mutation(api.mechanicsAdmin.update, { profileId, creditLimitPara: 50_000_000 }),
+      ),
+    ).toBe("FORBIDDEN");
+    // …but the staff member can file an inquiry as himself, quote it and convert it over his limit.
+    const { number } = await w.asStaff.mutation(api.inquiries.submit, {
+      kind: "part" as const,
+      message: "Treba mi turbina za Golf 7 2.0 TDI.",
+      contact: { name: "Zaposleni Majstor", phone: "064 111 2222", preferredChannel: "phone" as const },
+      consent: CONSENT,
+      honeypot: "",
+      startedAt: Date.now() - 30_000,
+    });
+    const detail = (await w.asStaff.query(api.inquiriesAdmin.get, { number }))!;
+    const quoteId = await w.asStaff.mutation(api.inquiriesAdmin.saveQuoteDraft, {
+      inquiryId: detail.inquiry._id,
+      lines: [{ name: "Turbina", quantity: 1, unitPricePara: 5_000_000, availability: "in_stock" }],
+    });
+    await w.asStaff.mutation(api.inquiriesAdmin.sendQuote, { quoteId });
+    const result = await errorCode(() =>
+      w.asStaff.mutation(api.inquiriesAdmin.convertToOrder, {
+        quoteId,
+        contact: CONTACT,
+        delivery: { method: "pickup" },
+        payment: { method: "deferred" },
+        creditOverride: true,
+      }),
+    );
+    console.log(`SELF_DEALING_OVERRIDE_RESULT ${result}`);
+    // Recorded, not asserted: the verifier reports what happens.
+    expect(["NO_ERROR", "FORBIDDEN", "INVALID"]).toContain(result);
+  });
+
   test("orders.submit keeps the D132 behaviour through the shared helper", async () => {
     const t = makeT();
     const w = await setupWorld(t);

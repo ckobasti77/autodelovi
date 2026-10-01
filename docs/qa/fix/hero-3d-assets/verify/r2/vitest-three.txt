@@ -1,0 +1,52 @@
+
+ RUN  v5.0.2 C:/Users/admin/Desktop/Web Dev Projects/autodelovi
+
+ ✓  unit  tests/unit/three/tier.test.ts > device tier (contract F7.2) > desktop with WebGL2 and enough cores/memory is high 3ms
+ ✓  unit  tests/unit/three/tier.test.ts > device tier (contract F7.2) > phones and weak desktops are mid 1ms
+ ✓  unit  tests/unit/three/tier.test.ts > device tier (contract F7.2) > no WebGL2, Save-Data or very little memory is low 0ms
+ ✓  unit  tests/unit/three/tier.test.ts > device tier (contract F7.2) > software WebGL renderers are low (PERF-23) 1ms
+ ✓  unit  tests/unit/three/tier.test.ts > device tier (contract F7.2) > MSAA only on the high tier below DPR 1.5 (PERF-16) 0ms
+ ✓  unit  tests/unit/three/tier.test.ts > quick tier (no WebGL probe during hydration) > on the server it decides nothing 1ms
+ ✓  unit  tests/unit/three/tier.test.ts > quick tier (no WebGL probe during hydration) > cheap signals that already mean low 1ms
+ ✓  unit  tests/unit/three/tier.test.ts > quick tier (no WebGL probe during hydration) > everything else waits for the probe at start 0ms
+ ✓  unit  tests/unit/three/xray-parity.test.ts > X-ray values match the poster renders > body 4ms
+ ✓  unit  tests/unit/three/xray-parity.test.ts > X-ray values match the poster renders > glass and environment 1ms
+ ✓  unit  tests/unit/three/hero-copy.test.ts > 3D hero copy > every category has one mechanic's note (callout, parts list) 12ms
+ ✓  unit  tests/unit/three/hero-copy.test.ts > 3D hero copy > every stage has a short label and a caption sentence 1ms
+ ✓  unit  tests/unit/3d-manifest.test.ts > 3D manifest ↔ taxonomy (contract F4) > categories match the taxonomy 1:1 (slug, label, system, nodes, mesh flag) 16ms
+ ✓  unit  tests/unit/3d-manifest.test.ts > 3D manifest ↔ taxonomy (contract F4) > every clickable node is a part with its taxonomy label, stage and a unit explode direction 19ms
+ ✓  unit  tests/unit/3d-manifest.test.ts > 3D manifest ↔ taxonomy (contract F4) > systems and stage windows come from the taxonomy 1ms
+ ✓  unit  tests/unit/3d-manifest.test.ts > 3D manifest ↔ taxonomy (contract F4) > both GLBs exist within the contract budgets 1ms
+ ✓  unit  tests/unit/3d-manifest.test.ts > 3D manifest ↔ taxonomy (contract F4) > thumbnails exist for every category and filter subcategory 5ms
+ ✓  unit  tests/unit/3d-manifest.test.ts > 3D manifest ↔ taxonomy (contract F4) > x-ray slots are flagged for the runtime shader 1ms
+ ✓  unit  tests/unit/3d-manifest.test.ts > explode timing (PLAN §6.2) > holds before the window, eases through it, completes after it 1ms
+ ✓  unit  tests/unit/3d-manifest.test.ts > explode timing (PLAN §6.2) > order staggers a part by up to 35 % of its window 0ms
+ ✓  unit  tests/unit/three/explode.test.ts > stage windows (contract F6, D78) > desktop windows are the taxonomy windows 5ms
+ ✓  unit  tests/unit/three/explode.test.ts > stage windows (contract F6, D78) > mobile runs grouped stages sequentially (0–55 %, 45–100 % of the shared window) 1ms
+ ✓  unit  tests/unit/three/explode.test.ts > stage windows (contract F6, D78) > every stage ends by the exploded hold on both timelines 1ms
+ ✓  unit  tests/unit/three/explode.test.ts > part motion > matches the manifest helper used by the Blender checks 5ms
+ ✓  unit  tests/unit/three/explode.test.ts > part motion > a GSAP tween at partSlot with power2.inOut reproduces the factor 1ms
+ ✓  unit  tests/unit/three/explode.test.ts > part motion > assembled at 0, fully exploded after the last stage 4ms
+ ✓  unit  tests/unit/three/explode.test.ts > stage index > 0 while assembled, 7 through the hold 1ms
+ ✓  unit  tests/unit/three/explode.test.ts > stage index > landing on a stage's end shows that stage (windows overlap) 1ms
+ ✓  unit  tests/unit/three/explode.test.ts > stage index > local progress inside the current stage 1ms
+ ✓  unit  tests/unit/three/explode.test.ts > camera and shell > camera blend eases out across 0.08–0.92 (the dolly leads the explode) 1ms
+ ✓  unit  tests/unit/three/explode.test.ts > camera and shell > shell fades during stage 1 only 1ms
+ ✓  unit  tests/unit/three/manifest-guard.test.ts > runtime manifest guard (no zod in the 3D chunk) > accepts the generated manifest exactly like the zod schema 35ms
+ ✓  unit  tests/unit/three/manifest-guard.test.ts > runtime manifest guard (no zod in the 3D chunk) > rejects what the runtime cannot use 32ms
+ ✓  unit  tests/unit/three/manifest-guard.test.ts > runtime manifest guard (no zod in the 3D chunk) > every crop has a hero and an exploded camera 2ms
+ ✓  unit  tests/unit/three/camera.test.ts > contain framing (poster ↔ canvas parity) > width-limited and height-limited boxes 4ms
+ ✓  unit  tests/unit/three/camera.test.ts > contain framing (poster ↔ canvas parity) > a point lands on the same pixel as in the contain-drawn poster 5ms
+ ✓  unit  tests/unit/three/camera.test.ts > contain framing (poster ↔ canvas parity) > overlay framing: 8 % left inset, bottom-right anchor (matches the poster CSS) 2ms
+ ✓  unit  tests/unit/three/camera.test.ts > contain framing (poster ↔ canvas parity) > phones and tablets: own crop, centred in the stage (MOT-01) 1ms
+ ✓  unit  tests/unit/three/camera.test.ts > contain framing (poster ↔ canvas parity) > wide screens: the framing box stops at STAGE_FRAME_MAX and stays centred (VIS-06) 1ms
+ ✓  unit  tests/unit/three/camera.test.ts > contain framing (poster ↔ canvas parity) > shiftToPlace moves the camera target to the requested pixel 1ms
+ ✓  unit  tests/unit/three/camera.test.ts > camera blends > orbit blend hits both manifest cameras exactly 1ms
+ ✓  unit  tests/unit/three/camera.test.ts > camera blends > orbit blend stays on the interpolated sphere (no chord shortcut) 0ms
+ ✓  unit  tests/unit/three/camera.test.ts > camera blends > focus pose keeps the minimum distance 1ms
+
+ Test Files  7 passed (7)
+      Tests  43 passed (43)
+   Start at  04:30:41
+   Duration  881ms (import 50%, transform 40%, tests 7%, worker 2%)
+

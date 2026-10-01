@@ -1,0 +1,26 @@
+
+ RUN  v5.0.2 C:/Users/admin/Desktop/Web Dev Projects/autodelovi
+
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > staff conversion within the limit: profile terms (30 d), tier, no override remark 2024ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > override cannot grant deferred payment to a mechanic without credit or to a guest 765ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > override is staff-only: the public accept path has no override argument 250ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > delivery counts towards the limit (courier fee pushes a quote over) 226ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > credit is cumulative: a second deferred acceptance beyond the remainder is refused 518ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > non-deferred acceptance by the owning mechanic still records tier and mechanic 475ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > a signed-in mechanic accepting a guest inquiry is bound by his own credit 1074ms
+stdout | scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > self-dealing probe: a staff member who is also a mechanic overrides his own limit
+SELF_DEALING_OVERRIDE_RESULT FORBIDDEN
+
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > self-dealing probe: a staff member who is also a mechanic overrides his own limit 2634ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > orders.submit keeps the D132 behaviour through the shared helper 2269ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-02 edge cases > ipSubject normalises the forms a client can vary 2ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-02 edge cases > an IPv4 address and its IPv4-mapped IPv6 form share one bucket 991ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-02 edge cases > orders from one IP are limited however the User-Agent rotates 3400ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-02 edge cases > past the global threshold orders keep flowing and the owner gets one alert 2066ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-02 edge cases > a guest without IP metadata still works (fallback key) 336ms
+
+ Test Files  1 passed (1)
+      Tests  14 passed (14)
+   Start at  04:21:49
+   Duration  24.23s (tests 71%, import 17%, transform 10%, environment 2%)
+

@@ -1,0 +1,131 @@
+{
+  "webkit-390-mid-upit": {
+    "runs": [
+      {
+        "dom": "Turbina za Golf 7, dizel, curi ulje.",
+        "state": "Turbina za Golf 7, dizel, curi ulje.",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "000111111111111111111111",
+        "msgCounter": "36 / 2.000",
+        "counterOk": true,
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?"
+      },
+      {
+        "dom": "Turbina za Golf 7, dizel, curi ulje.",
+        "state": "Turbina za Golf 7, dizel, curi ulje.",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "001111111111111111111111",
+        "msgCounter": "36 / 2.000",
+        "counterOk": true,
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?"
+      },
+      {
+        "dom": "Turbina za Golf 7, dizel, curi ulje.",
+        "state": "Turbina za Golf 7, dizel, curi ulje.",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "001111111111111111111111",
+        "msgCounter": "36 / 2.000",
+        "counterOk": true,
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?"
+      },
+      {
+        "dom": "Turbina za Golf 7, dizel, curi ulje.",
+        "state": "Turbina za Golf 7, dizel, curi ulje.",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "000011111111111111111111",
+        "msgCounter": "36 / 2.000",
+        "counterOk": true,
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?"
+      },
+      {
+        "dom": "Turbina za Golf 7, dizel, curi ulje.",
+        "state": "Turbina za Golf 7, dizel, curi ulje.",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "001111111111111111111111",
+        "msgCounter": "36 / 2.000",
+        "counterOk": true,
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?"
+      }
+    ],
+    "summary": {
+      "runs": 5,
+      "domKept": 5,
+      "stateKept": 5,
+      "hydrationDuringTyping": 5
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "webkit-390-mid-home": {
+    "runs": [
+      {
+        "dom": "5Q0615505R",
+        "state": "5Q0615505R",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "011111"
+      },
+      {
+        "dom": "5Q0615505R",
+        "state": "5Q0615505R",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "000111"
+      },
+      {
+        "dom": "5Q0615505R",
+        "state": "5Q0615505R",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "001111"
+      },
+      {
+        "dom": "5Q0615505R",
+        "state": "5Q0615505R",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "011111"
+      },
+      {
+        "dom": "5Q0615505R",
+        "state": "5Q0615505R",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "011111"
+      }
+    ],
+    "summary": {
+      "runs": 5,
+      "domKept": 5,
+      "stateKept": 5,
+      "hydrationDuringTyping": 5
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  }
+}

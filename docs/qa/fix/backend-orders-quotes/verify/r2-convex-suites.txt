@@ -1,0 +1,63 @@
+ RUN  v5.0.2 C:/Users/admin/Desktop/Web Dev Projects/autodelovi
+`auth:store` type: createAccountFromCredentials
+`auth:store` type: retrieveAccountWithCredentials
+ ✓  convex  convex/orders.test.ts > order submit > guest order is re-priced on the server, numbered and totals follow the rules 1210ms
+`auth:store` type: retrieveAccountWithCredentials
+ ✓  convex  convex/orders.test.ts > order submit > delivery fee applies below the free-shipping threshold 164ms
+ ✓  convex  convex/security.test.ts > owner seed (P1) > an existing account with the owner's e-mail but another password is never promoted 1286ms
+ ✓  convex  convex/inquiries.test.ts > inquiries > submit decodes the VIN, numbers the inquiry and notifies staff in-app 1697ms
+ ✓  convex  convex/orders.test.ts > order submit > order numbers are unique and sequential 350ms
+ ✓  convex  convex/security.test.ts > mechanic terms (P2) > staff cannot approve or change their own mechanic profile; the owner can, audited with values 255ms
+ ✓  convex  convex/inquiries.test.ts > inquiries > contact, VIN and message are validated 189ms
+ ✓  convex  convex/orders.test.ts > order submit > approved mechanic orders at his price with a tier snapshot 284ms
+ ✓  convex  convex/security.test.ts > privacy tools (ZZPL) > only the owner exports or anonymizes 333ms
+ ✓  convex  convex/inquiries.test.ts > inquiries > drafts stay internal; a sent quote is visible on the status page 258ms
+ ✓  convex  convex/orders.test.ts > order submit > honeypot and too-fast submissions are rejected 245ms
+ ✓  convex  convex/security.test.ts > privacy tools (ZZPL) > the export covers account, guest orders by e-mail, inquiries, vehicles, favorites, consents 292ms
+ ✓  convex  convex/inquiries.test.ts > inquiries > accepting a quote creates the order at quoted prices in the same transaction 292ms
+ ✓  convex  convex/orders.test.ts > order submit > invalid payloads are rejected with field errors 216ms
+ ✓  convex  convex/security.test.ts > privacy tools (ZZPL) > anonymization keeps orders without personal data and removes the rest, including the login 269ms
+ ✓  convex  convex/orders.test.ts > order submit > out-of-stock products cannot be added; backorder products can 218ms
+ ✓  convex  convex/inquiries.test.ts > inquiries > an expired quote cannot be accepted; expiry job and renewal request move the inquiry 254ms
+ ✓  convex  convex/security.test.ts > abuse limits > password-reset codes: at most 3 e-mails per address per hour 283ms
+ ✓  convex  convex/orders.test.ts > order submit > stock that dropped after adding to the cart blocks the order 418ms
+ ✓  convex  convex/inquiries.test.ts > inquiries > a revised quote supersedes the old one 243ms
+ ✓  convex  convex/inquiries.test.ts > inquiries > declining closes the inquiry 218ms
+ ✓  convex  convex/orders.test.ts > order submit > a stale reviewed total is rejected with PRICE_CHANGED 213ms
+ ✓  convex  convex/security.test.ts > abuse limits > new guest carts are rate-limited per client; existing carts keep working 506ms
+ ✓  convex  convex/inquiries.test.ts > inquiries > photos are checked by metadata and by magic bytes 248ms
+ ✓  convex  convex/orders.test.ts > order submit > empty cart and unknown token 199ms
+ ✓  convex  convex/security.test.ts > customer role > accounts without a role are backfilled and appear in the admin customer list 222ms
+ ✓  convex  convex/inquiries.test.ts > inquiries > customers cannot use the staff inquiry functions 204ms
+ ✓  convex  convex/orders.test.ts > order submit > submissions are rate limited per client 375ms
+ ✓  convex  convex/inquiries.test.ts > inquiries > signed-in customers see only their own inquiries 190ms
+ ✓  convex  convex/security.test.ts > test helpers > refuse to run unless the deployment opted in with E2E_TEST_HELPERS 242ms
+ ✓  convex  convex/security.test.ts > status-link secret > off localhost a missing LINK_TOKEN_SECRET fails closed instead of using the dev value 199ms
+ ✓  convex  convex/security.test.ts > outbox masking > status, proforma and unsubscribe links are masked for staff 1ms
+ ✓  convex  convex/inquiries.test.ts > quote acceptance applies the mechanic's terms (QA BE-01, FLOW-08, FLOW-13, FLOW-16) > deferred acceptance over the credit limit is refused; within it gets terms and tier 248ms
+ ✓  convex  convex/orders.test.ts > order submit > the site-wide order threshold alerts the owner instead of refusing orders 287ms
+ ✓  convex  convex/inquiries.test.ts > quote acceptance applies the mechanic's terms (QA BE-01, FLOW-08, FLOW-13, FLOW-16) > another signed-in mechanic holding the link gets no mechanic terms 245ms
+ ✓  convex  convex/security.test.ts > tracking retention > CAPI context is cleared once the send is final 334ms
+ ✓  convex  convex/orders.test.ts > order submit > guest checkout can be disabled by the owner 293ms
+ ✓  convex  convex/inquiries.test.ts > quote acceptance applies the mechanic's terms (QA BE-01, FLOW-08, FLOW-13, FLOW-16) > staff conversion enforces the credit limit unless explicitly overridden (audited) 275ms
+ ✓  convex  convex/security.test.ts > tracking retention > nightly: click ids masked after 180 days, CAPI context after 7, idle guest carts removed 329ms
+ ✓  convex  convex/orders.test.ts > order ownership > a customer cannot read or reorder another customer's order 217ms
+ ✓  convex  convex/inquiries.test.ts > quote acceptance applies the mechanic's terms (QA BE-01, FLOW-08, FLOW-13, FLOW-16) > a staff member who is also a mechanic cannot override the limit on his own inquiry 272ms
+ ✓  convex  convex/orders.test.ts > order ownership > reorder adds the still-available lines to the own cart 218ms
+ ✓  convex  convex/security.test.ts > per-visitor limits and client-supplied records (QA BE-02, BE-03, BE-04) > the rate-limit key is the IP (IPv6 by /64), never the User-Agent 256ms
+ ✓  convex  convex/security.test.ts > per-visitor limits and client-supplied records (QA BE-02, BE-03, BE-04) > consent versions and time come from the server; attribution is clamped 242ms
+ ✓  convex  convex/inquiries.test.ts > quote acceptance applies the mechanic's terms (QA BE-01, FLOW-08, FLOW-13, FLOW-16) > phone-only inquiry: staff get the status link and convert without an e-mail 327ms
+ ✓  convex  convex/inquiries.test.ts > quote acceptance applies the mechanic's terms (QA BE-01, FLOW-08, FLOW-13, FLOW-16) > a sent quote needs a price on every line, named by line 236ms
+ ✓  convex  convex/orders.test.ts > order state machine through ordersAdmin.transition > confirming commits stock once; cancelling restocks it 323ms
+ ✓  convex  convex/orders.test.ts > order state machine through ordersAdmin.transition > illegal transitions are rejected 228ms
+ ✓  convex  convex/orders.test.ts > order state machine through ordersAdmin.transition > a stale expectedUpdatedAt is a conflict 227ms
+ ✓  convex  convex/orders.test.ts > order state machine through ordersAdmin.transition > courier flow with tracking reaches zavrsena; events, outbox and audit are written 261ms
+ ✓  convex  convex/orders.test.ts > order state machine through ordersAdmin.transition > pickup flow: spremna_za_preuzimanje → preuzeta 269ms
+ ✓  convex  convex/orders.test.ts > order state machine through ordersAdmin.transition > items are editable only while the order is new 265ms
+ ✓  convex  convex/orders.test.ts > order state machine through ordersAdmin.transition > non-staff cannot call admin order functions 228ms
+ ✓  convex  convex/orders.test.ts > staff edits keep committed stock in step (QA BE-06) > remove, lower, raise and add lines move stock with reason order_edited; cancel returns the rest 349ms
+ ✓  convex  convex/orders.test.ts > staff edits keep committed stock in step (QA BE-06) > an order created before the switch to created mode is committed on confirm 290ms
+ Test Files  3 passed (3)
+      Tests  55 passed (55)
+   Start at  04:28:46
+   Duration  9.09s (tests 80%, import 13%, transform 7%, environment 1%)

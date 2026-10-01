@@ -1,0 +1,100 @@
+{
+  "base": "http://localhost:3001",
+  "inquiry": "UP-2026-000105",
+  "labels": [
+    {
+      "label": "Naziv",
+      "htmlFor": "f_r_9_",
+      "targetExists": false,
+      "controlIdNearby": "quote-l1-name"
+    },
+    {
+      "label": "Šifra / OEM",
+      "htmlFor": "f_r_a_",
+      "targetExists": true,
+      "controlIdNearby": "f_r_a_"
+    },
+    {
+      "label": "Proizvođač",
+      "htmlFor": "f_r_b_",
+      "targetExists": true,
+      "controlIdNearby": "f_r_b_"
+    },
+    {
+      "label": "Kvalitet",
+      "htmlFor": "f_r_c_",
+      "targetExists": true,
+      "controlIdNearby": "f_r_c_"
+    },
+    {
+      "label": "Količina",
+      "htmlFor": "f_r_d_",
+      "targetExists": false,
+      "controlIdNearby": "quote-l1-quantity"
+    },
+    {
+      "label": "Cena sa PDV-om",
+      "htmlFor": "f_r_e_",
+      "targetExists": false,
+      "controlIdNearby": "quote-l1-price"
+    },
+    {
+      "label": "Dostupnost",
+      "htmlFor": "f_r_f_",
+      "targetExists": true,
+      "controlIdNearby": "f_r_f_"
+    },
+    {
+      "label": "Rok (dana)",
+      "htmlFor": "f_r_g_",
+      "targetExists": false,
+      "controlIdNearby": "quote-l1-leadTimeDays"
+    },
+    {
+      "label": "Napomena uz stavku",
+      "htmlFor": "f_r_h_",
+      "targetExists": true,
+      "controlIdNearby": "f_r_h_"
+    }
+  ],
+  "getByLabel": {
+    "Naziv": 0,
+    "Količina": 0,
+    "Cena sa PDV-om": 0,
+    "Rok (dana)": 0,
+    "Šifra / OEM": 1,
+    "Dostupnost": 1
+  },
+  "ariaSnapshot": [
+    "- listitem:",
+    "  - text: Stavka 1 · slobodna",
+    "  - button \"Ukloni stavku 1\"",
+    "  - text: Naziv",
+    "  - textbox",
+    "  - text: Šifra / OEM",
+    "  - textbox \"Šifra / OEM\"",
+    "  - text: Proizvođač",
+    "  - textbox \"Proizvođač\"",
+    "  - text: Kvalitet",
+    "  - combobox \"Kvalitet\":",
+    "    - option \"—\" [selected]",
+    "    - option \"Original VAG\"",
+    "    - option \"OEM kvalitet\"",
+    "    - option \"Aftermarket\"",
+    "  - text: Količina",
+    "  - textbox: \"1\"",
+    "  - text: Cena sa PDV-om",
+    "  - textbox",
+    "  - text: RSD Dostupnost",
+    "  - combobox \"Dostupnost\":",
+    "    - option \"Na stanju\"",
+    "    - option \"Po porudžbini\" [selected]",
+    "  - text: Rok (dana)",
+    "  - textbox",
+    "  - text: Napomena uz stavku",
+    "  - textbox \"Napomena uz stavku\""
+  ],
+  "shot": "docs/qa/fix/backend-orders-quotes/verify/r2-composer-labels-1440.webp",
+  "console": [],
+  "pageErrors": []
+}

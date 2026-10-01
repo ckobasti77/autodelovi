@@ -1,0 +1,111 @@
+{
+  "firstVisitIdle": {
+    "bannerAtLoad": 1,
+    "modules": {
+      "ConsentGate": [
+        {
+          "chunk": "static/chunks/_1tcn_0h._.js",
+          "inServerHtml": true,
+          "msAfterLoad": -157
+        }
+      ],
+      "ConsentBanner": [
+        {
+          "chunk": "static/chunks/_0-oycki._.js",
+          "inServerHtml": false,
+          "msAfterLoad": 267
+        }
+      ],
+      "ConsentPanel": [
+        {
+          "chunk": "static/chunks/_0-oycki._.js",
+          "inServerHtml": false,
+          "msAfterLoad": 267
+        }
+      ]
+    },
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "cookie": {
+      "v": 1,
+      "analytics": true,
+      "ads": true,
+      "at": 1790820816787,
+      "id": "3ea2ce90-f0b3-411a-b572-06247e3b2349"
+    },
+    "errors": []
+  },
+  "heldClick": {
+    "stillThereRightAfter": 1,
+    "bannerGoneAfterMs": 3511,
+    "sameDocument": true,
+    "navigations": 2,
+    "cookie": {
+      "v": 1,
+      "analytics": false,
+      "ads": false,
+      "at": 1790820822740,
+      "id": "c2c08a5e-f2ff-4750-bf25-7ec3e2d16a71"
+    },
+    "errors": []
+  },
+  "keyboard": {
+    "focusedStatic": {
+      "key": "settings",
+      "role": null,
+      "label": "Podešavanja",
+      "staticNode": true
+    },
+    "focusedAfterSwap": {
+      "key": "settings",
+      "role": null,
+      "label": "Podešavanja",
+      "staticNode": false
+    },
+    "afterSettings": {
+      "key": null,
+      "role": "switch",
+      "label": "",
+      "staticNode": false
+    },
+    "collapsedAfterEscape": true,
+    "errors": []
+  },
+  "earlyEscape": {
+    "collapsed": true,
+    "errors": []
+  },
+  "returning": {
+    "bannerInDom": 0,
+    "modulesBeforeReopen": {
+      "ConsentGate": [
+        {
+          "chunk": "static/chunks/_1tcn_0h._.js",
+          "inServerHtml": true,
+          "msAfterLoad": -196
+        }
+      ]
+    },
+    "focusOnReopen": {
+      "key": "save",
+      "role": null,
+      "label": "Sačuvaj izbor",
+      "staticNode": false
+    },
+    "hiddenAfterSave": true,
+    "errors": []
+  },
+  "noJs": {
+    "cookie": {
+      "v": 1,
+      "analytics": true,
+      "ads": true,
+      "at": 1790820841684,
+      "id": "dd1e1e02-96c7-4eca-8a44-25a30e8b6095"
+    },
+    "bannerAfterPost": 0
+  }
+}

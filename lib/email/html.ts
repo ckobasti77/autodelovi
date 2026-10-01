@@ -6,6 +6,7 @@
  * Inline text markup (paragraphs, notices, list items): `**bold**` and `[label](https://…)`.
  * Everything else is escaped.
  */
+import { formatPhone, normalizePhone } from "../format/phone";
 
 /** Paper palette (docs/design/tokens.json → color.paper) and its night counterpart. */
 export const PAPER = {
@@ -109,13 +110,47 @@ export function inlineHtml(source: string): string {
     .join("");
 }
 
-/** Inline markup → plain text (`label (https://…)`). */
+/** The readable value behind a phone, e-mail or Viber link; `null` for any other link. */
+function contactValue(href: string): string | null {
+  if (/^mailto:/i.test(href)) return href.replace(/^mailto:/i, "").split("?")[0] ?? "";
+  if (/^tel:/i.test(href)) {
+    const e164 = normalizePhone(href.replace(/^tel:/i, ""));
+    return e164 ? formatPhone(e164) : href.replace(/^tel:/i, "");
+  }
+  const viber = /^viber:\/\/chat\?number=([^&]+)/i.exec(href);
+  if (viber) {
+    const e164 = normalizePhone(decodeURIComponent(viber[1] ?? ""));
+    return e164 ? formatPhone(e164) : null;
+  }
+  return null;
+}
+
+/**
+ * Inline markup → plain text. A web link keeps its address („label: https://…“, without the
+ * colon after a label that already ends a sentence); a phone, e-mail or Viber link prints its
+ * visible value once — the value is the number or address itself (FLOW-34).
+ */
 export function inlineText(source: string): string {
+  const printed = new Set<string>();
   return parseInline(source)
     .map((part) => {
       if (part.kind === "link") {
-        const href = safeHref(part.href).replace(/^mailto:/, "");
-        return part.value === href ? href : `${part.value}: ${href}`;
+        const href = safeHref(part.href);
+        const contact = contactValue(href);
+        if (contact !== null) {
+          // „+381 64 123 4567“ once, never the raw tel:/viber:// URL: a label that is not the
+          // value itself gets it in brackets („Viber (+381 60 …)“) unless the same value was
+          // already printed in this text („Pozovite +381 64 … ili pišite na Viber“).
+          const digits = (s: string) => s.replace(/\D/g, "");
+          const same =
+            part.value === contact ||
+            (digits(contact).length > 0 && digits(part.value) === digits(contact));
+          const known = printed.has(contact);
+          printed.add(contact);
+          return same || known ? part.value : `${part.value} (${contact})`;
+        }
+        if (part.value === href) return href;
+        return /[.!?:]$/.test(part.value) ? `${part.value} ${href}` : `${part.value}: ${href}`;
       }
       return part.value;
     })
@@ -457,7 +492,10 @@ ${footerLines}
     ...input.contacts.map((c) => `${c.label}: ${c.value}`),
     ...(input.hoursText ? [`Radno vreme: ${input.hoursText}`] : []),
     "",
-    input.reason + (input.manageLink ? ` ${input.manageLink.label}: ${input.manageLink.href}` : ""),
+    input.reason +
+      (input.manageLink
+        ? ` ${input.manageLink.label}${/[.!?:]$/.test(input.manageLink.label) ? "" : ":"} ${input.manageLink.href}`
+        : ""),
   ].join("\n");
 
   return {

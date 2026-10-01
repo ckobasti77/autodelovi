@@ -7,6 +7,7 @@
 import { Fragment, type ReactNode } from "react";
 
 import { RouteLink } from "@/components/ui/RouteLink";
+import { StackedTable } from "@/components/content/StackedTable";
 import { isSafeRelativePath } from "@/lib/domain/redirect";
 
 type Block =
@@ -154,34 +155,15 @@ export function Markdown({ source, className }: { source: string; className?: st
           }
           case "table":
             return (
-              <div key={i} className="my-6 overflow-x-auto rounded-sm border border-line">
-                <table className="w-full min-w-[32rem] border-collapse type-body-s">
-                  <thead className="bg-surface-2">
-                    <tr>
-                      {b.head.map((cell, j) => (
-                        <th
-                          key={j}
-                          scope="col"
-                          className="border-b border-line-strong px-3 py-2.5 text-left type-label uppercase text-ink-3"
-                        >
-                          {renderInline(cell)}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {b.rows.map((row, r) => (
-                      <tr key={r} className="border-b border-line last:border-b-0">
-                        {row.map((cell, j) => (
-                          <td key={j} className="px-3 py-2.5 align-top text-ink-2">
-                            {renderInline(cell)}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+              <StackedTable
+                key={i}
+                className="my-6"
+                head={b.head.map((cell) => renderInline(cell))}
+                rows={b.rows.map((row, r) => ({
+                  key: String(r),
+                  cells: row.map((cell) => renderInline(cell)),
+                }))}
+              />
             );
         }
       })}
@@ -197,4 +179,28 @@ export function markdownToText(md: string): string {
     .replace(/^#+\s+/gm, "")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+/**
+ * Meta description of a content page (COPY-10): whole sentences of the first paragraphs, never
+ * headings, lists or tables, within `max` characters. Only a first sentence that is longer
+ * than the limit on its own is cut (at a word).
+ */
+export function markdownDescription(md: string, max: number): string {
+  const sentences = parseMarkdown(md)
+    .filter((b): b is Extract<Block, { kind: "paragraph" }> => b.kind === "paragraph")
+    .flatMap((b) => markdownToText(b.text).match(/[^.!?]+[.!?]+(?=\s|$)|[^.!?]+$/g) ?? [])
+    .map((t) => t.trim())
+    .filter(Boolean);
+  let out = "";
+  for (const sentence of sentences) {
+    const next = out ? `${out} ${sentence}` : sentence;
+    if (next.length > max) break;
+    out = next;
+  }
+  if (out) return out;
+  const first = sentences[0] ?? "";
+  if (first.length <= max) return first;
+  const cut = first.slice(0, max - 1);
+  return `${cut.slice(0, Math.max(cut.lastIndexOf(" "), 1)).replace(/[\s,;:—–-]+$/, "")}…`;
 }

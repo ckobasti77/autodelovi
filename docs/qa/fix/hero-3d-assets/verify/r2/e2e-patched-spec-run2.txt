@@ -1,0 +1,74 @@
+
+Running 20 tests using 1 worker
+
+[1/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:49:7 › 3D hero › poster first, live 3D after intent, crossfade, no console errors
+  1) [desktop-1440] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:49:7 › 3D hero › poster first, live 3D after intent, crossfade, no console errors 
+
+    Error: page.evaluate: TypeError: Cannot read properties of undefined (reading 'getState')
+        at eval (eval at evaluate (:311:30), <anonymous>:1:24)
+        at UtilityScript.evaluate (<anonymous>:313:16)
+        at UtilityScript.<anonymous> (<anonymous>:1:44)
+        at eval (eval at evaluate (:311:30), <anonymous>:1:24)
+        at UtilityScript.evaluate (<anonymous>:313:16)
+        at UtilityScript.<anonymous> (<anonymous>:1:44)
+        at state (C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:45:15)
+        at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:70:19
+
+    Error Context: test-results\hero-3d-assets-fixup\hero-3d-3D-hero-poster-fir-da684-crossfade-no-console-errors-desktop-1440\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\hero-3d-assets-fixup\hero-3d-3D-hero-poster-fir-da684-crossfade-no-console-errors-desktop-1440\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\hero-3d-assets-fixup\hero-3d-3D-hero-poster-fir-da684-crossfade-no-console-errors-desktop-1440\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[2/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:83:7 › 3D hero › the parts list selects a category and opens the panel with products
+[3/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:109:7 › 3D hero › the test hook explodes the car and selects a part
+[4/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:134:7 › 3D hero › a deep link opens the right panel
+[5/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:148:7 › 3D hero › an unknown deep link is ignored
+[6/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:155:7 › 3D hero › the panel is accessible (axe) and every hero control shows focus
+[7/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:200:7 › 3D hero — fallbacks › reduced motion: no scroll track, „Rasklopi“ cuts to the exploded state
+[8/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:229:7 › 3D hero — fallbacks › low tier: posters only, the exploded poster follows the explode
+[9/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:247:7 › 3D hero — fallbacks › a software WebGL renderer gets the posters only
+[10/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:261:7 › 3D hero — fallbacks › WebGL context loss hands the stage back to the posters
+[11/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:49:7 › 3D hero › poster first, live 3D after intent, crossfade, no console errors
+  2) [mobile-390] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:49:7 › 3D hero › poster first, live 3D after intent, crossfade, no console errors 
+
+    Error: page.evaluate: TypeError: Cannot read properties of undefined (reading 'getState')
+        at eval (eval at evaluate (:311:30), <anonymous>:1:24)
+        at UtilityScript.evaluate (<anonymous>:313:16)
+        at UtilityScript.<anonymous> (<anonymous>:1:44)
+        at eval (eval at evaluate (:311:30), <anonymous>:1:24)
+        at UtilityScript.evaluate (<anonymous>:313:16)
+        at UtilityScript.<anonymous> (<anonymous>:1:44)
+        at state (C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:45:15)
+        at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:70:19
+
+    Error Context: test-results\hero-3d-assets-fixup\hero-3d-3D-hero-poster-fir-da684-crossfade-no-console-errors-mobile-390\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\hero-3d-assets-fixup\hero-3d-3D-hero-poster-fir-da684-crossfade-no-console-errors-mobile-390\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\hero-3d-assets-fixup\hero-3d-3D-hero-poster-fir-da684-crossfade-no-console-errors-mobile-390\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[12/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:83:7 › 3D hero › the parts list selects a category and opens the panel with products
+[13/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:109:7 › 3D hero › the test hook explodes the car and selects a part
+[14/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:134:7 › 3D hero › a deep link opens the right panel
+[15/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:148:7 › 3D hero › an unknown deep link is ignored
+[16/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:155:7 › 3D hero › the panel is accessible (axe) and every hero control shows focus
+[17/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:200:7 › 3D hero — fallbacks › reduced motion: no scroll track, „Rasklopi“ cuts to the exploded state
+[18/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:229:7 › 3D hero — fallbacks › low tier: posters only, the exploded poster follows the explode
+[19/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:247:7 › 3D hero — fallbacks › a software WebGL renderer gets the posters only
+[20/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:261:7 › 3D hero — fallbacks › WebGL context loss hands the stage back to the posters
+  2 failed
+    [desktop-1440] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:49:7 › 3D hero › poster first, live 3D after intent, crossfade, no console errors 
+    [mobile-390] › scripts\qa\fix\hero-3d-assets-e2e\hero-3d.spec.ts:49:7 › 3D hero › poster first, live 3D after intent, crossfade, no console errors 
+  18 passed (1.8m)
+exit 1

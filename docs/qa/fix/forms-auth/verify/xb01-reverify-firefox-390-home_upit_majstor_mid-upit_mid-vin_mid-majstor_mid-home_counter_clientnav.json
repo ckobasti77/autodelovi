@@ -1,0 +1,487 @@
+{
+  "firefox-390-home": {
+    "visibleAt": 3044,
+    "hydratedBeforeTyping": false,
+    "typedAt": 3659,
+    "hydratedRightAfterTyping": false,
+    "validTiming": true,
+    "hydratedAt": 9118,
+    "after": {
+      "fields": {
+        "[data-testid=hero-search-input] input": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        }
+      },
+      "rhf": null,
+      "msgCounter": null,
+      "vinHelp": null,
+      "brand": null,
+      "pibMsg": null,
+      "mbMsg": null,
+      "active": "cbx_R_lkklrdabmqalb_-input"
+    },
+    "domKept": true,
+    "focusKept": true,
+    "afterSubmitUrl": "/pretraga?q=5Q0615505R",
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "firefox-390-upit": {
+    "visibleAt": 917,
+    "hydratedBeforeTyping": false,
+    "typedAt": 3503,
+    "hydratedRightAfterTyping": false,
+    "validTiming": true,
+    "hydratedAt": 7259,
+    "after": {
+      "fields": {
+        "#iq-vin": {
+          "dom": "WVWZZZ1KZ8W123456",
+          "reactValue": "(uncontrolled)"
+        },
+        "#iq-message": {
+          "dom": "Turbina za Golf 7, dizel.",
+          "reactValue": "(uncontrolled)"
+        },
+        "#iq-name": {
+          "dom": "Verifikacija XB01",
+          "reactValue": "(uncontrolled)"
+        },
+        "#iq-phone": {
+          "dom": "065 987 6543",
+          "reactValue": "(uncontrolled)"
+        }
+      },
+      "rhf": {
+        "vin": "WVWZZZ1KZ8W123456",
+        "brandSlug": "volkswagen",
+        "modelSlug": "golf",
+        "generationSlug": "golf-5",
+        "year": "2008",
+        "message": "Turbina za Golf 7, dizel.",
+        "name": "Verifikacija XB01",
+        "phone": "065 987 6543",
+        "email": "",
+        "channel": "phone",
+        "consent": false
+      },
+      "msgCounter": "25 / 2.000",
+      "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?",
+      "brand": "volkswagen",
+      "pibMsg": null,
+      "mbMsg": null,
+      "active": "iq-phone"
+    },
+    "domKept": true,
+    "stateKept": true,
+    "errorsWithoutConsent": [
+      "Potrebna je saglasnost da podatke koristimo za odgovor na upit."
+    ],
+    "afterSubmitUrl": "/upit/hvala/<token>",
+    "submittedArgs": {
+      "udfPath": "inquiries:submit",
+      "vin": "WVWZZZ1KZ8W123456",
+      "message": "Turbina za Golf 7, dizel.",
+      "name": "Verifikacija XB01",
+      "phone": "+381659876543",
+      "vehicle": "Volkswagen Golf V (2008)"
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "firefox-390-majstor": {
+    "visibleAt": 634,
+    "hydratedBeforeTyping": false,
+    "typedAt": 3199,
+    "hydratedRightAfterTyping": false,
+    "validTiming": true,
+    "hydratedAt": 6831,
+    "after": {
+      "fields": {
+        "#mr-email": {
+          "dom": "servis.rv01@primer.rs",
+          "reactValue": "(uncontrolled)"
+        },
+        "#mr-password": {
+          "dom": "(hidden)",
+          "reactValue": "(uncontrolled)"
+        },
+        "#mr-companyName": {
+          "dom": "Servis RV01",
+          "reactValue": "(uncontrolled)"
+        },
+        "#mr-pib": {
+          "dom": "101234569",
+          "reactValue": "(uncontrolled)"
+        },
+        "#mr-mb": {
+          "dom": "17123459",
+          "reactValue": "(uncontrolled)"
+        },
+        "#mr-phone": {
+          "dom": "0641234567",
+          "reactValue": "(uncontrolled)"
+        }
+      },
+      "rhf": {
+        "email": "servis.rv01@primer.rs",
+        "password": "(set)",
+        "companyName": "Servis RV01",
+        "pib": "101234569",
+        "mb": "17123459",
+        "contactPerson": "",
+        "phone": "0641234567",
+        "city": "",
+        "address": "",
+        "serviceTypes": [],
+        "brandsServiced": [],
+        "terms": false
+      },
+      "msgCounter": null,
+      "vinHelp": null,
+      "brand": null,
+      "pibMsg": "PIB je ispravan.",
+      "mbMsg": "Matični broj je ispravan.",
+      "active": "mr-phone"
+    },
+    "domKept": true,
+    "stateKept": true,
+    "watchersFollow": true,
+    "summaryAfterSubmit": [
+      "Upišite ime i prezime kontakt osobe.",
+      "Upišite mesto.",
+      "Upišite adresu servisa.",
+      "Izaberite bar jednu vrstu servisa.",
+      "Potrebna je saglasnost sa uslovima korišćenja."
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "firefox-390-mid-upit": {
+    "runs": [
+      {
+        "dom": "Turbina za Golf 7, dizel, curi ulje.",
+        "state": "Turbina za Golf 7, dizel, curi ulje.",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "001111111111111111111111",
+        "msgCounter": "36 / 2.000",
+        "counterOk": true,
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?"
+      },
+      {
+        "dom": "Turbina za Golf 7, dizel, curi ulje.",
+        "state": "Turbina za Golf 7, dizel, curi ulje.",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "001111111111111111111111",
+        "msgCounter": "36 / 2.000",
+        "counterOk": true,
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?"
+      },
+      {
+        "dom": "Turbina za Golf 7, dizel, curi ulje.",
+        "state": "Turbina za Golf 7, dizel, curi ulje.",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "011111111111111111111111",
+        "msgCounter": "36 / 2.000",
+        "counterOk": true,
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?"
+      },
+      {
+        "dom": "Turbina za Golf 7, dizel, curi ulje.",
+        "state": "Turbina za Golf 7, dizel, curi ulje.",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "000000000000000000001111",
+        "msgCounter": "36 / 2.000",
+        "counterOk": true,
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?"
+      },
+      {
+        "dom": "Turbina za Golf 7, dizel, curi ulje.",
+        "state": "Turbina za Golf 7, dizel, curi ulje.",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "000000000000001111111111",
+        "msgCounter": "36 / 2.000",
+        "counterOk": true,
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?"
+      }
+    ],
+    "summary": {
+      "runs": 5,
+      "domKept": 5,
+      "stateKept": 5,
+      "hydrationDuringTyping": 5
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "firefox-390-mid-vin": {
+    "runs": [
+      {
+        "dom": "WVWZZZ1KZ8W123456",
+        "state": "WVWZZZ1KZ8W123456",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "00111111111",
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?",
+        "decoded": true,
+        "brand": "volkswagen"
+      },
+      {
+        "dom": "WVWZZZ1KZ8W123456",
+        "state": "WVWZZZ1KZ8W123456",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "00011111111",
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?",
+        "decoded": true,
+        "brand": "volkswagen"
+      },
+      {
+        "dom": "WVWZZZ1KZ8W123456",
+        "state": "WVWZZZ1KZ8W123456",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "01111111111",
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?",
+        "decoded": true,
+        "brand": "volkswagen"
+      },
+      {
+        "dom": "WVWZZZ1KZ8W123456",
+        "state": "WVWZZZ1KZ8W123456",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "00111111111",
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?",
+        "decoded": true,
+        "brand": "volkswagen"
+      },
+      {
+        "dom": "WVWZZZ1KZ8W123456",
+        "state": "WVWZZZ1KZ8W123456",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "01111111111",
+        "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?",
+        "decoded": true,
+        "brand": "volkswagen"
+      }
+    ],
+    "summary": {
+      "runs": 5,
+      "domKept": 5,
+      "stateKept": 5,
+      "hydrationDuringTyping": 5
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "firefox-390-mid-majstor": {
+    "runs": [
+      {
+        "dom": "101234569",
+        "state": "101234569",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": false,
+        "flags": "111111",
+        "pibMsg": "PIB je ispravan.",
+        "watcherOk": true
+      },
+      {
+        "dom": "101234569",
+        "state": "101234569",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": false,
+        "flags": "111111",
+        "pibMsg": "PIB je ispravan.",
+        "watcherOk": true
+      },
+      {
+        "dom": "101234569",
+        "state": "101234569",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": false,
+        "flags": "111111",
+        "pibMsg": "PIB je ispravan.",
+        "watcherOk": true
+      },
+      {
+        "dom": "101234569",
+        "state": "101234569",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": false,
+        "flags": "111111",
+        "pibMsg": "PIB je ispravan.",
+        "watcherOk": true
+      },
+      {
+        "dom": "101234569",
+        "state": "101234569",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": false,
+        "flags": "111111",
+        "pibMsg": "PIB je ispravan.",
+        "watcherOk": true
+      }
+    ],
+    "summary": {
+      "runs": 5,
+      "domKept": 5,
+      "stateKept": 5,
+      "hydrationDuringTyping": 0
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "firefox-390-mid-home": {
+    "runs": [
+      {
+        "dom": "5Q0615505R",
+        "state": "5Q0615505R",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "011111"
+      },
+      {
+        "dom": "5Q0615505R",
+        "state": "5Q0615505R",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": false,
+        "flags": "111111"
+      },
+      {
+        "dom": "5Q0615505R",
+        "state": "5Q0615505R",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "011111"
+      },
+      {
+        "dom": "5Q0615505R",
+        "state": "5Q0615505R",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": false,
+        "flags": "111111"
+      },
+      {
+        "dom": "5Q0615505R",
+        "state": "5Q0615505R",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": false,
+        "flags": "111111"
+      }
+    ],
+    "summary": {
+      "runs": 5,
+      "domKept": 5,
+      "stateKept": 5,
+      "hydrationDuringTyping": 2
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "firefox-390-counter": {
+    "prefill": {
+      "value": "Tražim: turbina golf 7",
+      "counter": "22 / 2.000"
+    },
+    "typed": "29 / 2.000",
+    "backspace2": "27 / 2.000",
+    "cleared": {
+      "value": "",
+      "counter": "0 / 2.000"
+    },
+    "retyped": "5 / 2.000",
+    "rhfAfter": "Pumpa",
+    "tabFrom": "Dodaj kategoriju",
+    "vinHelpAfterTyping": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?",
+    "describedBy": "iq-message-msg iq-message-count",
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "firefox-390-clientnav": {
+    "href": "/upit",
+    "softNav": true,
+    "initial": {
+      "fields": {
+        "#iq-message": {
+          "dom": "",
+          "reactValue": "(uncontrolled)"
+        },
+        "#iq-vin": {
+          "dom": "",
+          "reactValue": "(uncontrolled)"
+        }
+      },
+      "rhf": {
+        "vin": "",
+        "brandSlug": "",
+        "modelSlug": "",
+        "generationSlug": "",
+        "year": "",
+        "message": "",
+        "name": "",
+        "phone": "",
+        "email": "",
+        "channel": "phone",
+        "consent": false
+      },
+      "msgCounter": "0 / 2.000",
+      "vinHelp": "0 / 17 znakova · bez slova I, O i Q",
+      "brand": "",
+      "pibMsg": null,
+      "mbMsg": null,
+      "active": "BODY"
+    },
+    "typedCounter": "15 / 2.000",
+    "rhfAfter": "Kocioni diskovi",
+    "consoleErrors": [],
+    "pageErrors": []
+  }
+}

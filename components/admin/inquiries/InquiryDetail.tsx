@@ -617,6 +617,17 @@ type ConvertField =
   "firstName" | "lastName" | "phone" | "email" | "street" | "city" | "postalCode" | "payment";
 
 /** Server field path (`contact.email`, `delivery.address.postalCode`) → dialog field. */
+const CONVERT_FIELD_LABEL: Record<ConvertField, string> = {
+  firstName: "Ime",
+  lastName: "Prezime",
+  phone: "Telefon",
+  email: "E-pošta",
+  street: "Ulica i broj",
+  city: "Mesto",
+  postalCode: "Poštanski broj",
+  payment: "Plaćanje",
+};
+
 function convertFieldFor(path: string | null): ConvertField | null {
   if (!path) return null;
   if (path.startsWith("contact.")) {
@@ -660,6 +671,9 @@ function ConvertDialog({
   const [error, setError] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<Partial<Record<ConvertField, string>>>({});
   const [creditOverride, setCreditOverride] = useState(false);
+  const { viewer } = useAdminShell();
+  // Staff never raise their own credit (server: FORBIDDEN); only the owner may.
+  const canOverrideCredit = viewer.isOwner || detail.inquiry.userId !== viewer.userId;
   // A phone/Viber/WhatsApp customer may have no e-mail; the order then goes without e-mails.
   const emailRequired = Boolean(c.email);
   const payments = (settings?.paymentMethods ?? []).filter(
@@ -712,15 +726,24 @@ function ConvertDialog({
                   : {}),
               },
               payment: { method: form.payment as keyof typeof PAYMENT_LABEL },
-              ...(form.payment === "deferred" && creditOverride ? { creditOverride: true } : {}),
+              ...(form.payment === "deferred" && canOverrideCredit && creditOverride
+                ? { creditOverride: true }
+                : {}),
             });
             toast.success(`Porudžbina ${res.orderNumber} je kreirana.`);
             router.push(ADMIN.order(res.orderNumber));
           } catch (err) {
             const message = convexErrorMessage(err, "Porudžbina nije kreirana.");
             const field = convertFieldFor(convexErrorField(err));
-            if (field) setFieldErrors({ [field]: message });
-            setError(message);
+            if (field) {
+              // The message sits under the field; the alert only points to it.
+              setFieldErrors({ [field]: message });
+              setError(
+                `Porudžbina nije kreirana. Proverite polje „${CONVERT_FIELD_LABEL[field]}“.`,
+              );
+            } else {
+              setError(message);
+            }
             setBusy(false);
           }
         }}
@@ -749,7 +772,7 @@ function ConvertDialog({
             markRequired={emailRequired}
             optional={!emailRequired}
             help={
-              emailRequired
+              emailRequired || form.email.trim()
                 ? undefined
                 : "Kupac nije ostavio e-poštu: porudžbina ide bez obaveštenja e-poštom."
             }
@@ -796,7 +819,7 @@ function ConvertDialog({
             options={payments.map((p) => ({ value: p.code, label: p.label }))}
           />
         </Field>
-        {form.payment === "deferred" ? (
+        {form.payment === "deferred" && canOverrideCredit ? (
           <Checkbox
             checked={creditOverride}
             onCheckedChange={(v) => setCreditOverride(v === true)}

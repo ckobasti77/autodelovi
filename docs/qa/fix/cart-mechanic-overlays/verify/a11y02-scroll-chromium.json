@@ -1,0 +1,102 @@
+[
+ {
+  "engine": "chromium",
+  "overlay": "cart",
+  "how": "mouse",
+  "url": "/delovi/kocioni-diskovi",
+  "dialog": 0,
+  "y0": 1200,
+  "yOpen": 742,
+  "yAfter": 284,
+  "log": [
+   "90 focusin a[cart-button]\"Korpa\" y=742",
+   "95 scroll 1200->742 active=a[cart-button]\"Korpa\"",
+   "3239 focusin button[]\"Zatvori\" y=742",
+   "3933 focusin a[cart-button]\"Korpa\" y=284",
+   "3934 scroll 742->284 active=a[cart-button]\"Korpa\""
+  ]
+ },
+ {
+  "engine": "chromium",
+  "overlay": "cart",
+  "how": "keyboard",
+  "url": "/delovi/kocioni-diskovi",
+  "dialog": 0,
+  "y0": 1200,
+  "yOpen": 742,
+  "yAfter": 742,
+  "log": [
+   "79 focusin a[cart-button]\"Korpa\" y=742",
+   "80 scroll 1200->742 active=a[cart-button]\"Korpa\""
+  ]
+ },
+ {
+  "engine": "chromium",
+  "overlay": "search",
+  "how": "mouse",
+  "url": "/delovi/kocioni-diskovi",
+  "dialog": 0,
+  "y0": 1200,
+  "yOpen": 742,
+  "yAfter": 284,
+  "log": [
+   "83 focusin button[header-search-trigger]\"Broj dela ili naziv/\" y=742",
+   "91 scroll 1200->742 active=button[header-search-trigger]\"Broj dela ili naziv/\"",
+   "2634 focusin input[]\"Broj dela ili naziv\" y=742",
+   "2810 focusin button[]\"Zatvori\" y=742",
+   "3022 focusin button[header-search-trigger]\"Broj dela ili naziv/\" y=284",
+   "3026 scroll 742->284 active=button[header-search-trigger]\"Broj dela ili naziv/\""
+  ]
+ },
+ {
+  "engine": "chromium",
+  "overlay": "search",
+  "how": "keyboard",
+  "url": "/delovi/kocioni-diskovi",
+  "dialog": 1,
+  "y0": 1200,
+  "yOpen": 742,
+  "yAfter": 284,
+  "log": [
+   "32 focusin button[header-search-trigger]\"Broj dela ili naziv/\" y=742",
+   "36 scroll 1200->742 active=button[header-search-trigger]\"Broj dela ili naziv/\"",
+   "386 focusin input[]\"Broj dela ili naziv\" y=742",
+   "2474 focusin button[header-search-trigger]\"Broj dela ili naziv/\" y=284",
+   "2475 scroll 742->284 active=button[header-search-trigger]\"Broj dela ili naziv/\""
+  ]
+ },
+ {
+  "engine": "chromium",
+  "overlay": "vehicle",
+  "how": "mouse",
+  "url": "/delovi/kocioni-diskovi",
+  "dialog": 1,
+  "y0": 1200,
+  "yOpen": 742,
+  "yAfter": 284,
+  "log": [
+   "82 focusin button[vehicle-picker-trigger]\"Izaberite vozilo\" y=742",
+   "87 scroll 1200->742 active=button[vehicle-picker-trigger]\"Izaberite vozilo\"",
+   "1302 focusin button[]\"Zatvori\" y=742",
+   "2546 focusin button[vehicle-picker-trigger]\"Izaberite vozilo\" y=284",
+   "2548 scroll 742->284 active=button[vehicle-picker-trigger]\"Izaberite vozilo\""
+  ]
+ },
+ {
+  "engine": "chromium",
+  "overlay": "vehicle",
+  "how": "keyboard",
+  "url": "/delovi/kocioni-diskovi",
+  "dialog": 1,
+  "y0": 1200,
+  "yOpen": 742,
+  "yAfter": 284,
+  "log": [
+   "39 focusin button[vehicle-picker-trigger]\"Izaberite vozilo\" y=742",
+   "48 scroll 1200->742 active=button[vehicle-picker-trigger]\"Izaberite vozilo\"",
+   "440 focusin button[]\"Zatvori\" y=742",
+   "2450 focusin button[vehicle-picker-trigger]\"Izaberite vozilo\" y=284",
+   "2451 scroll 742->284 active=button[vehicle-picker-trigger]\"Izaberite vozilo\""
+  ]
+ }
+]

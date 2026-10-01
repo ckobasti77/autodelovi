@@ -4,8 +4,8 @@ import { notFound, permanentRedirect } from "next/navigation";
 import { formatNumber } from "@/lib/format/number";
 import { pluralSr } from "@/lib/format/plural";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
-import { buildMetadata } from "@/lib/seo/metadata";
-import { accusativeSr, listMoreSr, listSr } from "@/lib/seo/templates";
+import { buildMetadata, DESCRIPTION_MAX } from "@/lib/seo/metadata";
+import { accusativeSr, fitSentences, listMoreSr } from "@/lib/seo/templates";
 import {
   getSettingsPublic,
   getVehicleLandings,
@@ -25,7 +25,7 @@ const ARTIKAL = ["artikal", "artikla", "artikala"] as const;
 /**
  * The model and its generations with their real part counts. A model with a single
  * generation has no hub of its own: its URL is a permanent redirect to that generation, which
- * carries the same content and more (SEO-04, D252) — resolved here, before anything streams.
+ * carries the same content and more (SEO-04, D255) — resolved here, before anything streams.
  */
 async function load(marka: string, model: string) {
   const brand = findBrand(await getVehicleTree(), marka);
@@ -55,14 +55,24 @@ export async function generateMetadata({
   const [data, settings] = await Promise.all([load(marka, model), getSettingsPublic()]);
   if (!data) notFound();
   const name = accusativeSr(`${shortBrand(data.brand.brand)} ${data.model.model.name}`);
+  const gens = data.generations.map(
+    ({ generation: g, total }) => `${g.name} (${formatNumber(total)} ${pluralSr(total, ARTIKAL)})`,
+  );
+  // Whole generations only: the list shrinks to „… i još N“ instead of being cut mid-name.
+  let description = "";
+  for (let shown = gens.length; shown >= 1 && !description; shown -= 1) {
+    const text = `Delovi za ${name} po generacijama: ${listMoreSr(gens, shown, { nameLast: false })}.`;
+    if (text.length <= DESCRIPTION_MAX) description = text;
+  }
   return buildMetadata({
     title: `Delovi za ${name} — sve generacije`,
-    description: `Delovi za ${name}: ${listSr(
-      data.generations.map(
-        ({ generation: g, total }) =>
-          `${g.name} (${yearsLabel(g)}, ${formatNumber(total)} ${pluralSr(total, ARTIKAL)})`,
-      ),
-    )}. Izaberite generaciju i pogledajte delove po kategorijama.`,
+    description: fitSentences(
+      [
+        description ||
+          `Delovi za ${name}: ${gens.length} ${pluralSr(gens.length, ["generacija", "generacije", "generacija"])} u katalogu.`,
+      ],
+      ["Izaberite generaciju i pogledajte delove po kategorijama."],
+    ),
     path: ROUTES.vehicleModel(marka, model),
     titleSuffix: settings.seo.titleSuffix,
   });

@@ -21,12 +21,13 @@ export function Textarea({
   className,
   onChange,
   maxLength,
+  ref,
   ...rest
 }: TextareaProps) {
   const { invalid, ...control } = useFieldControl(rest);
-  const initial = String(rest.value ?? rest.defaultValue ?? "");
-  const [length, setLength] = useState(initial.length);
-  const current = rest.value !== undefined ? String(rest.value).length : length;
+  const controlled = rest.value !== undefined;
+  const [length, setLength] = useState(() => String(rest.defaultValue ?? "").length);
+  const current = controlled ? String(rest.value).length : length;
   const counterId = control.id ? `${control.id}-count` : undefined;
 
   return (
@@ -40,6 +41,15 @@ export function Textarea({
         <textarea
           {...rest}
           {...control}
+          ref={(el: HTMLTextAreaElement | null) => {
+            if (typeof ref === "function") ref(el);
+            else if (ref) ref.current = el;
+            // An uncontrolled value can change without an input event: react-hook-form's
+            // register() ref writes the default, setValue / reset write later (the XB-01 restore
+            // too). This callback is new on every render, so React re-attaches it after every
+            // commit and the counter re-reads the element — it never contradicts the field.
+            if (el && !controlled) setLength(el.value.length);
+          }}
           rows={Math.max(rows, 4)}
           maxLength={maxLength}
           aria-describedby={

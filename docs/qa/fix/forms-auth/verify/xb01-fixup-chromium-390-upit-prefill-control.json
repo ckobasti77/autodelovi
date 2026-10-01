@@ -1,0 +1,11 @@
+{
+  "chromium-390-upit-prefill-control": {
+    "delay": 6000,
+    "prefill": {
+      "messageLength": 22,
+      "counter": "22 / 2.000"
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  }
+}

@@ -1,15 +1,23 @@
 // @vitest-environment jsdom
-import { cleanup, render, screen } from "@testing-library/react";
+import { act, cleanup, render, screen } from "@testing-library/react";
+import { hydrateRoot } from "react-dom/client";
+import { renderToString } from "react-dom/server";
+import { useForm, useWatch, type Control } from "react-hook-form";
 import { afterEach, describe, expect, it } from "vitest";
 
 import { Price } from "@/components/ui/Price";
 import { StockBadge, stockLabel } from "@/components/ui/StockBadge";
 import { Button } from "@/components/ui/Button";
 import { Checkbox } from "@/components/ui/Checkbox";
-import { Field, RequiredUnlessOptional } from "@/components/ui/Field";
+import {
+  Field,
+  RequiredUnlessOptional,
+  useKeepTypedBeforeHydration,
+} from "@/components/ui/Field";
 import { Input } from "@/components/ui/Input";
 import { Select } from "@/components/ui/Select";
 import { Stepper } from "@/components/ui/Stepper";
+import { Textarea } from "@/components/ui/Textarea";
 import { contrast, contrastRows } from "@/app/styleguide/_lib/tokens";
 
 afterEach(cleanup);
@@ -144,5 +152,84 @@ describe("Stepper", () => {
     );
     const button = screen.getByRole("button");
     expect(button.textContent?.replace(/\s+/g, " ").trim()).toBe("Izmeni korak Kontakt");
+  });
+});
+
+type DraftValues = { message: string; name: string };
+
+/** Simulates keys pressed after the form rendered but before React committed the hydration. */
+function LateKeys() {
+  if (typeof document !== "undefined") {
+    const el = document.getElementById("t-msg");
+    if (el instanceof HTMLTextAreaElement && el.value === "Golf") el.value = "Golf 7";
+  }
+  return null;
+}
+
+function WatchedValues({ control }: { control: Control<DraftValues> }) {
+  const values = useWatch({ control });
+  return <output data-testid="values">{JSON.stringify(values)}</output>;
+}
+
+function DraftForm({ message = "", watched = true }: { message?: string; watched?: boolean }) {
+  const { register, control, setValue } = useForm<DraftValues>({
+    defaultValues: { message, name: "" },
+  });
+  const keep = useKeepTypedBeforeHydration<keyof DraftValues>((name, value) =>
+    setValue(name, value, { shouldDirty: true }),
+  );
+  return (
+    <form>
+      <Textarea id="t-msg" maxLength={2000} {...keep(register("message"))} />
+      <input id="t-name" {...keep(register("name"))} />
+      <LateKeys />
+      {watched ? <WatchedValues control={control} /> : null}
+    </form>
+  );
+}
+
+describe("text typed before hydration (XB-01)", () => {
+  it("keeps keys pressed up to the hydration commit and syncs form state and counter", async () => {
+    const container = document.createElement("div");
+    container.innerHTML = renderToString(<DraftForm />);
+    document.body.append(container);
+    const message = container.querySelector<HTMLTextAreaElement>("#t-msg")!;
+    const name = container.querySelector<HTMLInputElement>("#t-name")!;
+    message.value = "Golf";
+    name.value = "Petar";
+
+    await act(async () => {
+      hydrateRoot(container, <DraftForm />);
+    });
+
+    expect(message.value).toBe("Golf 7");
+    expect(name.value).toBe("Petar");
+    expect(container.querySelector("#t-msg-count")?.textContent).toBe("6 / 2.000");
+    expect(JSON.parse(screen.getByTestId("values").textContent ?? "{}")).toEqual({
+      message: "Golf 7",
+      name: "Petar",
+    });
+    container.remove();
+  });
+
+  it("updates the counter even when nothing in the form watches the restored field", async () => {
+    const container = document.createElement("div");
+    container.innerHTML = renderToString(<DraftForm watched={false} />);
+    document.body.append(container);
+    container.querySelector<HTMLTextAreaElement>("#t-msg")!.value = "Golf";
+
+    await act(async () => {
+      hydrateRoot(container, <DraftForm watched={false} />);
+    });
+
+    expect(container.querySelector<HTMLTextAreaElement>("#t-msg")?.value).toBe("Golf 7");
+    expect(container.querySelector("#t-msg-count")?.textContent).toBe("6 / 2.000");
+    container.remove();
+  });
+
+  it("counts an uncontrolled value written by register() without an input event", () => {
+    const { container } = render(<DraftForm message="turbina golf 7" />);
+    expect(container.querySelector<HTMLTextAreaElement>("#t-msg")?.value).toBe("turbina golf 7");
+    expect(container.querySelector("#t-msg-count")?.textContent).toBe("14 / 2.000");
   });
 });

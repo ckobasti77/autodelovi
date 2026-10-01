@@ -3,10 +3,10 @@ import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 
 import { fillPlaceholders } from "@/lib/content/placeholders";
-import { Markdown, markdownToText } from "@/lib/content/markdown";
+import { Markdown, markdownDescription } from "@/lib/content/markdown";
 import { formatDate } from "@/lib/format/date";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
-import { buildMetadata, clampText } from "@/lib/seo/metadata";
+import { buildMetadata, DESCRIPTION_MAX } from "@/lib/seo/metadata";
 import { placeholderValues } from "@/lib/settings/public";
 import { getContentPage, getSettingsPublic } from "@/lib/server/catalog-cache";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -17,11 +17,12 @@ import { ROUTES } from "@/constants/routes";
 /** Metadata for a content page (legal pages are indexable at low priority, ROUTES §B1). */
 export async function contentMetadata(slug: string, path: string): Promise<Metadata> {
   const [page, settings] = await Promise.all([getContentPage(slug), getSettingsPublic()]);
-  if (!page) return {};
-  const body = markdownToText(fillPlaceholders(page.bodyMd, placeholderValues(settings)));
+  // Resolved before the page streams, so a missing page is a real 404 (FLOW-05).
+  if (!page) notFound();
+  const body = fillPlaceholders(page.bodyMd, placeholderValues(settings));
   return buildMetadata({
     title: page.title,
-    description: clampText(body, 155),
+    description: markdownDescription(body, DESCRIPTION_MAX),
     path,
     titleSuffix: settings.seo.titleSuffix,
   });

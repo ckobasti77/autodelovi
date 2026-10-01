@@ -16,7 +16,7 @@ import {
   type TotalRow,
 } from "../html";
 import type { OrderEmailData } from "../types";
-import { date, frame, linesBlock, rsd } from "./shared";
+import { date, frame, linesBlock, plural, rsd } from "./shared";
 
 function totalsRows(d: OrderEmailData): TotalRow[] {
   const rows: TotalRow[] = [];
@@ -90,6 +90,12 @@ function bankBlock(d: OrderEmailData): Block {
   );
 }
 
+/** „Rok plaćanja: 16.10.2026. (15 dana)“ — the term stored on a deferred-payment order. */
+function deferredDue(dueAt: number, createdAt: number): string {
+  const days = Math.max(1, Math.round((dueAt - createdAt) / 86_400_000));
+  return `Rok plaćanja: ${date(dueAt)} (${days} ${plural(days, ["dan", "dana", "dana"])})`;
+}
+
 export function orderReceived(d: OrderEmailData, ctx: EmailContext): RenderedEmail {
   const body = join(
     heading("Porudžbina je primljena."),
@@ -111,7 +117,10 @@ export function orderReceived(d: OrderEmailData, ctx: EmailContext): RenderedEma
           "Predračun stiže uz potvrdu",
           "Podatke za uplatu šaljemo kad potvrdimo stanje.",
         )
-      : paragraph(d.payment.instructions, { muted: true }),
+      : d.payment.method === "deferred" && d.payment.dueAt
+        ? // The stored term, not the generic method text (FLOW-35).
+          notice("info", deferredDue(d.payment.dueAt, d.createdAt), d.payment.instructions)
+        : paragraph(d.payment.instructions, { muted: true }),
     statusButton(d),
     questions(ctx),
   );
@@ -266,7 +275,9 @@ export function orderDelivered(d: OrderEmailData, ctx: EmailContext): RenderedEm
       "Ako deo ne odgovara ili ima grešku, javite se sa brojem porudžbine — dogovaramo zamenu ili povraćaj.",
       ...(consumer
         ? [
-            `Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Uslovi i obrazac su na stranici [Reklamacije i povrat](${d.complaintsUrl}).`,
+            // The withdrawal form is the owner's document (HUMAN-TODO §3): the e-mail points to
+            // the conditions page and does not promise a form it cannot see (COPY-03).
+            `Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Kako se to radi, piše na stranici [Reklamacije i povrat](${d.complaintsUrl}).`,
           ]
         : [`Uslovi reklamacije su na stranici [Reklamacije i povrat](${d.complaintsUrl}).`]),
     ]),

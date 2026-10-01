@@ -1,0 +1,21 @@
+{"label":"1440 no override (as security.spec)","run":0,"tierReadRightAfterScroll":"low","specWouldWaitForReady":false,"readyWithin":false,"tier":"low","status":"idle","canvases":0,"renderer":"ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0","liveAssetRequests":[],"workers":0}
+{"label":"1440 no override (as security.spec)","run":1,"tierReadRightAfterScroll":"low","specWouldWaitForReady":false,"readyWithin":false,"tier":"low","status":"idle","canvases":0,"renderer":"ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0","liveAssetRequests":[],"workers":0}
+{"label":"1440 no override (as security.spec)","run":2,"tierReadRightAfterScroll":"low","specWouldWaitForReady":false,"readyWithin":false,"tier":"low","status":"idle","canvases":0,"renderer":"ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0","liveAssetRequests":[],"workers":0}
+{"label":"390 no override (as security.spec)","run":0,"tierReadRightAfterScroll":"low","specWouldWaitForReady":false,"readyWithin":false,"tier":"low","status":"idle","canvases":0,"renderer":"ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0","liveAssetRequests":[],"workers":0}
+{"label":"390 no override (as security.spec)","run":1,"tierReadRightAfterScroll":"low","specWouldWaitForReady":false,"readyWithin":false,"tier":"low","status":"idle","canvases":0,"renderer":"ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0","liveAssetRequests":[],"workers":0}
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "http://localhost:3001/", waiting until "load"
+
+    at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\scripts\qa\fix\hero-3d-assets-verify2-security.mjs:34:20 {
+  log: [
+    '  - navigating to "http://localhost:3001/", waiting until "load"'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.23.2

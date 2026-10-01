@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { nbspShortWords, nbspUnits, noDashAtLineStart, typographer } from "@/lib/format/nbsp";
+import { nbspDimensions, nbspShortWords, nbspUnits, noDashAtLineStart, typographer } from "@/lib/format/nbsp";
 
 const NBSP = "\u00a0";
 
@@ -64,7 +64,28 @@ describe("noDashAtLineStart", () => {
   });
 });
 
+describe("nbspDimensions", () => {
+  it.each([
+    ["Kočioni disk 312 × 25 mm", `Kočioni disk 312${NBSP}×${NBSP}25 mm`],
+    ["Disk 288×25 mm", `Disk 288${NBSP}×${NBSP}25 mm`],
+    ["Guma 205 × 55 × 16", `Guma 205${NBSP}×${NBSP}55${NBSP}×${NBSP}16`],
+  ])("%j", (input, expected) => {
+    expect(nbspDimensions(input)).toBe(expected);
+  });
+
+  it("leaves a multiplication sign that is not between numbers alone", () => {
+    expect(nbspDimensions("Set × 2")).toBe("Set × 2");
+    expect(nbspDimensions("2 × set")).toBe("2 × set");
+  });
+});
+
 describe("typographer", () => {
+  it("keeps a whole dimension with its unit together", () => {
+    expect(typographer("Kočioni disk prednji 312 × 25 mm, ventilirani")).toBe(
+      `Kočioni disk prednji 312${NBSP}×${NBSP}25${NBSP}mm, ventilirani`,
+    );
+  });
+
   it("applies every rule", () => {
     expect(typographer("Disk i pločice — 12.990 RSD u radnji")).toBe(
       `Disk i${NBSP}pločice${NBSP}— 12.990${NBSP}RSD u${NBSP}radnji`,

@@ -11,6 +11,7 @@ import {
   subheading,
   type RenderedEmail,
 } from "../html";
+import { formatQuantity } from "../../format/number";
 import { formatPhone, normalizePhone, telHref } from "../../format/phone";
 import type {
   StaffDigestEmailData,
@@ -72,7 +73,7 @@ export function staffOrderNew(d: StaffOrderEmailData, ctx: EmailContext): Render
   );
   return staffFrame(ctx, {
     subject: `Nova porudžbina ${d.number} — ${rsd(d.totalPara)}`,
-    preheader: `${d.customerName}, ${d.itemCount} kom · ${d.deliveryLabel} · ${d.paymentLabel}`,
+    preheader: `${d.customerName}, ${formatQuantity(d.itemCount)} · ${d.deliveryLabel} · ${d.paymentLabel}`,
     reference: d.number,
     body,
   });
@@ -177,7 +178,7 @@ export function staffLowStock(d: StaffLowStockEmailData, ctx: EmailContext): Ren
         (i) =>
           [
             i.sku,
-            `[${i.name}](${i.url}) — ${i.qty === 0 ? "nema na stanju" : `ostalo ${i.qty} kom`}`,
+            `[${i.name}](${i.url}) — ${i.qty === 0 ? "nema na stanju" : `ostalo ${formatQuantity(i.qty)}`}`,
           ] as const,
       ),
     ),
@@ -234,7 +235,7 @@ export function staffDailyDigest(d: StaffDigestEmailData, ctx: EmailContext): Re
     d.zeroSearches.length ? subheading("Traženo, a nemamo") : null,
     d.zeroSearches.length ? bullets(d.zeroSearches.map((s) => `${s.query} — ${s.count}×`)) : null,
     d.zeroSearches.length ? paragraph(`[Sve pretrage](${d.searchesUrl})`, { muted: true }) : null,
-    button("Otvorite kontrolnu tablu", d.dashboardUrl),
+    button("Otvorite pregled", d.dashboardUrl),
   );
   return staffFrame(ctx, {
     subject,

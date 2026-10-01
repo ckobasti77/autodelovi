@@ -11,6 +11,8 @@ const ONE_LETTER_WORD = /(?<![\p{L}\p{N}_])([iuskoaIUSKOA])[ \t]+(?=\S)/gu;
 
 const SPACED_DASH = /[ \t]+([\u2013\u2014])(?=\s|$)/g;
 
+const DIMENSION = /(\d)[ \t\u00a0]*\u00d7[ \t\u00a0]*(?=\d)/g;
+
 /** `12.990 RSD` → `12.990\u00a0RSD`; units: RSD, kom., mm, cm, kg, kW, KS, %, dana, din. */
 export function nbspUnits(text: string): string {
   return text.replace(UNIT_AFTER_NUMBER, `$1${NBSP}$2`);
@@ -26,7 +28,12 @@ export function noDashAtLineStart(text: string): string {
   return text.replace(SPACED_DASH, `${NBSP}$1`);
 }
 
+/** `312 × 25 mm` → `312 × 25 mm`: a dimension never breaks around the multiplication sign. */
+export function nbspDimensions(text: string): string {
+  return text.replace(DIMENSION, `$1${NBSP}×${NBSP}`);
+}
+
 /** All of the above, in a safe order. */
 export function typographer(text: string): string {
-  return noDashAtLineStart(nbspShortWords(nbspUnits(text)));
+  return noDashAtLineStart(nbspShortWords(nbspUnits(nbspDimensions(text))));
 }

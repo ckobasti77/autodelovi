@@ -2,57 +2,113 @@
   {
     "id": "MOT-01",
     "status": "FIXED",
-    "summary": "Phone camera tightened (az 25, el 24, fov 31, silhouette ~96 % of the width), tablet 768-1023 px gets its own centred 1:1 camera and poster set (car-*-t-{768,1080,1536}, mid-tier look), phone/tablet posters centred in the stage (anchorY 0.5); exploded phone/tablet cameras re-solved and audited; posters re-rendered from the manifest (D240).",
-    "files": ["3d/blender/lib/views.py", "3d/blender/export.py", "3d/blender/explode.py", "3d/blender/render.py", "3d/blender/posters.py", "3d/scripts/images.mjs", "public/models/car.manifest.json", "public/images/hero/*", "lib/three/framing.ts", "lib/three/manifest.ts", "lib/three/manifestGuard.ts", "components/three/HeroPicture.tsx", "components/three/canvas/controller.ts", "tests/unit/three/camera.test.ts", "tests/unit/three/manifest-guard.test.ts", "docs/3D-CONTRACT.md", "docs/3d/BUILD-NOTES.md"],
-    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-framing.mjs --shots 390x664 390x844 430x932 768x1024 -> '390x664 canvas: car 374x328 = 66.7% H', '390x844 poster 49.1% H / canvas 48.8% H' (was 34.5 %), '430x932 canvas 47.6% H' (was 33.7 %), '768x1024 canvas: car 683x489 = 57.4% H 88.9% W; dx 7' (was 29.0 %, +116 px right of centre); poster = canvas within 1 px; caption->car 123 px vs car->honesty 137 px at 390x844 (no dead band). Explode fits: framing-390x664-canvas-exploded.webp, framing-768x1024-canvas-exploded.webp. explode.py -- --audit -> errors [] (tablet and mobile cameras). node 3d/scripts/validate.mjs -> PASS (18 warnings). npx vitest run tests/unit/three tests/unit/3d-manifest.test.ts -> 41 passed. Evidence docs/qa/fix/hero-3d-assets/framing-*.json/webp."
+    "summary": "Phone camera tightened (az 25, el 24, fov 31, silhouette ~96 % of the width), tablet 768-1023 px gets its own centred 1:1 camera and poster set (car-*-t-{768,1080,1536}, mid-tier look), phone/tablet posters centred in the stage (anchorY 0.5); exploded phone/tablet cameras re-solved and audited; posters re-rendered from the manifest (D240). Fix-up: tests/e2e/hero-3d.spec.ts (gates phase) still asserted the old single (min-width: 48rem) preload and started the live 3D without ?3d= on SwiftShader (now low tier, PERF-23); the exact spec update is handed over as docs/qa/fix/hero-3d-assets/hero-3d.spec.patch (two media-scoped preloads with their crops, ?3d=high|mid for the live-3D tests, plus a new test that SwiftShader without an override stays on the posters) and proven with a patched copy run against :3001.",
+    "files": [
+      "3d/blender/lib/views.py",
+      "3d/blender/export.py",
+      "3d/blender/explode.py",
+      "3d/blender/render.py",
+      "3d/blender/posters.py",
+      "3d/scripts/images.mjs",
+      "public/models/car.manifest.json",
+      "public/images/hero/*",
+      "lib/three/framing.ts",
+      "lib/three/manifest.ts",
+      "lib/three/manifestGuard.ts",
+      "components/three/HeroPicture.tsx",
+      "components/three/canvas/controller.ts",
+      "tests/unit/three/camera.test.ts",
+      "tests/unit/three/manifest-guard.test.ts",
+      "docs/3D-CONTRACT.md",
+      "docs/3d/BUILD-NOTES.md",
+      "scripts/qa/fix/hero-3d-assets-e2e/hero-3d.spec.ts",
+      "scripts/qa/fix/hero-3d-assets-e2e.config.ts",
+      "docs/qa/fix/hero-3d-assets/hero-3d.spec.patch"
+    ],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-framing.mjs --shots 390x664 390x844 430x932 768x1024 -> '390x664 canvas: car 374x328 = 66.7% H', '390x844 poster 49.1% H / canvas 48.8% H' (was 34.5 %), '430x932 canvas 47.6% H' (was 33.7 %), '768x1024 canvas: car 683x489 = 57.4% H 88.9% W; dx 7' (was 29.0 %, +116 px right of centre); poster = canvas within 1 px; caption->car 123 px vs car->honesty 137 px at 390x844 (no dead band). Explode fits: framing-390x664-canvas-exploded.webp, framing-768x1024-canvas-exploded.webp. explode.py -- --audit -> errors [] (tablet and mobile cameras). node 3d/scripts/validate.mjs -> PASS (18 warnings). npx vitest run tests/unit/three tests/unit/3d-manifest.test.ts -> 41 passed. Evidence docs/qa/fix/hero-3d-assets/framing-*.json/webp. Fix-up: E2E_BASE_URL=http://localhost:3001 npx playwright test -c scripts/qa/fix/hero-3d-assets-e2e.config.ts -> '20 passed (2.2m)' (desktop-1440 + mobile-390; docs/qa/fix/hero-3d-assets/fixup-e2e-run1.txt). Unmodified tests/e2e/hero-3d.spec.ts -g 'reduced motion' --project=desktop-1440 -> '1 passed (3.6s)' (the verifier's failure there was collateral of the 120 s timeouts). eslint on both new files: exit 0; tsc --noEmit: no errors in package files."
   },
   {
     "id": "VIS-01",
     "status": "FIXED",
     "summary": "thumbs.py frames the projected silhouette to 70 % of the frame at 48 % height and adds an exposure floor: a 192 px probe render measures the mean luminance of the opaque part pixels and a bracketing search lifts dark parts (up to +2.5 EV) until it reaches 0.10 (2:1 against #23282E). All 48 renders re-rendered and re-encoded, filenames unchanged (D241). Placeholder-grade models (hauba, stakla) were not remodelled (not cheap).",
-    "files": ["3d/blender/thumbs.py", "public/images/parts/*.webp", "docs/3d/BUILD-NOTES.md"],
+    "files": [
+      "3d/blender/thumbs.py",
+      "public/images/parts/*.webp",
+      "docs/3d/BUILD-NOTES.md"
+    ],
     "verification": "node scripts/qa/fix/hero-3d-assets-thumbs.mjs --sheet after -> 'renders under 2:1 mean part contrast: 0' (before: 24, docs/qa/fix/hero-3d-assets/thumbs-metrics-before.txt), 'part longest side: min 47 %, median 70 %, max 85 %' (before median 58 %); weakest render now motor.webp at 2.2:1 mean; contact sheet on the tile ground docs/qa/fix/hero-3d-assets/thumbs-after.webp (before: thumbs-before.webp)."
   },
   {
     "id": "VIS-06",
     "status": "FIXED",
     "summary": "The poster/canvas framing box is capped at STAGE_FRAME_MAX = 1680 px and centred (lib/three/framing.ts posterFrame; HeroPicture caps the <picture> at 1680 px and moves the 8 % inset to the <img>), so the car stays inside the corner ticks from 1920 px up; up to 1680 px nothing changes (D242).",
-    "files": ["lib/three/framing.ts", "components/three/HeroPicture.tsx", "components/three/canvas/controller.ts", "tests/unit/three/camera.test.ts"],
+    "files": [
+      "lib/three/framing.ts",
+      "components/three/HeroPicture.tsx",
+      "components/three/canvas/controller.ts",
+      "tests/unit/three/camera.test.ts"
+    ],
     "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-framing.mjs --shots 1920x1080 2560x1440 3440x1440 -> '1920x1080 canvas: car x 865-1658, insideTicks true', '2560x1440 canvas: car x 1185-1978, insideTicks true' (ticks 1173-2000), '3440x1440 canvas: car x 1625-2418, insideTicks true' (ticks 1613-2440); posters match the canvas (the 3440 poster bbox is polluted only by the dev 'Compiling' badge, see framing-3440x1440-poster.webp). Unit test 'wide screens: the framing box stops at STAGE_FRAME_MAX' passes."
   },
   {
     "id": "PERF-14",
     "status": "FIXED",
     "summary": "PMREM prefilter moved to the pipeline: 3d/scripts/env.mjs bakes three's cube-UV atlas (cube 64, RLE RGBE, 139 KB) and the runtime binds it with CubeUVReflectionMapping, so no PMREMGenerator or blur-shader compile runs at 3D start. Every material texture is uploaded with initTexture before compileAsync and the edge programs compile through compileAsync before their first frame (D243). docs/3d/WEB-QA.md section 4 updated.",
-    "files": ["3d/scripts/env.mjs", "3d/scripts/run.mjs", "3d/blender/posters.py", "public/models/env/studio-pmrem.hdr", "lib/three/assets.ts", "components/three/canvas/loadCar.ts", "components/three/canvas/HeroCanvas.tsx", "docs/3d/WEB-QA.md", "docs/3D-CONTRACT.md"],
+    "files": [
+      "3d/scripts/env.mjs",
+      "3d/scripts/run.mjs",
+      "3d/blender/posters.py",
+      "public/models/env/studio-pmrem.hdr",
+      "lib/three/assets.ts",
+      "components/three/canvas/loadCar.ts",
+      "components/three/canvas/HeroCanvas.tsx",
+      "docs/3d/WEB-QA.md",
+      "docs/3D-CONTRACT.md"
+    ],
     "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-profile.mjs --vp desktop --cpu 1 --gpu --runs 2 -> grep -c 'PMREM|_applyGGXFilter|fromEquirectangular' docs/qa/fix/hero-3d-assets/profile-start-desktop-cpu1-gpu.txt = 0 (audit profile-start-desktop-cpu1-cold.txt: 3); warm-cache worst start stretch 216 ms incl. 55 ms getProgramInfoLog from the development-only checkShaderErrors. node scripts/qa/hero-parity.mjs --base http://localhost:3001 -> 'desktop: mean abs difference 1.68 / 255' (baseline 1.84). A production profile (next start) is outside this phase."
   },
   {
     "id": "PERF-15",
     "status": "FIXED",
     "summary": "On teardown the canvas disposes three's module-level DFG LUT (found through the material uniforms); its 'dispose' listener kept every old renderer, its context and the detached home DOM alive. R3F 9.8.1 already calls gl.dispose() and forceContextLoss; scene.environment is cleared and the baked environment has no PMREM render target any more; heroStore.controller is already cleared by HeroStage on unmount (D244).",
-    "files": ["components/three/canvas/HeroCanvas.tsx"],
+    "files": [
+      "components/three/canvas/HeroCanvas.tsx"
+    ],
     "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-retainers.mjs --gpu -> docs/qa/fix/hero-3d-assets/retainers.txt: no retaining path through a three Source/_listeners and no HeroScene3D object left; the only remaining paths are __REACT_DEVTOOLS_GLOBAL_HOOK__.helpersByRoot (React DevTools hook injected by next dev, absent in production) and R3F's module-level loop state (latest root only). node scripts/qa/fix/hero-3d-assets-leak.mjs --gpu --cycles 3 (dev) -> DOM nodes on /delovi grow about +300 per visit (audit, production: +1107), the rest is the dev-only hook; the production re-measure (scripts/qa/audit/verify-perf-3d-leak.mjs against next start) belongs to the gates phase."
   },
   {
     "id": "PERF-16",
     "status": "FIXED",
     "summary": "msaaFor(tier, dpr): 4x MSAA only on the high tier below DPR 1.5; HeroCanvas uses it for the antialias context attribute. Contract F5 now states that the drawing buffer counts toward the 60 MB (D244).",
-    "files": ["lib/three/tier.ts", "components/three/canvas/HeroCanvas.tsx", "tests/unit/three/tier.test.ts", "docs/3D-CONTRACT.md"],
+    "files": [
+      "lib/three/tier.ts",
+      "components/three/canvas/HeroCanvas.tsx",
+      "tests/unit/three/tier.test.ts",
+      "docs/3D-CONTRACT.md"
+    ],
     "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-tier.mjs -> '?3d=high dpr 1: antialias true, 1440x836' and '?3d=high dpr 2: antialias false, 2880x1672' (about 38 MB drawing buffer without MSAA instead of about 173 MB with it). Unit test 'MSAA only on the high tier below DPR 1.5 (PERF-16)' passes."
   },
   {
     "id": "PERF-23",
     "status": "FIXED",
     "summary": "tier.ts reads the WebGL renderer string (WEBGL_debug_renderer_info) in its single probe context; SwiftShader, llvmpipe, softpipe and Microsoft Basic Render are classified low (posters). ?3d=high|mid still forces a tier for QA and e2e. No runtime frame watchdog: demand rendering cannot tell a slow frame from an idle gap (D244).",
-    "files": ["lib/three/tier.ts", "tests/unit/three/tier.test.ts", "docs/3D-CONTRACT.md"],
+    "files": [
+      "lib/three/tier.ts",
+      "tests/unit/three/tier.test.ts",
+      "docs/3D-CONTRACT.md"
+    ],
     "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-tier.mjs -> '(no override) dpr 1: {\"tier\":\"low\",\"status\":\"idle\",\"canvas\":false}' on SwiftShader and '?3d=high dpr 1: tier high, status ready'. Unit test 'software WebGL renderers are low (PERF-23)' passes."
   },
   {
     "id": "PERF-25",
     "status": "FIXED",
     "summary": "The uncompressed 401 KB studio-512.hdr is no longer shipped; the runtime downloads the 139 KB pre-baked atlas studio-pmrem.hdr (the equirect copy is now a build intermediate in 3d/build/env). Long-term caching of /models is next.config's concern (another package).",
-    "files": ["public/models/env/studio-pmrem.hdr", "public/models/env/studio-512.hdr (deleted)", "3d/blender/posters.py", "lib/three/assets.ts"],
+    "files": [
+      "public/models/env/studio-pmrem.hdr",
+      "public/models/env/studio-512.hdr (deleted)",
+      "3d/blender/posters.py",
+      "lib/three/assets.ts"
+    ],
     "verification": "ls -la public/models/env -> only studio-pmrem.hdr (142775 bytes); node 3d/scripts/env.mjs -> 'env: ...studio-pmrem.hdr (336 x 256, cube 64, 139 KB)'."
   }
 ]

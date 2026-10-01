@@ -1,0 +1,183 @@
+{
+ "390": {
+  "htmlWithResults": {
+   "spb": "150px",
+   "inset": "150px",
+   "computedSpb": "150px"
+  },
+  "barButtons": [
+   {
+    "testid": "mechanic-quick-order-add-all",
+    "ariaLabel": null,
+    "text": "Dodaj sve u korpu (8)",
+    "visibleText": "Dodaj sve u korpu (8)",
+    "w": 266,
+    "h": 52,
+    "title": null
+   },
+   {
+    "testid": "mechanic-quick-order-inquire",
+    "ariaLabel": null,
+    "text": "Pošalji upit za nepronađene (1)",
+    "visibleText": "Pošalji upit za nepronađene (1)",
+    "w": 52,
+    "h": 52,
+    "title": null
+   }
+  ],
+  "inquireAccessibleName": "Pošalji upit za nepronađene (1)",
+  "inquireRoleMatch": 1,
+  "barH": 133,
+  "forward": {
+   "stops": 59,
+   "hidden": 0,
+   "partly": 0,
+   "hiddenList": []
+  },
+  "reverse": {
+   "stops": 59,
+   "hidden": 0,
+   "partly": 0,
+   "hiddenList": []
+  },
+  "shot": "docs/qa/fix/cart-mechanic-overlays/verify/vis02-extra-390-top.webp",
+  "htmlAfterClear": {
+   "spb": "(none)",
+   "inset": "(none)",
+   "computedSpb": "auto"
+  },
+  "barAfterClear": false,
+  "htmlBeforeNav": {
+   "spb": "150px",
+   "inset": "150px",
+   "computedSpb": "150px"
+  },
+  "htmlAfterClientNav": {
+   "spb": "(none)",
+   "inset": "(none)",
+   "computedSpb": "auto"
+  },
+  "console": [],
+  "pageErrors": []
+ },
+ "1440-reduce": {
+  "htmlWithResults": {
+   "spb": "133px",
+   "inset": "133px",
+   "computedSpb": "133px"
+  },
+  "barButtons": [
+   {
+    "testid": "mechanic-quick-order-add-all",
+    "ariaLabel": null,
+    "text": "Dodaj sve u korpu (8)",
+    "visibleText": "Dodaj sve u korpu (8)",
+    "w": 216,
+    "h": 52,
+    "title": null
+   },
+   {
+    "testid": "mechanic-quick-order-inquire",
+    "ariaLabel": null,
+    "text": "Pošalji upit za nepronađene (1)",
+    "visibleText": "Pošalji upit za nepronađene (1) Pošalji upit za nepronađene (1)",
+    "w": 284,
+    "h": 52,
+    "title": null
+   }
+  ],
+  "inquireAccessibleName": "Pošalji upit za nepronađene (1)",
+  "inquireRoleMatch": 1,
+  "barH": 117,
+  "forward": {
+   "stops": 59,
+   "hidden": 0,
+   "partly": 0,
+   "hiddenList": []
+  },
+  "reverse": {
+   "stops": 59,
+   "hidden": 0,
+   "partly": 0,
+   "hiddenList": []
+  },
+  "htmlAfterClear": {
+   "spb": "(none)",
+   "inset": "(none)",
+   "computedSpb": "auto"
+  },
+  "barAfterClear": false,
+  "htmlBeforeNav": {
+   "spb": "133px",
+   "inset": "133px",
+   "computedSpb": "133px"
+  },
+  "htmlAfterClientNav": {
+   "spb": "(none)",
+   "inset": "(none)",
+   "computedSpb": "auto"
+  },
+  "console": [],
+  "pageErrors": []
+ },
+ "390-reduce": {
+  "htmlWithResults": {
+   "spb": "150px",
+   "inset": "150px",
+   "computedSpb": "150px"
+  },
+  "barButtons": [
+   {
+    "testid": "mechanic-quick-order-add-all",
+    "ariaLabel": null,
+    "text": "Dodaj sve u korpu (8)",
+    "visibleText": "Dodaj sve u korpu (8)",
+    "w": 266,
+    "h": 52,
+    "title": null
+   },
+   {
+    "testid": "mechanic-quick-order-inquire",
+    "ariaLabel": null,
+    "text": "Pošalji upit za nepronađene (1)",
+    "visibleText": "Pošalji upit za nepronađene (1)",
+    "w": 52,
+    "h": 52,
+    "title": null
+   }
+  ],
+  "inquireAccessibleName": "Pošalji upit za nepronađene (1)",
+  "inquireRoleMatch": 1,
+  "barH": 133,
+  "forward": {
+   "stops": 59,
+   "hidden": 0,
+   "partly": 0,
+   "hiddenList": []
+  },
+  "reverse": {
+   "stops": 59,
+   "hidden": 0,
+   "partly": 0,
+   "hiddenList": []
+  },
+  "htmlAfterClear": {
+   "spb": "(none)",
+   "inset": "(none)",
+   "computedSpb": "auto"
+  },
+  "barAfterClear": false,
+  "htmlBeforeNav": {
+   "spb": "150px",
+   "inset": "150px",
+   "computedSpb": "150px"
+  },
+  "htmlAfterClientNav": {
+   "spb": "(none)",
+   "inset": "(none)",
+   "computedSpb": "auto"
+  },
+  "console": [],
+  "pageErrors": []
+ }
+}

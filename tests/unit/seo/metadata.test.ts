@@ -6,19 +6,27 @@ import {
   DESCRIPTION_MAX,
   pageTitle,
   privateMetadata,
+  shortenWords,
   TITLE_MAX,
 } from "@/lib/seo/metadata";
 import {
+  accusativeSr,
   categoryMeta,
   generationMeta,
   isCuratedSearch,
   landingMeta,
+  listMoreSr,
   productMeta,
   productTitle,
+  systemIntro,
   systemMeta,
+  type MetaText,
 } from "@/lib/seo/templates";
 
 const SUFFIX = " | SKLOP";
+
+/** The title as the page renders it (buildMetadata → pageTitle with the kept tail). */
+const rendered = (t: MetaText) => pageTitle(t.title, SUFFIX, t.titleKeep);
 
 describe("title and description limits", () => {
   test("keyword first, brand suffix, ≤ 60 characters", () => {
@@ -117,7 +125,13 @@ describe("page templates", () => {
   test("category, system, landing and generation templates stay within limits", () => {
     const texts = [
       categoryMeta({ name: "Kočione pločice", productCount: 10, inStockCount: 8, page: 2 }),
-      systemMeta({ name: "Kočnice", categories: ["Kočioni diskovi", "Kočione pločice"] }),
+      systemMeta({
+        name: "Kočnice",
+        categories: [
+          { name: "Kočioni diskovi", count: 16 },
+          { name: "Kočione pločice", count: 12 },
+        ],
+      }),
       landingMeta({
         categoryName: "Amortizeri i opruge",
         brandName: "Volkswagen",
@@ -149,7 +163,146 @@ describe("page templates", () => {
 
   test("brand landings carry the price promise in the title", () => {
     expect(landingMeta({ categoryName: "Turbina", brandName: "Škoda" }).title).toBe(
-      "Turbina za Škoda — cene i stanje",
+      "Turbina za Škodu — cene i stanje",
+    );
+  });
+
+  test("COPY-01: product titles keep every letter of the name", () => {
+    const t = productTitle(
+      {
+        name: "Kočioni disk prednji 276 × 24 mm",
+        manufacturer: "Febi Bilstein",
+        code: "5Q0 615 505 R",
+      },
+      SUFFIX,
+    );
+    expect(t).toBe("Kočioni disk prednji 276 × 24 mm Febi Bilstein 5Q0 615 505 R");
+    const s = productTitle(
+      { name: "Set zupčastog kaiša sa vodenom pumpom 1.9 TDI", manufacturer: "INA", code: null },
+      SUFFIX,
+    );
+    expect(s).toBe("Set zupčastog kaiša sa vodenom pumpom 1.9 TDI INA | SKLOP");
+  });
+
+  test("SEO-01: same OEM number from two makers gives two titles, maker kept", () => {
+    const name = "Kočioni disk prednji 312 × 25 mm, ventilirani";
+    const a = productTitle({ name, manufacturer: "Brembo", code: "1K0 615 591 E" }, SUFFIX);
+    const b = productTitle({ name, manufacturer: "ATE", code: "1K0 615 591 E" }, SUFFIX);
+    expect(a).not.toBe(b);
+    for (const t of [a, b]) {
+      expect(t.length).toBeLessThanOrEqual(TITLE_MAX);
+      expect(t).not.toContain("…");
+      expect(t.endsWith("1K0 615 591 E")).toBe(true);
+    }
+    expect(a).toBe("Kočioni disk prednji 312 × 25 mm Brembo 1K0 615 591 E");
+    expect(b).toContain(" ATE ");
+  });
+
+  test("COPY-01/SEO-07: a long vehicle list is cut at whole vehicles, never mid-word", () => {
+    const base = {
+      name: "Kočione pločice zadnje",
+      manufacturer: "Original VAG",
+      qualityLabel: "Original VAG",
+      code: "5Q0 698 451 AA",
+      pricePara: 1_249_000,
+      stockState: "in_stock" as const,
+    };
+    const d = productMeta({ ...base, fitmentSummary: "VW Golf VII, VW Passat B8 i još 10" })
+      .description;
+    expect(d.length).toBeLessThanOrEqual(DESCRIPTION_MAX);
+    expect(d).not.toMatch(/\S…/);
+    expect(d).not.toContain("Original VAG, Original VAG");
+    expect(d).toContain("(Original VAG) za VW Golf VII, VW Passat B8 i još 10.");
+    expect(d).toContain("Kat. br. 5Q0 698 451 AA.");
+    const longer = productMeta({
+      ...base,
+      name: "Kočione pločice zadnje, za elektronsku ručnu kočnicu",
+      fitmentSummary: "VW Golf VII, VW Passat B8 i još 10",
+    }).description;
+    expect(longer.length).toBeLessThanOrEqual(DESCRIPTION_MAX);
+    expect(longer).toContain("za VW Golf VII i još 11.");
+    const skoda = productMeta({ ...base, fitmentSummary: "Škoda Octavia III, SEAT Leon III" });
+    expect(skoda.description).toContain("za Škodu Octaviju III i SEAT Leon III.");
+  });
+
+  test("SEO-03: the vehicle and the page number survive shortening, without an ellipsis", () => {
+    const cat = categoryMeta({
+      name: "Senzori (lambda, parking, temperatura)",
+      productCount: 12,
+      inStockCount: 9,
+      page: 2,
+    });
+    expect(rendered(cat)).toBe("Senzori za VW, Audi, Škoda, SEAT — strana 2");
+    const seeded = pageTitle(
+      "Vešanje i upravljanje za VW, Audi, Škoda, SEAT i Cupra — strana 2",
+      SUFFIX,
+      " — strana 2",
+    );
+    expect(seeded).toBe("Vešanje i upravljanje za VW, Audi, Škoda, SEAT — strana 2");
+    const landing = landingMeta({
+      categoryName: "Senzori (lambda, parking, temperatura)",
+      brandName: "Škoda",
+      modelName: "Kodiaq",
+    });
+    expect(rendered(landing)).toBe("Senzori (lambda, parking, temperatura) za Škodu Kodiaq");
+    const longer = landingMeta({
+      categoryName: "Senzori (lambda, parking, temperatura) i prekidači",
+      brandName: "Škoda",
+      modelName: "Octavia",
+    });
+    expect(rendered(longer)).toBe("Senzori i prekidači za Škodu Octaviju");
+    for (const t of [cat, landing, longer]) {
+      expect(rendered(t).length).toBeLessThanOrEqual(TITLE_MAX);
+      expect(rendered(t)).not.toContain("…");
+    }
+  });
+
+  test("shortenWords never leaves a dangling conjunction, bracket or sign", () => {
+    expect(shortenWords("Vešanje i upravljanje za VW, Audi, Škoda, SEAT i Cupra", 48)).toBe(
+      "Vešanje i upravljanje za VW, Audi, Škoda, SEAT",
+    );
+    expect(shortenWords("Kočioni disk prednji 312 × 25 mm", 26)).toBe("Kočioni disk prednji 312");
+    expect(shortenWords("Kratko", 20)).toBe("Kratko");
+  });
+
+  test("COPY-05: vehicle names decline after „za“", () => {
+    expect(accusativeSr("Škoda")).toBe("Škodu");
+    expect(accusativeSr("Cupra Formentor")).toBe("Cupru Formentor");
+    expect(accusativeSr("Škoda Octavia III (5E)")).toBe("Škodu Octaviju III (5E)");
+    expect(accusativeSr("SEAT Ibiza")).toBe("SEAT Ibizu");
+    expect(accusativeSr("VW Golf VII")).toBe("VW Golf VII");
+    expect(accusativeSr("Audi A3 8P")).toBe("Audi A3 8P");
+    expect(accusativeSr("Volkswagen")).toBe("Volkswagen");
+    expect(
+      generationMeta({
+        brandName: "Škoda",
+        generationName: "Octavia III",
+        years: "2013–2020",
+        productCount: 3,
+        categories: [],
+        engines: [],
+      }).title,
+    ).toBe("Delovi za Škodu Octaviju III (2013–2020)");
+  });
+
+  test("lists: „i“ joins a whole list, „i još N“ only when two or more are left out", () => {
+    expect(listMoreSr(["A", "B", "C"], 4)).toBe("A, B i C");
+    expect(listMoreSr(["A", "B", "C", "D", "E"], 4)).toBe("A, B, C, D i E");
+    expect(listMoreSr(["A", "B", "C", "D", "E", "F"], 4)).toBe("A, B, C, D i još 2");
+    expect(listMoreSr(["A", "B"], 2, { hidden: 1 })).toBe("A, B i još 1");
+  });
+
+  test("SEO-04: system hub intro and description come from the counts", () => {
+    const cats = [
+      { name: "Kočioni diskovi", count: 16 },
+      { name: "Kočione pločice", count: 12 },
+      { name: "ABS senzori", count: 0 },
+    ];
+    expect(systemIntro({ name: "Kočnice", categories: cats })).toContain(
+      "U grupi „Kočnice“ je 28 artikala za VAG vozila u 2 kategorije: Kočioni diskovi (16) i Kočione pločice (12).",
+    );
+    expect(systemMeta({ name: "Kočnice", categories: cats }).description).toContain(
+      "Kočnice: 28 artikala za VAG vozila u 2 kategorije.",
     );
   });
 

@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import { buildMetadata } from "@/lib/seo/metadata";
+import { pluralSr } from "@/lib/format/plural";
 import { getSettingsPublic, getVehicleTree } from "@/lib/server/catalog-cache";
+import { modelHref } from "@/lib/vehicle/hub";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { RevealText } from "@/components/text-reveal/RevealText";
@@ -22,9 +24,27 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const crumbs = [{ label: "Početna", href: ROUTES.home }, { label: "Vozila" }];
 
+/** „6 modela · 14 generacija · od 1996. godine“ under a make. */
+function brandFacts(models: { generations: { yearFrom: number }[] }[]): string {
+  const generations = models.flatMap((m) => m.generations);
+  const from = generations.length ? Math.min(...generations.map((g) => g.yearFrom)) : null;
+  return [
+    `${models.length} ${pluralSr(models.length, ["model", "modela", "modela"])}`,
+    `${generations.length} ${pluralSr(generations.length, ["generacija", "generacije", "generacija"])}`,
+    from ? `od ${from}. godine` : "",
+  ]
+    .filter(Boolean)
+    .join(" · ");
+}
+
 /** Vehicle hub: every make with its models (ROUTES §B1 `/vozila`). */
 export default async function VehiclesPage() {
   const tree = await getVehicleTree();
+  const modelCount = tree.reduce((n, b) => n + b.models.length, 0);
+  const generations = tree.reduce(
+    (n, b) => n + b.models.reduce((k, m) => k + m.generations.length, 0),
+    0,
+  );
   return (
     <div className="px-page pb-(--space-section) pt-6 lg:pt-8">
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
@@ -34,7 +54,7 @@ export default async function VehiclesPage() {
           Delovi po vozilu
         </RevealText>
         <RevealText as="p" className="max-w-[60ch] type-lead text-ink-2 lg:col-span-5 lg:self-end">
-          Izaberite marku i model, pa generaciju. Na stranici generacije su svi delovi koji odgovaraju, po kategorijama.
+          {`Izaberite marku i model, pa generaciju. Na stranici generacije su svi delovi koji odgovaraju, po kategorijama. U katalogu je ${tree.length} ${pluralSr(tree.length, ["marka", "marke", "maraka"])}, ${modelCount} ${pluralSr(modelCount, ["model", "modela", "modela"])} i ${generations} ${pluralSr(generations, ["generacija", "generacije", "generacija"])} grupe Volkswagen.`}
         </RevealText>
       </div>
       <div className="mt-12 grid gap-x-(--gutter) gap-y-12 md:grid-cols-2 xl:grid-cols-3">
@@ -45,17 +65,20 @@ export default async function VehiclesPage() {
                 {brand.name}
               </RouteLink>
             </h2>
+            <p className="mt-2 type-caption text-ink-3">
+              {brandFacts(models)}
+            </p>
             <ul className="mt-3 flex flex-col">
-              {models.map(({ model, generations }) => (
-                <li key={model.slug} className="border-b border-line-faint">
+              {models.map((m) => (
+                <li key={m.model.slug} className="border-b border-line-faint">
                   <RouteLink
-                    href={ROUTES.vehicleModel(brand.slug, model.slug)}
+                    href={modelHref(brand.slug, m)}
                     className="flex min-h-11 items-center justify-between gap-3 py-1.5 text-ink-1 transition-control hover:text-accent"
                   >
-                    <span className="type-body">{model.name}</span>
+                    <span className="type-body">{m.model.name}</span>
                     <span className="type-caption font-normal text-ink-3">
-                      {generations.length > 0
-                        ? `${generations[0].yearFrom}–${generations[generations.length - 1].yearTo ?? ""}`
+                      {m.generations.length > 0
+                        ? `${m.generations[0].yearFrom}–${m.generations[m.generations.length - 1].yearTo ?? ""}`
                         : ""}
                     </span>
                   </RouteLink>

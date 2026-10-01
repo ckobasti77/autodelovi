@@ -1,0 +1,25 @@
+
+Running 20 tests using 1 worker
+
+[1/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:51:7 › 3D hero › poster first, live 3D after intent, crossfade, no console errors
+[2/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:85:7 › 3D hero › the parts list selects a category and opens the panel with products
+[3/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:111:7 › 3D hero › the test hook explodes the car and selects a part
+[4/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:136:7 › 3D hero › a deep link opens the right panel
+[5/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:150:7 › 3D hero › an unknown deep link is ignored
+[6/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:157:7 › 3D hero › the panel is accessible (axe) and every hero control shows focus
+[7/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:202:7 › 3D hero — fallbacks › reduced motion: no scroll track, „Rasklopi“ cuts to the exploded state
+[8/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:231:7 › 3D hero — fallbacks › low tier: posters only, the exploded poster follows the explode
+[9/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:249:7 › 3D hero — fallbacks › a software WebGL renderer gets the posters only
+[10/20] [desktop-1440] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:263:7 › 3D hero — fallbacks › WebGL context loss hands the stage back to the posters
+[11/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:51:7 › 3D hero › poster first, live 3D after intent, crossfade, no console errors
+[12/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:85:7 › 3D hero › the parts list selects a category and opens the panel with products
+[13/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:111:7 › 3D hero › the test hook explodes the car and selects a part
+[14/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:136:7 › 3D hero › a deep link opens the right panel
+[15/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:150:7 › 3D hero › an unknown deep link is ignored
+[16/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:157:7 › 3D hero › the panel is accessible (axe) and every hero control shows focus
+[17/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:202:7 › 3D hero — fallbacks › reduced motion: no scroll track, „Rasklopi“ cuts to the exploded state
+[18/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:231:7 › 3D hero — fallbacks › low tier: posters only, the exploded poster follows the explode
+[19/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:249:7 › 3D hero — fallbacks › a software WebGL renderer gets the posters only
+[20/20] [mobile-390] › scripts\qa\fix\hero-3d-assets-verify2-e2e\hero-3d.spec.ts:263:7 › 3D hero — fallbacks › WebGL context loss hands the stage back to the posters
+  20 passed (2.7m)
+exit 0

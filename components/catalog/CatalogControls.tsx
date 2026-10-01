@@ -330,14 +330,21 @@ function FilterGroups({
   );
 }
 
-/** Desktop rail (≥ 1024 px). */
+/**
+ * Desktop rail (≥ 1024 px), sticky under the header (§9.6, VIS-08). Taller than the viewport
+ * with every group open, so it scrolls on its own (contained, no scroll chaining to the page);
+ * the 4 px inline padding keeps the focus rings of full-width rows inside the scrollport.
+ */
 export function FilterRail(props: {
   filters: CatalogFilters;
   facets: CatalogFacets;
   vehicleLabel: string | null;
 }) {
   return (
-    <aside aria-label="Filteri" className="hidden lg:block">
+    <aside
+      aria-label="Filteri"
+      className="hidden lg:sticky lg:top-[calc(var(--header-h)+1.5rem)] lg:-mx-1 lg:block lg:max-h-[calc(100dvh-var(--header-h)-3rem)] lg:self-start lg:overflow-y-auto lg:overscroll-contain lg:px-1 lg:py-1 lg:[scrollbar-width:thin]"
+    >
       <FilterGroups {...props} />
     </aside>
   );
@@ -400,13 +407,20 @@ export function CatalogToolbar({
   };
 
   return (
-    <div className="flex flex-col gap-3" data-reveal="off">
-      <div className="flex flex-wrap items-center gap-3">
-        <p className="mr-auto type-body-s text-ink-2" role="status" aria-live="polite">
-          <span className="font-semibold tabular-nums text-ink-1">{formatNumber(total)}</span>{" "}
-          {pluralSr(total, ["artikal", "artikla", "artikala"])}
-          {pending ? <span className="sr-only"> — učitava se</span> : null}
-        </p>
+    // Phones and tablets: the [Filteri (n)] [Sortiraj] row sticks under the header on one line
+    // (§10.2, FLOW-11, D258); the count sits above it. The wrapper is `display: contents` there,
+    // so the row's sticky range is the whole results column, not this short wrapper. Desktop:
+    // count left, sort right, chips below (grid).
+    <div
+      className="contents lg:grid lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-3"
+      data-reveal="off"
+    >
+      <p className="type-body-s text-ink-2" role="status" aria-live="polite">
+        <span className="font-semibold tabular-nums text-ink-1">{formatNumber(total)}</span>{" "}
+        {pluralSr(total, ["artikal", "artikla", "artikala"])}
+        {pending ? <span className="sr-only"> — učitava se</span> : null}
+      </p>
+      <div className="sticky top-header z-sticky -mx-page -mt-2 flex items-center gap-3 border-b border-line bg-bg/95 px-page py-2 backdrop-blur-header reduced-transparency:bg-bg reduced-transparency:backdrop-blur-none sm:justify-between lg:static lg:mx-0 lg:mt-0 lg:border-0 lg:bg-transparent lg:p-0 lg:backdrop-blur-none">
         <Sheet
           open={sheet}
           onOpenChange={setSheet}
@@ -418,7 +432,7 @@ export function CatalogToolbar({
               variant="secondary"
               size="md"
               icon={<SlidersHorizontalIcon size={20} />}
-              className="lg:hidden"
+              className="shrink-0 lg:hidden"
             >
               Filteri{dims > 0 ? ` (${dims})` : ""}
             </Button>
@@ -436,12 +450,12 @@ export function CatalogToolbar({
         >
           <FilterGroups filters={filters} facets={facets} vehicleLabel={vehicleLabel} />
         </Sheet>
-        <label className="flex items-center gap-2 type-caption text-ink-2">
+        <label className="flex min-w-0 flex-1 items-center gap-2 type-caption text-ink-2 sm:flex-none">
           <span className="hidden sm:inline">Sortiraj</span>
           <Select
             aria-label="Sortiraj"
             size="md"
-            className="w-auto min-w-[11.5rem]"
+            className="min-w-0 sm:w-auto sm:min-w-[11.5rem]"
             value={filters.sort}
             onChange={(e) => navigate({ ...filters, page: 1, sort: e.target.value as SortKey })}
             options={(Object.keys(SORT_LABEL) as SortKey[]).map((k) => ({
@@ -452,7 +466,7 @@ export function CatalogToolbar({
         </label>
       </div>
       {chips.length > 0 ? (
-        <ul className="flex flex-wrap items-center gap-2" aria-label="Primenjeni filteri">
+        <ul className="-mt-2 flex flex-wrap items-center gap-2 lg:col-span-2 lg:mt-0" aria-label="Primenjeni filteri">
           {chips.map((chip) => (
             <li key={chip.key}>
               <button

@@ -23,7 +23,7 @@ export type PageMetaInput = {
   titleIsFinal?: boolean;
   /**
    * The end of `title` that must survive shortening — the vehicle („ za Škodu Octaviju“) or
-   * the page number („ — strana 2“). Only the part before it is shortened (D250).
+   * the page number („ — strana 2“). Only the part before it is shortened (D253).
    */
   titleKeep?: string;
   /**
@@ -84,7 +84,7 @@ export function shortenWords(text: string, max: number): string {
  * characters drops the suffix instead of losing its meaning.
  *
  * With `keep` (the end of the title that carries the vehicle or the page number) the order
- * is the one of D193/D250: drop the suffix, then shorten only the part before `keep` — so
+ * is the one of D253: drop the suffix, then shorten only the part before `keep` — so
  * „— strana 2“ and the model name are never cut away.
  */
 export function pageTitle(

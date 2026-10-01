@@ -8,7 +8,13 @@ import {
   type SitemapUrl,
 } from "@/lib/seo/sitemap";
 import { normalizeCuratedQuery } from "@/lib/seo/templates";
-import { getSitemapData, getSitemapProductChunk } from "@/lib/server/catalog-cache";
+import {
+  getSitemapData,
+  getSitemapProductChunk,
+  getVehicleTree,
+} from "@/lib/server/catalog-cache";
+
+const NOT_FOUND_HEADERS = { "Content-Type": "text/plain; charset=utf-8" };
 
 /**
  * Child sitemaps (SEO-ADS §J3): `staticne`, `kategorije`, `vozila`, `landing`,
@@ -17,9 +23,9 @@ import { getSitemapData, getSitemapProductChunk } from "@/lib/server/catalog-cac
 export async function GET(_request: Request, { params }: RouteContext<"/sitemaps/[file]">) {
   const { file } = await params;
   const name = file.replace(/\.xml$/, "");
-  if (!file.endsWith(".xml")) return new Response("Not found", { status: 404 });
+  if (!file.endsWith(".xml")) return new Response("Nije pronađeno", { status: 404, headers: NOT_FOUND_HEADERS });
   const urls = await urlsFor(name);
-  if (!urls) return new Response("Not found", { status: 404 });
+  if (!urls) return new Response("Nije pronađeno", { status: 404, headers: NOT_FOUND_HEADERS });
   return new Response(urlsetXml(urls), { headers: XML_HEADERS });
 }
 
@@ -48,14 +54,26 @@ async function urlsFor(name: string): Promise<SitemapUrl[] | null> {
         loc: ROUTES.category(c.slug),
         lastModified: c.updatedAt,
       }));
-    case "vozila":
+    case "vozila": {
+      // A model with one generation redirects to it (SEO-04): only multi-generation hubs.
+      const tree = await getVehicleTree();
+      const hubs = new Set(
+        tree.flatMap((b) =>
+          b.models
+            .filter((m) => m.generations.length > 1)
+            .map((m) => `${b.brand.slug}/${m.model.slug}`),
+        ),
+      );
       return [
         ...data.brands.map((b) => ({ loc: ROUTES.vehicleBrand(b.slug) })),
-        ...data.models.map((m) => ({ loc: ROUTES.vehicleModel(m.brandSlug, m.slug) })),
+        ...data.models
+          .filter((m) => hubs.has(`${m.brandSlug}/${m.slug}`))
+          .map((m) => ({ loc: ROUTES.vehicleModel(m.brandSlug, m.slug) })),
         ...data.generations.map((g) => ({
           loc: ROUTES.vehicleGeneration(g.brandSlug, g.modelSlug, g.slug),
         })),
       ];
+    }
     case "landing":
       return data.landings.map((l) => ({
         loc: `${ROUTES.category(l.categorySlug)}/${l.brandSlug}${l.modelSlug ? `/${l.modelSlug}` : ""}`,

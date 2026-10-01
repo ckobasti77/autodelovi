@@ -1,0 +1,75 @@
+{
+ "base": "http://localhost:3001",
+ "rows": [
+  {
+   "path": "/delovi/kocnice",
+   "width": 390,
+   "words": 280,
+   "h1": "KOČNICE",
+   "reveal": {
+    "stuck": [],
+    "pending": 0,
+    "words": 0
+   },
+   "overflow": 0,
+   "axe": [],
+   "consoleErrors": []
+  },
+  {
+   "path": "/delovi/kocnice",
+   "width": 1440,
+   "words": 282,
+   "h1": "KOČNICE",
+   "reveal": {
+    "stuck": [],
+    "pending": 0,
+    "words": 0
+   },
+   "overflow": 0,
+   "axe": [],
+   "consoleErrors": []
+  },
+  {
+   "path": "/vozila/skoda/octavia",
+   "width": 390,
+   "words": 131,
+   "h1": "DELOVI ZA ŠKODU OCTAVIJU",
+   "reveal": {
+    "stuck": [],
+    "pending": 0,
+    "words": 0
+   },
+   "overflow": 0,
+   "axe": [],
+   "consoleErrors": []
+  },
+  {
+   "path": "/vozila/cupra",
+   "width": 1440,
+   "words": 66,
+   "h1": "DELOVI ZA CUPRU",
+   "reveal": {
+    "stuck": [],
+    "pending": 0,
+    "words": 0
+   },
+   "overflow": 0,
+   "axe": [],
+   "consoleErrors": []
+  },
+  {
+   "path": "/vozila",
+   "width": 1440,
+   "words": 76,
+   "h1": "DELOVI PO VOZILU",
+   "reveal": {
+    "stuck": [],
+    "pending": 0,
+    "words": 0
+   },
+   "overflow": 0,
+   "axe": [],
+   "consoleErrors": []
+  }
+ ]
+}

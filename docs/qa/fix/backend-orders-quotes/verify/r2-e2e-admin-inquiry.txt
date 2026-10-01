@@ -1,0 +1,25 @@
+
+      169 |   const composer = page.getByTestId("admin-quote-composer");
+      170 |   await composer.getByRole("button", { name: "Slobodna stavka" }).click();
+    > 171 |   await composer.getByLabel("Naziv", { exact: true }).fill("Set kvačila LuK 2.0 TDI");
+          |                                                       ^
+      172 |   await composer.getByLabel("Cena sa PDV").fill("24990");
+      173 |   await composer.getByLabel("Rok (dana)").fill("2");
+      174 |   await composer.getByLabel("Dostupnost").selectOption("on_order");
+        at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\tests\e2e\admin.spec.ts:171:55
+
+    Error Context: .qa-tmp\r2-be01-e2e\admin-inquiry-answer-with-a-quote-desktop-1440\error-context.md
+
+    Error Context: .qa-tmp\r2-be01-e2e\admin-inquiry-answer-with-a-quote-desktop-1440\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    .qa-tmp\r2-be01-e2e\admin-inquiry-answer-with-a-quote-desktop-1440\trace.zip
+    Usage:
+
+        npx playwright show-trace .qa-tmp\r2-be01-e2e\admin-inquiry-answer-with-a-quote-desktop-1440\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  1 failed
+    [desktop-1440] › tests\e2e\admin.spec.ts:163:5 › inquiry: answer with a quote ──────────────────

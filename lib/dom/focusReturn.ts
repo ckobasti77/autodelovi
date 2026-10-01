@@ -5,18 +5,106 @@ import { useCallback, useLayoutEffect, useRef } from "react";
 /** Skip-link target; every shell renders `<main id="sadrzaj" tabIndex={-1}>`. */
 const FALLBACK_ID = "sadrzaj";
 const OVERLAY_SELECTOR = '[role="dialog"], [role="alertdialog"]';
+const FOCUSABLE_SELECTOR = [
+  "a[href]",
+  "area[href]",
+  "button",
+  'input:not([type="hidden"])',
+  "select",
+  "textarea",
+  "summary",
+  "iframe",
+  '[contenteditable]:not([contenteditable="false"])',
+  "[tabindex]",
+].join(",");
+/** Recently used controls, kept as fallbacks for an opener that is gone when the panel closes. */
+const HISTORY_SIZE = 4;
+/** Upper bound for the document-order walks (a product page has a few thousand elements). */
+const WALK_LIMIT = 5000;
 
 /**
- * Last element focused outside any overlay. Covers panels that focus a control themselves
- * (an `autoFocus` attribute is applied before any effect runs).
+ * Focus can land on `el` and be seen: a focusable element, enabled, not inert, rendered with a
+ * non-empty box and not `visibility: hidden`. The non-empty box rejects containers that were
+ * emptied while the panel was open (the toast list after its toast closed).
  */
-let lastOutside: HTMLElement | null = null;
+export function isFocusTarget(el: Element): el is HTMLElement {
+  if (!(el instanceof HTMLElement) || !el.matches(FOCUSABLE_SELECTOR)) return false;
+  if (el.matches(":disabled") || el.closest("[inert]")) return false;
+  for (const rect of el.getClientRects()) {
+    if (rect.width > 0 && rect.height > 0) return getComputedStyle(el).visibility !== "hidden";
+  }
+  return false;
+}
+
+/** A focus target in the sequential focus order (reachable with Tab). */
+export function isTabbable(el: Element): el is HTMLElement {
+  return isFocusTarget(el) && el.tabIndex >= 0;
+}
+
+/** The tabbable control right before `el` in document order — the slot `el` occupies in the Tab sequence. */
+export function previousTabbable(el: HTMLElement): HTMLElement | null {
+  const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT);
+  walk.currentNode = el;
+  for (let i = 0; i < WALK_LIMIT; i++) {
+    const node = walk.previousNode();
+    if (!node) return null;
+    if (isTabbable(node as Element)) return node as HTMLElement;
+  }
+  return null;
+}
+
+/** The first tabbable control after `anchor` in document order, outside `exclude`. */
+export function nextTabbable(anchor: HTMLElement, exclude: Node | null): HTMLElement | null {
+  const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT);
+  walk.currentNode = anchor;
+  for (let i = 0; i < WALK_LIMIT; i++) {
+    const node = walk.nextNode();
+    if (!node) return null;
+    if (exclude?.contains(node)) continue;
+    if (isTabbable(node as Element)) return node as HTMLElement;
+  }
+  return null;
+}
+
+function inViewport(el: HTMLElement): boolean {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.bottom > 0 &&
+    rect.right > 0 &&
+    rect.top < window.innerHeight &&
+    rect.left < window.innerWidth
+  );
+}
+
+/**
+ * Last controls the user focused or pressed outside any overlay, newest first. Covers panels
+ * that focus a control themselves (an `autoFocus` attribute is applied before any effect runs),
+ * Safari (a clicked button is never focused) and openers that vanish while the panel is open
+ * (the toast action that opened the cart drawer). Programmatic focus targets (`tabIndex=-1`:
+ * the main landmark, the toast list) are not controls and are not recorded.
+ */
+let recent: HTMLElement[] = [];
+function remember(el: HTMLElement): void {
+  if (el.tabIndex < 0 || el.closest(OVERLAY_SELECTOR)) return;
+  recent = [el, ...recent.filter((other) => other !== el && other.isConnected)].slice(
+    0,
+    HISTORY_SIZE,
+  );
+}
 if (typeof document !== "undefined") {
   document.addEventListener(
     "focusin",
     (event) => {
-      const target = event.target;
-      if (target instanceof HTMLElement && !target.closest(OVERLAY_SELECTOR)) lastOutside = target;
+      if (event.target instanceof HTMLElement) remember(event.target);
+    },
+    true,
+  );
+  document.addEventListener(
+    "pointerdown",
+    (event) => {
+      const control =
+        event.target instanceof Element ? event.target.closest(FOCUSABLE_SELECTOR) : null;
+      if (control instanceof HTMLElement) remember(control);
     },
     true,
   );
@@ -36,33 +124,79 @@ function expandedOpener(): HTMLElement | null {
   return null;
 }
 
+type Candidate = {
+  el: HTMLElement;
+  /** Older history entry: used only while it is on screen, so a stale control never scrolls the page. */
+  onScreenOnly: boolean;
+};
+
+type Recorded = {
+  candidates: Candidate[];
+  /** The control that opened the panel and the tabbable control before it, for a re-rendered opener. */
+  opener: HTMLElement | null;
+  previous: HTMLElement | null;
+};
+
+const EMPTY: Recorded = { candidates: [], opener: null, previous: null };
+
+/**
+ * Focus without moving the page. A sticky header control sits inside `scroll-padding-top`, so a
+ * plain `focus()` scrolls the document by up to the padding on every close (Chromium, WebKit).
+ * The page cannot scroll behind a modal panel, so the opener is still where the user left it;
+ * only a target that is entirely off screen (non-modal panel, replacement control) is scrolled
+ * to, by the minimum amount.
+ */
+function restore(el: HTMLElement, panel: Node | null, onScreenOnly: boolean): boolean {
+  if (!el.isConnected || panel?.contains(el) || !isFocusTarget(el)) return false;
+  const visible = inViewport(el);
+  if (onScreenOnly && !visible) return false;
+  el.focus({ preventScroll: true });
+  if (document.activeElement !== el) return false;
+  if (!visible) el.scrollIntoView({ block: "nearest", inline: "nearest" });
+  return true;
+}
+
 /**
  * Focus return for overlays opened from global state (vehicle picker, cart drawer, header
  * search, parts list, command palette). Radix returns focus only to its own `Trigger`; without
- * one, focus falls to `<body>` on close (A11Y-02, D246).
+ * one, focus falls to `<body>` on close (A11Y-02, D246, D259).
  *
  * The opener is recorded in a layout effect when `open` turns true: that runs before any
  * passive effect, so a panel child that focuses its input in `useEffect` (SearchBox) has not
  * moved focus yet. Radix's own `onOpenAutoFocus` is not usable here — it is not dispatched at
  * all when focus is already inside the panel.
  *
- * Pass the returned `onCloseAutoFocus` to `Dialog.Content`. On close the first candidate that
- * is still in the document, outside the closing panel and focusable gets focus; otherwise the
- * main landmark. Nothing is restored when the user has already put focus elsewhere
- * (non-modal sheet, click outside): focus is only taken back from `<body>` or from the panel.
+ * Pass the returned `onCloseAutoFocus` to `Dialog.Content`. On close, in order:
+ * 1. the opener, if it is still in the document, outside the closing panel and focusable;
+ * 2. if the opener re-rendered as a new element (the header chip and the fitment badge after a
+ *    vehicle choice), the control now in its slot of the Tab sequence — the first tabbable
+ *    control after the one that preceded the opener;
+ * 3. a recently used control that is still on screen (the add-to-cart button when the drawer was
+ *    opened from a toast that has since closed);
+ * 4. the main landmark.
+ * Nothing is restored when the user has already put focus elsewhere (non-modal sheet, click
+ * outside): focus is only taken back from `<body>` or from the panel. The page never scrolls to
+ * return focus to a visible control.
  */
 export function useFocusReturn(enabled: boolean, open: boolean) {
-  const candidates = useRef<HTMLElement[]>([]);
+  const recorded = useRef<Recorded>(EMPTY);
 
   useLayoutEffect(() => {
     if (!enabled || !open) return;
     const active = document.activeElement;
-    const list = [
-      active instanceof HTMLElement && active !== document.body ? active : null,
-      lastOutside,
-      expandedOpener(),
-    ];
-    candidates.current = list.filter((el): el is HTMLElement => el !== null);
+    const list: Candidate[] = [];
+    const add = (el: HTMLElement | null, onScreenOnly: boolean) => {
+      if (el && !list.some((c) => c.el === el)) list.push({ el, onScreenOnly });
+    };
+    add(active instanceof HTMLElement && active !== document.body ? active : null, false);
+    recent.forEach((el, index) => add(el, index > 0));
+    add(expandedOpener(), false);
+    const opener = list.find((c) => c.el.isConnected && c.el.tabIndex >= 0)?.el ?? null;
+    recorded.current = {
+      candidates: list,
+      opener,
+      previous: opener ? previousTabbable(opener) : null,
+    };
   }, [enabled, open]);
 
   const onCloseAutoFocus = useCallback(
@@ -70,15 +204,16 @@ export function useFocusReturn(enabled: boolean, open: boolean) {
       if (!enabled || event.defaultPrevented) return;
       event.preventDefault();
       const panel = event.currentTarget instanceof Node ? event.currentTarget : null;
-      const list = candidates.current;
-      candidates.current = [];
+      const { candidates, opener, previous } = recorded.current;
+      recorded.current = EMPTY;
       const active = document.activeElement;
       if (active && active !== document.body && !panel?.contains(active)) return;
-      for (const el of list) {
-        if (!el.isConnected || panel?.contains(el) || el.closest("[inert]")) continue;
-        el.focus();
-        // A control hidden at this breakpoint (display: none) silently refuses focus.
-        if (document.activeElement === el) return;
+      for (const { el, onScreenOnly } of candidates) {
+        if (restore(el, panel, onScreenOnly)) return;
+        if (el === opener && !el.isConnected && previous?.isConnected) {
+          const replacement = nextTabbable(previous, panel);
+          if (replacement && restore(replacement, panel, false)) return;
+        }
       }
       document.getElementById(FALLBACK_ID)?.focus({ preventScroll: true });
     },

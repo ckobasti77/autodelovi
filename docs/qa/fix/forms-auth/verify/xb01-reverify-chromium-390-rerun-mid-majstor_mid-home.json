@@ -1,0 +1,126 @@
+{
+  "chromium-390-mid-majstor": {
+    "runs": [
+      {
+        "dom": "101234569",
+        "state": "101234569",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": false,
+        "flags": "111111",
+        "pibMsg": "PIB je ispravan.",
+        "watcherOk": true
+      },
+      {
+        "dom": "101234569",
+        "state": "101234569",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": false,
+        "flags": "111111",
+        "pibMsg": "PIB je ispravan.",
+        "watcherOk": true
+      },
+      {
+        "dom": "101234569",
+        "state": "101234569",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": false,
+        "flags": "111111",
+        "pibMsg": "PIB je ispravan.",
+        "watcherOk": true
+      },
+      {
+        "dom": "101234569",
+        "state": "101234569",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": false,
+        "flags": "111111",
+        "pibMsg": "PIB je ispravan.",
+        "watcherOk": true
+      },
+      {
+        "dom": "101234569",
+        "state": "101234569",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": false,
+        "flags": "111111",
+        "pibMsg": "PIB je ispravan.",
+        "watcherOk": true
+      }
+    ],
+    "summary": {
+      "runs": 5,
+      "domKept": 5,
+      "stateKept": 5,
+      "hydrationDuringTyping": 0
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "chromium-390-mid-home": {
+    "runs": [
+      {
+        "dom": "5Q0615505R",
+        "state": "5Q0615505R",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "011111"
+      },
+      {
+        "dom": "5Q0615505R",
+        "state": "5Q0615505R",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "011111"
+      },
+      {
+        "dom": "5Q0615505R",
+        "state": "5Q0615505R",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": false,
+        "flags": "111111"
+      },
+      {
+        "dom": "5Q0615505R",
+        "state": "5Q0615505R",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "001111"
+      },
+      {
+        "dom": "5Q0615505R",
+        "state": "5Q0615505R",
+        "domKept": true,
+        "stateKept": true,
+        "preKept": true,
+        "hydrationDuringTyping": true,
+        "flags": "011111"
+      }
+    ],
+    "summary": {
+      "runs": 5,
+      "domKept": 5,
+      "stateKept": 5,
+      "hydrationDuringTyping": 4
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  }
+}

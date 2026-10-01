@@ -1,0 +1,14 @@
+[
+ {
+  "engine": "webkit",
+  "clickFocusesButton": false,
+  "hasField": false,
+  "fieldDesc": "BODY",
+  "added": false,
+  "activeBeforeOpen": "BODY",
+  "drawerOpen": false,
+  "yBefore": 1400,
+  "yAfter": 1330,
+  "after": "main[] \"[{\"@context\":\"https://schema.org\",\"@type\""
+ }
+]

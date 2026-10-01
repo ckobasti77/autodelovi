@@ -6,8 +6,9 @@ import { TEST_IDS } from "@/constants/testIds";
 
 /**
  * The header search dialog body (top-anchored Dialog + OEM SearchBox). Loaded on intent by
- * `HeaderSearch` (PERF-01/PERF-11): radix Dialog, the combobox and its Convex hooks stay out
- * of the first load of every page.
+ * `HeaderSearch` (PERF-01/PERF-11): the header adds neither the radix Dialog nor the combobox
+ * to the first load, and nothing of them hydrates until the dialog opens. Pages that render a
+ * SearchBox themselves (catalog, search, home) still ship its module through their own import.
  */
 export function HeaderSearchPanel({
   open,

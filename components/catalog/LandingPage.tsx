@@ -164,13 +164,7 @@ export async function LandingPage({
       intro={category.intro}
       listName={title}
       jsonLd={faq.length ? [faqJsonLd(faq)] : []}
-      lead={
-        copy ? (
-          <RevealText as="p" className="max-w-[72ch] type-lead text-ink-2">
-            {landingIntro(copy)}
-          </RevealText>
-        ) : undefined
-      }
+      lead={copy ? <LandingLead text={landingIntro(copy)} /> : undefined}
     >
       {stats && stats.generations.length > 0 ? (
         <section aria-labelledby="generations-title" className="mt-16 border-t border-line pt-8">
@@ -266,5 +260,38 @@ export async function LandingPage({
         </Button>
       </div>
     </CategoryListingView>
+  );
+}
+
+/** First sentence and the rest; a sentence ends at . ! ? followed by a space and a capital. */
+function splitFirstSentence(text: string): [string, string] {
+  const match = /[.!?](?=\s+[\p{Lu}„])/u.exec(text);
+  if (!match) return [text, ""];
+  const end = match.index + 1;
+  return [text.slice(0, end), text.slice(end).trim()];
+}
+
+/**
+ * Landing lead (VIS-21, D259): the first sentence (count, stock, price from) stays under the
+ * H1; the generated facts (generations, makers) sit behind „Više o ponudi“, as the category
+ * intro does behind „Više o kategoriji“, so the first product reaches the first phone viewport.
+ */
+function LandingLead({ text }: { text: string }) {
+  const [first, rest] = splitFirstSentence(text);
+  return (
+    <>
+      <RevealText as="p" className="max-w-[72ch] type-lead text-ink-2">
+        {first}
+      </RevealText>
+      {rest ? (
+        <details className="group max-w-[72ch]">
+          <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1 type-body-s font-semibold text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent [&::-webkit-details-marker]:hidden">
+            <span className="group-open:hidden">Više o ponudi</span>
+            <span className="hidden group-open:inline">Manje</span>
+          </summary>
+          <p className="mt-2 type-body text-ink-2">{rest}</p>
+        </details>
+      ) : null}
+    </>
   );
 }

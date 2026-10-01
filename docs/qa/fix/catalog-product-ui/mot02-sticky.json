@@ -1,0 +1,113 @@
+{
+  "360": {
+    "initial": {
+      "top": 850.5,
+      "bottom": 915.5,
+      "vh": 844,
+      "visibility": "hidden",
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inert": true,
+      "ariaHidden": "true",
+      "scrollPaddingBottom": null
+    },
+    "past": {
+      "top": 779,
+      "bottom": 844,
+      "vh": 844,
+      "visibility": "visible",
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "inert": false,
+      "ariaHidden": "false",
+      "scrollPaddingBottom": "81px"
+    },
+    "back": {
+      "top": 850.5,
+      "bottom": 915.5,
+      "vh": 844,
+      "visibility": "hidden",
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inert": true,
+      "ariaHidden": "true",
+      "scrollPaddingBottom": null
+    },
+    "pass": true,
+    "errors": []
+  },
+  "390": {
+    "initial": {
+      "top": 850.5,
+      "bottom": 915.5,
+      "vh": 844,
+      "visibility": "hidden",
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inert": true,
+      "ariaHidden": "true",
+      "scrollPaddingBottom": null
+    },
+    "past": {
+      "top": 779,
+      "bottom": 844,
+      "vh": 844,
+      "visibility": "visible",
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "inert": false,
+      "ariaHidden": "false",
+      "scrollPaddingBottom": "81px"
+    },
+    "back": {
+      "top": 850.5,
+      "bottom": 915.5,
+      "vh": 844,
+      "visibility": "hidden",
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inert": true,
+      "ariaHidden": "true",
+      "scrollPaddingBottom": null
+    },
+    "pass": true,
+    "errors": []
+  },
+  "390-reduced": {
+    "initial": {
+      "top": 850.5,
+      "bottom": 915.5,
+      "vh": 844,
+      "visibility": "hidden",
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inert": true,
+      "ariaHidden": "true",
+      "scrollPaddingBottom": null
+    },
+    "past": {
+      "top": 779,
+      "bottom": 844,
+      "vh": 844,
+      "visibility": "visible",
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)",
+      "inert": false,
+      "ariaHidden": "false",
+      "scrollPaddingBottom": "81px"
+    },
+    "back": {
+      "top": 850.5,
+      "bottom": 915.5,
+      "vh": 844,
+      "visibility": "hidden",
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 71.5)",
+      "inert": true,
+      "ariaHidden": "true",
+      "scrollPaddingBottom": null
+    },
+    "pass": true,
+    "errors": []
+  }
+}

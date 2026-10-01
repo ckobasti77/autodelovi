@@ -1,0 +1,100 @@
+{
+  "/delovi/kocioni-diskovi": {
+    "searchBoxModuleRows": [
+      "b8"
+    ],
+    "uses": [
+      {
+        "row": "a6",
+        "mentionsNotFound": true,
+        "context": "\"type-h1 text-ink-1\",\"children\":\"Stranica nije pronađena\"},\"$a9\",\"$b5\",1],[\"$\",\"p\",null,{\"className\":\"type-body text-ink-2\",\"children\":\"Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas.\"},\"$a9\",\"$b6\",1],[\"$\","
+      },
+      {
+        "row": "5d9",
+        "mentionsNotFound": true,
+        "context": "e-h1 text-ink-1\",\"children\":\"Stranica nije pronađena\"},\"$5da\",\"$5e5\",1],[\"$\",\"p\",null,{\"className\":\"type-body text-ink-2\",\"children\":\"Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas.\"},\"$5da\",\"$5e6\",1],[\"$\","
+      }
+    ],
+    "parents": [
+      "fsTC388ygGA8GW0Ag3ZFqA==\"},null,\"$a3\",0]],\"template\":[\"$\",\"$L2c\",null,{},null,\"$a4\",1],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[\"$\",\"$La\",\"c-not-found\",{\"type\":\"not-found\",\"pagePath\":\"(shop)/not-found.tsx\",\"children\":[\"$a6\",[]]}",
+      "\",1]},\"$653\",\"$6d1\",1]]},\"$653\",\"$6cd\",1]},\"$653\",\"$6cc\",1]]},\"$653\",\"$655\",1] 5a4:[\"$\",\"div\",null,{\"className\":\"flex min-h-dvh flex-col\",\"children\":[\"$5b0\",[\"$\",\"main\",null,{\"id\":\"sadrzaj\",\"tabIndex\":-1,\"className\":\"flex-1 outline-none\",\"children\":[\"$5d9\",[\"$"
+    ],
+    "notFoundBoundaryInPayload": true,
+    "searchBoxInPayload": true
+  },
+  "/deo/kocioni-disk-prednji-276-24-mm-demo-0004": {
+    "searchBoxModuleRows": [
+      "b7"
+    ],
+    "uses": [
+      {
+        "row": "a5",
+        "mentionsNotFound": true,
+        "context": "\"type-h1 text-ink-1\",\"children\":\"Stranica nije pronađena\"},\"$a8\",\"$b4\",1],[\"$\",\"p\",null,{\"className\":\"type-body text-ink-2\",\"children\":\"Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas.\"},\"$a8\",\"$b5\",1],[\"$\","
+      },
+      {
+        "row": "600",
+        "mentionsNotFound": true,
+        "context": "e-h1 text-ink-1\",\"children\":\"Stranica nije pronađena\"},\"$601\",\"$60c\",1],[\"$\",\"p\",null,{\"className\":\"type-body text-ink-2\",\"children\":\"Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas.\"},\"$601\",\"$60d\",1],[\"$\","
+      }
+    ],
+    "parents": [
+      "sgUIAQ+ZfhoNGPiudWk+Ug==\"},null,\"$a2\",0]],\"template\":[\"$\",\"$L2c\",null,{},null,\"$a3\",1],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[\"$\",\"$La\",\"c-not-found\",{\"type\":\"not-found\",\"pagePath\":\"(shop)/not-found.tsx\",\"children\":[\"$a5\",[]]}",
+      "\",1]},\"$67a\",\"$6f8\",1]]},\"$67a\",\"$6f4\",1]},\"$67a\",\"$6f3\",1]]},\"$67a\",\"$67c\",1] 5cb:[\"$\",\"div\",null,{\"className\":\"flex min-h-dvh flex-col\",\"children\":[\"$5d7\",[\"$\",\"main\",null,{\"id\":\"sadrzaj\",\"tabIndex\":-1,\"className\":\"flex-1 outline-none\",\"children\":[\"$600\",[\"$"
+    ],
+    "notFoundBoundaryInPayload": true,
+    "searchBoxInPayload": true
+  },
+  "/upit": {
+    "searchBoxModuleRows": [
+      "b4"
+    ],
+    "uses": [
+      {
+        "row": "a2",
+        "mentionsNotFound": true,
+        "context": "\"type-h1 text-ink-1\",\"children\":\"Stranica nije pronađena\"},\"$a5\",\"$b1\",1],[\"$\",\"p\",null,{\"className\":\"type-body text-ink-2\",\"children\":\"Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas.\"},\"$a5\",\"$b2\",1],[\"$\","
+      },
+      {
+        "row": "337",
+        "mentionsNotFound": true,
+        "context": "e-h1 text-ink-1\",\"children\":\"Stranica nije pronađena\"},\"$338\",\"$343\",1],[\"$\",\"p\",null,{\"className\":\"type-body text-ink-2\",\"children\":\"Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas.\"},\"$338\",\"$344\",1],[\"$\","
+      }
+    ],
+    "parents": [
+      "Tet3Zp4WnbDst8Wp5YdIcw==\"},null,\"$9f\",0]],\"template\":[\"$\",\"$L2c\",null,{},null,\"$a0\",1],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[\"$\",\"$La\",\"c-not-found\",{\"type\":\"not-found\",\"pagePath\":\"(shop)/not-found.tsx\",\"children\":[\"$a2\",[]]}",
+      "\",1]},\"$3b1\",\"$42f\",1]]},\"$3b1\",\"$42b\",1]},\"$3b1\",\"$42a\",1]]},\"$3b1\",\"$3b3\",1] 302:[\"$\",\"div\",null,{\"className\":\"flex min-h-dvh flex-col\",\"children\":[\"$30e\",[\"$\",\"main\",null,{\"id\":\"sadrzaj\",\"tabIndex\":-1,\"className\":\"flex-1 outline-none\",\"children\":[\"$337\",[\"$"
+    ],
+    "notFoundBoundaryInPayload": true,
+    "searchBoxInPayload": true
+  },
+  "/": {
+    "searchBoxModuleRows": [
+      "b1"
+    ],
+    "uses": [
+      {
+        "row": "9f",
+        "mentionsNotFound": true,
+        "context": "\"type-h1 text-ink-1\",\"children\":\"Stranica nije pronađena\"},\"$a2\",\"$ae\",1],[\"$\",\"p\",null,{\"className\":\"type-body text-ink-2\",\"children\":\"Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas.\"},\"$a2\",\"$af\",1],[\"$\","
+      },
+      {
+        "row": "1ed",
+        "mentionsNotFound": false,
+        "context": "m)] lg:hero-frame\",\"children\":[\"$\",\"div\",null,{\"className\":\"lg:grid lg:grid-cols-12 lg:gap-x-(--gutter)\",\"children\":[\"$\",\"div\",null,{\"id\":\"hero-copy\",\"className\":\"flex max-w-[34rem] flex-col gap-5 lg:pointer-events-auto lg:col-span-5 lg:max-w-[30rem] xl:max-w-[32rem]\",\"children\":[\"$1f6\",\"$205\",[\"$\","
+      },
+      {
+        "row": "764",
+        "mentionsNotFound": true,
+        "context": "e-h1 text-ink-1\",\"children\":\"Stranica nije pronađena\"},\"$765\",\"$770\",1],[\"$\",\"p\",null,{\"className\":\"type-body text-ink-2\",\"children\":\"Adresa je možda promenjena ili deo više nije u ponudi. Potražite ga po broju ili nazivu — ili nam pošaljite upit, pa ćemo ga naći umesto vas.\"},\"$765\",\"$771\",1],[\"$\","
+      }
+    ],
+    "parents": [
+      "UrDGUvdJpWSAj3VjopUJHQ==\"},null,\"$9b\",0]],\"template\":[\"$\",\"$L9d\",null,{},null,\"$9c\",1],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[\"$\",\"$La\",\"c-not-found\",{\"type\":\"not-found\",\"pagePath\":\"(shop)/not-found.tsx\",\"children\":[\"$9f\",[]]}",
+      "s text-ink-2\",\"children\":[[\"$\",\"span\",null,{\"className\":\"inline-flex items-center gap-2\",\"children\":[\"$663\",\"Pon–pet 8–17, sub 8–14\"]},\"$658\",\"$662\",1],null,\"$668\"]},\"$658\",\"$661\",1]]},\"$658\",\"$660\",1]]},\"$658\",\"$65c\",1]},\"$658\",\"$65a\",1] 2a:[\"$1e7\",\"$1ed\",\"$2",
+      "\",1]},\"$7de\",\"$85c\",1]]},\"$7de\",\"$858\",1]},\"$7de\",\"$857\",1]]},\"$7de\",\"$7e0\",1] 72f:[\"$\",\"div\",null,{\"className\":\"flex min-h-dvh flex-col\",\"children\":[\"$73b\",[\"$\",\"main\",null,{\"id\":\"sadrzaj\",\"tabIndex\":-1,\"className\":\"flex-1 outline-none\",\"children\":[\"$764\",[\"$"
+    ],
+    "notFoundBoundaryInPayload": true,
+    "searchBoxInPayload": true
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "item": "MOT-01",
+  "round": 2,
+  "date": "2026-10-01",
+  "server": "http://localhost:3001 (next dev, NEXT_PUBLIC_TEST_HOOKS=1), machine under load (~0.5 GB free RAM, CPU ~80 %)",
+  "framing": {
+    "command": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-verify2-mot01.mjs 360 390 412 430 768 820 1024 1440 (copy of scripts/qa/audit/verify-motion-3d-01.mjs; only output dir and ?3d=mid|high changed)",
+    "log": "mot01-framing-run.txt",
+    "results_poster_pctH_vs_audit": {"360": "50.0 (35.2)", "390": "49.0 (34.5)", "412": "46.8 (33.0)", "430": "47.7 (33.7)", "768": "57.5, dx +8 (29.0, dx +116)", "820": "51.9 (26.1)", "1024": "42.9 (42.9, unchanged)", "1440": "50.7 (50.7, unchanged)"},
+    "gap_caption_to_car_px": {"360": 100, "390": 122, "412": 150, "430": 153, "768": 134, "820": 199},
+    "poster_vs_canvas": "within 1 px at 360-820 (tier mid, progress 0)",
+    "note": "the 1024/1440 canvas bbox (90 %) is an artefact of the audit method: the desktop copy column overlays the stage and is not hidden; see motion-3d-01-reproduce-1440-canvas-bbox.webp",
+    "first_screen_390": "at scrollY 0 the stage starts at y=663, car top at 870 > 844: still not visible on the first screen (unchanged layout; D240 lists shortening the phone stage as an alternative not taken)"
+  },
+  "exploded_fit": {"log": "exploded-fit.txt", "390x844": "car x 12-380, y 233-498 of 390x672 (mid and low poster)", "768x1024": "car x 34-732, y 210-713 of 768x852", "note": "row 0 hit = the stage top border line, not the car"},
+  "unit": {"command": "npx vitest run tests/unit/three tests/unit/3d-manifest.test.ts", "result": "7 files, 43 passed", "log": "vitest-three.txt"},
+  "handover_patch": {
+    "equals_live_diff": true,
+    "patch_tool_result_equals_copy": true,
+    "git_apply_hazard": "git apply treats a/tests/e2e/... b/scripts/qa/fix/... as a rename: in a clean repo it deletes tests/e2e/hero-3d.spec.ts and creates the scripts copy (tested in a temp repo)",
+    "comment_nit": "liveTier() comment cites 'PERF-23, D243'; the software-renderer decision is D244"
+  },
+  "e2e": {
+    "patched_copy_run1": "17 passed, 3 failed (poster-first x2, unknown deep link 1440): window.__sklop3d undefined in state() -> e2e-patched-spec.txt",
+    "patched_copy_run2": "18 passed, 2 failed (poster-first x2, same error) -> e2e-patched-spec-run2.txt",
+    "probe_with_hooks_wait": "20 passed (2.7m) -> e2e-probe-wait-hooks.txt, diff probe-wait-hooks.diff",
+    "hooks_timing": "window.__sklop3d appears 246-401 ms after page.goto resolves (load), 6/6 runs -> hooks-timing.txt",
+    "unmodified_spec_non_live": "11 passed, 1 failed (mobile-390 axe target-size on SystemsIndex links, intermittent: repeat 1 pass / 1 fail) -> e2e-unmodified-spec-non-live.txt, e2e-unmodified-axe-390-repeat.txt; reduced motion passes in both projects",
+    "security_spec_live3d": "without ?3d= the tier is 'low' right after the scroll in 7/7 runs (1440 and 390): no canvas, no /models/car.glb, no blob workers; the test passes but no longer checks CSP with the live 3D. Control ?3d=high: GLB + 5 blob URLs + 4 workers -> security-live3d-check.txt, security-live3d-check-run1.txt"
+  }
+}

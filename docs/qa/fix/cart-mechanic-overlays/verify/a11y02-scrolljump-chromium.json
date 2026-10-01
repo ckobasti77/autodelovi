@@ -1,0 +1,81 @@
+[
+ {
+  "engine": "chromium",
+  "w": 1440,
+  "url": "/delovi/kocioni-diskovi",
+  "overlay": "vehicle",
+  "openerTop": 14,
+  "yStart": 1200,
+  "yOpen": 1200,
+  "dialogs": 1,
+  "yAfterClose": 742,
+  "activeAfter": "button[vehicle-picker-trigger]",
+  "jump": -458,
+  "shot": "docs/qa/fix/cart-mechanic-overlays/verify/a11y02-scrolljump-chromium-vehicle-1440.webp"
+ },
+ {
+  "engine": "chromium",
+  "w": 1440,
+  "url": "/delovi/kocioni-diskovi",
+  "overlay": "search",
+  "openerTop": 12,
+  "yStart": 1200,
+  "yOpen": 1200,
+  "dialogs": 1,
+  "yAfterClose": 742,
+  "activeAfter": "button[header-search-trigger]",
+  "jump": -458
+ },
+ {
+  "engine": "chromium",
+  "w": 1440,
+  "url": "/delovi/kocioni-diskovi",
+  "overlay": "cart",
+  "openerTop": 10,
+  "yStart": 1200,
+  "yOpen": 1200,
+  "dialogs": 1,
+  "yAfterClose": 742,
+  "activeAfter": "a[cart-button]",
+  "jump": -458
+ },
+ {
+  "engine": "chromium",
+  "w": 1440,
+  "url": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+  "overlay": "vehicle",
+  "openerTop": 14,
+  "yStart": 1200,
+  "yOpen": 1200,
+  "dialogs": 1,
+  "yAfterClose": 742,
+  "activeAfter": "button[vehicle-picker-trigger]",
+  "jump": -458
+ },
+ {
+  "engine": "chromium",
+  "w": 390,
+  "url": "/delovi/kocioni-diskovi",
+  "overlay": "search",
+  "openerTop": 6,
+  "yStart": 1200,
+  "yOpen": 1200,
+  "dialogs": 1,
+  "yAfterClose": 766,
+  "activeAfter": "button[]",
+  "jump": -434
+ },
+ {
+  "engine": "chromium",
+  "w": 390,
+  "url": "/delovi/kocioni-diskovi",
+  "overlay": "mobile-menu",
+  "openerTop": 6,
+  "yStart": 1200,
+  "yOpen": 1200,
+  "dialogs": 1,
+  "yAfterClose": 766,
+  "activeAfter": "button[mobile-menu-trigger]",
+  "jump": -434
+ }
+]

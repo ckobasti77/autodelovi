@@ -235,7 +235,7 @@ app/
   layout.tsx              <html lang="sr-Latn-RS"> · fonts · inline text-reveal CSS + boot script (nonce) ·
                           ConvexAuthNextjsServerProvider · Providers · SkipLink · TextRevealGlobal
   globals.css             Tailwind v4 @theme tokens (step 04)
-  (shop)/layout.tsx       Header · Footer · ConsentBanner · CartDrawer · LiveOverlayProvider
+  (shop)/layout.tsx       Header · Footer · ConsentRoot (server ConsentPanel → ConsentGate, D250) · CartDrawer · LiveOverlayProvider
   (shop)/…                routes of §B1 (each page: page.tsx, loading.tsx, optional copy.ts, opengraph-image.tsx)
   admin/layout.tsx        admin shell (guard, data-reveal="off")
   api/revalidate/route.ts · api/zdravlje/route.ts · feeds/* · sitemaps/* · sitemap.xml/route.ts

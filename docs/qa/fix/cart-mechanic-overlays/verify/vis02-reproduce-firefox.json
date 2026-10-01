@@ -1,0 +1,110 @@
+{
+  "390": {
+    "engine": "firefox",
+    "viewport": "390x844",
+    "mobile": true,
+    "atLoad": {
+      "scrollY": 645,
+      "vh": 844,
+      "bar": {
+        "top": 711,
+        "h": 133,
+        "pctOfVh": 16,
+        "bg": "oklab(0.193827 -0.00284777 -0.00712827 / 0.95)",
+        "shadow": "none",
+        "borderTop": "1px rgb(67, 74, 82)",
+        "cls": "sticky bottom-0 z-sticky -mx-page mt-2 flex flex-col gap-2 border-t border-line-strong bg-bg-raised/95 px-page pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-header before:pointer-events-none before:absolute before:inset-x-0 before:bottom-full before:h-6 before:bg-linear-to-t before:from-bg before:to-transparent sm:mx-0 sm:gap-3 sm:bg-bg/95 sm:px-0"
+      },
+      "rows": 13,
+      "statuses": "exact,exact,ambiguous,exact,exact,ambiguous,ambiguous,exact,exact,exact,not_found,exact,exact",
+      "rowsBehindBar": [
+        {
+          "i": 3,
+          "status": "ambiguous",
+          "top": 565,
+          "bottom": 978,
+          "overlap": 133,
+          "full": false
+        }
+      ],
+      "htmlScrollPad": {
+        "top": "80px",
+        "bottom": "149px"
+      }
+    },
+    "tabStops": 62,
+    "stopsOutsideBar": 60,
+    "fullyHidden": 0,
+    "partlyHidden": 0,
+    "fullyHiddenList": [],
+    "atEnd": {
+      "lastRowBottom": -442,
+      "barTop": -434,
+      "clear": true
+    },
+    "log": {
+      "console": [
+        "[JavaScript Error: \"downloadable font: download failed (font-family: \"Martian Mono\" style:normal weight:100..800 width:100 src index:0): status=2152398850 source: http://localhost:3001/_next/static/media/ee9d8ff0751135e3-s.12ukhzf-lem3a.woff2\"]"
+      ],
+      "pageErrors": [],
+      "bad": []
+    }
+  },
+  "1440": {
+    "engine": "firefox",
+    "viewport": "1440x900",
+    "mobile": false,
+    "atLoad": {
+      "scrollY": 0,
+      "vh": 900,
+      "bar": {
+        "top": 784,
+        "h": 117,
+        "pctOfVh": 13,
+        "bg": "oklab(0.167061 -0.00197805 -0.00493199 / 0.95)",
+        "shadow": "none",
+        "borderTop": "1px rgb(67, 74, 82)",
+        "cls": "sticky bottom-0 z-sticky -mx-page mt-2 flex flex-col gap-2 border-t border-line-strong bg-bg-raised/95 px-page pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-header before:pointer-events-none before:absolute before:inset-x-0 before:bottom-full before:h-6 before:bg-linear-to-t before:from-bg before:to-transparent sm:mx-0 sm:gap-3 sm:bg-bg/95 sm:px-0"
+      },
+      "rows": 13,
+      "statuses": "exact,exact,ambiguous,exact,exact,ambiguous,ambiguous,exact,exact,exact,not_found,exact,exact",
+      "rowsBehindBar": [
+        {
+          "i": 3,
+          "status": "ambiguous",
+          "top": 576,
+          "bottom": 854,
+          "overlap": 71,
+          "full": false
+        },
+        {
+          "i": 4,
+          "status": "exact",
+          "top": 854,
+          "bottom": 1011,
+          "overlap": 46,
+          "full": false
+        }
+      ],
+      "htmlScrollPad": {
+        "top": "80px",
+        "bottom": "133px"
+      }
+    },
+    "tabStops": 62,
+    "stopsOutsideBar": 60,
+    "fullyHidden": 0,
+    "partlyHidden": 0,
+    "fullyHiddenList": [],
+    "atEnd": {
+      "lastRowBottom": 203,
+      "barTop": 211,
+      "clear": true
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "bad": []
+    }
+  }
+}

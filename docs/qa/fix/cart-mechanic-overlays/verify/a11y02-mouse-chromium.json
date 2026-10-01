@@ -1,0 +1,14 @@
+[
+ {
+  "engine": "chromium",
+  "clickFocusesButton": true,
+  "hasField": false,
+  "fieldDesc": "BODY",
+  "added": false,
+  "activeBeforeOpen": "BODY",
+  "drawerOpen": false,
+  "yBefore": 1400,
+  "yAfter": 484,
+  "after": "a[cart-button] \"Korpa\""
+ }
+]

@@ -63,6 +63,59 @@ describe("landing copy from data", () => {
     expect(intro).toContain("KYB (3), Sachs (2) i Bilstein (1)");
   });
 
+  test("SEO-07: makers end with „i još N“ once, generations in model-year order", () => {
+    const intro = landingIntro({
+      ...copy,
+      manufacturerCount: 6,
+      manufacturers: [
+        { name: "ATE", count: 2 },
+        { name: "Brembo", count: 1 },
+        { name: "Febi Bilstein", count: 1 },
+        { name: "Original VAG", count: 1 },
+        { name: "TRW", count: 1 },
+      ],
+      generations: [
+        { name: "Golf VII", modelName: "Golf", yearFrom: 2012, yearTo: 2020, count: 4 },
+        { name: "Golf V", modelName: "Golf", yearFrom: 2003, yearTo: 2009, count: 3 },
+        { name: "Golf VI", modelName: "Golf", yearFrom: 2008, yearTo: 2013, count: 2 },
+        { name: "Golf IV", modelName: "Golf", yearFrom: 1997, yearTo: 2006, count: 1 },
+      ],
+    });
+    expect(intro).toContain(
+      "Proizvođači: ATE (2), Brembo (1), Febi Bilstein (1), Original VAG (1) i još 2.",
+    );
+    expect(intro).toContain(
+      "Pokrivene generacije: Golf IV (1997–2006), Golf V (2003–2009), Golf VI (2008–2013) i Golf VII (2012–2020).",
+    );
+    const five = landingIntro({
+      ...copy,
+      manufacturerCount: 5,
+      manufacturers: ["ATE", "Brembo", "Febi Bilstein", "Original VAG", "TRW"].map((name) => ({
+        name,
+        count: 1,
+      })),
+    });
+    expect(five).toContain("Original VAG (1) i TRW (1).");
+  });
+
+  test("COPY-05: Škoda and Cupra decline after „za“ in intro, FAQ and anchors", () => {
+    const skoda = { ...copy, brandName: "Škoda", modelName: "Octavia" };
+    expect(landingIntro(skoda).startsWith("Za Škodu Octaviju imamo")).toBe(true);
+    expect(landingIntro({ ...skoda, modelName: null }).startsWith("Za Škoda vozila")).toBe(true);
+    expect(landingFaq(skoda)[0]!.question).toContain("za Škodu Octaviju imate");
+    const link: Parameters<typeof landingLabel>[0] = {
+      categorySlug: "kocioni-diskovi",
+      categoryName: "Kočioni diskovi",
+      brandSlug: "cupra",
+      brandName: "Cupra",
+      modelSlug: null,
+      modelName: null,
+      productCount: 9,
+      indexable: true,
+    };
+    expect(landingLabel(link)).toBe("Kočioni diskovi za Cupru");
+  });
+
   test("brand landings read „{Marka} vozila“ and list the top models", () => {
     const intro = landingIntro({ ...copy, modelName: null, price: null });
     expect(intro.startsWith("Za Volkswagen vozila imamo 6 artikala")).toBe(true);

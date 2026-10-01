@@ -74,9 +74,11 @@ export function StockBadge({
     <span
       data-reveal="off"
       className={cn(
-        "inline-flex items-center gap-1.5 whitespace-nowrap type-caption",
+        "inline-flex items-center gap-1.5 type-caption",
         tone.text,
-        variant === "chip" && cn("h-6 rounded-xs px-2", tone.chip),
+        // The fixed-height chip stays on one line; the inline line wraps in narrow cards and
+        // under the WCAG 1.4.12 text-spacing override instead of clipping (A11Y-10).
+        variant === "chip" ? cn("h-6 whitespace-nowrap rounded-xs px-2", tone.chip) : "min-w-0",
         className,
       )}
     >

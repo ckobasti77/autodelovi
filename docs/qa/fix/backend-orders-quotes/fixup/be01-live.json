@@ -1,0 +1,181 @@
+{
+  "base": "http://localhost:3001",
+  "convex": "https://tame-impala-374.eu-west-1.convex.cloud",
+  "steps": [
+    {
+      "step": "credit before",
+      "availablePara": 17000200,
+      "enabled": true,
+      "limitPara": 20000000,
+      "openCount": 3,
+      "paymentTermsDays": 15,
+      "usedPara": 2999800
+    },
+    {
+      "step": "A: quote sent",
+      "number": "UP-2026-000098",
+      "quotePara": 22000200,
+      "availablePara": 17000200
+    },
+    {
+      "step": "A: getByToken deferredCredit",
+      "owningMechanic": {
+        "availablePara": 17000200
+      },
+      "otherSignedInCustomer": null
+    },
+    {
+      "step": "A: mechanic acceptQuote deferred over limit",
+      "ok": false,
+      "code": "INVALID",
+      "message": "Limit za odloženo plaćanje nije dovoljan: preostalo je 170.002 RSD. Izaberite drugi način plaćanja ili nas pozovite.",
+      "field": "payment.method",
+      "creditLimit": true
+    },
+    {
+      "step": "A: other signed-in customer acceptQuote deferred",
+      "ok": false,
+      "code": "INVALID",
+      "message": "Odloženo plaćanje je dostupno samo odobrenim majstorima sa tom opcijom.",
+      "field": "payment.method",
+      "creditLimit": null
+    },
+    {
+      "step": "A: credit after",
+      "availablePara": 17000200,
+      "enabled": true,
+      "limitPara": 20000000,
+      "openCount": 3,
+      "paymentTermsDays": 15,
+      "usedPara": 2999800
+    },
+    {
+      "step": "A/UI 390: convert deferred over limit",
+      "paymentOptions": [
+        "Gotovinom pri preuzimanju",
+        "Karticom pri preuzimanju",
+        "Odloženo plaćanje"
+      ],
+      "alert": "Porudžbina nije kreirana. Proverite polje „Plaćanje“.",
+      "overrideCheckboxVisible": true,
+      "overflowX": 0,
+      "shot": "docs/qa/fix/backend-orders-quotes/fixup/be01-ui-390-refused.webp"
+    },
+    {
+      "step": "A/UI 390: console",
+      "console": [
+        "[CONVEX M(inquiriesAdmin:convertToOrder)] [Request ID: 2eef3bdd0999d4c2] Server Error\nUncaught ConvexError: {\"field\":\"payment.method\",\"creditLimit\":true,\"availablePara\":17000200,\"code\":\"INVALID\",\"message\":\"Limit za odloženo plaćanje nije dovoljan: preostalo je 170.002 RSD. Izaberite drugi način plaćanja ili nas pozovite.\"}\n    at async handler (../convex/inquiriesAdmin.ts:733:32)\n"
+      ],
+      "pageErrors": []
+    },
+    {
+      "step": "A: cleanup — quote declined, inquiry closed"
+    },
+    {
+      "step": "B: quote sent",
+      "number": "UP-2026-000099",
+      "quotePara": 22000200
+    },
+    {
+      "step": "B/UI 1440: refused without override",
+      "alert": "Porudžbina nije kreirana. Proverite polje „Plaćanje“.",
+      "paymentSelectAriaInvalid": "true",
+      "urlStill": "http://localhost:3001/admin/upiti/UP-2026-000099",
+      "shot": "docs/qa/fix/backend-orders-quotes/fixup/be01-ui-1440-refused.webp"
+    },
+    {
+      "step": "B/UI 1440: keyboard toggles override",
+      "focusedAfterTab": {
+        "role": "checkbox",
+        "state": "unchecked",
+        "label": "Dozvoli prekoračenje limita odloženog plaćanjaSamo uz dogovor sa majstorom; prek"
+      },
+      "ariaCheckedAfterSpace": "true",
+      "shot": "docs/qa/fix/backend-orders-quotes/fixup/be01-ui-1440-override-checked.webp"
+    },
+    {
+      "step": "B/UI 1440: order created with override",
+      "orderNumber": "SK-2026-000153",
+      "shot": "docs/qa/fix/backend-orders-quotes/fixup/be01-ui-1440-order-created.webp",
+      "console": [
+        "[CONVEX M(inquiriesAdmin:convertToOrder)] [Request ID: d671b1e41ca9229b] Server Error\nUncaught ConvexError: {\"field\":\"payment.method\",\"creditLimit\":true,\"availablePara\":17000200,\"code\":\"INVALID\",\"message\":\"Limit za odloženo plaćanje nije dovoljan: preostalo je 170.002 RSD. Izaberite drugi način plaćanja ili nas pozovite.\"}\n    at async handler (../convex/inquiriesAdmin.ts:733:32)\n"
+      ],
+      "pageErrors": []
+    },
+    {
+      "step": "B: order facts",
+      "number": "SK-2026-000153",
+      "customerType": "mechanic",
+      "mechanicProfileId": "p578dq9d2cdkx47b5j5ssyph5n8fc1t9",
+      "paymentMethod": "deferred",
+      "paymentStatus": "unpaid",
+      "totalPara": 22000200,
+      "tierName": "Majstor Plus",
+      "dueAt": 1792117390454,
+      "createdAt": 1790821390454.3792,
+      "_id": "ps7ehy2823hzd5t17w14gthkq98fe540",
+      "updatedAt": 1790821390454,
+      "dueInDays": 14.999999995611685,
+      "profileTermsDays": 15
+    },
+    {
+      "step": "B: audit summary",
+      "summary": "UP-2026-000099: ponuda br. 1 → porudžbina SK-2026-000153 (prekoračen limit odloženog plaćanja (preostalo 170.002 RSD, porudžbina 220.002 RSD))"
+    },
+    {
+      "step": "B: credit while the override order is open",
+      "availablePara": 0,
+      "enabled": true,
+      "limitPara": 20000000,
+      "openCount": 4,
+      "paymentTermsDays": 15,
+      "usedPara": 25000000
+    },
+    {
+      "step": "B: cleanup — order cancelled",
+      "creditAfter": {
+        "availablePara": 17000200,
+        "enabled": true,
+        "limitPara": 20000000,
+        "openCount": 3,
+        "paymentTermsDays": 15,
+        "usedPara": 2999800
+      }
+    },
+    {
+      "step": "C: mechanic acceptQuote deferred within limit",
+      "ok": true,
+      "value": {
+        "orderNumber": "SK-2026-000154",
+        "orderToken": "Ow9Q6EXMqAiGCZA-acSlNSsZff0ReySDmCOg7YRieHw"
+      }
+    },
+    {
+      "step": "C: order facts",
+      "number": "SK-2026-000154",
+      "customerType": "mechanic",
+      "mechanicProfileId": "p578dq9d2cdkx47b5j5ssyph5n8fc1t9",
+      "paymentMethod": "deferred",
+      "paymentStatus": "unpaid",
+      "totalPara": 100000,
+      "tierName": "Majstor Plus",
+      "dueAt": 1792117395223,
+      "createdAt": 1790821395223.4883,
+      "_id": "ps7dawdfp5w4pefmynd45cj19n8ffcp5",
+      "updatedAt": 1790821395223,
+      "dueInDays": 14.999999994348597,
+      "profileTermsDays": 15
+    },
+    {
+      "step": "C: cleanup — order cancelled",
+      "creditAfter": {
+        "availablePara": 17000200,
+        "enabled": true,
+        "limitPara": 20000000,
+        "openCount": 3,
+        "paymentTermsDays": 15,
+        "usedPara": 2999800
+      }
+    }
+  ]
+}

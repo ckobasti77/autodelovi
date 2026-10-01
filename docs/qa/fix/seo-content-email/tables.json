@@ -1,0 +1,167 @@
+{
+ "base": "http://localhost:3001",
+ "rows": [
+  {
+   "path": "/dostava-i-placanje",
+   "width": 360,
+   "tables": [
+    {
+     "tableW": 326,
+     "wrapW": 328,
+     "wrapScrollW": 326,
+     "rowDisplay": "flex",
+     "firstRowH": 236,
+     "labelVisible": true,
+     "rowHeaders": 2
+    }
+   ],
+   "reveal": {
+    "stuck": [],
+    "pending": 0,
+    "words": 0
+   },
+   "axe": []
+  },
+  {
+   "path": "/dostava-i-placanje",
+   "width": 1440,
+   "tables": [
+    {
+     "tableW": 718,
+     "wrapW": 720,
+     "wrapScrollW": 718,
+     "rowDisplay": "table-row",
+     "firstRowH": 88,
+     "labelVisible": false,
+     "rowHeaders": 2
+    }
+   ],
+   "reveal": {
+    "stuck": [],
+    "pending": 0,
+    "words": 0
+   },
+   "axe": []
+  },
+  {
+   "path": "/kolacici",
+   "width": 360,
+   "tables": [
+    {
+     "tableW": 326,
+     "wrapW": 328,
+     "wrapScrollW": 326,
+     "rowDisplay": "flex",
+     "firstRowH": 104,
+     "labelVisible": true,
+     "rowHeaders": 5
+    },
+    {
+     "tableW": 326,
+     "wrapW": 328,
+     "wrapScrollW": 326,
+     "rowDisplay": "flex",
+     "firstRowH": 159,
+     "labelVisible": true,
+     "rowHeaders": 2
+    },
+    {
+     "tableW": 326,
+     "wrapW": 328,
+     "wrapScrollW": 326,
+     "rowDisplay": "flex",
+     "firstRowH": 159,
+     "labelVisible": true,
+     "rowHeaders": 2
+    }
+   ],
+   "reveal": {
+    "stuck": [],
+    "pending": 0,
+    "words": 0
+   },
+   "axe": []
+  },
+  {
+   "path": "/kolacici",
+   "width": 1440,
+   "tables": [
+    {
+     "tableW": 718,
+     "wrapW": 720,
+     "wrapScrollW": 718,
+     "rowDisplay": "table-row",
+     "firstRowH": 46,
+     "labelVisible": false,
+     "rowHeaders": 5
+    },
+    {
+     "tableW": 718,
+     "wrapW": 720,
+     "wrapScrollW": 718,
+     "rowDisplay": "table-row",
+     "firstRowH": 67,
+     "labelVisible": false,
+     "rowHeaders": 2
+    },
+    {
+     "tableW": 718,
+     "wrapW": 720,
+     "wrapScrollW": 718,
+     "rowDisplay": "table-row",
+     "firstRowH": 67,
+     "labelVisible": false,
+     "rowHeaders": 2
+    }
+   ],
+   "reveal": {
+    "stuck": [],
+    "pending": 0,
+    "words": 0
+   },
+   "axe": []
+  },
+  {
+   "path": "/politika-privatnosti",
+   "width": 360,
+   "tables": [
+    {
+     "tableW": 326,
+     "wrapW": 328,
+     "wrapScrollW": 326,
+     "rowDisplay": "flex",
+     "firstRowH": 146,
+     "labelVisible": true,
+     "rowHeaders": 7
+    }
+   ],
+   "reveal": {
+    "stuck": [],
+    "pending": 0,
+    "words": 0
+   },
+   "axe": []
+  },
+  {
+   "path": "/politika-privatnosti",
+   "width": 1440,
+   "tables": [
+    {
+     "tableW": 718,
+     "wrapW": 720,
+     "wrapScrollW": 718,
+     "rowDisplay": "table-row",
+     "firstRowH": 67,
+     "labelVisible": false,
+     "rowHeaders": 7
+    }
+   ],
+   "reveal": {
+    "stuck": [],
+    "pending": 0,
+    "words": 0
+   },
+   "axe": []
+  }
+ ]
+}

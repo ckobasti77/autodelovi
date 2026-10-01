@@ -1,0 +1,181 @@
+{
+  "webkit-390-upit": {
+    "delay": 6000,
+    "visibleAt": 826,
+    "hydratedBeforeTyping": false,
+    "typedAt": 2472,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "WVWZZZ1KZ8W123456",
+      "Turbina za Golf 7, dizel."
+    ],
+    "hydratedAt": 7556,
+    "after": {
+      "#iq-vin": {
+        "dom": "WVWZZZ1KZ8W123456",
+        "reactValue": "(uncontrolled)"
+      },
+      "#iq-message": {
+        "dom": "Turbina za Golf 7, dizel.",
+        "reactValue": "(uncontrolled)"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "ui": {
+      "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?",
+      "vinCounter": "",
+      "msgCounter": "25 / 2.000",
+      "brand": "volkswagen",
+      "submitDisabled": false
+    },
+    "errorsWithoutConsent": [
+      "Proverite označena polja:",
+      "Potrebna je saglasnost da podatke koristimo za odgovor na upit."
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "webkit-390-mid-upit": {
+    "delay": 6000,
+    "runs": [
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "000011111111111111111111"
+      },
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "001111111111111111111111"
+      },
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": false,
+        "hydratedFlags": "000000000000000000000000"
+      },
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "001111111111111111111111"
+      },
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "001111111111111111111111"
+      },
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "001111111111111111111111"
+      },
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "000000000000000000001111"
+      },
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "000000000000000001111111"
+      },
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "001111111111111111111111"
+      }
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "webkit-390-majstor": {
+    "delay": 6000,
+    "visibleAt": 722,
+    "hydratedBeforeTyping": false,
+    "typedAt": 3281,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "servis.xb01@primer.rs",
+      "TajnaLozinka-555",
+      "Servis XB01",
+      "0641234567"
+    ],
+    "hydratedAt": 7238,
+    "after": {
+      "#mr-email": {
+        "dom": "servis.xb01@primer.rs",
+        "reactValue": "(uncontrolled)"
+      },
+      "#mr-password": {
+        "dom": "TajnaLozinka-555",
+        "reactValue": "(uncontrolled)"
+      },
+      "#mr-companyName": {
+        "dom": "Servis XB01",
+        "reactValue": "(uncontrolled)"
+      },
+      "#mr-phone": {
+        "dom": "0641234567",
+        "reactValue": "(uncontrolled)"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "summaryAfterSubmit": [
+      "Upišite PIB.",
+      "Upišite matični broj.",
+      "Upišite ime i prezime kontakt osobe.",
+      "Upišite mesto.",
+      "Upišite adresu servisa.",
+      "Izaberite bar jednu vrstu servisa.",
+      "Potrebna je saglasnost sa uslovima korišćenja."
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  }
+}

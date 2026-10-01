@@ -1,0 +1,13 @@
+# Verifier probe (round 2): scripts/qa/fix/hero-3d-assets-e2e/hero-3d.spec.ts + this one-line wait in state(),
+# run with a copy of scripts/qa/fix/hero-3d-assets-e2e.config.ts pointing at the probe dir -> e2e-probe-wait-hooks.txt (20 passed).
+--- scripts/qa/fix/hero-3d-assets-e2e/hero-3d.spec.ts	2026-10-01 04:21:14.293955200 +0200
++++ scripts/qa/fix/hero-3d-assets-verify2-e2e/hero-3d.spec.ts	2026-10-01 04:41:19.640960100 +0200
+@@ -42,6 +42,8 @@
+ }
+ 
+ async function state(page: Page) {
++  // Verifier probe (round 2): wait for the hooks HeroStage installs after hydration.
++  await page.waitForFunction(() => Boolean(window.__sklop3d));
+   return page.evaluate(() => window.__sklop3d!.getState());
+ }
+ 

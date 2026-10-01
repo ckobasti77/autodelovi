@@ -38,6 +38,14 @@ export type CartProduct = {
   allowBackorder: boolean;
 };
 
+/**
+ * „U korpu: <naziv>“. Set as `aria-label` rather than visible label + `sr-only` span: the
+ * absolutely positioned span is block-level, so browsers joined the two with a space
+ * („U korpu : …“, A11Y-19). The visible label still starts the name (WCAG 2.5.3).
+ */
+function accessibleName(label: string, productName: string): string {
+  return `${label}: ${productName}`;
+}
 
 function announce(text: string) {
   const region = document.getElementById("cart-live");
@@ -78,8 +86,12 @@ export function AddToCartButton({
         fullWidth={variant === "card"}
         className={cn("relative z-[1]", className)}
       >
-        <Link href={`${ROUTES.product(product.slug)}#obavestenje`} variant="unstyled">
-          Obavesti me<span className="sr-only">: {product.name}</span>
+        <Link
+          href={`${ROUTES.product(product.slug)}#obavestenje`}
+          variant="unstyled"
+          aria-label={accessibleName("Obavesti me", product.name)}
+        >
+          Obavesti me
         </Link>
       </Button>
     );
@@ -145,10 +157,10 @@ export function AddToCartButton({
           loading={state === "busy"}
           onClick={onAdd}
           data-testid={TEST_IDS.productAddToCart}
+          aria-label={accessibleName(label, product.name)}
           className="min-w-[12rem] flex-1"
         >
           {label}
-          <span className="sr-only">: {product.name}</span>
         </Button>
       </div>
     );
@@ -163,10 +175,10 @@ export function AddToCartButton({
       onClick={onAdd}
       fullWidth
       data-testid={TEST_IDS.productAddToCart}
+      aria-label={accessibleName(label, product.name)}
       className={cn("relative z-[1]", className)}
     >
       {label}
-      <span className="sr-only">: {product.name}</span>
     </Button>
   );
 }

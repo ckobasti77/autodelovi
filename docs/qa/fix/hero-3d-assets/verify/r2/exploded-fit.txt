@@ -1,0 +1,4 @@
+{"viewport":"390x844","tier":"mid","status":"ready","progress":1,"stage":{"w":390,"h":672},"bbox":{"x":12,"y":0,"w":368,"h":498,"right":10,"bottom":174},"insideStage":false}
+{"viewport":"390x844","tier":"low","status":"idle","progress":1,"stage":{"w":390,"h":672},"bbox":{"x":13,"y":0,"w":363,"h":498,"right":14,"bottom":174},"insideStage":false}
+{"viewport":"768x1024","tier":"mid","status":"ready","progress":1,"stage":{"w":768,"h":852},"bbox":{"x":34,"y":0,"w":698,"h":713,"right":36,"bottom":139},"insideStage":false}
+{"viewport":"768x1024","tier":"low","status":"idle","progress":1,"stage":{"w":768,"h":852},"bbox":{"x":35,"y":0,"w":690,"h":713,"right":43,"bottom":139},"insideStage":false}

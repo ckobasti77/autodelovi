@@ -1,0 +1,51 @@
+
+Running 12 tests using 1 worker
+
+[1/12] [desktop-1440] › tests\e2e\hero-3d.spec.ts:65:7 › 3D hero › the parts list selects a category and opens the panel with products
+[2/12] [desktop-1440] › tests\e2e\hero-3d.spec.ts:116:7 › 3D hero › a deep link opens the right panel
+[3/12] [desktop-1440] › tests\e2e\hero-3d.spec.ts:130:7 › 3D hero › an unknown deep link is ignored
+[4/12] [desktop-1440] › tests\e2e\hero-3d.spec.ts:137:7 › 3D hero › the panel is accessible (axe) and every hero control shows focus
+[5/12] [desktop-1440] › tests\e2e\hero-3d.spec.ts:182:7 › 3D hero — fallbacks › reduced motion: no scroll track, „Rasklopi“ cuts to the exploded state
+[6/12] [desktop-1440] › tests\e2e\hero-3d.spec.ts:211:7 › 3D hero — fallbacks › low tier: posters only, the exploded poster follows the explode
+[7/12] [mobile-390] › tests\e2e\hero-3d.spec.ts:65:7 › 3D hero › the parts list selects a category and opens the panel with products
+[8/12] [mobile-390] › tests\e2e\hero-3d.spec.ts:116:7 › 3D hero › a deep link opens the right panel
+[9/12] [mobile-390] › tests\e2e\hero-3d.spec.ts:130:7 › 3D hero › an unknown deep link is ignored
+[10/12] [mobile-390] › tests\e2e\hero-3d.spec.ts:137:7 › 3D hero › the panel is accessible (axe) and every hero control shows focus
+  1) [mobile-390] › tests\e2e\hero-3d.spec.ts:137:7 › 3D hero › the panel is accessible (axe) and every hero control shows focus 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "target-size: a[href$=\"usisna-grana\"] | .flex-col.flex:nth-child(1) > ul > li:nth-child(5) > .sm\\:min-h-9.py-1.min-h-11 | .flex-col.flex:nth-child(1) > ul > li:nth-child(6) > .sm\\:min-h-9.py-1.min-h-11 | a[href$=\"kais-alternatora\"] | a[href$=\"anlaser\"]",
+    + ]
+
+      144 |     expect(
+      145 |       results.violations.map((v) => `${v.id}: ${v.nodes.map((n) => n.target.join(" ")).join(" | ")}`),
+    > 146 |     ).toEqual([]);
+          |       ^
+      147 |
+      148 |     await page.keyboard.press("Escape");
+      149 |     await expect(page.getByTestId(TEST_IDS.partPanel)).toBeHidden();
+        at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\tests\e2e\hero-3d.spec.ts:146:7
+
+    Error Context: test-results\hero-3d-3D-hero-the-panel--e19c9-ry-hero-control-shows-focus-mobile-390\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\hero-3d-3D-hero-the-panel--e19c9-ry-hero-control-shows-focus-mobile-390\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\hero-3d-3D-hero-the-panel--e19c9-ry-hero-control-shows-focus-mobile-390\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[11/12] [mobile-390] › tests\e2e\hero-3d.spec.ts:182:7 › 3D hero — fallbacks › reduced motion: no scroll track, „Rasklopi“ cuts to the exploded state
+[12/12] [mobile-390] › tests\e2e\hero-3d.spec.ts:211:7 › 3D hero — fallbacks › low tier: posters only, the exploded poster follows the explode
+  1 failed
+    [mobile-390] › tests\e2e\hero-3d.spec.ts:137:7 › 3D hero › the panel is accessible (axe) and every hero control shows focus 
+  11 passed (4.6m)
+exit 1

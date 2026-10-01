@@ -1,0 +1,1 @@
+npx tsc --noEmit -p . -> exit 0, 0 lines of output (2026-10-01)

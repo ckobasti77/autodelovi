@@ -110,6 +110,7 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
 
   // XB-01: text typed before hydration is read by each control's ref in the hydration commit
   // (before register() writes the defaults) and restored in the same commit, before paint.
+  // After the watchers: they subscribe in layout effects, which run in declaration order.
   const keep = useKeepTypedBeforeHydration<TextField>((name, value) =>
     setValue(name, value, { shouldDirty: true }),
   );

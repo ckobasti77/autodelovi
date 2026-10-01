@@ -1,0 +1,69 @@
+{
+ "base": "http://localhost:3001",
+ "rows": [
+  {
+   "path": "/vozila/volkswagen/golf/golf-7",
+   "width": 390,
+   "loaded": {
+    "probeTop": 747,
+    "navHeight": 337,
+    "docHeight": 8179
+   },
+   "fallback": {
+    "probeTop": 747,
+    "navHeight": 337,
+    "docHeight": 8179
+   },
+   "probeDelta": 0,
+   "navDelta": 0
+  },
+  {
+   "path": "/vozila/volkswagen/golf/golf-7",
+   "width": 1440,
+   "loaded": {
+    "probeTop": 435,
+    "navHeight": 145,
+    "docHeight": 4862
+   },
+   "fallback": {
+    "probeTop": 435,
+    "navHeight": 145,
+    "docHeight": 4862
+   },
+   "probeDelta": 0,
+   "navDelta": 0
+  },
+  {
+   "path": "/vozila/skoda/octavia",
+   "width": 390,
+   "loaded": {
+    "probeTop": 1271,
+    "navHeight": null,
+    "docHeight": 2546
+   },
+   "fallback": {
+    "probeTop": 1271,
+    "navHeight": null,
+    "docHeight": 2546
+   },
+   "probeDelta": 0,
+   "navDelta": 0
+  },
+  {
+   "path": "/vozila/skoda/octavia",
+   "width": 1440,
+   "loaded": {
+    "probeTop": 603,
+    "navHeight": null,
+    "docHeight": 1241
+   },
+   "fallback": {
+    "probeTop": 603,
+    "navHeight": null,
+    "docHeight": 1241
+   },
+   "probeDelta": 0,
+   "navDelta": 0
+  }
+ ]
+}

@@ -1,0 +1,328 @@
+{
+  "360": {
+    "engine": "chromium",
+    "viewport": "360x780",
+    "mobile": true,
+    "atLoad": {
+      "scrollY": 663,
+      "vh": 780,
+      "bar": {
+        "top": 626,
+        "h": 154,
+        "pctOfVh": 20,
+        "bg": "oklab(0.193825 -0.00283895 -0.00712426 / 0.95)",
+        "shadow": "none",
+        "borderTop": "1px rgb(67, 74, 82)",
+        "cls": "sticky bottom-0 z-sticky -mx-page mt-2 flex flex-col gap-2 border-t border-line-strong bg-bg-raised/95 px-page pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-header before:pointer-events-none before:absolute before:inset-x-0 before:bottom-full before:h-6 before:bg-linear-to-t before:from-bg before:to-transparent sm:mx-0 sm:gap-3 sm:bg-bg/95 sm:px-0"
+      },
+      "rows": 13,
+      "statuses": "exact,exact,ambiguous,exact,exact,ambiguous,ambiguous,exact,exact,exact,not_found,exact,exact",
+      "rowsBehindBar": [
+        {
+          "i": 3,
+          "status": "ambiguous",
+          "top": 565,
+          "bottom": 977,
+          "overlap": 154,
+          "full": false
+        }
+      ],
+      "htmlScrollPad": {
+        "top": "80px",
+        "bottom": "171px"
+      }
+    },
+    "tabStops": 62,
+    "stopsOutsideBar": 60,
+    "fullyHidden": 0,
+    "partlyHidden": 0,
+    "fullyHiddenList": [],
+    "atEnd": {
+      "lastRowBottom": -526,
+      "barTop": -518,
+      "clear": true
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "bad": []
+    }
+  },
+  "390": {
+    "engine": "chromium",
+    "viewport": "390x844",
+    "mobile": true,
+    "atLoad": {
+      "scrollY": 645,
+      "vh": 844,
+      "bar": {
+        "top": 711,
+        "h": 133,
+        "pctOfVh": 16,
+        "bg": "oklab(0.193825 -0.00283895 -0.00712426 / 0.95)",
+        "shadow": "none",
+        "borderTop": "1px rgb(67, 74, 82)",
+        "cls": "sticky bottom-0 z-sticky -mx-page mt-2 flex flex-col gap-2 border-t border-line-strong bg-bg-raised/95 px-page pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-header before:pointer-events-none before:absolute before:inset-x-0 before:bottom-full before:h-6 before:bg-linear-to-t before:from-bg before:to-transparent sm:mx-0 sm:gap-3 sm:bg-bg/95 sm:px-0"
+      },
+      "rows": 13,
+      "statuses": "exact,exact,ambiguous,exact,exact,ambiguous,ambiguous,exact,exact,exact,not_found,exact,exact",
+      "rowsBehindBar": [
+        {
+          "i": 3,
+          "status": "ambiguous",
+          "top": 565,
+          "bottom": 978,
+          "overlap": 133,
+          "full": false
+        }
+      ],
+      "htmlScrollPad": {
+        "top": "80px",
+        "bottom": "150px"
+      }
+    },
+    "tabStops": 62,
+    "stopsOutsideBar": 60,
+    "fullyHidden": 0,
+    "partlyHidden": 0,
+    "fullyHiddenList": [],
+    "atEnd": {
+      "lastRowBottom": -442,
+      "barTop": -434,
+      "clear": true
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "bad": []
+    }
+  },
+  "768": {
+    "engine": "chromium",
+    "viewport": "768x1024",
+    "mobile": true,
+    "atLoad": {
+      "scrollY": 633,
+      "vh": 1024,
+      "bar": {
+        "top": 910,
+        "h": 114,
+        "pctOfVh": 11,
+        "bg": "oklab(0.167059 -0.00197043 -0.00492857 / 0.95)",
+        "shadow": "none",
+        "borderTop": "1px rgb(67, 74, 82)",
+        "cls": "sticky bottom-0 z-sticky -mx-page mt-2 flex flex-col gap-2 border-t border-line-strong bg-bg-raised/95 px-page pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-header before:pointer-events-none before:absolute before:inset-x-0 before:bottom-full before:h-6 before:bg-linear-to-t before:from-bg before:to-transparent sm:mx-0 sm:gap-3 sm:bg-bg/95 sm:px-0"
+      },
+      "rows": 13,
+      "statuses": "exact,exact,ambiguous,exact,exact,ambiguous,ambiguous,exact,exact,exact,not_found,exact,exact",
+      "rowsBehindBar": [
+        {
+          "i": 5,
+          "status": "exact",
+          "top": 891,
+          "bottom": 1021,
+          "overlap": 111,
+          "full": false
+        },
+        {
+          "i": 6,
+          "status": "ambiguous",
+          "top": 1021,
+          "bottom": 1299,
+          "overlap": 3,
+          "full": false
+        }
+      ],
+      "htmlScrollPad": {
+        "top": "80px",
+        "bottom": "130px"
+      }
+    },
+    "tabStops": 62,
+    "stopsOutsideBar": 60,
+    "fullyHidden": 0,
+    "partlyHidden": 0,
+    "fullyHiddenList": [],
+    "atEnd": {
+      "lastRowBottom": 117,
+      "barTop": 125,
+      "clear": true
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "bad": []
+    }
+  },
+  "1440": {
+    "engine": "chromium",
+    "viewport": "1440x900",
+    "mobile": false,
+    "atLoad": {
+      "scrollY": 0,
+      "vh": 900,
+      "bar": {
+        "top": 783,
+        "h": 117,
+        "pctOfVh": 13,
+        "bg": "oklab(0.167059 -0.00197043 -0.00492857 / 0.95)",
+        "shadow": "none",
+        "borderTop": "1px rgb(67, 74, 82)",
+        "cls": "sticky bottom-0 z-sticky -mx-page mt-2 flex flex-col gap-2 border-t border-line-strong bg-bg-raised/95 px-page pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-header before:pointer-events-none before:absolute before:inset-x-0 before:bottom-full before:h-6 before:bg-linear-to-t before:from-bg before:to-transparent sm:mx-0 sm:gap-3 sm:bg-bg/95 sm:px-0"
+      },
+      "rows": 13,
+      "statuses": "exact,exact,ambiguous,exact,exact,ambiguous,ambiguous,exact,exact,exact,not_found,exact,exact",
+      "rowsBehindBar": [
+        {
+          "i": 3,
+          "status": "ambiguous",
+          "top": 576,
+          "bottom": 854,
+          "overlap": 71,
+          "full": false
+        },
+        {
+          "i": 4,
+          "status": "exact",
+          "top": 854,
+          "bottom": 1011,
+          "overlap": 46,
+          "full": false
+        }
+      ],
+      "htmlScrollPad": {
+        "top": "80px",
+        "bottom": "133px"
+      }
+    },
+    "tabStops": 62,
+    "stopsOutsideBar": 60,
+    "fullyHidden": 0,
+    "partlyHidden": 0,
+    "fullyHiddenList": [],
+    "atEnd": {
+      "lastRowBottom": 203,
+      "barTop": 211,
+      "clear": true
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "bad": []
+    }
+  },
+  "1920": {
+    "engine": "chromium",
+    "viewport": "1920x1080",
+    "mobile": false,
+    "atLoad": {
+      "scrollY": 0,
+      "vh": 1080,
+      "bar": {
+        "top": 963,
+        "h": 117,
+        "pctOfVh": 11,
+        "bg": "oklab(0.167059 -0.00197043 -0.00492857 / 0.95)",
+        "shadow": "none",
+        "borderTop": "1px rgb(67, 74, 82)",
+        "cls": "sticky bottom-0 z-sticky -mx-page mt-2 flex flex-col gap-2 border-t border-line-strong bg-bg-raised/95 px-page pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-header before:pointer-events-none before:absolute before:inset-x-0 before:bottom-full before:h-6 before:bg-linear-to-t before:from-bg before:to-transparent sm:mx-0 sm:gap-3 sm:bg-bg/95 sm:px-0"
+      },
+      "rows": 13,
+      "statuses": "exact,exact,ambiguous,exact,exact,ambiguous,ambiguous,exact,exact,exact,not_found,exact,exact",
+      "rowsBehindBar": [
+        {
+          "i": 4,
+          "status": "exact",
+          "top": 854,
+          "bottom": 1011,
+          "overlap": 48,
+          "full": false
+        },
+        {
+          "i": 5,
+          "status": "exact",
+          "top": 1011,
+          "bottom": 1141,
+          "overlap": 69,
+          "full": false
+        }
+      ],
+      "htmlScrollPad": {
+        "top": "80px",
+        "bottom": "133px"
+      }
+    },
+    "tabStops": 62,
+    "stopsOutsideBar": 60,
+    "fullyHidden": 0,
+    "partlyHidden": 0,
+    "fullyHiddenList": [],
+    "atEnd": {
+      "lastRowBottom": 383,
+      "barTop": 391,
+      "clear": true
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "bad": []
+    }
+  },
+  "2560": {
+    "engine": "chromium",
+    "viewport": "2560x1440",
+    "mobile": false,
+    "atLoad": {
+      "scrollY": 0,
+      "vh": 1440,
+      "bar": {
+        "top": 1323,
+        "h": 117,
+        "pctOfVh": 8,
+        "bg": "oklab(0.167059 -0.00197043 -0.00492857 / 0.95)",
+        "shadow": "none",
+        "borderTop": "1px rgb(67, 74, 82)",
+        "cls": "sticky bottom-0 z-sticky -mx-page mt-2 flex flex-col gap-2 border-t border-line-strong bg-bg-raised/95 px-page pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-header before:pointer-events-none before:absolute before:inset-x-0 before:bottom-full before:h-6 before:bg-linear-to-t before:from-bg before:to-transparent sm:mx-0 sm:gap-3 sm:bg-bg/95 sm:px-0"
+      },
+      "rows": 13,
+      "statuses": "exact,exact,ambiguous,exact,exact,ambiguous,ambiguous,exact,exact,exact,not_found,exact,exact",
+      "rowsBehindBar": [
+        {
+          "i": 6,
+          "status": "ambiguous",
+          "top": 1141,
+          "bottom": 1419,
+          "overlap": 96,
+          "full": false
+        },
+        {
+          "i": 7,
+          "status": "ambiguous",
+          "top": 1419,
+          "bottom": 1697,
+          "overlap": 21,
+          "full": false
+        }
+      ],
+      "htmlScrollPad": {
+        "top": "80px",
+        "bottom": "133px"
+      }
+    },
+    "tabStops": 62,
+    "stopsOutsideBar": 60,
+    "fullyHidden": 0,
+    "partlyHidden": 0,
+    "fullyHiddenList": [],
+    "atEnd": {
+      "lastRowBottom": 743,
+      "barTop": 751,
+      "clear": true
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "bad": []
+    }
+  }
+}

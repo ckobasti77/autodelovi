@@ -9,7 +9,7 @@ import {
   createRouteMatcher,
   nextjsMiddlewareRedirect,
 } from "@convex-dev/auth/nextjs/server";
-import { NextResponse } from "next/server";
+import { type NextFetchEvent, type NextRequest, NextResponse } from "next/server";
 
 import { buildCsp, createNonce } from "@/lib/security/headers";
 
@@ -18,7 +18,7 @@ const isAccountArea = createRouteMatcher(["/nalog(.*)", "/majstor(.*)", "/admin(
 // The staff invite page is public (token-guarded) even though it lives under /admin.
 const isPublicAdminPage = createRouteMatcher(["/admin/pozivnica/(.*)"]);
 
-export const proxy = convexAuthNextjsMiddleware(
+const authProxy = convexAuthNextjsMiddleware(
   async (request, { convexAuth }) => {
     if (
       isAccountArea(request) &&
@@ -49,6 +49,29 @@ export const proxy = convexAuthNextjsMiddleware(
   },
   { cookieConfig: { maxAge: 60 * 60 * 24 * 30 } },
 );
+
+/**
+ * @convex-dev/auth 0.0.95 re-wraps the handler's response in `NextResponse.next(response)` whenever
+ * the refresh step produced cookie changes — including the cookie *clearing* after a failed refresh
+ * (stale, revoked or expired session). That copy keeps `Location` and `Set-Cookie` but drops the 3xx
+ * status, so an account URL answered HTTP 200 with an empty body: a blank page (A11Y-03, D260).
+ * Any `Location` on a non-redirect response here can only come from that wrapper, so it is turned
+ * back into a real 307 that carries the same cookie headers.
+ */
+function restoreRedirect(response: Response, requestUrl: string): Response {
+  const location = response.headers.get("location");
+  if (location === null || (response.status >= 300 && response.status < 400)) return response;
+  const redirect = NextResponse.redirect(new URL(location, requestUrl), 307);
+  for (const cookie of response.headers.getSetCookie()) {
+    redirect.headers.append("set-cookie", cookie);
+  }
+  return redirect;
+}
+
+export async function proxy(request: NextRequest, event: NextFetchEvent): Promise<Response> {
+  const response = (await authProxy(request, event)) ?? NextResponse.next();
+  return restoreRedirect(response, request.url);
+}
 
 export const config = {
   // Everything except files with an extension and Next internals; includes /api/auth.

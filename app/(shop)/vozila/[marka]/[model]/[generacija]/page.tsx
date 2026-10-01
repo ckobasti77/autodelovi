@@ -100,7 +100,10 @@ export default async function VehicleGenerationPage({
     { label: "Početna", href: ROUTES.home },
     { label: "Vozila", href: ROUTES.vehicles },
     { label: brand.brand.name, href: ROUTES.vehicleBrand(marka) },
-    { label: data.model.model.name, href: ROUTES.vehicleModel(marka, model) },
+    // A single-generation model has no hub of its own (its URL redirects here; SEO-04).
+    ...(data.model.generations.length > 1
+      ? [{ label: data.model.model.name, href: ROUTES.vehicleModel(marka, model) }]
+      : []),
     { label: generation.name },
   ];
   const vehicleFilters = {
@@ -162,7 +165,7 @@ export default async function VehicleGenerationPage({
           <h2 className="type-label uppercase text-ink-3">Motor</h2>
           {/*
             A fixed column grid, with the engine code on its own clipped line: the rows no longer
-            depend on the width of the code font, which loads late (PERF-02, D251).
+            depend on the width of the code font, which loads late (PERF-02, D254).
           */}
           <ul className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
             <li className="min-w-0">

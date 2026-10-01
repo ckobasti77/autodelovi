@@ -1,0 +1,26 @@
+{
+  "package": "backend-orders-quotes",
+  "verifiedAt": "2026-10-01",
+  "base": "http://localhost:3001",
+  "convex": "tame-impala-374 (dev); deployed function spec contains notifications:ownerAlert and getByToken.deferredCredit",
+  "items": {
+    "BE-01": {
+      "verified": false,
+      "auditRepro": "be01-audit-repro-vitest.txt: customerAcceptQuote REFUSED/INVALID, staffConvertToOrder REFUSED/INVALID, usedPara 0, guest INVALID",
+      "live": "be01-live.json: public over-limit INVALID with limit message (field payment.method, creditLimit true), credit unchanged; other signed-in customer gets deferredCredit null and INVALID; admin UI 390 + 1440 refuses with the limit message and aria-invalid on Plaćanje; override checkbox reachable by Tab, toggled by Space; override order SK-2026-000148 has tier Majstor Plus, dueAt = profile terms (15 d), audit summary records 'prekoračen limit odloženog plaćanja (preostalo 170.002 RSD, porudžbina 220.002 RSD)'; within-limit acceptance SK-2026-000149 deferred, tier Majstor Plus, dueAt 15 d = profile terms. All test orders cancelled, credit restored to 170.002 RSD available.",
+      "tests": "convex-suites.txt 54/54; edge-cases-vitest.txt 14/14",
+      "blocker": "Self-dealing gap: a staff member who is also an approved mechanic gets FORBIDDEN when changing his own credit limit (mechanicsAdmin.update), but inquiriesAdmin.convertToOrder with creditOverride:true on his own inquiry succeeds (SELF_DEALING_OVERRIDE_RESULT NO_ERROR in edge-cases-vitest.txt). The override lacks the assertNotOwnProfile rule ('Staff may not grant themselves mechanic prices or credit'; HUMAN-TODO 'Zaposleni koji je i majstor')."
+    },
+    "BE-02": {
+      "verified": true,
+      "live": "be02-live-key-probe.json: 3 HTTP calls with 3 different User-Agents plus 1 WebSocket call to inquiries:generateUploadUrl created exactly one new uploadUrl bucket row (value 26.0 = capacity 30 - 4); before the fix each UA created its own row. Low-impact probe chosen instead of draining the machine's shared bucket.",
+      "tests": "convex-suites.txt (security.test.ts UA rotation + /64, orders.test.ts global alarm) pass; edge-cases-vitest.txt: ipSubject normalisation, IPv4 vs ::ffff: mapped share a bucket, 11 orders with 11 UAs from one IP -> 11th RATE_LIMITED, 4 orders past the global threshold all succeed with exactly 1 owner security alert, no-IP fallback still works.",
+      "notes": "tests/e2e/storefront.spec.ts:21 and scripts/qa/audit/kit.mjs:51 still say a unique UA gives fresh rate-limit buckets; e2e runs from one machine now share per-IP buckets (mechanicRegister fixed window 6/h ≈ 3 full e2e runs per hour). passwordResetGlobal (60/h, key 'global') is still a site-wide hard stop (BE-07 area, not in BE-02's route list)."
+    }
+  },
+  "e2e": {
+    "e2e-checkout-flows.txt": "storefront guest order: order part passed (guest, cod, courier, order.created); 'purchase' analytics assertion fails on the dev server because React StrictMode double-runs PurchaseTracker's effect (sessionStorage guard + cancelled flag) — unrelated to this package. mechanics run 1 failed on trace ENOENT (another agent's Playwright run cleaned test-results).",
+    "e2e-mechanic-deferred.txt": "rerun with private output dir: register -> approve -> quick order -> deferred order passed through 'Odloženo plaćanje do dd.mm.yyyy.'; only failure is collected console errors from another package's in-progress SystemHub.tsx compile error (systemIntro export missing)."
+  },
+  "static": { "tsc": "exit 0 (tsc.txt)", "eslint": "exit 0 (eslint.txt)", "prettier": "convex/orders.ts and convex/lib/orders.ts flagged only for CRLF working-copy line endings (index is LF; content prettier-clean)" }
+}

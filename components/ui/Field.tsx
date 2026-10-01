@@ -7,6 +7,7 @@ import {
   useEffectEvent,
   useId,
   useLayoutEffect,
+  useReducer,
   useRef,
   useSyncExternalStore,
   type AriaAttributes,
@@ -104,17 +105,24 @@ type Registration<N extends string> = { name: N; ref: (instance: Element | null)
  * form's layout effect runs after its children's refs in the same commit and passes every
  * captured value to `restore` (setValue) before paint. Later commits capture nothing: re-renders
  * re-attach the same element, and on a client-side navigation the controls start empty.
- * The wrapped controls must commit together with the form (no Suspense boundary in between).
+ * The wrapped controls must commit together with the form (no Suspense boundary in between),
+ * and the hook must come after the form's useWatch calls (they subscribe in layout effects,
+ * which run in declaration order, so a later watcher would miss the restored value).
  */
 export function useKeepTypedBeforeHydration<N extends string>(
   restore: (name: N, value: string) => void,
 ) {
   const typed = useRef<Map<N, string> | null>(new Map());
   const onRestore = useEffectEvent(restore);
+  const [, renderAgain] = useReducer((n: number) => n + 1, 0);
   useLayoutEffect(() => {
     const captured = typed.current;
     typed.current = null;
-    captured?.forEach((value, name) => onRestore(name, value));
+    if (!captured?.size) return;
+    captured.forEach((value, name) => onRestore(name, value));
+    // setValue writes the DOM without an input event or a render: render once more (still
+    // before paint) so what is derived from a control's value, like Textarea's counter, follows.
+    renderAgain();
   }, []);
   return useCallback(
     <R extends Registration<N>>(registration: R): R => ({

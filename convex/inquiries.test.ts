@@ -355,6 +355,46 @@ describe("quote acceptance applies the mechanic's terms (QA BE-01, FLOW-08, FLOW
     expect(order!.tierSnapshot?.tierId).toBe(w.tiers.majstor);
   });
 
+  test("a staff member who is also a mechanic cannot override the limit on his own inquiry", async () => {
+    const t = makeT();
+    const w = await setupWorld(t);
+    const { quoteId } = await mechanicQuote(w);
+    await setCredit(t, w, 1_000_000); // 10.000 RSD < 20.000 RSD quote
+    await t.run(async (ctx) => {
+      await ctx.db.patch("users", w.mechA.userId, { role: "staff" });
+    });
+    const args = {
+      quoteId,
+      contact: CONTACT,
+      delivery: { method: "pickup" as const },
+      payment: { method: "deferred" as const },
+    };
+    const orderCount = () => t.run(async (ctx) => (await ctx.db.query("orders").take(50)).length);
+    const before = await orderCount();
+    // Same rule as mechanicsAdmin.assertNotOwnProfile: no self-granted credit.
+    expect(
+      await errorCode(() =>
+        w.asMechA.mutation(api.inquiriesAdmin.convertToOrder, { ...args, creditOverride: true }),
+      ),
+    ).toBe("FORBIDDEN");
+    expect(await errorCode(() => w.asMechA.mutation(api.inquiriesAdmin.convertToOrder, args))).toBe(
+      "INVALID",
+    );
+    expect(await orderCount()).toBe(before);
+    // The owner may still approve the overrun, audited.
+    const { orderNumber } = await w.asOwner.mutation(api.inquiriesAdmin.convertToOrder, {
+      ...args,
+      creditOverride: true,
+    });
+    const audit = await t.run(async (ctx) =>
+      (await ctx.db.query("auditLog").order("desc").take(20)).find(
+        (a) => a.action === "quote.convert",
+      ),
+    );
+    expect(audit!.summary).toContain(orderNumber);
+    expect(audit!.summary).toContain("prekoračen limit");
+  });
+
   test("phone-only inquiry: staff get the status link and convert without an e-mail", async () => {
     vi.useFakeTimers();
     const t = makeT();

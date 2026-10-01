@@ -74,7 +74,7 @@ export function quoteReady(d: InquiryEmailData, ctx: EmailContext): RenderedEmai
   return frame(ctx, {
     subject: `Ponuda za upit ${d.number} je spremna`,
     preheader: q
-      ? `Ukupno ${rsd(q.totalPara)}, važi do ${date(q.validUntil)}.`
+      ? `Ukupno ${rsd(q.totalPara)}, važi do ${date(q.validUntil)}`
       : "Ponuda je na stranici upita.",
     reference: d.number,
     body,
@@ -128,11 +128,11 @@ export function backInStock(d: BackInStockEmailData, ctx: EmailContext): Rendere
   );
   return frame(ctx, {
     subject: `Stiglo je: ${d.productName}`,
-    preheader: `${d.productName} je ponovo na stanju. Cena ${rsd(d.pricePara)}.`,
+    preheader: `Ponovo na stanju: ${d.productName}. Cena ${rsd(d.pricePara)}.`,
     body,
     audience: "customer",
     reason: "Ovu poruku ste dobili jer ste tražili da vam javimo kad artikal stigne.",
-    manageLink: { label: "Odjavite sva obaveštenja o dolasku robe.", href: d.unsubscribeUrl },
+    manageLink: { label: "Odjava od svih obaveštenja o dolasku robe", href: d.unsubscribeUrl },
   });
 }
 

@@ -693,6 +693,17 @@ export const convertToOrder = staffMutation({
     if (!quote) return notFound("Ponuda ne postoji.");
     const inquiry = await ctx.db.get("inquiries", quote.inquiryId);
     if (!inquiry) return notFound("Upit ne postoji.");
+    // Same rule as mechanicsAdmin.assertNotOwnProfile: staff never raise their own credit,
+    // so a staff member who is also a mechanic cannot override the limit on his own inquiry.
+    if (
+      args.creditOverride === true &&
+      !ctx.viewer.isOwner &&
+      inquiry.userId === ctx.viewer.userId
+    ) {
+      fail("FORBIDDEN", "Prekoračenje limita na svom upitu ne možete odobriti. To radi vlasnik.", {
+        field: "payment.method",
+      });
+    }
     await currentSentQuote(ctx, inquiry, quote._id);
     const settings = await getSettings(ctx);
     const customer = inquiry.userId ? await viewerForUser(ctx, inquiry.userId) : null;
