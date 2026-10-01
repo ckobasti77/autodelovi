@@ -1,0 +1,227 @@
+{
+  "chromium-390-registracija": {
+    "delay": 6000,
+    "visibleAt": 1061,
+    "hydratedBeforeTyping": false,
+    "typedAt": 2892,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "Petar Petrović",
+      "petar.xb01@primer.rs",
+      "TajnaLozinka-555"
+    ],
+    "hydratedAt": 7451,
+    "after": {
+      "#su-name": {
+        "dom": "Petar Petrović",
+        "reactValue": "Petar Petrović"
+      },
+      "#su-email": {
+        "dom": "petar.xb01@primer.rs",
+        "reactValue": "petar.xb01@primer.rs"
+      },
+      "#su-password": {
+        "dom": "TajnaLozinka-555",
+        "reactValue": "TajnaLozinka-555"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "summaryWithoutTerms": [
+      "Potrebna je saglasnost sa uslovima korišćenja."
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "chromium-390-reset": {
+    "delay": 6000,
+    "visibleAt": 980,
+    "hydratedBeforeTyping": false,
+    "typedAt": 1635,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "petar.xb01@primer.rs"
+    ],
+    "hydratedAt": 7317,
+    "after": {
+      "#rp-email": {
+        "dom": "petar.xb01@primer.rs",
+        "reactValue": "petar.xb01@primer.rs"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "chromium-390-majstor": {
+    "delay": 6000,
+    "visibleAt": 763,
+    "hydratedBeforeTyping": false,
+    "typedAt": 2730,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "servis.xb01@primer.rs",
+      "TajnaLozinka-555",
+      "Servis XB01",
+      "0641234567"
+    ],
+    "hydratedAt": 7010,
+    "after": {
+      "#mr-email": {
+        "dom": "servis.xb01@primer.rs",
+        "reactValue": "(uncontrolled)"
+      },
+      "#mr-password": {
+        "dom": "TajnaLozinka-555",
+        "reactValue": "(uncontrolled)"
+      },
+      "#mr-companyName": {
+        "dom": "Servis XB01",
+        "reactValue": "(uncontrolled)"
+      },
+      "#mr-phone": {
+        "dom": "0641234567",
+        "reactValue": "(uncontrolled)"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "summaryAfterSubmit": [
+      "Upišite PIB.",
+      "Upišite matični broj.",
+      "Upišite ime i prezime kontakt osobe.",
+      "Upišite mesto.",
+      "Upišite adresu servisa.",
+      "Izaberite bar jednu vrstu servisa.",
+      "Potrebna je saglasnost sa uslovima korišćenja."
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "chromium-390-bis": {
+    "delay": 6000,
+    "visibleAt": 956,
+    "hydratedBeforeTyping": false,
+    "typedAt": 1649,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "kupac.xb01@primer.rs"
+    ],
+    "hydratedAt": 7253,
+    "after": {
+      "#bis-email": {
+        "dom": "kupac.xb01@primer.rs",
+        "reactValue": "kupac.xb01@primer.rs"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "afterSubmit": {
+      "emailMsg": null,
+      "focus": "cb_R_rmjinebn5rdabmqalb_",
+      "consentInvalid": "true"
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "chromium-390-pretraga": {
+    "delay": 6000,
+    "visibleAt": 701,
+    "hydratedBeforeTyping": false,
+    "typedAt": 1124,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "plocice golf"
+    ],
+    "hydratedAt": 6760,
+    "after": {
+      "[data-testid=search-page-input] input": {
+        "dom": "plocice golf",
+        "reactValue": "plocice golf"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "afterRerender": {
+      "dom": "plocice golf",
+      "reactValue": "plocice golf"
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "chromium-390-mid-home": {
+    "delay": 6000,
+    "runs": [
+      {
+        "expected": "5Q0615505R",
+        "after": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "000001"
+      },
+      {
+        "expected": "5Q0615505R",
+        "after": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "000111"
+      },
+      {
+        "expected": "5Q0615505R",
+        "after": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        },
+        "kept": true,
+        "hydrationDuringTyping": false,
+        "hydratedFlags": "000000"
+      }
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "chromium-390-mid-upit": {
+    "delay": 6000,
+    "runs": [
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "000000111111111111111111"
+      },
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "000000000111111111111111"
+      },
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "011111111111111111111111"
+      }
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  }
+}

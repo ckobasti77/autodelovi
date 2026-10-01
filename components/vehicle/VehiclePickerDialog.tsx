@@ -268,7 +268,14 @@ export function VehiclePickerDialog() {
 
   if (desktop) {
     return (
-      <Dialog open={open} onOpenChange={setOpen} size="md" title="Izaberite vozilo">
+      <Dialog
+        open={open}
+        onOpenChange={setOpen}
+        size="md"
+        title="Izaberite vozilo"
+        // Anchored at the top: steps differ in height and a centred panel jumped (XB-02).
+        position="top"
+      >
         {body}
       </Dialog>
     );

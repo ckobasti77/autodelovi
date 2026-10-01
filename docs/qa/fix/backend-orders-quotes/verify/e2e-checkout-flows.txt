@@ -1,0 +1,44 @@
+
+Running 2 tests using 1 worker
+
+[1/2] [desktop-1440] › tests\e2e\mechanics.spec.ts:106:7 › mechanics portal › register → approve → own prices → quick order → deferred order
+  1) [desktop-1440] › tests\e2e\mechanics.spec.ts:106:7 › mechanics portal › register → approve → own prices → quick order → deferred order 
+
+    Error: browserContext.close: ENOENT: no such file or directory, open 'C:\Users\admin\Desktop\Web Dev Projects\autodelovi\test-results\.playwright-artifacts-0\traces\36f75ee2a81b01ff0dcd-0444f0f0275bdbbcfc07.trace'
+
+    Error: ENOENT: no such file or directory, open 'C:\Users\admin\Desktop\Web Dev Projects\autodelovi\test-results\.playwright-artifacts-0\78c21902bbbe31c75601afa15c59e70a.zip'
+
+    Error Context: test-results\mechanics-mechanics-portal-958c3-uick-order-→-deferred-order-desktop-1440\error-context.md
+
+
+[2/2] [desktop-1440] › tests\e2e\storefront.spec.ts:103:7 › storefront › OEM search → product → cart → guest order with pouzeće lands in Convex
+  2) [desktop-1440] › tests\e2e\storefront.spec.ts:103:7 › storefront › OEM search → product → cart → guest order with pouzeće lands in Convex 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected value: "purchase"
+    Received array: []
+
+      176 |
+      177 |     const tracked = await page.evaluate(() => (window.__skTrack ?? []).map((e) => e.event.name));
+    > 178 |     expect(tracked).toContain("purchase");
+          |                     ^
+      179 |     expect(errors).toEqual([]);
+      180 |   });
+      181 |
+        at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\tests\e2e\storefront.spec.ts:178:21
+
+    Error Context: test-results\storefront-storefront-OEM--485eb-ith-pouzeće-lands-in-Convex-desktop-1440\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\storefront-storefront-OEM--485eb-ith-pouzeće-lands-in-Convex-desktop-1440\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\storefront-storefront-OEM--485eb-ith-pouzeće-lands-in-Convex-desktop-1440\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  2 failed
+    [desktop-1440] › tests\e2e\mechanics.spec.ts:106:7 › mechanics portal › register → approve → own prices → quick order → deferred order 
+    [desktop-1440] › tests\e2e\storefront.spec.ts:103:7 › storefront › OEM search → product → cart → guest order with pouzeće lands in Convex 

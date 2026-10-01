@@ -1,0 +1,66 @@
+{
+  "reveal": [
+    {
+      "path": "/",
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "errors": []
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "reducedMotion": "no-preference",
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "errors": []
+    },
+    {
+      "path": "/delovi/kocioni-diskovi",
+      "width": 360,
+      "reducedMotion": "no-preference",
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "errors": []
+    },
+    {
+      "path": "/deo/kocioni-disk-prednji-276-24-mm-demo-0004",
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "errors": []
+    },
+    {
+      "path": "/kontakt",
+      "width": 1440,
+      "reducedMotion": "no-preference",
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "errors": []
+    },
+    {
+      "path": "/delovi/kocioni-diskovi",
+      "width": 390,
+      "reducedMotion": "reduce",
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "errors": []
+    },
+    {
+      "path": "client-nav → /delovi/motor-i-usis",
+      "width": 390,
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "errors": []
+    }
+  ]
+}

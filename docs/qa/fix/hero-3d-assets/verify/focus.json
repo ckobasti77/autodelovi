@@ -1,0 +1,74 @@
+[
+  {
+    "viewport": "390x844",
+    "slug": "kocione-plocice",
+    "ok": true,
+    "selected": "kocione-plocice",
+    "progress": 0.52,
+    "panel": [
+      490,
+      1266
+    ],
+    "errors": []
+  },
+  {
+    "viewport": "390x844",
+    "slug": "turbina",
+    "ok": true,
+    "selected": "turbina",
+    "progress": 0.74,
+    "panel": [
+      490,
+      1266
+    ],
+    "errors": []
+  },
+  {
+    "viewport": "768x1024",
+    "slug": "kocione-plocice",
+    "ok": true,
+    "selected": "kocione-plocice",
+    "progress": 0.52,
+    "panel": [
+      594,
+      1536
+    ],
+    "errors": []
+  },
+  {
+    "viewport": "768x1024",
+    "slug": "turbina",
+    "ok": true,
+    "selected": "turbina",
+    "progress": 0.74,
+    "panel": [
+      594,
+      1536
+    ],
+    "errors": []
+  },
+  {
+    "viewport": "1023x768",
+    "slug": "kocione-plocice",
+    "ok": true,
+    "selected": "kocione-plocice",
+    "progress": 0.52,
+    "panel": [
+      445,
+      1152
+    ],
+    "errors": []
+  },
+  {
+    "viewport": "1023x768",
+    "slug": "turbina",
+    "ok": true,
+    "selected": "turbina",
+    "progress": 0.74,
+    "panel": [
+      445,
+      1152
+    ],
+    "errors": []
+  }
+]

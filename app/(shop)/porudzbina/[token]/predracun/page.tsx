@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { cache } from "react";
 
 import { api } from "@/convex/_generated/api";
 import { site } from "@/config/site";
@@ -12,7 +13,20 @@ import { fetchPublic } from "@/lib/server/convex";
 import { getSettingsPublic } from "@/lib/server/catalog-cache";
 import { PrintButton } from "@/components/order/PrintButton";
 
-export const metadata: Metadata = tokenPageMetadata("Predračun");
+/** One `orders.getByToken` per request, shared by the metadata and the page. */
+const loadOrder = cache((token: string) => fetchPublic(api.orders.getByToken, { token }));
+
+/**
+ * Resolves the token before anything streams, so an unknown token answers with the server-
+ * rendered 404 page instead of an empty shell (FLOW-05).
+ */
+export async function generateMetadata({
+  params,
+}: PageProps<"/porudzbina/[token]/predracun">): Promise<Metadata> {
+  const { token } = await params;
+  if (!(await loadOrder(token))) notFound();
+  return tokenPageMetadata("Predračun");
+}
 
 /**
  * Printable predračun (pro-forma, ROUTES §B1): print theme, black on white; the seller block
@@ -21,10 +35,7 @@ export const metadata: Metadata = tokenPageMetadata("Predračun");
  */
 export default async function ProformaPage({ params }: PageProps<"/porudzbina/[token]/predracun">) {
   const { token } = await params;
-  const [o, settings] = await Promise.all([
-    fetchPublic(api.orders.getByToken, { token }),
-    getSettingsPublic(),
-  ]);
+  const [o, settings] = await Promise.all([loadOrder(token), getSettingsPublic()]);
   if (!o) notFound();
   const company = companyFromSettings(settings);
   const contact = contactFromSettings(settings);
@@ -46,7 +57,7 @@ export default async function ProformaPage({ params }: PageProps<"/porudzbina/[t
       data-reveal="off"
       className="bg-bg px-page py-10 text-ink-1 print:bg-white print:p-0"
     >
-      <div className="mx-auto flex max-w-[52rem] flex-col gap-8 rounded-md bg-surface-1 p-8 print:rounded-none print:p-0">
+      <div className="mx-auto flex max-w-[52rem] flex-col gap-8 rounded-md bg-surface-1 p-5 sm:p-8 print:rounded-none print:p-0">
         <div className="flex flex-wrap items-start justify-between gap-6">
           <div className="flex flex-col gap-1 type-body-s text-ink-2">
             {seller.map((line, i) => (
@@ -96,7 +107,38 @@ export default async function ProformaPage({ params }: PageProps<"/porudzbina/[t
             </p>
           </div>
         </div>
-        <table className="w-full border-collapse type-body-s">
+        {/* Phones (VIS-09): one block per line — name full width, codes, then qty × price = amount.
+            The four-column table takes over from sm and always in print. */}
+        <ul className="flex flex-col type-body-s sm:hidden print:hidden" aria-label="Stavke">
+          {o.items.map((i, idx) => (
+            <li
+              key={idx}
+              className="flex flex-col gap-1 border-b border-line py-3"
+            >
+              <span className="text-ink-1">{i.name}</span>
+              <span className="type-caption text-ink-3">
+                {i.sku}
+                {i.oem ? (
+                  <>
+                    {" · OEM "}
+                    <span className="whitespace-nowrap">{i.oem}</span>
+                  </>
+                ) : null}
+              </span>
+              <span className="flex items-baseline justify-between gap-3 tabular-nums">
+                <span className="text-ink-2">
+                  {i.quantity} × {formatRSD(i.unitPricePara)}
+                </span>
+                <span className="font-semibold">{formatRSD(i.lineTotalPara)}</span>
+              </span>
+            </li>
+          ))}
+          <li className="flex justify-between gap-3 border-b border-line py-3">
+            <span>Dostava</span>
+            <span className="tabular-nums">{formatRSD(o.totals.deliveryPara)}</span>
+          </li>
+        </ul>
+        <table className="hidden w-full border-collapse type-body-s sm:table print:table">
           <thead>
             <tr className="border-b border-line-strong text-left type-label uppercase text-ink-3">
               <th scope="col" className="py-2 pr-3">
@@ -106,7 +148,7 @@ export default async function ProformaPage({ params }: PageProps<"/porudzbina/[t
                 Kol.
               </th>
               <th scope="col" className="py-2 pr-3 text-right">
-                Cena sa PDV
+                Cena sa PDV-om
               </th>
               <th scope="col" className="py-2 text-right">
                 Iznos
@@ -120,7 +162,12 @@ export default async function ProformaPage({ params }: PageProps<"/porudzbina/[t
                   {i.name}
                   <span className="block type-caption text-ink-3">
                     {i.sku}
-                    {i.oem ? ` · OEM ${i.oem}` : ""}
+                    {i.oem ? (
+                      <>
+                        {" · OEM "}
+                        <span className="whitespace-nowrap">{i.oem}</span>
+                      </>
+                    ) : null}
                   </span>
                 </td>
                 <td className="py-2 pr-3 text-right tabular-nums">{i.quantity}</td>

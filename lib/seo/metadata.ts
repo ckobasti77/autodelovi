@@ -22,6 +22,11 @@ export type PageMetaInput = {
   /** The title already carries (or deliberately drops) the suffix — used as is (≤ 60). */
   titleIsFinal?: boolean;
   /**
+   * The end of `title` that must survive shortening — the vehicle („ za Škodu Octaviju“) or
+   * the page number („ — strana 2“). Only the part before it is shortened (D250).
+   */
+  titleKeep?: string;
+  /**
    * The route segment has its own `opengraph-image` file (product, category, landings):
    * no image is set here, because a config image would replace the generated one.
    */
@@ -45,14 +50,58 @@ export function defaultTitleSuffix(): string {
   return ` | ${site.brand.name}`;
 }
 
+/** Words a shortened title must not end with („… SEAT i“, „… 312 ×“, „… za“). */
+const DANGLING_WORD = /\s+(?:i|ili|a|u|za|sa|od|do|na|po|×|x|[-–—/+&])$/i;
+
+/**
+ * Shortens a title fragment to whole words without an ellipsis (titles are labels, not
+ * truncated prose): a parenthetical qualifier goes first („Senzori (lambda, parking,
+ * temperatura)“ → „Senzori“), then words from the end; trailing punctuation, an unclosed
+ * bracket and a dangling conjunction or preposition are removed. May return "" when not
+ * even one word fits.
+ */
+export function shortenWords(text: string, max: number): string {
+  const clean = text.replace(/\s+/g, " ").trim();
+  if (clean.length <= max) return clean;
+  const bare = clean.replace(/\s*\([^)]*\)/g, "").trim();
+  if (bare.length <= max) return bare;
+  let cut = bare.slice(0, max + 1);
+  const space = cut.lastIndexOf(" ");
+  cut = space > 0 ? cut.slice(0, space) : "";
+  for (;;) {
+    const next = cut
+      .replace(/\s*\([^)]*$/, "")
+      .replace(/[\s,.;:]+$/, "")
+      .replace(DANGLING_WORD, "");
+    if (next === cut) return cut;
+    cut = next;
+  }
+}
+
 /**
  * Keyword-first title with the brand suffix. When the suffix would push the title past
  * 60 characters, the keyword part is shortened first; a keyword part that cannot fit in 20
  * characters drops the suffix instead of losing its meaning.
+ *
+ * With `keep` (the end of the title that carries the vehicle or the page number) the order
+ * is the one of D193/D250: drop the suffix, then shorten only the part before `keep` — so
+ * „— strana 2“ and the model name are never cut away.
  */
-export function pageTitle(title: string, suffix: string = defaultTitleSuffix()): string {
+export function pageTitle(
+  title: string,
+  suffix: string = defaultTitleSuffix(),
+  keep?: string,
+): string {
   const clean = title.replace(/\s+/g, " ").trim();
   if (clean.length + suffix.length <= TITLE_MAX) return `${clean}${suffix}`;
+  const k = keep?.replace(/\s+/g, " ").trim();
+  if (k && clean.length > k.length && clean.endsWith(k)) {
+    if (clean.length <= TITLE_MAX) return clean;
+    const head = clean.slice(0, -k.length);
+    const sep = /\s$/.test(head) ? " " : "";
+    const short = shortenWords(head, TITLE_MAX - k.length - sep.length);
+    if (short) return `${short}${sep}${k}`;
+  }
   const room = TITLE_MAX - suffix.length;
   if (room >= 20 && clean.length - room <= 18) return `${clampText(clean, room)}${suffix}`;
   return clampText(clean, TITLE_MAX);
@@ -77,7 +126,7 @@ export const DEFAULT_OG_IMAGE = {
 export function buildMetadata(input: PageMetaInput): Metadata {
   const title = input.titleIsFinal
     ? clampText(input.title, TITLE_MAX)
-    : pageTitle(input.title, input.titleSuffix);
+    : pageTitle(input.title, input.titleSuffix, input.titleKeep);
   const description = pageDescription(input.description);
   return {
     title: { absolute: title },

@@ -1,0 +1,136 @@
+{
+  "chromium-390-mid-upit": {
+    "delay": 6000,
+    "runs": [
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "001111111111111111111111"
+      },
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "001111111111111111111111"
+      },
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "001111111111111111111111"
+      },
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "000111111111111111111111"
+      },
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "001111111111111111111111"
+      },
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "001111111111111111111111"
+      }
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "chromium-390-mid-home": {
+    "delay": 6000,
+    "runs": [
+      {
+        "expected": "5Q0615505R",
+        "after": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        },
+        "kept": true,
+        "hydrationDuringTyping": false,
+        "hydratedFlags": "000000"
+      },
+      {
+        "expected": "5Q0615505R",
+        "after": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "000011"
+      },
+      {
+        "expected": "5Q0615505R",
+        "after": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "000011"
+      },
+      {
+        "expected": "5Q0615505R",
+        "after": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "000001"
+      },
+      {
+        "expected": "5Q0615505R",
+        "after": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "000011"
+      },
+      {
+        "expected": "5Q0615505R",
+        "after": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "000011"
+      }
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  }
+}

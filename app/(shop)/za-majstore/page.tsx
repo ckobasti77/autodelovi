@@ -33,18 +33,45 @@ export async function generateMetadata(): Promise<Metadata> {
 const EXAMPLE_PARA = 1_000_000;
 
 const BENEFITS: [string, string][] = [
-  ["Vaša cena svuda", "Katalog, pretraga, 3D prikaz, korpa i porudžbina računaju cenu sa vašim rabatom. Maloprodajna cena stoji precrtana pored."],
-  ["Brza porudžbina", "Nalepite listu OEM brojeva sa količinama ili otpremite CSV. Tačni brojevi idu u korpu jednim klikom, nepronađeni kao upit."],
-  ["Dostava u servis", "Kurir donosi na adresu servisa iz profila; adresu menjate pri svakoj porudžbini. Lično preuzimanje je bez troška."],
-  ["Prioritetni upiti", "Upiti servisa su kod nas označeni i idu prvi na red — i oni poslati iz brze porudžbine, bez popunjavanja forme."],
-  ["Odloženo plaćanje", "Po dogovoru, za servise sa kojima redovno radimo: rok i limit vidite u portalu, a način plaćanja birate u porudžbini."],
-  ["Istorija, omiljeno, vozila mušterija", "„Poruči ponovo“ za iste radove, delovi koje stalno poručujete i vozila mušterija sa brojem šasije i tablicama."],
+  [
+    "Vaša cena svuda",
+    "Katalog, pretraga, 3D prikaz, korpa i porudžbina računaju cenu sa vašim rabatom. Maloprodajna cena stoji precrtana pored.",
+  ],
+  [
+    "Brza porudžbina",
+    "Nalepite listu OEM brojeva sa količinama ili učitajte CSV fajl. Tačni brojevi idu u korpu jednim klikom, nepronađeni kao upit.",
+  ],
+  [
+    "Dostava u servis",
+    "Kurir donosi na adresu servisa iz profila; po potrebi je promenite u porudžbini. Lično preuzimanje je bez troška.",
+  ],
+  [
+    "Prioritetni upiti",
+    "Upiti servisa su kod nas označeni i idu prvi na red — i oni poslati iz brze porudžbine, bez popunjavanja forme.",
+  ],
+  [
+    "Odloženo plaćanje",
+    "Po dogovoru, za servise sa kojima redovno radimo: rok i limit vidite u portalu, a način plaćanja birate u porudžbini.",
+  ],
+  [
+    "Istorija, omiljeno, vozila mušterija",
+    "„Poruči ponovo“ za iste radove, delovi koje stalno poručujete i vozila mušterija sa brojem šasije i tablicama.",
+  ],
 ];
 
 const STEPS = [
-  { title: "Registrujte servis", body: "Naziv servisa, PIB, matični broj, adresa i marke koje servisirate — pet minuta posla." },
-  { title: "Proverimo podatke", body: "U toku radnog dana proverimo firmu i odredimo nivo rabata. Odgovor stiže e-poštom." },
-  { title: "Poručujete po svojoj ceni", body: "Posle prijave vidite svoju cenu na svakom artiklu, u korpi i u cenovniku koji preuzimate u Excelu." },
+  {
+    title: "Registrujte servis",
+    body: "Naziv servisa, PIB, matični broj, adresa i marke koje servisirate — pet minuta posla.",
+  },
+  {
+    title: "Proverimo podatke",
+    body: "U toku radnog dana proverimo firmu i odredimo nivo rabata. Odgovor stiže e-poštom.",
+  },
+  {
+    title: "Poručujete po svojoj ceni",
+    body: "Posle prijave vidite svoju cenu na svakom artiklu, u korpi i u cenovniku koji preuzimate u Excelu.",
+  },
 ];
 
 /**
@@ -61,7 +88,10 @@ export default async function MechanicsPage() {
   const contact = contactFromSettings(settings);
   const links = contactLinkList(contact).filter((l) => l.channel !== "email");
   const values = placeholderValues(settings);
-  const faqItems = faqs.map((f) => ({ question: f.question, answer: fillPlaceholders(f.answerMd, values) }));
+  const faqItems = faqs.map((f) => ({
+    question: f.question,
+    answer: fillPlaceholders(f.answerMd, values),
+  }));
   const crumbs = [{ label: "Početna", href: ROUTES.home }, { label: "Za majstore" }];
 
   return (
@@ -70,7 +100,11 @@ export default async function MechanicsPage() {
         data={[
           breadcrumbJsonLd(crumbs),
           ...(faqItems.length
-            ? [faqJsonLd(faqItems.map((f) => ({ question: f.question, answer: markdownToText(f.answer) })))]
+            ? [
+                faqJsonLd(
+                  faqItems.map((f) => ({ question: f.question, answer: markdownToText(f.answer) })),
+                ),
+              ]
             : []),
         ]}
       />
@@ -82,7 +116,8 @@ export default async function MechanicsPage() {
               Za majstore
             </RevealText>
             <RevealText as="p" className="max-w-[46ch] type-lead text-ink-2">
-              Servisi za VAG vozila kod nas poručuju po svojoj ceni, po OEM broju i bez čekanja na telefonu.
+              Servisi za VAG vozila kod nas poručuju po svojoj ceni, po OEM broju i bez čekanja na
+              telefonu.
             </RevealText>
             <MechanicCta />
             <ContactActions links={links} location="mechanics" />
@@ -90,7 +125,9 @@ export default async function MechanicsPage() {
           {tiers.length ? (
             <div className="self-end lg:col-span-5 lg:col-start-8">
               <table className="w-full border-collapse" data-reveal="off">
-                <caption className="mb-1 text-left type-label uppercase text-ink-3">Nivoi rabata</caption>
+                <caption className="mb-1 text-left type-label uppercase text-ink-3">
+                  Nivoi rabata
+                </caption>
                 <thead>
                   <tr className="border-b border-line-strong">
                     <th scope="col" className="py-2 text-left type-caption font-normal text-ink-3">
@@ -99,7 +136,10 @@ export default async function MechanicsPage() {
                     <th scope="col" className="py-2 text-right type-caption font-normal text-ink-3">
                       Rabat
                     </th>
-                    <th scope="col" className="py-2 pl-4 text-right type-caption font-normal text-ink-3">
+                    <th
+                      scope="col"
+                      className="py-2 pl-4 text-right type-caption font-normal text-ink-3"
+                    >
                       Artikal od {formatRSD(EXAMPLE_PARA)}
                     </th>
                   </tr>
@@ -110,7 +150,9 @@ export default async function MechanicsPage() {
                       <th scope="row" className="py-4 text-left align-top">
                         <span className="block type-h3 text-ink-1">{t.name}</span>
                         {t.publicDescription ? (
-                          <span className="block type-body-s font-normal text-ink-3">{t.publicDescription}</span>
+                          <span className="block type-body-s font-normal text-ink-3">
+                            {t.publicDescription}
+                          </span>
                         ) : null}
                       </th>
                       <td className="py-4 text-right align-top type-numeral-m tabular-nums text-ink-1">
@@ -118,7 +160,9 @@ export default async function MechanicsPage() {
                       </td>
                       <td className="py-4 pl-4 text-right align-top">
                         <span className="block type-numeral-m tabular-nums text-accent-text">
-                          {formatRSD(Math.round((EXAMPLE_PARA * (10_000 - t.defaultDiscountBp)) / 10_000))}
+                          {formatRSD(
+                            Math.round((EXAMPLE_PARA * (10_000 - t.defaultDiscountBp)) / 10_000),
+                          )}
                         </span>
                         <span className="block type-caption-s text-ink-3">sa PDV-om</span>
                       </td>
@@ -127,14 +171,17 @@ export default async function MechanicsPage() {
                 </tbody>
               </table>
               <p className="mt-3 type-caption font-normal text-ink-3">
-                Rabat se računa od maloprodajne cene sa PDV-om; za pojedine proizvođače i kategorije može biti drugačiji.
-                Nivo određujemo pri odobrenju naloga.
+                Rabat se računa od maloprodajne cene sa PDV-om; za pojedine proizvođače i kategorije
+                može biti drugačiji. Nivo određujemo pri odobrenju naloga.
               </p>
             </div>
           ) : null}
         </div>
 
-        <section aria-labelledby="benefits-title" className="mt-(--space-section) grid gap-10 lg:grid-cols-12 lg:gap-x-(--gutter)">
+        <section
+          aria-labelledby="benefits-title"
+          className="mt-(--space-section) grid gap-10 lg:grid-cols-12 lg:gap-x-(--gutter)"
+        >
           <h2 id="benefits-title" className="type-display-l uppercase text-ink-1 lg:col-span-4">
             Šta dobijate
           </h2>
@@ -148,13 +195,17 @@ export default async function MechanicsPage() {
           </dl>
         </section>
 
-        <section aria-labelledby="quick-title" className="mt-(--space-section) grid gap-10 lg:grid-cols-12 lg:gap-x-(--gutter)">
+        <section
+          aria-labelledby="quick-title"
+          className="mt-(--space-section) grid gap-10 lg:grid-cols-12 lg:gap-x-(--gutter)"
+        >
           <div className="flex flex-col gap-3 lg:col-span-4">
             <h2 id="quick-title" className="type-display-l uppercase text-ink-1">
               Brza porudžbina
             </h2>
             <p className="type-body text-ink-2">
-              Brojevi iz poruke, sa kutije ili iz Excela — razmaci, tačke, crtice i velika slova ne smetaju. Probajte.
+              Brojevi iz poruke, sa kutije ili iz Excela — razmaci, tačke, crtice i velika slova ne
+              smetaju. Probajte.
             </p>
           </div>
           <div className="lg:col-span-8">
@@ -162,7 +213,10 @@ export default async function MechanicsPage() {
           </div>
         </section>
 
-        <section aria-labelledby="steps-title" className="mt-(--space-section) grid gap-10 lg:grid-cols-12 lg:gap-x-(--gutter)">
+        <section
+          aria-labelledby="steps-title"
+          className="mt-(--space-section) grid gap-10 lg:grid-cols-12 lg:gap-x-(--gutter)"
+        >
           <h2 id="steps-title" className="type-display-l uppercase text-ink-1 lg:col-span-4">
             Kako do naloga
           </h2>
@@ -176,7 +230,9 @@ export default async function MechanicsPage() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="type-h3 text-ink-1">{s.title}</h3>
-                <p className="col-start-2 mt-1 type-body text-ink-2 sm:col-start-3 sm:mt-0">{s.body}</p>
+                <p className="col-start-2 mt-1 type-body text-ink-2 sm:col-start-3 sm:mt-0">
+                  {s.body}
+                </p>
               </li>
             ))}
           </ol>

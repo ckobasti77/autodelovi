@@ -1,0 +1,119 @@
+{
+  "viewport": "1440x900",
+  "results": [
+    {
+      "label": "poster",
+      "stage": {
+        "w": 1440,
+        "h": 836
+      },
+      "car": {
+        "x": 20,
+        "y": 261,
+        "w": 1299,
+        "h": 555,
+        "right": 1318,
+        "bottom": 815
+      },
+      "pctStageHeight": 66.4,
+      "pctStageWidth": 90.2,
+      "gapCaptionToCar": 261,
+      "gapCarToHonesty": -815,
+      "centreOffsetX": -51,
+      "ticks": {
+        "top": 16,
+        "bottom": 748,
+        "left": 618,
+        "right": 1392
+      },
+      "insideTicks": false,
+      "caption": null,
+      "honesty": {
+        "top": 0,
+        "bottom": 142,
+        "left": 1024,
+        "right": 1392
+      }
+    },
+    {
+      "label": "canvas",
+      "stage": {
+        "w": 1440,
+        "h": 836
+      },
+      "car": {
+        "x": 20,
+        "y": 261,
+        "w": 1299,
+        "h": 555,
+        "right": 1318,
+        "bottom": 815
+      },
+      "pctStageHeight": 66.4,
+      "pctStageWidth": 90.2,
+      "gapCaptionToCar": 261,
+      "gapCarToHonesty": -815,
+      "centreOffsetX": -51,
+      "ticks": {
+        "top": 16,
+        "bottom": 748,
+        "left": 618,
+        "right": 1392
+      },
+      "insideTicks": false,
+      "caption": null,
+      "honesty": {
+        "top": 0,
+        "bottom": 142,
+        "left": 1024,
+        "right": 1392
+      }
+    },
+    {
+      "label": "canvas-exploded",
+      "stage": {
+        "w": 1440,
+        "h": 836
+      },
+      "car": {
+        "x": 20,
+        "y": 199,
+        "w": 1327,
+        "h": 617,
+        "right": 1346,
+        "bottom": 815
+      },
+      "pctStageHeight": 73.8,
+      "pctStageWidth": 92.2,
+      "gapCaptionToCar": 111,
+      "gapCarToHonesty": -815,
+      "centreOffsetX": -37,
+      "ticks": {
+        "top": 16,
+        "bottom": 748,
+        "left": 618,
+        "right": 1392
+      },
+      "insideTicks": false,
+      "caption": {
+        "top": 0,
+        "bottom": 88,
+        "left": 618,
+        "right": 1050
+      },
+      "honesty": {
+        "top": 0,
+        "bottom": 142,
+        "left": 1024,
+        "right": 1392
+      }
+    }
+  ],
+  "posterSrc": "http://localhost:3001/images/hero/car-assembled-1440.avif",
+  "state": {
+    "tier": "high",
+    "progress": 0,
+    "status": "ready"
+  },
+  "errors": []
+}

@@ -1,0 +1,1161 @@
+{
+  "header": {
+    "classes": {
+      "iconLink": "size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1",
+      "textLink": "inline-flex h-11 items-center gap-2 rounded-xs px-2 text-[0.9375rem] font-medium text-ink-2 transition-control hover:text-ink-1",
+      "phoneText": "inline-flex h-11 items-center gap-2 rounded-xs px-2 text-[0.9375rem] font-medium text-ink-2 transition-control hover:text-ink-1 hidden min-[90rem]:inline-flex",
+      "phoneIcon": "size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 hidden sm:inline-flex min-[90rem]:hidden",
+      "viberText": "inline-flex h-11 items-center gap-2 rounded-xs px-2 text-[0.9375rem] font-medium text-ink-2 transition-control hover:text-ink-1 hidden min-[90rem]:inline-flex",
+      "viberIcon": "size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 hidden sm:inline-flex min-[90rem]:hidden",
+      "accountCls": "size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 hidden sm:inline-flex"
+    },
+    "guest": [
+      {
+        "width": 320,
+        "real": {
+          "vw": 320,
+          "docScrollW": 320,
+          "rowScrollW": 320,
+          "rowClientW": 320,
+          "menu": "260-304",
+          "menuFullyInView": true,
+          "accountDisplay": "none",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[168-212]",
+            "Korpa[214-258]",
+            "Otvori meni[260-304]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 320,
+          "docScrollW": 465,
+          "rowScrollW": 465,
+          "rowClientW": 320,
+          "menu": "421-465",
+          "menuFullyInView": false,
+          "accountDisplay": "none",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:none",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:none"
+          ],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[141-185]",
+            "SIM Pozovite (text)[187-290]",
+            "SIM Viber (text)[292-373]",
+            "Korpa[375-419]",
+            "Otvori meni[421-465]"
+          ]
+        }
+      },
+      {
+        "width": 360,
+        "real": {
+          "vw": 360,
+          "docScrollW": 360,
+          "rowScrollW": 360,
+          "rowClientW": 360,
+          "menu": "300-344",
+          "menuFullyInView": true,
+          "accountDisplay": "none",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[208-252]",
+            "Korpa[254-298]",
+            "Otvori meni[300-344]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 360,
+          "docScrollW": 466,
+          "rowScrollW": 465,
+          "rowClientW": 360,
+          "menu": "421-465",
+          "menuFullyInView": false,
+          "accountDisplay": "none",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:none",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:none"
+          ],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[141-185]",
+            "SIM Pozovite (text)[187-290]",
+            "SIM Viber (text)[292-373]",
+            "Korpa[375-419]",
+            "Otvori meni[421-465]"
+          ]
+        }
+      },
+      {
+        "width": 390,
+        "real": {
+          "vw": 390,
+          "docScrollW": 390,
+          "rowScrollW": 390,
+          "rowClientW": 390,
+          "menu": "330-374",
+          "menuFullyInView": true,
+          "accountDisplay": "none",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[238-282]",
+            "Korpa[284-328]",
+            "Otvori meni[330-374]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 390,
+          "docScrollW": 465,
+          "rowScrollW": 465,
+          "rowClientW": 390,
+          "menu": "421-465",
+          "menuFullyInView": false,
+          "accountDisplay": "none",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:none",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:none"
+          ],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[141-185]",
+            "SIM Pozovite (text)[187-290]",
+            "SIM Viber (text)[292-373]",
+            "Korpa[375-419]",
+            "Otvori meni[421-465]"
+          ]
+        }
+      },
+      {
+        "width": 430,
+        "real": {
+          "vw": 430,
+          "docScrollW": 430,
+          "rowScrollW": 430,
+          "rowClientW": 430,
+          "menu": "369-413",
+          "menuFullyInView": true,
+          "accountDisplay": "none",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[17-130]",
+            "Pretraga delova[277-321]",
+            "Korpa[323-367]",
+            "Otvori meni[369-413]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 430,
+          "docScrollW": 466,
+          "rowScrollW": 466,
+          "rowClientW": 430,
+          "menu": "422-466",
+          "menuFullyInView": false,
+          "accountDisplay": "none",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:none",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:none"
+          ],
+          "controls": [
+            "SKLOP — početna[17-130]",
+            "Pretraga delova[142-186]",
+            "SIM Pozovite (text)[188-291]",
+            "SIM Viber (text)[293-374]",
+            "Korpa[376-420]",
+            "Otvori meni[422-466]"
+          ]
+        }
+      },
+      {
+        "width": 479,
+        "real": {
+          "vw": 479,
+          "docScrollW": 479,
+          "rowScrollW": 479,
+          "rowClientW": 479,
+          "menu": "416-460",
+          "menuFullyInView": true,
+          "accountDisplay": "none",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[19-132]",
+            "Pretraga delova[324-368]",
+            "Korpa[370-414]",
+            "Otvori meni[416-460]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 479,
+          "docScrollW": 479,
+          "rowScrollW": 479,
+          "rowClientW": 479,
+          "menu": "424-468",
+          "menuFullyInView": true,
+          "accountDisplay": "none",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:none",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:none"
+          ],
+          "controls": [
+            "SKLOP — početna[19-132]",
+            "Pretraga delova[144-188]",
+            "SIM Pozovite (text)[190-293]",
+            "SIM Viber (text)[295-376]",
+            "Korpa[378-422]",
+            "Otvori meni[424-468]"
+          ]
+        }
+      },
+      {
+        "width": 480,
+        "real": {
+          "vw": 480,
+          "docScrollW": 480,
+          "rowScrollW": 480,
+          "rowClientW": 480,
+          "menu": "417-461",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[19-132]",
+            "Pretraga delova[279-323]",
+            "Moj nalog[325-369]",
+            "Korpa[371-415]",
+            "Otvori meni[417-461]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 480,
+          "docScrollW": 606,
+          "rowScrollW": 606,
+          "rowClientW": 480,
+          "menu": "562-606",
+          "menuFullyInView": false,
+          "accountDisplay": "flex",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:flex",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:flex"
+          ],
+          "controls": [
+            "SKLOP — početna[19-132]",
+            "Pretraga delova[144-188]",
+            "SIM Pozovite (text)[190-293]",
+            "SIM Pozovite +381 64 123 456[295-339]",
+            "SIM Viber (text)[341-422]",
+            "SIM Viber +381 64 123 4567[424-468]",
+            "Moj nalog[470-514]",
+            "Korpa[516-560]",
+            "Otvori meni[562-606]"
+          ]
+        }
+      },
+      {
+        "width": 640,
+        "real": {
+          "vw": 640,
+          "docScrollW": 640,
+          "rowScrollW": 640,
+          "rowClientW": 640,
+          "menu": "570-614",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[26-138]",
+            "Pretraga delova[432-476]",
+            "Moj nalog[478-522]",
+            "Korpa[524-568]",
+            "Otvori meni[570-614]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 640,
+          "docScrollW": 640,
+          "rowScrollW": 640,
+          "rowClientW": 640,
+          "menu": "570-614",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:flex",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:flex"
+          ],
+          "controls": [
+            "SKLOP — početna[26-138]",
+            "Pretraga delova[152-196]",
+            "SIM Pozovite (text)[198-301]",
+            "SIM Pozovite +381 64 123 456[303-347]",
+            "SIM Viber (text)[349-430]",
+            "SIM Viber +381 64 123 4567[432-476]",
+            "Moj nalog[478-522]",
+            "Korpa[524-568]",
+            "Otvori meni[570-614]"
+          ]
+        }
+      },
+      {
+        "width": 768,
+        "real": {
+          "vw": 768,
+          "docScrollW": 768,
+          "rowScrollW": 768,
+          "rowClientW": 768,
+          "menu": "693-737",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[31-143]",
+            "Pretraga delova[555-599]",
+            "Moj nalog[601-645]",
+            "Korpa[647-691]",
+            "Otvori meni[693-737]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 768,
+          "docScrollW": 768,
+          "rowScrollW": 768,
+          "rowClientW": 768,
+          "menu": "693-737",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:flex",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:flex"
+          ],
+          "controls": [
+            "SKLOP — početna[31-143]",
+            "Pretraga delova[275-319]",
+            "SIM Pozovite (text)[321-424]",
+            "SIM Pozovite +381 64 123 456[426-470]",
+            "SIM Viber (text)[472-553]",
+            "SIM Viber +381 64 123 4567[555-599]",
+            "Moj nalog[601-645]",
+            "Korpa[647-691]",
+            "Otvori meni[693-737]"
+          ]
+        }
+      },
+      {
+        "width": 1023,
+        "real": {
+          "vw": 1023,
+          "docScrollW": 1023,
+          "rowScrollW": 1023,
+          "rowClientW": 1023,
+          "menu": "938-982",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[41-153]",
+            "Pretraga delova[800-844]",
+            "Moj nalog[846-890]",
+            "Korpa[892-936]",
+            "Otvori meni[938-982]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 1023,
+          "docScrollW": 1023,
+          "rowScrollW": 1023,
+          "rowClientW": 1023,
+          "menu": "938-982",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:flex",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:flex"
+          ],
+          "controls": [
+            "SKLOP — početna[41-153]",
+            "Pretraga delova[519-563]",
+            "SIM Pozovite (text)[565-669]",
+            "SIM Pozovite +381 64 123 456[671-715]",
+            "SIM Viber (text)[717-798]",
+            "SIM Viber +381 64 123 4567[800-844]",
+            "Moj nalog[846-890]",
+            "Korpa[892-936]",
+            "Otvori meni[938-982]"
+          ]
+        }
+      },
+      {
+        "width": 1024,
+        "real": {
+          "vw": 1024,
+          "docScrollW": 1024,
+          "rowScrollW": 1024,
+          "rowClientW": 1024,
+          "menu": "hidden",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[41-158]",
+            "Delovi[186-253]",
+            "Vozila[257-323]",
+            "Za majstore[327-435]",
+            "Upit po broju šasije[439-596]",
+            "Pretraga delova[835-879]",
+            "Moj nalog[887-931]",
+            "Korpa[939-983]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 1024,
+          "docScrollW": 1024,
+          "rowScrollW": 1024,
+          "rowClientW": 1024,
+          "menu": "hidden",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:flex",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:flex"
+          ],
+          "controls": [
+            "SKLOP — početna[41-158]",
+            "Delovi[186-253]",
+            "Vozila[257-323]",
+            "Za majstore[327-413]",
+            "Upit po broju šasije[417-518]",
+            "Pretraga delova[530-574]",
+            "SIM Pozovite (text)[582-685]",
+            "SIM Pozovite +381 64 123 456[693-737]",
+            "SIM Viber (text)[745-827]",
+            "SIM Viber +381 64 123 4567[835-879]",
+            "Moj nalog[887-931]",
+            "Korpa[939-983]"
+          ]
+        }
+      },
+      {
+        "width": 1280,
+        "real": {
+          "vw": 1280,
+          "docScrollW": 1280,
+          "rowScrollW": 1280,
+          "rowClientW": 1280,
+          "menu": "hidden",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[48-165]",
+            "Delovi[193-260]",
+            "Vozila[264-330]",
+            "Za majstore[334-442]",
+            "Upit po broju šasije[446-603]",
+            "Broj dela ili naziv/[713-969]",
+            "Izaberite vozilo[977-1128]",
+            "Moj nalog[1136-1180]",
+            "Korpa[1188-1232]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 1280,
+          "docScrollW": 1283,
+          "rowScrollW": 1283,
+          "rowClientW": 1280,
+          "menu": "hidden",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:flex",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:flex"
+          ],
+          "controls": [
+            "SKLOP — početna[48-165]",
+            "Delovi[193-260]",
+            "Vozila[264-330]",
+            "Za majstore[334-420]",
+            "Upit po broju šasije[424-488]",
+            "Broj dela ili naziv/[500-731]",
+            "Izaberite vozilo[739-874]",
+            "SIM Pozovite (text)[882-985]",
+            "SIM Pozovite +381 64 123 456[993-1037]",
+            "SIM Viber (text)[1045-1127]",
+            "SIM Viber +381 64 123 4567[1135-1179]",
+            "Moj nalog[1187-1231]",
+            "Korpa[1239-1283]"
+          ]
+        }
+      },
+      {
+        "width": 1439,
+        "real": {
+          "vw": 1439,
+          "docScrollW": 1439,
+          "rowScrollW": 1439,
+          "rowClientW": 1439,
+          "menu": "hidden",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[48-165]",
+            "Delovi[193-260]",
+            "Vozila[264-330]",
+            "Za majstore[334-442]",
+            "Upit po broju šasije[446-603]",
+            "Broj dela ili naziv/[872-1128]",
+            "Izaberite vozilo[1136-1287]",
+            "Moj nalog[1295-1339]",
+            "Korpa[1347-1391]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 1439,
+          "docScrollW": 1439,
+          "rowScrollW": 1439,
+          "rowClientW": 1439,
+          "menu": "hidden",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:flex",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:flex"
+          ],
+          "controls": [
+            "SKLOP — početna[48-165]",
+            "Delovi[193-260]",
+            "Vozila[264-330]",
+            "Za majstore[334-435]",
+            "Upit po broju šasije[439-587]",
+            "Broj dela ili naziv/[599-836]",
+            "Izaberite vozilo[844-982]",
+            "SIM Pozovite (text)[990-1093]",
+            "SIM Pozovite +381 64 123 456[1101-1145]",
+            "SIM Viber (text)[1153-1235]",
+            "SIM Viber +381 64 123 4567[1243-1287]",
+            "Moj nalog[1295-1339]",
+            "Korpa[1347-1391]"
+          ]
+        }
+      },
+      {
+        "width": 1440,
+        "real": {
+          "vw": 1440,
+          "docScrollW": 1440,
+          "rowScrollW": 1440,
+          "rowClientW": 1440,
+          "menu": "hidden",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[48-165]",
+            "Delovi[193-260]",
+            "Vozila[264-330]",
+            "Za majstore[334-442]",
+            "Upit po broju šasije[446-603]",
+            "Broj dela ili naziv/[873-1129]",
+            "Izaberite vozilo[1137-1288]",
+            "Moj nalog[1296-1340]",
+            "Korpa[1348-1392]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 1440,
+          "docScrollW": 1440,
+          "rowScrollW": 1440,
+          "rowClientW": 1440,
+          "menu": "hidden",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:none",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:none"
+          ],
+          "controls": [
+            "SKLOP — početna[48-165]",
+            "Delovi[193-260]",
+            "Vozila[264-330]",
+            "Za majstore[334-442]",
+            "Upit po broju šasije[446-603]",
+            "Broj dela ili naziv/[673-929]",
+            "Izaberite vozilo[937-1087]",
+            "SIM Pozovite (text)[1095-1198]",
+            "SIM Viber (text)[1206-1288]",
+            "Moj nalog[1296-1340]",
+            "Korpa[1348-1392]"
+          ]
+        }
+      },
+      {
+        "width": 1920,
+        "real": {
+          "vw": 1920,
+          "docScrollW": 1920,
+          "rowScrollW": 1920,
+          "rowClientW": 1920,
+          "menu": "hidden",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[240-357]",
+            "Delovi[385-452]",
+            "Vozila[456-522]",
+            "Za majstore[526-634]",
+            "Upit po broju šasije[638-795]",
+            "Broj dela ili naziv/[1129-1417]",
+            "Izaberite vozilo[1425-1576]",
+            "Moj nalog[1584-1628]",
+            "Korpa[1636-1680]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 1920,
+          "docScrollW": 1920,
+          "rowScrollW": 1920,
+          "rowClientW": 1920,
+          "menu": "hidden",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:none",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:none"
+          ],
+          "controls": [
+            "SKLOP — početna[240-357]",
+            "Delovi[385-452]",
+            "Vozila[456-522]",
+            "Za majstore[526-634]",
+            "Upit po broju šasije[638-795]",
+            "Broj dela ili naziv/[929-1217]",
+            "Izaberite vozilo[1225-1375]",
+            "SIM Pozovite (text)[1383-1486]",
+            "SIM Viber (text)[1494-1576]",
+            "Moj nalog[1584-1628]",
+            "Korpa[1636-1680]"
+          ]
+        }
+      }
+    ],
+    "mechanic": [
+      {
+        "route": "/delovi",
+        "width": 320,
+        "real": {
+          "vw": 320,
+          "docScrollW": 320,
+          "rowScrollW": 320,
+          "rowClientW": 320,
+          "menu": "260-304",
+          "menuFullyInView": true,
+          "accountDisplay": "none",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[168-212]",
+            "Korpa[214-258]",
+            "Otvori meni[260-304]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 320,
+          "docScrollW": 465,
+          "rowScrollW": 465,
+          "rowClientW": 320,
+          "menu": "421-465",
+          "menuFullyInView": false,
+          "accountDisplay": "none",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:none",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:none"
+          ],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[141-185]",
+            "SIM Pozovite (text)[187-290]",
+            "SIM Viber (text)[292-373]",
+            "Korpa[375-419]",
+            "Otvori meni[421-465]"
+          ]
+        }
+      },
+      {
+        "route": "/delovi",
+        "width": 360,
+        "real": {
+          "vw": 360,
+          "docScrollW": 360,
+          "rowScrollW": 360,
+          "rowClientW": 360,
+          "menu": "300-344",
+          "menuFullyInView": true,
+          "accountDisplay": "none",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[208-252]",
+            "Korpa[254-298]",
+            "Otvori meni[300-344]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 360,
+          "docScrollW": 466,
+          "rowScrollW": 465,
+          "rowClientW": 360,
+          "menu": "421-465",
+          "menuFullyInView": false,
+          "accountDisplay": "none",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:none",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:none"
+          ],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[141-185]",
+            "SIM Pozovite (text)[187-290]",
+            "SIM Viber (text)[292-373]",
+            "Korpa[375-419]",
+            "Otvori meni[421-465]"
+          ]
+        }
+      },
+      {
+        "route": "/delovi",
+        "width": 390,
+        "real": {
+          "vw": 390,
+          "docScrollW": 390,
+          "rowScrollW": 390,
+          "rowClientW": 390,
+          "menu": "330-374",
+          "menuFullyInView": true,
+          "accountDisplay": "none",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[238-282]",
+            "Korpa[284-328]",
+            "Otvori meni[330-374]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 390,
+          "docScrollW": 465,
+          "rowScrollW": 465,
+          "rowClientW": 390,
+          "menu": "421-465",
+          "menuFullyInView": false,
+          "accountDisplay": "none",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:none",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:none"
+          ],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[141-185]",
+            "SIM Pozovite (text)[187-290]",
+            "SIM Viber (text)[292-373]",
+            "Korpa[375-419]",
+            "Otvori meni[421-465]"
+          ]
+        }
+      },
+      {
+        "route": "/delovi",
+        "width": 480,
+        "real": {
+          "vw": 480,
+          "docScrollW": 480,
+          "rowScrollW": 480,
+          "rowClientW": 480,
+          "menu": "417-461",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[19-132]",
+            "Pretraga delova[233-277]",
+            "Brza porudžbina[279-323]",
+            "Majstorski portal[325-369]",
+            "Korpa[371-415]",
+            "Otvori meni[417-461]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 480,
+          "docScrollW": 652,
+          "rowScrollW": 652,
+          "rowClientW": 480,
+          "menu": "608-652",
+          "menuFullyInView": false,
+          "accountDisplay": "flex",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:flex",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:flex"
+          ],
+          "controls": [
+            "SKLOP — početna[19-132]",
+            "Pretraga delova[144-188]",
+            "SIM Pozovite (text)[190-293]",
+            "SIM Pozovite +381 64 123 456[295-339]",
+            "SIM Viber (text)[341-422]",
+            "SIM Viber +381 64 123 4567[424-468]",
+            "Brza porudžbina[470-514]",
+            "Majstorski portal[516-560]",
+            "Korpa[562-606]",
+            "Otvori meni[608-652]"
+          ]
+        }
+      },
+      {
+        "route": "/delovi",
+        "width": 1024,
+        "real": {
+          "vw": 1024,
+          "docScrollW": 1024,
+          "rowScrollW": 1024,
+          "rowClientW": 1024,
+          "menu": "hidden",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[41-158]",
+            "Delovi[186-253]",
+            "Vozila[257-323]",
+            "Za majstore[327-435]",
+            "Upit po broju šasije[439-596]",
+            "Pretraga delova[783-827]",
+            "Brza porudžbina[835-879]",
+            "Majstorski portal[887-931]",
+            "Korpa[939-983]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 1024,
+          "docScrollW": 1024,
+          "rowScrollW": 1024,
+          "rowClientW": 1024,
+          "menu": "hidden",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:flex",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:flex"
+          ],
+          "controls": [
+            "SKLOP — početna[41-158]",
+            "Delovi[186-253]",
+            "Vozila[257-323]",
+            "Za majstore[327-413]",
+            "Upit po broju šasije[417-481]",
+            "Pretraga delova[493-537]",
+            "SIM Pozovite (text)[545-648]",
+            "SIM Pozovite +381 64 123 456[656-700]",
+            "SIM Viber (text)[708-789]",
+            "SIM Viber +381 64 123 4567[797-841]",
+            "Brza porudžbina[849-893]",
+            "Majstorski portal[901-945]",
+            "Korpa[953-997]"
+          ]
+        }
+      },
+      {
+        "route": "/majstor/cenovnik",
+        "width": 320,
+        "real": {
+          "vw": 320,
+          "docScrollW": 320,
+          "rowScrollW": 320,
+          "rowClientW": 320,
+          "menu": "260-304",
+          "menuFullyInView": true,
+          "accountDisplay": "none",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[168-212]",
+            "Korpa[214-258]",
+            "Otvori meni[260-304]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 320,
+          "docScrollW": 465,
+          "rowScrollW": 465,
+          "rowClientW": 320,
+          "menu": "421-465",
+          "menuFullyInView": false,
+          "accountDisplay": "none",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:none",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:none"
+          ],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[141-185]",
+            "SIM Pozovite (text)[187-290]",
+            "SIM Viber (text)[292-373]",
+            "Korpa[375-419]",
+            "Otvori meni[421-465]"
+          ]
+        }
+      },
+      {
+        "route": "/majstor/cenovnik",
+        "width": 360,
+        "real": {
+          "vw": 360,
+          "docScrollW": 360,
+          "rowScrollW": 360,
+          "rowClientW": 360,
+          "menu": "300-344",
+          "menuFullyInView": true,
+          "accountDisplay": "none",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[208-252]",
+            "Korpa[254-298]",
+            "Otvori meni[300-344]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 360,
+          "docScrollW": 466,
+          "rowScrollW": 465,
+          "rowClientW": 360,
+          "menu": "421-465",
+          "menuFullyInView": false,
+          "accountDisplay": "none",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:none",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:none"
+          ],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[141-185]",
+            "SIM Pozovite (text)[187-290]",
+            "SIM Viber (text)[292-373]",
+            "Korpa[375-419]",
+            "Otvori meni[421-465]"
+          ]
+        }
+      },
+      {
+        "route": "/majstor/cenovnik",
+        "width": 390,
+        "real": {
+          "vw": 390,
+          "docScrollW": 390,
+          "rowScrollW": 390,
+          "rowClientW": 390,
+          "menu": "330-374",
+          "menuFullyInView": true,
+          "accountDisplay": "none",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[238-282]",
+            "Korpa[284-328]",
+            "Otvori meni[330-374]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 390,
+          "docScrollW": 465,
+          "rowScrollW": 465,
+          "rowClientW": 390,
+          "menu": "421-465",
+          "menuFullyInView": false,
+          "accountDisplay": "none",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:none",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:none"
+          ],
+          "controls": [
+            "SKLOP — početna[16-129]",
+            "Pretraga delova[141-185]",
+            "SIM Pozovite (text)[187-290]",
+            "SIM Viber (text)[292-373]",
+            "Korpa[375-419]",
+            "Otvori meni[421-465]"
+          ]
+        }
+      },
+      {
+        "route": "/majstor/cenovnik",
+        "width": 480,
+        "real": {
+          "vw": 480,
+          "docScrollW": 480,
+          "rowScrollW": 480,
+          "rowClientW": 480,
+          "menu": "417-461",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[19-132]",
+            "Pretraga delova[233-277]",
+            "Brza porudžbina[279-323]",
+            "Majstorski portal[325-369]",
+            "Korpa[371-415]",
+            "Otvori meni[417-461]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 480,
+          "docScrollW": 652,
+          "rowScrollW": 652,
+          "rowClientW": 480,
+          "menu": "608-652",
+          "menuFullyInView": false,
+          "accountDisplay": "flex",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:flex",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:flex"
+          ],
+          "controls": [
+            "SKLOP — početna[19-132]",
+            "Pretraga delova[144-188]",
+            "SIM Pozovite (text)[190-293]",
+            "SIM Pozovite +381 64 123 456[295-339]",
+            "SIM Viber (text)[341-422]",
+            "SIM Viber +381 64 123 4567[424-468]",
+            "Brza porudžbina[470-514]",
+            "Majstorski portal[516-560]",
+            "Korpa[562-606]",
+            "Otvori meni[608-652]"
+          ]
+        }
+      },
+      {
+        "route": "/majstor/cenovnik",
+        "width": 1024,
+        "real": {
+          "vw": 1024,
+          "docScrollW": 1024,
+          "rowScrollW": 1024,
+          "rowClientW": 1024,
+          "menu": "hidden",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [],
+          "controls": [
+            "SKLOP — početna[41-158]",
+            "Delovi[186-253]",
+            "Vozila[257-323]",
+            "Za majstore[327-435]",
+            "Upit po broju šasije[439-596]",
+            "Pretraga delova[783-827]",
+            "Brza porudžbina[835-879]",
+            "Majstorski portal[887-931]",
+            "Korpa[939-983]"
+          ]
+        },
+        "simPhoneViber": {
+          "vw": 1024,
+          "docScrollW": 1024,
+          "rowScrollW": 1024,
+          "rowClientW": 1024,
+          "menu": "hidden",
+          "menuFullyInView": true,
+          "accountDisplay": "flex",
+          "sim": [
+            "SIM Pozovite (text):flex",
+            "SIM Pozovite +381 64 123 4567:flex",
+            "SIM Viber (text):flex",
+            "SIM Viber +381 64 123 4567:flex"
+          ],
+          "controls": [
+            "SKLOP — početna[41-158]",
+            "Delovi[186-253]",
+            "Vozila[257-323]",
+            "Za majstore[327-413]",
+            "Upit po broju šasije[417-481]",
+            "Pretraga delova[493-537]",
+            "SIM Pozovite (text)[545-648]",
+            "SIM Pozovite +381 64 123 456[656-700]",
+            "SIM Viber (text)[708-789]",
+            "SIM Viber +381 64 123 4567[797-841]",
+            "Brza porudžbina[849-893]",
+            "Majstorski portal[901-945]",
+            "Korpa[953-997]"
+          ]
+        }
+      }
+    ],
+    "guestTabOrder360": [
+      "a:skip-link",
+      "a:SKLOP — početna",
+      "button:Pretraga delova",
+      "a:Korpa",
+      "button:Otvori meni",
+      "a:Kočnice"
+    ],
+    "guestErrors": [],
+    "mechanicMenuLinks": [
+      "Delovi",
+      "Vozila",
+      "Za majstore",
+      "Upit po broju šasije",
+      "Brza porudžbina",
+      "Majstorski portal",
+      "Pošaljite upit po broju šasije",
+      "Svi podaci za kontakt"
+    ],
+    "mechanicErrors": []
+  }
+}

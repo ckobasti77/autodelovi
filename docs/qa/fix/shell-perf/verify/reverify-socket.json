@@ -1,0 +1,74 @@
+{
+  "socket": {
+    "anonymous": {
+      "loadEventEnd": 1058,
+      "ws": [],
+      "firstInput": null,
+      "wsAfterLoad": null,
+      "cartCount": "1",
+      "cartButtonLabel": "Korpa, 1 artikal",
+      "afterTap": {
+        "ws": [
+          7176
+        ],
+        "firstInput": {
+          "type": "pointerdown",
+          "at": 7172,
+          "target": "SPAN"
+        }
+      },
+      "errors": []
+    },
+    "anonymousFirstVisit": {
+      "loadEventEnd": 1102,
+      "ws": [],
+      "firstInput": null,
+      "wsAfterLoad": null,
+      "cartCount": "1",
+      "cartButtonLabel": "Korpa, 1 artikal",
+      "afterTap": {
+        "ws": [
+          7188
+        ],
+        "firstInput": {
+          "type": "pointerdown",
+          "at": 7178,
+          "target": "SPAN"
+        }
+      },
+      "errors": []
+    },
+    "anonymousHome": {
+      "loadEventEnd": 592,
+      "ws": [],
+      "firstInput": null,
+      "wsAfterLoad": null,
+      "errors": []
+    },
+    "mechanic": {
+      "loadEventEnd": 1613,
+      "ws": [
+        {
+          "url": "wss://tame-impala-374.eu-west-1.convex.cloud/api/1.46.0/sync",
+          "at": 2067,
+          "stack": "    at http://localhost:3001/_next/static/chunks/_0cahquo._.js:608:24"
+        }
+      ],
+      "firstInput": null,
+      "wsAfterLoad": true,
+      "cartCount": "1",
+      "cartButtonLabel": "Korpa, 1 artikal",
+      "afterTap": {
+        "ws": [
+          2067
+        ],
+        "firstInput": {
+          "type": "pointerdown",
+          "at": 7704,
+          "target": "SPAN"
+        }
+      },
+      "errors": []
+    }
+  }
+}

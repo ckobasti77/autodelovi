@@ -1,0 +1,1627 @@
+{
+  "scriptsHash": "cc516803e58bf93cb81e69e664ccc7c2929a251702d9071b0f99e2c92323e9cb",
+  "errors": [],
+  "warnings": [
+    "abs-senzori__fl: small click target on desktop (14 px at 960x540; category list covers it)",
+    "abs-senzori__fr: small click target on desktop (16 px at 960x540; category list covers it)",
+    "abs-senzori__rl: small click target on desktop (22 px at 960x540; category list covers it)",
+    "abs-senzori__rr: small click target on desktop (103 px at 960x540; category list covers it)",
+    "brizgaljke-pumpa-goriva__injectors: small click target on desktop (75 px at 960x540; category list covers it)",
+    "brizgaljke-pumpa-goriva__pump: small click target on desktop (51 px at 960x540; category list covers it)",
+    "felne-gume__fr: desktop visible 0.26 of solo; left twin fl visible 1.02",
+    "felne-gume__fr: tablet visible 0.27 of solo; left twin fl visible 1.01",
+    "felne-gume__fr: mobile visible 0.27 of solo; left twin fl visible 1.02",
+    "kocione-celjusti__fr: small click target on desktop (65 px at 960x540; category list covers it)",
+    "kocione-celjusti__fr: tablet visible 0.27 of solo; left twin fl visible 2.15",
+    "kocione-celjusti__fr: mobile visible 0.27 of solo; left twin fl visible 2.30",
+    "kocione-celjusti__rl: small click target on desktop (177 px at 960x540; category list covers it)",
+    "kocione-celjusti__rr: small click target on desktop (68 px at 960x540; category list covers it)",
+    "kocione-plocice__fl: small click target on desktop (79 px at 960x540; category list covers it)",
+    "kocione-plocice__fr: desktop visible 0.25 of solo; left twin fl visible 1.10",
+    "kocione-plocice__fr: tablet visible 0.14 of solo; left twin fl visible 1.07",
+    "kocione-plocice__fr: mobile visible 0.19 of solo; left twin fl visible 1.10",
+    "kocione-plocice__rl: small click target on desktop (45 px at 960x540; category list covers it)",
+    "kocione-plocice__rr: small click target on desktop (75 px at 960x540; category list covers it)",
+    "kocioni-diskovi__fr: desktop visible 0.21 of solo; left twin fl visible 1.02",
+    "kocioni-diskovi__fr: mobile visible 0.36 of solo; left twin fl visible 1.04",
+    "lezaj-glavcina__fl: small click target on desktop (103 px at 960x540; category list covers it)",
+    "lezaj-glavcina__fr: small click target on desktop (99 px at 960x540; category list covers it)",
+    "lezaj-glavcina__rl: small click target on desktop (100 px at 960x540; category list covers it)",
+    "nosaci-motora__rear: small click target on desktop (80 px at 960x540; category list covers it)",
+    "senzori__coolant-temp: small click target on desktop (33 px at 960x540; category list covers it)",
+    "senzori__lambda: small click target on desktop (13 px at 960x540; category list covers it)",
+    "senzori__park-front: small click target on desktop (60 px at 960x540; category list covers it)",
+    "spone-stabilizatori__stabilizer: small click target on desktop (114 px at 960x540; category list covers it)",
+    "spone-stabilizatori__tie-rod-l: small click target on desktop (48 px at 960x540; category list covers it)",
+    "spone-stabilizatori__tie-rod-r: desktop visible 0.02 of solo; left twin tie-rod-l visible 0.70",
+    "spone-stabilizatori__tie-rod-r: tablet visible 0.20 of solo; left twin tie-rod-l visible 0.76",
+    "spone-stabilizatori__tie-rod-r: mobile visible 0.10 of solo; left twin tie-rod-l visible 0.67",
+    "termostat-creva__thermostat: small click target on desktop (112 px at 960x540; category list covers it)",
+    "zupcasti-kais-vodena-pumpa__water-pump: small click target on desktop (31 px at 960x540; category list covers it)"
+  ],
+  "parts": {
+    "part__abs-senzori__fl": {
+      "desktop": {
+        "visible": 14,
+        "solo": 30,
+        "ratio": 0.467
+      },
+      "tablet": {
+        "visible": 19,
+        "solo": 34,
+        "ratio": 0.559
+      },
+      "mobile": {
+        "visible": 14,
+        "solo": 21,
+        "ratio": 0.667
+      }
+    },
+    "part__abs-senzori__fr": {
+      "desktop": {
+        "visible": 16,
+        "solo": 15,
+        "ratio": 1.067
+      },
+      "tablet": {
+        "visible": 15,
+        "solo": 27,
+        "ratio": 0.556
+      },
+      "mobile": {
+        "visible": 15,
+        "solo": 14,
+        "ratio": 1.071
+      }
+    },
+    "part__abs-senzori__rl": {
+      "desktop": {
+        "visible": 22,
+        "solo": 19,
+        "ratio": 1.158
+      },
+      "tablet": {
+        "visible": 26,
+        "solo": 26,
+        "ratio": 1.0
+      },
+      "mobile": {
+        "visible": 21,
+        "solo": 19,
+        "ratio": 1.105
+      }
+    },
+    "part__abs-senzori__rr": {
+      "desktop": {
+        "visible": 103,
+        "solo": 11,
+        "ratio": 9.364
+      },
+      "tablet": {
+        "visible": 157,
+        "solo": 21,
+        "ratio": 7.476
+      },
+      "mobile": {
+        "visible": 121,
+        "solo": 10,
+        "ratio": 12.1
+      }
+    },
+    "part__akumulator__main": {
+      "desktop": {
+        "visible": 1209,
+        "solo": 1197,
+        "ratio": 1.01
+      },
+      "tablet": {
+        "visible": 1732,
+        "solo": 1720,
+        "ratio": 1.007
+      },
+      "mobile": {
+        "visible": 1009,
+        "solo": 995,
+        "ratio": 1.014
+      }
+    },
+    "part__alternator__main": {
+      "desktop": {
+        "visible": 276,
+        "solo": 365,
+        "ratio": 0.756
+      },
+      "tablet": {
+        "visible": 352,
+        "solo": 545,
+        "ratio": 0.646
+      },
+      "mobile": {
+        "visible": 243,
+        "solo": 334,
+        "ratio": 0.728
+      }
+    },
+    "part__amortizeri-opruge__fl": {
+      "desktop": {
+        "visible": 422,
+        "solo": 537,
+        "ratio": 0.786
+      },
+      "tablet": {
+        "visible": 716,
+        "solo": 776,
+        "ratio": 0.923
+      },
+      "mobile": {
+        "visible": 413,
+        "solo": 473,
+        "ratio": 0.873
+      }
+    },
+    "part__amortizeri-opruge__fr": {
+      "desktop": {
+        "visible": 362,
+        "solo": 488,
+        "ratio": 0.742
+      },
+      "tablet": {
+        "visible": 564,
+        "solo": 719,
+        "ratio": 0.784
+      },
+      "mobile": {
+        "visible": 337,
+        "solo": 458,
+        "ratio": 0.736
+      }
+    },
+    "part__amortizeri-opruge__rl": {
+      "desktop": {
+        "visible": 423,
+        "solo": 366,
+        "ratio": 1.156
+      },
+      "tablet": {
+        "visible": 606,
+        "solo": 523,
+        "ratio": 1.159
+      },
+      "mobile": {
+        "visible": 361,
+        "solo": 320,
+        "ratio": 1.128
+      }
+    },
+    "part__amortizeri-opruge__rr": {
+      "desktop": {
+        "visible": 340,
+        "solo": 284,
+        "ratio": 1.197
+      },
+      "tablet": {
+        "visible": 489,
+        "solo": 405,
+        "ratio": 1.207
+      },
+      "mobile": {
+        "visible": 323,
+        "solo": 263,
+        "ratio": 1.228
+      }
+    },
+    "part__anlaser__main": {
+      "desktop": {
+        "visible": 299,
+        "solo": 214,
+        "ratio": 1.397
+      },
+      "tablet": {
+        "visible": 456,
+        "solo": 311,
+        "ratio": 1.466
+      },
+      "mobile": {
+        "visible": 313,
+        "solo": 193,
+        "ratio": 1.622
+      }
+    },
+    "part__auspuh__mid": {
+      "desktop": {
+        "visible": 867,
+        "solo": 767,
+        "ratio": 1.13
+      },
+      "tablet": {
+        "visible": 1290,
+        "solo": 1118,
+        "ratio": 1.154
+      },
+      "mobile": {
+        "visible": 751,
+        "solo": 688,
+        "ratio": 1.092
+      }
+    },
+    "part__auspuh__rear": {
+      "desktop": {
+        "visible": 1170,
+        "solo": 1304,
+        "ratio": 0.897
+      },
+      "tablet": {
+        "visible": 1681,
+        "solo": 1812,
+        "ratio": 0.928
+      },
+      "mobile": {
+        "visible": 1115,
+        "solo": 1191,
+        "ratio": 0.936
+      }
+    },
+    "part__blatobrani__l": {
+      "desktop": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "tablet": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "mobile": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      }
+    },
+    "part__blatobrani__r": {
+      "desktop": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "tablet": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "mobile": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      }
+    },
+    "part__branici__front": {
+      "desktop": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "tablet": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "mobile": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      }
+    },
+    "part__branici__rear": {
+      "desktop": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "tablet": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "mobile": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      }
+    },
+    "part__brisaci__main": {
+      "desktop": {
+        "visible": 214,
+        "solo": 275,
+        "ratio": 0.778
+      },
+      "tablet": {
+        "visible": 332,
+        "solo": 389,
+        "ratio": 0.853
+      },
+      "mobile": {
+        "visible": 205,
+        "solo": 255,
+        "ratio": 0.804
+      }
+    },
+    "part__brizgaljke-pumpa-goriva__injectors": {
+      "desktop": {
+        "visible": 75,
+        "solo": 125,
+        "ratio": 0.6
+      },
+      "tablet": {
+        "visible": 133,
+        "solo": 179,
+        "ratio": 0.743
+      },
+      "mobile": {
+        "visible": 68,
+        "solo": 121,
+        "ratio": 0.562
+      }
+    },
+    "part__brizgaljke-pumpa-goriva__pump": {
+      "desktop": {
+        "visible": 51,
+        "solo": 97,
+        "ratio": 0.526
+      },
+      "tablet": {
+        "visible": 112,
+        "solo": 146,
+        "ratio": 0.767
+      },
+      "mobile": {
+        "visible": 61,
+        "solo": 96,
+        "ratio": 0.635
+      }
+    },
+    "part__dpf-katalizator__main": {
+      "desktop": {
+        "visible": 437,
+        "solo": 995,
+        "ratio": 0.439
+      },
+      "tablet": {
+        "visible": 856,
+        "solo": 1483,
+        "ratio": 0.577
+      },
+      "mobile": {
+        "visible": 470,
+        "solo": 917,
+        "ratio": 0.513
+      }
+    },
+    "part__egr-ventil__main": {
+      "desktop": {
+        "visible": 247,
+        "solo": 100,
+        "ratio": 2.47
+      },
+      "tablet": {
+        "visible": 344,
+        "solo": 143,
+        "ratio": 2.406
+      },
+      "mobile": {
+        "visible": 234,
+        "solo": 83,
+        "ratio": 2.819
+      }
+    },
+    "part__farovi__l": {
+      "desktop": {
+        "visible": 1355,
+        "solo": 1314,
+        "ratio": 1.031
+      },
+      "tablet": {
+        "visible": 1956,
+        "solo": 1920,
+        "ratio": 1.019
+      },
+      "mobile": {
+        "visible": 1200,
+        "solo": 1159,
+        "ratio": 1.035
+      }
+    },
+    "part__farovi__r": {
+      "desktop": {
+        "visible": 763,
+        "solo": 596,
+        "ratio": 1.28
+      },
+      "tablet": {
+        "visible": 938,
+        "solo": 910,
+        "ratio": 1.031
+      },
+      "mobile": {
+        "visible": 746,
+        "solo": 589,
+        "ratio": 1.267
+      }
+    },
+    "part__felne-gume__fl": {
+      "desktop": {
+        "visible": 3106,
+        "solo": 3055,
+        "ratio": 1.017
+      },
+      "tablet": {
+        "visible": 4589,
+        "solo": 4537,
+        "ratio": 1.011
+      },
+      "mobile": {
+        "visible": 2829,
+        "solo": 2782,
+        "ratio": 1.017
+      }
+    },
+    "part__felne-gume__fr": {
+      "desktop": {
+        "visible": 603,
+        "solo": 2335,
+        "ratio": 0.258
+      },
+      "tablet": {
+        "visible": 976,
+        "solo": 3656,
+        "ratio": 0.267
+      },
+      "mobile": {
+        "visible": 625,
+        "solo": 2356,
+        "ratio": 0.265
+      }
+    },
+    "part__felne-gume__rl": {
+      "desktop": {
+        "visible": 2094,
+        "solo": 2000,
+        "ratio": 1.047
+      },
+      "tablet": {
+        "visible": 3067,
+        "solo": 2878,
+        "ratio": 1.066
+      },
+      "mobile": {
+        "visible": 1953,
+        "solo": 1821,
+        "ratio": 1.072
+      }
+    },
+    "part__felne-gume__rr": {
+      "desktop": {
+        "visible": 1097,
+        "solo": 1651,
+        "ratio": 0.664
+      },
+      "tablet": {
+        "visible": 2187,
+        "solo": 2522,
+        "ratio": 0.867
+      },
+      "mobile": {
+        "visible": 1234,
+        "solo": 1644,
+        "ratio": 0.751
+      }
+    },
+    "part__hauba__main": {
+      "desktop": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "tablet": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "mobile": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      }
+    },
+    "part__hladnjak-ventilator__fan": {
+      "desktop": {
+        "visible": 2406,
+        "solo": 2458,
+        "ratio": 0.979
+      },
+      "tablet": {
+        "visible": 3547,
+        "solo": 3525,
+        "ratio": 1.006
+      },
+      "mobile": {
+        "visible": 2211,
+        "solo": 2281,
+        "ratio": 0.969
+      }
+    },
+    "part__hladnjak-ventilator__radiator": {
+      "desktop": {
+        "visible": 4061,
+        "solo": 3705,
+        "ratio": 1.096
+      },
+      "tablet": {
+        "visible": 5883,
+        "solo": 5366,
+        "ratio": 1.096
+      },
+      "mobile": {
+        "visible": 3851,
+        "solo": 3498,
+        "ratio": 1.101
+      }
+    },
+    "part__interkuler__main": {
+      "desktop": {
+        "visible": 2203,
+        "solo": 1712,
+        "ratio": 1.287
+      },
+      "tablet": {
+        "visible": 3210,
+        "solo": 2513,
+        "ratio": 1.277
+      },
+      "mobile": {
+        "visible": 2073,
+        "solo": 1638,
+        "ratio": 1.266
+      }
+    },
+    "part__interkuler__pipes": {
+      "desktop": {
+        "visible": 1483,
+        "solo": 1322,
+        "ratio": 1.122
+      },
+      "tablet": {
+        "visible": 2209,
+        "solo": 1972,
+        "ratio": 1.12
+      },
+      "mobile": {
+        "visible": 1345,
+        "solo": 1195,
+        "ratio": 1.126
+      }
+    },
+    "part__kais-alternatora__belt": {
+      "desktop": {
+        "visible": 414,
+        "solo": 374,
+        "ratio": 1.107
+      },
+      "tablet": {
+        "visible": 492,
+        "solo": 566,
+        "ratio": 0.869
+      },
+      "mobile": {
+        "visible": 373,
+        "solo": 384,
+        "ratio": 0.971
+      }
+    },
+    "part__karter-dihtunzi__sump": {
+      "desktop": {
+        "visible": 1246,
+        "solo": 1245,
+        "ratio": 1.001
+      },
+      "tablet": {
+        "visible": 1750,
+        "solo": 1859,
+        "ratio": 0.941
+      },
+      "mobile": {
+        "visible": 1092,
+        "solo": 1157,
+        "ratio": 0.944
+      }
+    },
+    "part__klima__compressor": {
+      "desktop": {
+        "visible": 424,
+        "solo": 339,
+        "ratio": 1.251
+      },
+      "tablet": {
+        "visible": 639,
+        "solo": 521,
+        "ratio": 1.226
+      },
+      "mobile": {
+        "visible": 431,
+        "solo": 327,
+        "ratio": 1.318
+      }
+    },
+    "part__klima__condenser": {
+      "desktop": {
+        "visible": 3032,
+        "solo": 3015,
+        "ratio": 1.006
+      },
+      "tablet": {
+        "visible": 4330,
+        "solo": 4307,
+        "ratio": 1.005
+      },
+      "mobile": {
+        "visible": 2884,
+        "solo": 2859,
+        "ratio": 1.009
+      }
+    },
+    "part__kocione-celjusti__fl": {
+      "desktop": {
+        "visible": 509,
+        "solo": 232,
+        "ratio": 2.194
+      },
+      "tablet": {
+        "visible": 732,
+        "solo": 341,
+        "ratio": 2.147
+      },
+      "mobile": {
+        "visible": 487,
+        "solo": 212,
+        "ratio": 2.297
+      }
+    },
+    "part__kocione-celjusti__fr": {
+      "desktop": {
+        "visible": 65,
+        "solo": 159,
+        "ratio": 0.409
+      },
+      "tablet": {
+        "visible": 66,
+        "solo": 249,
+        "ratio": 0.265
+      },
+      "mobile": {
+        "visible": 45,
+        "solo": 164,
+        "ratio": 0.274
+      }
+    },
+    "part__kocione-celjusti__rl": {
+      "desktop": {
+        "visible": 177,
+        "solo": 174,
+        "ratio": 1.017
+      },
+      "tablet": {
+        "visible": 233,
+        "solo": 229,
+        "ratio": 1.017
+      },
+      "mobile": {
+        "visible": 152,
+        "solo": 147,
+        "ratio": 1.034
+      }
+    },
+    "part__kocione-celjusti__rr": {
+      "desktop": {
+        "visible": 68,
+        "solo": 124,
+        "ratio": 0.548
+      },
+      "tablet": {
+        "visible": 114,
+        "solo": 174,
+        "ratio": 0.655
+      },
+      "mobile": {
+        "visible": 73,
+        "solo": 113,
+        "ratio": 0.646
+      }
+    },
+    "part__kocione-plocice__fl": {
+      "desktop": {
+        "visible": 79,
+        "solo": 72,
+        "ratio": 1.097
+      },
+      "tablet": {
+        "visible": 127,
+        "solo": 119,
+        "ratio": 1.067
+      },
+      "mobile": {
+        "visible": 79,
+        "solo": 72,
+        "ratio": 1.097
+      }
+    },
+    "part__kocione-plocice__fr": {
+      "desktop": {
+        "visible": 17,
+        "solo": 69,
+        "ratio": 0.246
+      },
+      "tablet": {
+        "visible": 14,
+        "solo": 102,
+        "ratio": 0.137
+      },
+      "mobile": {
+        "visible": 11,
+        "solo": 59,
+        "ratio": 0.186
+      }
+    },
+    "part__kocione-plocice__rl": {
+      "desktop": {
+        "visible": 45,
+        "solo": 40,
+        "ratio": 1.125
+      },
+      "tablet": {
+        "visible": 67,
+        "solo": 63,
+        "ratio": 1.063
+      },
+      "mobile": {
+        "visible": 38,
+        "solo": 36,
+        "ratio": 1.056
+      }
+    },
+    "part__kocione-plocice__rr": {
+      "desktop": {
+        "visible": 75,
+        "solo": 29,
+        "ratio": 2.586
+      },
+      "tablet": {
+        "visible": 132,
+        "solo": 54,
+        "ratio": 2.444
+      },
+      "mobile": {
+        "visible": 85,
+        "solo": 35,
+        "ratio": 2.429
+      }
+    },
+    "part__kocioni-diskovi__fl": {
+      "desktop": {
+        "visible": 461,
+        "solo": 451,
+        "ratio": 1.022
+      },
+      "tablet": {
+        "visible": 716,
+        "solo": 683,
+        "ratio": 1.048
+      },
+      "mobile": {
+        "visible": 434,
+        "solo": 419,
+        "ratio": 1.036
+      }
+    },
+    "part__kocioni-diskovi__fr": {
+      "desktop": {
+        "visible": 85,
+        "solo": 404,
+        "ratio": 0.21
+      },
+      "tablet": {
+        "visible": 439,
+        "solo": 660,
+        "ratio": 0.665
+      },
+      "mobile": {
+        "visible": 144,
+        "solo": 400,
+        "ratio": 0.36
+      }
+    },
+    "part__kocioni-diskovi__rl": {
+      "desktop": {
+        "visible": 274,
+        "solo": 248,
+        "ratio": 1.105
+      },
+      "tablet": {
+        "visible": 414,
+        "solo": 350,
+        "ratio": 1.183
+      },
+      "mobile": {
+        "visible": 245,
+        "solo": 218,
+        "ratio": 1.124
+      }
+    },
+    "part__kocioni-diskovi__rr": {
+      "desktop": {
+        "visible": 238,
+        "solo": 221,
+        "ratio": 1.077
+      },
+      "tablet": {
+        "visible": 372,
+        "solo": 344,
+        "ratio": 1.081
+      },
+      "mobile": {
+        "visible": 248,
+        "solo": 226,
+        "ratio": 1.097
+      }
+    },
+    "part__kvacilo-zamajac__main": {
+      "desktop": {
+        "visible": 261,
+        "solo": 553,
+        "ratio": 0.472
+      },
+      "tablet": {
+        "visible": 445,
+        "solo": 877,
+        "ratio": 0.507
+      },
+      "mobile": {
+        "visible": 319,
+        "solo": 518,
+        "ratio": 0.616
+      }
+    },
+    "part__letva-volana__main": {
+      "desktop": {
+        "visible": 178,
+        "solo": 551,
+        "ratio": 0.323
+      },
+      "tablet": {
+        "visible": 195,
+        "solo": 756,
+        "ratio": 0.258
+      },
+      "mobile": {
+        "visible": 167,
+        "solo": 495,
+        "ratio": 0.337
+      }
+    },
+    "part__lezaj-glavcina__fl": {
+      "desktop": {
+        "visible": 103,
+        "solo": 131,
+        "ratio": 0.786
+      },
+      "tablet": {
+        "visible": 128,
+        "solo": 196,
+        "ratio": 0.653
+      },
+      "mobile": {
+        "visible": 92,
+        "solo": 129,
+        "ratio": 0.713
+      }
+    },
+    "part__lezaj-glavcina__fr": {
+      "desktop": {
+        "visible": 99,
+        "solo": 113,
+        "ratio": 0.876
+      },
+      "tablet": {
+        "visible": 116,
+        "solo": 177,
+        "ratio": 0.655
+      },
+      "mobile": {
+        "visible": 96,
+        "solo": 114,
+        "ratio": 0.842
+      }
+    },
+    "part__lezaj-glavcina__rl": {
+      "desktop": {
+        "visible": 100,
+        "solo": 87,
+        "ratio": 1.149
+      },
+      "tablet": {
+        "visible": 139,
+        "solo": 133,
+        "ratio": 1.045
+      },
+      "mobile": {
+        "visible": 95,
+        "solo": 88,
+        "ratio": 1.08
+      }
+    },
+    "part__lezaj-glavcina__rr": {
+      "desktop": {
+        "visible": 398,
+        "solo": 83,
+        "ratio": 4.795
+      },
+      "tablet": {
+        "visible": 610,
+        "solo": 124,
+        "ratio": 4.919
+      },
+      "mobile": {
+        "visible": 376,
+        "solo": 83,
+        "ratio": 4.53
+      }
+    },
+    "part__menjac__main": {
+      "desktop": {
+        "visible": 3069,
+        "solo": 3418,
+        "ratio": 0.898
+      },
+      "tablet": {
+        "visible": 4571,
+        "solo": 5041,
+        "ratio": 0.907
+      },
+      "mobile": {
+        "visible": 2795,
+        "solo": 3101,
+        "ratio": 0.901
+      }
+    },
+    "part__motor__block": {
+      "desktop": {
+        "visible": 2436,
+        "solo": 2293,
+        "ratio": 1.062
+      },
+      "tablet": {
+        "visible": 3463,
+        "solo": 3366,
+        "ratio": 1.029
+      },
+      "mobile": {
+        "visible": 2292,
+        "solo": 2163,
+        "ratio": 1.06
+      }
+    },
+    "part__motor__head": {
+      "desktop": {
+        "visible": 1619,
+        "solo": 1422,
+        "ratio": 1.139
+      },
+      "tablet": {
+        "visible": 2349,
+        "solo": 2086,
+        "ratio": 1.126
+      },
+      "mobile": {
+        "visible": 1486,
+        "solo": 1316,
+        "ratio": 1.129
+      }
+    },
+    "part__nosaci-motora__l": {
+      "desktop": {
+        "visible": 343,
+        "solo": 206,
+        "ratio": 1.665
+      },
+      "tablet": {
+        "visible": 521,
+        "solo": 309,
+        "ratio": 1.686
+      },
+      "mobile": {
+        "visible": 308,
+        "solo": 188,
+        "ratio": 1.638
+      }
+    },
+    "part__nosaci-motora__r": {
+      "desktop": {
+        "visible": 225,
+        "solo": 200,
+        "ratio": 1.125
+      },
+      "tablet": {
+        "visible": 330,
+        "solo": 317,
+        "ratio": 1.041
+      },
+      "mobile": {
+        "visible": 222,
+        "solo": 209,
+        "ratio": 1.062
+      }
+    },
+    "part__nosaci-motora__rear": {
+      "desktop": {
+        "visible": 80,
+        "solo": 60,
+        "ratio": 1.333
+      },
+      "tablet": {
+        "visible": 109,
+        "solo": 108,
+        "ratio": 1.009
+      },
+      "mobile": {
+        "visible": 67,
+        "solo": 63,
+        "ratio": 1.063
+      }
+    },
+    "part__paljenje-grejaci__coils": {
+      "desktop": {
+        "visible": 246,
+        "solo": 288,
+        "ratio": 0.854
+      },
+      "tablet": {
+        "visible": 331,
+        "solo": 419,
+        "ratio": 0.79
+      },
+      "mobile": {
+        "visible": 206,
+        "solo": 252,
+        "ratio": 0.817
+      }
+    },
+    "part__poluosovine__l": {
+      "desktop": {
+        "visible": 321,
+        "solo": 264,
+        "ratio": 1.216
+      },
+      "tablet": {
+        "visible": 444,
+        "solo": 382,
+        "ratio": 1.162
+      },
+      "mobile": {
+        "visible": 299,
+        "solo": 247,
+        "ratio": 1.211
+      }
+    },
+    "part__poluosovine__r": {
+      "desktop": {
+        "visible": 429,
+        "solo": 396,
+        "ratio": 1.083
+      },
+      "tablet": {
+        "visible": 470,
+        "solo": 581,
+        "ratio": 0.809
+      },
+      "mobile": {
+        "visible": 392,
+        "solo": 369,
+        "ratio": 1.062
+      }
+    },
+    "part__ramena-selen-blokovi__fl": {
+      "desktop": {
+        "visible": 533,
+        "solo": 468,
+        "ratio": 1.139
+      },
+      "tablet": {
+        "visible": 745,
+        "solo": 665,
+        "ratio": 1.12
+      },
+      "mobile": {
+        "visible": 486,
+        "solo": 422,
+        "ratio": 1.152
+      }
+    },
+    "part__ramena-selen-blokovi__fr": {
+      "desktop": {
+        "visible": 445,
+        "solo": 398,
+        "ratio": 1.118
+      },
+      "tablet": {
+        "visible": 747,
+        "solo": 626,
+        "ratio": 1.193
+      },
+      "mobile": {
+        "visible": 454,
+        "solo": 386,
+        "ratio": 1.176
+      }
+    },
+    "part__ramena-selen-blokovi__rear-axle": {
+      "desktop": {
+        "visible": 1228,
+        "solo": 1234,
+        "ratio": 0.995
+      },
+      "tablet": {
+        "visible": 1736,
+        "solo": 1760,
+        "ratio": 0.986
+      },
+      "mobile": {
+        "visible": 1112,
+        "solo": 1131,
+        "ratio": 0.983
+      }
+    },
+    "part__retrovizori__l": {
+      "desktop": {
+        "visible": 540,
+        "solo": 411,
+        "ratio": 1.314
+      },
+      "tablet": {
+        "visible": 765,
+        "solo": 552,
+        "ratio": 1.386
+      },
+      "mobile": {
+        "visible": 474,
+        "solo": 340,
+        "ratio": 1.394
+      }
+    },
+    "part__retrovizori__r": {
+      "desktop": {
+        "visible": 269,
+        "solo": 239,
+        "ratio": 1.126
+      },
+      "tablet": {
+        "visible": 431,
+        "solo": 367,
+        "ratio": 1.174
+      },
+      "mobile": {
+        "visible": 277,
+        "solo": 234,
+        "ratio": 1.184
+      }
+    },
+    "part__senzori__coolant-temp": {
+      "desktop": {
+        "visible": 33,
+        "solo": 13,
+        "ratio": 2.538
+      },
+      "tablet": {
+        "visible": 38,
+        "solo": 18,
+        "ratio": 2.111
+      },
+      "mobile": {
+        "visible": 38,
+        "solo": 11,
+        "ratio": 3.455
+      }
+    },
+    "part__senzori__lambda": {
+      "desktop": {
+        "visible": 13,
+        "solo": 26,
+        "ratio": 0.5
+      },
+      "tablet": {
+        "visible": 20,
+        "solo": 36,
+        "ratio": 0.556
+      },
+      "mobile": {
+        "visible": 20,
+        "solo": 24,
+        "ratio": 0.833
+      }
+    },
+    "part__senzori__park-front": {
+      "desktop": {
+        "visible": 60,
+        "solo": 48,
+        "ratio": 1.25
+      },
+      "tablet": {
+        "visible": 99,
+        "solo": 72,
+        "ratio": 1.375
+      },
+      "mobile": {
+        "visible": 60,
+        "solo": 47,
+        "ratio": 1.277
+      }
+    },
+    "part__spone-stabilizatori__stabilizer": {
+      "desktop": {
+        "visible": 114,
+        "solo": 330,
+        "ratio": 0.345
+      },
+      "tablet": {
+        "visible": 174,
+        "solo": 499,
+        "ratio": 0.349
+      },
+      "mobile": {
+        "visible": 118,
+        "solo": 322,
+        "ratio": 0.366
+      }
+    },
+    "part__spone-stabilizatori__tie-rod-l": {
+      "desktop": {
+        "visible": 48,
+        "solo": 69,
+        "ratio": 0.696
+      },
+      "tablet": {
+        "visible": 64,
+        "solo": 84,
+        "ratio": 0.762
+      },
+      "mobile": {
+        "visible": 35,
+        "solo": 52,
+        "ratio": 0.673
+      }
+    },
+    "part__spone-stabilizatori__tie-rod-r": {
+      "desktop": {
+        "visible": 1,
+        "solo": 49,
+        "ratio": 0.02
+      },
+      "tablet": {
+        "visible": 14,
+        "solo": 70,
+        "ratio": 0.2
+      },
+      "mobile": {
+        "visible": 5,
+        "solo": 52,
+        "ratio": 0.096
+      }
+    },
+    "part__stakla__rear": {
+      "desktop": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "tablet": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "mobile": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      }
+    },
+    "part__stakla__side": {
+      "desktop": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "tablet": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "mobile": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      }
+    },
+    "part__stakla__windshield": {
+      "desktop": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "tablet": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "mobile": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      }
+    },
+    "part__stop-svetla__l": {
+      "desktop": {
+        "visible": 295,
+        "solo": 267,
+        "ratio": 1.105
+      },
+      "tablet": {
+        "visible": 389,
+        "solo": 359,
+        "ratio": 1.084
+      },
+      "mobile": {
+        "visible": 267,
+        "solo": 243,
+        "ratio": 1.099
+      }
+    },
+    "part__stop-svetla__r": {
+      "desktop": {
+        "visible": 268,
+        "solo": 218,
+        "ratio": 1.229
+      },
+      "tablet": {
+        "visible": 409,
+        "solo": 337,
+        "ratio": 1.214
+      },
+      "mobile": {
+        "visible": 264,
+        "solo": 220,
+        "ratio": 1.2
+      }
+    },
+    "part__termostat-creva__hoses": {
+      "desktop": {
+        "visible": 283,
+        "solo": 280,
+        "ratio": 1.011
+      },
+      "tablet": {
+        "visible": 431,
+        "solo": 423,
+        "ratio": 1.019
+      },
+      "mobile": {
+        "visible": 262,
+        "solo": 252,
+        "ratio": 1.04
+      }
+    },
+    "part__termostat-creva__thermostat": {
+      "desktop": {
+        "visible": 112,
+        "solo": 154,
+        "ratio": 0.727
+      },
+      "tablet": {
+        "visible": 104,
+        "solo": 215,
+        "ratio": 0.484
+      },
+      "mobile": {
+        "visible": 98,
+        "solo": 136,
+        "ratio": 0.721
+      }
+    },
+    "part__turbina__main": {
+      "desktop": {
+        "visible": 520,
+        "solo": 505,
+        "ratio": 1.03
+      },
+      "tablet": {
+        "visible": 733,
+        "solo": 720,
+        "ratio": 1.018
+      },
+      "mobile": {
+        "visible": 480,
+        "solo": 450,
+        "ratio": 1.067
+      }
+    },
+    "part__usisna-grana__airbox": {
+      "desktop": {
+        "visible": 1460,
+        "solo": 1365,
+        "ratio": 1.07
+      },
+      "tablet": {
+        "visible": 2159,
+        "solo": 1992,
+        "ratio": 1.084
+      },
+      "mobile": {
+        "visible": 1314,
+        "solo": 1198,
+        "ratio": 1.097
+      }
+    },
+    "part__usisna-grana__manifold": {
+      "desktop": {
+        "visible": 802,
+        "solo": 1087,
+        "ratio": 0.738
+      },
+      "tablet": {
+        "visible": 1407,
+        "solo": 1605,
+        "ratio": 0.877
+      },
+      "mobile": {
+        "visible": 728,
+        "solo": 977,
+        "ratio": 0.745
+      }
+    },
+    "part__vrata__fl": {
+      "desktop": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "tablet": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "mobile": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      }
+    },
+    "part__vrata__fr": {
+      "desktop": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "tablet": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "mobile": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      }
+    },
+    "part__vrata__rl": {
+      "desktop": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "tablet": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "mobile": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      }
+    },
+    "part__vrata__rr": {
+      "desktop": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "tablet": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      },
+      "mobile": {
+        "visible": 0,
+        "solo": 0,
+        "ratio": null,
+        "xray": true
+      }
+    },
+    "part__zupcasti-kais-vodena-pumpa__belt": {
+      "desktop": {
+        "visible": 243,
+        "solo": 268,
+        "ratio": 0.907
+      },
+      "tablet": {
+        "visible": 334,
+        "solo": 398,
+        "ratio": 0.839
+      },
+      "mobile": {
+        "visible": 239,
+        "solo": 273,
+        "ratio": 0.875
+      }
+    },
+    "part__zupcasti-kais-vodena-pumpa__water-pump": {
+      "desktop": {
+        "visible": 31,
+        "solo": 78,
+        "ratio": 0.397
+      },
+      "tablet": {
+        "visible": 94,
+        "solo": 138,
+        "ratio": 0.681
+      },
+      "mobile": {
+        "visible": 24,
+        "solo": 84,
+        "ratio": 0.286
+      }
+    }
+  }
+}

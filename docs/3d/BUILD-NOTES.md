@@ -27,7 +27,8 @@ npm run 3d:preview         # headless Chromium: loads both GLBs with three.js + 
 | explode | `blender -b 3d/build/car.blend -P 3d/blender/explode.py -- --solve --audit` | `3d/build/explode.tuned.json`, `3d/build/reports/{packaging,motion,visibility}.json` |
 | export | `blender -b <blend> -P 3d/blender/export.py -- --quality desktop|lite` | `3d/build/car.raw.glb`, `car-lite.raw.glb`, `manifest.base.json` |
 | optimize | `node 3d/scripts/optimize.mjs` | `public/models/car.glb`, `car-lite.glb`, `car.manifest.json`; `3d/build/*.qa.glb` (quantized, uncompressed, re-importable) |
-| posters | `blender -b 3d/build/car.blend -P 3d/blender/posters.py -- --set all` | layers in `3d/renders/posters/`, `public/models/env/studio-512.hdr` |
+| posters | `blender -b 3d/build/car.blend -P 3d/blender/posters.py -- --set all` | layers per state × crop (desktop, tablet, mobile) in `3d/renders/posters/`, `3d/build/env/studio-512.hdr` |
+| env | `node 3d/scripts/env.mjs [--cube 64]` | `public/models/env/studio-pmrem.hdr` (three's PMREM cube-UV atlas, baked in headless Chromium, D243) |
 | images | `node 3d/scripts/images.mjs` | `public/images/hero/car-*.{avif,webp}`, `public/models/car-shadow{,-exploded}.webp` |
 | thumbs | `blender -b 3d/build/car.blend -P 3d/blender/thumbs.py` + `node 3d/scripts/thumbs.mjs` | `public/images/parts/<slug>.webp` (48) |
 | validate | `node 3d/scripts/validate.mjs` | PASS/FAIL table |
@@ -128,5 +129,7 @@ D91). Fine casting texture comes from the tiling `tex_cast_n` normal map (D90), 
 - **X-ray values** live twice: `3d/blender/config/xray.py` (posters) and `constants/xray.ts` (runtime). `tests/unit/three/xray-parity.test.ts` parses the Python file and fails when they drift; change both, re-render the posters (`npm run 3d`) and re-run `node scripts/qa/hero-parity.mjs` (mean poster ↔ canvas difference should stay near 2/255, see `docs/3d/WEB-QA.md`).
 - **Cameras**: the canvas reproduces the posters' framing from the manifest cameras (`object-fit: contain` via `setViewOffset`); a camera change needs new posters, or the crossfade jumps.
 - **Nodes and manifest**: the runtime reads only what `lib/three/manifestGuard.ts` checks (node names, categories, pivots, explode vectors/stages/order, label anchors, bboxes, focus, cameras). A new clickable node needs a taxonomy entry, a manifest entry and a `PART_NOTES` line (`lib/catalog/partNotes.ts`) for the hover callout.
-- **Shadows and environment**: `public/models/car-shadow*.webp` and `public/models/env/studio-512.hdr` are loaded by the runtime as they are; keep their orientation (F7.7).
+- **Shadows and environment**: `public/models/car-shadow*.webp` and `public/models/env/studio-pmrem.hdr` are loaded by the runtime as they are; keep their orientation (F7.7). The environment is a pre-filtered cube-UV atlas: rebake it (`env` stage) whenever the HDRI or the three version changes.
+- **Cameras per crop** live once in `3d/blender/lib/views.py` (`CAMERAS`, read by export, posters, the explode audit and QA renders): desktop 16:9, tablet 1:1, mobile 4:5 (D240). After a change run `export optimize posters images` and `explode.py -- --audit` (the exploded cameras must keep every part visible).
+- **Thumbnails** (`thumbs` stage): silhouette framed to 70 % of the frame at 48 % height, and an exposure floor from a probe render so every part's mean luminance reaches 2:1 against the tile ground (D241). Check with `node scripts/qa/fix/hero-3d-assets-thumbs.mjs`.
 

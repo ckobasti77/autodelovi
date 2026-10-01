@@ -95,7 +95,7 @@ type CarManifest = {
            explode: { dir: Vec3; distance: number; stage: number; order: number };
            pivot: Vec3; bbox: Box3; labelAnchor: Vec3; triangles: { desktop: number; lite: number };
            materials: string[] }[];
-  cameras: { hero: { desktop: Cam; mobile: Cam }; exploded: { desktop: Cam; mobile: Cam } };
+  cameras: { hero: { desktop: Cam; tablet: Cam; mobile: Cam }; exploded: { desktop: Cam; tablet: Cam; mobile: Cam } }; // crop per lib/three/framing.ts: desktop 16:9 (≥ 1024 px), tablet 1:1 (768–1023 px), mobile 4:5
   materials: { name: string; override?: "xray-body" | "xray-glass" }[];
 };
 type ModelFile = { url: string; bytes: number; sha256: string; triangles: number; drawCalls: number; textures: number };
@@ -113,7 +113,7 @@ Material slot names (≤ 24): `mat_body_xray`, `mat_glass_xray` (both replaced b
 | Draw calls (after merging per part × material) | ≤ 220 | ≤ 150 |
 | Textures | ≤ 10, ≤ 1024², WebP (tyre sidewall/tread normal, radiator/condenser fins, disc surface, heat shield) | ≤ 512² |
 | Nodes | ≤ 400 | ≤ 300 |
-| Runtime | 60 fps desktop while scrubbing, GPU memory ≤ 60 MB | ≥ 30 fps mid-range phone |
+| Runtime | 60 fps desktop while scrubbing, GPU memory ≤ 60 MB including the drawing buffer (4× MSAA only below DPR 1.5, D244) | ≥ 30 fps mid-range phone |
 
 Compression: gltf-transform `dedup → weld → prune → (lite: simplify ratio 0.5, error 0.001) → textureCompress webp (resize 1024 / 512) → meshopt`. Web decoding with the meshopt decoder (WASM, workers where available).
 - **Step 08:** 24th slot `mat_core_fins` (radiator, condenser and intercooler cores, fin normal map); "anodized" = `mat_caliper`; chrome only on the exhaust tip; `mat_painted_black` has a 0.3 clearcoat (`KHR_materials_clearcoat`). The lite GLB is **built by the scripts** (`build.py --quality lite`, desktop pivots reused) instead of simplified; the programmatic pipeline is `dedup → prune → weld → textureCompress (WebP near-lossless for normal maps) → meshopt level "medium"` (10-bit normals — "high" bands the fresnel rim); never the CLI `optimize` (it flattens the hierarchy).
@@ -138,12 +138,12 @@ Camera: dolly-out + ~12° orbit from `cameras.hero` to `cameras.exploded` across
 
 ### F7. Loading, poster, fallback, tiers
 1. SSR: hero section with a sticky frame; poster `car-assembled` via `next/image` (`preload`, `fetchPriority="high"`, `sizes="100vw"`; art-directed portrait crop < 768 px via `getImageProps` + `<picture>`), LCP-safe headline, OEM search (plain GET form to `/pretraga` without JS), vehicle-picker slot, „Lista delova" button. Scroll track height reserved by CSS media queries from the first paint (no layout shift when 3D arrives): `≥1024px & no-preference` → 320 vh, `<1024px & no-preference` → 200 vh, `reduce` → 100 vh.
-2. After hydration: tier detection (`lib/three/tier.ts`): **high** (≥ 1024 px, WebGL2, ≥ 4 cores, `deviceMemory ≥ 4` when present, no Save-Data) → desktop GLB, DPR ≤ 2 adaptive; **mid** (capable phones/tablets) → lite GLB, DPR ≤ 1.5, simplified X-ray shader, tap-only; **low** (no WebGL2, Save-Data, `deviceMemory < 3`) → no 3D: GSAP crossfade assembled ↔ exploded posters along the same track + stage captions.
+2. After hydration: tier detection (`lib/three/tier.ts`): **high** (≥ 1024 px, WebGL2, ≥ 4 cores, `deviceMemory ≥ 4` when present, no Save-Data) → desktop GLB, DPR ≤ 2 adaptive; **mid** (capable phones/tablets) → lite GLB, DPR ≤ 1.5, simplified X-ray shader, tap-only; **low** (no WebGL2, a software WebGL renderer — SwiftShader, llvmpipe, softpipe, Microsoft Basic Render — Save-Data, `deviceMemory < 3`; QA forces a tier with `?3d=high|mid`) → no 3D: GSAP crossfade assembled ↔ exploded posters along the same track + stage captions.
 3. Start 3D on first intent (pointer over hero, scroll > 40 px, touchstart, focus inside hero) or `requestIdleCallback` ≥ 4 s after `load`. Then dynamic-import the canvas chunk (budget ≤ 350 KB gz for three + r3f + used drei parts), fetch manifest + GLB, decode, `renderer.compileAsync`, build BVH in idle slices.
 4. First frame ready → GSAP crossfade poster → canvas (600 ms); poster stays underneath for context-loss fallback. Progress = 2 px hairline inside the hero frame (fixed size), no layout shift; SR text only after intent („Učitava se 3D prikaz").
 5. WebGL context loss → poster, one restore attempt; persistent failure → stay on posters silently.
 6. Reduced motion → no pin/scrub; „Rasklopi / Sklopi" toggles states instantly; camera moves are cuts.
-7. **Step 08 files:** posters `public/images/hero/car-{assembled,exploded}{,-1920,-1440,-1080}.{avif,webp}` (16:9, 2560 master) and `…-m-{1080,828,640}.{avif,webp}` (4:5), rendered from the manifest cameras; contact shadows `public/models/car-shadow.webp` (assembled, 5.2 m square) and `car-shadow-exploded.webp` (p = 1, 6.4 m square): 512², black with alpha ≤ 45 %, top-down, **image up = vehicle front (+Z), image left = vehicle left (+X)**, centred on the origin — crossfade them along the explode; `public/models/env/studio-512.hdr` = 512 × 256 copy of the poster HDRI (optional self-hosted environment at intensity 0.6 for poster parity).
+7. **Step 08 files:** posters `public/images/hero/car-{assembled,exploded}{,-1920,-1440,-1080}.{avif,webp}` (16:9, 2560 master, ≥ 1024 px), `…-t-{1536,1080,768}.{avif,webp}` (1:1, 768–1023 px, mid-tier look without edge lines) and `…-m-{1080,828,640}.{avif,webp}` (4:5, phones), rendered from the manifest cameras of the same crop; contact shadows `public/models/car-shadow.webp` (assembled, 5.2 m square) and `car-shadow-exploded.webp` (p = 1, 6.4 m square): 512², black with alpha ≤ 45 %, top-down, **image up = vehicle front (+Z), image left = vehicle left (+X)**, centred on the origin — crossfade them along the explode; `public/models/env/studio-pmrem.hdr` = three's PMREM cube-UV atlas (cube 64 → 336 × 256 RLE RGBE, ≈ 140 KB) of the poster HDRI, baked by `3d/scripts/env.mjs`; the runtime loads it with `mapping = CubeUVReflectionMapping` and never runs PMREMGenerator (D243).
 
 ### F8. Interaction contract
 - **Hover** (fine pointer only): rAF-coalesced raycast against BVH; hover highlights **all nodes of the category** (rim/emissive tint via shader uniforms, no postprocessing) + HTML callout (label, part code style ornament) with a leader line to `labelAnchor`; cursor pointer.

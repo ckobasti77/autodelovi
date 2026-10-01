@@ -1,0 +1,586 @@
+[
+  {
+    "width": 360,
+    "viewport": "360x780",
+    "firstScreen": {
+      "stageTop": 661,
+      "vh": 780
+    },
+    "trackTop": 604,
+    "geo": {
+      "stage": {
+        "x": 0,
+        "y": 57.359375,
+        "w": 360,
+        "h": 608
+      },
+      "img": {
+        "x": 0,
+        "y": 57.359375,
+        "w": 360,
+        "h": 608
+      },
+      "fit": "contain",
+      "pos": "50% 50%",
+      "captionBottom": 85.296875,
+      "captionText": "Sklopljen automobil00 · 42 kategorije · 91 deoSkrolujte i au | ",
+      "frameH": 724,
+      "scrollY": 604,
+      "status": "loading"
+    },
+    "poster": {
+      "file": "car-assembled-m-640.avif",
+      "natural": [
+        640,
+        800
+      ],
+      "posterDrawn": {
+        "x": 0,
+        "y": 79,
+        "w": 360,
+        "h": 450
+      },
+      "car": {
+        "x": 8,
+        "y": 185,
+        "w": 345,
+        "h": 304
+      },
+      "pctH": 50,
+      "pctW": 95.9,
+      "pctArea": 47.9,
+      "carTopPctOfStage": 30.5,
+      "carCentreXOffset": 1,
+      "carCentreYPct": 55.5,
+      "gapCaptionToCar": 100
+    },
+    "canvas": {
+      "tier": "mid",
+      "progress": 0,
+      "status": "ready",
+      "car": {
+        "x": 9,
+        "y": 186,
+        "w": 344,
+        "h": 303
+      },
+      "pctH": 49.8,
+      "pctW": 95.6
+    },
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "width": 390,
+    "viewport": "390x844",
+    "firstScreen": {
+      "stageTop": 663,
+      "vh": 844
+    },
+    "trackTop": 606,
+    "geo": {
+      "stage": {
+        "x": 0,
+        "y": 57.1875,
+        "w": 390,
+        "h": 672
+      },
+      "img": {
+        "x": 0,
+        "y": 57.1875,
+        "w": 390,
+        "h": 672
+      },
+      "fit": "contain",
+      "pos": "50% 50%",
+      "captionBottom": 85.484375,
+      "captionText": "Sklopljen automobil00 · 42 kategorije · 91 deoSkrolujte i au | ",
+      "frameH": 788,
+      "scrollY": 606,
+      "status": "loading"
+    },
+    "poster": {
+      "file": "car-assembled-m-640.avif",
+      "natural": [
+        640,
+        800
+      ],
+      "posterDrawn": {
+        "x": 0,
+        "y": 92,
+        "w": 390,
+        "h": 488
+      },
+      "car": {
+        "x": 9,
+        "y": 207,
+        "w": 374,
+        "h": 329
+      },
+      "pctH": 49,
+      "pctW": 95.9,
+      "pctArea": 47,
+      "carTopPctOfStage": 30.9,
+      "carCentreXOffset": 1,
+      "carCentreYPct": 55.4,
+      "gapCaptionToCar": 122
+    },
+    "canvas": {
+      "tier": "mid",
+      "progress": 0,
+      "status": "ready",
+      "car": {
+        "x": 9,
+        "y": 208,
+        "w": 374,
+        "h": 328
+      },
+      "pctH": 48.8,
+      "pctW": 95.9
+    },
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "width": 412,
+    "viewport": "412x915",
+    "firstScreen": {
+      "stageTop": 665,
+      "vh": 915
+    },
+    "trackTop": 608,
+    "geo": {
+      "stage": {
+        "x": 0,
+        "y": 56.640625,
+        "w": 412,
+        "h": 743
+      },
+      "img": {
+        "x": 0,
+        "y": 56.640625,
+        "w": 412,
+        "h": 743
+      },
+      "fit": "contain",
+      "pos": "50% 50%",
+      "captionBottom": 85.609375,
+      "captionText": "Sklopljen automobil00 · 42 kategorije · 91 deoSkrolujte i au | ",
+      "frameH": 859,
+      "scrollY": 608,
+      "status": "loading"
+    },
+    "poster": {
+      "file": "car-assembled-m-640.avif",
+      "natural": [
+        640,
+        800
+      ],
+      "posterDrawn": {
+        "x": 0,
+        "y": 114,
+        "w": 412,
+        "h": 515
+      },
+      "car": {
+        "x": 10,
+        "y": 236,
+        "w": 395,
+        "h": 348
+      },
+      "pctH": 46.8,
+      "pctW": 95.9,
+      "pctArea": 44.9,
+      "carTopPctOfStage": 31.7,
+      "carCentreXOffset": 1,
+      "carCentreYPct": 55.1,
+      "gapCaptionToCar": 150
+    },
+    "canvas": {
+      "tier": "mid",
+      "progress": 0,
+      "status": "ready",
+      "car": {
+        "x": 10,
+        "y": 236,
+        "w": 394,
+        "h": 347
+      },
+      "pctH": 46.7,
+      "pctW": 95.6
+    },
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "width": 430,
+    "viewport": "430x932",
+    "firstScreen": {
+      "stageTop": 666,
+      "vh": 932
+    },
+    "trackTop": 609,
+    "geo": {
+      "stage": {
+        "x": 0,
+        "y": 56.8125,
+        "w": 430,
+        "h": 760
+      },
+      "img": {
+        "x": 0,
+        "y": 56.8125,
+        "w": 430,
+        "h": 760
+      },
+      "fit": "contain",
+      "pos": "50% 50%",
+      "captionBottom": 85.71875,
+      "captionText": "Sklopljen automobil00 · 42 kategorije · 91 deoSkrolujte i au | ",
+      "frameH": 876,
+      "scrollY": 609,
+      "status": "loading"
+    },
+    "poster": {
+      "file": "car-assembled-m-640.avif",
+      "natural": [
+        640,
+        800
+      ],
+      "posterDrawn": {
+        "x": 0,
+        "y": 111,
+        "w": 430,
+        "h": 538
+      },
+      "car": {
+        "x": 10,
+        "y": 238,
+        "w": 413,
+        "h": 363
+      },
+      "pctH": 47.7,
+      "pctW": 95.9,
+      "pctArea": 45.8,
+      "carTopPctOfStage": 31.3,
+      "carCentreXOffset": 1,
+      "carCentreYPct": 55.2,
+      "gapCaptionToCar": 153
+    },
+    "canvas": {
+      "tier": "mid",
+      "progress": 0,
+      "status": "ready",
+      "car": {
+        "x": 10,
+        "y": 239,
+        "w": 412,
+        "h": 362
+      },
+      "pctH": 47.6,
+      "pctW": 95.8
+    },
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "width": 768,
+    "viewport": "768x1024",
+    "firstScreen": {
+      "stageTop": 585,
+      "vh": 1024
+    },
+    "trackTop": 528,
+    "geo": {
+      "stage": {
+        "x": 0,
+        "y": 57.0625,
+        "w": 768,
+        "h": 852
+      },
+      "img": {
+        "x": 0,
+        "y": 57.0625,
+        "w": 768,
+        "h": 852
+      },
+      "fit": "contain",
+      "pos": "50% 50%",
+      "captionBottom": 87.78125,
+      "captionText": "Sklopljen automobil00 · 42 kategorije · 91 deoSkrolujte i au | ",
+      "frameH": 968,
+      "scrollY": 528,
+      "status": "loading"
+    },
+    "poster": {
+      "file": "car-assembled-t-768.avif",
+      "natural": [
+        768,
+        768
+      ],
+      "posterDrawn": {
+        "x": 0,
+        "y": 42,
+        "w": 768,
+        "h": 768
+      },
+      "car": {
+        "x": 50,
+        "y": 222,
+        "w": 684,
+        "h": 490
+      },
+      "pctH": 57.5,
+      "pctW": 89.1,
+      "pctArea": 51.2,
+      "carTopPctOfStage": 26.1,
+      "carCentreXOffset": 8,
+      "carCentreYPct": 54.8,
+      "gapCaptionToCar": 134
+    },
+    "canvas": {
+      "tier": "mid",
+      "progress": 0,
+      "status": "ready",
+      "car": {
+        "x": 50,
+        "y": 223,
+        "w": 683,
+        "h": 489
+      },
+      "pctH": 57.4,
+      "pctW": 88.9
+    },
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "width": 820,
+    "viewport": "820x1180",
+    "firstScreen": {
+      "stageTop": 588,
+      "vh": 1180
+    },
+    "trackTop": 531,
+    "geo": {
+      "stage": {
+        "x": 0,
+        "y": 57.25,
+        "w": 820,
+        "h": 1008
+      },
+      "img": {
+        "x": 0,
+        "y": 57.25,
+        "w": 820,
+        "h": 1008
+      },
+      "fit": "contain",
+      "pos": "50% 50%",
+      "captionBottom": 88.109375,
+      "captionText": "Sklopljen automobil00 · 42 kategorije · 91 deoSkrolujte i au | ",
+      "frameH": 1124,
+      "scrollY": 531,
+      "status": "loading"
+    },
+    "poster": {
+      "file": "car-assembled-t-1080.avif",
+      "natural": [
+        1080,
+        1080
+      ],
+      "posterDrawn": {
+        "x": 0,
+        "y": 94,
+        "w": 820,
+        "h": 820
+      },
+      "car": {
+        "x": 53,
+        "y": 287,
+        "w": 730,
+        "h": 523
+      },
+      "pctH": 51.9,
+      "pctW": 89.1,
+      "pctArea": 46.2,
+      "carTopPctOfStage": 28.5,
+      "carCentreXOffset": 8,
+      "carCentreYPct": 54.4,
+      "gapCaptionToCar": 199
+    },
+    "canvas": {
+      "tier": "mid",
+      "progress": 0,
+      "status": "ready",
+      "car": {
+        "x": 53,
+        "y": 287,
+        "w": 730,
+        "h": 523
+      },
+      "pctH": 51.9,
+      "pctW": 89
+    },
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "width": 1024,
+    "viewport": "1024x768",
+    "firstScreen": {
+      "stageTop": 65,
+      "vh": 768
+    },
+    "trackTop": 0,
+    "geo": {
+      "stage": {
+        "x": 0,
+        "y": 65,
+        "w": 1024,
+        "h": 704
+      },
+      "img": {
+        "x": 81.90625,
+        "y": 65,
+        "w": 942.078125,
+        "h": 704
+      },
+      "fit": "contain",
+      "pos": "100% 100%",
+      "captionBottom": 616,
+      "captionText": " | ",
+      "frameH": 704,
+      "scrollY": 0,
+      "status": "idle"
+    },
+    "poster": {
+      "file": "car-assembled-1080.avif",
+      "natural": [
+        1080,
+        608
+      ],
+      "posterDrawn": {
+        "x": 82,
+        "y": 174,
+        "w": 942,
+        "h": 530
+      },
+      "car": {
+        "x": 454,
+        "y": 295,
+        "w": 483,
+        "h": 302
+      },
+      "pctH": 42.9,
+      "pctW": 47.2,
+      "pctArea": 20.2,
+      "carTopPctOfStage": 41.9,
+      "carCentreXOffset": 184,
+      "carCentreYPct": 63.3,
+      "gapCaptionToCar": -321
+    },
+    "canvas": {
+      "tier": "high",
+      "progress": 0,
+      "status": "ready",
+      "car": {
+        "x": 20,
+        "y": 52,
+        "w": 963,
+        "h": 634
+      },
+      "pctH": 90.2,
+      "pctW": 94
+    },
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "width": 1440,
+    "viewport": "1440x900",
+    "firstScreen": {
+      "stageTop": 65,
+      "vh": 900
+    },
+    "trackTop": 0,
+    "geo": {
+      "stage": {
+        "x": 0,
+        "y": 65,
+        "w": 1440,
+        "h": 836
+      },
+      "img": {
+        "x": 115.1875,
+        "y": 65,
+        "w": 1324.796875,
+        "h": 836
+      },
+      "fit": "contain",
+      "pos": "100% 100%",
+      "captionBottom": 748,
+      "captionText": " | PrikazGenerički kompaktni hečbek, nije konkretan modelFaza00 | ",
+      "frameH": 836,
+      "scrollY": 0,
+      "status": "idle"
+    },
+    "poster": {
+      "file": "car-assembled-1440.avif",
+      "natural": [
+        1440,
+        810
+      ],
+      "posterDrawn": {
+        "x": 115,
+        "y": 91,
+        "w": 1325,
+        "h": 745
+      },
+      "car": {
+        "x": 639,
+        "y": 261,
+        "w": 680,
+        "h": 424
+      },
+      "pctH": 50.7,
+      "pctW": 47.2,
+      "pctArea": 24,
+      "carTopPctOfStage": 31.2,
+      "carCentreXOffset": 259,
+      "carCentreYPct": 56.6,
+      "gapCaptionToCar": -487
+    },
+    "canvas": {
+      "tier": "high",
+      "progress": 0,
+      "status": "ready",
+      "car": {
+        "x": 20,
+        "y": 60,
+        "w": 1372,
+        "h": 758
+      },
+      "pctH": 90.8,
+      "pctW": 95.3
+    },
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  }
+]

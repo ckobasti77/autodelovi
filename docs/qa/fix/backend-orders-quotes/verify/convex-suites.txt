@@ -1,0 +1,9 @@
+
+ RUN  v5.0.2 C:/Users/admin/Desktop/Web Dev Projects/autodelovi
+
+
+ Test Files  3 passed (3)
+      Tests  54 passed (54)
+   Start at  03:53:03
+   Duration  9.10s (tests 80%, import 14%, transform 5%, environment 1%)
+

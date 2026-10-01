@@ -1,0 +1,158 @@
+{
+  "A": [
+    {
+      "viewport": "360x780",
+      "current": "car-assembled-m-640.avif",
+      "requests": [
+        "car-assembled-m-640.avif"
+      ],
+      "crops": [
+        "mobile"
+      ],
+      "preloads": [
+        {
+          "href": null,
+          "media": "(min-width: 48rem) and (max-width: 63.999rem)",
+          "fetchpriority": "high"
+        },
+        {
+          "href": null,
+          "media": "(min-width: 64rem)",
+          "fetchpriority": "high"
+        }
+      ]
+    },
+    {
+      "viewport": "390x844",
+      "current": "car-assembled-m-640.avif",
+      "requests": [
+        "car-assembled-m-640.avif"
+      ],
+      "crops": [
+        "mobile"
+      ],
+      "preloads": [
+        {
+          "href": null,
+          "media": "(min-width: 48rem) and (max-width: 63.999rem)",
+          "fetchpriority": "high"
+        },
+        {
+          "href": null,
+          "media": "(min-width: 64rem)",
+          "fetchpriority": "high"
+        }
+      ]
+    },
+    {
+      "viewport": "767x1024",
+      "current": "car-assembled-m-828.avif",
+      "requests": [
+        "car-assembled-m-828.avif"
+      ],
+      "crops": [
+        "mobile"
+      ],
+      "preloads": [
+        {
+          "href": null,
+          "media": "(min-width: 48rem) and (max-width: 63.999rem)",
+          "fetchpriority": "high"
+        },
+        {
+          "href": null,
+          "media": "(min-width: 64rem)",
+          "fetchpriority": "high"
+        }
+      ]
+    },
+    {
+      "viewport": "768x1024",
+      "current": "car-assembled-t-768.avif",
+      "requests": [
+        "car-assembled-t-768.avif"
+      ],
+      "crops": [
+        "tablet"
+      ],
+      "preloads": [
+        {
+          "href": null,
+          "media": "(min-width: 48rem) and (max-width: 63.999rem)",
+          "fetchpriority": "high"
+        },
+        {
+          "href": null,
+          "media": "(min-width: 64rem)",
+          "fetchpriority": "high"
+        }
+      ]
+    },
+    {
+      "viewport": "1023x768",
+      "current": "car-assembled-t-1080.avif",
+      "requests": [
+        "car-assembled-t-1080.avif"
+      ],
+      "crops": [
+        "tablet"
+      ],
+      "preloads": [
+        {
+          "href": null,
+          "media": "(min-width: 48rem) and (max-width: 63.999rem)",
+          "fetchpriority": "high"
+        },
+        {
+          "href": null,
+          "media": "(min-width: 64rem)",
+          "fetchpriority": "high"
+        }
+      ]
+    },
+    {
+      "viewport": "1024x768",
+      "current": "car-assembled-1080.avif",
+      "requests": [
+        "car-assembled-1080.avif"
+      ],
+      "crops": [
+        "desktop"
+      ],
+      "preloads": [
+        {
+          "href": null,
+          "media": "(min-width: 48rem) and (max-width: 63.999rem)",
+          "fetchpriority": "high"
+        },
+        {
+          "href": null,
+          "media": "(min-width: 64rem)",
+          "fetchpriority": "high"
+        }
+      ]
+    },
+    {
+      "viewport": "1440x900",
+      "current": "car-assembled-1440.avif",
+      "requests": [
+        "car-assembled-1440.avif"
+      ],
+      "crops": [
+        "desktop"
+      ],
+      "preloads": [
+        {
+          "href": null,
+          "media": "(min-width: 48rem) and (max-width: 63.999rem)",
+          "fetchpriority": "high"
+        },
+        {
+          "href": null,
+          "media": "(min-width: 64rem)",
+          "fetchpriority": "high"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+
+ RUN  v5.0.2 C:/Users/admin/Desktop/Web Dev Projects/autodelovi
+
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > staff conversion within the limit: profile terms (30 d), tier, no override remark 2420ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > override cannot grant deferred payment to a mechanic without credit or to a guest 733ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > override is staff-only: the public accept path has no override argument 567ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > delivery counts towards the limit (courier fee pushes a quote over) 14629ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > credit is cumulative: a second deferred acceptance beyond the remainder is refused 334ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > non-deferred acceptance by the owning mechanic still records tier and mechanic 323ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > a signed-in mechanic accepting a guest inquiry is bound by his own credit 336ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-01 edge cases > orders.submit keeps the D132 behaviour through the shared helper 3598ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-02 edge cases > ipSubject normalises the forms a client can vary 4ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-02 edge cases > an IPv4 address and its IPv4-mapped IPv6 form share one bucket 407ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-02 edge cases > orders from one IP are limited however the User-Agent rotates 566ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-02 edge cases > past the global threshold orders keep flowing and the owner gets one alert 613ms
+ ✓ scripts/qa/fix/verify-backend-orders-quotes.test.ts > BE-02 edge cases > a guest without IP metadata still works (fallback key) 274ms
+
+ Test Files  1 passed (1)
+      Tests  13 passed (13)
+   Start at  04:03:54
+   Duration  65.01s (import 56%, tests 39%, transform 3%, environment 1%)
+

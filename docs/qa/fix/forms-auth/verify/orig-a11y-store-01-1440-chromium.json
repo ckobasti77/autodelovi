@@ -1,0 +1,41 @@
+{
+ "S0 after Tab through empty Ime (no submit yet): focus": "input#co-lastName \"\"",
+ "S0 summary": "Proverite jedno polje:",
+ "A1 after Dalje: focus": "div[alert]# \"Proverite 4 polja:Upišite ime.Upišite pr\"",
+ "A1 summary": "Proverite 4 polja:",
+ "A2 while typing Ime focus": "input#co-firstName \"\"",
+ "A3 after Tab from fixed Ime (expected #co-lastName)": "input#co-lastName \"\"",
+ "A3 summary": "Proverite 3 polja:",
+ "A4 values after typing": {
+  "co-firstName": "Petar",
+  "co-lastName": "Petrovic",
+  "co-phone": "",
+  "co-email": ""
+ },
+ "B0 focus after click Prezime": "input#co-lastName \"\"",
+ "B1 per-keystroke focus while typing Prezime": [
+  "P:input#co-lastName \"\"",
+  "e:input#co-lastName \"\"",
+  "t:input#co-lastName \"\"",
+  "r:input#co-lastName \"\"",
+  "o:input#co-lastName \"\"",
+  "v:input#co-lastName \"\"",
+  "i:input#co-lastName \"\"",
+  "c:input#co-lastName \"\""
+ ],
+ "B1 values": {
+  "co-firstName": "Petar",
+  "co-lastName": "PetrovicPetrovic",
+  "co-phone": "",
+  "co-email": ""
+ },
+ "B1 summary": "Proverite 3 polja:",
+ "B2 after click Telefon (expected #co-phone)": "input#co-phone \"\"",
+ "B3 values": {
+  "co-firstName": "Petar",
+  "co-lastName": "PetrovicPetrovic",
+  "co-phone": "0641234567",
+  "co-email": ""
+ },
+ "B3 summary": "Proverite 2 polja:"
+}

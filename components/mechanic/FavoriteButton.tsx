@@ -58,8 +58,12 @@ export function FavoriteButton({
       )}
     >
       <StarIcon size={20} weight={on ? "fill" : "regular"} aria-hidden="true" />
-      {on ? "U omiljenom" : "Sačuvaj u omiljeno"}
-      <span className="sr-only">: {productName}</span>
+      {/* One inline run, so the name is „Sačuvaj u omiljeno: …“ without a space before the
+          colon (separate flex children are joined with a space; A11Y-19). */}
+      <span>
+        {on ? "U omiljenom" : "Sačuvaj u omiljeno"}
+        <span className="sr-only">: {productName}</span>
+      </span>
     </button>
   );
 }

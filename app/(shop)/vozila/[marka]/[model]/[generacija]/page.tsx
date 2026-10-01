@@ -7,7 +7,7 @@ import { formatNumber } from "@/lib/format/number";
 import { pluralSr } from "@/lib/format/plural";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { generationMeta } from "@/lib/seo/templates";
+import { accusativeSr, generationMeta } from "@/lib/seo/templates";
 import {
   getSettingsPublic,
   getVehicleEngines,
@@ -44,6 +44,9 @@ async function load(marka: string, model: string, generacija: string, motor: str
   return { brand, model: m, generation: g, engines, engine, parts };
 }
 
+const ENGINE_CHIP =
+  "flex h-full min-h-14 flex-col justify-center gap-0.5 rounded-xs border border-line-strong px-3 py-2 text-ink-1 transition-control hover:border-ink-3 aria-[current]:border-accent aria-[current]:bg-accent-subtle";
+
 function motorParam(value: string | string[] | undefined): string | undefined {
   const v = Array.isArray(value) ? value[0] : value;
   return v && /^[a-z0-9-]{1,80}$/.test(v) ? v : undefined;
@@ -59,7 +62,8 @@ export async function generateMetadata({
     load(marka, model, generacija, undefined),
     getSettingsPublic(),
   ]);
-  if (!data) return {};
+  // Resolved before the page streams, so an unknown vehicle is a real 404 (FLOW-05).
+  if (!data) notFound();
   const text = generationMeta({
     brandName: data.brand.brand.name,
     generationName: data.generation.name,
@@ -90,7 +94,8 @@ export default async function VehicleGenerationPage({
   if (!data) notFound();
   const { brand, generation, engines, engine, parts } = data;
   const base = ROUTES.vehicleGeneration(marka, model, generacija);
-  const name = `${shortBrand(brand.brand)} ${generation.name}`;
+  // After „za“ the vehicle declines: „Delovi za Škodu Octaviju III“ (COPY-05).
+  const name = accusativeSr(`${shortBrand(brand.brand)} ${generation.name}`);
   const crumbs = [
     { label: "Početna", href: ROUTES.home },
     { label: "Vozila", href: ROUTES.vehicles },
@@ -155,26 +160,32 @@ export default async function VehicleGenerationPage({
       {engines.length > 0 ? (
         <nav aria-label="Motor" className="mt-8">
           <h2 className="type-label uppercase text-ink-3">Motor</h2>
-          <ul className="mt-3 flex flex-wrap gap-2">
-            <li>
+          {/*
+            A fixed column grid, with the engine code on its own clipped line: the rows no longer
+            depend on the width of the code font, which loads late (PERF-02, D251).
+          */}
+          <ul className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+            <li className="min-w-0">
               <RouteLink
                 href={base}
                 aria-current={!engine ? "true" : undefined}
-                className="inline-flex h-10 items-center rounded-xs border border-line-strong px-3 type-body-s text-ink-1 transition-control hover:border-ink-3 aria-[current]:border-accent aria-[current]:bg-accent-subtle"
+                className={ENGINE_CHIP}
               >
-                Svi motori
+                <span className="type-body-s">Svi motori</span>
               </RouteLink>
             </li>
             {engines.map((e) => (
-              <li key={e.slug}>
+              <li key={e.slug} className="min-w-0">
                 <RouteLink
                   href={`${base}?motor=${e.slug}`}
                   aria-current={engine?.slug === e.slug ? "true" : undefined}
-                  className="inline-flex h-10 items-center gap-2 rounded-xs border border-line-strong px-3 type-body-s text-ink-1 transition-control hover:border-ink-3 aria-[current]:border-accent aria-[current]:bg-accent-subtle"
+                  className={ENGINE_CHIP}
                 >
-                  {e.name}
+                  <span className="type-body-s">{e.name}</span>
                   {e.codes.length ? (
-                    <span className="type-code-s text-ink-3">{e.codes.slice(0, 2).join(", ")}</span>
+                    <span className="truncate type-code-s text-ink-3">
+                      {e.codes.slice(0, 2).join(", ")}
+                    </span>
                   ) : null}
                 </RouteLink>
               </li>
@@ -221,7 +232,7 @@ export default async function VehicleGenerationPage({
           {parts.top.length > 0 ? (
             <section aria-labelledby="top-title" className="mt-14">
               <h2 id="top-title" className="type-h2 text-ink-1">
-                Izbor delova za {generation.name}
+                Izbor delova za {accusativeSr(generation.name)}
               </h2>
               <div className="mt-5">
                 <ProductGrid items={parts.top} fitFor={fitFor} />
@@ -232,7 +243,7 @@ export default async function VehicleGenerationPage({
       )}
       <LandingLinks
         id="generation-landings-title"
-        title={`Delovi za ${shortBrand(brand.brand)} ${data.model.model.name} po kategorijama`}
+        title={`Delovi za ${accusativeSr(`${shortBrand(brand.brand)} ${data.model.model.name}`)} po kategorijama`}
         links={landings}
         show="category"
       />

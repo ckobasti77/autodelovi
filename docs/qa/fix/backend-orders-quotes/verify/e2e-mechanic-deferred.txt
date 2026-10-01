@@ -1,0 +1,87 @@
+
+Running 1 test using 1 worker
+
+[1/1] [desktop-1440] › tests\e2e\mechanics.spec.ts:106:7 › mechanics portal › register → approve → own prices → quick order → deferred order
+  1) [desktop-1440] › tests\e2e\mechanics.spec.ts:106:7 › mechanics portal › register → approve → own prices → quick order → deferred order 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 60
+
+    - Array []
+    + Array [
+    +   "./components/catalog/SystemHub.tsx:9:1
+    + Error: Export systemIntro doesn't exist in target module
+    +    7 | import { breadcrumbJsonLd, itemListJsonLd } from \"@/lib/seo/jsonld\";
+    +    8 | import type { LandingLinkData } from \"@/lib/seo/landingLinks\";
+    + >  9 | import { systemIntro } from \"@/lib/seo/templates\";
+    +      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    +   10 | import { Breadcrumbs, type Crumb } from \"@/components/ui/Breadcrumbs\";
+    +   11 | import { RevealText } from \"@/components/text-reveal/RevealText\";
+    +   12 | import { JsonLd } from \"@/components/seo/JsonLd\";
+    +
+    + The export systemIntro was not found in module [project]/lib/seo/templates.ts [app-rsc] (ecmascript).
+    + Did you mean to import systemMeta?
+    + All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+    +
+    + Import trace:
+    +   Server Component:
+    +     ./components/catalog/SystemHub.tsx
+    +     ./app/(shop)/delovi/[kategorija]/page.tsx",
+    +   "./components/catalog/SystemHub.tsx:9:1
+    + Error: Export systemIntro doesn't exist in target module
+    +    7 | import { breadcrumbJsonLd, itemListJsonLd } from \"@/lib/seo/jsonld\";
+    +    8 | import type { LandingLinkData } from \"@/lib/seo/landingLinks\";
+    + >  9 | import { systemIntro } from \"@/lib/seo/templates\";
+    +      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    +   10 | import { Breadcrumbs, type Crumb } from \"@/components/ui/Breadcrumbs\";
+    +   11 | import { RevealText } from \"@/components/text-reveal/RevealText\";
+    +   12 | import { JsonLd } from \"@/components/seo/JsonLd\";
+    +
+    + The export systemIntro was not found in module [project]/lib/seo/templates.ts [app-rsc] (ecmascript).
+    + Did you mean to import systemMeta?
+    + All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+    +
+    + Import trace:
+    +   Server Component:
+    +     ./components/catalog/SystemHub.tsx
+    +     ./app/(shop)/delovi/[kategorija]/page.tsx",
+    +   "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+    +   "Refused to execute script from 'http://localhost:3001/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+    +   "pageerror: ./components/catalog/SystemHub.tsx:9:1
+    + Error: Export systemIntro doesn't exist in target module
+    +    7 | import { breadcrumbJsonLd, itemListJsonLd } from \"@/lib/seo/jsonld\";
+    +    8 | import type { LandingLinkData } from \"@/lib/seo/landingLinks\";
+    + >  9 | import { systemIntro } from \"@/lib/seo/templates\";
+    +      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    +   10 | import { Breadcrumbs, type Crumb } from \"@/components/ui/Breadcrumbs\";
+    +   11 | import { RevealText } from \"@/components/text-reveal/RevealText\";
+    +   12 | import { JsonLd } from \"@/components/seo/JsonLd\";
+    +
+    + The export systemIntro was not found in module [project]/lib/seo/templates.ts [app-rsc] (ecmascript).
+    + Did you mean to import systemMeta?
+    + All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+    +
+    + Import trace:
+    +   Server Component:
+    +     ./components/catalog/SystemHub.tsx
+    +     ./app/(shop)/delovi/[kategorija]/page.tsx
+    +
+    + ",
+    + ]
+
+      212 |     await expect(page.getByText(/Odloženo plaćanje do \d{2}\.\d{2}\.\d{4}\./).first()).toBeVisible();
+      213 |
+    > 214 |     expect(errors).toEqual([]);
+          |                    ^
+      215 |   });
+      216 |
+      217 |   test("staff approve a registration in /admin/majstori", async ({ page, browser }, testInfo) => {
+        at C:\Users\admin\Desktop\Web Dev Projects\autodelovi\tests\e2e\mechanics.spec.ts:214:20
+
+    Error Context: ..\..\..\AppData\Local\Temp\pw-be-verify-74242\mechanics-mechanics-portal-958c3-uick-order-→-deferred-order-desktop-1440\error-context.md
+
+
+  1 failed
+    [desktop-1440] › tests\e2e\mechanics.spec.ts:106:7 › mechanics portal › register → approve → own prices → quick order → deferred order 

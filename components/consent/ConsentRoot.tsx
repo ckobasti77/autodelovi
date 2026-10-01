@@ -2,17 +2,21 @@ import { cookies } from "next/headers";
 
 import { CONSENT_COOKIE, parseConsent } from "@/lib/analytics/consent";
 import { getSettingsPublic } from "@/lib/server/catalog-cache";
-import { ConsentBanner } from "@/components/consent/ConsentBanner";
+import { ConsentGate } from "@/components/consent/ConsentGate";
 import { ConsentInit } from "@/components/consent/ConsentInit";
-import { ConsentReopen } from "@/components/consent/ConsentReopen";
+import { ConsentPanel } from "@/components/consent/ConsentPanel";
 import { AnalyticsManager } from "@/components/consent/AnalyticsManager";
 
 /**
  * Consent + tags for storefront layouts (SEO-ADS §J6): reads `sk_consent` on the server so the
- * banner is part of the first HTML (no shift, no flash) and the client starts from the same
- * state; tag ids come from settings (all empty ⇒ nothing is ever loaded). Once a choice is on
- * record the banner module is not part of the page at all: `ConsentReopen` loads it only when
- * the footer reopens the settings (PERF-11).
+ * client starts from the same state; tag ids come from settings (all empty ⇒ nothing is ever
+ * loaded).
+ *
+ * First visit: the banner is server-rendered markup (`ConsentPanel`, a Server Component here) —
+ * part of the first HTML (no shift, no flash), working as a form post without JavaScript and
+ * with no client component to hydrate. `ConsentGate` loads the interactive banner after
+ * hydration and swaps it in (PERF-01). Once a choice is on record nothing of the banner is in
+ * the page: the gate loads it only when the footer reopens the settings (PERF-11).
  */
 export async function ConsentRoot() {
   const [store, settings] = await Promise.all([cookies(), getSettingsPublic()]);
@@ -20,7 +24,9 @@ export async function ConsentRoot() {
   return (
     <>
       <ConsentInit record={record} />
-      {record === null ? <ConsentBanner serverOpen /> : <ConsentReopen />}
+      <ConsentGate firstVisit={record === null}>
+        {record === null ? <ConsentPanel titleId="consent-title" descId="consent-desc" /> : null}
+      </ConsentGate>
       <AnalyticsManager ids={settings.tracking} />
     </>
   );

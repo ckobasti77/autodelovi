@@ -1,0 +1,259 @@
+{
+  "webkit-390-home": {
+    "delay": 6000,
+    "visibleAt": 2444,
+    "hydratedBeforeTyping": false,
+    "typedAt": 3200,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "5Q0615505R"
+    ],
+    "hydratedAt": 10071,
+    "after": {
+      "[data-testid=hero-search-input] input": {
+        "dom": "5Q0615505R",
+        "reactValue": "5Q0615505R"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "focused": true,
+    "afterRerender": {
+      "dom": "5Q0615505R",
+      "reactValue": "5Q0615505R"
+    },
+    "beforeSubmit": {
+      "dom": "5Q0615505R",
+      "reactValue": "5Q0615505R"
+    },
+    "afterSubmitUrl": "/pretraga?q=5Q0615505R",
+    "chunkRequestsDelayed": 40,
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "webkit-390-upit": {
+    "delay": 6000,
+    "visibleAt": 904,
+    "hydratedBeforeTyping": false,
+    "typedAt": 2979,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "WVWZZZ1KZ8W123456",
+      "Turbina za Golf 7, dizel."
+    ],
+    "hydratedAt": 14166,
+    "after": {
+      "#iq-vin": {
+        "dom": "WVWZZZ1KZ8W123456",
+        "reactValue": "(uncontrolled)"
+      },
+      "#iq-message": {
+        "dom": "Turbina za Golf 7, dizel.",
+        "reactValue": "(uncontrolled)"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "ui": {
+      "vinHelp": "Volkswagen · Golf V / Golf VI, Jetta · model 2008?",
+      "vinCounter": "",
+      "msgCounter": "0 / 2.000",
+      "brand": "volkswagen",
+      "submitDisabled": false
+    },
+    "errorsWithoutConsent": [
+      "Proverite označena polja:",
+      "Potrebna je saglasnost da podatke koristimo za odgovor na upit."
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "webkit-390-registracija": {
+    "delay": 6000,
+    "visibleAt": 3141,
+    "hydratedBeforeTyping": false,
+    "typedAt": 6150,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "Petar Petrović",
+      "petar.xb01@primer.rs",
+      "TajnaLozinka-555"
+    ],
+    "hydratedAt": 9256,
+    "after": {
+      "#su-name": {
+        "dom": "Petar Petrović",
+        "reactValue": "Petar Petrović"
+      },
+      "#su-email": {
+        "dom": "petar.xb01@primer.rs",
+        "reactValue": "petar.xb01@primer.rs"
+      },
+      "#su-password": {
+        "dom": "TajnaLozinka-555",
+        "reactValue": "TajnaLozinka-555"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "summaryWithoutTerms": [
+      "Potrebna je saglasnost sa uslovima korišćenja."
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "webkit-390-reset": {
+    "delay": 6000,
+    "visibleAt": 1377,
+    "hydratedBeforeTyping": false,
+    "typedAt": 2401,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "petar.xb01@primer.rs"
+    ],
+    "hydratedAt": 7730,
+    "after": {
+      "#rp-email": {
+        "dom": "petar.xb01@primer.rs",
+        "reactValue": "petar.xb01@primer.rs"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "webkit-390-majstor": {
+    "delay": 6000,
+    "visibleAt": 862,
+    "hydratedBeforeTyping": false,
+    "typedAt": 3236,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "servis.xb01@primer.rs",
+      "TajnaLozinka-555",
+      "Servis XB01",
+      "0641234567"
+    ],
+    "hydratedAt": 7435,
+    "after": {
+      "#mr-email": {
+        "dom": "servis.xb01@primer.rs",
+        "reactValue": "(uncontrolled)"
+      },
+      "#mr-password": {
+        "dom": "TajnaLozinka-555",
+        "reactValue": "(uncontrolled)"
+      },
+      "#mr-companyName": {
+        "dom": "Servis XB01",
+        "reactValue": "(uncontrolled)"
+      },
+      "#mr-phone": {
+        "dom": "0641234567",
+        "reactValue": "(uncontrolled)"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "summaryAfterSubmit": [
+      "Upišite PIB.",
+      "Upišite matični broj.",
+      "Upišite ime i prezime kontakt osobe.",
+      "Upišite mesto.",
+      "Upišite adresu servisa.",
+      "Izaberite bar jednu vrstu servisa.",
+      "Potrebna je saglasnost sa uslovima korišćenja."
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "webkit-390-bis": {
+    "delay": 6000,
+    "visibleAt": 955,
+    "hydratedBeforeTyping": false,
+    "typedAt": 1732,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "kupac.xb01@primer.rs"
+    ],
+    "hydratedAt": 8141,
+    "after": {
+      "#bis-email": {
+        "dom": "kupac.xb01@primer.rs",
+        "reactValue": "kupac.xb01@primer.rs"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "afterSubmit": {
+      "emailMsg": null,
+      "focus": "cb_R_rmjinebn5rdabmqalb_",
+      "consentInvalid": "true"
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "webkit-390-pretraga": {
+    "delay": 6000,
+    "visibleAt": 1545,
+    "hydratedBeforeTyping": false,
+    "typedAt": 2206,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "plocice golf"
+    ],
+    "hydratedAt": 11648,
+    "after": {
+      "[data-testid=search-page-input] input": {
+        "dom": "plocice golf",
+        "reactValue": "plocice golf"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "afterRerender": {
+      "dom": "plocice golf",
+      "reactValue": "plocice golf"
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "webkit-390-mid-upit": {
+    "delay": 6000,
+    "runs": [
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": false,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "000001111111111111111111"
+      },
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "001111111111111111111111"
+      },
+      {
+        "expected": "Turbina za Golf 7, dizel, curi ulje.",
+        "after": {
+          "dom": "Turbina za Golf 7, dizel, curi ulje.",
+          "reactValue": "(uncontrolled)"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "000001111111111111111111"
+      }
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  }
+}

@@ -15,6 +15,7 @@ type ConsentState = {
   /** Granular view (three categories with switches). */
   detailed: boolean;
   initialised: boolean;
+  /** Seeds the store from the server-read cookie; later calls adopt a newer server record. */
   init: (record: ConsentRecord | null) => void;
   setRecord: (record: ConsentRecord) => void;
   openSettings: () => void;
@@ -27,8 +28,14 @@ export const useConsent = create<ConsentState>((set, get) => ({
   detailed: false,
   initialised: false,
   init: (record) => {
-    if (get().initialised) return;
-    set({ record, open: record === null, detailed: false, initialised: true });
+    const state = get();
+    if (!state.initialised) {
+      set({ record, open: record === null, detailed: false, initialised: true });
+      return;
+    }
+    // The server read a decision the store has not seen: the static first-visit panel was
+    // submitted as a form before the client banner took over (PERF-01). Adopt it.
+    if (record && record.id !== state.record?.id) set({ record, open: false, detailed: false });
   },
   setRecord: (record) => set({ record, open: false, detailed: false }),
   openSettings: () => set({ open: true, detailed: true }),

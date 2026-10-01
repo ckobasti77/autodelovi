@@ -88,7 +88,7 @@ The rest of the gap to the simulated LCP is the shared shell, not the hero. Firs
 | three-mesh-bvh (fine pointer only) | 27.1 KB gzip |
 | Overlay chunks warmed at start | ≈ 16 KB gzip |
 | `car.glb` (high) / `car-lite.glb` (mid) | 3.55 MB / 1.6 MB (budget ≤ 8 MB) |
-| `env/studio-512.hdr` | 401 KB |
+| `env/studio-pmrem.hdr` (pre-baked PMREM atlas, replaces `studio-512.hdr`, D243) | 139 KB |
 | Mobile poster `car-assembled-m-828.avif` | 14 KB |
 
 ## 4. Runtime cost
@@ -101,9 +101,11 @@ The rest of the gap to the simulated LCP is the shared shell, not the hero. Firs
 - **3D init** (intent → ready, 4× CPU, SwiftShader): 585 → ~450–505 ms of blocking, in tasks ≤ 175 ms: BVH only for fine pointers and as a lazy chunk, yields between uploads and compile, `checkShaderErrors` off.
 - **Bug fixed during profiling:** the adaptive-DPR step-down started from the tier maximum (2) instead of the ratio in use, so a DPR-1 screen under load was raised to 1.75 and its buffer reallocated at every step. Worst long task while scrolling went 534 → 82 ms.
 - Demand frameloop (no frames while idle), `frameloop="never"` off-screen, context loss → posters (e2e), dispose on unmount.
+- **Step 22 (PERF-14, D243):** the PMREM prefilter left the browser. It cost 336–457 ms in one task at 1× CPU on a cold GPU program cache (725–884 ms at 4×, audit `perf-3d-01`) because the blur shader compiled synchronously. `3d/scripts/env.mjs` bakes the cube-UV atlas once; the runtime decodes a 139 KB RGBE file (≈ 25 ms parse) and binds it with `CubeUVReflectionMapping`. Every material texture is uploaded (`initTexture`, one per task) before `compileAsync`, and the three edge programs compile through `compileAsync` before the frame that first draws them. Dev-server profile: no PMREM frames left (`docs/qa/fix/hero-3d-assets/profile-start-desktop-cpu1-gpu.txt`; the remaining `getProgramInfoLog` time there is the development-only `checkShaderErrors`).
+- **Step 22 (PERF-15/16/23, D244):** teardown releases three's module-level DFG LUT so no renderer survives a home visit through its `dispose` listener; 4× MSAA only below DPR 1.5 (the DPR-2 high tier without MSAA: ≈ 38 MB drawing buffer + ≈ 20 MB resources); software WebGL renderers are classified low (posters), QA/e2e on SwiftShader force `?3d=high|mid`.
 
 ## 5. Poster ↔ canvas parity
-`node scripts/qa/hero-parity.mjs`: mean absolute difference at the crossfade 1.84/255 (desktop), 2.13/255 (mobile) after the Blender-semantics shader and drafting edges (D99). They started at 3.60 and 4.68. The swap is invisible at normal viewing.
+`node scripts/qa/hero-parity.mjs`: mean absolute difference at the crossfade 1.84/255 (desktop), 2.13/255 (mobile) after the Blender-semantics shader and drafting edges (D99). They started at 3.60 and 4.68. The swap is invisible at normal viewing. Step 22 (new phone camera, baked environment): 1.68/255 desktop, 2.79/255 mobile — the closer, higher phone view shows more X-ray shell, where the mid-tier shader is slightly cooler than the poster; the same 2.8–2.9 with a 128 cube, so the environment bake is not the cause. Framing parity poster ↔ canvas is within 1 px at 390/430/768 and 1920–3440 (`scripts/qa/fix/hero-3d-assets-framing.mjs`).
 
 ## 6. Playwright
 `npx playwright test` (production build with `NEXT_PUBLIC_TEST_HOOKS=1`, projects desktop-1440 and mobile-390): **44 passed** (re-run after D113; `tests/e2e/hero-3d.spec.ts` alone: 18 passed). The bottom-sheet drag-to-dismiss was re-checked by hand after D113 (panel closes, selection cleared, 0 console errors). `tests/e2e/hero-3d.spec.ts` covers, at both widths:

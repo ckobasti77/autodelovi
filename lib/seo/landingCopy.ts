@@ -5,7 +5,7 @@
  */
 import { formatRSD } from "@/lib/format/money";
 import { pluralSr } from "@/lib/format/plural";
-import { shortBrandName } from "@/lib/seo/templates";
+import { accusativeSr, listMoreSr, listSr, shortBrandName } from "@/lib/seo/templates";
 
 export type LandingCopyInput = {
   categoryName: string;
@@ -31,13 +31,12 @@ const ARTIKAL = ["artikal", "artikla", "artikala"] as const;
 
 export const yearsText = (from: number, to: number | null) => (to ? `${from}–${to}` : `od ${from}`);
 
+/**
+ * The vehicle as it follows „za“ — every landing sentence, heading and OG title uses it that
+ * way („Kočioni diskovi za Škodu Octaviju“, „Svi delovi za Cupru“; COPY-05).
+ */
 export function vehicleText(i: Pick<LandingCopyInput, "brandName" | "modelName">): string {
-  return i.modelName ? `${shortBrandName(i.brandName)} ${i.modelName}` : i.brandName;
-}
-
-function listSr(items: string[]): string {
-  if (items.length <= 1) return items.join("");
-  return `${items.slice(0, -1).join(", ")} i ${items[items.length - 1]}`;
+  return accusativeSr(i.modelName ? `${shortBrandName(i.brandName)} ${i.modelName}` : i.brandName);
 }
 
 function priceText(price: LandingCopyInput["price"]): string {
@@ -52,20 +51,24 @@ export function landingIntro(i: LandingCopyInput): string {
   const sentences = [
     `Za ${vehicle} imamo ${i.productCount} ${pluralSr(i.productCount, ARTIKAL)} iz grupe „${i.categoryName}“, ${i.inStockCount} odmah na stanju${priceText(i.price)}.`,
   ];
-  const gens = i.generations
-    .slice(0, 4)
-    .map((g) => (i.modelName ? `${g.name} (${yearsText(g.yearFrom, g.yearTo)})` : `${g.name}`));
-  if (gens.length) {
-    sentences.push(
-      i.modelName
-        ? `Pokrivene generacije: ${listSr(gens)}.`
-        : `Najviše delova ima za ${listSr(gens)}.`,
-    );
+  if (i.generations.length) {
+    if (i.modelName) {
+      // The four generations with the most parts, told in model-year order (SEO-07).
+      const top = i.generations
+        .slice(0, 4)
+        .sort((a, b) => a.yearFrom - b.yearFrom || (a.yearTo ?? 9999) - (b.yearTo ?? 9999))
+        .map((g) => `${g.name} (${yearsText(g.yearFrom, g.yearTo)})`);
+      const rest = i.generations.length - top.length;
+      sentences.push(`Pokrivene generacije: ${listMoreSr(top, top.length, { hidden: rest })}.`);
+    } else {
+      const top = i.generations.slice(0, 4).map((g) => accusativeSr(g.name));
+      sentences.push(`Najviše delova ima za ${listSr(top)}.`);
+    }
   }
   if (i.manufacturers.length) {
-    const shown = i.manufacturers.slice(0, 4).map((m) => `${m.name} (${m.count})`);
-    const more = i.manufacturerCount - shown.length;
-    sentences.push(`Proizvođači: ${listSr(shown)}${more > 0 ? ` i još ${more}` : ""}.`);
+    const named = i.manufacturers.map((m) => `${m.name} (${m.count})`);
+    const hidden = Math.max(0, i.manufacturerCount - named.length);
+    sentences.push(`Proizvođači: ${listMoreSr(named, 4, { hidden })}.`);
   }
   return sentences.join(" ");
 }
@@ -84,8 +87,8 @@ export function landingFaq(i: LandingCopyInput): { question: string; answer: str
       ? ` (${engine.engineCodes.slice(0, 3).join(", ")})`
       : "";
     faq.push({
-      question: `Koji delovi odgovaraju za ${engine.generationName} ${engine.engineName}?`,
-      answer: `Za ${engine.generationName} sa motorom ${engine.engineName}${codes} odgovara ${engine.count} ${pluralSr(engine.count, ARTIKAL)} iz ove grupe. Izaberite generaciju i motor u filteru da vidite samo njih.`,
+      question: `Koji delovi odgovaraju za ${accusativeSr(engine.generationName)} ${engine.engineName}?`,
+      answer: `Za ${accusativeSr(engine.generationName)} sa motorom ${engine.engineName}${codes} odgovara ${engine.count} ${pluralSr(engine.count, ARTIKAL)} iz ove grupe. Izaberite generaciju i motor u filteru da vidite samo njih.`,
     });
   }
   if (i.manufacturerCount >= 2) {

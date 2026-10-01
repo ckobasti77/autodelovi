@@ -1,0 +1,256 @@
+{
+  "B": [
+    {
+      "viewport": "390x844",
+      "tier": "low",
+      "assembled": {
+        "stage": [
+          390,
+          672
+        ],
+        "car": [
+          9,
+          207,
+          374,
+          330
+        ],
+        "pctH": 49.1,
+        "pctW": 95.9
+      },
+      "exploded": {
+        "stage": [
+          390,
+          672
+        ],
+        "car": [
+          13,
+          239,
+          363,
+          259
+        ],
+        "pctH": 38.5,
+        "pctW": 93.1
+      },
+      "state": {
+        "progress": 0.998815,
+        "status": "idle",
+        "imgs": [
+          {
+            "src": "car-assembled-m-640.avif",
+            "opacity": "1"
+          },
+          {
+            "src": "car-exploded-m-640.avif",
+            "opacity": "1"
+          }
+        ]
+      },
+      "errors": []
+    },
+    {
+      "viewport": "768x1024",
+      "tier": "low",
+      "assembled": {
+        "stage": [
+          768,
+          852
+        ],
+        "car": [
+          50,
+          222,
+          684,
+          490
+        ],
+        "pctH": 57.5,
+        "pctW": 89.1
+      },
+      "exploded": {
+        "stage": [
+          768,
+          852
+        ],
+        "car": [
+          35,
+          222,
+          690,
+          491
+        ],
+        "pctH": 57.6,
+        "pctW": 89.8
+      },
+      "state": {
+        "progress": 0.999023,
+        "status": "idle",
+        "imgs": [
+          {
+            "src": "car-assembled-t-768.avif",
+            "opacity": "1"
+          },
+          {
+            "src": "car-exploded-t-768.avif",
+            "opacity": "1"
+          }
+        ]
+      },
+      "errors": []
+    }
+  ],
+  "C": [
+    {
+      "viewport": "390x844",
+      "tier": "low",
+      "trackH": 788,
+      "before": {
+        "stage": [
+          390,
+          672
+        ],
+        "car": [
+          9,
+          207,
+          374,
+          330
+        ],
+        "pctH": 49.1,
+        "pctW": 95.9
+      },
+      "after": {
+        "stage": [
+          390,
+          672
+        ],
+        "car": [
+          13,
+          239,
+          363,
+          259
+        ],
+        "pctH": 38.5,
+        "pctW": 93.1
+      },
+      "state": {
+        "tier": "low",
+        "progress": 1,
+        "reducedMotion": true
+      },
+      "errors": []
+    },
+    {
+      "viewport": "390x844",
+      "tier": "mid",
+      "trackH": 788,
+      "before": {
+        "stage": [
+          390,
+          672
+        ],
+        "car": [
+          10,
+          208,
+          373,
+          328
+        ],
+        "pctH": 48.8,
+        "pctW": 95.6
+      },
+      "after": {
+        "stage": [
+          390,
+          672
+        ],
+        "car": [
+          12,
+          230,
+          368,
+          268
+        ],
+        "pctH": 39.9,
+        "pctW": 94.4
+      },
+      "state": {
+        "tier": "mid",
+        "progress": 1,
+        "reducedMotion": true
+      },
+      "errors": []
+    },
+    {
+      "viewport": "768x1024",
+      "tier": "low",
+      "trackH": 968,
+      "before": {
+        "stage": [
+          768,
+          852
+        ],
+        "car": [
+          50,
+          222,
+          684,
+          490
+        ],
+        "pctH": 57.5,
+        "pctW": 89.1
+      },
+      "after": {
+        "stage": [
+          768,
+          852
+        ],
+        "car": [
+          35,
+          222,
+          690,
+          491
+        ],
+        "pctH": 57.6,
+        "pctW": 89.8
+      },
+      "state": {
+        "tier": "low",
+        "progress": 1,
+        "reducedMotion": true
+      },
+      "errors": []
+    },
+    {
+      "viewport": "768x1024",
+      "tier": "mid",
+      "trackH": 968,
+      "before": {
+        "stage": [
+          768,
+          852
+        ],
+        "car": [
+          50,
+          223,
+          683,
+          489
+        ],
+        "pctH": 57.4,
+        "pctW": 88.9
+      },
+      "after": {
+        "stage": [
+          768,
+          852
+        ],
+        "car": [
+          35,
+          206,
+          697,
+          507
+        ],
+        "pctH": 59.5,
+        "pctW": 90.8
+      },
+      "state": {
+        "tier": "mid",
+        "progress": 1,
+        "reducedMotion": true
+      },
+      "errors": []
+    }
+  ]
+}

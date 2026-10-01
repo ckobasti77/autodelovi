@@ -1,0 +1,78 @@
+[
+  {
+    "width": 390,
+    "samples": [
+      {
+        "tag": "P",
+        "mode": null,
+        "words": 4,
+        "anim": "tr-word-lite",
+        "dur": "0.62s",
+        "delay": "0.028s",
+        "i": "1",
+        "n": "4",
+        "text": "TRW · OEM kvalitet"
+      },
+      {
+        "tag": "P",
+        "mode": null,
+        "words": 4,
+        "anim": "tr-word-lite",
+        "dur": "0.62s",
+        "delay": "0.028s",
+        "i": "1",
+        "n": "4",
+        "text": "TRW · OEM kvalitet"
+      },
+      {
+        "tag": "P",
+        "mode": null,
+        "words": 4,
+        "anim": "tr-word-lite",
+        "dur": "0.62s",
+        "delay": "0.028s",
+        "i": "1",
+        "n": "4",
+        "text": "TRW · OEM kvalitet"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "samples": [
+      {
+        "tag": "P",
+        "mode": null,
+        "words": 4,
+        "anim": "tr-word",
+        "dur": "0.62s",
+        "delay": "0.056s",
+        "i": "2",
+        "n": "4",
+        "text": "Febi Bilstein · Aftermarket"
+      },
+      {
+        "tag": "P",
+        "mode": null,
+        "words": 4,
+        "anim": "tr-word",
+        "dur": "0.62s",
+        "delay": "0.056s",
+        "i": "2",
+        "n": "4",
+        "text": "Febi Bilstein · Aftermarket"
+      },
+      {
+        "tag": "P",
+        "mode": null,
+        "words": 4,
+        "anim": "tr-word",
+        "dur": "0.62s",
+        "delay": "0.056s",
+        "i": "2",
+        "n": "4",
+        "text": "Febi Bilstein · Aftermarket"
+      }
+    ]
+  }
+]

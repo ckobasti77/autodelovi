@@ -1,0 +1,23 @@
+[
+  {
+    "viewport": "390x844",
+    "poster": "car-assembled-m-640.avif",
+    "tier": "mid",
+    "progress": 0,
+    "meanAbsDiff": 3.63
+  },
+  {
+    "viewport": "768x1024",
+    "poster": "car-assembled-t-768.avif",
+    "tier": "mid",
+    "progress": 0,
+    "meanAbsDiff": 3.68
+  },
+  {
+    "viewport": "900x1200",
+    "poster": "car-assembled-t-1080.avif",
+    "tier": "mid",
+    "progress": 0,
+    "meanAbsDiff": 3.49
+  }
+]

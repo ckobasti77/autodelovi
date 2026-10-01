@@ -1,0 +1,43 @@
+{
+  "chromium-390-home": {
+    "delay": 6000,
+    "visibleAt": 2442,
+    "hydratedBeforeTyping": false,
+    "typedAt": 2984,
+    "hydratedRightAfterTyping": false,
+    "domAfterTyping": [
+      "5Q0615505R"
+    ],
+    "hydratedAt": 9046,
+    "after": {
+      "[data-testid=hero-search-input] input": {
+        "dom": "5Q0615505R",
+        "reactValue": "5Q0615505R"
+      }
+    },
+    "kept": true,
+    "validTiming": true,
+    "focused": true,
+    "afterRerender": {
+      "dom": "5Q0615505R",
+      "reactValue": "5Q0615505R"
+    },
+    "beforeSubmit": {
+      "dom": "5Q0615505R",
+      "reactValue": "5Q0615505R"
+    },
+    "afterSubmitUrl": "/pretraga?q=5Q0615505R",
+    "chunkRequestsDelayed": 30,
+    "consoleErrors": [],
+    "pageErrors": []
+  },
+  "chromium-390-upit-prefill-control": {
+    "delay": 6000,
+    "prefill": {
+      "messageLength": 22,
+      "counter": "0 / 2.000"
+    },
+    "consoleErrors": [],
+    "pageErrors": []
+  }
+}

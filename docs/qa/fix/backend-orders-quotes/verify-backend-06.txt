@@ -1,0 +1,10 @@
+[22m[39mVERIFY06 {"name":"remove-then-cancel","discStart":10,"afterCreate":7,"afterRemove_expected":10,"afterRemove":10,"afterCancel_expected":10,"afterCancel":10,"batteryAfterCancel":20,"movements":["receipt:10","order_created:-3","order_edited:3"]}
+[22m[39mVERIFY06 {"name":"lower-then-complete","soldQty":1,"committedQty":1,"afterEdit_expected":9,"afterEdit":9,"afterComplete_expected":9,"afterComplete":9,"movements":["receipt:10","order_created:-3","order_edited:2"]}
+[22m[39mVERIFY06 {"name":"add-then-complete","batteryStart":20,"batteryLine":{"_id":"0000000000000000010598orderItems","availabilityAtOrder":"in_stock","committedQty":2,"currentStock":18,"discountBp":0,"isCustomLine":false,"leadTimeDays":null,"lineTotalPara"
+[22m[39mVERIFY06 {"name":"mode-switch","stockCommitted":true,"afterComplete_expected":7,"afterComplete":7,"movements":["receipt:10","order_confirmed:-3"]}
+[31m   [31m×[31m created mode: removing a committed line never returns its stock, not even on cancel[39m[33m 1765[2mms[22m[39m
+[31m   [31m×[31m created mode: lowering 3 → 1 keeps 3 off the shelf through completion[39m[33m 320[2mms[22m[39m
+[31m   [31m×[31m created mode: a line added by staff is never taken off the shelf[39m[33m 380[2mms[22m[39m
+[31m   [31m×[31m mode switch confirmed → created: an open „nova“ order is never committed[39m[32m 250[2mms[22m[39m
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 4 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+[2m      Tests [22m [1m[31m4 failed[39m[22m[2m | [22m[1m[32m5 passed[39m[22m[90m (9)[39m

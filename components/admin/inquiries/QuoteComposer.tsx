@@ -145,7 +145,8 @@ export function QuoteComposer({
     const messages: string[] = [];
     let first: string | null = null;
     const flag = (key: string, field: LineField, i: number, message: string) => {
-      errors[key] = { ...errors[key], [field]: message };
+      // The field shows a sentence; the summary names the line („Stavka 2: količina …“).
+      errors[key] = { ...errors[key], [field]: message[0]!.toUpperCase() + message.slice(1) };
       messages.push(`Stavka ${i + 1}: ${message}`);
       first ??= inputId(key, field);
     };

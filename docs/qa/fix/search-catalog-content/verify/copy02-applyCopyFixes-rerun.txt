@@ -1,0 +1,5 @@
+{
+  "faqs": [],
+  "pages": []
+}
+{ "_creationTime": 1790729689653.4436, "_id": "mh7egrrbktd4hvre01dr2078d98fcedy", "active": true, "answerMd": "Da. Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Trošak vraćanja snosite vi; ako je deo ugrađivan ili oštećen, odgovarate za umanjenje vrednosti. Detalji su na stranici [Reklamacije i povrat](/reklamacije-i-povrat).", "question": "Mogu li da vratim deo?", "scope": "home", "sortOrder": 5 }

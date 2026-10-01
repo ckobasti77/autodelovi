@@ -9,5 +9,13 @@ export const metadata: Metadata = privateMetadata("Porudžbine");
 
 export default async function AccountOrdersPage() {
   await requireAccountPage(ROUTES.accountOrders);
-  return <OrdersList />;
+  // The tab label as this view's heading under the shared „Moj nalog“ h1 (A11Y-21).
+  return (
+    <>
+      <h2 className="sr-only" data-reveal="off">
+        Porudžbine
+      </h2>
+      <OrdersList />
+    </>
+  );
 }

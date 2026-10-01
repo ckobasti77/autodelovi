@@ -9,5 +9,13 @@ export const metadata: Metadata = privateMetadata("Upiti");
 
 export default async function AccountInquiriesPage() {
   await requireAccountPage(ROUTES.accountInquiries);
-  return <InquiriesList />;
+  // The tab label as this view's heading under the shared „Moj nalog“ h1 (A11Y-21).
+  return (
+    <>
+      <h2 className="sr-only" data-reveal="off">
+        Upiti
+      </h2>
+      <InquiriesList />
+    </>
+  );
 }

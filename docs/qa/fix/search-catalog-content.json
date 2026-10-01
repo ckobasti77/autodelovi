@@ -1,0 +1,135 @@
+[
+  {
+    "id": "FLOW-01",
+    "status": "FIXED",
+    "summary": "search.run parses the vehicle out of the query (parseVehicleTerms: names/slugs/aliases, Arabic<->Roman, compact 'golf7') and uses it as a fitment filter; the part terms (one-letter noise and prepositions dropped) search the index, matching categories feed candidates, ranking is category hit > all terms in name > some; category chips come from the results (D230).",
+    "files": ["lib/domain/search.ts", "convex/search.ts", "app/(shop)/pretraga/page.tsx", "lib/server/catalog-cache.ts", "tests/unit/domain/search.test.ts", "convex/catalog.test.ts"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/search-catalog-content-search.mjs -> docs/qa/fix/search-catalog-content/search.json: 'pločice golf 7' 6 artikala, first 6 all 'Kočione pločice …' + chip 'Cela kategorija Kočione pločice'; 'kočioni disk golf 7' 5 discs; 'amortizer golf 7' Amortizer prednji/zadnji/Opruga; '<b>disk</b>' and 'disk' 9 discs first; 'pločice golf vii' same as 'golf 7'. npx vitest run convex/catalog.test.ts tests/unit/domain/search.test.ts -> 19 + 14 passed."
+  },
+  {
+    "id": "FLOW-02",
+    "status": "FIXED",
+    "summary": "ProductEditor rebases on server changes (untouched fields take server values, edits stay, notice 'Artikal je u međuvremenu izmenjen — polja koja niste menjali su osvežena (…)', conflicts listed); save sends expectedUpdatedAt and productsAdmin.update throws CONFLICT on a stale snapshot (D232).",
+    "files": ["components/admin/products/ProductEditor.tsx", "convex/catalog/productsAdmin.ts", "convex/catalog.test.ts"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/search-catalog-content-admin.mjs -> docs/qa/fix/search-catalog-content/admin.json: 'tab B saved' server 649000, tab A notice '…osvežena (cena)', priceA 6490; 'tab A saved' server name '… (fix22)' AND retailPricePara 649000 (audit run: 499000). Evidence image admin-rebased-notice.webp. convex test 'a product save based on a stale snapshot is refused' -> CONFLICT, price kept."
+  },
+  {
+    "id": "COPY-02",
+    "status": "FIXED",
+    "summary": "FAQ 'Mogu li da vratim deo?' now states the right as the legal page does (14 days, no reason, return cost, diminished value, link to Reklamacije i povrat) in seed data and the live row (content:applyCopyFixes); lawyer check added to HUMAN-TODO §13.",
+    "files": ["convex/seedData/content.ts", "convex/content.ts", "tests/unit/content/placeholders.test.ts", "docs/HUMAN-TODO.md"],
+    "verification": "npx convex run content:applyCopyFixes -> faqs ['Koliko košta dostava i kada stiže?','Mogu li da vratim deo?'] (second run: []); curl http://localhost:3001/ -> 'Da. Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Trošak vraćanja snosite vi; …umanjenje vrednosti. Detalji su na stranici Reklamacije i povrat', link href=/reklamacije-i-povrat true. Unit test 'the FAQ on returns states the statutory right' passed."
+  },
+  {
+    "id": "FLOW-03",
+    "status": "FIXED",
+    "summary": "The selected vehicle (localStorage) reaches the server search as vozilo=brand/model/generation via the SearchVehicleScope island; results narrow to parts that fit with 'Samo delovi za Golf VII (još N za druga vozila). Prikaži sve' (vozilo=sva) and a way back 'Samo za Golf VII'; when nothing fits all results show with a notice (D231).",
+    "files": ["components/search/SearchVehicleScope.tsx", "app/(shop)/pretraga/page.tsx", "convex/search.ts", "convex/catalog.test.ts"],
+    "verification": "search.json 'vehicle': store Golf VII + /pretraga?q=kočioni disk -> URL …&vozilo=volkswagen%2Fgolf%2Fgolf-7, '5 artikala', line 'Samo delovi za Golf VII (još 4 za druga vozila). Prikaži sve'; after 'Prikaži sve' -> vozilo=sva, '9 artikala', link 'Samo za Golf VII'. Screenshot search-selected-vehicle-390.webp. convex test 'the selected vehicle narrows a plain query, unless nothing fits' passed."
+  },
+  {
+    "id": "FLOW-04",
+    "status": "FIXED",
+    "summary": "search.run returns hasMore (candidate pool / limit+1) and category chips with counts; the page says 'Prikazano prvih 48, ima ih još. Suzite izborom kategorije ili vozila.' and chips narrow with kategorija=<slug>.",
+    "files": ["convex/search.ts", "app/(shop)/pretraga/page.tsx"],
+    "verification": "search.json: 'golf 7' and 'a' -> count 'Prikazano prvih 48, ima ih još…', 8 chips ('Kočione pločice 6', 'Kočioni diskovi 5', …); convex test: q 'golf 7' + categorySlug 'kocioni-diskovi' -> only the disc, category echoed."
+  },
+  {
+    "id": "FLOW-06",
+    "status": "FIXED",
+    "summary": "Echoed query is truncated to 80 characters with an ellipsis and wraps with overflow-wrap:anywhere in the H1, the normalised code and the empty-state paragraph.",
+    "files": ["app/(shop)/pretraga/page.tsx"],
+    "verification": "search.json 'long': 360:40 / 360:120 / 390:40 / 390:120 -> over 0, offenders []. Screenshot search-long-390.webp."
+  },
+  {
+    "id": "FLOW-20",
+    "status": "FIXED",
+    "summary": "A failed save (client validation or a field error from the server) focuses the error summary (role=alert, tabIndex=-1).",
+    "files": ["components/admin/products/ProductEditor.tsx"],
+    "verification": "admin.json 'empty save' -> focus 'DIV role=alert', invalid 5 (audit: focus BUTTON/BODY)."
+  },
+  {
+    "id": "SEO-06",
+    "status": "FIXED",
+    "summary": "New public query catalog.products.redirectFor (index by_fromPath, follows ≤5 renames, loop-safe) behind cached getRedirect; /deo/[slug] calls permanentRedirect (308) before the retired check and notFound(), in generateMetadata and the page; productWriter keeps one row per old path and removes the row of a path a product takes back. Hits are not counted (no writes during render; D234).",
+    "files": ["convex/catalog/products.ts", "convex/lib/productWriter.ts", "lib/server/catalog-cache.ts", "app/(shop)/deo/[slug]/page.tsx"],
+    "verification": "admin.json 'renamed': GET /deo/audit-disk-prednji-852021-audit-fa-852021 -> 308 location /deo/…-r22. After renaming back, `npx convex run catalog/products:redirectFor` -> original path null (no loop), …-r22 -> original. The page's second 308 seen in 'renamed back' is the 3001 Next cache: the dev deployment's revalidation webhook posts to NEXT_SITE_URL=http://localhost:3000 (another project), so 3001 is never purged."
+  },
+  {
+    "id": "COPY-03",
+    "status": "FIXED",
+    "summary": "Content part: placeholders now drop the whole sentence when a required value is empty; Kontakt uses {{kontakt.najbrze}} built only from existing phone/Viber; Reklamacije and Politika privatnosti use 'putem upita na sajtu' with e-mail/address in their own droppable sentences; circular 'stranica Kontakt' fallbacks removed; live rows updated by content:applyCopyFixes. The home ContactStrip, order-status page and delivered e-mail sentences are the assists of home-hero-sections, cart-mechanic-overlays and seo-content-email.",
+    "files": ["lib/content/placeholders.ts", "lib/settings/public.ts", "convex/seedData/content.ts", "convex/content.ts", "tests/unit/content/placeholders.test.ts"],
+    "verification": "curl http://localhost:3001/kontakt -> no 'Najbrže' sentence (no phone/Viber set); /reklamacije-i-povrat -> 'Pošaljite nam izjavu o odustanku putem upita na sajtu. Dovoljno je…'; /politika-privatnosti -> 'Zahtev pošaljite putem upita na sajtu; odgovaramo najkasnije u roku od 30 dana.' Unit test 'seeded content never names a missing channel' passed (no 'stranice Kontakt', no 'Viber', no '{{')."
+  },
+  {
+    "id": "COPY-04",
+    "status": "FIXED",
+    "summary": "The same-day cut-off in Dostava i plaćanje and the FAQ is now {{dostava.rokSlanja}} from settings commerce.shipCutoff ('14:00' -> '14 časova'); the sentence disappears when the setting is empty. Live rows updated. The settings default still pre-fills 14:00 (convex/lib/settings.ts, not this package) — cross-package request + owner item in HUMAN-TODO.",
+    "files": ["convex/seedData/content.ts", "convex/content.ts", "lib/settings/public.ts", "lib/content/placeholders.ts", "docs/HUMAN-TODO.md"],
+    "verification": "Unit tests: fillPlaceholders drops 'Porudžbine potvrđene do {{dostava.rokSlanja}} …' when empty and keeps the rest; cutoffLabel('14:00') -> '14 časova', '' -> ''. curl /dostava-i-placanje -> sentence rendered from settings value 14:00."
+  },
+  {
+    "id": "COPY-07",
+    "status": "FIXED",
+    "summary": "Warranty uses countSr(n, ['mesec','meseca','meseci']).",
+    "files": ["app/(shop)/deo/[slug]/page.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/search-catalog-content-deo.mjs -> deo.json warranty '24 meseca' at 390/768/1024/1440."
+  },
+  {
+    "id": "VIS-07",
+    "status": "FIXED",
+    "summary": "The spec drawing is a separate grid item after the buy box: on phones/tablets it follows the buy box, from lg the buy box spans two rows and the drawing sits under the gallery.",
+    "files": ["app/(shop)/deo/[slug]/page.tsx"],
+    "verification": "deo.json 768: galleryTop 119, h1Top 745, drawingTop 1410 (drawing after the buy box); 1024/1440: drawingLeft 41/48 vs h1Left 601/846 (under the gallery); overflow 0; reveal stuck [] pending 0. Screenshots deo-768.webp, deo-1440.webp."
+  },
+  {
+    "id": "VIS-22",
+    "status": "FIXED",
+    "summary": "Assist (deo page): the 'Ilustracija kategorije' note is a 13 px figcaption below the image frame instead of an overlay.",
+    "files": ["app/(shop)/deo/[slug]/page.tsx"],
+    "verification": "deo.json caption {tag FIGCAPTION, size 13px, inside FIGURE} at every width."
+  },
+  {
+    "id": "VIS-31",
+    "status": "FIXED",
+    "summary": "Product SEO description shows one counter 'n / 170' with a warning past 155 (Textarea showCount off, hint without the number). Category editor and settings SEO tab are outside this package (cross-package request).",
+    "files": ["components/admin/products/SeoFields.tsx"],
+    "verification": "admin.json 'seo counters' -> ['0 / 170'] (one counter, no '/ 155')."
+  },
+  {
+    "id": "SEO-03",
+    "status": "FIXED",
+    "summary": "Assist, data part only: category seoTitle/seoDescription are no longer seeded; seed:clearSeededCategorySeo cleared the 58 unedited seeded values on the dev deployment (title builders are seo-content-email's part).",
+    "files": ["convex/seed.ts", "convex/seedData/categories.ts"],
+    "verification": "npx convex run seed:clearSeededCategorySeo -> {titles: 58, descriptions: 58}; second run -> {0, 0}. npx vitest run convex/seed.test.ts convex/seo.test.ts -> passed."
+  },
+  {
+    "id": "FLOW-24",
+    "status": "FIXED",
+    "summary": "Assist, audit summary only: 'Poništen uvoz … (N artikal nije vraćen / artikla nisu vraćena / artikala nije vraćeno)' with pluralSr; the UI strings belong to the import UI package.",
+    "files": ["convex/importCommit.ts"],
+    "verification": "npx tsc --noEmit clean; npx vitest run convex/imports.test.ts passed."
+  },
+  {
+    "id": "COPY-14",
+    "status": "FIXED",
+    "summary": "Assist, content part: Uslovi korišćenja 'Nalog je opcion.' -> 'Nalog nije obavezan.' in seed and the live page.",
+    "files": ["convex/seedData/content.ts", "convex/content.ts"],
+    "verification": "curl http://localhost:3001/uslovi-koriscenja -> 'Nalog nije obavezan. Odgovorni ste za čuvanje lozinke.'"
+  },
+  {
+    "id": "VIS-19",
+    "status": "FIXED",
+    "summary": "Assist: the product H1 goes through typographer(); the '×' binding itself is catalog-product-ui's rule in lib/format/nbsp.ts.",
+    "files": ["app/(shop)/deo/[slug]/page.tsx"],
+    "verification": "npx eslint/tsc clean; H1 renders 'Kočioni disk prednji 276 × 24 mm' (deo-768.webp)."
+  },
+  {
+    "id": "FLOW-05",
+    "status": "OPEN",
+    "summary": "Assist: /deo/[slug] generateMetadata now resolves redirect -> retired -> notFound() before the page. The 404 HTML body is still empty (metadata streams for non-bot user agents), so the server-rendered not-found is routing-errors-gates' fix.",
+    "files": ["app/(shop)/deo/[slug]/page.tsx"],
+    "verification": "deo.json unknown: status 404, hasH1 false."
+  }
+]

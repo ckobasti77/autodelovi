@@ -2,8 +2,12 @@
 
 import {
   createContext,
+  useCallback,
   useContext,
+  useEffectEvent,
   useId,
+  useLayoutEffect,
+  useRef,
   useSyncExternalStore,
   type AriaAttributes,
   type ReactNode,
@@ -68,12 +72,12 @@ export function FormNoScript({ children }: { children: ReactNode }) {
 }
 
 /**
- * Values typed into server-rendered controls before React hydrated them (XB-01). Call it in a
- * useState initializer: the hydration render runs before any ref attaches, so the DOM still
- * holds what the visitor typed (react-hook-form's ref writes the default value back at commit;
- * a controlled input is reset on its next update). Apply the result in a layout effect, never
- * in render — derived text would no longer match the server HTML. Returns only non-empty
- * values; on a client-side navigation the controls do not exist yet, so the result is {}.
+ * Values typed into server-rendered controls before React hydrated them (XB-01), for controlled
+ * inputs: read them in a layout effect of the hydration commit (the DOM still holds what was
+ * typed; the controlled input is reset only on its next update) and adopt them into state.
+ * Forms built on react-hook-form use useKeepTypedBeforeHydration instead — RHF's register() ref
+ * overwrites the DOM inside the commit. Returns only non-empty values; on a client-side
+ * navigation the controls are new and empty, so the result is {}.
  */
 export function readPrehydrationValues<K extends string>(
   ids: Record<K, string>,
@@ -87,6 +91,48 @@ export function readPrehydrationValues<K extends string>(
     }
   }
   return out;
+}
+
+/** A react-hook-form register() result: the field name and its callback ref. */
+type Registration<N extends string> = { name: N; ref: (instance: Element | null) => void };
+
+/**
+ * XB-01 for react-hook-form text fields. RHF's register() ref writes the default value into the
+ * control when it attaches, and a concurrent hydration render can yield to the browser, so keys
+ * pressed after that render are only in the DOM when the commit starts. `keep(register("vin"))`
+ * wraps the ref: in the hydration commit it reads the DOM value first, then lets RHF attach. The
+ * form's layout effect runs after its children's refs in the same commit and passes every
+ * captured value to `restore` (setValue) before paint. Later commits capture nothing: re-renders
+ * re-attach the same element, and on a client-side navigation the controls start empty.
+ * The wrapped controls must commit together with the form (no Suspense boundary in between).
+ */
+export function useKeepTypedBeforeHydration<N extends string>(
+  restore: (name: N, value: string) => void,
+) {
+  const typed = useRef<Map<N, string> | null>(new Map());
+  const onRestore = useEffectEvent(restore);
+  useLayoutEffect(() => {
+    const captured = typed.current;
+    typed.current = null;
+    captured?.forEach((value, name) => onRestore(name, value));
+  }, []);
+  return useCallback(
+    <R extends Registration<N>>(registration: R): R => ({
+      ...registration,
+      ref: (el: Element | null) => {
+        const pending = typed.current;
+        if (
+          pending &&
+          (el instanceof HTMLInputElement || el instanceof HTMLTextAreaElement) &&
+          el.value !== ""
+        ) {
+          pending.set(registration.name, el.value);
+        }
+        registration.ref(el);
+      },
+    }),
+    [],
+  );
 }
 
 /** Props a control inside <Field> should spread (id, aria-describedby, aria-invalid, …). */

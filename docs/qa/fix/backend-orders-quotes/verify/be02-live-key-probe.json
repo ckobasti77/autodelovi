@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-01T01:55:19.288Z",
+  "convexUrl": "https://tame-impala-374.eu-west-1.convex.cloud",
+  "uploadUrlRowsBefore": 100,
+  "uploadUrlRowsAfter": 101,
+  "calls": [
+    {
+      "transport": "http",
+      "ua": "Mozilla/5.0 (SKLOP-verify-BE02 1790819715816-ua0)",
+      "result": "ok"
+    },
+    {
+      "transport": "http",
+      "ua": "Mozilla/5.0 (SKLOP-verify-BE02 1790819715816-ua1)",
+      "result": "ok"
+    },
+    {
+      "transport": "http",
+      "ua": "Mozilla/5.0 (SKLOP-verify-BE02 1790819715816-ua2)",
+      "result": "ok"
+    },
+    {
+      "transport": "websocket",
+      "ua": "(node default)",
+      "result": "ok"
+    }
+  ],
+  "createdRows": [
+    {
+      "_id": "j974zqsefk77z31vnt3hd4bc518ff0s4",
+      "key": "c:1d96e0d2fd63286607ab2afa1f6a0b08",
+      "value": 26.008566666666667,
+      "ts": 1790819719376
+    }
+  ],
+  "changedRows": [],
+  "verdict": "PASS: 4 calls with 4 different User-Agents (HTTP + WebSocket) consumed one IP-keyed bucket"
+}

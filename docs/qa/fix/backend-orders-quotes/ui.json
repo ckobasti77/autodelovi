@@ -1,0 +1,41 @@
+{
+  "number": "UP-2026-000090",
+  "hasEmail": false,
+  "statusLink": true,
+  "prefilledPhone": "+381 64 333 4455",
+  "acceptEmpty": {
+    "summary": "Proverite 3 polja:Upišite broj telefona.Upišite adresu e-pošte.Potrebna je saglasnost sa uslovima kupovine.",
+    "focus": "quote-accept-errors",
+    "invalid": [
+      "qa-phone",
+      "qa-email",
+      "qa-terms"
+    ],
+    "describedBy": true
+  },
+  "paymentsGuest": "Gotovinom pri preuzimanjuKarticom pri preuzimanjuVirmanom uz predračun",
+  "companyFields": 3,
+  "radiosBefore": 4,
+  "sharePanel": "Kupac nema e-poštu i ponuda mu nije stigla sama. Pošaljite mu link ponude:http://localhost:3000/upit/ioyTJv_O-xU16R_x1cj6RsRqC_FMmybQCl_asLF_hjcPošalji ViberomPošalji WhatsApp-omPošalji SMS",
+  "composerInvalid": {
+    "dialogOpen": false,
+    "focusId": "quote-l3-quantity",
+    "invalidIds": [
+      "quote-l3-quantity",
+      "quote-l3-price"
+    ],
+    "alert": [
+      "Stavka 2: količina je ceo broj od 1 do 999. Stavka 2: upišite cenu."
+    ]
+  },
+  "buttons": [
+    "Broj porudžbine, OEM, telefon…Ctrl K",
+    "",
+    "Vlasnik",
+    ""
+  ],
+  "convertEmailRequired": null,
+  "convertedTo": "SK-2026-000147",
+  "convertError": null,
+  "orderEmail": ""
+}

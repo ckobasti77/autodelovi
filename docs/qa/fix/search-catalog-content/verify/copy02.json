@@ -1,0 +1,109 @@
+{
+  "base": "http://localhost:3001",
+  "runs": [
+    {
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "open": true,
+      "answer": "Da. Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Trošak vraćanja snosite vi; ako je deo ugrađivan ili oštećen, odgovarate za umanjenje vrednosti. Detalji su na stranici Reklamacije i povrat.",
+      "links": [
+        {
+          "text": "Reklamacije i povrat",
+          "href": "/reklamacije-i-povrat",
+          "underline": "underline"
+        }
+      ],
+      "keyboard": {
+        "tag": "A",
+        "text": "Reklamacije i povrat",
+        "href": "/reklamacije-i-povrat",
+        "outline": "solid 2px"
+      },
+      "ldAnswer": "Da. Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Trošak vraćanja snosite vi; ako je deo ugrađivan ili oštećen, odgovarate za umanjenje vrednosti. Detalji su na stranici Reklamacije i povrat.",
+      "ldHasMarkdown": false,
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "shot": "docs/qa/fix/search-catalog-content/verify/copy02-home-faq-390.webp",
+      "target": {
+        "url": "http://localhost:3001/reklamacije-i-povrat",
+        "h1": "Reklamacije i povrat",
+        "withdrawal": "Kod kupovine na daljinu imate pravo da odustanete od ugovora u roku od 14 dana od dana kada ste vi ili lice koje ste odredili preuzeli robu, bez navođenja razloga. | Pošaljite nam izjavu o odustanku putem upita na sajtu. Dovoljno je da navedete broj porudžbine, artikal i da odustajete od ugovora.Robu vratite najkasnije 14 dana od slanja izjave, neoštećenu i u originalnom pakovanju. Trošak vraćanja robe snosite vi.Novac za robu (i za osnovnu dostavu, ako ste je platili) vraćamo najkasnije u roku od 14 dana od prijema izjave, istim načinom plaćanja ili uplatom na vaš račun. Povraćaj možemo zadržati dok ne primimo robu ili dokaz da je poslata. | Pravo na odustanak nemate za robu izrađenu po vašoj specifikaciji ili jasno prilagođenu vama (na primer deo naručen specijalno za vaše vozilo po broju šasije, ako je to naglašeno u ponudi), kao ni za robu u zapečaćenom pakovanju koja iz zdravstvenih ili higijenskih razloga nije pogodna za vraćanje posle otvaranja. Za ugrađen deo koji je korišćen odgovarate za umanjenje vrednosti nastalo rukovanjem koje nije neophodno da bi se utvrdila priroda i svojstva robe."
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    {
+      "width": 1440,
+      "reducedMotion": "no-preference",
+      "open": true,
+      "answer": "Da. Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Trošak vraćanja snosite vi; ako je deo ugrađivan ili oštećen, odgovarate za umanjenje vrednosti. Detalji su na stranici Reklamacije i povrat.",
+      "links": [
+        {
+          "text": "Reklamacije i povrat",
+          "href": "/reklamacije-i-povrat",
+          "underline": "underline"
+        }
+      ],
+      "keyboard": null,
+      "ldAnswer": "Da. Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Trošak vraćanja snosite vi; ako je deo ugrađivan ili oštećen, odgovarate za umanjenje vrednosti. Detalji su na stranici Reklamacije i povrat.",
+      "ldHasMarkdown": false,
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "shot": "docs/qa/fix/search-catalog-content/verify/copy02-home-faq-1440.webp",
+      "target": {
+        "url": "http://localhost:3001/reklamacije-i-povrat",
+        "h1": "Reklamacije i povrat",
+        "withdrawal": "Kod kupovine na daljinu imate pravo da odustanete od ugovora u roku od 14 dana od dana kada ste vi ili lice koje ste odredili preuzeli robu, bez navođenja razloga. | Pošaljite nam izjavu o odustanku putem upita na sajtu. Dovoljno je da navedete broj porudžbine, artikal i da odustajete od ugovora.Robu vratite najkasnije 14 dana od slanja izjave, neoštećenu i u originalnom pakovanju. Trošak vraćanja robe snosite vi.Novac za robu (i za osnovnu dostavu, ako ste je platili) vraćamo najkasnije u roku od 14 dana od prijema izjave, istim načinom plaćanja ili uplatom na vaš račun. Povraćaj možemo zadržati dok ne primimo robu ili dokaz da je poslata. | Pravo na odustanak nemate za robu izrađenu po vašoj specifikaciji ili jasno prilagođenu vama (na primer deo naručen specijalno za vaše vozilo po broju šasije, ako je to naglašeno u ponudi), kao ni za robu u zapečaćenom pakovanju koja iz zdravstvenih ili higijenskih razloga nije pogodna za vraćanje posle otvaranja. Za ugrađen deo koji je korišćen odgovarate za umanjenje vrednosti nastalo rukovanjem koje nije neophodno da bi se utvrdila priroda i svojstva robe."
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    },
+    {
+      "width": 390,
+      "reducedMotion": "reduce",
+      "open": true,
+      "answer": "Da. Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Trošak vraćanja snosite vi; ako je deo ugrađivan ili oštećen, odgovarate za umanjenje vrednosti. Detalji su na stranici Reklamacije i povrat.",
+      "links": [
+        {
+          "text": "Reklamacije i povrat",
+          "href": "/reklamacije-i-povrat",
+          "underline": "underline"
+        }
+      ],
+      "keyboard": null,
+      "ldAnswer": "Da. Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Trošak vraćanja snosite vi; ako je deo ugrađivan ili oštećen, odgovarate za umanjenje vrednosti. Detalji su na stranici Reklamacije i povrat.",
+      "ldHasMarkdown": false,
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "shot": "docs/qa/fix/search-catalog-content/verify/copy02-home-faq-390-reduce.webp",
+      "target": {
+        "url": "http://localhost:3001/reklamacije-i-povrat",
+        "h1": "Reklamacije i povrat",
+        "withdrawal": "Kod kupovine na daljinu imate pravo da odustanete od ugovora u roku od 14 dana od dana kada ste vi ili lice koje ste odredili preuzeli robu, bez navođenja razloga. | Pošaljite nam izjavu o odustanku putem upita na sajtu. Dovoljno je da navedete broj porudžbine, artikal i da odustajete od ugovora.Robu vratite najkasnije 14 dana od slanja izjave, neoštećenu i u originalnom pakovanju. Trošak vraćanja robe snosite vi.Novac za robu (i za osnovnu dostavu, ako ste je platili) vraćamo najkasnije u roku od 14 dana od prijema izjave, istim načinom plaćanja ili uplatom na vaš račun. Povraćaj možemo zadržati dok ne primimo robu ili dokaz da je poslata. | Pravo na odustanak nemate za robu izrađenu po vašoj specifikaciji ili jasno prilagođenu vama (na primer deo naručen specijalno za vaše vozilo po broju šasije, ako je to naglašeno u ponudi), kao ni za robu u zapečaćenom pakovanju koja iz zdravstvenih ili higijenskih razloga nije pogodna za vraćanje posle otvaranja. Za ugrađen deo koji je korišćen odgovarate za umanjenje vrednosti nastalo rukovanjem koje nije neophodno da bi se utvrdila priroda i svojstva robe."
+      },
+      "log": {
+        "console": [],
+        "pageErrors": [],
+        "failedRequests": [],
+        "badResponses": []
+      }
+    }
+  ]
+}

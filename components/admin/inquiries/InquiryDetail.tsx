@@ -582,33 +582,30 @@ function QuoteShareLink({
           ? "Kupac je tražio odgovor porukom. Pošaljite mu link ponude:"
           : "Kupac nema e-poštu i ponuda mu nije stigla sama. Pošaljite mu link ponude:"}
       </p>
-      <p className="break-all rounded-sm border border-line bg-surface-2 px-3 py-2 type-code">
-        {link}
-      </p>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex items-start gap-2">
+        <p className="min-w-0 flex-1 break-all rounded-sm border border-line bg-surface-2 px-3 py-2 type-code">
+          {link}
+        </p>
         <CopyButton value={link} label="Kopiraj link" toastMessage="Link je kopiran." />
-        <a
-          className="type-body-s font-medium text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent"
-          href={`viber://forward?text=${text}`}
-        >
-          Viber
-        </a>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        <Button asChild variant="secondary" size="sm">
+          <a href={`viber://forward?text=${text}`}>Pošalji Viberom</a>
+        </Button>
         {phone ? (
           <>
-            <a
-              className="type-body-s font-medium text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent"
-              href={`https://wa.me/${waNumber(phone)}?text=${text}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              WhatsApp
-            </a>
-            <a
-              className="type-body-s font-medium text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent"
-              href={`sms:${phone}?body=${text}`}
-            >
-              SMS
-            </a>
+            <Button asChild variant="secondary" size="sm">
+              <a
+                href={`https://wa.me/${waNumber(phone)}?text=${text}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Pošalji WhatsApp-om
+              </a>
+            </Button>
+            <Button asChild variant="secondary" size="sm">
+              <a href={`sms:${phone}?body=${text}`}>Pošalji SMS</a>
+            </Button>
           </>
         ) : null}
       </div>

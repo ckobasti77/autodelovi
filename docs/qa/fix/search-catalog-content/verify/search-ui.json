@@ -1,0 +1,891 @@
+{
+  "base": "http://localhost:3001",
+  "runs": [
+    {
+      "width": 390,
+      "q": "pločice golf 7",
+      "h1": "Rezultati za „pločice golf 7“",
+      "count": "6 artikala",
+      "vehicle": "Samo delovi za Golf VII (još 4 za druga vozila). Prikaži sve",
+      "category": null,
+      "chips": [
+        {
+          "text": "Cela kategorija Kočione pločice",
+          "href": "/delovi/kocione-plocice"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Kočione pločice prednje, sistem Teves",
+        "Kočione pločice zadnje",
+        "Kočione pločice zadnje",
+        "Kočione pločice prednje, sa senzorom",
+        "Kočione pločice zadnje, elektronska ručna",
+        "Kočione pločice prednje, sa senzorom"
+      ],
+      "firstNonPad": -1,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "shot": "docs/qa/fix/search-catalog-content/verify/search-plo-ice-golf-7-390.webp"
+    },
+    {
+      "width": 390,
+      "q": "kočioni disk golf 7",
+      "h1": "Rezultati za „kočioni disk golf 7“",
+      "count": "5 artikala",
+      "vehicle": "Samo delovi za Golf VII (još 4 za druga vozila). Prikaži sve",
+      "category": null,
+      "chips": [
+        {
+          "text": "Cela kategorija Kočioni diskovi",
+          "href": "/delovi/kocioni-diskovi"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Kočioni disk prednji 276 × 24 mm",
+        "Kočioni disk prednji 340 × 30 mm, GTI",
+        "Kočioni disk zadnji 272 × 10 mm, puni",
+        "Kočioni disk prednji 312 × 25 mm, ventilirani",
+        "Kočioni disk prednji 312 × 25 mm, ventilirani"
+      ],
+      "firstNonPad": null,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      }
+    },
+    {
+      "width": 390,
+      "q": "amortizer golf 7",
+      "h1": "Rezultati za „amortizer golf 7“",
+      "count": "3 artikla",
+      "vehicle": "Samo delovi za Golf VII (još 4 za druga vozila). Prikaži sve",
+      "category": null,
+      "chips": [
+        {
+          "text": "Cela kategorija Amortizeri i opruge",
+          "href": "/delovi/amortizeri-opruge"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Amortizer prednji Excel-G",
+        "Amortizer zadnji B4",
+        "Opruga prednja"
+      ],
+      "firstNonPad": null,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      }
+    },
+    {
+      "width": 390,
+      "q": "golf 7",
+      "h1": "Rezultati za „golf 7“",
+      "count": "Prikazano prvih 48, ima ih još. Suzite izborom kategorije ili vozila.",
+      "vehicle": "Samo delovi za Golf VII. Prikaži sve",
+      "category": null,
+      "chips": [
+        {
+          "text": "Kočione pločice6",
+          "href": "/pretraga?q=golf+7&kategorija=kocione-plocice"
+        },
+        {
+          "text": "Kočioni diskovi5",
+          "href": "/pretraga?q=golf+7&kategorija=kocioni-diskovi"
+        },
+        {
+          "text": "Spone i stabilizatori4",
+          "href": "/pretraga?q=golf+7&kategorija=spone-stabilizatori"
+        },
+        {
+          "text": "Senzori (lambda, parking, temperatura)3",
+          "href": "/pretraga?q=golf+7&kategorija=senzori"
+        },
+        {
+          "text": "Amortizeri i opruge3",
+          "href": "/pretraga?q=golf+7&kategorija=amortizeri-opruge"
+        },
+        {
+          "text": "Svećice, bobine i grejači3",
+          "href": "/pretraga?q=golf+7&kategorija=paljenje-grejaci"
+        },
+        {
+          "text": "Brisači2",
+          "href": "/pretraga?q=golf+7&kategorija=brisaci"
+        },
+        {
+          "text": "Menjač (DSG)2",
+          "href": "/pretraga?q=golf+7&kategorija=menjac"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Metlice brisača Aerotwin 600/475, set",
+        "Hauba",
+        "Set kvačila 1.6 TDI",
+        "Kočione pločice zadnje, elektronska ručna",
+        "Aluminijumska felna 6,5J × 16 ET46, 5 × 112",
+        "Kućište termostata sa pumpom 1.4 TSI",
+        "Parking senzor",
+        "Kočioni disk zadnji 272 × 10 mm, puni",
+        "Kočione pločice zadnje",
+        "Filter kabine",
+        "Crevo usisa od filtera vazduha",
+        "Hladnjak motora",
+        "Opruga prednja",
+        "Kočione pločice prednje, sa senzorom",
+        "Obrtni nosač motora (pas)",
+        "Amortizer zadnji B4",
+        "Set filtera i ulja za DSG DQ250",
+        "Turbina 2.0 TDI 110 kW, nova",
+        "Kočioni disk prednji 312 × 25 mm, ventilirani",
+        "ABS senzor prednji",
+        "Set zupčastog kaiša sa vodenom pumpom 1.6 TDI",
+        "Bobina paljenja",
+        "Set zupčastog kaiša sa vodenom pumpom 2.0 TDI",
+        "EGR ventil 2.0 TDI CR",
+        "Kočioni disk prednji 276 × 24 mm",
+        "Staklo retrovizora levo, grejano",
+        "Interkuler",
+        "Set za reparaciju kočione čeljusti, prednji",
+        "Filter ulja",
+        "Brava prednjih desnih vrata",
+        "Kočiona čeljust zadnja desna, sa motorom ručne",
+        "Spona aksijalna",
+        "Štangla stabilizatora prednja",
+        "Filter goriva",
+        "Far levi, halogeni",
+        "Kraj spone",
+        "Kraj spone",
+        "Pumpa visokog pritiska CP4 2.0 TDI",
+        "Amortizer prednji Excel-G",
+        "Mehatronika DQ200, nova",
+        "Svećica iridijumska",
+        "Vetrobransko staklo sa nosačem senzora",
+        "Grejač 1.6/2.0 TDI CR",
+        "Filter vazduha",
+        "Kondenzator klime",
+        "Kočione pločice zadnje",
+        "Senzor pritiska izduvnih gasova (DPF)",
+        "Dihtung glave motora 2.0 TDI, 2 zareza"
+      ],
+      "firstNonPad": null,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "shot": "docs/qa/fix/search-catalog-content/verify/search-golf-7-390.webp"
+    },
+    {
+      "width": 390,
+      "q": "<b>disk</b>",
+      "h1": "Rezultati za „<b>disk</b>“",
+      "count": "9 artikala",
+      "vehicle": null,
+      "category": null,
+      "chips": [
+        {
+          "text": "Cela kategorija Kočioni diskovi",
+          "href": "/delovi/kocioni-diskovi"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Kočioni disk prednji 320 × 30 mm",
+        "Kočioni disk prednji 312 × 25 mm",
+        "Kočioni disk prednji 256 × 22 mm",
+        "Kočioni disk prednji 276 × 24 mm",
+        "Kočioni disk prednji 288 × 25 mm, ventilirani",
+        "Kočioni disk prednji 340 × 30 mm, GTI",
+        "Kočioni disk zadnji 272 × 10 mm, puni",
+        "Kočioni disk prednji 312 × 25 mm, ventilirani",
+        "Kočioni disk prednji 312 × 25 mm, ventilirani"
+      ],
+      "firstNonPad": null,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      }
+    },
+    {
+      "width": 390,
+      "q": "plocice golf",
+      "h1": "Rezultati za „plocice golf“",
+      "count": "7 artikala",
+      "vehicle": "Samo delovi za VW Golf (još 3 za druga vozila). Prikaži sve",
+      "category": null,
+      "chips": [
+        {
+          "text": "Cela kategorija Kočione pločice",
+          "href": "/delovi/kocione-plocice"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Kočione pločice prednje",
+        "Kočione pločice prednje, sistem Teves",
+        "Kočione pločice zadnje",
+        "Kočione pločice zadnje",
+        "Kočione pločice prednje, sa senzorom",
+        "Kočione pločice zadnje, elektronska ručna",
+        "Kočione pločice prednje, sa senzorom"
+      ],
+      "firstNonPad": -1,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      }
+    },
+    {
+      "width": 390,
+      "q": "pločice golf vii",
+      "h1": "Rezultati za „pločice golf vii“",
+      "count": "6 artikala",
+      "vehicle": "Samo delovi za Golf VII (još 4 za druga vozila). Prikaži sve",
+      "category": null,
+      "chips": [
+        {
+          "text": "Cela kategorija Kočione pločice",
+          "href": "/delovi/kocione-plocice"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Kočione pločice prednje, sistem Teves",
+        "Kočione pločice zadnje",
+        "Kočione pločice zadnje",
+        "Kočione pločice prednje, sa senzorom",
+        "Kočione pločice zadnje, elektronska ručna",
+        "Kočione pločice prednje, sa senzorom"
+      ],
+      "firstNonPad": -1,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      }
+    },
+    {
+      "width": 390,
+      "q": "golf 7 pločice",
+      "h1": "Rezultati za „golf 7 pločice“",
+      "count": "6 artikala",
+      "vehicle": "Samo delovi za Golf VII (još 4 za druga vozila). Prikaži sve",
+      "category": null,
+      "chips": [
+        {
+          "text": "Cela kategorija Kočione pločice",
+          "href": "/delovi/kocione-plocice"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Kočione pločice prednje, sistem Teves",
+        "Kočione pločice zadnje",
+        "Kočione pločice zadnje",
+        "Kočione pločice prednje, sa senzorom",
+        "Kočione pločice zadnje, elektronska ručna",
+        "Kočione pločice prednje, sa senzorom"
+      ],
+      "firstNonPad": -1,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      }
+    },
+    {
+      "width": 390,
+      "q": "5Q0615505R",
+      "h1": "Rezultati za „5Q0615505R“",
+      "count": "1 artikal · Tražili smo broj 5Q0615505R u OEM, zamenskim i kataloškim brojevima.",
+      "vehicle": null,
+      "category": null,
+      "chips": [],
+      "sections": [
+        "Tačno poklapanje"
+      ],
+      "cards": [
+        "Kočioni disk prednji 276 × 24 mm"
+      ],
+      "firstNonPad": null,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      }
+    },
+    {
+      "width": 1440,
+      "q": "pločice golf 7",
+      "h1": "Rezultati za „pločice golf 7“",
+      "count": "6 artikala",
+      "vehicle": "Samo delovi za Golf VII (još 4 za druga vozila). Prikaži sve",
+      "category": null,
+      "chips": [
+        {
+          "text": "Cela kategorija Kočione pločice",
+          "href": "/delovi/kocione-plocice"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Kočione pločice prednje, sistem Teves",
+        "Kočione pločice zadnje",
+        "Kočione pločice zadnje",
+        "Kočione pločice prednje, sa senzorom",
+        "Kočione pločice zadnje, elektronska ručna",
+        "Kočione pločice prednje, sa senzorom"
+      ],
+      "firstNonPad": -1,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "shot": "docs/qa/fix/search-catalog-content/verify/search-plo-ice-golf-7-1440.webp"
+    },
+    {
+      "width": 1440,
+      "q": "kočioni disk golf 7",
+      "h1": "Rezultati za „kočioni disk golf 7“",
+      "count": "5 artikala",
+      "vehicle": "Samo delovi za Golf VII (još 4 za druga vozila). Prikaži sve",
+      "category": null,
+      "chips": [
+        {
+          "text": "Cela kategorija Kočioni diskovi",
+          "href": "/delovi/kocioni-diskovi"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Kočioni disk prednji 276 × 24 mm",
+        "Kočioni disk prednji 340 × 30 mm, GTI",
+        "Kočioni disk zadnji 272 × 10 mm, puni",
+        "Kočioni disk prednji 312 × 25 mm, ventilirani",
+        "Kočioni disk prednji 312 × 25 mm, ventilirani"
+      ],
+      "firstNonPad": null,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      }
+    },
+    {
+      "width": 1440,
+      "q": "amortizer golf 7",
+      "h1": "Rezultati za „amortizer golf 7“",
+      "count": "3 artikla",
+      "vehicle": "Samo delovi za Golf VII (još 4 za druga vozila). Prikaži sve",
+      "category": null,
+      "chips": [
+        {
+          "text": "Cela kategorija Amortizeri i opruge",
+          "href": "/delovi/amortizeri-opruge"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Amortizer prednji Excel-G",
+        "Amortizer zadnji B4",
+        "Opruga prednja"
+      ],
+      "firstNonPad": null,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      }
+    },
+    {
+      "width": 1440,
+      "q": "golf 7",
+      "h1": "Rezultati za „golf 7“",
+      "count": "Prikazano prvih 48, ima ih još. Suzite izborom kategorije ili vozila.",
+      "vehicle": "Samo delovi za Golf VII. Prikaži sve",
+      "category": null,
+      "chips": [
+        {
+          "text": "Kočione pločice6",
+          "href": "/pretraga?q=golf+7&kategorija=kocione-plocice"
+        },
+        {
+          "text": "Kočioni diskovi5",
+          "href": "/pretraga?q=golf+7&kategorija=kocioni-diskovi"
+        },
+        {
+          "text": "Spone i stabilizatori4",
+          "href": "/pretraga?q=golf+7&kategorija=spone-stabilizatori"
+        },
+        {
+          "text": "Senzori (lambda, parking, temperatura)3",
+          "href": "/pretraga?q=golf+7&kategorija=senzori"
+        },
+        {
+          "text": "Amortizeri i opruge3",
+          "href": "/pretraga?q=golf+7&kategorija=amortizeri-opruge"
+        },
+        {
+          "text": "Svećice, bobine i grejači3",
+          "href": "/pretraga?q=golf+7&kategorija=paljenje-grejaci"
+        },
+        {
+          "text": "Brisači2",
+          "href": "/pretraga?q=golf+7&kategorija=brisaci"
+        },
+        {
+          "text": "Menjač (DSG)2",
+          "href": "/pretraga?q=golf+7&kategorija=menjac"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Metlice brisača Aerotwin 600/475, set",
+        "Hauba",
+        "Set kvačila 1.6 TDI",
+        "Kočione pločice zadnje, elektronska ručna",
+        "Aluminijumska felna 6,5J × 16 ET46, 5 × 112",
+        "Kućište termostata sa pumpom 1.4 TSI",
+        "Parking senzor",
+        "Kočioni disk zadnji 272 × 10 mm, puni",
+        "Kočione pločice zadnje",
+        "Filter kabine",
+        "Crevo usisa od filtera vazduha",
+        "Hladnjak motora",
+        "Opruga prednja",
+        "Kočione pločice prednje, sa senzorom",
+        "Obrtni nosač motora (pas)",
+        "Amortizer zadnji B4",
+        "Set filtera i ulja za DSG DQ250",
+        "Turbina 2.0 TDI 110 kW, nova",
+        "Kočioni disk prednji 312 × 25 mm, ventilirani",
+        "ABS senzor prednji",
+        "Set zupčastog kaiša sa vodenom pumpom 1.6 TDI",
+        "Bobina paljenja",
+        "Set zupčastog kaiša sa vodenom pumpom 2.0 TDI",
+        "EGR ventil 2.0 TDI CR",
+        "Kočioni disk prednji 276 × 24 mm",
+        "Staklo retrovizora levo, grejano",
+        "Interkuler",
+        "Set za reparaciju kočione čeljusti, prednji",
+        "Filter ulja",
+        "Brava prednjih desnih vrata",
+        "Kočiona čeljust zadnja desna, sa motorom ručne",
+        "Spona aksijalna",
+        "Štangla stabilizatora prednja",
+        "Filter goriva",
+        "Far levi, halogeni",
+        "Kraj spone",
+        "Kraj spone",
+        "Pumpa visokog pritiska CP4 2.0 TDI",
+        "Amortizer prednji Excel-G",
+        "Mehatronika DQ200, nova",
+        "Svećica iridijumska",
+        "Vetrobransko staklo sa nosačem senzora",
+        "Grejač 1.6/2.0 TDI CR",
+        "Filter vazduha",
+        "Kondenzator klime",
+        "Kočione pločice zadnje",
+        "Senzor pritiska izduvnih gasova (DPF)",
+        "Dihtung glave motora 2.0 TDI, 2 zareza"
+      ],
+      "firstNonPad": null,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      },
+      "shot": "docs/qa/fix/search-catalog-content/verify/search-golf-7-1440.webp"
+    },
+    {
+      "width": 1440,
+      "q": "<b>disk</b>",
+      "h1": "Rezultati za „<b>disk</b>“",
+      "count": "9 artikala",
+      "vehicle": null,
+      "category": null,
+      "chips": [
+        {
+          "text": "Cela kategorija Kočioni diskovi",
+          "href": "/delovi/kocioni-diskovi"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Kočioni disk prednji 320 × 30 mm",
+        "Kočioni disk prednji 312 × 25 mm",
+        "Kočioni disk prednji 256 × 22 mm",
+        "Kočioni disk prednji 276 × 24 mm",
+        "Kočioni disk prednji 288 × 25 mm, ventilirani",
+        "Kočioni disk prednji 340 × 30 mm, GTI",
+        "Kočioni disk zadnji 272 × 10 mm, puni",
+        "Kočioni disk prednji 312 × 25 mm, ventilirani",
+        "Kočioni disk prednji 312 × 25 mm, ventilirani"
+      ],
+      "firstNonPad": null,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      }
+    },
+    {
+      "width": 1440,
+      "q": "plocice golf",
+      "h1": "Rezultati za „plocice golf“",
+      "count": "7 artikala",
+      "vehicle": "Samo delovi za VW Golf (još 3 za druga vozila). Prikaži sve",
+      "category": null,
+      "chips": [
+        {
+          "text": "Cela kategorija Kočione pločice",
+          "href": "/delovi/kocione-plocice"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Kočione pločice prednje",
+        "Kočione pločice prednje, sistem Teves",
+        "Kočione pločice zadnje",
+        "Kočione pločice zadnje",
+        "Kočione pločice prednje, sa senzorom",
+        "Kočione pločice zadnje, elektronska ručna",
+        "Kočione pločice prednje, sa senzorom"
+      ],
+      "firstNonPad": -1,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      }
+    },
+    {
+      "width": 1440,
+      "q": "pločice golf vii",
+      "h1": "Rezultati za „pločice golf vii“",
+      "count": "6 artikala",
+      "vehicle": "Samo delovi za Golf VII (još 4 za druga vozila). Prikaži sve",
+      "category": null,
+      "chips": [
+        {
+          "text": "Cela kategorija Kočione pločice",
+          "href": "/delovi/kocione-plocice"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Kočione pločice prednje, sistem Teves",
+        "Kočione pločice zadnje",
+        "Kočione pločice zadnje",
+        "Kočione pločice prednje, sa senzorom",
+        "Kočione pločice zadnje, elektronska ručna",
+        "Kočione pločice prednje, sa senzorom"
+      ],
+      "firstNonPad": -1,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      }
+    },
+    {
+      "width": 1440,
+      "q": "golf 7 pločice",
+      "h1": "Rezultati za „golf 7 pločice“",
+      "count": "6 artikala",
+      "vehicle": "Samo delovi za Golf VII (još 4 za druga vozila). Prikaži sve",
+      "category": null,
+      "chips": [
+        {
+          "text": "Cela kategorija Kočione pločice",
+          "href": "/delovi/kocione-plocice"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Kočione pločice prednje, sistem Teves",
+        "Kočione pločice zadnje",
+        "Kočione pločice zadnje",
+        "Kočione pločice prednje, sa senzorom",
+        "Kočione pločice zadnje, elektronska ručna",
+        "Kočione pločice prednje, sa senzorom"
+      ],
+      "firstNonPad": -1,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      }
+    },
+    {
+      "width": 1440,
+      "q": "5Q0615505R",
+      "h1": "Rezultati za „5Q0615505R“",
+      "count": "1 artikal · Tražili smo broj 5Q0615505R u OEM, zamenskim i kataloškim brojevima.",
+      "vehicle": null,
+      "category": null,
+      "chips": [],
+      "sections": [
+        "Tačno poklapanje"
+      ],
+      "cards": [
+        "Kočioni disk prednji 276 × 24 mm"
+      ],
+      "firstNonPad": null,
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      }
+    }
+  ],
+  "nav": {
+    "chip": {
+      "chipText": "Kočione pločice6",
+      "url": "http://localhost:3001/pretraga?q=golf+7&kategorija=kocione-plocice",
+      "h1": "Rezultati za „golf 7“",
+      "count": "6 artikala",
+      "vehicle": "Samo delovi za Golf VII. Prikaži sve",
+      "category": "Kategorija Kočione pločice. Sve kategorije",
+      "chips": [],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Kočione pločice zadnje, elektronska ručna",
+        "Kočione pločice zadnje",
+        "Kočione pločice prednje, sa senzorom",
+        "Kočione pločice zadnje",
+        "Kočione pločice prednje, sistem Teves",
+        "Kočione pločice prednje, sa senzorom"
+      ]
+    },
+    "chipShot": "docs/qa/fix/search-catalog-content/verify/search-golf7-chip-390.webp",
+    "allCategories": {
+      "url": "http://localhost:3001/pretraga?q=golf+7",
+      "count": "Prikazano prvih 48, ima ih još. Suzite izborom kategorije ili vozila."
+    },
+    "showAll": {
+      "url": "http://localhost:3001/pretraga?q=plo%C4%8Dice+golf+7&vozilo=sva",
+      "h1": "Rezultati za „pločice golf 7“",
+      "count": "10 artikala",
+      "vehicle": "Prikazani su delovi za sva vozila. Samo za Golf VII",
+      "category": null,
+      "chips": [
+        {
+          "text": "Cela kategorija Kočione pločice",
+          "href": "/delovi/kocione-plocice"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Kočione pločice prednje",
+        "Kočione pločice prednje",
+        "Kočione pločice prednje",
+        "Kočione pločice prednje",
+        "Kočione pločice prednje, sistem Teves",
+        "Kočione pločice zadnje",
+        "Kočione pločice zadnje",
+        "Kočione pločice prednje, sa senzorom",
+        "Kočione pločice zadnje, elektronska ručna",
+        "Kočione pločice prednje, sa senzorom"
+      ]
+    },
+    "showAllShot": "docs/qa/fix/search-catalog-content/verify/search-plocice-golf7-prikazi-sve-390.webp",
+    "back": {
+      "url": "http://localhost:3001/pretraga?q=plo%C4%8Dice+golf+7",
+      "h1": "Rezultati za „pločice golf 7“",
+      "count": "6 artikala",
+      "vehicle": "Samo delovi za Golf VII (još 4 za druga vozila). Prikaži sve",
+      "category": null,
+      "chips": [
+        {
+          "text": "Cela kategorija Kočione pločice",
+          "href": "/delovi/kocione-plocice"
+        }
+      ],
+      "sections": [
+        "Proizvodi"
+      ],
+      "cards": [
+        "Kočione pločice prednje, sistem Teves",
+        "Kočione pločice zadnje",
+        "Kočione pločice zadnje",
+        "Kočione pločice prednje, sa senzorom",
+        "Kočione pločice zadnje, elektronska ručna",
+        "Kočione pločice prednje, sa senzorom"
+      ]
+    }
+  },
+  "keyboard": {
+    "stops": [
+      {
+        "tag": "A",
+        "text": "Preskoči na sadržaj",
+        "outline": "solid 2px",
+        "boxShadow": false
+      },
+      {
+        "tag": "A",
+        "text": "SKLOP",
+        "outline": "solid 2px",
+        "boxShadow": false
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "outline": "solid 2px",
+        "boxShadow": false
+      },
+      {
+        "tag": "A",
+        "text": "",
+        "outline": "solid 2px",
+        "boxShadow": false
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "outline": "solid 2px",
+        "boxShadow": false
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "outline": "none 2px",
+        "boxShadow": false
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "outline": "solid 2px",
+        "boxShadow": false
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Pretraži",
+        "outline": "solid 2px",
+        "boxShadow": false
+      },
+      {
+        "tag": "A",
+        "text": "Prikaži sve",
+        "outline": "solid 2px",
+        "boxShadow": false
+      },
+      {
+        "tag": "A",
+        "text": "Kočione pločice6",
+        "outline": "solid 2px",
+        "boxShadow": false
+      },
+      {
+        "tag": "A",
+        "text": "Kočioni diskovi5",
+        "outline": "solid 2px",
+        "boxShadow": false
+      },
+      {
+        "tag": "A",
+        "text": "Spone i stabilizatori4",
+        "outline": "solid 2px",
+        "boxShadow": false
+      }
+    ]
+  },
+  "reduced": {
+    "h1": "Rezultati za „pločice golf 7“",
+    "count": "6 artikala",
+    "vehicle": "Samo delovi za Golf VII (još 4 za druga vozila). Prikaži sve",
+    "category": null,
+    "chips": [
+      {
+        "text": "Cela kategorija Kočione pločice",
+        "href": "/delovi/kocione-plocice"
+      }
+    ],
+    "sections": [
+      "Proizvodi"
+    ],
+    "cards": [
+      "Kočione pločice prednje, sistem Teves",
+      "Kočione pločice zadnje",
+      "Kočione pločice zadnje",
+      "Kočione pločice prednje, sa senzorom",
+      "Kočione pločice zadnje, elektronska ručna",
+      "Kočione pločice prednje, sa senzorom"
+    ],
+    "reveal": {
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    "log": {
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    }
+  },
+  "log390": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  },
+  "log1440": {
+    "console": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  }
+}

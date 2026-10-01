@@ -1,0 +1,262 @@
+{
+  "base": "http://localhost:3001",
+  "PID": "qh7cqja340240s4jq1fsawnc3s8fctej",
+  "SKU": "AUDIT-FA-852021",
+  "steps": [
+    {
+      "name": "start",
+      "at": "2026-10-01T01:49:36.896Z",
+      "ui": {
+        "name": "Audit disk prednji 852021 (tab A) V",
+        "price": "4990",
+        "note": "",
+        "notice": null,
+        "saveBar": false,
+        "toasts": []
+      },
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A) V",
+        "retailPricePara": 499000,
+        "source": "manual",
+        "stockQty": 0
+      }
+    },
+    {
+      "name": "S1 tab B saved price",
+      "at": "2026-10-01T01:49:43.566Z",
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A) V",
+        "retailPricePara": 649000,
+        "source": "manual",
+        "stockQty": 0
+      },
+      "tabA": {
+        "name": "Audit disk prednji 852021 (tab A) V [vfy-s1]",
+        "price": "6490",
+        "note": "",
+        "notice": "Artikal je u međuvremenu izmenjen — polja koja niste menjali su osvežena (cena).U redu",
+        "saveBar": true,
+        "toasts": []
+      }
+    },
+    {
+      "name": "S1 tab A saved",
+      "at": "2026-10-01T01:49:52.025Z",
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A) V [vfy-s1]",
+        "retailPricePara": 649000,
+        "source": "manual",
+        "stockQty": 0
+      },
+      "tabA": {
+        "name": "Audit disk prednji 852021 (tab A) V [vfy-s1]",
+        "price": "6490",
+        "note": "",
+        "notice": null,
+        "saveBar": false,
+        "toasts": []
+      },
+      "audit": [
+        {
+          "at": 1790819385623,
+          "summary": "AUDIT-FA-852021: naziv",
+          "fields": [
+            "name"
+          ]
+        },
+        {
+          "at": 1790819378567,
+          "summary": "AUDIT-FA-852021: cena",
+          "fields": [
+            "retailPricePara"
+          ]
+        },
+        {
+          "at": 1790818013713,
+          "summary": "AUDIT-FA-852021: adresa stranice",
+          "fields": [
+            "slug"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "S2 session B saved note",
+      "at": "2026-10-01T01:50:08.404Z",
+      "tabA2": {
+        "name": "Audit disk prednji 852021 (tab A) V [vfy-s2]",
+        "price": "6490",
+        "note": "vfy-s2 beleška 1790819403139",
+        "notice": "Artikal je u međuvremenu izmenjen — polja koja niste menjali su osvežena (interna napomena).U redu",
+        "saveBar": true,
+        "toasts": []
+      }
+    },
+    {
+      "name": "S2 session A saved",
+      "at": "2026-10-01T01:50:40.043Z",
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A) V [vfy-s2]",
+        "retailPricePara": 649000,
+        "source": "manual",
+        "stockQty": 0
+      },
+      "freshLoad": {
+        "name": "Audit disk prednji 852021 (tab A) V [vfy-s2]",
+        "price": "6490",
+        "note": "vfy-s2 beleška 1790819403139",
+        "notice": null,
+        "saveBar": false,
+        "toasts": []
+      },
+      "noteKept": true,
+      "audit": [
+        {
+          "at": 1790819409796,
+          "summary": "AUDIT-FA-852021: naziv",
+          "fields": [
+            "name"
+          ]
+        },
+        {
+          "at": 1790819404623,
+          "summary": "AUDIT-FA-852021: interna beleška",
+          "fields": [
+            "internalNote"
+          ]
+        },
+        {
+          "at": 1790819385623,
+          "summary": "AUDIT-FA-852021: naziv",
+          "fields": [
+            "name"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "S3 B saved 7222, A2 has 7111 unsaved",
+      "at": "2026-10-01T01:50:54.711Z",
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A) V [vfy-s2]",
+        "retailPricePara": 722200,
+        "source": "manual",
+        "stockQty": 0
+      },
+      "tabA2": {
+        "name": "Audit disk prednji 852021 (tab A) V [vfy-s2]",
+        "price": "7.111,00",
+        "note": "vfy-s2 beleška 1790819403139",
+        "notice": "Artikal je u međuvremenu izmenjen.Menjano je i ono što ste vi menjali: cena. Ostaje vaša vrednost — sačuvajte da je upišete ili odbacite izmene.U redu",
+        "saveBar": true,
+        "toasts": []
+      }
+    },
+    {
+      "name": "S3 A2 saved",
+      "at": "2026-10-01T01:51:01.845Z",
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A) V [vfy-s2]",
+        "retailPricePara": 711100,
+        "source": "manual",
+        "stockQty": 0
+      },
+      "tabA2": {
+        "name": "Audit disk prednji 852021 (tab A) V [vfy-s2]",
+        "price": "7111",
+        "note": "vfy-s2 beleška 1790819403139",
+        "notice": null,
+        "saveBar": false,
+        "toasts": []
+      },
+      "audit": [
+        {
+          "at": 1790819456252,
+          "summary": "AUDIT-FA-852021: cena",
+          "fields": [
+            "retailPricePara"
+          ]
+        },
+        {
+          "at": 1790819449950,
+          "summary": "AUDIT-FA-852021: cena",
+          "fields": [
+            "retailPricePara"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "S4 own save (B)",
+      "at": "2026-10-01T01:51:08.018Z",
+      "tabB": {
+        "name": "Audit disk prednji 852021 (tab A) V [vfy-s4]",
+        "price": "7111",
+        "note": "vfy-s2 beleška 1790819403139",
+        "notice": null,
+        "saveBar": false,
+        "toasts": []
+      },
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A) V [vfy-s4]",
+        "retailPricePara": 711100,
+        "source": "manual",
+        "stockQty": 0
+      }
+    },
+    {
+      "name": "S4 discard in A2",
+      "at": "2026-10-01T01:51:15.727Z",
+      "beforeDiscard": {
+        "name": "Audit disk prednji 852021 (tab A) V [vfy-s4-dirty]",
+        "price": "7333",
+        "note": "vfy-s2 beleška 1790819403139",
+        "notice": "Artikal je u međuvremenu izmenjen — polja koja niste menjali su osvežena (cena).U redu",
+        "saveBar": true,
+        "toasts": []
+      },
+      "afterDiscard": {
+        "name": "Audit disk prednji 852021 (tab A) V [vfy-s4]",
+        "price": "7333",
+        "note": "vfy-s2 beleška 1790819403139",
+        "notice": null,
+        "saveBar": false,
+        "toasts": []
+      }
+    },
+    {
+      "name": "console A",
+      "at": "2026-10-01T01:51:15.727Z",
+      "console": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "badResponses": []
+    },
+    {
+      "name": "restored",
+      "at": "2026-10-01T01:51:29.801Z",
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A) V",
+        "retailPricePara": 499000,
+        "source": "manual",
+        "stockQty": 0
+      },
+      "ui": {
+        "name": "Audit disk prednji 852021 (tab A) V",
+        "price": "4990",
+        "note": "",
+        "notice": null,
+        "saveBar": false,
+        "toasts": []
+      }
+    }
+  ]
+}

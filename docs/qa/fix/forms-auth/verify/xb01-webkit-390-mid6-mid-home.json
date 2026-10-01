@@ -1,0 +1,69 @@
+{
+  "webkit-390-mid-home": {
+    "delay": 6000,
+    "runs": [
+      {
+        "expected": "5Q0615505R",
+        "after": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        },
+        "kept": true,
+        "hydrationDuringTyping": false,
+        "hydratedFlags": "000000"
+      },
+      {
+        "expected": "5Q0615505R",
+        "after": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "000111"
+      },
+      {
+        "expected": "5Q0615505R",
+        "after": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "011111"
+      },
+      {
+        "expected": "5Q0615505R",
+        "after": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "001111"
+      },
+      {
+        "expected": "5Q0615505R",
+        "after": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "001111"
+      },
+      {
+        "expected": "5Q0615505R",
+        "after": {
+          "dom": "5Q0615505R",
+          "reactValue": "5Q0615505R"
+        },
+        "kept": true,
+        "hydrationDuringTyping": true,
+        "hydratedFlags": "001111"
+      }
+    ],
+    "consoleErrors": [],
+    "pageErrors": []
+  }
+}

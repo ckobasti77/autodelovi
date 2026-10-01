@@ -90,10 +90,12 @@ export function OrdersList({ limit }: { limit?: number }) {
             <span className="type-caption font-normal text-ink-3 sm:order-none">
               {formatDate(o.createdAt)} · {o.itemCount} kom.
             </span>
-            <Badge tone={ORDER_STATUS_TONE[o.status]} size="text">
+            <Badge tone={ORDER_STATUS_TONE[o.status]} size="text" className="justify-self-start">
               {ORDER_STATUS_LABEL[o.status]}
             </Badge>
-            <span className="text-right type-numeral-s tabular-nums text-ink-1">{formatRSD(o.totalPara)}</span>
+            <span className="text-right type-numeral-s tabular-nums text-ink-1">
+              {formatRSD(o.totalPara)}
+            </span>
           </RouteLink>
         </li>
       ))}
@@ -109,7 +111,14 @@ export function AccountOrderDetail({ number }: { number: string }) {
   if (order === undefined) return <ListSkeleton rows={4} />;
   if (order === null) {
     return (
-      <EmptyState icon={<ReceiptIcon size={40} />} action={<Link href={ROUTES.accountOrders} variant="standalone">Sve porudžbine</Link>}>
+      <EmptyState
+        icon={<ReceiptIcon size={40} />}
+        action={
+          <Link href={ROUTES.accountOrders} variant="standalone">
+            Sve porudžbine
+          </Link>
+        }
+      >
         Porudžbina nije pronađena.
       </EmptyState>
     );
@@ -119,9 +128,13 @@ export function AccountOrderDetail({ number }: { number: string }) {
     try {
       const r = await reorder({ number });
       if (r.unavailable.length) {
-        toast.warning(`Dodato: ${r.added}. Nije dostupno: ${r.unavailable.map((u) => u.name).join(", ")}.`);
+        toast.warning(
+          `Dodato: ${r.added}. Nije dostupno: ${r.unavailable.map((u) => u.name).join(", ")}.`,
+        );
       } else {
-        toast.success(`Dodato u korpu: ${r.added}.`, { action: { label: "Pogledaj korpu", onClick: openCartDrawer } });
+        toast.success(`Dodato u korpu: ${r.added}.`, {
+          action: { label: "Pogledaj korpu", onClick: openCartDrawer },
+        });
       }
       router.refresh();
     } catch (error) {
@@ -154,9 +167,17 @@ export function AccountOrderDetail({ number }: { number: string }) {
         </ul>
         <p className="flex items-baseline justify-between">
           <span className="font-semibold text-ink-1">Ukupno</span>
-          <span className="type-numeral-m tabular-nums text-ink-1">{formatRSD(order.totals.totalPara)}</span>
+          <span className="type-numeral-m tabular-nums text-ink-1">
+            {formatRSD(order.totals.totalPara)}
+          </span>
         </p>
-        <Button variant="secondary" icon={<ArrowCounterClockwiseIcon size={20} />} loading={busy} onClick={onReorder} className="self-start">
+        <Button
+          variant="secondary"
+          icon={<ArrowCounterClockwiseIcon size={20} />}
+          loading={busy}
+          onClick={onReorder}
+          className="self-start"
+        >
           Poruči ponovo
         </Button>
       </div>
@@ -197,7 +218,10 @@ export function InquiriesList() {
   return (
     <ul className="flex flex-col divide-y divide-line border-y border-line" data-reveal="off">
       {rows.map((i) => (
-        <li key={i.number} className="flex flex-col gap-1 py-4 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+        <li
+          key={i.number}
+          className="flex flex-col gap-1 py-4 sm:flex-row sm:items-start sm:justify-between sm:gap-6"
+        >
           <div className="min-w-0">
             <p className="flex flex-wrap items-center gap-3">
               <span className="type-code text-ink-1">{i.number}</span>
@@ -206,9 +230,13 @@ export function InquiriesList() {
               </Badge>
             </p>
             <p className="mt-1 line-clamp-2 type-body-s text-ink-2">{i.message}</p>
-            {i.vehicleLabel ? <p className="type-caption font-normal text-ink-3">{i.vehicleLabel}</p> : null}
+            {i.vehicleLabel ? (
+              <p className="type-caption font-normal text-ink-3">{i.vehicleLabel}</p>
+            ) : null}
           </div>
-          <span className="shrink-0 type-caption font-normal tabular-nums text-ink-3">{formatDate(i.createdAt)}</span>
+          <span className="shrink-0 type-caption font-normal tabular-nums text-ink-3">
+            {formatDate(i.createdAt)}
+          </span>
         </li>
       ))}
     </ul>
@@ -256,7 +284,9 @@ export function SavedVehicles() {
           </>
         ) : (
           <>
-            <span className="type-body-s text-ink-2">Izaberite vozilo, pa ga sačuvajte za sledeći put.</span>
+            <span className="type-body-s text-ink-2">
+              Izaberite vozilo, pa ga sačuvajte za sledeći put.
+            </span>
             <Button variant="secondary" size="sm" onClick={openVehiclePicker}>
               Izaberite vozilo
             </Button>
@@ -270,17 +300,22 @@ export function SavedVehicles() {
       ) : (
         <ul className="flex flex-col divide-y divide-line border-y border-line">
           {rows.map((v) => {
-            const label = [v.brandName, v.generationName ?? v.modelName, v.engineName].filter(Boolean).join(" ");
+            const label = [v.brandName, v.generationName ?? v.modelName, v.engineName]
+              .filter(Boolean)
+              .join(" ");
             const href =
               v.brandSlug && v.modelSlug && v.generationSlug
-                ? ROUTES.vehicleGeneration(v.brandSlug, v.modelSlug, v.generationSlug) + (v.engineSlug ? `?motor=${v.engineSlug}` : "")
+                ? ROUTES.vehicleGeneration(v.brandSlug, v.modelSlug, v.generationSlug) +
+                  (v.engineSlug ? `?motor=${v.engineSlug}` : "")
                 : null;
             return (
               <li key={v.id} className="flex flex-wrap items-center justify-between gap-3 py-3">
                 <span className="min-w-0">
                   <span className="block type-body text-ink-1">{v.label ?? label}</span>
                   {v.vin || v.plate ? (
-                    <span className="type-code-s text-ink-3">{[v.vin, v.plate].filter(Boolean).join(" · ")}</span>
+                    <span className="type-code-s text-ink-3">
+                      {[v.vin, v.plate].filter(Boolean).join(" · ")}
+                    </span>
                   ) : null}
                 </span>
                 <span className="flex items-center gap-2">
@@ -294,9 +329,17 @@ export function SavedVehicles() {
                           model: { slug: v.modelSlug!, name: v.modelName! },
                           generation:
                             v.generationSlug && v.generationName && v.generationYears
-                              ? { slug: v.generationSlug, name: v.generationName, yearFrom: v.generationYears.from, yearTo: v.generationYears.to }
+                              ? {
+                                  slug: v.generationSlug,
+                                  name: v.generationName,
+                                  yearFrom: v.generationYears.from,
+                                  yearTo: v.generationYears.to,
+                                }
                               : null,
-                          engine: v.engineSlug && v.engineName ? { slug: v.engineSlug, name: v.engineName, codes: v.engineCodes } : null,
+                          engine:
+                            v.engineSlug && v.engineName
+                              ? { slug: v.engineSlug, name: v.engineName, codes: v.engineCodes }
+                              : null,
                         })
                       }
                     >
@@ -358,17 +401,35 @@ export function ProfileForm({
     }
   };
   return (
-    <form onSubmit={onSubmit} noValidate className="grid max-w-[40rem] gap-5 sm:grid-cols-2" data-reveal="off">
+    <form
+      onSubmit={onSubmit}
+      noValidate
+      className="grid max-w-[40rem] gap-5 sm:grid-cols-2"
+      data-reveal="off"
+    >
       <Field label="Ime">
-        <Input autoComplete="given-name" value={v.firstName} onChange={(e) => setV({ ...v, firstName: e.target.value })} />
+        <Input
+          autoComplete="given-name"
+          value={v.firstName}
+          onChange={(e) => setV({ ...v, firstName: e.target.value })}
+        />
       </Field>
       <Field label="Prezime">
-        <Input autoComplete="family-name" value={v.lastName} onChange={(e) => setV({ ...v, lastName: e.target.value })} />
+        <Input
+          autoComplete="family-name"
+          value={v.lastName}
+          onChange={(e) => setV({ ...v, lastName: e.target.value })}
+        />
       </Field>
       <Field label="Telefon" error={error}>
-        <Input type="tel" autoComplete="tel" value={v.phone} onChange={(e) => setV({ ...v, phone: e.target.value })} />
+        <Input
+          type="tel"
+          autoComplete="tel"
+          value={v.phone}
+          onChange={(e) => setV({ ...v, phone: e.target.value })}
+        />
       </Field>
-      <Field label="E-pošta" help="Adresa naloga se ne menja ovde.">
+      <Field label="E-pošta" help="Ovom adresom se prijavljujete; za promenu nam se javite.">
         <Input type="email" value={v.email} readOnly />
       </Field>
       <div className="sm:col-span-2">

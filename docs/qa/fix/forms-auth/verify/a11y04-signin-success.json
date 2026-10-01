@@ -1,0 +1,8 @@
+{
+ "disabledRightAway": false,
+ "finalPath": "/nalog",
+ "search": "",
+ "navs": [
+  "GET /prijava?next=%2Fnalog"
+ ]
+}

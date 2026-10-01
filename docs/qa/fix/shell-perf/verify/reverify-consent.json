@@ -1,0 +1,57 @@
+{
+  "consent": {
+    "ssrFirstVisitHasBanner": true,
+    "firstVisitModules": [
+      "ConsentBanner",
+      "Dialog",
+      "SearchBox",
+      "Sheet"
+    ],
+    "bannerVisible": true,
+    "afterSettingsFocus": "button:consent-analytics",
+    "afterSettingsModules": [
+      "ConsentBanner",
+      "ConsentDetails",
+      "Dialog",
+      "SearchBox",
+      "Sheet",
+      "Switch"
+    ],
+    "switches": 3,
+    "savedCookie": "{\"v\":1,\"analytics\":true,\"ads\":false,\"at\":1790818605235,\"id\":\"0977175b-4726-4b5a-98ef-3640be0f1472\"}",
+    "bannerAfterSave": false,
+    "returningModules": [
+      "ConsentBanner",
+      "Dialog",
+      "SearchBox",
+      "Sheet"
+    ],
+    "returningBannerInDom": 0,
+    "reopen": {
+      "modules": [
+        "ConsentBanner",
+        "ConsentDetails",
+        "Dialog",
+        "SearchBox",
+        "Sheet",
+        "Switch"
+      ],
+      "focus": "button:Sačuvaj izbor",
+      "switches": 3,
+      "analyticsChecked": "true",
+      "opacity": "1"
+    },
+    "afterReject": {
+      "cookie": "{\"v\":1,\"analytics\":false,\"ads\":false,\"at\":1790818612053,\"id\":\"0977175b-4726-4b5a-98ef-3640be0f1472\"}",
+      "bannerVisible": false,
+      "focus": "main:{\"@context\":\"https://schema.org\",\"@type\""
+    },
+    "secondReopenVisible": true,
+    "errors": [],
+    "noJs": {
+      "bannerVisible": true,
+      "cookieAfterAccept": "{\"v\":1,\"analytics\":true,\"ads\":true,\"at\":1790818614140,\"id\":\"f542a4e8-52d6-4507-b804-d2215dfd25ab\"}",
+      "bannerAfter": 0
+    }
+  }
+}

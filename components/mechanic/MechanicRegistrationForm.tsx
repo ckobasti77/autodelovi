@@ -10,7 +10,7 @@ import { useAuthActions } from "@convex-dev/auth/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "convex/react";
 import { useRouter } from "next/navigation";
-import { useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Controller, useForm, useWatch } from "react-hook-form";
 import { CheckCircleIcon, WarningCircleIcon } from "@phosphor-icons/react/dist/ssr";
 
@@ -40,7 +40,7 @@ import { Checkbox, CheckboxBox } from "@/components/ui/Checkbox";
 import {
   Field,
   FormNoScript,
-  readPrehydrationValues,
+  useKeepTypedBeforeHydration,
   RequiredUnlessOptional,
   useHydrated,
 } from "@/components/ui/Field";
@@ -55,18 +55,17 @@ export type RegistrationConfig = {
   viewer: { email: string; name: string; phone: string } | null;
 };
 
-/** Text controls a visitor can type into before hydration → their DOM ids. */
-const TEXT_FIELD_IDS = {
-  email: "mr-email",
-  password: "mr-password",
-  companyName: "mr-companyName",
-  pib: "mr-pib",
-  mb: "mr-mb",
-  contactPerson: "mr-contactPerson",
-  phone: "mr-phone",
-  city: "mr-city",
-  address: "mr-address",
-} as const;
+/** Text controls a visitor can type into before hydration (XB-01). */
+type TextField =
+  | "email"
+  | "password"
+  | "companyName"
+  | "pib"
+  | "mb"
+  | "contactPerson"
+  | "phone"
+  | "city"
+  | "address";
 
 const PASSWORD_HELP = "Najmanje 10 znakova, bar jedno slovo i jedna cifra.";
 
@@ -111,9 +110,6 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
   const [pending, setPending] = useState(false);
   const summary = useRef<HTMLDivElement>(null);
   const hydrated = useHydrated();
-  // XB-01: text typed before hydration, read in the hydration render (register()'s ref writes
-  // the default values into the DOM at commit) and restored in the layout effect below.
-  const [typedBeforeHydration] = useState(() => readPrehydrationValues(TEXT_FIELD_IDS));
 
   const {
     register,
@@ -140,14 +136,11 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
       terms: false,
     },
   });
-  useLayoutEffect(() => {
-    for (const [name, value] of Object.entries(typedBeforeHydration) as [
-      keyof typeof TEXT_FIELD_IDS,
-      string,
-    ][]) {
-      setValue(name, value, { shouldDirty: true });
-    }
-  }, [typedBeforeHydration, setValue]);
+  // XB-01: text typed before hydration is read by each control's ref in the hydration commit
+  // (before register() writes the defaults) and restored in the same commit, before paint.
+  const keep = useKeepTypedBeforeHydration<TextField>((name, value) =>
+    setValue(name, value, { shouldDirty: true }),
+  );
 
   const pib = useWatch({ control, name: "pib" });
   const mb = useWatch({ control, name: "mb" });
@@ -299,7 +292,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
                   inputMode="email"
                   autoComplete="email"
                   data-testid={TEST_IDS.mechanicRegEmail}
-                  {...register("email")}
+                  {...keep(register("email"))}
                 />
               </Field>
               <Field
@@ -312,7 +305,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
                   type="password"
                   autoComplete="new-password"
                   data-testid={TEST_IDS.mechanicRegPassword}
-                  {...register("password")}
+                  {...keep(register("password"))}
                 />
               </Field>
             </div>
@@ -351,7 +344,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
             <Input
               autoComplete="organization"
               data-testid={TEST_IDS.mechanicRegCompany}
-              {...register("companyName")}
+              {...keep(register("companyName"))}
             />
           </Field>
           <div className="grid gap-5 sm:grid-cols-2">
@@ -368,7 +361,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
                 maxLength={11}
                 inputClassName="font-mono tracking-wider"
                 data-testid={TEST_IDS.mechanicRegPib}
-                {...register("pib")}
+                {...keep(register("pib"))}
               />
             </Field>
             <Field
@@ -384,7 +377,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
                 maxLength={10}
                 inputClassName="font-mono tracking-wider"
                 data-testid={TEST_IDS.mechanicRegMb}
-                {...register("mb")}
+                {...keep(register("mb"))}
               />
             </Field>
           </div>
@@ -400,7 +393,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
               <Input
                 autoComplete="name"
                 data-testid={TEST_IDS.mechanicRegContact}
-                {...register("contactPerson")}
+                {...keep(register("contactPerson"))}
               />
             </Field>
             <Field
@@ -414,7 +407,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
                 autoComplete="tel"
                 inputMode="tel"
                 data-testid={TEST_IDS.mechanicRegPhone}
-                {...register("phone")}
+                {...keep(register("phone"))}
               />
             </Field>
           </div>
@@ -430,14 +423,14 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
               <Input
                 autoComplete="address-level2"
                 data-testid={TEST_IDS.mechanicRegCity}
-                {...register("city")}
+                {...keep(register("city"))}
               />
             </Field>
             <Field id="mr-address" label="Adresa servisa" error={errors.address?.message}>
               <Input
                 autoComplete="street-address"
                 data-testid={TEST_IDS.mechanicRegAddress}
-                {...register("address")}
+                {...keep(register("address"))}
               />
             </Field>
           </div>

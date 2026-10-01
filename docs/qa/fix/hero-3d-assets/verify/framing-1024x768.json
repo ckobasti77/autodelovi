@@ -1,0 +1,104 @@
+{
+  "viewport": "1024x768",
+  "results": [
+    {
+      "label": "poster",
+      "stage": {
+        "w": 1024,
+        "h": 704
+      },
+      "car": {
+        "x": 20,
+        "y": 295,
+        "w": 918,
+        "h": 389,
+        "right": 937,
+        "bottom": 683
+      },
+      "pctStageHeight": 55.3,
+      "pctStageWidth": 89.6,
+      "gapCaptionToCar": 295,
+      "gapCarToHonesty": 21,
+      "centreOffsetX": -33,
+      "ticks": {
+        "top": 16,
+        "bottom": 616,
+        "left": 441,
+        "right": 983
+      },
+      "insideTicks": false,
+      "caption": null,
+      "honesty": null
+    },
+    {
+      "label": "canvas",
+      "stage": {
+        "w": 1024,
+        "h": 704
+      },
+      "car": {
+        "x": 20,
+        "y": 295,
+        "w": 918,
+        "h": 389,
+        "right": 937,
+        "bottom": 683
+      },
+      "pctStageHeight": 55.3,
+      "pctStageWidth": 89.6,
+      "gapCaptionToCar": 295,
+      "gapCarToHonesty": 21,
+      "centreOffsetX": -33,
+      "ticks": {
+        "top": 16,
+        "bottom": 616,
+        "left": 441,
+        "right": 983
+      },
+      "insideTicks": false,
+      "caption": null,
+      "honesty": null
+    },
+    {
+      "label": "canvas-exploded",
+      "stage": {
+        "w": 1024,
+        "h": 704
+      },
+      "car": {
+        "x": 20,
+        "y": 251,
+        "w": 938,
+        "h": 433,
+        "right": 957,
+        "bottom": 683
+      },
+      "pctStageHeight": 61.5,
+      "pctStageWidth": 91.6,
+      "gapCaptionToCar": 166,
+      "gapCarToHonesty": 21,
+      "centreOffsetX": -23,
+      "ticks": {
+        "top": 16,
+        "bottom": 616,
+        "left": 441,
+        "right": 983
+      },
+      "insideTicks": false,
+      "caption": {
+        "top": 0,
+        "bottom": 85,
+        "left": 441,
+        "right": 743
+      },
+      "honesty": null
+    }
+  ],
+  "posterSrc": "http://localhost:3001/images/hero/car-assembled-1080.avif",
+  "state": {
+    "tier": "high",
+    "progress": 0,
+    "status": "ready"
+  },
+  "errors": []
+}

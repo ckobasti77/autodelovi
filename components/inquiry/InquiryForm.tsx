@@ -7,7 +7,7 @@
  */
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "convex/react";
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Controller, useForm, useWatch } from "react-hook-form";
 import {
   InfoIcon,
@@ -38,7 +38,7 @@ import { Checkbox } from "@/components/ui/Checkbox";
 import {
   Field,
   FormNoScript,
-  readPrehydrationValues,
+  useKeepTypedBeforeHydration,
   RequiredUnlessOptional,
   useHydrated,
 } from "@/components/ui/Field";
@@ -70,15 +70,8 @@ export type InquiryConfig = {
   prefill: InquiryPrefill;
 };
 
-/** Text controls a visitor can type into before hydration → their DOM ids. */
-const TEXT_FIELD_IDS = {
-  vin: "iq-vin",
-  year: "iq-year",
-  message: "iq-message",
-  name: "iq-name",
-  phone: "iq-phone",
-  email: "iq-email",
-} as const;
+/** Text controls a visitor can type into before hydration (XB-01). */
+type TextField = "vin" | "year" | "message" | "name" | "phone" | "email";
 
 export function InquiryForm({ config }: { config: InquiryConfig }) {
   const submit = useMutation(api.inquiries.submit);
@@ -91,10 +84,6 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
   const [startedAt] = useState(formStartTime);
   const summary = useRef<HTMLDivElement>(null);
   const hydrated = useHydrated();
-  // XB-01: read what was typed before hydration now, in the hydration render — register()'s
-  // ref writes the default values into the DOM at commit. Restored in the layout effect below.
-  const [typedBeforeHydration] = useState(() => readPrehydrationValues(TEXT_FIELD_IDS));
-
   const form = useForm<InquiryValues>({
     resolver: zodResolver(inquirySchema),
     mode: "onTouched",
@@ -119,15 +108,11 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
   const modelSlug = useWatch({ control, name: "modelSlug" });
   const channel = useWatch({ control, name: "channel" });
 
-  // Same commit as the refs, before paint: the visitor never sees the field empty.
-  useLayoutEffect(() => {
-    for (const [name, value] of Object.entries(typedBeforeHydration) as [
-      keyof typeof TEXT_FIELD_IDS,
-      string,
-    ][]) {
-      setValue(name, value, { shouldDirty: true });
-    }
-  }, [typedBeforeHydration, setValue]);
+  // XB-01: text typed before hydration is read by each control's ref in the hydration commit
+  // (before register() writes the defaults) and restored in the same commit, before paint.
+  const keep = useKeepTypedBeforeHydration<TextField>((name, value) =>
+    setValue(name, value, { shouldDirty: true }),
+  );
 
   // The visitor's stored vehicle prefills the selects once.
   const prefilled = useRef(false);
@@ -317,7 +302,7 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
               inputClassName="font-mono uppercase tracking-wider"
               placeholder="WVWZZZ1KZ8W000001"
               data-testid={TEST_IDS.inquiryVinInput}
-              {...register("vin")}
+              {...keep(register("vin"))}
             />
           </Field>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -356,7 +341,7 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
               />
             </Field>
             <Field id="iq-year" label="Godište" optional error={errors.year?.message}>
-              <Input inputMode="numeric" maxLength={4} placeholder="2016" {...register("year")} />
+              <Input inputMode="numeric" maxLength={4} placeholder="2016" {...keep(register("year"))} />
             </Field>
           </div>
         </fieldset>
@@ -384,7 +369,7 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
             error={errors.message?.message}
             help="Naziv dela, strana (levo/desno, napred/nazad), kvar ili broj sa starog dela."
           >
-            <Textarea rows={5} maxLength={2000} {...register("message")} />
+            <Textarea rows={5} maxLength={2000} {...keep(register("message"))} />
           </Field>
           <div className="flex flex-col gap-2">
             <span className="type-caption text-ink-2">Kategorija (nije obavezno)</span>
@@ -428,7 +413,7 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
           <legend className="mb-4 type-h3 text-ink-1">Kontakt</legend>
           <div className="grid gap-5 sm:grid-cols-3">
             <Field id="iq-name" label="Ime" error={errors.name?.message}>
-              <Input autoComplete="name" {...register("name")} />
+              <Input autoComplete="name" {...keep(register("name"))} />
             </Field>
             <Field id="iq-phone" label="Telefon" error={errors.phone?.message}>
               <Input
@@ -436,7 +421,7 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
                 inputMode="tel"
                 autoComplete="tel"
                 placeholder="064 123 4567"
-                {...register("phone")}
+                {...keep(register("phone"))}
               />
             </Field>
             <Field
@@ -445,7 +430,7 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
               optional={channel !== "email"}
               error={errors.email?.message}
             >
-              <Input type="email" inputMode="email" autoComplete="email" {...register("email")} />
+              <Input type="email" inputMode="email" autoComplete="email" {...keep(register("email"))} />
             </Field>
           </div>
           <Controller

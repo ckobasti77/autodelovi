@@ -1,0 +1,86 @@
+{
+  "/delovi": {
+    "returningVisitorConsentCookie": true,
+    "bannerInDom": 0,
+    "modulesDefinedInFirstLoad": {
+      "components/consent/ConsentBanner.tsx": [
+        {
+          "chunk": "static/chunks/_2129bfo._.js",
+          "inServerHtml": true
+        }
+      ],
+      "components/consent/ConsentReopen.tsx": [
+        {
+          "chunk": "static/chunks/_2129bfo._.js",
+          "inServerHtml": true
+        }
+      ],
+      "components/shell/SearchBox.tsx": [
+        {
+          "chunk": "static/chunks/_0hrrsgz._.js",
+          "inServerHtml": true
+        }
+      ],
+      "components/ui/Dialog.tsx": [
+        {
+          "chunk": "static/chunks/_1jo8fez._.js",
+          "inServerHtml": false
+        }
+      ],
+      "components/ui/Sheet.tsx": [
+        {
+          "chunk": "static/chunks/_1jo8fez._.js",
+          "inServerHtml": false
+        }
+      ],
+      "components/vehicle/VehiclePickerDialog.tsx": [
+        {
+          "chunk": "static/chunks/_1jo8fez._.js",
+          "inServerHtml": false
+        }
+      ]
+    }
+  },
+  "/": {
+    "returningVisitorConsentCookie": true,
+    "bannerInDom": 0,
+    "modulesDefinedInFirstLoad": {
+      "components/consent/ConsentBanner.tsx": [
+        {
+          "chunk": "static/chunks/_2129bfo._.js",
+          "inServerHtml": true
+        }
+      ],
+      "components/consent/ConsentReopen.tsx": [
+        {
+          "chunk": "static/chunks/_2129bfo._.js",
+          "inServerHtml": true
+        }
+      ],
+      "components/shell/SearchBox.tsx": [
+        {
+          "chunk": "static/chunks/_1dhuvox._.js",
+          "inServerHtml": true
+        }
+      ],
+      "components/ui/Dialog.tsx": [
+        {
+          "chunk": "static/chunks/_1jo8fez._.js",
+          "inServerHtml": false
+        }
+      ],
+      "components/ui/Sheet.tsx": [
+        {
+          "chunk": "static/chunks/_1jo8fez._.js",
+          "inServerHtml": false
+        }
+      ],
+      "components/vehicle/VehiclePickerDialog.tsx": [
+        {
+          "chunk": "static/chunks/_1jo8fez._.js",
+          "inServerHtml": false
+        }
+      ]
+    }
+  }
+}

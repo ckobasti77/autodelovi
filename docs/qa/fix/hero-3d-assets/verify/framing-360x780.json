@@ -1,0 +1,99 @@
+{
+  "viewport": "360x780",
+  "results": [
+    {
+      "label": "poster",
+      "stage": {
+        "w": 360,
+        "h": 608
+      },
+      "car": {
+        "x": 8,
+        "y": 185,
+        "w": 346,
+        "h": 304,
+        "right": 353,
+        "bottom": 488
+      },
+      "pctStageHeight": 50,
+      "pctStageWidth": 96.1,
+      "gapCaptionToCar": 100,
+      "gapCarToHonesty": 120,
+      "centreOffsetX": 1,
+      "ticks": null,
+      "insideTicks": null,
+      "caption": {
+        "top": 0,
+        "bottom": 85,
+        "left": 16,
+        "right": 344
+      },
+      "honesty": null
+    },
+    {
+      "label": "canvas",
+      "stage": {
+        "w": 360,
+        "h": 608
+      },
+      "car": {
+        "x": 9,
+        "y": 186,
+        "w": 344,
+        "h": 303,
+        "right": 352,
+        "bottom": 488
+      },
+      "pctStageHeight": 49.8,
+      "pctStageWidth": 95.6,
+      "gapCaptionToCar": 101,
+      "gapCarToHonesty": 120,
+      "centreOffsetX": 1,
+      "ticks": null,
+      "insideTicks": null,
+      "caption": {
+        "top": 0,
+        "bottom": 85,
+        "left": 16,
+        "right": 344
+      },
+      "honesty": null
+    },
+    {
+      "label": "canvas-exploded",
+      "stage": {
+        "w": 360,
+        "h": 608
+      },
+      "car": {
+        "x": 11,
+        "y": 207,
+        "w": 336,
+        "h": 247,
+        "right": 346,
+        "bottom": 453
+      },
+      "pctStageHeight": 40.6,
+      "pctStageWidth": 93.3,
+      "gapCaptionToCar": 142,
+      "gapCarToHonesty": 155,
+      "centreOffsetX": -1,
+      "ticks": null,
+      "insideTicks": null,
+      "caption": {
+        "top": 0,
+        "bottom": 65,
+        "left": 16,
+        "right": 344
+      },
+      "honesty": null
+    }
+  ],
+  "posterSrc": "http://localhost:3001/images/hero/car-assembled-m-640.avif",
+  "state": {
+    "tier": "mid",
+    "progress": 0,
+    "status": "ready"
+  },
+  "errors": []
+}

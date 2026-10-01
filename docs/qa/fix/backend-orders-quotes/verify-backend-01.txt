@@ -1,0 +1,39 @@
+[22m[39mBACKEND01_RESULT {
+  "creditBefore": {
+    "availablePara": 500000,
+    "enabled": true,
+    "limitPara": 500000,
+    "openCount": 0,
+    "paymentTermsDays": 30,
+    "usedPara": 0
+  },
+  "control": {
+    "submitDeferred": "INVALID"
+  },
+  "customerAcceptQuote": {
+    "inquiryUserIdSet": true,
+    "result": "REFUSED",
+    "code": "INVALID"
+  },
+  "creditAfterCustomerPath": {
+    "availablePara": 500000,
+    "enabled": true,
+    "limitPara": 500000,
+    "openCount": 0,
+    "paymentTermsDays": 30,
+    "usedPara": 0
+  },
+  "staffConvertToOrder": {
+    "result": "REFUSED",
+    "code": "INVALID"
+  },
+  "creditAfterStaffPath": {
+    "availablePara": 500000,
+    "enabled": true,
+    "limitPara": 500000,
+    "openCount": 0,
+    "paymentTermsDays": 30,
+    "usedPara": 0
+  },
+  "guestAcceptDeferred": "INVALID"
+}

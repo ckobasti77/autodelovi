@@ -1,0 +1,163 @@
+[
+  {
+    "id": "A11Y-02",
+    "status": "FIXED",
+    "summary": "Dialog and Sheet now return focus for trigger-less overlays: useFocusReturn (lib/dom/focusReturn.ts) records the opener in a layout effect when open turns true (active element, last element focused outside any dialog, visible aria-expanded opener) and restores it in onCloseAutoFocus, else #sadrzaj. Covers vehicle picker, cart drawer, header search, parts list and the admin command palette (D246).",
+    "files": ["lib/dom/focusReturn.ts", "components/ui/Dialog.tsx", "components/ui/Sheet.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cart-mechanic-overlays-focus.mjs → 'BODY count: 0 of 12' (vehicle picker header/hero × Escape/Zatvori, cart drawer, header search at 1440 and 390; each 'after' equals 'before'). scripts/qa/fix/cart-mechanic-overlays-misc.mjs → 'A11Y-02 parts list focus after Escape: BUTTON[parts-list-trigger]'. scripts/qa/fix/cart-mechanic-overlays-palette.mjs → {\"before\":\"Broj porudžbine, OEM, telefon…\",\"dialogOpened\":1,\"after\":\"Broj porudžbine, OEM, telefon…\"}."
+  },
+  {
+    "id": "VIS-02",
+    "status": "FIXED",
+    "summary": "Quick-order summary bar registers with useBottomInset (lib/dom/bottomInset.ts): html scroll-padding-bottom = bar + 16 px and a focusin listener scrolls any focused control out from under a bar; 24 px fade above the bar edge (DS §5.5, no shadow); phones get one button row (inquiry collapses to an icon button with the same accessible name), bar 109 px at 390 (D245).",
+    "files": ["lib/dom/bottomInset.ts", "components/mechanic/QuickOrder.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cart-mechanic-overlays-quick.mjs vis → 'vis02 390: {\"bar\":{\"h\":109,\"spb\":\"125px\"},\"stops\":66,\"hidden\":0,\"partly\":0}' and 'vis02 1440: {\"bar\":{\"h\":117,\"spb\":\"133px\"},\"stops\":60,\"hidden\":0,\"partly\":0}' (audit: 22 hidden at 390, 6 at 1440). Screenshots docs/qa/fix/cart-mechanic-overlays/vis02-quick-order-390.webp, flow21-duplicates-1440.webp."
+  },
+  {
+    "id": "A11Y-09",
+    "status": "FIXED",
+    "summary": "Cart line removal plans focus before the mutation (next line's product link, else previous, else the empty-state heading/action marked data-cart-empty) and announces 'Uklonjeno iz korpe: {naziv}.' (+ ' Korpa je prazna.') in #cart-live; quantity changes announce 'Količina 2, ukupno 14.980 RSD.' once settled; the bare aria-live on Međuzbir is gone (lib/cart/lineFocus.ts).",
+    "files": ["lib/cart/lineFocus.ts", "components/cart/CartView.tsx", "components/cart/CartPageView.tsx", "components/cart/CartDrawer.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cart-mechanic-overlays-cart.mjs → at 390 and 1440: 'after +1 live: Količina 2, ukupno 14.980 RSD.', 'after remove first: focus A[Kočioni disk zadnji 272 × 10 mm, puni] live: Uklonjeno iz korpe: Kočioni disk prednji 312 × 25 mm.', 'remove #3: focus H2[Korpa je prazna] live: Uklonjeno iz korpe: … Korpa je prazna.'"
+  },
+  {
+    "id": "A11Y-14",
+    "status": "FIXED",
+    "summary": "Price-list download bar registers with useBottomInset; focused checkboxes scroll clear of it. Below sm the price note moves above the list so the bar is one button row; fade above the bar edge.",
+    "files": ["components/mechanic/PriceListPicker.tsx", "lib/dom/bottomInset.ts"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cart-mechanic-overlays-pricelist.mjs → {\"w\":360,\"stops\":63,\"hidden\":0,\"partly\":0}, {\"w\":390,…\"hidden\":0,\"partly\":0}, {\"w\":768,…\"hidden\":0}, {\"w\":1440,…\"hidden\":0} (audit: 16 / 15 / 11 / 4 fully hidden)."
+  },
+  {
+    "id": "VIS-09",
+    "status": "FIXED",
+    "summary": "Predračun below sm renders one block per line (name full width, SKU · OEM, 'kol. × cena' left and amount right) and a Dostava row; the 4-column table shows from sm and always in print. OEM codes are nowrap (also VIS-25), header reads 'Cena sa PDV-om' (COPY-11), card padding p-5 on phones.",
+    "files": ["app/(shop)/porudzbina/[token]/predracun/page.tsx", "components/order/OrderStatusView.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cart-mechanic-overlays-predracun.mjs → {\"w\":390,\"status\":200,\"list\":\"flex\",\"table\":\"none\",\"firstLineH\":94,\"nameW\":318,\"overflow\":0,\"printTable\":\"table\"} (audit: name column 65 px, ~10 lines) and {\"w\":768,\"list\":\"none\",\"table\":\"table\"}. Screenshot docs/qa/fix/cart-mechanic-overlays/vis09-predracun-390.webp."
+  },
+  {
+    "id": "VIS-10",
+    "status": "FIXED",
+    "summary": "QuantityStepper size 'sm' is 44 px everywhere except lg + fine pointer (36 px desktop density): h-11 lg:pointer-fine:h-9 / size-11 lg:pointer-fine:size-9. One central change covers cart page, drawer, quick order and favourites (D247). Cart remove button (44 px) now sits beside the stepper (VIS-27).",
+    "files": ["components/ui/QuantityStepper.tsx", "components/cart/CartView.tsx"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cart-mechanic-overlays-cart.mjs → '390 … sizes [ \"Povećaj koli 44x44\", \"Ukloni Kočio 44x44\" ] lineH 152' and '1440 … sizes [ \"Povećaj koli 36x36\", … ]'. Screenshot docs/qa/fix/cart-mechanic-overlays/cart-page-390.webp."
+  },
+  {
+    "id": "FLOW-21",
+    "status": "FIXED",
+    "summary": "Quick order groups rows by chosen product, checks the summed quantity plus what is already in the cart (useCart) against stock, sends one merged line per product to carts.addMany, keeps rejected/blocked rows with row messages ('Možete dodati još 2 kom.', 'Sve što je na stanju već je u vašoj korpi.') and offers 'Spoji redove' on duplicates; toast no longer quotes the misleading server reason (D249). Client-side only; carts.addMany unchanged.",
+    "files": ["components/mechanic/QuickOrder.tsx", "lib/i18n/sr/mechanic.ts"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cart-mechanic-overlays-quick.mjs flow → '21a rows' show 'Isti deo je i u redu 2 — ukupno 4 kom. · Spoji redove · Možete dodati još 2 kom.' on both disc rows (stock 2), 'addAll: Dodaj sve u korpu (1)' (only the belt), and after adding both disc rows remain listed; '21c-stock1' shows 'Možete dodati još 1 kom.' with 'Dodaj sve u korpu (0)'. Screenshot docs/qa/fix/cart-mechanic-overlays/flow21-duplicates-1440.webp."
+  },
+  {
+    "id": "FLOW-22",
+    "status": "FIXED",
+    "summary": "parseQuickOrder keeps the code when the typed quantity is 0 or above 999 (trailing bare 1–5 digit tail, explicit x0 / 0x, CSV quantity cell 0): extra candidate with quantity clamped to 1–999 and requestedQuantity; the row shows TAČNO with 'Upisali ste 0 kom. Količina može biti od 1 do 999 — postavljeno je 1 kom., proverite.'; the stepper clears it. Also fixed the leading form reading the code's first digit as quantity ('0x 5Q0…' → ×5). Exports used by convex/mechanicPortal.ts unchanged.",
+    "files": ["lib/domain/quickOrder.ts", "tests/unit/domain/quickOrder.test.ts", "components/mechanic/QuickOrder.tsx", "lib/i18n/sr/mechanic.ts"],
+    "verification": "npx vitest run tests/unit/domain/quickOrder.test.ts → 'Tests 42 passed (42)' (new block 'quantities out of range (FLOW-22)'). scripts/qa/fix/cart-mechanic-overlays-quick.mjs flow → '22 rows': '[exact] 5Q0615505R · TAČNO … Upisali ste 0 kom. … postavljeno je 1 kom.', '[exact] … Upisali ste 1000 kom. … postavljeno je 999 kom.', only 'ZZ9999999' is not_found. Screenshot docs/qa/fix/cart-mechanic-overlays/flow22-qty-range-1440.webp."
+  },
+  {
+    "id": "VIS-23",
+    "status": "FIXED",
+    "summary": "P3: /korpa below lg has a sticky 'Međuzbir + Nastavi na porudžbinu' bar (registered bottom inset, rests under the summary card, never over the footer); the card's checkout button renders only from lg so there is one cart-checkout per page.",
+    "files": ["components/cart/CartPageView.tsx"],
+    "verification": "scripts/qa/fix/cart-mechanic-overlays-misc.mjs → 'VIS-23 {\"ctaCount\":1,\"ctaTop\":780,\"vh\":844,\"spb\":\"93px\"}' with 5 lines at 390; screenshots vis23-cart-sticky-390.webp and vis23-cart-sticky-390-end.webp."
+  },
+  {
+    "id": "VIS-27",
+    "status": "FIXED",
+    "summary": "P3: cart remove button beside the stepper (stepper + remove left, total right on phones; stepper · remove · total in one row from sm).",
+    "files": ["components/cart/CartView.tsx"],
+    "verification": "Screenshot docs/qa/fix/cart-mechanic-overlays/cart-page-390.webp; line height 152 px at 390 with 44 px controls."
+  },
+  {
+    "id": "XB-02",
+    "status": "FIXED",
+    "summary": "P3: desktop vehicle picker Dialog uses position='top', so steps of different height no longer re-centre the panel.",
+    "files": ["components/vehicle/VehiclePickerDialog.tsx"],
+    "verification": "scripts/qa/fix/cart-mechanic-overlays-misc.mjs → 'XB-02 title top per step [ 93, 93, 93 ]'."
+  },
+  {
+    "id": "PERF-04",
+    "status": "FIXED",
+    "summary": "Assist (picker part only): VehiclePickerLazy no longer warms its chunk on load/idle; it loads on pointerover/focus/touch of a vehicle-picker-trigger or when opened (D248).",
+    "files": ["components/vehicle/VehiclePickerLazy.tsx"],
+    "verification": "scripts/qa/fix/cart-mechanic-overlays-perf-route.mjs → 'PERF-04 JS chunks by load + 10 s idle: 27' then 'new JS chunks after hovering the picker trigger: 3'."
+  },
+  {
+    "id": "VIS-24",
+    "status": "FIXED",
+    "summary": "P3: order-list status chip justify-self-start.",
+    "files": ["components/account/AccountViews.tsx"],
+    "verification": "scripts/qa/fix/cart-mechanic-overlays-account.mjs → '/nalog/porudzbine {… \"chipW\":74}' (audit ≈ 190 px); screenshot account-orders-390.webp."
+  },
+  {
+    "id": "VIS-28",
+    "status": "FIXED",
+    "summary": "P3: 'Odjavi se' in the tab row only from lg; below lg it sits at the end of the account pages.",
+    "files": ["components/account/AccountNav.tsx", "app/(shop)/nalog/layout.tsx"],
+    "verification": "scripts/qa/fix/cart-mechanic-overlays-account.mjs → every tab at 390: \"signOutVisible\":1,\"signOutBelowContent\":true."
+  },
+  {
+    "id": "A11Y-21",
+    "status": "FIXED",
+    "summary": "P3: sr-only h2 with the tab label on /nalog/porudzbine, /upiti, /vozila, /profil.",
+    "files": ["app/(shop)/nalog/porudzbine/page.tsx", "app/(shop)/nalog/upiti/page.tsx", "app/(shop)/nalog/vozila/page.tsx", "app/(shop)/nalog/profil/page.tsx"],
+    "verification": "scripts/qa/fix/cart-mechanic-overlays-account.mjs → h2 [\"Porudžbine\"], [\"Upiti\"], [\"Vozila\"], [\"Profil\"]; revealCheck {\"stuck\":[],\"pending\":0,\"words\":0}; axe violations [] on /nalog/porudzbine."
+  },
+  {
+    "id": "COPY-14",
+    "status": "FIXED",
+    "summary": "P3 (my parts): 'Otpremi CSV' → 'Učitaj CSV fajl' (mechanic.ts); za-majstore 'ili učitajte CSV fajl' and 'po potrebi je promenite u porudžbini'; profile e-mail help 'Ovom adresom se prijavljujete; za promenu nam se javite.'. Registration, forgot-password and terms parts belong to forms-auth / search-catalog-content.",
+    "files": ["lib/i18n/sr/mechanic.ts", "app/(shop)/za-majstore/page.tsx", "components/account/AccountViews.tsx"],
+    "verification": "npx eslint + npx tsc --noEmit clean; visible in flow21-duplicates-1440.webp ('Učitaj CSV fajl')."
+  },
+  {
+    "id": "FLOW-35",
+    "status": "FIXED",
+    "summary": "P3 (page part): thank-you page adds 'Rok plaćanja: <datum> (<n> dana).' for deferred orders from payment.dueAt (set at order time) and createdAt. The e-mail part belongs to seo-content-email.",
+    "files": ["app/(shop)/porudzbina/hvala/[token]/page.tsx"],
+    "verification": "npx tsc --noEmit clean; not exercised in the browser (needs a fresh deferred mechanic order)."
+  },
+  {
+    "id": "FLOW-37",
+    "status": "FIXED",
+    "summary": "P3: /majstor/cenovnik/preuzmi answers 400 'Izabrane kategorije više ne postoje. Vratite se na cenovnik i izaberite ponovo.' when no slug resolves to a category.",
+    "files": ["app/(shop)/majstor/cenovnik/preuzmi/route.ts"],
+    "verification": "scripts/qa/fix/cart-mechanic-overlays-perf-route.mjs → 'FLOW-37 unknown slug: 400 Izabrane kategorije više ne postoje. …'."
+  },
+  {
+    "id": "A11Y-19",
+    "status": "FIXED",
+    "summary": "Assist: FavoriteButton label and sr-only ': {naziv}' in one inline span (no space before the colon).",
+    "files": ["components/mechanic/FavoriteButton.tsx"],
+    "verification": "npx eslint clean; markup change only."
+  },
+  {
+    "id": "COPY-11",
+    "status": "FIXED",
+    "summary": "Assist (my parts): cart 'Preuzimanje ${formatRSD(0)}'; predračun header 'Cena sa PDV-om'.",
+    "files": ["components/cart/CartView.tsx", "app/(shop)/porudzbina/[token]/predracun/page.tsx"],
+    "verification": "cart-page-390.webp shows 'Preuzimanje 0 RSD' with the formatter's no-break space; tsc/eslint clean."
+  },
+  {
+    "id": "COPY-03",
+    "status": "FIXED",
+    "summary": "Assist (order status page): the 'Pitanje o porudžbini?' block renders only when at least one contact channel is set, and names the order number.",
+    "files": ["app/(shop)/porudzbina/[token]/page.tsx"],
+    "verification": "tsc/eslint clean; contactLinkList already drops empty channels."
+  },
+  {
+    "id": "VIS-12",
+    "status": "FIXED",
+    "summary": "Assist: quick-order textarea text-[1rem] (no iOS zoom).",
+    "files": ["components/mechanic/QuickOrder.tsx"],
+    "verification": "Class change; owner forms-auth verifies VIS-12 as a whole."
+  },
+  {
+    "id": "FLOW-05",
+    "status": "OPEN",
+    "summary": "Assist: porudzbina/[token], predracun and hvala now resolve the order in generateMetadata (React cache, one query per request) and call notFound() there. In the dev server the 404 still has no server-rendered h1 (status 404, not-found only in the RSC payload), so the root cause is outside these pages.",
+    "files": ["app/(shop)/porudzbina/[token]/page.tsx", "app/(shop)/porudzbina/[token]/predracun/page.tsx", "app/(shop)/porudzbina/hvala/[token]/page.tsx"],
+    "verification": "curl http://localhost:3001/porudzbina/nepostojeci-token-123/predracun → 404, grep -c '<h1' → 0, 'NEXT_HTTP_ERROR_FALLBACK;404' only in the payload. Left to the FLOW-05 owner."
+  }
+]

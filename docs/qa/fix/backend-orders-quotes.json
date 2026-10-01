@@ -1,0 +1,86 @@
+[
+  {
+    "id": "BE-01",
+    "status": "FIXED",
+    "summary": "One helper, mechanicOrderTerms() in convex/lib/orders.ts, gives every approved-mechanic order its tier snapshot, the profile's paymentTermsDays and the remaining-credit check for deferred payment. orders.submit, inquiries.acceptQuote and inquiriesAdmin.convertToOrder all call it. On the token page the terms apply only when the signed-in mechanic owns the inquiry. Staff can exceed the limit only with an explicit creditOverride, which is recorded in the audit summary (D220).",
+    "files": ["convex/lib/orders.ts", "convex/orders.ts", "convex/inquiries.ts", "convex/inquiriesAdmin.ts", "components/admin/inquiries/InquiryDetail.tsx", "convex/inquiries.test.ts"],
+    "verification": "The audit's own repro, npx vitest run -c scripts/qa/audit/verify-backend-01.vitest.config.mts, now reports customerAcceptQuote.result REFUSED/INVALID and staffConvertToOrder.result REFUSED/INVALID, with credit usedPara 0 after both paths (docs/qa/fix/backend-orders-quotes/verify-backend-01.txt). convex/inquiries.test.ts 'deferred acceptance over the credit limit is refused; within it gets terms and tier' passes: tier snapshot set, dueAt +30 d. The staff test passes too: 'staff conversion enforces the credit limit unless explicitly overridden (audited)'. Result: 15/15 passed."
+  },
+  {
+    "id": "BE-02",
+    "status": "FIXED",
+    "summary": "getClientInfo keys per-visitor limits on a salted hash of the IP alone: IPv6 by its /64, IPv4-mapped addresses unwrapped, User-Agent never part of the key. Per-IP buckets are resized for carrier NAT. orderSubmitGlobal is now an alarm threshold: above it the owners get one in-app alert per hour (notifications.ownerAlert) and no order is refused (D221).",
+    "files": ["convex/lib/functions.ts", "convex/lib/rateLimits.ts", "convex/notifications.ts", "convex/orders.ts", "convex/security.test.ts", "convex/orders.test.ts"],
+    "verification": "convex/security.test.ts 'the rate-limit key is the IP (IPv6 by /64), never the User-Agent' passes: 30 upload URLs with 30 different UAs, then the 31st returns RATE_LIMITED; the same holds within one /64. convex/orders.test.ts 'the site-wide order threshold alerts the owner instead of refusing orders' passes: both orders succeed and exactly 1 security alert is sent. Result: 24/24 passed. I did not run the live UA script on purpose: it would drain the upload bucket of this machine's single IP for the other agents."
+  },
+  {
+    "id": "BE-03",
+    "status": "FIXED",
+    "summary": "All four entry points store consentInForce(), defined in the new convex/lib/attribution.ts. It takes the legal versions from settings and the timestamp from the server's Date.now(); only the marketing/analytics/ads choices come from the client. A version mismatch returns CONFLICT 'Uslovi su izmenjeni — osvežite stranicu.' (D222).",
+    "files": ["convex/lib/attribution.ts", "convex/lib/orders.ts", "convex/inquiries.ts", "convex/mechanics.ts", "convex/security.test.ts"],
+    "verification": "Live: node scripts/qa/fix/backend-orders-quotes-consent.mjs returns forged {code: CONFLICT, message: 'Uslovi su izmenjeni — osvežite stranicu.'} (docs/qa/fix/backend-orders-quotes/consent-attribution.json). convex/security.test.ts 'consent versions and time come from the server; attribution is clamped' passes: stored termsVersion is 2026-09-29 and acceptedAt is later than the forged 2000-01-01."
+  },
+  {
+    "id": "BE-04",
+    "status": "FIXED",
+    "summary": "sanitizeAttribution() clamps every touch text field to 100–500 characters. Click and cookie ids are limited to [A-Za-z0-9._-] and 512 characters. It is applied in orders.submit, inquiries.submit and mechanics.register. Company addresses are trimmed and validated in validateCheckout, and admin list rows return the campaign sliced to 60.",
+    "files": ["convex/lib/attribution.ts", "convex/orders.ts", "convex/inquiries.ts", "convex/mechanics.ts", "convex/lib/orders.ts", "convex/inquiriesAdmin.ts", "convex/ordersAdmin.ts"],
+    "verification": "Live (UP-2026-000086, closed afterwards): a 200 000-character campaign is stored with length 200, the admin list returns length 60, and a 5 000-character gclid containing '<script>' is stored as 512 safe characters (docs/qa/fix/backend-orders-quotes/consent-attribution.json). convex/security.test.ts passes, 15/15."
+  },
+  {
+    "id": "BE-05",
+    "status": "FIXED",
+    "summary": "The convex vitest project now has testTimeout and hookTimeout of 30 s. The deterministic crons failure in notify.test.ts ('reminders count working minutes', reminded 0) came from building the world at the real clock after the hard-coded 30.09. 16:30 order time. The test now builds the world at 30.09. 08:00, so it no longer depends on the clock. No test was skipped or weakened.",
+    "files": ["vitest.config.mts", "convex/notify.test.ts"],
+    "verification": "npx vitest run --maxWorkers=2 on the 8 owned convex suites plus 4 domain unit suites: 'Test Files 12 passed (12), Tests 258 passed (258)'. This ran on 01.10.2026, after the time from which the crons test used to fail deterministically."
+  },
+  {
+    "id": "BE-06",
+    "status": "FIXED",
+    "summary": "editItems now re-syncs committed stock per line through syncCommittedLine() with reason order_edited. A removal returns what was taken, a lower quantity returns the difference, and a higher quantity or a new line takes more, clamped at 0. committedQty is kept current, so cancelling returns exactly what was taken. commitsStockOn commits on potvrdjena in both stock modes; callers already skip committed orders.",
+    "files": ["convex/lib/orders.ts", "convex/ordersAdmin.ts", "lib/domain/orderStateMachine.ts", "tests/unit/domain/stateMachines.test.ts", "convex/orders.test.ts"],
+    "verification": "The audit repro, npx vitest run -c scripts/qa/audit/verify-backend-06.vitest.config.mts, now shows every actual value equal to its expected value. remove-then-cancel: afterRemove 10, afterCancel 10. lower-then-complete: afterEdit 9. add-then-complete: batteryLine committedQty 2, currentStock 18. mode-switch: stockCommitted true, afterComplete 7. Its 4 bug-asserting tests fail for that reason (docs/qa/fix/backend-orders-quotes/verify-backend-06.txt). convex/orders.test.ts has 2 new BE-06 tests and passes 24/24."
+  },
+  {
+    "id": "BE-07",
+    "status": "FIXED",
+    "summary": "Sign-ups go through countTowardsAlert('signUpAlert'): above 60 per hour the owners get one in-app alert per hour. signUpGlobal is now a high hard ceiling (burst 300, then 600/h) instead of 30/60. One script can no longer close registration for everyone without the owner being alerted long before the ceiling. The Password provider also refuses a new password equal to the e-mail address (BE-12, server part). E-mail verification stays deferred per D212 and is confirmed as a go-live item in docs/HUMAN-TODO.md.",
+    "files": ["convex/auth.ts", "convex/lib/rateLimits.ts", "convex/notifications.ts", "docs/HUMAN-TODO.md"],
+    "verification": "npx tsc --noEmit reports no errors in convex/auth.ts or convex/lib/rateLimits.ts. The alert path (countTowardsAlert → notifications.ownerAlert, one alert per hour) is covered by convex/orders.test.ts 'the site-wide order threshold alerts the owner instead of refusing orders' (1 alert). npx convex dev --once: 'Convex functions ready!'."
+  },
+  {
+    "id": "FLOW-07",
+    "status": "FIXED",
+    "summary": "The AcceptForm on /upit/[token] validates every field at once with the checkout zod schema. It shows Field errors (aria-invalid + aria-describedby) and an error summary that takes focus on each failed submit and links to the fields. Server field errors are mapped back to their fields. Phone and e-mail are prefilled from the requester's own inquiry. On phones the accept/decline buttons stack full width.",
+    "files": ["components/inquiry/InquiryStatusView.tsx", "convex/inquiries.ts"],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/backend-orders-quotes-ui.mjs at 390 px, empty phone/e-mail/terms. Result: summary 'Proverite 3 polja: Upišite broj telefona. Upišite adresu e-pošte. Potrebna je saglasnost…', focus on quote-accept-errors, aria-invalid on qa-phone, qa-email and qa-terms, and every invalid input has aria-describedby (docs/qa/fix/backend-orders-quotes/ui.json, accept-errors-390.webp)."
+  },
+  {
+    "id": "FLOW-08",
+    "status": "FIXED",
+    "summary": "The accept form has a 'Kupujem kao firma' block (naziv, PIB, MB); checking it offers 'Virmanom uz predračun'. getByToken returns deferredCredit only for the signed-in approved mechanic with credit who owns the inquiry, and the form then offers 'Odloženo plaćanje' with the remaining limit. The server checks both through validateCheckout and mechanicOrderTerms.",
+    "files": ["components/inquiry/InquiryStatusView.tsx", "convex/inquiries.ts", "convex/lib/orders.ts"],
+    "verification": "UI script at 390 px: after 'Kupujem kao firma' the payment group reads 'Gotovinom pri preuzimanju / Karticom pri preuzimanju / Virmanom uz predračun' and 3 company fields appear (ui.json, accept-company-390.webp). convex/inquiries.test.ts: the owning mechanic gets deferredCredit {availablePara: 1000000}, a guest gets null, and another mechanic's deferred acceptance is INVALID."
+  },
+  {
+    "id": "FLOW-13",
+    "status": "FIXED",
+    "summary": "inquiriesAdmin.get returns the customer's status/accept link, rebuilt from the HMAC (D171), so no new token is minted. Once a quote is sent to a customer without e-mail or with a message channel, the inquiry shows 'Link za kupca' with copy and Viber, WhatsApp and SMS buttons carrying a prefilled message. The send dialog says the quote does not reach such a customer by itself. convertToOrder accepts an empty e-mail when the inquiry has none: customer e-mails are skipped and the audit records 'kupac bez e-pošte'. The convert dialog makes e-mail optional, uses noValidate and shows server field errors (D223).",
+    "files": ["convex/inquiriesAdmin.ts", "convex/lib/orders.ts", "convex/events.ts", "convex/orders.ts", "convex/ordersAdmin.ts", "convex/lib/emailData.ts", "components/admin/inquiries/QuoteComposer.tsx", "components/admin/inquiries/InquiryDetail.tsx", "convex/inquiries.test.ts"],
+    "verification": "UI script at 1440 px on phone-only UP-2026-000090. The share panel shows the link with Viber, WhatsApp and SMS buttons (admin-share-1440.webp). Converting with an empty e-mail created SK-2026-000147 with orderEmail '' (cancelled afterwards, ui.json). convex/inquiries.test.ts 'phone-only inquiry: staff get the status link and convert without an e-mail' passes with 0 e-mail deliveries to ''."
+  },
+  {
+    "id": "FLOW-16",
+    "status": "FIXED",
+    "summary": "quoteOrderLines maps catalogue lines to sku = product.sku ?? l.sku ?? 'UPIT'. The quote's 'Šifra / OEM' stays a display code, and the OEM goes to the order line's oem field. No backfill is needed: the only affected orders are the audit's dev test records (SK-2026-000142/145), and production has no data yet.",
+    "files": ["convex/lib/inquiries.ts", "convex/inquiries.test.ts"],
+    "verification": "convex/inquiries.test.ts: a quote line saved with sku '5Q0 615 301 F' for product T-DISC produces order items with SKUs ['T-DISC', 'UPIT'] (15/15 passed)."
+  },
+  {
+    "id": "FLOW-17",
+    "status": "FIXED",
+    "summary": "'Pošalji ponudu' validates every line before the confirm dialog opens: name, quantity 1–999, a price above 0 for a sent quote, lead time 0–365. Errors appear on the fields and in the alert summary, and focus goes to the first invalid input. The server names the line in the field path (lines.N.price). If the server rejects a send, the dialog closes and the named field is marked and focused once the composer is no longer inert. Free lines default to 'Po porudžbini'. The price label reads 'Cena sa PDV-om' (COPY-11).",
+    "files": ["components/admin/inquiries/QuoteComposer.tsx", "convex/inquiriesAdmin.ts", "convex/inquiries.test.ts"],
+    "verification": "UI script at 1440 px with a free line, quantity '1,5' and an empty price. Result: dialogOpen false, focus on quote-l3-quantity, aria-invalid on the quantity and price inputs, alert 'Stavka 2: količina je ceo broj od 1 do 999. Stavka 2: upišite cenu.' (ui.json, composer-invalid-1440.webp). convex/inquiries.test.ts: sending an unpriced line fails with field 'lines.0.price'."
+  }
+]

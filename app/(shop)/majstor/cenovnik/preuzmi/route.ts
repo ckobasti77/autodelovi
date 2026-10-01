@@ -83,6 +83,10 @@ export async function GET(request: NextRequest): Promise<Response> {
   }
 
   const leaves = await leavesFor(slugs);
+  // Every slug unknown (an old bookmark, a renamed category): say so instead of an empty file.
+  if (leaves.length === 0) {
+    return plain(400, "Izabrane kategorije više ne postoje. Vratite se na cenovnik i izaberite ponovo.");
+  }
   const rows: PriceListRow[] = [];
   let truncated = false;
   outer: for (const leaf of leaves) {

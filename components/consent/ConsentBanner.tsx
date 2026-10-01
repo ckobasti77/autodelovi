@@ -2,31 +2,32 @@
 
 /**
  * Cookie consent (SEO-ADS §J6): a non-modal bottom sheet (`role="dialog"`, no focus trap, no
- * scrim) that is in the server HTML on the first visit — no layout shift, readable at first
- * paint, and „Prihvati sve“ / „Odbij sve“ work without JavaScript (form post to the Server
- * Action). Granular view: Neophodni (always on), Analitika, Oglašavanje. Reopened from the
- * footer („Podešavanja kolačića“).
+ * scrim). Granular view: Neophodni (always on), Analitika, Oglašavanje. Reopened from the
+ * footer („Podešavanja kolačića“). The markup lives in `ConsentPanel`; this is its interactive
+ * renderer.
+ *
+ * Never part of the first load (PERF-01/PERF-11): on a first visit the server renders the
+ * static `ConsentPanel` (readable at first paint, decisions work as a form post without
+ * JavaScript) and `ConsentGate` swaps this module in after hydration — in idle time or on the
+ * first interaction; returning visitors load it only when the footer reopens it.
  *
  * While mounted it registers its height as a bottom inset (A11Y-05), so focused page controls
  * scroll above it; Escape collapses it to the title and the decision buttons. The granular
- * view loads on demand (`ConsentDetails`). Returning visitors never download this module
- * until they reopen it: `ConsentRoot` renders `ConsentReopen` for them (PERF-11).
- * `data-nosnippet` keeps the cookie copy out of search snippets (SEO-11).
+ * view loads on demand (`ConsentDetails`). `data-nosnippet` keeps the cookie copy out of
+ * search snippets (SEO-11).
  */
 import { useMutation } from "convex/react";
 import dynamic from "next/dynamic";
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 
-import { saveConsent, saveConsentForm } from "@/app/actions/consent";
+import { saveConsent } from "@/app/actions/consent";
 import { api } from "@/convex/_generated/api";
 import type { ConsentChoice } from "@/lib/analytics/consent";
 import { useConsent } from "@/lib/analytics/consentStore";
 import { gsap, prefersReducedMotion, useGSAP } from "@/lib/gsap/client";
 import { EASE } from "@/constants/motion";
-import { Button } from "@/components/ui/Button";
-import { Link } from "@/components/ui/Link";
+import { ConsentPanel } from "@/components/consent/ConsentPanel";
 import { MAIN_ID } from "@/components/shell/SkipLink";
-import { ROUTES } from "@/constants/routes";
 import { useBottomInset } from "@/lib/dom/bottomInset";
 
 const loadDetails = () => import("@/components/consent/ConsentDetails");
@@ -162,111 +163,30 @@ export function ConsentBanner({
   if (!mounted) return null;
 
   return (
-    <div
-      ref={panel}
-      role="dialog"
-      aria-modal="false"
-      aria-labelledby={titleId}
-      aria-describedby={collapsed ? undefined : descId}
-      data-reveal="off"
-      data-nosnippet=""
-      data-collapsed={collapsed ? "" : undefined}
-      data-testid="consent-banner"
-      className="fixed inset-x-0 bottom-0 z-overlay px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-6 sm:pb-6"
-    >
-      <form
-        action={saveConsentForm}
-        onSubmit={onSubmit}
-        className="mx-auto flex max-w-[72rem] flex-col gap-4 rounded-sm border border-line-strong bg-surface-2 p-4 shadow-drawer sm:p-5 lg:flex-row lg:items-center lg:gap-8"
-      >
-        <div className="flex min-w-0 flex-1 flex-col gap-2">
-          <h2 id={titleId} className="type-h4 text-ink-1">
-            Kolačići
-          </h2>
-          {collapsed ? null : (
-            <p id={descId} className="max-w-[68ch] type-body-s text-ink-2">
-              Neophodne kolačiće koristimo za korpu i prijavu. Uz vašu dozvolu koristimo i
-              analitičke (Google Analytics) i oglasne (Google Ads, Meta) — da vidimo odakle dolazite
-              i koji oglasi vrede. Izbor menjate bilo kad, u podnožju strane.
-            </p>
-          )}
-          {detailed ? (
-            <ConsentDetails
-              analytics={analytics}
-              ads={ads}
-              onAnalyticsChange={setAnalytics}
-              onAdsChange={setAds}
-              focusFirst={focusSwitch}
-            />
-          ) : null}
-          <div className="flex flex-wrap items-center gap-x-5 type-body-s">
-            <Link
-              href={ROUTES.cookies}
-              variant="inline"
-              className="inline-flex min-h-6 items-center"
-            >
-              Više o kolačićima
-            </Link>
-            {!detailed ? (
-              <button
-                type="button"
-                onClick={() => {
-                  setCollapsed(false);
-                  setFocusSwitch(true);
-                  setDetailed(true);
-                }}
-                onPointerEnter={warmDetails}
-                onFocus={warmDetails}
-                className="inline-flex min-h-6 cursor-pointer items-center text-ink-1 underline decoration-line-strong underline-offset-4 transition-control hover:decoration-ink-1"
-              >
-                Podešavanja
-              </button>
-            ) : null}
-          </div>
-          {error ? (
-            <p role="alert" className="type-body-s text-danger">
-              {error}
-            </p>
-          ) : null}
-        </div>
-        {/* Phones: the two decisions side by side (A11Y-05: a shorter banner covers less). */}
-        <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-nowrap">
-          {detailed ? (
-            <Button
-              type="submit"
-              name="choice"
-              value="custom"
-              variant="quiet"
-              disabled={pending}
-              data-consent-focus
-              className="col-span-2 sm:min-w-36 sm:flex-1 lg:flex-none"
-            >
-              Sačuvaj izbor
-            </Button>
-          ) : null}
-          <Button
-            type="submit"
-            name="choice"
-            value="all"
-            variant="quiet"
-            disabled={pending}
-            data-consent-focus={detailed ? undefined : true}
-            className="sm:min-w-36 sm:flex-1 lg:flex-none"
-          >
-            Prihvati sve
-          </Button>
-          <Button
-            type="submit"
-            name="choice"
-            value="none"
-            variant="quiet"
-            disabled={pending}
-            className="sm:min-w-36 sm:flex-1 lg:flex-none"
-          >
-            Odbij sve
-          </Button>
-        </div>
-      </form>
-    </div>
+    <ConsentPanel
+      titleId={titleId}
+      descId={descId}
+      panelRef={panel}
+      collapsed={collapsed}
+      detailed={detailed}
+      details={
+        <ConsentDetails
+          analytics={analytics}
+          ads={ads}
+          onAnalyticsChange={setAnalytics}
+          onAdsChange={setAds}
+          focusFirst={focusSwitch}
+        />
+      }
+      pending={pending}
+      error={error}
+      onSubmit={onSubmit}
+      onSettings={() => {
+        setCollapsed(false);
+        setFocusSwitch(true);
+        setDetailed(true);
+      }}
+      onWarmSettings={warmDetails}
+    />
   );
 }

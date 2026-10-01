@@ -80,7 +80,7 @@ export function OrderStatusView({
                     {item.oem ? (
                       <>
                         {" · OEM "}
-                        <span className="type-code">{item.oem}</span>
+                        <span className="whitespace-nowrap type-code">{item.oem}</span>
                       </>
                     ) : null}
                     {" · "}

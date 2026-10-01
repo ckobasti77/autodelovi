@@ -1,0 +1,53 @@
+{
+ "width": 1440,
+ "engine": "chromium",
+ "reducedMotion": false,
+ "S0 after Tab through empty Ime, no submit (expect #co-lastName)": "input#co-lastName \"\"",
+ "S0 summary": "Proverite jedno polje:",
+ "A1 after empty Dalje (expect summary)": "div[alert]# \"Proverite 4 polja:Upišite ime.Upišite pr\"",
+ "A1 summary": "Proverite 4 polja:",
+ "A3 after Tab from fixed Ime (expect #co-lastName)": "input#co-lastName \"\"",
+ "A3 summary": "Proverite 3 polja:",
+ "A4 values after typing (expect lastName Petrović)": {
+  "co-firstName": "Petar",
+  "co-lastName": "Petrović",
+  "co-phone": "",
+  "co-email": ""
+ },
+ "B1 per-keystroke focus while typing Prezime (expect input#co-lastName)": [
+  "P:input#co-lastName \"\"",
+  "e:input#co-lastName \"\"",
+  "t:input#co-lastName \"\"",
+  "r:input#co-lastName \"\"",
+  "o:input#co-lastName \"\"",
+  "v:input#co-lastName \"\"",
+  "i:input#co-lastName \"\"",
+  "c:input#co-lastName \"\""
+ ],
+ "B2 after click Telefon (expect #co-phone)": "input#co-phone \"\"",
+ "B3 values": {
+  "co-firstName": "Petar",
+  "co-lastName": "Petrovic",
+  "co-phone": "0641234567",
+  "co-email": ""
+ },
+ "B3 summary": "Proverite 2 polja:",
+ "C second failed Dalje (summary before / after)": {
+  "before": "Proverite jedno polje:",
+  "after": "Proverite jedno polje:"
+ },
+ "C focus (expect summary)": "div[alert]# \"Proverite jedno polje:Upišite adresu e-p\"",
+ "C after fixing e-mail and Tab (expect not the summary)": "button[checkbox]#co-isCompany \"\"",
+ "C summary after fix (expect null)": null,
+ "D after successful Dalje (expect h2#step-title)": "h2#step-title \"Dostava\"",
+ "E on terms step": true,
+ "E after submit without terms (expect summary)": "div[alert]# \"Proverite jedno polje:Potrebna je saglas\"",
+ "E summary": "Proverite jedno polje:",
+ "E after checking terms (expect #co-terms)": "button[checkbox]#co-terms \"\"",
+ "E summary after checking terms (expect null)": "Proverite jedno polje:",
+ "E after unchecking terms (expect #co-terms)": "button[checkbox]#co-terms \"\"",
+ "console/page errors": {
+  "console": [],
+  "pageErrors": []
+ }
+}

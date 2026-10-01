@@ -19,7 +19,10 @@ const ITEMS = [
 export function AccountNav() {
   const pathname = usePathname();
   return (
-    <div className="flex flex-wrap items-end justify-between gap-3 border-b border-line" data-reveal="off">
+    <div
+      className="flex flex-wrap items-end justify-between gap-3 border-b border-line"
+      data-reveal="off"
+    >
       <nav aria-label="Nalog" className="-mb-px flex overflow-x-auto">
         <ul className="flex gap-6">
           {ITEMS.map((item) => {
@@ -31,7 +34,9 @@ export function AccountNav() {
                   aria-current={active ? "page" : undefined}
                   className={cn(
                     "inline-flex h-11 items-center whitespace-nowrap border-b-2 type-body-s font-medium transition-control",
-                    active ? "border-accent text-ink-1" : "border-transparent text-ink-2 hover:text-ink-1",
+                    active
+                      ? "border-accent text-ink-1"
+                      : "border-transparent text-ink-2 hover:text-ink-1",
                   )}
                 >
                   {item.label}
@@ -41,7 +46,8 @@ export function AccountNav() {
           })}
         </ul>
       </nav>
-      <div className="pb-1.5">
+      {/* Phones: sign-out sits at the end of the account pages instead (VIS-28). */}
+      <div className="hidden pb-1.5 lg:block">
         <SignOutButton />
       </div>
     </div>

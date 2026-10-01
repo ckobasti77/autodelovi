@@ -1,0 +1,42 @@
+{
+  "chromium-390-home": {
+    "delay": 6000,
+    "visibleAt": 1141,
+    "hydratedBeforeTyping": false,
+    "typedAt": 1723,
+    "domAfterTyping": "5Q0615505R",
+    "hydratedRightAfterTyping": false,
+    "hydratedAt": 7480,
+    "after": {
+      "value": "5Q0615505R",
+      "sameNode": true,
+      "focused": true
+    },
+    "chunkRequestsDelayed": 25
+  },
+  "chromium-390-upit": {
+    "delay": 6000,
+    "visibleAt": 648,
+    "hydratedBeforeTyping": false,
+    "typedAt": 2050,
+    "domAfterTyping": {
+      "vin": "WVWZZZ1KZ8W123456",
+      "msg": "Turbina za Golf 7, dizel."
+    },
+    "hydratedRightAfterTyping": false,
+    "hydratedAt": 6964,
+    "after": {
+      "vin": "WVWZZZ1KZ8W123456",
+      "sameNode": true,
+      "msg": "Turbina za Golf 7, dizel.",
+      "vinCounter": "",
+      "msgCounter": "0 / 2.000",
+      "brand": "volkswagen"
+    },
+    "afterSubmit": {
+      "url": "/upit/hvala/<token>",
+      "alerts": []
+    },
+    "chunkRequestsDelayed": 47
+  }
+}

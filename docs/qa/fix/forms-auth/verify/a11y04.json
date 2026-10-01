@@ -1,0 +1,457 @@
+[
+  {
+    "label": "chromium-nojs-390 /prijava",
+    "form": {
+      "method": "post",
+      "action": null,
+      "names": [
+        "email",
+        "password"
+      ],
+      "submitButtons": [
+        {
+          "text": "Prijavi se",
+          "disabled": true
+        }
+      ],
+      "noscript": [
+        "Za prijavu je potreban JavaScript. Uključite ga u pregledaču, pa osvežite stranicu."
+      ]
+    },
+    "navAfterSubmitAttempts": [],
+    "finalUrl": "/prijava",
+    "leaked": false,
+    "evidence": "docs/qa/fix/forms-auth/verify/a11y04-nojs-prijava-chromium-390.webp",
+    "forcedNativeSubmit": {
+      "nav": [
+        "POST /prijava"
+      ],
+      "finalUrl": "/prijava",
+      "leaked": false,
+      "response": {
+        "status": 200,
+        "echoesPassword": false,
+        "echoesEmail": false
+      }
+    }
+  },
+  {
+    "label": "chromium-nojs-390 /registracija",
+    "form": {
+      "method": "post",
+      "action": null,
+      "names": [
+        "name",
+        "email",
+        "password"
+      ],
+      "submitButtons": [
+        {
+          "text": "Napravi nalog",
+          "disabled": true
+        }
+      ],
+      "noscript": [
+        "Za nalog je potreban JavaScript. Uključite ga u pregledaču, pa osvežite stranicu."
+      ]
+    },
+    "navAfterSubmitAttempts": [],
+    "finalUrl": "/registracija",
+    "leaked": false,
+    "forcedNativeSubmit": {
+      "nav": [
+        "POST /registracija"
+      ],
+      "finalUrl": "/registracija",
+      "leaked": false,
+      "response": {
+        "status": 200,
+        "echoesPassword": false,
+        "echoesEmail": false
+      }
+    }
+  },
+  {
+    "label": "chromium-nojs-390 /zaboravljena-lozinka",
+    "form": {
+      "method": "post",
+      "action": null,
+      "names": [],
+      "submitButtons": [
+        {
+          "text": "Pošalji kod",
+          "disabled": true
+        }
+      ],
+      "noscript": [
+        "Za nalog je potreban JavaScript. Uključite ga u pregledaču, pa osvežite stranicu."
+      ]
+    },
+    "navAfterSubmitAttempts": [],
+    "finalUrl": "/zaboravljena-lozinka",
+    "leaked": false
+  },
+  {
+    "label": "chromium-nojs-390 /za-majstore/registracija",
+    "form": {
+      "method": "post",
+      "action": null,
+      "names": [
+        "email",
+        "password",
+        "companyName",
+        "pib",
+        "mb",
+        "contactPerson",
+        "phone",
+        "city",
+        "address"
+      ],
+      "submitButtons": [
+        {
+          "text": "Registrujte servis",
+          "disabled": true
+        }
+      ],
+      "noscript": [
+        "Za registraciju je potreban JavaScript. Uključite ga u pregledaču, pa osvežite stranicu."
+      ]
+    },
+    "navAfterSubmitAttempts": [],
+    "finalUrl": "/za-majstore/registracija",
+    "leaked": false,
+    "evidence": "docs/qa/fix/forms-auth/verify/a11y04-nojs-majstor-chromium-390.webp"
+  },
+  {
+    "label": "chromium-nojs-390 /upit",
+    "form": {
+      "method": "post",
+      "action": null,
+      "names": [
+        "website",
+        "vin",
+        "brandSlug",
+        "modelSlug",
+        "generationSlug",
+        "year",
+        "message",
+        "name",
+        "phone",
+        "email"
+      ],
+      "submitButtons": [
+        {
+          "text": "Pošalji upit",
+          "disabled": true
+        }
+      ],
+      "noscript": [
+        "Za slanje upita potreban je JavaScript. Uključite ga u pregledaču, pa osvežite stranicu."
+      ]
+    },
+    "navAfterSubmitAttempts": [],
+    "finalUrl": "/upit",
+    "leaked": false,
+    "evidence": "docs/qa/fix/forms-auth/verify/a11y04-nojs-upit-chromium-390.webp",
+    "forcedNativeSubmit": {
+      "nav": [
+        "POST /upit"
+      ],
+      "finalUrl": "/upit",
+      "leaked": false,
+      "response": {
+        "status": 200,
+        "echoesPassword": false,
+        "echoesEmail": false
+      }
+    }
+  },
+  {
+    "label": "chromium-nojs-390 /deo/kocione-plocice-prednje-demo-0012",
+    "form": {
+      "method": "post",
+      "action": null,
+      "names": [
+        "email",
+        "website"
+      ],
+      "submitButtons": [
+        {
+          "text": "Obavesti me",
+          "disabled": true
+        }
+      ],
+      "noscript": []
+    },
+    "navAfterSubmitAttempts": [],
+    "finalUrl": "/deo/kocione-plocice-prednje-demo-0012",
+    "leaked": false,
+    "evidence": "docs/qa/fix/forms-auth/verify/a11y04-nojs-back-in-stock-chromium-390.webp"
+  },
+  {
+    "label": "chromium-nojs-1440 /prijava",
+    "form": {
+      "method": "post",
+      "action": null,
+      "names": [
+        "email",
+        "password"
+      ],
+      "submitButtons": [
+        {
+          "text": "Prijavi se",
+          "disabled": true
+        }
+      ],
+      "noscript": [
+        "Za prijavu je potreban JavaScript. Uključite ga u pregledaču, pa osvežite stranicu."
+      ]
+    },
+    "navAfterSubmitAttempts": [],
+    "finalUrl": "/prijava",
+    "leaked": false,
+    "evidence": "docs/qa/fix/forms-auth/verify/a11y04-nojs-prijava-chromium-1440.webp"
+  },
+  {
+    "label": "chromium-js-prehydration-390 /prijava",
+    "hydratedAtSubmit": false,
+    "form": {
+      "method": "post",
+      "action": null,
+      "names": [
+        "email",
+        "password"
+      ],
+      "submitButtons": [
+        {
+          "text": "Prijavi se",
+          "disabled": true
+        }
+      ],
+      "noscript": [
+        "Za prijavu je potreban JavaScript. Uključite ga u pregledaču, pa osvežite stranicu."
+      ]
+    },
+    "navBeforeHydration": [],
+    "enabledAfterHydration": true,
+    "finalUrl": "/prijava",
+    "leaked": false,
+    "afterHydratedSubmit": {
+      "nav": [],
+      "url": "/prijava",
+      "alert": [
+        "Pogrešna adresa e-pošte ili lozinka. Proverite podatke i pokušajte ponovo."
+      ],
+      "passwordLength": 17
+    }
+  },
+  {
+    "label": "chromium-js-prehydration-390 /registracija",
+    "hydratedAtSubmit": false,
+    "form": {
+      "method": "post",
+      "action": null,
+      "names": [
+        "name",
+        "email",
+        "password"
+      ],
+      "submitButtons": [
+        {
+          "text": "Napravi nalog",
+          "disabled": true
+        }
+      ],
+      "noscript": [
+        "Za nalog je potreban JavaScript. Uključite ga u pregledaču, pa osvežite stranicu."
+      ]
+    },
+    "navBeforeHydration": [],
+    "enabledAfterHydration": true,
+    "finalUrl": "/registracija",
+    "leaked": false
+  },
+  {
+    "label": "chromium-js-prehydration-390 /zaboravljena-lozinka",
+    "hydratedAtSubmit": false,
+    "form": {
+      "method": "post",
+      "action": null,
+      "names": [],
+      "submitButtons": [
+        {
+          "text": "Pošalji kod",
+          "disabled": true
+        }
+      ],
+      "noscript": [
+        "Za nalog je potreban JavaScript. Uključite ga u pregledaču, pa osvežite stranicu."
+      ]
+    },
+    "navBeforeHydration": [],
+    "enabledAfterHydration": true,
+    "finalUrl": "/zaboravljena-lozinka",
+    "leaked": false
+  },
+  {
+    "label": "chromium-js-prehydration-390 /za-majstore/registracija",
+    "hydratedAtSubmit": false,
+    "form": {
+      "method": "post",
+      "action": null,
+      "names": [
+        "email",
+        "password",
+        "companyName",
+        "pib",
+        "mb",
+        "contactPerson",
+        "phone",
+        "city",
+        "address"
+      ],
+      "submitButtons": [
+        {
+          "text": "Registrujte servis",
+          "disabled": true
+        }
+      ],
+      "noscript": [
+        "Za registraciju je potreban JavaScript. Uključite ga u pregledaču, pa osvežite stranicu."
+      ]
+    },
+    "navBeforeHydration": [],
+    "enabledAfterHydration": true,
+    "finalUrl": "/za-majstore/registracija",
+    "leaked": false
+  },
+  {
+    "label": "chromium-js-prehydration-390 /upit",
+    "hydratedAtSubmit": false,
+    "form": {
+      "method": "post",
+      "action": null,
+      "names": [
+        "website",
+        "vin",
+        "brandSlug",
+        "modelSlug",
+        "generationSlug",
+        "year",
+        "message",
+        "name",
+        "phone",
+        "email"
+      ],
+      "submitButtons": [
+        {
+          "text": "Pošalji upit",
+          "disabled": true
+        }
+      ],
+      "noscript": [
+        "Za slanje upita potreban je JavaScript. Uključite ga u pregledaču, pa osvežite stranicu."
+      ]
+    },
+    "navBeforeHydration": [],
+    "enabledAfterHydration": true,
+    "finalUrl": "/upit",
+    "leaked": false
+  },
+  {
+    "label": "firefox-nojs-390 /prijava",
+    "form": {
+      "method": "post",
+      "action": null,
+      "names": [
+        "email",
+        "password"
+      ],
+      "submitButtons": [
+        {
+          "text": "Prijavi se",
+          "disabled": true
+        }
+      ],
+      "noscript": [
+        "Za prijavu je potreban JavaScript. Uključite ga u pregledaču, pa osvežite stranicu."
+      ]
+    },
+    "navAfterSubmitAttempts": [],
+    "finalUrl": "/prijava",
+    "leaked": false,
+    "evidence": "docs/qa/fix/forms-auth/verify/a11y04-nojs-prijava-firefox-390.webp"
+  },
+  {
+    "label": "firefox-nojs-390 /registracija",
+    "form": {
+      "method": "post",
+      "action": null,
+      "names": [
+        "name",
+        "email",
+        "password"
+      ],
+      "submitButtons": [
+        {
+          "text": "Napravi nalog",
+          "disabled": true
+        }
+      ],
+      "noscript": [
+        "Za nalog je potreban JavaScript. Uključite ga u pregledaču, pa osvežite stranicu."
+      ]
+    },
+    "navAfterSubmitAttempts": [],
+    "finalUrl": "/registracija",
+    "leaked": false
+  },
+  {
+    "label": "webkit-nojs-390 /prijava",
+    "form": {
+      "method": "post",
+      "action": null,
+      "names": [
+        "email",
+        "password"
+      ],
+      "submitButtons": [
+        {
+          "text": "Prijavi se",
+          "disabled": true
+        }
+      ],
+      "noscript": [
+        "Za prijavu je potreban JavaScript. Uključite ga u pregledaču, pa osvežite stranicu."
+      ]
+    },
+    "navAfterSubmitAttempts": [],
+    "finalUrl": "/prijava",
+    "leaked": false,
+    "evidence": "docs/qa/fix/forms-auth/verify/a11y04-nojs-prijava-webkit-390.webp"
+  },
+  {
+    "label": "webkit-nojs-390 /registracija",
+    "form": {
+      "method": "post",
+      "action": null,
+      "names": [
+        "name",
+        "email",
+        "password"
+      ],
+      "submitButtons": [
+        {
+          "text": "Napravi nalog",
+          "disabled": true
+        }
+      ],
+      "noscript": [
+        "Za nalog je potreban JavaScript. Uključite ga u pregledaču, pa osvežite stranicu."
+      ]
+    },
+    "navAfterSubmitAttempts": [],
+    "finalUrl": "/registracija",
+    "leaked": false
+  }
+]

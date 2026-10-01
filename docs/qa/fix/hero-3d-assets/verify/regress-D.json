@@ -1,0 +1,170 @@
+{
+  "D": [
+    {
+      "viewport": "390x844",
+      "posterSrc": "car-assembled-m-640.avif",
+      "canvas": {
+        "stage": [
+          390,
+          672
+        ],
+        "car": [
+          10,
+          208,
+          373,
+          328
+        ],
+        "pctH": 48.8,
+        "pctW": 95.6
+      },
+      "poster": {
+        "stage": [
+          390,
+          672
+        ],
+        "car": [
+          9,
+          207,
+          374,
+          330
+        ],
+        "pctH": 49.1,
+        "pctW": 95.9
+      },
+      "maxDiffPx": 2
+    },
+    {
+      "viewport": "800x1000",
+      "posterSrc": "car-assembled-t-1080.avif",
+      "canvas": {
+        "stage": [
+          800,
+          828
+        ],
+        "car": [
+          52,
+          202,
+          712,
+          510
+        ],
+        "pctH": 61.6,
+        "pctW": 89
+      },
+      "poster": {
+        "stage": [
+          800,
+          828
+        ],
+        "car": [
+          52,
+          202,
+          712,
+          510
+        ],
+        "pctH": 61.6,
+        "pctW": 89
+      },
+      "maxDiffPx": 0
+    },
+    {
+      "viewport": "1100x800",
+      "posterSrc": "car-assembled-1440.avif",
+      "canvas": {
+        "stage": [
+          1100,
+          735
+        ],
+        "car": [
+          20,
+          239,
+          1024,
+          476
+        ],
+        "pctH": 64.8,
+        "pctW": 93.1
+      },
+      "poster": {
+        "stage": [
+          1100,
+          735
+        ],
+        "car": [
+          20,
+          297,
+          987,
+          418
+        ],
+        "pctH": 56.9,
+        "pctW": 89.7
+      },
+      "maxDiffPx": 58
+    },
+    {
+      "viewport": "800x1000",
+      "posterSrc": "car-assembled-t-1080.avif",
+      "canvas": {
+        "stage": [
+          800,
+          828
+        ],
+        "car": [
+          52,
+          202,
+          712,
+          510
+        ],
+        "pctH": 61.6,
+        "pctW": 89
+      },
+      "poster": {
+        "stage": [
+          800,
+          828
+        ],
+        "car": [
+          52,
+          202,
+          712,
+          510
+        ],
+        "pctH": 61.6,
+        "pctW": 89
+      },
+      "maxDiffPx": 0
+    },
+    {
+      "viewport": "390x844",
+      "posterSrc": "car-assembled-m-640.avif",
+      "canvas": {
+        "stage": [
+          390,
+          672
+        ],
+        "car": [
+          10,
+          208,
+          373,
+          328
+        ],
+        "pctH": 48.8,
+        "pctW": 95.6
+      },
+      "poster": {
+        "stage": [
+          390,
+          672
+        ],
+        "car": [
+          9,
+          207,
+          374,
+          330
+        ],
+        "pctH": 49.1,
+        "pctW": 95.9
+      },
+      "maxDiffPx": 2
+    }
+  ],
+  "Derrors": []
+}

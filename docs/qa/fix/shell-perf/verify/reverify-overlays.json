@@ -1,0 +1,100 @@
+{
+  "overlays": {
+    "phoneInitialLazyModules": [
+      "ConsentBanner",
+      "Dialog",
+      "SearchBox",
+      "Sheet"
+    ],
+    "searchTriggerAttrs": {
+      "haspopup": "dialog",
+      "expanded": "false"
+    },
+    "searchFirstOpenMs": 425,
+    "afterSearchOpenModules": [
+      "ConsentBanner",
+      "Dialog",
+      "HeaderSearchPanel",
+      "SearchBox",
+      "Sheet"
+    ],
+    "searchInputFocused": true,
+    "searchExpandedWhileOpen": "true",
+    "searchResults": [
+      "Kočioni diskovi9",
+      "Kočioni disk prednji 320 × 30 mmATE",
+      "Kočioni disk prednji 312 × 25 mmBrembo"
+    ],
+    "searchAfterEscape": {
+      "dialogs": 0,
+      "focus": "button:Pretraga delova",
+      "expanded": "false"
+    },
+    "searchSecondOpenMs": 83,
+    "searchSecondOpenFocused": true,
+    "searchAfterCloseButton": {
+      "dialogs": 0,
+      "focus": "button:Pretraga delova"
+    },
+    "menuTriggerAttrs": {
+      "haspopup": "dialog",
+      "expanded": "false",
+      "label": "Otvori meni"
+    },
+    "menuFirstOpenMs": 430,
+    "menuOpen": {
+      "expanded": "true",
+      "focusInside": true,
+      "focus": "button:Zatvori",
+      "links": [
+        "Delovi",
+        "Vozila",
+        "Za majstore",
+        "Upit po broju šasije",
+        "Moj nalog",
+        "Pošaljite upit po broju šasije",
+        "Svi podaci za kontakt"
+      ]
+    },
+    "afterMenuOpenModules": [
+      "ConsentBanner",
+      "Dialog",
+      "HeaderSearchPanel",
+      "MobileNavPanel",
+      "SearchBox",
+      "Sheet"
+    ],
+    "menuAfterEscape": {
+      "dialogs": 0,
+      "focus": "button:Otvori meni",
+      "expanded": "false"
+    },
+    "menuLinkNav": {
+      "path": "/kontakt",
+      "dialogs": 0,
+      "expanded": "false"
+    },
+    "phoneErrors": [],
+    "desktopInitialLazyModules": [
+      "ConsentBanner",
+      "Dialog",
+      "SearchBox",
+      "Sheet"
+    ],
+    "slashOpens": true,
+    "slashInputFocused": true,
+    "slashAfterEscapeFocus": "div:Interaktivni 3D prikaz automobila u rend",
+    "enterOpens": true,
+    "enterAfterEscapeFocus": "button:header-search-trigger",
+    "desktopMenuTriggerDisplay": "none",
+    "desktopErrors": [],
+    "reducedMenuOpens": true,
+    "reducedMenuFocus": "button:Zatvori",
+    "reducedMenuOpacity": "1",
+    "reducedMenuAfterEscape": {
+      "dialogs": 0,
+      "focus": "button:Otvori meni"
+    },
+    "reducedErrors": []
+  }
+}

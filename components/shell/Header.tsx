@@ -21,14 +21,14 @@ export type HeaderProps = {
 };
 
 /**
- * Icon-link look without a display utility: every use adds its own (`hidden sm:inline-flex`, …).
- * A display class in the shared style would collide with `hidden` (both unprefixed), and
+ * Link looks without a display utility: every use adds its own (`hidden sm:inline-flex`, …).
+ * A display class in a shared style would collide with `hidden` (both unprefixed), and
  * Tailwind's output order — not the class order — would decide which one wins (VIS-03).
  */
 const iconLink =
   "size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1";
 const textLink =
-  "inline-flex h-11 items-center gap-2 rounded-xs px-2 text-[0.9375rem] font-medium text-ink-2 transition-control hover:text-ink-1";
+  "h-11 shrink-0 items-center gap-2 rounded-xs px-2 text-[0.9375rem] font-medium text-ink-2 transition-control hover:text-ink-1";
 
 /**
  * Site header (§10.1): 64 px (56 below 1024), bg at 88 % + 12 px blur (solid under reduced

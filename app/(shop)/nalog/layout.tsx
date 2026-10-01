@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { requireAccountPage } from "@/lib/server/auth";
 import { RevealText } from "@/components/text-reveal/RevealText";
 import { AccountNav } from "@/components/account/AccountNav";
+import { SignOutButton } from "@/components/auth/SignInForm";
 import { ROUTES } from "@/constants/routes";
 
 export const metadata: Metadata = { robots: { index: false, follow: false } };
@@ -23,6 +24,9 @@ export default async function AccountLayout({ children }: LayoutProps<"/nalog">)
         <AccountNav />
       </div>
       <div className="mt-8">{children}</div>
+      <div className="mt-12 border-t border-line pt-6 lg:hidden" data-reveal="off">
+        <SignOutButton />
+      </div>
     </div>
   );
 }

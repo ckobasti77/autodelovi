@@ -1,0 +1,18 @@
+{
+  "legal": {
+    "cookies": "2026-09-29",
+    "privacy": "2026-09-29",
+    "terms": "2026-09-29"
+  },
+  "forged": {
+    "code": "CONFLICT",
+    "message": "Uslovi su izmenjeni — osvežite stranicu."
+  },
+  "created": "UP-2026-000086",
+  "storedCampaignLength": 200,
+  "storedGclid": "ok_id-1scriptzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+  "storedGclidLength": 512,
+  "listCampaignLength": 60,
+  "storedConsent": "Error: [Request ID: afdd51ff5bba35b4] Server Error\nArgumentValidationError: Object contains extra field `phone` that is not in the validator.\n\nObject: {phone: \"064 000 0022\"}\nValidator: v.object({email: v.optional(v.string()), userId: v.optional(v.id(\"users\"))})\n\n",
+  "consentTimeFromServer": "n/a"
+}

@@ -1,0 +1,1605 @@
+[
+  {
+    "tag": "delovi-1440",
+    "url": "/delovi",
+    "w": 1440,
+    "h": 900,
+    "find": "Kočnice",
+    "status": 200,
+    "images": [
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fmotor.webp&w=256&q=75",
+        "slug": "motor",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          248,
+          198
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&w=256&q=75",
+        "slug": "turbina",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          248,
+          198
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Finterkuler.webp&w=256&q=75",
+        "slug": "interkuler",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          248,
+          198
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fusisna-grana.webp&w=256&q=75",
+        "slug": "usisna-grana",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          248,
+          198
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&w=256&q=75",
+        "slug": "brizgaljke-pumpa-goriva",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          248,
+          198
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=256&q=75",
+        "slug": "zupcasti-kais-vodena-pumpa",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          248,
+          198
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkais-alternatora.webp&w=256&q=75",
+        "slug": "kais-alternatora",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          248,
+          198
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Falternator.webp&w=256&q=75",
+        "slug": "alternator",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          248,
+          198
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fanlaser.webp&w=256&q=75",
+        "slug": "anlaser",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          248,
+          198
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fpaljenje-grejaci.webp&w=256&q=75",
+        "slug": "paljenje-grejaci",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          248,
+          198
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkarter-dihtunzi.webp&w=256&q=75",
+        "slug": "karter-dihtunzi",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          248,
+          198
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fegr-ventil.webp&w=256&q=75",
+        "slug": "egr-ventil",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          248,
+          198
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fnosaci-motora.webp&w=256&q=75",
+        "slug": "nosaci-motora",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          248,
+          198
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fdpf-katalizator.webp&w=256&q=75",
+        "slug": "dpf-katalizator",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          248,
+          198
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fauspuh.webp&w=256&q=75",
+        "slug": "auspuh",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          248,
+          198
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&w=256&q=75",
+        "slug": "hladnjak-ventilator",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          248,
+          198
+        ],
+        "complete": true,
+        "opacity": "1"
+      }
+    ],
+    "served": [
+      {
+        "slug": "motor",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fmotor.webp&w=256&q=75",
+        "madVsNew": 0.91
+      },
+      {
+        "slug": "turbina",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&w=256&q=75",
+        "madVsNew": 8.45
+      },
+      {
+        "slug": "interkuler",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Finterkuler.webp&w=256&q=75",
+        "madVsNew": 0.47
+      },
+      {
+        "slug": "usisna-grana",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fusisna-grana.webp&w=256&q=75",
+        "madVsNew": 0.71
+      },
+      {
+        "slug": "brizgaljke-pumpa-goriva",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&w=256&q=75",
+        "madVsNew": 3.55
+      },
+      {
+        "slug": "zupcasti-kais-vodena-pumpa",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=256&q=75",
+        "madVsNew": 4.61
+      },
+      {
+        "slug": "kais-alternatora",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkais-alternatora.webp&w=256&q=75",
+        "madVsNew": 0.68
+      },
+      {
+        "slug": "alternator",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Falternator.webp&w=256&q=75",
+        "madVsNew": 1.1
+      },
+      {
+        "slug": "anlaser",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fanlaser.webp&w=256&q=75",
+        "madVsNew": 1.36
+      },
+      {
+        "slug": "paljenje-grejaci",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fpaljenje-grejaci.webp&w=256&q=75",
+        "madVsNew": 1.14
+      },
+      {
+        "slug": "karter-dihtunzi",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkarter-dihtunzi.webp&w=256&q=75",
+        "madVsNew": 0.6
+      },
+      {
+        "slug": "egr-ventil",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fegr-ventil.webp&w=256&q=75",
+        "madVsNew": 1.06
+      },
+      {
+        "slug": "nosaci-motora",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fnosaci-motora.webp&w=256&q=75",
+        "madVsNew": 0.91
+      },
+      {
+        "slug": "dpf-katalizator",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fdpf-katalizator.webp&w=256&q=75",
+        "madVsNew": 0.48
+      },
+      {
+        "slug": "auspuh",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fauspuh.webp&w=256&q=75",
+        "madVsNew": 0.36
+      },
+      {
+        "slug": "hladnjak-ventilator",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&w=256&q=75",
+        "madVsNew": 14.98
+      },
+      {
+        "slug": "termostat-creva",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ftermostat-creva.webp&w=256&q=75",
+        "madVsNew": 0.84
+      },
+      {
+        "slug": "klima",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fklima.webp&w=256&q=75",
+        "madVsNew": 0.56
+      },
+      {
+        "slug": "kvacilo-zamajac",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=256&q=75",
+        "madVsNew": 17.16
+      },
+      {
+        "slug": "menjac",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fmenjac.webp&w=256&q=75",
+        "madVsNew": 1.07
+      },
+      {
+        "slug": "poluosovine",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fpoluosovine.webp&w=256&q=75",
+        "madVsNew": 0.39
+      },
+      {
+        "slug": "amortizeri-opruge",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&w=256&q=75",
+        "madVsNew": 5.48
+      },
+      {
+        "slug": "ramena-selen-blokovi",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&w=256&q=75",
+        "madVsNew": 6.98
+      },
+      {
+        "slug": "spone-stabilizatori",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fspone-stabilizatori.webp&w=256&q=75",
+        "madVsNew": 0.5
+      },
+      {
+        "slug": "letva-volana",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fletva-volana.webp&w=256&q=75",
+        "madVsNew": 0.54
+      },
+      {
+        "slug": "lezaj-glavcina",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Flezaj-glavcina.webp&w=256&q=75",
+        "madVsNew": 1.13
+      },
+      {
+        "slug": "kocioni-diskovi",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+        "madVsNew": 14.6
+      },
+      {
+        "slug": "kocione-plocice",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75",
+        "madVsNew": 13.67
+      },
+      {
+        "slug": "kocione-celjusti",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-celjusti.webp&w=256&q=75",
+        "madVsNew": 1.02
+      },
+      {
+        "slug": "abs-senzori",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fabs-senzori.webp&w=256&q=75",
+        "madVsNew": 0.3
+      },
+      {
+        "slug": "akumulator",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fakumulator.webp&w=256&q=75",
+        "madVsNew": 14.55
+      },
+      {
+        "slug": "farovi",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffarovi.webp&w=256&q=75",
+        "madVsNew": 10.16
+      },
+      {
+        "slug": "stop-svetla",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fstop-svetla.webp&w=256&q=75",
+        "madVsNew": 0.7
+      },
+      {
+        "slug": "senzori",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fsenzori.webp&w=256&q=75",
+        "madVsNew": 0.38
+      },
+      {
+        "slug": "hauba",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fhauba.webp&w=256&q=75",
+        "madVsNew": 0.35
+      },
+      {
+        "slug": "branici",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbranici.webp&w=256&q=75",
+        "madVsNew": 0.5
+      },
+      {
+        "slug": "blatobrani",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fblatobrani.webp&w=256&q=75",
+        "madVsNew": 0.54
+      },
+      {
+        "slug": "vrata",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fvrata.webp&w=256&q=75",
+        "madVsNew": 0.41
+      },
+      {
+        "slug": "retrovizori",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fretrovizori.webp&w=256&q=75",
+        "madVsNew": 0.54
+      },
+      {
+        "slug": "stakla",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fstakla.webp&w=256&q=75",
+        "madVsNew": 0.7
+      },
+      {
+        "slug": "brisaci",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrisaci.webp&w=256&q=75",
+        "madVsNew": 0.37
+      },
+      {
+        "slug": "felne-gume",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffelne-gume.webp&w=256&q=75",
+        "madVsNew": 1.15
+      },
+      {
+        "slug": "filteri",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffilteri.webp&w=256&q=75",
+        "madVsNew": 10.02
+      },
+      {
+        "slug": "ulja-tecnosti",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fulja-tecnosti.webp&w=256&q=75",
+        "madVsNew": 0.61
+      }
+    ],
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "tag": "kocnice-1440",
+    "url": "/delovi/kocnice",
+    "w": 1440,
+    "h": 900,
+    "status": 200,
+    "images": [
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75",
+        "slug": "kocioni-diskovi",
+        "natural": [
+          316,
+          316
+        ],
+        "drawn": [
+          316,
+          237
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          316,
+          316
+        ],
+        "drawn": [
+          316,
+          237
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-celjusti.webp&w=384&q=75",
+        "slug": "kocione-celjusti",
+        "natural": [
+          316,
+          316
+        ],
+        "drawn": [
+          316,
+          237
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fabs-senzori.webp&w=384&q=75",
+        "slug": "abs-senzori",
+        "natural": [
+          316,
+          316
+        ],
+        "drawn": [
+          316,
+          237
+        ],
+        "complete": true,
+        "opacity": "1"
+      }
+    ],
+    "served": [
+      {
+        "slug": "kocioni-diskovi",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=384&q=75",
+        "madVsNew": 14.62
+      },
+      {
+        "slug": "kocione-plocice",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "madVsNew": 13.63
+      },
+      {
+        "slug": "kocione-celjusti",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-celjusti.webp&w=384&q=75",
+        "madVsNew": 13.02
+      },
+      {
+        "slug": "abs-senzori",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fabs-senzori.webp&w=384&q=75",
+        "madVsNew": 1.53
+      }
+    ],
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "tag": "home-1440",
+    "url": "/",
+    "w": 1440,
+    "h": 900,
+    "find": "Najtraženije kategorije",
+    "status": 200,
+    "images": [
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          316,
+          253
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+        "slug": "kocioni-diskovi",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          316,
+          253
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&w=256&q=75",
+        "slug": "amortizeri-opruge",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          316,
+          253
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&w=256&q=75",
+        "slug": "ramena-selen-blokovi",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          316,
+          253
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=256&q=75",
+        "slug": "zupcasti-kais-vodena-pumpa",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          316,
+          253
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=256&q=75",
+        "slug": "kvacilo-zamajac",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          316,
+          253
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&w=256&q=75",
+        "slug": "turbina",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          316,
+          253
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffilteri.webp&w=256&q=75",
+        "slug": "filteri",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          316,
+          253
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fakumulator.webp&w=256&q=75",
+        "slug": "akumulator",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          316,
+          253
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffarovi.webp&w=256&q=75",
+        "slug": "farovi",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          316,
+          253
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&w=256&q=75",
+        "slug": "hladnjak-ventilator",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          316,
+          253
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&w=256&q=75",
+        "slug": "brizgaljke-pumpa-goriva",
+        "natural": [
+          230,
+          230
+        ],
+        "drawn": [
+          316,
+          253
+        ],
+        "complete": true,
+        "opacity": "1"
+      }
+    ],
+    "served": [
+      {
+        "slug": "kocione-plocice",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=256&q=75",
+        "madVsNew": 13.67
+      },
+      {
+        "slug": "kocioni-diskovi",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=256&q=75",
+        "madVsNew": 14.6
+      },
+      {
+        "slug": "amortizeri-opruge",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&w=256&q=75",
+        "madVsNew": 5.48
+      },
+      {
+        "slug": "ramena-selen-blokovi",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&w=256&q=75",
+        "madVsNew": 6.98
+      },
+      {
+        "slug": "zupcasti-kais-vodena-pumpa",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=256&q=75",
+        "madVsNew": 4.61
+      },
+      {
+        "slug": "kvacilo-zamajac",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=256&q=75",
+        "madVsNew": 17.16
+      },
+      {
+        "slug": "turbina",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&w=256&q=75",
+        "madVsNew": 8.45
+      },
+      {
+        "slug": "filteri",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffilteri.webp&w=256&q=75",
+        "madVsNew": 10.02
+      },
+      {
+        "slug": "akumulator",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fakumulator.webp&w=256&q=75",
+        "madVsNew": 14.55
+      },
+      {
+        "slug": "farovi",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffarovi.webp&w=256&q=75",
+        "madVsNew": 10.16
+      },
+      {
+        "slug": "hladnjak-ventilator",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&w=256&q=75",
+        "madVsNew": 14.98
+      },
+      {
+        "slug": "brizgaljke-pumpa-goriva",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&w=256&q=75",
+        "madVsNew": 3.55
+      }
+    ],
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "tag": "home-390",
+    "url": "/",
+    "w": 390,
+    "h": 844,
+    "dpr": 2,
+    "find": "Najtraženije kategorije",
+    "status": 200,
+    "images": [
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          171,
+          137
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "slug": "kocioni-diskovi",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          171,
+          137
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&w=640&q=75",
+        "slug": "amortizeri-opruge",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          171,
+          137
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&w=640&q=75",
+        "slug": "ramena-selen-blokovi",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          171,
+          137
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=640&q=75",
+        "slug": "zupcasti-kais-vodena-pumpa",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          171,
+          137
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=640&q=75",
+        "slug": "kvacilo-zamajac",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          171,
+          137
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&w=640&q=75",
+        "slug": "turbina",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          171,
+          137
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffilteri.webp&w=640&q=75",
+        "slug": "filteri",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          171,
+          137
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fakumulator.webp&w=640&q=75",
+        "slug": "akumulator",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          171,
+          137
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffarovi.webp&w=640&q=75",
+        "slug": "farovi",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          171,
+          137
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&w=640&q=75",
+        "slug": "hladnjak-ventilator",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          171,
+          137
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&w=640&q=75",
+        "slug": "brizgaljke-pumpa-goriva",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          171,
+          137
+        ],
+        "complete": true,
+        "opacity": "1"
+      }
+    ],
+    "served": [
+      {
+        "slug": "kocione-plocice",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "madVsNew": 6.17
+      },
+      {
+        "slug": "kocioni-diskovi",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&w=640&q=75",
+        "madVsNew": 14.64
+      },
+      {
+        "slug": "amortizeri-opruge",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Famortizeri-opruge.webp&w=640&q=75",
+        "madVsNew": 0.91
+      },
+      {
+        "slug": "ramena-selen-blokovi",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Framena-selen-blokovi.webp&w=640&q=75",
+        "madVsNew": 0.39
+      },
+      {
+        "slug": "zupcasti-kais-vodena-pumpa",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fzupcasti-kais-vodena-pumpa.webp&w=640&q=75",
+        "madVsNew": 0.51
+      },
+      {
+        "slug": "kvacilo-zamajac",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkvacilo-zamajac.webp&w=640&q=75",
+        "madVsNew": 1.25
+      },
+      {
+        "slug": "turbina",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fturbina.webp&w=640&q=75",
+        "madVsNew": 0.75
+      },
+      {
+        "slug": "filteri",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffilteri.webp&w=640&q=75",
+        "madVsNew": 0.61
+      },
+      {
+        "slug": "akumulator",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fakumulator.webp&w=640&q=75",
+        "madVsNew": 0.85
+      },
+      {
+        "slug": "farovi",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Ffarovi.webp&w=640&q=75",
+        "madVsNew": 0.67
+      },
+      {
+        "slug": "hladnjak-ventilator",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fhladnjak-ventilator.webp&w=640&q=75",
+        "madVsNew": 0.76
+      },
+      {
+        "slug": "brizgaljke-pumpa-goriva",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fbrizgaljke-pumpa-goriva.webp&w=640&q=75",
+        "madVsNew": 0.6
+      }
+    ],
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "tag": "plocice-cat-1440",
+    "url": "/delovi/kocione-plocice",
+    "w": 1440,
+    "h": 900,
+    "find": "card",
+    "status": 200,
+    "images": [
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          359,
+          359
+        ],
+        "drawn": [
+          240,
+          180
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          359,
+          359
+        ],
+        "drawn": [
+          240,
+          180
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          359,
+          359
+        ],
+        "drawn": [
+          240,
+          180
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          359,
+          359
+        ],
+        "drawn": [
+          240,
+          180
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          359,
+          359
+        ],
+        "drawn": [
+          240,
+          180
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          359,
+          359
+        ],
+        "drawn": [
+          240,
+          180
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          359,
+          359
+        ],
+        "drawn": [
+          240,
+          180
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          359,
+          359
+        ],
+        "drawn": [
+          240,
+          180
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          359,
+          359
+        ],
+        "drawn": [
+          240,
+          180
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          359,
+          359
+        ],
+        "drawn": [
+          240,
+          180
+        ],
+        "complete": true,
+        "opacity": "1"
+      }
+    ],
+    "served": [
+      {
+        "slug": "kocione-plocice",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "madVsNew": 13.63
+      }
+    ],
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "tag": "ponuda-390",
+    "url": "/ponuda/kocione-plocice-golf",
+    "w": 390,
+    "h": 844,
+    "dpr": 2,
+    "find": "card",
+    "status": 200,
+    "images": [
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          104,
+          204
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          104,
+          182
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          104,
+          204
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          104,
+          182
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          104,
+          182
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          104,
+          204
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          104,
+          204
+        ],
+        "complete": true,
+        "opacity": "1"
+      }
+    ],
+    "served": [
+      {
+        "slug": "kocione-plocice",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "madVsNew": 6.17
+      }
+    ],
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "tag": "deo-1440-dpr1",
+    "url": "/deo/kocione-plocice-prednje-demo-0012",
+    "w": 1440,
+    "h": 900,
+    "status": 200,
+    "images": [
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=828&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          747,
+          747
+        ],
+        "drawn": [
+          772,
+          579
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          359,
+          359
+        ],
+        "drawn": [
+          316,
+          237
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          359,
+          359
+        ],
+        "drawn": [
+          316,
+          237
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          359,
+          359
+        ],
+        "drawn": [
+          316,
+          237
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          359,
+          359
+        ],
+        "drawn": [
+          316,
+          237
+        ],
+        "complete": true,
+        "opacity": "1"
+      }
+    ],
+    "served": [
+      {
+        "slug": "kocione-plocice",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=828&q=75",
+        "madVsNew": 0.64
+      },
+      {
+        "slug": "kocione-plocice",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=384&q=75",
+        "madVsNew": 13.63
+      }
+    ],
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "tag": "deo-1440-dpr2",
+    "url": "/deo/kocione-plocice-prednje-demo-0012",
+    "w": 1440,
+    "h": 900,
+    "dpr": 2,
+    "status": 200,
+    "images": [
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=1920&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          322,
+          322
+        ],
+        "drawn": [
+          772,
+          579
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=1920&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          144,
+          144
+        ],
+        "drawn": [
+          316,
+          237
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=1920&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          144,
+          144
+        ],
+        "drawn": [
+          316,
+          237
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=1920&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          144,
+          144
+        ],
+        "drawn": [
+          316,
+          237
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=1920&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          144,
+          144
+        ],
+        "drawn": [
+          316,
+          237
+        ],
+        "complete": true,
+        "opacity": "1"
+      }
+    ],
+    "served": [
+      {
+        "slug": "kocione-plocice",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=1920&q=75",
+        "madVsNew": 0.64
+      }
+    ],
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  },
+  {
+    "tag": "deo-390",
+    "url": "/deo/kocione-plocice-prednje-demo-0012",
+    "w": 390,
+    "h": 844,
+    "dpr": 2,
+    "status": 200,
+    "images": [
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=828&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          361,
+          361
+        ],
+        "drawn": [
+          356,
+          267
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          104,
+          204
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          104,
+          182
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          104,
+          204
+        ],
+        "complete": true,
+        "opacity": "1"
+      },
+      {
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "slug": "kocione-plocice",
+        "natural": [
+          195,
+          195
+        ],
+        "drawn": [
+          104,
+          182
+        ],
+        "complete": true,
+        "opacity": "1"
+      }
+    ],
+    "served": [
+      {
+        "slug": "kocione-plocice",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=828&q=75",
+        "madVsNew": 0.64
+      },
+      {
+        "slug": "kocione-plocice",
+        "src": "/_next/image?url=%2Fimages%2Fparts%2Fkocione-plocice.webp&w=640&q=75",
+        "madVsNew": 6.17
+      }
+    ],
+    "errors": {
+      "console": [],
+      "pageErrors": []
+    }
+  }
+]

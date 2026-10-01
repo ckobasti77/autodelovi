@@ -1,0 +1,66 @@
+[
+  {
+    "label": "800x1000 at track top",
+    "scrollY": 530,
+    "trackTopDoc": 530,
+    "trackH": 2944,
+    "progress": 0,
+    "stage": 0
+  },
+  {
+    "label": "1100x800 +300ms (no re-scroll)",
+    "scrollY": 0,
+    "trackTopDoc": 0,
+    "trackH": 3296,
+    "progress": 0.224,
+    "stage": 1
+  },
+  {
+    "label": "1100x800 +1500ms (no re-scroll)",
+    "scrollY": 0,
+    "trackTopDoc": 0,
+    "trackH": 3296,
+    "progress": 0.224,
+    "stage": 1
+  },
+  {
+    "label": "1100x800 +4000ms (no re-scroll)",
+    "scrollY": 0,
+    "trackTopDoc": 0,
+    "trackH": 3296,
+    "progress": 0.224,
+    "stage": 1
+  },
+  {
+    "label": "1100x800 re-scrolled to track top +300ms",
+    "scrollY": 0,
+    "trackTopDoc": 0,
+    "trackH": 3296,
+    "progress": 0.224,
+    "stage": 1
+  },
+  {
+    "label": "1100x800 re-scrolled to track top +1500ms",
+    "scrollY": 0,
+    "trackTopDoc": 0,
+    "trackH": 3296,
+    "progress": 0.224,
+    "stage": 1
+  },
+  {
+    "label": "1100x800 re-scrolled to track top +4000ms",
+    "scrollY": 0,
+    "trackTopDoc": 0,
+    "trackH": 3296,
+    "progress": 0.224,
+    "stage": 1
+  },
+  {
+    "label": "1100x800 after a small user scroll back to the track top",
+    "scrollY": 0,
+    "trackTopDoc": 0,
+    "trackH": 3296,
+    "progress": 0,
+    "stage": 0
+  }
+]
