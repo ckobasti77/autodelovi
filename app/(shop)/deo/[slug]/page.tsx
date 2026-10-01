@@ -110,6 +110,23 @@ export async function generateMetadata({ params }: PageProps<"/deo/[slug]">): Pr
 
 const FACTS_CLASS = "flex items-start gap-3 py-3 type-body-s text-ink-2";
 
+/*
+ * The detail groups below the buy box skip style and layout until they approach the viewport,
+ * each on its own (PERF-01). One `cv-auto` wrapper around all of them did not: Chromium renders
+ * content-visibility:auto content up to about 1.5 viewport heights below the fold, the wrapper
+ * starts inside that margin on every width, so the whole block (~330 layout objects on a phone)
+ * was laid out again with every streamed HTML chunk and font swap right after the first paint.
+ * Per group, the first one (compatibility) still renders on load and the rest wait for the
+ * scroll. Intrinsic sizes = measured heights per breakpoint (360–1920 px, three products), so
+ * the scrollbar stays put; `auto` keeps the real height once a group has rendered.
+ */
+const CV_CODES =
+  "cv-auto [contain-intrinsic-size:auto_720px] sm:[contain-intrinsic-size:auto_580px] lg:[contain-intrinsic-size:auto_400px]";
+const CV_PRODUCTS =
+  "cv-auto [contain-intrinsic-size:auto_1110px] sm:[contain-intrinsic-size:auto_1000px] xl:[contain-intrinsic-size:auto_520px]";
+const CV_LINKS =
+  "cv-auto [contain-intrinsic-size:auto_300px] sm:[contain-intrinsic-size:auto_170px] lg:[contain-intrinsic-size:auto_120px]";
+
 export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) {
   const { slug } = await params;
   const [data, settings] = await Promise.all([getProductBySlug(slug), getSettingsPublic()]);
@@ -359,8 +376,8 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
           ) : null}
         </div>
 
-        {/* Details */}
-        <div className="cv-auto mt-16 flex flex-col gap-14">
+        {/* Details (content-visibility per group: see CV_CODES) */}
+        <div className="mt-16 flex flex-col gap-14">
           <section aria-labelledby="fitment-title">
             <h2 id="fitment-title" className="type-h2 text-ink-1">
               Kompatibilnost
@@ -387,7 +404,7 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
             </div>
           </section>
 
-          <div className="grid gap-14 lg:grid-cols-12 lg:gap-x-(--gutter)">
+          <div className={`${CV_CODES} grid gap-14 lg:grid-cols-12 lg:gap-x-(--gutter)`}>
             <section aria-labelledby="codes-title" className="lg:col-span-7">
               <h2 id="codes-title" className="type-h2 text-ink-1">
                 Brojevi
@@ -437,7 +454,7 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
           </div>
 
           {alternatives.length > 0 ? (
-            <section aria-labelledby="same-oem-title">
+            <section aria-labelledby="same-oem-title" className={CV_PRODUCTS}>
               <h2 id="same-oem-title" className="type-h2 text-ink-1">
                 Isti deo, drugi proizvođači
               </h2>
@@ -452,7 +469,7 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
           ) : null}
 
           {relatedCards.length > 0 ? (
-            <section aria-labelledby="related-title">
+            <section aria-labelledby="related-title" className={CV_PRODUCTS}>
               <div className="flex flex-wrap items-baseline justify-between gap-3">
                 <h2 id="related-title" className="type-h2 text-ink-1">
                   Povezani delovi
@@ -468,7 +485,7 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
           ) : null}
 
           {landings.length > 0 ? (
-            <nav aria-labelledby="landings-title">
+            <nav aria-labelledby="landings-title" className={CV_LINKS}>
               <h2 id="landings-title" className="type-h2 text-ink-1">
                 {data.category.name} po vozilu
               </h2>

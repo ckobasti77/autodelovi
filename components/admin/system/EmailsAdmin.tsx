@@ -24,7 +24,7 @@ import { convexErrorMessage } from "@/lib/i18n/sr/shop";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { DataTable, type ColumnDef } from "@/components/ui/DataTable";
-import { useMediaQuery } from "@/components/ui/motion";
+import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 import { Select } from "@/components/ui/Select";
 import { Sheet } from "@/components/ui/Sheet";
 import { Skeleton } from "@/components/ui/Skeleton";

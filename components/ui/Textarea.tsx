@@ -3,11 +3,12 @@
 import { useState, type ChangeEvent, type ComponentProps } from "react";
 
 import { cn } from "@/lib/cn";
+import { formatNumber } from "@/lib/format/number";
 import { useFieldControl } from "@/components/ui/Field";
 import { fieldFrame } from "@/components/ui/Input";
 
-const formatCount = (n: number) =>
-  new Intl.NumberFormat("sr-Latn-RS", { useGrouping: "always" }).format(n);
+// Shared formatter without Intl: the counter renders while the form hydrates (PERF-01).
+const formatCount = (n: number) => formatNumber(n, { decimals: 0 });
 
 export type TextareaProps = ComponentProps<"textarea"> & {
   /** Show „142 / 1.000“ under the field when maxLength is set (default true). */

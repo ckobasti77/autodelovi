@@ -21,7 +21,7 @@ import { Dialog } from "@/components/ui/Dialog";
 import { Link } from "@/components/ui/Link";
 import { Sheet } from "@/components/ui/Sheet";
 import { Skeleton, SkeletonRegion } from "@/components/ui/Skeleton";
-import { useMediaQuery } from "@/components/ui/motion";
+import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 
 type Brand = { slug: string; name: string };
 type Model = { _id: Id<"vehicleModels">; slug: string; name: string };

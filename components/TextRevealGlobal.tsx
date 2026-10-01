@@ -121,6 +121,11 @@ export function TextRevealGlobal(): null {
       if (timer) window.clearTimeout(timer);
       running.delete(el);
       pending.delete(el);
+      // Whichever path ends a reveal gets the original text nodes back (a no-op unless split): one
+      // IntersectionObserver batch can carry an element's entry *and* its exit above the root
+      // (a fast scroll), and the exit's revealNow() used to clear the restore timer the entry had
+      // just started — the word spans then stayed in the DOM for good.
+      restoreWords(el);
       el.removeAttribute(attrs.mode);
       setState(el, "done");
     };
@@ -141,7 +146,10 @@ export function TextRevealGlobal(): null {
       if (words > maxWords || hasFlexOrGridText(el)) {
         el.setAttribute(attrs.mode, "block");
         setState(el, "running");
-        running.set(el, window.setTimeout(() => finish(el), block.durationMs + END_SLACK_MS));
+        running.set(
+          el,
+          window.setTimeout(() => finish(el), block.durationMs + END_SLACK_MS),
+        );
         return;
       }
 
@@ -156,10 +164,7 @@ export function TextRevealGlobal(): null {
       const total = word.durationMs + step * Math.max(spans.length - 1, 0) + END_SLACK_MS;
       running.set(
         el,
-        window.setTimeout(() => {
-          restoreWords(el);
-          finish(el);
-        }, total),
+        window.setTimeout(() => finish(el), total),
       );
     };
 
@@ -303,10 +308,7 @@ export function TextRevealGlobal(): null {
       window.removeEventListener("load", onLoad);
       document.removeEventListener("focusin", onFocusIn);
       reducedQuery.removeEventListener("change", onReducedChange);
-      for (const el of Array.from(running.keys())) {
-        restoreWords(el);
-        finish(el);
-      }
+      for (const el of Array.from(running.keys())) finish(el);
       for (const el of Array.from(pending)) finish(el);
       for (const el of Array.from(waiting.keys())) finish(el);
     };

@@ -5,7 +5,7 @@
  * content immediately, so overlays render with `forceMount` while `present` and hand the
  * exit to GSAP; `onExited` unmounts them afterwards (§8.1 principle 4: same path in and out).
  */
-import { useCallback, useState, useSyncExternalStore, type RefObject } from "react";
+import { useCallback, useState, type RefObject } from "react";
 
 import { gsap, prefersReducedMotion, useGSAP } from "@/lib/gsap/client";
 import { EASE } from "@/constants/motion";
@@ -121,15 +121,5 @@ export function useOverlayMotion(motion: OverlayMotion) {
   );
 }
 
-/** Live media-query match (SSR: false). */
-export function useMediaQuery(query: string): boolean {
-  return useSyncExternalStore(
-    (onChange) => {
-      const list = window.matchMedia(query);
-      list.addEventListener("change", onChange);
-      return () => list.removeEventListener("change", onChange);
-    },
-    () => window.matchMedia(query).matches,
-    () => false,
-  );
-}
+/** Live media-query match, for the overlays here; GSAP-free code imports the hook module. */
+export { useMediaQuery } from "@/lib/hooks/useMediaQuery";

@@ -12,7 +12,7 @@ import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/cn";
 import { BrandMark, Wordmark } from "@/components/shell/BrandMark";
 import { CountBadge } from "@/components/ui/Badge";
-import { useMediaQuery } from "@/components/ui/motion";
+import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { Tooltip } from "@/components/ui/Tooltip";
 import { ADMIN } from "@/constants/routes";

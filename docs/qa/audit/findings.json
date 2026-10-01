@@ -13,9 +13,9 @@
     "merged": 20,
     "step22": {
       "P1": {
-        "FIXED": 17,
+        "FIXED": 18,
         "WONTFIX": 0,
-        "OPEN": 1,
+        "OPEN": 0,
         "total": 18
       },
       "P2": {
@@ -1179,7 +1179,7 @@
       "track": "perf-lh",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "id": "PERF-01",
       "verification": [
@@ -1229,9 +1229,9 @@
       "resolution": {
         "step": 22,
         "date": "2026-10-01",
-        "status": "OPEN",
+        "status": "FIXED",
         "package": "cross-p1",
-        "note": "not fixed — partly fixed. Re-run on :3100, Lighthouse mobile, applied throttling (budget method), 3-run medians, benchmarkIndex 3832–4172: / perf 95, TBT 178 ms; /delovi/kocioni-diskovi 96 / 148 ms; product 94 / 187 ms (5 runs; an earlier 3-run pass gave 250 ms); landing /delovi/kocioni-diskovi/volkswagen/golf 95 / 193 ms; /pretraga 95 / 168 ms; /vozila/volkswagen/golf/golf-7 96 / 150 ms; /kontakt 98 / 86 ms; /za-majstore 97 / 66 ms; /delovi 98 / 93 ms. Still over the 200 ms bar: /upit 93 / 250 ms (runs 188–313; audit 371 ms), where the cost is the document task after FCP (280–350 ms) plus react-dom hydration. The performance bars (home ≥ 85, catalog/product ≥ 90) are met on every template. Evidence: docs/qa/fix/close/perf01-lighthouse-{devtools,product-5runs,other,templates}.txt; gate: docs/qa/fix/perf-gate.md."
+        "note": "Fixed in the PERF-01 close-out (2026-10-01, D291–D293). Re-run on :3100 on the final build, Lighthouse 13 mobile, applied throttling (budget method, D112), medians of 3 runs (5 for /pretraga), benchmarkIndex ≥ 3500: /upit perf 96, TBT 97 ms (runs 91–148; two more passes gave 180 ms at benchmarkIndex 3639–3663 and 193 ms on the last build, after the text-reveal race fix; nine runs 91–335 ms, median 155 ms; 338 ms before the close-out; audit 371 ms); /deo/kocioni-disk-prednji-276-24-mm-demo-0004 97 / 89 ms (other passes 121 and 124 ms); / 95 / 141 ms; /delovi/kocioni-diskovi 96 / 153 ms; /delovi/kocioni-diskovi/volkswagen/golf 96 / 142 ms; /pretraga?q=disk 97 / 159 ms; /vozila/volkswagen/golf/golf-7 96 / 152 ms; /delovi 97 / 86 ms; /ponuda/kocione-plocice-golf 97 / 89 ms; /kontakt 98 / 54 ms; /za-majstore 97 / 61 ms: every storefront template is under 200 ms. Home, category and product: performance 95 / 96 / 97, accessibility 100, SEO 100 (simulated reference: 85 / 86 / 87, accessibility 100, SEO 100). Removed from the hydration path: the Europe/Belgrade Intl formatter built at import and the ICU initialisation by the price formatter (number formatting is Intl-free and parity-tested), zod with the inquiry schema (loaded on demand), GSAP pulled in by the search box, the next/image client component in every card; the below-the-fold blocks of the product and landing pages are no longer laid out during load. Evidence: docs/qa/fix/perf-gate.md (PERF-01 close-out), docs/qa/fix/close/perf01-closeout-{devtools,gate-devtools,templates,search,gate-simulate,final-check}.txt."
       }
     },
     {

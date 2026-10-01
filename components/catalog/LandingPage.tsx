@@ -37,6 +37,20 @@ import { RevealText } from "@/components/text-reveal/RevealText";
 import { CategoryListingView, loadListing } from "@/components/catalog/CategoryListingView";
 import { ROUTES } from "@/constants/routes";
 
+/*
+ * The blocks under the product grid skip style and layout until they approach the viewport
+ * (PERF-01): on a phone they start below Chromium's ~1.5-viewport rendering margin, yet were
+ * laid out — and re-shaped when the UI web font swapped in right after the first paint (one
+ * ~160 ms relayout of the whole page on a throttled phone). Intrinsic sizes = measured heights
+ * per breakpoint on model landings (360–1920 px); `auto` keeps the real height once rendered.
+ */
+const CV_GENERATIONS =
+  "cv-auto [contain-intrinsic-size:auto_320px] sm:[contain-intrinsic-size:auto_220px] lg:[contain-intrinsic-size:auto_170px]";
+const CV_FAQ =
+  "cv-auto [contain-intrinsic-size:auto_500px] sm:[contain-intrinsic-size:auto_380px] lg:[contain-intrinsic-size:auto_340px]";
+const CV_LINKS =
+  "cv-auto [contain-intrinsic-size:auto_540px] sm:[contain-intrinsic-size:auto_330px] lg:[contain-intrinsic-size:auto_300px] xl:[contain-intrinsic-size:auto_230px]";
+
 /**
  * Programmatic landings `/delovi/[kategorija]/[marka](/[model])` (ROUTES §B1, SEO-ADS §J4):
  * the category listing locked to a make or model, with an intro, generation overview, FAQ and
@@ -175,7 +189,10 @@ export async function LandingPage({
       lead={copy ? <LandingLead text={landingIntro(copy)} /> : undefined}
     >
       {stats && stats.generations.length > 0 ? (
-        <section aria-labelledby="generations-title" className="mt-16 border-t border-line pt-8">
+        <section
+          aria-labelledby="generations-title"
+          className={`${CV_GENERATIONS} mt-16 border-t border-line pt-8`}
+        >
           <h2 id="generations-title" className="type-h3 text-ink-1">
             {model ? `${category.category.name} po generaciji` : `Najviše delova za modele`}
           </h2>
@@ -204,7 +221,10 @@ export async function LandingPage({
       ) : null}
 
       {faq.length > 0 ? (
-        <section aria-labelledby="landing-faq-title" className="mt-16 border-t border-line pt-8">
+        <section
+          aria-labelledby="landing-faq-title"
+          className={`${CV_FAQ} mt-16 border-t border-line pt-8`}
+        >
           <h2 id="landing-faq-title" className="type-h3 text-ink-1">
             Pitanja o delovima za {vehicleName}
           </h2>
@@ -222,7 +242,7 @@ export async function LandingPage({
       {stats && (stats.siblings.length > 0 || stats.otherCategories.length > 0) ? (
         <nav
           aria-label="Srodne strane"
-          className="mt-16 grid gap-10 border-t border-line pt-8 lg:grid-cols-2 lg:gap-x-(--gutter)"
+          className={`${CV_LINKS} mt-16 grid gap-10 border-t border-line pt-8 lg:grid-cols-2 lg:gap-x-(--gutter)`}
         >
           {stats.siblings.length > 0 ? (
             <div>

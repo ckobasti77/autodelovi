@@ -7,7 +7,7 @@ import { useRef } from "react";
 import { useCart } from "@/lib/cart/guestCart";
 import { useBottomInset } from "@/lib/dom/bottomInset";
 import { formatRSD } from "@/lib/format/money";
-import { useMediaQuery } from "@/components/ui/motion";
+import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 import { MEDIA } from "@/constants/motion";
 import { CART_EMPTY_ATTR } from "@/lib/cart/lineFocus";
 import { Button } from "@/components/ui/Button";

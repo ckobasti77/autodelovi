@@ -52,7 +52,7 @@ import { Sheet } from "@/components/ui/Sheet";
 import { Skeleton, SkeletonRegion } from "@/components/ui/Skeleton";
 import { StockBadge } from "@/components/ui/StockBadge";
 import { toast } from "@/components/ui/Toast";
-import { useMediaQuery } from "@/components/ui/motion";
+import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 import { MEDIA } from "@/constants/motion";
 import { clearSelection, heroStore, useHeroStore } from "@/components/three/heroStore";
 import { heroDom } from "@/components/three/heroDom";

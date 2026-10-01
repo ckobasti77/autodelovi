@@ -21,7 +21,7 @@ import { PREFERRED_CHANNEL_LABEL, type InquiryStatus } from "@/lib/i18n/sr/shop"
 import { Badge } from "@/components/ui/Badge";
 import { DataTable, type ColumnDef } from "@/components/ui/DataTable";
 import { Select } from "@/components/ui/Select";
-import { useMediaQuery } from "@/components/ui/motion";
+import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 import { Switch } from "@/components/ui/Switch";
 import { ADMIN } from "@/constants/routes";
 

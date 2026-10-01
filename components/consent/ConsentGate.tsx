@@ -10,6 +10,7 @@ import {
 } from "react";
 
 import { useConsent } from "@/lib/analytics/consentStore";
+import { whenIdle } from "@/lib/dom/idle";
 import { useLatched } from "@/lib/hooks/useLatched";
 import { CONSENT_BANNER_SELECTOR, CONSENT_KEY_ATTR } from "@/components/consent/consentDom";
 
@@ -28,15 +29,6 @@ const IDLE_TIMEOUT_MS = 3000;
 
 /** Fetches and evaluates the banner module ahead of the swap; a failure surfaces on the swap. */
 const warmBanner = () => void loadBanner().catch(() => undefined);
-
-function whenIdle(callback: () => void): () => void {
-  if (typeof window.requestIdleCallback === "function") {
-    const id = window.requestIdleCallback(callback, { timeout: IDLE_TIMEOUT_MS });
-    return () => window.cancelIdleCallback(id);
-  }
-  const id = window.setTimeout(callback, 200);
-  return () => window.clearTimeout(id);
-}
 
 function findControl(key: string | null): HTMLElement | null {
   if (!key) return null;
@@ -114,7 +106,7 @@ export function ConsentGate({
         warmBanner();
       }
     };
-    const cancelIdle = whenIdle(warmBanner);
+    const cancelIdle = whenIdle(warmBanner, IDLE_TIMEOUT_MS);
     for (const type of INTENT_EVENTS) {
       document.addEventListener(type, onIntent, { capture: true, passive: true });
     }

@@ -159,3 +159,214 @@ The runner still exits 1 on the internal J11 lab budgets (first-load JS 279–29
     /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 2: perf 96 · LCP 2134 ms · CLS 0.000 · TBT 121 ms · FCP 2134 ms · SI 2265 ms · JS 279 KB · benchmarkIndex 3923
     /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 3: perf 94 · LCP 1890 ms · CLS 0.000 · TBT 245 ms · FCP 1890 ms · SI 2035 ms · JS 279 KB · benchmarkIndex 4025
 ```
+
+## PERF-01 close-out (2026-10-01)
+
+Last open P1: `/upit` TBT 250 ms (runs 188–313) and the product page at the line (187–250 ms across passes).
+Same method as above: production build (`NEXT_PUBLIC_TEST_HOOKS=1 npm run build`, `next start -p 3100`), Lighthouse 13
+mobile, fresh profile per run (consent banner open), `--min-benchmark 3500`. Budget method = applied throttling
+(`--throttling devtools`, D112); simulated (Lantern) for reference. Diagnosis: Lighthouse JSON (`long-tasks`,
+`bootup-time`) plus CDP traces with JS samples under the same conditions (4× CPU, 562.5 ms RTT, 1.47 Mbit/s), each
+sample attributed to the Turbopack module factory being evaluated (`.lighthouse/trace-probe.mjs`, `modcost.mjs`;
+git-ignored).
+
+### Root causes
+
+- **/upit hydration (145–190 ms task + 87–136 ms commit at ~5.1 s; baseline this session 338 ms, runs 226–357).** About
+  85 % of the hydration task was first-time evaluation of the inquiry form's module graph, not React work:
+  `lib/format/date` built an `Intl.DateTimeFormat` with `timeZone: "Europe/Belgrade"` at import (≈ 46 ms; it reached the
+  page only through `lib/i18n/sr/shop`, which formats no date while hydrating) and zod with the inquiry schema and
+  resolver (a 30 KB gzip chunk, ≈ 25 ms with compile). The form's props also serialized the whole vehicle tree
+  (aliases, WMI lists, platforms: 20 KB of the inline RSC payload).
+- **Product (document task after FCP 190–209 ms).** Two full relayouts right after the first paint (streamed HTML,
+  then the UI font swap). The details block below the buy box had one `cv-auto` wrapper, but Chromium renders
+  content-visibility:auto content up to about 1.5 viewport heights below the fold and the wrapper starts at 1286 px on a
+  412 × 823 phone, so its ~330 layout objects were laid out in every pass (`contentvisibilityautostatechange`:
+  `skipped: false`).
+- **Every page with a price (found while re-measuring the other templates).** The first Intl formatter a renderer builds
+  initialises ICU: ≈ 30 ms at 4× CPU whichever it is (`.lighthouse/intl-bench.mjs`: first `NumberFormat` 28–30 ms,
+  first `DateTimeFormat` 31–32 ms, later ones 3–10 ms). Once the date formatter was lazy, `lib/format/money` paid it
+  (`new Intl.NumberFormat("sr-Latn-RS")` at import; 36–43 ms in the hydration of /pretraga and Golf 7). Also on the
+  hydration path: GSAP core and the overlay motion module (≈ 23 ms on /pretraga) because `SearchBox` imported
+  `useMediaQuery` from `components/ui/motion`; the `next/image` client component (two components, a dozen hooks) in every
+  card; a forced style + layout from reading `document.fonts.ready` in the root `ScrollTriggerRefresher` effect (Blink
+  updates layout synchronously when `ready` is read after fonts loaded); on the ads landing the generations list, FAQ
+  and link lists below the grid were laid out with every relayout (one 163 ms relayout when the UI font swapped in).
+- **Not app code:** the framework boot task (evaluating the react-dom/Next chunk; V8 compiles the react-dom factory on
+  the main thread) is the same on every page and moves with machine load (103–189 ms in these Lighthouse runs, 93–244 ms in the probe
+  traces); on localhost (HTTP/1.1, six
+  connections) the first-load chunks queue behind 562 ms round trips. `/pretraga` streams its results through
+  `loading.tsx`; React reveals the boundary about 300 ms after the fallback paints, so one relayout of the results
+  (~110 ms) always lands after FCP — kept, because the skeleton is what a client-side search shows at once.
+
+### Changes
+
+1. `lib/format/date`: the time-zone formatter is created on first use (D291).
+2. `lib/format/number` / `money`: digits without Intl — `String(x)` gives the shortest decimal form, rounding half away
+   from zero on it (what ICU does: `1.005` → `1,01`), dot grouping; output identical to
+   `Intl.NumberFormat("sr-Latn-RS", { useGrouping: "always", … })`, checked on edge values and 20 000 seeded values in
+   `tests/unit/format/number.test.ts`. `components/ui/Textarea` counter uses it (it built a new `NumberFormat` per
+   render) (D291).
+3. Inquiry form: zod + schema + resolver load on demand (`lib/validation/lazyResolver.ts`,
+   `lib/validation/inquiryResolver.ts`), warmed in idle time after hydration and on the first focus in the form, awaited
+   by the first validation at the latest; if the chunk cannot load, the submit shows „Upit nije poslat — proverite vezu
+   sa internetom i pokušajte ponovo.“ and the next submit retries. The page passes only the fields the form reads from
+   the vehicle tree (`InquiryVehicleTree`). `/upit` first-load JS 291 → 261 KB, inline payload −12 KB (D292).
+4. Product page: `content-visibility` per detail group (codes/specs, the two product grids, landing links) with measured
+   per-breakpoint intrinsic sizes; compatibility still renders on load. Landing (`components/catalog/LandingPage.tsx`):
+   the same for the generations list, FAQ and „Srodne strane“ (D293).
+5. `ProductThumb`: a plain `<img>` with `getImageProps()` (identical markup, attribute for attribute, to what
+   `next/image` rendered; `preload` through `ReactDOM.preload`) — nothing left to hydrate per card (D293).
+6. `useMediaQuery` moved to `lib/hooks/useMediaQuery.ts` (re-exported by `components/ui/motion` for the overlays):
+   GSAP no longer loads with the search box; on /pretraga it now loads after hydration with the consent banner's idle
+   warm-up. `/pretraga` first-load JS 268 → 240 KB (D293).
+7. `ScrollTriggerRefresher` listens for `document.fonts` `loadingdone` instead of reading `document.fonts.ready` (D293).
+8. `whenIdle` shared in `lib/dom/idle.ts` (ConsentGate and the inquiry form).
+
+Behaviour checked on :3100 (`.lighthouse/inquiry-check.mjs`): an empty submit lists the four messages, blur validation
+sets `aria-invalid` and the message, the validation chunk loads in idle time after hydration, a blocked chunk gives the
+message above without a page error and the retry validates normally. Screenshots 390 + 1440 in
+`docs/qa/fix/close/perf01/` (product groups, landing blocks, category cards, /upit errors); after scrolling end to end
+no copy is left at opacity 0, no `pending` reveal state, no `.reveal-word`, no console errors.
+
+### Applied throttling (budget method) — final build, medians
+
+| Page | Runs | Perf | A11y | BP | SEO | LCP ms | CLS | TBT ms (runs) |
+|---|---|---|---|---|---|---|---|---|
+| `/` | 3 | 95 | 100 | 100 | 100 | 2304 | 0.001 | 141 (76–167) |
+| `/delovi/kocioni-diskovi` | 3 | 96 | 100 | 100 | 100 | 1983 | 0.000 | 153 (117–175) |
+| `/deo/kocioni-disk-prednji-276-24-mm-demo-0004` | 3 | 97 | 100 | 100 | 100 | 2035 | 0.000 | 89 (86–92) |
+| same, second pass (benchmarkIndex 3548–4147) | 3 | 96 | 100 | 100 | 100 | 2063 | 0.000 | 121 (98–174) |
+| same, last build (text-reveal race fix) | 3 | 96 | 100 | 100 | 100 | 2036 | 0.000 | 124 (118–151) |
+| `/upit` | 3 | 96 | 100 | 96 | 100 | 1958 | 0.000 | 97 (91–148) |
+| same, first pass (benchmarkIndex 3639–3663) | 3 | 94 | 100 | 96 | 100 | 1961 | 0.000 | 180 (155–216) |
+| same, last build (text-reveal race fix) | 3 | 95 | 100 | 96 | 100 | 2075 | 0.000 | 193 (95–335) |
+| `/delovi/kocioni-diskovi/volkswagen/golf` | 3 | 96 | 100 | 100 | 100 | 1951 | 0.000 | 142 (112–153) |
+| `/pretraga?q=disk` (noindex) | 5 | 97 | 100 | 100 | 66 | 1804 | 0.000 | 159 (126–186) |
+| `/vozila/volkswagen/golf/golf-7` | 3 | 96 | 100 | 100 | 100 | 1950 | 0.001 | 152 (129–155) |
+| `/delovi` | 3 | 97 | 100 | 100 | 100 | 1942 | 0.000 | 86 (82–139) |
+| `/ponuda/kocione-plocice-golf` (noindex) | 3 | 97 | 100 | 100 | 69 | 2022 | 0.001 | 89 (75–91) |
+| `/kontakt` | 3 | 98 | 100 | 100 | 92 | 1905 | 0.000 | 54 (53–82) |
+| `/za-majstore` | 3 | 97 | 100 | 100 | 100 | 2025 | 0.000 | 61 (58–62) |
+
+Every storefront template is under 200 ms (`/upit` over its three passes: medians 97, 180 and 193 ms; nine runs
+91–335 ms, median 155 ms — the slowest run has the same tasks as the others, each at the slow end of the machine's
+noise: boot 148 ms, hydration commit 154 ms, post-FCP layout 153 ms); home, category and product meet performance ≥ 85, accessibility ≥ 95 and
+SEO ≥ 95. On the way (same method, intermediate builds of this close-out): `/upit` 338 → 165 (lazy validation + lazy
+date formatter) → 143 → final; product 224 → 98 after the per-group content-visibility; before the cross-page fixes
+(Intl-free formatting, `useMediaQuery`, thumbnails, landing blocks) `/pretraga` measured 300 and 253 (5 runs), Golf 7
+212 and the landing 215–217 ms. `/upit` best practices 96 is an `inspector-issues` entry (Content security policy)
+that was there before the close-out. The runner still exits 1 on the internal J11 lab budgets (first-load JS 218–298 KB against 160–200 KB; product LCP 2035 ms
+against 2000 ms) — not gate criteria.
+
+### Simulated throttling (Lantern, reference) — final build
+
+| Page | Perf | A11y | BP | SEO | LCP ms | CLS | TBT ms |
+|---|---|---|---|---|---|---|---|
+| `/` | 85 | 100 | 100 | 100 | 4293 | 0.001 | 15 |
+| `/delovi/kocioni-diskovi` | 86 | 100 | 100 | 100 | 4142 | 0.000 | 17 |
+| `/deo/kocioni-disk-prednji-276-24-mm-demo-0004` | 87 | 100 | 100 | 100 | 3989 | 0.000 | 14 |
+
+Run with `/kontakt` first as a warm-up URL. In a fresh Chrome the first one or two Lighthouse runs of the runner's
+session get a 400 ms main-thread task about 30 ms after navigation start, with no child events (before the HTML
+response, so not page work); Lantern multiplies it by four and counts it (TBT 755–932 ms, performance 64–66). It followed
+the run order, not the page: with `/kontakt` first it hit `/kontakt` (run 1 here, runs 1–2 in a two-run test) and home
+was clean
+(`perf01-closeout-home-simulate-rerun.txt` shows the stall on home when home runs first; a one-Chrome trace of three
+runs in `.lighthouse/lh-trace-multi.mjs` reproduced it on run 1 only). Applied throttling is not affected (the stall
+ends long before FCP).
+
+### Raw runs — applied throttling (final build)
+
+```
+    perf01-closeout-devtools: /upit run 1: perf 94 · LCP 2283 ms · CLS 0.000 · TBT 155 ms · FCP 2283 ms · SI 2302 ms · JS 261 KB · benchmarkIndex 3648
+    perf01-closeout-devtools: /upit run 2: perf 94 · LCP 1936 ms · CLS 0.000 · TBT 216 ms · FCP 1936 ms · SI 1964 ms · JS 261 KB · benchmarkIndex 3639
+    perf01-closeout-devtools: /upit run 3: perf 95 · LCP 1961 ms · CLS 0.000 · TBT 180 ms · FCP 1961 ms · SI 1987 ms · JS 261 KB · benchmarkIndex 3663
+    perf01-closeout-devtools: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 1: perf 96 · LCP 2063 ms · CLS 0.000 · TBT 121 ms · FCP 2063 ms · SI 2179 ms · JS 279 KB · benchmarkIndex 3571
+    perf01-closeout-devtools: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 2: perf 95 · LCP 2070 ms · CLS 0.000 · TBT 174 ms · FCP 2070 ms · SI 2205 ms · JS 279 KB · benchmarkIndex 3548
+    perf01-closeout-devtools: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 attempt 3: discarded (benchmarkIndex 3498 < 3500 (machine too busy))
+    perf01-closeout-devtools: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 3: perf 97 · LCP 1969 ms · CLS 0.000 · TBT 98 ms · FCP 1969 ms · SI 2112 ms · JS 279 KB · benchmarkIndex 4147
+    perf01-closeout-gate-devtools: / run 1: perf 96 · LCP 2317 ms · CLS 0.001 · TBT 76 ms · FCP 2184 ms · SI 2194 ms · JS 298 KB · benchmarkIndex 4132
+    perf01-closeout-gate-devtools: / run 2: perf 94 · LCP 2304 ms · CLS 0.001 · TBT 141 ms · FCP 2185 ms · SI 2191 ms · JS 298 KB · benchmarkIndex 4177
+    perf01-closeout-gate-devtools: / run 3: perf 95 · LCP 2144 ms · CLS 0.001 · TBT 167 ms · FCP 2011 ms · SI 2028 ms · JS 298 KB · benchmarkIndex 4041
+    perf01-closeout-gate-devtools: /delovi/kocioni-diskovi run 1: perf 97 · LCP 1983 ms · CLS 0.000 · TBT 117 ms · FCP 1983 ms · SI 2089 ms · JS 290 KB · benchmarkIndex 4197
+    perf01-closeout-gate-devtools: /delovi/kocioni-diskovi run 2: perf 95 · LCP 1958 ms · CLS 0.000 · TBT 175 ms · FCP 1958 ms · SI 2067 ms · JS 290 KB · benchmarkIndex 4149
+    perf01-closeout-gate-devtools: /delovi/kocioni-diskovi run 3: perf 96 · LCP 1993 ms · CLS 0.000 · TBT 153 ms · FCP 1993 ms · SI 2094 ms · JS 290 KB · benchmarkIndex 4091
+    perf01-closeout-gate-devtools: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 1: perf 97 · LCP 2035 ms · CLS 0.000 · TBT 89 ms · FCP 2035 ms · SI 2150 ms · JS 279 KB · benchmarkIndex 4125
+    perf01-closeout-gate-devtools: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 2: perf 97 · LCP 2035 ms · CLS 0.000 · TBT 86 ms · FCP 2035 ms · SI 2175 ms · JS 279 KB · benchmarkIndex 4011
+    perf01-closeout-gate-devtools: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 3: perf 97 · LCP 2034 ms · CLS 0.000 · TBT 92 ms · FCP 2034 ms · SI 2172 ms · JS 279 KB · benchmarkIndex 4098
+    perf01-closeout-templates: /upit run 1: perf 96 · LCP 2213 ms · CLS 0.000 · TBT 97 ms · FCP 2213 ms · SI 2234 ms · JS 261 KB · benchmarkIndex 4089
+    perf01-closeout-templates: /upit run 2: perf 97 · LCP 1941 ms · CLS 0.000 · TBT 91 ms · FCP 1941 ms · SI 1970 ms · JS 261 KB · benchmarkIndex 4141
+    perf01-closeout-templates: /upit run 3: perf 96 · LCP 1958 ms · CLS 0.000 · TBT 148 ms · FCP 1958 ms · SI 1985 ms · JS 261 KB · benchmarkIndex 4057
+    perf01-closeout-templates: /delovi run 1: perf 97 · LCP 1942 ms · CLS 0.000 · TBT 86 ms · FCP 1942 ms · SI 2058 ms · JS 221 KB · benchmarkIndex 4110
+    perf01-closeout-templates: /delovi run 2: perf 98 · LCP 1897 ms · CLS 0.000 · TBT 82 ms · FCP 1897 ms · SI 2010 ms · JS 221 KB · benchmarkIndex 4056
+    perf01-closeout-templates: /delovi run 3: perf 96 · LCP 1972 ms · CLS 0.000 · TBT 139 ms · FCP 1972 ms · SI 2090 ms · JS 221 KB · benchmarkIndex 3937
+    perf01-closeout-templates: /vozila/volkswagen/golf/golf-7 run 1: perf 96 · LCP 1899 ms · CLS 0.001 · TBT 152 ms · FCP 1899 ms · SI 1926 ms · JS 234 KB · benchmarkIndex 3994
+    perf01-closeout-templates: /vozila/volkswagen/golf/golf-7 run 2: perf 96 · LCP 1950 ms · CLS 0.001 · TBT 155 ms · FCP 1950 ms · SI 1966 ms · JS 234 KB · benchmarkIndex 4153
+    perf01-closeout-templates: /vozila/volkswagen/golf/golf-7 run 3: perf 96 · LCP 1976 ms · CLS 0.001 · TBT 129 ms · FCP 1976 ms · SI 1996 ms · JS 234 KB · benchmarkIndex 3869
+    perf01-closeout-templates: /delovi/kocioni-diskovi/volkswagen/golf run 1: perf 96 · LCP 1951 ms · CLS 0.000 · TBT 142 ms · FCP 1951 ms · SI 2002 ms · JS 290 KB · benchmarkIndex 4123
+    perf01-closeout-templates: /delovi/kocioni-diskovi/volkswagen/golf run 2: perf 96 · LCP 1897 ms · CLS 0.000 · TBT 153 ms · FCP 1897 ms · SI 1954 ms · JS 290 KB · benchmarkIndex 4004
+    perf01-closeout-templates: /delovi/kocioni-diskovi/volkswagen/golf run 3: perf 97 · LCP 2004 ms · CLS 0.000 · TBT 112 ms · FCP 2004 ms · SI 2046 ms · JS 290 KB · benchmarkIndex 4135
+    perf01-closeout-templates: /ponuda/kocione-plocice-golf run 1: perf 97 · LCP 2022 ms · CLS 0.001 · TBT 91 ms · FCP 2022 ms · SI 2200 ms · JS 227 KB · benchmarkIndex 4201
+    perf01-closeout-templates: /ponuda/kocione-plocice-golf run 2: perf 97 · LCP 2002 ms · CLS 0.001 · TBT 75 ms · FCP 2002 ms · SI 2181 ms · JS 227 KB · benchmarkIndex 4090
+    perf01-closeout-templates: /ponuda/kocione-plocice-golf run 3: perf 97 · LCP 2025 ms · CLS 0.001 · TBT 89 ms · FCP 2025 ms · SI 2209 ms · JS 227 KB · benchmarkIndex 4093
+    perf01-closeout-templates: /kontakt run 1: perf 98 · LCP 1890 ms · CLS 0.000 · TBT 82 ms · FCP 1890 ms · SI 1887 ms · JS 218 KB · benchmarkIndex 4128
+    perf01-closeout-templates: /kontakt run 2: perf 98 · LCP 1905 ms · CLS 0.000 · TBT 54 ms · FCP 1905 ms · SI 1899 ms · JS 218 KB · benchmarkIndex 4198
+    perf01-closeout-templates: /kontakt run 3: perf 98 · LCP 1952 ms · CLS 0.000 · TBT 53 ms · FCP 1952 ms · SI 1945 ms · JS 218 KB · benchmarkIndex 4135
+    perf01-closeout-templates: /za-majstore run 1: perf 97 · LCP 2025 ms · CLS 0.000 · TBT 58 ms · FCP 2025 ms · SI 2038 ms · JS 258 KB · benchmarkIndex 4065
+    perf01-closeout-templates: /za-majstore run 2: perf 97 · LCP 2048 ms · CLS 0.000 · TBT 61 ms · FCP 2048 ms · SI 2058 ms · JS 258 KB · benchmarkIndex 4125
+    perf01-closeout-templates: /za-majstore run 3: perf 98 · LCP 1967 ms · CLS 0.000 · TBT 62 ms · FCP 1967 ms · SI 1981 ms · JS 258 KB · benchmarkIndex 4116
+    perf01-closeout-search: /pretraga?q=disk run 1: perf 95 · LCP 1889 ms · CLS 0.000 · TBT 186 ms · FCP 1889 ms · SI 2064 ms · JS 240 KB · benchmarkIndex 4111
+    perf01-closeout-search: /pretraga?q=disk run 2: perf 96 · LCP 1803 ms · CLS 0.000 · TBT 184 ms · FCP 1803 ms · SI 1970 ms · JS 240 KB · benchmarkIndex 3994
+    perf01-closeout-search: /pretraga?q=disk run 3: perf 97 · LCP 1791 ms · CLS 0.000 · TBT 126 ms · FCP 1791 ms · SI 1970 ms · JS 240 KB · benchmarkIndex 4179
+    perf01-closeout-search: /pretraga?q=disk run 4: perf 97 · LCP 1804 ms · CLS 0.000 · TBT 130 ms · FCP 1804 ms · SI 1962 ms · JS 240 KB · benchmarkIndex 4144
+    perf01-closeout-search: /pretraga?q=disk run 5: perf 97 · LCP 1818 ms · CLS 0.000 · TBT 159 ms · FCP 1818 ms · SI 1980 ms · JS 240 KB · benchmarkIndex 4169
+```
+
+### Raw runs — simulated throttling (final build)
+
+```
+    perf01-closeout-gate-simulate: /kontakt run 1: perf 70 · LCP 3558 ms · CLS 0.000 · TBT 913 ms · FCP 1362 ms · SI 1758 ms · JS 218 KB · benchmarkIndex 4145
+    perf01-closeout-gate-simulate: /kontakt run 2: perf 91 · LCP 3391 ms · CLS 0.000 · TBT 12 ms · FCP 1363 ms · SI 1363 ms · JS 218 KB · benchmarkIndex 4073
+    perf01-closeout-gate-simulate: /kontakt run 3: perf 92 · LCP 3390 ms · CLS 0.000 · TBT 12 ms · FCP 1362 ms · SI 1362 ms · JS 218 KB · benchmarkIndex 4126
+    perf01-closeout-gate-simulate: / run 1: perf 85 · LCP 4291 ms · CLS 0.001 · TBT 15 ms · FCP 1509 ms · SI 1509 ms · JS 298 KB · benchmarkIndex 4110
+    perf01-closeout-gate-simulate: / run 2: perf 85 · LCP 4309 ms · CLS 0.001 · TBT 23 ms · FCP 1509 ms · SI 1509 ms · JS 298 KB · benchmarkIndex 4126
+    perf01-closeout-gate-simulate: / run 3: perf 85 · LCP 4293 ms · CLS 0.001 · TBT 15 ms · FCP 1510 ms · SI 1510 ms · JS 298 KB · benchmarkIndex 4125
+    perf01-closeout-gate-simulate: /delovi/kocioni-diskovi run 1: perf 86 · LCP 4156 ms · CLS 0.000 · TBT 27 ms · FCP 1510 ms · SI 1510 ms · JS 290 KB · benchmarkIndex 4073
+    perf01-closeout-gate-simulate: /delovi/kocioni-diskovi run 2: perf 86 · LCP 4140 ms · CLS 0.000 · TBT 16 ms · FCP 1511 ms · SI 1511 ms · JS 290 KB · benchmarkIndex 4149
+    perf01-closeout-gate-simulate: /delovi/kocioni-diskovi run 3: perf 86 · LCP 4142 ms · CLS 0.000 · TBT 17 ms · FCP 1511 ms · SI 1511 ms · JS 290 KB · benchmarkIndex 4143
+    perf01-closeout-gate-simulate: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 1: perf 87 · LCP 4003 ms · CLS 0.000 · TBT 22 ms · FCP 1360 ms · SI 1360 ms · JS 279 KB · benchmarkIndex 4145
+    perf01-closeout-gate-simulate: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 2: perf 87 · LCP 3988 ms · CLS 0.000 · TBT 14 ms · FCP 1360 ms · SI 1360 ms · JS 279 KB · benchmarkIndex 4180
+    perf01-closeout-gate-simulate: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 3: perf 87 · LCP 3989 ms · CLS 0.000 · TBT 14 ms · FCP 1361 ms · SI 1361 ms · JS 279 KB · benchmarkIndex 3957
+    perf01-closeout-home-simulate-rerun: / run 1: perf 65 · LCP 4329 ms · CLS 0.001 · TBT 831 ms · FCP 1509 ms · SI 2248 ms · JS 298 KB · benchmarkIndex 4088
+    perf01-closeout-home-simulate-rerun: / run 2: perf 64 · LCP 4297 ms · CLS 0.000 · TBT 932 ms · FCP 1511 ms · SI 2102 ms · JS 298 KB · benchmarkIndex 4044
+    perf01-closeout-home-simulate-rerun: / run 3: perf 85 · LCP 4302 ms · CLS 0.001 · TBT 20 ms · FCP 1509 ms · SI 1509 ms · JS 298 KB · benchmarkIndex 4104
+```
+
+### Gates on the final code
+
+The first full Playwright run after the battery failed once on desktop-1440 (`storefront.spec.ts` „text reveal leaves
+no copy hidden on home, category and product“): on the category page the intro `Disclosure` summary kept three
+`.reveal-word` spans while marked `data-reveal-state="done"` (Playwright trace). Cause in
+`components/TextRevealGlobal.tsx`: one IntersectionObserver batch can carry an element's entry *and* its exit above the
+root (a fast scroll); the entry split the words and started the restore timer, the exit's `revealNow()` → `finish()`
+cleared that timer and marked the element done, so the spans stayed. `finish()` now always calls `restoreWords()` (a
+no-op unless the element is split). Regression test: `tests/unit/components/TextRevealGlobal.test.tsx` (it fails
+without the fix). The same e2e test passed 10 of 10 repeats before the fix, so the race is intermittent and older than
+this close-out; fixed anyway.
+
+Final build (differs from the measured build only in the text-reveal chunk — the other JS chunks are byte-identical by
+content hash — and one CSS rule fewer from source text Prettier re-wrapped): `npx tsc --noEmit` exit 0 ·
+`npm run lint` 0 errors, 0 warnings · `npm test` 69 files passed + 1 skipped, 1221 tests passed + 4 skipped ·
+Playwright on :3100: 105 passed, 27 skipped by design, 0 failed in 9.7 min (`docs/qa/fix/e2e-final.txt`). The
+Lighthouse rows „last build“ above come from this build (`perf01-closeout-final-check.txt`):
+
+```
+    perf01-closeout-final-check: /upit run 1: perf 96 · LCP 2222 ms · CLS 0.000 · TBT 95 ms · FCP 2222 ms · SI 2243 ms · JS 261 KB · benchmarkIndex 3867
+    perf01-closeout-final-check: /upit run 2: perf 95 · LCP 1996 ms · CLS 0.000 · TBT 193 ms · FCP 1996 ms · SI 2017 ms · JS 261 KB · benchmarkIndex 4169
+    perf01-closeout-final-check: /upit run 3: perf 90 · LCP 2075 ms · CLS 0.000 · TBT 335 ms · FCP 2075 ms · SI 2124 ms · JS 261 KB · benchmarkIndex 3954
+    perf01-closeout-final-check: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 attempt 1: discarded (benchmarkIndex 3340 < 3500 (machine too busy))
+    perf01-closeout-final-check: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 1: perf 97 · LCP 2036 ms · CLS 0.000 · TBT 118 ms · FCP 2036 ms · SI 2176 ms · JS 279 KB · benchmarkIndex 4132
+    perf01-closeout-final-check: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 2: perf 96 · LCP 2034 ms · CLS 0.000 · TBT 151 ms · FCP 2034 ms · SI 2178 ms · JS 279 KB · benchmarkIndex 4119
+    perf01-closeout-final-check: /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 3: perf 96 · LCP 2128 ms · CLS 0.000 · TBT 124 ms · FCP 2128 ms · SI 2260 ms · JS 279 KB · benchmarkIndex 4119
+```

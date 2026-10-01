@@ -10,12 +10,12 @@ Closed on 2026-10-01 after three fix runs, the performance gate and the quality 
 
 | Severity | Total | FIXED | WONTFIX | OPEN |
 |---|---|---|---|---|
-| P1 | 18 | 17 | 0 | 1 |
+| P1 | 18 | 18 | 0 | 0 |
 | P2 | 87 | 85 (97,7 %) | 0 | 2 |
 | P3 | 75 | 47 (62,7 %) | 0 | 28 |
 
-- Gates: performance — [docs/qa/fix/perf-gate.md](fix/perf-gate.md) (applied and simulated throttling, 3-run medians) and the P1 re-run [fix/close/perf01-lighthouse-devtools.txt](fix/close/perf01-lighthouse-devtools.txt); full e2e suite on the production build — [docs/qa/fix/e2e-final.txt](fix/e2e-final.txt) (105 passed, 27 skipped by design, 0 failed).
-- P1 still open: [PERF-01](#perf-01).
+- Gates: performance — [docs/qa/fix/perf-gate.md](fix/perf-gate.md) (applied and simulated throttling, 3-run medians; final build in „PERF-01 close-out“) and the P1 re-run [fix/close/perf01-closeout-devtools.txt](fix/close/perf01-closeout-devtools.txt), [fix/close/perf01-closeout-templates.txt](fix/close/perf01-closeout-templates.txt); full e2e suite on the production build — [docs/qa/fix/e2e-final.txt](fix/e2e-final.txt) (105 passed, 27 skipped by design, 0 failed).
+- P1 still open: none.
 - P2 still open: [FLOW-05](#flow-05), [FLOW-10](#flow-10).
 - P3 still open: [BE-09](#be-09), [BE-10](#be-10), [BE-11](#be-11), [COPY-12](#copy-12), [FLOW-28](#flow-28), [FLOW-30](#flow-30), [FLOW-31](#flow-31), [FLOW-33](#flow-33), [FLOW-36](#flow-36), [PERF-17](#perf-17), [PERF-18](#perf-18), [PERF-22](#perf-22), [PERF-24](#perf-24), [PERF-26](#perf-26), [SEO-08](#seo-08), [SEO-09](#seo-09), [SEO-15](#seo-15), [VIS-20](#vis-20), [VIS-25](#vis-25), [VIS-26](#vis-26), [VIS-29](#vis-29), [VIS-30](#vis-30), [VIS-32](#vis-32), [VIS-33](#vis-33), [VIS-37](#vis-37), [VIS-38](#vis-38), [VIS-41](#vis-41), [VIS-42](#vis-42).
 - Hero at 390 px: [fix/close/hero-390-poster.webp](fix/close/hero-390-poster.webp).
@@ -793,7 +793,7 @@ Reviewer scores: backend 6.5/10.
 
 **Mobile TBT is over the 200 ms budget on every storefront template, and the performance score misses the bar on home, catalog and product (applied throttling, the D112 budget method)**
 
-- **Severity:** P1 · **Area:** 5. Performance — Performance / main-thread (hydration) · **Status:** OPEN
+- **Severity:** P1 · **Area:** 5. Performance — Performance / main-thread (hydration) · **Status:** FIXED
 - **Route:** / · /delovi · /delovi/kocioni-diskovi · /deo/kocioni-disk-prednji-276-24-mm-demo-0004 · /pretraga?q=disk · /vozila/volkswagen/golf/golf-7 · /delovi/kocioni-diskovi/volkswagen/golf · /ponuda/kocione-plocice-golf · /kontakt · /upit · /za-majstore
 - **Context:** Lighthouse 13.5 mobile, --throttling devtools (slow 4G + 4× CPU), headless Chrome, fresh profile with the cookie banner visible, isolated server :3200. Shared machine: runs with benchmarkIndex < 3000 were excluded.
 - **Standard:** BRIEF §9 (TBT ≤ 200 ms; perf ≥ 85 home / ≥ 90 catalog & product); SEO-ADS §J11
@@ -833,7 +833,7 @@ Where the time goes, per representative run:
 4. Start TextRevealGlobal in requestIdleCallback after hydration.
 5. Re-measure with --throttling devtools on an idle machine, then with PSI after deployment.
 - **Verification:** perf → partially_confirmed (P1): 30 Lighthouse 13.5 runs on :3200, mostly idle machine (bench 3496–4171). Mobile, devtools throttling, 3–4 runs per template. Median TBT: home 343 ms (171/353/343), /upit 262 (297/262/217), brand-model landing 218 (218/167/256). Those three miss the 200 ms bar. The rest are within it: category 170 (170/169/487/170), pro… [[audit/verify/perf-lh/perf-lh-01-perf.txt](audit/verify/perf-lh/perf-lh-01-perf.txt), [audit/verify/perf-lh/lh-summary.txt](audit/verify/perf-lh/lh-summary.txt)] — perfskeptic → partially_confirmed (P1): No new Lighthouse runs; I re-analysed the existing reports. I recomputed TBT per long task with Lighthouse's rule (clip to the FCP–TTI window, subtract 50 ms) on three sets: the finder's 40 devtools runs, the earlier verifier's 21 quiet devtools runs (bench 3496–4171), and the step-19 category runs. What is real: - Hom… [[audit/verify/perf-lh/perf-lh-01-perfskeptic.txt](audit/verify/perf-lh/perf-lh-01-perfskeptic.txt), scripts/qa/audit/verify-perf-lh-01-skeptic.mjs]
-- **Re-verification (step 22):** not fixed — partly fixed. Re-run on :3100, Lighthouse mobile, applied throttling (budget method), 3-run medians, benchmarkIndex 3832–4172: / perf 95, TBT 178 ms; /delovi/kocioni-diskovi 96 / 148 ms; product 94 / 187 ms (5 runs; an earlier 3-run pass gave 250 ms); landing /delovi/kocioni-diskovi/volkswagen/golf 95 / 193 ms; /pretraga 95 / 168 ms; /vozila/volkswagen/golf/golf-7 96 / 150 ms; /kontakt 98 / 86 ms; /za-majstore 97 / 66 ms; /delovi 98 / 93 ms. Still over the 200 ms bar: /upit 93 / 250 ms (runs 188–313; audit 371 ms), where the cost is the document task after FCP (280–350 ms) plus react-dom hydration. The performance bars (home ≥ 85, catalog/product ≥ 90) are met on every template. Evidence: docs/qa/fix/close/perf01-lighthouse-{devtools,product-5runs,other,templates}.txt; gate: docs/qa/fix/perf-gate.md.
+- **Re-verification (step 22):** Fixed in the PERF-01 close-out (2026-10-01, D291–D293). Re-run on :3100 on the final build, Lighthouse 13 mobile, applied throttling (budget method, D112), medians of 3 runs (5 for /pretraga), benchmarkIndex ≥ 3500: /upit perf 96, TBT 97 ms (runs 91–148; two more passes gave 180 ms at benchmarkIndex 3639–3663 and 193 ms on the last build, after the text-reveal race fix; nine runs 91–335 ms, median 155 ms; 338 ms before the close-out; audit 371 ms); /deo/kocioni-disk-prednji-276-24-mm-demo-0004 97 / 89 ms (other passes 121 and 124 ms); / 95 / 141 ms; /delovi/kocioni-diskovi 96 / 153 ms; /delovi/kocioni-diskovi/volkswagen/golf 96 / 142 ms; /pretraga?q=disk 97 / 159 ms; /vozila/volkswagen/golf/golf-7 96 / 152 ms; /delovi 97 / 86 ms; /ponuda/kocione-plocice-golf 97 / 89 ms; /kontakt 98 / 54 ms; /za-majstore 97 / 61 ms: every storefront template is under 200 ms. Home, category and product: performance 95 / 96 / 97, accessibility 100, SEO 100 (simulated reference: 85 / 86 / 87, accessibility 100, SEO 100). Removed from the hydration path: the Europe/Belgrade Intl formatter built at import and the ICU initialisation by the price formatter (number formatting is Intl-free and parity-tested), zod with the inquiry schema (loaded on demand), GSAP pulled in by the search box, the next/image client component in every card; the below-the-fold blocks of the product and landing pages are no longer laid out during load. Evidence: docs/qa/fix/perf-gate.md (PERF-01 close-out), docs/qa/fix/close/perf01-closeout-{devtools,gate-devtools,templates,search,gate-simulate,final-check}.txt.
 - _Reviewer key: perf-lh-01_
 
 #### PERF-02

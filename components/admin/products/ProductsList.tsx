@@ -31,7 +31,7 @@ import { Field } from "@/components/ui/Field";
 import { IconButton } from "@/components/ui/IconButton";
 import { Input } from "@/components/ui/Input";
 import { Menu } from "@/components/ui/Menu";
-import { useMediaQuery } from "@/components/ui/motion";
+import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { Select } from "@/components/ui/Select";
 import { toast } from "@/components/ui/Toast";

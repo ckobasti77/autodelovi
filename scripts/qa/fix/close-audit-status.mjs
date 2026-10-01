@@ -172,7 +172,7 @@ Closed on 2026-10-01 after three fix runs, the performance gate and the quality 
 | P2 | ${c2.total} | ${c2.FIXED} (${pct(c2.FIXED, c2.total)}) | ${c2.WONTFIX} | ${c2.OPEN} |
 | P3 | ${c3.total} | ${c3.FIXED} (${pct(c3.FIXED, c3.total)}) | ${c3.WONTFIX} | ${c3.OPEN} |
 
-- Gates: performance — [docs/qa/fix/perf-gate.md](fix/perf-gate.md) (applied and simulated throttling, 3-run medians) and the P1 re-run [fix/close/perf01-lighthouse-devtools.txt](fix/close/perf01-lighthouse-devtools.txt); full e2e suite on the production build — [docs/qa/fix/e2e-final.txt](fix/e2e-final.txt) (105 passed, 27 skipped by design, 0 failed).
+- Gates: performance — [docs/qa/fix/perf-gate.md](fix/perf-gate.md) (applied and simulated throttling, 3-run medians; final build in „PERF-01 close-out“) and the P1 re-run [fix/close/perf01-closeout-devtools.txt](fix/close/perf01-closeout-devtools.txt), [fix/close/perf01-closeout-templates.txt](fix/close/perf01-closeout-templates.txt); full e2e suite on the production build — [docs/qa/fix/e2e-final.txt](fix/e2e-final.txt) (105 passed, 27 skipped by design, 0 failed).
 - P1 still open: ${ids("P1", "OPEN")}.
 - P2 still open: ${ids("P2", "OPEN")}.
 - P3 still open: ${ids("P3", "OPEN")}.

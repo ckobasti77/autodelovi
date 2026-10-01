@@ -16,15 +16,26 @@ export type DateInput = Date | number | string;
 
 type BelgradeParts = { day: string; month: string; year: string; hour: string; minute: string };
 
-const partsFormat = new Intl.DateTimeFormat("en-GB", {
-  timeZone: TIME_ZONE,
-  year: "numeric",
-  month: "2-digit",
-  day: "2-digit",
-  hour: "2-digit",
-  minute: "2-digit",
-  hourCycle: "h23",
-});
+let partsFormat: Intl.DateTimeFormat | undefined;
+
+/**
+ * Created on first use, not at import: a time-zone formatter loads the ICU zone data (~45 ms
+ * of a throttled phone's main thread), and this module sits on the hydration path of most
+ * storefront pages through the shared wording in `lib/i18n/sr/shop`, which rarely formats a
+ * date while hydrating (PERF-01).
+ */
+function belgradeFormat(): Intl.DateTimeFormat {
+  partsFormat ??= new Intl.DateTimeFormat("en-GB", {
+    timeZone: TIME_ZONE,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+  });
+  return partsFormat;
+}
 
 function toDate(input: DateInput): Date {
   const date = input instanceof Date ? new Date(input.getTime()) : new Date(input);
@@ -36,7 +47,7 @@ function toDate(input: DateInput): Date {
 
 function belgradeParts(input: DateInput): BelgradeParts {
   const parts: BelgradeParts = { day: "", month: "", year: "", hour: "", minute: "" };
-  for (const part of partsFormat.formatToParts(toDate(input))) {
+  for (const part of belgradeFormat().formatToParts(toDate(input))) {
     if (part.type in parts) parts[part.type as keyof BelgradeParts] = part.value;
   }
   // Some engines still emit "24" for midnight despite h23.

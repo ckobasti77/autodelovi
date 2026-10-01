@@ -5,14 +5,9 @@
  *
  * Negative amounts use the real minus sign U+2212 (`−1.500 RSD`), same as `lib/format/number`.
  */
-import { assertFinite, LOCALE, MINUS, NBSP } from "./number";
+import { assertFinite, formatSigned, MINUS, NBSP } from "./number";
 
 export const CURRENCY_UNIT = "RSD" as const;
-
-const integerFormat = new Intl.NumberFormat(LOCALE, {
-  useGrouping: "always",
-  maximumFractionDigits: 0,
-});
 
 export type MoneyParts = {
   /** Signed, grouped amount without the unit: `12.990`, `12.990,50`, `−1.500`. */
@@ -27,7 +22,8 @@ export function formatRSDParts(para: number): MoneyParts {
   const magnitude = Math.abs(rounded);
   const dinars = Math.floor(magnitude / 100);
   const cents = magnitude % 100;
-  let value = integerFormat.format(dinars);
+  // Grouped without Intl, so a price never initialises ICU while a page hydrates (PERF-01).
+  let value = formatSigned(dinars, 0, 0);
   if (cents !== 0) value += `,${String(cents).padStart(2, "0")}`;
   if (rounded < 0) value = `${MINUS}${value}`;
   return { value, unit: CURRENCY_UNIT };

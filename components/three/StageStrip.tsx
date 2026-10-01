@@ -26,7 +26,7 @@ import { MEDIA } from "@/constants/motion";
 import { TEST_IDS } from "@/constants/testIds";
 import { Button } from "@/components/ui/Button";
 import { IconButton } from "@/components/ui/IconButton";
-import { useMediaQuery } from "@/components/ui/motion";
+import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 import { heroStore, useHeroStore } from "@/components/three/heroStore";
 import { heroDom } from "@/components/three/heroDom";
 

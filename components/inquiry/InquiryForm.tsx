@@ -5,7 +5,6 @@
  * → generation suggestion, position 10 → year hint), vehicle selects, what is needed, up to 5
  * photos, contact + reply channel, consent. Honeypot + timing + rate limit in Convex.
  */
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "convex/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Controller, useForm, useWatch } from "react-hook-form";
@@ -20,6 +19,7 @@ import { api } from "@/convex/_generated/api";
 import { buildConsent, formStartTime } from "@/lib/validation/consent";
 import type { Id } from "@/convex/_generated/dataModel";
 import type { VehicleTree } from "@/lib/catalog/types";
+import { whenIdle } from "@/lib/dom/idle";
 import { normalizeEmail } from "@/lib/domain/identifiers";
 import { decodeVin, normalizeVin } from "@/lib/domain/vin";
 import { normalizePhone } from "@/lib/format/phone";
@@ -32,7 +32,8 @@ import {
   PREFERRED_CHANNEL_LABEL,
 } from "@/lib/i18n/sr/shop";
 import { useSelectedVehicle } from "@/lib/vehicle/store";
-import { inquirySchema, type InquiryValues } from "@/lib/validation/inquiry";
+import type { InquiryValues } from "@/lib/validation/inquiry";
+import { lazyResolver } from "@/lib/validation/lazyResolver";
 import { Button } from "@/components/ui/Button";
 import { Checkbox } from "@/components/ui/Checkbox";
 import {
@@ -62,8 +63,27 @@ export type InquiryPrefill = {
   requestedCodes: string[];
 };
 
+type TreeBrand = VehicleTree[number];
+type TreeModel = TreeBrand["models"][number];
+
+/**
+ * The vehicle tree reduced to the fields this form reads (ids, names, slugs, years, VIN model
+ * codes): the page serializes it into the RSC payload, where the full tree is ~3× larger
+ * (PERF-01).
+ */
+export type InquiryVehicleTree = {
+  brand: Pick<TreeBrand["brand"], "_id" | "name" | "slug">;
+  models: {
+    model: Pick<TreeModel["model"], "_id" | "name" | "slug">;
+    generations: Pick<
+      TreeModel["generations"][number],
+      "_id" | "name" | "slug" | "yearFrom" | "yearTo" | "vinModelCodes"
+    >[];
+  }[];
+}[];
+
 export type InquiryConfig = {
-  tree: VehicleTree;
+  tree: InquiryVehicleTree;
   categories: { slug: string; name: string }[];
   legal: { terms: string; privacy: string };
   viewer: { name: string; email: string; phone: string } | null;
@@ -72,6 +92,15 @@ export type InquiryConfig = {
 
 /** Text controls a visitor can type into before hydration (XB-01). */
 type TextField = "vin" | "year" | "message" | "name" | "phone" | "email";
+
+/**
+ * zod and the schema load on demand, not with the page (PERF-01): warmed in idle time after
+ * hydration and on the first focus in the form, awaited by the first validation at the latest.
+ */
+const validation = lazyResolver(() =>
+  import("@/lib/validation/inquiryResolver").then((m) => m.inquiryResolver),
+);
+const warmValidation = () => void validation.preload().catch(() => undefined);
 
 export function InquiryForm({ config }: { config: InquiryConfig }) {
   const submit = useMutation(api.inquiries.submit);
@@ -85,7 +114,7 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
   const summary = useRef<HTMLDivElement>(null);
   const hydrated = useHydrated();
   const form = useForm<InquiryValues>({
-    resolver: zodResolver(inquirySchema),
+    resolver: validation.resolver,
     mode: "onTouched",
     defaultValues: {
       vin: "",
@@ -114,6 +143,8 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
   const keep = useKeepTypedBeforeHydration<TextField>((name, value) =>
     setValue(name, value, { shouldDirty: true }),
   );
+
+  useEffect(() => whenIdle(warmValidation), []);
 
   // The visitor's stored vehicle prefills the selects once.
   const prefilled = useRef(false);
@@ -244,8 +275,19 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
     <form
       method="post"
       noValidate
+      onFocus={warmValidation}
       onSubmit={(event) => {
-        void handleSubmit(onValid, focusSummary)(event);
+        // A new attempt replaces the previous attempt's message (field errors list themselves).
+        setServerError(null);
+        handleSubmit(
+          onValid,
+          focusSummary,
+        )(event).catch(() => {
+          // Only the on-demand validation code can fail here (offline, a deploy in between);
+          // onValid handles its own errors. The next submit retries the import.
+          setServerError("Upit nije poslat — proverite vezu sa internetom i pokušajte ponovo.");
+          focusSummary();
+        });
       }}
       className="relative flex flex-col gap-8"
       data-reveal="off"
@@ -342,7 +384,12 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
               />
             </Field>
             <Field id="iq-year" label="Godište" optional error={errors.year?.message}>
-              <Input inputMode="numeric" maxLength={4} placeholder="2016" {...keep(register("year"))} />
+              <Input
+                inputMode="numeric"
+                maxLength={4}
+                placeholder="2016"
+                {...keep(register("year"))}
+              />
             </Field>
           </div>
         </fieldset>
@@ -431,7 +478,12 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
               optional={channel !== "email"}
               error={errors.email?.message}
             >
-              <Input type="email" inputMode="email" autoComplete="email" {...keep(register("email"))} />
+              <Input
+                type="email"
+                inputMode="email"
+                autoComplete="email"
+                {...keep(register("email"))}
+              />
             </Field>
           </div>
           <Controller

@@ -28,7 +28,7 @@ import { parsePastedOemList } from "@/lib/domain/codes";
 import { countSr } from "@/lib/format/plural";
 import { Button } from "@/components/ui/Button";
 import { Combobox, type ComboboxItem } from "@/components/ui/Combobox";
-import { useMediaQuery } from "@/components/ui/motion";
+import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 import { ROUTES } from "@/constants/routes";
 import { TERMS } from "@/lib/i18n/sr/shop";
 import { api } from "@/convex/_generated/api";

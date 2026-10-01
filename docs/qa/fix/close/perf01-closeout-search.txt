@@ -1,0 +1,9 @@
+http://localhost:3100/pretraga?q=disk run 1: perf 95 · LCP 1889 ms · CLS 0.000 · TBT 186 ms · FCP 1889 ms · SI 2064 ms · JS 240 KB · benchmarkIndex 4111
+http://localhost:3100/pretraga?q=disk run 2: perf 96 · LCP 1803 ms · CLS 0.000 · TBT 184 ms · FCP 1803 ms · SI 1970 ms · JS 240 KB · benchmarkIndex 3994
+http://localhost:3100/pretraga?q=disk run 3: perf 97 · LCP 1791 ms · CLS 0.000 · TBT 126 ms · FCP 1791 ms · SI 1970 ms · JS 240 KB · benchmarkIndex 4179
+http://localhost:3100/pretraga?q=disk run 4: perf 97 · LCP 1804 ms · CLS 0.000 · TBT 130 ms · FCP 1804 ms · SI 1962 ms · JS 240 KB · benchmarkIndex 4144
+http://localhost:3100/pretraga?q=disk run 5: perf 97 · LCP 1818 ms · CLS 0.000 · TBT 159 ms · FCP 1818 ms · SI 1980 ms · JS 240 KB · benchmarkIndex 4169
+MEDIAN http://localhost:3100/pretraga?q=disk (other, mobile, devtools throttling, 5 runs): performance 97 · accessibility 100 · best practices 100 · SEO 66 (noindex) · LCP 1804 ms · CLS 0.000 · TBT 159 ms · FCP 1804 ms · SI 1970 ms · first-load JS 240 KB · benchmarkIndex 4144
+  LCP element: div.fixed > form.mx-auto > div.flex > p#consent-desc <p id="consent-desc" class="max-w-[68ch] type-body-s text-ink-2">
+  budgets met
+exit 0

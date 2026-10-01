@@ -1,0 +1,7 @@
+http://localhost:3100/ run 1: perf 65 · LCP 4329 ms · CLS 0.001 · TBT 831 ms · FCP 1509 ms · SI 2248 ms · JS 298 KB · benchmarkIndex 4088
+http://localhost:3100/ run 2: perf 64 · LCP 4297 ms · CLS 0.000 · TBT 932 ms · FCP 1511 ms · SI 2102 ms · JS 298 KB · benchmarkIndex 4044
+http://localhost:3100/ run 3: perf 85 · LCP 4302 ms · CLS 0.001 · TBT 20 ms · FCP 1509 ms · SI 1509 ms · JS 298 KB · benchmarkIndex 4104
+MEDIAN http://localhost:3100/ (home, mobile, simulate throttling, 3 runs): performance 65 · accessibility 100 · best practices 100 · SEO 100 · LCP 4302 ms · CLS 0.001 · TBT 831 ms · FCP 1509 ms · SI 2102 ms · first-load JS 298 KB · benchmarkIndex 4088
+  LCP element: div.absolute > div.absolute > picture.absolute > img.absolute <img src="http://localhost:3100/images/hero/car-assembled-m-828.avif" alt="" width="2560" height="1440" decoding="async" loading="eager" draggable="false" class="absolute inset-y-0 left-0 h-full w-full select-none object-contain object-…">
+  BUDGET MISSED: performance 65 < 85, LCP 4302 > 2500, TBT 831 > 200, first-load JS 298 KB > 180 KB
+exit 1

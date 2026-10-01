@@ -50,7 +50,7 @@ import { Input } from "@/components/ui/Input";
 import { Menu } from "@/components/ui/Menu";
 import { Select } from "@/components/ui/Select";
 import { toast } from "@/components/ui/Toast";
-import { useMediaQuery } from "@/components/ui/motion";
+import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 import { ADMIN } from "@/constants/routes";
 import { TEST_IDS } from "@/constants/testIds";
 

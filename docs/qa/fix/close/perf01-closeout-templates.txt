@@ -1,0 +1,43 @@
+http://localhost:3100/upit run 1: perf 96 · LCP 2213 ms · CLS 0.000 · TBT 97 ms · FCP 2213 ms · SI 2234 ms · JS 261 KB · benchmarkIndex 4089
+http://localhost:3100/upit run 2: perf 97 · LCP 1941 ms · CLS 0.000 · TBT 91 ms · FCP 1941 ms · SI 1970 ms · JS 261 KB · benchmarkIndex 4141
+http://localhost:3100/upit run 3: perf 96 · LCP 1958 ms · CLS 0.000 · TBT 148 ms · FCP 1958 ms · SI 1985 ms · JS 261 KB · benchmarkIndex 4057
+MEDIAN http://localhost:3100/upit (checkout, mobile, devtools throttling, 3 runs): performance 96 · accessibility 100 · best practices 96 · SEO 100 · LCP 1958 ms · CLS 0.000 · TBT 97 ms · FCP 1958 ms · SI 1985 ms · first-load JS 261 KB · benchmarkIndex 4089
+  LCP element: div.fixed > form.mx-auto > div.flex > p#consent-desc <p id="consent-desc" class="max-w-[68ch] type-body-s text-ink-2">
+  BUDGET MISSED: first-load JS 261 KB > 200 KB
+http://localhost:3100/delovi run 1: perf 97 · LCP 1942 ms · CLS 0.000 · TBT 86 ms · FCP 1942 ms · SI 2058 ms · JS 221 KB · benchmarkIndex 4110
+http://localhost:3100/delovi run 2: perf 98 · LCP 1897 ms · CLS 0.000 · TBT 82 ms · FCP 1897 ms · SI 2010 ms · JS 221 KB · benchmarkIndex 4056
+http://localhost:3100/delovi run 3: perf 96 · LCP 1972 ms · CLS 0.000 · TBT 139 ms · FCP 1972 ms · SI 2090 ms · JS 221 KB · benchmarkIndex 3937
+MEDIAN http://localhost:3100/delovi (catalog, mobile, devtools throttling, 3 runs): performance 97 · accessibility 100 · best practices 100 · SEO 100 · LCP 1942 ms · CLS 0.000 · TBT 86 ms · FCP 1942 ms · SI 2058 ms · first-load JS 221 KB · benchmarkIndex 4056
+  LCP element: div.fixed > form.mx-auto > div.flex > p#consent-desc <p id="consent-desc" class="max-w-[68ch] type-body-s text-ink-2">
+  BUDGET MISSED: first-load JS 221 KB > 160 KB
+http://localhost:3100/vozila/volkswagen/golf/golf-7 run 1: perf 96 · LCP 1899 ms · CLS 0.001 · TBT 152 ms · FCP 1899 ms · SI 1926 ms · JS 234 KB · benchmarkIndex 3994
+http://localhost:3100/vozila/volkswagen/golf/golf-7 run 2: perf 96 · LCP 1950 ms · CLS 0.001 · TBT 155 ms · FCP 1950 ms · SI 1966 ms · JS 234 KB · benchmarkIndex 4153
+http://localhost:3100/vozila/volkswagen/golf/golf-7 run 3: perf 96 · LCP 1976 ms · CLS 0.001 · TBT 129 ms · FCP 1976 ms · SI 1996 ms · JS 234 KB · benchmarkIndex 3869
+MEDIAN http://localhost:3100/vozila/volkswagen/golf/golf-7 (other, mobile, devtools throttling, 3 runs): performance 96 · accessibility 100 · best practices 100 · SEO 100 · LCP 1950 ms · CLS 0.001 · TBT 152 ms · FCP 1950 ms · SI 1966 ms · first-load JS 234 KB · benchmarkIndex 3994
+  LCP element: div.fixed > form.mx-auto > div.flex > p#consent-desc <p id="consent-desc" class="max-w-[68ch] type-body-s text-ink-2">
+  budgets met
+http://localhost:3100/delovi/kocioni-diskovi/volkswagen/golf run 1: perf 96 · LCP 1951 ms · CLS 0.000 · TBT 142 ms · FCP 1951 ms · SI 2002 ms · JS 290 KB · benchmarkIndex 4123
+http://localhost:3100/delovi/kocioni-diskovi/volkswagen/golf run 2: perf 96 · LCP 1897 ms · CLS 0.000 · TBT 153 ms · FCP 1897 ms · SI 1954 ms · JS 290 KB · benchmarkIndex 4004
+http://localhost:3100/delovi/kocioni-diskovi/volkswagen/golf run 3: perf 97 · LCP 2004 ms · CLS 0.000 · TBT 112 ms · FCP 2004 ms · SI 2046 ms · JS 290 KB · benchmarkIndex 4135
+MEDIAN http://localhost:3100/delovi/kocioni-diskovi/volkswagen/golf (catalog, mobile, devtools throttling, 3 runs): performance 96 · accessibility 100 · best practices 100 · SEO 100 · LCP 1951 ms · CLS 0.000 · TBT 142 ms · FCP 1951 ms · SI 2002 ms · first-load JS 290 KB · benchmarkIndex 4123
+  LCP element: div.fixed > form.mx-auto > div.flex > p#consent-desc <p id="consent-desc" class="max-w-[68ch] type-body-s text-ink-2">
+  BUDGET MISSED: first-load JS 290 KB > 160 KB
+http://localhost:3100/ponuda/kocione-plocice-golf run 1: perf 97 · LCP 2022 ms · CLS 0.001 · TBT 91 ms · FCP 2022 ms · SI 2200 ms · JS 227 KB · benchmarkIndex 4201
+http://localhost:3100/ponuda/kocione-plocice-golf run 2: perf 97 · LCP 2002 ms · CLS 0.001 · TBT 75 ms · FCP 2002 ms · SI 2181 ms · JS 227 KB · benchmarkIndex 4090
+http://localhost:3100/ponuda/kocione-plocice-golf run 3: perf 97 · LCP 2025 ms · CLS 0.001 · TBT 89 ms · FCP 2025 ms · SI 2209 ms · JS 227 KB · benchmarkIndex 4093
+MEDIAN http://localhost:3100/ponuda/kocione-plocice-golf (catalog, mobile, devtools throttling, 3 runs): performance 97 · accessibility 100 · best practices 100 · SEO 69 (noindex) · LCP 2022 ms · CLS 0.001 · TBT 89 ms · FCP 2022 ms · SI 2200 ms · first-load JS 227 KB · benchmarkIndex 4093
+  LCP element: div.fixed > form.mx-auto > div.flex > p#consent-desc <p id="consent-desc" class="max-w-[68ch] type-body-s text-ink-2">
+  BUDGET MISSED: LCP 2022 > 2000, first-load JS 227 KB > 160 KB
+http://localhost:3100/kontakt run 1: perf 98 · LCP 1890 ms · CLS 0.000 · TBT 82 ms · FCP 1890 ms · SI 1887 ms · JS 218 KB · benchmarkIndex 4128
+http://localhost:3100/kontakt run 2: perf 98 · LCP 1905 ms · CLS 0.000 · TBT 54 ms · FCP 1905 ms · SI 1899 ms · JS 218 KB · benchmarkIndex 4198
+http://localhost:3100/kontakt run 3: perf 98 · LCP 1952 ms · CLS 0.000 · TBT 53 ms · FCP 1952 ms · SI 1945 ms · JS 218 KB · benchmarkIndex 4135
+MEDIAN http://localhost:3100/kontakt (other, mobile, devtools throttling, 3 runs): performance 98 · accessibility 100 · best practices 100 · SEO 92 · LCP 1905 ms · CLS 0.000 · TBT 54 ms · FCP 1905 ms · SI 1899 ms · first-load JS 218 KB · benchmarkIndex 4135
+  LCP element: div.fixed > form.mx-auto > div.flex > p#consent-desc <p id="consent-desc" class="max-w-[68ch] type-body-s text-ink-2">
+  BUDGET MISSED: SEO 92 < 95
+http://localhost:3100/za-majstore run 1: perf 97 · LCP 2025 ms · CLS 0.000 · TBT 58 ms · FCP 2025 ms · SI 2038 ms · JS 258 KB · benchmarkIndex 4065
+http://localhost:3100/za-majstore run 2: perf 97 · LCP 2048 ms · CLS 0.000 · TBT 61 ms · FCP 2048 ms · SI 2058 ms · JS 258 KB · benchmarkIndex 4125
+http://localhost:3100/za-majstore run 3: perf 98 · LCP 1967 ms · CLS 0.000 · TBT 62 ms · FCP 1967 ms · SI 1981 ms · JS 258 KB · benchmarkIndex 4116
+MEDIAN http://localhost:3100/za-majstore (other, mobile, devtools throttling, 3 runs): performance 97 · accessibility 100 · best practices 100 · SEO 100 · LCP 2025 ms · CLS 0.000 · TBT 61 ms · FCP 2025 ms · SI 2038 ms · first-load JS 258 KB · benchmarkIndex 4116
+  LCP element: div.fixed > form.mx-auto > div.flex > p#consent-desc <p id="consent-desc" class="max-w-[68ch] type-body-s text-ink-2">
+  budgets met
+exit 1

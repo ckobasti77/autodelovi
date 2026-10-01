@@ -17,9 +17,14 @@ import { RevealText } from "@/components/text-reveal/RevealText";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { ContactActions } from "@/components/shell/ContactActions";
-import { InquiryForm, type InquiryPrefill } from "@/components/inquiry/InquiryForm";
+import {
+  InquiryForm,
+  type InquiryPrefill,
+  type InquiryVehicleTree,
+} from "@/components/inquiry/InquiryForm";
 import { VinLocator } from "@/components/inquiry/VinLocator";
 import { ROUTES } from "@/constants/routes";
+import type { VehicleTree } from "@/lib/catalog/types";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSettingsPublic();
@@ -35,6 +40,24 @@ export async function generateMetadata(): Promise<Metadata> {
 const crumbs = [{ label: "Početna", href: ROUTES.home }, { label: "Upit po broju šasije" }];
 
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v)?.trim() ?? "";
+
+/** Only what the form reads goes into the RSC payload (aliases, WMI lists, platforms stay out). */
+function inquiryTree(tree: VehicleTree): InquiryVehicleTree {
+  return tree.map(({ brand, models }) => ({
+    brand: { _id: brand._id, name: brand.name, slug: brand.slug },
+    models: models.map(({ model, generations }) => ({
+      model: { _id: model._id, name: model.name, slug: model.slug },
+      generations: generations.map((g) => ({
+        _id: g._id,
+        name: g.name,
+        slug: g.slug,
+        yearFrom: g.yearFrom,
+        yearTo: g.yearTo,
+        vinModelCodes: g.vinModelCodes,
+      })),
+    })),
+  }));
+}
 
 /** VIN / part inquiry `/upit` (§10.7) with `?q=`, `?proizvod=`, `?deo=`, `?kodovi=` prefills. */
 export default async function InquiryPage({ searchParams }: PageProps<"/upit">) {
@@ -93,7 +116,7 @@ export default async function InquiryPage({ searchParams }: PageProps<"/upit">) 
         <div className="lg:col-span-8">
           <InquiryForm
             config={{
-              tree,
+              tree: inquiryTree(tree),
               categories: [...categoryTree.categories, ...categoryTree.subcategories]
                 .filter((c) => c.kind !== "system")
                 .sort((a, b) => a.name.localeCompare(b.name, "sr"))
