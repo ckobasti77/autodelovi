@@ -1,0 +1,32 @@
+# Step 22 final verification — 2026-10-01 16:22 — HEAD 13b0c0f
+stopped our server on 3100
+npm run build exit 0
+> next build && node scripts/build/compile-hints.mjs
+[32m[1m✓[22m[39m Compiled successfully in 38.0s
+compile-hints: hinted static/chunks/295keqjsyzoxw.js
+npx tsc --noEmit exit 0
+npm run lint exit 0 — 0 problems
+npm test exit 0
+ Test Files  70 passed | 1 skipped (71)
+      Tests  1223 passed | 4 skipped (1227)
+playwright full suite exit 0
+  27 skipped
+  105 passed (9.0m)
+## Lighthouse mobile, APPLIED throttling (devtools, budget method D112), 3-run medians
+http://localhost:3100/ run 1: perf 96 · LCP 2236 ms · CLS 0.001 · TBT 0 ms · FCP 2120 ms · JS 298 KB · benchmarkIndex 4158
+http://localhost:3100/ run 2: perf 97 · LCP 2114 ms · CLS 0.001 · TBT 31 ms · FCP 2014 ms · JS 298 KB · benchmarkIndex 4103
+http://localhost:3100/ run 3: perf 97 · LCP 2112 ms · CLS 0.001 · TBT 24 ms · FCP 2012 ms · JS 298 KB · benchmarkIndex 4179
+MEDIAN http://localhost:3100/ (home, mobile, devtools throttling, 3 runs): performance 97 · accessibility 100 · best practices 100 · SEO 100 · LCP 2114 ms · CLS 0.001 · TBT 24 ms · FCP 2014 ms · first-load JS 298 KB · benchmarkIndex 4158
+http://localhost:3100/delovi/kocioni-diskovi run 1: perf 98 · LCP 2009 ms · CLS 0.000 · TBT 24 ms · FCP 2009 ms · JS 290 KB · benchmarkIndex 4128
+http://localhost:3100/delovi/kocioni-diskovi run 2: perf 98 · LCP 1896 ms · CLS 0.000 · TBT 63 ms · FCP 1896 ms · JS 290 KB · benchmarkIndex 4160
+http://localhost:3100/delovi/kocioni-diskovi run 3: perf 98 · LCP 1953 ms · CLS 0.000 · TBT 25 ms · FCP 1953 ms · JS 290 KB · benchmarkIndex 4143
+MEDIAN http://localhost:3100/delovi/kocioni-diskovi (catalog, mobile, devtools throttling, 3 runs): performance 98 · accessibility 100 · best practices 100 · SEO 100 · LCP 1953 ms · CLS 0.000 · TBT 25 ms · FCP 1953 ms · first-load JS 290 KB · benchmarkIndex 4143
+http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 1: perf 98 · LCP 1997 ms · CLS 0.000 · TBT 0 ms · FCP 1997 ms · JS 279 KB · benchmarkIndex 4171
+http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 2: perf 97 · LCP 2029 ms · CLS 0.000 · TBT 4 ms · FCP 2029 ms · JS 279 KB · benchmarkIndex 4150
+http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 3: perf 97 · LCP 2042 ms · CLS 0.000 · TBT 0 ms · FCP 2042 ms · JS 279 KB · benchmarkIndex 4144
+MEDIAN http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 (catalog, mobile, devtools throttling, 3 runs): performance 97 · accessibility 100 · best practices 100 · SEO 100 · LCP 2029 ms · CLS 0.000 · TBT 0 ms · FCP 2029 ms · first-load JS 279 KB · benchmarkIndex 4150
+## Lighthouse mobile, SIMULATED throttling (default, reference), 3-run medians
+MEDIAN http://localhost:3100/ (home, mobile, simulate throttling, 3 runs): performance 86 · accessibility 100 · best practices 100 · SEO 100 · LCP 4214 ms · CLS 0.001 · TBT 0 ms · FCP 1510 ms · SI 1510 ms · first-load JS 298 KB · benchmarkIndex 4212
+MEDIAN http://localhost:3100/delovi/kocioni-diskovi (catalog, mobile, simulate throttling, 3 runs): performance 87 · accessibility 100 · best practices 100 · SEO 100 · LCP 4065 ms · CLS 0.000 · TBT 0 ms · FCP 1510 ms · SI 1510 ms · first-load JS 290 KB · benchmarkIndex 4174
+MEDIAN http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 (catalog, mobile, simulate throttling, 3 runs): performance 88 · accessibility 100 · best practices 100 · SEO 100 · LCP 3913 ms · CLS 0.000 · TBT 0 ms · FCP 1359 ms · SI 1359 ms · first-load JS 279 KB · benchmarkIndex 4163
+{"stage":{"x":0,"y":356.1875,"width":390,"height":487.5},"poster":"http://localhost:3100/images/hero/car-assembled-m-828.avif","carHeightPct":93.9,"carWidthPct":95.8,"emptyAbovePx":19,"emptyBelowPx":10,"out":"docs/qa/fix/close/hero-390-final.webp"}
