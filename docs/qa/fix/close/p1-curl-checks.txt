@@ -1,0 +1,30 @@
+# P1 curl checks against the production build (http://localhost:3100), 2026-10-01 10:25:39
+## COPY-01 product titles
+<title>Kočioni disk prednji 276 × 24 mm Febi Bilstein 5Q0 615 505 R</title>
+<meta name="description" content="Kočioni disk prednji 276 × 24 mm (Febi Bilstein, Aftermarket) za VW Golf VII i još 14. Cena 4.690 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 615 505 R."
+<meta property="og:title" content="Kočioni disk prednji 276 × 24 mm Febi Bilstein 5Q0 615 505 R"
+<title>Kočione pločice prednje Bosch 6R0 698 000 MK | SKLOP</title>
+<meta name="description" content="Kočione pločice prednje (Bosch, OEM kvalitet) za VW Polo IV, VW Polo V i još 6. Cena 2.990 RSD sa PDV-om. Trenutno nije na stanju. Kat. br. 6R0 698 000 MK."
+<meta property="og:title" content="Kočione pločice prednje Bosch 6R0 698 000 MK | SKLOP"
+## COPY-02 home FAQ answer in server HTML
+Da. Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Trošak vraćanja snosite vi; ako je deo ugrađivan ili oštećen, odgovarate za umanjenje vr
+## A11Y-04 auth forms method
+/prijava: action="" method="post" 
+/registracija: action="" method="post" 
+/zaboravljena-lozinka: action="" method="post" 
+/za-majstore/registracija: action="" method="post" 
+/upit: action="" method="post" 
+## FLOW-01 search 'pločice golf 7'
+card titles: 5 pad titles; other categories: 0
+## A11Y-03 expired session
+HTTP/1.1 307 Temporary Redirect location: /prijava?next=%2Fadmin set-cookie: __convexAuthJWT= set-cookie: __convexAuthRefreshToken= set-cookie: __convexAuthOAuthVerifier=  <- /admin
+HTTP/1.1 307 Temporary Redirect location: /prijava?next=%2Fnalog set-cookie: __convexAuthJWT= set-cookie: __convexAuthRefreshToken= set-cookie: __convexAuthOAuthVerifier=  <- /nalog
+HTTP/1.1 307 Temporary Redirect location: /prijava?next=%2Fnalog%2Fporudzbine set-cookie: __convexAuthJWT= set-cookie: __convexAuthRefreshToken= set-cookie: __convexAuthOAuthVerifier=  <- /nalog/porudzbine
+HTTP/1.1 307 Temporary Redirect location: /prijava?next=%2Fmajstor%2Fbrza-porudzbina set-cookie: __convexAuthJWT= set-cookie: __convexAuthRefreshToken= set-cookie: __convexAuthOAuthVerifier=  <- /majstor/brza-porudzbina
+## FLOW-01 details (server HTML of /pretraga?q=pločice golf 7)
+      2 >Kočione pločice prednje, sa senzorom<
+      1 >Kočione pločice prednje, sistem Teves<
+      1 >Kočione pločice zadnje, elektronska ručna<
+      2 >Kočione pločice zadnje<
+      1 >Kočione pločice<
+line: 'Samo delovi za <strong>Golf VII</strong>' present: 1; chip 'Cela kategorija Kočione pločice' present: 1; cards of other categories: 0

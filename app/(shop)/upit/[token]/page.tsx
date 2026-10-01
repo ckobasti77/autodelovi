@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { cache } from "react";
 
 import { api } from "@/convex/_generated/api";
 import { tokenPageMetadata } from "@/lib/seo/metadata";
@@ -8,13 +9,24 @@ import { getSettingsPublic } from "@/lib/server/catalog-cache";
 import { RevealText } from "@/components/text-reveal/RevealText";
 import { InquiryStatusView } from "@/components/inquiry/InquiryStatusView";
 
-export const metadata: Metadata = tokenPageMetadata("Upit i ponuda");
+/** One `inquiries.getByToken` per request, shared by the metadata and the page. */
+const loadInquiry = cache((token: string) => fetchPublic(api.inquiries.getByToken, { token }));
+
+/**
+ * Resolves the token in the metadata as well (FLOW-05, as on the order link): a bad link then
+ * carries the not-found title of `./not-found.tsx` on the client too, not „Upit i ponuda“.
+ */
+export async function generateMetadata({ params }: PageProps<"/upit/[token]">): Promise<Metadata> {
+  const { token } = await params;
+  if (!(await loadInquiry(token))) notFound();
+  return tokenPageMetadata("Upit i ponuda");
+}
 
 /** Inquiry status + quote with accept / decline / renewal (ARCHITECTURE §A2). */
 export default async function InquiryStatusPage({ params }: PageProps<"/upit/[token]">) {
   const { token } = await params;
   const [inquiry, settings] = await Promise.all([
-    fetchPublic(api.inquiries.getByToken, { token }),
+    loadInquiry(token),
     getSettingsPublic(),
   ]);
   if (!inquiry) notFound();

@@ -10,7 +10,27 @@
     },
     "notConfirmed": 8,
     "unverified": 0,
-    "merged": 20
+    "merged": 20,
+    "step22": {
+      "P1": {
+        "FIXED": 17,
+        "WONTFIX": 0,
+        "OPEN": 1,
+        "total": 18
+      },
+      "P2": {
+        "FIXED": 85,
+        "WONTFIX": 0,
+        "OPEN": 2,
+        "total": 87
+      },
+      "P3": {
+        "FIXED": 47,
+        "WONTFIX": 0,
+        "OPEN": 28,
+        "total": 75
+      }
+    }
   },
   "findings": [
     {
@@ -43,7 +63,7 @@
       "track": "a11y-store",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "id": "A11Y-01",
       "verification": [
@@ -98,7 +118,14 @@
             "Change revalidation: in Telefon type \"12\", click E-pošta, return to Telefon, select all, delete, type 0641234567 one digit at a time. At the 9th digit (the value becomes valid) focus jumps to the summary, the 10th digit is dropped, and Telefon keeps \"064123456\" with no error"
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "forms-auth",
+        "note": "Re-run on :3100 (CheckoutForm changed in run 3): AUDIT_BASE=http://localhost:3100 node scripts/qa/fix/close-a11y01-repro.mjs 1440|390 chromium (unmodified audit repro, evidence redirected) -> after Tab from the fixed „Ime“ focus is input#co-lastName (expected), every keystroke of „Petrovic“ stays in #co-lastName, a click on Telefon focuses #co-phone, the summary only updates („Proverite 3 polja:“ -> „Proverite 2 polja:“) — docs/qa/fix/close/a11y01/orig-a11y-store-01-{1440,390}-chromium.json. Earlier independent verifier: verify:forms-auth (Chromium 1440/390/reduced motion, Firefox 1440)."
+      }
     },
     {
       "key": "a11y-store-02",
@@ -128,7 +155,7 @@
       "track": "a11y-store",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "alsoReported": [
         {
@@ -194,7 +221,14 @@
             "Same results in Firefox at 1440."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cross-p1",
+        "note": "Re-run on :3100: AUDIT_BASE=http://localhost:3100 node scripts/qa/fix/close-a11y02-repro.mjs chromium (unmodified audit repro) -> 18 of 18 cases (vehicle picker Escape/Zatvori/choose from the header chip, hero field and fitment badge; cart drawer Escape/„Nastavi kupovinu“; header search; mobile menu; 1440 and 390) return focus to the opener or its updated control („Vozilo: Golf VII. Promeni vozilo“), never BODY — docs/qa/fix/close/a11y02/a11y-store-02-reproduce-chromium.json. E2E_BASE_URL=http://localhost:3100 npx playwright test tests/e2e/focus-return.spec.ts -> 8 passed (1440 + 390, docs/qa/fix/close/p1-e2e.txt); npx vitest run tests/unit/lib/focusReturn.test.tsx -> passed (docs/qa/fix/close/p1-vitest.txt)."
+      }
     },
     {
       "key": "a11y-app-01",
@@ -225,7 +259,7 @@
       "track": "a11y-app",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "id": "A11Y-03",
       "verification": [
@@ -279,7 +313,14 @@
             "Reload: you land on /prijava. Opening a public page first instead clears the cookies, and then the account URL returns a proper 307."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "routing-errors-gates",
+        "note": "Re-run on :3100: curl with an expired __convexAuthJWT and a bogus refresh token on /admin, /nalog, /nalog/porudzbine and /majstor/brza-porudzbina -> „HTTP/1.1 307 Temporary Redirect“, location /prijava?next=… and three clearing set-cookie headers (audit: 200 with an empty body) — docs/qa/fix/close/p1-curl-checks.txt. npx vitest run tests/unit/lib/routes.test.ts -> passed (docs/qa/fix/close/p1-vitest.txt)."
+      }
     },
     {
       "key": "a11y-app-02",
@@ -307,7 +348,7 @@
       "track": "a11y-app",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "id": "A11Y-04",
       "verification": [
@@ -358,7 +399,14 @@
             "Fix: add method=\"post\" to the three forms, pointing to a handler that answers 'Za prijavu je potreban JavaScript' without echoing the input, or render the submit button disabled/inert until mounted. Separately, strip the query string from page_location on auth routes in lib/analytics/redact.ts."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "forms-auth",
+        "note": "Re-run on :3100: the server HTML of /prijava, /registracija, /zaboravljena-lozinka, /za-majstore/registracija and /upit has method=\"post\" on every form (docs/qa/fix/close/p1-curl-checks.txt), so a pre-hydration or no-JS submit never puts the password in the URL. Earlier independent verifier: verify:forms-auth (JS off, Chromium 390/1440; submit, Enter and forced click: no GET navigation)."
+      }
     },
     {
       "key": "backend-01",
@@ -389,7 +437,7 @@
       "track": "backend",
       "group": "backend",
       "prefix": "BE",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "id": "BE-01",
       "verification": [
@@ -444,7 +492,14 @@
             "Isolated reproduction without touching shared data: npx vitest run --config scripts/qa/audit/verify-backend-01.vitest.config.mts --silent=false"
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cross-p1",
+        "note": "Re-run: npx vitest run -c scripts/qa/audit/verify-backend-01.vitest.config.mts (the audit's own convex-test repro) -> customerAcceptQuote „REFUSED“/„INVALID“, staffConvertToOrder „REFUSED“/„INVALID“, usedPara 0 after both paths, Tests 1 passed (docs/qa/fix/close/be01-vitest.txt). The verifier's blocking regression on /admin/upiti/[broj] is gone: E2E_BASE_URL=http://localhost:3100 npx playwright test tests/e2e/admin.spec.ts -g \"inquiry: answer with a quote\" -> passed on desktop-1440 (docs/qa/fix/close/p1-e2e.txt)."
+      }
     },
     {
       "key": "backend-02",
@@ -472,7 +527,7 @@
       "track": "backend",
       "group": "backend",
       "prefix": "BE",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "id": "BE-02",
       "verification": [
@@ -523,7 +578,14 @@
             "Global drain, from code (not executed): rotate UA and e-mail per submission with honeypot \"\" and startedAt = now - 5000. After 300 successful orders in the hour, orders:submit returns „Previše pokušaja…“ for every customer."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "backend-orders-quotes",
+        "note": "Independent verifier verify:backend-orders-quotes (code review and tests): the rate-limit key is sha256(salt|ipSubject(ip)) without the User-Agent, IPv6 cut to /64; the global order cap only alerts the owner (no refusal). convex/lib/rateLimits.ts and the order path unchanged since (run 3 touched only copy strings in convex/); the Convex suite passed 179/179 in the gates run (docs/PROGRESS.md, gates entry). Server-side, so the production front-end build does not change it."
+      }
     },
     {
       "key": "copy-01",
@@ -550,7 +612,7 @@
       "track": "copy",
       "group": "copy",
       "prefix": "COPY",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "alsoReported": [
         {
@@ -608,7 +670,14 @@
             "Fix: lib/seo/templates.ts:54 change /s+/g to /\\s+/g. At :88, cut the vehicle list at the last ', ' label boundary that fits and drop a trailing 'i'/'i još N', rather than using a character slice plus regex. Add unit assertions that the title contains 'disk' and that the shortened list ends on a complete label."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "seo-content-email",
+        "note": "Re-run on :3100: <title> „Kočioni disk prednji 276 × 24 mm Febi Bilstein 5Q0 615 505 R“ and „Kočione pločice prednje Bosch 6R0 698 000 MK | SKLOP“ (every „s“ kept); descriptions end at whole words („… za VW Golf VII i još 14. Cena 4.690 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 615 505 R.“) — docs/qa/fix/close/p1-curl-checks.txt. npx vitest run tests/unit/seo -> passed (docs/qa/fix/close/p1-vitest.txt); e2e seo.spec „titles ≤ 60, descriptions ≤ 155“ passed on :3100 (docs/qa/fix/e2e-final.txt)."
+      }
     },
     {
       "key": "copy-03",
@@ -635,7 +704,7 @@
       "track": "copy",
       "group": "copy",
       "prefix": "COPY",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "id": "COPY-02",
       "verification": [
@@ -685,7 +754,14 @@
             "Fix: change the FAQ answer in Admin → Sadržaj and in convex/seedData/content.ts:264, e.g. „Da. Kao potrošač možete da odustanete u roku od 14 dana od prijema, bez navođenja razloga. Trošak vraćanja snosite vi; ako je deo ugrađivan, odgovarate za umanjenje vrednosti. Detalji: [Reklamacije i povrat](/reklamacije-i-povrat).“ Also align „Ugrađen deo teško vraćamo.“ in lib/email/templates/order.ts:265, and add the FAQ plus the „originalno pakovanje“ requirement to the lawyer checklist in HUMAN-TODO §3."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "search-catalog-content",
+        "note": "Re-run on :3100: the server HTML of / contains „Da. Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Trošak vraćanja snosite vi; …“ (docs/qa/fix/close/p1-curl-checks.txt). Earlier independent verifier: verify:search-catalog-content (390/1440/reduced motion, mouse and keyboard). The owner's legal review stays in HUMAN-TODO §13."
+      }
     },
     {
       "key": "flows-shop-02",
@@ -714,7 +790,7 @@
       "track": "flows-shop",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "id": "FLOW-01",
       "verification": [
@@ -764,7 +840,14 @@
             "Rank name/category matches above other text hits. Show a category chip when any query token matches a category name (currently suggest.categories requires every token to match)."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "search-catalog-content",
+        "note": "Re-run on :3100: the server HTML of /pretraga?q=pločice golf 7 has 6 cards, all „Kočione pločice …“, 0 cards of other categories, the line „Samo delovi za Golf VII …“ and the chip „Cela kategorija Kočione pločice“ (docs/qa/fix/close/p1-curl-checks.txt). Earlier independent verifier: verify:search-catalog-content (390x844 and 1440x900, five query variants)."
+      }
     },
     {
       "key": "flows-admin-01",
@@ -794,7 +877,7 @@
       "track": "flows-admin",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "id": "FLOW-02",
       "verification": [
@@ -846,7 +929,14 @@
             "Swapped variant: tab A edits only the price, tab B saves a new Naziv, tab A saves, and the name from tab B is lost. This applies to every field except stock."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "search-catalog-content",
+        "note": "Independent verifier verify:search-catalog-content ran the audit steps in two tabs as owner (AUDIT-FA-852021): tab A receives the server price and „Artikal je u međuvremenu izmenjen — polja koja niste menjali su osvežena (cena).“, and its save no longer overwrites tab B's price; the product was restored afterwards. Product editor and productWriter unchanged since; e2e admin „create a product with an image, then edit it“ passed on :3100 (docs/qa/fix/e2e-final.txt)."
+      }
     },
     {
       "key": "motion-3d-01",
@@ -879,7 +969,7 @@
       "track": "motion-3d",
       "group": "motion",
       "prefix": "MOT",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "id": "MOT-01",
       "verification": [
@@ -942,7 +1032,14 @@
             "Run: node scripts/qa/audit/verify-motion-3d-01-skeptic.mjs (all configs), or pass a tag such as pixel7-412x839."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "hero-stage",
+        "note": "Re-run on :3100: AUDIT_BASE=http://localhost:3100 node scripts/qa/fix/hero-stage-framing.mjs --shots --out docs/qa/fix/close/hero-framing 390x844 360x780 430x932 (overlays hidden) -> 390x844 stage 390x488, car 374x329 = 67.4 % H / 95.9 % W, 30 px (6.1 %) empty between the caption and the roof; 360x780 67.4 % / 96.1 %; 430x932 67.2 % / 95.8 % (audit: about a third of the stage height) — docs/qa/fix/close/hero-framing.txt. Screenshot docs/qa/fix/close/hero-390-poster.webp (scripts/qa/fix/hero-390-check.mjs). e2e hero-3d.spec „the stage keeps the poster's aspect below 1024 px“ passed at 1440 and 390 (docs/qa/fix/close/p1-e2e.txt)."
+      }
     },
     {
       "key": "motion-3d-03",
@@ -970,7 +1067,7 @@
       "track": "motion-3d",
       "group": "motion",
       "prefix": "MOT",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "alsoReported": [
         {
@@ -1046,7 +1143,14 @@
             "Press Tab from the last focusable element before the bar: focus lands on the bar's 'U korpu' button (top 861.5 at 844 px viewport) and no focus indicator is visible. This is the bar's only focusable control; there is no quantity stepper."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "catalog-product-ui",
+        "note": "Re-run on :3100: AUDIT_BASE=http://localhost:3100 node scripts/qa/fix/close-p1-ui.mjs -> /deo/…-0004 at 390x844 scrolled to 1400 and 2200 px: sticky buy bar top 779 / bottom 844 = viewport, aria-hidden false, not inert, button „U korpu“ (docs/qa/fix/close/p1-ui.json). Earlier independent verifier: verify:catalog-product-ui (original audit scripts; wheel, scrollTo and reduced motion)."
+      }
     },
     {
       "key": "perf-lh-01",
@@ -1121,7 +1225,14 @@
             "Discard the GSAP-ticker and 25dplrt contributions as TBT drivers: in quiet runs they add 0–4 ms and 0–40 ms."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": "cross-p1",
+        "note": "not fixed — partly fixed. Re-run on :3100, Lighthouse mobile, applied throttling (budget method), 3-run medians, benchmarkIndex 3832–4172: / perf 95, TBT 178 ms; /delovi/kocioni-diskovi 96 / 148 ms; product 94 / 187 ms (5 runs; an earlier 3-run pass gave 250 ms); landing /delovi/kocioni-diskovi/volkswagen/golf 95 / 193 ms; /pretraga 95 / 168 ms; /vozila/volkswagen/golf/golf-7 96 / 150 ms; /kontakt 98 / 86 ms; /za-majstore 97 / 66 ms; /delovi 98 / 93 ms. Still over the 200 ms bar: /upit 93 / 250 ms (runs 188–313; audit 371 ms), where the cost is the document task after FCP (280–350 ms) plus react-dom hydration. The performance bars (home ≥ 85, catalog/product ≥ 90) are met on every template. Evidence: docs/qa/fix/close/perf01-lighthouse-{devtools,product-5runs,other,templates}.txt; gate: docs/qa/fix/perf-gate.md."
+      }
     },
     {
       "key": "perf-lh-03",
@@ -1148,7 +1259,7 @@
       "track": "perf-lh",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "id": "PERF-02",
       "verification": [
@@ -1189,7 +1300,14 @@
             "Root cause and proof of the fix: node scripts/qa/audit/verify-perf-lh-03-perfskeptic-fallback.mjs. The next/font fallback's caps advance is 1.064 em vs Martian Mono's 0.700 em; a local('Courier New') fallback at size-adjust 116.65 % gives CLS 0."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "seo-content-email",
+        "note": "Re-run on :3100: OUT_DIR=docs/qa/fix/close AUDIT_BASE=http://localhost:3100 node scripts/qa/fix/seo-content-email-cls-mono.mjs -> /vozila/volkswagen/golf/golf-7 and /vozila/skoda/octavia at 390 and 1440: probeDelta 0 and navDelta 0 between the web font and the forced fallback (docs/qa/fix/close/perf02-cls-mono.json); Lighthouse applied throttling on the Golf 7 page: CLS 0.001 (docs/qa/fix/close/perf01-lighthouse-templates.txt)."
+      }
     },
     {
       "key": "vis-store-02",
@@ -1224,7 +1342,7 @@
       "track": "vis-store",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "id": "VIS-01",
       "verification": [
@@ -1280,7 +1398,14 @@
             "Fix: in 3d/scripts thumbs.py, add a per-part exposure floor (a stronger key/rim or a local fill for dark rubber/friction/black-steel materials) and re-render at least kocione-plocice, kocione-celjusti, abs-senzori, amortizeri-opruge, filter-kabine, brizgaljke-pumpa-goriva, spone-stabilizatori and paljenje-grejaci. Optionally frame the whole set closer to 70 % (the part is currently about 58 %) and add a 1024+ px master for DPR 2 product galleries."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "hero-3d-assets",
+        "note": "Independent verifier verify:hero-3d-assets ran both audit metric scripts on public/images/parts: renders under 1.3:1 mean contrast went from 7 to 0, the lowest mean is now 2.2:1. The production build serves the same files (public/images/parts unchanged since). Real photos remain an owner item (HUMAN-TODO §13)."
+      }
     },
     {
       "key": "vis-commerce-01",
@@ -1314,7 +1439,7 @@
       "track": "vis-commerce",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "id": "VIS-02",
       "verification": [
@@ -1371,7 +1496,14 @@
             "Visual: keep the §5.5 edge (no shadow on night). At sm+ use a surface step (surface-1 or bg-raised) instead of bg-bg/95, and optionally a short fade above the bar, so the overlap reads as an overlay. This is P3 polish and part of the known item, not the P1."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "Independent verifier verify:cart-mechanic-overlays: fullyHidden 0 and partlyHidden 0 of 62 focus stops at every width (audit: 6 at 1440, 27 at 390). Production build: e2e mechanics.spec „register → approve → own prices → quick order → deferred order“ passed on :3100 (docs/qa/fix/e2e-final.txt)."
+      }
     },
     {
       "key": "vis-commerce-02",
@@ -1403,7 +1535,7 @@
       "track": "vis-commerce",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "alsoReported": [
         {
@@ -1465,7 +1597,14 @@
             "At 360, 390 and 480 px the header is about 611–614 px wide and the menu trigger sits at about 567–614, fully off-screen. At 768 and 1024 the contacts are duplicated as text plus icon, and at 1024 the nav wraps. At 1280 the cart overflows by 11 px (scrollWidth 1291). Only 1440 and wider is correct."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "shell-perf",
+        "note": "Re-run on :3100 (Header.tsx touched in run 3): AUDIT_BASE=http://localhost:3100 node scripts/qa/fix/close-p1-ui.mjs -> /delovi/kocioni-diskovi at 320/360/390: document and header scrollWidth equal the viewport, the mobile menu button spans 260–304 / 300–344 / 330–374 px, on screen (docs/qa/fix/close/p1-ui.json). With phone and Viber injected: independent verifier reverify:shell-perf, 19 widths 320–1920, no overflow (docs/qa/fix/shell-perf/verify/)."
+      }
     },
     {
       "key": "xbrowser-01",
@@ -1500,7 +1639,7 @@
       "track": "xbrowser",
       "group": "xbrowser",
       "prefix": "XB",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "id": "XB-01",
       "verification": [
@@ -1560,7 +1699,14 @@
             "Suggested fix: use the uncontrolled + FormData pattern of components/auth/SignInForm.tsx where possible. Otherwise, in components/shell/SearchBox.tsx, sync state from the DOM in a mount useLayoutEffect (if inputRef.value differs from state, setQuery(inputRef.value)). In components/inquiry/InquiryForm.tsx and components/mechanic/MechanicRegistrationForm.tsx, read the server-rendered field values in a useState initializer (runs during the hydration render, before register() refs write '') and pass them as defaultValues. Add an e2e test that delays only JS chunks, types, and asserts the value and a successful submit after hydration, in Chromium and WebKit."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "forms-auth",
+        "note": "Independent verifier reverify:forms-auth re-ran the audit method (only /_next/static/chunks delayed 6 s, typing as soon as the field paints) with scripts/qa/fix/forms-auth-reverify-xb01.mjs, checking the DOM and react-hook-form state: no keystrokes lost. Form components unchanged since; the A11Y-04 form markup was re-checked on :3100."
+      }
     },
     {
       "key": "a11y-store-03",
@@ -1589,7 +1735,7 @@
       "track": "a11y-store",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "A11Y-05",
       "verification": [
@@ -1615,7 +1761,14 @@
             "Press Escape with focus in the page or in the banner: the banner stays"
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "shell-perf",
+        "note": "verify-consent-reveal.json consent: height 273 (was 314), decisionsSideBySide true, scrollPaddingBottom '289px', tabStopsCoveredOf30 0 (was 21 at 390), afterEscape {collapsed true, height 160}; screenshots consent-390.webp, consent-390-collapsed.webp. (docs/qa/fix/shell-perf.json)"
+      }
     },
     {
       "key": "a11y-store-04",
@@ -1641,7 +1794,7 @@
       "track": "a11y-store",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "A11Y-06",
       "verification": [
@@ -1660,7 +1813,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "shell-perf",
+        "note": "verify-consent-reveal.json consent.focusAfterSettings 'switch:consent-analytics:'. (docs/qa/fix/shell-perf.json)"
+      }
     },
     {
       "key": "a11y-store-05",
@@ -1688,7 +1848,7 @@
       "track": "a11y-store",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "alsoReported": [
         {
@@ -1722,7 +1882,14 @@
             "Same pattern: customer sign-up terms (AuthForms) and the back-in-stock consent checkbox"
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "forms-auth",
+        "note": "forms-auth-checkout.mjs 390 → \"C terms a11y {invalid:true, required:true, description:Potrebna je saglasnost sa uslovima kupovine.}\", \"C focus stays on terms after checking it button[checkbox]#co-terms\"; forms-auth-misc.mjs → \"upit consent a11y {invalid:true, required:true, desc:Potrebna je saglasnost da podatke koristimo za odgovor na upit.}\", \"mech terms a11y {invalid:true, desc:Potrebna je saglasnost sa uslovima korišćenja.}\"; npx vitest run tests/unit/components/ui.test.tsx → 17 passed; docs/qa/fix/forms-auth/upit-consent-390.webp, checkout-terms-390.webp (docs/qa/fix/forms-auth.json)"
+      }
     },
     {
       "key": "a11y-store-06",
@@ -1749,7 +1916,7 @@
       "track": "a11y-store",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "A11Y-08",
       "verification": [
@@ -1768,7 +1935,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "forms-auth",
+        "note": "forms-auth-misc.mjs → \"bis empty → focus + message {focus:input#bis-email, msg:Upišite adresu e-pošte.}\", \"bis bad → message Adresa e-pošte nije ispravna. Primer: ime@primer.rs.\", \"bis no consent → focus + description {role:checkbox, invalid:true, desc:Potrebna je saglasnost da vam pošaljemo obaveštenje.}\" (docs/qa/fix/forms-auth.json)"
+      }
     },
     {
       "key": "a11y-store-07",
@@ -1795,7 +1969,7 @@
       "track": "a11y-store",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "A11Y-09",
       "verification": [
@@ -1815,7 +1989,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cart-mechanic-overlays-cart.mjs → at 390 and 1440: 'after +1 live: Količina 2, ukupno 14.980 RSD.', 'after remove first: focus A[Kočioni disk zadnji 272 × 10 mm, puni] live: Uklonjeno iz korpe: Kočioni disk prednji 312 × 25 mm.', 'remove #3: focus H2[Korpa je prazna] live: Uklonjeno iz korpe: … Korpa je prazna.' (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     },
     {
       "key": "a11y-store-08",
@@ -1844,7 +2025,7 @@
       "track": "a11y-store",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "A11Y-10",
       "verification": [
@@ -1865,7 +2046,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "catalog-product-ui",
+        "note": "AUDIT_BASE=http://localhost:3001 ONLY=a11y10,vis05 node scripts/qa/fix/catalog-product-ui-layout.mjs -> at 320x800 on /ponuda/kocione-plocice-golf, /delovi/kocioni-diskovi and /pretraga?q=disk, normal and with the WCAG 1.4.12 spacing stylesheet: clipped 0, clamped 0, overX 0, thumbLinked = cards (whole card still one link). Evidence docs/qa/fix/catalog-product-ui/layout-a11y10-vis05.json, a11y10-card-320.webp, a11y10-card-320-spacing.webp (full name, wrapped OEM, full-width U korpu). (docs/qa/fix/catalog-product-ui.json)"
+      }
     },
     {
       "key": "a11y-app-04",
@@ -1891,7 +2079,7 @@
       "track": "a11y-app",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "A11Y-11",
       "verification": [
@@ -1908,7 +2096,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "verify.json palette-1440 and palette-390: statusResults „10 rezultata“, statusNone „Nema rezultata za „qqqzzzxx“.“ inside the dialog's p[role=status]. (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "a11y-app-05",
@@ -1932,7 +2127,7 @@
       "track": "a11y-app",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "A11Y-12",
       "verification": [
@@ -1950,7 +2145,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "verify.json palette-1440 active option after ArrowDown: outline „solid 2px rgb(184, 71, 10) offset -2px“ (paper --color-focus), bg rgb(238,241,244) (before: outline none). (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "a11y-app-07",
@@ -1975,7 +2177,7 @@
       "track": "a11y-app",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "A11Y-13",
       "verification": [
@@ -1995,7 +2197,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "forms-auth",
+        "note": "forms-auth-prehydration.mjs chromium → \"reg summary {focus:alert, items:[Potrebna je saglasnost sa uslovima korišćenja.]}\" (docs/qa/fix/forms-auth.json)"
+      }
     },
     {
       "key": "a11y-app-08",
@@ -2021,7 +2230,7 @@
       "track": "a11y-app",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "A11Y-14",
       "verification": [
@@ -2041,7 +2250,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cart-mechanic-overlays-pricelist.mjs → {\"w\":360,\"stops\":63,\"hidden\":0,\"partly\":0}, {\"w\":390,…\"hidden\":0,\"partly\":0}, {\"w\":768,…\"hidden\":0}, {\"w\":1440,…\"hidden\":0} (audit: 16 / 15 / 11 / 4 fully hidden). (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     },
     {
       "key": "a11y-app-10",
@@ -2066,7 +2282,7 @@
       "track": "a11y-app",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "alsoReported": [
         {
@@ -2092,7 +2308,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "verify.json text: linkDecoration „underline“, axe link-in-text-block violations 0 on /admin/obavestenja (before: 1, serious). (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "a11y-app-11",
@@ -2118,7 +2341,7 @@
       "track": "a11y-app",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "A11Y-16",
       "verification": [
@@ -2137,7 +2360,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "verify.json bulk/admin/porudzbine and /admin/proizvodi: status after mouse select „Izabrano: 1“, after deselect „Izbor poništen“, after keyboard focus + Space „Izabrano: 1“. (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "a11y-app-12",
@@ -2163,7 +2393,7 @@
       "track": "a11y-app",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "A11Y-17",
       "verification": [
@@ -2189,7 +2419,14 @@
             "Commit completion IS announced by the admin bell's polite live region ('Novo obaveštenje: Uvoz završen: <file>'), so the fix only needs to cover step changes (move focus to the step heading or a status line), commit/rollback progress milestones and rollback completion."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-flows",
+        "note": "admin-flows-verify.mjs import -> focusStep2 {tag:'H2', text:'Korak 2 od 5: Kolone'} after Enter on 'Dalje: kolone', focusStep3 'Korak 3 od 5: Provera', focusStep4 'Korak 4 od 5: Probni uvoz', focusAfterCancel 'Korak 1 od 5: Datoteka'; A11Y-17-batch {role:'status', text:'Uvoz je otkazan.'}; commit milestones by code (no live commit run, to leave demo data untouched) (docs/qa/fix/admin-flows/verify-suspend-import.json). (docs/qa/fix/admin-flows.json)"
+      }
     },
     {
       "key": "backend-03",
@@ -2216,7 +2453,7 @@
       "track": "backend",
       "group": "backend",
       "prefix": "BE",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "BE-03",
       "verification": [
@@ -2241,7 +2478,14 @@
             "The script then closes the inquiry and cancels the order."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "backend-orders-quotes",
+        "note": "Live: node scripts/qa/fix/backend-orders-quotes-consent.mjs returns forged {code: CONFLICT, message: 'Uslovi su izmenjeni — osvežite stranicu.'} (docs/qa/fix/backend-orders-quotes/consent-attribution.json). convex/security.test.ts 'consent versions and time come from the server; attribution is clamped' passes: stored termsVersion is 2026-09-29 and acceptedAt is later than the forged 2000-01-01. (docs/qa/fix/backend-orders-quotes.json)"
+      }
     },
     {
       "key": "backend-04",
@@ -2268,7 +2512,7 @@
       "track": "backend",
       "group": "backend",
       "prefix": "BE",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "BE-04",
       "verification": [
@@ -2293,7 +2537,14 @@
             "Order: company.address.street is 20,000 characters and postalCode \"ABC\" is accepted. Run `node scripts/qa/audit/verify-backend-04-shot.mjs SK-2026-000102` to see the \"Sedište\" cell 19,110 px tall in the admin order detail at 1440 px."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "backend-orders-quotes",
+        "note": "Live (UP-2026-000086, closed afterwards): a 200 000-character campaign is stored with length 200, the admin list returns length 60, and a 5 000-character gclid containing '<script>' is stored as 512 safe characters (docs/qa/fix/backend-orders-quotes/consent-attribution.json). convex/security.test.ts passes, 15/15. (docs/qa/fix/backend-orders-quotes.json)"
+      }
     },
     {
       "key": "backend-05",
@@ -2319,7 +2570,7 @@
       "track": "backend",
       "group": "backend",
       "prefix": "BE",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "BE-05",
       "verification": [
@@ -2345,7 +2596,14 @@
             "Run `npx vitest run --config scripts/qa/audit/verify-backend-06.vitest.config.mts --silent=false verify-backend-05-clock`. A world built at 16:00 gives reminded 1; built at 16:45 or on 07.10. it gives reminded 0. This shows the crons test depends on the real clock from 30.09.2026 16:30 CEST onward."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "backend-orders-quotes",
+        "note": "npx vitest run --maxWorkers=2 on the 8 owned convex suites plus 4 domain unit suites: 'Test Files 12 passed (12), Tests 258 passed (258)'. This ran on 01.10.2026, after the time from which the crons test used to fail deterministically. (docs/qa/fix/backend-orders-quotes.json)"
+      }
     },
     {
       "key": "backend-06",
@@ -2373,7 +2631,7 @@
       "track": "backend",
       "group": "backend",
       "prefix": "BE",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "BE-06",
       "verification": [
@@ -2396,7 +2654,14 @@
             "Check the VERIFY06 lines. remove-then-cancel: afterRemove 7, afterCancel 7 (expected 10). lower-then-complete: 7 (expected 9). add-then-complete: battery 20 (expected 18). mode-switch: stockCommitted false, stock 10 (expected 7). control-confirmed: 9 (correct)."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "backend-orders-quotes",
+        "note": "The audit repro, npx vitest run -c scripts/qa/audit/verify-backend-06.vitest.config.mts, now shows every actual value equal to its expected value. remove-then-cancel: afterRemove 10, afterCancel 10. lower-then-complete: afterEdit 9. add-then-complete: batteryLine committedQty 2, currentStock 18. mode-switch: stockCommitted true, afterComplete 7. Its 4 bug-asserting tests fail for that reason (docs/qa/fix/backend-orders-quotes/verify-backend-06.txt). convex/orders.test.ts has 2 new BE-06 tests and passes 24/24. (docs/qa/fix/backend-orders-quotes.json)"
+      }
     },
     {
       "key": "backend-07",
@@ -2422,7 +2687,7 @@
       "track": "backend",
       "group": "backend",
       "prefix": "BE",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "BE-07",
       "verification": [
@@ -2447,7 +2712,14 @@
             "Suggested fix: enable e-mail verification (R01/D212). Key the sign-up limit on the request IP from ctx.meta.getRequestMetadata() for direct calls, and on a proxy-signed client key for /api/auth, and keep the global number as an owner alert. Map proxy error strings containing RATE_LIMITED to the Serbian 'Previše pokušaja…' message in AuthForms and MechanicRegistrationForm (parse the code out of error.message, since the Next client drops .data)."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "backend-orders-quotes",
+        "note": "npx tsc --noEmit reports no errors in convex/auth.ts or convex/lib/rateLimits.ts. The alert path (countTowardsAlert → notifications.ownerAlert, one alert per hour) is covered by convex/orders.test.ts 'the site-wide order threshold alerts the owner instead of refusing orders' (1 alert). npx convex dev --once: 'Convex functions ready!'. (docs/qa/fix/backend-orders-quotes.json)"
+      }
     },
     {
       "key": "copy-02",
@@ -2477,7 +2749,7 @@
       "track": "copy",
       "group": "copy",
       "prefix": "COPY",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "COPY-03",
       "verification": [
@@ -2498,7 +2770,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "tsc/eslint clean; contactLinkList already drops empty channels. (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     },
     {
       "key": "copy-04",
@@ -2525,7 +2804,7 @@
       "track": "copy",
       "group": "copy",
       "prefix": "COPY",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "COPY-04",
       "verification": [
@@ -2544,7 +2823,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cross-p1",
+        "note": "npx convex dev --once -> 'Convex functions ready!'; cutoffLabel('') returns '' and lib/content/placeholders.ts drops the sentence; tests/unit/content pass (vitest.txt). (docs/qa/fix/cross-p1.json)"
+      }
     },
     {
       "key": "copy-05",
@@ -2572,7 +2858,7 @@
       "track": "copy",
       "group": "copy",
       "prefix": "COPY",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "COPY-05",
       "verification": [
@@ -2592,7 +2878,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "seo-content-email",
+        "note": "Crawl of 342 URLs: brandNominativeAfterZa 0 (title, H1, description). /vozila/skoda H1 „Delovi za Škodu“, /delovi/kocioni-diskovi/cupra H1 „Kočioni diskovi za Cupru“, landing OG image docs/qa/fix/seo-content-email/og-landing-skoda.webp („KOČIONI DISKOVI ZA ŠKODU“). (docs/qa/fix/seo-content-email.json)"
+      }
     },
     {
       "key": "copy-07",
@@ -2619,7 +2912,7 @@
       "track": "copy",
       "group": "copy",
       "prefix": "COPY",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "COPY-06",
       "verification": [
@@ -2644,7 +2937,14 @@
             "curl -i http://localhost:3100/sitemaps/nepostoji.xml (or /slike/deo/nepostoji-1-abc.jpg) returns 404 text/plain „Not found“ (low impact, machine-facing)"
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "routing-errors-gates",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/routing-errors-gates-verify.mjs forbidden (customer account, 390 + 1440, /admin and /admin/porudzbine): status 403, h1 'Nemate pristup ovoj strani', text 'Prijavljeni ste kao audit-kupac-…@primer.rs. Taj nalog nema pristup administraciji…', 'Početna', 'Odjavi se', axe [] (copy06-admin-403-390.webp, copy06-admin-403-1440.webp). Server HTML: node scripts/qa/fix/routing-errors-gates-403-html.mjs -> '/admin 403 [\"Nemate pristup · Administracija\"]', '/admin/korisnici 403 [\"Nemate pristup · Administracija\"]'. curl -i /slike/deo/nepostoji-1-abc.jpg -> 404, 'content-type: text/plain; charset=utf-8', body 'Nije pronađeno'. (docs/qa/fix/routing-errors-gates.json; cross-p1 reverted only cross request #41 (forbidden() in admin generateMetadata, D286); the Serbian 403/401 pages and „Nije pronađeno“ bodies are routing-errors-gates' fix)"
+      }
     },
     {
       "key": "copy-08",
@@ -2669,7 +2969,7 @@
       "track": "copy",
       "group": "copy",
       "prefix": "COPY",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "COPY-07",
       "verification": [
@@ -2686,7 +2986,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "search-catalog-content",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/search-catalog-content-deo.mjs -> deo.json warranty '24 meseca' at 390/768/1024/1440. (docs/qa/fix/search-catalog-content.json)"
+      }
     },
     {
       "key": "copy-09",
@@ -2710,7 +3017,7 @@
       "track": "copy",
       "group": "copy",
       "prefix": "COPY",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "COPY-08",
       "verification": [
@@ -2727,7 +3034,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "hero-stage",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-stage-p2.mjs legend -> 'COPY08 \"Sve kategorije (44) · 157 artikala\"' at every width from 360 to 1440 (p2-final.txt). (docs/qa/fix/hero-stage.json)"
+      }
     },
     {
       "key": "flows-shop-03",
@@ -2754,7 +3068,7 @@
       "track": "flows-shop",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "id": "FLOW-03",
       "verification": [
@@ -2808,7 +3122,14 @@
             "Compare with /delovi/kocioni-diskovi?marka=volkswagen&model=golf&generacija=golf-7, which shows 5 artikala (the model landing /delovi/kocioni-diskovi/volkswagen/golf shows 6 for all Golf generations)"
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "search-catalog-content",
+        "note": "search.json 'vehicle': store Golf VII + /pretraga?q=kočioni disk -> URL …&vozilo=volkswagen%2Fgolf%2Fgolf-7, '5 artikala', line 'Samo delovi za Golf VII (još 4 za druga vozila). Prikaži sve'; after 'Prikaži sve' -> vozilo=sva, '9 artikala', link 'Samo za Golf VII'. Screenshot search-selected-vehicle-390.webp. convex test 'the selected vehicle narrows a plain query, unless nothing fits' passed. (docs/qa/fix/search-catalog-content.json; cross-p1 declined only the optional cross request #13 (vozilo= in the SearchBox submit); the finding is fixed by search-catalog-content)"
+      }
     },
     {
       "key": "flows-shop-04",
@@ -2833,7 +3154,7 @@
       "track": "flows-shop",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "FLOW-04",
       "verification": [
@@ -2853,7 +3174,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "search-catalog-content",
+        "note": "search.json: 'golf 7' and 'a' -> count 'Prikazano prvih 48, ima ih još…', 8 chips ('Kočione pločice 6', 'Kočioni diskovi 5', …); convex test: q 'golf 7' + categorySlug 'kocioni-diskovi' -> only the disc, category echoed. (docs/qa/fix/search-catalog-content.json)"
+      }
     },
     {
       "key": "flows-shop-05",
@@ -2910,7 +3238,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": "cross-p1",
+        "note": "not fixed — Cross requests #20 and #24: in dev every notFound()/forbidden() thrown while rendering a page answers with Next's error shell (no server-rendered h1; the titles are right), while the unmatched-URL 404 renders fully. No loading or Suspense boundary sits above the token pages, so moving one is not the fix (root cause in D266). Needs a check on the production build in the gates phase. D286. Last check: node scripts/qa/fix/cross-p1-ssr-404.mjs -> 'nema-ove-strane-xyz 404 h1 \"Stranica nije pronađena\" errorFallback false'; 'upit/…', 'porudzbina/…', 'deo/nepostoji-xyz', 'delovi/nepostoji-kat' -> 404, h1 null, errorFallback true (docs/qa/fix/cross-p1/ssr-404.txt). (docs/qa/fix/cross-p1.json)"
+      }
     },
     {
       "key": "flows-shop-06",
@@ -2936,7 +3271,7 @@
       "track": "flows-shop",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "FLOW-06",
       "verification": [
@@ -2957,7 +3292,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "search-catalog-content",
+        "note": "search.json 'long': 360:40 / 360:120 / 390:40 / 390:120 -> over 0, offenders []. Screenshot search-long-390.webp. (docs/qa/fix/search-catalog-content.json)"
+      }
     },
     {
       "key": "flows-shop-07",
@@ -2983,7 +3325,7 @@
       "track": "flows-shop",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "FLOW-07",
       "verification": [
@@ -3001,7 +3343,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "backend-orders-quotes",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/backend-orders-quotes-ui.mjs at 390 px, empty phone/e-mail/terms. Result: summary 'Proverite 3 polja: Upišite broj telefona. Upišite adresu e-pošte. Potrebna je saglasnost…', focus on quote-accept-errors, aria-invalid on qa-phone, qa-email and qa-terms, and every invalid input has aria-describedby (docs/qa/fix/backend-orders-quotes/ui.json, accept-errors-390.webp). (docs/qa/fix/backend-orders-quotes.json)"
+      }
     },
     {
       "key": "flows-shop-08",
@@ -3027,7 +3376,7 @@
       "track": "flows-shop",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "FLOW-08",
       "verification": [
@@ -3055,7 +3404,14 @@
             "No 'Kupujem kao firma', PIB or MB fields and no 'Odloženo plaćanje', even though the quote e-mail promises payment 'virmanom'"
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "backend-orders-quotes",
+        "note": "UI script at 390 px: after 'Kupujem kao firma' the payment group reads 'Gotovinom pri preuzimanju / Karticom pri preuzimanju / Virmanom uz predračun' and 3 company fields appear (ui.json, accept-company-390.webp). convex/inquiries.test.ts: the owning mechanic gets deferredCredit {availablePara: 1000000}, a guest gets null, and another mechanic's deferred acceptance is INVALID. (docs/qa/fix/backend-orders-quotes.json)"
+      }
     },
     {
       "key": "flows-shop-09",
@@ -3082,7 +3438,7 @@
       "track": "flows-shop",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "FLOW-09",
       "verification": [
@@ -3111,7 +3467,14 @@
             "Minor: clear PIB and press 'Dalje'. It shows the combined length/checksum sentence instead of the §11.4 required pattern 'Upišite PIB.'"
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "forms-auth",
+        "note": "npx vitest run tests/unit/lib/validation.test.ts → 13 passed (\"PIB / MB messages by case\"); forms-auth-checkout.mjs → \"FLOW-09 messages [PIB nije ispravan — kontrolna cifra ne odgovara. …, Matični broj nije ispravan — kontrolna cifra ne odgovara. …]\" for 104052136 / 64552873; forms-auth-misc.mjs mech summary → \"Upišite PIB.\", \"Matični broj nije ispravan — kontrolna cifra ne odgovara. …\" (docs/qa/fix/forms-auth.json)"
+      }
     },
     {
       "key": "flows-shop-10",
@@ -3161,7 +3524,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (no fix package took it)."
+      }
     },
     {
       "key": "flows-shop-11",
@@ -3187,7 +3557,7 @@
       "track": "flows-shop",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "FLOW-11",
       "verification": [
@@ -3208,7 +3578,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "catalog-product-ui",
+        "note": "AUDIT_BASE=http://localhost:3001 ONLY=flow11 node scripts/qa/fix/catalog-product-ui-layout.mjs -> /delovi/kocioni-diskovi at 360, 390, 768: Filteri button top 454/428/382 at scrollY 0 and 64 at scrollY 1400 (header bottom 57), rowPos sticky, filter sheet opens from the stuck row (sheet true), overX 0, text-reveal check at 390 {stuck: [], pending: 0, words: 0}. Evidence docs/qa/fix/catalog-product-ui/layout-flow11.json, flow11-390-scrolled.webp (one-line sticky row under the header). (docs/qa/fix/catalog-product-ui.json)"
+      }
     },
     {
       "key": "flows-shop-12",
@@ -3234,7 +3611,7 @@
       "track": "flows-shop",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "FLOW-12",
       "verification": [
@@ -3253,7 +3630,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "shell-perf",
+        "note": "tsc 0 errors, eslint clean. The dev deployment has no phone/Viber in settings (HUMAN-TODO P0), so the bar correctly never mounts there; its visible state could not be screenshotted without changing shared settings — the gates/perf phase should re-check once settings hold a phone number. (docs/qa/fix/shell-perf.json)"
+      }
     },
     {
       "key": "flows-admin-02",
@@ -3282,7 +3666,7 @@
       "track": "flows-admin",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "id": "FLOW-13",
       "verification": [
@@ -3339,7 +3723,14 @@
             "Back in admin, click 'Pretvori u porudžbinu' and submit with the prefilled name and phone. Actual: the empty 'E-pošta (obavezno)' blocks the submit ('Please fill out this field.'). With the native check bypassed, the server returns 'Upišite ispravnu e-mail adresu.'. Staff must obtain or invent an address for a customer who accepted by phone or Viber. Fix: branch the QuoteComposer dialog on contact.email and show the derivable status link (statusLinkToken) with a CopyButton plus Viber/WhatsApp share. In convertToOrder, allow an empty e-mail for staff conversions of e-mail-less inquiries and skip customer e-mails for them, or explain in the dialog why an address is needed."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cross-p1",
+        "note": "Code: [formatPhone(phone), email].filter(Boolean).join(' · '); npx tsc --noEmit exit 0 (docs/qa/fix/cross-p1/tsc.txt). (docs/qa/fix/cross-p1.json)"
+      }
     },
     {
       "key": "flows-admin-03",
@@ -3366,7 +3757,7 @@
       "track": "flows-admin",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "FLOW-14",
       "verification": [
@@ -3390,7 +3781,14 @@
             "Click 'Firma': Slogan shows the saved value again and the bar is gone, so the draft is lost."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-flows",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-flows-verify.mjs settings -> FLOW-14 {alertText:'Odbaciti nesačuvane izmene?Brend nije sačuvan.…', afterStay:{url:'', slogan:'Rasklopi auto. Nađi deo. QA', firmaSelected:'true'}, beforeUnload:1, afterDiscard:{url:'?tab=firma', slogan:'Rasklopi auto. Nađi deo.'}}, no console errors (docs/qa/fix/admin-flows/verify-settings.json). (docs/qa/fix/admin-flows.json)"
+      }
     },
     {
       "key": "flows-admin-04",
@@ -3417,7 +3815,7 @@
       "track": "flows-admin",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "FLOW-15",
       "verification": [
@@ -3441,7 +3839,14 @@
             "Restore PIB and MB to their previous values."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-flows",
+        "note": "admin-flows-verify.mjs settings -> FLOW-15 {pibInvalid:'true', pibMessage:'PIB ima 9 cifara.', focusedAfterSave:'admin-settings-pib', toastText:true, okText:true (valid PIB 154552870), mbInvalid:'true', bankInvalid:'true', pibAfterDiscard:''} — nothing saved (docs/qa/fix/admin-flows/verify-settings.json). (docs/qa/fix/admin-flows.json)"
+      }
     },
     {
       "key": "flows-admin-05",
@@ -3467,7 +3872,7 @@
       "track": "flows-admin",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "FLOW-16",
       "verification": [
@@ -3491,7 +3896,14 @@
             "Open the new order and its /otpremnica: Šifra shows '5Q0 615 505 R' instead of DEMO-0004."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "backend-orders-quotes",
+        "note": "convex/inquiries.test.ts: a quote line saved with sku '5Q0 615 301 F' for product T-DISC produces order items with SKUs ['T-DISC', 'UPIT'] (15/15 passed). (docs/qa/fix/backend-orders-quotes.json)"
+      }
     },
     {
       "key": "flows-admin-06",
@@ -3518,7 +3930,7 @@
       "track": "flows-admin",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "FLOW-17",
       "verification": [
@@ -3541,7 +3953,14 @@
             "Click 'Pošalji ponudu' in the dialog: it stays open, focus stays on its button, and the error 'Stavka 2: količina 1–999.' is only in the aria-hidden composer behind the scrim, so it is never announced."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "backend-orders-quotes",
+        "note": "UI script at 1440 px with a free line, quantity '1,5' and an empty price. Result: dialogOpen false, focus on quote-l3-quantity, aria-invalid on the quantity and price inputs, alert 'Stavka 2: količina je ceo broj od 1 do 999. Stavka 2: upišite cenu.' (ui.json, composer-invalid-1440.webp). convex/inquiries.test.ts: sending an unpriced line fails with field 'lines.0.price'. (docs/qa/fix/backend-orders-quotes.json)"
+      }
     },
     {
       "key": "flows-admin-07",
@@ -3568,7 +3987,7 @@
       "track": "flows-admin",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "FLOW-18",
       "verification": [
@@ -3588,7 +4007,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-flows",
+        "note": "admin-flows-verify.mjs mechanic / suspend -> FLOW-18-reject {emptyReason:{dialog:0, focusedTag:'TEXTAREA', fieldInvalid:'true'}, alertText:'Odbiti registraciju servisa „Servis Admin fixaf5752144“?Majstor odmah dobija e-poruku sa ovim razlogom:…', statusAfterCancel:'pending', statusAfterConfirm:'rejected'}; FLOW-18-suspend {alertText:'Pauzirati nalog servisa „Audit servis d.o.o.“?…', statusAfterCancel:'approved'} (docs/qa/fix/admin-flows/verify-mechanic-order.json, verify-suspend-import.json). (docs/qa/fix/admin-flows.json)"
+      }
     },
     {
       "key": "flows-admin-08",
@@ -3615,7 +4041,7 @@
       "track": "flows-admin",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "FLOW-19",
       "verification": [
@@ -3642,7 +4068,14 @@
             "Reconnect: both writes apply silently (note saved, status Potvrđena)."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-lists-shell-verify.mjs offline → verify-offline.json: offline strip text „Veza sa serverom je prekinuta — pokušavamo ponovo. …“, role status, position sticky; after reconnect „Veza je ponovo uspostavljena.“ for ~3 s then empty. … verify.mjs confirm → verify-confirm.json (test order SK-2026-000157, bulk „Potvrdi“ offline): buttons „Zatvori|false“ and „Čeka vezu…“, dialog status „Nema veze sa serverom. Radnja čeka …“, banner „… Na čekanju: 1 izmena. …“, dialogClosed true, appliedAfterReconnect true; errors []. (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "flows-admin-13",
@@ -3666,7 +4099,7 @@
       "track": "flows-admin",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "FLOW-20",
       "verification": [
@@ -3686,7 +4119,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "search-catalog-content",
+        "note": "admin.json 'empty save' -> focus 'DIV role=alert', invalid 5 (audit: focus BUTTON/BODY). (docs/qa/fix/search-catalog-content.json)"
+      }
     },
     {
       "key": "flows-import-mech-01",
@@ -3716,7 +4156,7 @@
       "track": "flows-import-mech",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "FLOW-21",
       "verification": [
@@ -3736,7 +4176,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cart-mechanic-overlays-quick.mjs flow → '21a rows' show 'Isti deo je i u redu 2 — ukupno 4 kom. · Spoji redove · Možete dodati još 2 kom.' on both disc rows (stock 2), 'addAll: Dodaj sve u korpu (1)' (only the belt), and after adding both disc rows remain listed; '21c-stock1' shows 'Možete dodati još 1 kom.' with 'Dodaj sve u korpu (0)'. Screenshot docs/qa/fix/cart-mechanic-overlays/flow21-duplicates-1440.webp. (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     },
     {
       "key": "flows-import-mech-02",
@@ -3765,7 +4212,7 @@
       "track": "flows-import-mech",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "FLOW-22",
       "verification": [
@@ -3787,7 +4234,14 @@
             "Rows 1-4 show NIJE PRONAĐENO and are offered for the missing-parts inquiry. Row 5 (CSV) is TAČNO with quantity 1: the 1000 is silently lost. Only row 6 matches and shows a stock warning."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "npx vitest run tests/unit/domain/quickOrder.test.ts → 'Tests 42 passed (42)' (new block 'quantities out of range (FLOW-22)'). scripts/qa/fix/cart-mechanic-overlays-quick.mjs flow → '22 rows': '[exact] 5Q0615505R · TAČNO … Upisali ste 0 kom. … postavljeno je 1 kom.', '[exact] … Upisali ste 1000 kom. … postavljeno je 999 kom.', only 'ZZ9999999' is not_found. Screenshot docs/qa/fix/cart-mechanic-overlays/flow22-qty-range-1440.webp. (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     },
     {
       "key": "flows-import-mech-03",
@@ -3814,7 +4268,7 @@
       "track": "flows-import-mech",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "FLOW-23",
       "verification": [
@@ -3833,7 +4287,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "verify.json text.gallery (/admin/mejlovi/sabloni?sablon=order_received&prikaz=tekst): textTransform none, overflowWrap anywhere, horizontal overflow 0, visible text starts „Porudžbina je primljena.“ (before „PORUDŽBINA JE PRIMLJENA.“). (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "flows-import-mech-04",
@@ -3860,7 +4321,7 @@
       "track": "flows-import-mech",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "FLOW-24",
       "verification": [
@@ -3879,7 +4340,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-flows",
+        "note": "npx vitest run tests/unit/import -> 'Tests 77 passed (77)' (new copy.test.ts covers 1/2/5/11/21/1.250 forms and verb agreement); admin-flows-verify.mjs import -> {rows:'22 reda', most:'… Upisaće se najviše 22 reda.', warnHint:'2 reda sa upozorenjem', writes:'20 artikala se upisuje; …'}; batch description 'Samo lager i cene · 22 reda · …' (docs/qa/fix/admin-flows/verify-suspend-import.json). (docs/qa/fix/admin-flows.json)"
+      }
     },
     {
       "key": "motion-3d-04",
@@ -3907,7 +4375,7 @@
       "track": "motion-3d",
       "group": "motion",
       "prefix": "MOT",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "MOT-03",
       "verification": [
@@ -3961,7 +4429,14 @@
             "5. Control run with reducedMotion 'reduce': ?deo=kocioni-diskovi gives p 0.46 → stage 3, which is correct. Cause: the fractional scroll target, e.g. 1325.8, rounds up to a whole pixel and exceeds the 1e-6 tolerance in currentStage."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "hero-stage",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/home-hero-sections-stages.mjs all docs/qa/fix/hero-stage/stages.json -> 'SUMMARY mot03 51/51 ok' (deep links kocioni-diskovi / abs-senzori / amortizeri-opruge -> 03 at 1440 and 390, motor -> 05; index 01-07 at 1440 and 1920; phone next 01..07 and prev 06..00). npx vitest run tests/unit/three -> '38 passed'. The e2e deep-link test now asserts stage 4 exactly for ?deo=akumulator (passed in both projects). (docs/qa/fix/hero-stage.json)"
+      }
     },
     {
       "key": "motion-3d-05",
@@ -3988,7 +4463,7 @@
       "track": "motion-3d",
       "group": "motion",
       "prefix": "MOT",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "MOT-04",
       "verification": [
@@ -4007,7 +4482,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "hero-stage",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-stage-p2.mjs mot04 on /?deo=kocioni-diskovi -> '1440x900 ok' (panel left 960, Lista delova ends at 912), '1280x800 ok' (panel 800, ends 752); 1024x768: every control ends left of the panel (584, Lista delova ends 543), the only hit-test miss is 00 under the Next.js dev indicator (NEXTJS-PORTAL, dev only). The e2e deep-link test asserts every visible strip button ends left of the drawer (desktop-1440 passed). (docs/qa/fix/hero-stage.json)"
+      }
     },
     {
       "key": "motion-3d-06",
@@ -4034,7 +4516,7 @@
       "track": "motion-3d",
       "group": "motion",
       "prefix": "MOT",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "MOT-05",
       "verification": [
@@ -4051,7 +4533,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "hero-stage",
+        "note": "node scripts/qa/fix/home-hero-sections-stages.mjs all -> 'mot05 6/6 ok' (/delovi scrolled to 1500 -> header logo -> y0 p0 stage 0 at 500 / 2500 / 6000 ms at 1440 and 390, also from a product page); node scripts/qa/fix/home-hero-sections-refresh-race.mjs -> 'SUMMARY 4/4 ok'. (docs/qa/fix/hero-stage.json)"
+      }
     },
     {
       "key": "motion-3d-07",
@@ -4077,7 +4566,7 @@
       "track": "motion-3d",
       "group": "motion",
       "prefix": "MOT",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "MOT-06",
       "verification": [
@@ -4094,7 +4583,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cross-p1",
+        "note": "ui-checks.json (keyboard Enter on the summary, 390): /delovi/kocioni-diskovi „Više o kategoriji“ openAfterEnter true, contentHeight 231, openAfterSecondEnter false; product page „Prikaži još 3“ true / 228 / false. (docs/qa/fix/cross-p1.json)"
+      }
     },
     {
       "key": "motion-3d-08",
@@ -4120,7 +4616,7 @@
       "track": "motion-3d",
       "group": "motion",
       "prefix": "MOT",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "MOT-07",
       "verification": [
@@ -4149,7 +4645,14 @@
             "Control: with a real mouse click on the header link (no focus scroll), Back restores 1800 / stage 05 in Chromium, Firefox and WebKit. Scroll restoration itself is correct."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cross-p1",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-stage-mot07.mjs -> '{\"patch\":false,\"log\":[1800,\"1800:Preskoči na sadr\",\"1800:SKLOP\",\"1800:Delovi\"]}' (before: 1342 / 884), docs/qa/fix/cross-p1/mot07-header-focus.txt. (docs/qa/fix/cross-p1.json)"
+      }
     },
     {
       "key": "perf-lh-02",
@@ -4176,7 +4679,7 @@
       "track": "perf-lh",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "alsoReported": [
         {
@@ -4228,7 +4731,14 @@
             "Run AUDIT_BASE=http://localhost:3200 node scripts/qa/audit/verify-perf-lh-02-fonts.mjs 3. With the woff2 requests blocked, CSS ends about 0.4 s earlier and LCP drops to 1.62–1.78 s. Blocking the images alone accounts for 30 ms or less (compare Golf 7 and /upit, which have no early image)."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "seo-content-email",
+        "note": "Fonts: only Archivo Expanded 700 and Public Sans are preloaded (shell-perf, lib/fonts.ts); /ponuda no longer preloads card images (seo-content-email); the ProductGrid media-scoped preload was tried and reverted (catalog-product-ui). Re-measured on :3100, Lighthouse mobile, applied throttling: LCP / 2308 ms (3 runs), /deo/kocioni-disk-prednji-276-24-mm-demo-0004 2127 ms (5 runs), /ponuda/kocione-plocice-golf 2018 ms (3 runs) — all under 2.5 s (audit: 2.5 s, 2.5 s and 2.74 s). docs/qa/fix/close/perf01-lighthouse-devtools.txt, perf01-lighthouse-product-5runs.txt, perf01-lighthouse-other.txt."
+      }
     },
     {
       "key": "perf-lh-04",
@@ -4254,7 +4764,7 @@
       "track": "perf-lh",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "PERF-04",
       "verification": [
@@ -4270,7 +4780,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "scripts/qa/fix/cart-mechanic-overlays-perf-route.mjs → 'PERF-04 JS chunks by load + 10 s idle: 27' then 'new JS chunks after hovering the picker trigger: 3'. (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     },
     {
       "key": "perf-lh-06",
@@ -4296,7 +4813,7 @@
       "track": "perf-lh",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "PERF-05",
       "verification": [
@@ -4317,7 +4834,14 @@
             "Repeat with RM=reduce and compare styleTotal, layoutTotal, rafMs and the 25dplrt_qw3he.js long task."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "shell-perf",
+        "note": "verify-consent-reveal.json reveal: wordAnimation 'tr-word-lite' at 390 px and 'tr-word' at 1440 px (CSS animation in flight), htmlClasses ['tr-js'] after load (tr-hide released), stuck [] / pending 0 / words 0 on /, /delovi/kocioni-diskovi (390, 1440, reduced motion), no JS; verify-styleguide.json reveal {stuck [], pending 0, words 0}; npx vitest run tests/unit/lib/textReveal.test.ts tests/unit/components/RevealText.test.tsx tests/unit/analytics → 4 files, 51 tests passed. (docs/qa/fix/shell-perf.json; cross-p1 marked only the .claude/** doc update WONTFIX (agents may not edit it; owner item in HUMAN-TODO); the runtime fix is shell-perf's)"
+      }
     },
     {
       "key": "perf-lh-07",
@@ -4342,7 +4866,7 @@
       "track": "perf-lh",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "PERF-06",
       "verification": [
@@ -4386,7 +4910,14 @@
             "Real-world trigger: hydration has to finish more than 3.5 s after the stylesheet loads (the boot script runs after it). Under the D112 lab profile (4× CPU, slow 4G) this is borderline (lost by 0 to ~400 ms in prior runs). It happens reliably on slower-than-lab devices."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "shell-perf",
+        "note": "shell-perf-verify.mjs reveal, failsafe case (tr-failsafe added right after tr-js via addInitScript) → {failsafeClass true, markedAfterFailsafe 0, stuck [], pending 0, words 0}. (docs/qa/fix/shell-perf.json)"
+      }
     },
     {
       "key": "perf-lh-10",
@@ -4413,7 +4944,7 @@
       "track": "perf-lh",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "PERF-07",
       "verification": [
@@ -4428,7 +4959,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "routing-errors-gates",
+        "note": "node --check tests/lighthouse/run.mjs -> OK; one dev smoke: MSYS_NO_PATHCONV=1 node tests/lighthouse/run.mjs --base http://localhost:3001 --runs 1 --desktop /kontakt --min-benchmark 0 -> path after --desktop measured, 'first-load JS 1092 KB · benchmarkIndex 1856', 'LCP element: div.fixed > form.mx-auto > div.flex > p#_r_1_ <p …>' (no longer empty), 'BUDGET MISSED: SEO 92 < 95' (dev-server numbers; the Performance phase runs the real gate on :3100). (docs/qa/fix/routing-errors-gates.json)"
+      }
     },
     {
       "key": "perf-bundle-01",
@@ -4460,7 +4998,7 @@
       "track": "perf-bundle",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "alsoReported": [
         {
@@ -4521,7 +5059,14 @@
             "Main-thread cost is small (skeptic-cost.json: main-thread compile ≤ 2.6 ms, eval ≤ 3.6 ms at 4x CPU), so frame the impact as transfer on the order and inquiry flows, not TBT. Fix: prefer a verified approach (zod/mini for the three client schemas, or lazy-load the resolver and schema on first form interaction), or confirm after a rebuild that Turbopack drops the locales with `import * as z`."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "forms-auth",
+        "note": "npx esbuild lib/validation/checkout.ts --bundle --minify --format=esm → \"checkout 92243 bytes, gz 28020, polish-locale=0\" vs HEAD version \"old checkout 460439 gz 95655 polish=1\" (inquiry 27288 gz, mechanicRegistration 27201 gz); production: scripts/qa/audit/perf-bundle-signatures.mjs in the Performance phase (docs/qa/fix/forms-auth.json)"
+      }
     },
     {
       "key": "perf-bundle-02",
@@ -4550,7 +5095,7 @@
       "track": "perf-bundle",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "PERF-09",
       "verification": [
@@ -4569,7 +5114,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "shell-perf",
+        "note": "node scripts/qa/fix/shell-perf-styleguide.mjs → verify-styleguide.json {tooltipShown true, errors []} (hover on 'Šta znači Original VAG?' shows role=tooltip). (docs/qa/fix/shell-perf.json)"
+      }
     },
     {
       "key": "perf-bundle-03",
@@ -4597,7 +5149,7 @@
       "track": "perf-bundle",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "alsoReported": [
         {
@@ -4623,7 +5175,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "shell-perf",
+        "note": "npx tsc --noEmit → 0 errors; home '/' reveal + hero run without console errors (verify-consent-reveal.json reveal[0].errors []); ARCHITECTURE §G5 and the GSAP file list updated; D236. (docs/qa/fix/shell-perf.json)"
+      }
     },
     {
       "key": "perf-bundle-04",
@@ -4652,7 +5211,7 @@
       "track": "perf-bundle",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "PERF-11",
       "verification": [
@@ -4677,7 +5236,14 @@
             "Fix scope: lazy-load the MobileNav sheet, the HeaderSearch dialog body (off / and /pretraga), the CatalogControls filter sheet, the Toaster viewport (split the toast() API out of components/ui/Toast.tsx) and ConsentBanner when a consent record exists."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "shell-perf",
+        "note": "verify-styleguide.json {toastViewportBefore 0, toastShown true}; verify-consent-reveal.json consent.returning {bannerInDomBeforeReopen 0, chunksOnReopen 2, focus 'Sačuvaj izbor', switches 3}. (docs/qa/fix/shell-perf.json)"
+      }
     },
     {
       "key": "perf-bundle-05",
@@ -4704,7 +5270,7 @@
       "track": "perf-bundle",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "PERF-12",
       "verification": [
@@ -4722,7 +5288,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cross-p1",
+        "note": "node scripts/brand/build-phosphor.mjs -> 'lib/icons/phosphor: 96 icons'; --check -> 'lib/icons/phosphor is up to date'. (docs/qa/fix/cross-p1.json)"
+      }
     },
     {
       "key": "perf-bundle-06",
@@ -4754,7 +5327,7 @@
       "track": "perf-bundle",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "PERF-13",
       "verification": [
@@ -4780,7 +5353,14 @@
             "Fix as suggested (lightweight root app/not-found.tsx without SiteShell/VehiclePickerLazy, a rich 404 through a (shop) catch-all that calls notFound(), and a minimal app/(landing)/not-found.tsx), then re-run both scripts"
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "routing-errors-gates",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/routing-errors-gates-rsc.mjs (docs/qa/fix/routing-errors-gates/perf13-rsc-count.txt): '\"site-header\": rsc 1 / html 1' on home, category and /korpa (audit: rsc 2 / html 1); landing '\"site-header\": rsc 0', 'SearchBox: rsc 0', 'MobileNav: rsc 0' (audit: header serialized 2x on the landing). curl /ovo-ne-postoji: 102191 -> 64630 bytes, still 404 with server-rendered h1. Chunk-level re-measure (verify-perf-bundle-chunks.mjs) needs a production build, which this phase must not run. (docs/qa/fix/routing-errors-gates.json)"
+      }
     },
     {
       "key": "perf-3d-01",
@@ -4813,7 +5393,7 @@
       "track": "perf-3d",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P1",
       "id": "PERF-14",
       "verification": [
@@ -4858,7 +5438,14 @@
             "Do not count the canvas chunk evaluation (turbopack H, about 20 ms at 1x, 255-489 ms at 4x/6x) toward this finding. It is the budgeted lazy chunk. Phone numbers need a real phone GPU backend, not a desktop D3D11 run with CPU throttling."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "hero-3d-assets",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-profile.mjs --vp desktop --cpu 1 --gpu --runs 2 -> grep -c 'PMREM|_applyGGXFilter|fromEquirectangular' docs/qa/fix/hero-3d-assets/profile-start-desktop-cpu1-gpu.txt = 0 (audit profile-start-desktop-cpu1-cold.txt: 3); warm-cache worst start stretch 216 ms incl. 55 ms getProgramInfoLog from the development-only checkShaderErrors. node scripts/qa/hero-parity.mjs --base http://localhost:3001 -> 'desktop: mean abs difference 1.68 / 255' (baseline 1.84). A production profile (next start) is outside this phase. (docs/qa/fix/hero-3d-assets.json)"
+      }
     },
     {
       "key": "perf-3d-02",
@@ -4888,7 +5475,7 @@
       "track": "perf-3d",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "PERF-15",
       "verification": [
@@ -4904,7 +5491,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "hero-3d-assets",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-retainers.mjs --gpu -> docs/qa/fix/hero-3d-assets/retainers.txt: no retaining path through a three Source/_listeners and no HeroScene3D object left; the only remaining paths are __REACT_DEVTOOLS_GLOBAL_HOOK__.helpersByRoot (React DevTools hook injected by next dev, absent in production) and R3F's module-level loop state (latest root only). node scripts/qa/fix/hero-3d-assets-leak.mjs --gpu --cycles 3 (dev) -> DOM nodes on /delovi grow about +300 per visit (audit, production: +1107), the rest is the dev-only hook; the production re-measure (scripts/qa/audit/verify-perf-3d-leak.mjs against next start) belongs to the gates phas… (docs/qa/fix/hero-3d-assets.json)"
+      }
     },
     {
       "key": "perf-3d-05",
@@ -4930,7 +5524,7 @@
       "track": "perf-3d",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "PERF-16",
       "verification": [
@@ -4946,7 +5540,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "hero-3d-assets",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-tier.mjs -> '?3d=high dpr 1: antialias true, 1440x836' and '?3d=high dpr 2: antialias false, 2880x1672' (about 38 MB drawing buffer without MSAA instead of about 173 MB with it). Unit test 'MSAA only on the high tier below DPR 1.5 (PERF-16)' passes. (docs/qa/fix/hero-3d-assets.json)"
+      }
     },
     {
       "key": "seo-02",
@@ -4972,7 +5573,7 @@
       "track": "seo",
       "group": "seo",
       "prefix": "SEO",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "SEO-01",
       "verification": [
@@ -4995,7 +5596,14 @@
             "Evaluate the candidates by hand: under D193's order the pads become unique (maker kept, suffix dropped), but the disc and belt pairs still end at [name code] because [name maker code] exceeds 60 characters. The fix must clamp the name and keep the maker (update D193 to match), plus add a uniqueness test over the products sitemap."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "seo-content-email",
+        "note": "Unit test „SEO-01: same OEM number from two makers gives two titles“ passes. Crawl of all 342 sitemap URLs (scripts/qa/fix/seo-content-email-titles.mjs): duplicateTitles 0 (was 3 product pairs). Evidence: docs/qa/fix/seo-content-email/titles-crawl.json (docs/qa/fix/seo-content-email.json)"
+      }
     },
     {
       "key": "seo-03",
@@ -5022,7 +5630,7 @@
       "track": "seo",
       "group": "seo",
       "prefix": "SEO",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "SEO-02",
       "verification": [
@@ -5038,7 +5646,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "seo-content-email",
+        "note": "curl http://localhost:3001/delovi/kocioni-diskovi?strana=2 → 404; ?strana=500 → 404; /delovi/filteri?strana=2 → 404; ?strana=1 → 200 „index, follow“. (docs/qa/fix/seo-content-email.json)"
+      }
     },
     {
       "key": "seo-04",
@@ -5066,7 +5681,7 @@
       "track": "seo",
       "group": "seo",
       "prefix": "SEO",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "alsoReported": [
         {
@@ -5091,7 +5706,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "seo-content-email",
+        "note": "Unit test „SEO-03: the vehicle and the page number survive shortening“ (e.g. „Senzori za VW, Audi, Škoda, SEAT — strana 2“, „Senzori i prekidači za Škodu Octaviju“). Crawl of 342 sitemap URLs: titleOver60 0, titleEllipsis 0, duplicateTitles 0, duplicate descriptions 0, boilerplate category descriptions 0. /delovi/kocioni-diskovi description „… 9 artikala, 7 na stanju, od 3.890 RSD. Proizvođači: ATE, Brembo, Bosch, Febi Bilstein i još 2.“ (docs/qa/fix/seo-content-email.json)"
+      }
     },
     {
       "key": "seo-06",
@@ -5120,7 +5742,7 @@
       "track": "seo",
       "group": "seo",
       "prefix": "SEO",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "SEO-04",
       "verification": [
@@ -5143,7 +5765,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cross-p1",
+        "note": "ui-checks.json: /delovi/kocioni-diskovi/volkswagen/golf -> href '/vozila/volkswagen/golf' (a multi-generation model, so the hub link is right). (docs/qa/fix/cross-p1.json)"
+      }
     },
     {
       "key": "seo-07",
@@ -5170,7 +5799,7 @@
       "track": "seo",
       "group": "seo",
       "prefix": "SEO",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "SEO-05",
       "verification": [
@@ -5191,7 +5820,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "shell-perf",
+        "note": "verify-overlays-reveal.json overlays {footerKontaktLinks 1, menuKontaktHref '/kontakt'}. (docs/qa/fix/shell-perf.json)"
+      }
     },
     {
       "key": "seo-08",
@@ -5215,7 +5851,7 @@
       "track": "seo",
       "group": "seo",
       "prefix": "SEO",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "SEO-06",
       "verification": [
@@ -5235,7 +5871,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "search-catalog-content",
+        "note": "admin.json 'renamed': GET /deo/audit-disk-prednji-852021-audit-fa-852021 -> 308 location /deo/…-r22. After renaming back, `npx convex run catalog/products:redirectFor` -> original path null (no loop), …-r22 -> original. The page's second 308 seen in 'renamed back' is the 3001 Next cache: the dev deployment's revalidation webhook posts to NEXT_SITE_URL=http://localhost:3000 (another project), so 3001 is never purged. (docs/qa/fix/search-catalog-content.json)"
+      }
     },
     {
       "key": "seo-13",
@@ -5260,7 +5903,7 @@
       "track": "seo",
       "group": "seo",
       "prefix": "SEO",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "alsoReported": [
         {
@@ -5299,7 +5942,14 @@
             "Fix: restore the escapes in lib/seo/templates.ts:54 and :88 (/\\s+/g, /[\\s,;]+\\S*$/) and cut the fitment list at whole entries with „i još N“. In lib/seo/landingCopy.ts, name the last item when more === 1, otherwise join with commas and end with „i još N“; add „i još N“ to the generation list and sort it by yearFrom. Skip the quality label when it equals the manufacturer."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "seo-content-email",
+        "note": "Unit tests „SEO-07: makers end with „i još N“ once, generations in model-year order“ and „lists“ pass. Crawl: doubledMaker 0, doubleI 0, descriptionCutWord 0 on product/landing pages. (docs/qa/fix/seo-content-email.json)"
+      }
     },
     {
       "key": "vis-store-03",
@@ -5327,7 +5977,7 @@
       "track": "vis-store",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "VIS-04",
       "verification": [
@@ -5345,7 +5995,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "hero-stage",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-stage-p2.mjs vis04 -> '1280x800 ok' (Karoserija i svetla, Kočnice i vešanje, Agregati i hlađenje on 2 lines, no horizontal overflow, nothing clipped in the 64 px button), '1366x800 ok', '1440x900 ok' (all on 1 line) (docs/qa/fix/hero-stage/p2-final.txt). (docs/qa/fix/hero-stage.json)"
+      }
     },
     {
       "key": "vis-store-04",
@@ -5375,7 +6032,7 @@
       "track": "vis-store",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "VIS-05",
       "verification": [
@@ -5396,7 +6053,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "catalog-product-ui",
+        "note": "AUDIT_BASE=http://localhost:3001 ONLY=a11y10,vis05 node scripts/qa/fix/catalog-product-ui-layout.mjs -> /delovi/kocioni-diskovi card width/columns: 1024 314 px/2, 1280 280/3, 1440 242/4, 1920 258/4, 2560 258/4; clamped names 0, chipOverlap 0, clipped 0 at every width. Evidence docs/qa/fix/catalog-product-ui/layout-a11y10-vis05.json, vis05-1920.webp (full names, chip above the render). (docs/qa/fix/catalog-product-ui.json)"
+      }
     },
     {
       "key": "vis-store-05",
@@ -5424,7 +6088,7 @@
       "track": "vis-store",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "VIS-06",
       "verification": [
@@ -5448,7 +6112,14 @@
             "At 1920 and 2560 the car also starts at or left of the left ticks, so the frame is not half empty: the car is wider than the frame. Only at 3440 is the frame's left part empty."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "hero-3d-assets",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-framing.mjs --shots 1920x1080 2560x1440 3440x1440 -> '1920x1080 canvas: car x 865-1658, insideTicks true', '2560x1440 canvas: car x 1185-1978, insideTicks true' (ticks 1173-2000), '3440x1440 canvas: car x 1625-2418, insideTicks true' (ticks 1613-2440); posters match the canvas (the 3440 poster bbox is polluted only by the dev 'Compiling' badge, see framing-3440x1440-poster.webp). Unit test 'wide screens: the framing box stops at STAGE_FRAME_MAX' passes. (docs/qa/fix/hero-3d-assets.json)"
+      }
     },
     {
       "key": "vis-store-06",
@@ -5475,7 +6146,7 @@
       "track": "vis-store",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "VIS-07",
       "verification": [
@@ -5497,7 +6168,14 @@
             "Measure: at 768 the H1 is at 1253 and „Dodaj u korpu“ at 1598; at 1000x800 they are at 1559 and 1907. Phones (<480) hide the drawing; ≥1024 uses two columns."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "search-catalog-content",
+        "note": "deo.json 768: galleryTop 119, h1Top 745, drawingTop 1410 (drawing after the buy box); 1024/1440: drawingLeft 41/48 vs h1Left 601/846 (under the gallery); overflow 0; reveal stuck [] pending 0. Screenshots deo-768.webp, deo-1440.webp. (docs/qa/fix/search-catalog-content.json)"
+      }
     },
     {
       "key": "vis-store-11",
@@ -5523,7 +6201,7 @@
       "track": "vis-store",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "VIS-08",
       "verification": [
@@ -5548,7 +6226,14 @@
             "Fix in FilterRail (components/catalog/CatalogControls.tsx): lg:sticky lg:top-[calc(header+gap)] lg:self-start plus max-height and overflow-y:auto, because the 903 px content is taller than the viewport under the header at 900 px height."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "catalog-product-ui",
+        "note": "AUDIT_BASE=http://localhost:3001 ONLY=vis08 node scripts/qa/fix/catalog-product-ui-layout.mjs -> /delovi/kocioni-diskovi 1440x900: before scroll top 341; after a 900 px wheel position sticky, top 88 (header bottom 65), bottom 876 <= 900, pass true; wheel over the rail scrolls the rail (railScroll 123) while the page stays at scrollY 900. node scripts/qa/fix/catalog-product-ui-rail-landing.mjs (golf landing 1280x800, 6 cards): rail top 88 at scrollY 400 and 600, leaves with the row end at 900. Evidence docs/qa/fix/catalog-product-ui/layout-vis08.json, vis08-landing-1280.json, vis08-1440-scrolled.webp. (docs/qa/fix/catalog-product-ui.json)"
+      }
     },
     {
       "key": "vis-commerce-03",
@@ -5575,7 +6260,7 @@
       "track": "vis-commerce",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "VIS-09",
       "verification": [
@@ -5594,7 +6279,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cart-mechanic-overlays-predracun.mjs → {\"w\":390,\"status\":200,\"list\":\"flex\",\"table\":\"none\",\"firstLineH\":94,\"nameW\":318,\"overflow\":0,\"printTable\":\"table\"} (audit: name column 65 px, ~10 lines) and {\"w\":768,\"list\":\"none\",\"table\":\"table\"}. Screenshot docs/qa/fix/cart-mechanic-overlays/vis09-predracun-390.webp. (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     },
     {
       "key": "vis-commerce-05",
@@ -5622,7 +6314,7 @@
       "track": "vis-commerce",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "VIS-10",
       "verification": [
@@ -5647,7 +6339,14 @@
             "Fix: in CartView.tsx and CartDrawer, use size=\"md\" at every width. In QuickOrder.tsx:594 and FavoritesList.tsx:100, use md below lg or under pointer:coarse, and keep sm on desktop as §9.7 allows. Add at least 8 px between the stepper and the remove button."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cross-p1",
+        "note": "Diff reviewed; the §5.5 paragraph sits after the elevation table, which stays intact. (docs/qa/fix/cross-p1.json)"
+      }
     },
     {
       "key": "vis-commerce-06",
@@ -5675,7 +6374,7 @@
       "track": "vis-commerce",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "VIS-11",
       "verification": [
@@ -5694,7 +6393,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "forms-auth",
+        "note": "forms-auth-checkout.mjs 390 → \"mobile summary (closed) Stavke (1) / Ukupno / 4.690 RSD\", \"mobile summary (open) has inner Ukupno false\"; docs/qa/fix/forms-auth/checkout-summary-390.webp (reviewed) (docs/qa/fix/forms-auth.json)"
+      }
     },
     {
       "key": "vis-commerce-07",
@@ -5721,7 +6427,7 @@
       "track": "vis-commerce",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "alsoReported": [
         {
@@ -5748,7 +6454,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "Class change; owner forms-auth verifies VIS-12 as a whole. (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     },
     {
       "key": "vis-commerce-08",
@@ -5775,7 +6488,7 @@
       "track": "vis-commerce",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "alsoReported": [
         {
@@ -5808,7 +6521,14 @@
             "Fix both components: stacked rows below sm, or a sticky first column plus a scroll fade, with tabIndex={0}, role=\"region\" and an aria-label on the wrapper."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "seo-content-email",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/seo-content-email-tables.mjs → /dostava-i-placanje 360: tableW 326 = wrapW 328, scrollW 326, rows display flex, labels visible, axe [] (was scrollable-region-focusable); /kolacici and /politika-privatnosti 360 likewise; 1440 normal table rows; reveal stuck 0. Evidence: docs/qa/fix/seo-content-email/tables.json, table-dostava-360.webp, table-dostava-1440.webp (docs/qa/fix/seo-content-email.json)"
+      }
     },
     {
       "key": "vis-admin-01",
@@ -5838,7 +6558,7 @@
       "track": "vis-admin",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "VIS-14",
       "verification": [
@@ -5865,7 +6585,14 @@
             "At 1024x768 (icon rail, mouse), document scrollWidth is 1335 and the whole page scrolls sideways by 311 px. At 1280x800 nothing overflows."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-lists-shell-tables.mjs after → docs/qa/fix/admin-lists-shell/tables-after.json: dashboard docOver 0 at 390, 768, 1024 (before 883/505/321, tables-before.json); screenshot docs/qa/fix/admin-lists-shell/390-pregled-queue.jpg shows „⚠ 10 h 4 min / primljeno 29.09. 16:31“ on screen. (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "vis-admin-02",
@@ -5895,7 +6622,7 @@
       "track": "vis-admin",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "VIS-15",
       "verification": [
@@ -5915,7 +6642,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-lists-shell-tables.mjs after → tables-after.json: wrapper over 0 for upiti/proizvodi/porudzbine/porudzbine-sve/mejlovi at 1024, 1280, 1366, 1440, 1920, 2560 (before e.g. upiti 284 @1440, proizvodi 321 @1024, porudzbine-sve 191 @1366, mejlovi 147 @1024); docOver 0 at every width incl. 390 upiti (before 527); hint at the seam below 1024, e.g. 390 proizvodi hint [285,317] with stickyLeft 317. tables-after-c.json re-checks proizvodi after the container query: over 0 at 1440/1366/1280/1024, Stanje inline (236 px) at 1440/1280 and stacked (162 px) at 1366/1024. (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "vis-admin-04",
@@ -5941,7 +6675,7 @@
       "track": "vis-admin",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "VIS-16",
       "verification": [
@@ -5959,7 +6693,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-lists-shell-verify.mjs → docs/qa/fix/admin-lists-shell/verify.json palette-390: dialog [16,374] with results for „SK-2026-000092“, close [313,357] closeOnScreen true, docOver 0 (before 16–442, close 381–425). (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "vis-admin-05",
@@ -5986,7 +6727,7 @@
       "track": "vis-admin",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "VIS-17",
       "verification": [
@@ -6004,7 +6745,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "verify.json bulk/admin/porudzbine: row tops before [328,381,429] = after [328,381,429], shifted false; a second real mouse click at the same spot navigated false and deselected (aria-selected false, status „Izbor poništen“). Same for /admin/proizvodi ([328,389,450] both). (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "vis-admin-06",
@@ -6030,7 +6778,7 @@
       "track": "vis-admin",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "VIS-18",
       "verification": [
@@ -6056,7 +6804,14 @@
             "At 390 px the table scrolls inside its wrapper, which DS §9.15 documents for widths below 1024. This part is not a defect in itself; at most it is P3 polish (no scroll affordance)."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-flows",
+        "note": "admin-flows-verify.mjs order -> 390/1024/1100: heads ['Artikal','Iznos'], table 356/566/642 = wrapper, overflows false; 1440: ['Artikal','Kol.','Cena','Iznos'] 754=754; edit mode 1024/1100/1440: ['Artikal','Kol.','Cena','Iznos','Ukloni'] overflows false; no console errors (docs/qa/fix/admin-flows/verify-order.json). (docs/qa/fix/admin-flows.json)"
+      }
     },
     {
       "key": "a11y-store-10",
@@ -6081,7 +6836,7 @@
       "track": "a11y-store",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "A11Y-18",
       "verification": [
@@ -6101,7 +6856,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "forms-auth",
+        "note": "forms-auth-checkout.mjs → \"aria-required [co-firstName:true, co-lastName:true, co-phone:true, co-email:true]\"; forms-auth-misc.mjs → \"upit required [iq-message:true, iq-name:true, iq-phone:true, iq-email:null, iq-vin:null]\" (e-mail optional for phone replies, VIN optional); vitest ui.test.tsx 2 tests on the provider passed (docs/qa/fix/forms-auth.json)"
+      }
     },
     {
       "key": "a11y-store-11",
@@ -6126,7 +6888,7 @@
       "track": "a11y-store",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "A11Y-19",
       "verification": [
@@ -6153,7 +6915,14 @@
             "Root cause: .sr-only position:absolute blockifies the span, so Chromium adds a space. An inline wrapper does not fix it; aria-label with the full string does."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "npx eslint clean; markup change only. (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     },
     {
       "key": "a11y-app-13",
@@ -6178,7 +6947,7 @@
       "track": "a11y-app",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "A11Y-20",
       "verification": [
@@ -6195,7 +6964,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "p3.json popover: getByRole('dialog', { name: 'Obaveštenja' }) found, labelledby true, tag H2, text „Obaveštenja“. (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "a11y-app-14",
@@ -6220,7 +6996,7 @@
       "track": "a11y-app",
       "group": "a11y",
       "prefix": "A11Y",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "A11Y-21",
       "verification": [
@@ -6239,7 +7015,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "scripts/qa/fix/cart-mechanic-overlays-account.mjs → h2 [\"Porudžbine\"], [\"Upiti\"], [\"Vozila\"], [\"Profil\"]; revealCheck {\"stuck\":[],\"pending\":0,\"words\":0}; axe violations [] on /nalog/porudzbine. (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     },
     {
       "key": "backend-08",
@@ -6267,7 +7050,7 @@
       "track": "backend",
       "group": "backend",
       "prefix": "BE",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "BE-08",
       "verification": [
@@ -6289,7 +7072,14 @@
             "Cause: the Convex client refetches the token right after the server confirms the SSR token (convex/src/browser/sync/authentication_manager.ts:213-220). Fix: new ConvexReactClient(url, { initialAuthTokenReuse: true }) in components/providers/ConvexClientProvider.tsx (experimental in convex 1.46, so pin it and cover it with an e2e test: at most one POST /api/auth across sign-in plus two reloads). Otherwise accept the behaviour and record it in DECISIONS."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cross-p1",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cross-p1-be08-auth-posts.mjs (signed-in customer) -> '/nalog authPosts 0', '/delovi/kocioni-diskovi authPosts 0', '/nalog/porudzbine authPosts 0' (docs/qa/fix/cross-p1/be08-auth-posts.json). (docs/qa/fix/cross-p1.json)"
+      }
     },
     {
       "key": "backend-09",
@@ -6333,7 +7123,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (no fix package took it)."
+      }
     },
     {
       "key": "backend-10",
@@ -6373,7 +7170,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (no fix package took it)."
+      }
     },
     {
       "key": "backend-11",
@@ -6423,7 +7227,14 @@
             "Suggested fix: in mechanics.register, skip profiles with status 'rejected' in the pibTaken check, or add an owner-only staff action 'Oslobodi PIB' / 'Izmeni podatke firme' (pib, mb, companyName) with audit(). On a DUPLICATE attempt, record a staff notification outside the failing transaction (e.g. return a structured result instead of throwing, or schedule the notification from the client error path)."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (owned by the backend-orders-quotes package, which recorded no change for it)."
+      }
     },
     {
       "key": "backend-12",
@@ -6447,7 +7258,7 @@
       "track": "backend",
       "group": "backend",
       "prefix": "BE",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "BE-12",
       "verification": [
@@ -6471,7 +7282,14 @@
             "Fix: in convex/auth.ts Password profile(params), when params.flow is 'signUp' (params.password) or 'reset-verification' (params.newPassword), throw ConvexError WEAK_PASSWORD if normalizeEmail(password) === the normalized e-mail. Add the same rule to passwordError (components/auth/AuthForms.tsx), which needs the e-mail value, and to passwordProblem (lib/validation/mechanicRegistration.ts). Add a convex-test case."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cross-p1",
+        "note": "Code check of profile() in convex/auth.ts (signUp password / reset-verification newPassword compared with normalizeEmail). npx vitest run convex/inquiries.test.ts convex/security.test.ts convex/admin.test.ts tests/unit/lib/focusReturn.test.tsx tests/unit/email tests/unit/content -> 'Tests 153 passed (153)' (docs/qa/fix/cross-p1/vitest.txt). (docs/qa/fix/cross-p1.json)"
+      }
     },
     {
       "key": "copy-06",
@@ -6500,7 +7318,7 @@
       "track": "copy",
       "group": "copy",
       "prefix": "COPY",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "COPY-09",
       "verification": [
@@ -6520,7 +7338,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cross-p1",
+        "note": "npx vitest run tests/unit/email/templates.test.ts -u -> 'Snapshots 2 updated', 'Tests 90 passed (90)' (the diff was only the two reworded lines); npx convex dev --once -> 'Convex functions ready!' (docs/qa/fix/cross-p1/convex-push.txt); /pretraga?q=disk -> '<h2 id=\"g-text\" …>Artikli' (curl-checks.txt). Left: components/admin/system/PrivacyAdmin.tsx (other owner, cross request). (docs/qa/fix/cross-p1.json)"
+      }
     },
     {
       "key": "copy-12",
@@ -6543,7 +7368,7 @@
       "track": "copy",
       "group": "copy",
       "prefix": "COPY",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "alsoReported": [
         {
@@ -6568,7 +7393,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cross-p1",
+        "note": "docs/qa/fix/cross-p1/curl-checks.txt: 'za-majstore 148 …', 'upit 132 …'. (docs/qa/fix/cross-p1.json)"
+      }
     },
     {
       "key": "copy-13",
@@ -6596,7 +7428,7 @@
       "track": "copy",
       "group": "copy",
       "prefix": "COPY",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "COPY-11",
       "verification": [
@@ -6617,7 +7449,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "grep -n \"Cena sa PDV-om\" components/admin/print/OrderPrint.tsx → 1 match; npx tsc --noEmit → 0 errors. (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "copy-15",
@@ -6664,7 +7503,14 @@
             "At 1440 and wider the stage-0 caption is hidden (lg:hidden), so only the title block \"KATEGORIJE 44\" shows. The conflict is visible on one page only below 1024 px."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (owned by the home-hero-sections package, which recorded no change for it)."
+      }
     },
     {
       "key": "copy-16",
@@ -6690,7 +7536,7 @@
       "track": "copy",
       "group": "copy",
       "prefix": "COPY",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "COPY-13",
       "verification": [
@@ -6712,7 +7558,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "forms-auth",
+        "note": "forms-auth-misc.mjs mech summary → \"Upišite adresu e-pošte.\", \"Upišite lozinku.\"; vitest validation.test.ts \"orders e-mail messages required → format\" passed (docs/qa/fix/forms-auth.json)"
+      }
     },
     {
       "key": "copy-17",
@@ -6741,7 +7594,7 @@
       "track": "copy",
       "group": "copy",
       "prefix": "COPY",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "COPY-14",
       "verification": [
@@ -6769,7 +7622,14 @@
             "Drop the \"otpremite/Otpremi CSV\" item: it is standard Serbian UI wording for upload, and the icon and hint make it clear."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "npx eslint + npx tsc --noEmit clean; visible in flow21-duplicates-1440.webp ('Učitaj CSV fajl'). (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     },
     {
       "key": "copy-18",
@@ -6792,7 +7652,7 @@
       "track": "copy",
       "group": "copy",
       "prefix": "COPY",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "COPY-15",
       "verification": [
@@ -6810,7 +7670,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cross-p1",
+        "note": "npx tsc --noEmit exit 0; eslint exit 0 (docs/qa/fix/cross-p1/eslint.txt). (docs/qa/fix/cross-p1.json)"
+      }
     },
     {
       "key": "copy-19",
@@ -6836,7 +7703,7 @@
       "track": "copy",
       "group": "copy",
       "prefix": "COPY",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "COPY-16",
       "verification": [
@@ -6857,7 +7724,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "grep -n \"Samo zapis\" components/admin/system/EmailsAdmin.tsx components/admin/system/EmailTemplatesAdmin.tsx → EmailsAdmin.tsx „Poruka je ponovo zabeležena (režim „Samo zapis“).“, EmailTemplatesAdmin.tsx „(režim „Samo zapis“, ${res.to})“; npx eslint … → no output; npx tsc --noEmit → 0 errors. (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "copy-20",
@@ -6881,7 +7755,7 @@
       "track": "copy",
       "group": "copy",
       "prefix": "COPY",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "COPY-17",
       "verification": [
@@ -6907,7 +7781,14 @@
             "Open http://localhost:3100/dostava-i-placanje at 1440 or 390. The Plaćanje column joins the settings labels with „, “ and keeps each capital („…preuzimanju, Karticom pri preuzimanju, Virmanom…“). Fix: lower-case items after the first in app/(shop)/dostava-i-placanje/page.tsx:45 (or render them as a list), and optionally add „(odobreni majstori)“ to the deferred item; the body text below already states the restriction."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "routing-errors-gates",
+        "note": "verify.json notFound: title 'Stranica nije pronađena | SKLOP' at 390/1440; 404-ovo-ne-postoji-390.webp shows 'Set zupčastog kaiša i vodena pumpa' and 'Turbina (turbopunjač)'. (docs/qa/fix/routing-errors-gates.json)"
+      }
     },
     {
       "key": "flows-shop-13",
@@ -6934,7 +7815,7 @@
       "track": "flows-shop",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "FLOW-25",
       "verification": [
@@ -6953,7 +7834,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cross-p1",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cross-p1-ui-checks.mjs -> '{\"check\":\"stock cap\",\"max\":\"2\",\"buttonText\":\"Sve je u korpi\",\"disabled\":true,\"status\":\"U korpi je sva količina sa stanja (2 kom.).\",\"errors\":[]}' (docs/qa/fix/cross-p1/ui-checks.json). (docs/qa/fix/cross-p1.json)"
+      }
     },
     {
       "key": "flows-shop-14",
@@ -6977,7 +7865,7 @@
       "track": "flows-shop",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "FLOW-26",
       "verification": [
@@ -6998,7 +7886,14 @@
             "Read the h1, the body copy and the tab title"
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cross-p1",
+        "note": "node scripts/qa/fix/cross-p1-ssr-404.mjs -> 'porudzbina/hvala/… 404 titles [\"Link porudžbine nije ispravan | SKLOP\"]'; ui-checks.json after hydration: h1 'Link porudžbine nije ispravan'. (docs/qa/fix/cross-p1.json)"
+      }
     },
     {
       "key": "flows-shop-15",
@@ -7023,7 +7918,7 @@
       "track": "flows-shop",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "FLOW-27",
       "verification": [
@@ -7041,7 +7936,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "forms-auth",
+        "note": "forms-auth-misc.mjs → \"upit photo rejections racun.pdf nije fotografija (JPG, PNG ili WebP). velika.jpg ima 9,2 MB — najviše 8 MB po fotografiji.\" (docs/qa/fix/forms-auth.json)"
+      }
     },
     {
       "key": "flows-shop-16",
@@ -7087,7 +7989,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (owned by the backend-orders-quotes package, which recorded no change for it)."
+      }
     },
     {
       "key": "flows-shop-17",
@@ -7112,7 +8021,7 @@
       "track": "flows-shop",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "alsoReported": [
         {
@@ -7142,7 +8051,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "forms-auth",
+        "note": "forms-auth-checkout.mjs → \"back link {text:Korpa, firstChildIsIcon:true}\" (docs/qa/fix/forms-auth.json)"
+      }
     },
     {
       "key": "flows-admin-10",
@@ -7186,7 +8102,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (owned by the admin-flows package, which recorded no change for it)."
+      }
     },
     {
       "key": "flows-admin-11",
@@ -7229,7 +8152,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (owned by the admin-flows package, which recorded no change for it)."
+      }
     },
     {
       "key": "flows-admin-12",
@@ -7255,7 +8185,7 @@
       "track": "flows-admin",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "FLOW-32",
       "verification": [
@@ -7271,7 +8201,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "p3.json bellLabel „Obaveštenja, nepročitano: više od 99“ on the demo deployment (unread at the 100 cap). (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "flows-admin-14",
@@ -7310,7 +8247,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (owned by the backend-orders-quotes package, which recorded no change for it)."
+      }
     },
     {
       "key": "flows-import-mech-05",
@@ -7335,7 +8279,7 @@
       "track": "flows-import-mech",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "FLOW-34",
       "verification": [
@@ -7356,7 +8300,14 @@
             "Code path for customer mail: lib/email/context.ts contactSentence() → paragraph() → inlineText() in lib/email/html.ts:118. With a company phone or Viber set in Podešavanja → Firma, every customer e-mail's plain text reads „Pozovite +381 …: tel:+381… ili pišite na Viber: viber://chat?number=…“."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "seo-content-email",
+        "note": "Test „FLOW-34: phone, e-mail and Viber links print their value once“ passes; snapshots now read „Pitanja? Pozovite +381 64 123 4567 ili pišite na Viber ili odgovorite na ovu poruku.“ and „Telefon: +381 64 123 4567“. (docs/qa/fix/seo-content-email.json)"
+      }
     },
     {
       "key": "flows-import-mech-06",
@@ -7383,7 +8334,7 @@
       "track": "flows-import-mech",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "FLOW-35",
       "verification": [
@@ -7409,7 +8360,14 @@
             "Compare with /majstor/porudzbine: „Odloženo plaćanje do 15.10.2026.“"
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "npx tsc --noEmit clean; not exercised in the browser (needs a fresh deferred mechanic order). (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     },
     {
       "key": "flows-import-mech-07",
@@ -7451,7 +8409,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (owned by the admin-flows package, which recorded no change for it)."
+      }
     },
     {
       "key": "flows-import-mech-08",
@@ -7475,7 +8440,7 @@
       "track": "flows-import-mech",
       "group": "flows",
       "prefix": "FLOW",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "FLOW-37",
       "verification": [
@@ -7491,7 +8456,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "scripts/qa/fix/cart-mechanic-overlays-perf-route.mjs → 'FLOW-37 unknown slug: 400 Izabrane kategorije više ne postoje. …'. (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     },
     {
       "key": "perf-lh-11",
@@ -7532,7 +8504,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": "catalog-product-ui",
+        "note": "not fixed — Item 1 done: ProductCard passes AddToCartButton only the CartProduct fields (cartProduct()), not the whole ProductCardData, so card data is no longer serialised twice. Item 2 (collapse ProductStock/ProductPrice/AddToCartButton into one delegated client island per ProductGrid) is not done in this pass: it is a structural rewrite of the card (live values patched into server markup, delegated click handling, the „Dodato“ state and toasts) that needs its own measured change and e2e coverage of add-… Last check: npx tsc --noEmit -> no errors in owned files (CartProduct built from ProductCardData); catalog-product-ui-misc.mjs add-to-cart from a card still works (cart-live announcement). (docs/qa/fix/catalog-product-ui.json)"
+      }
     },
     {
       "key": "perf-lh-12",
@@ -7577,7 +8556,14 @@
             "Lighthouse's target-size relatedNodes list section.cv-auto > ul.mt-10 > li > a.group (akumulator, farovi, hladnjak-ventilator) as the obscuring elements."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (owned by the home-hero-sections package, which recorded no change for it)."
+      }
     },
     {
       "key": "perf-bundle-07",
@@ -7603,7 +8589,7 @@
       "track": "perf-bundle",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "PERF-19",
       "verification": [
@@ -7620,7 +8606,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "shell-perf",
+        "note": "verify-consent-headers.json headers {modelsCache, imagesCache: 'public, max-age=86400, stale-while-revalidate=604800'}. (docs/qa/fix/shell-perf.json)"
+      }
     },
     {
       "key": "perf-bundle-09",
@@ -7646,7 +8639,7 @@
       "track": "perf-bundle",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "PERF-20",
       "verification": [
@@ -7663,7 +8656,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "routing-errors-gates",
+        "note": "npx eslint app/error.tsx -> clean; npx tsc --noEmit -> 0 errors in owned files. Chunk dedupe re-measure (perf-bundle-dupes.mjs) needs a production build (Performance phase). (docs/qa/fix/routing-errors-gates.json)"
+      }
     },
     {
       "key": "perf-bundle-12",
@@ -7689,7 +8689,7 @@
       "track": "perf-bundle",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "PERF-21",
       "verification": [
@@ -7713,7 +8713,14 @@
             "Fix: in ProductCard.tsx:84, for the responsive variant use sizes '(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, (min-width: 480px) 50vw, 104px' (sm = 480 px in this project, not 640)"
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "catalog-product-ui",
+        "note": "curl http://localhost:3001/delovi/kocioni-diskovi -> card <img sizes=\"(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, (min-width: 480px) 50vw, 104px\"> and the same imageSizes on the first-card preload link; npx tsc --noEmit clean for owned files. (docs/qa/fix/catalog-product-ui.json)"
+      }
     },
     {
       "key": "perf-3d-03",
@@ -7762,7 +8769,14 @@
             "Record draws and triangles per frame with verify-perf-3d-frames.mjs: 290 and 416 k on desktop, 172 and 257 k on mobile."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (no fix package took it)."
+      }
     },
     {
       "key": "perf-3d-06",
@@ -7788,7 +8802,7 @@
       "track": "perf-3d",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "PERF-23",
       "verification": [
@@ -7804,7 +8818,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "hero-3d-assets",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-tier.mjs -> '(no override) dpr 1: {\"tier\":\"low\",\"status\":\"idle\",\"canvas\":false}' on SwiftShader and '?3d=high dpr 1: tier high, status ready'. Unit test 'software WebGL renderers are low (PERF-23)' passes. (docs/qa/fix/hero-3d-assets.json)"
+      }
     },
     {
       "key": "perf-3d-07",
@@ -7845,7 +8866,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (no fix package took it)."
+      }
     },
     {
       "key": "perf-3d-08",
@@ -7869,7 +8897,7 @@
       "track": "perf-3d",
       "group": "perf",
       "prefix": "PERF",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "alsoReported": [
         {
@@ -7892,7 +8920,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "hero-3d-assets",
+        "note": "ls -la public/models/env -> only studio-pmrem.hdr (142775 bytes); node 3d/scripts/env.mjs -> 'env: ...studio-pmrem.hdr (336 x 256, cube 64, 139 KB)'. (docs/qa/fix/hero-3d-assets.json)"
+      }
     },
     {
       "key": "perf-3d-09",
@@ -7934,7 +8969,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (no fix package took it)."
+      }
     },
     {
       "key": "seo-10",
@@ -7980,7 +9022,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": "seo-content-email",
+        "note": "not fixed — Fixed: latin-ext font files registered under their own family names (Martian Mono Ext, Public Sans Ext) and listed in every OG font stack, so „Š/Đ“ no longer fall back. Open: per-page og:image:alt needs generateImageMetadata in the opengraph-image routes (changes the image URLs) — left for a follow-up. Last check: Landing OG renders „KOČIONI DISKOVI ZA ŠKODU“ and „Nađi“ correctly: docs/qa/fix/seo-content-email/og-landing-skoda.webp (from /delovi/kocioni-diskovi/skoda/opengraph-image-170i3u → 200 image/png). (docs/qa/fix/seo-content-email.json)"
+      }
     },
     {
       "key": "seo-11",
@@ -8021,7 +9070,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": "cross-p1",
+        "note": "not fixed — Own part done: productJsonLd gets sellerName from settings.brand.name. deliveryTime and return fees still need owner data (seo-content-email record). Last check: npx tsc --noEmit exit 0; eslint exit 0. (docs/qa/fix/cross-p1.json)"
+      }
     },
     {
       "key": "seo-12",
@@ -8046,7 +9102,7 @@
       "track": "seo",
       "group": "seo",
       "prefix": "SEO",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "SEO-10",
       "verification": [
@@ -8063,7 +9119,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "seo-content-email",
+        "note": "Test „SEO-10: a backorder item with a lead time carries g:availability_date“ → „2026-10-08T00:00+02:00“ and „2026-11-10T00:00+01:00“; in-stock and no-lead-time items have none. 10 passed. (docs/qa/fix/seo-content-email.json)"
+      }
     },
     {
       "key": "seo-15",
@@ -8087,7 +9150,7 @@
       "track": "seo",
       "group": "seo",
       "prefix": "SEO",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "SEO-11",
       "verification": [
@@ -8106,7 +9169,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "shell-perf",
+        "note": "verify-consent-reveal.json consent.nosnippet true. (docs/qa/fix/shell-perf.json)"
+      }
     },
     {
       "key": "seo-17",
@@ -8131,7 +9201,7 @@
       "track": "seo",
       "group": "seo",
       "prefix": "SEO",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "SEO-12",
       "verification": [
@@ -8148,7 +9218,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "routing-errors-gates",
+        "note": "curl -i http://localhost:3001/api/zdravlje -> 'HTTP/1.1 200 OK', 'cache-control: no-store', '{\"ok\":true,…,\"convex\":\"ok\",\"ms\":144}'. (docs/qa/fix/routing-errors-gates.json)"
+      }
     },
     {
       "key": "seo-18",
@@ -8173,7 +9250,7 @@
       "track": "seo",
       "group": "seo",
       "prefix": "SEO",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "SEO-13",
       "verification": [
@@ -8195,7 +9272,14 @@
             "Compare /styleguide (xRobots 'noindex, nofollow') and /admin/izvoz/kupci.csv (xRobots 'noindex, nofollow')"
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "shell-perf",
+        "note": "verify-consent-headers.json headers.adminXRobots 'noindex, nofollow' (GET /admin/prijava). (docs/qa/fix/shell-perf.json)"
+      }
     },
     {
       "key": "seo-19",
@@ -8219,7 +9303,7 @@
       "track": "seo",
       "group": "seo",
       "prefix": "SEO",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "SEO-14",
       "verification": [
@@ -8239,7 +9323,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "forms-auth",
+        "note": "forms-auth-misc.mjs → \"upit breadcrumbs {nav:Početna/Upit po broju šasije, jsonld:true}\" (docs/qa/fix/forms-auth.json)"
+      }
     },
     {
       "key": "seo-20",
@@ -8292,7 +9383,14 @@
             "Expected fix: pass contentPages.updatedAt for those 7 URLs in sitemapData/staticne, and give the index entry for proizvodi-N the max contentUpdatedAt of its chunk. vozila.xml and the 5 non-content static URLs correctly have no lastmod (no real change date)."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (no fix package took it)."
+      }
     },
     {
       "key": "seo-21",
@@ -8316,7 +9414,7 @@
       "track": "seo",
       "group": "seo",
       "prefix": "SEO",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "SEO-16",
       "verification": [
@@ -8340,7 +9438,14 @@
             "Read as a P3 robustness improvement (optional lowercase 308 in proxy.ts, excluding token routes), not a violation of ROUTES §B4"
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "routing-errors-gates",
+        "note": "curl: /deo/KOCIONI-DISK-PREDNJI-276-24-MM-DEMO-0004 -> 308 /deo/kocioni-disk-prednji-276-24-mm-demo-0004; /DEO/… -> 308; /Delovi/Kocioni-Diskovi?marka=VW -> 308 /delovi/kocioni-diskovi?marka=VW; /porudzbina/AbC123 -> 404 (untouched); /admin/porudzbine/SK-2026-000092 -> 307 sign-in (untouched). vitest routes.test.ts 'Tests 28 passed'. (docs/qa/fix/routing-errors-gates.json)"
+      }
     },
     {
       "key": "vis-store-07",
@@ -8367,7 +9472,7 @@
       "track": "vis-store",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "VIS-19",
       "verification": [
@@ -8388,7 +9493,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cross-p1",
+        "note": "npx tsc --noEmit exit 0; eslint exit 0. (docs/qa/fix/cross-p1.json)"
+      }
     },
     {
       "key": "vis-store-08",
@@ -8437,7 +9549,14 @@
             "Note that the section's content (every category, SSR) is required by 3D-CONTRACT and SEO-ADS; only its phone layout is at issue."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (owned by the home-hero-sections package, which recorded no change for it)."
+      }
     },
     {
       "key": "vis-store-09",
@@ -8464,7 +9583,7 @@
       "track": "vis-store",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "VIS-21",
       "verification": [
@@ -8490,7 +9609,14 @@
             "Do not include the filtered category URL: its intro is already collapsed, and its 9 px overflow at 360 comes from the toolbar rows."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "catalog-product-ui",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/catalog-product-ui-misc.mjs -> /delovi/kocioni-diskovi/volkswagen/golf at 360x780: details closed with summary „Više o ponudi“, first card top 573 and its name, OEM, stock and price 3.890 RSD inside the first viewport (vis21-landing-360.webp); the „U korpu“ button is ~60 px below the fold; text-reveal check {stuck: [], pending: 0, words: 0}. (docs/qa/fix/catalog-product-ui.json)"
+      }
     },
     {
       "key": "vis-store-10",
@@ -8518,7 +9644,7 @@
       "track": "vis-store",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "VIS-22",
       "verification": [
@@ -8536,7 +9662,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "search-catalog-content",
+        "note": "deo.json caption {tag FIGCAPTION, size 13px, inside FIGURE} at every width. (docs/qa/fix/search-catalog-content.json)"
+      }
     },
     {
       "key": "vis-commerce-04",
@@ -8565,7 +9698,7 @@
       "track": "vis-commerce",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P2",
       "id": "VIS-23",
       "verification": [
@@ -8590,7 +9723,14 @@
             "Compare with the drawer that the header cart icon opens: the summary and button are pinned at the bottom (724–776 at 390)."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "scripts/qa/fix/cart-mechanic-overlays-misc.mjs → 'VIS-23 {\"ctaCount\":1,\"ctaTop\":780,\"vh\":844,\"spb\":\"93px\"}' with 5 lines at 390; screenshots vis23-cart-sticky-390.webp and vis23-cart-sticky-390-end.webp. (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     },
     {
       "key": "vis-commerce-09",
@@ -8616,7 +9756,7 @@
       "track": "vis-commerce",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "VIS-24",
       "verification": [
@@ -8633,7 +9773,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "scripts/qa/fix/cart-mechanic-overlays-account.mjs → '/nalog/porudzbine {… \"chipW\":74}' (audit ≈ 190 px); screenshot account-orders-390.webp. (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     },
     {
       "key": "vis-commerce-10",
@@ -8677,7 +9824,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (owned by the cart-mechanic-overlays package, which recorded no change for it)."
+      }
     },
     {
       "key": "vis-commerce-12",
@@ -8722,7 +9876,14 @@
             "At 390x844 and wider the two buttons sit side by side on one row and the problem is gone."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (owned by the backend-orders-quotes package, which recorded no change for it)."
+      }
     },
     {
       "key": "vis-commerce-13",
@@ -8747,7 +9908,7 @@
       "track": "vis-commerce",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "VIS-27",
       "verification": [
@@ -8770,7 +9931,14 @@
             "Open the cart drawer from the header at 390 or 1440: the stepper and total share a row and the trash is again alone below (line 196 px)."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "Screenshot docs/qa/fix/cart-mechanic-overlays/cart-page-390.webp; line height 152 px at 390 with 44 px controls. (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     },
     {
       "key": "vis-commerce-14",
@@ -8795,7 +9963,7 @@
       "track": "vis-commerce",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "VIS-28",
       "verification": [
@@ -8813,7 +9981,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "scripts/qa/fix/cart-mechanic-overlays-account.mjs → every tab at 390: \"signOutVisible\":1,\"signOutBelowContent\":true. (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     },
     {
       "key": "vis-admin-03",
@@ -8862,7 +10037,14 @@
             "On Windows (classic scrollbars) a scrollbar thumb is visible. On overlay-scrollbar platforms (macOS) nothing signals the overflow until the user scrolls, because no fade mask is applied."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": "admin-lists-shell",
+        "note": "not fixed — Not attempted in this run (sidebar compaction on short viewports, pinned settings group, scroll fade, active item scroll-into-view): not a trivial P3 within the time budget. Last check: No change made. (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "vis-admin-07",
@@ -8902,7 +10084,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": "admin-lists-shell",
+        "note": "not fixed — Not attempted (rail badge offsets, stock as a dot). The bell already caps at „9+“ and the sidebar at „99+“ (seen in 1440-proizvodi.jpg). Last check: No change made. (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "vis-admin-08",
@@ -8928,7 +10117,7 @@
       "track": "vis-admin",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "VIS-31",
       "verification": [
@@ -8946,7 +10135,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "npx eslint components/admin/catalog/CategoriesAdmin.tsx components/admin/ui.tsx → no output; npx tsc --noEmit → 0 errors (error TS count 0). (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "vis-admin-09",
@@ -8996,7 +10192,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (owned by the admin-flows package, which recorded no change for it)."
+      }
     },
     {
       "key": "vis-admin-10",
@@ -9043,7 +10246,14 @@
             "Optionally, open /admin/porudzbine/SK-2026-000144 → Istorija. It correctly says „Nova — Porudžbina je primljena.“, so the order history is not affected."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (owned by the backend-orders-quotes package, which recorded no change for it)."
+      }
     },
     {
       "key": "vis-admin-11",
@@ -9065,7 +10275,7 @@
       "track": "vis-admin",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "VIS-34",
       "verification": [
@@ -9083,7 +10293,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "npx tsc --noEmit → 0 errors; npx eslint components/admin/ui.tsx → no output. (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "vis-admin-12",
@@ -9108,7 +10325,7 @@
       "track": "vis-admin",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "VIS-35",
       "verification": [
@@ -9127,7 +10344,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "shell-perf",
+        "note": "verify-consent-headers.json print {html 'rgb(255, 255, 255)', body 'rgb(255, 255, 255)'} under emulateMedia print. (docs/qa/fix/shell-perf.json)"
+      }
     },
     {
       "key": "vis-admin-14",
@@ -9151,7 +10375,7 @@
       "track": "vis-admin",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "VIS-36",
       "verification": [
@@ -9174,7 +10398,14 @@
             "On /admin, the „Red čekanja“ rows (who · what) are also truncated without a title. Compare with /admin/proizvodi, where the truncated „Kategorija“ cell has one."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "npx eslint (touched files) → no output; npx tsc --noEmit → 0 errors. (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "vis-admin-15",
@@ -9215,7 +10446,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (owned by the backend-orders-quotes package, which recorded no change for it)."
+      }
     },
     {
       "key": "vis-admin-16",
@@ -9263,7 +10501,14 @@
             "In DevTools, the <a href=mailto:> has word-break: break-all (class break-all). That is the cause, not the dd's overflow-wrap."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": "admin-lists-shell",
+        "note": "not fixed — Not attempted (<wbr> after „@“ in DefinitionList e-mails). Last check: No change made. (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "vis-admin-17",
@@ -9286,7 +10531,7 @@
       "track": "vis-admin",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "VIS-39",
       "verification": [
@@ -9307,7 +10552,14 @@
             "Compare the x position of the breadcrumb (top bar) with the page h1, and the account button's right edge with the table's right edge."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-lists-shell-p3.mjs → p3.json align at 2560: barInner [556,2236] = main [556,2236]. (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "vis-admin-18",
@@ -9330,7 +10582,7 @@
       "track": "vis-admin",
       "group": "visual",
       "prefix": "VIS",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "VIS-40",
       "verification": [
@@ -9352,7 +10604,14 @@
             "At 1024 or 1920 the caption fits on one line and only the „(0)“ wording remains."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "admin-lists-shell",
+        "note": "p3.json trend: [„prethodnih 7 dana: 0“]; screenshot 390-pregled-queue.jpg (Poslednjih 7 dana 95 / prethodnih 7 dana: 0). (docs/qa/fix/admin-lists-shell.json)"
+      }
     },
     {
       "key": "vis-admin-19",
@@ -9390,7 +10649,14 @@
           ],
           "corrected_steps": []
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (owned by the admin-flows package, which recorded no change for it)."
+      }
     },
     {
       "key": "vis-admin-20",
@@ -9434,7 +10700,14 @@
             "Observe the ghost „Zatvori“ in the composer header next to the page-header danger button „Zatvori upit“; clicking „Zatvori“ discards any unsaved lines without a prompt."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "OPEN",
+        "package": null,
+        "note": "not fixed — not addressed in step 22 (owned by the backend-orders-quotes package, which recorded no change for it)."
+      }
     },
     {
       "key": "xbrowser-03",
@@ -9461,7 +10734,7 @@
       "track": "xbrowser",
       "group": "xbrowser",
       "prefix": "XB",
-      "status": "OPEN",
+      "status": "FIXED",
       "reported_severity": "P3",
       "id": "XB-02",
       "verification": [
@@ -9486,7 +10759,14 @@
             "Fix: <Dialog position=\"top\"> in VehiclePickerDialog.tsx. Optionally give the step body a min-height so the bottom edge also stays steadier."
           ]
         }
-      ]
+      ],
+      "resolution": {
+        "step": 22,
+        "date": "2026-10-01",
+        "status": "FIXED",
+        "package": "cart-mechanic-overlays",
+        "note": "scripts/qa/fix/cart-mechanic-overlays-misc.mjs → 'XB-02 title top per step [ 93, 93, 93 ]'. (docs/qa/fix/cart-mechanic-overlays.json)"
+      }
     }
   ],
   "notConfirmed": [

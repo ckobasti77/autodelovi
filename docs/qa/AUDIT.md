@@ -4,6 +4,22 @@
 
 Step 22 works through this list in priority order: change **Status** from `OPEN` to `FIXED` (with a re-verification note citing a command output or screenshot path) or `WONTFIX` (with a reason consistent with `pipeline/BRIEF.md`).
 
+## Step 22 — resolution
+
+Closed on 2026-10-01 after three fix runs, the performance gate and the quality gates. Every finding block below carries its final **Status** and a „Re-verification (step 22)“ line (command and key output, or an evidence path); full records are in `docs/qa/fix/<package>.json`. A later run's record wins, except where a later WONTFIX/OPEN concerned only an optional cross request or an assist (FLOW-03, PERF-05, COPY-06; D290). A P1 is FIXED only with a re-run of its reproduction against the production build on :3100 — [fix/close/p1-reverify.md](fix/close/p1-reverify.md).
+
+| Severity | Total | FIXED | WONTFIX | OPEN |
+|---|---|---|---|---|
+| P1 | 18 | 17 | 0 | 1 |
+| P2 | 87 | 85 (97,7 %) | 0 | 2 |
+| P3 | 75 | 47 (62,7 %) | 0 | 28 |
+
+- Gates: performance — [docs/qa/fix/perf-gate.md](fix/perf-gate.md) (applied and simulated throttling, 3-run medians) and the P1 re-run [fix/close/perf01-lighthouse-devtools.txt](fix/close/perf01-lighthouse-devtools.txt); full e2e suite on the production build — [docs/qa/fix/e2e-final.txt](fix/e2e-final.txt) (105 passed, 27 skipped by design, 0 failed).
+- P1 still open: [PERF-01](#perf-01).
+- P2 still open: [FLOW-05](#flow-05), [FLOW-10](#flow-10).
+- P3 still open: [BE-09](#be-09), [BE-10](#be-10), [BE-11](#be-11), [COPY-12](#copy-12), [FLOW-28](#flow-28), [FLOW-30](#flow-30), [FLOW-31](#flow-31), [FLOW-33](#flow-33), [FLOW-36](#flow-36), [PERF-17](#perf-17), [PERF-18](#perf-18), [PERF-22](#perf-22), [PERF-24](#perf-24), [PERF-26](#perf-26), [SEO-08](#seo-08), [SEO-09](#seo-09), [SEO-15](#seo-15), [VIS-20](#vis-20), [VIS-25](#vis-25), [VIS-26](#vis-26), [VIS-29](#vis-29), [VIS-30](#vis-30), [VIS-32](#vis-32), [VIS-33](#vis-33), [VIS-37](#vis-37), [VIS-38](#vis-38), [VIS-41](#vis-41), [VIS-42](#vis-42).
+- Hero at 390 px: [fix/close/hero-390-poster.webp](fix/close/hero-390-poster.webp).
+
 ## 1. Summary
 
 **180 confirmed findings** — P0 0 · P1 18 · P2 87 · P3 75. 208 findings were reported; 8 did not survive verification (Appendix A), 20 were merged into duplicates.
@@ -489,7 +505,7 @@ Reviewer scores: backend 6.5/10.
 
 **Category renders (the only product imagery until owner photos) are inconsistently framed and many are near-invisible on the graphite ground — brake pads, calipers, ABS sensor, wipers read as dark blobs on home, hubs, cards and product pages**
 
-- **Severity:** P1 · **Area:** 1. Visual design & consistency — Imagery / category thumbnails and product gallery · **Status:** OPEN
+- **Severity:** P1 · **Area:** 1. Visual design & consistency — Imagery / category thumbnails and product gallery · **Status:** FIXED
 - **Route:** / (Najtraženije kategorije — first tile „Kočione pločice“), /delovi, every system hub (e.g. /delovi/kocnice), category/landing/search product cards, product pages of affected categories (e.g. /deo/kocione-plocice-prednje-demo-0012, /deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-e007)
 - **Context:** All widths 360–2560, Chromium; files public/images/parts/*.webp measured offline with sharp
 - **Standard:** DESIGN-SYSTEM §6.3 (framing, centre, lighting); BRIEF §9 Visual („stands next to award-level automotive sites“); first-impression defect on home/product templates
@@ -510,13 +526,14 @@ Reviewer scores: backend 6.5/10.
 - **Evidence:** [audit/vis-store/renders-contact-sheet.webp](audit/vis-store/renders-contact-sheet.webp) · [audit/vis-store/renders-metrics.txt](audit/vis-store/renders-metrics.txt) · [audit/vis-store/renders-metrics.json](audit/vis-store/renders-metrics.json) · [audit/vis-store/hub/1440-top.webp](audit/vis-store/hub/1440-top.webp) · [audit/vis-store/home/sec-1440-02.webp](audit/vis-store/home/sec-1440-02.webp) · [audit/vis-store/delovi/1440-top.webp](audit/vis-store/delovi/1440-top.webp) · [audit/vis-store/pout/1440-top.webp](audit/vis-store/pout/1440-top.webp) · [audit/vis-store/porder/1440-top.webp](audit/vis-store/porder/1440-top.webp) · [audit/vis-store/capture-metrics.json](audit/vis-store/capture-metrics.json) (pin@14… · scripts/q…
 - **Suggested fix:** Re-render the thumbnail set in the Blender pipeline (3d/scripts thumbs.py, blender-pipeline skill) with per-part auto-framing to a 70 % longest-side bbox and 48 % optical centre, an exposure floor (e.g. raise key/rim so dark rubber/cast-iron parts reach ≥ 2:1 local contrast against #1C2025, or add a subtle lighter radial behind dark parts), and a 1536 px master so the product gallery is not upscaled on DPR 2. Replace the placeholder-grade models (hauba, stakla, kočione pločice, senzori/brisači) or frame them closer. This is independent of the owner item „Fotografije proizvoda“ (HUMAN-TODO P1): the renders are what every visitor sees until then.
 - **Verification:** reproduce → partially_confirmed (P1): The core problem is real and worst where it matters most. The brake-pad render (kocione-plocice.webp) is almost invisible on the CSS graphite ground. It is the first tile in 'Najtraženije kategorije' on / (1440 and 390), a tile on /delovi and /delovi/kocnice, the image on all 10 cards of /delovi/kocione-plocice, the ma… [[audit/verify/vis-store/vis-store-02-reproduce-metrics.txt](audit/verify/vis-store/vis-store-02-reproduce-metrics.txt) (part-only alpha>=200: kocione-plocice p90 contrast 1.15:1, 100 % of pixels <1.5:1; boxCentreY 41-54 %; part max side 3…, [audit/verify/vis-store/vis-store-02-reproduce-metrics.json](audit/verify/vis-store/vis-store-02-reproduce-metrics.json)] — skeptic → partially_confirmed (P2): Only the exposure claim holds up, and it covers fewer renders than reported. The framing, optical-centre and upscaling claims come from a measurement mistake. (1) Measurement flaw. The reviewer's script counts every pixel with alpha > 24. That includes the black contact shadow, which is 23–75 % of those pixels (e.g. 52… [[audit/verify/vis-store/vis-store-02-skeptic-metrics.txt](audit/verify/vis-store/vis-store-02-skeptic-metrics.txt) (part-pixel metrics; the partBB, centY and shadow% columns disprove the framing/centre claims), [audit/verify/vis-store/vis-store-02-skeptic-metrics.json](audit/verify/vis-store/vis-store-02-skeptic-metrics.json)]
+- **Re-verification (step 22):** Independent verifier verify:hero-3d-assets ran both audit metric scripts on public/images/parts: renders under 1.3:1 mean contrast went from 7 to 0, the lowest mean is now 2.2:1. The production build serves the same files (public/images/parts unchanged since). Real photos remain an owner item (HUMAN-TODO §13).
 - _Reviewer key: vis-store-02_
 
 #### VIS-02
 
 **Quick order: the sticky summary bar hides keyboard focus (6 stops at 1440, 22 at 390); clipped row reads as a cut, not as an overlay**
 
-- **Severity:** P1 · **Area:** 1. Visual design & consistency — Mechanic portal / brza porudžbina (known item, owned by this track) · **Status:** OPEN
+- **Severity:** P1 · **Area:** 1. Visual design & consistency — Mechanic portal / brza porudžbina (known item, owned by this track) · **Status:** FIXED
 - **Route:** /majstor/brza-porudzbina (also at 360, 768, 1920 and 2560: one row is fully under the bar at load)
 - **Context:** Chromium, approved mechanic (Majstor Plus), 1440x900 and 390x844 (isMobile), 13 pasted codes checked (9 exact, 3 with more options, 1 not found)
 - **Standard:** WCAG 2.2 SC 2.4.11 Focus Not Obscured (Minimum), AA; BRIEF §9 Accessibility (full keyboard use); DESIGN-SYSTEM §5.5 elevation; §1.2 principle 5 Workshop-proof
@@ -542,13 +559,14 @@ Reviewer scores: backend 6.5/10.
 - **Evidence:** [audit/vis-commerce/v3/1440-quick-focus-fully-hidden.webp](audit/vis-commerce/v3/1440-quick-focus-fully-hidden.webp) · [audit/vis-commerce/v3/390-quick-focus-fully-hidden.webp](audit/vis-commerce/v3/390-quick-focus-fully-hidden.webp) · [audit/vis-commerce/quick/1440-results.webp](audit/vis-commerce/quick/1440-results.webp) · [audit/vis-commerce/v3-verify.json](audit/vis-commerce/v3-verify.json) (q… · [audit/vis-commerce/run-quick3.txt](audit/vis-commerce/run-quick3.txt) (pa… · scrip…
 - **Suggested fix:** components/mechanic/QuickOrder.tsx:616. While results are shown, set scroll-padding-bottom (or scroll-margin-bottom on each row and its controls) to the bar's measured height via a ResizeObserver-driven CSS variable. Also add onFocus handling on the rows that calls scrollIntoView({block:'nearest'}) when the element's bottom is below the bar's top. Give the bar the DESIGN-SYSTEM §5.5 soft elevation (a shadow on the top edge, or a 24 px gradient fade above it) so it reads as an overlay. Below sm, compact it to one row: total plus „Dodaj sve u korpu“, with „Pošalji upit za nepronađene“ as a text link or icon button. Target: 120 px or less.
 - **Verification:** reproduce → confirmed (P1): Reproduced from scratch with my own script, using a fresh mechanic login and the same 13 pasted codes (13 rows: 9 exact, 3 with more options, 1 not found). The focus problem is real and wider than reported: it happens at every width tested and in two engines. Chromium, tab stops whose control is fully under the bar (al… [[audit/verify/vis-commerce/vis-commerce-01-reproduce-chromium-1440-focus-hidden-raw.webp](audit/verify/vis-commerce/vis-commerce-01-reproduce-chromium-1440-focus-hidden-raw.webp) (focus on the row-6 radio; nothing visible), [audit/verify/vis-commerce/vis-commerce-01-reproduce-chromium-1440-focus-hidden-marked.webp](audit/verify/vis-commerce/vis-commerce-01-reproduce-chromium-1440-focus-hidden-marked.webp) (same frame, dashed marker at the focused radio under the bar)] — skeptic → partially_confirmed (P1): I wrote my own script and used a keyboard-only flow: fill the codes, focus „Proveri brojeve“, press Enter (the app moves focus to the results region), then Tab. I measured each stop 350 ms after the key press. A stop counts as fully hidden only if its rect lies entirely inside the sticky bar's rect and elementFromPoint… [[audit/verify/vis-commerce/vis-commerce-01-skeptic-chromium.json](audit/verify/vis-commerce/vis-commerce-01-skeptic-chromium.json) (1440 fullyHiddenCount 6/61, 390 22/61, 360 22/61, 1920 7/61; bar h 117/197/218, shadow none, scrollPadding bottom auto…, [audit/verify/vis-commerce/vis-commerce-01-skeptic-firefox.json](audit/verify/vis-commerce/vis-commerce-01-skeptic-firefox.json) (1440 fullyHiddenCount 2, 390 20)]
+- **Re-verification (step 22):** Independent verifier verify:cart-mechanic-overlays: fullyHidden 0 and partlyHidden 0 of 62 focus stops at every width (audit: 6 at 1440, 27 at 390). Production build: e2e mechanics.spec „register → approve → own prices → quick order → deferred order“ passed on :3100 (docs/qa/fix/e2e-final.txt).
 - _Reviewer key: vis-commerce-01_
 
 #### VIS-03
 
 **Header: `hidden sm:inline-flex` never hides the icon links, so the header overflows at 360. Once the owner sets phone and Viber, the mobile menu button is pushed off-screen for every visitor**
 
-- **Severity:** P1 · **Area:** 1. Visual design & consistency — Shell / header (every template on phones) · **Status:** OPEN
+- **Severity:** P1 · **Area:** 1. Visual design & consistency — Shell / header (every template on phones) · **Status:** FIXED
 - **Route:** All routes. Reproduced on /, /korpa, /nalog, /majstor, /majstor/cenovnik and /delovi (mechanic at 360); simulated for guests on /delovi/kocioni-diskovi at 360 and 390
 - **Context:** Chromium isMobile. Approved mechanic at 360x780 (reproducible now). Guest at 360x780 and 390x844 with the phone and Viber icon links simulated by cloning the account link (same classes), because HUMAN-TODO P0 requires those settings before go-live
 - **Standard:** WCAG 2.2 SC 1.4.10 Reflow (content clipped at 360 CSS px); DESIGN-SYSTEM §5.1 (base layout designed at 360 and 390); BRIEF §9 Visual (first impression on mobile, where most ad traffic lands)
@@ -571,13 +589,14 @@ Reviewer scores: backend 6.5/10.
 - **Suggested fix:** components/shell/Header.tsx:23 and 50–85 and components/shell/AccountLink.tsx. Split iconLink into a display-less style class and apply display per use: `hidden sm:inline-flex` or `max-sm:hidden`, never `inline-flex` together with `hidden`. Below sm, keep only search, cart and menu. Phone, Viber, account and mechanic links are already reachable in MobileNav (contacts={contactLinkList(...)}). Add an e2e assertion at 360 and 390, with phone and Viber seeded, that document.scrollWidth equals clientWidth and the menu trigger is fully in view.
 - **Verification:** skeptic → confirmed (P1): Reproduced from scratch with my own script, which uses the exact Header.tsx class strings rather than a clone of the account link. Root cause checked in the built stylesheet .next/static/chunks/1ims1_lcdan5r.css: `.hidden{display:none}` sits at offset 17121 and `.inline-flex{display:inline-flex}` at 17200. Both have th… [[audit/verify/vis-commerce/vis-commerce-02-skeptic.json](audit/verify/vis-commerce/vis-commerce-02-skeptic.json) (guest-360 real: menu 300-344, Moj nalog display flex; mechanic-360 real: scrollW 369/360, menu 325-369; guest-360 sim:…, [audit/verify/vis-commerce/vis-commerce-02-skeptic-b.json](audit/verify/vis-commerce/vis-commerce-02-skeptic-b.json) (ponuda360 scrollW 360, header wordmark 16-129 + cart 300-344; guest360-phoneOnly scrollW 369 menu 325-369; guest390-ph…] — reproduce → confirmed (P1): The root cause is confirmed in the built CSS. In .next/static/chunks/1ims1_lcdan5r.css, `.hidden{display:none}` sits at offset 17121 and `.inline-flex{display:inline-flex}` at 17200. They are in the same layer with equal specificity, so inline-flex wins and a bare `hidden` never applies next to the iconLink base class.… [[audit/verify/vis-commerce/vis-commerce-02-reproduce-chromium.json](audit/verify/vis-commerce/vis-commerce-02-reproduce-chromium.json) (guest, simulated and mechanic measurements; mechanic 360 on /delovi, / and /korpa: menu L325 R369, scrollW 369; simula…, [audit/verify/vis-commerce/vis-commerce-02-reproduce-webkit.json](audit/verify/vis-commerce/vis-commerce-02-reproduce-webkit.json) (same numbers in WebKit)]
 - **Also reported as:** a11y-app-09 (Signed-in mechanic header does not fit 360 px: page scrolls sideways and the menu button is clipped (off-canvas at 320) @ every storefront and portal page while signed in as a mechanic (measured on /majstor, /majstor/brza-porudzbina, /majstor/cenovnik, /majstor/porudzbine))
+- **Re-verification (step 22):** Re-run on :3100 (Header.tsx touched in run 3): AUDIT_BASE=http://localhost:3100 node scripts/qa/fix/close-p1-ui.mjs -> /delovi/kocioni-diskovi at 320/360/390: document and header scrollWidth equal the viewport, the mobile menu button spans 260–304 / 300–344 / 330–374 px, on screen (docs/qa/fix/close/p1-ui.json). With phone and Viber injected: independent verifier reverify:shell-perf, 19 widths 320–1920, no overflow (docs/qa/fix/shell-perf/verify/).
 - _Reviewer key: vis-commerce-02_
 
 #### MOT-01
 
 **Mobile and tablet hero framing: the car fills about a third of the stage height, with an empty band above it that takes up more than half the stage**
 
-- **Severity:** P1 · **Area:** 2. Interaction & motion — 3D hero / home first impression · **Status:** OPEN
+- **Severity:** P1 · **Area:** 2. Interaction & motion — 3D hero / home first impression · **Status:** FIXED
 - **Route:** /
 - **Context:** Chromium (SwiftShader), 360×780, 390×844, 412×915, 430×932 (isMobile, hasTouch) and 768×1024; poster (status idle/loading) and live canvas (tier mid, progress 0); compared with 1024×768 and 1440×900
 - **Standard:** BRIEF §4 (signature 3D, poster first) + §9 Visual (award-level first impression); DESIGN-SYSTEM §7.7 hero stage; docs/3D-CONTRACT.md cameras per breakpoint
@@ -600,13 +619,14 @@ Reviewer scores: backend 6.5/10.
 - **Evidence:** [audit/motion-3d/framing.json](audit/motion-3d/framing.json) · [audit/motion-3d/v3-framing-recheck.txt](audit/motion-3d/v3-framing-recheck.txt) · [audit/motion-3d/framing-desktop.txt](audit/motion-3d/framing-desktop.txt) · [audit/motion-3d/v2-framing-dom.json](audit/motion-3d/v2-framing-dom.json) · [audit/motion-3d/framing-390-poster-at-stage.webp](audit/motion-3d/framing-390-poster-at-stage.webp) · [audit/motion-3d/framing-390-canvas-bbox.webp](audit/motion-3d/framing-390-canvas-bbox.webp) · [audit/motion-3d/framing-768-canvas-at-stage.webp](audit/motion-3d/framing-768-canvas-at-stage.webp)
 - **Suggested fix:** Tighten cameras.hero.mobile in public/models/car.manifest.json (today: position [3.1441, 2.8111, 6.2066], target [-0.3208, 0.824, 0.2052], fov 38). Either lower the fov to about 30–32 or dolly in, and raise the framing so the car's top sits just under the caption. Aim for ≥ 50 % of stage height, and let the car bleed slightly off the sides if needed. Add a tablet (768–1023 px) camera and poster instead of reusing the desktop right-offset composition, or centre the car when there is no copy column. Adjust the matching exploded cameras so the explode still fits. Regenerate the mobile/tablet posters (car-assembled-m-*, car-exploded-m-*, plus a tablet set) with npm run 3d so poster = canvas. Alternatively, shorten the mobile stage (672 of 844 px) or anchor the poster to the top of the stage.
 - **Verification:** reproduce → confirmed (P1): I reproduced this from scratch with my own script, which measures differently from the reviewer's. For the poster, I decoded the image file the browser actually chose (currentSrc) and mapped the car's bbox through object-fit: contain and object-position into stage coordinates, so no overlays are hidden. For the canvas,… [[audit/verify/motion-3d/motion-3d-01-reproduce.txt](audit/verify/motion-3d/motion-3d-01-reproduce.txt), [audit/verify/motion-3d/motion-3d-01-reproduce-390-768.json](audit/verify/motion-3d/motion-3d-01-reproduce-390-768.json)] — skeptic → partially_confirmed (P2): The reviewer's numbers reproduce exactly at their viewports. 360x780: 35.2 % of stage height. 390x844: 34.5 % H, 83.6 % W, 264 px gap from caption to car. 430x932: 33.7 %. 768x1024: 29.0 % H, 51.4 % W, 430 px gap, car +117 px right of centre. Canvas matches the poster (tier mid, p=0): bbox within 1 px, mean difference … [[audit/verify/motion-3d/motion-3d-01-skeptic-notes.txt](audit/verify/motion-3d/motion-3d-01-skeptic-notes.txt), [audit/verify/motion-3d/motion-3d-01-skeptic.json](audit/verify/motion-3d/motion-3d-01-skeptic.json)]
+- **Re-verification (step 22):** Re-run on :3100: AUDIT_BASE=http://localhost:3100 node scripts/qa/fix/hero-stage-framing.mjs --shots --out docs/qa/fix/close/hero-framing 390x844 360x780 430x932 (overlays hidden) -> 390x844 stage 390x488, car 374x329 = 67.4 % H / 95.9 % W, 30 px (6.1 %) empty between the caption and the roof; 360x780 67.4 % / 96.1 %; 430x932 67.2 % / 95.8 % (audit: about a third of the stage height) — docs/qa/fix/close/hero-framing.txt. Screenshot docs/qa/fix/close/hero-390-poster.webp (scripts/qa/fix/hero-390-check.mjs). e2e hero-3d.spec „the stage keeps the poster's aspect below 1024 px“ passed at 1440 and 390 (docs/qa/fix/close/p1-e2e.txt).
 - _Reviewer key: motion-3d-01_
 
 #### MOT-02
 
 **The mobile sticky buy bar never comes on screen: GSAP leaves it 71.5 px down, 7 px below the viewport, while it is marked visible and focusable**
 
-- **Severity:** P1 · **Area:** 2. Interaction & motion — Product page / GSAP sticky bar · **Status:** OPEN
+- **Severity:** P1 · **Area:** 2. Interaction & motion — Product page / GSAP sticky bar · **Status:** FIXED
 - **Route:** /deo/kocioni-disk-prednji-276-24-mm-demo-0004 (every /deo/* below 1024 px)
 - **Context:** Chromium 390×844 touch; normal motion (3 runs: 2× wheel, 1× scrollTo) and prefers-reduced-motion: reduce (1 run)
 - **Standard:** DESIGN-SYSTEM §10.3 (mobile sticky bottom buy bar) and §8.5; BRIEF §9 Visual / conversion on the key mobile template; WCAG 2.2 SC 2.4.11 Focus Not Obscured (Minimum) for the focusable off-screen controls
@@ -626,13 +646,14 @@ Reviewer scores: backend 6.5/10.
 - **Suggested fix:** In components/product/StickyBuyBar.tsx, remove the inline style transform "translateY(110%)" (line 55). GSAP parses it into y: 71.5px, and the show tween (line 38) only animates yPercent. Set the hidden state with gsap.set(el, { yPercent: 110, visibility: 'hidden' }) on mount inside useGSAP, and show with { y: 0, yPercent: 0 }. In the reduced branch, set yPercent: 0 immediately and fade the opacity. Keep SSR hidden via visibility only. Add an e2e: after scrolling past the inline button, the bar's boundingBox bottom ≤ viewport height.
 - **Verification:** skeptic → confirmed (P1): Reproduced independently with my own script. At 390x844 Chromium, 3/3 normal-motion runs (2 wheel, 1 scrollTo 1300) ended with the bar at top 850.5 / bottom 915.5 in an 844 px viewport, so 0 px of it was visible. Computed transform was matrix(1,0,0,1,0,71.5), GSAP cache {y:'71.5px', yPercent:0}, visibility visible, ari… [[audit/verify/motion-3d/motion-3d-03-skeptic.json](audit/verify/motion-3d/motion-3d-03-skeptic.json), [audit/verify/motion-3d/motion-3d-03-skeptic-b.json](audit/verify/motion-3d/motion-3d-03-skeptic-b.json)] — reproduce → confirmed (P1): I reproduced this from scratch against :3100 with my own scripts. On Chromium at 390x844 I scrolled to scrollY 1300 three ways (wheel twice, scrollTo once) and waited 3 s. Every run gave the same result: the bar is visible, aria-hidden=false and not inert, but its computed transform is matrix(1,0,0,1,0,71.5). Its top s… [[audit/verify/motion-3d/motion-3d-03-reproduce-base.json](audit/verify/motion-3d/motion-3d-03-reproduce-base.json), [audit/verify/motion-3d/motion-3d-03-reproduce-variants.json](audit/verify/motion-3d/motion-3d-03-reproduce-variants.json)]
 - **Also reported as:** vis-store-01 (Mobile sticky buy bar never appears: StickyBuyBar stays translated 71.5 px below the viewport on every orderable product page (< 1024 px), with or without reduced motion @ /deo/[slug] for every orderable product (e.g. /deo/kocioni-disk-prednji-276-24-mm-demo-0004); widths 360, 390 and 768 (all < 1024 px)); flows-shop-01 (Mobile sticky buy bar is 'shown' but stays 71.5 px below the viewport on every product page, leaving an off-screen focusable add-to-cart @ /deo/[slug] (every orderable product, e.g. /deo/kocioni-disk-prednji-276-24-mm-demo-0004, /deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005))
+- **Re-verification (step 22):** Re-run on :3100: AUDIT_BASE=http://localhost:3100 node scripts/qa/fix/close-p1-ui.mjs -> /deo/…-0004 at 390x844 scrolled to 1400 and 2200 px: sticky buy bar top 779 / bottom 844 = viewport, aria-hidden false, not inert, button „U korpu“ (docs/qa/fix/close/p1-ui.json). Earlier independent verifier: verify:catalog-product-ui (original audit scripts; wheel, scrollTo and reduced motion).
 - _Reviewer key: motion-3d-03_
 
 #### A11Y-01
 
 **Checkout error summary takes focus every time the error count changes, so the next Tab or click lands on the summary and typed characters are lost**
 
-- **Severity:** P1 · **Area:** 3. Accessibility — Checkout / form focus management · **Status:** OPEN
+- **Severity:** P1 · **Area:** 3. Accessibility — Checkout / form focus management · **Status:** FIXED
 - **Route:** /porudzbina (step 1 Kontakt; same component on every step, e.g. step 4 terms)
 - **Context:** 1440x900 Chromium, guest, keyboard and mouse, consent answered. The code path does not depend on width. The 390 rerun timed out on the shared server.
 - **Standard:** WCAG 2.2 SC 2.4.3 Focus Order, SC 3.2.2 On Input; DESIGN-SYSTEM §9.2 and §12.1 rule 7; BRIEF §9 (WCAG 2.2 AA, full keyboard use)
@@ -654,13 +675,14 @@ Reviewer scores: backend 6.5/10.
 - **Evidence:** [audit/a11y-store/co-steal-1440-rerun.log](audit/a11y-store/co-steal-1440-rerun.log) · [audit/a11y-store/co-steal-1440.json](audit/a11y-store/co-steal-1440.json) · [audit/a11y-store/co-steal-kbd-1440.webp](audit/a11y-store/co-steal-kbd-1440.webp) · [audit/a11y-store/co-steal-mouse-1440.webp](audit/a11y-store/co-steal-mouse-1440.webp) · [audit/a11y-store/checkout-1440.log](audit/a11y-store/checkout-1440.log) ("t… · scrip… · compon…
 - **Suggested fix:** In components/checkout/CheckoutForm.tsx ErrorSummary, stop keying focus on list.length. Pass an `attempt` counter that nextStep()/submit increment only when validation fails, and focus the summary in an effect keyed on that counter. Blur and change revalidation must never move focus. Add an e2e step: after an empty submit, fix Ime, press Tab, expect focus on #co-lastName.
 - **Verification:** reproduce → confirmed (P1): I wrote my own script (scripts/qa/audit/verify-a11y-store-01.mjs) and ran it three times: guest, fresh context, cart with DEMO-0004, /porudzbina step 1, on Chromium 1440, Chromium 390 (isMobile) and Firefox 1440. I followed the reported steps exactly. After an empty „Dalje“, focus goes to the summary „Proverite 4 polja… [[audit/verify/a11y-store/a11y-store-01-reproduce-1440-chromium.json](audit/verify/a11y-store/a11y-store-01-reproduce-1440-chromium.json) (A3 after Tab from fixed Ime: div[alert] "Proverite 3 polja"; A4 co-lastName=''; B2 after click Telefon: div[alert] "Pr…, [audit/verify/a11y-store/a11y-store-01-reproduce-390-chromium.json](audit/verify/a11y-store/a11y-store-01-reproduce-390-chromium.json) and .log (identical results at 390 mobile)] — skeptic → confirmed (P1): I reproduced this with my own script on the shared :3100 build. Before that I looked for reasons it might not be a defect and found none. No DECISIONS entry allows focus to move on revalidation. DESIGN-SYSTEM (line 654) and ARCHITECTURE (line 287) both say the summary "receives focus on submit". MECHANICS.md MP-02 alre… [[audit/verify/a11y-store/a11y-store-01-skeptic-1440.log](audit/verify/a11y-store/a11y-store-01-skeptic-1440.log) (A: after Tab from fixed Ime -> div[alert] "Proverite 3 polja", co-lastName=""; B: after click Telefon -> div[alert] "P…, [audit/verify/a11y-store/a11y-store-01-skeptic-1440.json](audit/verify/a11y-store/a11y-store-01-skeptic-1440.json)]
+- **Re-verification (step 22):** Re-run on :3100 (CheckoutForm changed in run 3): AUDIT_BASE=http://localhost:3100 node scripts/qa/fix/close-a11y01-repro.mjs 1440|390 chromium (unmodified audit repro, evidence redirected) -> after Tab from the fixed „Ime“ focus is input#co-lastName (expected), every keystroke of „Petrovic“ stays in #co-lastName, a click on Telefon focuses #co-phone, the summary only updates („Proverite 3 polja:“ -> „Proverite 2 polja:“) — docs/qa/fix/close/a11y01/orig-a11y-store-01-{1440,390}-chromium.json. Earlier independent verifier: verify:forms-auth (Chromium 1440/390/reduced motion, Firefox 1440).
 - _Reviewer key: a11y-store-01_
 
 #### A11Y-02
 
 **Vehicle picker, cart drawer and header search do not return focus to the control that opened them: focus drops to <body>**
 
-- **Severity:** P1 · **Area:** 3. Accessibility — Dialogs and sheets / focus return · **Status:** OPEN
+- **Severity:** P1 · **Area:** 3. Accessibility — Dialogs and sheets / focus return · **Status:** FIXED
 - **Route:** Every storefront page with the header or the hero picker, e.g. /, /deo/kocioni-disk-prednji-276-24-mm-demo-0004, /delovi/kocioni-diskovi
 - **Context:** 1440x900 and 390x844 Chromium, keyboard only, consent answered
 - **Standard:** WCAG 2.2 SC 2.4.3 Focus Order; DESIGN-SYSTEM §12.1 rule 5 („Esc closes overlays; focus returns to the trigger“); BRIEF §9 full keyboard use
@@ -680,13 +702,14 @@ Reviewer scores: backend 6.5/10.
 - **Suggested fix:** Root cause: these overlays are controlled via `open` from global state with no Radix Trigger (components/vehicle/VehiclePickerDialog.tsx:271/277, components/cart/CartDrawer.tsx:45, components/shell/HeaderSearch.tsx:55), so Radix has no trigger to refocus. MobileNav passes `trigger` and works. In components/ui/Dialog.tsx and components/ui/Sheet.tsx, when no `trigger` prop is given, store document.activeElement when the overlay opens. In onCloseAutoFocus, call preventDefault() and focus the stored element if it is still connected, otherwise #sadrzaj. Add an e2e check for all three overlays.
 - **Verification:** skeptic → confirmed (P1): I reproduced this from scratch on :3100 in headless Chromium with consent answered, using my own script. Focus lands on BODY after closing in every case I tested. Vehicle picker: 1440 header chip (Escape), 1440 hero trigger („Zatvori“ + Enter), 1440 on the product page (Escape), and the 390 sheet with Escape and with „… [[audit/verify/a11y-store/a11y-store-02-skeptic.json](audit/verify/a11y-store/a11y-store-02-skeptic.json) (11 runs: 10 of the reproduction runs end at after=BODY and nextTab=a[skip-link]; the mobile-menu control ends at butto…, [audit/verify/a11y-store/a11y-store-02-skeptic-tab.txt](audit/verify/a11y-store/a11y-store-02-skeptic-tab.txt) ({"tabsToChip":8,"hit":true,"focusVisibleBefore":true,"after":"BODY"})] — reproduce → confirmed (P1): I reproduced this with my own keyboard-only scripts. Each opener was focused and activated with Enter; each overlay was closed with Escape or its close button. Chromium 1440x900 and 390x844 on the port 3100 build, plus Firefox at 1440. After close, document.activeElement was BODY in every vehicle-picker, cart-drawer an… [[audit/verify/a11y-store/a11y-store-02-reproduce-chromium.json](audit/verify/a11y-store/a11y-store-02-reproduce-chromium.json) (17 overlay cases → afterClose BODY, afterNextTab skip-link; mobile-menu control → „Otvori meni“), [audit/verify/a11y-store/a11y-store-02-reproduce-firefox.json](audit/verify/a11y-store/a11y-store-02-reproduce-firefox.json) (9 overlay cases at 1440 → BODY)]
 - **Also reported as:** motion-3d-02 (Closing the search, vehicle-picker and parts-list dialogs drops keyboard focus to <body>; the next Tab restarts at the skip link @ / (hero vehicle field, Lista delova), every page with the header search and header „Izaberite vozilo“ (checked on /delovi/kocioni-diskovi)); a11y-app-03 (Command palette does not return focus to where it was opened; focus falls to <body> on Escape @ all /admin/* routes (tested on /admin))
+- **Re-verification (step 22):** Re-run on :3100: AUDIT_BASE=http://localhost:3100 node scripts/qa/fix/close-a11y02-repro.mjs chromium (unmodified audit repro) -> 18 of 18 cases (vehicle picker Escape/Zatvori/choose from the header chip, hero field and fitment badge; cart drawer Escape/„Nastavi kupovinu“; header search; mobile menu; 1440 and 390) return focus to the opener or its updated control („Vozilo: Golf VII. Promeni vozilo“), never BODY — docs/qa/fix/close/a11y02/a11y-store-02-reproduce-chromium.json. E2E_BASE_URL=http://localhost:3100 npx playwright test tests/e2e/focus-return.spec.ts -> 8 passed (1440 + 390, docs/qa/fix/close/p1-e2e.txt); npx vitest run tests/unit/lib/focusReturn.test.tsx -> passed (docs/qa/fix/close/p1-vitest.txt).
 - _Reviewer key: a11y-store-02_
 
 #### A11Y-03
 
 **Expired or revoked session turns every account area into a blank white page (HTTP 200 with a Location header and an empty body)**
 
-- **Severity:** P1 · **Area:** 3. Accessibility — auth / account areas (proxy) · **Status:** OPEN
+- **Severity:** P1 · **Area:** 3. Accessibility — auth / account areas (proxy) · **Status:** FIXED
 - **Route:** /admin (all /admin/* routes), /nalog, /nalog/*, /majstor, /majstor/*
 - **Context:** Any viewport and browser (seen in Chromium at 390 and 1440). State: browser still holds __convexAuthJWT + __convexAuthRefreshToken cookies but the refresh token is no longer valid (30-day session lapsed, signed out on another device, password reset, staff account removed).
 - **Standard:** BRIEF §9 (sign-in and admin order handling must work; no broken states); WCAG 2.4.2 Page Titled (empty title); HTTP semantics (Location only valid with 3xx)
@@ -706,13 +729,14 @@ Reviewer scores: backend 6.5/10.
 - **Evidence:** [audit/a11y-app/v-stale-session-admin-390.webp](audit/a11y-app/v-stale-session-admin-390.webp) · [audit/a11y-app/v-stale-session-nalog-390.webp](audit/a11y-app/v-stale-session-nalog-390.webp) · [audit/a11y-app/verify2.json](audit/a11y-app/verify2.json) (… · [audit/a11y-app/v-probe.webp](audit/a11y-app/v-probe.webp) · [audit/a11y-app/verify.json](audit/a11y-app/verify.json) (ac… · curl … · script…
 - **Suggested fix:** Root cause is in @convex-dev/auth 0.0.95 convexAuthNextjsMiddleware (node_modules/@convex-dev/auth/dist/nextjs/server/index.js lines 110-114): when refreshTokens is set (including null after a failed refresh) it wraps the handler's response in NextResponse.next(response), which keeps the headers but drops the 307 status. Fix in proxy.ts or with patch-package: when the handler returns a redirect, set/clear the auth cookies on that redirect response and return it (for example, patch the wrapper to `if (response.headers.has('location')) { await setAuthCookies(response, authResult.refreshTokens, cookieConfig); return response; }`), or upgrade @convex-dev/auth if fixed upstream. Add an e2e test: request /admin, /nalog and /majstor with an invalid refresh-token cookie and expect a 307 to /prijava.
 - **Verification:** reproduce → confirmed (P1): Reproduced from scratch; it happens exactly as reported. With stale auth cookies, every account route returns HTTP 200 with a Location header, cookies that clear the session and an empty body. Without cookies the same routes return 307. Checked with curl on /admin, /nalog, /majstor/brza-porudzbina, /nalog/porudzbine an… [[audit/verify/a11y-app/a11y-app-01-reproduce-curl.txt](audit/verify/a11y-app/a11y-app-01-reproduce-curl.txt) (no cookies: 'HTTP/1.1 307 Temporary Redirect'; stale cookies: 'HTTP/1.1 200 OK / location: /prijava?next=%2Fadmin / se…, [audit/verify/a11y-app/a11y-app-01-reproduce.json](audit/verify/a11y-app/a11y-app-01-reproduce.json) (per engine/width: status 200, title '', lang '', bodyTextLen 0, afterReload /prijava 'Prijava | SKLOP'; client-nav var…] — skeptic → confirmed (P1): Reproduced from scratch. It is not an environment artefact and nothing in the docs covers it: DECISIONS D1 and SECURITY.md only describe the proxy setup, and tests/e2e/auth.spec.ts never tests an invalid refresh token. HTTP (curl on :3100, decodable JWT that expired in 2023 + unknown refresh token, which makes the prox… [[audit/verify/a11y-app/a11y-app-01-skeptic-curl.txt](audit/verify/a11y-app/a11y-app-01-skeptic-curl.txt) (6 account paths x none/stale/refresh-only: 307 vs 200 + location + 0 bytes; public /, /prijava, /delovi with stale coo…, [audit/verify/a11y-app/a11y-app-01-skeptic.json](audit/verify/a11y-app/a11y-app-01-skeptic.json) (per-engine status 200, title '', bodyTextLength 0, lang null, afterReloadUrl /prijava?next=...; revokedCaptured true)]
+- **Re-verification (step 22):** Re-run on :3100: curl with an expired __convexAuthJWT and a bogus refresh token on /admin, /nalog, /nalog/porudzbine and /majstor/brza-porudzbina -> „HTTP/1.1 307 Temporary Redirect“, location /prijava?next=… and three clearing set-cookie headers (audit: 200 with an empty body) — docs/qa/fix/close/p1-curl-checks.txt. npx vitest run tests/unit/lib/routes.test.ts -> passed (docs/qa/fix/close/p1-vitest.txt).
 - _Reviewer key: a11y-app-01_
 
 #### A11Y-04
 
 **Sign-in and registration forms send the password in the URL (GET) when submitted before hydration or without JavaScript**
 
-- **Severity:** P1 · **Area:** 3. Accessibility — auth forms · **Status:** OPEN
+- **Severity:** P1 · **Area:** 3. Accessibility — auth forms · **Status:** FIXED
 - **Route:** /prijava, /registracija
 - **Context:** 390 x 844, Chromium, JavaScript disabled (same native submit happens on a slow phone if the user presses Enter before the ~300 KB shell hydrates); consent cookie preset
 - **Standard:** BRIEF §9 security bar; OWASP ASVS 4.0 V8.3.1 (sensitive data not sent in URL query); docs/SECURITY.md (credentials handling)
@@ -732,13 +756,14 @@ Reviewer scores: backend 6.5/10.
 - **Evidence:** [audit/a11y-app/verify2.json](audit/a11y-app/verify2.json)… · [audit/a11y-app/v-nojs-prijava-390.webp](audit/a11y-app/v-nojs-prijava-390.webp) · [audit/a11y-app/v-nojs-registracija-390.webp](audit/a11y-app/v-nojs-registracija-390.webp) · [audit/a11y-app/nojs-forms.json](audit/a11y-app/nojs-forms.json) (e… · scri…
 - **Suggested fix:** components/auth/SignInForm.tsx and the registration form in components/auth/AuthForms.tsx: add method="post" (the POST to the page itself carries no credentials in the URL) and ideally an action to a small route handler/server action that answers 'Za prijavu je potreban JavaScript' without echoing input; alternatively render the submit button disabled until mounted. Check /za-majstore/registracija and /nalog/profil forms for the same pattern.
 - **Verification:** reproduce → confirmed (P1): I wrote my own script, scripts/qa/audit/verify-a11y-app-02.mjs, and ran it against :3100. It fills the form and clicks the submit button, then records main-frame navigation requests and page.url(). Chromium, 390x844, JS disabled: /prijava produced 'GET /prijava?email=verify-a11y-02%40primer.rs&password=VerifyLozinka-77… [[audit/verify/a11y-app/a11y-app-02-reproduce.json](audit/verify/a11y-app/a11y-app-02-reproduce.json) (all 9 runs: chromium no-JS 390 on /prijava, /registracija, /za-majstore/registracija, /zaboravljena-lozinka; chromium …, [audit/verify/a11y-app/a11y-app-02-reproduce-nojs-prijava-390.webp](audit/verify/a11y-app/a11y-app-02-reproduce-nojs-prijava-390.webp) (URL banner shows ?email=...&password=VerifyLozinka-777)] — skeptic → confirmed (P1): Reproduced from scratch on :3100, 390x844 Chromium. The code matches the report: SignInForm.tsx:38 and AuthForms.tsx:72 are `<form onSubmit noValidate>` with no method or action, and the inputs have name attributes. MechanicRegistrationForm.tsx:210 behaves the same way through RHF register(). (1) With JS disabled, pres… [[audit/verify/a11y-app/a11y-app-02-skeptic.json](audit/verify/a11y-app/a11y-app-02-skeptic.json): nojs-prijava submitNavigation 'GET http://localhost:3100/prijava?email=audit-verify-a11y02-1790802487178%40primer.rs&p…, [audit/verify/a11y-app/a11y-app-02-skeptic-analytics.json](audit/verify/a11y-app/a11y-app-02-skeptic-analytics.json): pre-hydration submit with analytics+ads consent; href keeps password after hydration; gtag/fbq not loaded (no IDs conf…]
+- **Re-verification (step 22):** Re-run on :3100: the server HTML of /prijava, /registracija, /zaboravljena-lozinka, /za-majstore/registracija and /upit has method="post" on every form (docs/qa/fix/close/p1-curl-checks.txt), so a pre-hydration or no-JS submit never puts the password in the URL. Earlier independent verifier: verify:forms-auth (JS off, Chromium 390/1440; submit, Enter and forced click: no GET navigation).
 - _Reviewer key: a11y-app-02_
 
 #### XB-01
 
 **Chromium wipes text typed before hydration: the home hero search and the VIN inquiry (VIN + Opis) come back empty**
 
-- **Severity:** P1 · **Area:** 4. Cross-browser — Forms / hydration (engine-specific: Chromium) · **Status:** OPEN
+- **Severity:** P1 · **Area:** 4. Cross-browser — Forms / hydration (engine-specific: Chromium) · **Status:** FIXED
 - **Route:** / (hero search), /upit (VIN inquiry form)
 - **Context:** Chromium 153 headless, 390x844, isMobile. Tested two ways: (a) realistic Slow 4G (150 ms RTT, 1.6 Mbps) with 4x CPU through CDP; (b) /_next/static/chunks delayed by 6 s. Guest, no vehicle selected. WebKit, same test: the text survives. Firefox: inconclusive, because the route delay did not hold back its chunks and the page hydrated before typing started. /prijava keeps its values in every engine.
 - **Standard:** BRIEF §9 (world-class quality; core conversion flows for ad traffic on phones); DESIGN-SYSTEM §1 principle 5 „Workshop-proof … forgiving inputs“; BRIEF §3 users (mechanic on a phone, retail visitor from ads)
@@ -761,6 +786,7 @@ Reviewer scores: backend 6.5/10.
 - **Evidence:** [audit/xbrowser/prehydration-real-chromium.json](audit/xbrowser/prehydration-real-chromium.json)… · [audit/xbrowser/prehyd-real-chromium-390-home-after.webp](audit/xbrowser/prehyd-real-chromium-390-home-after.webp) · [audit/xbrowser/prehydration-chromium.json](audit/xbrowser/prehydration-chromium.json), … · [audit/xbrowser/prehyd-chromium-390-after-submit.webp](audit/xbrowser/prehyd-chromium-390-after-submit.webp) · [audit/xbrowser/prehydration-firefox_webkit.json](audit/xbrowser/prehydration-firefox_webkit.json) (We… · [audit/xbrowser/prehydration-node-chromium_webkit.json](audit/xbrowser/prehydration-node-chromium_webkit.json) (sam… · [audit/xbrowser/prehydration-forms-chromium_webkit.json](audit/xbrowser/prehydration-forms-chromium_webkit.json) (/pri… · [audit/xbrowser/inq-chromium-1440-error.webp](audit/xbrowser/inq-chromium-1440-error.webp) (first… · scripts/…
 - **Suggested fix:** components/shell/SearchBox.tsx: `const [query, setQuery] = useState(defaultQuery)` makes the hero input controlled, and hydration resets it. Seed the state from the server-rendered element in the initializer, e.g. `useState(() => (typeof document !== 'undefined' && (document.getElementById(inputId) as HTMLInputElement | null)?.value) || defaultQuery)`. components/inquiry/InquiryForm.tsx: `useForm({ defaultValues: { vin: '' … } })` with `register()` writes '' into the DOM when the ref attaches. Build defaultValues from the DOM (#iq-vin, the message textarea, name/phone/email/year) in a useState initializer before calling useForm. Alternatively render the form's fieldset disabled until mounted, with a visible loading state. Check CheckoutForm and the mechanic registration form the same way. Add an e2e test that delays /_next/static/chunks by 5 s, types, and asserts the value after hydration.
 - **Verification:** skeptic → partially_confirmed (P1): The wipe is real, but it is not Chromium-specific. The reviewer's WebKit 'survival' comes from their test setup. Their route pattern /_next/static/chunks/** also holds back the render-blocking CSS. In WebKit the field then appears together with the JS, so the page hydrates before or during typing: in my copy of their s… [[audit/verify/xbrowser/xbrowser-01-skeptic-webkit-delay-jsonly-home-390.json](audit/verify/xbrowser/xbrowser-01-skeptic-webkit-delay-jsonly-home-390.json) (run0: valueBeforeHydration '5Q0615505R', typedAt 3069, hydratedAt 8915, timeline -> '' at +391 ms; run1: hydration mid…, [audit/verify/xbrowser/xbrowser-01-skeptic-webkit-delay-home-390.json](audit/verify/xbrowser/xbrowser-01-skeptic-webkit-delay-home-390.json) (reviewer-style delay also holding CSS: hydratedAtVisible true / hydratedDuringTyping true, value kept - timing artefac…] — reproduce → partially_confirmed (P1): The defect is real, but it is not specific to Chromium. It reproduces in Chromium, WebKit and Firefox whenever typing ends before hydration, and it affects more forms than reported. My first run copied the reporter's method, delaying everything under /_next/static/chunks/**. That also delays the render-blocking CSS, so… [[audit/verify/xbrowser/xbrowser-01-reproduce-chromium_webkit_firefox-390-home_upit.json](audit/verify/xbrowser/xbrowser-01-reproduce-chromium_webkit_firefox-390-home_upit.json) (JS-only 6 s delay: home after.value "" and /upit vin/msg "" plus submit error in Chromium, WebKit and Firefox), [audit/verify/xbrowser/xbrowser-01-reproduce-chromium_webkit-390-home_upit.json](audit/verify/xbrowser/xbrowser-01-reproduce-chromium_webkit-390-home_upit.json) (first run delaying CSS too: page visible at about 6.5 s, WebKit typing overlaps hydration, text kept and submit reache…]
+- **Re-verification (step 22):** Independent verifier reverify:forms-auth re-ran the audit method (only /_next/static/chunks delayed 6 s, typing as soon as the field paints) with scripts/qa/fix/forms-auth-reverify-xb01.mjs, checking the DOM and react-hook-form state: no keystrokes lost. Form components unchanged since; the A11Y-04 form markup was re-checked on :3100.
 - _Reviewer key: xbrowser-01_
 
 #### PERF-01
@@ -807,13 +833,14 @@ Where the time goes, per representative run:
 4. Start TextRevealGlobal in requestIdleCallback after hydration.
 5. Re-measure with --throttling devtools on an idle machine, then with PSI after deployment.
 - **Verification:** perf → partially_confirmed (P1): 30 Lighthouse 13.5 runs on :3200, mostly idle machine (bench 3496–4171). Mobile, devtools throttling, 3–4 runs per template. Median TBT: home 343 ms (171/353/343), /upit 262 (297/262/217), brand-model landing 218 (218/167/256). Those three miss the 200 ms bar. The rest are within it: category 170 (170/169/487/170), pro… [[audit/verify/perf-lh/perf-lh-01-perf.txt](audit/verify/perf-lh/perf-lh-01-perf.txt), [audit/verify/perf-lh/lh-summary.txt](audit/verify/perf-lh/lh-summary.txt)] — perfskeptic → partially_confirmed (P1): No new Lighthouse runs; I re-analysed the existing reports. I recomputed TBT per long task with Lighthouse's rule (clip to the FCP–TTI window, subtract 50 ms) on three sets: the finder's 40 devtools runs, the earlier verifier's 21 quiet devtools runs (bench 3496–4171), and the step-19 category runs. What is real: - Hom… [[audit/verify/perf-lh/perf-lh-01-perfskeptic.txt](audit/verify/perf-lh/perf-lh-01-perfskeptic.txt), scripts/qa/audit/verify-perf-lh-01-skeptic.mjs]
+- **Re-verification (step 22):** not fixed — partly fixed. Re-run on :3100, Lighthouse mobile, applied throttling (budget method), 3-run medians, benchmarkIndex 3832–4172: / perf 95, TBT 178 ms; /delovi/kocioni-diskovi 96 / 148 ms; product 94 / 187 ms (5 runs; an earlier 3-run pass gave 250 ms); landing /delovi/kocioni-diskovi/volkswagen/golf 95 / 193 ms; /pretraga 95 / 168 ms; /vozila/volkswagen/golf/golf-7 96 / 150 ms; /kontakt 98 / 86 ms; /za-majstore 97 / 66 ms; /delovi 98 / 93 ms. Still over the 200 ms bar: /upit 93 / 250 ms (runs 188–313; audit 371 ms), where the cost is the document task after FCP (280–350 ms) plus react-dom hydration. The performance bars (home ≥ 85, catalog/product ≥ 90) are met on every template. Evidence: docs/qa/fix/close/perf01-lighthouse-{devtools,product-5runs,other,templates}.txt; gate: docs/qa/fix/perf-gate.md.
 - _Reviewer key: perf-lh-01_
 
 #### PERF-02
 
 **CLS 0.08–0.10 on the vehicle generation page: when Martian Mono loads, the engine chips narrow and the whole 'Delovi po kategorijama' section jumps 96 px**
 
-- **Severity:** P1 · **Area:** 5. Performance — Performance / CLS · **Status:** OPEN
+- **Severity:** P1 · **Area:** 5. Performance — Performance / CLS · **Status:** FIXED
 - **Route:** /vozila/volkswagen/golf/golf-7 (and every /vozila/[marka]/[model]/[generacija] with engine chips)
 - **Context:** Mobile 412 × 823 on slow 4G + 4× CPU (Lighthouse applied and simulated); desktop preset 1350 wide
 - **Standard:** BRIEF §9 (CLS ≤ 0.05); DESIGN-SYSTEM §4.2 (font loading must not shift layout)
@@ -839,13 +866,14 @@ Playwright under slow 4G: a single layout shift of 0.0832 at 3660 ms.
 - use `display: "optional"` for Martian Mono in lib/fonts.ts.
 Also audit other flex-wrap rows that contain type-code, such as the VIN kod line.
 - **Verification:** perf → confirmed (P1): Lighthouse CLS on /vozila/volkswagen/golf/golf-7 is 0.082 in 3 of 3 mobile devtools runs and 0.074 in 2 of 2 desktop runs. Culprit: section.mt-12 on mobile and the h1 on desktop, with cause 'Web font loaded ee9d8ff0751135e3…woff2' (Martian Mono). Playwright at 412 px, 4× CPU, slow 4G: a single shift of 0.0832 at 3380 m… [[audit/verify/perf-lh/perf-lh-03-perf.txt](audit/verify/perf-lh/perf-lh-03-perf.txt), [audit/verify/perf-lh/perf-lh-03-cls-golf7-412-mono-blocked.webp](audit/verify/perf-lh/perf-lh-03-cls-golf7-412-mono-blocked.webp)] — perfskeptic → confirmed (P1): This is confirmed and the damage is wider than the finding says. I ran no Lighthouse and no timing runs. I only emulated the font swap on :3100 at scroll 0, using next/font's own fallback face. **Cause.** ee9d8ff0751135e3 is the Martian Mono latin file (build CSS, preload:false). The fallback next/font generates is Ari… [[audit/verify/perf-lh/perf-lh-03-perfskeptic.txt](audit/verify/perf-lh/perf-lh-03-perfskeptic.txt), [audit/verify/perf-lh/perf-lh-03-perfskeptic-fallback.json](audit/verify/perf-lh/perf-lh-03-perfskeptic-fallback.json) (Martian 0.700 em vs fallback caps 1.064 / digits 0.873; next fallback CLS 0.0814, calibrated mono fallback CLS 0)]
+- **Re-verification (step 22):** Re-run on :3100: OUT_DIR=docs/qa/fix/close AUDIT_BASE=http://localhost:3100 node scripts/qa/fix/seo-content-email-cls-mono.mjs -> /vozila/volkswagen/golf/golf-7 and /vozila/skoda/octavia at 390 and 1440: probeDelta 0 and navDelta 0 between the web font and the forced fallback (docs/qa/fix/close/perf02-cls-mono.json); Lighthouse applied throttling on the Golf 7 page: CLS 0.001 (docs/qa/fix/close/perf01-lighthouse-templates.txt).
 - _Reviewer key: perf-lh-03_
 
 #### COPY-01
 
 **Product <title>/og:title lose every lowercase „s“ and descriptions are cut mid-word (broken regex in productTitle/productMeta)**
 
-- **Severity:** P1 · **Area:** 7. Copy — SEO copy / product template · **Status:** OPEN
+- **Severity:** P1 · **Area:** 7. Copy — SEO copy / product template · **Status:** FIXED
 - **Route:** /deo/[slug] — 73 of 157 product pages (e.g. /deo/kocioni-disk-prednji-276-24-mm-demo-0004, /deo/kociona-celjust-*, /deo/abs-senzor-*, /deo/set-zupcastog-kaisa-*)
 - **Context:** All viewports/browsers, anonymous and mechanic; server-rendered <title>, og:title, twitter:title, meta description
 - **Standard:** BRIEF §2 (correct Serbian copy), BRIEF §5 SEO (unique, correct titles/descriptions), BRIEF §9 SEO bar
@@ -865,13 +893,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Suggested fix:** lib/seo/templates.ts:54 `p.name.replace(/s+/g, " ")` → `/\s+/g`; line 88 `.replace(/[s,;]+S*$/, "")` → `/[\s,;]+\S*$/` (and drop a trailing „i“/„,“ before the ellipsis). Add a unit test with a name containing „s“ (e.g. „Kočioni disk“) and a long fitment list.
 - **Verification:** skeptic → confirmed (P1): Reproduced from scratch on :3100. Root cause is in lib/seo/templates.ts. Line 54 reads `p.name.replace(/s+/g, " ")`, which replaces the literal letter s (od -c shows no backslash; git blame: 497770c, step 19). Line 88 reads `.replace(/[s,;]+S*$/, "")`, so the word-boundary trim never removes anything. I crawled all 157… [[audit/verify/copy/copy-01-skeptic.txt](audit/verify/copy/copy-01-skeptic.txt) (per-URL H1 vs <title>, description tails, browser check), [audit/verify/copy/copy-01-skeptic.json](audit/verify/copy/copy-01-skeptic.json) (all 157 rows + summary)] — reproduce → confirmed (P1): The bug is real, and the title half affects more pages than reported. Source: lib/seo/templates.ts:54 `p.name.replace(/s+/g, " ")` and :88 `.replace(/[s,;]+S*$/, "")`. Both regexes lost their backslashes (checked with cat -A: no escape bytes). Line 54 swaps every lowercase 's' in the product name for a space. What I di… [[audit/verify/copy/copy-01-reproduce.json](audit/verify/copy/copy-01-reproduce.json) (157-page crawl: 87 broken titles; og:title == twitter:title == title for all), [audit/verify/copy/copy-01-reproduce-desc.json](audit/verify/copy/copy-01-reproduce-desc.json) (32 shortened descriptions classified against full fitmentSummary: 10 mid-word, 4 incomplete label, 7 dangling 'i', 7 '…]
 - **Also reported as:** seo-01 (Product <title>, og:title and twitter:title drop every lowercase „s“ from the product name @ /deo/[slug]: 87 of 157 products (every name containing a lowercase „s“). Examples: /deo/kocioni-disk-prednji-276-24-mm-demo-0004, /deo/kocione-plocice-prednje-sa-senzorom-demo-0009, /deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-0057)
+- **Re-verification (step 22):** Re-run on :3100: <title> „Kočioni disk prednji 276 × 24 mm Febi Bilstein 5Q0 615 505 R“ and „Kočione pločice prednje Bosch 6R0 698 000 MK | SKLOP“ (every „s“ kept); descriptions end at whole words („… za VW Golf VII i još 14. Cena 4.690 RSD sa PDV-om. Na stanju. Kat. br. 5Q0 615 505 R.“) — docs/qa/fix/close/p1-curl-checks.txt. npx vitest run tests/unit/seo -> passed (docs/qa/fix/close/p1-vitest.txt); e2e seo.spec „titles ≤ 60, descriptions ≤ 155“ passed on :3100 (docs/qa/fix/e2e-final.txt).
 - _Reviewer key: copy-01_
 
 #### COPY-02
 
 **Home FAQ restricts the statutory 14-day withdrawal right and contradicts the site's own legal page**
 
-- **Severity:** P1 · **Area:** 7. Copy — Legal copy / home FAQ · **Status:** OPEN
+- **Severity:** P1 · **Area:** 7. Copy — Legal copy / home FAQ · **Status:** FIXED
 - **Route:** / (Česta pitanja → „Mogu li da vratim deo?“) vs /reklamacije-i-povrat
 - **Context:** All viewports, anonymous; home is the main ad landing
 - **Standard:** BRIEF §6 (14-day withdrawal), Zakon o zaštiti potrošača („Sl. glasnik RS“ 35/2026), DESIGN-SYSTEM §11.1 (precise, no invented terms)
@@ -890,13 +919,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/copy/ev-home-faq-povrat-1440.webp](audit/copy/ev-home-faq-povrat-1440.webp) · [audit/copy/text-home-1440.txt](audit/copy/text-home-1440.txt) · [audit/copy/dump-anon1440.txt](audit/copy/dump-anon1440.txt)
 - **Suggested fix:** convex/seedData/content.ts:264 (and the live FAQ in Admin → Sadržaj): „Da. Kao potrošač možete da odustanete u roku od 14 dana od prijema, bez navođenja razloga. Trošak vraćanja snosite vi; ako je deo ugrađivan ili oštećen, odgovarate za umanjenje vrednosti. Detalji: Reklamacije i povrat.“ Add this FAQ to the lawyer checklist in HUMAN-TODO §3 explicitly. (HUMAN-TODO lists the FAQ for owner review, but not this contradiction.)
 - **Verification:** reproduce → confirmed (P1): Reproduced in Chromium at 1440x900 and 390x844 as an anonymous visitor. The home FAQ „Mogu li da vratim deo?“ says word for word: „Kao potrošač možete odustati od kupovine u roku od 14 dana od prijema, ako deo nije ugrađivan i vraćate ga u originalnom pakovanju. Detalji su na stranici Reklamacije i povrat.“ On /reklama… [[audit/verify/copy/copy-03-reproduce-home-faq-1440.webp](audit/verify/copy/copy-03-reproduce-home-faq-1440.webp), [audit/verify/copy/copy-03-reproduce-home-faq-viewport-390.webp](audit/verify/copy/copy-03-reproduce-home-faq-viewport-390.webp)] — skeptic → partially_confirmed (P2): I checked the live build on :3100 in Chromium at 390 and 1440 as an anonymous visitor, reading the text from Convex rather than the seed file. The home FAQ answer to „Mogu li da vratim deo?“ is exactly: „Kao potrošač možete odustati od kupovine u roku od 14 dana od prijema, ako deo nije ugrađivan i vraćate ga u origina… [[audit/verify/copy/copy-03-skeptic-home-faq-390.webp](audit/verify/copy/copy-03-skeptic-home-faq-390.webp) (FAQ opened, answer text visible, no link on „Reklamacije i povrat“), [audit/verify/copy/copy-03-skeptic-home-faq-1440.webp](audit/verify/copy/copy-03-skeptic-home-faq-1440.webp)]
+- **Re-verification (step 22):** Re-run on :3100: the server HTML of / contains „Da. Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Trošak vraćanja snosite vi; …“ (docs/qa/fix/close/p1-curl-checks.txt). Earlier independent verifier: verify:search-catalog-content (390/1440/reduced motion, mouse and keyboard). The owner's legal review stays in HUMAN-TODO §13.
 - _Reviewer key: copy-03_
 
 #### FLOW-01
 
 **Search for '<part> + car' ranks unrelated parts (battery, EGR, turbo) above the named part**
 
-- **Severity:** P1 · **Area:** 8. Flows & edge cases — Search relevance · **Status:** OPEN
+- **Severity:** P1 · **Area:** 8. Flows & edge cases — Search relevance · **Status:** FIXED
 - **Route:** /pretraga?q=pločice golf 7 (also 'kočioni disk golf 7', 'amortizer golf 7', 'golf 7', '<b>disk</b>')
 - **Context:** Chromium 390x844, guest, no vehicle selected; deterministic, reproduced in two separate runs
 - **Standard:** BRIEF §3 Search + §2 persona 2; impeccable harden (realistic inputs)
@@ -916,13 +946,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/flows-shop/V2-search-plocice-golf7-390.webp](audit/flows-shop/V2-search-plocice-golf7-390.webp) · [audit/flows-shop/verify.json](audit/flows-shop/verify.json) … · [audit/flows-shop/search-rank.json](audit/flows-shop/search-rank.json) (… · [audit/flows-shop/search-results.json](audit/flows-shop/search-results.json)
 - **Suggested fix:** In convex/search.ts: split the query into part terms and vehicle terms (match brand/model/generation tokens against the vehicle tree), search the product name/category fields for the part terms, and use the vehicle terms as a fitment filter (or boost) instead of free text; alternatively keep vehicle labels out of searchText and add a separate fitment index. Rank name/category matches above fitment-only matches and show the matching category chip.
 - **Verification:** skeptic → confirmed (P1): The symptom reproduces exactly, both in Chromium at 390x844 as a guest and directly against search:run. For 'pločice golf 7' the first six results are Akumulator EFB 70 Ah 760 A, Motor klapni, EGR 1.9/2.0, Turbina 77 kW, Turbina 110 kW and EGR 2.0 CR. The first brake pads are at position 7, and there is no category chi… [[audit/verify/flows-shop/flows-shop-02-skeptic-plo-ice-golf-7-390.webp](audit/verify/flows-shop/flows-shop-02-skeptic-plo-ice-golf-7-390.webp) (opened: battery, Motor klapni and EGR fill the first mobile screen under 'Proizvodi'), [audit/verify/flows-shop/flows-shop-02-skeptic-plo-ice-golf-vii-390.webp](audit/verify/flows-shop/flows-shop-02-skeptic-plo-ice-golf-vii-390.webp) (opened: Roman numeral query shows pads first)] — reproduce → partially_confirmed (P1): The reported symptom reproduces exactly: Chromium 390, WebKit 1440, guest. Ranking happens on the server, so every browser and width gets the same order. For 'pločice golf 7' there are 48 results and brake pads first appear at position 7, behind Akumulator EFB 70 Ah, Motor klapni, EGR ventil, Turbina 1.9, Turbina 2.0 a… [[audit/verify/flows-shop/flows-shop-02-reproduce-chromium-390-plocice-golf-7.webp](audit/verify/flows-shop/flows-shop-02-reproduce-chromium-390-plocice-golf-7.webp) (opened: battery, Motor klapni and EGR fill the first screen at 390), [audit/verify/flows-shop/flows-shop-02-reproduce-webkit-1440-plocice-golf-7.webp](audit/verify/flows-shop/flows-shop-02-reproduce-webkit-1440-plocice-golf-7.webp) (opened: WebKit 1440, first row is battery, Motor klapni, EGR, Turbina)]
+- **Re-verification (step 22):** Re-run on :3100: the server HTML of /pretraga?q=pločice golf 7 has 6 cards, all „Kočione pločice …“, 0 cards of other categories, the line „Samo delovi za Golf VII …“ and the chip „Cela kategorija Kočione pločice“ (docs/qa/fix/close/p1-curl-checks.txt). Earlier independent verifier: verify:search-catalog-content (390x844 and 1440x900, five query variants).
 - _Reviewer key: flows-shop-02_
 
 #### FLOW-02
 
 **Product editor silently overwrites a price saved in another tab (or by an import) when an unrelated field is saved**
 
-- **Severity:** P1 · **Area:** 8. Flows & edge cases — Admin · products editor · **Status:** OPEN
+- **Severity:** P1 · **Area:** 8. Flows & edge cases — Admin · products editor · **Status:** FIXED
 - **Route:** /admin/proizvodi/[id] (checked on /admin/proizvodi/qh7cqja340240s4jq1fsawnc3s8fctej, SKU AUDIT-FA-852021)
 - **Context:** 1440x900 Chromium, owner, two tabs on the same product
 - **Standard:** BRIEF §5/§6 (admin manages prices; the audit trail must reflect real changes) · BRIEF §9 Reliability · DESIGN-SYSTEM §10.12 (editor with sticky save bar)
@@ -943,13 +974,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/flows-admin/v3-product.json](audit/flows-admin/v3-product.json)… · [audit/flows-admin/v3-prod-01-tabA-stale-price.webp](audit/flows-admin/v3-prod-01-tabA-stale-price.webp) · [audit/flows-admin/v3-audit.json](audit/flows-admin/v3-audit.json) (… · [audit/flows-admin/product-852021.json](audit/flows-admin/product-852021.json) (f… · scri…
 - **Suggested fix:** In ProductEditor.tsx, build the patch against the snapshot taken when editing started, per field (only fields where form !== original baseline). When the server changes while the form is dirty, rebase the untouched fields onto the fresh values and show a notice such as 'Artikal je u međuvremenu izmenjen — polja koja niste menjali su osvežena'. On the server, add expectedUpdatedAt to productsAdmin.update and throw CONFLICT on mismatch, as ordersAdmin already does, and handle it with the same 'Osvežite prikaz' message.
 - **Verification:** skeptic → confirmed (P1): The finding holds, and the problem is wider than the price. I reproduced it with two separate owner sessions (two browser contexts, stricter than two tabs) on my own inactive copy made with 'Dupliraj' (id qh7dckwh7evpxbsce1vdhp0cd18fcjr4, SKU VFY-SKEPTIC-FA01-984519). My first attempt on the shared AUDIT-FA-852021 was … [[audit/verify/flows-admin/flows-admin-01-skeptic.json](audit/verify/flows-admin/flows-admin-01-skeptic.json) (steps 'v1 B saved price' server retailPricePara 649000 -> 'v1 A saved' server 499000; 'v2 fresh load' note ''), [audit/verify/flows-admin/flows-admin-01-skeptic-v1-tabA-stale.webp](audit/verify/flows-admin/flows-admin-01-skeptic-v1-tabA-stale.webp) (tab A shows 4990 while the server holds 6.490; only 'Imate nesačuvane izmene.' is shown, no changed-elsewhere notice)] — reproduce → confirmed (P1): Reproduced on a product only I was editing: VERIFY-FA01-985246 (id qh76rr23gjcpb4n0b4dxgmn4ms8fdyt2), created inactive through /admin/proizvodi/novi. Owner, Chromium, 1440x900, two tabs in one context. I didn't use AUDIT-FA-852021 as the main evidence because another verifier edited it during my run: its history has en… [[audit/verify/flows-admin/flows-admin-01-reproduce.json](audit/verify/flows-admin/flows-admin-01-reproduce.json) (S1: 'B saved price' server 649000 → 'A saved' 499000; S2: server name 'B2' → '…A'; S3: bulk 658900 → 599000; history t…, [audit/verify/flows-admin/flows-admin-01-reproduce-s1-tabA-before-save.webp](audit/verify/flows-admin/flows-admin-01-reproduce-s1-tabA-before-save.webp) (header = server name, price field still 4990, only 'Imate nesačuvane izmene.')]
+- **Re-verification (step 22):** Independent verifier verify:search-catalog-content ran the audit steps in two tabs as owner (AUDIT-FA-852021): tab A receives the server price and „Artikal je u međuvremenu izmenjen — polja koja niste menjali su osvežena (cena).“, and its save no longer overwrites tab B's price; the product was restored afterwards. Product editor and productWriter unchanged since; e2e admin „create a product with an image, then edit it“ passed on :3100 (docs/qa/fix/e2e-final.txt).
 - _Reviewer key: flows-admin-01_
 
 #### BE-01
 
 **Quote acceptance ignores the mechanic's credit limit, payment terms and tier snapshot on deferred-payment orders**
 
-- **Severity:** P1 · **Area:** 9. Backend & reliability — Orders / mechanics (B2B) business rules · **Status:** OPEN
+- **Severity:** P1 · **Area:** 9. Backend & reliability — Orders / mechanics (B2B) business rules · **Status:** FIXED
 - **Route:** /upit/[token] (customer accepts the quote: inquiries:acceptQuote) and /admin/upiti/[broj] „Pretvori u porudžbinu“ (inquiriesAdmin:convertToOrder)
 - **Context:** Dev deployment tame-impala-374. Shared approved mechanic (Majstor Plus, credit on, limit 200.000 RSD, 15-day terms) plus the owner. Called through ConvexHttpClient with the same public mutations the UI uses.
 - **Standard:** BRIEF §5 Mechanics (deferred payment only on staff-granted credit, per-mechanic limit, D132), BRIEF §6 business rules, HUMAN-TODO [P1] limit/terms item
@@ -972,13 +1004,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/backend/quote-credit-repro.json](audit/backend/quote-credit-repro.json) · s… · co… · con…
 - **Suggested fix:** Move the mechanic-terms block of orders.submit into a helper in convex/lib/orders.ts, for example `mechanicOrderTerms(ctx, profile, lines, deliveryConfig, paymentMethod)`. It returns {tierSnapshot, paymentTermsDays} and throws INVALID when deferred payment exceeds the available credit. Call it from orders.submit, inquiries.acceptQuote and inquiriesAdmin.convertToOrder. Staff can get an explicit, audited override flag if needed. Add convex-test cases for both quote paths (over the limit → refused; terms 30 → dueAt +30 d; tier snapshot present).
 - **Verification:** reproduce → confirmed (P1): Reproduced from scratch with my own scripts, on both conversion paths. Starting credit for the shared Majstor Plus mechanic: limit 200.000 RSD, used 0, terms 15 days. (A) Public path. The mechanic, on its own session, calls inquiries:acceptQuote with payment deferred on a 250.000 RSD quote (UP-2026-000061). It is accep… [[audit/verify/backend/backend-01-reproduce.json](audit/verify/backend/backend-01-reproduce.json), [audit/verify/backend/backend-01-reproduce-admin-convert-dialog-1440.webp](audit/verify/backend/backend-01-reproduce-admin-convert-dialog-1440.webp)] — skeptic → confirmed (P2): Reproduced independently in two ways. (1) Isolated convex-test run (no shared data): mechanic A with credit on, limit set to 5.000 RSD and paymentTermsDays set to 30. Normal checkout (orders.submit, deferred, over the limit) is refused with INVALID. The same over-limit amount via inquiries.acceptQuote (deferred) is ACC… [[audit/verify/backend/backend-01-skeptic-convex-test.txt](audit/verify/backend/backend-01-skeptic-convex-test.txt) (BACKEND01_RESULT: control INVALID; acceptQuote ACCEPTED dueInDays 15 tierSnapshot null usedPara 1000000 vs limitPara 5…, scripts/qa/audit/verify-backend-01.test.ts + scripts/qa/audit/verify-backend-01.vitest.config.mts (run: npx vitest run -…]
+- **Re-verification (step 22):** Re-run: npx vitest run -c scripts/qa/audit/verify-backend-01.vitest.config.mts (the audit's own convex-test repro) -> customerAcceptQuote „REFUSED“/„INVALID“, staffConvertToOrder „REFUSED“/„INVALID“, usedPara 0 after both paths, Tests 1 passed (docs/qa/fix/close/be01-vitest.txt). The verifier's blocking regression on /admin/upiti/[broj] is gone: E2E_BASE_URL=http://localhost:3100 npx playwright test tests/e2e/admin.spec.ts -g "inquiry: answer with a quote" -> passed on desktop-1440 (docs/qa/fix/close/p1-e2e.txt).
 - _Reviewer key: backend-01_
 
 #### BE-02
 
 **Per-visitor rate limits include the caller-controlled User-Agent, so they are bypassable and the global order cap can be drained**
 
-- **Severity:** P1 · **Area:** 9. Backend & reliability — Security / abuse protection (public writes) · **Status:** OPEN
+- **Severity:** P1 · **Area:** 9. Backend & reliability — Security / abuse protection (public writes) · **Status:** FIXED
 - **Route:** Every public write: /korpa checkout (orders:submit, carts cartCreate), /upit (inquiries:submit, inquiries:generateUploadUrl), back-in-stock subscribe, consent:record, search:log, /za-majstore (mechanics:register), quick order
 - **Context:** Dev deployment, anonymous ConvexHttpClient from one machine and IP with a custom fetch that sets the User-Agent header. Harmless mutation used (issuing an upload URL writes no business record).
 - **Standard:** BRIEF §9 Security („rate limits on public writes“), SECURITY §L2, D4 (intent: real client IP limits)
@@ -997,6 +1030,7 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/backend/ratelimit-ua.json](audit/backend/ratelimit-ua.json) · s… · co… · con…
 - **Suggested fix:** In getClientInfo (convex/lib/functions.ts), key per-client limits on the IP alone: salted hash, with the /64 prefix for IPv6. Keep the UA out of the key, or use ip+UA only as a second, finer bucket. Size the per-IP buckets for carrier NAT. Turn orderSubmitGlobal into a high alarm threshold that notifies the owner instead of a hard stop that blocks customers, or require sign-in/extra checks only above it. Add a convex-test proving two UAs from one IP share a bucket.
 - **Verification:** skeptic → confirmed (P1): Reproduced independently with my own script, which uses a new UA prefix and a new ConvexHttpClient per call, against the harmless inquiries:generateUploadUrl (uploadUrl, 20/h per client key). (A) 21 calls with one fixed UA: 20 ok, the 21st RATE_LIMITED. (B) 10 calls, each with a new UA: 10 ok, 0 limited. (C) Control: t… [[audit/verify/backend/backend-02-skeptic.json](audit/verify/backend/backend-02-skeptic.json) (A: 20 ok + RATE_LIMITED; B: 10/10 ok; C control: 2/2 RATE_LIMITED; D: 3/3 RATE_LIMITED), scripts/qa/audit/verify-backend-02-skeptic.mjs] — reproduce → confirmed (P1): I wrote my own script and ran it from one machine and one public IP against the dev deployment. It only calls inquiries:generateUploadUrl, which has the uploadUrl limit (token bucket 20/h per ctx.client.key) and writes no business row. Results: (A) HTTP, one fixed UA: 20 ok, then RATE_LIMITED on call 21 (retryAfterMs ~… [[audit/verify/backend/backend-02-reproduce.json](audit/verify/backend/backend-02-reproduce.json) (A: 20 ok + RATE_LIMITED; B: 21/21 ok with rotating UA; C: spoofed IP headers still RATE_LIMITED; D: WS 20+1 limited, t…, scripts/qa/audit/verify-backend-02-ratelimit-ua.mjs]
+- **Re-verification (step 22):** Independent verifier verify:backend-orders-quotes (code review and tests): the rate-limit key is sha256(salt|ipSubject(ip)) without the User-Agent, IPv6 cut to /64; the global order cap only alerts the owner (no refusal). convex/lib/rateLimits.ts and the order path unchanged since (run 3 touched only copy strings in convex/); the Convex suite passed 179/179 in the gates run (docs/PROGRESS.md, gates entry). Server-side, so the production front-end build does not change it.
 - _Reviewer key: backend-02_
 
 ### P2 — minor (87)
@@ -1005,7 +1039,7 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 
 **Hero stage index truncates system names with an ellipsis at common laptop widths (1280, 1366): „Karoserija i sv…“, „Kočnice i veša…“, „Agregati i hla…“**
 
-- **Severity:** P2 · **Area:** 1. Visual design & consistency — Home hero / stage index · **Status:** OPEN
+- **Severity:** P2 · **Area:** 1. Visual design & consistency — Home hero / stage index · **Status:** FIXED
 - **Route:** /
 - **Context:** Chromium, 1280×800 and 1366×800 (DPR 1 and 2); anonymous; also affects every width between ~1280 and ~1439
 - **Standard:** DESIGN-SYSTEM §5.7 (stage index), §4.4 (no clipped headings); BRIEF §9 Visual
@@ -1018,13 +1052,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/vis-store/v2/stage-1280.webp](audit/vis-store/v2/stage-1280.webp) · [audit/vis-store/v2-verify-stage.json](audit/vis-store/v2-verify-stage.json) · [audit/vis-store/capture-metrics.json](audit/vis-store/capture-metrics.json) (… · scr…
 - **Suggested fix:** components/three/StageStrip.tsx:117 uses `truncate` on the label span. Allow two lines (`line-clamp-2`, `text-wrap: balance`, no ellipsis) or reduce the strip's action column so each step gets ≥ 118 px at xl; alternatively show the full label only for the active step below 1440 and keep numbers for the rest. Verify at 1280, 1366 and 1440.
 - **Verification:** reproduce → confirmed (P2): Reproduced in Chromium on / (anonymous, poster state, 2.5 s after networkidle). I measured the label spans (span.truncate, 13 px) in the desktop stage index. 1280x800 at DPR 1 and DPR 2: 01 „Karoserija i svetla“ 107>98, 03 „Kočnice i vešanje“ 103>98, 04 „Agregati i hlađenje“ 114>98, all ending in an ellipsis (li width … [[audit/verify/vis-store/vis-store-03-reproduce-1280.webp](audit/verify/vis-store/vis-store-03-reproduce-1280.webp) (01, 03, 04 end in „…“), [audit/verify/vis-store/vis-store-03-reproduce-1366.webp](audit/verify/vis-store/vis-store-03-reproduce-1366.webp) („Agregati i hlađe…“)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-stage-p2.mjs vis04 -> '1280x800 ok' (Karoserija i svetla, Kočnice i vešanje, Agregati i hlađenje on 2 lines, no horizontal overflow, nothing clipped in the 64 px button), '1366x800 ok', '1440x900 ok' (all on 1 line) (docs/qa/fix/hero-stage/p2-final.txt). (docs/qa/fix/hero-stage.json)
 - _Reviewer key: vis-store-03_
 
 #### VIS-05
 
 **Product grids with a filter rail get narrower on bigger screens (200 px cards at 1920/2560, 203 px at 1024/1280 vs 242 px at 1440): names are clamped mid-attribute („312 × 25 mm,…“) and the quality chip collides with the render**
 
-- **Severity:** P2 · **Area:** 1. Visual design & consistency — Product card / grid (catalog templates) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 1. Visual design & consistency — Product card / grid (catalog templates) · **Status:** FIXED
 - **Route:** /delovi/kocioni-diskovi (and every ProductGrid withRail: /delovi/[kategorija]/[marka], /delovi/[kategorija]/[marka]/[model], filtered categories)
 - **Context:** Chromium 1024×768, 1280×800, 1920×1080, 2560×1440 (1440 unaffected); anonymous
 - **Standard:** DESIGN-SYSTEM §5.1 (grid at ≥ 1920), §9.7 (product card); BRIEF §9 Visual
@@ -1038,13 +1073,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/vis-store/v3/clamp-2560.webp](audit/vis-store/v3/clamp-2560.webp) · [audit/vis-store/cat/2560-top.webp](audit/vis-store/cat/2560-top.webp) · [audit/vis-store/cat/1024-top.webp](audit/vis-store/cat/1024-top.webp) · [audit/vis-store/v3-clamp.json](audit/vis-store/v3-clamp.json) · scri…
 - **Suggested fix:** components/catalog/ProductGrid.tsx:34 applies the same `lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5` with and without the rail. With the rail use a container-driven grid (`grid-cols-[repeat(auto-fill,minmax(15rem,1fr))]` or a container query) so cards never drop below ~240 px; allow a third line for grid-card names (ProductCard.tsx:110 `line-clamp-2`) or render the distinguishing suffix; inset the render below the chip (reserve the chip row or position the chip outside the image box).
 - **Verification:** reproduce → confirmed (P2): Reproduced in Chromium on /delovi/kocioni-diskovi, with rail 280 px. Card widths: 1024 → 3 columns, 203 px. 1280 → 4 columns, 204 px. 1440 → 4 columns, 242 px. 1536 → 4 columns, 266 px. 1920 and 2560 → 5 columns, 200 px (grid 1128 px). The same happens on /delovi/kocioni-diskovi/volkswagen at 1920/2560 (200 px). The ra… [[audit/verify/vis-store/vis-store-04-reproduce-2560.webp](audit/verify/vis-store/vis-store-04-reproduce-2560.webp) (5 cols, 4th card name clamped „312 × 25 mm,…“), [audit/verify/vis-store/vis-store-04-reproduce-1440.webp](audit/verify/vis-store/vis-store-04-reproduce-1440.webp) (4 cols, full names)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 ONLY=a11y10,vis05 node scripts/qa/fix/catalog-product-ui-layout.mjs -> /delovi/kocioni-diskovi card width/columns: 1024 314 px/2, 1280 280/3, 1440 242/4, 1920 258/4, 2560 258/4; clamped names 0, chipOverlap 0, clipped 0 at every width. Evidence docs/qa/fix/catalog-product-ui/layout-a11y10-vis05.json, vis05-1920.webp (full names, chip above the render). (docs/qa/fix/catalog-product-ui.json)
 - _Reviewer key: vis-store-04_
 
 #### VIS-06
 
 **Hero at 1920 and 2560: the car spills past the drawing frame's corner ticks and the 1440 content edge, leaving the frame's left half empty**
 
-- **Severity:** P2 · **Area:** 1. Visual design & consistency — Home hero composition (wide screens) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 1. Visual design & consistency — Home hero composition (wide screens) · **Status:** FIXED
 - **Route:** /
 - **Context:** Chromium 1920×1080 and 2560×1440, poster state before 3D starts (same camera as 3D per DS §6.3); anonymous
 - **Standard:** DESIGN-SYSTEM §5.7 (corner ticks), §5.1 (2560 rule), §7.6 (camera framing per breakpoint)
@@ -1062,13 +1098,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/vis-store/v3/hero-1920.webp](audit/vis-store/v3/hero-1920.webp) · [audit/vis-store/home/2560-top.webp](audit/vis-store/home/2560-top.webp) · [audit/vis-store/v3-hero-clamp.json](audit/vis-store/v3-hero-clamp.json) (… · scr…
 - **Suggested fix:** components/three/HeroStage.tsx: position the corner-tick frame and title block against the scaled stage box (the same box the camera frames) instead of the content container, or cap the manifest `cameras.hero` framing for ≥ 1920 so the car's bbox stays inside the ticks (poster renders at 1920/2560 need the same change). Re-check at 1920, 2560 and ultrawide 3440.
 - **Verification:** reproduce → partially_confirmed (P2): Reproduced in Chromium on / after 3 s, poster state (canvas still loading, opacity 0). I hid all overlays and took the car bbox from pixels more than 40 luminance above the background. Car versus corner ticks: 1440 → 639–1317 vs 618–1392 (inside). 1680 → 745–1537 vs 730–1560 (inside). 1920 → 853–1757 vs 853–1680 (77 px… [[audit/verify/vis-store/vis-store-05-reproduce-1920.webp](audit/verify/vis-store/vis-store-05-reproduce-1920.webp) (car rear past the right ticks and cart icon), [audit/verify/vis-store/vis-store-05-reproduce-2560.webp](audit/verify/vis-store/vis-store-05-reproduce-2560.webp) (car rear ~340 px past the right ticks)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-framing.mjs --shots 1920x1080 2560x1440 3440x1440 -> '1920x1080 canvas: car x 865-1658, insideTicks true', '2560x1440 canvas: car x 1185-1978, insideTicks true' (ticks 1173-2000), '3440x1440 canvas: car x 1625-2418, insideTicks true' (ticks 1613-2440); posters match the canvas (the 3440 poster bbox is polluted only by the dev 'Compiling' badge, see framing-3440x1440-poster.webp). Unit test 'wide screens: the framing box stops at STAGE_FRAME_MAX' passes. (docs/qa/fix/hero-3d-assets.json)
 - _Reviewer key: vis-store-05_
 
 #### VIS-07
 
 **Tablet product page (768–1023 px): the spec drawing sits between the gallery and the buy box, so the first screen has no product name, price or CTA (H1 at 1253 px, button at 1598 px)**
 
-- **Severity:** P2 · **Area:** 1. Visual design & consistency — Product page layout (tablet) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 1. Visual design & consistency — Product page layout (tablet) · **Status:** FIXED
 - **Route:** /deo/[slug] (e.g. /deo/kocioni-disk-prednji-276-24-mm-demo-0004; every product with a spec drawing)
 - **Context:** Chromium 768×1024 (iPad portrait class); anonymous
 - **Standard:** DESIGN-SYSTEM §5.1 (collapse order below 1024 px); BRIEF §9 Visual/UX
@@ -1085,13 +1122,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/vis-store/pin/768-top.webp](audit/vis-store/pin/768-top.webp) · [audit/vis-store/v3-product-order.json](audit/vis-store/v3-product-order.json) … · sc…
 - **Suggested fix:** app/(shop)/deo/[slug]/page.tsx: at md–lg order the spec-drawing block after the buy box (CSS `order` or move it into the details column), or switch to the two-column layout from 768 px with the drawing under the gallery as on desktop.
 - **Verification:** reproduce → confirmed (P2): Reproduced in Chromium on /deo/kocioni-disk-prednji-276-24-mm-demo-0004. At 768x1024 the numbers match the report exactly: drawing top 666 (height 519), H1 1253, buy box 1473, „Dodaj u korpu“ 1598. The first viewport holds only the breadcrumb, the render and the top of the drawing. At 768 the last breadcrumb crumb does… [[audit/verify/vis-store/vis-store-06-reproduce-768-top.webp](audit/verify/vis-store/vis-store-06-reproduce-768-top.webp), [audit/verify/vis-store/vis-store-06-reproduce-600-top.webp](audit/verify/vis-store/vis-store-06-reproduce-600-top.webp) (no product name, price or CTA in the first screen)]
+- **Re-verification (step 22):** deo.json 768: galleryTop 119, h1Top 745, drawingTop 1410 (drawing after the buy box); 1024/1440: drawingLeft 41/48 vs h1Left 601/846 (under the gallery); overflow 0; reveal stuck [] pending 0. Screenshots deo-768.webp, deo-1440.webp. (docs/qa/fix/search-catalog-content.json)
 - _Reviewer key: vis-store-06_
 
 #### VIS-08
 
 **Desktop filter rail is not sticky: it scrolls away with the page instead of staying under the header**
 
-- **Severity:** P2 (reported P3, adjusted by verification) · **Area:** 1. Visual design & consistency — Category filters (desktop) · **Status:** OPEN
+- **Severity:** P2 (reported P3, adjusted by verification) · **Area:** 1. Visual design & consistency — Category filters (desktop) · **Status:** FIXED
 - **Route:** /delovi/kocioni-diskovi and all catalog pages with the filter rail (landings, filtered states)
 - **Context:** Chromium 1440×900; anonymous
 - **Standard:** DESIGN-SYSTEM §9.6 (filters)
@@ -1109,13 +1147,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** … · [audit/vis-store/cat/1440-top.webp](audit/vis-store/cat/1440-top.webp)
 - **Suggested fix:** components/catalog/CategoryListingView.tsx (rail wrapper): `lg:sticky lg:top-[calc(var(--header-h)+1.5rem)] lg:self-start lg:max-h-[calc(100dvh-var(--header-h)-3rem)] lg:overflow-y-auto` with overscroll containment.
 - **Verification:** reproduce → confirmed (P2): Reproduced exactly in Chromium at 1440x900, anonymous. On /delovi/kocioni-diskovi the „Samo na stanju“ row sits at y=514. After a 900 px wheel scroll it is at y=-386. aside[aria-label=Filteri] is position:static and no ancestor is sticky or fixed. The same happens at 1280x800 (511 -> -389), on the landing /delovi/kocio… [[audit/verify/vis-store/vis-store-11-reproduce.json](audit/verify/vis-store/vis-store-11-reproduce.json), [audit/verify/vis-store/vis-store-11-13-reproduce.json](audit/verify/vis-store/vis-store-11-13-reproduce.json)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 ONLY=vis08 node scripts/qa/fix/catalog-product-ui-layout.mjs -> /delovi/kocioni-diskovi 1440x900: before scroll top 341; after a 900 px wheel position sticky, top 88 (header bottom 65), bottom 876 <= 900, pass true; wheel over the rail scrolls the rail (railScroll 123) while the page stays at scrollY 900. node scripts/qa/fix/catalog-product-ui-rail-landing.mjs (golf landing 1280x800, 6 cards): rail top 88 at scrollY 400 and 600, leaves with the row end at 900. Evidence docs/qa/fix/catalog-product-ui/layout-vis08.json, vis08-landing-1280.json, vis08-1440-scrolled.webp. (docs/qa/fix/catalog-product-ui.json)
 - _Reviewer key: vis-store-11_
 
 #### VIS-09
 
 **Predračun on phones: the article column is crushed to 65 px, so one product name plus its OEM code takes about 10 lines**
 
-- **Severity:** P2 · **Area:** 1. Visual design & consistency — Order documents / predračun (screen) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 1. Visual design & consistency — Order documents / predračun (screen) · **Status:** FIXED
 - **Route:** /porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGpzjHnowJw/predracun
 - **Context:** Chromium, 360x780 (isMobile), guest with the order token
 - **Standard:** BRIEF §9 Visual; DESIGN-SYSTEM §1.2 principle 5 (Workshop-proof: readable on a phone); ui-ux-pro-max tables-on-mobile
@@ -1128,13 +1167,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/vis-commerce/orders/360-predracun.webp](audit/vis-commerce/orders/360-predracun.webp) · [audit/vis-commerce/v4-verify.json](audit/vis-commerce/v4-verify.json) … · sc…
 - **Suggested fix:** app/(shop)/porudzbina/[token]/predracun/page.tsx:99. Below sm (480 px), render each line as a stacked block: name full width, maker and OEM below, then a right-aligned „kol. × cena = iznos“ row. Keep the 4-column table from sm upward and in @media print. Alternatively, hide „Cena sa PDV“ below sm and show it under the name. Add `whitespace-nowrap` to the OEM code span.
 - **Verification:** reproduce → confirmed (P2): Reproduced at 360x780 as the guest with the token. The four columns are Artikal 65 / Kol. 40 / Cena sa PDV 87 / Iznos 75 px, and the table is 268 px wide (the reviewer said 312 px; the card padding eats more). The DEMO-0004 name cell is 213 px tall, about 9 lines: 4 for the name and 5 for „DEMO-0004 · OEM 5Q0 615 505 R… [[audit/verify/vis-commerce/vis-commerce-03-reproduce-360.webp](audit/verify/vis-commerce/vis-commerce-03-reproduce-360.webp), [audit/verify/vis-commerce/vis-commerce-03-reproduce-390.webp](audit/verify/vis-commerce/vis-commerce-03-reproduce-390.webp)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cart-mechanic-overlays-predracun.mjs → {"w":390,"status":200,"list":"flex","table":"none","firstLineH":94,"nameW":318,"overflow":0,"printTable":"table"} (audit: name column 65 px, ~10 lines) and {"w":768,"list":"none","table":"table"}. Screenshot docs/qa/fix/cart-mechanic-overlays/vis09-predracun-390.webp. (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: vis-commerce-03_
 
 #### VIS-10
 
 **Quantity steppers are 36 px (size="sm") everywhere a shopper or mechanic uses them; the design system specifies 44 px buttons**
 
-- **Severity:** P2 · **Area:** 1. Visual design & consistency — Cart page, cart drawer, quick order, favorites (design-system conformance) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 1. Visual design & consistency — Cart page, cart drawer, quick order, favorites (design-system conformance) · **Status:** FIXED
 - **Route:** /korpa, cart drawer (every page), /majstor/brza-porudzbina, /majstor/omiljeno
 - **Context:** Chromium, 360–2560, guest cart and mechanic
 - **Standard:** DESIGN-SYSTEM §9.2 (stepper 44 px), §5.2 / §1.2 principle 5 (44 px primary touch targets)
@@ -1152,13 +1192,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/vis-commerce/cart-checkout/390-cart-filled.webp](audit/vis-commerce/cart-checkout/390-cart-filled.webp) · [audit/vis-commerce/cart-checkout-390.json](audit/vis-commerce/cart-checkout-390.json) … · [audit/vis-commerce/v3-verify.json](audit/vis-commerce/v3-verify.json) (… · [audit/vis-commerce/mechanic-quick-1440_1024_1280_1920_2560.json](audit/vis-commerce/mechanic-quick-1440_1024_1280_1920_2560.json) (r…
 - **Suggested fix:** components/cart/CartView.tsx:131,150, components/cart/CartDrawer.tsx, components/mechanic/QuickOrder.tsx:594 and components/mechanic/FavoritesList.tsx:100: use size="md" (44 px) at least below lg or under @media (pointer: coarse). Keep sm only for dense desktop tables if the design system is amended in DECISIONS.
 - **Verification:** reproduce → partially_confirmed (P2): Confirmed on the cart page and in the cart drawer at every width I tested (360, 390, 430, 768, 1440): the − and + buttons are 36x36 and the quantity input is 56x34, because CartView.tsx:131/150 pass size="sm" (h-9/size-9). In quick order, as the shared mechanic, the steppers are 36x36 at both 390 and 1440, and the + bu… [[audit/verify/vis-commerce/vis-commerce-04-reproduce-390-korpa.webp](audit/verify/vis-commerce/vis-commerce-04-reproduce-390-korpa.webp), [audit/verify/vis-commerce/vis-commerce-04-reproduce-390-drawer.webp](audit/verify/vis-commerce/vis-commerce-04-reproduce-390-drawer.webp)]
+- **Re-verification (step 22):** Diff reviewed; the §5.5 paragraph sits after the elevation table, which stays intact. (docs/qa/fix/cross-p1.json)
 - _Reviewer key: vis-commerce-05_
 
 #### VIS-11
 
 **Mobile checkout: the collapsible order summary gives no sign that it expands, and when open it shows „Ukupno“ twice**
 
-- **Severity:** P2 · **Area:** 1. Visual design & consistency — Checkout (all steps, < 1024 px) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 1. Visual design & consistency — Checkout (all steps, < 1024 px) · **Status:** FIXED
 - **Route:** /porudzbina (steps Kontakt, Dostava, Plaćanje, Pregled)
 - **Context:** Chromium isMobile, 360x780 and 390x844, guest cart with 3 lines
 - **Standard:** DESIGN-SYSTEM §9.12 Checkout stepper (mobile summary „Ukupno … ▾“)
@@ -1171,13 +1212,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/vis-commerce/v3/390-co-summary-collapsed.webp](audit/vis-commerce/v3/390-co-summary-collapsed.webp) · [audit/vis-commerce/cart-checkout/390-co-1-summary-open.webp](audit/vis-commerce/cart-checkout/390-co-1-summary-open.webp) · [audit/vis-commerce/cart-checkout/390-co-1-errors.webp](audit/vis-commerce/cart-checkout/390-co-1-errors.webp) · [audit/vis-commerce/v3-verify.json](audit/vis-commerce/v3-verify.json) (c…
 - **Suggested fix:** components/checkout/CheckoutForm.tsx:469. Add a CaretDown icon after the amount (group-open:rotate-180) and a quiet „Stavke (3)“ or „Prikaži“ label. When open, drop the top „Ukupno“ row from the inner summary, or change the summary line to „Sakrij stavke“.
 - **Verification:** reproduce → confirmed (P2): Reproduced with the same guest cart on /porudzbina, step Kontakt. The mobile summary is a <summary> (CheckoutForm.tsx:468–474, lg:hidden) that reads „Ukupno 20.760 RSD“. It has list-style none, the webkit marker is hidden, there are no ::before/::after pseudo-elements and 0 SVGs, so it has no visible disclosure cue, ag… [[audit/verify/vis-commerce/vis-commerce-06-reproduce-390-collapsed.webp](audit/verify/vis-commerce/vis-commerce-06-reproduce-390-collapsed.webp), [audit/verify/vis-commerce/vis-commerce-06-reproduce-390-open.webp](audit/verify/vis-commerce/vis-commerce-06-reproduce-390-open.webp)]
+- **Re-verification (step 22):** forms-auth-checkout.mjs 390 → "mobile summary (closed) Stavke (1) / Ukupno / 4.690 RSD", "mobile summary (open) has inner Ukupno false"; docs/qa/fix/forms-auth/checkout-summary-390.webp (reviewed) (docs/qa/fix/forms-auth.json)
 - _Reviewer key: vis-commerce-06_
 
 #### VIS-12
 
 **Form controls below 16 px on phones make iOS Safari zoom on focus: quick-order textarea (15 px) and inquiry „Dodaj kategoriju“ select (14 px, 36 px high)**
 
-- **Severity:** P2 · **Area:** 1. Visual design & consistency — Forms: mechanic quick order, inquiry · **Status:** OPEN
+- **Severity:** P2 · **Area:** 1. Visual design & consistency — Forms: mechanic quick order, inquiry · **Status:** FIXED
 - **Route:** /majstor/brza-porudzbina (also the compact quick order on /majstor), /upit
 - **Context:** Chromium isMobile 390x844 (computed styles); the zoom behaviour is iOS Safari's documented rule for fields under 16 px
 - **Standard:** DESIGN-SYSTEM §9.2 / §9.3 (16 px text, 44 px fields); ui-ux-pro-max readable-font-size
@@ -1191,13 +1233,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Suggested fix:** components/mechanic/QuickOrder.tsx:417: text-[1rem] (the mono face at 16 px still fits 200 lines). components/inquiry/InquiryForm.tsx:370: size="md" (h-11, 16 px). Add a unit or e2e check that every visible form control below 768 px computes a font-size of at least 16px.
 - **Verification:** reproduce → confirmed (P2): Chromium isMobile, guest on /upit and the shared mechanic account on /majstor. At 360, 390 and 767 px the /upit select „Dodaj kategoriju“ computes 14px and is 34 px high (Select size="sm" gives an h-9 frame and type-body-s). Every other visible field on the form computes 16px and 42 px: VIN, Marka, Model, Generacija, G… [[audit/verify/vis-commerce/verify-07-10-07.json](audit/verify/vis-commerce/verify-07-10-07.json) (upit-360/390/767: select 'Dodaj kategoriju' 14px h34, all others 16px h42; /majstor-390 and /majstor/brza-porudzbina-3…, [audit/verify/vis-commerce/vis-commerce-07-reproduce-upit-390.webp](audit/verify/vis-commerce/vis-commerce-07-reproduce-upit-390.webp)]
 - **Also reported as:** xbrowser-02 (iOS Safari zooms the page when the mechanic quick-order field (15 px) or the inquiry „Dodaj kategoriju“ select (14 px) is focused @ /majstor/brza-porudzbina (paste textarea #qo-input), /upit („Dodaj kategoriju“ select))
+- **Re-verification (step 22):** Class change; owner forms-auth verifies VIS-12 as a whole. (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: vis-commerce-07_
 
 #### VIS-13
 
 **Tables in legal and info pages on phones: the 4th column is clipped to a sliver with no scroll cue, cells wrap one word per line, and the scroll container cannot take keyboard focus**
 
-- **Severity:** P2 (reported P3, adjusted by verification) · **Area:** 1. Visual design & consistency — Static / legal content (Markdown tables) · **Status:** OPEN
+- **Severity:** P2 (reported P3, adjusted by verification) · **Area:** 1. Visual design & consistency — Static / legal content (Markdown tables) · **Status:** FIXED
 - **Route:** /dostava-i-placanje (and any contentPages table rendered by lib/content/markdown.tsx)
 - **Context:** Chromium isMobile 360x780, guest
 - **Standard:** WCAG 2.2 SC 2.1.1 Keyboard (scrollable region); DESIGN-SYSTEM §9.15 (horizontally scrollable pattern with a cue); BRIEF §9 Visual
@@ -1217,13 +1260,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Suggested fix:** lib/content/markdown.tsx:155–158. Below sm, render each body row as a block (th as the row title, then „Cena: …“, „Rok: …“, „Plaćanje: …“). Otherwise, give the wrapper tabIndex={0}, role="region", aria-label from the first header, and the existing scroll-fade-x utility (components/admin/ui.tsx:237).
 - **Verification:** reproduce → confirmed (P2): Reproduced as described on /dostava-i-placanje at 360: the table is 480 px wide in a 328 px wrapper. The visible parts of the four columns are Dostava 110, Cena 115, Rok 87 and Plaćanje 15 px. The first row is 172 px tall. The wrapper has no tabindex, role or aria-label, and no mask or fade. At 390, 45 px of Plaćanje i… [[audit/verify/vis-commerce/verify-07-10-08.json](audit/verify/vis-commerce/verify-07-10-08.json) (dostava-360: tableW 480 wrapW 328, Plaćanje visible 15, rows [172,100], tabindex null; politika-privatnosti-360/390: '…, [audit/verify/vis-commerce/vis-commerce-08-reproduce-dostava-i-placanje-360.webp](audit/verify/vis-commerce/vis-commerce-08-reproduce-dostava-i-placanje-360.webp)]
 - **Also reported as:** a11y-store-09 (Tables on legal pages scroll horizontally in a wrapper that cannot get keyboard focus @ /dostava-i-placanje (1 table), /kolacici (3), /politika-privatnosti (1))
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/seo-content-email-tables.mjs → /dostava-i-placanje 360: tableW 326 = wrapW 328, scrollW 326, rows display flex, labels visible, axe [] (was scrollable-region-focusable); /kolacici and /politika-privatnosti 360 likewise; 1440 normal table rows; reveal stuck 0. Evidence: docs/qa/fix/seo-content-email/tables.json, table-dostava-360.webp, table-dostava-1440.webp (docs/qa/fix/seo-content-email.json)
 - _Reviewer key: vis-commerce-08_
 
 #### VIS-14
 
 **Dashboard clips its panels at phone and tablet widths: SLA timers and right halves of the cards are cut off and unreachable**
 
-- **Severity:** P2 · **Area:** 1. Visual design & consistency — Admin dashboard layout / responsive · **Status:** OPEN
+- **Severity:** P2 · **Area:** 1. Visual design & consistency — Admin dashboard layout / responsive · **Status:** FIXED
 - **Route:** /admin
 - **Context:** Chromium, 390x844 and 768x1024, owner signed in, paper theme; live demo data (queue with long inquiry summaries)
 - **Standard:** WCAG 2.2 SC 1.4.10 Reflow (AA); DESIGN-SYSTEM §5.1 (below 1024 px every layout collapses to one column); BRIEF §4 Admin dashboard (SLA timers)
@@ -1243,13 +1287,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/vis-admin/probe3/390-pregled-queue-left.webp](audit/vis-admin/probe3/390-pregled-queue-left.webp) · [audit/vis-admin/probe2/390-pregled-queue.webp](audit/vis-admin/probe2/390-pregled-queue.webp) · [audit/vis-admin/probe2.json](audit/vis-admin/probe2.json) (… · [audit/vis-admin/probe3.json](audit/vis-admin/probe3.json) (p… · [audit/vis-admin/mobile/390-pregled-top.webp](audit/vis-admin/mobile/390-pregled-top.webp)
 - **Suggested fix:** components/admin/dashboard/Dashboard.tsx: the panel grids at line 169 (`grid gap-6 xl:grid-cols-2`) and line 303 have no explicit column template below xl, so the implicit auto track takes the min-content width of the nowrap `truncate` spans. Add `grid-cols-1` (repeat(1, minmax(0,1fr))) to both grids and `min-w-0` on the Panel sections; keep the queue row's right column `shrink-0` so the SLA age always stays visible.
 - **Verification:** reproduce → partially_confirmed (P2): Owner, Chromium, /admin. The panel overflow is real, but the reported scope and numbers are off. At 390x844 and 360x780, docW is 1628 (the report said 1263). The Red čekanja and Aktivnost panels are 676 px wide in a 358 px grid, and computed grid-template-columns on the `grid gap-6 xl:grid-cols-2` container is 675.953p… [[audit/verify/vis-admin/vis-admin-01-reproduce.json](audit/verify/vis-admin/vis-admin-01-reproduce.json) (390: docW 1628, queueGrid gridTemplateColumns 675.953px in 358 px grid, queue rightCol 522-671; 768: queue rightCol 58…, [audit/verify/vis-admin/vis-admin-01-reproduce-b.json](audit/verify/vis-admin/vis-admin-01-reproduce-b.json) (390 touch swipe: scrollX 0, vvPageLeft 0; 1024 mouse: scrollX 311)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-lists-shell-tables.mjs after → docs/qa/fix/admin-lists-shell/tables-after.json: dashboard docOver 0 at 390, 768, 1024 (before 883/505/321, tables-before.json); screenshot docs/qa/fix/admin-lists-shell/390-pregled-queue.jpg shows „⚠ 10 h 4 min / primljeno 29.09. 16:31“ on screen. (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: vis-admin-01_
 
 #### VIS-15
 
 **Core admin lists scroll sideways at 1280–1440 (and 1024): columns cut mid-word behind the sticky actions column**
 
-- **Severity:** P2 · **Area:** 1. Visual design & consistency — Admin data tables (DataTable) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 1. Visual design & consistency — Admin data tables (DataTable) · **Status:** FIXED
 - **Route:** /admin/upiti, /admin/proizvodi, /admin/porudzbine?status=sve, /admin/mejlovi (1024)
 - **Context:** Chromium, owner, 1440x900, 1280x800, 1024x768; tables fit at 1920 and 2560
 - **Standard:** DESIGN-SYSTEM §9.15 (lists fit 1280/1366/1440 without horizontal scrolling; edge hints); DECISIONS D159 (fold, don't scroll, below 1280)
@@ -1263,13 +1308,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/vis-admin/recheck/table-1440-upiti.webp](audit/vis-admin/recheck/table-1440-upiti.webp) · [audit/vis-admin/recheck/table-1440-proizvodi.webp](audit/vis-admin/recheck/table-1440-proizvodi.webp) · [audit/vis-admin/probe3/1440-porudzbine-sve.webp](audit/vis-admin/probe3/1440-porudzbine-sve.webp) · [audit/vis-admin/recheck.json](audit/vis-admin/recheck.json) (t… · [audit/vis-admin/probe5.json](audit/vis-admin/probe5.json) (19… · [audit/vis-admin/mobile/768-porudzbine-top.webp](audit/vis-admin/mobile/768-porudzbine-top.webp)
 - **Suggested fix:** components/ui/DataTable.tsx renders `table.w-max min-w-full`, so every nowrap cell grows its column to max-content. Give each list a width budget: InquiriesList.tsx — show „Izvor“ only ≥ 1600 px like OrdersList, cap Traži at 18rem below 1536 px and stack the Majstor badge under the number below 1536; ProductsList.tsx — move Proizvođač into the column chooser below 1536 and shrink Stanje (228 px: badge + qty) by stacking qty under the badge; OrdersList.tsx — let „Plaćanje · dostava“ wrap (drop whitespace-nowrap on the payment line) and truncate Kupac; EmailOutbox — hide Način below 1280. In DataTable, place the overflow gradient at the left edge of the sticky right column (right: <sticky width>), not over it.
 - **Verification:** reproduce → confirmed (P2): Owner, Chromium. I measured the table wrapper (scrollWidth − clientWidth) and header extents against the sticky right column. Upiti: 245 px @1440x900, 319 @1366x768, 237 @1280x800 (Izvor and Preuzeo cut); 0 @1024 (the D159 fold works there). Proizvodi: 73 @1440, 147 @1366, 65 @1280, 321 @1024 (Proizvođač cut; at 1366 K… [[audit/verify/vis-admin/vis-admin-02-reproduce.json](audit/verify/vis-admin/vis-admin-02-reproduce.json) (overflowPx, stickyLeft, header extents with (CUT), hint positions for 1440/1366/1280/1024/1920), [audit/verify/vis-admin/vis-admin-02-reproduce-sve.json](audit/verify/vis-admin/vis-admin-02-reproduce-sve.json) (orders Sve: 117/191/109/120 px, 0 at 1920)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-lists-shell-tables.mjs after → tables-after.json: wrapper over 0 for upiti/proizvodi/porudzbine/porudzbine-sve/mejlovi at 1024, 1280, 1366, 1440, 1920, 2560 (before e.g. upiti 284 @1440, proizvodi 321 @1024, porudzbine-sve 191 @1366, mejlovi 147 @1024); docOver 0 at every width incl. 390 upiti (before 527); hint at the seam below 1024, e.g. 390 proizvodi hint [285,317] with stickyLeft 317. tables-after-c.json re-checks proizvodi after the container query: over 0 at 1440/1366/1280/1024, Stanje inline (236 px) at 1440/1280 and stacked (162 px) at 1366/1024. (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: vis-admin-02_
 
 #### VIS-16
 
 **Command palette grows wider than a phone screen once results appear: close button off-screen, status chips clipped**
 
-- **Severity:** P2 · **Area:** 1. Visual design & consistency — Command palette (search and commands) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 1. Visual design & consistency — Command palette (search and commands) · **Status:** FIXED
 - **Route:** /admin/* (palette overlay), measured on /admin/porudzbine
 - **Context:** Chromium, owner, 390x844 (touch)
 - **Standard:** WCAG 2.2 SC 1.4.10 Reflow (AA); DESIGN-SYSTEM §9.14 (dialogs on mobile, 92 % width)
@@ -1282,13 +1328,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/vis-admin/palette390.json](audit/vis-admin/palette390.json)… · [audit/vis-admin/sheets/p5-390-states.webp](audit/vis-admin/sheets/p5-390-states.webp) … · [audit/vis-admin/probe5/390-palette.webp](audit/vis-admin/probe5/390-palette.webp)
 - **Suggested fix:** components/admin/shell/CommandPalette.tsx: the result row (`flex items-start justify-between gap-4`) needs `min-w-0` on the text column with `truncate` on name/meta, and the dialog content should be `w-[min(640px,calc(100vw-2rem))]` with `overflow-hidden` so row content can never widen it.
 - **Verification:** reproduce → confirmed (P2): Owner, Chromium touch. At /admin/porudzbine I tapped the top-bar search button. At 390x844 the dialog is 16–374 (358 px) before typing. With „SK-2026-000092“ it widens to 16–442 (426 px) and the close button sits at 381–425, off-screen (viewport 390). Status chips (NOVA, OTKAZANA, ZATVOR…, PONUDA POSLA…, U OBRA…) are c… [[audit/verify/vis-admin/vis-admin-04-reproduce.json](audit/verify/vis-admin/vis-admin-04-reproduce.json) (390: before 16-374, after 16-442, close 381-425 onScreen false; 360: 328 → 426; 768: 640 unchanged), [audit/verify/vis-admin/vis-admin-04-reproduce-390-SK2026000092.webp](audit/verify/vis-admin/vis-admin-04-reproduce-390-SK2026000092.webp) (close button missing, chips cut at the right edge)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-lists-shell-verify.mjs → docs/qa/fix/admin-lists-shell/verify.json palette-390: dialog [16,374] with results for „SK-2026-000092“, close [313,357] closeOnScreen true, docOver 0 (before 16–442, close 381–425). (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: vis-admin-04_
 
 #### VIS-17
 
 **Selecting the first row makes every row jump 18 px; the next click at the same spot opens the record instead of toggling**
 
-- **Severity:** P2 · **Area:** 1. Visual design & consistency — Admin data tables – bulk selection · **Status:** OPEN
+- **Severity:** P2 · **Area:** 1. Visual design & consistency — Admin data tables – bulk selection · **Status:** FIXED
 - **Route:** /admin/porudzbine, /admin/proizvodi (every DataTable list with selection)
 - **Context:** Chromium, owner, 1440x900, mouse
 - **Standard:** DESIGN-SYSTEM §9.15 („Bulk bar replaces the toolbar“); impeccable Operate mode: stable targets / no layout shift on interaction
@@ -1301,13 +1348,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/vis-admin/probe4.json](audit/vis-admin/probe4.json)… · [audit/vis-admin/probe4/bulk-_admin_porudzbine.webp](audit/vis-admin/probe4/bulk-_admin_porudzbine.webp) · [audit/vis-admin/probe4/bulk-_admin_proizvodi.webp](audit/vis-admin/probe4/bulk-_admin_proizvodi.webp) · [audit/vis-admin/states/products-bulk-bar.webp](audit/vis-admin/states/products-bulk-bar.webp)
 - **Suggested fix:** Give the toolbar row a fixed min-height equal to the bulk bar (or render the bulk bar at the toolbar's h-9 control height with no extra padding) in OrdersList.tsx / ProductsList.tsx toolbars, so swapping them does not change layout. Optionally ignore row-open clicks within 300 ms of a selection change in DataTable.tsx.
 - **Verification:** reproduce → confirmed (P2): Reproduced with real mouse clicks (page.mouse.click) at 1440x900, 1280x800 and 1024x768 on /admin/porudzbine and /admin/proizvodi. The numbers matched on every run. Before the first click, table top was 280 and row tops 316/364/412. The first click on row 1's checkbox (20 px, y 328) checks it. The bulk bar that appears… [[audit/verify/vis-admin/vis-admin-05-reproduce.json](audit/verify/vis-admin/vis-admin-05-reproduce.json) (all 3 widths x 2 routes: tableTop 280->298, bulkBarH 54, underSecondClick td tdIndex=0, navigated true; selectCellEdge…, [audit/verify/vis-admin/vis-admin-05-reproduce-1440-_admin_porudzbine-after-first-click.webp](audit/verify/vis-admin/vis-admin-05-reproduce-1440-_admin_porudzbine-after-first-click.webp) (bulk bar in place of toolbar, row 1 checked)]
+- **Re-verification (step 22):** verify.json bulk/admin/porudzbine: row tops before [328,381,429] = after [328,381,429], shifted false; a second real mouse click at the same spot navigated false and deselected (aria-selected false, status „Izbor poništen“). Same for /admin/proizvodi ([328,389,450] both). (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: vis-admin-05_
 
 #### VIS-18
 
 **Order detail line-items table hides the line total at 1024 px and every numeric column on phones**
 
-- **Severity:** P2 · **Area:** 1. Visual design & consistency — Order detail – Stavke · **Status:** OPEN
+- **Severity:** P2 · **Area:** 1. Visual design & consistency — Order detail – Stavke · **Status:** FIXED
 - **Route:** /admin/porudzbine/SK-2026-000092 (every order detail)
 - **Context:** Chromium, owner, 1024x768 (rail), 390x844; fits at 1280 and 1440
 - **Standard:** DECISIONS D159 (admin lists fold instead of scrolling below 1280 px); DESIGN-SYSTEM §9.15; BRIEF §4 Orders (detail with items)
@@ -1326,13 +1374,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/vis-admin/probe2/order-lines-1024.webp](audit/vis-admin/probe2/order-lines-1024.webp) · [audit/vis-admin/probe2.json](audit/vis-admin/probe2.json) … · [audit/vis-admin/mobile/390-porudzbine_SK-2026-000092-top.webp](audit/vis-admin/mobile/390-porudzbine_SK-2026-000092-top.webp)
 - **Suggested fix:** components/admin/orders/OrderDetail.tsx (table wrapper at line 491, `-mx-4 overflow-x-auto`): below 1280 px drop the RABAT column when no line has a discount and put „1 × 4.690 RSD“ under the item name, keeping only Artikal | Iznos; or widen the main column at lg (the side column is fixed 320 px).
 - **Verification:** reproduce → partially_confirmed (P2): The desktop defect is real but covers a narrower range than reported. At 1024x768 the Stavke wrapper is 566 px and the table is 640 px (min-w-[640px], OrderDetail.tsx:491-492). The IZNOS header is entirely off-card and the line total shows as „4.“, with no visible scrollbar. In edit mode („Izmeni stavke“, not saved) th… [[audit/verify/vis-admin/vis-admin-06-reproduce-1024.webp](audit/verify/vis-admin/vis-admin-06-reproduce-1024.webp) (IZNOS header missing, line total cut to „4.“), [audit/verify/vis-admin/vis-admin-06-reproduce-edit-1024.webp](audit/verify/vis-admin/vis-admin-06-reproduce-edit-1024.webp) (edit mode: Iznos cut, remove column off-card)]
+- **Re-verification (step 22):** admin-flows-verify.mjs order -> 390/1024/1100: heads ['Artikal','Iznos'], table 356/566/642 = wrapper, overflows false; 1440: ['Artikal','Kol.','Cena','Iznos'] 754=754; edit mode 1024/1100/1440: ['Artikal','Kol.','Cena','Iznos','Ukloni'] overflows false; no console errors (docs/qa/fix/admin-flows/verify-order.json). (docs/qa/fix/admin-flows.json)
 - _Reviewer key: vis-admin-06_
 
 #### MOT-03
 
 **Stage jumps and deep links to the end of stage 3 land on the next stage label („04 Agregati i hlađenje“ shown for Kočioni diskovi)**
 
-- **Severity:** P2 · **Area:** 2. Interaction & motion — 3D hero / stage index, deep links · **Status:** OPEN
+- **Severity:** P2 · **Area:** 2. Interaction & motion — 3D hero / stage index, deep links · **Status:** FIXED
 - **Route:** /?deo=kocioni-diskovi, /?deo=abs-senzori (all stage-3 categories: discs, pads, calipers, ABS, shocks, arms, tie rods, steering rack, hub bearings), and the stage index button „03 Kočnice i vešanje“ on /
 - **Context:** Chromium 1440×900 (normal motion) and 390×844 touch; also with a selected vehicle (Golf VII)
 - **Standard:** docs/3d/WEB-QA.md deep link row (explodes to the part's stage); DESIGN-SYSTEM §7.7 stage caption/index; WCAG 2.2 SC 1.3.1 (aria-current names the wrong step)
@@ -1351,13 +1400,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/motion-3d/v3-caption-1440.txt](audit/motion-3d/v3-caption-1440.txt) · [audit/motion-3d/v3-misc.txt](audit/motion-3d/v3-misc.txt) · [audit/motion-3d/v3-deeplink390.json](audit/motion-3d/v3-deeplink390.json) · [audit/motion-3d/hero-d-deeplink-kocioni-diskovi.webp](audit/motion-3d/hero-d-deeplink-kocioni-diskovi.webp) · [audit/motion-3d/v3-vehiclepanel-1440-golf7.webp](audit/motion-3d/v3-vehiclepanel-1440-golf7.webp)
 - **Suggested fix:** The stage windows overlap (desktop stage 3 [0.28, 0.46], stage 4 [0.42, 0.58]). stageEnd(3) = 0.46 becomes an integer scroll position (1326 px) whose progress (0.460069) exceeds the 1e-6 tolerance in currentStage (lib/three/explode.ts:99). Options: round the scroll target down in the controller's goToProgress; give currentStage a tolerance of about one scroll pixel in progress units (1 / track length); or keep a „requested stage“ in heroStore that wins until the user scrolls. Add a unit test for every stage over the real track lengths.
 - **Verification:** reproduce → confirmed (P1): Reproduced with fresh contexts (Chromium, normal motion). Deep links at 1440×900: kocioni-diskovi, abs-senzori and amortizeri-opruge all settle at scrollY 1326, p 0.460069, stage 4, aria-current „04 Pomoćni agregati, hlađenje, usis“ while the Kočioni diskovi panel is open. At 1280 it lands on p 0.460156 → 04, and at 39… [[audit/verify/motion-3d/motion-3d-04-reproduce.json](audit/verify/motion-3d/motion-3d-04-reproduce.json), [audit/verify/motion-3d/motion-3d-04-reproduce-b.json](audit/verify/motion-3d/motion-3d-04-reproduce-b.json)] — skeptic → confirmed (P2): I tried to refute this and could not. It is not a headless or DPR artefact, and the scope is wider than the report says. Deep link ?deo=kocioni-diskovi settles on stage 4, with aria-current and the orange cell on „04 Pomoćni agregati, hlađenje, usis“ while the Kočioni diskovi panel is open. Settled progress and scrollY… [[audit/verify/motion-3d/motion-3d-04-skeptic-deeplink-1440-dpr1.webp](audit/verify/motion-3d/motion-3d-04-skeptic-deeplink-1440-dpr1.webp), [audit/verify/motion-3d/motion-3d-04-skeptic-index-1440-btn03.webp](audit/verify/motion-3d/motion-3d-04-skeptic-index-1440-btn03.webp)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/home-hero-sections-stages.mjs all docs/qa/fix/hero-stage/stages.json -> 'SUMMARY mot03 51/51 ok' (deep links kocioni-diskovi / abs-senzori / amortizeri-opruge -> 03 at 1440 and 390, motor -> 05; index 01-07 at 1440 and 1920; phone next 01..07 and prev 06..00). npx vitest run tests/unit/three -> '38 passed'. The e2e deep-link test now asserts stage 4 exactly for ?deo=akumulator (passed in both projects). (docs/qa/fix/hero-stage.json)
 - _Reviewer key: motion-3d-04_
 
 #### MOT-04
 
 **With a part panel open on desktop, the drawer covers „07 Izduvni sistem“, „Rasklopi“ and „Lista delova“; keyboard focus on them is fully hidden**
 
-- **Severity:** P2 · **Area:** 2. Interaction & motion — 3D hero / part drawer · **Status:** OPEN
+- **Severity:** P2 · **Area:** 2. Interaction & motion — 3D hero / part drawer · **Status:** FIXED
 - **Route:** / (e.g. /?deo=kocioni-diskovi)
 - **Context:** Chromium 1440×900, keyboard and pointer, part panel open (non-modal right drawer, left edge at x = 960)
 - **Standard:** WCAG 2.2 SC 2.4.11 Focus Not Obscured (Minimum) (AA); DESIGN-SYSTEM §8.5 Drawer (3D part panel is a parallel task — the car stays usable)
@@ -1370,13 +1420,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/motion-3d/v3-strip.txt](audit/motion-3d/v3-strip.txt) · [audit/motion-3d/v3-strip.json](audit/motion-3d/v3-strip.json) · [audit/motion-3d/v3-focus-under-drawer-1440.webp](audit/motion-3d/v3-focus-under-drawer-1440.webp) · [audit/motion-3d/v3-misc.txt](audit/motion-3d/v3-misc.txt)
 - **Suggested fix:** When the part panel is open at ≥ 1024 px, give the hero strip/actions row padding-right equal to the drawer width (max-w 440–480 px), e.g. via a data-panel-open attribute on the hero track driven by heroStore.selected. Or move „Rasklopi“/„Lista delova“ into the visible stage area. Alternatively, make the drawer the next Tab stop after the stage index.
 - **Verification:** reproduce → confirmed (P2): Reproduced on /?deo=kocioni-diskovi (Chromium, normal motion). I focused index button 06, pressed Tab three times, and checked elementFromPoint at the centre of each focused control. At 1440, with the drawer's left edge at 960: 07 (x 957–1087), Rasklopi (1111–1234) and Lista delova (1246–1392) all have hitSelf false; t… [[audit/verify/motion-3d/motion-3d-05-reproduce.json](audit/verify/motion-3d/motion-3d-05-reproduce.json), [audit/verify/motion-3d/motion-3d-05-reproduce-esc.json](audit/verify/motion-3d/motion-3d-05-reproduce-esc.json)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-stage-p2.mjs mot04 on /?deo=kocioni-diskovi -> '1440x900 ok' (panel left 960, Lista delova ends at 912), '1280x800 ok' (panel 800, ends 752); 1024x768: every control ends left of the panel (584, Lista delova ends 543), the only hit-test miss is 00 under the Next.js dev indicator (NEXTJS-PORTAL, dev only). The e2e deep-link test asserts every visible strip button ends left of the drawer (desktop-1440 passed). (docs/qa/fix/hero-stage.json)
 - _Reviewer key: motion-3d-05_
 
 #### MOT-05
 
 **Returning to the home page by the logo from a scrolled page leaves the explode state stale: at scrollY 0 the hero says „Karoserija, stakla i svetla · FAZA 01/07“**
 
-- **Severity:** P2 · **Area:** 2. Interaction & motion — GSAP ScrollTrigger / route change · **Status:** OPEN
+- **Severity:** P2 · **Area:** 2. Interaction & motion — GSAP ScrollTrigger / route change · **Status:** FIXED
 - **Route:** / (reached by client navigation from any scrolled page, e.g. /delovi)
 - **Context:** Chromium 1440×900, normal motion, 3D not yet loaded (poster), 4 runs
 - **Standard:** DESIGN-SYSTEM §8.4 (ScrollTrigger.refresh after route changes; stage captions read the timeline's progress); track check „ScrollTrigger refresh after route change (no misplaced pins)“
@@ -1389,13 +1440,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/motion-3d/v3-return3.txt](audit/motion-3d/v3-return3.txt) · [audit/motion-3d/v3-return3.json](audit/motion-3d/v3-return3.json) · [audit/motion-3d/v3-return2.txt](audit/motion-3d/v3-return2.txt) · [audit/motion-3d/v3-logo-from-scrolled-1440-8s.webp](audit/motion-3d/v3-logo-from-scrolled-1440-8s.webp)
 - **Suggested fix:** The hero ScrollTrigger (components/three/HeroStage.tsx) appears to be created while the previous page's scroll offset is still applied; the scrubbed progress proxy then never re-syncs after Next resets the scroll. On creation and in onRefresh, set the proxy straight to self.progress (kill the scrub tween). Also create the trigger, or call ScrollTrigger.update() and the proxy sync, in a rAF after mount / after ScrollTriggerRefresher's pathname-change refresh.
 - **Verification:** reproduce → confirmed (P2): Reproduced (Chromium 1440×900, normal motion, fresh context per run). I scrolled /delovi to scrollY 1500, clicked the header link „SKLOP — početna“ and sampled at 0.5, 2.5 and 8 s. In every run the page was at scrollY 0, and progress never changed between 0.5 and 8 s, including after status went from idle to ready (the… [[audit/verify/motion-3d/motion-3d-06-reproduce.json](audit/verify/motion-3d/motion-3d-06-reproduce.json), [audit/verify/motion-3d/motion-3d-06-reproduce-1440-run0.webp](audit/verify/motion-3d/motion-3d-06-reproduce-1440-run0.webp)]
+- **Re-verification (step 22):** node scripts/qa/fix/home-hero-sections-stages.mjs all -> 'mot05 6/6 ok' (/delovi scrolled to 1500 -> header logo -> y0 p0 stage 0 at 500 / 2500 / 6000 ms at 1440 and 390, also from a product page); node scripts/qa/fix/home-hero-sections-refresh-race.mjs -> 'SUMMARY 4/4 ok'. (docs/qa/fix/hero-stage.json)
 - _Reviewer key: motion-3d-06_
 
 #### MOT-06
 
 **FAQ and disclosure accordions snap open instantly (native <details>), not with the specified GSAP height and fade; the caret rotates 45° with an off-token 200 ms CSS transition**
 
-- **Severity:** P2 · **Area:** 2. Interaction & motion — Micro-interactions / accordions · **Status:** OPEN
+- **Severity:** P2 · **Area:** 2. Interaction & motion — Micro-interactions / accordions · **Status:** FIXED
 - **Route:** / (FAQ), /za-majstore (FAQ), /deo/kocioni-disk-prednji-276-24-mm-demo-0004 („Prikaži još 3“), /delovi/kocioni-diskovi („Više o kategoriji“); ad landings with FAQ share the pattern
 - **Context:** Chromium 1440×900 and 390×844, normal motion
 - **Standard:** DESIGN-SYSTEM §8.5 Accordion and §8.2/§8.3 duration and easing tokens
@@ -1408,13 +1460,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/motion-3d/v2-details-1440.json](audit/motion-3d/v2-details-1440.json) · [audit/motion-3d/v2-details-1440.txt](audit/motion-3d/v2-details-1440.txt) · [audit/motion-3d/v2-details-390.txt](audit/motion-3d/v2-details-390.txt)
 - **Suggested fix:** Add a small Disclosure wrapper (components/ui) that keeps <details>/<summary> semantics but animates the content with useGSAP: gsap.fromTo(content, { height: 0, opacity: 0 }, { height: 'auto', duration: DUR 0.28, ease: 'sk.inOut' }) plus opacity 0.18 s, with a reduced-motion cut via prefersReducedMotion(). Use the caret token (220 ms sk.snap). Or record a decision in docs/DECISIONS.md to keep native instant details and update DS §8.5.
 - **Verification:** reproduce → confirmed (P2): Reproduced by sampling the disclosure height and content opacity on every animation frame for 700 ms after clicking (Chromium, normal motion, after scrollThrough). Every disclosure reaches its final height and full opacity in the first frame, with one distinct height across all frames. At 1440: home FAQ 65 → 188 px at … [[audit/verify/motion-3d/motion-3d-07-reproduce.json](audit/verify/motion-3d/motion-3d-07-reproduce.json), [audit/verify/motion-3d/motion-3d-07-reproduce-faq-open-1440.webp](audit/verify/motion-3d/motion-3d-07-reproduce-faq-open-1440.webp)]
+- **Re-verification (step 22):** ui-checks.json (keyboard Enter on the summary, 390): /delovi/kocioni-diskovi „Više o kategoriji“ openAfterEnter true, contentHeight 231, openAfterSecondEnter false; product page „Prikaži još 3“ true / 228 / false. (docs/qa/fix/cross-p1.json)
 - _Reviewer key: motion-3d-07_
 
 #### MOT-07
 
 **Browser Back to the home page restores the wrong scroll position (1342 px instead of 1800 px), landing on a different explode stage**
 
-- **Severity:** P2 (reported P3, adjusted by verification) · **Area:** 2. Interaction & motion — 3D hero / history · **Status:** OPEN
+- **Severity:** P2 (reported P3, adjusted by verification) · **Area:** 2. Interaction & motion — 3D hero / history · **Status:** FIXED
 - **Route:** /
 - **Context:** Chromium 1440×900, normal motion, 4 runs
 - **Standard:** DESIGN-SYSTEM §8.4 (scroll-driven explode, native scroll feel); docs/3d/WEB-QA.md back/forward
@@ -1433,13 +1486,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/motion-3d/v3-return2.json](audit/motion-3d/v3-return2.json) · [audit/motion-3d/v3-return3.json](audit/motion-3d/v3-return3.json) · [audit/motion-3d/v3-return.txt](audit/motion-3d/v3-return.txt)
 - **Suggested fix:** Store scrollY (or the explode progress) in history.state / sessionStorage when leaving „/“, and restore it once the hero track has its final height (after the content-visibility sections and the track reservation settle), e.g. from HeroStage after mount followed by ScrollTrigger.refresh(). Or investigate why Next's restoration happens before the track reaches its final size.
 - **Verification:** reproduce → partially_confirmed (P2): The reviewer's script does give 1342 in 3/3 runs, but Back is not what goes wrong. Back restores exactly the scrollY saved when the link was activated. Next calls window.scrollTo(0, saved) on popstate while the document is already 13 394 px tall. The 1342 comes from the click itself. Playwright's locator.click() scroll… [[audit/verify/motion-3d/motion-3d-08-reproduce-chromium-1440-1800-_delovi.json](audit/verify/motion-3d/motion-3d-08-reproduce-chromium-1440-1800-_delovi.json) (reviewer steps with locator.click: 3/3 back y=1342, stage 04; /delovi maxY 4870, restoration=auto), [audit/verify/motion-3d/motion-3d-08-reproduce-who-1800.json](audit/verify/motion-3d/motion-3d-08-reproduce-who-1800.json) (scroll to 1342 before pushState; on Back, Next's window.scrollTo(0,1342) restores the saved value)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-stage-mot07.mjs -> '{"patch":false,"log":[1800,"1800:Preskoči na sadr","1800:SKLOP","1800:Delovi"]}' (before: 1342 / 884), docs/qa/fix/cross-p1/mot07-header-focus.txt. (docs/qa/fix/cross-p1.json)
 - _Reviewer key: motion-3d-08_
 
 #### A11Y-05
 
 **Cookie banner fully covers the focused element on first visit (21 tab stops at 390, 7 at 1440), and Escape does not dismiss it**
 
-- **Severity:** P2 · **Area:** 3. Accessibility — Consent banner / focus not obscured · **Status:** OPEN
+- **Severity:** P2 · **Area:** 3. Accessibility — Consent banner / focus not obscured · **Status:** FIXED
 - **Route:** Every storefront route on a first visit (no sk_consent cookie), e.g. /delovi/kocioni-diskovi
 - **Context:** 390x844 and 1440x900 Chromium, consent:false, keyboard only
 - **Standard:** WCAG 2.2 SC 2.4.11 Focus Not Obscured (Minimum); DESIGN-SYSTEM §12.1 rule 2 (focus not obscured by sheets)
@@ -1459,13 +1513,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/a11y-store/banner-rerun2.log](audit/a11y-store/banner-rerun2.log) · [audit/a11y-store/banner-obscures-focus-390.webp](audit/a11y-store/banner-obscures-focus-390.webp) · [audit/a11y-store/banner-obscures-focus-1440.webp](audit/a11y-store/banner-obscures-focus-1440.webp) · [audit/a11y-store/states-vehicle390-parts-banner.json](audit/a11y-store/states-vehicle390-parts-banner.json) (b… · scri…
 - **Suggested fix:** In components/consent/ConsentBanner.tsx, while the banner is mounted, set document.documentElement.style.scrollPaddingBottom to the banner height plus 16 px (ResizeObserver) and clear it on unmount, so focused elements scroll above it. Also shorten the mobile layout: put the two decision buttons side by side and turn „Podešavanja“ into a link-style button to cut the height. Optionally let Escape collapse it to a one-line bar. D185 (non-modal banner) stays valid. This finding is about obscuring focus, not modality.
 - **Verification:** reproduce → confirmed (P2): I reproduced this from scratch with my own script: consent:false, Tab x50 from page load, and each focused rect compared with the visible banner panel (the <form>, not the transparent full-width wrapper). Checked in Chromium and Firefox. /delovi/kocioni-diskovi at 390: the panel is 366x302 at y=530 (36 % of the viewpor… [[audit/verify/a11y-store/a11y-store-03-reproduce-chromium.json](audit/verify/a11y-store/a11y-store-03-reproduce-chromium.json) (per-stop rects, coveredPct, elementFromPoint; env.scrollPaddingBottom 'auto'), [audit/verify/a11y-store/a11y-store-03-reproduce-firefox.log](audit/verify/a11y-store/a11y-store-03-reproduce-firefox.log)]
+- **Re-verification (step 22):** verify-consent-reveal.json consent: height 273 (was 314), decisionsSideBySide true, scrollPaddingBottom '289px', tabStopsCoveredOf30 0 (was 21 at 390), afterEscape {collapsed true, height 160}; screenshots consent-390.webp, consent-390-collapsed.webp. (docs/qa/fix/shell-perf.json)
 - _Reviewer key: a11y-store-03_
 
 #### A11Y-06
 
 **Pressing „Podešavanja“ in the cookie banner drops focus to <body>**
 
-- **Severity:** P2 · **Area:** 3. Accessibility — Consent banner / focus management · **Status:** OPEN
+- **Severity:** P2 · **Area:** 3. Accessibility — Consent banner / focus management · **Status:** FIXED
 - **Route:** Every storefront route on a first visit, e.g. /delovi/kocioni-diskovi
 - **Context:** 390x844 and 1440x900 Chromium, consent:false, keyboard
 - **Standard:** WCAG 2.2 SC 2.4.3 Focus Order; DESIGN-SYSTEM §12.1 rule 5
@@ -1478,13 +1533,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/a11y-store/banner-rerun2.log](audit/a11y-store/banner-rerun2.log)… · [audit/a11y-store/banner-settings-focus-390.webp](audit/a11y-store/banner-settings-focus-390.webp) · co…
 - **Suggested fix:** In ConsentBanner.tsx, add a useEffect on `detailed` that focuses the first enabled switch (or a tabIndex=-1 legend of „Kategorije kolačića“) when it becomes true.
 - **Verification:** reproduce → confirmed (P2): On /delovi/kocioni-diskovi with no sk_consent I focused 'Podešavanja' and activated it with Enter, then with Space after a reload. In Chromium and Firefox, at 390 and 1440, document.activeElement becomes BODY every time. Three switches render. The banner has no live region, status or alert, so nothing is announced. The… [[audit/verify/a11y-store/a11y-store-03-reproduce-chromium.json](audit/verify/a11y-store/a11y-store-03-reproduce-chromium.json) (cases[0|1].settings_Enter / settings_Space: after 'BODY', liveOrAnnounce 0, nextTab 'HEADER OUTSIDE a[] SKLOP — početn…, [audit/verify/a11y-store/a11y-store-03-reproduce-firefox.log](audit/verify/a11y-store/a11y-store-03-reproduce-firefox.log) (same result in Firefox)]
+- **Re-verification (step 22):** verify-consent-reveal.json consent.focusAfterSettings 'switch:consent-analytics:'. (docs/qa/fix/shell-perf.json)
 - _Reviewer key: a11y-store-04_
 
 #### A11Y-07
 
 **Consent and terms checkbox errors are not programmatically linked to the checkbox (checkout, inquiry, mechanic registration)**
 
-- **Severity:** P2 · **Area:** 3. Accessibility — Forms / error association · **Status:** OPEN
+- **Severity:** P2 · **Area:** 3. Accessibility — Forms / error association · **Status:** FIXED
 - **Route:** /porudzbina step 4 „Pregled“; /upit; /za-majstore/registracija
 - **Context:** 1440x900 Chromium, guest, keyboard
 - **Standard:** WCAG 2.2 SC 1.3.1 Info and Relationships, SC 3.3.1 Error Identification; DESIGN-SYSTEM §12.1 rule 7 („inline errors linked with aria-describedby“)
@@ -1503,13 +1559,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Suggested fix:** Give each error <p> an id (e.g. co-terms-error) and pass it to Checkbox as aria-describedby, merged with its own descriptionId in components/ui/Checkbox.tsx. Better: let Checkbox accept an `error` prop and render and link the message itself, as Field does.
 - **Verification:** reproduce → confirmed (P2): Chromium at 1440, plus /upit at 390, reading the AX tree over CDP. Checkout (/porudzbina Pregled, Enter on 'Pošalji porudžbinu' without the terms box): #co-terms has aria-invalid=true, no aria-describedby and AX description ''. The error <p> 'Potrebna je saglasnost sa uslovima kupovine.' has no id and no role. /upit em… [[audit/verify/a11y-store/a11y-store-05-06-reproduce-1440-all.json](audit/verify/a11y-store/a11y-store-05-06-reproduce-1440-all.json) ('co #co-terms AX' description ''; 'iq consent AX' description '' vs 'iq name field AX' description 'Upišite ime.'; 'mr…, [audit/verify/a11y-store/a11y-store-05-06-reproduce-390-iq.json](audit/verify/a11y-store/a11y-store-05-06-reproduce-390-iq.json)]
 - **Also reported as:** a11y-app-06 (Consent checkbox errors are not programmatically tied to the checkbox (no aria-invalid, no aria-describedby) @ /registracija, /za-majstore/registracija)
+- **Re-verification (step 22):** forms-auth-checkout.mjs 390 → "C terms a11y {invalid:true, required:true, description:Potrebna je saglasnost sa uslovima kupovine.}", "C focus stays on terms after checking it button[checkbox]#co-terms"; forms-auth-misc.mjs → "upit consent a11y {invalid:true, required:true, desc:Potrebna je saglasnost da podatke koristimo za odgovor na upit.}", "mech terms a11y {invalid:true, desc:Potrebna je saglasnost sa uslovima korišćenja.}"; npx vitest run tests/unit/components/ui.test.tsx → 17 passed; docs/qa/fix/forms-auth/upit-consent-390.webp, checkout-terms-390.webp (docs/qa/fix/forms-auth.json)
 - _Reviewer key: a11y-store-05_
 
 #### A11Y-08
 
 **„Javi mi kad stigne“ (back in stock) form: validation and server errors are silent for screen-reader users**
 
-- **Severity:** P2 · **Area:** 3. Accessibility — Product page / out-of-stock form · **Status:** OPEN
+- **Severity:** P2 · **Area:** 3. Accessibility — Product page / out-of-stock form · **Status:** FIXED
 - **Route:** /deo/kocione-plocice-prednje-demo-0012
 - **Context:** 1440x900 Chromium, guest, keyboard
 - **Standard:** WCAG 2.2 SC 4.1.3 Status Messages, SC 3.3.1 Error Identification
@@ -1522,13 +1579,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/a11y-store/forms-b.log](audit/a11y-store/forms-b.log)… · [audit/a11y-store/oos-form-errors-1440.webp](audit/a11y-store/oos-form-errors-1440.webp) · co… · com…
 - **Suggested fix:** In BackInStockForm.onSubmit, keep a ref to the e-mail Input and focus it when validation fails. Render server errors in a role="alert" paragraph, as consentError already is.
 - **Verification:** reproduce → confirmed (P2): On /deo/kocione-plocice-prednje-demo-0012 at 1440 and 390 (Chromium), with a MutationObserver on the form. Enter on 'Obavesti me' with the e-mail empty: focus stays on the button. The only node added is <p> with no role, not inside any live region: 'E-mail adresa nije ispravna. Primer: ime@primer.rs.'. The input gets a… [[audit/verify/a11y-store/a11y-store-05-06-reproduce-1440-all.json](audit/verify/a11y-store/a11y-store-05-06-reproduce-1440-all.json) ('oos A focus after empty submit' = button 'Obavesti me'; 'oos A added nodes' = P role=null inLive=false; 'oos B added …, [audit/verify/a11y-store/a11y-store-05-06-reproduce-390-oos.json](audit/verify/a11y-store/a11y-store-05-06-reproduce-390-oos.json) (same at 390)]
+- **Re-verification (step 22):** forms-auth-misc.mjs → "bis empty → focus + message {focus:input#bis-email, msg:Upišite adresu e-pošte.}", "bis bad → message Adresa e-pošte nije ispravna. Primer: ime@primer.rs.", "bis no consent → focus + description {role:checkbox, invalid:true, desc:Potrebna je saglasnost da vam pošaljemo obaveštenje.}" (docs/qa/fix/forms-auth.json)
 - _Reviewer key: a11y-store-06_
 
 #### A11Y-09
 
 **Removing a cart line on /korpa drops focus to <body> and announces nothing**
 
-- **Severity:** P2 · **Area:** 3. Accessibility — Cart page / focus management and live regions · **Status:** OPEN
+- **Severity:** P2 · **Area:** 3. Accessibility — Cart page / focus management and live regions · **Status:** FIXED
 - **Route:** /korpa
 - **Context:** 1440x900 and 390x844 Chromium, keyboard, cart with one line (the removal empties the cart)
 - **Standard:** WCAG 2.2 SC 2.4.3 Focus Order, SC 4.1.3 Status Messages
@@ -1541,13 +1599,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/a11y-store/v2-cart.log](audit/a11y-store/v2-cart.log)… · [audit/a11y-store/v2-korpa-after-remove-1440.webp](audit/a11y-store/v2-korpa-after-remove-1440.webp) · [audit/a11y-store/v2-korpa-after-remove-390.webp](audit/a11y-store/v2-korpa-after-remove-390.webp) · scr…
 - **Suggested fix:** In the cart line remove handler (components/cart), before removal, compute the next focus target: the next line's product link, else the previous one, else the empty-state h1/h2 with tabIndex=-1. Push „Uklonjeno iz korpe: {naziv}.“ to the existing polite cart region. For quantity changes, announce „Količina 2, ukupno 9.380 RSD“ rather than the bare total.
 - **Verification:** reproduce → confirmed (P2): Reproduced from scratch in Chromium at 1440x900 and 390x844 with a MutationObserver logging every change inside aria-live, status and alert regions. (A) One line: after 4 Tabs from the line link to the „Ukloni Kočioni disk prednji 276 × 24 mm“ button and Enter, activeElement is BODY at both widths and no live-region te… [[audit/verify/a11y-store/a11y-store-07-reproduce-chromium.log](audit/verify/a11y-store/a11y-store-07-reproduce-chromium.log), [audit/verify/a11y-store/a11y-store-07-reproduce-chromium.json](audit/verify/a11y-store/a11y-store-07-reproduce-chromium.json)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cart-mechanic-overlays-cart.mjs → at 390 and 1440: 'after +1 live: Količina 2, ukupno 14.980 RSD.', 'after remove first: focus A[Kočioni disk zadnji 272 × 10 mm, puni] live: Uklonjeno iz korpe: Kočioni disk prednji 312 × 25 mm.', 'remove #3: focus H2[Korpa je prazna] live: Uklonjeno iz korpe: … Korpa je prazna.' (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: a11y-store-07_
 
 #### A11Y-10
 
 **Reflow at 320 CSS px: 3 px horizontal scroll from the header actions; product cards clip „U korpu“ and truncate the OEM number and name**
 
-- **Severity:** P2 · **Area:** 3. Accessibility — Responsive / reflow · **Status:** OPEN
+- **Severity:** P2 · **Area:** 3. Accessibility — Responsive / reflow · **Status:** FIXED
 - **Route:** /, /delovi/kocioni-diskovi, /deo/kocioni-disk-prednji-276-24-mm-demo-0004, /pretraga?q=disk, /vozila/volkswagen/golf/golf-7, /porudzbina, /upit (header). Card clipping on listings and /ponuda/kocione-plocice-golf
 - **Context:** 320x800 Chromium (the 1.4.10 reference width, i.e. 1280 px at 400 % zoom). Also with the 1.4.12 text-spacing override. 360 and 390 are fine.
 - **Standard:** WCAG 2.2 SC 1.4.10 Reflow, SC 1.4.12 Text Spacing
@@ -1560,13 +1619,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/a11y-store/reflow.log](audit/a11y-store/reflow.log) · [audit/a11y-store/reflow-spacing-320.json](audit/a11y-store/reflow-spacing-320.json) · [audit/a11y-store/reflow320-home.webp](audit/a11y-store/reflow320-home.webp) · [audit/a11y-store/v2-card-normal-320.webp](audit/a11y-store/v2-card-normal-320.webp) · [audit/a11y-store/v2-card-spacing-320.webp](audit/a11y-store/v2-card-spacing-320.webp) · scrip…
 - **Suggested fix:** Header (components/shell): below 340 px, use 40 px icon buttons and a smaller gap, or move „Moj nalog“ into the menu. Product card (components/catalog product card): below the @min-[17rem] container width, stack the price and a full-width CTA. Replace `truncate` on the OEM line with wrapping (`break-words`). Keep line-clamp on titles only where the full name is available through the accessible name or title.
 - **Verification:** reproduce → confirmed (P2): Chromium at 320 px wide, run with both mobile emulation and desktop emulation (the latter equals 1280 px at 400 % zoom); results are identical. (1) Header: scrollWidth is 323 against clientWidth 320 on /, /delovi/kocioni-diskovi, /deo/…-0004, /pretraga?q=disk, /vozila/volkswagen/golf/golf-7, /porudzbina and /upit. The … [[audit/verify/a11y-store/a11y-store-08-reproduce-chromium.log](audit/verify/a11y-store/a11y-store-08-reproduce-chromium.log), [audit/verify/a11y-store/a11y-store-08-reproduce-chromium.json](audit/verify/a11y-store/a11y-store-08-reproduce-chromium.json)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 ONLY=a11y10,vis05 node scripts/qa/fix/catalog-product-ui-layout.mjs -> at 320x800 on /ponuda/kocione-plocice-golf, /delovi/kocioni-diskovi and /pretraga?q=disk, normal and with the WCAG 1.4.12 spacing stylesheet: clipped 0, clamped 0, overX 0, thumbLinked = cards (whole card still one link). Evidence docs/qa/fix/catalog-product-ui/layout-a11y10-vis05.json, a11y10-card-320.webp, a11y10-card-320-spacing.webp (full name, wrapped OEM, full-width U korpu). (docs/qa/fix/catalog-product-ui.json)
 - _Reviewer key: a11y-store-08_
 
 #### A11Y-11
 
 **Command palette results, result count and 'Nema rezultata' are never announced (no live region)**
 
-- **Severity:** P2 · **Area:** 3. Accessibility — admin shell / command palette · **Status:** OPEN
+- **Severity:** P2 · **Area:** 3. Accessibility — admin shell / command palette · **Status:** FIXED
 - **Route:** all /admin/* routes (palette via Ctrl+K)
 - **Context:** 1440 x 900, Chromium, owner account; screen-reader semantics inspected in the DOM
 - **Standard:** WCAG 2.2 SC 4.1.3 Status Messages (AA)
@@ -1579,13 +1639,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/a11y-app/deep-admin.json](audit/a11y-app/deep-admin.json)… · [audit/a11y-app/kbd-1440-03-palette-noresults.webp](audit/a11y-app/kbd-1440-03-palette-noresults.webp) · co…
 - **Suggested fix:** Add <p role="status" className="sr-only"> in CommandPalette.tsx that renders, debounced after searching settles, 'N rezultata' or 'Nema rezultata za „…“.' (and 'Traži se…' while the spinner shows).
 - **Verification:** reproduce → confirmed (P2): Reproduced in Chromium and Firefox at 1440 as owner. After I typed SK-2026-00009 the listbox had 11 options, but the dialog contained no [aria-live], [role=status], [role=alert] or [role=log] element. The only live region on the page was an empty polite region outside the dialog (the bell's). After I changed the query … [[audit/verify/a11y-app/a11y-app-04-reproduce.json](audit/verify/a11y-app/a11y-app-04-reproduce.json) (results.liveInDialog: [], options 11; noResults.emptyRole 'presentation', emptyLiveAncestor false, liveTexts [], activ…, [audit/verify/a11y-app/a11y-app-04-reproduce-chromium-1440.webp](audit/verify/a11y-app/a11y-app-04-reproduce-chromium-1440.webp) (no-results state, opened and checked)]
+- **Re-verification (step 22):** verify.json palette-1440 and palette-390: statusResults „10 rezultata“, statusNone „Nema rezultata za „qqqzzzxx“.“ inside the dialog's p[role=status]. (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: a11y-app-04_
 
 #### A11Y-12
 
 **Active command-palette option is marked only by a #EEF1F4 tint on white (1.13:1), no outline**
 
-- **Severity:** P2 · **Area:** 3. Accessibility — admin shell / command palette · **Status:** OPEN
+- **Severity:** P2 · **Area:** 3. Accessibility — admin shell / command palette · **Status:** FIXED
 - **Route:** all /admin/* routes (palette via Ctrl+K)
 - **Context:** 1440 x 900, Chromium, paper theme, keyboard (ArrowDown in the combobox)
 - **Standard:** WCAG 2.2 SC 2.4.7 Focus Visible and SC 1.4.11 Non-text Contrast (state indicator ≥ 3:1); DESIGN-SYSTEM focus ring rules
@@ -1597,13 +1658,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/a11y-app/deep-palette-active-option.webp](audit/a11y-app/deep-palette-active-option.webp) · [audit/a11y-app/deep-admin.json](audit/a11y-app/deep-admin.json) …
 - **Suggested fix:** In CommandPalette.tsx give [role=option][aria-selected=true] a 2 px inset outline in --color-focus or a 3 px accent-edge left bar plus text-ink-1 (DS focus ring token), in addition to bg-selected.
 - **Verification:** reproduce → confirmed (P2): Reproduced in Chromium and Firefox at 1440 on the paper theme. I pressed Ctrl+K, typed SK-2026-00009 and pressed ArrowDown; the active option became SK-2026-000099. Measured on the active option: background rgb(238,241,244) (--color-selected #EEF1F4) on the rgb(255,255,255) dialog, 1.13:1. Its outline style is none, bo… [[audit/verify/a11y-app/a11y-app-05-reproduce.json](audit/verify/a11y-app/a11y-app-05-reproduce.json) (optionBg rgb(238,241,244), dialogBg rgb(255,255,255), contrastBgVsDialog 1.13, outline none, boxShadow none, labelColo…, [audit/verify/a11y-app/a11y-app-05-reproduce-chromium-1440-rows.webp](audit/verify/a11y-app/a11y-app-05-reproduce-chromium-1440-rows.webp) (opened: second row SK-2026-000099 is active, only a faint grey tint)]
+- **Re-verification (step 22):** verify.json palette-1440 active option after ArrowDown: outline „solid 2px rgb(184, 71, 10) offset -2px“ (paper --color-focus), bg rgb(238,241,244) (before: outline none). (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: a11y-app-05_
 
 #### A11Y-13
 
 **Customer registration gives no feedback after a failed submit: focus stays on the button, no summary, no alert**
 
-- **Severity:** P2 · **Area:** 3. Accessibility — registration form · **Status:** OPEN
+- **Severity:** P2 · **Area:** 3. Accessibility — registration form · **Status:** FIXED
 - **Route:** /registracija
 - **Context:** 390 x 844 and 1440, Chromium, anonymous, keyboard submit of an empty form
 - **Standard:** WCAG 2.2 SC 3.3.1 Error Identification, SC 4.1.3 Status Messages; DESIGN-SYSTEM consistency (same form pattern everywhere)
@@ -1615,13 +1677,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/a11y-app/verify.json](audit/a11y-app/verify.json)… · [audit/a11y-app/v-registracija-empty-390.webp](audit/a11y-app/v-registracija-empty-390.webp) · [audit/a11y-app/forms.json](audit/a11y-app/forms.json) (…
 - **Suggested fix:** In components/auth/AuthForms.tsx reuse the error-summary + focus-first-invalid behaviour of MechanicRegistrationForm.tsx (RHF setFocus / shouldFocusError, summary with role=alert).
 - **Verification:** reproduce → confirmed (P2): Chromium, anonymous, at 390x844 and 1440x900. On /registracija I tabbed from 'Ime i prezime' to 'Napravi nalog' (6 tabs) and pressed Enter on the empty form. Four inline errors appear, and name, email and password get aria-invalid=true. Focus stays on the button 'Napravi nalog' and no role=alert, role=status or aria-li… [[audit/verify/a11y-app/a11y-app-07-10-reproduce-07.json](audit/verify/a11y-app/a11y-app-07-10-reproduce-07.json) (registracija-390/1440: focus 'button "Napravi nalog"', live [], invalid [name,email,password]; za-majstore-390: focus …, [audit/verify/a11y-app/a11y-app-07-reproduce-390.webp](audit/verify/a11y-app/a11y-app-07-reproduce-390.webp) (four errors shown, focus ring on 'Napravi nalog')]
+- **Re-verification (step 22):** forms-auth-prehydration.mjs chromium → "reg summary {focus:alert, items:[Potrebna je saglasnost sa uslovima korišćenja.]}" (docs/qa/fix/forms-auth.json)
 - _Reviewer key: a11y-app-07_
 
 #### A11Y-14
 
 **Price-list picker: focused category checkboxes are completely hidden behind the sticky download bar on phones**
 
-- **Severity:** P2 · **Area:** 3. Accessibility — mechanic portal · **Status:** OPEN
+- **Severity:** P2 · **Area:** 3. Accessibility — mechanic portal · **Status:** FIXED
 - **Route:** /majstor/cenovnik
 - **Context:** 390 x 844, Chromium, approved mechanic (Majstor Plus), keyboard Tab from the h1
 - **Standard:** WCAG 2.2 SC 2.4.11 Focus Not Obscured (Minimum) (AA); BRIEF §9 WCAG 2.2 AA
@@ -1634,13 +1697,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/a11y-app/obscured-mechanic-390-majstor-cenovnik.webp](audit/a11y-app/obscured-mechanic-390-majstor-cenovnik.webp)… · [audit/a11y-app/obscured.json](audit/a11y-app/obscured.json) … · sc…
 - **Suggested fix:** components/mechanic/PriceListPicker.tsx (sticky bar ~line 108): set scroll-padding-bottom on the document equal to the bar height while the picker is mounted (e.g. a class on <html> with scroll-padding-bottom: 9rem, or `html:has([data-price-bar]) { scroll-padding-bottom: … }`), or make the bar non-sticky below sm and keep only the button sticky. Re-run the obscured script for /majstor/brza-porudzbina with results (its sticky summary bar has the same risk).
 - **Verification:** reproduce → confirmed (P2): Chromium, signed in as the shared Majstor Plus mechanic. On /majstor/cenovnik I clicked the h1 and tabbed up to 70 times. For each focused control I measured how much of it the sticky bar (position sticky, bottom 0) overlaps. At 390x844 the bar spans y 715-844 (129 px). 15 stops are 100 % covered, including 'Brizgaljke… [[audit/verify/a11y-app/a11y-app-07-10-reproduce-08.json](audit/verify/a11y-app/a11y-app-07-10-reproduce-08.json) (360: fullCount 16; 390: fullCount 15, partial 4 at 98 %, bar 715-844; 768: 11; 1440: 4; scrollPaddingBottom 'auto'), [audit/verify/a11y-app/a11y-app-08-reproduce-focused.json](audit/verify/a11y-app/a11y-app-08-reproduce-focused.json) (focused 'Brizgaljke i pumpa goriva' rect [48,725,20,20], topmostAtCenter = button in the sticky bar, topmostIsFocused …]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cart-mechanic-overlays-pricelist.mjs → {"w":360,"stops":63,"hidden":0,"partly":0}, {"w":390,…"hidden":0,"partly":0}, {"w":768,…"hidden":0}, {"w":1440,…"hidden":0} (audit: 16 / 15 / 11 / 4 fully hidden). (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: a11y-app-08_
 
 #### A11Y-15
 
 **Inline link on the admin notifications page is distinguished by colour only (1.1:1 against body text, no underline)**
 
-- **Severity:** P2 · **Area:** 3. Accessibility — admin / notifications · **Status:** OPEN
+- **Severity:** P2 · **Area:** 3. Accessibility — admin / notifications · **Status:** FIXED
 - **Route:** /admin/obavestenja
 - **Context:** 1440 x 900, Chromium, owner, paper theme
 - **Standard:** WCAG 2.2 SC 1.4.1 Use of Color
@@ -1653,13 +1717,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Suggested fix:** components/admin/system/NotificationsAdmin.tsx line ~36: add `underline underline-offset-2` to the inline RouteLink (and make this the default for links inside admin prose, e.g. the dashboard/predračun 'Popuni u podešavanjima' links when they sit in sentences).
 - **Verification:** reproduce → confirmed (P2): Chromium 1440x900, signed in as owner, /admin/obavestenja (data-theme=paper). The intro sentence link 'podešavanjima' has color rgb(184,71,10) = #b8470a inside a <p> of color rgb(93,101,112) = #5d6570, with the same weight (400) and text-decoration none. The underline appears only on hover. axe (WCAG 2.2 AA tags) repor… [[audit/verify/a11y-app/a11y-app-07-10-reproduce-10.json](audit/verify/a11y-app/a11y-app-07-10-reproduce-10.json) (link color rgb(184,71,10), parentColor rgb(93,101,112), deco none, hoverDeco underline; axe link-in-text-block serious…, [audit/verify/a11y-app/a11y-app-10-reproduce-1440.webp](audit/verify/a11y-app/a11y-app-10-reproduce-1440.webp) (link 'podešavanjima' orange, no underline)]
 - **Also reported as:** flows-admin-09 (Link in /admin/obavestenja intro is distinguished by colour only @ /admin/obavestenja)
+- **Re-verification (step 22):** verify.json text: linkDecoration „underline“, axe link-in-text-block violations 0 on /admin/obavestenja (before: 1, serious). (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: a11y-app-10_
 
 #### A11Y-16
 
 **Admin tables: selecting a row (Space) and the appearing bulk-action bar are silent for screen readers**
 
-- **Severity:** P2 · **Area:** 3. Accessibility — admin data tables (DataTable) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 3. Accessibility — admin data tables (DataTable) · **Status:** FIXED
 - **Route:** /admin/porudzbine, /admin/proizvodi (any DataTable with enableRowSelection)
 - **Context:** 1440 x 900, Chromium, owner, keyboard: Tab to the first row, press Space
 - **Standard:** WCAG 2.2 SC 4.1.3 Status Messages and SC 4.1.2 Name, Role, Value
@@ -1672,13 +1737,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/a11y-app/deep-orders-bulk.webp](audit/a11y-app/deep-orders-bulk.webp) · [audit/a11y-app/deep-admin.json](audit/a11y-app/deep-admin.json) … · co…
 - **Suggested fix:** Add a shared sr-only role=status in DataTable that says 'Izabrano: N' (and 'Izbor poništen') whenever the selection changes; optionally switch the table to role=grid semantics when enableRowSelection is on so aria-selected is exposed, or give the row an aria-label suffix 'izabrano'.
 - **Verification:** reproduce → confirmed (P2): Chromium, 1440x900, owner, keyboard only. /admin/porudzbine: 47 Tabs from the top reach the first row (roving tabindex=0). Space sets aria-selected=true on the <tr> and the bulk bar appears ('1 izabrano', role=region 'Grupne radnje', not live). Chromium's AX tree (CDP getPartialAXTree) exposes no 'selected' state on th… [[audit/verify/a11y-app/a11y-app-11-14-reproduce.json](audit/verify/a11y-app/a11y-app-11-14-reproduce.json) (s11: rowAX props {focusable, focused} with no 'selected' after Space; liveChanges []; bulkBar live null), [audit/verify/a11y-app/a11y-app-11-reproduce-porudzbine.webp](audit/verify/a11y-app/a11y-app-11-reproduce-porudzbine.webp)]
+- **Re-verification (step 22):** verify.json bulk/admin/porudzbine and /admin/proizvodi: status after mouse select „Izabrano: 1“, after deselect „Izbor poništen“, after keyboard focus + Space „Izabrano: 1“. (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: a11y-app-11_
 
 #### A11Y-17
 
 **Excel import wizard: step changes, write progress and completion are not announced**
 
-- **Severity:** P2 · **Area:** 3. Accessibility — admin import · **Status:** OPEN
+- **Severity:** P2 · **Area:** 3. Accessibility — admin import · **Status:** FIXED
 - **Route:** /admin/uvoz, /admin/uvoz/[id]
 - **Context:** 1440 x 900, Chromium, owner; file step inspected live, later steps by code (a live upload was not run in this pass)
 - **Standard:** WCAG 2.2 SC 4.1.3 Status Messages; track checklist 'import wizard progress announced'
@@ -1698,13 +1764,14 @@ Also audit other flex-wrap rows that contain type-code, such as the VIN kod line
 - **Evidence:** [audit/a11y-app/deep-admin.json](audit/a11y-app/deep-admin.json)… · c… · co…
 - **Suggested fix:** Add one sr-only role=status in the wizard shell that announces the current step name on step change and, in BatchSteps, the phase label plus milestones (25/50/75/100 %) and the final result ('Upisano 1.250 redova, 3 greške').
 - **Verification:** reproduce → partially_confirmed (P2): Real, but slightly different from the report. Checked live in Chromium at 1440 as owner. Only client-side steps were run: I uploaded tests/fixtures/import/proizvodi-500.xlsx and pressed Enter on 'Dalje: kolone'. No dry run, no commit. (1) Confirmed: the step change File -> Kolone announces nothing. No live-region chang… [[audit/verify/a11y-app/a11y-app-11-14-reproduce.json](audit/verify/a11y-app/a11y-app-11-14-reproduce.json) (s12: afterParse.liveChanges ['ADDED-LIVE:Čitam fajl']; afterStepChange.active 'body …', currentStep '2Korak 2: Kolone'…, [audit/verify/a11y-app/a11y-app-12-reproduce-mapping.webp](audit/verify/a11y-app/a11y-app-12-reproduce-mapping.webp)]
+- **Re-verification (step 22):** admin-flows-verify.mjs import -> focusStep2 {tag:'H2', text:'Korak 2 od 5: Kolone'} after Enter on 'Dalje: kolone', focusStep3 'Korak 3 od 5: Provera', focusStep4 'Korak 4 od 5: Probni uvoz', focusAfterCancel 'Korak 1 od 5: Datoteka'; A11Y-17-batch {role:'status', text:'Uvoz je otkazan.'}; commit milestones by code (no live commit run, to leave demo data untouched) (docs/qa/fix/admin-flows/verify-suspend-import.json). (docs/qa/fix/admin-flows.json)
 - _Reviewer key: a11y-app-12_
 
 #### PERF-03
 
 **Mobile LCP is at or over 2.5 s on home and product and 2.74 s on the ads landing, because the only render-blocking stylesheet shares slow-4G bandwidth with four font preloads and card-image preloads**
 
-- **Severity:** P2 (reported P1, adjusted by verification) · **Area:** 5. Performance — Performance / LCP critical path · **Status:** OPEN
+- **Severity:** P2 (reported P1, adjusted by verification) · **Area:** 5. Performance — Performance / LCP critical path · **Status:** FIXED
 - **Route:** / · /deo/kocioni-disk-prednji-276-24-mm-demo-0004 · /ponuda/kocione-plocice-golf (also /delovi/kocioni-diskovi and the landings vs the SEO-ADS §J11 2.0 s bar)
 - **Context:** Lighthouse mobile, applied throttling; 412 × 823; first visit
 - **Standard:** BRIEF §9 (LCP ≤ 2.5 s, target 2.0); SEO-ADS §J11 (≤ 2.0 s category/landing/product; fonts preloaded ≤ 150 KB is met, but the preloads are on the critical path)
@@ -1737,13 +1804,14 @@ The CSS finishes at 1726–1754 ms, the same time as the fonts (1663–1800 ms).
 4. Re-check LCP ≤ 2.0 s for category, landing and product.
 - **Verification:** perf → partially_confirmed (P2): Median LCP (devtools, 3 runs each) is under 2.5 s everywhere: home 2134 (2128–2326), product 2235 (2205–2295), /ponuda 2105, category 2116, landing 2109, Golf 7 2090. The claim of 2.5 s or more on home, product and /ponuda did not reproduce. Every template misses the BRIEF 2.0 s target and the J11 2.0 s bar for categor… [[audit/verify/perf-lh/perf-lh-02-perf.txt](audit/verify/perf-lh/perf-lh-02-perf.txt), [audit/verify/perf-lh/perf-lh-02-fonts-ab.json](audit/verify/perf-lh/perf-lh-02-fonts-ab.json)] — perfskeptic → partially_confirmed (P2): This was analysis only; I ran no Lighthouse. I split each existing mobile devtools run (finder's kept runs, step-19 runs, verifier jsonl) into network time (CSS end) and main-thread time (CSS end to LCP). 1. The ≥ 2.5 s numbers come from CPU contention, not from the fonts. - Home, finder's runs (bench 3083–3749): LCP 2… [[audit/verify/perf-lh/perf-lh-02-perfskeptic.txt](audit/verify/perf-lh/perf-lh-02-perfskeptic.txt), [audit/verify/perf-lh/perf-lh-02-perfskeptic.json](audit/verify/perf-lh/perf-lh-02-perfskeptic.json)]
 - **Also reported as:** perf-bundle-08 (Font preloads do not match the first viewport: condensed 600 preloaded everywhere, Archivo Expanded 600 (H1 of category and ads landing) not preloaded @ /delovi/kocioni-diskovi, /ponuda/kocione-plocice-golf, / (and every page for the condensed preload))
+- **Re-verification (step 22):** Fonts: only Archivo Expanded 700 and Public Sans are preloaded (shell-perf, lib/fonts.ts); /ponuda no longer preloads card images (seo-content-email); the ProductGrid media-scoped preload was tried and reverted (catalog-product-ui). Re-measured on :3100, Lighthouse mobile, applied throttling: LCP / 2308 ms (3 runs), /deo/kocioni-disk-prednji-276-24-mm-demo-0004 2127 ms (5 runs), /ponuda/kocione-plocice-golf 2018 ms (3 runs) — all under 2.5 s (audit: 2.5 s, 2.5 s and 2.74 s). docs/qa/fix/close/perf01-lighthouse-devtools.txt, perf01-lighthouse-product-5runs.txt, perf01-lighthouse-other.txt.
 - _Reviewer key: perf-lh-02_
 
 #### PERF-04
 
 **Shell first-load JS is 330–355 KB gzip (24–25 scripts) on every storefront template, about 2× the SEO-ADS §J11 JS budgets**
 
-- **Severity:** P2 · **Area:** 5. Performance — Performance / bundle · **Status:** OPEN
+- **Severity:** P2 · **Area:** 5. Performance — Performance / bundle · **Status:** FIXED
 - **Route:** All storefront templates (e.g. /delovi/kocioni-diskovi 352.7 KB, /deo/… 355 KB, / 347 KB, /kontakt 330 KB, /upit 451 KB)
 - **Context:** Lighthouse network-requests / resource-summary, mobile applied throttling, first visit
 - **Standard:** SEO-ADS §J11 (JS first load budgets); BRIEF §9 (TBT)
@@ -1769,13 +1837,14 @@ Home is 347 KB and /upit is 451 KB. The known figure of 303 KB counted first-loa
 4. Audit the 23 KB zustand chunk (0sgvhbpe5nb6s) and the chunks idle-warmed before `load` (VehiclePickerLazy, overlays).
 5. Add a JS-bytes gate to tests/lighthouse/run.mjs.
 - **Verification:** perf → confirmed (P2): Script transfer (gzip) is 25 scripts on every template: home 351 KB, category 352.6, landing 352.6, product 355.3, Golf 7 346.4, /ponuda 366, /upit 450.5. 24 of 25 finish before `load`. React DOM 0qy3sss5e6eww is 71.6 KB (23.9–25.7 KB unused); the GSAP chunk is 48.5 KB. This is about twice the SEO-ADS §J11 first-load b… [[audit/verify/perf-lh/perf-lh-04-perf.txt](audit/verify/perf-lh/perf-lh-04-perf.txt), [audit/verify/perf-lh/lh-summary.txt](audit/verify/perf-lh/lh-summary.txt)]
+- **Re-verification (step 22):** scripts/qa/fix/cart-mechanic-overlays-perf-route.mjs → 'PERF-04 JS chunks by load + 10 s idle: 27' then 'new JS chunks after hovering the picker trigger: 3'. (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: perf-lh-04_
 
 #### PERF-05
 
 **The site-wide text reveal costs about 230–400 ms of rAF work plus 300 ms of start-up per load at 4× CPU: per-word GSAP tweens animate filter blur with will-change on every word**
 
-- **Severity:** P2 · **Area:** 5. Performance — Performance / motion runtime (text reveal) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 5. Performance — Performance / motion runtime (text reveal) · **Status:** FIXED
 - **Route:** All storefront templates; measured on /delovi/kocioni-diskovi, /deo/kocioni-disk-prednji-276-24-mm-demo-0004, /kontakt
 - **Context:** Playwright Chromium, 412 × 823, 4× CPU via CDP, devtools.timeline trace from navigation to load + 5 s; consent pre-answered
 - **Standard:** BRIEF §9 (TBT ≤ 200 ms); gsap-performance (prefer transform/opacity, avoid mass filter tweens, will-change only while animating); .claude/rules/architecture.md Text Reveal (the no-second-animation rule still holds)
@@ -1796,13 +1865,14 @@ Lighthouse bootup-time attributes 1.2–2.45 s to the GSAP chunk at 4×. The att
 3. Start the IntersectionObserver in requestIdleCallback after hydration.
 4. Precompute eligibility on the server (e.g. a data attribute from RevealText-like helpers) so the runtime query does not evaluate the nested :has() selector across the document.
 - **Verification:** perf → partially_confirmed (P2): A/B trace at 4× CPU, 412 px, 2 rounds each, normal vs prefers-reduced-motion (the reveal marks elements done without tweens). Category: long-task time over 50 ms 659/1582 ms vs 297/247; style 246/326 vs 41/34 ms; layout 338/509 vs 168/150 ms; rAF 238/222 vs 127/182 ms. The TextRevealGlobal chunk 25dplrt_qw3he.js task o… [[audit/verify/perf-lh/perf-lh-06-perf.txt](audit/verify/perf-lh/perf-lh-06-perf.txt), [audit/verify/perf-lh/perf-lh-06-trace-motion.json](audit/verify/perf-lh/perf-lh-06-trace-motion.json)]
+- **Re-verification (step 22):** verify-consent-reveal.json reveal: wordAnimation 'tr-word-lite' at 390 px and 'tr-word' at 1440 px (CSS animation in flight), htmlClasses ['tr-js'] after load (tr-hide released), stuck [] / pending 0 / words 0 on /, /delovi/kocioni-diskovi (390, 1440, reduced motion), no JS; verify-styleguide.json reveal {stuck [], pending 0, words 0}; npx vitest run tests/unit/lib/textReveal.test.ts tests/unit/components/RevealText.test.tsx tests/unit/analytics → 4 files, 51 tests passed. (docs/qa/fix/shell-perf.json; cross-p1 marked only the .claude/** doc update WONTFIX (agents may not edit it; owner item in HUMAN-TODO); the runtime fix is shell-perf's)
 - _Reviewer key: perf-lh-06_
 
 #### PERF-06
 
 **On slow phones the text-reveal failsafe fires before hydration: copy stays hidden about 3 s after first paint, then already-visible lines are hidden again and re-animated**
 
-- **Severity:** P2 · **Area:** 5. Performance — Performance / text reveal robustness · **Status:** OPEN
+- **Severity:** P2 · **Area:** 5. Performance — Performance / text reveal robustness · **Status:** FIXED
 - **Route:** /delovi/kocioni-diskovi · /deo/kocioni-disk-prednji-276-24-mm-demo-0004 · /delovi/kocioni-diskovi/volkswagen/golf (home also hits the failsafe)
 - **Context:** Playwright Chromium 412 × 823, 4× CPU + Lighthouse slow-4G (562.5 ms RTT, 1.47 Mbps) via CDP, consent pre-answered
 - **Standard:** DESIGN-SYSTEM §8.6 / .claude/rules/architecture.md (Text Reveal behaviour, failsafe); ARCHITECTURE risk R5 ('text reveal hides content'); BRIEF §9 visual quality
@@ -1827,13 +1897,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 2. Either arm the failsafe relative to the `load`/hydration time, or hide at boot only candidates below the first viewport, so above-the-fold copy never waits for hydration.
 3. Make hydration cheaper (perf-lh-01), which also shortens the hidden window.
 - **Verification:** perf → confirmed (P1): At 412 px, 4× CPU and slow 4G, 2 rounds on each of 4 paths: FCP 1996–2148 ms, tr-failsafe at 5237–5317 ms, TextRevealGlobal's first state at 5568–5666 ms. After the failsafe, 6 elements are split again on category and 2 on product and landing (home 0). Snapshot at 3.99 s, 1.9 s after FCP: 8 copy elements in the first v… [[audit/verify/perf-lh/perf-lh-07-perf.txt](audit/verify/perf-lh/perf-lh-07-perf.txt), [audit/verify/perf-lh/perf-lh-07-category-412-before-failsafe.webp](audit/verify/perf-lh/perf-lh-07-category-412-before-failsafe.webp)] — perfskeptic → partially_confirmed (P2): The re-hide is a real logic bug, and its scope is wider than reported. TextRevealGlobal.tsx:75 only calls clearTimeout, and neither track() nor reveal() checks html.tr-failsafe. Once the failsafe has fired, the CSS gate stays off for the rest of the session, yet every candidate is still tracked and split from opacity 0… [[audit/verify/perf-lh/perf-lh-07-perfskeptic.json](audit/verify/perf-lh/perf-lh-07-perfskeptic.json), [audit/verify/perf-lh/perf-lh-07-perfskeptic.txt](audit/verify/perf-lh/perf-lh-07-perfskeptic.txt)]
+- **Re-verification (step 22):** shell-perf-verify.mjs reveal, failsafe case (tr-failsafe added right after tr-js via addInitScript) → {failsafeClass true, markedAfterFailsafe 0, stuck [], pending 0, words 0}. (docs/qa/fix/shell-perf.json)
 - _Reviewer key: perf-lh-07_
 
 #### PERF-07
 
 **The Lighthouse gate tests/lighthouse/run.mjs does not enforce the BRIEF budgets, and four bugs lose data**
 
-- **Severity:** P2 · **Area:** 5. Performance — Tooling / performance gate · **Status:** OPEN
+- **Severity:** P2 · **Area:** 5. Performance — Tooling / performance gate · **Status:** FIXED
 - **Route:** tests/lighthouse/run.mjs (all templates)
 - **Context:** Runner used as documented in WEB-QA §2 and TESTING §M
 - **Standard:** BRIEF §9; docs/TESTING.md §M; Definition of Done (reliable quality gates)
@@ -1855,13 +1926,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - Treat only known value flags (--base, --runs, --throttling) as consuming the next argument.
 - Record environment.benchmarkIndex and reject runs below a threshold.
 - **Verification:** perf → confirmed (P2): Static checks, all reproduced: - tests/lighthouse/run.mjs:35 sets tbt 300 and a flat performance 0.85, with no a11y, SEO or JS-bytes gates, although TESTING.md says the runner checks §J11. - The path filter on line 29 drops a path that follows --desktop: simulating the args '--desktop / /delovi/kocioni-diskovi' gives o… [[audit/verify/perf-lh/perf-lh-10-perf.txt](audit/verify/perf-lh/perf-lh-10-perf.txt)]
+- **Re-verification (step 22):** node --check tests/lighthouse/run.mjs -> OK; one dev smoke: MSYS_NO_PATHCONV=1 node tests/lighthouse/run.mjs --base http://localhost:3001 --runs 1 --desktop /kontakt --min-benchmark 0 -> path after --desktop measured, 'first-load JS 1092 KB · benchmarkIndex 1856', 'LCP element: div.fixed > form.mx-auto > div.flex > p#_r_1_ <p …>' (no longer empty), 'BUDGET MISSED: SEO 92 < 95' (dev-server numbers; the Performance phase runs the real gate on :3100). (docs/qa/fix/routing-errors-gates.json)
 - _Reviewer key: perf-lh-10_
 
 #### PERF-08
 
 **`import { z } from "zod"` ships all of zod 4 (40+ locales, JSON Schema): +101 KB gzip / 394 KB raw on checkout, VIN inquiry and mechanic registration**
 
-- **Severity:** P2 (reported P1, adjusted by verification) · **Area:** 5. Performance — JS bundle / forms · **Status:** OPEN
+- **Severity:** P2 (reported P1, adjusted by verification) · **Area:** 5. Performance — JS bundle / forms · **Status:** FIXED
 - **Route:** /porudzbina, /upit, /za-majstore/registracija
 - **Context:** Production build on :3100, any viewport/browser, anonymous, first load before interaction
 - **Standard:** BRIEF §9 Performance (mobile TBT ≤ 200 ms, 'world-class' bar); BRIEF §5 core flows (order, VIN inquiry); ARCHITECTURE §0.3.14 (measure chunk sizes)
@@ -1884,13 +1956,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Suggested fix:** In lib/validation/checkout.ts, lib/validation/inquiry.ts and lib/validation/mechanicRegistration.ts replace `import { z } from "zod"` with `import * as z from "zod"` (esbuild: 91 → 24 KB gz), or port the three client schemas to `zod/mini` (5.6 KB gz) and keep classic zod for server/tests. Verify after the rebuild that Turbopack drops the locales (`grep -c Nieprawid` on the new chunk = 0; scripts/qa/audit/perf-bundle-signatures.mjs). Optionally load zodResolver and the schema on first focus of the form. Add a first-load size check per route to the chunk-size script (ARCHITECTURE §0.3 item 14).
 - **Verification:** reproduce → confirmed (P2): The defect is real and matches the report. I am lowering severity to P2. One Turbopack module (#81307) holds zod 4.6.5 classic with every locale (Nieprawid x13, 无效 x13, Неверн x13, also Ungültig, Geçersiz and Érvénytelen), plus toJSONSchema x5, fromJSONSchema x2, react-hook-form and zodResolver. The file is .next/stati… [[audit/verify/perf-bundle/perf-bundle-01-reproduce-esbuild.txt](audit/verify/perf-bundle/perf-bundle-01-reproduce-esbuild.txt) (scripts/qa/audit/verify-perf-bundle-01-esbuild.mjs): real schemas as-is 451.0 KiB raw / 93.9 KiB gz with Nieprawid x14…, [audit/verify/perf-bundle/perf-bundle-01-reproduce-browser.txt](audit/verify/perf-bundle/perf-bundle-01-reproduce-browser.txt) and .json (scripts/qa/audit/verify-perf-bundle-01-browser.mjs): wire JS at 390 px, 3 runs: korpa 343.1, prijava 329.7, …] — skeptic → confirmed (P2): The main claim holds. /porudzbina, /upit and /za-majstore/registracija each reference chunk 1uyyf-z7kpx1w.js. It is the only chunk in .next/static that contains zod locales, and it appears only in those three client-reference manifests. It holds all of zod classic (Nieprawid x13, 无效 x13, Неверн x13, toJSONSchema x5, fr… [[audit/verify/perf-bundle/perf-bundle-01-skeptic.txt](audit/verify/perf-bundle/perf-bundle-01-skeptic.txt), [audit/verify/perf-bundle/perf-bundle-01-skeptic-esbuild.txt](audit/verify/perf-bundle/perf-bundle-01-skeptic-esbuild.txt)]
 - **Also reported as:** perf-lh-08 (The inquiry and mechanic-registration forms ship full zod 4 with every locale: a 102 KB gzip chunk, 85 % unused, whose eval probe is blocked by the CSP @ /upit · /za-majstore/registracija (lib/validation/checkout.ts suggests checkout too))
+- **Re-verification (step 22):** npx esbuild lib/validation/checkout.ts --bundle --minify --format=esm → "checkout 92243 bytes, gz 28020, polish-locale=0" vs HEAD version "old checkout 460439 gz 95655 polish=1" (inquiry 27288 gz, mechanicRegistration 27201 gz); production: scripts/qa/audit/perf-bundle-signatures.mjs in the Performance phase (docs/qa/fix/forms-auth.json)
 - _Reviewer key: perf-bundle-01_
 
 #### PERF-09
 
 **Root Providers mounts radix Tooltip.Provider, so Tooltip + Popper/floating-ui (13.2 KB gzip) load on every storefront page that never shows a tooltip**
 
-- **Severity:** P2 · **Area:** 5. Performance — JS bundle / shell · **Status:** OPEN
+- **Severity:** P2 · **Area:** 5. Performance — JS bundle / shell · **Status:** FIXED
 - **Route:** All storefront templates: /, /delovi, /delovi/kocioni-diskovi, /deo/*, /pretraga, /vozila/*, /ponuda/*, /za-majstore, /upit, /korpa, /porudzbina, /prijava
 - **Context:** Production build :3100, all viewports, first load
 - **Standard:** BRIEF §9 Performance (mobile TBT/LCP budgets); D106 (less first-load JS and hydration work)
@@ -1905,13 +1978,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/perf-bundle/home-modules.txt](audit/perf-bundle/home-modules.txt) · [audit/perf-bundle/shell-groups.txt](audit/perf-bundle/shell-groups.txt) · [audit/perf-bundle/entries.txt](audit/perf-bundle/entries.txt) · [audit/perf-bundle/bundle.md](audit/perf-bundle/bundle.md)
 - **Suggested fix:** Remove TooltipPrimitive.Provider from components/providers/Providers.tsx. Wrap the admin shell (components/admin/shell/*) and the styleguide gallery in the Provider instead, or let components/ui/Tooltip.tsx render its own `TooltipPrimitive.Provider` around each Root (Radix supports nested providers).
 - **Verification:** reproduce → confirmed (P2): Reproduced independently on build 9b4K278NWK6BGwhVv5UCP (:3100). I parsed the served chunks myself instead of using the reviewer's script. Import chain: 25dplrt_qw3he.js #66120 Providers → e.i(85786), the Tooltip module (8.4 KB raw) → e.i(53660), which is Popper plus inlined floating-ui (chunk 14y-81z8a-w-u.js, 26.3 KB… [[audit/verify/perf-bundle/perf-bundle-02-reproduce.txt](audit/verify/perf-bundle/perf-bundle-02-reproduce.txt), [audit/verify/perf-bundle/perf-bundle-02-reproduce-static.txt](audit/verify/perf-bundle/perf-bundle-02-reproduce-static.txt)]
+- **Re-verification (step 22):** node scripts/qa/fix/shell-perf-styleguide.mjs → verify-styleguide.json {tooltipShown true, errors []} (hover on 'Šta znači Original VAG?' shows role=tooltip). (docs/qa/fix/shell-perf.json)
 - _Reviewer key: perf-bundle-02_
 
 #### PERF-10
 
 **ScrollTrigger + ScrollToPlugin + CustomEase registered for every page: ≈ 22 KB gzip used only by the home hero**
 
-- **Severity:** P2 · **Area:** 5. Performance — JS bundle / GSAP · **Status:** OPEN
+- **Severity:** P2 · **Area:** 5. Performance — JS bundle / GSAP · **Status:** FIXED
 - **Route:** All templates except / (and / itself before the hero needs them)
 - **Context:** Production build :3100, all viewports, first load
 - **Standard:** BRIEF §9 Performance; ARCHITECTURE §G5; gsap-performance skill (load only what animates)
@@ -1927,13 +2001,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Suggested fix:** Split lib/gsap/client.ts: keep gsap + useGSAP + the sk.* eases registered with `gsap.registerEase(name, cubicBezier(x1,y1,x2,y2))` (a 20-line bezier solver from constants/motion EASE_CURVES) instead of CustomEase; move ScrollTrigger + ScrollToPlugin registration into lib/gsap/scroll.ts imported only by HeroStage; make ScrollTriggerRefresher / requestScrollTriggerRefresh no-ops until lib/gsap/scroll.ts has loaded. Update ARCHITECTURE §G5 and the architecture rule.
 - **Verification:** reproduce → confirmed (P2): lib/gsap/client.ts registers ScrollTrigger, ScrollToPlugin and CustomEase at module scope (lines 11–13, 22, 33). The served merged module #65747 (1tr6a7zmh41cy.js, 121.4 KB raw / 47.7 KB gzip) is in the first load of all 12 templates and is requested on every route, width and engine I tested. I measured with esbuild 0.… [[audit/verify/perf-bundle/perf-bundle-03-reproduce.txt](audit/verify/perf-bundle/perf-bundle-03-reproduce.txt), [audit/verify/perf-bundle/perf-bundle-03-reproduce-esbuild.txt](audit/verify/perf-bundle/perf-bundle-03-reproduce-esbuild.txt)]
 - **Also reported as:** perf-lh-05 (GSAP ScrollTrigger and ScrollToPlugin are registered globally, although only the home hero uses them; the GSAP chunk is 56–69 % unused on other routes @ Every route except / (e.g. /delovi/kocioni-diskovi, /deo/…, /upit, /kontakt))
+- **Re-verification (step 22):** npx tsc --noEmit → 0 errors; home '/' reveal + hero run without console errors (verify-consent-reveal.json reveal[0].errors []); ARCHITECTURE §G5 and the GSAP file list updated; D236. (docs/qa/fix/shell-perf.json)
 - _Reviewer key: perf-bundle-03_
 
 #### PERF-11
 
 **Overlay code is eager in the shell: Sheet/Dialog stack, Toaster, consent banner (also after consent) and header sheets ≈ 24–30 KB gzip that only runs on intent**
 
-- **Severity:** P2 · **Area:** 5. Performance — JS bundle / shell · **Status:** OPEN
+- **Severity:** P2 · **Area:** 5. Performance — JS bundle / shell · **Status:** FIXED
 - **Route:** All storefront templates (landing via its own layout)
 - **Context:** Production build :3100, 390 and 1440, consent cookie already set (Odbij sve), first load before interaction
 - **Standard:** BRIEF §9 Performance (TBT ≤ 200 ms mobile); D106, D120 (lazy overlays)
@@ -1955,13 +2030,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/perf-bundle/shell-groups.txt](audit/perf-bundle/shell-groups.txt) · [audit/perf-bundle/home-modules.txt](audit/perf-bundle/home-modules.txt) · [audit/perf-bundle/runtime.txt](audit/perf-bundle/runtime.txt)
 - **Suggested fix:** Apply the D120 pattern: (1) components/shell/MobileNav.tsx and HeaderSearch.tsx render only the trigger and `import()` the Sheet/Dialog body on pointerenter/focus/click; (2) components/ui/Toast.tsx: `toast()` queues and lazy-imports the Toaster viewport on first call (remove it from Providers); (3) components/consent/ConsentRoot.tsx renders a tiny client stub when a consent record exists and lazy-loads ConsentBanner only when `openConsentSettings()` fires; keep the SSR banner path for first visits (D185). Re-measure with scripts/qa/audit/perf-bundle-html.mjs.
 - **Verification:** reproduce → partially_confirmed (P2): Confirmed: the first load of every storefront template carries the radix Dialog stack (Dialog, FocusScope, FocusGuards, RemoveScroll 10.6 KB raw, hideOthers, ui/Sheet, ui/Dialog, useOverlayMotion), DismissableLayer/Presence/Collection, the radix Toast plus Toaster (#80809, 15.3 KB raw / 5.5 KB gzip), and ConsentBanner … [[audit/verify/perf-bundle/perf-bundle-04-reproduce.txt](audit/verify/perf-bundle/perf-bundle-04-reproduce.txt), [audit/verify/perf-bundle/perf-bundle-04-reproduce-sets.txt](audit/verify/perf-bundle/perf-bundle-04-reproduce-sets.txt)]
+- **Re-verification (step 22):** verify-styleguide.json {toastViewportBefore 0, toastShown true}; verify-consent-reveal.json consent.returning {bannerInDomBeforeReopen 0, chunksOnReopen 2, focus 'Sačuvaj izbor', switches 3}. (docs/qa/fix/shell-perf.json)
 - _Reviewer key: perf-bundle-04_
 
 #### PERF-12
 
 **Phosphor icons used in client components ship all six weights (23 icons, 56.5 KB raw on home) although D30 uses only the regular weight**
 
-- **Severity:** P2 · **Area:** 5. Performance — JS bundle / icons · **Status:** OPEN
+- **Severity:** P2 · **Area:** 5. Performance — JS bundle / icons · **Status:** FIXED
 - **Route:** All storefront templates (header, ShopChrome, MobileNav, ErrorState, Toast, hero)
 - **Context:** Production build :3100, first load
 - **Standard:** D30 (regular weight only); BRIEF §9 Performance
@@ -1975,13 +2051,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/perf-bundle/home-modules.txt](audit/perf-bundle/home-modules.txt) · [audit/perf-bundle/landing-modules.txt](audit/perf-bundle/landing-modules.txt) · [audit/perf-bundle/dupes.txt](audit/perf-bundle/dupes.txt)
 - **Suggested fix:** Generate a local single-weight icon set (script under scripts/brand/ emitting components/icons/<Name>.tsx with only the regular path, same props API) and use it in client components; or pass `/dist/ssr` icons rendered by server components as ReactNode props into client islands (ShopChrome, MobileNav, CartButtonLive, ErrorState, Toast). Keep optimizePackageImports.
 - **Verification:** reproduce → confirmed (P2): The served PhoneIcon in 0sgvhbpe5nb6s.js carries a weight Map with bold, duotone, fill, light, regular and thin. Phosphor's ssr and csr builds share dist/defs/<Icon>.es.js with all six weights, so importing from /dist/ssr does not help inside client components; 98 client components import Phosphor. I measured by rewrit… [[audit/verify/perf-bundle/perf-bundle-05-reproduce.txt](audit/verify/perf-bundle/perf-bundle-05-reproduce.txt), [audit/verify/perf-bundle/perf-bundle-02-reproduce-static.txt](audit/verify/perf-bundle/perf-bundle-02-reproduce-static.txt)]
+- **Re-verification (step 22):** node scripts/brand/build-phosphor.mjs -> 'lib/icons/phosphor: 96 icons'; --check -> 'lib/icons/phosphor is up to date'. (docs/qa/fix/cross-p1.json)
 - _Reviewer key: perf-bundle-05_
 
 #### PERF-13
 
 **Root app/not-found.tsx renders the full SiteShell: +32 KB gzip of shop-header JS on the ads landing and a second serialized header/footer/404 in every page's RSC payload**
 
-- **Severity:** P2 · **Area:** 5. Performance — JS bundle / RSC payload · **Status:** OPEN
+- **Severity:** P2 · **Area:** 5. Performance — JS bundle / RSC payload · **Status:** FIXED
 - **Route:** /ponuda/kocione-plocice-golf (all /ponuda/*); RSC duplication on every route
 - **Context:** Production build :3100, 390 (mobile ad traffic) and all widths, first load
 - **Standard:** BRIEF §9 Performance (catalog/landing ≥ 90, mobile); BRIEF §5 SEO/Ads (landings for mobile ad traffic)
@@ -2003,13 +2080,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/perf-bundle/entries.txt](audit/perf-bundle/entries.txt) · [audit/perf-bundle/landing-modules.txt](audit/perf-bundle/landing-modules.txt) · [audit/perf-bundle/dupes.txt](audit/perf-bundle/dupes.txt) · [audit/perf-bundle/rsc-count.txt](audit/perf-bundle/rsc-count.txt) · [audit/perf-bundle/rsc.txt](audit/perf-bundle/rsc.txt) · [audit/perf-bundle/templates.txt](audit/perf-bundle/templates.txt)
 - **Suggested fix:** Make app/not-found.tsx a lightweight server component without SiteShell/VehiclePickerLazy (plain header link + NotFoundContent links, no client islands), and route unknown URLs to the rich shop 404 with a catch-all `app/(shop)/[...nepostojece]/page.tsx` that calls notFound() (uses the existing app/(shop)/not-found.tsx inside the shop layout). Add a minimal app/(landing)/not-found.tsx. Re-run scripts/qa/audit/perf-bundle-entries.mjs and -rsc-count.mjs.
 - **Verification:** reproduce → confirmed (P2): Reproduced on the :3100 build, and the finding understates the JS cost. In .next/server/app/(landing)/ponuda/[slug]/page_client-reference-manifest.js, four chunks appear only under [project]/app/not-found: 1axg9-vmwkb-w.js, 1t0q0ok8maumv.js (Radix Dialog, 8.0 KB gz; its module #64053 is in no other landing chunk), 404k… [[audit/verify/perf-bundle/perf-bundle-06-reproduce.txt](audit/verify/perf-bundle/perf-bundle-06-reproduce.txt) (node scripts/qa/audit/verify-perf-bundle-chunks.mjs: landing 'chunks only in app/not-found: 1axg9-vmwkb-w.js(0.2) 1t0q…, [audit/verify/perf-bundle/perf-bundle-06-rsc-count.txt](audit/verify/perf-bundle/perf-bundle-06-rsc-count.txt) (node scripts/qa/audit/verify-perf-bundle-rsc.mjs: landing "site-header" rsc 2 / html 0; shop pages rsc 2 / html 1; 'St…]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/routing-errors-gates-rsc.mjs (docs/qa/fix/routing-errors-gates/perf13-rsc-count.txt): '"site-header": rsc 1 / html 1' on home, category and /korpa (audit: rsc 2 / html 1); landing '"site-header": rsc 0', 'SearchBox: rsc 0', 'MobileNav: rsc 0' (audit: header serialized 2x on the landing). curl /ovo-ne-postoji: 102191 -> 64630 bytes, still 404 with server-rendered h1. Chunk-level re-measure (verify-perf-bundle-chunks.mjs) needs a production build, which this phase must not run. (docs/qa/fix/routing-errors-gates.json)
 - _Reviewer key: perf-bundle-06_
 
 #### PERF-14
 
 **3D start freezes the main thread for 0.3–0.9 s at the visitor's first touch, scroll or hover (the PMREM shader compiles synchronously, the first frame still links programs, the 3D chunk evaluates)**
 
-- **Severity:** P2 (reported P1, adjusted by verification) · **Area:** 5. Performance — 3D hero runtime: start · **Status:** OPEN
+- **Severity:** P2 (reported P1, adjusted by verification) · **Area:** 5. Performance — 3D hero runtime: start · **Status:** FIXED
 - **Route:** /
 - **Context:** Chromium 1.63 headless, ANGLE D3D11 (RTX 4060 Laptop). Desktop 1440×900 at DPR 1, CPU 1× and 4×. Mobile 390×844 at DPR 3 with touch, CPU 4× and 6×. Anonymous visitor, consent answered, first visit (fresh browser, so the GPU program cache is cold). Server: localhost:3200.
 - **Standard:** BRIEF §4 (the 3D must never block the page); 3D-CONTRACT F7.3 (compileAsync, idle slices); DESIGN-SYSTEM §1 principle 5 (3D never blocks); docs/3d/WEB-QA.md §4 (init in tasks ≤ 175 ms); INP ≤ 200 ms
@@ -2030,13 +2108,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/perf-3d/profile-start-desktop-cpu1-cold.txt](audit/perf-3d/profile-start-desktop-cpu1-cold.txt) · [audit/perf-3d/profile-start-desktop.txt](audit/perf-3d/profile-start-desktop.txt) · [audit/perf-3d/profile-start-mobile.txt](audit/perf-3d/profile-start-mobile.txt) · [audit/perf-3d/frames-desktop-cpu4-gpu.json](audit/perf-3d/frames-desktop-cpu4-gpu.json) · [audit/perf-3d/frames-mobile-cpu4-gpu.json](audit/perf-3d/frames-mobile-cpu4-gpu.json) · [audit/perf-3d/frames-mobile-cpu6-gpu.json](audit/perf-3d/frames-mobile-cpu6-gpu.json) · [audit/perf-3d/frames-mobile-cpu4-gpu-cold.txt](audit/perf-3d/frames-mobile-cpu4-gpu-cold.txt) · [audit/perf-3d/3d.md](audit/perf-3d/3d.md)
 - **Suggested fix:** components/three/canvas/loadCar.ts loadEnvironment(): stop prefiltering at runtime. Bake the PMREM output (cubeUV layout) in the 3D pipeline, export it as a half-float/RGBE PNG or KTX2, load it with mapping = CubeUVReflectionMapping and drop PMREMGenerator and HDRLoader. If that is not possible, compile the PMREM blur material through KHR_parallel_shader_compile first (compileAsync on a throwaway mesh) before calling fromEquirectangular. In HeroCanvas.tsx, include every material the first frame uses (edge and depth materials, overlay layer) in the compileAsync pass, and initTexture every texture before compileAsync. On fine-pointer devices, import and evaluate the canvas chunk in idle time before intent. Then correct the numbers in docs/3d/WEB-QA.md §4.
 - **Verification:** perf → confirmed (P2): CPU profile on a fresh browser at 1×: PMREM fromEquirectangular → getProgramParameter is a busy stretch of 390 ms (350 ms self), and the first frame after compileAsync 242 ms (148 ms getProgramParameter). A warm program cache in the same browser cuts this to 15 ms and 76 ms. At 4×, cold: PMREM 558 ms, first frame and c… [[audit/verify/perf-lh/perf-3d-01-perf.txt](audit/verify/perf-lh/perf-3d-01-perf.txt), [audit/verify/perf-lh/3d/profile-start-desktop-cpu1.txt](audit/verify/perf-lh/3d/profile-start-desktop-cpu1.txt)] — perfskeptic → partially_confirmed (P2): Analysis only: I ran no browser. I re-read the finder's and the perf verifier's JSON and profiles with an offline script, then checked the code. CONFIRMED: on a first visit (cold GPU program cache), Windows ANGLE D3D11 compiles the PMREM GGX shader synchronously. loadCar.ts:96-105 calls pmrem.fromEquirectangular(), whi… [[audit/verify/perf-3d/perf-3d-01-perfskeptic.txt](audit/verify/perf-3d/perf-3d-01-perfskeptic.txt), scripts/qa/audit/perf-3d-01-perfskeptic.mjs]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-profile.mjs --vp desktop --cpu 1 --gpu --runs 2 -> grep -c 'PMREM|_applyGGXFilter|fromEquirectangular' docs/qa/fix/hero-3d-assets/profile-start-desktop-cpu1-gpu.txt = 0 (audit profile-start-desktop-cpu1-cold.txt: 3); warm-cache worst start stretch 216 ms incl. 55 ms getProgramInfoLog from the development-only checkShaderErrors. node scripts/qa/hero-parity.mjs --base http://localhost:3001 -> 'desktop: mean abs difference 1.68 / 255' (baseline 1.84). A production profile (next start) is outside this phase. (docs/qa/fix/hero-3d-assets.json)
 - _Reviewer key: perf-3d-01_
 
 #### PERF-15
 
 **Every home visit leaks the old WebGL renderer, its canvas and the whole detached home DOM (+1107 DOM nodes per visit)**
 
-- **Severity:** P2 · **Area:** 5. Performance — 3D hero runtime: memory / disposal · **Status:** OPEN
+- **Severity:** P2 · **Area:** 5. Performance — 3D hero runtime: memory / disposal · **Status:** FIXED
 - **Route:** / ↔ /delovi (client-side navigation)
 - **Context:** Desktop 1440×900, Chromium with ANGLE D3D11, CPU 1×, anonymous visitor. Heap measured after 3 forced GCs (HeapProfiler.collectGarbage). A control run without WebGL call wrapping (--bare) gives the same result.
 - **Standard:** 3D-CONTRACT F8 (dispose on unmount); BRIEF §9 Reliability
@@ -2051,13 +2130,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/perf-3d/leak-desktop-gpu-bare.json](audit/perf-3d/leak-desktop-gpu-bare.json) · [audit/perf-3d/leak-desktop-gpu.json](audit/perf-3d/leak-desktop-gpu.json) · [audit/perf-3d/retainers.txt](audit/perf-3d/retainers.txt) · [audit/perf-3d/retainers.json](audit/perf-3d/retainers.json)
 - **Suggested fix:** components/three/canvas/HeroCanvas.tsx: capture gl in onCreated and call gl.dispose() on unmount, in addition to R3F's forceContextLoss. This releases WebGLTextures and the properties maps, so the module-level three texture's WeakMap entry stops pointing at the old WebGLTexture. Also dispose the PMREM render target explicitly, and clear scene.environment and heroStore.controller. Make sure R3F's module-level loop state does not keep the last root: upgrade R3F, or unmount through a path that clears it. Add a Playwright regression: 3 home ↔ /delovi cycles, forced GC, a WeakRef on the hero canvas must be empty and Performance.getMetrics Nodes must stay flat.
 - **Verification:** perf → confirmed (P2): verify-perf-3d-leak.mjs --gpu --cycles 3 (GL instrumentation on). DOM nodes on /delovi after a forced GC grow 1365 → 2472 → 3579 (+1107 per home visit, the same as the finder's figures). Reachable WebGL contexts grow 1 → 2 → 3 → 4 while live contexts go back to 0 off the home page. Listeners grow by about 174 and the h… [[audit/verify/perf-lh/perf-3d-02-perf.txt](audit/verify/perf-lh/perf-3d-02-perf.txt), [audit/verify/perf-lh/3d/leak-desktop-gpu.json](audit/verify/perf-lh/3d/leak-desktop-gpu.json)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-retainers.mjs --gpu -> docs/qa/fix/hero-3d-assets/retainers.txt: no retaining path through a three Source/_listeners and no HeroScene3D object left; the only remaining paths are __REACT_DEVTOOLS_GLOBAL_HOOK__.helpersByRoot (React DevTools hook injected by next dev, absent in production) and R3F's module-level loop state (latest root only). node scripts/qa/fix/hero-3d-assets-leak.mjs --gpu --cycles 3 (dev) -> DOM nodes on /delovi grow about +300 per visit (audit, production: +1107), the rest is the dev-only hook; the production re-measure (scripts/qa/audit/verify-perf-3d-leak.mjs against next start) belongs to the gates phas… (docs/qa/fix/hero-3d-assets.json)
 - _Reviewer key: perf-3d-02_
 
 #### PERF-16
 
 **High tier renders 4× MSAA at up to DPR 2: estimated GPU memory is 62 MB at DPR 1 and 114–194 MB on HiDPI screens, against a 60 MB budget**
 
-- **Severity:** P2 · **Area:** 5. Performance — 3D hero runtime: GPU memory · **Status:** OPEN
+- **Severity:** P2 · **Area:** 5. Performance — 3D hero runtime: GPU memory · **Status:** FIXED
 - **Route:** /
 - **Context:** Desktop 1440×900, high tier, DPR 1 and DPR 2 (HiDPI laptop), ANGLE D3D11, CPU 4×. GPU memory is estimated by instrumenting bufferData, texStorage2D, texImage2D and renderbufferStorage, plus the drawing buffer (RGBA8 + depth per sample × 4 samples + resolve).
 - **Standard:** 3D-CONTRACT F5 (GPU memory ≤ 60 MB)
@@ -2069,13 +2149,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/perf-3d/frames-desktop-dpr2-cpu4-gpu.json](audit/perf-3d/frames-desktop-dpr2-cpu4-gpu.json) · [audit/perf-3d/frames-desktop-cpu4-gpu.json](audit/perf-3d/frames-desktop-cpu4-gpu.json) · [audit/perf-3d/3d.md](audit/perf-3d/3d.md)
 - **Suggested fix:** components/three/canvas/HeroCanvas.tsx: use MSAA only when the effective DPR is below 1.5 (antialias: tier === 'high' && window.devicePixelRatio < 1.5), or cap the high tier at DPR 1.5 when MSAA is on. At DPR 2 without MSAA the drawing buffer is about 38 MB, so the total is about 59 MB, and integrated GPUs (the typical high-tier laptop) get the fill-rate back. Also state in the contract whether the drawing buffer counts toward the budget.
 - **Verification:** perf → confirmed (P2): GPU estimate at DPR 1 (1440×836) is 62.1 MB in 3 of 3 frames runs plus the leak run. At DPR 2, after the adaptive step to 1.5 (canvas 2160×1254), it is 113.7 MB. At 2880×1672 before that step, the drawing buffer alone works out to about 173 MB (4× MSAA color + depth + resolve). Cause confirmed in code: HeroCanvas.tsx s… [[audit/verify/perf-lh/perf-3d-05-perf.txt](audit/verify/perf-lh/perf-3d-05-perf.txt), [audit/verify/perf-lh/3d/frames-verify-desktop-cpu4-gpu.json](audit/verify/perf-lh/3d/frames-verify-desktop-cpu4-gpu.json)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-tier.mjs -> '?3d=high dpr 1: antialias true, 1440x836' and '?3d=high dpr 2: antialias false, 2880x1672' (about 38 MB drawing buffer without MSAA instead of about 173 MB with it). Unit test 'MSAA only on the high tier below DPR 1.5 (PERF-16)' passes. (docs/qa/fix/hero-3d-assets.json)
 - _Reviewer key: perf-3d-05_
 
 #### SEO-01
 
 **Product titles drop the manufacturer before the brand suffix, so same-OEM parts from different makers get identical titles**
 
-- **Severity:** P2 · **Area:** 6. SEO — SEO metadata: product template · **Status:** OPEN
+- **Severity:** P2 · **Area:** 6. SEO — SEO metadata: product template · **Status:** FIXED
 - **Route:** /deo/[slug]. Demo pairs: /deo/kocione-plocice-prednje-sa-senzorom-demo-0009 (ATE) vs -demo-e002 (Bosch); /deo/kocioni-disk-prednji-312-25-mm-ventilirani-demo-0002 (Brembo) vs -demo-e001 (ATE); /deo/set-zupcastog-kaisa-sa-vodenom-pumpom-1-9-tdi-demo-0057 (INA) vs -demo-e007 (Gates)
 - **Context:** Any viewport, anonymous, server HTML
 - **Standard:** SEO-ADS §J1 / D193; BRIEF §5 (unique titles)
@@ -2091,13 +2172,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/seo/crawl.csv](audit/seo/crawl.csv)… · [audit/seo/product-jsonld.json](audit/seo/product-jsonld.json) … · [audit/seo/raw/meta-templates.txt](audit/seo/raw/meta-templates.txt)
 - **Suggested fix:** In lib/seo/templates.ts productTitle(), reorder the candidates to [name maker code suffix] → [name maker code] → [clamped name + maker + code] → [name code], matching D193. Add a uniqueness test over the products sitemap: no two active products may share a title.
 - **Verification:** reproduce → partially_confirmed (P2): I crawled all 349 sitemap URLs on :3100 with my own script. There are exactly 3 duplicate titles, and all 3 are the product pairs named in the finding (0009/e002 ATE vs Bosch, 0002/e001 Brembo vs ATE, 0057/e007 INA vs Gates). In each pair the JSON-LD brand, mpn and price differ. It is correct that productTitle() in lib… [[audit/verify/seo/seo-02-04-reproduce-crawl-summary.txt](audit/verify/seo/seo-02-04-reproduce-crawl-summary.txt) (duplicate titles: 3, listing the 3 pairs), [audit/verify/seo/seo-02-04-reproduce-crawl.jsonl](audit/verify/seo/seo-02-04-reproduce-crawl.jsonl)]
+- **Re-verification (step 22):** Unit test „SEO-01: same OEM number from two makers gives two titles“ passes. Crawl of all 342 sitemap URLs (scripts/qa/fix/seo-content-email-titles.mjs): duplicateTitles 0 (was 3 product pairs). Evidence: docs/qa/fix/seo-content-email/titles-crawl.json (docs/qa/fix/seo-content-email.json)
 - _Reviewer key: seo-02_
 
 #### SEO-02
 
 **Out-of-range pagination (?strana=2…500) serves indexable, self-canonical copies of page 1**
 
-- **Severity:** P2 · **Area:** 6. SEO — Indexability: pagination · **Status:** OPEN
+- **Severity:** P2 · **Area:** 6. SEO — Indexability: pagination · **Status:** FIXED
 - **Route:** Every category listing /delovi/[kategorija]?strana=N, e.g. /delovi/kocioni-diskovi?strana=2, ?strana=99, ?strana=500; /delovi/filteri?strana=2
 - **Context:** Any viewport, anonymous, server HTML. The demo categories have at most 16 products, so every page ≥ 2 is out of range.
 - **Standard:** ROUTES §B1/§B4 (pagination canonical rules); BRIEF §9 SEO (no indexable thin or duplicate pages)
@@ -2110,13 +2192,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/seo/evidence-commands.txt](audit/seo/evidence-commands.txt)… · [audit/seo/page-facts.jsonl](audit/seo/page-facts.jsonl) … · [audit/seo/raw/status-battery.txt](audit/seo/raw/status-battery.txt)
 - **Suggested fix:** In app/(shop)/delovi/[kategorija]/page.tsx (generateMetadata and the page), load pageCount and call notFound() (or permanentRedirect to the last page) when filters.page > pageCount. Pass the clamped page to listingIndexing() in lib/catalog/filters.ts so the canonical never points at a non-existent page.
 - **Verification:** reproduce → confirmed (P2): Reproduced exactly. /delovi/kocioni-diskovi?strana=2, 99 and 500 return 200 with „index, follow“, a self-referencing canonical (…?strana=N) and the same 9 product links as page 1 (identical link-set hash). For ?strana=501 and 100000 the page is clamped to MAX_PAGE, with canonical ?strana=500. /delovi/filteri?strana=2 (… [[audit/verify/seo/seo-03-reproduce.txt](audit/verify/seo/seo-03-reproduce.txt) (status, title, robots, canonical and product-set hash for 10 URLs), GET /delovi/kocioni-diskovi?strana=99 -> 200, index, follow, canonical http://localhost:3000/delovi/kocioni-diskovi?stra…]
+- **Re-verification (step 22):** curl http://localhost:3001/delovi/kocioni-diskovi?strana=2 → 404; ?strana=500 → 404; /delovi/filteri?strana=2 → 404; ?strana=1 → 200 „index, follow“. (docs/qa/fix/seo-content-email.json)
 - _Reviewer key: seo-03_
 
 #### SEO-03
 
 **Category titles come from seeded SEO fields: truncated mid-list, the „— strana n“ is lost, and boilerplate descriptions replace the J1 template**
 
-- **Severity:** P2 · **Area:** 6. SEO — SEO metadata: categories, system hubs, landings · **Status:** OPEN
+- **Severity:** P2 · **Area:** 6. SEO — SEO metadata: categories, system hubs, landings · **Status:** FIXED
 - **Route:** 18 of 48 indexable categories, e.g. /delovi/vesanje-i-upravljanje („Vešanje i upravljanje za VW, Audi, Škoda, SEAT i… | SKLOP“), /delovi/turbina, /delovi/poluosovine, /delovi/senzori („Senzori (lambda, parking, temperatura) za VW, Audi, Škoda…“, suffix dropped). Paginated: /delovi/kocioni-diskovi?strana=2. Landings with long category names lose the vehicle: /delovi/senzori/skoda, /delovi/senzori/skoda/{octavia,kodiaq,karoq,superb,fabia,rapid} all read „Senzori (lambda, parking, temperatura) za Škoda… | SKLOP“ (these are noindex today because of the guard). Descriptions: all 58 category and system URLs.
 - **Context:** Any viewport, anonymous, server HTML
 - **Standard:** SEO-ADS §J1; BRIEF §5 (unique titles and descriptions)
@@ -2131,13 +2214,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Suggested fix:** Shorten the seeded seoTitle to the J1 form, or stop seeding seoTitle/seoDescription so categoryMeta()/systemMeta() build them from counts (convex/seedData/categories.ts, convex/seed.ts). In lib/seo/metadata.ts pageTitle() and landingMeta(), clamp only the category name and always keep the vehicle and „— strana n“. Add a test that every title in the sitemaps is ≤ 60 characters, unique, and has no „…“.
 - **Verification:** reproduce → confirmed (P2): Confirmed with a full sitemap crawl. 18 of the 58 URLs in kategorije.xml have titles ending in „…“. That is 17 categories plus 1 system hub (/delovi/vesanje-i-upravljanje), not „18 of 48 categories“. /delovi/senzori also drops the „ | SKLOP“ suffix. Cause: the seeded seoTitle („{label} za VW, Audi, Škoda, SEAT i Cupra“… [[audit/verify/seo/seo-02-04-reproduce-crawl-summary.txt](audit/verify/seo/seo-02-04-reproduce-crawl-summary.txt) (titles with ellipsis: 18, listed), [audit/verify/seo/seo-04-reproduce.txt](audit/verify/seo/seo-04-reproduce.txt) (titles, robots and descriptions for 18 URLs incl. ?strana=2 and 7 Škoda sensor landings)]
 - **Also reported as:** copy-11 (Paginated category titles lose „— strana N“ and end with an ellipsis (page 2 = page 1 title) @ /delovi/[kategorija]?strana=2 (e.g. /delovi/kocioni-diskovi?strana=2); every category with ≥ 2 pages)
+- **Re-verification (step 22):** Unit test „SEO-03: the vehicle and the page number survive shortening“ (e.g. „Senzori za VW, Audi, Škoda, SEAT — strana 2“, „Senzori i prekidači za Škodu Octaviju“). Crawl of 342 sitemap URLs: titleOver60 0, titleEllipsis 0, duplicateTitles 0, duplicate descriptions 0, boilerplate category descriptions 0. /delovi/kocioni-diskovi description „… 9 artikala, 7 na stanju, od 3.890 RSD. Proizvođači: ATE, Brembo, Bosch, Febi Bilstein i još 2.“ (docs/qa/fix/seo-content-email.json)
 - _Reviewer key: seo-04_
 
 #### SEO-04
 
 **38 indexable hub pages are thin (29 under 60 words): system hubs have no intro, and single-generation model hubs duplicate their generation page**
 
-- **Severity:** P2 · **Area:** 6. SEO — Content / thin pages · **Status:** OPEN
+- **Severity:** P2 · **Area:** 6. SEO — Content / thin pages · **Status:** FIXED
 - **Route:** System hubs: /delovi/tockovi (6 words), /delovi/servis (11), /delovi/izduvni-sistem (13), /delovi/transmisija (16), /delovi/kocnice (17), /delovi/elektrika-i-svetla, /delovi/hladjenje-i-klima, /delovi/karoserija, /delovi/vesanje-i-upravljanje, /delovi/motor-i-usis. Vehicle hubs: /vozila, /vozila/cupra (13), /vozila/seat, /vozila/audi, /vozila/skoda, /vozila/volkswagen. 21 model hubs (27–83 words), including 7 with one generation: /vozila/skoda/rapid, /vozila/cupra/formentor, /vozila/cupra/leon, /vozila/skoda/karoq, /vozila/seat/ateca, /vozila/cupra/ateca, /vozila/skoda/kodiaq
 - **Context:** 390 and 1440, Chromium, anonymous. Word counts from <main> server HTML without breadcrumbs.
 - **Standard:** BRIEF §9 SEO („no indexable thin pages“); BRIEF §5 catalog „SEO intro“; ROUTES §B1
@@ -2150,13 +2234,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/seo/thin-pages.json](audit/seo/thin-pages.json) · [audit/seo/system-hub-kocnice-390.webp](audit/seo/system-hub-kocnice-390.webp) · [audit/seo/system-hub-kocnice-1440.webp](audit/seo/system-hub-kocnice-1440.webp) · [audit/seo/model-hub-skoda-rapid-390.webp](audit/seo/model-hub-skoda-rapid-390.webp) · [audit/seo/model-hub-skoda-rapid-1440.webp](audit/seo/model-hub-skoda-rapid-1440.webp)
 - **Suggested fix:** components/catalog/SystemHub.tsx: render the system intro plus counts, top products (with ItemList) and top landings. app/(shop)/vozila/[marka]/[model]/page.tsx: show product counts per generation plus top categories and landings; for single-generation models, 308 to the generation page or mark noindex and canonicalise to it (and drop it from vozila.xml). Brand hubs: add counts and top landings.
 - **Verification:** reproduce → confirmed (P2): I crawled all 5 sitemaps myself: 349 URLs, and every one is 200, index,follow and self-canonical. I counted words in <main> from the server HTML, breadcrumb excluded. The reviewer's totals match exactly: 38 pages under 150 words and 29 under 60. Breakdown: 10 system hubs (6–72 words; /delovi/tockovi 6, /delovi/kocnice … [[audit/verify/seo/seo-06-reproduce.json](audit/verify/seo/seo-06-reproduce.json) (under150Count 38, under60Count 29, byKind, singleGenerationModelHubs), [audit/verify/seo/seo-06-reproduce-system-hub-kocnice-390.webp](audit/verify/seo/seo-06-reproduce-system-hub-kocnice-390.webp)]
+- **Re-verification (step 22):** ui-checks.json: /delovi/kocioni-diskovi/volkswagen/golf -> href '/vozila/volkswagen/golf' (a multi-generation model, so the hub link is right). (docs/qa/fix/cross-p1.json)
 - _Reviewer key: seo-06_
 
 #### SEO-05
 
 **/kontakt is an orphan: it is in the sitemap but no page links to it (the footer „KONTAKT“ column has no link to it)**
 
-- **Severity:** P2 · **Area:** 6. SEO — Internal linking / local SEO · **Status:** OPEN
+- **Severity:** P2 · **Area:** 6. SEO — Internal linking / local SEO · **Status:** FIXED
 - **Route:** /kontakt; header, footer and mobile nav on every storefront page
 - **Context:** 390 and 1440, Chromium, anonymous; raw HTML crawl of 962 pages
 - **Standard:** SEO-ADS §J5; seo-technical crawl depth / orphan pages; BRIEF §5 static pages
@@ -2169,13 +2254,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/seo/footer-1440.webp](audit/seo/footer-1440.webp) · [audit/seo/footer-390.webp](audit/seo/footer-390.webp) · [audit/seo/crawl.json](audit/seo/crawl.json) (…
 - **Suggested fix:** components/shell/Footer.tsx: add { href: ROUTES.contact, label: "Kontakt" } to the Kupovina column (or make the „KONTAKT“ heading a link). Add the same link in the MobileNav.tsx „Kontakt“ block.
 - **Verification:** reproduce → confirmed (P2): I parsed the server HTML of 359 pages: all 349 sitemap URLs, plus home, cart, checkout, auth pages, search, the ads landing, the root 404 and an out-of-stock product. Pages linking to /kontakt: 0. That is stricter than the reviewer's 'inlinkCount 1 = self': the /kontakt breadcrumb's last item is a span, so even the pag… [[audit/verify/seo/seo-07-reproduce.json](audit/verify/seo/seo-07-reproduce.json) (pagesCrawled 359, pagesLinkingToKontakt [], comparison 357–358 for other static pages), [audit/verify/seo/seo-07-reproduce-footer-1440.webp](audit/verify/seo/seo-07-reproduce-footer-1440.webp)]
+- **Re-verification (step 22):** verify-overlays-reveal.json overlays {footerKontaktLinks 1, menuKontaktHref '/kontakt'}. (docs/qa/fix/shell-perf.json)
 - _Reviewer key: seo-07_
 
 #### SEO-06
 
 **Renaming a product slug creates no working redirect: the old URL returns 404, although the admin promises a redirect**
 
-- **Severity:** P2 · **Area:** 6. SEO — URL changes / redirects · **Status:** OPEN
+- **Severity:** P2 · **Area:** 6. SEO — URL changes / redirects · **Status:** FIXED
 - **Route:** /deo/[old-slug] after a slug change in /admin/proizvodi/[id]
 - **Context:** Owner/staff edits a product; any visitor or crawler then requests the old URL. Not reproduced at runtime, to avoid editing catalogue data; evidence is code plus a read-only data check.
 - **Standard:** ROUTES §B1; seo-technical URL structure (permanent redirects for moved URLs)
@@ -2187,13 +2273,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/seo/evidence-commands.txt](audit/seo/evidence-commands.txt)…
 - **Suggested fix:** Add a public query redirects.byFromPath and, in app/(shop)/deo/[slug]/page.tsx before notFound(), call permanentRedirect(toPath) (308) and increment hits. Alternatively resolve it in proxy.ts. Cover it with an e2e test that renames a test product's slug.
 - **Verification:** reproduce → confirmed (P2): I reproduced this at runtime, not just in code. Signed in as owner, I created an inactive test product through /admin/proizvodi/novi (SKU E2E-VSEO08-muo8o7sc, same convention as the e2e admin spec). The slug field shows the help text 'Promena pravi preusmerenje sa stare adrese.' I changed the slug to <old>-novi and sav… [[audit/verify/seo/seo-08-reproduce.json](audit/verify/seo/seo-08-reproduce.json) (oldUrl 404 location null; newUrl 200; helpText), [audit/verify/seo/seo-08-reproduce-redirects-table.txt](audit/verify/seo/seo-08-reproduce-redirects-table.txt) (row with hits 0)]
+- **Re-verification (step 22):** admin.json 'renamed': GET /deo/audit-disk-prednji-852021-audit-fa-852021 -> 308 location /deo/…-r22. After renaming back, `npx convex run catalog/products:redirectFor` -> original path null (no loop), …-r22 -> original. The page's second 308 seen in 'renamed back' is the 3001 Next cache: the dev deployment's revalidation webhook posts to NEXT_SITE_URL=http://localhost:3000 (another project), so 3001 is never purged. (docs/qa/fix/search-catalog-content.json)
 - _Reviewer key: seo-08_
 
 #### SEO-07
 
 **Programmatic copy defects in product meta descriptions and landing intros („Original VAG, Original VAG“, dangling „i …“, „… i X i još 1“)**
 
-- **Severity:** P2 (reported P3, adjusted by verification) · **Area:** 6. SEO — Copy templates (SERP snippets, landing intros) · **Status:** OPEN
+- **Severity:** P2 (reported P3, adjusted by verification) · **Area:** 6. SEO — Copy templates (SERP snippets, landing intros) · **Status:** FIXED
 - **Route:** 21 product descriptions with „(Original VAG, Original VAG)“, e.g. /deo/kocioni-disk-prednji-340-30-mm-gti-demo-0005. 43 with a truncated vehicle list („za VW Golf IV, VW Golf … Cena“, „VW Passat B8 i … Cena“ on /deo/kocioni-disk-prednji-276-24-mm-demo-0004, „i još… Cena“). 27 of 50 indexable landings, e.g. /delovi/kocioni-diskovi/volkswagen/golf
 - **Context:** Server HTML meta description and landing intro
 - **Standard:** BRIEF §2 copy quality; SEO-ADS §J1/§J4 (unique, non-mad-libs copy)
@@ -2212,13 +2299,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Suggested fix:** lib/seo/landingCopy.ts:68: when more > 0, join the shown items with commas and end with „i još N“ (list the item when more === 1). Sort generations by year. lib/seo/templates.ts productMeta: skip the quality label when it equals the manufacturer, and shorten the vehicle list to whole entries plus „i još N“.
 - **Verification:** reproduce → confirmed (P2): All three patterns reproduce, with one count correction (32 truncated product descriptions, not 43). 1. Product meta descriptions: - -0004: „…(Febi Bilstein, Aftermarket) za VW Golf VII, VW Passat B8 i … Cena 4.690 RSD…“ — a dangling „i …“. - -0005: „…GTI (Original VAG, Original VAG) za VW Golf VII, VW Golf V… Cena 18.… [[audit/verify/seo/seo-13-reproduce-copy.json](audit/verify/seo/seo-13-reproduce-copy.json), [audit/verify/seo/seo-13-reproduce-landing-intro-390.webp](audit/verify/seo/seo-13-reproduce-landing-intro-390.webp)]
 - **Also reported as:** copy-10 (Landing intros join manufacturers with two „i“: „Bosch (1) i Febi Bilstein (1) i još 2.“ @ 27 landings, e.g. /delovi/kocioni-diskovi/volkswagen, /delovi/kocioni-diskovi/volkswagen/golf, /delovi/kocioni-diskovi/skoda, /delovi/kocioni-diskovi/audi/a3); copy-14 („Original VAG · Original VAG“ — manufacturer and quality repeat on cards, 3D panel and meta descriptions @ /delovi/kocioni-diskovi, /pretraga?q=disk, /ponuda/kocione-plocice-golf, /vozila/volkswagen/golf/golf-7, home 3D part panel, /deo/* descriptions („(Original VAG, Original VAG)“))
+- **Re-verification (step 22):** Unit tests „SEO-07: makers end with „i još N“ once, generations in model-year order“ and „lists“ pass. Crawl: doubledMaker 0, doubleI 0, descriptionCutWord 0 on product/landing pages. (docs/qa/fix/seo-content-email.json)
 - _Reviewer key: seo-13_
 
 #### COPY-03
 
 **Copy promises phone, Viber, e-mail, seller address and a withdrawal form that are not shown anywhere when company settings are empty**
 
-- **Severity:** P2 · **Area:** 7. Copy — Content / empty-safe company data · **Status:** OPEN
+- **Severity:** P2 · **Area:** 7. Copy — Content / empty-safe company data · **Status:** FIXED
 - **Route:** /kontakt, / (contact strip), /reklamacije-i-povrat, /politika-privatnosti, /porudzbina/[token], e-mail „Porudžbina je isporučena“
 - **Context:** 1440 and 390, anonymous; current settings (company phone/Viber/e-mail/address empty — owner item, but the copy handles the absence badly)
 - **Standard:** BRIEF §5 (company data from settings; legal templates without visible gaps), DESIGN-SYSTEM §11.1 (never invent facts; errors/next step must work), HUMAN-TODO §3 (channels without data are not shown)
@@ -2234,13 +2322,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/copy/ev-kontakt-1440.webp](audit/copy/ev-kontakt-1440.webp) · [audit/copy/ev-home-contact-strip-1440.webp](audit/copy/ev-home-contact-strip-1440.webp) · [audit/copy/ev-02-contact-promises.txt](audit/copy/ev-02-contact-promises.txt) · [audit/copy/emails-text.txt](audit/copy/emails-text.txt)
 - **Suggested fix:** convex/seedData/content.ts:60 (kontakt), :97, :165 and the privacy „Vaša prava“ paragraph: move channel-specific sentences into conditional placeholders (e.g. {{kontakt.najbrze}} rendered from settings, empty → omitted) and change fallbacks to „putem upita na sajtu“; components/home/HomeSections.tsx:279 and app/(shop)/porudzbina/[token]/page.tsx:32 build the sentence from the channels present (ContactActions); lib/email/templates/order.ts:269 say „Obrazac za odustanak…“ only when the form exists (HUMAN-TODO §3). Consider a go-live check that blocks publishing legal pages while firma.* is empty.
 - **Verification:** reproduce → confirmed (P2): I checked every route at 1440 and 390 as an anonymous visitor in Chromium, using the current settings (company phone, Viber, e-mail and address all empty). None of /kontakt, /, /reklamacije-i-povrat or /politika-privatnosti has a tel:, mailto:, viber: or wa.me link, and none shows a phone number or e-mail address. The … [[audit/verify/copy/copy-02-reproduce.txt](audit/verify/copy/copy-02-reproduce.txt), [audit/verify/copy/copy-02-reproduce-source.txt](audit/verify/copy/copy-02-reproduce-source.txt)]
+- **Re-verification (step 22):** tsc/eslint clean; contactLinkList already drops empty channels. (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: copy-02_
 
 #### COPY-04
 
 **Invented dispatch promise „porudžbine potvrđene do 14 časova šaljemo istog dana“ is hard-coded in seeded content**
 
-- **Severity:** P2 · **Area:** 7. Copy — Content / invented company facts · **Status:** OPEN
+- **Severity:** P2 · **Area:** 7. Copy — Content / invented company facts · **Status:** FIXED
 - **Route:** /dostava-i-placanje, / (FAQ „Koliko košta dostava i kada stiže?“)
 - **Context:** All viewports, anonymous
 - **Standard:** CLAUDE.md Copy („no invented company facts — read settings“), DESIGN-SYSTEM §11.1, HUMAN-TODO §8
@@ -2254,13 +2343,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/copy/ev-dostava-14h-1440.webp](audit/copy/ev-dostava-14h-1440.webp) · [audit/copy/ev-home-faq-dostava-14h-1440.webp](audit/copy/ev-home-faq-dostava-14h-1440.webp) · [audit/copy/ev-03-14h.txt](audit/copy/ev-03-14h.txt)
 - **Suggested fix:** convex/seedData/content.ts:74 and :258 — replace „do 14 časova“ with a settings placeholder that removes the whole sentence when empty; re-seed/update the live contentPages and FAQ rows.
 - **Verification:** reproduce → confirmed (P2): Reproduced at 1440 and 390: - /dostava-i-placanje has one paragraph: „Porudžbine potvrđene radnim danom do 14 časova šaljemo istog dana…“. - The home FAQ „Koliko košta dostava i kada stiže?“ (expanded) says „…šaljemo istog radnog dana za porudžbine potvrđene do 14 časova“. - Both are literal text in convex/seedData/con… [[audit/verify/copy/copy-04-reproduce.txt](audit/verify/copy/copy-04-reproduce.txt), [audit/verify/copy/copy-04-reproduce-source.txt](audit/verify/copy/copy-04-reproduce-source.txt)]
+- **Re-verification (step 22):** npx convex dev --once -> 'Convex functions ready!'; cutoffLabel('') returns '' and lib/content/placeholders.ts drops the sentence; tests/unit/content pass (vitest.txt). (docs/qa/fix/cross-p1.json)
 - _Reviewer key: copy-04_
 
 #### COPY-05
 
 **Brand names are not declined after „za“: „Delovi za Škoda“, „Kočioni diskovi za Cupra“ in titles, H1, OG images and link lists**
 
-- **Severity:** P2 · **Area:** 7. Copy — Grammar / programmatic SEO copy · **Status:** OPEN
+- **Severity:** P2 · **Area:** 7. Copy — Grammar / programmatic SEO copy · **Status:** FIXED
 - **Route:** /vozila/skoda, /vozila/cupra, /vozila/skoda/*, /vozila/cupra/*, /delovi/*/skoda, /delovi/*/cupra/*, related-link lists on /delovi/[kategorija], /deo/[slug], /vozila/* — 65 pages
 - **Context:** All viewports; <title>, H1, intro, FAQ, aria-labels, OG image of landings
 - **Standard:** BRIEF §2 (correct Serbian), BRIEF §5 SEO (unique, quality titles/H1), DESIGN-SYSTEM §11.1
@@ -2274,13 +2364,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/copy/ev-vozila-skoda-h1-1440.webp](audit/copy/ev-vozila-skoda-h1-1440.webp) · [audit/copy/ev-landing-skoda-h1-1440.webp](audit/copy/ev-landing-skoda-h1-1440.webp) · [audit/copy/og-landing-skoda.webp](audit/copy/og-landing-skoda.webp) · [audit/copy/ev-05-brand-declension.txt](audit/copy/ev-05-brand-declension.txt)
 - **Suggested fix:** Add an accusative form to brands (vehicleBrands.nameAcc: Škodu, Cupru; Volkswagen/Audi/SEAT unchanged) and use it in app/(shop)/vozila/[marka]/page.tsx:23-48, lib/seo/templates.ts:180-183, lib/seo/landingCopy.ts and lib/seo/landingLinks.ts, lib/og/frame.tsx callers; or switch the templates to „za vozila {Marka}“.
 - **Verification:** reproduce → confirmed (P2): Reproduced, and the scope is wider than reported. Checked directly at 1440 and 390: - /vozila/skoda: title „Delovi za Škoda — svi modeli | SKLOP“, H1 „DELOVI ZA ŠKODA“. - /delovi/kocioni-diskovi/skoda: H1 „KOČIONI DISKOVI ZA ŠKODA“; the OG image renders the same phrase. - /vozila/cupra: H1 „DELOVI ZA CUPRA“. - The land… [[audit/verify/copy/copy-05-reproduce.txt](audit/verify/copy/copy-05-reproduce.txt), [audit/verify/copy/copy-05-reproduce-count.txt](audit/verify/copy/copy-05-reproduce-count.txt)]
+- **Re-verification (step 22):** Crawl of 342 URLs: brandNominativeAfterZa 0 (title, H1, description). /vozila/skoda H1 „Delovi za Škodu“, /delovi/kocioni-diskovi/cupra H1 „Kočioni diskovi za Cupru“, landing OG image docs/qa/fix/seo-content-email/og-landing-skoda.webp („KOČIONI DISKOVI ZA ŠKODU“). (docs/qa/fix/seo-content-email.json)
 - _Reviewer key: copy-05_
 
 #### COPY-06
 
 **English framework leftovers: default Next 403 page „This page could not be accessed.“ and plain-text „Not found“**
 
-- **Severity:** P2 · **Area:** 7. Copy — Error pages · **Status:** OPEN
+- **Severity:** P2 · **Area:** 7. Copy — Error pages · **Status:** FIXED
 - **Route:** /admin, /admin/* (signed-in customer or mechanic; staff on owner-only /admin/korisnici), /slike/deo/<missing>, /sitemaps/<missing>.xml
 - **Context:** 1440 and 390, Chromium, signed in as the audit customer
 - **Standard:** BRIEF §2 (Serbian only), track standard (no English leftovers on error pages), DECISIONS D19
@@ -2299,13 +2390,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/copy/forbidden-_admin-390.webp](audit/copy/forbidden-_admin-390.webp) · [audit/copy/forbidden-_admin-1440.webp](audit/copy/forbidden-_admin-1440.webp) · [audit/copy/forbidden.json](audit/copy/forbidden.json)
 - **Suggested fix:** Add app/forbidden.tsx (and app/admin/forbidden.tsx for the admin shell) with Serbian copy + metadata title „Nemate pristup“; also add unauthorized.tsx; change route-handler bodies to „Nije pronađeno“ or empty.
 - **Verification:** reproduce → confirmed (P2): I signed in as the audit customer and the approved mechanic using a fresh context each time, then opened /admin, /admin/porudzbine, /admin/korisnici and /admin/porudzbine/SK-2026-000092/predracun. Tested Chromium at 1440 and 390 (customer), Chromium 1440 (mechanic) and Firefox 1440 (customer). All 16 loads return HTTP … [[audit/verify/copy/copy-07-reproduce-chromium-customer-1440_admin.webp](audit/verify/copy/copy-07-reproduce-chromium-customer-1440_admin.webp), [audit/verify/copy/copy-07-reproduce-chromium-customer-390_admin.webp](audit/verify/copy/copy-07-reproduce-chromium-customer-390_admin.webp)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/routing-errors-gates-verify.mjs forbidden (customer account, 390 + 1440, /admin and /admin/porudzbine): status 403, h1 'Nemate pristup ovoj strani', text 'Prijavljeni ste kao audit-kupac-…@primer.rs. Taj nalog nema pristup administraciji…', 'Početna', 'Odjavi se', axe [] (copy06-admin-403-390.webp, copy06-admin-403-1440.webp). Server HTML: node scripts/qa/fix/routing-errors-gates-403-html.mjs -> '/admin 403 ["Nemate pristup · Administracija"]', '/admin/korisnici 403 ["Nemate pristup · Administracija"]'. curl -i /slike/deo/nepostoji-1-abc.jpg -> 404, 'content-type: text/plain; charset=utf-8', body 'Nije pronađeno'. (docs/qa/fix/routing-errors-gates.json; cross-p1 reverted only cross request #41 (forbidden() in admin generateMetadata, D286); the Serbian 403/401 pages and „Nije pronađeno“ bodies are routing-errors-gates' fix)
 - _Reviewer key: copy-07_
 
 #### COPY-07
 
 **„Garancija 24 meseci“ — wrong plural on every product page**
 
-- **Severity:** P2 · **Area:** 7. Copy — Grammar / product template · **Status:** OPEN
+- **Severity:** P2 · **Area:** 7. Copy — Grammar / product template · **Status:** FIXED
 - **Route:** /deo/[slug] — 156 of 157 product pages (e.g. /deo/kocioni-disk-prednji-276-24-mm-demo-0004)
 - **Context:** All viewports, Specifikacije block
 - **Standard:** BRIEF §2 (correct Serbian), track standard (copy errors)
@@ -2318,13 +2410,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/copy/ev-warranty-24-meseci-1440.webp](audit/copy/ev-warranty-24-meseci-1440.webp) · [audit/copy/ev-08-warranty.txt](audit/copy/ev-08-warranty.txt)
 - **Suggested fix:** app/(shop)/deo/[slug]/page.tsx:407 → `countSr(data.warrantyMonths, ["mesec", "meseca", "meseci"])`.
 - **Verification:** reproduce → confirmed (P2): I crawled every product URL in /sitemaps/proizvodi-1.xml (157) and pulled the SSR value of the Garancija <dd>. All 157 show „24 meseci“; the out-of-stock /deo/kocione-plocice-prednje-demo-0012 does too. So the scope is every product page, not „156 of 157“. The DOM at 1440 and 390 reads „Garancija | 24 meseci“, which is… [[audit/verify/copy/copy-08-reproduce-1440.webp](audit/verify/copy/copy-08-reproduce-1440.webp), [audit/verify/copy/copy-08-reproduce-390.webp](audit/verify/copy/copy-08-reproduce-390.webp)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/search-catalog-content-deo.mjs -> deo.json warranty '24 meseca' at 390/768/1024/1440. (docs/qa/fix/search-catalog-content.json)
 - _Reviewer key: copy-08_
 
 #### COPY-08
 
 **„Svih 44 kategorija“ on the home category grid — wrong number agreement**
 
-- **Severity:** P2 · **Area:** 7. Copy — Grammar / home · **Status:** OPEN
+- **Severity:** P2 · **Area:** 7. Copy — Grammar / home · **Status:** FIXED
 - **Route:** / (section „Najtraženije kategorije“)
 - **Context:** All viewports, anonymous
 - **Standard:** BRIEF §2 (correct Serbian), track standard (copy errors)
@@ -2336,13 +2429,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/copy/ev-home-svih-44-kategorija-1440.webp](audit/copy/ev-home-svih-44-kategorija-1440.webp) · [audit/copy/text-home-1440.txt](audit/copy/text-home-1440.txt)
 - **Suggested fix:** components/home/HomeSections.tsx:101 — use countSr with forms ["Sva {n} kategorija"/"Sve {n} kategorije"/"Svih {n} kategorija"] or neutral „Sve kategorije (44) · 157 artikala“.
 - **Verification:** reproduce → confirmed (P2): I opened / anonymously at 1440 and 390 and scrolled to #cats-title. The section link (href /delovi) reads „Svih 44 kategorija · 157 artikala“ at both widths, and the SSR payload has the same text. The source is components/home/HomeSections.tsx:101: „Svih {tree.categories.length} kategorija“ is hard-coded. On the same l… [[audit/verify/copy/copy-09-reproduce-1440.webp](audit/verify/copy/copy-09-reproduce-1440.webp), [audit/verify/copy/copy-09-reproduce-390.webp](audit/verify/copy/copy-09-reproduce-390.webp)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-stage-p2.mjs legend -> 'COPY08 "Sve kategorije (44) · 157 artikala"' at every width from 360 to 1440 (p2-final.txt). (docs/qa/fix/hero-stage.json)
 - _Reviewer key: copy-09_
 
 #### FLOW-03
 
 **KNOWN (SF-13): search results ignore the vehicle selected in the header**
 
-- **Severity:** P2 (reported P1, adjusted by verification) · **Area:** 8. Flows & edge cases — Search / vehicle context · **Status:** OPEN
+- **Severity:** P2 (reported P1, adjusted by verification) · **Area:** 8. Flows & edge cases — Search / vehicle context · **Status:** FIXED
 - **Route:** /pretraga?q=kočioni disk (with Golf 7 selected)
 - **Context:** Chromium 390x844, guest, vehicle Volkswagen Golf VII selected in the header picker
 - **Standard:** BRIEF §2 persona 2 ('for my car'); PROGRESS remains SF-13
@@ -2363,13 +2457,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-shop/K-search-vehicle-selected-390.webp](audit/flows-shop/K-search-vehicle-selected-390.webp) · [audit/flows-shop/known.json](audit/flows-shop/known.json) … · te…
 - **Suggested fix:** Pass the selected generation to search.query (app/(shop)/pretraga/page.tsx -> convex/search.ts) and filter/partition by fitment, with a chip 'Za Golf VII · prikaži sve' (PROGRESS 'Remains' SF-13).
 - **Verification:** reproduce → confirmed (P2): I reproduced this in Chromium at 390x844 and 1440x900 as a guest, choosing the vehicle through the real picker UI (Volkswagen > Golf > Golf VII > 'Ne znam motor'), not by injecting localStorage. The store saved generation golf-7, named 'Golf VII'. With the vehicle chosen, a header search for 'kočioni disk' returns '9 a… [[audit/verify/flows-shop/flows-shop-03-reproduce-390-search-with-vehicle.webp](audit/verify/flows-shop/flows-shop-03-reproduce-390-search-with-vehicle.webp) (390, Golf VII chosen: '9 artikala', no vehicle mention, no fit badge), [audit/verify/flows-shop/flows-shop-03-reproduce-1440-search-with-vehicle.webp](audit/verify/flows-shop/flows-shop-03-reproduce-1440-search-with-vehicle.webp) (header chip 'Golf VII'; results include 8K0 615 085 and 6R0 615 645 with 'U korpu')] — skeptic → confirmed (P2): Reproduced in Chromium at 390x844 as a guest. I chose VW > Golf > Golf VII > 'Ne znam motor' in the real picker, which stored sk.vehicle.v1 = golf-7. I then searched 'kočioni disk' from the header dialog. With Golf VII selected, /pretraga?q=kočioni disk shows '9 artikala'. Without a vehicle it shows the same 9 slugs in… [[audit/verify/flows-shop/flows-shop-03-skeptic.json](audit/verify/flows-shop/flows-shop-03-skeptic.json) (withVehicle.meta '9 artikala' == withoutVehicle.meta '9 artikala', identical slug order; fitLines 0; mentionsGolf fals…, [audit/verify/flows-shop/flows-shop-03-skeptic-search-golf7-390.webp](audit/verify/flows-shop/flows-shop-03-skeptic-search-golf7-390.webp) (results with Golf VII stored: 9 artikala, no vehicle mention; first card 8K0 615 085 does not fit Golf VII)]
+- **Re-verification (step 22):** search.json 'vehicle': store Golf VII + /pretraga?q=kočioni disk -> URL …&vozilo=volkswagen%2Fgolf%2Fgolf-7, '5 artikala', line 'Samo delovi za Golf VII (još 4 za druga vozila). Prikaži sve'; after 'Prikaži sve' -> vozilo=sva, '9 artikala', link 'Samo za Golf VII'. Screenshot search-selected-vehicle-390.webp. convex test 'the selected vehicle narrows a plain query, unless nothing fits' passed. (docs/qa/fix/search-catalog-content.json; cross-p1 declined only the optional cross request #13 (vozilo= in the SearchBox submit); the finding is fixed by search-catalog-content)
 - _Reviewer key: flows-shop-03_
 
 #### FLOW-04
 
 **Search shows at most 48 results and presents 48 as the total, with no pagination**
 
-- **Severity:** P2 · **Area:** 8. Flows & edge cases — Search results · **Status:** OPEN
+- **Severity:** P2 · **Area:** 8. Flows & edge cases — Search results · **Status:** FIXED
 - **Route:** /pretraga?q=golf 7, /pretraga?q=a, /pretraga?q=amortizer golf, /pretraga?q=pločice golf 7
 - **Context:** Chromium 390x844, guest
 - **Standard:** BRIEF §3 Search; impeccable harden (many items)
@@ -2381,6 +2476,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-shop/verify.json](audit/flows-shop/verify.json)… · [audit/flows-shop/search-results.json](audit/flows-shop/search-results.json)
 - **Suggested fix:** Return a hasMore flag (take(limit + 1)) from search.query and render 'Prikazano 48 od više' plus category chips / 'Suzite po vozilu', or paginate with a cursor.
 - **Verification:** reproduce → confirmed (P2): Chromium 390 and 1440, guest. /pretraga?q=golf 7, a, golf, amortizer golf, pločice golf 7: each shows '48 artikala' under the H1, the only result group (Proizvodi) has exactly 48 cards (ul > 48 li / 48 article), the list ends with 'Ne vidite pravi deo? Pošaljite upit sa brojem šasije.' and then the footer. There is no … [[audit/verify/flows-shop/flows-shop-04-reproduce.json](audit/verify/flows-shop/flows-shop-04-reproduce.json), [audit/verify/flows-shop/flows-shop-04-reproduce-cards.json](audit/verify/flows-shop/flows-shop-04-reproduce-cards.json) (golf 7 / a / golf / amortizer golf: meta '48 artikala', gridItems 48, articles 48)]
+- **Re-verification (step 22):** search.json: 'golf 7' and 'a' -> count 'Prikazano prvih 48, ima ih još…', 8 chips ('Kočione pločice 6', 'Kočioni diskovi 5', …); convex test: q 'golf 7' + categorySlug 'kocioni-diskovi' -> only the disc, category echoed. (docs/qa/fix/search-catalog-content.json)
 - _Reviewer key: flows-shop-04_
 
 #### FLOW-05
@@ -2402,13 +2498,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Suggested fix:** Resolve not-found before streaming: call notFound() in generateMetadata of app/(shop)/deo/[slug], delovi/[...], porudzbina/[token], upit/[token] (it runs before the shell), or remove the Suspense/loading boundary above these pages so app/(shop)/not-found.tsx is server-rendered; export not-found metadata. Add a curl-level e2e check for an h1 in the 404 HTML.
 - **Verification:** reproduce → confirmed (P2): I fetched these without JS (fetch, plus Chromium 390 with javaScriptEnabled:false): /deo/ne-postoji-demo-9999, /delovi/ne-postoji-kategorija, /delovi/kocioni-diskovi/ne-marka, /delovi/kocioni-diskovi/volkswagen/ne-model, /vozila/ne-marka, /porudzbina/losToken123, /upit/losToken123. All return status 404 with robots noi… [[audit/verify/flows-shop/flows-shop-05-reproduce.json](audit/verify/flows-shop/flows-shop-05-reproduce.json) (h1_in_html 0, header_in_html 0, visibleTextLen 0 for 7 dynamic routes; 1 / 1220 for /ovo-ne-postoji), [audit/verify/flows-shop/flows-shop-05-reproduce-browser.json](audit/verify/flows-shop/flows-shop-05-reproduce-browser.json)]
 - **Also reported as:** seo-09 (404s for unknown product, category and vehicle send an empty body (content only after JS) and the home page title @ /deo/ne-postoji-demo-9999, /delovi/nepostojeca-kategorija, /delovi/kocioni-diskovi/nepostojeca-marka, /delovi/kocioni-diskovi/volkswagen/nepostojeci-model, /vozila/nepostojeca, /vozila/volkswagen/nepostojeci, /vozila/volkswagen/golf/golf-99, /deo/KOCIONI-DISK-PREDNJI-276-24-MM-DEMO-0004)
+- **Re-verification (step 22):** not fixed — Cross requests #20 and #24: in dev every notFound()/forbidden() thrown while rendering a page answers with Next's error shell (no server-rendered h1; the titles are right), while the unmatched-URL 404 renders fully. No loading or Suspense boundary sits above the token pages, so moving one is not the fix (root cause in D266). Needs a check on the production build in the gates phase. D286. Last check: node scripts/qa/fix/cross-p1-ssr-404.mjs -> 'nema-ove-strane-xyz 404 h1 "Stranica nije pronađena" errorFallback false'; 'upit/…', 'porudzbina/…', 'deo/nepostoji-xyz', 'delovi/nepostoji-kat' -> 404, h1 null, errorFallback true (docs/qa/fix/cross-p1/ssr-404.txt). (docs/qa/fix/cross-p1.json)
 - _Reviewer key: flows-shop-05_
 
 #### FLOW-06
 
 **Long unbroken search query overflows the page horizontally; zero-result copy is clipped on both sides**
 
-- **Severity:** P2 · **Area:** 8. Flows & edge cases — Search / zero results (mobile) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 8. Flows & edge cases — Search / zero results (mobile) · **Status:** FIXED
 - **Route:** /pretraga?q=5Q0615505R5Q0615505R5Q0615505R5Q0615505R (any token over ~20 characters)
 - **Context:** Chromium 360x800 and 390x800, guest
 - **Standard:** WCAG 2.2 SC 1.4.10 Reflow; impeccable harden (long text)
@@ -2420,13 +2517,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-shop/R4-search-long-390.webp](audit/flows-shop/R4-search-long-390.webp) · [audit/flows-shop/run4.json](audit/flows-shop/run4.json) · sc…
 - **Suggested fix:** app/(shop)/pretraga/page.tsx: wrap the echoed query in a span with overflow-wrap:anywhere / break-all (and in the empty-state paragraph, lines 144-166); consider truncating the echo to ~40 characters with an ellipsis.
 - **Verification:** reproduce → confirmed (P2): /pretraga?q=5Q0615505R x4 (40 characters), zero results. Chromium 390: scrollWidth 705 vs 390 (+315 px). Chromium 360: +337 px. WebKit 390: +315 px, and the page really scrolls sideways (scrollX 315 after scrollTo). The H1 is cut at the right edge. The centred empty-state h2 and p start at x=-11 (390) / -26 (360), so t… [[audit/verify/flows-shop/flows-shop-06-reproduce.json](audit/verify/flows-shop/flows-shop-06-reproduce.json), [audit/verify/flows-shop/flows-shop-06-reproduce-chromium-390-len40.webp](audit/verify/flows-shop/flows-shop-06-reproduce-chromium-390-len40.webp)]
+- **Re-verification (step 22):** search.json 'long': 360:40 / 360:120 / 390:40 / 390:120 -> over 0, offenders []. Screenshot search-long-390.webp. (docs/qa/fix/search-catalog-content.json)
 - _Reviewer key: flows-shop-06_
 
 #### FLOW-07
 
 **Quote acceptance form validates one field at a time with a single message at the bottom, fields not marked, focus not moved**
 
-- **Severity:** P2 · **Area:** 8. Flows & edge cases — Inquiry -> quote accept · **Status:** OPEN
+- **Severity:** P2 · **Area:** 8. Flows & edge cases — Inquiry -> quote accept · **Status:** FIXED
 - **Route:** /upit/[token] -> 'Prihvati ponudu' (e.g. UP-2026-000068)
 - **Context:** Chromium 390x844, guest holding the inquiry token; quote sent by staff
 - **Standard:** WCAG 2.2 SC 3.3.1 Error Identification and 1.3.1 Info and Relationships; DESIGN-SYSTEM checkout/forms pattern ('errors summarised at the top of the step with focus', errors next to the field)
@@ -2439,13 +2537,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-shop/Q-accept-empty-390.webp](audit/flows-shop/Q-accept-empty-390.webp) · [audit/flows-shop/quote.json](audit/flows-shop/quote.json) …
 - **Suggested fix:** components/inquiry/InquiryStatusView.tsx (AcceptForm onSubmit, lines ~88-100): validate all fields at once (reuse the zod schema/Field error props from lib/validation/checkout.ts), set per-field errors on Field, render the error summary with focus as in CheckoutForm.
 - **Verification:** reproduce → confirmed (P2): I used the sample quote inquiry UP-2026-000003 (/upit/3UMmrd…), Chromium 390 and 1440, guest. I never made a valid submission. After 'Prihvati ponudu' I submitted with Telefon, E-pošta and terms empty. Result: one paragraph, 'Broj telefona nije ispravan. Primer: 064 123 4567.', above the submit button. It is announced … [[audit/verify/flows-shop/flows-shop-07-reproduce.json](audit/verify/flows-shop/flows-shop-07-reproduce.json) (emptySubmit: alerts 1, invalid 0, focus BUTTON; afterPhoneFix -> e-mail message; afterEmailFix -> terms message), [audit/verify/flows-shop/flows-shop-07-reproduce-empty-390.webp](audit/verify/flows-shop/flows-shop-07-reproduce-empty-390.webp)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/backend-orders-quotes-ui.mjs at 390 px, empty phone/e-mail/terms. Result: summary 'Proverite 3 polja: Upišite broj telefona. Upišite adresu e-pošte. Potrebna je saglasnost…', focus on quote-accept-errors, aria-invalid on qa-phone, qa-email and qa-terms, and every invalid input has aria-describedby (docs/qa/fix/backend-orders-quotes/ui.json, accept-errors-390.webp). (docs/qa/fix/backend-orders-quotes.json)
 - _Reviewer key: flows-shop-07_
 
 #### FLOW-08
 
 **Quote acceptance on the web offers no predračun for companies and no deferred payment for approved mechanics**
 
-- **Severity:** P2 · **Area:** 8. Flows & edge cases — Inquiry -> quote accept (payment) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 8. Flows & edge cases — Inquiry -> quote accept (payment) · **Status:** FIXED
 - **Route:** /upit/[token] -> 'Prihvati ponudu'
 - **Context:** Chromium 390, guest token holder; code path applies to any customer incl. mechanic accounts
 - **Standard:** BRIEF §3 ordering (predračun for companies, mechanics' deferred payment) and inquiries 'customer can accept -> order'; D141 parity
@@ -2463,13 +2562,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-shop/quote.json](audit/flows-shop/quote.json)… · [audit/flows-shop/Q-accept-empty-390.webp](audit/flows-shop/Q-accept-empty-390.webp)
 - **Suggested fix:** Add the 'Kupujem kao firma' block (naziv, PIB, MB) to the accept form and allow payment methods whose requirement is met (company -> bank_transfer; signed-in approved mechanic who owns the inquiry -> deferred), validated server-side in inquiries.acceptQuote with the same helpers as orders.submit.
 - **Verification:** reproduce → confirmed (P2): Opened the sample sent quote UP-2026-000003 (/upit/3UMmrdzw1RNGw5ToQh06cANjxl8c_-Ajvp7eBwA1ayI) at Chromium 390, once as a guest and once signed in as the approved Majstor Plus mechanic with credit, and pressed 'Prihvati ponudu'. Both times the form had the same options. Pickup offers 'Gotovinom pri preuzimanju' and 'K… [[audit/verify/flows-shop/flows-shop-08-reproduce-guest-pickup-390.webp](audit/verify/flows-shop/flows-shop-08-reproduce-guest-pickup-390.webp), [audit/verify/flows-shop/flows-shop-08-reproduce-guest-courier-390.webp](audit/verify/flows-shop/flows-shop-08-reproduce-guest-courier-390.webp)]
+- **Re-verification (step 22):** UI script at 390 px: after 'Kupujem kao firma' the payment group reads 'Gotovinom pri preuzimanju / Karticom pri preuzimanju / Virmanom uz predračun' and 3 company fields appear (ui.json, accept-company-390.webp). convex/inquiries.test.ts: the owning mechanic gets deferredCredit {availablePara: 1000000}, a guest gets null, and another mechanic's deferred acceptance is INVALID. (docs/qa/fix/backend-orders-quotes.json)
 - _Reviewer key: flows-shop-08_
 
 #### FLOW-09
 
 **PIB/MB errors do not say what is wrong: 8-digit MB with a bad check digit is told 'Matični broj ima 8 cifara.'; empty PIB is told the check digit does not match**
 
-- **Severity:** P2 · **Area:** 8. Flows & edge cases — Checkout company data / mechanic registration · **Status:** OPEN
+- **Severity:** P2 · **Area:** 8. Flows & edge cases — Checkout company data / mechanic registration · **Status:** FIXED
 - **Route:** /porudzbina step 1 'Kupujem kao firma'; /za-majstore registration (same messages)
 - **Context:** Chromium 390x844, guest
 - **Standard:** impeccable harden / clarify (specific, actionable error messages); CLAUDE.md copy rules
@@ -2489,6 +2589,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-shop/V-company-checksum-390.webp](audit/flows-shop/V-company-checksum-390.webp) · [audit/flows-shop/validation.json](audit/flows-shop/validation.json) …
 - **Suggested fix:** lib/i18n/sr/shop.ts ERRORS.pib/mb -> split into required/length/checksum; lib/validation/checkout.ts:56-57 and lib/validation/mechanicRegistration.ts:45-49 pick the message by case (normalize, test length, then isValidPib/isValidMb).
 - **Verification:** reproduce → partially_confirmed (P2): Tested /porudzbina step 1 with 'Kupujem kao firma' (demo-0004 in the cart) and /za-majstore/registracija, both at Chromium 390. The MB defect is real on both routes. MB 64552873 (8 digits, bad check digit; expected check digit 2) shows 'Matični broj ima 8 cifara.' In registration the PIB next to it shows 'PIB je isprav… [[audit/verify/flows-shop/flows-shop-09-reproduce-pib-valid-mb-bad-checksum-390.webp](audit/verify/flows-shop/flows-shop-09-reproduce-pib-valid-mb-bad-checksum-390.webp), [audit/verify/flows-shop/flows-shop-09-reproduce-registracija-mb-bad-checksum-390.webp](audit/verify/flows-shop/flows-shop-09-reproduce-registracija-mb-bad-checksum-390.webp)]
+- **Re-verification (step 22):** npx vitest run tests/unit/lib/validation.test.ts → 13 passed ("PIB / MB messages by case"); forms-auth-checkout.mjs → "FLOW-09 messages [PIB nije ispravan — kontrolna cifra ne odgovara. …, Matični broj nije ispravan — kontrolna cifra ne odgovara. …]" for 104052136 / 64552873; forms-auth-misc.mjs mech summary → "Upišite PIB.", "Matični broj nije ispravan — kontrolna cifra ne odgovara. …" (docs/qa/fix/forms-auth.json)
 - _Reviewer key: flows-shop-09_
 
 #### FLOW-10
@@ -2508,13 +2609,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** … · c… · co… · doc…
 - **Suggested fix:** Store unitPriceParaAtAdd on cartItems (carts.addItem/setQuantity), expose notice kind 'price_changed' {old,new} from carts priceLines, render 'Cena je promenjena: 4.690 -> 4.990 RSD' in LineNotice and require re-confirmation on the review step.
 - **Verification:** reproduce → confirmed (P2): Verified in code only. A runtime repro needs a product price change, which the audit rules forbid, and the testing helpers cannot create products. Each point holds: (1) convex/schema.ts cartItems has only cartId, productId, quantity, source, addedAt, so no price is stored when an item is added. (2) The carts.ts noticeV… [[audit/verify/flows-shop/flows-shop-10-reproduce.txt](audit/verify/flows-shop/flows-shop-10-reproduce.txt) (grep output of schema, notice union, LineNotice, expectedTotalPara source, PRICE_CHANGED guard, unused spec copy), convex/schema.ts:482-490]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (no fix package took it).
 - _Reviewer key: flows-shop-10_
 
 #### FLOW-11
 
 **KNOWN (SF-11): mobile filter/sort row on category pages scrolls away**
 
-- **Severity:** P2 · **Area:** 8. Flows & edge cases — Category listing (mobile) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 8. Flows & edge cases — Category listing (mobile) · **Status:** FIXED
 - **Route:** /delovi/kocioni-diskovi (also /delovi/kocioni-diskovi/volkswagen/golf)
 - **Context:** Chromium 390x844, guest
 - **Standard:** DESIGN-SYSTEM system hub / category mobile ('row sticky under the header'); PROGRESS remains SF-11
@@ -2528,13 +2630,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-shop/K-category-scrolled-390.webp](audit/flows-shop/K-category-scrolled-390.webp) · [audit/flows-shop/known.json](audit/flows-shop/known.json) …
 - **Suggested fix:** components/catalog/CatalogControls.tsx: make the mobile controls row position: sticky; top: var(--header-h) with z-sticky and a surface background.
 - **Verification:** reproduce → confirmed (P2): Known open item SF-11, owned by flows-shop. The reporter owns it, so recording it is legitimate. Chromium, guest. On /delovi/kocioni-diskovi the 'Filteri' button starts at y=413 at 360 px, y=387 at 390 px and y=341 at 768 px. After scrollTo(0,1400) it is at y=-987, -1013 and -1059, with no sticky or fixed ancestor. /de… [[audit/verify/flows-shop/flows-shop-11-reproduce-delovi_kocioni-diskovi-390-scrolled.webp](audit/verify/flows-shop/flows-shop-11-reproduce-delovi_kocioni-diskovi-390-scrolled.webp), [audit/verify/flows-shop/flows-shop-11-reproduce-delovi_kocioni-diskovi-360-scrolled.webp](audit/verify/flows-shop/flows-shop-11-reproduce-delovi_kocioni-diskovi-360-scrolled.webp)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 ONLY=flow11 node scripts/qa/fix/catalog-product-ui-layout.mjs -> /delovi/kocioni-diskovi at 360, 390, 768: Filteri button top 454/428/382 at scrollY 0 and 64 at scrollY 1400 (header bottom 57), rowPos sticky, filter sheet opens from the stuck row (sheet true), overX 0, text-reveal check at 390 {stuck: [], pending: 0, words: 0}. Evidence docs/qa/fix/catalog-product-ui/layout-flow11.json, flow11-390-scrolled.webp (one-line sticky row under the header). (docs/qa/fix/catalog-product-ui.json)
 - _Reviewer key: flows-shop-11_
 
 #### FLOW-12
 
 **KNOWN (SF-14): no mobile sticky contact bar (Pozovite · Viber · Upit)**
 
-- **Severity:** P2 · **Area:** 8. Flows & edge cases — Mobile shell / contact · **Status:** OPEN
+- **Severity:** P2 · **Area:** 8. Flows & edge cases — Mobile shell / contact · **Status:** FIXED
 - **Route:** /, /deo/[slug], /delovi/[category], /ponuda/kocione-plocice-golf
 - **Context:** Chromium 390x844, guest; contact channels are not configured yet (HUMAN-TODO P0), so no tel:/viber: links render anywhere today
 - **Standard:** DESIGN-SYSTEM mobile home/shell; BRIEF §2 persona 2 ('easy way to ask: VIN inquiry, call, Viber'); PROGRESS remains SF-14
@@ -2548,13 +2651,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-shop/known.json](audit/flows-shop/known.json)… · [audit/flows-shop/K-product-scrolled-390.webp](audit/flows-shop/K-product-scrolled-390.webp)
 - **Suggested fix:** Build the scroll-up contact bar in components/shell (reads contactFromSettings; hides channels without data; coordinate with the product StickyBuyBar so both do not stack).
 - **Verification:** reproduce → confirmed (P2): Reproduced in Chromium as a guest, on a fresh context per width. Pages checked: /, /deo/kocioni-disk-prednji-276-24-mm-demo-0004, /delovi/kocioni-diskovi, /ponuda/kocione-plocice-golf and /upit at 390x844, plus product and landing at 360x780 and 768x1024. On each page I ran scrollThrough, scrolled down 2200 px, then up… [[audit/verify/flows-shop/flows-shop-12-reproduce.json](audit/verify/flows-shop/flows-shop-12-reproduce.json) (all 9 route/width runs: fixed = [header] only, contactLinks [], bottomControls none or page content), [audit/verify/flows-shop/flows-shop-12-reproduce-product-390.webp](audit/verify/flows-shop/flows-shop-12-reproduce-product-390.webp)]
+- **Re-verification (step 22):** tsc 0 errors, eslint clean. The dev deployment has no phone/Viber in settings (HUMAN-TODO P0), so the bar correctly never mounts there; its visible state could not be screenshotted without changing shared settings — the gates/perf phase should re-check once settings hold a phone number. (docs/qa/fix/shell-perf.json)
 - _Reviewer key: flows-shop-12_
 
 #### FLOW-13
 
 **Phone/Viber/WhatsApp-only inquiries can't finish the quote flow: the quote link never reaches the customer and 'Pretvori u porudžbinu' requires an e-mail**
 
-- **Severity:** P2 (reported P1, adjusted by verification) · **Area:** 8. Flows & edge cases — Admin · inquiries and quotes · **Status:** OPEN
+- **Severity:** P2 (reported P1, adjusted by verification) · **Area:** 8. Flows & edge cases — Admin · inquiries and quotes · **Status:** FIXED
 - **Route:** /admin/upiti/[broj] (UP-2026-000054)
 - **Context:** 1440x900 Chromium, owner; inquiry contact has a phone only (preferred channel: phone)
 - **Standard:** BRIEF §5 (VIN/part inquiry: 'contact + preferred reply channel'; tokenized status page shows the quote) · BRIEF §6 admin inquiries ('send → customer e-mail with accept link; convert to order')
@@ -2575,13 +2679,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-admin/v3-inquiry-054.json](audit/flows-admin/v3-inquiry-054.json)… · [audit/flows-admin/v3-inq-04-after-convert.webp](audit/flows-admin/v3-inq-04-after-convert.webp) · [audit/flows-admin/v3-convert.json](audit/flows-admin/v3-convert.json) (… · scr…
 - **Suggested fix:** QuoteComposer.tsx:371: branch the dialog copy on contact.email. With no e-mail, sendQuote should mint a fresh status token and return the link once (the D144 invite pattern), and the UI should show it with CopyButton plus Viber/WhatsApp links carrying a prefilled message. InquiryDetail.tsx convert dialog (≈561-650) and convertToOrder: make e-mail optional for staff-created orders from phone-only inquiries (skip customer e-mails, record 'kupac bez e-pošte'), or relax contactV.email for this path only.
 - **Verification:** reproduce → confirmed (P2): Reproduced from scratch on two new phone-only test inquiries: UP-2026-000080 at 1440 and UP-2026-000082 at 390 (owner, Chromium, created with testing:createTestInquiry, channel phone). I added the catalog line 5Q0615505R and sent the quote. The confirm dialog says unconditionally: 'Upit Test verify-fa02 dobija ponudu n… [[audit/verify/flows-admin/flows-admin-02-reproduce-1440.json](audit/verify/flows-admin/flows-admin-02-reproduce-1440.json) (dialog text, share options, history, native + server validation, console ConvexError contact.email), [audit/verify/flows-admin/flows-admin-02-reproduce-1440-02-send-dialog.webp](audit/verify/flows-admin/flows-admin-02-reproduce-1440-02-send-dialog.webp)] — skeptic → partially_confirmed (P2): I reproduced this from scratch with a real public inquiry, UP-2026-000085, submitted at /upit with no e-mail and preferred channel Viber. The e-mail field is marked optional unless the channel is e-mail, and the e2e happy path also submits phone-only. So this is the default inquiry shape, not an edge case. Confirmed: (… [[audit/verify/flows-admin/flows-admin-02-skeptic.json](audit/verify/flows-admin/flows-admin-02-skeptic.json), [audit/verify/flows-admin/flows-admin-02-skeptic-01-thanks.webp](audit/verify/flows-admin/flows-admin-02-skeptic-01-thanks.webp) (thanks page gives the status link: 'sačuvajte link')]
+- **Re-verification (step 22):** Code: [formatPhone(phone), email].filter(Boolean).join(' · '); npx tsc --noEmit exit 0 (docs/qa/fix/cross-p1/tsc.txt). (docs/qa/fix/cross-p1.json)
 - _Reviewer key: flows-admin-02_
 
 #### FLOW-14
 
 **Settings: switching tabs silently throws away unsaved edits**
 
-- **Severity:** P2 · **Area:** 8. Flows & edge cases — Admin · settings · **Status:** OPEN
+- **Severity:** P2 · **Area:** 8. Flows & edge cases — Admin · settings · **Status:** FIXED
 - **Route:** /admin/podesavanja (every tab: Firma, Radno vreme, Dostava i plaćanje, Obaveštenja, SEO, …)
 - **Context:** 1440x900 Chromium, owner
 - **Standard:** DESIGN-SYSTEM §10.12 pattern (sticky save bar when dirty; leaving with unsaved changes asks first) · Nielsen error prevention
@@ -2599,13 +2704,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-admin/v3-pibrestore.json](audit/flows-admin/v3-pibrestore.json)… · [audit/flows-admin/v3-settings-dirty-bar.webp](audit/flows-admin/v3-settings-dirty-bar.webp) · [audit/flows-admin/v3-mech-settings.json](audit/flows-admin/v3-mech-settings.json) (… · scr…
 - **Suggested fix:** components/admin/settings/SettingsAdmin.tsx:134-137: while any section is dirty, intercept Tabs onValueChange with the ConfirmDialog (Sačuvaj / Odbaci / Ostani). Alternatively keep drafts in the parent (or forceMount the panels) so they survive a tab switch. Add a beforeunload guard like ProductEditor's.
 - **Verification:** reproduce → confirmed (P2): Reproduced at 1440x900 in Chromium as owner. On /admin/podesavanja (Firma) I changed Slogan to 'QA verifikacija slogan' and the save bar 'Brend nije sačuvan.' appeared. I clicked the SEO tab: no dialog opened and the URL went to ?tab=seo. Back on Firma, the Slogan field read 'Rasklopi auto. Nađi deo.' again and no save… [[audit/verify/flows-admin/flows-admin-03-04-reproduce.json](audit/verify/flows-admin/flows-admin-03-04-reproduce.json) (steps 'dirty status bars': ['Brend nije sačuvan.']; 'after click SEO': dialogVisible false; 'after back to Firma': slo…, [audit/verify/flows-admin/flows-admin-03-reproduce-dirty.webp](audit/verify/flows-admin/flows-admin-03-reproduce-dirty.webp) (dirty bar 'Brend nije sačuvan.' with Odbaci izmene / Sačuvaj)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-flows-verify.mjs settings -> FLOW-14 {alertText:'Odbaciti nesačuvane izmene?Brend nije sačuvan.…', afterStay:{url:'', slogan:'Rasklopi auto. Nađi deo. QA', firmaSelected:'true'}, beforeUnload:1, afterDiscard:{url:'?tab=firma', slogan:'Rasklopi auto. Nađi deo.'}}, no console errors (docs/qa/fix/admin-flows/verify-settings.json). (docs/qa/fix/admin-flows.json)
 - _Reviewer key: flows-admin-03_
 
 #### FLOW-15
 
 **Company PIB (and MB) are saved without validation, and an invalid PIB prints on predračun and otpremnica**
 
-- **Severity:** P2 · **Area:** 8. Flows & edge cases — Admin · settings → Firma · **Status:** OPEN
+- **Severity:** P2 · **Area:** 8. Flows & edge cases — Admin · settings → Firma · **Status:** FIXED
 - **Route:** /admin/podesavanja (Firma) → /admin/porudzbine/[broj]/predracun, /otpremnica, /admin/stampa/otpremnice
 - **Context:** 1440x900 Chromium, owner (PIB was empty before the test and has been restored to empty)
 - **Standard:** DESIGN-SYSTEM §9.2 (PIB checksum state, field errors) · BRIEF §5 (predračun/otpremnica are customer-facing legal documents)
@@ -2623,13 +2729,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-admin/v3-settings-invalid-pib.webp](audit/flows-admin/v3-settings-invalid-pib.webp) · [audit/flows-admin/v3-pibcheck.json](audit/flows-admin/v3-pibcheck.json) … · [audit/flows-admin/v3-misc.json](audit/flows-admin/v3-misc.json) (… · [audit/flows-admin/v3-pibrestore.json](audit/flows-admin/v3-pibrestore.json) (r…
 - **Suggested fix:** SettingsAdmin.tsx:176-179 and the company settings mutation in convex/settings.ts: validate with normalizePib/isValidPib (and an 8-digit MB check, plus the Serbian bank-account 18-digit mod-97 check for tekući računi) on both client and server. Show the error on the field (aria-invalid + aria-describedby) and the 'PIB je ispravan' success state.
 - **Verification:** reproduce → confirmed (P2): Reproduced at 1440x900 in Chromium as owner. PIB and MB were both empty. I entered PIB '123' and MB '12' and clicked Sačuvaj in 'Podaci o firmi nisu sačuvani.'. The toast said 'Sačuvano.', no field got aria-invalid, and after a reload the fields held pib '123' and mb '12'. /admin/porudzbine/SK-2026-000112/predracun and… [[audit/verify/flows-admin/flows-admin-03-04-reproduce.json](audit/verify/flows-admin/flows-admin-03-04-reproduce.json) (steps 'after save invalid PIB': fieldErrors 0; 'stored after reload': pib '123', mb '12'; 'print predracun'/'print otp…, [audit/verify/flows-admin/flows-admin-04-reproduce-saved.webp](audit/verify/flows-admin/flows-admin-04-reproduce-saved.webp) (PIB 123 / MB 12 with toast 'Sačuvano.')]
+- **Re-verification (step 22):** admin-flows-verify.mjs settings -> FLOW-15 {pibInvalid:'true', pibMessage:'PIB ima 9 cifara.', focusedAfterSave:'admin-settings-pib', toastText:true, okText:true (valid PIB 154552870), mbInvalid:'true', bankInvalid:'true', pibAfterDiscard:''} — nothing saved (docs/qa/fix/admin-flows/verify-settings.json). (docs/qa/fix/admin-flows.json)
 - _Reviewer key: flows-admin-04_
 
 #### FLOW-16
 
 **An order converted from a quote gets the OEM number as its SKU, so the otpremnica 'Šifra' column is wrong**
 
-- **Severity:** P2 · **Area:** 8. Flows & edge cases — Admin · quote → order conversion, print documents · **Status:** OPEN
+- **Severity:** P2 · **Area:** 8. Flows & edge cases — Admin · quote → order conversion, print documents · **Status:** FIXED
 - **Route:** /admin/upiti/[broj] → /admin/porudzbine/SK-2026-000142 and /admin/porudzbine/SK-2026-000142/otpremnica
 - **Context:** 1440x900 Chromium, owner
 - **Standard:** BRIEF §5/§6 (orders and otpremnica for staff) · data integrity
@@ -2647,13 +2754,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-admin/v3-conv-02-otpremnica-sku.webp](audit/flows-admin/v3-conv-02-otpremnica-sku.webp) · [audit/flows-admin/v3-otp142.json](audit/flows-admin/v3-otp142.json) … · [audit/flows-admin/v3-convert.json](audit/flows-admin/v3-convert.json)
 - **Suggested fix:** convex/lib/inquiries.ts:214: for catalog lines use sku: product?.sku ?? l.sku ?? 'UPIT'. Keep the quote's display code in a separate field (e.g. displayCode) rather than overloading sku. Backfill any existing converted orders.
 - **Verification:** reproduce → confirmed (P2): Reproduced from scratch on a new test inquiry, UP-2026-000084 (testing:createTestInquiry). In the composer I picked 5Q0615505R from the catalog: the line's 'Šifra / OEM' field was prefilled '5Q0 615 505 R', not DEMO-0004. I added a priced free line, sent the quote (total 12.140 RSD, quoteStatus sent), then used 'Pretvo… [[audit/verify/flows-admin/flows-admin-05-06-reproduce.json](audit/verify/flows-admin/flows-admin-05-06-reproduce.json) (steps 'catalog line': sifra '5Q0 615 505 R'; 'converted': SK-2026-000145; 'order detail line': 'Kočioni disk prednji 2…, [audit/verify/flows-admin/flows-admin-05-reproduce-otpremnica.webp](audit/verify/flows-admin/flows-admin-05-reproduce-otpremnica.webp) (Šifra and OEM columns both '5Q0 615 505 R')]
+- **Re-verification (step 22):** convex/inquiries.test.ts: a quote line saved with sku '5Q0 615 301 F' for product T-DISC produces order items with SKUs ['T-DISC', 'UPIT'] (15/15 passed). (docs/qa/fix/backend-orders-quotes.json)
 - _Reviewer key: flows-admin-05_
 
 #### FLOW-17
 
 **Quote send opens the confirm dialog before validating; an invalid line leaves the dialog stuck and hides the error behind the modal**
 
-- **Severity:** P2 · **Area:** 8. Flows & edge cases — Admin · quote composer · **Status:** OPEN
+- **Severity:** P2 · **Area:** 8. Flows & edge cases — Admin · quote composer · **Status:** FIXED
 - **Route:** /admin/upiti/[broj] (UP-2026-000054, status u_obradi)
 - **Context:** 1440x900 Chromium, owner, keyboard and mouse
 - **Standard:** WCAG 2.2 SC 3.3.1 Error Identification and 4.1.3 Status Messages (error not perceivable while modal) · DESIGN-SYSTEM §9.2 (form-level error summary receives focus on submit)
@@ -2672,13 +2780,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-admin/v3-inquiry-054.json](audit/flows-admin/v3-inquiry-054.json)… · [audit/flows-admin/inq-054-03-invalid.webp](audit/flows-admin/inq-054-03-invalid.webp) · [audit/flows-admin/v3-inq-01-invalid-dialog-open.webp](audit/flows-admin/v3-inq-01-invalid-dialog-open.webp)
 - **Suggested fix:** components/admin/inquiries/QuoteComposer.tsx: call the same line validation used by 'Sačuvaj nacrt' before opening the dialog. On a server error, close the dialog and focus the first invalid input (aria-invalid + aria-describedby per line). Require a price on every line and default free lines to 'Po porudžbini'.
 - **Verification:** reproduce → confirmed (P2): Reproduced on UP-2026-000084 at 1440x900 in Chromium as owner. I added the catalog line 5Q0615505R (4.690) and a free line with Količina '1,5' and an empty Cena. Dostupnost defaulted to 'Na stanju'. As a control, 'Sačuvaj nacrt' with the same data shows 'Stavka 2: količina 1–999.' inline and opens no dialog, but it set… [[audit/verify/flows-admin/flows-admin-05-06-reproduce.json](audit/verify/flows-admin/flows-admin-05-06-reproduce.json) (steps 'confirm dialog (invalid line present)': '…dobija ponudu na 4.690 RSD…'; 'after confirm (invalid)': dialogOpen t…, [audit/verify/flows-admin/flows-admin-06-reproduce-stuck.webp](audit/verify/flows-admin/flows-admin-06-reproduce-stuck.webp) (dialog still open after confirm; error dimmed behind scrim)]
+- **Re-verification (step 22):** UI script at 1440 px with a free line, quantity '1,5' and an empty price. Result: dialogOpen false, focus on quote-l3-quantity, aria-invalid on the quantity and price inputs, alert 'Stavka 2: količina je ceo broj od 1 do 999. Stavka 2: upišite cenu.' (ui.json, composer-invalid-1440.webp). convex/inquiries.test.ts: sending an unpriced line fails with field 'lines.0.price'. (docs/qa/fix/backend-orders-quotes.json)
 - _Reviewer key: flows-admin-06_
 
 #### FLOW-18
 
 **'Odbij registraciju' and 'Pauziraj nalog' act on one click with no confirmation (reject e-mails the mechanic at once)**
 
-- **Severity:** P2 · **Area:** 8. Flows & edge cases — Admin · mechanics · **Status:** OPEN
+- **Severity:** P2 · **Area:** 8. Flows & edge cases — Admin · mechanics · **Status:** FIXED
 - **Route:** /admin/majstori/[id]
 - **Context:** 1440x900 Chromium, owner; pending mechanic from testing:createPendingMechanic, then an approved one
 - **Standard:** DESIGN-SYSTEM §9.1 Button (Danger: 'confirmation dialog for irreversible actions') and §9.14 Dialogs · consistency with order cancel
@@ -2691,13 +2800,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-admin/mech-settings.json](audit/flows-admin/mech-settings.json)… · [audit/flows-admin/v3-mech-settings.json](audit/flows-admin/v3-mech-settings.json) … · [audit/flows-admin/v3-audit.json](audit/flows-admin/v3-audit.json) (… · [audit/flows-admin/mech-02-reject-empty.webp](audit/flows-admin/mech-02-reject-empty.webp)
 - **Suggested fix:** components/admin/MechanicAdminDetail.tsx:575-603: route reject and suspend through the existing ConfirmDialog (components/admin/ConfirmDialog.tsx, as UsersAdmin 'Povuci pozivnicu' does) with danger styling, and show the reason in the dialog.
 - **Verification:** reproduce → confirmed (P2): 1440x900 Chromium, owner. I created pending mechanic 'Servis Admin vfa07a-1252384' with testing:createPendingMechanic, typed a reason and clicked 'Odbij registraciju'. I polled for 1.5 s and no dialog or alertdialog appeared. The UI showed 'Odbijen' about 1.6 s after the click. mechanicProfileProbe returned status reje… [[audit/verify/flows-admin/flows-admin-07-10-reproduce.json](audit/verify/flows-admin/flows-admin-07-10-reproduce.json) (steps '07a reject with reason': dialogsSeenWithin1_5s 0, probe rejected; '07b suspend at 1440' and '07c suspend at 390…, [audit/verify/flows-admin/flows-admin-07-reproduce-rejected.webp](audit/verify/flows-admin/flows-admin-07-reproduce-rejected.webp)]
+- **Re-verification (step 22):** admin-flows-verify.mjs mechanic / suspend -> FLOW-18-reject {emptyReason:{dialog:0, focusedTag:'TEXTAREA', fieldInvalid:'true'}, alertText:'Odbiti registraciju servisa „Servis Admin fixaf5752144“?Majstor odmah dobija e-poruku sa ovim razlogom:…', statusAfterCancel:'pending', statusAfterConfirm:'rejected'}; FLOW-18-suspend {alertText:'Pauzirati nalog servisa „Audit servis d.o.o.“?…', statusAfterCancel:'approved'} (docs/qa/fix/admin-flows/verify-mechanic-order.json, verify-suspend-import.json). (docs/qa/fix/admin-flows.json)
 - _Reviewer key: flows-admin-07_
 
 #### FLOW-19
 
 **Admin has no connection indicator: offline writes spin forever inside a locked modal whose 'Odustani' is disabled**
 
-- **Severity:** P2 · **Area:** 8. Flows & edge cases — Admin · shell, order detail (any write) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 8. Flows & edge cases — Admin · shell, order detail (any write) · **Status:** FIXED
 - **Route:** /admin/porudzbine/[broj] (SK-2026-000141); the same shell is used on every /admin route
 - **Context:** 1440x900 Chromium, owner, network set offline (Playwright setOffline) for about 15 s
 - **Standard:** Nielsen visibility of system status · WCAG 2.2 SC 4.1.3 Status Messages · task brief (network loss)
@@ -2717,13 +2827,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-admin/v3-offline-02-confirm.webp](audit/flows-admin/v3-offline-02-confirm.webp) · [audit/flows-admin/v3-keys-offline-390.json](audit/flows-admin/v3-keys-offline-390.json) … · sc…
 - **Suggested fix:** AdminShell: subscribe to useConvexConnectionState() (convex/react) and render a role=status banner 'Veza je prekinuta — izmene će biti sačuvane kad se veza vrati' plus a pending count. In ConfirmDialog, keep 'Odustani' enabled and add a 'Čeka vezu…' label while disconnected.
 - **Verification:** reproduce → confirmed (P2): 1440x900 Chromium, owner, new test order SK-2026-000144 (testing:createTestOrder). I filled 'Nova napomena', called context.setOffline(true) and clicked 'Dodaj napomenu'. After 6 s the button was still aria-busy, no role=status/alert/aria-live region had any text, and the server still had only order.created. I then cli… [[audit/verify/flows-admin/flows-admin-08-reproduce.json](audit/verify/flows-admin/flows-admin-08-reproduce.json) (steps 'offline 6 s after dialog Potvrdi': dialogOpen true, cancelDisabled true, serverStatus nova; 'offline: Escape pr…, [audit/verify/flows-admin/flows-admin-08-reproduce-01-note-pending.webp](audit/verify/flows-admin/flows-admin-08-reproduce-01-note-pending.webp)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-lists-shell-verify.mjs offline → verify-offline.json: offline strip text „Veza sa serverom je prekinuta — pokušavamo ponovo. …“, role status, position sticky; after reconnect „Veza je ponovo uspostavljena.“ for ~3 s then empty. … verify.mjs confirm → verify-confirm.json (test order SK-2026-000157, bulk „Potvrdi“ offline): buttons „Zatvori|false“ and „Čeka vezu…“, dialog status „Nema veze sa serverom. Radnja čeka …“, banner „… Na čekanju: 1 izmena. …“, dialogClosed true, appliedAfterReconnect true; errors []. (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: flows-admin-08_
 
 #### FLOW-20
 
 **Product editor: on a failed save, focus stays on the button and doesn't move to the error summary**
 
-- **Severity:** P2 (reported P3, adjusted by verification) · **Area:** 8. Flows & edge cases — Admin · products editor · **Status:** OPEN
+- **Severity:** P2 (reported P3, adjusted by verification) · **Area:** 8. Flows & edge cases — Admin · products editor · **Status:** FIXED
 - **Route:** /admin/proizvodi/novi
 - **Context:** 1440x900 Chromium, owner, keyboard
 - **Standard:** DESIGN-SYSTEM §9.2 · WCAG 2.2 SC 3.3.1 (best practice)
@@ -2735,13 +2846,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-admin/v3-product.json](audit/flows-admin/v3-product.json)… · [audit/flows-admin/product-852021.json](audit/flows-admin/product-852021.json) …
 - **Suggested fix:** ProductEditor.tsx save(): when errs is non-empty, focus the error summary (tabIndex=-1, role=alert) or the first invalid field after render.
 - **Verification:** reproduce → confirmed (P2): On /admin/proizvodi/novi as owner, clicking 'Sačuvaj artikal' (sticky bar, y=844) on the empty form marked 5 fields aria-invalid and showed the role=alert summary (no tabindex). Focus stayed on 'BUTTON Sačuvaj artikal'. I got BUTTON on every run and never the BODY from the reporter's first run. Enter on the focused but… [[audit/verify/flows-admin/flows-admin-13-reproduce.json](audit/verify/flows-admin/flows-admin-13-reproduce.json), [audit/verify/flows-admin/flows-admin-13-reproduce-click.webp](audit/verify/flows-admin/flows-admin-13-reproduce-click.webp)]
+- **Re-verification (step 22):** admin.json 'empty save' -> focus 'DIV role=alert', invalid 5 (audit: focus BUTTON/BODY). (docs/qa/fix/search-catalog-content.json)
 - _Reviewer key: flows-admin-13_
 
 #### FLOW-21
 
 **Quick order: duplicate lines are not checked against combined stock, and a rejected line disappears from the list with a misleading message**
 
-- **Severity:** P2 · **Area:** 8. Flows & edge cases — Mechanics portal / quick order · **Status:** OPEN
+- **Severity:** P2 · **Area:** 8. Flows & edge cases — Mechanics portal / quick order · **Status:** FIXED
 - **Route:** /majstor/brza-porudzbina
 - **Context:** Chromium 1440x900, signed in as the shared audit mechanic (Majstor Plus, 15 %), cart empty at the start
 - **Standard:** BRIEF §9 mechanics portal (quick order to cart in one click, reliable), WCAG 2.2 SC 3.3.1 Error Identification (the dropped line is never identified)
@@ -2756,13 +2868,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-import-mech/mechorder-after-add-1440.webp](audit/flows-import-mech/mechorder-after-add-1440.webp) · [audit/flows-import-mech/mechorder-run.log](audit/flows-import-mech/mechorder-run.log) … · [audit/flows-import-mech/extra-quick-dup-check-1440.webp](audit/flows-import-mech/extra-quick-dup-check-1440.webp) · [audit/flows-import-mech/extra.json](audit/flows-import-mech/extra.json) (q…
 - **Suggested fix:** components/mechanic/QuickOrder.tsx: in the check step, sum quantities per chosen productId and run `orderable()` on the total. Show a row-level message on every duplicate and offer „Spoji redove“. In `addAll`, send the merged quantities. Have `addMany` return the keys of the rows it added and the ones it rejected (not product ids), and keep rejected rows in `rows`. Build the rejection text from available minus in-cart („Možete dodati još 1 kom.“).
 - **Verification:** reproduce → confirmed (P2): Chromium 1440x900, shared audit mechanic, /majstor/brza-porudzbina. DEMO-0004 stock is now 2 (was 3 when reported), so numbers differ but the behaviour is the same. (a) Pasted `5Q0615505R 2` / `5Q0 615 505 R 2` / `036 121 959 P 1`. Both disc rows show TAČNO, „Malo na stanju · 2 kom.“ and qty 2, with the + stepper disab… [[audit/verify/flows-import-mech/flows-import-mech-01-reproduce-check-1440.webp](audit/verify/flows-import-mech/flows-import-mech-01-reproduce-check-1440.webp), [audit/verify/flows-import-mech/flows-import-mech-01-reproduce-after-add-1440.webp](audit/verify/flows-import-mech/flows-import-mech-01-reproduce-after-add-1440.webp)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cart-mechanic-overlays-quick.mjs flow → '21a rows' show 'Isti deo je i u redu 2 — ukupno 4 kom. · Spoji redove · Možete dodati još 2 kom.' on both disc rows (stock 2), 'addAll: Dodaj sve u korpu (1)' (only the belt), and after adding both disc rows remain listed; '21c-stock1' shows 'Možete dodati još 1 kom.' with 'Dodaj sve u korpu (0)'. Screenshot docs/qa/fix/cart-mechanic-overlays/flow21-duplicates-1440.webp. (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: flows-import-mech-01_
 
 #### FLOW-22
 
 **Quick order: an existing code with quantity 0 or above 999 is reported as „nije pronađeno“ and forwarded to staff as an unknown part**
 
-- **Severity:** P2 · **Area:** 8. Flows & edge cases — Mechanics portal / quick order parser · **Status:** OPEN
+- **Severity:** P2 · **Area:** 8. Flows & edge cases — Mechanics portal / quick order parser · **Status:** FIXED
 - **Route:** /majstor/brza-porudzbina (and the resulting inquiry /admin/upiti/UP-2026-000079)
 - **Context:** Chromium 1440x900, audit mechanic
 - **Standard:** WCAG 2.2 SC 3.3.1 Error Identification / 3.3.3 Error Suggestion; BRIEF §9 mechanics quick order (not found → inquiry only when truly missing)
@@ -2780,13 +2893,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-import-mech/extra-quick-dup-check-1440.webp](audit/flows-import-mech/extra-quick-dup-check-1440.webp) · [audit/flows-import-mech/extra.json](audit/flows-import-mech/extra.json) … · [audit/flows-import-mech/extra-inquiry-79-admin-1440.webp](audit/flows-import-mech/extra-inquiry-79-admin-1440.webp) · [audit/flows-import-mech/portal-run2.log](audit/flows-import-mech/portal-run2.log) (q…
 - **Suggested fix:** lib/domain/quickOrder.ts: when the last token is all digits (up to 5), also emit a candidate where that token is the quantity, carrying a `quantityError` („0“ / „> 999“) instead of discarding it. The server match then finds the code, and QuickOrder.tsx shows the row as TAČNO with an inline quantity error and a stepper clamped to 1–999. Keep unknown-code inquiries for real misses only.
 - **Verification:** reproduce → confirmed (P2): Chromium 1440x900, audit mechanic. Checked `5Q0615505R 0`, `5Q0615505R 1000`, `ZZ9999999`, `5q0-615-505-r 0` and `5Q0615505R 1500`. All five show NIJE PRONAĐENO „Ovaj broj nemamo u katalogu…“, although DEMO-0004 is in stock. Close variants have the same problem: `5Q0615505R x1000` and `1000x 5Q0615505R` are also NIJE P… [[audit/verify/flows-import-mech/flows-import-mech-02-reproduce-check-1440.webp](audit/verify/flows-import-mech/flows-import-mech-02-reproduce-check-1440.webp), [audit/verify/flows-import-mech/flows-import-mech-01-02-reproduce.json](audit/verify/flows-import-mech/flows-import-mech-01-02-reproduce.json) (02:check rows 1-9, 02:inquireButton „Pošalji upit za nepronađene (7)“)]
+- **Re-verification (step 22):** npx vitest run tests/unit/domain/quickOrder.test.ts → 'Tests 42 passed (42)' (new block 'quantities out of range (FLOW-22)'). scripts/qa/fix/cart-mechanic-overlays-quick.mjs flow → '22 rows': '[exact] 5Q0615505R · TAČNO … Upisali ste 0 kom. … postavljeno je 1 kom.', '[exact] … Upisali ste 1000 kom. … postavljeno je 999 kom.', only 'ZZ9999999' is not_found. Screenshot docs/qa/fix/cart-mechanic-overlays/flow22-qty-range-1440.webp. (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: flows-import-mech-02_
 
 #### FLOW-23
 
 **E-mail plain-text previews are rendered in ALL CAPS and long URLs are clipped, so staff cannot check the text alternative**
 
-- **Severity:** P2 · **Area:** 8. Flows & edge cases — Notifications / admin e-mail log and template gallery · **Status:** OPEN
+- **Severity:** P2 · **Area:** 8. Flows & edge cases — Notifications / admin e-mail log and template gallery · **Status:** FIXED
 - **Route:** /admin/mejlovi (message sheet → „Običan tekst“), /admin/mejlovi/sabloni?sablon=<any>&prikaz=tekst
 - **Context:** Chromium 1440x900, owner, send mode „Samo zapis“
 - **Standard:** DESIGN-SYSTEM typography (type-code-s is the uppercase code/label style, not body text); BRIEF notifications (staff preview of the plain-text alternative)
@@ -2799,13 +2913,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-import-mech/emails-sheet-order-received-text-1440.webp](audit/flows-import-mech/emails-sheet-order-received-text-1440.webp) · [audit/flows-import-mech/emails-template-order_received-tekst-1440.webp](audit/flows-import-mech/emails-template-order_received-tekst-1440.webp) · [audit/flows-import-mech/emails.json](audit/flows-import-mech/emails.json) (…
 - **Suggested fix:** components/admin/system/EmailsAdmin.tsx:299 and components/admin/system/EmailTemplatesAdmin.tsx:167: replace `type-code-s` with `type-code` (no text-transform) or add `normal-case`, and add `[overflow-wrap:anywhere]` so URLs wrap.
 - **Verification:** reproduce → confirmed (P2): Chromium 1440x900, owner, send mode „Samo zapis“. /admin/mejlovi, opened „Porudžbina SK-2026-000144 je primljena“, then the „Običan tekst“ tab. The pre has computed text-transform: uppercase (class type-code-s; app/globals.css @utility type-code-s sets text-transform: uppercase). textContent is sentence case („Porudžbi… [[audit/verify/flows-import-mech/flows-import-mech-03-reproduce-sheet-text-bottom-1440.webp](audit/verify/flows-import-mech/flows-import-mech-03-reproduce-sheet-text-bottom-1440.webp), [audit/verify/flows-import-mech/flows-import-mech-03-reproduce-gallery-text-1440.webp](audit/verify/flows-import-mech/flows-import-mech-03-reproduce-gallery-text-1440.webp)]
+- **Re-verification (step 22):** verify.json text.gallery (/admin/mejlovi/sabloni?sablon=order_received&prikaz=tekst): textTransform none, overflowWrap anywhere, horizontal overflow 0, visible text starts „Porudžbina je primljena.“ (before „PORUDŽBINA JE PRIMLJENA.“). (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: flows-import-mech-03_
 
 #### FLOW-24
 
 **Import wizard and rollback copy use wrong Serbian plural forms („1 redova“, „2 artikala se upisuje“, „3 ćelija“)**
 
-- **Severity:** P2 · **Area:** 8. Flows & edge cases — Excel import (admin) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 8. Flows & edge cases — Excel import (admin) · **Status:** FIXED
 - **Route:** /admin/uvoz (steps 1–5), /admin/uvoz/<batch> record, audit log summary
 - **Context:** Chromium 1440x900, owner; fixtures tests/fixtures/import (ivicni-slucajevi.xlsx, lager-cene.xlsx, bez-zaglavlja.csv)
 - **Standard:** CLAUDE.md Copy (correct Serbian Latin), BRIEF §9 copy quality
@@ -2818,13 +2933,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-import-mech/edge-4-dryrun-1440.webp](audit/flows-import-mech/edge-4-dryrun-1440.webp)… · [audit/flows-import-mech/edge-import.json](audit/flows-import-mech/edge-import.json) … · [audit/flows-import-mech/malformed.json](audit/flows-import-mech/malformed.json) (…
 - **Suggested fix:** Use `countSr(n, [one, few, many])` (already used in QuickOrder.tsx) in components/admin/import/BatchSteps.tsx:158, 217, 264, 374; CheckStep.tsx:307; MappingStep.tsx:91; ImportBatchDetail.tsx:269; the file-step row count; and convex/importCommit.ts:567. Verb agreement must follow too (upisuje/upisuju, nije vraćen/nisu vraćena).
 - **Verification:** reproduce → confirmed (P2): Chromium 1440x900, owner, /admin/uvoz. I used my own 3-row CSV (Šifra;Količina;MP cena; DEMO-0001..0003, with one price of 0 to trigger a warning) in mode „Samo lager i cene“. I ran the dry run only and then used „Otkaži uvoz“, so no products were written. Observed: file step „CSV · 1 KB · 3 redova“ (should be 3 reda).… [[audit/verify/flows-import-mech/flows-import-mech-04-reproduce-4b-dryrun-writes-1440.webp](audit/verify/flows-import-mech/flows-import-mech-04-reproduce-4b-dryrun-writes-1440.webp), [audit/verify/flows-import-mech/flows-import-mech-04-reproduce-2-mapping-1440.webp](audit/verify/flows-import-mech/flows-import-mech-04-reproduce-2-mapping-1440.webp)]
+- **Re-verification (step 22):** npx vitest run tests/unit/import -> 'Tests 77 passed (77)' (new copy.test.ts covers 1/2/5/11/21/1.250 forms and verb agreement); admin-flows-verify.mjs import -> {rows:'22 reda', most:'… Upisaće se najviše 22 reda.', warnHint:'2 reda sa upozorenjem', writes:'20 artikala se upisuje; …'}; batch description 'Samo lager i cene · 22 reda · …' (docs/qa/fix/admin-flows/verify-suspend-import.json). (docs/qa/fix/admin-flows.json)
 - _Reviewer key: flows-import-mech-04_
 
 #### BE-03
 
 **Consent proof is client-supplied: terms/privacy versions and acceptedAt are stored verbatim**
 
-- **Severity:** P2 · **Area:** 9. Backend & reliability — Privacy / records (legal evidence) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 9. Backend & reliability — Privacy / records (legal evidence) · **Status:** FIXED
 - **Route:** /korpa checkout (orders:submit via validateCheckout), /upit (inquiries:submit), /upit/[token] quote accept (inquiries:acceptQuote), /za-majstore (mechanics:register)
 - **Context:** Dev deployment, anonymous inquiry. Read back with the owner-only privacy export.
 - **Standard:** SECURITY §L5 (consent records as proof), BRIEF §5 Records („evidencija svega“), ZZPL (controller must demonstrate consent)
@@ -2843,13 +2959,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/backend/consent-forgery.json](audit/backend/consent-forgery.json) · s…
 - **Suggested fix:** Build the consent object on the server in all four entry points: {termsVersion: settings.legalVersions.terms, privacyVersion: settings.legalVersions.privacy, acceptedAt: Date.now(), marketingEmail/analytics/ads from args}. Return CONFLICT („Uslovi su izmenjeni — osvežite stranicu.“) when the client's versions differ from the current ones. Add a convex-test.
 - **Verification:** reproduce → confirmed (P2): I wrote my own script (scripts/qa/audit/verify-backend-03-04.mjs) and ran it against the dev deployment. The legal versions in force are 2026-09-29 for terms and privacy. (A) Anonymous inquiries:submit with termsVersion "", privacyVersion "" and acceptedAt 2099-01-01 was accepted as UP-2026-000063. The owner privacy ex… [[audit/verify/backend/backend-03-reproduce.json](audit/verify/backend/backend-03-reproduce.json), scripts/qa/audit/verify-backend-03-04.mjs]
+- **Re-verification (step 22):** Live: node scripts/qa/fix/backend-orders-quotes-consent.mjs returns forged {code: CONFLICT, message: 'Uslovi su izmenjeni — osvežite stranicu.'} (docs/qa/fix/backend-orders-quotes/consent-attribution.json). convex/security.test.ts 'consent versions and time come from the server; attribution is clamped' passes: stored termsVersion is 2026-09-29 and acceptedAt is later than the forged 2000-01-01. (docs/qa/fix/backend-orders-quotes.json)
 - _Reviewer key: backend-03_
 
 #### BE-04
 
 **Attribution and company-address strings are stored unbounded and returned in full by admin lists**
 
-- **Severity:** P2 · **Area:** 9. Backend & reliability — Data integrity / abuse (payload caps) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 9. Backend & reliability — Data integrity / abuse (payload caps) · **Status:** FIXED
 - **Route:** orders:submit (/korpa), inquiries:submit (/upit), mechanics:register (/za-majstore); read back in /admin/upiti and /admin/porudzbine
 - **Context:** Dev deployment, anonymous inquiry (same run as backend-03), owner reads.
 - **Standard:** SECURITY §L2 payload caps, BRIEF §9 Security, Convex guidelines (bounded documents)
@@ -2866,13 +2983,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/backend/consent-forgery.json](audit/backend/consent-forgery.json) · s… · co…
 - **Suggested fix:** Add a `sanitizeAttribution()` helper in convex/lib that slices every touch field and drops non [A-Za-z0-9._-] characters from click ids, and apply it at the three entry points. Trim, slice and validate company.address in validateCheckout. Return campaign sliced (≤ 60) in list rows.
 - **Verification:** reproduce → confirmed (P2): Same script as backend-03. Inquiry path: - attribution.last.campaign of 200,000 characters was stored in full, and so was a gclid of 3,010 characters made of <>"'=;| (no charset filter). - inquiriesAdmin:list returns the full campaign: one row is 200,466 bytes. - The first page of the default Admin > Upiti tab ("Svi", … [[audit/verify/backend/backend-04-reproduce.json](audit/verify/backend/backend-04-reproduce.json), [audit/verify/backend/backend-04-reproduce-shot.json](audit/verify/backend/backend-04-reproduce-shot.json)]
+- **Re-verification (step 22):** Live (UP-2026-000086, closed afterwards): a 200 000-character campaign is stored with length 200, the admin list returns length 60, and a 5 000-character gclid containing '<script>' is stored as 512 safe characters (docs/qa/fix/backend-orders-quotes/consent-attribution.json). convex/security.test.ts passes, 15/15. (docs/qa/fix/backend-orders-quotes.json)
 - _Reviewer key: backend-04_
 
 #### BE-05
 
 **Quality gate: full `npx vitest run --maxWorkers=2` fails with two Convex test timeouts under load**
 
-- **Severity:** P2 · **Area:** 9. Backend & reliability — Quality gates (tests) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 9. Backend & reliability — Quality gates (tests) · **Status:** FIXED
 - **Route:** n/a (vitest convex project)
 - **Context:** Shared audit machine (other reviewers and Lighthouse running). Vitest 5, 61 files, 1096 tests.
 - **Standard:** BRIEF §9 Reliability („unit + Convex + e2e tests green“), CLAUDE.md Definition of Done
@@ -2889,13 +3007,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/backend/gate-vitest.txt](audit/backend/gate-vitest.txt) · [audit/backend/gate-vitest-rerun.txt](audit/backend/gate-vitest-rerun.txt)
 - **Suggested fix:** In vitest.config.ts set `testTimeout: 20_000` (and hookTimeout) for the `convex` project, or share one seeded world per file (beforeAll) so setupWorld is not rebuilt per test.
 - **Verification:** reproduce → partially_confirmed (P2): I ran `npx vitest run --maxWorkers=2` once at 16:36 on the shared machine: 1090 passed, 2 failed, 4 skipped, 249.6 s. - The load timeout reproduces for notify.test.ts:328 ("Test timed out in 5000ms"; the test took 28,214 ms). - orders.test.ts:80 did NOT time out in my run (1,172 ms). - The second failure was different … [[audit/verify/backend/backend-05-reproduce-run1.txt](audit/verify/backend/backend-05-reproduce-run1.txt), [audit/verify/backend/backend-05-reproduce-isolated.txt](audit/verify/backend/backend-05-reproduce-isolated.txt)]
+- **Re-verification (step 22):** npx vitest run --maxWorkers=2 on the 8 owned convex suites plus 4 domain unit suites: 'Test Files 12 passed (12), Tests 258 passed (258)'. This ran on 01.10.2026, after the time from which the crons test used to fail deterministically. (docs/qa/fix/backend-orders-quotes.json)
 - _Reviewer key: backend-05_
 
 #### BE-06
 
 **Order line edits never adjust stock that was already committed, so stock drifts in the „pri kreiranju“ decrement mode**
 
-- **Severity:** P2 · **Area:** 9. Backend & reliability — Data integrity (stock) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 9. Backend & reliability — Data integrity (stock) · **Status:** FIXED
 - **Route:** /admin/porudzbine/[broj] „Izmeni stavke“ (ordersAdmin:editItems) with Admin → Podešavanja → umanjenje zalihe = created
 - **Context:** Code review. Not exercised live because switching the global stock mode would affect other reviewers' orders.
 - **Standard:** BRIEF §5 Admin (stock movements log, every change with reason), BRIEF §6 (stock decrement configurable, returns on cancel)
@@ -2913,13 +3032,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/backend/code-greps.txt](audit/backend/code-greps.txt)… · [audit/backend/integrity.json](audit/backend/integrity.json) …
 - **Suggested fix:** In editItems, when order.stockCommitted: removal → applyStockDelta(+committedQty, reason order_edited); qty change → delta of the committed part; addition → commit −qty and set committedQty. In commitsStockOn, commit on potvrdjena in both modes when the order is not yet committed. Add convex-tests for created mode + edit + cancel.
 - **Verification:** reproduce → confirmed (P2): I reproduced this in memory with convex-test against the real schema and functions (scripts/qa/audit/verify-backend-06.test.ts). The shared deployment's stock mode was never touched. Stock mode "created", restockOnCancel on. (1) Order disc × 3 + battery × 1: stock 10 → 7. Staff remove the disc line: stock stays 7 (expe… [scripts/qa/audit/verify-backend-06.test.ts, scripts/qa/audit/verify-backend-06.vitest.config.mts]
+- **Re-verification (step 22):** The audit repro, npx vitest run -c scripts/qa/audit/verify-backend-06.vitest.config.mts, now shows every actual value equal to its expected value. remove-then-cancel: afterRemove 10, afterCancel 10. lower-then-complete: afterEdit 9. add-then-complete: batteryLine committedQty 2, currentStock 18. mode-switch: stockCommitted true, afterComplete 7. Its 4 bug-asserting tests fail for that reason (docs/qa/fix/backend-orders-quotes/verify-backend-06.txt). convex/orders.test.ts has 2 new BE-06 tests and passes 24/24. (docs/qa/fix/backend-orders-quotes.json)
 - _Reviewer key: backend-06_
 
 #### BE-07
 
 **The global sign-up limit can be drained by anyone and closes registration for all customers and mechanics**
 
-- **Severity:** P2 · **Area:** 9. Backend & reliability — Security / availability (auth) · **Status:** OPEN
+- **Severity:** P2 · **Area:** 9. Backend & reliability — Security / availability (auth) · **Status:** FIXED
 - **Route:** /registracija and /za-majstore (Convex Auth `auth:signIn` flow signUp → afterUserCreatedOrUpdated)
 - **Context:** Code review plus the deployed function spec. Not executed: draining the bucket would lock out other reviewers.
 - **Standard:** BRIEF §5 Mechanics (registration flow), BRIEF §9 Security; D207 documented, but the trade-off breaks the BRIEF as shown
@@ -2937,6 +3057,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/backend/code-greps.txt](audit/backend/code-greps.txt)… · [audit/backend/deployed-function-spec-summary.txt](audit/backend/deployed-function-spec-summary.txt)
 - **Suggested fix:** Enable e-mail verification (R01/D212) so junk sign-ups do not become active accounts. Key sign-up limits on the caller IP where Convex request metadata is available, or on a signed client-IP header forwarded by the /api/auth proxy with direct calls refused. Keep the global number as an owner alert rather than a hard stop.
 - **Verification:** reproduce → confirmed (P2): I did not drain the shared bucket. I reproduced each part without spending a sign-up token. (1) I called the public auth:signIn action directly on <deployment>.eu-west-1.convex.cloud through ConvexHttpClient, skipping the Next proxy, with flow signUp and a 5-character password. The backend ran the sign-up flow and answ… [[audit/verify/backend/backend-07-reproduce.json](audit/verify/backend/backend-07-reproduce.json) (direct convex.cloud auth:signIn signUp -> WEAK_PASSWORD; signUpGlobal/global bucket capacity 30, rate 60/h, value 28.1…, [audit/verify/backend/backend-07-proxy-error.txt](audit/verify/backend/backend-07-proxy-error.txt) (proxy returns HTTP 400 {"error":"[Request ID…] Server Error Uncaught ConvexError: {…}"}, so the ConvexError data is lo…]
+- **Re-verification (step 22):** npx tsc --noEmit reports no errors in convex/auth.ts or convex/lib/rateLimits.ts. The alert path (countTowardsAlert → notifications.ownerAlert, one alert per hour) is covered by convex/orders.test.ts 'the site-wide order threshold alerts the owner instead of refusing orders' (1 alert). npx convex dev --once: 'Convex functions ready!'. (docs/qa/fix/backend-orders-quotes.json)
 - _Reviewer key: backend-07_
 
 ### P3 — polish (75)
@@ -2945,7 +3066,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 
 **Product names break before the dimension sign („Kočioni disk prednji 312 / × 25 mm“) — no no-break space around „×“ in cards, search results and titles**
 
-- **Severity:** P3 · **Area:** 1. Visual design & consistency — Typography / product names · **Status:** OPEN
+- **Severity:** P3 · **Area:** 1. Visual design & consistency — Typography / product names · **Status:** FIXED
 - **Route:** /delovi/kocioni-diskovi (1440, 390, 360), /pretraga?q=disk (1440, 1920), landings, related products on /deo/[slug]
 - **Context:** Chromium 360/390/1440/1920; anonymous
 - **Standard:** DESIGN-SYSTEM §4.4 (non-breaking spaces)
@@ -2958,6 +3079,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-store/cat/1440-top.webp](audit/vis-store/cat/1440-top.webp) · [audit/vis-store/v2-verify-wrap-stage-cardclip-tinybtn.json](audit/vis-store/v2-verify-wrap-stage-cardclip-tinybtn.json) … · sc…
 - **Suggested fix:** lib/format/nbsp.ts: add a rule `(\d)[ \t]*×[ \t]*(\d)` → `$1 × $2` inside typographer(); apply typographer() to product names in components/catalog/ProductCard.tsx (line ~112), the product H1, breadcrumbs and cart lines.
 - **Verification:** reproduce → confirmed (P3): Scanned the rendered product-name text nodes with Range.getClientRects in Chromium. On /delovi/kocioni-diskovi at 1440, 768, 390 and 360, „Kočioni disk prednji 312 × 25 mm, ventilirani“ (Brembo, OEM 1K0 615 591 E) breaks after „312“, so line 2 starts with „× 25 mm, ventilirani“. At 1280 the break does not happen becaus… [[audit/verify/vis-store/vis-store-07-reproduce-cat-1440.webp](audit/verify/vis-store/vis-store-07-reproduce-cat-1440.webp), [audit/verify/vis-store/vis-store-07-reproduce-cat-360.webp](audit/verify/vis-store/vis-store-07-reproduce-cat-360.webp)]
+- **Re-verification (step 22):** npx tsc --noEmit exit 0; eslint exit 0. (docs/qa/fix/cross-p1.json)
 - _Reviewer key: vis-store-07_
 
 #### VIS-20
@@ -2982,13 +3104,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-store/home/sec-360-03.webp](audit/vis-store/home/sec-360-03.webp) · [audit/vis-store/v3-buy](audit/vis-store/v3-buy).…
 - **Suggested fix:** components/home/HomeSections.tsx: below 768 px render the systems index as 8 system rows (name + count) that expand (details/summary) or link to the system hubs, and keep the full list from md up; alternatively replace it on phones with one „Svi delovi po sistemima“ link.
 - **Verification:** reproduce → partially_confirmed (P3): The numbers reproduce exactly after scrollThrough. At 390×844 the home page is 12,213 px (14.5 screens), the hero is 3,082, „Najtraženije kategorije“ is 1,686 and „Delovi po sistemima“ is 2,869 px with 44 links (3.4 screens). At 360×780 the page is 11,979 px and the index is 2,865 px (3.67 screens). At 768 the index is… [[audit/verify/vis-store/vis-store-08-reproduce-390-a.webp](audit/verify/vis-store/vis-store-08-reproduce-390-a.webp), [audit/verify/vis-store/vis-store-08-reproduce-390-b.webp](audit/verify/vis-store/vis-store-08-reproduce-390-b.webp)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (owned by the home-hero-sections package, which recorded no change for it).
 - _Reviewer key: vis-store-08_
 
 #### VIS-21
 
 **Mobile landings open with a 7–9-line generated lead that pushes the first product price below the fold at 360 px, while category pages collapse their intro behind „Više o kategoriji“**
 
-- **Severity:** P3 · **Area:** 1. Visual design & consistency — Category/vehicle landing hierarchy (mobile) · **Status:** OPEN
+- **Severity:** P3 · **Area:** 1. Visual design & consistency — Category/vehicle landing hierarchy (mobile) · **Status:** FIXED
 - **Route:** /delovi/kocioni-diskovi/volkswagen/golf, /delovi/kocioni-diskovi/volkswagen, filtered /delovi/kocioni-diskovi?…&generacija=golf-7
 - **Context:** Chromium 360×780 and 390×844; anonymous
 - **Standard:** DESIGN-SYSTEM §5.1 (mobile reading order); BRIEF §9 (landings, mobile first impression)
@@ -3007,13 +3130,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-store/landm/390-top.webp](audit/vis-store/landm/390-top.webp) · [audit/vis-store/fold-metrics.json](audit/vis-store/fold-metrics.json) … · sc…
 - **Suggested fix:** Render the landing lead from lib/seo/landingCopy.ts through the same disclosure used in components/catalog/CategoryListingView.tsx (~line 194): first sentence visible, the facts sentence behind „Više o …“ on < 768 px; or move the facts sentence below the grid.
 - **Verification:** reproduce → partially_confirmed (P3): Landing part confirmed. /delovi/kocioni-diskovi/volkswagen/golf at 360×780 has a 9-line lead that ends at y 458, with no disclosure. The first card starts at 654, only its stock line is visible, and the price („RSD“) bottom is 823 and the button bottom 847, both below 780. /delovi/kocione-plocice/volkswagen/golf behave… [[audit/verify/vis-store/vis-store-09-reproduce-delovi_kocioni-diskovi_volkswagen_golf-360.webp](audit/verify/vis-store/vis-store-09-reproduce-delovi_kocioni-diskovi_volkswagen_golf-360.webp), [audit/verify/vis-store/vis-store-09-reproduce-delovi_kocioni-diskovi_volkswagen_golf-390.webp](audit/verify/vis-store/vis-store-09-reproduce-delovi_kocioni-diskovi_volkswagen_golf-390.webp)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/catalog-product-ui-misc.mjs -> /delovi/kocioni-diskovi/volkswagen/golf at 360x780: details closed with summary „Više o ponudi“, first card top 573 and its name, OEM, stock and price 3.890 RSD inside the first viewport (vis21-landing-360.webp); the „U korpu“ button is ~60 px below the fold; text-reveal check {stuck: [], pending: 0, words: 0}. (docs/qa/fix/catalog-product-ui.json)
 - _Reviewer key: vis-store-09_
 
 #### VIS-22
 
 **Product gallery caption „Ilustracija kategorije — …“ is a 12 px sentence in a box that touches the right frame edge and wraps over the render at 360 px**
 
-- **Severity:** P3 · **Area:** 1. Visual design & consistency — Product page gallery · **Status:** OPEN
+- **Severity:** P3 · **Area:** 1. Visual design & consistency — Product page gallery · **Status:** FIXED
 - **Route:** /deo/[slug] (every product without photos, e.g. /deo/kocioni-disk-prednji-276-24-mm-demo-0004, /deo/kociona-celjust-zadnja-desna-sa-motorom-rucne-demo-0018)
 - **Context:** Chromium 360×780 DPR 2 and 1440×900; anonymous
 - **Standard:** DESIGN-SYSTEM §4.3 (caption-s never for sentences), §4.4 (minimum sizes)
@@ -3026,13 +3150,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-store/pin/gallery-caption-360-dpr2.webp](audit/vis-store/pin/gallery-caption-360-dpr2.webp) · [audit/vis-store/plong/360-top.webp](audit/vis-store/plong/360-top.webp) · [audit/vis-store/v3-type.json](audit/vis-store/v3-type.json) (… · scr…
 - **Suggested fix:** app/(shop)/deo/[slug]/page.tsx:199: move the note into a figcaption below the image frame (type-caption 13 px, ink-3), or give the overlay symmetric insets (inset-x-3) and `max-w-[calc(100%-1.5rem)]` so it never touches the edge.
 - **Verification:** reproduce → confirmed (P3): On /deo/kocioni-disk-prednji-276-24-mm-demo-0004 and /deo/kociona-celjust-zadnja-desna-sa-motorom-rucne-demo-0018 at 360×780 DPR 2, the caption „Ilustracija kategorije — izgled dela može se razlikovati“ is 12 px, weight 500, rgb(150,144,136) (type-caption-s), and wraps to 2 lines. Its left inset in the 328×247 frame is… [[audit/verify/vis-store/vis-store-10-reproduce-360-0004.webp](audit/verify/vis-store/vis-store-10-reproduce-360-0004.webp), [audit/verify/vis-store/vis-store-10-reproduce-360-0018.webp](audit/verify/vis-store/vis-store-10-reproduce-360-0018.webp)]
+- **Re-verification (step 22):** deo.json caption {tag FIGCAPTION, size 13px, inside FIGURE} at every width. (docs/qa/fix/search-catalog-content.json)
 - _Reviewer key: vis-store-10_
 
 #### VIS-23
 
 **Mobile cart page: „Nastavi na porudžbinu“ sits below the fold with 2 or more lines, and there is no sticky total or CTA (the cart drawer has one)**
 
-- **Severity:** P3 (reported P2, adjusted by verification) · **Area:** 1. Visual design & consistency — Cart page · **Status:** OPEN
+- **Severity:** P3 (reported P2, adjusted by verification) · **Area:** 1. Visual design & consistency — Cart page · **Status:** FIXED
 - **Route:** /korpa
 - **Context:** Chromium isMobile, 390x844 and 360x780, guest cart with 3 lines (4 pcs, 18.760 RSD)
 - **Standard:** BRIEF §9 Visual (world-class transactional UX on mobile); DESIGN-SYSTEM §9.11 (the drawer's pinned summary pattern)
@@ -3051,13 +3176,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-commerce/cart-checkout/390-cart-filled.webp](audit/vis-commerce/cart-checkout/390-cart-filled.webp) · [audit/vis-commerce/cart-checkout/390-cart-filled-full.webp](audit/vis-commerce/cart-checkout/390-cart-filled-full.webp) · [audit/vis-commerce/cart-checkout/390-drawer.webp](audit/vis-commerce/cart-checkout/390-drawer.webp) · [audit/vis-commerce/v3-verify.json](audit/vis-commerce/v3-verify.json) (c…
 - **Suggested fix:** components/cart/CartView.tsx. Below lg, add a sticky bottom bar (bg-bg-raised/95 + top shadow, safe-area padding) with „Međuzbir 18.760 RSD“ and the primary „Nastavi na porudžbinu“, reusing the drawer footer layout. Keep the full summary card after the lines, and add bottom padding so the last line is never hidden. This is not the known „mobile sticky contact bar“ item.
 - **Verification:** reproduce → partially_confirmed (P3): I built a guest cart with 3 lines through the product pages (DEMO-0004 ×2, DEMO-0007, DEMO-0003; 4 pcs, 20.760 RSD). With 3 lines the only forward action is below the fold: „Nastavi na porudžbinu“ has its top at 988 px at 360x780, 968 at 390x844 and 968 at 430x932. Each line is 222 px tall. The only fixed or sticky ele… [[audit/verify/vis-commerce/vis-commerce-04-reproduce-390-korpa.webp](audit/verify/vis-commerce/vis-commerce-04-reproduce-390-korpa.webp), [audit/verify/vis-commerce/vis-commerce-04-reproduce-360-korpa.webp](audit/verify/vis-commerce/vis-commerce-04-reproduce-360-korpa.webp)]
+- **Re-verification (step 22):** scripts/qa/fix/cart-mechanic-overlays-misc.mjs → 'VIS-23 {"ctaCount":1,"ctaTop":780,"vh":844,"spb":"93px"}' with 5 lines at 390; screenshots vis23-cart-sticky-390.webp and vis23-cart-sticky-390-end.webp. (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: vis-commerce-04_
 
 #### VIS-24
 
 **Account order list: the status chip stretches to about 190 px on phones instead of hugging its label**
 
-- **Severity:** P3 · **Area:** 1. Visual design & consistency — Customer account · **Status:** OPEN
+- **Severity:** P3 · **Area:** 1. Visual design & consistency — Customer account · **Status:** FIXED
 - **Route:** /nalog, /nalog/porudzbine
 - **Context:** Chromium isMobile 360x780, audit customer signed in
 - **Standard:** DESIGN-SYSTEM §3.6 Status mapping (chips)
@@ -3069,6 +3195,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-commerce/account/360-nalog.webp](audit/vis-commerce/account/360-nalog.webp) · [audit/vis-commerce/v5-account360.json](audit/vis-commerce/v5-account360.json) … · [audit/vis-commerce/v4-verify.json](audit/vis-commerce/v4-verify.json) (…
 - **Suggested fix:** components/account/AccountViews.tsx:87: add justify-self-start (or w-fit) to the status chip in the order row.
 - **Verification:** reproduce → confirmed (P3): Signed in as the audit customer. In the /nalog and /nalog/porudzbine order rows the „Primljena“ chip (content 58 px) measures 192 px at 360, 222 px at 390 and 305 px at 479. At 480 px and above (the sm breakpoint) and at 1440 it is 74x24. The screenshot at 360 shows a wide blue bar spanning the left column. The cause m… [[audit/verify/vis-commerce/verify-07-10-09.json](audit/verify/vis-commerce/verify-07-10-09.json) (chip w 192/222/305 at 360/390/479; 74 at 480 and 1440, same on /nalog and /nalog/porudzbine), [audit/verify/vis-commerce/vis-commerce-09-reproduce-nalog-360.webp](audit/verify/vis-commerce/vis-commerce-09-reproduce-nalog-360.webp)]
+- **Re-verification (step 22):** scripts/qa/fix/cart-mechanic-overlays-account.mjs → '/nalog/porudzbine {… "chipW":74}' (audit ≈ 190 px); screenshot account-orders-390.webp. (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: vis-commerce-09_
 
 #### VIS-25
@@ -3087,6 +3214,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-commerce/orders/360-status-full.webp](audit/vis-commerce/orders/360-status-full.webp) · [audit/vis-commerce/orders/360-predracun.webp](audit/vis-commerce/orders/360-predracun.webp)
 - **Suggested fix:** Add whitespace-nowrap to the shared OEM/code span (the component that renders `OEM {code}` in order lines and the predračun), or format codes with U+00A0 between groups.
 - **Verification:** reproduce → confirmed (P3): Guest with the token, Chromium isMobile. On the order status page the OEM code „5Q0 615 505 R“ (span.type-code, white-space normal) splits across two lines at 320 and 360: „OEM 5Q0 615 505“ / „R · 1 × 4.690 RSD“, as the screenshot shows. At 390 and 430 it stays on one line. /porudzbina/hvala/<token> renders the same Or… [[audit/verify/vis-commerce/verify-07-10-10.json](audit/verify/vis-commerce/verify-07-10-10.json) (status/hvala: 2 lines at 320 and 360, 1 line at 390 and 430; predracun: 2 lines at 320/360/390/430), [audit/verify/vis-commerce/vis-commerce-10-reproduce-status-360.webp](audit/verify/vis-commerce/vis-commerce-10-reproduce-status-360.webp)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (owned by the cart-mechanic-overlays package, which recorded no change for it).
 - _Reviewer key: vis-commerce-10_
 
 #### VIS-26
@@ -3109,13 +3237,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-commerce/orders/360-upit-status-full.webp](audit/vis-commerce/orders/360-upit-status-full.webp)
 - **Suggested fix:** components/inquiry/InquiryStatusView.tsx: wrap the actions in a grid (grid gap-3 sm:flex) and give both buttons w-full sm:w-auto.
 - **Verification:** reproduce → partially_confirmed (P3): The stacking happens only on the narrowest phones. The buttons are content-width: „Prihvati ponudu“ is 178x52 and „Odbij ponudu“ is 164x52, in a flex-wrap row with gap-3 (InquiryStatusView.tsx:346). They need 354 px. At 360 px the column is 328 px wide, so they wrap: stacked, left-aligned, with a ragged right edge unde… [[audit/verify/vis-commerce/vis-commerce-12-reproduce-360.webp](audit/verify/vis-commerce/vis-commerce-12-reproduce-360.webp), [audit/verify/vis-commerce/vis-commerce-12-reproduce-390.webp](audit/verify/vis-commerce/vis-commerce-12-reproduce-390.webp)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (owned by the backend-orders-quotes package, which recorded no change for it).
 - _Reviewer key: vis-commerce-12_
 
 #### VIS-27
 
 **Cart lines: the remove (trash) button sits alone on its own row, away from the stepper and line total, adding about 40 px of dead space per line**
 
-- **Severity:** P3 · **Area:** 1. Visual design & consistency — Cart page · **Status:** OPEN
+- **Severity:** P3 · **Area:** 1. Visual design & consistency — Cart page · **Status:** FIXED
 - **Route:** /korpa
 - **Context:** Chromium, 390x844 and 1440x900, guest cart with 3 lines
 - **Standard:** DESIGN-SYSTEM §9.11 Cart drawer / line anatomy
@@ -3132,13 +3261,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-commerce/cart-checkout/1440-cart-filled.webp](audit/vis-commerce/cart-checkout/1440-cart-filled.webp) · [audit/vis-commerce/cart-checkout/390-cart-filled.webp](audit/vis-commerce/cart-checkout/390-cart-filled.webp)
 - **Suggested fix:** components/cart/CartView.tsx: place the 44 px remove icon button next to the stepper (desktop: stepper · total · remove in one row; mobile: stepper + remove on one row with the total right-aligned).
 - **Verification:** reproduce → confirmed (P3): Reproduced with a guest cart of 3 lines, and the scope is wider than reported: the cart drawer has the same problem. On /korpa at 1440 each line is 165 px tall. The stepper is at y 38 and the total at y 46 on the right (x 666–888 in the line), while the 44 px trash button sits alone at y 104, x 82, under the meta. On /… [[audit/verify/vis-commerce/vis-commerce-13-reproduce-korpa-1440.webp](audit/verify/vis-commerce/vis-commerce-13-reproduce-korpa-1440.webp), [audit/verify/vis-commerce/vis-commerce-13-reproduce-korpa-390.webp](audit/verify/vis-commerce/vis-commerce-13-reproduce-korpa-390.webp)]
+- **Re-verification (step 22):** Screenshot docs/qa/fix/cart-mechanic-overlays/cart-page-390.webp; line height 152 px at 390 with 44 px controls. (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: vis-commerce-13_
 
 #### VIS-28
 
 **Account on phones: „Odjavi se“ is the first element after the tabs, above the page content**
 
-- **Severity:** P3 · **Area:** 1. Visual design & consistency — Customer account · **Status:** OPEN
+- **Severity:** P3 · **Area:** 1. Visual design & consistency — Customer account · **Status:** FIXED
 - **Route:** /nalog (all /nalog/* tabs share AccountNav)
 - **Context:** Chromium isMobile 360x780, audit customer signed in
 - **Standard:** Visual hierarchy / DESIGN-SYSTEM §9.16 Tabs; BRIEF §9 Visual
@@ -3150,6 +3280,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-commerce/account/360-nalog.webp](audit/vis-commerce/account/360-nalog.webp) · [audit/vis-commerce/v4/1440-nalog_profil.webp](audit/vis-commerce/v4/1440-nalog_profil.webp)
 - **Suggested fix:** components/account/AccountNav.tsx:45: render <SignOutButton /> only from lg in the tab row (hidden lg:inline-flex), and add a mobile copy at the bottom of the account layout or the Profil tab.
 - **Verification:** reproduce → confirmed (P3): Signed in as the audit customer. At 360x780 the „Nalog“ tab nav ends at y 233, the 98x44 „Odjavi se“ button is at y 244, and the first content heading „Poslednje porudžbine“ is at y 327. At 390 the numbers are nav bottom 212, sign-out 223, and the tab border line is drawn under the button. /nalog/profil is the same. At… [[audit/verify/vis-commerce/vis-commerce-14-reproduce-_nalog-360.webp](audit/verify/vis-commerce/vis-commerce-14-reproduce-_nalog-360.webp), [audit/verify/vis-commerce/vis-commerce-14-reproduce-_nalog-768.webp](audit/verify/vis-commerce/vis-commerce-14-reproduce-_nalog-768.webp)]
+- **Re-verification (step 22):** scripts/qa/fix/cart-mechanic-overlays-account.mjs → every tab at 390: "signOutVisible":1,"signOutBelowContent":true. (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: vis-commerce-14_
 
 #### VIS-29
@@ -3173,6 +3304,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-admin/probe4/sidebar-1366x768-on-settings.webp](audit/vis-admin/probe4/sidebar-1366x768-on-settings.webp) · [audit/vis-admin/recheck/1440-podesavanja_tab_firma.webp](audit/vis-admin/recheck/1440-podesavanja_tab_firma.webp) · [audit/vis-admin/recheck/shell-1440x900.webp](audit/vis-admin/recheck/shell-1440x900.webp) · [audit/vis-admin/recheck.json](audit/vis-admin/recheck.json) (s…
 - **Suggested fix:** components/admin/shell/AdminSidebar.tsx: items are h-10 plus group spacing (mb-3, pt-2 labels). Use h-9 items and tighter group spacing when the viewport is short (`[@media(max-height:62rem)]:h-9`), pin the „Podešavanja“ group to the bottom of the aside, add a bottom scroll-fade mask while `scrollTop + clientHeight < scrollHeight`, and scroll the active item into view on route change.
 - **Verification:** reproduce → partially_confirmed (P3): Owner, Chromium. The measurements match exactly. Sidebar scroller at 1440x900: scrollHeight 985 vs clientHeight 844 (Cenovni razredi, Korisnici, Podešavanja below the fold). 1366x768: 985/712, six links hidden. 1280x800 (rail): 884/744, three hidden. Added: 1536x864 is 985/808 (three hidden), 1280x720 is 884/664 (five … [[audit/verify/vis-admin/vis-admin-03-reproduce.json](audit/verify/vis-admin/vis-admin-03-reproduce.json) (scrollHeight/clientHeight, hidden links and active item position for 1440x900, 1366x768, 1536x864, 1280x800, 1280x720,…, [audit/verify/vis-admin/vis-admin-03-reproduce-1440x900-podesavanja.webp](audit/verify/vis-admin/vis-admin-03-reproduce-1440x900-podesavanja.webp) (only the „PODEŠAVANJA“ label peeks at the bottom; the active item is not visible)]
+- **Re-verification (step 22):** not fixed — Not attempted in this run (sidebar compaction on short viewports, pinned settings group, scroll fade, active item scroll-into-view): not a trivial P3 within the time budget. Last check: No change made. (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: vis-admin-03_
 
 #### VIS-30
@@ -3191,13 +3323,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-admin/probe3/1024-rail-hover.webp](audit/vis-admin/probe3/1024-rail-hover.webp)
 - **Suggested fix:** components/admin/shell/AdminSidebar.tsx rail classes (`max-[1365px]:absolute right-1 top-0.5 h-[18px]`): offset the badge to the icon's top-right corner outside the glyph (e.g. translate-x-1/2 -translate-y-1/3 relative to a wrapper around the icon), cap rail counts at „9+“, and render the stock count as a dot in the rail.
 - **Verification:** reproduce → confirmed (P3): Reproduced on /admin/porudzbine at 1024x768 and 1280x800, both of which show the 64 px rail; measured at DPR 2. Measured overlap between each absolute badge and its 20x20 icon: „99+“ (30x18 at 21,122) covers 50 % of the Porudžbine glyph, which is its top half. „52“ covers 35 % of the Upiti bubble. „1“ covers 21 % of th… [[audit/verify/vis-admin/vis-admin-07-reproduce-1024-rail.webp](audit/verify/vis-admin/vis-admin-07-reproduce-1024-rail.webp) (99+, 52, 1 over their icons; 15 touching Lager), [audit/verify/vis-admin/vis-admin-07-reproduce.json](audit/verify/vis-admin/vis-admin-07-reproduce.json) (icon vs badge rects, iconAreaCoveredPct 50/35/21/15 at 1024 and 1280; none at 1366)]
+- **Re-verification (step 22):** not fixed — Not attempted (rail badge offsets, stock as a dot). The bell already caps at „9+“ and the sidebar at „99+“ (seen in 1440-proizvodi.jpg). Last check: No change made. (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: vis-admin-07_
 
 #### VIS-31
 
 **SEO description shows two conflicting counters („0 / 170“ and „0 / 155“)**
 
-- **Severity:** P3 · **Area:** 1. Visual design & consistency — Forms – SEO fields · **Status:** OPEN
+- **Severity:** P3 · **Area:** 1. Visual design & consistency — Forms – SEO fields · **Status:** FIXED
 - **Route:** /admin/proizvodi/novi, /admin/proizvodi/[id], /admin/kategorije (editor), /admin/podesavanja?tab=seo
 - **Context:** Chromium, owner, 1440x900
 - **Standard:** docs/qa/ADMIN.md AD-20 (one CharCount format); DESIGN-SYSTEM §9.2 Inputs
@@ -3210,6 +3343,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-admin/crop-seo-counter.webp](audit/vis-admin/crop-seo-counter.webp) · [audit/vis-admin/sheets/p3-a.webp](audit/vis-admin/sheets/p3-a.webp) … · [audit/vis-admin/sheets/settings.webp](audit/vis-admin/sheets/settings.webp) (…
 - **Suggested fix:** components/admin/products/SeoFields.tsx and the category/settings equivalents: keep one CharCount with max 170 and a warning state past 155; drop the number from the hint text („Do 155 znakova se vidi ceo.“).
 - **Verification:** reproduce → confirmed (P3): Reproduced at 1440x900 on all three screens, and the source shows why. The Textarea shows its own „n / maxLength“ counter by default (components/ui/Textarea.tsx, showCount default true), and each SEO description field also puts a CharCount (or a raw string) in the help text. /admin/kategorije with „Blok motora i glava“… [[audit/verify/vis-admin/vis-admin-08-reproduce-kategorije.webp](audit/verify/vis-admin/vis-admin-08-reproduce-kategorije.webp) („138 / 170“ + „138 / 155“), [audit/verify/vis-admin/vis-admin-08-reproduce-proizvod-novi.webp](audit/verify/vis-admin/vis-admin-08-reproduce-proizvod-novi.webp) („160 / 170“ neutral vs „160 / 155“ warning)]
+- **Re-verification (step 22):** npx eslint components/admin/catalog/CategoriesAdmin.tsx components/admin/ui.tsx → no output; npx tsc --noEmit → 0 errors (error TS count 0). (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: vis-admin-08_
 
 #### VIS-32
@@ -3229,6 +3363,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-admin/verify.json](audit/vis-admin/verify.json)… · [audit/vis-admin/verify/cancel-dialog-focus.webp](audit/vis-admin/verify/cancel-dialog-focus.webp) · [audit/vis-admin/sheets/p5-390-states.webp](audit/vis-admin/sheets/p5-390-states.webp) (…
 - **Suggested fix:** Radix Dialog's onOpenAutoFocus overrides React autoFocus. In the dialog used by OrderDetail.tsx (line ~325) pass onOpenAutoFocus={(e) => { e.preventDefault(); reasonRef.current?.focus(); }} (or move the close button after the form in DOM order).
 - **Verification:** reproduce → confirmed (P3): I reproduced this exactly as described on SK-2026-000092 (status NOVA), logged in as owner, in Chromium at 1440x900 and 390x844. Opening „Promeni status“ → „Otkaži porudžbinu“ puts document.activeElement on BUTTON[aria-label=Zatvori] with :focus-visible true, both 50 ms and 900 ms after the dialog appears. This happens… [[audit/verify/vis-admin/vis-admin-09-reproduce-1440-mouse.webp](audit/verify/vis-admin/vis-admin-09-reproduce-1440-mouse.webp), [audit/verify/vis-admin/vis-admin-09-reproduce-390-mouse.webp](audit/verify/vis-admin/vis-admin-09-reproduce-390-mouse.webp)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (owned by the admin-flows package, which recorded no change for it).
 - _Reviewer key: vis-admin-09_
 
 #### VIS-33
@@ -3251,13 +3386,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-admin/extra/pregled-1440-loaded.webp](audit/vis-admin/extra/pregled-1440-loaded.webp) · [audit/vis-admin/sheets/p3-b.webp](audit/vis-admin/sheets/p3-b.webp) …
 - **Suggested fix:** convex/lib/orders.ts STATUS_LABEL (nova: „Primljena“) builds the audit summary at line 537; use ADMIN_ORDER_STATUS labels from lib/i18n/sr/admin.ts for audit/activity summaries and keep the customer map for e-mails and the public timeline.
 - **Verification:** reproduce → partially_confirmed (P3): Confirmed on /admin (Pregled → Aktivnost: „SK-2026-000144: Primljena → Potvrđena“) and on /admin/revizija. Revizija shows five such rows: 000144, 000143 and 000141 „Primljena → Potvrđena“, 000142 „Primljena → Otkazana“, and 000139. The source is the audit summary built at convex/lib/orders.ts line 537 from the server-s… [[audit/verify/vis-admin/vis-admin-10-reproduce-pregled.webp](audit/verify/vis-admin/vis-admin-10-reproduce-pregled.webp), [audit/verify/vis-admin/vis-admin-10-reproduce-revizija.webp](audit/verify/vis-admin/vis-admin-10-reproduce-revizija.webp)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (owned by the backend-orders-quotes package, which recorded no change for it).
 - _Reviewer key: vis-admin-10_
 
 #### VIS-34
 
 **Two order-status icons deviate from the status map (Čeka deo = hourglass, Završena = receipt)**
 
-- **Severity:** P3 · **Area:** 1. Visual design & consistency — Status badges · **Status:** OPEN
+- **Severity:** P3 · **Area:** 1. Visual design & consistency — Status badges · **Status:** FIXED
 - **Route:** /admin/porudzbine (all tabs), order detail, customer detail
 - **Context:** Chromium, owner, 1440x900
 - **Standard:** DESIGN-SYSTEM §3.6 Status mapping
@@ -3268,13 +3404,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-admin/probe3/1440-porudzbine-sve.webp](audit/vis-admin/probe3/1440-porudzbine-sve.webp)…
 - **Suggested fix:** components/admin/ui.tsx ORDER_ICON: ceka_deo → WarningIcon, zavrsena → CheckSquareIcon.
 - **Verification:** reproduce → confirmed (P3): Checked at /admin/porudzbine?status=sve and ?status=ceka_deo, owner, 1440x900 at DPR 2. The „ZAVRŠENA“ chip shows the Receipt glyph (SVG path starting „M68,100A12,12…h96“, the receipt lines). The „ČEKA DEO“ chip on SK-2026-000003 has an SVG path identical to the inquiry „U obradi“ chip on /admin/upiti (the Hourglass pa… [[audit/verify/vis-admin/vis-admin-11-reproduce-ceka-deo.webp](audit/verify/vis-admin/vis-admin-11-reproduce-ceka-deo.webp), [audit/verify/vis-admin/vis-admin-11-reproduce-zavrsena.webp](audit/verify/vis-admin/vis-admin-11-reproduce-zavrsena.webp)]
+- **Re-verification (step 22):** npx tsc --noEmit → 0 errors; npx eslint components/admin/ui.tsx → no output. (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: vis-admin-11_
 
 #### VIS-35
 
 **Print views keep the grey page background: with background graphics on, a grey panel fills the A4 sheet below the document**
 
-- **Severity:** P3 · **Area:** 1. Visual design & consistency — Print (predračun, otpremnica) · **Status:** OPEN
+- **Severity:** P3 · **Area:** 1. Visual design & consistency — Print (predračun, otpremnica) · **Status:** FIXED
 - **Route:** /admin/porudzbine/[broj]/predracun, /admin/porudzbine/[broj]/otpremnica, /admin/stampa/otpremnice?brojevi=…
 - **Context:** Chromium print emulation and PDF (A4, printBackground true), owner
 - **Standard:** DESIGN-SYSTEM §3.3 (print tokens)
@@ -3286,13 +3423,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-admin/print/predracun-majstor.pdf](audit/vis-admin/print/predracun-majstor.pdf) · [audit/vis-admin/print/predracun-print.webp](audit/vis-admin/print/predracun-print.webp) · [audit/vis-admin/print.json](audit/vis-admin/print.json)
 - **Suggested fix:** app/globals.css print block (line ~813): add `html, body { background: #fff !important; }`, or give the (print) route group's html/body `print:bg-white`; the wrapper in app/admin/(print)/layout.tsx already has print:bg-white but only spans the content height.
 - **Verification:** reproduce → confirmed (P3): Reproduced at 794x1123 with print emulation on /admin/porudzbine/SK-2026-000033/predracun and /admin/porudzbine/SK-2026-000092/otpremnica. Pixel (400,1000) = 243,244,245 (#F3F4F5, the paper bg; the reporter's 243,245,247 is a WebP artefact). Pixel (400,200) inside the document = white. page.pdf with A4 and printBackgro… [[audit/verify/vis-admin/vis-admin-12-reproduce-predracun-print.webp](audit/verify/vis-admin/vis-admin-12-reproduce-predracun-print.webp), [audit/verify/vis-admin/vis-admin-12-reproduce-predracun.pdf](audit/verify/vis-admin/vis-admin-12-reproduce-predracun.pdf) (grey block below the footer note, opened)]
+- **Re-verification (step 22):** verify-consent-headers.json print {html 'rgb(255, 255, 255)', body 'rgb(255, 255, 255)'} under emulateMedia print. (docs/qa/fix/shell-perf.json)
 - _Reviewer key: vis-admin-12_
 
 #### VIS-36
 
 **Truncated list cells have no way to read the full value**
 
-- **Severity:** P3 · **Area:** 1. Visual design & consistency — Admin data tables – truncation · **Status:** OPEN
+- **Severity:** P3 · **Area:** 1. Visual design & consistency — Admin data tables – truncation · **Status:** FIXED
 - **Route:** /admin/upiti (Traži), /admin/mejlovi (Prima), /admin (Red čekanja)
 - **Context:** Chromium, owner, 1280–1440
 - **Standard:** DESIGN-SYSTEM §9.15 (truncation); impeccable Operate mode (scanability)
@@ -3309,6 +3447,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-admin/recheck.json](audit/vis-admin/recheck.json)… · [audit/vis-admin/recheck/table-1440-upiti.webp](audit/vis-admin/recheck/table-1440-upiti.webp)
 - **Suggested fix:** Add title={fullText} (or the Radix Tooltip) to the truncating spans in InquiriesList.tsx (Traži, line ~167), the outbox recipient cell and the dashboard queue summary.
 - **Verification:** reproduce → confirmed (P3): Scanned every visible .truncate element whose scrollWidth is larger than its clientWidth, as owner in Chromium at 1440x900 and 1280x800. /admin/upiti: 21 truncated cells at both widths, none with a title. The count is 19 in the „Traži“ column plus 2 in „Izvor“, not 21 „Traži“ as reported. /admin/mejlovi: 13 truncated „… [[audit/verify/vis-admin/vis-admin-14-reproduce.json](audit/verify/vis-admin/vis-admin-14-reproduce.json) (upiti-1440 {Traži titled=false:19, Izvor titled=false:2}; mejlovi-1440 {Prima titled=false:13}; proizvodi-1440 {Katego…, [audit/verify/vis-admin/vis-admin-14-reproduce-upiti-hover.webp](audit/verify/vis-admin/vis-admin-14-reproduce-upiti-hover.webp)]
+- **Re-verification (step 22):** npx eslint (touched files) → no output; npx tsc --noEmit → 0 errors. (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: vis-admin-14_
 
 #### VIS-37
@@ -3327,6 +3466,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-admin/probe4/390-quote-lines.webp](audit/vis-admin/probe4/390-quote-lines.webp)
 - **Suggested fix:** components/admin/inquiries/InquiryDetail.tsx:353: `{l.quantity} ×` and `whitespace-nowrap` on the td.
 - **Verification:** reproduce → confirmed (P3): Opened /admin/upiti/UP-2026-000003 as owner in Chromium and measured the td elements whose text is „1 ×“ in „Ponude“, using range client rects. Both quote lines wrap onto 2 lines at 360 (td 38 px wide), 390 (40 px) and 430 (43 px). At 768 (81 px) they stay on 1 line. The screenshot at 390 shows „1“ with „×“ alone on th… [[audit/verify/vis-admin/vis-admin-15-reproduce-390.webp](audit/verify/vis-admin/vis-admin-15-reproduce-390.webp), [audit/verify/vis-admin/vis-admin-15-reproduce-360.webp](audit/verify/vis-admin/vis-admin-15-reproduce-360.webp)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (owned by the backend-orders-quotes package, which recorded no change for it).
 - _Reviewer key: vis-admin-15_
 
 #### VIS-38
@@ -3350,13 +3490,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-admin/verify/customer-detail.webp](audit/vis-admin/verify/customer-detail.webp) · [audit/vis-admin/probe2/order-lines-1024.webp](audit/vis-admin/probe2/order-lines-1024.webp)
 - **Suggested fix:** components/admin/ui.tsx DefinitionList (dd `break-words`, line 140): render e-mails through a small component that inserts <wbr> after „@“ and uses `overflow-wrap:normal`, or truncates with title and a copy button.
 - **Verification:** reproduce → confirmed (P3): Reproduced as owner in Chromium, measuring each line fragment of the mailto links. Customer detail /admin/kupci/s17266em9mn1gjbxcre9kfzbws8fcv6y (audit-majstor): „audit-majstor-5455287@primer.“ / „rs“ at 1280, 1440 and 1920 (dd 218 px); „…@prim“ / „er.rs“ at 390; „audit-majstor-5455287“ / „@primer.rs“ at 1024. Order de… [[audit/verify/vis-admin/vis-admin-16-reproduce-customer-1440.webp](audit/verify/vis-admin/vis-admin-16-reproduce-customer-1440.webp), [audit/verify/vis-admin/vis-admin-16-reproduce-order-1024.webp](audit/verify/vis-admin/vis-admin-16-reproduce-order-1024.webp)]
+- **Re-verification (step 22):** not fixed — Not attempted (<wbr> after „@“ in DefinitionList e-mails). Last check: No change made. (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: vis-admin-16_
 
 #### VIS-39
 
 **At 2560 px the top bar is not aligned with the centred 1680 px workspace**
 
-- **Severity:** P3 · **Area:** 1. Visual design & consistency — Admin shell – wide screens · **Status:** OPEN
+- **Severity:** P3 · **Area:** 1. Visual design & consistency — Admin shell – wide screens · **Status:** FIXED
 - **Route:** All /admin/* at ≥ 2200 px
 - **Context:** Chromium, owner, 2560x1440
 - **Standard:** DESIGN-SYSTEM §5.1 (containers: admin fluid up to 1680 px)
@@ -3371,13 +3512,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-admin/probe2/2560-_admin_porudzbine.webp](audit/vis-admin/probe2/2560-_admin_porudzbine.webp) · [audit/vis-admin/probe2.json](audit/vis-admin/probe2.json) …
 - **Suggested fix:** components/admin/shell/AdminTopBar.tsx: wrap the bar content in the same `mx-auto w-full max-w-[1680px] px-4 lg:px-6` as the main column in AdminShell.tsx:146.
 - **Verification:** reproduce → confirmed (P3): I logged in as owner in Chromium and measured the breadcrumb, account button, main column and h1 on /admin/porudzbine, /admin and /admin/podesavanja at 1440, 1920, 2200 and 2560. The cause is in the shell, so every panel page is affected. AdminTopBar.tsx has no max-width: its header is full width with px-6, so the brea… [[audit/verify/vis-admin/vis-admin-17-reproduce-2560.webp](audit/verify/vis-admin/vis-admin-17-reproduce-2560.webp), [audit/verify/vis-admin/vis-admin-17-reproduce.json](audit/verify/vis-admin/vis-admin-17-reproduce.json) (2560 /admin/porudzbine: crumb x 256, h1 x 580, main 556-2236, account right 2536 vs inner right 2212; 2200: offset 144…]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/admin-lists-shell-p3.mjs → p3.json align at 2560: barInner [556,2236] = main [556,2236]. (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: vis-admin-17_
 
 #### VIS-40
 
 **„Poslednjih 7 dana“ KPI: detached tiny arrow and a comparison against „(0)“**
 
-- **Severity:** P3 · **Area:** 1. Visual design & consistency — Dashboard KPI strip · **Status:** OPEN
+- **Severity:** P3 · **Area:** 1. Visual design & consistency — Dashboard KPI strip · **Status:** FIXED
 - **Route:** /admin
 - **Context:** Chromium, owner, 1440x900 and 390x844
 - **Standard:** DESIGN-SYSTEM §3.8 (data visualisation legibility); impeccable Operate mode
@@ -3392,6 +3534,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-admin/extra/pregled-1440-loaded.webp](audit/vis-admin/extra/pregled-1440-loaded.webp) · [audit/vis-admin/mobile/390-pregled-top.webp](audit/vis-admin/mobile/390-pregled-top.webp)
 - **Suggested fix:** components/admin/dashboard/Dashboard.tsx:75: align the icon with `items-start` + `mt-[0.2em]`, and when `before === 0` show „prethodnih 7 dana: 0“ or hide the delta.
 - **Verification:** reproduce → confirmed (P3): Checked on /admin as owner in Chromium at 1440, 390, 1024 and 1920. The previous week has 0 orders, so the tile reads '84 / više nego prethodnih 7 dana (0)'. At 1440 and 390 the caption wraps to two lines. The Trend span in Dashboard.tsx is inline-flex items-center and the icon has no shrink-0. The ArrowUp icon is sque… [[audit/verify/vis-admin/vis-admin-18-reproduce-1440-zoom.webp](audit/verify/vis-admin/vis-admin-18-reproduce-1440-zoom.webp), [audit/verify/vis-admin/vis-admin-18-reproduce-390-zoom.webp](audit/verify/vis-admin/vis-admin-18-reproduce-390-zoom.webp)]
+- **Re-verification (step 22):** p3.json trend: [„prethodnih 7 dana: 0“]; screenshot 390-pregled-queue.jpg (Poslednjih 7 dana 95 / prethodnih 7 dana: 0). (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: vis-admin-18_
 
 #### VIS-41
@@ -3409,6 +3552,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-admin/recheck/1440-podesavanja_tab_prodaja.webp](audit/vis-admin/recheck/1440-podesavanja_tab_prodaja.webp)
 - **Suggested fix:** components/admin/settings/SettingsAdmin.tsx:643: rename the group to „Pravila prodaje“ and the tab to „Prodaja i dostava“ (or split them), keeping the URL key.
 - **Verification:** reproduce → confirmed (P3): On /admin/podesavanja at 1440 (owner, Chromium) I clicked the tab „Dostava i plaćanje“. The URL becomes ?tab=prodaja. The panel's cards are, in order: „Prodaja“ (PDV, minimalna marža, besplatna dostava preko, prag malo na stanju, ponuda važi, automatsko završavanje, stanje se umanjuje, rok za slanje istog dana, tekst o… [[audit/verify/vis-admin/vis-admin-19-reproduce-1440.webp](audit/verify/vis-admin/vis-admin-19-reproduce-1440.webp), [audit/verify/vis-admin/vis-admin-19-reproduce.json](audit/verify/vis-admin/vis-admin-19-reproduce.json) (activeTab „Dostava i plaćanje“, url ?tab=prodaja, headings [Prodaja, Načini dostave, Načini plaćanja, Kurirske službe]…]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (owned by the admin-flows package, which recorded no change for it).
 - _Reviewer key: vis-admin-19_
 
 #### VIS-42
@@ -3431,13 +3575,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/vis-admin/states/quote-composer.webp](audit/vis-admin/states/quote-composer.webp)
 - **Suggested fix:** components/admin/inquiries/InquiryDetail.tsx:297: rename the composer button to „Sakrij“ or „Odustani od ponude“.
 - **Verification:** reproduce → confirmed (P3): The reported inquiry UP-2026-000054 can no longer be used: another reviewer's quote was accepted (adminProbe: inquiryStatus prihvacena), so the page has no action buttons. I created a fresh test inquiry with testing:createTestInquiry (UP-2026-000083). As owner at 1440 and 390 I clicked the compose button, which is labe… [[audit/verify/vis-admin/vis-admin-20-reproduce-1440.webp](audit/verify/vis-admin/vis-admin-20-reproduce-1440.webp), [audit/verify/vis-admin/vis-admin-20-reproduce.json](audit/verify/vis-admin/vis-admin-20-reproduce.json) (closeLike at 1440: „Zatvori upit“ x1314 y140, „Zatvori“ x924 y372; same pair at 390)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (owned by the backend-orders-quotes package, which recorded no change for it).
 - _Reviewer key: vis-admin-20_
 
 #### A11Y-18
 
 **Required fields are not exposed programmatically in checkout, inquiry and registration (only /prijava does it)**
 
-- **Severity:** P3 · **Area:** 3. Accessibility — Forms / required state · **Status:** OPEN
+- **Severity:** P3 · **Area:** 3. Accessibility — Forms / required state · **Status:** FIXED
 - **Route:** /porudzbina (Ime, Prezime, Telefon, E-pošta), /upit (Opis, Ime, Telefon, consent), /registracija (all fields and consent)
 - **Context:** 1440x900 Chromium, accessibility tree
 - **Standard:** WCAG 2.2 SC 1.3.1 Info and Relationships / SC 3.3.2 Labels or Instructions (best practice)
@@ -3450,13 +3595,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/a11y-store/checkout-1440.log](audit/a11y-store/checkout-1440.log)… · [audit/a11y-store/forms-a.log](audit/a11y-store/forms-a.log) …
 - **Suggested fix:** components/ui/Field.tsx already supports `required` in its context (lines 12/23/35). Default it to true when the field is not `optional`, and have Input, Textarea, Select and Checkbox emit aria-required.
 - **Verification:** reproduce → confirmed (P3): Chromium at 1440x900. The DOM and the Chromium AX tree (CDP Accessibility.getPartialAXTree) both report required=false for the checkout fields co-firstName, co-lastName, co-phone and co-email; the inquiry fields iq-name and iq-phone (iq-message has no required attribute either); every /registracija field; and the /za-m… [[audit/verify/a11y-store/a11y-store-10-reproduce.log](audit/verify/a11y-store/a11y-store-10-reproduce.log), [audit/verify/a11y-store/a11y-store-10-reproduce.json](audit/verify/a11y-store/a11y-store-10-reproduce.json)]
+- **Re-verification (step 22):** forms-auth-checkout.mjs → "aria-required [co-firstName:true, co-lastName:true, co-phone:true, co-email:true]"; forms-auth-misc.mjs → "upit required [iq-message:true, iq-name:true, iq-phone:true, iq-email:null, iq-vin:null]" (e-mail optional for phone replies, VIN optional); vitest ui.test.tsx 2 tests on the provider passed (docs/qa/fix/forms-auth.json)
 - _Reviewer key: a11y-store-10_
 
 #### A11Y-19
 
 **Accessible names include a stray space before the colon („Dodaj u korpu : …“, „Izmeni : Kontakt“)**
 
-- **Severity:** P3 · **Area:** 3. Accessibility — Accessible names / polish · **Status:** OPEN
+- **Severity:** P3 · **Area:** 3. Accessibility — Accessible names / polish · **Status:** FIXED
 - **Route:** /deo/*, listing cards, /porudzbina stepper, mechanic favourites
 - **Context:** 1440 and 390 Chromium, accessibility tree (ariaSnapshot)
 - **Standard:** WCAG 2.2 SC 2.5.3 Label in Name / SC 4.1.2 Name, Role, Value (polish)
@@ -3474,13 +3620,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/a11y-store/forms-b.log](audit/a11y-store/forms-b.log)… · [audit/a11y-store/checkout-1440.log](audit/a11y-store/checkout-1440.log) … · [audit/a11y-store/v2-a.log](audit/a11y-store/v2-a.log)
 - **Suggested fix:** components/catalog/AddToCartButton.tsx:82/151/169, components/mechanic/FavoriteButton.tsx:62, components/ui/Stepper.tsx:92: wrap the visible label and the sr-only suffix in one inline <span> (not separate flex children), or set aria-label with the full string.
 - **Verification:** reproduce → confirmed (P3): The symptom reproduces in Chromium's native accessibility tree (CDP Accessibility.getFullAXTree), not only in Playwright's own accname. At 1440 and 390 the PDP buy box gives button "Dodaj u korpu : Kočioni disk prednji 276 × 24 mm". Listing and related-product cards on /delovi/kocioni-diskovi and on both PDPs give "U k… [[audit/verify/a11y-store/a11y-store-11-reproduce-chromium-1440.json](audit/verify/a11y-store/a11y-store-11-reproduce-chromium-1440.json) (product/listing/stepper/mechanic native CDP names + srInfo display=block position=absolute), [audit/verify/a11y-store/a11y-store-11-reproduce-chromium-390.json](audit/verify/a11y-store/a11y-store-11-reproduce-chromium-390.json) (same at 390; stepper compact, no Izmeni buttons)]
+- **Re-verification (step 22):** npx eslint clean; markup change only. (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: a11y-store-11_
 
 #### A11Y-20
 
 **Notification bell popover is an unnamed dialog; its title is a <p>**
 
-- **Severity:** P3 · **Area:** 3. Accessibility — admin shell / bell · **Status:** OPEN
+- **Severity:** P3 · **Area:** 3. Accessibility — admin shell / bell · **Status:** FIXED
 - **Route:** all /admin/* routes
 - **Context:** 1440 x 900, Chromium, owner, keyboard Enter on the bell
 - **Standard:** WCAG 2.2 SC 4.1.2 Name, Role, Value
@@ -3492,13 +3639,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/a11y-app/f-bell-open.webp](audit/a11y-app/f-bell-open.webp) · [audit/a11y-app/final.json](audit/a11y-app/final.json) … · co…
 - **Suggested fix:** In NotificationBell.tsx give the header text an id and pass aria-labelledby to Popover.Content (or aria-label="Obaveštenja"); render it as h2. Say 'više od 99' in the bell label when the count hits the query cap.
 - **Verification:** reproduce → confirmed (P3): Chromium, 1440, owner, on /admin and on /admin/porudzbine. Focusing the bell (label 'Obaveštenja, nepročitano: 100', visible badge '9+') and pressing Enter opens a Radix Popover.Content with role=dialog. It has no aria-label, aria-labelledby or aria-describedby. Chromium's AX name is '' (modal false). The title is <p c… [[audit/verify/a11y-app/a11y-app-11-14-reproduce.json](audit/verify/a11y-app/a11y-app-11-14-reproduce.json) (s13: dialog ariaLabel null, labelledby null, headings []; dialogAX name ''; afterEsc 'button Obaveštenja, nepročitano:…, [audit/verify/a11y-app/a11y-app-13-reproduce.webp](audit/verify/a11y-app/a11y-app-13-reproduce.webp)]
+- **Re-verification (step 22):** p3.json popover: getByRole('dialog', { name: 'Obaveštenja' }) found, labelledby true, tag H2, text „Obaveštenja“. (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: a11y-app-13_
 
 #### A11Y-21
 
 **Account sub-pages have no heading of their own (only the shared H1 'Moj nalog')**
 
-- **Severity:** P3 · **Area:** 3. Accessibility — customer account · **Status:** OPEN
+- **Severity:** P3 · **Area:** 3. Accessibility — customer account · **Status:** FIXED
 - **Route:** /nalog/porudzbine, /nalog/upiti, /nalog/vozila, /nalog/profil
 - **Context:** 390 and 1440, Chromium, retail customer account
 - **Standard:** WCAG 2.2 SC 2.4.6 Headings and Labels / SC 1.3.1 (best practice); DESIGN-SYSTEM page structure
@@ -3510,13 +3658,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/a11y-app/verify.json](audit/a11y-app/verify.json)… · [audit/a11y-app/sweep/customer-390-nalog_vozila.webp](audit/a11y-app/sweep/customer-390-nalog_vozila.webp) · [audit/a11y-app/forms.json](audit/a11y-app/forms.json) (…
 - **Suggested fix:** Add an h2 (visible type-h3 or sr-only) at the top of OrdersList/InquiriesList/vehicles/profile views in components/account/AccountViews.tsx and the vozila/profil pages, matching the tab label.
 - **Verification:** reproduce → confirmed (P3): Signed in as the retail customer at 390 and at 1440 in Chromium. /nalog has H1 'Moj nalog' plus H2 'Poslednje porudžbine' and 'Vozila'. /nalog/porudzbine, /nalog/upiti, /nalog/vozila and /nalog/profil have only H1 'Moj nalog' in main. There is no legend and no visible section title; only the tab with aria-current=page … [[audit/verify/a11y-app/a11y-app-11-14-reproduce.json](audit/verify/a11y-app/a11y-app-11-14-reproduce.json) (s14: 390 and 1440 headings ['H1:Moj nalog'] on the four sub-pages), [audit/verify/a11y-app/a11y-app-14-reproduce-vozila-390.webp](audit/verify/a11y-app/a11y-app-14-reproduce-vozila-390.webp)]
+- **Re-verification (step 22):** scripts/qa/fix/cart-mechanic-overlays-account.mjs → h2 ["Porudžbine"], ["Upiti"], ["Vozila"], ["Profil"]; revealCheck {"stuck":[],"pending":0,"words":0}; axe violations [] on /nalog/porudzbine. (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: a11y-app-14_
 
 #### XB-02
 
 **Vehicle picker dialog re-centres when the engine step loads: title, back button and breadcrumb jump about 70 px**
 
-- **Severity:** P3 · **Area:** 4. Cross-browser — Dialog / layout stability (all engines) · **Status:** OPEN
+- **Severity:** P3 · **Area:** 4. Cross-browser — Dialog / layout stability (all engines) · **Status:** FIXED
 - **Route:** /delovi/kocioni-diskovi (the same picker opens from the header „Izaberite vozilo“, the home hero and the filter panel)
 - **Context:** 1440x900. Captured in Firefox, where the engine list was still loading 400 ms after the click. Chromium and WebKit had already loaded it at the same moment, so the jump happens in any engine whenever the step takes longer than a frame.
 - **Standard:** DESIGN-SYSTEM overlays/motion principles (stable, GSAP-owned overlay geometry); BRIEF §9 visual quality bar
@@ -3536,6 +3685,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/xbrowser/cmp3-shop-1440-06b-picker-engine.webp](audit/xbrowser/cmp3-shop-1440-06b-picker-engine.webp)… · [audit/xbrowser/shop-firefox-1440-06b-picker-engine.webp](audit/xbrowser/shop-firefox-1440-06b-picker-engine.webp) · [audit/xbrowser/shop-chromium-1440-06b-picker-engine.webp](audit/xbrowser/shop-chromium-1440-06b-picker-engine.webp)
 - **Suggested fix:** In the vehicle picker dialog (components/vehicle, picker dialog content), anchor the panel to a fixed top offset (e.g. top: min(12vh, 120px), no translateY(-50%)) instead of vertical centring. Alternatively give the step body a min-height equal to the tallest step, or render a skeleton with the expected row count.
 - **Verification:** reproduce → confirmed (P3): I reproduced this in Chromium, Firefox and WebKit at 1440x900 on /delovi/kocioni-diskovi, and again in Chromium at 1024x768. I sampled the dialog's getBoundingClientRect every animation frame after each click (scripts/qa/audit/verify-xbrowser-03-picker.mjs). The jump is not Firefox-only and not tied to slow loading. Th… [[audit/verify/xbrowser/xbrowser-03-reproduce-1440.json](audit/verify/xbrowser/xbrowser-03-reproduce-1440.json) (per engine, per step: distinct top/height samples; chromium, firefox and webkit all show 238 -> 223 -> 149 on the engi…, [audit/verify/xbrowser/xbrowser-03-reproduce-1024.json](audit/verify/xbrowser/xbrowser-03-reproduce-1024.json) (Chromium 1024x768: 172 -> 157 -> 83 on the engine step)]
+- **Re-verification (step 22):** scripts/qa/fix/cart-mechanic-overlays-misc.mjs → 'XB-02 title top per step [ 93, 93, 93 ]'. (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: xbrowser-03_
 
 #### PERF-17
@@ -3561,6 +3711,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 3. On the vehicle page, cap or paginate the category tiles and render the engine list compactly.
 4. Re-measure the document tasks.
 - **Verification:** perf → confirmed (P3): Document raw size and inline __next_f payload: - home 246.5 KB / 36.3 KB gzip, 136.5 KB RSC (55 %); - Golf 7: 325.2 KB, 167 KB RSC; - landing: 248.2 KB, 138.5 KB; - category: 237.4 KB, 127.2 KB; - product: 220.5 KB, 134.7 KB (61 %). The first document task at about 1.73–1.81 s takes 207–400 ms at 4×, a little below the… [[audit/verify/perf-lh/perf-lh-11-perf.txt](audit/verify/perf-lh/perf-lh-11-perf.txt), [audit/verify/perf-lh/lh-summary.txt](audit/verify/perf-lh/lh-summary.txt)]
+- **Re-verification (step 22):** not fixed — Item 1 done: ProductCard passes AddToCartButton only the CartProduct fields (cartProduct()), not the whole ProductCardData, so card data is no longer serialised twice. Item 2 (collapse ProductStock/ProductPrice/AddToCartButton into one delegated client island per ProductGrid) is not done in this pass: it is a structural rewrite of the card (live values patched into server markup, delegated click handling, the „Dodato“ state and toasts) that needs its own measured change and e2e coverage of add-… Last check: npx tsc --noEmit -> no errors in owned files (CartProduct built from ProductCardData); catalog-product-ui-misc.mjs add-to-cart from a card still works (cart-live announcement). (docs/qa/fix/catalog-product-ui.json)
 - _Reviewer key: perf-lh-11_
 
 #### PERF-18
@@ -3583,13 +3734,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/perf-lh/lighthouse-summary.json](audit/perf-lh/lighthouse-summary.json)… · [audit/perf-lh/lighthouse.md](audit/perf-lh/lighthouse.md)
 - **Suggested fix:** Check which systems-index links Lighthouse reports as partially obscured at 412 px, typically links adjacent under a sticky or fixed layer such as the consent banner or header. Give them ≥ 24 px of spacing, or make the cv-auto systems index exempt as D121 did. Then close SF-16 in docs/qa/STOREFRONT.md.
 - **Verification:** perf → partially_confirmed (P3): Home accessibility is 97 (target-size) in 3 of 3 devtools runs, but 100 in 3 of 3 simulate runs. The finder's cause (a fixed or sticky layer) is wrong. The obscuring nodes are the cards of the preceding cv-auto categories section (HomeSections.tsx:95). While that section is skipped, its box is 1035 px (intrinsic 900 px… [[audit/verify/perf-lh/perf-lh-12-perf.txt](audit/verify/perf-lh/perf-lh-12-perf.txt), [audit/verify/perf-lh/perf-lh-08-12.json](audit/verify/perf-lh/perf-lh-08-12.json)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (owned by the home-hero-sections package, which recorded no change for it).
 - _Reviewer key: perf-lh-12_
 
 #### PERF-19
 
 **public/ assets (hero posters, car.glb 3.5 MB, car-lite.glb 2.6 MB, HDR, manifest, shadows, icons) are served with Cache-Control: public, max-age=0**
 
-- **Severity:** P3 (reported P2, adjusted by verification) · **Area:** 5. Performance — Caching · **Status:** OPEN
+- **Severity:** P3 (reported P2, adjusted by verification) · **Area:** 5. Performance — Caching · **Status:** FIXED
 - **Route:** / (posters, 3D assets); /images/**, /models/**, /icon.svg, /favicon.ico, /manifest.webmanifest
 - **Context:** next start :3100 (production headers from next.config.ts), repeat visits
 - **Standard:** BRIEF §9 Performance (LCP on repeat visits); Lighthouse uses-long-cache-ttl
@@ -3602,13 +3754,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/perf-bundle/headers-static.txt](audit/perf-bundle/headers-static.txt) · [audit/perf-bundle/bundle.md](audit/perf-bundle/bundle.md)
 - **Suggested fix:** In next.config.ts headers() add `{ source: "/models/:path*" }` and `{ source: "/images/:path*" }` with `Cache-Control: public, max-age=31536000, immutable`, after making the files content-addressed (the 3D pipeline already writes sha256 into car.manifest.json — emit car.<sha8>.glb / poster names with a hash and reference them from the manifest and HeroStage). If hashing is not done now, use `public, max-age=604800, stale-while-revalidate=2592000`. The same applies on Vercel, where public/ files default to max-age=0.
 - **Verification:** reproduce → confirmed (P3): The headers are as reported. /models/car.glb (3.64 MB), /models/car-lite.glb (2.63 MB), /models/env/studio-512.hdr, /models/car-shadow*.webp, /images/hero/*.avif and public/icons/*.png are served with 'Cache-Control: public, max-age=0'. /_next/static/** is served with 'public, max-age=31536000, immutable'. next.config.… [[audit/verify/perf-bundle/perf-bundle-07-reproduce.txt](audit/verify/perf-bundle/perf-bundle-07-reproduce.txt) (curl -D: car.glb/car-lite.glb/studio-512.hdr/car.manifest.json/car-shadow.webp/car-assembled-1440.avif/car-assembled-m…, [audit/verify/perf-bundle/perf-bundle-07-reproduce-browser.txt](audit/verify/perf-bundle/perf-bundle-07-reproduce-browser.txt) (node scripts/qa/audit/verify-perf-bundle-cache.mjs: 'visit 2 /images/hero/car-assembled-1440.avif status=304 … wireByt…]
+- **Re-verification (step 22):** verify-consent-headers.json headers {modelsCache, imagesCache: 'public, max-age=86400, stale-while-revalidate=604800'}. (docs/qa/fix/shell-perf.json)
 - _Reviewer key: perf-bundle-07_
 
 #### PERF-20
 
 **14 modules are shipped twice in every page's first load through the root error-boundary chunk (25.7–27.2 KB raw)**
 
-- **Severity:** P3 · **Area:** 5. Performance — JS bundle / chunking · **Status:** OPEN
+- **Severity:** P3 · **Area:** 5. Performance — JS bundle / chunking · **Status:** FIXED
 - **Route:** All 12 perf templates
 - **Context:** Production build :3100, first load
 - **Standard:** BRIEF §9 Performance (bundle hygiene)
@@ -3622,13 +3775,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/perf-bundle/dupes.txt](audit/perf-bundle/dupes.txt) · [audit/perf-bundle/entries.txt](audit/perf-bundle/entries.txt)
 - **Suggested fix:** Make app/error.tsx (routes outside the shop group) a minimal client component with plain markup and no UI-kit/config imports, and keep ErrorState only in app/(shop)/error.tsx; re-run perf-bundle-dupes.mjs. Re-test after the next Turbopack upgrade (cross-entry dedupe).
 - **Verification:** reproduce → confirmed (P3): Independent check: I split every chunk fetched at 390 into its Turbopack module factories in a vm, without running them. Home, category, product and /korpa each download the same 14 modules twice (/korpa and home have one more unrelated pair), and all 14 involve 1adhcvv0smcza.js, the app/error entry (8.6 KB gz), which … [[audit/verify/perf-bundle/perf-bundle-09-reproduce.txt](audit/verify/perf-bundle/perf-bundle-09-reproduce.txt) (node scripts/qa/audit/verify-perf-bundle-dupes.mjs: 'home / @390: 25 chunks fetched, 315 modules, 15 downloaded more t…, [audit/verify/perf-bundle/perf-bundle-06-reproduce.txt](audit/verify/perf-bundle/perf-bundle-06-reproduce.txt) ('chunks only in [project]/app/error: 1adhcvv0smcza.js(8.6); fetched 1' on landing, home, category, product)]
+- **Re-verification (step 22):** npx eslint app/error.tsx -> clean; npx tsc --noEmit -> 0 errors in owned files. Chunk dedupe re-measure (perf-bundle-dupes.mjs) needs a production build (Performance phase). (docs/qa/fix/routing-errors-gates.json)
 - _Reviewer key: perf-bundle-09_
 
 #### PERF-21
 
 **Product-card sizes claims 50vw on phones while the list image renders 104 px: DPR 3 phones fetch w=640 instead of w=384**
 
-- **Severity:** P3 · **Area:** 5. Performance — Images · **Status:** OPEN
+- **Severity:** P3 · **Area:** 5. Performance — Images · **Status:** FIXED
 - **Route:** /delovi/kocioni-diskovi, /pretraga?q=disk, /ponuda/kocione-plocice-golf, /deo/* (related), /vozila/* listings
 - **Context:** Chromium 390×844 at DPR 3 (and DPR 1: w=256 for a 104 px image)
 - **Standard:** BRIEF §9 Performance; Lighthouse 'Properly size images'
@@ -3645,6 +3799,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/perf-bundle/dpr3-sizes.txt](audit/perf-bundle/dpr3-sizes.txt) · [audit/perf-bundle/category-390-dpr3-cards.webp](audit/perf-bundle/category-390-dpr3-cards.webp)
 - **Suggested fix:** In components/catalog/ProductCard.tsx give the responsive variant `(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 104px` (list thumbnail below sm).
 - **Verification:** reproduce → confirmed (P3): Reproduced, and the scope is wider than reported, but the suggested fix uses the wrong breakpoint. Every ProductGrid route uses variant="responsive": category, search, ads landing, product related and /vozila/volkswagen/golf/golf-7. On all five, below 480 px the card uses the 104 px list thumbnail, but its sizes string… [[audit/verify/perf-bundle/perf-bundle-12-reproduce.txt](audit/verify/perf-bundle/perf-bundle-12-reproduce.txt), [audit/verify/perf-bundle/perf-bundle-12-reproduce.json](audit/verify/perf-bundle/perf-bundle-12-reproduce.json)]
+- **Re-verification (step 22):** curl http://localhost:3001/delovi/kocioni-diskovi -> card <img sizes="(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, (min-width: 480px) 50vw, 104px"> and the same imageSizes on the first-card preload link; npx tsc --noEmit clean for owned files. (docs/qa/fix/catalog-product-ui.json)
 - _Reviewer key: perf-bundle-12_
 
 #### PERF-22
@@ -3667,13 +3822,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/perf-3d/hero-frames-original-gpu.txt](audit/perf-3d/hero-frames-original-gpu.txt) · [audit/perf-3d/frames-desktop-cpu4-gpu.json](audit/perf-3d/frames-desktop-cpu4-gpu.json) · [audit/perf-3d/frames-mobile-cpu6-gpu.json](audit/perf-3d/frames-mobile-cpu6-gpu.json) · [audit/perf-3d/profile-scroll-desktop.txt](audit/perf-3d/profile-scroll-desktop.txt) · [audit/perf-3d/frames-desktop-cpu1-gpu.json](audit/perf-3d/frames-desktop-cpu1-gpu.json)
 - **Suggested fix:** components/three/canvas/materials.ts createXrayMaterial: replace side: DoubleSide and three's automatic two-pass with two explicit materials: BackSide at 0.5× alpha rendered first through renderOrder, then FrontSide. Alternatively use forceSinglePass plus a back-face clone. Either way needsUpdate is never set per frame. components/three/canvas/enhance.ts: stop adding 3 draws per shell mesh. Precompute the edge lines in the pipeline as one line primitive per part node, and drop the separate depth pre-pass by letting the front-face shell pass write depth for the visible-edge test. Re-measure with hero-frames.mjs and correct docs/3d/WEB-QA.md §1.
 - **Verification:** perf → partially_confirmed (P3): The smoothness-bar miss did not reproduce. Desktop 4× on the RTX 4060: instrumented runs p95 33.3/33.3/33.4 ms with 0.7/1.5/6.8 % of frames over 33 ms; uninstrumented hero-frames.mjs p95 33.4/33.3 ms with 4.3/1.5 %. So 4 of 5 runs meet the ≤ 6 % bar, against the finder's 5 of 6 misses. Mobile 4×: 2.3–6.6 % instrumented… [[audit/verify/perf-lh/perf-3d-03-perf.txt](audit/verify/perf-lh/perf-3d-03-perf.txt), [audit/verify/perf-lh/3d/hero-frames-cpu4-gpu.txt](audit/verify/perf-lh/3d/hero-frames-cpu4-gpu.txt)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (no fix package took it).
 - _Reviewer key: perf-3d-03_
 
 #### PERF-23
 
 **Software WebGL (SwiftShader, llvmpipe, blocklisted GPUs, VMs/RDP) gets the full high tier: p95 about 1 s per frame, worst about 2 s**
 
-- **Severity:** P3 (reported P2, adjusted by verification) · **Area:** 5. Performance — 3D hero runtime: tier detection · **Status:** OPEN
+- **Severity:** P3 (reported P2, adjusted by verification) · **Area:** 5. Performance — 3D hero runtime: tier detection · **Status:** FIXED
 - **Route:** /
 - **Context:** Desktop 1440×900 in Chromium with software GL (--use-angle=swiftshader --enable-unsafe-swiftshader), CPU 1× and 4×. This stands in for a VM or RDP session, a blocklisted GPU, or Linux without GPU drivers.
 - **Standard:** 3D-CONTRACT F7.2 (tiers); BRIEF §4 (never block the page)
@@ -3685,6 +3841,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/perf-3d/frames-desktop-cpu1-swiftshader.json](audit/perf-3d/frames-desktop-cpu1-swiftshader.json) · [audit/perf-3d/frames-desktop-cpu4-swiftshader.json](audit/perf-3d/frames-desktop-cpu4-swiftshader.json) · [audit/perf-3d/frames-desktop-cpu4-swiftshader-b.json](audit/perf-3d/frames-desktop-cpu4-swiftshader-b.json)
 - **Suggested fix:** lib/three/tier.ts hasWebGL2(): probe with failIfMajorPerformanceCaveat: true, and/or read WEBGL_debug_renderer_info and classify /SwiftShader|llvmpipe|softpipe|Basic Render|Software/i as low. Add a runtime watchdog in HeroCanvas.tsx: if the median frame is over 50 ms across the first 60 continuous frames at DPR 1, set status 'failed' so the existing posters take over. Keep the e2e suite on SwiftShader through the ?3d=high test override.
 - **Verification:** perf → partially_confirmed (P3): With --use-angle=swiftshader --enable-unsafe-swiftshader at 1×, the tier is 'high': p95 1117 ms, p99 1400 ms, worst 1900 ms, 39.7 % of frames over 33 ms. lib/three/tier.ts:57 probes with failIfMajorPerformanceCaveat: false and never checks the renderer. Exposure is narrower than claimed: the repro needs --enable-unsafe… [[audit/verify/perf-lh/perf-3d-06-perf.txt](audit/verify/perf-lh/perf-3d-06-perf.txt), [audit/verify/perf-lh/3d/frames-verify-desktop-cpu1-swiftshader.json](audit/verify/perf-lh/3d/frames-verify-desktop-cpu1-swiftshader.json)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/hero-3d-assets-tier.mjs -> '(no override) dpr 1: {"tier":"low","status":"idle","canvas":false}' on SwiftShader and '?3d=high dpr 1: tier high, status ready'. Unit test 'software WebGL renderers are low (PERF-23)' passes. (docs/qa/fix/hero-3d-assets.json)
 - _Reviewer key: perf-3d-06_
 
 #### PERF-24
@@ -3703,13 +3860,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/perf-3d/profile-start-desktop.txt](audit/perf-3d/profile-start-desktop.txt) · [audit/perf-3d/frames-desktop-cpu4-gpu.json](audit/perf-3d/frames-desktop-cpu4-gpu.json)
 - **Suggested fix:** Precompute the shell edge lines in the 3D pipeline (an extra line primitive per part in the GLB, zero runtime cost), or split EdgesGeometry over triangle ranges across slices. Build or serialize the BVH off the main thread (three-mesh-bvh GenerateMeshBVHWorker, or serialized BVH in the build).
 - **Verification:** perf → confirmed (P3): Cold profile at 4× on desktop: a 327 ms busy stretch with 149 ms self in sN (the minified EdgesGeometry constructor, 0i-5efvfrwjiv.js:1:183806) and 112 ms inclusive in three-mesh-bvh init. A later stretch of 145 ms has 49 ms in sN. At 1×, sN takes 13–17 ms per job. idle.ts sets budgetMs = 6 and requestIdleCallback time… [[audit/verify/perf-lh/perf-3d-07-perf.txt](audit/verify/perf-lh/perf-3d-07-perf.txt), [audit/verify/perf-lh/3d/profile-start-desktop-cpu4.txt](audit/verify/perf-lh/3d/profile-start-desktop-cpu4.txt)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (no fix package took it).
 - _Reviewer key: perf-3d-07_
 
 #### PERF-25
 
 **The 3D environment map studio-512.hdr is sent uncompressed (411 KB; gzip gives 308 KB), and all /models assets are served with max-age=0**
 
-- **Severity:** P3 · **Area:** 5. Performance — 3D assets: bytes on the wire · **Status:** OPEN
+- **Severity:** P3 · **Area:** 5. Performance — 3D assets: bytes on the wire · **Status:** FIXED
 - **Route:** /models/env/studio-512.hdr (loaded after 3D intent on /)
 - **Context:** next start on localhost:3200, request with Accept-Encoding: gzip, br
 - **Standard:** docs/3d/WEB-QA.md §3 (bytes); BRIEF §9 performance (3D after intent must stay light on mobile data)
@@ -3722,6 +3880,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Suggested fix:** Best: ship the prefiltered environment from perf-3d-01 as a small KTX2/PNG and drop the .hdr. Otherwise serve .hdr with a compressible content type (e.g. image/vnd.radiance) through next.config headers or the host. Give /models hashed filenames with immutable caching.
 - **Verification:** perf → confirmed (P3): curl with Accept-Encoding: gzip, br on /models/env/studio-512.hdr returns no Content-Encoding, Content-Length 410772, application/octet-stream and Cache-Control: public, max-age=0. gzip -c gives 307,757 B (−25 %). car.glb, car-lite.glb and car.manifest.json are sent gzip, also with max-age=0. [[audit/verify/perf-lh/perf-3d-08-perf.txt](audit/verify/perf-lh/perf-3d-08-perf.txt)]
 - **Also reported as:** perf-bundle-11 (studio-512.hdr (401 KB) is sent without compression @ / (3D start))
+- **Re-verification (step 22):** ls -la public/models/env -> only studio-pmrem.hdr (142775 bytes); node 3d/scripts/env.mjs -> 'env: ...studio-pmrem.hdr (336 x 256, cube 64, 139 KB)'. (docs/qa/fix/hero-3d-assets.json)
 - _Reviewer key: perf-3d-08_
 
 #### PERF-26
@@ -3741,6 +3900,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/perf-3d/leak-desktop-gpu.json](audit/perf-3d/leak-desktop-gpu.json) · [audit/perf-3d/leak-desktop-gpu-bare.txt](audit/perf-3d/leak-desktop-gpu-bare.txt)
 - **Suggested fix:** Upgrade @react-three/fiber to a release that uses THREE.Timer, or pin three below the deprecation until one exists. Record the choice in DECISIONS.
 - **Verification:** perf → confirmed (P3): The leak run captured 'THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.' once per 3D start, 4 of 4 starts. The source is three 0.186.1 src/core/Clock.js:61 (deprecated since r183), instantiated by @react-three/fiber 9.8.1 (new THREE.Clock in events-9ce18a08.esm.js). [[audit/verify/perf-lh/perf-3d-09-perf.txt](audit/verify/perf-lh/perf-3d-09-perf.txt), [audit/verify/perf-lh/3d/leak-desktop-gpu.txt](audit/verify/perf-lh/3d/leak-desktop-gpu.txt)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (no fix package took it).
 - _Reviewer key: perf-3d-09_
 
 #### SEO-08
@@ -3759,6 +3919,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/seo/og/crop-kocnice-skoda-glyph.webp](audit/seo/og/crop-kocnice-skoda-glyph.webp) · [audit/seo/og/delovi_kocnice.webp](audit/seo/og/delovi_kocnice.webp) · [audit/seo/og/og-check.json](audit/seo/og/og-check.json)
 - **Suggested fix:** lib/og/frame.tsx: load a single Martian Mono file that covers latin + latin-ext, or register the ext file under its own family name and list both in fontFamily. Generate the alt per page (generateImageMetadata, or openGraph.images alt in buildMetadata).
 - **Verification:** reproduce → confirmed (P3): I fetched /delovi/kocnice/opengraph-image-cd3rrt (200, image/png, 1200×630) and cropped the mono line at 3×. „VW · Audi · · SEAT · Cupra“ is Martian Mono, but the whole word „Škoda“ renders in the wide bold Archivo Expanded 700. /delovi/kocioni-diskovi shows the same thing because the label is hard-coded in app/(shop)/… [[audit/verify/seo/seo-10-reproduce-kocnice-og.webp](audit/verify/seo/seo-10-reproduce-kocnice-og.webp), [audit/verify/seo/seo-10-reproduce-crop-brandline.webp](audit/verify/seo/seo-10-reproduce-crop-brandline.webp)]
+- **Re-verification (step 22):** not fixed — Fixed: latin-ext font files registered under their own family names (Martian Mono Ext, Public Sans Ext) and listed in every OG font stack, so „Š/Đ“ no longer fall back. Open: per-page og:image:alt needs generateImageMetadata in the opengraph-image routes (changes the image URLs) — left for a follow-up. Last check: Landing OG renders „KOČIONI DISKOVI ZA ŠKODU“ and „Nađi“ correctly: docs/qa/fix/seo-content-email/og-landing-skoda.webp (from /delovi/kocioni-diskovi/skoda/opengraph-image-170i3u → 200 image/png). (docs/qa/fix/seo-content-email.json)
 - _Reviewer key: seo-10_
 
 #### SEO-09
@@ -3777,13 +3938,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/seo/product-jsonld.json](audit/seo/product-jsonld.json)
 - **Suggested fix:** lib/seo/jsonld.ts product builder: add deliveryTime (ShippingDeliveryTime with handlingTime and transitTime from settings, e.g. 0–1 and 1–2 days), returnMethod (ReturnByMail / ReturnInStore) and returnFees, and inline the seller as {"@type":"Organization","name":…}.
 - **Verification:** reproduce → confirmed (P3): I parsed the server-HTML JSON-LD with scripts/qa/audit/verify-seo-11-jsonld.mjs on /deo/kocioni-disk-prednji-276-24-mm-demo-0004, /deo/kocione-plocice-prednje-demo-0012, / and /kontakt. On both products, offers.shippingDetails contains only shippingRate (450.00 RSD) and shippingDestination (RS). There is no deliveryTim… [[audit/verify/seo/seo-11-reproduce-jsonld.json](audit/verify/seo/seo-11-reproduce-jsonld.json), scripts/qa/audit/verify-seo-11-jsonld.mjs]
+- **Re-verification (step 22):** not fixed — Own part done: productJsonLd gets sellerName from settings.brand.name. deliveryTime and return fees still need owner data (seo-content-email record). Last check: npx tsc --noEmit exit 0; eslint exit 0. (docs/qa/fix/cross-p1.json)
 - _Reviewer key: seo-11_
 
 #### SEO-10
 
 **Google Merchant feed: backorder items have no g:availability_date**
 
-- **Severity:** P3 · **Area:** 6. SEO — Feeds · **Status:** OPEN
+- **Severity:** P3 · **Area:** 6. SEO — Feeds · **Status:** FIXED
 - **Route:** /feeds/google-merchant.xml?demo=1 (28 of 157 items with availability backorder)
 - **Context:** Feed preview with demo items. The live feed is empty (non-demo only, D190) and dormant for Google (D21).
 - **Standard:** SEO-ADS §J9; Google Merchant Center product data specification
@@ -3795,13 +3957,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/seo/feeds/google-merchant.xml_demo_1](audit/seo/feeds/google-merchant.xml_demo_1) · [audit/seo/feeds/meta-catalog.csv_demo_1](audit/seo/feeds/meta-catalog.csv_demo_1)
 - **Suggested fix:** lib/seo/feeds.ts: for backorder emit g:availability_date = today + leadTimeDays (T00:00+02:00).
 - **Verification:** reproduce → confirmed (P3): curl "http://localhost:3100/feeds/google-merchant.xml?demo=1" returned 200 (application/xml, 139,884 bytes) with 157 items: 114 in_stock, 15 out_of_stock and 28 backorder. availability_date appears 0 times, including on DEMO-0001, DEMO-0008, DEMO-0026, DEMO-0027 and DEMO-0033. The live feed without ?demo=1 has 0 items.… [[audit/verify/seo/seo-12-reproduce-google-merchant.xml](audit/verify/seo/seo-12-reproduce-google-merchant.xml), [audit/verify/seo/seo-12-reproduce-summary.json](audit/verify/seo/seo-12-reproduce-summary.json)]
+- **Re-verification (step 22):** Test „SEO-10: a backorder item with a lead time carries g:availability_date“ → „2026-10-08T00:00+02:00“ and „2026-11-10T00:00+01:00“; in-stock and no-lead-time items have none. 10 passed. (docs/qa/fix/seo-content-email.json)
 - _Reviewer key: seo-12_
 
 #### SEO-11
 
 **The consent banner is the first text in every page's HTML (first heading „Kolačići“), so it can become the search snippet**
 
-- **Severity:** P3 · **Area:** 6. SEO — Snippet control · **Status:** OPEN
+- **Severity:** P3 · **Area:** 6. SEO — Snippet control · **Status:** FIXED
 - **Route:** All 962 crawled storefront URLs (first visit and crawlers never have sk_consent)
 - **Context:** Server HTML without the consent cookie
 - **Standard:** seo-technical indexability / snippet control (Google data-nosnippet)
@@ -3813,13 +3976,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/seo/crawl.json](audit/seo/crawl.json)…
 - **Suggested fix:** Add data-nosnippet to the banner root in components/consent (ConsentRoot / banner container). Keep the DOM order.
 - **Verification:** reproduce → confirmed (P3): I fetched 8 routes with curl and a Googlebot UA and no sk_consent cookie: /, product, category, model landing, generation page, /ponuda (the landing route group), /kontakt and /pretraga. On every one the consent H2 „Kolačići“ is the first heading in <body>. On home it sits at byte offset 11591, ahead of <header> (14007… [[audit/verify/seo/seo-15-reproduce.txt](audit/verify/seo/seo-15-reproduce.txt), [audit/verify/seo/seo-15-reproduce-390.webp](audit/verify/seo/seo-15-reproduce-390.webp)]
+- **Re-verification (step 22):** verify-consent-reveal.json consent.nosnippet true. (docs/qa/fix/shell-perf.json)
 - _Reviewer key: seo-15_
 
 #### SEO-12
 
 **GET /api/zdravlje (health endpoint in ROUTES §B3) returns 404**
 
-- **Severity:** P3 · **Area:** 6. SEO — Route map · **Status:** OPEN
+- **Severity:** P3 · **Area:** 6. SEO — Route map · **Status:** FIXED
 - **Route:** /api/zdravlje
 - **Context:** curl
 - **Standard:** ROUTES §B3
@@ -3831,13 +3995,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/seo/evidence-commands.txt](audit/seo/evidence-commands.txt)… · [audit/seo/raw/status-battery-2.txt](audit/seo/raw/status-battery-2.txt)
 - **Suggested fix:** Add app/api/zdravlje/route.ts (build id + a cheap Convex query, no-store), or remove it from ROUTES §B3 and ARCHITECTURE.
 - **Verification:** reproduce → confirmed (P3): GET /api/zdravlje returns 404 (the not-found page, <title>Stranica nije pronađena · SKLOP</title>). HEAD also returns 404, and /api/zdravlje/ redirects (308) to the same 404. For comparison, /api/revalidate returns 405, which shows the /api handlers themselves work. app/api has only atribucija and revalidate, and find … [[audit/verify/seo/seo-17-reproduce.txt](audit/verify/seo/seo-17-reproduce.txt), docs/ROUTES.md:51]
+- **Re-verification (step 22):** curl -i http://localhost:3001/api/zdravlje -> 'HTTP/1.1 200 OK', 'cache-control: no-store', '{"ok":true,…,"convex":"ok","ms":144}'. (docs/qa/fix/routing-errors-gates.json)
 - _Reviewer key: seo-17_
 
 #### SEO-13
 
 **Admin HTML responses have no X-Robots-Tag (ROUTES §B2 requires it)**
 
-- **Severity:** P3 · **Area:** 6. SEO — Robots directives · **Status:** OPEN
+- **Severity:** P3 · **Area:** 6. SEO — Robots directives · **Status:** FIXED
 - **Route:** /admin, /admin/porudzbine, /admin/proizvodi, /admin/podesavanja?tab=seo, /admin/porudzbine/SK-2026-000092/predracun, /admin/pozivnica/[token]
 - **Context:** Signed in as owner (page.request), plus anonymous for /admin/pozivnica
 - **Standard:** ROUTES §B2
@@ -3853,13 +4018,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/seo/admin-headers.json](audit/seo/admin-headers.json) · [audit/seo/raw/status-battery-2.txt](audit/seo/raw/status-battery-2.txt)
 - **Suggested fix:** next.config.ts headers(): add { source: "/admin/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] }, as for /styleguide. Or update ROUTES §B2.
 - **Verification:** reproduce → confirmed (P3): Signed in as the owner with a fresh context and requested 11 admin HTML URLs without following redirects: /admin, /admin/porudzbine, /admin/porudzbine/SK-2026-000092 (+ /predracun, /otpremnica), /admin/upiti, /admin/proizvodi, /admin/uvoz, /admin/izvori, /admin/podesavanja?tab=seo and /admin/privatnost. All returned 20… [[audit/verify/seo/seo-18-reproduce.json](audit/verify/seo/seo-18-reproduce.json), scripts/qa/audit/verify-seo-18.mjs]
+- **Re-verification (step 22):** verify-consent-headers.json headers.adminXRobots 'noindex, nofollow' (GET /admin/prijava). (docs/qa/fix/shell-perf.json)
 - _Reviewer key: seo-18_
 
 #### SEO-14
 
 **/upit, an indexable landing page, has no breadcrumbs (neither visible nor BreadcrumbList)**
 
-- **Severity:** P3 · **Area:** 6. SEO — Breadcrumbs / structured data · **Status:** OPEN
+- **Severity:** P3 · **Area:** 6. SEO — Breadcrumbs / structured data · **Status:** FIXED
 - **Route:** /upit
 - **Context:** Server HTML, any viewport
 - **Standard:** SEO-ADS §J2/§J5
@@ -3871,6 +4037,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/seo/breadcrumbs.json](audit/seo/breadcrumbs.json)
 - **Suggested fix:** app/(shop)/upit/page.tsx: render the shared Breadcrumbs (Početna / Upit po broju šasije) and its BreadcrumbList.
 - **Verification:** reproduce → confirmed (P3): curl of /upit: 200, meta robots 'index, follow', self-canonical, no nav[aria-label="Putanja"], no BreadcrumbList and no application/ld+json at all. I also checked the rendered DOM after hydration at 390 and 1440: breadcrumbNav is null and jsonLdTypes is empty at both widths. Sibling indexable pages have both a breadcru… [[audit/verify/seo/seo-19-21-reproduce.json](audit/verify/seo/seo-19-21-reproduce.json), [audit/verify/seo/seo-19-reproduce-upit-1440.webp](audit/verify/seo/seo-19-reproduce-upit-1440.webp)]
+- **Re-verification (step 22):** forms-auth-misc.mjs → "upit breadcrumbs {nav:Početna/Upit po broju šasije, jsonld:true}" (docs/qa/fix/forms-auth.json)
 - _Reviewer key: seo-19_
 
 #### SEO-15
@@ -3894,13 +4061,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/seo/raw/staticne.xml](audit/seo/raw/staticne.xml) · [audit/seo/raw/vozila.xml](audit/seo/raw/vozila.xml) · [audit/seo/raw/proizvodi-1.xml](audit/seo/raw/proizvodi-1.xml) · [audit/seo/sitemap-urls.json](audit/seo/sitemap-urls.json)
 - **Suggested fix:** lib/seo/sitemap.ts + convex/seo.ts sitemapData: pass contentPages.updatedAt and vehicle updatedAt as lastModified, and compute the index lastmod for the product files as the max contentUpdatedAt.
 - **Verification:** reproduce → partially_confirmed (P3): The counts reproduce exactly. The /sitemap.xml index has lastmod only for kategorije.xml and landing.xml. staticne.xml has 12 URLs and 0 lastmod; vozila.xml has 72 URLs and 0 lastmod. proizvodi-1.xml has 157/157 lastmod, but its index entry has none (the max child lastmod would be 2026-09-30T04:05:56.431Z). The claimed… [[audit/verify/seo/seo-20-reproduce.txt](audit/verify/seo/seo-20-reproduce.txt), [audit/verify/seo/seo-20-reproduce-index.txt](audit/verify/seo/seo-20-reproduce-index.txt)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (no fix package took it).
 - _Reviewer key: seo-20_
 
 #### SEO-16
 
 **Upper- or mixed-case storefront URLs return 404 instead of a 308 to the lowercase canonical**
 
-- **Severity:** P3 · **Area:** 6. SEO — URL normalisation · **Status:** OPEN
+- **Severity:** P3 · **Area:** 6. SEO — URL normalisation · **Status:** FIXED
 - **Route:** /deo/KOCIONI-DISK-PREDNJI-276-24-MM-DEMO-0004, /DEO/kocioni-disk-prednji-276-24-mm-demo-0004, /Delovi/Kocioni-Diskovi
 - **Context:** curl
 - **Standard:** ROUTES §B4; seo-technical URL structure
@@ -3917,13 +4085,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/seo/raw/status-battery.txt](audit/seo/raw/status-battery.txt)
 - **Suggested fix:** proxy.ts: when the path of a slug route (/deo, /delovi, /vozila, /ponuda, static pages) contains uppercase, 308 to the lowercase path. Exclude token routes (/porudzbina/…, /upit/[token], /admin/pozivnica, /obavestenja/odjava), whose tokens are case-sensitive.
 - **Verification:** reproduce → partially_confirmed (P3): The behaviour is real. 18 case variants return 404 with meta robots 'noindex': /deo/KOCIONI-DISK-PREDNJI-276-24-MM-DEMO-0004, /DEO/…, /Deo/…, /deo/Kocioni-Disk-…, /Delovi/Kocioni-Diskovi, /delovi/Kocioni-Diskovi, /Delovi/kocioni-diskovi, /DELOVI, /Delovi, /delovi/kocioni-diskovi/Volkswagen, /delovi/kocioni-diskovi/volk… [[audit/verify/seo/seo-21-reproduce.txt](audit/verify/seo/seo-21-reproduce.txt), [audit/verify/seo/seo-19-21-reproduce.json](audit/verify/seo/seo-19-21-reproduce.json)]
+- **Re-verification (step 22):** curl: /deo/KOCIONI-DISK-PREDNJI-276-24-MM-DEMO-0004 -> 308 /deo/kocioni-disk-prednji-276-24-mm-demo-0004; /DEO/… -> 308; /Delovi/Kocioni-Diskovi?marka=VW -> 308 /delovi/kocioni-diskovi?marka=VW; /porudzbina/AbC123 -> 404 (untouched); /admin/porudzbine/SK-2026-000092 -> 307 sign-in (untouched). vitest routes.test.ts 'Tests 28 passed'. (docs/qa/fix/routing-errors-gates.json)
 - _Reviewer key: seo-21_
 
 #### COPY-09
 
 **Terminology not enforced: field „E-pošta“ but errors „e-mail adresa“, confirmations „e-mail“, „e-adresa“, „e-mailom“; „Proizvodi“ vs „Artikli“**
 
-- **Severity:** P3 (reported P2, adjusted by verification) · **Area:** 7. Copy — Terminology / forms, validation, e-mails, search · **Status:** OPEN
+- **Severity:** P3 (reported P2, adjusted by verification) · **Area:** 7. Copy — Terminology / forms, validation, e-mails, search · **Status:** FIXED
 - **Route:** /porudzbina, /upit, /deo/[slug] (Javi mi kad stigne), /prijava, /registracija, /zaboravljena-lozinka, /za-majstore/registracija, /za-majstore/hvala, /obavestenja/odjava/[token], /pretraga, e-mails
 - **Context:** 1440 and 390, anonymous; validation and success states
 - **Standard:** DESIGN-SYSTEM §11.1 (consistent mechanic vocabulary), track standard (consistent terminology e-pošta vs e-mail)
@@ -3938,13 +4107,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/copy/state-back-in-stock-error-1440.webp](audit/copy/state-back-in-stock-error-1440.webp) · [audit/copy/state-signup-errors-1440.webp](audit/copy/state-signup-errors-1440.webp) · [audit/copy/states-1440-addToCart_checkout_searchSuggest.json](audit/copy/states-1440-addToCart_checkout_searchSuggest.json) · [audit/copy/source-scan.txt](audit/copy/source-scan.txt)
 - **Suggested fix:** Add a glossary to lib/i18n/sr (e.g. EMAIL_TERM) and route every string above through it; change DESIGN-SYSTEM §11.4 examples accordingly („Adresa e-pošte nije ispravna. Primer: ime@primer.rs.“). Rename search group/heading to „Artikli“.
 - **Verification:** reproduce → confirmed (P3): Reproduced at 1440 and 390: - /deo/kocione-plocice-prednje-demo-0012, back-in-stock form with „pogresno@“: label „E-pošta“, error „E-mail adresa nije ispravna. Primer: ime@primer.rs.“ - /porudzbina with one item, empty „Dalje“: label „E-pošta“, error „Upišite e-mail adresu.“ - /prijava with wrong credentials (1440, one… [[audit/verify/copy/copy-06-reproduce.txt](audit/verify/copy/copy-06-reproduce.txt), [audit/verify/copy/copy-06-reproduce-back-in-stock-1440.webp](audit/verify/copy/copy-06-reproduce-back-in-stock-1440.webp)]
+- **Re-verification (step 22):** npx vitest run tests/unit/email/templates.test.ts -u -> 'Snapshots 2 updated', 'Tests 90 passed (90)' (the diff was only the two reworded lines); npx convex dev --once -> 'Convex functions ready!' (docs/qa/fix/cross-p1/convex-push.txt); /pretraga?q=disk -> '<h2 id="g-text" …>Artikli' (curl-checks.txt). Left: components/admin/system/PrivacyAdmin.tsx (other owner, cross request). (docs/qa/fix/cross-p1.json)
 - _Reviewer key: copy-06_
 
 #### COPY-10
 
 **Auto-generated meta descriptions of content pages leak Markdown and table syntax**
 
-- **Severity:** P3 · **Area:** 7. Copy — SEO descriptions · **Status:** OPEN
+- **Severity:** P3 · **Area:** 7. Copy — SEO descriptions · **Status:** FIXED
 - **Route:** /kolacici, /dostava-i-placanje (also mid-sentence cuts on /o-nama, /kontakt, /reklamacije-i-povrat, /politika-privatnosti, /uslovi-koriscenja)
 - **Context:** Meta description + og:description
 - **Standard:** BRIEF §5 SEO (unique descriptions), DESIGN-SYSTEM §4.4 (dashes)
@@ -3957,13 +4127,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Suggested fix:** components/content/ContentPageView.tsx:24 — use a seoDescription field (editable in Pravni tekstovi) and fall back to the first paragraph only, never tables/headings.
 - **Verification:** reproduce → confirmed (P3): I curled all seven content pages. /kolacici: description and og:description are „…u vašem pregledaču. Neophodni (uvek uključeni) | Naziv | Svrha | Trajanje |…“ (a heading plus table pipes). /dostava-i-placanje: „…pre slanja. Načini dostave - Lično…“ (a heading run into a list hyphen, with no punctuation). Cause: markdo… [[audit/verify/copy/copy-12-reproduce.txt](audit/verify/copy/copy-12-reproduce.txt), <meta name="description" content="Kolačići i slični zapisi (localStorage) su mali podaci koje sajt čuva u vašem pregleda…]
 - **Also reported as:** seo-14 (Content-page meta descriptions are cut from Markdown and leak table pipes and headings @ /kolacici, /dostava-i-placanje (also /uslovi-koriscenja, /reklamacije-i-povrat))
+- **Re-verification (step 22):** docs/qa/fix/cross-p1/curl-checks.txt: 'za-majstore 148 …', 'upit 132 …'. (docs/qa/fix/cross-p1.json)
 - _Reviewer key: copy-12_
 
 #### COPY-11
 
 **Number/format slips in hard-coded strings: „0 RSD“ without no-break space, „kom“ without period, „CENA SA PDV“, „06.10.2026..“, „robe.: http…“**
 
-- **Severity:** P3 · **Area:** 7. Copy — Formats / typography · **Status:** OPEN
+- **Severity:** P3 · **Area:** 7. Copy — Formats / typography · **Status:** FIXED
 - **Route:** /korpa, /porudzbina (Dostava step), /porudzbina/[token]/predracun, admin print predračun, e-mails „Ponuda je spremna“, „Deo je ponovo na stanju“, staff e-mails
 - **Context:** 1440; e-mail plain text from Admin → E-pošta → Šabloni
 - **Standard:** DESIGN-SYSTEM §4.4 (formats, no-break spaces), BRIEF §2 formats
@@ -3978,6 +4149,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/copy/ev-predracun-cena-sa-pdv-1440.webp](audit/copy/ev-predracun-cena-sa-pdv-1440.webp) · [audit/copy/emails-text.txt](audit/copy/emails-text.txt) · [audit/copy/states-1440.json](audit/copy/states-1440.json)
 - **Suggested fix:** components/cart/CartView.tsx:222 and components/checkout/CheckoutForm.tsx:544 → formatRSD(0); app/(shop)/porudzbina/[token]/predracun/page.tsx:109, components/admin/print/OrderPrint.tsx:126, components/admin/inquiries/QuoteComposer.tsx:237 → „Cena sa PDV-om“; lib/email/templates/customer.ts:77 drop the extra „.“ after date(), :131 and :135 reword; lib/email/templates/staff.ts:75,180 → formatQuantity(); lib/email/html.ts:118/460 print tel: links as the number only and do not add „:“ after a label ending in „.“.
 - **Verification:** reproduce → confirmed (P3): I reproduced every sub-item myself (anonymous 1440 context for cart and checkout, then admin → /admin/mejlovi/sabloni?prikaz=tekst). (1) /korpa Dostava reads „Preuzimanje[SP]0[SP]RSD · kurir 450[NBSP]RSD“: a normal space in the hard-coded string, NBSP only where formatRSD is used. The checkout Dostava step option „Ličn… [[audit/verify/copy/copy-13-reproduce.json](audit/verify/copy/copy-13-reproduce.json), [audit/verify/copy/copy-13-reproduce-cart-1440.webp](audit/verify/copy/copy-13-reproduce-cart-1440.webp)]
+- **Re-verification (step 22):** grep -n "Cena sa PDV-om" components/admin/print/OrderPrint.tsx → 1 match; npx tsc --noEmit → 0 errors. (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: copy-13_
 
 #### COPY-12
@@ -4000,13 +4172,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/copy/ev-home-hero-390.webp](audit/copy/ev-home-hero-390.webp) · [audit/copy/ev-home-hero-42-vs-44-1440.webp](audit/copy/ev-home-hero-42-vs-44-1440.webp)
 - **Suggested fix:** components/three/StageCaption.tsx:75 — label the manifest count („42 dela na prikazu“) or use the catalog count everywhere.
 - **Verification:** reproduce → confirmed (P3): Chromium, anonymous, prod build :3100. At 390 and 768 the stage-0 caption under the hero copy reads "SKLOPLJEN AUTOMOBIL / 00 · 42 KATEGORIJE · 91 DEO". Further down the same page it says "Svih 44 kategorija · 157 artikala" (y≈4300 at 390) and the trust fact says "44 kategorija delova" (y≈10270). At 1440 the stage-0 ca… [[audit/verify/copy/copy-15-reproduce-hero-390.webp](audit/verify/copy/copy-15-reproduce-hero-390.webp), [audit/verify/copy/copy-15-reproduce-svih-390.webp](audit/verify/copy/copy-15-reproduce-svih-390.webp)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (owned by the home-hero-sections package, which recorded no change for it).
 - _Reviewer key: copy-15_
 
 #### COPY-13
 
 **Form labels and hints: doubled parentheses, terse placeholders, empty field reported as invalid format**
 
-- **Severity:** P3 · **Area:** 7. Copy — Form microcopy · **Status:** OPEN
+- **Severity:** P3 · **Area:** 7. Copy — Form microcopy · **Status:** FIXED
 - **Route:** /upit, /porudzbina (Pregled), /registracija, /zaboravljena-lozinka, /za-majstore/registracija
 - **Context:** 1440, anonymous, empty submit
 - **Standard:** DESIGN-SYSTEM §11.4 (errors: what happened + how to fix)
@@ -4019,13 +4192,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/copy/ev-upit-vin-label-1440.webp](audit/copy/ev-upit-vin-label-1440.webp) · [audit/copy/states-1440.json](audit/copy/states-1440.json) · [audit/copy/state-inquiry-errors-1440.webp](audit/copy/state-inquiry-errors-1440.webp)
 - **Suggested fix:** components/inquiry/InquiryForm.tsx and CheckoutForm VIN label; select placeholders; sign-up/reset/mechanic schemas (components/auth/AuthForms.tsx, lib/validation/mechanicRegistration.ts): min(1, ERRORS.required(...)) before the format refine.
 - **Verification:** reproduce → confirmed (P3): Chromium 1440, anonymous. (1) /upit: the VIN label reads "Broj šasije (VIN) (nije obavezno)", because Field.tsx:98 appends " (nije obavezno)" to a label that already has parentheses. The suffix is font-normal ink-3, so it looks less doubled than it sounds, but screen readers read both parenthetical groups. Checkout ste… [[audit/verify/copy/copy-16-reproduce-upit-vin-1440.webp](audit/verify/copy/copy-16-reproduce-upit-vin-1440.webp), [audit/verify/copy/copy-16-reproduce-checkout-review-vin-1440.webp](audit/verify/copy/copy-16-reproduce-checkout-review-vin-1440.webp)]
+- **Re-verification (step 22):** forms-auth-misc.mjs mech summary → "Upišite adresu e-pošte.", "Upišite lozinku."; vitest validation.test.ts "orders e-mail messages required → format" passed (docs/qa/fix/forms-auth.json)
 - _Reviewer key: copy-16_
 
 #### COPY-14
 
 **Ambiguous microcopy for mechanics and account screens („menja se pri svakoj porudžbini“, „otpremite CSV“, „Pošaljite adresu naloga“, „Nalog je opcion“)**
 
-- **Severity:** P3 · **Area:** 7. Copy — Clarity · **Status:** OPEN
+- **Severity:** P3 · **Area:** 7. Copy — Clarity · **Status:** FIXED
 - **Route:** /za-majstore, /za-majstore/registracija, /majstor/brza-porudzbina, /zaboravljena-lozinka, /nalog/profil, /uslovi-koriscenja
 - **Context:** 1440, anonymous / customer / mechanic
 - **Standard:** DESIGN-SYSTEM §11.1 (say what happens and what to do next), impeccable clarify (specific verb + object)
@@ -4046,13 +4220,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/copy/ev-za-majstore-otpremite-csv-1440.webp](audit/copy/ev-za-majstore-otpremite-csv-1440.webp) · [audit/copy/dump-anon1440.txt](audit/copy/dump-anon1440.txt) · [audit/copy/dump-customer.txt](audit/copy/dump-customer.txt) · [audit/copy/dump-mechanic.txt](audit/copy/dump-mechanic.txt)
 - **Suggested fix:** components/mechanic/MechanicRegistrationForm.tsx:381, app/(shop)/za-majstore/page.tsx:37-38, lib/i18n/sr/mechanic.ts:58 (csv), components/auth/AuthForms.tsx:179, components/account/AccountViews.tsx:371, convex/seedData/content.ts:147.
 - **Verification:** reproduce → partially_confirmed (P3): All five strings render as quoted (Chromium 1440; anonymous, the audit customer, and the audit mechanic). Four of the ambiguity claims hold. (a) /za-majstore/registracija, Servis aside: "Na ovu adresu šaljemo delove; menja se pri svakoj porudžbini." reads as "it changes with every order"; the meaning is "you can change… [[audit/verify/copy/copy-17-reproduce-za-majstore-registracija-1440.webp](audit/verify/copy/copy-17-reproduce-za-majstore-registracija-1440.webp), [audit/verify/copy/copy-17-reproduce-zaboravljena-lozinka-1440.webp](audit/verify/copy/copy-17-reproduce-zaboravljena-lozinka-1440.webp)]
+- **Re-verification (step 22):** npx eslint + npx tsc --noEmit clean; visible in flow21-duplicates-1440.webp ('Učitaj CSV fajl'). (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: copy-17_
 
 #### COPY-15
 
 **OG images uppercase units and orphan them („276 × 24 MM“)**
 
-- **Severity:** P3 · **Area:** 7. Copy — OG images · **Status:** OPEN
+- **Severity:** P3 · **Area:** 7. Copy — OG images · **Status:** FIXED
 - **Route:** /deo/[slug]/opengraph-image (all products with dimensions in the name)
 - **Context:** 1200 × 630 OG image
 - **Standard:** DESIGN-SYSTEM §4.4 (no-break space number–unit; uppercase only for display tokens), DESIGN-SYSTEM §2.3 OG frame
@@ -4064,13 +4239,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/copy/og-product.webp](audit/copy/og-product.webp)
 - **Suggested fix:** lib/og/frame.tsx: do not uppercase product names (use sentence case like the site H1), or protect unit tokens and join number+unit with U+00A0 before rendering.
 - **Verification:** reproduce → confirmed (P3): I fetched og:image from each product page (URL mapped from :3000 to :3100). For DEMO-0004 the 1200x630 PNG title reads "KOČIONI DISK / PREDNJI 276 × 24 / MM": the unit is uppercased and alone on the last line. Close variants make the scope wider than reported: 0006 "…256 × 22 / MM"; 0047 "77 KW" (kW with the wrong case… [[audit/verify/copy/copy-18-reproduce-og-product-0004.webp](audit/verify/copy/copy-18-reproduce-og-product-0004.webp), [audit/verify/copy/copy-18-reproduce-og-variants.webp](audit/verify/copy/copy-18-reproduce-og-variants.webp)]
+- **Re-verification (step 22):** npx tsc --noEmit exit 0; eslint exit 0 (docs/qa/fix/cross-p1/eslint.txt). (docs/qa/fix/cross-p1.json)
 - _Reviewer key: copy-18_
 
 #### COPY-16
 
 **Admin and staff copy slips: „Interna napomena vidi samo osoblje“, „režim log“ vs „Samo zapis“, plain-text preview shown in capitals, „zaposleni u SKLOP“**
 
-- **Severity:** P3 · **Area:** 7. Copy — Admin / staff e-mails · **Status:** OPEN
+- **Severity:** P3 · **Area:** 7. Copy — Admin / staff e-mails · **Status:** FIXED
 - **Route:** /admin/porudzbine/[broj], /admin/mejlovi/sabloni?prikaz=tekst, staff e-mails
 - **Context:** 1440, owner
 - **Standard:** DESIGN-SYSTEM §4.4 (caps only for labels/tokens), DESIGN-SYSTEM §11.1 (consistent terms), BRIEF §2
@@ -4083,13 +4259,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/copy/email-back_in_stock-tekst.webp](audit/copy/email-back_in_stock-tekst.webp) · [audit/copy/dump-admin.txt](audit/copy/dump-admin.txt) · [audit/copy/emails-text.txt](audit/copy/emails-text.txt)
 - **Suggested fix:** components/admin/orders/OrderDetail.tsx:756; convex/notify.ts:67,87 and convex/lib/emailConfig.ts:66; components/admin/system/EmailTemplatesAdmin.tsx:167 replace type-code-s (text-transform: uppercase) with a non-caps mono style; lib/email/templates/shared.ts:26; lib/email/templates/staff.ts:237.
 - **Verification:** reproduce → confirmed (P3): I reproduced this myself at 1440 as owner in Chromium (scripts/qa/audit/verify-copy-19.mjs). All four slips show up. (1) On /admin/porudzbine/SK-2026-000092 the note field help says „Interna napomena vidi samo osoblje, osim ako je označeno drugačije.“ It should be „Internu napomenu…“ (accusative). (2) The order history… [[audit/verify/copy/copy-19-reproduce-1440-note-help.webp](audit/verify/copy/copy-19-reproduce-1440-note-help.webp), [audit/verify/copy/copy-19-reproduce-1440-history.webp](audit/verify/copy/copy-19-reproduce-1440-history.webp)]
+- **Re-verification (step 22):** grep -n "Samo zapis" components/admin/system/EmailsAdmin.tsx components/admin/system/EmailTemplatesAdmin.tsx → EmailsAdmin.tsx „Poruka je ponovo zabeležena (režim „Samo zapis“).“, EmailTemplatesAdmin.tsx „(režim „Samo zapis“, ${res.to})“; npx eslint … → no output; npx tsc --noEmit → 0 errors. (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: copy-19_
 
 #### COPY-17
 
 **Minor inconsistencies on shared templates: 404 title separator and 404 category labels, delivery table list in Title Case**
 
-- **Severity:** P3 · **Area:** 7. Copy — Consistency · **Status:** OPEN
+- **Severity:** P3 · **Area:** 7. Copy — Consistency · **Status:** FIXED
 - **Route:** /ovo-ne-postoji (any 404), /dostava-i-placanje
 - **Context:** 1440
 - **Standard:** DESIGN-SYSTEM §11.1 (sentence case, consistent terms)
@@ -4106,13 +4283,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/copy/ev-dostava-table-1440.webp](audit/copy/ev-dostava-table-1440.webp) · [audit/copy/dump-anon1440.txt](audit/copy/dump-anon1440.txt)
 - **Suggested fix:** app/not-found.tsx:9 (use pageTitle suffix), components/shell/NotFoundContent.tsx:9-14 (read labels from lib/catalog/taxonomy.ts), app/(shop)/dostava-i-placanje/page.tsx:45 (lower-case join + deferred note).
 - **Verification:** reproduce → partially_confirmed (P3): I checked this in Chromium at 1440 and 390 as an anonymous visitor (scripts/qa/audit/verify-copy-20.mjs), with raw titles confirmed by curl. The title-separator claim is real but the scope „any 404“ is wrong. Only the global 404 (/ovo-ne-postoji, app/not-found.tsx through the root template „%s · SKLOP“) returns „Strani… [[audit/verify/copy/copy-20-reproduce.txt](audit/verify/copy/copy-20-reproduce.txt), [audit/verify/copy/copy-20-reproduce-1440.json](audit/verify/copy/copy-20-reproduce-1440.json)]
+- **Re-verification (step 22):** verify.json notFound: title 'Stranica nije pronađena | SKLOP' at 390/1440; 404-ovo-ne-postoji-390.webp shows 'Set zupčastog kaiša i vodena pumpa' and 'Turbina (turbopunjač)'. (docs/qa/fix/routing-errors-gates.json)
 - _Reviewer key: copy-20_
 
 #### FLOW-25
 
 **Stock-limit feedback is confusing: 'Na stanju je još 1 kom.' when blocking a second add; typed quantity silently clamped**
 
-- **Severity:** P3 · **Area:** 8. Flows & edge cases — Cart / buy box · **Status:** OPEN
+- **Severity:** P3 · **Area:** 8. Flows & edge cases — Cart / buy box · **Status:** FIXED
 - **Route:** /deo/kocioni-disk-zadnji-272-10-mm-puni-demo-0003 (stock 1); /korpa
 - **Context:** Chromium 390x844, guest
 - **Standard:** impeccable harden (validation feedback); ui-ux-pro-max error-feedback
@@ -4125,13 +4303,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-shop/S2-over-stock-second-add-390.webp](audit/flows-shop/S2-over-stock-second-add-390.webp) · [audit/flows-shop/R2-cart-qty99-390.webp](audit/flows-shop/R2-cart-qty99-390.webp) · [audit/flows-shop/run2.json](audit/flows-shop/run2.json) (…
 - **Suggested fix:** convex/carts.ts OUT_OF_STOCK message when the cart already holds all stock; components/catalog/AddToCartButton disable when cart qty = stock; QuantityStepper announces the clamp via the line notice.
 - **Verification:** reproduce → confirmed (P3): Chromium 390x844, guest. DEMO-0003 has stockQty 1 (testing:productBySku). The buy-box stepper max is 1. First 'Dodaj u korpu' gave the toast 'Dodato u korpu: … Pogledaj korpu'. After it expired, a second press gave the error toast 'Na stanju je još 1 kom.' The button stays enabled and labelled 'Dodaj u korpu' (disabled… [[audit/verify/flows-shop/flows-shop-13-reproduce.json](audit/verify/flows-shop/flows-shop-13-reproduce.json) (stepper max 1; toastsAfterSecond 'Na stanju je još 1 kom.'; buttonAfterSecond.disabled false; productStepperTyped5 '1'…, [audit/verify/flows-shop/flows-shop-13-reproduce-second-add-390.webp](audit/verify/flows-shop/flows-shop-13-reproduce-second-add-390.webp)]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cross-p1-ui-checks.mjs -> '{"check":"stock cap","max":"2","buttonText":"Sve je u korpi","disabled":true,"status":"U korpi je sva količina sa stanja (2 kom.).","errors":[]}' (docs/qa/fix/cross-p1/ui-checks.json). (docs/qa/fix/cross-p1.json)
 - _Reviewer key: flows-shop-13_
 
 #### FLOW-26
 
 **Broken order/inquiry status links show the parts 404 ('deo više nije u ponudi') with no guidance for the customer**
 
-- **Severity:** P3 · **Area:** 8. Flows & edge cases — Order/inquiry token pages · **Status:** OPEN
+- **Severity:** P3 · **Area:** 8. Flows & edge cases — Order/inquiry token pages · **Status:** FIXED
 - **Route:** /porudzbina/<bad-token>, /porudzbina/hvala/<bad-token>, /porudzbina/<bad-token>/predracun, /upit/<bad-token>
 - **Context:** Chromium 390, guest
 - **Standard:** impeccable harden / clarify (error states that help)
@@ -4145,13 +4324,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-shop/states.json](audit/flows-shop/states.json)… · [audit/flows-shop/ssr-404.txt](audit/flows-shop/ssr-404.txt)
 - **Suggested fix:** Add not-found.tsx under app/(shop)/porudzbina/[token] and app/(shop)/upit/[token] with token-specific copy (lib/i18n/sr).
 - **Verification:** reproduce → confirmed (P3): Chromium, guest, at 390 and 1440. Opened /porudzbina/nevazeci-token, /porudzbina/hvala/nevazeci-token, /porudzbina/nevazeci-token/predracun, /upit/nevazeci-token and /upit/hvala/nevazeci-token. Also opened a truncated real token, /porudzbina/GVl2SHwvba1nbEDG8VWTGcg0IPXAbHGNXGp, which simulates a link cut by a mail clie… [[audit/verify/flows-shop/flows-shop-14-reproduce.json](audit/verify/flows-shop/flows-shop-14-reproduce.json) (12 route/width results: status 404, h1 'Stranica nije pronađena', title mismatch), [audit/verify/flows-shop/flows-shop-14-reproduce-order-390.webp](audit/verify/flows-shop/flows-shop-14-reproduce-order-390.webp)]
+- **Re-verification (step 22):** node scripts/qa/fix/cross-p1-ssr-404.mjs -> 'porudzbina/hvala/… 404 titles ["Link porudžbine nije ispravan | SKLOP"]'; ui-checks.json after hydration: h1 'Link porudžbine nije ispravan'. (docs/qa/fix/cross-p1.json)
 - _Reviewer key: flows-shop-14_
 
 #### FLOW-27
 
 **Inquiry photo rejection uses one combined message for wrong type and too large**
 
-- **Severity:** P3 · **Area:** 8. Flows & edge cases — VIN / part inquiry photos · **Status:** OPEN
+- **Severity:** P3 · **Area:** 8. Flows & edge cases — VIN / part inquiry photos · **Status:** FIXED
 - **Route:** /upit
 - **Context:** Chromium 390, guest
 - **Standard:** impeccable harden / clarify (specific errors)
@@ -4163,6 +4343,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-shop/I-photo-wrong-type-390.webp](audit/flows-shop/I-photo-wrong-type-390.webp) · [audit/flows-shop/inquiry.json](audit/flows-shop/inquiry.json) …
 - **Suggested fix:** Inquiry photo picker (components/inquiry): branch on the rejection reason and include the file name.
 - **Verification:** reproduce → confirmed (P3): Chromium 390x844, guest, /upit. I put racun.pdf (application/pdf) into the inquiry-photo-input with setInputFiles. Notice (p[role=status]): 'Fotografija je prevelika ili nije JPG, PNG ili WebP. Najviše 8 MB po fotografiji.' Then velika.jpg (image/jpeg, 9 MB) gave exactly the same text, with no file name. 0 photos were … [[audit/verify/flows-shop/flows-shop-15-reproduce.json](audit/verify/flows-shop/flows-shop-15-reproduce.json) (wrongType and tooBig: identical combined message; photosAdded 0), [audit/verify/flows-shop/flows-shop-15-reproduce-too-big-390.webp](audit/verify/flows-shop/flows-shop-15-reproduce-too-big-390.webp)]
+- **Re-verification (step 22):** forms-auth-misc.mjs → "upit photo rejections racun.pdf nije fotografija (JPG, PNG ili WebP). velika.jpg ima 9,2 MB — najviše 8 MB po fotografiji." (docs/qa/fix/forms-auth.json)
 - _Reviewer key: flows-shop-15_
 
 #### FLOW-28
@@ -4181,13 +4362,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-shop/quote.json](audit/flows-shop/quote.json)…
 - **Suggested fix:** Expose the inquiry's phone/e-mail to the token holder in inquiries.getByToken (already the requester's own data) and use them as initial values in AcceptForm.
 - **Verification:** reproduce → confirmed (P3): I reproduced this from scratch. At 390 px (guest) I sent a new part inquiry, UP-2026-000078, with name 'Verifikacija Prefill', phone 064 765 4321 and e-mail audit-verify-fs16-...@primer.rs. The admin inquiry page shows both stored: Telefon +381 64 765 4321 and the e-mail. The owner then sent a one-line catalog quote (s… [[audit/verify/flows-shop/flows-shop-16-reproduce.json](audit/verify/flows-shop/flows-shop-16-reproduce.json) (fresh390: Telefon value '', E-pošta value ''; seed1440 same), [audit/verify/flows-shop/flows-shop-16-reproduce-accept-form-390.webp](audit/verify/flows-shop/flows-shop-16-reproduce-accept-form-390.webp)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (owned by the backend-orders-quotes package, which recorded no change for it).
 - _Reviewer key: flows-shop-16_
 
 #### FLOW-29
 
 **Checkout step 1 back link reads 'Korpa ←' (arrow after the label) while later steps use '← Nazad'**
 
-- **Severity:** P3 · **Area:** 8. Flows & edge cases — Checkout · **Status:** OPEN
+- **Severity:** P3 · **Area:** 8. Flows & edge cases — Checkout · **Status:** FIXED
 - **Route:** /porudzbina step 1 (Kontakt)
 - **Context:** Chromium 390 and 1440, guest
 - **Standard:** DESIGN-SYSTEM consistency (links/buttons with icons)
@@ -4200,6 +4382,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Suggested fix:** components/checkout/CheckoutForm.tsx:733 - render the icon before the label (iconPosition start) or use the same ghost Button style as 'Nazad'.
 - **Verification:** reproduce → confirmed (P3): I reproduced this at 390 px and 1440 px (Chromium, guest). I added abs-senzor-prednji-demo-0022 to the cart and opened /porudzbina. The step 1 action row shows an underlined 'Korpa' followed by a left arrow. The link's DOM children are [text 'Korpa', icon], with the icon at x=51 inside a 65 px wide link. After filling … [[audit/verify/flows-shop/flows-shop-17-reproduce.json](audit/verify/flows-shop/flows-shop-17-reproduce.json) (step1 childOrder ['text:Korpa','icon'], step2 childOrder ['icon','el:Nazad'] at 390 and 1440), [audit/verify/flows-shop/flows-shop-17-reproduce-step1-390.webp](audit/verify/flows-shop/flows-shop-17-reproduce-step1-390.webp)]
 - **Also reported as:** vis-commerce-11 (Checkout back links are inconsistent: step 1 „Korpa ←“ has the arrow after the label, steps 2–4 have „← Nazad“ @ /porudzbina)
+- **Re-verification (step 22):** forms-auth-checkout.mjs → "back link {text:Korpa, firstChildIsIcon:true}" (docs/qa/fix/forms-auth.json)
 - _Reviewer key: flows-shop-17_
 
 #### FLOW-30
@@ -4218,6 +4401,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-admin/mech-02-reject-empty.webp](audit/flows-admin/mech-02-reject-empty.webp) · [audit/flows-admin/v3-mech-03-approve-negative-limit.webp](audit/flows-admin/v3-mech-03-approve-negative-limit.webp) · [audit/flows-admin/mech-settings.json](audit/flows-admin/mech-settings.json) (… · [audit/flows-admin/v3-mech-settings.json](audit/flows-admin/v3-mech-settings.json) (a…
 - **Suggested fix:** MechanicAdminDetail.tsx: replace the single `error` string (set from buildTerms() throws) with per-field errors passed to <Field error>. Validate reason.trim() before calling reject, and focus the first invalid field.
 - **Verification:** reproduce → confirmed (P3): 1440x900 Chromium, owner, pending mechanic vfa07a. Clicking 'Odbij registraciju' with an empty 'Razlog odbijanja' shows 'Upišite razlog.' only in the role=alert banner at the top of 'Odluka' (viewport y≈78, while the textarea is at y≈710 and the button at y≈880). The textarea has no aria-invalid, and its aria-described… [[audit/verify/flows-admin/flows-admin-07-10-reproduce.json](audit/verify/flows-admin/flows-admin-07-10-reproduce.json) (step '10a empty reason → click reject': ariaInvalidCount 0, reasonAriaInvalid null, console ConvexError field reason; …, [audit/verify/flows-admin/flows-admin-10-reproduce-empty-reason.webp](audit/verify/flows-admin/flows-admin-10-reproduce-empty-reason.webp)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (owned by the admin-flows package, which recorded no change for it).
 - _Reviewer key: flows-admin-10_
 
 #### FLOW-31
@@ -4237,13 +4421,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-admin/v3-pickup.json](audit/flows-admin/v3-pickup.json)… · [audit/flows-admin/mech-settings.json](audit/flows-admin/mech-settings.json) …
 - **Suggested fix:** Pre-validate on the client where possible (mechanic reason). Configure the ConvexReactClient logger (or a wrapper) so expected ConvexError codes (INVALID, CONFLICT) aren't logged as errors. Close stale confirm dialogs when the reactive order status changes.
 - **Verification:** reproduce → confirmed (P3): I reproduced both cases at 1440x900 in Chromium as owner. (1) I made test order SK-2026-000143 with testing:createTestOrder and opened it in tabs A and B. B opened the 'Potvrdi' alertdialog, then A confirmed. B's dialog stayed open with 'Potvrdi' still enabled while the badge behind it already said POTVRĐENA. Clicking … [[audit/verify/flows-admin/flows-admin-11-reproduce.json](audit/verify/flows-admin/flows-admin-11-reproduce.json), [audit/verify/flows-admin/flows-admin-11-reproduce-order.webp](audit/verify/flows-admin/flows-admin-11-reproduce-order.webp)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (owned by the admin-flows package, which recorded no change for it).
 - _Reviewer key: flows-admin-11_
 
 #### FLOW-32
 
 **Bell unread count is capped at 100 but announced as exactly 100, so it stops changing**
 
-- **Severity:** P3 · **Area:** 8. Flows & edge cases — Admin · notification bell · **Status:** OPEN
+- **Severity:** P3 · **Area:** 8. Flows & edge cases — Admin · notification bell · **Status:** FIXED
 - **Route:** all /admin routes (top bar)
 - **Context:** 1440x900 Chromium, owner with more than 100 unread notifications (current QA state)
 - **Standard:** WCAG 2.2 SC 1.3.1 / 4.1.2 (accurate accessible name) · polish
@@ -4256,6 +4441,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-admin/v3-order.json](audit/flows-admin/v3-order.json)… · [audit/flows-admin/v3-misc.json](audit/flows-admin/v3-misc.json) … · [audit/flows-admin/v3-ord-01-bell-panel.webp](audit/flows-admin/v3-ord-01-bell-panel.webp)
 - **Suggested fix:** Return { count, capped } from unreadCount (take(100) → capped = rows.length === 100) and set the label in NotificationBell.tsx:99 to 'Obaveštenja, nepročitano: više od 99' when capped.
 - **Verification:** reproduce → confirmed (P3): On /admin at 1440 as owner, the bell's aria-label was 'Obaveštenja, nepročitano: 100' with badge '9+'. I then ran testing:createTestOrder (SK-2026-000143) and waited 7 s. The label still read 'Obaveštenja, nepročitano: 100' and the badge '9+'. The panel's first row was 'Nova porudžbina SK-2026-000143 · upravo', so the … [[audit/verify/flows-admin/flows-admin-12-reproduce.json](audit/verify/flows-admin/flows-admin-12-reproduce.json), [audit/verify/flows-admin/flows-admin-12-reproduce.webp](audit/verify/flows-admin/flows-admin-12-reproduce.webp)]
+- **Re-verification (step 22):** p3.json bellLabel „Obaveštenja, nepročitano: više od 99“ on the demo deployment (unread at the 100 cap). (docs/qa/fix/admin-lists-shell.json)
 - _Reviewer key: flows-admin-12_
 
 #### FLOW-33
@@ -4274,13 +4460,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-admin/v3-inq-04-after-convert.webp](audit/flows-admin/v3-inq-04-after-convert.webp)
 - **Suggested fix:** components/admin/inquiries/InquiryDetail.tsx convert form (≈555-650): add noValidate, validate with zod, and pass errors to <Field error>.
 - **Verification:** reproduce → confirmed (P3): UP-2026-000054 is already converted (prihvacena), so I used UP-2026-000003 (sent quote), which is safe. Its dialog pre-fills majstor.demo@sklop.test, so I cleared the E-pošta field. Before clicking I checked that form.checkValidity() was false, so no order could be created. Clicking 'Kreiraj porudžbinu' showed Chromium… [[audit/verify/flows-admin/flows-admin-14-reproduce.json](audit/verify/flows-admin/flows-admin-14-reproduce.json), [audit/verify/flows-admin/flows-admin-14-reproduce.webp](audit/verify/flows-admin/flows-admin-14-reproduce.webp)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (owned by the backend-orders-quotes package, which recorded no change for it).
 - _Reviewer key: flows-admin-14_
 
 #### FLOW-34
 
 **Plain-text e-mails print tel: links twice („+381 64 123 4567: tel:+381641234567“)**
 
-- **Severity:** P3 · **Area:** 8. Flows & edge cases — Notifications / e-mail rendering · **Status:** OPEN
+- **Severity:** P3 · **Area:** 8. Flows & edge cases — Notifications / e-mail rendering · **Status:** FIXED
 - **Route:** /admin/mejlovi/sabloni?sablon=staff_order_new&prikaz=tekst (any template with a phone link)
 - **Context:** Chromium 1440x900, owner
 - **Standard:** BRIEF notifications (clean plain-text alternative); CLAUDE.md copy formats (+381 64 123 4567)
@@ -4295,13 +4482,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-import-mech/emails.json](audit/flows-import-mech/emails.json)… · [audit/flows-import-mech/emails-template-staff_order_new-tekst-1440.webp](audit/flows-import-mech/emails-template-staff_order_new-tekst-1440.webp)
 - **Suggested fix:** lib/email/html.ts:118: for `tel:`, `mailto:` and `viber://` hrefs, output only the visible value in the text part; keep the „label: URL“ form for http(s) links.
 - **Verification:** reproduce → confirmed (P3): Ran the steps as owner in Chromium at 1440x900. /admin/mejlovi/sabloni?sablon=staff_order_new&prikaz=tekst shows the line „Telefon: +381 64 123 4567: tel:+381641234567“. staff_inquiry_new shows the same pattern („Telefon: +381 60 123 4567: tel:+381601234567“). staffMechanicNew uses the same phoneValue() helper (lib/ema… [[audit/verify/flows-import-mech/flows-import-mech-05-reproduce-staff_order_new-tekst.webp](audit/verify/flows-import-mech/flows-import-mech-05-reproduce-staff_order_new-tekst.webp), [audit/verify/flows-import-mech/admin-verify.json](audit/verify/flows-import-mech/admin-verify.json) (tpl_staff_order_new.telLines, tpl_staff_inquiry_new.telLines)]
+- **Re-verification (step 22):** Test „FLOW-34: phone, e-mail and Viber links print their value once“ passes; snapshots now read „Pitanja? Pozovite +381 64 123 4567 ili pišite na Viber ili odgovorite na ovu poruku.“ and „Telefon: +381 64 123 4567“. (docs/qa/fix/seo-content-email.json)
 - _Reviewer key: flows-import-mech-05_
 
 #### FLOW-35
 
 **Order-received e-mail and thank-you page for a deferred-payment mechanic order do not state the due date**
 
-- **Severity:** P3 · **Area:** 8. Flows & edge cases — Notifications / mechanics deferred payment · **Status:** OPEN
+- **Severity:** P3 · **Area:** 8. Flows & edge cases — Notifications / mechanics deferred payment · **Status:** FIXED
 - **Route:** /porudzbina/hvala/<token> and e-mail „Porudžbina primljena“ (SK-2026-000131)
 - **Context:** Audit mechanic (deferred payment, 15-day term), order SK-2026-000131, 30.09.2026.
 - **Standard:** BRIEF mechanics portal (deferred payment with terms), BRIEF notifications
@@ -4319,6 +4507,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-import-mech/emails.json](audit/flows-import-mech/emails.json)… · [audit/flows-import-mech/mechorder.json](audit/flows-import-mech/mechorder.json) … · [audit/flows-import-mech/mechorder-thanks-1440.webp](audit/flows-import-mech/mechorder-thanks-1440.webp)
 - **Suggested fix:** In the order_received template (lib/email/templates) and the thank-you page, when paymentMethod is deferred, render „Rok plaćanja: <dueDate> (<termDays> dana)“ from the order's stored term instead of the generic method description.
 - **Verification:** reproduce → confirmed (P3): Checked order SK-2026-000131 (testing:orderProbe: paymentMethod deferred, status nova). The thank-you page /porudzbina/hvala/<token> says only „Plaćate po dogovorenom roku za odloženo plaćanje.“ and the Plaćanje box says „Odloženo plaćanje“. The status page /porudzbina/<token> also has only „Plaćanje: Odloženo plaćanje… [[audit/verify/flows-import-mech/flows-import-mech-06-reproduce-thanks.webp](audit/verify/flows-import-mech/flows-import-mech-06-reproduce-thanks.webp), [audit/verify/flows-import-mech/flows-import-mech-06-reproduce-history.webp](audit/verify/flows-import-mech/flows-import-mech-06-reproduce-history.webp)]
+- **Re-verification (step 22):** npx tsc --noEmit clean; not exercised in the browser (needs a fresh deferred mechanic order). (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: flows-import-mech-06_
 
 #### FLOW-36
@@ -4337,13 +4526,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-import-mech/edge-4-dryrun-1440.webp](audit/flows-import-mech/edge-4-dryrun-1440.webp) · [audit/flows-import-mech/edge-import.json](audit/flows-import-mech/edge-import.json) …
 - **Suggested fix:** Add a warning rule in the import row validation (lib/excel import validator used by CheckStep) for text fields that start with `= + @` or `-` followed by a letter or `|`.
 - **Verification:** reproduce → confirmed (P3): Built my own 4-row XLSX with string cells (t='s', no formula). Names were =HYPERLINK("http://evil.example/x","Klikni"), +cmd|' /C calc'!A0, @SUM(A1:A2) and one normal name. Category Kočioni diskovi, ATE, Aktivan ne. I uploaded it at /admin/uvoz as owner, 1440. Provera: Redova 4, Ispravnih 4, Sa upozorenjem 0, Sa greško… [[audit/verify/flows-import-mech/flows-import-mech-07-reproduce-dryrun.webp](audit/verify/flows-import-mech/flows-import-mech-07-reproduce-dryrun.webp), [audit/verify/flows-import-mech/admin-verify.json](audit/verify/flows-import-mech/admin-verify.json) (fixtureCells, check, dryrun, tab Novi (4), afterCancelUrl)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (owned by the admin-flows package, which recorded no change for it).
 - _Reviewer key: flows-import-mech-07_
 
 #### FLOW-37
 
 **Price-list download with unknown category slugs returns an empty XLSX instead of an error**
 
-- **Severity:** P3 · **Area:** 8. Flows & edge cases — Mechanics portal / price list · **Status:** OPEN
+- **Severity:** P3 · **Area:** 8. Flows & edge cases — Mechanics portal / price list · **Status:** FIXED
 - **Route:** /majstor/cenovnik/preuzmi?kategorije=<unknown>
 - **Context:** Audit mechanic, direct URL (stale bookmark or a renamed category)
 - **Standard:** BRIEF mechanics price list XLSX; WCAG 3.3.1 (no error feedback)
@@ -4355,13 +4545,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/flows-import-mech/pricelist-xlsx.json](audit/flows-import-mech/pricelist-xlsx.json)…
 - **Suggested fix:** In the /majstor/cenovnik/preuzmi route handler, return the 400 message (or redirect back with a notice) when the resolved category set is empty after filtering unknown slugs.
 - **Verification:** reproduce → confirmed (P3): Requested the route as the signed-in audit mechanic with Chromium page.request. ?kategorije=ne-postoji returned 200 with the attachment cenovnik-audit-servis-d-o-o-2026-09-30.xlsx. The sheet range is A1:L5: the title, tier and date lines plus the header row, and no products. ?kategorije=stari-slug-kategorije,jos-jedan … [[audit/verify/flows-import-mech/mech-verify.json](audit/verify/flows-import-mech/mech-verify.json) (pricelist: ne-postoji 200 A1:L5 4 rows; (none) 400; kocioni-diskovi 200 A1:L14), scripts/qa/audit/verify-flows-import-mech-b.mjs]
+- **Re-verification (step 22):** scripts/qa/fix/cart-mechanic-overlays-perf-route.mjs → 'FLOW-37 unknown slug: 400 Izabrane kategorije više ne postoje. …'. (docs/qa/fix/cart-mechanic-overlays.json)
 - _Reviewer key: flows-import-mech-08_
 
 #### BE-08
 
 **Every signed-in page load forces a Convex Auth refresh (new JWT and rotated refresh token) although the JWT is valid for 1 h**
 
-- **Severity:** P3 (reported P2, adjusted by verification) · **Area:** 9. Backend & reliability — Auth / backend load · **Status:** OPEN
+- **Severity:** P3 (reported P2, adjusted by verification) · **Area:** 9. Backend & reliability — Auth / backend load · **Status:** FIXED
 - **Route:** Any page while signed in (tested /nalog, /delovi, /nalog/porudzbine, /korpa, /)
 - **Context:** Chromium 1440×900, shared customer account, production build on :3100. Cookie values fingerprinted only (SHA-256 prefix).
 - **Standard:** BRIEF §9 Reliability/Performance (no needless backend work per request), SECURITY §D1 (1 h JWT, refresh only near expiry)
@@ -4380,6 +4571,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/backend/session-refresh.json](audit/backend/session-refresh.json) · [audit/backend/session-refresh-source.json](audit/backend/session-refresh-source.json) · [audit/backend/convex-logs-stream.txt](audit/backend/convex-logs-stream.txt)
 - **Suggested fix:** Find out why the client calls fetchAccessToken({forceRefreshToken:true}) on load. Turn on `verbose` for ConvexAuthNextjsProvider/ConvexReactClient in a debug build (components/providers/ConvexClientProvider.tsx:18-28). Check that the token from ConvexAuthNextjsServerProvider (app/layout.tsx:54) reaches the client, and that the backend accepts the initial JWT (an AuthError, e.g. issuer mismatch, forces a refresh). Add an e2e assertion: at most one /api/auth POST across two navigations.
 - **Verification:** reproduce → partially_confirmed (P3): Reproduced with my own script: Chromium 1440, shared customer account, :3100. Full document loads (page.goto /delovi, /korpa, /, /nalog): 4 of 4 each sent exactly one POST /api/auth {action:'auth:signIn', args:{refreshToken}}, and that response set a new __convexAuthJWT. Close variant, client-side Link navigation (/del… [[audit/verify/backend/backend-08-reproduce.json](audit/verify/backend/backend-08-reproduce.json) (summary: apiAuthPostsDuringFullLoads 4 of 4, apiAuthPostsDuringClientNavs 0 of 4; each full load: POST /api/auth auth:…, [audit/verify/backend/backend-08-reproduce-lib.txt](audit/verify/backend/backend-08-reproduce-lib.txt) (convex authentication_manager.ts:38-51 and 213-222, client.ts initialAuthTokenReuse docs, @convex-dev/auth client forc…]
+- **Re-verification (step 22):** AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/cross-p1-be08-auth-posts.mjs (signed-in customer) -> '/nalog authPosts 0', '/delovi/kocioni-diskovi authPosts 0', '/nalog/porudzbine authPosts 0' (docs/qa/fix/cross-p1/be08-auth-posts.json). (docs/qa/fix/cross-p1.json)
 - _Reviewer key: backend-08_
 
 #### BE-09
@@ -4399,6 +4591,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/backend/code-greps.txt](audit/backend/code-greps.txt)…
 - **Suggested fix:** Add a staffQuery `events.health` (failed/dead counts via by_status_and_nextAttemptAt, take 100, latest lastError), a dashboard card, an owner notification when an event goes dead, and a staffMutation to retry (reset attempts, audited).
 - **Verification:** reproduce → confirmed (P3): Confirmed in code and in the admin UI (owner, 1440). events.dispatch (convex/events.ts:552-579) catches processEvent errors and marks the event failed, or dead after MAX_ATTEMPTS. events.sweep only picks up pending and failed events, so dead ones are never retried. No other function reads domainEvents by status: the re… [[audit/verify/backend/backend-09-reproduce.txt](audit/verify/backend/backend-09-reproduce.txt) (all domainEvents readers, dispatch catch block, no staff reader of failed/dead, docs/NOTIFICATIONS.md:10 'visible in a…, [audit/verify/backend/backend-09-reproduce-dashboard.webp](audit/verify/backend/backend-09-reproduce-dashboard.webp) (owner /admin at 1440: no event-health indicator)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (no fix package took it).
 - _Reviewer key: backend-09_
 
 #### BE-10
@@ -4417,6 +4610,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/backend/code-greps.txt](audit/backend/code-greps.txt)…
 - **Suggested fix:** Maintain lowStock/outOfStock counters in lib/productWriter when stockState changes (same transaction), or mount @convex-dev/aggregate keyed by stockState. Read the counters in dashboard:kpis and the digest.
 - **Verification:** reproduce → confirmed (P3): Confirmed in code. dashboard:kpis (convex/dashboard.ts:101-112) reads products through by_stockState_and_active for low_stock and out_of_stock with .take(1_000) each and returns .length. Dashboard.tsx:147-156 renders the number as 'Bez zaliha N / još M sa malo zaliha' with no '1000+' marker, so the cap is silent. The d… [[audit/verify/backend/backend-10-reproduce.txt](audit/verify/backend/backend-10-reproduce.txt) (dashboard.ts:100-113, emailData.ts:380-392, Dashboard.tsx KPI render, productWriter adjustCounts, Convex guideline lin…, [audit/verify/backend/backend-09-reproduce-dashboard.webp](audit/verify/backend/backend-09-reproduce-dashboard.webp) (the 'Bez zaliha 15 / još 28 sa malo zaliha' KPI fed by kpis.outOfStock / kpis.lowStock)]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (no fix package took it).
 - _Reviewer key: backend-10_
 
 #### BE-11
@@ -4442,13 +4636,14 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/backend/code-greps.txt](audit/backend/code-greps.txt)…
 - **Suggested fix:** Ignore profiles with status rejected in the uniqueness check (or re-open the rejected profile for the new account after staff review), and emit a staff notification on DUPLICATE PIB attempts.
 - **Verification:** reproduce → confirmed (P3): Reproduced live on the dev deployment (script scripts/qa/audit/verify-backend-11-12.mjs). I created a pending test mechanic with PIB 286870265 using testing:createPendingMechanic, then rejected it as the owner in /admin/majstori/<id> with the reason 'PIB pripada drugoj firmi (APR).' The probe returned status 'rejected'… [[audit/verify/backend/backend-11-reproduce-admin-rejected.webp](audit/verify/backend/backend-11-reproduce-admin-rejected.webp) (rejected profile, PIB 286870265; the only action is 'Vrati na čekanje'), [audit/verify/backend/backend-11-reproduce-duplicate-pib.webp](audit/verify/backend/backend-11-reproduce-duplicate-pib.webp) (/za-majstore/registracija, same PIB, different MB: 'Ovaj PIB je već registrovan — prijavite se ili nas pozovite.')]
+- **Re-verification (step 22):** not fixed — not addressed in step 22 (owned by the backend-orders-quotes package, which recorded no change for it).
 - _Reviewer key: backend-11_
 
 #### BE-12
 
 **The password rule „not equal to the e-mail“ from SECURITY §D1 is not enforced**
 
-- **Severity:** P3 · **Area:** 9. Backend & reliability — Auth · **Status:** OPEN
+- **Severity:** P3 · **Area:** 9. Backend & reliability — Auth · **Status:** FIXED
 - **Route:** /registracija and the reset flow (Convex Auth Password provider)
 - **Context:** Code review.
 - **Standard:** docs/SECURITY.md §D1
@@ -4464,6 +4659,7 @@ So every non-RevealText line in the first viewport is opacity 0 for about 3 s af
 - **Evidence:** [audit/backend/code-greps.txt](audit/backend/code-greps.txt)…
 - **Suggested fix:** Validate in the Password provider's `profile(params)` (where both e-mail and password are available). Throw WEAK_PASSWORD „Lozinka ne sme biti ista kao e-mail adresa.“ when normalizeEmail(password) === email. Mirror the rule in the sign-up zod schema.
 - **Verification:** reproduce → confirmed (P3): Reproduced live on two sign-up routes. (1) /registracija at 1440: e-mail 'marko2024-8687026@primer.rs' with the identical string as the password. It was accepted and landed on /nalog ('Prijavljeni ste kao marko2024-8687026@primer.rs'). (2) Variant: the signed-out account creation on /za-majstore/registracija accepted e… [[audit/verify/backend/backend-12-reproduce-signup-form.webp](audit/verify/backend/backend-12-reproduce-signup-form.webp) (/registracija filled with marko2024-8687026@primer.rs as both e-mail and password), [audit/verify/backend/backend-12-reproduce-signup-accepted.webp](audit/verify/backend/backend-12-reproduce-signup-accepted.webp) (/nalog, 'Prijavljeni ste kao marko2024-8687026@primer.rs')]
+- **Re-verification (step 22):** Code check of profile() in convex/auth.ts (signUp password / reset-verification newPassword compared with normalizeEmail). npx vitest run convex/inquiries.test.ts convex/security.test.ts convex/admin.test.ts tests/unit/lib/focusReturn.test.tsx tests/unit/email tests/unit/content -> 'Tests 153 passed (153)' (docs/qa/fix/cross-p1/vitest.txt). (docs/qa/fix/cross-p1.json)
 - _Reviewer key: backend-12_
 
 ## Appendix A — reported but not confirmed

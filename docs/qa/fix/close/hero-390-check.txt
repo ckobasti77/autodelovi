@@ -1,0 +1,1 @@
+{"stage":{"x":0,"y":356.1875,"width":390,"height":487.5},"poster":"http://localhost:3100/images/hero/car-assembled-m-828.avif","carHeightPct":93.9,"carWidthPct":95.8,"emptyAbovePx":19,"emptyBelowPx":10,"out":"docs/qa/fix/close/hero-390-poster.webp"}

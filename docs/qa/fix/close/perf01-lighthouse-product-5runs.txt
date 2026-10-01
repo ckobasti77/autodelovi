@@ -1,0 +1,9 @@
+http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 1: perf 92 · LCP 2189 ms · CLS 0.000 · TBT 222 ms · FCP 2189 ms · SI 2326 ms · JS 279 KB · benchmarkIndex 3911
+http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 2: perf 95 · LCP 2097 ms · CLS 0.000 · TBT 179 ms · FCP 2097 ms · SI 2227 ms · JS 279 KB · benchmarkIndex 4024
+http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 3: perf 94 · LCP 2190 ms · CLS 0.000 · TBT 161 ms · FCP 2190 ms · SI 2321 ms · JS 279 KB · benchmarkIndex 4122
+http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 4: perf 95 · LCP 2012 ms · CLS 0.000 · TBT 198 ms · FCP 2012 ms · SI 2175 ms · JS 279 KB · benchmarkIndex 4085
+http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 5: perf 94 · LCP 2127 ms · CLS 0.000 · TBT 187 ms · FCP 2127 ms · SI 2256 ms · JS 279 KB · benchmarkIndex 4076
+MEDIAN http://localhost:3100/deo/kocioni-disk-prednji-276-24-mm-demo-0004 (catalog, mobile, devtools throttling, 5 runs): performance 94 · accessibility 100 · best practices 100 · SEO 100 · LCP 2127 ms · CLS 0.000 · TBT 187 ms · FCP 2127 ms · SI 2256 ms · first-load JS 279 KB · benchmarkIndex 4076
+  LCP element: figure > div.relative > div.relative > img.object-contain <img alt="Kočioni disk prednji 276 × 24 mm — ilustracija kategorije kočioni diskovi" decoding="async" data-nimg="fill" class="object-contain transition-transform duration-[600ms] ease-sk-out p-[4%]" style="position: absolute; height: 100%; width: 100%; inset: 0px;" sizes="(min-width: 1024px) 56vw, 100vw" srcset="/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.webp&amp;w=384&amp;q=75 384w,…" src="http://localhost:3100/_next/image?url=%2Fimages%2Fparts%2Fkocioni-diskovi.…">
+  BUDGET MISSED: LCP 2127 > 2000, TBT 187 > 150, first-load JS 279 KB > 160 KB
+exit 1

@@ -1,0 +1,18 @@
+
+Running 12 tests using 1 worker
+
+[1/12] [desktop-1440] › tests\e2e\admin.spec.ts:163:5 › inquiry: answer with a quote
+[2/12] [desktop-1440] › tests\e2e\focus-return.spec.ts:82:7 › focus returns to the opener when a store overlay closes (A11Y-02) › vehicle picker: Escape returns focus to its trigger
+[3/12] [desktop-1440] › tests\e2e\focus-return.spec.ts:97:7 › focus returns to the opener when a store overlay closes (A11Y-02) › vehicle picker: choosing a vehicle focuses the updated trigger
+[4/12] [desktop-1440] › tests\e2e\focus-return.spec.ts:115:7 › focus returns to the opener when a store overlay closes (A11Y-02) › cart drawer: Escape returns focus to the header cart without scrolling
+[5/12] [desktop-1440] › tests\e2e\focus-return.spec.ts:130:7 › focus returns to the opener when a store overlay closes (A11Y-02) › header search: typing then Escape returns focus to the search control without scrolling
+[6/12] [desktop-1440] › tests\e2e\hero-3d.spec.ts:181:7 › 3D hero › the stage keeps the poster's aspect below 1024 px, so the car fills it
+[7/12] [mobile-390] › tests\e2e\admin.spec.ts:163:5 › inquiry: answer with a quote
+[8/12] [mobile-390] › tests\e2e\focus-return.spec.ts:82:7 › focus returns to the opener when a store overlay closes (A11Y-02) › vehicle picker: Escape returns focus to its trigger
+[9/12] [mobile-390] › tests\e2e\focus-return.spec.ts:97:7 › focus returns to the opener when a store overlay closes (A11Y-02) › vehicle picker: choosing a vehicle focuses the updated trigger
+[10/12] [mobile-390] › tests\e2e\focus-return.spec.ts:115:7 › focus returns to the opener when a store overlay closes (A11Y-02) › cart drawer: Escape returns focus to the header cart without scrolling
+[11/12] [mobile-390] › tests\e2e\focus-return.spec.ts:130:7 › focus returns to the opener when a store overlay closes (A11Y-02) › header search: typing then Escape returns focus to the search control without scrolling
+[12/12] [mobile-390] › tests\e2e\hero-3d.spec.ts:181:7 › 3D hero › the stage keeps the poster's aspect below 1024 px, so the car fills it
+  1 skipped
+  11 passed (34.4s)
+PLAYWRIGHT EXIT 0

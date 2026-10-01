@@ -135,3 +135,27 @@ After — simulated:
     /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 1: perf 87 · LCP 3997 ms · CLS 0.000 · TBT 17 ms · FCP 1362 ms · SI 1362 ms · JS 279 KB · benchmarkIndex 3909
     /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 2: perf 91 · LCP 3467 ms · CLS 0.000 · TBT 24 ms · FCP 1359 ms · SI 1359 ms · JS 279 KB · benchmarkIndex 4048
     /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 3: perf 87 · LCP 3991 ms · CLS 0.000 · TBT 15 ms · FCP 1361 ms · SI 1361 ms · JS 279 KB · benchmarkIndex 4016
+
+## Gates re-check after the final code (step 22 gates, 2026-10-01)
+
+Re-run because the gates phase changed application code (order status dialog offline pattern, `Dialog` `min-w-0`, admin top bar `data-sticky-header`, PrivacyAdmin copy, inquiry link `generateMetadata`). Fresh `NEXT_PUBLIC_TEST_HOOKS=1 npm run build`, `next start -p 3100`, `MSYS_NO_PATHCONV=1 node tests/lighthouse/run.mjs --runs 3 --throttling devtools --min-benchmark 3500 / /delovi/kocioni-diskovi /deo/kocioni-disk-prednji-276-24-mm-demo-0004` (benchmarkIndex 3923–4173 on every run, none discarded).
+
+| Page | Perf | A11y | BP | SEO | LCP ms | CLS | TBT ms | Gate (perf ≥ 85, a11y ≥ 95, SEO ≥ 95) |
+|---|---|---|---|---|---|---|---|---|
+| `/` | 94 | 100 | 100 | 100 | 2331 | 0.001 | 170 | pass |
+| `/delovi/kocioni-diskovi` | 95 | 100 | 100 | 100 | 2006 | 0.000 | 185 | pass |
+| `/deo/kocioni-disk-prednji-276-24-mm-demo-0004` | 94 | 100 | 100 | 100 | 2093 | 0.000 | 202 | pass |
+
+The runner still exits 1 on the internal J11 lab budgets (first-load JS 279–298 KB against 160/180 KB; category and product LCP 2006/2093 ms against 2000 ms; TBT against 150 ms) — the same items as under „Remaining“, not gate criteria. Category TBT median fell from 287 to 185 ms (runs 180–189 ms).
+
+```
+    / run 1: perf 90 · LCP 2424 ms · CLS 0.001 · TBT 280 ms · FCP 2243 ms · SI 2263 ms · JS 298 KB · benchmarkIndex 3928
+    / run 2: perf 95 · LCP 2331 ms · CLS 0.001 · TBT 116 ms · FCP 2219 ms · SI 2227 ms · JS 298 KB · benchmarkIndex 4156
+    / run 3: perf 94 · LCP 2309 ms · CLS 0.001 · TBT 170 ms · FCP 2150 ms · SI 2165 ms · JS 298 KB · benchmarkIndex 4116
+    /delovi/kocioni-diskovi run 1: perf 95 · LCP 2006 ms · CLS 0.000 · TBT 180 ms · FCP 2006 ms · SI 2114 ms · JS 290 KB · benchmarkIndex 4173
+    /delovi/kocioni-diskovi run 2: perf 95 · LCP 1894 ms · CLS 0.000 · TBT 189 ms · FCP 1894 ms · SI 2006 ms · JS 290 KB · benchmarkIndex 4036
+    /delovi/kocioni-diskovi run 3: perf 94 · LCP 2060 ms · CLS 0.000 · TBT 185 ms · FCP 2060 ms · SI 2154 ms · JS 290 KB · benchmarkIndex 4056
+    /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 1: perf 94 · LCP 2093 ms · CLS 0.000 · TBT 202 ms · FCP 2093 ms · SI 2222 ms · JS 279 KB · benchmarkIndex 3966
+    /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 2: perf 96 · LCP 2134 ms · CLS 0.000 · TBT 121 ms · FCP 2134 ms · SI 2265 ms · JS 279 KB · benchmarkIndex 3923
+    /deo/kocioni-disk-prednji-276-24-mm-demo-0004 run 3: perf 94 · LCP 1890 ms · CLS 0.000 · TBT 245 ms · FCP 1890 ms · SI 2035 ms · JS 279 KB · benchmarkIndex 4025
+```

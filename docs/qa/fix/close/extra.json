@@ -1,0 +1,6 @@
+{
+  "PERF-03": {
+    "status": "FIXED",
+    "evidence": "Fonts: only Archivo Expanded 700 and Public Sans are preloaded (shell-perf, lib/fonts.ts); /ponuda no longer preloads card images (seo-content-email); the ProductGrid media-scoped preload was tried and reverted (catalog-product-ui). Re-measured on :3100, Lighthouse mobile, applied throttling: LCP / 2308 ms (3 runs), /deo/kocioni-disk-prednji-276-24-mm-demo-0004 2127 ms (5 runs), /ponuda/kocione-plocice-golf 2018 ms (3 runs) — all under 2.5 s (audit: 2.5 s, 2.5 s and 2.74 s). docs/qa/fix/close/perf01-lighthouse-devtools.txt, perf01-lighthouse-product-5runs.txt, perf01-lighthouse-other.txt."
+  }
+}

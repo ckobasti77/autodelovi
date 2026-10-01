@@ -1,0 +1,59 @@
+{
+ "base": "http://localhost:3100",
+ "vis03": [
+  {
+   "width": 320,
+   "docScrollWidth": 320,
+   "headerScrollWidth": 320,
+   "menuButton": [
+    260,
+    304
+   ],
+   "menuOnScreen": true
+  },
+  {
+   "width": 360,
+   "docScrollWidth": 360,
+   "headerScrollWidth": 360,
+   "menuButton": [
+    300,
+    344
+   ],
+   "menuOnScreen": true
+  },
+  {
+   "width": 390,
+   "docScrollWidth": 390,
+   "headerScrollWidth": 390,
+   "menuButton": [
+    330,
+    374
+   ],
+   "menuOnScreen": true
+  }
+ ],
+ "mot02": [
+  {
+   "scrollY": 1400,
+   "bar": true,
+   "top": 779,
+   "bottom": 844,
+   "viewportH": 844,
+   "insideViewport": true,
+   "ariaHidden": "false",
+   "inert": false,
+   "buttonText": "U korpu"
+  },
+  {
+   "scrollY": 2200,
+   "bar": true,
+   "top": 779,
+   "bottom": 844,
+   "viewportH": 844,
+   "insideViewport": true,
+   "ariaHidden": "false",
+   "inert": false,
+   "buttonText": "U korpu"
+  }
+ ]
+}

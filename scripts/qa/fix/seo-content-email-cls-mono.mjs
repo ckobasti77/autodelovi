@@ -16,7 +16,7 @@ const PAGES = [
 ];
 const FALLBACK_CSS =
   '[class*="type-code"]{font-family:"Martian Mono Fallback" !important}';
-const OUT = "docs/qa/fix/seo-content-email";
+const OUT = process.env.OUT_DIR ?? "docs/qa/fix/seo-content-email";
 mkdirSync(OUT, { recursive: true });
 const rows = [];
 const browser = await chromium.launch();
@@ -38,7 +38,7 @@ try {
         }, probe);
       const loaded = await measure();
       if (path.includes("golf-7") && width === 390) {
-        await shot(page, `../fix/seo-content-email/engines-golf7-390`, {
+        await shot(page, `../${OUT.replace(/^docs\/qa\//, "")}/engines-golf7-390`, {
           clip: { x: 0, y: 0, width, height: Math.min(1200, (loaded.probeTop ?? 900) + 80) },
         });
       }
