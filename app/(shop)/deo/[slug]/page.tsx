@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import {
   ChatCircleTextIcon,
   StorefrontIcon,
@@ -9,6 +9,8 @@ import {
 
 import { contactLinkList } from "@/config/site";
 import { formatRSD } from "@/lib/format/money";
+import { typographer } from "@/lib/format/nbsp";
+import { countSr } from "@/lib/format/plural";
 import { QUALITY_LABEL } from "@/lib/i18n/sr/catalog";
 import { breadcrumbJsonLd, productJsonLd } from "@/lib/seo/jsonld";
 import { productImageAlt } from "@/lib/seo/images";
@@ -19,6 +21,7 @@ import { contactFromSettings } from "@/lib/settings/public";
 import {
   getProductBySlug,
   getProductLandings,
+  getRedirect,
   getRelatedProducts,
   getRetiredProduct,
   getSameOemProducts,
@@ -66,21 +69,32 @@ function productMetaText(
   });
 }
 
+/**
+ * No current product under this slug: a renamed product answers with a 308 to its new URL
+ * (SEO-06), a retired one renders „više nije u ponudi“, anything else is a 404. Called from
+ * generateMetadata too, so the redirect and the 404 are decided before the page streams.
+ */
+async function resolveMissing(slug: string) {
+  const moved = await getRedirect(ROUTES.product(slug));
+  if (moved) permanentRedirect(moved.toPath);
+  const retired = await getRetiredProduct(slug);
+  if (!retired) notFound();
+  return retired;
+}
+
 export async function generateMetadata({ params }: PageProps<"/deo/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const [data, settings] = await Promise.all([getProductBySlug(slug), getSettingsPublic()]);
   if (!data) {
-    const retired = await getRetiredProduct(slug);
-    return retired
-      ? buildMetadata({
-          title: `${retired.name} — više nije u ponudi`,
-          description: `${retired.name} (${retired.manufacturerName}) više nije u ponudi. Pogledajte zamenu u kategoriji ili pošaljite upit.`,
-          path: ROUTES.product(slug),
-          noindex: true,
-          titleSuffix: settings.seo.titleSuffix,
-          ogFile: true,
-        })
-      : {};
+    const retired = await resolveMissing(slug);
+    return buildMetadata({
+      title: `${retired.name} — više nije u ponudi`,
+      description: `${retired.name} (${retired.manufacturerName}) više nije u ponudi. Pogledajte zamenu u kategoriji ili pošaljite upit.`,
+      path: ROUTES.product(slug),
+      noindex: true,
+      titleSuffix: settings.seo.titleSuffix,
+      ogFile: true,
+    });
   }
   const c = data.product;
   const text = productMetaText(data, settings.seo.titleSuffix);
@@ -99,11 +113,7 @@ const FACTS_CLASS = "flex items-start gap-3 py-3 type-body-s text-ink-2";
 export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) {
   const { slug } = await params;
   const [data, settings] = await Promise.all([getProductBySlug(slug), getSettingsPublic()]);
-  if (!data) {
-    const retired = await getRetiredProduct(slug);
-    if (!retired) notFound();
-    return <RetiredProduct retired={retired} />;
-  }
+  if (!data) return <RetiredProduct retired={await resolveMissing(slug)} />;
   const c = data.product;
   const [related, sameOem, landings] = await Promise.all([
     getRelatedProducts(c._id),
@@ -179,27 +189,29 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
       />
       <div className="px-page pb-(--space-section) pt-6 lg:pt-8">
         <Breadcrumbs items={crumbs} />
-        <div className="mt-5 grid gap-8 lg:grid-cols-12 lg:gap-x-(--gutter)">
+        <div className="mt-5 grid gap-8 lg:grid-cols-12 lg:grid-rows-[auto_1fr] lg:gap-x-(--gutter)">
           {/* Gallery */}
           <div className="flex flex-col gap-4 lg:col-span-7">
-            <div className="relative overflow-hidden rounded-sm border border-line">
-              <ProductThumb
-                imageUrl={images[0]?.path ?? null}
-                categorySlug={c.categorySlug}
-                alt={
-                  images[0]?.alt ??
-                  `${c.name} — ilustracija kategorije ${data.category.name.toLowerCase()}`
-                }
-                sizes="(min-width: 1024px) 56vw, 100vw"
-                preload
-                className="aspect-[4/3]"
-              />
+            <figure>
+              <div className="relative overflow-hidden rounded-sm border border-line">
+                <ProductThumb
+                  imageUrl={images[0]?.path ?? null}
+                  categorySlug={c.categorySlug}
+                  alt={
+                    images[0]?.alt ??
+                    `${c.name} — ilustracija kategorije ${data.category.name.toLowerCase()}`
+                  }
+                  sizes="(min-width: 1024px) 56vw, 100vw"
+                  preload
+                  className="aspect-[4/3]"
+                />
+              </div>
               {!images.length ? (
-                <p className="absolute bottom-3 left-3 rounded-xs bg-bg/80 px-2 py-1 type-caption-s text-ink-3">
-                  Ilustracija kategorije — izgled dela može se razlikovati
-                </p>
+                <figcaption className="mt-2 type-caption text-ink-3">
+                  Ilustracija kategorije — izgled dela može se razlikovati.
+                </figcaption>
               ) : null}
-            </div>
+            </figure>
             {images.length > 1 ? (
               <ul className="grid grid-cols-4 gap-3 sm:grid-cols-6" aria-label="Fotografije">
                 {images.slice(1, 7).map((img, i) => (
@@ -215,24 +227,16 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
                 ))}
               </ul>
             ) : null}
-            {disc ? (
-              <figure className="hidden rounded-sm border border-line p-4 corner-ticks sm:block">
-                <SpecDrawing diameter={disc.diameter} thickness={disc.thickness} />
-                <figcaption className="mt-2 type-caption font-normal text-ink-3">
-                  Mere diska: prečnik {disc.diameter} mm, debljina {disc.thickness} mm.
-                </figcaption>
-              </figure>
-            ) : null}
           </div>
 
-          {/* Buy box */}
-          <div className="lg:col-span-5">
+          {/* Buy box (spans both rows from lg, so the drawing sits under the gallery) */}
+          <div className="lg:col-span-5 lg:row-span-2">
             <div className="flex flex-col gap-4 lg:sticky lg:top-[calc(var(--header-h)+1.5rem)]">
               <p className="type-body-s text-ink-3">
                 {c.manufacturerName} · {QUALITY_LABEL[c.quality]}
               </p>
               <RevealText as="h1" className="type-h1 text-ink-1">
-                {c.name}
+                {typographer(c.name)}
               </RevealText>
               <dl className="flex flex-col gap-1 type-body-s" data-reveal="off">
                 {c.oemPrimary ? (
@@ -340,6 +344,16 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
               </ul>
             </div>
           </div>
+
+          {/* Spec drawing: after the buy box on phones and tablets, under the gallery from lg */}
+          {disc ? (
+            <figure className="hidden self-start rounded-sm border border-line p-4 corner-ticks sm:block lg:col-span-7">
+              <SpecDrawing diameter={disc.diameter} thickness={disc.thickness} />
+              <figcaption className="mt-2 type-caption font-normal text-ink-3">
+                Mere diska: prečnik {disc.diameter} mm, debljina {disc.thickness} mm.
+              </figcaption>
+            </figure>
+          ) : null}
         </div>
 
         {/* Details */}
@@ -404,7 +418,9 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
                 {data.warrantyMonths ? (
                   <div className="grid grid-cols-2 gap-4 py-2.5">
                     <dt className="text-ink-3">Garancija</dt>
-                    <dd className="text-ink-1">{data.warrantyMonths} meseci</dd>
+                    <dd className="text-ink-1">
+                      {countSr(data.warrantyMonths, ["mesec", "meseca", "meseci"])}
+                    </dd>
                   </div>
                 ) : null}
               </dl>

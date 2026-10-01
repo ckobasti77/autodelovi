@@ -8,7 +8,8 @@
 import type { Tier } from "@/lib/three/tier";
 
 export const MODEL_URL = { high: "/models/car.glb", mid: "/models/car-lite.glb" } as const;
-export const ENV_URL = "/models/env/studio-512.hdr";
+/** Pre-baked PMREM cube-UV atlas of the studio HDRI (3d/scripts/env.mjs, D243). */
+export const ENV_URL = "/models/env/studio-pmrem.hdr";
 export const SHADOW_URL = {
   assembled: "/models/car-shadow.webp",
   exploded: "/models/car-shadow-exploded.webp",

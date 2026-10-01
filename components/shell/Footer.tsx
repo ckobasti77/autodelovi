@@ -49,6 +49,7 @@ const COLUMNS = [
       { href: ROUTES.returns, label: "Reklamacije i povrat" },
       { href: ROUTES.mechanics, label: "Za majstore" },
       { href: ROUTES.about, label: "O nama" },
+      { href: ROUTES.contact, label: "Kontakt" },
     ],
   },
 ] as const;

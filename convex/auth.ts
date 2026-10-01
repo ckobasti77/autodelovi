@@ -12,7 +12,7 @@ import { ConvexError } from "convex/values";
 import { internal } from "./_generated/api";
 import type { DataModel } from "./_generated/dataModel";
 import { isValidEmail, normalizeEmail } from "../lib/domain/identifiers";
-import { enforceRateLimit } from "./lib/rateLimits";
+import { countTowardsAlert, enforceRateLimit } from "./lib/rateLimits";
 
 export const PASSWORD_MIN_LENGTH = 10;
 
@@ -68,6 +68,19 @@ export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
             message: "Upišite ispravnu e-mail adresu.",
           });
         }
+        // A new password (sign-up or reset) must not be the e-mail address itself.
+        const newPassword =
+          params.flow === "signUp"
+            ? params.password
+            : params.flow === "reset-verification"
+              ? params.newPassword
+              : undefined;
+        if (typeof newPassword === "string" && normalizeEmail(newPassword) === email) {
+          throw new ConvexError({
+            code: "WEAK_PASSWORD",
+            message: "Lozinka ne sme biti ista kao adresa e-pošte.",
+          });
+        }
         const name = typeof params.name === "string" ? params.name.trim().slice(0, 120) : undefined;
         return { email, ...(name ? { name } : {}) };
       },
@@ -82,11 +95,14 @@ export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
   jwt: { durationMs: 60 * 60 * 1000 },
   signIn: { maxFailedAttempsPerHour: 10 },
   callbacks: {
-    // New accounts: sign-ups come through the Next /api/auth proxy (one server IP), so the cap
-    // is global — a burst of 30, then 60 per hour; throwing rolls the new user back. Every new
-    // account is an explicit customer (the admin customer list reads the `by_role` index).
+    // New accounts: sign-ups come through the Next /api/auth proxy (one server IP), so Convex
+    // cannot key them per visitor. Above 60 per hour the owner is alerted; the hard ceiling
+    // (a burst of 300, then 600 per hour) only stops a flood — throwing rolls the new user
+    // back (QA BE-07, D221). Every new account is an explicit customer (the admin customer
+    // list reads the `by_role` index).
     async afterUserCreatedOrUpdated(ctx, { userId, existingUserId }) {
       if (existingUserId !== null) return;
+      await countTowardsAlert(ctx, "signUpAlert");
       await enforceRateLimit(ctx, "signUpGlobal", "global");
       await ctx.db.patch("users", userId, { role: "customer" });
     },

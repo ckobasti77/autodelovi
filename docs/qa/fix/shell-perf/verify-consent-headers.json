@@ -1,0 +1,34 @@
+{
+  "consent": {
+    "height": 273,
+    "nosnippet": true,
+    "decisionsSideBySide": true,
+    "scrollPaddingBottom": "289px",
+    "tabStopsCoveredOf30": 0,
+    "afterEscape": {
+      "collapsed": true,
+      "height": 160
+    },
+    "focusAfterSettings": "switch:consent-analytics:",
+    "returning": {
+      "bannerInDomBeforeReopen": 0,
+      "chunksOnReopen": 2,
+      "focus": "Sačuvaj izbor",
+      "switches": 3
+    },
+    "convexSocket": {
+      "wsOpenedAtMs": 920,
+      "loadAtMs": 934
+    },
+    "errors": []
+  },
+  "headers": {
+    "adminXRobots": "noindex, nofollow",
+    "modelsCache": "public, max-age=86400, stale-while-revalidate=604800",
+    "imagesCache": "public, max-age=86400, stale-while-revalidate=604800"
+  },
+  "print": {
+    "html": "rgb(255, 255, 255)",
+    "body": "rgb(255, 255, 255)"
+  }
+}

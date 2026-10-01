@@ -4,8 +4,10 @@
  * - high: ≥ 1024 px, WebGL2, ≥ 4 cores, `deviceMemory ≥ 4` when reported, no Save-Data →
  *   desktop GLB, DPR ≤ 2 (adaptive), full X-ray shader with edge lines, hover.
  * - mid: capable phones and tablets → lite GLB, DPR ≤ 1.5, simplified shader, tap only.
- * - low: no WebGL2, Save-Data, or `deviceMemory < 3` → no 3D; the posters crossfade along the
- *   same scroll track and the HTML panel/list work as usual.
+ * - low: no WebGL2, a software WebGL renderer (SwiftShader, llvmpipe, softpipe, Microsoft Basic
+ *   Render — VMs, RDP, blocklisted GPUs; PERF-23), Save-Data, or `deviceMemory < 3` → no 3D; the
+ *   posters crossfade along the same scroll track and the HTML panel/list work as usual.
+ *   QA and e2e on SwiftShader force a tier with `?3d=high|mid` (components/three/testHooks.ts).
  */
 
 export type Tier = "high" | "mid" | "low";
@@ -20,10 +22,20 @@ export type TierInput = {
   deviceMemory?: number;
   /** `navigator.connection.saveData`. */
   saveData?: boolean;
+  /** The WebGL renderer is a CPU rasteriser (see `isSoftwareRenderer`). */
+  softwareRenderer?: boolean;
 };
+
+const SOFTWARE_RENDERER = /swiftshader|llvmpipe|softpipe|basic render|software (adapter|rasterizer)/i;
+
+/** True for WebGL renderer strings of CPU rasterisers, which cannot hold the hero's frame rate. */
+export function isSoftwareRenderer(renderer: string): boolean {
+  return SOFTWARE_RENDERER.test(renderer);
+}
 
 export function classifyTier(input: TierInput): Tier {
   if (!input.webgl2) return "low";
+  if (input.softwareRenderer) return "low";
   if (input.saveData) return "low";
   if (input.deviceMemory !== undefined && input.deviceMemory < 3) return "low";
   const memoryOk = input.deviceMemory === undefined || input.deviceMemory >= 4;
@@ -38,29 +50,48 @@ export const TIER_MAX_DPR: Readonly<Record<Exclude<Tier, "low">, number>> = {
   mid: 1.5,
 };
 
+/**
+ * 4× MSAA only below DPR 1.5 (PERF-16, D244): on HiDPI screens the pixel ratio already
+ * supersamples the edges, and a multisampled 2880 × 1672 drawing buffer alone would take about
+ * 170 MB against the 60 MB GPU budget (contract F5). The mid tier never multisamples.
+ */
+export function msaaFor(tier: Exclude<Tier, "low">, devicePixelRatio: number): boolean {
+  return tier === "high" && devicePixelRatio < 1.5;
+}
+
 type NavigatorWithHints = Navigator & {
   deviceMemory?: number;
   connection?: { saveData?: boolean };
 };
 
-let webgl2Cache: boolean | null = null;
+type WebGLProbe = { webgl2: boolean; renderer: string };
+let probeCache: WebGLProbe | null = null;
 
-/** Creates (and immediately releases) a WebGL2 context once per page. */
-export function hasWebGL2(): boolean {
-  if (webgl2Cache !== null) return webgl2Cache;
+/** Creates (and immediately releases) a WebGL2 context once per page; reads its renderer. */
+function probeWebGL2(): WebGLProbe {
+  if (probeCache) return probeCache;
   if (typeof window === "undefined" || typeof WebGL2RenderingContext === "undefined") {
-    webgl2Cache = false;
-    return false;
+    probeCache = { webgl2: false, renderer: "" };
+    return probeCache;
   }
   try {
     const canvas = document.createElement("canvas");
     const gl = canvas.getContext("webgl2", { failIfMajorPerformanceCaveat: false });
-    webgl2Cache = Boolean(gl);
+    let renderer = "";
+    if (gl) {
+      const info = gl.getExtension("WEBGL_debug_renderer_info");
+      renderer = String(gl.getParameter(info ? info.UNMASKED_RENDERER_WEBGL : gl.RENDERER) ?? "");
+    }
+    probeCache = { webgl2: Boolean(gl), renderer };
     gl?.getExtension("WEBGL_lose_context")?.loseContext();
   } catch {
-    webgl2Cache = false;
+    probeCache = { webgl2: false, renderer: "" };
   }
-  return webgl2Cache;
+  return probeCache;
+}
+
+export function hasWebGL2(): boolean {
+  return probeWebGL2().webgl2;
 }
 
 /**
@@ -80,9 +111,11 @@ export function quickTier(): Tier | null {
 export function detectTier(): Tier {
   if (typeof window === "undefined") return "low";
   const nav = navigator as NavigatorWithHints;
+  const probe = probeWebGL2();
   return classifyTier({
     width: window.innerWidth,
-    webgl2: hasWebGL2(),
+    webgl2: probe.webgl2,
+    softwareRenderer: isSoftwareRenderer(probe.renderer),
     cores: nav.hardwareConcurrency || undefined,
     deviceMemory: nav.deviceMemory,
     saveData: nav.connection?.saveData === true,

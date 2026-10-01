@@ -10,7 +10,17 @@ import { afterEach, describe, expect, test, vi } from "vitest";
 import { api, internal } from "./_generated/api";
 import type { Id } from "./_generated/dataModel";
 import { maskSecrets } from "./emailsAdmin";
-import { checkoutArgs, errorCode, GUEST, makeT, setupWorld, VALID_MB, VALID_PIB } from "./test.setup";
+import { ipSubject } from "./lib/functions";
+import {
+  checkoutArgs,
+  CONSENT,
+  errorCode,
+  GUEST,
+  makeT,
+  setupWorld,
+  VALID_MB,
+  VALID_PIB,
+} from "./test.setup";
 
 const DAY = 86_400_000;
 const TOKEN = "Zq3vK9x_pL2mN8rT4wY6aB1cD5eF7gH0jS-uV2iO3kA";
@@ -93,7 +103,10 @@ describe("mechanic terms (P2)", () => {
     expect(await errorCode(() => w.asStaff.mutation(api.mechanicsAdmin.approve, approve))).toBe(
       "FORBIDDEN",
     );
-    await w.asOwner.mutation(api.mechanicsAdmin.approve, { ...approve, creditLimitPara: 5_000_000 });
+    await w.asOwner.mutation(api.mechanicsAdmin.approve, {
+      ...approve,
+      creditLimitPara: 5_000_000,
+    });
     expect(
       await errorCode(() =>
         w.asStaff.mutation(api.mechanicsAdmin.update, { profileId, creditLimitPara: null }),
@@ -364,9 +377,9 @@ describe("status-link secret", () => {
     await setupWorld(t);
     vi.stubEnv("LINK_TOKEN_SECRET", "");
     vi.stubEnv("SITE_URL", "https://sklop.rs");
-    expect(await errorCode(() => t.query(internal.testing.orderStatusToken, { number: "SK-1" }))).toMatch(
-      /^PLAIN:.*LINK_TOKEN_SECRET/,
-    );
+    expect(
+      await errorCode(() => t.query(internal.testing.orderStatusToken, { number: "SK-1" })),
+    ).toMatch(/^PLAIN:.*LINK_TOKEN_SECRET/);
     vi.stubEnv("SITE_URL", "http://localhost:3000");
     expect(await t.query(internal.testing.orderStatusToken, { number: "SK-1" })).toMatch(
       /^[A-Za-z0-9_-]{43}$/,
@@ -399,7 +412,10 @@ describe("tracking retention", () => {
       productId: w.products.disc,
       quantity: 1,
     });
-    const order = await w.anon.mutation(api.orders.submit, { guestToken: GUEST, ...checkoutArgs() });
+    const order = await w.anon.mutation(api.orders.submit, {
+      guestToken: GUEST,
+      ...checkoutArgs(),
+    });
     const deliveryId = await t.run(async (ctx) => {
       const o = (await ctx.db
         .query("orders")
@@ -486,5 +502,80 @@ describe("tracking retention", () => {
     expect(state.order?.attribution?.last?.source).toBe("google");
     expect(state.event?.capiContext).toBeUndefined();
     expect(state.cart).toBeNull();
+  });
+});
+
+describe("per-visitor limits and client-supplied records (QA BE-02, BE-03, BE-04)", () => {
+  test("the rate-limit key is the IP (IPv6 by /64), never the User-Agent", async () => {
+    expect(ipSubject("203.0.113.7")).toBe("203.0.113.7");
+    expect(ipSubject("::ffff:203.0.113.7")).toBe("203.0.113.7");
+    expect(ipSubject("2001:db8:12:34:aaaa:bbbb:cccc:dddd")).toBe("2001:db8:12:34::/64");
+    expect(ipSubject("2001:0db8:0012:0034::1")).toBe("2001:db8:12:34::/64");
+    expect(ipSubject("[2001:db8::1]")).toBe("2001:db8:0:0::/64");
+
+    const t = makeT();
+    await setupWorld(t);
+    const from = (ip: string, userAgent: string) => t.withRequestMetadata({ ip, userAgent });
+    // uploadUrl: a burst of 30 per client. Rotating the UA must not open a fresh bucket.
+    for (let i = 0; i < 30; i++)
+      await from("198.51.100.9", `agent-${i}`).mutation(api.inquiries.generateUploadUrl, {});
+    expect(
+      await errorCode(() =>
+        from("198.51.100.9", "agent-new").mutation(api.inquiries.generateUploadUrl, {}),
+      ),
+    ).toBe("RATE_LIMITED");
+    // Same /64, different interface id: same subscriber, same bucket.
+    for (let i = 0; i < 30; i++)
+      await from(`2001:db8:1:2::${i + 1}`, "ua").mutation(api.inquiries.generateUploadUrl, {});
+    expect(
+      await errorCode(() =>
+        from("2001:db8:1:2:ffff::1", "ua").mutation(api.inquiries.generateUploadUrl, {}),
+      ),
+    ).toBe("RATE_LIMITED");
+    // Another address is unaffected.
+    await from("198.51.100.10", "agent-0").mutation(api.inquiries.generateUploadUrl, {});
+  });
+
+  test("consent versions and time come from the server; attribution is clamped", async () => {
+    const t = makeT();
+    const w = await setupWorld(t);
+    const args = {
+      kind: "part" as const,
+      message: "Treba mi filter ulja.",
+      contact: { name: "Ana", phone: "064 111 2222", preferredChannel: "phone" as const },
+      honeypot: "",
+      startedAt: Date.now() - 30_000,
+    };
+    expect(
+      await errorCode(() =>
+        w.anon.mutation(api.inquiries.submit, {
+          ...args,
+          consent: { ...CONSENT, termsVersion: "QA-FORGED" },
+        }),
+      ),
+    ).toBe("CONFLICT");
+    const huge = "x".repeat(200_000);
+    const { number } = await w.anon.mutation(api.inquiries.submit, {
+      ...args,
+      consent: { ...CONSENT, acceptedAt: 946_684_800_000 },
+      attribution: {
+        last: { campaign: huge, gclid: `abc<script>${huge}`, at: 1 },
+        fbp: "fb.1.123.456",
+        consentAnalytics: false,
+        consentAds: false,
+      },
+    });
+    const stored = await t.run(async (ctx) =>
+      ctx.db
+        .query("inquiries")
+        .withIndex("by_number", (q) => q.eq("number", number))
+        .unique(),
+    );
+    expect(stored!.consent.termsVersion).toBe("2026-09-29");
+    expect(stored!.consent.acceptedAt).toBeGreaterThan(946_684_800_000);
+    expect(stored!.attribution!.last!.campaign).toHaveLength(200);
+    expect(stored!.attribution!.last!.gclid).toMatch(/^abcscriptx+$/);
+    expect(stored!.attribution!.last!.gclid!.length).toBeLessThanOrEqual(512);
+    expect(stored!.attribution!.fbp).toBe("fb.1.123.456");
   });
 });

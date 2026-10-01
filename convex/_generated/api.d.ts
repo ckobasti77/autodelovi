@@ -43,6 +43,7 @@ import type * as imports from "../imports.js";
 import type * as inquiries from "../inquiries.js";
 import type * as inquiriesAdmin from "../inquiriesAdmin.js";
 import type * as landings from "../landings.js";
+import type * as lib_attribution from "../lib/attribution.js";
 import type * as lib_audit from "../lib/audit.js";
 import type * as lib_authz from "../lib/authz.js";
 import type * as lib_carts from "../lib/carts.js";
@@ -140,6 +141,7 @@ declare const fullApi: ApiFromModules<{
   inquiries: typeof inquiries;
   inquiriesAdmin: typeof inquiriesAdmin;
   landings: typeof landings;
+  "lib/attribution": typeof lib_attribution;
   "lib/audit": typeof lib_audit;
   "lib/authz": typeof lib_authz;
   "lib/carts": typeof lib_carts;

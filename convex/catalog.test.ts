@@ -62,6 +62,101 @@ describe("normalized OEM lookup and search", () => {
     expect(zero.results).toEqual([]);
   });
 
+  test("a vehicle named in the query is a fitment filter, not free text (FLOW-01, D230)", async () => {
+    const t = makeT();
+    const w = await setupWorld(t);
+    const ids = (r: { results: { card: { _id: string } }[] }) => r.results.map((x) => x.card._id);
+
+    for (const q of ["pločice golf 7", "pločice golf vii", "Kočione pločice za Golf VII"]) {
+      const res = await w.anon.query(api.search.run, { q });
+      expect(ids(res), q).toEqual([w.products.pads]);
+      expect(res.vehicle, q).toMatchObject({
+        label: "Golf VII",
+        param: "volkswagen/golf/golf-7",
+        source: "query",
+        applied: true,
+      });
+      expect(res.categories[0], q).toMatchObject({ slug: "kocione-plocice", count: 1 });
+      expect(res.hasMore).toBe(false);
+    }
+    const disc = await w.anon.query(api.search.run, { q: "kočioni disk golf 7" });
+    expect(ids(disc)[0]).toBe(w.products.disc);
+
+    // Only a vehicle: what fits it (the universal battery is not dragged in by fitment rows).
+    const golf = await w.anon.query(api.search.run, { q: "golf 7" });
+    expect(new Set(ids(golf))).toEqual(new Set([w.products.disc, w.products.pads]));
+    expect(golf.categories.map((c) => c.slug).sort()).toEqual([
+      "kocione-plocice",
+      "kocioni-diskovi",
+    ]);
+
+    // Category chip narrows the same query.
+    const scoped = await w.anon.query(api.search.run, {
+      q: "golf 7",
+      categorySlug: "kocioni-diskovi",
+    });
+    expect(ids(scoped)).toEqual([w.products.disc]);
+    expect(scoped.category).toEqual({ slug: "kocioni-diskovi", name: expect.any(String) });
+
+    // „Prikaži sve“ lifts the filter.
+    const all = await w.anon.query(api.search.run, { q: "pločice golf 7", allVehicles: true });
+    expect(all.vehicle).toMatchObject({ applied: false, hidden: 0 });
+    expect(ids(all)).toContain(w.products.pads);
+
+    // Pasted markup does not turn „b“ into a prefix over the whole catalog.
+    const markup = await w.anon.query(api.search.run, { q: "<b>disk</b>" });
+    expect(ids(markup)[0]).toBe(w.products.disc);
+  });
+
+  test("the selected vehicle narrows a plain query, unless nothing fits (FLOW-03)", async () => {
+    const t = makeT();
+    const w = await setupWorld(t);
+    const golf6 = await w.anon.query(api.search.run, {
+      q: "filter ulja",
+      vehicle: "volkswagen/golf/golf-6",
+    });
+    expect(golf6.vehicle).toMatchObject({ label: "Golf VI", source: "selected", applied: true });
+    expect(golf6.results.map((r) => r.card._id)).toEqual([w.products.filter]);
+
+    const golf7 = await w.anon.query(api.search.run, {
+      q: "filter ulja",
+      vehicle: "volkswagen/golf/golf-7",
+    });
+    expect(golf7.vehicle).toMatchObject({ source: "selected", applied: false, hidden: 0 });
+    expect(golf7.results.map((r) => r.card._id)).toEqual([w.products.filter]);
+
+    const battery = await w.anon.query(api.search.run, {
+      q: "akumulator",
+      vehicle: "volkswagen/golf/golf-7",
+    });
+    expect(battery.vehicle?.applied).toBe(true);
+    expect(battery.results.map((r) => r.card._id)).toEqual([w.products.battery]);
+  });
+
+  test("a product save based on a stale snapshot is refused, not merged (FLOW-02)", async () => {
+    const t = makeT();
+    const w = await setupWorld(t);
+    const stale = (await t.run((ctx) => ctx.db.get("products", w.products.pads)))!.updatedAt;
+    // Someone else changes the price first.
+    await w.asStaff.mutation(api.catalog.productsAdmin.update, {
+      productId: w.products.pads,
+      patch: { retailPricePara: 649_000 },
+      expectedUpdatedAt: stale,
+    });
+    expect(
+      await errorCode(() =>
+        w.asStaff.mutation(api.catalog.productsAdmin.update, {
+          productId: w.products.pads,
+          patch: { name: "Kočione pločice prednje, nove" },
+          expectedUpdatedAt: stale,
+        }),
+      ),
+    ).toBe("CONFLICT");
+    const after = (await t.run((ctx) => ctx.db.get("products", w.products.pads)))!;
+    expect(after.retailPricePara).toBe(649_000);
+    expect(after.name).toBe("Kočione pločice prednje");
+  });
+
   test("search log writes the daily aggregate and counts zero results", async () => {
     const t = makeT();
     const w = await setupWorld(t);

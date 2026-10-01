@@ -17,7 +17,7 @@ import { fail, invalid, notFound } from "./lib/errors";
 import { emitEvent } from "./lib/events";
 import { staffMutation, staffQuery } from "./lib/functions";
 import { classifyAttribution } from "../lib/domain/attribution";
-import { transitionOrder } from "./lib/orders";
+import { syncCommittedLine, transitionOrder } from "./lib/orders";
 import { pricingContextForProfile, resolveForContext, type CategoryPathCache } from "./lib/pricing";
 import { getSettings } from "./lib/settings";
 import {
@@ -67,7 +67,10 @@ function campaignOf(a: Doc<"orders">["attribution"]): {
 } {
   const touch = a?.last ?? a?.first;
   if (!touch) return { campaign: null, channel: null };
-  return { campaign: touch.campaign ?? null, channel: classifyAttribution(a).channel };
+  return {
+    campaign: touch.campaign?.slice(0, 60) ?? null,
+    channel: classifyAttribution(a).channel,
+  };
 }
 
 function toListRow(o: Doc<"orders">) {
@@ -600,11 +603,13 @@ export const editItems = staffMutation({
       fail("CONFLICT", "Porudžbina je u međuvremenu izmenjena — osvežite.");
     if (!orderItemsEditable(order.status))
       invalid("Stavke se menjaju samo dok je porudžbina nova.");
+    const actor = actorOf(ctx.viewer);
     const diff = [];
     for (const change of args.changes.slice(0, 200)) {
       const item = await ctx.db.get("orderItems", change.itemId);
       if (!item || item.orderId !== order._id) return notFound("Stavka ne pripada porudžbini.");
       if (change.remove) {
+        await syncCommittedLine(ctx, order, item, 0, actor);
         await ctx.db.delete("orderItems", item._id);
         diff.push({ field: item.sku, before: String(item.quantity), after: "0" });
         continue;
@@ -616,6 +621,10 @@ export const editItems = staffMutation({
       if (!Number.isInteger(unitPricePara) || unitPricePara < 0)
         invalid("Neispravna cena.", "unitPricePara");
       if (quantity === item.quantity && unitPricePara === item.unitPricePara) continue;
+      const committedQty =
+        quantity !== item.quantity
+          ? await syncCommittedLine(ctx, order, item, quantity, actor)
+          : item.committedQty;
       const discountBp =
         item.unitRetailPara > 0
           ? Math.max(
@@ -628,6 +637,7 @@ export const editItems = staffMutation({
         unitPricePara,
         discountBp,
         lineTotalPara: quantity * unitPricePara,
+        ...(committedQty !== undefined ? { committedQty } : {}),
       });
       diff.push({
         field: item.sku,
@@ -654,9 +664,11 @@ export const editItems = staffMutation({
         const same = existing.find((i) => i.productId === product._id);
         if (same) {
           const quantity = Math.min(999, same.quantity + line.quantity);
+          const committedQty = await syncCommittedLine(ctx, order, same, quantity, actor);
           await ctx.db.patch("orderItems", same._id, {
             quantity,
             lineTotalPara: quantity * same.unitPricePara,
+            ...(order.stockCommitted ? { committedQty } : {}),
           });
           diff.push({ field: same.sku, before: String(same.quantity), after: String(quantity) });
           continue;
@@ -664,6 +676,13 @@ export const editItems = staffMutation({
         const resolved = pc ? await resolveForContext(ctx, pc, product, cache) : null;
         const unitPricePara = resolved?.unitPricePara ?? product.retailPricePara;
         const discountBp = resolved?.discountBp ?? 0;
+        const committedQty = await syncCommittedLine(
+          ctx,
+          order,
+          { productId: product._id, isCustomLine: false },
+          line.quantity,
+          actor,
+        );
         await ctx.db.insert("orderItems", {
           orderId: order._id,
           productId: product._id,
@@ -680,6 +699,7 @@ export const editItems = staffMutation({
           availabilityAtOrder: product.stockState,
           ...(product.leadTimeDays !== undefined ? { leadTimeDays: product.leadTimeDays } : {}),
           isCustomLine: false,
+          ...(order.stockCommitted ? { committedQty } : {}),
         });
         diff.push({ field: product.sku, before: "0", after: String(line.quantity) });
       }
@@ -704,7 +724,6 @@ export const editItems = staffMutation({
       settings.commerce.vatRateBp,
     );
     const now = Date.now();
-    const actor = actorOf(ctx.viewer);
     await ctx.db.patch("orders", order._id, {
       totals,
       itemCount: items.reduce((s, i) => s + i.quantity, 0),
@@ -768,11 +787,13 @@ export const customerHistory = staffQuery({
           .withIndex("by_userId", (q) => q.eq("userId", order.userId))
           .order("desc")
           .take(11)
-      : await ctx.db
-          .query("orders")
-          .withIndex("by_contact_email", (q) => q.eq("contact.email", order.contact.email))
-          .order("desc")
-          .take(11);
+      : order.contact.email
+        ? await ctx.db
+            .query("orders")
+            .withIndex("by_contact_email", (q) => q.eq("contact.email", order.contact.email))
+            .order("desc")
+            .take(11)
+        : [];
     return rows
       .filter((o) => o._id !== (orderId as Id<"orders">))
       .slice(0, 10)

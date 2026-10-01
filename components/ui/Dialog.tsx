@@ -8,6 +8,7 @@ import { cn } from "@/lib/cn";
 import { IconButton } from "@/components/ui/IconButton";
 import { useControllableOpen, useOverlayMotion, usePresence } from "@/components/ui/motion";
 import { DISTANCE, DUR } from "@/constants/motion";
+import { useFocusReturn } from "@/lib/dom/focusReturn";
 
 export type DialogProps = {
   open?: boolean;
@@ -34,7 +35,8 @@ export type DialogProps = {
 /**
  * Dialog (§9.14): surface-3, radius 6, level 4; scrim fades 220 ms, panel lifts 8 px + fades
  * 240 ms (sk.out) and leaves in 160 ms (sk.in). Focus moves in on open and returns to the
- * trigger on close (Radix). On phones use Sheet for anything longer than a confirmation.
+ * trigger on close (Radix); without a `trigger` it returns to the element that was focused
+ * when the dialog opened (useFocusReturn, A11Y-02). On phones use Sheet for anything longer than a confirmation.
  */
 export function Dialog({
   open,
@@ -55,6 +57,7 @@ export function Dialog({
   const [present, onExited] = usePresence(isOpen);
   const panelRef = useRef<HTMLDivElement>(null);
   const scrimRef = useRef<HTMLDivElement>(null);
+  const focusReturn = useFocusReturn(!trigger, isOpen);
 
   useOverlayMotion({
     open: isOpen,
@@ -92,6 +95,7 @@ export function Dialog({
               forceMount
               ref={panelRef}
               role={role}
+              onCloseAutoFocus={focusReturn.onCloseAutoFocus}
               onEscapeKeyDown={guard}
               onPointerDownOutside={guard}
               className={cn(

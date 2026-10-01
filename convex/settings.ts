@@ -2,8 +2,10 @@
  * Settings: public projection (company, hours, delivery/payment labels, flags, brand),
  * tracking IDs, full staff view and owner-only section updates (audited).
  */
-import { v } from "convex/values";
+import { v, type Infer } from "convex/values";
 
+import { isValidBankAccount } from "../lib/domain/company";
+import { isValidMb, isValidPib, normalizeMb, normalizePib } from "../lib/domain/identifiers";
 import { SETTINGS_SECTION_LABEL } from "../lib/i18n/sr/auditLabels";
 import { audit, diffFields } from "./lib/audit";
 import { actorOf } from "./lib/authz";
@@ -159,10 +161,38 @@ const ARRAY_LIMITS: Partial<Record<string, number>> = {
 };
 
 /** Owner: replaces one settings section (one section per call, audited). */
+/**
+ * Company identifiers print on every predračun and otpremnica, so they are checked like a
+ * customer's (QA FLOW-15): PIB with its check digit, an 8-digit MB, and bank accounts as
+ * 18 digits with the MOD 97 control pair. Empty optional fields stay empty.
+ */
+function checkedCompany(c: Infer<typeof companySettingsV>): Infer<typeof companySettingsV> {
+  const pib = c.pib?.trim() ? normalizePib(c.pib) : undefined;
+  if (pib !== undefined && !isValidPib(pib))
+    invalid("PIB nije ispravan (9 cifara, kontrolni broj).", "company.pib");
+  const mb = c.mb?.trim() ? normalizeMb(c.mb) : undefined;
+  if (mb !== undefined && !isValidMb(mb))
+    invalid("Matični broj nije ispravan (8 cifara, kontrolni broj).", "company.mb");
+  c.bankAccounts.forEach((a, i) => {
+    if (!isValidBankAccount(a.account))
+      invalid(
+        `Račun ${i + 1} nije ispravan: 18 cifara (npr. 160-0000000123456-78), kontrolni broj po modulu 97.`,
+        `company.bankAccounts.${i}`,
+      );
+  });
+  const out: Infer<typeof companySettingsV> = { ...c };
+  if (pib) out.pib = pib;
+  else delete out.pib;
+  if (mb) out.mb = mb;
+  else delete out.mb;
+  return out;
+}
+
 export const updateSection = ownerMutation({
   args: { update: sectionUpdateV },
   returns: v.null(),
-  handler: async (ctx, { update }) => {
+  handler: async (ctx, args) => {
+    let update = args.update;
     const limit = ARRAY_LIMITS[update.section];
     if (limit !== undefined && Array.isArray(update.value) && update.value.length > limit) {
       invalid(`Najviše ${limit} stavki u ovom delu podešavanja.`, update.section);
@@ -173,6 +203,7 @@ export const updateSection = ownerMutation({
         invalid("Proverite vrednosti PDV-a, marže i praga zaliha.", "commerce");
       }
     }
+    if (update.section === "company") update = { ...update, value: checkedCompany(update.value) };
     if (update.section === "brand" && !/^[A-Z]{1,4}$/.test(update.value.orderPrefix)) {
       invalid("Prefiks porudžbine: 1–4 velika slova.", "brand");
     }

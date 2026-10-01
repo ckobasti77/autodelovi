@@ -64,7 +64,7 @@ async function orderHistory(
     type: "email_sent",
     message:
       mode === "log"
-        ? `E-pošta zabeležena (nije poslata, režim log): ${subject}`
+        ? `E-pošta zabeležena, nije poslata (režim „Samo zapis“): ${subject}`
         : `Poslata e-pošta: ${subject}`,
     // The customer sees the notice only when the message really went out.
     visibleToCustomer: mode !== "log",
@@ -84,7 +84,7 @@ async function inquiryHistory(
     type: "email_sent",
     message:
       mode === "log"
-        ? `E-pošta zabeležena (nije poslata, režim log): ${subject}`
+        ? `E-pošta zabeležena, nije poslata (režim „Samo zapis“): ${subject}`
         : `Poslata e-pošta: ${subject}`,
     visibleToCustomer: mode !== "log",
     actor: SYSTEM_ACTOR,

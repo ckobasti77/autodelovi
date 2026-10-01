@@ -68,11 +68,20 @@ export function buildIntro(slug: string): string {
   return `${copy.what} ${copy.when} ${copy.tip} ${COMMON}`;
 }
 
-export function seoTitle(label: string): string {
+/**
+ * The category SEO texts seeded until step 22. They are no longer seeded (SEO-03): the page
+ * builds title and description from the name and live counts. Kept only so the migration
+ * `seed:clearSeededCategorySeo` can recognise (and clear) values nobody has edited.
+ */
+export function legacySeoTitle(label: string): string {
   return `${label} za VW, Audi, Škoda, SEAT i Cupra`;
 }
 
-export function seoDescription(label: string, slug: string): string {
+export function legacySystemSeoDescription(label: string): string {
+  return `${label}: delovi za VW, Audi, Škoda, SEAT i Cupra — pretraga po OEM broju i vozilu, cene sa PDV-om i stanje.`;
+}
+
+export function legacySeoDescription(label: string, slug: string): string {
   const short = CATEGORY_COPY[slug]?.short ?? "";
   const text =
     `${label} za VAG vozila: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. ${short}`.trim();

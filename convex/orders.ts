@@ -10,11 +10,17 @@ import { canOrderQuantity } from "../lib/domain/stock";
 import { actorOf } from "./lib/authz";
 import { cartItems, findCart, getOrCreateCart, MAX_LINE_QTY, priceLines } from "./lib/carts";
 import { isListed } from "./lib/catalog";
-import { fail, invalid, notFound } from "./lib/errors";
+import { fail, notFound } from "./lib/errors";
 import { publicMutation, publicQuery, userMutation, userQuery } from "./lib/functions";
-import { createOrder, validateCheckout, type NewOrderLine } from "./lib/orders";
-import { creditStatus, formatDinarsSr } from "./lib/mechanics";
-import { enforceRateLimit } from "./lib/rateLimits";
+import { sanitizeAttribution } from "./lib/attribution";
+import {
+  createOrder,
+  mechanicOrderTerms,
+  termsFields,
+  validateCheckout,
+  type NewOrderLine,
+} from "./lib/orders";
+import { countTowardsAlert, enforceRateLimit } from "./lib/rateLimits";
 import { resolveEmailConfig } from "./lib/emailConfig";
 import { getSettings } from "./lib/settings";
 import { hashToken, isTokenShape } from "./lib/tokens";
@@ -57,8 +63,8 @@ export const submit = publicMutation({
     if (args.honeypot.trim() !== "")
       fail("SPAM", "Porudžbina nije poslata. Pozovite nas telefonom.");
     if (now - args.startedAt < MIN_FORM_MS) fail("SPAM", "Pokušajte ponovo za nekoliko sekundi.");
-    await enforceRateLimit(ctx, "orderSubmitGlobal", "global");
     await enforceRateLimit(ctx, "orderSubmit", ctx.client.key);
+    await countTowardsAlert(ctx, "orderSubmitGlobal");
 
     const settings = await getSettings(ctx);
     const viewer = ctx.viewer;
@@ -120,40 +126,16 @@ export const submit = publicMutation({
       }
     }
 
-    const isMechanic = viewer?.mechanic?.status === "approved";
-    let tierSnapshot: { tierId: Id<"priceTiers">; name: string } | undefined;
-    let paymentTermsDays: number | undefined;
-    if (isMechanic && viewer?.mechanic) {
-      const profile = await ctx.db.get("mechanicProfiles", viewer.mechanic.profileId);
-      paymentTermsDays = profile?.paymentTermsDays;
-      if (profile?.tierId) {
-        const tier = await ctx.db.get("priceTiers", profile.tierId);
-        if (tier) tierSnapshot = { tierId: tier._id, name: tier.name };
-      }
-      if (profile && checkout.payment.method === "deferred") {
-        const credit = await creditStatus(ctx, profile);
-        const itemsPara = lines.reduce((s, l) => s + l.unitPricePara * l.quantity, 0);
-        const free = checkout.deliveryConfig.freeOverPara;
-        const deliveryPara =
-          free !== undefined && itemsPara >= free ? 0 : checkout.deliveryConfig.pricePara;
-        if (credit.availablePara !== null && itemsPara + deliveryPara > credit.availablePara) {
-          invalid(
-            `Limit za odloženo plaćanje nije dovoljan: preostalo je ${formatDinarsSr(credit.availablePara)}. Izaberite drugi način plaćanja ili nas pozovite.`,
-            "payment.method",
-          );
-        }
-      }
-    }
+    const terms = await mechanicOrderTerms(ctx, viewer, checkout, lines);
+    const attribution = sanitizeAttribution(args.attribution);
 
     const result = await createOrder(ctx, {
       checkout,
       lines,
-      customerType: isMechanic ? "mechanic" : viewer ? "customer" : "guest",
+      customerType: terms ? "mechanic" : viewer ? "customer" : "guest",
       ...(viewer ? { userId: viewer.userId } : {}),
-      ...(isMechanic && viewer?.mechanic ? { mechanicProfileId: viewer.mechanic.profileId } : {}),
-      ...(tierSnapshot ? { tierSnapshot } : {}),
-      ...(paymentTermsDays !== undefined ? { paymentTermsDays } : {}),
-      ...(args.attribution ? { attribution: args.attribution } : {}),
+      ...termsFields(terms),
+      ...(attribution ? { attribution } : {}),
       source: "web",
       isDemo: false,
       actor: viewer
@@ -303,7 +285,10 @@ async function orderView(ctx: QueryCtx, order: Doc<"orders">) {
     cancelReason: order.cancelReason ?? null,
     hasBackorder: order.hasBackorder,
     emailUpdates:
-      resolveEmailConfig(settings).effective !== "log" && !order.isDemo && !order.isTest,
+      order.contact.email !== "" &&
+      resolveEmailConfig(settings).effective !== "log" &&
+      !order.isDemo &&
+      !order.isTest,
   };
 }
 

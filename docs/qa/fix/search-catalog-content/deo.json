@@ -1,0 +1,91 @@
+{
+  "base": "http://localhost:3001",
+  "widths": {
+    "390": {
+      "h1Top": 509,
+      "drawingTop": null,
+      "drawingVisible": false,
+      "drawingLeft": null,
+      "galleryTop": 145,
+      "h1Left": 16,
+      "caption": {
+        "tag": "FIGCAPTION",
+        "size": "13px",
+        "inside": "FIGURE"
+      },
+      "warranty": "24 meseca",
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      }
+    },
+    "768": {
+      "h1Top": 745,
+      "drawingTop": 1410,
+      "drawingVisible": true,
+      "drawingLeft": 31,
+      "galleryTop": 119,
+      "h1Left": 31,
+      "caption": {
+        "tag": "FIGCAPTION",
+        "size": "13px",
+        "inside": "FIGURE"
+      },
+      "warranty": "24 meseca",
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    },
+    "1024": {
+      "h1Top": 172,
+      "drawingTop": 601,
+      "drawingVisible": true,
+      "drawingLeft": 41,
+      "galleryTop": 135,
+      "h1Left": 601,
+      "caption": {
+        "tag": "FIGCAPTION",
+        "size": "13px",
+        "inside": "FIGURE"
+      },
+      "warranty": "24 meseca",
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      }
+    },
+    "1440": {
+      "h1Top": 172,
+      "drawingTop": 774,
+      "drawingVisible": true,
+      "drawingLeft": 48,
+      "galleryTop": 135,
+      "h1Left": 846,
+      "caption": {
+        "tag": "FIGCAPTION",
+        "size": "13px",
+        "inside": "FIGURE"
+      },
+      "warranty": "24 meseca",
+      "overflow": {
+        "over": 0,
+        "offenders": []
+      },
+      "reveal": {
+        "stuck": [],
+        "pending": 0,
+        "words": 0
+      }
+    }
+  },
+  "unknown": {
+    "status": 404,
+    "hasH1": false
+  }
+}

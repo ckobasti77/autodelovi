@@ -7,23 +7,25 @@
  */
 import { useMutation, useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import {
   CheckCircleIcon,
   ClockCounterClockwiseIcon,
+  WarningCircleIcon,
   XCircleIcon,
 } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
+import { checkoutSchema, formFieldForServerField } from "@/lib/validation/checkout";
 import { buildConsent } from "@/lib/validation/consent";
 import { formatDate, formatDateTime } from "@/lib/format/date";
 import { formatRSD } from "@/lib/format/money";
-import { normalizePhone } from "@/lib/format/phone";
-import { isValidEmail, isValidPostalCode, normalizeEmail } from "@/lib/domain/identifiers";
+import { formatPhone, normalizePhone } from "@/lib/format/phone";
+import { normalizeEmail } from "@/lib/domain/identifiers";
 import { leadTimeLabel } from "@/lib/i18n/sr/catalog";
 import {
+  convexErrorField,
   convexErrorMessage,
-  ERRORS,
   INQUIRY_STATUS_LABEL,
   INQUIRY_STATUS_TONE,
   PREFERRED_CHANNEL_LABEL,
@@ -55,6 +57,86 @@ export type AcceptConfig = {
   legal: { terms: string; privacy: string };
 };
 
+type AcceptField =
+  | "firstName"
+  | "lastName"
+  | "phone"
+  | "email"
+  | "companyName"
+  | "pib"
+  | "mb"
+  | "street"
+  | "postalCode"
+  | "city"
+  | "paymentMethod"
+  | "terms";
+
+/** Summary and focus order (top to bottom of the form). */
+const ACCEPT_FIELDS: readonly AcceptField[] = [
+  "firstName",
+  "lastName",
+  "phone",
+  "email",
+  "companyName",
+  "pib",
+  "mb",
+  "street",
+  "postalCode",
+  "city",
+  "paymentMethod",
+  "terms",
+];
+
+const isAcceptField = (f: string | null): f is AcceptField =>
+  f !== null && (ACCEPT_FIELDS as readonly string[]).includes(f);
+
+const fieldId = (f: AcceptField) => `qa-${f}`;
+
+type AcceptErrors = Partial<Record<AcceptField, string>>;
+
+/**
+ * Form-level error summary (DS §9.2, the checkout pattern): it takes focus once per failed
+ * submit (`attempt` grows only then) and links every message to its field.
+ */
+function AcceptErrorSummary({ errors, attempt }: { errors: AcceptErrors; attempt: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const list = ACCEPT_FIELDS.flatMap((f) => {
+    const message = errors[f];
+    return message ? [{ f, message }] : [];
+  });
+  useEffect(() => {
+    if (attempt > 0) ref.current?.focus();
+  }, [attempt]);
+  if (!list.length) return null;
+  return (
+    <div
+      ref={ref}
+      tabIndex={-1}
+      role="alert"
+      data-reveal="off"
+      data-testid="quote-accept-errors"
+      className="rounded-sm border border-danger bg-danger-subtle p-4 outline-none"
+    >
+      <p className="flex items-center gap-2 type-body-s font-semibold text-danger">
+        <WarningCircleIcon size={18} aria-hidden="true" />
+        Proverite {list.length === 1 ? "jedno polje" : `${list.length} polja`}:
+      </p>
+      <ul className="mt-2 flex flex-col gap-1 pl-6.5 type-body-s">
+        {list.map((e) => (
+          <li key={e.f}>
+            <a
+              href={`#${fieldId(e.f)}`}
+              className="text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent"
+            >
+              {e.message}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function AcceptForm({
   token,
   inquiry,
@@ -69,8 +151,12 @@ function AcceptForm({
   const [v, setV] = useState({
     firstName: first ?? "",
     lastName: rest.join(" "),
-    email: "",
-    phone: "",
+    email: inquiry.prefill.email ?? "",
+    phone: inquiry.prefill.phone ? formatPhone(inquiry.prefill.phone) : "",
+    isCompany: false,
+    companyName: "",
+    pib: "",
+    mb: "",
     delivery: (config.deliveryMethods[0]?.code ?? "pickup") as DeliveryCode,
     payment: "" as PaymentCode | "",
     street: "",
@@ -78,59 +164,106 @@ function AcceptForm({
     postalCode: "",
     terms: false,
   });
-  const [error, setError] = useState<string | null>(null);
+  const [errors, setErrors] = useState<AcceptErrors>({});
+  const [formError, setFormError] = useState<string | null>(null);
+  const [attempt, setAttempt] = useState(0);
   const [busy, setBusy] = useState(false);
+  // The checkout offer: predračun once the buyer is a company, deferred payment only for the
+  // signed-in approved mechanic who owns the inquiry (the server re-checks both, QA FLOW-08).
   const payments = config.paymentMethods.filter(
-    (p) => p.deliveryCodes.includes(v.delivery) && p.requires === "none",
+    (p) =>
+      p.deliveryCodes.includes(v.delivery) &&
+      (p.requires === "none" ||
+        (p.requires === "company" && v.isCompany) ||
+        (p.requires === "mechanic_credit" && inquiry.deferredCredit !== null)),
   );
   const payment = payments.find((p) => p.code === v.payment)?.code ?? payments[0]?.code;
+  const credit = inquiry.deferredCredit?.availablePara ?? null;
+
+  const update = (patch: Partial<typeof v>) => {
+    setV({ ...v, ...patch });
+    // A corrected field drops its message; focus never moves on change.
+    const touched = Object.keys(patch).map((k) => (k === "payment" ? "paymentMethod" : k));
+    if (touched.some((k) => k in errors)) {
+      const next = { ...errors };
+      for (const k of touched) if (isAcceptField(k)) delete next[k];
+      setErrors(next);
+    }
+  };
+
+  const showErrors = (next: AcceptErrors) => {
+    setErrors(next);
+    setAttempt((a) => a + 1);
+  };
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setError(null);
-    if (!v.firstName.trim() || !v.lastName.trim()) return setError("Upišite ime i prezime.");
-    if (!normalizePhone(v.phone)) return setError(ERRORS.phone);
-    if (!isValidEmail(normalizeEmail(v.email))) return setError(ERRORS.email);
-    if (
-      v.delivery === "courier" &&
-      (!v.street.trim() || !v.city.trim() || !isValidPostalCode(v.postalCode))
-    )
-      return setError("Upišite adresu za dostavu (ulica, poštanski broj, mesto).");
-    if (!payment) return setError("Izaberite način plaćanja.");
-    if (!v.terms) return setError("Potrebna je saglasnost sa uslovima kupovine.");
+    setFormError(null);
+    if (!payment) return showErrors({ paymentMethod: "Izaberite način plaćanja." });
+    const parsed = checkoutSchema.safeParse({
+      firstName: v.firstName,
+      lastName: v.lastName,
+      phone: v.phone,
+      email: v.email,
+      isCompany: v.isCompany,
+      companyName: v.companyName,
+      pib: v.pib,
+      mb: v.mb,
+      deliveryMethod: v.delivery,
+      street: v.street,
+      city: v.city,
+      postalCode: v.postalCode,
+      addressNote: "",
+      paymentMethod: payment,
+      vin: "",
+      useVehicle: false,
+      note: "",
+      terms: v.terms,
+    });
+    if (!parsed.success) {
+      const next: AcceptErrors = {};
+      for (const issue of parsed.error.issues) {
+        const key = String(issue.path[0]);
+        if (isAcceptField(key) && !next[key]) next[key] = issue.message;
+      }
+      return showErrors(next);
+    }
+    setErrors({});
     setBusy(true);
+    const d = parsed.data;
     try {
       const r = await accept({
         token,
         quoteId: inquiry.quote!.quoteId,
         contact: {
-          firstName: v.firstName.trim(),
-          lastName: v.lastName.trim(),
-          email: normalizeEmail(v.email),
-          phone: normalizePhone(v.phone)!,
+          firstName: d.firstName,
+          lastName: d.lastName,
+          email: normalizeEmail(d.email),
+          phone: normalizePhone(d.phone)!,
         },
+        ...(d.isCompany
+          ? { company: { name: d.companyName, pib: d.pib, ...(d.mb ? { mb: d.mb } : {}) } }
+          : {}),
         delivery: {
-          method: v.delivery,
-          ...(v.delivery === "courier"
-            ? {
-                address: {
-                  street: v.street.trim(),
-                  city: v.city.trim(),
-                  postalCode: v.postalCode.trim(),
-                },
-              }
+          method: d.deliveryMethod,
+          ...(d.deliveryMethod === "courier"
+            ? { address: { street: d.street, city: d.city, postalCode: d.postalCode } }
             : {}),
         },
-        payment: { method: payment },
+        payment: { method: d.paymentMethod },
         consent: buildConsent(config.legal),
       });
       // Full load: analytics must only see the token page through its redacted URL.
       window.location.assign(ROUTES.orderThanks(r.orderToken));
     } catch (err) {
       setBusy(false);
-      setError(
-        convexErrorMessage(err, "Ponuda nije prihvaćena. Pokušajte ponovo ili nas pozovite."),
+      const message = convexErrorMessage(
+        err,
+        "Ponuda nije prihvaćena. Pokušajte ponovo ili nas pozovite.",
       );
+      const field = formFieldForServerField(convexErrorField(err));
+      if (isAcceptField(field)) showErrors({ [field]: message });
+      else setFormError(message);
     }
   };
 
@@ -142,42 +275,82 @@ function AcceptForm({
       data-reveal="off"
     >
       <h3 className="type-h4 text-ink-1">Podaci za porudžbinu</h3>
+      <AcceptErrorSummary errors={errors} attempt={attempt} />
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Ime">
+        <Field label="Ime" error={errors.firstName}>
           <Input
+            id={fieldId("firstName")}
             autoComplete="given-name"
             value={v.firstName}
-            onChange={(e) => setV({ ...v, firstName: e.target.value })}
+            onChange={(e) => update({ firstName: e.target.value })}
           />
         </Field>
-        <Field label="Prezime">
+        <Field label="Prezime" error={errors.lastName}>
           <Input
+            id={fieldId("lastName")}
             autoComplete="family-name"
             value={v.lastName}
-            onChange={(e) => setV({ ...v, lastName: e.target.value })}
+            onChange={(e) => update({ lastName: e.target.value })}
           />
         </Field>
-        <Field label="Telefon">
+        <Field label="Telefon" error={errors.phone}>
           <Input
+            id={fieldId("phone")}
             type="tel"
             autoComplete="tel"
             value={v.phone}
-            onChange={(e) => setV({ ...v, phone: e.target.value })}
+            onChange={(e) => update({ phone: e.target.value })}
           />
         </Field>
-        <Field label="E-pošta">
+        <Field label="E-pošta" error={errors.email}>
           <Input
+            id={fieldId("email")}
             type="email"
             autoComplete="email"
             value={v.email}
-            onChange={(e) => setV({ ...v, email: e.target.value })}
+            onChange={(e) => update({ email: e.target.value })}
           />
         </Field>
       </div>
+      <Checkbox
+        checked={v.isCompany}
+        onCheckedChange={(c) => update({ isCompany: c === true })}
+        label="Kupujem kao firma"
+      />
+      {v.isCompany ? (
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Field label="Naziv firme" error={errors.companyName} className="sm:col-span-2">
+            <Input
+              id={fieldId("companyName")}
+              autoComplete="organization"
+              value={v.companyName}
+              onChange={(e) => update({ companyName: e.target.value })}
+            />
+          </Field>
+          <Field label="PIB" error={errors.pib}>
+            <Input
+              id={fieldId("pib")}
+              inputMode="numeric"
+              maxLength={9}
+              value={v.pib}
+              onChange={(e) => update({ pib: e.target.value })}
+            />
+          </Field>
+          <Field label="Matični broj" optional error={errors.mb}>
+            <Input
+              id={fieldId("mb")}
+              inputMode="numeric"
+              maxLength={8}
+              value={v.mb}
+              onChange={(e) => update({ mb: e.target.value })}
+            />
+          </Field>
+        </div>
+      ) : null}
       <RadioGroup
         label="Dostava"
         value={v.delivery}
-        onValueChange={(d) => setV({ ...v, delivery: d as DeliveryCode })}
+        onValueChange={(d) => update({ delivery: d as DeliveryCode })}
         options={config.deliveryMethods.map((d) => ({
           value: d.code,
           label: `${d.label} · ${formatRSD(d.pricePara)}`,
@@ -185,35 +358,53 @@ function AcceptForm({
       />
       {v.delivery === "courier" ? (
         <div className="grid gap-4 sm:grid-cols-6">
-          <Field label="Ulica i broj" className="sm:col-span-6">
+          <Field label="Ulica i broj" className="sm:col-span-6" error={errors.street}>
             <Input
+              id={fieldId("street")}
               autoComplete="street-address"
               value={v.street}
-              onChange={(e) => setV({ ...v, street: e.target.value })}
+              onChange={(e) => update({ street: e.target.value })}
             />
           </Field>
-          <Field label="Poštanski broj" className="sm:col-span-2">
+          <Field label="Poštanski broj" className="sm:col-span-2" error={errors.postalCode}>
             <Input
+              id={fieldId("postalCode")}
               inputMode="numeric"
+              autoComplete="postal-code"
               maxLength={5}
               value={v.postalCode}
-              onChange={(e) => setV({ ...v, postalCode: e.target.value })}
+              onChange={(e) => update({ postalCode: e.target.value })}
             />
           </Field>
-          <Field label="Mesto" className="sm:col-span-4">
-            <Input value={v.city} onChange={(e) => setV({ ...v, city: e.target.value })} />
+          <Field label="Mesto" className="sm:col-span-4" error={errors.city}>
+            <Input
+              id={fieldId("city")}
+              autoComplete="address-level2"
+              value={v.city}
+              onChange={(e) => update({ city: e.target.value })}
+            />
           </Field>
         </div>
       ) : null}
       <RadioGroup
+        id={fieldId("paymentMethod")}
         label="Plaćanje"
         value={payment}
-        onValueChange={(p) => setV({ ...v, payment: p as PaymentCode })}
-        options={payments.map((p) => ({ value: p.code, label: p.label }))}
+        onValueChange={(p) => update({ payment: p as PaymentCode })}
+        options={payments.map((p) => ({
+          value: p.code,
+          label:
+            p.code === "deferred" && credit !== null
+              ? `${p.label} · preostali limit ${formatRSD(credit)}`
+              : p.label,
+        }))}
+        error={errors.paymentMethod}
       />
       <Checkbox
+        id={fieldId("terms")}
         checked={v.terms}
-        onCheckedChange={(c) => setV({ ...v, terms: c === true })}
+        onCheckedChange={(c) => update({ terms: c === true })}
+        error={errors.terms}
         label={
           <span>
             Prihvatam{" "}
@@ -224,9 +415,9 @@ function AcceptForm({
           </span>
         }
       />
-      {error ? (
+      {formError ? (
         <p role="alert" className="type-body-s text-danger">
-          {error}
+          {formError}
         </p>
       ) : null}
       <Button
@@ -235,7 +426,7 @@ function AcceptForm({
         size="lg"
         loading={busy}
         data-testid="quote-accept-submit"
-        className="self-start"
+        className="w-full sm:w-auto sm:self-start"
       >
         Pošalji porudžbinu po ponudi
       </Button>
@@ -344,7 +535,7 @@ export function InquiryStatusView({
             {q.deliveryNote ? <p className="type-body-s text-ink-2">{q.deliveryNote}</p> : null}
 
             {open && mode === "idle" ? (
-              <div className="flex flex-wrap gap-3">
+              <div className="grid gap-3 sm:flex sm:flex-wrap">
                 <Button
                   variant="primary"
                   size="lg"

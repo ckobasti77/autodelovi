@@ -1,7 +1,11 @@
 /// <reference types="vite/client" />
-import { describe, expect, test } from "vitest";
+import { describe, expect, test, vi } from "vitest";
 
 import { api } from "./_generated/api";
+import type { Id } from "./_generated/dataModel";
+import type { MutationCtx } from "./_generated/server";
+import { rateLimiter } from "./lib/rateLimits";
+import { DEFAULT_SETTINGS } from "./lib/settings";
 import { belgradeYear } from "../lib/domain/time";
 import {
   checkoutArgs,
@@ -266,7 +270,8 @@ describe("order submit", () => {
     const w = await setupWorld(t);
     const client = t.withRequestMetadata({ ip: "203.0.113.7", userAgent: "vitest" });
     const codes = [];
-    for (let i = 0; i < 6; i++) {
+    // orderSubmit: a burst of 10 per IP (sized for carrier NAT, D221).
+    for (let i = 0; i < 11; i++) {
       const token = `rate-token-${String(i).padStart(30, "0")}`;
       await client.mutation(api.carts.addItem, {
         guestToken: token,
@@ -282,8 +287,36 @@ describe("order submit", () => {
         ),
       );
     }
-    expect(codes.slice(0, 5)).toEqual(Array(5).fill("NO_ERROR"));
-    expect(codes[5]).toBe("RATE_LIMITED");
+    expect(codes.slice(0, 10)).toEqual(Array(10).fill("NO_ERROR"));
+    expect(codes[10]).toBe("RATE_LIMITED");
+  });
+
+  test("the site-wide order threshold alerts the owner instead of refusing orders", async () => {
+    vi.useFakeTimers();
+    const t = makeT();
+    const w = await setupWorld(t);
+    await t.run(async (ctx) => {
+      await rateLimiter.limit(ctx, "orderSubmitGlobal", { key: "global", count: 300 });
+    });
+    for (const [i, token] of [GUEST, GUEST_2].entries()) {
+      await w.anon.mutation(api.carts.addItem, {
+        guestToken: token,
+        productId: w.products.battery,
+        quantity: 1,
+      });
+      await w.anon.mutation(api.orders.submit, {
+        guestToken: token,
+        ...checkoutArgs({ contact: { ...checkoutArgs().contact, email: `g${i}@primer.rs` } }),
+      });
+    }
+    await t.finishAllScheduledFunctions(vi.runAllTimers);
+    const alerts = await t.run(async (ctx) =>
+      (await ctx.db.query("notifications").take(100)).filter((n) => n.kind === "security"),
+    );
+    // One alert per owner per hour, however many orders cross the threshold.
+    expect(alerts).toHaveLength(1);
+    expect(alerts[0]!.userId).toBe(w.owner);
+    vi.useRealTimers();
   });
 
   test("guest checkout can be disabled by the owner", async () => {
@@ -552,5 +585,104 @@ describe("order state machine through ordersAdmin.transition", () => {
         w.asMechA.query(api.ordersAdmin.list, { paginationOpts: { numItems: 5, cursor: null } }),
       ),
     ).toBe("FORBIDDEN");
+  });
+});
+
+async function setStockMode(ctx: MutationCtx, stockDecrementOn: "created" | "confirmed") {
+  const doc = await ctx.db.query("settings").first();
+  const commerce = {
+    ...(doc ?? DEFAULT_SETTINGS).commerce,
+    stockDecrementOn,
+    restockOnCancel: true,
+  };
+  if (doc) await ctx.db.patch("settings", doc._id, { commerce });
+  else await ctx.db.insert("settings", { ...DEFAULT_SETTINGS, commerce, updatedAt: 0 });
+}
+
+describe("staff edits keep committed stock in step (QA BE-06)", () => {
+  async function createdModeOrder() {
+    const t = makeT();
+    const w = await setupWorld(t);
+    await t.run((ctx) => setStockMode(ctx, "created"));
+    await w.anon.mutation(api.carts.addItem, {
+      guestToken: GUEST,
+      productId: w.products.disc,
+      quantity: 3,
+    });
+    await w.anon.mutation(api.carts.addItem, {
+      guestToken: GUEST,
+      productId: w.products.battery,
+      quantity: 1,
+    });
+    const res = await w.anon.mutation(api.orders.submit, { guestToken: GUEST, ...checkoutArgs() });
+    const view = async () => (await w.asStaff.query(api.ordersAdmin.get, { number: res.number }))!;
+    const stock = (id: Id<"products">) =>
+      t.run(async (ctx) => (await ctx.db.get("products", id))!.stockQty);
+    const line = async (sku: string) => (await view()).items.find((i) => i.sku === sku)!;
+    return { t, w, view, stock, line };
+  }
+
+  test("remove, lower, raise and add lines move stock with reason order_edited; cancel returns the rest", async () => {
+    const { t, w, view, stock, line } = await createdModeOrder();
+    expect(await stock(w.products.disc)).toBe(7);
+    expect(await stock(w.products.battery)).toBe(19);
+    let o = await view();
+    // disc 3 → 1 returns 2; battery removed returns 1; filter-less add of battery × 2 takes 2.
+    await w.asStaff.mutation(api.ordersAdmin.editItems, {
+      orderId: o.order._id,
+      expectedUpdatedAt: o.order.updatedAt,
+      changes: [
+        { itemId: (await line("T-DISC"))._id, quantity: 1 },
+        { itemId: (await line("T-BATT"))._id, remove: true },
+      ],
+    });
+    expect(await stock(w.products.disc)).toBe(9);
+    expect(await stock(w.products.battery)).toBe(20);
+    o = await view();
+    await w.asStaff.mutation(api.ordersAdmin.editItems, {
+      orderId: o.order._id,
+      expectedUpdatedAt: o.order.updatedAt,
+      changes: [{ itemId: (await line("T-DISC"))._id, quantity: 4 }],
+      add: [{ productId: w.products.battery, quantity: 2 }],
+    });
+    expect(await stock(w.products.disc)).toBe(6);
+    expect(await stock(w.products.battery)).toBe(18);
+    expect(await line("T-DISC")).toMatchObject({ committedQty: 4 });
+    expect(await line("T-BATT")).toMatchObject({ committedQty: 2 });
+    const reasons = await t.run(async (ctx) =>
+      (await ctx.db.query("stockMovements").take(100)).map((m) => m.reason),
+    );
+    expect(reasons.filter((r) => r === "order_edited")).toHaveLength(4);
+
+    o = await view();
+    await w.asStaff.mutation(api.ordersAdmin.transition, {
+      orderId: o.order._id,
+      to: "otkazana",
+      reason: "Kupac odustao",
+      expectedUpdatedAt: o.order.updatedAt,
+    });
+    expect(await stock(w.products.disc)).toBe(10);
+    expect(await stock(w.products.battery)).toBe(20);
+  });
+
+  test("an order created before the switch to created mode is committed on confirm", async () => {
+    const t = makeT();
+    const w = await setupWorld(t);
+    await w.anon.mutation(api.carts.addItem, {
+      guestToken: GUEST,
+      productId: w.products.disc,
+      quantity: 3,
+    });
+    const res = await w.anon.mutation(api.orders.submit, { guestToken: GUEST, ...checkoutArgs() });
+    await t.run((ctx) => setStockMode(ctx, "created"));
+    const o = (await w.asStaff.query(api.ordersAdmin.get, { number: res.number }))!;
+    await w.asStaff.mutation(api.ordersAdmin.transition, {
+      orderId: o.order._id,
+      to: "potvrdjena",
+      expectedUpdatedAt: o.order.updatedAt,
+    });
+    const after = (await w.asStaff.query(api.ordersAdmin.get, { number: res.number }))!;
+    expect(after.order.stockCommitted).toBe(true);
+    expect(after.items[0]).toMatchObject({ committedQty: 3, currentStock: 7 });
   });
 });

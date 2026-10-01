@@ -11,6 +11,7 @@ import { MagnifyingGlassIcon, ShoppingCartSimpleIcon } from "@phosphor-icons/rea
 
 import { useCart } from "@/lib/cart/guestCart";
 import { useCartDrawer } from "@/lib/cart/drawer";
+import { CART_EMPTY_ATTR } from "@/lib/cart/lineFocus";
 import { Button } from "@/components/ui/Button";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { Link } from "@/components/ui/Link";
@@ -82,23 +83,26 @@ export function CartDrawer({ delivery }: { delivery: DeliveryInfo }) {
           ))}
         </SkeletonRegion>
       ) : empty ? (
-        <EmptyState
-          icon={<ShoppingCartSimpleIcon size={40} />}
-          action={
-            <Button
-              variant="primary"
-              icon={<MagnifyingGlassIcon size={20} />}
-              onClick={() => {
-                setOpen(false);
-                window.setTimeout(focusHeaderSearch, 260);
-              }}
-            >
-              Pretražite po broju dela
-            </Button>
-          }
-        >
-          Korpa je prazna.
-        </EmptyState>
+        // Removing the last line moves focus to the action here (A11Y-09, lib/cart/lineFocus).
+        <div {...{ [CART_EMPTY_ATTR]: "" }}>
+          <EmptyState
+            icon={<ShoppingCartSimpleIcon size={40} />}
+            action={
+              <Button
+                variant="primary"
+                icon={<MagnifyingGlassIcon size={20} />}
+                onClick={() => {
+                  setOpen(false);
+                  window.setTimeout(focusHeaderSearch, 260);
+                }}
+              >
+                Pretražite po broju dela
+              </Button>
+            }
+          >
+            Korpa je prazna.
+          </EmptyState>
+        </div>
       ) : (
         <CartLines cart={cart} compact />
       )}

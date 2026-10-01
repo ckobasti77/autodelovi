@@ -77,3 +77,6 @@ __pycache__/
 
 # Playwright global state (consent cookie for specs that do not test the banner)
 .playwright/
+
+# Step 22 local server logs
+.qa-*.log

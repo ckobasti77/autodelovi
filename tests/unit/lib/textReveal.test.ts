@@ -154,6 +154,46 @@ describe("generated stylesheet and boot script", () => {
     expect(css).toContain("scripting: none");
   });
 
+  it("splits hiding into a boot rule (tr-hide, selector) and a runtime rule (pending attribute)", () => {
+    const squash = (value: string) => value.replace(/\s*,\s*/g, ",");
+    const css = squash(buildTextRevealCss());
+    const { classes, attrs } = TEXT_REVEAL;
+    expect(css).toContain(
+      squash(
+        `html.${classes.boot}:not(.${classes.failsafe}) :is(${hiddenSelector}):not([${attrs.state}])`,
+      ),
+    );
+    expect(css).toContain(
+      `html.${classes.js}:not(.${classes.failsafe}) [${attrs.state}="pending"]{opacity: 0;}`,
+    );
+  });
+
+  it("animates words and blocks with CSS keyframes; phones get the variant without blur", () => {
+    const css = buildTextRevealCss();
+    const { classes, attrs, word, block } = TEXT_REVEAL;
+    expect(css).toContain(
+      `[${attrs.state}="running"] .${classes.word}{animation: tr-word ${word.durationMs}ms`,
+    );
+    expect(css).toContain(
+      `calc(var(--i,0) * min(${word.staggerEachMs}ms,${word.staggerBudgetMs}ms / var(--n,1)))`,
+    );
+    expect(css).toContain(
+      `[${attrs.state}="running"][${attrs.mode}="block"]{animation: tr-block ${block.durationMs}ms`,
+    );
+    expect(css).toMatch(/@keyframes tr-word\{from\{opacity: 0;filter: blur\(8px\)/);
+    expect(css).toMatch(/@keyframes tr-word-lite\{from\{opacity: 0;transform: translateY/);
+    for (const feature of TEXT_REVEAL.liteMedia) {
+      expect(css).toContain(
+        `and ${feature}{[${attrs.state}="running"] .${classes.word}{animation-name: tr-word-lite;}}`,
+      );
+    }
+    // Every animation sits behind the reduced-motion gate.
+    expect(css.match(/animation:/g)?.length).toBe(3);
+    expect(css.split("@media screen and (prefers-reduced-motion: no-preference)").length - 1).toBe(
+      2 + TEXT_REVEAL.liteMedia.length,
+    );
+  });
+
   it("the noscript stylesheet forces visibility", () => {
     expect(buildTextRevealNoscriptCss().replace(/ /g, "")).toContain("opacity:1!important");
   });
@@ -162,6 +202,7 @@ describe("generated stylesheet and boot script", () => {
     document.documentElement.className = "";
     new Function(buildTextRevealBootScript())();
     expect(document.documentElement.classList.contains(TEXT_REVEAL.classes.js)).toBe(true);
+    expect(document.documentElement.classList.contains(TEXT_REVEAL.classes.boot)).toBe(true);
     expect(window.__trFailsafe).toBeDefined();
     window.clearTimeout(window.__trFailsafe);
     document.documentElement.className = "";

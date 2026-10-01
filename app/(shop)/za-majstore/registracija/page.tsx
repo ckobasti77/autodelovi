@@ -20,7 +20,7 @@ export const metadata: Metadata = privateMetadata("Registracija servisa");
 
 const NEXT_STEPS = [
   "Proverimo firmu u registru i odredimo nivo rabata.",
-  "Stiže vam e-mail o odobrenju; posle prijave vidite svoju cenu na svakom artiklu.",
+  "Odobrenje vam javljamo e-poštom; posle prijave vidite svoju cenu na svakom artiklu.",
   "Brza porudžbina, cenovnik i istorija su u portalu „Majstor“.",
 ];
 

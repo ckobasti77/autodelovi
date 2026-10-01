@@ -211,7 +211,9 @@ export async function quoteOrderLines(
     const quality = l.quality ?? product?.quality;
     lines.push({
       ...(product ? { productId: product._id, categoryId: product.categoryId } : {}),
-      sku: l.sku ?? product?.sku ?? "UPIT",
+      // The quote's „Šifra / OEM“ is a display code (the composer shows the OEM number);
+      // a catalogue line always orders under the product's own SKU (QA FLOW-16).
+      sku: product?.sku ?? l.sku ?? "UPIT",
       name: l.name,
       manufacturerName: l.manufacturer ?? product?.manufacturerName ?? "",
       ...(quality ? { quality } : {}),

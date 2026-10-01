@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation";
 import {
   useCallback,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -29,6 +30,7 @@ import { Button } from "@/components/ui/Button";
 import { Combobox, type ComboboxItem } from "@/components/ui/Combobox";
 import { useMediaQuery } from "@/components/ui/motion";
 import { ROUTES } from "@/constants/routes";
+import { TERMS } from "@/lib/i18n/sr/shop";
 import { api } from "@/convex/_generated/api";
 import { formatNumber } from "@/lib/format/number";
 
@@ -75,7 +77,7 @@ function useConvexSuggestions() {
           id: `p-${p.productId}`,
           label: p.name,
           description: p.manufacturerName,
-          group: "Proizvodi",
+          group: TERMS.items,
           href: ROUTES.product(p.slug),
         })),
       ];
@@ -129,6 +131,16 @@ export function SearchBox({
   const [recent, setRecent] = useState<string[]>([]);
   const inputWrap = useRef<HTMLDivElement>(null);
   const wide = useMediaQuery("(min-width: 48rem)");
+
+  // A code typed into the server-rendered field before hydration (XB-01): hydration leaves the
+  // DOM value alone, but the controlled input would be reset to `query` on its next update.
+  // Adopt it in the hydration commit, before anything re-renders the input. On a client-side
+  // mount the DOM value always equals `query`, so this is a no-op.
+  useLayoutEffect(() => {
+    const typed = inputWrap.current?.querySelector("input")?.value;
+    if (typed !== undefined && typed !== defaultQuery) setQuery(typed);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- once, on mount
+  }, []);
 
   useEffect(() => {
     // Recent searches live in localStorage, which only exists after mount.

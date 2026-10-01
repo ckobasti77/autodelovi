@@ -14,14 +14,22 @@ from .scene import V, to_vehicle
 
 HDRI = scene.ASSETS / "hdri" / "studio_small_09_2k.hdr"
 
+# Manifest cameras per state and crop (contract F6/F8, lib/three/framing.ts): `width`/`cx`/`cy`
+# frame the projected part boxes at a width and centre, `box` fits them inside a screen box
+# (x0, x1, y0, y1; y from the top). The box corners overshoot the silhouette by about 10 %, so
+# `width` > 1 still leaves the painted car inside the frame. Phones and tablets get a tighter,
+# more frontal and slightly higher view than desktop so the car fills the portrait stage
+# (MOT-01, D240); the tablet camera is centred because no copy column sits beside it.
 CAMERAS = {
     "hero": {
         "desktop": {"az": 36.0, "el": 14.0, "fov": 28.0, "aspect": 16 / 9, "width": 0.56, "cx": 0.64, "cy": 0.52},
-        "mobile": {"az": 30.0, "el": 16.0, "fov": 38.0, "aspect": 4 / 5, "width": 0.92, "cx": 0.50, "cy": 0.58},
+        "tablet": {"az": 30.0, "el": 18.0, "fov": 30.0, "aspect": 1.0, "width": 0.98, "cx": 0.485, "cy": 0.56},
+        "mobile": {"az": 25.0, "el": 24.0, "fov": 31.0, "aspect": 4 / 5, "width": 1.05, "cx": 0.475, "cy": 0.575},
     },
     "exploded": {
         "desktop": {"az": 43.0, "el": 24.0, "fov": 28.0, "aspect": 16 / 9, "box": (0.38, 0.94, 0.12, 0.86)},
-        "mobile": {"az": 36.0, "el": 20.0, "fov": 38.0, "aspect": 4 / 5, "box": (0.08, 0.92, 0.10, 0.90)},
+        "tablet": {"az": 38.0, "el": 23.0, "fov": 30.0, "aspect": 1.0, "box": (0.04, 0.96, 0.15, 0.93)},
+        "mobile": {"az": 36.0, "el": 21.0, "fov": 31.0, "aspect": 4 / 5, "box": (0.02, 0.98, 0.17, 0.94)},
     },
 }
 

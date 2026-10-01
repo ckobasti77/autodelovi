@@ -9,11 +9,15 @@ import {
 
 /** First reading of every item as `CODE×qty`. */
 function firsts(text: string): string[] {
-  return parseQuickOrder(text).items.map((i) => `${i.candidates[0]!.normalized}×${i.candidates[0]!.quantity}`);
+  return parseQuickOrder(text).items.map(
+    (i) => `${i.candidates[0]!.normalized}×${i.candidates[0]!.quantity}`,
+  );
 }
 
 function readings(text: string): string[][] {
-  return parseQuickOrder(text).items.map((i) => i.candidates.map((c) => `${c.normalized}×${c.quantity}`));
+  return parseQuickOrder(text).items.map((i) =>
+    i.candidates.map((c) => `${c.normalized}×${c.quantity}`),
+  );
 }
 
 describe("parseQuickOrder — quantities", () => {
@@ -63,9 +67,44 @@ describe("parseQuickOrder — quantities", () => {
     expect(readings("2 1K0615301AA")).toEqual([["1K0615301AA×2", "21K0615301AA×1"]]);
   });
 
-  test("zero and four-digit numbers are not quantities", () => {
+  test("zero and four-digit numbers are not valid quantities", () => {
     expect(firsts("1K0615301AA 0")).toEqual(["1K0615301AA0×1"]);
     expect(firsts("1K0615301AA x1000")[0]).not.toBe("1K0615301AA×1000");
+  });
+});
+
+/** Every reading as `CODE×qty` plus `!typed` when the typed quantity was out of range. */
+function readingsWithErrors(text: string): string[][] {
+  return parseQuickOrder(text).items.map((i) =>
+    i.candidates.map(
+      (c) =>
+        `${c.normalized}×${c.quantity}${c.requestedQuantity !== undefined ? `!${c.requestedQuantity}` : ""}`,
+    ),
+  );
+}
+
+describe("parseQuickOrder — quantities out of range (FLOW-22)", () => {
+  test("a trailing 0 keeps the code as a second reading with a quantity error", () => {
+    expect(readingsWithErrors("5Q0615505R 0")).toEqual([["5Q0615505R0×1", "5Q0615505R×1!0"]]);
+  });
+
+  test("a trailing 4–5 digit number keeps the code with a clamped quantity", () => {
+    expect(readingsWithErrors("5Q0615505R 1000")).toEqual([
+      ["5Q0615505R1000×1", "5Q0615505R×999!1000"],
+    ]);
+    expect(readingsWithErrors("5Q0 615 505 R 25000")[0]![1]).toBe("5Q0615505R×999!25000");
+  });
+
+  test("explicit zero quantities mark the only reading", () => {
+    expect(readingsWithErrors("5Q0615505R x0")).toEqual([["5Q0615505R×1!0"]]);
+    expect(readingsWithErrors("0x 5Q0615505R")).toEqual([["5Q0615505R×1!0"]]);
+    expect(readingsWithErrors("5Q0615505R;Disk;0")).toEqual([["5Q0615505R×1!0"]]);
+  });
+
+  test("valid quantities never carry requestedQuantity", () => {
+    for (const item of parseQuickOrder("1K0615301AA 2\n5Q0 698 151 x4\n03L 115 562").items) {
+      for (const c of item.candidates) expect(c.requestedQuantity).toBeUndefined();
+    }
   });
 });
 
@@ -107,7 +146,10 @@ describe("parseQuickOrder — lines and cells", () => {
   });
 
   test("caps the number of items", () => {
-    const text = Array.from({ length: QUICK_ORDER_MAX_ITEMS + 5 }, (_, i) => `1K0615${String(i).padStart(3, "0")}AA 1`).join("\n");
+    const text = Array.from(
+      { length: QUICK_ORDER_MAX_ITEMS + 5 },
+      (_, i) => `1K0615${String(i).padStart(3, "0")}AA 1`,
+    ).join("\n");
     const parsed = parseQuickOrder(text);
     expect(parsed.items).toHaveLength(QUICK_ORDER_MAX_ITEMS);
     expect(parsed.truncated).toBe(true);
@@ -122,7 +164,9 @@ describe("parseQuickOrder — lines and cells", () => {
 
 describe("helpers", () => {
   test("text from `?kodovi=`", () => {
-    expect(quickOrderTextFromCodes(["1K0615301AA", " ", "5Q0698151"])).toBe("1K0615301AA\n5Q0698151");
+    expect(quickOrderTextFromCodes(["1K0615301AA", " ", "5Q0698151"])).toBe(
+      "1K0615301AA\n5Q0698151",
+    );
   });
 
   test("decodes UTF-8 with BOM and falls back to Windows-1250", () => {

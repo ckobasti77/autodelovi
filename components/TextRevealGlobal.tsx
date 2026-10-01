@@ -3,22 +3,36 @@
 /**
  * Site-wide text reveal. Mounted once in the root layout; renders nothing.
  *
- * - Finds every element matching `hiddenSelector` (the same selector the inline stylesheet
- *   hides), marks it pending and observes it with one IntersectionObserver whose root is
- *   shrunk from the bottom by `enterRatio`.
- * - On entry: short copy is split into words that arrive in random order (opacity, blur,
- *   lift); long copy (> maxWords) and text sitting directly in flex/grid boxes fade as a
- *   block. The DOM is restored as soon as the animation ends.
- * - A MutationObserver picks up streamed and client-navigated content.
+ * - After hydration, in an idle callback, finds every element matching `hiddenSelector` (the
+ *   selector the boot stylesheet hides), marks it pending and observes it with one
+ *   IntersectionObserver whose root is shrunk from the bottom by `enterRatio`.
+ * - On entry: short copy is split into words (`splitWords`), each span gets its shuffled index
+ *   `--i` and the word count `--n`, and the state flips to `running` — the CSS keyframes in
+ *   lib/textRevealCss.ts animate them (no per-frame JS, PERF-05). Long copy (> maxWords) and
+ *   text sitting directly in flex/grid boxes fade as a block. The DOM is restored as soon as
+ *   the animation has ended.
+ * - Once every element carries an explicit state, `tr-hide` is removed from <html>: the
+ *   `:has()`-based boot rule stops being evaluated and only `[data-reveal-state="pending"]`
+ *   hides. A MutationObserver marks streamed and client-navigated copy pending before it is
+ *   painted (MutationObserver callbacks run before the next frame).
  * - Never touches an element before React has hydrated it (streamed Suspense boundaries
  *   hydrate after the root): such elements wait, and proceed after HYDRATION_WAIT_MS at the
  *   latest (e.g. a boundary whose JS failed) so nothing stays hidden.
+ * - Failsafe: if the boot script's timer fired before this component mounted, the copy is
+ *   already visible — nothing is hidden or animated again in this document (PERF-06).
  * - Reduced motion: nothing is hidden (CSS) and everything is marked done immediately.
  *
  * Rules: .claude/rules/architecture.md → „Text Reveal“.
  */
-import { gsap, useGSAP } from "@/lib/gsap/client";
-import { countWords, hasFlexOrGridText, restoreWords, splitWords } from "@/lib/textReveal";
+import { useEffect } from "react";
+
+import {
+  countWords,
+  hasFlexOrGridText,
+  restoreWords,
+  shuffledOrder,
+  splitWords,
+} from "@/lib/textReveal";
 import { hiddenSelector, TEXT_REVEAL, type RevealState } from "@/constants/textRevealConfig";
 import { MEDIA } from "@/constants/motion";
 
@@ -32,6 +46,8 @@ const { attrs, classes, word, block, maxWords, enterRatio } = TEXT_REVEAL;
 
 /** Upper bound for waiting on hydration of an element before revealing it anyway. */
 const HYDRATION_WAIT_MS = 4000;
+/** Slack after the last keyframe before the DOM is restored. */
+const END_SLACK_MS = 60;
 
 function getState(el: Element): RevealState | null {
   return el.getAttribute(attrs.state) as RevealState | null;
@@ -60,9 +76,9 @@ function queryHidden(root: ParentNode): Element[] {
   }
 }
 
-function whenIdle(callback: () => void): () => void {
+function whenIdle(callback: () => void, timeout: number): () => void {
   if (typeof window.requestIdleCallback === "function") {
-    const id = window.requestIdleCallback(callback, { timeout: 600 });
+    const id = window.requestIdleCallback(callback, { timeout });
     return () => window.cancelIdleCallback(id);
   }
   const id = window.setTimeout(callback, 120);
@@ -70,13 +86,18 @@ function whenIdle(callback: () => void): () => void {
 }
 
 export function TextRevealGlobal(): null {
-  useGSAP((_context, contextSafe) => {
+  useEffect(() => {
     const html = document.documentElement;
     window.clearTimeout(window.__trFailsafe);
-    if (!html.classList.contains(classes.js) || !contextSafe) return;
+    if (!html.classList.contains(classes.js)) return;
+    // The failsafe already revealed everything: never hide copy that is on screen again.
+    if (html.classList.contains(classes.failsafe)) {
+      html.classList.remove(classes.boot);
+      return;
+    }
 
     const reducedQuery = window.matchMedia(MEDIA.reducedMotion);
-    const running = new Set<Element>();
+    const running = new Map<Element, number>();
     const pending = new Set<Element>();
     const waiting = new Map<Element, number>();
     let io: IntersectionObserver | null = null;
@@ -85,15 +106,26 @@ export function TextRevealGlobal(): null {
     let waitTimer = 0;
     let sweepTimer = 0;
     let disposed = false;
-    let cancelMutationIdle: () => void = () => {};
+
+    /** True while the `:has()` boot rule still hides unmarked server HTML. */
+    const bootRuleActive = () => html.classList.contains(classes.boot);
+    /** Drop the boot rule once nothing depends on it (all copy marked, page loaded). */
+    const releaseBootRule = () => {
+      if (disposed || !bootRuleActive()) return;
+      if (waiting.size > 0 || document.readyState !== "complete") return;
+      html.classList.remove(classes.boot);
+    };
 
     const finish = (el: Element) => {
+      const timer = running.get(el);
+      if (timer) window.clearTimeout(timer);
       running.delete(el);
       pending.delete(el);
+      el.removeAttribute(attrs.mode);
       setState(el, "done");
     };
 
-    const reveal = contextSafe((el: Element) => {
+    const reveal = (el: Element) => {
       if (disposed || !el.isConnected) return;
       const state = getState(el);
       if (state === "running" || state === "done") return;
@@ -105,47 +137,31 @@ export function TextRevealGlobal(): null {
         finish(el);
         return;
       }
-      running.add(el);
 
       if (words > maxWords || hasFlexOrGridText(el)) {
-        gsap.set(el, { opacity: 0, y: block.liftPx });
+        el.setAttribute(attrs.mode, "block");
         setState(el, "running");
-        gsap.to(el, {
-          opacity: 1,
-          y: 0,
-          duration: block.duration,
-          ease: block.ease,
-          clearProps: "opacity,transform",
-          onComplete: () => finish(el),
-        });
+        running.set(el, window.setTimeout(() => finish(el), block.durationMs + END_SLACK_MS));
         return;
       }
 
       const spans = splitWords(el);
-      const fontSize = parseFloat(window.getComputedStyle(el).fontSize) || 16;
-      gsap.set(spans, {
-        opacity: 0,
-        filter: `blur(${word.blurPx}px)`,
-        y: fontSize * word.liftEm,
-        willChange: "transform, opacity, filter",
+      const order = shuffledOrder(spans.length, el.textContent ?? "");
+      spans.forEach((span, index) => {
+        span.style.setProperty("--i", String(order[index] ?? 0));
+        span.style.setProperty("--n", String(spans.length));
       });
       setState(el, "running");
-      gsap.to(spans, {
-        opacity: 1,
-        filter: "blur(0px)",
-        y: 0,
-        duration: word.duration,
-        ease: word.ease,
-        stagger: {
-          each: Math.min(word.staggerEach, word.staggerBudget / spans.length),
-          from: "random",
-        },
-        onComplete: () => {
+      const step = Math.min(word.staggerEachMs, word.staggerBudgetMs / Math.max(spans.length, 1));
+      const total = word.durationMs + step * Math.max(spans.length - 1, 0) + END_SLACK_MS;
+      running.set(
+        el,
+        window.setTimeout(() => {
           restoreWords(el);
           finish(el);
-        },
-      });
-    });
+        }, total),
+      );
+    };
 
     /** Reveal without animation (focus moved into hidden copy, reduced motion switched on). */
     const revealNow = (el: Element) => {
@@ -196,10 +212,13 @@ export function TextRevealGlobal(): null {
           waiting.delete(el);
         } else if (isHydrated(el) || now - since > HYDRATION_WAIT_MS) {
           waiting.delete(el);
-          track(el);
+          // Without the boot rule this copy has been visible all along: do not hide it now.
+          if (bootRuleActive()) track(el);
+          else finish(el);
         }
       }
       if (waiting.size > 0) waitTimer = window.setTimeout(checkWaiting, 150);
+      else releaseBootRule();
       onScroll();
     };
 
@@ -226,6 +245,8 @@ export function TextRevealGlobal(): null {
       for (const el of Array.from(pending)) revealNow(el);
     };
 
+    const onLoad = () => releaseBootRule();
+
     const start = () => {
       if (disposed) return;
       io = new IntersectionObserver(
@@ -241,40 +262,37 @@ export function TextRevealGlobal(): null {
       );
       queryHidden(document.body).forEach(consider);
 
-      const added = new Set<Element>();
-      let idlePending = false;
+      // Synchronous on purpose: the callback runs before the next frame, so new copy is marked
+      // pending (hidden) before it is ever painted, without the document-wide boot rule.
       mo = new MutationObserver((mutations) => {
+        let added = false;
         for (const mutation of mutations) {
           mutation.addedNodes.forEach((node) => {
-            if (node instanceof Element) added.add(node);
+            if (node instanceof Element && node.isConnected) {
+              queryHidden(node).forEach(consider);
+              added = true;
+            }
           });
         }
-        if (added.size === 0 || idlePending) return;
-        idlePending = true;
-        cancelMutationIdle = whenIdle(() => {
-          idlePending = false;
-          for (const node of Array.from(added)) {
-            if (node.isConnected) queryHidden(node).forEach(consider);
-          }
-          added.clear();
-          onScroll();
-        });
+        if (added) onScroll();
       });
       mo.observe(document.body, { childList: true, subtree: true });
 
       window.addEventListener("scroll", onScroll, { passive: true });
       window.addEventListener("resize", onScroll, { passive: true });
+      window.addEventListener("load", onLoad);
       document.addEventListener("focusin", onFocusIn);
       reducedQuery.addEventListener("change", onReducedChange);
       onScroll();
+      releaseBootRule();
     };
 
-    const cancelStart = whenIdle(start);
+    // After hydration, off the critical path; the timeout bounds how long copy waits.
+    const cancelStart = whenIdle(start, 600);
 
     return () => {
       disposed = true;
       cancelStart();
-      cancelMutationIdle();
       io?.disconnect();
       mo?.disconnect();
       if (frame) window.cancelAnimationFrame(frame);
@@ -282,16 +300,17 @@ export function TextRevealGlobal(): null {
       if (sweepTimer) window.clearTimeout(sweepTimer);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
+      window.removeEventListener("load", onLoad);
       document.removeEventListener("focusin", onFocusIn);
       reducedQuery.removeEventListener("change", onReducedChange);
-      for (const el of Array.from(running)) {
+      for (const el of Array.from(running.keys())) {
         restoreWords(el);
         finish(el);
       }
       for (const el of Array.from(pending)) finish(el);
       for (const el of Array.from(waiting.keys())) finish(el);
     };
-  });
+  }, []);
 
   return null;
 }

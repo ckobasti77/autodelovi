@@ -7,7 +7,7 @@
  */
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "convex/react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Controller, useForm, useWatch } from "react-hook-form";
 import {
   InfoIcon,
@@ -35,7 +35,13 @@ import { useSelectedVehicle } from "@/lib/vehicle/store";
 import { inquirySchema, type InquiryValues } from "@/lib/validation/inquiry";
 import { Button } from "@/components/ui/Button";
 import { Checkbox } from "@/components/ui/Checkbox";
-import { Field } from "@/components/ui/Field";
+import {
+  Field,
+  FormNoScript,
+  readPrehydrationValues,
+  RequiredUnlessOptional,
+  useHydrated,
+} from "@/components/ui/Field";
 import { Input } from "@/components/ui/Input";
 import { Link } from "@/components/ui/Link";
 import { RadioGroup } from "@/components/ui/Radio";
@@ -64,6 +70,16 @@ export type InquiryConfig = {
   prefill: InquiryPrefill;
 };
 
+/** Text controls a visitor can type into before hydration → their DOM ids. */
+const TEXT_FIELD_IDS = {
+  vin: "iq-vin",
+  year: "iq-year",
+  message: "iq-message",
+  name: "iq-name",
+  phone: "iq-phone",
+  email: "iq-email",
+} as const;
+
 export function InquiryForm({ config }: { config: InquiryConfig }) {
   const submit = useMutation(api.inquiries.submit);
   const stored = useSelectedVehicle();
@@ -74,6 +90,10 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
   const [busy, setBusy] = useState(false);
   const [startedAt] = useState(formStartTime);
   const summary = useRef<HTMLDivElement>(null);
+  const hydrated = useHydrated();
+  // XB-01: read what was typed before hydration now, in the hydration render — register()'s
+  // ref writes the default values into the DOM at commit. Restored in the layout effect below.
+  const [typedBeforeHydration] = useState(() => readPrehydrationValues(TEXT_FIELD_IDS));
 
   const form = useForm<InquiryValues>({
     resolver: zodResolver(inquirySchema),
@@ -98,6 +118,16 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
   const brandSlug = useWatch({ control, name: "brandSlug" });
   const modelSlug = useWatch({ control, name: "modelSlug" });
   const channel = useWatch({ control, name: "channel" });
+
+  // Same commit as the refs, before paint: the visitor never sees the field empty.
+  useLayoutEffect(() => {
+    for (const [name, value] of Object.entries(typedBeforeHydration) as [
+      keyof typeof TEXT_FIELD_IDS,
+      string,
+    ][]) {
+      setValue(name, value, { shouldDirty: true });
+    }
+  }, [typedBeforeHydration, setValue]);
 
   // The visitor's stored vehicle prefills the selects once.
   const prefilled = useRef(false);
@@ -143,7 +173,7 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
   const onValid = async (v: InquiryValues) => {
     const pending = photos.some((p) => p.status === "uploading");
     if (pending) {
-      setServerError("Sačekajte da se fotografije otpreme.");
+      setServerError("Sačekajte da se fotografije učitaju.");
       return;
     }
     setBusy(true);
@@ -223,7 +253,10 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
     .filter((e): e is { k: string; message: string } => typeof e.message === "string");
 
   return (
+    // method="post": before hydration (or without JavaScript) a submit must never put the
+    // contact data into a GET URL; the submit button stays disabled until hydration (A11Y-04).
     <form
+      method="post"
       noValidate
       onSubmit={(event) => {
         void handleSubmit(onValid, focusSummary)(event);
@@ -231,246 +264,253 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
       className="relative flex flex-col gap-8"
       data-reveal="off"
     >
-      <Honeypot value={honeypot} onChange={setHoneypot} />
-      <div ref={summary} tabIndex={-1} className="outline-none">
-        {errorList.length || serverError ? (
-          <div role="alert" className="rounded-sm border border-danger bg-danger-subtle p-4">
-            <p className="flex items-center gap-2 type-body-s font-semibold text-danger">
-              <WarningCircleIcon size={18} aria-hidden="true" />
-              {serverError ?? "Proverite označena polja:"}
-            </p>
-            {errorList.length ? (
-              <ul className="mt-2 flex flex-col gap-1 pl-6.5 type-body-s">
-                {errorList.map((e) => (
-                  <li key={e.k}>
-                    <a
-                      href={`#iq-${e.k}`}
-                      className="text-ink-1 underline decoration-line-strong underline-offset-4"
-                    >
-                      {e.message}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
-          </div>
-        ) : null}
-      </div>
-
-      <fieldset className="flex flex-col gap-5">
-        <legend className="mb-4 type-h3 text-ink-1">Vozilo</legend>
-        <Field
-          id="iq-vin"
-          label="Broj šasije (VIN)"
-          optional
-          error={errors.vin?.message}
-          help={
-            decoded && decoded.validation.valid
-              ? [
-                  decoded.wmi.make ?? decoded.wmi.manufacturer,
-                  decoded.model ? decoded.model.model : null,
-                  decoded.modelYear ? `model ${decoded.modelYear}?` : null,
-                ]
-                  .filter(Boolean)
-                  .join(" · ")
-              : `${normalizeVin(vin ?? "").length} / 17 znakova · bez slova I, O i Q`
-          }
-        >
-          <Input
-            autoComplete="off"
-            spellCheck={false}
-            maxLength={20}
-            inputClassName="font-mono uppercase tracking-wider"
-            placeholder="WVWZZZ1KZ8W000001"
-            data-testid={TEST_IDS.inquiryVinInput}
-            {...register("vin")}
-          />
-        </Field>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <Field id="iq-brandSlug" label="Marka">
-            <Select
-              placeholder="Izaberite"
-              options={config.tree.map((b) => ({ value: b.brand.slug, label: b.brand.name }))}
-              {...register("brandSlug", {
-                onChange: () => {
-                  setValue("modelSlug", "");
-                  setValue("generationSlug", "");
-                },
-              })}
-            />
-          </Field>
-          <Field id="iq-modelSlug" label="Model">
-            <Select
-              placeholder={brand ? "Izaberite" : "Prvo marku"}
-              disabled={!brand}
-              options={(brand?.models ?? []).map((m) => ({
-                value: m.model.slug,
-                label: m.model.name,
-              }))}
-              {...register("modelSlug", { onChange: () => setValue("generationSlug", "") })}
-            />
-          </Field>
-          <Field id="iq-generationSlug" label="Generacija">
-            <Select
-              placeholder={model ? "Izaberite" : "Prvo model"}
-              disabled={!model}
-              options={(model?.generations ?? []).map((g) => ({
-                value: g.slug,
-                label: `${g.name} · ${g.yearFrom}–${g.yearTo ?? ""}`,
-              }))}
-              {...register("generationSlug")}
-            />
-          </Field>
-          <Field id="iq-year" label="Godište" optional error={errors.year?.message}>
-            <Input inputMode="numeric" maxLength={4} placeholder="2016" {...register("year")} />
-          </Field>
+      <RequiredUnlessOptional>
+        <Honeypot value={honeypot} onChange={setHoneypot} />
+        <div ref={summary} tabIndex={-1} className="outline-none">
+          {errorList.length || serverError ? (
+            <div role="alert" className="rounded-sm border border-danger bg-danger-subtle p-4">
+              <p className="flex items-center gap-2 type-body-s font-semibold text-danger">
+                <WarningCircleIcon size={18} aria-hidden="true" />
+                {serverError ?? "Proverite označena polja:"}
+              </p>
+              {errorList.length ? (
+                <ul className="mt-2 flex flex-col gap-1 pl-6.5 type-body-s">
+                  {errorList.map((e) => (
+                    <li key={e.k}>
+                      <a
+                        href={`#iq-${e.k}`}
+                        className="text-ink-1 underline decoration-line-strong underline-offset-4"
+                      >
+                        {e.message}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
+          ) : null}
         </div>
-      </fieldset>
 
-      <fieldset className="flex flex-col gap-5">
-        <legend className="mb-4 type-h3 text-ink-1">Šta vam treba?</legend>
-        {config.prefill.productName ? (
-          <p className="flex items-start gap-2 rounded-sm border border-line bg-surface-1 p-3 type-body-s text-ink-2">
-            <InfoIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0 text-ink-3" />
-            Pitanje o artiklu:{" "}
-            <strong className="font-semibold text-ink-1">{config.prefill.productName}</strong>
-          </p>
-        ) : null}
-        {config.prefill.requestedCodes.length ? (
-          <p className="type-body-s text-ink-2">
-            Brojevi:{" "}
-            <span className="type-code text-ink-1">{config.prefill.requestedCodes.join(", ")}</span>
-          </p>
-        ) : null}
-        <Field
-          id="iq-message"
-          label="Opis"
-          error={errors.message?.message}
-          help="Naziv dela, strana (levo/desno, napred/nazad), kvar ili broj sa starog dela."
-        >
-          <Textarea rows={5} maxLength={2000} {...register("message")} />
-        </Field>
-        <div className="flex flex-col gap-2">
-          <span className="type-caption text-ink-2">Kategorija (nije obavezno)</span>
-          <div className="flex flex-wrap items-center gap-2">
-            {categories.map((c) => (
-              <button
-                key={c.slug}
-                type="button"
-                onClick={() => setCategories((prev) => prev.filter((x) => x.slug !== c.slug))}
-                aria-label={`Ukloni kategoriju ${c.name}`}
-                className="inline-flex h-9 cursor-pointer items-center gap-1.5 rounded-xs border border-accent bg-accent-subtle px-3 type-body-s text-ink-1"
-              >
-                {c.name}
-                <XIcon size={14} aria-hidden="true" />
-              </button>
-            ))}
-            {categories.length < 5 ? (
-              <Select
-                aria-label="Dodaj kategoriju"
-                size="sm"
-                className="w-auto min-w-48"
-                placeholder="Dodaj kategoriju"
-                value=""
-                options={config.categories
-                  .filter((c) => !categories.some((x) => x.slug === c.slug))
-                  .map((c) => ({ value: c.slug, label: c.name }))}
-                onChange={(e) => {
-                  const hit = config.categories.find((c) => c.slug === e.target.value);
-                  if (hit) setCategories((prev) => [...prev, hit].slice(0, 5));
-                }}
-              />
-            ) : null}
-          </div>
-        </div>
-        <div className="flex flex-col gap-2">
-          <span className="type-caption text-ink-2">Fotografije (nije obavezno)</span>
-          <PhotoPicker photos={photos} onChange={setPhotos} />
-        </div>
-      </fieldset>
-
-      <fieldset className="flex flex-col gap-5">
-        <legend className="mb-4 type-h3 text-ink-1">Kontakt</legend>
-        <div className="grid gap-5 sm:grid-cols-3">
-          <Field id="iq-name" label="Ime" error={errors.name?.message}>
-            <Input autoComplete="name" {...register("name")} />
-          </Field>
-          <Field id="iq-phone" label="Telefon" error={errors.phone?.message}>
-            <Input
-              type="tel"
-              inputMode="tel"
-              autoComplete="tel"
-              placeholder="064 123 4567"
-              {...register("phone")}
-            />
-          </Field>
+        <fieldset className="flex flex-col gap-5">
+          <legend className="mb-4 type-h3 text-ink-1">Vozilo</legend>
           <Field
-            id="iq-email"
-            label="E-pošta"
-            optional={channel !== "email"}
-            error={errors.email?.message}
+            id="iq-vin"
+            label="Broj šasije — VIN"
+            optional
+            error={errors.vin?.message}
+            help={
+              decoded && decoded.validation.valid
+                ? [
+                    decoded.wmi.make ?? decoded.wmi.manufacturer,
+                    decoded.model ? decoded.model.model : null,
+                    decoded.modelYear ? `model ${decoded.modelYear}?` : null,
+                  ]
+                    .filter(Boolean)
+                    .join(" · ")
+                : `${normalizeVin(vin ?? "").length} / 17 znakova · bez slova I, O i Q`
+            }
           >
-            <Input type="email" inputMode="email" autoComplete="email" {...register("email")} />
-          </Field>
-        </div>
-        <Controller
-          control={control}
-          name="channel"
-          render={({ field }) => (
-            <RadioGroup
-              label="Kako da vam odgovorimo?"
-              value={field.value}
-              onValueChange={field.onChange}
-              className="[&_[role=radiogroup]]:flex-row [&_[role=radiogroup]]:flex-wrap [&_[role=radiogroup]]:gap-x-6"
-              options={(["phone", "viber", "whatsapp", "email"] as const).map((c) => ({
-                value: c,
-                label: PREFERRED_CHANNEL_LABEL[c],
-              }))}
+            <Input
+              autoComplete="off"
+              spellCheck={false}
+              maxLength={20}
+              inputClassName="font-mono uppercase tracking-wider"
+              placeholder="WVWZZZ1KZ8W000001"
+              data-testid={TEST_IDS.inquiryVinInput}
+              {...register("vin")}
             />
-          )}
-        />
-        <div id="iq-consent">
+          </Field>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <Field id="iq-brandSlug" label="Marka">
+              <Select
+                placeholder="Izaberite"
+                options={config.tree.map((b) => ({ value: b.brand.slug, label: b.brand.name }))}
+                {...register("brandSlug", {
+                  onChange: () => {
+                    setValue("modelSlug", "");
+                    setValue("generationSlug", "");
+                  },
+                })}
+              />
+            </Field>
+            <Field id="iq-modelSlug" label="Model">
+              <Select
+                placeholder={brand ? "Izaberite" : "Prvo izaberite marku"}
+                disabled={!brand}
+                options={(brand?.models ?? []).map((m) => ({
+                  value: m.model.slug,
+                  label: m.model.name,
+                }))}
+                {...register("modelSlug", { onChange: () => setValue("generationSlug", "") })}
+              />
+            </Field>
+            <Field id="iq-generationSlug" label="Generacija">
+              <Select
+                placeholder={model ? "Izaberite" : "Prvo izaberite model"}
+                disabled={!model}
+                options={(model?.generations ?? []).map((g) => ({
+                  value: g.slug,
+                  label: `${g.name} · ${g.yearFrom}–${g.yearTo ?? ""}`,
+                }))}
+                {...register("generationSlug")}
+              />
+            </Field>
+            <Field id="iq-year" label="Godište" optional error={errors.year?.message}>
+              <Input inputMode="numeric" maxLength={4} placeholder="2016" {...register("year")} />
+            </Field>
+          </div>
+        </fieldset>
+
+        <fieldset className="flex flex-col gap-5">
+          <legend className="mb-4 type-h3 text-ink-1">Šta vam treba?</legend>
+          {config.prefill.productName ? (
+            <p className="flex items-start gap-2 rounded-sm border border-line bg-surface-1 p-3 type-body-s text-ink-2">
+              <InfoIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0 text-ink-3" />
+              Pitanje o artiklu:{" "}
+              <strong className="font-semibold text-ink-1">{config.prefill.productName}</strong>
+            </p>
+          ) : null}
+          {config.prefill.requestedCodes.length ? (
+            <p className="type-body-s text-ink-2">
+              Brojevi:{" "}
+              <span className="type-code text-ink-1">
+                {config.prefill.requestedCodes.join(", ")}
+              </span>
+            </p>
+          ) : null}
+          <Field
+            id="iq-message"
+            label="Opis"
+            error={errors.message?.message}
+            help="Naziv dela, strana (levo/desno, napred/nazad), kvar ili broj sa starog dela."
+          >
+            <Textarea rows={5} maxLength={2000} {...register("message")} />
+          </Field>
+          <div className="flex flex-col gap-2">
+            <span className="type-caption text-ink-2">Kategorija (nije obavezno)</span>
+            <div className="flex flex-wrap items-center gap-2">
+              {categories.map((c) => (
+                <button
+                  key={c.slug}
+                  type="button"
+                  onClick={() => setCategories((prev) => prev.filter((x) => x.slug !== c.slug))}
+                  aria-label={`Ukloni kategoriju ${c.name}`}
+                  className="inline-flex h-9 cursor-pointer items-center gap-1.5 rounded-xs border border-accent bg-accent-subtle px-3 type-body-s text-ink-1"
+                >
+                  {c.name}
+                  <XIcon size={14} aria-hidden="true" />
+                </button>
+              ))}
+              {categories.length < 5 ? (
+                <Select
+                  aria-label="Dodaj kategoriju"
+                  className="w-auto min-w-56"
+                  placeholder="Dodaj kategoriju"
+                  value=""
+                  options={config.categories
+                    .filter((c) => !categories.some((x) => x.slug === c.slug))
+                    .map((c) => ({ value: c.slug, label: c.name }))}
+                  onChange={(e) => {
+                    const hit = config.categories.find((c) => c.slug === e.target.value);
+                    if (hit) setCategories((prev) => [...prev, hit].slice(0, 5));
+                  }}
+                />
+              ) : null}
+            </div>
+          </div>
+          <div className="flex flex-col gap-2">
+            <span className="type-caption text-ink-2">Fotografije (nije obavezno)</span>
+            <PhotoPicker photos={photos} onChange={setPhotos} />
+          </div>
+        </fieldset>
+
+        <fieldset className="flex flex-col gap-5">
+          <legend className="mb-4 type-h3 text-ink-1">Kontakt</legend>
+          <div className="grid gap-5 sm:grid-cols-3">
+            <Field id="iq-name" label="Ime" error={errors.name?.message}>
+              <Input autoComplete="name" {...register("name")} />
+            </Field>
+            <Field id="iq-phone" label="Telefon" error={errors.phone?.message}>
+              <Input
+                type="tel"
+                inputMode="tel"
+                autoComplete="tel"
+                placeholder="064 123 4567"
+                {...register("phone")}
+              />
+            </Field>
+            <Field
+              id="iq-email"
+              label="E-pošta"
+              optional={channel !== "email"}
+              error={errors.email?.message}
+            >
+              <Input type="email" inputMode="email" autoComplete="email" {...register("email")} />
+            </Field>
+          </div>
           <Controller
             control={control}
-            name="consent"
+            name="channel"
             render={({ field }) => (
-              <Checkbox
-                checked={field.value}
-                onCheckedChange={(c) => field.onChange(c === true)}
-                aria-invalid={errors.consent ? true : undefined}
-                label={
-                  <span>
-                    Slažem se da podatke iz upita koristite za odgovor, prema{" "}
-                    <Link href={ROUTES.privacy} variant="inline" target="_blank">
-                      politici privatnosti
-                    </Link>
-                    .
-                  </span>
-                }
+              <RadioGroup
+                label="Kako da vam odgovorimo?"
+                value={field.value}
+                onValueChange={field.onChange}
+                className="[&_[role=radiogroup]]:flex-row [&_[role=radiogroup]]:flex-wrap [&_[role=radiogroup]]:gap-x-6"
+                options={(["phone", "viber", "whatsapp", "email"] as const).map((c) => ({
+                  value: c,
+                  label: PREFERRED_CHANNEL_LABEL[c],
+                }))}
               />
             )}
           />
-          {errors.consent?.message ? (
-            <p className="type-caption text-danger">{errors.consent.message}</p>
-          ) : null}
-        </div>
-      </fieldset>
+          <div>
+            <Controller
+              control={control}
+              name="consent"
+              render={({ field }) => (
+                <Checkbox
+                  id="iq-consent"
+                  checked={field.value}
+                  onCheckedChange={(c) => field.onChange(c === true)}
+                  onBlur={field.onBlur}
+                  required
+                  error={errors.consent?.message}
+                  label={
+                    <span>
+                      Slažem se da podatke iz upita koristite za odgovor, prema{" "}
+                      <Link href={ROUTES.privacy} variant="inline" target="_blank">
+                        politici privatnosti
+                      </Link>
+                      .
+                    </span>
+                  }
+                />
+              )}
+            />
+          </div>
+        </fieldset>
 
-      <div className="flex flex-col items-start gap-3 border-t border-line pt-6">
-        <Button
-          type="submit"
-          variant="primary"
-          size="lg"
-          icon={<PaperPlaneTiltIcon size={20} />}
-          loading={busy}
-          data-testid={TEST_IDS.inquirySubmit}
-        >
-          Pošalji upit
-        </Button>
-        <p className="type-caption font-normal text-ink-3">
-          Odgovaramo u toku radnog dana, kanalom koji ste izabrali.
-        </p>
-      </div>
+        <div className="flex flex-col items-start gap-3 border-t border-line pt-6">
+          <Button
+            type="submit"
+            variant="primary"
+            size="lg"
+            icon={<PaperPlaneTiltIcon size={20} />}
+            loading={busy}
+            disabled={!hydrated}
+            data-testid={TEST_IDS.inquirySubmit}
+          >
+            Pošalji upit
+          </Button>
+          <FormNoScript>
+            Za slanje upita potreban je JavaScript. Uključite ga u pregledaču, pa osvežite stranicu.
+          </FormNoScript>
+          <p className="type-caption font-normal text-ink-3">
+            Odgovaramo u toku radnog dana, kanalom koji ste izabrali.
+          </p>
+        </div>
+      </RequiredUnlessOptional>
     </form>
   );
 }

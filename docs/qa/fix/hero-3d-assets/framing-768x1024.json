@@ -1,0 +1,69 @@
+{
+  "viewport": "768x1024",
+  "results": [
+    {
+      "label": "canvas",
+      "stage": {
+        "w": 768,
+        "h": 852
+      },
+      "car": {
+        "x": 50,
+        "y": 223,
+        "w": 683,
+        "h": 489,
+        "right": 732,
+        "bottom": 711
+      },
+      "pctStageHeight": 57.4,
+      "pctStageWidth": 88.9,
+      "gapCaptionToCar": 135,
+      "gapCarToHonesty": 141,
+      "centreOffsetX": 7,
+      "ticks": null,
+      "insideTicks": null,
+      "caption": {
+        "top": 0,
+        "bottom": 88,
+        "left": 31,
+        "right": 737
+      },
+      "honesty": null
+    },
+    {
+      "label": "canvas-exploded",
+      "stage": {
+        "w": 768,
+        "h": 852
+      },
+      "car": {
+        "x": 34,
+        "y": 206,
+        "w": 698,
+        "h": 507,
+        "right": 731,
+        "bottom": 712
+      },
+      "pctStageHeight": 59.5,
+      "pctStageWidth": 90.9,
+      "gapCaptionToCar": 139,
+      "gapCarToHonesty": 140,
+      "centreOffsetX": -1,
+      "ticks": null,
+      "insideTicks": null,
+      "caption": {
+        "top": 0,
+        "bottom": 67,
+        "left": 31,
+        "right": 737
+      },
+      "honesty": null
+    }
+  ],
+  "state": {
+    "tier": "mid",
+    "progress": 0,
+    "status": "ready"
+  },
+  "errors": []
+}

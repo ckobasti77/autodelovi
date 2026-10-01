@@ -6,6 +6,10 @@
  * When a line is only spaced groups (`03L 115 562`), the trailing integer may be a quantity
  * or the last group of the code; the parser returns both readings as candidates and the
  * server picks the one that matches a catalogue code. Pure — shared by Next and Convex.
+ *
+ * A quantity the shop cannot take (`0`, more than 999) is not glued onto the code: the item
+ * keeps the code, carries a clamped quantity and `requestedQuantity` with what was typed, so
+ * the screen can show the part as found with a quantity error (FLOW-22, D249).
  */
 import { isPlausibleOem, normalizeOem } from "./codes";
 
@@ -19,7 +23,10 @@ export type QuickOrderCandidate = {
   code: string;
   /** Normalised form used for matching (`1K0615301AA`). */
   normalized: string;
+  /** Always 1–999 (clamped when the typed quantity was out of range). */
   quantity: number;
+  /** The typed quantity when it was out of range (`0`, `1000`); absent when valid. */
+  requestedQuantity?: number;
 };
 
 export type QuickOrderItem = {
@@ -81,8 +88,28 @@ function toQuantity(raw: string | undefined): number | null {
   return Number.isInteger(n) && n >= 1 && n <= QUICK_ORDER_MAX_QTY ? n : null;
 }
 
-function firstQuantity(match: RegExpMatchArray, from: number): number | null {
-  for (let i = from; i < match.length; i++) {
+/** 0 → 1, 1000 → 999: the nearest quantity the shop accepts. */
+export function clampQuickOrderQuantity(n: number): number {
+  return Math.min(QUICK_ORDER_MAX_QTY, Math.max(1, Math.floor(n)));
+}
+
+/** The first numeric group of an explicit-quantity match, valid or not. */
+function firstNumber(match: RegExpMatchArray, from: number, to = match.length): number | null {
+  for (let i = from; i < to; i++) {
+    if (match[i] !== undefined) return Number.parseInt(match[i]!, 10);
+  }
+  return null;
+}
+
+/** A reading whose quantity was typed out of range: clamped, with the typed value kept. */
+function outOfRange(code: string, requested: number): QuickOrderCandidate | null {
+  const c = candidate(code, clampQuickOrderQuantity(requested));
+  return c ? { ...c, requestedQuantity: requested } : null;
+}
+
+/** `to` is exclusive: the leading form keeps the rest of the line in its last group. */
+function firstQuantity(match: RegExpMatchArray, from: number, to = match.length): number | null {
+  for (let i = from; i < to; i++) {
     const q = toQuantity(match[i]);
     if (q !== null) return q;
   }
@@ -107,7 +134,8 @@ function candidate(code: string, quantity: number): QuickOrderCandidate | null {
 function compact(list: (QuickOrderCandidate | null)[]): QuickOrderCandidate[] {
   const out: QuickOrderCandidate[] = [];
   for (const c of list) {
-    if (c && !out.some((o) => o.normalized === c.normalized && o.quantity === c.quantity)) out.push(c);
+    if (c && !out.some((o) => o.normalized === c.normalized && o.quantity === c.quantity))
+      out.push(c);
   }
   return out;
 }
@@ -123,20 +151,23 @@ function parseSegment(segment: string): QuickOrderCandidate[][] {
 
   const leading = text.match(LEADING_EXPLICIT);
   if (leading) {
-    const qty = firstQuantity(leading, 1);
+    const qty = firstQuantity(leading, 1, 4);
     const rest = leading[4] ?? "";
-    if (qty !== null) {
-      const c = compact([candidate(rest, qty)]);
-      if (c.length) return [c];
-    }
+    const typed = firstNumber(leading, 1, 4);
+    const c = compact([
+      qty !== null ? candidate(rest, qty) : typed !== null ? outOfRange(rest, typed) : null,
+    ]);
+    if (c.length) return [c];
   }
   const trailing = text.match(TRAILING_EXPLICIT);
   if (trailing) {
     const qty = firstQuantity(trailing, 2);
-    if (qty !== null) {
-      const c = compact([candidate(trailing[1] ?? "", qty)]);
-      if (c.length) return [c];
-    }
+    const typed = firstNumber(trailing, 2);
+    const code = trailing[1] ?? "";
+    const c = compact([
+      qty !== null ? candidate(code, qty) : typed !== null ? outOfRange(code, typed) : null,
+    ]);
+    if (c.length) return [c];
   }
 
   const tokens = text.split(/\s+/).filter(Boolean);
@@ -158,6 +189,14 @@ function parseSegment(segment: string): QuickOrderCandidate[][] {
       // more likely the last group of the code than a quantity.
       const codeFirst = (tokens.length > 2 && last.length === 3) || last.startsWith("0");
       const c = compact(codeFirst ? [whole, primary] : [primary, whole]);
+      if (c.length) return [c];
+    } else if (/^\d{1,5}$/.test(last)) {
+      // `5Q0615505R 0`, `5Q0615505R 1000`: either the last group of a code or a quantity out
+      // of range. The whole code is tried first; otherwise the code with a quantity error.
+      const c = compact([
+        candidate(text, 1),
+        outOfRange(tokens.slice(0, -1).join(" "), Number.parseInt(last, 10)),
+      ]);
       if (c.length) return [c];
     }
     const first = tokens[0]!;
@@ -181,7 +220,9 @@ function looksLikeDescription(cell: string): boolean {
 
 /** A strong code for secondary cells: ≥ 7 characters with at least two digits. */
 function isStrongCode(c: QuickOrderCandidate): boolean {
-  return c.normalized.length >= MIN_SPACE_SEPARATED_CODE && (c.normalized.match(/\d/g)?.length ?? 0) >= 2;
+  return (
+    c.normalized.length >= MIN_SPACE_SEPARATED_CODE && (c.normalized.match(/\d/g)?.length ?? 0) >= 2
+  );
 }
 
 /** Items of one line split into cells (`;`, `,`, tab, `|`) — CSV rows and comma lists. */
@@ -190,10 +231,16 @@ function parseCells(cells: string[]): QuickOrderCandidate[][] {
   for (const cell of cells) {
     const qtyMatch = cell.match(QTY_ONLY);
     if (qtyMatch) {
-      const qty = toQuantity(qtyMatch[1] ?? qtyMatch[2]);
+      const typedRaw = qtyMatch[1] ?? qtyMatch[2];
+      const qty = toQuantity(typedRaw);
       const target = items[items.length - 1];
-      if (qty !== null && target && !target.explicitQty) {
-        target.candidates = target.candidates.map((c) => ({ ...c, quantity: qty }));
+      if (target && !target.explicitQty && typedRaw !== undefined) {
+        const typed = Number.parseInt(typedRaw, 10);
+        target.candidates = target.candidates.map((c) =>
+          qty !== null
+            ? { ...c, quantity: qty }
+            : { ...c, quantity: clampQuickOrderQuantity(typed), requestedQuantity: typed },
+        );
         target.explicitQty = true;
       }
       continue;
@@ -208,7 +255,10 @@ function parseCells(cells: string[]): QuickOrderCandidate[][] {
 }
 
 function unquote(cell: string): string {
-  return cell.trim().replace(/^["'„“]+|["'“”]+$/g, "").trim();
+  return cell
+    .trim()
+    .replace(/^["'„“]+|["'“”]+$/g, "")
+    .trim();
 }
 
 export function parseQuickOrder(text: string): QuickOrderParse {

@@ -37,6 +37,10 @@ export default defineConfig({
           name: "convex",
           include: ["convex/**/*.test.ts"],
           environment: "edge-runtime",
+          // A convex-test world (schema + seed + components) takes 1–7 s to build on a loaded
+          // machine; the default 5 s timeout turned load into red gates (QA BE-05, D220).
+          testTimeout: 30_000,
+          hookTimeout: 30_000,
           // convex/testing.ts helpers refuse to run unless the deployment opted in.
           env: { E2E_TEST_HELPERS: "1" },
           server: {

@@ -1,0 +1,158 @@
+[
+  {
+    "id": "PERF-01",
+    "status": "FIXED",
+    "summary": "Shell hydration cost cut at the root: header search dialog (HeaderSearchPanel) and mobile menu sheet (MobileNavPanel) are next/dynamic chunks loaded on intent (pointerenter/focus/click) and kept mounted after first open; consent banner not shipped to returning visitors (ConsentReopen), its switches lazy on first visits; TextRevealGlobal no longer uses GSAP, starts in an idle callback after hydration and stops the :has() boot rule once everything is marked; Convex socket deferred for anonymous visitors. Item 1 (one live island per ProductGrid) is PERF-17 of catalog-product-ui. Lighthouse TBT to be re-measured by the Performance phase (no production build allowed here).",
+    "files": [
+      "components/shell/HeaderSearch.tsx",
+      "components/shell/HeaderSearchPanel.tsx",
+      "components/shell/MobileNav.tsx",
+      "components/shell/MobileNavPanel.tsx",
+      "components/consent/ConsentRoot.tsx",
+      "components/consent/ConsentReopen.tsx",
+      "components/consent/ConsentDetails.tsx",
+      "components/consent/ConsentBanner.tsx",
+      "components/TextRevealGlobal.tsx",
+      "components/providers/ConvexClientProvider.tsx",
+      "components/providers/deferredWebSocket.ts"
+    ],
+    "verification": "AUDIT_BASE=http://localhost:3001 node scripts/qa/fix/shell-perf-verify.mjs overlays → docs/qa/fix/shell-perf/verify-overlays-reveal.json: lazyChunksLoadedOnIntent 2 (dialog/sheet chunks fetched only after the first click), searchFocused true, focusAfterSearchClose 'Pretraga delova', menuExpandedWhileOpen 'true', errors []; consent section: returning.bannerInDomBeforeReopen 0, chunksOnReopen 2."
+  },
+  {
+    "id": "VIS-03",
+    "status": "FIXED",
+    "summary": "iconLink no longer carries inline-flex; every icon link adds its own display utility (hidden sm:inline-flex …). Below 480 px the header holds only mark, search, cart and menu; phone, Viber, account and quick order live in MobileNav. Also covers the header part of A11Y-10 (320 px).",
+    "files": ["components/shell/Header.tsx"],
+    "verification": "node scripts/qa/fix/shell-perf-verify.mjs header (phone+Viber links injected with Header.tsx's exact classes; real approved-mechanic session) → docs/qa/fix/shell-perf/verify-header.json: guest 320/360/390 docScrollW = viewport, menu 260-304 / 300-344 / 330-374, visible 'SKLOP — početna, Pretraga delova, Korpa, Otvori meni'; mechanic 320/360/390 same; 480 px guest and mechanic (7 controls) menu right 461/464 < 480. Screenshots header-320/360/390/1440.webp, header-360-mechanic.webp."
+  },
+  {
+    "id": "PERF-03",
+    "status": "FIXED",
+    "summary": "Archivo Condensed 600 (prices, below the first mobile viewport on most templates) is no longer preloaded; preloads are now Archivo Expanded 700 + Public Sans latin/latin-ext (both subsets carry Serbian body text). The card-image preload part is an assist by catalog-product-ui (ProductGrid) and seo-content-email (/ponuda).",
+    "files": ["lib/fonts.ts"],
+    "verification": "lib/fonts.ts condensed: preload false (grep 'preload' lib/fonts.ts → lines 29, 37, 51); LCP to be re-measured by the Performance phase with tests/lighthouse/run.mjs."
+  },
+  {
+    "id": "PERF-04",
+    "status": "FIXED",
+    "summary": "Shell-owned parts of the umbrella: GSAP plugins split (PERF-10), tooltip provider out of the root (PERF-09), toast viewport/consent/header overlays lazy (PERF-11, PERF-01), single-weight icons (PERF-12), and the Convex WebSocket now opens after load + idle (or first interaction) for anonymous visitors through a deferred webSocketConstructor; signed-in visitors connect at once. The zustand chunk (lib/cart, lib/vehicle, heroStore) belongs to other packages; the JS-bytes gate in tests/lighthouse is gates-phase work.",
+    "files": [
+      "components/providers/ConvexClientProvider.tsx",
+      "components/providers/deferredWebSocket.ts",
+      "components/providers/Providers.tsx",
+      "lib/gsap/client.ts",
+      "lib/gsap/scroll.ts"
+    ],
+    "verification": "shell-perf-verify.mjs consent → verify-consent-reveal.json convexSocket {wsOpenedAtMs 2228, loadAtMs 1350} (Convex socket after load); mechanic login + live viewer query still work (verify-header.json shows 'Brza porudžbina' for the mechanic). Byte totals to be re-measured with scripts/qa/audit/perf-bundle-*.mjs."
+  },
+  {
+    "id": "PERF-05",
+    "status": "FIXED",
+    "summary": "Word/block reveal moved to CSS keyframes (tr-word, tr-word-lite without blur on coarse pointers or < 768 px, tr-block) driven by --i/--n; TextRevealGlobal only splits, sets the variables, flips the state and restores on a timer (no GSAP, no per-frame JS). The :has() hiding rule now applies only under html.tr-hide during boot and is dropped once every element has a state; runtime hiding is a plain [data-reveal-state=pending] match.",
+    "files": [
+      "components/TextRevealGlobal.tsx",
+      "lib/textRevealCss.ts",
+      "constants/textRevealConfig.ts",
+      "tests/unit/lib/textReveal.test.ts"
+    ],
+    "verification": "verify-consent-reveal.json reveal: wordAnimation 'tr-word-lite' at 390 px and 'tr-word' at 1440 px (CSS animation in flight), htmlClasses ['tr-js'] after load (tr-hide released), stuck [] / pending 0 / words 0 on /, /delovi/kocioni-diskovi (390, 1440, reduced motion), no JS; verify-styleguide.json reveal {stuck [], pending 0, words 0}; npx vitest run tests/unit/lib/textReveal.test.ts tests/unit/components/RevealText.test.tsx tests/unit/analytics → 4 files, 51 tests passed."
+  },
+  {
+    "id": "PERF-06",
+    "status": "FIXED",
+    "summary": "If tr-failsafe fired before TextRevealGlobal mounted, the component never hides or re-animates anything in that document (it returns before marking any element). Start is cheaper (no GSAP import, idle start) so the observer usually beats the failsafe; hiding only below-the-fold copy is impossible in the head boot script (no layout yet) — recorded in D235.",
+    "files": ["components/TextRevealGlobal.tsx", "lib/textRevealCss.ts"],
+    "verification": "shell-perf-verify.mjs reveal, failsafe case (tr-failsafe added right after tr-js via addInitScript) → {failsafeClass true, markedAfterFailsafe 0, stuck [], pending 0, words 0}."
+  },
+  {
+    "id": "PERF-09",
+    "status": "FIXED",
+    "summary": "Tooltip renders its own radix Tooltip.Provider (400 ms delay default); the root Providers no longer mounts one, so Tooltip/Popper code loads only where a Tooltip is rendered.",
+    "files": ["components/ui/Tooltip.tsx", "components/providers/Providers.tsx"],
+    "verification": "node scripts/qa/fix/shell-perf-styleguide.mjs → verify-styleguide.json {tooltipShown true, errors []} (hover on 'Šta znači Original VAG?' shows role=tooltip)."
+  },
+  {
+    "id": "PERF-10",
+    "status": "FIXED",
+    "summary": "lib/gsap/client.ts is core + useGSAP + sk.* eases via gsap.registerEase(cubicBezier) (lib/gsap/cubicBezier.ts, no CustomEase); lib/gsap/scroll.ts registers ScrollTrigger + ScrollToPlugin and attaches ScrollTrigger to requestScrollTriggerRefresh (no-op until loaded). Transitional re-export of ScrollTrigger from client.ts remains until HeroStage switches its import (cross-package request) — until then ScrollTrigger still loads everywhere.",
+    "files": ["lib/gsap/client.ts", "lib/gsap/scroll.ts", "lib/gsap/cubicBezier.ts", "lib/gsap/refresh.ts", "docs/ARCHITECTURE.md"],
+    "verification": "npx tsc --noEmit → 0 errors; home '/' reveal + hero run without console errors (verify-consent-reveal.json reveal[0].errors []); ARCHITECTURE §G5 and the GSAP file list updated; D236."
+  },
+  {
+    "id": "PERF-11",
+    "status": "FIXED",
+    "summary": "toast() keeps its API and queues; the radix viewport moved to components/providers/ToastViewport.tsx and loads with the first toast; ConsentRoot renders ConsentReopen when a consent record exists (banner loaded on openConsentSettings()); header sheets lazy (PERF-01).",
+    "files": ["components/ui/Toast.tsx", "components/providers/ToastViewport.tsx", "components/consent/ConsentRoot.tsx", "components/consent/ConsentReopen.tsx"],
+    "verification": "verify-styleguide.json {toastViewportBefore 0, toastShown true}; verify-consent-reveal.json consent.returning {bannerInDomBeforeReopen 0, chunksOnReopen 2, focus 'Sačuvaj izbor', switches 3}."
+  },
+  {
+    "id": "PERF-12",
+    "status": "FIXED",
+    "summary": "scripts/brand/build-phosphor.mjs generates lib/icons/phosphor/ (one module per imported icon, weights regular/bold/fill, side-effect-free package.json, barrel with a star fallback to the package for icons added later); next.config.ts turbopack.resolveAlias maps @phosphor-icons/react/dist/ssr to it, so no importer changes and types stay the package's.",
+    "files": ["scripts/brand/build-phosphor.mjs", "lib/icons/phosphor/**", "next.config.ts"],
+    "verification": "node scripts/qa/fix/shell-perf-icons-probe.mjs /delovi → before {icons 16, duotone 18}, after {icons 15, generated 17, duotone 0}; SSR + client render checked in header-1440.webp / header-360-mechanic.webp; node scripts/brand/build-phosphor.mjs --check → 'up to date'; tsc 0 errors."
+  },
+  {
+    "id": "A11Y-05",
+    "status": "FIXED",
+    "summary": "Consent banner registers its height through lib/dom/bottomInset (scroll-padding + focusin scroll), decisions side by side on phones, „Podešavanja“ became a link-style button, Escape collapses it to title + decisions.",
+    "files": ["components/consent/ConsentBanner.tsx"],
+    "verification": "verify-consent-reveal.json consent: height 273 (was 314), decisionsSideBySide true, scrollPaddingBottom '289px', tabStopsCoveredOf30 0 (was 21 at 390), afterEscape {collapsed true, height 160}; screenshots consent-390.webp, consent-390-collapsed.webp."
+  },
+  {
+    "id": "A11Y-06",
+    "status": "FIXED",
+    "summary": "Opening „Podešavanja“ moves focus to the first enabled switch (ConsentDetails focusFirst) instead of <body>.",
+    "files": ["components/consent/ConsentBanner.tsx", "components/consent/ConsentDetails.tsx"],
+    "verification": "verify-consent-reveal.json consent.focusAfterSettings 'switch:consent-analytics:'."
+  },
+  {
+    "id": "SEO-05",
+    "status": "FIXED",
+    "summary": "„Kontakt“ link added to the footer Kupovina column and „Svi podaci za kontakt“ to the mobile menu contact block.",
+    "files": ["components/shell/Footer.tsx", "components/shell/MobileNavPanel.tsx"],
+    "verification": "verify-overlays-reveal.json overlays {footerKontaktLinks 1, menuKontaktHref '/kontakt'}."
+  },
+  {
+    "id": "FLOW-12",
+    "status": "FIXED",
+    "summary": "Mobile scroll-up contact bar (Pozovite · Viber · Upit): decided in ShopChrome (scroll direction past 480 px, < 1024 px, not on /deo/*, /korpa, /porudzbina*, /majstor*, not while the consent banner is open), its chunk (StickyContactBar, GSAP enter/exit, bottom inset, inert when hidden) loads on the first show; channels come from settings and the bar stays absent without phone/Viber.",
+    "files": ["components/shell/ShopChrome.tsx", "components/shell/StickyContactBar.tsx", "app/(shop)/layout.tsx"],
+    "verification": "tsc 0 errors, eslint clean. The dev deployment has no phone/Viber in settings (HUMAN-TODO P0), so the bar correctly never mounts there; its visible state could not be screenshotted without changing shared settings — the gates/perf phase should re-check once settings hold a phone number."
+  },
+  {
+    "id": "SEO-11",
+    "status": "FIXED",
+    "summary": "data-nosnippet on the consent banner root.",
+    "files": ["components/consent/ConsentBanner.tsx"],
+    "verification": "verify-consent-reveal.json consent.nosnippet true."
+  },
+  {
+    "id": "SEO-13",
+    "status": "FIXED",
+    "summary": "next.config.ts headers(): X-Robots-Tag 'noindex, nofollow' for /admin/:path* (matches /admin too).",
+    "files": ["next.config.ts"],
+    "verification": "verify-consent-headers.json headers.adminXRobots 'noindex, nofollow' (GET /admin/prijava)."
+  },
+  {
+    "id": "PERF-19",
+    "status": "FIXED",
+    "summary": "/models/:path* and /images/:path* send 'public, max-age=86400, stale-while-revalidate=604800' (names are not content-hashed: public/models/car.manifest.json still references /models/car.glb, so immutable would be unsafe).",
+    "files": ["next.config.ts"],
+    "verification": "verify-consent-headers.json headers {modelsCache, imagesCache: 'public, max-age=86400, stale-while-revalidate=604800'}."
+  },
+  {
+    "id": "VIS-35",
+    "status": "FIXED",
+    "summary": "globals.css print block forces a white html/body background.",
+    "files": ["app/globals.css"],
+    "verification": "verify-consent-headers.json print {html 'rgb(255, 255, 255)', body 'rgb(255, 255, 255)'} under emulateMedia print."
+  },
+  {
+    "id": "A11Y-10",
+    "status": "FIXED",
+    "summary": "Header part only (320 px): no overflow, menu fully visible. The card part belongs to catalog-product-ui.",
+    "files": ["components/shell/Header.tsx"],
+    "verification": "verify-header.json width 320: docScrollW 320, headerScrollW 320, menu 260-304 (guest and mechanic, phone+Viber injected)."
+  }
+]

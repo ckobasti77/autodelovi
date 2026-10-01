@@ -1,3 +1,4 @@
+import { contactLinkList } from "@/config/site";
 import { companyFromSettings, contactFromSettings } from "@/lib/settings/public";
 import { getSettingsPublic } from "@/lib/server/catalog-cache";
 import { SiteShell } from "@/components/shell/SiteShell";
@@ -14,13 +15,19 @@ export default async function ShopLayout({ children }: LayoutProps<"/">) {
   const settings = await getSettingsPublic();
   const courier = settings.deliveryMethods.find((d) => d.code === "courier");
   const pickup = settings.deliveryMethods.some((d) => d.code === "pickup");
+  const contact = contactFromSettings(settings);
+  const contactChannels = contactLinkList(contact).flatMap((link) =>
+    link.channel === "phone" || link.channel === "viber"
+      ? [{ channel: link.channel, href: link.href }]
+      : [],
+  );
   return (
     <>
       {/* Early in the DOM so keyboard users reach the consent choice first; fixed, so no shift. */}
       <ConsentRoot />
       <SiteShell
         vehicleSlot={<HeaderVehicleChip />}
-        contact={contactFromSettings(settings)}
+        contact={contact}
         company={companyFromSettings(settings)}
       >
         {children}
@@ -32,6 +39,7 @@ export default async function ShopLayout({ children }: LayoutProps<"/">) {
             pickup,
             vatRateBp: settings.commerce.vatRateBp,
           }}
+          contactChannels={contactChannels}
         />
       </SiteShell>
     </>

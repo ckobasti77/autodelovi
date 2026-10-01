@@ -87,12 +87,15 @@ export function nextOrderStatuses(
   });
 }
 
-/** Stock leaves the shelf on the first entry into `potvrdjena` (setting `confirmed`). */
-export function commitsStockOn(
-  to: OrderStatus,
-  stockDecrementOn: "confirmed" | "created",
-): boolean {
-  return stockDecrementOn === "confirmed" && to === "potvrdjena";
+/**
+ * Stock leaves the shelf on the first entry into `potvrdjena` in either stock mode: with
+ * `confirmed` that is the commit point; with `created` the order normally holds its stock
+ * already, and confirming commits only an order that holds nothing yet (created before the
+ * owner switched modes, QA BE-06). Callers check `order.stockCommitted`, so nothing is taken
+ * twice.
+ */
+export function commitsStockOn(to: OrderStatus): boolean {
+  return to === "potvrdjena";
 }
 
 /** Items (quantities, prices) may be edited only while the order is new. */

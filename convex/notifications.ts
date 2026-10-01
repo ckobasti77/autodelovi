@@ -15,7 +15,7 @@ import {
   userMutation,
   userQuery,
 } from "./lib/functions";
-import type { MutationCtx } from "./_generated/server";
+import { internalMutation, type MutationCtx } from "./_generated/server";
 import type { Id } from "./_generated/dataModel";
 
 const notificationV = v.object({
@@ -191,6 +191,29 @@ export const setPreferencesFor = ownerMutation({
       entityId: userId,
       summary: `Izmenjena obaveštenja za ${user.email ?? user.name ?? "zaposlenog"}`,
     });
+    return null;
+  },
+});
+
+/** Owner-only in-app alert (abuse thresholds, `lib/rateLimits.countTowardsAlert`). */
+export const ownerAlert = internalMutation({
+  args: { title: v.string(), body: v.string(), href: v.string() },
+  returns: v.null(),
+  handler: async (ctx, args) => {
+    const owners = await ctx.db
+      .query("users")
+      .withIndex("by_role", (q) => q.eq("role", "owner"))
+      .take(20);
+    for (const owner of owners) {
+      await ctx.db.insert("notifications", {
+        userId: owner._id,
+        kind: "security",
+        title: args.title,
+        body: args.body,
+        href: args.href,
+        read: false,
+      });
+    }
     return null;
   },
 });

@@ -815,6 +815,11 @@
     size: A4;
     margin: 14mm 12mm;
   }
+  /* The whole sheet is paper: no grey page background below a short document (VIS-35). */
+  html,
+  body {
+    background: #ffffff !important;
+  }
   .print-sheet + .print-sheet {
     break-before: page;
   }

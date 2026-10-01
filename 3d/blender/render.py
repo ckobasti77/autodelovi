@@ -24,6 +24,7 @@ from mathutils import Vector  # noqa: E402
 from lib import scene  # noqa: E402
 from lib.layout import bbox, corners, node_points, solve_camera  # noqa: E402
 from lib.views import (  # noqa: E402
+    CAMERAS,
     Exploder,
     add_sun,
     apply_paint,
@@ -221,7 +222,7 @@ def main() -> None:
             elif view == "exploded_m":
                 set_output("", 1080, 1350, False)
                 pos, tgt, _ = solve("exploded", "mobile", pts)
-                make_camera("qa_cam", pos, tgt, 38)
+                make_camera("qa_cam", pos, tgt, CAMERAS["exploded"]["mobile"]["fov"])
             elif view == "rear34":
                 set_output("", w, int(w * 9 / 16), False)
                 pos, tgt, _ = solve_camera(pts, 216, 14, 28, 16 / 9, width=0.80, cx=0.5, cy=0.5)

@@ -89,7 +89,7 @@ export function Stepper({
                   href={href}
                   className="type-caption font-normal text-ink-2 underline decoration-line-strong underline-offset-4 transition-control hover:text-ink-1 hover:decoration-accent"
                 >
-                  Izmeni<span className="sr-only">: {step.label}</span>
+                  Izmeni<span className="sr-only"> korak {step.label}</span>
                 </NextLink>
               ) : done && onSelect ? (
                 <button
@@ -97,7 +97,7 @@ export function Stepper({
                   onClick={() => onSelect(index)}
                   className="cursor-pointer type-caption font-normal text-ink-2 underline decoration-line-strong underline-offset-4 transition-control hover:text-ink-1 hover:decoration-accent"
                 >
-                  Izmeni<span className="sr-only">: {step.label}</span>
+                  Izmeni<span className="sr-only"> korak {step.label}</span>
                 </button>
               ) : null}
             </li>

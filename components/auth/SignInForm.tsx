@@ -2,6 +2,9 @@
 
 /**
  * E-mail + password sign-in (Convex Auth). Registration and reset live in AuthForms.tsx.
+ * Sign-in only works through JavaScript: `method="post"` keeps the password out of the URL if
+ * the browser ever submits natively, and the button stays disabled until hydration (A11Y-04).
+ * The inputs are uncontrolled (FormData), so text typed before hydration survives.
  */
 import { useAuthActions } from "@convex-dev/auth/react";
 import { useRouter } from "next/navigation";
@@ -9,7 +12,8 @@ import { useState, type FormEvent } from "react";
 
 import { TEST_IDS } from "@/constants/testIds";
 import { Button } from "@/components/ui/Button";
-import { Field } from "@/components/ui/Field";
+import { Field, FormNoScript, useHydrated } from "@/components/ui/Field";
+import { TERMS } from "@/lib/i18n/sr/shop";
 import { Input } from "@/components/ui/Input";
 
 export function SignInForm({ next }: { next: string }) {
@@ -17,6 +21,7 @@ export function SignInForm({ next }: { next: string }) {
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
+  const hydrated = useHydrated();
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -29,14 +34,20 @@ export function SignInForm({ next }: { next: string }) {
       router.replace(next);
       router.refresh();
     } catch {
-      setError("Pogrešan e-mail ili lozinka. Proverite podatke i pokušajte ponovo.");
+      setError("Pogrešna adresa e-pošte ili lozinka. Proverite podatke i pokušajte ponovo.");
       setPending(false);
     }
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="flex flex-col gap-5" data-reveal="off">
-      <Field label="E-pošta" required>
+    <form
+      method="post"
+      onSubmit={onSubmit}
+      noValidate
+      className="flex flex-col gap-5"
+      data-reveal="off"
+    >
+      <Field label={TERMS.email} required>
         <Input
           name="email"
           type="email"
@@ -60,9 +71,18 @@ export function SignInForm({ next }: { next: string }) {
           {error}
         </p>
       ) : null}
-      <Button type="submit" loading={pending} fullWidth data-testid={TEST_IDS.authSubmit}>
+      <Button
+        type="submit"
+        loading={pending}
+        disabled={!hydrated}
+        fullWidth
+        data-testid={TEST_IDS.authSubmit}
+      >
         Prijavi se
       </Button>
+      <FormNoScript>
+        Za prijavu je potreban JavaScript. Uključite ga u pregledaču, pa osvežite stranicu.
+      </FormNoScript>
     </form>
   );
 }

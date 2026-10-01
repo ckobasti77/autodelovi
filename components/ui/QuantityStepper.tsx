@@ -20,6 +20,9 @@ export type QuantityStepperProps = {
 /**
  * Quantity stepper (§9.2): [−] [ 2 ] [+], 44 px buttons, value changes instantly; ↑/↓ on the
  * input; long-press repeats every 120 ms after 400 ms.
+ *
+ * `sm` is a density for desktop tables only: 36 px from `lg` with a fine pointer, and the
+ * system's 44 px touch minimum everywhere else — phones, tablets, touch laptops (VIS-10, D247).
  */
 export function QuantityStepper({
   value,
@@ -70,10 +73,10 @@ export function QuantityStepper({
     }
   };
 
-  const h = size === "md" ? "h-11" : "h-9";
+  const h = size === "md" ? "h-11" : "h-11 lg:pointer-fine:h-9";
   const buttonClasses = cn(
     "inline-flex shrink-0 cursor-pointer items-center justify-center text-ink-1 transition-control hover:bg-surface-3 disabled:cursor-not-allowed disabled:text-ink-4 disabled:hover:bg-transparent",
-    size === "md" ? "size-11" : "size-9",
+    size === "md" ? "size-11" : "size-11 lg:pointer-fine:size-9",
   );
 
   return (

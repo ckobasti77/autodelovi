@@ -3,7 +3,7 @@
 // Posters: background #0D0F11 -> contact shadow (black, alpha x 0.45) -> opaque layer -> x-ray
 // shell layer, blended "over" in display space (sRGB, straight alpha) — the same blend three.js
 // performs for the transparent shell over the tone-mapped opaque pass (PLAN §8.2).
-// Outputs public/images/hero/car-{assembled,exploded}{,-1920,-1440,-1080,-m-1080,-m-828,-m-640}.{avif,webp}
+// Outputs public/images/hero/car-{assembled,exploded}{,-1920,-1440,-1080,-t-1536,-t-1080,-t-768,-m-1080,-m-828,-m-640}.{avif,webp}
 // Contact shadows: 3d/renders/posters/shadow-*.png (top-down, rendered with the vehicle rear at
 // the top) -> rotated 180 degrees (vehicle front up, vehicle left on the left), blurred 3 px,
 // alpha capped at 45 % -> public/models/car-shadow{,-exploded}.webp
@@ -58,19 +58,24 @@ async function poster(state, vp) {
     .png()
     .toBuffer();
   const name = `car-${state}`;
-  const variants =
-    vp === "desktop"
-      ? [
-          ["", width],
-          ["-1920", 1920],
-          ["-1440", 1440],
-          ["-1080", 1080],
-        ]
-      : [
-          ["-m-1080", 1080],
-          ["-m-828", 828],
-          ["-m-640", 640],
-        ];
+  const variants = {
+    desktop: [
+      ["", width],
+      ["-1920", 1920],
+      ["-1440", 1440],
+      ["-1080", 1080],
+    ],
+    tablet: [
+      ["-t-1536", 1536],
+      ["-t-1080", 1080],
+      ["-t-768", 768],
+    ],
+    mobile: [
+      ["-m-1080", 1080],
+      ["-m-828", 828],
+      ["-m-640", 640],
+    ],
+  }[vp];
   const written = [];
   for (const [suffix, w] of variants) {
     const img = () => sharp(base).resize({ width: w, withoutEnlargement: true });
@@ -94,6 +99,6 @@ async function contactShadow(state, file) {
 mkdirSync(HERO, { recursive: true });
 mkdirSync(MODELS, { recursive: true });
 for (const state of ["assembled", "exploded"])
-  for (const vp of ["desktop", "mobile"]) await poster(state, vp);
+  for (const vp of ["desktop", "tablet", "mobile"]) await poster(state, vp);
 await contactShadow("assembled", "car-shadow.webp");
 await contactShadow("exploded", "car-shadow-exploded.webp");

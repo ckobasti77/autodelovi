@@ -84,8 +84,8 @@ export const carManifestSchema = z.object({
     }),
   ),
   cameras: z.object({
-    hero: z.object({ desktop: cam, mobile: cam }),
-    exploded: z.object({ desktop: cam, mobile: cam }),
+    hero: z.object({ desktop: cam, tablet: cam, mobile: cam }),
+    exploded: z.object({ desktop: cam, tablet: cam, mobile: cam }),
   }),
   materials: z.array(
     z.object({

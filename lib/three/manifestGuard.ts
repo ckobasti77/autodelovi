@@ -61,7 +61,14 @@ export function readCarManifest(json: unknown): CarManifest {
   const hero = cameras?.hero as Json | undefined;
   const exploded = cameras?.exploded as Json | undefined;
   if (!hero || !exploded) fail("cameras missing");
-  for (const cam of [hero.desktop, hero.mobile, exploded.desktop, exploded.mobile]) {
+  for (const cam of [
+    hero.desktop,
+    hero.tablet,
+    hero.mobile,
+    exploded.desktop,
+    exploded.tablet,
+    exploded.mobile,
+  ]) {
     if (!isCam(cam)) fail("camera shape");
   }
   return json as CarManifest;

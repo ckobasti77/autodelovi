@@ -4,11 +4,13 @@
  * Quote composer (brief §5 Inquiries): catalogue lines via the picker or free lines, each
  * with price, availability (na stanju / po porudžbini + rok) and a note; a delivery note;
  * the running total. „Sačuvaj nacrt“ keeps a draft (versioned: a new version once one was
- * sent); „Pošalji ponudu“ saves and sends — the customer gets the accept link (quote.sent).
+ * sent); „Pošalji ponudu“ validates every line first (a sent quote needs a price on each),
+ * then confirms, saves and sends — the customer gets the accept link (quote.sent) by e-mail,
+ * or staff share it from the inquiry when there is no e-mail (QA FLOW-13/FLOW-17).
  */
 import { useMutation } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PlusIcon, TrashIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
@@ -17,7 +19,7 @@ import { moneyInputValue, parseMoneyInput } from "@/lib/admin/format";
 import { formatDate } from "@/lib/format/date";
 import { formatRSD } from "@/lib/format/money";
 import { QUALITY_LABEL } from "@/lib/i18n/sr/catalog";
-import { convexErrorMessage } from "@/lib/i18n/sr/shop";
+import { convexErrorField, convexErrorMessage } from "@/lib/i18n/sr/shop";
 import { Button } from "@/components/ui/Button";
 import { Dialog } from "@/components/ui/Dialog";
 import { Field } from "@/components/ui/Field";
@@ -47,8 +49,12 @@ type LineState = {
   note: string;
 };
 
+type LineField = "name" | "quantity" | "price" | "leadTimeDays";
+type LineErrors = Record<string, Partial<Record<LineField, string>>>;
+
 let seq = 0;
 const nextKey = () => `l${++seq}`;
+const inputId = (key: string, field: LineField) => `quote-${key}-${field}`;
 
 function fromQuote(lines: QuoteLine[]): LineState[] {
   return lines.map((l) => ({
@@ -74,7 +80,8 @@ const emptyLine = (): LineState => ({
   quality: "",
   quantity: "1",
   price: "",
-  availability: "in_stock",
+  // A free line is a part ordered from a supplier.
+  availability: "on_order",
   leadTimeDays: "",
   note: "",
 });
@@ -94,26 +101,92 @@ export function QuoteComposer({
   const [deliveryNote, setDeliveryNote] = useState(base?.deliveryNote ?? "");
   const [busy, setBusy] = useState<"save" | "send" | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [lineErrors, setLineErrors] = useState<LineErrors>({});
   const [confirmSend, setConfirmSend] = useState(false);
+  /** Input to focus once the confirm dialog has closed and the composer is no longer inert. */
+  const pendingFocus = useRef<string | null>(null);
+  const hasEmail = Boolean(detail.inquiry.contact.email);
   const saveDraft = useMutation(api.inquiriesAdmin.saveQuoteDraft);
   const sendQuote = useMutation(api.inquiriesAdmin.sendQuote);
 
-  const set = (key: string, patch: Partial<LineState>) =>
+  const set = (key: string, patch: Partial<LineState>) => {
     setLines(lines.map((l) => (l.key === key ? { ...l, ...patch } : l)));
+    const current = lineErrors[key];
+    if (current && Object.keys(patch).some((f) => f in current)) {
+      const next = { ...current };
+      for (const f of Object.keys(patch)) delete next[f as LineField];
+      setLineErrors({ ...lineErrors, [key]: next });
+    }
+  };
 
-  const build = () => {
-    if (lines.length === 0) throw new Error("Dodajte bar jednu stavku.");
-    return lines.map((l, i) => {
+  useEffect(() => {
+    if (confirmSend || !pendingFocus.current) return;
+    // The dialog's exit keeps the composer inert for a few frames; focus once it is live.
+    let frames = 0;
+    let raf = 0;
+    const tryFocus = () => {
+      const el = pendingFocus.current ? document.getElementById(pendingFocus.current) : null;
+      if (el && !el.closest("[inert]")) {
+        el.focus();
+        if (document.activeElement === el) {
+          pendingFocus.current = null;
+          return;
+        }
+      }
+      if (++frames < 90) raf = requestAnimationFrame(tryFocus);
+    };
+    raf = requestAnimationFrame(tryFocus);
+    return () => cancelAnimationFrame(raf);
+  }, [confirmSend]);
+
+  /** Validates every line at once; a quote that goes out needs a price on each line. */
+  const validate = (sending: boolean) => {
+    const errors: LineErrors = {};
+    const messages: string[] = [];
+    let first: string | null = null;
+    const flag = (key: string, field: LineField, i: number, message: string) => {
+      errors[key] = { ...errors[key], [field]: message };
+      messages.push(`Stavka ${i + 1}: ${message}`);
+      first ??= inputId(key, field);
+    };
+    lines.forEach((l, i) => {
       const quantity = Number(l.quantity);
       const unitPricePara = parseMoneyInput(l.price);
       const lead = l.leadTimeDays.trim() ? Number(l.leadTimeDays) : undefined;
-      if (!l.name.trim()) throw new Error(`Stavka ${i + 1}: upišite naziv.`);
+      if (!l.name.trim()) flag(l.key, "name", i, "upišite naziv.");
       if (!Number.isInteger(quantity) || quantity < 1 || quantity > 999)
-        throw new Error(`Stavka ${i + 1}: količina 1–999.`);
+        flag(l.key, "quantity", i, "količina je ceo broj od 1 do 999.");
       if (unitPricePara === undefined || Number.isNaN(unitPricePara) || unitPricePara < 0)
-        throw new Error(`Stavka ${i + 1}: upišite cenu.`);
+        flag(l.key, "price", i, "upišite cenu.");
+      else if (sending && unitPricePara === 0) flag(l.key, "price", i, "upišite cenu pre slanja.");
       if (lead !== undefined && (!Number.isInteger(lead) || lead < 0 || lead > 365))
-        throw new Error(`Stavka ${i + 1}: rok 0–365 dana.`);
+        flag(l.key, "leadTimeDays", i, "rok je 0–365 dana.");
+    });
+    return { errors, messages, first };
+  };
+
+  /** Shows the problems next to their fields and in the summary; true when there are none. */
+  const check = (sending: boolean): boolean => {
+    if (lines.length === 0) {
+      setError("Dodajte bar jednu stavku.");
+      return false;
+    }
+    const { errors, messages, first } = validate(sending);
+    setLineErrors(errors);
+    if (messages.length === 0) {
+      setError(null);
+      return true;
+    }
+    setError(messages.join(" "));
+    if (first) document.getElementById(first)?.focus();
+    return false;
+  };
+
+  const build = () =>
+    lines.map((l) => {
+      const quantity = Number(l.quantity);
+      const unitPricePara = parseMoneyInput(l.price) ?? 0;
+      const lead = l.leadTimeDays.trim() ? Number(l.leadTimeDays) : undefined;
       return {
         ...(l.productId ? { productId: l.productId } : {}),
         ...(l.sku.trim() ? { sku: l.sku.trim() } : {}),
@@ -127,7 +200,6 @@ export function QuoteComposer({
         ...(l.note.trim() ? { note: l.note.trim() } : {}),
       };
     });
-  };
 
   const total = lines.reduce((s, l) => {
     const p = parseMoneyInput(l.price);
@@ -136,14 +208,11 @@ export function QuoteComposer({
   }, 0);
 
   const run = async (send: boolean) => {
-    setError(null);
-    let payload;
-    try {
-      payload = build();
-    } catch (err) {
-      setError((err as Error).message);
+    if (!check(send)) {
+      setConfirmSend(false);
       return;
     }
+    const payload = build();
     setBusy(send ? "send" : "save");
     try {
       const quoteId = await saveDraft({
@@ -159,7 +228,19 @@ export function QuoteComposer({
         toast.success("Nacrt ponude je sačuvan.");
       }
     } catch (err) {
-      setError(convexErrorMessage(err, "Ponuda nije sačuvana."));
+      const message = convexErrorMessage(err, "Ponuda nije sačuvana.");
+      setError(message);
+      // `lines.<i>.<field>` from the server: mark that input and focus it once the dialog closed.
+      const match = /^lines\.(\d+)\.(name|quantity|price|leadTimeDays)$/.exec(
+        convexErrorField(err) ?? "",
+      );
+      const line = match ? lines[Number(match[1])] : undefined;
+      if (match && line) {
+        const field = match[2] as LineField;
+        setLineErrors({ [line.key]: { [field]: message } });
+        if (send) pendingFocus.current = inputId(line.key, field);
+        else document.getElementById(inputId(line.key, field))?.focus();
+      }
     } finally {
       setBusy(null);
       setConfirmSend(false);
@@ -189,8 +270,9 @@ export function QuoteComposer({
               />
             </div>
             <div className="grid gap-3 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]">
-              <Field label="Naziv">
+              <Field label="Naziv" error={lineErrors[l.key]?.name}>
                 <Input
+                  id={inputId(l.key, "name")}
                   value={l.name}
                   onChange={(e) => set(l.key, { name: e.target.value })}
                   className="h-9"
@@ -225,8 +307,9 @@ export function QuoteComposer({
                   }))}
                 />
               </Field>
-              <Field label="Količina">
+              <Field label="Količina" error={lineErrors[l.key]?.quantity}>
                 <Input
+                  id={inputId(l.key, "quantity")}
                   value={l.quantity}
                   inputMode="numeric"
                   onChange={(e) => set(l.key, { quantity: e.target.value })}
@@ -234,8 +317,9 @@ export function QuoteComposer({
                   inputClassName="text-right tabular-nums"
                 />
               </Field>
-              <Field label="Cena sa PDV">
+              <Field label="Cena sa PDV-om" error={lineErrors[l.key]?.price}>
                 <Input
+                  id={inputId(l.key, "price")}
                   value={l.price}
                   inputMode="decimal"
                   suffix="RSD"
@@ -257,8 +341,9 @@ export function QuoteComposer({
                   ]}
                 />
               </Field>
-              <Field label="Rok (dana)">
+              <Field label="Rok (dana)" error={lineErrors[l.key]?.leadTimeDays}>
                 <Input
+                  id={inputId(l.key, "leadTimeDays")}
                   value={l.leadTimeDays}
                   inputMode="numeric"
                   onChange={(e) => set(l.key, { leadTimeDays: e.target.value })}
@@ -330,7 +415,9 @@ export function QuoteComposer({
             Sačuvaj nacrt
           </Button>
           <Button
-            onClick={() => setConfirmSend(true)}
+            onClick={() => {
+              if (check(true)) setConfirmSend(true);
+            }}
             disabled={busy !== null || lines.length === 0}
             data-testid="admin-quote-send"
           >
@@ -368,8 +455,10 @@ export function QuoteComposer({
         }
       >
         <p className="type-body-s text-ink-2">
-          {detail.inquiry.contact.name} dobija ponudu na {formatRSD(total)} sa linkom za
-          prihvatanje. Ponuda važi {validityDays} dana.
+          {hasEmail
+            ? `${detail.inquiry.contact.name} dobija ponudu na ${formatRSD(total)} e-poštom, sa linkom za prihvatanje.`
+            : `${detail.inquiry.contact.name} nema e-poštu, pa ponuda na ${formatRSD(total)} ne stiže sama. Posle slanja kopirajte link sa upita i pošaljite ga Viberom, WhatsApp-om ili SMS-om.`}{" "}
+          Ponuda važi {validityDays} dana.
           {detail.quotes.some((q) => q.status === "sent")
             ? " Prethodna poslata ponuda se zamenjuje novom."
             : ""}

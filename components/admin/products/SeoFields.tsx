@@ -9,8 +9,13 @@ import { Field } from "@/components/ui/Field";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { site } from "@/config/site";
+import { cn } from "@/lib/cn";
 
 import { CharCount } from "../ui";
+
+/** One counter for the description (VIS-31): the field takes 170, Google shows about 155. */
+const DESCRIPTION_MAX = 170;
+const DESCRIPTION_VISIBLE = 155;
 
 export function SeoFields({
   title,
@@ -52,14 +57,25 @@ export function SeoFields({
           label="Opis za pretraživače"
           help={
             <>
-              Do 155 znakova: šta je deo, za koja vozila, cena i stanje.{" "}
-              <CharCount value={description} max={155} />
+              Šta je deo, za koja vozila, cena i stanje. Do {DESCRIPTION_VISIBLE} znakova se vidi
+              ceo.{" "}
+              <span
+                className={cn(
+                  "whitespace-nowrap type-caption tabular-nums",
+                  description.length > DESCRIPTION_VISIBLE
+                    ? "font-semibold text-warning"
+                    : "text-ink-3",
+                )}
+              >
+                {description.length}&nbsp;/&nbsp;{DESCRIPTION_MAX}
+              </span>
             </>
           }
         >
           <Textarea
             rows={3}
-            maxLength={170}
+            maxLength={DESCRIPTION_MAX}
+            showCount={false}
             value={description}
             onChange={(e) => onDescription(e.target.value)}
           />

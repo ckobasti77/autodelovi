@@ -6,7 +6,7 @@
  * changed („Na stanju je još 1 kom.“) and the quantity can be fixed in place.
  */
 import { useMutation } from "convex/react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { TrashIcon, WarningIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
@@ -15,6 +15,7 @@ import { cn } from "@/lib/cn";
 import { formatRSD } from "@/lib/format/money";
 import { formatQuantity } from "@/lib/format/number";
 import { useCart, useCartArgs } from "@/lib/cart/guestCart";
+import { announceCart, planFocusAfterLineRemoval } from "@/lib/cart/lineFocus";
 import { leadTimeLabel } from "@/lib/i18n/sr/catalog";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
 import { vatIncludedPara } from "@/lib/domain/orderTotals";
@@ -60,6 +61,9 @@ function Line({ line, compact }: { line: CartLine; compact: boolean }) {
   const setQty = useMutation(api.carts.setQuantity);
   const remove = useMutation(api.carts.removeItem);
   const [busy, setBusy] = useState(false);
+  const liRef = useRef<HTMLLIElement>(null);
+  // Set when the shopper changes the quantity; the new amount is announced once it settles.
+  const announceQty = useRef(false);
   const p = line.product;
   const guest = args === "skip" ? {} : args;
   const name = p?.name ?? "Artikal";
@@ -72,20 +76,70 @@ function Line({ line, compact }: { line: CartLine; compact: boolean }) {
     setBusy(true);
     try {
       await fn();
+      return true;
     } catch (error) {
+      announceQty.current = false;
       toast.error(convexErrorMessage(error, "Izmena nije sačuvana. Pokušajte ponovo."));
+      return false;
     } finally {
       setBusy(false);
     }
   };
 
+  // „Količina 2, ukupno 9.380 RSD.“ — once per settled change (a long press steps many times).
+  useEffect(() => {
+    if (!announceQty.current) return;
+    const timer = window.setTimeout(() => {
+      announceQty.current = false;
+      announceCart(`Količina ${line.quantity}, ukupno ${formatRSD(line.lineTotalPara)}.`);
+    }, 450);
+    return () => window.clearTimeout(timer);
+  }, [line.quantity, line.lineTotalPara]);
+
+  const changeQuantity = (quantity: number) => {
+    announceQty.current = true;
+    void run(() => setQty({ ...guest, productId: line.productId as Id<"products">, quantity }));
+  };
+
+  const removeLine = async () => {
+    const restoreFocus = planFocusAfterLineRemoval(liRef.current);
+    const last = liRef.current?.parentElement?.childElementCount === 1;
+    const removed = await run(() =>
+      remove({ ...guest, productId: line.productId as Id<"products"> }),
+    );
+    if (!removed) return;
+    announceCart(`Uklonjeno iz korpe: ${name}.${last ? " Korpa je prazna." : ""}`);
+    restoreFocus();
+  };
+
+  const stepper = (
+    <QuantityStepper
+      size="sm"
+      value={line.quantity}
+      min={1}
+      max={max}
+      label={`Količina: ${name}`}
+      onChange={changeQuantity}
+    />
+  );
+  const removeButton = (
+    <IconButton
+      label={`Ukloni ${name}`}
+      icon={<TrashIcon size={18} />}
+      variant="ghost"
+      onClick={() => void removeLine()}
+      className="shrink-0"
+    />
+  );
+
   return (
     <li
+      ref={liRef}
       className={cn(
         "grid gap-x-3 gap-y-2 border-b border-line py-4 last:border-b-0",
         compact
           ? "grid-cols-[4rem_minmax(0,1fr)]"
-          : "grid-cols-[4rem_minmax(0,1fr)] sm:grid-cols-[5rem_minmax(0,1fr)_auto_auto]",
+          : "grid-cols-[4rem_minmax(0,1fr)] sm:grid-cols-[5rem_minmax(0,1fr)_auto_auto] sm:items-center",
       )}
       aria-busy={busy || undefined}
       data-testid="cart-line"
@@ -128,16 +182,10 @@ function Line({ line, compact }: { line: CartLine; compact: boolean }) {
         <LineNotice line={line} />
         {compact ? (
           <div className="mt-1 flex items-center justify-between gap-3">
-            <QuantityStepper
-              size="sm"
-              value={line.quantity}
-              min={1}
-              max={max}
-              label={`Količina: ${name}`}
-              onChange={(q) =>
-                run(() => setQty({ ...guest, productId: line.productId as Id<"products">, quantity: q }))
-              }
-            />
+            <span className="flex items-center gap-1">
+              {stepper}
+              {removeButton}
+            </span>
             <span className="type-numeral-s tabular-nums text-ink-1" data-reveal="off">
               {formatRSD(line.lineTotalPara)}
             </span>
@@ -145,36 +193,19 @@ function Line({ line, compact }: { line: CartLine; compact: boolean }) {
         ) : null}
       </div>
       {!compact ? (
-        <>
-          <div className="col-start-2 sm:col-start-auto sm:self-center">
-            <QuantityStepper
-              size="sm"
-              value={line.quantity}
-              min={1}
-              max={max}
-              label={`Količina: ${name}`}
-              onChange={(q) =>
-                run(() => setQty({ ...guest, productId: line.productId as Id<"products">, quantity: q }))
-              }
-            />
-          </div>
+        <div className="col-start-2 flex items-center justify-between gap-3 sm:col-span-2 sm:col-start-3 sm:justify-end sm:gap-5">
+          <span className="flex items-center gap-1">
+            {stepper}
+            {removeButton}
+          </span>
           <span
-            className="col-start-2 type-numeral-s tabular-nums text-ink-1 sm:col-start-auto sm:self-center sm:text-right"
+            className="type-numeral-s tabular-nums text-ink-1 sm:min-w-[7.5rem] sm:text-right"
             data-reveal="off"
           >
             {formatRSD(line.lineTotalPara)}
           </span>
-        </>
+        </div>
       ) : null}
-      <div className={cn("col-start-2 -ml-2.5", !compact && "sm:col-start-2")}>
-        <IconButton
-          label={`Ukloni ${name}`}
-          icon={<TrashIcon size={18} />}
-          variant="ghost"
-          onClick={() => run(() => remove({ ...guest, productId: line.productId as Id<"products"> }))}
-          className="size-9"
-        />
-      </div>
     </li>
   );
 }
@@ -198,36 +229,34 @@ export function CartSummary({ cart, delivery }: { cart: CartData; delivery: Deli
   return (
     <div className="flex flex-col gap-2 type-body-s" data-reveal="off">
       <dl className="flex flex-col gap-2">
-      {cart.discountPara > 0 ? (
-        <>
-          <div className="flex justify-between gap-4 text-ink-3">
-            <dt>Maloprodajna vrednost</dt>
-            <dd className="tabular-nums">{formatRSD(cart.itemsRetailPara)}</dd>
-          </div>
-          <div className="flex justify-between gap-4 text-accent-text">
-            <dt>Vaš rabat</dt>
-            <dd className="tabular-nums">−{formatRSD(cart.discountPara)}</dd>
-          </div>
-        </>
-      ) : null}
-      <div className="flex items-baseline justify-between gap-4">
-        <dt className="text-ink-2">Međuzbir</dt>
-        <dd className="type-numeral-m tabular-nums text-ink-1" aria-live="polite">
-          {formatRSD(cart.itemsPara)}
-        </dd>
-      </div>
-      <div className="flex justify-between gap-4 text-ink-3">
-        <dt>Dostava</dt>
-        <dd className="text-right">
-          {delivery.pickup ? "Preuzimanje 0 RSD" : null}
-          {delivery.pickup && delivery.courierPricePara !== null ? " · " : null}
-          {delivery.courierPricePara !== null
-            ? remaining !== null && remaining <= 0
-              ? "kurir besplatno"
-              : `kurir ${formatRSD(delivery.courierPricePara)}`
-            : null}
-        </dd>
-      </div>
+        {cart.discountPara > 0 ? (
+          <>
+            <div className="flex justify-between gap-4 text-ink-3">
+              <dt>Maloprodajna vrednost</dt>
+              <dd className="tabular-nums">{formatRSD(cart.itemsRetailPara)}</dd>
+            </div>
+            <div className="flex justify-between gap-4 text-accent-text">
+              <dt>Vaš rabat</dt>
+              <dd className="tabular-nums">−{formatRSD(cart.discountPara)}</dd>
+            </div>
+          </>
+        ) : null}
+        <div className="flex items-baseline justify-between gap-4">
+          <dt className="text-ink-2">Međuzbir</dt>
+          <dd className="type-numeral-m tabular-nums text-ink-1">{formatRSD(cart.itemsPara)}</dd>
+        </div>
+        <div className="flex justify-between gap-4 text-ink-3">
+          <dt>Dostava</dt>
+          <dd className="text-right">
+            {delivery.pickup ? `Preuzimanje ${formatRSD(0)}` : null}
+            {delivery.pickup && delivery.courierPricePara !== null ? " · " : null}
+            {delivery.courierPricePara !== null
+              ? remaining !== null && remaining <= 0
+                ? "kurir besplatno"
+                : `kurir ${formatRSD(delivery.courierPricePara)}`
+              : null}
+          </dd>
+        </div>
       </dl>
       {remaining !== null && remaining > 0 ? (
         <p className="type-caption font-normal text-ink-3">

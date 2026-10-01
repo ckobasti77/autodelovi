@@ -73,6 +73,14 @@ export const getRetiredProduct = cached(
   (slug) => ["products", `product:${slug}`],
 );
 
+/** Current URL of a renamed product (SEO-06); tagged so a slug change revalidates it. */
+export const getRedirect = cached(
+  (path: string) => fetchPublic(api.catalog.products.redirectFor, { path }),
+  "redirect",
+  300,
+  () => ["products"],
+);
+
 export const getRelatedProducts = cached(
   (productId: FunctionArgs<typeof api.catalog.products.related>["productId"]) =>
     fetchPublic(api.catalog.products.related, { productId, limit: 8 }),
@@ -148,9 +156,17 @@ export const getSameOemProducts = cached(
   () => ["products"],
 );
 
-/** Search results (anonymous; the page logs the query separately). */
+/**
+ * Search results (anonymous; the page logs the query separately): query, optional category
+ * chip, the visitor's vehicle (`brand/model/generation`) and „prikaži sve“.
+ */
 export const getSearchResults = cached(
-  (q: string) => fetchPublic(api.search.run, { q }),
+  (
+    args: Pick<
+      FunctionArgs<typeof api.search.run>,
+      "q" | "categorySlug" | "vehicle" | "allVehicles"
+    >,
+  ) => fetchPublic(api.search.run, args),
   "search",
   120,
   () => ["products"],

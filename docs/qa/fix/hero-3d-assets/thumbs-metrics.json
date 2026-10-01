@@ -1,0 +1,482 @@
+[
+ {
+  "file": "motor.webp",
+  "partBboxMax": 69,
+  "contrastMean": 2.2,
+  "p50": 1.36,
+  "p90": 4.76,
+  "shareGe1_5": 43,
+  "centroidY": 45,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "filter-kabine.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.26,
+  "p50": 2.5,
+  "p90": 4.39,
+  "shareGe1_5": 54,
+  "centroidY": 46,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "filter-ulja.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.28,
+  "p50": 1.87,
+  "p90": 3.49,
+  "shareGe1_5": 77,
+  "centroidY": 46,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "abs-senzori.webp",
+  "partBboxMax": 69,
+  "contrastMean": 2.29,
+  "p50": 1.83,
+  "p90": 3.32,
+  "shareGe1_5": 79,
+  "centroidY": 59,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "akumulator.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.31,
+  "p50": 1.81,
+  "p90": 3.33,
+  "shareGe1_5": 93,
+  "centroidY": 45,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "spone-stabilizatori.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.31,
+  "p50": 1.89,
+  "p90": 3.69,
+  "shareGe1_5": 85,
+  "centroidY": 47,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "blatobrani.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.32,
+  "p50": 1.76,
+  "p90": 4.3,
+  "shareGe1_5": 87,
+  "centroidY": 44,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "ramena-selen-blokovi.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.33,
+  "p50": 1.53,
+  "p90": 5.33,
+  "shareGe1_5": 51,
+  "centroidY": 49,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "klima.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.34,
+  "p50": 2,
+  "p90": 2.4,
+  "shareGe1_5": 89,
+  "centroidY": 47,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "brizgaljke-pumpa-goriva.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.35,
+  "p50": 1.84,
+  "p90": 4.21,
+  "shareGe1_5": 77,
+  "centroidY": 48,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "retrovizori.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.35,
+  "p50": 2.03,
+  "p90": 3.15,
+  "shareGe1_5": 92,
+  "centroidY": 47,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "ulja-tecnosti.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.35,
+  "p50": 2.27,
+  "p90": 2.86,
+  "shareGe1_5": 95,
+  "centroidY": 49,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "vrata.webp",
+  "partBboxMax": 69,
+  "contrastMean": 2.35,
+  "p50": 2.28,
+  "p90": 2.57,
+  "shareGe1_5": 100,
+  "centroidY": 50,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "termostat-creva.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.36,
+  "p50": 2.3,
+  "p90": 3.09,
+  "shareGe1_5": 88,
+  "centroidY": 49,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "zupcasti-kais-vodena-pumpa.webp",
+  "partBboxMax": 69,
+  "contrastMean": 2.37,
+  "p50": 1.16,
+  "p90": 6.88,
+  "shareGe1_5": 28,
+  "centroidY": 51,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "branici.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.38,
+  "p50": 2.29,
+  "p90": 2.89,
+  "shareGe1_5": 97,
+  "centroidY": 48,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "dpf-katalizator.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.39,
+  "p50": 1.13,
+  "p90": 5.36,
+  "shareGe1_5": 43,
+  "centroidY": 50,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "kvacilo-zamajac.webp",
+  "partBboxMax": 69,
+  "contrastMean": 2.4,
+  "p50": 1.19,
+  "p90": 7.22,
+  "shareGe1_5": 37,
+  "centroidY": 49,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "hladnjak-ventilator.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.41,
+  "p50": 2.53,
+  "p90": 2.96,
+  "shareGe1_5": 85,
+  "centroidY": 41,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "auspuh.webp",
+  "partBboxMax": 47,
+  "contrastMean": 2.43,
+  "p50": 1.87,
+  "p90": 3.78,
+  "shareGe1_5": 65,
+  "centroidY": 48,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "interkuler.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.43,
+  "p50": 1.52,
+  "p90": 5.51,
+  "shareGe1_5": 56,
+  "centroidY": 47,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "kocione-celjusti.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.43,
+  "p50": 2.09,
+  "p90": 3.8,
+  "shareGe1_5": 78,
+  "centroidY": 46,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "paljenje-grejaci.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.43,
+  "p50": 1.55,
+  "p90": 2.67,
+  "shareGe1_5": 56,
+  "centroidY": 38,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "poluosovine.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.43,
+  "p50": 1.09,
+  "p90": 7.98,
+  "shareGe1_5": 31,
+  "centroidY": 48,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "kocione-plocice.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.48,
+  "p50": 2.25,
+  "p90": 4.12,
+  "shareGe1_5": 86,
+  "centroidY": 46,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "usisna-grana.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.51,
+  "p50": 1.55,
+  "p90": 7,
+  "shareGe1_5": 51,
+  "centroidY": 47,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "brisaci.webp",
+  "partBboxMax": 85,
+  "contrastMean": 2.53,
+  "p50": 2.07,
+  "p90": 5.07,
+  "shareGe1_5": 73,
+  "centroidY": 46,
+  "bboxCentreY": 46
+ },
+ {
+  "file": "senzori.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.53,
+  "p50": 1.26,
+  "p90": 6.31,
+  "shareGe1_5": 44,
+  "centroidY": 47,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "felne-gume.webp",
+  "partBboxMax": 67,
+  "contrastMean": 2.55,
+  "p50": 1.06,
+  "p90": 7.32,
+  "shareGe1_5": 28,
+  "centroidY": 49,
+  "bboxCentreY": 49
+ },
+ {
+  "file": "amortizeri-opruge.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.66,
+  "p50": 2.14,
+  "p90": 4.81,
+  "shareGe1_5": 74,
+  "centroidY": 43,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "hauba.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.7,
+  "p50": 2.12,
+  "p90": 5.2,
+  "shareGe1_5": 69,
+  "centroidY": 47,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "karter-dihtunzi.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.84,
+  "p50": 1.4,
+  "p90": 5.39,
+  "shareGe1_5": 49,
+  "centroidY": 46,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "turbina.webp",
+  "partBboxMax": 70,
+  "contrastMean": 2.84,
+  "p50": 1.49,
+  "p90": 6.01,
+  "shareGe1_5": 50,
+  "centroidY": 49,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "kocioni-diskovi.webp",
+  "partBboxMax": 69,
+  "contrastMean": 2.95,
+  "p50": 1.86,
+  "p90": 5.91,
+  "shareGe1_5": 76,
+  "centroidY": 48,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "kais-alternatora.webp",
+  "partBboxMax": 69,
+  "contrastMean": 3.06,
+  "p50": 2.28,
+  "p90": 5.8,
+  "shareGe1_5": 54,
+  "centroidY": 53,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "stop-svetla.webp",
+  "partBboxMax": 69,
+  "contrastMean": 3.08,
+  "p50": 1.93,
+  "p90": 7.77,
+  "shareGe1_5": 67,
+  "centroidY": 47,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "alternator.webp",
+  "partBboxMax": 70,
+  "contrastMean": 3.17,
+  "p50": 3.03,
+  "p90": 5.41,
+  "shareGe1_5": 64,
+  "centroidY": 44,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "egr-ventil.webp",
+  "partBboxMax": 70,
+  "contrastMean": 3.32,
+  "p50": 2.91,
+  "p90": 5.87,
+  "shareGe1_5": 60,
+  "centroidY": 47,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "anlaser.webp",
+  "partBboxMax": 70,
+  "contrastMean": 3.33,
+  "p50": 2.15,
+  "p90": 6.66,
+  "shareGe1_5": 58,
+  "centroidY": 45,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "letva-volana.webp",
+  "partBboxMax": 69,
+  "contrastMean": 4.03,
+  "p50": 4.46,
+  "p90": 6.42,
+  "shareGe1_5": 71,
+  "centroidY": 52,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "farovi.webp",
+  "partBboxMax": 70,
+  "contrastMean": 4.31,
+  "p50": 2.85,
+  "p90": 9.73,
+  "shareGe1_5": 69,
+  "centroidY": 49,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "filteri.webp",
+  "partBboxMax": 70,
+  "contrastMean": 4.38,
+  "p50": 1.71,
+  "p90": 10.87,
+  "shareGe1_5": 54,
+  "centroidY": 45,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "filter-vazduha.webp",
+  "partBboxMax": 70,
+  "contrastMean": 4.73,
+  "p50": 1.16,
+  "p90": 11.97,
+  "shareGe1_5": 42,
+  "centroidY": 46,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "lezaj-glavcina.webp",
+  "partBboxMax": 69,
+  "contrastMean": 4.85,
+  "p50": 4.65,
+  "p90": 7.04,
+  "shareGe1_5": 91,
+  "centroidY": 46,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "menjac.webp",
+  "partBboxMax": 70,
+  "contrastMean": 4.87,
+  "p50": 4.89,
+  "p90": 7.78,
+  "shareGe1_5": 86,
+  "centroidY": 49,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "nosaci-motora.webp",
+  "partBboxMax": 70,
+  "contrastMean": 5.29,
+  "p50": 5.14,
+  "p90": 7.96,
+  "shareGe1_5": 90,
+  "centroidY": 48,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "filter-goriva.webp",
+  "partBboxMax": 70,
+  "contrastMean": 6.8,
+  "p50": 7.53,
+  "p90": 11.75,
+  "shareGe1_5": 91,
+  "centroidY": 47,
+  "bboxCentreY": 48
+ },
+ {
+  "file": "stakla.webp",
+  "partBboxMax": 70,
+  "contrastMean": 10.74,
+  "p50": 10.85,
+  "p90": 11.51,
+  "shareGe1_5": 100,
+  "centroidY": 46,
+  "bboxCentreY": 48
+ }
+]

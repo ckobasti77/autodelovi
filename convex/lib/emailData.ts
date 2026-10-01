@@ -268,7 +268,7 @@ export async function staffOrderData(
     ...(order.company ? { companyName: order.company.name } : {}),
     ...(order.tierSnapshot ? { tierName: order.tierSnapshot.name } : {}),
     phone: order.contact.phone,
-    email: order.contact.email,
+    email: order.contact.email || "kupac bez e-pošte",
     totalPara: order.totals.totalPara,
     itemCount: order.itemCount,
     lines,
@@ -419,12 +419,10 @@ export async function digestData(
       url: adminLink(ectx, `/admin/upiti/${i.number}`),
     })),
     openInquiryCount: openInquiries.length,
-    pendingMechanics: pending
-      .slice(0, 5)
-      .map((p) => ({
-        companyName: p.companyName,
-        url: adminLink(ectx, `/admin/majstori/${p._id}`),
-      })),
+    pendingMechanics: pending.slice(0, 5).map((p) => ({
+      companyName: p.companyName,
+      url: adminLink(ectx, `/admin/majstori/${p._id}`),
+    })),
     lowStockCount: low.length,
     outOfStockCount: out.length,
     zeroSearches: zero,

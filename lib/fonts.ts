@@ -5,9 +5,12 @@
  * The next/font CSS variables are named `--nf-*`; app/globals.css maps them onto the
  * Tailwind theme (`--font-display`, `--font-ui`, …) so the two never shadow each other.
  *
- * Preloaded for first paint: Archivo Expanded 700 (hero statement, wordmark), Archivo
- * Condensed 600 (prices) and Public Sans (all UI text) ≈ 76 KB. Archivo Expanded 600 (section
- * titles below the fold) and Martian Mono (codes) load on demand.
+ * Preloaded for first paint: Archivo Expanded 700 (hero statement, page titles, wordmark) and
+ * Public Sans latin + latin-ext (all UI text; Serbian copy needs both subsets) ≈ 63 KB.
+ * Archivo Condensed 600 (prices), Archivo Expanded 600 (section titles below the fold) and
+ * Martian Mono (codes) load on demand: prices are below the first mobile viewport on most
+ * templates, and preloading them took slow-4G bandwidth from the render-blocking stylesheet
+ * (PERF-03). Their size-adjusted fallbacks keep the swap shift-free.
  */
 import localFont from "next/font/local";
 import { Martian_Mono, Public_Sans } from "next/font/google";
@@ -31,6 +34,7 @@ export const condensed = localFont({
   src: [{ path: "../app/fonts/archivo-condensed-600.woff2", weight: "600", style: "normal" }],
   variable: "--nf-condensed",
   display: "swap",
+  preload: false,
   fallback: ["Arial Narrow", "Arial", "sans-serif"],
 });
 

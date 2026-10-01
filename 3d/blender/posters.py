@@ -1,10 +1,11 @@
 """Posters, contact shadows and the web environment map (PLAN §8.2-§8.4).
 
-  --set posters   layers per state (assembled, exploded) x viewport (desktop, mobile):
+  --set posters   layers per state (assembled, exploded) x viewport (desktop, tablet, mobile):
                   shadow (Cycles shadow catcher), opaque (EEVEE), shell (EEVEE x-ray, opaque parts
                   held out, Freestyle edges on desktop) -> 3d/renders/posters/<state>-<vp>-<layer>.png
   --set shadows   top-down contact shadows for the web -> 3d/renders/posters/shadow-<state>.png
-  --set env       512 x 256 Radiance copy of the studio HDRI -> public/models/env/studio-512.hdr
+  --set env       512 x 256 Radiance copy of the studio HDRI -> 3d/build/env/studio-512.hdr
+                  (3d/scripts/env.mjs bakes it into public/models/env/studio-pmrem.hdr)
   --set all
 
 3d/scripts/images.mjs composites the layers in display space (the three.js blend) and encodes
@@ -41,7 +42,7 @@ from lib.views import (  # noqa: E402
 )
 
 OUT = scene.RENDERS / "posters"
-SIZES = {"desktop": (2560, 1440), "mobile": (1080, 1350)}
+SIZES = {"desktop": (2560, 1440), "tablet": (1536, 1536), "mobile": (1080, 1350)}
 
 
 def parse():
@@ -249,7 +250,7 @@ def shell_layer(path: Path, w: int, h: int, samples: int, exploded: bool, mobile
 def posters(args) -> None:
     ex = Exploder()
     for state in ("assembled", "exploded"):
-        for vp in ("desktop", "mobile"):
+        for vp in ("desktop", "tablet", "mobile"):
             tag = f"{state}-{vp}"
             if args.only and args.only != tag:
                 continue
@@ -258,7 +259,8 @@ def posters(args) -> None:
             camera_from_manifest(state, vp)
             shadow_layer(OUT / f"{tag}-shadow.png", w, h, args.samples)
             opaque_layer(OUT / f"{tag}-opaque.png", w, h, args.samples)
-            shell_layer(OUT / f"{tag}-shell.png", w, h, args.samples, state == "exploded", vp == "mobile", not args.opaque_shell)
+            # Tablets run the mid tier (lite shader, no edge lines): their poster matches it.
+            shell_layer(OUT / f"{tag}-shell.png", w, h, args.samples, state == "exploded", vp != "desktop", not args.opaque_shell)
     ex.reset()
 
 
@@ -277,7 +279,8 @@ def shadows(args) -> None:
 
 
 def env() -> None:
-    dst = scene.ROOT / "public" / "models" / "env" / "studio-512.hdr"
+    # Intermediate only: 3d/scripts/env.mjs bakes it into the PMREM atlas the web loads.
+    dst = scene.BUILD / "env" / "studio-512.hdr"
     dst.parent.mkdir(parents=True, exist_ok=True)
     img = bpy.data.images.load(str(HDRI), check_existing=False)
     img.scale(512, 256)

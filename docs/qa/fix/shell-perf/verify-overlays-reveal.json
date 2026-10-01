@@ -1,0 +1,82 @@
+{
+  "overlays": {
+    "lazyChunksLoadedOnIntent": 2,
+    "searchFocused": true,
+    "focusAfterSearchClose": "Pretraga delova",
+    "menuKontaktHref": "/kontakt",
+    "menuExpandedWhileOpen": "true",
+    "footerKontaktLinks": 1,
+    "errors": []
+  },
+  "reveal": [
+    {
+      "path": "/",
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "wordAnimation": null,
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "htmlClasses": [
+        "tr-js"
+      ],
+      "done": 124,
+      "errors": []
+    },
+    {
+      "path": "/delovi/kocioni-diskovi",
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "wordAnimation": "tr-word-lite",
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "htmlClasses": [
+        "tr-js"
+      ],
+      "done": 36,
+      "errors": []
+    },
+    {
+      "path": "/delovi/kocioni-diskovi",
+      "width": 1440,
+      "reducedMotion": "no-preference",
+      "wordAnimation": "tr-word",
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "htmlClasses": [
+        "tr-js"
+      ],
+      "done": 36,
+      "errors": []
+    },
+    {
+      "path": "/delovi/kocioni-diskovi",
+      "width": 390,
+      "reducedMotion": "reduce",
+      "wordAnimation": null,
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "htmlClasses": [
+        "tr-js"
+      ],
+      "done": 36,
+      "errors": []
+    },
+    {
+      "path": "/delovi/kocioni-diskovi (failsafe)",
+      "markedAfterFailsafe": 36,
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    {
+      "path": "/delovi/kocioni-diskovi (no JS)",
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    }
+  ]
+}

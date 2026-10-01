@@ -6,12 +6,12 @@ import { v } from "convex/values";
 
 import { internal } from "./_generated/api";
 import type { Doc, Id } from "./_generated/dataModel";
-import type { MutationCtx } from "./_generated/server";
+import type { MutationCtx, QueryCtx } from "./_generated/server";
 import { normalizeCode } from "../lib/domain/codes";
 import { isValidEmail, normalizeEmail } from "../lib/domain/identifiers";
 import { decodeVin } from "../lib/domain/vin";
 import { normalizePhone } from "../lib/format/phone";
-import { actorOf } from "./lib/authz";
+import { actorOf, type Viewer } from "./lib/authz";
 import { fail, invalid, notFound } from "./lib/errors";
 import { emitEvent } from "./lib/events";
 import { publicMutation, publicQuery, userQuery } from "./lib/functions";
@@ -23,7 +23,9 @@ import {
   quoteOrderLines,
   setInquiryStatus,
 } from "./lib/inquiries";
-import { createOrder, validateCheckout } from "./lib/orders";
+import { consentInForce, sanitizeAttribution } from "./lib/attribution";
+import { createOrder, mechanicOrderTerms, termsFields, validateCheckout } from "./lib/orders";
+import { creditStatus } from "./lib/mechanics";
 import { enforceRateLimit } from "./lib/rateLimits";
 import { resolveEmailConfig } from "./lib/emailConfig";
 import { getSettings } from "./lib/settings";
@@ -181,6 +183,7 @@ export const submit = publicMutation({
     }
 
     const viewer = ctx.viewer;
+    const attribution = sanitizeAttribution(args.attribution);
     const { inquiryId, number, token } = await insertInquiry(ctx, {
       kind: args.kind,
       ...(vin ? { vin } : {}),
@@ -202,8 +205,8 @@ export const submit = publicMutation({
       },
       ...(viewer ? { userId: viewer.userId } : {}),
       ...(viewer?.mechanic ? { mechanicProfileId: viewer.mechanic.profileId } : {}),
-      ...(args.attribution ? { attribution: args.attribution } : {}),
-      consent: args.consent,
+      ...(attribution ? { attribution } : {}),
+      consent: consentInForce(await getSettings(ctx), args.consent, Date.now()),
       actor: viewer ? actorOf(viewer) : { type: "customer" as const, name },
       ...(ctx.client.ip && ctx.client.userAgent
         ? {
@@ -270,6 +273,16 @@ export const getByToken = publicQuery({
       ),
       /** True when the quote and changes also go out by e-mail (address given, mode test/live). */
       emailUpdates: v.boolean(),
+      /** The requester's own phone / e-mail from the inquiry, to prefill the accept form. */
+      prefill: v.object({
+        phone: v.union(v.string(), v.null()),
+        email: v.union(v.string(), v.null()),
+      }),
+      /**
+       * Deferred payment for the signed-in approved mechanic who owns the inquiry (credit on);
+       * `availablePara` null means no limit. Null for everyone else (QA FLOW-08).
+       */
+      deferredCredit: v.union(v.null(), v.object({ availablePara: v.union(v.number(), v.null()) })),
     }),
   ),
   handler: async (ctx, { token }) => {
@@ -341,9 +354,25 @@ export const getByToken = publicQuery({
         !inquiry.isDemo &&
         !inquiry.isTest &&
         resolveEmailConfig(await getSettings(ctx)).effective !== "log",
+      prefill: { phone: inquiry.contact.phone ?? null, email: inquiry.contact.email ?? null },
+      deferredCredit: await deferredCreditFor(ctx, inquiry),
     };
   },
 });
+
+async function deferredCreditFor(
+  ctx: QueryCtx & { viewer: Viewer | null },
+  inquiry: Doc<"inquiries">,
+): Promise<{ availablePara: number | null } | null> {
+  const viewer = ctx.viewer;
+  const m = viewer?.mechanic;
+  if (!viewer || !m || m.status !== "approved" || !m.creditEnabled) return null;
+  if (inquiry.userId && inquiry.userId !== viewer.userId) return null;
+  const profile = await ctx.db.get("mechanicProfiles", m.profileId);
+  if (!profile) return null;
+  const credit = await creditStatus(ctx, profile);
+  return credit.enabled ? { availablePara: credit.availablePara } : null;
+}
 
 async function inquiryByToken(ctx: MutationCtx, token: string): Promise<Doc<"inquiries">> {
   if (!isTokenShape(token)) return notFound("Upit nije pronađen.");
@@ -373,6 +402,10 @@ export const acceptQuote = publicMutation({
     const quote = await currentSentQuote(ctx, inquiry, args.quoteId);
     const settings = await getSettings(ctx);
     const viewer = ctx.viewer;
+    // The token is the authorization; mechanic terms (tier, credit, payment terms) apply only
+    // when the signed-in mechanic is the inquiry's own account (or it has none).
+    const ownsInquiry = viewer !== null && (!inquiry.userId || inquiry.userId === viewer.userId);
+    const buyer = viewer && !ownsInquiry ? { ...viewer, mechanic: null } : viewer;
     const checkout = validateCheckout(
       {
         contact: args.contact,
@@ -384,19 +417,23 @@ export const acceptQuote = publicMutation({
         consent: args.consent,
       },
       settings,
-      viewer,
+      buyer,
     );
     const lines = await quoteOrderLines(ctx, quote);
-    const isMechanic = viewer?.mechanic?.status === "approved";
+    const terms = await mechanicOrderTerms(ctx, buyer, checkout, lines);
     const actor = viewer
       ? actorOf(viewer)
       : { type: "customer" as const, name: inquiry.contact.name };
     const order = await createOrder(ctx, {
       checkout,
       lines,
-      customerType: isMechanic ? "mechanic" : viewer ? "customer" : "guest",
-      ...(viewer ? { userId: viewer.userId } : inquiry.userId ? { userId: inquiry.userId } : {}),
-      ...(isMechanic && viewer?.mechanic ? { mechanicProfileId: viewer.mechanic.profileId } : {}),
+      customerType: terms ? "mechanic" : buyer ? "customer" : "guest",
+      ...(ownsInquiry && viewer
+        ? { userId: viewer.userId }
+        : inquiry.userId
+          ? { userId: inquiry.userId }
+          : {}),
+      ...termsFields(terms),
       ...(inquiry.attribution ? { attribution: inquiry.attribution } : {}),
       source: "inquiry",
       inquiryId: inquiry._id,

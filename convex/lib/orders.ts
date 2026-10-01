@@ -26,11 +26,13 @@ import {
 import { buildSearchText } from "../../lib/domain/search";
 import { belgradeYear } from "../../lib/domain/time";
 import { normalizeVin, validateVin } from "../../lib/domain/vin";
+import { consentInForce } from "./attribution";
 import { audit } from "./audit";
 import type { Viewer } from "./authz";
 import { nextCounter } from "./counters";
 import { fail, invalid } from "./errors";
 import { emitEvent } from "./events";
+import { creditStatus, formatDinarsSr } from "./mechanics";
 import { applyStockDelta } from "./productWriter";
 import type { Settings } from "./settingsSchema";
 import { getSettings } from "./settings";
@@ -88,13 +90,19 @@ export function validateCheckout(
   input: CheckoutInput,
   settings: Settings,
   viewer: Viewer | null,
+  /**
+   * Staff conversion of a phone-only inquiry: the customer has no e-mail, so the order is
+   * stored with `contact.email === ""` and every customer e-mail is skipped (D223).
+   */
+  opts: { emailOptional?: boolean } = {},
 ): ValidatedCheckout {
   const firstName = trimTo(input.contact.firstName, 60);
   const lastName = trimTo(input.contact.lastName, 60);
   if (!firstName) invalid("Upišite ime.", "contact.firstName");
   if (!lastName) invalid("Upišite prezime.", "contact.lastName");
   const email = normalizeEmail(input.contact.email);
-  if (!isValidEmail(email)) invalid("Upišite ispravnu e-mail adresu.", "contact.email");
+  if (!(opts.emailOptional && email === "") && !isValidEmail(email))
+    invalid("Upišite ispravnu e-mail adresu.", "contact.email");
   const phone = normalizePhone(input.contact.phone);
   if (!phone) invalid("Upišite ispravan broj telefona.", "contact.phone");
 
@@ -106,11 +114,25 @@ export function validateCheckout(
     if (!isValidPib(pib)) invalid("PIB nije ispravan (9 cifara, kontrolni broj).", "company.pib");
     const mb = input.company.mb ? normalizeMb(input.company.mb) : undefined;
     if (mb && !isValidMb(mb)) invalid("Matični broj nije ispravan (8 cifara).", "company.mb");
+    let companyAddress: Address | undefined;
+    const ca = input.company.address;
+    if (ca && (ca.street.trim() || ca.city.trim() || ca.postalCode.trim())) {
+      if (!ca.street.trim() || !ca.city.trim())
+        invalid("Upišite ulicu i mesto sedišta firme.", "company.address");
+      if (ca.postalCode.trim() && !isValidPostalCode(ca.postalCode))
+        invalid("Poštanski broj ima 5 cifara.", "company.address.postalCode");
+      companyAddress = {
+        street: trimTo(ca.street, 120),
+        city: trimTo(ca.city, 60),
+        postalCode: ca.postalCode.trim(),
+        ...(ca.note?.trim() ? { note: trimTo(ca.note, 200) } : {}),
+      };
+    }
     company = {
       name,
       pib,
       ...(mb ? { mb } : {}),
-      ...(input.company.address ? { address: input.company.address } : {}),
+      ...(companyAddress ? { address: companyAddress } : {}),
     };
   }
 
@@ -164,6 +186,7 @@ export function validateCheckout(
   if (!input.consent.termsVersion || !input.consent.privacyVersion) {
     invalid("Potrebna je saglasnost sa uslovima kupovine.", "consent");
   }
+  const consent = consentInForce(settings, input.consent, Date.now());
 
   return {
     contact: { firstName, lastName, email, phone },
@@ -172,9 +195,84 @@ export function validateCheckout(
     payment: { method: input.payment.method },
     ...(vehicle ? { vehicle } : {}),
     ...(note ? { note } : {}),
-    consent: input.consent,
+    consent,
     deliveryConfig,
   };
+}
+
+/** Items plus delivery, exactly as `computeOrderTotals` bills them. */
+export function orderTotalPara(
+  lines: Pick<NewOrderLine, "unitPricePara" | "quantity">[],
+  deliveryConfig: ValidatedCheckout["deliveryConfig"],
+): number {
+  const itemsPara = lines.reduce((s, l) => s + l.unitPricePara * l.quantity, 0);
+  const free = deliveryConfig.freeOverPara;
+  return itemsPara + (free !== undefined && itemsPara >= free ? 0 : deliveryConfig.pricePara);
+}
+
+export type MechanicOrderTerms = {
+  mechanicProfileId: Id<"mechanicProfiles">;
+  tierSnapshot?: { tierId: Id<"priceTiers">; name: string };
+  paymentTermsDays: number;
+  /** Set when staff explicitly let a deferred order exceed the credit limit. */
+  creditOverride?: { availablePara: number; totalPara: number };
+};
+
+/** `createOrder` fields for the mechanic terms (none for other buyers). */
+export function termsFields(
+  terms: MechanicOrderTerms | null,
+): Pick<CreateOrderInput, "mechanicProfileId" | "tierSnapshot" | "paymentTermsDays"> {
+  if (!terms) return {};
+  return {
+    mechanicProfileId: terms.mechanicProfileId,
+    ...(terms.tierSnapshot ? { tierSnapshot: terms.tierSnapshot } : {}),
+    paymentTermsDays: terms.paymentTermsDays,
+  };
+}
+
+/**
+ * The approved mechanic's terms for a new order (D132), shared by the web checkout, quote
+ * acceptance and staff conversion (QA BE-01): tier snapshot, the profile's payment terms and,
+ * for deferred payment, the remaining credit. Returns null for anyone else.
+ * `allowCreditOverride` is for staff only; the caller audits it.
+ */
+export async function mechanicOrderTerms(
+  ctx: MutationCtx,
+  buyer: Viewer | null,
+  checkout: ValidatedCheckout,
+  lines: NewOrderLine[],
+  opts: { allowCreditOverride?: boolean } = {},
+): Promise<MechanicOrderTerms | null> {
+  const m = buyer?.mechanic;
+  if (!m || m.status !== "approved") return null;
+  const profile = await ctx.db.get("mechanicProfiles", m.profileId);
+  if (!profile || profile.status !== "approved") return null;
+  const tier = profile.tierId ? await ctx.db.get("priceTiers", profile.tierId) : null;
+  const terms: MechanicOrderTerms = {
+    mechanicProfileId: profile._id,
+    ...(tier ? { tierSnapshot: { tierId: tier._id, name: tier.name } } : {}),
+    paymentTermsDays: profile.paymentTermsDays,
+  };
+  if (checkout.payment.method !== "deferred") return terms;
+  const credit = await creditStatus(ctx, profile);
+  if (!credit.enabled) {
+    invalid(
+      "Odloženo plaćanje je dostupno samo odobrenim majstorima sa tom opcijom.",
+      "payment.method",
+    );
+  }
+  const totalPara = orderTotalPara(lines, checkout.deliveryConfig);
+  if (credit.availablePara !== null && totalPara > credit.availablePara) {
+    if (opts.allowCreditOverride) {
+      return { ...terms, creditOverride: { availablePara: credit.availablePara, totalPara } };
+    }
+    fail(
+      "INVALID",
+      `Limit za odloženo plaćanje nije dovoljan: preostalo je ${formatDinarsSr(credit.availablePara)}. Izaberite drugi način plaćanja ili nas pozovite.`,
+      { field: "payment.method", creditLimit: true, availablePara: credit.availablePara },
+    );
+  }
+  return terms;
 }
 
 export type CreateOrderInput = {
@@ -366,6 +464,32 @@ export async function commitStock(
   await ctx.db.patch("orders", orderId, { stockCommitted: true });
 }
 
+/**
+ * Re-syncs one line's committed stock after a staff edit (QA BE-06): while the order holds
+ * stock, the shelf follows the line — a removal returns what it took, a lower quantity returns
+ * the difference, a higher one (or a new line) takes more (clamped at 0). Movements use the
+ * reason `order_edited`. Returns the line's new `committedQty`.
+ */
+export async function syncCommittedLine(
+  ctx: MutationCtx,
+  order: Doc<"orders">,
+  line: { productId?: Id<"products">; isCustomLine: boolean; committedQty?: number },
+  targetQty: number,
+  actor: Actor,
+): Promise<number> {
+  const committed = line.committedQty ?? 0;
+  if (!order.stockCommitted || !line.productId || line.isCustomLine) return committed;
+  const delta = targetQty - committed;
+  if (delta === 0) return committed;
+  const moved = await applyStockDelta(ctx, line.productId, -delta, {
+    reason: "order_edited",
+    actor,
+    refType: "order",
+    refId: order.number,
+  });
+  return committed - moved;
+}
+
 /** Returns committed quantities to stock (cancel with `restockOnCancel`). */
 export async function restock(
   ctx: MutationCtx,
@@ -491,7 +615,7 @@ export async function transitionOrder(
   }
   await ctx.db.patch("orders", orderId, patch);
 
-  if (commitsStockOn(to, settings.commerce.stockDecrementOn) && !order.stockCommitted) {
+  if (commitsStockOn(to) && !order.stockCommitted) {
     await commitStock(ctx, orderId, "order_confirmed", opts.actor);
   }
   if (to === "otkazana" && order.stockCommitted && settings.commerce.restockOnCancel) {

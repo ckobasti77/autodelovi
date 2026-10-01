@@ -1,0 +1,70 @@
+{
+  "viewport": "430x932",
+  "results": [
+    {
+      "label": "poster",
+      "stage": {
+        "w": 430,
+        "h": 760
+      },
+      "car": {
+        "x": 10,
+        "y": 238,
+        "w": 413,
+        "h": 363,
+        "right": 422,
+        "bottom": 600
+      },
+      "pctStageHeight": 47.8,
+      "pctStageWidth": 96,
+      "gapCaptionToCar": 152,
+      "gapCarToHonesty": 160,
+      "centreOffsetX": 1,
+      "ticks": null,
+      "insideTicks": null,
+      "caption": {
+        "top": 0,
+        "bottom": 86,
+        "left": 17,
+        "right": 413
+      },
+      "honesty": null
+    },
+    {
+      "label": "canvas",
+      "stage": {
+        "w": 430,
+        "h": 760
+      },
+      "car": {
+        "x": 10,
+        "y": 239,
+        "w": 412,
+        "h": 362,
+        "right": 421,
+        "bottom": 600
+      },
+      "pctStageHeight": 47.6,
+      "pctStageWidth": 95.8,
+      "gapCaptionToCar": 153,
+      "gapCarToHonesty": 160,
+      "centreOffsetX": 1,
+      "ticks": null,
+      "insideTicks": null,
+      "caption": {
+        "top": 0,
+        "bottom": 86,
+        "left": 17,
+        "right": 413
+      },
+      "honesty": null
+    }
+  ],
+  "posterSrc": "http://localhost:3001/images/hero/car-assembled-m-640.avif",
+  "state": {
+    "tier": "mid",
+    "progress": 0,
+    "status": "ready"
+  },
+  "errors": []
+}

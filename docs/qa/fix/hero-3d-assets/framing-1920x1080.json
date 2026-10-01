@@ -1,0 +1,80 @@
+{
+  "viewport": "1920x1080",
+  "results": [
+    {
+      "label": "poster",
+      "stage": {
+        "w": 1920,
+        "h": 1016
+      },
+      "car": {
+        "x": 865,
+        "y": 345,
+        "w": 794,
+        "h": 495,
+        "right": 1658,
+        "bottom": 839
+      },
+      "pctStageHeight": 48.7,
+      "pctStageWidth": 41.4,
+      "gapCaptionToCar": 345,
+      "gapCarToHonesty": -839,
+      "centreOffsetX": 302,
+      "ticks": {
+        "top": 16,
+        "bottom": 928,
+        "left": 853,
+        "right": 1680
+      },
+      "insideTicks": true,
+      "caption": null,
+      "honesty": {
+        "top": 0,
+        "bottom": 142,
+        "left": 1312,
+        "right": 1680
+      }
+    },
+    {
+      "label": "canvas",
+      "stage": {
+        "w": 1920,
+        "h": 1016
+      },
+      "car": {
+        "x": 865,
+        "y": 345,
+        "w": 793,
+        "h": 495,
+        "right": 1657,
+        "bottom": 839
+      },
+      "pctStageHeight": 48.7,
+      "pctStageWidth": 41.3,
+      "gapCaptionToCar": 345,
+      "gapCarToHonesty": -839,
+      "centreOffsetX": 301,
+      "ticks": {
+        "top": 16,
+        "bottom": 928,
+        "left": 853,
+        "right": 1680
+      },
+      "insideTicks": true,
+      "caption": null,
+      "honesty": {
+        "top": 0,
+        "bottom": 142,
+        "left": 1312,
+        "right": 1680
+      }
+    }
+  ],
+  "posterSrc": "http://localhost:3001/images/hero/car-assembled-1920.avif",
+  "state": {
+    "tier": "high",
+    "progress": 0,
+    "status": "ready"
+  },
+  "errors": []
+}

@@ -20,15 +20,21 @@ export type HeaderProps = {
   contact?: Partial<Contact> | null;
 };
 
+/**
+ * Icon-link look without a display utility: every use adds its own (`hidden sm:inline-flex`, …).
+ * A display class in the shared style would collide with `hidden` (both unprefixed), and
+ * Tailwind's output order — not the class order — would decide which one wins (VIS-03).
+ */
 const iconLink =
-  "inline-flex size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1";
+  "size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1";
 const textLink =
   "inline-flex h-11 items-center gap-2 rounded-xs px-2 text-[0.9375rem] font-medium text-ink-2 transition-control hover:text-ink-1";
 
 /**
  * Site header (§10.1): 64 px (56 below 1024), bg at 88 % + 12 px blur (solid under reduced
  * transparency). [mark] SKLOP · nav · search · vehicle slot · contact · account · cart · menu.
- * Contact: text links ≥ 1440 px, icon buttons below; Viber moves into the menu below 640 px.
+ * Contact: text links ≥ 1440 px, icon buttons from 480 px. Below 480 px the bar holds only the
+ * mark, search, cart and menu; phone, Viber and the account/mechanic links live in MobileNav.
  * Excluded from the text reveal: chrome must be readable at once.
  */
 export function Header({ vehicleSlot, cartCount, contact }: HeaderProps) {
@@ -59,7 +65,7 @@ export function Header({ vehicleSlot, cartCount, contact }: HeaderProps) {
               <a
                 href={phone.href}
                 aria-label={`Pozovite ${phone.display}`}
-                className={`${iconLink} min-[90rem]:hidden`}
+                className={`${iconLink} hidden sm:inline-flex min-[90rem]:hidden`}
               >
                 <PhoneIcon size={24} aria-hidden="true" />
               </a>

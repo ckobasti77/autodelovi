@@ -18,6 +18,7 @@ import { workingMinutesBetween } from "@/lib/domain/sla";
 import { formatDate } from "@/lib/format/date";
 import { formatRSD } from "@/lib/format/money";
 import { formatPhone } from "@/lib/format/phone";
+import { convexErrorField } from "@/lib/i18n/sr/shop";
 import { INQUIRY_KIND_LABEL } from "@/lib/i18n/sr/admin";
 import {
   convexErrorMessage,
@@ -27,6 +28,8 @@ import {
 } from "@/lib/i18n/sr/shop";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { Checkbox } from "@/components/ui/Checkbox";
+import { CopyButton } from "@/components/ui/CopyButton";
 import { Dialog } from "@/components/ui/Dialog";
 import { Field } from "@/components/ui/Field";
 import { Input } from "@/components/ui/Input";
@@ -306,6 +309,19 @@ function InquiryView({ data }: { data: Detail }) {
             </Section>
           ) : null}
 
+          {current?.status === "sent" &&
+          i.statusLink &&
+          (!i.contact.email || i.contact.preferredChannel !== "email") ? (
+            <Section title="Link za kupca">
+              <QuoteShareLink
+                link={i.statusLink}
+                phone={i.contact.phone ?? null}
+                hasEmail={Boolean(i.contact.email)}
+                number={i.number}
+              />
+            </Section>
+          ) : null}
+
           {data.quotes.length > 0 ? (
             <Section title="Ponude">
               <ol className="flex flex-col gap-4">
@@ -539,6 +555,83 @@ function InquiryView({ data }: { data: Detail }) {
   );
 }
 
+/** Digits of an E.164 number for wa.me (`+381641234567` → `381641234567`). */
+const waNumber = (e164: string) => e164.replace(/\D/g, "");
+
+/**
+ * The customer's status/accept link for phone, Viber and WhatsApp customers (QA FLOW-13):
+ * copy it, or open Viber / WhatsApp / SMS with a short prefilled message.
+ */
+function QuoteShareLink({
+  link,
+  phone,
+  hasEmail,
+  number,
+}: {
+  link: string;
+  phone: string | null;
+  hasEmail: boolean;
+  number: string;
+}) {
+  const message = `Ponuda za upit ${number} je spremna. Pogledajte je i prihvatite ovde: ${link}`;
+  const text = encodeURIComponent(message);
+  return (
+    <div className="flex flex-col gap-3" data-testid="admin-quote-share">
+      <p className="type-body-s text-ink-2">
+        {hasEmail
+          ? "Kupac je tražio odgovor porukom. Pošaljite mu link ponude:"
+          : "Kupac nema e-poštu i ponuda mu nije stigla sama. Pošaljite mu link ponude:"}
+      </p>
+      <p className="break-all rounded-sm border border-line bg-surface-2 px-3 py-2 type-code">
+        {link}
+      </p>
+      <div className="flex flex-wrap gap-2">
+        <CopyButton value={link} label="Kopiraj link" toastMessage="Link je kopiran." />
+        <a
+          className="type-body-s font-medium text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent"
+          href={`viber://forward?text=${text}`}
+        >
+          Viber
+        </a>
+        {phone ? (
+          <>
+            <a
+              className="type-body-s font-medium text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent"
+              href={`https://wa.me/${waNumber(phone)}?text=${text}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+            </a>
+            <a
+              className="type-body-s font-medium text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent"
+              href={`sms:${phone}?body=${text}`}
+            >
+              SMS
+            </a>
+          </>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+type ConvertField =
+  "firstName" | "lastName" | "phone" | "email" | "street" | "city" | "postalCode" | "payment";
+
+/** Server field path (`contact.email`, `delivery.address.postalCode`) → dialog field. */
+function convertFieldFor(path: string | null): ConvertField | null {
+  if (!path) return null;
+  if (path.startsWith("contact.")) {
+    const f = path.slice("contact.".length);
+    return f === "firstName" || f === "lastName" || f === "phone" || f === "email" ? f : null;
+  }
+  if (path === "delivery.address.postalCode") return "postalCode";
+  if (path.startsWith("delivery.address")) return "street";
+  if (path === "payment.method") return "payment";
+  return null;
+}
+
 function ConvertDialog({
   detail,
   quoteId,
@@ -568,10 +661,21 @@ function ConvertDialog({
   });
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<Partial<Record<ConvertField, string>>>({});
+  const [creditOverride, setCreditOverride] = useState(false);
+  // A phone/Viber/WhatsApp customer may have no e-mail; the order then goes without e-mails.
+  const emailRequired = Boolean(c.email);
   const payments = (settings?.paymentMethods ?? []).filter(
     (p) => p.active && p.deliveryCodes.includes(form.delivery) && p.requires !== "company",
   );
-  const set = (patch: Partial<typeof form>) => setForm({ ...form, ...patch });
+  const set = (patch: Partial<typeof form>) => {
+    setForm({ ...form, ...patch });
+    if (Object.keys(patch).some((k) => k in fieldErrors)) {
+      const next = { ...fieldErrors };
+      for (const k of Object.keys(patch)) delete next[k as ConvertField];
+      setFieldErrors(next);
+    }
+  };
 
   return (
     <Dialog
@@ -583,17 +687,19 @@ function ConvertDialog({
     >
       <form
         className="flex flex-col gap-4"
+        noValidate
         onSubmit={async (e) => {
           e.preventDefault();
           setBusy(true);
           setError(null);
+          setFieldErrors({});
           try {
             const res = await convert({
               quoteId,
               contact: {
                 firstName: form.firstName,
                 lastName: form.lastName,
-                email: form.email,
+                email: form.email.trim(),
                 phone: form.phone,
               },
               delivery: {
@@ -609,11 +715,15 @@ function ConvertDialog({
                   : {}),
               },
               payment: { method: form.payment as keyof typeof PAYMENT_LABEL },
+              ...(form.payment === "deferred" && creditOverride ? { creditOverride: true } : {}),
             });
             toast.success(`Porudžbina ${res.orderNumber} je kreirana.`);
             router.push(ADMIN.order(res.orderNumber));
           } catch (err) {
-            setError(convexErrorMessage(err, "Porudžbina nije kreirana."));
+            const message = convexErrorMessage(err, "Porudžbina nije kreirana.");
+            const field = convertFieldFor(convexErrorField(err));
+            if (field) setFieldErrors({ [field]: message });
+            setError(message);
             setBusy(false);
           }
         }}
@@ -623,20 +733,31 @@ function ConvertDialog({
           sve stavke iz ponude; upit se zatvara kao prihvaćen.
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
-          <Field label="Ime" required markRequired>
+          <Field label="Ime" required markRequired error={fieldErrors.firstName}>
             <Input value={form.firstName} onChange={(e) => set({ firstName: e.target.value })} />
           </Field>
-          <Field label="Prezime" required markRequired>
+          <Field label="Prezime" required markRequired error={fieldErrors.lastName}>
             <Input value={form.lastName} onChange={(e) => set({ lastName: e.target.value })} />
           </Field>
-          <Field label="Telefon" required markRequired>
+          <Field label="Telefon" required markRequired error={fieldErrors.phone}>
             <Input
               value={form.phone}
               onChange={(e) => set({ phone: e.target.value })}
               inputMode="tel"
             />
           </Field>
-          <Field label="E-pošta" required markRequired>
+          <Field
+            label="E-pošta"
+            required={emailRequired}
+            markRequired={emailRequired}
+            optional={!emailRequired}
+            help={
+              emailRequired
+                ? undefined
+                : "Kupac nije ostavio e-poštu: porudžbina ide bez obaveštenja e-poštom."
+            }
+            error={fieldErrors.email}
+          >
             <Input
               value={form.email}
               onChange={(e) => set({ email: e.target.value })}
@@ -656,13 +777,13 @@ function ConvertDialog({
         </Field>
         {form.delivery === "courier" ? (
           <div className="grid gap-3 sm:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_7rem]">
-            <Field label="Ulica i broj" required markRequired>
+            <Field label="Ulica i broj" required markRequired error={fieldErrors.street}>
               <Input value={form.street} onChange={(e) => set({ street: e.target.value })} />
             </Field>
             <Field label="Mesto" required markRequired>
               <Input value={form.city} onChange={(e) => set({ city: e.target.value })} />
             </Field>
-            <Field label="Poštanski broj" required markRequired>
+            <Field label="Poštanski broj" required markRequired error={fieldErrors.postalCode}>
               <Input
                 value={form.postalCode}
                 onChange={(e) => set({ postalCode: e.target.value })}
@@ -671,13 +792,21 @@ function ConvertDialog({
             </Field>
           </div>
         ) : null}
-        <Field label="Plaćanje">
+        <Field label="Plaćanje" error={fieldErrors.payment}>
           <Select
             value={form.payment}
             onChange={(e) => set({ payment: e.target.value })}
             options={payments.map((p) => ({ value: p.code, label: p.label }))}
           />
         </Field>
+        {form.payment === "deferred" ? (
+          <Checkbox
+            checked={creditOverride}
+            onCheckedChange={(v) => setCreditOverride(v === true)}
+            label="Dozvoli prekoračenje limita odloženog plaćanja"
+            description="Samo uz dogovor sa majstorom; prekoračenje se beleži u reviziji."
+          />
+        ) : null}
         {error ? (
           <p role="alert" className="type-body-s text-danger">
             {error}

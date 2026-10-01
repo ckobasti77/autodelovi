@@ -1,32 +1,30 @@
 /**
- * The one GSAP entry point (ARCHITECTURE §G5). Import gsap, plugins and useGSAP from here —
- * never from "gsap" directly — so plugin registration and the SKLOP eases are guaranteed to
- * exist before the first tween.
+ * The one GSAP entry point (ARCHITECTURE §G5). Import gsap and useGSAP from here — never from
+ * "gsap" directly — so the SKLOP eases (`sk.out`, `sk.inOut`, `sk.in`, `sk.snap`) and the
+ * defaults exist before the first tween.
  *
- * Client-only in practice: registration is skipped on the server (no window). Draggable and
- * InertiaPlugin (bottom-sheet drag only) load on demand through `loadDragPlugins()` in
- * `lib/gsap/drag.ts`.
+ * Core only (PERF-10): the eases are registered with `gsap.registerEase` from a small
+ * cubic-bezier solver instead of CustomEase. Scroll-linked motion (ScrollTrigger,
+ * ScrollToPlugin) lives in `lib/gsap/scroll.ts`, imported only where it is used (the 3D hero);
+ * Draggable + InertiaPlugin (bottom-sheet drag) load on demand through `loadDragPlugins()` in
+ * `lib/gsap/drag.ts`. Registration is skipped on the server (no window).
  */
 import { gsap } from "gsap";
-import { CustomEase } from "gsap/CustomEase";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 import { DUR, EASE, EASE_CURVES, MEDIA } from "@/constants/motion";
+import { cubicBezierFromString } from "@/lib/gsap/cubicBezier";
 
 let registered = false;
 
 export function registerGsap(): void {
   if (registered || typeof window === "undefined") return;
-  gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin, CustomEase);
+  gsap.registerPlugin(useGSAP);
   for (const [name, curve] of Object.entries(EASE_CURVES)) {
-    CustomEase.create(name, curve);
+    gsap.registerEase(name, cubicBezierFromString(curve));
   }
   // Principle 3 (§8.1): tweens start from what is on screen and may be interrupted.
   gsap.defaults({ ease: EASE.out, duration: DUR.base, overwrite: "auto" });
-  // Mobile URL-bar show/hide must not re-layout pinned sections.
-  ScrollTrigger.config({ ignoreMobileResize: true });
   registered = true;
 }
 
@@ -37,4 +35,9 @@ export function prefersReducedMotion(): boolean {
   return typeof window !== "undefined" && window.matchMedia(MEDIA.reducedMotion).matches;
 }
 
-export { CustomEase, gsap, ScrollToPlugin, ScrollTrigger, useGSAP };
+export { gsap, useGSAP };
+
+// TRANSITIONAL (PERF-10): components/three/HeroStage.tsx still imports ScrollTrigger from this
+// module. Remove this line as soon as it imports from "@/lib/gsap/scroll" — until then every
+// page still loads ScrollTrigger. Keep it last: lib/gsap/scroll imports this module back.
+export { ScrollTrigger } from "@/lib/gsap/scroll";

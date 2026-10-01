@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { contactLinkList } from "@/config/site";
 import { parsePastedOemList } from "@/lib/domain/codes";
+import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { contactFromSettings } from "@/lib/settings/public";
 import {
@@ -13,6 +14,8 @@ import {
 } from "@/lib/server/catalog-cache";
 import { getViewer } from "@/lib/server/auth";
 import { RevealText } from "@/components/text-reveal/RevealText";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { ContactActions } from "@/components/shell/ContactActions";
 import { InquiryForm, type InquiryPrefill } from "@/components/inquiry/InquiryForm";
 import { VinLocator } from "@/components/inquiry/VinLocator";
@@ -28,6 +31,8 @@ export async function generateMetadata(): Promise<Metadata> {
     titleSuffix: settings.seo.titleSuffix,
   });
 }
+
+const crumbs = [{ label: "Početna", href: ROUTES.home }, { label: "Upit po broju šasije" }];
 
 const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v)?.trim() ?? "";
 
@@ -71,8 +76,10 @@ export default async function InquiryPage({ searchParams }: PageProps<"/upit">) 
   const contacts = contactLinkList(contactFromSettings(settings)).filter((l) => l.channel !== "email");
 
   return (
-    <div className="px-page pb-(--space-section) pt-8 lg:pt-10">
-      <div className="flex max-w-[48rem] flex-col gap-4">
+    <div className="px-page pb-(--space-section) pt-6 lg:pt-8">
+      <JsonLd data={breadcrumbJsonLd(crumbs)} />
+      <Breadcrumbs items={crumbs} />
+      <div className="mt-4 flex max-w-[48rem] flex-col gap-4">
         <RevealText as="h1" className="type-display-l uppercase text-ink-1">
           Ne nalazite deo?
         </RevealText>

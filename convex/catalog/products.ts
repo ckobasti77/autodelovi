@@ -646,6 +646,31 @@ export const forVehicle = publicQuery({
 });
 
 /**
+ * Old URL → current URL after a slug change (SEO-06). Follows up to five renames and stops on
+ * a loop; null when the path was never renamed. Only the target path is exposed.
+ */
+export const redirectFor = publicQuery({
+  args: { path: v.string() },
+  returns: v.union(v.null(), v.object({ toPath: v.string() })),
+  handler: async (ctx, { path }) => {
+    let current = path.slice(0, 200);
+    const seen = new Set([current]);
+    let found: string | null = null;
+    for (let hop = 0; hop < 5; hop++) {
+      const row = await ctx.db
+        .query("redirects")
+        .withIndex("by_fromPath", (q) => q.eq("fromPath", current))
+        .first();
+      if (!row || seen.has(row.toPath)) break;
+      found = row.toPath;
+      current = row.toPath;
+      seen.add(current);
+    }
+    return found ? { toPath: found } : null;
+  },
+});
+
+/**
  * A product that is no longer sold (inactive or soft-deleted): the page answers 200 with
  * „Artikal više nije u ponudi“ and alternatives instead of a 404 (ROUTES §B1).
  */

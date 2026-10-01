@@ -3,18 +3,11 @@
  * `mechanics.register` enforces in Convex, with DESIGN-SYSTEM §11.4 messages. Account fields
  * are required only when the visitor is not signed in yet.
  */
-import { z } from "zod";
+import * as z from "zod";
 
-import {
-  isValidEmail,
-  isValidMb,
-  isValidPib,
-  normalizeEmail,
-  normalizeMb,
-  normalizePib,
-} from "@/lib/domain/identifiers";
 import { normalizePhone } from "@/lib/format/phone";
 import { ERRORS } from "@/lib/i18n/sr/shop";
+import { emailProblem, mbProblem, passwordProblem, pibProblem } from "@/lib/validation/identifiers";
 
 export const SERVICE_TYPE_VALUES = [
   "mehanika",
@@ -26,28 +19,19 @@ export const SERVICE_TYPE_VALUES = [
   "ostalo",
 ] as const;
 
-export function passwordProblem(password: string): string | null {
-  if (password.length < 10) return "Lozinka mora imati najmanje 10 znakova.";
-  if (!/\p{L}/u.test(password) || !/\d/.test(password))
-    return "Lozinka mora sadržati bar jedno slovo i jednu cifru.";
-  return null;
-}
-
 export function mechanicRegistrationSchema(opts: { needsAccount: boolean }) {
   return z
     .object({
       email: z.string().trim(),
       password: z.string(),
       companyName: z.string().trim().min(1, ERRORS.required("naziv servisa ili firme")).max(120),
-      pib: z
+      pib: z.string().trim(),
+      mb: z.string().trim(),
+      contactPerson: z
         .string()
         .trim()
-        .refine((v) => isValidPib(normalizePib(v)), ERRORS.pib),
-      mb: z
-        .string()
-        .trim()
-        .refine((v) => isValidMb(normalizeMb(v)), ERRORS.mb),
-      contactPerson: z.string().trim().min(1, ERRORS.required("ime i prezime kontakt osobe")).max(80),
+        .min(1, ERRORS.required("ime i prezime kontakt osobe"))
+        .max(80),
       phone: z
         .string()
         .trim()
@@ -55,15 +39,21 @@ export function mechanicRegistrationSchema(opts: { needsAccount: boolean }) {
         .refine((v) => normalizePhone(v) !== null, ERRORS.phone),
       city: z.string().trim().min(1, ERRORS.required("mesto")).max(60),
       address: z.string().trim().min(1, ERRORS.required("adresu servisa")).max(160),
-      serviceTypes: z.array(z.enum(SERVICE_TYPE_VALUES)).min(1, "Izaberite bar jednu vrstu servisa."),
+      serviceTypes: z
+        .array(z.enum(SERVICE_TYPE_VALUES))
+        .min(1, "Izaberite bar jednu vrstu servisa."),
       brandsServiced: z.array(z.string()).max(5, "Najviše 5 marki."),
       terms: z.boolean(),
     })
     .superRefine((d, ctx) => {
+      const pib = pibProblem(d.pib);
+      if (pib) ctx.addIssue({ code: "custom", path: ["pib"], message: pib });
+      const mb = mbProblem(d.mb);
+      if (mb) ctx.addIssue({ code: "custom", path: ["mb"], message: mb });
       if (opts.needsAccount) {
-        if (!isValidEmail(normalizeEmail(d.email)))
-          ctx.addIssue({ code: "custom", path: ["email"], message: ERRORS.email });
-        const pw = passwordProblem(d.password);
+        const email = emailProblem(d.email);
+        if (email) ctx.addIssue({ code: "custom", path: ["email"], message: email });
+        const pw = passwordProblem(d.password, d.email);
         if (pw) ctx.addIssue({ code: "custom", path: ["password"], message: pw });
       }
       if (!d.terms)

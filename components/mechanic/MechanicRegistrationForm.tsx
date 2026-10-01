@@ -10,7 +10,7 @@ import { useAuthActions } from "@convex-dev/auth/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "convex/react";
 import { useRouter } from "next/navigation";
-import { useMemo, useRef, useState } from "react";
+import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Controller, useForm, useWatch } from "react-hook-form";
 import { CheckCircleIcon, WarningCircleIcon } from "@phosphor-icons/react/dist/ssr";
 
@@ -37,7 +37,13 @@ import {
 } from "@/lib/validation/mechanicRegistration";
 import { Button } from "@/components/ui/Button";
 import { Checkbox, CheckboxBox } from "@/components/ui/Checkbox";
-import { Field } from "@/components/ui/Field";
+import {
+  Field,
+  FormNoScript,
+  readPrehydrationValues,
+  RequiredUnlessOptional,
+  useHydrated,
+} from "@/components/ui/Field";
 import { Input } from "@/components/ui/Input";
 import { Link } from "@/components/ui/Link";
 import { ROUTES } from "@/constants/routes";
@@ -48,6 +54,19 @@ export type RegistrationConfig = {
   legal: { terms: string; privacy: string };
   viewer: { email: string; name: string; phone: string } | null;
 };
+
+/** Text controls a visitor can type into before hydration → their DOM ids. */
+const TEXT_FIELD_IDS = {
+  email: "mr-email",
+  password: "mr-password",
+  companyName: "mr-companyName",
+  pib: "mr-pib",
+  mb: "mr-mb",
+  contactPerson: "mr-contactPerson",
+  phone: "mr-phone",
+  city: "mr-city",
+  address: "mr-address",
+} as const;
 
 const PASSWORD_HELP = "Najmanje 10 znakova, bar jedno slovo i jedna cifra.";
 
@@ -91,6 +110,10 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
   );
   const [pending, setPending] = useState(false);
   const summary = useRef<HTMLDivElement>(null);
+  const hydrated = useHydrated();
+  // XB-01: text typed before hydration, read in the hydration render (register()'s ref writes
+  // the default values into the DOM at commit) and restored in the layout effect below.
+  const [typedBeforeHydration] = useState(() => readPrehydrationValues(TEXT_FIELD_IDS));
 
   const {
     register,
@@ -98,6 +121,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
     handleSubmit,
     formState: { errors, submitCount },
     setError,
+    setValue,
   } = useForm<MechanicRegistrationValues>({
     resolver: zodResolver(schema),
     mode: "onTouched",
@@ -116,6 +140,15 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
       terms: false,
     },
   });
+  useLayoutEffect(() => {
+    for (const [name, value] of Object.entries(typedBeforeHydration) as [
+      keyof typeof TEXT_FIELD_IDS,
+      string,
+    ][]) {
+      setValue(name, value, { shouldDirty: true });
+    }
+  }, [typedBeforeHydration, setValue]);
+
   const pib = useWatch({ control, name: "pib" });
   const mb = useWatch({ control, name: "mb" });
   const pibOk = pib && isValidPib(normalizePib(pib));
@@ -147,7 +180,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
         } catch {
           setServerError({
             message:
-              "Nalog sa ovom e-mail adresom verovatno već postoji. Prijavite se, pa pošaljite podatke servisa.",
+              "Nalog sa ovom adresom e-pošte verovatno već postoji. Prijavite se, pa pošaljite podatke servisa.",
             signIn: true,
           });
           setPending(false);
@@ -207,341 +240,358 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
   };
 
   return (
+    // method="post": before hydration (or without JavaScript) a submit must never put the
+    // account password into a GET URL; the submit button stays disabled until hydration.
     <form
+      method="post"
       noValidate
       onSubmit={(event) => void handleSubmit(onValid, focusSummary)(event)}
       className="flex flex-col gap-8"
       data-reveal="off"
       data-testid={TEST_IDS.mechanicRegistrationForm}
     >
-      <div ref={summary} tabIndex={-1} className="outline-none">
-        {errorList.length || serverError ? (
-          <div role="alert" className="rounded-sm border border-danger bg-danger-subtle p-4">
-            <p className="flex items-center gap-2 type-body-s font-semibold text-danger">
-              <WarningCircleIcon size={18} aria-hidden="true" />
-              {serverError?.message ?? "Proverite označena polja:"}
-            </p>
-            {serverError?.signIn ? (
-              <p className="mt-2 pl-6.5 type-body-s">
-                <Link
-                  href={`${ROUTES.signIn}?next=${encodeURIComponent(ROUTES.mechanicsRegister)}`}
-                  variant="inline"
-                >
-                  Prijavite se
-                </Link>
+      <RequiredUnlessOptional>
+        <div ref={summary} tabIndex={-1} className="outline-none">
+          {errorList.length || serverError ? (
+            <div role="alert" className="rounded-sm border border-danger bg-danger-subtle p-4">
+              <p className="flex items-center gap-2 type-body-s font-semibold text-danger">
+                <WarningCircleIcon size={18} aria-hidden="true" />
+                {serverError?.message ?? "Proverite označena polja:"}
               </p>
-            ) : null}
-            {errorList.length ? (
-              <ul className="mt-2 flex flex-col gap-1 pl-6.5 type-body-s">
-                {errorList.map((e) => (
-                  <li key={e.k}>
-                    <a
-                      href={`#mr-${e.k}`}
-                      className="text-ink-1 underline decoration-line-strong underline-offset-4"
-                    >
-                      {e.message}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
-          </div>
-        ) : null}
-      </div>
+              {serverError?.signIn ? (
+                <p className="mt-2 pl-6.5 type-body-s">
+                  <Link
+                    href={`${ROUTES.signIn}?next=${encodeURIComponent(ROUTES.mechanicsRegister)}`}
+                    variant="inline"
+                  >
+                    Prijavite se
+                  </Link>
+                </p>
+              ) : null}
+              {errorList.length ? (
+                <ul className="mt-2 flex flex-col gap-1 pl-6.5 type-body-s">
+                  {errorList.map((e) => (
+                    <li key={e.k}>
+                      <a
+                        href={`#mr-${e.k}`}
+                        className="text-ink-1 underline decoration-line-strong underline-offset-4"
+                      >
+                        {e.message}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </div>
+          ) : null}
+        </div>
 
-      {needsAccount ? (
+        {needsAccount ? (
+          <Section
+            id="mr-sec-account"
+            title="Nalog"
+            aside="Ovim podacima se prijavljujete. Ako već imate nalog, prvo se prijavite."
+          >
+            <div className="grid gap-5 sm:grid-cols-2">
+              <Field id="mr-email" label="E-pošta" error={errors.email?.message}>
+                <Input
+                  type="email"
+                  inputMode="email"
+                  autoComplete="email"
+                  data-testid={TEST_IDS.mechanicRegEmail}
+                  {...register("email")}
+                />
+              </Field>
+              <Field
+                id="mr-password"
+                label="Lozinka"
+                help={PASSWORD_HELP}
+                error={errors.password?.message}
+              >
+                <Input
+                  type="password"
+                  autoComplete="new-password"
+                  data-testid={TEST_IDS.mechanicRegPassword}
+                  {...register("password")}
+                />
+              </Field>
+            </div>
+            <p className="type-body-s text-ink-3">
+              Već imate nalog?{" "}
+              <Link
+                href={`${ROUTES.signIn}?next=${encodeURIComponent(ROUTES.mechanicsRegister)}`}
+                variant="inline"
+              >
+                Prijavite se
+              </Link>
+              , pa se vratite na ovu stranu.
+            </p>
+          </Section>
+        ) : (
+          <p className="flex items-start gap-2 rounded-sm border border-line bg-surface-1 p-4 type-body-s text-ink-2">
+            <CheckCircleIcon
+              size={18}
+              aria-hidden="true"
+              className="mt-0.5 shrink-0 text-success"
+            />
+            Registrujete servis za nalog {config.viewer?.email}.
+          </p>
+        )}
+
         <Section
-          id="mr-sec-account"
-          title="Nalog"
-          aside="Ovim podacima se prijavljujete. Ako već imate nalog, prvo se prijavite."
+          id="mr-sec-company"
+          title="Firma"
+          aside="Podatke proveravamo u registru pre odobrenja."
         >
+          <Field
+            id="mr-companyName"
+            label="Naziv servisa ili firme"
+            error={errors.companyName?.message}
+          >
+            <Input
+              autoComplete="organization"
+              data-testid={TEST_IDS.mechanicRegCompany}
+              {...register("companyName")}
+            />
+          </Field>
           <div className="grid gap-5 sm:grid-cols-2">
-            <Field id="mr-email" label="E-pošta" error={errors.email?.message}>
+            <Field
+              id="mr-pib"
+              label="PIB"
+              help="9 cifara"
+              error={errors.pib?.message}
+              success={pibOk && !errors.pib ? "PIB je ispravan." : undefined}
+            >
               <Input
-                type="email"
-                inputMode="email"
-                autoComplete="email"
-                data-testid={TEST_IDS.mechanicRegEmail}
-                {...register("email")}
+                inputMode="numeric"
+                autoComplete="off"
+                maxLength={11}
+                inputClassName="font-mono tracking-wider"
+                data-testid={TEST_IDS.mechanicRegPib}
+                {...register("pib")}
               />
             </Field>
             <Field
-              id="mr-password"
-              label="Lozinka"
-              help={PASSWORD_HELP}
-              error={errors.password?.message}
+              id="mr-mb"
+              label="Matični broj"
+              help="8 cifara"
+              error={errors.mb?.message}
+              success={mbOk && !errors.mb ? "Matični broj je ispravan." : undefined}
             >
               <Input
-                type="password"
-                autoComplete="new-password"
-                data-testid={TEST_IDS.mechanicRegPassword}
-                {...register("password")}
+                inputMode="numeric"
+                autoComplete="off"
+                maxLength={10}
+                inputClassName="font-mono tracking-wider"
+                data-testid={TEST_IDS.mechanicRegMb}
+                {...register("mb")}
               />
             </Field>
           </div>
-          <p className="type-body-s text-ink-3">
-            Već imate nalog?{" "}
-            <Link
-              href={`${ROUTES.signIn}?next=${encodeURIComponent(ROUTES.mechanicsRegister)}`}
-              variant="inline"
-            >
-              Prijavite se
-            </Link>
-            , pa se vratite na ovu stranu.
-          </p>
         </Section>
-      ) : (
-        <p className="flex items-start gap-2 rounded-sm border border-line bg-surface-1 p-4 type-body-s text-ink-2">
-          <CheckCircleIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0 text-success" />
-          Registrujete servis za nalog {config.viewer?.email}.
-        </p>
-      )}
 
-      <Section
-        id="mr-sec-company"
-        title="Firma"
-        aside="Podatke proveravamo u registru pre odobrenja."
-      >
-        <Field
-          id="mr-companyName"
-          label="Naziv servisa ili firme"
-          error={errors.companyName?.message}
-        >
-          <Input
-            autoComplete="organization"
-            data-testid={TEST_IDS.mechanicRegCompany}
-            {...register("companyName")}
-          />
-        </Field>
-        <div className="grid gap-5 sm:grid-cols-2">
-          <Field
-            id="mr-pib"
-            label="PIB"
-            help="9 cifara"
-            error={errors.pib?.message}
-            success={pibOk && !errors.pib ? "PIB je ispravan." : undefined}
-          >
-            <Input
-              inputMode="numeric"
-              autoComplete="off"
-              maxLength={11}
-              inputClassName="font-mono tracking-wider"
-              data-testid={TEST_IDS.mechanicRegPib}
-              {...register("pib")}
-            />
-          </Field>
-          <Field
-            id="mr-mb"
-            label="Matični broj"
-            help="8 cifara"
-            error={errors.mb?.message}
-            success={mbOk && !errors.mb ? "Matični broj je ispravan." : undefined}
-          >
-            <Input
-              inputMode="numeric"
-              autoComplete="off"
-              maxLength={10}
-              inputClassName="font-mono tracking-wider"
-              data-testid={TEST_IDS.mechanicRegMb}
-              {...register("mb")}
-            />
-          </Field>
-        </div>
-      </Section>
-
-      <Section id="mr-sec-contact" title="Kontakt">
-        <div className="grid gap-5 sm:grid-cols-2">
-          <Field id="mr-contactPerson" label="Kontakt osoba" error={errors.contactPerson?.message}>
-            <Input
-              autoComplete="name"
-              data-testid={TEST_IDS.mechanicRegContact}
-              {...register("contactPerson")}
-            />
-          </Field>
-          <Field
-            id="mr-phone"
-            label="Telefon"
-            help="Najčešće zovemo ili pišemo na Viber."
-            error={errors.phone?.message}
-          >
-            <Input
-              type="tel"
-              autoComplete="tel"
-              inputMode="tel"
-              data-testid={TEST_IDS.mechanicRegPhone}
-              {...register("phone")}
-            />
-          </Field>
-        </div>
-      </Section>
-
-      <Section
-        id="mr-sec-workshop"
-        title="Servis"
-        aside="Na ovu adresu šaljemo delove; menja se pri svakoj porudžbini."
-      >
-        <div className="grid gap-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
-          <Field id="mr-city" label="Mesto" error={errors.city?.message}>
-            <Input
-              autoComplete="address-level2"
-              data-testid={TEST_IDS.mechanicRegCity}
-              {...register("city")}
-            />
-          </Field>
-          <Field id="mr-address" label="Adresa servisa" error={errors.address?.message}>
-            <Input
-              autoComplete="street-address"
-              data-testid={TEST_IDS.mechanicRegAddress}
-              {...register("address")}
-            />
-          </Field>
-        </div>
-        <Controller
-          control={control}
-          name="serviceTypes"
-          render={({ field }) => (
-            <div
-              id="mr-serviceTypes"
-              className="flex flex-col gap-2"
-              role="group"
-              aria-labelledby="mr-st-label"
+        <Section id="mr-sec-contact" title="Kontakt">
+          <div className="grid gap-5 sm:grid-cols-2">
+            <Field
+              id="mr-contactPerson"
+              label="Kontakt osoba"
+              error={errors.contactPerson?.message}
             >
-              <span id="mr-st-label" className="type-caption text-ink-2">
-                Vrsta servisa
-              </span>
-              <div className="flex flex-wrap gap-2">
-                {SERVICE_TYPES.map((s) => {
-                  const on = field.value.includes(s.value);
-                  return (
-                    <label
-                      key={s.value}
-                      className={cn(
-                        "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xs border px-3 type-body-s transition-control",
-                        on
-                          ? "border-accent bg-accent-subtle text-ink-1"
-                          : "border-line-strong text-ink-2 hover:border-ink-3",
-                      )}
-                    >
-                      <CheckboxBox
-                        aria-label={s.label}
-                        checked={on}
-                        onCheckedChange={(c) =>
-                          field.onChange(
-                            c === true
-                              ? [...field.value, s.value]
-                              : field.value.filter((x) => x !== s.value),
-                          )
-                        }
-                        onBlur={field.onBlur}
-                        data-testid={`${TEST_IDS.mechanicRegService}-${s.value}`}
-                      />
-                      {s.label}
-                    </label>
-                  );
-                })}
-              </div>
-              {errors.serviceTypes?.message ? (
-                <p className="flex items-center gap-1.5 type-caption text-danger">
-                  <WarningCircleIcon size={16} aria-hidden="true" />
-                  {errors.serviceTypes.message}
-                </p>
-              ) : null}
-            </div>
-          )}
-        />
-        <Controller
-          control={control}
-          name="brandsServiced"
-          render={({ field }) => (
-            <div
-              id="mr-brandsServiced"
-              className="flex flex-col gap-2"
-              role="group"
-              aria-labelledby="mr-br-label"
-            >
-              <span id="mr-br-label" className="type-caption text-ink-2">
-                Marke koje servisirate <span className="text-ink-3">(nije obavezno)</span>
-              </span>
-              <div className="flex flex-wrap gap-2">
-                {config.brands.map((b) => {
-                  const on = field.value.includes(b.id);
-                  return (
-                    <label
-                      key={b.id}
-                      className={cn(
-                        "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xs border px-3 type-body-s transition-control",
-                        on
-                          ? "border-accent bg-accent-subtle text-ink-1"
-                          : "border-line-strong text-ink-2 hover:border-ink-3",
-                      )}
-                    >
-                      <CheckboxBox
-                        aria-label={b.name}
-                        checked={on}
-                        onCheckedChange={(c) =>
-                          field.onChange(
-                            c === true
-                              ? [...field.value, b.id].slice(0, 5)
-                              : field.value.filter((x) => x !== b.id),
-                          )
-                        }
-                        onBlur={field.onBlur}
-                      />
-                      {b.name}
-                    </label>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-        />
-      </Section>
-
-      <div className="flex flex-col gap-5 border-t border-line pt-6 lg:pl-[calc(14rem+var(--gutter))]">
-        <Controller
-          control={control}
-          name="terms"
-          render={({ field }) => (
-            <div id="mr-terms">
-              <Checkbox
-                checked={field.value}
-                onCheckedChange={(c) => field.onChange(c === true)}
-                onBlur={field.onBlur}
-                data-testid={TEST_IDS.mechanicRegTerms}
-                label={
-                  <span>
-                    Prihvatam{" "}
-                    <Link href={ROUTES.terms} variant="inline" target="_blank">
-                      uslove korišćenja
-                    </Link>{" "}
-                    i{" "}
-                    <Link href={ROUTES.privacy} variant="inline" target="_blank">
-                      politiku privatnosti
-                    </Link>
-                    .
-                  </span>
-                }
+              <Input
+                autoComplete="name"
+                data-testid={TEST_IDS.mechanicRegContact}
+                {...register("contactPerson")}
               />
-              {errors.terms?.message ? (
-                <p className="type-caption text-danger">{errors.terms.message}</p>
-              ) : null}
-            </div>
-          )}
-        />
-        <div className="flex flex-wrap items-center gap-4">
-          <Button
-            type="submit"
-            size="lg"
-            loading={pending}
-            data-testid={TEST_IDS.mechanicRegSubmit}
-          >
-            Registrujte servis
-          </Button>
-          <p className="type-body-s text-ink-3">
-            Odgovor stiže e-poštom, obično u toku radnog dana.
-          </p>
+            </Field>
+            <Field
+              id="mr-phone"
+              label="Telefon"
+              help="Najčešće zovemo ili pišemo na Viber."
+              error={errors.phone?.message}
+            >
+              <Input
+                type="tel"
+                autoComplete="tel"
+                inputMode="tel"
+                data-testid={TEST_IDS.mechanicRegPhone}
+                {...register("phone")}
+              />
+            </Field>
+          </div>
+        </Section>
+
+        <Section
+          id="mr-sec-workshop"
+          title="Servis"
+          aside="Na ovu adresu šaljemo delove. Adresu možete da promenite u svakoj porudžbini."
+        >
+          <div className="grid gap-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+            <Field id="mr-city" label="Mesto" error={errors.city?.message}>
+              <Input
+                autoComplete="address-level2"
+                data-testid={TEST_IDS.mechanicRegCity}
+                {...register("city")}
+              />
+            </Field>
+            <Field id="mr-address" label="Adresa servisa" error={errors.address?.message}>
+              <Input
+                autoComplete="street-address"
+                data-testid={TEST_IDS.mechanicRegAddress}
+                {...register("address")}
+              />
+            </Field>
+          </div>
+          <Controller
+            control={control}
+            name="serviceTypes"
+            render={({ field }) => (
+              <div
+                id="mr-serviceTypes"
+                className="flex flex-col gap-2"
+                role="group"
+                aria-labelledby="mr-st-label"
+              >
+                <span id="mr-st-label" className="type-caption text-ink-2">
+                  Vrsta servisa
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {SERVICE_TYPES.map((s) => {
+                    const on = field.value.includes(s.value);
+                    return (
+                      <label
+                        key={s.value}
+                        className={cn(
+                          "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xs border px-3 type-body-s transition-control",
+                          on
+                            ? "border-accent bg-accent-subtle text-ink-1"
+                            : "border-line-strong text-ink-2 hover:border-ink-3",
+                        )}
+                      >
+                        <CheckboxBox
+                          aria-label={s.label}
+                          checked={on}
+                          onCheckedChange={(c) =>
+                            field.onChange(
+                              c === true
+                                ? [...field.value, s.value]
+                                : field.value.filter((x) => x !== s.value),
+                            )
+                          }
+                          onBlur={field.onBlur}
+                          data-testid={`${TEST_IDS.mechanicRegService}-${s.value}`}
+                        />
+                        {s.label}
+                      </label>
+                    );
+                  })}
+                </div>
+                {errors.serviceTypes?.message ? (
+                  <p className="flex items-center gap-1.5 type-caption text-danger">
+                    <WarningCircleIcon size={16} aria-hidden="true" />
+                    {errors.serviceTypes.message}
+                  </p>
+                ) : null}
+              </div>
+            )}
+          />
+          <Controller
+            control={control}
+            name="brandsServiced"
+            render={({ field }) => (
+              <div
+                id="mr-brandsServiced"
+                className="flex flex-col gap-2"
+                role="group"
+                aria-labelledby="mr-br-label"
+              >
+                <span id="mr-br-label" className="type-caption text-ink-2">
+                  Marke koje servisirate <span className="text-ink-3">(nije obavezno)</span>
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {config.brands.map((b) => {
+                    const on = field.value.includes(b.id);
+                    return (
+                      <label
+                        key={b.id}
+                        className={cn(
+                          "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xs border px-3 type-body-s transition-control",
+                          on
+                            ? "border-accent bg-accent-subtle text-ink-1"
+                            : "border-line-strong text-ink-2 hover:border-ink-3",
+                        )}
+                      >
+                        <CheckboxBox
+                          aria-label={b.name}
+                          checked={on}
+                          onCheckedChange={(c) =>
+                            field.onChange(
+                              c === true
+                                ? [...field.value, b.id].slice(0, 5)
+                                : field.value.filter((x) => x !== b.id),
+                            )
+                          }
+                          onBlur={field.onBlur}
+                        />
+                        {b.name}
+                      </label>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          />
+        </Section>
+
+        <div className="flex flex-col gap-5 border-t border-line pt-6 lg:pl-[calc(14rem+var(--gutter))]">
+          <Controller
+            control={control}
+            name="terms"
+            render={({ field }) => (
+              <div>
+                <Checkbox
+                  id="mr-terms"
+                  checked={field.value}
+                  onCheckedChange={(c) => field.onChange(c === true)}
+                  onBlur={field.onBlur}
+                  required
+                  error={errors.terms?.message}
+                  data-testid={TEST_IDS.mechanicRegTerms}
+                  label={
+                    <span>
+                      Prihvatam{" "}
+                      <Link href={ROUTES.terms} variant="inline" target="_blank">
+                        uslove korišćenja
+                      </Link>{" "}
+                      i{" "}
+                      <Link href={ROUTES.privacy} variant="inline" target="_blank">
+                        politiku privatnosti
+                      </Link>
+                      .
+                    </span>
+                  }
+                />
+              </div>
+            )}
+          />
+          <div className="flex flex-wrap items-center gap-4">
+            <Button
+              type="submit"
+              size="lg"
+              loading={pending}
+              disabled={!hydrated}
+              data-testid={TEST_IDS.mechanicRegSubmit}
+            >
+              Registrujte servis
+            </Button>
+            <p className="type-body-s text-ink-3">
+              Odgovor stiže e-poštom, obično u toku radnog dana.
+            </p>
+          </div>
+          <FormNoScript>
+            Za registraciju je potreban JavaScript. Uključite ga u pregledaču, pa osvežite stranicu.
+          </FormNoScript>
         </div>
-      </div>
+      </RequiredUnlessOptional>
     </form>
   );
 }

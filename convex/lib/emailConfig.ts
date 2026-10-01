@@ -63,7 +63,7 @@ export function resolveEmailConfig(settings: Settings): EmailDeliveryConfig {
   let effective: EmailMode = requested;
   if (requested !== "log" && !capabilities.apiKey) {
     effective = "log";
-    warnings.push("Nedostaje RESEND_API_KEY — poruke se samo beleže (režim log).");
+    warnings.push("Nedostaje RESEND_API_KEY — poruke se samo beleže (režim „Samo zapis“).");
   }
   if (requested === "live" && capabilities.apiKey && !capabilities.fromAddress) {
     effective = "log";

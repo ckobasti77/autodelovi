@@ -929,11 +929,12 @@ List: DataTable with thumbnail 40, name, SKU, OEM, category, maker, stock (inlin
 ### 11.4 Errors and validation
 | Case | Copy |
 |---|---|
-| Required field | „Upišite {ime i prezime / broj telefona / e-mail}.“ |
+| Required field (always checked before the format) | „Upišite {ime i prezime / broj telefona / adresu e-pošte}.“ |
 | Phone | „Broj telefona nije ispravan. Primer: 064 123 4567.“ |
-| E-mail | „E-mail adresa nije ispravna. Primer: ime@primer.rs.“ |
-| PIB | „PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja.“ |
-| MB | „Matični broj ima 8 cifara.“ |
+| E-mail | „Adresa e-pošte nije ispravna. Primer: ime@primer.rs.“ |
+| PIB | empty „Upišite PIB.“ · length „PIB ima 9 cifara.“ · check digit „PIB nije ispravan — kontrolna cifra ne odgovara. Proverite broj sa rešenja.“ |
+| MB | empty „Upišite matični broj.“ · length „Matični broj ima 8 cifara.“ · check digit „Matični broj nije ispravan — kontrolna cifra ne odgovara. Proverite broj sa rešenja.“ |
+| Password = e-mail | „Lozinka ne sme biti ista kao adresa e-pošte.“ |
 | VIN | „Broj šasije ima 17 znakova (bez slova I, O i Q).“ |
 | Postal code | „Poštanski broj ima 5 cifara.“ |
 | Stock changed | „Na stanju je još {n} kom. Količina je smanjena.“ |
@@ -941,9 +942,11 @@ List: DataTable with thumbnail 40, name, SKU, OEM, category, maker, stock (inlin
 | Rate limit | „Previše pokušaja. Pokušajte ponovo za nekoliko minuta ili nas pozovite.“ |
 | Network | „Nema veze — pokušavamo ponovo.“ |
 | Server | „Nešto nije u redu na našoj strani. Pokušajte ponovo; porudžbina nije poslata.“ |
-| Upload | „Fotografija je prevelika ili nije JPG, PNG ili WebP. Najviše 8 MB po fotografiji.“ |
+| Upload (per file) | „{racun.pdf} nije fotografija (JPG, PNG ili WebP).“ · „{velika.jpg} ima {9,2} MB — najviše 8 MB po fotografiji.“ |
 | Quote expired | „Ponuda je istekla {datum}.“ [Zatraži novu ponudu] |
 | Admin concurrency | „Porudžbina je u međuvremenu izmenjena. Osvežite prikaz.“ |
+
+Glossary (`TERMS` in `lib/i18n/sr/shop.ts`): the field label and the medium are „e-pošta“ („E-pošta“, „odgovor e-poštom“); in a sentence the value is „adresa e-pošte“ — never „e-mail adresa“. Catalog items are „artikli“ (search groups, headings, lists).
 
 ### 11.5 Confirmations
 | Event | Copy |

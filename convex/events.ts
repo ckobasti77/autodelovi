@@ -406,7 +406,10 @@ async function customerEmails(
             : undefined;
       if (!templateKey) return [];
       const order = await ctx.db.get("orders", p.orderId);
-      return order ? [{ recipient: normalizeEmail(order.contact.email), templateKey }] : [];
+      // Staff orders for phone-only customers carry no e-mail (D223).
+      return order?.contact.email
+        ? [{ recipient: normalizeEmail(order.contact.email), templateKey }]
+        : [];
     }
     case "inquiry.created":
     case "quote.sent":

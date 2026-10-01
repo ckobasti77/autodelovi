@@ -111,22 +111,28 @@ export const get = publicQuery({
   },
 });
 
+/** `inCart`: what the cart already holds of this product (0 for a new line or a set). */
 async function loadOrderableProduct(
   ctx: MutationCtx,
   productId: Id<"products">,
   quantity: number,
+  inCart = 0,
 ): Promise<Doc<"products">> {
   const product = await ctx.db.get("products", productId);
   if (!product || !isListed(product)) return notFound("Artikal više nije u ponudi.");
   const check = canOrderQuantity(product, quantity);
   if (!check.ok) {
-    fail(
-      "OUT_OF_STOCK",
-      check.available > 0
-        ? `Na stanju je još ${check.available} kom.`
-        : "Artikal trenutno nije na stanju.",
-      { available: check.available },
-    );
+    // „Na stanju je još N kom.“ reads as „N more can be added“ — say what the cart holds
+    // when it already has all of it (QA FLOW-25).
+    const message =
+      check.available <= 0
+        ? "Artikal trenutno nije na stanju."
+        : inCart >= check.available
+          ? `U korpi je već sva raspoloživa količina (${check.available} kom.).`
+          : inCart > 0
+            ? `Na stanju je ${check.available} kom.; u korpi ih već imate ${inCart}.`
+            : `Na stanju je još ${check.available} kom.`;
+    fail("OUT_OF_STOCK", message, { available: check.available });
   }
   return product;
 }
@@ -149,7 +155,12 @@ async function upsertLine(
     MAX_LINE_QTY,
     mode === "add" ? (existing?.quantity ?? 0) + quantity : quantity,
   );
-  await loadOrderableProduct(ctx, productId, nextQty);
+  await loadOrderableProduct(
+    ctx,
+    productId,
+    nextQty,
+    mode === "add" ? (existing?.quantity ?? 0) : 0,
+  );
   if (existing) {
     await ctx.db.patch("cartItems", existing._id, { quantity: nextQty });
   } else {

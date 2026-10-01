@@ -39,17 +39,15 @@ import {
   type StageWindow,
   type Timeline,
 } from "@/lib/three/explode";
-import { posterFrame } from "@/lib/three/framing";
+import { POSTER_ASPECT, posterFrame, type Crop } from "@/lib/three/framing";
 import { DUR, EASE } from "@/constants/motion";
 import { XRAY, XRAY_RUNTIME } from "@/constants/xray";
 import type { CarScene, CategoryEntry } from "@/components/three/canvas/loadCar";
 import type { EdgeMaterials } from "@/components/three/canvas/enhance";
 
-export type Crop = "desktop" | "mobile";
+export type { Crop };
 
-/** Poster framing per crop (object-fit: contain in the stage box; anchors mirror the CSS). */
-export const POSTER_ASPECT: Readonly<Record<Crop, number>> = { desktop: 16 / 9, mobile: 4 / 5 };
-
+/** Stage size plus the poster framing (object-fit: contain; anchors mirror the poster CSS). */
 export type Layout = {
   width: number;
   height: number;
@@ -57,13 +55,14 @@ export type Layout = {
   anchorX: number;
   anchorY: number;
   insetLeft: number;
+  maxWidth: number;
 };
 
 /** Free area of the canvas for a focused part (CSS px, canvas coordinates): centre + height. */
 export type FreeArea = { x: number; y: number; h: number };
 
 /** Share of the free area's height a focused category may take (bounding-sphere diameter). */
-const FOCUS_FILL = { desktop: 0.42, mobile: 0.5 } as const;
+const FOCUS_FILL: Readonly<Record<Crop, number>> = { desktop: 0.42, tablet: 0.46, mobile: 0.5 };
 /** How far the focus glide dollies toward the part (the rest is a lens zoom). */
 const FOCUS_DOLLY = 0.2;
 const FOCUS_MIN_FOV = 5;
@@ -105,6 +104,7 @@ export class HeroScene3D {
     anchorX: 1,
     anchorY: 1,
     insetLeft: 0,
+    maxWidth: Infinity,
   };
   private frame: ContainFrame = containFrame(16 / 9, 1, 1, 1, 1);
   private hero: CameraPose;

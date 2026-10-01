@@ -22,8 +22,12 @@ import {
   quoteTotal,
   setInquiryStatus,
 } from "./lib/inquiries";
-import { createOrder, validateCheckout } from "./lib/orders";
+import { formatDinarsSr } from "./lib/mechanics";
+import { createOrder, mechanicOrderTerms, termsFields, validateCheckout } from "./lib/orders";
+import { siteUrl } from "./lib/env";
+import { statusLinkToken } from "./lib/linkTokens";
 import { getSettings } from "./lib/settings";
+import { hashToken } from "./lib/tokens";
 import {
   actorV,
   addressV,
@@ -164,7 +168,7 @@ export const list = staffQuery({
         createdAt: i._creationTime,
         firstResponseAt: i.firstResponseAt ?? null,
         channel: classifyAttribution(i.attribution).channel,
-        campaign: (i.attribution?.last ?? i.attribution?.first)?.campaign ?? null,
+        campaign: (i.attribution?.last ?? i.attribution?.first)?.campaign?.slice(0, 60) ?? null,
         isDemo: i.isDemo,
       });
     }
@@ -224,6 +228,12 @@ const quoteLineInputV = v.object({
   note: v.optional(v.string()),
 });
 
+async function rebuildStatusLink(inquiry: Doc<"inquiries">): Promise<string | null> {
+  const token = await statusLinkToken("inquiry", inquiry.number);
+  if ((await hashToken(token)) !== inquiry.publicTokenHash) return null;
+  return `${siteUrl()}/upit/${token}`;
+}
+
 export const get = staffQuery({
   args: { number: v.string() },
   returns: v.union(
@@ -273,6 +283,12 @@ export const get = staffQuery({
         vinYearHint: v.union(v.number(), v.null()),
         attribution: v.union(attributionV, v.null()),
         isDemo: v.boolean(),
+        /**
+         * The customer's status/accept link, rebuilt from the HMAC (D171) so staff can share it
+         * by Viber/WhatsApp/SMS when the customer has no e-mail (QA FLOW-13). Null when the
+         * stored hash predates the current secret.
+         */
+        statusLink: v.union(v.string(), v.null()),
       }),
       photos: v.array(
         v.object({ storageId: v.id("_storage"), url: v.union(v.string(), v.null()) }),
@@ -376,6 +392,7 @@ export const get = staffQuery({
         vinYearHint: inquiry.vinInfo?.modelYearHint ?? null,
         attribution: inquiry.attribution ?? null,
         isDemo: inquiry.isDemo,
+        statusLink: await rebuildStatusLink(inquiry),
       },
       photos,
       quotes: quotes.map((q) => ({
@@ -479,23 +496,31 @@ export const close = staffMutation({
   },
 });
 
+/**
+ * Quote line checks; the field path names the line (`lines.1.quantity`) so the composer can
+ * focus it. A draft may keep a line unpriced; a quote that goes out may not (QA FLOW-17).
+ */
 function validateLines(
   lines: { name: string; quantity: number; unitPricePara: number; leadTimeDays?: number }[],
+  opts: { sending?: boolean } = {},
 ) {
   if (lines.length === 0 || lines.length > 30) invalid("Ponuda ima 1–30 stavki.", "lines");
-  for (const l of lines) {
-    if (!l.name.trim()) invalid("Svaka stavka mora imati naziv.", "lines");
+  lines.forEach((l, i) => {
+    const at = `Stavka ${i + 1}`;
+    if (!l.name.trim()) invalid(`${at}: upišite naziv.`, `lines.${i}.name`);
     if (!Number.isInteger(l.quantity) || l.quantity < 1 || l.quantity > 999)
-      invalid("Količina 1–999.", "lines");
+      invalid(`${at}: količina je ceo broj od 1 do 999.`, `lines.${i}.quantity`);
     if (!Number.isInteger(l.unitPricePara) || l.unitPricePara < 0)
-      invalid("Neispravna cena stavke.", "lines");
+      invalid(`${at}: cena nije ispravna.`, `lines.${i}.price`);
+    if (opts.sending && l.unitPricePara === 0)
+      invalid(`${at}: upišite cenu pre slanja.`, `lines.${i}.price`);
     if (
       l.leadTimeDays !== undefined &&
       (!Number.isInteger(l.leadTimeDays) || l.leadTimeDays < 0 || l.leadTimeDays > 365)
     ) {
-      invalid("Rok isporuke 0–365 dana.", "lines");
+      invalid(`${at}: rok isporuke je 0–365 dana.`, `lines.${i}.leadTimeDays`);
     }
-  }
+  });
 }
 
 /** Creates or updates the latest draft (a new version once the previous one was sent). */
@@ -568,7 +593,7 @@ export const sendQuote = staffMutation({
     if (quote.status !== "draft") fail("CONFLICT", "Poslati se može samo nacrt ponude.");
     const inquiry = await ctx.db.get("inquiries", quote.inquiryId);
     if (!inquiry) return notFound("Upit ne postoji.");
-    validateLines(quote.lines);
+    validateLines(quote.lines, { sending: true });
     const settings = await getSettings(ctx);
     const now = Date.now();
     const validUntil = endOfBelgradeDay(now, settings.commerce.quoteValidityDays);
@@ -659,6 +684,8 @@ export const convertToOrder = staffMutation({
     delivery: v.object({ method: deliveryMethodV, address: v.optional(addressV) }),
     payment: v.object({ method: paymentMethodV }),
     note: v.optional(v.string()),
+    /** Staff explicitly lets a deferred order exceed the mechanic's credit (audited). */
+    creditOverride: v.optional(v.boolean()),
   },
   returns: v.object({ orderNumber: v.string() }),
   handler: async (ctx, args) => {
@@ -688,18 +715,20 @@ export const convertToOrder = staffMutation({
       },
       settings,
       customer,
+      // A customer who asked by phone/Viber/WhatsApp without an e-mail keeps none (D223).
+      { emailOptional: !inquiry.contact.email },
     );
     const lines = await quoteOrderLines(ctx, quote);
-    const isMechanic = customer?.mechanic?.status === "approved";
+    const terms = await mechanicOrderTerms(ctx, customer, checkout, lines, {
+      allowCreditOverride: args.creditOverride === true,
+    });
     const actor = actorOf(ctx.viewer);
     const order = await createOrder(ctx, {
       checkout,
       lines,
-      customerType: isMechanic ? "mechanic" : inquiry.userId ? "customer" : "guest",
+      customerType: terms ? "mechanic" : inquiry.userId ? "customer" : "guest",
       ...(inquiry.userId ? { userId: inquiry.userId } : {}),
-      ...(isMechanic && customer?.mechanic
-        ? { mechanicProfileId: customer.mechanic.profileId }
-        : {}),
+      ...termsFields(terms),
       ...(inquiry.attribution ? { attribution: inquiry.attribution } : {}),
       source: "admin",
       inquiryId: inquiry._id,
@@ -708,12 +737,20 @@ export const convertToOrder = staffMutation({
       actor,
     });
     await completeQuoteAcceptance(ctx, { inquiry, quote, order, actor, staff: true });
+    const remarks = [
+      ...(checkout.contact.email ? [] : ["kupac bez e-pošte"]),
+      ...(terms?.creditOverride
+        ? [
+            `prekoračen limit odloženog plaćanja (preostalo ${formatDinarsSr(terms.creditOverride.availablePara)}, porudžbina ${formatDinarsSr(terms.creditOverride.totalPara)})`,
+          ]
+        : []),
+    ];
     await audit(ctx, {
       actor,
       action: "quote.convert",
       entityType: "inquiry",
       entityId: inquiry._id,
-      summary: `${inquiry.number}: ponuda br. ${quote.version} → porudžbina ${order.number}`,
+      summary: `${inquiry.number}: ponuda br. ${quote.version} → porudžbina ${order.number}${remarks.length ? ` (${remarks.join("; ")})` : ""}`,
     });
     return { orderNumber: order.number };
   },

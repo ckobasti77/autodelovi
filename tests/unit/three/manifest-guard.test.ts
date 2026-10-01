@@ -29,5 +29,16 @@ describe("runtime manifest guard (no zod in the 3D chunk)", () => {
     const noCams = clone();
     delete noCams.cameras;
     expect(() => readCarManifest(noCams)).toThrow(/cameras/);
+    const noTablet = clone();
+    delete ((noTablet.cameras as Record<string, Record<string, unknown>>).exploded).tablet;
+    expect(() => readCarManifest(noTablet)).toThrow(/camera shape/);
+    expect(() => parseCarManifest(noTablet)).toThrow();
+  });
+
+  test("every crop has a hero and an exploded camera", () => {
+    const cams = json.cameras as Record<string, Record<string, unknown>>;
+    for (const state of ["hero", "exploded"]) {
+      expect(Object.keys(cams[state]).sort()).toEqual(["desktop", "mobile", "tablet"]);
+    }
   });
 });

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { ChatCircleTextIcon, MagnifyingGlassIcon, PhoneIcon } from "@phosphor-icons/react/dist/ssr";
 
-import { api } from "@/convex/_generated/api";
 import { contactLinks } from "@/config/site";
 import { classifyQuery } from "@/lib/domain/search";
 import { formatNumber } from "@/lib/format/number";
@@ -9,7 +8,6 @@ import { pluralSr } from "@/lib/format/plural";
 import { buildMetadata, privateMetadata } from "@/lib/seo/metadata";
 import { isCuratedSearch, normalizeCuratedQuery } from "@/lib/seo/templates";
 import { contactFromSettings } from "@/lib/settings/public";
-import { fetchPublic } from "@/lib/server/convex";
 import { getSearchResults, getSettingsPublic } from "@/lib/server/catalog-cache";
 import type { ProductCardData } from "@/lib/catalog/types";
 import { Button } from "@/components/ui/Button";
@@ -20,6 +18,7 @@ import { SearchBox } from "@/components/shell/SearchBox";
 import { ProductGrid } from "@/components/catalog/ProductGrid";
 import { TrackViewList } from "@/components/catalog/TrackViewList";
 import { SearchLogger } from "@/components/search/SearchLogger";
+import { SearchVehicleScope } from "@/components/search/SearchVehicleScope";
 import { ROUTES } from "@/constants/routes";
 
 export async function generateMetadata({
@@ -42,13 +41,33 @@ export async function generateMetadata({
 
 type Group = { key: string; title: string; note?: string; items: ProductCardData[] };
 
+const ECHO_MAX = 80;
+const VEHICLE_PARAM = /^[a-z0-9-]{1,40}(\/[a-z0-9-]{1,60}){0,2}$/;
+
+function firstParam(value: string | string[] | undefined): string {
+  return (Array.isArray(value) ? value[0] : (value ?? "")).trim();
+}
+
+/** `/pretraga` URL with the narrowing parameters (`kategorija`, `vozilo`). */
+function searchHref(q: string, params: { kategorija?: string | null; vozilo?: string | null }) {
+  const search = new URLSearchParams({ q });
+  if (params.kategorija) search.set("kategorija", params.kategorija);
+  if (params.vozilo) search.set("vozilo", params.vozilo);
+  return `${ROUTES.search}?${search.toString()}`;
+}
+
+const chipClass =
+  "inline-flex min-h-9 items-center gap-2 rounded-xs border border-line-strong bg-surface-1 px-3 type-body-s text-ink-1 transition-control hover:border-accent";
+
 /**
  * Search results (§10.4): exact OEM matches first, then cross numbers, partial codes and
- * text hits; the normalised query is echoed in mono; zero results end in the inquiry.
+ * text hits; the normalised query is echoed in mono; zero results end in the inquiry. A vehicle
+ * named in the query or selected in the header narrows the results to parts that fit it
+ * (`vozilo`, „prikaži sve“ = `vozilo=sva`); category chips narrow further (`kategorija`).
  */
 export default async function SearchPage({ searchParams }: PageProps<"/pretraga">) {
-  const raw = (await searchParams).q;
-  const q = (Array.isArray(raw) ? raw[0] : (raw ?? "")).trim().slice(0, 200);
+  const params = await searchParams;
+  const q = firstParam(params.q).slice(0, 200);
   const settings = await getSettingsPublic();
 
   if (!q) {
@@ -64,10 +83,17 @@ export default async function SearchPage({ searchParams }: PageProps<"/pretraga"
     );
   }
 
-  const [result, suggest] = await Promise.all([
-    getSearchResults(q),
-    fetchPublic(api.search.suggest, { q }),
-  ]);
+  const kategorija = firstParam(params.kategorija).slice(0, 80) || null;
+  const voziloRaw = firstParam(params.vozilo).slice(0, 160);
+  const allVehicles = voziloRaw === "sva";
+  const vozilo = allVehicles ? "sva" : VEHICLE_PARAM.test(voziloRaw) ? voziloRaw : null;
+
+  const result = await getSearchResults({
+    q,
+    ...(kategorija ? { categorySlug: kategorija } : {}),
+    ...(vozilo && !allVehicles ? { vehicle: vozilo } : {}),
+    ...(allVehicles ? { allVehicles: true } : {}),
+  });
   const classified = classifyQuery(q);
   const normalized = classified.codes.length ? classified.codes.join(" ") : null;
   const by = (m: string) => result.results.filter((r) => r.match === m).map((r) => r.card);
@@ -89,49 +115,113 @@ export default async function SearchPage({ searchParams }: PageProps<"/pretraga"
   ].filter((g) => g.items.length > 0);
   const total = result.results.length;
   const phone = contactLinks.tel(contactFromSettings(settings).phone);
+  const echo = q.length > ECHO_MAX ? `${q.slice(0, ECHO_MAX - 1)}…` : q;
+  const vehicle = result.vehicle;
 
   return (
     <div className="px-page pb-(--space-section) pt-8">
       <SearchLogger query={q} resultsCount={total} exactCodeHit={result.exactCodeHit} />
+      <SearchVehicleScope queryNamesVehicle={vehicle?.source === "query"} />
       <div className="max-w-[48rem]">
         <SearchBox variant="hero" defaultQuery={q} testId="search-page-input" />
       </div>
       <div className="mt-8 flex flex-col gap-2">
-        <RevealText as="h1" className="type-h1 text-ink-1">
-          {total > 0 ? `Rezultati za „${q}“` : `Nema rezultata za „${q}“`}
+        <RevealText as="h1" className="type-h1 text-ink-1 [overflow-wrap:anywhere]">
+          {total > 0 ? `Rezultati za „${echo}“` : `Nema rezultata za „${echo}“`}
         </RevealText>
-        <p className="type-body-s text-ink-3" data-reveal="off">
+        <p className="type-body-s text-ink-3" data-reveal="off" data-testid="search-count">
           {total > 0 ? (
-            <>
-              <span className="tabular-nums text-ink-1">{formatNumber(total)}</span>{" "}
-              {pluralSr(total, ["artikal", "artikla", "artikala"])}
-            </>
+            result.hasMore ? (
+              <>
+                Prikazano prvih{" "}
+                <span className="tabular-nums text-ink-1">{formatNumber(total)}</span>, ima ih još.
+                Suzite izborom kategorije ili vozila.
+              </>
+            ) : (
+              <>
+                <span className="tabular-nums text-ink-1">{formatNumber(total)}</span>{" "}
+                {pluralSr(total, ["artikal", "artikla", "artikala"])}
+              </>
+            )
           ) : null}
           {normalized ? (
             <>
               {total > 0 ? " · " : ""}Tražili smo broj{" "}
-              <span className="type-code text-ink-2">{normalized}</span> u OEM, zamenskim i
-              kataloškim brojevima.
+              <span className="type-code text-ink-2 [overflow-wrap:anywhere]">{normalized}</span> u
+              OEM, zamenskim i kataloškim brojevima.
             </>
           ) : null}
         </p>
+        {vehicle ? (
+          <p className="type-body-s text-ink-2" data-testid="search-vehicle">
+            {vehicle.applied ? (
+              <>
+                Samo delovi za <strong className="font-semibold text-ink-1">{vehicle.label}</strong>
+                {vehicle.hidden > 0 ? ` (još ${formatNumber(vehicle.hidden)} za druga vozila)` : ""}
+                .{" "}
+                <Link href={searchHref(q, { kategorija, vozilo: "sva" })} variant="inline">
+                  Prikaži sve
+                </Link>
+              </>
+            ) : allVehicles ? (
+              <>
+                Prikazani su delovi za sva vozila.{" "}
+                <Link
+                  href={searchHref(q, {
+                    kategorija,
+                    vozilo: vehicle.source === "selected" ? vehicle.param : null,
+                  })}
+                  variant="inline"
+                >
+                  Samo za {vehicle.label}
+                </Link>
+              </>
+            ) : total > 0 ? (
+              <>
+                Nijedan pronađeni deo nije označen za {vehicle.label}, pa prikazujemo sve. Proverite
+                uklapanje po OEM broju ili nam pošaljite broj šasije.
+              </>
+            ) : null}
+          </p>
+        ) : null}
       </div>
 
-      {suggest.categories.length > 0 ? (
-        <nav aria-label="Kategorije" className="mt-6">
+      {result.category ? (
+        <p className="mt-6 type-body-s text-ink-2" data-testid="search-category">
+          Kategorija <strong className="font-semibold text-ink-1">{result.category.name}</strong>.{" "}
+          <Link href={searchHref(q, { vozilo })} variant="inline">
+            Sve kategorije
+          </Link>
+        </p>
+      ) : result.categories.length > 1 ? (
+        <nav aria-label="Suzite po kategoriji" className="mt-6">
           <ul className="flex flex-wrap gap-2">
-            {suggest.categories.map((c) => (
+            {result.categories.map((c) => (
               <li key={c.slug}>
                 <Link
-                  href={ROUTES.category(c.slug)}
+                  href={searchHref(q, { kategorija: c.slug, vozilo })}
                   variant="unstyled"
-                  className="inline-flex h-9 items-center gap-2 rounded-xs border border-line-strong bg-surface-1 px-3 type-body-s text-ink-1 transition-control hover:border-accent"
+                  className={chipClass}
                 >
                   {c.name}
-                  <span className="tabular-nums text-ink-3">{formatNumber(c.productCount)}</span>
+                  <span className="tabular-nums text-ink-3">{formatNumber(c.count)}</span>
                 </Link>
               </li>
             ))}
+          </ul>
+        </nav>
+      ) : result.categories.length === 1 ? (
+        <nav aria-label="Kategorija" className="mt-6">
+          <ul className="flex flex-wrap gap-2">
+            <li>
+              <Link
+                href={ROUTES.category(result.categories[0].slug)}
+                variant="unstyled"
+                className={chipClass}
+              >
+                Cela kategorija {result.categories[0].name}
+              </Link>
+            </li>
           </ul>
         </nav>
       ) : null}
@@ -162,8 +252,8 @@ export default async function SearchPage({ searchParams }: PageProps<"/pretraga"
             </>
           }
         >
-          Za „{q}“ nemamo artikal u katalogu. Pošaljite upit — proverićemo kod dobavljača i javiti
-          vam se u toku radnog dana.
+          Za „<span className="[overflow-wrap:anywhere]">{echo}</span>“ nemamo artikal u katalogu.
+          Pošaljite upit — proverićemo kod dobavljača i javiti vam se u toku radnog dana.
         </EmptyState>
       ) : (
         <div className="mt-10 flex flex-col gap-14">

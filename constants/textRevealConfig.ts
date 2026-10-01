@@ -107,22 +107,27 @@ export const TEXT_REVEAL = {
   enterRatio: 0.15,
   /** Boot-script safety net: everything becomes visible if JS has not taken over. */
   failsafeMs: 3500,
-  /** Word animation (GSAP). */
+  /**
+   * Word animation — CSS keyframes (`tr-word`) driven by `--i` (shuffled index) and `--n`
+   * (word count) on each word span; TextRevealGlobal only splits, sets the variables and
+   * flips the state (PERF-05). Coarse pointers and narrow screens skip the blur
+   * (`tr-word-lite`): filter is the expensive part on phones.
+   */
   word: {
-    duration: 0.62,
-    ease: "sk.out",
+    durationMs: 620,
     blurPx: 8,
     liftEm: 0.35,
-    /** Stagger = min(each, budget / words) in shuffled order. */
-    staggerEach: 0.028,
-    staggerBudget: 0.52,
+    /** Delay step = min(each, budget / words), in shuffled order. */
+    staggerEachMs: 28,
+    staggerBudgetMs: 520,
   },
-  /** Block fade for long copy and lines inside flex/grid boxes. */
+  /** Block fade (`tr-block`) for long copy and lines inside flex/grid boxes. */
   block: {
-    duration: 0.5,
-    ease: "sk.out",
+    durationMs: 500,
     liftPx: 6,
   },
+  /** Media features under any of which word spans animate without blur. */
+  liteMedia: ["(pointer: coarse)", "(max-width: 47.99rem)"],
   /** LCP-safe server variant (components/text-reveal/RevealText). */
   lcp: {
     durationMs: 540,
@@ -137,6 +142,13 @@ export const TEXT_REVEAL = {
   classes: {
     /** Added to <html> by the boot script; hiding only applies under it. */
     js: "tr-js",
+    /**
+     * Added with `tr-js` by the boot script: enables the selector-based hiding rule (the
+     * `:has()` one) for server HTML React has not hydrated yet. TextRevealGlobal removes it
+     * once every element on the page carries an explicit state, so the costly rule stops
+     * being evaluated; from then on only `[data-reveal-state="pending"]` hides (PERF-05).
+     */
+    boot: "tr-hide",
     /** Added after `failsafeMs` if the observer never started; disables hiding. */
     failsafe: "tr-failsafe",
     word: "reveal-word",
@@ -144,6 +156,8 @@ export const TEXT_REVEAL = {
   },
   attrs: {
     state: "data-reveal-state",
+    /** `block` while an element fades as one block (`tr-block`). */
+    mode: "data-reveal-mode",
     /** Marks a split element so tooling (translation, tests) can leave it alone. */
     split: "data-no-translate",
   },

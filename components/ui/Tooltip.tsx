@@ -10,7 +10,7 @@ export type TooltipProps = {
   content: ReactNode;
   children: ReactNode;
   side?: "top" | "right" | "bottom" | "left";
-  /** Override the provider's 400 ms delay. */
+  /** Override the default 400 ms delay. */
   delayDuration?: number;
 };
 
@@ -43,14 +43,19 @@ function TooltipBody({ children, side }: { children: ReactNode; side: TooltipPro
 /**
  * Tooltip (§9.22): surface-3, 12 px, appears after 400 ms in 80 ms. Supplementary only —
  * never the only way to learn something (the trigger keeps its own accessible name).
+ *
+ * Each tooltip carries its own radix Provider (nested providers are supported), so the
+ * tooltip/popper code is not part of the root layout (PERF-09).
  */
-export function Tooltip({ content, children, side = "top", delayDuration }: TooltipProps) {
+export function Tooltip({ content, children, side = "top", delayDuration = 400 }: TooltipProps) {
   return (
-    <TooltipPrimitive.Root delayDuration={delayDuration}>
-      <TooltipPrimitive.Trigger asChild>{children}</TooltipPrimitive.Trigger>
-      <TooltipPrimitive.Portal>
-        <TooltipBody side={side}>{content}</TooltipBody>
-      </TooltipPrimitive.Portal>
-    </TooltipPrimitive.Root>
+    <TooltipPrimitive.Provider delayDuration={delayDuration} skipDelayDuration={200}>
+      <TooltipPrimitive.Root>
+        <TooltipPrimitive.Trigger asChild>{children}</TooltipPrimitive.Trigger>
+        <TooltipPrimitive.Portal>
+          <TooltipBody side={side}>{content}</TooltipBody>
+        </TooltipPrimitive.Portal>
+      </TooltipPrimitive.Root>
+    </TooltipPrimitive.Provider>
   );
 }

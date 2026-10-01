@@ -7,7 +7,7 @@ import { v } from "convex/values";
 
 import { internalMutation } from "./_generated/server";
 import { audit, diffFields } from "./lib/audit";
-import { actorOf } from "./lib/authz";
+import { actorOf, SYSTEM_ACTOR } from "./lib/authz";
 import { fail, invalid, notFound } from "./lib/errors";
 import { emitEvent } from "./lib/events";
 import { ownerMutation, publicQuery, staffQuery } from "./lib/functions";
@@ -213,5 +213,108 @@ export const updatePage = ownerMutation({
       actor,
     });
     return { version };
+  },
+});
+
+/**
+ * Step 22 copy fixes on live rows (COPY-02, COPY-03, COPY-04, COPY-14; D233). Each fix replaces
+ * the exact seeded sentence, so a text the owner already rewrote is left alone and a second run
+ * changes nothing. Run with `npx convex run content:applyCopyFixes`.
+ */
+const COPY_FIXES: readonly { slug?: string; question?: string; from: string; to: string }[] = [
+  {
+    question: "Mogu li da vratim deo?",
+    from: "Kao potrošač možete odustati od kupovine u roku od 14 dana od prijema, ako deo nije ugrađivan i vraćate ga u originalnom pakovanju. Detalji su na stranici Reklamacije i povrat.",
+    to: "Da. Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Trošak vraćanja snosite vi; ako je deo ugrađivan ili oštećen, odgovarate za umanjenje vrednosti. Detalji su na stranici [Reklamacije i povrat](/reklamacije-i-povrat).",
+  },
+  {
+    question: "Koliko košta dostava i kada stiže?",
+    from: "Delove na stanju šaljemo istog radnog dana za porudžbine potvrđene do 14 časova; kurir obično isporučuje za 1–2 radna dana.",
+    to: "Delove na stanju šaljemo istog radnog dana za porudžbine potvrđene do {{dostava.rokSlanja}}. Kurir obično isporučuje za 1–2 radna dana.",
+  },
+  {
+    slug: "dostava-i-placanje",
+    from: "Porudžbine potvrđene radnim danom do 14 časova šaljemo istog dana",
+    to: "Porudžbine potvrđene radnim danom do {{dostava.rokSlanja}} šaljemo istog dana",
+  },
+  {
+    slug: "kontakt",
+    from: "Najbrže je da nas pozovete ili pišete na Viber.",
+    to: "{{kontakt.najbrze}}",
+  },
+  {
+    slug: "reklamacije-i-povrat",
+    from: "Pošaljite nam izjavu o odustanku e-poštom ({{firma.email|adresa sa stranice Kontakt}}) ili pismom na adresu prodavca.",
+    to: "Pošaljite nam izjavu o odustanku putem upita na sajtu. Možete je poslati i e-poštom na {{firma.email}}. Pismom je šaljete na adresu {{firma.adresa}}.",
+  },
+  {
+    slug: "politika-privatnosti",
+    from: "{{firma.naziv|Prodavac naveden na stranici Kontakt}}",
+    to: "{{firma.naziv|Prodavac sa ovog sajta — podatke o firmi dobijate putem upita na sajtu}}",
+  },
+  {
+    slug: "politika-privatnosti",
+    from: "Zahtev pošaljite na {{firma.email|e-poštu sa stranice Kontakt}}; odgovaramo najkasnije u roku od 30 dana.",
+    to: "Zahtev pošaljite putem upita na sajtu; odgovaramo najkasnije u roku od 30 dana. Možete pisati i na {{firma.email}}.",
+  },
+  { slug: "uslovi-koriscenja", from: "Nalog je opcion.", to: "Nalog nije obavezan." },
+];
+
+export const applyCopyFixes = internalMutation({
+  args: {},
+  returns: v.object({ pages: v.array(v.string()), faqs: v.array(v.string()) }),
+  handler: async (ctx) => {
+    const now = Date.now();
+    const pages: string[] = [];
+    const faqs: string[] = [];
+    for (const slug of new Set(COPY_FIXES.flatMap((f) => (f.slug ? [f.slug] : [])))) {
+      const page = await ctx.db
+        .query("contentPages")
+        .withIndex("by_slug", (q) => q.eq("slug", slug))
+        .unique();
+      if (!page) continue;
+      let bodyMd = page.bodyMd;
+      for (const fix of COPY_FIXES)
+        if (fix.slug === slug && bodyMd.includes(fix.from))
+          bodyMd = bodyMd.replace(fix.from, fix.to);
+      if (bodyMd === page.bodyMd) continue;
+      await ctx.db.patch("contentPages", page._id, {
+        bodyMd,
+        version: page.version + 1,
+        updatedAt: now,
+      });
+      pages.push(slug);
+      await emitEvent(ctx, {
+        type: "content.changed",
+        aggregateType: "content",
+        aggregateId: page._id,
+        payload: { kind: "catalog", slug, section: "page" },
+        dedupeKey: `content.changed:${page._id}:${page.version + 1}`,
+        actor: SYSTEM_ACTOR,
+      });
+    }
+    for (const scope of new Set(SEED_FAQS.map((f) => f.scope))) {
+      for (const faq of await ctx.db
+        .query("faqs")
+        .withIndex("by_scope_and_sortOrder", (q) => q.eq("scope", scope))
+        .take(200)) {
+        let answerMd = faq.answerMd;
+        for (const fix of COPY_FIXES)
+          if (fix.question === faq.question && answerMd.includes(fix.from))
+            answerMd = answerMd.replace(fix.from, fix.to);
+        if (answerMd === faq.answerMd) continue;
+        await ctx.db.patch("faqs", faq._id, { answerMd });
+        faqs.push(faq.question);
+        await emitEvent(ctx, {
+          type: "content.changed",
+          aggregateType: "content",
+          aggregateId: faq._id,
+          payload: { kind: "catalog", section: "faq" },
+          dedupeKey: `content.changed:${faq._id}:copy-fixes-22`,
+          actor: SYSTEM_ACTOR,
+        });
+      }
+    }
+    return { pages, faqs };
   },
 });

@@ -350,7 +350,7 @@ def audit() -> None:
     materials hidden), Workbench flat object colours, AA off."""
     import numpy as np
 
-    from lib.views import Exploder, make_camera, scene_points, set_output, solve
+    from lib.views import CAMERAS, Exploder, make_camera, scene_points, set_output, solve
 
     s = bpy.context.scene
     s.render.engine = "BLENDER_WORKBENCH"
@@ -392,10 +392,10 @@ def audit() -> None:
             c.hide_render = False
     results = {}
     w, h = 960, 540
-    for vp, (rw, rh) in (("desktop", (960, 540)), ("mobile", (540, 675))):
+    for vp, (rw, rh) in (("desktop", (960, 540)), ("tablet", (720, 720)), ("mobile", (540, 675))):
         pts = scene_points()
         pos, tgt, _ = solve("exploded", vp, pts)
-        make_camera("audit_cam", pos, tgt, 28 if vp == "desktop" else 38)
+        make_camera("audit_cam", pos, tgt, CAMERAS["exploded"][vp]["fov"])
         set_output("", rw, rh, True)
         path = scene.BUILD / "reports" / f"audit-{vp}.png"
 
@@ -432,7 +432,7 @@ def audit() -> None:
         key = name[len("part__"):]
         buried = any(key.startswith(b) for b in BURIED)
         need = 0.25 if buried else 0.40
-        for vp in ("desktop", "mobile"):
+        for vp in ("desktop", "tablet", "mobile"):
             d = r.get(vp, {})
             if d.get("xray"):
                 continue  # see-through panels read through the x-ray rim, not opaque pixels

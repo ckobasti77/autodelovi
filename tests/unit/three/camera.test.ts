@@ -12,7 +12,7 @@ import {
   shiftToPlace,
   viewOffsetFor,
 } from "@/lib/three/camera";
-import { framingFor, posterFrame } from "@/lib/three/framing";
+import { POSTER_ASPECT, STAGE_FRAME_MAX, framingFor, posterFrame } from "@/lib/three/framing";
 import { parseCarManifest } from "@/lib/three/manifest";
 
 const manifest = parseCarManifest(
@@ -84,9 +84,42 @@ describe("contain framing (poster ↔ canvas parity)", () => {
     expect(frame.imageWidth).toBeCloseTo(1440 * 0.92, 6);
     expect(frame.offsetX + frame.imageWidth).toBeCloseTo(1440, 6);
     expect(frame.offsetY + frame.imageHeight).toBeCloseTo(836, 6);
-    const stacked = posterFrame(4 / 5, 390, 640, framingFor(true, false));
+  });
+
+  test("phones and tablets: own crop, centred in the stage (MOT-01)", () => {
+    const phone = framingFor(true, false);
+    expect(phone).toMatchObject({ crop: "mobile", anchorX: 0.5, anchorY: 0.5, insetLeft: 0 });
+    expect(POSTER_ASPECT.mobile).toBeCloseTo(4 / 5, 9);
+    // 390 × 672 stage: width-limited 390 × 487.5, the spare 184.5 px split above and below
+    const stacked = posterFrame(POSTER_ASPECT.mobile, 390, 672, phone);
     expect(stacked.offsetX).toBe(0);
-    expect(stacked.offsetY + stacked.imageHeight).toBeCloseTo(640, 6);
+    expect(stacked.imageWidth).toBe(390);
+    expect(stacked.offsetY).toBeCloseTo((672 - 487.5) / 2, 6);
+
+    const tablet = framingFor(false, false);
+    expect(tablet).toMatchObject({ crop: "tablet", anchorX: 0.5, anchorY: 0.5, insetLeft: 0 });
+    expect(POSTER_ASPECT.tablet).toBe(1);
+    const portrait = posterFrame(POSTER_ASPECT.tablet, 768, 852, tablet);
+    expect(portrait).toMatchObject({ imageWidth: 768, imageHeight: 768, offsetX: 0, offsetY: 42 });
+  });
+
+  test("wide screens: the framing box stops at STAGE_FRAME_MAX and stays centred (VIS-06)", () => {
+    const f = framingFor(false, true);
+    expect(f.maxWidth).toBe(STAGE_FRAME_MAX);
+    // ≤ the cap nothing changes
+    const at1680 = posterFrame(16 / 9, 1680, 1016, f);
+    expect(at1680.offsetX + at1680.imageWidth).toBeCloseTo(1680, 6);
+    for (const [W, H] of [
+      [1920, 1016],
+      [2560, 1376],
+      [3440, 1376],
+    ] as const) {
+      const frame = posterFrame(16 / 9, W, H, f);
+      const boxLeft = (W - STAGE_FRAME_MAX) / 2;
+      expect(frame.imageWidth).toBeCloseTo(STAGE_FRAME_MAX * 0.92, 6);
+      expect(frame.offsetX).toBeCloseTo(boxLeft + STAGE_FRAME_MAX * 0.08, 6);
+      expect(frame.offsetX + frame.imageWidth).toBeCloseTo(W - boxLeft, 6);
+    }
   });
 
   test("shiftToPlace moves the camera target to the requested pixel", () => {

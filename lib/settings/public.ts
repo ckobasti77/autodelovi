@@ -2,9 +2,17 @@
  * Public settings → shell/contact shapes (pure, shared by server pages and client islands).
  * Empty values stay empty so every consumer hides the channel instead of inventing one.
  */
-import { resolveCompany, resolveContact, site, type Company, type Contact } from "@/config/site";
+import {
+  contactLinks,
+  resolveCompany,
+  resolveContact,
+  site,
+  type Company,
+  type Contact,
+} from "@/config/site";
 import { formatHours, type SettingsHours } from "@/lib/format/hours";
 import { formatRSD } from "@/lib/format/money";
+import { pluralSr } from "@/lib/format/plural";
 
 export { formatHours, type SettingsHours };
 
@@ -27,7 +35,13 @@ export type PublicSettingsLike = {
   company: SettingsCompany;
   hours: SettingsHours;
   brand: { name: string; tagline: string };
-  commerce: { freeShippingOverPara: number; quoteValidityDays: number; etaText: string };
+  commerce: {
+    freeShippingOverPara: number;
+    quoteValidityDays: number;
+    etaText: string;
+    /** Same-day dispatch cut-off „HH:MM“; empty until the owner confirms it. */
+    shipCutoff?: string;
+  };
   deliveryMethods: {
     code: "pickup" | "courier";
     label: string;
@@ -69,6 +83,32 @@ export function companyFromSettings(s: Pick<PublicSettingsLike, "company">): Com
   });
 }
 
+/** „14:00“ → „14 časova“, „14:30“ → „14.30 časova“; empty or malformed → "" (sentence dropped). */
+export function cutoffLabel(value: string | undefined): string {
+  const m = /^(\d{1,2}):(\d{2})$/.exec(value?.trim() ?? "");
+  if (!m) return "";
+  const hours = Number(m[1]);
+  if (hours > 23 || Number(m[2]) > 59) return "";
+  const time = m[2] === "00" ? String(hours) : `${hours}.${m[2]}`;
+  return `${time} ${pluralSr(hours, ["čas", "časa", "časova"])}`;
+}
+
+/**
+ * „Najbrže je …“ built only from the channels that are set (COPY-03): phone and Viber, one of
+ * them, or "" so the sentence is dropped instead of naming a channel the page does not show.
+ */
+export function fastestContactSentence(contact: Pick<Contact, "phone" | "viber">): string {
+  const phone = contactLinks.tel(contact.phone);
+  const viber = contactLinks.viber(contact.viber);
+  if (phone && viber)
+    return viber.display === phone.display
+      ? `Najbrže je da nas pozovete ili pišete na Viber, na ${phone.display}.`
+      : `Najbrže je da nas pozovete na ${phone.display} ili pišete na Viber, na ${viber.display}.`;
+  if (phone) return `Najbrže je da nas pozovete na ${phone.display}.`;
+  if (viber) return `Najbrže je da nam pišete na Viber, na ${viber.display}.`;
+  return "";
+}
+
 /** Values for `{{…}}` placeholders in content pages (lib/content/placeholders.ts). */
 export function placeholderValues(s: PublicSettingsLike, siteUrl = site.url): Record<string, string> {
   const contact = contactFromSettings(s);
@@ -89,6 +129,8 @@ export function placeholderValues(s: PublicSettingsLike, siteUrl = site.url): Re
     sajt: siteUrl.replace(/^https?:\/\//, "").replace(/\/$/, ""),
     "dostava.kurir.cena": courier ? formatRSD(courier.pricePara) : "",
     "dostava.besplatnoPreko": freeOver ? formatRSD(freeOver) : "",
+    "dostava.rokSlanja": cutoffLabel(s.commerce.shipCutoff),
+    "kontakt.najbrze": fastestContactSentence(contact),
     "ponuda.vaziDana": String(s.commerce.quoteValidityDays),
     radnoVreme: formatHours(s.hours),
   };

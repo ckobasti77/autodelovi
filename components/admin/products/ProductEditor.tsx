@@ -10,7 +10,7 @@
 import { useMutation, useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowLeftIcon,
   CopyIcon,
@@ -25,7 +25,7 @@ import { marginBp, moneyInputValue, parseMoneyInput } from "@/lib/admin/format";
 import { slugifySr } from "@/lib/domain/slug";
 import { formatRSD } from "@/lib/format/money";
 import { QUALITY_LABEL } from "@/lib/i18n/sr/catalog";
-import { convexErrorField, convexErrorMessage } from "@/lib/i18n/sr/shop";
+import { convexErrorCode, convexErrorField, convexErrorMessage } from "@/lib/i18n/sr/shop";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Field } from "@/components/ui/Field";
@@ -84,6 +84,64 @@ type Form = {
   supplierSku: string;
   internalNote: string;
 };
+
+/** Field names for the „changed meanwhile“ notice (FLOW-02). */
+const FIELD_LABEL: Record<keyof Form, string> = {
+  sku: "šifra",
+  name: "naziv",
+  slug: "adresa",
+  categoryId: "kategorija",
+  manufacturerId: "proizvođač",
+  quality: "kvalitet",
+  mpn: "broj proizvođača",
+  ean: "EAN",
+  oem: "OEM brojevi",
+  cross: "zamenski brojevi",
+  price: "cena",
+  cost: "nabavna cena",
+  stockQty: "stanje",
+  lowStockThreshold: "prag niskog stanja",
+  leadTimeDays: "rok nabavke",
+  allowBackorder: "poručivanje bez stanja",
+  universal: "univerzalni deo",
+  active: "aktivnost",
+  fitments: "vozila",
+  description: "opis",
+  specs: "specifikacije",
+  notes: "napomene",
+  seoTitle: "SEO naslov",
+  seoDescription: "SEO opis",
+  weightGrams: "težina",
+  warrantyMonths: "garancija",
+  supplierName: "dobavljač",
+  supplierSku: "šifra dobavljača",
+  internalNote: "interna napomena",
+};
+
+/** Fields the user never edits in the form (stock dialog, header toggle): rebased silently. */
+const SILENT_FIELDS: readonly (keyof Form)[] = ["stockQty", "active"];
+
+const same = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b);
+
+type Rebase = { refreshed: (keyof Form)[]; conflicts: (keyof Form)[] };
+
+/**
+ * Rebases an edited form onto a fresh server snapshot (FLOW-02, D232): a field the user has not
+ * touched (form = old baseline) takes the server value, an edited field keeps the user's value.
+ * Reports the untouched fields that were refreshed and the edited fields the server also changed.
+ */
+function rebaseForm(form: Form, baseline: Form, fresh: Form): { form: Form; rebase: Rebase } {
+  const next: Form = { ...form };
+  const rebase: Rebase = { refreshed: [], conflicts: [] };
+  for (const key of Object.keys(fresh) as (keyof Form)[]) {
+    const serverChanged = !same(fresh[key], baseline[key]);
+    if (same(form[key], baseline[key])) {
+      (next as Record<keyof Form, unknown>)[key] = fresh[key];
+      if (serverChanged) rebase.refreshed.push(key);
+    } else if (serverChanged && !same(fresh[key], form[key])) rebase.conflicts.push(key);
+  }
+  return { form: next, rebase };
+}
 
 const EMPTY: Form = {
   sku: "",
@@ -298,16 +356,31 @@ function EditorForm({ full }: { full: Full | null }) {
     setForm((f) => ({ ...f, [key]: value }));
   const isNew = full === null;
 
-  // Server-side changes to stock / active (another tab, a bulk action) refresh the baseline.
+  // Server-side changes (another tab, a bulk price change, an import) rebase the form: untouched
+  // fields take the fresh values, the user's edits stay; the save sends only the edits (FLOW-02).
   const [seen, setSeen] = useState(full?.updatedAt ?? 0);
+  const [notice, setNotice] = useState<Rebase | null>(null);
   if (full && full.updatedAt !== seen) {
     setSeen(full.updatedAt);
     const fresh = fromFull(full);
+    const wasDirty = !same(form, baseline);
+    const { form: next, rebase } = rebaseForm(form, baseline, fresh);
     setBaseline(fresh);
-    setForm((f) =>
-      JSON.stringify(f) === JSON.stringify(baseline) ? fresh : { ...f, stockQty: fresh.stockQty },
-    );
+    setForm(next);
+    const visible = {
+      refreshed: rebase.refreshed.filter((k) => !SILENT_FIELDS.includes(k)),
+      conflicts: rebase.conflicts,
+    };
+    if (wasDirty && (visible.refreshed.length > 0 || visible.conflicts.length > 0))
+      setNotice(visible);
   }
+
+  // A failed save moves focus to the error summary (FLOW-20).
+  const summaryRef = useRef<HTMLDivElement>(null);
+  const [summaryFocus, setSummaryFocus] = useState(0);
+  useEffect(() => {
+    if (summaryFocus > 0) summaryRef.current?.focus();
+  }, [summaryFocus]);
 
   const dirty = JSON.stringify(form) !== JSON.stringify(baseline);
 
@@ -316,6 +389,7 @@ function EditorForm({ full }: { full: Full | null }) {
     setErrors(errs);
     if (Object.keys(errs).length > 0) {
       toast.error("Proverite označena polja.");
+      setSummaryFocus((n) => n + 1);
       return;
     }
     setSaving(true);
@@ -348,17 +422,28 @@ function EditorForm({ full }: { full: Full | null }) {
         productId: full._id,
         patch: patch as Parameters<typeof update>[0]["patch"],
         ...(clear.length ? { clear } : {}),
+        expectedUpdatedAt: seen,
       });
       setBaseline(form);
+      setNotice(null);
       toast.success(changed.length ? "Sačuvano." : "Nema izmena za čuvanje.");
     } catch (err) {
+      if (convexErrorCode(err) === "CONFLICT") {
+        toast.error(
+          "Artikal je u međuvremenu izmenjen. Prikaz je osvežen — proverite polja i sačuvajte ponovo.",
+        );
+        return;
+      }
       const field = convexErrorField(err);
-      if (field) setErrors({ [field]: convexErrorMessage(err, "Neispravna vrednost.") });
+      if (field) {
+        setErrors({ [field]: convexErrorMessage(err, "Neispravna vrednost.") });
+        setSummaryFocus((n) => n + 1);
+      }
       toast.error(convexErrorMessage(err, "Artikal nije sačuvan."));
     } finally {
       setSaving(false);
     }
-  }, [baseline, create, form, full, router, update]);
+  }, [baseline, create, form, full, router, seen, update]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -479,8 +564,37 @@ function EditorForm({ full }: { full: Full | null }) {
           ) : null
         }
       />
+      {notice ? (
+        <div
+          role="status"
+          data-testid="admin-product-rebased"
+          className="flex items-start gap-2 rounded-sm border border-warning bg-warning-subtle px-4 py-3 type-body-s text-ink-1"
+        >
+          <WarningIcon size={18} className="mt-0.5 shrink-0 text-warning" aria-hidden="true" />
+          <div className="flex min-w-0 flex-1 flex-col gap-1">
+            <p>
+              Artikal je u međuvremenu izmenjen
+              {notice.refreshed.length > 0
+                ? ` — polja koja niste menjali su osvežena (${notice.refreshed.map((k) => FIELD_LABEL[k]).join(", ")}).`
+                : "."}
+            </p>
+            {notice.conflicts.length > 0 ? (
+              <p>
+                Menjano je i ono što ste vi menjali:{" "}
+                {notice.conflicts.map((k) => FIELD_LABEL[k]).join(", ")}. Ostaje vaša vrednost —
+                sačuvajte da je upišete ili odbacite izmene.
+              </p>
+            ) : null}
+          </div>
+          <Button variant="ghost" size="sm" onClick={() => setNotice(null)}>
+            U redu
+          </Button>
+        </div>
+      ) : null}
       {errorCount > 0 ? (
         <div
+          ref={summaryRef}
+          tabIndex={-1}
           role="alert"
           className="flex items-start gap-2 rounded-sm border border-danger bg-danger-subtle px-4 py-3 type-body-s text-danger"
         >
@@ -921,7 +1035,9 @@ function EditorForm({ full }: { full: Full | null }) {
         dirty={dirty || isNew}
         saving={saving}
         onSave={() => void save()}
-        onDiscard={() => (isNew ? router.push(ADMIN.products) : (setForm(baseline), setErrors({})))}
+        onDiscard={() =>
+          isNew ? router.push(ADMIN.products) : (setForm(baseline), setErrors({}), setNotice(null))
+        }
         message={isNew ? "Novi artikal još nije sačuvan." : "Imate nesačuvane izmene."}
         saveLabel={isNew ? "Sačuvaj artikal" : "Sačuvaj"}
       />

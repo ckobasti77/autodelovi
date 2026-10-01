@@ -14,12 +14,17 @@ import {
   NeutralToneMapping,
   SRGBColorSpace,
   Vector3,
+  type Material,
+  type Mesh,
+  type Object3D,
   type PerspectiveCamera,
+  type Texture,
+  type WebGLRenderer,
 } from "three";
 
 import { LIGHT_RIG } from "@/constants/xray";
 import { MEDIA_CROP_MOBILE, MEDIA_STAGE_OVERLAY, currentFraming } from "@/lib/three/framing";
-import { TIER_MAX_DPR } from "@/lib/three/tier";
+import { TIER_MAX_DPR, msaaFor } from "@/lib/three/tier";
 import { heroStore, type HeroAnchor } from "@/components/three/heroStore";
 import { HeroScene3D, OVERLAY_LAYER } from "@/components/three/canvas/controller";
 import {
@@ -34,6 +39,29 @@ import { loadCarScene, type CarScene } from "@/components/three/canvas/loadCar";
 import { usePointerPicking } from "@/components/three/canvas/usePointerPicking";
 
 export type HeroCanvasProps = { tier: "high" | "mid" };
+
+type MaterialUniforms = { uniforms?: Record<string, { value?: unknown } | undefined> };
+
+/**
+ * Textures three shares at module level and binds as material uniforms (r186: `dfgLUT`, the
+ * split-sum LUT of the PBR materials). They outlive any renderer, so the renderer's 'dispose'
+ * listener on them would keep it alive.
+ */
+function sharedRendererTextures(gl: WebGLRenderer, root: Object3D): Set<Texture> {
+  const found = new Set<Texture>();
+  root.traverse((object) => {
+    const material = (object as Mesh).material as Material | Material[] | undefined;
+    if (!material) return;
+    for (const m of Array.isArray(material) ? material : [material]) {
+      const value = (gl.properties.get(m) as MaterialUniforms).uniforms?.dfgLUT?.value as
+        | Texture
+        | null
+        | undefined;
+      if (value?.isTexture) found.add(value);
+    }
+  });
+  return found;
+}
 
 function lightDirection(azimuth: number, elevation: number): Vector3 {
   const az = (azimuth * Math.PI) / 180;
@@ -51,7 +79,7 @@ export default function HeroCanvas({ tier }: HeroCanvasProps) {
       dpr={[1, TIER_MAX_DPR[tier]]}
       camera={{ manual: true, fov: 28, near: 0.05, far: 60 }}
       gl={{
-        antialias: tier === "high",
+        antialias: msaaFor(tier, typeof window === "undefined" ? 1 : window.devicePixelRatio),
         alpha: true,
         stencil: false,
         powerPreference: "high-performance",
@@ -138,9 +166,14 @@ function HeroScene({ tier }: HeroCanvasProps) {
       controllerRef.current?.dispose();
       controllerRef.current = null;
       if (loaded) {
+        const shared = sharedRendererTextures(gl, loaded.root);
         scene.remove(loaded.root);
         loaded.dispose();
         scene.environment = null;
+        // Module-level three textures (the PBR DFG LUT) keep a 'dispose' listener of every
+        // renderer that uploaded them; releasing them here lets this renderer, its context and
+        // the detached page be collected after R3F disposes the renderer (PERF-15, D244).
+        for (const texture of shared) texture.dispose();
       }
       const edges = edgeMaterialsRef.current;
       edges?.hidden.dispose();
@@ -242,7 +275,14 @@ function HeroScene({ tier }: HeroCanvasProps) {
       };
       cancelEdges = buildEdgesInIdle(car.shellMeshes, materials, () => {
         controllerRef.current?.setEdgeMaterials(materials);
-        done();
+        // The three edge programs compile through KHR_parallel_shader_compile before the frame
+        // that first draws them, not synchronously inside it (PERF-14).
+        void gl
+          .compileAsync(scene, camera)
+          .catch(() => undefined)
+          .finally(() => {
+            if (!disposed) done();
+          });
       });
       fallback = window.setTimeout(done, 2500);
     } else {
@@ -256,7 +296,7 @@ function HeroScene({ tier }: HeroCanvasProps) {
       cancelEdges();
       window.clearTimeout(fallback);
     };
-  }, [car, tier, invalidate]);
+  }, [car, tier, invalidate, gl, scene, camera]);
 
   // ---------------------------------------------------------------- context loss
   useEffect(() => {

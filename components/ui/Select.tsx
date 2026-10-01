@@ -33,7 +33,9 @@ export function Select({ options, placeholder, size = "md", className, ...rest }
         {...control}
         className={cn(
           "h-full w-full cursor-pointer appearance-none bg-transparent pl-3 pr-9 text-ink-1 outline-none focus-visible:outline-none disabled:cursor-not-allowed",
-          size === "md" ? "text-[1rem]" : "type-body-s",
+          // sm is compact on wide screens only: below md every control renders 16 px text,
+          // otherwise iOS zooms the page on focus (VIS-12).
+          size === "md" ? "text-[1rem]" : "type-body-s max-md:text-[1rem]",
         )}
       >
         {placeholder !== undefined ? <option value="">{placeholder}</option> : null}

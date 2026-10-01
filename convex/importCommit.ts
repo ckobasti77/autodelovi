@@ -5,6 +5,7 @@
  * the chunk goes on. Rows and changes carry flags, so a repeated chunk never applies twice.
  */
 import { ConvexError, v } from "convex/values";
+import { pluralSr } from "../lib/format/plural";
 
 import { internal } from "./_generated/api";
 import type { Doc, Id } from "./_generated/dataModel";
@@ -564,7 +565,11 @@ export const rollbackChunk = internalMutation({
       action: "import.rollback",
       entityType: "importBatch",
       entityId: batchId,
-      summary: `Poništen uvoz ${batch.fileName}${counts.rollbackSkipped ? ` (${counts.rollbackSkipped} artikala nije vraćeno)` : ""}`,
+      summary: `Poništen uvoz ${batch.fileName}${
+        counts.rollbackSkipped
+          ? ` (${counts.rollbackSkipped} ${pluralSr(counts.rollbackSkipped, ["artikal nije vraćen", "artikla nisu vraćena", "artikala nije vraćeno"])})`
+          : ""
+      }`,
     });
     return null;
   },

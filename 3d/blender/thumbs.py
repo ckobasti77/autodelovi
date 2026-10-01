@@ -1,10 +1,14 @@
 """Category thumbnails: transparent 1024 px masters (Cycles) -> public/images/parts/<slug>.webp (768 px).
+Camera three-quarter front-left (az 35, el 20), 35 mm lens; the part's projected silhouette is
+solved to 70 % of the frame on its longest side with its centre at 48 % height (DS §6.3); warm
+key from upper left, cool rim #9FE9FF from behind right, HDRI fill; contact shadow on a catcher,
+no floor. X-ray slots render as primer / glass so body panels read as replacement parts. Service
+categories use props (parts/props.py).
 
-Camera three-quarter front-left (az 35, el 20), 35 mm lens, part bounding sphere at 70 % of the
-frame, optical centre slightly above the middle; warm key from upper left, cool rim #9FE9FF from
-behind right, HDRI fill; contact shadow on a catcher, no floor. X-ray slots render as primer /
-glass so body panels read as replacement parts. Service categories use props (parts/props.py).
-
+Exposure floor (VIS-01, D241): a small probe render measures the mean display luminance of the
+part's opaque pixels; dark parts (rubber, cast iron, black plastic) get up to +2.5 EV until that
+mean reaches THUMB_MIN_LUMINANCE — a 2:1 contrast against the tile ground (#23282E). Parts that
+are already bright keep exposure 0.
 Run: "$BLENDER_EXE" -b --factory-startup 3d/build/car.blend --python-exit-code 1 -P 3d/blender/thumbs.py -- [--only slug,slug] [--samples 128]
 Then: node 3d/scripts/thumbs.mjs
 """
@@ -25,13 +29,22 @@ from mathutils import Vector  # noqa: E402
 
 from config.thumbs import PREFERRED, PROPS, THUMBS  # noqa: E402
 from lib import scene  # noqa: E402
-from lib.layout import bbox, cam_dir, node_points  # noqa: E402
+from lib.layout import bbox, cam_dir, node_points, solve_camera  # noqa: E402
 from lib.materials import hex_rgb  # noqa: E402
 from lib.scene import V, log, to_vehicle  # noqa: E402
 from lib.views import add_area, color_management, cycles, make_camera, set_output, setup_world  # noqa: E402
 
 OUT = scene.RENDERS / "thumbs"
 LENS_FOV = 2 * math.degrees(math.atan(18 / 35))  # 35 mm on a 36 mm sensor, square frame
+# Screen box the part silhouette fills (x0, x1, y0, y1 from the top): 70 % longest side, centre
+# at 48 % height (DS §6.3).
+FRAME_BOX = (0.15, 0.85, 0.13, 0.83)
+# Tile ground #23282E has relative luminance 0.0205; 2:1 needs a part mean of 0.091 — aim a bit
+# above so WebP encoding and the tile gradient never pull a render back under it.
+THUMB_MIN_LUMINANCE = 0.10
+MAX_EXPOSURE_EV = 2.5
+PROBE_RES = 192
+PROBE_SAMPLES = 24
 
 
 def parse():
@@ -147,19 +160,19 @@ def frame(objs_points: list[Vector], az: float, el: float) -> None:
     mn, mx = bbox(objs_points)
     c = (mn + mx) / 2
     r = max((p - c).length for p in objs_points)
-    half = math.radians(LENS_FOV / 2)
-    ang = math.atan(0.70 * math.tan(half))
-    dist = r / math.sin(ang)
-    d = cam_dir(az, el)
-    pos = c + d * dist
-    cam = make_camera("thumb_cam", pos, c, LENS_FOV)
+    # the projected silhouette (not the bounding sphere) fills FRAME_BOX; a subsample of the
+    # vertices keeps the solve fast and moves the extremes by well under 1 %
+    step = max(1, len(objs_points) // 6000)
+    pos, target, _ = solve_camera(objs_points[::step] + [mn, mx], az, el, LENS_FOV, 1.0, box=FRAME_BOX)
+    dist = (pos - target).length
+    cam = make_camera("thumb_cam", pos, target, LENS_FOV)
     cam.data.sensor_fit = "AUTO"
     cam.data.lens = 35.0
     cam.data.sensor_width = 36.0
-    cam.data.shift_y = -0.02
+    cam.data.shift_y = 0.0
     cam.data.clip_start = max(0.01, dist - r * 3)
     cam.data.clip_end = dist + r * 4
-    # lights scale with the subject so every thumbnail shares the same exposure
+    # lights scale with the subject so every thumbnail shares the same base exposure
     k = max(r, 0.08)
     add_area("thumb_key", "#FFF4E8", 380.0 * k * k, 35, 40, 6.0 * k, size=(4.0 * k, 2.0 * k), target=tuple(c))
     add_area("thumb_rim", "#9FE9FF", 420.0 * k * k, 200, 25, 6.0 * k, size=(2.0 * k, 6.0 * k), target=tuple(c))
@@ -167,15 +180,75 @@ def frame(objs_points: list[Vector], az: float, el: float) -> None:
     cat.location = (0.0, 0.0, mn.y - 0.0005)  # Blender z == vehicle y
 
 
-def render_set(slug: str, visible: list[bpy.types.Object], points: list[Vector], az: float, el: float, res: int) -> None:
+def _lin(c: float) -> float:
+    return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
+
+
+def part_luminance(path: Path) -> float:
+    """Mean relative luminance of the opaque (part, not shadow) pixels of a display-space PNG."""
+    img = bpy.data.images.load(str(path), check_existing=False)
+    try:
+        px = img.pixels[:]
+    finally:
+        bpy.data.images.remove(img)
+    total, n = 0.0, 0
+    for i in range(0, len(px), 4):
+        if px[i + 3] >= 0.9:
+            total += 0.2126 * _lin(px[i]) + 0.7152 * _lin(px[i + 1]) + 0.0722 * _lin(px[i + 2])
+            n += 1
+    return total / n if n else 1.0
+
+
+def exposure_floor(slug: str, res: int, samples: int) -> float:
+    """Smallest EV (≤ MAX_EXPOSURE_EV) that lifts the part's mean luminance to
+    THUMB_MIN_LUMINANCE; 0 when the part is already there. The tone curve is not linear in EV, so
+    the search brackets: log-ratio steps up, halving back when a step overshoots the band."""
+    s = bpy.context.scene
+    probe = OUT / f"_probe-{slug}.png"
+    s.render.resolution_x = s.render.resolution_y = PROBE_RES
+    s.cycles.samples = PROBE_SAMPLES
+    band = THUMB_MIN_LUMINANCE * 1.3
+    ev, lo, hi = 0.0, 0.0, None
+    mean = 1.0
+    try:
+        for _ in range(6):
+            s.view_settings.exposure = ev
+            s.render.filepath = str(probe)
+            bpy.ops.render.render(write_still=True)
+            mean = part_luminance(probe)
+            if mean < THUMB_MIN_LUMINANCE:
+                lo = ev
+                if ev >= MAX_EXPOSURE_EV:
+                    break
+                step = math.log2(THUMB_MIN_LUMINANCE * 1.1 / max(mean, 1e-4))
+                ev = min(MAX_EXPOSURE_EV, ev + step) if hi is None else (lo + hi) / 2
+            elif mean > band and ev > 0.0:
+                hi = ev
+                ev = (lo + hi) / 2
+            else:
+                break
+        if mean < THUMB_MIN_LUMINANCE and hi is not None:
+            ev = hi  # the last bracket that reached the floor
+    finally:
+        s.render.resolution_x = s.render.resolution_y = res
+        s.cycles.samples = samples
+        probe.unlink(missing_ok=True)
+    log(f"thumb {slug}: part luminance {mean:.3f} at {ev:+.2f} EV")
+    return ev
+
+
+def render_set(slug: str, visible: list[bpy.types.Object], points: list[Vector], az: float, el: float, res: int, samples: int) -> None:
     for o in all_render_objects():
         o.hide_render = o not in visible and o.name != "thumb_catcher"
     frame(points, az, el)
     OUT.mkdir(parents=True, exist_ok=True)
     s = bpy.context.scene
+    ev = exposure_floor(slug, res, samples)
+    s.view_settings.exposure = ev
     s.render.filepath = str(OUT / f"{slug}.png")
     t = time.time()
     bpy.ops.render.render(write_still=True)
+    s.view_settings.exposure = 0.0
     log(f"thumb {slug} ({time.time() - t:.1f}s)")
 
 
@@ -205,7 +278,7 @@ def main() -> None:
         if slug in PROPS:
             objs = props[slug]
             pts = [Vector(to_vehicle(o.matrix_world @ v.co)) for o in objs for v in o.data.vertices]
-            render_set(slug, objs, pts, 35.0, 24.0, args.res)
+            render_set(slug, objs, pts, 35.0, 24.0, args.res, args.samples)
             continue
         spec = THUMBS.get(slug, {})
         keys = spec.get("nodes") or default_nodes(slug, taxonomy)
@@ -216,7 +289,7 @@ def main() -> None:
         if "focus_x" in spec:
             lo, hi = spec["focus_x"]
             pts = [p for p in pts if lo <= p.x <= hi] or pts
-        render_set(slug, objs, pts, spec.get("az", 35.0), spec.get("el", 20.0), args.res)
+        render_set(slug, objs, pts, spec.get("az", 35.0), spec.get("el", 20.0), args.res, args.samples)
         restore(saved)
     log(f"thumbs done in {time.time() - t0:.1f}s")
 

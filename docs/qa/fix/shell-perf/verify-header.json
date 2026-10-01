@@ -1,0 +1,160 @@
+{
+  "header": [
+    {
+      "who": "guest+phone+viber",
+      "width": 320,
+      "vw": 320,
+      "docScrollW": 320,
+      "headerScrollW": 320,
+      "menuLeft": 260,
+      "menuRight": 304,
+      "simulatedShown": 0,
+      "visible": [
+        "SKLOP — početna",
+        "Pretraga delova",
+        "Korpa",
+        "Otvori meni"
+      ]
+    },
+    {
+      "who": "guest+phone+viber",
+      "width": 360,
+      "vw": 360,
+      "docScrollW": 360,
+      "headerScrollW": 360,
+      "menuLeft": 300,
+      "menuRight": 344,
+      "simulatedShown": 0,
+      "visible": [
+        "SKLOP — početna",
+        "Pretraga delova",
+        "Korpa",
+        "Otvori meni"
+      ]
+    },
+    {
+      "who": "guest+phone+viber",
+      "width": 390,
+      "vw": 390,
+      "docScrollW": 390,
+      "headerScrollW": 390,
+      "menuLeft": 330,
+      "menuRight": 374,
+      "simulatedShown": 0,
+      "visible": [
+        "SKLOP — početna",
+        "Pretraga delova",
+        "Korpa",
+        "Otvori meni"
+      ]
+    },
+    {
+      "who": "guest+phone+viber",
+      "width": 480,
+      "vw": 480,
+      "docScrollW": 480,
+      "headerScrollW": 480,
+      "menuLeft": 417,
+      "menuRight": 461,
+      "simulatedShown": 2,
+      "visible": [
+        "SKLOP — početna",
+        "Pretraga delova",
+        "Pozovite +381 64 123 4567",
+        "Viber +381 64 123 4567",
+        "Moj nalog",
+        "Korpa",
+        "Otvori meni"
+      ]
+    },
+    {
+      "who": "guest+phone+viber",
+      "width": 1440,
+      "vw": 1440,
+      "docScrollW": 1440,
+      "headerScrollW": 1440,
+      "menuLeft": 0,
+      "menuRight": 0,
+      "simulatedShown": 0,
+      "visible": [
+        "SKLOP — početna",
+        "Delovi",
+        "Vozila",
+        "Za majstore",
+        "Upit po broju šasije",
+        "Broj dela ili naziv/",
+        "Izaberite vozilo",
+        "Moj nalog",
+        "Korpa"
+      ]
+    },
+    {
+      "who": "mechanic+phone+viber",
+      "width": 320,
+      "vw": 320,
+      "docScrollW": 320,
+      "headerScrollW": 320,
+      "menuLeft": 260,
+      "menuRight": 304,
+      "simulatedShown": 0,
+      "visible": [
+        "SKLOP — početna",
+        "Pretraga delova",
+        "Korpa, 1 artikal",
+        "Otvori meni"
+      ]
+    },
+    {
+      "who": "mechanic+phone+viber",
+      "width": 360,
+      "vw": 360,
+      "docScrollW": 360,
+      "headerScrollW": 360,
+      "menuLeft": 300,
+      "menuRight": 344,
+      "simulatedShown": 0,
+      "visible": [
+        "SKLOP — početna",
+        "Pretraga delova",
+        "Korpa, 1 artikal",
+        "Otvori meni"
+      ]
+    },
+    {
+      "who": "mechanic+phone+viber",
+      "width": 390,
+      "vw": 390,
+      "docScrollW": 390,
+      "headerScrollW": 390,
+      "menuLeft": 330,
+      "menuRight": 374,
+      "simulatedShown": 0,
+      "visible": [
+        "SKLOP — početna",
+        "Pretraga delova",
+        "Korpa, 1 artikal",
+        "Otvori meni"
+      ]
+    },
+    {
+      "who": "mechanic+phone+viber",
+      "width": 480,
+      "vw": 480,
+      "docScrollW": 480,
+      "headerScrollW": 480,
+      "menuLeft": 420,
+      "menuRight": 464,
+      "simulatedShown": 2,
+      "visible": [
+        "SKLOP — početna",
+        "Pretraga delova",
+        "Brza porudžbina",
+        "Pozovite +381 64 123 4567",
+        "Viber +381 64 123 4567",
+        "Majstorski portal",
+        "Korpa, 1 artikal",
+        "Otvori meni"
+      ]
+    }
+  ]
+}

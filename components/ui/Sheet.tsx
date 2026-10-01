@@ -28,6 +28,7 @@ import {
   usePresence,
 } from "@/components/ui/motion";
 import { DISTANCE, DUR, EASE, MEDIA, SHEET } from "@/constants/motion";
+import { useFocusReturn } from "@/lib/dom/focusReturn";
 
 export type SheetProps = {
   open?: boolean;
@@ -81,6 +82,16 @@ export function Sheet({
   const [present, onExited] = usePresence(isOpen);
   const isDesktop = useMediaQuery(MEDIA.desktop);
   const resolvedSide = side === "responsive" ? (isDesktop ? "right" : "bottom") : side;
+  // Trigger-less sheets (opened from global state) return focus themselves (A11Y-02).
+  const focusReturn = useFocusReturn(!trigger, isOpen);
+  const focus = {
+    onOpenAutoFocus,
+    onCloseAutoFocus: (event: Event) => {
+      onCloseAutoFocus?.(event);
+      focusReturn.onCloseAutoFocus(event);
+    },
+    testId,
+  };
 
   return (
     <DialogPrimitive.Root open={isOpen} onOpenChange={setOpen} modal={modal}>
@@ -99,7 +110,7 @@ export function Sheet({
               header={header}
               description={description}
               footer={footer}
-              focus={{ onOpenAutoFocus, onCloseAutoFocus, testId }}
+              focus={focus}
               className={className}
             >
               {children}
@@ -116,7 +127,7 @@ export function Sheet({
               header={header}
               description={description}
               footer={footer}
-              focus={{ onOpenAutoFocus, onCloseAutoFocus, testId }}
+              focus={focus}
               className={className}
             >
               {children}

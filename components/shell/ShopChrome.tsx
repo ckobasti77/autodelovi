@@ -3,9 +3,11 @@
 /**
  * Client chrome of the storefront, mounted once in the shop layout: the cart drawer (its chunk
  * loads on first open), attribution capture, guest-cart merge after sign-in, the offline
- * notice and the polite live region add-to-cart announces into.
+ * notice, the polite live region add-to-cart announces into and the mobile contact bar
+ * (FLOW-12: decided here, its chunk loads on the first scroll-up).
  */
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { WifiSlashIcon } from "@phosphor-icons/react/dist/ssr";
 
@@ -14,10 +16,76 @@ import { track, type ContactChannel } from "@/lib/analytics/track";
 import { useMergeGuestCartOnSignIn } from "@/lib/cart/guestCart";
 import { useCartDrawer } from "@/lib/cart/drawer";
 import { useLatched } from "@/lib/hooks/useLatched";
+import { useConsent } from "@/lib/analytics/consentStore";
+import { ROUTES } from "@/constants/routes";
 import type { DeliveryInfo } from "@/components/cart/CartView";
+import type { StickyContactChannel } from "@/components/shell/StickyContactBar";
 
 const loadDrawer = () => import("@/components/cart/CartDrawer");
 const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });
+const StickyContactBar = dynamic(
+  () => import("@/components/shell/StickyContactBar").then((m) => m.StickyContactBar),
+  { ssr: false },
+);
+
+/** Routes with their own bottom bar (buy bar, cart total, checkout, mechanic portal). */
+const OWN_BOTTOM_BAR = ["/deo/", ROUTES.cart, ROUTES.checkout, ROUTES.mechanicPortal];
+/** Scroll distance before the bar may appear, and the movement that counts as a direction. */
+const SHOW_AFTER_PX = 480;
+const DIRECTION_PX = 24;
+
+/** True while the visitor scrolls back up, past the first screen (phones only). */
+function useScrollUpIntent(enabled: boolean): boolean {
+  const [up, setUp] = useState(false);
+  useEffect(() => {
+    if (!enabled) return;
+    const narrow = window.matchMedia("(max-width: 63.999rem)");
+    let anchor = window.scrollY;
+    let first = true;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const y = window.scrollY;
+      // (Re)enabled: start hidden; only a scroll-up from here shows the bar.
+      if (first || !narrow.matches || y < SHOW_AFTER_PX) {
+        first = false;
+        anchor = y;
+        setUp(false);
+        return;
+      }
+      if (y < anchor - DIRECTION_PX) {
+        anchor = y;
+        setUp(true);
+      } else if (y > anchor + DIRECTION_PX) {
+        anchor = y;
+        setUp(false);
+      }
+      // Smaller moves keep the anchor, so a slow scroll still adds up to a direction.
+    };
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, [enabled]);
+  return up;
+}
+
+function ContactBarSlot({ channels }: { channels: StickyContactChannel[] }) {
+  const pathname = usePathname();
+  const bannerOpen = useConsent((s) => !s.initialised || s.open);
+  const allowed =
+    channels.length > 0 &&
+    !bannerOpen &&
+    !OWN_BOTTOM_BAR.some((prefix) => pathname === prefix || pathname.startsWith(prefix));
+  const visible = useScrollUpIntent(allowed) && allowed;
+  const mounted = useLatched(visible);
+  return mounted ? <StickyContactBar channels={channels} visible={visible} /> : null;
+}
 
 /** Contact channel of a link (`tel:`, `viber:`, WhatsApp, `mailto:`), or null. */
 function contactChannel(href: string): ContactChannel | null {
@@ -54,7 +122,14 @@ function OfflineNotice() {
   );
 }
 
-export function ShopChrome({ delivery }: { delivery: DeliveryInfo }) {
+export function ShopChrome({
+  delivery,
+  contactChannels = [],
+}: {
+  delivery: DeliveryInfo;
+  /** Phone / Viber from settings for the mobile contact bar (none ⇒ no bar). */
+  contactChannels?: StickyContactChannel[];
+}) {
   const open = useCartDrawer((s) => s.open);
   const mounted = useLatched(open);
   useMergeGuestCartOnSignIn();
@@ -90,6 +165,7 @@ export function ShopChrome({ delivery }: { delivery: DeliveryInfo }) {
     <>
       <p id="cart-live" className="sr-only" aria-live="polite" data-reveal="off" />
       {mounted ? <CartDrawer delivery={delivery} /> : null}
+      <ContactBarSlot channels={contactChannels} />
       <OfflineNotice />
     </>
   );

@@ -2,12 +2,12 @@
  * VIN / part inquiry schema (ARCHITECTURE §A2) — mirrors `inquiries.submit` in Convex: a name,
  * phone or e-mail (the one matching the reply channel), a message, an optional valid VIN.
  */
-import { z } from "zod";
+import * as z from "zod";
 
 import { isValidEmail, normalizeEmail } from "@/lib/domain/identifiers";
 import { validateVin } from "@/lib/domain/vin";
 import { normalizePhone } from "@/lib/format/phone";
-import { ERRORS } from "@/lib/i18n/sr/shop";
+import { ERRORS, TERMS } from "@/lib/i18n/sr/shop";
 
 export const CHANNELS = ["phone", "viber", "whatsapp", "email"] as const;
 
@@ -30,15 +30,22 @@ export const inquirySchema = z
     consent: z.boolean(),
   })
   .superRefine((d, ctx) => {
-    if (d.vin && !validateVin(d.vin).valid) ctx.addIssue({ code: "custom", path: ["vin"], message: ERRORS.vin });
+    if (d.vin && !validateVin(d.vin).valid)
+      ctx.addIssue({ code: "custom", path: ["vin"], message: ERRORS.vin });
     if (d.year && !/^(19[5-9]\d|20\d\d)$/.test(d.year))
       ctx.addIssue({ code: "custom", path: ["year"], message: "Godište ima 4 cifre, npr. 2016." });
     const phoneOk = d.phone ? normalizePhone(d.phone) !== null : false;
     const emailOk = d.email ? isValidEmail(normalizeEmail(d.email)) : false;
-    if (d.phone && !phoneOk) ctx.addIssue({ code: "custom", path: ["phone"], message: ERRORS.phone });
-    if (d.email && !emailOk) ctx.addIssue({ code: "custom", path: ["email"], message: ERRORS.email });
+    if (d.phone && !phoneOk)
+      ctx.addIssue({ code: "custom", path: ["phone"], message: ERRORS.phone });
+    if (d.email && !emailOk)
+      ctx.addIssue({ code: "custom", path: ["email"], message: ERRORS.email });
     if (d.channel === "email" && !d.email)
-      ctx.addIssue({ code: "custom", path: ["email"], message: "Za odgovor e-poštom upišite e-mail adresu." });
+      ctx.addIssue({
+        code: "custom",
+        path: ["email"],
+        message: `Za odgovor e-poštom upišite ${TERMS.emailAddressAcc}.`,
+      });
     if (d.channel !== "email" && !d.phone)
       ctx.addIssue({
         code: "custom",

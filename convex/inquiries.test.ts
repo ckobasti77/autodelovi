@@ -239,3 +239,166 @@ describe("inquiries", () => {
     expect(await w.asCustomerB.query(api.inquiries.mine, {})).toHaveLength(0);
   });
 });
+
+describe("quote acceptance applies the mechanic's terms (QA BE-01, FLOW-08, FLOW-13, FLOW-16)", () => {
+  const DAY = 86_400_000;
+
+  async function mechanicQuote(w: World) {
+    const { number, token } = await w.asMechA.mutation(api.inquiries.submit, inquiryArgs());
+    const detail = (await w.asStaff.query(api.inquiriesAdmin.get, { number }))!;
+    const quoteId = await w.asStaff.mutation(api.inquiriesAdmin.saveQuoteDraft, {
+      inquiryId: detail.inquiry._id,
+      lines: [
+        {
+          productId: w.products.disc,
+          sku: "5Q0 615 301 F",
+          name: "Kočioni disk prednji 312 mm",
+          quantity: 2,
+          unitPricePara: 850_000,
+          availability: "in_stock",
+        },
+        { name: "Nosač čeljusti", quantity: 1, unitPricePara: 300_000, availability: "on_order" },
+      ],
+    });
+    await w.asStaff.mutation(api.inquiriesAdmin.sendQuote, { quoteId });
+    return { number, token, quoteId };
+  }
+
+  const setCredit = (t: ReturnType<typeof makeT>, w: World, creditLimitPara: number) =>
+    t.run(async (ctx) => {
+      await ctx.db.patch("mechanicProfiles", w.mechA.profileId, {
+        creditLimitPara,
+        paymentTermsDays: 30,
+      });
+    });
+
+  test("deferred acceptance over the credit limit is refused; within it gets terms and tier", async () => {
+    const t = makeT();
+    const w = await setupWorld(t);
+    const { token, quoteId } = await mechanicQuote(w);
+    await setCredit(t, w, 1_000_000); // 10.000 RSD < 20.000 RSD quote
+    const deferred = { ...acceptArgs(token, quoteId), payment: { method: "deferred" as const } };
+    expect(await errorCode(() => w.asMechA.mutation(api.inquiries.acceptQuote, deferred))).toBe(
+      "INVALID",
+    );
+    // The token page offers deferred payment only to the owning mechanic, with the remainder.
+    const view = await w.asMechA.query(api.inquiries.getByToken, { token });
+    expect(view!.deferredCredit).toEqual({ availablePara: 1_000_000 });
+    expect((await w.anon.query(api.inquiries.getByToken, { token }))!.deferredCredit).toBeNull();
+    expect(view!.prefill).toEqual({ phone: "+381641112222", email: null });
+
+    await setCredit(t, w, 5_000_000);
+    const before = Date.now();
+    const { orderNumber } = await w.asMechA.mutation(api.inquiries.acceptQuote, deferred);
+    const order = await t.run(async (ctx) =>
+      ctx.db
+        .query("orders")
+        .withIndex("by_number", (q) => q.eq("number", orderNumber))
+        .unique(),
+    );
+    expect(order!.customerType).toBe("mechanic");
+    expect(order!.mechanicProfileId).toBe(w.mechA.profileId);
+    expect(order!.tierSnapshot?.tierId).toBe(w.tiers.majstor);
+    expect(order!.payment.dueAt! - before).toBeGreaterThanOrEqual(30 * DAY);
+    expect(order!.payment.dueAt! - before).toBeLessThan(31 * DAY);
+    // FLOW-16: the catalogue line orders under the product's SKU, not the quote's OEM code.
+    const items = await t.run(async (ctx) =>
+      ctx.db
+        .query("orderItems")
+        .withIndex("by_orderId", (q) => q.eq("orderId", order!._id))
+        .take(10),
+    );
+    expect(items.map((i) => i.sku).sort()).toEqual(["T-DISC", "UPIT"]);
+  });
+
+  test("another signed-in mechanic holding the link gets no mechanic terms", async () => {
+    const t = makeT();
+    const w = await setupWorld(t);
+    const { token, quoteId } = await mechanicQuote(w);
+    const deferred = { ...acceptArgs(token, quoteId), payment: { method: "deferred" as const } };
+    expect(await errorCode(() => w.asMechB.mutation(api.inquiries.acceptQuote, deferred))).toBe(
+      "INVALID",
+    );
+  });
+
+  test("staff conversion enforces the credit limit unless explicitly overridden (audited)", async () => {
+    const t = makeT();
+    const w = await setupWorld(t);
+    const { quoteId } = await mechanicQuote(w);
+    await setCredit(t, w, 1_000_000);
+    const args = {
+      quoteId,
+      contact: CONTACT,
+      delivery: { method: "pickup" as const },
+      payment: { method: "deferred" as const },
+    };
+    expect(await errorCode(() => w.asStaff.mutation(api.inquiriesAdmin.convertToOrder, args))).toBe(
+      "INVALID",
+    );
+    const { orderNumber } = await w.asStaff.mutation(api.inquiriesAdmin.convertToOrder, {
+      ...args,
+      creditOverride: true,
+    });
+    const audit = await t.run(async (ctx) =>
+      (await ctx.db.query("auditLog").order("desc").take(20)).find(
+        (a) => a.action === "quote.convert",
+      ),
+    );
+    expect(audit!.summary).toContain(orderNumber);
+    expect(audit!.summary).toContain("prekoračen limit");
+    const order = await t.run(async (ctx) =>
+      ctx.db
+        .query("orders")
+        .withIndex("by_number", (q) => q.eq("number", orderNumber))
+        .unique(),
+    );
+    expect(order!.tierSnapshot?.tierId).toBe(w.tiers.majstor);
+  });
+
+  test("phone-only inquiry: staff get the status link and convert without an e-mail", async () => {
+    vi.useFakeTimers();
+    const t = makeT();
+    const w = await setupWorld(t);
+    const { number, token, draftId } = await inquiryWithQuote(w);
+    await w.asStaff.mutation(api.inquiriesAdmin.sendQuote, { quoteId: draftId });
+    const detail = (await w.asStaff.query(api.inquiriesAdmin.get, { number }))!;
+    expect(detail.inquiry.statusLink).toMatch(new RegExp(`/upit/${token}$`));
+    const { orderNumber } = await w.asStaff.mutation(api.inquiriesAdmin.convertToOrder, {
+      quoteId: draftId,
+      contact: { ...CONTACT, email: "" },
+      delivery: { method: "pickup" as const },
+      payment: { method: "pickup_cash" as const },
+    });
+    await t.finishAllScheduledFunctions(vi.runAllTimers);
+    const order = await t.run(async (ctx) =>
+      ctx.db
+        .query("orders")
+        .withIndex("by_number", (q) => q.eq("number", orderNumber))
+        .unique(),
+    );
+    expect(order!.contact.email).toBe("");
+    const customerMails = await t.run(async (ctx) =>
+      (await ctx.db.query("notificationDeliveries").take(200)).filter(
+        (d) => d.channel === "email" && d.recipient === "",
+      ),
+    );
+    expect(customerMails).toHaveLength(0);
+    vi.useRealTimers();
+  });
+
+  test("a sent quote needs a price on every line, named by line", async () => {
+    const t = makeT();
+    const w = await setupWorld(t);
+    const { inquiryId } = await inquiryWithQuote(w);
+    const quoteId = await w.asStaff.mutation(api.inquiriesAdmin.saveQuoteDraft, {
+      inquiryId,
+      lines: [{ name: "Senzor ABS", quantity: 1, unitPricePara: 0, availability: "on_order" }],
+    });
+    try {
+      await w.asStaff.mutation(api.inquiriesAdmin.sendQuote, { quoteId });
+      expect.unreachable();
+    } catch (error) {
+      expect((error as { data: { field: string } }).data.field).toBe("lines.0.price");
+    }
+  });
+});

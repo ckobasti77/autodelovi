@@ -3,22 +3,21 @@
  * `validateCheckout` (convex/lib/orders.ts), with the Serbian messages of DESIGN-SYSTEM §11.4.
  * The client validates step by step; the server re-validates everything.
  */
-import { z } from "zod";
+import * as z from "zod";
 
-import {
-  isValidEmail,
-  isValidMb,
-  isValidPib,
-  isValidPostalCode,
-  normalizeEmail,
-  normalizeMb,
-  normalizePib,
-} from "@/lib/domain/identifiers";
+import { isValidEmail, isValidPostalCode, normalizeEmail } from "@/lib/domain/identifiers";
 import { validateVin } from "@/lib/domain/vin";
 import { normalizePhone } from "@/lib/format/phone";
 import { ERRORS } from "@/lib/i18n/sr/shop";
+import { mbProblem, pibProblem } from "@/lib/validation/identifiers";
 
-export const PAYMENT_CODES = ["cod", "pickup_cash", "pickup_card", "bank_transfer", "deferred"] as const;
+export const PAYMENT_CODES = [
+  "cod",
+  "pickup_cash",
+  "pickup_card",
+  "bank_transfer",
+  "deferred",
+] as const;
 export const DELIVERY_CODES = ["pickup", "courier"] as const;
 
 export const checkoutSchema = z
@@ -33,7 +32,7 @@ export const checkoutSchema = z
     email: z
       .string()
       .trim()
-      .min(1, ERRORS.required("e-mail adresu"))
+      .min(1, ERRORS.emailRequired)
       .refine((v) => isValidEmail(normalizeEmail(v)), ERRORS.email),
     isCompany: z.boolean(),
     companyName: z.string().trim().max(120),
@@ -52,13 +51,27 @@ export const checkoutSchema = z
   })
   .superRefine((d, ctx) => {
     if (d.isCompany) {
-      if (!d.companyName) ctx.addIssue({ code: "custom", path: ["companyName"], message: ERRORS.required("naziv firme") });
-      if (!isValidPib(normalizePib(d.pib))) ctx.addIssue({ code: "custom", path: ["pib"], message: ERRORS.pib });
-      if (d.mb && !isValidMb(normalizeMb(d.mb))) ctx.addIssue({ code: "custom", path: ["mb"], message: ERRORS.mb });
+      if (!d.companyName)
+        ctx.addIssue({
+          code: "custom",
+          path: ["companyName"],
+          message: ERRORS.required("naziv firme"),
+        });
+      const pib = pibProblem(d.pib);
+      if (pib) ctx.addIssue({ code: "custom", path: ["pib"], message: pib });
+      // MB is optional in checkout: only a filled-in number is checked.
+      const mb = d.mb ? mbProblem(d.mb) : null;
+      if (mb) ctx.addIssue({ code: "custom", path: ["mb"], message: mb });
     }
     if (d.deliveryMethod === "courier") {
-      if (!d.street) ctx.addIssue({ code: "custom", path: ["street"], message: ERRORS.required("ulicu i broj") });
-      if (!d.city) ctx.addIssue({ code: "custom", path: ["city"], message: ERRORS.required("mesto") });
+      if (!d.street)
+        ctx.addIssue({
+          code: "custom",
+          path: ["street"],
+          message: ERRORS.required("ulicu i broj"),
+        });
+      if (!d.city)
+        ctx.addIssue({ code: "custom", path: ["city"], message: ERRORS.required("mesto") });
       if (!isValidPostalCode(d.postalCode))
         ctx.addIssue({ code: "custom", path: ["postalCode"], message: ERRORS.postalCode });
     }
@@ -66,12 +79,18 @@ export const checkoutSchema = z
       ctx.addIssue({
         code: "custom",
         path: ["paymentMethod"],
-        message: "Virman uz predračun je za firme — u koraku Kontakt uključite „Kupujem kao firma“.",
+        message:
+          "Virman uz predračun je za firme — u koraku Kontakt uključite „Kupujem kao firma“.",
       });
     }
-    if (d.vin && !validateVin(d.vin).valid) ctx.addIssue({ code: "custom", path: ["vin"], message: ERRORS.vin });
+    if (d.vin && !validateVin(d.vin).valid)
+      ctx.addIssue({ code: "custom", path: ["vin"], message: ERRORS.vin });
     if (!d.terms)
-      ctx.addIssue({ code: "custom", path: ["terms"], message: "Potrebna je saglasnost sa uslovima kupovine." });
+      ctx.addIssue({
+        code: "custom",
+        path: ["terms"],
+        message: "Potrebna je saglasnost sa uslovima kupovine.",
+      });
   });
 
 export type CheckoutValues = z.infer<typeof checkoutSchema>;

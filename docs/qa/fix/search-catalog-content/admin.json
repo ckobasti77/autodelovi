@@ -1,0 +1,84 @@
+{
+  "base": "http://localhost:3001",
+  "steps": [
+    {
+      "name": "start",
+      "name0": "Audit disk prednji 852021 (tab A) V",
+      "price0": "4990",
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A) V",
+        "retailPricePara": 499000,
+        "source": "manual",
+        "stockQty": 0
+      }
+    },
+    {
+      "name": "tab B saved",
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A) V",
+        "retailPricePara": 649000,
+        "source": "manual",
+        "stockQty": 0
+      },
+      "notice": "Artikal je u međuvremenu izmenjen — polja koja niste menjali su osvežena (cena).U redu",
+      "priceA": "6490",
+      "nameA": "Audit disk prednji 852021 (tab A) V (fix22)"
+    },
+    {
+      "name": "tab A saved",
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A) V (fix22)",
+        "retailPricePara": 649000,
+        "source": "manual",
+        "stockQty": 0
+      },
+      "toasts": []
+    },
+    {
+      "name": "restored",
+      "server": {
+        "active": false,
+        "name": "Audit disk prednji 852021 (tab A) V",
+        "retailPricePara": 499000,
+        "source": "manual",
+        "stockQty": 0
+      }
+    },
+    {
+      "name": "seo counters",
+      "texts": [
+        "0 / 170"
+      ]
+    },
+    {
+      "name": "renamed",
+      "old": {
+        "status": 308,
+        "location": "/deo/audit-disk-prednji-852021-audit-fa-852021-r22"
+      },
+      "next": {
+        "status": 200,
+        "location": null
+      }
+    },
+    {
+      "name": "renamed back",
+      "original": {
+        "status": 308,
+        "location": "/deo/audit-disk-prednji-852021-audit-fa-852021-r22"
+      },
+      "temporary": {
+        "status": 200,
+        "location": null
+      }
+    },
+    {
+      "name": "empty save",
+      "focus": "DIV role=alert",
+      "invalid": 5
+    }
+  ]
+}

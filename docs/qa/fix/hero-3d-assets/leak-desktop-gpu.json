@@ -1,0 +1,122 @@
+{
+ "rows": [
+  {
+   "label": "home, poster (before 3D)",
+   "url": "/",
+   "heapMB": 13,
+   "nodes": 2560,
+   "listeners": 805,
+   "docs": 1,
+   "workers": 0,
+   "ctxCreated": 0,
+   "ctxReachable": 0,
+   "ctxLive": 0,
+   "gpuMB": 0,
+   "status": "idle"
+  },
+  {
+   "label": "cycle 1: home, exploded + selected/closed",
+   "url": "/",
+   "heapMB": 24.2,
+   "nodes": 2524,
+   "listeners": 1009,
+   "docs": 1,
+   "workers": 4,
+   "ctxCreated": 2,
+   "ctxReachable": 1,
+   "ctxLive": 1,
+   "gpuMB": 61.2,
+   "status": "ready"
+  },
+  {
+   "label": "cycle 1: /delovi (after leaving 3D)",
+   "url": "/delovi",
+   "heapMB": 24.1,
+   "nodes": 2034,
+   "listeners": 1051,
+   "docs": 1,
+   "workers": 4,
+   "ctxCreated": 2,
+   "ctxReachable": 1,
+   "ctxLive": 0,
+   "gpuMB": 0,
+   "status": null
+  },
+  {
+   "label": "cycle 2: home, exploded + selected/closed",
+   "url": "/",
+   "heapMB": 31.9,
+   "nodes": 2215,
+   "listeners": 1070,
+   "docs": 1,
+   "workers": 4,
+   "ctxCreated": 3,
+   "ctxReachable": 2,
+   "ctxLive": 1,
+   "gpuMB": 61.2,
+   "status": "ready"
+  },
+  {
+   "label": "cycle 2: /delovi (after leaving 3D)",
+   "url": "/delovi",
+   "heapMB": 28.9,
+   "nodes": 2329,
+   "listeners": 1088,
+   "docs": 1,
+   "workers": 4,
+   "ctxCreated": 3,
+   "ctxReachable": 2,
+   "ctxLive": 0,
+   "gpuMB": 0,
+   "status": null
+  },
+  {
+   "label": "cycle 3: home, exploded + selected/closed",
+   "url": "/",
+   "heapMB": 33.4,
+   "nodes": 2524,
+   "listeners": 1108,
+   "docs": 1,
+   "workers": 4,
+   "ctxCreated": 4,
+   "ctxReachable": 3,
+   "ctxLive": 1,
+   "gpuMB": 61.2,
+   "status": "ready"
+  },
+  {
+   "label": "cycle 3: /delovi (after leaving 3D)",
+   "url": "/delovi",
+   "heapMB": 30.6,
+   "nodes": 2652,
+   "listeners": 1127,
+   "docs": 1,
+   "workers": 4,
+   "ctxCreated": 4,
+   "ctxReachable": 3,
+   "ctxLive": 0,
+   "gpuMB": 0,
+   "status": null
+  },
+  {
+   "label": "final: home after back, poster",
+   "url": "/",
+   "heapMB": 34.5,
+   "nodes": 2860,
+   "listeners": 1147,
+   "docs": 1,
+   "workers": 4,
+   "ctxCreated": 5,
+   "ctxReachable": 4,
+   "ctxLive": 1,
+   "gpuMB": 61.2,
+   "status": "ready"
+  }
+ ],
+ "logs": [
+  "warning: THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+  "warning: THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+  "warning: THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+  "warning: THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+ ]
+}

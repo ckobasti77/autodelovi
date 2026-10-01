@@ -13,7 +13,7 @@ import { productFieldsLabel } from "../../lib/i18n/sr/auditLabels";
 import { audit } from "../lib/audit";
 import { actorOf, SYSTEM_ACTOR } from "../lib/authz";
 import { importHistorySummary } from "../lib/importModel";
-import { invalid, notFound } from "../lib/errors";
+import { fail, invalid, notFound } from "../lib/errors";
 import { staffMutation, staffQuery } from "../lib/functions";
 import { internal } from "../_generated/api";
 import {
@@ -371,11 +371,18 @@ export const update = staffMutation({
     note: v.optional(v.string()),
     /** Optional fields to remove (a cleared input in the editor). */
     clear: v.optional(v.array(clearableFieldV)),
+    /**
+     * The `updatedAt` the editor based its changes on: a newer document means someone else
+     * saved in between, so the write is refused instead of reverting their fields (FLOW-02).
+     */
+    expectedUpdatedAt: v.optional(v.number()),
   },
   returns: v.array(v.string()),
-  handler: async (ctx, { productId, patch, note, clear }) => {
+  handler: async (ctx, { productId, patch, note, clear, expectedUpdatedAt }) => {
     const before = await ctx.db.get("products", productId);
     if (!before) return notFound("Artikal ne postoji.");
+    if (expectedUpdatedAt !== undefined && before.updatedAt !== expectedUpdatedAt)
+      fail("CONFLICT", "Artikal je u međuvremenu izmenjen — osvežite prikaz.");
     const actor = actorOf(ctx.viewer);
     const full: ProductPatch = { ...(patch as ProductPatch) };
     for (const field of clear ?? []) full[field] = undefined;

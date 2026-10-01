@@ -12,6 +12,7 @@ import { api } from "@/convex/_generated/api";
 import type { Id } from "@/convex/_generated/dataModel";
 import { cn } from "@/lib/cn";
 import { checkPhoto, compressPhoto, PHOTO_ACCEPT } from "@/lib/images/compress";
+import { formatNumber } from "@/lib/format/number";
 import { convexErrorMessage, ERRORS } from "@/lib/i18n/sr/shop";
 import { Spinner } from "@/components/ui/Spinner";
 import { TEST_IDS } from "@/constants/testIds";
@@ -60,12 +61,14 @@ export function PhotoPicker({
       });
       if (!res.ok) throw new Error(`upload ${res.status}`);
       const { storageId } = (await res.json()) as { storageId: Id<"_storage"> };
-      onChange((prev) => prev.map((p) => (p.id === item.id ? { ...p, status: "done", storageId } : p)));
+      onChange((prev) =>
+        prev.map((p) => (p.id === item.id ? { ...p, status: "done", storageId } : p)),
+      );
     } catch (error) {
       onChange((prev) =>
         prev.map((p) =>
           p.id === item.id
-            ? { ...p, status: "error", error: convexErrorMessage(error, "Otpremanje nije uspelo. Pokušajte ponovo.") }
+            ? { ...p, status: "error", error: convexErrorMessage(error, ERRORS.upload) }
             : p,
         ),
       );
@@ -81,10 +84,19 @@ export function PhotoPicker({
       return;
     }
     const accepted: { item: PhotoItem; file: File }[] = [];
+    // Each rejected file is named with its own reason (FLOW-27).
+    const rejected: string[] = [];
     for (const file of list.slice(0, room)) {
       const check = checkPhoto(file);
       if (!check.ok) {
-        setNotice(ERRORS.upload);
+        rejected.push(
+          check.reason === "type"
+            ? ERRORS.uploadType(file.name)
+            : ERRORS.uploadSize(
+                file.name,
+                formatNumber(file.size / (1024 * 1024), { decimals: 1 }),
+              ),
+        );
         continue;
       }
       accepted.push({
@@ -97,7 +109,8 @@ export function PhotoPicker({
         },
       });
     }
-    if (list.length > room) setNotice("Najviše 5 fotografija — višak nije dodat.");
+    if (list.length > room) rejected.push("Najviše 5 fotografija — višak nije dodat.");
+    if (rejected.length) setNotice(rejected.join(" "));
     if (!accepted.length) return;
     onChange((prev) => [...prev, ...accepted.map((a) => a.item)]);
     for (const a of accepted) void upload(a.item, a.file);
@@ -122,7 +135,9 @@ export function PhotoPicker({
         className={cn(
           "flex min-h-28 cursor-pointer flex-col items-center justify-center gap-2 rounded-sm border border-dashed px-4 py-6 text-center transition-control",
           "has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-focus",
-          over ? "border-accent bg-accent-subtle" : "border-control bg-surface-1 hover:border-ink-3",
+          over
+            ? "border-accent bg-accent-subtle"
+            : "border-control bg-surface-1 hover:border-ink-3",
         )}
       >
         <CameraIcon size={28} aria-hidden="true" className="text-ink-3" />

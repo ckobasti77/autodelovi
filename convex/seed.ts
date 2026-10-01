@@ -23,6 +23,7 @@ import { normalizeOem } from "../lib/domain/codes";
 import { belgradeYear, endOfBelgradeDay } from "../lib/domain/time";
 import { SYSTEM_ACTOR } from "./lib/authz";
 import { nextCounter } from "./lib/counters";
+import { emitEvent } from "./lib/events";
 import { seedAdminCredentials } from "./lib/env";
 import {
   commitStock,
@@ -34,7 +35,12 @@ import {
 import { createProduct, updateProduct } from "./lib/productWriter";
 import { DEFAULT_SETTINGS, getSettings, getSettingsDoc } from "./lib/settings";
 import { issueStatusLink } from "./lib/linkTokens";
-import { buildIntro, seoDescription, seoTitle } from "./seedData/categories";
+import {
+  buildIntro,
+  legacySeoDescription,
+  legacySeoTitle,
+  legacySystemSeoDescription,
+} from "./seedData/categories";
 import { MANUFACTURERS } from "./seedData/manufacturers";
 import { buildEquivalentSeeds, buildProductSeeds, type ProductSeed } from "./seedData/products";
 import { BRANDS, ENGINES, MODELS, type PlatformGroup } from "./seedData/vehicles";
@@ -170,8 +176,6 @@ export const seedReference = internalMutation({
           relatedSlugs: [],
           sortOrder: s.order,
           active: true,
-          seoTitle: seoTitle(s.labelSr),
-          seoDescription: `${s.labelSr}: delovi za VW, Audi, Škoda, SEAT i Cupra — pretraga po OEM broju i vozilu, cene sa PDV-om i stanje.`,
           productCount: 0,
           inStockCount: 0,
           updatedAt: now,
@@ -198,8 +202,6 @@ export const seedReference = internalMutation({
           sortOrder: ci,
           active: true,
           intro: buildIntro(c.slug),
-          seoTitle: seoTitle(c.labelSr),
-          seoDescription: seoDescription(c.labelSr, c.slug),
           thumbnailPath: `/images/parts/${c.slug}.webp`,
           // Counters belong to productWriter; never reset them on re-seed.
           productCount: existing?.productCount ?? 0,
@@ -224,8 +226,6 @@ export const seedReference = internalMutation({
         sortOrder: si,
         active: true,
         intro: buildIntro(s.slug),
-        seoTitle: seoTitle(s.labelSr),
-        seoDescription: seoDescription(s.labelSr, s.slug),
         thumbnailPath: `/images/parts/${s.slug}.webp`,
         productCount: existing?.productCount ?? 0,
         inStockCount: existing?.inStockCount ?? 0,
@@ -1096,7 +1096,10 @@ export const promoteOwner = internalMutation({
 /** True when the password account `email` accepts `secret` (retrieveAccount throws otherwise). */
 async function holdsPassword(ctx: ActionCtx, email: string, secret: string): Promise<boolean> {
   try {
-    return (await retrieveAccount(ctx, { provider: "password", account: { id: email, secret } })) !== null;
+    return (
+      (await retrieveAccount(ctx, { provider: "password", account: { id: email, secret } })) !==
+      null
+    );
   } catch {
     return false;
   }
@@ -1196,5 +1199,49 @@ export const stats = internalQuery({
         .take(10_000)
     ).length;
     return { counts, owners, demoProducts };
+  },
+});
+
+/**
+ * SEO-03 data part (step 22, D234): clears the category `seoTitle` / `seoDescription` values
+ * the seed used to write, so titles and descriptions come from the page builders (name, counts,
+ * prices). A value that differs from the seeded text was edited by staff and is kept. Idempotent;
+ * run with `npx convex run seed:clearSeededCategorySeo`.
+ */
+export const clearSeededCategorySeo = internalMutation({
+  args: {},
+  returns: v.object({ titles: v.number(), descriptions: v.number() }),
+  handler: async (ctx) => {
+    let titles = 0;
+    let descriptions = 0;
+    for (const kind of ["system", "category", "subcategory"] as const) {
+      for (const c of await ctx.db
+        .query("categories")
+        .withIndex("by_kind_and_sortOrder", (q) => q.eq("kind", kind))
+        .take(500)) {
+        const clearTitle = c.seoTitle !== undefined && c.seoTitle === legacySeoTitle(c.name);
+        const clearDescription =
+          c.seoDescription !== undefined &&
+          (c.seoDescription === legacySeoDescription(c.name, c.slug) ||
+            c.seoDescription === legacySystemSeoDescription(c.name));
+        if (!clearTitle && !clearDescription) continue;
+        await ctx.db.patch("categories", c._id, {
+          ...(clearTitle ? { seoTitle: undefined } : {}),
+          ...(clearDescription ? { seoDescription: undefined } : {}),
+          updatedAt: Date.now(),
+        });
+        if (clearTitle) titles++;
+        if (clearDescription) descriptions++;
+        await emitEvent(ctx, {
+          type: "category.changed",
+          aggregateType: "category",
+          aggregateId: c._id,
+          payload: { kind: "catalog", slug: c.slug },
+          dedupeKey: `category.changed:${c._id}:seo-cleared-22`,
+          actor: SYSTEM_ACTOR,
+        });
+      }
+    }
+    return { titles, descriptions };
   },
 });

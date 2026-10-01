@@ -88,9 +88,10 @@ describe("order guards", () => {
     ).toBe(true);
   });
   test("helpers", () => {
-    expect(commitsStockOn("potvrdjena", "confirmed")).toBe(true);
-    expect(commitsStockOn("potvrdjena", "created")).toBe(false);
-    expect(commitsStockOn("poslata", "confirmed")).toBe(false);
+    // Both stock modes: an order that holds no stock yet is committed on confirm (callers
+    // skip orders whose stock is already committed).
+    expect(commitsStockOn("potvrdjena")).toBe(true);
+    expect(commitsStockOn("poslata")).toBe(false);
     expect(orderItemsEditable("nova")).toBe(true);
     expect(orderItemsEditable("potvrdjena")).toBe(false);
     expect(isOrderStatus("nova")).toBe(true);

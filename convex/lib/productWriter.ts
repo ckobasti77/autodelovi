@@ -860,12 +860,21 @@ export async function updateProduct(
   await emitStockEvents(ctx, saved, product.stockQty, product.stockState, meta.actor);
 
   if (product.slug !== saved.slug) {
-    await ctx.db.insert("redirects", {
-      fromPath: `/deo/${product.slug}`,
-      toPath: `/deo/${saved.slug}`,
-      kind: "product",
-      hits: 0,
-    });
+    // One row per old path (SEO-06): a second rename updates it; the new path itself must not
+    // redirect anywhere (a slug taken back would otherwise loop). Chains resolve on read.
+    const fromPath = `/deo/${product.slug}`;
+    const toPath = `/deo/${saved.slug}`;
+    const existing = await ctx.db
+      .query("redirects")
+      .withIndex("by_fromPath", (q) => q.eq("fromPath", fromPath))
+      .first();
+    if (existing) await ctx.db.patch("redirects", existing._id, { toPath, kind: "product" });
+    else await ctx.db.insert("redirects", { fromPath, toPath, kind: "product", hits: 0 });
+    const shadow = await ctx.db
+      .query("redirects")
+      .withIndex("by_fromPath", (q) => q.eq("fromPath", toPath))
+      .take(5);
+    for (const row of shadow) await ctx.db.delete("redirects", row._id);
   }
   if (meta.emit) {
     await emitEvent(ctx, {

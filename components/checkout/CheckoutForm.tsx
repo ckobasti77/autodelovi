@@ -12,6 +12,7 @@ import { Controller, useForm, useWatch, type FieldErrors } from "react-hook-form
 import {
   ArrowLeftIcon,
   ArrowRightIcon,
+  CaretDownIcon,
   CarIcon,
   PaperPlaneTiltIcon,
   ShoppingCartSimpleIcon,
@@ -52,7 +53,7 @@ import {
 import { Button } from "@/components/ui/Button";
 import { Checkbox } from "@/components/ui/Checkbox";
 import { EmptyState } from "@/components/ui/EmptyState";
-import { Field } from "@/components/ui/Field";
+import { Field, RequiredUnlessOptional } from "@/components/ui/Field";
 import { Input } from "@/components/ui/Input";
 import { Link } from "@/components/ui/Link";
 import { RadioGroup } from "@/components/ui/Radio";
@@ -118,17 +119,34 @@ function deliveryPricePara(
   itemsPara: number,
 ): number {
   if (!method) return 0;
-  return method.freeOverPara !== undefined && itemsPara >= method.freeOverPara ? 0 : method.pricePara;
+  return method.freeOverPara !== undefined && itemsPara >= method.freeOverPara
+    ? 0
+    : method.pricePara;
 }
 
-function ErrorSummary({ errors, fields }: { errors: FieldErrors<CheckoutValues>; fields: readonly (keyof CheckoutValues)[] }) {
+/**
+ * Form-level error summary (DS §9.2). It takes focus once per failed „Dalje“ / „Pošalji“
+ * (`attempt` grows only then) — never when blur or change revalidation adds or removes an
+ * error, so correcting a field and moving on keeps focus where the visitor put it (A11Y-01).
+ */
+function ErrorSummary({
+  errors,
+  fields,
+  attempt,
+}: {
+  errors: FieldErrors<CheckoutValues>;
+  fields: readonly (keyof CheckoutValues)[];
+  attempt: number;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const list = fields
     .map((f) => ({ f, message: errors[f]?.message }))
-    .filter((e): e is { f: keyof CheckoutValues; message: string } => typeof e.message === "string");
+    .filter(
+      (e): e is { f: keyof CheckoutValues; message: string } => typeof e.message === "string",
+    );
   useEffect(() => {
-    if (list.length) ref.current?.focus();
-  }, [list.length]);
+    if (attempt > 0) ref.current?.focus();
+  }, [attempt]);
   if (!list.length) return null;
   return (
     <div
@@ -145,7 +163,10 @@ function ErrorSummary({ errors, fields }: { errors: FieldErrors<CheckoutValues>;
       <ul className="mt-2 flex flex-col gap-1 pl-6.5 type-body-s">
         {list.map((e) => (
           <li key={e.f}>
-            <a href={`#co-${e.f}`} className="text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent">
+            <a
+              href={`#co-${e.f}`}
+              className="text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent"
+            >
               {e.message}
             </a>
           </li>
@@ -165,6 +186,8 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
   const [honeypot, setHoneypot] = useState("");
   const [serverError, setServerError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  /** Failed submit attempts; the error summary takes focus when it grows. */
+  const [attempt, setAttempt] = useState(0);
   const [startedAt] = useState(formStartTime);
   const top = useRef<HTMLDivElement>(null);
   const tracked = useRef(false);
@@ -273,6 +296,7 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
   const nextStep = async () => {
     const ok = await trigger([...STEP_FIELDS[step]], { shouldFocus: false });
     if (ok) goTo(step + 1);
+    else setAttempt((n) => n + 1);
   };
 
   const onSubmit = async () => {
@@ -281,6 +305,8 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
       const errors = form.formState.errors;
       const firstBad = STEP_FIELDS.findIndex((fields) => fields.some((f) => errors[f]));
       if (firstBad >= 0 && firstBad !== step) goTo(firstBad);
+      // After goTo's heading focus (next frame), so the summary of the target step wins.
+      requestAnimationFrame(() => setAttempt((n) => n + 1));
       return;
     }
     const v = getValues();
@@ -356,9 +382,7 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
         else setServerError(message);
         return;
       }
-      setServerError(
-        code === "RATE_LIMITED" ? ERRORS.rateLimit : message,
-      );
+      setServerError(code === "RATE_LIMITED" ? ERRORS.rateLimit : message);
     }
   };
 
@@ -399,7 +423,9 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
   const stepName = CHECKOUT_STEPS[step].id;
   const paymentReminder = PAYMENT_REMINDER[values.paymentMethod];
 
-  const summary = (
+  const itemCount = cart.lines.reduce((n, l) => n + l.quantity, 0);
+  // `withTotal: false` → the mobile disclosure, whose summary line already shows the total.
+  const renderSummary = (withTotal: boolean) => (
     <div className="flex flex-col gap-3" data-reveal="off">
       <ul className="flex flex-col gap-2 type-body-s">
         {cart.lines.map((l) => (
@@ -424,25 +450,38 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
           </div>
         ) : null}
         <div className="flex justify-between gap-3">
-          <dt className="text-ink-2">Dostava{delivery ? ` · ${delivery.label.toLowerCase()}` : ""}</dt>
+          <dt className="text-ink-2">
+            Dostava{delivery ? ` · ${delivery.label.toLowerCase()}` : ""}
+          </dt>
           <dd className="tabular-nums text-ink-1">{formatRSD(shippingPara)}</dd>
         </div>
-        <div className="mt-2 flex items-baseline justify-between gap-3 border-t border-line pt-3">
-          <dt className="type-body font-semibold text-ink-1">Ukupno</dt>
-          <dd className="type-numeral-l tabular-nums text-ink-1" aria-live="polite" data-testid="checkout-total">
-            {formatRSD(totalPara)}
-          </dd>
-        </div>
+        {withTotal ? (
+          <div className="mt-2 flex items-baseline justify-between gap-3 border-t border-line pt-3">
+            <dt className="type-body font-semibold text-ink-1">Ukupno</dt>
+            <dd
+              className="type-numeral-l tabular-nums text-ink-1"
+              aria-live="polite"
+              data-testid="checkout-total"
+            >
+              {formatRSD(totalPara)}
+            </dd>
+          </div>
+        ) : null}
       </dl>
       <p className="type-caption font-normal text-ink-3">
-        U cenu je uračunat PDV {config.vatRateBp / 100} %: {formatRSD(vatIncludedPara(totalPara, config.vatRateBp))}
+        U cenu je uračunat PDV {config.vatRateBp / 100} %:{" "}
+        {formatRSD(vatIncludedPara(totalPara, config.vatRateBp))}
       </p>
       {cart.hasProblems ? (
         <p className="flex items-start gap-2 type-caption text-warning">
           <WarningCircleIcon size={16} aria-hidden="true" className="mt-0.5 shrink-0" />
           <span>
             Neke stavke su se promenile.{" "}
-            <button type="button" onClick={openCartDrawer} className="cursor-pointer font-semibold underline underline-offset-4">
+            <button
+              type="button"
+              onClick={openCartDrawer}
+              className="cursor-pointer font-semibold underline underline-offset-4"
+            >
               Proverite korpu
             </button>
           </span>
@@ -463,302 +502,429 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
       data-reveal="off"
     >
       <Honeypot value={honeypot} onChange={setHoneypot} />
-      <div ref={top} className="flex scroll-mt-24 flex-col gap-6 lg:col-span-8">
-        <Stepper steps={[...CHECKOUT_STEPS]} current={step} onSelect={goTo} />
-        <details className="rounded-sm border border-line bg-surface-1 lg:hidden">
-          <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-4 [&::-webkit-details-marker]:hidden">
-            <span className="type-body-s text-ink-2">Ukupno</span>
-            <span className="type-numeral-s tabular-nums text-ink-1">{formatRSD(totalPara)}</span>
-          </summary>
-          <div className="border-t border-line p-4">{summary}</div>
-        </details>
-
-        <section data-testid={TEST_IDS.checkoutStep(stepName)} aria-labelledby="step-title" className="flex flex-col gap-5">
-          <h2 id="step-title" data-step-heading tabIndex={-1} className="type-h2 text-ink-1 outline-none">
-            {CHECKOUT_STEPS[step].label}
-          </h2>
-          <ErrorSummary errors={errors} fields={STEP_FIELDS[step]} />
-
-          {step === 0 ? (
-            <div className="grid gap-5 sm:grid-cols-2">
-              <Field id="co-firstName" label="Ime" error={errors.firstName?.message}>
-                <Input autoComplete="given-name" {...register("firstName")} />
-              </Field>
-              <Field id="co-lastName" label="Prezime" error={errors.lastName?.message}>
-                <Input autoComplete="family-name" {...register("lastName")} />
-              </Field>
-              <Field id="co-phone" label="Telefon" help="Zovemo samo zbog ove porudžbine." error={errors.phone?.message}>
-                <Input type="tel" inputMode="tel" autoComplete="tel" placeholder="064 123 4567" {...register("phone")} />
-              </Field>
-              <Field id="co-email" label="E-pošta" help="Na nju šaljemo potvrdu i status." error={errors.email?.message}>
-                <Input type="email" inputMode="email" autoComplete="email" placeholder="ime@primer.rs" {...register("email")} />
-              </Field>
-              <div className="sm:col-span-2">
-                <Controller
-                  control={control}
-                  name="isCompany"
-                  render={({ field }) => (
-                    <Checkbox
-                      id="co-isCompany"
-                      checked={field.value}
-                      onCheckedChange={(c) => field.onChange(c === true)}
-                      label="Kupujem kao firma"
-                      description="Unesite podatke firme za račun i predračun (virman)."
-                    />
-                  )}
+      <RequiredUnlessOptional>
+        <div ref={top} className="flex scroll-mt-24 flex-col gap-6 lg:col-span-8">
+          <Stepper steps={[...CHECKOUT_STEPS]} current={step} onSelect={goTo} />
+          {/* Mobile order summary (VIS-11): the caret and the item count say it opens; the
+            total lives on the summary line only, so it is not repeated inside. */}
+          <details
+            className="group rounded-sm border border-line bg-surface-1 lg:hidden"
+            data-reveal="off"
+          >
+            <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-4 [&::-webkit-details-marker]:hidden">
+              <span className="inline-flex items-center gap-1.5 type-body-s text-ink-2">
+                Stavke ({itemCount})
+                <CaretDownIcon
+                  size={16}
+                  aria-hidden="true"
+                  className="transition-control group-open:rotate-180"
                 />
-              </div>
-              {values.isCompany ? (
-                <>
-                  <Field id="co-companyName" label="Naziv firme" error={errors.companyName?.message} className="sm:col-span-2">
-                    <Input autoComplete="organization" {...register("companyName")} />
-                  </Field>
-                  <Field id="co-pib" label="PIB" help="9 cifara, proveravamo kontrolni broj." error={errors.pib?.message}>
-                    <Input inputMode="numeric" autoComplete="off" inputClassName="font-mono" {...register("pib")} />
-                  </Field>
-                  <Field id="co-mb" label="Matični broj" optional error={errors.mb?.message}>
-                    <Input inputMode="numeric" autoComplete="off" inputClassName="font-mono" {...register("mb")} />
-                  </Field>
-                </>
-              ) : null}
-            </div>
-          ) : null}
+              </span>
+              <span className="flex items-baseline gap-2">
+                <span className="type-caption font-normal text-ink-3">Ukupno</span>
+                <span className="type-numeral-s tabular-nums text-ink-1">
+                  {formatRSD(totalPara)}
+                </span>
+              </span>
+            </summary>
+            <div className="border-t border-line p-4">{renderSummary(false)}</div>
+          </details>
 
-          {step === 1 ? (
-            <div className="flex flex-col gap-5">
-              <Controller
-                control={control}
-                name="deliveryMethod"
-                render={({ field }) => (
-                  <RadioGroup
-                    label="Način dostave"
-                    value={field.value}
-                    onValueChange={(v) => field.onChange(v)}
-                    options={config.deliveryMethods.map((d) => ({
-                      value: d.code,
-                      label: (
-                        <span className="flex w-full flex-wrap justify-between gap-x-3">
-                          <span>{d.label}</span>
-                          <span className="tabular-nums text-ink-2">
-                            {d.pricePara === 0
-                              ? "0 RSD"
-                              : d.freeOverPara !== undefined && itemsPara >= d.freeOverPara
-                                ? "besplatno"
-                                : formatRSD(d.pricePara)}
-                          </span>
-                        </span>
-                      ),
-                      description: `${d.description} ${d.etaText}.`,
-                    }))}
+          <section
+            data-testid={TEST_IDS.checkoutStep(stepName)}
+            aria-labelledby="step-title"
+            className="flex flex-col gap-5"
+          >
+            <h2
+              id="step-title"
+              data-step-heading
+              tabIndex={-1}
+              className="type-h2 text-ink-1 outline-none"
+            >
+              {CHECKOUT_STEPS[step].label}
+            </h2>
+            <ErrorSummary errors={errors} fields={STEP_FIELDS[step]} attempt={attempt} />
+
+            {step === 0 ? (
+              <div className="grid gap-5 sm:grid-cols-2">
+                <Field id="co-firstName" label="Ime" error={errors.firstName?.message}>
+                  <Input autoComplete="given-name" {...register("firstName")} />
+                </Field>
+                <Field id="co-lastName" label="Prezime" error={errors.lastName?.message}>
+                  <Input autoComplete="family-name" {...register("lastName")} />
+                </Field>
+                <Field
+                  id="co-phone"
+                  label="Telefon"
+                  help="Zovemo samo zbog ove porudžbine."
+                  error={errors.phone?.message}
+                >
+                  <Input
+                    type="tel"
+                    inputMode="tel"
+                    autoComplete="tel"
+                    placeholder="064 123 4567"
+                    {...register("phone")}
                   />
-                )}
-              />
-              {values.deliveryMethod === "pickup" && config.store ? (
-                <p className="rounded-sm border border-line bg-surface-1 p-4 type-body-s text-ink-2">
-                  Preuzimanje: {config.store.address}
-                  {config.store.hours ? ` · ${config.store.hours}` : ""}
-                </p>
-              ) : null}
-              {values.deliveryMethod === "courier" ? (
-                <div className="grid gap-5 sm:grid-cols-6">
-                  <Field id="co-street" label="Ulica i broj" error={errors.street?.message} className="sm:col-span-6">
-                    <Input autoComplete="street-address" {...register("street")} />
-                  </Field>
-                  <Field id="co-postalCode" label="Poštanski broj" error={errors.postalCode?.message} className="sm:col-span-2">
-                    <Input inputMode="numeric" autoComplete="postal-code" maxLength={5} {...register("postalCode")} />
-                  </Field>
-                  <Field id="co-city" label="Mesto" error={errors.city?.message} className="sm:col-span-4">
-                    <Input autoComplete="address-level2" {...register("city")} />
-                  </Field>
-                  <Field id="co-addressNote" label="Napomena za kurira" optional className="sm:col-span-6">
-                    <Input placeholder="Sprat, interfon, radno vreme servisa" {...register("addressNote")} />
-                  </Field>
-                </div>
-              ) : null}
-            </div>
-          ) : null}
-
-          {step === 2 ? (
-            <div className="flex flex-col gap-4">
-              <Controller
-                control={control}
-                name="paymentMethod"
-                render={({ field }) => (
-                  <RadioGroup
-                    label="Način plaćanja"
-                    value={field.value}
-                    onValueChange={(v) => field.onChange(v)}
-                    error={errors.paymentMethod?.message}
-                    options={payments.map((p) => {
-                      const overLimit =
-                        p.requires === "mechanic_credit" &&
-                        mechanic?.availablePara !== undefined &&
-                        mechanic.availablePara !== null &&
-                        totalPara > mechanic.availablePara;
-                      const credit =
-                        p.requires === "mechanic_credit" && mechanic
-                          ? ` Rok ${mechanic.paymentTermsDays} dana${mechanic.availablePara !== null ? `, preostali limit ${formatRSD(mechanic.availablePara)}` : ""}.`
-                          : "";
-                      return {
-                        value: p.code,
-                        label: p.label,
-                        description: overLimit
-                          ? `Iznos porudžbine prelazi preostali limit (${formatRSD(mechanic!.availablePara!)}). Izaberite drugi način ili nas pozovite.`
-                          : p.requires === "company" && !values.isCompany
-                            ? `${p.instructions} Samo za firme — u koraku Kontakt uključite „Kupujem kao firma“.`
-                            : `${p.instructions}${credit}`,
-                        disabled: (p.requires === "company" && !values.isCompany) || overLimit,
-                      };
-                    })}
+                </Field>
+                <Field
+                  id="co-email"
+                  label="E-pošta"
+                  help="Na nju šaljemo potvrdu i status."
+                  error={errors.email?.message}
+                >
+                  <Input
+                    type="email"
+                    inputMode="email"
+                    autoComplete="email"
+                    placeholder="ime@primer.rs"
+                    {...register("email")}
                   />
-                )}
-              />
-              <p className="type-caption font-normal text-ink-3">Na sajtu se ne plaća i ne unose se podaci kartice.</p>
-            </div>
-          ) : null}
-
-          {step === 3 ? (
-            <div className="flex flex-col gap-6">
-              <dl className="grid gap-4 rounded-sm border border-line bg-surface-1 p-4 type-body-s sm:grid-cols-3">
-                <div>
-                  <dt className="type-label uppercase text-ink-3">Kontakt</dt>
-                  <dd className="mt-1 text-ink-1">
-                    {values.firstName} {values.lastName}
-                    <span className="block text-ink-2">{values.phone}</span>
-                    <span className="block break-all text-ink-2">{values.email}</span>
-                    {values.isCompany ? <span className="block text-ink-2">{values.companyName} · PIB {values.pib}</span> : null}
-                  </dd>
+                </Field>
+                <div className="sm:col-span-2">
+                  <Controller
+                    control={control}
+                    name="isCompany"
+                    render={({ field }) => (
+                      <Checkbox
+                        id="co-isCompany"
+                        checked={field.value}
+                        onCheckedChange={(c) => field.onChange(c === true)}
+                        label="Kupujem kao firma"
+                        description="Unesite podatke firme za račun i predračun (virman)."
+                      />
+                    )}
+                  />
                 </div>
-                <div>
-                  <dt className="type-label uppercase text-ink-3">Dostava</dt>
-                  <dd className="mt-1 text-ink-1">
-                    {delivery?.label}
-                    {values.deliveryMethod === "courier" ? (
-                      <span className="block text-ink-2">
-                        {values.street}, {values.postalCode} {values.city}
-                      </span>
-                    ) : null}
-                  </dd>
-                </div>
-                <div>
-                  <dt className="type-label uppercase text-ink-3">Plaćanje</dt>
-                  <dd className="mt-1 text-ink-1">
-                    {config.paymentMethods.find((p) => p.code === values.paymentMethod)?.label}
-                  </dd>
-                </div>
-              </dl>
-              {vehicle ? (
-                <Controller
-                  control={control}
-                  name="useVehicle"
-                  render={({ field }) => (
-                    <Checkbox
-                      id="co-useVehicle"
-                      checked={field.value}
-                      onCheckedChange={(c) => field.onChange(c === true)}
-                      label={
-                        <span className="inline-flex items-center gap-2">
-                          <CarIcon size={16} aria-hidden="true" className="text-ink-3" />
-                          Delovi su za: {vehicleFullLabel(vehicle)}
-                        </span>
-                      }
-                    />
-                  )}
-                />
-              ) : null}
-              <Field id="co-vin" label="Broj šasije (VIN)" optional help="Proverimo da li deo odgovara pre slanja." error={errors.vin?.message}>
-                <Input
-                  autoComplete="off"
-                  maxLength={17}
-                  inputClassName="font-mono uppercase"
-                  placeholder="WVWZZZ…"
-                  {...register("vin")}
-                />
-              </Field>
-              <Field id="co-note" label="Napomena" optional error={errors.note?.message}>
-                <Textarea rows={4} maxLength={1000} {...register("note")} />
-              </Field>
-              <div>
-                <Controller
-                  control={control}
-                  name="terms"
-                  render={({ field }) => (
-                    <Checkbox
-                      id="co-terms"
-                      checked={field.value}
-                      onCheckedChange={(c) => field.onChange(c === true)}
-                      aria-invalid={errors.terms ? true : undefined}
-                      label={
-                        <span>
-                          Prihvatam{" "}
-                          <Link href={ROUTES.terms} variant="inline" target="_blank">
-                            uslove kupovine
-                          </Link>{" "}
-                          i{" "}
-                          <Link href={ROUTES.privacy} variant="inline" target="_blank">
-                            politiku privatnosti
-                          </Link>
-                          .
-                        </span>
-                      }
-                    />
-                  )}
-                />
-                {errors.terms?.message ? (
-                  <p className="type-caption text-danger">{errors.terms.message}</p>
+                {values.isCompany ? (
+                  <>
+                    <Field
+                      id="co-companyName"
+                      label="Naziv firme"
+                      error={errors.companyName?.message}
+                      className="sm:col-span-2"
+                    >
+                      <Input autoComplete="organization" {...register("companyName")} />
+                    </Field>
+                    <Field
+                      id="co-pib"
+                      label="PIB"
+                      help="9 cifara, proveravamo kontrolni broj."
+                      error={errors.pib?.message}
+                    >
+                      <Input
+                        inputMode="numeric"
+                        autoComplete="off"
+                        inputClassName="font-mono"
+                        {...register("pib")}
+                      />
+                    </Field>
+                    <Field id="co-mb" label="Matični broj" optional error={errors.mb?.message}>
+                      <Input
+                        inputMode="numeric"
+                        autoComplete="off"
+                        inputClassName="font-mono"
+                        {...register("mb")}
+                      />
+                    </Field>
+                  </>
                 ) : null}
               </div>
-              {serverError ? (
-                <p role="alert" className="flex items-start gap-2 rounded-sm border border-danger bg-danger-subtle p-4 type-body-s text-danger">
-                  <WarningCircleIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0" />
-                  {serverError}
+            ) : null}
+
+            {step === 1 ? (
+              <div className="flex flex-col gap-5">
+                <Controller
+                  control={control}
+                  name="deliveryMethod"
+                  render={({ field }) => (
+                    <RadioGroup
+                      label="Način dostave"
+                      value={field.value}
+                      onValueChange={(v) => field.onChange(v)}
+                      options={config.deliveryMethods.map((d) => ({
+                        value: d.code,
+                        label: (
+                          <span className="flex w-full flex-wrap justify-between gap-x-3">
+                            <span>{d.label}</span>
+                            <span className="tabular-nums text-ink-2">
+                              {d.pricePara === 0
+                                ? formatRSD(0)
+                                : d.freeOverPara !== undefined && itemsPara >= d.freeOverPara
+                                  ? "besplatno"
+                                  : formatRSD(d.pricePara)}
+                            </span>
+                          </span>
+                        ),
+                        description: `${d.description} ${d.etaText}.`,
+                      }))}
+                    />
+                  )}
+                />
+                {values.deliveryMethod === "pickup" && config.store ? (
+                  <p className="rounded-sm border border-line bg-surface-1 p-4 type-body-s text-ink-2">
+                    Preuzimanje: {config.store.address}
+                    {config.store.hours ? ` · ${config.store.hours}` : ""}
+                  </p>
+                ) : null}
+                {values.deliveryMethod === "courier" ? (
+                  <div className="grid gap-5 sm:grid-cols-6">
+                    <Field
+                      id="co-street"
+                      label="Ulica i broj"
+                      error={errors.street?.message}
+                      className="sm:col-span-6"
+                    >
+                      <Input autoComplete="street-address" {...register("street")} />
+                    </Field>
+                    <Field
+                      id="co-postalCode"
+                      label="Poštanski broj"
+                      error={errors.postalCode?.message}
+                      className="sm:col-span-2"
+                    >
+                      <Input
+                        inputMode="numeric"
+                        autoComplete="postal-code"
+                        maxLength={5}
+                        {...register("postalCode")}
+                      />
+                    </Field>
+                    <Field
+                      id="co-city"
+                      label="Mesto"
+                      error={errors.city?.message}
+                      className="sm:col-span-4"
+                    >
+                      <Input autoComplete="address-level2" {...register("city")} />
+                    </Field>
+                    <Field
+                      id="co-addressNote"
+                      label="Napomena za kurira"
+                      optional
+                      className="sm:col-span-6"
+                    >
+                      <Input
+                        placeholder="Sprat, interfon, radno vreme servisa"
+                        {...register("addressNote")}
+                      />
+                    </Field>
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
+
+            {step === 2 ? (
+              <div className="flex flex-col gap-4">
+                <Controller
+                  control={control}
+                  name="paymentMethod"
+                  render={({ field }) => (
+                    <RadioGroup
+                      label="Način plaćanja"
+                      value={field.value}
+                      onValueChange={(v) => field.onChange(v)}
+                      error={errors.paymentMethod?.message}
+                      options={payments.map((p) => {
+                        const overLimit =
+                          p.requires === "mechanic_credit" &&
+                          mechanic?.availablePara !== undefined &&
+                          mechanic.availablePara !== null &&
+                          totalPara > mechanic.availablePara;
+                        const credit =
+                          p.requires === "mechanic_credit" && mechanic
+                            ? ` Rok ${mechanic.paymentTermsDays} dana${mechanic.availablePara !== null ? `, preostali limit ${formatRSD(mechanic.availablePara)}` : ""}.`
+                            : "";
+                        return {
+                          value: p.code,
+                          label: p.label,
+                          description: overLimit
+                            ? `Iznos porudžbine prelazi preostali limit (${formatRSD(mechanic!.availablePara!)}). Izaberite drugi način ili nas pozovite.`
+                            : p.requires === "company" && !values.isCompany
+                              ? `${p.instructions} Samo za firme — u koraku Kontakt uključite „Kupujem kao firma“.`
+                              : `${p.instructions}${credit}`,
+                          disabled: (p.requires === "company" && !values.isCompany) || overLimit,
+                        };
+                      })}
+                    />
+                  )}
+                />
+                <p className="type-caption font-normal text-ink-3">
+                  Na sajtu se ne plaća i ne unose se podaci kartice.
                 </p>
-              ) : null}
-              <p className="type-body-s text-ink-2">{paymentReminder}</p>
-            </div>
-          ) : null}
+              </div>
+            ) : null}
 
-          {serverError && step !== 3 ? (
-            <p role="alert" className="rounded-sm border border-danger bg-danger-subtle p-4 type-body-s text-danger">
-              {serverError}
-            </p>
-          ) : null}
+            {step === 3 ? (
+              <div className="flex flex-col gap-6">
+                <dl className="grid gap-4 rounded-sm border border-line bg-surface-1 p-4 type-body-s sm:grid-cols-3">
+                  <div>
+                    <dt className="type-label uppercase text-ink-3">Kontakt</dt>
+                    <dd className="mt-1 text-ink-1">
+                      {values.firstName} {values.lastName}
+                      <span className="block text-ink-2">{values.phone}</span>
+                      <span className="block break-all text-ink-2">{values.email}</span>
+                      {values.isCompany ? (
+                        <span className="block text-ink-2">
+                          {values.companyName} · PIB {values.pib}
+                        </span>
+                      ) : null}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="type-label uppercase text-ink-3">Dostava</dt>
+                    <dd className="mt-1 text-ink-1">
+                      {delivery?.label}
+                      {values.deliveryMethod === "courier" ? (
+                        <span className="block text-ink-2">
+                          {values.street}, {values.postalCode} {values.city}
+                        </span>
+                      ) : null}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="type-label uppercase text-ink-3">Plaćanje</dt>
+                    <dd className="mt-1 text-ink-1">
+                      {config.paymentMethods.find((p) => p.code === values.paymentMethod)?.label}
+                    </dd>
+                  </div>
+                </dl>
+                {vehicle ? (
+                  <Controller
+                    control={control}
+                    name="useVehicle"
+                    render={({ field }) => (
+                      <Checkbox
+                        id="co-useVehicle"
+                        checked={field.value}
+                        onCheckedChange={(c) => field.onChange(c === true)}
+                        label={
+                          <span className="inline-flex items-center gap-2">
+                            <CarIcon size={16} aria-hidden="true" className="text-ink-3" />
+                            Delovi su za: {vehicleFullLabel(vehicle)}
+                          </span>
+                        }
+                      />
+                    )}
+                  />
+                ) : null}
+                <Field
+                  id="co-vin"
+                  label="Broj šasije — VIN"
+                  optional
+                  help="Proverimo da li deo odgovara pre slanja."
+                  error={errors.vin?.message}
+                >
+                  <Input
+                    autoComplete="off"
+                    maxLength={17}
+                    inputClassName="font-mono uppercase"
+                    placeholder="WVWZZZ…"
+                    {...register("vin")}
+                  />
+                </Field>
+                <Field id="co-note" label="Napomena" optional error={errors.note?.message}>
+                  <Textarea rows={4} maxLength={1000} {...register("note")} />
+                </Field>
+                <div>
+                  <Controller
+                    control={control}
+                    name="terms"
+                    render={({ field }) => (
+                      <Checkbox
+                        id="co-terms"
+                        checked={field.value}
+                        onCheckedChange={(c) => field.onChange(c === true)}
+                        required
+                        error={errors.terms?.message}
+                        label={
+                          <span>
+                            Prihvatam{" "}
+                            <Link href={ROUTES.terms} variant="inline" target="_blank">
+                              uslove kupovine
+                            </Link>{" "}
+                            i{" "}
+                            <Link href={ROUTES.privacy} variant="inline" target="_blank">
+                              politiku privatnosti
+                            </Link>
+                            .
+                          </span>
+                        }
+                      />
+                    )}
+                  />
+                </div>
+                {serverError ? (
+                  <p
+                    role="alert"
+                    className="flex items-start gap-2 rounded-sm border border-danger bg-danger-subtle p-4 type-body-s text-danger"
+                  >
+                    <WarningCircleIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0" />
+                    {serverError}
+                  </p>
+                ) : null}
+                <p className="type-body-s text-ink-2">{paymentReminder}</p>
+              </div>
+            ) : null}
 
-          <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line pt-5">
-            {step > 0 ? (
-              <Button type="button" variant="ghost" icon={<ArrowLeftIcon size={18} />} onClick={() => goTo(step - 1)}>
-                Nazad
-              </Button>
-            ) : (
-              <Link href={ROUTES.cart} variant="standalone" icon={<ArrowLeftIcon size={14} />}>
-                Korpa
-              </Link>
-            )}
-            {step < 3 ? (
-              <Button type="submit" variant="primary" size="lg" trailingIcon={<ArrowRightIcon size={16} />} data-testid="checkout-next">
-                Dalje
-              </Button>
-            ) : (
-              <Button
-                type="submit"
-                variant="primary"
-                size="lg"
-                icon={<PaperPlaneTiltIcon size={20} />}
-                loading={submitting}
-                data-testid={TEST_IDS.checkoutSubmit}
-                className={cn("sm:min-w-[16rem]")}
+            {serverError && step !== 3 ? (
+              <p
+                role="alert"
+                className="rounded-sm border border-danger bg-danger-subtle p-4 type-body-s text-danger"
               >
-                Pošalji porudžbinu
-              </Button>
-            )}
-          </div>
-        </section>
-      </div>
+                {serverError}
+              </p>
+            ) : null}
+
+            <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line pt-5">
+              {step > 0 ? (
+                <Button
+                  type="button"
+                  variant="ghost"
+                  icon={<ArrowLeftIcon size={18} />}
+                  onClick={() => goTo(step - 1)}
+                >
+                  Nazad
+                </Button>
+              ) : (
+                <Button asChild variant="ghost" icon={<ArrowLeftIcon size={18} />}>
+                  <Link href={ROUTES.cart} variant="unstyled">
+                    Korpa
+                  </Link>
+                </Button>
+              )}
+              {step < 3 ? (
+                <Button
+                  type="submit"
+                  variant="primary"
+                  size="lg"
+                  trailingIcon={<ArrowRightIcon size={16} />}
+                  data-testid="checkout-next"
+                >
+                  Dalje
+                </Button>
+              ) : (
+                <Button
+                  type="submit"
+                  variant="primary"
+                  size="lg"
+                  icon={<PaperPlaneTiltIcon size={20} />}
+                  loading={submitting}
+                  data-testid={TEST_IDS.checkoutSubmit}
+                  className={cn("sm:min-w-[16rem]")}
+                >
+                  Pošalji porudžbinu
+                </Button>
+              )}
+            </div>
+          </section>
+        </div>
+      </RequiredUnlessOptional>
 
       <aside aria-label="Pregled porudžbine" className="hidden lg:col-span-4 lg:block">
         <div className="sticky top-[calc(var(--header-h)+1.5rem)] rounded-sm border border-line bg-surface-1 p-5">
           <h2 className="mb-4 type-h4 text-ink-1">Vaša porudžbina</h2>
-          {summary}
+          {renderSummary(true)}
         </div>
       </aside>
     </form>

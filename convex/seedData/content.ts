@@ -1,11 +1,14 @@
 /**
  * Seed content (docs/ROUTES.md §B1 static & legal, docs/DATA-MODEL.md §C2): Serbian page
  * templates and FAQs. Placeholders are filled from settings at render time:
- *   {{key}}            → the value; a line whose required value is empty is dropped
+ *   {{key}}            → the value; a sentence whose required value is empty is dropped
+ *                        (and a line left with only a list marker), D233
  *   {{key|fallback}}   → the fallback when the value is empty
  * Keys: firma.naziv, firma.pib, firma.mb, firma.adresa, firma.email, firma.telefon,
  * firma.registar, firma.racun, brend, sajt, dostava.kurir.cena, dostava.besplatnoPreko,
- * ponuda.vaziDana, radnoVreme.
+ * dostava.rokSlanja, kontakt.najbrze, ponuda.vaziDana, radnoVreme.
+ * A sentence that names a channel (phone, Viber, e-mail, address) or an unconfirmed promise
+ * (dispatch cut-off) carries the placeholder itself, so it disappears with the setting.
  *
  * Every legal page is `needsLegalReview: true` until the owner's lawyer confirms it
  * (docs/HUMAN-TODO.md §3). Texts follow the Zakon o zaštiti potrošača (the 2026 law, Sl. glasnik
@@ -57,7 +60,7 @@ ${SELLER_BLOCK}`,
     slug: "kontakt",
     title: "Kontakt",
     needsLegalReview: false,
-    bodyMd: `Najbrže je da nas pozovete ili pišete na Viber. Ako ne znate broj dela, pošaljite upit sa brojem šasije i fotografijom starog dela; odgovaramo u toku radnog dana.
+    bodyMd: `{{kontakt.najbrze}} Ako ne znate broj dela, pošaljite upit sa brojem šasije i fotografijom starog dela; odgovaramo u toku radnog dana.
 
 ${SELLER_BLOCK}`,
   },
@@ -71,7 +74,7 @@ ${SELLER_BLOCK}`,
 - **Lično preuzimanje** u radnji, bez troška. Javljamo vam kad je deo spreman.
 - **Kurirska služba** na adresu u Srbiji: {{dostava.kurir.cena|prema ceniku kurirske službe}}. Dostava je besplatna za porudžbine iznad {{dostava.besplatnoPreko|iznosa navedenog u korpi}}.
 
-Porudžbine potvrđene radnim danom do 14 časova šaljemo istog dana, ako je deo na stanju. Rok isporuke kurirske službe je obično 1–2 radna dana. Za delove „po porudžbini“ rok piše na stranici artikla i u potvrdi porudžbine.
+Porudžbine potvrđene radnim danom do {{dostava.rokSlanja}} šaljemo istog dana, ako je deo na stanju. Rok isporuke kurirske službe je obično 1–2 radna dana. Za delove „po porudžbini“ rok piše na stranici artikla i u potvrdi porudžbine.
 
 ## Načini plaćanja
 - **Pouzećem** — plaćate kuriru gotovinom pri preuzimanju paketa.
@@ -94,7 +97,7 @@ Pri preuzimanju od kurira pregledajte paket. Ako je oštećen, zapišite to sa k
 ## Odustanak od ugovora (14 dana)
 Kod kupovine na daljinu imate pravo da odustanete od ugovora u roku od 14 dana od dana kada ste vi ili lice koje ste odredili preuzeli robu, bez navođenja razloga.
 
-1. Pošaljite nam izjavu o odustanku e-poštom ({{firma.email|adresa sa stranice Kontakt}}) ili pismom na adresu prodavca. Dovoljno je da navedete broj porudžbine, artikal i da odustajete od ugovora.
+1. Pošaljite nam izjavu o odustanku putem upita na sajtu. Možete je poslati i e-poštom na {{firma.email}}. Pismom je šaljete na adresu {{firma.adresa}}. Dovoljno je da navedete broj porudžbine, artikal i da odustajete od ugovora.
 2. Robu vratite najkasnije 14 dana od slanja izjave, neoštećenu i u originalnom pakovanju. Trošak vraćanja robe snosite vi.
 3. Novac za robu (i za osnovnu dostavu, ako ste je platili) vraćamo najkasnije u roku od 14 dana od prijema izjave, istim načinom plaćanja ili uplatom na vaš račun. Povraćaj možemo zadržati dok ne primimo robu ili dokaz da je poslata.
 
@@ -144,7 +147,7 @@ Načini plaćanja i dostave, rokovi i troškovi opisani su na stranici „Dostav
 Prava potrošača na odustanak od ugovora zaključenog na daljinu i na reklamaciju opisana su na stranici „Reklamacije i povrat“.
 
 ## Nalog na sajtu
-Nalog je opcion. Odgovorni ste za čuvanje lozinke. Nalog možemo privremeno blokirati u slučaju zloupotrebe (na primer lažnih porudžbina).
+Nalog nije obavezan. Odgovorni ste za čuvanje lozinke. Nalog možemo privremeno blokirati u slučaju zloupotrebe (na primer lažnih porudžbina).
 
 ## Nalozi za majstore (B2B)
 Registracija servisa podleže odobrenju. Rabat, odloženo plaćanje i drugi uslovi za pravna lica i preduzetnike dogovaraju se posebno; na njih se ne primenjuju pravila Zakona o zaštiti potrošača koja važe samo za potrošače.
@@ -162,7 +165,7 @@ Uslove možemo izmeniti; na porudžbinu se primenjuju uslovi važeći u trenutku
     bodyMd: `Ova politika objašnjava koje podatke o ličnosti obrađujemo, zašto, koliko dugo i koja su vaša prava, u skladu sa Zakonom o zaštiti podataka o ličnosti.
 
 ## Rukovalac
-- {{firma.naziv|Prodavac naveden na stranici Kontakt}}
+- {{firma.naziv|Prodavac sa ovog sajta — podatke o firmi dobijate putem upita na sajtu}}
 - Adresa: {{firma.adresa}}
 - E-pošta za pitanja o podacima: {{firma.email}}
 
@@ -187,7 +190,7 @@ Uslove možemo izmeniti; na porudžbinu se primenjuju uslovi važeći u trenutku
 Podatke dobijaju samo oni kojima su potrebni za izvršenje usluge: kurirska služba (ime, adresa, telefon), pružalac usluge slanja e-pošte i pružaoci infrastrukture na kojoj sajt radi. Neki od njih obrađuju podatke van Srbije, uz mere zaštite propisane zakonom. Podatke ne prodajemo.
 
 ## Vaša prava
-Imate pravo da zatražite pristup podacima, ispravku, brisanje, ograničenje obrade i prenosivost, pravo na prigovor i pravo da u svakom trenutku opozovete pristanak. Zahtev pošaljite na {{firma.email|e-poštu sa stranice Kontakt}}; odgovaramo najkasnije u roku od 30 dana. Imate pravo i da podnesete pritužbu Povereniku za informacije od javnog značaja i zaštitu podataka o ličnosti.
+Imate pravo da zatražite pristup podacima, ispravku, brisanje, ograničenje obrade i prenosivost, pravo na prigovor i pravo da u svakom trenutku opozovete pristanak. Zahtev pošaljite putem upita na sajtu; odgovaramo najkasnije u roku od 30 dana. Možete pisati i na {{firma.email}}. Imate pravo i da podnesete pritužbu Povereniku za informacije od javnog značaja i zaštitu podataka o ličnosti.
 
 ## Bezbednost
 Lozinke se ne čuvaju u čitljivom obliku, veza sa sajtom je šifrovana, a pristup podacima u administraciji imaju samo ovlašćeni zaposleni i beleži se.`,
@@ -255,13 +258,13 @@ export const SEED_FAQS: readonly SeedFaq[] = [
     scope: "home",
     question: "Koliko košta dostava i kada stiže?",
     answerMd:
-      "Kurirska dostava je {{dostava.kurir.cena|navedena u korpi}}, a besplatna za porudžbine iznad {{dostava.besplatnoPreko|iznosa iz korpe}}. Delove na stanju šaljemo istog radnog dana za porudžbine potvrđene do 14 časova; kurir obično isporučuje za 1–2 radna dana. Lično preuzimanje je bez troška.",
+      "Kurirska dostava je {{dostava.kurir.cena|navedena u korpi}}, a besplatna za porudžbine iznad {{dostava.besplatnoPreko|iznosa iz korpe}}. Delove na stanju šaljemo istog radnog dana za porudžbine potvrđene do {{dostava.rokSlanja}}. Kurir obično isporučuje za 1–2 radna dana. Lično preuzimanje je bez troška.",
   },
   {
     scope: "home",
     question: "Mogu li da vratim deo?",
     answerMd:
-      "Kao potrošač možete odustati od kupovine u roku od 14 dana od prijema, ako deo nije ugrađivan i vraćate ga u originalnom pakovanju. Detalji su na stranici Reklamacije i povrat.",
+      "Da. Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Trošak vraćanja snosite vi; ako je deo ugrađivan ili oštećen, odgovarate za umanjenje vrednosti. Detalji su na stranici [Reklamacije i povrat](/reklamacije-i-povrat).",
   },
   {
     scope: "home",

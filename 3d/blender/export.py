@@ -27,23 +27,13 @@ from lib.layout import bbox, cam_dir, corners, explode_table, node_points, r3, s
 from lib.materials import manifest_materials  # noqa: E402
 from lib.parts import load_taxonomy, part_nodes  # noqa: E402
 from lib.scene import to_vehicle  # noqa: E402
+from lib.views import CAMERAS  # noqa: E402
 
 F3_KEYS = [
     "partId", "category", "system", "labelSr", "clickable", "lod",
     "explodeDir", "explodeDist", "explodeStage", "explodeOrder",
     "labelAnchor", "focusDir", "focusMinDist",
 ]
-
-CAMERAS = {
-    "hero": {
-        "desktop": {"az": 36.0, "el": 14.0, "fov": 28.0, "aspect": 16 / 9, "width": 0.56, "cx": 0.64, "cy": 0.52},
-        "mobile": {"az": 30.0, "el": 16.0, "fov": 38.0, "aspect": 4 / 5, "width": 0.92, "cx": 0.50, "cy": 0.58},
-    },
-    "exploded": {
-        "desktop": {"az": 43.0, "el": 24.0, "fov": 28.0, "aspect": 16 / 9, "box": (0.38, 0.94, 0.12, 0.86)},
-        "mobile": {"az": 36.0, "el": 20.0, "fov": 38.0, "aspect": 4 / 5, "box": (0.08, 0.92, 0.10, 0.90)},
-    },
-}
 
 
 def parse():

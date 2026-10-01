@@ -3,7 +3,7 @@
 //   node 3d/scripts/run.mjs            all stages
 //   node 3d/scripts/run.mjs build export optimize validate
 //
-// Stages: taxonomy, build, explode, export, optimize, posters, images, thumbs, validate.
+// Stages: taxonomy, build, explode, export, optimize, posters, env, images, thumbs, validate.
 // Blender runs headless from $BLENDER_EXE (pipeline/env/ENVIRONMENT.md). Each stage stops the run
 // on a non-zero exit code.
 import { spawnSync } from "node:child_process";
@@ -88,6 +88,7 @@ const STAGES = {
       "all",
     ]),
   ],
+  env: [node("env.mjs")],
   images: [node("images.mjs")],
   thumbs: [
     blender([blend("car.blend"), "--python-exit-code", "1", "-P", py("thumbs.py")]),

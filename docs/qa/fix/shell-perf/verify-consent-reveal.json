@@ -1,0 +1,97 @@
+{
+  "reveal": [
+    {
+      "path": "/",
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "wordAnimation": null,
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "htmlClasses": [
+        "tr-js"
+      ],
+      "done": 124,
+      "errors": []
+    },
+    {
+      "path": "/delovi/kocioni-diskovi",
+      "width": 390,
+      "reducedMotion": "no-preference",
+      "wordAnimation": "tr-word-lite",
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "htmlClasses": [
+        "tr-js"
+      ],
+      "done": 36,
+      "errors": []
+    },
+    {
+      "path": "/delovi/kocioni-diskovi",
+      "width": 1440,
+      "reducedMotion": "no-preference",
+      "wordAnimation": "tr-word",
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "htmlClasses": [
+        "tr-js"
+      ],
+      "done": 36,
+      "errors": []
+    },
+    {
+      "path": "/delovi/kocioni-diskovi",
+      "width": 390,
+      "reducedMotion": "reduce",
+      "wordAnimation": null,
+      "stuck": [],
+      "pending": 0,
+      "words": 0,
+      "htmlClasses": [
+        "tr-js"
+      ],
+      "done": 36,
+      "errors": []
+    },
+    {
+      "path": "/delovi/kocioni-diskovi (failsafe)",
+      "failsafeClass": true,
+      "markedAfterFailsafe": 0,
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    },
+    {
+      "path": "/delovi/kocioni-diskovi (no JS)",
+      "stuck": [],
+      "pending": 0,
+      "words": 0
+    }
+  ],
+  "consent": {
+    "height": 273,
+    "nosnippet": true,
+    "decisionsSideBySide": true,
+    "scrollPaddingBottom": "289px",
+    "tabStopsCoveredOf30": 0,
+    "afterEscape": {
+      "collapsed": true,
+      "height": 160
+    },
+    "focusAfterSettings": "switch:consent-analytics:",
+    "returning": {
+      "bannerInDomBeforeReopen": 0,
+      "chunksOnReopen": 2,
+      "focus": "Sačuvaj izbor",
+      "switches": 3
+    },
+    "convexSocket": {
+      "wsOpenedAtMs": 2228,
+      "loadAtMs": 1350
+    },
+    "errors": []
+  }
+}

@@ -468,6 +468,9 @@ describe("crons (fake time, Europe/Belgrade)", () => {
 
   test("reminders count working minutes, escalate once and stay quiet after hours", async () => {
     const t = makeT();
+    // The world is built before the order time: convex-test keeps _creationTime monotonic,
+    // so building it at the real clock (after 30.09. 16:30) would date the order later.
+    vi.setSystemTime(local(30, 8, 0));
     const w = await setupWorld(t);
     vi.setSystemTime(local(30, 16, 30));
     const res = await placeOrder(w);

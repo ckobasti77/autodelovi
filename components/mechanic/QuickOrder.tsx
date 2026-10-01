@@ -25,11 +25,14 @@ import {
 import { api } from "@/convex/_generated/api";
 import type { Id } from "@/convex/_generated/dataModel";
 import { openCartDrawer } from "@/lib/cart/drawer";
+import { useCart } from "@/lib/cart/guestCart";
+import { useBottomInset } from "@/lib/dom/bottomInset";
 import { cn } from "@/lib/cn";
 import {
   decodeQuickOrderFile,
   parseQuickOrder,
   QUICK_ORDER_MAX_CHARS,
+  QUICK_ORDER_MAX_QTY,
   type QuickOrderParse,
 } from "@/lib/domain/quickOrder";
 import { canOrderQuantity } from "@/lib/domain/stock";
@@ -62,6 +65,19 @@ type Row = {
   status: "pending" | MatchRow["status"];
   options: Option[];
   selected: Id<"products"> | null;
+  /** The typed quantity when it was outside 1–999; cleared once the stepper is used. */
+  requestedQuantity?: number | undefined;
+};
+
+/** Rows that resolve to one product are checked and added as one line (FLOW-21). */
+type Group = {
+  option: Option;
+  total: number;
+  rows: Row[];
+  inCart: number;
+  ok: boolean;
+  /** How many more units the cart can take (stock minus what is already in the cart). */
+  canAdd: number;
 };
 
 const DRAFT_KEY = "sk.quickorder.v1";
@@ -81,8 +97,34 @@ function rowsFromParse(parsed: QuickOrderParse): Row[] {
 
 function chosenOption(row: Row): Option | null {
   if (row.status === "exact") return row.options[0] ?? null;
-  if (row.status === "ambiguous") return row.options.find((o) => o.card._id === row.selected) ?? null;
+  if (row.status === "ambiguous")
+    return row.options.find((o) => o.card._id === row.selected) ?? null;
   return null;
+}
+
+function groupRows(rows: Row[], inCart: ReadonlyMap<string, number>): Map<string, Group> {
+  const groups = new Map<string, Group>();
+  for (const row of rows) {
+    const option = chosenOption(row);
+    if (!option) continue;
+    const group = groups.get(option.card._id) ?? {
+      option,
+      total: 0,
+      rows: [],
+      inCart: inCart.get(option.card._id) ?? 0,
+      ok: true,
+      canAdd: 0,
+    };
+    group.total += row.quantity;
+    group.rows.push(row);
+    groups.set(option.card._id, group);
+  }
+  for (const group of groups.values()) {
+    const check = orderable(group.option, group.inCart + group.total);
+    group.ok = check.ok;
+    group.canAdd = Math.max(0, check.available - group.inCart);
+  }
+  return groups;
 }
 
 function orderable(option: Option, quantity: number) {
@@ -128,7 +170,9 @@ function OptionPrice({ option, quantity }: { option: Option; quantity: number })
           <s className="decoration-1">{formatRSD(retail)}</s>
         </span>
       ) : null}
-      <span className="type-numeral-s tabular-nums text-accent-text">{formatRSD(option.unitPricePara)}</span>
+      <span className="type-numeral-s tabular-nums text-accent-text">
+        {formatRSD(option.unitPricePara)}
+      </span>
       {quantity > 1 ? (
         <span className="type-caption-s tabular-nums text-ink-3">
           {quantity} kom. · {formatRSD(option.unitPricePara * quantity)}
@@ -183,6 +227,8 @@ export function QuickOrder({
   const [sentInquiry, setSentInquiry] = useState<{ number: string; token: string } | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
+  const barRef = useRef<HTMLDivElement>(null);
+  const cart = useCart();
   const autoRan = useRef(false);
 
   // Draft survives navigation within the tab (a mechanic checks a part and comes back).
@@ -229,10 +275,17 @@ export function QuickOrder({
         })),
       });
       const byKey = new Map(response.rows.map((r) => [r.key, r]));
+      const itemsByKey = new Map(result.items.map((i) => [i.key, i]));
       setRows(
         pendingRows.map((row) => {
           const hit = byKey.get(row.key);
           if (!hit) return { ...row, status: "not_found" };
+          // The reading the server matched; it may carry a typed quantity outside 1–999.
+          const reading = itemsByKey
+            .get(row.key)
+            ?.candidates.find(
+              (c) => c.normalized === hit.normalized && c.quantity === hit.quantity,
+            );
           return {
             ...row,
             code: hit.code,
@@ -240,6 +293,9 @@ export function QuickOrder({
             status: hit.status,
             options: hit.options,
             selected: null,
+            ...(hit.status !== "not_found" && reading?.requestedQuantity !== undefined
+              ? { requestedQuantity: reading.requestedQuantity }
+              : {}),
           };
         }),
       );
@@ -249,7 +305,9 @@ export function QuickOrder({
       }
     } catch (err) {
       setRows([]);
-      setError(convexErrorMessage(err, "Provera nije uspela. Pokušajte ponovo za nekoliko sekundi."));
+      setError(
+        convexErrorMessage(err, "Provera nije uspela. Pokušajte ponovo za nekoliko sekundi."),
+      );
     } finally {
       setChecking(false);
     }
@@ -279,40 +337,59 @@ export function QuickOrder({
   const update = (key: string, patch: Partial<Row>) =>
     setRows((prev) => prev.map((r) => (r.key === key ? { ...r, ...patch } : r)));
   const remove = (key: string) => setRows((prev) => prev.filter((r) => r.key !== key));
+  /** „Spoji redove“: the first row takes the summed quantity, the others go. */
+  const merge = (keys: string[]) =>
+    setRows((prev) => {
+      const [first, ...rest] = keys;
+      const total = prev
+        .filter((r) => keys.includes(r.key))
+        .reduce((sum, r) => sum + r.quantity, 0);
+      return prev
+        .filter((r) => !rest.includes(r.key))
+        .map((r) =>
+          r.key === first ? { ...r, quantity: Math.min(QUICK_ORDER_MAX_QTY, total) } : r,
+        );
+    });
+
+  const inCart = useMemo(
+    () => new Map<string, number>((cart?.lines ?? []).map((l) => [l.productId, l.quantity])),
+    [cart],
+  );
+  const groups = useMemo(() => groupRows(rows, inCart), [rows, inCart]);
 
   const summary = useMemo(() => {
     let lines = 0;
     let units = 0;
     let totalPara = 0;
     let retailPara = 0;
-    const blocked: Row[] = [];
-    for (const row of rows) {
-      const option = chosenOption(row);
-      if (!option) continue;
-      if (!orderable(option, row.quantity).ok) {
-        blocked.push(row);
-        continue;
-      }
+    for (const group of groups.values()) {
+      if (!group.ok) continue;
+      const { option, total } = group;
       lines++;
-      units += row.quantity;
-      totalPara += option.unitPricePara * row.quantity;
-      retailPara += (option.card.retailPricePara ?? option.unitPricePara) * row.quantity;
+      units += total;
+      totalPara += option.unitPricePara * total;
+      retailPara += (option.card.retailPricePara ?? option.unitPricePara) * total;
     }
     const waiting = rows.filter((r) => r.status === "ambiguous" && !r.selected).length;
     const missing = rows.filter((r) => r.status === "not_found");
-    return { lines, units, totalPara, retailPara, waiting, missing, blocked };
-  }, [rows]);
+    return { lines, units, totalPara, retailPara, waiting, missing };
+  }, [rows, groups]);
+
+  const showBar = rows.length > 0 && !checking;
+  useBottomInset(barRef, showBar);
 
   const addAll = async () => {
-    const items = rows
-      .map((row) => ({ row, option: chosenOption(row) }))
-      .filter((x): x is { row: Row; option: Option } => x.option !== null && orderable(x.option, x.row.quantity).ok)
-      .map((x) => ({ productId: x.option.card._id, quantity: x.row.quantity }));
+    // One line per product with the summed quantity: `carts.addMany` checks each line
+    // against stock plus what is already in the cart, so duplicates can no longer slip past.
+    const items = [...groups.values()]
+      .filter((g) => g.ok)
+      .map((g) => ({ productId: g.option.card._id, quantity: g.total }));
     if (items.length === 0) return;
     setAdding(true);
     try {
       const result = await addMany({ items, source: "quick_order" });
-      const addedIds = new Set(result.added);
+      const addedIds = new Set<string>(result.added);
+      // Rejected rows stay in the list; their row message is recomputed from the fresh cart.
       const remaining = rows.filter((row) => {
         const option = chosenOption(row);
         return !(option && addedIds.has(option.card._id));
@@ -320,10 +397,9 @@ export function QuickOrder({
       setRows(remaining);
       if (remaining.length === 0) setText("");
       if (result.rejected.length) {
-        toast.warning(
-          `Dodato: ${result.added.length}. Nije dodato: ${result.rejected.length} — ${result.rejected[0]!.reason}`,
-          { action: { label: "Pogledaj korpu", onClick: openCartDrawer } },
-        );
+        toast.warning(COPY.partlyAdded(result.added.length, result.rejected.length), {
+          action: { label: "Pogledaj korpu", onClick: openCartDrawer },
+        });
       } else {
         toast.success(`U korpi: ${countSr(result.added.length, ["stavka", "stavke", "stavki"])}.`, {
           action: { label: "Pogledaj korpu", onClick: openCartDrawer },
@@ -414,7 +490,7 @@ export function QuickOrder({
             placeholder={COPY.placeholder}
             aria-describedby="qo-help"
             data-testid={TEST_IDS.mechanicQuickOrderInput}
-            className="min-h-32 w-full resize-y rounded-xs border border-control bg-surface-2 px-3 py-2.5 font-mono text-[0.9375rem] leading-relaxed text-ink-1 transition-control placeholder:text-ink-3 hover:border-ink-3 focus:border-focus focus:shadow-[inset_0_0_0_1px_var(--color-focus)] focus:outline-none"
+            className="min-h-32 w-full resize-y rounded-xs border border-control bg-surface-2 px-3 py-2.5 font-mono text-[1rem] leading-relaxed text-ink-1 transition-control placeholder:text-ink-3 hover:border-ink-3 focus:border-focus focus:shadow-[inset_0_0_0_1px_var(--color-focus)] focus:outline-none"
           />
           <p id="qo-help" className="type-caption text-ink-3">
             {COPY.help}
@@ -473,8 +549,15 @@ export function QuickOrder({
           </p>
         ) : null}
         {sentInquiry ? (
-          <p role="status" className="flex items-start gap-2 rounded-xs bg-success-subtle p-3 type-body-s text-ink-1">
-            <CheckCircleIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0 text-success" />
+          <p
+            role="status"
+            className="flex items-start gap-2 rounded-xs bg-success-subtle p-3 type-body-s text-ink-1"
+          >
+            <CheckCircleIcon
+              size={18}
+              aria-hidden="true"
+              className="mt-0.5 shrink-0 text-success"
+            />
             <span>
               Upit {sentInquiry.number} je poslat.{" "}
               <Link href={ROUTES.inquiryStatus(sentInquiry.token)} variant="inline" reloadDocument>
@@ -494,19 +577,27 @@ export function QuickOrder({
       >
         {hasRows ? (
           <>
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-line pb-3" role="status">
+            <div
+              className="flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-line pb-3"
+              role="status"
+            >
               {checking ? (
-                <span className="type-body-s text-ink-2">Proveravam {countSr(rows.length, ["broj", "broja", "brojeva"])}…</span>
+                <span className="type-body-s text-ink-2">
+                  Proveravam {countSr(rows.length, ["broj", "broja", "brojeva"])}…
+                </span>
               ) : (
                 <>
                   <span className="type-body-s text-ink-2">
-                    <strong className="font-semibold text-ink-1">{counts.exact}</strong> {COPY.exact.toLowerCase()}
+                    <strong className="font-semibold text-ink-1">{counts.exact}</strong>{" "}
+                    {COPY.exact.toLowerCase()}
                   </span>
                   <span className="type-body-s text-ink-2">
-                    <strong className="font-semibold text-ink-1">{counts.ambiguous}</strong> {COPY.ambiguous.toLowerCase()}
+                    <strong className="font-semibold text-ink-1">{counts.ambiguous}</strong>{" "}
+                    {COPY.ambiguous.toLowerCase()}
                   </span>
                   <span className="type-body-s text-ink-2">
-                    <strong className="font-semibold text-ink-1">{counts.notFound}</strong> {COPY.notFound.toLowerCase()}
+                    <strong className="font-semibold text-ink-1">{counts.notFound}</strong>{" "}
+                    {COPY.notFound.toLowerCase()}
                   </span>
                 </>
               )}
@@ -514,10 +605,18 @@ export function QuickOrder({
             <ol className="flex flex-col divide-y divide-line">
               {rows.map((row) => {
                 const option = chosenOption(row);
-                const check = option ? orderable(option, row.quantity) : null;
-                const maxQty = option && !option.card.allowBackorder && !option.card.leadTimeDays
-                  ? Math.max(1, Math.min(999, option.card.stockQty))
-                  : 999;
+                const group = option ? (groups.get(option.card._id) ?? null) : null;
+                const check =
+                  option && group ? orderable(option, group.inCart + group.total) : null;
+                const others =
+                  group && group.rows.length > 1 ? group.rows.filter((r) => r.key !== row.key) : [];
+                const maxQty =
+                  option && !option.card.allowBackorder && !option.card.leadTimeDays
+                    ? Math.max(
+                        1,
+                        Math.min(QUICK_ORDER_MAX_QTY, option.card.stockQty - (group?.inCart ?? 0)),
+                      )
+                    : QUICK_ORDER_MAX_QTY;
                 return (
                   <li
                     key={row.key}
@@ -545,7 +644,9 @@ export function QuickOrder({
                                 key={o.card._id}
                                 className={cn(
                                   "grid cursor-pointer grid-cols-[1.25rem_minmax(0,1fr)_auto] items-start gap-3 rounded-xs border p-3 transition-control",
-                                  selected ? "border-accent bg-accent-subtle" : "border-line-strong hover:border-ink-3",
+                                  selected
+                                    ? "border-accent bg-accent-subtle"
+                                    : "border-line-strong hover:border-ink-3",
                                 )}
                               >
                                 <input
@@ -563,28 +664,65 @@ export function QuickOrder({
                         </fieldset>
                       ) : (
                         <p className="type-body-s text-ink-2">
-                          Ovaj broj nemamo u katalogu. Pošaljite ga u upitu — proverimo kod dobavljača.
+                          Ovaj broj nemamo u katalogu. Pošaljite ga u upitu — proverimo kod
+                          dobavljača.
                         </p>
                       )}
-                      {option && check && !check.ok ? (
-                        <p className="flex items-center gap-1.5 type-caption text-warning">
-                          <WarningCircleIcon size={16} aria-hidden="true" />
-                          {check.available > 0
-                            ? `Na stanju je još ${check.available} kom.`
-                            : "Trenutno nije na stanju — nije dodato u korpu."}
-                          {check.available > 0 ? (
+                      {row.requestedQuantity !== undefined ? (
+                        <p className="flex items-start gap-1.5 type-caption text-warning">
+                          <WarningCircleIcon
+                            size={16}
+                            aria-hidden="true"
+                            className="mt-0.5 shrink-0"
+                          />
+                          {COPY.quantityOutOfRange(row.requestedQuantity, row.quantity)}
+                        </p>
+                      ) : null}
+                      {group && others.length > 0 ? (
+                        <p className="flex flex-wrap items-center gap-x-2 type-caption text-ink-2">
+                          {COPY.duplicate(
+                            others.map((r) => r.lineNo),
+                            group.total,
+                          )}
+                          <button
+                            type="button"
+                            className="inline-flex min-h-11 cursor-pointer items-center text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent"
+                            onClick={() => merge(group.rows.map((r) => r.key))}
+                          >
+                            {COPY.merge}
+                          </button>
+                        </p>
+                      ) : null}
+                      {group && check && !check.ok ? (
+                        <p className="flex flex-wrap items-center gap-x-2 type-caption text-warning">
+                          <WarningCircleIcon size={16} aria-hidden="true" className="shrink-0" />
+                          {group.canAdd > 0
+                            ? COPY.canAdd(group.canAdd, group.inCart)
+                            : group.inCart > 0
+                              ? COPY.allInCart
+                              : COPY.outOfStock}
+                          {group.canAdd > 0 && others.length === 0 ? (
                             <button
                               type="button"
-                              className="ml-1 inline-flex min-h-11 cursor-pointer items-center text-ink-1 underline decoration-line-strong underline-offset-4"
-                              onClick={() => update(row.key, { quantity: check.available })}
+                              className="inline-flex min-h-11 cursor-pointer items-center text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent"
+                              onClick={() =>
+                                update(row.key, {
+                                  quantity: group.canAdd,
+                                  requestedQuantity: undefined,
+                                })
+                              }
                             >
-                              Smanji na {check.available}
+                              {COPY.reduceTo(group.canAdd)}
                             </button>
                           ) : null}
                         </p>
                       ) : option && check?.backorder ? (
                         <p className="type-caption text-info">
-                          Deo je po porudžbini{option.card.leadTimeDays ? `, rok ${leadTimeLabel(option.card.leadTimeDays)}` : ""}.
+                          Deo je po porudžbini
+                          {option.card.leadTimeDays
+                            ? `, rok ${leadTimeLabel(option.card.leadTimeDays)}`
+                            : ""}
+                          .
                         </p>
                       ) : null}
                     </div>
@@ -595,7 +733,9 @@ export function QuickOrder({
                             size="sm"
                             value={row.quantity}
                             max={maxQty}
-                            onChange={(quantity) => update(row.key, { quantity })}
+                            onChange={(quantity) =>
+                              update(row.key, { quantity, requestedQuantity: undefined })
+                            }
                             label={`Količina: ${row.code}`}
                           />
                         ) : null}
@@ -606,14 +746,22 @@ export function QuickOrder({
                           onClick={() => remove(row.key)}
                         />
                       </div>
-                      {row.status === "exact" && option ? <OptionPrice option={option} quantity={row.quantity} /> : null}
+                      {row.status === "exact" && option ? (
+                        <OptionPrice option={option} quantity={row.quantity} />
+                      ) : null}
                     </div>
                   </li>
                 );
               })}
             </ol>
-            {!checking ? (
-              <div className="sticky bottom-0 z-sticky -mx-page mt-2 flex flex-col gap-3 border-t border-line-strong bg-bg-raised/95 px-page pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-header sm:mx-0 sm:px-0 sm:bg-bg/95">
+            {showBar ? (
+              // Sticky summary (VIS-02): registered as a bottom inset so focused rows scroll
+              // clear of it; a fade above the edge shows the rows pass beneath. One button row
+              // on phones (≈ 104 px), the inquiry collapses to an icon there.
+              <div
+                ref={barRef}
+                className="sticky bottom-0 z-sticky -mx-page mt-2 flex flex-col gap-2 border-t border-line-strong bg-bg-raised/95 px-page pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-header before:pointer-events-none before:absolute before:inset-x-0 before:bottom-full before:h-6 before:bg-linear-to-t before:from-bg before:to-transparent sm:mx-0 sm:gap-3 sm:bg-bg/95 sm:px-0"
+              >
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                   <span className="type-body-s text-ink-2" aria-live="polite">
                     {summary.lines > 0
@@ -626,18 +774,20 @@ export function QuickOrder({
                       {summary.retailPara > summary.totalPara ? (
                         <s className="type-caption text-ink-3">{formatRSD(summary.retailPara)}</s>
                       ) : null}
-                      <span className="type-numeral-m tabular-nums text-accent-text">{formatRSD(summary.totalPara)}</span>
+                      <span className="type-numeral-m tabular-nums text-accent-text">
+                        {formatRSD(summary.totalPara)}
+                      </span>
                     </span>
                   ) : null}
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex gap-2 sm:flex-wrap">
                   <Button
                     size="lg"
                     icon={<ShoppingCartSimpleIcon size={20} />}
                     loading={adding}
                     disabled={summary.lines === 0}
                     onClick={() => void addAll()}
-                    className="grow sm:grow-0"
+                    className="min-w-0 grow sm:grow-0"
                     data-testid={TEST_IDS.mechanicQuickOrderAddAll}
                   >
                     {COPY.addAll(summary.lines)}
@@ -649,10 +799,12 @@ export function QuickOrder({
                       icon={<PaperPlaneTiltIcon size={20} />}
                       loading={inquiring}
                       onClick={() => void sendInquiry()}
-                      className="grow sm:grow-0"
+                      className="w-13 shrink-0 px-0 sm:w-auto sm:px-5"
                       data-testid={TEST_IDS.mechanicQuickOrderInquire}
                     >
-                      {COPY.inquire(summary.missing.length)}
+                      <span className="sr-only sm:not-sr-only">
+                        {COPY.inquire(summary.missing.length)}
+                      </span>
                     </Button>
                   ) : null}
                 </div>
@@ -678,8 +830,8 @@ function QuickOrderEmpty() {
   return (
     <div className="flex flex-col gap-4 rounded-sm border border-dashed border-line-strong p-5 sm:p-6">
       <p className="type-body text-ink-2">
-        Nalepite brojeve iz poruke, Excela ili sa kutije. Posle provere vidite šta je na stanju i po kojoj ceni, pa sve
-        dodajete u korpu jednim klikom.
+        Nalepite brojeve iz poruke, Excela ili sa kutije. Posle provere vidite šta je na stanju i po
+        kojoj ceni, pa sve dodajete u korpu jednim klikom.
       </p>
       <dl className="grid gap-x-6 gap-y-2 sm:grid-cols-[auto_minmax(0,1fr)]">
         {examples.map(([code, note]) => (

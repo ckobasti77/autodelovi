@@ -5,6 +5,7 @@ import { v } from "convex/values";
 
 import type { Doc } from "./_generated/dataModel";
 
+import { consentInForce, sanitizeAttribution } from "./lib/attribution";
 import {
   isValidEmail,
   isValidMb,
@@ -61,10 +62,12 @@ export const register = userMutation({
     if (!isValidPib(pib)) invalid("PIB nije ispravan (9 cifara, kontrolni broj).", "pib");
     const mb = normalizeMb(args.mb);
     if (!isValidMb(mb)) invalid("Matični broj nije ispravan (8 cifara).", "mb");
-    const pibTaken = await ctx.db
+    // A rejected registration does not hold the PIB (the workshop may apply again).
+    const samePib = await ctx.db
       .query("mechanicProfiles")
       .withIndex("by_pib", (q) => q.eq("pib", pib))
-      .first();
+      .take(20);
+    const pibTaken = samePib.some((p) => p.status !== "rejected");
     if (pibTaken)
       fail("DUPLICATE", "Ovaj PIB je već registrovan — prijavite se ili nas pozovite.", {
         field: "pib",
@@ -83,6 +86,8 @@ export const register = userMutation({
     if (args.brandsServiced.length > 5) invalid("Najviše 5 marki.", "brandsServiced");
 
     const now = Date.now();
+    const consent = consentInForce(settings, args.consent, now);
+    const attribution = sanitizeAttribution(args.attribution);
     const profileId = await ctx.db.insert("mechanicProfiles", {
       userId: viewer.userId,
       status: "pending",
@@ -98,8 +103,8 @@ export const register = userMutation({
       brandsServiced: [...new Set(args.brandsServiced)],
       creditEnabled: false,
       paymentTermsDays: 15,
-      ...(args.attribution ? { attribution: args.attribution } : {}),
-      consent: args.consent,
+      ...(attribution ? { attribution } : {}),
+      consent,
       isDemo: false,
       updatedAt: now,
     });

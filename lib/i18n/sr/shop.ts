@@ -101,18 +101,50 @@ export const PREFERRED_CHANNEL_LABEL = {
   email: "E-poštom",
 } as const;
 
+/**
+ * Glossary (COPY-09, DESIGN-SYSTEM §11.4): one term per concept in every form string.
+ * The medium and the field label are „e-pošta“; in a sentence the value is „adresa e-pošte“;
+ * catalog items are „artikli“.
+ */
+export const TERMS = {
+  /** Field label („E-pošta“). */
+  email: "E-pošta",
+  /** Nominative in a sentence („Adresa e-pošte nije ispravna.“). */
+  emailAddress: "adresa e-pošte",
+  /** Accusative („Upišite adresu e-pošte.“). */
+  emailAddressAcc: "adresu e-pošte",
+  /** Catalog items (lists, search groups, headings). */
+  items: "Artikli",
+} as const;
+
 export const ERRORS = {
   required: (what: string) => `Upišite ${what}.`,
   phone: "Broj telefona nije ispravan. Primer: 064 123 4567.",
-  email: "E-mail adresa nije ispravna. Primer: ime@primer.rs.",
-  pib: "PIB ima 9 cifara i kontrolni broj ne odgovara. Proverite broj sa rešenja.",
-  mb: "Matični broj ima 8 cifara.",
+  email: "Adresa e-pošte nije ispravna. Primer: ime@primer.rs.",
+  emailRequired: `Upišite ${TERMS.emailAddressAcc}.`,
+  /** PIB: empty, wrong number of digits, or the check digit does not match (FLOW-09). */
+  pib: {
+    required: "Upišite PIB.",
+    length: "PIB ima 9 cifara.",
+    checksum: "PIB nije ispravan — kontrolna cifra ne odgovara. Proverite broj sa rešenja.",
+  },
+  mb: {
+    required: "Upišite matični broj.",
+    length: "Matični broj ima 8 cifara.",
+    checksum:
+      "Matični broj nije ispravan — kontrolna cifra ne odgovara. Proverite broj sa rešenja.",
+  },
+  passwordIsEmail: `Lozinka ne sme biti ista kao ${TERMS.emailAddress}.`,
   vin: "Broj šasije ima 17 znakova (bez slova I, O i Q).",
   postalCode: "Poštanski broj ima 5 cifara.",
   rateLimit: "Previše pokušaja. Pokušajte ponovo za nekoliko minuta ili nas pozovite.",
   network: "Nema veze — pokušavamo ponovo.",
   server: "Nešto nije u redu na našoj strani. Pokušajte ponovo; porudžbina nije poslata.",
-  upload: "Fotografija je prevelika ili nije JPG, PNG ili WebP. Najviše 8 MB po fotografiji.",
+  /** Photo rejected before upload (FLOW-27): say which file and why. */
+  uploadType: (fileName: string) => `${fileName} nije fotografija (JPG, PNG ili WebP).`,
+  uploadSize: (fileName: string, sizeMb: string) =>
+    `${fileName} ima ${sizeMb} MB — najviše 8 MB po fotografiji.`,
+  upload: "Fotografija nije učitana. Pokušajte ponovo.",
   quoteExpired: (at: number) => `Ponuda je istekla ${formatDate(at)}`,
 } as const;
 

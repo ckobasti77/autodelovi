@@ -7,10 +7,10 @@
  */
 import {
   Box3,
-  EquirectangularReflectionMapping,
+  CubeUVReflectionMapping,
   Group,
+  LinearFilter,
   Mesh,
-  PMREMGenerator,
   TextureLoader,
   Vector3,
   type Material,
@@ -93,15 +93,19 @@ function startDecoderWorkers() {
   spawnWorkers(Math.max(1, Math.min(4, cores - 1)));
 }
 
-async function loadEnvironment(renderer: WebGLRenderer): Promise<Texture> {
-  const hdr = await new HDRLoader().loadAsync(ENV_URL);
-  hdr.mapping = EquirectangularReflectionMapping;
-  await yieldToMain(); // RGBE decode and PMREM prefilter in separate tasks
-  const pmrem = new PMREMGenerator(renderer);
-  const target = pmrem.fromEquirectangular(hdr);
-  hdr.dispose();
-  pmrem.dispose();
-  return target.texture;
+/**
+ * The studio environment, already prefiltered: the pipeline bakes three's PMREM cube-UV atlas
+ * (`3d/scripts/env.mjs`), so the runtime only decodes a small RGBE file — no PMREMGenerator and
+ * no blur-shader compile on the main thread at 3D start (PERF-14, D243).
+ */
+async function loadEnvironment(): Promise<Texture> {
+  const atlas = await new HDRLoader().loadAsync(ENV_URL);
+  atlas.mapping = CubeUVReflectionMapping;
+  atlas.minFilter = LinearFilter;
+  atlas.magFilter = LinearFilter;
+  atlas.generateMipmaps = false;
+  atlas.name = "PMREM.cubeUv";
+  return atlas;
 }
 
 async function loadShadow(url: string, renderer: WebGLRenderer): Promise<Texture | null> {
@@ -147,7 +151,7 @@ export async function loadCarScene(options: {
 
   const [buffer, environment, shadowA, shadowB] = await Promise.all([
     prefetchModel(tier),
-    loadEnvironment(renderer),
+    loadEnvironment(),
     loadShadow(SHADOW_URL.assembled, renderer),
     loadShadow(SHADOW_URL.exploded, renderer),
   ]);
@@ -260,9 +264,13 @@ export async function loadCarScene(options: {
   const textures: Texture[] = [environment];
   if (shadowA) textures.push(shadowA);
   if (shadowB) textures.push(shadowB);
+  // Every texture any material samples, so the canvas uploads them all (one per task) before
+  // compileAsync and the first frame never pays a texImage2D.
   for (const m of materials) {
-    const map = (m as { normalMap?: Texture | null }).normalMap;
-    if (map && !textures.includes(map)) textures.push(map);
+    for (const value of Object.values(m)) {
+      const map = value as Texture | null;
+      if (map?.isTexture && !textures.includes(map)) textures.push(map);
+    }
   }
 
   const dispose = () => {
