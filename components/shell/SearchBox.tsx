@@ -246,9 +246,6 @@ export function SearchBox({
       action={ROUTES.search}
       method="get"
       onSubmit={onFormSubmit}
-      // A page with its own search field: the header field steps back while the page is at
-      // its top (`site-header-search` in globals.css).
-      data-own-search={hero ? "" : undefined}
       className={cn("flex flex-col gap-2", className)}
     >
       <div className={cn("flex gap-2", hero ? "flex-col sm:flex-row" : "")}>

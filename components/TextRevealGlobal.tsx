@@ -5,8 +5,8 @@
  * the root layout; renders nothing.
  *
  * - After hydration, in an idle callback, finds every element the boot stylesheet hides — copy
- *   (`hiddenSelector`) and blocks (`blockHiddenSelector`: `data-reveal="block"` and the direct
- *   children of `data-reveal-group`) — marks it pending and observes it with ONE
+ *   (`hiddenSelector`) and blocks (`blockHiddenSelector`: `data-reveal="block"` and the
+ *   `data-reveal="item"` children of `data-reveal-group`) — marks it pending and observes it with ONE
  *   IntersectionObserver whose root is shrunk from the bottom by the shared line (REVEAL_LINE).
  * - Trigger rule: an element reveals when its vertical centre crosses the line; an element
  *   taller than REVEAL_TALL_RATIO of the viewport reveals when its top does. The decision is
@@ -336,7 +336,12 @@ export function TextRevealGlobal(): null {
           const onScreen = box.top < viewportHeight;
           if (onScreen && scrolledToEnd) {
             batch.push(el);
-          } else if (settled && onScreen && armed.has(el) && hasCrossed(box, lineY, viewportHeight)) {
+          } else if (
+            settled &&
+            onScreen &&
+            armed.has(el) &&
+            hasCrossed(box, lineY, viewportHeight)
+          ) {
             batch.push(el);
           } else if (settled) {
             // Scroll needed to bring the trigger point (centre, or top when tall) to the line.

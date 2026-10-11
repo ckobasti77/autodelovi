@@ -30,7 +30,7 @@ Convex agent skills for common tasks can be installed by running
 
 **Copy:** Serbian Latin, ekavian, correct č ć ž š đ; voice = experienced mechanic to a colleague; no emojis, no exclamation marketing, no lorem, no visible TODO, no invented company facts (read settings). Formats: `12.990 RSD`, `29.09.2026.`, `+381 64 123 4567`. Code/comments/tech docs in English. Shared strings in `lib/i18n/sr/`.
 
-**Motion:** GSAP only for overlays and authored moments (`useGSAP` with scope, `gsap.matchMedia` for reduced motion). Never write your own entrance — the site-wide reveal covers copy (word by word) and blocks (`<Reveal>`, `<RevealGroup>` / `data-reveal="block"`, `data-reveal-group`); above the fold copy uses `RevealText` and blocks use `eager` (LCP-safe). Opt out only with `data-reveal="off"` (see `.claude/rules/architecture.md` / text-reveal skill).
+**Motion:** GSAP only for overlays and authored moments (`useGSAP` with scope, `gsap.matchMedia` for reduced motion). Never write your own entrance — the site-wide reveal covers copy (word by word) and blocks (`<Reveal>`, `<RevealGroup>` + `<RevealItem>` / `data-reveal="block"`, `data-reveal-group` > `data-reveal="item"`); above the fold copy uses `RevealText` and blocks use `eager` (LCP-safe). Opt out only with `data-reveal="off"` (see `.claude/rules/architecture.md` / text-reveal skill).
 
 **Shape and surfaces:** radius by role — `rounded-xs` 4 tag · `sm` 6 press · `md` 8 read · `lg` 10 picture · `xl` 12 float · `2xl` 14 sheet; no square boxes (`node scripts/qa/ui-boost/corners.mjs`). New boxes use `panel` / `panel-raised` / `panel-inset` (+ `card-interactive`); repeated actions use the `quiet` button. Work list for pages: `docs/design/UI-BOOST.md` §7–§8.
 

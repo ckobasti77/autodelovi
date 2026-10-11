@@ -45,11 +45,12 @@ export const BLOCK_REVEAL = {
     /** …shrunk so the last item starts at most this long after the first (batch ≈ 700 ms). */
     budgetMs: 180,
   },
-  /** Lighter version for dense work surfaces (admin, `data-reveal-tone="lite"`). */
+  /**
+   * Dense work surfaces (admin, `data-reveal-tone="lite"`): opacity only. Nothing moves, so a
+   * control is where it will stay from the frame it appears (D272, D331).
+   */
   lite: {
     durationMs: 320,
-    liftPx: 6,
-    liftNarrowPx: 6,
     stepMs: 30,
     budgetMs: 150,
   },
@@ -70,7 +71,7 @@ export const BLOCK_REVEAL = {
   /** Media features under which the lift uses `liftNarrowPx`. */
   narrowMedia: "(max-width: 47.99rem)",
   attrs: {
-    /** On a container: its direct children reveal as one staggered batch. */
+    /** On a container: its `data-reveal="item"` children reveal as one staggered batch. */
     group: "data-reveal-group",
     /** On a block or a group child: CSS-only entrance on load, never hidden. */
     eager: "data-reveal-eager",
@@ -85,8 +86,15 @@ export const BLOCK_REVEAL = {
   modes: { rise: "rise", fade: "fade" },
 } as const;
 
-/** Everything that moves as one block: marked elements and the direct children of a group. */
-export const blockSelector = `[data-reveal="block"], [${BLOCK_REVEAL.attrs.group}] > *`;
+/**
+ * Everything that moves as one block: marked elements, and the marked items of a group.
+ *
+ * Items carry `data-reveal="item"` themselves (`RevealItem`). A selector that ended in
+ * `[data-reveal-group] > *` has a universal subject: any rule built on it that also depends on
+ * a class of <html> (`tr-js`, `tr-failsafe`) makes the browser restyle the whole document each
+ * time such a class changes — measured as two extra full-document style passes per load (D330).
+ */
+export const blockSelector = `[data-reveal="block"], [${BLOCK_REVEAL.attrs.group}] > [data-reveal="item"]`;
 
 /**
  * The blocks the stylesheet hides and the engine reveals: outermost block targets that are

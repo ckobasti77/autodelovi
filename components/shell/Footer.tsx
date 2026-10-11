@@ -110,13 +110,13 @@ export function Footer({ contact, company }: FooterProps) {
       data-testid={TEST_IDS.footer}
       className="cv-auto border-t border-line bg-bg-raised print:hidden [contain-intrinsic-size:auto_1040px] md:[contain-intrinsic-size:auto_700px] lg:[contain-intrinsic-size:auto_440px]"
     >
-      {/* A reveal group: the logo row and the three columns rise one after another. */}
+      {/* A reveal group: the logo row and the three columns (items) rise one after another. */}
       <div
         data-reveal-group=""
         className="grid gap-10 px-page py-14 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1.3fr] lg:gap-8"
       >
         {/* The lockup with the signature needs 56 px of height (445 px wide): its own row. */}
-        <div className="flex flex-col gap-5 md:col-span-2 lg:col-span-3">
+        <div data-reveal="item" className="flex flex-col gap-5 md:col-span-2 lg:col-span-3">
           <NextLink
             href={ROUTES.home}
             aria-label={`${site.brand.lockupName} — početna`}
@@ -129,13 +129,16 @@ export function Footer({ contact, company }: FooterProps) {
               className="max-sm:w-full"
             />
           </NextLink>
-          <p className="max-w-[52ch] type-body-s text-ink-2">
-            {site.brand.description}
-          </p>
+          <p className="max-w-[52ch] type-body-s text-ink-2">{site.brand.description}</p>
         </div>
 
         {COLUMNS.map((column) => (
-          <nav key={column.title} aria-label={column.title} className="flex flex-col gap-3">
+          <nav
+            key={column.title}
+            aria-label={column.title}
+            data-reveal="item"
+            className="flex flex-col gap-3"
+          >
             <h2 className="type-label text-ink-3">{column.title}</h2>
             <ul className="flex flex-col gap-1 type-body-s">
               {column.links.map((link) => (
@@ -149,7 +152,7 @@ export function Footer({ contact, company }: FooterProps) {
           </nav>
         ))}
 
-        <div className="flex flex-col gap-3">
+        <div data-reveal="item" className="flex flex-col gap-3">
           <h2 className="type-label text-ink-3">Kontakt</h2>
           <ul className="flex flex-col gap-1 type-body-s">
             {channels.map((link) => (

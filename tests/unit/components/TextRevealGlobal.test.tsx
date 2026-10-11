@@ -64,6 +64,7 @@ function group(count: number): { list: HTMLUListElement; items: HTMLLIElement[] 
   list.setAttribute(BLOCK_REVEAL.attrs.group, "");
   const items = Array.from({ length: count }, (_, i) => {
     const li = hydrated(document.createElement("li"));
+    li.setAttribute("data-reveal", "item");
     li.innerHTML = `<h3>Kartica ${i + 1}</h3><p>Opis dela</p>`;
     list.appendChild(li);
     return li;
@@ -305,6 +306,7 @@ describe("TextRevealGlobal — blocks", () => {
     await startObserver();
 
     const added = hydrated(document.createElement("li"));
+    added.setAttribute("data-reveal", "item");
     added.textContent = "Novi artikal";
     await act(async () => {
       list.appendChild(added);

@@ -66,6 +66,12 @@ export const ROUTES = {
   styleguide: "/styleguide",
 } as const;
 
+/**
+ * Pages that open with their own search field: the header's search field steps back there
+ * while the page is at its top (components/shell/HeaderSearch).
+ */
+export const OWN_SEARCH_ROUTES: readonly string[] = [ROUTES.home, ROUTES.search];
+
 /** Admin routes (docs/ROUTES.md §B2). */
 export const ADMIN = {
   home: "/admin",

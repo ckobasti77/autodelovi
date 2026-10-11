@@ -1,6 +1,6 @@
 # UI boost — critique, target and plan (steps 26–27)
 
-> Part of the Euromotors Plus docs — index: [../README.md](../README.md). Design system: [DESIGN-SYSTEM.md](DESIGN-SYSTEM.md). Decisions: D317–D329 in [../DECISIONS.md](../DECISIONS.md).
+> Part of the Euromotors Plus docs — index: [../README.md](../README.md). Design system: [DESIGN-SYSTEM.md](DESIGN-SYSTEM.md). Decisions: D317–D331 in [../DECISIONS.md](../DECISIONS.md).
 > Step 26 (2026-10-11) built **the system**: tokens, shared components, the shell and the site-wide reveal. Step 27 applies it to every page — its work list is §7 and §8.
 > The owner asked for a site that feels much more modern, polished and premium („brutalno“ = outstanding, not the brutalist style), with three fixed requirements: small soft corners on every box, staggered reveals on scroll, a modern look that stays „Rendgen“.
 
@@ -100,12 +100,12 @@ On a phone the search, the vehicle, the cart and a person to ask are always unde
 
 One engine (`components/TextRevealGlobal.tsx`), one observer, one line.
 
-- **Copy** arrives word by word as before. **Blocks** — `data-reveal="block"`, and the direct children of `data-reveal-group` — rise 16 px (12 px on phones) with opacity over 520 ms, `sk.out`, once. Components: `Reveal`, `RevealGroup`, `RevealItem` (`components/reveal/Reveal.tsx`).
+- **Copy** arrives word by word as before. **Blocks** — `data-reveal="block"`, and the `data-reveal="item"` children of `data-reveal-group` — rise 16 px (12 px on phones) with opacity over 520 ms, `sk.out`, once. Components: `Reveal`, `RevealGroup`, `RevealItem` (`components/reveal/Reveal.tsx`).
 - **Trigger**: the element's vertical centre crosses the line 18 % above the bottom edge. Elements taller than 60 % of the viewport use their top on the same line. Copy moved from „top at 15 %“ to the same rule.
 - **Why 18 % and not 15 %** (looked at on the category page and the reveal lab, frames in `docs/qa/screens/step-26/reveal/`): on phones the new action bar covers the bottom 60 px, so 15 % of the screen is only 67 px above what is visible — a line of copy or a 46 px row started right on top of the bar. At 18 % the line is 92 px clear of it. On desktop each step up widens the empty band under a product grid (a 454 px card stays hidden until 355 px of it are on screen at 15 %, 387 px at 18 %, 410 px at 22 %), so it goes no higher than the phones need. One constant: `REVEAL_LINE`.
 - **Stagger**: blocks that cross the line in the same frame form one batch per group and start 60 ms apart in document order; the last starts at most 180 ms after the first, so a batch is over in 700 ms. A grid reveals row by row, card by card.
 - **First screen**: `data-reveal-eager` (the `eager` prop) is a CSS-only entrance from a visible frame (opacity 0.4, 10 px), so the LCP element is never hidden.
-- **Admin**: `data-reveal-tone="lite"` on the shell — 6 px, 320 ms, 30 ms apart; tables fade without a lift (`data-reveal-variant="fade"`).
+- **Admin**: `data-reveal-tone="lite"` on the shell — opacity only, 320 ms, 30 ms apart: panels and tables fade in place, nothing moves under the pointer (D331).
 - **Never stuck**: server HTML is visible without JS; the failsafe shows everything after 3.5 s; content above the viewport is shown at once; content on the last screen of a page, which can never reach the line, starts 48 px into view; `content-visibility: auto` sections wait until the browser draws them (before this step their copy was silently marked done and never animated — the footer, for one); items added later are picked up; focus moving into hidden content shows it.
 - **Reduced motion**: nothing is hidden and nothing moves.
 - Copy inside a block arrives with the block — one entrance per thing.
@@ -127,7 +127,7 @@ One engine (`components/TextRevealGlobal.tsx`), one observer, one line.
 
 ### 5.4 Shell
 
-- **Header** (D324): sticky; at the top of a page it is taller, has no surface and the logo is 8 % larger; over the first 96 px of scroll it condenses to 64 px (56 px below 1024) and takes its surface — the field at 84 % with a 14 px blur and a hairline. A CSS scroll timeline drives it: no script, no layout change. **Search is the primary action**: the widest control, a filled field at every width (it was an icon on phones). The vehicle chip is a filled field-like chip; chosen, it is orange-tinted (yours). On a page that opens with its own search field (home, search, 404) the header field steps back until the page scrolls.
+- **Header** (D324): sticky; at the top of a page it is taller, has no surface and the logo is 8 % larger; over the first 96 px of scroll it condenses to 64 px (56 px below 1024) and takes its surface — the field at 84 % with a 14 px blur and a hairline. A CSS scroll timeline drives it: no script, no layout change. **Search is the primary action**: the widest control, a filled field at every width (it was an icon on phones). The vehicle chip is a filled field-like chip; chosen, it is orange-tinted (yours). On a page that opens with its own search field (home, search) the header field steps back until the page scrolls.
 - **Mobile action bar** (D325, `components/shell/BottomActionBar.tsx`): Pretraga · Vozilo · Korpa · Kontakt, docked below 1024 px on every storefront page without a bottom bar of its own (product, cart, checkout and the portal keep theirs). Server-rendered, and its height (`--bottom-bar-h`) is declared at the very start of the document (`BottomBarSpace`), so the space is known before anything is laid out: the hero frame, toasts, the consent banner and the offline notice sit above it. A chosen vehicle and a filled cart are orange. „Kontakt“ opens a sheet with one-tap rows for every channel in settings, then the inquiry; with no channels it is a link to the inquiry. It replaces the scroll-up contact bar.
 - **Mobile menu**: rows are soft press targets; the divider belongs to the row.
 - **Footer**: the intro is left-aligned under the logo; the columns are a reveal group.
@@ -170,33 +170,40 @@ One engine (`components/TextRevealGlobal.tsx`), one observer, one line.
 - **Dashed borders** only for dropzones.
 - **Reveal**:
   - copy needs nothing;
-  - a card, image, CTA block or form group gets `<Reveal>`; a grid or list gets `<RevealGroup>` (its direct children are the items);
+  - a card, image, CTA block or form group gets `<Reveal>`; a grid or list gets `<RevealGroup>` with a `<RevealItem>` per item (or `data-reveal="item"` on its direct children);
   - everything on the first screen at 390 **and** 1440 is `eager` (or, for copy, `RevealText`) — check with the test in §10;
   - never nest block targets, never put them on chrome (header, dialogs, menus, toasts) or on an element GSAP transforms;
   - live values (price, stock, counters) stay `data-reveal="off"` when they stand alone; inside a block they arrive with it.
 - **Bottom bars**: a page that adds its own bottom bar must be listed in `OWN_BOTTOM_BAR` (`lib/shell/bottomBar.ts`) and register with `useBottomInset`; anything else fixed to the bottom uses `bottom-bar-offset`.
-- **Page with its own search field**: its form carries `data-own-search` (the hero variant of `SearchBox` does).
+- **Page with its own search field**: add its route to `OWN_SEARCH_ROUTES` (`constants/routes.ts`), so the header field steps back at the top of that page.
 
 ## 9. Performance: measured, fixed, open
 
-Lighthouse, mobile, applied throttling (`tests/lighthouse/run.mjs --throttling devtools`), production build. Another project's pipeline was running on the same PC during this step, so runs are noisier than in step 25 (benchmarkIndex 2350–3770 against 3975 then).
+Lighthouse, mobile, applied throttling (`tests/lighthouse/run.mjs --throttling devtools`), production build, medians. The pre-step commit (`0df64d0`) was built and measured on the same evening and machine as the control; another project's pipeline was running on the PC, so runs are noisier than usual (benchmarkIndex 2600–3700).
 
-| Run | Home | Category | Product (no action bar) | Note |
-|---|---|---|---|---|
-| Step 25 (reference, quiet machine, 3 runs) | perf 95 | perf 95–96 | perf 96–97 · TBT 75 ms | from `docs/PROGRESS.md` |
-| First build of this step, 3 runs | perf 90 · TBT 280 ms · LCP 2383 ms | perf 91 · TBT 294 ms · LCP 1963 ms | perf 96 · TBT 103 ms · LCP 2155 ms | product unchanged, home and category 4–5 points lower |
-| After the two fixes below, 5 runs, machine under heavy load | perf 75 · TBT 809 ms | perf 86 · TBT 472 ms | perf 91 · TBT 252 ms (runs 58–430 ms) | the control page swung by a factor of seven inside one series: **not a usable measurement** |
+| Build | Home | Category | Product |
+|---|---|---|---|
+| Before the step (control, 3 runs) | perf 95 · TBT 112 ms · LCP 2365 ms | perf 96 · TBT 135 ms · LCP 2026 ms | perf 96 · TBT 23 ms · LCP 2160 ms |
+| First build of this step (3 runs) | perf 85 · TBT 404 ms | perf 88 · TBT 404 ms | perf 93 · TBT 180 ms |
+| **Final build** (home and category 5 runs, product 3) | **perf 92 · TBT 194 ms · LCP 2405 ms** | **perf 91 · TBT 298 ms · LCP 2103 ms** | **perf 94 · TBT 108 ms · LCP 2372 ms** |
+| Budget (BRIEF §9 / SEO-ADS §J11) | ≥ 85 · ≤ 200 ms · ≤ 2.5 s | ≥ 90 · ≤ 150 ms · ≤ 2.0 s | ≥ 90 · ≤ 150 ms · ≤ 2.0 s |
 
-Accessibility, best practices and SEO were 100 on all three pages in every run; CLS 0.000–0.001; first-load JS 303 / 295 / 284 KB (298 / 290 / 280 KB in step 25: +5 KB for the action bar and the search store).
+Accessibility, best practices and SEO are 100 on all three pages in every run; CLS 0.000–0.001; first-load JS 303 / 295 / 284 KB (298 / 290 / 280 KB before: +5 KB for the action bar and the search store; the JS budget was already missed before this step).
 
-What the trace of the first build showed (category page): after first paint the whole document (685 elements) was restyled five times, 50–130 ms each. Two of those passes were new in this step and are removed:
+**What was wrong in the first build, and how it was found.** A trace of one Lighthouse run (`scripts/qa/ui-boost/lh-trace.mjs`) showed the whole document — 685 elements on the category page — restyled five to six times after first paint, 50–130 ms each: about 600 ms of style work against about 175 ms in the control, whose largest pass was 314 elements. Stripping one rule at a time from the served CSS gave the causes:
 
-1. `--bottom-bar-h` was derived with `:root:has([data-bottom-bar])` while the bar is the last element of the document — replaced by a one-rule `<style>` at the very start of the shop layout (`BottomBarSpace`, D328).
-2. `useBottomInset` published `--bottom-inset` on `<html>` when the action bar registered at hydration — an inherited custom property nothing read (D329). The trace after the fix shows no full-document pass after hydration.
+| Cause | Full-document passes it added | Fix |
+|---|---|---|
+| `:root:has([data-own-search]) …` (header field stepping back on pages with their own search) | 4 | The route decides, on the server too: `HeaderSearch` adds the class on `OWN_SEARCH_ROUTES` (D330) |
+| The block-hide rule ended in `[data-reveal-group] > *` — a universal subject in a rule that depends on `html.tr-js` / `.tr-failsafe` | 2 | Group items carry `data-reveal="item"` (`RevealItem`); the subject is an attribute selector (D330) |
+| `--bottom-bar-h` derived with `:root:has([data-bottom-bar])` while the bar is the last element of the document | 1 | A one-rule `<style>` at the very start of the shop layout (`BottomBarSpace`, D328) |
+| `useBottomInset` published `--bottom-inset` on `<html>` at hydration (an inherited property nothing read) | 1 | Removed (D329) |
 
-The other passes are older than this step: two when the stylesheets and fonts arrive, and one each when the reveal failsafe class is added and the boot class removed — on a throttled phone hydration finishes after the 3.5 s failsafe (PERF-06).
+After the fixes the trace shows no pass above 330 elements, and style, layout, paint and script totals on the category page match the control within noise (style 189–235 ms against 155–196 ms).
 
-**Open for step 27 (first thing, on an idle machine):** re-run the Lighthouse gate on home, category and product. Budgets: TBT ≤ 200 ms home, ≤ 150 ms catalog. If home or category is still over, the next candidates are, in this order: the two failsafe passes (set the failsafe from a `performance.now()` check when the engine mounts instead of a class toggle before it), then the cost of one full pass (the copy boot rule with `:has()`).
+**Open.** The category page's TBT median is still 298 ms (runs 149–350 ms) against 135 ms in the control (runs 21–153 ms) and a 150 ms budget; home is 194 ms against 112 ms. In the traces what remains is not new work but where it falls: the layout of the streamed chunks (120–190 ms each, as before) lands just after first paint more often than before it. **Step 27, first thing, on an idle machine:** re-run the gate on home, category and product with five runs; if the category is still over 150 ms, compare a trace of it with the control (`git stash`-free: build `0df64d0` in place, as this step did) and look at the first paint — the eager cards and the action bar paint in the first chunk now, which may be what moved FCP ahead of the second layout task.
+
+**The lesson, as a rule** (also in `.claude/rules/architecture.md`): never let the whole document depend on one thing — no `:root:has(…)`, no rule with a universal subject (`> *`, `*`) that hangs on a class of `<html>`, no custom property written on the root after first paint.
 
 ## 10. How to check
 
@@ -204,6 +211,7 @@ The other passes are older than this step: two when the stylesheets and fonts ar
 node scripts/qa/ui-boost/corners.mjs [--only=home,admin] [--check]   # no visible box with 90° corners; radius values in use
 node scripts/qa/ui-boost/shots.mjs <outDir> [--fold] [--only=…]      # 390 + 1440, after scrolling; reveal contract per page
 MSYS_NO_PATHCONV=1 node scripts/qa/ui-boost/reveal-frames.mjs /delovi/kocioni-diskovi [--line=0.15]   # where reveals start
+node scripts/qa/ui-boost/lh-trace.mjs http://localhost:3100/delovi/kocioni-diskovi                # one Lighthouse run: style passes, long tasks
 npx playwright test tests/e2e/reveal.spec.ts                          # the reveal rule (16 tests on two viewports)
 ```
 

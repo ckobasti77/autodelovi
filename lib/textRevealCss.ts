@@ -40,7 +40,11 @@ function buildBlockRevealCss(live: string): string {
         animation: rv-rise ${rise.durationMs}ms ${EASE_OUT} ${delay} both;
         will-change: transform, opacity;
       }
-      ${liteScope} ${riseSel} { animation-name: rv-rise-lite; animation-duration: ${lite.durationMs}ms; }
+      ${liteScope} ${riseSel} {
+        animation-name: rv-fade;
+        animation-duration: ${lite.durationMs}ms;
+        will-change: opacity;
+      }
       ${fadeSel} {
         animation: rv-fade ${fade.durationMs}ms ${EASE_OUT} ${delay} both;
         will-change: opacity;
@@ -49,7 +53,7 @@ function buildBlockRevealCss(live: string): string {
     }
     @media screen and (prefers-reduced-motion: no-preference) and ${narrowMedia} {
       ${riseSel} { animation-name: rv-rise-narrow; }
-      ${liteScope} ${riseSel} { animation-name: rv-rise-lite; }
+      ${liteScope} ${riseSel} { animation-name: rv-fade; }
     }
     @media (scripting: none) {
       :is(${blockHiddenSelector}) { opacity: 1 !important; }
@@ -59,9 +63,6 @@ function buildBlockRevealCss(live: string): string {
     }
     @keyframes rv-rise-narrow {
       from { opacity: 0; transform: translate3d(0, ${rise.liftNarrowPx}px, 0); }
-    }
-    @keyframes rv-rise-lite {
-      from { opacity: 0; transform: translate3d(0, ${lite.liftPx}px, 0); }
     }
     @keyframes rv-fade {
       from { opacity: 0; }

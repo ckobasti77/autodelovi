@@ -7,7 +7,7 @@ Project-level rules that every change must respect. The full architecture lives 
 Everything on the site arrives once as it scrolls into view, through one system. Copy arrives word by word; everything else — cards, images, CTA blocks, form groups, rows, tables — arrives as blocks, in sequence. The system is already wired into the root layout.
 
 - **Copy** needs nothing except plain semantic markup (`h1`–`h6`, `p`, `li`, `dt`, `dd`, `blockquote`, `figcaption`, or `data-reveal="text"`).
-- **Blocks** are marked: `data-reveal="block"` on one element, or `data-reveal-group` on a container (its direct children are the items). Components: `Reveal`, `RevealGroup`, `RevealItem` from `components/reveal/Reveal.tsx`.
+- **Blocks** are marked: `data-reveal="block"` on one element, or `data-reveal-group` on a container with `data-reveal="item"` on its direct children. Components: `Reveal`, `RevealGroup`, `RevealItem` from `components/reveal/Reveal.tsx`.
 - **First screen**: copy uses `RevealText`, blocks use `eager` (`data-reveal-eager`). Both start from a visible frame, so the LCP element is never hidden.
 
 ### The one rule
@@ -20,7 +20,7 @@ Everything on the site arrives once as it scrolls into view, through one system.
 |---|---|
 | `constants/revealConfig.ts` | What copy and blocks share and what blocks add: `REVEAL_LINE` (0.18 — the one trigger line), `REVEAL_TALL_RATIO` (0.6), `BLOCK_REVEAL` (timings for default / lite / eager / fade, attribute names), `blockSelector`, `blockHiddenSelector`, `eagerSelector`, `staggerDelayMs`. |
 | `constants/textRevealConfig.ts` | Copy: `candidateSelector`, `skipSelector`, `containerSelector`, `hiddenSelector`, `TEXT_REVEAL` (`maxWords: 60`, `enterRatio` = `REVEAL_LINE`, `failsafeMs: 3500`, word/block/LCP timings, class and attribute names). |
-| `lib/textRevealCss.ts` | Generates the inline stylesheet (hiding rules and every keyframe: `tr-word`, `tr-word-lite`, `tr-block`, `tr-lcp`, `rv-rise`, `rv-rise-narrow`, `rv-rise-lite`, `rv-fade`, `rv-eager`), the `<noscript>` stylesheet and the boot script from the two configs. |
+| `lib/textRevealCss.ts` | Generates the inline stylesheet (hiding rules and every keyframe: `tr-word`, `tr-word-lite`, `tr-block`, `tr-lcp`, `rv-rise`, `rv-rise-narrow`, `rv-fade`, `rv-eager`), the `<noscript>` stylesheet and the boot script from the two configs. |
 | `app/layout.tsx` | Inlines the stylesheet, the boot script (adds `tr-js` and `tr-hide` to `<html>`, arms the `tr-failsafe` timer) and the `<noscript>` fallback in `<head>`; mounts `<TextRevealGlobal />`. `<html>` has `suppressHydrationWarning` because the boot script adds classes before hydration. |
 | `components/TextRevealGlobal.tsx` | **The engine, for copy and blocks**: one IntersectionObserver (root shrunk from the bottom by `REVEAL_LINE`, thresholds 0 and 0.5), one MutationObserver for streamed, client-navigated and newly listed content. It only splits words, sets `--i` / `--n` / `--rv-d` and flips `data-reveal-state`; CSS keyframes animate. No GSAP. |
 | `lib/textReveal.ts` | `splitWords(el)` / `restoreWords(el)` — the only splitter. Moves each original text node into the first word span of its run (never clones), splits on breaking whitespace only (a no-break space keeps „12.990 RSD“ together), and restores the exact original nodes and values. Also `countWords`, `hasFlexOrGridText`, `shuffledOrder` (deterministic, seeded by the text). |
@@ -34,7 +34,7 @@ An element starts when its **vertical centre** crosses the line `REVEAL_LINE` (1
 ### What is hidden, exactly
 
 - **Copy**: `hiddenSelector` = eligible candidates that are not inside another eligible candidate and not inside a skipped subtree. A candidate is **not eligible** (so never hidden) when it contains a container: `img, picture, video, canvas, iframe, button, input, select, textarea, form, table, article, section, ul, ol, dl, [data-reveal="off"], [role="status"], [aria-live]`. Block targets are in `skipSelector`: copy inside a block arrives with the block and is not split.
-- **Blocks**: `blockHiddenSelector` = `[data-reveal="block"]` and `[data-reveal-group] > *`, minus `[data-reveal-eager]`, `[data-reveal="off"]` and `[hidden]`, outermost only (a block inside a block is not a target).
+- **Blocks**: `blockHiddenSelector` = `[data-reveal="block"]` and `[data-reveal-group] > [data-reveal="item"]`, minus `[data-reveal-eager]` and `[hidden]`, outermost only (a block inside a block is not a target). Items are marked on purpose: a subject like `[data-reveal-group] > *` is universal, and a rule with a universal subject that depends on a class of `<html>` restyles the whole document every time that class changes (D330).
 
 The stylesheet and the observer use the **same selector strings**, so anything hidden is guaranteed to be found. The copy rule uses `:has()` and only applies under `html.tr-hide`, which is dropped once every element carries a state; the block rule is a plain attribute selector and stays for the life of the page (blocks added later are hidden from their first frame). After that only `[data-reveal-state="pending"]` hides.
 
@@ -42,7 +42,7 @@ The stylesheet and the observer use the **same selector strings**, so anything h
 
 - Copy, word mode (≤ 60 words): `opacity 0 → 1`, `blur(8px) → 0`, `translateY(.35em) → 0`, 620 ms `sk.out`, stagger `min(28 ms, 520 ms / words)`, random order; no blur on coarse pointers and below 768 px. Block mode (> 60 words, or text sitting directly in a flex/grid box): the element fades as one (opacity + 6 px lift, 500 ms).
 - Blocks: `opacity 0 → 1` + 16 px lift (12 px below 768 px), 520 ms `sk.out`, transform and opacity only, `will-change` only while running. Blocks that cross the line in the same observer callback form a batch per group and start 60 ms apart in document order, the last at most 180 ms after the first (batch ≤ 700 ms) — a grid reveals row by row, card by card.
-- `data-reveal-tone="lite"` on an ancestor (the admin shell): 6 px, 320 ms, 30 ms apart. `data-reveal-variant="fade"`: opacity only (wide tables).
+- `data-reveal-tone="lite"` on an ancestor (the admin shell): opacity only, 320 ms, 30 ms apart — in a working tool nothing moves after it appears (D331). `data-reveal-variant="fade"`: opacity only on the storefront (wide tables).
 - `data-reveal-eager`: CSS only from the first paint, `opacity .4 → 1` + 10 px, 480 ms; the engine never touches it.
 - Each element once; nothing reverses. The DOM is restored after each animation (word spans removed, `--rv-d` removed).
 - Content already scrolled past (anchor jumps, scroll restoration, fast flings) and content that receives keyboard focus is shown instantly; content on the last screen of a page, which can never reach the line, starts 48 px into view, and everything on screen starts at the very end of the page.
@@ -69,8 +69,9 @@ Case 2 still owes a word-by-word arrival: use `splitWords` / `restoreWords` from
 4. **Cloning text nodes** — React loses the node it owns. Move it.
 5. **Touching server HTML before hydration** — any DOM mutation on dehydrated markup causes a hydration mismatch; TextRevealGlobal guards against it, other code must too.
 6. **A block mark on the first screen without `eager`** — the element stays hidden until hydration; if it is the LCP element, LCP waits for JavaScript.
-7. **Nesting block targets, or marking chrome** — a block inside a block is ignored; a header, dialog, sheet, menu or toast must be readable at once and has its own GSAP entrance.
-8. **A block mark on an element GSAP transforms** — the keyframe and the tween write the same `transform`.
+7. **A rule the whole document depends on** — `:root:has(…)`, a universal subject (`> *`, `*`) behind a class of `<html>`, or a custom property written on the root after first paint. Each one adds a full-document style pass per change (step 26 measured +400 ms of style work on the category page from four of them; `scripts/qa/ui-boost/lh-trace.mjs` shows the passes).
+8. **Nesting block targets, or marking chrome** — a block inside a block is ignored; a header, dialog, sheet, menu or toast must be readable at once and has its own GSAP entrance.
+9. **A block mark on an element GSAP transforms** — the keyframe and the tween write the same `transform`.
 
 ### Checking your work
 

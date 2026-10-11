@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { PlusIcon } from "@phosphor-icons/react/dist/ssr";
 
-import { RevealGroup } from "@/components/reveal/Reveal";
+import { RevealGroup, RevealItem } from "@/components/reveal/Reveal";
 import { Button } from "@/components/ui/Button";
 
 type Item = { slug: string; name: string };
@@ -22,10 +22,10 @@ export function RevealMore({ items }: { items: Item[] }) {
         className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-(--gutter) lg:grid-cols-4"
       >
         {items.slice(0, count).map((item) => (
-          <li key={item.slug} className="rounded-md border border-line bg-surface-1 p-4">
+          <RevealItem as="li" key={item.slug} className="panel p-4">
             <h3 className="type-h4 text-ink-1">{item.name}</h3>
             <p className="type-code-s text-ink-3">{item.slug}</p>
-          </li>
+          </RevealItem>
         ))}
       </RevealGroup>
       <Button

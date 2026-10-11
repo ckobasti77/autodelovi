@@ -7,15 +7,16 @@
  *
  *   <Reveal>…a CTA block, an image, a form group…</Reveal>
  *
- *   <RevealGroup as="ul" className="grid …">          // children enter as a staggered batch
+ *   <RevealGroup as="ul" className="grid …">          // its items enter as a staggered batch
  *     {items.map((item, i) => (
  *       <RevealItem as="li" key={item.id} index={i} eager={i < 4}>…</RevealItem>
  *     ))}
  *   </RevealGroup>
  *
  * The same thing as attributes, where a wrapper element is not wanted:
- * `data-reveal="block"` on one element, `data-reveal-group` on a container (its direct children
- * are the items), `data-reveal-eager` on a block or item that is on the first screen.
+ * `data-reveal="block"` on one element; `data-reveal-group` on a container with
+ * `data-reveal="item"` on its direct children; `data-reveal-eager` on a block or item that is on
+ * the first screen.
  *
  * Rules:
  * - Mark the thing that moves and never nest: a block inside a block is not revealed twice, and
@@ -29,7 +30,20 @@ import type { CSSProperties, HTMLAttributes, ReactNode } from "react";
 import { BLOCK_REVEAL } from "@/constants/revealConfig";
 
 type RevealTag =
-  "div" | "section" | "article" | "aside" | "header" | "footer" | "ul" | "ol" | "li" | "dl" | "figure" | "nav" | "span" | "p";
+  | "div"
+  | "section"
+  | "article"
+  | "aside"
+  | "header"
+  | "footer"
+  | "ul"
+  | "ol"
+  | "li"
+  | "dl"
+  | "figure"
+  | "nav"
+  | "span"
+  | "p";
 
 type CustomProperties = CSSProperties & Record<`--${string}`, string | number>;
 
@@ -81,8 +95,8 @@ export function Reveal({
 export type RevealGroupProps = BaseProps;
 
 /**
- * A container whose direct children enter as one staggered batch (row by row in a grid). The
- * children may be plain elements; use `RevealItem` when the first ones are on the first screen.
+ * A container whose items enter as one staggered batch (row by row in a grid). Its direct
+ * children are `RevealItem`s (or carry `data-reveal="item"`); an unmarked child is left alone.
  */
 export function RevealGroup({ as = "div", children, ...rest }: RevealGroupProps) {
   const Tag = as as "div";
@@ -100,7 +114,7 @@ export type RevealItemProps = BaseProps & {
   index?: number;
 };
 
-/** A direct child of `RevealGroup`. Only needed to mark the first items `eager`. */
+/** A direct child of `RevealGroup`: one item of the batch. `eager` for the first screen. */
 export function RevealItem({
   as = "div",
   eager = false,
@@ -113,6 +127,7 @@ export function RevealItem({
   return (
     <Tag
       {...rest}
+      data-reveal="item"
       {...(eager ? { [BLOCK_REVEAL.attrs.eager]: "" } : {})}
       style={eager ? { ...style, ...eagerDelay(index) } : style}
     >

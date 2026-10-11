@@ -111,7 +111,10 @@ export default function RevealLabPage() {
           </dl>
         </header>
 
-        <section aria-labelledby="lab-solo" className="flex flex-col gap-6 border-t border-line py-16">
+        <section
+          aria-labelledby="lab-solo"
+          className="flex flex-col gap-6 border-t border-line py-16"
+        >
           <h2 id="lab-solo" className="type-display-m text-ink-1">
             Jedan blok
           </h2>
@@ -130,7 +133,10 @@ export default function RevealLabPage() {
           </Reveal>
         </section>
 
-        <section aria-labelledby="lab-grid" className="flex flex-col gap-6 border-t border-line py-16">
+        <section
+          aria-labelledby="lab-grid"
+          className="flex flex-col gap-6 border-t border-line py-16"
+        >
           <h2 id="lab-grid" className="type-display-m text-ink-1">
             Mreža kartica
           </h2>
@@ -144,14 +150,17 @@ export default function RevealLabPage() {
             className="grid grid-cols-2 gap-3 sm:gap-(--gutter) lg:grid-cols-4"
           >
             {PARTS.map(([slug, name]) => (
-              <li key={slug}>
+              <RevealItem as="li" key={slug}>
                 <PartCard slug={slug} name={name} />
-              </li>
+              </RevealItem>
             ))}
           </RevealGroup>
         </section>
 
-        <section aria-labelledby="lab-tall" className="flex flex-col gap-6 border-t border-line py-16">
+        <section
+          aria-labelledby="lab-tall"
+          className="flex flex-col gap-6 border-t border-line py-16"
+        >
           <h2 id="lab-tall" className="type-display-m text-ink-1">
             Visok blok
           </h2>
@@ -160,8 +169,8 @@ export default function RevealLabPage() {
             className="flex min-h-[90svh] flex-col justify-between rounded-lg border border-line bg-bg-raised p-6"
           >
             <p className="max-w-[52ch] type-body text-ink-2">
-              Blok viši od {Math.round(REVEAL_TALL_RATIO * 100)}&nbsp;% ekrana ne čeka svoju sredinu:
-              pojavljuje se čim mu gornja ivica pređe liniju.
+              Blok viši od {Math.round(REVEAL_TALL_RATIO * 100)}&nbsp;% ekrana ne čeka svoju
+              sredinu: pojavljuje se čim mu gornja ivica pređe liniju.
             </p>
             <p className="type-code-s text-ink-3">kraj visokog bloka</p>
           </Reveal>
@@ -183,15 +192,18 @@ export default function RevealLabPage() {
             className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-(--gutter)"
           >
             {PARTS.slice(4, 7).map(([slug, name]) => (
-              <li key={slug} className="rounded-md border border-line bg-surface-1 p-4">
+              <RevealItem as="li" key={slug} className="panel p-4">
                 <h3 className="type-h4 text-ink-1">{name}</h3>
                 <p className="type-code-s text-ink-3">{slug}</p>
-              </li>
+              </RevealItem>
             ))}
           </RevealGroup>
         </section>
 
-        <section aria-labelledby="lab-more" className="flex flex-col gap-6 border-t border-line py-16">
+        <section
+          aria-labelledby="lab-more"
+          className="flex flex-col gap-6 border-t border-line py-16"
+        >
           <h2 id="lab-more" className="type-display-m text-ink-1">
             Naknadno dodate stavke
           </h2>
@@ -217,10 +229,14 @@ export default function RevealLabPage() {
             className="flex flex-col divide-y divide-line-faint rounded-md border border-line bg-surface-1"
           >
             {PARTS.slice(0, 5).map(([slug, name]) => (
-              <li key={slug} className="flex items-center justify-between gap-4 px-4 py-3">
+              <RevealItem
+                as="li"
+                key={slug}
+                className="flex items-center justify-between gap-4 px-4 py-3"
+              >
                 <span className="type-body-s text-ink-1">{name}</span>
                 <span className="type-code-s text-ink-3">{slug}</span>
-              </li>
+              </RevealItem>
             ))}
           </RevealGroup>
         </section>

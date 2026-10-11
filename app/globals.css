@@ -921,9 +921,9 @@
   transform-origin: left center;
   transform: scale(calc(1 + (1 - var(--header-p)) * 0.08));
 }
-/* On a page that opens with its own search field (home, search, 404) the header field is
-   hidden at the very top — not focusable either — and returns as the page scrolls. Without
-   scroll timelines it simply stays. */
+/* On a page that opens with its own search field (home, search — HeaderSearch adds the class
+   by route) the header field is hidden at the very top — not focusable either — and returns
+   as the page scrolls. Without scroll timelines it simply stays. */
 /* The first frame is `visibility: hidden`; its opacity stays just above 0 so the reveal
    contract check („no text at opacity 0“) keeps meaning what it says. */
 @keyframes sk-header-search-in {
@@ -942,11 +942,9 @@
 }
 @utility site-header-search {
   @supports (animation-timeline: scroll()) {
-    :root:has([data-own-search]) & {
-      animation: sk-header-search-in linear both;
-      animation-timeline: scroll(root block);
-      animation-range: 0px 96px;
-    }
+    animation: sk-header-search-in linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0px 96px;
   }
 }
 

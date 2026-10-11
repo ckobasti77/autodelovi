@@ -1,11 +1,13 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { MagnifyingGlassIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { cn } from "@/lib/cn";
 import { Kbd } from "@/components/ui/Kbd";
+import { OWN_SEARCH_ROUTES } from "@/constants/routes";
 import { TEST_IDS } from "@/constants/testIds";
 import { useLatched } from "@/lib/hooks/useLatched";
 import { useSearchPanel } from "@/lib/search/panel";
@@ -28,6 +30,11 @@ function isTypingTarget(target: EventTarget | null): boolean {
  * a top-anchored dialog. „/“ opens it from anywhere outside a text field; the mobile action
  * bar opens the same dialog through `useSearchPanel`.
  *
+ * On a page that opens with its own search field (`OWN_SEARCH_ROUTES`: home, search) the header
+ * field steps back while the page is at its top (`site-header-search`, a CSS scroll timeline).
+ * The route decides — known on the server — not a `:root:has(…)` selector, which made the
+ * browser restyle the whole document on every DOM change (D330).
+ *
  * Only the trigger hydrates with the page; the dialog (radix Dialog + SearchBox) loads on
  * intent and stays mounted after the first open so its exit animation and focus return run
  * (PERF-01). The trigger is a plain button, so it carries the popup state itself.
@@ -36,6 +43,7 @@ export function HeaderSearch({ className }: { className?: string }) {
   const open = useSearchPanel((s) => s.open);
   const setOpen = useSearchPanel((s) => s.setOpen);
   const mounted = useLatched(open);
+  const stepsBack = OWN_SEARCH_ROUTES.includes(usePathname());
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
@@ -61,7 +69,8 @@ export function HeaderSearch({ className }: { className?: string }) {
         aria-expanded={open}
         aria-keyshortcuts="/"
         className={cn(
-          "site-header-search flex h-11 min-w-0 cursor-pointer items-center gap-2.5 rounded-sm border border-line-strong bg-surface-2 px-3 text-left type-body-s text-ink-3 shadow-rest transition-control hover:border-ink-4 hover:bg-surface-3 hover:text-ink-2 lg:h-10",
+          "flex h-11 min-w-0 cursor-pointer items-center gap-2.5 rounded-sm border border-line-strong bg-surface-2 px-3 text-left type-body-s text-ink-3 shadow-rest transition-control hover:border-ink-4 hover:bg-surface-3 hover:text-ink-2 lg:h-10",
+          stepsBack && "site-header-search",
           className,
         )}
       >

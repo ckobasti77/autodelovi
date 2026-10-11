@@ -201,7 +201,8 @@ describe("generated stylesheet and boot script", () => {
     const gated = css
       .split("@media ")
       .filter((chunk) => /animation(-name)?:/.test(chunk.split("@keyframes")[0] ?? ""));
-    for (const chunk of gated) expect(chunk).toMatch(/^screen and \(prefers-reduced-motion: no-preference\)/);
+    for (const chunk of gated)
+      expect(chunk).toMatch(/^screen and \(prefers-reduced-motion: no-preference\)/);
   });
 
   it("hides blocks with a plain selector and animates them once: rise, lite, fade, eager", () => {
@@ -219,14 +220,22 @@ describe("generated stylesheet and boot script", () => {
       `[${attrs.state}="running"][${attrs.mode}="${modes.rise}"]{animation: rv-rise ${rise.durationMs}ms`,
     );
     expect(css).toContain(`var(${delayVar},0ms) both;will-change: transform,opacity;`);
-    expect(css).toContain(`animation-name: rv-rise-lite;animation-duration: ${lite.durationMs}ms;`);
+    // The lite tone (admin) is opacity only: nothing moves under the pointer.
+    expect(css).toContain(
+      `animation-name: rv-fade;animation-duration: ${lite.durationMs}ms;will-change: opacity;`,
+    );
+    expect(css).not.toContain("rv-rise-lite");
     expect(css).toContain(
       `[${attrs.state}="running"][${attrs.mode}="${modes.fade}"]{animation: rv-fade ${fade.durationMs}ms`,
     );
     expect(css).toContain(squash(`${eagerSelector}{animation: rv-eager ${eager.durationMs}ms`));
     // Transform and opacity only; the eager variant starts from a visible frame (LCP-safe).
-    expect(css).toMatch(/@keyframes rv-rise\{from\{opacity: 0;transform: translate3d\(0,16px,0\);\}\}/);
-    expect(css).toContain(`@keyframes rv-eager{from{opacity: ${eager.fromOpacity};transform: translate3d(0,`);
+    expect(css).toMatch(
+      /@keyframes rv-rise\{from\{opacity: 0;transform: translate3d\(0,16px,0\);\}\}/,
+    );
+    expect(css).toContain(
+      `@keyframes rv-eager{from{opacity: ${eager.fromOpacity};transform: translate3d(0,`,
+    );
     expect(css).not.toMatch(/@keyframes rv-[a-z-]+\{from\{[^}]*filter/);
     expect(eager.fromOpacity).toBeGreaterThan(0);
   });
