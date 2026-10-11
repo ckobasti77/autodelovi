@@ -25,6 +25,7 @@ param(
   [switch]$DryRun,
   [switch]$SkipPreflight,
   [switch]$NoUpdate,
+  [switch]$Update,
   [ValidateSet('max', 'balanced', 'lean')][string]$EffortProfile = 'max',
   [string]$Model = '',
   [string]$ClaudeExe = '',
@@ -64,6 +65,8 @@ $script:Claude = $null
 $script:Features = @{ Effort = $true; PermissionPrompts = $true; Name = $true; AppendFile = $true; Goal = $true; Ultracode = $true }
 $script:PermissionMode = 'auto'
 $script:ChildEnv = @{}
+$script:LockSkipped = $false
+$script:LockPath = ''
 $script:Current = $null
 $script:LastActivity = ''
 $script:LastStatusWrite = [datetime]::MinValue
@@ -523,11 +526,21 @@ function Invoke-ClaudeRun {
     $res.ExitCode = 0
     return $res
   }
-  $psi = New-StartInfo -Exe $script:Claude -ArgList $ArgList -ExtraEnv $script:ChildEnv
-  $p = New-Object System.Diagnostics.Process
-  $p.StartInfo = $psi
-  try { [void]$p.Start() } catch {
-    $res.Stderr = 'Ne mogu da pokrenem claude: ' + $_.Exception.Message
+  $p = $null
+  $startErr = ''
+  for ($startTry = 0; $startTry -lt 3; $startTry++) {
+    [void](Confirm-ClaudeExe)
+    $psi = New-StartInfo -Exe $script:Claude -ArgList $ArgList -ExtraEnv $script:ChildEnv
+    $cand = New-Object System.Diagnostics.Process
+    $cand.StartInfo = $psi
+    try { [void]$cand.Start(); $p = $cand; $startErr = ''; break } catch {
+      $startErr = $_.Exception.Message
+      Write-PLog ('Pokretanje claude nije uspelo ({0}/3): {1}' -f ($startTry + 1), $startErr) 'WARN'
+      Wait-Seconds 20
+    }
+  }
+  if ($null -eq $p) {
+    $res.Stderr = 'Ne mogu da pokrenem claude: ' + $startErr
     $res.ExitCode = -1
     Write-TextFile $errPath $res.Stderr
     return $res
@@ -685,7 +698,27 @@ function Wait-Seconds {
   Wait-Until ((Get-Date).AddSeconds($Seconds))
 }
 
+function Confirm-ClaudeExe {
+  # Claude Code can be updated by another claude process on this PC (an interactive session, an IDE
+  # extension, another project's pipeline) while this pipeline runs. The npm package is then replaced
+  # and the path resolved at preflight can vanish for a while: re-resolve and wait instead of failing.
+  for ($i = 0; $i -lt 20; $i++) {
+    if ($script:Claude -and $script:Claude.File -and (Test-Path -LiteralPath $script:Claude.File)) { return $true }
+    $r = $null
+    try { $r = Resolve-Claude } catch { $r = $null }
+    if ($r -and $r.File -and (Test-Path -LiteralPath $r.File)) {
+      $script:Claude = $r
+      Write-PLog ('Claude Code je u međuvremenu ažuriran — koristim {0}' -f $r.File) 'WARN'
+      return $true
+    }
+    if ($i -eq 0) { Write-PLog 'claude trenutno ne postoji na disku (verovatno se upravo ažurira) — čekam da se pojavi.' 'WARN' }
+    Wait-Seconds 30
+  }
+  return $false
+}
+
 function Test-ClaudeReady {
+  [void](Confirm-ClaudeExe)
   $a = @('-p', '--model', $Model, '--output-format', 'json', '--permission-mode', 'dontAsk', '--no-session-persistence')
   if ($script:Features.Effort) { $a += @('--effort', 'low') }
   $a += 'Reply with the single word READY.'
@@ -1017,23 +1050,50 @@ function Find-Chrome {
   return $null
 }
 
-function Resolve-Claude {
-  if ($ClaudeExe) { return (Resolve-Exe $ClaudeExe) }
+function Get-ClaudeCandidates {
+  $c = New-Object System.Collections.ArrayList
+  if ($ClaudeExe) {
+    $r = Resolve-Exe $ClaudeExe
+    if ($r) { [void]$c.Add($r) }
+    return ,$c
+  }
   if ($IsWin) {
-    $native = Join-Path $env:USERPROFILE '.local\bin\claude.exe'
-    if (Test-Path $native) { return (Resolve-Exe $native) }
+    $fixed = @(
+      (Join-Path $env:USERPROFILE '.local\bin\claude.exe'),
+      (Join-Path $env:APPDATA 'npm\node_modules\@anthropic-ai\claude-code\bin\claude.exe')
+    )
+    foreach ($f in $fixed) { if ($f -and (Test-Path -LiteralPath $f)) { [void]$c.Add(@{ File = $f; Prefix = @(); ViaCmd = $false }) } }
   }
-  $r = Resolve-Exe 'claude'
-  if ($r -and $r.ViaCmd) {
-    # npm shim: prefer running the package entry with node directly (more robust quoting)
-    $dir = Split-Path -Parent $r.File
-    $cli = Join-Path $dir 'node_modules\@anthropic-ai\claude-code\cli.js'
-    $binExe = Join-Path $dir 'node_modules\@anthropic-ai\claude-code\bin\claude.exe'
-    if (Test-Path $binExe) { return @{ File = $binExe; Prefix = @(); ViaCmd = $false } }
-    $node = Resolve-Exe 'node'
-    if ((Test-Path $cli) -and $node -and -not $node.ViaCmd) { return @{ File = $node.File; Prefix = @($cli); ViaCmd = $false } }
+  # Every claude on PATH, not only the first one: a broken npm shim (for example from another
+  # Node version under nvm) can shadow a working install.
+  $node = Resolve-Exe 'node'
+  foreach ($cmd in @(Get-Command claude -CommandType Application -All -ErrorAction SilentlyContinue)) {
+    $r = Resolve-Exe $cmd.Source
+    if (-not $r) { continue }
+    if ($r.ViaCmd) {
+      $dir = Split-Path -Parent $r.File
+      $binExe = Join-Path $dir 'node_modules\@anthropic-ai\claude-code\bin\claude.exe'
+      $cli = Join-Path $dir 'node_modules\@anthropic-ai\claude-code\cli.js'
+      if (Test-Path -LiteralPath $binExe) { [void]$c.Add(@{ File = $binExe; Prefix = @(); ViaCmd = $false }) }
+      if ((Test-Path -LiteralPath $cli) -and $node -and -not $node.ViaCmd) { [void]$c.Add(@{ File = $node.File; Prefix = @($cli); ViaCmd = $false }) }
+    }
+    [void]$c.Add($r)
   }
-  return $r
+  return ,$c
+}
+
+function Resolve-Claude {
+  # The first candidate that really answers `claude --version` wins.
+  $seen = @{}
+  foreach ($cand in (Get-ClaudeCandidates)) {
+    if ($null -eq $cand) { continue }
+    $key = ([string]$cand.File) + '|' + ((@($cand.Prefix)) -join ' ')
+    if ($seen.ContainsKey($key)) { continue }
+    $seen[$key] = $true
+    $v = Invoke-Native -Exe $cand -ArgList @('--version') -TimeoutSec 90
+    if ($v.ExitCode -eq 0 -and (Get-SemVer $v.StdOut)) { return $cand }
+  }
+  return $null
 }
 
 function Sync-Skills {
@@ -1147,7 +1207,7 @@ function Invoke-Preflight {
   Write-PLog ('Claude: {0} {1}' -f $script:Claude.File, ($script:Claude.Prefix -join ' '))
   $v = Invoke-Native -Exe $script:Claude -ArgList @('--version') -TimeoutSec 120
   $ver = Get-SemVer $v.StdOut
-  if (-not $NoUpdate -and -not $DryRun) {
+  if ($Update -and -not $NoUpdate -and -not $DryRun) {
     Write-PLog 'Ažuriram Claude Code (claude update)...'
     $u = Invoke-Native -Exe $script:Claude -ArgList @('update') -TimeoutSec 900
     $ut = (($u.StdOut + ' ' + $u.StdErr) -replace '\s+', ' ').Trim()
@@ -1312,6 +1372,29 @@ try {
   Write-Host '  SKLOP — autonomni build pipeline (Claude Code · Opus 5.5)' -ForegroundColor Cyan
   Write-Host '  Ne zatvaraj ovaj prozor. Status: pipeline\STATUS.md' -ForegroundColor Cyan
   Write-Host ''
+  # Only one pipeline at a time: a second window would resume the same sessions and its preflight
+  # (claude update) can replace claude.exe under the running one.
+  if (-not $DryRun -and -not $ListSteps) {
+    $lockPath = Join-Path $PipelineDir '.run.lock'
+    $otherPid = 0
+    if (Test-Path -LiteralPath $lockPath) {
+      $raw = ''
+      try { $raw = [string](Get-Content -LiteralPath $lockPath -TotalCount 1 -ErrorAction Stop) } catch { $raw = '' }
+      [void][int]::TryParse($raw.Trim(), [ref]$otherPid)
+    }
+    if ($otherPid -gt 0 -and $otherPid -ne $PID) {
+      $other = Get-Process -Id $otherPid -ErrorAction SilentlyContinue
+      if ($other -and ($other.ProcessName -match '^(powershell|pwsh)$')) {
+        Write-Host ''
+        Write-Host ('  SKLOP pipeline već radi u drugom prozoru (PID {0}). Ovaj prozor ništa ne menja — možeš da ga zatvoriš.' -f $otherPid) -ForegroundColor Yellow
+        Write-Host ''
+        $script:LockSkipped = $true
+        exit 3
+      }
+    }
+    Write-TextFile $lockPath ([string]$PID)
+    $script:LockPath = $lockPath
+  }
   Write-PLog ('Projekat: ' + $ProjectDir)
   Set-KeepAwake $true
   if ($SkipPreflight -or $DryRun) {
@@ -1460,12 +1543,20 @@ try {
   Write-PLog ($_.ScriptStackTrace) 'ERROR'
   Send-Notify 'SKLOP pipeline GRESKA' $_.Exception.Message
 } finally {
-  if ($script:Current) {
-    $st = Get-StepState $script:Current.Id
-    if ($st.status -eq 'running' -or $st.status -eq 'waiting_limit') { $st.status = 'pending'; Save-State }
-    $script:Current = $null
+  if (-not $script:LockSkipped) {
+    if ($script:Current) {
+      $st = Get-StepState $script:Current.Id
+      if ($st.status -eq 'running' -or $st.status -eq 'waiting_limit') { $st.status = 'pending'; Save-State }
+      $script:Current = $null
+    }
+    Write-Status -Force
+    Set-KeepAwake $false
+    if ($script:LockPath) {
+      try {
+        $owner = [string](Get-Content -LiteralPath $script:LockPath -TotalCount 1 -ErrorAction Stop)
+        if ($owner.Trim() -eq [string]$PID) { Remove-Item -LiteralPath $script:LockPath -Force -ErrorAction SilentlyContinue }
+      } catch { }
+    }
   }
-  Write-Status -Force
-  Set-KeepAwake $false
 }
 exit $exitCode
