@@ -1,10 +1,18 @@
-<!-- META | Korak 27 | Opus 5.5 | effort: max | sesija: nastavak #26 | mode: auto -->
+<!-- META | Korak 27 | Opus 5.5 | effort: max | sesija: NOVA | mode: auto -->
 # Step 27 — UI/UX ultra boost, part 2: every page
 
-Continue from step 26 and follow the plan in `docs/design/UI-BOOST.md`. Apply the new system (small radii, the reveal system, the upgraded components and shell) to every template, and make each page clearly better.
+This step runs in a **new session**. Step 26 built the system (the small radius scale, the site-wide reveal system, the upgraded components and shell) in a very long session that was compacted. You do not share its memory, so rebuild the picture from the files before changing anything.
 
-## Skills (invoke each by name again before you start)
-Invoke these even though step 26 already did; earlier skill guidance may have been compacted out of this session:
+## Read first
+- `docs/design/UI-BOOST.md`: the plan, per component and per template.
+- `docs/progress/26.md`: step 26's checklist and handoff notes, including the note about two processes running briefly at the same time.
+- `pipeline/logs/26-result.md`: the step 26 report and its notes for part 2.
+- `docs/design/DESIGN-SYSTEM.md`: the final radius scale, the reveal rule (trigger line and stagger) and the components.
+- The reveal primitive, its constant and its Playwright test. Find them through UI-BOOST.md and `git log --oneline -40`.
+
+Then apply the new system to every template and make each page clearly better.
+
+## Skills (invoke each by name with the Skill tool before you start)
 - impeccable (critique and polish)
 - design-taste-frontend
 - ui-ux-pro-max
