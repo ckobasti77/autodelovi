@@ -3,6 +3,18 @@
 
 Continue from step 26 and follow the plan in `docs/design/UI-BOOST.md`. Apply the new system (small radii, the reveal system, the upgraded components and shell) to every template, and make each page clearly better.
 
+## Skills (invoke each by name again before you start)
+Invoke these even though step 26 already did; earlier skill guidance may have been compacted out of this session:
+- impeccable (critique and polish)
+- design-taste-frontend
+- ui-ux-pro-max
+- design-dna
+- motion-design
+- text-reveal
+- gsap-scrolltrigger, gsap-react, gsap-performance
+- threejs-interaction (for the 3D explorer UI)
+
+## Work
 Work page by page. After each one, take screenshots at 390 and 1440 px (scroll through first so the reveals have run), look at them, and run a quick impeccable critique. Fix what it finds before moving on.
 
 1. **Home:**

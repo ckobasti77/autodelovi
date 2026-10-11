@@ -16,7 +16,7 @@ The owner wants the whole site to feel much more modern, polished and premium. I
 - in `docs/DECISIONS.md`: D121 (content-visibility) and the performance decisions (PERF-0x)
 
 ## Skills (invoke by name)
-impeccable (critique first, then polish), design-taste-frontend, ui-ux-pro-max, design-dna, motion-design, text-reveal, gsap-scrolltrigger, gsap-react, gsap-performance, apple-design (for craft details only, not its visual style).
+impeccable (critique first, then polish), design-taste-frontend, ui-ux-pro-max, design-dna, motion-design, text-reveal, gsap-core, gsap-timeline, gsap-scrolltrigger, gsap-react, gsap-performance, apple-design (for craft details only, not its visual style).
 
 ## The owner's requirements (non-negotiable)
 
