@@ -1,6 +1,6 @@
-# SKLOP — Architecture
+# Euromotors Plus · OEM Parts — Architecture
 
-> Part of the SKLOP docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
+> Part of the Euromotors Plus docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
 
 Related: [DATA-MODEL](DATA-MODEL.md) · [ROUTES](ROUTES.md) · [SECURITY](SECURITY.md) (auth) · [3D-CONTRACT](3D-CONTRACT.md) · [DECISIONS](DECISIONS.md) (D1–D22).
 

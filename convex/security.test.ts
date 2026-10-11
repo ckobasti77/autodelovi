@@ -33,7 +33,7 @@ afterEach(() => {
 describe("owner seed (P1)", () => {
   test("an existing account with the owner's e-mail but another password is never promoted", async () => {
     const t = makeT();
-    vi.stubEnv("SEED_ADMIN_EMAIL", "vlasnik@sklop.test");
+    vi.stubEnv("SEED_ADMIN_EMAIL", "vlasnik@primer.test");
     // The attacker registered the owner's address first, with their own password (simulated by
     // creating that account through the seed, then taking the role away).
     vi.stubEnv("SEED_ADMIN_PASSWORD", "napadac-lozinka-1");
@@ -42,7 +42,7 @@ describe("owner seed (P1)", () => {
     const attacker = await t.run(async (ctx) =>
       ctx.db
         .query("users")
-        .withIndex("email", (q) => q.eq("email", "vlasnik@sklop.test"))
+        .withIndex("email", (q) => q.eq("email", "vlasnik@primer.test"))
         .unique(),
     );
     await t.run(async (ctx) => ctx.db.patch("users", attacker!._id, { role: "customer" }));
@@ -73,7 +73,7 @@ describe("mechanic terms (P2)", () => {
         mb: VALID_MB,
         contactPerson: "Zaposleni",
         phone: "+381641234567",
-        email: "staff@sklop.test",
+        email: "staff@primer.test",
         city: "Beograd",
         address: "Ulica 2",
         serviceTypes: ["mehanika"],
@@ -150,14 +150,14 @@ describe("privacy tools (ZZPL)", () => {
     const w = await setupWorld(t);
     await w.asCustomerA.mutation(api.carts.addItem, { productId: w.products.disc, quantity: 1 });
     const order = await w.asCustomerA.mutation(api.orders.submit, {
-      ...checkoutArgs({ contact: { ...checkoutArgs().contact, email: "a@sklop.test" } }),
+      ...checkoutArgs({ contact: { ...checkoutArgs().contact, email: "a@primer.test" } }),
       vehicle: { label: "Golf 7", vin: "WVWZZZAUZHW000001" },
       note: "Pozovite posle 17 h",
     });
     const inquiry = await w.asCustomerA.mutation(api.inquiries.submit, {
       kind: "part",
       message: "Treba mi pumpa vode",
-      contact: { name: "Ana A", email: "a@sklop.test", preferredChannel: "email" },
+      contact: { name: "Ana A", email: "a@primer.test", preferredChannel: "email" },
       consent: checkoutArgs().consent,
       honeypot: "",
       startedAt: Date.now() - 60_000,
@@ -170,7 +170,7 @@ describe("privacy tools (ZZPL)", () => {
     });
     await w.anon.mutation(api.orders.submit, {
       guestToken: GUEST,
-      ...checkoutArgs({ contact: { ...checkoutArgs().contact, email: "a@sklop.test" } }),
+      ...checkoutArgs({ contact: { ...checkoutArgs().contact, email: "a@primer.test" } }),
     });
     await t.run(async (ctx) => {
       await ctx.db.insert("savedVehicles", { userId: w.customerA, label: "Golf 7", vin: "X" });
@@ -211,9 +211,9 @@ describe("privacy tools (ZZPL)", () => {
       cookieConsents: 1,
     });
     const data = JSON.parse(out.json) as { account: { email: string }; orders: unknown[] };
-    expect(data.account.email).toBe("a@sklop.test");
+    expect(data.account.email).toBe("a@primer.test");
     // Guest lookup by e-mail finds the same orders.
-    const guest = await w.asOwner.query(api.privacy.customerData, { email: "A@Sklop.test" });
+    const guest = await w.asOwner.query(api.privacy.customerData, { email: "A@Primer.test" });
     expect(guest.counts.orders).toBe(2);
   });
 
@@ -247,7 +247,7 @@ describe("privacy tools (ZZPL)", () => {
         user: await ctx.db.get("users", w.customerA),
         inquiries: await ctx.db
           .query("inquiries")
-          .withIndex("by_contact_email", (q) => q.eq("contact.email", "a@sklop.test"))
+          .withIndex("by_contact_email", (q) => q.eq("contact.email", "a@primer.test"))
           .take(5),
         vehicles: await ctx.db
           .query("savedVehicles")
@@ -286,7 +286,7 @@ describe("privacy tools (ZZPL)", () => {
         .withIndex("by_action_and_at", (q) => q.eq("action", "privacy.anonymize"))
         .first(),
     );
-    expect(audit?.summary).not.toContain("a@sklop.test");
+    expect(audit?.summary).not.toContain("a@primer.test");
   });
 });
 
@@ -343,7 +343,7 @@ describe("customer role", () => {
     const t = makeT();
     const w = await setupWorld(t);
     const legacy = await t.run(async (ctx) =>
-      ctx.db.insert("users", { email: "stari@sklop.test", name: "Stari", status: "active" }),
+      ctx.db.insert("users", { email: "stari@primer.test", name: "Stari", status: "active" }),
     );
     const before = await w.asStaff.query(api.customersAdmin.list, {
       paginationOpts: { numItems: 100, cursor: null },
@@ -376,7 +376,7 @@ describe("status-link secret", () => {
     const t = makeT();
     await setupWorld(t);
     vi.stubEnv("LINK_TOKEN_SECRET", "");
-    vi.stubEnv("SITE_URL", "https://sklop.rs");
+    vi.stubEnv("SITE_URL", "https://primer.rs");
     expect(
       await errorCode(() => t.query(internal.testing.orderStatusToken, { number: "SK-1" })),
     ).toMatch(/^PLAIN:.*LINK_TOKEN_SECRET/);
@@ -390,16 +390,16 @@ describe("status-link secret", () => {
 describe("outbox masking", () => {
   test("status, proforma and unsubscribe links are masked for staff", () => {
     const text = [
-      `https://sklop.rs/porudzbina/${TOKEN}`,
-      `https://sklop.rs/porudzbina/${TOKEN}/predracun`,
-      `https://sklop.rs/upit/${TOKEN}`,
-      `https://sklop.rs/obavestenja/odjava/${TOKEN}`,
-      "https://sklop.rs/porudzbina",
+      `https://primer.rs/porudzbina/${TOKEN}`,
+      `https://primer.rs/porudzbina/${TOKEN}/predracun`,
+      `https://primer.rs/upit/${TOKEN}`,
+      `https://primer.rs/obavestenja/odjava/${TOKEN}`,
+      "https://primer.rs/porudzbina",
     ].join("\n");
     const masked = maskSecrets("order_status_changed", "order", text);
     expect(masked).not.toContain(TOKEN);
-    expect(masked).toContain("https://sklop.rs/porudzbina/••••••••/predracun");
-    expect(masked).toContain("https://sklop.rs/porudzbina\n".trim());
+    expect(masked).toContain("https://primer.rs/porudzbina/••••••••/predracun");
+    expect(masked).toContain("https://primer.rs/porudzbina\n".trim());
   });
 });
 

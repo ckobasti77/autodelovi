@@ -5,6 +5,7 @@
  */
 import type { QueryCtx } from "../_generated/server";
 import { withoutSystemFields } from "./docs";
+import { BRAND_ALTERNATE_NAME, BRAND_NAME, DEFAULT_TITLE_SUFFIX } from "../../lib/domain/brand";
 import type { Settings } from "./settingsSchema";
 
 export const DEFAULT_SETTINGS: Omit<Settings, "updatedAt"> = {
@@ -26,7 +27,8 @@ export const DEFAULT_SETTINGS: Omit<Settings, "updatedAt"> = {
   ],
   holidays: [],
   brand: {
-    name: "SKLOP",
+    name: BRAND_NAME,
+    alternateName: BRAND_ALTERNATE_NAME,
     tagline: "Rasklopi auto. Nađi deo.",
     orderPrefix: "SK",
     inquiryPrefix: "UP",
@@ -121,7 +123,7 @@ export const DEFAULT_SETTINGS: Omit<Settings, "updatedAt"> = {
     lowStockEmail: true,
   },
   seo: {
-    titleSuffix: " | SKLOP",
+    titleSuffix: DEFAULT_TITLE_SUFFIX,
     defaultDescription:
       "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra: pretraga po OEM broju i vozilu, cene sa PDV-om, stanje i dostava.",
     landingMin: { brand: 8, model: 6, generationPage: 10 },

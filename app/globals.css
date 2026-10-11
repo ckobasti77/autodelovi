@@ -632,13 +632,6 @@
   letter-spacing: var(--text-code-s--letter-spacing);
   text-transform: uppercase;
 }
-@utility type-wordmark {
-  font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  line-height: 1;
-}
 
 /* ── Layout utilities ────────────────────────────────────────── */
 @utility px-page {

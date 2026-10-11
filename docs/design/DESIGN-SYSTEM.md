@@ -1,6 +1,6 @@
-# SKLOP — Design system „Rendgen“
+# Euromotors Plus · OEM Parts — Design system „Rendgen“
 
-> Part of the SKLOP docs — index: [../README.md](../README.md). Business intent: `pipeline/BRIEF.md` §4, §8, §9. Constraints: [../DESIGN-BRIEF.md](../DESIGN-BRIEF.md). 3D: [../3D-CONTRACT.md](../3D-CONTRACT.md).
+> Part of the Euromotors Plus docs — index: [../README.md](../README.md). Business intent: `pipeline/BRIEF.md` §4, §8, §9. Constraints: [../DESIGN-BRIEF.md](../DESIGN-BRIEF.md). 3D: [../3D-CONTRACT.md](../3D-CONTRACT.md).
 > Machine-readable companions: [tokens.json](tokens.json) (colors + contrast pairs), [design-dna.json](design-dna.json) (3-dimension DNA). Proof on screen: `/lab/koncept` (step 03), later `/styleguide` (step 04). Critique log: [CRITIQUE.md](CRITIQUE.md).
 > Status: written in step 03 (2026-09-29). Step 04 transcribes §3–§8 into `app/globals.css` `@theme`, `constants/motion.ts`, `constants/textRevealConfig.ts`, `lib/fonts.ts`. Change a value here first, then in code.
 
@@ -33,7 +33,7 @@
 ## 1. Concept and principles
 
 ### 1.1 Concept statement — „Rendgen“
-SKLOP shows the car the way a mechanic thinks about it: an assembly of parts, each with a number. The interface is **an engineering X-ray at night** — a graphite field, warm drawing ink, one signal colour for what is yours and what comes next, and a cold rim light that only the car wears. The car is the only spectacle; everything around it is a calm technical sheet: hairlines, a title block, true dimensions, part codes in a monospace. Nothing decorates unless it measures something. The result should feel like a premium engineering exhibition you can buy from — not a tuning shop, not a generic shop template, not a game HUD.
+The site shows the car the way a mechanic thinks about it: an assembly of parts, each with a number. The interface is **an engineering X-ray at night** — a graphite field, warm drawing ink, one signal colour for what is yours and what comes next, and a cold rim light that only the car wears. The car is the only spectacle; everything around it is a calm technical sheet: hairlines, a title block, true dimensions, part codes in a monospace. Nothing decorates unless it measures something. The result should feel like a premium engineering exhibition you can buy from — not a tuning shop, not a generic shop template, not a game HUD.
 
 ### 1.2 Five principles
 
@@ -60,37 +60,105 @@ SKLOP shows the car the way a mechanic thinks about it: an assembly of parts, ea
 
 ## 2. Brand
 
-### 2.1 Wordmark (typographic, name from config)
-- Text = `site.brand.name` (config, overridden by settings) rendered **uppercase via CSS** (source text stays as typed), Archivo Expanded 700, tracking `0.08em`, colour `ink-1`. No image logo, so renaming takes one config change.
-- Sizes: header 18 px (≥ 1024 px) / 17 px (< 1024 px); admin sidebar 15 px; footer 16 px; e-mail 20 px (live text in the HTML e-mail with a system fallback: `Arial Black, Arial, sans-serif`, letter-spacing 2px); OG 28 px.
-- Lockup: mark (§2.2) at 22 px + 10 px gap + wordmark; the mark's base sits on the wordmark baseline, the lifted part rises above cap height. Clear space: one cap height (≈ 0.69 em) on every side. Minimum size 14 px wordmark / 16 px mark.
-- The tagline „Rasklopi auto. Nađi deo.“ is never locked to the wordmark; it lives as the hero statement and in the OG frame.
+> Rewritten in step 25 for the Euromotors Plus by OEM Parts logo (designed in step 24). Owner-facing guide: [`docs/brand/LOGO.md`](../brand/LOGO.md); brief: [`BRAND-BRIEF.md`](../brand/BRAND-BRIEF.md); decisions D299–D315. The working name „SKLOP“ and its mark are retired (§2.8).
 
-### 2.2 Mark — „izvučen deo“ (the lifted part)
-- A miniature **exploded view**: a slotted base (ink) with one part lifted out of its slot along a dashed assembly axis; the lifted part is **`#FF6B1A`** — the part you find („Rasklopi auto. Nađi deo.“), the only orange in the mark (orange = yours/next). It does not depend on the brand name, so it survives a rename. Files: `docs/design/brand/mark.svg`, `app-icon.svg`, `favicon-16.svg`; preview `brand/icons-preview.png`.
-- Why not the first idea (a drafting centre mark): rendered large, every centre-mark variant read as a rifle-scope reticle or a target (`brand/mark-variants.png`) — an aggressive association for a calm parts brand. Alternatives rendered in `brand/mark-variants-2.png`: an exploded three-layer stack (reads as an I-beam / "layers" icon) and the initial „S“ (generic, changes on rename).
-- Geometry (24-unit grid): part `rect x 7 y 2.5 w 10 h 5 rx 0.75` orange; axis `M12 8.5v4.5`, stroke 1.25, dash 1.3/1.1, ink; base `M3 14h4v2.5h10V14h4v7H3z` ink (the 10-unit slot matches the part width — "it fits here"). Ink = `currentColor` (`#F1ECE3` on dark, `#121518` on light).
-- Favicon / app icon (step 04 builds `app/icon.svg`, `app/favicon.ico`, `app/apple-icon.png`, `app/manifest.ts` icons from these files):
-  - master 512 × 512: graphite rounded square `#0D0F11`, radius 22 % (113 px), mark in `#F1ECE3` with the orange part, scaled to 62 % of the tile, centred;
-  - `favicon.ico` 16/32/48 — the 16 px variant is pixel-snapped (part 6 × 4 px, base with a 6 px slot) and drops the dashed axis;
-  - `apple-icon.png` 180 × 180, no transparency; maskable 192/512 with the mark inside the 80 % safe zone;
-  - `theme_color` `#0D0F11`, `background_color` `#0D0F11`.
+### 2.1 Names (D307)
 
-### 2.3 OG image frame (1200 × 630)
+| Name | Value | Used for |
+|---|---|---|
+| Brand | **Euromotors Plus** | `og:site_name`, `application-name`, JSON-LD `name`, From name and running copy of e-mails, feed store title, copyright line when no legal name is set |
+| Known shop name | **OEM Parts** | JSON-LD `alternateName` (WebSite and the business node), the end of SEO titles where there is room |
+| Lockup | **Euromotors Plus by OEM Parts** | accessible name / alt text of artwork that shows the signature; manifest `name` |
+| Home-screen label | **Euromotors** | manifest `short_name` (12 characters are shown at most) |
+
+- One source: `lib/domain/brand.ts`, read by `config/site.ts` (`site.brand.name`, `.alternateName`, `.lockupName`, `.shortName`) and by the Convex settings defaults. Admin → Podešavanja → Firma overrides the name and the known shop name at runtime. The logo is artwork and does not follow that field.
+- In running copy write „Euromotors Plus“ (never „Euromotors+“) and, where the shop is meant, „OEM Parts“. „by“ belongs to the lockup only.
+- The legal name, address, IDs and contact data always come from settings; nothing is hard-coded and empty values are hidden.
+- **Title suffix (D308):** „ | Euromotors Plus · OEM Parts“ when the whole title fits in 60 characters, otherwise „ | Euromotors Plus“, otherwise none. A title that fits on its own is never shortened to make room for the suffix. The root template is `%s | Euromotors Plus · OEM Parts`.
+- The tagline „Rasklopi auto. Nađi deo.“ is never locked to the logo; it lives as the hero statement and in the OG frame.
+
+### 2.2 The logo system
+
+Geometry, lettering and the reasons are in D301–D306 and `scripts/brand/logo/logo.mjs` (the single source). In short: a bracket-E drawn from the stroke weights of the letters, holding an orange plus; EUROMOTORS over „PLUS — rule — by OEM Parts“ in Archivo Expanded 800; the signature redrawn from the shop's known lettering (solid italic „OEM“, outlined „Parts“).
+
+| Form | Kit file (`public/brand/`) | Component | Minimum height | Width at the minimum |
+|---|---|---|---|---|
+| Primary: mark + name + signature | `logo-horizontal-*` | `LogoLockup` | 56 px | 445 px |
+| Header: mark + name, no signature | `logo-header-*` | `LogoHeader` | 28 px | 236 px |
+| Stacked: mark above the name | `logo-stacked-*` | `LogoLockup variant="stacked"` | 120 px | 343 px |
+| Mark | `mark-*` | `LogoMark` | 16 px | 13 px |
+| Name only, dual (sign, van), OEM Parts alone | `logo-wordmark-*`, `logo-dual-*`, `oem-parts-*` | not used on the site | 48 / 48 / 40 px | — |
+
+- **Colour.** Ink `#F1ECE3` on night, `#121518` on paper; the plus is always `#FF6B1A`. In components the ink is `currentColor` (`text-ink-1`) and the plus is `fill-accent`, so a logo is correct on both themes and in print without a variant prop. One-colour files (`-black`, `-white`, `-orange`) are for print and exist only in the kit.
+- **Clear space.** One plus (9 grid units, about 40 % of the primary lockup's height) on every side.
+- **Never:** stretch, rotate or recolour; add a shadow, an outline or a box; set the name in type next to the mark; use the plus without the bracket; show a form under its minimum — take the next smaller form instead.
+
+### 2.3 Components
+
+| File | Role |
+|---|---|
+| `components/brand/Logo.tsx` | `LogoMark`, `LogoHeader`, `LogoLockup` (horizontal / stacked), `LogoLockupResponsive` (stacked below 480 px, horizontal from there, both drawn from one set of outlines through `<defs>` + `<use>`), `LogoDocument` (print documents). Server and client safe. |
+| `components/brand/BrandLink.tsx` | The logo as the link home: `compact="phone"` (mark below 640 px), `"always"` (mark), `"never"` (lockup). 44 px target. |
+| `components/brand/logoPaths.ts` | Path data. **Generated** by `node scripts/brand/logo/site.mjs` from the kit — never edited by hand. |
+
+- Size by height (`h-7 w-auto`); the width follows the artwork.
+- Accessible name: `label` (default: the brand name, or the lockup name for forms with the signature) gives `role="img"` + `aria-label`. Inside a link pass `label={null}` — the link carries the name („Euromotors Plus — početna“) and the artwork is `aria-hidden`.
+- Logos sit in chrome (`data-reveal="off"` on the header and the admin shell) or are images, so the text reveal never touches them.
+
+### 2.4 Where which form
+
+| Surface | Form and size |
+|---|---|
+| Shop header, ads-landing header | Mark 32 px below 640 px; header lockup 28 px from 640 px, 32 px from 1024 px |
+| Footer | Its own row above the columns: primary lockup 56 px from 480 px; stacked form across the column below (343 px wide = 120 px; 328 px on a 360 px screen) |
+| 404 / 401 / 403 shell, global error | Header lockup 28 / 32 px |
+| Admin sidebar (night) | Header lockup 28 px in the 268 px sidebar and in the drawer; mark 28 px on the 64 px rail |
+| Admin invite card (paper) | Header lockup 28 px |
+| Predračun (customer and admin), otpremnica | Primary lockup 56 px on paper and from 768 px; header lockup 32 px on narrow screens |
+| E-mail | `email-header@2x.png` (§2.6) |
+| OG image | Primary lockup 56 px (§2.7) |
+
+### 2.5 Icons and manifest
+
+- `app/favicon.ico` — 16, 32 and 48 px, each drawn on its own pixel grid (0 blended pixels). `app/apple-icon.png` — 180 px, opaque. Both are byte copies of the kit files.
+- `app/icon.svg` — the 512 px tile (ground `#0D0F11`, radius 22 %); media queries swap the vector master for the pixel-drawn marks when a browser renders it at tab size (≤ 24 / 40 / 56 px).
+- Manifest (`app/manifest.ts`): `name` „Euromotors Plus by OEM Parts“, `short_name` „Euromotors“, `theme_color` and `background_color` `#0D0F11`; icons `/brand/icon-192.png`, `icon-512.png` (purpose any) and `icon-maskable-192.png`, `icon-maskable-512.png` (mark inside the 80 % safe zone).
+- JSON-LD `logo`: `/brand/icon-512.png`.
+- All of it is written by `scripts/brand/logo/build.mjs` (kit) and `scripts/brand/logo/site.mjs` (the `app/` files and `logoPaths.ts`).
+
+### 2.6 E-mail header
+
+- `public/brand/email-header@2x.png`: the primary lockup in the paper colours on white, 954 × 176 px shown at 477 × 88 (16 px of white around the artwork), fluid below 620 px. SVG is not used: several mail clients strip it.
+- The header band is white in both colour schemes (a PNG on white cannot follow dark mode); the document number sits under the logo in mono 13 px.
+- `alt="Euromotors Plus by OEM Parts"`, styled (Arial Black 18 px, ink) so it stands in for the logo when images are blocked. The image links home.
+- The file is served by the site, so e-mails show it once `SITE_URL` is the real domain.
+
+### 2.7 OG image frame (1200 × 630)
+
 ```
 ┌──────────────────────────────────────────────────────────────────────┐ bg #0D0F11
-│  ▣ SKLOP                                              [render 520²]  │ 1px frame inset 32 px, line #2C3238,
-│                                                        rim-lit part   │ 14 px corner ticks line-strong
-│  KOČIONI DISKOVI                                       or car poster  │ title: Archivo Expanded 700 caps,
-│  ZA VW GOLF VII                                                       │ 52 px / 1.0, ≤ 3 lines, ink-1
-│                                                                       │ meta: Martian Mono 22 px ink-3
-│  OEM 5Q0 615 301 F · Brembo                                           │
+│  [E+] EUROMOTORS                                      [render 440²]  │ 1px frame inset 32 px, line #2C3238,
+│       PLUS ─── by OEM Parts                            rim-lit part   │ 14 px corner ticks line-strong
+│                                                        or car poster  │ logo: primary lockup, 56 px high
+│  KOČIONI DISKOVI                                                      │ (445 px), top 64, left 72
+│  ZA VW GOLF VII                                                       │ title: Archivo Expanded 700 caps,
+│                                                                       │ 52 px / 1.0, ≤ 3 lines, ink-1
+│  OEM 5Q0 615 301 F · Brembo                                           │ meta: Martian Mono 22 px ink-3
 │ ─┬────┬────┬────┬────┬────┬────┬────┬───  [domain] · Rasklopi auto.  │ ruler ticks every 12 px (line), no labels
 └──────────────────────────────────────────────────────────────────────┘
 ```
-- Rendered proof: `docs/design/brand/og-frame.html` → `brand/og-frame.png` (category example). The domain comes from `NEXT_PUBLIC_SITE_URL`/settings and is omitted while unknown.
+- Rendered by `lib/og/frame.tsx` from the same outlines as the site's logo (`logoPaths.ts`). Proofs: `docs/brand/site/og-default.png`, `og-category.png`, `og-product.png`. The domain comes from `NEXT_PUBLIC_SITE_URL` and is omitted while unknown.
 - Product OG: render/photo + name + OEM + manufacturer, **no price** (SEO-ADS §J). Category OG: category render + „{n} artikala“. Default OG: hero poster + tagline.
 - Fonts for `ImageResponse` (ttf/otf/woff only): `assets/fonts/og/archivo-*.woff` (generated by `scripts/fonts/fetch-display-fonts.mjs`), `@fontsource/public-sans` and `@fontsource/martian-mono` WOFF files (`latin` + `latin-ext`).
+
+### 2.8 Retired: the working name „SKLOP“ and the mark „izvučen deo“
+
+Kept here as a record; nothing below is in use since step 25 (2026-10-11).
+
+- **Wordmark.** The working name set as live text: uppercase through CSS, Archivo Expanded 700, tracking 0.08 em, ink-1; header 18 px, footer 16 px, admin sidebar 15 px, e-mail 20 px (Arial Black fallback), OG 28 px. The utility `type-wordmark` is removed.
+- **Mark „izvučen deo“ (the lifted part).** A miniature exploded view on a 24-unit grid: a slotted base in ink with one part lifted out along a dashed assembly axis, the part in `#FF6B1A`. Geometry: part `rect x 7 y 2.5 w 10 h 5 rx 0.75`; axis `M12 8.5v4.5`, stroke 1.25, dash 1.3/1.1; base `M3 14h4v2.5h10V14h4v7H3z`. Rejected before it: a drafting centre mark (read as a rifle-scope reticle), a three-layer stack, the initial „S“.
+- **Files that remain for reference:** `docs/design/brand/` (`mark.svg`, `app-icon.svg`, `favicon-16.svg`, previews, the old `og-frame.html` / `og-frame.png`). Removed from the site: `components/shell/BrandMark.tsx`, `public/icons/`, `scripts/brand/build-icons.mjs` (it would redraw the old icons over the new ones), the table-cell drawing of the mark in the e-mail header.
+- **Why it was replaced.** The client's company is Euromotors Plus and customers know the shop as OEM Parts; the placeholder had no recognition to carry over (BRAND-BRIEF §2).
 
 ---
 
@@ -749,7 +817,7 @@ Legend: `[ ]` control · `( )` chip · `▣` render/image · `≡` list · `—`
 
 ### 10.1 Home `/`
 ```
-┌─ header 64 ─ [mark] SKLOP  Delovi  Vozila  Za majstore  Upit po broju šasije     Pozovite  Viber  [nalog] [korpa 2] ┐
+┌─ header 64 ─ [logo §2.4]   Delovi  Vozila  Za majstore  Upit po broju šasije     Pozovite  Viber  [nalog] [korpa 2] ┐
 │ HERO (pinned, 320 vh track)                                                                                        │
 │ RASKLOPI                      ← display-xl caps, 3 lines          ┌ callout (on hover/selection) ┐                    │
 │ AUTO.                                                              │ Turbina (turbopunjač)        │   ┌ title block ──┐ │
@@ -859,7 +927,7 @@ Mobile: gallery full width 4:3 → name → codes → fitment → price + stock 
 ### 10.10 Admin shell and dashboard `/admin`
 ```
 ┌ sidebar 232 (night) ┐┌ top bar 56 (paper): breadcrumb · ⌘K search · [bell 3] · user ────────────────────────────┐
-│ [mark] SKLOP ADMIN   ││ PREGLED — danas 29.09.2026.                                                             │
+│ [logo §2.4]          ││ PREGLED — danas 29.09.2026.                                                             │
 │ Pregled              ││ KPI row (links, not boxes): Porudžbine danas 7 · Vrednost 86.420 RSD · Upiti bez odgovora│
 │ Porudžbine       4   ││   2 (najstariji 2 h 14 min, SLA) · Majstori na čekanju 1 · Malo na stanju 12            │
 │ Upiti            2   ││ ┌ Porudžbine po danima (30 d, bars, today accent) ┐ ┌ Traženo, a nemamo (top 10 queries) ┐│

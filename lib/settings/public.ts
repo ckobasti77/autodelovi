@@ -34,7 +34,7 @@ export type SettingsCompany = {
 export type PublicSettingsLike = {
   company: SettingsCompany;
   hours: SettingsHours;
-  brand: { name: string; tagline: string };
+  brand: { name: string; alternateName?: string; tagline: string };
   commerce: {
     freeShippingOverPara: number;
     quoteValidityDays: number;

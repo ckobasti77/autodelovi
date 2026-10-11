@@ -13,6 +13,7 @@ import { formatRSD } from "@/lib/format/money";
 import { formatPhone } from "@/lib/format/phone";
 import { DELIVERY_LABEL, PAYMENT_LABEL } from "@/lib/i18n/sr/shop";
 import { CompanySetupNotice } from "@/components/admin/ui";
+import { LogoDocument } from "@/components/brand/Logo";
 
 type Detail = NonNullable<FunctionReturnType<typeof api.ordersAdmin.get>>;
 type Settings = FunctionReturnType<typeof api.settings.getAdmin>;
@@ -50,6 +51,7 @@ function Header({ title, o, s }: { title: string; o: Detail["order"]; s: Setting
   return (
     <div className="flex flex-wrap items-start justify-between gap-6 border-b-2 border-ink-1 pb-4">
       <div className="flex flex-col gap-0.5 type-body-s text-ink-2">
+        <LogoDocument className="mb-4" />
         {seller.map((line, i) => (
           <span key={i} className={i === 0 ? "text-[1.0625rem] font-bold text-ink-1" : ""}>
             {line}

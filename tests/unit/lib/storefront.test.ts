@@ -98,7 +98,7 @@ describe("attribution capture", () => {
   const now = 1_790_000_000_000;
   it("reads campaign parameters and an external referrer", () => {
     const t = touchFromUrl(
-      new URL("https://sklop.rs/delovi/turbina?utm_source=google&utm_medium=cpc&gclid=abc123"),
+      new URL("https://primer.rs/delovi/turbina?utm_source=google&utm_medium=cpc&gclid=abc123"),
       "https://www.google.com/search?q=turbina",
       now,
     );
@@ -113,7 +113,7 @@ describe("attribution capture", () => {
   });
 
   it("ignores internal navigation without campaign signals", () => {
-    expect(touchFromUrl(new URL("https://sklop.rs/deo/x"), "https://sklop.rs/delovi", now)).toBeNull();
+    expect(touchFromUrl(new URL("https://primer.rs/deo/x"), "https://primer.rs/delovi", now)).toBeNull();
   });
 });
 
@@ -142,25 +142,25 @@ describe("settings → public shapes", () => {
     const s: PublicSettingsLike = {
       company: { legalName: "", address: { street: "", city: "", postalCode: "" }, phones: [], bankAccounts: [] },
       hours: [],
-      brand: { name: "SKLOP", tagline: "" },
+      brand: { name: "Euromotors Plus", tagline: "" },
       commerce: { freeShippingOverPara: 1_000_000, quoteValidityDays: 7, etaText: "" },
       deliveryMethods: [
         { code: "courier", label: "Kurir", description: "", pricePara: 45_000, freeOverPara: 1_000_000, etaText: "" },
       ],
     };
-    const v = placeholderValues(s, "https://sklop.rs/");
+    const v = placeholderValues(s, "https://primer.rs/");
     expect(v["firma.naziv"]).toBe("");
     expect(v["firma.pib"]).toBe("");
     expect(v["dostava.kurir.cena"]).toBe("450 RSD");
     expect(v["dostava.besplatnoPreko"]).toBe("10.000 RSD");
-    expect(v.sajt).toBe("sklop.rs");
+    expect(v.sajt).toBe("primer.rs");
   });
 });
 
 describe("SEO helpers", () => {
   it("keeps titles within budget and escapes JSON-LD", () => {
-    expect(pageTitle("Kočioni diskovi za VW, Audi, Škoda, SEAT", " | SKLOP")).toBe(
-      "Kočioni diskovi za VW, Audi, Škoda, SEAT | SKLOP",
+    expect(pageTitle("Kočioni diskovi za VW, Audi, Škoda, SEAT", " | Euromotors Plus")).toBe(
+      "Kočioni diskovi za VW, Audi, Škoda, SEAT | Euromotors Plus",
     );
     expect(clampText("a ".repeat(100), 20).length).toBeLessThanOrEqual(20);
     expect(serializeJsonLd({ name: "</script><b>" })).not.toContain("</script>");

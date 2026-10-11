@@ -3,17 +3,12 @@ import "server-only";
 import { formatNumber } from "@/lib/format/number";
 import { pluralSr } from "@/lib/format/plural";
 import { vehicleText } from "@/lib/seo/landingCopy";
-import {
-  getCategory,
-  getLanding,
-  getSettingsPublic,
-  resolveVehicle,
-} from "@/lib/server/catalog-cache";
+import { getCategory, getLanding, resolveVehicle } from "@/lib/server/catalog-cache";
 import { ogFrame, ogImageData } from "@/lib/og/frame";
 
 /** Landing OG (category × brand / model): category render + vehicle + counts. */
 export async function landingOgImage(kategorija: string, marka: string, model?: string) {
-  const [category, vehicle, stats, settings] = await Promise.all([
+  const [category, vehicle, stats] = await Promise.all([
     getCategory(kategorija),
     resolveVehicle({ brandSlug: marka, ...(model ? { modelSlug: model } : {}) }),
     getLanding({
@@ -21,10 +16,9 @@ export async function landingOgImage(kategorija: string, marka: string, model?: 
       brandSlug: marka,
       ...(model ? { modelSlug: model } : {}),
     }),
-    getSettingsPublic(),
   ]);
   if (!category || !vehicle) {
-    return ogFrame({ title: "Delovi za VAG vozila", brandName: settings.brand.name });
+    return ogFrame({ title: "Delovi za VAG vozila" });
   }
   const name = vehicleText({
     brandName: vehicle.brand.name,
@@ -45,6 +39,5 @@ export async function landingOgImage(kategorija: string, marka: string, model?: 
       ? `${formatNumber(stats.productCount)} ${pluralSr(stats.productCount, ["artikal", "artikla", "artikala"])} · ${formatNumber(stats.inStockCount)} na stanju`
       : null,
     image: await ogImageData(c.thumbnailPath ?? `/images/parts/${c.slug}.webp`),
-    brandName: settings.brand.name,
   });
 }

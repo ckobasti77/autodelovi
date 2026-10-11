@@ -46,7 +46,7 @@ describe("contactLinks", () => {
     });
   });
 
-  it.each([null, undefined, "", "   ", "prodaja", "prodaja@", "pro daja@sklop.rs", "a@b"])(
+  it.each([null, undefined, "", "   ", "prodaja", "prodaja@", "pro daja@primer.rs", "a@b"])(
     "email(%j) → null",
     (value) => {
       expect(contactLinks.email(value)).toBeNull();
@@ -54,13 +54,13 @@ describe("contactLinks", () => {
   );
 
   it("builds a mailto: link, trimmed, with an encoded subject", () => {
-    expect(contactLinks.email("  prodaja@sklop.rs ")).toEqual({
+    expect(contactLinks.email("  prodaja@primer.rs ")).toEqual({
       channel: "email",
-      href: "mailto:prodaja@sklop.rs",
-      display: "prodaja@sklop.rs",
+      href: "mailto:prodaja@primer.rs",
+      display: "prodaja@primer.rs",
     });
-    expect(contactLinks.email("prodaja@sklop.rs", "Upit: 1K0 615 301 AA")?.href).toBe(
-      "mailto:prodaja@sklop.rs?subject=Upit%3A%201K0%20615%20301%20AA",
+    expect(contactLinks.email("prodaja@primer.rs", "Upit: 1K0 615 301 AA")?.href).toBe(
+      "mailto:prodaja@primer.rs?subject=Upit%3A%201K0%20615%20301%20AA",
     );
   });
 });
@@ -106,7 +106,7 @@ describe("contactLinkList", () => {
   it("orders phone, Viber, WhatsApp, e-mail", () => {
     const links = contactLinkList({
       ...emptyContact,
-      email: "prodaja@sklop.rs",
+      email: "prodaja@primer.rs",
       whatsapp: "065 111 2222",
       viber: "064 123 4567",
       phone: "011 123 4567",
@@ -116,7 +116,7 @@ describe("contactLinkList", () => {
       "tel:+381111234567",
       "viber://chat?number=%2B381641234567",
       "https://wa.me/381651112222",
-      "mailto:prodaja@sklop.rs",
+      "mailto:prodaja@primer.rs",
     ]);
   });
 

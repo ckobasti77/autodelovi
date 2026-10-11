@@ -1,6 +1,6 @@
-# SKLOP — Promenljive okruženja za puštanje uživo
+# Euromotors Plus · OEM Parts — Promenljive okruženja za puštanje uživo
 
-> Deo SKLOP dokumentacije — indeks: [README](README.md). Bezbednosni pregled: [SECURITY-AUDIT](SECURITY-AUDIT.md). Ova lista ulazi u `docs/GO-LIVE.md` (korak 23).
+> Deo dokumentacije sajta Euromotors Plus — indeks: [README](README.md). Bezbednosni pregled: [SECURITY-AUDIT](SECURITY-AUDIT.md). Ova lista ulazi u `docs/GO-LIVE.md` (korak 23).
 
 Postoje dva mesta:
 
@@ -24,7 +24,7 @@ Tajne vrednosti se **nikad** ne upisuju u kod, u git ni u poruke. Nasumičnu vre
 | `EMAIL_MODE` | ne | da | `log` (samo zapis u adminu), `test` (šalje na probnu adresu Resend-a), `live` (pravi mejlovi). |
 | `RESEND_API_KEY` | da | za mejlove | Ključ Resend naloga (HUMAN-TODO §4). |
 | `RESEND_WEBHOOK_SECRET` | da | za mejlove | Potpis Resend webhooka `https://<convex-site>/resend-webhook` (isporučeno, odbijeno…). |
-| `EMAIL_FROM` | ne | za mejlove | Pošiljalac sa proverenog domena, npr. `SKLOP <prodaja@domen.rs>`. |
+| `EMAIL_FROM` | ne | za mejlove | Pošiljalac sa proverenog domena, npr. `Euromotors Plus <prodaja@domen.rs>` (pravi domen: GO-LIVE §A). |
 | `META_CAPI_TOKEN` | da | za Meta oglase | Token za Conversions API (ADS-PLAYBOOK §6). Prazno = kanal isključen. |
 | `SEED_ADMIN_EMAIL`, `SEED_ADMIN_PASSWORD` | lozinka da | samo jednom | Za `npx convex run --prod seed:createOwner`. Pokrenuti **pre** nego što sajt bude javno dostupan; ako nalog sa tom adresom već postoji, postaje vlasnik samo ako ima baš tu lozinku. Posle prve prijave promeniti lozinku i obrisati obe promenljive (`npx convex env remove --prod …`). |
 | `E2E_TEST_HELPERS` | ne | **nikad na produkciji** | Uključuje test-pomagače (`convex/testing.ts`) samo na razvojnom deploymentu. |

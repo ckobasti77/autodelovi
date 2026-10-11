@@ -18,6 +18,7 @@ import {
   type MutationCtx,
 } from "./_generated/server";
 import { CATEGORIES, SUBCATEGORIES, SYSTEMS } from "../lib/catalog/taxonomy";
+import { BRAND_ALTERNATE_NAME, BRAND_NAME, DEFAULT_TITLE_SUFFIX } from "../lib/domain/brand";
 import { formatDocumentNumber, mbCheckDigit, pibCheckDigit } from "../lib/domain/identifiers";
 import { normalizeOem } from "../lib/domain/codes";
 import { belgradeYear, endOfBelgradeDay } from "../lib/domain/time";
@@ -492,7 +493,7 @@ export const seedDemoAccounts = internalMutation({
       if (existing) return existing._id;
       return await ctx.db.insert("users", { email, ...fields, isDemo: true });
     };
-    const mechanicUserId = await ensureUser("majstor.demo@sklop.test", {
+    const mechanicUserId = await ensureUser("majstor.demo@primer.test", {
       name: "Demo Majstor",
       firstName: "Demo",
       lastName: "Majstor",
@@ -500,7 +501,7 @@ export const seedDemoAccounts = internalMutation({
       role: "customer",
       status: "active",
     });
-    const customerId = await ensureUser("kupac.demo@sklop.test", {
+    const customerId = await ensureUser("kupac.demo@primer.test", {
       name: "Demo Kupac",
       firstName: "Demo",
       lastName: "Kupac",
@@ -533,7 +534,7 @@ export const seedDemoAccounts = internalMutation({
         mb: demoMb("2112223"),
         contactPerson: "Demo Majstor",
         phone: "+381640000001",
-        email: "majstor.demo@sklop.test",
+        email: "majstor.demo@primer.test",
         city: "Beograd",
         address: "Demo adresa bb",
         serviceTypes: ["mehanika", "dijagnostika"],
@@ -611,7 +612,7 @@ export const seedDemoOrders = internalMutation({
     };
     const mechanic = await ctx.db
       .query("users")
-      .withIndex("email", (q) => q.eq("email", "majstor.demo@sklop.test"))
+      .withIndex("email", (q) => q.eq("email", "majstor.demo@primer.test"))
       .first();
     const profile = mechanic
       ? await ctx.db
@@ -621,7 +622,7 @@ export const seedDemoOrders = internalMutation({
       : null;
     const customer = await ctx.db
       .query("users")
-      .withIndex("email", (q) => q.eq("email", "kupac.demo@sklop.test"))
+      .withIndex("email", (q) => q.eq("email", "kupac.demo@primer.test"))
       .first();
 
     type Plan = {
@@ -651,7 +652,7 @@ export const seedDemoOrders = internalMutation({
         contact: {
           firstName: "Petar",
           lastName: "Demo",
-          email: "petar.demo@sklop.test",
+          email: "petar.demo@primer.test",
           phone: "+381641000001",
         },
         delivery: "courier",
@@ -663,7 +664,7 @@ export const seedDemoOrders = internalMutation({
         contact: {
           firstName: "Jelena",
           lastName: "Demo",
-          email: "jelena.demo@sklop.test",
+          email: "jelena.demo@primer.test",
           phone: "+381641000002",
         },
         delivery: "pickup",
@@ -675,7 +676,7 @@ export const seedDemoOrders = internalMutation({
         contact: {
           firstName: "Nikola",
           lastName: "Demo",
-          email: "nikola.demo@sklop.test",
+          email: "nikola.demo@primer.test",
           phone: "+381641000003",
         },
         delivery: "courier",
@@ -691,7 +692,7 @@ export const seedDemoOrders = internalMutation({
         contact: {
           firstName: "Demo",
           lastName: "Majstor",
-          email: "majstor.demo@sklop.test",
+          email: "majstor.demo@primer.test",
           phone: "+381640000001",
         },
         delivery: "pickup",
@@ -707,7 +708,7 @@ export const seedDemoOrders = internalMutation({
         contact: {
           firstName: "Demo",
           lastName: "Kupac",
-          email: "kupac.demo@sklop.test",
+          email: "kupac.demo@primer.test",
           phone: "+381640000002",
         },
         delivery: "courier",
@@ -719,7 +720,7 @@ export const seedDemoOrders = internalMutation({
         contact: {
           firstName: "Milica",
           lastName: "Demo",
-          email: "milica.demo@sklop.test",
+          email: "milica.demo@primer.test",
           phone: "+381641000004",
         },
         delivery: "pickup",
@@ -734,7 +735,7 @@ export const seedDemoOrders = internalMutation({
         contact: {
           firstName: "Demo",
           lastName: "Majstor",
-          email: "majstor.demo@sklop.test",
+          email: "majstor.demo@primer.test",
           phone: "+381640000001",
         },
         delivery: "courier",
@@ -748,7 +749,7 @@ export const seedDemoOrders = internalMutation({
         contact: {
           firstName: "Stefan",
           lastName: "Demo",
-          email: "stefan.demo@sklop.test",
+          email: "stefan.demo@primer.test",
           phone: "+381641000005",
         },
         delivery: "courier",
@@ -792,12 +793,12 @@ export const seedDemoOrders = internalMutation({
         lines,
         customerType: plan.mechanic
           ? "mechanic"
-          : plan.contact.email === "kupac.demo@sklop.test"
+          : plan.contact.email === "kupac.demo@primer.test"
             ? "customer"
             : "guest",
         ...(plan.mechanic && mechanic
           ? { userId: mechanic._id }
-          : plan.contact.email === "kupac.demo@sklop.test" && customer
+          : plan.contact.email === "kupac.demo@primer.test" && customer
             ? { userId: customer._id }
             : {}),
         ...(plan.mechanic && profile ? { mechanicProfileId: profile._id } : {}),
@@ -855,7 +856,7 @@ export const seedDemoInquiries = internalMutation({
         kind: "part" as const,
         message: "Pumpa za vodu za Octavia III 1.6 TDI, ima li na stanju?",
         name: "Demo Kupac",
-        email: "kupac.demo@sklop.test",
+        email: "kupac.demo@primer.test",
         phone: "+381640000002",
         channel: "email" as const,
       },
@@ -865,7 +866,7 @@ export const seedDemoInquiries = internalMutation({
         message: "Nisam našao nosač motora za Tiguan 2.0 TDI 2014.",
         name: "Demo Majstor",
         phone: "+381640000001",
-        email: "majstor.demo@sklop.test",
+        email: "majstor.demo@primer.test",
         channel: "phone" as const,
         quote: true,
       },
@@ -874,7 +875,7 @@ export const seedDemoInquiries = internalMutation({
         kind: "product_question" as const,
         message: "Da li ovaj disk ide na Leon Cupra?",
         name: "Demo Pitanje",
-        email: "pitanje.demo@sklop.test",
+        email: "pitanje.demo@primer.test",
         channel: "email" as const,
       },
     ];
@@ -1243,5 +1244,128 @@ export const clearSeededCategorySeo = internalMutation({
       }
     }
     return { titles, descriptions };
+  },
+});
+
+/** Values the seed wrote before the rebrand (step 25); only these are replaced. */
+const LEGACY_BRAND_NAME = "SKLOP";
+const LEGACY_TITLE_SUFFIX = " | SKLOP";
+const LEGACY_DEMO_DOMAIN = "@sklop.test";
+const DEMO_DOMAIN = "@primer.test";
+
+/**
+ * Rebrand data part (step 25, D307–D312): moves a deployment seeded under the working name to
+ * „Euromotors Plus“. Only values that still equal what the old seed wrote are touched — a name
+ * or a title suffix the owner has typed is kept. Demo rows (`isDemo`) move from the old
+ * placeholder domain to `primer.test`. Idempotent; run with `npx convex run seed:applyRebrand`.
+ */
+export const applyRebrand = internalMutation({
+  args: {},
+  returns: v.object({
+    settings: v.array(v.string()),
+    users: v.number(),
+    mechanicProfiles: v.number(),
+    orders: v.number(),
+    inquiries: v.number(),
+  }),
+  handler: async (ctx) => {
+    const now = Date.now();
+    const changed: string[] = [];
+    const doc = await getSettingsDoc(ctx);
+    if (doc) {
+      const brand = { ...doc.brand };
+      if (brand.name.trim() === LEGACY_BRAND_NAME) {
+        brand.name = BRAND_NAME;
+        changed.push("brand.name");
+      }
+      if (brand.alternateName === undefined && brand.name === BRAND_NAME) {
+        brand.alternateName = BRAND_ALTERNATE_NAME;
+        changed.push("brand.alternateName");
+      }
+      const seo = { ...doc.seo };
+      if (seo.titleSuffix === LEGACY_TITLE_SUFFIX) {
+        seo.titleSuffix = DEFAULT_TITLE_SUFFIX;
+        changed.push("seo.titleSuffix");
+      }
+      // A sender name typed as the old brand would keep it in every From header.
+      const email =
+        doc.email?.fromName?.trim() === LEGACY_BRAND_NAME
+          ? {
+              mode: doc.email.mode,
+              ...(doc.email.replyTo !== undefined ? { replyTo: doc.email.replyTo } : {}),
+            }
+          : doc.email;
+      if (email !== doc.email) changed.push("email.fromName");
+      if (changed.length > 0) {
+        await ctx.db.patch("settings", doc._id, {
+          brand,
+          seo,
+          ...(email ? { email } : {}),
+          updatedAt: now,
+        });
+        await emitEvent(ctx, {
+          type: "settings.changed",
+          aggregateType: "settings",
+          aggregateId: "global",
+          payload: { kind: "catalog", section: "brand" },
+          dedupeKey: `settings.changed:rebrand-25:${now}`,
+          actor: SYSTEM_ACTOR,
+        });
+      }
+    }
+
+    const moved = (value: string | undefined) =>
+      value?.toLowerCase().endsWith(LEGACY_DEMO_DOMAIN)
+        ? `${value.slice(0, -LEGACY_DEMO_DOMAIN.length)}${DEMO_DOMAIN}`
+        : null;
+    const movedText = (text: string) => text.replaceAll(LEGACY_DEMO_DOMAIN, DEMO_DOMAIN);
+
+    let users = 0;
+    for (const u of await ctx.db
+      .query("users")
+      .withIndex("by_isDemo", (q) => q.eq("isDemo", true))
+      .take(500)) {
+      const email = moved(u.email);
+      if (!email) continue;
+      await ctx.db.patch("users", u._id, { email });
+      users++;
+    }
+    let mechanicProfiles = 0;
+    for (const m of await ctx.db
+      .query("mechanicProfiles")
+      .withIndex("by_isDemo", (q) => q.eq("isDemo", true))
+      .take(500)) {
+      const email = moved(m.email);
+      if (!email) continue;
+      await ctx.db.patch("mechanicProfiles", m._id, { email, updatedAt: now });
+      mechanicProfiles++;
+    }
+    let orders = 0;
+    for (const o of await ctx.db
+      .query("orders")
+      .withIndex("by_isDemo", (q) => q.eq("isDemo", true))
+      .take(500)) {
+      const email = moved(o.contact.email);
+      if (!email) continue;
+      await ctx.db.patch("orders", o._id, {
+        contact: { ...o.contact, email },
+        searchText: movedText(o.searchText),
+      });
+      orders++;
+    }
+    let inquiries = 0;
+    for (const i of await ctx.db
+      .query("inquiries")
+      .withIndex("by_isDemo", (q) => q.eq("isDemo", true))
+      .take(500)) {
+      const email = moved(i.contact.email);
+      if (!email) continue;
+      await ctx.db.patch("inquiries", i._id, {
+        contact: { ...i.contact, email },
+        searchText: movedText(i.searchText),
+      });
+      inquiries++;
+    }
+    return { settings: changed, users, mechanicProfiles, orders, inquiries };
   },
 });

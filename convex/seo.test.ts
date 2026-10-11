@@ -248,7 +248,7 @@ async function placeOrder(w: World, t: T, attribution?: typeof ATTRIBUTION_ADS) 
     guestToken: GUEST,
     ...checkoutArgs(),
     ...(attribution ? { attribution } : {}),
-    eventSourceUrl: "https://sklop.test/porudzbina",
+    eventSourceUrl: "https://primer.test/porudzbina",
   });
 }
 
@@ -293,7 +293,7 @@ describe("Meta Conversions API", () => {
       event_name: "Purchase",
       event_id: res.number,
       action_source: "website",
-      event_source_url: "https://sklop.test/porudzbina",
+      event_source_url: "https://primer.test/porudzbina",
     });
     expect(event.event_time).toBeLessThan(10_000_000_000);
     expect(event.custom_data).toMatchObject({

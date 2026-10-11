@@ -1,12 +1,12 @@
-# SKLOP — VAG parts shop, mechanic portal and back office
+# Euromotors Plus · OEM Parts — VAG parts shop, mechanic portal and back office
 
-SKLOP („Rasklopi auto. Nađi deo.“) is an online shop for a Serbian dealer of Volkswagen Group parts (VW, Audi, Škoda, SEAT, Cupra). It has three parts:
+Euromotors Plus by OEM Parts („Rasklopi auto. Nađi deo.“) is an online shop for a Serbian dealer of Volkswagen Group parts (VW, Audi, Škoda, SEAT, Cupra). It has three parts:
 
 - **Storefront** (Serbian, RSD, prices incl. 20 % PDV): a 3D X-ray car on the home page that explodes on scroll, where every part opens the in-stock products of its category; OEM-aware search; catalog with vehicle filters; product pages; a 4-step checkout with **no online payment** (cash on delivery, pay at pickup, bank transfer against a pro-forma invoice); VIN inquiries with quotes the customer accepts online.
 - **Mechanic portal** (B2B): registration and approval, discount tiers computed server-side, quick order from pasted OEM lists, reorder, favorites, customer vehicles, an XLSX price list, deferred payment for approved accounts.
 - **Admin**: dashboard, orders, inquiries and quotes, products, Excel import with dry run and rollback, categories, vehicles, stock log, customers and mechanics, price tiers, settings, staff, audit log, e-mail outbox, search and traffic-source reports, privacy tools.
 
-Working name: **SKLOP**. The name, contact and company data come from `config/site.ts` and Admin → Podešavanja, so a rename takes minutes. Empty fields are hidden on the site.
+Brand: **Euromotors Plus**, known to customers as **OEM Parts** (naming rules in `lib/domain/brand.ts`, DECISIONS D307; the working name „SKLOP“ was retired in step 25 and survives only in internal identifiers such as `window.__sklop3d`). The logo is built by `scripts/brand/logo/` and reaches the site through `components/brand/`. Contact and company data come from Admin → Podešavanja; empty fields are hidden on the site.
 
 Client-facing documents are in Serbian: [`docs/PREDAJA.md`](docs/PREDAJA.md) (handoff and admin guide), [`docs/GO-LIVE.md`](docs/GO-LIVE.md) (launch checklist), [`docs/showcase/index.html`](docs/showcase/index.html) (screenshot tour for the demo). The build history is in [`pipeline/REPORT.md`](pipeline/REPORT.md).
 
@@ -33,7 +33,7 @@ Next.js 16 differs from older versions (async `params`/`cookies()`, `proxy.ts` i
 ## Setup from zero
 
 ```bash
-git clone <repo> sklop && cd sklop
+git clone <repo> euromotors && cd euromotors
 npm install
 ```
 

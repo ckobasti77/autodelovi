@@ -6,7 +6,13 @@
  */
 import { formatRSD } from "@/lib/format/money";
 import { pluralSr } from "@/lib/format/plural";
-import { defaultTitleSuffix, DESCRIPTION_MAX, shortenWords, TITLE_MAX } from "@/lib/seo/metadata";
+import {
+  defaultTitleSuffix,
+  DESCRIPTION_MAX,
+  fitTitleSuffix,
+  shortenWords,
+  TITLE_MAX,
+} from "@/lib/seo/metadata";
 
 export type MetaText = {
   title: string;
@@ -103,7 +109,8 @@ export function productTitle(
   const code = p.code?.replace(/\s+/g, " ").trim() ?? "";
   const tail = [maker, code].filter(Boolean).join(" ");
   const full = `${name} ${tail}`.trim();
-  if (full.length + suffix.length <= TITLE_MAX) return `${full}${suffix}`;
+  const fitted = fitTitleSuffix(full, suffix);
+  if (fitted) return fitted;
   if (full.length <= TITLE_MAX) return full;
   const short = shortenWords(name, TITLE_MAX - tail.length - 1);
   if (short.length >= Math.min(MIN_SHORT_NAME, name.length)) return `${short} ${tail}`;

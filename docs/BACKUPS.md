@@ -1,12 +1,12 @@
-# SKLOP — Rezervne kopije baze i vraćanje
+# Euromotors Plus · OEM Parts — Rezervne kopije baze i vraćanje
 
-> Deo SKLOP dokumentacije — indeks: [README](README.md). Tehnički pregled: [SECURITY-AUDIT §6](SECURITY-AUDIT.md). Kod je u gitu, 3D model se pravi iz skripti — kopira se samo **baza (Convex) sa fajlovima** (slike delova, fotografije iz upita).
+> Deo dokumentacije sajta Euromotors Plus — indeks: [README](README.md). Tehnički pregled: [SECURITY-AUDIT §6](SECURITY-AUDIT.md). Kod je u gitu, 3D model se pravi iz skripti — kopira se samo **baza (Convex) sa fajlovima** (slike delova, fotografije iz upita).
 
 ## 1. Pravljenje kopije
 
 ```bash
 # iz foldera projekta; --prod = produkcija (bez toga: razvojna baza)
-npx convex export --prod --include-file-storage --path backups/sklop-2026-10-01.zip
+npx convex export --prod --include-file-storage --path backups/euromotors-2026-10-01.zip
 ```
 
 - ZIP sadrži svaku tabelu kao `<tabela>/documents.jsonl`, fajlove u `_storage/` i podatke komponenti (ograničenja zahteva, Resend).
@@ -31,7 +31,7 @@ Kopija koja nikad nije vraćena nije proverena kopija.
 **A. Brza provera (bez nove baze, 1 minut)** — da li je kopija cela i da li je baza prihvata:
 
 ```bash
-mkdir backups/provera && tar -xf backups/sklop-2026-10-01.zip -C backups/provera
+mkdir backups/provera && tar -xf backups/euromotors-2026-10-01.zip -C backups/provera
 npx convex run --prod seed:stats > backups/provera-stats.json
 BACKUP_DIR=backups/provera BACKUP_STATS=backups/provera-stats.json npx vitest run tests/unit/backup
 ```
@@ -42,9 +42,9 @@ Test proverava: sve tabele koje imaju podatke su u kopiji, **svaki zapis odgovar
 
 1. Napravite privremenu bazu sa trenutnim kodom:
    - sa Convex Pro planom: Dashboard → Settings → Deploy keys → „Preview deploy key“, pa `CONVEX_DEPLOY_KEY=<ključ> npx convex deploy --preview-create vezba-2026-10` (ime novog deploymenta piše u izlazu komande);
-   - bez Pro plana: u Dashboardu napravite zaseban besplatan projekat „sklop-vezba“, u kopiji foldera projekta pokrenite `npx convex dev --once --configure existing` i izaberite taj projekat (ime deploymenta piše u izlazu).
+   - bez Pro plana: u Dashboardu napravite zaseban besplatan projekat „euromotors-vezba“, u kopiji foldera projekta pokrenite `npx convex dev --once --configure existing` i izaberite taj projekat (ime deploymenta piše u izlazu).
 2. Proverite ime deploymenta još jednom — **nikad** ne sme biti produkcija.
-3. Vratite kopiju: `npx convex import --deployment <ime> --replace-all backups/sklop-2026-10-01.zip`
+3. Vratite kopiju: `npx convex import --deployment <ime> --replace-all backups/euromotors-2026-10-01.zip`
 4. Proverite: `npx convex run --deployment <ime> seed:stats` — brojevi moraju biti isti kao u `provera-stats.json`; otvorite nekoliko porudžbina i jednu sliku u Dashboardu tog deploymenta.
 5. Obrišite privremeni deployment i lokalne kopije (`backups/provera*`).
 

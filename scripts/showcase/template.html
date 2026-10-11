@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0D0F11">
-<title>SKLOP · prikaz radne verzije</title>
+<title>Euromotors Plus by OEM Parts · prikaz radne verzije</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='7' y='2.5' width='10' height='5' rx='.75' fill='%23FF6B1A'/%3E%3Cpath d='M3 14h4v2.5h10V14h4v7H3z' fill='%23F1ECE3'/%3E%3C/svg%3E">
 <style>
 {{fonts}}
@@ -39,8 +39,9 @@ img { display: block; max-width: 100%; height: auto; }
 /* Header -------------------------------------------------------------------------------- */
 .bar { position: sticky; top: 0; z-index: 20; background: rgb(18 21 24 / .9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--hairline); }
 .bar-in { display: flex; align-items: center; gap: 32px; height: 64px; padding-inline: var(--pad); }
-.wordmark { display: inline-flex; align-items: flex-end; gap: 10px; font: 700 18px/1 var(--display); letter-spacing: .08em; text-decoration: none; }
-.wordmark svg { transform: translateY(-2px); }
+.logo { display: inline-flex; align-items: center; flex-shrink: 0; min-height: 44px; text-decoration: none; }
+.logo svg { display: block; height: 32px; width: auto; }
+.logo .mark { display: none; }
 .bar nav { display: flex; gap: 4px; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
 .bar nav a { position: relative; padding: 10px 12px; font-size: 15px; font-weight: 500; color: var(--ink-2); text-decoration: none; white-space: nowrap; }
 .bar nav a:hover { color: var(--ink); }
@@ -148,7 +149,8 @@ dialog::backdrop { background: transparent; }
 }
 @media (max-width: 640px) {
   .bar-in { gap: 12px; }
-  .wordmark span { display: none; }
+  .logo .lockup { display: none; }
+  .logo .mark { display: block; }
   .row.two { grid-template-columns: 1fr; }
   .compare .tag { top: 8px; font-size: .625rem; } .compare .tag.l { left: 8px; } .compare .tag.r { right: 8px; }
   .intro .titleblock { grid-template-columns: 1fr; }
@@ -163,9 +165,9 @@ dialog::backdrop { background: transparent; }
 <a class="skip" href="#sadrzaj">Preskoči na sadržaj</a>
 <header class="bar">
   <div class="bar-in">
-    <a class="wordmark" href="#vrh" aria-label="SKLOP, na vrh">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="7" y="2.5" width="10" height="5" rx=".75" fill="#FF6B1A"/><path d="M12 8.5v4.5" stroke="currentColor" stroke-width="1.25" stroke-dasharray="1.3 1.1"/><path d="M3 14h4v2.5h10V14h4v7H3z" fill="currentColor"/></svg>
-      <span>SKLOP</span>
+    <a class="logo" href="#vrh" aria-label="Euromotors Plus, na vrh">
+      {{logo-header}}
+      {{logo-mark}}
     </a>
     <nav aria-label="Delovi prikaza">
       <a href="#pocetna">3D auto</a>
@@ -184,7 +186,7 @@ dialog::backdrop { background: transparent; }
     <p class="lead">Prodavnica, portal za majstore i admin za prodavca delova za Volkswagen, Audi, Škodu, SEAT i Cupru. Na snimcima je radna verzija sa demo artiklima: tako će izgledati kad se unesu pravi podaci.</p>
   </div>
   <dl class="titleblock">
-    <div><dt>Projekat</dt><dd>SKLOP, radni naziv</dd></div>
+    <div><dt>Projekat</dt><dd>Euromotors Plus by OEM Parts</dd></div>
     <div><dt>Snimljeno</dt><dd>{{date}}</dd></div>
     <div><dt>Ekrani</dt><dd>1440 px i telefon 390 px</dd></div>
     <div><dt>Plaćanje</dt><dd>Pouzećem, pri preuzimanju ili po predračunu</dd></div>

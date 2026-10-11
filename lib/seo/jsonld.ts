@@ -38,12 +38,26 @@ export function breadcrumbJsonLd(items: { label: string; href?: string }[]): Jso
   };
 }
 
-export function websiteJsonLd(name: string = site.brand.name): JsonLd {
-  return {
+/** A second name is emitted only when it says something the first does not. */
+const otherName = (name: string, alternate: string | undefined) => {
+  const alt = alternate?.trim();
+  return alt && alt.toLowerCase() !== name.trim().toLowerCase() ? alt : undefined;
+};
+
+/**
+ * The site node. `alternateName` is the shop name people search for („OEM Parts“): Google reads
+ * it as the alternative site name, `name` stays the brand.
+ */
+export function websiteJsonLd(
+  name: string = site.brand.name,
+  alternateName: string | undefined = site.brand.alternateName,
+): JsonLd {
+  return compact({
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": WEBSITE_ID(),
     name,
+    alternateName: otherName(name, alternateName),
     url: abs("/"),
     inLanguage: site.locale,
     publisher: { "@id": ORGANIZATION_ID() },
@@ -52,12 +66,14 @@ export function websiteJsonLd(name: string = site.brand.name): JsonLd {
       target: { "@type": "EntryPoint", urlTemplate: `${abs("/pretraga")}?q={search_term_string}` },
       "query-input": "required name=search_term_string",
     },
-  };
+  });
 }
 
 export type StoreInfo = {
   /** Brand (display) name; `legalName` is the registered company name when known. */
   name: string;
+  /** The shop name people know („OEM Parts“); omitted when it repeats `name`. */
+  alternateName?: string;
   legalName?: string;
   telephone?: string;
   email?: string;
@@ -70,6 +86,9 @@ export type StoreInfo = {
   /** Social / listing profiles (Google Business Profile, Facebook …) when the owner has them. */
   sameAs?: string[];
 };
+
+/** Logo of the business node (`public/brand/`, built by scripts/brand/logo/build.mjs). */
+export const ORGANIZATION_LOGO_PATH = "/brand/icon-512.png";
 
 const DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
@@ -94,9 +113,11 @@ export function storeJsonLd(info: StoreInfo): JsonLd {
     "@context": "https://schema.org",
     "@id": ORGANIZATION_ID(),
     name: info.name,
+    alternateName: otherName(info.name, info.alternateName),
     legalName: info.legalName && info.legalName !== info.name ? info.legalName : undefined,
     url: abs("/"),
-    logo: abs("/apple-icon.png"),
+    // The square app icon from the logo kit: 512 px, legible on white and on dark.
+    logo: abs(ORGANIZATION_LOGO_PATH),
     telephone: info.telephone,
     email: info.email,
     vatID: info.vatId,

@@ -3,6 +3,7 @@
  * settings (empty-safe — missing values are simply not shown), the site origin and link
  * helpers (UTM on own links, click-to-chat links from settings).
  */
+import { BRAND_NAME } from "../domain/brand";
 import { formatHours, type SettingsHours } from "../format/hours";
 import { formatPhone, normalizePhone, telHref, viberHref, whatsappHref } from "../format/phone";
 import type { FooterContact } from "./html";
@@ -37,7 +38,7 @@ export type EmailContext = {
 export function emailContext(settings: EmailSettingsLike, siteUrl: string): EmailContext {
   return {
     siteUrl: siteUrl.replace(/\/$/, ""),
-    brandName: settings.brand.name.trim() || "SKLOP",
+    brandName: settings.brand.name.trim() || BRAND_NAME,
     company: settings.company,
     hoursText: formatHours(settings.hours),
   };

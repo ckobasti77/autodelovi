@@ -82,7 +82,7 @@ describe("Consent Mode v2", () => {
 
 describe("attribution capture", () => {
   test("campaign parameters and an external referrer make a touch; internal visits do not", () => {
-    const url = new URL("https://sklop.rs/deo/disk?utm_source=google&utm_medium=cpc&gclid=abc&x=1");
+    const url = new URL("https://primer.rs/deo/disk?utm_source=google&utm_medium=cpc&gclid=abc&x=1");
     expect(touchFromUrl(url, "", 5)).toEqual({
       source: "google",
       medium: "cpc",
@@ -90,8 +90,8 @@ describe("attribution capture", () => {
       landingPath: "/deo/disk",
       at: 5,
     });
-    expect(touchFromUrl(new URL("https://sklop.rs/"), "https://sklop.rs/delovi", 5)).toBeNull();
-    expect(touchFromUrl(new URL("https://sklop.rs/"), "https://www.google.com/search?q=x", 5)).toMatchObject({
+    expect(touchFromUrl(new URL("https://primer.rs/"), "https://primer.rs/delovi", 5)).toBeNull();
+    expect(touchFromUrl(new URL("https://primer.rs/"), "https://www.google.com/search?q=x", 5)).toMatchObject({
       referrer: "https://www.google.com/search",
     });
   });
@@ -269,7 +269,7 @@ describe("PII hashing (Enhanced Conversions, CAPI)", () => {
       eventName: "Purchase",
       eventId: "SK-2026-000123",
       eventTimeMs: 1_790_000_000_123,
-      eventSourceUrl: "https://sklop.rs/porudzbina",
+      eventSourceUrl: "https://primer.rs/porudzbina",
       user: {
         email: "Petar@Primer.rs",
         phone: "064 123 4567",

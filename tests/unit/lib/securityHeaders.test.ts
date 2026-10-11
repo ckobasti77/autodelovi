@@ -16,7 +16,7 @@ describe("buildCsp", () => {
     https: true,
     convexUrl: "https://tame-impala-374.convex.cloud",
     convexSiteUrl: "https://tame-impala-374.convex.site",
-    siteUrl: "https://sklop.rs",
+    siteUrl: "https://primer.rs",
   });
 
   it("allows only nonced scripts (plus what they load) and WebAssembly for the 3D decoder", () => {

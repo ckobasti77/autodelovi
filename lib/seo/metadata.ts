@@ -8,6 +8,7 @@
 import type { Metadata } from "next";
 
 import { site } from "@/config/site";
+import { titleSuffixFor, titleSuffixTiers } from "@/lib/domain/brand";
 
 export type PageMetaInput = {
   title: string;
@@ -16,7 +17,7 @@ export type PageMetaInput = {
   path: string;
   /** `noindex, follow` (the page stays crawlable so the directive is seen). */
   noindex?: boolean;
-  /** Title suffix from settings (`" | SKLOP"`); defaults to the config brand. */
+  /** Title suffix from settings (`" | Euromotors Plus · OEM Parts"`); defaults to the config brand. */
   titleSuffix?: string;
   ogImage?: { url: string; width: number; height: number; alt: string };
   /** The title already carries (or deliberately drops) the suffix — used as is (≤ 60). */
@@ -46,8 +47,9 @@ export function clampText(text: string, max: number): string {
   return `${(space > max * 0.6 ? cut.slice(0, space) : cut).replace(/[\s,.;:—–-]+$/, "")}…`;
 }
 
+/** „ | Euromotors Plus · OEM Parts“ — brand first, the known shop name after it (D307). */
 export function defaultTitleSuffix(): string {
-  return ` | ${site.brand.name}`;
+  return titleSuffixFor(site.brand.name, site.brand.alternateName);
 }
 
 /** Words a shortened title must not end with („… SEAT i“, „… 312 ×“, „… za“). */
@@ -79,9 +81,24 @@ export function shortenWords(text: string, max: number): string {
 }
 
 /**
- * Keyword-first title with the brand suffix. When the suffix would push the title past
- * 60 characters, the keyword part is shortened first; a keyword part that cannot fit in 20
- * characters drops the suffix instead of losing its meaning.
+ * `title` with the longest form of `suffix` that keeps the whole within 60 characters:
+ * „ | Euromotors Plus · OEM Parts“, then „ | Euromotors Plus“. `null` when neither fits.
+ */
+export function fitTitleSuffix(title: string, suffix: string): string | null {
+  for (const tier of titleSuffixTiers(suffix)) {
+    if (title.length + tier.length <= TITLE_MAX) return `${title}${tier}`;
+  }
+  return null;
+}
+
+/**
+ * Keyword-first title with the brand suffix. The suffix has two forms — the full one with the
+ * known shop name („ | Euromotors Plus · OEM Parts“) and the brand alone („ | Euromotors Plus“):
+ * the full form is used when the whole title fits in 60 characters, otherwise the short one
+ * takes its place, and a title that fits on its own is never cut to make room for either (D308).
+ *
+ * A title longer than 60 characters is shortened: to make room for the short suffix when that
+ * costs at most 18 characters and leaves at least 20, otherwise to 60 without a suffix.
  *
  * With `keep` (the end of the title that carries the vehicle or the page number) the order
  * is the one of D253: drop the suffix, then shorten only the part before `keep` — so
@@ -93,10 +110,14 @@ export function pageTitle(
   keep?: string,
 ): string {
   const clean = title.replace(/\s+/g, " ").trim();
-  if (clean.length + suffix.length <= TITLE_MAX) return `${clean}${suffix}`;
+  const fitted = fitTitleSuffix(clean, suffix);
+  if (fitted) return fitted;
+  if (clean.length <= TITLE_MAX) return clean;
+  // Too long on its own: only the shortest form of the suffix is still considered.
+  const tiers = titleSuffixTiers(suffix);
+  suffix = tiers[tiers.length - 1] ?? suffix;
   const k = keep?.replace(/\s+/g, " ").trim();
   if (k && clean.length > k.length && clean.endsWith(k)) {
-    if (clean.length <= TITLE_MAX) return clean;
     const head = clean.slice(0, -k.length);
     const sep = /\s$/.test(head) ? " " : "";
     const short = shortenWords(head, TITLE_MAX - k.length - sep.length);

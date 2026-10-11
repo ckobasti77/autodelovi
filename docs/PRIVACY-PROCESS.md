@@ -1,6 +1,6 @@
-# SKLOP — Lični podaci: popis, rokovi čuvanja i zahtevi kupaca
+# Euromotors Plus · OEM Parts — Lični podaci: popis, rokovi čuvanja i zahtevi kupaca
 
-> Deo SKLOP dokumentacije — indeks: [README](README.md). Tehnička pravila: [SECURITY §L5](SECURITY.md), pregled: [SECURITY-AUDIT](SECURITY-AUDIT.md). Zakon o zaštiti podataka o ličnosti („Sl. glasnik RS“ 87/2018, ZZPL). **Tekst nije pravni savet — pravnik treba da potvrdi rokove i osnove (HUMAN-TODO §3).**
+> Deo dokumentacije sajta Euromotors Plus — indeks: [README](README.md). Tehnička pravila: [SECURITY §L5](SECURITY.md), pregled: [SECURITY-AUDIT](SECURITY-AUDIT.md). Zakon o zaštiti podataka o ličnosti („Sl. glasnik RS“ 87/2018, ZZPL). **Tekst nije pravni savet — pravnik treba da potvrdi rokove i osnove (HUMAN-TODO §3).**
 
 ## 1. Koje podatke sajt čuva
 

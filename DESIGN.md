@@ -1,5 +1,5 @@
 ---
-name: SKLOP
+name: Euromotors Plus by OEM Parts
 description: „Rasklopi auto. Nađi deo.“ — VAG parts shop, mechanic portal and back office in the „Rendgen“ world
 colors:
   night-field: "#0D0F11"
@@ -214,7 +214,7 @@ components:
     height: "36px"
 ---
 
-# Design System: SKLOP
+# Design System: Euromotors Plus by OEM Parts
 
 > Portable summary for design tools. The authoritative, complete specification (every token, contrast table, motion, 3D art direction, components, blueprints, microcopy) is **[docs/design/DESIGN-SYSTEM.md](docs/design/DESIGN-SYSTEM.md)**; colour tokens and contrast pairs live in `docs/design/tokens.json`. Recorded from the step-03 concept build (`app/lab/koncept/`); re-run the documenter after step 04 builds the real foundation.
 

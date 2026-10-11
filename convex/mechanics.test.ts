@@ -93,7 +93,7 @@ describe("registration", () => {
       status: "pending",
       companyName: "Auto servis Zvezdara",
       phone: "+381645551234",
-      email: "a@sklop.test",
+      email: "a@primer.test",
       tierName: null,
       credit: { enabled: false },
     });
@@ -440,7 +440,7 @@ describe("quick order", () => {
       contact: {
         name: "Majstor",
         phone: "+381641234567",
-        email: "mech-a@sklop.test",
+        email: "mech-a@primer.test",
         preferredChannel: "phone",
       },
     });

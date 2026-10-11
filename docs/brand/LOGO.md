@@ -1,6 +1,6 @@
 # Euromotors Plus by OEM Parts — znak i uputstvo za upotrebu
 
-> Za vlasnika i klijenta. Urađeno u koraku 24 (11.10.2026.). Sajt u ovom koraku nije menjan: znak se ugrađuje i naziv „SKLOP“ zamenjuje u koraku 25.
+> Za vlasnika i klijenta. Urađeno u koraku 24 (11.10.2026.). U koraku 25 znak je ugrađen u sajt i radni naziv „SKLOP“ je uklonjen; slike znaka na sajtu su u [`site/`](site/).
 > Tabla za prikazivanje klijentu: [`BRAND-BOARD.html`](BRAND-BOARD.html) (otvara se dvoklikom, radi bez interneta) i slika [`BRAND-BOARD.png`](BRAND-BOARD.png).
 > Polazni zahtevi: [`BRAND-BRIEF.md`](BRAND-BRIEF.md). Ostali predlozi: [`concepts/README.md`](concepts/README.md).
 
@@ -144,10 +144,13 @@ Znak se ne crta ručno. Sve nastaje iz skripti:
 
 ```
 node scripts/brand/logo/build.mjs     # public/brand i docs/brand/export
+node scripts/brand/logo/site.mjs      # ono što sajt koristi: components/brand/logoPaths.ts, app/icon.svg, favicon.ico, apple-icon.png
 node scripts/brand/logo/verify.mjs    # 11 provera (čistoća SVG-a, debljine, razmaci, ikonice, PDF)
 node scripts/brand/logo/renders.mjs   # docs/brand/renders
 node scripts/brand/logo/board.mjs     # BRAND-BOARD.html i .png
 node scripts/brand/logo/concepts.mjs  # predlozi u docs/brand/concepts
 ```
 
-Geometrija i sve mere su u `scripts/brand/logo/logo.mjs` (mreža, debljine, razmaci, najmanje veličine). Promena se radi tamo, pa se sve ponovo izgradi.
+Geometrija i sve mere su u `scripts/brand/logo/logo.mjs` (mreža, debljine, razmaci, najmanje veličine). Promena se radi tamo, pa se sve ponovo izgradi: prvo `build.mjs`, zatim `site.mjs`.
+
+Na sajtu se znak koristi samo preko komponenti u `components/brand/` (`BrandLink`, `LogoHeader`, `LogoLockup`, `LogoMark`). Koji oblik stoji gde i u kojoj veličini: `docs/design/DESIGN-SYSTEM.md` §2.4. Slike za pregled prave `scripts/brand/site/shots.mjs`, `email.mjs` i `favicon.mjs`.

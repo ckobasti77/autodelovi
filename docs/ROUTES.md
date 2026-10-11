@@ -1,6 +1,6 @@
-# SKLOP — Routes and rendering
+# Euromotors Plus · OEM Parts — Routes and rendering
 
-> Part of the SKLOP docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
+> Part of the Euromotors Plus docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
 
 Related: [ARCHITECTURE §0.3 Next 16 rules](ARCHITECTURE.md) · [SEO-ADS](SEO-ADS.md) (metadata, canonicals, sitemaps) · [SECURITY](SECURITY.md) (guards).
 

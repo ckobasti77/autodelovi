@@ -19,7 +19,7 @@ import {
 } from "@/config/site";
 import { ROUTES } from "@/constants/routes";
 import { TEST_IDS } from "@/constants/testIds";
-import { Wordmark } from "@/components/shell/BrandMark";
+import { LogoLockupResponsive } from "@/components/brand/Logo";
 import { ConsentSettingsButton } from "@/components/consent/ConsentSettingsButton";
 
 const CHANNEL = {
@@ -109,10 +109,24 @@ export function Footer({ contact, company }: FooterProps) {
       data-testid={TEST_IDS.footer}
       className="cv-auto border-t border-line bg-bg-raised print:hidden [contain-intrinsic-size:auto_1040px] md:[contain-intrinsic-size:auto_700px] lg:[contain-intrinsic-size:auto_440px]"
     >
-      <div className="grid gap-10 px-page py-14 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.3fr] lg:gap-8">
-        <div className="flex flex-col gap-4">
-          <Wordmark size="footer" />
-          <p className="max-w-[36ch] type-body-s text-ink-2">{site.brand.description}</p>
+      <div className="grid gap-10 px-page py-14 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1.3fr] lg:gap-8">
+        {/* The lockup with the signature needs 56 px of height (445 px wide): its own row. */}
+        <div className="flex flex-col gap-5 md:col-span-2 lg:col-span-3 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
+          <NextLink
+            href={ROUTES.home}
+            aria-label={`${site.brand.lockupName} — početna`}
+            className="inline-flex self-start rounded-xs"
+          >
+            <LogoLockupResponsive
+              label={null}
+              stackedClassName="h-auto w-[min(100%,343px)]"
+              horizontalClassName="h-14 w-auto"
+              className="max-sm:w-full"
+            />
+          </NextLink>
+          <p className="max-w-[44ch] type-body-s text-ink-2 lg:text-right">
+            {site.brand.description}
+          </p>
         </div>
 
         {COLUMNS.map((column) => (

@@ -1,13 +1,13 @@
-# SKLOP — Šta mora da obezbedi vlasnik / klijent
+# Euromotors Plus · OEM Parts — Šta mora da obezbedi vlasnik / klijent
 
 > **Spojeno u [`GO-LIVE.md`](GO-LIVE.md) (korak 23, 01.10.2026.).** Tamo je ista lista bez duplikata, poređana po redosledu rada, sa oznakom ko šta radi. Ovaj fajl ostaje kao istorija po koracima (npr. §9 sa punim spiskom podataka o vozilima za proveru); nove stavke upisujte u GO-LIVE.
 
-> Deo SKLOP dokumentacije — indeks: [README](README.md). Ova lista se dopunjuje u svakom koraku; na kraju (korak 23) spaja se u `docs/GO-LIVE.md`. Ništa odavde se ne prikazuje na sajtu kao „TODO" — sajt sakriva prazna polja dok se ne popune u podešavanjima.
+> Deo dokumentacije sajta Euromotors Plus — indeks: [README](README.md). Ova lista se dopunjuje u svakom koraku; na kraju (korak 23) spaja se u `docs/GO-LIVE.md`. Ništa odavde se ne prikazuje na sajtu kao „TODO" — sajt sakriva prazna polja dok se ne popune u podešavanjima.
 
 Oznake: **[P0]** potrebno pre puštanja uživo · **[P1]** potrebno u prvim nedeljama · **[P2]** kada bude vremena.
 
 ## 1. Podaci firme (Admin → Podešavanja → Firma)
-- [ ] **[P0]** Konačan naziv prodavnice (radni naziv je „SKLOP") i slogan; menja se u `config/site.ts` i podešavanjima.
+- [x] **[P0]** Naziv prodavnice: od koraka 25 sajt nosi naziv „Euromotors Plus“ (poznati naziv radnje „OEM Parts“); radni naziv „SKLOP“ je uklonjen. Slogan „Rasklopi auto. Nađi deo.“ ostaje dok ga ne potvrdite ili zamenite (Podešavanja → Firma).
 - [ ] **[P0]** Pravni naziv, sedište, PIB, matični broj, registar (APR) — obavezno po Zakonu o elektronskoj trgovini.
 - [ ] **[P0]** Adresa radnje za lično preuzimanje, link ka mapi.
 - [ ] **[P0]** Telefoni, Viber i WhatsApp broj, e-mail za kupce.
@@ -41,7 +41,7 @@ Oznake: **[P0]** potrebno pre puštanja uživo · **[P1]** potrebno u prvim nede
 - [ ] **[P0]** Obrazac za odustanak od ugovora (14 dana od prijema robe).
 - [ ] **[P1]** Rokovi čuvanja podataka (porudžbine 10 godina, upiti 2 godine, logovi pretrage 180 dana…) — potvrditi sa računovođom i pravnikom.
 - [ ] **[P1]** Da li je potrebna evidencija radnji obrade (izuzetak za < 250 zaposlenih ima izuzetke).
-- [ ] **[P1]** Tekst odricanja o korišćenju naziva VW/Audi/Škoda/SEAT/Cupra (nominativna upotreba) — nacrt je od koraka 04 u podnožju sajta: „Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.“ Pravnik da potvrdi ili izmeni.
+- [ ] **[P1]** Tekst odricanja o korišćenju naziva VW/Audi/Škoda/SEAT/Cupra (nominativna upotreba) — nacrt je od koraka 04 u podnožju sajta: „Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; Euromotors Plus nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.“ Pravnik da potvrdi ili izmeni.
 
 - [ ] **[P0] Pregled tekstova na sajtu (korak 12)** — stranice `/uslovi-koriscenja`, `/politika-privatnosti`, `/kolacici`, `/dostava-i-placanje`, `/reklamacije-i-povrat` su objavljene kao šabloni (u bazi označene „potreban pravni pregled“). Pravnik da proveri naročito: rokove iz novog Zakona o zaštiti potrošača (odustanak 14 dana, odgovor na reklamaciju, rok rešavanja 15/30 dana), izuzetke od prava na odustanak (deo naručen po broju šasije), prenos podataka van Srbije (hosting Convex/Vercel, slanje mejlova), rokove čuvanja podataka i pomen tela za vansudsko rešavanje sporova. Izmene se unose u Admin → Sadržaj (korak 15).
 - [ ] **[P1] Sesijski kolačić izvora posete `sk_attr_s`** (oznake kampanje i izvor dolaska, bez ličnih podataka, briše se zatvaranjem pregledača) — pravnik da potvrdi da sme bez pristanka kao deo evidencije porudžbine; ako ne sme, isključuje se do izbora u baneru za kolačiće (korak 19).
@@ -192,3 +192,14 @@ Stavke su upisane u [`GO-LIVE.md`](GO-LIVE.md) §A „Znak i ime“:
 - [ ] **[P1]** Provera žiga (Zavod za intelektualnu svojinu RS, TMview) pre registracije, table i vozila.
 - [ ] **[P1]** Boje za štampu (Pantone / CMYK) sa štamparom.
 - [ ] **[P2]** Vektorske datoteke starih znakova, ako postoje, u `docs/brand/source/`.
+
+## 15. Novi naziv i znak na sajtu (korak 25)
+
+Sajt je preimenovan u „Euromotors Plus“, sa potpisom „by OEM Parts“ u znaku. Stavke su upisane i u [`GO-LIVE.md`](GO-LIVE.md) §A.
+
+- [ ] **[P0] Odobrenje znaka.** Klijent treba da odobri znak onako kako sada stoji na sajtu: u zaglavlju i podnožju, u adminu, u mejlovima, na predračunu i otpremnici, kao ikonica u kartici pregledača i na slici koja se vidi kad se link podeli. Slike za pregled su u `docs/brand/site/` (zaglavlje, podnožje, admin, mejl, slika za deljenje, ikonica). Ako znak ili reč „by“ ne odgovaraju, javite pre objave; izmena se radi u `scripts/brand/logo/` i ponovo ugrađuje jednom naredbom.
+- [ ] **[P0] Pravi domen.** Javite adresu sajta (npr. `www.vas-domen.rs`) i dajte pristup nalogu kod registrara. Na sajtu i u kodu nema privremenog domena; dok adresa nije upisana, linkovi u mejlovima i adresa na slici za deljenje nisu ispravni.
+- [ ] **[P0] Adresa pošiljaoca e-pošte.** Javite adresu sa koje sajt šalje poruke kupcima (npr. `prodaja@vas-domen.rs`) i adresu na koju stižu odgovori. Ime pošiljaoca je „Euromotors Plus“. Dok adresa nije upisana i domen proveren, poruke se samo beleže i ne šalju.
+- [ ] **[P1] Dva naziva u naslovima.** Naslovi strana se završavaju sa „ | Euromotors Plus · OEM Parts“; kada je naslov dugačak ostaje samo „ | Euromotors Plus“, a kod najdužih naziva artikala nijedan. Ako želite drugačiji nastavak, menja se u Podešavanja → SEO → „Dodatak naslovu“.
+- [ ] **[P2] Početak brojeva porudžbina.** Brojevi i dalje počinju sa „SK“ (npr. `SK-2026-000187`). Ako želite drugi početak (npr. „EM“), promenite ga u Podešavanja → Firma → „Prefiks porudžbine“ pre prve prave porudžbine.
+- [ ] **[P2] Ime na početnom ekranu telefona.** Kada kupac doda sajt na početni ekran, ispod ikonice piše „Euromotors“, jer telefoni prikazuju najviše 12 znakova. Ako želite „OEM Parts“, javite.

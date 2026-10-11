@@ -28,7 +28,16 @@ export default function GlobalError({
       <body>
         <title>{`Greška · ${site.brand.name}`}</title>
         <main className="flex min-h-dvh flex-col justify-center gap-5 px-page py-16">
-          <p className="type-wordmark text-[18px] text-ink-1">{site.brand.name}</p>
+          {/* The kit file, not the inline component: this chunk loads with every page, and the
+              logo outlines would add 3 KB of script to all of them. */}
+          {/* eslint-disable-next-line @next/next/no-img-element -- static SVG; next/image adds nothing here and this page must not depend on the image optimizer */}
+          <img
+            src="/brand/logo-header-night.svg"
+            alt={site.brand.name}
+            width={270}
+            height={32}
+            className="h-8 w-auto self-start"
+          />
           <h1 className="type-h1 text-ink-1">Sajt trenutno ne radi kako treba</h1>
           <p className="max-w-[60ch] type-body text-ink-2">
             Došlo je do greške pri učitavanju. Pokušajte ponovo za nekoliko trenutaka.

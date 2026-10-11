@@ -11,6 +11,7 @@ import { tokenPageMetadata } from "@/lib/seo/metadata";
 import { companyFromSettings, contactFromSettings } from "@/lib/settings/public";
 import { fetchPublic } from "@/lib/server/convex";
 import { getSettingsPublic } from "@/lib/server/catalog-cache";
+import { LogoDocument } from "@/components/brand/Logo";
 import { PrintButton } from "@/components/order/PrintButton";
 
 /** One `orders.getByToken` per request, shared by the metadata and the page. */
@@ -60,6 +61,7 @@ export default async function ProformaPage({ params }: PageProps<"/porudzbina/[t
       <div className="mx-auto flex max-w-[52rem] flex-col gap-8 rounded-md bg-surface-1 p-5 sm:p-8 print:rounded-none print:p-0">
         <div className="flex flex-wrap items-start justify-between gap-6">
           <div className="flex flex-col gap-1 type-body-s text-ink-2">
+            <LogoDocument className="mb-4" />
             {seller.map((line, i) => (
               <span key={i} className={i === 0 ? "type-h4 text-ink-1" : ""}>
                 {line}

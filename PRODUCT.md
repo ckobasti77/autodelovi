@@ -31,10 +31,10 @@ A visual catalog navigator no other Serbian parts shop has: a 3D car in „X-ray
 - Admin: dashboard, orders, inquiries + quotes, products, Excel import with dry-run and rollback, categories, vehicles, stock log, customers/mechanics, tiers, settings, users, audit log, e-mail outbox.
 - Stack (existing codebase): Next.js 16 App Router, React 19.2, Tailwind v4, Convex, three.js / R3F, GSAP (the only motion library), SheetJS.
 - Serbian Latin (ekavian) only in v1, copy centralized for a later locale.
-- Undecided: final brand name (working name SKLOP), company data, contact data, legal texts — all read from config/settings and hidden while empty.
+- Brand (step 25): Euromotors Plus, known shop name OEM Parts. Still open: company data, contact data, legal texts — all read from config/settings and hidden while empty.
 
 ## Brand Commitments
-- Working name **SKLOP**, tagline **„Rasklopi auto. Nađi deo.“** — renamable from one config + admin settings.
+- Brand **Euromotors Plus** with the endorsement „by OEM Parts“ in the logo (naming rules: `lib/domain/brand.ts`), tagline **„Rasklopi auto. Nađi deo.“**. The working name „SKLOP“ is retired.
 - Voice: an experienced mechanic talking to a colleague — calm, precise, short sentences, zero fluff; „vi“ forms; no exclamation-mark marketing; no emojis in the UI.
 - Binding visual north star from the brief (§8): „Rendgen“ — an engineering X-ray at night; dark graphite base, warm off-white text, exactly one signal accent, a cool rim tone reserved for the X-ray glass; technical ornament with purpose (hairlines, ticks, coordinates, mono part codes, leader lines); a characterful grotesk/condensed display + legible UI sans + monospace, all with latin-ext. Not a tuning shop, not generic e-commerce, not gaming UI.
 - Never use VW blue, Škoda green, SEAT copper or Audi red as a brand color. No VW/Audi/Škoda/SEAT/Cupra logos; brand names only as plain text with a nominative-use disclaimer.

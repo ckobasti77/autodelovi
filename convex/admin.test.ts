@@ -81,7 +81,7 @@ describe("staff vs owner permissions", () => {
     ).toBe("NO_ERROR");
     expect(
       await errorCode(() =>
-        w.asStaff.mutation(api.staff.createInvite, { email: "novi@sklop.test", role: "staff" }),
+        w.asStaff.mutation(api.staff.createInvite, { email: "novi@primer.test", role: "staff" }),
       ),
     ).toBe("FORBIDDEN");
     expect(await errorCode(() => w.asStaff.query(api.staff.listInvites, {}))).toBe("FORBIDDEN");
@@ -357,13 +357,13 @@ describe("staff invites and roles", () => {
     const t = makeT();
     const w = await setupWorld(t);
     const { token } = await w.asOwner.mutation(api.staff.createInvite, {
-      email: "A@sklop.test",
+      email: "A@primer.test",
       role: "staff",
     });
     const info = await w.anon.query(api.staff.inviteInfo, { token });
     expect(info).toMatchObject({ status: "valid", role: "staff", emailMatches: false });
-    expect(info.emailMasked).toBe("a•@sklop.test");
-    // customerA has a@sklop.test (case-insensitive match).
+    expect(info.emailMasked).toBe("a•@primer.test");
+    // customerA has a@primer.test (case-insensitive match).
     expect(await errorCode(() => w.asCustomerB.mutation(api.staff.acceptInvite, { token }))).toBe(
       "FORBIDDEN",
     );
@@ -381,7 +381,7 @@ describe("staff invites and roles", () => {
     const t = makeT();
     const w = await setupWorld(t);
     const { token } = await w.asOwner.mutation(api.staff.createInvite, {
-      email: "b@sklop.test",
+      email: "b@primer.test",
       role: "staff",
     });
     const invites = await w.asOwner.query(api.staff.listInvites, {});
@@ -393,7 +393,7 @@ describe("staff invites and roles", () => {
     expect((await w.anon.query(api.staff.inviteInfo, { token: "short" })).status).toBe("invalid");
     expect(
       await errorCode(() =>
-        w.asOwner.mutation(api.staff.createInvite, { email: "staff@sklop.test", role: "staff" }),
+        w.asOwner.mutation(api.staff.createInvite, { email: "staff@primer.test", role: "staff" }),
       ),
     ).toBe("INVALID");
   });

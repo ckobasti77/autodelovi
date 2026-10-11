@@ -1,7 +1,7 @@
 import { site } from "@/config/site";
 import { OG_CONTENT_TYPE, OG_SIZE, ogFrame, ogImageData } from "@/lib/og/frame";
 
-/** Default OG image (DESIGN-SYSTEM §2.3): hero render + the promise; config only (no data). */
+/** Default OG image (DESIGN-SYSTEM §2.7): hero render + the promise; config only (no data). */
 export const alt = `${site.brand.name} — delovi za Volkswagen, Audi, Škoda, SEAT i Cupra`;
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;

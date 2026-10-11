@@ -5,6 +5,7 @@
  */
 import * as XLSX from "xlsx";
 
+import { BRAND_NAME } from "@/lib/domain/brand";
 import { formatBelgradeDate } from "@/lib/domain/time";
 
 export type PriceListRow = {
@@ -119,7 +120,7 @@ export function buildPriceListWorkbook(
   sheet["!merges"] = [0, 1, 2].map((r) => ({ s: { r, c: 0 }, e: { r, c: 7 } }));
 
   const book = XLSX.utils.book_new();
-  book.Props = { Title: `Cenovnik — ${meta.companyName}`, Author: "SKLOP" };
+  book.Props = { Title: `Cenovnik — ${meta.companyName}`, Author: BRAND_NAME };
   XLSX.utils.book_append_sheet(book, sheet, "Cenovnik");
   const out = XLSX.write(book, {
     type: "array",

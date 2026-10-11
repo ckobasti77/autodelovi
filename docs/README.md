@@ -1,4 +1,4 @@
-# SKLOP — Documentation index
+# Euromotors Plus · OEM Parts — Documentation index
 
 Developer setup: [`../README.md`](../README.md). Build report: [`../pipeline/REPORT.md`](../pipeline/REPORT.md). Business intent: [`pipeline/BRIEF.md`](../pipeline/BRIEF.md) (wins for intent). These docs win for implementation details. Unabridged source: [plans/01-master-plan.md](plans/01-master-plan.md).
 
@@ -26,6 +26,7 @@ Developer setup: [`../README.md`](../README.md). Build report: [`../pipeline/REP
 | [HUMAN-TODO.md](HUMAN-TODO.md) | (sr) Per-step history of owner items; merged into GO-LIVE in step 23 | — |
 | [PREDAJA.md](PREDAJA.md) | (sr) Handoff for developer and client: modules, admin step by step with screenshots, import, order and inquiry flows, notifications, mechanics, temporary data, demo removal, demo script | — |
 | [GO-LIVE.md](GO-LIVE.md) | (sr) Launch checklist: client inputs, business rules, domain, Vercel, Convex prod, owner, Resend, settings, legal, ads, feeds, GBP, Search Console, test orders, backups, follow-ups | — |
+| [brand/LOGO.md](brand/LOGO.md) · [brand/site/](brand/site/) | (sr) Logo guide for the owner; screenshots of the logo on the site (step 25: header, footer, admin, e-mail, OG, favicon) — rebuild with `scripts/brand/site/*.mjs` | 24–25 |
 | [showcase/index.html](showcase/index.html) | (sr) Self-contained screenshot tour for the client demo (rebuild: `scripts/showcase/`) | — |
 | [brand/LOGO.md](brand/LOGO.md) | (sr) **Logo „Euromotors Plus by OEM Parts“** (step 24): the idea, every lockup and file, colours, usage rules, fonts and licences, alternatives, open points. Rebuild: `scripts/brand/logo/` | — |
 | [brand/BRAND-BOARD.html](brand/BRAND-BOARD.html) | (sr) Self-contained brand board for the client (`BRAND-BOARD.png` = its render at 1600 px) | — |

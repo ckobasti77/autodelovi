@@ -1,4 +1,4 @@
-# SKLOP — Predaja projekta
+# Euromotors Plus · OEM Parts — Predaja projekta
 
 > Za programera i za klijenta. Tehničko uputstvo za programere je u [`README.md`](../README.md), spisak za objavu u [`GO-LIVE.md`](GO-LIVE.md), a prikaz sa snimcima ekrana u [`showcase/index.html`](showcase/index.html) (otvara se dvoklikom, radi bez interneta).
 >
@@ -260,7 +260,7 @@ Zaposleni koji je i majstor ne može sam sebi da odobri profil niti da menja svo
 
 | Šta | Gde se menja |
 |---|---|
-| **Radni naziv „SKLOP“** i znak | `config/site.ts` i Podešavanja → Firma. Znak „izvučen deo“ ne zavisi od naziva. |
+| **Naziv i znak** | Sajt nosi naziv „Euromotors Plus“ i znak „Euromotors Plus by OEM Parts“ (koraci 24 i 25). Naziv i poznati naziv radnje: Podešavanja → Firma; pravila pisanja: `lib/domain/brand.ts`. Znak je crtež: menja se u `scripts/brand/logo/logo.mjs`, pa `node scripts/brand/logo/build.mjs` i `node scripts/brand/logo/site.mjs`. Čeka se odobrenje klijenta (GO-LIVE §A). |
 | **Demo artikli** `DEMO-0001`…`DEMO-0150` i zamene `DEMO-E001`…`DEMO-E007` (izmišljeni kataloški brojevi, označeni „VAG (demo)“), demo majstor, 8 demo porudžbina, 4 demo upita | [§9](#9-brisanje-demo-podataka) |
 | **Probni zapisi iz automatskih testova** na razvojnoj bazi (porudžbine i upiti od „Admin Test…“, „Auto servis E2E“, adrese `@primer.rs`) | Ostaju na razvojnoj bazi. Produkciona baza počinje prazna, pa ih tamo nema. |
 | **Demo oglasna strana** `/ponuda/kocione-plocice-golf` | Podešavanja → Oglasne strane |

@@ -1,6 +1,6 @@
-# SKLOP — Roadmap (steps 02–23)
+# Euromotors Plus · OEM Parts — Roadmap (steps 02–23)
 
-> Part of the SKLOP docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
+> Part of the Euromotors Plus docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
 
 Acceptance criteria are measurable; goal steps (06, 09, 11, 13, 17, 22) must prove their conditions with command output (see `pipeline/prompts/*.goal.txt`). Related: [TESTING](TESTING.md) · [PROGRESS](PROGRESS.md) · [DECISIONS](DECISIONS.md).
 

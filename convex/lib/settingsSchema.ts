@@ -29,6 +29,8 @@ export const holidaysSettingsV = v.array(v.object({ date: v.string(), note: v.st
 
 export const brandSettingsV = v.object({
   name: v.string(),
+  /** The shop name people know („OEM Parts“): JSON-LD `alternateName` (D307). */
+  alternateName: v.optional(v.string()),
   tagline: v.string(),
   orderPrefix: v.string(),
   inquiryPrefix: v.string(),

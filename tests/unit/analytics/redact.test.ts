@@ -27,8 +27,8 @@ describe("capability token redaction", () => {
   );
 
   it("builds the absolute URL for analytics without the token or fragment", () => {
-    expect(redactedPageUrl(`https://sklop.rs/porudzbina/hvala/${TOKEN}?utm_source=x#vrh`)).toBe(
-      "https://sklop.rs/porudzbina/hvala/[token]?utm_source=x",
+    expect(redactedPageUrl(`https://primer.rs/porudzbina/hvala/${TOKEN}?utm_source=x#vrh`)).toBe(
+      "https://primer.rs/porudzbina/hvala/[token]?utm_source=x",
     );
     expect(redactedPageUrl("https://www.google.com/")).toBe("https://www.google.com/");
   });

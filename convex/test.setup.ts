@@ -80,11 +80,11 @@ export async function setupWorld(t: T) {
 
     const user = (email: string, extra: Record<string, unknown> = {}) =>
       ctx.db.insert("users", { email, name: email.split("@")[0], status: "active", ...extra });
-    const owner = await user("owner@sklop.test", { role: "owner" });
-    const staff = await user("staff@sklop.test", { role: "staff" });
-    const customerA = await user("a@sklop.test", { role: "customer" });
-    const customerB = await user("b@sklop.test", { role: "customer" });
-    const blocked = await user("blocked@sklop.test", { role: "customer", status: "blocked" });
+    const owner = await user("owner@primer.test", { role: "owner" });
+    const staff = await user("staff@primer.test", { role: "staff" });
+    const customerA = await user("a@primer.test", { role: "customer" });
+    const customerB = await user("b@primer.test", { role: "customer" });
+    const blocked = await user("blocked@primer.test", { role: "customer", status: "blocked" });
 
     const majstor = await tier("majstor");
     const partner = await tier("partner");
@@ -124,10 +124,10 @@ export async function setupWorld(t: T) {
       await ctx.db.patch("users", userId, { mechanicStatus: status, mechanicProfileId: profileId });
       return { userId, profileId };
     };
-    const pending = await mechanic("pending@sklop.test", "pending");
-    const mechA = await mechanic("mech-a@sklop.test", "approved", majstor._id, true);
-    const mechB = await mechanic("mech-b@sklop.test", "approved", partner._id);
-    const suspended = await mechanic("suspended@sklop.test", "suspended", majstor._id);
+    const pending = await mechanic("pending@primer.test", "pending");
+    const mechA = await mechanic("mech-a@primer.test", "approved", majstor._id, true);
+    const mechB = await mechanic("mech-b@primer.test", "approved", partner._id);
+    const suspended = await mechanic("suspended@primer.test", "suspended", majstor._id);
 
     const base = {
       oemNumbers: [],

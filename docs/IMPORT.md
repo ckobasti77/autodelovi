@@ -1,6 +1,6 @@
-# SKLOP — Excel import and exports
+# Euromotors Plus · OEM Parts — Excel import and exports
 
-> Part of the SKLOP docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
+> Part of the Euromotors Plus docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
 
 Related: [DATA-MODEL §C10](DATA-MODEL.md) · [ARCHITECTURE §E](ARCHITECTURE.md) · [TESTING](TESTING.md) (fixtures).
 

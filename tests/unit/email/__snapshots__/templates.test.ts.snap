@@ -21,13 +21,14 @@ exports[`snapshots > back_in_stock HTML 1`] = `
     .sk-pad { padding-left: 20px !important; padding-right: 20px !important; }
     .sk-outer { padding: 0 !important; }
     .sk-panel { border-radius: 0 !important; border-left: 0 !important; border-right: 0 !important; }
+    .sk-logo { padding-left: 8px !important; padding-right: 8px !important; border-radius: 0 !important; }
+    .sk-ref { padding-left: 12px !important; }
   }
   @media (prefers-color-scheme: dark) {
     .sk-body, .sk-outer { background: #0D0F11 !important; }
     .sk-panel { background: #16191D !important; border-color: #2C3238 !important; }
     .sk-head, .sk-code { background: #1C2025 !important; border-color: #2C3238 !important; }
     .sk-ink1, .sk-code { color: #F1ECE3 !important; }
-    .sk-mark { background: #F1ECE3 !important; }
     .sk-ink2 { color: #C4BEB4 !important; }
     .sk-ink3 { color: #969088 !important; }
     .sk-line, .sk-rule { border-color: #2C3238 !important; }
@@ -44,21 +45,19 @@ exports[`snapshots > back_in_stock HTML 1`] = `
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="sk-shell" style="max-width:600px;width:100%;">
 <tr><td class="sk-panel" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #DADDE1;border-radius:6px;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td class="sk-pad sk-head sk-line" style="padding:18px 32px;border-bottom:1px solid #DADDE1;background:#F7F8F9;border-radius:6px 6px 0 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-<td><a href="https://sklop.test" style="text-decoration:none;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td valign="bottom" style="padding:0 10px 3px 0;" aria-hidden="true"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td colspan="3" style="padding:0 5px 3px;"><div style="width:10px;height:5px;background:#FF6B1A;font-size:0;line-height:0;">&nbsp;</div></td></tr><tr><td valign="bottom"><div class="sk-mark" style="width:5px;height:8px;background:#121518;font-size:0;line-height:0;">&nbsp;</div></td><td valign="bottom"><div class="sk-mark" style="width:10px;height:5px;background:#121518;font-size:0;line-height:0;">&nbsp;</div></td><td valign="bottom"><div class="sk-mark" style="width:5px;height:8px;background:#121518;font-size:0;line-height:0;">&nbsp;</div></td></tr></table></td><td class="sk-ink1" style="font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:20px;line-height:24px;font-weight:900;letter-spacing:2px;color:#121518;">SKLOP</td></tr></table></a></td>
+<tr><td class="sk-logo sk-line" bgcolor="#FFFFFF" style="padding:6px 16px;border-bottom:1px solid #DADDE1;background:#FFFFFF;border-radius:6px 6px 0 0;">
+<a href="https://primer.test" style="display:block;text-decoration:none;"><img src="https://primer.test/brand/email-header@2x.png" width="477" height="88" alt="Euromotors Plus by OEM Parts" style="display:block;width:100%;max-width:477px;height:auto;border:0;outline:none;text-decoration:none;font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:18px;line-height:24px;font-weight:900;color:#121518;"></a>
 
-</tr></table>
 </td></tr>
 <tr><td class="sk-pad" style="padding:28px 32px 12px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 <h1 class="sk-ink1" style="margin:0 0 12px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:#121518;letter-spacing:-0.01em;">Stiglo je.</h1>
 <p class="sk-ink2" style="margin:0 0 14px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:16px;line-height:1.55;color:#3D444C;">Artikal koji ste tražili je ponovo na stanju.</p>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 18px;border-collapse:collapse;border-top:1px solid #DADDE1;border-bottom:1px solid #DADDE1;" class="sk-rule"><tr><td class="sk-ink3 sk-line" valign="top" style="padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Artikal</td><td class="sk-ink1 sk-line" valign="top" style="padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;"><strong style="font-weight:700;">Kočione pločice prednje</strong></td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Šifra</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:14px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">DEMO-KP-0142</td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Proizvođač</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">TRW</td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Cena sa PDV-om</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:700;color:#121518;word-break:break-word;">4.590 RSD</td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Stanje</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">Na stanju</td></tr></table>
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 22px;border-collapse:separate;"><tr><td class="sk-button" bgcolor="#FF6B1A" style="background:#FF6B1A;border-radius:2px;mso-padding-alt:12px 22px;"><a href="https://sklop.test/deo/kocione-plocice-prednje-trw" style="display:inline-block;padding:12px 22px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:16px;line-height:20px;font-weight:700;color:#121518;text-decoration:none;border-radius:2px;">Pogledajte artikal</a></td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 22px;border-collapse:separate;"><tr><td class="sk-button" bgcolor="#FF6B1A" style="background:#FF6B1A;border-radius:2px;mso-padding-alt:12px 22px;"><a href="https://primer.test/deo/kocione-plocice-prednje-trw" style="display:inline-block;padding:12px 22px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:16px;line-height:20px;font-weight:700;color:#121518;text-decoration:none;border-radius:2px;">Pogledajte artikal</a></td></tr></table>
 <p class="sk-ink3" style="margin:0 0 14px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:14px;line-height:1.55;color:#5D6570;">Količine su ograničene i ne rezervišemo ih bez porudžbine. Ovo obaveštenje šaljemo samo jednom.</p>
 </td></tr>
 <tr><td class="sk-pad sk-ink3 sk-line" style="padding:18px 32px 24px;border-top:1px solid #DADDE1;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;color:#5D6570;">
-<div class="sk-ink2" style="font-weight:600;color:#3D444C;">Primer d.o.o.<br>Autoput 12, 11000 Beograd<br>PIB 101234567 · MB 21234567</div><div style="margin-top:6px;">Telefon: <a href="tel:+381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; Viber: <a href="viber://chat?number=%2B381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; WhatsApp: <a href="https://wa.me/381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; E‑pošta: <a href="mailto:prodaja@primer.rs" class="sk-link" style="color:#B8470A;text-decoration:underline;">prodaja@primer.rs</a></div><div style="margin-top:6px;">Radno vreme: Pon–pet 8–17, sub 8–14</div><div style="margin-top:12px;">Ovu poruku ste dobili jer ste tražili da vam javimo kad artikal stigne. <a href="https://sklop.test/obavestenja/odjava/primer-tokena-za-pregled-sablona" class="sk-link" style="color:#B8470A;text-decoration:underline;">Odjava od svih obaveštenja o dolasku robe</a></div>
+<div class="sk-ink2" style="font-weight:600;color:#3D444C;">Primer d.o.o.<br>Autoput 12, 11000 Beograd<br>PIB 101234567 · MB 21234567</div><div style="margin-top:6px;">Telefon: <a href="tel:+381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; Viber: <a href="viber://chat?number=%2B381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; WhatsApp: <a href="https://wa.me/381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; E‑pošta: <a href="mailto:prodaja@primer.rs" class="sk-link" style="color:#B8470A;text-decoration:underline;">prodaja@primer.rs</a></div><div style="margin-top:6px;">Radno vreme: Pon–pet 8–17, sub 8–14</div><div style="margin-top:12px;">Ovu poruku ste dobili jer ste tražili da vam javimo kad artikal stigne. <a href="https://primer.test/obavestenja/odjava/primer-tokena-za-pregled-sablona" class="sk-link" style="color:#B8470A;text-decoration:underline;">Odjava od svih obaveštenja o dolasku robe</a></div>
 </td></tr>
 </table>
 </td></tr>
@@ -85,7 +84,7 @@ Proizvođač: TRW
 Cena sa PDV-om: 4.590 RSD
 Stanje: Na stanju
 
-Pogledajte artikal: https://sklop.test/deo/kocione-plocice-prednje-trw
+Pogledajte artikal: https://primer.test/deo/kocione-plocice-prednje-trw
 
 Količine su ograničene i ne rezervišemo ih bez porudžbine. Ovo obaveštenje šaljemo samo jednom.
 
@@ -99,7 +98,7 @@ WhatsApp: +381 64 123 4567
 E‑pošta: prodaja@primer.rs
 Radno vreme: Pon–pet 8–17, sub 8–14
 
-Ovu poruku ste dobili jer ste tražili da vam javimo kad artikal stigne. Odjava od svih obaveštenja o dolasku robe: https://sklop.test/obavestenja/odjava/primer-tokena-za-pregled-sablona
+Ovu poruku ste dobili jer ste tražili da vam javimo kad artikal stigne. Odjava od svih obaveštenja o dolasku robe: https://primer.test/obavestenja/odjava/primer-tokena-za-pregled-sablona
 ",
 }
 `;
@@ -119,7 +118,7 @@ Traženi brojevi: 04L253016H
 Fotografije: 2
 Poruka: Treba mi turbina, stara duva ulje. Motor CRLB.
 
-Status upita: https://sklop.test/upit/primer-tokena-za-pregled-sablona
+Status upita: https://primer.test/upit/primer-tokena-za-pregled-sablona
 
 Pitanja? Pozovite +381 64 123 4567 ili pišite na Viber ili odgovorite na ovu poruku.
 
@@ -133,7 +132,7 @@ WhatsApp: +381 64 123 4567
 E‑pošta: prodaja@primer.rs
 Radno vreme: Pon–pet 8–17, sub 8–14
 
-Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu SKLOP.
+Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu Euromotors Plus.
 ",
 }
 `;
@@ -159,9 +158,9 @@ Odloženo plaćanje: odobreno, rok 15 dana
 - Vozila mušterija — VIN, tablice i beleške na jednom mestu.
 - Cenovnik u Excelu — sa vašim cenama za izabrane kategorije.
 
-Otvorite portal za majstore: https://sklop.test/majstor
+Otvorite portal za majstore: https://primer.test/majstor
 
-Prijavljujete se adresom servis@primer.rs i lozinkom koju ste izabrali pri registraciji. Prijava: https://sklop.test/prijava
+Prijavljujete se adresom servis@primer.rs i lozinkom koju ste izabrali pri registraciji. Prijava: https://primer.test/prijava
 
 --
 Primer d.o.o.
@@ -173,7 +172,7 @@ WhatsApp: +381 64 123 4567
 E‑pošta: prodaja@primer.rs
 Radno vreme: Pon–pet 8–17, sub 8–14
 
-Ovu poruku ste dobili zbog naloga na sajtu SKLOP.
+Ovu poruku ste dobili zbog naloga na sajtu Euromotors Plus.
 ",
 }
 `;
@@ -193,7 +192,7 @@ E-pošta naloga: servis@primer.rs
 
 Do odobrenja možete da poručujete po maloprodajnim cenama.
 
-Status registracije: https://sklop.test/majstor
+Status registracije: https://primer.test/majstor
 
 Pitanja? Pozovite +381 64 123 4567 ili pišite na Viber ili odgovorite na ovu poruku.
 
@@ -207,7 +206,7 @@ WhatsApp: +381 64 123 4567
 E‑pošta: prodaja@primer.rs
 Radno vreme: Pon–pet 8–17, sub 8–14
 
-Ovu poruku ste dobili zbog naloga na sajtu SKLOP.
+Ovu poruku ste dobili zbog naloga na sajtu Euromotors Plus.
 ",
 }
 `;
@@ -237,7 +236,7 @@ WhatsApp: +381 64 123 4567
 E‑pošta: prodaja@primer.rs
 Radno vreme: Pon–pet 8–17, sub 8–14
 
-Ovu poruku ste dobili zbog naloga na sajtu SKLOP.
+Ovu poruku ste dobili zbog naloga na sajtu Euromotors Plus.
 ",
 }
 `;
@@ -263,7 +262,7 @@ WhatsApp: +381 64 123 4567
 E‑pošta: prodaja@primer.rs
 Radno vreme: Pon–pet 8–17, sub 8–14
 
-Ovu poruku ste dobili zbog naloga na sajtu SKLOP.
+Ovu poruku ste dobili zbog naloga na sajtu Euromotors Plus.
 ",
 }
 `;
@@ -281,7 +280,7 @@ Deo stavki iz porudžbine SK-2026-000187 trenutno nije na stanju i naručili smo
 
 Ako vam deo treba hitno ili želite zamenu drugog proizvođača, javite se — proverićemo šta je odmah dostupno.
 
-Pogledajte status porudžbine: https://sklop.test/porudzbina/primer-tokena-za-pregled-sablona
+Pogledajte status porudžbine: https://primer.test/porudzbina/primer-tokena-za-pregled-sablona
 
 Pitanja? Pozovite +381 64 123 4567 ili pišite na Viber ili odgovorite na ovu poruku.
 
@@ -295,7 +294,7 @@ WhatsApp: +381 64 123 4567
 E‑pošta: prodaja@primer.rs
 Radno vreme: Pon–pet 8–17, sub 8–14
 
-Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu SKLOP.
+Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu Euromotors Plus.
 ",
 }
 `;
@@ -313,7 +312,7 @@ Razlog: Kupac je odustao telefonom.
 
 Ako je otkazivanje greška ili vam treba zamenski deo, pozovite +381 64 123 4567 ili pišite na Viber ili odgovorite na ovu poruku.
 
-Status porudžbine: https://sklop.test/porudzbina/primer-tokena-za-pregled-sablona
+Status porudžbine: https://primer.test/porudzbina/primer-tokena-za-pregled-sablona
 
 --
 Primer d.o.o.
@@ -325,7 +324,7 @@ WhatsApp: +381 64 123 4567
 E‑pošta: prodaja@primer.rs
 Radno vreme: Pon–pet 8–17, sub 8–14
 
-Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu SKLOP.
+Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu Euromotors Plus.
 ",
 }
 `;
@@ -351,13 +350,14 @@ exports[`snapshots > order_confirmed HTML 1`] = `
     .sk-pad { padding-left: 20px !important; padding-right: 20px !important; }
     .sk-outer { padding: 0 !important; }
     .sk-panel { border-radius: 0 !important; border-left: 0 !important; border-right: 0 !important; }
+    .sk-logo { padding-left: 8px !important; padding-right: 8px !important; border-radius: 0 !important; }
+    .sk-ref { padding-left: 12px !important; }
   }
   @media (prefers-color-scheme: dark) {
     .sk-body, .sk-outer { background: #0D0F11 !important; }
     .sk-panel { background: #16191D !important; border-color: #2C3238 !important; }
     .sk-head, .sk-code { background: #1C2025 !important; border-color: #2C3238 !important; }
     .sk-ink1, .sk-code { color: #F1ECE3 !important; }
-    .sk-mark { background: #F1ECE3 !important; }
     .sk-ink2 { color: #C4BEB4 !important; }
     .sk-ink3 { color: #969088 !important; }
     .sk-line, .sk-rule { border-color: #2C3238 !important; }
@@ -374,27 +374,25 @@ exports[`snapshots > order_confirmed HTML 1`] = `
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="sk-shell" style="max-width:600px;width:100%;">
 <tr><td class="sk-panel" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #DADDE1;border-radius:6px;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td class="sk-pad sk-head sk-line" style="padding:18px 32px;border-bottom:1px solid #DADDE1;background:#F7F8F9;border-radius:6px 6px 0 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-<td><a href="https://sklop.test" style="text-decoration:none;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td valign="bottom" style="padding:0 10px 3px 0;" aria-hidden="true"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td colspan="3" style="padding:0 5px 3px;"><div style="width:10px;height:5px;background:#FF6B1A;font-size:0;line-height:0;">&nbsp;</div></td></tr><tr><td valign="bottom"><div class="sk-mark" style="width:5px;height:8px;background:#121518;font-size:0;line-height:0;">&nbsp;</div></td><td valign="bottom"><div class="sk-mark" style="width:10px;height:5px;background:#121518;font-size:0;line-height:0;">&nbsp;</div></td><td valign="bottom"><div class="sk-mark" style="width:5px;height:8px;background:#121518;font-size:0;line-height:0;">&nbsp;</div></td></tr></table></td><td class="sk-ink1" style="font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:20px;line-height:24px;font-weight:900;letter-spacing:2px;color:#121518;">SKLOP</td></tr></table></a></td>
-<td align="right" class="sk-ink3" style="font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:13px;line-height:20px;color:#5D6570;white-space:nowrap;">SK-2026-000187</td>
-</tr></table>
+<tr><td class="sk-logo sk-line" bgcolor="#FFFFFF" style="padding:6px 16px;border-bottom:1px solid #DADDE1;background:#FFFFFF;border-radius:6px 6px 0 0;">
+<a href="https://primer.test" style="display:block;text-decoration:none;"><img src="https://primer.test/brand/email-header@2x.png" width="477" height="88" alt="Euromotors Plus by OEM Parts" style="display:block;width:100%;max-width:477px;height:auto;border:0;outline:none;text-decoration:none;font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:18px;line-height:24px;font-weight:900;color:#121518;"></a>
+<div class="sk-ref" style="padding:0 0 6px 16px;font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:13px;line-height:20px;color:#5D6570;white-space:nowrap;">SK-2026-000187</div>
 </td></tr>
 <tr><td class="sk-pad" style="padding:28px 32px 12px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 <h1 class="sk-ink1" style="margin:0 0 12px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:#121518;letter-spacing:-0.01em;">Porudžbina je potvrđena.</h1>
 <p class="sk-ink2" style="margin:0 0 14px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:16px;line-height:1.55;color:#3D444C;">Porudžbina <strong style="font-weight:700;"><span style="white-space:nowrap;">SK-2026-000187</span></strong> je potvrđena i delovi su rezervisani za vas. Šaljemo je kurirskom službom i javljamo broj pošiljke.</p>
 <h2 class="sk-ink1" style="margin:24px 0 8px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:17px;line-height:1.3;font-weight:700;color:#121518;">Podaci za uplatu</h2>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 18px;border-collapse:collapse;border-top:1px solid #DADDE1;border-bottom:1px solid #DADDE1;" class="sk-rule"><tr><td class="sk-ink3 sk-line" valign="top" style="padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Primalac</td><td class="sk-ink1 sk-line" valign="top" style="padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">Primer d.o.o.</td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Račun</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:14px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">160-0000000000000-00 (Banka)</td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Iznos</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:700;color:#121518;word-break:break-word;">33.260 RSD</td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Poziv na broj</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:14px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">97 2026000187</td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Svrha uplate</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">Uplata po predračunu <span style="white-space:nowrap;">SK-2026-000187</span></td></tr></table>
-<p class="sk-ink2" style="margin:0 0 14px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:16px;line-height:1.55;color:#3D444C;"><a href="https://sklop.test/porudzbina/primer-tokena-za-pregled-sablona/predracun" class="sk-link" style="color:#B8470A;text-decoration:underline;">Predračun za štampu</a></p>
+<p class="sk-ink2" style="margin:0 0 14px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:16px;line-height:1.55;color:#3D444C;"><a href="https://primer.test/porudzbina/primer-tokena-za-pregled-sablona/predracun" class="sk-link" style="color:#B8470A;text-decoration:underline;">Predračun za štampu</a></p>
 <p class="sk-ink3" style="margin:0 0 14px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:14px;line-height:1.55;color:#5D6570;">Deo rezervišemo do uplate.</p>
 <h2 class="sk-ink1" style="margin:24px 0 8px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:17px;line-height:1.3;font-weight:700;color:#121518;">Stavke</h2>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 18px;border-collapse:collapse;border-top:1px solid #DADDE1;" class="sk-rule"><tr><td class="sk-line" valign="top" style="padding:10px 12px 10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"><div class="sk-ink1" style="font-size:15px;line-height:21px;font-weight:600;color:#121518;">Set zupčastog kaiša sa vodenom pumpom</div><div class="sk-ink3" style="font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:12px;line-height:18px;color:#5D6570;">04L198119A</div><div class="sk-ink3" style="font-size:13px;line-height:19px;color:#5D6570;">INA</div><div class="sk-ink2" style="font-size:13px;line-height:19px;color:#3D444C;">1&nbsp;×&nbsp;18.990 RSD</div></td><td class="sk-ink1 sk-line" valign="top" align="right" style="padding:10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#121518;white-space:nowrap;">18.990 RSD</td></tr><tr><td class="sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:10px 12px 10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"><div class="sk-ink1" style="font-size:15px;line-height:21px;font-weight:600;color:#121518;">Kočioni disk prednji, 312 mm</div><div class="sk-ink3" style="font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:12px;line-height:18px;color:#5D6570;">5Q0615301F</div><div class="sk-ink3" style="font-size:13px;line-height:19px;color:#5D6570;">ATE</div><div class="sk-ink2" style="font-size:13px;line-height:19px;color:#3D444C;">2&nbsp;×&nbsp;6.490 RSD</div></td><td class="sk-ink1 sk-line" valign="top" align="right" style="border-top:1px solid #E8EAED;padding:10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#121518;white-space:nowrap;">12.980 RSD</td></tr><tr><td class="sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:10px 12px 10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"><div class="sk-ink1" style="font-size:15px;line-height:21px;font-weight:600;color:#121518;">Filter ulja</div><div class="sk-ink3" style="font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:12px;line-height:18px;color:#5D6570;">03N115562B</div><div class="sk-ink3" style="font-size:13px;line-height:19px;color:#5D6570;">MANN-FILTER</div><div class="sk-ink2" style="font-size:13px;line-height:19px;color:#3D444C;">1&nbsp;×&nbsp;1.290 RSD</div></td><td class="sk-ink1 sk-line" valign="top" align="right" style="border-top:1px solid #E8EAED;padding:10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#121518;white-space:nowrap;">1.290 RSD</td></tr><tr><td class="sk-ink2 sk-rule" style="border-top:1px solid #DADDE1;padding:10px 12px 3px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:14px;line-height:22px;font-weight:400;color:#3D444C;">Artikli</td><td class="sk-ink2 sk-rule" align="right" style="border-top:1px solid #DADDE1;padding:10px 0 3px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:14px;line-height:22px;font-weight:400;color:#3D444C;white-space:nowrap;">33.260 RSD</td></tr><tr><td class="sk-ink2 sk-rule" style="padding:3px 12px 3px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:14px;line-height:22px;font-weight:400;color:#3D444C;">Dostava</td><td class="sk-ink2 sk-rule" align="right" style="padding:3px 0 3px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:14px;line-height:22px;font-weight:400;color:#3D444C;white-space:nowrap;">bez naknade</td></tr><tr><td class="sk-ink1 sk-rule" style="padding:3px 12px 3px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:17px;line-height:22px;font-weight:700;color:#121518;">Ukupno sa PDV-om</td><td class="sk-ink1 sk-rule" align="right" style="padding:3px 0 3px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:17px;line-height:22px;font-weight:700;color:#121518;white-space:nowrap;">33.260 RSD</td></tr><tr><td class="sk-ink2 sk-rule" style="padding:3px 12px 3px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:14px;line-height:22px;font-weight:400;color:#3D444C;">U tome PDV</td><td class="sk-ink2 sk-rule" align="right" style="padding:3px 0 3px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:14px;line-height:22px;font-weight:400;color:#3D444C;white-space:nowrap;">5.543,33 RSD</td></tr></table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 18px;border-collapse:collapse;border-top:1px solid #DADDE1;border-bottom:1px solid #DADDE1;" class="sk-rule"><tr><td class="sk-ink3 sk-line" valign="top" style="padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Dostava</td><td class="sk-ink1 sk-line" valign="top" style="padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">Kurirska služba</td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Adresa</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">Bulevar oslobođenja 12, 21000 Novi Sad</td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Plaćanje</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">Virmanom uz predračun</td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Firma</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">Primer d.o.o. · PIB 101234567</td></tr></table>
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 22px;border-collapse:separate;"><tr><td class="sk-button" bgcolor="#FF6B1A" style="background:#FF6B1A;border-radius:2px;mso-padding-alt:12px 22px;"><a href="https://sklop.test/porudzbina/primer-tokena-za-pregled-sablona" style="display:inline-block;padding:12px 22px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:16px;line-height:20px;font-weight:700;color:#121518;text-decoration:none;border-radius:2px;">Pogledajte status porudžbine</a></td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 22px;border-collapse:separate;"><tr><td class="sk-button" bgcolor="#FF6B1A" style="background:#FF6B1A;border-radius:2px;mso-padding-alt:12px 22px;"><a href="https://primer.test/porudzbina/primer-tokena-za-pregled-sablona" style="display:inline-block;padding:12px 22px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:16px;line-height:20px;font-weight:700;color:#121518;text-decoration:none;border-radius:2px;">Pogledajte status porudžbine</a></td></tr></table>
 <p class="sk-ink3" style="margin:0 0 14px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:14px;line-height:1.55;color:#5D6570;">Pitanja? Pozovite <a href="tel:+381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> ili pišite na <a href="viber://chat?number=%2B381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">Viber</a> ili odgovorite na ovu poruku.</p>
 </td></tr>
 <tr><td class="sk-pad sk-ink3 sk-line" style="padding:18px 32px 24px;border-top:1px solid #DADDE1;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;color:#5D6570;">
-<div class="sk-ink2" style="font-weight:600;color:#3D444C;">Primer d.o.o.<br>Autoput 12, 11000 Beograd<br>PIB 101234567 · MB 21234567</div><div style="margin-top:6px;">Telefon: <a href="tel:+381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; Viber: <a href="viber://chat?number=%2B381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; WhatsApp: <a href="https://wa.me/381641234567?text=Porud%C5%BEbina%20SK-2026-000187" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; E‑pošta: <a href="mailto:prodaja@primer.rs" class="sk-link" style="color:#B8470A;text-decoration:underline;">prodaja@primer.rs</a></div><div style="margin-top:6px;">Radno vreme: Pon–pet 8–17, sub 8–14</div><div style="margin-top:12px;">Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu SKLOP.</div>
+<div class="sk-ink2" style="font-weight:600;color:#3D444C;">Primer d.o.o.<br>Autoput 12, 11000 Beograd<br>PIB 101234567 · MB 21234567</div><div style="margin-top:6px;">Telefon: <a href="tel:+381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; Viber: <a href="viber://chat?number=%2B381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; WhatsApp: <a href="https://wa.me/381641234567?text=Porud%C5%BEbina%20SK-2026-000187" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; E‑pošta: <a href="mailto:prodaja@primer.rs" class="sk-link" style="color:#B8470A;text-decoration:underline;">prodaja@primer.rs</a></div><div style="margin-top:6px;">Radno vreme: Pon–pet 8–17, sub 8–14</div><div style="margin-top:12px;">Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu Euromotors Plus.</div>
 </td></tr>
 </table>
 </td></tr>
@@ -424,7 +422,7 @@ Iznos: 33.260 RSD
 Poziv na broj: 97 2026000187
 Svrha uplate: Uplata po predračunu SK-2026-000187
 
-Predračun za štampu: https://sklop.test/porudzbina/primer-tokena-za-pregled-sablona/predracun
+Predračun za štampu: https://primer.test/porudzbina/primer-tokena-za-pregled-sablona/predracun
 
 Deo rezervišemo do uplate.
 
@@ -454,7 +452,7 @@ Adresa: Bulevar oslobođenja 12, 21000 Novi Sad
 Plaćanje: Virmanom uz predračun
 Firma: Primer d.o.o. · PIB 101234567
 
-Pogledajte status porudžbine: https://sklop.test/porudzbina/primer-tokena-za-pregled-sablona
+Pogledajte status porudžbine: https://primer.test/porudzbina/primer-tokena-za-pregled-sablona
 
 Pitanja? Pozovite +381 64 123 4567 ili pišite na Viber ili odgovorite na ovu poruku.
 
@@ -468,7 +466,7 @@ WhatsApp: +381 64 123 4567
 E‑pošta: prodaja@primer.rs
 Radno vreme: Pon–pet 8–17, sub 8–14
 
-Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu SKLOP.
+Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu Euromotors Plus.
 ",
 }
 `;
@@ -487,9 +485,9 @@ AKO NEŠTO NE ODGOVARA
 
 - Proverite deo pre ugradnje: broj na delu, priključke i dimenzije. Ugrađen deo teško vraćamo.
 - Ako deo ne odgovara ili ima grešku, javite se sa brojem porudžbine — dogovaramo zamenu ili povraćaj.
-- Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Kako se to radi, piše na stranici Reklamacije i povrat: https://sklop.test/reklamacije-i-povrat.
+- Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Kako se to radi, piše na stranici Reklamacije i povrat: https://primer.test/reklamacije-i-povrat.
 
-Pogledajte status porudžbine: https://sklop.test/porudzbina/primer-tokena-za-pregled-sablona
+Pogledajte status porudžbine: https://primer.test/porudzbina/primer-tokena-za-pregled-sablona
 
 Pitanja? Pozovite +381 64 123 4567 ili pišite na Viber ili odgovorite na ovu poruku.
 
@@ -503,7 +501,7 @@ WhatsApp: +381 64 123 4567
 E‑pošta: prodaja@primer.rs
 Radno vreme: Pon–pet 8–17, sub 8–14
 
-Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu SKLOP.
+Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu Euromotors Plus.
 ",
 }
 `;
@@ -517,15 +515,15 @@ exports[`snapshots > order_ready_pickup plain text 1`] = `
 
 Porudžbina SK-2026-000187 vas čeka u radnji. Ponesite broj porudžbine ili pokažite ovu poruku.
 
-Adresa: Autoput 12, 11000 Beograd: https://maps.example/sklop
+Adresa: Autoput 12, 11000 Beograd: https://maps.example/radnja
 Radno vreme: Pon–pet 8–17, sub 8–14
 Za plaćanje: 33.260 RSD
 
 Pri preuzimanju plaćate 33.260 RSD (gotovinom pri preuzimanju).
 
-Otvorite mapu: https://maps.example/sklop
+Otvorite mapu: https://maps.example/radnja
 
-Status porudžbine: https://sklop.test/porudzbina/primer-tokena-za-pregled-sablona
+Status porudžbine: https://primer.test/porudzbina/primer-tokena-za-pregled-sablona
 
 Pitanja? Pozovite +381 64 123 4567 ili pišite na Viber ili odgovorite na ovu poruku.
 
@@ -539,7 +537,7 @@ WhatsApp: +381 64 123 4567
 E‑pošta: prodaja@primer.rs
 Radno vreme: Pon–pet 8–17, sub 8–14
 
-Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu SKLOP.
+Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu Euromotors Plus.
 ",
 }
 `;
@@ -565,13 +563,14 @@ exports[`snapshots > order_received HTML 1`] = `
     .sk-pad { padding-left: 20px !important; padding-right: 20px !important; }
     .sk-outer { padding: 0 !important; }
     .sk-panel { border-radius: 0 !important; border-left: 0 !important; border-right: 0 !important; }
+    .sk-logo { padding-left: 8px !important; padding-right: 8px !important; border-radius: 0 !important; }
+    .sk-ref { padding-left: 12px !important; }
   }
   @media (prefers-color-scheme: dark) {
     .sk-body, .sk-outer { background: #0D0F11 !important; }
     .sk-panel { background: #16191D !important; border-color: #2C3238 !important; }
     .sk-head, .sk-code { background: #1C2025 !important; border-color: #2C3238 !important; }
     .sk-ink1, .sk-code { color: #F1ECE3 !important; }
-    .sk-mark { background: #F1ECE3 !important; }
     .sk-ink2 { color: #C4BEB4 !important; }
     .sk-ink3 { color: #969088 !important; }
     .sk-line, .sk-rule { border-color: #2C3238 !important; }
@@ -588,11 +587,9 @@ exports[`snapshots > order_received HTML 1`] = `
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="sk-shell" style="max-width:600px;width:100%;">
 <tr><td class="sk-panel" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #DADDE1;border-radius:6px;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td class="sk-pad sk-head sk-line" style="padding:18px 32px;border-bottom:1px solid #DADDE1;background:#F7F8F9;border-radius:6px 6px 0 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-<td><a href="https://sklop.test" style="text-decoration:none;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td valign="bottom" style="padding:0 10px 3px 0;" aria-hidden="true"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td colspan="3" style="padding:0 5px 3px;"><div style="width:10px;height:5px;background:#FF6B1A;font-size:0;line-height:0;">&nbsp;</div></td></tr><tr><td valign="bottom"><div class="sk-mark" style="width:5px;height:8px;background:#121518;font-size:0;line-height:0;">&nbsp;</div></td><td valign="bottom"><div class="sk-mark" style="width:10px;height:5px;background:#121518;font-size:0;line-height:0;">&nbsp;</div></td><td valign="bottom"><div class="sk-mark" style="width:5px;height:8px;background:#121518;font-size:0;line-height:0;">&nbsp;</div></td></tr></table></td><td class="sk-ink1" style="font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:20px;line-height:24px;font-weight:900;letter-spacing:2px;color:#121518;">SKLOP</td></tr></table></a></td>
-<td align="right" class="sk-ink3" style="font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:13px;line-height:20px;color:#5D6570;white-space:nowrap;">SK-2026-000187</td>
-</tr></table>
+<tr><td class="sk-logo sk-line" bgcolor="#FFFFFF" style="padding:6px 16px;border-bottom:1px solid #DADDE1;background:#FFFFFF;border-radius:6px 6px 0 0;">
+<a href="https://primer.test" style="display:block;text-decoration:none;"><img src="https://primer.test/brand/email-header@2x.png" width="477" height="88" alt="Euromotors Plus by OEM Parts" style="display:block;width:100%;max-width:477px;height:auto;border:0;outline:none;text-decoration:none;font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:18px;line-height:24px;font-weight:900;color:#121518;"></a>
+<div class="sk-ref" style="padding:0 0 6px 16px;font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:13px;line-height:20px;color:#5D6570;white-space:nowrap;">SK-2026-000187</div>
 </td></tr>
 <tr><td class="sk-pad" style="padding:28px 32px 12px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 <h1 class="sk-ink1" style="margin:0 0 12px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:#121518;letter-spacing:-0.01em;">Porudžbina je primljena.</h1>
@@ -600,11 +597,11 @@ exports[`snapshots > order_received HTML 1`] = `
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 18px;border-collapse:collapse;border-top:1px solid #DADDE1;" class="sk-rule"><tr><td class="sk-line" valign="top" style="padding:10px 12px 10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"><div class="sk-ink1" style="font-size:15px;line-height:21px;font-weight:600;color:#121518;">Set zupčastog kaiša sa vodenom pumpom</div><div class="sk-ink3" style="font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:12px;line-height:18px;color:#5D6570;">04L198119A</div><div class="sk-ink3" style="font-size:13px;line-height:19px;color:#5D6570;">INA</div><div class="sk-ink2" style="font-size:13px;line-height:19px;color:#3D444C;">1&nbsp;×&nbsp;18.990 RSD</div></td><td class="sk-ink1 sk-line" valign="top" align="right" style="padding:10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#121518;white-space:nowrap;">18.990 RSD</td></tr><tr><td class="sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:10px 12px 10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"><div class="sk-ink1" style="font-size:15px;line-height:21px;font-weight:600;color:#121518;">Kočioni disk prednji, 312 mm</div><div class="sk-ink3" style="font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:12px;line-height:18px;color:#5D6570;">5Q0615301F</div><div class="sk-ink3" style="font-size:13px;line-height:19px;color:#5D6570;">ATE</div><div class="sk-ink2" style="font-size:13px;line-height:19px;color:#3D444C;">2&nbsp;×&nbsp;6.490 RSD</div></td><td class="sk-ink1 sk-line" valign="top" align="right" style="border-top:1px solid #E8EAED;padding:10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#121518;white-space:nowrap;">12.980 RSD</td></tr><tr><td class="sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:10px 12px 10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"><div class="sk-ink1" style="font-size:15px;line-height:21px;font-weight:600;color:#121518;">Filter ulja</div><div class="sk-ink3" style="font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:12px;line-height:18px;color:#5D6570;">03N115562B</div><div class="sk-ink3" style="font-size:13px;line-height:19px;color:#5D6570;">MANN-FILTER</div><div class="sk-ink2" style="font-size:13px;line-height:19px;color:#3D444C;">1&nbsp;×&nbsp;1.290 RSD</div></td><td class="sk-ink1 sk-line" valign="top" align="right" style="border-top:1px solid #E8EAED;padding:10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#121518;white-space:nowrap;">1.290 RSD</td></tr><tr><td class="sk-ink2 sk-rule" style="border-top:1px solid #DADDE1;padding:10px 12px 3px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:14px;line-height:22px;font-weight:400;color:#3D444C;">Artikli</td><td class="sk-ink2 sk-rule" align="right" style="border-top:1px solid #DADDE1;padding:10px 0 3px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:14px;line-height:22px;font-weight:400;color:#3D444C;white-space:nowrap;">33.260 RSD</td></tr><tr><td class="sk-ink2 sk-rule" style="padding:3px 12px 3px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:14px;line-height:22px;font-weight:400;color:#3D444C;">Dostava</td><td class="sk-ink2 sk-rule" align="right" style="padding:3px 0 3px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:14px;line-height:22px;font-weight:400;color:#3D444C;white-space:nowrap;">bez naknade</td></tr><tr><td class="sk-ink1 sk-rule" style="padding:3px 12px 3px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:17px;line-height:22px;font-weight:700;color:#121518;">Ukupno sa PDV-om</td><td class="sk-ink1 sk-rule" align="right" style="padding:3px 0 3px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:17px;line-height:22px;font-weight:700;color:#121518;white-space:nowrap;">33.260 RSD</td></tr><tr><td class="sk-ink2 sk-rule" style="padding:3px 12px 3px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:14px;line-height:22px;font-weight:400;color:#3D444C;">U tome PDV</td><td class="sk-ink2 sk-rule" align="right" style="padding:3px 0 3px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:14px;line-height:22px;font-weight:400;color:#3D444C;white-space:nowrap;">5.543,33 RSD</td></tr></table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 18px;border-collapse:collapse;border-top:1px solid #DADDE1;border-bottom:1px solid #DADDE1;" class="sk-rule"><tr><td class="sk-ink3 sk-line" valign="top" style="padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Dostava</td><td class="sk-ink1 sk-line" valign="top" style="padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">Kurirska služba</td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Adresa</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">Bulevar oslobođenja 12, 21000 Novi Sad</td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Plaćanje</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">Pouzećem</td></tr></table>
 <p class="sk-ink3" style="margin:0 0 14px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:14px;line-height:1.55;color:#5D6570;">Plaćate kuriru gotovinom pri preuzimanju paketa.</p>
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 22px;border-collapse:separate;"><tr><td class="sk-button" bgcolor="#FF6B1A" style="background:#FF6B1A;border-radius:2px;mso-padding-alt:12px 22px;"><a href="https://sklop.test/porudzbina/primer-tokena-za-pregled-sablona" style="display:inline-block;padding:12px 22px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:16px;line-height:20px;font-weight:700;color:#121518;text-decoration:none;border-radius:2px;">Pogledajte status porudžbine</a></td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 22px;border-collapse:separate;"><tr><td class="sk-button" bgcolor="#FF6B1A" style="background:#FF6B1A;border-radius:2px;mso-padding-alt:12px 22px;"><a href="https://primer.test/porudzbina/primer-tokena-za-pregled-sablona" style="display:inline-block;padding:12px 22px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:16px;line-height:20px;font-weight:700;color:#121518;text-decoration:none;border-radius:2px;">Pogledajte status porudžbine</a></td></tr></table>
 <p class="sk-ink3" style="margin:0 0 14px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:14px;line-height:1.55;color:#5D6570;">Pitanja? Pozovite <a href="tel:+381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> ili pišite na <a href="viber://chat?number=%2B381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">Viber</a> ili odgovorite na ovu poruku.</p>
 </td></tr>
 <tr><td class="sk-pad sk-ink3 sk-line" style="padding:18px 32px 24px;border-top:1px solid #DADDE1;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;color:#5D6570;">
-<div class="sk-ink2" style="font-weight:600;color:#3D444C;">Primer d.o.o.<br>Autoput 12, 11000 Beograd<br>PIB 101234567 · MB 21234567</div><div style="margin-top:6px;">Telefon: <a href="tel:+381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; Viber: <a href="viber://chat?number=%2B381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; WhatsApp: <a href="https://wa.me/381641234567?text=Porud%C5%BEbina%20SK-2026-000187" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; E‑pošta: <a href="mailto:prodaja@primer.rs" class="sk-link" style="color:#B8470A;text-decoration:underline;">prodaja@primer.rs</a></div><div style="margin-top:6px;">Radno vreme: Pon–pet 8–17, sub 8–14</div><div style="margin-top:12px;">Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu SKLOP.</div>
+<div class="sk-ink2" style="font-weight:600;color:#3D444C;">Primer d.o.o.<br>Autoput 12, 11000 Beograd<br>PIB 101234567 · MB 21234567</div><div style="margin-top:6px;">Telefon: <a href="tel:+381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; Viber: <a href="viber://chat?number=%2B381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; WhatsApp: <a href="https://wa.me/381641234567?text=Porud%C5%BEbina%20SK-2026-000187" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a> &nbsp;·&nbsp; E‑pošta: <a href="mailto:prodaja@primer.rs" class="sk-link" style="color:#B8470A;text-decoration:underline;">prodaja@primer.rs</a></div><div style="margin-top:6px;">Radno vreme: Pon–pet 8–17, sub 8–14</div><div style="margin-top:12px;">Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu Euromotors Plus.</div>
 </td></tr>
 </table>
 </td></tr>
@@ -649,7 +646,7 @@ Plaćanje: Pouzećem
 
 Plaćate kuriru gotovinom pri preuzimanju paketa.
 
-Pogledajte status porudžbine: https://sklop.test/porudzbina/primer-tokena-za-pregled-sablona
+Pogledajte status porudžbine: https://primer.test/porudzbina/primer-tokena-za-pregled-sablona
 
 Pitanja? Pozovite +381 64 123 4567 ili pišite na Viber ili odgovorite na ovu poruku.
 
@@ -663,7 +660,7 @@ WhatsApp: +381 64 123 4567
 E‑pošta: prodaja@primer.rs
 Radno vreme: Pon–pet 8–17, sub 8–14
 
-Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu SKLOP.
+Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu Euromotors Plus.
 ",
 }
 `;
@@ -682,7 +679,7 @@ Broj pošiljke: DE123456789RS
 Adresa: Bulevar oslobođenja 12, 21000 Novi Sad
 Kuriru plaćate: 33.260 RSD
 
-Pogledajte status porudžbine: https://sklop.test/porudzbina/primer-tokena-za-pregled-sablona
+Pogledajte status porudžbine: https://primer.test/porudzbina/primer-tokena-za-pregled-sablona
 
 Pitanja? Pozovite +381 64 123 4567 ili pišite na Viber ili odgovorite na ovu poruku.
 
@@ -696,7 +693,7 @@ WhatsApp: +381 64 123 4567
 E‑pošta: prodaja@primer.rs
 Radno vreme: Pon–pet 8–17, sub 8–14
 
-Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu SKLOP.
+Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu Euromotors Plus.
 ",
 }
 `;
@@ -714,7 +711,7 @@ Kod: 48213905
 
 Kod važi 15 minuta, do 29.09.2026. 10:57.
 
-Stranica za novu lozinku: https://sklop.test/zaboravljena-lozinka
+Stranica za novu lozinku: https://primer.test/zaboravljena-lozinka
 
 [Niste vi tražili?]
 Ignorišite ovu poruku — lozinka ostaje ista. Kod ne šaljite nikome, ni nama.
@@ -729,7 +726,7 @@ WhatsApp: +381 64 123 4567
 E‑pošta: prodaja@primer.rs
 Radno vreme: Pon–pet 8–17, sub 8–14
 
-Ovu poruku ste dobili jer je za ovu adresu zatražena nova lozinka na sajtu SKLOP.
+Ovu poruku ste dobili jer je za ovu adresu zatražena nova lozinka na sajtu Euromotors Plus.
 ",
 }
 `;
@@ -746,7 +743,7 @@ Ponuda za upit UP-2026-000045 važi do 06.10.2026. 10:42. Posle toga cene i rok 
 Ukupno sa PDV-om: 94.800 RSD
 Stavki: 2
 
-Pogledajte ponudu: https://sklop.test/upit/primer-tokena-za-pregled-sablona
+Pogledajte ponudu: https://primer.test/upit/primer-tokena-za-pregled-sablona
 
 Pitanja? Pozovite +381 64 123 4567 ili pišite na Viber ili odgovorite na ovu poruku.
 
@@ -760,7 +757,7 @@ WhatsApp: +381 64 123 4567
 E‑pošta: prodaja@primer.rs
 Radno vreme: Pon–pet 8–17, sub 8–14
 
-Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu SKLOP.
+Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu Euromotors Plus.
 ",
 }
 `;
@@ -790,7 +787,7 @@ Ponuda važi do: 06.10.2026. 10:42
 
 Staru turbinu vratite pri preuzimanju — kaucija se ne naplaćuje.
 
-Pogledajte i prihvatite ponudu: https://sklop.test/upit/primer-tokena-za-pregled-sablona
+Pogledajte i prihvatite ponudu: https://primer.test/upit/primer-tokena-za-pregled-sablona
 
 Kad prihvatite ponudu, pravimo porudžbinu po ovim cenama. Plaćate pouzećem, pri preuzimanju ili virmanom — ništa unapred preko sajta.
 
@@ -806,7 +803,7 @@ WhatsApp: +381 64 123 4567
 E‑pošta: prodaja@primer.rs
 Radno vreme: Pon–pet 8–17, sub 8–14
 
-Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu SKLOP.
+Ovu poruku ste dobili jer ste poslali porudžbinu ili upit na sajtu Euromotors Plus.
 ",
 }
 `;
@@ -826,23 +823,23 @@ Registracije majstora: 1
 
 ČEKA POTVRDU (1)
 
-- SK-2026-000186: https://sklop.test/admin/porudzbine/SK-2026-000186 — 3 h 20 min
+- SK-2026-000186: https://primer.test/admin/porudzbine/SK-2026-000186 — 3 h 20 min
 
 
 UPITI BEZ ODGOVORA (2)
 
-- UP-2026-000044: https://sklop.test/admin/upiti/UP-2026-000044 — 5 h 10 min
-- UP-2026-000045: https://sklop.test/admin/upiti/UP-2026-000045 — 40 min
+- UP-2026-000044: https://primer.test/admin/upiti/UP-2026-000044 — 5 h 10 min
+- UP-2026-000045: https://primer.test/admin/upiti/UP-2026-000045 — 40 min
 
 
 MAJSTORI ČEKAJU ODOBRENJE (1)
 
-- Auto servis Primer: https://sklop.test/admin/majstori
+- Auto servis Primer: https://primer.test/admin/majstori
 
 
 LAGER
 
-Bez zaliha: 3 · malo na stanju: 12. Otvorite lager: https://sklop.test/admin/lager
+Bez zaliha: 3 · malo na stanju: 12. Otvorite lager: https://primer.test/admin/lager
 
 
 TRAŽENO, A NEMAMO
@@ -850,16 +847,16 @@ TRAŽENO, A NEMAMO
 - 5Q0 407 271 — 4×
 - letva volana passat b8 — 2×
 
-Sve pretrage: https://sklop.test/admin/pretrage
+Sve pretrage: https://primer.test/admin/pretrage
 
-Otvorite pregled: https://sklop.test/admin
+Otvorite pregled: https://primer.test/admin
 
 --
 Primer d.o.o.
 Autoput 12, 11000 Beograd
 PIB 101234567 · MB 21234567
 
-Ovu poruku dobijate jer imate nalog osoblja na sajtu SKLOP. Podešavanja obaveštenja: https://sklop.test/admin/podesavanja?tab=obavestenja
+Ovu poruku dobijate jer imate nalog osoblja na sajtu Euromotors Plus. Podešavanja obaveštenja: https://primer.test/admin/podesavanja?tab=obavestenja
 ",
 }
 `;
@@ -884,14 +881,14 @@ Fotografije: 2
 [Poruka]
 Treba mi turbina, stara duva ulje. Motor CRLB.
 
-Otvorite upit: https://sklop.test/admin/upiti/UP-2026-000045
+Otvorite upit: https://primer.test/admin/upiti/UP-2026-000045
 
 --
 Primer d.o.o.
 Autoput 12, 11000 Beograd
 PIB 101234567 · MB 21234567
 
-Ovu poruku dobijate jer imate nalog osoblja na sajtu SKLOP. Podešavanja obaveštenja: https://sklop.test/admin/podesavanja?tab=obavestenja
+Ovu poruku dobijate jer imate nalog osoblja na sajtu Euromotors Plus. Podešavanja obaveštenja: https://primer.test/admin/podesavanja?tab=obavestenja
 ",
 }
 `;
@@ -899,13 +896,13 @@ Ovu poruku dobijate jer imate nalog osoblja na sajtu SKLOP. Podešavanja obaveš
 exports[`snapshots > staff_invite plain text 1`] = `
 {
   "preheader": "Uloga: zaposleni. Link važi 7 dana.",
-  "subject": "Pozivnica za administraciju — SKLOP",
+  "subject": "Pozivnica za administraciju — Euromotors Plus",
   "text": "Pozivnica za administraciju
 ===========================
 
-Dobili ste pristup administraciji sajta SKLOP (uloga: zaposleni).
+Dobili ste pristup administraciji sajta Euromotors Plus (uloga: zaposleni).
 
-Prihvatite pozivnicu: https://sklop.test/admin/pozivnica/primer-tokena-za-pregled-sablona
+Prihvatite pozivnicu: https://primer.test/admin/pozivnica/primer-tokena-za-pregled-sablona
 
 Link važi do 06.10.2026. 10:42. Prijavite se ili napravite nalog sa ovom adresom e-pošte — pozivnica važi samo za nju.
 
@@ -919,7 +916,7 @@ WhatsApp: +381 64 123 4567
 E‑pošta: prodaja@primer.rs
 Radno vreme: Pon–pet 8–17, sub 8–14
 
-Ovu poruku ste dobili jer je za vašu adresu napravljena pozivnica u administraciju sajta SKLOP.
+Ovu poruku ste dobili jer je za vašu adresu napravljena pozivnica u administraciju sajta Euromotors Plus.
 ",
 }
 `;
@@ -933,18 +930,18 @@ exports[`snapshots > staff_low_stock plain text 1`] = `
 
 Artikli koji su u poslednjem satu pali na prag zaliha ili ispod njega.
 
-DEMO-KD-0031: Kočioni disk prednji, 288 mm: https://sklop.test/admin/lager — ostalo 1 kom.
-DEMO-FU-0007: Filter ulja: https://sklop.test/admin/lager — nema na stanju
-DEMO-SV-0112: Svećica, iridijum: https://sklop.test/admin/lager — ostalo 2 kom.
+DEMO-KD-0031: Kočioni disk prednji, 288 mm: https://primer.test/admin/lager — ostalo 1 kom.
+DEMO-FU-0007: Filter ulja: https://primer.test/admin/lager — nema na stanju
+DEMO-SV-0112: Svećica, iridijum: https://primer.test/admin/lager — ostalo 2 kom.
 
-Otvorite lager: https://sklop.test/admin/lager
+Otvorite lager: https://primer.test/admin/lager
 
 --
 Primer d.o.o.
 Autoput 12, 11000 Beograd
 PIB 101234567 · MB 21234567
 
-Ovu poruku dobijate jer imate nalog osoblja na sajtu SKLOP. Podešavanja obaveštenja: https://sklop.test/admin/podesavanja?tab=obavestenja
+Ovu poruku dobijate jer imate nalog osoblja na sajtu Euromotors Plus. Podešavanja obaveštenja: https://primer.test/admin/podesavanja?tab=obavestenja
 ",
 }
 `;
@@ -966,14 +963,14 @@ Telefon: +381 64 123 4567
 E-pošta: servis@primer.rs
 Vrsta servisa: mehanika, dijagnostika
 
-Pregledajte registraciju: https://sklop.test/admin/majstori
+Pregledajte registraciju: https://primer.test/admin/majstori
 
 --
 Primer d.o.o.
 Autoput 12, 11000 Beograd
 PIB 101234567 · MB 21234567
 
-Ovu poruku dobijate jer imate nalog osoblja na sajtu SKLOP. Podešavanja obaveštenja: https://sklop.test/admin/podesavanja?tab=obavestenja
+Ovu poruku dobijate jer imate nalog osoblja na sajtu Euromotors Plus. Podešavanja obaveštenja: https://primer.test/admin/podesavanja?tab=obavestenja
 ",
 }
 `;
@@ -999,13 +996,14 @@ exports[`snapshots > staff_order_new HTML 1`] = `
     .sk-pad { padding-left: 20px !important; padding-right: 20px !important; }
     .sk-outer { padding: 0 !important; }
     .sk-panel { border-radius: 0 !important; border-left: 0 !important; border-right: 0 !important; }
+    .sk-logo { padding-left: 8px !important; padding-right: 8px !important; border-radius: 0 !important; }
+    .sk-ref { padding-left: 12px !important; }
   }
   @media (prefers-color-scheme: dark) {
     .sk-body, .sk-outer { background: #0D0F11 !important; }
     .sk-panel { background: #16191D !important; border-color: #2C3238 !important; }
     .sk-head, .sk-code { background: #1C2025 !important; border-color: #2C3238 !important; }
     .sk-ink1, .sk-code { color: #F1ECE3 !important; }
-    .sk-mark { background: #F1ECE3 !important; }
     .sk-ink2 { color: #C4BEB4 !important; }
     .sk-ink3 { color: #969088 !important; }
     .sk-line, .sk-rule { border-color: #2C3238 !important; }
@@ -1022,21 +1020,19 @@ exports[`snapshots > staff_order_new HTML 1`] = `
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="sk-shell" style="max-width:600px;width:100%;">
 <tr><td class="sk-panel" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #DADDE1;border-radius:6px;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td class="sk-pad sk-head sk-line" style="padding:18px 32px;border-bottom:1px solid #DADDE1;background:#F7F8F9;border-radius:6px 6px 0 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-<td><a href="https://sklop.test" style="text-decoration:none;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td valign="bottom" style="padding:0 10px 3px 0;" aria-hidden="true"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td colspan="3" style="padding:0 5px 3px;"><div style="width:10px;height:5px;background:#FF6B1A;font-size:0;line-height:0;">&nbsp;</div></td></tr><tr><td valign="bottom"><div class="sk-mark" style="width:5px;height:8px;background:#121518;font-size:0;line-height:0;">&nbsp;</div></td><td valign="bottom"><div class="sk-mark" style="width:10px;height:5px;background:#121518;font-size:0;line-height:0;">&nbsp;</div></td><td valign="bottom"><div class="sk-mark" style="width:5px;height:8px;background:#121518;font-size:0;line-height:0;">&nbsp;</div></td></tr></table></td><td class="sk-ink1" style="font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:20px;line-height:24px;font-weight:900;letter-spacing:2px;color:#121518;">SKLOP</td></tr></table></a></td>
-<td align="right" class="sk-ink3" style="font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:13px;line-height:20px;color:#5D6570;white-space:nowrap;">SK-2026-000187</td>
-</tr></table>
+<tr><td class="sk-logo sk-line" bgcolor="#FFFFFF" style="padding:6px 16px;border-bottom:1px solid #DADDE1;background:#FFFFFF;border-radius:6px 6px 0 0;">
+<a href="https://primer.test" style="display:block;text-decoration:none;"><img src="https://primer.test/brand/email-header@2x.png" width="477" height="88" alt="Euromotors Plus by OEM Parts" style="display:block;width:100%;max-width:477px;height:auto;border:0;outline:none;text-decoration:none;font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:18px;line-height:24px;font-weight:900;color:#121518;"></a>
+<div class="sk-ref" style="padding:0 0 6px 16px;font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:13px;line-height:20px;color:#5D6570;white-space:nowrap;">SK-2026-000187</div>
 </td></tr>
 <tr><td class="sk-pad" style="padding:28px 32px 12px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 <h1 class="sk-ink1" style="margin:0 0 12px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:#121518;letter-spacing:-0.01em;">Nova porudžbina <span style="white-space:nowrap;">SK-2026-000187</span></h1>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 18px;border-collapse:collapse;"><tr><td class="sk-notice" style="border-left:3px solid #3A5F80;background:#E5EDF4;padding:12px 14px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"><div style="font-size:15px;line-height:22px;font-weight:700;color:#3A5F80;">Majstorska porudžbina · razred Majstor Plus</div><div class="sk-ink2" style="margin-top:4px;font-size:15px;line-height:22px;color:#3D444C;">Auto servis Primer</div></td></tr></table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 18px;border-collapse:collapse;border-top:1px solid #DADDE1;border-bottom:1px solid #DADDE1;" class="sk-rule"><tr><td class="sk-ink3 sk-line" valign="top" style="padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Kupac</td><td class="sk-ink1 sk-line" valign="top" style="padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">Petar Petrović (majstor)</td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Telefon</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;"><a href="tel:+381641234567" class="sk-link" style="color:#B8470A;text-decoration:underline;">+381 64 123 4567</a></td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">E-pošta</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">petar@primer.rs</td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Dostava</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">Kurirska služba</td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Plaćanje</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">Odloženo plaćanje</td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Izvor</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">Google Ads · kočioni-diskovi</td></tr><tr><td class="sk-ink3 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 12px 9px 0;width:38%;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:12px;line-height:18px;letter-spacing:0.06em;text-transform:uppercase;color:#5D6570;">Napomena kupca</td><td class="sk-ink1 sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:9px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:400;color:#121518;word-break:break-word;">Pozvati pre slanja.</td></tr></table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 18px;border-collapse:collapse;border-top:1px solid #DADDE1;" class="sk-rule"><tr><td class="sk-line" valign="top" style="padding:10px 12px 10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"><div class="sk-ink1" style="font-size:15px;line-height:21px;font-weight:600;color:#121518;">Set zupčastog kaiša sa vodenom pumpom</div><div class="sk-ink3" style="font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:12px;line-height:18px;color:#5D6570;">04L198119A</div><div class="sk-ink3" style="font-size:13px;line-height:19px;color:#5D6570;">INA</div><div class="sk-ink2" style="font-size:13px;line-height:19px;color:#3D444C;">1&nbsp;×&nbsp;18.990 RSD</div></td><td class="sk-ink1 sk-line" valign="top" align="right" style="padding:10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#121518;white-space:nowrap;">18.990 RSD</td></tr><tr><td class="sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:10px 12px 10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"><div class="sk-ink1" style="font-size:15px;line-height:21px;font-weight:600;color:#121518;">Kočioni disk prednji, 312 mm</div><div class="sk-ink3" style="font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:12px;line-height:18px;color:#5D6570;">5Q0615301F</div><div class="sk-ink3" style="font-size:13px;line-height:19px;color:#5D6570;">ATE</div><div class="sk-ink2" style="font-size:13px;line-height:19px;color:#3D444C;">2&nbsp;×&nbsp;6.490 RSD</div></td><td class="sk-ink1 sk-line" valign="top" align="right" style="border-top:1px solid #E8EAED;padding:10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#121518;white-space:nowrap;">12.980 RSD</td></tr><tr><td class="sk-line" valign="top" style="border-top:1px solid #E8EAED;padding:10px 12px 10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;"><div class="sk-ink1" style="font-size:15px;line-height:21px;font-weight:600;color:#121518;">Filter ulja</div><div class="sk-ink3" style="font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:12px;line-height:18px;color:#5D6570;">03N115562B</div><div class="sk-ink3" style="font-size:13px;line-height:19px;color:#5D6570;">MANN-FILTER</div><div class="sk-ink2" style="font-size:13px;line-height:19px;color:#3D444C;">1&nbsp;×&nbsp;1.290 RSD</div></td><td class="sk-ink1 sk-line" valign="top" align="right" style="border-top:1px solid #E8EAED;padding:10px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:15px;line-height:21px;font-weight:600;color:#121518;white-space:nowrap;">1.290 RSD</td></tr><tr><td class="sk-ink1 sk-rule" style="border-top:1px solid #DADDE1;padding:10px 12px 3px 0;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:17px;line-height:22px;font-weight:700;color:#121518;">Ukupno sa PDV-om</td><td class="sk-ink1 sk-rule" align="right" style="border-top:1px solid #DADDE1;padding:10px 0 3px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:17px;line-height:22px;font-weight:700;color:#121518;white-space:nowrap;">33.260 RSD</td></tr></table>
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 22px;border-collapse:separate;"><tr><td class="sk-button" bgcolor="#FF6B1A" style="background:#FF6B1A;border-radius:2px;mso-padding-alt:12px 22px;"><a href="https://sklop.test/admin/porudzbine/SK-2026-000187" style="display:inline-block;padding:12px 22px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:16px;line-height:20px;font-weight:700;color:#121518;text-decoration:none;border-radius:2px;">Otvorite porudžbinu</a></td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 22px;border-collapse:separate;"><tr><td class="sk-button" bgcolor="#FF6B1A" style="background:#FF6B1A;border-radius:2px;mso-padding-alt:12px 22px;"><a href="https://primer.test/admin/porudzbine/SK-2026-000187" style="display:inline-block;padding:12px 22px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:16px;line-height:20px;font-weight:700;color:#121518;text-decoration:none;border-radius:2px;">Otvorite porudžbinu</a></td></tr></table>
 </td></tr>
 <tr><td class="sk-pad sk-ink3 sk-line" style="padding:18px 32px 24px;border-top:1px solid #DADDE1;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:13px;line-height:20px;color:#5D6570;">
-<div class="sk-ink2" style="font-weight:600;color:#3D444C;">Primer d.o.o.<br>Autoput 12, 11000 Beograd<br>PIB 101234567 · MB 21234567</div><div style="margin-top:12px;">Ovu poruku dobijate jer imate nalog osoblja na sajtu SKLOP. <a href="https://sklop.test/admin/podesavanja?tab=obavestenja" class="sk-link" style="color:#B8470A;text-decoration:underline;">Podešavanja obaveštenja</a></div>
+<div class="sk-ink2" style="font-weight:600;color:#3D444C;">Primer d.o.o.<br>Autoput 12, 11000 Beograd<br>PIB 101234567 · MB 21234567</div><div style="margin-top:12px;">Ovu poruku dobijate jer imate nalog osoblja na sajtu Euromotors Plus. <a href="https://primer.test/admin/podesavanja?tab=obavestenja" class="sk-link" style="color:#B8470A;text-decoration:underline;">Podešavanja obaveštenja</a></div>
 </td></tr>
 </table>
 </td></tr>
@@ -1081,14 +1077,14 @@ Napomena kupca: Pozvati pre slanja.
 
 Ukupno sa PDV-om: 33.260 RSD
 
-Otvorite porudžbinu: https://sklop.test/admin/porudzbine/SK-2026-000187
+Otvorite porudžbinu: https://primer.test/admin/porudzbine/SK-2026-000187
 
 --
 Primer d.o.o.
 Autoput 12, 11000 Beograd
 PIB 101234567 · MB 21234567
 
-Ovu poruku dobijate jer imate nalog osoblja na sajtu SKLOP. Podešavanja obaveštenja: https://sklop.test/admin/podesavanja?tab=obavestenja
+Ovu poruku dobijate jer imate nalog osoblja na sajtu Euromotors Plus. Podešavanja obaveštenja: https://primer.test/admin/podesavanja?tab=obavestenja
 ",
 }
 `;
@@ -1104,14 +1100,14 @@ Ponuda za upit UP-2026-000045 je prihvaćena (kupac: Marko Jovanović); napravlj
 
 Ukupno: 94.800 RSD
 
-Otvorite porudžbinu: https://sklop.test/admin/porudzbine/SK-2026-000188
+Otvorite porudžbinu: https://primer.test/admin/porudzbine/SK-2026-000188
 
 --
 Primer d.o.o.
 Autoput 12, 11000 Beograd
 PIB 101234567 · MB 21234567
 
-Ovu poruku dobijate jer imate nalog osoblja na sajtu SKLOP. Podešavanja obaveštenja: https://sklop.test/admin/podesavanja?tab=obavestenja
+Ovu poruku dobijate jer imate nalog osoblja na sajtu Euromotors Plus. Podešavanja obaveštenja: https://primer.test/admin/podesavanja?tab=obavestenja
 ",
 }
 `;
@@ -1125,14 +1121,14 @@ exports[`snapshots > staff_quote_renewal plain text 1`] = `
 
 Ponuda za upit UP-2026-000045 je istekla, a Marko Jovanović traži obnovljenu. Proverite cene i rok pa pošaljite novu verziju.
 
-Otvorite upit: https://sklop.test/admin/upiti/UP-2026-000045
+Otvorite upit: https://primer.test/admin/upiti/UP-2026-000045
 
 --
 Primer d.o.o.
 Autoput 12, 11000 Beograd
 PIB 101234567 · MB 21234567
 
-Ovu poruku dobijate jer imate nalog osoblja na sajtu SKLOP. Podešavanja obaveštenja: https://sklop.test/admin/podesavanja?tab=obavestenja
+Ovu poruku dobijate jer imate nalog osoblja na sajtu Euromotors Plus. Podešavanja obaveštenja: https://primer.test/admin/podesavanja?tab=obavestenja
 ",
 }
 `;
@@ -1146,14 +1142,14 @@ exports[`snapshots > staff_reminder plain text 1`] = `
 
 Jelena Ilić čeka 2 h 5 min radnog vremena.
 
-Otvorite upit: https://sklop.test/admin/upiti/UP-2026-000044
+Otvorite upit: https://primer.test/admin/upiti/UP-2026-000044
 
 --
 Primer d.o.o.
 Autoput 12, 11000 Beograd
 PIB 101234567 · MB 21234567
 
-Ovu poruku dobijate jer imate nalog osoblja na sajtu SKLOP. Podešavanja obaveštenja: https://sklop.test/admin/podesavanja?tab=obavestenja
+Ovu poruku dobijate jer imate nalog osoblja na sajtu Euromotors Plus. Podešavanja obaveštenja: https://primer.test/admin/podesavanja?tab=obavestenja
 ",
 }
 `;

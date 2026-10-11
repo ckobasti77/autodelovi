@@ -12,7 +12,7 @@ import { useState } from "react";
 
 import { api } from "@/convex/_generated/api";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
-import { Wordmark } from "@/components/shell/BrandMark";
+import { BrandLink } from "@/components/brand/BrandLink";
 import { Button } from "@/components/ui/Button";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { Skeleton } from "@/components/ui/Skeleton";
@@ -134,7 +134,7 @@ export function InviteAccept({ token }: { token: string }) {
         id="sadrzaj"
         className="flex w-full max-w-lg flex-col gap-6 rounded-md bg-surface-1 p-8 shadow-overlay"
       >
-        <Wordmark size="footer" />
+        <BrandLink size="fixed" className="self-start" />
         <h1 className="text-[1.375rem] font-[650] leading-tight">Pozivnica za administraciju</h1>
         {body}
       </main>

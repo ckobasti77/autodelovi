@@ -3,6 +3,7 @@ import { describe, expect, test } from "vitest";
 import {
   buildMetadata,
   clampText,
+  defaultTitleSuffix,
   DESCRIPTION_MAX,
   pageTitle,
   privateMetadata,
@@ -23,7 +24,9 @@ import {
   type MetaText,
 } from "@/lib/seo/templates";
 
-const SUFFIX = " | SKLOP";
+const SUFFIX = " | Euromotors Plus · OEM Parts";
+/** The brand alone — what a title falls back to when the full suffix does not fit. */
+const SHORT = " | Euromotors Plus";
 
 /** The title as the page renders it (buildMetadata → pageTitle with the kept tail). */
 const rendered = (t: MetaText) => pageTitle(t.title, SUFFIX, t.titleKeep);
@@ -31,7 +34,7 @@ const rendered = (t: MetaText) => pageTitle(t.title, SUFFIX, t.titleKeep);
 describe("title and description limits", () => {
   test("keyword first, brand suffix, ≤ 60 characters", () => {
     expect(pageTitle("Kočioni diskovi za VW, Audi, Škoda, SEAT", SUFFIX)).toBe(
-      "Kočioni diskovi za VW, Audi, Škoda, SEAT | SKLOP",
+      `Kočioni diskovi za VW, Audi, Škoda, SEAT${SHORT}`,
     );
     const long = pageTitle(
       "Set zupčastog kaiša i vodena pumpa za VW, Audi, Škoda, SEAT i Cupru",
@@ -39,6 +42,32 @@ describe("title and description limits", () => {
     );
     expect(long.length).toBeLessThanOrEqual(TITLE_MAX);
     expect(long.startsWith("Set zupčastog kaiša")).toBe(true);
+  });
+
+  test("D308: full suffix when it fits, the brand alone next, and a fitting title is never cut", () => {
+    // 18 + 30 = 48: both names.
+    expect(pageTitle("Turbina za VW Golf", SUFFIX)).toBe(`Turbina za VW Golf${SUFFIX}`);
+    // 30 + 30 = 60: still both, exactly at the limit.
+    const thirty = "Kočione pločice za Škodu Fabiu";
+    expect(thirty).toHaveLength(30);
+    expect(pageTitle(thirty, SUFFIX)).toBe(`${thirty}${SUFFIX}`);
+    expect(pageTitle(thirty, SUFFIX)).toHaveLength(TITLE_MAX);
+    // 31 + 30 = 61: the shop name goes, the brand stays.
+    expect(pageTitle(`${thirty}u`, SUFFIX)).toBe(`${thirty}u${SHORT}`);
+    // 42 + 18 = 60: the brand alone, at the limit.
+    const fortyThree = "Amortizeri i opruge za Volkswagen Passat B8";
+    expect(fortyThree).toHaveLength(43);
+    const fits = "Amortizeri i opruge za Volkswagen Passat B";
+    expect(fits).toHaveLength(42);
+    expect(pageTitle(fits, SUFFIX)).toBe(`${fits}${SHORT}`);
+    // 43–60 characters: no suffix, and not one letter of the title is lost.
+    expect(pageTitle(fortyThree, SUFFIX)).toBe(fortyThree);
+    const sixty = "Set zupčastog kaiša sa vodenom pumpom za Volkswagen Golf VII";
+    expect(sixty).toHaveLength(60);
+    expect(pageTitle(sixty, SUFFIX)).toBe(sixty);
+    // A suffix without the separator has no shorter form.
+    expect(pageTitle(fortyThree, " | OEM Parts")).toBe(`${fortyThree} | OEM Parts`);
+    expect(defaultTitleSuffix()).toBe(SUFFIX);
   });
 
   test("clampText cuts at a word and never exceeds the limit", () => {
@@ -56,7 +85,7 @@ describe("title and description limits", () => {
       noindex: true,
       titleSuffix: SUFFIX,
     });
-    expect(m.title).toEqual({ absolute: "Turbina za VW Golf | SKLOP" });
+    expect(m.title).toEqual({ absolute: `Turbina za VW Golf${SUFFIX}` });
     expect(String(m.description).length).toBeLessThanOrEqual(DESCRIPTION_MAX);
     expect(m.alternates).toEqual({ canonical: "/delovi/turbina/volkswagen/golf" });
     expect(m.robots).toEqual({ index: false, follow: true });
@@ -66,12 +95,12 @@ describe("title and description limits", () => {
 
   test("a final title is used as is (clamped)", () => {
     const m = buildMetadata({
-      title: "Turbina Garrett 04L 253 016 H | SKLOP",
+      title: "Turbina Garrett 04L 253 016 H | Euromotors Plus",
       titleIsFinal: true,
       description: "x",
       path: "/deo/turbina",
     });
-    expect(m.title).toEqual({ absolute: "Turbina Garrett 04L 253 016 H | SKLOP" });
+    expect(m.title).toEqual({ absolute: "Turbina Garrett 04L 253 016 H | Euromotors Plus" });
   });
 
   test("private pages are noindex, follow", () => {
@@ -85,7 +114,8 @@ describe("page templates", () => {
       { name: "Turbina", manufacturer: "Garrett", code: "04L 253 016 H" },
       SUFFIX,
     );
-    expect(short).toBe("Turbina Garrett 04L 253 016 H | SKLOP");
+    expect(short).toBe(`Turbina Garrett 04L 253 016 H${SUFFIX}`);
+    expect(short.length).toBeLessThanOrEqual(TITLE_MAX);
     const long = productTitle(
       {
         name: "Kočioni disk prednji 288 × 25 mm, ventilirani",
@@ -181,7 +211,8 @@ describe("page templates", () => {
       { name: "Set zupčastog kaiša sa vodenom pumpom 1.9 TDI", manufacturer: "INA", code: null },
       SUFFIX,
     );
-    expect(s).toBe("Set zupčastog kaiša sa vodenom pumpom 1.9 TDI INA | SKLOP");
+    // 49 characters: neither form of the suffix fits, so the title stands alone.
+    expect(s).toBe("Set zupčastog kaiša sa vodenom pumpom 1.9 TDI INA");
   });
 
   test("SEO-01: same OEM number from two makers gives two titles, maker kept", () => {

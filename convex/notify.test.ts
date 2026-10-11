@@ -73,7 +73,7 @@ describe("fan-out", () => {
     expect(await t.query(api.orders.getByToken, { token })).not.toBeNull();
 
     const staff = log.filter((m) => m.templateKey === "staff_order_new").flatMap((m) => m.to);
-    expect(staff.sort()).toEqual(["owner@sklop.test", "staff@sklop.test"]);
+    expect(staff.sort()).toEqual(["owner@primer.test", "staff@primer.test"]);
 
     const bells = await t.run(async (ctx) =>
       (await ctx.db.query("notifications").take(50)).filter((n) => n.kind === "order_new"),
@@ -152,14 +152,14 @@ describe("fan-out", () => {
     const t = makeT();
     const w = await setupWorld(t);
     await t.mutation(internal.testing.approveMechanic, {
-      email: "pending@sklop.test",
+      email: "pending@primer.test",
       tierSlug: "partner",
       creditEnabled: true,
     });
     await drain(t);
     const log = await emails(t);
     const approved = log.find((m) => m.templateKey === "mechanic_approved");
-    expect(approved?.to).toEqual(["pending@sklop.test"]);
+    expect(approved?.to).toEqual(["pending@primer.test"]);
     expect(approved?.subject).toBe("Nalog je odobren — Partner (20 %)");
     expect(approved?.text).toContain("odobreno, rok 15 dana");
     const bell = await t.run(async (ctx) =>
@@ -184,7 +184,7 @@ describe("preferences", () => {
         section: "notifications",
         value: {
           ...settings.notifications,
-          staffEmails: ["prodaja@primer.rs", "STAFF@sklop.test"],
+          staffEmails: ["prodaja@primer.rs", "STAFF@primer.test"],
         },
       },
     });
@@ -195,7 +195,7 @@ describe("preferences", () => {
       .flatMap((m) => m.to)
       .sort();
     // staff@ muted it (its own preference wins over the shared list), owner and the shared inbox get it.
-    expect(staffMail).toEqual(["owner@sklop.test", "prodaja@primer.rs"]);
+    expect(staffMail).toEqual(["owner@primer.test", "prodaja@primer.rs"]);
     const bells = await t.run(async (ctx) =>
       (await ctx.db.query("notifications").take(50)).filter((n) => n.kind === "order_new"),
     );
@@ -374,7 +374,7 @@ describe("admin outbox", () => {
     ).rejects.toThrow();
 
     const sent = await w.asStaff.mutation(api.emailsAdmin.sendTest, { key: "back_in_stock" });
-    expect(sent).toMatchObject({ mode: "log", to: "staff@sklop.test" });
+    expect(sent).toMatchObject({ mode: "log", to: "staff@primer.test" });
     const row = await w.asStaff.query(api.emailsAdmin.get, { emailLogId: sent.emailLogId });
     expect(row!.subject.startsWith("[PROBA] ")).toBe(true);
 
@@ -399,7 +399,7 @@ describe("admin outbox", () => {
     const t = makeT();
     await setupWorld(t);
     await t.mutation(internal.authEmails.sendPasswordResetCode, {
-      email: "a@sklop.test",
+      email: "a@primer.test",
       code: "12345678",
       expiresAt: Date.now() + 900_000,
     });
@@ -427,7 +427,7 @@ describe("webhook feedback", () => {
     const common = {
       created_at: "2026-09-30T10:00:00.000Z",
       email_id: "re_1",
-      from: "SKLOP <prodaja@primer.rs>",
+      from: "Euromotors Plus <prodaja@primer.rs>",
       to: "petar@primer.rs",
       subject: received.subject,
     };
@@ -525,7 +525,7 @@ describe("crons (fake time, Europe/Belgrade)", () => {
     await drain(t);
     const digests = (await emails(t)).filter((m) => m.templateKey === "staff_daily_digest");
     // Two days × the owner only (staff turned the digest off).
-    expect(digests.map((m) => m.to[0])).toEqual(["owner@sklop.test", "owner@sklop.test"]);
+    expect(digests.map((m) => m.to[0])).toEqual(["owner@primer.test", "owner@primer.test"]);
     expect(digests[0]!.subject).toMatch(/^Pregled za 30\.09\.2026\./);
   });
 

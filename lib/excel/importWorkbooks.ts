@@ -6,6 +6,7 @@
  */
 import * as XLSX from "xlsx";
 
+import { BRAND_NAME } from "../domain/brand";
 import { FIELD_BY_KEY, TEMPLATE_FIELDS, type ImportField } from "../import/fields";
 import { formatFitments, type FitmentRef, type VehicleRef } from "../import/fitmentText";
 
@@ -52,7 +53,7 @@ function headerSheet(rows: (string | number | null)[][], withComments: boolean):
   if (withComments) {
     TEMPLATE_FIELDS.forEach((field, c) => {
       const cell = sheet[XLSX.utils.encode_cell({ r: 0, c })] as XLSX.CellObject;
-      const comment = [{ a: "SKLOP", t: FIELD_BY_KEY[field].help }] as XLSX.Comments;
+      const comment = [{ a: BRAND_NAME, t: FIELD_BY_KEY[field].help }] as XLSX.Comments;
       comment.hidden = true;
       cell.c = comment;
     });
@@ -106,7 +107,7 @@ const GUIDE: string[][] = [
 
 export function buildTemplateWorkbook(ref: TemplateReference): Uint8Array {
   const book = XLSX.utils.book_new();
-  book.Props = { Title: "Šablon za uvoz artikala", Author: "SKLOP" };
+  book.Props = { Title: "Šablon za uvoz artikala", Author: BRAND_NAME };
   const products = headerSheet([], true);
   products["!freeze"] = { xSplit: 0, ySplit: 1 };
   XLSX.utils.book_append_sheet(book, products, "Proizvodi");
@@ -256,7 +257,7 @@ export function buildProductsWorkbook(
   });
   sheet["!freeze"] = { xSplit: 0, ySplit: 1 };
   const book = XLSX.utils.book_new();
-  book.Props = { Title: "Proizvodi", Author: "SKLOP" };
+  book.Props = { Title: "Proizvodi", Author: BRAND_NAME };
   XLSX.utils.book_append_sheet(book, sheet, "Proizvodi");
   return write(book);
 }
@@ -309,7 +310,7 @@ export function buildReportWorkbook(fileName: string, rows: readonly ReportRow[]
   sheet["!autofilter"] = { ref: `A1:F${lines.length}` };
   sheet["!freeze"] = { xSplit: 0, ySplit: 1 };
   const book = XLSX.utils.book_new();
-  book.Props = { Title: `Izveštaj o uvozu — ${fileName}`, Author: "SKLOP" };
+  book.Props = { Title: `Izveštaj o uvozu — ${fileName}`, Author: BRAND_NAME };
   XLSX.utils.book_append_sheet(book, sheet, "Greške i upozorenja");
   return write(book);
 }

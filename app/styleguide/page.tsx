@@ -31,7 +31,7 @@ import {
 
 import { site } from "@/config/site";
 import { SiteShell } from "@/components/shell/SiteShell";
-import { BrandMark, Wordmark } from "@/components/shell/BrandMark";
+import { LogoHeader, LogoLockup, LogoMark } from "@/components/brand/Logo";
 import { RevealText } from "@/components/text-reveal/RevealText";
 import { Group, Section } from "./_components/Section";
 import { Tokens } from "./_components/Tokens";
@@ -130,25 +130,30 @@ export default function StyleguidePage() {
             <Section
               id="marka"
               title="Marka"
-              intro="Znak „izvučen deo“: postolje sa žlebom i jedan deo izvučen po isprekidanoj osi. Narandžasti je samo deo."
+              intro="Znak: slovo E nacrtano kao zagrada koja drži plus, uz ime i potpis radnje. Narandžast je samo plus."
             >
               <div className="grid gap-6 md:grid-cols-3">
                 <div className="flex aspect-[4/3] items-center justify-center corner-ticks text-ink-1">
-                  <BrandMark size={120} />
+                  <LogoMark className="h-28 w-auto" />
                 </div>
-                <div className="flex aspect-[4/3] items-center justify-center rounded-md border border-line bg-bg-raised">
-                  <Wordmark href={null} />
+                <div className="flex aspect-[4/3] items-center justify-center rounded-md border border-line bg-bg-raised px-6 text-ink-1">
+                  <LogoHeader className="h-auto w-full max-w-[17rem]" />
                 </div>
                 <div
                   data-theme="paper"
-                  className="flex aspect-[4/3] items-center justify-center rounded-md text-ink-1"
+                  className="flex aspect-[4/3] items-center justify-center rounded-md px-6 text-ink-1"
                 >
-                  <Wordmark href={null} />
+                  <LogoHeader className="h-auto w-full max-w-[17rem]" />
                 </div>
               </div>
+              <div className="flex justify-center overflow-hidden rounded-md border border-line bg-bg-raised px-6 py-10 text-ink-1">
+                <LogoLockup variant="stacked" className="h-auto w-full max-w-[21.5rem] md:hidden" />
+                <LogoLockup className="hidden h-14 w-auto md:block" />
+              </div>
               <p className="type-body-s text-ink-3">
-                Ime marke dolazi iz konfiguracije („{site.brand.name}“) i ispisuje se verzalom preko
-                CSS-a; slogan se nikad ne zaključava uz znak.
+                Oblik sa potpisom „by OEM Parts“ traži najmanje 56&nbsp;px visine; ispod toga ide
+                oblik za zaglavlje (najmanje 28&nbsp;px), a u najmanjem prostoru samo znak. U tekstu
+                se ime piše „{site.brand.name}“, a radnja „{site.brand.alternateName}“.
               </p>
             </Section>
 

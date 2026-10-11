@@ -77,12 +77,18 @@ describe("Product + Offer", () => {
 describe("business, site, lists", () => {
   test("AutoPartsStore only with an address; Organization otherwise — never invented data", () => {
     const hours = [{ day: 1, open: "08:00", close: "17:00", closed: false }];
-    const org = storeJsonLd({ name: "SKLOP", hours }) as Node;
+    const org = storeJsonLd({ name: "Euromotors Plus", alternateName: "OEM Parts", hours }) as Node;
     expect(org["@type"]).toBe("Organization");
+    expect(org).toMatchObject({ name: "Euromotors Plus", alternateName: "OEM Parts" });
+    expect(org.logo).toMatch(/^https?:\/\/[^/]+\/brand\/icon-512\.png$/);
+    // A second name that repeats the first says nothing, so it is left out.
+    expect(
+      (storeJsonLd({ name: "OEM Parts", alternateName: "oem parts", hours }) as Node).alternateName,
+    ).toBeUndefined();
     expect(org.address).toBeUndefined();
     expect(org.telephone).toBeUndefined();
     const store = storeJsonLd({
-      name: "SKLOP",
+      name: "Euromotors Plus",
       street: "Bulevar 1",
       city: "Beograd",
       postalCode: "11000",
@@ -99,6 +105,8 @@ describe("business, site, lists", () => {
 
   test("WebSite SearchAction, breadcrumbs with absolute URLs, ItemList, FAQPage", () => {
     const site = websiteJsonLd() as Node;
+    expect(site).toMatchObject({ name: "Euromotors Plus", alternateName: "OEM Parts" });
+    expect((websiteJsonLd("OEM Parts") as Node).alternateName).toBeUndefined();
     expect(site.potentialAction.target.urlTemplate).toMatch(
       /\/pretraga\?q=\{search_term_string\}$/,
     );

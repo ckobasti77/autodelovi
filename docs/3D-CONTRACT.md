@@ -1,6 +1,6 @@
-# SKLOP — 3D contract
+# Euromotors Plus · OEM Parts — 3D contract
 
-> Part of the SKLOP docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
+> Part of the Euromotors Plus docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
 
 Related: [DESIGN-BRIEF](DESIGN-BRIEF.md) · `docs/design/DESIGN-SYSTEM.md` (3D art direction, from step 03) · [ROUTES](ROUTES.md) (home hero, `?deo=`) · [DATA-MODEL](DATA-MODEL.md) (categories.partKey). Slugs in §F1 are frozen; `lib/catalog/taxonomy.ts` is the code source of truth and must match this file.
 

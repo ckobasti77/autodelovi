@@ -30,9 +30,9 @@ const FONTS = [
 /** Verified results shown in the „Šta je provereno“ table (update when the gates are re-run). */
 const FACTS = [
   ["Build, TypeScript, ESLint", "bez grešaka"],
-  ["Automatski testovi (logika i baza)", "<span class=\"num\">1.223</span> prolazi"],
-  ["Testovi u pregledaču (ceo tok)", "<span class=\"num\">105</span> prolazi, 0 pada"],
-  ["Brzina na telefonu, Lighthouse", "početna <span class=\"num\">97</span> · kategorija <span class=\"num\">98</span> · artikal <span class=\"num\">97</span>"],
+  ["Automatski testovi (logika i baza)", "<span class=\"num\">1.261</span> prolazi"],
+  ["Testovi u pregledaču (ceo tok)", "<span class=\"num\">118</span> prolazi, 0 pada"],
+  ["Brzina na telefonu, Lighthouse", "početna <span class=\"num\">95</span> · kategorija <span class=\"num\">95</span> · artikal <span class=\"num\">96</span>"],
   ["Pristupačnost i SEO, Lighthouse", "<span class=\"num\">100</span> / <span class=\"num\">100</span> na sve tri strane"],
   ["Bezbednosni pregled", "23 nalaza ispravljena, cene se ne vide preko uloga"],
   ["Nezavisni QA pregled", "180 nalaza; ispravljeno svih 18 važnih i 85 od 87 srednjih"],
@@ -63,11 +63,22 @@ for (const [token, file, alt] of images) {
 }
 if (missing.length) throw new Error(`missing screenshots: ${missing.join(", ")}`);
 
+/** A logo from the kit, inlined: only its shapes, hidden from assistive technology (the link is named). */
+const logo = (file, cls) => {
+  const svg = readFileSync(resolve("public/brand", file), "utf8");
+  const box = /viewBox="([^"]+)"/.exec(svg)?.[1];
+  const paths = (svg.match(/<path\b[^>]*\/>/g) ?? []).join("");
+  if (!box || !paths) throw new Error(`${file}: unexpected logo file`);
+  return `<svg class="${cls}" viewBox="${box}" aria-hidden="true" focusable="false">${paths}</svg>`;
+};
+
 const date = new Intl.DateTimeFormat("sr-Latn-RS", { day: "2-digit", month: "2-digit", year: "numeric" })
   .format(new Date())
   .replace(/\s/g, "");
 html = html
   .replace("{{fonts}}", fontCss)
+  .replace("{{logo-header}}", logo("logo-header-night.svg", "lockup"))
+  .replace("{{logo-mark}}", logo("mark-night.svg", "mark"))
   .replaceAll("{{date}}", date.endsWith(".") ? date : `${date}.`)
   .replace(
     "{{facts}}",

@@ -157,7 +157,7 @@ test.describe("home placeholder", () => {
     const raw = await request.get(url);
     expect(raw.status()).toBe(404);
     const html = await raw.text();
-    expect(html).toContain("<title>Stranica nije pronađena | SKLOP</title>");
+    expect(html).toContain("<title>Stranica nije pronađena | Euromotors Plus · OEM Parts</title>");
     expect(html).toMatch(/<meta name="robots" content="noindex/);
 
     const errors: string[] = [];
@@ -167,7 +167,7 @@ test.describe("home placeholder", () => {
     await expect(
       page.getByRole("heading", { level: 1, name: "Stranica nije pronađena" }),
     ).toBeVisible();
-    await expect(page).toHaveTitle("Stranica nije pronađena | SKLOP");
+    await expect(page).toHaveTitle("Stranica nije pronađena | Euromotors Plus · OEM Parts");
     expect(errors).toEqual([]);
   });
 });

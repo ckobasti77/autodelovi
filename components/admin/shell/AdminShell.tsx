@@ -125,7 +125,7 @@ export function AdminShell({ viewer, children }: { viewer: AdminViewer; children
   return (
     <AdminShellContext.Provider value={value}>
       <div
-        className="grid min-h-dvh grid-cols-1 bg-bg text-ink-1 lg:max-[1365px]:grid-cols-[64px_minmax(0,1fr)] min-[1366px]:grid-cols-[232px_minmax(0,1fr)] print:block"
+        className="grid min-h-dvh grid-cols-1 bg-bg text-ink-1 lg:max-[1365px]:grid-cols-[64px_minmax(0,1fr)] min-[1366px]:grid-cols-[268px_minmax(0,1fr)] print:block"
         data-theme="paper"
         data-reveal="off"
       >

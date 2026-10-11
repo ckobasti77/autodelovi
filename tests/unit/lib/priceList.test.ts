@@ -33,7 +33,7 @@ describe("price list workbook", () => {
         tierName: "Majstor Plus",
         discountBp: 1_500,
         generatedAt: Date.UTC(2026, 8, 30, 10),
-        siteUrl: "https://sklop.rs",
+        siteUrl: "https://primer.rs",
         truncated: false,
       },
       [row(), row({ sku: "DEMO-TU-002", retailPricePara: 5_000_050, unitPricePara: 4_250_000, discountBp: 1_250, stockState: "on_order", leadTimeDays: 5 })],
@@ -58,7 +58,7 @@ describe("price list workbook", () => {
     expect(first[7]).toBe(11_042);
     expect(first[8]).toBe(0.15);
     expect(first[9]).toBe("Na stanju");
-    expect(first[11]).toBe("https://sklop.rs/deo/kocioni-disk-prednji-312");
+    expect(first[11]).toBe("https://primer.rs/deo/kocioni-disk-prednji-312");
     const second = rows[TITLE_ROWS + 2]!;
     expect(second[6]).toBe(50_000.5);
     expect(second[9]).toBe("Po porudžbini");
@@ -67,7 +67,7 @@ describe("price list workbook", () => {
     expect(cell(TITLE_ROWS + 1, 6).z).toBe("#,##0");
     expect(cell(TITLE_ROWS + 2, 6).z).toBe("#,##0.00");
     expect(cell(TITLE_ROWS + 2, 8).z).toBe("0.0%");
-    expect(cell(TITLE_ROWS + 1, 11).l?.Target).toBe("https://sklop.rs/deo/kocioni-disk-prednji-312");
+    expect(cell(TITLE_ROWS + 1, 11).l?.Target).toBe("https://primer.rs/deo/kocioni-disk-prednji-312");
     expect(sheet["!autofilter"]?.ref).toBe("A5:L7");
   });
 

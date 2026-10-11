@@ -1,6 +1,6 @@
-# SKLOP — Design direction brief
+# Euromotors Plus · OEM Parts — Design direction brief
 
-> Part of the SKLOP docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
+> Part of the Euromotors Plus docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
 
 Input for step 03 (design system). Related: [3D-CONTRACT](3D-CONTRACT.md) · [ARCHITECTURE §G6 text reveal](ARCHITECTURE.md) · [SEO-ADS §J11 CWV budgets](SEO-ADS.md).
 

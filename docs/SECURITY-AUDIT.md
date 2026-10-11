@@ -1,6 +1,6 @@
-# SKLOP — Security, privacy and backend audit (step 20)
+# Euromotors Plus · OEM Parts — Security, privacy and backend audit (step 20)
 
-> Part of the SKLOP docs — index: [README](README.md). Rules: [SECURITY](SECURITY.md). Owner-facing companions (sr): [GO-LIVE-ENV](GO-LIVE-ENV.md), [PRIVACY-PROCESS](PRIVACY-PROCESS.md), [BACKUPS](BACKUPS.md). Decisions D201–D214 in [DECISIONS](DECISIONS.md).
+> Part of the Euromotors Plus docs — index: [README](README.md). Rules: [SECURITY](SECURITY.md). Owner-facing companions (sr): [GO-LIVE-ENV](GO-LIVE-ENV.md), [PRIVACY-PROCESS](PRIVACY-PROCESS.md), [BACKUPS](BACKUPS.md). Decisions D201–D214 in [DECISIONS](DECISIONS.md).
 
 Date: 2026-09-30 · Target: dev deployment `tame-impala-374` and a production build of the Next app on `localhost:3100`. Production was never touched.
 

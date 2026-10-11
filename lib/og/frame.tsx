@@ -1,8 +1,8 @@
 import "server-only";
 
 /**
- * OG image frame (DESIGN-SYSTEM §2.3, SEO-ADS §J1): 1200 × 630, graphite ground, 1 px frame
- * with corner ticks, the wordmark, a caps title in Archivo Expanded, a mono meta line, a count
+ * OG image frame (DESIGN-SYSTEM §2.7, SEO-ADS §J1): 1200 × 630, graphite ground, 1 px frame
+ * with corner ticks, the logo with the „by OEM Parts“ signature, a caps title in Archivo Expanded, a mono meta line, a count
  * line, the render/photo in a 440 px drawing box and a ruler with the domain and the tagline.
  * Never shows a price. Rendered with `next/og` (Node runtime; WebP inputs are converted to
  * PNG with sharp because the renderer cannot decode WebP).
@@ -12,6 +12,7 @@ import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import sharp from "sharp";
 
+import { LOGO_LAYOUT, LOGO_MARK, LOGO_WORDMARK } from "@/components/brand/logoPaths";
 import { site } from "@/config/site";
 
 export const OG_SIZE = { width: 1200, height: 630 } as const;
@@ -123,7 +124,6 @@ export type OgFrameInput = {
   meta?: { label?: string; code?: string; after?: string } | null;
   count?: string | null;
   image?: string | null;
-  brandName?: string;
   tagline?: string;
   /**
    * `upper` (default) sets the title in display caps like category and landing H1s;
@@ -147,12 +147,22 @@ export function glueUnits(text: string): string {
     .replace(/(\d)\s+(mm|cm|m|kW|KS|V|Ah|A|W|l|kg|Nm|°)(?=$|[\s,.;)])/g, `$1${NBSP}$2`);
 }
 
-function Mark() {
+/** Height of the logo in the frame: the minimum for the lockup with the signature (§2.2). */
+const LOGO_HEIGHT = 56;
+
+/** The primary lockup (night variant), drawn from the same outlines as the site's logo. */
+function Logo() {
+  const l = LOGO_LAYOUT.horizontal;
+  const width = Math.round((l.w / l.h) * LOGO_HEIGHT);
   return (
-    <svg width="30" height="30" viewBox="0 0 24 24">
-      <rect x="7" y="2.5" width="10" height="5" rx="0.75" fill={ACCENT} />
-      <path d="M12 8.5v4.5" stroke={INK_1} strokeWidth="1.25" strokeDasharray="1.3 1.1" />
-      <path d="M3 14h4v2.5h10V14h4v7H3z" fill={INK_1} />
+    <svg width={width} height={LOGO_HEIGHT} viewBox={`0 0 ${l.w} ${l.h}`}>
+      <g transform={`translate(${l.mark.x} ${l.mark.y})`}>
+        <path fill={INK_1} fillRule="evenodd" d={LOGO_MARK.ink} />
+        <path fill={ACCENT} fillRule="evenodd" d={LOGO_MARK.accent} />
+      </g>
+      <g transform={`translate(${l.wordmark.x} ${l.wordmark.y})`}>
+        <path fill={INK_1} fillRule="evenodd" d={LOGO_WORDMARK.ink} />
+      </g>
     </svg>
   );
 }
@@ -219,21 +229,8 @@ export async function ogFrame(input: OgFrameInput): Promise<ImageResponse> {
       {tick({ bottom: 26, left: 26 }, { borderBottom: border, borderLeft: border })}
       {tick({ bottom: 26, right: 26 }, { borderBottom: border, borderRight: border })}
 
-      <div
-        style={{
-          position: "absolute",
-          top: 72,
-          left: 72,
-          display: "flex",
-          alignItems: "center",
-          gap: 14,
-          fontFamily: "Archivo Expanded",
-          fontSize: 28,
-          letterSpacing: "0.08em",
-        }}
-      >
-        <Mark />
-        {(input.brandName ?? site.brand.name).toUpperCase()}
+      <div style={{ position: "absolute", top: 64, left: 72, display: "flex" }}>
+        <Logo />
       </div>
 
       <div

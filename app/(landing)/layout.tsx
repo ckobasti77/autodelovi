@@ -5,7 +5,7 @@ import { companyFromSettings, contactFromSettings } from "@/lib/settings/public"
 import { getSettingsPublic } from "@/lib/server/catalog-cache";
 import { ConsentRoot } from "@/components/consent/ConsentRoot";
 import { ConsentSettingsButton } from "@/components/consent/ConsentSettingsButton";
-import { Wordmark } from "@/components/shell/BrandMark";
+import { BrandLink } from "@/components/brand/BrandLink";
 import { CartButtonLive } from "@/components/shell/CartButtonLive";
 import { ShopChrome } from "@/components/shell/ShopChrome";
 import { MAIN_ID } from "@/components/shell/SkipLink";
@@ -18,7 +18,7 @@ const linkClass =
 
 /**
  * Ads landings (`/ponuda/[slug]`, SEO-ADS §J10): minimal navigation for message match — the
- * wordmark, call/Viber and the cart; a short legal footer. Same consent, cart drawer and
+ * logo, call/Viber and the cart; a short legal footer. Same consent, cart drawer and
  * attribution capture as the shop.
  */
 export default async function LandingLayout({ children }: LayoutProps<"/">) {
@@ -37,7 +37,7 @@ export default async function LandingLayout({ children }: LayoutProps<"/">) {
           className="sticky top-0 z-header border-b border-line bg-bg/88 backdrop-blur-header print:hidden reduced-transparency:bg-bg-raised reduced-transparency:backdrop-blur-none"
         >
           <div className="flex h-header items-center gap-2 px-page">
-            <Wordmark className="mr-auto" />
+            <BrandLink compact="phone" className="mr-auto" />
             {phone ? (
               <a
                 href={phone.href}

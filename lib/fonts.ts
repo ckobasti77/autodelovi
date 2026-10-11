@@ -5,7 +5,7 @@
  * The next/font CSS variables are named `--nf-*`; app/globals.css maps them onto the
  * Tailwind theme (`--font-display`, `--font-ui`, …) so the two never shadow each other.
  *
- * Preloaded for first paint: Archivo Expanded 700 (hero statement, page titles, wordmark) and
+ * Preloaded for first paint: Archivo Expanded 700 (hero statement, page titles) and
  * Public Sans latin + latin-ext (all UI text; Serbian copy needs both subsets) ≈ 63 KB.
  * Archivo Condensed 600 (prices), Archivo Expanded 600 (section titles below the fold) and
  * Martian Mono (codes) load on demand: prices are below the first mobile viewport on most

@@ -2,13 +2,14 @@ import { describe, expect, it } from "vitest";
 
 import { adminLink, emailContext, siteLink, type EmailSettingsLike } from "@/lib/email/context";
 import { escapeHtml, inlineHtml, inlineText, safeHref } from "@/lib/email/html";
+import { emailPreviewHtml } from "@/lib/email/preview";
 import { renderSample, renderTemplate, TEMPLATE_KEYS, TEMPLATES } from "@/lib/email/registry";
 import { SAMPLES } from "@/lib/email/samples";
 
-const SITE = "https://sklop.test";
+const SITE = "https://primer.test";
 
 const FULL: EmailSettingsLike = {
-  brand: { name: "SKLOP" },
+  brand: { name: "Euromotors Plus" },
   company: {
     legalName: "Primer d.o.o.",
     pib: "101234567",
@@ -19,7 +20,7 @@ const FULL: EmailSettingsLike = {
     whatsapp: "+381641234567",
     email: "prodaja@primer.rs",
     bankAccounts: [{ bank: "Banka", account: "160-0000000000000-00" }],
-    mapUrl: "https://maps.example/sklop",
+    mapUrl: "https://maps.example/radnja",
   },
   hours: [
     { day: 1, open: "08:00", close: "17:00", closed: false },
@@ -33,7 +34,7 @@ const FULL: EmailSettingsLike = {
 };
 
 const EMPTY: EmailSettingsLike = {
-  brand: { name: "SKLOP" },
+  brand: { name: "Euromotors Plus" },
   company: {
     legalName: "",
     address: { street: "", city: "", postalCode: "" },
@@ -86,11 +87,11 @@ describe("every template", () => {
 
   it("customer links carry UTM, admin links do not", () => {
     expect(siteLink(ctx, "/porudzbina/abc", "order_received")).toBe(
-      "https://sklop.test/porudzbina/abc?utm_source=email&utm_medium=transactional&utm_campaign=order_received",
+      "https://primer.test/porudzbina/abc?utm_source=email&utm_medium=transactional&utm_campaign=order_received",
     );
     expect(siteLink(ctx, "/deo/x?a=1", "back_in_stock")).toContain("?a=1&utm_source=email");
     expect(adminLink(ctx, "/admin/porudzbine/SK-2026-000187")).toBe(
-      "https://sklop.test/admin/porudzbine/SK-2026-000187",
+      "https://primer.test/admin/porudzbine/SK-2026-000187",
     );
     expect(renderSample("staff_order_new", ctx).html).not.toContain("utm_source");
   });
@@ -196,6 +197,38 @@ describe("content rules", () => {
 
   it("registry keys match their definitions", () => {
     for (const key of TEMPLATE_KEYS) expect(TEMPLATES[key].key).toBe(key);
+  });
+});
+
+describe("brand in every message (step 25)", () => {
+  it.each(TEMPLATE_KEYS)("%s: logo image with alt text, no trace of the working name", (key) => {
+    const r = renderSample(key, ctx);
+    expect(r.html).toContain(
+      '<img src="https://primer.test/brand/email-header@2x.png" width="477" height="88" alt="Euromotors Plus by OEM Parts"',
+    );
+    // The logo sits on white in both colour schemes, and links home.
+    expect(r.html).toMatch(/<td class="sk-logo sk-line" bgcolor="#FFFFFF"/);
+    expect(r.html).toContain('<a href="https://primer.test" style="display:block;');
+    for (const part of [r.subject, r.preheader, r.html, r.text]) {
+      expect(part).not.toMatch(/sklop/i);
+    }
+  });
+
+  it("admin previews take the logo from their own origin; the message itself is not changed", () => {
+    const sent = renderSample("order_received", ctx).html;
+    const shown = emailPreviewHtml(sent);
+    expect(shown).toContain('<img src="/brand/email-header@2x.png" width="477"');
+    expect(shown).not.toContain("https://primer.test/brand/");
+    // Links keep the public address — only the image source is local.
+    expect(shown).toContain('<a href="https://primer.test" style="display:block;');
+    expect(shown.length).toBe(sent.length - "https://primer.test".length);
+    expect(emailPreviewHtml("<p>bez slike</p>")).toBe("<p>bez slike</p>");
+  });
+
+  it("falls back to the brand name when settings have none", () => {
+    const blank = emailContext({ ...EMPTY, brand: { name: "  " } }, SITE);
+    expect(blank.brandName).toBe("Euromotors Plus");
+    expect(renderSample("password_reset_code", blank).text).toContain("na sajtu Euromotors Plus.");
   });
 });
 

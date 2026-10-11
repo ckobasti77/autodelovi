@@ -1,6 +1,6 @@
-# SKLOP — Notifications and automations
+# Euromotors Plus · OEM Parts — Notifications and automations
 
-> Part of the SKLOP docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
+> Part of the Euromotors Plus docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
 
 Related: [DATA-MODEL §C9](DATA-MODEL.md) (outbox, notifications, emailLog) · [ARCHITECTURE §E](ARCHITECTURE.md) · [SEO-ADS §J7](SEO-ADS.md) (Meta CAPI).
 

@@ -517,13 +517,24 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
 
       <Group
         title="Brend i brojevi dokumenata"
-        description="Naziv i slogan važe svuda na sajtu. Prefiksi određuju izgled brojeva porudžbina (SK-2026-000123) i upita."
+        description="Naziv se koristi u e-pošti, na dokumentima i u podacima za pretraživače. Znak u zaglavlju je crtež i ne menja se odavde. Prefiksi određuju izgled brojeva porudžbina (SK-2026-000123) i upita."
       >
         <div className="grid gap-4 md:grid-cols-2">
           <Field label="Naziv prodavnice">
             <Input
               value={brand.draft.name}
               onChange={(e) => brand.setDraft({ ...brand.draft, name: e.target.value })}
+            />
+          </Field>
+          <Field
+            label="Poznati naziv radnje"
+            help="Ime po kojem kupci znaju radnju. Pretraživačima se šalje kao drugi naziv sajta."
+          >
+            <Input
+              value={brand.draft.alternateName ?? ""}
+              onChange={(e) =>
+                brand.setDraft({ ...brand.draft, alternateName: e.target.value || undefined })
+              }
             />
           </Field>
           <Field label="Slogan">
@@ -1244,7 +1255,8 @@ function EmailDeliveryGroup({ s, can }: { s: Settings; can: boolean }) {
           <Field label="Ime pošiljaoca" help={`Prazno: ${s.brand.name}.`}>
             <Input
               value={d.fromName ?? ""}
-              onChange={(ev) => e.setDraft({ ...d, fromName: opt(ev.target.value) })}
+              // Not trimmed while typing: a trim on every keystroke swallows the space in a name.
+              onChange={(ev) => e.setDraft({ ...d, fromName: ev.target.value || undefined })}
               maxLength={60}
             />
           </Field>
@@ -1295,7 +1307,7 @@ function SeoTab({ s, can }: { s: Settings; can: boolean }) {
         <div className="grid gap-4 md:grid-cols-2">
           <Field
             label="Dodatak naslovu"
-            help="Dodaje se iza naslova svake stranice, npr. „ | SKLOP“."
+            help="Dodaje se iza naslova svake stranice, npr. „ | Euromotors Plus · OEM Parts“. Deo iza tačke „·“ se izostavlja kada je naslov dugačak."
           >
             <Input
               value={d.titleSuffix}

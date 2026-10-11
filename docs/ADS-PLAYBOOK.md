@@ -130,7 +130,7 @@ Plaćanje je pouzećem, pa je prava vrednost „završena porudžbina“, ne „
 
 ## 4. Google Analytics 4
 
-1. analytics.google.com → novo svojstvo „SKLOP“ (kasnije pravo ime), **vremenska zona Beograd, valuta RSD**.
+1. analytics.google.com → novo svojstvo „Euromotors Plus“, **vremenska zona Beograd, valuta RSD**.
 2. Tok podataka → Veb → adresa sajta. **Measurement ID** (`G-XXXXXXXXXX`) → Podešavanja → Praćenje.
 3. „Poboljšano merenje“: ostavite uključeno, uključujući „promene strane zasnovane na istoriji pregledača“ (sajt ne šalje page_view sam, pa nema dupliranja).
 4. Administracija → Događaji: označite kao **ključne događaje** `purchase` i `generate_lead`. `contact_click` po želji.

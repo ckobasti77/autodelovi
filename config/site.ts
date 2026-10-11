@@ -9,6 +9,12 @@
  * (docs/HUMAN-TODO.md §1). Every consumer must treat an empty value as "not available" and
  * hide the channel instead of rendering a placeholder.
  */
+import {
+  BRAND_ALTERNATE_NAME,
+  BRAND_LOCKUP_NAME,
+  BRAND_NAME,
+  BRAND_SHORT_NAME,
+} from "@/lib/domain/brand";
 import { formatPhone, normalizePhone, telHref, viberHref, whatsappHref } from "@/lib/format/phone";
 
 const env = (value: string | undefined): string => value?.trim() ?? "";
@@ -43,7 +49,14 @@ export type Company = {
 
 export const site = {
   brand: {
-    name: "SKLOP",
+    /** The brand: „Euromotors Plus“ (naming rules in lib/domain/brand.ts, DECISIONS D307). */
+    name: BRAND_NAME,
+    /** The shop name people know — JSON-LD `alternateName`, the end of SEO titles. */
+    alternateName: BRAND_ALTERNATE_NAME,
+    /** What the logo with the signature says: its accessible name and alt text. */
+    lockupName: BRAND_LOCKUP_NAME,
+    /** Home-screen label (manifest `short_name`). */
+    shortName: BRAND_SHORT_NAME,
     tagline: "Rasklopi auto. Nađi deo.",
     description:
       "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra vozila. Pretraga po OEM broju, izbor po vozilu i poručivanje bez plaćanja unapred.",

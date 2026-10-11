@@ -26,7 +26,7 @@ beforeEach(() => {
   document.body.innerHTML = `
     <a href="#sadrzaj" id="skip">Preskoči na sadržaj</a>
     <header>
-      <a href="/" id="logo">SKLOP</a>
+      <a href="/" id="logo">Euromotors Plus</a>
       <span id="chip-slot"><button type="button" id="chip">Izaberite vozilo</button></span>
       <button type="button" id="cart">Korpa</button>
     </header>

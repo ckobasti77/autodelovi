@@ -2,7 +2,7 @@
 
 /**
  * Night sidebar (DESIGN-SYSTEM §10.10, §9.15): task groups, live counts of work waiting
- * (accent pills), 232 px from 1366 px, a 64 px icon rail between 1024 and 1365 px (labels
+ * (accent pills), 268 px from 1366 px (the header lockup needs 236 px for its 28 px minimum), a 64 px icon rail between 1024 and 1365 px (labels
  * visually hidden, counts as small badges), a drawer below 1024 px.
  */
 import { useQuery } from "convex/react";
@@ -10,11 +10,12 @@ import { usePathname } from "next/navigation";
 
 import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/cn";
-import { BrandMark, Wordmark } from "@/components/shell/BrandMark";
+import { BrandLink } from "@/components/brand/BrandLink";
 import { CountBadge } from "@/components/ui/Badge";
 import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { Tooltip } from "@/components/ui/Tooltip";
+import { site } from "@/config/site";
 import { ADMIN } from "@/constants/routes";
 
 import { ADMIN_NAV, isActive } from "./nav";
@@ -39,21 +40,28 @@ export function AdminSidebar({
     <nav aria-label="Administracija" className="flex h-full flex-col" data-reveal="off">
       <div
         className={cn(
-          "flex h-14 shrink-0 items-center border-b border-line px-5",
+          "flex h-14 shrink-0 items-center border-b border-line px-4",
           rail && "max-[1365px]:justify-center max-[1365px]:px-0",
         )}
       >
         <span className={cn(rail && "max-[1365px]:hidden")}>
-          <Wordmark size="sidebar" href={ADMIN.home} />
+          <BrandLink
+            href={ADMIN.home}
+            label={`${site.brand.name} — pregled administracije`}
+            size="fixed"
+          />
         </span>
         {rail ? (
-          <RouteLink
-            href={ADMIN.home}
-            aria-label="Pregled"
-            className="hidden size-10 items-center justify-center rounded-xs text-ink-1 max-[1365px]:inline-flex focus-ring-inset"
-          >
-            <BrandMark size={20} />
-          </RouteLink>
+          // The wrapper owns the display: BrandLink is `inline-flex` itself, and two unprefixed
+          // display utilities on one element would leave the winner to Tailwind's output order.
+          <span className="hidden max-[1365px]:inline-flex">
+            <BrandLink
+              href={ADMIN.home}
+              label="Pregled"
+              compact="always"
+              className="focus-ring-inset"
+            />
+          </span>
         ) : null}
       </div>
       <div className="flex-1 overflow-y-auto py-3">

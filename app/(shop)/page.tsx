@@ -32,7 +32,9 @@ import {
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSettingsPublic();
   return buildMetadata({
-    title: "Auto delovi za VW, Audi, Škoda, SEAT i Cupra",
+    // 27 characters, so both names of the shop fit behind it (D309); the description and the
+    // page itself carry all five makes.
+    title: "Auto delovi VW, Audi, Škoda",
     description:
       "Delovi za Volkswagen, Audi, Škoda, SEAT i Cupra: pretraga po OEM broju i vozilu, cene sa PDV-om i stanje. Plaćanje pouzećem ili pri preuzimanju u radnji.",
     path: "/",

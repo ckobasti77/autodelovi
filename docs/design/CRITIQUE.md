@@ -1,4 +1,4 @@
-# SKLOP — Concept critique log (`/lab/koncept`)
+# Euromotors Plus · OEM Parts — Concept critique log (`/lab/koncept`)
 
 > Part of the design docs: [DESIGN-SYSTEM.md](DESIGN-SYSTEM.md) · [design-dna.json](design-dna.json). Method: impeccable `critique` (two isolated assessments: A = design review, B = detector + browser evidence), design-taste-frontend rules, craft floor. Captures: `docs/design/screens/round-N/`. Viewports: 1440×900 (DPR 1) and 390×844 (DPR 2) in every round; 360, 768, 1024, 1280, 1366, 2560 where noted.
 > Unattended pipeline: no human answered; findings were acted on by the build step itself and re-verified by a fresh reviewer.

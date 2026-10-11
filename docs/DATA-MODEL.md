@@ -1,6 +1,6 @@
-# SKLOP — Data model (Convex)
+# Euromotors Plus · OEM Parts — Data model (Convex)
 
-> Part of the SKLOP docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
+> Part of the Euromotors Plus docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
 
 Related: [ARCHITECTURE §E](ARCHITECTURE.md) (functions, query strategies) · [SECURITY](SECURITY.md) (authz, price visibility) · [IMPORT](IMPORT.md) · [NOTIFICATIONS](NOTIFICATIONS.md). Step 05/06 keep this file in sync with `convex/schema.ts`.
 
@@ -31,13 +31,13 @@ Notation: `str` `num` `int` (v.number(), integer asserted in code) `bool` `id<t>
 **settings** (singleton, `key: lit("global")`, idx `by_key`):
 - `company{ legalName, displayName?, pib?, mb?, address{street, city, postalCode}, phones: arr≤5<{label, e164}>, viber?, whatsapp?, email?, bankAccounts: arr≤3<{bank, account}>, mapUrl?, registryNote? }` — empty by default; the UI hides empty parts (HUMAN-TODO).
 - `hours: arr7<{ day: 0–6, open: "08:00", close: "16:00", closed: bool }>` · `holidays: arr≤30<{ date, note }>`
-- `brand{ name: "SKLOP", tagline, orderPrefix: "SK", inquiryPrefix: "UP" }` · `trustFacts: arr≤6<{ label, value }>` (home „činjenice" band — only real, owner-entered facts; computed ones such as „artikala na stanju" come from queries)
+- `brand{ name: "Euromotors Plus", alternateName?: "OEM Parts", tagline, orderPrefix: "SK", inquiryPrefix: "UP" }` (names: D307, `lib/domain/brand.ts`) · `trustFacts: arr≤6<{ label, value }>` (home „činjenice" band — only real, owner-entered facts; computed ones such as „artikala na stanju" come from queries)
 - `commerce{ vatRateBp: 2000, freeShippingOverPara: 1_000_000, lowStockDefault: 3, stockDecrementOn: lit(confirmed|created) = confirmed, restockOnCancel: true, quoteValidityDays: 7, minMarginBp: 800, autoCompleteDays: 15, shipCutoff: "14:00", etaText }`
 - `deliveryMethods: arr≤4<{ code: deliveryMethodV, label, description, pricePara, freeOverPara?, active, etaText }>` (defaults: pickup 0; courier 45 000 para, free over 1 000 000 para)
 - `paymentMethods: arr≤6<{ code: paymentMethodV, label, instructions, active, requires: lit(none|company|mechanic_credit), deliveryCodes: arr<deliveryMethodV> }>` (cod→courier; pickup_cash/pickup_card→pickup; bank_transfer→both, requires company; deferred→both, requires mechanic_credit)
 - `couriers: arr≤6<{ code, name, trackingUrlTemplate }>` (`…?code={broj}`)
 - `notifications{ staffEmails: arr≤10<str>, digestEnabled, digestHour: 8, reminderAfterWorkingMinutes: 120, lowStockEmail: bool }`
-- `seo{ titleSuffix: " | SKLOP", defaultDescription, ogImageStorageId?, landingMin{ brand: 8, model: 6, generationPage: 10 }, maxIndexableLandings: 300, curatedSearches?: arr≤30<string> }` (step 19: search queries whose result page may be indexed)
+- `seo{ titleSuffix: " | Euromotors Plus · OEM Parts" (two forms, D308), defaultDescription, ogImageStorageId?, landingMin{ brand: 8, model: 6, generationPage: 10 }, maxIndexableLandings: 300, curatedSearches?: arr≤30<string> }` (step 19: search queries whose result page may be indexed)
 - `tracking{ ga4Id?, gadsId?, gadsLabels{ purchase?, lead?, mechanicSignup? }, metaPixelId?, metaCapiEnabled: false, metaTestEventCode?, gadsOfflineConversionName? }` — all empty ⇒ everything is a no-op.
 - `flags{ publicPrices: true, guestCheckout: true, backInStock: true, mechanicRegistration: true, threeDHero: true, quickOrder: true, generationLandings: false }`
 - `legalVersions{ terms, privacy, cookies }` · `updatedAt`, `updatedBy?`

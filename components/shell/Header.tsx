@@ -4,7 +4,7 @@ import { ChatCircleTextIcon, PhoneIcon } from "@phosphor-icons/react/dist/ssr";
 import { contactLinkList, contactLinks, resolveContact, type Contact } from "@/config/site";
 import { TEST_IDS } from "@/constants/testIds";
 import { AccountLink } from "@/components/shell/AccountLink";
-import { Wordmark } from "@/components/shell/BrandMark";
+import { BrandLink } from "@/components/brand/BrandLink";
 import { CartButton } from "@/components/shell/CartButton";
 import { CartButtonLive } from "@/components/shell/CartButtonLive";
 import { HeaderSearch } from "@/components/shell/HeaderSearch";
@@ -32,9 +32,9 @@ const textLink =
 
 /**
  * Site header (§10.1): 64 px (56 below 1024), bg at 88 % + 12 px blur (solid under reduced
- * transparency). [mark] SKLOP · nav · search · vehicle slot · contact · account · cart · menu.
+ * transparency). [logo] · nav · search · vehicle slot · contact · account · cart · menu.
  * Contact: text links ≥ 1440 px, icon buttons from 480 px. Below 480 px the bar holds only the
- * mark, search, cart and menu; phone, Viber and the account/mechanic links live in MobileNav.
+ * mark, search, cart and menu (the header lockup replaces the mark from 640 px); phone, Viber and the account/mechanic links live in MobileNav.
  * Excluded from the text reveal: chrome must be readable at once.
  */
 export function Header({ vehicleSlot, cartCount, contact }: HeaderProps) {
@@ -50,7 +50,7 @@ export function Header({ vehicleSlot, cartCount, contact }: HeaderProps) {
       className="sticky top-0 z-header border-b print:hidden border-line bg-bg/88 backdrop-blur-header reduced-transparency:bg-bg-raised reduced-transparency:backdrop-blur-none"
     >
       <div className="flex h-header items-center gap-1 px-page lg:gap-3">
-        <Wordmark className="mr-2 lg:mr-4" />
+        <BrandLink compact="phone" className="mr-2 lg:mr-4" />
         <nav aria-label="Glavna navigacija" className="hidden lg:block">
           <NavLinks />
         </nav>

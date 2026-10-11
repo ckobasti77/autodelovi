@@ -3,6 +3,7 @@
  * empty values are omitted by the builder, never replaced with invented data.
  */
 import type { StoreInfo } from "@/lib/seo/jsonld";
+import { site } from "@/config/site";
 import { contactFromSettings, type PublicSettingsLike } from "@/lib/settings/public";
 
 type StoreSettings = Pick<PublicSettingsLike, "company" | "hours" | "brand"> & {
@@ -15,6 +16,7 @@ export function storeInfoFromSettings(settings: StoreSettings): StoreInfo {
   const hasAddress = Boolean(contact.address.street && contact.address.city);
   return {
     name: c.displayName?.trim() || settings.brand.name,
+    alternateName: settings.brand.alternateName?.trim() || site.brand.alternateName,
     ...(c.legalName?.trim() ? { legalName: c.legalName.trim() } : {}),
     ...(contact.phone ? { telephone: contact.phone } : {}),
     ...(contact.email ? { email: contact.email } : {}),

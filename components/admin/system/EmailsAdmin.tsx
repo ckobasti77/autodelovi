@@ -34,6 +34,7 @@ import { toast } from "@/components/ui/Toast";
 import { useNowMinute } from "../hooks";
 import { DemoTag, LoadMoreFooter, PageHeader } from "../ui";
 import { useUrlFilters } from "../useUrlFilters";
+import { emailPreviewHtml } from "@/lib/email/preview";
 import { DeliveryBanner, EmailsNav } from "./EmailDelivery";
 
 type Row = FunctionReturnType<typeof api.emailsAdmin.outbox>["page"][number];
@@ -293,7 +294,7 @@ function EmailView({ id, onResent }: { id: Id<"emailLog">; onResent: (id: string
                     <iframe
                       title={`Poruka: ${m.subject}`}
                       sandbox=""
-                      srcDoc={m.html}
+                      srcDoc={emailPreviewHtml(m.html)}
                       className="mt-3 h-[60dvh] w-full rounded-sm border border-line bg-white"
                     />
                   ),

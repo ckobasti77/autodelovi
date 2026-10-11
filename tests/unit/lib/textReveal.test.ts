@@ -138,8 +138,8 @@ describe("helpers", () => {
 
   it("hashText is a stable 32-bit FNV-1a", () => {
     expect(hashText("")).toBe(0x811c9dc5);
-    expect(hashText("SKLOP")).toBe(hashText("SKLOP"));
-    expect(hashText("SKLOP")).toBeLessThan(2 ** 32);
+    expect(hashText("Euromotors Plus")).toBe(hashText("Euromotors Plus"));
+    expect(hashText("Euromotors Plus")).toBeLessThan(2 ** 32);
   });
 });
 

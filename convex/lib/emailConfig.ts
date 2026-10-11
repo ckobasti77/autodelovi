@@ -14,6 +14,7 @@ import {
   siteUrl,
   type EmailMode,
 } from "./env";
+import { BRAND_NAME } from "../../lib/domain/brand";
 import type { Settings } from "./settingsSchema";
 
 export const RESEND_TEST_RECIPIENT = "delivered@resend.dev";
@@ -38,7 +39,7 @@ export type EmailDeliveryConfig = {
 };
 
 function displayName(settings: Settings): string {
-  const name = settings.email?.fromName?.trim() || settings.brand.name.trim() || "SKLOP";
+  const name = settings.email?.fromName?.trim() || settings.brand.name.trim() || BRAND_NAME;
   return name.replace(/[<>"]/g, "");
 }
 

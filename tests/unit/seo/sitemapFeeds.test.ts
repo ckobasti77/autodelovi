@@ -22,7 +22,7 @@ import {
   urlsetXml,
 } from "@/lib/seo/sitemap";
 
-const ORIGIN = "https://sklop.rs";
+const ORIGIN = "https://primer.rs";
 
 /** Parses XML with the DOM parser; throws on a well-formedness error. */
 function parseXml(xml: string): Document {
@@ -43,8 +43,8 @@ describe("sitemaps", () => {
     );
     const doc = parseXml(xml);
     const locs = [...doc.getElementsByTagName("loc")].map((l) => l.textContent);
-    expect(locs[0]).toBe("https://sklop.rs/delovi/kocione-plocice");
-    expect(locs[1]).toBe("https://sklop.rs/pretraga?q=plo%C4%8Dice&x=1");
+    expect(locs[0]).toBe("https://primer.rs/delovi/kocione-plocice");
+    expect(locs[1]).toBe("https://primer.rs/pretraga?q=plo%C4%8Dice&x=1");
     expect(doc.getElementsByTagName("lastmod")[0]?.textContent).toBe("2026-09-30T00:00:00.000Z");
     expect(doc.getElementsByTagName("image:image")).toHaveLength(3);
     expect(xml).toContain('xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"');
@@ -63,8 +63,8 @@ describe("sitemaps", () => {
     const doc = parseXml(sitemapIndexXml([{ name: "staticne" }, { name: "proizvodi-1" }], ORIGIN));
     expect(doc.documentElement.nodeName).toBe("sitemapindex");
     expect([...doc.getElementsByTagName("loc")].map((l) => l.textContent)).toEqual([
-      "https://sklop.rs/sitemaps/staticne.xml",
-      "https://sklop.rs/sitemaps/proizvodi-1.xml",
+      "https://primer.rs/sitemaps/staticne.xml",
+      "https://primer.rs/sitemaps/proizvodi-1.xml",
     ]);
     expect(productSitemapIndex("proizvodi-12")).toBe(12);
     expect(productSitemapIndex("proizvodi-0")).toBeNull();
@@ -100,7 +100,7 @@ describe("Google Merchant feed", () => {
   test("RSS 2.0 with the g: namespace and every required attribute per item", () => {
     const xml = merchantFeedXml(
       [item(), item({ sku: "SK-2", mpn: null, oemPrimary: null, stockState: "on_order", allowBackorder: true, pricePara: 500_000 })],
-      { shipping: { pricePara: 45_000, freeOverPara: 1_000_000 }, storeName: "SKLOP", origin: ORIGIN },
+      { shipping: { pricePara: 45_000, freeOverPara: 1_000_000 }, storeName: "Euromotors Plus", origin: ORIGIN },
     );
     const doc = parseXml(xml);
     expect(doc.documentElement.getAttribute("version")).toBe("2.0");
@@ -129,7 +129,7 @@ describe("Google Merchant feed", () => {
       "Kočioni disk prednji & ventilirani <312> Brembo 5Q0 615 301 F",
     );
     expect(text(items[0]!, "g:price")).toBe("12990.00 RSD");
-    expect(text(items[0]!, "g:image_link")).toBe("https://sklop.rs/images/parts/kocioni-diskovi.webp");
+    expect(text(items[0]!, "g:image_link")).toBe("https://primer.rs/images/parts/kocioni-diskovi.webp");
     // Free shipping above the threshold, courier price below it.
     expect(items[0]!.getElementsByTagName("g:shipping")[0]?.getElementsByTagName("g:price")[0]?.textContent).toBe("0.00 RSD");
     expect(items[1]!.getElementsByTagName("g:shipping")[0]?.getElementsByTagName("g:price")[0]?.textContent).toBe("450.00 RSD");
@@ -148,7 +148,7 @@ describe("Google Merchant feed", () => {
         item({ sku: "SK-4", leadTimeDays: 7 }),
         item({ sku: "SK-5", stockState: "on_order", allowBackorder: true, leadTimeDays: 40 }),
       ],
-      { shipping: null, storeName: "SKLOP", origin: ORIGIN, now },
+      { shipping: null, storeName: "Euromotors Plus", origin: ORIGIN, now },
     );
     const items = [...parseXml(xml).getElementsByTagName("item")];
     const date = (el: Element) => el.getElementsByTagName("g:availability_date")[0]?.textContent ?? null;
@@ -184,7 +184,7 @@ describe("Meta catalog CSV", () => {
     expect(lines[0]).toBe(META_CSV_COLUMNS.join(","));
     expect(lines).toHaveLength(2);
     expect(lines[1]).toContain('"Disk ""premium"", 312 mm ventiliran"');
-    expect(lines[1]).toContain(",in stock,new,12990.00 RSD,https://sklop.rs/deo/kocioni-disk-prednji,");
+    expect(lines[1]).toContain(",in stock,new,12990.00 RSD,https://primer.rs/deo/kocioni-disk-prednji,");
     expect(csvField("a,b")).toBe('"a,b"');
     expect(csvField(null)).toBe("");
   });

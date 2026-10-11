@@ -38,7 +38,7 @@ export function resendConfigured(): { apiKey: boolean; webhookSecret: boolean } 
   };
 }
 
-/** Verified sender, e.g. `prodaja@domen.rs` or `SKLOP <prodaja@domen.rs>`; empty until live. */
+/** Verified sender, e.g. `prodaja@domen.rs` or `Euromotors Plus <prodaja@domen.rs>`; empty until live. */
 export function emailFrom(): string {
   return process.env.EMAIL_FROM?.trim() ?? "";
 }

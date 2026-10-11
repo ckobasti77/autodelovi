@@ -1,4 +1,4 @@
-# SKLOP — Spisak za puštanje uživo
+# Euromotors Plus · OEM Parts — Spisak za puštanje uživo
 
 > Za programera i klijenta. Ovaj spisak zamenjuje `HUMAN-TODO.md` (sve stavke odatle su ovde, bez duplikata, poređane po redosledu rada). Promenljive okruženja sa objašnjenjem svake: [`GO-LIVE-ENV.md`](GO-LIVE-ENV.md). Rezervne kopije: [`BACKUPS.md`](BACKUPS.md). Privatnost: [`PRIVACY-PROCESS.md`](PRIVACY-PROCESS.md). Oglasi: [`ADS-PLAYBOOK.md`](ADS-PLAYBOOK.md).
 
@@ -11,8 +11,9 @@ Redosled je bitan: domen i Resend traže vreme (DNS, provera domena), pa njih tr
 
 ## A. Šta treba od klijenta (skupiti odmah)
 
-- [ ] **[P0] (K)** Konačan naziv prodavnice i slogan (radni naziv je „SKLOP“). Menja se u `config/site.ts` i Podešavanja → Firma; znak „izvučen deo“ ne zavisi od naziva. Ako želite drugi znak, javite.
-- [ ] **[P0] (K)** Domen (npr. `www.domen.rs`) i pristup nalogu kod registrara.
+- [ ] **[P0] (K)** Naziv na sajtu je „Euromotors Plus“, a poznati naziv radnje „OEM Parts“ (od koraka 25; radni naziv „SKLOP“ je uklonjen). Potvrditi da su oba tačno napisana i potvrditi ili zameniti slogan „Rasklopi auto. Nađi deo.“. Menjaju se u Podešavanja → Firma → „Brend i brojevi dokumenata“.
+- [ ] **[P0] (K)** **Pravi domen** (npr. `www.vas-domen.rs`) i pristup nalogu kod registrara. U kodu i na sajtu nema privremenog domena: adresa sajta dolazi iz `NEXT_PUBLIC_SITE_URL` i `SITE_URL` (§D i §E), pa se bez nje u slici za deljenje ne ispisuje domen, a linkovi u mejlovima vode na adresu razvojnog računara.
+- [ ] **[P0] (K)** **Adresa pošiljaoca e-pošte** na tom domenu (npr. `prodaja@vas-domen.rs`) i adresa na koju stižu odgovori kupaca. Ime pošiljaoca je „Euromotors Plus“ i menja se u Podešavanja → Obaveštenja → Slanje e-pošte. Do tada se poruke samo beleže i ne šalju (§F).
 - [ ] **[P0] (K)** Pravni podaci firme: pun naziv, sedište, PIB, matični broj, registar (APR). Obavezno po Zakonu o elektronskoj trgovini.
 - [ ] **[P0] (K)** Adresa radnje za lično preuzimanje i link ka mapi; telefoni, Viber i WhatsApp broj, e-pošta za kupce; radno vreme i neradni dani.
 - [ ] **[P0] (K)** Tekući račun i banka za predračun (18 cifara sa kontrolnim brojem, npr. `160-0000000123456-78`).
@@ -26,7 +27,10 @@ Redosled je bitan: domen i Resend traže vreme (DNS, provera domena), pa njih tr
 - [ ] **[P2] (K)** Pogledati 3D auto (početna, `public/images/hero/`) i sličice delova (`public/images/parts/`) i kratke savete u oblačićima 3D prikaza (npr. „Pre zamene proverite broj na kućištu turbine.“); javiti šta treba drugačije. Kupljen 3D model nekog dela može da zameni generisani (README → 3D pipeline; proveriti licencu za komercijalnu upotrebu).
 - [ ] **[P2] (K)** Potvrditi vizuelni pravac „Rendgen“ (`/styleguide`): tamna prodavnica, jedna narandžasta boja za akcije, svetao admin.
 
-### Znak i ime (korak 24)
+### Znak i ime (koraci 24 i 25)
+
+- [ ] **[P0] (K)** **Odobriti znak na sajtu.** Znak „Euromotors Plus by OEM Parts“ je od koraka 25 ugrađen u zaglavlje i podnožje sajta, admin, mejlove, predračun i otpremnicu, ikonicu u kartici pregledača, ikonicu aplikacije i sliku koja se vidi kad se link podeli. Pregledati ga na sajtu ili na slikama u `docs/brand/site/` i javiti da li je odobren. Dok ne stigne odobrenje, sajt se ne objavljuje pod ovim znakom.
+- [ ] **[P2] (K)** Brojevi porudžbina i dalje počinju sa „SK“ (npr. `SK-2026-000187`), što je ostatak radnog naziva. Ako želite drugi početak (npr. „EM“), promenite ga u Podešavanja → Firma → „Prefiks porudžbine“ pre prve prave porudžbine; već izdati brojevi se ne menjaju.
 
 - [ ] **[P0] (K)** Potvrditi novi znak „Euromotors Plus by OEM Parts“. Tabla za pregled: `docs/brand/BRAND-BOARD.html` (ili `.png`); uputstvo: `docs/brand/LOGO.md`; ostali predlozi: `docs/brand/concepts/`.
 - [ ] **[P0] (K)** Potvrditi reč „by“ u potpisu („Euromotors Plus by OEM Parts“). Ako ne opisuje dobro odnos firme i radnje, osnovni može da postane dvojni znak (`logo-dual`), u kojem oba imena stoje ravnopravno i bez „by“.
@@ -105,6 +109,7 @@ Repozitorijum mora biti na GitHub-u (ili GitLab/Bitbucket) pod nalogom klijenta 
 
   Nasumična vrednost: `node -e "console.log(require('crypto').randomBytes(36).toString('base64url'))"`.
   **`LINK_TOKEN_SECRET` se postavlja pre prve porudžbine i posle se ne menja.** Bez njega produkcija namerno odbija porudžbine i upite; promena poništava linkove iz već poslatih mejlova.
+- [ ] **[P0] (P)** Ako je baza napunjena pre koraka 25 (pod radnim nazivom): `npx convex run --prod seed:applyRebrand`. Naredba menja naziv i dodatak naslovu samo ako su još na staroj početnoj vrednosti i može da se pokrene više puta. Nova baza je ne traži.
 - [ ] **[P0] (P)** Napuniti bazu: `npx convex run --prod seed:run` (vozila, kategorije sa SEO tekstovima, proizvođači, nivoi rabata, sadržaj strana, česta pitanja i demo artikli za proveru).
 - [ ] **[P0] (P)** Proveriti sajt sa demo artiklima (§12), zatim obrisati demo podatke: Admin → Podešavanja → Opasna zona → „Obriši demo podatke“, potvrda `OBRIŠI DEMO`. Obrisati ili izmeniti demo oglasnu stranu `/ponuda/kocione-plocice-golf` (Podešavanja → Oglasne strane).
 - [ ] **[P0] (P)** Provera: `npx convex env list --prod` sadrži `LINK_TOKEN_SECRET`, `JWT_PRIVATE_KEY`, `JWKS`, `SITE_URL`, a **ne** sadrži `E2E_TEST_HELPERS`.
@@ -132,7 +137,7 @@ Do kraja ovog odeljka sajt radi u režimu „Samo zapis“: svaka poruka se napr
 
   Sačekati status „Verified“.
 - [ ] **[P0] (P)** API ključ (API Keys → Create, dozvola „Sending access“): `npx convex env set --prod RESEND_API_KEY re_…`. Ključ nikad u kod ni u git.
-- [ ] **[P0] (P)** Pošiljalac sa proverenog domena: `npx convex env set --prod EMAIL_FROM "SKLOP <prodaja@domen.rs>"`. Ime pošiljaoca i adresa za odgovore se menjaju u Podešavanja → Obaveštenja → Slanje e-pošte.
+- [ ] **[P0] (P)** Pošiljalac sa proverenog domena: `npx convex env set --prod EMAIL_FROM "Euromotors Plus <prodaja@domen.rs>"` (umesto `domen.rs` ide pravi domen iz §A). Ime pošiljaoca i adresa za odgovore se menjaju u Podešavanja → Obaveštenja → Slanje e-pošte.
 - [ ] **[P0] (P)** Webhook za status isporuke: Resend → Webhooks → Add endpoint, URL `https://<produkcioni-deployment>.convex.site/resend-webhook` (tačna adresa piše u Podešavanja → Obaveštenja), događaji `email.*`. „Signing secret“: `npx convex env set --prod RESEND_WEBHOOK_SECRET whsec_…`. Bez toga mejlovi odlaze, ali se odbijene adrese ne prijavljuju.
 - [ ] **[P0] (K)** Pre slanja popuniti Podešavanja → Firma (§6): ti podaci idu u podnožje svakog mejla i u predračun.
 - [ ] **[P0] (K+P)** Probno slanje: Podešavanja → Obaveštenja → Slanje e-pošte → **Test** → Sačuvaj; zatim E-pošta → Šabloni → „Pošalji probnu poruku“ za nekoliko šablona i proveriti ih u Resend → Emails. Pa prebaciti na **Uživo**.
@@ -161,7 +166,7 @@ Sve se menja u Podešavanja → Pravni tekstovi. Posle pregleda uključiti „Pr
 - [ ] **[P0] (pravnik)** Odgovor u čestim pitanjima „Mogu li da vratim deo?“: „Da. Kao potrošač možete da odustanete od kupovine u roku od 14 dana od prijema, bez navođenja razloga. Trošak vraćanja snosite vi; ako je deo ugrađivan ili oštećen, odgovarate za umanjenje vrednosti.“
 - [ ] **[P1] (pravnik)** Rečenica o pravu na odustanak i reklamacijama u mejlu „Porudžbina je isporučena“ (E-pošta → Šabloni → „Isporučena / preuzeta“).
 - [ ] **[P1] (pravnik)** Tekst o kolačićima i merenju: Google Analytics, Google Ads, Meta, heširani podaci za merenje oglasa, kolačići `_ga`, `_gcl_*`, `_fbp`, `_fbc`, `sk_consent`, `sk_attr`, i sesijski `sk_attr_s` (izvor posete bez ličnih podataka) — sme li bez pristanka.
-- [ ] **[P1] (pravnik)** Odricanje o korišćenju naziva marki u podnožju: „Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; SKLOP nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.“
+- [ ] **[P1] (pravnik)** Odricanje o korišćenju naziva marki u podnožju: „Volkswagen, Audi, Škoda, SEAT i Cupra su registrovani žigovi svojih vlasnika. Nazive marki koristimo samo da bismo označili vozila kojima su delovi namenjeni; Euromotors Plus nije povezan sa proizvođačima vozila niti je njihov ovlašćeni zastupnik.“
 - [ ] **[P1] (pravnik)** Evidencija radnji obrade (izuzetak za manje od 250 zaposlenih ima izuzetke), evidencija zahteva kupaca (datum, ko, šta, kada odgovoreno) i godišnji pregled starih naloga i upita (`PRIVACY-PROCESS.md` §4).
 - [ ] **[P2] (K)** Česta pitanja i tekstovi „O nama“ i „Kontakt“: proveriti i dopuniti pravim podacima. O nama i Kontakt se menjaju u Pravni tekstovi; česta pitanja za sada menja programer (§D).
 
@@ -209,7 +214,7 @@ Na produkciji, sa demo artiklima pre brisanja, pa jednom posle sa pravim artiklo
 
 Postupak: [`BACKUPS.md`](BACKUPS.md).
 
-- [ ] **[P0] (P)** Prva kopija produkcije odmah posle punjenja baze i pre brisanja demo podataka: `npx convex export --prod --include-file-storage --path backups/sklop-<datum>.zip`.
+- [ ] **[P0] (P)** Prva kopija produkcije odmah posle punjenja baze i pre brisanja demo podataka: `npx convex export --prod --include-file-storage --path backups/euromotors-<datum>.zip`.
 - [ ] **[P1] (K+P)** Raspored: svaki dan (čuva se 14 dana), svake nedelje (8 nedelja), prvog u mesecu (12 meseci), i pre svakog većeg zahvata (veliki uvoz sa deaktiviranjem, brisanje demo podataka, promena šeme). Windows Task Scheduler na računaru u radnji ili GitHub Actions sa produkcijskim `CONVEX_DEPLOY_KEY` (čuvati kao najveću tajnu). Kopije čuvati van računara u radnji, šifrovano, nikad u gitu ni mejlom.
 - [ ] **[P1] (P)** Jednom mesečno vežba vraćanja u privremenu bazu (`BACKUPS.md` §3); prvu uraditi u prvom mesecu.
 

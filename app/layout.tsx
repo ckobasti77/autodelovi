@@ -5,6 +5,7 @@ import { headers } from "next/headers";
 import "./globals.css";
 
 import { site, siteUrl } from "@/config/site";
+import { DEFAULT_TITLE_SUFFIX } from "@/lib/domain/brand";
 import { fontVariables } from "@/lib/fonts";
 import {
   buildTextRevealBootScript,
@@ -23,8 +24,8 @@ const revealBoot = buildTextRevealBootScript();
 export const metadata: Metadata = {
   metadataBase: siteUrl(),
   title: {
-    default: `${site.brand.name} — ${site.brand.tagline}`,
-    template: `%s · ${site.brand.name}`,
+    default: `${site.brand.name} · ${site.brand.alternateName} — ${site.brand.tagline}`,
+    template: `%s${DEFAULT_TITLE_SUFFIX}`,
   },
   description: site.brand.description,
   applicationName: site.brand.name,

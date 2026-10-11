@@ -2,7 +2,7 @@ import { MagnifyingGlassIcon } from "@phosphor-icons/react/dist/ssr";
 import type { ReactNode } from "react";
 
 import { ROUTES } from "@/constants/routes";
-import { Wordmark } from "@/components/shell/BrandMark";
+import { BrandLink } from "@/components/brand/BrandLink";
 import { MAIN_ID } from "@/components/shell/SkipLink";
 import { Button } from "@/components/ui/Button";
 import { Link } from "@/components/ui/Link";
@@ -134,7 +134,7 @@ export function NotFoundSearchForm() {
 }
 
 /**
- * Self-contained frame (wordmark header + `main`) for status pages rendered outside any route
+ * Self-contained frame (logo header + `main`) for status pages rendered outside any route
  * group layout: the root 404, 403 and 401. No client islands (see `NotFoundContent`).
  */
 export function BareShell({ children }: { children: ReactNode }) {
@@ -142,7 +142,7 @@ export function BareShell({ children }: { children: ReactNode }) {
     <div className="flex min-h-dvh flex-col">
       <header data-reveal="off" className="border-b border-line bg-bg print:hidden">
         <div className="flex h-header items-center px-page">
-          <Wordmark />
+          <BrandLink />
         </div>
       </header>
       <main id={MAIN_ID} tabIndex={-1} className="flex-1 outline-none">

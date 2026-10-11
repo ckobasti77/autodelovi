@@ -221,7 +221,7 @@ test.describe("admin under the policy", () => {
       await expect(page.getByRole("heading", { level: 1 }).first()).toBeVisible({ timeout: 30_000 });
     }
     // The privacy export downloads JSON for an address (owner only).
-    await page.getByLabel("E-pošta kupca").fill("niko-ne-postoji@sklop.test");
+    await page.getByLabel("E-pošta kupca").fill("niko-ne-postoji@primer.test");
     const download = page.waitForEvent("download");
     await page.getByRole("button", { name: "Preuzmi sve podatke (JSON)" }).click();
     expect((await download).suggestedFilename()).toMatch(/^podaci-kupca-\d{4}-\d{2}-\d{2}\.json$/);

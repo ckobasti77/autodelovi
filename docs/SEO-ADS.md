@@ -1,6 +1,6 @@
-# SKLOP — SEO, Google Ads, Meta Ads, analytics
+# Euromotors Plus · OEM Parts — SEO, Google Ads, Meta Ads, analytics
 
-> Part of the SKLOP docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
+> Part of the Euromotors Plus docs — index: [README](README.md) · source: [master plan](plans/01-master-plan.md). Business intent: `pipeline/BRIEF.md`.
 
 Related: [ROUTES](ROUTES.md) (index/canonical per route) · [DATA-MODEL](DATA-MODEL.md) (attribution, landingStats) · [SECURITY §L3/§L5](SECURITY.md) (CSP, privacy).
 
@@ -9,7 +9,7 @@ Related: [ROUTES](ROUTES.md) (index/canonical per route) · [DATA-MODEL](DATA-MO
 ### J1. Metadata templates (Serbian; titles ≤ 60 chars keyword-first + `settings.seo.titleSuffix`; descriptions 120–155 chars)
 | Template | Title | Description pattern |
 |---|---|---|
-| Home | „Auto delovi za VW, Audi, Škoda, SEAT i Cupra \| SKLOP" | what we sell + OEM search + delivery/payment („pouzećem, preuzimanje u radnji") |
+| Home | „Auto delovi VW, Audi, Škoda \| Euromotors Plus · OEM Parts" (D309; suffix forms: D308) | what we sell + OEM search + delivery/payment („pouzećem, preuzimanje u radnji") |
 | System hub | „{Sistem} — delovi za VAG vozila" | categories in the system + counts |
 | Category | „{Kategorija} za VW, Audi, Škoda, SEAT" (+ „ — strana n") | count, price from, in-stock count, manufacturers |
 | Landing brand | „{Kategorija} za {Marka} — cene i stanje" | real counts, price range, top manufacturers |

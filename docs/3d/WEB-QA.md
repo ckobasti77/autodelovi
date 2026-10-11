@@ -1,6 +1,6 @@
 # 3D hero — web QA (step 10)
 
-> Part of the SKLOP docs — index: [README](../README.md). Contract: [3D-CONTRACT §F7–F9](../3D-CONTRACT.md). Decisions: D97–D112 in [DECISIONS](../DECISIONS.md).
+> Part of the Euromotors Plus docs — index: [README](../README.md). Contract: [3D-CONTRACT §F7–F9](../3D-CONTRACT.md). Decisions: D97–D112 in [DECISIONS](../DECISIONS.md).
 
 Date: 2026-09-30 · production build (`next build` + `next start -p 3100`) · Windows 11; Lighthouse 13.5 drives the Chrome at `CHROME_PATH` (headless), Playwright 1.63 drives its Chromium for e2e and captures · evidence in `docs/3d/web-qa/` (WebP) and `.lighthouse/` (JSON, git-ignored).
 

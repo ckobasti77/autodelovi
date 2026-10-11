@@ -30,6 +30,7 @@ import { toast } from "@/components/ui/Toast";
 import { useAdminShell } from "../shell/context";
 import { CompanySetupNotice, PageHeader, SegmentedFilter } from "../ui";
 import { useUrlFilters } from "../useUrlFilters";
+import { emailPreviewHtml } from "@/lib/email/preview";
 import { DeliveryBanner, EmailsNav } from "./EmailDelivery";
 
 type View = "desktop" | "phone" | "text";
@@ -173,7 +174,7 @@ function TemplatePreview({
             title={`Pregled šablona: ${info.label}`}
             // Same-origin without scripts: only to measure the height of our own markup.
             sandbox="allow-same-origin"
-            srcDoc={preview.html}
+            srcDoc={emailPreviewHtml(preview.html)}
             onLoad={(e) => {
               const doc = e.currentTarget.contentDocument;
               if (doc) setHeight(Math.max(400, doc.documentElement.scrollHeight));

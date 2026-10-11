@@ -1,4 +1,4 @@
-# SKLOP — 3D asset plan (step 07; executed by step 08, polished by step 09)
+# Euromotors Plus · OEM Parts — 3D asset plan (step 07; executed by step 08, polished by step 09)
 
 ## Context
 The home hero is an exploded X-ray car (BRIEF §4). The body is a ghosted shell with a cold rim. Inside are 91 solid, realistic clickable nodes in 42 categories, and they explode in 7 scroll stages. Step 08 resumes this session and has a hard limit of 540 min (`pipeline/steps.json`). In that time it builds the car from versioned Python in headless Blender 5.1.1, exports a desktop GLB, a lite GLB and a manifest that satisfy `docs/3D-CONTRACT.md`, and renders posters and 48 thumbnails.

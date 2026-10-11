@@ -6,6 +6,7 @@
  * Inline text markup (paragraphs, notices, list items): `**bold**` and `[label](https://…)`.
  * Everything else is escaped.
  */
+import { BRAND_LOCKUP_NAME } from "../domain/brand";
 import { formatPhone, normalizePhone } from "../format/phone";
 
 /** Paper palette (docs/design/tokens.json → color.paper) and its night counterpart. */
@@ -384,13 +385,14 @@ const DARK_CSS = `
     .sk-pad { padding-left: 20px !important; padding-right: 20px !important; }
     .sk-outer { padding: 0 !important; }
     .sk-panel { border-radius: 0 !important; border-left: 0 !important; border-right: 0 !important; }
+    .sk-logo { padding-left: 8px !important; padding-right: 8px !important; border-radius: 0 !important; }
+    .sk-ref { padding-left: 12px !important; }
   }
   @media (prefers-color-scheme: dark) {
     .sk-body, .sk-outer { background: ${NIGHT.bg} !important; }
     .sk-panel { background: ${NIGHT.panel} !important; border-color: ${NIGHT.line} !important; }
     .sk-head, .sk-code { background: ${NIGHT.header} !important; border-color: ${NIGHT.line} !important; }
     .sk-ink1, .sk-code { color: ${NIGHT.ink1} !important; }
-    .sk-mark { background: ${NIGHT.ink1} !important; }
     .sk-ink2 { color: ${NIGHT.ink2} !important; }
     .sk-ink3 { color: ${NIGHT.ink3} !important; }
     .sk-line, .sk-rule { border-color: ${NIGHT.line} !important; }
@@ -399,14 +401,18 @@ const DARK_CSS = `
   }
 `;
 
-const block = (w: number, h: number, color: string, cls = "") =>
-  `<div${cls ? ` class="${cls}"` : ""} style="width:${w}px;height:${h}px;background:${color};font-size:0;line-height:0;">&nbsp;</div>`;
-
 /**
- * The „izvučen deo“ mark (DS §2.2) as table cells — SVG is stripped by several clients:
- * the orange part lifted above its slot in the ink base.
+ * The logo in the header (DS §2.6): the kit's PNG on white — SVG is stripped by several clients.
+ * 954 × 176 px shown at 477 × 88, with 16 px of white around the artwork, so the header band is
+ * white in both colour schemes. The file is served by the site (`public/brand/`).
  */
-const MARK = `<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td colspan="3" style="padding:0 5px 3px;">${block(10, 5, PAPER.accent)}</td></tr><tr><td valign="bottom">${block(5, 8, PAPER.ink1, "sk-mark")}</td><td valign="bottom">${block(10, 5, PAPER.ink1, "sk-mark")}</td><td valign="bottom">${block(5, 8, PAPER.ink1, "sk-mark")}</td></tr></table>`;
+export const EMAIL_LOGO = {
+  path: "/brand/email-header@2x.png",
+  width: 477,
+  height: 88,
+  alt: BRAND_LOCKUP_NAME,
+} as const;
+const LOGO_GROUND = "#FFFFFF";
 
 /** Hidden preview text followed by filler so clients do not pull body copy into the preview. */
 function preheaderHtml(value: string): string {
@@ -415,10 +421,13 @@ function preheaderHtml(value: string): string {
 }
 
 export function layout(input: LayoutInput): RenderedEmail {
-  const brand = escapeHtml(input.brandName.toUpperCase());
   const home = escapeHtml(safeHref(input.siteUrl));
+  const logoSrc = escapeHtml(safeHref(`${input.siteUrl.replace(/\/$/, "")}${EMAIL_LOGO.path}`));
+  // The alt text is styled: with images blocked it stands in for the logo.
+  const logo = `<a href="${home}" style="display:block;text-decoration:none;"><img src="${logoSrc}" width="${EMAIL_LOGO.width}" height="${EMAIL_LOGO.height}" alt="${escapeHtml(EMAIL_LOGO.alt)}" style="display:block;width:100%;max-width:${EMAIL_LOGO.width}px;height:auto;border:0;outline:none;text-decoration:none;font-family:${FONT_DISPLAY};font-size:18px;line-height:24px;font-weight:900;color:${PAPER.ink1};"></a>`;
+  // On the white band in both schemes, so its colour is fixed (no dark-mode class).
   const reference = input.reference
-    ? `<td align="right" class="sk-ink3" style="font-family:${FONT_MONO};font-size:13px;line-height:20px;color:${PAPER.ink3};white-space:nowrap;">${escapeHtml(input.reference)}</td>`
+    ? `<div class="sk-ref" style="padding:0 0 6px 16px;font-family:${FONT_MONO};font-size:13px;line-height:20px;color:${PAPER.ink3};white-space:nowrap;">${escapeHtml(input.reference)}</div>`
     : "";
   const company = input.companyLines.filter((l) => l.trim() !== "");
   const contactsHtml = input.contacts
@@ -465,11 +474,9 @@ ${preheaderHtml(input.preheader)}
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="sk-shell" style="max-width:600px;width:100%;">
 <tr><td class="sk-panel" bgcolor="${PAPER.panel}" style="background:${PAPER.panel};border:1px solid ${PAPER.line};border-radius:6px;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td class="sk-pad sk-head sk-line" style="padding:18px 32px;border-bottom:1px solid ${PAPER.line};background:${PAPER.header};border-radius:6px 6px 0 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-<td><a href="${home}" style="text-decoration:none;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td valign="bottom" style="padding:0 10px 3px 0;" aria-hidden="true">${MARK}</td><td class="sk-ink1" style="font-family:${FONT_DISPLAY};font-size:20px;line-height:24px;font-weight:900;letter-spacing:2px;color:${PAPER.ink1};">${brand}</td></tr></table></a></td>
+<tr><td class="sk-logo sk-line" bgcolor="${LOGO_GROUND}" style="padding:6px 16px;border-bottom:1px solid ${PAPER.line};background:${LOGO_GROUND};border-radius:6px 6px 0 0;">
+${logo}
 ${reference}
-</tr></table>
 </td></tr>
 <tr><td class="sk-pad" style="padding:28px 32px 12px;font-family:${FONT_UI};">
 ${input.body.html}

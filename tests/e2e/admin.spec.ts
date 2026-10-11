@@ -227,11 +227,11 @@ test("save settings (company) and restore", async ({ page }) => {
   await page.goto("/admin/podesavanja?tab=firma");
   const input = page.getByTestId("admin-settings-legal-name");
   await expect(input).toBeVisible({ timeout: 20_000 });
-  await input.fill(`SKLOP E2E ${stamp} d.o.o.`);
+  await input.fill(`Proba E2E ${stamp} d.o.o.`);
   await page.getByRole("button", { name: "Sačuvaj", exact: true }).click();
   await expect(page.getByText("Sačuvano.").first()).toBeVisible({ timeout: 20_000 });
   expect(convexRun<{ legalName: string }>("adminProbe", {}).legalName).toBe(
-    `SKLOP E2E ${stamp} d.o.o.`,
+    `Proba E2E ${stamp} d.o.o.`,
   );
   expect(await seriousAxe(page)).toEqual([]);
   await input.fill(before);
