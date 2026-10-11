@@ -296,7 +296,7 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
         <Honeypot value={honeypot} onChange={setHoneypot} />
         <div ref={summary} tabIndex={-1} className="outline-none">
           {errorList.length || serverError ? (
-            <div role="alert" className="rounded-sm border border-danger bg-danger-subtle p-4">
+            <div role="alert" className="rounded-md border border-danger bg-danger-subtle p-4">
               <p className="flex items-center gap-2 type-body-s font-semibold text-danger">
                 <WarningCircleIcon size={18} aria-hidden="true" />
                 {serverError ?? "Proverite označena polja:"}
@@ -397,7 +397,7 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
         <fieldset className="flex flex-col gap-5">
           <legend className="mb-4 type-h3 text-ink-1">Šta vam treba?</legend>
           {config.prefill.productName ? (
-            <p className="flex items-start gap-2 rounded-sm border border-line bg-surface-1 p-3 type-body-s text-ink-2">
+            <p className="flex items-start gap-2 panel p-3 type-body-s text-ink-2">
               <InfoIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0 text-ink-3" />
               Pitanje o artiklu:{" "}
               <strong className="font-semibold text-ink-1">{config.prefill.productName}</strong>
@@ -428,7 +428,7 @@ export function InquiryForm({ config }: { config: InquiryConfig }) {
                   type="button"
                   onClick={() => setCategories((prev) => prev.filter((x) => x.slug !== c.slug))}
                   aria-label={`Ukloni kategoriju ${c.name}`}
-                  className="inline-flex h-9 cursor-pointer items-center gap-1.5 rounded-xs border border-accent bg-accent-subtle px-3 type-body-s text-ink-1"
+                  className="inline-flex h-9 cursor-pointer items-center gap-1.5 rounded-sm border border-accent bg-accent-subtle px-3 type-body-s text-ink-1"
                 >
                   {c.name}
                   <XIcon size={14} aria-hidden="true" />

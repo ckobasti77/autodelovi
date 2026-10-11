@@ -35,13 +35,13 @@ export default function RootError({
             <button
               type="button"
               onClick={retry}
-              className="inline-flex h-11 cursor-pointer items-center justify-center rounded-xs bg-accent px-4 type-button text-on-accent transition-control hover:bg-accent-hover focus-ring-inverse"
+              className="inline-flex h-11 cursor-pointer items-center justify-center rounded-sm bg-accent px-4 type-button text-on-accent transition-control hover:bg-accent-hover focus-ring-inverse"
             >
               Pokušajte ponovo
             </button>
             <Link
               href="/upit"
-              className="inline-flex h-11 items-center justify-center rounded-xs border border-control px-4 type-button text-ink-1 transition-control hover:border-ink-3 hover:bg-surface-2"
+              className="inline-flex h-11 items-center justify-center rounded-sm border border-control px-4 type-button text-ink-1 transition-control hover:border-ink-3 hover:bg-surface-2"
             >
               Pošaljite upit
             </Link>

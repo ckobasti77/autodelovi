@@ -92,7 +92,7 @@ export function MotionLab() {
               </svg>
               <div
                 data-track={ease}
-                className="relative h-8 rounded-xs border border-line bg-surface-1"
+                className="relative h-8 rounded-sm border border-line bg-surface-1"
               >
                 <span
                   data-dot=""
@@ -120,7 +120,7 @@ export function MotionLab() {
           {Object.entries(DURATION_MS).map(([name, ms]) => (
             <li
               key={name}
-              className="flex flex-col gap-1 rounded-sm border border-line bg-surface-1 p-3"
+              className="flex flex-col gap-1 panel p-3"
             >
               <span className="type-numeral-s text-ink-1">{ms} ms</span>
               <span className="type-code-s text-ink-3">
@@ -168,7 +168,7 @@ export function StaggerDemo() {
           <span
             key={i}
             data-tile=""
-            className="flex h-12 items-center justify-center rounded-xs border border-line bg-surface-1 type-numeral-s text-ink-2"
+            className="flex h-12 items-center justify-center rounded-sm border border-line bg-surface-1 type-numeral-s text-ink-2"
           >
             {String(i + 1).padStart(2, "0")}
           </span>

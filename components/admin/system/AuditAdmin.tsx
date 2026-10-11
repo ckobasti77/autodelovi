@@ -130,7 +130,7 @@ export function AuditAdmin() {
           />
         </Field>
       </div>
-      <div className="rounded-sm border border-line bg-surface-1">
+      <div className="panel">
         {status === "LoadingFirstPage" ? (
           <Skeleton className="m-4 h-60" />
         ) : results.length === 0 ? (
@@ -170,7 +170,7 @@ export function AuditAdmin() {
                         type="button"
                         aria-expanded={expanded ? "true" : "false"}
                         onClick={() => setOpen({ ...open, [r._id]: !expanded })}
-                        className="inline-flex h-8 cursor-pointer items-center gap-1 rounded-xs px-2 type-caption text-ink-2 hover:bg-surface-2 focus-ring-inset"
+                        className="inline-flex h-8 cursor-pointer items-center gap-1 rounded-sm px-2 type-caption text-ink-2 hover:bg-surface-2 focus-ring-inset"
                       >
                         {expanded ? (
                           <CaretDownIcon size={12} aria-hidden="true" />

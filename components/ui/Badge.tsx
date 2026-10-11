@@ -25,7 +25,7 @@ export type BadgeProps = ComponentProps<"span"> & {
   size?: "label" | "text";
 };
 
-/** Badge / chip (§9.22): 24 px, radius 2, subtle tint with icon + word. */
+/** Badge / chip (§9.22): 24 px, radius 4, subtle tint with icon + word. */
 export function Badge({
   tone = "neutral",
   icon,

@@ -8,23 +8,31 @@ export type ButtonVariant = "primary" | "secondary" | "quiet" | "ghost" | "dange
 export type ButtonSize = "sm" | "md" | "lg" | "xl";
 
 const base =
-  "relative inline-flex select-none items-center justify-center gap-2 whitespace-nowrap rounded-xs " +
+  "relative inline-flex select-none items-center justify-center gap-2 whitespace-nowrap rounded-sm " +
   "transition-control cursor-pointer active:translate-y-px " +
-  "disabled:cursor-not-allowed disabled:active:translate-y-0 " +
-  "aria-disabled:cursor-not-allowed aria-disabled:active:translate-y-0";
+  "disabled:cursor-not-allowed disabled:active:translate-y-0 disabled:shadow-none " +
+  "aria-disabled:cursor-not-allowed aria-disabled:active:translate-y-0 aria-disabled:shadow-none";
 
+/**
+ * primary — the one next step of a region: accent fill with a lit top edge.
+ * secondary — the single alternative beside it: a quiet outline.
+ * quiet — repeated actions (card and row buttons, toolbars): a filled surface, no bright outline,
+ *   so a grid of them does not read as a wall of boxes.
+ */
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-accent text-on-accent hover:bg-accent-hover active:bg-accent-active focus-ring-inverse " +
+    "bg-accent text-on-accent shadow-[inset_0_1px_0_rgb(255_255_255/0.24)] hover:bg-accent-hover " +
+    "active:bg-accent-active active:shadow-none focus-ring-inverse " +
     "disabled:bg-surface-2 disabled:text-ink-4 aria-disabled:bg-surface-2 aria-disabled:text-ink-4",
   secondary:
     "border border-control text-ink-1 hover:border-ink-3 hover:bg-surface-2 active:bg-surface-3 " +
     "disabled:border-line disabled:bg-transparent disabled:text-ink-4 aria-disabled:border-line aria-disabled:text-ink-4",
   quiet:
-    "border border-control bg-surface-2 text-ink-1 hover:border-accent hover:bg-surface-3 " +
-    "disabled:border-line disabled:bg-surface-1 disabled:text-ink-4 aria-disabled:border-line aria-disabled:text-ink-4",
+    "border border-line-strong bg-surface-3 text-ink-1 shadow-rest hover:border-ink-4 hover:bg-surface-4 " +
+    "active:bg-surface-3 active:shadow-none " +
+    "disabled:border-line disabled:bg-surface-1 disabled:text-ink-4 aria-disabled:border-line aria-disabled:bg-surface-1 aria-disabled:text-ink-4",
   ghost:
-    "text-ink-2 hover:bg-surface-2 hover:text-ink-1 disabled:bg-transparent disabled:text-ink-4 aria-disabled:text-ink-4",
+    "text-ink-2 hover:bg-surface-2 hover:text-ink-1 active:bg-surface-3 disabled:bg-transparent disabled:text-ink-4 aria-disabled:text-ink-4",
   danger:
     "border border-danger text-danger hover:bg-danger-subtle " +
     "disabled:border-line disabled:bg-transparent disabled:text-ink-4 aria-disabled:border-line aria-disabled:text-ink-4",
@@ -52,8 +60,9 @@ export type ButtonProps = ComponentProps<"button"> & {
 };
 
 /**
- * Button (DESIGN-SYSTEM §9.1). One primary per view region. Hover changes colour in 80 ms,
- * press sinks 1 px in 140 ms (sk.snap); focus ring is accent (ink on accent fills).
+ * Button (DESIGN-SYSTEM §9.1). One primary per view region. Radius 6. Hover changes colour in
+ * 80 ms, press sinks 1 px in 140 ms (sk.snap) and loses its lit edge; loading keeps label and
+ * width; focus ring is accent (ink on accent fills) and follows the radius.
  */
 export function Button({
   variant = "primary",

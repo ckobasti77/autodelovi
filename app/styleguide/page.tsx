@@ -169,7 +169,7 @@ export default function StyleguidePage() {
                 {ICONS.map(([name, use, Icon]) => (
                   <li
                     key={name}
-                    className="flex items-center gap-3 rounded-sm border border-line bg-surface-1 p-3"
+                    className="flex items-center gap-3 panel p-3"
                   >
                     <Icon size={24} aria-hidden="true" className="shrink-0 text-ink-1" />
                     <span className="flex min-w-0 flex-col">

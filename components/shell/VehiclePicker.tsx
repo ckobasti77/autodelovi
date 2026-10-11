@@ -33,13 +33,13 @@ export function VehicleField({ vehicle, onOpen, onClear, className }: TriggerPro
       <span className="type-caption text-ink-2" id={labelId}>
         Vaše vozilo
       </span>
-      <div className="flex h-13 items-stretch rounded-xs border border-control bg-surface-2 transition-control hover:border-ink-3">
+      <div className="flex h-13 items-stretch rounded-sm border border-control bg-surface-2 transition-control hover:border-ink-3">
         <button
           type="button"
           onClick={onOpen}
           aria-describedby={labelId}
           data-testid={TEST_IDS.vehiclePickerTrigger}
-          className="flex min-w-0 flex-1 cursor-pointer items-center gap-3 rounded-xs px-3 text-left"
+          className="flex min-w-0 flex-1 cursor-pointer items-center gap-3 rounded-sm px-3 text-left"
         >
           <CarIcon size={20} aria-hidden="true" className="shrink-0 text-ink-2" />
           {vehicle ? (
@@ -74,7 +74,10 @@ export function VehicleField({ vehicle, onOpen, onClear, className }: TriggerPro
   );
 }
 
-/** Header slot chip: accent-subtle, 1 px accent edge, car icon + label + clear (44 px hits). */
+/**
+ * Header slot chip. Empty: a filled field-like chip („Izaberite vozilo“). Chosen: accent-subtle
+ * with a 1 px accent edge (yours), car icon + label + clear (44 px hits).
+ */
 export function VehicleChip({ vehicle, onOpen, onClear, className }: TriggerProps) {
   if (!vehicle) {
     return (
@@ -83,7 +86,8 @@ export function VehicleChip({ vehicle, onOpen, onClear, className }: TriggerProp
         onClick={onOpen}
         data-testid={TEST_IDS.vehiclePickerTrigger}
         className={cn(
-          "inline-flex h-9 cursor-pointer items-center gap-2 rounded-xs border border-control px-3 type-button-s text-ink-1 transition-control hover:border-ink-3 hover:bg-surface-2",
+          // A field-like chip, the same family as the header search: filled, quiet edge.
+          "inline-flex h-10 cursor-pointer items-center gap-2 rounded-sm border border-line-strong bg-surface-2 px-3 type-button-s text-ink-1 shadow-rest transition-control hover:border-ink-4 hover:bg-surface-3",
           className,
         )}
       >
@@ -95,7 +99,7 @@ export function VehicleChip({ vehicle, onOpen, onClear, className }: TriggerProp
   return (
     <div
       className={cn(
-        "inline-flex h-9 items-stretch rounded-xs border border-accent-edge bg-accent-subtle text-ink-1",
+        "inline-flex h-10 items-stretch rounded-sm border border-accent-edge bg-accent-subtle text-ink-1",
         className,
       )}
       data-reveal="off"

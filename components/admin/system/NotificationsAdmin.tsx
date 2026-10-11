@@ -49,7 +49,7 @@ export function NotificationsAdmin() {
           ) : null
         }
       />
-      <div className="rounded-sm border border-line bg-surface-1">
+      <div className="panel">
         {status === "LoadingFirstPage" ? (
           <Skeleton className="m-4 h-60" />
         ) : results.length === 0 ? (

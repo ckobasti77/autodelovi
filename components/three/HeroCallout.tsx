@@ -3,7 +3,7 @@
 /**
  * Callout + leader (DESIGN-SYSTEM §5.7): a 4 px accent anchor dot on the part's label anchor,
  * a 1 px accent leader straight up to the annotation box (flips below near the top edge). The
- * box: surface-3, 1 px line-strong, radius 2, no shadow — category name, one mechanic's note,
+ * box: surface-3, 1 px line-strong, radius 6, lit edge — category name, one mechanic's note,
  * the live count. Hover callouts appear for fine pointers only; phones show the selected
  * category's name. Positions come from the canvas every rendered frame (transient store
  * updates → transforms), never through React renders. Informational only (`pointer-events:
@@ -87,7 +87,7 @@ export function HeroCallout() {
       <div
         ref={boxRef}
         className={cn(
-          "absolute left-0 top-0 flex flex-col gap-1 rounded-xs border border-line-strong bg-surface-3 px-3.5 py-2.5",
+          "absolute left-0 top-0 flex flex-col gap-1 rounded-sm border border-line-strong bg-surface-3 px-3.5 py-2.5",
           compact ? "max-w-[16rem]" : "w-[18.5rem]",
         )}
       >

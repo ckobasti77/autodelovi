@@ -133,7 +133,7 @@ export default async function InquiryPage({ searchParams }: PageProps<"/upit">) 
           />
         </div>
         <aside className="flex flex-col gap-8 lg:col-span-4" aria-label="Pomoć">
-          <section className="rounded-sm border border-line bg-surface-1 p-5">
+          <section className="panel p-5">
             <h2 className="mb-4 type-h4 text-ink-1">Gde je broj šasije?</h2>
             <VinLocator />
           </section>

@@ -118,7 +118,7 @@ export function Tabs({
             "relative flex overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
             variant === "underline"
               ? "gap-6"
-              : "gap-1 rounded-xs border border-line bg-surface-1 p-1",
+              : "gap-1 panel p-1",
           )}
         >
           {items.map((item) => (

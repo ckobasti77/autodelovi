@@ -2,7 +2,7 @@ import type { ComponentProps, ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
 
-/** Skeleton block (§9.20): surface-2, radius 2, 1.6 s shimmer (static under reduced motion). */
+/** Skeleton block (§9.20): surface-2, radius 6, 1.6 s shimmer (static under reduced motion). */
 export function Skeleton({ className, ...rest }: ComponentProps<"span">) {
   return <span aria-hidden="true" className={cn("skeleton block", className)} {...rest} />;
 }

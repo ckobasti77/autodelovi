@@ -52,7 +52,7 @@ export default async function MechanicRegistrationPage() {
       <div className="mt-10 grid gap-12 lg:grid-cols-12 lg:gap-x-(--gutter)">
         <div className="lg:col-span-8">
           {already ? (
-            <div className="flex flex-col items-start gap-4 rounded-sm border border-line bg-surface-1 p-6">
+            <div className="flex flex-col items-start gap-4 panel p-6">
               <p className="type-body text-ink-1">Ovaj nalog već ima registrovan servis.</p>
               <Button asChild>
                 <Link href={ROUTES.mechanicPortal} variant="unstyled">
@@ -61,7 +61,7 @@ export default async function MechanicRegistrationPage() {
               </Button>
             </div>
           ) : disabled ? (
-            <div className="flex flex-col items-start gap-4 rounded-sm border border-line bg-surface-1 p-6">
+            <div className="flex flex-col items-start gap-4 panel p-6">
               <p className="type-body text-ink-1">
                 Registracija preko sajta je trenutno isključena. Pozovite nas ili pišite na Viber — otvorićemo nalog.
               </p>

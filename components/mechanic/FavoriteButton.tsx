@@ -52,7 +52,7 @@ export function FavoriteButton({
         }
       }}
       className={cn(
-        "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xs px-2 type-body-s font-medium transition-control disabled:cursor-wait",
+        "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-sm px-2 type-body-s font-medium transition-control disabled:cursor-wait",
         on ? "text-accent-text" : "text-ink-2 hover:text-ink-1",
         className,
       )}

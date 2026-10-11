@@ -419,7 +419,7 @@ export function OrdersList() {
       />
       {selected.length > 0 ? (
         <div
-          className="flex min-h-12 flex-wrap items-center gap-3 rounded-sm border border-line-strong bg-surface-1 px-3 py-1"
+          className="flex min-h-12 flex-wrap items-center gap-3 rounded-md border border-line-strong bg-surface-1 px-3 py-1"
           role="region"
           aria-label="Grupne radnje"
         >

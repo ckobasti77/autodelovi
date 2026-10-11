@@ -130,7 +130,7 @@ export function FitmentEditor({
               ? groups
               : visibleGroups(groups, COLLAPSE_AT)
             ).map((g) => (
-              <div key={g.title} className="rounded-sm border border-line">
+              <div key={g.title} className="rounded-md border border-line">
                 <p className="border-b border-line-faint bg-surface-2 px-3 py-1.5 type-label uppercase text-ink-3">
                   {g.title}
                 </p>
@@ -179,7 +179,7 @@ export function FitmentEditor({
           </p>
         </div>
       )}
-      <fieldset className="flex flex-col gap-3 rounded-sm border border-dashed border-line-strong p-3">
+      <fieldset className="flex flex-col gap-3 rounded-md border border-dashed border-line-strong p-3">
         <legend className="px-1 type-body-s font-semibold">Dodaj vozilo</legend>
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
           <Field label="Marka">

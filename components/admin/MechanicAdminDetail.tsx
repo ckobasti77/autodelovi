@@ -341,7 +341,7 @@ function DetailView({
           <h2 id="ad-data" className="sr-only">
             Podaci servisa
           </h2>
-          <dl className="grid grid-cols-[9rem_minmax(0,1fr)] gap-x-6 gap-y-3 rounded-sm bg-surface-1 p-5 shadow-[0_1px_2px_rgb(18_21_24/.10),0_8px_24px_-6px_rgb(18_21_24/.18)]">
+          <dl className="grid grid-cols-[9rem_minmax(0,1fr)] gap-x-6 gap-y-3 rounded-md bg-surface-1 p-5 shadow-[0_1px_2px_rgb(18_21_24/.10),0_8px_24px_-6px_rgb(18_21_24/.18)]">
             <dt className="type-caption text-ink-3">PIB</dt>
             <dd className="type-code text-ink-1">{p.pib}</dd>
             <dt className="type-caption text-ink-3">Matični broj</dt>
@@ -453,14 +453,14 @@ function DetailView({
           {error ? (
             <p
               role="alert"
-              className="flex items-start gap-2 rounded-sm bg-danger-subtle p-3 type-body-s text-danger"
+              className="flex items-start gap-2 rounded-md bg-danger-subtle p-3 type-body-s text-danger"
             >
               <WarningCircleIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0" />
               {error}
             </p>
           ) : null}
           {editable ? (
-            <div className="flex flex-col gap-5 rounded-sm bg-surface-1 p-5 shadow-[0_1px_2px_rgb(18_21_24/.10),0_8px_24px_-6px_rgb(18_21_24/.18)]">
+            <div className="flex flex-col gap-5 rounded-md bg-surface-1 p-5 shadow-[0_1px_2px_rgb(18_21_24/.10),0_8px_24px_-6px_rgb(18_21_24/.18)]">
               <div className="grid gap-5 sm:grid-cols-2">
                 <Field label="Nivo rabata">
                   <Select
@@ -558,7 +558,7 @@ function DetailView({
           ) : null}
 
           {p.status === "pending" || p.status === "approved" ? (
-            <div className="flex flex-col gap-3 rounded-sm border border-line p-5">
+            <div className="flex flex-col gap-3 rounded-md border border-line p-5">
               <Field
                 label={p.status === "pending" ? "Razlog odbijanja" : "Razlog pauze"}
                 error={reasonError ?? undefined}
@@ -651,7 +651,7 @@ function DetailView({
           ) : null}
 
           {p.status === "rejected" ? (
-            <div className="flex flex-col items-start gap-3 rounded-sm border border-line p-5">
+            <div className="flex flex-col items-start gap-3 rounded-md border border-line p-5">
               <p className="type-body-s text-ink-2">
                 Registracija je odbijena. Ako su podaci ispravljeni, vratite je na čekanje i
                 odlučite ponovo.

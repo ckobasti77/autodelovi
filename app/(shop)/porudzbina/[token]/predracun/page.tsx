@@ -58,7 +58,7 @@ export default async function ProformaPage({ params }: PageProps<"/porudzbina/[t
       data-reveal="off"
       className="bg-bg px-page py-10 text-ink-1 print:bg-white print:p-0"
     >
-      <div className="mx-auto flex max-w-[52rem] flex-col gap-8 rounded-md bg-surface-1 p-5 sm:p-8 print:rounded-none print:p-0">
+      <div className="mx-auto flex max-w-[52rem] flex-col gap-8 rounded-xl bg-surface-1 p-5 sm:p-8 print:rounded-none print:p-0">
         <div className="flex flex-wrap items-start justify-between gap-6">
           <div className="flex flex-col gap-1 type-body-s text-ink-2">
             <LogoDocument className="mb-4" />

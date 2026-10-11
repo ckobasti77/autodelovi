@@ -175,14 +175,14 @@ export function DiffStep({ batch, onNew }: { batch: Batch; onNew: () => void }) 
             <a
               href={ADMIN.importReport(batch._id)}
               download
-              className="inline-flex h-9 items-center gap-1.5 rounded-xs px-3 type-body-s text-ink-1 transition-control hover:bg-surface-2 focus-ring"
+              className="inline-flex h-9 items-center gap-1.5 rounded-sm px-3 type-body-s text-ink-1 transition-control hover:bg-surface-2 focus-ring"
             >
               <DownloadSimpleIcon size={16} aria-hidden="true" />
               Izveštaj
             </a>
             <RouteLink
               href={ADMIN.importBatch(batch._id)}
-              className="inline-flex h-9 items-center rounded-xs px-3 type-body-s text-accent-text underline-offset-2 hover:underline"
+              className="inline-flex h-9 items-center rounded-sm px-3 type-body-s text-accent-text underline-offset-2 hover:underline"
             >
               Svi redovi
             </RouteLink>
@@ -430,14 +430,14 @@ export function CommitStep({ batch, onNew }: { batch: Batch; onNew?: () => void 
       <div className="flex flex-wrap items-center gap-3">
         <RouteLink
           href={ADMIN.importBatch(batch._id)}
-          className="inline-flex h-11 items-center rounded-xs border border-control px-4 type-body-s text-ink-1 transition-control hover:bg-surface-2 focus-ring"
+          className="inline-flex h-11 items-center rounded-sm border border-control px-4 type-body-s text-ink-1 transition-control hover:bg-surface-2 focus-ring"
         >
           Zapis uvoza
         </RouteLink>
         <a
           href={ADMIN.importReport(batch._id)}
           download
-          className="inline-flex h-11 items-center gap-1.5 rounded-xs px-4 type-body-s text-ink-1 transition-control hover:bg-surface-2 focus-ring"
+          className="inline-flex h-11 items-center gap-1.5 rounded-sm px-4 type-body-s text-ink-1 transition-control hover:bg-surface-2 focus-ring"
         >
           <DownloadSimpleIcon size={16} aria-hidden="true" />
           Izveštaj

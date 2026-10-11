@@ -4,7 +4,11 @@
  * The same selector strings drive BOTH the inline stylesheet that hides copy before first
  * paint (lib/textRevealCss.ts) and the observer that reveals it (components/TextRevealGlobal),
  * so anything the CSS hides is guaranteed to be found by the JS. Change selectors only here.
+ *
+ * The trigger line and the block reveal (cards, images, groups) are in constants/revealConfig.ts;
+ * copy inside a block arrives with its block, so block targets are skipped here.
  */
+import { REVEAL_LINE, blockSelector } from "@/constants/revealConfig";
 
 /** Elements that carry copy. */
 export const copySelectors = [
@@ -35,11 +39,12 @@ export const candidateSelector = [
 /**
  * Subtrees the site-wide pass never touches: chrome that must be readable the instant it
  * appears (navigation, forms, dialogs, menus, tooltips), live regions and live values
- * (Price, StockBadge, counters and toasts mark themselves `data-reveal="off"`), and
- * screen-reader-only text.
+ * (Price, StockBadge, counters and toasts mark themselves `data-reveal="off"`),
+ * screen-reader-only text, and block-reveal targets (a block carries its own copy).
  */
 export const skipSelector = [
   '[data-reveal="off"]',
+  blockSelector,
   "nav",
   "form",
   "button",
@@ -103,8 +108,8 @@ export const hiddenSelector =
 export const TEXT_REVEAL = {
   /** Above this many words an element fades as one block instead of splitting. */
   maxWords: 60,
-  /** Root margin shrinks the viewport from the bottom: elements reveal 15 % into view. */
-  enterRatio: 0.15,
+  /** The shared trigger line: an element reveals when its centre crosses it (revealConfig). */
+  enterRatio: REVEAL_LINE,
   /** Boot-script safety net: everything becomes visible if JS has not taken over. */
   failsafeMs: 3500,
   /**

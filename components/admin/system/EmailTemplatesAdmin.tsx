@@ -72,7 +72,7 @@ export function EmailTemplatesAdmin() {
                         aria-current={active ? "true" : undefined}
                         onClick={() => setFilters({ sablon: k })}
                         className={cn(
-                          "relative flex w-full cursor-pointer flex-col rounded-xs px-2 py-1.5 text-left transition-control focus-ring-inset",
+                          "relative flex w-full cursor-pointer flex-col rounded-sm px-2 py-1.5 text-left transition-control focus-ring-inset",
                           active ? "bg-selected" : "hover:bg-surface-2",
                         )}
                       >
@@ -125,7 +125,7 @@ function TemplatePreview({
   return (
     <section
       aria-labelledby="template-title"
-      className="min-w-0 rounded-sm border border-line bg-surface-1"
+      className="min-w-0 panel"
       data-testid="template-preview"
     >
       <div className="flex flex-col gap-3 border-b border-line-faint p-4">
@@ -165,7 +165,7 @@ function TemplatePreview({
         ) : preview === null ? (
           <p className="type-body-s text-ink-2">Šablon ne postoji.</p>
         ) : view === "text" ? (
-          <pre className="mx-auto max-w-[680px] whitespace-pre-wrap rounded-sm border border-line bg-surface-1 p-4 type-code text-ink-1 [overflow-wrap:anywhere]">
+          <pre className="mx-auto max-w-[680px] whitespace-pre-wrap panel p-4 type-code text-ink-1 [overflow-wrap:anywhere]">
             {preview.text}
           </pre>
         ) : (
@@ -180,7 +180,7 @@ function TemplatePreview({
               if (doc) setHeight(Math.max(400, doc.documentElement.scrollHeight));
             }}
             style={{ width: VIEW_WIDTH[view], height }}
-            className="mx-auto block max-w-none rounded-sm border border-line bg-white"
+            className="mx-auto block max-w-none rounded-md border border-line bg-white"
           />
         )}
       </div>

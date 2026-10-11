@@ -15,7 +15,7 @@ export default async function AdminPrintLayout({ children }: { children: React.R
     >
       <div className="mx-auto flex max-w-[52rem] flex-col gap-6">
         <PrintToolbar />
-        <main className="flex flex-col gap-10 rounded-md bg-surface-1 p-8 print:gap-0 print:rounded-none print:p-0">
+        <main className="flex flex-col gap-10 rounded-xl bg-surface-1 p-8 print:gap-0 print:rounded-none print:p-0">
           {children}
         </main>
       </div>

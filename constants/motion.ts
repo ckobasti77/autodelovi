@@ -71,6 +71,16 @@ export const SHEET = {
   resistance: 0.55,
 } as const;
 
+/**
+ * Page transition (§8.8): the View Transitions type every `RouteLink` navigation carries and
+ * the class `components/shell/PageTransition` maps it to. Timings: app/globals.css
+ * (`::view-transition-*(.page-swap)`, `--dur-page`).
+ */
+export const PAGE_TRANSITION = {
+  type: "page",
+  className: "page-swap",
+} as const;
+
 export const MEDIA = {
   reducedMotion: "(prefers-reduced-motion: reduce)",
   motionOk: "(prefers-reduced-motion: no-preference)",

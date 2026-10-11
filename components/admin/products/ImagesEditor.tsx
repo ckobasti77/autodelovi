@@ -136,7 +136,7 @@ export function ImagesEditor({
                 setDragIndex(null);
               }}
               className={cn(
-                "group flex cursor-grab flex-col overflow-hidden rounded-sm border bg-surface-1 active:cursor-grabbing",
+                "group flex cursor-grab flex-col overflow-hidden rounded-md border bg-surface-1 active:cursor-grabbing",
                 dragIndex === i ? "border-focus opacity-60" : "border-line",
               )}
             >
@@ -200,7 +200,7 @@ export function ImagesEditor({
         onDragLeave={() => setOver(false)}
         onDrop={onDrop}
         className={cn(
-          "flex flex-col items-center justify-center gap-2 rounded-sm border-2 border-dashed px-4 py-8 text-center transition-control",
+          "flex flex-col items-center justify-center gap-2 rounded-md border-2 border-dashed px-4 py-8 text-center transition-control",
           over ? "border-focus bg-accent-subtle" : "border-line-strong bg-surface-2",
         )}
       >

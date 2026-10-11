@@ -50,7 +50,7 @@ export function ContactActions({
               className={cn(
                 "inline-flex items-center gap-2 transition-control",
                 variant === "buttons"
-                  ? "h-11 rounded-xs border border-control bg-surface-2 px-3.5 type-button text-ink-1 hover:border-accent hover:bg-surface-3 active:translate-y-px"
+                  ? "h-11 rounded-sm border border-control bg-surface-2 px-3.5 type-button text-ink-1 hover:border-accent hover:bg-surface-3 active:translate-y-px"
                   : "min-h-11 type-body-s font-semibold text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent",
               )}
               {...(link.channel === "whatsapp"

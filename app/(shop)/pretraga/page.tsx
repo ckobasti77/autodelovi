@@ -58,7 +58,7 @@ function searchHref(q: string, params: { kategorija?: string | null; vozilo?: st
 }
 
 const chipClass =
-  "inline-flex min-h-9 items-center gap-2 rounded-xs border border-line-strong bg-surface-1 px-3 type-body-s text-ink-1 transition-control hover:border-accent";
+  "inline-flex min-h-9 items-center gap-2 rounded-sm border border-line-strong bg-surface-1 px-3 type-body-s text-ink-1 transition-control hover:border-accent";
 
 /**
  * Search results (§10.4): exact OEM matches first, then cross numbers, partial codes and

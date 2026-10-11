@@ -392,7 +392,7 @@ function BottomSheet({
         {...(description ? {} : { "aria-describedby": undefined })}
         style={{ height: `${SHEET.full * 100}dvh` }}
         className={cn(
-          "fixed inset-x-0 bottom-0 z-drawer flex flex-col rounded-t-lg border-t border-edge-overlay bg-surface-3 text-ink-1 shadow-drawer outline-none",
+          "fixed inset-x-0 bottom-0 z-drawer flex flex-col rounded-t-2xl border-t border-edge-overlay bg-surface-3 text-ink-1 shadow-drawer outline-none",
           className,
         )}
       >
@@ -402,7 +402,7 @@ function BottomSheet({
               type="button"
               onClick={toggleSnap}
               aria-label={snap === "full" ? "Smanji panel" : "Proširi panel"}
-              className="flex h-6 w-16 cursor-grab items-center justify-center rounded-xs active:cursor-grabbing"
+              className="flex h-6 w-16 cursor-grab items-center justify-center rounded-sm active:cursor-grabbing"
             >
               <span aria-hidden="true" className="block h-1 w-9 rounded-full bg-line-strong" />
             </button>

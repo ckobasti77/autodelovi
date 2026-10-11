@@ -86,6 +86,7 @@ export type FooterProps = {
  * Site footer: navigation columns, contact (only channels that exist — otherwise the
  * inquiry is the way in), company data required by the e-commerce law (shown as soon as it
  * is entered in settings), legal links and the nominative-use disclaimer for vehicle makes.
+ * Rendered late (`cv-auto`); the reveal engine waits until the browser has drawn it.
  */
 export function Footer({ contact, company }: FooterProps) {
   const resolvedContact = resolveContact(contact);
@@ -109,13 +110,17 @@ export function Footer({ contact, company }: FooterProps) {
       data-testid={TEST_IDS.footer}
       className="cv-auto border-t border-line bg-bg-raised print:hidden [contain-intrinsic-size:auto_1040px] md:[contain-intrinsic-size:auto_700px] lg:[contain-intrinsic-size:auto_440px]"
     >
-      <div className="grid gap-10 px-page py-14 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1.3fr] lg:gap-8">
+      {/* A reveal group: the logo row and the three columns rise one after another. */}
+      <div
+        data-reveal-group=""
+        className="grid gap-10 px-page py-14 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1.3fr] lg:gap-8"
+      >
         {/* The lockup with the signature needs 56 px of height (445 px wide): its own row. */}
-        <div className="flex flex-col gap-5 md:col-span-2 lg:col-span-3 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
+        <div className="flex flex-col gap-5 md:col-span-2 lg:col-span-3">
           <NextLink
             href={ROUTES.home}
             aria-label={`${site.brand.lockupName} — početna`}
-            className="inline-flex self-start rounded-xs"
+            className="inline-flex self-start rounded-sm"
           >
             <LogoLockupResponsive
               label={null}
@@ -124,7 +129,7 @@ export function Footer({ contact, company }: FooterProps) {
               className="max-sm:w-full"
             />
           </NextLink>
-          <p className="max-w-[44ch] type-body-s text-ink-2 lg:text-right">
+          <p className="max-w-[52ch] type-body-s text-ink-2">
             {site.brand.description}
           </p>
         </div>

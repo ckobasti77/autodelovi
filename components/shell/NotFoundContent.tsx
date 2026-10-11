@@ -109,7 +109,7 @@ export function NotFoundSearchForm() {
       <div className="flex flex-col gap-2 sm:flex-row">
         <label
           className={
-            "flex h-14 w-full min-w-0 items-center gap-2 rounded-xs sm:flex-1 border border-control bg-surface-2 px-3 text-ink-1 " +
+            "flex h-14 w-full min-w-0 items-center gap-2 rounded-sm sm:flex-1 border border-control bg-surface-2 px-3 text-ink-1 " +
             "transition-control hover:border-ink-3 focus-within:border-focus focus-within:shadow-[inset_0_0_0_1px_var(--color-focus)] focus-within:hover:border-focus"
           }
         >

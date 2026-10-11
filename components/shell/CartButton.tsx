@@ -29,7 +29,7 @@ export function CartButton({
       data-testid={TEST_IDS.cartButton}
       onClick={onClick}
       className={cn(
-        "relative inline-flex size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 active:translate-y-px",
+        "relative inline-flex size-11 shrink-0 items-center justify-center rounded-sm text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 active:translate-y-px",
         className,
       )}
     >

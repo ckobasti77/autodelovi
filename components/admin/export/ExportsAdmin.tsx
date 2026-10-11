@@ -29,7 +29,7 @@ function DownloadLink({
       href={href}
       download
       data-testid={testId}
-      className="inline-flex h-11 items-center gap-2 self-start rounded-xs bg-accent px-4 type-body-s font-semibold text-on-accent transition-control hover:bg-accent-hover active:translate-y-px focus-ring-inverse"
+      className="inline-flex h-11 items-center gap-2 self-start rounded-sm bg-accent px-4 type-body-s font-semibold text-on-accent transition-control hover:bg-accent-hover active:translate-y-px focus-ring-inverse"
     >
       <DownloadSimpleIcon size={18} aria-hidden="true" />
       {children}

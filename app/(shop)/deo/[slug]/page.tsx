@@ -213,7 +213,7 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
           {/* Gallery */}
           <div className="flex flex-col gap-4 lg:col-span-7">
             <figure>
-              <div className="relative overflow-hidden rounded-sm border border-line">
+              <div className="relative overflow-hidden rounded-md border border-line">
                 <ProductThumb
                   imageUrl={images[0]?.path ?? null}
                   categorySlug={c.categorySlug}
@@ -241,7 +241,7 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
                       categorySlug={c.categorySlug}
                       alt={img.alt}
                       sizes="120px"
-                      className="aspect-square rounded-xs border border-line"
+                      className="aspect-square rounded-sm border border-line"
                     />
                   </li>
                 ))}
@@ -367,7 +367,7 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
 
           {/* Spec drawing: after the buy box on phones and tablets, under the gallery from lg */}
           {disc ? (
-            <figure className="hidden self-start rounded-sm border border-line p-4 corner-ticks sm:block lg:col-span-7">
+            <figure className="hidden self-start rounded-md border border-line p-4 corner-ticks sm:block lg:col-span-7">
               <SpecDrawing diameter={disc.diameter} thickness={disc.thickness} />
               <figcaption className="mt-2 type-caption font-normal text-ink-3">
                 Mere diska: prečnik {disc.diameter} mm, debljina {disc.thickness} mm.

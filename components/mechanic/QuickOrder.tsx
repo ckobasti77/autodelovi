@@ -442,7 +442,7 @@ export function QuickOrder({
     <div className="grid gap-8 lg:grid-cols-12 lg:gap-x-(--gutter)" data-reveal="off">
       <section
         aria-labelledby="qo-title"
-        className="flex flex-col gap-3 self-start rounded-sm border border-line-strong bg-surface-1 p-4 sm:p-5 lg:sticky lg:top-[calc(var(--header-h)+1rem)] lg:col-span-5 xl:col-span-4"
+        className="flex flex-col gap-3 self-start rounded-md border border-line-strong bg-surface-1 p-4 sm:p-5 lg:sticky lg:top-[calc(var(--header-h)+1rem)] lg:col-span-5 xl:col-span-4"
       >
         <div className="flex items-baseline justify-between gap-3">
           <h2 id="qo-title" className="type-h3 text-ink-1">
@@ -490,7 +490,7 @@ export function QuickOrder({
             placeholder={COPY.placeholder}
             aria-describedby="qo-help"
             data-testid={TEST_IDS.mechanicQuickOrderInput}
-            className="min-h-32 w-full resize-y rounded-xs border border-control bg-surface-2 px-3 py-2.5 font-mono text-[1rem] leading-relaxed text-ink-1 transition-control placeholder:text-ink-3 hover:border-ink-3 focus:border-focus focus:shadow-[inset_0_0_0_1px_var(--color-focus)] focus:outline-none"
+            className="min-h-32 w-full resize-y rounded-sm border border-control bg-surface-2 px-3 py-2.5 font-mono text-[1rem] leading-relaxed text-ink-1 transition-control placeholder:text-ink-3 hover:border-ink-3 focus:border-focus focus:shadow-[inset_0_0_0_1px_var(--color-focus)] focus:outline-none"
           />
           <p id="qo-help" className="type-caption text-ink-3">
             {COPY.help}
@@ -528,7 +528,7 @@ export function QuickOrder({
           <p className="type-caption-s text-ink-3">{COPY.csvHelp}</p>
         </form>
         {parsed && (parsed.rejected.length > 0 || parsed.truncated) ? (
-          <div className="rounded-xs border border-warning/40 bg-warning-subtle p-3 type-caption text-ink-2">
+          <div className="rounded-sm border border-warning/40 bg-warning-subtle p-3 type-caption text-ink-2">
             {parsed.rejected.length ? (
               <p>
                 Nisu prepoznati redovi{" "}
@@ -551,7 +551,7 @@ export function QuickOrder({
         {sentInquiry ? (
           <p
             role="status"
-            className="flex items-start gap-2 rounded-xs bg-success-subtle p-3 type-body-s text-ink-1"
+            className="flex items-start gap-2 rounded-sm bg-success-subtle p-3 type-body-s text-ink-1"
           >
             <CheckCircleIcon
               size={18}
@@ -643,7 +643,7 @@ export function QuickOrder({
                               <label
                                 key={o.card._id}
                                 className={cn(
-                                  "grid cursor-pointer grid-cols-[1.25rem_minmax(0,1fr)_auto] items-start gap-3 rounded-xs border p-3 transition-control",
+                                  "grid cursor-pointer grid-cols-[1.25rem_minmax(0,1fr)_auto] items-start gap-3 rounded-sm border p-3 transition-control",
                                   selected
                                     ? "border-accent bg-accent-subtle"
                                     : "border-line-strong hover:border-ink-3",
@@ -828,7 +828,7 @@ function QuickOrderEmpty() {
     ["1K0615301AA;Disk;2", "red iz Excela ili CSV-a"],
   ];
   return (
-    <div className="flex flex-col gap-4 rounded-sm border border-dashed border-line-strong p-5 sm:p-6">
+    <div className="flex flex-col gap-4 rounded-md border border-dashed border-line-strong p-5 sm:p-6">
       <p className="type-body text-ink-2">
         Nalepite brojeve iz poruke, Excela ili sa kutije. Posle provere vidite šta je na stanju i po
         kojoj ceni, pa sve dodajete u korpu jednim klikom.

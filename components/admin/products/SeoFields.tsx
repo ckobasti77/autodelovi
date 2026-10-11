@@ -84,7 +84,7 @@ export function SeoFields({
       <div
         aria-label="Pregled u rezultatima pretrage"
         role="figure"
-        className="rounded-sm border border-line bg-surface-1 p-4"
+        className="panel p-4"
       >
         <p className="mb-2 type-label uppercase text-ink-3">Pregled u pretrazi</p>
         <p className="truncate text-[0.875rem] text-[#4d5156]">

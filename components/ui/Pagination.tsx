@@ -13,7 +13,7 @@ export type PaginationProps = {
 };
 
 const stepClasses =
-  "inline-flex h-11 items-center gap-1.5 rounded-xs px-3 type-button text-ink-1 transition-control hover:bg-surface-2";
+  "inline-flex h-11 items-center gap-1.5 rounded-sm px-3 type-button text-ink-1 transition-control hover:bg-surface-2";
 
 /**
  * Pagination (§9.17): „Prethodna“ / „Sledeća“ + page numbers with gaps, current page with an
@@ -71,7 +71,7 @@ export function Pagination({ page, pageCount, hrefFor, className }: PaginationPr
               ) : (
                 <NextLink
                   href={hrefFor(token)}
-                  className="inline-flex h-11 min-w-11 items-center justify-center rounded-xs px-2 type-button tabular-nums text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1"
+                  className="inline-flex h-11 min-w-11 items-center justify-center rounded-sm px-2 type-button tabular-nums text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1"
                 >
                   <span className="sr-only">Strana </span>
                   {token}

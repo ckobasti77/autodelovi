@@ -55,7 +55,7 @@ function ThresholdCell({ row, fallback }: { row: Low; fallback: number }) {
         }
       }}
       onKeyDown={(e) => e.key === "Enter" && (e.target as HTMLInputElement).blur()}
-      className="h-8 w-16 rounded-xs border border-transparent bg-transparent px-2 text-right tabular-nums hover:border-control focus:border-focus focus:bg-surface-1 focus:outline-none"
+      className="h-8 w-16 rounded-sm border border-transparent bg-transparent px-2 text-right tabular-nums hover:border-control focus:border-focus focus:bg-surface-1 focus:outline-none"
     />
   );
 }
@@ -104,7 +104,7 @@ export function StockAdmin() {
             type="button"
             onClick={() => setAdjusting(row.original)}
             aria-label={`Promeni stanje za ${row.original.sku}, trenutno ${row.original.stockQty} kom.`}
-            className="group inline-flex h-8 min-w-16 items-center justify-end gap-1.5 rounded-xs border border-transparent px-2 tabular-nums text-ink-1 transition-control hover:border-control focus-ring"
+            className="group inline-flex h-8 min-w-16 items-center justify-end gap-1.5 rounded-sm border border-transparent px-2 tabular-nums text-ink-1 transition-control hover:border-control focus-ring"
           >
             <PencilSimpleIcon
               size={14}

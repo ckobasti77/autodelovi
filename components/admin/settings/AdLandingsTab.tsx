@@ -125,7 +125,7 @@ export function AdLandingsTab() {
                   href={`/ponuda/${r.slug}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex h-9 items-center gap-1 rounded-xs px-2 type-body-s text-ink-2 hover:bg-surface-2 hover:text-ink-1"
+                  className="inline-flex h-9 items-center gap-1 rounded-sm px-2 type-body-s text-ink-2 hover:bg-surface-2 hover:text-ink-1"
                 >
                   <ArrowSquareOutIcon size={16} aria-hidden="true" />
                   Otvori

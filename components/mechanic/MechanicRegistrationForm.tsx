@@ -246,7 +246,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
       <RequiredUnlessOptional>
         <div ref={summary} tabIndex={-1} className="outline-none">
           {errorList.length || serverError ? (
-            <div role="alert" className="rounded-sm border border-danger bg-danger-subtle p-4">
+            <div role="alert" className="rounded-md border border-danger bg-danger-subtle p-4">
               <p className="flex items-center gap-2 type-body-s font-semibold text-danger">
                 <WarningCircleIcon size={18} aria-hidden="true" />
                 {serverError?.message ?? "Proverite označena polja:"}
@@ -321,7 +321,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
             </p>
           </Section>
         ) : (
-          <p className="flex items-start gap-2 rounded-sm border border-line bg-surface-1 p-4 type-body-s text-ink-2">
+          <p className="flex items-start gap-2 panel p-4 type-body-s text-ink-2">
             <CheckCircleIcon
               size={18}
               aria-hidden="true"
@@ -454,7 +454,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
                       <label
                         key={s.value}
                         className={cn(
-                          "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xs border px-3 type-body-s transition-control",
+                          "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-sm border px-3 type-body-s transition-control",
                           on
                             ? "border-accent bg-accent-subtle text-ink-1"
                             : "border-line-strong text-ink-2 hover:border-ink-3",
@@ -507,7 +507,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
                       <label
                         key={b.id}
                         className={cn(
-                          "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xs border px-3 type-body-s transition-control",
+                          "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-sm border px-3 type-body-s transition-control",
                           on
                             ? "border-accent bg-accent-subtle text-ink-1"
                             : "border-line-strong text-ink-2 hover:border-ink-3",

@@ -4,12 +4,20 @@ import { cn } from "@/lib/cn";
 import type { ProductCardData } from "@/lib/catalog/types";
 import { LiveOverlayProvider } from "@/components/catalog/LiveOverlay";
 import { ProductCard, type CardFit } from "@/components/catalog/ProductCard";
+import { RevealGroup, RevealItem } from "@/components/reveal/Reveal";
+
+/** Cards of a first-screen grid that enter with the page (CSS-only, never hidden). */
+const EAGER_CARDS = 4;
 
 /**
  * Card grid (§10.2): list cards on phones, 2 columns ≥ 480. Without the rail: 3 ≥ 1024,
  * 4 ≥ 1280, 5 ≥ 1920. Beside the 280 px filter rail the column count follows the space left
  * (`auto-fill`, 15rem minimum), so cards never shrink below 240 px on wide screens (VIS-05,
  * D260). One live subscription for the whole grid.
+ *
+ * The grid is a reveal group: cards enter row by row, card by card, as their row crosses the
+ * reveal line. A first-screen grid (`preloadFirst`) marks its first cards eager, so the LCP
+ * image is never hidden.
  */
 export function ProductGrid({
   items,
@@ -34,7 +42,8 @@ export function ProductGrid({
 }) {
   return (
     <LiveOverlayProvider productIds={items.map((i) => i._id)}>
-      <ul
+      <RevealGroup
+        as="ul"
         className={cn(
           "grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-(--gutter)",
           withRail
@@ -44,7 +53,13 @@ export function ProductGrid({
         )}
       >
         {items.map((card, i) => (
-          <li key={card._id} className="flex">
+          <RevealItem
+            as="li"
+            key={card._id}
+            className="flex"
+            eager={preloadFirst && i < EAGER_CARDS}
+            index={i}
+          >
             <div className="flex w-full [&>article]:w-full">
               <ProductCard
                 card={card}
@@ -54,9 +69,9 @@ export function ProductGrid({
                 headingLevel={headingLevel}
               />
             </div>
-          </li>
+          </RevealItem>
         ))}
-      </ul>
+      </RevealGroup>
       {after}
     </LiveOverlayProvider>
   );

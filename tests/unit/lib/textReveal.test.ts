@@ -10,6 +10,12 @@ import {
   shuffledOrder,
   splitWords,
 } from "@/lib/textReveal";
+import {
+  BLOCK_REVEAL,
+  blockHiddenSelector,
+  eagerSelector,
+  staggerDelayMs,
+} from "@/constants/revealConfig";
 import { hiddenSelector, TEXT_REVEAL } from "@/constants/textRevealConfig";
 import {
   buildTextRevealBootScript,
@@ -187,11 +193,56 @@ describe("generated stylesheet and boot script", () => {
         `and ${feature}{[${attrs.state}="running"] .${classes.word}{animation-name: tr-word-lite;}}`,
       );
     }
-    // Every animation sits behind the reduced-motion gate.
-    expect(css.match(/animation:/g)?.length).toBe(3);
+    // Every animation sits behind the reduced-motion gate: three for copy, three for blocks.
+    expect(css.match(/animation:/g)?.length).toBe(6);
     expect(css.split("@media screen and (prefers-reduced-motion: no-preference)").length - 1).toBe(
-      2 + TEXT_REVEAL.liteMedia.length,
+      4 + TEXT_REVEAL.liteMedia.length,
     );
+    const gated = css
+      .split("@media ")
+      .filter((chunk) => /animation(-name)?:/.test(chunk.split("@keyframes")[0] ?? ""));
+    for (const chunk of gated) expect(chunk).toMatch(/^screen and \(prefers-reduced-motion: no-preference\)/);
+  });
+
+  it("hides blocks with a plain selector and animates them once: rise, lite, fade, eager", () => {
+    const squash = (value: string) => value.replace(/\s*,\s*/g, ",").replace(/\s*>\s*/g, ">");
+    const css = squash(buildTextRevealCss());
+    const { classes, attrs } = TEXT_REVEAL;
+    const { default: rise, lite, eager, fade, modes, delayVar } = BLOCK_REVEAL;
+    expect(blockHiddenSelector).not.toContain(":has(");
+    expect(css).toContain(
+      squash(
+        `html.${classes.js}:not(.${classes.failsafe}) :is(${blockHiddenSelector}):not([${attrs.state}]){opacity: 0;}`,
+      ),
+    );
+    expect(css).toContain(
+      `[${attrs.state}="running"][${attrs.mode}="${modes.rise}"]{animation: rv-rise ${rise.durationMs}ms`,
+    );
+    expect(css).toContain(`var(${delayVar},0ms) both;will-change: transform,opacity;`);
+    expect(css).toContain(`animation-name: rv-rise-lite;animation-duration: ${lite.durationMs}ms;`);
+    expect(css).toContain(
+      `[${attrs.state}="running"][${attrs.mode}="${modes.fade}"]{animation: rv-fade ${fade.durationMs}ms`,
+    );
+    expect(css).toContain(squash(`${eagerSelector}{animation: rv-eager ${eager.durationMs}ms`));
+    // Transform and opacity only; the eager variant starts from a visible frame (LCP-safe).
+    expect(css).toMatch(/@keyframes rv-rise\{from\{opacity: 0;transform: translate3d\(0,16px,0\);\}\}/);
+    expect(css).toContain(`@keyframes rv-eager{from{opacity: ${eager.fromOpacity};transform: translate3d(0,`);
+    expect(css).not.toMatch(/@keyframes rv-[a-z-]+\{from\{[^}]*filter/);
+    expect(eager.fromOpacity).toBeGreaterThan(0);
+  });
+
+  it("staggers a batch by the step and never past the budget", () => {
+    const timing = BLOCK_REVEAL.default;
+    expect(staggerDelayMs(0, 4, timing)).toBe(0);
+    expect(staggerDelayMs(3, 4, timing)).toBe(3 * timing.stepMs);
+    expect(staggerDelayMs(11, 12, timing)).toBe(timing.budgetMs);
+    expect(staggerDelayMs(5, 1, timing)).toBe(0);
+    // Whole batch within about 700 ms (the owner's cap).
+    expect(timing.durationMs + timing.budgetMs).toBeLessThanOrEqual(700);
+    expect(timing.durationMs).toBeGreaterThanOrEqual(450);
+    expect(timing.durationMs).toBeLessThanOrEqual(600);
+    expect(timing.stepMs).toBeGreaterThanOrEqual(50);
+    expect(timing.stepMs).toBeLessThanOrEqual(80);
   });
 
   it("the noscript stylesheet forces visibility", () => {

@@ -277,7 +277,7 @@ export function MappingStep({
       </Section>
 
       {problems.length > 0 ? (
-        <ul className="flex flex-col gap-1 rounded-sm border border-warning bg-warning-subtle px-4 py-3 type-body-s text-ink-1">
+        <ul className="flex flex-col gap-1 rounded-md border border-warning bg-warning-subtle px-4 py-3 type-body-s text-ink-1">
           {problems.map((p) => (
             <li key={p}>{p}</li>
           ))}

@@ -42,7 +42,7 @@ export default async function LandingLayout({ children }: LayoutProps<"/">) {
               <a
                 href={phone.href}
                 data-contact-location="ponuda_header"
-                className="inline-flex h-11 items-center gap-2 rounded-xs px-3 type-button text-ink-1 transition-control hover:bg-surface-2"
+                className="inline-flex h-11 items-center gap-2 rounded-sm px-3 type-button text-ink-1 transition-control hover:bg-surface-2"
               >
                 <PhoneIcon size={20} aria-hidden="true" />
                 <span className="hidden sm:inline">{phone.display}</span>
@@ -54,7 +54,7 @@ export default async function LandingLayout({ children }: LayoutProps<"/">) {
                 href={viber.href}
                 data-contact-location="ponuda_header"
                 aria-label={`Viber ${viber.display}`}
-                className="hidden size-11 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 sm:inline-flex"
+                className="hidden size-11 items-center justify-center rounded-sm text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 sm:inline-flex"
               >
                 <ChatCircleTextIcon size={24} aria-hidden="true" />
               </a>

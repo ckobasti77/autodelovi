@@ -33,7 +33,7 @@ export type DialogProps = {
 };
 
 /**
- * Dialog (§9.14): surface-3, radius 6, level 4; scrim fades 220 ms, panel lifts 8 px + fades
+ * Dialog (§9.14): surface-3, radius 12, level 4; scrim fades 220 ms, panel lifts 8 px + fades
  * 240 ms (sk.out) and leaves in 160 ms (sk.in). Focus moves in on open and returns to the
  * trigger on close (Radix); without a `trigger` it returns to the element that was focused
  * when the dialog opened (useFocusReturn, A11Y-02). On phones use Sheet for anything longer than a confirmation.
@@ -99,7 +99,7 @@ export function Dialog({
               onEscapeKeyDown={guard}
               onPointerDownOutside={guard}
               className={cn(
-                "pointer-events-auto flex max-h-[min(88dvh,720px)] w-full min-w-0 flex-col rounded-md border border-edge-overlay bg-surface-3 text-ink-1 shadow-drawer outline-none",
+                "pointer-events-auto flex max-h-[min(88dvh,720px)] w-full min-w-0 flex-col rounded-xl border border-edge-overlay bg-surface-3 text-ink-1 shadow-drawer outline-none",
                 size === "sm" ? "max-w-[480px]" : "max-w-[640px]",
                 className,
               )}

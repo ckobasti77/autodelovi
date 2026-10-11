@@ -295,7 +295,7 @@ export function Combobox({
       <div
         className={cn(
           inlineList
-            ? "mt-2 overflow-hidden rounded-sm border border-line bg-surface-2"
+            ? "mt-2 overflow-hidden rounded-md border border-line bg-surface-2"
             : "absolute inset-x-0 top-full z-dropdown mt-1 overflow-hidden rounded-md border border-edge-overlay bg-surface-3 shadow-overlay",
           !showPopup && "hidden",
         )}

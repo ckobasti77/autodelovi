@@ -28,7 +28,7 @@ export function QuickOrderDemo() {
           rows={6}
           spellCheck={false}
           autoComplete="off"
-          className="w-full resize-y rounded-xs border border-control bg-surface-2 px-3 py-2.5 font-mono text-[0.9375rem] leading-relaxed text-ink-1 transition-control hover:border-ink-3 focus:border-focus focus:shadow-[inset_0_0_0_1px_var(--color-focus)] focus:outline-none"
+          className="w-full resize-y rounded-sm border border-control bg-surface-2 px-3 py-2.5 font-mono text-[0.9375rem] leading-relaxed text-ink-1 transition-control hover:border-ink-3 focus:border-focus focus:shadow-[inset_0_0_0_1px_var(--color-focus)] focus:outline-none"
         />
       </div>
       <div className="flex flex-col gap-2">

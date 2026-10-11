@@ -154,7 +154,7 @@ function ErrorSummary({
       tabIndex={-1}
       role="alert"
       data-reveal="off"
-      className="rounded-sm border border-danger bg-danger-subtle p-4 outline-none"
+      className="rounded-md border border-danger bg-danger-subtle p-4 outline-none"
     >
       <p className="flex items-center gap-2 type-body-s font-semibold text-danger">
         <WarningCircleIcon size={18} aria-hidden="true" />
@@ -508,7 +508,7 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
           {/* Mobile order summary (VIS-11): the caret and the item count say it opens; the
             total lives on the summary line only, so it is not repeated inside. */}
           <Disclosure
-            className="rounded-sm border border-line bg-surface-1 lg:hidden"
+            className="panel lg:hidden"
             data-reveal="off"
             summaryClassName="flex min-h-12 items-center justify-between gap-3 px-4"
             summary={
@@ -661,7 +661,7 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
                   )}
                 />
                 {values.deliveryMethod === "pickup" && config.store ? (
-                  <p className="rounded-sm border border-line bg-surface-1 p-4 type-body-s text-ink-2">
+                  <p className="panel p-4 type-body-s text-ink-2">
                     Preuzimanje: {config.store.address}
                     {config.store.hours ? ` · ${config.store.hours}` : ""}
                   </p>
@@ -756,7 +756,7 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
 
             {step === 3 ? (
               <div className="flex flex-col gap-6">
-                <dl className="grid gap-4 rounded-sm border border-line bg-surface-1 p-4 type-body-s sm:grid-cols-3">
+                <dl className="grid gap-4 panel p-4 type-body-s sm:grid-cols-3">
                   <div>
                     <dt className="type-label uppercase text-ink-3">Kontakt</dt>
                     <dd className="mt-1 text-ink-1">
@@ -856,7 +856,7 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
                 {serverError ? (
                   <p
                     role="alert"
-                    className="flex items-start gap-2 rounded-sm border border-danger bg-danger-subtle p-4 type-body-s text-danger"
+                    className="flex items-start gap-2 rounded-md border border-danger bg-danger-subtle p-4 type-body-s text-danger"
                   >
                     <WarningCircleIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0" />
                     {serverError}
@@ -869,7 +869,7 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
             {serverError && step !== 3 ? (
               <p
                 role="alert"
-                className="rounded-sm border border-danger bg-danger-subtle p-4 type-body-s text-danger"
+                className="rounded-md border border-danger bg-danger-subtle p-4 type-body-s text-danger"
               >
                 {serverError}
               </p>
@@ -921,7 +921,7 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
       </RequiredUnlessOptional>
 
       <aside aria-label="Pregled porudžbine" className="hidden lg:col-span-4 lg:block">
-        <div className="sticky top-[calc(var(--header-h)+1.5rem)] rounded-sm border border-line bg-surface-1 p-5">
+        <div className="sticky top-[calc(var(--header-h)+1.5rem)] panel p-5">
           <h2 className="mb-4 type-h4 text-ink-1">Vaša porudžbina</h2>
           {renderSummary(true)}
         </div>

@@ -47,7 +47,7 @@ export function ProductPicker({
       <label htmlFor={`${id}-input`} className="mb-1 block type-caption font-medium text-ink-2">
         {label}
       </label>
-      <div className="flex h-10 items-center gap-2 rounded-xs border border-control bg-surface-1 px-3 focus-within:border-focus focus-within:shadow-[inset_0_0_0_1px_var(--color-focus)]">
+      <div className="flex h-10 items-center gap-2 rounded-sm border border-control bg-surface-1 px-3 focus-within:border-focus focus-within:shadow-[inset_0_0_0_1px_var(--color-focus)]">
         <MagnifyingGlassIcon size={16} className="shrink-0 text-ink-3" aria-hidden="true" />
         <input
           id={`${id}-input`}

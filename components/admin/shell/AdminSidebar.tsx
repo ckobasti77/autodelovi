@@ -97,7 +97,7 @@ export function AdminSidebar({
                       onClick={onNavigate}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "relative mx-2 flex h-10 items-center gap-3 rounded-xs px-3 type-body-s transition-control focus-ring-inset",
+                        "relative mx-2 flex h-10 items-center gap-3 rounded-sm px-3 type-body-s transition-control focus-ring-inset",
                         active
                           ? "bg-surface-2 font-semibold text-ink-1"
                           : "text-ink-2 hover:bg-surface-1 hover:text-ink-1",

@@ -131,7 +131,7 @@ function AddVehicleForm({ tree, onDone }: { tree: VehicleTree; onDone: () => voi
   };
 
   return (
-    <form onSubmit={(e) => void onSubmit(e)} noValidate className="flex flex-col gap-5 rounded-sm border border-line-strong bg-surface-1 p-4 sm:p-5">
+    <form onSubmit={(e) => void onSubmit(e)} noValidate className="flex flex-col gap-5 rounded-md border border-line-strong bg-surface-1 p-4 sm:p-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Mušterija ili oznaka" help="Npr. „Petrović — Golf“" error={errors.label}>
           <Input value={d.label} maxLength={60} onChange={(e) => set({ label: e.target.value })} />

@@ -9,11 +9,11 @@ export type IconButtonVariant = "ghost" | "quiet" | "primary" | "secondary";
 const variants: Record<IconButtonVariant, string> = {
   ghost: "text-ink-2 hover:bg-surface-2 hover:text-ink-1 disabled:text-ink-4",
   quiet:
-    "border border-control bg-surface-2 text-ink-1 hover:border-accent hover:bg-surface-3 disabled:text-ink-4",
+    "border border-line-strong bg-surface-3 text-ink-1 shadow-rest hover:border-ink-4 hover:bg-surface-4 disabled:text-ink-4",
   secondary:
     "border border-control text-ink-1 hover:border-ink-3 hover:bg-surface-2 disabled:text-ink-4",
   primary:
-    "bg-accent text-on-accent hover:bg-accent-hover active:bg-accent-active focus-ring-inverse disabled:bg-surface-2 disabled:text-ink-4",
+    "bg-accent text-on-accent shadow-[inset_0_1px_0_rgb(255_255_255/0.24)] hover:bg-accent-hover active:bg-accent-active active:shadow-none focus-ring-inverse disabled:bg-surface-2 disabled:text-ink-4 disabled:shadow-none",
 };
 
 export type IconButtonProps = Omit<ComponentProps<"button">, "aria-label" | "children"> & {
@@ -45,7 +45,7 @@ export function IconButton({
   ...rest
 }: IconButtonProps) {
   const classes = cn(
-    "relative inline-flex shrink-0 cursor-pointer select-none items-center justify-center rounded-xs transition-control active:translate-y-px disabled:cursor-not-allowed disabled:active:translate-y-0",
+    "relative inline-flex shrink-0 cursor-pointer select-none items-center justify-center rounded-sm transition-control active:translate-y-px disabled:cursor-not-allowed disabled:active:translate-y-0",
     size === "md" ? "size-11" : "size-9",
     variants[variant],
     className,

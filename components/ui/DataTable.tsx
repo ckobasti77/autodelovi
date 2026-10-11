@@ -285,12 +285,12 @@ export function DataTable<T>({
     <div
       // @container: cells can fold on the table's own width (the sidebar makes viewport
       // breakpoints a poor proxy: 1366 px has less room than 1280 px).
-      className={cn("@container relative rounded-sm border border-line bg-surface-1", className)}
+      className={cn("@container relative panel", className)}
       data-reveal="off"
     >
       {/* relative: absolutely positioned cell content (sr-only text) is clipped by the scroller
           instead of widening the document on phones. */}
-      <div ref={scrollRef} className="relative overflow-x-auto rounded-sm">
+      <div ref={scrollRef} className="relative overflow-x-auto rounded-md">
         <table className="w-full border-collapse text-left text-cell text-ink-1">
           <caption className="sr-only">{caption}</caption>
           <thead className="sticky top-0 z-raised">
@@ -326,7 +326,7 @@ export function DataTable<T>({
                           type="button"
                           onClick={header.column.getToggleSortingHandler()}
                           className={cn(
-                            "inline-flex h-8 cursor-pointer items-center gap-1 rounded-xs uppercase transition-control hover:text-ink-1 focus-ring-inset",
+                            "inline-flex h-8 cursor-pointer items-center gap-1 rounded-sm uppercase transition-control hover:text-ink-1 focus-ring-inset",
                             meta?.align === "right" && "flex-row-reverse",
                           )}
                         >
@@ -443,7 +443,7 @@ export function DataTable<T>({
           style={{ right: insets.end }}
           className={cn(
             "pointer-events-none absolute inset-y-0 w-8 bg-linear-to-l from-ink-1/12 to-transparent",
-            insets.end === 0 && "rounded-r-sm",
+            insets.end === 0 && "rounded-r-md",
           )}
         />
       ) : null}
@@ -453,7 +453,7 @@ export function DataTable<T>({
           style={{ left: insets.start }}
           className={cn(
             "pointer-events-none absolute inset-y-0 w-8 bg-linear-to-r from-ink-1/8 to-transparent",
-            insets.start === 0 && "rounded-l-sm",
+            insets.start === 0 && "rounded-l-md",
           )}
         />
       ) : null}

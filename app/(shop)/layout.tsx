@@ -1,6 +1,7 @@
 import { contactLinkList } from "@/config/site";
 import { companyFromSettings, contactFromSettings } from "@/lib/settings/public";
 import { getSettingsPublic } from "@/lib/server/catalog-cache";
+import { PageTransition } from "@/components/shell/PageTransition";
 import { SiteShell } from "@/components/shell/SiteShell";
 import { ConsentRoot } from "@/components/consent/ConsentRoot";
 import { ShopChrome } from "@/components/shell/ShopChrome";
@@ -16,11 +17,6 @@ export default async function ShopLayout({ children }: LayoutProps<"/">) {
   const courier = settings.deliveryMethods.find((d) => d.code === "courier");
   const pickup = settings.deliveryMethods.some((d) => d.code === "pickup");
   const contact = contactFromSettings(settings);
-  const contactChannels = contactLinkList(contact).flatMap((link) =>
-    link.channel === "phone" || link.channel === "viber"
-      ? [{ channel: link.channel, href: link.href }]
-      : [],
-  );
   return (
     <>
       {/* Early in the DOM so keyboard users reach the consent choice first; fixed, so no shift. */}
@@ -30,7 +26,9 @@ export default async function ShopLayout({ children }: LayoutProps<"/">) {
         contact={contact}
         company={companyFromSettings(settings)}
       >
-        {children}
+        <PageTransition>
+          <div data-page="">{children}</div>
+        </PageTransition>
         <VehiclePickerLazy />
         <ShopChrome
           delivery={{
@@ -39,7 +37,7 @@ export default async function ShopLayout({ children }: LayoutProps<"/">) {
             pickup,
             vatRateBp: settings.commerce.vatRateBp,
           }}
-          contactChannels={contactChannels}
+          contacts={contactLinkList(contact)}
         />
       </SiteShell>
     </>

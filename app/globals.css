@@ -178,17 +178,30 @@
   --container-admin: 1680px;
 
   /* ── Shape and elevation (§5.3, §5.5) ─────────────────────── */
-  --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 10px;
-  --radius-full: 999px;
-  /* Night commits to edges: overlay shadows resolve to nothing; paper overrides them. */
-  --shadow-overlay: 0 0 #0000;
-  --shadow-drawer: 0 0 #0000;
+  /* Small soft corners on every box. Nested corners are concentric: inner = outer − padding
+     (never below xs). The only square marks left are drawings: ticks, rules, dimension lines. */
+  --radius-xs: 4px; /* chips, badges, checkboxes, tags, inner elements */
+  --radius-sm: 6px; /* buttons, inputs, selects, steppers, small tiles and thumbnails */
+  --radius-md: 8px; /* cards, panels, tables, alerts, toasts, popovers, menus */
+  --radius-lg: 10px; /* media, drawing frames, the 3D stage frame */
+  --radius-xl: 12px; /* dialogs, large panels, document sheets */
+  --radius-2xl: 14px; /* bottom sheets (top corners) */
+  --radius-full: 999px; /* counts, switches, radios, progress */
+  /* Night elevation: the edge stays, and light falls from above — a lit top edge (warm ink at
+     4–7 %) plus a tight contact shadow for things that float. No glows, no wide blurs. */
+  --shadow-rest: inset 0 1px 0 0 rgb(241 236 227 / 0.04);
+  --shadow-raised:
+    inset 0 1px 0 0 rgb(241 236 227 / 0.06), 0 1px 2px rgb(0 0 0 / 0.35),
+    0 12px 24px -16px rgb(0 0 0 / 0.7);
+  --shadow-overlay:
+    inset 0 1px 0 0 rgb(241 236 227 / 0.07), 0 2px 6px rgb(0 0 0 / 0.4),
+    0 18px 40px -18px rgb(0 0 0 / 0.75);
+  --shadow-drawer:
+    inset 0 1px 0 0 rgb(241 236 227 / 0.07), 0 28px 64px -24px rgb(0 0 0 / 0.8);
+  --shadow-paper-2: 0 1px 2px rgb(18 21 24 / 0.08), 0 6px 16px -10px rgb(18 21 24 / 0.2);
   --shadow-paper-3: 0 1px 2px rgb(18 21 24 / 0.1), 0 8px 24px -6px rgb(18 21 24 / 0.18);
   --shadow-paper-4: 0 24px 64px -16px rgb(18 21 24 / 0.28);
-  --blur-header: 12px;
+  --blur-header: 14px;
 
   /* ── Motion (§8.2–8.3, mirrored in constants/motion.ts) ────── */
   --ease-sk-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -223,7 +236,15 @@
   --gutter: clamp(16px, 1.7vw, 24px);
   --pad: max(var(--margin), calc((100% - 1440px) / 2));
   --space-section: clamp(4rem, 2.667rem + 5.926vw, 8rem);
+  /* Rhythm inside a section (§5.2): heading block → content, and between stacked groups. */
+  --space-block: clamp(1.5rem, 1.167rem + 1.481vw, 2.5rem);
+  --space-stack: clamp(1rem, 0.833rem + 0.741vw, 1.5rem);
+  /* The header is `--header-h` once the page has scrolled; at the top it is taller by
+     `--header-rest` (the sticky offset is negative by the same amount, so nothing shifts). */
   --header-h: 56px;
+  --header-rest: 8px;
+  /* Height the mobile action bar reserves at the bottom (0 where there is no bar). */
+  --bottom-bar-h: 0px;
   --focus-width: 2px;
 
   --z-base: 0;
@@ -246,11 +267,22 @@
   --dur-stage: 600ms;
   --dur-camera: 900ms;
   --dur-reveal: 620ms;
+  --dur-rise: 520ms;
+  --dur-page: 280ms;
 }
 
 @media (width >= 64rem) {
   :root {
     --header-h: 64px;
+    --header-rest: 12px;
+  }
+}
+
+/* Phones and tablets with the action bar (the shop shell sets data-bottom-bar on <html>'s
+   descendant; the variable is read by the hero frame, toasts and bottom-anchored bars). */
+@media (width < 64rem) {
+  :root:has([data-bottom-bar]) {
+    --bottom-bar-h: calc(3.75rem + env(safe-area-inset-bottom, 0px));
   }
 }
 
@@ -297,6 +329,9 @@
   --color-focus: #b8470a;
   --color-focus-inverse: #121518;
   --color-edge-overlay: transparent;
+  /* Paper: resting things keep their edge and no shadow; floating things get elevation. */
+  --shadow-rest: 0 0 #0000;
+  --shadow-raised: var(--shadow-paper-2);
   --shadow-overlay: var(--shadow-paper-3);
   --shadow-drawer: var(--shadow-paper-4);
   background-color: var(--color-bg);
@@ -337,8 +372,15 @@
   --color-focus: #ff6b1a;
   --color-focus-inverse: #f1ece3;
   --color-edge-overlay: #434a52;
-  --shadow-overlay: 0 0 #0000;
-  --shadow-drawer: 0 0 #0000;
+  --shadow-rest: inset 0 1px 0 0 rgb(241 236 227 / 0.04);
+  --shadow-raised:
+    inset 0 1px 0 0 rgb(241 236 227 / 0.06), 0 1px 2px rgb(0 0 0 / 0.35),
+    0 12px 24px -16px rgb(0 0 0 / 0.7);
+  --shadow-overlay:
+    inset 0 1px 0 0 rgb(241 236 227 / 0.07), 0 2px 6px rgb(0 0 0 / 0.4),
+    0 18px 40px -18px rgb(0 0 0 / 0.75);
+  --shadow-drawer:
+    inset 0 1px 0 0 rgb(241 236 227 / 0.07), 0 28px 64px -24px rgb(0 0 0 / 0.8);
   color: var(--color-ink-1);
 }
 
@@ -420,6 +462,11 @@
   :focus-visible {
     outline: var(--focus-width) solid var(--color-focus);
     outline-offset: 2px;
+  }
+  /* The ring follows the shape: a control with its own radius keeps it (the outline traces
+     the border box); a bare link or summary gets the smallest radius instead of square corners. */
+  :where(a, summary, [tabindex], [role="button"], [role="tab"], [role="option"]):focus-visible {
+    border-radius: var(--radius-xs);
   }
 
   input[type="search"]::-webkit-search-cancel-button,
@@ -725,7 +772,7 @@
   background-size: 30% 100%;
   background-repeat: no-repeat;
   animation: var(--animate-shimmer);
-  border-radius: var(--radius-xs);
+  border-radius: var(--radius-sm);
   @media (prefers-reduced-motion: reduce) {
     animation: none;
     background-image: none;
@@ -791,21 +838,222 @@
 
 /* ── 3D hero (docs/3D-CONTRACT.md §F7.1, DESIGN-SYSTEM §10.1) ─────────────────────────────
    The scroll track is reserved by CSS from the first paint, so nothing shifts when the 3D
-   arrives: the sticky frame is one screen under the header; the track adds the explode
-   distance (200 vh below 1024 px, 320 vh above; none under reduced motion). */
+   arrives: the sticky frame is one screen under the header (the taller header of the page top,
+   and above the mobile action bar); the track adds the explode distance (200 vh below
+   1024 px, 320 vh above; none under reduced motion). */
 @utility hero-frame {
-  height: calc(100svh - var(--header-h));
+  height: calc(100svh - var(--header-h) - var(--header-rest) - var(--bottom-bar-h));
   min-height: 26rem;
 }
 
 @utility hero-track {
-  height: calc(100svh - var(--header-h));
+  height: calc(100svh - var(--header-h) - var(--header-rest) - var(--bottom-bar-h));
   min-height: 26rem;
   @media (prefers-reduced-motion: no-preference) {
-    height: calc(100svh - var(--header-h) + 200vh);
+    height: calc(100svh - var(--header-h) - var(--header-rest) - var(--bottom-bar-h) + 200vh);
   }
   @media (prefers-reduced-motion: no-preference) and (width >= 64rem) {
-    height: calc(100svh - var(--header-h) + 320vh);
+    height: calc(100svh - var(--header-h) - var(--header-rest) + 320vh);
+  }
+}
+
+/* ── Site header (§10.1, components/shell/Header) ────────────────────────────────────────
+   `--header-p` runs 0 → 1 over the first 96 px of scroll (a CSS scroll timeline): 0 is the
+   page top — taller, no surface, the logo 8 % larger — 1 the condensed bar with its surface.
+   The header box is `--header-rest` taller than `--header-h` and sticks that much above the
+   viewport, so condensing never changes layout. Without scroll timelines, and under reduced
+   motion, `--header-p` stays 1. */
+@property --header-p {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
+}
+@keyframes sk-header-condense {
+  from {
+    --header-p: 0;
+  }
+  to {
+    --header-p: 1;
+  }
+}
+@utility site-header {
+  --header-p: 1;
+  position: sticky;
+  top: calc(var(--header-rest) * -1);
+  height: calc(var(--header-h) + var(--header-rest));
+  @supports (animation-timeline: scroll()) {
+    @media (prefers-reduced-motion: no-preference) {
+      animation: sk-header-condense linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0px 96px;
+    }
+  }
+}
+@utility site-header-surface {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-color: color-mix(in srgb, var(--color-bg) calc(var(--header-p) * 84%), transparent);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--color-line) calc(var(--header-p) * 100%), transparent);
+  backdrop-filter: blur(calc(var(--header-p) * var(--blur-header)));
+  @media (prefers-reduced-transparency: reduce) {
+    background-color: var(--color-bg-raised);
+    backdrop-filter: none;
+  }
+}
+@utility site-header-row {
+  height: var(--header-h);
+  margin-top: var(--header-rest);
+  transform: translateY(calc((1 - var(--header-p)) * var(--header-rest) * -0.5));
+}
+@utility site-header-logo {
+  transform-origin: left center;
+  transform: scale(calc(1 + (1 - var(--header-p)) * 0.08));
+}
+/* On a page that opens with its own search field (home, search, 404) the header field is
+   hidden at the very top — not focusable either — and returns as the page scrolls. Without
+   scroll timelines it simply stays. */
+/* The first frame is `visibility: hidden`; its opacity stays just above 0 so the reveal
+   contract check („no text at opacity 0“) keeps meaning what it says. */
+@keyframes sk-header-search-in {
+  from {
+    visibility: hidden;
+    opacity: 0.02;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0.02;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@utility site-header-search {
+  @supports (animation-timeline: scroll()) {
+    :root:has([data-own-search]) & {
+      animation: sk-header-search-in linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0px 96px;
+    }
+  }
+}
+
+/* ── Surfaces (§5.5) ─────────────────────────────────────────────────────────────────────
+   One panel language: `panel` is a resting surface (card, summary, form group), `panel-raised`
+   one that floats above its neighbours (sticky summaries, hovered cards), `panel-inset` a well
+   inside a panel (notes, code, nested rows). Radius, edge and light come together, so a box
+   never has one without the others. */
+@utility panel {
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-1);
+  box-shadow: var(--shadow-rest);
+}
+@utility panel-raised {
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-1);
+  box-shadow: var(--shadow-raised);
+}
+@utility panel-inset {
+  border: 1px solid var(--color-line-faint);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface-2);
+}
+
+/* Cards that are links or hold one: the surface steps up and the edge firms on hover; the lift
+   is 1 px (a longer travel reads as a toy on a technical sheet). Fine pointers only. */
+@utility card-interactive {
+  transition:
+    border-color var(--dur-instant) linear,
+    background-color var(--dur-quick) linear,
+    box-shadow var(--dur-base) var(--ease-sk-out),
+    transform var(--dur-base) var(--ease-sk-out);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-color: var(--color-line-strong);
+      background-color: color-mix(in srgb, var(--color-surface-1) 60%, var(--color-surface-2));
+      box-shadow: var(--shadow-raised);
+      transform: translateY(-1px);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    transition-property: border-color, background-color, box-shadow;
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+/* Rhythm utilities (§5.2). */
+@utility gap-block {
+  gap: var(--space-block);
+}
+@utility gap-stack {
+  gap: var(--space-stack);
+}
+@utility mt-block {
+  margin-top: var(--space-block);
+}
+@utility py-block {
+  padding-block: var(--space-block);
+}
+
+/* Space for the mobile action bar: the last lines of a page never sit under it. */
+@utility pb-bottom-bar {
+  padding-bottom: var(--bottom-bar-h);
+}
+@utility bottom-bar-offset {
+  bottom: var(--bottom-bar-h);
+}
+
+/* ── Page transition (§8.8, components/shell/PageTransition) ─────────────────────────────
+   The page area of the new route fades in with a 6 px rise; the old page is not cross-faded
+   (its snapshot would slide when it was scrolled). Chrome keeps its place in its own groups. */
+::view-transition-group(.page-swap) {
+  animation: none;
+}
+::view-transition-old(.page-swap) {
+  display: none;
+}
+::view-transition-new(.page-swap) {
+  animation: sk-page-in var(--dur-page) var(--ease-sk-out) both;
+}
+@keyframes sk-page-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+[data-vt="header"] {
+  view-transition-name: site-header;
+}
+[data-vt="bottom-bar"] {
+  view-transition-name: site-bottom-bar;
+}
+[data-vt="consent"] {
+  view-transition-name: site-consent;
+}
+::view-transition-group(site-header),
+::view-transition-group(site-bottom-bar),
+::view-transition-group(site-consent) {
+  animation: none;
+}
+::view-transition-old(site-header),
+::view-transition-old(site-bottom-bar),
+::view-transition-old(site-consent) {
+  display: none;
+}
+::view-transition-new(site-header),
+::view-transition-new(site-bottom-bar),
+::view-transition-new(site-consent) {
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-new(.page-swap) {
+    animation: none;
   }
 }
 

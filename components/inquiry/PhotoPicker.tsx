@@ -133,7 +133,7 @@ export function PhotoPicker({
         onDragLeave={() => setOver(false)}
         onDrop={onDrop}
         className={cn(
-          "flex min-h-28 cursor-pointer flex-col items-center justify-center gap-2 rounded-sm border border-dashed px-4 py-6 text-center transition-control",
+          "flex min-h-28 cursor-pointer flex-col items-center justify-center gap-2 rounded-md border border-dashed px-4 py-6 text-center transition-control",
           "has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-focus",
           over
             ? "border-accent bg-accent-subtle"
@@ -170,7 +170,7 @@ export function PhotoPicker({
           {photos.map((p) => (
             <li
               key={p.id}
-              className="relative aspect-square overflow-hidden rounded-xs border border-line bg-surface-2"
+              className="relative aspect-square overflow-hidden rounded-sm border border-line bg-surface-2"
               data-status={p.status}
               data-testid="inquiry-photo"
             >

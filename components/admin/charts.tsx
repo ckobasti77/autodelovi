@@ -180,7 +180,7 @@ export function ColumnChart({
         aria-expanded={showTable}
         aria-controls={tableId}
         onClick={() => setShowTable((v) => !v)}
-        className="self-start cursor-pointer rounded-xs type-caption text-accent-text underline-offset-2 hover:underline focus-ring-inset"
+        className="self-start cursor-pointer rounded-sm type-caption text-accent-text underline-offset-2 hover:underline focus-ring-inset"
       >
         {showTable ? "Sakrij tabelu" : "Prikaži tabelu"}
       </button>

@@ -310,7 +310,7 @@ function GenerationRow({
   const [adding, setAdding] = useState("");
   const linked = new Set(g.engines.map((e) => e.engineId));
   return (
-    <li className="rounded-sm border border-line">
+    <li className="rounded-md border border-line">
       <div className="flex flex-wrap items-center gap-2 border-b border-line-faint bg-surface-2 px-3 py-2">
         <span className={cn("font-semibold", !g.active && "text-ink-3 line-through")}>
           {g.name}

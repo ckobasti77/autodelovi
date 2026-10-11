@@ -43,7 +43,7 @@ function Chip({
   return (
     <label
       className={cn(
-        "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-xs border px-3 type-body-s transition-control",
+        "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-sm border px-3 type-body-s transition-control",
         on ? "border-accent bg-accent-subtle text-ink-1" : "border-line-strong text-ink-2 hover:border-ink-3",
       )}
     >

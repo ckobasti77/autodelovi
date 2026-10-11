@@ -148,7 +148,7 @@ function OrderView({ data }: { data: Detail }) {
       {o.status === "otkazana" && o.cancelReason ? (
         <p
           role="status"
-          className="flex items-start gap-2 rounded-sm border border-danger bg-danger-subtle px-4 py-3 type-body-s text-danger"
+          className="flex items-start gap-2 rounded-md border border-danger bg-danger-subtle px-4 py-3 type-body-s text-danger"
         >
           <WarningIcon size={18} className="mt-0.5 shrink-0" aria-hidden="true" /> Otkazana:{" "}
           {o.cancelReason}
@@ -607,7 +607,7 @@ function ItemsSection({ data }: { data: Detail }) {
                         onChange={(ev) =>
                           setEdits({ ...edits, [i._id]: { ...e, quantity: ev.target.value } })
                         }
-                        className="h-9 w-16 rounded-xs border border-control bg-surface-1 px-2 text-right tabular-nums"
+                        className="h-9 w-16 rounded-sm border border-control bg-surface-1 px-2 text-right tabular-nums"
                       />
                     ) : (
                       i.quantity
@@ -623,7 +623,7 @@ function ItemsSection({ data }: { data: Detail }) {
                         onChange={(ev) =>
                           setEdits({ ...edits, [i._id]: { ...e, price: ev.target.value } })
                         }
-                        className="h-9 w-28 rounded-xs border border-control bg-surface-1 px-2 text-right tabular-nums"
+                        className="h-9 w-28 rounded-sm border border-control bg-surface-1 px-2 text-right tabular-nums"
                       />
                     ) : (
                       <span className="flex flex-col items-end">
@@ -684,7 +684,7 @@ function ItemsSection({ data }: { data: Detail }) {
                             ),
                           )
                         }
-                        className="h-9 w-16 rounded-xs border border-control bg-surface-1 px-2 text-right tabular-nums"
+                        className="h-9 w-16 rounded-sm border border-control bg-surface-1 px-2 text-right tabular-nums"
                       />
                     </td>
                     <td
@@ -905,7 +905,7 @@ function CustomerSection({ order: o }: { order: Order }) {
       />
       <ContactActions phone={o.contact.phone} />
       {o.customerNote ? (
-        <div className="mt-4 rounded-xs bg-surface-2 px-3 py-2">
+        <div className="mt-4 rounded-sm bg-surface-2 px-3 py-2">
           <p className="type-label uppercase text-ink-3">Napomena kupca</p>
           <p className="type-body-s text-ink-1">{o.customerNote}</p>
         </div>

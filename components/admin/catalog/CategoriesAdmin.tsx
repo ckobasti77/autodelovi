@@ -298,7 +298,7 @@ function CategoryForm({ node }: { node: Node }) {
       <div className="grid gap-6 lg:grid-cols-2">
         <Section title="Sličica">
           <div className="flex items-start gap-4">
-            <span className="flex size-28 shrink-0 items-center justify-center overflow-hidden rounded-sm border border-line bg-bg">
+            <span className="flex size-28 shrink-0 items-center justify-center overflow-hidden rounded-md border border-line bg-bg">
               {thumb ? (
                 // eslint-disable-next-line @next/next/no-img-element -- category render or uploaded image, admin preview
                 <img src={thumb} alt="" className="size-full object-contain" />
@@ -341,7 +341,7 @@ function CategoryForm({ node }: { node: Node }) {
                 />
                 <span
                   aria-hidden="true"
-                  className="inline-flex h-9 cursor-pointer items-center gap-2 rounded-xs border border-control px-3 type-button-s text-ink-1 hover:bg-surface-2"
+                  className="inline-flex h-9 cursor-pointer items-center gap-2 rounded-sm border border-control px-3 type-button-s text-ink-1 hover:bg-surface-2"
                 >
                   <UploadSimpleIcon size={16} /> Otpremi sliku
                 </span>

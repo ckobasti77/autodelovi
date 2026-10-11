@@ -157,7 +157,7 @@ function ProductRow({
       data-testid={TEST_IDS.partPanelProduct}
       className="grid grid-cols-[3.5rem_minmax(0,1fr)_auto] gap-x-3 gap-y-1 border-b border-line py-3 last:border-b-0"
     >
-      <div className="relative size-14 overflow-hidden rounded-xs bg-[radial-gradient(circle_at_50%_40%,var(--color-surface-2),var(--color-surface-1))]">
+      <div className="relative size-14 overflow-hidden rounded-sm bg-[radial-gradient(circle_at_50%_40%,var(--color-surface-2),var(--color-surface-1))]">
         {/* eslint-disable-next-line @next/next/no-img-element -- Convex storage URL or a 768 px category render shown at 56 px */}
         <img
           src={card.imageUrl ?? thumbnail}
@@ -282,7 +282,7 @@ function PanelList({ slug }: { slug: string }) {
   return (
     <>
       {vehicle && shownUnmatched > 0 && shownUnmatched < data.items.length ? (
-        <p className="mb-2 flex items-start gap-2 rounded-xs bg-warning-subtle px-3 py-2 type-caption text-warning">
+        <p className="mb-2 flex items-start gap-2 rounded-sm bg-warning-subtle px-3 py-2 type-caption text-warning">
           <WarningIcon size={16} aria-hidden="true" className="mt-px shrink-0" />
           {PANEL_COPY.mismatch(countSr(data.unmatched, ARTICLE_FORMS))}
         </p>
@@ -374,7 +374,7 @@ export function PartPanel() {
             type="button"
             onClick={openVehiclePicker}
             className={cn(
-              "inline-flex h-9 max-w-full cursor-pointer items-center gap-2 self-start rounded-xs border px-3 type-button-s transition-control",
+              "inline-flex h-9 max-w-full cursor-pointer items-center gap-2 self-start rounded-sm border px-3 type-button-s transition-control",
               vehicle
                 ? "border-accent-edge bg-accent-subtle text-ink-1"
                 : "border-control text-ink-1 hover:border-ink-3 hover:bg-surface-4",

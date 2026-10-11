@@ -25,7 +25,7 @@ export default async function ContactPage() {
   const hasAddress = Boolean(contact.address.street && contact.address.city);
   const block = (
     <div
-      className="flex flex-col gap-6 rounded-sm border border-line bg-surface-1 p-5"
+      className="flex flex-col gap-6 panel p-5"
       data-reveal="off"
     >
       <JsonLd data={storeJsonLd(storeInfoFromSettings(settings))} />

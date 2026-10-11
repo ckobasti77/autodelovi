@@ -263,7 +263,7 @@ function PaletteBody({
                 onMouseMove={() => setActive(index)}
                 onClick={() => o.run()}
                 className={cn(
-                  "mx-2 flex min-h-11 min-w-0 cursor-pointer items-center gap-3 rounded-xs px-4 type-body-s",
+                  "mx-2 flex min-h-11 min-w-0 cursor-pointer items-center gap-3 rounded-sm px-4 type-body-s",
                   // The active option stands in for keyboard focus: focus-ring outline, not a tint alone.
                   index === current
                     ? "bg-selected text-ink-1 outline-2 -outline-offset-2 outline-focus"

@@ -8,7 +8,7 @@ function SwatchGrid({ items }: { items: Swatch[] }) {
         <li key={swatch.token} className="flex flex-col gap-2">
           <span
             aria-hidden="true"
-            className="block h-16 rounded-sm border border-line"
+            className="block h-16 rounded-md border border-line"
             style={{ background: `var(${swatch.cssVar})` }}
           />
           <span className="flex flex-col">
@@ -56,11 +56,13 @@ const SPACING_WIDTH: Record<string, string> = {
 };
 
 const RADII = [
-  ["rounded-xs", "2 px\u00a0— dugmad, polja, bedževi"],
-  ["rounded-sm", "4 px\u00a0— kartice, tabele, obaveštenja"],
-  ["rounded-md", "6 px\u00a0— popover, dijalog"],
-  ["rounded-lg", "10 px\u00a0— gornji uglovi donjeg panela"],
-  ["rounded-full", "999 px\u00a0— samo brojači"],
+  ["rounded-xs", "4 px: čipovi, bedževi, polja za potvrdu"],
+  ["rounded-sm", "6 px: dugmad, polja, mali kadrovi"],
+  ["rounded-md", "8 px: kartice, paneli, tabele, meniji"],
+  ["rounded-lg", "10 px: slike, crteži, kadar 3D prikaza"],
+  ["rounded-xl", "12 px: dijalozi, veliki paneli"],
+  ["rounded-2xl", "14 px: gornji uglovi donjeg panela"],
+  ["rounded-full", "999 px: brojači, prekidači"],
 ] as const;
 
 const Z = [
@@ -106,7 +108,7 @@ export function Tokens() {
           note={`${rows.length} parova iz docs/design/tokens.json, izračunato pri renderu\u00a0— ${failing === 0 ? "nijedan ne pada" : `${failing} ispod praga`}.`}
         >
           <div
-            className="overflow-x-auto rounded-sm border border-line"
+            className="overflow-x-auto rounded-md border border-line"
             tabIndex={0}
             role="region"
             aria-label="Tabela kontrasta"
@@ -185,9 +187,9 @@ export function Tokens() {
         </Group>
         <Group
           title="Radijusi"
-          note="Svet tehničkog crteža je četvrtast&nbsp;— zaobljeni su samo brojači."
+          note="Mali, meki uglovi na svakoj kutiji. Unutrašnji ugao je spoljni umanjen za razmak. Četvrtasti ostaju samo crteži: ugaone oznake, linije i kote."
         >
-          <ul className="grid grid-cols-2 gap-4 md:grid-cols-5">
+          <ul className="grid grid-cols-2 gap-4 md:grid-cols-4 xl:grid-cols-7">
             {RADII.map(([cls, note]) => (
               <li key={cls} className="flex flex-col gap-2">
                 <span
@@ -202,28 +204,28 @@ export function Tokens() {
         </Group>
         <Group
           title="Elevacija"
-          note="Noć: ivica, bez senke. Papir: plutajuće stvari imaju meku senku bez ivice. Nikad obe."
+          note="Noć: ivica i svetlo odozgo&nbsp;— osvetljena gornja ivica, a ono što lebdi ima kratku kontaktnu senku. Papir: paneli imaju ivicu, plutajuće stvari meku senku."
         >
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="flex flex-col gap-4 rounded-md border border-line p-6">
+            <div className="flex flex-col gap-4 rounded-lg border border-line p-6">
               <span className="type-label text-ink-3">Noć</span>
-              <div className="rounded-sm border border-line bg-surface-1 p-4 type-body-s text-ink-2">
-                Nivo 1&nbsp;— kartica
+              <div className="panel p-4 type-body-s text-ink-2">
+                Nivo 1&nbsp;— panel
               </div>
-              <div className="rounded-sm border border-line-strong bg-surface-1 p-4 type-body-s text-ink-2">
-                Nivo 2&nbsp;— naglašena
+              <div className="panel-raised p-4 type-body-s text-ink-2">
+                Nivo 2&nbsp;— izdignut
               </div>
               <div className="rounded-md border border-edge-overlay bg-surface-3 p-4 type-body-s text-ink-2 shadow-overlay">
                 Nivo 3&nbsp;— popover
               </div>
             </div>
-            <div data-theme="paper" className="flex flex-col gap-4 rounded-md p-6">
+            <div data-theme="paper" className="flex flex-col gap-4 rounded-lg p-6">
               <span className="type-label text-ink-3">Papir</span>
-              <div className="rounded-sm border border-line bg-surface-1 p-4 type-body-s text-ink-2">
+              <div className="panel p-4 type-body-s text-ink-2">
                 Nivo 1&nbsp;— panel
               </div>
-              <div className="rounded-sm border border-line-strong bg-surface-1 p-4 type-body-s text-ink-2">
-                Nivo 2&nbsp;— naglašen
+              <div className="panel-raised p-4 type-body-s text-ink-2">
+                Nivo 2&nbsp;— izdignut
               </div>
               <div className="rounded-md border border-edge-overlay bg-surface-3 p-4 type-body-s text-ink-2 shadow-overlay">
                 Nivo 3&nbsp;— popover

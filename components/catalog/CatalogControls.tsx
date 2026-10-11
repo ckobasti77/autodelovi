@@ -148,7 +148,7 @@ function VehicleGroup({ filters, vehicleLabel }: { filters: CatalogFilters; vehi
   if (filters.vehicle) {
     return (
       <div className="flex flex-col gap-2 pt-1">
-        <div className="flex items-center gap-2 rounded-xs border border-accent bg-accent-subtle py-1 pl-3 pr-1">
+        <div className="flex items-center gap-2 rounded-sm border border-accent bg-accent-subtle py-1 pl-3 pr-1">
           <CarIcon size={18} aria-hidden="true" className="shrink-0 text-ink-2" />
           <span className="min-w-0 flex-1 truncate type-body-s font-semibold text-ink-1">
             {vehicleLabel ?? filters.vehicle.brand}
@@ -157,7 +157,7 @@ function VehicleGroup({ filters, vehicleLabel }: { filters: CatalogFilters; vehi
             type="button"
             aria-label="Prikaži za sva vozila"
             onClick={() => navigate({ ...filters, vehicle: null, page: 1 })}
-            className="inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1"
+            className="inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-sm text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1"
           >
             <XIcon size={16} aria-hidden="true" />
           </button>

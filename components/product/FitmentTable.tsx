@@ -13,7 +13,7 @@ const HEAD = [
 
 function Table({ rows, caption }: { rows: FitmentRow[]; caption?: string }) {
   return (
-    <div className="overflow-x-auto rounded-sm border border-line">
+    <div className="overflow-x-auto rounded-md border border-line">
       <table className="w-full border-collapse type-body-s">
         {caption ? <caption className="sr-only">{caption}</caption> : null}
         <thead className="bg-surface-2">

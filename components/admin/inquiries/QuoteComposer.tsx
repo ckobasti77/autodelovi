@@ -257,7 +257,7 @@ export function QuoteComposer({
       ) : null}
       <ol className="flex flex-col gap-3">
         {lines.map((l, i) => (
-          <li key={l.key} className="rounded-sm border border-line bg-surface-2 p-3">
+          <li key={l.key} className="rounded-md border border-line bg-surface-2 p-3">
             <div className="mb-2 flex items-center justify-between gap-2">
               <span className="type-label uppercase text-ink-3">
                 Stavka {i + 1}

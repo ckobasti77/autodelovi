@@ -1,0 +1,3162 @@
+{
+ "meta": {
+  "assessment": "impeccable critique — Assessment B (measured browser evidence)",
+  "startedAt": "2026-10-11T17:02:06.445Z",
+  "base": "http://localhost:3000",
+  "viewports": [
+   {
+    "tag": "1440",
+    "width": 1440,
+    "height": 900,
+    "mobile": false
+   },
+   {
+    "tag": "390",
+    "width": 390,
+    "height": 844,
+    "mobile": true
+   }
+  ],
+  "pages": [
+   "/",
+   "/delovi",
+   "/delovi/kocioni-diskovi",
+   "/deo/kocioni-disk-prednji-312-25-mm-demo-0007",
+   "/pretraga?q=disk",
+   "/upit",
+   "/za-majstore",
+   "/korpa",
+   "/kontakt",
+   "/prijava",
+   "/styleguide"
+  ],
+  "method": {
+   "navigation": "goto(waitUntil: networkidle, 120 s) → scroll to the bottom in steps of 60 % of the viewport, 150 ms apart → wait 1 s → inject *{content-visibility:visible!important} → measure at the bottom scroll position",
+   "visitor": "anonymous, consent cookie sk_consent preset (no banner), empty cart",
+   "sharpCorners": "visible box = (a) border on ≥ 3 sides, width > 0, non-transparent, different from the element's own effective background, OR (b) background-color alpha > 0.5 differing from the nearest ancestor's effective background, OR (c) img/video/canvas/input/select/textarea/button. Excluded: < 12 px in either dimension, boxes touching both viewport edges, html/body, nextjs-portal subtree, position:fixed touching a viewport edge, invisible (offsetParent null [fixed elements are measured], opacity 0 on self or ancestor, visibility hidden, display none, closed details). Square = all four computed corner radii are 0.",
+   "tagOnly": "tagOnly = square elements counted only by criterion (c). inRoundedWrapper = an ancestor within 4 levels has a non-zero radius and either draws a box (a/b) or clips (overflow ≠ visible); ownPaint = the element paints 1–2 border sides itself; bare = neither.",
+   "fixedOffscreen": "a position:fixed element lying completely outside the viewport (skip link before focus, parked bars) is treated as invisible together with its subtree",
+   "sharpWhy": "why: border = criterion (a), bg = criterion (b) only, tag = criterion (c) only (element type, nothing drawn by border/background)",
+   "touch": "390 only. a[href], button, input:not([type=hidden]), select, textarea, [role=button], summary; visible; < 44 px in either dimension. Excluded: links inside <p>, links inside <li> that has text outside links/buttons, visually hidden (≤ 1 px / clip). count = the element's own box (as specified). countEffective = own box ∪ pointer-receiving absolutely positioned ::before/::after ∪ associated <label>.",
+   "type": "390 only. Text elements = visible elements with a non-empty direct text node. controlsBelow14 = input/select/textarea with font-size < 14 px plus text elements inside <button> < 14 px. fieldsBelow16 = text inputs/select/textarea under 16 px (iOS focus zoom threshold).",
+   "header": "on / only: fresh load, measured at scrollY 0, after scrolling down to 1200 px (4 × 300) and after scrolling up 300 px (3 × 100); fixed elements listed after the up-scroll. fixedCheck on the other pages repeats the down/up scroll after the main measurement."
+  },
+  "finishedAt": "2026-10-11T17:08:16.842Z",
+  "tree": {
+   "atStart": {
+    "ms": 1791738033103,
+    "at": "2026-10-11T17:00:33.103Z",
+    "file": "app/(shop)/layout.tsx"
+   },
+   "atEnd": {
+    "ms": 1791738398363,
+    "at": "2026-10-11T17:06:38.362Z",
+    "file": "app/(shop)/layout.tsx"
+   }
+  }
+ },
+ "header": {
+  "390": {
+   "nav": {
+    "note": "status 500",
+    "ms": 1196
+   },
+   "atTop": null,
+   "afterDown1200": null,
+   "afterUp300": null,
+   "fixedAfterUp300": {
+    "scrollY": 0,
+    "innerHeight": 844,
+    "fixed": []
+   },
+   "treeNewest": "2026-10-11T17:00:33.103Z"
+  },
+  "1440": {
+   "nav": {
+    "note": "status 500",
+    "ms": 1586
+   },
+   "atTop": null,
+   "afterDown1200": null,
+   "afterUp300": null,
+   "fixedAfterUp300": {
+    "scrollY": 0,
+    "innerHeight": 900,
+    "fixed": []
+   },
+   "treeNewest": "2026-10-11T17:00:33.103Z"
+  }
+ },
+ "pages": {
+  "390": {
+   "/": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1510
+    },
+    "url": "/",
+    "title": "",
+    "consoleErrors": [
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB"
+    ],
+    "consoleErrorCount": 21,
+    "viewport": {
+     "clientWidth": 390,
+     "innerWidth": 390,
+     "innerHeight": 844
+    },
+    "scrollHeight": 844,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "touch": {
+     "interactiveVisible": 0,
+     "count": 0,
+     "countEffective": 0,
+     "below24": 0,
+     "below24Effective": 0,
+     "inlineDisplay": 0,
+     "excludedInlineLinks": 0,
+     "excludedVisuallyHidden": 0,
+     "top": []
+    },
+    "type": {
+     "textElements": 0,
+     "below12": 0,
+     "controlsBelow14": 0,
+     "fieldsBelow16": 0,
+     "fields": 0,
+     "below12Top": [],
+     "controlsBelow14Top": [],
+     "fieldsBelow16Top": [],
+     "fontSizeHist": {}
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": null,
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/delovi": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1076
+    },
+    "url": "/delovi",
+    "title": "",
+    "consoleErrors": [
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB"
+    ],
+    "consoleErrorCount": 21,
+    "viewport": {
+     "clientWidth": 390,
+     "innerWidth": 390,
+     "innerHeight": 844
+    },
+    "scrollHeight": 844,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "touch": {
+     "interactiveVisible": 0,
+     "count": 0,
+     "countEffective": 0,
+     "below24": 0,
+     "below24Effective": 0,
+     "inlineDisplay": 0,
+     "excludedInlineLinks": 0,
+     "excludedVisuallyHidden": 0,
+     "top": []
+    },
+    "type": {
+     "textElements": 0,
+     "below12": 0,
+     "controlsBelow14": 0,
+     "fieldsBelow16": 0,
+     "fields": 0,
+     "below12Top": [],
+     "controlsBelow14Top": [],
+     "fieldsBelow16Top": [],
+     "fontSizeHist": {}
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/delovi/kocioni-diskovi": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1140
+    },
+    "url": "/delovi/kocioni-diskovi",
+    "title": "",
+    "consoleErrors": [
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC"
+    ],
+    "consoleErrorCount": 23,
+    "viewport": {
+     "clientWidth": 390,
+     "innerWidth": 390,
+     "innerHeight": 844
+    },
+    "scrollHeight": 844,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "touch": {
+     "interactiveVisible": 0,
+     "count": 0,
+     "countEffective": 0,
+     "below24": 0,
+     "below24Effective": 0,
+     "inlineDisplay": 0,
+     "excludedInlineLinks": 0,
+     "excludedVisuallyHidden": 0,
+     "top": []
+    },
+    "type": {
+     "textElements": 0,
+     "below12": 0,
+     "controlsBelow14": 0,
+     "fieldsBelow16": 0,
+     "fields": 0,
+     "below12Top": [],
+     "controlsBelow14Top": [],
+     "fieldsBelow16Top": [],
+     "fontSizeHist": {}
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/deo/kocioni-disk-prednji-312-25-mm-demo-0007": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1203
+    },
+    "url": "/deo/kocioni-disk-prednji-312-25-mm-demo-0007",
+    "title": "",
+    "consoleErrors": [
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB"
+    ],
+    "consoleErrorCount": 22,
+    "viewport": {
+     "clientWidth": 390,
+     "innerWidth": 390,
+     "innerHeight": 844
+    },
+    "scrollHeight": 844,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "touch": {
+     "interactiveVisible": 0,
+     "count": 0,
+     "countEffective": 0,
+     "below24": 0,
+     "below24Effective": 0,
+     "inlineDisplay": 0,
+     "excludedInlineLinks": 0,
+     "excludedVisuallyHidden": 0,
+     "top": []
+    },
+    "type": {
+     "textElements": 0,
+     "below12": 0,
+     "controlsBelow14": 0,
+     "fieldsBelow16": 0,
+     "fields": 0,
+     "below12Top": [],
+     "controlsBelow14Top": [],
+     "fieldsBelow16Top": [],
+     "fontSizeHist": {}
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": {
+     "buyBox": false,
+     "bar": false
+    },
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/pretraga?q=disk": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1206
+    },
+    "url": "/pretraga?q=disk",
+    "title": "",
+    "consoleErrors": [
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB"
+    ],
+    "consoleErrorCount": 21,
+    "viewport": {
+     "clientWidth": 390,
+     "innerWidth": 390,
+     "innerHeight": 844
+    },
+    "scrollHeight": 844,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "touch": {
+     "interactiveVisible": 0,
+     "count": 0,
+     "countEffective": 0,
+     "below24": 0,
+     "below24Effective": 0,
+     "inlineDisplay": 0,
+     "excludedInlineLinks": 0,
+     "excludedVisuallyHidden": 0,
+     "top": []
+    },
+    "type": {
+     "textElements": 0,
+     "below12": 0,
+     "controlsBelow14": 0,
+     "fieldsBelow16": 0,
+     "fields": 0,
+     "below12Top": [],
+     "controlsBelow14Top": [],
+     "fieldsBelow16Top": [],
+     "fontSizeHist": {}
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/upit": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1143
+    },
+    "url": "/upit",
+    "title": "",
+    "consoleErrors": [
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB"
+    ],
+    "consoleErrorCount": 21,
+    "viewport": {
+     "clientWidth": 390,
+     "innerWidth": 390,
+     "innerHeight": 844
+    },
+    "scrollHeight": 844,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "touch": {
+     "interactiveVisible": 0,
+     "count": 0,
+     "countEffective": 0,
+     "below24": 0,
+     "below24Effective": 0,
+     "inlineDisplay": 0,
+     "excludedInlineLinks": 0,
+     "excludedVisuallyHidden": 0,
+     "top": []
+    },
+    "type": {
+     "textElements": 0,
+     "below12": 0,
+     "controlsBelow14": 0,
+     "fieldsBelow16": 0,
+     "fields": 0,
+     "below12Top": [],
+     "controlsBelow14Top": [],
+     "fieldsBelow16Top": [],
+     "fontSizeHist": {}
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/za-majstore": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1171
+    },
+    "url": "/za-majstore",
+    "title": "",
+    "consoleErrors": [
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB"
+    ],
+    "consoleErrorCount": 21,
+    "viewport": {
+     "clientWidth": 390,
+     "innerWidth": 390,
+     "innerHeight": 844
+    },
+    "scrollHeight": 844,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "touch": {
+     "interactiveVisible": 0,
+     "count": 0,
+     "countEffective": 0,
+     "below24": 0,
+     "below24Effective": 0,
+     "inlineDisplay": 0,
+     "excludedInlineLinks": 0,
+     "excludedVisuallyHidden": 0,
+     "top": []
+    },
+    "type": {
+     "textElements": 0,
+     "below12": 0,
+     "controlsBelow14": 0,
+     "fieldsBelow16": 0,
+     "fields": 0,
+     "below12Top": [],
+     "controlsBelow14Top": [],
+     "fieldsBelow16Top": [],
+     "fontSizeHist": {}
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/korpa": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1096
+    },
+    "url": "/korpa",
+    "title": "",
+    "consoleErrors": [
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB"
+    ],
+    "consoleErrorCount": 22,
+    "viewport": {
+     "clientWidth": 390,
+     "innerWidth": 390,
+     "innerHeight": 844
+    },
+    "scrollHeight": 844,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "touch": {
+     "interactiveVisible": 0,
+     "count": 0,
+     "countEffective": 0,
+     "below24": 0,
+     "below24Effective": 0,
+     "inlineDisplay": 0,
+     "excludedInlineLinks": 0,
+     "excludedVisuallyHidden": 0,
+     "top": []
+    },
+    "type": {
+     "textElements": 0,
+     "below12": 0,
+     "controlsBelow14": 0,
+     "fieldsBelow16": 0,
+     "fields": 0,
+     "below12Top": [],
+     "controlsBelow14Top": [],
+     "fieldsBelow16Top": [],
+     "fontSizeHist": {}
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/kontakt": {
+    "nav": {
+     "note": "status 500",
+     "ms": 5684
+    },
+    "url": "/kontakt",
+    "title": "",
+    "consoleErrors": [
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB"
+    ],
+    "consoleErrorCount": 21,
+    "viewport": {
+     "clientWidth": 390,
+     "innerWidth": 390,
+     "innerHeight": 844
+    },
+    "scrollHeight": 844,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "touch": {
+     "interactiveVisible": 0,
+     "count": 0,
+     "countEffective": 0,
+     "below24": 0,
+     "below24Effective": 0,
+     "inlineDisplay": 0,
+     "excludedInlineLinks": 0,
+     "excludedVisuallyHidden": 0,
+     "top": []
+    },
+    "type": {
+     "textElements": 0,
+     "below12": 0,
+     "controlsBelow14": 0,
+     "fieldsBelow16": 0,
+     "fields": 0,
+     "below12Top": [],
+     "controlsBelow14Top": [],
+     "fieldsBelow16Top": [],
+     "fontSizeHist": {}
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:06:07.346Z",
+     "after": "2026-10-11T17:06:07.346Z",
+     "newestFile": "components/shell/Footer.tsx",
+     "attempts": 3,
+     "changedDuringMeasure": false
+    }
+   },
+   "/prijava": {
+    "nav": {
+     "note": "status 200",
+     "ms": 4245
+    },
+    "url": "/prijava",
+    "title": "Prijava | Euromotors Plus · OEM Parts",
+    "consoleErrors": [],
+    "consoleErrorCount": 0,
+    "viewport": {
+     "clientWidth": 390,
+     "innerWidth": 390,
+     "innerHeight": 844
+    },
+    "scrollHeight": 1870,
+    "domElements": 125,
+    "visibleElements": 118,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 3,
+     "boxes": {
+      "total": 11,
+      "square": 3,
+      "rounded": 8
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 3
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 3,
+      "inRoundedWrapper": 2,
+      "ownPaint": 0,
+      "bare": 1
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 2,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 1
+     },
+     "distinctSignatures": 2,
+     "top": [
+      {
+       "sig": "input.h-full.min-w-0.flex-1",
+       "n": 2,
+       "why": {
+        "tag": 2
+       },
+       "sample": {
+        "text": "",
+        "w": 332,
+        "h": 42,
+        "testid": "auth-email",
+        "type": "email",
+        "wrapperRadius": "6px"
+       },
+       "inRoundedWrapper": 2
+      },
+      {
+       "sig": "button.inline-flex.min-h-8.items-center",
+       "n": 1,
+       "why": {
+        "tag": 1
+       },
+       "sample": {
+        "text": "Podešavanja kolačića",
+        "w": 130,
+        "h": 32,
+        "testid": "consent-reopen"
+       }
+      }
+     ]
+    },
+    "radiusHistAll": {
+     "6px": 14,
+     "4px": 1
+    },
+    "radiusHistBoxes": {
+     "6px": 7,
+     "4px": 1
+    },
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "touch": {
+     "interactiveVisible": 26,
+     "count": 15,
+     "countEffective": 13,
+     "below24": 0,
+     "below24Effective": 0,
+     "inlineDisplay": 0,
+     "excludedInlineLinks": 2,
+     "excludedVisuallyHidden": 0,
+     "top": [
+      {
+       "sig": "a.inline-flex.min-h-8.items-center",
+       "n": 12,
+       "nEffective": 12,
+       "minW": 48,
+       "minH": 32,
+       "sample": {
+        "text": "Svi delovi",
+        "w": 62.1,
+        "h": 32,
+        "effW": 62.1,
+        "effH": 32,
+        "display": "inline-flex"
+       }
+      },
+      {
+       "sig": "input.h-full.min-w-0.flex-1",
+       "n": 2,
+       "nEffective": 0,
+       "minW": 332,
+       "minH": 42,
+       "sample": {
+        "text": "",
+        "w": 332,
+        "h": 42,
+        "effW": 358,
+        "effH": 69.2,
+        "display": "block",
+        "testid": "auth-email",
+        "borderedWrapper": "358x44"
+       }
+      },
+      {
+       "sig": "button.inline-flex.min-h-8.items-center",
+       "n": 1,
+       "nEffective": 1,
+       "minW": 130.3,
+       "minH": 32,
+       "sample": {
+        "text": "Podešavanja kolačića",
+        "w": 130.3,
+        "h": 32,
+        "effW": 130.3,
+        "effH": 32,
+        "display": "inline-flex",
+        "testid": "consent-reopen"
+       }
+      }
+     ]
+    },
+    "type": {
+     "textElements": 47,
+     "below12": 3,
+     "controlsBelow14": 4,
+     "fieldsBelow16": 0,
+     "fields": 2,
+     "below12Top": [
+      {
+       "sig": "h2.type-label.text-ink-3",
+       "n": 3,
+       "fontSize": 11,
+       "sample": {
+        "text": "Delovi",
+        "w": 358,
+        "h": 13
+       }
+      }
+     ],
+     "controlsBelow14Top": [
+      {
+       "sig": "span.max-w-full.truncate.px-1",
+       "n": 2,
+       "fontSize": 12,
+       "sample": {
+        "text": "Pretraga",
+        "w": 57,
+        "h": 16
+       }
+      },
+      {
+       "sig": "kbd.inline-flex.h-5.min-w-5",
+       "n": 1,
+       "fontSize": 12,
+       "sample": {
+        "text": "/",
+        "w": 20,
+        "h": 20
+       }
+      },
+      {
+       "sig": "button.inline-flex.min-h-8.items-center",
+       "n": 1,
+       "fontSize": 13,
+       "sample": {
+        "text": "Podešavanja kolačića",
+        "w": 130,
+        "h": 32
+       }
+      }
+     ],
+     "fieldsBelow16Top": [],
+     "fontSizeHist": {
+      "14px": 16,
+      "12px": 5,
+      "26.28px": 1,
+      "16px": 13,
+      "13px": 8,
+      "15px": 1,
+      "11px": 3
+     }
+    },
+    "fixedAtPageBottom": [
+     {
+      "sig": "nav.fixed.inset-x-0.bottom-0",
+      "position": "fixed",
+      "visibility": "visible",
+      "testid": "bottom-action-bar",
+      "w": 390,
+      "h": 61,
+      "top": 783,
+      "bottom": 844,
+      "shownInViewport": true,
+      "atBottom": true,
+      "opacity": "1",
+      "transform": "none",
+      "inert": false,
+      "text": "PretragaVoziloKorpaUpit"
+     }
+    ],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 726,
+     "atBottom": [
+      {
+       "sig": "nav.fixed.inset-x-0.bottom-0",
+       "position": "fixed",
+       "visibility": "visible",
+       "testid": "bottom-action-bar",
+       "w": 390,
+       "h": 61,
+       "top": 783,
+       "bottom": 844,
+       "shownInViewport": true,
+       "atBottom": true,
+       "opacity": "1",
+       "transform": "none",
+       "inert": false,
+       "text": "PretragaVoziloKorpaUpit"
+      }
+     ],
+     "all": [
+      {
+       "sig": "a.fixed.left-3.top-3",
+       "position": "fixed",
+       "visibility": "visible",
+       "testid": "skip-link",
+       "w": 168,
+       "h": 39,
+       "top": -66,
+       "bottom": -27,
+       "shownInViewport": false,
+       "atBottom": false,
+       "opacity": "1",
+       "transform": "none",
+       "inert": false,
+       "text": "Preskoči na sadržaj"
+      },
+      {
+       "sig": "nav.fixed.inset-x-0.bottom-0",
+       "position": "fixed",
+       "visibility": "visible",
+       "testid": "bottom-action-bar",
+       "w": 390,
+       "h": 61,
+       "top": 783,
+       "bottom": 844,
+       "shownInViewport": true,
+       "atBottom": true,
+       "opacity": "1",
+       "transform": "none",
+       "inert": false,
+       "text": "PretragaVoziloKorpaUpit"
+      }
+     ],
+     "headerRectTopAfterDown": -8,
+     "headerRectTopAfterUp": -8
+    },
+    "tree": {
+     "before": "2026-10-11T17:06:38.362Z",
+     "after": "2026-10-11T17:06:38.362Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 2,
+     "changedDuringMeasure": false
+    }
+   },
+   "/styleguide": {
+    "nav": {
+     "note": "status 200",
+     "ms": 4825
+    },
+    "url": "/styleguide",
+    "title": "Stilski vodič | Euromotors Plus · OEM Parts",
+    "consoleErrors": [],
+    "consoleErrorCount": 0,
+    "viewport": {
+     "clientWidth": 390,
+     "innerWidth": 390,
+     "innerHeight": 844
+    },
+    "scrollHeight": 29589,
+    "domElements": 2092,
+    "visibleElements": 2065,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 40,
+     "boxes": {
+      "total": 392,
+      "square": 40,
+      "rounded": 352
+     },
+     "reasons": {
+      "border": 0,
+      "background": 19,
+      "tagOnly": 21
+     },
+     "drawn": {
+      "total": 19,
+      "clippedByRoundedAncestor": 8
+     },
+     "tagOnly": {
+      "total": 21,
+      "inRoundedWrapper": 16,
+      "ownPaint": 2,
+      "bare": 5
+     },
+     "excluded": {
+      "tiny": 20,
+      "fullBleed": 1,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 1
+     },
+     "distinctSignatures": 12,
+     "top": [
+      {
+       "sig": "span.block.h-3.bg-accent",
+       "n": 11,
+       "why": {
+        "bg": 11
+       },
+       "sample": {
+        "text": "",
+        "w": 12,
+        "h": 12
+       }
+      },
+      {
+       "sig": "input.h-full.min-w-0.flex-1",
+       "n": 8,
+       "why": {
+        "tag": 8
+       },
+       "sample": {
+        "text": "npr. Marko Petrović",
+        "w": 332,
+        "h": 42,
+        "type": "text",
+        "wrapperRadius": "6px"
+       },
+       "inRoundedWrapper": 8
+      },
+      {
+       "sig": "th.h-9.whitespace-nowrap.border-b",
+       "n": 7,
+       "why": {
+        "bg": 7
+       },
+       "sample": {
+        "text": "",
+        "w": 40,
+        "h": 36
+       },
+       "clippedByRoundedAncestor": 7
+      },
+      {
+       "sig": "button.inline-flex.shrink-0.cursor-pointer",
+       "n": 6,
+       "why": {
+        "tag": 6
+       },
+       "sample": {
+        "text": "Smanji količinu",
+        "w": 44,
+        "h": 44,
+        "wrapperRadius": "6px"
+       },
+       "inRoundedWrapper": 2
+      },
+      {
+       "sig": "tr.bg-surface-2",
+       "n": 1,
+       "why": {
+        "bg": 1
+       },
+       "sample": {
+        "text": "UpotrebaUzorakOdnosPrag",
+        "w": 640,
+        "h": 36
+       },
+       "clippedByRoundedAncestor": 1
+      },
+      {
+       "sig": "textarea.min-h-24.w-full.resize-y",
+       "n": 1,
+       "why": {
+        "tag": 1
+       },
+       "sample": {
+        "text": "npr. vozilo je sa LED farovima",
+        "w": 332,
+        "h": 96,
+        "wrapperRadius": "6px"
+       },
+       "inRoundedWrapper": 1
+      },
+      {
+       "sig": "select.h-full.w-full.cursor-pointer",
+       "n": 1,
+       "why": {
+        "tag": 1
+       },
+       "sample": {
+        "text": "NajtraženijeCena: od najnižeCena: od naj",
+        "w": 356,
+        "h": 42,
+        "wrapperRadius": "6px"
+       },
+       "inRoundedWrapper": 1
+      },
+      {
+       "sig": "input.w-14.border-x.border-control",
+       "n": 1,
+       "why": {
+        "tag": 1
+       },
+       "sample": {
+        "text": "Količina",
+        "w": 56,
+        "h": 42,
+        "type": "number",
+        "wrapperRadius": "6px"
+       },
+       "inRoundedWrapper": 1,
+       "ownBorderSides": 2
+      },
+      {
+       "sig": "button.inline-flex.w-12.shrink-0",
+       "n": 1,
+       "why": {
+        "tag": 1
+       },
+       "sample": {
+        "text": "Ukloni izabrano vozilo",
+        "w": 48,
+        "h": 50,
+        "wrapperRadius": "6px"
+       },
+       "inRoundedWrapper": 1,
+       "ownBorderSides": 1
+      },
+      {
+       "sig": "button.relative.inline-flex.cursor-pointer",
+       "n": 1,
+       "why": {
+        "tag": 1
+       },
+       "sample": {
+        "text": "Golf VII · 2.0 TDI",
+        "w": 148,
+        "h": 38,
+        "testid": "vehicle-picker-trigger",
+        "wrapperRadius": "6px"
+       },
+       "inRoundedWrapper": 1
+      },
+      {
+       "sig": "button.relative.inline-flex.w-8",
+       "n": 1,
+       "why": {
+        "tag": 1
+       },
+       "sample": {
+        "text": "Ukloni izabrano vozilo",
+        "w": 32,
+        "h": 38,
+        "wrapperRadius": "6px"
+       },
+       "inRoundedWrapper": 1
+      },
+      {
+       "sig": "button.inline-flex.min-h-8.items-center",
+       "n": 1,
+       "why": {
+        "tag": 1
+       },
+       "sample": {
+        "text": "Podešavanja kolačića",
+        "w": 130,
+        "h": 32,
+        "testid": "consent-reopen"
+       }
+      }
+     ]
+    },
+    "radiusHistAll": {
+     "6px": 124,
+     "4px": 115,
+     "8px": 113,
+     "10px": 3,
+     "12px": 1,
+     "14px": 1,
+     "999px": 21
+    },
+    "radiusHistBoxes": {
+     "6px": 115,
+     "4px": 100,
+     "8px": 112,
+     "10px": 3,
+     "12px": 1,
+     "14px": 1,
+     "999px": 20
+    },
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "touch": {
+     "interactiveVisible": 143,
+     "count": 78,
+     "countEffective": 55,
+     "below24": 14,
+     "below24Effective": 7,
+     "inlineDisplay": 0,
+     "excludedInlineLinks": 1,
+     "excludedVisuallyHidden": 0,
+     "top": [
+      {
+       "sig": "button.relative.inline-flex.select-none",
+       "n": 14,
+       "nEffective": 14,
+       "minW": 51.7,
+       "minH": 36,
+       "sample": {
+        "text": "Pokreni sve",
+        "w": 125.7,
+        "h": 36,
+        "effW": 125.7,
+        "effH": 36,
+        "display": "flex"
+       }
+      },
+      {
+       "sig": "a.inline-flex.min-h-8.items-center",
+       "n": 12,
+       "nEffective": 12,
+       "minW": 48,
+       "minH": 32,
+       "sample": {
+        "text": "Svi delovi",
+        "w": 62.1,
+        "h": 32,
+        "effW": 62.1,
+        "effH": 32,
+        "display": "inline-flex"
+       }
+      },
+      {
+       "sig": "input.h-full.min-w-0.flex-1",
+       "n": 7,
+       "nEffective": 0,
+       "minW": 294.9,
+       "minH": 42,
+       "sample": {
+        "text": "npr. Marko Petrović",
+        "w": 332,
+        "h": 42,
+        "effW": 358,
+        "effH": 69.2,
+        "display": "block",
+        "borderedWrapper": "358x44"
+       }
+      },
+      {
+       "sig": "button.peer.mt-3.inline-flex",
+       "n": 7,
+       "nEffective": 0,
+       "minW": 20,
+       "minH": 20,
+       "sample": {
+        "text": "on",
+        "w": 20,
+        "h": 20,
+        "effW": 358,
+        "effH": 44,
+        "display": "flex"
+       }
+      },
+      {
+       "sig": "button.relative.inline-flex.shrink-0",
+       "n": 7,
+       "nEffective": 7,
+       "minW": 36,
+       "minH": 36,
+       "sample": {
+        "text": "Radnje za SK-2026-000187",
+        "w": 36,
+        "h": 36,
+        "effW": 36,
+        "effH": 36,
+        "display": "flex"
+       }
+      },
+      {
+       "sig": "button.inline-flex.size-5.shrink-0",
+       "n": 7,
+       "nEffective": 7,
+       "minW": 20,
+       "minH": 20,
+       "sample": {
+        "text": "Izaberi sve redove",
+        "w": 20,
+        "h": 20,
+        "effW": 20,
+        "effH": 20,
+        "display": "inline-flex"
+       }
+      },
+      {
+       "sig": "button.group.inline-flex.h-6",
+       "n": 6,
+       "nEffective": 0,
+       "minW": 44,
+       "minH": 24,
+       "sample": {
+        "text": "on",
+        "w": 44,
+        "h": 24,
+        "effW": 358,
+        "effH": 44,
+        "display": "flex"
+       }
+      },
+      {
+       "sig": "button.inline-flex.shrink-0.cursor-pointer",
+       "n": 5,
+       "nEffective": 5,
+       "minW": 31.4,
+       "minH": 36,
+       "sample": {
+        "text": "Opis",
+        "w": 31.4,
+        "h": 44,
+        "effW": 31.4,
+        "effH": 44,
+        "display": "flex"
+       }
+      },
+      {
+       "sig": "button.inline-flex.h-8.cursor-pointer",
+       "n": 4,
+       "nEffective": 4,
+       "minW": 46.1,
+       "minH": 32,
+       "sample": {
+        "text": "Broj",
+        "w": 46.1,
+        "h": 32,
+        "effW": 46.1,
+        "effH": 32,
+        "display": "inline-flex"
+       }
+      },
+      {
+       "sig": "a.inline-flex.items-center.gap-1.5",
+       "n": 2,
+       "nEffective": 2,
+       "minW": 118.9,
+       "minH": 24.8,
+       "sample": {
+        "text": "Pošaljite upit",
+        "w": 118.9,
+        "h": 24.8,
+        "effW": 118.9,
+        "effH": 24.8,
+        "display": "flex"
+       }
+      },
+      {
+       "sig": "a.text-ink-2.underline-offset-4.decoration-1",
+       "n": 1,
+       "nEffective": 1,
+       "minW": 70.5,
+       "minH": 24.8,
+       "sample": {
+        "text": "Svi delovi",
+        "w": 70.5,
+        "h": 24.8,
+        "effW": 70.5,
+        "effH": 24.8,
+        "display": "block"
+       }
+      },
+      {
+       "sig": "select.h-full.w-full.cursor-pointer",
+       "n": 1,
+       "nEffective": 0,
+       "minW": 356,
+       "minH": 42,
+       "sample": {
+        "text": "NajtraženijeCena: od najnižeCena: od naj",
+        "w": 356,
+        "h": 42,
+        "effW": 358,
+        "effH": 69.2,
+        "display": "block",
+        "borderedWrapper": "358x44"
+       }
+      },
+      {
+       "sig": "input.w-14.border-x.border-control",
+       "n": 1,
+       "nEffective": 1,
+       "minW": 56,
+       "minH": 42,
+       "sample": {
+        "text": "Količina",
+        "w": 56,
+        "h": 42,
+        "effW": 56,
+        "effH": 42,
+        "display": "block",
+        "borderedWrapper": "146x44"
+       }
+      },
+      {
+       "sig": "button.relative.inline-flex.cursor-pointer",
+       "n": 1,
+       "nEffective": 0,
+       "minW": 147.8,
+       "minH": 38,
+       "sample": {
+        "text": "Golf VII · 2.0 TDI",
+        "w": 147.8,
+        "h": 38,
+        "effW": 147.8,
+        "effH": 46,
+        "display": "flex",
+        "testid": "vehicle-picker-trigger",
+        "borderedWrapper": "181.8x40"
+       }
+      },
+      {
+       "sig": "button.relative.inline-flex.w-8",
+       "n": 1,
+       "nEffective": 0,
+       "minW": 32,
+       "minH": 38,
+       "sample": {
+        "text": "Ukloni izabrano vozilo",
+        "w": 32,
+        "h": 38,
+        "effW": 44,
+        "effH": 46,
+        "display": "flex",
+        "borderedWrapper": "181.8x40"
+       }
+      }
+     ]
+    },
+    "type": {
+     "textElements": 958,
+     "below12": 187,
+     "controlsBelow14": 9,
+     "fieldsBelow16": 0,
+     "fields": 11,
+     "below12Top": [
+      {
+       "sig": "span.type-code-s.text-ink-3",
+       "n": 83,
+       "fontSize": 11,
+       "sample": {
+        "text": "#0D0F11",
+        "w": 173,
+        "h": 14
+       }
+      },
+      {
+       "sig": "figcaption.type-code-s.normal-case.text-ink-3",
+       "n": 28,
+       "fontSize": 11,
+       "sample": {
+        "text": "variant=\"primary\"",
+        "w": 358,
+        "h": 14
+       }
+      },
+      {
+       "sig": "span.truncate.type-code-s.normal-case",
+       "n": 27,
+       "fontSize": 11,
+       "sample": {
+        "text": "MagnifyingGlass",
+        "w": 111,
+        "h": 14
+       }
+      },
+      {
+       "sig": "span.w-16.type-code-s.text-ink-3",
+       "n": 14,
+       "fontSize": 11,
+       "sample": {
+        "text": "0.5",
+        "w": 64,
+        "h": 14
+       }
+      },
+      {
+       "sig": "span.inline-flex.h-6.shrink-0",
+       "n": 13,
+       "fontSize": 11,
+       "sample": {
+        "text": "Nova",
+        "w": 69,
+        "h": 24
+       }
+      },
+      {
+       "sig": "span.font-ui.text-[max(0.5em,11px)].font-semibold",
+       "n": 4,
+       "fontSize": 11.0575,
+       "sample": {
+        "text": "RSD",
+        "w": 23,
+        "h": 11
+       }
+      },
+      {
+       "sig": "button.inline-flex.h-8.cursor-pointer",
+       "n": 4,
+       "fontSize": 11,
+       "sample": {
+        "text": "Broj",
+        "w": 46,
+        "h": 32
+       }
+      },
+      {
+       "sig": "h2.type-label.text-ink-3",
+       "n": 3,
+       "fontSize": 11,
+       "sample": {
+        "text": "Delovi",
+        "w": 358,
+        "h": 13
+       }
+      },
+      {
+       "sig": "th.px-3.text-right.type-label",
+       "n": 2,
+       "fontSize": 11,
+       "sample": {
+        "text": "Odnos",
+        "w": 86,
+        "h": 36
+       }
+      },
+      {
+       "sig": "span.type-label.text-ink-3",
+       "n": 2,
+       "fontSize": 11,
+       "sample": {
+        "text": "Noć",
+        "w": 308,
+        "h": 13
+       }
+      },
+      {
+       "sig": "span.absolute.right-0.5.top-0.5",
+       "n": 2,
+       "fontSize": 11,
+       "sample": {
+        "text": "3",
+        "w": 18,
+        "h": 18
+       }
+      },
+      {
+       "sig": "th.h-9.px-3.type-label",
+       "n": 1,
+       "fontSize": 11,
+       "sample": {
+        "text": "Upotreba",
+        "w": 360,
+        "h": 36
+       }
+      },
+      {
+       "sig": "th.px-3.type-label.text-ink-3",
+       "n": 1,
+       "fontSize": 11,
+       "sample": {
+        "text": "Uzorak",
+        "w": 129,
+        "h": 36
+       }
+      },
+      {
+       "sig": "span.type-label.text-ink-1",
+       "n": 1,
+       "fontSize": 11,
+       "sample": {
+        "text": "Status porudžbine",
+        "w": 358,
+        "h": 13
+       }
+      },
+      {
+       "sig": "span.type-code-s.text-ink-1",
+       "n": 1,
+       "fontSize": 11,
+       "sample": {
+        "text": "Ø 312 · 4280 mm",
+        "w": 358,
+        "h": 14
+       }
+      }
+     ],
+     "controlsBelow14Top": [
+      {
+       "sig": "button.inline-flex.h-8.cursor-pointer",
+       "n": 4,
+       "fontSize": 11,
+       "sample": {
+        "text": "Broj",
+        "w": 46,
+        "h": 32
+       }
+      },
+      {
+       "sig": "span.absolute.right-0.5.top-0.5",
+       "n": 2,
+       "fontSize": 11,
+       "sample": {
+        "text": "3",
+        "w": 18,
+        "h": 18
+       }
+      },
+      {
+       "sig": "kbd.inline-flex.h-5.min-w-5",
+       "n": 1,
+       "fontSize": 12,
+       "sample": {
+        "text": "/",
+        "w": 20,
+        "h": 20
+       }
+      },
+      {
+       "sig": "span.truncate.type-caption.font-normal",
+       "n": 1,
+       "fontSize": 13,
+       "sample": {
+        "text": "marka, model, motor",
+        "w": 272,
+        "h": 18
+       }
+      },
+      {
+       "sig": "button.inline-flex.min-h-8.items-center",
+       "n": 1,
+       "fontSize": 13,
+       "sample": {
+        "text": "Podešavanja kolačića",
+        "w": 130,
+        "h": 32
+       }
+      }
+     ],
+     "fieldsBelow16Top": [],
+     "fontSizeHist": {
+      "14px": 269,
+      "12px": 76,
+      "36.55px": 5,
+      "18.05px": 88,
+      "28.33px": 13,
+      "16px": 34,
+      "13px": 218,
+      "11px": 184,
+      "20.17px": 1,
+      "40.67px": 1,
+      "30.28px": 2,
+      "22.11px": 4,
+      "26.28px": 1,
+      "22.17px": 1,
+      "15px": 39,
+      "11.06px": 3,
+      "15.14px": 1,
+      "13.5px": 18
+     }
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 900,
+     "atBottom": [],
+     "all": [
+      {
+       "sig": "a.fixed.left-3.top-3",
+       "position": "fixed",
+       "visibility": "visible",
+       "testid": "skip-link",
+       "w": 168,
+       "h": 39,
+       "top": -66,
+       "bottom": -27,
+       "shownInViewport": false,
+       "atBottom": false,
+       "opacity": "1",
+       "transform": "none",
+       "inert": false,
+       "text": "Preskoči na sadržaj"
+      }
+     ],
+     "headerRectTopAfterDown": -8,
+     "headerRectTopAfterUp": -8
+    },
+    "tree": {
+     "before": "2026-10-11T17:06:38.362Z",
+     "after": "2026-10-11T17:06:38.362Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   }
+  },
+  "1440": {
+   "/": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1449
+    },
+    "url": "/",
+    "title": "",
+    "consoleErrors": [
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB"
+    ],
+    "consoleErrorCount": 22,
+    "viewport": {
+     "clientWidth": 1440,
+     "innerWidth": 1440,
+     "innerHeight": 900
+    },
+    "scrollHeight": 900,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": null,
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/delovi": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1198
+    },
+    "url": "/delovi",
+    "title": "",
+    "consoleErrors": [
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB"
+    ],
+    "consoleErrorCount": 22,
+    "viewport": {
+     "clientWidth": 1440,
+     "innerWidth": 1440,
+     "innerHeight": 900
+    },
+    "scrollHeight": 900,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/delovi/kocioni-diskovi": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1124
+    },
+    "url": "/delovi/kocioni-diskovi",
+    "title": "",
+    "consoleErrors": [
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB"
+    ],
+    "consoleErrorCount": 21,
+    "viewport": {
+     "clientWidth": 1440,
+     "innerWidth": 1440,
+     "innerHeight": 900
+    },
+    "scrollHeight": 900,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/deo/kocioni-disk-prednji-312-25-mm-demo-0007": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1222
+    },
+    "url": "/deo/kocioni-disk-prednji-312-25-mm-demo-0007",
+    "title": "",
+    "consoleErrors": [
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB"
+    ],
+    "consoleErrorCount": 21,
+    "viewport": {
+     "clientWidth": 1440,
+     "innerWidth": 1440,
+     "innerHeight": 900
+    },
+    "scrollHeight": 900,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": {
+     "buyBox": false,
+     "bar": false
+    },
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/pretraga?q=disk": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1399
+    },
+    "url": "/pretraga?q=disk",
+    "title": "",
+    "consoleErrors": [
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB"
+    ],
+    "consoleErrorCount": 22,
+    "viewport": {
+     "clientWidth": 1440,
+     "innerWidth": 1440,
+     "innerHeight": 900
+    },
+    "scrollHeight": 900,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/upit": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1255
+    },
+    "url": "/upit",
+    "title": "",
+    "consoleErrors": [
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled."
+    ],
+    "consoleErrorCount": 24,
+    "viewport": {
+     "clientWidth": 1440,
+     "innerWidth": 1440,
+     "innerHeight": 900
+    },
+    "scrollHeight": 900,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/za-majstore": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1546
+    },
+    "url": "/za-majstore",
+    "title": "",
+    "consoleErrors": [
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB"
+    ],
+    "consoleErrorCount": 22,
+    "viewport": {
+     "clientWidth": 1440,
+     "innerWidth": 1440,
+     "innerHeight": 900
+    },
+    "scrollHeight": 900,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/korpa": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1081
+    },
+    "url": "/korpa",
+    "title": "",
+    "consoleErrors": [
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB"
+    ],
+    "consoleErrorCount": 21,
+    "viewport": {
+     "clientWidth": 1440,
+     "innerWidth": 1440,
+     "innerHeight": 900
+    },
+    "scrollHeight": 900,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/kontakt": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1310
+    },
+    "url": "/kontakt",
+    "title": "",
+    "consoleErrors": [
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC"
+    ],
+    "consoleErrorCount": 23,
+    "viewport": {
+     "clientWidth": 1440,
+     "innerWidth": 1440,
+     "innerHeight": 900
+    },
+    "scrollHeight": 900,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/prijava": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1383
+    },
+    "url": "/prijava",
+    "title": "",
+    "consoleErrors": [
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB"
+    ],
+    "consoleErrorCount": 22,
+    "viewport": {
+     "clientWidth": 1440,
+     "innerWidth": 1440,
+     "innerHeight": 900
+    },
+    "scrollHeight": 900,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   },
+   "/styleguide": {
+    "nav": {
+     "note": "status 500",
+     "ms": 1183
+    },
+    "url": "/styleguide",
+    "title": "",
+    "consoleErrors": [
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB",
+     "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+     "Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled.",
+     "pageerror: Error: ./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyC",
+     "./components/shell/ShopChrome.tsx:27:9\nError: Module not found: Can't resolve '@/components/shell/StickyContactBar'\n  25 | const CartDrawer = dynamic(() => loadDrawer().then((m) => m.CartDrawer), { ssr: false });\n  26 | const StickyContactB"
+    ],
+    "consoleErrorCount": 22,
+    "viewport": {
+     "clientWidth": 1440,
+     "innerWidth": 1440,
+     "innerHeight": 900
+    },
+    "scrollHeight": 900,
+    "domElements": 3,
+    "visibleElements": 1,
+    "overflowX": 0,
+    "revealPending": 0,
+    "revealWordsLeft": 0,
+    "sharp": {
+     "count": 0,
+     "boxes": {
+      "total": 0,
+      "square": 0,
+      "rounded": 0
+     },
+     "reasons": {
+      "border": 0,
+      "background": 0,
+      "tagOnly": 0
+     },
+     "drawn": {
+      "total": 0,
+      "clippedByRoundedAncestor": 0
+     },
+     "tagOnly": {
+      "total": 0,
+      "inRoundedWrapper": 0,
+      "ownPaint": 0,
+      "bare": 0
+     },
+     "excluded": {
+      "tiny": 0,
+      "fullBleed": 0,
+      "fixedEdge": 0,
+      "fixedOffscreenSubtrees": 0
+     },
+     "distinctSignatures": 0,
+     "top": []
+    },
+    "radiusHistAll": {},
+    "radiusHistBoxes": {},
+    "contactLinks": {
+     "tel": 0,
+     "viber": 0,
+     "mailto": 0
+    },
+    "fixedAtPageBottom": [],
+    "buyBar": null,
+    "fixedCheck": {
+     "scrollY": 0,
+     "atBottom": [],
+     "all": [],
+     "headerRectTopAfterDown": null,
+     "headerRectTopAfterUp": null
+    },
+    "tree": {
+     "before": "2026-10-11T17:00:33.103Z",
+     "after": "2026-10-11T17:00:33.103Z",
+     "newestFile": "app/(shop)/layout.tsx",
+     "attempts": 1,
+     "changedDuringMeasure": false
+    }
+   }
+  }
+ },
+ "radiusHistogram": {
+  "390": {
+   "allVisibleElements": {
+    "6px": 138,
+    "4px": 116,
+    "8px": 113,
+    "999px": 21,
+    "10px": 3,
+    "12px": 1,
+    "14px": 1
+   },
+   "visibleBoxes": {
+    "6px": 122,
+    "8px": 112,
+    "4px": 101,
+    "999px": 20,
+    "10px": 3,
+    "12px": 1,
+    "14px": 1
+   },
+   "visibleBoxesTopSignatures": {
+    "6px": [
+     {
+      "sig": "button.relative.inline-flex.select-none",
+      "n": 50
+     },
+     {
+      "sig": "button.relative.inline-flex.shrink-0",
+      "n": 18
+     },
+     {
+      "sig": "span.flex.h-12.items-center",
+      "n": 16
+     },
+     {
+      "sig": "div.flex.w-full.items-center",
+      "n": 12
+     },
+     {
+      "sig": "div.relative.h-8.rounded-sm",
+      "n": 4
+     },
+     {
+      "sig": "button.inline-flex.h-8.cursor-pointer",
+      "n": 4
+     },
+     {
+      "sig": "button.flex.h-11.min-w-0",
+      "n": 2
+     },
+     {
+      "sig": "button.relative.flex.min-w-0",
+      "n": 2
+     },
+     {
+      "sig": "button.inline-flex.min-h-11.min-w-11",
+      "n": 2
+     },
+     {
+      "sig": "span.skeleton.block.h-3.5",
+      "n": 2
+     }
+    ],
+    "4px": [
+     {
+      "sig": "span.inline-flex.h-7.items-center",
+      "n": 43
+     },
+     {
+      "sig": "span.inline-flex.h-6.shrink-0",
+      "n": 14
+     },
+     {
+      "sig": "li.inline-flex.h-8.items-center",
+      "n": 10
+     },
+     {
+      "sig": "button.inline-flex.size-5.shrink-0",
+      "n": 7
+     },
+     {
+      "sig": "span.inline-flex.h-7.w-24",
+      "n": 6
+     },
+     {
+      "sig": "kbd.inline-flex.h-5.min-w-5",
+      "n": 4
+     },
+     {
+      "sig": "span.absolute.left-0.top-1/2",
+      "n": 4
+     },
+     {
+      "sig": "button.peer.mt-3.inline-flex",
+      "n": 4
+     },
+     {
+      "sig": "span.inline-flex.items-center.gap-1.5",
+      "n": 4
+     },
+     {
+      "sig": "button.inline-flex.shrink-0.cursor-pointer",
+      "n": 4
+     }
+    ],
+    "8px": [
+     {
+      "sig": "span.block.h-16.rounded-md",
+      "n": 57
+     },
+     {
+      "sig": "li.flex.items-center.gap-3",
+      "n": 27
+     },
+     {
+      "sig": "li.flex.flex-col.gap-1",
+      "n": 8
+     },
+     {
+      "sig": "div.flex.aspect-[4/3].items-center",
+      "n": 2
+     },
+     {
+      "sig": "div.panel.p-4.type-body-s",
+      "n": 2
+     },
+     {
+      "sig": "div.panel-raised.p-4.type-body-s",
+      "n": 2
+     },
+     {
+      "sig": "div.rounded-md.border.border-edge-overlay",
+      "n": 2
+     },
+     {
+      "sig": "div.flex.justify-center.overflow-hidden",
+      "n": 1
+     },
+     {
+      "sig": "div.rounded-md.p-5",
+      "n": 1
+     },
+     {
+      "sig": "div.overflow-x-auto.rounded-md.border",
+      "n": 1
+     }
+    ],
+    "10px": [
+     {
+      "sig": "div.flex.flex-col.gap-4",
+      "n": 2
+     },
+     {
+      "sig": "span.block.h-16.border",
+      "n": 1
+     }
+    ],
+    "12px": [
+     {
+      "sig": "span.block.h-16.border",
+      "n": 1
+     }
+    ],
+    "14px": [
+     {
+      "sig": "span.block.h-16.border",
+      "n": 1
+     }
+    ],
+    "999px": [
+     {
+      "sig": "button.group.inline-flex.h-6",
+      "n": 6
+     },
+     {
+      "sig": "span.block.size-4.5.rounded-full",
+      "n": 6
+     },
+     {
+      "sig": "button.peer.mt-3.inline-flex",
+      "n": 3
+     },
+     {
+      "sig": "span.absolute.right-0.5.top-0.5",
+      "n": 2
+     },
+     {
+      "sig": "span.inline-flex.h-5.min-w-5",
+      "n": 2
+     },
+     {
+      "sig": "span.block.h-16.border",
+      "n": 1
+     }
+    ]
+   }
+  },
+  "1440": {
+   "allVisibleElements": {},
+   "visibleBoxes": {},
+   "visibleBoxesTopSignatures": {}
+  }
+ }
+}

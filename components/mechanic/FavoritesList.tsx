@@ -65,7 +65,7 @@ function Row({ fav }: { fav: Favorite }) {
         categorySlug={card.categorySlug}
         alt=""
         sizes="104px"
-        className="aspect-square w-full rounded-xs"
+        className="aspect-square w-full rounded-sm"
       />
       <div className="flex min-w-0 flex-col gap-1.5">
         <RouteLink

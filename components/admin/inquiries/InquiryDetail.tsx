@@ -268,7 +268,7 @@ function InquiryView({ data }: { data: Detail }) {
                           href={p.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="group relative block aspect-square overflow-hidden rounded-sm border border-line bg-surface-2"
+                          className="group relative block aspect-square overflow-hidden rounded-md border border-line bg-surface-2"
                         >
                           {/* eslint-disable-next-line @next/next/no-img-element -- signed Convex storage URL, shown at thumbnail size */}
                           <img
@@ -326,7 +326,7 @@ function InquiryView({ data }: { data: Detail }) {
             <Section title="Ponude">
               <ol className="flex flex-col gap-4">
                 {data.quotes.map((q) => (
-                  <li key={q._id} className="rounded-sm border border-line">
+                  <li key={q._id} className="rounded-md border border-line">
                     <div className="flex flex-wrap items-center justify-between gap-2 border-b border-line-faint bg-surface-2 px-3 py-2 type-body-s">
                       <span className="font-semibold">Verzija {q.version}</span>
                       <span className="text-ink-2">
@@ -583,7 +583,7 @@ function QuoteShareLink({
           : "Kupac nema e-poštu i ponuda mu nije stigla sama. Pošaljite mu link ponude:"}
       </p>
       <div className="flex items-start gap-2">
-        <p className="min-w-0 flex-1 break-all rounded-sm border border-line bg-surface-2 px-3 py-2 type-code">
+        <p className="min-w-0 flex-1 break-all rounded-md border border-line bg-surface-2 px-3 py-2 type-code">
           {link}
         </p>
         <CopyButton value={link} label="Kopiraj link" toastMessage="Link je kopiran." />

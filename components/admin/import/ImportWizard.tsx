@@ -363,14 +363,14 @@ export function ImportWizard() {
               href={ADMIN.importTemplate}
               download
               data-testid="import-template"
-              className="inline-flex h-11 items-center gap-2 rounded-xs border border-control px-4 type-body-s text-ink-1 transition-control hover:bg-surface-2 focus-ring"
+              className="inline-flex h-11 items-center gap-2 rounded-sm border border-control px-4 type-body-s text-ink-1 transition-control hover:bg-surface-2 focus-ring"
             >
               <DownloadSimpleIcon size={18} aria-hidden="true" />
               Šablon (.xlsx)
             </a>
             <RouteLink
               href={ADMIN.importHistory}
-              className="inline-flex h-11 items-center gap-2 rounded-xs px-4 type-body-s text-ink-1 transition-control hover:bg-surface-2 focus-ring"
+              className="inline-flex h-11 items-center gap-2 rounded-sm px-4 type-body-s text-ink-1 transition-control hover:bg-surface-2 focus-ring"
             >
               <ClockCounterClockwiseIcon size={18} aria-hidden="true" />
               Istorija

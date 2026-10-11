@@ -686,7 +686,7 @@ function HoursTab({ s, can }: { s: Settings; can: boolean }) {
                       disabled={h.closed || !can}
                       value={h.open}
                       onChange={(e) => setDay(h.day, { open: e.target.value })}
-                      className="h-9 rounded-xs border border-control bg-surface-1 px-2 tabular-nums disabled:opacity-50"
+                      className="h-9 rounded-sm border border-control bg-surface-1 px-2 tabular-nums disabled:opacity-50"
                     />
                     <span aria-hidden="true">–</span>
                     <input
@@ -695,7 +695,7 @@ function HoursTab({ s, can }: { s: Settings; can: boolean }) {
                       disabled={h.closed || !can}
                       value={h.close}
                       onChange={(e) => setDay(h.day, { close: e.target.value })}
-                      className="h-9 rounded-xs border border-control bg-surface-1 px-2 tabular-nums disabled:opacity-50"
+                      className="h-9 rounded-sm border border-control bg-surface-1 px-2 tabular-nums disabled:opacity-50"
                     />
                   </span>
                 </td>
@@ -935,7 +935,7 @@ function CommerceTab({ s, can }: { s: Settings; can: boolean }) {
             return (
               <div
                 key={d.code}
-                className="grid gap-3 rounded-sm border border-line p-3 md:grid-cols-[minmax(0,1fr)_9rem_9rem_auto]"
+                className="grid gap-3 rounded-md border border-line p-3 md:grid-cols-[minmax(0,1fr)_9rem_9rem_auto]"
               >
                 <Field label="Naziv">
                   <Input
@@ -1012,7 +1012,7 @@ function CommerceTab({ s, can }: { s: Settings; can: boolean }) {
             return (
               <div
                 key={p.code}
-                className="grid gap-3 rounded-sm border border-line p-3 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)_auto]"
+                className="grid gap-3 rounded-md border border-line p-3 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)_auto]"
               >
                 <Field label="Naziv">
                   <Input
@@ -1224,7 +1224,7 @@ function EmailDeliveryGroup({ s, can }: { s: Settings; can: boolean }) {
               <label
                 key={mode}
                 className={cn(
-                  "flex cursor-pointer items-start gap-3 rounded-sm border px-3 py-2.5",
+                  "flex cursor-pointer items-start gap-3 rounded-md border px-3 py-2.5",
                   d.mode === mode ? "border-accent bg-accent-subtle" : "border-line",
                   blocked && d.mode !== mode && "opacity-70",
                 )}
@@ -1714,7 +1714,7 @@ function PageEditor({
           <div className="flex flex-col gap-1">
             <p className="type-caption font-medium text-ink-2">Pregled</p>
             <div
-              className="max-h-[36rem] overflow-y-auto rounded-sm border border-line bg-surface-1 p-4"
+              className="max-h-[36rem] overflow-y-auto panel p-4"
               aria-label="Pregled stranice"
             >
               <Markdown source={preview} />

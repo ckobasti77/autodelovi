@@ -149,7 +149,7 @@ function Line({ line, compact }: { line: CartLine; compact: boolean }) {
         categorySlug={p?.categorySlug ?? ""}
         alt=""
         sizes="80px"
-        className={cn("rounded-xs", compact ? "size-16" : "size-16 sm:size-20")}
+        className={cn("rounded-sm", compact ? "size-16" : "size-16 sm:size-20")}
       />
       <div className="flex min-w-0 flex-col gap-1">
         {p ? (

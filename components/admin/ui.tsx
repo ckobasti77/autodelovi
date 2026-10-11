@@ -91,7 +91,7 @@ export function Section({
       id={id}
       aria-labelledby={title && id ? `${id}-title` : undefined}
       // min-w-0: a section is usually a grid/flex item; its truncating rows must not widen it.
-      className={cn("min-w-0", panel && "rounded-sm border border-line bg-surface-1", className)}
+      className={cn("min-w-0", panel && "panel", className)}
     >
       {title || actions ? (
         <div
@@ -237,7 +237,7 @@ export function SegmentedFilter<T extends string>({
       aria-label={label}
       className="scroll-fade-x -mx-1 flex max-w-full overflow-x-auto px-1"
     >
-      <div className="flex gap-1 rounded-sm border border-line bg-surface-2 p-0.5">
+      <div className="flex gap-1 rounded-md border border-line bg-surface-2 p-0.5">
         {options.map((o) => {
           const active = o.value === value;
           return (
@@ -247,7 +247,7 @@ export function SegmentedFilter<T extends string>({
               aria-pressed={active}
               onClick={() => onChange(o.value)}
               className={cn(
-                "inline-flex h-8 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-xs px-3 type-body-s transition-control focus-ring-inset",
+                "inline-flex h-8 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-sm px-3 type-body-s transition-control focus-ring-inset",
                 active
                   ? "bg-surface-1 font-semibold text-ink-1 shadow-[0_1px_2px_rgb(18_21_24/0.12)]"
                   : "text-ink-2 hover:text-ink-1",
@@ -284,7 +284,7 @@ export function SearchField({
   return (
     <label
       className={cn(
-        "flex h-9 w-full items-center gap-2 rounded-xs border border-control bg-surface-1 px-3 transition-control hover:border-ink-3 focus-within:border-focus focus-within:shadow-[inset_0_0_0_1px_var(--color-focus)] sm:w-[280px]",
+        "flex h-9 w-full items-center gap-2 rounded-sm border border-control bg-surface-1 px-3 transition-control hover:border-ink-3 focus-within:border-focus focus-within:shadow-[inset_0_0_0_1px_var(--color-focus)] sm:w-[280px]",
         className,
       )}
     >
@@ -345,7 +345,7 @@ export function ErrorBanner({ children, onRetry }: { children: ReactNode; onRetr
   return (
     <div
       role="alert"
-      className="flex items-start gap-3 rounded-sm border border-danger bg-danger-subtle px-4 py-3 type-body-s text-danger"
+      className="flex items-start gap-3 rounded-md border border-danger bg-danger-subtle px-4 py-3 type-body-s text-danger"
     >
       <WarningIcon size={18} className="mt-0.5 shrink-0" aria-hidden="true" />
       <div className="flex-1">{children}</div>
@@ -420,7 +420,7 @@ export function CompanySetupNotice({
   return (
     <div
       className={cn(
-        "flex items-start gap-3 rounded-sm border border-warning bg-warning-subtle px-4 py-3 type-body-s text-ink-1",
+        "flex items-start gap-3 rounded-md border border-warning bg-warning-subtle px-4 py-3 type-body-s text-ink-1",
         className,
       )}
     >

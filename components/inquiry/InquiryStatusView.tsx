@@ -115,7 +115,7 @@ function AcceptErrorSummary({ errors, attempt }: { errors: AcceptErrors; attempt
       role="alert"
       data-reveal="off"
       data-testid="quote-accept-errors"
-      className="rounded-sm border border-danger bg-danger-subtle p-4 outline-none"
+      className="rounded-md border border-danger bg-danger-subtle p-4 outline-none"
     >
       <p className="flex items-center gap-2 type-body-s font-semibold text-danger">
         <WarningCircleIcon size={18} aria-hidden="true" />
@@ -271,7 +271,7 @@ function AcceptForm({
     <form
       onSubmit={onSubmit}
       noValidate
-      className="flex flex-col gap-5 rounded-sm border border-line bg-surface-1 p-5"
+      className="flex flex-col gap-5 panel p-5"
       data-reveal="off"
     >
       <h3 className="type-h4 text-ink-1">Podaci za porudžbinu</h3>
@@ -564,7 +564,7 @@ export function InquiryStatusView({
               <AcceptForm token={token} inquiry={i} config={config} />
             ) : null}
             {open && mode === "decline" ? (
-              <div className="flex flex-col gap-3 rounded-sm border border-line bg-surface-1 p-5">
+              <div className="flex flex-col gap-3 panel p-5">
                 <Field label="Razlog" optional>
                   <Textarea
                     rows={3}
@@ -621,7 +621,7 @@ export function InquiryStatusView({
             ) : null}
           </section>
         ) : (
-          <section className="rounded-sm border border-line bg-surface-1 p-5">
+          <section className="panel p-5">
             <h2 className="type-h4 text-ink-1">Ponuda još nije spremna</h2>
             <p className="mt-2 type-body-s text-ink-2">
               Proveravamo kod dobavljača. Odgovor stiže kanalom koji ste izabrali (
@@ -635,7 +635,7 @@ export function InquiryStatusView({
         ) : null}
       </div>
       <aside className="flex flex-col gap-6 lg:col-span-5">
-        <section className="rounded-sm border border-line bg-surface-1 p-5">
+        <section className="panel p-5">
           <h2 className="type-h4 text-ink-1">Vaš upit</h2>
           {i.vehicleLabel ? <p className="mt-2 type-body-s text-ink-2">{i.vehicleLabel}</p> : null}
           {i.vin ? <p className="mt-1 type-code text-ink-1">{i.vin}</p> : null}

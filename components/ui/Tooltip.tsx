@@ -33,7 +33,7 @@ function TooltipBody({ children, side }: { children: ReactNode; side: TooltipPro
       side={side}
       sideOffset={6}
       collisionPadding={8}
-      className="z-tooltip max-w-60 rounded-xs border border-edge-overlay bg-surface-3 px-2 py-1.5 type-caption-s text-ink-1 shadow-overlay"
+      className="z-tooltip max-w-60 rounded-sm border border-edge-overlay bg-surface-3 px-2 py-1.5 type-caption-s text-ink-1 shadow-overlay"
     >
       {children}
     </TooltipPrimitive.Content>

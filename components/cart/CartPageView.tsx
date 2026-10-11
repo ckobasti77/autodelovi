@@ -94,7 +94,7 @@ export function CartPageView({ delivery }: { delivery: DeliveryInfo }) {
         <CartLines cart={cart} />
       </div>
       <aside aria-label="Ukupno" className="lg:col-span-4">
-        <div className="flex flex-col gap-5 rounded-sm border border-line bg-surface-1 p-5 lg:sticky lg:top-[calc(var(--header-h)+1.5rem)]">
+        <div className="flex flex-col gap-5 panel p-5 lg:sticky lg:top-[calc(var(--header-h)+1.5rem)]">
           <CartSummary cart={cart} delivery={delivery} />
           {isDesktop ? <CheckoutButton /> : null}
           <p className="type-caption font-normal text-ink-3">

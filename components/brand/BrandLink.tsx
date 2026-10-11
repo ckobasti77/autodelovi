@@ -54,7 +54,7 @@ export function BrandLink({
       href={href}
       aria-label={label}
       className={cn(
-        "inline-flex min-h-11 min-w-11 shrink-0 items-center rounded-xs text-ink-1",
+        "inline-flex min-h-11 min-w-11 shrink-0 items-center rounded-sm text-ink-1",
         // The mark alone is centred in its 44 px target; a lockup starts at the bar's edge.
         compact === "always" ? "justify-center" : "justify-start",
         className,

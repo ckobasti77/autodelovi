@@ -472,7 +472,7 @@ function TierEditor({
               options={manOptions}
             />
           </Field>
-          <div className="mt-2 rounded-sm bg-surface-2 p-3" aria-live="polite">
+          <div className="mt-2 rounded-md bg-surface-2 p-3" aria-live="polite">
             <p className="type-caption text-ink-3">
               {tier ? tier.name : "Novi razred"} (sa izmenama)
             </p>

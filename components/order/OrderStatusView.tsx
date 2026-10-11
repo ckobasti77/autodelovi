@@ -115,7 +115,7 @@ export function OrderStatusView({
         </section>
       </div>
       <aside className="flex flex-col gap-6 lg:col-span-5">
-        <section className="rounded-sm border border-line bg-surface-1 p-5">
+        <section className="panel p-5">
           <h2 className="type-h4 text-ink-1">Dostava</h2>
           <p className="mt-2 type-body-s text-ink-2">
             {DELIVERY_LABEL[o.delivery.method]}
@@ -137,7 +137,7 @@ export function OrderStatusView({
             </p>
           ) : null}
         </section>
-        <section className="rounded-sm border border-line bg-surface-1 p-5">
+        <section className="panel p-5">
           <h2 className="type-h4 text-ink-1">Plaćanje</h2>
           <p className="mt-2 type-body-s text-ink-2">
             {PAYMENT_LABEL[o.payment.method]}
@@ -156,7 +156,7 @@ export function OrderStatusView({
           ) : null}
         </section>
         <OrderNotices order={o} />
-        <section className="rounded-sm border border-line bg-surface-1 p-5">
+        <section className="panel p-5">
           <h2 className="type-h4 text-ink-1">Kupac</h2>
           <p className="mt-2 type-body-s text-ink-2">
             {o.contact.firstName} {o.contact.lastName}
@@ -188,7 +188,7 @@ function OrderNotices({ order }: { order: OrderView }) {
     .reverse();
   return (
     <section
-      className="rounded-sm border border-line bg-surface-1 p-5"
+      className="panel p-5"
       aria-labelledby="notices-title"
       data-testid="order-notices"
     >

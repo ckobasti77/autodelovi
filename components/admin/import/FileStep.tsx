@@ -57,7 +57,7 @@ export function FileDrop({
           if (file) onFile(file);
         }}
         className={cn(
-          "flex min-h-60 flex-col items-center justify-center gap-4 rounded-sm border-2 border-dashed px-6 py-10 text-center transition-control",
+          "flex min-h-60 flex-col items-center justify-center gap-4 rounded-md border-2 border-dashed px-6 py-10 text-center transition-control",
           over ? "border-accent bg-accent-subtle" : "border-line-strong bg-surface-1",
         )}
       >
@@ -194,7 +194,7 @@ export function SheetPreview({
             </div>
           ) : null}
         </div>
-        <div className="mt-4 overflow-x-auto rounded-xs border border-line-faint">
+        <div className="mt-4 overflow-x-auto rounded-md border border-line-faint">
           <table className="w-full border-collapse type-caption">
             <caption className="sr-only">Prvi redovi fajla</caption>
             <thead>

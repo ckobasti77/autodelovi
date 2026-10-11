@@ -84,7 +84,7 @@ export default async function CheckoutPage() {
       </p>
       <div className="mt-8">
         {guestBlocked ? (
-          <div className="flex flex-col items-start gap-4 rounded-sm border border-line bg-surface-1 p-6">
+          <div className="flex flex-col items-start gap-4 panel p-6">
             <p className="type-body text-ink-2">
               Prijavite se da biste poručili. Korpa ostaje sačuvana.
             </p>

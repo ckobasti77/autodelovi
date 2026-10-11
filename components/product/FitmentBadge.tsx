@@ -50,7 +50,7 @@ export function FitmentBadge({
 }) {
   const vehicle = useSelectedVehicle();
   const verdictId = useId();
-  const base = cn("flex items-start gap-2 rounded-xs px-3 py-2.5 type-body-s", className);
+  const base = cn("flex items-start gap-2 rounded-sm px-3 py-2.5 type-body-s", className);
   if (!vehicle) {
     return (
       <button

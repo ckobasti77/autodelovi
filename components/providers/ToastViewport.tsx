@@ -73,7 +73,7 @@ function ToastItem({ record }: { record: ToastRecord }) {
       duration={record.duration ?? (isError ? Number.POSITIVE_INFINITY : DEFAULT_DURATION)}
       type={isError ? "foreground" : "background"}
       className={cn(
-        "pointer-events-auto flex w-full max-w-[360px] items-start gap-3 rounded-sm border border-edge-overlay bg-surface-3 py-3 pl-4 pr-2 text-ink-1 shadow-overlay",
+        "pointer-events-auto flex w-full max-w-[360px] items-start gap-3 rounded-md border border-edge-overlay bg-surface-3 py-3 pl-4 pr-2 text-ink-1 shadow-overlay",
         "data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:translate-y-[var(--radix-toast-swipe-move-y)]",
         "data-[swipe=cancel]:translate-x-0 data-[swipe=cancel]:translate-y-0 data-[swipe=cancel]:transition-transform",
         "data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=end]:translate-y-[var(--radix-toast-swipe-end-y)]",
@@ -131,7 +131,8 @@ export function ToastViewport() {
         label="Obaveštenja ({hotkey})"
         className={cn(
           "pointer-events-none fixed z-toast flex flex-col gap-2 outline-none",
-          "inset-x-4 bottom-[max(1rem,env(safe-area-inset-bottom))] items-center",
+          // Above the mobile action bar (its height already includes the safe area).
+          "inset-x-4 bottom-[max(1rem,env(safe-area-inset-bottom),calc(var(--bottom-bar-h)+0.75rem))] items-center",
           "lg:inset-x-auto lg:bottom-6 lg:right-6 lg:w-[360px]",
         )}
         data-reveal="off"

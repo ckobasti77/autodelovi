@@ -115,7 +115,7 @@ export default async function VehicleModelPage({ params }: PageProps<"/vozila/[m
           <li key={g.slug}>
             <RouteLink
               href={ROUTES.vehicleGeneration(marka, model, g.slug)}
-              className="flex h-full flex-col gap-2 rounded-sm border border-line bg-surface-1 p-4 transition-control hover:border-line-strong focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus"
+              className="flex h-full flex-col gap-2 panel p-4 transition-control hover:border-line-strong focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus"
             >
               <span className="type-h3 text-ink-1">{g.name}</span>
               <span className="type-body-s tabular-nums text-ink-2">

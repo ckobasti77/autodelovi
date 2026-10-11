@@ -45,7 +45,7 @@ async function load(marka: string, model: string, generacija: string, motor: str
 }
 
 const ENGINE_CHIP =
-  "flex h-full min-h-14 flex-col justify-center gap-0.5 rounded-xs border border-line-strong px-3 py-2 text-ink-1 transition-control hover:border-ink-3 aria-[current]:border-accent aria-[current]:bg-accent-subtle";
+  "flex h-full min-h-14 flex-col justify-center gap-0.5 rounded-sm border border-line-strong px-3 py-2 text-ink-1 transition-control hover:border-ink-3 aria-[current]:border-accent aria-[current]:bg-accent-subtle";
 
 function motorParam(value: string | string[] | undefined): string | undefined {
   const v = Array.isArray(value) ? value[0] : value;

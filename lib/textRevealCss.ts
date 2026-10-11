@@ -1,14 +1,18 @@
 /**
- * Builds the text-reveal stylesheet and boot script from constants/textRevealConfig.ts.
- * The root layout inlines both in <head>, so copy is hidden before first paint only when
- * the boot script has run (html.tr-js) — and only for elements the observer will reveal.
+ * Builds the reveal stylesheet and boot script from constants/textRevealConfig.ts (copy) and
+ * constants/revealConfig.ts (blocks). The root layout inlines both in <head>, so content is
+ * hidden before first paint only when the boot script has run (html.tr-js) — and only for
+ * elements the engine will reveal.
  *
- * Two hiding rules:
- * - boot (`html.tr-hide`): the shared `hiddenSelector` (uses `:has()`), for server HTML before
- *   TextRevealGlobal has marked it; dropped once every element carries an explicit state;
- * - runtime: `[data-reveal-state="pending"]` — a plain attribute match.
- * The word and block animations are CSS keyframes; JS only sets `--i`/`--n` and the state.
+ * Hiding rules:
+ * - copy, boot (`html.tr-hide`): the shared `hiddenSelector` (uses `:has()`), for server HTML
+ *   before TextRevealGlobal has marked it; dropped once every element carries an explicit state;
+ * - blocks, boot: `blockHiddenSelector` without a state — a plain attribute selector, kept for
+ *   the life of the page, so blocks added later are hidden from their first frame;
+ * - runtime: `[data-reveal-state="pending"]` — a plain attribute match, for both.
+ * Every animation is a CSS keyframe; JS only sets `--i`/`--n`/`--rv-d` and the state.
  */
+import { BLOCK_REVEAL, blockHiddenSelector, eagerSelector } from "@/constants/revealConfig";
 import { TEXT_REVEAL, hiddenSelector } from "@/constants/textRevealConfig";
 
 const { classes, attrs, lcp, word, block, liteMedia } = TEXT_REVEAL;
@@ -20,6 +24,52 @@ function compact(css: string): string {
     .replace(/\s+/g, " ")
     .replace(/\s*([{};,])\s*/g, "$1")
     .trim();
+}
+
+function buildBlockRevealCss(live: string): string {
+  const { default: rise, lite, eager, fade, modes, narrowMedia, delayVar } = BLOCK_REVEAL;
+  const running = `[${attrs.state}="running"]`;
+  const riseSel = `${running}[${attrs.mode}="${modes.rise}"]`;
+  const fadeSel = `${running}[${attrs.mode}="${modes.fade}"]`;
+  const liteScope = `[${BLOCK_REVEAL.attrs.tone}="lite"]`;
+  const delay = `var(${delayVar}, 0ms)`;
+  return `
+    @media screen and (prefers-reduced-motion: no-preference) {
+      ${live} :is(${blockHiddenSelector}):not([${attrs.state}]) { opacity: 0; }
+      ${riseSel} {
+        animation: rv-rise ${rise.durationMs}ms ${EASE_OUT} ${delay} both;
+        will-change: transform, opacity;
+      }
+      ${liteScope} ${riseSel} { animation-name: rv-rise-lite; animation-duration: ${lite.durationMs}ms; }
+      ${fadeSel} {
+        animation: rv-fade ${fade.durationMs}ms ${EASE_OUT} ${delay} both;
+        will-change: opacity;
+      }
+      ${eagerSelector} { animation: rv-eager ${eager.durationMs}ms ${EASE_OUT} ${delay} both; }
+    }
+    @media screen and (prefers-reduced-motion: no-preference) and ${narrowMedia} {
+      ${riseSel} { animation-name: rv-rise-narrow; }
+      ${liteScope} ${riseSel} { animation-name: rv-rise-lite; }
+    }
+    @media (scripting: none) {
+      :is(${blockHiddenSelector}) { opacity: 1 !important; }
+    }
+    @keyframes rv-rise {
+      from { opacity: 0; transform: translate3d(0, ${rise.liftPx}px, 0); }
+    }
+    @keyframes rv-rise-narrow {
+      from { opacity: 0; transform: translate3d(0, ${rise.liftNarrowPx}px, 0); }
+    }
+    @keyframes rv-rise-lite {
+      from { opacity: 0; transform: translate3d(0, ${lite.liftPx}px, 0); }
+    }
+    @keyframes rv-fade {
+      from { opacity: 0; }
+    }
+    @keyframes rv-eager {
+      from { opacity: ${eager.fromOpacity}; transform: translate3d(0, ${eager.liftPx}px, 0); }
+    }
+  `;
 }
 
 export function buildTextRevealCss(): string {
@@ -65,12 +115,15 @@ export function buildTextRevealCss(): string {
     @keyframes tr-lcp {
       from { opacity: ${lcp.fromOpacity}; filter: blur(${lcp.blurPx}px); transform: translateY(${lcp.liftEm}em); }
     }
+    ${buildBlockRevealCss(live)}
   `);
 }
 
 /** Stylesheet for <noscript>: never hide anything. */
 export function buildTextRevealNoscriptCss(): string {
-  return compact(`:is(${hiddenSelector}) { opacity: 1 !important; }`);
+  return compact(
+    `:is(${hiddenSelector}) { opacity: 1 !important; } :is(${blockHiddenSelector}) { opacity: 1 !important; }`,
+  );
 }
 
 /**

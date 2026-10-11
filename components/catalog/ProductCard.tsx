@@ -106,7 +106,8 @@ export function ProductCard({
       data-testid={TEST_IDS.productCard}
       data-product-slug={card.slug}
       className={cn(
-        "group relative grid overflow-hidden rounded-sm border border-line-strong bg-surface-1 transition-control hover:border-ink-4 sm:border-line sm:hover:border-line-strong",
+        // Panel + hover step (surface, edge, 1 px lift); the firmer edge on phones is for glare.
+        "group relative grid overflow-hidden panel card-interactive max-sm:border-line-strong",
         "has-[a[data-card-link]:focus-visible]:outline-2 has-[a[data-card-link]:focus-visible]:outline-offset-2 has-[a[data-card-link]:focus-visible]:outline-focus",
         layout,
       )}

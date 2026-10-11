@@ -568,7 +568,7 @@ function EditorForm({ full }: { full: Full | null }) {
         <div
           role="status"
           data-testid="admin-product-rebased"
-          className="flex items-start gap-2 rounded-sm border border-warning bg-warning-subtle px-4 py-3 type-body-s text-ink-1"
+          className="flex items-start gap-2 rounded-md border border-warning bg-warning-subtle px-4 py-3 type-body-s text-ink-1"
         >
           <WarningIcon size={18} className="mt-0.5 shrink-0 text-warning" aria-hidden="true" />
           <div className="flex min-w-0 flex-1 flex-col gap-1">
@@ -596,7 +596,7 @@ function EditorForm({ full }: { full: Full | null }) {
           ref={summaryRef}
           tabIndex={-1}
           role="alert"
-          className="flex items-start gap-2 rounded-sm border border-danger bg-danger-subtle px-4 py-3 type-body-s text-danger"
+          className="flex items-start gap-2 rounded-md border border-danger bg-danger-subtle px-4 py-3 type-body-s text-danger"
         >
           <WarningIcon size={18} className="mt-0.5 shrink-0" aria-hidden="true" />
           <ul>
@@ -908,7 +908,7 @@ function EditorForm({ full }: { full: Full | null }) {
                   inputClassName="text-right tabular-nums"
                 />
               </Field>
-              <div className="flex items-center justify-between gap-3 rounded-xs bg-surface-2 px-3 py-2 type-body-s">
+              <div className="flex items-center justify-between gap-3 rounded-sm bg-surface-2 px-3 py-2 type-body-s">
                 <span className="text-ink-2">Marža</span>
                 {margin === null ? (
                   <span className="text-ink-3">upišite nabavnu cenu</span>

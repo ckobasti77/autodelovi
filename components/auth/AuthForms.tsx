@@ -124,7 +124,7 @@ export function SignUpForm({ next }: { next: string }) {
       <RequiredUnlessOptional>
         <div ref={summary} tabIndex={-1} className="outline-none">
           {errorList.length || formError ? (
-            <div role="alert" className="rounded-sm border border-danger bg-danger-subtle p-4">
+            <div role="alert" className="rounded-md border border-danger bg-danger-subtle p-4">
               <p className="flex items-center gap-2 type-body-s font-semibold text-danger">
                 <WarningCircleIcon size={18} aria-hidden="true" />
                 {formError ?? "Proverite označena polja:"}

@@ -107,7 +107,7 @@ export function ImportHistory() {
         actions={
           <RouteLink
             href={ADMIN.imports}
-            className="inline-flex h-11 items-center rounded-xs bg-accent px-4 type-body-s font-semibold text-on-accent transition-control hover:bg-accent-hover focus-ring-inverse"
+            className="inline-flex h-11 items-center rounded-sm bg-accent px-4 type-body-s font-semibold text-on-accent transition-control hover:bg-accent-hover focus-ring-inverse"
           >
             Novi uvoz
           </RouteLink>

@@ -21,7 +21,7 @@ export function TitleBlock({ className }: { className?: string }) {
     <dl
       data-reveal="off"
       className={cn(
-        "grid grid-cols-[auto_auto] border border-line bg-bg/80 text-[0.75rem] reduced-transparency:bg-bg",
+        "grid grid-cols-[auto_auto] overflow-hidden rounded-md border border-line bg-bg/80 text-[0.75rem] reduced-transparency:bg-bg",
         className,
       )}
     >

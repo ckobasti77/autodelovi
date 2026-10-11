@@ -90,7 +90,7 @@ export function CheckStep({
       />
 
       {ambiguousHint ? (
-        <p className="rounded-sm border border-warning bg-warning-subtle px-4 py-3 type-body-s text-ink-1">
+        <p className="rounded-md border border-warning bg-warning-subtle px-4 py-3 type-body-s text-ink-1">
           Neki brojevi mogu da se pročitaju na dva načina (npr. „12.990“). Ako cene nisu dobre,
           vratite se na kolone i promenite format brojeva.
         </p>

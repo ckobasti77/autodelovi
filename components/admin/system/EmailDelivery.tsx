@@ -64,7 +64,7 @@ export function DeliveryBanner() {
     <div
       role="status"
       className={cn(
-        "mb-4 flex gap-3 rounded-sm border px-4 py-3",
+        "mb-4 flex gap-3 rounded-md border px-4 py-3",
         warn ? "border-warning/40 bg-warning-subtle" : "border-line bg-surface-1",
       )}
       data-testid="email-delivery-banner"

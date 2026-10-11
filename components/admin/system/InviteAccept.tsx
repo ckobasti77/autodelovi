@@ -132,7 +132,7 @@ export function InviteAccept({ token }: { token: string }) {
     >
       <main
         id="sadrzaj"
-        className="flex w-full max-w-lg flex-col gap-6 rounded-md bg-surface-1 p-8 shadow-overlay"
+        className="flex w-full max-w-lg flex-col gap-6 rounded-xl bg-surface-1 p-8 shadow-overlay"
       >
         <BrandLink size="fixed" className="self-start" />
         <h1 className="text-[1.375rem] font-[650] leading-tight">Pozivnica za administraciju</h1>

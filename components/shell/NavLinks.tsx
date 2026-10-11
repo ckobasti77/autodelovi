@@ -30,7 +30,7 @@ export function NavLinks({
               onClick={onNavigate}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "relative flex items-center rounded-xs transition-control",
+                "relative flex items-center rounded-sm transition-control",
                 layout === "row"
                   ? "h-11 px-3 text-[0.9375rem] font-medium text-ink-2 hover:text-ink-1 aria-[current=page]:text-ink-1 aria-[current=page]:after:absolute aria-[current=page]:after:inset-x-3 aria-[current=page]:after:bottom-1 aria-[current=page]:after:h-0.5 aria-[current=page]:after:bg-accent"
                   : "min-h-13 border-b border-line text-[1.0625rem] font-semibold text-ink-1 aria-[current=page]:text-accent-text",

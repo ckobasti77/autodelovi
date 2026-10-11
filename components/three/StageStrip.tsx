@@ -104,7 +104,7 @@ export function StageStrip({
                   aria-current={active ? "step" : undefined}
                   aria-label={`${pad(s.stage)} ${s.labelSr}`}
                   className={cn(
-                    "group flex h-16 w-full min-w-0 cursor-pointer flex-col items-start justify-center gap-0.5 rounded-xs pr-3 pt-2 text-left transition-control focus-ring-inset",
+                    "group flex h-16 w-full min-w-0 cursor-pointer flex-col items-start justify-center gap-0.5 rounded-sm pr-3 pt-2 text-left transition-control focus-ring-inset",
                     active ? "text-ink-1" : "text-ink-3 hover:text-ink-1",
                   )}
                 >
@@ -216,7 +216,7 @@ export function StageLegend({ onStage }: { onStage: (stage: number) => void }) {
                 aria-current={active ? "step" : undefined}
                 aria-label={`${pad(s.stage)} ${s.labelSr}`}
                 className={cn(
-                  "flex h-11 w-full min-w-0 cursor-pointer items-center justify-center gap-2 rounded-xs text-left transition-control focus-ring-inset [@container(min-height:9.5rem)]:h-9 [@container(min-height:9.5rem)]:justify-start",
+                  "flex h-11 w-full min-w-0 cursor-pointer items-center justify-center gap-2 rounded-sm text-left transition-control focus-ring-inset [@container(min-height:9.5rem)]:h-9 [@container(min-height:9.5rem)]:justify-start",
                   active ? "text-ink-1" : "text-ink-3 hover:text-ink-1",
                 )}
               >

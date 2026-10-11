@@ -1,0 +1,2018 @@
+{
+ "390": {
+  "/": {
+   "engineLoaded": true,
+   "groups": 2,
+   "findings": [
+    {
+     "type": "gpt-thin-border-wide-shadow",
+     "detail": "1px border + 40px shadow blur",
+     "severity": "advisory",
+     "selector": "div.absolute.inset-x-0",
+     "tag": "div"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  },
+  "/delovi": {
+   "engineLoaded": true,
+   "groups": 1,
+   "findings": [
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  },
+  "/delovi/kocioni-diskovi": {
+   "engineLoaded": true,
+   "groups": 2,
+   "findings": [
+    {
+     "type": "nested-cards",
+     "detail": "Card inside card",
+     "severity": "warning",
+     "selector": "label.flex.min-w-0 > div.flex.w-full",
+     "tag": "div"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  },
+  "/deo/kocioni-disk-prednji-312-25-mm-demo-0007": {
+   "engineLoaded": true,
+   "groups": 2,
+   "findings": [
+    {
+     "type": "cramped-padding",
+     "detail": "<div> \"overflow-x-auto\": children flush against border on all sides (no inset)",
+     "severity": "warning",
+     "selector": "div.overflow-x-auto.rounded-md",
+     "tag": "div"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  },
+  "/pretraga?q=disk": {
+   "engineLoaded": true,
+   "groups": 3,
+   "findings": [
+    {
+     "type": "gpt-thin-border-wide-shadow",
+     "detail": "1px border + 40px shadow blur",
+     "severity": "advisory",
+     "selector": "div.absolute.inset-x-0",
+     "tag": "div"
+    },
+    {
+     "type": "cramped-padding",
+     "detail": "0px vertical padding (need ≥4.2px for 14px text)",
+     "severity": "warning",
+     "selector": "li > a.cursor-pointer.rounded-sm",
+     "tag": "a"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  },
+  "/upit": {
+   "engineLoaded": true,
+   "groups": 0,
+   "findings": [],
+   "firstGroupKeys": []
+  },
+  "/za-majstore": {
+   "engineLoaded": true,
+   "groups": 0,
+   "findings": [],
+   "firstGroupKeys": []
+  },
+  "/korpa": {
+   "engineLoaded": true,
+   "groups": 1,
+   "findings": [
+    {
+     "type": "cramped-padding",
+     "detail": "0px vertical padding (need ≥4.5px for 15px text)",
+     "severity": "warning",
+     "selector": "a.cursor-pointer.rounded-sm",
+     "tag": "a"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  },
+  "/kontakt": {
+   "engineLoaded": true,
+   "groups": 0,
+   "findings": [],
+   "firstGroupKeys": []
+  },
+  "/prijava": {
+   "engineLoaded": true,
+   "groups": 0,
+   "findings": [],
+   "firstGroupKeys": []
+  },
+  "/styleguide": {
+   "engineLoaded": true,
+   "groups": 13,
+   "findings": [
+    {
+     "type": "cramped-padding",
+     "detail": "<div> \"overflow-x-auto\": children flush against border on all sides (no inset)",
+     "severity": "warning",
+     "selector": "div.flex.flex-col:nth-of-type(3) > div.overflow-x-auto.rounded-md",
+     "tag": "div"
+    },
+    {
+     "type": "gpt-thin-border-wide-shadow",
+     "detail": "1px border + 24px shadow blur",
+     "severity": "advisory",
+     "selector": "div.flex.flex-col:nth-of-type(1) > div.panel-raised.p-4",
+     "tag": "div"
+    },
+    {
+     "type": "nested-cards",
+     "detail": "Card inside card",
+     "severity": "warning",
+     "selector": "div.flex.flex-col:nth-of-type(1) > div.panel-raised.p-4",
+     "tag": "div"
+    },
+    {
+     "type": "gpt-thin-border-wide-shadow",
+     "detail": "1px border + 40px shadow blur",
+     "severity": "advisory",
+     "selector": "div.grid.gap-6 > div.flex.flex-col:nth-of-type(1) > div.rounded-md.border",
+     "tag": "div"
+    },
+    {
+     "type": "nested-cards",
+     "detail": "Card inside card",
+     "severity": "warning",
+     "selector": "div.grid.gap-6 > div.flex.flex-col:nth-of-type(1) > div.rounded-md.border",
+     "tag": "div"
+    },
+    {
+     "type": "gpt-thin-border-wide-shadow",
+     "detail": "1px border + 16px shadow blur",
+     "severity": "advisory",
+     "selector": "div.flex.flex-col:nth-of-type(2) > div.panel-raised.p-4",
+     "tag": "div"
+    },
+    {
+     "type": "text-overflow",
+     "detail": "span.truncate.type-code-s.normal-case.text-ink-2 overflows its box by 36px",
+     "severity": "warning",
+     "selector": "li.flex.items-center:nth-of-type(2) > span.flex.min-w-0 > span.truncate.type-code-s",
+     "tag": "span"
+    },
+    {
+     "type": "text-overflow",
+     "detail": "span.truncate.type-code-s.normal-case.text-ink-2 overflows its box by 27px",
+     "severity": "warning",
+     "selector": "li.flex.items-center:nth-of-type(8) > span.flex.min-w-0 > span.truncate.type-code-s",
+     "tag": "span"
+    },
+    {
+     "type": "text-overflow",
+     "detail": "span.truncate.type-code-s.normal-case.text-ink-2 overflows its box by 60px",
+     "severity": "warning",
+     "selector": "li.flex.items-center:nth-of-type(25) > span.flex.min-w-0 > span.truncate.type-code-s",
+     "tag": "span"
+    },
+    {
+     "type": "gpt-thin-border-wide-shadow",
+     "detail": "1px border + 40px shadow blur",
+     "severity": "advisory",
+     "selector": "div.flex.flex-col:nth-of-type(2) > div.relative > div.absolute.inset-x-0",
+     "tag": "div"
+    },
+    {
+     "type": "gpt-thin-border-wide-shadow",
+     "detail": "1px border + 24px shadow blur",
+     "severity": "advisory",
+     "selector": "div.relative.panel-raised",
+     "tag": "div"
+    },
+    {
+     "type": "cramped-padding",
+     "detail": "<div> \"relative\": children flush against border-bottom on bottom (no inset)",
+     "severity": "warning",
+     "selector": "div.relative.border-b",
+     "tag": "div"
+    },
+    {
+     "type": "gpt-thin-border-wide-shadow",
+     "detail": "1px border + 40px shadow blur",
+     "severity": "advisory",
+     "selector": "div.min-w-0.flex-1 > div.relative > div.absolute.inset-x-0",
+     "tag": "div"
+    },
+    {
+     "type": "em-dash-overuse",
+     "detail": "34 em-dashes in body text",
+     "severity": "warning",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "nested-cards",
+     "detail": "Card inside card",
+     "severity": "warning",
+     "selector": "div.flex.flex-col:nth-of-type(1) > div.panel.p-4",
+     "tag": "div"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  }
+ },
+ "1440": {
+  "/": {
+   "engineLoaded": true,
+   "groups": 3,
+   "findings": [
+    {
+     "type": "gpt-thin-border-wide-shadow",
+     "detail": "1px border + 40px shadow blur",
+     "severity": "advisory",
+     "selector": "div.absolute.inset-x-0",
+     "tag": "div"
+    },
+    {
+     "type": "line-length",
+     "detail": "~98 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "p.max-w-\\[80ch\\]",
+     "tag": "p"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  },
+  "/delovi": {
+   "engineLoaded": true,
+   "groups": 1,
+   "findings": [
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  },
+  "/delovi/kocioni-diskovi": {
+   "engineLoaded": true,
+   "groups": 7,
+   "findings": [
+    {
+     "type": "line-length",
+     "detail": "~88 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "p.pt-2.type-body",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~98 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "p.max-w-\\[80ch\\]",
+     "tag": "p"
+    },
+    {
+     "type": "text-occlusion",
+     "detail": "span.absolute.top-2.5.left-2.5.h-6.items-center.rounded-xs.border.border-line-strong.bg-bg/80.px-2.type-caption-s.text-ink-2.hidden.sm:flex \"OEM kvalitet\" is 100% covered by overlapping text (a.outline-none.after:absolute.after:inset-0.after:content-[''].hover:underline.hover:decoration-accent.hover:underline-offset-4.sm:line-clamp-3)",
+     "severity": "warning",
+     "selector": "li.flex:nth-of-type(1) > div.flex.w-full > article.group.relative > div.relative > span.absolute.top-2\\.5",
+     "tag": "span"
+    },
+    {
+     "type": "text-occlusion",
+     "detail": "span.absolute.top-2.5.left-2.5.h-6.items-center.rounded-xs.border.border-line-strong.bg-bg/80.px-2.type-caption-s.text-ink-2.hidden.sm:flex \"OEM kvalitet\" is 100% covered by overlapping text (a.outline-none.after:absolute.after:inset-0.after:content-[''].hover:underline.hover:decoration-accent.hover:underline-offset-4.sm:line-clamp-3)",
+     "severity": "warning",
+     "selector": "li.flex:nth-of-type(2) > div.flex.w-full > article.group.relative > div.relative > span.absolute.top-2\\.5",
+     "tag": "span"
+    },
+    {
+     "type": "text-occlusion",
+     "detail": "span.absolute.top-2.5.left-2.5.h-6.items-center.rounded-xs.border.border-line-strong.bg-bg/80.px-2.type-caption-s.text-ink-2.hidden.sm:flex \"OEM kvalitet\" is 100% covered by overlapping text (a.outline-none.after:absolute.after:inset-0.after:content-[''].hover:underline.hover:decoration-accent.hover:underline-offset-4.sm:line-clamp-3)",
+     "severity": "warning",
+     "selector": "li.flex:nth-of-type(3) > div.flex.w-full > article.group.relative > div.relative > span.absolute.top-2\\.5",
+     "tag": "span"
+    },
+    {
+     "type": "text-occlusion",
+     "detail": "span.absolute.top-2.5.left-2.5.h-6.items-center.rounded-xs.border.border-line-strong.bg-bg/80.px-2.type-caption-s.text-ink-2.hidden.sm:flex \"OEM kvalitet\" is 100% covered by overlapping text (a.outline-none.after:absolute.after:inset-0.after:content-[''].hover:underline.hover:decoration-accent.hover:underline-offset-4.sm:line-clamp-3)",
+     "severity": "warning",
+     "selector": "li.flex:nth-of-type(4) > div.flex.w-full > article.group.relative > div.relative > span.absolute.top-2\\.5",
+     "tag": "span"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  },
+  "/deo/kocioni-disk-prednji-312-25-mm-demo-0007": {
+   "engineLoaded": true,
+   "groups": 8,
+   "findings": [
+    {
+     "type": "low-contrast",
+     "detail": "2.8:1 (need 4.5:1) — text #969088 on #434a52",
+     "severity": "warning",
+     "selector": "text:nth-of-type(1)",
+     "tag": "text"
+    },
+    {
+     "type": "low-contrast",
+     "detail": "2.8:1 (need 4.5:1) — text #969088 on #434a52",
+     "severity": "warning",
+     "selector": "text:nth-of-type(2)",
+     "tag": "text"
+    },
+    {
+     "type": "low-contrast",
+     "detail": "2.8:1 (need 4.5:1) — text #969088 on #434a52",
+     "severity": "warning",
+     "selector": "text:nth-of-type(3)",
+     "tag": "text"
+    },
+    {
+     "type": "low-contrast",
+     "detail": "2.8:1 (need 4.5:1) — text #969088 on #434a52",
+     "severity": "warning",
+     "selector": "figure.hidden.self-start > figcaption.mt-2.type-caption",
+     "tag": "figcaption"
+    },
+    {
+     "type": "line-length",
+     "detail": "~88 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "p.mt-2.max-w-\\[72ch\\]",
+     "tag": "p"
+    },
+    {
+     "type": "cramped-padding",
+     "detail": "<div> \"overflow-x-auto\": children flush against border on all sides (no inset)",
+     "severity": "warning",
+     "selector": "div.overflow-x-auto.rounded-md",
+     "tag": "div"
+    },
+    {
+     "type": "line-length",
+     "detail": "~98 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "p.max-w-\\[80ch\\]",
+     "tag": "p"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  },
+  "/pretraga?q=disk": {
+   "engineLoaded": true,
+   "groups": 7,
+   "findings": [
+    {
+     "type": "gpt-thin-border-wide-shadow",
+     "detail": "1px border + 40px shadow blur",
+     "severity": "advisory",
+     "selector": "div.absolute.inset-x-0",
+     "tag": "div"
+    },
+    {
+     "type": "cramped-padding",
+     "detail": "0px vertical padding (need ≥4.2px for 14px text)",
+     "severity": "warning",
+     "selector": "li > a.cursor-pointer.rounded-sm",
+     "tag": "a"
+    },
+    {
+     "type": "text-occlusion",
+     "detail": "span.absolute.top-2.5.left-2.5.h-6.items-center.rounded-xs.border.border-line-strong.bg-bg/80.px-2.type-caption-s.text-ink-2.hidden.sm:flex \"OEM kvalitet\" is 100% covered by overlapping text (a.outline-none.after:absolute.after:inset-0.after:content-[''].hover:underline.hover:decoration-accent.hover:underline-offset-4.sm:line-clamp-3)",
+     "severity": "warning",
+     "selector": "li.flex:nth-of-type(1) > div.flex.w-full > article.group.relative > div.relative > span.absolute.top-2\\.5",
+     "tag": "span"
+    },
+    {
+     "type": "text-occlusion",
+     "detail": "span.absolute.top-2.5.left-2.5.h-6.items-center.rounded-xs.border.border-line-strong.bg-bg/80.px-2.type-caption-s.text-ink-2.hidden.sm:flex \"OEM kvalitet\" is 100% covered by overlapping text (a.outline-none.after:absolute.after:inset-0.after:content-[''].hover:underline.hover:decoration-accent.hover:underline-offset-4.sm:line-clamp-3)",
+     "severity": "warning",
+     "selector": "li.flex:nth-of-type(2) > div.flex.w-full > article.group.relative > div.relative > span.absolute.top-2\\.5",
+     "tag": "span"
+    },
+    {
+     "type": "text-occlusion",
+     "detail": "span.absolute.top-2.5.left-2.5.h-6.items-center.rounded-xs.border.border-line-strong.bg-bg/80.px-2.type-caption-s.text-ink-2.hidden.sm:flex \"OEM kvalitet\" is 100% covered by overlapping text (a.outline-none.after:absolute.after:inset-0.after:content-[''].hover:underline.hover:decoration-accent.hover:underline-offset-4.sm:line-clamp-3)",
+     "severity": "warning",
+     "selector": "li.flex:nth-of-type(3) > div.flex.w-full > article.group.relative > div.relative > span.absolute.top-2\\.5",
+     "tag": "span"
+    },
+    {
+     "type": "text-occlusion",
+     "detail": "span.absolute.top-2.5.left-2.5.h-6.items-center.rounded-xs.border.border-line-strong.bg-bg/80.px-2.type-caption-s.text-ink-2.hidden.sm:flex \"Aftermarket\" is 100% covered by overlapping text (a.outline-none.after:absolute.after:inset-0.after:content-[''].hover:underline.hover:decoration-accent.hover:underline-offset-4.sm:line-clamp-3)",
+     "severity": "warning",
+     "selector": "li.flex:nth-of-type(4) > div.flex.w-full > article.group.relative > div.relative > span.absolute.top-2\\.5",
+     "tag": "span"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "image-hover-transform",
+     "detail": "Tailwind hover transform on <img>",
+     "severity": "advisory",
+     "selector": "body",
+     "tag": "body"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  },
+  "/upit": {
+   "engineLoaded": true,
+   "groups": 1,
+   "findings": [
+    {
+     "type": "line-length",
+     "detail": "~98 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "p.max-w-\\[80ch\\]",
+     "tag": "p"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  },
+  "/za-majstore": {
+   "engineLoaded": true,
+   "groups": 1,
+   "findings": [
+    {
+     "type": "line-length",
+     "detail": "~98 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "p.max-w-\\[80ch\\]",
+     "tag": "p"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  },
+  "/korpa": {
+   "engineLoaded": true,
+   "groups": 2,
+   "findings": [
+    {
+     "type": "cramped-padding",
+     "detail": "0px vertical padding (need ≥4.5px for 15px text)",
+     "severity": "warning",
+     "selector": "a.cursor-pointer.rounded-sm",
+     "tag": "a"
+    },
+    {
+     "type": "line-length",
+     "detail": "~98 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "p.max-w-\\[80ch\\]",
+     "tag": "p"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  },
+  "/kontakt": {
+   "engineLoaded": true,
+   "groups": 1,
+   "findings": [
+    {
+     "type": "line-length",
+     "detail": "~98 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "p.max-w-\\[80ch\\]",
+     "tag": "p"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  },
+  "/prijava": {
+   "engineLoaded": true,
+   "groups": 1,
+   "findings": [
+    {
+     "type": "line-length",
+     "detail": "~98 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "p.max-w-\\[80ch\\]",
+     "tag": "p"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  },
+  "/styleguide": {
+   "engineLoaded": true,
+   "groups": 42,
+   "findings": [
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#marka > p.mt-3.max-w-\\[70ch\\]",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~153 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "div.mt-10.flex > p.type-body-s.text-ink-3",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#boje > p.mt-3.max-w-\\[70ch\\]",
+     "tag": "p"
+    },
+    {
+     "type": "cramped-padding",
+     "detail": "<div> \"overflow-x-auto\": children flush against border on top/bottom/left (no inset)",
+     "severity": "warning",
+     "selector": "div.flex.flex-col:nth-of-type(3) > div.overflow-x-auto.rounded-md",
+     "tag": "div"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#prostor > div.mt-10.flex > div.flex.flex-col:nth-of-type(2) > div.flex.flex-col > p.max-w-\\[70ch\\].type-body-s",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#prostor > div.mt-10.flex > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col > p.max-w-\\[70ch\\].type-body-s",
+     "tag": "p"
+    },
+    {
+     "type": "gpt-thin-border-wide-shadow",
+     "detail": "1px border + 24px shadow blur",
+     "severity": "advisory",
+     "selector": "div.flex.flex-col:nth-of-type(1) > div.panel-raised.p-4",
+     "tag": "div"
+    },
+    {
+     "type": "nested-cards",
+     "detail": "Card inside card",
+     "severity": "warning",
+     "selector": "div.flex.flex-col:nth-of-type(1) > div.panel-raised.p-4",
+     "tag": "div"
+    },
+    {
+     "type": "gpt-thin-border-wide-shadow",
+     "detail": "1px border + 40px shadow blur",
+     "severity": "advisory",
+     "selector": "div.grid.gap-6 > div.flex.flex-col:nth-of-type(1) > div.rounded-md.border",
+     "tag": "div"
+    },
+    {
+     "type": "nested-cards",
+     "detail": "Card inside card",
+     "severity": "warning",
+     "selector": "div.grid.gap-6 > div.flex.flex-col:nth-of-type(1) > div.rounded-md.border",
+     "tag": "div"
+    },
+    {
+     "type": "gpt-thin-border-wide-shadow",
+     "detail": "1px border + 16px shadow blur",
+     "severity": "advisory",
+     "selector": "div.flex.flex-col:nth-of-type(2) > div.panel-raised.p-4",
+     "tag": "div"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#tipografija > p.mt-3.max-w-\\[70ch\\]",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#ikone > p.mt-3.max-w-\\[70ch\\]",
+     "tag": "p"
+    },
+    {
+     "type": "text-overflow",
+     "detail": "span.truncate.type-code-s.normal-case.text-ink-2 overflows its box by 40px",
+     "severity": "warning",
+     "selector": "li.flex.items-center:nth-of-type(2) > span.flex.min-w-0 > span.truncate.type-code-s",
+     "tag": "span"
+    },
+    {
+     "type": "text-overflow",
+     "detail": "span.truncate.type-code-s.normal-case.text-ink-2 overflows its box by 31px",
+     "severity": "warning",
+     "selector": "li.flex.items-center:nth-of-type(8) > span.flex.min-w-0 > span.truncate.type-code-s",
+     "tag": "span"
+    },
+    {
+     "type": "text-overflow",
+     "detail": "span.truncate.type-code-s.normal-case.text-ink-2 overflows its box by 64px",
+     "severity": "warning",
+     "selector": "li.flex.items-center:nth-of-type(25) > span.flex.min-w-0 > span.truncate.type-code-s",
+     "tag": "span"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#pokret > p.mt-3.max-w-\\[70ch\\]",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#pokret > div.mt-10.flex > div.flex.flex-col:nth-of-type(2) > div.flex.flex-col:nth-of-type(1) > p.max-w-\\[70ch\\].type-body-s",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#otkrivanje > p.mt-3.max-w-\\[70ch\\]",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#otkrivanje > div.mt-10.flex > div.flex.flex-col:nth-of-type(1) > div.flex.flex-col:nth-of-type(1) > p.max-w-\\[70ch\\].type-body-s",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#otkrivanje > div.mt-10.flex > div.flex.flex-col:nth-of-type(2) > div.flex.flex-col:nth-of-type(1) > p.max-w-\\[70ch\\].type-body-s",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "div.flex.max-w-\\[70ch\\] > p.type-body.text-ink-2:nth-of-type(1)",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "div.flex.max-w-\\[70ch\\] > p.type-body.text-ink-2:nth-of-type(2)",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "p.type-body.text-ink-2:nth-of-type(4)",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#kontrole > p.mt-3.max-w-\\[70ch\\]",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#kontrole > div.mt-10.flex > div.flex.flex-col:nth-of-type(1) > div.flex.flex-col > p.max-w-\\[70ch\\].type-body-s",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~195 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#kontrole > div.mt-10.flex > div.flex.flex-col:nth-of-type(1) > figure.flex.flex-col:nth-of-type(1) > figcaption.type-code-s.normal-case",
+     "tag": "figcaption"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#kontrole > div.mt-10.flex > div.flex.flex-col:nth-of-type(4) > div.flex.flex-col > p.max-w-\\[70ch\\].type-body-s",
+     "tag": "p"
+    },
+    {
+     "type": "gpt-thin-border-wide-shadow",
+     "detail": "1px border + 40px shadow blur",
+     "severity": "advisory",
+     "selector": "div.flex.flex-col:nth-of-type(2) > div.relative > div.absolute.inset-x-0",
+     "tag": "div"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#slojevi > p.mt-3.max-w-\\[70ch\\]",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#slojevi > div.mt-10.flex > div.flex.flex-col:nth-of-type(1) > div.flex.flex-col > p.max-w-\\[70ch\\].type-body-s",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#slojevi > div.mt-10.flex > div.flex.flex-col:nth-of-type(2) > div.flex.flex-col > p.max-w-\\[70ch\\].type-body-s",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#slojevi > div.mt-10.flex > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col > p.max-w-\\[70ch\\].type-body-s",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#podaci > p.mt-3.max-w-\\[70ch\\]",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#podaci > div.mt-10.flex > div.flex.flex-col:nth-of-type(1) > div.flex.flex-col > p.max-w-\\[70ch\\].type-body-s",
+     "tag": "p"
+    },
+    {
+     "type": "gpt-thin-border-wide-shadow",
+     "detail": "1px border + 24px shadow blur",
+     "severity": "advisory",
+     "selector": "div.relative.panel-raised",
+     "tag": "div"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#podaci > div.mt-10.flex > div.flex.flex-col:nth-of-type(3) > div.flex.flex-col > p.max-w-\\[70ch\\].type-body-s",
+     "tag": "p"
+    },
+    {
+     "type": "cramped-padding",
+     "detail": "<div> \"relative\": children flush against border-bottom on bottom (no inset)",
+     "severity": "warning",
+     "selector": "div.relative.border-b",
+     "tag": "div"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#tabela > div.flex.flex-col:nth-of-type(1) > p.max-w-\\[70ch\\].type-body-s",
+     "tag": "p"
+    },
+    {
+     "type": "line-length",
+     "detail": "~86 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "#okvir > div.mt-10.flex > div.flex.flex-col:nth-of-type(1) > div.flex.flex-col > p.max-w-\\[70ch\\].type-body-s",
+     "tag": "p"
+    },
+    {
+     "type": "gpt-thin-border-wide-shadow",
+     "detail": "1px border + 40px shadow blur",
+     "severity": "advisory",
+     "selector": "div.min-w-0.flex-1 > div.relative > div.absolute.inset-x-0",
+     "tag": "div"
+    },
+    {
+     "type": "line-length",
+     "detail": "~98 chars/line (aim for <80)",
+     "severity": "warning",
+     "selector": "p.max-w-\\[80ch\\]",
+     "tag": "p"
+    },
+    {
+     "type": "em-dash-overuse",
+     "detail": "34 em-dashes in body text",
+     "severity": "warning",
+     "selector": "body",
+     "tag": "body"
+    },
+    {
+     "type": "nested-cards",
+     "detail": "Card inside card",
+     "severity": "warning",
+     "selector": "div.flex.flex-col:nth-of-type(1) > div.panel.p-4",
+     "tag": "div"
+    }
+   ],
+   "firstGroupKeys": [
+    "selector",
+    "tagName",
+    "rect",
+    "isPageLevel",
+    "isHidden",
+    "findings"
+   ]
+  }
+ }
+}

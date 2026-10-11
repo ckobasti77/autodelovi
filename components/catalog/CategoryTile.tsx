@@ -29,7 +29,7 @@ export function CategoryTile({
   return (
     <RouteLink
       href={href ?? ROUTES.category(category.slug)}
-      className="group relative flex h-full flex-col overflow-hidden rounded-sm border border-line bg-surface-1 transition-control hover:border-line-strong focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus"
+      className="group relative flex h-full flex-col overflow-hidden panel card-interactive focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus"
     >
       <div
         className={cn(

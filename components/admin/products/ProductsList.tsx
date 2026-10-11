@@ -111,7 +111,7 @@ function StockCell({ row }: { row: Row }) {
           (e.target as HTMLInputElement).blur();
         }
       }}
-      className="h-8 w-16 rounded-xs border border-transparent bg-transparent px-2 text-right tabular-nums transition-control hover:border-control focus:border-focus focus:bg-surface-1 focus:outline-none"
+      className="h-8 w-16 rounded-sm border border-transparent bg-transparent px-2 text-right tabular-nums transition-control hover:border-control focus:border-focus focus:bg-surface-1 focus:outline-none"
     />
   );
 }
@@ -377,7 +377,7 @@ export function ProductsList() {
       />
       {selectedIds.length > 0 ? (
         <div
-          className="flex min-h-12 flex-wrap items-center gap-2 rounded-sm border border-line-strong bg-surface-1 px-3 py-1"
+          className="flex min-h-12 flex-wrap items-center gap-2 rounded-md border border-line-strong bg-surface-1 px-3 py-1"
           role="region"
           aria-label="Grupne radnje"
         >

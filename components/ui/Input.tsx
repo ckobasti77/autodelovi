@@ -6,12 +6,12 @@ import { cn } from "@/lib/cn";
 import { useFieldControl } from "@/components/ui/Field";
 
 /**
- * Shared frame for text-like controls (§9.2): surface-2, 1 px control border, radius 2;
+ * Shared frame for text-like controls (§9.2): surface-2, 1 px control border, radius 6;
  * hover → ink-3 border; focus → focus-colour border + 1 px inner ring (2 px of colour in
  * total, ≥ 3:1 in both themes); error → danger border; disabled → surface-1, line border.
  */
 export const fieldFrame =
-  "flex w-full items-center rounded-xs border bg-surface-2 text-ink-1 transition-control " +
+  "flex w-full items-center rounded-sm border bg-surface-2 text-ink-1 transition-control " +
   "border-control hover:border-ink-3 " +
   "focus-within:border-focus focus-within:shadow-[inset_0_0_0_1px_var(--color-focus)] focus-within:hover:border-focus " +
   "data-[invalid]:border-danger data-[invalid]:hover:border-danger " +

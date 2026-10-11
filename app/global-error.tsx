@@ -46,7 +46,7 @@ export default function GlobalError({
             <button
               type="button"
               onClick={() => retry()}
-              className="inline-flex h-11 cursor-pointer items-center rounded-xs bg-accent px-4 type-button text-on-accent transition-control hover:bg-accent-hover focus-ring-inverse"
+              className="inline-flex h-11 cursor-pointer items-center rounded-sm bg-accent px-4 type-button text-on-accent transition-control hover:bg-accent-hover focus-ring-inverse"
             >
               Pokušajte ponovo
             </button>

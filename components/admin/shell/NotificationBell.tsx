@@ -107,7 +107,7 @@ export function NotificationBell({ nowMinute }: { nowMinute: number }) {
                 ? `Obaveštenja, nepročitano: ${unread}`
                 : "Obaveštenja"
           }
-          className="relative inline-flex size-10 cursor-pointer items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 focus-ring-inset"
+          className="relative inline-flex size-10 cursor-pointer items-center justify-center rounded-sm text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 focus-ring-inset"
         >
           <BellIcon size={20} aria-hidden="true" />
           {unread > 0 ? (
@@ -136,7 +136,7 @@ export function NotificationBell({ nowMinute }: { nowMinute: number }) {
               <button
                 type="button"
                 onClick={() => void markAll({})}
-                className="cursor-pointer rounded-xs type-caption text-accent-text underline-offset-2 hover:underline focus-ring-inset"
+                className="cursor-pointer rounded-sm type-caption text-accent-text underline-offset-2 hover:underline focus-ring-inset"
               >
                 Označi sve kao pročitano
               </button>

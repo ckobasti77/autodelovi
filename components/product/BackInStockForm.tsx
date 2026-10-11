@@ -97,7 +97,7 @@ export function BackInStockForm({
     return (
       <p
         role="status"
-        className="flex items-start gap-2 rounded-xs bg-success-subtle px-3 py-3 type-body-s text-success"
+        className="flex items-start gap-2 rounded-sm bg-success-subtle px-3 py-3 type-body-s text-success"
         data-testid="back-in-stock-done"
       >
         <CheckCircleIcon size={18} weight="fill" aria-hidden="true" className="mt-0.5 shrink-0" />
@@ -113,7 +113,7 @@ export function BackInStockForm({
       onSubmit={onSubmit}
       noValidate
       data-testid={TEST_IDS.backInStockForm}
-      className="relative flex scroll-mt-24 flex-col gap-3 rounded-sm border border-line bg-surface-1 p-4"
+      className="relative flex scroll-mt-24 flex-col gap-3 panel p-4"
       aria-label={`Obaveštenje o dolasku: ${productName}`}
     >
       <RequiredUnlessOptional>

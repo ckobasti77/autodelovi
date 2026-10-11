@@ -20,7 +20,7 @@ export function StackedTable({
   className?: string;
 }) {
   return (
-    <div className={`rounded-sm border border-line ${className ?? ""}`} data-reveal="off">
+    <div className={`rounded-md border border-line ${className ?? ""}`} data-reveal="off">
       <table role="table" className="w-full border-collapse type-body-s max-sm:block">
         {caption ? <caption className="sr-only">{caption}</caption> : null}
         <thead role="rowgroup" className="bg-surface-2 max-sm:sr-only">

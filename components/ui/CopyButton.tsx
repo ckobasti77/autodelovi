@@ -68,7 +68,7 @@ export function CopyButton({
       aria-label={showValue ? undefined : label}
       title={showValue ? label : undefined}
       className={cn(
-        "inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center gap-2 rounded-xs px-2 text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 active:translate-y-px",
+        "inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center gap-2 rounded-sm px-2 text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 active:translate-y-px",
         className,
       )}
     >

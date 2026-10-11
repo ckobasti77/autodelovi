@@ -4,15 +4,18 @@ import type { ComponentProps } from "react";
 import { cn } from "@/lib/cn";
 
 export type CardProps = ComponentProps<"div"> & {
-  /** Hover raises the edge to line-strong (level 2). */
+  /** Hover steps the surface up, firms the edge and lifts 1 px (cards that are or hold a link). */
   interactive?: boolean;
-  /** Level 2 at rest (sticky bars, glare-prone list cards). */
+  /** Level 2 at rest (sticky summaries, glare-prone list cards). */
   raised?: boolean;
   padding?: "none" | "md";
   asChild?: boolean;
 };
 
-/** Card (§5.5 level 1): surface-1, 1 px line, radius 4, 16 px padding (12 px on phones). */
+/**
+ * Card (§5.5): the `panel` surface — surface-1, 1 px line, radius 8, lit top edge — with
+ * 16 px padding (12 px on phones). `raised` is level 2 (`panel-raised`).
+ */
 export function Card({
   interactive,
   raised,
@@ -25,9 +28,9 @@ export function Card({
   return (
     <Component
       className={cn(
-        "relative rounded-sm border bg-surface-1",
-        raised ? "border-line-strong" : "border-line",
-        interactive && "transition-control hover:border-line-strong",
+        "relative",
+        raised ? "panel-raised" : "panel",
+        interactive && "card-interactive",
         padding === "md" && "p-3 sm:p-4",
         className,
       )}

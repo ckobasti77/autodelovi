@@ -85,7 +85,7 @@ export function QuantityStepper({
       aria-label={label}
       data-reveal="off"
       className={cn(
-        "inline-flex items-stretch rounded-xs border border-control bg-surface-2",
+        "inline-flex items-stretch rounded-sm border border-control bg-surface-2",
         h,
         className,
       )}

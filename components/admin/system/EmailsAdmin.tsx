@@ -295,7 +295,7 @@ function EmailView({ id, onResent }: { id: Id<"emailLog">; onResent: (id: string
                       title={`Poruka: ${m.subject}`}
                       sandbox=""
                       srcDoc={emailPreviewHtml(m.html)}
-                      className="mt-3 h-[60dvh] w-full rounded-sm border border-line bg-white"
+                      className="mt-3 h-[60dvh] w-full rounded-md border border-line bg-white"
                     />
                   ),
                 },
@@ -305,7 +305,7 @@ function EmailView({ id, onResent }: { id: Id<"emailLog">; onResent: (id: string
             value: "text",
             label: "Običan tekst",
             content: (
-              <pre className="mt-3 max-h-[60dvh] overflow-auto whitespace-pre-wrap rounded-sm border border-line bg-surface-2 p-3 type-code [overflow-wrap:anywhere]">
+              <pre className="mt-3 max-h-[60dvh] overflow-auto whitespace-pre-wrap rounded-md border border-line bg-surface-2 p-3 type-code [overflow-wrap:anywhere]">
                 {m.text}
               </pre>
             ),

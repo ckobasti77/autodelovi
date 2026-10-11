@@ -49,7 +49,7 @@ export function Link({
   children,
   ...rest
 }: LinkProps) {
-  const classes = cn(variants[variant], "cursor-pointer rounded-xs", className);
+  const classes = cn(variants[variant], "cursor-pointer rounded-sm", className);
   const opensNewTab = external ?? isExternal(href);
   const isScheme = /^(tel|mailto|viber|sms):/i.test(href);
 

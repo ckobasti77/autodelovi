@@ -58,7 +58,7 @@ function Row({
       <button
         type="button"
         onClick={onClick}
-        className="group flex min-h-11 w-full cursor-pointer items-center gap-3 rounded-xs border-b border-line px-2 py-2.5 text-left transition-control hover:bg-surface-4"
+        className="group flex min-h-11 w-full cursor-pointer items-center gap-3 rounded-sm border-b border-line px-2 py-2.5 text-left transition-control hover:bg-surface-4"
       >
         <span className="min-w-0 flex-1 text-[0.9375rem] font-medium text-ink-1">{children}</span>
         {meta ? <span className="shrink-0 type-caption text-ink-3">{meta}</span> : null}
@@ -149,7 +149,7 @@ function PickerBody({ onDone }: { onDone: () => void }) {
           <button
             type="button"
             onClick={back}
-            className="inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-4 hover:text-ink-1"
+            className="inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-sm text-ink-2 transition-control hover:bg-surface-4 hover:text-ink-1"
             aria-label="Nazad"
           >
             <ArrowLeftIcon size={20} aria-hidden="true" />
@@ -173,7 +173,7 @@ function PickerBody({ onDone }: { onDone: () => void }) {
                 key={b.slug}
                 type="button"
                 onClick={() => setBrand({ slug: b.slug, name: b.name })}
-                className="flex h-14 cursor-pointer items-center justify-center rounded-xs border border-control bg-surface-2 px-3 text-[0.9375rem] font-semibold text-ink-1 transition-control hover:border-accent hover:bg-surface-4"
+                className="flex h-14 cursor-pointer items-center justify-center rounded-sm border border-control bg-surface-2 px-3 text-[0.9375rem] font-semibold text-ink-1 transition-control hover:border-accent hover:bg-surface-4"
               >
                 {b.name}
               </button>
@@ -188,7 +188,7 @@ function PickerBody({ onDone }: { onDone: () => void }) {
         ) : (
           <>
             {models.length > 8 ? (
-              <label className="flex h-11 items-center gap-2 rounded-xs border border-control bg-surface-2 px-3 focus-within:border-accent">
+              <label className="flex h-11 items-center gap-2 rounded-sm border border-control bg-surface-2 px-3 focus-within:border-accent">
                 <MagnifyingGlassIcon size={18} aria-hidden="true" className="text-ink-3" />
                 <span className="sr-only">Pretraži modele</span>
                 <input

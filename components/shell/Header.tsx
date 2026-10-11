@@ -26,16 +26,22 @@ export type HeaderProps = {
  * Tailwind's output order — not the class order — would decide which one wins (VIS-03).
  */
 const iconLink =
-  "size-11 shrink-0 items-center justify-center rounded-xs text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1";
+  "size-11 shrink-0 items-center justify-center rounded-sm text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1";
 const textLink =
-  "h-11 shrink-0 items-center gap-2 rounded-xs px-2 text-[0.9375rem] font-medium text-ink-2 transition-control hover:text-ink-1";
+  "h-11 shrink-0 items-center gap-2 rounded-sm px-2 text-[0.9375rem] font-medium text-ink-2 transition-control hover:text-ink-1";
 
 /**
- * Site header (§10.1): 64 px (56 below 1024), bg at 88 % + 12 px blur (solid under reduced
- * transparency). [logo] · nav · search · vehicle slot · contact · account · cart · menu.
- * Contact: text links ≥ 1440 px, icon buttons from 480 px. Below 480 px the bar holds only the
- * mark, search, cart and menu (the header lockup replaces the mark from 640 px); phone, Viber and the account/mechanic links live in MobileNav.
- * Excluded from the text reveal: chrome must be readable at once.
+ * Site header (§10.1). Sticky; at the top of a page it is taller and sits on the page without
+ * an edge, and over the first 96 px of scroll it condenses to `--header-h` (64 px, 56 below
+ * 1024) and takes its surface: the field at 84 % with a 14 px blur and a hairline (solid under
+ * reduced transparency). The condense is a CSS scroll timeline on `--header-p` (`site-header`
+ * in globals.css): no script, no layout change — the sticky offset is negative by the extra
+ * height. Browsers without scroll timelines, and reduced motion, get the condensed bar.
+ *
+ * [logo] · nav · search (the primary action: the widest control) · vehicle slot · contact ·
+ * account · cart · menu. Below 1024 px: mark · search field · cart · menu, with phone, Viber
+ * and account as icons from 480 px; everything else is in MobileNav and the bottom action bar.
+ * Excluded from the reveal: chrome must be readable at once.
  */
 export function Header({ vehicleSlot, cartCount, contact }: HeaderProps) {
   const resolved = resolveContact(contact);
@@ -46,16 +52,18 @@ export function Header({ vehicleSlot, cartCount, contact }: HeaderProps) {
     <header
       data-reveal="off"
       data-sticky-header=""
+      data-vt="header"
       data-testid={TEST_IDS.header}
-      className="sticky top-0 z-header border-b print:hidden border-line bg-bg/88 backdrop-blur-header reduced-transparency:bg-bg-raised reduced-transparency:backdrop-blur-none"
+      className="site-header z-header print:hidden"
     >
-      <div className="flex h-header items-center gap-1 px-page lg:gap-3">
-        <BrandLink compact="phone" className="mr-2 lg:mr-4" />
+      <div aria-hidden="true" className="site-header-surface" />
+      <div className="site-header-row relative flex items-center gap-2 px-page lg:gap-3">
+        <BrandLink compact="phone" className="site-header-logo lg:mr-8" />
         <nav aria-label="Glavna navigacija" className="hidden lg:block">
           <NavLinks />
         </nav>
-        <div className="ml-auto flex items-center gap-0.5 lg:gap-2">
-          <HeaderSearch />
+        <div className="ml-auto flex min-w-0 flex-1 items-center justify-end gap-1 lg:gap-2">
+          <HeaderSearch className="flex-1 lg:w-64 lg:flex-none xl:w-72 2xl:w-80" />
           {vehicleSlot ? <div className="hidden xl:block">{vehicleSlot}</div> : null}
           {phone ? (
             <>

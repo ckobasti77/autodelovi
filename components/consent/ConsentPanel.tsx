@@ -53,12 +53,13 @@ export function ConsentPanel({
       data-nosnippet=""
       data-collapsed={collapsed ? "" : undefined}
       data-testid="consent-banner"
-      className="fixed inset-x-0 bottom-0 z-overlay px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-6 sm:pb-6"
+      data-vt="consent"
+      className="fixed inset-x-0 bottom-bar-offset z-overlay px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-6 sm:pb-6"
     >
       <form
         action={saveConsentForm}
         onSubmit={onSubmit}
-        className="mx-auto flex max-w-[72rem] flex-col gap-4 rounded-sm border border-line-strong bg-surface-2 p-4 shadow-drawer sm:p-5 lg:flex-row lg:items-center lg:gap-8"
+        className="mx-auto flex max-w-[72rem] flex-col gap-4 rounded-md border border-line-strong bg-surface-2 p-4 shadow-drawer sm:p-5 lg:flex-row lg:items-center lg:gap-8"
       >
         <div className="flex min-w-0 flex-1 flex-col gap-2">
           <h2 id={titleId} className="type-h4 text-ink-1">

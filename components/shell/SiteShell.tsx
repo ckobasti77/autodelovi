@@ -5,7 +5,11 @@ import { Footer } from "@/components/shell/Footer";
 import { Header } from "@/components/shell/Header";
 import { MAIN_ID } from "@/components/shell/SkipLink";
 
-/** Storefront frame: header, <main id="sadrzaj"> (skip-link target), footer. */
+/**
+ * Storefront frame: header, <main id="sadrzaj"> (skip-link target), footer. The bottom padding
+ * is the height of the mobile action bar (0 where there is none), so the footer's last lines
+ * are never under it.
+ */
 export function SiteShell({
   children,
   vehicleSlot,
@@ -19,7 +23,7 @@ export function SiteShell({
   company?: Partial<Company> | null;
 }) {
   return (
-    <div className="flex min-h-dvh flex-col">
+    <div className="flex min-h-dvh flex-col pb-bottom-bar">
       <Header vehicleSlot={vehicleSlot} contact={contact} />
       <main id={MAIN_ID} tabIndex={-1} className="flex-1 outline-none">
         {children}

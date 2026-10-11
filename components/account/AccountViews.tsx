@@ -273,7 +273,7 @@ export function SavedVehicles() {
 
   return (
     <div className="flex flex-col gap-6" data-reveal="off">
-      <div className="flex flex-wrap items-center gap-3 rounded-sm border border-line bg-surface-1 p-4">
+      <div className="flex flex-wrap items-center gap-3 panel p-4">
         <CarIcon size={20} aria-hidden="true" className="text-ink-3" />
         {selected ? (
           <>

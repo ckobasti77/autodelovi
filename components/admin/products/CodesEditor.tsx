@@ -15,7 +15,7 @@ export type OemRow = { raw: string; brand: string };
 export type CrossRow = { manufacturer: string; raw: string };
 
 const cell =
-  "h-9 w-full min-w-0 rounded-xs border border-control bg-surface-1 px-2 type-body-s text-ink-1 transition-control hover:border-ink-3 focus:border-focus focus:outline-none focus:shadow-[inset_0_0_0_1px_var(--color-focus)]";
+  "h-9 w-full min-w-0 rounded-sm border border-control bg-surface-1 px-2 type-body-s text-ink-1 transition-control hover:border-ink-3 focus:border-focus focus:outline-none focus:shadow-[inset_0_0_0_1px_var(--color-focus)]";
 
 function splitPaste(text: string): string[] {
   return text

@@ -62,7 +62,7 @@ export function PartsListDialog({
                       onClick={() => choose(c.slug)}
                       aria-current={selected === c.slug ? "true" : undefined}
                       data-category={c.slug}
-                      className="group flex min-h-11 w-full cursor-pointer items-center gap-3 rounded-xs px-2 py-2 text-left transition-control hover:bg-surface-4 aria-[current=true]:bg-accent-subtle"
+                      className="group flex min-h-11 w-full cursor-pointer items-center gap-3 rounded-sm px-2 py-2 text-left transition-control hover:bg-surface-4 aria-[current=true]:bg-accent-subtle"
                     >
                       <span className="min-w-0 flex-1">
                         <span className="block text-[0.9375rem] font-medium leading-snug text-ink-1">

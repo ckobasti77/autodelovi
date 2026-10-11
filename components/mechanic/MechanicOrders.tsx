@@ -96,7 +96,7 @@ export function MechanicOrders() {
             aria-pressed={filter === f.value}
             onClick={() => setFilter(f.value)}
             className={cn(
-              "inline-flex h-11 cursor-pointer items-center gap-2 rounded-xs border px-3 type-body-s transition-control",
+              "inline-flex h-11 cursor-pointer items-center gap-2 rounded-sm border px-3 type-body-s transition-control",
               filter === f.value
                 ? "border-accent bg-accent-subtle text-ink-1"
                 : "border-line-strong text-ink-2 hover:border-ink-3 hover:text-ink-1",
