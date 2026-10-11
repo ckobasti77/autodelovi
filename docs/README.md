@@ -27,5 +27,8 @@ Developer setup: [`../README.md`](../README.md). Build report: [`../pipeline/REP
 | [PREDAJA.md](PREDAJA.md) | (sr) Handoff for developer and client: modules, admin step by step with screenshots, import, order and inquiry flows, notifications, mechanics, temporary data, demo removal, demo script | — |
 | [GO-LIVE.md](GO-LIVE.md) | (sr) Launch checklist: client inputs, business rules, domain, Vercel, Convex prod, owner, Resend, settings, legal, ads, feeds, GBP, Search Console, test orders, backups, follow-ups | — |
 | [showcase/index.html](showcase/index.html) | (sr) Self-contained screenshot tour for the client demo (rebuild: `scripts/showcase/`) | — |
+| [brand/LOGO.md](brand/LOGO.md) | (sr) **Logo „Euromotors Plus by OEM Parts“** (step 24): the idea, every lockup and file, colours, usage rules, fonts and licences, alternatives, open points. Rebuild: `scripts/brand/logo/` | — |
+| [brand/BRAND-BOARD.html](brand/BRAND-BOARD.html) | (sr) Self-contained brand board for the client (`BRAND-BOARD.png` = its render at 1600 px) | — |
+| [brand/BRAND-BRIEF.md](brand/BRAND-BRIEF.md) · [brand/concepts/README.md](brand/concepts/README.md) · [brand/concepts/CRITIQUE.md](brand/concepts/CRITIQUE.md) | Brand brief, the seven concept directions with scores, the critique of the finalists | — |
 
 Created later: `docs/3d/*` (steps 07–11), `docs/qa/*` (steps 12–22), `docs/progress/<step>.md` (checklists), `docs/ADS-PLAYBOOK.md` (19), `docs/SECURITY-AUDIT.md`, `docs/GO-LIVE-ENV.md`, `docs/PRIVACY-PROCESS.md`, `docs/BACKUPS.md` (20), `docs/PREDAJA.md`, `docs/GO-LIVE.md`, `docs/showcase/` (23).

@@ -12,7 +12,8 @@ import wawoff2 from "wawoff2";
 const ROOT = path.resolve(import.meta.dirname, "../../../..");
 const FILES = {
   archivo: "node_modules/@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2",
-  "archivo-italic": "node_modules/@fontsource-variable/archivo/files/archivo-latin-wdth-italic.woff2",
+  "archivo-italic":
+    "node_modules/@fontsource-variable/archivo/files/archivo-latin-wdth-italic.woff2",
   saira: "node_modules/@fontsource-variable/saira/files/saira-latin-wdth-normal.woff2",
   "saira-italic": "node_modules/@fontsource-variable/saira/files/saira-latin-wdth-italic.woff2",
 };

@@ -10,24 +10,30 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 import {
-  bounds,
-  circle,
   difference,
   expandStroke,
-  matrix,
   plus,
   polar,
   rect,
   ring,
   rotate,
-  rrect,
   simplify,
   star,
   translate,
   union,
   poly,
 } from "./lib/geo.mjs";
-import { FACE, THEMES, endorsement, fill, liftedPlus, slantedRule, svgDoc, word, wordAt } from "./lib/parts.mjs";
+import {
+  FACE,
+  THEMES,
+  endorsement,
+  fill,
+  liftedPlus,
+  slantedRule,
+  svgDoc,
+  word,
+  wordAt,
+} from "./lib/parts.mjs";
 import { svgToPng } from "./lib/render.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "../../..");
@@ -69,7 +75,14 @@ function oemStack({ cap, cx, top }) {
   const stroke = pCap * 0.09;
   const pProbe = word("Parts", FACE.parts, pCap, { tracking: 0.045 });
   const pw = pProbe.bbox.x2 - pProbe.bbox.x1;
-  const p = wordAt("Parts", FACE.parts, pCap, x2 - pw - stroke / 2, ruleY + ruleH + cap * 0.17 + pCap, { tracking: 0.045 });
+  const p = wordAt(
+    "Parts",
+    FACE.parts,
+    pCap,
+    x2 - pw - stroke / 2,
+    ruleY + ruleH + cap * 0.17 + pCap,
+    { tracking: 0.045 },
+  );
   return {
     solid: o.d + rect(x1, ruleY, x2 - x1, ruleH),
     outlined: expandStroke(p.d, stroke, { miterLimit: 3 }),
@@ -114,7 +127,8 @@ concept({
       w: Math.ceil(right + 40),
       h: 440,
       body:
-        fill(c.ink + euro.d + plusWord.d + rule + e.solid + e.outlined, t.ink) + fill(c.accent, t.accent),
+        fill(c.ink + euro.d + plusWord.d + rule + e.solid + e.outlined, t.ink) +
+        fill(c.accent, t.accent),
     };
   },
   mark(t) {
@@ -249,7 +263,9 @@ concept({
     return {
       w: 500,
       h: 500,
-      body: fill(outer + inner + top.d + bottom.d + ticks + s.solid + s.outlined, t.ink) + fill(signs, t.accent),
+      body:
+        fill(outer + inner + top.d + bottom.d + ticks + s.solid + s.outlined, t.ink) +
+        fill(signs, t.accent),
     };
   },
   mark(t) {
@@ -259,7 +275,11 @@ concept({
     const w = em.bbox.x2 - em.bbox.x1;
     const letters = wordAt("EM", FACE.oem, 62, c - w / 2 - 6, c + 31);
     const sign = plus(c + 52, c - 46, 30, 10);
-    return { w: MARK_BOX, h: MARK_BOX, body: fill(outer + letters.d, t.ink) + fill(sign, t.accent) };
+    return {
+      w: MARK_BOX,
+      h: MARK_BOX,
+      body: fill(outer + letters.d, t.ink) + fill(sign, t.accent),
+    };
   },
 });
 
@@ -288,9 +308,14 @@ concept({
     const y0 = 30;
     const H = 220;
     const line = 5;
-    const euro = wordAt("EUROMOTORS PLUS", FACE.display, 62, x0 + H + 36, y0 + 96, { tracking: 0.03 });
+    const euro = wordAt("EUROMOTORS PLUS", FACE.display, 62, x0 + H + 36, y0 + 96, {
+      tracking: 0.03,
+    });
     const W = euro.bbox.x2 + 36 - x0;
-    const frame = difference(rect(x0, y0, W, H), rect(x0 + line, y0 + line, W - 2 * line, H - 2 * line));
+    const frame = difference(
+      rect(x0, y0, W, H),
+      rect(x0 + line, y0 + line, W - 2 * line, H - 2 * line),
+    );
     const midY = y0 + 132;
     const hRule = rect(x0 + H, midY, W - H, line);
     const e = endorsement({ cap: 34, x: x0 + H + 36, y: midY + line + 58 });
@@ -308,7 +333,9 @@ concept({
     return {
       w: Math.ceil(x0 + W + 30),
       h: H + 60,
-      body: fill(frame + hRule + vRule + euro.d + e.solid + e.outlined + ticks, t.ink) + fill(cell, t.accent),
+      body:
+        fill(frame + hRule + vRule + euro.d + e.solid + e.outlined + ticks, t.ink) +
+        fill(cell, t.accent),
     };
   },
   mark(t) {
@@ -328,14 +355,21 @@ concept({
     const x0 = 40;
     const base = 150;
     const euro = wordAt("EUROMOTORS", FACE.display, 100, x0, base, { tracking: 0.02 });
-    const sign = liftedPlus({ cx: euro.bbox.x2 + 40 + 56, top: base - 106, span: 112, t: 32, lift: 12 });
+    const sign = liftedPlus({
+      cx: euro.bbox.x2 + 40 + 56,
+      top: base - 106,
+      span: 112,
+      t: 32,
+      lift: 12,
+    });
     const right = sign.x2;
     const rule = rect(x0, base + 26, right - x0, 5);
     const e = endorsement({ cap: 44, x: right, y: base + 26 + 5 + 22 + 44, anchor: "end" });
     return {
       w: Math.ceil(right + 40),
       h: 290,
-      body: fill(euro.d + sign.body + rule + e.solid + e.outlined, t.ink) + fill(sign.part, t.accent),
+      body:
+        fill(euro.d + sign.body + rule + e.solid + e.outlined, t.ink) + fill(sign.part, t.accent),
     };
   },
   mark(t) {
@@ -362,7 +396,10 @@ for (const c of list) {
     for (const kind of ["primary", "mark"]) {
       const art = c[kind](t);
       const label = `${c.title} — Euromotors Plus by OEM Parts (${kind}, ${themeName})`;
-      await writeFile(path.join(OUT, `${name}-${kind}-${themeName}.svg`), svgDoc({ ...art, title: label }) + "\n");
+      await writeFile(
+        path.join(OUT, `${name}-${kind}-${themeName}.svg`),
+        svgDoc({ ...art, title: label }) + "\n",
+      );
       const withBg = svgDoc({ ...art, bg: t.bg });
       if (kind === "primary") {
         // padded to a common sheet cell: 760 × 380, the lockup fitted inside 680 × 300
@@ -388,12 +425,21 @@ for (const c of list) {
   ]) {
     const lock = c.primary(mono);
     const k = Math.min(520 / lock.w, 170 / lock.h);
-    png[`mono-primary-${themeName}`] = svgToPng(svgDoc({ ...lock, bg: mono.bg }), Math.round(lock.w * k));
-    await writeFile(path.join(OUT, "renders", `${name}-primary-mono-${mono.name}.png`), svgToPng(svgDoc({ ...lock, bg: mono.bg }), 1200));
+    png[`mono-primary-${themeName}`] = svgToPng(
+      svgDoc({ ...lock, bg: mono.bg }),
+      Math.round(lock.w * k),
+    );
+    await writeFile(
+      path.join(OUT, "renders", `${name}-primary-mono-${mono.name}.png`),
+      svgToPng(svgDoc({ ...lock, bg: mono.bg }), 1200),
+    );
     const mk = c.mark(mono);
     for (const size of [128, 16]) {
       png[`mono-mark-${themeName}-${size}`] = svgToPng(svgDoc({ ...mk, bg: mono.bg }), size);
-      await writeFile(path.join(OUT, "renders", `${name}-mark-mono-${mono.name}-${size}.png`), png[`mono-mark-${themeName}-${size}`]);
+      await writeFile(
+        path.join(OUT, "renders", `${name}-mark-mono-${mono.name}-${size}.png`),
+        png[`mono-mark-${themeName}-${size}`],
+      );
     }
   }
 
@@ -412,7 +458,11 @@ for (const c of list) {
     });
     const lock = png[`primary-${themeName}`];
     const meta = await sharp(lock).metadata();
-    layers.push({ input: lock, left: ox + Math.round((COL - meta.width) / 2), top: Math.round((380 - meta.height) / 2) });
+    layers.push({
+      input: lock,
+      left: ox + Math.round((COL - meta.width) / 2),
+      top: Math.round((380 - meta.height) / 2),
+    });
     let x = ox + 40;
     for (const size of [256, 64, 32, 16]) {
       layers.push({ input: png[`mark-${themeName}-${size}`], left: x, top: 420 + (256 - size) });

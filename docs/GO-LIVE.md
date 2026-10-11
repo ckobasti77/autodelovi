@@ -26,6 +26,14 @@ Redosled je bitan: domen i Resend traže vreme (DNS, provera domena), pa njih tr
 - [ ] **[P2] (K)** Pogledati 3D auto (početna, `public/images/hero/`) i sličice delova (`public/images/parts/`) i kratke savete u oblačićima 3D prikaza (npr. „Pre zamene proverite broj na kućištu turbine.“); javiti šta treba drugačije. Kupljen 3D model nekog dela može da zameni generisani (README → 3D pipeline; proveriti licencu za komercijalnu upotrebu).
 - [ ] **[P2] (K)** Potvrditi vizuelni pravac „Rendgen“ (`/styleguide`): tamna prodavnica, jedna narandžasta boja za akcije, svetao admin.
 
+### Znak i ime (korak 24)
+
+- [ ] **[P0] (K)** Potvrditi novi znak „Euromotors Plus by OEM Parts“. Tabla za pregled: `docs/brand/BRAND-BOARD.html` (ili `.png`); uputstvo: `docs/brand/LOGO.md`; ostali predlozi: `docs/brand/concepts/`.
+- [ ] **[P0] (K)** Potvrditi reč „by“ u potpisu („Euromotors Plus by OEM Parts“). Ako ne opisuje dobro odnos firme i radnje, osnovni može da postane dvojni znak (`logo-dual`), u kojem oba imena stoje ravnopravno i bez „by“.
+- [ ] **[P1] (K)** Provera žiga pre registracije i pre izrade table i oslikavanja vozila: pretraga sličnih znakova u Zavodu za intelektualnu svojinu Republike Srbije i u bazi TMview, najbolje preko zastupnika za žigove. Ova provera nije urađena.
+- [ ] **[P1] (K)** Boje za štampu (Pantone / CMYK za narandžastu `#FF6B1A` i tamnu `#0D0F11`) izabrati sa štamparom, sa probnim otiskom. U kompletu su namerno samo ekranske vrednosti.
+- [ ] **[P2] (K)** Ako postoje vektorske datoteke dosadašnjih znakova (Euromotors Plus, OEM Parts), sačuvati ih u `docs/brand/source/`.
+
 ## B. Poslovna pravila — potvrditi sa klijentom
 
 Sve je već podešeno na ove vrednosti i menja se u adminu bez programera. Treba samo potvrditi ili promeniti.

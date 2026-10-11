@@ -74,15 +74,37 @@ export const TYPE = {
   // The OEM Parts signature: Saira Expanded Italic, widened and leaned further (12° → 19°) to match the
   // known logo. „Parts“ is the outline of the black weight; its outline is the lockup's hairline and its
   // letters stand at one constant distance (`air`, in outline widths), so the outlines never merge.
-  by: { family: "saira-italic", axes: { wght: 500, wdth: 110 }, scale: 0.74, stretch: 1.04, lean: 7 },
+  by: {
+    family: "saira-italic",
+    axes: { wght: 500, wdth: 110 },
+    scale: 0.74,
+    stretch: 1.04,
+    lean: 7,
+  },
   oem: { family: "saira-italic", axes: { wght: 800, wdth: 125 }, stretch: 1.1, lean: 7 },
-  parts: { family: "saira-italic", axes: { wght: 900, wdth: 125 }, stretch: 1.14, lean: 7, air: 0.7 },
+  parts: {
+    family: "saira-italic",
+    axes: { wght: 900, wdth: 125 },
+    stretch: 1.14,
+    lean: 7,
+    air: 0.7,
+  },
 };
 /**
  * Manual pair corrections, in em, on top of the font's own kerning. They even out the optical gaps
  * measured by lib/spacing.mjs: T is loose on both sides, M and R tight (see docs/brand/LOGO.md).
  */
-export const KERN = { EU: -0.013, UR: 0.004, RO: 0.005, OM: 0.009, MO: 0.008, OT: -0.018, TO: -0.018, OR: 0.008, RS: 0.007 };
+export const KERN = {
+  EU: -0.013,
+  UR: 0.004,
+  RO: 0.005,
+  OM: 0.009,
+  MO: 0.008,
+  OT: -0.018,
+  TO: -0.018,
+  OR: 0.008,
+  RS: 0.007,
+};
 export const KERN_PLUS = { PL: 0.016, LU: -0.012, US: -0.005 };
 
 // ---------------------------------------------------------------------------------------------
@@ -121,7 +143,11 @@ export const HINTED = {
 };
 export function hintedMark(px) {
   const g = HINTED[px];
-  const bracket = union(rect(g.x, g.y, g.s, g.h), rect(g.x, g.y, g.w, g.a), rect(g.x, g.y + g.h - g.a, g.w, g.a));
+  const bracket = union(
+    rect(g.x, g.y, g.s, g.h),
+    rect(g.x, g.y, g.w, g.a),
+    rect(g.x, g.y + g.h - g.a, g.w, g.a),
+  );
   const p = g.plus;
   const o = (p.span - p.t) / 2;
   const sign = union(rect(p.x + o, p.y, p.t, p.span), rect(p.x, p.y + o, p.span, p.t));
@@ -201,11 +227,17 @@ export function oemParts(x, y, h) {
  */
 export function wordmark(x = 0, y = 0, { withSignature = true, cap = C } = {}) {
   const L = LOCKUP;
-  const euro = wordAt("EUROMOTORS", TYPE.euro, cap, x, y + cap, { tracking: TYPE.euro.tracking, kern: KERN });
+  const euro = wordAt("EUROMOTORS", TYPE.euro, cap, x, y + cap, {
+    tracking: TYPE.euro.tracking,
+    kern: KERN,
+  });
   const right = euro.bbox.x2;
   const c2 = cap * L.line2;
   const base2 = y + cap + cap * L.lineGap + c2;
-  const plusWord = wordAt("PLUS", TYPE.plus, c2, x, base2, { tracking: TYPE.plus.tracking, kern: KERN_PLUS });
+  const plusWord = wordAt("PLUS", TYPE.plus, c2, x, base2, {
+    tracking: TYPE.plus.tracking,
+    kern: KERN_PLUS,
+  });
   const ruleH = (STEM * cap) / 5;
   const ruleX1 = plusWord.bbox.x2 + c2 * L.ruleGap;
   let ruleX2 = right;
@@ -320,7 +352,12 @@ export function lockupSvg(kind, theme, { bg = false, pad = 0, title } = {}) {
 export const ICON = { size: 512, radius: 0.22, markHeight: 0.5, maskableHeight: 0.42 };
 
 /** App icon: graphite tile, ink bracket, orange plus. `rounded` = transparent corners. */
-export function iconSvg({ rounded = true, markHeight = ICON.markHeight, size = ICON.size, theme = THEMES.night } = {}) {
+export function iconSvg({
+  rounded = true,
+  markHeight = ICON.markHeight,
+  size = ICON.size,
+  theme = THEMES.night,
+} = {}) {
   const u = (size * markHeight) / MARK.h;
   const m = mark((size - MARK.w * u) / 2, (size - MARK.h * u) / 2, u);
   const tile = rounded ? rrect(0, 0, size, size, size * ICON.radius) : rect(0, 0, size, size);
@@ -339,6 +376,9 @@ export function hintedIconSvg(px, theme = THEMES.night) {
   return svgDoc({
     w: px,
     h: px,
-    body: fill(rrect(0, 0, px, px, radius), theme.bg) + fill(m.bracket, theme.ink) + fill(m.sign, theme.accent),
+    body:
+      fill(rrect(0, 0, px, px, radius), theme.bg) +
+      fill(m.bracket, theme.ink) +
+      fill(m.sign, theme.accent),
   });
 }

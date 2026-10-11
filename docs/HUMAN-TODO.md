@@ -183,3 +183,12 @@ Ceo izveštaj je u `docs/qa/AUDIT.md`: 180 potvrđenih nalaza (bez P0, 18 P1). K
 - [ ] **[P3] Korak 22 — praćenje rada sajta (nalaz SEO-12)**: adresa `/api/zdravlje` sada javlja da li sajt i baza (Convex) rade: odgovor 200 znači da je sve u redu, 503 da baza ne odgovara. Posle objave prijavi tu adresu u neki servis za praćenje (npr. UptimeRobot ili Better Stack, besplatan plan je dovoljan), proveru na 5 minuta i obaveštenje na tvoju e-poštu ili telefon.
 - [ ] **[P3] Korak 22 — uputstva za agente (nalazi PERF-05 i PERF-10, odluke D235 i D288)**: `.claude/rules/architecture.md` i `.claude/skills/text-reveal/SKILL.md` još opisuju staro otkrivanje teksta preko GSAP-a i kažu da `@/lib/gsap/client` registruje ScrollTrigger. Otkrivanje teksta sada radi preko CSS animacija (`tr-word`, `tr-word-lite`, `tr-block`), a ScrollTrigger se učitava samo uz 3D prikaz na početnoj strani (`@/lib/gsap/scroll`). Agenti ne smeju da menjaju `.claude/**`, pa te dve datoteke treba da ispravite vi (ili da to izričito dozvolite).
 - [ ] **[P3] Korak 22 — opis strane „Kontakt“ za Google**: dok su kontakt podaci u Podešavanja → Firma prazni, strana `/kontakt` nema opis (meta description), jer jedina rečenica počinje podatkom o najbržem kontaktu. Kada upišete telefon ili Viber, opis se pojavljuje sam.
+
+## 14. Znak i ime (korak 24)
+
+Stavke su upisane u [`GO-LIVE.md`](GO-LIVE.md) §A „Znak i ime“:
+
+- [ ] **[P0]** Klijent potvrđuje znak „Euromotors Plus by OEM Parts“ (`docs/brand/BRAND-BOARD.html`) i reč „by“ u potpisu.
+- [ ] **[P1]** Provera žiga (Zavod za intelektualnu svojinu RS, TMview) pre registracije, table i vozila.
+- [ ] **[P1]** Boje za štampu (Pantone / CMYK) sa štamparom.
+- [ ] **[P2]** Vektorske datoteke starih znakova, ako postoje, u `docs/brand/source/`.

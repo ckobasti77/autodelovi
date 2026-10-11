@@ -7,7 +7,8 @@ import path from "node:path";
 const ROOT = path.resolve(import.meta.dirname, "../../..");
 const DIR = path.join(ROOT, "docs/brand/concepts");
 const ids = process.argv.slice(2);
-const read = async (f) => (await readFile(path.join(DIR, f), "utf8")).replace(/ width="[\d.]+" height="[\d.]+"/, "").trim();
+const read = async (f) =>
+  (await readFile(path.join(DIR, f), "utf8")).replace(/ width="[\d.]+" height="[\d.]+"/, "").trim();
 
 let sections = "";
 for (const id of ids) {

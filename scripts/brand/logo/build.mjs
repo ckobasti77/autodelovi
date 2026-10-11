@@ -24,7 +24,15 @@ const KINDS = ["horizontal", "header", "stacked", "wordmark", "mark", "dual", "o
 const FILE = { mark: "mark", oemParts: "oem-parts" };
 const VARIANTS = ["night", "paper", "black", "white", "orange"];
 /** PNG height at 1× per lockup (px): the smallest size at which every element of it holds. */
-const BASE_HEIGHT = { horizontal: MIN.horizontal.px, header: 40, stacked: 160, wordmark: 56, mark: 64, dual: 56, oemParts: 56 };
+const BASE_HEIGHT = {
+  horizontal: MIN.horizontal.px,
+  header: 40,
+  stacked: 160,
+  wordmark: 56,
+  mark: 64,
+  dual: 56,
+  oemParts: 56,
+};
 const TITLES = {
   horizontal: NAME,
   header: "Euromotors Plus",
@@ -40,7 +48,11 @@ async function put(dir, name, data, meta = {}) {
   await mkdir(dir, { recursive: true });
   const file = path.join(dir, name);
   await writeFile(file, data);
-  manifest.push({ file: path.relative(ROOT, file).replaceAll("\\", "/"), bytes: Buffer.byteLength(data), ...meta });
+  manifest.push({
+    file: path.relative(ROOT, file).replaceAll("\\", "/"),
+    bytes: Buffer.byteLength(data),
+    ...meta,
+  });
 }
 
 for (const dir of [PUBLIC, EXPORT]) await rm(dir, { recursive: true, force: true });
@@ -63,13 +75,20 @@ for (const kind of KINDS) {
       const width = Math.round((w / h) * height);
       const png = svgToPng(svg, width);
       const meta = await sharp(png).metadata();
-      await put(path.join(EXPORT, "png"), `${base}${scale === 1 ? "" : `@${scale}x`}.png`, png, { w: meta.width, h: meta.height });
+      await put(path.join(EXPORT, "png"), `${base}${scale === 1 ? "" : `@${scale}x`}.png`, png, {
+        w: meta.width,
+        h: meta.height,
+      });
     }
 
     // PDF: light-ground variants on a transparent page at artwork size; dark-ground variants on the
     // night field with clear space, so the file can be opened and proofed as it is.
     const onDark = variant === "night" || variant === "white" || variant === "orange";
-    const pdfArt = lockupSvg(kind, theme, { bg: onDark, pad: onDark ? CLEAR : 0, title: TITLES[kind] });
+    const pdfArt = lockupSvg(kind, theme, {
+      bg: onDark,
+      pad: onDark ? CLEAR : 0,
+      title: TITLES[kind],
+    });
     const k = 0.5; // 1 unit = 0.5 px = 0.375 pt; vector, so the size only sets the default page
     await svgToPdf(
       pdfArt.svg.replace(/ width="[\d.]+" height="[\d.]+"/, ""),
@@ -92,16 +111,22 @@ async function icons(dir) {
   await put(dir, "icon.svg", masterOpt, { w: 512, h: 512 });
 
   const hinted = [16, 32, 48].map((size) => ({ size, png: svgToPng(hintedIconSvg(size), size) }));
-  for (const { size, png } of hinted) await put(dir, `favicon-${size}.png`, png, { w: size, h: size });
+  for (const { size, png } of hinted)
+    await put(dir, `favicon-${size}.png`, png, { w: size, h: size });
   await put(dir, "favicon.ico", ico(hinted), { sizes: "16, 32, 48" });
 
   // apple-touch-icon: opaque, full-bleed (iOS applies its own mask)
-  const apple = await sharp(svgToPng(iconSvg({ rounded: false }), 180)).flatten({ background: THEMES.night.bg }).png().toBuffer();
+  const apple = await sharp(svgToPng(iconSvg({ rounded: false }), 180))
+    .flatten({ background: THEMES.night.bg })
+    .png()
+    .toBuffer();
   await put(dir, "apple-touch-icon.png", apple, { w: 180, h: 180 });
 
   for (const size of [192, 512]) {
     await put(dir, `icon-${size}.png`, svgToPng(master, size), { w: size, h: size });
-    const maskable = await sharp(svgToPng(iconSvg({ rounded: false, markHeight: ICON.maskableHeight }), size))
+    const maskable = await sharp(
+      svgToPng(iconSvg({ rounded: false, markHeight: ICON.maskableHeight }), size),
+    )
       .flatten({ background: THEMES.night.bg })
       .png()
       .toBuffer();
@@ -136,8 +161,12 @@ await icons(path.join(EXPORT, "icons"));
 {
   // The platform crops to a circle: the mark sits inside the inscribed circle with room to spare.
   const avatar = iconSvg({ rounded: false, markHeight: 0.44 });
-  const png = await sharp(svgToPng(avatar, 1000)).flatten({ background: THEMES.night.bg }).png().toBuffer();
-  for (const dir of [PUBLIC, path.join(EXPORT, "icons")]) await put(dir, "social-avatar.png", png, { w: 1000, h: 1000 });
+  const png = await sharp(svgToPng(avatar, 1000))
+    .flatten({ background: THEMES.night.bg })
+    .png()
+    .toBuffer();
+  for (const dir of [PUBLIC, path.join(EXPORT, "icons")])
+    await put(dir, "social-avatar.png", png, { w: 1000, h: 1000 });
 }
 
 await closeBrowser();
@@ -146,8 +175,20 @@ await closeBrowser();
 // Manifest + summary
 // ---------------------------------------------------------------------------------------------
 manifest.sort((a, b) => a.file.localeCompare(b.file));
-await writeFile(path.join(EXPORT, "manifest.json"), JSON.stringify({ name: NAME, generated: "scripts/brand/logo/build.mjs", files: manifest }, null, 2) + "\n");
-const count = async (dir) => (await readdir(dir, { recursive: true, withFileTypes: true })).filter((e) => e.isFile()).length;
-console.log(`public/brand: ${await count(PUBLIC)} files · docs/brand/export: ${await count(EXPORT)} files`);
+await writeFile(
+  path.join(EXPORT, "manifest.json"),
+  JSON.stringify(
+    { name: NAME, generated: "scripts/brand/logo/build.mjs", files: manifest },
+    null,
+    2,
+  ) + "\n",
+);
+const count = async (dir) =>
+  (await readdir(dir, { recursive: true, withFileTypes: true })).filter((e) => e.isFile()).length;
+console.log(
+  `public/brand: ${await count(PUBLIC)} files · docs/brand/export: ${await count(EXPORT)} files`,
+);
 const svgs = manifest.filter((m) => m.file.startsWith("public/brand") && m.file.endsWith(".svg"));
-console.log(`SVG sizes: ${svgs.map((m) => `${path.basename(m.file)} ${(m.bytes / 1024).toFixed(1)} KB`).join(", ")}`);
+console.log(
+  `SVG sizes: ${svgs.map((m) => `${path.basename(m.file)} ${(m.bytes / 1024).toFixed(1)} KB`).join(", ")}`,
+);

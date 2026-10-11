@@ -74,7 +74,18 @@ export function liftedPlus({ cx, top, span, t = span * 0.32, lift = span * 0.14 
   const x1 = cx - span / 2;
   const body = union(rect(x1, top + a, span, t), rect(cx - t / 2, top + a + t, t, a));
   const part = rect(cx - t / 2, top - lift, t, a);
-  return { body, part, width: span, x1, x2: x1 + span, top: top - lift, bottom: top + span, arm: a, t, lift };
+  return {
+    body,
+    part,
+    width: span,
+    x1,
+    x2: x1 + span,
+    top: top - lift,
+    bottom: top + span,
+    arm: a,
+    t,
+    lift,
+  };
 }
 
 /** A parallelogram rule: a hairline with the italic's slant on both ends. */

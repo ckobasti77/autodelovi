@@ -9,7 +9,20 @@ import { svgToPng } from "./lib/render.mjs";
 import { opticalGaps } from "./lib/spacing.mjs";
 import { samplePoints } from "./lib/geo.mjs";
 import { wordAt } from "./lib/parts.mjs";
-import { ARM, C, HAIR, HINTED, LOCKUPS, MARK, STEM, THEMES, TYPE, U, lockupSvg, wordmark } from "./logo.mjs";
+import {
+  ARM,
+  C,
+  HAIR,
+  HINTED,
+  LOCKUPS,
+  MARK,
+  STEM,
+  THEMES,
+  TYPE,
+  U,
+  lockupSvg,
+  wordmark,
+} from "./logo.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "../../..");
 const PUBLIC = path.join(ROOT, "public/brand");
@@ -33,7 +46,8 @@ const raw = async (png) => sharp(png).ensureAlpha().raw().toBuffer({ resolveWith
     try {
       assertClean(svg, f);
       const tags = new Set([...svg.matchAll(/<([a-zA-Z]+)/g)].map((m) => m[1]));
-      for (const t of tags) if (!["svg", "title", "path"].includes(t)) throw new Error(`${f}: unexpected <${t}>`);
+      for (const t of tags)
+        if (!["svg", "title", "path"].includes(t)) throw new Error(`${f}: unexpected <${t}>`);
     } catch (e) {
       bad += `${e.message}; `;
     }
@@ -65,7 +79,11 @@ const raw = async (png) => sharp(png).ensureAlpha().raw().toBuffer({ resolveWith
       worstName = file;
     }
   }
-  check("optimised SVG = source artwork", worst < 0.0005, `largest difference ${(worst * 100).toFixed(4)} % of pixels (${worstName})`);
+  check(
+    "optimised SVG = source artwork",
+    worst < 0.0005,
+    `largest difference ${(worst * 100).toFixed(4)} % of pixels (${worstName})`,
+  );
 }
 
 // 3. Stroke logic: the mark's strokes are the letter's strokes.
@@ -74,13 +92,19 @@ const raw = async (png) => sharp(png).ensureAlpha().raw().toBuffer({ resolveWith
   const pts = samplePoints(E.d, 0.2);
   const span = (list) => Math.max(...list) - Math.min(...list);
   const stem = span(pts.filter(([, y]) => y > 28 && y < 34).map((p) => p[0]));
-  const ys = pts.filter(([x]) => x > 70 && x < 74).map((p) => p[1]).sort((a, b) => a - b);
+  const ys = pts
+    .filter(([x]) => x > 70 && x < 74)
+    .map((p) => p[1])
+    .sort((a, b) => a - b);
   const arm = ys.find((y) => y > 5); // lower edge of the top arm
   const spine = (MARK.spine * U) / C;
   const armMark = (MARK.arm * U) / C;
   check(
     "mark strokes = letter strokes",
-    Math.abs(stem / 100 - STEM) < 0.003 && Math.abs(arm / 100 - ARM) < 0.004 && Math.abs(spine - STEM) < 0.003 && Math.abs(armMark - ARM) < 0.003,
+    Math.abs(stem / 100 - STEM) < 0.003 &&
+      Math.abs(arm / 100 - ARM) < 0.004 &&
+      Math.abs(spine - STEM) < 0.003 &&
+      Math.abs(armMark - ARM) < 0.003,
     `letter stem ${(stem / 100).toFixed(4)} C, arm ${(arm / 100).toFixed(4)} C · bracket spine ${spine.toFixed(4)} C, arms ${armMark.toFixed(4)} C · hairline ${(HAIR / C).toFixed(4)} C`,
   );
 }
@@ -108,8 +132,16 @@ const raw = async (png) => sharp(png).ensureAlpha().raw().toBuffer({ resolveWith
 // 5. The mark spans the wordmark block; lockup sizes.
 {
   const wm = wordmark(0, 0);
-  const ratios = Object.fromEntries(Object.keys(LOCKUPS).map((k) => [k, LOCKUPS[k]()]).map(([k, a]) => [k, `${a.w}×${a.h}`]));
-  check("mark height = wordmark block", Math.abs(wm.h - MARK.h * U) < 0.01, `block ${wm.h.toFixed(2)} · mark ${MARK.h * U} · ${JSON.stringify(ratios)}`);
+  const ratios = Object.fromEntries(
+    Object.keys(LOCKUPS)
+      .map((k) => [k, LOCKUPS[k]()])
+      .map(([k, a]) => [k, `${a.w}×${a.h}`]),
+  );
+  check(
+    "mark height = wordmark block",
+    Math.abs(wm.h - MARK.h * U) < 0.01,
+    `block ${wm.h.toFixed(2)} · mark ${MARK.h * U} · ${JSON.stringify(ratios)}`,
+  );
 }
 
 // 6. Favicons: pixel-exact (no blended pixel inside the mark), colours as specified.
@@ -137,8 +169,11 @@ const raw = async (png) => sharp(png).ensureAlpha().raw().toBuffer({ resolveWith
     }
     const expectOrange = 2 * g.plus.span * g.plus.t - g.plus.t * g.plus.t;
     const expectInk = g.s * g.h + 2 * (g.w - g.s) * g.a;
-    if (blended || orange !== expectOrange || inked !== expectInk || info.width !== size) ok = false;
-    detail.push(`${size}px: ink ${inked}/${expectInk}, orange ${orange}/${expectOrange}, blended ${blended}`);
+    if (blended || orange !== expectOrange || inked !== expectInk || info.width !== size)
+      ok = false;
+    detail.push(
+      `${size}px: ink ${inked}/${expectInk}, orange ${orange}/${expectOrange}, blended ${blended}`,
+    );
   }
   check("favicons pixel-exact", ok, detail.join(" · "));
 }
@@ -155,7 +190,11 @@ const raw = async (png) => sharp(png).ensureAlpha().raw().toBuffer({ resolveWith
     sizes.push(buf.readUInt8(at));
     if (buf.readUInt32BE(offset) !== 0x89504e47) ok = false;
   }
-  check("favicon.ico", ok && sizes.join() === "16,32,48", `${count} entries: ${sizes.join(", ")} · ${buf.length} bytes`);
+  check(
+    "favicon.ico",
+    ok && sizes.join() === "16,32,48",
+    `${count} entries: ${sizes.join(", ")} · ${buf.length} bytes`,
+  );
 }
 
 // 8. Icon and image sizes; opaque where required.
@@ -173,10 +212,16 @@ const raw = async (png) => sharp(png).ensureAlpha().raw().toBuffer({ resolveWith
     const m = await sharp(path.join(PUBLIC, f)).metadata();
     const stats = await sharp(path.join(PUBLIC, f)).stats();
     const isOpaque = !m.hasAlpha || stats.channels[3].min === 255;
-    if (m.width !== w || m.height !== h || (opaque && !isOpaque)) bad += `${f} ${m.width}×${m.height} opaque=${isOpaque}; `;
+    if (m.width !== w || m.height !== h || (opaque && !isOpaque))
+      bad += `${f} ${m.width}×${m.height} opaque=${isOpaque}; `;
   }
   const mail = await sharp(path.join(PUBLIC, "email-header@2x.png")).metadata();
-  check("icon set sizes", !bad, bad || `e-mail header ${mail.width}×${mail.height} (shown at ${mail.width / 2}×${mail.height / 2})`);
+  check(
+    "icon set sizes",
+    !bad,
+    bad ||
+      `e-mail header ${mail.width}×${mail.height} (shown at ${mail.width / 2}×${mail.height / 2})`,
+  );
 
   // maskable: the mark stays inside the 80 % safe circle
   const { data, info } = await raw(await readFile(path.join(PUBLIC, "icon-maskable-512.png")));
@@ -185,12 +230,19 @@ const raw = async (png) => sharp(png).ensureAlpha().raw().toBuffer({ resolveWith
   for (let y = 0; y < info.height; y++) {
     for (let x = 0; x < info.width; x++) {
       const i = (y * info.width + x) * 4;
-      if (Math.abs(data[i] - bg[0]) + Math.abs(data[i + 1] - bg[1]) + Math.abs(data[i + 2] - bg[2]) > 30) {
+      if (
+        Math.abs(data[i] - bg[0]) + Math.abs(data[i + 1] - bg[1]) + Math.abs(data[i + 2] - bg[2]) >
+        30
+      ) {
         far = Math.max(far, Math.hypot(x - 255.5, y - 255.5));
       }
     }
   }
-  check("maskable safe zone", far <= 0.4 * 512, `farthest mark pixel ${far.toFixed(1)} px from the centre, safe radius ${(0.4 * 512).toFixed(1)} px`);
+  check(
+    "maskable safe zone",
+    far <= 0.4 * 512,
+    `farthest mark pixel ${far.toFixed(1)} px from the centre, safe radius ${(0.4 * 512).toFixed(1)} px`,
+  );
 }
 
 // 9. PDFs are vector: no image object, and the page content draws paths.
@@ -223,8 +275,16 @@ const raw = async (png) => sharp(png).ensureAlpha().raw().toBuffer({ resolveWith
 {
   const files = await readdir(path.join(EXPORT, "png"));
   const bases = files.filter((f) => !f.includes("@"));
-  const missing = bases.filter((f) => !files.includes(f.replace(".png", "@2x.png")) || !files.includes(f.replace(".png", "@4x.png")));
-  check(`PNG sets (${bases.length} artworks × 3 scales)`, missing.length === 0 && bases.length === 35, missing.join(", "));
+  const missing = bases.filter(
+    (f) =>
+      !files.includes(f.replace(".png", "@2x.png")) ||
+      !files.includes(f.replace(".png", "@4x.png")),
+  );
+  check(
+    `PNG sets (${bases.length} artworks × 3 scales)`,
+    missing.length === 0 && bases.length === 35,
+    missing.join(", "),
+  );
 }
 
 const failed = results.filter((r) => !r.ok);

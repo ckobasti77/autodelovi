@@ -8,7 +8,9 @@ import path from "node:path";
 const require = createRequire(import.meta.url);
 const ROOT = path.resolve(import.meta.dirname, "../../../..");
 const init = require("pathkit-wasm/bin/pathkit.js");
-const loaded = init({ wasmBinary: readFileSync(path.join(ROOT, "node_modules/pathkit-wasm/bin/pathkit.wasm")) });
+const loaded = init({
+  wasmBinary: readFileSync(path.join(ROOT, "node_modules/pathkit-wasm/bin/pathkit.wasm")),
+});
 const PK = await (typeof loaded.ready === "function" ? loaded.ready() : loaded);
 
 const fmt = (n, p) => {
@@ -19,7 +21,7 @@ const fmt = (n, p) => {
 /** Round every number in a path string. */
 export const roundD = (d, p = 2) => d.replace(/-?\d*\.?\d+(?:e-?\d+)?/gi, (m) => fmt(m, p));
 
-function use(d, fn) {
+function withPath(d, fn) {
   const p = PK.FromSVGString(d);
   try {
     return fn(p);
@@ -47,11 +49,11 @@ export const difference = (a, ...bs) => bs.reduce((acc, b) => op(acc, b, "differ
 export const intersect = (a, b) => op(a, b, "intersect");
 
 /** Resolve overlaps and winding so the result fills the same with nonzero and evenodd. */
-export const simplify = (d) => use(d, (p) => out(p.simplify()));
+export const simplify = (d) => withPath(d, (p) => out(p.simplify()));
 
 /** A stroke of `width` centred on the contour, as a filled outline. */
 export function expandStroke(d, width, { join = "miter", cap = "butt", miterLimit = 4 } = {}) {
-  return use(d, (p) => {
+  return withPath(d, (p) => {
     p.stroke({
       width,
       join: PK.StrokeJoin[join.toUpperCase()],
@@ -74,10 +76,11 @@ export const innerOutline = (d, width, opts) => difference(simplify(d), offset(d
 
 /** SVG matrix(a b c d e f). */
 export function matrix(d, [a, b, c, dd, e, f]) {
-  return use(d, (p) => out(p.transform(a, c, e, b, dd, f, 0, 0, 1), 3));
+  return withPath(d, (p) => out(p.transform(a, c, e, b, dd, f, 0, 0, 1), 3));
 }
 export const translate = (d, tx, ty) => matrix(d, [1, 0, 0, 1, tx, ty]);
-export const scale = (d, sx, sy = sx, cx = 0, cy = 0) => matrix(d, [sx, 0, 0, sy, cx - sx * cx, cy - sy * cy]);
+export const scale = (d, sx, sy = sx, cx = 0, cy = 0) =>
+  matrix(d, [sx, 0, 0, sy, cx - sx * cx, cy - sy * cy]);
 export function rotate(d, deg, cx = 0, cy = 0) {
   const t = (deg * Math.PI) / 180;
   const cos = Math.cos(t);
@@ -91,7 +94,7 @@ export function slant(d, deg, y0 = 0) {
 }
 
 export function bounds(d) {
-  return use(d, (p) => {
+  return withPath(d, (p) => {
     const b = p.computeTightBounds();
     const x1 = b.fLeft;
     const y1 = b.fTop;
@@ -130,7 +133,8 @@ export function circle(cx, cy, r) {
   );
 }
 
-export const ring = (cx, cy, rOuter, rInner) => difference(circle(cx, cy, rOuter), circle(cx, cy, rInner));
+export const ring = (cx, cy, rOuter, rInner) =>
+  difference(circle(cx, cy, rOuter), circle(cx, cy, rInner));
 
 export const poly = (pts) => `M${pts.map(([x, y]) => `${n(x)} ${n(y)}`).join("L")}Z`;
 
@@ -166,7 +170,10 @@ export function plus(cx, cy, span, t) {
 }
 
 /** Point on a circle; angle in degrees, 0 = right, counter-clockwise positive (maths convention). */
-export const polar = (cx, cy, r, deg) => [cx + r * Math.cos((deg * Math.PI) / 180), cy - r * Math.sin((deg * Math.PI) / 180)];
+export const polar = (cx, cy, r, deg) => [
+  cx + r * Math.cos((deg * Math.PI) / 180),
+  cy - r * Math.sin((deg * Math.PI) / 180),
+];
 
 /** Annular sector between two radii from angle a0 to a1 (maths convention, a1 > a0). */
 export function sector(cx, cy, rOuter, rInner, a0, a1) {
@@ -185,7 +192,7 @@ export function sector(cx, cy, rOuter, rInner, a0, a1) {
  * Points along the contours of a path, at most `step` apart (curves are flattened). For measuring.
  */
 export function samplePoints(d, step = 1) {
-  return use(d, (p) => {
+  return withPath(d, (p) => {
     const cmds = p.toCmds();
     const pts = [];
     let cx = 0;
@@ -221,7 +228,10 @@ export function samplePoints(d, step = 1) {
         const x0 = cx;
         const y0 = cy;
         curve(
-          (t) => [(1 - t) ** 2 * x0 + 2 * (1 - t) * t * x1 + t * t * x2, (1 - t) ** 2 * y0 + 2 * (1 - t) * t * y1 + t * t * y2],
+          (t) => [
+            (1 - t) ** 2 * x0 + 2 * (1 - t) * t * x1 + t * t * x2,
+            (1 - t) ** 2 * y0 + 2 * (1 - t) * t * y1 + t * t * y2,
+          ],
           Math.hypot(x1 - x0, y1 - y0) + Math.hypot(x2 - x1, y2 - y1),
         );
         cx = x2;
@@ -235,7 +245,9 @@ export function samplePoints(d, step = 1) {
             (1 - t) ** 3 * x0 + 3 * (1 - t) ** 2 * t * x1 + 3 * (1 - t) * t * t * x2 + t ** 3 * x3,
             (1 - t) ** 3 * y0 + 3 * (1 - t) ** 2 * t * y1 + 3 * (1 - t) * t * t * y2 + t ** 3 * y3,
           ],
-          Math.hypot(x1 - x0, y1 - y0) + Math.hypot(x2 - x1, y2 - y1) + Math.hypot(x3 - x2, y3 - y2),
+          Math.hypot(x1 - x0, y1 - y0) +
+            Math.hypot(x2 - x1, y2 - y1) +
+            Math.hypot(x3 - x2, y3 - y2),
         );
         cx = x3;
         cy = y3;

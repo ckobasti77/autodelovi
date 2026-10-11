@@ -30,7 +30,11 @@ export async function closeBrowser() {
 }
 
 /** Screenshot a self-contained HTML string. */
-export async function htmlToPng(html, file, { width = 1600, height = 900, scale = 1, fullPage = true } = {}) {
+export async function htmlToPng(
+  html,
+  file,
+  { width = 1600, height = 900, scale = 1, fullPage = true } = {},
+) {
   const b = await getBrowser();
   const page = await b.newPage({ viewport: { width, height }, deviceScaleFactor: scale });
   await page.setContent(html, { waitUntil: "load" });
@@ -47,6 +51,12 @@ export async function svgToPdf(svg, file, widthPx, heightPx) {
   const html = `<!doctype html><html><head><style>@page{size:${widthPx}px ${heightPx}px;margin:0}html,body{margin:0;padding:0}svg{display:block;width:${widthPx}px;height:${heightPx}px}</style></head><body>${svg}</body></html>`;
   await page.setContent(html, { waitUntil: "load" });
   await mkdir(path.dirname(file), { recursive: true });
-  await page.pdf({ path: file, width: `${widthPx}px`, height: `${heightPx}px`, printBackground: true, pageRanges: "1" });
+  await page.pdf({
+    path: file,
+    width: `${widthPx}px`,
+    height: `${heightPx}px`,
+    printBackground: true,
+    pageRanges: "1",
+  });
   await page.close();
 }

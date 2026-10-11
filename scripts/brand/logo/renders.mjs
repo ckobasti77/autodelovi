@@ -5,17 +5,20 @@ import { mkdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 import { svgToPng } from "./lib/render.mjs";
-import { THEMES, hintedIconSvg, iconSvg, lockupSvg } from "./logo.mjs";
+import { THEMES, hintedIconSvg, iconSvg } from "./logo.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "../../..");
 const OUT = path.join(ROOT, "docs/brand/renders");
 const PUBLIC = path.join(ROOT, "public/brand");
 await mkdir(OUT, { recursive: true });
 
-const fromFile = async (name, width) => svgToPng(await readFile(path.join(PUBLIC, name), "utf8"), width);
+const fromFile = async (name, width) =>
+  svgToPng(await readFile(path.join(PUBLIC, name), "utf8"), width);
 const sheet = async (file, width, height, bg, layers) =>
   sharp({ create: { width, height, channels: 4, background: bg } })
-    .composite(layers.map(([input, left, top]) => ({ input, left: Math.round(left), top: Math.round(top) })))
+    .composite(
+      layers.map(([input, left, top]) => ({ input, left: Math.round(left), top: Math.round(top) })),
+    )
     .png()
     .toFile(path.join(OUT, file));
 const heightOf = async (buf) => (await sharp(buf).metadata()).height;
@@ -52,7 +55,9 @@ for (const variant of ["night", "paper"]) {
     ["orange", THEMES.night.bg],
   ];
   const layers = [];
-  rows.forEach(([, bg], i) => layers.push([{ create: { width: W, height: 300, channels: 4, background: bg } }, 0, i * 300]));
+  rows.forEach(([, bg], i) =>
+    layers.push([{ create: { width: W, height: 300, channels: 4, background: bg } }, 0, i * 300]),
+  );
   for (const [i, [variant]] of rows.entries()) {
     const lock = await fromFile(`logo-horizontal-${variant}.svg`, 900);
     layers.push([lock, 80, i * 300 + (300 - (await heightOf(lock))) / 2]);
@@ -66,7 +71,9 @@ for (const variant of ["night", "paper"]) {
 {
   const W = 1600;
   const H = 560;
-  const layers = [[{ create: { width: W / 2, height: H, channels: 4, background: "#FFFFFF" } }, W / 2, 0]];
+  const layers = [
+    [{ create: { width: W / 2, height: H, channels: 4, background: "#FFFFFF" } }, W / 2, 0],
+  ];
   for (const [col, variant] of ["night", "paper"].entries()) {
     const ox = col * (W / 2) + 48;
     const header = await readFile(path.join(PUBLIC, `logo-header-${variant}.svg`), "utf8");
@@ -98,7 +105,10 @@ for (const variant of ["night", "paper"]) {
       [32, 4],
       [16, 8],
     ]) {
-      const big = await sharp(svgToPng(hintedIconSvg(px), px)).resize(px * zoom, px * zoom, { kernel: "nearest" }).png().toBuffer();
+      const big = await sharp(svgToPng(hintedIconSvg(px), px))
+        .resize(px * zoom, px * zoom, { kernel: "nearest" })
+        .png()
+        .toBuffer();
       layers.push([big, x, 410]);
       x += px * zoom + 24;
     }
