@@ -1,0 +1,1340 @@
+{
+  "name": "Euromotors Plus by OEM Parts",
+  "generated": "scripts/brand/logo/build.mjs",
+  "files": [
+    {
+      "file": "docs/brand/export/icons/apple-touch-icon.png",
+      "bytes": 1180,
+      "w": 180,
+      "h": 180
+    },
+    {
+      "file": "docs/brand/export/icons/email-header@2x.png",
+      "bytes": 11283,
+      "w": 954,
+      "h": 176,
+      "display": "477 × 88"
+    },
+    {
+      "file": "docs/brand/export/icons/favicon-16.png",
+      "bytes": 248,
+      "w": 16,
+      "h": 16
+    },
+    {
+      "file": "docs/brand/export/icons/favicon-32.png",
+      "bytes": 332,
+      "w": 32,
+      "h": 32
+    },
+    {
+      "file": "docs/brand/export/icons/favicon-48.png",
+      "bytes": 459,
+      "w": 48,
+      "h": 48
+    },
+    {
+      "file": "docs/brand/export/icons/favicon.ico",
+      "bytes": 1093,
+      "sizes": "16, 32, 48"
+    },
+    {
+      "file": "docs/brand/export/icons/icon-192.png",
+      "bytes": 2411,
+      "w": 192,
+      "h": 192
+    },
+    {
+      "file": "docs/brand/export/icons/icon-512.png",
+      "bytes": 7069,
+      "w": 512,
+      "h": 512
+    },
+    {
+      "file": "docs/brand/export/icons/icon-maskable-192.png",
+      "bytes": 1287,
+      "w": 192,
+      "h": 192
+    },
+    {
+      "file": "docs/brand/export/icons/icon-maskable-512.png",
+      "bytes": 5674,
+      "w": 512,
+      "h": 512
+    },
+    {
+      "file": "docs/brand/export/icons/icon.svg",
+      "bytes": 564,
+      "w": 512,
+      "h": 512
+    },
+    {
+      "file": "docs/brand/export/icons/social-avatar.png",
+      "bytes": 18948,
+      "w": 1000,
+      "h": 1000
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-dual-black.pdf",
+      "bytes": 12880
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-dual-night.pdf",
+      "bytes": 12935
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-dual-orange.pdf",
+      "bytes": 12917
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-dual-paper.pdf",
+      "bytes": 12907
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-dual-white.pdf",
+      "bytes": 12915
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-header-black.pdf",
+      "bytes": 6846
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-header-night.pdf",
+      "bytes": 6905
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-header-orange.pdf",
+      "bytes": 6889
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-header-paper.pdf",
+      "bytes": 6871
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-header-white.pdf",
+      "bytes": 6888
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-horizontal-black.pdf",
+      "bytes": 14756
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-horizontal-night.pdf",
+      "bytes": 14842
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-horizontal-orange.pdf",
+      "bytes": 14825
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-horizontal-paper.pdf",
+      "bytes": 14783
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-horizontal-white.pdf",
+      "bytes": 14823
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-stacked-black.pdf",
+      "bytes": 14729
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-stacked-night.pdf",
+      "bytes": 14809
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-stacked-orange.pdf",
+      "bytes": 14791
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-stacked-paper.pdf",
+      "bytes": 14760
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-stacked-white.pdf",
+      "bytes": 14787
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-wordmark-black.pdf",
+      "bytes": 14890
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-wordmark-night.pdf",
+      "bytes": 14961
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-wordmark-orange.pdf",
+      "bytes": 14960
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-wordmark-paper.pdf",
+      "bytes": 14900
+    },
+    {
+      "file": "docs/brand/export/pdf/logo-wordmark-white.pdf",
+      "bytes": 14957
+    },
+    {
+      "file": "docs/brand/export/pdf/mark-black.pdf",
+      "bytes": 944
+    },
+    {
+      "file": "docs/brand/export/pdf/mark-night.pdf",
+      "bytes": 1005
+    },
+    {
+      "file": "docs/brand/export/pdf/mark-orange.pdf",
+      "bytes": 990
+    },
+    {
+      "file": "docs/brand/export/pdf/mark-paper.pdf",
+      "bytes": 965
+    },
+    {
+      "file": "docs/brand/export/pdf/mark-white.pdf",
+      "bytes": 988
+    },
+    {
+      "file": "docs/brand/export/pdf/oem-parts-black.pdf",
+      "bytes": 6996
+    },
+    {
+      "file": "docs/brand/export/pdf/oem-parts-night.pdf",
+      "bytes": 7040
+    },
+    {
+      "file": "docs/brand/export/pdf/oem-parts-orange.pdf",
+      "bytes": 7038
+    },
+    {
+      "file": "docs/brand/export/pdf/oem-parts-paper.pdf",
+      "bytes": 7006
+    },
+    {
+      "file": "docs/brand/export/pdf/oem-parts-white.pdf",
+      "bytes": 7036
+    },
+    {
+      "file": "docs/brand/export/png/logo-dual-black.png",
+      "bytes": 8437,
+      "w": 646,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/logo-dual-black@2x.png",
+      "bytes": 18305,
+      "w": 1291,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/logo-dual-black@4x.png",
+      "bytes": 38902,
+      "w": 2583,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/logo-dual-night.png",
+      "bytes": 9485,
+      "w": 646,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/logo-dual-night@2x.png",
+      "bytes": 19983,
+      "w": 1291,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/logo-dual-night@4x.png",
+      "bytes": 42826,
+      "w": 2583,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/logo-dual-orange.png",
+      "bytes": 9299,
+      "w": 646,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/logo-dual-orange@2x.png",
+      "bytes": 19869,
+      "w": 1291,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/logo-dual-orange@4x.png",
+      "bytes": 42745,
+      "w": 2583,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/logo-dual-paper.png",
+      "bytes": 9469,
+      "w": 646,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/logo-dual-paper@2x.png",
+      "bytes": 20045,
+      "w": 1291,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/logo-dual-paper@4x.png",
+      "bytes": 43296,
+      "w": 2583,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/logo-dual-white.png",
+      "bytes": 10000,
+      "w": 646,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/logo-dual-white@2x.png",
+      "bytes": 22437,
+      "w": 1291,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/logo-dual-white@4x.png",
+      "bytes": 48515,
+      "w": 2583,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/logo-header-black.png",
+      "bytes": 4049,
+      "w": 337,
+      "h": 40
+    },
+    {
+      "file": "docs/brand/export/png/logo-header-black@2x.png",
+      "bytes": 8070,
+      "w": 675,
+      "h": 80
+    },
+    {
+      "file": "docs/brand/export/png/logo-header-black@4x.png",
+      "bytes": 17489,
+      "w": 1349,
+      "h": 160
+    },
+    {
+      "file": "docs/brand/export/png/logo-header-night.png",
+      "bytes": 4436,
+      "w": 337,
+      "h": 40
+    },
+    {
+      "file": "docs/brand/export/png/logo-header-night@2x.png",
+      "bytes": 8871,
+      "w": 675,
+      "h": 80
+    },
+    {
+      "file": "docs/brand/export/png/logo-header-night@4x.png",
+      "bytes": 18832,
+      "w": 1349,
+      "h": 160
+    },
+    {
+      "file": "docs/brand/export/png/logo-header-orange.png",
+      "bytes": 4364,
+      "w": 337,
+      "h": 40
+    },
+    {
+      "file": "docs/brand/export/png/logo-header-orange@2x.png",
+      "bytes": 8654,
+      "w": 675,
+      "h": 80
+    },
+    {
+      "file": "docs/brand/export/png/logo-header-orange@4x.png",
+      "bytes": 18428,
+      "w": 1349,
+      "h": 160
+    },
+    {
+      "file": "docs/brand/export/png/logo-header-paper.png",
+      "bytes": 4508,
+      "w": 337,
+      "h": 40
+    },
+    {
+      "file": "docs/brand/export/png/logo-header-paper@2x.png",
+      "bytes": 8794,
+      "w": 675,
+      "h": 80
+    },
+    {
+      "file": "docs/brand/export/png/logo-header-paper@4x.png",
+      "bytes": 18829,
+      "w": 1349,
+      "h": 160
+    },
+    {
+      "file": "docs/brand/export/png/logo-header-white.png",
+      "bytes": 4618,
+      "w": 337,
+      "h": 40
+    },
+    {
+      "file": "docs/brand/export/png/logo-header-white@2x.png",
+      "bytes": 9641,
+      "w": 675,
+      "h": 80
+    },
+    {
+      "file": "docs/brand/export/png/logo-header-white@4x.png",
+      "bytes": 21251,
+      "w": 1349,
+      "h": 160
+    },
+    {
+      "file": "docs/brand/export/png/logo-horizontal-black.png",
+      "bytes": 7464,
+      "w": 445,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/logo-horizontal-black@2x.png",
+      "bytes": 16218,
+      "w": 890,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/logo-horizontal-black@4x.png",
+      "bytes": 34627,
+      "w": 1780,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/logo-horizontal-night.png",
+      "bytes": 8499,
+      "w": 445,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/logo-horizontal-night@2x.png",
+      "bytes": 18060,
+      "w": 890,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/logo-horizontal-night@4x.png",
+      "bytes": 38960,
+      "w": 1780,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/logo-horizontal-orange.png",
+      "bytes": 8278,
+      "w": 445,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/logo-horizontal-orange@2x.png",
+      "bytes": 17919,
+      "w": 890,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/logo-horizontal-orange@4x.png",
+      "bytes": 38669,
+      "w": 1780,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/logo-horizontal-paper.png",
+      "bytes": 8575,
+      "w": 445,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/logo-horizontal-paper@2x.png",
+      "bytes": 17910,
+      "w": 890,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/logo-horizontal-paper@4x.png",
+      "bytes": 39041,
+      "w": 1780,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/logo-horizontal-white.png",
+      "bytes": 8742,
+      "w": 445,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/logo-horizontal-white@2x.png",
+      "bytes": 19712,
+      "w": 890,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/logo-horizontal-white@4x.png",
+      "bytes": 43507,
+      "w": 1780,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/logo-stacked-black.png",
+      "bytes": 9434,
+      "w": 459,
+      "h": 160
+    },
+    {
+      "file": "docs/brand/export/png/logo-stacked-black@2x.png",
+      "bytes": 21208,
+      "w": 918,
+      "h": 320
+    },
+    {
+      "file": "docs/brand/export/png/logo-stacked-black@4x.png",
+      "bytes": 45268,
+      "w": 1837,
+      "h": 640
+    },
+    {
+      "file": "docs/brand/export/png/logo-stacked-night.png",
+      "bytes": 10729,
+      "w": 459,
+      "h": 160
+    },
+    {
+      "file": "docs/brand/export/png/logo-stacked-night@2x.png",
+      "bytes": 22978,
+      "w": 918,
+      "h": 320
+    },
+    {
+      "file": "docs/brand/export/png/logo-stacked-night@4x.png",
+      "bytes": 48413,
+      "w": 1837,
+      "h": 640
+    },
+    {
+      "file": "docs/brand/export/png/logo-stacked-orange.png",
+      "bytes": 10633,
+      "w": 459,
+      "h": 160
+    },
+    {
+      "file": "docs/brand/export/png/logo-stacked-orange@2x.png",
+      "bytes": 22844,
+      "w": 918,
+      "h": 320
+    },
+    {
+      "file": "docs/brand/export/png/logo-stacked-orange@4x.png",
+      "bytes": 48175,
+      "w": 1837,
+      "h": 640
+    },
+    {
+      "file": "docs/brand/export/png/logo-stacked-paper.png",
+      "bytes": 10710,
+      "w": 459,
+      "h": 160
+    },
+    {
+      "file": "docs/brand/export/png/logo-stacked-paper@2x.png",
+      "bytes": 22794,
+      "w": 918,
+      "h": 320
+    },
+    {
+      "file": "docs/brand/export/png/logo-stacked-paper@4x.png",
+      "bytes": 47999,
+      "w": 1837,
+      "h": 640
+    },
+    {
+      "file": "docs/brand/export/png/logo-stacked-white.png",
+      "bytes": 10988,
+      "w": 459,
+      "h": 160
+    },
+    {
+      "file": "docs/brand/export/png/logo-stacked-white@2x.png",
+      "bytes": 25182,
+      "w": 918,
+      "h": 320
+    },
+    {
+      "file": "docs/brand/export/png/logo-stacked-white@4x.png",
+      "bytes": 53857,
+      "w": 1837,
+      "h": 640
+    },
+    {
+      "file": "docs/brand/export/png/logo-wordmark-black.png",
+      "bytes": 6787,
+      "w": 390,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/logo-wordmark-black@2x.png",
+      "bytes": 14891,
+      "w": 781,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/logo-wordmark-black@4x.png",
+      "bytes": 32169,
+      "w": 1562,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/logo-wordmark-night.png",
+      "bytes": 8320,
+      "w": 390,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/logo-wordmark-night@2x.png",
+      "bytes": 17230,
+      "w": 781,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/logo-wordmark-night@4x.png",
+      "bytes": 36129,
+      "w": 1562,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/logo-wordmark-orange.png",
+      "bytes": 8223,
+      "w": 390,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/logo-wordmark-orange@2x.png",
+      "bytes": 16976,
+      "w": 781,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/logo-wordmark-orange@4x.png",
+      "bytes": 35966,
+      "w": 1562,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/logo-wordmark-paper.png",
+      "bytes": 8346,
+      "w": 390,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/logo-wordmark-paper@2x.png",
+      "bytes": 16911,
+      "w": 781,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/logo-wordmark-paper@4x.png",
+      "bytes": 35933,
+      "w": 1562,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/logo-wordmark-white.png",
+      "bytes": 8400,
+      "w": 390,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/logo-wordmark-white@2x.png",
+      "bytes": 18555,
+      "w": 781,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/logo-wordmark-white@4x.png",
+      "bytes": 40417,
+      "w": 1562,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/mark-black.png",
+      "bytes": 415,
+      "w": 51,
+      "h": 64
+    },
+    {
+      "file": "docs/brand/export/png/mark-black@2x.png",
+      "bytes": 858,
+      "w": 102,
+      "h": 128
+    },
+    {
+      "file": "docs/brand/export/png/mark-black@4x.png",
+      "bytes": 2076,
+      "w": 205,
+      "h": 256
+    },
+    {
+      "file": "docs/brand/export/png/mark-night.png",
+      "bytes": 354,
+      "w": 51,
+      "h": 64
+    },
+    {
+      "file": "docs/brand/export/png/mark-night@2x.png",
+      "bytes": 571,
+      "w": 102,
+      "h": 128
+    },
+    {
+      "file": "docs/brand/export/png/mark-night@4x.png",
+      "bytes": 1162,
+      "w": 205,
+      "h": 256
+    },
+    {
+      "file": "docs/brand/export/png/mark-orange.png",
+      "bytes": 348,
+      "w": 51,
+      "h": 64
+    },
+    {
+      "file": "docs/brand/export/png/mark-orange@2x.png",
+      "bytes": 632,
+      "w": 102,
+      "h": 128
+    },
+    {
+      "file": "docs/brand/export/png/mark-orange@4x.png",
+      "bytes": 1158,
+      "w": 205,
+      "h": 256
+    },
+    {
+      "file": "docs/brand/export/png/mark-paper.png",
+      "bytes": 356,
+      "w": 51,
+      "h": 64
+    },
+    {
+      "file": "docs/brand/export/png/mark-paper@2x.png",
+      "bytes": 574,
+      "w": 102,
+      "h": 128
+    },
+    {
+      "file": "docs/brand/export/png/mark-paper@4x.png",
+      "bytes": 1163,
+      "w": 205,
+      "h": 256
+    },
+    {
+      "file": "docs/brand/export/png/mark-white.png",
+      "bytes": 334,
+      "w": 51,
+      "h": 64
+    },
+    {
+      "file": "docs/brand/export/png/mark-white@2x.png",
+      "bytes": 604,
+      "w": 102,
+      "h": 128
+    },
+    {
+      "file": "docs/brand/export/png/mark-white@4x.png",
+      "bytes": 1470,
+      "w": 205,
+      "h": 256
+    },
+    {
+      "file": "docs/brand/export/png/oem-parts-black.png",
+      "bytes": 2524,
+      "w": 136,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/oem-parts-black@2x.png",
+      "bytes": 5463,
+      "w": 272,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/oem-parts-black@4x.png",
+      "bytes": 11541,
+      "w": 544,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/oem-parts-night.png",
+      "bytes": 3234,
+      "w": 136,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/oem-parts-night@2x.png",
+      "bytes": 6426,
+      "w": 272,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/oem-parts-night@4x.png",
+      "bytes": 12957,
+      "w": 544,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/oem-parts-orange.png",
+      "bytes": 3154,
+      "w": 136,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/oem-parts-orange@2x.png",
+      "bytes": 6434,
+      "w": 272,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/oem-parts-orange@4x.png",
+      "bytes": 13194,
+      "w": 544,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/oem-parts-paper.png",
+      "bytes": 3196,
+      "w": 136,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/oem-parts-paper@2x.png",
+      "bytes": 6367,
+      "w": 272,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/oem-parts-paper@4x.png",
+      "bytes": 12931,
+      "w": 544,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/png/oem-parts-white.png",
+      "bytes": 3154,
+      "w": 136,
+      "h": 56
+    },
+    {
+      "file": "docs/brand/export/png/oem-parts-white@2x.png",
+      "bytes": 7031,
+      "w": 272,
+      "h": 112
+    },
+    {
+      "file": "docs/brand/export/png/oem-parts-white@4x.png",
+      "bytes": 14885,
+      "w": 544,
+      "h": 224
+    },
+    {
+      "file": "docs/brand/export/svg/logo-dual-black.svg",
+      "bytes": 10647,
+      "w": 2341.79,
+      "h": 203.09
+    },
+    {
+      "file": "docs/brand/export/svg/logo-dual-night.svg",
+      "bytes": 10677,
+      "w": 2341.79,
+      "h": 203.09
+    },
+    {
+      "file": "docs/brand/export/svg/logo-dual-orange.svg",
+      "bytes": 10677,
+      "w": 2341.79,
+      "h": 203.09
+    },
+    {
+      "file": "docs/brand/export/svg/logo-dual-paper.svg",
+      "bytes": 10677,
+      "w": 2341.79,
+      "h": 203.09
+    },
+    {
+      "file": "docs/brand/export/svg/logo-dual-white.svg",
+      "bytes": 10671,
+      "w": 2341.79,
+      "h": 203.09
+    },
+    {
+      "file": "docs/brand/export/svg/logo-header-black.svg",
+      "bytes": 5563,
+      "w": 1712.33,
+      "h": 203.09
+    },
+    {
+      "file": "docs/brand/export/svg/logo-header-night.svg",
+      "bytes": 5593,
+      "w": 1712.33,
+      "h": 203.09
+    },
+    {
+      "file": "docs/brand/export/svg/logo-header-orange.svg",
+      "bytes": 5593,
+      "w": 1712.33,
+      "h": 203.09
+    },
+    {
+      "file": "docs/brand/export/svg/logo-header-paper.svg",
+      "bytes": 5593,
+      "w": 1712.33,
+      "h": 203.09
+    },
+    {
+      "file": "docs/brand/export/svg/logo-header-white.svg",
+      "bytes": 5587,
+      "w": 1712.33,
+      "h": 203.09
+    },
+    {
+      "file": "docs/brand/export/svg/logo-horizontal-black.svg",
+      "bytes": 12126,
+      "w": 1712.33,
+      "h": 215.51
+    },
+    {
+      "file": "docs/brand/export/svg/logo-horizontal-night.svg",
+      "bytes": 12156,
+      "w": 1712.33,
+      "h": 215.51
+    },
+    {
+      "file": "docs/brand/export/svg/logo-horizontal-orange.svg",
+      "bytes": 12156,
+      "w": 1712.33,
+      "h": 215.51
+    },
+    {
+      "file": "docs/brand/export/svg/logo-horizontal-paper.svg",
+      "bytes": 12156,
+      "w": 1712.33,
+      "h": 215.51
+    },
+    {
+      "file": "docs/brand/export/svg/logo-horizontal-white.svg",
+      "bytes": 12150,
+      "w": 1712.33,
+      "h": 215.51
+    },
+    {
+      "file": "docs/brand/export/svg/logo-stacked-black.svg",
+      "bytes": 12301,
+      "w": 1502.33,
+      "h": 523.47
+    },
+    {
+      "file": "docs/brand/export/svg/logo-stacked-night.svg",
+      "bytes": 12331,
+      "w": 1502.33,
+      "h": 523.47
+    },
+    {
+      "file": "docs/brand/export/svg/logo-stacked-orange.svg",
+      "bytes": 12331,
+      "w": 1502.33,
+      "h": 523.47
+    },
+    {
+      "file": "docs/brand/export/svg/logo-stacked-paper.svg",
+      "bytes": 12331,
+      "w": 1502.33,
+      "h": 523.47
+    },
+    {
+      "file": "docs/brand/export/svg/logo-stacked-white.svg",
+      "bytes": 12325,
+      "w": 1502.33,
+      "h": 523.47
+    },
+    {
+      "file": "docs/brand/export/svg/logo-wordmark-black.svg",
+      "bytes": 12132,
+      "w": 1502.33,
+      "h": 215.51
+    },
+    {
+      "file": "docs/brand/export/svg/logo-wordmark-night.svg",
+      "bytes": 12147,
+      "w": 1502.33,
+      "h": 215.51
+    },
+    {
+      "file": "docs/brand/export/svg/logo-wordmark-orange.svg",
+      "bytes": 12147,
+      "w": 1502.33,
+      "h": 215.51
+    },
+    {
+      "file": "docs/brand/export/svg/logo-wordmark-paper.svg",
+      "bytes": 12147,
+      "w": 1502.33,
+      "h": 215.51
+    },
+    {
+      "file": "docs/brand/export/svg/logo-wordmark-white.svg",
+      "bytes": 12144,
+      "w": 1502.33,
+      "h": 215.51
+    },
+    {
+      "file": "docs/brand/export/svg/mark-black.svg",
+      "bytes": 289,
+      "w": 160,
+      "h": 200
+    },
+    {
+      "file": "docs/brand/export/svg/mark-night.svg",
+      "bytes": 319,
+      "w": 160,
+      "h": 200
+    },
+    {
+      "file": "docs/brand/export/svg/mark-orange.svg",
+      "bytes": 319,
+      "w": 160,
+      "h": 200
+    },
+    {
+      "file": "docs/brand/export/svg/mark-paper.svg",
+      "bytes": 319,
+      "w": 160,
+      "h": 200
+    },
+    {
+      "file": "docs/brand/export/svg/mark-white.svg",
+      "bytes": 313,
+      "w": 160,
+      "h": 200
+    },
+    {
+      "file": "docs/brand/export/svg/oem-parts-black.svg",
+      "bytes": 5292,
+      "w": 489.73,
+      "h": 201.81
+    },
+    {
+      "file": "docs/brand/export/svg/oem-parts-night.svg",
+      "bytes": 5307,
+      "w": 489.73,
+      "h": 201.81
+    },
+    {
+      "file": "docs/brand/export/svg/oem-parts-orange.svg",
+      "bytes": 5307,
+      "w": 489.73,
+      "h": 201.81
+    },
+    {
+      "file": "docs/brand/export/svg/oem-parts-paper.svg",
+      "bytes": 5307,
+      "w": 489.73,
+      "h": 201.81
+    },
+    {
+      "file": "docs/brand/export/svg/oem-parts-white.svg",
+      "bytes": 5304,
+      "w": 489.73,
+      "h": 201.81
+    },
+    {
+      "file": "public/brand/apple-touch-icon.png",
+      "bytes": 1180,
+      "w": 180,
+      "h": 180
+    },
+    {
+      "file": "public/brand/email-header@2x.png",
+      "bytes": 11283,
+      "w": 954,
+      "h": 176,
+      "display": "477 × 88"
+    },
+    {
+      "file": "public/brand/favicon-16.png",
+      "bytes": 248,
+      "w": 16,
+      "h": 16
+    },
+    {
+      "file": "public/brand/favicon-32.png",
+      "bytes": 332,
+      "w": 32,
+      "h": 32
+    },
+    {
+      "file": "public/brand/favicon-48.png",
+      "bytes": 459,
+      "w": 48,
+      "h": 48
+    },
+    {
+      "file": "public/brand/favicon.ico",
+      "bytes": 1093,
+      "sizes": "16, 32, 48"
+    },
+    {
+      "file": "public/brand/icon-192.png",
+      "bytes": 2411,
+      "w": 192,
+      "h": 192
+    },
+    {
+      "file": "public/brand/icon-512.png",
+      "bytes": 7069,
+      "w": 512,
+      "h": 512
+    },
+    {
+      "file": "public/brand/icon-maskable-192.png",
+      "bytes": 1287,
+      "w": 192,
+      "h": 192
+    },
+    {
+      "file": "public/brand/icon-maskable-512.png",
+      "bytes": 5674,
+      "w": 512,
+      "h": 512
+    },
+    {
+      "file": "public/brand/icon.svg",
+      "bytes": 564,
+      "w": 512,
+      "h": 512
+    },
+    {
+      "file": "public/brand/logo-dual-black.svg",
+      "bytes": 10647,
+      "w": 2341.79,
+      "h": 203.09
+    },
+    {
+      "file": "public/brand/logo-dual-night.svg",
+      "bytes": 10677,
+      "w": 2341.79,
+      "h": 203.09
+    },
+    {
+      "file": "public/brand/logo-dual-orange.svg",
+      "bytes": 10677,
+      "w": 2341.79,
+      "h": 203.09
+    },
+    {
+      "file": "public/brand/logo-dual-paper.svg",
+      "bytes": 10677,
+      "w": 2341.79,
+      "h": 203.09
+    },
+    {
+      "file": "public/brand/logo-dual-white.svg",
+      "bytes": 10671,
+      "w": 2341.79,
+      "h": 203.09
+    },
+    {
+      "file": "public/brand/logo-header-black.svg",
+      "bytes": 5563,
+      "w": 1712.33,
+      "h": 203.09
+    },
+    {
+      "file": "public/brand/logo-header-night.svg",
+      "bytes": 5593,
+      "w": 1712.33,
+      "h": 203.09
+    },
+    {
+      "file": "public/brand/logo-header-orange.svg",
+      "bytes": 5593,
+      "w": 1712.33,
+      "h": 203.09
+    },
+    {
+      "file": "public/brand/logo-header-paper.svg",
+      "bytes": 5593,
+      "w": 1712.33,
+      "h": 203.09
+    },
+    {
+      "file": "public/brand/logo-header-white.svg",
+      "bytes": 5587,
+      "w": 1712.33,
+      "h": 203.09
+    },
+    {
+      "file": "public/brand/logo-horizontal-black.svg",
+      "bytes": 12126,
+      "w": 1712.33,
+      "h": 215.51
+    },
+    {
+      "file": "public/brand/logo-horizontal-night.svg",
+      "bytes": 12156,
+      "w": 1712.33,
+      "h": 215.51
+    },
+    {
+      "file": "public/brand/logo-horizontal-orange.svg",
+      "bytes": 12156,
+      "w": 1712.33,
+      "h": 215.51
+    },
+    {
+      "file": "public/brand/logo-horizontal-paper.svg",
+      "bytes": 12156,
+      "w": 1712.33,
+      "h": 215.51
+    },
+    {
+      "file": "public/brand/logo-horizontal-white.svg",
+      "bytes": 12150,
+      "w": 1712.33,
+      "h": 215.51
+    },
+    {
+      "file": "public/brand/logo-stacked-black.svg",
+      "bytes": 12301,
+      "w": 1502.33,
+      "h": 523.47
+    },
+    {
+      "file": "public/brand/logo-stacked-night.svg",
+      "bytes": 12331,
+      "w": 1502.33,
+      "h": 523.47
+    },
+    {
+      "file": "public/brand/logo-stacked-orange.svg",
+      "bytes": 12331,
+      "w": 1502.33,
+      "h": 523.47
+    },
+    {
+      "file": "public/brand/logo-stacked-paper.svg",
+      "bytes": 12331,
+      "w": 1502.33,
+      "h": 523.47
+    },
+    {
+      "file": "public/brand/logo-stacked-white.svg",
+      "bytes": 12325,
+      "w": 1502.33,
+      "h": 523.47
+    },
+    {
+      "file": "public/brand/logo-wordmark-black.svg",
+      "bytes": 12132,
+      "w": 1502.33,
+      "h": 215.51
+    },
+    {
+      "file": "public/brand/logo-wordmark-night.svg",
+      "bytes": 12147,
+      "w": 1502.33,
+      "h": 215.51
+    },
+    {
+      "file": "public/brand/logo-wordmark-orange.svg",
+      "bytes": 12147,
+      "w": 1502.33,
+      "h": 215.51
+    },
+    {
+      "file": "public/brand/logo-wordmark-paper.svg",
+      "bytes": 12147,
+      "w": 1502.33,
+      "h": 215.51
+    },
+    {
+      "file": "public/brand/logo-wordmark-white.svg",
+      "bytes": 12144,
+      "w": 1502.33,
+      "h": 215.51
+    },
+    {
+      "file": "public/brand/mark-black.svg",
+      "bytes": 289,
+      "w": 160,
+      "h": 200
+    },
+    {
+      "file": "public/brand/mark-night.svg",
+      "bytes": 319,
+      "w": 160,
+      "h": 200
+    },
+    {
+      "file": "public/brand/mark-orange.svg",
+      "bytes": 319,
+      "w": 160,
+      "h": 200
+    },
+    {
+      "file": "public/brand/mark-paper.svg",
+      "bytes": 319,
+      "w": 160,
+      "h": 200
+    },
+    {
+      "file": "public/brand/mark-white.svg",
+      "bytes": 313,
+      "w": 160,
+      "h": 200
+    },
+    {
+      "file": "public/brand/oem-parts-black.svg",
+      "bytes": 5292,
+      "w": 489.73,
+      "h": 201.81
+    },
+    {
+      "file": "public/brand/oem-parts-night.svg",
+      "bytes": 5307,
+      "w": 489.73,
+      "h": 201.81
+    },
+    {
+      "file": "public/brand/oem-parts-orange.svg",
+      "bytes": 5307,
+      "w": 489.73,
+      "h": 201.81
+    },
+    {
+      "file": "public/brand/oem-parts-paper.svg",
+      "bytes": 5307,
+      "w": 489.73,
+      "h": 201.81
+    },
+    {
+      "file": "public/brand/oem-parts-white.svg",
+      "bytes": 5304,
+      "w": 489.73,
+      "h": 201.81
+    },
+    {
+      "file": "public/brand/social-avatar.png",
+      "bytes": 18948,
+      "w": 1000,
+      "h": 1000
+    }
+  ]
+}
