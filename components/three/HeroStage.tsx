@@ -525,7 +525,13 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
               // Focus lands here when a panel opened from the car closes; a keyboard user sees it.
               className="absolute inset-0 focus-ring-inset"
             >
-              <div ref={posterRef} className="absolute inset-0" data-testid={TEST_IDS.heroPoster}>
+              <div
+                ref={posterRef}
+                className="absolute inset-0"
+                data-testid={TEST_IDS.heroPoster}
+                // A transparent drawing on the page field inside the corner ticks: no box to round.
+                data-corner-audit="skip"
+              >
                 {poster}
                 {/* Stays mounted once used, so the poster → canvas crossfade never flashes the
                     assembled car under an exploded scene. */}

@@ -188,7 +188,7 @@ export function paragraph(value: string, opts: { muted?: boolean } = {}): Block 
 export function button(label: string, href: string): Block {
   const url = escapeHtml(safeHref(href));
   return {
-    html: `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 22px;border-collapse:separate;"><tr><td class="sk-button" bgcolor="${PAPER.accent}" style="background:${PAPER.accent};border-radius:2px;mso-padding-alt:12px 22px;"><a href="${url}" style="display:inline-block;padding:12px 22px;font-family:${FONT_UI};font-size:16px;line-height:20px;font-weight:700;color:${PAPER.onAccent};text-decoration:none;border-radius:2px;">${escapeHtml(label)}</a></td></tr></table>`,
+    html: `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 22px;border-collapse:separate;"><tr><td class="sk-button" bgcolor="${PAPER.accent}" style="background:${PAPER.accent};border-radius:6px;mso-padding-alt:12px 22px;"><a href="${url}" style="display:inline-block;padding:12px 22px;font-family:${FONT_UI};font-size:16px;line-height:20px;font-weight:700;color:${PAPER.onAccent};text-decoration:none;border-radius:6px;">${escapeHtml(label)}</a></td></tr></table>`,
     text: `${label}: ${safeHref(href)}`,
   };
 }
@@ -319,7 +319,7 @@ export function bullets(values: readonly string[]): Block {
 /** Large monospace code (password reset). */
 export function code(value: string, label: string): Block {
   return {
-    html: `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0 20px;border-collapse:collapse;"><tr><td class="sk-code" style="border:1px solid ${PAPER.line};background:${PAPER.header};padding:14px 20px;font-family:${FONT_MONO};font-size:28px;line-height:34px;letter-spacing:0.18em;font-weight:700;color:${PAPER.ink1};" aria-label="${escapeHtml(label)}">${escapeHtml(value)}</td></tr></table>`,
+    html: `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0 20px;border-collapse:separate;"><tr><td class="sk-code" style="border:1px solid ${PAPER.line};border-radius:6px;background:${PAPER.header};padding:14px 20px;font-family:${FONT_MONO};font-size:28px;line-height:34px;letter-spacing:0.18em;font-weight:700;color:${PAPER.ink1};" aria-label="${escapeHtml(label)}">${escapeHtml(value)}</td></tr></table>`,
     text: `${label}: ${value}`,
   };
 }
@@ -472,9 +472,9 @@ ${preheaderHtml(input.preheader)}
 <tr><td align="center">
 <!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="sk-shell" style="max-width:600px;width:100%;">
-<tr><td class="sk-panel" bgcolor="${PAPER.panel}" style="background:${PAPER.panel};border:1px solid ${PAPER.line};border-radius:6px;">
+<tr><td class="sk-panel" bgcolor="${PAPER.panel}" style="background:${PAPER.panel};border:1px solid ${PAPER.line};border-radius:12px;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td class="sk-logo sk-line" bgcolor="${LOGO_GROUND}" style="padding:6px 16px;border-bottom:1px solid ${PAPER.line};background:${LOGO_GROUND};border-radius:6px 6px 0 0;">
+<tr><td class="sk-logo sk-line" bgcolor="${LOGO_GROUND}" style="padding:6px 16px;border-bottom:1px solid ${PAPER.line};background:${LOGO_GROUND};border-radius:11px 11px 0 0;">
 ${logo}
 ${reference}
 </td></tr>

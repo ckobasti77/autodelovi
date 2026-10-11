@@ -8,8 +8,10 @@ import { useEffect, type RefObject } from "react";
  *
  * Every mounted bar registers its measured height here. While at least one is registered:
  * - `<html>` gets `scroll-padding-bottom: max(height) + 16px`, so anchor jumps and
- *   scroll-into-view operations keep their target above the bar, and the same value is
- *   published as `--bottom-inset` for layout that needs to reserve space;
+ *   scroll-into-view operations keep their target above the bar. Only that property is written:
+ *   it is not inherited, so the change restyles the root alone. (A custom property on the root —
+ *   the former `--bottom-inset`, which nothing read — is inherited by every element and forced
+ *   a full-document style pass each time a bar registered: about 100 ms on a throttled phone.)
  * - one `focusin` listener scrolls the page when the newly focused element sits under a bar.
  *   Chromium does not scroll on focus when the element is already inside the viewport, even
  *   with scroll padding, so the padding alone does not satisfy WCAG 2.4.11 (D245).
@@ -35,11 +37,12 @@ function applyInset() {
   const max = maxHeight();
   if (max > 0) {
     const value = `${Math.ceil(max) + GAP_PX}px`;
-    root.style.setProperty("scroll-padding-bottom", value);
-    root.style.setProperty("--bottom-inset", value);
+    // Written only when it changes: a ResizeObserver tick with the same height is a no-op.
+    if (root.style.getPropertyValue("scroll-padding-bottom") !== value) {
+      root.style.setProperty("scroll-padding-bottom", value);
+    }
   } else {
     root.style.removeProperty("scroll-padding-bottom");
-    root.style.removeProperty("--bottom-inset");
   }
 }
 

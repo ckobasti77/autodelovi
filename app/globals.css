@@ -243,7 +243,7 @@
      `--header-rest` (the sticky offset is negative by the same amount, so nothing shifts). */
   --header-h: 56px;
   --header-rest: 8px;
-  /* Height the mobile action bar reserves at the bottom (0 where there is no bar). */
+  /* Height the mobile action bar reserves at the bottom (0 where there is no bar; see below). */
   --bottom-bar-h: 0px;
   --focus-width: 2px;
 
@@ -278,13 +278,10 @@
   }
 }
 
-/* Phones and tablets with the action bar (the shop shell sets data-bottom-bar on <html>'s
-   descendant; the variable is read by the hero frame, toasts and bottom-anchored bars). */
-@media (width < 64rem) {
-  :root:has([data-bottom-bar]) {
-    --bottom-bar-h: calc(3.75rem + env(safe-area-inset-bottom, 0px));
-  }
-}
+/* `--bottom-bar-h` is set for phones and tablets by components/shell/BottomBarSpace, the first
+   element of the shop layout, on pages that show the mobile action bar — never by a selector
+   that depends on the bar being in the document (`:root:has(…)`): the bar is rendered last, and
+   a root variable that changes that late restyles the whole page after first paint. */
 
 @media (width >= 120rem) {
   :root {
@@ -486,6 +483,19 @@
   textarea::placeholder {
     color: var(--color-ink-3);
     opacity: 1;
+  }
+
+  /* Filled by the browser (saved name, e-mail, address): keep the field's own surface and ink
+     instead of the browser's pale yellow or blue, in both themes. */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-text-fill-color: var(--color-ink-1);
+    caret-color: var(--color-accent);
+    box-shadow: 0 0 0 100px var(--color-surface-2) inset;
+    transition: background-color 9999s ease-out;
   }
 
   [hidden]:where(:not([hidden="until-found"])) {
@@ -1009,9 +1019,17 @@
   bottom: var(--bottom-bar-h);
 }
 
-/* ── Page transition (§8.8, components/shell/PageTransition) ─────────────────────────────
+/* ── Page transition (§8.9, components/shell/PageTransition) ─────────────────────────────
    The page area of the new route fades in with a 6 px rise; the old page is not cross-faded
    (its snapshot would slide when it was scrolled). Chrome keeps its place in its own groups. */
+/* Whatever is not the page area or named chrome (the footer, the page field) is not
+   cross-faded either: it is simply the new state. */
+::view-transition-old(root) {
+  display: none;
+}
+::view-transition-new(root) {
+  animation: none;
+}
 ::view-transition-group(.page-swap) {
   animation: none;
 }

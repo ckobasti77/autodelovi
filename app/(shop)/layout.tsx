@@ -1,6 +1,7 @@
 import { contactLinkList } from "@/config/site";
 import { companyFromSettings, contactFromSettings } from "@/lib/settings/public";
 import { getSettingsPublic } from "@/lib/server/catalog-cache";
+import { BottomBarSpace } from "@/components/shell/BottomBarSpace";
 import { PageTransition } from "@/components/shell/PageTransition";
 import { SiteShell } from "@/components/shell/SiteShell";
 import { ConsentRoot } from "@/components/consent/ConsentRoot";
@@ -19,6 +20,8 @@ export default async function ShopLayout({ children }: LayoutProps<"/">) {
   const contact = contactFromSettings(settings);
   return (
     <>
+      {/* First: the height of the mobile action bar, before anything that reads it. */}
+      <BottomBarSpace />
       {/* Early in the DOM so keyboard users reach the consent choice first; fixed, so no shift. */}
       <ConsentRoot />
       <SiteShell

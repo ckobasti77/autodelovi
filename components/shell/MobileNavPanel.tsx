@@ -60,7 +60,7 @@ export function MobileNavPanel({
         <NextLink
           href={ROUTES.mechanicQuickOrderPage}
           onClick={close}
-          className="mt-6 flex min-h-11 items-center gap-3 type-body font-semibold text-ink-1"
+          className="mt-6 -mx-2 flex min-h-12 items-center gap-3 rounded-sm px-2 type-body font-semibold text-ink-1 transition-control active:bg-surface-4"
         >
           <ListNumbersIcon size={24} aria-hidden="true" className="text-accent" />
           Brza porudžbina
@@ -69,7 +69,7 @@ export function MobileNavPanel({
       <NextLink
         href={mechanic ? ROUTES.mechanicPortal : ROUTES.account}
         onClick={close}
-        className={`${approved ? "mt-1" : "mt-6"} flex min-h-11 items-center gap-3 type-body font-semibold text-ink-1`}
+        className={`${approved ? "mt-1" : "mt-6"} -mx-2 flex min-h-12 items-center gap-3 rounded-sm px-2 type-body font-semibold text-ink-1 transition-control active:bg-surface-4`}
       >
         {mechanic ? (
           <WrenchIcon size={24} aria-hidden="true" className="text-ink-2" />
@@ -86,7 +86,7 @@ export function MobileNavPanel({
             <a
               key={link.channel}
               href={link.href}
-              className="flex min-h-11 items-center gap-3 type-body text-ink-1"
+              className="-mx-2 flex min-h-12 items-center gap-3 rounded-sm px-2 type-body text-ink-1 transition-control active:bg-surface-4"
             >
               <Icon size={20} aria-hidden="true" className="text-ink-2" />
               <span>
@@ -99,7 +99,7 @@ export function MobileNavPanel({
         <NextLink
           href={ROUTES.inquiry}
           onClick={close}
-          className="flex min-h-11 items-center gap-3 type-body text-ink-1"
+          className="-mx-2 flex min-h-12 items-center gap-3 rounded-sm px-2 type-body text-ink-1 transition-control active:bg-surface-4"
         >
           <ChatCircleTextIcon size={20} aria-hidden="true" className="text-ink-2" />
           Pošaljite upit po broju šasije
@@ -107,7 +107,7 @@ export function MobileNavPanel({
         <NextLink
           href={ROUTES.contact}
           onClick={close}
-          className="flex min-h-11 items-center gap-3 type-body text-ink-1"
+          className="-mx-2 flex min-h-12 items-center gap-3 rounded-sm px-2 type-body text-ink-1 transition-control active:bg-surface-4"
         >
           <AddressBookIcon size={20} aria-hidden="true" className="text-ink-2" />
           Svi podaci za kontakt

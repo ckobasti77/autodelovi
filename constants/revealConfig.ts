@@ -1,20 +1,27 @@
 /**
- * Site-wide reveal — the trigger line and the block reveal (DESIGN-SYSTEM §8.6–8.7).
+ * Site-wide reveal — the trigger line and the block reveal (DESIGN-SYSTEM §8.6, §8.8).
  *
  * One engine (components/TextRevealGlobal) reveals copy word by word and everything else as
  * blocks: cards, images, CTA blocks, form groups, list rows, tables. Both use the same line,
  * the same boot class, failsafe and pending state. Copy selectors and word timings live in
  * constants/textRevealConfig.ts; this file holds what the two share and what blocks add.
  */
+import { DURATION_MS } from "@/constants/motion";
 
 /**
  * The trigger line, as a fraction of the viewport height above the bottom edge. An element
  * reveals when its vertical centre crosses it (ScrollTrigger `start: "center 82%"`).
  *
- * Chosen by looking at 390 × 844 and 1440 × 900 (docs/design/UI-BOOST.md §4.2): at 0.15 a phone
- * list row started 63 px above the bottom action bar and most of its travel was hidden behind
- * the bar's fade; at 0.25 a 380 px desktop card left a third of the screen empty before the row
- * arrived. 0.18 keeps the entrance clear of the bar on phones and the gap short on desktop.
+ * The owner's rule is 0.15, with leave to go higher where the entrance happens too low to be
+ * noticed. Chosen by looking at frames of the category page and the reveal lab at 390 × 844 and
+ * 1440 × 900 for 0.15, 0.18 and 0.22 (`scripts/qa/ui-boost/reveal-frames.mjs --line=…`,
+ * docs/design/UI-BOOST.md §5.2):
+ * - phones: the action bar covers the bottom 60 px, so 0.15 of the screen is only 67 px above
+ *   what is visible — a line of copy or a 46 px row started right on top of the bar. At 0.18 the
+ *   line is 92 px clear of it (11 % of the visible height, close to the 15 % the owner meant).
+ * - desktop: a 454 px product card stays hidden until 355 px of it are on screen at 0.15, 387 px
+ *   at 0.18 and 410 px at 0.22 — every step up widens the empty band under the grid, so no
+ *   higher than the phones need.
  */
 export const REVEAL_LINE = 0.18;
 
@@ -27,9 +34,9 @@ export const REVEAL_TALL_RATIO = 0.6;
 export type BlockTone = "default" | "lite";
 
 export const BLOCK_REVEAL = {
-  /** One block: opacity 0 → 1 and a short lift, `sk.out`. */
+  /** One block: opacity 0 → 1 and a short lift, `sk.out` (`--dur-rise`). */
   default: {
-    durationMs: 520,
+    durationMs: DURATION_MS.rise,
     liftPx: 16,
     /** Lift on narrow screens (distance, not duration, is reduced on phones — §8.2). */
     liftNarrowPx: 12,

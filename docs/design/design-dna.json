@@ -56,7 +56,7 @@
       },
       "surface": {
         "background": "#0D0F11",
-        "card": "#16191D with 1px #2C3238 border, radius 4px",
+        "card": "#16191D with 1px #2C3238 border, radius 8px, lit top edge (inset 1px warm ink at 4%)",
         "elevated": "#23282E with a 1px #434A52 edge and no shadow (commit to an edge on night); drawers/dialogs add a #07080A scrim at 72%; paper popovers use soft elevation without a border"
       },
       "contrast_strategy": "High contrast by construction and measured: every text pair ≥ 4.5:1 (meta #969088 is 4.70–6.07:1 on all night surfaces), every control border and focus indicator ≥ 3:1; 60 pairs computed by scripts/design/contrast.mjs from tokens.json, 0 failing. Depth comes from surface lightness steps and hairlines, not shadows. Light „paper“ theme for the admin (daylight counter PC, print parity, dense tables at 18:1)."
@@ -161,10 +161,10 @@
     },
     "shape": {
       "border_radius": {
-        "small": "2px (buttons, inputs, badges, chips)",
-        "medium": "4px (cards, panels, tables, toasts); 6px for dialogs, popovers and admin frames",
-        "large": "10px — mobile bottom-sheet top corners only",
-        "pill": "999px — count badges only"
+        "small": "4px (chips, badges, checkboxes, inner elements); 6px (buttons, inputs, tooltips)",
+        "medium": "8px (cards, panels, tables, popovers, toasts); 10px for pictures and drawing frames",
+        "large": "12px dialogs and large panels; 14px bottom-sheet top corners",
+        "pill": "999px — counts, switches, radios only"
       },
       "border_usage": "1px hairlines everywhere (#2C3238 default, #434A52 strong, #6E767F controls); 2px only for focus rings and active indicators; never a coloured side border above 1px",
       "divider_style": "1px solid hairlines, full-bleed within their container; dashed 3/3 only for dimension extension lines"
@@ -196,9 +196,9 @@
       "philosophy": "Instrument: rigid metal physics — zero overshoot, decisive deceleration, interruptible from the on-screen value; motion explains assembly (the explode) and state (panels, feedback) and nothing else; one authored moment per page"
     },
     "components": {
-      "button_style": "Squared (2px radius) 44px buttons; primary = orange fill with graphite label (one per region), secondary = 1px #6E767F outline with ink label, quiet = surface-2 fill; press = translateY(1px) + darker fill; loading keeps width with an inline spinner",
+      "button_style": "Soft-cornered (6px radius) 44px buttons; primary = orange fill with graphite label (one per region), secondary = 1px #6E767F outline with ink label, quiet = surface-2 fill; press = translateY(1px) + darker fill; loading keeps width with an inline spinner",
       "input_style": "Surface-2 fields with a 1px #6E767F border (3.56:1), label always above (13px), 16px text, focus = orange border + 1px inner ring, error = pink-red border + icon + message below, hero search 56px with an attached orange „Pretraži“ button and a normalisation hint; the vehicle picker is a field-like control (label „Vaše vozilo“, orange car icon, name, „Promeni ▾“, separate clear button), not an outline button",
-      "card_style": "Surface-1, 1px hairline, 4px radius; 4:3 render on a radial graphite ground with a quality chip; maker → name (whole-card link, focus ring around the card) → OEM in mono → fitment line for the chosen vehicle → stock line with icon → „Zamena na stanju: 2 →“ when out of stock → hairline → condensed tabular price with „sa PDV-om“ + quiet add button whose accessible name includes the product; mobile list variant with a full-width labelled 44px button",
+      "card_style": "Surface-1, 1px hairline, 8px radius, lit top edge, hover = surface step + 1px lift; 4:3 render on a radial graphite ground with a quality chip; maker → name (whole-card link, focus ring around the card) → OEM in mono → fitment line for the chosen vehicle → stock line with icon → „Zamena na stanju: 2 →“ when out of stock → hairline → condensed tabular price with „sa PDV-om“ + quiet add button whose accessible name includes the product; mobile list variant with a full-width labelled 44px button",
       "navigation_pattern": "Sticky translucent 64px header (wordmark with the lifted-part mark, 4 text links, account, cart with orange count); mobile: wordmark + cart + menu, bottom contact bar on scroll-up; admin: dark 232px sidebar + light workspace with a top bar and ⌘K palette",
       "modal_style": "Right drawers (part panel without scrim so the car stays visible; cart with scrim), bottom sheets with drag + inertia snap points on mobile, centred dialogs 480/640px for confirmations",
       "list_style": "Dense rows with 1px dividers, tabular right-aligned numbers, mono codes with a dimmed prefix (SK-2026- in ink-3), status chips with icon + word; admin tables 48px rows with sticky header, neutral selected tint #EEF1F4 (accent tint reserved for „Nova“), row-actions button, compact dates „29.09. 11:42“",
@@ -255,7 +255,7 @@
       "illustration_style": "Technical line drawings in the X-ray language: rim-cyan hairline shells, graphite solid parts, orange for the selected part, true dimension lines in millimetres",
       "graphic_elements": "The lifted-part brand mark (slotted ink base, orange part raised on a dashed exploded-view axis), corner ticks, dimension lines with oblique ticks and ungrouped millimetre values (4280, 2620, 1450), ruler floor without numbers, title-block grid, leader-line callouts into an annotation lane above the object, stage index 00–07 as buttons",
       "pattern_usage": "none (no background patterns, no noise, no scan lines)",
-      "image_shape": "Rectangular: 4:3 cards, 1:1 thumbnails, 16:9 desktop and 4:5 mobile posters; 4px radius on cards only"
+      "image_shape": "Rectangular: 4:3 cards, 1:1 thumbnails, 16:9 desktop and 4:5 mobile posters; 10px radius on standalone pictures, 8px on cards"
     },
     "interaction_feel": {
       "feedback_style": "Immediate and physical: press on pointer-down (1px travel), colour changes in 80ms, explicit confirmations in words („Dodato u korpu“, „OEM broj kopiran“), live stock/price updates flagged briefly",
@@ -394,7 +394,7 @@
       "enabled": true,
       "style": "frosted-layers",
       "params": {
-        "blur_radius": "12px (sticky header only, functional over the moving 3D stage); none elsewhere",
+        "blur_radius": "14px (sticky header and the mobile action bar, functional over moving content); none elsewhere",
         "transparency": "88% opaque header only; callouts are opaque surface-3",
         "border_treatment": "1px #2C3238 bottom hairline on the header; 1px #434A52 edge on callouts",
         "shadow_type": "none on the header and on callouts (edge-defined surfaces)",

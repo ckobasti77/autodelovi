@@ -92,6 +92,8 @@ export function Section({
       aria-labelledby={title && id ? `${id}-title` : undefined}
       // min-w-0: a section is usually a grid/flex item; its truncating rows must not widen it.
       className={cn("min-w-0", panel && "panel", className)}
+      // Panels arrive as blocks (the lite version inside the admin shell).
+      data-reveal={panel ? "block" : undefined}
     >
       {title || actions ? (
         <div

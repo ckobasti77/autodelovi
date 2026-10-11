@@ -27,9 +27,10 @@
  *   latest (e.g. a boundary whose JS failed) so nothing stays hidden.
  * - Nothing stays hidden: elements already above the viewport are shown at once (scroll
  *   restoration, anchor jumps, fast flings — also checked when scrolling stops), elements that
- *   can never reach the line are flushed at the end of the page, focus moving into hidden
- *   content shows it, and content skipped by `content-visibility: auto` waits until the
- *   browser renders it.
+ *   can never reach the line (the last screen of a page) start 48 px into the viewport
+ *   instead and everything on screen starts at the very end, focus moving into hidden content
+ *   shows it, and content skipped by `content-visibility: auto` waits until the browser
+ *   renders it.
  * - Failsafe: if the boot script's timer fired before this component mounted, everything is
  *   already visible — nothing is hidden or animated again in this document (PERF-06).
  * - Reduced motion: nothing is hidden (CSS) and everything is marked done immediately.
@@ -71,6 +72,8 @@ const HYDRATION_WAIT_MS = 4000;
 const END_SLACK_MS = 60;
 /** Scrolling counts as stopped after this long without a scroll event. */
 const SCROLL_IDLE_MS = 150;
+/** An element that can never reach the line starts this far into the viewport instead. */
+const UNREACHABLE_ENTER_PX = 48;
 
 function getState(el: Element): RevealState | null {
   return el.getAttribute(attrs.state) as RevealState | null;
@@ -144,6 +147,8 @@ export function TextRevealGlobal(): null {
     /** Pending elements inside the observer root that have not crossed the line yet. */
     const armed = new Set<Element>();
     const waiting = new Map<Element, { since: number; kind: Kind }>();
+    /** Unreachable elements → the scroll position at which they start. */
+    const deadlines = new Map<Element, number>();
     let io: IntersectionObserver | null = null;
     let mo: MutationObserver | null = null;
     let frame = 0;
@@ -167,6 +172,7 @@ export function TextRevealGlobal(): null {
       running.delete(el);
       pending.delete(el);
       armed.delete(el);
+      deadlines.delete(el);
       // Whichever path ends a reveal gets the original text nodes back (a no-op unless split): one
       // IntersectionObserver batch can carry an element's entry *and* its exit above the root
       // (a fast scroll), and the exit's revealNow() used to clear the restore timer the entry had
@@ -282,23 +288,41 @@ export function TextRevealGlobal(): null {
     };
 
     /**
-     * Two fallbacks the observer cannot cover, run with all reads before any write:
-     * - at the end of the page (rAF while scrolling), elements on screen that can never reach
-     *   the line are revealed;
-     * - once scrolling stops, elements left above the viewport are shown, and armed elements
-     *   whose intersection ratio never reaches the threshold (clipped by a scroller) are
-     *   re-checked against the line.
+     * What the observer cannot cover, with all layout reads before any write.
+     *
+     * While scrolling (one rAF per frame, no layout read): elements whose centre can never
+     * reach the line — the last screen of a page — start when the scroll position recorded for
+     * them is reached, and everything on screen starts at the very end of the page.
+     *
+     * Once scrolling has stopped (and at start, and after content was added):
+     * - elements left above the viewport are shown at once (anchor jumps, fast flings);
+     * - armed elements whose intersection ratio never reaches the threshold (clipped by a
+     *   scroller) are re-checked against the line;
+     * - the scroll positions of unreachable elements are recorded: `UNREACHABLE_ENTER_PX` into
+     *   the viewport, so the end of a page arrives in sequence, not as one flush.
      */
     const sweep = (settled: boolean) => {
       if (disposed || pending.size === 0) return;
       const viewportHeight = window.innerHeight;
-      const scrolledToEnd =
-        viewportHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
-      if (!settled && !scrolledToEnd) return;
+      const scrollY = window.scrollY;
+      const maxScroll = document.documentElement.scrollHeight - viewportHeight;
+      const scrolledToEnd = scrollY >= maxScroll - 4;
+      const batch: Element[] = [];
+
+      if (!settled) {
+        for (const [el, at] of deadlines) {
+          if (!pending.has(el)) deadlines.delete(el);
+          else if (scrollY >= at) batch.push(el);
+        }
+        if (!scrolledToEnd) {
+          revealBatch(batch);
+          return;
+        }
+      }
+
       const lineY = viewportHeight * (1 - enterRatio);
       const candidates = Array.from(pending.keys());
       const boxes = candidates.map((el) => (el.isConnected ? measure(el) : null));
-      const batch: Element[] = [];
       candidates.forEach((el, index) => {
         const box = boxes[index];
         if (!el.isConnected) {
@@ -308,10 +332,27 @@ export function TextRevealGlobal(): null {
           if (settled && !isSkippedByContentVisibility(el)) revealNow(el);
         } else if (box.bottom <= 0) {
           if (settled) revealNow(el);
-        } else if (box.top < viewportHeight && box.height > 0) {
-          if (scrolledToEnd) batch.push(el);
-          else if (settled && armed.has(el) && hasCrossed(box, lineY, viewportHeight))
+        } else if (box.height > 0) {
+          const onScreen = box.top < viewportHeight;
+          if (onScreen && scrolledToEnd) {
             batch.push(el);
+          } else if (settled && onScreen && armed.has(el) && hasCrossed(box, lineY, viewportHeight)) {
+            batch.push(el);
+          } else if (settled) {
+            // Scroll needed to bring the trigger point (centre, or top when tall) to the line.
+            const tall = box.height > viewportHeight * REVEAL_TALL_RATIO;
+            const point = box.top + (tall ? 0 : box.height / 2);
+            if (scrollY + point - lineY > maxScroll + 0.5) {
+              const at = Math.min(
+                scrollY + box.top - viewportHeight + UNREACHABLE_ENTER_PX,
+                maxScroll - 2,
+              );
+              if (scrollY >= at) batch.push(el);
+              else deadlines.set(el, at);
+            } else {
+              deadlines.delete(el);
+            }
+          }
         }
       });
       revealBatch(batch);

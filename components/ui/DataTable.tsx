@@ -286,7 +286,10 @@ export function DataTable<T>({
       // @container: cells can fold on the table's own width (the sidebar makes viewport
       // breakpoints a poor proxy: 1366 px has less room than 1280 px).
       className={cn("@container relative panel", className)}
-      data-reveal="off"
+      // A block reveal without lift (a wide table that moves reads as a layout jump); its text
+      // arrives with it, never word by word.
+      data-reveal="block"
+      data-reveal-variant="fade"
     >
       {/* relative: absolutely positioned cell content (sr-only text) is clipped by the scroller
           instead of widening the document on phones. */}

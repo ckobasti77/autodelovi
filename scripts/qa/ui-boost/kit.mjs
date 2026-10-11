@@ -122,6 +122,11 @@ export async function signIn(page, base, role) {
   return login(page, base, accounts.customer.email, accounts.customer.password, "/nalog");
 }
 
+/** Network idle, but never longer than 20 s (pages with a live upload or long poll never idle). */
+async function settle(page) {
+  await page.waitForLoadState("networkidle", { timeout: 20_000 }).catch(() => {});
+}
+
 /** Opens a page of the set (adds a product to the cart first when it needs one). */
 export async function open(page, base, spec, state) {
   if (spec.cart && !state.cartReady) {
@@ -130,13 +135,19 @@ export async function open(page, base, spec, state) {
     await page.getByText("Dodato").first().waitFor({ timeout: 30_000 });
     state.cartReady = true;
   }
-  await page.goto(`${base}${spec.path}`, { waitUntil: "networkidle", timeout: 120_000 });
+  await page.goto(`${base}${spec.path}`, { waitUntil: "load", timeout: 120_000 });
+  await settle(page);
   if (spec.firstRow) {
-    // Admin rows open their record through a link in the first cell or a row click.
-    const link = page.locator(`a[href^="${spec.firstRow}"]`).first();
-    await link.waitFor({ timeout: 30_000 });
-    const href = await link.getAttribute("href");
-    await page.goto(`${base}${href}`, { waitUntil: "networkidle", timeout: 120_000 });
+    // Admin rows open their record with Enter (DataTable roving focus).
+    const row = page.locator("tr[data-row]").first();
+    await row.waitFor({ timeout: 30_000 });
+    await row.focus();
+    await page.keyboard.press("Enter");
+    await page.waitForURL(
+      (u) => u.pathname.startsWith(spec.firstRow) && u.pathname.length > spec.firstRow.length,
+      { timeout: 30_000, waitUntil: "commit" },
+    );
+    await settle(page);
   }
   await page.waitForTimeout(600);
 }

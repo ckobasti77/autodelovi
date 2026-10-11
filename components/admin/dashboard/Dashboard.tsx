@@ -104,7 +104,7 @@ export function Dashboard() {
 
       {kpis ? <CompanySetupNotice missing={kpis.missingCompany} /> : null}
 
-      <div className="grid grid-cols-2 gap-px border-y border-line bg-line md:grid-cols-3 xl:grid-cols-6">
+      <div className="grid grid-cols-2 gap-px overflow-hidden rounded-md border border-line bg-line md:grid-cols-3 xl:grid-cols-6">
         {kpis ? (
           <>
             <Kpi

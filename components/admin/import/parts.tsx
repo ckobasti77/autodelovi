@@ -141,7 +141,7 @@ export type CountTile = {
 export function CountTiles({ tiles }: { tiles: CountTile[] }) {
   return (
     <dl
-      className="grid grid-cols-2 gap-px border-y border-line bg-line sm:grid-cols-3 lg:grid-cols-5"
+      className="grid grid-cols-2 gap-px overflow-hidden rounded-md border border-line bg-line sm:grid-cols-3 lg:grid-cols-5"
       data-reveal="off"
     >
       {tiles.map((t) => (

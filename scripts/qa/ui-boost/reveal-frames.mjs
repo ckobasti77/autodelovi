@@ -112,7 +112,9 @@ for (const v of VIEWPORTS) {
       }
     }
   }
-  await page.waitForTimeout(1200);
+  // The 14 px steps can stop short of the end: finish there, as a reader would.
+  await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+  await page.waitForTimeout(1500);
   const reveals = await page.evaluate(() => window.__reveals);
   const left = await page.evaluate(() => ({
     pending: document.querySelectorAll('[data-reveal-state="pending"]').length,

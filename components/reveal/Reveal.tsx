@@ -1,5 +1,5 @@
 /**
- * Block reveal primitives (DESIGN-SYSTEM §8.7, .claude/rules/architecture.md → „Reveal“).
+ * Block reveal primitives (DESIGN-SYSTEM §8.8, .claude/rules/architecture.md → „Reveal“).
  *
  * Server Components that only write attributes; the one engine in the root layout
  * (TextRevealGlobal) does the work. Copy needs none of this — headings and paragraphs arrive
@@ -85,7 +85,6 @@ export type RevealGroupProps = BaseProps;
  * children may be plain elements; use `RevealItem` when the first ones are on the first screen.
  */
 export function RevealGroup({ as = "div", children, ...rest }: RevealGroupProps) {
-  // Every allowed tag takes the same HTML attributes; typing it as one keeps the JSX simple.
   const Tag = as as "div";
   return (
     <Tag {...rest} {...{ [BLOCK_REVEAL.attrs.group]: "" }}>
@@ -110,7 +109,6 @@ export function RevealItem({
   children,
   ...rest
 }: RevealItemProps) {
-  // Every allowed tag takes the same HTML attributes; typing it as one keeps the JSX simple.
   const Tag = as as "div";
   return (
     <Tag

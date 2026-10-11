@@ -152,14 +152,17 @@ test.describe("reveal rule", () => {
     await expect(items).toHaveCount(12);
     for (let i = 0; i < 12; i++) await expect(items.nth(i)).toHaveAttribute(STATE, "pending");
 
-    // Bring the first row's centre just past the line: only that row starts.
-    await placeAtLine(page, items.first(), -6, "centre");
-    await expect(items.first()).toHaveAttribute(STATE, /running|done/);
+    // Columns of the grid, measured while nothing moves (a running item is lifted).
     const perRow = await page.evaluate(() => {
       const grid = document.querySelector('[data-testid="reveal-grid"]');
       const tops = [...(grid?.children ?? [])].map((el) => Math.round(el.getBoundingClientRect().top));
       return tops.filter((top) => top === tops[0]).length;
     });
+    expect(perRow).toBeGreaterThan(1);
+
+    // Bring the first row's centre just past the line: only that row starts.
+    await placeAtLine(page, items.first(), -6, "centre");
+    await expect(items.first()).toHaveAttribute(STATE, /running|done/);
     for (let i = 0; i < perRow; i++) await expect(items.nth(i)).toHaveAttribute(STATE, /running|done/);
     await expect(items.nth(perRow)).toHaveAttribute(STATE, "pending");
 

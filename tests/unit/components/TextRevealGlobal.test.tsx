@@ -184,6 +184,43 @@ describe("TextRevealGlobal — the trigger line", () => {
     expect(tall.getAttribute(attrs.state)).toBe("running");
   });
 
+  it("starts an element that can never reach the line once it is 48 px into the viewport", async () => {
+    // The last screen of a page: the copy sits 900 px down and the page can scroll only 232 px,
+    // so its centre never gets to the line (it would need 280 px).
+    vi.spyOn(Element.prototype, "getBoundingClientRect").mockReturnValue({
+      top: 900,
+      bottom: 920,
+      left: 0,
+      right: 100,
+      width: 100,
+      height: 20,
+    } as DOMRect);
+    Object.defineProperty(document.documentElement, "scrollHeight", {
+      value: VIEWPORT + 232,
+      configurable: true,
+    });
+    const p = copy("Radno vreme");
+    await startObserver();
+    // The settled sweep has recorded its deadline (900 − 768 + 48 = 180); nothing starts yet.
+    await act(async () => {
+      vi.advanceTimersByTime(400);
+    });
+    expect(p.getAttribute(attrs.state)).toBe("pending");
+
+    const scrollTo = async (y: number) => {
+      Object.defineProperty(window, "scrollY", { value: y, configurable: true });
+      await act(async () => {
+        window.dispatchEvent(new Event("scroll"));
+        vi.advanceTimersByTime(20);
+      });
+    };
+    await scrollTo(170);
+    expect(p.getAttribute(attrs.state)).toBe("pending");
+    await scrollTo(184);
+    expect(p.getAttribute(attrs.state)).toBe("running");
+    Object.defineProperty(window, "scrollY", { value: 0, configurable: true });
+  });
+
   it("keeps content skipped by content-visibility pending until it has a box", async () => {
     const p = copy("Radno vreme");
     p.checkVisibility = (options?: CheckVisibilityOptions) => !options?.contentVisibilityAuto;

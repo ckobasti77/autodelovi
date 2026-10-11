@@ -203,3 +203,12 @@ Sajt je preimenovan u „Euromotors Plus“, sa potpisom „by OEM Parts“ u zn
 - [ ] **[P1] Dva naziva u naslovima.** Naslovi strana se završavaju sa „ | Euromotors Plus · OEM Parts“; kada je naslov dugačak ostaje samo „ | Euromotors Plus“, a kod najdužih naziva artikala nijedan. Ako želite drugačiji nastavak, menja se u Podešavanja → SEO → „Dodatak naslovu“.
 - [ ] **[P2] Početak brojeva porudžbina.** Brojevi i dalje počinju sa „SK“ (npr. `SK-2026-000187`). Ako želite drugi početak (npr. „EM“), promenite ga u Podešavanja → Firma → „Prefiks porudžbine“ pre prve prave porudžbine.
 - [ ] **[P2] Ime na početnom ekranu telefona.** Kada kupac doda sajt na početni ekran, ispod ikonice piše „Euromotors“, jer telefoni prikazuju najviše 12 znakova. Ako želite „OEM Parts“, javite.
+
+## 16. Novi izgled: uglovi, pojavljivanje sadržaja, zaglavlje i donja traka (korak 26)
+
+U koraku 26 urađen je sistem: zaobljeni uglovi na svim kutijama, pojavljivanje sadržaja pri skrolovanju, novo zaglavlje i donja traka na telefonu. Korak 27 to primenjuje na svaku stranu. Plan i slike „pre“ i „posle“: [`design/UI-BOOST.md`](design/UI-BOOST.md), `docs/qa/screens/step-26/`.
+
+- [ ] **[P1] Pogledajte pojavljivanje sadržaja.** Otvorite stranu `/styleguide/otkrivanje` na računaru i na telefonu i skrolujte. Blok se pojavljuje kad njegova sredina pređe liniju na 18 % visine ekrana od donje ivice. Tražili ste 15 %, uz dozvolu da linija ide više: na telefonu donja traka pokriva donjih 60 piksela, pa je na 15 % sadržaj kretao tik uz traku. Ako želite drugu vrednost, to je jedan broj (`REVEAL_LINE` u `constants/revealConfig.ts`).
+- [ ] **[P1] Pogledajte uglove.** Čipovi 4, dugmad i polja 6, kartice 8, slike 10, dijalozi 12, donji paneli 14 piksela. Ako želite mekše ili oštrije, menja se šest brojeva na jednom mestu (`app/globals.css`).
+- [ ] **[P2] Donja traka na telefonu.** Pretraga, Vozilo, Korpa, Kontakt. „Kontakt“ otvara spisak kanala iz Podešavanja → Firma (telefon, Viber, WhatsApp, e-pošta); dok ti podaci nisu upisani, na tom mestu stoji „Upit“. Upišite kontakt podatke da bi traka nudila poziv i Viber.
+- [ ] **[P2] Prelaz između strana i zaglavlje koje se skuplja** rade u pregledačima Chrome, Edge i Safari. U Firefoxu se strana menja bez prelaza, a zaglavlje je odmah u skupljenom obliku. To je predviđeno ponašanje, ne greška.

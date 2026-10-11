@@ -40,7 +40,8 @@ export function SeoFields({
   const shownDescription = description.trim() || fallbackDescription;
   const host = site.url.replace(/^https?:\/\//, "").replace(/\/$/, "");
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    // minmax(0, 1fr): the snippet preview must not widen the column past a phone screen.
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-2">
       <div className="flex flex-col gap-4">
         <Field
           label="Naslov za pretraživače"

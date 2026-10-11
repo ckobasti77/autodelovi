@@ -339,11 +339,11 @@ Tailwind v4 `@theme` names so utilities read naturally (`bg-surface-1`, `text-in
 | Colour (night = `:root`, paper = `[data-theme="paper"]`) | `--color-bg`, `--color-bg-raised`, `--color-surface-1…4`, `--color-selected` (paper only; night uses `--color-accent-subtle`), `--color-line-faint`, `--color-line`, `--color-line-strong`, `--color-control`, `--color-ink-1…4`, `--color-accent`, `--color-accent-hover`, `--color-accent-active`, `--color-accent-text` (paper), `--color-on-accent`, `--color-accent-subtle`, `--color-success`/`-subtle`, `--color-warning`/`-subtle`, `--color-danger`/`-subtle`, `--color-info`/`-subtle`, `--color-rim`, `--color-rim-soft`, `--color-rim-deep`, `--color-scrim` |
 | Fonts | `--font-display` (Archivo Expanded 700), `--font-display-600`, `--font-condensed`, `--font-ui` (default `--font-sans`), `--font-mono` |
 | Type scale | `--text-display-xl`, `--text-display-l`, `--text-display-m`, `--text-numeral-xl/l/m/s`, `--text-h1…h4`, `--text-lead`, `--text-body`, `--text-body-s`, `--text-caption`, `--text-label`, `--text-code-l/code/code-s` (each with `--line-height` and `--letter-spacing` companions per §4.3) |
-| Space / layout | Tailwind default `--spacing: 0.25rem`; `--space-section`, `--margin`, `--gutter`, `--pad`, `--container-content: 1440px`, `--container-reading: 720px`, `--header-h: 64px` (56 px < 1024) |
-| Shape | `--radius-xs: 2px`, `--radius-sm: 4px`, `--radius-md: 6px`, `--radius-lg: 10px`, `--radius-full: 999px` |
-| Elevation | `--shadow-paper-3`, `--shadow-paper-4` (night has no shadow tokens by design) |
+| Space / layout | Tailwind default `--spacing: 0.25rem`; `--space-section`, `--space-block` (24 → 40 px), `--space-stack` (16 → 24 px), `--margin`, `--gutter`, `--pad`, `--container-content: 1440px`, `--container-reading: 720px`, `--header-h: 64px` (56 px < 1024), `--header-rest` (extra header height at the page top: 12 px, 8 px < 1024), `--bottom-bar-h` (the mobile action bar; 0 where there is none) |
+| Shape | `--radius-xs: 4px`, `--radius-sm: 6px`, `--radius-md: 8px`, `--radius-lg: 10px`, `--radius-xl: 12px`, `--radius-2xl: 14px`, `--radius-full: 999px` (§5.3) |
+| Elevation | `--shadow-rest`, `--shadow-raised`, `--shadow-overlay`, `--shadow-drawer` (night and paper values, §5.5); `--shadow-paper-2/3/4` |
 | Z-index | `--z-raised 10`, `--z-sticky 20`, `--z-header 30`, `--z-dropdown 40`, `--z-overlay 50`, `--z-drawer 60`, `--z-dialog 70`, `--z-toast 80`, `--z-tooltip 90`, `--z-skip 100` |
-| Motion | `--ease-sk-out`, `--ease-sk-in-out`, `--ease-sk-in`, `--ease-sk-snap`, `--dur-instant 80ms`, `--dur-quick 140ms`, `--dur-base 220ms`, `--dur-panel 360ms`, `--dur-panel-exit 240ms`, `--dur-stage 600ms`, `--dur-camera 900ms`, `--dur-reveal 620ms` (mirrored in `constants/motion.ts` for GSAP) |
+| Motion | `--ease-sk-out`, `--ease-sk-in-out`, `--ease-sk-in`, `--ease-sk-snap`, `--dur-instant 80ms`, `--dur-quick 140ms`, `--dur-base 220ms`, `--dur-panel 360ms`, `--dur-panel-exit 240ms`, `--dur-stage 600ms`, `--dur-camera 900ms`, `--dur-reveal 620ms`, `--dur-rise 520ms` (block reveal), `--dur-page 280ms` (page transition) (mirrored in `constants/motion.ts` for GSAP; reveal timings in `constants/revealConfig.ts`) |
 
 ### 3.8 Data visualisation (admin charts, step 15)
 Bars/lines in `ink-2` (paper `#3D444C`), the current period in `accent` (fill) — the only highlighted series; comparison period `#BEC3C9`; grid `line-faint`; axes and labels `ink-3` 12 px tabular; value labels on bars; every chart has a „Prikaži tabelu“ table alternative. No pie charts; no more than two series per chart.
@@ -458,26 +458,49 @@ Print ramp (predračun, otpremnica — fixed sizes, because the fluid clamps dep
 - Dense rhythm (admin, mechanic portal): 16 / 24 between blocks; tables 44 px rows (36 px compact density toggle).
 - Touch: primary touch targets ≥ 44 × 44 px, any target ≥ 24 × 24 px, 8 px minimum between adjacent targets.
 
-### 5.3 Radii
-`--radius-xs: 2px` (buttons, inputs, badges, chips, focus-friendly squared look) · `--radius-sm: 4px` (cards, panels, tables, toasts) · `--radius-md: 6px` (admin frame, popovers, dialogs) · `--radius-lg: 10px` (mobile bottom-sheet top corners only) · `--radius-full: 999px` (count badges only). Nothing is pill-shaped except counts — the drawing-sheet world is squared.
+### 5.3 Radii (step 26, D317)
+Small soft corners on every visible box — storefront, portal, admin, e-mails, the 3D explorer UI. No box has 90° corners.
+
+| Token | Value | Role |
+|---|---|---|
+| `--radius-xs` | 4 px | **tag**: chips, badges, checkboxes, keys, inner elements (menu rows, segments, overlay buttons on thumbnails, thumbnails ≤ 40 px) |
+| `--radius-sm` | 6 px | **press**: buttons, inputs, selects, comboboxes, steppers, icon buttons, tooltips, callouts, inline notes, thumbnails ≤ 64 px, skeleton blocks |
+| `--radius-md` | 8 px | **read**: cards, panels, tables and their containers, alerts, toasts, popovers, menus, dropzones |
+| `--radius-lg` | 10 px | **picture**: media, gallery and drawing frames |
+| `--radius-xl` | 12 px | **float**: dialogs, large panels, document sheets on screen, the e-mail panel |
+| `--radius-2xl` | 14 px | top corners of bottom sheets |
+| `--radius-full` | 999 px | what is semantically a pill: counts, switches, radios, progress |
+
+- **Concentric nesting**: inner radius = outer radius − the padding between them, never below 4 px (menu 8 / rows 4 at 4 px padding; segmented track 8 / segments 4; admin segmented filter 8 / segments 6 at 2 px; input 6 / inner button 4). When the padding is at least the outer radius, the inner element takes the radius of its own role.
+- **Exceptions**: edges that meet the viewport (full-bleed bands, the header, the mobile action bar, drawers and sheets on their docked side, the admin sidebar, the e-mail panel on phones) and hairline rules (a border on one or two sides). **Drawings stay square**: corner ticks, dimension and leader lines, the transparent stage poster.
+- **Focus rings follow the shape**: the outline traces the border box; a bare link, `summary` or `[tabindex]` gets 4 px instead of square corners.
+- New boxes use the surface utilities of §5.5 (`panel`, `panel-raised`, `panel-inset`), which carry the radius with the edge. Check: `node scripts/qa/ui-boost/corners.mjs` (0 sharp boxes on 33 pages × 2 widths).
 
 ### 5.4 Hairlines and borders
 1 px everywhere (`line`, `line-strong`, `control`); 2 px only for the focus ring and active indicators (stage bar, tab underline). Never a coloured `border-left`/`border-right` above 1 px (craft floor); the callout's 1 px accent edge is the maximum.
 
-### 5.5 Elevation — commit to one: an edge **or** a soft elevation, never a hairline plus a wide shadow
-(The hairline + wide diffuse shadow pair is a generated-UI signature flagged by impeccable's detector in round 1.)
+### 5.5 Elevation — an edge, and light from above (step 26, D319)
+The night field keeps its edges; what changed in step 26 is that surfaces have thickness. Light falls from above: every surface carries a **lit top edge** (a 1 px inset highlight in warm ink at 4–7 %), and only what floats adds a **tight contact shadow** (1–6 px, plus a short drop under −16 px spread). Still forbidden: glows, wide diffuse shadows, a hairline with a wide blur around it (the generated-UI signature flagged by impeccable's detector in round 1), glass as decoration.
 
-| Level | Night (edges) | Paper (elevation for floating things, edges for resting things) | Use |
-|---|---|---|---|
-| 0 | flat on `bg` | flat on `bg` | Sections |
-| 1 | `surface-1` + 1 px `line` | `#FFF` + 1 px `line`, no shadow | Cards, panels, tables |
-| 2 | `surface-1` + 1 px `line-strong` | `#FFF` + 1 px `line-strong` | Hovered card, sticky bars |
-| 3 | `surface-3` + 1 px `line-strong`, **no shadow** | `#FFF`, **no border**, `0 1px 2px rgb(18 21 24 / .10), 0 8px 24px -6px rgb(18 21 24 / .18)` | Popovers, combobox lists, callouts, menus |
-| 4 | `surface-3` + 1 px `line-strong` on the open edge + scrim `rgb(7 8 10 / .72)` (cart, dialogs) or no scrim (3D part panel) | `#FFF`, no border, `0 24px 64px -16px rgb(18 21 24 / .28)` + scrim `rgb(18 21 24 / .4)` | Drawers, sheets, dialogs |
+| Level | Night | Paper | Token | Use |
+|---|---|---|---|---|
+| 0 | flat on `bg` | flat on `bg` | — | Sections |
+| 1 | `surface-1` + 1 px `line` + lit edge | `#FFF` + 1 px `line`, no shadow | `shadow-rest` · utility `panel` | Cards, panels, tables |
+| 2 | `surface-1` + 1 px `line-strong` + lit edge + contact shadow | `#FFF` + 1 px `line-strong` + `shadow-paper-2` | `shadow-raised` · utility `panel-raised` | Hovered card, sticky summaries |
+| 3 | `surface-3` + 1 px `line-strong` + lit edge + contact shadow | `#FFF`, **no border**, `0 1px 2px rgb(18 21 24 / .10), 0 8px 24px -6px rgb(18 21 24 / .18)` | `shadow-overlay` | Popovers, combobox lists, callouts, menus, toasts, tooltips |
+| 4 | `surface-3` + 1 px `line-strong` on the open edge + deeper drop + scrim `rgb(7 8 10 / .72)` (cart, dialogs) or no scrim (3D part panel) | `#FFF`, no border, `0 24px 64px -16px rgb(18 21 24 / .28)` + scrim `rgb(18 21 24 / .4)` | `shadow-drawer` | Drawers, sheets, dialogs |
+
+Surface utilities (`app/globals.css`) — one panel language, radius, edge and light together:
+- `panel` — a resting surface (card, summary, form group): surface-1, hairline, 8 px, lit edge.
+- `panel-raised` — level 2.
+- `panel-inset` — a well inside a panel (notes, code, nested rows): surface-2, faint hairline, 6 px.
+- `card-interactive` — on a card that is or holds a link: on hover the surface steps up, the edge firms, the shadow becomes `shadow-raised` and the card lifts 1 px (fine pointers only; no lift under reduced motion). Hover is never the only way to reach an action.
+
+Dashed borders are for dropzones only.
 
 Bottom bars (sticky buy bar, quick-order summary, price-list bar, mobile cart total, consent banner) use the edge plus a 24 px fade above it, never a shadow, and register with `useBottomInset` (`lib/dom/bottomInset.ts`) so anchor jumps and keyboard focus stay above them (WCAG 2.4.11, D245).
 
-Header: `bg` at 88 % + `backdrop-filter: blur(12px)` — functional (content, including the 3D stage, scrolls beneath). `prefers-reduced-transparency: reduce` → solid `bg-raised`.
+Header and mobile action bar: the field at 84 % (bar: `bg-raised` at 92 %) + `backdrop-filter: blur(14px)` — functional (content, including the 3D stage, scrolls beneath). `prefers-reduced-transparency: reduce` → solid `bg-raised`. These two are the only translucent surfaces on the site.
 
 ### 5.6 Z-index scale
 `--z-base: 0` · `--z-raised: 10` (sticky table headers, hovered card) · `--z-sticky: 20` (sticky filters, quick-order box, checkout summary) · `--z-header: 30` · `--z-dropdown: 40` (combobox, menus, popovers) · `--z-overlay: 50` (scrims) · `--z-drawer: 60` (cart drawer, part panel, sheets) · `--z-dialog: 70` · `--z-toast: 80` · `--z-tooltip: 90` · `--z-skip: 100` (skip link). The hero is its own stacking context (`isolation: isolate`): canvas 0, poster −1 under it, overlays 1–3.
@@ -488,7 +511,7 @@ Header: `bg` at 88 % + `backdrop-filter: blur(12px)` — functional (content, in
 | **Dimension lines** | 1 px `control` line, 45° tick terminators 12 px, dashed 1 px `line-strong` extension lines (3/3), label `code-s` `ink-3` on a `bg` knockout | Hero stage (length, wheelbase, height); product page spec drawing (disc Ø × thickness) | Manifest `bbox`, wheelbase, product specs |
 | **Ruler floor** | Ground line `line-strong`; minor ticks every 100 mm (`line`), 500 mm (`line-strong`, longer), 1000 mm longest; **no numbers** on the ruler (the dimension lines carry the values — round 2: ruler labels collided with the wheelbase value) | Hero stage only | Manifest units (metres) |
 | **Coordinates** | Plain-language position instead of numbers („prednji levi“, „zadnji desni“) from the node's instance code; numeric pivots (`x 0,74 y 0,32 z 1,31`) only in the test hooks/dev overlay — round 1 showed numeric coordinates read as HUD decoration to users | 3D callouts, parts list | Instance code, manifest |
-| **Callout + leader** | Leader 1 px `accent` from the part (anchor dot 4 px `accent` with a 2 px `bg` ring) straight to an annotation lane above the object, then a horizontal shelf; label box on the shelf: `surface-3`, 1 px `line-strong`, radius 2, **no shadow**; title 14/600 (category name), one mechanic note 12.5 px `ink-2` (e.g. „Pre zamene proverite broj na kućištu turbine.“), action 13/600 `ink-1` with a `line-strong` underline that turns `accent` on hover + `ArrowRight` icon („12 artikala za Golf VII“) | 3D hover/selection; product-page spec drawing | `labelAnchor`, taxonomy `calloutNoteSr`, live count for the selected vehicle |
+| **Callout + leader** | Leader 1 px `accent` from the part (anchor dot 4 px `accent` with a 2 px `bg` ring) straight to an annotation lane above the object, then a horizontal shelf; label box on the shelf: `surface-3`, 1 px `line-strong`, radius 6, lit edge; title 14/600 (category name), one mechanic note 12.5 px `ink-2` (e.g. „Pre zamene proverite broj na kućištu turbine.“), action 13/600 `ink-1` with a `line-strong` underline that turns `accent` on hover + `ArrowRight` icon („12 artikala za Golf VII“) | 3D hover/selection; product-page spec drawing | `labelAnchor`, taxonomy `calloutNoteSr`, live count for the selected vehicle |
 | **Corner ticks** | 14 px L-shapes, 1 px `line-strong`, marking a drawing area | Hero stage frame, OG frame, empty-state drawing frames | — |
 | **Title block** | `<dl>` grid of cells with 1 px `line` rules on `bg`; key `code-s` caps `ink-3` (≥ 11 px), value 12 px `ink-2` / mono `ink-1`; content: „Prikaz: Generički kompaktni hečbek, nije konkretan model“ · „Faza 00 / 07“ (live) · „Kategorija 44“ · „Mere mm“; attached to the stage frame's top-right at ≥ 1440 px (at 1280 it crowded the roof and the callout — round 3); below 1440 px it becomes one visible line under the drawing (the honesty note is never hidden from anyone) | Hero, one per page max | Taxonomy counts, explode progress, honesty note |
 | **Stage index** | `00–07` as **buttons** (detents: click jumps to the stage end), numbers `numeral-s`, labels 13 px; active: 2 px accent bar + accent number + `aria-current="step"`; mobile: compact „00 / 07 Sklopljeno — skrolujte da rasklopite“ Index labels wrap to two balanced lines (`text-wrap: balance`), never an ellipsis; while the part drawer is open the strip reflows left of it and shows numbers only (MOT-04, D280). | Explode track only | Manifest `stages` |
@@ -625,7 +648,7 @@ No pin, no scrub: the stage shows the assembled state with „Rasklopi / Sklopi�
 2. **Motion explains assembly and state** — the explode (assembly), panels and sheets (where things come from and go back to), feedback (press, added, copied). Nothing moves for decoration; no looping ambient motion.
 3. **Start from what is on screen** — every tween starts from the presentation value (`gsap.to`, never re-`fromTo` on interruption), `overwrite: "auto"`; a user can grab or reverse anything mid-flight.
 4. **Same path in and out** — a drawer that enters from the right leaves to the right; a sheet returns to the bottom edge; popovers grow from their trigger.
-5. **Content is visible by default** — only the text-reveal system hides copy before it enters; images, cards, prices and controls are never hidden for an entrance.
+5. **Content arrives once, through one system** (step 26, D320) — the site-wide reveal is the only thing that hides anything for an entrance: copy arrives word by word, blocks (cards, images, CTA blocks, form groups, rows) rise a few pixels in sequence (§8.8). The first screen is never hidden (`RevealText`, `eager`), live values and chrome never are, and nothing reverses. No component writes its own entrance.
 
 ### 8.2 Duration tokens
 | Token | ms | GSAP s | Use |
@@ -655,7 +678,8 @@ Enter distances: UI 8 px (menus, toasts 16 px), panels 24 px + opacity (desktop 
 ### 8.4 Choreography and ScrollTrigger rules
 - Lead with the object; one authored moment per page; ≤ ⅓ of elements in motion at once; lists stagger ≤ 30 ms per item, ≤ 360 ms total; nothing travels more than ⅓ of the viewport without a keyframe (the explode is scroll-driven, so it is exempt).
 - **Hero explode**: one pinned section (`pin: true`, `start: "top top"`, `end: "+=320%"` desktop / `"+=200%"` mobile via `gsap.matchMedia`), `scrub: 0.6`, no snap (native scroll feel; the detented control is the stage index and the „Rasklopi“ toggle). The timeline is built from manifest stages with labels `st-0…st-7`; stage captions and the stage index read the timeline's progress (no separate triggers).
-- Other sections: **no ScrollTrigger entrances** — copy is handled by the text reveal; sticky bars use CSS `position: sticky`.
+- Other sections: **no ScrollTrigger entrances** — copy and blocks are handled by the site-wide reveal (§8.6, §8.8: one IntersectionObserver and CSS keyframes, so ScrollTrigger stays out of every page but home, PERF-10); sticky bars use CSS `position: sticky`; the header condenses on a CSS scroll timeline (§10.1).
+- Block stagger (§8.8): 60 ms per item, the last item at most 180 ms after the first (a batch is over in 700 ms). The 30 ms / 360 ms limits above apply to lists animated with GSAP inside overlays.
 - Create triggers top to bottom (hero first); async ones set `refreshPriority`; `ScrollTrigger.refresh()` after `document.fonts.ready`, after the poster → canvas swap, after route changes (`ScrollTriggerRefresher`), and when the reserved track height changes between media queries. No `markers` in production; no ScrollSmoother (D-list).
 - Everything inside `useGSAP({ scope })`; handlers via `contextSafe`; breakpoints and reduced motion via `gsap.matchMedia()`; animate only `transform`, `opacity`, `filter` (reveal blur) and CSS variables.
 
@@ -685,9 +709,10 @@ Enter distances: UI 8 px (menus, toasts 16 px), panels 24 px + opacity (desktop 
 | From → to | `opacity 0 → 1`, `filter: blur(8px) → blur(0)`, `translateY(0.35em) → 0`. |
 | Duration / ease | 620 ms per word, `sk.out` (CSS `cubic-bezier(0.16, 1, 0.3, 1)`). |
 | Stagger | `min(28 ms, 520 ms / wordCount)` between shuffled words → an element never takes longer than ≈ 1.14 s. |
-| Trigger | One IntersectionObserver, root margin bottom `-15%` (`enterRatio: 0.15`), each element once; a MutationObserver picks up streamed/route content. |
+| Trigger | One IntersectionObserver for copy and blocks, root margin bottom `-18%` (`REVEAL_LINE: 0.18`, thresholds 0 and 0.5): an element starts when its **vertical centre** crosses the line; an element taller than 60 % of the viewport when its top does. Each element once; a MutationObserver picks up streamed, client-navigated and newly listed content. The owner's rule is 15 %; 18 % was chosen by looking, because the mobile action bar covers the bottom 60 px (UI-BOOST §5.2, D321). |
+| Nothing stays hidden | Above the viewport → shown at once (also checked when scrolling stops); the last screen of a page, which can never reach the line → starts 48 px into view; `content-visibility: auto` sections → wait until the browser draws them; focus moving into hidden content → shown. |
 | Failsafe | `html.tr-js` added by the boot script; `tr-failsafe` after 3 500 ms reveals everything; `<noscript>` + `@media (scripting: none)` never hide. |
-| Skip | `[data-reveal="off"]` subtrees, nav, forms, dialogs/sheets, `[aria-live]`, `[role=status]`, live values (Price, StockBadge, counters, toasts), the whole admin shell. |
+| Skip | `[data-reveal="off"]` subtrees, nav, forms, dialogs/sheets, `[aria-live]`, `[role=status]`, live values (Price, StockBadge, counters, toasts), the whole admin shell, and block-reveal targets (copy inside a block arrives with the block). |
 | Reduced motion | Never hidden, no animation. |
 | **LCP-safe variant** (`RevealText`, Server Component, above the fold) | Words split on the server into `span.rw` with `--i` = deterministic shuffled index (seeded by a hash of the text) and `--n` = word count; wrapper `data-reveal="off"`; pure CSS keyframes from first paint: `from { opacity: .35; filter: blur(10px); transform: translateY(.3em) }` → rest, duration 540 ms `sk.out`, delay `calc(var(--i) * 360ms / var(--n))` → the whole block completes ≤ 900 ms; the first painted frame is readable (opacity .35), so LCP is not delayed. |
 
@@ -704,6 +729,29 @@ Enter distances: UI 8 px (menus, toasts 16 px), panels 24 px + opacity (desktop 
 | Hover colour changes, focus ring | Unchanged (not motion) |
 `prefers-reduced-transparency: reduce` → header and callouts become solid surfaces. `prefers-contrast: more` → `line` → `line-strong`, `ink-3` → `ink-2`, focus ring 3 px.
 
+Also reduced: block reveal and page transition → nothing hidden, nothing moves; header condense → the condensed bar from the start.
+
+### 8.8 Block reveal (step 26, D320–D323 — parameters in `constants/revealConfig.ts`)
+Everything that is not copy arrives as a block through the same engine, line, boot class, failsafe and pending state as the text reveal (`components/TextRevealGlobal.tsx`).
+
+| Parameter | Value |
+|---|---|
+| Targets | `data-reveal="block"` on one element; the direct children of `data-reveal-group`. Components: `Reveal`, `RevealGroup`, `RevealItem` (`components/reveal/Reveal.tsx`). Outermost target wins (never nested); copy inside a block is not split. |
+| From → to | `opacity 0 → 1`, `translate3d(0, 16px, 0) → 0` (12 px below 768 px). Transform and opacity only, no blur; `will-change` only while running. |
+| Duration / ease | 520 ms, `sk.out`. Each element once; nothing reverses. |
+| Trigger | The shared line (§8.6): centre past the line, top for tall elements. |
+| Stagger | Blocks that cross the line in the same observer callback form one batch per group, ordered by the document, 60 ms apart; the step shrinks so the last item starts ≤ 180 ms after the first (batch ≤ 700 ms). A grid reveals row by row, card by card. |
+| First screen | `data-reveal-eager` (prop `eager`, optional `index`): CSS only, from the first paint, `opacity .4 → 1` + 10 px, 480 ms, 50 ms apart (≤ 200 ms). Never hidden, so it may be the LCP element. Mark everything that is on the first screen at 390 **and** 1440. |
+| Lite tone | `data-reveal-tone="lite"` on an ancestor (the admin shell): 6 px, 320 ms, 30 ms apart (≤ 150 ms). |
+| Fade variant | `data-reveal-variant="fade"`: opacity only, 360 ms — wide tables and panels where a lift reads as a layout jump. |
+| Hiding | `html.tr-js:not(.tr-failsafe) :is(blockHiddenSelector):not([data-reveal-state])` — a plain attribute selector (no `:has()`), kept for the life of the page so blocks added later are hidden from their first frame; then `[data-reveal-state="pending"]`. |
+| Reduced motion / no JS / print | Never hidden, no animation. |
+
+Where: every card grid (products, categories, car models, brands), list rows, images, CTA blocks, form groups, footer columns; admin panels (`Section panel`) and tables in the lite tone. Never on chrome (header, dialogs, sheets, menus, toasts), on live values that stand alone, or on an element GSAP transforms. Demo and test page: `/styleguide/otkrivanje`; test: `tests/e2e/reveal.spec.ts`.
+
+### 8.9 Page transition (step 26, D326)
+On a link navigation the page area of the new route fades in: `opacity 0 → 1` + 6 px rise, 280 ms `sk.out`, through the View Transitions API (`components/shell/PageTransition.tsx`, React `<ViewTransition>`); browsers without it change pages as before. The old page is not cross-faded — its snapshot would slide when the old page was scrolled. Header, mobile action bar and consent banner are separate transition groups (`data-vt`) and do not move; nothing changes layout. Only `RouteLink` navigations carry the transition type, so filters and sorting (`router.replace`) and back/forward do not animate; a pagination link is a navigation and does. Reduced motion: no animation.
+
 ---
 
 ## 9. Component inventory
@@ -711,21 +759,21 @@ Enter distances: UI 8 px (menus, toasts 16 px), panels 24 px + opacity (desktop 
 Conventions for every component (ARCHITECTURE §G3): forwarded ref, `asChild` where useful, `data-state` hooks, tokens only (no hard-coded colours), all states below, targets ≥ 24 px (≥ 44 px for primary touch), visible focus (2 px `accent` outline, 2 px offset; on accent fills the ring is `ink-1`; inside tables the ring is inset −2 px). "Disabled" is used sparingly — prefer an enabled control that explains why it cannot proceed.
 
 ### 9.1 Button
-Anatomy: [leading icon 20] label [trailing icon 16] · height sm 36 / md 44 / lg 52 (hero search 56) · padding-inline 12 / 16 / 20 · radius 2 · label Public Sans 600 15 px (sm 14) · gap 8.
+Anatomy: [leading icon 20] label [trailing icon 16] · height sm 36 / md 44 / lg 52 (hero search 56) · padding-inline 12 / 16 / 20 · radius 6 · label Public Sans 600 15 px (sm 14) · gap 8.
 
 | Variant | Default | Hover | Focus-visible | Active (pressed) | Disabled | Loading | Error / danger |
 |---|---|---|---|---|---|---|---|
-| **Primary** (one per region) | `accent` fill, `on-accent` label | `accent-hover` | ring `ink-1` 2 px offset 2 | `accent-active`, translateY 1 px | `surface-2` fill, `ink-4` label, no pointer | spinner replaces leading icon, `aria-busy`, width locked | — |
-| **Secondary** | transparent, 1 px `control`, `ink-1` label | `surface-2` fill, border `ink-3` | ring `accent` | translateY 1 px, `surface-3` | border `line`, label `ink-4` | spinner, label kept | — |
-| **Quiet** (toolbar, card secondary) | `surface-2` fill, 1 px `control` | `surface-3`, border `accent` | ring `accent` | translateY 1 px | as secondary | spinner | — |
+| **Primary** (one per region) | `accent` fill with a lit top edge (inset highlight, lost on press), `on-accent` label | `accent-hover` | ring `ink-1` 2 px offset 2 | `accent-active`, translateY 1 px | `surface-2` fill, `ink-4` label, no pointer | spinner replaces leading icon, `aria-busy`, width locked | — |
+| **Secondary** (the single alternative beside a primary — one outline per region) | transparent, 1 px `control`, `ink-1` label | `surface-2` fill, border `ink-3` | ring `accent` | translateY 1 px, `surface-3` | border `line`, label `ink-4` | spinner, label kept | — |
+| **Quiet** (repeated actions: card and row buttons, toolbars — filled, never a bright outline; D318) | `surface-3` fill, 1 px `line-strong`, lit edge | `surface-4`, border `ink-4` | ring `accent` | translateY 1 px | as secondary | spinner | — |
 | **Ghost / link-button** | no border, `ink-2` | `ink-1` + `surface-2` | ring `accent` | translateY 1 px | `ink-4` | — | — |
 | **Danger** (admin: otkaži, obriši) | transparent, 1 px `danger`, `danger` label (paper: `danger` on white) | `danger-subtle` fill | ring `accent-text` | translateY 1 px | as secondary | spinner | confirmation dialog for irreversible actions |
 | **Icon button** | 44 × 44 (dense 36), icon 20–24, `ink-2` | `ink-1` + `surface-2` | ring `accent` | translateY 1 px | `ink-4` | spinner | needs `aria-label` |
 Paper theme: primary keeps the orange fill with `#121518` label; focus rings use `accent-text #B8470A`.
 
 ### 9.2 Inputs (text, search, number, textarea)
-Anatomy: label (13 px 500 `ink-2`, always visible, above) → field (height 44, hero 56; `surface-2`; 1 px `control`; radius 2; text 16 px `ink-1`; placeholder `ink-3`; optional prefix icon 20 `ink-3` / suffix unit „kom.“, „RSD“) → help or error (13 px, `ink-3` / `danger`, linked with `aria-describedby`).
-States: default · hover (border `ink-3`) · focus (border `accent` + 1 px inner ring `accent`, caret `accent`) · filled · disabled (`surface-1`, border `line`, text `ink-4`) · read-only (no border, `surface-1`) · error (border `danger`, message with `WarningCircle` 16 + text, `aria-invalid="true"`) · success only where a check is meaningful (PIB checksum ok: `CheckCircle` `success` + „PIB je ispravan“). Validation on blur, not on every keystroke; the form-level error summary receives focus on submit. `inputmode`/`autocomplete` always set (tel, email, `postal-code`, `organization`, `one-time-code`).
+Anatomy: label (13 px 500 `ink-2`, always visible, above) → field (height 44, hero 56; `surface-2`; 1 px `control`; radius 6; text 16 px `ink-1`; placeholder `ink-3`; optional prefix icon 20 `ink-3` / suffix unit „kom.“, „RSD“) → help or error (13 px, `ink-3` / `danger`, linked with `aria-describedby`).
+States: default · hover (border `ink-3`) · focus (border `accent` + 1 px inner ring `accent`, caret `accent`; a crisp ring, no glow) · filled (browser autofill keeps the field's surface and ink) · disabled (`surface-1`, border `line`, text `ink-4`) · read-only (no border, `surface-1`) · error (border `danger`, message with `WarningCircle` 16 + text, `aria-invalid="true"`) · success only where a check is meaningful (PIB checksum ok: `CheckCircle` `success` + „PIB je ispravan“). Validation on blur, not on every keystroke; the form-level error summary receives focus on submit. `inputmode`/`autocomplete` always set (tel, email, `postal-code`, `organization`, `one-time-code`).
 - Quantity stepper: [−] [ 2 ] [+] 44 px buttons, input 56 px wide tabular, min 1, max from stock minus what the cart already holds (or 99 for „po porudžbini“), keyboard ↑/↓. Size `sm` (36 px, dense lists) applies only from `lg` with a fine pointer; everywhere else it stays 44 px (D247).
 - Textarea: min 4 rows, character counter `ink-3` when a limit exists („142 / 1.000“).
 
@@ -735,7 +783,7 @@ States: default · hover (border `ink-3`) · focus (border `accent` + 1 px inner
 
 ### 9.4 Vehicle picker
 - Hero/catalog trigger is a **field-like control**, not an outline button (round 1: it looked like „Rasklopi“ and lost its priority): label „Vaše vozilo“ above; 52 px `surface-2` field with 1 px `control` border; `Car` icon 20 in `ink-2` (the field itself says it is yours; round 3 counted an orange icon here as decoration); vehicle name 15/600 `ink-1` (ellipsis); „Promeni ▾“ 14/500 `ink-3` (text visually hidden below 1280 px, caret stays); a separate 48 px clear button `X` („Ukloni izabrano vozilo“) behind a 1 px `line` divider. Empty state: „Izaberite vozilo“ + meta `marka, model, motor`.
-- Header slot: chip `accent-subtle` bg, 1 px `accent` border, `Car` icon + „Golf VII · 2.0 TDI“ + `X` (44 px hit area).
+- Header slot: empty — a filled field-like chip („Izaberite vozilo“, `surface-2`, 1 px `line-strong`, 40 px); chosen — chip `accent-subtle` bg, 1 px `accent` border, `Car` icon + „Golf VII · 2.0 TDI“ + `X` (44 px hit area). On phones the same state lives in the action bar (§10.1).
 - Panel: dialog on desktop (560 px, level 4) / bottom sheet on mobile (92 %). Four steps in one column with breadcrumbs of choices: **Marka** (5 text tiles, no logos: Volkswagen, Audi, Škoda, SEAT, Cupra) → **Model** (searchable list, popular first) → **Generacija** (rows „Golf VII · 2012–2020“ with VIN model code in mono `5G`) → **Motor** (rows „2.0 TDI · 110 kW / 150 KS · CRLB“, optional „Ne znam motor“ skips). Footer: „Ne nalazim svoje vozilo“ → `/upit` prefilled; „Sačuvaj vozilo“ (logged in). Keyboard: every list is a listbox; Backspace goes one step back.
 - States: loading rows (skeleton 5 × 44), empty (no generations → inquiry), error, saved vehicles section at the top for logged-in users.
 
@@ -753,7 +801,7 @@ States: default · hover (border `ink-3`) · focus (border `accent` + 1 px inner
 ### 9.7 Product card
 Anatomy (grid variant): thumbnail 4:3 (render/photo on a graphite radial ground, quality tag top-left 24 px outline chip) → body (padding 16, gap 6): maker (13 `ink-3`; on mobile „Brembo · OEM kvalitet“ because the chip is hidden) → name (`h4`, 2 lines max, the whole card is one link via the name's `::after`; the focus ring is drawn on that overlay so it outlines the **whole card**) → codes („OEM“ + `code` value; cross count „+ 4 zamenska“) → **fitment line** when a vehicle is chosen (`CheckCircle` `success` „Odgovara za Golf VII · 2.0 TDI“ / `Question` `warning` „Proverite oznaku motora“ / nothing when unknown) → stock line (§3.6) → „Zamena na stanju: 2 →“ link when the product is out of stock but cross-referenced products are in stock → footer rule → price block (§9.8, always with „sa PDV-om“) + action (quiet button 44 px: „U korpu“ / „Poruči“ for po porudžbini / „Obavesti me“ for out of stock). The button's accessible name includes the product („U korpu: Kočioni disk prednji, Ø 312 mm“).
 List variant (mobile default, mechanic portal, search): 104 px thumbnail column + the same body; footer stacks the price and a **full-width labelled 44 px button** (round 1: icon-only buttons lost their names and made „Poruči“ and „U korpu“ look identical); card border `line-strong` for glare. Mechanic portal list rows add a compact quantity stepper before the button.
-States: default · hover (border `line-strong`, render scale 1.03 inside its mask, 600 ms `sk.out`) · focus-visible (ring around the card) · added („Dodato“ 1.6 s) · loading skeleton (thumb block + 5 text bars + price bar, same heights) · out of stock (no dimming of the card — stock line says it; actions „Obavesti me“ + the alternatives link; the product page adds „Pošaljite upit“) · inactive product („Artikal više nije u ponudi“, link to alternatives) · price changed (live overlay flashes `accent-subtle` 400 ms).
+States: default (`panel`) · hover (`card-interactive`: surface step, border `line-strong`, raised shadow, 1 px lift; render scale 1.03 inside its mask, 600 ms `sk.out`) · focus-visible (ring around the card) · added („Dodato“ 1.6 s) · loading skeleton (thumb block + 5 text bars + price bar, same heights) · out of stock (no dimming of the card — stock line says it; actions „Obavesti me“ + the alternatives link; the product page adds „Pošaljite upit“) · inactive product („Artikal više nije u ponudi“, link to alternatives) · price changed (live overlay flashes `accent-subtle` 400 ms).
 
 ### 9.8 Price block
 | Variant | Layout |
@@ -766,7 +814,7 @@ States: default · hover (border `line-strong`, render scale 1.03 inside its mas
 The Price component is a live value: skipped by the text reveal, `aria-live` only in the cart total.
 
 ### 9.9 Stock badge
-Inline (default) or chip (`*-subtle` bg, 24 px, radius 2) — icon + word + optional quantity/lead time (§3.6). Quantity is shown only when ≤ 10 („Na stanju · 4 kom.“; above: „Na stanju“). Never colour-only; never hidden by the reveal.
+Inline (default) or chip (`*-subtle` bg, 24 px, radius 4) — icon + word + optional quantity/lead time (§3.6). Quantity is shown only when ≤ 10 („Na stanju · 4 kom.“; above: „Na stanju“). Never colour-only; never hidden by the reveal.
 
 ### 9.10 Part panel (3D) — drawer / sheet
 Desktop: right drawer 440 px (1280+: 480 px), no scrim (the car stays interactive), level 4 shadow, full height under the header. Mobile: bottom sheet (peek 42 % / full 92 %).
@@ -780,10 +828,10 @@ Right drawer 420 px with scrim (desktop) / full-height sheet (mobile). Header �
 Four steps: **1 Kontakt → 2 Dostava → 3 Plaćanje → 4 Pregled**. Desktop: horizontal list at the top of the form column (numbers `numeral-s`, labels 14 px), completed steps show `Check` and are links („Izmeni“), current step has the 2 px accent underline and `aria-current="step"`; right column (sticky) = order summary. Mobile: „Korak 2 od 4 · Dostava“ + thin 4-segment bar (current segment accent), summary collapsible at the top („Ukupno 18.470 RSD ▾“). Each step validates on „Dalje“; errors summarised at the top of the step with focus. Final button „Pošalji porudžbinu“ (primary, lg), with the payment reminder above it („Plaćate pouzećem kuriru pri preuzimanju.“).
 
 ### 9.13 Toasts
-Bottom-centre on mobile (above the home indicator), bottom-right on desktop; 360 px, `surface-3`, 1 px `line-strong`, radius 4, icon (status colour) + text 14 px + optional action link + close. Types: success, info, warning, error (errors stay until closed). `role="status"` (polite) or `role="alert"` for errors. Max 3 stacked.
+Bottom-centre on mobile (above the home indicator), bottom-right on desktop; 360 px, `surface-3`, 1 px `line-strong`, radius 8, overlay shadow, above the mobile action bar; icon (status colour) + text 14 px + optional action link + close. Types: success, info, warning, error (errors stay until closed). `role="status"` (polite) or `role="alert"` for errors. Max 3 stacked.
 
 ### 9.14 Dialogs
-Radix Dialog: 480/640 px, `surface-3`, radius 6, level 4; title `h2` (20 px), body 16, footer right-aligned (secondary left, primary right; destructive = danger button with an explicit verb „Otkaži porudžbinu“). Typed confirmation for irreversible owner actions („OBRIŠI DEMO“). Esc and scrim close unless a destructive action is in progress. Focus trap, return focus. Mobile: dialogs become bottom sheets except confirmations (centred, 92 % width).
+Radix Dialog: 480/640 px, `surface-3`, radius 12, level 4 (bottom sheets: 14 px top corners); title `h2` (20 px), body 16, footer right-aligned (secondary left, primary right; destructive = danger button with an explicit verb „Otkaži porudžbinu“). Typed confirmation for irreversible owner actions („OBRIŠI DEMO“). Esc and scrim close unless a destructive action is in progress. Focus trap, return focus. Mobile: dialogs become bottom sheets except confirmations (centred, 92 % width).
 
 ### 9.15 Admin data table (paper)
 Toolbar: segmented status filter (tabs with counts, `nowrap`, horizontally scrollable on narrow widths), search (260 px, `/` shortcut), filter popover, column visibility, density toggle, export („Izvoz za Excel“ — CSV with BOM and `;`). Table: header 36 px `surface-2` caps labels 11 px, sticky; rows 48 px (compact 36), 1 px `line-faint` dividers, no zebra; hover `surface-2`; selected = neutral `selected #EEF1F4` + checked checkbox (never the accent tint, which marks „Nova“); numbers right-aligned tabular; order numbers `code` 12.5 px **400** with the prefix `SK-2026-` in `ink-3` and the sequence in `ink-1` (round 1: the number outweighed the customer); dates compact „29.09. 11:42“ (year shown when it is not the current year); „Plaćanje · dostava“ as one two-line column; status chips (§3.6) with icon and compact labels („Za preuzimanje“); a 32 px row-actions button (`DotsThree`, „Radnje za SK-2026-000187“: Štampaj predračun, Otpremnica, Otvori); first column (checkbox + number) sticky when scrolling horizontally. Cells use 8 px side padding; „Izvor“ shows at ≥ 1440 px (the order detail always shows attribution); the row-actions column is sticky on the right; between 1024 and 1365 px the sidebar collapses to a 64 px icon rail (labels visually hidden, counts as small badges). With these rules the orders list fits 1280, 1366 and 1440 px without horizontal scrolling (measured: 0 px overflow in `/lab/koncept`, round 4); below 1024 the table scrolls inside its wrapper and the workspace column is `minmax(0, 1fr)` so nothing is clipped. Dark sidebar keeps the night focus ring (`accent`, 6.74:1); the paper workspace uses `accent-text`. Keyboard: ↑/↓ move row focus, Enter opens, Space selects, Shift+click range. Bulk bar replaces the toolbar when rows are selected („3 izabrane · Potvrdi · Štampaj otpremnice · Poništi izbor“). Footer: „1–25 od 187“ + pagination. States: loading (skeleton rows keep column widths), empty per filter („Nema novih porudžbina.“), error banner with retry, stale data notice when a live update arrives while editing. Width budget (D271): the table is `w-full` with auto layout inside an `@container`, so wrapping cells fold before anything scrolls; each list keeps a budget — caps on long cells with the full value in `title`, breakpoint defaults for optional columns that the column chooser can override (e.g. „Proizvođač“ from 1536 px), container-query folding (stock badge over quantity under 72 rem); edge-scroll hints sit at the seam of the sticky columns. Selection (D272): toolbar and bulk bar share one 48 px slot, so selecting never moves rows; a row click within 300 ms of a checkbox change does not open the record; a `role="status"` region reads „Izabrano: N“ / „Izbor poništen“.
@@ -801,7 +849,7 @@ Storefront: „Prethodna“ / „Sledeća“ buttons + page numbers (1 … 4 5 *
 Drawing frame (corner ticks, 240 × 160 max), part glyph 32–48 `ink-3`, one sentence `ink-2`, one action. Zero search results: echo the normalised query in mono, „Tražili smo {q} u OEM, zamenskim i kataloškim brojevima.“ + „Pošaljite upit — javljamo se u toku radnog dana.“ (primary) + „Pozovite nas“ when the phone exists in settings.
 
 ### 9.20 Skeletons
-Same geometry as the final layout (no CLS), `surface-2` blocks radius 2, text bars at 60–90 % widths, shimmer per §8.5, `aria-busy="true"` on the region + visually-hidden „Učitava se…“.
+Same geometry as the final layout (no CLS), `surface-2` blocks radius 6, text bars at 60–90 % widths, shimmer per §8.5, `aria-busy="true"` on the region + visually-hidden „Učitava se…“.
 
 ### 9.21 Notification bell (admin, mechanic/account)
 Icon button `Bell` 44 with count badge (accent, `radius-full`, tabular, „9+“ above 9); popover 380 px level 3: header „Obaveštenja“ + „Označi sve kao pročitano“; rows 56 px: type glyph, title („Nova porudžbina SK-2026-000187“), meta („pre 3 min · Nikola Stanković“), unread dot `accent` 8 px; realtime insert animates with the list stagger (≤ 220 ms); empty „Nema novih obaveštenja.“; link „Sva obaveštenja“. `aria-live="polite"` announces new items once.
@@ -833,8 +881,10 @@ Legend: `[ ]` control · `( )` chip · `▣` render/image · `≡` list · `—`
 │ 00 Sklopljeno │ 01 Karoserija i svetla │ 02 Točkovi │ 03 Kočnice i vešanje │ … │ 07 Izduvni   [Rasklopi] [Lista delova] │
 └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 Grid areas (proven in `/lab/koncept`, rounds 3–4): ≥ 1024 px `copy` (statement + search) and `aside` (vehicle + VIN link) on columns 1–5, `stage` on columns 6–12 spanning both rows, bottom-aligned, with a callout lane above the object and the title block on the stage frame's top-right (≥ 1440 px); `strip` (stage index + Rasklopi/Lista delova) full width. Content capped at 1440 px (`--pad`), the 3D canvas itself stays full-bleed behind.
-Header contact: „Pozovite“ / „Viber“ as text links ≥ 1440 px, 44 px icon buttons with aria-labels below, Viber moves into the menu (and the bottom contact bar) below 640 px; the phone icon stays. The hero is `min(100dvh − header, 960px)` tall in static layouts (the 3D canvas itself stays full-bleed).
-Mobile (< 1024 px): header 56 ([mark] SKLOP · phone · account · cart · menu); order **copy → aside → stage → strip** (round 3: „fits my car?“ must stay above the fold): statement 3 lines (36 px) → search full width (52 px) → vehicle field → VIN link → poster 4:5 with ruler and the honesty line (nothing selected at rest on phones — no callout lane; a tap selects) → compact stage row `00 / 07 Sklopljeno` + [Rasklopi] [Lista delova] → sections stacked; category grid 2 columns; sticky bottom contact bar on scroll-up only (Pozovite · Viber · Upit), 56 px.
+**Header (step 26, D324).** Sticky. At the top of a page it is taller by `--header-rest` (12 px; 8 px below 1024), has no surface and the logo is 8 % larger; over the first 96 px of scroll it condenses to `--header-h` and takes its surface (the field at 84 %, 14 px blur, hairline). A CSS scroll timeline on `--header-p` drives it (`site-header` in `app/globals.css`): no script, and no layout change because the sticky offset is negative by the extra height. Without scroll timelines, and under reduced motion, the bar is condensed from the start. **Search is the primary action**: the widest control, a filled field-like button at every width that opens the search dialog („/“ too); on a page that opens with its own search field (home, search, 404 — `data-own-search`) the header field steps back until the page scrolls. Order: logo · nav · search · vehicle chip (≥ 1280) · contact · account · cart · menu.
+Header contact: „Pozovite“ / „Viber“ as text links ≥ 1440 px, 44 px icon buttons with aria-labels from 480 px; below that they are in the menu and the action bar's contact sheet. The hero is `min(100dvh − header, 960px)` tall in static layouts (the 3D canvas itself stays full-bleed).
+Mobile (< 1024 px): header 56 (mark · search field · cart · menu; phone, Viber and account icons from 480 px); order **copy → aside → stage → strip** (round 3: „fits my car?“ must stay above the fold): statement 3 lines (36 px) → search full width (52 px) → vehicle field → VIN link → poster 4:5 with ruler and the honesty line (nothing selected at rest on phones — no callout lane; a tap selects) → compact stage row `00 / 07 Sklopljeno` + [Rasklopi] [Lista delova] → sections stacked; category grid 2 columns.
+**Mobile action bar (step 26, D325).** Below 1024 px a bar is docked at the bottom of every storefront page that has no bottom bar of its own (product, cart, checkout and the mechanic portal keep theirs): **Pretraga · Vozilo · Korpa · Kontakt**, 60 px + safe area, `bg-raised` at 92 % with the header blur, icon 22 px over a 12 px label, targets ≥ 60 × 60 px. Orange marks what is yours: a chosen vehicle (its short name replaces „Vozilo“) and a filled cart (count). „Kontakt“ opens a bottom sheet with one-tap rows for every channel in settings, then the inquiry and the contact page; with no channels it is a link to the inquiry („Upit“). The bar is server-rendered and its height (`--bottom-bar-h`) is declared by `BottomBarSpace` at the very start of the shop layout, so it is known before any content is laid out: the hero frame, toasts, the consent banner and the offline notice sit above it, the shell reserves the space under the footer, and it registers as a bottom inset (WCAG 2.4.11). It replaces the scroll-up contact bar (FLOW-12).
 
 ### 10.2 Category `/delovi/[kategorija]`
 ```

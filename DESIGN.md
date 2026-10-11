@@ -162,11 +162,12 @@ typography:
     lineHeight: 1.3
     letterSpacing: "0.04em"
 rounded:
-  none: "0"
-  xs: "2px"
-  sm: "4px"
-  md: "6px"
+  xs: "4px"
+  sm: "6px"
+  md: "8px"
   lg: "10px"
+  xl: "12px"
+  2xl: "14px"
   full: "999px"
 spacing:
   "1": "4px"
@@ -182,7 +183,7 @@ components:
   button-primary:
     backgroundColor: "{colors.safety-orange}"
     textColor: "{colors.night-field}"
-    rounded: "{rounded.xs}"
+    rounded: "{rounded.sm}"
     height: "44px"
     padding: "0 20px"
   button-primary-hover:
@@ -190,22 +191,22 @@ components:
   button-secondary:
     backgroundColor: "{colors.graphite-input}"
     textColor: "{colors.drawing-ink}"
-    rounded: "{rounded.xs}"
+    rounded: "{rounded.sm}"
     height: "44px"
     padding: "0 14px"
   input:
     backgroundColor: "{colors.graphite-input}"
     textColor: "{colors.drawing-ink}"
-    rounded: "{rounded.xs}"
+    rounded: "{rounded.sm}"
     height: "56px"
   card:
     backgroundColor: "{colors.graphite-card}"
-    rounded: "{rounded.sm}"
+    rounded: "{rounded.md}"
     padding: "16px"
   callout:
     backgroundColor: "{colors.graphite-overlay}"
     textColor: "{colors.drawing-ink}"
-    rounded: "{rounded.xs}"
+    rounded: "{rounded.sm}"
     padding: "10px 14px"
   admin-table-header:
     backgroundColor: "{colors.paper-header}"
@@ -284,26 +285,26 @@ One accent against cool graphite neutrals; a cyan rim reserved for the X-ray art
 Depth comes from surface lightness steps and hairlines; resting UI has no shadows. Overlays commit to one treatment: on night an edge (surface-3 + 1 px #434A52, no shadow); on paper a soft elevation without a hairline (`0 1px 2px rgb(18 21 24 / .10), 0 8px 24px -6px rgb(18 21 24 / .18)`). The sticky header is 88 % opaque with a 12 px blur because the 3D stage moves beneath it.
 
 ### Named Rules
-**The Commit-To-One Rule.** An edge or an elevation — never a hairline plus a wide diffuse shadow.
+**The Edge-And-Light Rule.** Every surface has its edge and a lit top edge; only what floats adds a tight contact shadow — never a hairline plus a wide diffuse shadow, never a glow.
 
 ## Shapes
 
-Squared drawing-sheet geometry: 2 px radius on controls and chips, 4 px on cards and tables, 6 px on admin frames and dialogs, 10 px only for mobile sheet tops, pills only for counts. 1 px hairlines; 2 px only for focus rings and active indicators. Corner ticks (14 px L-shapes) frame drawing areas.
+Small soft corners on every box, by role: 4 px on chips and badges, 6 px on buttons and inputs, 8 px on cards, panels and tables, 10 px on pictures, 12 px on dialogs, 14 px on sheet tops; pills only for what is a pill. Nested corners are concentric. Only drawings stay square (corner ticks, dimension lines). 1 px hairlines; 2 px only for focus rings and active indicators. Corner ticks (14 px L-shapes) frame drawing areas.
 
 ## Components
 
 ### Buttons
-- **Shape:** squared (2 px).
+- **Shape:** 6 px.
 - **Primary:** orange fill, night-field label (6.74:1), 44 px (hero 56 px attached to the search field).
 - **Hover / Focus:** lighter orange on hover, pressed darker + 1 px travel; focus ring 2 px ink on orange, orange elsewhere.
-- **Secondary / Quiet:** graphite input fill or transparent with a control-edge border.
+- **Secondary:** transparent with a control-edge border, one per region. **Quiet:** a filled graphite surface for repeated actions (card and row buttons).
 
 ### Inputs / Fields
 - **Style:** graphite input fill, 1 px control edge, label always above (13 px), 16 px text.
 - **Focus:** orange border + 1 px inner ring. **Error:** danger border, icon + message below.
 
 ### Cards
-- Graphite card, 1 px hairline, 4 px radius, 16 px padding; 4:3 render; maker → name (whole-card link) → OEM (mono) → fitment line → stock line → price (condensed, „sa PDV-om“) + quiet action.
+- Graphite card (`panel`), 1 px hairline, 8 px radius, lit top edge, 16 px padding; hover steps the surface up and lifts 1 px; 4:3 render; maker → name (whole-card link) → OEM (mono) → fitment line → stock line → price (condensed, „sa PDV-om“) + quiet action.
 
 ### Navigation
 - 64 px sticky header: wordmark (the lifted-part mark + name in Archivo Expanded), four text links, „Pozovite“/„Viber“ (from settings), account, cart with an orange count.

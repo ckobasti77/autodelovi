@@ -5,10 +5,11 @@
  * a thumb — search, vehicle, cart, contact — docked at the bottom of every storefront page that
  * has no bottom bar of its own (product buy bar, cart total, checkout, mechanic portal).
  *
- * Server-rendered with the page, so the space it takes (`--bottom-bar-h`, set in globals.css
- * while `[data-bottom-bar]` is in the document) is known at first paint: the hero frame, toasts
- * and the consent banner sit above it and nothing shifts. The search dialog, vehicle picker,
- * cart drawer and contact sheet it opens are the same lazy chunks the header uses.
+ * Server-rendered with the page. The space it takes (`--bottom-bar-h`) is declared by
+ * `BottomBarSpace` at the very start of the shop layout, so it is known before any content:
+ * the hero frame, toasts and the consent banner sit above the bar and nothing shifts. The
+ * search dialog, vehicle picker, cart drawer and contact sheet it opens are the same lazy
+ * chunks the header uses.
  *
  * It registers as a bottom inset (focused controls scroll clear of it, WCAG 2.4.11) and is
  * excluded from the reveal. Orange marks what is yours: a chosen vehicle and a filled cart.
@@ -34,6 +35,7 @@ import { openCartDrawer } from "@/lib/cart/drawer";
 import { useCartCount } from "@/lib/cart/guestCart";
 import { useBottomInset } from "@/lib/dom/bottomInset";
 import { useLatched } from "@/lib/hooks/useLatched";
+import { hasOwnBottomBar } from "@/lib/shell/bottomBar";
 import { openSearchPanel } from "@/lib/search/panel";
 import { openVehiclePicker } from "@/lib/vehicle/picker";
 import { useSelectedVehicle, vehicleLabel } from "@/lib/vehicle/store";
@@ -43,13 +45,6 @@ const ContactSheet = dynamic(() => loadContactSheet().then((m) => m.ContactSheet
 const warmContactSheet = () => void loadContactSheet();
 /** The picker dialog is mounted by VehiclePickerLazy; this only warms its chunk on intent. */
 const warmVehiclePicker = () => void import("@/components/vehicle/VehiclePickerDialog");
-
-/** Routes with their own bottom bar (buy bar, cart total, checkout, mechanic portal). */
-const OWN_BOTTOM_BAR = ["/deo/", ROUTES.cart, ROUTES.checkout, ROUTES.mechanicPortal];
-
-export function hasOwnBottomBar(pathname: string): boolean {
-  return OWN_BOTTOM_BAR.some((prefix) => pathname === prefix || pathname.startsWith(prefix));
-}
 
 const item =
   "relative flex min-w-0 flex-1 cursor-pointer flex-col items-center justify-center gap-1 rounded-sm type-caption-s text-ink-2 transition-control hover:text-ink-1 active:bg-surface-2 active:text-ink-1 focus-ring-inset";
@@ -84,7 +79,6 @@ export function BottomActionBar({ contacts }: { contacts: ContactLink[] }) {
       ref={ref}
       aria-label="Brze radnje"
       data-reveal="off"
-      data-bottom-bar=""
       data-vt="bottom-bar"
       data-contact-location="bottom-bar"
       data-testid={TEST_IDS.bottomBar}

@@ -92,7 +92,10 @@ function audit() {
     });
     const control = ["img", "video", "canvas", "input", "select", "textarea", "button", "iframe"].includes(tag);
     const filled = fill[3] > 0.5 && !same(fill, backdrop(el));
-    const gradient = style.backgroundImage !== "none" && !style.backgroundImage.startsWith("linear-gradient(rgba(0, 0, 0, 0)");
+    // A gradient that runs to transparent is a fade (scroll hint, ground glow), not a box.
+    const image = style.backgroundImage;
+    const gradient =
+      image !== "none" && !image.includes("rgba(0, 0, 0, 0)") && !image.includes("transparent");
     const bordered = sides.length >= 3;
     if (!(control || filled || bordered || (gradient && !el.classList.contains("corner-ticks")))) continue;
     if (el.classList.contains("corner-ticks")) continue;
@@ -102,7 +105,20 @@ function audit() {
     }
     if (["checkbox", "radio", "file", "hidden"].includes(el.getAttribute("type") ?? "") && rect.width < 2) continue;
 
-    // Edges that meet the viewport.
+    // Edges that meet the viewport: full-bleed bands, docked bars, and columns whose four
+    // corners all lie on the edges of the document (a sidebar from top to bottom).
+    const docTop = rect.top + window.scrollY;
+    const docBottom = rect.bottom + window.scrollY;
+    const docHeight = document.documentElement.scrollHeight;
+    const onSide = (x) => x <= 1 || x >= vw - 1;
+    const onEnd = (y) => y <= 1 || y >= docHeight - 1;
+    const corner = (x, y) => onSide(x) || onEnd(y);
+    const allOnEdges =
+      corner(rect.left, docTop) &&
+      corner(rect.right, docTop) &&
+      corner(rect.left, docBottom) &&
+      corner(rect.right, docBottom);
+    if (allOnEdges) continue;
     const fullBleed = rect.left <= 1 && rect.right >= vw - 1;
     const docked =
       (style.position === "fixed" || style.position === "sticky") &&

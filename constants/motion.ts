@@ -14,6 +14,10 @@ export const DURATION_MS = {
   stage: 600,
   camera: 900,
   reveal: 620,
+  /** One block of the site-wide reveal (constants/revealConfig.ts). */
+  rise: 520,
+  /** Page transition: the page area fading in (app/globals.css `--dur-page`). */
+  page: 280,
 } as const;
 
 export type DurationToken = keyof typeof DURATION_MS;
@@ -72,7 +76,7 @@ export const SHEET = {
 } as const;
 
 /**
- * Page transition (§8.8): the View Transitions type every `RouteLink` navigation carries and
+ * Page transition (§8.9): the View Transitions type every `RouteLink` navigation carries and
  * the class `components/shell/PageTransition` maps it to. Timings: app/globals.css
  * (`::view-transition-*(.page-swap)`, `--dur-page`).
  */

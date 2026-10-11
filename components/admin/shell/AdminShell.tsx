@@ -4,7 +4,8 @@
  * Admin shell (DESIGN-SYSTEM §10.10): night sidebar + paper workspace. Portaled overlays
  * (menus, dialogs, toasts) inherit the paper theme because the shell marks <body> while it
  * is mounted; the sidebar pins the night theme on its own subtree. The whole shell is
- * `data-reveal="off"` (no text entrances in a working tool).
+ * `data-reveal="off"` (no text entrances in a working tool) and `data-reveal-tone="lite"`:
+ * panels and tables that opt in (`Section panel`, `DataTable`) get the lighter block reveal.
  */
 import { useMutation } from "convex/react";
 import { Dialog as DialogPrimitive } from "radix-ui";
@@ -128,6 +129,7 @@ export function AdminShell({ viewer, children }: { viewer: AdminViewer; children
         className="grid min-h-dvh grid-cols-1 bg-bg text-ink-1 lg:max-[1365px]:grid-cols-[64px_minmax(0,1fr)] min-[1366px]:grid-cols-[268px_minmax(0,1fr)] print:block"
         data-theme="paper"
         data-reveal="off"
+        data-reveal-tone="lite"
       >
         <aside
           data-theme="night"

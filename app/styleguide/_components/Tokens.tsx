@@ -179,7 +179,7 @@ export function Tokens() {
             {SPACING.map(([step, px]) => (
               <li key={step} className="flex items-center gap-4">
                 <span className="w-16 type-code-s text-ink-3">{step}</span>
-                <span aria-hidden="true" className={`block h-3 bg-accent ${SPACING_WIDTH[step]}`} />
+                <span aria-hidden="true" className={`block h-3 rounded-xs bg-accent ${SPACING_WIDTH[step]}`} />
                 <span className="type-code-s text-ink-3">{px}</span>
               </li>
             ))}
