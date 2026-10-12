@@ -193,7 +193,7 @@ function Line({ line, compact }: { line: CartLine; compact: boolean }) {
         ) : null}
       </div>
       {!compact ? (
-        <div className="col-start-2 flex items-center justify-between gap-3 sm:col-span-2 sm:col-start-3 sm:justify-end sm:gap-5">
+        <div className="col-span-2 flex items-center justify-between gap-3 sm:col-start-3 sm:justify-end sm:gap-5">
           <span className="flex items-center gap-1">
             {stepper}
             {removeButton}
@@ -220,8 +220,20 @@ export function CartLines({ cart, compact = false }: { cart: CartData; compact?:
   );
 }
 
-/** Summary rows (§9.8 totals): Međuzbir, rabat (mechanics), delivery hint, PDV. */
-export function CartSummary({ cart, delivery }: { cart: CartData; delivery: DeliveryInfo }) {
+/**
+ * Summary rows (§9.8 totals): Međuzbir, rabat (mechanics), delivery hint, PDV.
+ * `subtotalFromLg`: the cart page's phone bar already shows the subtotal beside the checkout
+ * button, so the row is left out there instead of being printed twice within one screen.
+ */
+export function CartSummary({
+  cart,
+  delivery,
+  subtotalFromLg = false,
+}: {
+  cart: CartData;
+  delivery: DeliveryInfo;
+  subtotalFromLg?: boolean;
+}) {
   const remaining =
     delivery.freeOverPara !== null && delivery.courierPricePara
       ? delivery.freeOverPara - cart.itemsPara
@@ -241,7 +253,12 @@ export function CartSummary({ cart, delivery }: { cart: CartData; delivery: Deli
             </div>
           </>
         ) : null}
-        <div className="flex items-baseline justify-between gap-4">
+        <div
+          className={cn(
+            "items-baseline justify-between gap-4",
+            subtotalFromLg ? "hidden lg:flex" : "flex",
+          )}
+        >
           <dt className="text-ink-2">Međuzbir</dt>
           <dd className="type-numeral-m tabular-nums text-ink-1">{formatRSD(cart.itemsPara)}</dd>
         </div>

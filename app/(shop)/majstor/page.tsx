@@ -8,13 +8,11 @@ import { ROUTES } from "@/constants/routes";
 
 export const metadata: Metadata = privateMetadata("Majstorski portal");
 
-/** `/majstor` (§10.9): quick-order box first, then terms and link tiles. */
+/**
+ * `/majstor` (§10.9): the quick-order box on the left, and beside it the answer of a check and
+ * the overview — terms, last orders, link tiles.
+ */
 export default async function MechanicPortalPage() {
   await requireMechanicPage(ROUTES.mechanicPortal);
-  return (
-    <div className="flex flex-col gap-14">
-      <QuickOrder compact />
-      <PortalOverview />
-    </div>
-  );
+  return <QuickOrder compact aside={<PortalOverview />} />;
 }

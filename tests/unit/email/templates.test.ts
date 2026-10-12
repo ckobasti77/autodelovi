@@ -232,6 +232,74 @@ describe("brand in every message (step 25)", () => {
   });
 });
 
+describe("shape, colour schemes and codes (step 27)", () => {
+  it.each(TEMPLATE_KEYS)("%s: radii by role, no square or edge-striped box", (key) => {
+    const { html } = renderSample(key, ctx);
+    // The panel floats (12 px) and meets the screen edge square on phones.
+    expect(html).toMatch(/<td class="sk-panel"[^>]*border-radius:12px;/);
+    expect(html).toContain(".sk-panel { border-radius: 0 !important;");
+    // Every box that draws a ground or a frame has a radius; none carries a thick side stripe.
+    for (const cell of html.match(/<td class="sk-(?:button|notice|well|code)[^>]*>/g) ?? []) {
+      expect(cell).toMatch(/border-radius:(?:6|8)px;/);
+    }
+    expect(html).not.toMatch(/border-(?:left|right):[2-9]px/);
+    // One orange per message: at most one button.
+    expect((html.match(/class="sk-button"/g) ?? []).length).toBeLessThanOrEqual(1);
+  });
+
+  it("the button is a padded cell (no image, no VML) and full width on phones", () => {
+    const { html } = renderSample("order_received", ctx);
+    expect(html).toMatch(
+      /<td class="sk-button" align="center" bgcolor="#FF6B1A" style="background:#FF6B1A;border-radius:6px;mso-padding-alt:12px 22px;"><a href="[^"]+" style="display:inline-block;padding:12px 22px;/,
+    );
+    expect(html).not.toMatch(/<v:|vml/i);
+    expect(html).toContain(".sk-btn { width: 100% !important; }");
+  });
+
+  it("night colours answer both prefers-color-scheme and Outlook's own dark mode", () => {
+    const { html } = renderSample("password_reset_code", ctx);
+    expect(html).toContain("@media (prefers-color-scheme: dark)");
+    expect(html).toContain("[data-ogsc] .sk-ink1, [data-ogsb] .sk-ink1");
+    // A notice keeps a readable title on its night ground (tone classes, not fixed colours).
+    expect(html).toMatch(/class="sk-notice sk-n-info"/);
+    expect(html).toMatch(/\.sk-t-info \{ color: #9DB8D0 !important; \}/);
+    // The code is read out as digits: no label replaces it.
+    expect(html).not.toMatch(/class="sk-code"[^>]*aria-label/);
+  });
+
+  it("document numbers and part codes are set in mono, and never break", () => {
+    const order = renderSample("order_received", ctx).html;
+    expect(order).toMatch(
+      /<span style="white-space:nowrap;font-family:'Martian Mono'[^"]*">SK-2026-000187<\/span>/,
+    );
+    expect(order).toMatch(/<span style="font-family:'Martian Mono'[^"]*">04L198119A<\/span>/);
+    const stock = renderSample("staff_low_stock", ctx);
+    expect(stock.html).toMatch(/font-family:'Martian Mono'[^"]*">DEMO-KD-0031<\/div>/);
+    // The state is a word with its tone, and the plain text keeps code, name, state and link.
+    expect(stock.html).toMatch(/class="sk-t-danger sk-line"[^>]*>nema na stanju</);
+    expect(stock.text).toContain("- DEMO-FU-0007 · Filter ulja — nema na stanju");
+    expect(stock.text).toContain("https://primer.test/admin/lager");
+  });
+
+  it("payment data of a predračun sits in one well, in both versions", () => {
+    const r = renderTemplate("order_confirmed", SAMPLES.orderBankTransfer(SITE), ctx);
+    const well = /<td class="sk-well"[^>]*>([\s\S]*?)<\/table><\/td>/.exec(r.html)?.[1] ?? "";
+    for (const label of ["Primalac", "Račun", "Iznos", "Poziv na broj", "Svrha uplate"]) {
+      expect(well).toContain(`>${label}</td>`);
+      expect(r.text).toContain(`${label}: `);
+    }
+  });
+
+  it("footer: company and contacts in two columns that stack on phones", () => {
+    const { html } = renderSample("order_shipped", ctx);
+    expect(html).toMatch(/<td class="sk-col sk-ink3"[^>]*>.*Primer d\.o\.o\./);
+    expect(html).toMatch(/<td class="sk-col sk-col-2 sk-ink3"[^>]*>.*Telefon: <a href="tel:/);
+    expect(html).toContain(".sk-col { display: block !important;");
+    // Staff messages have no contact column.
+    expect(renderSample("staff_order_new", ctx).html).not.toContain('class="sk-col');
+  });
+});
+
 describe("snapshots", () => {
   it.each(TEMPLATE_KEYS)("%s plain text", (key) => {
     const r = renderSample(key, ctx);

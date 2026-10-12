@@ -995,6 +995,33 @@
   }
 }
 
+/* A link drawn as a chip (step 27): the categories of a system, the vehicles a part is listed
+   for, related categories. A cloud of such links is a set of tags, not a paragraph of
+   underlines. 40 px tall on touch screens, 36 px with a fine pointer. */
+@utility chip-link {
+  display: inline-flex;
+  min-height: 2.5rem;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: var(--radius-xs);
+  background-color: var(--color-surface-2);
+  padding-inline: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  color: var(--color-ink-2);
+  cursor: pointer;
+  transition:
+    background-color var(--dur-instant) linear,
+    color var(--dur-instant) linear;
+  &:hover {
+    background-color: var(--color-surface-3);
+    color: var(--color-ink-1);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    min-height: 2.25rem;
+  }
+}
+
 /* Rhythm utilities (§5.2). */
 @utility gap-block {
   gap: var(--space-block);

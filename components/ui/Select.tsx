@@ -32,7 +32,7 @@ export function Select({ options, placeholder, size = "md", className, ...rest }
         {...rest}
         {...control}
         className={cn(
-          "h-full w-full cursor-pointer appearance-none bg-transparent pl-3 pr-9 text-ink-1 outline-none focus-visible:outline-none disabled:cursor-not-allowed",
+          "h-full w-full cursor-pointer appearance-none bg-transparent pl-3 pr-9 text-ink-1 outline-none focus-visible:outline-none disabled:cursor-not-allowed disabled:text-ink-4",
           // sm is compact on wide screens only: below md every control renders 16 px text,
           // otherwise iOS zooms the page on focus (VIS-12).
           size === "md" ? "text-[1rem]" : "type-body-s max-md:text-[1rem]",
@@ -48,7 +48,10 @@ export function Select({ options, placeholder, size = "md", className, ...rest }
       <CaretDownIcon
         size={16}
         aria-hidden="true"
-        className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-ink-2"
+        className={cn(
+          "pointer-events-none absolute right-3 top-1/2 -translate-y-1/2",
+          control.disabled ? "text-ink-4" : "text-ink-2",
+        )}
       />
     </div>
   );

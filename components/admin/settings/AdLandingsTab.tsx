@@ -119,8 +119,18 @@ export function AdLandingsTab() {
                     {r.vehicleLabel ? ` · ${r.vehicleLabel}` : ""}
                   </span>
                 </div>
-                {r.active ? <Badge tone="success">Aktivna</Badge> : <Badge>Isključena</Badge>}
-                {r.indexable ? <Badge tone="info">U pretrazi</Badge> : null}
+                {r.active ? (
+                  <Badge size="text" tone="success">
+                    Aktivna
+                  </Badge>
+                ) : (
+                  <Badge size="text">Isključena</Badge>
+                )}
+                {r.indexable ? (
+                  <Badge size="text" tone="info">
+                    U pretrazi
+                  </Badge>
+                ) : null}
                 <a
                   href={`/ponuda/${r.slug}`}
                   target="_blank"

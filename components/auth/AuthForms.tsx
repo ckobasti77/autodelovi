@@ -7,15 +7,19 @@
  * Both forms only work through JavaScript (Convex Auth): `method="post"` keeps the password out
  * of the URL if the browser ever submits them natively, and the submit button stays disabled
  * until hydration (A11Y-04). Text typed before hydration is kept (XB-01).
+ *
+ * Every error names what went wrong and the way out: a field message under the field, and for
+ * what the server refuses an alert with the next step as a link or a button.
  */
 import { useAuthActions } from "@convex-dev/auth/react";
 import { useRouter } from "next/navigation";
-import { useLayoutEffect, useRef, useState, type FormEvent } from "react";
+import { useLayoutEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import { WarningCircleIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { normalizeEmail } from "@/lib/domain/identifiers";
 import { convexErrorMessage, TERMS } from "@/lib/i18n/sr/shop";
 import { emailProblem, passwordProblem } from "@/lib/validation/identifiers";
+import { PasswordField } from "@/components/auth/PasswordField";
 import { Button } from "@/components/ui/Button";
 import { Checkbox } from "@/components/ui/Checkbox";
 import {
@@ -51,6 +55,19 @@ function useAdoptPrehydrationValues<K extends string>(
     const values = readPrehydrationValues(once.current.ids);
     if (Object.keys(values).length) once.current.apply(values);
   }, []);
+}
+
+/** What the server refused, with the way out underneath. */
+function FormAlert({ title, children }: { title: string; children?: ReactNode }) {
+  return (
+    <div role="alert" className="rounded-md border border-danger bg-danger-subtle p-4">
+      <p className="flex items-start gap-2 type-body-s font-semibold text-danger">
+        <WarningCircleIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0" />
+        {title}
+      </p>
+      {children}
+    </div>
+  );
 }
 
 export function SignUpForm({ next }: { next: string }) {
@@ -122,13 +139,19 @@ export function SignUpForm({ next }: { next: string }) {
       data-reveal="off"
     >
       <RequiredUnlessOptional>
-        <div ref={summary} tabIndex={-1} className="outline-none">
+        <div ref={summary} tabIndex={-1} className="outline-none empty:hidden">
           {errorList.length || formError ? (
-            <div role="alert" className="rounded-md border border-danger bg-danger-subtle p-4">
-              <p className="flex items-center gap-2 type-body-s font-semibold text-danger">
-                <WarningCircleIcon size={18} aria-hidden="true" />
-                {formError ?? "Proverite označena polja:"}
-              </p>
+            <FormAlert title={formError ?? "Proverite označena polja:"}>
+              {formError ? (
+                <p className="mt-2 flex flex-wrap gap-x-5 gap-y-1 pl-6.5 type-body-s">
+                  <Link href={ROUTES.signIn} variant="inline">
+                    Prijavite se
+                  </Link>
+                  <Link href={ROUTES.forgotPassword} variant="inline">
+                    Promenite lozinku
+                  </Link>
+                </p>
+              ) : null}
               {errorList.length ? (
                 <ul className="mt-2 flex flex-col gap-1 pl-6.5 type-body-s">
                   {errorList.map((x) => (
@@ -143,7 +166,7 @@ export function SignUpForm({ next }: { next: string }) {
                   ))}
                 </ul>
               ) : null}
-            </div>
+            </FormAlert>
           ) : null}
         </div>
         <Field id={SIGN_UP_IDS.name} label="Ime i prezime" error={errors.name}>
@@ -165,21 +188,17 @@ export function SignUpForm({ next }: { next: string }) {
             data-testid="signup-email"
           />
         </Field>
-        <Field
+        <PasswordField
           id={SIGN_UP_IDS.password}
           label="Lozinka"
           help={PASSWORD_HELP}
           error={errors.password}
-        >
-          <Input
-            name="password"
-            type="password"
-            autoComplete="new-password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            data-testid="signup-password"
-          />
-        </Field>
+          name="password"
+          autoComplete="new-password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          data-testid="signup-password"
+        />
         <Checkbox
           id="su-terms"
           checked={terms}
@@ -216,6 +235,8 @@ export function SignUpForm({ next }: { next: string }) {
   );
 }
 
+type ResetErrors = { email?: string; code?: string; password?: string; form?: string };
+
 export function ResetPasswordForm() {
   const { signIn } = useAuthActions();
   const router = useRouter();
@@ -224,7 +245,7 @@ export function ResetPasswordForm() {
   const [email, setEmail] = useState("");
   const [code, setCode] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState<string | null>(null);
+  const [errors, setErrors] = useState<ResetErrors>({});
   const [pending, setPending] = useState(false);
 
   useAdoptPrehydrationValues({ email: "rp-email" }, (v) => {
@@ -233,20 +254,20 @@ export function ResetPasswordForm() {
 
   const requestCode = async (event: FormEvent) => {
     event.preventDefault();
-    setError(null);
+    setErrors({});
     const emailError = emailProblem(email);
-    if (emailError) return setError(emailError);
+    if (emailError) return setErrors({ email: emailError });
     setPending(true);
     try {
       await signIn("password", { flow: "reset", email: normalizeEmail(email) });
       setStep("code");
     } catch (err) {
-      setError(
-        convexErrorMessage(
+      setErrors({
+        form: convexErrorMessage(
           err,
           "Kod nije poslat. Proverite adresu ili pokušajte za nekoliko minuta.",
         ),
-      );
+      });
     } finally {
       setPending(false);
     }
@@ -254,10 +275,12 @@ export function ResetPasswordForm() {
 
   const confirm = async (event: FormEvent) => {
     event.preventDefault();
-    setError(null);
-    if (!/^\d{8}$/.test(code.trim())) return setError("Kod ima 8 cifara.");
+    const e: ResetErrors = {};
+    if (!/^\d{8}$/.test(code.trim())) e.code = "Kod ima 8 cifara.";
     const pw = passwordProblem(password, email);
-    if (pw) return setError(pw);
+    if (pw) e.password = pw;
+    setErrors(e);
+    if (e.code || e.password) return;
     setPending(true);
     try {
       await signIn("password", {
@@ -270,8 +293,16 @@ export function ResetPasswordForm() {
       router.refresh();
     } catch (err) {
       setPending(false);
-      setError(convexErrorMessage(err, "Kod nije ispravan ili je istekao. Zatražite novi kod."));
+      setErrors({
+        form: convexErrorMessage(err, "Kod nije ispravan ili je istekao. Zatražite novi kod."),
+      });
     }
+  };
+
+  const startOver = () => {
+    setErrors({});
+    setCode("");
+    setStep("email");
   };
 
   if (step === "email") {
@@ -287,7 +318,8 @@ export function ResetPasswordForm() {
           <p className="type-body text-ink-2">
             Upišite e-poštu naloga&nbsp;— poslaćemo kod od 8 cifara (važi 15 minuta).
           </p>
-          <Field id="rp-email" label={TERMS.email} error={error}>
+          {errors.form ? <FormAlert title={errors.form} /> : null}
+          <Field id="rp-email" label={TERMS.email} error={errors.email}>
             <Input
               type="email"
               inputMode="email"
@@ -316,7 +348,16 @@ export function ResetPasswordForm() {
         <p className="type-body text-ink-2" role="status">
           Ako nalog postoji, kod je poslat na {normalizeEmail(email)}.
         </p>
-        <Field label="Kod iz e-pošte">
+        {errors.form ? (
+          <FormAlert title={errors.form}>
+            <p className="mt-2 pl-6.5">
+              <Button type="button" variant="quiet" size="sm" onClick={startOver}>
+                Pošalji novi kod
+              </Button>
+            </p>
+          </FormAlert>
+        ) : null}
+        <Field label="Kod iz e-pošte" error={errors.code}>
           <Input
             inputMode="numeric"
             autoComplete="one-time-code"
@@ -326,20 +367,29 @@ export function ResetPasswordForm() {
             onChange={(e) => setCode(e.target.value)}
           />
         </Field>
-        <Field label="Nova lozinka" help={PASSWORD_HELP} error={error}>
-          <Input
-            type="password"
-            autoComplete="new-password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Field>
+        <PasswordField
+          label="Nova lozinka"
+          help={PASSWORD_HELP}
+          error={errors.password}
+          autoComplete="new-password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
         <Button type="submit" loading={pending} fullWidth size="lg">
           Sačuvaj novu lozinku
         </Button>
-        <Button type="button" variant="ghost" onClick={() => setStep("email")}>
-          Pošalji novi kod
-        </Button>
+        {errors.form ? null : (
+          <p className="type-body-s text-ink-2">
+            Kod nije stigao?{" "}
+            <button
+              type="button"
+              onClick={startOver}
+              className="cursor-pointer rounded-xs link-underline text-ink-1"
+            >
+              Pošalji novi kod
+            </button>
+          </p>
+        )}
       </RequiredUnlessOptional>
     </form>
   );

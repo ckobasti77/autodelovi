@@ -4,6 +4,11 @@
  * Inquiry status + quote (`/upit/[token]`, ARCHITECTURE §A2): live status and timeline; when a
  * quote is sent the customer sees lines, availability, lead time and validity, and can accept
  * (→ order), decline, or ask for a renewed quote after expiry.
+ *
+ * A record page in one panel language (UI-BOOST §8): the quote is one panel — lines, total and
+ * its one primary action — with the inquiry and its timeline as panels beside it. The forms
+ * that open on „Prihvati“ / „Odbij“ are panels of their own and appear at once (a state
+ * change, not an arrival).
  */
 import { useMutation, useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
@@ -16,6 +21,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
+import { cn } from "@/lib/cn";
 import { checkoutSchema, formFieldForServerField } from "@/lib/validation/checkout";
 import { buildConsent } from "@/lib/validation/consent";
 import { formatDate, formatDateTime } from "@/lib/format/date";
@@ -41,6 +47,9 @@ import { Link } from "@/components/ui/Link";
 import { RadioGroup } from "@/components/ui/Radio";
 import { Textarea } from "@/components/ui/Textarea";
 import { toast } from "@/components/ui/Toast";
+import { Reveal } from "@/components/reveal/Reveal";
+import { InquirySteps } from "@/components/inquiry/InquirySteps";
+import { InquirySummary } from "@/components/inquiry/InquirySummary";
 import { ROUTES } from "@/constants/routes";
 import { TEST_IDS } from "@/constants/testIds";
 
@@ -141,10 +150,13 @@ function AcceptForm({
   token,
   inquiry,
   config,
+  onCancel,
 }: {
   token: string;
   inquiry: InquiryView;
   config: AcceptConfig;
+  /** Back to the quote without sending anything. */
+  onCancel: () => void;
 }) {
   const accept = useMutation(api.inquiries.acceptQuote);
   const [first, ...rest] = inquiry.contactName.split(" ");
@@ -271,7 +283,7 @@ function AcceptForm({
     <form
       onSubmit={onSubmit}
       noValidate
-      className="flex flex-col gap-5 panel p-5"
+      className="flex flex-col gap-5 panel p-4 sm:p-6"
       data-reveal="off"
     >
       <h3 className="type-h4 text-ink-1">Podaci za porudžbinu</h3>
@@ -425,17 +437,59 @@ function AcceptForm({
           {formError}
         </p>
       ) : null}
-      <Button
-        type="submit"
-        variant="primary"
-        size="lg"
-        loading={busy}
-        data-testid="quote-accept-submit"
-        className="w-full sm:w-auto sm:self-start"
-      >
-        Pošalji porudžbinu po ponudi
-      </Button>
+      <div className="flex flex-col gap-3 border-t border-line pt-5 sm:flex-row">
+        <Button
+          type="submit"
+          variant="primary"
+          size="lg"
+          loading={busy}
+          data-testid="quote-accept-submit"
+          className="w-full sm:w-auto"
+        >
+          Pošalji porudžbinu po ponudi
+        </Button>
+        <Button variant="ghost" size="lg" onClick={onCancel} className="w-full sm:w-auto">
+          Nazad
+        </Button>
+      </div>
     </form>
+  );
+}
+
+/**
+ * „Tok upita“: the events of the inquiry, oldest first, on one rail; the latest one carries
+ * the accent ring of the order timeline (§10.6).
+ */
+function InquiryTimeline({ events }: { events: InquiryView["timeline"] }) {
+  return (
+    <ol className="relative flex flex-col">
+      {events.map((e, idx) => {
+        const latest = idx === events.length - 1;
+        return (
+          <li key={idx} className="relative flex gap-3.5 pb-5 last:pb-0">
+            {latest ? null : (
+              <span
+                aria-hidden="true"
+                className="absolute top-5 bottom-0 left-[7px] w-px bg-line-strong"
+              />
+            )}
+            <span
+              aria-hidden="true"
+              className={cn(
+                "relative mt-0.5 inline-flex size-4 shrink-0 rounded-full border",
+                latest ? "border-2 border-accent bg-bg" : "border-line-strong bg-surface-3",
+              )}
+            />
+            <div className="flex min-w-0 flex-col">
+              <span className="type-body-s text-ink-1">{e.message ?? "Izmena"}</span>
+              <span className="type-caption font-normal tabular-nums text-ink-3">
+                {formatDateTime(e.at)}
+              </span>
+            </div>
+          </li>
+        );
+      })}
+    </ol>
   );
 }
 
@@ -459,6 +513,8 @@ export function InquiryStatusView({
   const q = i.quote;
   const open = q && q.status === "sent" && q.validUntil >= now && i.status === "ponuda_poslata";
   const expired = i.status === "istekla" || (q && q.status === "sent" && q.validUntil < now);
+  // Without a quote: still being checked (the steps), or closed by the shop (the note).
+  const waiting = i.status === "nov" || i.status === "u_obradi";
 
   const run = async (fn: () => Promise<unknown>, ok: string) => {
     setBusy(true);
@@ -474,195 +530,239 @@ export function InquiryStatusView({
   };
 
   return (
-    <div className="grid gap-10 lg:grid-cols-12 lg:gap-x-(--gutter)" data-reveal="off">
-      <div className="flex flex-col gap-8 lg:col-span-7">
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="type-code-l text-ink-1">{i.number}</span>
-          <Badge tone={INQUIRY_STATUS_TONE[i.status]} size="text">
-            {INQUIRY_STATUS_LABEL[i.status]}
-          </Badge>
-          <span className="type-caption font-normal text-ink-3">{formatDateTime(i.createdAt)}</span>
-        </div>
+    <div className="flex flex-col gap-6" data-reveal="off">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+        <span className="type-code-l text-ink-1">{i.number}</span>
+        <Badge tone={INQUIRY_STATUS_TONE[i.status]} size="text">
+          {INQUIRY_STATUS_LABEL[i.status]}
+        </Badge>
+        <span className="type-caption font-normal tabular-nums text-ink-3">
+          {formatDateTime(i.createdAt)}
+        </span>
+      </div>
 
-        {q ? (
-          <section aria-labelledby="quote-title" className="flex flex-col gap-4">
-            <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <h2 id="quote-title" className="type-h2 text-ink-1">
-                Ponuda{q.version > 1 ? ` (izmena ${q.version})` : ""}
-              </h2>
-              <span className={expired ? "type-body-s text-warning" : "type-body-s text-ink-3"}>
-                {expired
-                  ? `Istekla ${formatDate(q.validUntil)}`
-                  : `Važi do ${formatDate(q.validUntil)}`}
-              </span>
-            </div>
-            <ul className="flex flex-col divide-y divide-line border-y border-line">
-              {q.lines.map((l, idx) => (
-                <li key={idx} className="flex justify-between gap-4 py-3 type-body-s">
-                  <span className="min-w-0">
-                    <span className="block text-ink-1">
-                      {l.productSlug ? (
-                        <Link href={ROUTES.product(l.productSlug)} variant="inline">
-                          {l.name}
-                        </Link>
-                      ) : (
-                        l.name
-                      )}
-                    </span>
-                    <span className="block type-caption text-ink-3">
-                      {[
-                        l.manufacturer,
-                        l.availability === "in_stock"
-                          ? "na stanju"
-                          : `po porudžbini${l.leadTimeDays ? ` · ${leadTimeLabel(l.leadTimeDays)}` : ""}`,
-                      ]
-                        .filter(Boolean)
-                        .join(" · ")}
-                      {" · "}
-                      {l.quantity} × {formatRSD(l.unitPricePara)}
-                    </span>
-                    {l.note ? (
-                      <span className="block type-caption text-ink-3">{l.note}</span>
-                    ) : null}
-                  </span>
-                  <span className="shrink-0 tabular-nums text-ink-1">
-                    {formatRSD(l.lineTotalPara)}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <p className="flex items-baseline justify-between">
-              <span className="font-semibold text-ink-1">Ukupno</span>
-              <span className="type-numeral-m tabular-nums text-ink-1">
-                {formatRSD(q.totalPara)}
-              </span>
-            </p>
-            {q.deliveryNote ? <p className="type-body-s text-ink-2">{q.deliveryNote}</p> : null}
-
-            {open && mode === "idle" ? (
-              <div className="grid gap-3 sm:flex sm:flex-wrap">
-                <Button
-                  variant="primary"
-                  size="lg"
-                  icon={<CheckCircleIcon size={20} />}
-                  onClick={() => setMode("accept")}
-                  data-testid={TEST_IDS.quoteAccept}
+      <div className="grid gap-4 lg:grid-cols-12 lg:gap-x-(--gutter)">
+        <div className="flex min-w-0 flex-col gap-4 lg:col-span-7">
+          {q ? (
+            <Reveal as="section" eager aria-labelledby="quote-title" className="panel">
+              <div className="flex flex-wrap items-baseline justify-between gap-2 px-4 pt-4 sm:px-6 sm:pt-5">
+                <h2 id="quote-title" className="type-h3 text-ink-1">
+                  Ponuda{q.version > 1 ? ` (izmena ${q.version})` : ""}
+                </h2>
+                <span
+                  className={cn(
+                    "type-body-s tabular-nums",
+                    expired ? "text-warning" : "text-ink-3",
+                  )}
                 >
-                  Prihvati ponudu
-                </Button>
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  icon={<XCircleIcon size={20} />}
-                  onClick={() => setMode("decline")}
-                >
-                  Odbij ponudu
-                </Button>
+                  {expired
+                    ? `Istekla ${formatDate(q.validUntil)}`
+                    : `Važi do ${formatDate(q.validUntil)}`}
+                </span>
               </div>
-            ) : null}
-            {open && mode === "accept" ? (
-              <AcceptForm token={token} inquiry={i} config={config} />
-            ) : null}
-            {open && mode === "decline" ? (
-              <div className="flex flex-col gap-3 panel p-5">
-                <Field label="Razlog" optional>
-                  <Textarea
-                    rows={3}
-                    maxLength={500}
-                    value={reason}
-                    onChange={(e) => setReason(e.target.value)}
-                  />
-                </Field>
-                <div className="flex gap-3">
+              <ul className="mt-4 flex flex-col border-t border-line">
+                {q.lines.map((l, idx) => (
+                  <li
+                    key={idx}
+                    className="flex justify-between gap-4 border-b border-line-faint px-4 py-3.5 type-body-s last:border-b-0 sm:px-6"
+                  >
+                    <span className="min-w-0">
+                      <span className="block font-semibold text-ink-1">
+                        {l.productSlug ? (
+                          <Link href={ROUTES.product(l.productSlug)} variant="inline">
+                            {l.name}
+                          </Link>
+                        ) : (
+                          l.name
+                        )}
+                      </span>
+                      <span className="mt-0.5 block type-caption font-normal text-ink-3">
+                        {[
+                          l.manufacturer,
+                          l.availability === "in_stock"
+                            ? "na stanju"
+                            : `po porudžbini${l.leadTimeDays ? ` · ${leadTimeLabel(l.leadTimeDays)}` : ""}`,
+                        ]
+                          .filter(Boolean)
+                          .join(" · ")}
+                        {" · "}
+                        {l.quantity} × {formatRSD(l.unitPricePara)}
+                      </span>
+                      {l.note ? (
+                        <span className="mt-0.5 block type-caption font-normal text-ink-3">
+                          {l.note}
+                        </span>
+                      ) : null}
+                    </span>
+                    <span className="shrink-0 type-numeral-s text-ink-1">
+                      {formatRSD(l.lineTotalPara)}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="flex items-baseline justify-between gap-4 border-t border-line-strong px-4 py-4 sm:px-6">
+                <span className="type-body font-semibold text-ink-1">Ukupno</span>
+                <span className="type-numeral-m text-ink-1">{formatRSD(q.totalPara)}</span>
+              </p>
+              {q.deliveryNote ? (
+                <p className="border-t border-line-faint px-4 py-3.5 type-body-s text-ink-2 sm:px-6">
+                  {q.deliveryNote}
+                </p>
+              ) : null}
+
+              {open && mode === "idle" ? (
+                <div className="grid gap-3 border-t border-line px-4 py-4 sm:flex sm:flex-wrap sm:px-6 sm:py-5">
                   <Button
-                    variant="danger"
-                    loading={busy}
-                    onClick={() =>
-                      run(
-                        () =>
-                          decline({
-                            token,
-                            quoteId: q.quoteId,
-                            ...(reason.trim() ? { reason: reason.trim() } : {}),
-                          }),
-                        "Ponuda je odbijena.",
-                      )
-                    }
+                    variant="primary"
+                    size="lg"
+                    icon={<CheckCircleIcon size={20} />}
+                    onClick={() => setMode("accept")}
+                    data-testid={TEST_IDS.quoteAccept}
+                  >
+                    Prihvati ponudu
+                  </Button>
+                  <Button
+                    variant="secondary"
+                    size="lg"
+                    icon={<XCircleIcon size={20} />}
+                    onClick={() => setMode("decline")}
                   >
                     Odbij ponudu
                   </Button>
-                  <Button variant="ghost" onClick={() => setMode("idle")}>
-                    Nazad
+                </div>
+              ) : null}
+              {expired && i.status === "istekla" ? (
+                <div className="flex flex-col gap-3 border-t border-line px-4 py-4 sm:flex-row sm:items-center sm:gap-5 sm:px-6 sm:py-5">
+                  <Button
+                    variant="primary"
+                    icon={<ClockCounterClockwiseIcon size={20} />}
+                    loading={busy}
+                    onClick={() =>
+                      run(
+                        () => renew({ token }),
+                        "Zatražili ste novu ponudu. Javljamo se u toku radnog dana.",
+                      )
+                    }
+                    className="w-full shrink-0 sm:w-auto"
+                  >
+                    Zatraži novu ponudu
                   </Button>
                 </div>
-              </div>
-            ) : null}
-            {expired && i.status === "istekla" ? (
-              <Button
-                variant="primary"
-                icon={<ClockCounterClockwiseIcon size={20} />}
-                loading={busy}
-                onClick={() =>
-                  run(
-                    () => renew({ token }),
-                    "Zatražili ste novu ponudu. Javljamo se u toku radnog dana.",
-                  )
-                }
-                className="self-start"
-              >
-                Zatraži novu ponudu
-              </Button>
-            ) : null}
-            {i.orderNumber ? (
-              <p className="type-body text-success">
-                Ponuda je prihvaćena — porudžbina <span className="type-code">{i.orderNumber}</span>
-                .
+              ) : null}
+              {i.orderNumber ? (
+                <p className="flex items-start gap-2 border-t border-line px-4 py-4 type-body text-success sm:px-6">
+                  <CheckCircleIcon
+                    size={20}
+                    weight="fill"
+                    aria-hidden="true"
+                    className="mt-0.5 shrink-0"
+                  />
+                  <span>
+                    Ponuda je prihvaćena — porudžbina{" "}
+                    <span className="type-code">{i.orderNumber}</span>.
+                  </span>
+                </p>
+              ) : null}
+            </Reveal>
+          ) : waiting ? (
+            <Reveal as="section" eager className="panel p-4 sm:p-6">
+              <h2 className="type-h4 text-ink-1">Ponuda još nije spremna</h2>
+              <p className="mt-2 type-body-s text-ink-2">
+                Proveravamo kod dobavljača. Odgovor stiže kanalom koji ste izabrali (
+                {PREFERRED_CHANNEL_LABEL[i.preferredChannel].toLowerCase()}), a ponuda će se
+                pojaviti i ovde.
               </p>
-            ) : null}
-          </section>
-        ) : (
-          <section className="panel p-5">
-            <h2 className="type-h4 text-ink-1">Ponuda još nije spremna</h2>
-            <p className="mt-2 type-body-s text-ink-2">
-              Proveravamo kod dobavljača. Odgovor stiže kanalom koji ste izabrali (
-              {PREFERRED_CHANNEL_LABEL[i.preferredChannel].toLowerCase()}), a ponuda će se pojaviti
-              i ovde.
-            </p>
-          </section>
-        )}
-        {i.closedReason && i.status === "odbijena" ? (
-          <p className="type-body-s text-ink-2">Napomena: {i.closedReason}</p>
-        ) : null}
-      </div>
-      <aside className="flex flex-col gap-6 lg:col-span-5">
-        <section className="panel p-5">
-          <h2 className="type-h4 text-ink-1">Vaš upit</h2>
-          {i.vehicleLabel ? <p className="mt-2 type-body-s text-ink-2">{i.vehicleLabel}</p> : null}
-          {i.vin ? <p className="mt-1 type-code text-ink-1">{i.vin}</p> : null}
-          <p className="mt-3 whitespace-pre-line type-body-s text-ink-2">{i.message}</p>
-          {i.photoCount ? (
-            <p className="mt-2 type-caption font-normal text-ink-3">Fotografija: {i.photoCount}</p>
+              <InquirySteps reached={1} className="mt-5 border-t border-line pt-5" />
+            </Reveal>
+          ) : (
+            <Reveal as="section" eager className="flex flex-col gap-4 panel p-4 sm:p-6">
+              <h2 className="type-h4 text-ink-1">Za ovaj upit nema ponude</h2>
+              <p className="type-body-s text-ink-2">
+                Upit je zatvoren bez ponude. Ako vam deo i dalje treba, pošaljite nov upit ili nam
+                se javite.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Button asChild variant="primary" className="w-full sm:w-auto">
+                  <Link href={ROUTES.inquiry} variant="unstyled">
+                    Pošaljite nov upit
+                  </Link>
+                </Button>
+                <Button asChild variant="secondary" className="w-full sm:w-auto">
+                  <Link href={ROUTES.contact} variant="unstyled">
+                    Kontakt
+                  </Link>
+                </Button>
+              </div>
+            </Reveal>
+          )}
+
+          {open && mode === "accept" ? (
+            <AcceptForm
+              token={token}
+              inquiry={i}
+              config={config}
+              onCancel={() => setMode("idle")}
+            />
           ) : null}
-        </section>
-        <section>
-          <h2 className="type-h4 text-ink-1">Tok upita</h2>
-          <ol className="mt-3 flex flex-col gap-3 border-l border-line-strong pl-4">
-            {i.timeline.map((e, idx) => (
-              <li key={idx} className="flex flex-col">
-                <span className="type-body-s text-ink-1">{e.message ?? "Izmena"}</span>
-                <span className="type-caption font-normal tabular-nums text-ink-3">
-                  {formatDateTime(e.at)}
-                </span>
-              </li>
-            ))}
-          </ol>
-          <p className="mt-3 type-caption font-normal text-ink-3">
-            {i.emailUpdates
-              ? "Ponudu i svaku promenu šaljemo i e-poštom. Ova stranica se osvežava sama."
-              : "Ponudu i svaku promenu vidite na ovoj stranici — osvežava se sama."}
-          </p>
-        </section>
-      </aside>
+          {open && mode === "decline" && q ? (
+            <div className="flex flex-col gap-4 panel p-4 sm:p-6">
+              <h3 className="type-h4 text-ink-1">Odbijanje ponude</h3>
+              <Field label="Razlog" optional>
+                <Textarea
+                  rows={3}
+                  maxLength={500}
+                  value={reason}
+                  onChange={(e) => setReason(e.target.value)}
+                />
+              </Field>
+              <div className="flex flex-wrap gap-3">
+                <Button
+                  variant="danger"
+                  loading={busy}
+                  onClick={() =>
+                    run(
+                      () =>
+                        decline({
+                          token,
+                          quoteId: q.quoteId,
+                          ...(reason.trim() ? { reason: reason.trim() } : {}),
+                        }),
+                      "Ponuda je odbijena.",
+                    )
+                  }
+                >
+                  Odbij ponudu
+                </Button>
+                <Button variant="ghost" onClick={() => setMode("idle")}>
+                  Nazad
+                </Button>
+              </div>
+            </div>
+          ) : null}
+          {i.closedReason && i.status === "odbijena" ? (
+            <p className="panel-inset px-4 py-3 type-body-s text-ink-2">
+              Napomena: {i.closedReason}
+            </p>
+          ) : null}
+        </div>
+
+        <aside className="flex min-w-0 flex-col gap-4 lg:col-span-5">
+          <Reveal as="section" eager index={1} className="panel p-4 sm:p-6">
+            <InquirySummary inquiry={i} />
+          </Reveal>
+          <Reveal as="section" eager index={2} className="panel p-4 sm:p-6">
+            <h2 className="type-h4 text-ink-1">Tok upita</h2>
+            <div className="mt-4">
+              <InquiryTimeline events={i.timeline} />
+            </div>
+            <p className="mt-4 border-t border-line-faint pt-3 type-caption font-normal text-ink-3">
+              {i.emailUpdates
+                ? "Ponudu i svaku promenu šaljemo i e-poštom. Ova stranica se osvežava sama."
+                : "Ponudu i svaku promenu vidite na ovoj stranici — osvežava se sama."}
+            </p>
+          </Reveal>
+        </aside>
+      </div>
     </div>
   );
 }

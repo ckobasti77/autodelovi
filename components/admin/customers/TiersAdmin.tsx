@@ -30,7 +30,7 @@ import { Textarea } from "@/components/ui/Textarea";
 import { toast } from "@/components/ui/Toast";
 
 import { useAdminShell } from "../shell/context";
-import { PageHeader, SaveBar, Section } from "../ui";
+import { CompactInput, PageHeader, SaveBar, Section } from "../ui";
 
 type Tier = FunctionReturnType<typeof api.pricing.listTiers>[number];
 type Rule = { id: string; percent: string };
@@ -105,7 +105,7 @@ function RulesEditor({
             }
             options={options}
           />
-          <Input
+          <CompactInput
             aria-label={`Rabat, ${label.toLowerCase()} ${i + 1}`}
             value={r.percent}
             onChange={(e) =>
@@ -113,7 +113,6 @@ function RulesEditor({
             }
             suffix="%"
             inputMode="decimal"
-            className="h-9"
             inputClassName="text-right tabular-nums"
           />
           <IconButton
@@ -166,7 +165,7 @@ export function TiersAdmin() {
       {!tiers ? (
         <Skeleton className="h-96 w-full" />
       ) : (
-        <div className="grid gap-6 xl:grid-cols-[280px_minmax(0,1fr)]">
+        <div className="grid items-start gap-6 xl:grid-cols-[280px_minmax(0,1fr)]">
           <Section title="Razredi">
             <ul className="-mx-4 -my-2">
               {tiers.map((t) => (
@@ -184,7 +183,11 @@ export function TiersAdmin() {
                     >
                       {t.name}
                     </span>
-                    {t.isDefault ? <Badge tone="info">Podrazumevan</Badge> : null}
+                    {t.isDefault ? (
+                      <Badge size="text" tone="info">
+                        Podrazumevan
+                      </Badge>
+                    ) : null}
                     <span className="tabular-nums">{formatBp(t.defaultDiscountBp)}</span>
                   </button>
                 </li>
@@ -435,23 +438,21 @@ function TierEditor({
       <Section title="Primer cene">
         <div className="flex flex-col gap-3">
           <Field label="Maloprodajna cena sa PDV-om">
-            <Input
+            <CompactInput
               value={example.price}
               onChange={(e) => setExample({ ...example, price: e.target.value })}
               suffix="RSD"
               inputMode="decimal"
               inputClassName="text-right tabular-nums"
-              className="h-9"
             />
           </Field>
           <Field label="Nabavna bez PDV-a">
-            <Input
+            <CompactInput
               value={example.cost}
               onChange={(e) => setExample({ ...example, cost: e.target.value })}
               suffix="RSD"
               inputMode="decimal"
               inputClassName="text-right tabular-nums"
-              className="h-9"
             />
           </Field>
           <Field label="Kategorija">
@@ -482,7 +483,11 @@ function TierEditor({
                   {formatRSD(editing.unitPricePara)}
                 </span>
                 <span className="type-body-s text-ink-2">−{formatBp(editing.discountBp)}</span>
-                {editing.marginGuardApplied ? <Badge tone="warning">zaštita marže</Badge> : null}
+                {editing.marginGuardApplied ? (
+                  <Badge size="text" tone="warning">
+                    Zaštita marže
+                  </Badge>
+                ) : null}
               </p>
             ) : (
               <p className="type-body-s text-ink-3">Upišite cenu i rabat.</p>

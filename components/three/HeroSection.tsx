@@ -27,11 +27,11 @@ export function HeroSection() {
   return (
     <section aria-labelledby="home-title" className="relative isolate" data-testid="home-hero">
       <div className="lg:grid lg:grid-cols-1 lg:grid-rows-1">
-        <div className="relative z-[3] px-page pb-8 pt-8 sm:pt-10 lg:pointer-events-none lg:sticky lg:top-header lg:col-start-1 lg:row-start-1 lg:self-start lg:pb-24 lg:pt-[clamp(1.5rem,6vh,4.5rem)] lg:hero-frame">
+        <div className="relative z-[3] px-page pb-5 pt-6 sm:pb-8 sm:pt-10 lg:pointer-events-none lg:sticky lg:top-header lg:col-start-1 lg:row-start-1 lg:self-start lg:pb-24 lg:pt-[clamp(1.5rem,6vh,4.5rem)] lg:hero-frame">
           <div className="lg:grid lg:grid-cols-12 lg:gap-x-(--gutter)">
             <div
               id="hero-copy"
-              className="flex max-w-[34rem] flex-col gap-5 lg:pointer-events-auto lg:col-span-5 lg:max-w-[30rem] xl:max-w-[32rem]"
+              className="flex max-w-[34rem] flex-col gap-4 sm:gap-5 lg:pointer-events-auto lg:col-span-5 lg:max-w-[30rem] xl:max-w-[32rem]"
             >
               <RevealText as="h1" id="home-title" className="type-display-xl text-ink-1">
                 {"Rasklopi\nauto.\nNađi deo."}

@@ -109,7 +109,7 @@ export function StockAdmin() {
             <PencilSimpleIcon
               size={14}
               aria-hidden="true"
-              className="text-ink-3 opacity-0 transition-control group-hover:opacity-100 group-focus-visible:opacity-100"
+              className="text-ink-3 transition-control hover-hover:opacity-0 hover-hover:group-hover:opacity-100 hover-hover:group-focus-visible:opacity-100"
             />
             {row.original.stockQty}
           </button>

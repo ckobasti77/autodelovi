@@ -39,6 +39,7 @@ import { FileDrop, MAX_FILE_BYTES, SheetPreview } from "./FileStep";
 import { MappingStep } from "./MappingStep";
 import { ImportStatusBadge } from "./parts";
 import { useImportWorker } from "./useImportWorker";
+import { Button } from "@/components/ui/Button";
 
 const STAGE_CHUNK = 250;
 const EXTENSIONS = /\.(xlsx|xls|csv)$/i;
@@ -359,22 +360,18 @@ export function ImportWizard() {
         description="Cenovnik ili lager iz knjigovodstvenog programa: provera pre upisa, probni rezultat i poništavanje."
         actions={
           <>
-            <a
-              href={ADMIN.importTemplate}
-              download
-              data-testid="import-template"
-              className="inline-flex h-11 items-center gap-2 rounded-sm border border-control px-4 type-body-s text-ink-1 transition-control hover:bg-surface-2 focus-ring"
-            >
-              <DownloadSimpleIcon size={18} aria-hidden="true" />
-              Šablon (.xlsx)
-            </a>
-            <RouteLink
-              href={ADMIN.importHistory}
-              className="inline-flex h-11 items-center gap-2 rounded-sm px-4 type-body-s text-ink-1 transition-control hover:bg-surface-2 focus-ring"
-            >
-              <ClockCounterClockwiseIcon size={18} aria-hidden="true" />
-              Istorija
-            </RouteLink>
+            <Button asChild variant="secondary">
+              <a href={ADMIN.importTemplate} download data-testid="import-template">
+                <DownloadSimpleIcon size={18} aria-hidden="true" />
+                Šablon (.xlsx)
+              </a>
+            </Button>
+            <Button asChild variant="ghost">
+              <RouteLink href={ADMIN.importHistory}>
+                <ClockCounterClockwiseIcon size={18} aria-hidden="true" />
+                Istorija
+              </RouteLink>
+            </Button>
           </>
         }
       />

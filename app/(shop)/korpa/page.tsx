@@ -16,7 +16,8 @@ export default async function CartPage() {
       <RevealText as="h1" className="type-h1 text-ink-1">
         Korpa
       </RevealText>
-      <div className="mt-8">
+      {/* Capped: a cart is a short list, and on a 1440 px sheet a full-width one is mostly air. */}
+      <div className="mt-6 max-w-[76rem] sm:mt-8">
         <CartPageView
           delivery={{
             courierPricePara: courier?.pricePara ?? null,

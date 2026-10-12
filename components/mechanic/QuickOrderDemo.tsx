@@ -4,6 +4,9 @@
  * `/za-majstore` quick-order demo: the real parser (`lib/domain/quickOrder.ts`) reading
  * messy lines live — normalised code and quantity per line. No prices here: matching and
  * „Vaša cena“ happen in the portal for approved mechanics.
+ *
+ * The page wraps it in one panel; inside, the input on the left and what the system read on
+ * the right, as rows in a well.
  */
 import { useMemo, useState } from "react";
 
@@ -25,24 +28,29 @@ export function QuickOrderDemo() {
           id="qod-input"
           value={text}
           onChange={(e) => setText(e.target.value)}
-          rows={6}
+          rows={7}
           spellCheck={false}
           autoComplete="off"
-          className="w-full resize-y rounded-sm border border-control bg-surface-2 px-3 py-2.5 font-mono text-[0.9375rem] leading-relaxed text-ink-1 transition-control hover:border-ink-3 focus:border-focus focus:shadow-[inset_0_0_0_1px_var(--color-focus)] focus:outline-none"
+          className="w-full grow resize-y rounded-sm border border-control bg-surface-2 px-3 py-2.5 font-mono text-[1rem] leading-relaxed text-ink-1 transition-control hover:border-ink-3 focus:border-focus focus:shadow-[inset_0_0_0_1px_var(--color-focus)] focus:outline-none md:text-[0.9375rem]"
         />
       </div>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-3">
         <table className="w-full border-collapse">
-          <caption className="mb-2 text-left type-caption text-ink-2">Ovako sistem čita brojeve</caption>
+          <caption className="mb-2 text-left type-caption text-ink-2">
+            Ovako sistem čita brojeve
+          </caption>
           <thead>
             <tr className="border-b border-line-strong">
-              <th scope="col" className="py-2 pr-3 text-left type-label text-ink-3">
+              <th
+                scope="col"
+                className="w-12 py-2 pr-3 text-left type-caption font-normal text-ink-3"
+              >
                 Red
               </th>
-              <th scope="col" className="py-2 pr-3 text-left type-label text-ink-3">
+              <th scope="col" className="py-2 pr-3 text-left type-caption font-normal text-ink-3">
                 OEM broj
               </th>
-              <th scope="col" className="py-2 text-right type-label text-ink-3">
+              <th scope="col" className="py-2 text-right type-caption font-normal text-ink-3">
                 Kom.
               </th>
             </tr>
@@ -57,8 +65,12 @@ export function QuickOrderDemo() {
             ) : (
               rows.map((item) => (
                 <tr key={item.key} className="border-b border-line">
-                  <td className="py-2.5 pr-3 type-caption tabular-nums text-ink-3">{item.lineNo}</td>
-                  <td className="py-2.5 pr-3 type-code text-ink-1">{item.candidates[0]!.normalized}</td>
+                  <td className="py-2.5 pr-3 type-caption font-normal tabular-nums text-ink-3">
+                    {item.lineNo}
+                  </td>
+                  <td className="py-2.5 pr-3 type-code text-ink-1">
+                    {item.candidates[0]!.normalized}
+                  </td>
                   <td className="py-2.5 text-right type-numeral-s tabular-nums text-ink-1">
                     {item.candidates[0]!.quantity}
                   </td>
@@ -67,8 +79,9 @@ export function QuickOrderDemo() {
             )}
           </tbody>
         </table>
-        <p className="type-caption text-ink-3">
-          Posle prijave svaki red dobija artikal, stanje i vašu cenu; brojeve koje nemamo šaljete kao upit jednim klikom.
+        <p className="type-caption font-normal text-ink-3">
+          Posle prijave svaki red dobija artikal, stanje i vašu cenu; brojeve koje nemamo šaljete
+          kao upit jednim klikom.
         </p>
       </div>
     </div>

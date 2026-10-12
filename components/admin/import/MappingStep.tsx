@@ -24,11 +24,10 @@ import { formatRSD } from "@/lib/format/money";
 import { CELLS, CONFIDENCE_LABEL, IMPORT_MODE_LABEL, countImport } from "@/lib/i18n/sr/import";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import { Input } from "@/components/ui/Input";
 import { RadioGroup } from "@/components/ui/Radio";
 import { Select } from "@/components/ui/Select";
 
-import { Section } from "../ui";
+import { CompactInput, Section, sentenceCase } from "../ui";
 
 export type Preset = { _id: string; name: string; score: number };
 
@@ -217,13 +216,14 @@ export function MappingStep({
                   <td className="py-2">
                     {m.field !== "ignore" && m.confidence ? (
                       <Badge
+                        size="text"
                         tone={
                           m.confidence === "exact" || m.confidence === "alias"
                             ? "success"
                             : "warning"
                         }
                       >
-                        {CONFIDENCE_LABEL[m.confidence]}
+                        {sentenceCase(CONFIDENCE_LABEL[m.confidence])}
                       </Badge>
                     ) : m.field !== "ignore" ? (
                       <span className="type-caption text-ink-3">ručno</span>
@@ -251,12 +251,11 @@ export function MappingStep({
           }}
         >
           <div className="w-72">
-            <Input
+            <CompactInput
               aria-label="Naziv šablona mapiranja"
               placeholder="Naziv šablona, npr. Izvoz iz programa"
               value={presetName}
               onChange={(e) => setPresetName(e.target.value)}
-              className="h-9"
               maxLength={60}
             />
           </div>

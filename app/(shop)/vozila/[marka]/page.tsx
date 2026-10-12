@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { ArrowRightIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -17,6 +18,7 @@ import { findBrand, modelHref, type TreeBrand, yearsLabel } from "@/lib/vehicle/
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Link } from "@/components/ui/Link";
 import { RouteLink } from "@/components/ui/RouteLink";
+import { RevealGroup, RevealItem } from "@/components/reveal/Reveal";
 import { RevealText } from "@/components/text-reveal/RevealText";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { LandingLinks } from "@/components/seo/LandingLinks";
@@ -65,26 +67,43 @@ export default async function VehicleBrandPage({ params }: PageProps<"/vozila/[m
       <RevealText as="p" className="mt-4 max-w-[60ch] type-lead text-ink-2">
         {`Za ${name} vodimo ${brand.models.length} ${pluralSr(brand.models.length, ["model", "modela", "modela"])} i ${generationCount} ${pluralSr(generationCount, ["generaciju", "generacije", "generacija"])}. Izaberite generaciju: prikazujemo samo delove kojima je uneta kompatibilnost sa njom.`}
       </RevealText>
-      <div className="mt-10 grid gap-x-(--gutter) gap-y-10 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-        {brand.models.map(({ model, generations }) => (
-          <section key={model.slug} aria-labelledby={`m-${model.slug}`}>
-            <h2 id={`m-${model.slug}`} className="border-b border-line pb-2 type-h3 text-ink-1">
+      {/*
+        One panel per model: its name (the model hub) over its generations as rows. Three
+        columns at most — a row of generation name, years and count needs the width, and six
+        or three models then fill their rows.
+      */}
+      <RevealGroup className="mt-block grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {brand.models.map(({ model, generations }, i) => (
+          <RevealItem
+            as="section"
+            key={model.slug}
+            eager={i < 3}
+            index={i}
+            aria-labelledby={`m-${model.slug}`}
+            className="overflow-hidden panel"
+          >
+            <h2 id={`m-${model.slug}`} className="px-4 pt-4 pb-3 type-h3 text-ink-1 sm:px-5">
               <RouteLink
                 href={modelHref(marka, { model, generations })}
-                className="hover:text-accent"
+                className="group inline-flex items-center gap-2 rounded-xs transition-control hover:text-accent"
               >
                 {model.name}
+                <ArrowRightIcon
+                  size={16}
+                  aria-hidden="true"
+                  className="shrink-0 text-ink-3 transition-control group-hover:text-accent"
+                />
               </RouteLink>
             </h2>
-            <ul className="mt-2 flex flex-col">
+            <ul className="flex flex-col border-t border-line">
               {generations.map((g) => (
-                <li key={g.slug}>
+                <li key={g.slug} className="border-b border-line-faint last:border-b-0">
                   <RouteLink
                     href={ROUTES.vehicleGeneration(marka, model.slug, g.slug)}
-                    className="flex min-h-11 items-center justify-between gap-3 py-1 text-ink-2 transition-control hover:text-ink-1"
+                    className="flex min-h-12 items-center justify-between gap-3 px-4 py-2 text-ink-1 transition-control hover:bg-surface-2 focus-ring-inset sm:px-5"
                   >
-                    <span>{g.name}</span>
-                    <span className="type-caption tabular-nums text-ink-3">
+                    <span className="type-body-s font-semibold">{g.name}</span>
+                    <span className="text-right type-caption font-normal tabular-nums text-ink-3">
                       {yearsLabel(g)} · {formatNumber(counts.get(g._id) ?? 0)}{" "}
                       {pluralSr(counts.get(g._id) ?? 0, ["artikal", "artikla", "artikala"])}
                     </span>
@@ -92,20 +111,21 @@ export default async function VehicleBrandPage({ params }: PageProps<"/vozila/[m
                 </li>
               ))}
             </ul>
-          </section>
+          </RevealItem>
         ))}
-      </div>
+      </RevealGroup>
       {topCategories.length > 0 ? (
         <nav aria-labelledby="brand-categories-title" className="mt-16 border-t border-line pt-8">
           <h2 id="brand-categories-title" className="type-h3 text-ink-1">
             {`Najviše delova za ${name}`}
           </h2>
-          <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+          <ul className="mt-4 flex flex-wrap gap-2">
             {topCategories.map((c) => (
               <li key={c.slug}>
                 <Link
                   href={`${ROUTES.category(c.slug)}${brandFilter}`}
-                  variant="standalone"
+                  variant="unstyled"
+                  className="chip-link"
                   aria-label={`${c.name} za ${name}`}
                 >
                   {c.name}

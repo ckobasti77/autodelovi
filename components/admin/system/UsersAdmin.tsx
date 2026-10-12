@@ -208,7 +208,9 @@ export function UsersAdmin() {
                       : ""}
                   </span>
                 </span>
-                <Badge tone={INVITE_STATUS[i.status].tone}>{INVITE_STATUS[i.status].label}</Badge>
+                <Badge size="text" tone={INVITE_STATUS[i.status].tone}>
+                  {INVITE_STATUS[i.status].label}
+                </Badge>
                 {i.status === "pending" ? (
                   <Button
                     size="sm"
@@ -340,7 +342,7 @@ function InviteDialog({ onClose }: { onClose: () => void }) {
             Link se prikazuje samo sada i važi 7 dana. Osoba se registruje ili prijavi tom adresom i
             prihvati pozivnicu.
           </p>
-          <div className="flex items-center gap-2 rounded-sm border border-line bg-surface-2 p-2">
+          <div className="flex items-center gap-2 panel-inset p-2">
             <code
               className="min-w-0 flex-1 break-all type-code-s normal-case"
               data-testid="admin-invite-link"

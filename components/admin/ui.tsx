@@ -37,10 +37,13 @@ import {
   STOCK_STATE_TONE,
 } from "@/lib/i18n/sr/admin";
 import type { InquiryStatus, OrderStatus } from "@/lib/i18n/sr/shop";
-import { Badge } from "@/components/ui/Badge";
+import { Badge, type BadgeProps } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { IconButton, type IconButtonProps } from "@/components/ui/IconButton";
+import { Input, type InputProps } from "@/components/ui/Input";
 import { Kbd } from "@/components/ui/Kbd";
 import { RouteLink } from "@/components/ui/RouteLink";
+import { Tooltip } from "@/components/ui/Tooltip";
 import { ADMIN } from "@/constants/routes";
 
 export function PageHeader({
@@ -159,12 +162,21 @@ const ORDER_ICON: Record<OrderStatus, ReactNode> = {
   otkazana: <XCircleIcon size={14} weight="bold" />,
 };
 
+/**
+ * Admin chip: sentence case, 13 px (DESIGN-SYSTEM §9.15 — eleven caps chips in one table shout).
+ * `dense` is the 20 px form for the caption line of a two-line table cell, so a flag never makes
+ * its row taller than the 48 px grid. The `!` sizes win over the Badge defaults (`cn` only joins).
+ */
+export function Chip({ dense = false, className, ...rest }: BadgeProps & { dense?: boolean }) {
+  return <Badge size="text" className={cn(dense && "h-5! px-1.5!", className)} {...rest} />;
+}
+
 export function OrderStatusBadge({ status }: { status: OrderStatus }) {
   const s = ADMIN_ORDER_STATUS[status];
   return (
-    <Badge tone={s.tone} icon={ORDER_ICON[status]}>
+    <Chip tone={s.tone} icon={ORDER_ICON[status]}>
       {s.label}
-    </Badge>
+    </Chip>
   );
 }
 
@@ -180,9 +192,9 @@ const INQUIRY_ICON: Record<InquiryStatus, ReactNode> = {
 export function InquiryStatusBadge({ status }: { status: InquiryStatus }) {
   const s = ADMIN_INQUIRY_STATUS[status];
   return (
-    <Badge tone={s.tone} icon={INQUIRY_ICON[status]}>
+    <Chip tone={s.tone} icon={INQUIRY_ICON[status]}>
       {s.label}
-    </Badge>
+    </Chip>
   );
 }
 
@@ -269,6 +281,43 @@ export function SegmentedFilter<T extends string>({
   );
 }
 
+/**
+ * 36 px text input for toolbars, filter popovers and editable rows, the pair of `Select size="sm"`.
+ * `Input` has no compact size, and a plain `h-9` loses to its own `h-11` (`cn` only joins), so the
+ * size is set with `!`. Text is 14 px from md up and 16 px below it (iOS zooms a focused field
+ * with smaller text).
+ */
+export function CompactInput({ className, inputClassName, ...rest }: InputProps) {
+  return (
+    <Input
+      {...rest}
+      className={cn("h-9!", className)}
+      inputClassName={cn("md:text-[length:var(--text-body-s)]!", inputClassName)}
+    />
+  );
+}
+
+/**
+ * Icon-only button whose name is also shown as a tooltip on hover and on keyboard focus — the
+ * name was only in `aria-label` before. A menu trigger cannot be wrapped (the menu clones its
+ * props onto its child), so those pass `title` to `IconButton` instead.
+ */
+export function IconAction(props: IconButtonProps) {
+  return (
+    <Tooltip content={props.label}>
+      <IconButton {...props} />
+    </Tooltip>
+  );
+}
+
+/** „Šta se promenilo“ in sentence case: labels kept in lower case for running text start a chip. */
+export function sentenceCase(text: string): string {
+  return text.charAt(0).toLocaleUpperCase("sr-Latn") + text.slice(1);
+}
+
+/** Surface for a control that sits on the page field, not in a panel: white, so it reads as a field. */
+export const ON_PAGE_FIELD = "bg-surface-1!";
+
 /** Page search (`/` focuses it). */
 export function SearchField({
   value,
@@ -284,36 +333,36 @@ export function SearchField({
   className?: string;
 }) {
   return (
-    <label
-      className={cn(
-        "flex h-9 w-full items-center gap-2 rounded-sm border border-control bg-surface-1 px-3 transition-control hover:border-ink-3 focus-within:border-focus focus-within:shadow-[inset_0_0_0_1px_var(--color-focus)] sm:w-[280px]",
-        className,
-      )}
-    >
-      <MagnifyingGlassIcon size={16} className="shrink-0 text-ink-3" aria-hidden="true" />
-      <span className="sr-only">{label}</span>
-      <input
-        data-admin-search=""
-        type="search"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder={placeholder}
-        className="h-full min-w-0 flex-1 bg-transparent type-body-s text-ink-1 outline-none placeholder:text-ink-3"
-      />
-      <Kbd aria-hidden="true" className="hidden sm:inline-flex">
-        /
-      </Kbd>
-    </label>
+    <CompactInput
+      data-admin-search=""
+      type="search"
+      aria-label={label}
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      placeholder={placeholder}
+      prefix={<MagnifyingGlassIcon size={16} />}
+      suffix={
+        <Kbd aria-hidden="true" className="hidden sm:inline-flex">
+          /
+        </Kbd>
+      }
+      className={cn(ON_PAGE_FIELD, "sm:w-[280px]", className)}
+    />
   );
 }
 
-/** Footer under paginated tables: rows shown + „Učitaj još“. */
+/**
+ * Footer under paginated tables: „50 od 243 porudžbine“ when the list knows its total, else the
+ * rows shown, + „Učitaj još“.
+ */
 export function LoadMoreFooter({
   shown,
   status,
   onMore,
   pageSize = 50,
   forms = ["red", "reda", "redova"],
+  total,
+  totalCap,
 }: {
   shown: number;
   status: "LoadingFirstPage" | "CanLoadMore" | "LoadingMore" | "Exhausted";
@@ -321,15 +370,32 @@ export function LoadMoreFooter({
   pageSize?: number;
   /** Serbian plural forms: one, few, many („porudžbina“, „porudžbine“, „porudžbina“). */
   forms?: readonly [string, string, string];
+  /** Rows in the whole list for the current view; leave out when filters make it unknown. */
+  total?: number;
+  /** The count query stops at this number: at the cap the total reads „500+“. */
+  totalCap?: number;
 }) {
   if (status === "LoadingFirstPage" || shown === 0) return null;
+  const exhausted = status === "Exhausted";
+  // A stale or capped total never claims fewer rows than are on screen.
+  const known = !exhausted && total !== undefined && total >= shown;
+  const capped = known && totalCap !== undefined && total >= totalCap;
   return (
     <div className="mt-3 flex flex-wrap items-center justify-between gap-3 type-body-s text-ink-3">
-      <span className="tabular-nums">
-        Prikazano: {countSr(shown, forms)}
-        {status === "Exhausted" ? " — kraj liste." : ""}
+      <span className="tabular-nums" data-reveal="off">
+        {known ? (
+          <>
+            Prikazano: <span className="font-semibold text-ink-2">{shown}</span> od{" "}
+            {capped ? `${total}+ ${forms[2]}` : countSr(total, forms)}
+          </>
+        ) : (
+          <>
+            Prikazano: {countSr(shown, forms)}
+            {exhausted ? " — kraj liste." : ""}
+          </>
+        )}
       </span>
-      {status !== "Exhausted" ? (
+      {!exhausted ? (
         <Button
           variant="secondary"
           size="sm"
@@ -390,18 +456,21 @@ export function CharCount({
 
 /** Call / Viber / WhatsApp for a customer phone number (E.164 or formatted). */
 export function ContactActions({ phone }: { phone: string | undefined }) {
-  const tel = phone?.replace(/s/g, "");
-  const digits = phone?.replace(/D/g, "");
+  // Whitespace out of the tel: link, digits only for Viber and WhatsApp. (The two patterns had
+  // lost their backslashes — `/s/g`, `/D/g` — so the deep links carried spaces and a second „+“.)
+  const tel = phone?.replace(/\s/g, "");
+  const digits = phone?.replace(/\D/g, "");
   if (!tel || !digits) return null;
   return (
+    // Three equal actions in one panel: filled `quiet` buttons, not three outlines.
     <div className="mt-4 flex flex-wrap gap-2">
-      <Button asChild variant="secondary" size="sm">
+      <Button asChild variant="quiet" size="sm">
         <a href={`tel:${tel}`}>Pozovi</a>
       </Button>
-      <Button asChild variant="secondary" size="sm">
+      <Button asChild variant="quiet" size="sm">
         <a href={`viber://chat?number=%2B${digits}`}>Viber</a>
       </Button>
-      <Button asChild variant="secondary" size="sm">
+      <Button asChild variant="quiet" size="sm">
         <a href={`https://wa.me/${digits}`} target="_blank" rel="noopener noreferrer">
           WhatsApp
         </a>
@@ -485,19 +554,25 @@ const STOCK_ICON: Record<keyof typeof STOCK_STATE_LABEL, ReactNode> = {
 };
 
 /** Stock chip with the DS §3.6 icon + word (status never by colour alone). */
-export function StockStateBadge({ state }: { state: keyof typeof STOCK_STATE_LABEL }) {
+export function StockStateBadge({
+  state,
+  dense,
+}: {
+  state: keyof typeof STOCK_STATE_LABEL;
+  dense?: boolean;
+}) {
   return (
-    <Badge tone={STOCK_STATE_TONE[state]} icon={STOCK_ICON[state]}>
+    <Chip tone={STOCK_STATE_TONE[state]} icon={STOCK_ICON[state]} dense={dense}>
       {STOCK_STATE_LABEL[state]}
-    </Badge>
+    </Chip>
   );
 }
 
 /** Small „Demo“ tag for seeded rows. */
 export function DemoTag() {
   return (
-    <Badge tone="outline" className="h-5 px-1.5">
+    <Chip tone="outline" dense>
       Demo
-    </Badge>
+    </Chip>
   );
 }

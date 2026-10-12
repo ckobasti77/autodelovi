@@ -9,23 +9,29 @@
 import { useAuthActions } from "@convex-dev/auth/react";
 import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
+import { WarningCircleIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { TEST_IDS } from "@/constants/testIds";
-import { Button } from "@/components/ui/Button";
+import { ROUTES } from "@/constants/routes";
+import { PasswordField } from "@/components/auth/PasswordField";
+import { Button, type ButtonVariant } from "@/components/ui/Button";
 import { Field, FormNoScript, useHydrated } from "@/components/ui/Field";
+import { Link } from "@/components/ui/Link";
 import { TERMS } from "@/lib/i18n/sr/shop";
 import { Input } from "@/components/ui/Input";
+
+const ERROR_ID = "si-error";
 
 export function SignInForm({ next }: { next: string }) {
   const { signIn } = useAuthActions();
   const router = useRouter();
-  const [error, setError] = useState<string | null>(null);
+  const [failed, setFailed] = useState(false);
   const [pending, setPending] = useState(false);
   const hydrated = useHydrated();
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setError(null);
+    setFailed(false);
     setPending(true);
     const formData = new FormData(event.currentTarget);
     formData.set("flow", "signIn");
@@ -34,10 +40,13 @@ export function SignInForm({ next }: { next: string }) {
       router.replace(next);
       router.refresh();
     } catch {
-      setError("Pogrešna adresa e-pošte ili lozinka. Proverite podatke i pokušajte ponovo.");
+      setFailed(true);
       setPending(false);
     }
   }
+
+  // The server never says which of the two was wrong, so both fields point at one message.
+  const invalid = failed ? { "aria-invalid": true, "aria-describedby": ERROR_ID } : {};
 
   return (
     <form
@@ -47,6 +56,26 @@ export function SignInForm({ next }: { next: string }) {
       className="flex flex-col gap-5"
       data-reveal="off"
     >
+      {failed ? (
+        <div
+          id={ERROR_ID}
+          role="alert"
+          data-testid={TEST_IDS.authError}
+          className="rounded-md border border-danger bg-danger-subtle p-4"
+        >
+          <p className="flex items-start gap-2 type-body-s font-semibold text-danger">
+            <WarningCircleIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0" />
+            Pogrešna adresa e-pošte ili lozinka.
+          </p>
+          <p className="mt-1 pl-6.5 type-body-s text-ink-1">
+            Proverite podatke i pokušajte ponovo. Ako se lozinke ne sećate,{" "}
+            <Link href={ROUTES.forgotPassword} variant="inline">
+              postavite novu
+            </Link>
+            .
+          </p>
+        </div>
+      ) : null}
       <Field label={TERMS.email} required>
         <Input
           name="email"
@@ -55,24 +84,27 @@ export function SignInForm({ next }: { next: string }) {
           inputMode="email"
           required
           data-testid={TEST_IDS.authEmail}
+          {...invalid}
         />
       </Field>
-      <Field label="Lozinka" required error={error ?? undefined}>
-        <Input
-          name="password"
-          type="password"
-          autoComplete="current-password"
+      <div className="flex flex-col gap-2">
+        <PasswordField
+          label="Lozinka"
           required
+          name="password"
+          autoComplete="current-password"
           data-testid={TEST_IDS.authPassword}
+          {...invalid}
         />
-      </Field>
-      {error ? (
-        <p role="alert" className="sr-only" data-testid={TEST_IDS.authError}>
-          {error}
+        <p className="type-body-s">
+          <Link href={ROUTES.forgotPassword} variant="inline">
+            Zaboravljena lozinka
+          </Link>
         </p>
-      ) : null}
+      </div>
       <Button
         type="submit"
+        size="lg"
         loading={pending}
         disabled={!hydrated}
         fullWidth
@@ -87,14 +119,22 @@ export function SignInForm({ next }: { next: string }) {
   );
 }
 
-export function SignOutButton() {
+export function SignOutButton({
+  variant = "secondary",
+  className,
+}: {
+  /** `secondary` beside a primary; `quiet` where it stands on its own (profile pages). */
+  variant?: ButtonVariant;
+  className?: string;
+}) {
   const { signOut } = useAuthActions();
   const router = useRouter();
   const [pending, setPending] = useState(false);
   return (
     <Button
-      variant="secondary"
+      variant={variant}
       loading={pending}
+      className={className}
       data-testid={TEST_IDS.authSignOut}
       onClick={async () => {
         setPending(true);

@@ -182,7 +182,7 @@ export function VehiclesAdmin() {
                           Model
                         </Button>
                         <Button
-                          variant="secondary"
+                          variant="quiet"
                           size="sm"
                           icon={<PlusIcon size={16} />}
                           onClick={() => setDialog({ kind: "generation", modelId: model._id })}
@@ -319,7 +319,11 @@ function GenerationRow({
         <span className="type-body-s tabular-nums text-ink-2">
           {g.yearFrom}–{g.yearTo ?? "danas"}
         </span>
-        {g.platform ? <Badge tone="outline">{g.platform}</Badge> : null}
+        {g.platform ? (
+          <Badge size="text" tone="outline">
+            {g.platform}
+          </Badge>
+        ) : null}
         {g.vinModelCodes.length ? (
           <span className="type-caption text-ink-3">
             VIN: <span className="type-code-s">{g.vinModelCodes.join(", ")}</span>

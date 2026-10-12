@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/Input";
 import { ADMIN } from "@/constants/routes";
 
 import { PageHeader, Section } from "../ui";
+import { Button } from "@/components/ui/Button";
 
 function DownloadLink({
   href,
@@ -25,15 +26,12 @@ function DownloadLink({
   testId: string;
 }) {
   return (
-    <a
-      href={href}
-      download
-      data-testid={testId}
-      className="inline-flex h-11 items-center gap-2 self-start rounded-sm bg-accent px-4 type-body-s font-semibold text-on-accent transition-control hover:bg-accent-hover active:translate-y-px focus-ring-inverse"
-    >
-      <DownloadSimpleIcon size={18} aria-hidden="true" />
-      {children}
-    </a>
+    <Button asChild className="self-start">
+      <a href={href} download data-testid={testId}>
+        <DownloadSimpleIcon size={18} aria-hidden="true" />
+        {children}
+      </a>
+    </Button>
   );
 }
 

@@ -19,6 +19,7 @@ import { ADMIN } from "@/constants/routes";
 
 import { useNowMinute } from "../hooks";
 import { PageHeader, Section, SegmentedFilter } from "../ui";
+import { Button } from "@/components/ui/Button";
 
 type Days = "7" | "30" | "90";
 
@@ -254,15 +255,12 @@ export function SourcesAdmin() {
                 </div>
               ))}
             </dl>
-            <a
-              href={csvHref}
-              download
-              data-testid="offline-conversions-download"
-              className="inline-flex h-11 items-center gap-2 self-start rounded-sm bg-accent px-4 type-body-s font-semibold text-on-accent transition-control hover:bg-accent-hover active:translate-y-px focus-ring-inverse"
-            >
-              <DownloadSimpleIcon size={18} aria-hidden="true" />
-              Preuzmi CSV (gclid)
-            </a>
+            <Button asChild className="self-start">
+              <a href={csvHref} download data-testid="offline-conversions-download">
+                <DownloadSimpleIcon size={18} aria-hidden="true" />
+                Preuzmi CSV (gclid)
+              </a>
+            </Button>
             {offline.braid.length > 0 ? (
               <p className="type-caption text-ink-3">
                 Porudžbine sa gbraid/wbraid (iOS aplikacije):{" "}

@@ -127,6 +127,7 @@ function TemplatePreview({
       aria-labelledby="template-title"
       className="min-w-0 panel"
       data-testid="template-preview"
+      data-reveal="block"
     >
       <div className="flex flex-col gap-3 border-b border-line-faint p-4">
         <div className="flex flex-wrap items-start justify-between gap-3">

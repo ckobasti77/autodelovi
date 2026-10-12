@@ -139,7 +139,11 @@ function PaletteBody({
         meta: h.meta,
         mono: h.kind === "order" || h.kind === "inquiry",
         icon: KIND_ICON[h.kind],
-        badge: status ? <Badge tone={status.tone}>{status.label}</Badge> : undefined,
+        badge: status ? (
+          <Badge size="text" tone={status.tone}>
+            {status.label}
+          </Badge>
+        ) : undefined,
         run: go(h.href),
       });
     }

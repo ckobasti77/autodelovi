@@ -32,6 +32,7 @@ import { Button } from "@/components/ui/Button";
 import { CopyButton } from "@/components/ui/CopyButton";
 import { Link } from "@/components/ui/Link";
 import { RevealText } from "@/components/text-reveal/RevealText";
+import { Reveal } from "@/components/reveal/Reveal";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { AddToCartButton } from "@/components/catalog/AddToCartButton";
 import { FavoriteButton } from "@/components/mechanic/FavoriteButton";
@@ -108,7 +109,7 @@ export async function generateMetadata({ params }: PageProps<"/deo/[slug]">): Pr
   });
 }
 
-const FACTS_CLASS = "flex items-start gap-3 py-3 type-body-s text-ink-2";
+const FACTS_CLASS = "flex items-start gap-3 py-2 type-body-s text-ink-2";
 
 /*
  * The detail groups below the buy box skip style and layout until they approach the viewport,
@@ -209,11 +210,18 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
         <Breadcrumbs
           items={crumbs.map((crumb) => ({ ...crumb, label: typographer(crumb.label) }))}
         />
-        <div className="mt-5 grid gap-8 lg:grid-cols-12 lg:grid-rows-[auto_1fr] lg:gap-x-(--gutter)">
+        {/*
+          Order, for every width (PRODUCT principle 2 — fits, in stock, how much): picture, what
+          it is (maker, name, the OEM number), whether it fits, then the buy box with the price,
+          stock and the action; the secondary codes follow. On a phone the picture is held to
+          3:2, so all of that is on the first screen and the buy bar carries the action until
+          the inline button is in view (UI-BOOST §7.1).
+        */}
+        <div className="mt-4 grid gap-5 sm:mt-5 sm:gap-8 lg:grid-cols-12 lg:grid-rows-[auto_1fr] lg:gap-x-(--gutter)">
           {/* Gallery */}
-          <div className="flex flex-col gap-4 lg:col-span-7">
+          <Reveal eager className="flex flex-col gap-4 lg:col-span-7">
             <figure>
-              <div className="relative overflow-hidden rounded-md border border-line">
+              <div className="relative overflow-hidden rounded-lg border border-line shadow-rest">
                 <ProductThumb
                   imageUrl={images[0]?.path ?? null}
                   categorySlug={c.categorySlug}
@@ -223,7 +231,7 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
                   }
                   sizes="(min-width: 1024px) 56vw, 100vw"
                   preload
-                  className="aspect-[4/3]"
+                  className="aspect-[3/2] sm:aspect-[4/3]"
                 />
               </div>
               {!images.length ? (
@@ -247,44 +255,41 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
                 ))}
               </ul>
             ) : null}
-          </div>
+          </Reveal>
 
-          {/* Buy box (spans both rows from lg, so the drawing sits under the gallery) */}
+          {/* Identity + buy box (spans both rows from lg, so the drawing sits under the gallery) */}
           <div className="lg:col-span-5 lg:row-span-2">
             <div className="flex flex-col gap-4 lg:sticky lg:top-[calc(var(--header-h)+1.5rem)]">
-              <p className="type-body-s text-ink-3">
-                {c.manufacturerName} · {QUALITY_LABEL[c.quality]}
-              </p>
-              <RevealText as="h1" className="type-h1 text-ink-1">
-                {typographer(c.name)}
-              </RevealText>
-              <dl className="flex flex-col gap-1 type-body-s" data-reveal="off">
+              <div className="flex flex-col gap-2">
+                <p className="type-body-s text-ink-3">
+                  {c.manufacturerName} · {QUALITY_LABEL[c.quality]}
+                </p>
+                <RevealText as="h1" className="type-h1 text-ink-1">
+                  {typographer(c.name)}
+                </RevealText>
                 {c.oemPrimary ? (
-                  <div className="flex items-center gap-1.5">
-                    <dt className="text-ink-3">OEM</dt>
-                    <dd className="flex items-center gap-1">
-                      <span className="type-code-l text-ink-1">{c.oemPrimary}</span>
-                      <CopyButton
-                        value={c.oemPrimary}
-                        label={`Kopiraj OEM broj ${c.oemPrimary}`}
-                        toastMessage="OEM broj kopiran."
-                      />
-                    </dd>
-                  </div>
+                  <dl className="type-body-s" data-reveal="off">
+                    <div className="flex items-center gap-1.5">
+                      <dt className="text-ink-3">OEM</dt>
+                      <dd className="flex items-center gap-1">
+                        <span className="type-code-l text-ink-1">{c.oemPrimary}</span>
+                        <CopyButton
+                          value={c.oemPrimary}
+                          label={`Kopiraj OEM broj ${c.oemPrimary}`}
+                          toastMessage="OEM broj kopiran."
+                        />
+                      </dd>
+                    </div>
+                  </dl>
                 ) : null}
-                <div className="flex items-center gap-1.5">
-                  <dt className="text-ink-3">Šifra</dt>
-                  <dd className="type-code text-ink-2">{c.sku}</dd>
-                </div>
-                {data.mpn ? (
-                  <div className="flex items-center gap-1.5">
-                    <dt className="text-ink-3">Kat. br. proizvođača</dt>
-                    <dd className="type-code text-ink-2">{data.mpn}</dd>
-                  </div>
-                ) : null}
-              </dl>
+              </div>
               <FitmentBadge fitments={data.fitments} universal={c.universal} productSlug={c.slug} />
-              <div id="buy-box" className="flex flex-col gap-4 border-y border-line py-5">
+              <Reveal
+                eager
+                index={1}
+                id="buy-box"
+                className="flex flex-col gap-4 panel-raised p-4 sm:p-5"
+              >
                 <ProductPrice
                   productId={c._id}
                   retailPricePara={c.retailPricePara}
@@ -309,7 +314,7 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
                 ) : (
                   <BackInStockForm productId={c._id} productName={c.name} />
                 )}
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3 border-t border-line pt-4">
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                     <Button asChild variant="secondary" icon={<ChatCircleTextIcon size={20} />}>
                       <Link href={ROUTES.inquiryWith({ proizvod: c.slug })} variant="unstyled">
@@ -320,59 +325,76 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
                   </div>
                   <ContactActions links={contacts} location="product" />
                 </div>
-              </div>
-              <ul className="flex flex-col divide-y divide-line" data-reveal="off">
-                {courier ? (
+                <ul className="flex flex-col border-t border-line pt-2" data-reveal="off">
+                  {courier ? (
+                    <li className={FACTS_CLASS}>
+                      <TruckIcon
+                        size={20}
+                        aria-hidden="true"
+                        className="mt-0.5 shrink-0 text-ink-3"
+                      />
+                      <span>
+                        Kurir {formatRSD(courier.pricePara)}
+                        {courier.freeOverPara
+                          ? `, besplatno iznad ${formatRSD(courier.freeOverPara)}`
+                          : ""}{" "}
+                        · pouzećem ili virmanom
+                      </span>
+                    </li>
+                  ) : null}
+                  {pickup ? (
+                    <li className={FACTS_CLASS}>
+                      <StorefrontIcon
+                        size={20}
+                        aria-hidden="true"
+                        className="mt-0.5 shrink-0 text-ink-3"
+                      />
+                      <span>Lično preuzimanje bez troška · plaćanje gotovinom ili karticom</span>
+                    </li>
+                  ) : null}
                   <li className={FACTS_CLASS}>
-                    <TruckIcon
+                    <ArrowRightIcon
                       size={20}
                       aria-hidden="true"
                       className="mt-0.5 shrink-0 text-ink-3"
                     />
                     <span>
-                      Kurir {formatRSD(courier.pricePara)}
-                      {courier.freeOverPara
-                        ? `, besplatno iznad ${formatRSD(courier.freeOverPara)}`
-                        : ""}{" "}
-                      · pouzećem ili virmanom
+                      Bez plaćanja na sajtu.{" "}
+                      <Link href={ROUTES.delivery} variant="inline">
+                        Dostava i plaćanje
+                      </Link>
                     </span>
                   </li>
+                </ul>
+              </Reveal>
+              <dl className="flex flex-wrap gap-x-6 gap-y-1 type-body-s" data-reveal="off">
+                <div className="flex items-center gap-1.5">
+                  <dt className="text-ink-3">Šifra</dt>
+                  <dd className="type-code text-ink-2">{c.sku}</dd>
+                </div>
+                {data.mpn ? (
+                  <div className="flex items-center gap-1.5">
+                    <dt className="text-ink-3">Kat. br. proizvođača</dt>
+                    <dd className="type-code text-ink-2">{data.mpn}</dd>
+                  </div>
                 ) : null}
-                {pickup ? (
-                  <li className={FACTS_CLASS}>
-                    <StorefrontIcon
-                      size={20}
-                      aria-hidden="true"
-                      className="mt-0.5 shrink-0 text-ink-3"
-                    />
-                    <span>Lično preuzimanje bez troška · plaćanje gotovinom ili karticom</span>
-                  </li>
-                ) : null}
-                <li className={FACTS_CLASS}>
-                  <ArrowRightIcon
-                    size={20}
-                    aria-hidden="true"
-                    className="mt-0.5 shrink-0 text-ink-3"
-                  />
-                  <span>
-                    Bez plaćanja na sajtu.{" "}
-                    <Link href={ROUTES.delivery} variant="inline">
-                      Dostava i plaćanje
-                    </Link>
-                  </span>
-                </li>
-              </ul>
+              </dl>
             </div>
           </div>
 
           {/* Spec drawing: after the buy box on phones and tablets, under the gallery from lg */}
           {disc ? (
-            <figure className="hidden self-start rounded-md border border-line p-4 corner-ticks sm:block lg:col-span-7">
+            <Reveal
+              as="figure"
+              eager
+              index={2}
+              className="hidden self-start rounded-lg border border-line p-4 corner-ticks sm:block lg:col-span-7"
+            >
               <SpecDrawing diameter={disc.diameter} thickness={disc.thickness} />
               <figcaption className="mt-2 type-caption font-normal text-ink-3">
                 Mere diska: prečnik {disc.diameter} mm, debljina {disc.thickness} mm.
               </figcaption>
-            </figure>
+            </Reveal>
           ) : null}
         </div>
 
@@ -417,7 +439,10 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
               <h2 id="specs-title" className="type-h2 text-ink-1">
                 Specifikacije
               </h2>
-              <dl className="mt-5 flex flex-col divide-y divide-line border-y border-line type-body-s">
+              <Reveal
+                as="dl"
+                className="mt-5 flex flex-col divide-y divide-line panel px-4 type-body-s"
+              >
                 {data.specs.map((s) => (
                   <div key={s.label} className="grid grid-cols-2 gap-4 py-2.5">
                     <dt className="text-ink-3">{s.label}</dt>
@@ -443,7 +468,7 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
                     </dd>
                   </div>
                 ) : null}
-              </dl>
+              </Reveal>
               {data.description ? (
                 <p className="mt-5 max-w-[65ch] type-body text-ink-2">{data.description}</p>
               ) : null}
@@ -489,10 +514,10 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
               <h2 id="landings-title" className="type-h2 text-ink-1">
                 {data.category.name} po vozilu
               </h2>
-              <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+              <ul className="mt-4 flex flex-wrap gap-2">
                 {landings.map((l) => (
                   <li key={landingHref(l)}>
-                    <Link href={landingHref(l)} variant="standalone">
+                    <Link href={landingHref(l)} variant="unstyled" className="chip-link">
                       {landingLabel(l)}
                     </Link>
                   </li>

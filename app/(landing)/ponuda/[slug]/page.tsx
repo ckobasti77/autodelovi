@@ -137,11 +137,6 @@ export default async function AdLandingPage({ params }: PageProps<"/ponuda/[slug
       ) : null}
       <section className="grid gap-8 lg:grid-cols-12 lg:gap-x-(--gutter)">
         <div className="flex flex-col gap-5 lg:col-span-7">
-          {data.vehicle || data.category ? (
-            <p className="type-label uppercase text-ink-3" data-reveal="off">
-              {[data.category?.name, data.vehicle?.label].filter(Boolean).join(" · ")}
-            </p>
-          ) : null}
           <RevealText as="h1" className="type-display-l uppercase text-ink-1">
             {data.headline}
           </RevealText>
@@ -149,6 +144,20 @@ export default async function AdLandingPage({ params }: PageProps<"/ponuda/[slug
             <RevealText as="p" className="max-w-[60ch] type-lead text-ink-2">
               {data.subhead}
             </RevealText>
+          ) : null}
+          {/* What the offer is about, as tags under the statement (a label above a heading
+              competes with it). */}
+          {data.vehicle || data.category ? (
+            <ul className="flex flex-wrap gap-2" data-reveal="off">
+              {[data.category?.name, data.vehicle?.label].filter(Boolean).map((tag) => (
+                <li
+                  key={tag}
+                  className="inline-flex min-h-7 items-center rounded-xs border border-line-strong px-2 type-caption text-ink-2"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
           ) : null}
           <div className="flex flex-wrap items-center gap-3">
             <Button asChild size="lg" icon={<ChatCircleTextIcon size={20} />}>
@@ -164,10 +173,14 @@ export default async function AdLandingPage({ params }: PageProps<"/ponuda/[slug
           <ContactActions links={contacts} location="ponuda" variant="buttons" showValue />
         </div>
         {proofs.length ? (
-          <ul className="flex flex-col divide-y divide-line border-y border-line lg:col-span-5 lg:self-end">
+          <ul
+            className="flex flex-col divide-y divide-line panel px-5 lg:col-span-5 lg:self-end"
+            data-reveal="block"
+            data-reveal-eager=""
+          >
             {proofs.map(({ Icon, title, text }) => (
               <li key={title} className="flex items-start gap-4 py-4">
-                <Icon size={24} aria-hidden="true" className="mt-0.5 shrink-0 text-accent" />
+                <Icon size={24} aria-hidden="true" className="mt-0.5 shrink-0 text-ink-3" />
                 <div className="flex flex-col gap-1">
                   <p className="type-body font-semibold text-ink-1">{title}</p>
                   <p className="type-body-s text-ink-2">{text}</p>

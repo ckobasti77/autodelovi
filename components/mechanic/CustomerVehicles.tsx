@@ -5,6 +5,9 @@
  * live VAG decode that prefills make / generation, plate and a note; each row links to the
  * catalog filtered for that generation and engine, selects it in the picker, or opens an
  * inquiry with the VIN. Uses `account.savedVehicles` (owner = `ctx.viewer`).
+ *
+ * The add form is one panel with three field groups (whose car, which car, notes); the saved
+ * vehicles are rows of one panel with a quiet „Delovi za ovo vozilo“ per row.
  */
 import { useMutation, useQuery } from "convex/react";
 import { useMemo, useState, type FormEvent } from "react";
@@ -24,6 +27,7 @@ import type { VehicleTree } from "@/lib/catalog/types";
 import { decodeVin, normalizeVin } from "@/lib/domain/vin";
 import { convexErrorMessage, ERRORS } from "@/lib/i18n/sr/shop";
 import { useVehicleStore } from "@/lib/vehicle/store";
+import { Reveal } from "@/components/reveal/Reveal";
 import { Button } from "@/components/ui/Button";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { Field } from "@/components/ui/Field";
@@ -84,7 +88,12 @@ function AddVehicleForm({ tree, onDone }: { tree: VehicleTree; onDone: () => voi
     if (next.validation.valid && next.normalized !== normalizeVin(d.vin)) {
       const hit = next.wmi.make ? tree.find((b) => b.brand.name === next.wmi.make) : undefined;
       if (hit) {
-        Object.assign(patch, { brandSlug: hit.brand.slug, modelSlug: "", generationSlug: "", engineSlug: "" });
+        Object.assign(patch, {
+          brandSlug: hit.brand.slug,
+          modelSlug: "",
+          generationSlug: "",
+          engineSlug: "",
+        });
         if (next.modelCode) {
           for (const m of hit.models) {
             const g = m.generations.find((gen) => gen.vinModelCodes.includes(next.modelCode!));
@@ -105,7 +114,8 @@ function AddVehicleForm({ tree, onDone }: { tree: VehicleTree; onDone: () => voi
     const e: Partial<Record<keyof Draft, string>> = {};
     if (d.vin.trim() && !decoded?.validation.valid) e.vin = ERRORS.vin;
     if (!d.brandSlug) e.brandSlug = "Izaberite marku.";
-    if (!d.label.trim() && !d.plate.trim()) e.label = "Upišite mušteriju ili tablice, da biste znali čije je vozilo.";
+    if (!d.label.trim() && !d.plate.trim())
+      e.label = "Upišite mušteriju ili tablice, da biste znali čije je vozilo.";
     setErrors(e);
     if (Object.keys(e).length) return;
     setBusy(true);
@@ -131,7 +141,15 @@ function AddVehicleForm({ tree, onDone }: { tree: VehicleTree; onDone: () => voi
   };
 
   return (
-    <form onSubmit={(e) => void onSubmit(e)} noValidate className="flex flex-col gap-5 rounded-md border border-line-strong bg-surface-1 p-4 sm:p-5">
+    <form
+      onSubmit={(e) => void onSubmit(e)}
+      noValidate
+      aria-labelledby="cv-add-title"
+      className="flex flex-col gap-5 panel-raised p-4 sm:p-6"
+    >
+      <h2 id="cv-add-title" className="type-h4 text-ink-1">
+        Novo vozilo mušterije
+      </h2>
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Mušterija ili oznaka" help="Npr. „Petrović — Golf“" error={errors.label}>
           <Input value={d.label} maxLength={60} onChange={(e) => set({ label: e.target.value })} />
@@ -142,7 +160,11 @@ function AddVehicleForm({ tree, onDone }: { tree: VehicleTree; onDone: () => voi
           error={errors.vin}
           help={
             decoded?.validation.valid
-              ? [decoded.wmi.make ?? decoded.wmi.manufacturer, decoded.model?.model, decoded.modelYear ? `model ${decoded.modelYear}?` : null]
+              ? [
+                  decoded.wmi.make ?? decoded.wmi.manufacturer,
+                  decoded.model?.model,
+                  decoded.modelYear ? `model ${decoded.modelYear}?` : null,
+                ]
                   .filter(Boolean)
                   .join(" · ")
               : `${normalizeVin(d.vin).length} / 17 znakova`
@@ -158,13 +180,15 @@ function AddVehicleForm({ tree, onDone }: { tree: VehicleTree; onDone: () => voi
           />
         </Field>
       </div>
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-5 border-t border-line pt-5 sm:grid-cols-2 lg:grid-cols-4">
         <Field label="Marka" error={errors.brandSlug}>
           <Select
             placeholder="Izaberite"
             value={d.brandSlug}
             options={tree.map((b) => ({ value: b.brand.slug, label: b.brand.name }))}
-            onChange={(e) => set({ brandSlug: e.target.value, modelSlug: "", generationSlug: "", engineSlug: "" })}
+            onChange={(e) =>
+              set({ brandSlug: e.target.value, modelSlug: "", generationSlug: "", engineSlug: "" })
+            }
           />
         </Field>
         <Field label="Model">
@@ -172,7 +196,10 @@ function AddVehicleForm({ tree, onDone }: { tree: VehicleTree; onDone: () => voi
             placeholder={brand ? "Izaberite" : "Prvo marku"}
             disabled={!brand}
             value={d.modelSlug}
-            options={(brand?.models ?? []).map((m) => ({ value: m.model.slug, label: m.model.name }))}
+            options={(brand?.models ?? []).map((m) => ({
+              value: m.model.slug,
+              label: m.model.name,
+            }))}
             onChange={(e) => set({ modelSlug: e.target.value, generationSlug: "", engineSlug: "" })}
           />
         </Field>
@@ -181,7 +208,10 @@ function AddVehicleForm({ tree, onDone }: { tree: VehicleTree; onDone: () => voi
             placeholder={model ? "Izaberite" : "Prvo model"}
             disabled={!model}
             value={d.generationSlug}
-            options={(model?.generations ?? []).map((g) => ({ value: g.slug, label: `${g.name} · ${g.yearFrom}–${g.yearTo ?? ""}` }))}
+            options={(model?.generations ?? []).map((g) => ({
+              value: g.slug,
+              label: `${g.name} · ${g.yearFrom}–${g.yearTo ?? ""}`,
+            }))}
             onChange={(e) => set({ generationSlug: e.target.value, engineSlug: "" })}
           />
         </Field>
@@ -190,14 +220,22 @@ function AddVehicleForm({ tree, onDone }: { tree: VehicleTree; onDone: () => voi
             placeholder={generation ? "Izaberite" : "Prvo generaciju"}
             disabled={!generation || !engines}
             value={d.engineSlug}
-            options={(engines ?? []).map((en) => ({ value: en.slug, label: `${en.name}${en.codes.length ? ` · ${en.codes.slice(0, 3).join(", ")}` : ""}` }))}
+            options={(engines ?? []).map((en) => ({
+              value: en.slug,
+              label: `${en.name}${en.codes.length ? ` · ${en.codes.slice(0, 3).join(", ")}` : ""}`,
+            }))}
             onChange={(e) => set({ engineSlug: e.target.value })}
           />
         </Field>
       </div>
-      <div className="grid gap-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+      <div className="grid gap-5 border-t border-line pt-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
         <Field label="Tablice" optional>
-          <Input value={d.plate} maxLength={16} inputClassName="uppercase" onChange={(e) => set({ plate: e.target.value })} />
+          <Input
+            value={d.plate}
+            maxLength={16}
+            inputClassName="uppercase"
+            onChange={(e) => set({ plate: e.target.value })}
+          />
         </Field>
         <Field label="Napomena" optional help="Šta je menjano, šta sledeće treba proveriti.">
           <Input value={d.note} maxLength={200} onChange={(e) => set({ note: e.target.value })} />
@@ -228,10 +266,13 @@ function VehicleRow({ v }: { v: SavedVehicle }) {
   const [editing, setEditing] = useState(false);
   const [plate, setPlate] = useState(v.plate ?? "");
   const [note, setNote] = useState(v.note ?? "");
-  const vehicle = [v.brandName, v.generationName ?? v.modelName, v.engineName].filter(Boolean).join(" ");
+  const vehicle = [v.brandName, v.generationName ?? v.modelName, v.engineName]
+    .filter(Boolean)
+    .join(" ");
   const catalogHref =
     v.brandSlug && v.modelSlug && v.generationSlug
-      ? ROUTES.vehicleGeneration(v.brandSlug, v.modelSlug, v.generationSlug) + (v.engineSlug ? `?motor=${v.engineSlug}` : "")
+      ? ROUTES.vehicleGeneration(v.brandSlug, v.modelSlug, v.generationSlug) +
+        (v.engineSlug ? `?motor=${v.engineSlug}` : "")
       : v.brandSlug && v.modelSlug
         ? ROUTES.vehicleModel(v.brandSlug, v.modelSlug)
         : v.brandSlug
@@ -244,15 +285,23 @@ function VehicleRow({ v }: { v: SavedVehicle }) {
       model: { slug: v.modelSlug, name: v.modelName },
       generation:
         v.generationSlug && v.generationName && v.generationYears
-          ? { slug: v.generationSlug, name: v.generationName, yearFrom: v.generationYears.from, yearTo: v.generationYears.to }
+          ? {
+              slug: v.generationSlug,
+              name: v.generationName,
+              yearFrom: v.generationYears.from,
+              yearTo: v.generationYears.to,
+            }
           : null,
-      engine: v.engineSlug && v.engineName ? { slug: v.engineSlug, name: v.engineName, codes: v.engineCodes } : null,
+      engine:
+        v.engineSlug && v.engineName
+          ? { slug: v.engineSlug, name: v.engineName, codes: v.engineCodes }
+          : null,
     });
     toast.success(`Izabrano vozilo: ${vehicle}. Katalog prikazuje delove koji mu odgovaraju.`);
   };
 
   return (
-    <li className="grid gap-3 py-4 md:grid-cols-[minmax(0,1fr)_auto]">
+    <li className="grid gap-x-4 gap-y-3 p-4 sm:px-5 md:grid-cols-[minmax(0,1fr)_auto]">
       <div className="flex min-w-0 flex-col gap-1">
         <span className="type-body font-semibold text-ink-1">{v.label ?? vehicle}</span>
         {v.label ? <span className="type-body-s text-ink-2">{vehicle}</span> : null}
@@ -275,36 +324,65 @@ function VehicleRow({ v }: { v: SavedVehicle }) {
             }}
           >
             <Field label="Tablice">
-              <Input value={plate} maxLength={16} inputClassName="uppercase" onChange={(e) => setPlate(e.target.value)} />
+              <Input
+                value={plate}
+                maxLength={16}
+                inputClassName="uppercase"
+                onChange={(e) => setPlate(e.target.value)}
+              />
             </Field>
             <Field label="Napomena">
               <Input value={note} maxLength={200} onChange={(e) => setNote(e.target.value)} />
             </Field>
-            <Button type="submit" variant="secondary">
+            <Button type="submit" variant="quiet">
               Sačuvaj
             </Button>
           </form>
         ) : null}
       </div>
-      <div className="flex flex-wrap items-center gap-1 md:justify-end">
+      <div className="flex flex-wrap items-center gap-1 self-start md:justify-end">
         {catalogHref ? (
-          <Button asChild variant="secondary" size="sm" trailingIcon={<ArrowRightIcon size={16} />}>
+          <Button
+            asChild
+            variant="quiet"
+            size="sm"
+            trailingIcon={<ArrowRightIcon size={16} />}
+            className="max-lg:h-11"
+          >
             <Link href={catalogHref} variant="unstyled" onClick={select}>
               Delovi za ovo vozilo
             </Link>
           </Button>
         ) : null}
-        <Button asChild variant="ghost" size="sm" icon={<ChatCircleTextIcon size={16} />}>
-          <Link href={ROUTES.inquiryWith({ q: [v.vin, vehicle].filter(Boolean).join(" · ") })} variant="unstyled">
-            Upit
+        <Button
+          asChild
+          variant="ghost"
+          size="sm"
+          icon={<ChatCircleTextIcon size={16} />}
+          className="max-lg:h-11"
+        >
+          <Link
+            href={ROUTES.inquiryWith({ q: [v.vin, vehicle].filter(Boolean).join(" · ") })}
+            variant="unstyled"
+          >
+            Upit<span className="sr-only"> za {v.label ?? vehicle}</span>
           </Link>
         </Button>
-        <IconButton label={`Izmeni tablice i napomenu: ${v.label ?? vehicle}`} icon={<PencilSimpleIcon size={18} />} variant="ghost" onClick={() => setEditing((x) => !x)} />
+        <IconButton
+          label={`Izmeni tablice i napomenu: ${v.label ?? vehicle}`}
+          icon={<PencilSimpleIcon size={18} />}
+          variant="ghost"
+          onClick={() => setEditing((x) => !x)}
+        />
         <IconButton
           label={`Ukloni vozilo ${v.label ?? vehicle}`}
           icon={<TrashIcon size={18} />}
           variant="ghost"
-          onClick={() => remove({ id: v.id as Id<"savedVehicles"> }).catch((e) => toast.error(convexErrorMessage(e, "Vozilo nije uklonjeno.")))}
+          onClick={() =>
+            remove({ id: v.id as Id<"savedVehicles"> }).catch((e) =>
+              toast.error(convexErrorMessage(e, "Vozilo nije uklonjeno.")),
+            )
+          }
         />
       </div>
     </li>
@@ -315,34 +393,51 @@ export function CustomerVehicles({ tree }: { tree: VehicleTree }) {
   const rows = useSavedVehicles();
   const [adding, setAdding] = useState(false);
   return (
-    <div className="flex flex-col gap-6" data-reveal="off">
+    <div className="flex flex-col gap-5" data-reveal="off">
       {adding ? (
         <AddVehicleForm tree={tree} onDone={() => setAdding(false)} />
       ) : (
-        <Button icon={<PlusIcon size={20} />} onClick={() => setAdding(true)} className="self-start">
+        <Button
+          icon={<PlusIcon size={20} />}
+          onClick={() => setAdding(true)}
+          className="self-start"
+        >
           Dodaj vozilo mušterije
         </Button>
       )}
       {rows === undefined ? (
         <SkeletonRegion>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col divide-y divide-line panel">
             {[0, 1].map((i) => (
-              <Skeleton key={i} className="h-20 w-full" />
+              <div
+                key={i}
+                className="grid gap-x-4 gap-y-3 p-4 sm:px-5 md:grid-cols-[minmax(0,1fr)_auto]"
+              >
+                <span className="flex flex-col gap-2.5">
+                  <Skeleton className="h-5 w-56 max-w-full" />
+                  <Skeleton className="h-4 w-40 max-w-full" />
+                  <Skeleton className="h-4 w-64 max-w-full" />
+                </span>
+                <Skeleton className="h-11 w-72 max-w-full lg:h-9" />
+              </div>
             ))}
           </div>
         </SkeletonRegion>
       ) : rows.length === 0 ? (
         adding ? null : (
-          <EmptyState icon={<CarIcon size={40} />}>
-            Sačuvajte vozila mušterija sa brojem šasije i tablicama — delovi za njih su onda na jedan klik.
+          <EmptyState align="start" icon={<CarIcon size={40} />} className="py-4">
+            Sačuvajte vozila mušterija sa brojem šasije i tablicama — delovi za njih su onda na
+            jedan klik.
           </EmptyState>
         )
       ) : (
-        <ul className="flex flex-col divide-y divide-line border-y border-line">
-          {rows.map((v) => (
-            <VehicleRow key={v.id} v={v} />
-          ))}
-        </ul>
+        <Reveal eager index={1} className="panel">
+          <ul className="flex flex-col divide-y divide-line">
+            {rows.map((v) => (
+              <VehicleRow key={v.id} v={v} />
+            ))}
+          </ul>
+        </Reveal>
       )}
     </div>
   );

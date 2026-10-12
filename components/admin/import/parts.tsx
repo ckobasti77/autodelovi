@@ -47,7 +47,7 @@ const STATUS_ICON: Record<ImportBatchStatus, ReactNode> = {
 export function ImportStatusBadge({ status }: { status: ImportBatchStatus }) {
   const s = IMPORT_STATUS[status];
   return (
-    <Badge tone={s.tone} icon={STATUS_ICON[status]}>
+    <Badge size="text" tone={s.tone} icon={STATUS_ICON[status]}>
       {s.label}
     </Badge>
   );
@@ -64,7 +64,7 @@ const ACTION_ICON: Record<RowActionKey, ReactNode> = {
 export function RowActionBadge({ action }: { action: RowActionKey }) {
   const a = ROW_ACTION[action];
   return (
-    <Badge tone={a.tone} icon={ACTION_ICON[action]}>
+    <Badge size="text" tone={a.tone} icon={ACTION_ICON[action]}>
       {a.label}
     </Badge>
   );
@@ -145,7 +145,7 @@ export function CountTiles({ tiles }: { tiles: CountTile[] }) {
       data-reveal="off"
     >
       {tiles.map((t) => (
-        <div key={t.key} className="flex min-w-0 flex-col gap-1 bg-bg px-4 py-3">
+        <div key={t.key} className="flex min-w-0 flex-col gap-1 bg-surface-1 px-4 py-3">
           <dt className="type-caption text-ink-3">{t.label}</dt>
           <dd
             className={cn(

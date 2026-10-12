@@ -46,7 +46,11 @@ export function ManufacturersAdmin() {
             >
               {row.original.name}
             </span>
-            {row.original.isVagGenuine ? <Badge tone="info">Original VAG</Badge> : null}
+            {row.original.isVagGenuine ? (
+              <Badge size="text" tone="info">
+                Original VAG
+              </Badge>
+            ) : null}
           </span>
         ),
       },

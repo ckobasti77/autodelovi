@@ -9,13 +9,11 @@ import { PlusIcon, TrashIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { normalizeCode } from "@/lib/domain/codes";
 import { Button } from "@/components/ui/Button";
-import { IconButton } from "@/components/ui/IconButton";
+
+import { CompactInput, IconAction } from "../ui";
 
 export type OemRow = { raw: string; brand: string };
 export type CrossRow = { manufacturer: string; raw: string };
-
-const cell =
-  "h-9 w-full min-w-0 rounded-sm border border-control bg-surface-1 px-2 type-body-s text-ink-1 transition-control hover:border-ink-3 focus:border-focus focus:outline-none focus:shadow-[inset_0_0_0_1px_var(--color-focus)]";
 
 function splitPaste(text: string): string[] {
   return text
@@ -67,9 +65,10 @@ export function CodesEditor({
               key={i}
               className="grid grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)_minmax(0,1fr)_auto] items-center gap-2"
             >
-              <input
+              <CompactInput
                 aria-label={`OEM broj ${i + 1}`}
-                className={`${cell} font-mono`}
+                className="min-w-0"
+                inputClassName="font-mono"
                 value={r.raw}
                 onChange={(e) =>
                   onOem(oem.map((x, j) => (j === i ? { ...x, raw: e.target.value } : x)))
@@ -87,10 +86,10 @@ export function CodesEditor({
                   }
                 }}
               />
-              <input
+              <CompactInput
                 aria-label={`Marka za OEM broj ${i + 1}`}
                 placeholder="VW, Audi…"
-                className={cell}
+                className="min-w-0"
                 value={r.brand}
                 onChange={(e) =>
                   onOem(oem.map((x, j) => (j === i ? { ...x, brand: e.target.value } : x)))
@@ -103,7 +102,7 @@ export function CodesEditor({
                   <Preview raw={r.raw} />
                 )}
               </span>
-              <IconButton
+              <IconAction
                 label={`Ukloni OEM broj ${i + 1}`}
                 icon={<TrashIcon size={16} />}
                 size="sm"
@@ -132,18 +131,19 @@ export function CodesEditor({
             key={i}
             className="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.4fr)_minmax(0,1fr)_auto] items-center gap-2"
           >
-            <input
+            <CompactInput
               aria-label={`Proizvođač, zamenski broj ${i + 1}`}
               placeholder="Proizvođač"
-              className={cell}
+              className="min-w-0"
               value={r.manufacturer}
               onChange={(e) =>
                 onCross(cross.map((x, j) => (j === i ? { ...x, manufacturer: e.target.value } : x)))
               }
             />
-            <input
+            <CompactInput
               aria-label={`Zamenski broj ${i + 1}`}
-              className={`${cell} font-mono`}
+              className="min-w-0"
+              inputClassName="font-mono"
               value={r.raw}
               onChange={(e) =>
                 onCross(cross.map((x, j) => (j === i ? { ...x, raw: e.target.value } : x)))
@@ -152,7 +152,7 @@ export function CodesEditor({
             <span className="min-w-0 truncate">
               <Preview raw={r.raw} />
             </span>
-            <IconButton
+            <IconAction
               label={`Ukloni zamenski broj ${i + 1}`}
               icon={<TrashIcon size={16} />}
               size="sm"

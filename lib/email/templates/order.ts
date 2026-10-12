@@ -10,6 +10,7 @@ import {
   notice,
   paragraph,
   subheading,
+  well,
   type Block,
   type FactRow,
   type RenderedEmail,
@@ -84,7 +85,7 @@ function bankBlock(d: OrderEmailData): Block {
           "Broj računa šaljemo odvojeno",
           "Podaci za uplatu još nisu upisani u sistem; javićemo vam ih telefonom ili e-poštom.",
         )
-      : facts(rows),
+      : well(facts(rows, { bare: true })),
     d.proformaUrl ? linkLine("Predračun za štampu", d.proformaUrl) : null,
     paragraph(d.payment.instructions, { muted: true }),
   );

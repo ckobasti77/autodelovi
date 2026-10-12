@@ -1,55 +1,38 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { UserCircleIcon } from "@phosphor-icons/react/dist/ssr";
 
-import { cn } from "@/lib/cn";
-import { RouteLink } from "@/components/ui/RouteLink";
-import { SignOutButton } from "@/components/auth/SignInForm";
+import { SectionHeading, SectionNav, type SectionNavItem } from "@/components/account/SectionNav";
 import { ROUTES } from "@/constants/routes";
 
-const ITEMS = [
+const PRIMARY: SectionNavItem[] = [
   { href: ROUTES.account, label: "Pregled", exact: true },
   { href: ROUTES.accountOrders, label: "Porudžbine" },
   { href: ROUTES.accountInquiries, label: "Upiti" },
   { href: ROUTES.accountVehicles, label: "Vozila" },
-  { href: ROUTES.accountProfile, label: "Profil" },
 ];
 
-/** Account navigation (underline tabs as links; horizontal scroll on phones). */
+const MORE: SectionNavItem[] = [
+  { href: ROUTES.accountProfile, label: "Profil", icon: <UserCircleIcon size={16} /> },
+];
+
+const AREA = "Moj nalog";
+
+/** Account navigation: four tabs as links; the profile and sign-out sit behind „Još“. */
 export function AccountNav() {
-  const pathname = usePathname();
+  return <SectionNav label="Nalog" primary={PRIMARY} more={MORE} />;
+}
+
+/** Account heading: „Moj nalog“ on the overview, the open view everywhere else (A11Y-21). */
+export function AccountHeading({ who }: { who: string }) {
   return (
-    <div
-      className="flex flex-wrap items-end justify-between gap-3 border-b border-line"
-      data-reveal="off"
-    >
-      <nav aria-label="Nalog" className="-mb-px flex overflow-x-auto">
-        <ul className="flex gap-6">
-          {ITEMS.map((item) => {
-            const active = item.exact ? pathname === item.href : pathname.startsWith(item.href);
-            return (
-              <li key={item.href}>
-                <RouteLink
-                  href={item.href}
-                  aria-current={active ? "page" : undefined}
-                  className={cn(
-                    "inline-flex h-11 items-center whitespace-nowrap border-b-2 type-body-s font-medium transition-control",
-                    active
-                      ? "border-accent text-ink-1"
-                      : "border-transparent text-ink-2 hover:text-ink-1",
-                  )}
-                >
-                  {item.label}
-                </RouteLink>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-      {/* Phones: sign-out sits at the end of the account pages instead (VIS-28). */}
-      <div className="hidden pb-1.5 lg:block">
-        <SignOutButton />
-      </div>
-    </div>
+    <SectionHeading
+      area={AREA}
+      rootHref={ROUTES.account}
+      context={who}
+      overviewContext={`Prijavljeni ste kao ${who}`}
+      items={[...PRIMARY.slice(1), ...MORE]}
+      records={[{ prefix: ROUTES.accountOrders, title: "Porudžbina" }]}
+    />
   );
 }

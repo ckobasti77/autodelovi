@@ -14,7 +14,12 @@ import path from "node:path";
 import { chromium } from "@playwright/test";
 
 const args = process.argv.slice(2);
-const flag = (name) => args.find((a) => a.startsWith(`--${name}=`))?.split("=").slice(1).join("=");
+const flag = (name) =>
+  args
+    .find((a) => a.startsWith(`--${name}=`))
+    ?.split("=")
+    .slice(1)
+    .join("=");
 const target = args.find((a) => !a.startsWith("--")) ?? "/styleguide/otkrivanje";
 const base = flag("base") ?? "http://localhost:3000";
 const outDir = path.resolve(flag("out") ?? "docs/qa/screens/step-26/reveal");
@@ -106,7 +111,10 @@ for (const v of VIEWPORTS) {
       const block = fresh.find((r) => r.kind === "rise" && frames.length < 8);
       if (block) {
         await page.waitForTimeout(90);
-        const file = path.join(outDir, `${v.tag}-${String(frames.length + 1).padStart(2, "0")}-${block.id.replace(/[^a-z0-9]+/gi, "_")}.png`);
+        const file = path.join(
+          outDir,
+          `${v.tag}-${String(frames.length + 1).padStart(2, "0")}-${block.id.replace(/[^a-z0-9]+/gi, "_")}.png`,
+        );
         await page.screenshot({ path: file });
         frames.push(path.basename(file));
       }
@@ -122,7 +130,9 @@ for (const v of VIEWPORTS) {
       (e) => e.offsetParent && e.textContent.trim() && getComputedStyle(e).opacity === "0",
     ).length,
   }));
-  console.log(`\n== ${target} @ ${v.tag} (line ${line ?? "config"}) — ${reveals.length} reveals, pending ${left.pending}, hidden ${left.hidden}`);
+  console.log(
+    `\n== ${target} @ ${v.tag} (line ${line ?? "config"}) — ${reveals.length} reveals, pending ${left.pending}, hidden ${left.hidden}`,
+  );
   const blocks = reveals.filter((r) => r.kind === "rise" || r.kind === "fade");
   for (const r of blocks.slice(0, 40)) {
     console.log(

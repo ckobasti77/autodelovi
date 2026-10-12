@@ -9,16 +9,14 @@ import { usePaginatedQuery, useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { ImageIcon, WarningIcon } from "@phosphor-icons/react/dist/ssr";
+import { ImageIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
-import { cn } from "@/lib/cn";
 import { compactDateTime, formatElapsed } from "@/lib/admin/format";
-import { slaLevel, workingMinutesBetween } from "@/lib/domain/sla";
+import { workingMinutesBetween } from "@/lib/domain/sla";
 import { formatPhone } from "@/lib/format/phone";
 import { INQUIRY_KIND_LABEL, CHANNEL_LABEL } from "@/lib/i18n/sr/admin";
 import { PREFERRED_CHANNEL_LABEL, type InquiryStatus } from "@/lib/i18n/sr/shop";
-import { Badge } from "@/components/ui/Badge";
 import { DataTable, type ColumnDef } from "@/components/ui/DataTable";
 import { Select } from "@/components/ui/Select";
 import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
@@ -27,15 +25,18 @@ import { ADMIN } from "@/constants/routes";
 
 import { useDebouncedValue, useNowMinute } from "../hooks";
 import {
+  Chip,
   DemoTag,
   DocNumber,
   InquiryStatusBadge,
+  ON_PAGE_FIELD,
   LoadMoreFooter,
   PageHeader,
   SearchField,
   SegmentedFilter,
 } from "../ui";
 import { useUrlFilters } from "../useUrlFilters";
+import { WaitMark, waitLevel } from "../waiting";
 
 type Row = FunctionReturnType<typeof api.inquiriesAdmin.list>["page"][number];
 
@@ -81,6 +82,14 @@ export function InquiriesList() {
   const roomy = useMediaQuery("(min-width: 1280px)");
   const wide = useMediaQuery("(min-width: 1600px)");
 
+  // „50 od 133“: `statusCounts` holds whole-status totals (capped at 500), so they describe the
+  // list only while no search or other filter narrows it.
+  const countKey = mine ? "mine" : f.status;
+  const listTotal =
+    counts && countKey in counts && !f.q && !f.vrsta && !f.majstori && !f.izvor
+      ? counts[countKey as keyof typeof counts]
+      : undefined;
+
   const columns = useMemo<ColumnDef<Row, unknown>[]>(
     () => [
       {
@@ -89,10 +98,20 @@ export function InquiriesList() {
         header: "Broj",
         meta: { sticky: "left" },
         cell: ({ row }) => (
-          <span className="flex flex-col items-start gap-1 2xl:flex-row 2xl:items-center 2xl:gap-2">
+          // Flags are 20 px chips: under the number they fit the 48 px row (the list keeps one
+          // row height), beside it from 1536 px.
+          <span className="flex flex-col items-start gap-0.5 2xl:flex-row 2xl:items-center 2xl:gap-2">
             <DocNumber number={row.original.number} />
-            {row.original.isMechanic ? <Badge tone="info">Majstor</Badge> : null}
-            {row.original.isDemo ? <DemoTag /> : null}
+            {row.original.isMechanic || row.original.isDemo ? (
+              <span className="flex items-center gap-1">
+                {row.original.isMechanic ? (
+                  <Chip tone="info" dense>
+                    Majstor
+                  </Chip>
+                ) : null}
+                {row.original.isDemo ? <DemoTag /> : null}
+              </span>
+            ) : null}
           </span>
         ),
       },
@@ -113,32 +132,21 @@ export function InquiriesList() {
             open && kpis
               ? workingMinutesBetween(r.createdAt, nowMinute, kpis.hours, kpis.holidays)
               : null;
-          const level = minutes !== null && kpis ? slaLevel(minutes, kpis.slaTargetMinutes) : "ok";
+          const level = minutes !== null && kpis ? waitLevel(minutes, kpis.slaTargetMinutes) : "ok";
           return (
             <span className="flex flex-col whitespace-nowrap">
               <span className="tabular-nums text-ink-2">
                 {compactDateTime(r.createdAt, nowMinute)}
               </span>
               {minutes !== null ? (
-                <span
-                  className={cn(
-                    "inline-flex items-center gap-1 type-caption tabular-nums",
-                    level === "late"
-                      ? "font-semibold text-danger"
-                      : level === "soon"
-                        ? "text-warning"
-                        : "text-ink-3",
-                  )}
-                >
-                  {level === "late" ? (
-                    <WarningIcon size={12} weight="bold" aria-hidden="true" />
-                  ) : null}
+                // The wait is neutral ink; the grade is an icon and a word (never colour alone).
+                <span className="inline-flex items-center gap-1.5 type-caption tabular-nums text-ink-3">
                   {minutes >= 1
                     ? `čeka ${formatElapsed(minutes)}`
                     : nowMinute - r.createdAt < 120_000
                       ? "upravo stigao"
                       : "van radnog vremena"}
-                  {level === "late" ? <span className="sr-only"> — kasni</span> : null}
+                  {minutes >= 1 && level !== "ok" ? <WaitMark level={level} /> : null}
                 </span>
               ) : null}
             </span>
@@ -252,6 +260,7 @@ export function InquiriesList() {
         <div className="w-48">
           <Select
             size="sm"
+            className={ON_PAGE_FIELD}
             aria-label="Vrsta upita"
             placeholder="Sve vrste"
             value={f.vrsta}
@@ -262,6 +271,7 @@ export function InquiriesList() {
         <div className="w-44">
           <Select
             size="sm"
+            className={ON_PAGE_FIELD}
             aria-label="Izvor upita"
             placeholder="Svi izvori"
             value={f.izvor}
@@ -298,6 +308,8 @@ export function InquiriesList() {
         status={status}
         onMore={loadMore}
         forms={["upit", "upita", "upita"]}
+        total={listTotal}
+        totalCap={500}
       />
     </div>
   );

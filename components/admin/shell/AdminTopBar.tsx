@@ -15,6 +15,7 @@ import {
   UserCircleIcon,
 } from "@phosphor-icons/react/dist/ssr";
 
+import { IconButton } from "@/components/ui/IconButton";
 import { Kbd } from "@/components/ui/Kbd";
 import { Menu } from "@/components/ui/Menu";
 import { RouteLink } from "@/components/ui/RouteLink";
@@ -42,17 +43,18 @@ export function AdminTopBar({
   const trail = breadcrumbTrail(pathname, crumb);
 
   return (
-    <header data-sticky-header="" className="sticky top-0 z-sticky h-14 shrink-0 border-b border-line bg-surface-1 print:hidden">
+    <header
+      data-sticky-header=""
+      className="sticky top-0 z-sticky h-14 shrink-0 border-b border-line bg-surface-1 print:hidden"
+    >
       {/* Same 1680 px column as <main>, so the bar lines up with the workspace at 2560 (VIS-39). */}
-      <div className="mx-auto flex h-full w-full max-w-[1680px] items-center gap-3 px-4 lg:px-6">
-        <button
-          type="button"
+      <div className="mx-auto flex h-full w-full max-w-[1680px] items-center gap-1 px-4 sm:gap-3 lg:px-6">
+        <IconButton
+          label="Meni administracije"
+          icon={<ListIcon size={22} />}
           onClick={onMenu}
-          aria-label="Meni administracije"
-          className="inline-flex size-10 cursor-pointer items-center justify-center rounded-sm text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 focus-ring-inset lg:hidden"
-        >
-          <ListIcon size={22} aria-hidden="true" />
-        </button>
+          className="-ml-2 focus-ring-inset lg:hidden"
+        />
         <nav aria-label="Putanja" className="min-w-0 flex-1">
           <ol className="flex min-w-0 items-center gap-1.5 type-body-s">
             {trail.map((t, i) => {
@@ -95,14 +97,12 @@ export function AdminTopBar({
           <span className="flex-1 truncate">Broj porudžbine, OEM, telefon…</span>
           <Kbd>Ctrl K</Kbd>
         </button>
-        <button
-          type="button"
+        <IconButton
+          label="Pretraga"
+          icon={<MagnifyingGlassIcon size={20} />}
           onClick={openPalette}
-          aria-label="Pretraga"
-          className="inline-flex size-10 cursor-pointer items-center justify-center rounded-sm text-ink-2 transition-control hover:bg-surface-2 focus-ring-inset md:hidden"
-        >
-          <MagnifyingGlassIcon size={20} aria-hidden="true" />
-        </button>
+          className="focus-ring-inset md:hidden"
+        />
         <NotificationBell nowMinute={nowMinute} />
         <Menu
           align="end"
@@ -110,7 +110,7 @@ export function AdminTopBar({
             <button
               type="button"
               aria-label={`Nalog: ${viewer.name}`}
-              className="inline-flex h-10 cursor-pointer items-center gap-2 rounded-sm px-2 text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 focus-ring-inset"
+              className="inline-flex h-11 min-w-11 cursor-pointer items-center justify-center gap-2 rounded-sm px-2 text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 focus-ring-inset"
             >
               <UserCircleIcon size={22} aria-hidden="true" />
               <span className="hidden max-w-40 truncate type-body-s xl:inline">{viewer.name}</span>

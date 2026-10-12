@@ -22,7 +22,7 @@ export function FiltersPopover({
   return (
     <Popover.Root>
       <Popover.Trigger asChild>
-        <Button variant="secondary" size="sm" icon={<FunnelIcon size={16} />}>
+        <Button variant="quiet" size="sm" icon={<FunnelIcon size={16} />}>
           Filteri{active > 0 ? ` (${active})` : ""}
         </Button>
       </Popover.Trigger>

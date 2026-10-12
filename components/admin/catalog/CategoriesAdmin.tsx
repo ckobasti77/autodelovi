@@ -8,7 +8,7 @@
  */
 import { useMutation, useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   ArrowDownIcon,
   ArrowUpIcon,
@@ -25,7 +25,6 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Dialog } from "@/components/ui/Dialog";
 import { Field } from "@/components/ui/Field";
-import { IconButton } from "@/components/ui/IconButton";
 import { Input } from "@/components/ui/Input";
 import { Select } from "@/components/ui/Select";
 import { Skeleton } from "@/components/ui/Skeleton";
@@ -33,7 +32,7 @@ import { Switch } from "@/components/ui/Switch";
 import { Textarea } from "@/components/ui/Textarea";
 import { toast } from "@/components/ui/Toast";
 
-import { CharCount, PageHeader, SaveBar, Section } from "../ui";
+import { CharCount, IconAction, PageHeader, SaveBar, Section } from "../ui";
 
 type Node = FunctionReturnType<typeof api.catalog.categoriesAdmin.tree>[number];
 
@@ -103,15 +102,17 @@ export function CategoriesAdmin() {
                         </span>
                       </button>
                     )}
-                    <span className="flex opacity-0 transition-control group-focus-within:opacity-100 group-hover:opacity-100">
-                      <IconButton
+                    {/* Shown on hover and focus where there is a pointer that can hover; always
+                        on touch screens, where nothing would ever reveal them. */}
+                    <span className="flex transition-control hover-hover:opacity-0 hover-hover:group-focus-within:opacity-100 hover-hover:group-hover:opacity-100">
+                      <IconAction
                         label={`Pomeri „${n.name}“ gore`}
                         icon={<ArrowUpIcon size={14} />}
                         size="sm"
                         disabled={pos <= 0}
                         onClick={() => void move({ categoryId: n._id, direction: "up" })}
                       />
-                      <IconButton
+                      <IconAction
                         label={`Pomeri „${n.name}“ dole`}
                         icon={<ArrowDownIcon size={14} />}
                         size="sm"
@@ -119,7 +120,7 @@ export function CategoriesAdmin() {
                         onClick={() => void move({ categoryId: n._id, direction: "down" })}
                       />
                       {n.kind !== "subcategory" ? (
-                        <IconButton
+                        <IconAction
                           label={`Nova kategorija u „${n.name}“`}
                           icon={<PlusIcon size={14} />}
                           size="sm"
@@ -205,6 +206,7 @@ function CategoryForm({ node }: { node: Node }) {
   const dirty = JSON.stringify(form) !== JSON.stringify(initial);
   const taxonomy = MESH_CATEGORIES.find((c) => c.slug === form.partKey);
   const thumb = node.thumbnailUrl ?? node.thumbnailPath;
+  const fileInput = useRef<HTMLInputElement>(null);
 
   const save = async () => {
     setSaving(true);
@@ -233,7 +235,7 @@ function CategoryForm({ node }: { node: Node }) {
         actions={
           <span className="flex items-center gap-2 type-caption text-ink-3">
             <span className="type-code-s normal-case">/{node.slug}</span>
-            <Badge tone="neutral">
+            <Badge size="text" tone="neutral">
               {node.productCount} art. · {node.inStockCount} na stanju
             </Badge>
           </span>
@@ -298,7 +300,7 @@ function CategoryForm({ node }: { node: Node }) {
       <div className="grid gap-6 lg:grid-cols-2">
         <Section title="Sličica">
           <div className="flex items-start gap-4">
-            <span className="flex size-28 shrink-0 items-center justify-center overflow-hidden rounded-md border border-line bg-bg">
+            <span className="flex size-28 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-line bg-bg">
               {thumb ? (
                 // eslint-disable-next-line @next/next/no-img-element -- category render or uploaded image, admin preview
                 <img src={thumb} alt="" className="size-full object-contain" />
@@ -314,38 +316,43 @@ function CategoryForm({ node }: { node: Node }) {
                     ? "Render iz 3D modela."
                     : "Bez sličice."}
               </p>
-              <label className="inline-flex">
-                <span className="sr-only">Otpremi sličicu</span>
-                <input
-                  type="file"
-                  accept="image/jpeg,image/png,image/webp,image/avif"
-                  className="sr-only"
-                  onChange={async (e) => {
-                    const file = e.target.files?.[0];
-                    e.target.value = "";
-                    if (!file) return;
-                    try {
-                      const url = await uploadUrl({});
-                      const res = await fetch(url, {
-                        method: "POST",
-                        headers: { "Content-Type": file.type },
-                        body: file,
-                      });
-                      const { storageId } = (await res.json()) as { storageId: Id<"_storage"> };
-                      await setThumbnail({ categoryId: node._id, storageId });
-                      toast.success("Sličica je otpremljena.");
-                    } catch (err) {
-                      toast.error(convexErrorMessage(err, "Sličica nije otpremljena."));
-                    }
-                  }}
-                />
-                <span
-                  aria-hidden="true"
-                  className="inline-flex h-9 cursor-pointer items-center gap-2 rounded-sm border border-control px-3 type-button-s text-ink-1 hover:bg-surface-2"
-                >
-                  <UploadSimpleIcon size={16} /> Otpremi sliku
-                </span>
-              </label>
+              {/* A real button opens the picker (keyboard focus used to land on a hidden input
+                  with no visible ring). */}
+              <Button
+                variant="secondary"
+                size="sm"
+                className="self-start"
+                icon={<UploadSimpleIcon size={16} />}
+                onClick={() => fileInput.current?.click()}
+              >
+                Otpremi sliku
+              </Button>
+              <input
+                ref={fileInput}
+                type="file"
+                accept="image/jpeg,image/png,image/webp,image/avif"
+                tabIndex={-1}
+                aria-hidden="true"
+                className="sr-only"
+                onChange={async (e) => {
+                  const file = e.target.files?.[0];
+                  e.target.value = "";
+                  if (!file) return;
+                  try {
+                    const url = await uploadUrl({});
+                    const res = await fetch(url, {
+                      method: "POST",
+                      headers: { "Content-Type": file.type },
+                      body: file,
+                    });
+                    const { storageId } = (await res.json()) as { storageId: Id<"_storage"> };
+                    await setThumbnail({ categoryId: node._id, storageId });
+                    toast.success("Sličica je otpremljena.");
+                  } catch (err) {
+                    toast.error(convexErrorMessage(err, "Sličica nije otpremljena."));
+                  }
+                }}
+              />
               {node.thumbnailUrl ? (
                 <Button
                   variant="ghost"

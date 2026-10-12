@@ -97,7 +97,9 @@ export function AdminSidebar({
                       onClick={onNavigate}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "relative mx-2 flex h-10 items-center gap-3 rounded-sm px-3 type-body-s transition-control focus-ring-inset",
+                        // 44 px rows in the drawer (touch), 40 px beside a pointer.
+                        "relative mx-2 flex items-center gap-3 rounded-sm px-3 type-body-s transition-control focus-ring-inset",
+                        rail ? "h-10" : "h-11",
                         active
                           ? "bg-surface-2 font-semibold text-ink-1"
                           : "text-ink-2 hover:bg-surface-1 hover:text-ink-1",
@@ -107,7 +109,7 @@ export function AdminSidebar({
                       {active ? (
                         <span
                           aria-hidden="true"
-                          className="absolute inset-y-2 left-0 w-0.5 bg-accent"
+                          className="absolute inset-y-2 left-0 w-0.5 rounded-full bg-accent"
                         />
                       ) : null}
                       <Icon

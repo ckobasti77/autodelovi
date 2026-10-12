@@ -21,6 +21,7 @@ import { Button } from "@/components/ui/Button";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { Link } from "@/components/ui/Link";
 import { RouteLink } from "@/components/ui/RouteLink";
+import { RevealGroup, RevealItem } from "@/components/reveal/Reveal";
 import { RevealText } from "@/components/text-reveal/RevealText";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { LandingLinks } from "@/components/seo/LandingLinks";
@@ -44,8 +45,12 @@ async function load(marka: string, model: string, generacija: string, motor: str
   return { brand, model: m, generation: g, engines, engine, parts };
 }
 
+/** Engine filter: a filled chip (one of many — never a wall of outlines); the chosen one is yours. */
 const ENGINE_CHIP =
-  "flex h-full min-h-14 flex-col justify-center gap-0.5 rounded-sm border border-line-strong px-3 py-2 text-ink-1 transition-control hover:border-ink-3 aria-[current]:border-accent aria-[current]:bg-accent-subtle";
+  "flex h-full min-h-14 flex-col justify-center gap-0.5 rounded-sm border border-line bg-surface-2 px-3 py-2 text-ink-1 transition-control hover:border-line-strong hover:bg-surface-3 active:translate-y-px aria-[current]:border-accent aria-[current]:bg-accent-subtle";
+
+/** Category tiles of the first row (five across at 1440): on the first screen, so eager. */
+const EAGER_TILES = 5;
 
 function motorParam(value: string | string[] | undefined): string | undefined {
   const v = Array.isArray(value) ? value[0] : value;
@@ -124,7 +129,7 @@ export default async function VehicleGenerationPage({
     <div className="px-page pb-(--space-section) pt-6 lg:pt-8">
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
       <Breadcrumbs items={crumbs} />
-      <div className="mt-4 grid gap-6 lg:grid-cols-12 lg:items-end lg:gap-x-(--gutter)">
+      <div className="mt-4 grid gap-5 lg:grid-cols-12 lg:items-end lg:gap-x-(--gutter)">
         <div className="flex flex-col gap-3 lg:col-span-8">
           <RevealText as="h1" className="type-display-l uppercase text-ink-1">
             {`Delovi za ${name}`}
@@ -143,7 +148,8 @@ export default async function VehicleGenerationPage({
             {pluralSr(parts.total, ["artikal", "artikla", "artikala"])}
           </p>
         </div>
-        <div className="lg:col-span-4 lg:justify-self-end">
+        {/* The one primary of the page: makes this generation the visitor's vehicle. */}
+        <div className="flex flex-col gap-2 lg:col-span-4 lg:items-end">
           <UseVehicleButton
             vehicle={{
               brand: { slug: brand.brand.slug, name: brand.brand.name },
@@ -157,6 +163,9 @@ export default async function VehicleGenerationPage({
               engine: engine ? { slug: engine.slug, name: engine.name, codes: engine.codes } : null,
             }}
           />
+          <p className="type-caption font-normal text-ink-3 lg:text-right">
+            Katalog, pretraga i 3D prikaz zatim pokazuju delove za ovo vozilo.
+          </p>
         </div>
       </div>
 
@@ -199,7 +208,8 @@ export default async function VehicleGenerationPage({
 
       {parts.categories.length === 0 ? (
         <EmptyState
-          className="mt-10"
+          className="mt-6"
+          align="start"
           icon={<ListMagnifyingGlassIcon size={44} />}
           as="h2"
           title="Još nemamo delove sa unetom kompatibilnošću"
@@ -215,22 +225,25 @@ export default async function VehicleGenerationPage({
         </EmptyState>
       ) : (
         <>
-          <section aria-labelledby="cats-title" className="mt-12">
+          <section aria-labelledby="cats-title" className="mt-block">
             <h2 id="cats-title" className="type-h2 text-ink-1">
               Delovi po kategorijama
             </h2>
-            <ul className="mt-5 grid grid-cols-2 gap-3 sm:gap-(--gutter) md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 3xl:grid-cols-6">
-              {parts.categories.map(({ category, count }) => (
-                <li key={category.slug}>
+            <RevealGroup
+              as="ul"
+              className="mt-5 grid grid-cols-2 gap-3 sm:gap-(--gutter) md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 3xl:grid-cols-6"
+            >
+              {parts.categories.map(({ category, count }, i) => (
+                <RevealItem as="li" key={category.slug} eager={i < EAGER_TILES} index={i}>
                   <CategoryTile
                     category={category}
                     count={count}
                     size="s"
                     href={`${ROUTES.category(category.slug)}${catalogQuery(vehicleFilters)}`}
                   />
-                </li>
+                </RevealItem>
               ))}
-            </ul>
+            </RevealGroup>
           </section>
           {parts.top.length > 0 ? (
             <section aria-labelledby="top-title" className="mt-14">

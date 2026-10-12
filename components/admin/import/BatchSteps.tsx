@@ -428,20 +428,15 @@ export function CommitStep({ batch, onNew }: { batch: Batch; onNew?: () => void 
       ) : null}
 
       <div className="flex flex-wrap items-center gap-3">
-        <RouteLink
-          href={ADMIN.importBatch(batch._id)}
-          className="inline-flex h-11 items-center rounded-sm border border-control px-4 type-body-s text-ink-1 transition-control hover:bg-surface-2 focus-ring"
-        >
-          Zapis uvoza
-        </RouteLink>
-        <a
-          href={ADMIN.importReport(batch._id)}
-          download
-          className="inline-flex h-11 items-center gap-1.5 rounded-sm px-4 type-body-s text-ink-1 transition-control hover:bg-surface-2 focus-ring"
-        >
-          <DownloadSimpleIcon size={16} aria-hidden="true" />
-          Izveštaj
-        </a>
+        <Button asChild variant="quiet">
+          <RouteLink href={ADMIN.importBatch(batch._id)}>Zapis uvoza</RouteLink>
+        </Button>
+        <Button asChild variant="ghost">
+          <a href={ADMIN.importReport(batch._id)} download>
+            <DownloadSimpleIcon size={16} aria-hidden="true" />
+            Izveštaj
+          </a>
+        </Button>
         {batch.status === "committed" || batch.status === "failed" ? (
           <Button
             variant="secondary"

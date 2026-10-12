@@ -46,7 +46,7 @@ import { AdLandingsTab } from "./AdLandingsTab";
 import { NotificationPrefsMatrix } from "./NotificationPrefsMatrix";
 import { LandingOverview, TrackingStatus } from "./SeoPanels";
 import { UnsavedProvider, useUnsavedFlag, useUnsavedRegistry } from "./unsaved";
-import { PageHeader, SaveBar, Section } from "../ui";
+import { CompactInput, PageHeader, SaveBar, Section } from "../ui";
 import { useUrlFilters } from "../useUrlFilters";
 
 type Settings = FunctionReturnType<typeof api.settings.getAdmin>;
@@ -388,7 +388,7 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
                 key={i}
                 className="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)_auto] items-start gap-2"
               >
-                <Input
+                <CompactInput
                   aria-label={`Oznaka telefona ${i + 1}`}
                   value={p.label}
                   placeholder="Prodaja"
@@ -399,10 +399,9 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
                       ),
                     })
                   }
-                  className="h-9"
                 />
                 <Field label={`Broj ${i + 1}`} hideLabel error={phoneErrors[i]}>
-                  <Input
+                  <CompactInput
                     value={p.e164}
                     placeholder="064 123 4567"
                     onChange={(e) =>
@@ -418,7 +417,6 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
                         setC({ phones: c.phones.map((x, j) => (j === i ? { ...x, e164: n } : x)) });
                     }}
                     inputMode="tel"
-                    className="h-9"
                   />
                 </Field>
                 <IconButton
@@ -446,7 +444,7 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
                 key={i}
                 className="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)_auto] items-start gap-2"
               >
-                <Input
+                <CompactInput
                   aria-label={`Banka ${i + 1}`}
                   value={a.bank}
                   placeholder="Banka"
@@ -457,7 +455,6 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
                       ),
                     })
                   }
-                  className="h-9"
                 />
                 <Field
                   id={companyFieldId(`bank${i}`)}
@@ -465,7 +462,7 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
                   hideLabel
                   error={errorFor(`bank${i}`)}
                 >
-                  <Input
+                  <CompactInput
                     value={a.account}
                     placeholder="160-0000000000000-00"
                     onChange={(e) =>
@@ -476,7 +473,6 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
                       })
                     }
                     onBlur={touch(`bank${i}`)}
-                    className="h-9"
                     inputClassName="font-mono"
                     data-testid={`admin-settings-bank-${i}`}
                   />
@@ -585,7 +581,7 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
               key={i}
               className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_auto] items-center gap-2"
             >
-              <Input
+              <CompactInput
                 aria-label={`Činjenica ${i + 1}, oznaka`}
                 value={fact.label}
                 placeholder="Oznaka"
@@ -594,9 +590,8 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
                     facts.draft.map((x, j) => (j === i ? { ...x, label: e.target.value } : x)),
                   )
                 }
-                className="h-9"
               />
-              <Input
+              <CompactInput
                 aria-label={`Činjenica ${i + 1}, vrednost`}
                 value={fact.value}
                 placeholder="Vrednost"
@@ -605,7 +600,6 @@ function CompanyTab({ s, can }: { s: Settings; can: boolean }) {
                     facts.draft.map((x, j) => (j === i ? { ...x, value: e.target.value } : x)),
                   )
                 }
-                className="h-9"
               />
               <IconButton
                 label={`Ukloni činjenicu ${i + 1}`}
@@ -680,22 +674,24 @@ function HoursTab({ s, can }: { s: Settings; can: boolean }) {
                 </td>
                 <td className="py-2">
                   <span className="flex items-center gap-2">
-                    <input
+                    <CompactInput
                       type="time"
                       aria-label={`${WEEKDAY_LABEL[h.day]}, otvara se`}
                       disabled={h.closed || !can}
                       value={h.open}
                       onChange={(e) => setDay(h.day, { open: e.target.value })}
-                      className="h-9 rounded-sm border border-control bg-surface-1 px-2 tabular-nums disabled:opacity-50"
+                      className="w-28! px-2!"
+                      inputClassName="tabular-nums"
                     />
                     <span aria-hidden="true">–</span>
-                    <input
+                    <CompactInput
                       type="time"
                       aria-label={`${WEEKDAY_LABEL[h.day]}, zatvara se`}
                       disabled={h.closed || !can}
                       value={h.close}
                       onChange={(e) => setDay(h.day, { close: e.target.value })}
-                      className="h-9 rounded-sm border border-control bg-surface-1 px-2 tabular-nums disabled:opacity-50"
+                      className="w-28! px-2!"
+                      inputClassName="tabular-nums"
                     />
                   </span>
                 </td>
@@ -723,7 +719,7 @@ function HoursTab({ s, can }: { s: Settings; can: boolean }) {
               key={i}
               className="grid max-w-xl grid-cols-[11rem_minmax(0,1fr)_auto] items-center gap-2"
             >
-              <Input
+              <CompactInput
                 aria-label={`Datum ${i + 1}`}
                 type="date"
                 value={h.date}
@@ -732,9 +728,8 @@ function HoursTab({ s, can }: { s: Settings; can: boolean }) {
                     holidays.draft.map((x, j) => (j === i ? { ...x, date: e.target.value } : x)),
                   )
                 }
-                className="h-9"
               />
-              <Input
+              <CompactInput
                 aria-label={`Opis ${i + 1}`}
                 value={h.note}
                 placeholder="npr. Nova godina"
@@ -743,7 +738,6 @@ function HoursTab({ s, can }: { s: Settings; can: boolean }) {
                     holidays.draft.map((x, j) => (j === i ? { ...x, note: e.target.value } : x)),
                   )
                 }
-                className="h-9"
               />
               <IconButton
                 label={`Ukloni neradni dan ${i + 1}`}
@@ -938,23 +932,18 @@ function CommerceTab({ s, can }: { s: Settings; can: boolean }) {
                 className="grid gap-3 rounded-md border border-line p-3 md:grid-cols-[minmax(0,1fr)_9rem_9rem_auto]"
               >
                 <Field label="Naziv">
-                  <Input
-                    value={d.label}
-                    onChange={(e) => set({ label: e.target.value })}
-                    className="h-9"
-                  />
+                  <CompactInput value={d.label} onChange={(e) => set({ label: e.target.value })} />
                 </Field>
                 <Field label="Cena">
-                  <Input
+                  <CompactInput
                     value={moneyInputValue(d.pricePara)}
                     onChange={(e) => set({ pricePara: parseMoneyInput(e.target.value) ?? 0 })}
                     suffix="RSD"
                     inputMode="decimal"
-                    className="h-9"
                   />
                 </Field>
                 <Field label="Besplatno preko">
-                  <Input
+                  <CompactInput
                     value={moneyInputValue(d.freeOverPara ?? null)}
                     onChange={(e) => {
                       const v = parseMoneyInput(e.target.value);
@@ -962,7 +951,6 @@ function CommerceTab({ s, can }: { s: Settings; can: boolean }) {
                     }}
                     suffix="RSD"
                     inputMode="decimal"
-                    className="h-9"
                   />
                 </Field>
                 <div className="flex items-end pb-1">
@@ -973,17 +961,15 @@ function CommerceTab({ s, can }: { s: Settings; can: boolean }) {
                   />
                 </div>
                 <Field label="Opis" className="md:col-span-2">
-                  <Input
+                  <CompactInput
                     value={d.description}
                     onChange={(e) => set({ description: e.target.value })}
-                    className="h-9"
                   />
                 </Field>
                 <Field label="Rok" className="md:col-span-2">
-                  <Input
+                  <CompactInput
                     value={d.etaText}
                     onChange={(e) => set({ etaText: e.target.value })}
-                    className="h-9"
                   />
                 </Field>
               </div>
@@ -1015,17 +1001,12 @@ function CommerceTab({ s, can }: { s: Settings; can: boolean }) {
                 className="grid gap-3 rounded-md border border-line p-3 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)_auto]"
               >
                 <Field label="Naziv">
-                  <Input
-                    value={p.label}
-                    onChange={(e) => set({ label: e.target.value })}
-                    className="h-9"
-                  />
+                  <CompactInput value={p.label} onChange={(e) => set({ label: e.target.value })} />
                 </Field>
                 <Field label="Uputstvo kupcu">
-                  <Input
+                  <CompactInput
                     value={p.instructions}
                     onChange={(e) => set({ instructions: e.target.value })}
-                    className="h-9"
                   />
                 </Field>
                 <div className="flex items-end pb-1">
@@ -1060,7 +1041,7 @@ function CommerceTab({ s, can }: { s: Settings; can: boolean }) {
               key={k.code}
               className="grid grid-cols-[minmax(0,0.6fr)_minmax(0,1.4fr)] items-center gap-2"
             >
-              <Input
+              <CompactInput
                 aria-label={`Naziv kurira ${i + 1}`}
                 value={k.name}
                 onChange={(e) =>
@@ -1068,9 +1049,8 @@ function CommerceTab({ s, can }: { s: Settings; can: boolean }) {
                     couriers.draft.map((x, j) => (j === i ? { ...x, name: e.target.value } : x)),
                   )
                 }
-                className="h-9"
               />
-              <Input
+              <CompactInput
                 aria-label={`Link za praćenje, ${k.name}`}
                 value={k.trackingUrlTemplate}
                 placeholder="https://…{broj}"
@@ -1081,7 +1061,6 @@ function CommerceTab({ s, can }: { s: Settings; can: boolean }) {
                     ),
                   )
                 }
-                className="h-9"
                 inputClassName="font-mono"
               />
             </div>
@@ -1688,7 +1667,7 @@ function PageEditor({
     <Section
       title={page.title}
       actions={
-        <Badge tone={f.needsLegalReview ? "warning" : "success"}>
+        <Badge size="text" tone={f.needsLegalReview ? "warning" : "success"}>
           {f.needsLegalReview ? "Čeka pregled pravnika" : "Pregledano"}
         </Badge>
       }
@@ -1713,10 +1692,7 @@ function PageEditor({
           </Field>
           <div className="flex flex-col gap-1">
             <p className="type-caption font-medium text-ink-2">Pregled</p>
-            <div
-              className="max-h-[36rem] overflow-y-auto panel p-4"
-              aria-label="Pregled stranice"
-            >
+            <div className="max-h-[36rem] overflow-y-auto panel p-4" aria-label="Pregled stranice">
               <Markdown source={preview} />
             </div>
           </div>

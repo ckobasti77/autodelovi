@@ -5,6 +5,10 @@
  * lozinka, only when signed out) → company → contact → workshop → consent. Signs up first,
  * then `mechanics.register` creates the pending profile for that account; Convex re-validates
  * everything (PIB checksum, MB, duplicate PIB).
+ *
+ * Every field group is one panel (title and note on the left, fields on the right) and one
+ * reveal block; the groups on the first screen are eager, so the form is usable from the first
+ * frame. The consent and the submit button close the form in a raised panel.
  */
 import { useAuthActions } from "@convex-dev/auth/react";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -26,7 +30,6 @@ import {
   normalizeMb,
   normalizePib,
 } from "@/lib/domain/identifiers";
-import { cn } from "@/lib/cn";
 import { convexErrorCode, convexErrorMessage } from "@/lib/i18n/sr/shop";
 import { SERVICE_TYPES } from "@/lib/i18n/sr/mechanic";
 import { buildConsent } from "@/lib/validation/consent";
@@ -35,8 +38,11 @@ import {
   REGISTRATION_FIELDS,
   type MechanicRegistrationValues,
 } from "@/lib/validation/mechanicRegistration";
+import { PasswordField } from "@/components/auth/PasswordField";
+import { ChoiceChip } from "@/components/mechanic/ChoiceChip";
+import { Reveal } from "@/components/reveal/Reveal";
 import { Button } from "@/components/ui/Button";
-import { Checkbox, CheckboxBox } from "@/components/ui/Checkbox";
+import { Checkbox } from "@/components/ui/Checkbox";
 import {
   Field,
   FormNoScript,
@@ -69,32 +75,43 @@ type TextField =
 
 const PASSWORD_HELP = "Najmanje 10 znakova, bar jedno slovo i jedna cifra.";
 
+/** Groups that fit the first screen at 1440 px are eager; the rest arrive on scroll. */
+const EAGER_GROUPS = 3;
+
+const GROUP_GRID = "grid gap-x-(--gutter) gap-y-4 p-4 sm:p-6 lg:grid-cols-[13rem_minmax(0,1fr)]";
+
 function Section({
   id,
   title,
   aside,
+  order,
   children,
 }: {
   id: string;
   title: string;
   aside?: string;
+  /** Position among the form's groups (decides eager and the entrance delay). */
+  order: number;
   children: React.ReactNode;
 }) {
   return (
-    <section
+    <Reveal
+      as="section"
+      eager={order < EAGER_GROUPS}
+      index={order}
       aria-labelledby={id}
-      className="grid gap-x-(--gutter) gap-y-4 border-t border-line pt-6 lg:grid-cols-[14rem_minmax(0,1fr)]"
+      className={`${GROUP_GRID} panel`}
     >
       <div>
         <h2 id={id} className="type-h3 text-ink-1">
           {title}
         </h2>
-        {aside ? <p className="mt-2 max-w-[34ch] type-body-s text-ink-3">{aside}</p> : null}
+        {aside ? <p className="mt-1.5 max-w-[34ch] type-body-s text-ink-3">{aside}</p> : null}
       </div>
       <div role="group" aria-labelledby={id} className="flex min-w-0 flex-col gap-5">
         {children}
       </div>
-    </section>
+    </Reveal>
   );
 }
 
@@ -157,6 +174,8 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
       : [];
 
   const focusSummary = () => requestAnimationFrame(() => summary.current?.focus());
+  // The account group exists only for signed-out visitors; the others follow it.
+  const first = needsAccount ? 1 : 0;
 
   const onValid = async (values: MechanicRegistrationValues) => {
     setPending(true);
@@ -239,12 +258,12 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
       method="post"
       noValidate
       onSubmit={(event) => void handleSubmit(onValid, focusSummary)(event)}
-      className="flex flex-col gap-8"
+      className="flex flex-col gap-4"
       data-reveal="off"
       data-testid={TEST_IDS.mechanicRegistrationForm}
     >
       <RequiredUnlessOptional>
-        <div ref={summary} tabIndex={-1} className="outline-none">
+        <div ref={summary} tabIndex={-1} className="outline-none empty:hidden">
           {errorList.length || serverError ? (
             <div role="alert" className="rounded-md border border-danger bg-danger-subtle p-4">
               <p className="flex items-center gap-2 type-body-s font-semibold text-danger">
@@ -284,6 +303,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
             id="mr-sec-account"
             title="Nalog"
             aside="Ovim podacima se prijavljujete. Ako već imate nalog, prvo se prijavite."
+            order={0}
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <Field id="mr-email" label="E-pošta" error={errors.email?.message}>
@@ -295,19 +315,15 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
                   {...keep(register("email"))}
                 />
               </Field>
-              <Field
+              <PasswordField
                 id="mr-password"
                 label="Lozinka"
                 help={PASSWORD_HELP}
                 error={errors.password?.message}
-              >
-                <Input
-                  type="password"
-                  autoComplete="new-password"
-                  data-testid={TEST_IDS.mechanicRegPassword}
-                  {...keep(register("password"))}
-                />
-              </Field>
+                autoComplete="new-password"
+                data-testid={TEST_IDS.mechanicRegPassword}
+                {...keep(register("password"))}
+              />
             </div>
             <p className="type-body-s text-ink-3">
               Već imate nalog?{" "}
@@ -321,7 +337,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
             </p>
           </Section>
         ) : (
-          <p className="flex items-start gap-2 panel p-4 type-body-s text-ink-2">
+          <p className="flex items-start gap-2 panel-inset p-4 type-body-s text-ink-2">
             <CheckCircleIcon
               size={18}
               aria-hidden="true"
@@ -335,6 +351,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
           id="mr-sec-company"
           title="Firma"
           aside="Podatke proveravamo u registru pre odobrenja."
+          order={first}
         >
           <Field
             id="mr-companyName"
@@ -383,7 +400,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
           </div>
         </Section>
 
-        <Section id="mr-sec-contact" title="Kontakt">
+        <Section id="mr-sec-contact" title="Kontakt" order={first + 1}>
           <div className="grid gap-5 sm:grid-cols-2">
             <Field
               id="mr-contactPerson"
@@ -417,6 +434,7 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
           id="mr-sec-workshop"
           title="Servis"
           aside="Na ovu adresu šaljemo delove. Adresu možete da promenite u svakoj porudžbini."
+          order={first + 2}
         >
           <div className="grid gap-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
             <Field id="mr-city" label="Mesto" error={errors.city?.message}>
@@ -448,35 +466,21 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
                   Vrsta servisa
                 </span>
                 <div className="flex flex-wrap gap-2">
-                  {SERVICE_TYPES.map((s) => {
-                    const on = field.value.includes(s.value);
-                    return (
-                      <label
-                        key={s.value}
-                        className={cn(
-                          "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-sm border px-3 type-body-s transition-control",
-                          on
-                            ? "border-accent bg-accent-subtle text-ink-1"
-                            : "border-line-strong text-ink-2 hover:border-ink-3",
-                        )}
-                      >
-                        <CheckboxBox
-                          aria-label={s.label}
-                          checked={on}
-                          onCheckedChange={(c) =>
-                            field.onChange(
-                              c === true
-                                ? [...field.value, s.value]
-                                : field.value.filter((x) => x !== s.value),
-                            )
-                          }
-                          onBlur={field.onBlur}
-                          data-testid={`${TEST_IDS.mechanicRegService}-${s.value}`}
-                        />
-                        {s.label}
-                      </label>
-                    );
-                  })}
+                  {SERVICE_TYPES.map((s) => (
+                    <ChoiceChip
+                      key={s.value}
+                      on={field.value.includes(s.value)}
+                      onChange={(on) =>
+                        field.onChange(
+                          on ? [...field.value, s.value] : field.value.filter((x) => x !== s.value),
+                        )
+                      }
+                      onBlur={field.onBlur}
+                      testId={`${TEST_IDS.mechanicRegService}-${s.value}`}
+                    >
+                      {s.label}
+                    </ChoiceChip>
+                  ))}
                 </div>
                 {errors.serviceTypes?.message ? (
                   <p className="flex items-center gap-1.5 type-caption text-danger">
@@ -501,89 +505,80 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
                   Marke koje servisirate <span className="text-ink-3">(nije obavezno)</span>
                 </span>
                 <div className="flex flex-wrap gap-2">
-                  {config.brands.map((b) => {
-                    const on = field.value.includes(b.id);
-                    return (
-                      <label
-                        key={b.id}
-                        className={cn(
-                          "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-sm border px-3 type-body-s transition-control",
+                  {config.brands.map((b) => (
+                    <ChoiceChip
+                      key={b.id}
+                      on={field.value.includes(b.id)}
+                      onChange={(on) =>
+                        field.onChange(
                           on
-                            ? "border-accent bg-accent-subtle text-ink-1"
-                            : "border-line-strong text-ink-2 hover:border-ink-3",
-                        )}
-                      >
-                        <CheckboxBox
-                          aria-label={b.name}
-                          checked={on}
-                          onCheckedChange={(c) =>
-                            field.onChange(
-                              c === true
-                                ? [...field.value, b.id].slice(0, 5)
-                                : field.value.filter((x) => x !== b.id),
-                            )
-                          }
-                          onBlur={field.onBlur}
-                        />
-                        {b.name}
-                      </label>
-                    );
-                  })}
+                            ? [...field.value, b.id].slice(0, 5)
+                            : field.value.filter((x) => x !== b.id),
+                        )
+                      }
+                      onBlur={field.onBlur}
+                    >
+                      {b.name}
+                    </ChoiceChip>
+                  ))}
                 </div>
               </div>
             )}
           />
         </Section>
 
-        <div className="flex flex-col gap-5 border-t border-line pt-6 lg:pl-[calc(14rem+var(--gutter))]">
-          <Controller
-            control={control}
-            name="terms"
-            render={({ field }) => (
-              <div>
-                <Checkbox
-                  id="mr-terms"
-                  checked={field.value}
-                  onCheckedChange={(c) => field.onChange(c === true)}
-                  onBlur={field.onBlur}
-                  required
-                  error={errors.terms?.message}
-                  data-testid={TEST_IDS.mechanicRegTerms}
-                  label={
-                    <span>
-                      Prihvatam{" "}
-                      <Link href={ROUTES.terms} variant="inline" target="_blank">
-                        uslove korišćenja
-                      </Link>{" "}
-                      i{" "}
-                      <Link href={ROUTES.privacy} variant="inline" target="_blank">
-                        politiku privatnosti
-                      </Link>
-                      .
-                    </span>
-                  }
-                />
-              </div>
-            )}
-          />
-          <div className="flex flex-wrap items-center gap-4">
-            <Button
-              type="submit"
-              size="lg"
-              loading={pending}
-              disabled={!hydrated}
-              data-testid={TEST_IDS.mechanicRegSubmit}
-            >
-              Registrujte servis
-            </Button>
-            <p className="type-body-s text-ink-3">
-              Odgovor stiže e-poštom, obično u toku radnog dana.
-            </p>
+        <Reveal className={`${GROUP_GRID} panel-raised`}>
+          <div className="flex min-w-0 flex-col gap-5 lg:col-start-2">
+            <Controller
+              control={control}
+              name="terms"
+              render={({ field }) => (
+                <div>
+                  <Checkbox
+                    id="mr-terms"
+                    checked={field.value}
+                    onCheckedChange={(c) => field.onChange(c === true)}
+                    onBlur={field.onBlur}
+                    required
+                    error={errors.terms?.message}
+                    data-testid={TEST_IDS.mechanicRegTerms}
+                    label={
+                      <span>
+                        Prihvatam{" "}
+                        <Link href={ROUTES.terms} variant="inline" target="_blank">
+                          uslove korišćenja
+                        </Link>{" "}
+                        i{" "}
+                        <Link href={ROUTES.privacy} variant="inline" target="_blank">
+                          politiku privatnosti
+                        </Link>
+                        .
+                      </span>
+                    }
+                  />
+                </div>
+              )}
+            />
+            <div className="flex flex-wrap items-center gap-4">
+              <Button
+                type="submit"
+                size="lg"
+                loading={pending}
+                disabled={!hydrated}
+                data-testid={TEST_IDS.mechanicRegSubmit}
+              >
+                Registrujte servis
+              </Button>
+              <p className="type-body-s text-ink-3">
+                Odgovor stiže e-poštom, obično u toku radnog dana.
+              </p>
+            </div>
+            <FormNoScript>
+              Za registraciju je potreban JavaScript. Uključite ga u pregledaču, pa osvežite
+              stranicu.
+            </FormNoScript>
           </div>
-          <FormNoScript>
-            Za registraciju je potreban JavaScript. Uključite ga u pregledaču, pa osvežite stranicu.
-          </FormNoScript>
-        </div>
+        </Reveal>
       </RequiredUnlessOptional>
     </form>
   );

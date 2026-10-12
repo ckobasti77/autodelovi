@@ -19,7 +19,7 @@ export const metadata: Metadata = privateMetadata(NOT_FOUND_TITLE);
 export default function NotFound() {
   return (
     <BareShell>
-      <NotFoundContent search={<NotFoundSearchForm />} />
+      <NotFoundContent code="404" search={<NotFoundSearchForm />} />
     </BareShell>
   );
 }

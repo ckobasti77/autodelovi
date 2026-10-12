@@ -1,8 +1,7 @@
 import { LockSimpleIcon } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 
-import { BareShell, NotFoundContent } from "@/components/shell/NotFoundContent";
-import { Link } from "@/components/ui/Link";
+import { BareShell, NotFoundContent, StateLinks } from "@/components/shell/NotFoundContent";
 import { ROUTES } from "@/constants/routes";
 import { privateMetadata } from "@/lib/seo/metadata";
 
@@ -18,26 +17,19 @@ export default function Forbidden() {
     <BareShell>
       <NotFoundContent
         icon={<LockSimpleIcon size={40} aria-hidden="true" className="text-ink-3" />}
+        code="403"
         title="Nemate pristup ovoj strani"
         lead="Nalog kojim ste prijavljeni nema dozvolu za ovaj deo sajta. Ako mislite da je to greška, pozovite nas ili pišite, pa ćemo proveriti nalog."
         aside={
-          <ul className="flex flex-col gap-2">
-            <li>
-              <Link href={ROUTES.home} variant="standalone">
-                Početna
-              </Link>
-            </li>
-            <li>
-              <Link href={ROUTES.signIn} variant="standalone">
-                Prijava drugim nalogom
-              </Link>
-            </li>
-            <li>
-              <Link href={ROUTES.contact} variant="standalone">
-                Kontakt
-              </Link>
-            </li>
-          </ul>
+          <StateLinks
+            id="forbidden-next"
+            title="Kuda dalje"
+            links={[
+              { href: ROUTES.home, label: "Početna" },
+              { href: ROUTES.signIn, label: "Prijava drugim nalogom" },
+              { href: ROUTES.contact, label: "Kontakt" },
+            ]}
+          />
         }
       />
     </BareShell>

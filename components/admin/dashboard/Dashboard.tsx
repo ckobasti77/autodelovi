@@ -7,49 +7,59 @@
  */
 import { useQuery } from "convex/react";
 import type { ReactNode } from "react";
-import { ArrowDownIcon, ArrowUpIcon, MinusIcon, WarningIcon } from "@phosphor-icons/react/dist/ssr";
+import {
+  ArrowDownIcon,
+  ArrowRightIcon,
+  ArrowUpIcon,
+  MinusIcon,
+} from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/cn";
 import { compactDateTime, formatAgo, formatElapsed } from "@/lib/admin/format";
-import { slaLevel, workingMinutesBetween } from "@/lib/domain/sla";
+import { workingMinutesBetween } from "@/lib/domain/sla";
+import { belgradeDay } from "@/lib/domain/time";
 import { formatDate } from "@/lib/format/date";
 import { formatRSD } from "@/lib/format/money";
 import { INQUIRY_KIND_LABEL } from "@/lib/i18n/sr/admin";
-import { Badge } from "@/components/ui/Badge";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { ADMIN } from "@/constants/routes";
 
 import { BarList, ColumnChart } from "../charts";
 import { useNowMinute } from "../hooks";
-import { ActorLabel, CompanySetupNotice, DocNumber, PageHeader, Section } from "../ui";
+import { ActorLabel, Chip, CompanySetupNotice, DocNumber, PageHeader, Section } from "../ui";
+import { WAIT_HINT, WAIT_LEVELS, WaitMark, waitLevel } from "../waiting";
 
+/**
+ * One KPI cell: a link to the list filtered to exactly what the figure counts. The figure stays
+ * neutral ink — a state (late, low) is said in the line under it, with an icon and a word.
+ */
 function Kpi({
   href,
   label,
   value,
   sub,
-  tone,
 }: {
   href: string;
   label: string;
   value: ReactNode;
   sub?: ReactNode;
-  tone?: "late" | "soon";
 }) {
   return (
     <RouteLink
       href={href}
-      className="group flex min-w-0 flex-col gap-1 bg-bg px-5 py-4 transition-control hover:bg-surface-1 focus-ring-inset"
+      className="group relative flex min-w-0 flex-col gap-1 bg-surface-1 px-4 py-3.5 transition-control hover:bg-surface-2 focus-ring-inset sm:px-5 sm:py-4"
     >
-      <span className="type-caption text-ink-3 group-hover:text-ink-2">{label}</span>
-      <span
-        className={cn(
-          "font-condensed text-[2.5rem] font-semibold leading-[0.95] tabular-nums tracking-[0.005em]",
-          tone === "late" ? "text-danger" : "text-ink-1",
-        )}
-      >
+      <span className="flex items-center justify-between gap-2 type-caption text-ink-3 group-hover:text-ink-2">
+        {label}
+        <ArrowRightIcon
+          size={14}
+          aria-hidden="true"
+          className="shrink-0 text-ink-4 transition-control group-hover:text-accent-text group-focus-visible:text-accent-text"
+        />
+      </span>
+      <span className="font-condensed text-[2.25rem] font-semibold leading-[0.95] tabular-nums tracking-[0.005em] text-ink-1 sm:text-[2.5rem]">
         {value}
       </span>
       {sub ? <span className="type-caption text-ink-2">{sub}</span> : null}
@@ -93,7 +103,50 @@ export function Dashboard() {
   const elapsed = (from: number) =>
     kpis ? workingMinutesBetween(from, nowMinute, kpis.hours, kpis.holidays) : 0;
   const oldest = kpis?.oldestInquiryAt ? elapsed(kpis.oldestInquiryAt) : null;
-  const oldestLevel = oldest !== null && kpis ? slaLevel(oldest, kpis.slaTargetMinutes) : "ok";
+  const oldestLevel = oldest !== null && kpis ? waitLevel(oldest, kpis.slaTargetMinutes) : "ok";
+
+  // Every KPI opens the list filtered to what its figure counts (the order list reads `od` / `do`
+  // as Belgrade days and `status=sve` as every status).
+  const today = belgradeDay(nowMinute);
+  const ordersToday = `${ADMIN.orders}?status=sve&od=${today}&do=${today}`;
+  const ordersWeek = `${ADMIN.orders}?status=sve&od=${belgradeDay(nowMinute - 6 * 86_400_000)}&do=${today}`;
+
+  // The queue: oldest first, each row graded against the response target.
+  const queueRows =
+    queue && kpis
+      ? [
+          ...queue.inquiries.map((i) => ({
+            key: `i:${i.number}`,
+            href: ADMIN.inquiry(i.number),
+            number: i.number,
+            kind: "Upit",
+            who: i.contactName,
+            what: `${INQUIRY_KIND_LABEL[i.kind]} · ${i.summary}`,
+            priority: i.isMechanic,
+            at: i.createdAt,
+          })),
+          ...queue.orders.map((o) => ({
+            key: `o:${o.number}`,
+            href: ADMIN.order(o.number),
+            number: o.number,
+            kind: "Porudžbina",
+            who: o.customerName,
+            what: formatRSD(o.totalPara),
+            priority: false,
+            at: o.createdAt,
+          })),
+        ]
+          .sort((a, b) => a.at - b.at)
+          .slice(0, 10)
+          .map((row) => {
+            const minutes = elapsed(row.at);
+            return { ...row, minutes, level: waitLevel(minutes, kpis.slaTargetMinutes) };
+          })
+      : [];
+  const queueLevels = WAIT_LEVELS.map((level) => ({
+    level,
+    count: queueRows.filter((r) => r.level === level).length,
+  })).filter((l) => l.count > 0);
 
   return (
     <div className="flex flex-col gap-6">
@@ -104,36 +157,39 @@ export function Dashboard() {
 
       {kpis ? <CompanySetupNotice missing={kpis.missingCompany} /> : null}
 
-      <div className="grid grid-cols-2 gap-px overflow-hidden rounded-md border border-line bg-line md:grid-cols-3 xl:grid-cols-6">
+      <div
+        className="grid grid-cols-2 gap-px overflow-hidden rounded-md border border-line bg-line md:grid-cols-3 xl:grid-cols-6"
+        data-reveal="block"
+      >
         {kpis ? (
           <>
             <Kpi
-              href={ADMIN.orders}
+              href={ordersToday}
               label="Porudžbine danas"
               value={kpis.today.orders}
               sub={`${kpis.newOrders} čeka potvrdu`}
             />
             <Kpi
-              href={ADMIN.orders}
+              href={ordersToday}
               label="Vrednost danas"
               value={formatRSD(kpis.today.valuePara, { unit: false })}
               sub="RSD sa PDV-om"
             />
             <Kpi
-              href={ADMIN.orders}
+              href={ordersWeek}
               label="Poslednjih 7 dana"
               value={kpis.week.orders}
               sub={<Trend now={kpis.week.orders} before={kpis.previousWeek.orders} />}
             />
             <Kpi
-              href={ADMIN.inquiries}
+              href={`${ADMIN.inquiries}?status=nov`}
               label="Upiti bez odgovora"
               value={kpis.openInquiries}
-              tone={oldestLevel === "late" ? "late" : undefined}
               sub={
                 oldest !== null ? (
-                  <span className={cn(oldestLevel === "late" && "font-semibold text-danger")}>
-                    najstariji čeka {formatElapsed(oldest)} radnog vremena
+                  <span className="flex flex-col gap-0.5">
+                    {oldestLevel !== "ok" ? <WaitMark level={oldestLevel} /> : null}
+                    <span>najstariji čeka {formatElapsed(oldest)} radnog vremena</span>
                   </span>
                 ) : (
                   "svi upiti imaju odgovor"
@@ -159,7 +215,7 @@ export function Dashboard() {
           </>
         ) : (
           Array.from({ length: 6 }, (_, i) => (
-            <div key={i} className="flex flex-col gap-2 bg-bg px-5 py-4">
+            <div key={i} className="flex flex-col gap-2 bg-surface-1 px-4 py-3.5 sm:px-5 sm:py-4">
               <Skeleton className="h-3 w-24" />
               <Skeleton className="h-9 w-16" />
               <Skeleton className="h-3 w-28" />
@@ -188,53 +244,44 @@ export function Dashboard() {
               Ništa ne čeka. Svi upiti imaju odgovor, sve porudžbine su potvrđene.
             </p>
           ) : (
-            <ul className="flex flex-col divide-y divide-line-faint">
-              {[
-                ...queue.inquiries.map((i) => ({
-                  key: `i:${i.number}`,
-                  href: ADMIN.inquiry(i.number),
-                  number: i.number,
-                  kind: "Upit",
-                  who: i.contactName,
-                  what: `${INQUIRY_KIND_LABEL[i.kind]} · ${i.summary}`,
-                  priority: i.isMechanic,
-                  at: i.createdAt,
-                })),
-                ...queue.orders.map((o) => ({
-                  key: `o:${o.number}`,
-                  href: ADMIN.order(o.number),
-                  number: o.number,
-                  kind: "Porudžbina",
-                  who: o.customerName,
-                  what: formatRSD(o.totalPara),
-                  priority: false,
-                  at: o.createdAt,
-                })),
-              ]
-                .sort((a, b) => a.at - b.at)
-                .slice(0, 10)
-                .map((row) => {
-                  const minutes = elapsed(row.at);
-                  const level = slaLevel(minutes, kpis.slaTargetMinutes);
+            <>
+              {/* Summary and legend in one line: what the marks in the rows mean, and how many. */}
+              <p className="flex flex-wrap items-center gap-x-4 gap-y-1 pb-2" data-reveal="off">
+                {queueLevels.map((l) => (
+                  <WaitMark
+                    key={l.level}
+                    level={l.level}
+                    count={l.count}
+                    title={WAIT_HINT[l.level]}
+                  />
+                ))}
+              </p>
+              <ul className="flex flex-col divide-y divide-line-faint">
+                {queueRows.map((row) => {
                   // Zero working minutes after more than a minute of wall time: it arrived
                   // outside working hours and the SLA clock has not started yet.
-                  const waiting =
-                    minutes >= 1
-                      ? formatElapsed(minutes)
-                      : nowMinute - row.at < 120_000
-                        ? "upravo"
-                        : "van radnog vremena";
+                  const started = row.minutes >= 1;
+                  const waiting = started
+                    ? formatElapsed(row.minutes)
+                    : nowMinute - row.at < 120_000
+                      ? "upravo"
+                      : "van radnog vremena";
+                  const received = compactDateTime(row.at, nowMinute);
                   return (
                     <li key={row.key}>
                       <RouteLink
                         href={row.href}
-                        className="flex items-center gap-3 px-1 py-2.5 transition-control hover:bg-surface-2 focus-ring-inset"
+                        className="-mx-2 flex min-h-13 items-center gap-3 rounded-sm px-2 py-2 transition-control hover:bg-surface-2 focus-ring-inset"
                       >
                         <span className="flex min-w-0 flex-1 flex-col">
                           <span className="flex items-center gap-2">
                             <DocNumber number={row.number} />
                             <span className="type-caption text-ink-3">{row.kind}</span>
-                            {row.priority ? <Badge tone="info">Majstor</Badge> : null}
+                            {row.priority ? (
+                              <Chip tone="info" dense>
+                                Majstor
+                              </Chip>
+                            ) : null}
                           </span>
                           <span
                             className="truncate type-caption text-ink-2"
@@ -246,29 +293,28 @@ export function Dashboard() {
                         <span className="flex shrink-0 flex-col items-end">
                           <span
                             className={cn(
-                              "inline-flex items-center gap-1 whitespace-nowrap type-body-s tabular-nums",
-                              level === "late"
-                                ? "font-semibold text-danger"
-                                : level === "soon"
-                                  ? "text-warning"
-                                  : "text-ink-2",
+                              "whitespace-nowrap type-body-s tabular-nums",
+                              started ? "text-ink-1" : "text-ink-3",
+                              row.level === "critical" && "font-semibold",
                             )}
+                            title={`Primljeno ${received}`}
                           >
-                            {level === "late" ? (
-                              <WarningIcon size={14} weight="bold" aria-hidden="true" />
-                            ) : null}
                             {waiting}
-                            <span className="sr-only">{level === "late" ? " — kasni" : ""}</span>
                           </span>
-                          <span className="whitespace-nowrap type-caption tabular-nums text-ink-3">
-                            primljeno {compactDateTime(row.at, nowMinute)}
-                          </span>
+                          {started ? (
+                            <WaitMark level={row.level} />
+                          ) : (
+                            <span className="whitespace-nowrap type-caption tabular-nums text-ink-3">
+                              primljeno {received}
+                            </span>
+                          )}
                         </span>
                       </RouteLink>
                     </li>
                   );
                 })}
-            </ul>
+              </ul>
+            </>
           )}
         </Section>
 

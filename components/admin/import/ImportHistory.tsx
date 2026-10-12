@@ -17,6 +17,7 @@ import { ADMIN } from "@/constants/routes";
 import { useNowMinute } from "../hooks";
 import { ActorLabel, LoadMoreFooter, PageHeader } from "../ui";
 import { ImportStatusBadge } from "./parts";
+import { Button } from "@/components/ui/Button";
 
 type Row = FunctionReturnType<typeof api.imports.history>["page"][number];
 
@@ -105,12 +106,9 @@ export function ImportHistory() {
         title="Istorija uvoza"
         description="Svaki uvoz sa brojem novih i izmenjenih artikala, greškama i mogućnošću poništavanja."
         actions={
-          <RouteLink
-            href={ADMIN.imports}
-            className="inline-flex h-11 items-center rounded-sm bg-accent px-4 type-body-s font-semibold text-on-accent transition-control hover:bg-accent-hover focus-ring-inverse"
-          >
-            Novi uvoz
-          </RouteLink>
+          <Button asChild>
+            <RouteLink href={ADMIN.imports}>Novi uvoz</RouteLink>
+          </Button>
         }
       />
       <DataTable

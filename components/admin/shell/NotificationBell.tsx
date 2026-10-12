@@ -107,12 +107,10 @@ export function NotificationBell({ nowMinute }: { nowMinute: number }) {
                 ? `Obaveštenja, nepročitano: ${unread}`
                 : "Obaveštenja"
           }
-          className="relative inline-flex size-10 cursor-pointer items-center justify-center rounded-sm text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 focus-ring-inset"
+          className="relative inline-flex size-11 cursor-pointer items-center justify-center rounded-sm text-ink-2 transition-control hover:bg-surface-2 hover:text-ink-1 focus-ring-inset"
         >
           <BellIcon size={20} aria-hidden="true" />
-          {unread > 0 ? (
-            <CountBadge count={unread} className="absolute -right-0.5 -top-0.5" />
-          ) : null}
+          {unread > 0 ? <CountBadge count={unread} className="absolute right-0 top-0" /> : null}
         </button>
       </Popover.Trigger>
       <span className="sr-only" aria-live="polite">
@@ -136,7 +134,7 @@ export function NotificationBell({ nowMinute }: { nowMinute: number }) {
               <button
                 type="button"
                 onClick={() => void markAll({})}
-                className="cursor-pointer rounded-sm type-caption text-accent-text underline-offset-2 hover:underline focus-ring-inset"
+                className="-my-1 inline-flex min-h-6 cursor-pointer items-center rounded-xs type-caption text-accent-text underline-offset-2 hover:underline"
               >
                 Označi sve kao pročitano
               </button>
@@ -157,7 +155,8 @@ export function NotificationBell({ nowMinute }: { nowMinute: number }) {
                       setOpen(false);
                     }}
                     className={cn(
-                      "flex min-h-14 items-start gap-3 px-4 py-2.5 transition-control hover:bg-surface-2 focus-ring-inset",
+                      // Menu geometry inside the 8 px popover: rows are 4 px shapes, 4 px from its edge.
+                      "mx-1 flex min-h-14 items-start gap-3 rounded-xs px-3 py-2.5 transition-control hover:bg-surface-2 focus-ring-inset",
                       !n.read && "bg-surface-1",
                     )}
                   >

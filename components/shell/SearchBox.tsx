@@ -248,7 +248,9 @@ export function SearchBox({
       onSubmit={onFormSubmit}
       className={cn("flex flex-col gap-2", className)}
     >
-      <div className={cn("flex gap-2", hero ? "flex-col sm:flex-row" : "")}>
+      {/* One row at every width: on phones the submit is a square arrow button beside the
+          field, so the hero keeps its height for the car (UI-BOOST §7.3–§7.4). */}
+      <div className="flex gap-2">
         <div ref={inputWrap} className="min-w-0 flex-1" data-testid={testId}>
           <Combobox
             name="q"
@@ -291,13 +293,14 @@ export function SearchBox({
           />
         </div>
         {hero ? (
-          <Button type="submit" size="xl" className="sm:w-auto">
-            Pretraži
+          <Button type="submit" size="xl" className="shrink-0 max-sm:w-14 max-sm:px-0">
+            <ArrowRightIcon size={20} aria-hidden="true" className="sm:hidden" />
+            <span className="max-sm:sr-only">Pretraži</span>
           </Button>
         ) : null}
       </div>
       {hero ? (
-        <p className="type-caption font-normal text-ink-3" data-reveal="off">
+        <p className="type-caption font-normal text-ink-3 max-sm:sr-only" data-reveal="off">
           Broj upišite kako god ga imate&nbsp;— razmaci, tačke i crtice ne smetaju.
         </p>
       ) : null}

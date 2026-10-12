@@ -16,7 +16,7 @@ export function CodeList({
       <div>
         <h3 className="type-label uppercase text-ink-3">OEM brojevi</h3>
         {oem.length ? (
-          <ul className="mt-2 flex flex-col divide-y divide-line border-y border-line">
+          <ul className="mt-2 flex flex-col divide-y divide-line panel pl-4 pr-1.5">
             {oem.map((c) => (
               <li key={c.raw} className="flex items-center justify-between gap-3 py-1.5">
                 <span className="flex min-w-0 flex-col">
@@ -40,7 +40,7 @@ export function CodeList({
       <div>
         <h3 className="type-label uppercase text-ink-3">Zamenski brojevi</h3>
         {cross.length ? (
-          <ul className="mt-2 flex flex-col divide-y divide-line border-y border-line">
+          <ul className="mt-2 flex flex-col divide-y divide-line panel pl-4 pr-1.5">
             {cross.map((c) => (
               <li
                 key={`${c.manufacturer}-${c.raw}`}
@@ -50,7 +50,11 @@ export function CodeList({
                   <span className="type-code-l text-ink-1">{c.raw}</span>
                   <span className="type-caption font-normal text-ink-3">{c.manufacturer}</span>
                 </span>
-                <CopyButton value={c.raw} label={`Kopiraj broj ${c.raw}`} toastMessage="Broj kopiran." />
+                <CopyButton
+                  value={c.raw}
+                  label={`Kopiraj broj ${c.raw}`}
+                  toastMessage="Broj kopiran."
+                />
               </li>
             ))}
           </ul>

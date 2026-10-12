@@ -50,22 +50,29 @@ function cartProduct(card: ProductCardData): CartProduct {
   };
 }
 
-/** Image candidates per layout (PERF-21): 104 px list thumbnail below 480 px (`sm`). */
+/** Image candidates per layout (PERF-21): an 88 px list thumbnail below 480 px (`sm`). */
 const SIZES = {
   grid: "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, (min-width: 480px) 50vw, 100vw",
   responsive:
-    "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, (min-width: 480px) 50vw, 104px",
-  list: "104px",
+    "(min-width: 1920px) 360px, (min-width: 1280px) 25vw, (min-width: 768px) 33vw, (min-width: 480px) 50vw, 88px",
+  list: "88px",
 } as const;
 
 /**
- * Product card (§9.7). Grid: 4:3 render (the top row is kept free for the quality chip, so the
- * chip never sits on the render), maker, name (the whole card is one link via the name's
- * `::after`, focus ring around the card; up to 3 lines in the grid, never clamped in the list),
- * OEM (wraps, never truncated), fitment, stock, footer rule, price + action. List (phones,
- * search): 104 px thumbnail column and a full-width labelled button. The footer measures the
- * body column, not the card: below 17rem the price and a full-width button stack, so nothing
- * is clipped at 320 px (WCAG 1.4.10). Price and stock are live values over the cached HTML.
+ * Product card (§9.7, UI-BOOST §7.2). Three rows of one grid: picture, facts, footer.
+ *
+ * Grid (from 480 px): the 4:3 render fills its frame (a category render is a square with air
+ * around the part, so it is drawn slightly larger than the frame is high and the quality chip
+ * sits on the empty corner), maker, name (the whole card is one link via the name's `::after`,
+ * focus ring around the card; two lines are reserved so the rows of a grid line up, a third is
+ * allowed), OEM (wraps, never truncated), fitment, stock, then the footer rule with the price
+ * and the action. The facts row takes the slack, so footers line up along a row of cards.
+ *
+ * List (phones, search): an 88 px thumbnail beside the facts and the footer across the whole
+ * card — price left, labelled 44 px button right — so a card is about 190 px tall instead of
+ * 250. The footer measures itself: below 15rem the price and a full-width button stack, so
+ * nothing is clipped in a narrow grid column or at 320 px (WCAG 1.4.10). Price and stock are
+ * live values over the cached HTML.
  */
 export function ProductCard({
   card,
@@ -84,22 +91,45 @@ export function ProductCard({
   const href = ROUTES.product(card.slug);
   const layout =
     variant === "list"
-      ? "grid-cols-[6.5rem_minmax(0,1fr)]"
+      ? "grid-cols-[5.5rem_minmax(0,1fr)]"
       : variant === "responsive"
-        ? "grid-cols-[6.5rem_minmax(0,1fr)] sm:grid-cols-1"
-        : "grid-cols-1";
+        ? "grid-cols-[5.5rem_minmax(0,1fr)] sm:grid-cols-1 sm:grid-rows-[auto_1fr_auto]"
+        : "grid-cols-1 grid-rows-[auto_1fr_auto]";
+  // List: an inset 88 px tile (6 px, concentric with the card). Grid: full-bleed 4:3.
+  const LIST_FRAME = "mt-3 ml-3 self-start";
+  const LIST_THUMB = "size-22 rounded-sm";
+  const frame =
+    variant === "list"
+      ? LIST_FRAME
+      : variant === "responsive"
+        ? `${LIST_FRAME} sm:m-0 sm:self-auto`
+        : "";
   const thumb =
     variant === "list"
-      ? "h-full min-h-[6.5rem]"
+      ? LIST_THUMB
       : variant === "responsive"
-        ? "h-full min-h-[6.5rem] sm:aspect-[4/3] sm:h-auto sm:min-h-0"
+        ? `${LIST_THUMB} sm:aspect-[4/3] sm:size-auto sm:rounded-none`
         : "aspect-[4/3]";
   const chipVisible =
     variant === "grid" ? "flex" : variant === "responsive" ? "hidden sm:flex" : "hidden";
-  // Reserve the chip row (top 10 px + 24 px chip + 2 px) above the render.
-  const chipRow = variant === "grid" ? "pt-9" : variant === "responsive" ? "sm:pt-9" : "";
+  // A category render is drawn a little larger than its frame is high; a client photo is not.
+  const renderScale = card.imageUrl
+    ? "hover-hover:group-hover:scale-[1.03]"
+    : variant === "list"
+      ? "scale-[1.1]"
+      : variant === "responsive"
+        ? "max-sm:scale-[1.1] hover-hover:sm:group-hover:scale-[1.04]"
+        : "hover-hover:group-hover:scale-[1.04]";
   const nameClamp =
     variant === "grid" ? "line-clamp-3" : variant === "responsive" ? "sm:line-clamp-3" : "";
+  const bodyPad =
+    variant === "list" ? "p-3" : variant === "responsive" ? "p-3 sm:p-4 sm:pb-3" : "p-4 pb-3";
+  const footerPad =
+    variant === "list"
+      ? "col-span-2 px-3 pb-3"
+      : variant === "responsive"
+        ? "col-span-2 px-3 pb-3 sm:col-span-1 sm:px-4 sm:pb-4"
+        : "px-4 pb-4";
 
   return (
     <article
@@ -112,7 +142,7 @@ export function ProductCard({
         layout,
       )}
     >
-      <div className="relative">
+      <div className={cn("relative", frame)}>
         <ProductThumb
           imageUrl={card.imageUrl}
           categorySlug={card.categorySlug}
@@ -120,7 +150,7 @@ export function ProductCard({
           sizes={SIZES[variant]}
           preload={preloadImage}
           className={thumb}
-          imageClassName={cn("hover-hover:group-hover:scale-[1.03]", chipRow)}
+          imageClassName={cn(!card.imageUrl && "p-0", renderScale)}
         />
         <span
           className={cn(
@@ -131,7 +161,7 @@ export function ProductCard({
           {QUALITY_LABEL[card.quality]}
         </span>
       </div>
-      <div className="flex min-w-0 flex-col gap-1.5 p-3 sm:p-4">
+      <div className={cn("flex min-w-0 flex-col gap-1.5", bodyPad)}>
         <p className="type-caption text-ink-3">
           {card.manufacturerName}
           <span
@@ -141,7 +171,7 @@ export function ProductCard({
             {QUALITY_LABEL[card.quality]}
           </span>
         </p>
-        <Heading className="type-h4 text-ink-1">
+        <Heading className="min-h-[2lh] type-h4 text-ink-1">
           <RouteLink
             href={href}
             data-card-link=""
@@ -165,14 +195,16 @@ export function ProductCard({
           stockQty={card.stockQty}
           leadTimeDays={card.leadTimeDays}
         />
-        {/* The size container wraps only the footer: container-type implies layout containment,
-            which would make it the containing block of the name link's card-wide `::after`. */}
-        <div className="@container mt-auto">
-          <div className="flex flex-col gap-3 border-t border-line pt-3 @min-[17rem]:flex-row @min-[17rem]:items-end @min-[17rem]:justify-between">
-            <ProductPrice productId={card._id} retailPricePara={card.retailPricePara} />
-            <div className="@min-[17rem]:w-auto @min-[17rem]:min-w-[7.5rem]">
-              <AddToCartButton product={cartProduct(card)} />
-            </div>
+      </div>
+      {/* The footer is a row of the card, not of the facts column: on phones it runs under the
+          thumbnail too. It is its own size container (container-type implies layout containment,
+          which would make an ancestor of the name link the containing block of its card-wide
+          `::after` — a sibling is safe). */}
+      <div className={cn("@container", footerPad)}>
+        <div className="flex flex-col gap-3 border-t border-line pt-3 @min-[15rem]:flex-row @min-[15rem]:items-end @min-[15rem]:justify-between">
+          <ProductPrice productId={card._id} retailPricePara={card.retailPricePara} />
+          <div className="@min-[15rem]:w-auto @min-[15rem]:min-w-[7.5rem]">
+            <AddToCartButton product={cartProduct(card)} />
           </div>
         </div>
       </div>

@@ -131,6 +131,7 @@ export function MechanicsAdminList() {
         enableSorting: false,
         cell: ({ row }) => (
           <Badge
+            size="text"
             tone={MECHANIC_STATUS_TONE[row.original.status]}
             icon={MECHANIC_STATUS_ICON[row.original.status]}
           >

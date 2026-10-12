@@ -133,7 +133,11 @@ function InquiryView({ data }: { data: Detail }) {
               <DocNumber number={i.number} className="type-code-l" />
             </h1>
             <InquiryStatusBadge status={i.status} />
-            {i.mechanic ? <Badge tone="info">Majstor — prioritet</Badge> : null}
+            {i.mechanic ? (
+              <Badge size="text" tone="info">
+                Majstor — prioritet
+              </Badge>
+            ) : null}
             {i.isDemo ? <DemoTag /> : null}
           </div>
           <p className="type-body-s text-ink-3">
@@ -157,7 +161,7 @@ function InquiryView({ data }: { data: Detail }) {
           <div className="flex flex-wrap items-center gap-2">
             {i.assignedTo !== viewer.userId ? (
               <Button
-                variant="secondary"
+                variant="quiet"
                 size="sm"
                 onClick={() =>
                   void assign({ inquiryId: i._id, userId: viewer.userId as Id<"users"> })
@@ -268,7 +272,7 @@ function InquiryView({ data }: { data: Detail }) {
                           href={p.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="group relative block aspect-square overflow-hidden rounded-md border border-line bg-surface-2"
+                          className="group relative block aspect-square overflow-hidden rounded-lg border border-line bg-surface-2"
                         >
                           {/* eslint-disable-next-line @next/next/no-img-element -- signed Convex storage URL, shown at thumbnail size */}
                           <img
@@ -278,7 +282,7 @@ function InquiryView({ data }: { data: Detail }) {
                             loading="lazy"
                           />
                           <span
-                            className="absolute right-1.5 top-1.5 rounded-xs bg-surface-1/90 p-1 text-ink-2 opacity-0 transition-control group-hover:opacity-100"
+                            className="absolute right-1.5 top-1.5 rounded-xs bg-surface-1/90 p-1 text-ink-2 transition-control hover-hover:opacity-0 hover-hover:group-hover:opacity-100 hover-hover:group-focus-visible:opacity-100"
                             aria-hidden="true"
                           >
                             <ArrowSquareOutIcon size={14} />
@@ -583,18 +587,16 @@ function QuoteShareLink({
           : "Kupac nema e-poštu i ponuda mu nije stigla sama. Pošaljite mu link ponude:"}
       </p>
       <div className="flex items-start gap-2">
-        <p className="min-w-0 flex-1 break-all rounded-md border border-line bg-surface-2 px-3 py-2 type-code">
-          {link}
-        </p>
+        <p className="min-w-0 flex-1 break-all panel-inset px-3 py-2 type-code">{link}</p>
         <CopyButton value={link} label="Kopiraj link" toastMessage="Link je kopiran." />
       </div>
       <div className="flex flex-wrap gap-2">
-        <Button asChild variant="secondary" size="sm">
+        <Button asChild variant="quiet" size="sm">
           <a href={`viber://forward?text=${text}`}>Pošalji Viberom</a>
         </Button>
         {phone ? (
           <>
-            <Button asChild variant="secondary" size="sm">
+            <Button asChild variant="quiet" size="sm">
               <a
                 href={`https://wa.me/${waNumber(phone)}?text=${text}`}
                 target="_blank"
@@ -603,7 +605,7 @@ function QuoteShareLink({
                 Pošalji WhatsApp-om
               </a>
             </Button>
-            <Button asChild variant="secondary" size="sm">
+            <Button asChild variant="quiet" size="sm">
               <a href={`sms:${phone}?body=${text}`}>Pošalji SMS</a>
             </Button>
           </>

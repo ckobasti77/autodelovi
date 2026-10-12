@@ -67,6 +67,7 @@ import {
   DocNumber,
   OrderStatusBadge,
   Section,
+  CompactInput,
 } from "../ui";
 
 type Detail = NonNullable<FunctionReturnType<typeof api.ordersAdmin.get>>;
@@ -199,7 +200,7 @@ function OrderView({ data }: { data: Detail }) {
                       {compactDateTime(m.at, nowMinute)}
                     </span>
                     <span className="min-w-0 flex-1 truncate">{m.subject}</span>
-                    <Badge tone={EMAIL_STATUS_LABEL[m.status]?.tone ?? "neutral"}>
+                    <Badge size="text" tone={EMAIL_STATUS_LABEL[m.status]?.tone ?? "neutral"}>
                       {EMAIL_STATUS_LABEL[m.status]?.label ?? m.status}
                     </Badge>
                   </li>
@@ -301,12 +302,12 @@ function TransitionBar({ order, itemCount }: { order: Order; itemCount: number }
 
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <Button asChild variant="secondary" size="sm" icon={<PrinterIcon size={16} />}>
+      <Button asChild variant="quiet" size="sm" icon={<PrinterIcon size={16} />}>
         <a href={ADMIN.orderProforma(order.number)} target="_blank" rel="noopener">
           Predračun
         </a>
       </Button>
-      <Button asChild variant="secondary" size="sm" icon={<PrinterIcon size={16} />}>
+      <Button asChild variant="quiet" size="sm" icon={<PrinterIcon size={16} />}>
         <a href={ADMIN.orderDeliveryNote(order.number)} target="_blank" rel="noopener">
           Otpremnica
         </a>
@@ -599,7 +600,7 @@ function ItemsSection({ data }: { data: Detail }) {
                   </td>
                   <td className={cn("px-2 py-2.5 text-right tabular-nums", wide)}>
                     {editing && e ? (
-                      <input
+                      <CompactInput
                         aria-label={`Količina, ${i.sku}`}
                         inputMode="numeric"
                         value={e.quantity}
@@ -607,7 +608,8 @@ function ItemsSection({ data }: { data: Detail }) {
                         onChange={(ev) =>
                           setEdits({ ...edits, [i._id]: { ...e, quantity: ev.target.value } })
                         }
-                        className="h-9 w-16 rounded-sm border border-control bg-surface-1 px-2 text-right tabular-nums"
+                        className="w-16! px-2!"
+                        inputClassName="text-right tabular-nums"
                       />
                     ) : (
                       i.quantity
@@ -615,7 +617,7 @@ function ItemsSection({ data }: { data: Detail }) {
                   </td>
                   <td className={cn("px-2 py-2.5 text-right tabular-nums", wide)}>
                     {editing && e ? (
-                      <input
+                      <CompactInput
                         aria-label={`Cena po komadu, ${i.sku}`}
                         inputMode="decimal"
                         value={e.price}
@@ -623,7 +625,8 @@ function ItemsSection({ data }: { data: Detail }) {
                         onChange={(ev) =>
                           setEdits({ ...edits, [i._id]: { ...e, price: ev.target.value } })
                         }
-                        className="h-9 w-28 rounded-sm border border-control bg-surface-1 px-2 text-right tabular-nums"
+                        className="w-28! px-2!"
+                        inputClassName="text-right tabular-nums"
                       />
                     ) : (
                       <span className="flex flex-col items-end">
@@ -673,7 +676,7 @@ function ItemsSection({ data }: { data: Detail }) {
                       </span>
                     </td>
                     <td className="px-2 py-2.5 text-right">
-                      <input
+                      <CompactInput
                         aria-label={`Količina, ${a.product.sku}`}
                         inputMode="numeric"
                         value={a.quantity}
@@ -684,7 +687,8 @@ function ItemsSection({ data }: { data: Detail }) {
                             ),
                           )
                         }
-                        className="h-9 w-16 rounded-sm border border-control bg-surface-1 px-2 text-right tabular-nums"
+                        className="w-16! px-2!"
+                        inputClassName="text-right tabular-nums"
                       />
                     </td>
                     <td
@@ -1004,10 +1008,9 @@ function DeliverySection({ order: o }: { order: Order }) {
             />
           </Field>
           <Field label="Broj pošiljke">
-            <Input
+            <CompactInput
               value={number}
               onChange={(e) => setNumber(e.target.value)}
-              className="h-9"
               inputClassName="font-mono"
             />
           </Field>
@@ -1066,7 +1069,7 @@ function PaymentSection({ order: o }: { order: Order }) {
           {
             label: "Status",
             value: (
-              <Badge tone={paid ? "success" : "neutral"}>
+              <Badge size="text" tone={paid ? "success" : "neutral"}>
                 {PAYMENT_STATUS_LABEL[o.paymentStatus]}
               </Badge>
             ),

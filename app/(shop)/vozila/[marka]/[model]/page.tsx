@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
+import { ArrowRightIcon } from "@phosphor-icons/react/dist/ssr";
 
+import { cn } from "@/lib/cn";
 import { formatNumber } from "@/lib/format/number";
 import { pluralSr } from "@/lib/format/plural";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonld";
@@ -15,12 +17,38 @@ import {
 import { findBrand, findModel, shortBrand, yearsLabel } from "@/lib/vehicle/hub";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { RouteLink } from "@/components/ui/RouteLink";
+import { RevealGroup, RevealItem } from "@/components/reveal/Reveal";
 import { RevealText } from "@/components/text-reveal/RevealText";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { LandingLinks } from "@/components/seo/LandingLinks";
 import { ROUTES } from "@/constants/routes";
 
 const ARTIKAL = ["artikal", "artikla", "artikala"] as const;
+
+/** The first row of generation cards is on the first screen: it enters eagerly. */
+const EAGER_CARDS = 5;
+
+const WIDE_LG = { 2: "lg:grid-cols-2", 3: "lg:grid-cols-3", 4: "lg:grid-cols-4" } as const;
+const WIDE_XL = {
+  2: "xl:grid-cols-2",
+  3: "xl:grid-cols-3",
+  4: "xl:grid-cols-4",
+  5: "xl:grid-cols-5",
+} as const;
+
+/**
+ * Columns for `count` cards with at most `max` in a row, so that the last row is never a card
+ * on its own: all in one row when they fit, else the widest grid they divide into, else the
+ * widest one that leaves more than one card in the last row.
+ */
+function columnsFor<M extends 4 | 5>(count: number, max: M): 2 | 3 | 4 | M {
+  type Columns = 2 | 3 | 4 | M;
+  if (count <= max) return Math.max(count, 2) as Columns;
+  const candidates = (max === 5 ? [5, 4, 3] : [4, 3]) as Columns[];
+  return (
+    candidates.find((c) => count % c === 0) ?? candidates.find((c) => count % c !== 1) ?? max
+  );
+}
 
 /**
  * The model and its generations with their real part counts. A model with a single
@@ -110,34 +138,57 @@ export default async function VehicleModelPage({ params }: PageProps<"/vozila/[m
             : ""
         }. Izaberite generaciju. Godine su okvirne; kad niste sigurni, pogledajte oznaku u saobraćajnoj ili pošaljite broj šasije.`}
       </RevealText>
-      <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {data.generations.map(({ generation: g, total, categories }) => (
-          <li key={g.slug}>
+      <RevealGroup
+        as="ul"
+        className={cn(
+          "mt-block grid gap-3 sm:grid-cols-2 lg:gap-4",
+          // An odd count leaves one card alone in two columns: it takes the row.
+          "max-lg:sm:[&>li:last-child:nth-child(odd)]:col-span-2",
+          WIDE_LG[columnsFor(data.generations.length, 4)],
+          WIDE_XL[columnsFor(data.generations.length, 5)],
+        )}
+      >
+        {data.generations.map(({ generation: g, total, categories }, i) => (
+          <RevealItem as="li" key={g.slug} eager={i < EAGER_CARDS} index={i}>
             <RouteLink
               href={ROUTES.vehicleGeneration(marka, model, g.slug)}
-              className="flex h-full flex-col gap-2 panel p-4 transition-control hover:border-line-strong focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus"
+              className="group flex h-full flex-col panel card-interactive focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus"
             >
-              <span className="type-h3 text-ink-1">{g.name}</span>
-              <span className="type-body-s tabular-nums text-ink-2">
-                {yearsLabel(g)} · {formatNumber(total)} {pluralSr(total, ARTIKAL)}
+              <span className="flex flex-col gap-1 px-4 pt-4 pb-3">
+                <span className="flex items-center justify-between gap-3">
+                  <span className="type-h3 text-ink-1">{g.name}</span>
+                  <ArrowRightIcon
+                    size={16}
+                    aria-hidden="true"
+                    className="shrink-0 text-ink-3 transition-control group-hover:text-accent"
+                  />
+                </span>
+                <span className="type-body-s tabular-nums text-ink-2">
+                  {yearsLabel(g)} · {formatNumber(total)} {pluralSr(total, ARTIKAL)}
+                </span>
               </span>
-              {categories.length ? (
-                <span className="type-caption font-normal text-ink-2">
-                  {listMoreSr(categories, 3)}
-                </span>
-              ) : null}
-              {g.platform ? (
-                <span className="type-caption font-normal text-ink-3">Platforma {g.platform}</span>
-              ) : null}
-              {g.vinModelCodes.length ? (
-                <span className="type-caption font-normal text-ink-3">
-                  VIN kod <span className="type-code text-ink-2">{g.vinModelCodes.join(", ")}</span>
-                </span>
-              ) : null}
+              <span className="flex flex-1 flex-col gap-1.5 border-t border-line-faint px-4 pt-3 pb-4">
+                {categories.length ? (
+                  <span className="type-caption font-normal text-ink-2">
+                    {listMoreSr(categories, 3)}
+                  </span>
+                ) : null}
+                {g.platform ? (
+                  <span className="type-caption font-normal text-ink-3">
+                    Platforma {g.platform}
+                  </span>
+                ) : null}
+                {g.vinModelCodes.length ? (
+                  <span className="type-caption font-normal text-ink-3">
+                    VIN kod{" "}
+                    <span className="type-code text-ink-2">{g.vinModelCodes.join(", ")}</span>
+                  </span>
+                ) : null}
+              </span>
             </RouteLink>
-          </li>
+          </RevealItem>
         ))}
-      </ul>
+      </RevealGroup>
       <LandingLinks
         id="model-landings-title"
         title={`Delovi za ${accusativeSr(`${shortBrand(data.brand.brand)} ${data.model.model.name}`)} po kategorijama`}

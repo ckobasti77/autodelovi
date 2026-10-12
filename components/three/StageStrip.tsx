@@ -9,6 +9,11 @@
  * accent number and `aria-current="step"`. Phones: „03 / 07 Kočnice i vešanje“ with previous /
  * next buttons (44 px). Both end with „Rasklopi / Sklopi“ and „Lista delova“. Below 1024 px a
  * tall screen also gets the `StageLegend` between the stage and this strip.
+ *
+ * Shape (§5.3, UI-BOOST §8): the rule and the bar are drawing and stay square; every stage is a
+ * press target with a 6 px surface under the pointer (the fill reaches 8 px left of the number,
+ * so the number stays on the rule's edge). One outline in the strip: „Rasklopi“ is the authored
+ * action (`secondary`), „Lista delova“ the quiet filled button beside it.
  */
 import { useEffect, useRef } from "react";
 import {
@@ -104,7 +109,9 @@ export function StageStrip({
                   aria-current={active ? "step" : undefined}
                   aria-label={`${pad(s.stage)} ${s.labelSr}`}
                   className={cn(
-                    "group flex h-16 w-full min-w-0 cursor-pointer flex-col items-start justify-center gap-0.5 rounded-sm pr-3 pt-2 text-left transition-control focus-ring-inset",
+                    // 6 px under the rule + 58 px = the strip's 64 px; the surface starts 8 px
+                    // before the number and ends 4 px before the next stage.
+                    "group -ml-2 mt-1.5 flex h-[3.625rem] w-[calc(100%+0.25rem)] min-w-0 cursor-pointer flex-col items-start justify-center gap-0.5 rounded-sm pl-2 pr-2 text-left transition-control focus-ring-inset hover-hover:hover:bg-surface-2",
                     active ? "text-ink-1" : "text-ink-3 hover:text-ink-1",
                   )}
                 >
@@ -173,7 +180,7 @@ export function StageStrip({
         </Button>
         <Button
           ref={listRef}
-          variant="secondary"
+          variant="quiet"
           size="md"
           icon={<ListBulletsIcon size={20} />}
           onClick={onOpenList}
@@ -216,7 +223,7 @@ export function StageLegend({ onStage }: { onStage: (stage: number) => void }) {
                 aria-current={active ? "step" : undefined}
                 aria-label={`${pad(s.stage)} ${s.labelSr}`}
                 className={cn(
-                  "flex h-11 w-full min-w-0 cursor-pointer items-center justify-center gap-2 rounded-sm text-left transition-control focus-ring-inset [@container(min-height:9.5rem)]:h-9 [@container(min-height:9.5rem)]:justify-start",
+                  "flex h-11 w-full min-w-0 cursor-pointer items-center justify-center gap-2 rounded-sm text-left transition-control focus-ring-inset active:bg-surface-2 hover-hover:hover:bg-surface-2 [@container(min-height:9.5rem)]:h-9 [@container(min-height:9.5rem)]:justify-start [@container(min-height:9.5rem)]:px-2",
                   active ? "text-ink-1" : "text-ink-3 hover:text-ink-1",
                 )}
               >

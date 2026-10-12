@@ -10,24 +10,29 @@ import { formatPhone } from "@/lib/format/phone";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Button } from "@/components/ui/Button";
 import { Link } from "@/components/ui/Link";
+import { Reveal } from "@/components/reveal/Reveal";
 import { RevealText } from "@/components/text-reveal/RevealText";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ContactActions } from "@/components/shell/ContactActions";
+import { ApprovalSteps } from "@/components/mechanic/ApprovalSteps";
 import { MechanicRegistrationForm } from "@/components/mechanic/MechanicRegistrationForm";
 import { ROUTES } from "@/constants/routes";
 
 export const metadata: Metadata = privateMetadata("Registracija servisa");
 
-const NEXT_STEPS = [
-  "Proverimo firmu u registru i odredimo nivo rabata.",
-  "Odobrenje vam javljamo e-poštom; posle prijave vidite svoju cenu na svakom artiklu.",
-  "Brza porudžbina, cenovnik i istorija su u portalu „Majstor“.",
-];
-
-/** `/za-majstore/registracija` (ARCHITECTURE §A3): account + company form → pending profile. */
+/**
+ * `/za-majstore/registracija` (ARCHITECTURE §A3): account + company form → pending profile.
+ * The form's groups are panels in the wide column; „Šta sledi“ stays beside them (sticky).
+ */
 export default async function MechanicRegistrationPage() {
-  const [settings, tree, viewer] = await Promise.all([getSettingsPublic(), getVehicleTree(), getViewer()]);
-  const contacts = contactLinkList(contactFromSettings(settings)).filter((l) => l.channel !== "email");
+  const [settings, tree, viewer] = await Promise.all([
+    getSettingsPublic(),
+    getVehicleTree(),
+    getViewer(),
+  ]);
+  const contacts = contactLinkList(contactFromSettings(settings)).filter(
+    (l) => l.channel !== "email",
+  );
   const crumbs = [
     { label: "Početna", href: ROUTES.home },
     { label: "Za majstore", href: ROUTES.mechanics },
@@ -49,29 +54,33 @@ export default async function MechanicRegistrationPage() {
           Pet minuta posla: podaci firme i kontakt. Posle odobrenja poručujete po svojoj ceni.
         </RevealText>
       </div>
-      <div className="mt-10 grid gap-12 lg:grid-cols-12 lg:gap-x-(--gutter)">
+      <div className="mt-8 grid gap-6 lg:grid-cols-12 lg:gap-x-(--gutter)">
         <div className="lg:col-span-8">
           {already ? (
-            <div className="flex flex-col items-start gap-4 panel p-6">
+            <Reveal eager className="flex flex-col items-start gap-4 panel p-5 sm:p-6">
               <p className="type-body text-ink-1">Ovaj nalog već ima registrovan servis.</p>
               <Button asChild>
                 <Link href={ROUTES.mechanicPortal} variant="unstyled">
                   Majstorski portal
                 </Link>
               </Button>
-            </div>
+            </Reveal>
           ) : disabled ? (
-            <div className="flex flex-col items-start gap-4 panel p-6">
+            <Reveal eager className="flex flex-col items-start gap-4 panel p-5 sm:p-6">
               <p className="type-body text-ink-1">
-                Registracija preko sajta je trenutno isključena. Pozovite nas ili pišite na Viber — otvorićemo nalog.
+                Registracija preko sajta je trenutno isključena. Pozovite nas ili pišite na Viber —
+                otvorićemo nalog.
               </p>
               <ContactActions links={contacts} location="mechanic_registration_disabled" />
-            </div>
+            </Reveal>
           ) : (
             <MechanicRegistrationForm
               config={{
                 brands: tree.map((b) => ({ id: b.brand._id, name: b.brand.name })),
-                legal: { terms: settings.legalVersions.terms, privacy: settings.legalVersions.privacy },
+                legal: {
+                  terms: settings.legalVersions.terms,
+                  privacy: settings.legalVersions.privacy,
+                },
                 viewer: viewer
                   ? {
                       email: viewer.email ?? "",
@@ -83,25 +92,22 @@ export default async function MechanicRegistrationPage() {
             />
           )}
         </div>
-        <aside className="flex flex-col gap-6 self-start lg:sticky lg:top-[calc(var(--header-h)+2rem)] lg:col-span-4" aria-label="Posle registracije">
-          <h2 className="type-h3 text-ink-1">Šta sledi</h2>
-          <ol className="flex flex-col border-t border-line">
-            {NEXT_STEPS.map((step, i) => (
-              <li key={step} className="grid grid-cols-[2rem_minmax(0,1fr)] gap-3 border-b border-line py-4">
-                <span aria-hidden="true" className="type-numeral-s tabular-nums text-ink-3">
-                  {i + 1}
-                </span>
-                <span className="type-body-s text-ink-2">{step}</span>
-              </li>
-            ))}
-          </ol>
+        <Reveal
+          as="aside"
+          eager
+          index={1}
+          aria-label="Posle registracije"
+          className="flex flex-col gap-5 self-start panel p-5 lg:sticky lg:top-[calc(var(--header-h)+1.5rem)] lg:col-span-4"
+        >
+          <h2 className="type-h4 text-ink-1">Šta sledi</h2>
+          <ApprovalSteps />
           {contacts.length ? (
-            <>
+            <div className="flex flex-col gap-1 border-t border-line pt-4">
               <p className="type-body-s text-ink-3">Pitanja pre registracije?</p>
               <ContactActions links={contacts} location="mechanic_registration" />
-            </>
+            </div>
           ) : null}
-        </aside>
+        </Reveal>
       </div>
     </div>
   );

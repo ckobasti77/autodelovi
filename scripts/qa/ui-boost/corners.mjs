@@ -26,7 +26,10 @@ function audit() {
   const rgba = (value) => {
     const m = value.match(/rgba?\(([^)]+)\)/);
     if (!m) return [0, 0, 0, 0];
-    const p = m[1].split(/[\s,/]+/).filter(Boolean).map(Number);
+    const p = m[1]
+      .split(/[\s,/]+/)
+      .filter(Boolean)
+      .map(Number);
     return [p[0], p[1], p[2], p[3] ?? 1];
   };
   const same = (a, b) => Math.abs(a[0] - b[0]) + Math.abs(a[1] - b[1]) + Math.abs(a[2] - b[2]) < 6;
@@ -74,9 +77,27 @@ function audit() {
   for (const el of document.querySelectorAll("body *")) {
     if (el.closest("nextjs-portal, svg, [data-corner-audit='skip']")) continue;
     const tag = el.tagName.toLowerCase();
-    if (["script", "style", "template", "noscript", "br", "option", "tr", "td", "th", "thead", "tbody", "col", "colgroup"].includes(tag)) continue;
+    if (
+      [
+        "script",
+        "style",
+        "template",
+        "noscript",
+        "br",
+        "option",
+        "tr",
+        "td",
+        "th",
+        "thead",
+        "tbody",
+        "col",
+        "colgroup",
+      ].includes(tag)
+    )
+      continue;
     const style = getComputedStyle(el);
-    if (style.display === "none" || style.visibility === "hidden" || Number(style.opacity) === 0) continue;
+    if (style.display === "none" || style.visibility === "hidden" || Number(style.opacity) === 0)
+      continue;
     const rect = el.getBoundingClientRect();
     if (rect.width < 12 || rect.height < 12) continue;
 
@@ -90,20 +111,37 @@ function audit() {
       const colour = rgba(style[`border${side}Color`]);
       return width > 0 && style[`border${side}Style`] !== "none" && colour[3] > 0.15;
     });
-    const control = ["img", "video", "canvas", "input", "select", "textarea", "button", "iframe"].includes(tag);
+    const control = [
+      "img",
+      "video",
+      "canvas",
+      "input",
+      "select",
+      "textarea",
+      "button",
+      "iframe",
+    ].includes(tag);
     const filled = fill[3] > 0.5 && !same(fill, backdrop(el));
     // A gradient that runs to transparent is a fade (scroll hint, ground glow), not a box.
     const image = style.backgroundImage;
     const gradient =
       image !== "none" && !image.includes("rgba(0, 0, 0, 0)") && !image.includes("transparent");
     const bordered = sides.length >= 3;
-    if (!(control || filled || bordered || (gradient && !el.classList.contains("corner-ticks")))) continue;
+    if (!(control || filled || bordered || (gradient && !el.classList.contains("corner-ticks"))))
+      continue;
     if (el.classList.contains("corner-ticks")) continue;
-    if (control && (tag === "input" || tag === "button" || tag === "select" || tag === "textarea")) {
+    if (
+      control &&
+      (tag === "input" || tag === "button" || tag === "select" || tag === "textarea")
+    ) {
       // A control without its own paint (the frame around it draws the box).
       if (!filled && !bordered && style.backgroundImage === "none") continue;
     }
-    if (["checkbox", "radio", "file", "hidden"].includes(el.getAttribute("type") ?? "") && rect.width < 2) continue;
+    if (
+      ["checkbox", "radio", "file", "hidden"].includes(el.getAttribute("type") ?? "") &&
+      rect.width < 2
+    )
+      continue;
 
     // Edges that meet the viewport: full-bleed bands, docked bars, and columns whose four
     // corners all lie on the edges of the document (a sidebar from top to bottom).

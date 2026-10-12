@@ -21,6 +21,7 @@ export function UseVehicleButton({ vehicle }: { vehicle: SelectedVehicle }) {
       icon={active ? <CheckIcon size={20} /> : <CarIcon size={20} />}
       onClick={() => setVehicle(vehicle)}
       aria-pressed={active}
+      className="w-full sm:w-auto"
     >
       {active ? "Ovo je vaše vozilo" : "Izaberi ovo vozilo"}
     </Button>

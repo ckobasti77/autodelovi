@@ -23,12 +23,13 @@ export function LandingLinks({
       <h2 id={id} className="type-h3 text-ink-1">
         {title}
       </h2>
-      <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+      <ul className="mt-4 flex flex-wrap gap-2">
         {links.map((l) => (
           <li key={landingHref(l)}>
             <Link
               href={landingHref(l)}
-              variant="standalone"
+              variant="unstyled"
+              className="chip-link"
               {...(show === "vehicle" ? {} : { "aria-label": landingLabel(l) })}
             >
               {show === "vehicle" ? landingLabel(l) : l.categoryName}

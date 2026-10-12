@@ -8,8 +8,9 @@
 import { useMutation, usePaginatedQuery, useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
+  CaretDownIcon,
   ColumnsIcon,
   DotsThreeIcon,
   ExportIcon,
@@ -19,6 +20,7 @@ import {
 
 import { api } from "@/convex/_generated/api";
 import type { Id } from "@/convex/_generated/dataModel";
+import { nextOrderStatuses } from "@/lib/domain/orderStateMachine";
 import { belgradeLocalToUtc } from "@/lib/domain/time";
 import { compactDateTime, downloadText, toCsv } from "@/lib/admin/format";
 import { formatRSD } from "@/lib/format/money";
@@ -28,6 +30,7 @@ import {
   CHANNEL_LABEL,
   CUSTOMER_TYPE_LABEL,
   ORDER_SOURCE_LABEL,
+  ORDER_TRANSITION_VERB,
   PAYMENT_STATUS_LABEL,
 } from "@/lib/i18n/sr/admin";
 import {
@@ -36,7 +39,6 @@ import {
   PAYMENT_LABEL,
   type OrderStatus,
 } from "@/lib/i18n/sr/shop";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import {
   DataTable,
@@ -46,8 +48,7 @@ import {
 } from "@/components/ui/DataTable";
 import { Field } from "@/components/ui/Field";
 import { IconButton } from "@/components/ui/IconButton";
-import { Input } from "@/components/ui/Input";
-import { Menu } from "@/components/ui/Menu";
+import { Menu, type MenuItem } from "@/components/ui/Menu";
 import { Select } from "@/components/ui/Select";
 import { toast } from "@/components/ui/Toast";
 import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
@@ -65,6 +66,9 @@ import {
   PageHeader,
   SearchField,
   SegmentedFilter,
+  CompactInput,
+  Chip,
+  IconAction,
 } from "../ui";
 import { useUrlFilters } from "../useUrlFilters";
 
@@ -93,6 +97,9 @@ const FILTER_KEYS = [
   "izvor",
   "kampanja",
 ] as const;
+
+/** `ordersAdmin.statusCounts` stops counting at 500 per status. */
+const COUNT_CAP = 500;
 
 function dayStart(date: string): number | undefined {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date);
@@ -150,6 +157,59 @@ export function OrdersList() {
     Boolean,
   ).length;
   const selected = results.filter((r) => selection[r._id]);
+  // „50 od 243“: the status counts are totals of a whole status, so they only describe the list
+  // while nothing else narrows it (search, date, delivery …).
+  const listTotal =
+    counts && statusArg && statusArg in counts && !f.q && activeFilters === 0
+      ? counts[statusArg as keyof typeof counts]
+      : undefined;
+
+  /**
+   * The legal next steps of one order, as menu items (the same rules and wording as the order
+   * page). Each asks for confirmation; cancelling asks for the reason. „Poslata“ needs a courier
+   * and a tracking number, so that one opens the order.
+   */
+  const askRef = useRef(confirm.ask);
+  useEffect(() => {
+    askRef.current = confirm.ask;
+  });
+  const statusItems = useCallback(
+    (r: Row): MenuItem[] =>
+      nextOrderStatuses(r.status, r.deliveryMethod).map((to) => {
+        const label = ORDER_TRANSITION_VERB[to];
+        if (to === "poslata")
+          return { label: `${label}…`, onSelect: () => router.push(ADMIN.order(r.number)) };
+        return {
+          label,
+          danger: to === "otkazana",
+          onSelect: () =>
+            askRef.current({
+              title: `${label} — ${r.number}`,
+              description:
+                to === "potvrdjena"
+                  ? "Stanje se umanjuje za artikle iz porudžbine; kupac dobija potvrdu."
+                  : to === "otkazana"
+                    ? "Kupac dobija obaveštenje sa razlogom."
+                    : to === "zavrsena"
+                      ? "Porudžbina se zatvara; posle toga se više ne menja."
+                      : "Kupac dobija obaveštenje o promeni statusa.",
+              confirmLabel: label,
+              danger: to === "otkazana",
+              ...(to === "otkazana" ? { reasonLabel: "Razlog otkazivanja" } : {}),
+              onConfirm: async (reason) => {
+                await transition({
+                  orderId: r._id as Id<"orders">,
+                  to,
+                  expectedUpdatedAt: r.updatedAt,
+                  ...(to === "otkazana" ? { reason } : {}),
+                });
+                toast.success(`${r.number}: ${ADMIN_ORDER_STATUS[to].label.toLowerCase()}.`);
+              },
+            }),
+        };
+      }),
+    [router, transition],
+  );
 
   const columns = useMemo<ColumnDef<Row, unknown>[]>(
     () => [
@@ -212,14 +272,48 @@ export function OrdersList() {
         id: "status",
         accessorKey: "status",
         header: "Status",
-        cell: ({ row }) => (
-          <span className="flex flex-col items-start gap-1 2xl:flex-row 2xl:items-center 2xl:gap-1.5">
-            <OrderStatusBadge status={row.original.status} />
-            {row.original.hasBackorder && row.original.status === "nova" ? (
-              <Badge tone="warning">Ima po porudžbini</Badge>
-            ) : null}
-          </span>
-        ),
+        cell: ({ row }) => {
+          const r = row.original;
+          const items = statusItems(r);
+          return (
+            // The flag is a 20 px chip: under the status it still fits the 48 px row, so the list
+            // keeps one row height; beside it from 1536 px.
+            <span className="flex flex-col items-start gap-0.5 whitespace-nowrap 2xl:flex-row 2xl:items-center 2xl:gap-1.5">
+              {items.length > 0 ? (
+                // The chip is the control: the legal next steps open from the row. Not a tab
+                // stop — the same items are in the row's „Radnje“ menu, one stop per row.
+                <Menu
+                  align="start"
+                  trigger={
+                    <button
+                      type="button"
+                      tabIndex={-1}
+                      aria-label={`Status ${r.number}: ${ADMIN_ORDER_STATUS[r.status].label}. Promeni status`}
+                      title="Promeni status"
+                      className="group/status -my-1 -ml-1 inline-flex h-8 cursor-pointer items-center gap-0.5 rounded-sm pl-1 pr-0.5 transition-control hover:bg-surface-4 focus-ring-inset"
+                    >
+                      <OrderStatusBadge status={r.status} />
+                      <CaretDownIcon
+                        size={12}
+                        weight="bold"
+                        aria-hidden="true"
+                        className="text-ink-4 transition-control group-hover/status:text-ink-2"
+                      />
+                    </button>
+                  }
+                  items={items}
+                />
+              ) : (
+                <OrderStatusBadge status={r.status} />
+              )}
+              {r.hasBackorder && r.status === "nova" ? (
+                <Chip tone="warning" dense>
+                  Ima po porudžbini
+                </Chip>
+              ) : null}
+            </span>
+          );
+        },
       },
       {
         id: "items",
@@ -289,33 +383,44 @@ export function OrdersList() {
         enableSorting: false,
         enableHiding: false,
         meta: { sticky: "right", widthClass: "w-12" },
-        cell: ({ row }) => (
-          <Menu
-            trigger={
-              <IconButton
-                label={`Radnje za ${row.original.number}`}
-                icon={<DotsThreeIcon size={20} weight="bold" />}
-                size="sm"
-              />
-            }
-            items={[
-              { label: "Otvori", onSelect: () => router.push(ADMIN.order(row.original.number)) },
-              {
-                label: "Štampaj predračun",
-                icon: <PrinterIcon size={18} />,
-                href: ADMIN.orderProforma(row.original.number),
-              },
-              {
-                label: "Otpremnica",
-                icon: <PrinterIcon size={18} />,
-                href: ADMIN.orderDeliveryNote(row.original.number),
-              },
-            ]}
-          />
-        ),
+        cell: ({ row }) => {
+          const steps = statusItems(row.original);
+          return (
+            <Menu
+              trigger={
+                <IconButton
+                  label={`Radnje za ${row.original.number}`}
+                  title="Radnje"
+                  icon={<DotsThreeIcon size={20} weight="bold" />}
+                  size="sm"
+                />
+              }
+              items={[
+                { label: "Otvori", onSelect: () => router.push(ADMIN.order(row.original.number)) },
+                {
+                  label: "Štampaj predračun",
+                  icon: <PrinterIcon size={18} />,
+                  href: ADMIN.orderProforma(row.original.number),
+                },
+                {
+                  label: "Otpremnica",
+                  icon: <PrinterIcon size={18} />,
+                  href: ADMIN.orderDeliveryNote(row.original.number),
+                },
+                ...(steps.length > 0
+                  ? [
+                      { type: "separator" as const },
+                      { type: "label" as const, label: "Promeni status" },
+                      ...steps,
+                    ]
+                  : []),
+              ]}
+            />
+          );
+        },
       },
     ],
-    [dateFolded, nowMinute, router],
+    [dateFolded, nowMinute, router, statusItems],
   );
 
   const exportCsv = () => {
@@ -419,7 +524,7 @@ export function OrdersList() {
       />
       {selected.length > 0 ? (
         <div
-          className="flex min-h-12 flex-wrap items-center gap-3 rounded-md border border-line-strong bg-surface-1 px-3 py-1"
+          className="flex min-h-12 flex-wrap items-center gap-3 panel-raised px-3 py-1"
           role="region"
           aria-label="Grupne radnje"
         >
@@ -473,19 +578,17 @@ export function OrdersList() {
           >
             <div className="grid grid-cols-2 gap-3">
               <Field label="Od datuma">
-                <Input
+                <CompactInput
                   type="date"
                   value={f.od}
                   onChange={(e) => setF({ od: e.target.value })}
-                  className="h-9"
                 />
               </Field>
               <Field label="Do datuma">
-                <Input
+                <CompactInput
                   type="date"
                   value={f.do}
                   onChange={(e) => setF({ do: e.target.value })}
-                  className="h-9"
                 />
               </Field>
             </div>
@@ -535,10 +638,9 @@ export function OrdersList() {
               label="Kampanja"
               help="utm_campaign, ili google_ads / meta_ads za klikove iz oglasa"
             >
-              <Input
+              <CompactInput
                 value={f.kampanja}
                 onChange={(e) => setF({ kampanja: e.target.value })}
-                className="h-9"
               />
             </Field>
           </FiltersPopover>
@@ -547,9 +649,10 @@ export function OrdersList() {
               trigger={
                 <IconButton
                   label="Kolone"
+                  title="Kolone"
                   icon={<ColumnsIcon size={18} />}
                   size="sm"
-                  variant="secondary"
+                  variant="quiet"
                 />
               }
               items={[
@@ -569,16 +672,16 @@ export function OrdersList() {
                 })),
               ]}
             />
-            <IconButton
+            <IconAction
               label={density === "compact" ? "Normalni redovi" : "Gusti redovi"}
               icon={<RowsIcon size={18} />}
               size="sm"
-              variant="secondary"
+              variant="quiet"
               aria-pressed={density === "compact"}
               onClick={() => setDensity(density === "compact" ? "default" : "compact")}
             />
             <Button
-              variant="secondary"
+              variant="quiet"
               size="sm"
               icon={<ExportIcon size={16} />}
               onClick={exportCsv}
@@ -610,6 +713,8 @@ export function OrdersList() {
         status={status}
         onMore={loadMore}
         forms={["porudžbina", "porudžbine", "porudžbina"]}
+        total={listTotal}
+        totalCap={COUNT_CAP}
       />
       <ConfirmDialog {...confirm.props} />
     </div>

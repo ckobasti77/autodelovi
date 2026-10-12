@@ -6,6 +6,7 @@ import {
   facts,
   heading,
   join,
+  ledger,
   notice,
   paragraph,
   subheading,
@@ -68,6 +69,7 @@ export function staffOrderNew(d: StaffOrderEmailData, ctx: EmailContext): Render
     d.hasBackorder
       ? notice("warning", "Ima stavki po porudžbini", "Proverite rok kod dobavljača pre potvrde.")
       : null,
+    subheading("Stavke"),
     linesBlock(d.lines, d.moreLines, [["Ukupno sa PDV-om", rsd(d.totalPara), { strong: true }]]),
     button("Otvorite porudžbinu", d.adminUrl),
   );
@@ -173,14 +175,14 @@ export function staffLowStock(d: StaffLowStockEmailData, ctx: EmailContext): Ren
   const body = join(
     heading(`Malo na stanju: ${d.total} ${plural(d.total, ["artikal", "artikla", "artikala"])}`),
     paragraph("Artikli koji su u poslednjem satu pali na prag zaliha ili ispod njega."),
-    facts(
-      shown.map(
-        (i) =>
-          [
-            i.sku,
-            `[${i.name}](${i.url}) — ${i.qty === 0 ? "nema na stanju" : `ostalo ${formatQuantity(i.qty)}`}`,
-          ] as const,
-      ),
+    ledger(
+      shown.map((i) => ({
+        title: i.name,
+        href: i.url,
+        code: i.sku,
+        value: i.qty === 0 ? "nema na stanju" : `ostalo ${formatQuantity(i.qty)}`,
+        tone: i.qty === 0 ? ("danger" as const) : ("warning" as const),
+      })),
     ),
     d.total > shown.length
       ? paragraph(`I još ${d.total - shown.length} u lageru.`, { muted: true })

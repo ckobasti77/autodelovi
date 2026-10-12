@@ -24,12 +24,13 @@ import { Button } from "@/components/ui/Button";
 import { Dialog } from "@/components/ui/Dialog";
 import { Field } from "@/components/ui/Field";
 import { IconButton } from "@/components/ui/IconButton";
-import { Input } from "@/components/ui/Input";
 import { Select } from "@/components/ui/Select";
 import { Textarea } from "@/components/ui/Textarea";
 import { toast } from "@/components/ui/Toast";
 
 import { ProductPicker } from "../ProductPicker";
+
+import { CompactInput } from "../ui";
 
 type Detail = NonNullable<FunctionReturnType<typeof api.inquiriesAdmin.get>>;
 type Quote = Detail["quotes"][number];
@@ -257,7 +258,7 @@ export function QuoteComposer({
       ) : null}
       <ol className="flex flex-col gap-3">
         {lines.map((l, i) => (
-          <li key={l.key} className="rounded-md border border-line bg-surface-2 p-3">
+          <li key={l.key} className="panel-inset p-3">
             <div className="mb-2 flex items-center justify-between gap-2">
               <span className="type-label uppercase text-ink-3">
                 Stavka {i + 1}
@@ -272,25 +273,22 @@ export function QuoteComposer({
             </div>
             <div className="grid gap-3 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]">
               <Field label="Naziv" id={inputId(l.key, "name")} error={lineErrors[l.key]?.name}>
-                <Input
+                <CompactInput
                   value={l.name}
                   onChange={(e) => set(l.key, { name: e.target.value })}
-                  className="h-9"
                 />
               </Field>
               <Field label="Šifra / OEM">
-                <Input
+                <CompactInput
                   value={l.sku}
                   onChange={(e) => set(l.key, { sku: e.target.value })}
-                  className="h-9"
                   inputClassName="font-mono"
                 />
               </Field>
               <Field label="Proizvođač">
-                <Input
+                <CompactInput
                   value={l.manufacturer}
                   onChange={(e) => set(l.key, { manufacturer: e.target.value })}
-                  className="h-9"
                 />
               </Field>
             </div>
@@ -312,11 +310,10 @@ export function QuoteComposer({
                 id={inputId(l.key, "quantity")}
                 error={lineErrors[l.key]?.quantity}
               >
-                <Input
+                <CompactInput
                   value={l.quantity}
                   inputMode="numeric"
                   onChange={(e) => set(l.key, { quantity: e.target.value })}
-                  className="h-9"
                   inputClassName="text-right tabular-nums"
                 />
               </Field>
@@ -325,12 +322,11 @@ export function QuoteComposer({
                 id={inputId(l.key, "price")}
                 error={lineErrors[l.key]?.price}
               >
-                <Input
+                <CompactInput
                   value={l.price}
                   inputMode="decimal"
                   suffix="RSD"
                   onChange={(e) => set(l.key, { price: e.target.value })}
-                  className="h-9"
                   inputClassName="text-right tabular-nums"
                 />
               </Field>
@@ -352,21 +348,16 @@ export function QuoteComposer({
                 id={inputId(l.key, "leadTimeDays")}
                 error={lineErrors[l.key]?.leadTimeDays}
               >
-                <Input
+                <CompactInput
                   value={l.leadTimeDays}
                   inputMode="numeric"
                   onChange={(e) => set(l.key, { leadTimeDays: e.target.value })}
-                  className="h-9"
                   inputClassName="text-right tabular-nums"
                 />
               </Field>
             </div>
             <Field label="Napomena uz stavku" className="mt-3">
-              <Input
-                value={l.note}
-                onChange={(e) => set(l.key, { note: e.target.value })}
-                className="h-9"
-              />
+              <CompactInput value={l.note} onChange={(e) => set(l.key, { note: e.target.value })} />
             </Field>
           </li>
         ))}

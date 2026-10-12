@@ -41,7 +41,7 @@ import { ADMIN, ROUTES } from "@/constants/routes";
 
 import { useNowMinute } from "../hooks";
 import { useAdminCrumb } from "../shell/context";
-import { DemoTag, PageHeader, SaveBar, Section, StockStateBadge } from "../ui";
+import { CompactInput, DemoTag, PageHeader, SaveBar, Section, StockStateBadge } from "../ui";
 import { CodesEditor, type CrossRow, type OemRow } from "./CodesEditor";
 import { FitmentEditor, type FitmentRow } from "./FitmentEditor";
 import { ImagesEditor } from "./ImagesEditor";
@@ -501,7 +501,7 @@ function EditorForm({ full }: { full: Full | null }) {
         meta={
           full ? (
             <>
-              <Badge tone={full.active ? "success" : "neutral"}>
+              <Badge size="text" tone={full.active ? "success" : "neutral"}>
                 {full.active ? "Aktivan" : "Neaktivan"}
               </Badge>
               <StockStateBadge state={full.stockState} />
@@ -513,14 +513,14 @@ function EditorForm({ full }: { full: Full | null }) {
           full ? (
             <>
               {full.active ? (
-                <Button asChild variant="secondary" size="sm">
+                <Button asChild variant="quiet" size="sm">
                   <a href={ROUTES.product(full.slug)} target="_blank" rel="noopener">
                     Pogledaj na sajtu
                   </a>
                 </Button>
               ) : null}
               <Button
-                variant="secondary"
+                variant="quiet"
                 size="sm"
                 icon={<CopyIcon size={16} />}
                 onClick={async () => {
@@ -759,7 +759,7 @@ function EditorForm({ full }: { full: Full | null }) {
                     key={i}
                     className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_6rem_auto] items-center gap-2"
                   >
-                    <Input
+                    <CompactInput
                       aria-label={`Podatak ${i + 1}`}
                       placeholder="npr. Prečnik"
                       value={s.label}
@@ -769,9 +769,8 @@ function EditorForm({ full }: { full: Full | null }) {
                           form.specs.map((x, j) => (j === i ? { ...x, label: e.target.value } : x)),
                         )
                       }
-                      className="h-9"
                     />
-                    <Input
+                    <CompactInput
                       aria-label={`Vrednost ${i + 1}`}
                       placeholder="288"
                       value={s.value}
@@ -781,9 +780,8 @@ function EditorForm({ full }: { full: Full | null }) {
                           form.specs.map((x, j) => (j === i ? { ...x, value: e.target.value } : x)),
                         )
                       }
-                      className="h-9"
                     />
-                    <Input
+                    <CompactInput
                       aria-label={`Jedinica ${i + 1}`}
                       placeholder="mm"
                       value={s.unit}
@@ -793,7 +791,6 @@ function EditorForm({ full }: { full: Full | null }) {
                           form.specs.map((x, j) => (j === i ? { ...x, unit: e.target.value } : x)),
                         )
                       }
-                      className="h-9"
                     />
                     <IconButton
                       label={`Ukloni podatak ${i + 1}`}

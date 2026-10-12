@@ -42,7 +42,7 @@ export function CategoryTile({
           alt=""
           fill
           sizes={size === "s" ? "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw" : "(min-width: 1280px) 22vw, (min-width: 768px) 33vw, 50vw"}
-          className="object-contain p-[10%] transition-transform duration-[600ms] ease-sk-out hover-hover:group-hover:scale-[1.04]"
+          className="object-contain p-[2%] transition-transform duration-[600ms] ease-sk-out hover-hover:group-hover:scale-[1.04]"
         />
       </div>
       <div className="flex flex-1 flex-col gap-1 border-t border-line p-3 sm:p-4">

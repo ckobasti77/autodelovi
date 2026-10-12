@@ -32,12 +32,16 @@ function paymentsFor(
   return `${labels.slice(0, -1).join(", ")} ili ${labels[labels.length - 1]}`;
 }
 
-/** `/dostava-i-placanje`: the live delivery/payment table from settings above the text. */
+/**
+ * `/dostava-i-placanje`: the live delivery/payment table from settings between the intro and
+ * the sections; the inquiry and the other documents beside the text.
+ */
 export default async function DeliveryPage() {
   const settings = await getSettingsPublic();
   const table = (
     <StackedTable
       caption="Načini dostave i cene"
+      eager
       head={["Dostava", "Cena", "Rok", "Plaćanje"]}
       rows={settings.deliveryMethods.map((d) => ({
         key: d.code,
@@ -57,5 +61,12 @@ export default async function DeliveryPage() {
       }))}
     />
   );
-  return <ContentPageView slug="dostava-i-placanje" path={ROUTES.delivery} before={table} />;
+  return (
+    <ContentPageView
+      slug="dostava-i-placanje"
+      path={ROUTES.delivery}
+      kind="place"
+      before={table}
+    />
+  );
 }

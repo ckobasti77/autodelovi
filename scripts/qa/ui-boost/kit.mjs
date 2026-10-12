@@ -8,7 +8,7 @@ import { chromium } from "@playwright/test";
 
 export const PRODUCT = "/deo/kocioni-disk-prednji-312-25-mm-demo-0007";
 
-/** name → { path, as?: "mechanic" | "customer" | "admin", cart?: boolean, firstRow?: string } */
+/** name → { path, as?: "mechanic" | "customer" | "admin", cart?: boolean, firstRow?: string, firstLink?: string } */
 export const PAGES = {
   home: { path: "/" },
   category: { path: "/delovi/kocioni-diskovi" },
@@ -43,6 +43,59 @@ export const PAGES = {
   "admin-import": { path: "/admin/uvoz", as: "admin" },
   "admin-mechanics": { path: "/admin/majstori", as: "admin" },
   "admin-settings": { path: "/admin/podesavanja", as: "admin" },
+  // Step 27: the rest of the templates.
+  "parts-system": { path: "/delovi/kocnice" },
+  "category-empty": { path: "/delovi/kocioni-diskovi?cena=900000-999999" },
+  "category-filtered": {
+    path: "/delovi/kocioni-diskovi?dostupnost=na-stanju&proizvodjac=brembo,ate",
+  },
+  "category-vehicle": {
+    path: "/delovi/kocioni-diskovi?marka=volkswagen&model=golf&generacija=golf-7",
+  },
+  "search-code": { path: "/pretraga?q=1K0615301AA" },
+  "vehicle-brand": { path: "/vozila/volkswagen" },
+  "vehicle-model": { path: "/vozila/volkswagen/golf" },
+  about: { path: "/o-nama" },
+  returns: { path: "/reklamacije-i-povrat" },
+  terms: { path: "/uslovi-koriscenja" },
+  privacy: { path: "/politika-privatnosti" },
+  cookies: { path: "/kolacici" },
+  signup: { path: "/registracija" },
+  forgot: { path: "/zaboravljena-lozinka" },
+  notfound: { path: "/ova-strana-ne-postoji" },
+  "portal-order": {
+    path: "/majstor/porudzbine",
+    as: "mechanic",
+    firstLink: "/majstor/porudzbine/",
+  },
+  "portal-inquiries": { path: "/majstor/upiti", as: "mechanic" },
+  "portal-favorites": { path: "/majstor/omiljeno", as: "mechanic" },
+  "portal-vehicles": { path: "/majstor/vozila", as: "mechanic" },
+  "portal-profile": { path: "/majstor/profil", as: "mechanic" },
+  "account-order": { path: "/nalog/porudzbine", as: "customer", firstLink: "/nalog/porudzbine/" },
+  "account-inquiries": { path: "/nalog/upiti", as: "customer" },
+  "account-vehicles": { path: "/nalog/vozila", as: "customer" },
+  "account-profile": { path: "/nalog/profil", as: "customer" },
+  "admin-inquiry": { path: "/admin/upiti", as: "admin", firstRow: "/admin/upiti/" },
+  "admin-product-new": { path: "/admin/proizvodi/novi", as: "admin" },
+  "admin-categories": { path: "/admin/kategorije", as: "admin" },
+  "admin-vehicles": { path: "/admin/vozila", as: "admin" },
+  "admin-manufacturers": { path: "/admin/proizvodjaci", as: "admin" },
+  "admin-stock": { path: "/admin/lager", as: "admin" },
+  "admin-customers": { path: "/admin/kupci", as: "admin" },
+  "admin-customer": { path: "/admin/kupci", as: "admin", firstRow: "/admin/kupci/" },
+  "admin-mechanic": { path: "/admin/majstori", as: "admin", firstRow: "/admin/majstori/" },
+  "admin-tiers": { path: "/admin/cenovni-razredi", as: "admin" },
+  "admin-users": { path: "/admin/korisnici", as: "admin" },
+  "admin-audit": { path: "/admin/revizija", as: "admin" },
+  "admin-privacy": { path: "/admin/privatnost", as: "admin" },
+  "admin-emails": { path: "/admin/mejlovi", as: "admin" },
+  "admin-email-templates": { path: "/admin/mejlovi/sabloni", as: "admin" },
+  "admin-searches": { path: "/admin/pretrage", as: "admin" },
+  "admin-sources": { path: "/admin/izvori", as: "admin" },
+  "admin-notifications": { path: "/admin/obavestenja", as: "admin" },
+  "admin-import-history": { path: "/admin/uvoz/istorija", as: "admin" },
+  "admin-export": { path: "/admin/izvoz", as: "admin" },
 };
 
 export const VIEWPORTS = [
@@ -52,7 +105,11 @@ export const VIEWPORTS = [
 
 export function parseArgs(argv = process.argv.slice(2)) {
   const flag = (name) =>
-    argv.find((a) => a.startsWith(`--${name}=`))?.split("=").slice(1).join("=");
+    argv
+      .find((a) => a.startsWith(`--${name}=`))
+      ?.split("=")
+      .slice(1)
+      .join("=");
   return {
     positional: argv.filter((a) => !a.startsWith("--")),
     flag,
@@ -116,7 +173,8 @@ export async function signIn(page, base, role) {
     if (!email || !password) throw new Error("SEED_ADMIN_EMAIL / SEED_ADMIN_PASSWORD not set");
     return login(page, base, email, password, "/admin");
   }
-  if (!accounts) throw new Error(".playwright/audit-accounts.json missing (scripts/qa/audit/accounts.mjs)");
+  if (!accounts)
+    throw new Error(".playwright/audit-accounts.json missing (scripts/qa/audit/accounts.mjs)");
   if (role === "mechanic")
     return login(page, base, accounts.mechanic.email, accounts.mechanic.password, "/majstor");
   return login(page, base, accounts.customer.email, accounts.customer.password, "/nalog");
@@ -149,6 +207,16 @@ export async function open(page, base, spec, state) {
     );
     await settle(page);
   }
+  if (spec.firstLink) {
+    // Storefront lists (portal and account orders) link to their record.
+    const link = page.locator(`main a[href^="${spec.firstLink}"]`).first();
+    await link.waitFor({ timeout: 30_000 });
+    await page.goto(new URL(await link.getAttribute("href"), base).href, {
+      waitUntil: "load",
+      timeout: 120_000,
+    });
+    await settle(page);
+  }
   await page.waitForTimeout(600);
 }
 
@@ -174,7 +242,11 @@ export async function renderEverything(page) {
 }
 
 /** Runs `visit(page, name, spec, viewport)` for every selected page, grouped by role. */
-export async function forEachPage(browser, { base, only, viewports = VIEWPORTS, reducedMotion }, visit) {
+export async function forEachPage(
+  browser,
+  { base, only, viewports = VIEWPORTS, reducedMotion },
+  visit,
+) {
   const names = Object.keys(PAGES).filter((n) => !only || only.includes(n));
   const roles = [...new Set(names.map((n) => PAGES[n].as ?? "visitor"))];
   for (const viewport of viewports) {

@@ -83,9 +83,7 @@ export function CatalogShell({
   const base = navigateBase ?? pathname;
   const navigate = (next: CatalogFilters) => {
     const href = `${base}${catalogQuery(next)}`;
-    start(() =>
-      base === pathname ? router.replace(href, { scroll: false }) : router.push(href),
-    );
+    start(() => (base === pathname ? router.replace(href, { scroll: false }) : router.push(href)));
   };
   return (
     <CatalogContext.Provider value={{ pending, navigate }}>{children}</CatalogContext.Provider>
@@ -117,23 +115,28 @@ function Group({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="border-b border-line py-3">
-      <h2 className="type-label uppercase text-ink-3">
+    <div className="border-b border-line py-2 last:border-b-0">
+      <h2 className="type-body-s font-semibold text-ink-1">
         <button
           type="button"
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
-          className="flex min-h-11 w-full cursor-pointer items-center justify-between gap-2 text-left transition-control hover:text-ink-1"
+          className="group/title flex min-h-11 w-full cursor-pointer items-center justify-between gap-2 rounded-xs text-left"
         >
           {title}
           <CaretDownIcon
             size={16}
             aria-hidden="true"
-            className={cn("transition-transform duration-200", open && "rotate-180")}
+            className={cn(
+              "text-ink-3 transition-[color,rotate] duration-200 group-hover/title:text-ink-1",
+              open && "rotate-180",
+            )}
           />
         </button>
       </h2>
-      <div hidden={!open}>{children}</div>
+      <div hidden={!open} className="pb-2">
+        {children}
+      </div>
     </div>
   );
 }
@@ -142,7 +145,13 @@ function toggle<T>(list: T[], value: T): T[] {
   return list.includes(value) ? list.filter((v) => v !== value) : [...list, value];
 }
 
-function VehicleGroup({ filters, vehicleLabel }: { filters: CatalogFilters; vehicleLabel: string | null }) {
+function VehicleGroup({
+  filters,
+  vehicleLabel,
+}: {
+  filters: CatalogFilters;
+  vehicleLabel: string | null;
+}) {
   const { navigate } = useCatalog();
   const stored = useSelectedVehicle();
   if (filters.vehicle) {
@@ -192,19 +201,32 @@ function VehicleGroup({ filters, vehicleLabel }: { filters: CatalogFilters; vehi
           <span className="truncate">Samo za {vehicleFullLabel(stored)}</span>
         </Button>
       ) : null}
-      <Button variant="secondary" size="md" icon={<CarIcon size={20} />} onClick={openVehiclePicker}>
+      <Button
+        variant="secondary"
+        size="md"
+        icon={<CarIcon size={20} />}
+        onClick={openVehiclePicker}
+      >
         {stored ? "Drugo vozilo" : "Izaberite vozilo"}
       </Button>
     </div>
   );
 }
 
-function ManufacturerGroup({ filters, options }: { filters: CatalogFilters; options: FacetOption[] }) {
+function ManufacturerGroup({
+  filters,
+  options,
+}: {
+  filters: CatalogFilters;
+  options: FacetOption[];
+}) {
   const { navigate } = useCatalog();
   const [all, setAll] = useState(false);
   const visible = all ? options : options.slice(0, 8);
   if (options.length === 0) {
-    return <p className="py-2 type-caption font-normal text-ink-3">Nema proizvođača za ovaj izbor.</p>;
+    return (
+      <p className="py-2 type-caption font-normal text-ink-3">Nema proizvođača za ovaj izbor.</p>
+    );
   }
   return (
     <div className="flex flex-col">
@@ -228,7 +250,13 @@ function ManufacturerGroup({ filters, options }: { filters: CatalogFilters; opti
   );
 }
 
-function PriceGroup({ filters, range }: { filters: CatalogFilters; range: CatalogFacets["price"] }) {
+function PriceGroup({
+  filters,
+  range,
+}: {
+  filters: CatalogFilters;
+  range: CatalogFacets["price"];
+}) {
   const { navigate } = useCatalog();
   const [min, setMin] = useState(filters.priceMin?.toString() ?? "");
   const [max, setMax] = useState(filters.priceMax?.toString() ?? "");
@@ -345,7 +373,9 @@ export function FilterRail(props: {
       aria-label="Filteri"
       className="hidden lg:sticky lg:top-[calc(var(--header-h)+1.5rem)] lg:-mx-1 lg:block lg:max-h-[calc(100dvh-var(--header-h)-3rem)] lg:self-start lg:overflow-y-auto lg:overscroll-contain lg:px-1 lg:py-1 lg:[scrollbar-width:thin]"
     >
-      <FilterGroups {...props} />
+      <div className="panel px-4 py-1">
+        <FilterGroups {...props} />
+      </div>
     </aside>
   );
 }
@@ -415,7 +445,7 @@ export function CatalogToolbar({
       className="contents lg:grid lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-3"
       data-reveal="off"
     >
-      <p className="type-body-s text-ink-2" role="status" aria-live="polite">
+      <p className="type-body-s text-ink-2 max-lg:sr-only" role="status" aria-live="polite">
         <span className="font-semibold tabular-nums text-ink-1">{formatNumber(total)}</span>{" "}
         {pluralSr(total, ["artikal", "artikla", "artikala"])}
         {pending ? <span className="sr-only"> — učitava se</span> : null}
@@ -450,6 +480,11 @@ export function CatalogToolbar({
         >
           <FilterGroups filters={filters} facets={facets} vehicleLabel={vehicleLabel} />
         </Sheet>
+        {/* The same count for sighted phone users; the status paragraph above announces it. */}
+        <p aria-hidden="true" className="order-last shrink-0 type-caption text-ink-3 lg:hidden">
+          <span className="font-semibold tabular-nums text-ink-1">{formatNumber(total)}</span>{" "}
+          {pluralSr(total, ["artikal", "artikla", "artikala"])}
+        </p>
         <label className="flex min-w-0 flex-1 items-center gap-2 type-caption text-ink-2 sm:flex-none">
           <span className="hidden sm:inline">Sortiraj</span>
           <Select
@@ -466,7 +501,10 @@ export function CatalogToolbar({
         </label>
       </div>
       {chips.length > 0 ? (
-        <ul className="-mt-2 flex flex-wrap items-center gap-2 lg:col-span-2 lg:mt-0" aria-label="Primenjeni filteri">
+        <ul
+          className="flex flex-wrap items-center gap-2 lg:col-span-2"
+          aria-label="Primenjeni filteri"
+        >
           {chips.map((chip) => (
             <li key={chip.key}>
               <button

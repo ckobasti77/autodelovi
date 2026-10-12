@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { catalogProductCount } from "@/lib/catalog/types";
+import { catalogProductCount, categoryProductCount } from "@/lib/catalog/types";
 import { fillPlaceholders } from "@/lib/content/placeholders";
 import { markdownToText } from "@/lib/content/markdown";
 import { formatNumber } from "@/lib/format/number";
@@ -10,6 +10,7 @@ import { storeInfoFromSettings } from "@/lib/seo/store";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { contactFromSettings, placeholderValues } from "@/lib/settings/public";
 import {
+  getCategoryListing,
   getCategoryTree,
   getFaqs,
   getPublicTiers,
@@ -23,6 +24,7 @@ import {
   ContactStrip,
   HomeCategories,
   HomeFaq,
+  HomeFeatured,
   HowOrdering,
   MakesCovered,
   MechanicsBand,
@@ -42,19 +44,42 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
+/** Categories whose most ordered part in stock is shown on the home page (one card each). */
+const FEATURED_PART_CATEGORIES = [
+  "kocione-plocice",
+  "kocioni-diskovi",
+  "amortizeri-opruge",
+  "filteri",
+];
+
 /**
  * Home (§10.1): the 3D hero (step 10), how ordering works, featured categories with renders,
- * the systems index (the 3D car's text equivalent), the mechanics band, makes covered, facts
- * from data and settings, FAQ and the contact strip.
+ * parts in stock, the systems index (the 3D car's text equivalent), the mechanics band, makes
+ * covered, facts from data and settings, FAQ and the contact strip.
  */
 export default async function HomePage() {
-  const [settings, tree, vehicles, faqs, tiers] = await Promise.all([
+  const [settings, tree, vehicles, faqs, tiers, featuredListings] = await Promise.all([
     getSettingsPublic(),
     getCategoryTree(),
     getVehicleTree(),
     getFaqs("home"),
     getPublicTiers(),
+    Promise.all(
+      FEATURED_PART_CATEGORIES.map((categorySlug) =>
+        getCategoryListing({
+          categorySlug,
+          availability: "in_stock",
+          sort: "popular",
+          page: 1,
+          pageSize: 1,
+        }),
+      ),
+    ),
   ]);
+  const featuredParts = featuredListings.flatMap((listing) => listing?.items ?? []);
+  const categoryCounts = Object.fromEntries(
+    tree.categories.map((c) => [c.slug, categoryProductCount(tree, c)]),
+  );
   const values = placeholderValues(settings);
   const faqItems = faqs.map((f) => ({
     question: f.question,
@@ -96,7 +121,8 @@ export default async function HomePage() {
       <HeroSection />
       <HowOrdering courierLine={courierLine} />
       <HomeCategories tree={tree} />
-      <SystemsIndex />
+      <HomeFeatured items={featuredParts} />
+      <SystemsIndex counts={categoryCounts} />
       <MechanicsBand tiers={tiers} />
       <MakesCovered tree={vehicles} />
       <TrustFacts facts={settings.trustFacts} computed={computed} />

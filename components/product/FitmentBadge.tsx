@@ -58,7 +58,7 @@ export function FitmentBadge({
         onClick={openVehiclePicker}
         className={cn(
           base,
-          "w-full cursor-pointer border border-dashed border-control text-left text-ink-2 transition-control hover:border-ink-3 hover:text-ink-1",
+          "w-full cursor-pointer border border-line-strong bg-surface-2 text-left text-ink-1 shadow-rest transition-control hover:border-ink-4 hover:bg-surface-3",
         )}
       >
         <CarIcon size={18} aria-hidden="true" className="mt-0.5 shrink-0" />

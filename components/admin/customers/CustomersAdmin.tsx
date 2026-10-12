@@ -89,13 +89,17 @@ export function CustomersList() {
         cell: ({ row }) => (
           <span className="flex items-center gap-1.5">
             {row.original.mechanicStatus !== "none" ? (
-              <Badge tone={MECHANIC_STATUS_TONE[row.original.mechanicStatus]}>
+              <Badge size="text" tone={MECHANIC_STATUS_TONE[row.original.mechanicStatus]}>
                 Majstor · {MECHANIC_STATUS_LABEL[row.original.mechanicStatus]}
               </Badge>
             ) : (
               <span className="text-ink-2">Kupac</span>
             )}
-            {row.original.blocked ? <Badge tone="danger">Blokiran</Badge> : null}
+            {row.original.blocked ? (
+              <Badge size="text" tone="danger">
+                Blokiran
+              </Badge>
+            ) : null}
           </span>
         ),
       },
@@ -190,7 +194,11 @@ export function CustomerDetail({ userId }: { userId: Id<"users"> }) {
         description={`Nalog od ${compactDate(u.createdAt, nowMinute)}${u.lastSeenAt ? ` · poslednja aktivnost ${compactDateTime(u.lastSeenAt, nowMinute)}` : ""}`}
         meta={
           <>
-            {u.blocked ? <Badge tone="danger">Blokiran</Badge> : null}
+            {u.blocked ? (
+              <Badge size="text" tone="danger">
+                Blokiran
+              </Badge>
+            ) : null}
             {u.isDemo ? <DemoTag /> : null}
           </>
         }
@@ -238,15 +246,22 @@ export function CustomerDetail({ userId }: { userId: Id<"users"> }) {
       />
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_380px]">
         <div className="flex min-w-0 flex-col gap-6">
-          <div className="grid grid-cols-3 gap-px border-y border-line bg-line">
+          {/* The same figure strip as the dashboard: one panel, hairline rules between cells. */}
+          <div
+            className="grid grid-cols-3 gap-px overflow-hidden rounded-md border border-line bg-line"
+            data-reveal="block"
+          >
             {[
               ["Porudžbine", String(data.stats.orders)],
               ["Ukupno", formatRSD(data.stats.valuePara)],
               ["U toku", String(data.stats.open)],
             ].map(([label, value]) => (
-              <div key={label} className="flex flex-col gap-1 bg-bg px-4 py-3">
+              <div
+                key={label}
+                className="flex min-w-0 flex-col gap-1 bg-surface-1 px-3 py-3 sm:px-4"
+              >
                 <span className="type-caption text-ink-3">{label}</span>
-                <span className="font-condensed text-[1.75rem] font-semibold tabular-nums leading-none">
+                <span className="whitespace-nowrap font-condensed text-[1.25rem] font-semibold tabular-nums leading-none sm:text-[1.75rem]">
                   {value}
                 </span>
               </div>
@@ -264,7 +279,8 @@ export function CustomerDetail({ userId }: { userId: Id<"users"> }) {
                       className="flex items-center gap-3 px-4 py-2 type-body-s hover:bg-surface-2"
                     >
                       <DocNumber number={o.number} />
-                      <span className="tabular-nums text-ink-3">
+                      {/* The date gives way on a phone: number, total and status must fit 390 px. */}
+                      <span className="hidden tabular-nums text-ink-3 sm:inline">
                         {compactDate(o.createdAt, nowMinute)}
                       </span>
                       <span className="ml-auto tabular-nums">{formatRSD(o.totalPara)}</span>
@@ -348,7 +364,7 @@ export function CustomerDetail({ userId }: { userId: Id<"users"> }) {
                   {
                     label: "Status",
                     value: (
-                      <Badge tone={MECHANIC_STATUS_TONE[data.mechanic.status]}>
+                      <Badge size="text" tone={MECHANIC_STATUS_TONE[data.mechanic.status]}>
                         {MECHANIC_STATUS_LABEL[data.mechanic.status]}
                       </Badge>
                     ),

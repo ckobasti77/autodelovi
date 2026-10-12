@@ -52,7 +52,11 @@ export function SearchesAdmin() {
         <Skeleton className="h-96 w-full" />
       ) : (
         <>
-          <div className="grid grid-cols-3 gap-px border-y border-line bg-line">
+          {/* The same figure strip as the dashboard: one panel, hairline rules between cells. */}
+          <div
+            className="grid grid-cols-3 gap-px overflow-hidden rounded-md border border-line bg-line"
+            data-reveal="block"
+          >
             {[
               ["Pretraga", String(totals.searches)],
               ["Bez rezultata", String(totals.zero)],
@@ -63,9 +67,12 @@ export function SearchesAdmin() {
                   : "—",
               ],
             ].map(([label, value]) => (
-              <div key={label} className="flex flex-col gap-1 bg-bg px-5 py-4">
+              <div
+                key={label}
+                className="flex min-w-0 flex-col gap-1 bg-surface-1 px-3 py-3.5 sm:px-5 sm:py-4"
+              >
                 <span className="type-caption text-ink-3">{label}</span>
-                <span className="font-condensed text-[2.5rem] font-semibold leading-[0.95] tabular-nums">
+                <span className="whitespace-nowrap font-condensed text-[1.75rem] font-semibold leading-[0.95] tabular-nums sm:text-[2.5rem]">
                   {value}
                 </span>
               </div>

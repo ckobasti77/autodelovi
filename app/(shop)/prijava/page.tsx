@@ -21,7 +21,6 @@ function roleLabel(viewer: ServerViewer): string {
   return "kupac";
 }
 
-
 export default async function SignInPage({ searchParams }: PageProps<"/prijava">) {
   const [viewer, params] = await Promise.all([getViewer(), searchParams]);
   // Only same-origin relative paths are allowed as `next` (no open redirects).
@@ -31,9 +30,16 @@ export default async function SignInPage({ searchParams }: PageProps<"/prijava">
     return (
       <AuthFrame title="Prijavljeni ste">
         <div className="flex flex-col gap-6">
-          <p className="type-body text-ink-2" data-testid={TEST_IDS.authViewer} data-role={viewer.role}>
-            {viewer.email ?? viewer.name ?? "Nalog"} · {roleLabel(viewer)}
-          </p>
+          <div className="flex flex-col gap-1">
+            <span className="type-caption text-ink-3">Nalog</span>
+            <p
+              className="break-all type-body text-ink-1"
+              data-testid={TEST_IDS.authViewer}
+              data-role={viewer.role}
+            >
+              {viewer.email ?? viewer.name ?? "Nalog"} · {roleLabel(viewer)}
+            </p>
+          </div>
           <div className="flex flex-wrap gap-3">
             <Button asChild variant="primary">
               <Link href={ROUTES.account} variant="unstyled">
@@ -51,19 +57,15 @@ export default async function SignInPage({ searchParams }: PageProps<"/prijava">
       title="Prijava"
       lead="Nalog nije obavezan za kupovinu — služi za istoriju porudžbina i sačuvana vozila."
       footer={
-        <>
-          <p>
-            Nemate nalog?{" "}
-            <Link href={`${ROUTES.signUp}${next !== "/prijava" ? `?next=${encodeURIComponent(next)}` : ""}`} variant="inline">
-              Napravite nalog
-            </Link>
-          </p>
-          <p>
-            <Link href={ROUTES.forgotPassword} variant="inline">
-              Zaboravljena lozinka
-            </Link>
-          </p>
-        </>
+        <p>
+          Nemate nalog?{" "}
+          <Link
+            href={`${ROUTES.signUp}${next !== "/prijava" ? `?next=${encodeURIComponent(next)}` : ""}`}
+            variant="inline"
+          >
+            Napravite nalog
+          </Link>
+        </p>
       }
     >
       <SignInForm next={next} />

@@ -44,6 +44,8 @@ import { MECHANIC_STATUS_ICON } from "@/components/admin/MechanicsAdminList";
 import { ROUTES } from "@/constants/routes";
 import { TEST_IDS } from "@/constants/testIds";
 
+import { CompactInput } from "./ui";
+
 type Option = { id: string; name: string };
 
 type RuleRow = { id: string; percent: string };
@@ -97,7 +99,7 @@ function RulesEditor({
               onChange(rows.map((r, j) => (j === i ? { ...r, id: e.target.value } : r)))
             }
           />
-          <Input
+          <CompactInput
             aria-label={`${label}: rabat ${i + 1}`}
             inputMode="decimal"
             suffix="%"
@@ -105,7 +107,6 @@ function RulesEditor({
             onChange={(e) =>
               onChange(rows.map((r, j) => (j === i ? { ...r, percent: e.target.value } : r)))
             }
-            className="h-9"
           />
           <IconButton
             label={`Ukloni izuzetak ${i + 1}`}
@@ -333,7 +334,11 @@ function DetailView({
         >
           {MECHANIC_STATUS_LABEL[p.status]}
         </Badge>
-        {p.isDemo ? <Badge tone="outline">Demo</Badge> : null}
+        {p.isDemo ? (
+          <Badge size="text" tone="outline">
+            Demo
+          </Badge>
+        ) : null}
       </div>
 
       <div className="grid gap-8 lg:grid-cols-12 lg:gap-x-(--gutter)">

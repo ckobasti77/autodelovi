@@ -1,57 +1,50 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import {
+  CarIcon,
+  ChatCircleTextIcon,
+  StarIcon,
+  UserCircleIcon,
+} from "@phosphor-icons/react/dist/ssr";
 
-import { cn } from "@/lib/cn";
-import { RouteLink } from "@/components/ui/RouteLink";
-import { SignOutButton } from "@/components/auth/SignInForm";
+import { SectionHeading, SectionNav, type SectionNavItem } from "@/components/account/SectionNav";
 import { ROUTES } from "@/constants/routes";
 import { TEST_IDS } from "@/constants/testIds";
 
-const ITEMS = [
+/** What a mechanic opens every day: the tab row. */
+const PRIMARY: SectionNavItem[] = [
   { href: ROUTES.mechanicPortal, label: "Pregled", exact: true },
   { href: ROUTES.mechanicQuickOrderPage, label: "Brza porudžbina" },
   { href: ROUTES.mechanicOrders, label: "Porudžbine" },
-  { href: ROUTES.mechanicFavorites, label: "Omiljeno" },
-  { href: ROUTES.mechanicVehicles, label: "Vozila mušterija" },
   { href: ROUTES.mechanicPriceList, label: "Cenovnik" },
-  { href: ROUTES.mechanicInquiries, label: "Upiti" },
-  { href: ROUTES.mechanicProfile, label: "Profil" },
 ];
 
-/** Portal navigation: underline tabs as links, horizontal scroll on phones (44 px targets). */
+/** The rest sits behind „Još“ (and as tiles on the overview). */
+const MORE: SectionNavItem[] = [
+  { href: ROUTES.mechanicFavorites, label: "Omiljeno", icon: <StarIcon size={16} /> },
+  { href: ROUTES.mechanicVehicles, label: "Vozila mušterija", icon: <CarIcon size={16} /> },
+  { href: ROUTES.mechanicInquiries, label: "Upiti", icon: <ChatCircleTextIcon size={16} /> },
+  { href: ROUTES.mechanicProfile, label: "Profil", icon: <UserCircleIcon size={16} /> },
+];
+
+const AREA = "Majstorski portal";
+
+/** Portal navigation: four tabs as links and the „Još“ menu (44 px targets). */
 export function PortalNav() {
-  const pathname = usePathname();
   return (
-    <div
-      className="flex flex-wrap items-end justify-between gap-3 border-b border-line"
-      data-reveal="off"
-      data-testid={TEST_IDS.mechanicPortalNav}
-    >
-      <nav aria-label="Majstorski portal" className="-mb-px flex max-w-full overflow-x-auto">
-        <ul className="flex gap-6">
-          {ITEMS.map((item) => {
-            const active = item.exact ? pathname === item.href : pathname.startsWith(item.href);
-            return (
-              <li key={item.href}>
-                <RouteLink
-                  href={item.href}
-                  aria-current={active ? "page" : undefined}
-                  className={cn(
-                    "inline-flex h-11 items-center whitespace-nowrap border-b-2 type-body-s font-medium transition-control",
-                    active ? "border-accent text-ink-1" : "border-transparent text-ink-2 hover:text-ink-1",
-                  )}
-                >
-                  {item.label}
-                </RouteLink>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-      <div className="hidden pb-1.5 sm:block">
-        <SignOutButton />
-      </div>
-    </div>
+    <SectionNav label={AREA} primary={PRIMARY} more={MORE} testId={TEST_IDS.mechanicPortalNav} />
+  );
+}
+
+/** Portal heading: „Majstorski portal“ on the overview, the open view everywhere else. */
+export function PortalHeading({ company }: { company: string }) {
+  return (
+    <SectionHeading
+      area={AREA}
+      rootHref={ROUTES.mechanicPortal}
+      context={company}
+      items={[...PRIMARY.slice(1), ...MORE]}
+      records={[{ prefix: ROUTES.mechanicOrders, title: "Porudžbina" }]}
+    />
   );
 }

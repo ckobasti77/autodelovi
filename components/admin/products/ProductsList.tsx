@@ -18,7 +18,6 @@ import { formatRSD } from "@/lib/format/money";
 import { STOCK_STATE_LABEL } from "@/lib/i18n/sr/admin";
 import { QUALITY_LABEL } from "@/lib/i18n/sr/catalog";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import {
   DataTable,
@@ -40,7 +39,9 @@ import { ADMIN, ROUTES } from "@/constants/routes";
 import { FiltersPopover } from "../FiltersPopover";
 import { useDebouncedValue, useNowMinute } from "../hooks";
 import {
+  Chip,
   DemoTag,
+  IconAction,
   LoadMoreFooter,
   PageHeader,
   SearchField,
@@ -226,7 +227,11 @@ export function ProductsList() {
                 <span className="flex items-center gap-1.5 type-caption text-ink-3">
                   <span className="type-code-s">{p.sku}</span>
                   {p.isDemo ? <DemoTag /> : null}
-                  {!p.active ? <Badge tone="neutral">Neaktivan</Badge> : null}
+                  {!p.active ? (
+                    <Chip tone="neutral" dense>
+                      Neaktivan
+                    </Chip>
+                  ) : null}
                 </span>
               </span>
             </span>
@@ -239,10 +244,11 @@ export function ProductsList() {
         header: "Stanje",
         meta: { align: "right" },
         cell: ({ row }) => (
-          // The state badge stacks over the quantity when the table is narrower than 72rem.
-          <span className="flex flex-col items-end gap-1 @min-[72rem]:flex-row @min-[72rem]:items-center @min-[72rem]:justify-end @min-[72rem]:gap-2">
+          // State and quantity on one line at every width (a stacked badge made these rows 60 px
+          // in a 48 px list); the 20 px chip keeps the pair inside the column.
+          <span className="flex items-center justify-end gap-1.5 whitespace-nowrap">
             {row.original.stockState !== "in_stock" ? (
-              <StockStateBadge state={row.original.stockState} />
+              <StockStateBadge state={row.original.stockState} dense />
             ) : null}
             <StockCell row={row.original} />
           </span>
@@ -320,6 +326,7 @@ export function ProductsList() {
             trigger={
               <IconButton
                 label={`Radnje za ${row.original.sku}`}
+                title="Radnje"
                 icon={<DotsThreeIcon size={20} weight="bold" />}
                 size="sm"
               />
@@ -340,12 +347,35 @@ export function ProductsList() {
               ...(row.original.active
                 ? [{ label: "Pogledaj na sajtu", href: ROUTES.product(row.original.slug) }]
                 : []),
+              { type: "separator" as const },
+              // The status control of the row: the same mutation and undo as the bulk bar.
+              {
+                label: row.original.active ? "Deaktiviraj" : "Aktiviraj",
+                onSelect: () =>
+                  void bulkActive({
+                    productIds: [row.original._id],
+                    active: !row.original.active,
+                  }).then(
+                    (undo) =>
+                      toast.success(
+                        `${row.original.sku}: ${row.original.active ? "deaktiviran" : "aktiviran"}.`,
+                        {
+                          duration: 10_000,
+                          action: {
+                            label: "Poništi",
+                            onClick: () => void bulkRestore({ items: undo }),
+                          },
+                        },
+                      ),
+                    (err) => toast.error(convexErrorMessage(err, "Izmena nije sačuvana.")),
+                  ),
+              },
             ]}
           />
         ),
       },
     ],
-    [duplicate, nowMinute, router, stickyName],
+    [bulkActive, bulkRestore, duplicate, nowMinute, router, stickyName],
   );
 
   const percentValue = parsePercent(percent);
@@ -377,14 +407,14 @@ export function ProductsList() {
       />
       {selectedIds.length > 0 ? (
         <div
-          className="flex min-h-12 flex-wrap items-center gap-2 rounded-md border border-line-strong bg-surface-1 px-3 py-1"
+          className="flex min-h-12 flex-wrap items-center gap-2 panel-raised px-3 py-1"
           role="region"
           aria-label="Grupne radnje"
         >
           <span className="mr-1 type-body-s font-semibold">{selectedIds.length} izabrano</span>
           <Button
             size="sm"
-            variant="secondary"
+            variant="quiet"
             loading={busy}
             onClick={() =>
               void withUndo("Aktivirano", () =>
@@ -396,7 +426,7 @@ export function ProductsList() {
           </Button>
           <Button
             size="sm"
-            variant="secondary"
+            variant="quiet"
             loading={busy}
             onClick={() =>
               void withUndo("Deaktivirano", () =>
@@ -406,10 +436,10 @@ export function ProductsList() {
           >
             Deaktiviraj
           </Button>
-          <Button size="sm" variant="secondary" onClick={() => setDialog("category")}>
+          <Button size="sm" variant="quiet" onClick={() => setDialog("category")}>
             Promeni kategoriju
           </Button>
-          <Button size="sm" variant="secondary" onClick={() => setDialog("price")}>
+          <Button size="sm" variant="quiet" onClick={() => setDialog("price")}>
             Promeni cene %
           </Button>
           <Button size="sm" variant="ghost" onClick={() => setSelection({})}>
@@ -494,9 +524,10 @@ export function ProductsList() {
               trigger={
                 <IconButton
                   label="Kolone"
+                  title="Kolone"
                   icon={<ColumnsIcon size={18} />}
                   size="sm"
-                  variant="secondary"
+                  variant="quiet"
                 />
               }
               items={[
@@ -518,11 +549,11 @@ export function ProductsList() {
                 ),
               ]}
             />
-            <IconButton
+            <IconAction
               label={density === "compact" ? "Normalni redovi" : "Gusti redovi"}
               icon={<RowsIcon size={18} />}
               size="sm"
-              variant="secondary"
+              variant="quiet"
               aria-pressed={density === "compact"}
               onClick={() => setDensity(density === "compact" ? "default" : "compact")}
             />

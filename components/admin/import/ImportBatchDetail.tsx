@@ -39,6 +39,7 @@ import {
 } from "../ui";
 import { CommitStep } from "./BatchSteps";
 import { CountTiles, fieldLabel, IssueList, RowActionBadge, ImportStatusBadge } from "./parts";
+import { Button } from "@/components/ui/Button";
 
 type Row = FunctionReturnType<typeof api.imports.rows>["page"][number];
 
@@ -63,7 +64,7 @@ function RowsTab({ batchId, rolledBack }: { batchId: Id<"importBatches">; rolled
           })),
         ]}
       />
-      <div className="overflow-x-auto panel">
+      <div className="overflow-x-auto panel" data-reveal="block">
         <table className="w-full border-collapse type-body-s" data-testid="import-rows">
           <caption className="sr-only">Redovi uvoza</caption>
           <thead>
@@ -164,7 +165,7 @@ function ChangesTab({ batchId }: { batchId: Id<"importBatches"> }) {
   );
   return (
     <div className="mt-3 flex flex-col gap-3">
-      <div className="overflow-x-auto panel">
+      <div className="overflow-x-auto panel" data-reveal="block">
         <table className="w-full border-collapse type-body-s">
           <caption className="sr-only">Izmene artikala iz ovog uvoza</caption>
           <thead>
@@ -239,7 +240,7 @@ function ImagesTab({ batchId }: { batchId: Id<"importBatches"> }) {
       {jobs.failed.length === 0 ? (
         <p className="type-body-s text-ink-2">Nema neuspelih slika.</p>
       ) : (
-        <ul className="flex flex-col divide-y divide-line-faint panel">
+        <ul className="flex flex-col divide-y divide-line-faint panel" data-reveal="block">
           {jobs.failed.map((j, i) => (
             <li key={i} className="flex flex-col gap-0.5 px-3 py-2 type-body-s">
               <span className="break-all type-code-s normal-case text-ink-1">{j.url}</span>
@@ -276,22 +277,18 @@ export function ImportBatchDetail({ batchId }: { batchId: Id<"importBatches"> })
         description={`${IMPORT_MODE_LABEL[batch.mode]} · ${countImport(c.total, ROWS)} · ${compactDateTime(batch._creationTime, now)}`}
         actions={
           <>
-            <a
-              href={ADMIN.importReport(batch._id)}
-              download
-              className="inline-flex h-11 items-center gap-2 rounded-sm border border-control px-4 type-body-s text-ink-1 transition-control hover:bg-surface-2 focus-ring"
-            >
-              <DownloadSimpleIcon size={18} aria-hidden="true" />
-              Izveštaj
-            </a>
-            {sourceUrl ? (
-              <a
-                href={sourceUrl}
-                download={batch.fileName}
-                className="inline-flex h-11 items-center gap-2 rounded-sm px-4 type-body-s text-ink-1 transition-control hover:bg-surface-2 focus-ring"
-              >
-                Originalni fajl
+            <Button asChild variant="secondary">
+              <a href={ADMIN.importReport(batch._id)} download>
+                <DownloadSimpleIcon size={18} aria-hidden="true" />
+                Izveštaj
               </a>
+            </Button>
+            {sourceUrl ? (
+              <Button asChild variant="ghost">
+                <a href={sourceUrl} download={batch.fileName}>
+                  Originalni fajl
+                </a>
+              </Button>
             ) : null}
           </>
         }

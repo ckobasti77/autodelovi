@@ -16,14 +16,13 @@ import { belgradeLocalToUtc } from "@/lib/domain/time";
 import { ENTITY_TYPE_LABEL } from "@/lib/i18n/sr/admin";
 import { AUDIT_ACTION_LABEL, PRODUCT_FIELD_LABEL } from "@/lib/i18n/sr/auditLabels";
 import { Field } from "@/components/ui/Field";
-import { Input } from "@/components/ui/Input";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { Select } from "@/components/ui/Select";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { ADMIN } from "@/constants/routes";
 
 import { useNowMinute } from "../hooks";
-import { ActorLabel, LoadMoreFooter, PageHeader } from "../ui";
+import { CompactInput, ActorLabel, LoadMoreFooter, PageHeader } from "../ui";
 import { useUrlFilters } from "../useUrlFilters";
 
 type Row = FunctionReturnType<typeof api.audit.list>["page"][number];
@@ -114,23 +113,13 @@ export function AuditAdmin() {
           />
         </Field>
         <Field label="Od">
-          <Input
-            type="date"
-            value={f.od}
-            onChange={(e) => setF({ od: e.target.value })}
-            className="h-9"
-          />
+          <CompactInput type="date" value={f.od} onChange={(e) => setF({ od: e.target.value })} />
         </Field>
         <Field label="Do">
-          <Input
-            type="date"
-            value={f.do}
-            onChange={(e) => setF({ do: e.target.value })}
-            className="h-9"
-          />
+          <CompactInput type="date" value={f.do} onChange={(e) => setF({ do: e.target.value })} />
         </Field>
       </div>
-      <div className="panel">
+      <div className="panel" data-reveal="block">
         {status === "LoadingFirstPage" ? (
           <Skeleton className="m-4 h-60" />
         ) : results.length === 0 ? (

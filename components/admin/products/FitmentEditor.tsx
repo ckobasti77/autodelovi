@@ -15,8 +15,9 @@ import type { Id } from "@/convex/_generated/dataModel";
 import { Button } from "@/components/ui/Button";
 import { Field } from "@/components/ui/Field";
 import { IconButton } from "@/components/ui/IconButton";
-import { Input } from "@/components/ui/Input";
 import { Select } from "@/components/ui/Select";
+
+import { CompactInput } from "../ui";
 
 export type FitmentRow = {
   brandId: Id<"vehicleBrands">;
@@ -179,7 +180,7 @@ export function FitmentEditor({
           </p>
         </div>
       )}
-      <fieldset className="flex flex-col gap-3 rounded-md border border-dashed border-line-strong p-3">
+      <fieldset className="flex flex-col gap-3 rounded-md border border-line p-3">
         <legend className="px-1 type-body-s font-semibold">Dodaj vozilo</legend>
         <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
           <Field label="Marka">
@@ -245,27 +246,24 @@ export function FitmentEditor({
         </div>
         <div className="grid gap-3 sm:grid-cols-[8rem_8rem_minmax(0,1fr)]">
           <Field label="Od godine">
-            <Input
+            <CompactInput
               value={yearFrom}
               onChange={(e) => setYearFrom(e.target.value)}
               inputMode="numeric"
-              className="h-9"
             />
           </Field>
           <Field label="Do godine">
-            <Input
+            <CompactInput
               value={yearTo}
               onChange={(e) => setYearTo(e.target.value)}
               inputMode="numeric"
-              className="h-9"
             />
           </Field>
           <Field label="Napomena">
-            <Input
+            <CompactInput
               value={note}
               onChange={(e) => setNote(e.target.value)}
               placeholder="npr. samo za vozila sa start-stop sistemom"
-              className="h-9"
             />
           </Field>
         </div>

@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
-import { ChatCircleTextIcon, MagnifyingGlassIcon, PhoneIcon } from "@phosphor-icons/react/dist/ssr";
+import {
+  ArrowRightIcon,
+  BarcodeIcon,
+  CarIcon,
+  ChatCircleTextIcon,
+  GearSixIcon,
+  PhoneIcon,
+  SquaresFourIcon,
+} from "@phosphor-icons/react/dist/ssr";
 
 import { contactLinks } from "@/config/site";
 import { classifyQuery } from "@/lib/domain/search";
@@ -20,6 +28,7 @@ import { ProductGrid } from "@/components/catalog/ProductGrid";
 import { TrackViewList } from "@/components/catalog/TrackViewList";
 import { SearchLogger } from "@/components/search/SearchLogger";
 import { SearchVehicleScope } from "@/components/search/SearchVehicleScope";
+import { Reveal } from "@/components/reveal/Reveal";
 import { ROUTES } from "@/constants/routes";
 
 export async function generateMetadata({
@@ -57,8 +66,11 @@ function searchHref(q: string, params: { kategorija?: string | null; vozilo?: st
   return `${ROUTES.search}?${search.toString()}`;
 }
 
-const chipClass =
-  "inline-flex min-h-9 items-center gap-2 rounded-sm border border-line-strong bg-surface-1 px-3 type-body-s text-ink-1 transition-control hover:border-accent";
+const chipClass = "chip-link";
+
+/** Zero results: what to try next, each row one tap (PRODUCT principle 3 — never a dead end). */
+const HELP_ROW =
+  "group flex min-h-16 items-center gap-3 px-4 py-3 transition-control hover:bg-surface-2 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-focus";
 
 /**
  * Search results (§10.4): exact OEM matches first, then cross numbers, partial codes and
@@ -228,34 +240,116 @@ export default async function SearchPage({ searchParams }: PageProps<"/pretraga"
       ) : null}
 
       {total === 0 ? (
-        <EmptyState
-          className="mt-10"
-          icon={<MagnifyingGlassIcon size={44} />}
-          as="h2"
-          title={normalized ? "Ovaj broj nije u katalogu" : "Ovaj deo nije u katalogu"}
-          action={
-            <>
-              <Button asChild variant="primary" icon={<ChatCircleTextIcon size={20} />}>
-                <Link
-                  href={ROUTES.inquiryWith(
-                    classified.codes.length ? { q, kodovi: classified.codes } : { q },
-                  )}
-                  variant="unstyled"
-                >
-                  Pošaljite upit
-                </Link>
-              </Button>
-              {phone ? (
-                <Button asChild variant="secondary" icon={<PhoneIcon size={20} />}>
-                  <a href={phone.href}>Pozovite {phone.display}</a>
+        <div className="mt-6 grid gap-8 lg:grid-cols-12 lg:gap-x-(--gutter)">
+          <EmptyState
+            align="start"
+            className="py-0 lg:col-span-6"
+            icon={<GearSixIcon size={44} />}
+            as="h2"
+            title={normalized ? "Ovaj broj nije u katalogu" : "Ovaj deo nije u katalogu"}
+            action={
+              <>
+                <Button asChild variant="primary" icon={<ChatCircleTextIcon size={20} />}>
+                  <Link
+                    href={ROUTES.inquiryWith(
+                      classified.codes.length ? { q, kodovi: classified.codes } : { q },
+                    )}
+                    variant="unstyled"
+                  >
+                    Pošaljite upit
+                  </Link>
                 </Button>
-              ) : null}
-            </>
-          }
-        >
-          Za „<span className="[overflow-wrap:anywhere]">{echo}</span>“ nemamo artikal u katalogu.
-          Pošaljite upit — proverićemo kod dobavljača i javiti vam se u toku radnog dana.
-        </EmptyState>
+                {phone ? (
+                  <Button asChild variant="secondary" icon={<PhoneIcon size={20} />}>
+                    <a href={phone.href}>Pozovite {phone.display}</a>
+                  </Button>
+                ) : null}
+              </>
+            }
+          >
+            Za „
+            <span
+              className={
+                normalized ? "type-code [overflow-wrap:anywhere]" : "[overflow-wrap:anywhere]"
+              }
+            >
+              {echo}
+            </span>
+            “ nemamo artikal u katalogu. Pošaljite upit — proverićemo kod dobavljača i javiti vam se
+            u toku radnog dana.
+          </EmptyState>
+          <Reveal
+            as="nav"
+            eager
+            aria-labelledby="search-help-title"
+            className="panel lg:col-span-6 lg:self-start"
+          >
+            <h2
+              id="search-help-title"
+              className="border-b border-line px-4 py-3 type-h4 text-ink-1"
+            >
+              Šta još možete
+            </h2>
+            <ul className="divide-y divide-line">
+              <li>
+                <Link href={ROUTES.inquiryWith({ q })} variant="unstyled" className={HELP_ROW}>
+                  <BarcodeIcon size={24} aria-hidden="true" className="shrink-0 text-ink-3" />
+                  <span className="flex min-w-0 flex-1 flex-col">
+                    <span className="type-body-s font-semibold text-ink-1">
+                      Pošaljite broj šasije
+                    </span>
+                    <span className="type-caption font-normal text-ink-3">
+                      Po broju šasije nalazimo tačan deo za vaše vozilo.
+                    </span>
+                  </span>
+                  <ArrowRightIcon
+                    size={16}
+                    aria-hidden="true"
+                    className="shrink-0 text-ink-3 group-hover:text-accent"
+                  />
+                </Link>
+              </li>
+              <li>
+                <Link href={ROUTES.vehicles} variant="unstyled" className={HELP_ROW}>
+                  <CarIcon size={24} aria-hidden="true" className="shrink-0 text-ink-3" />
+                  <span className="flex min-w-0 flex-1 flex-col">
+                    <span className="type-body-s font-semibold text-ink-1">Tražite po vozilu</span>
+                    <span className="type-caption font-normal text-ink-3">
+                      Marka, model i motor, pa delovi koji odgovaraju.
+                    </span>
+                  </span>
+                  <ArrowRightIcon
+                    size={16}
+                    aria-hidden="true"
+                    className="shrink-0 text-ink-3 group-hover:text-accent"
+                  />
+                </Link>
+              </li>
+              <li>
+                <Link href={ROUTES.parts} variant="unstyled" className={HELP_ROW}>
+                  <SquaresFourIcon size={24} aria-hidden="true" className="shrink-0 text-ink-3" />
+                  <span className="flex min-w-0 flex-1 flex-col">
+                    <span className="type-body-s font-semibold text-ink-1">
+                      Pregledajte po sistemima
+                    </span>
+                    <span className="type-caption font-normal text-ink-3">
+                      Kočnice, vešanje, motor i ostalo, kategorija po kategorija.
+                    </span>
+                  </span>
+                  <ArrowRightIcon
+                    size={16}
+                    aria-hidden="true"
+                    className="shrink-0 text-ink-3 group-hover:text-accent"
+                  />
+                </Link>
+              </li>
+            </ul>
+            <p className="border-t border-line px-4 py-3 type-caption font-normal text-ink-3">
+              Broj dela upišite kako god ga imate — razmaci, tačke i crtice ne smetaju. Naziv
+              upišite bez marke vozila, na primer „kočione pločice“.
+            </p>
+          </Reveal>
+        </div>
       ) : (
         <div className="mt-10 flex flex-col gap-14">
           <TrackViewList

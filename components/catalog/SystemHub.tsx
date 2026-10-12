@@ -13,6 +13,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { LandingLinks } from "@/components/seo/LandingLinks";
 import { CategoryTile } from "@/components/catalog/CategoryTile";
 import { ProductGrid } from "@/components/catalog/ProductGrid";
+import { RevealGroup, RevealItem } from "@/components/reveal/Reveal";
 
 /** The system's child categories in shop order, each with its real product count. */
 export function systemChildren(category: CategoryDetail, tree: CategoryTree) {
@@ -72,13 +73,16 @@ export function SystemHub({
           {intro}
         </RevealText>
       ) : null}
-      <ul className="mt-10 grid grid-cols-2 gap-3 sm:gap-(--gutter) md:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5">
-        {children.map(({ category: c, count }) => (
-          <li key={c.slug}>
+      <RevealGroup
+        as="ul"
+        className="mt-block grid grid-cols-2 gap-3 sm:gap-(--gutter) md:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5"
+      >
+        {children.map(({ category: c, count }, i) => (
+          <RevealItem as="li" key={c.slug} eager={i < 4} index={i}>
             <CategoryTile category={c} count={count} headingLevel="h2" />
-          </li>
+          </RevealItem>
         ))}
-      </ul>
+      </RevealGroup>
       {topProducts.length > 0 ? (
         <section aria-labelledby="system-top-title" className="mt-14">
           <h2 id="system-top-title" className="type-h2 text-ink-1">

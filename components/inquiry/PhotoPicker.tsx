@@ -2,7 +2,8 @@
 
 /**
  * Up to 5 photos for an inquiry (§10.7): drop zone + file input, client compression, upload to
- * Convex storage right away (so submit is instant), thumbnails with remove buttons.
+ * Convex storage right away (so submit is instant), thumbnails with remove buttons. The drop
+ * zone is the one dashed border of the form (dashed means „drop here“, DESIGN-SYSTEM §5.5).
  */
 import { useMutation } from "convex/react";
 import { useEffect, useId, useRef, useState, type DragEvent } from "react";
@@ -133,16 +134,16 @@ export function PhotoPicker({
         onDragLeave={() => setOver(false)}
         onDrop={onDrop}
         className={cn(
-          "flex min-h-28 cursor-pointer flex-col items-center justify-center gap-2 rounded-md border border-dashed px-4 py-6 text-center transition-control",
+          "flex min-h-32 cursor-pointer flex-col items-center justify-center gap-1.5 rounded-md border border-dashed px-4 py-6 text-center transition-control",
           "has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-focus",
           over
             ? "border-accent bg-accent-subtle"
-            : "border-control bg-surface-1 hover:border-ink-3",
+            : "border-control bg-surface-2 hover:border-ink-3 hover:bg-surface-3",
         )}
       >
-        <CameraIcon size={28} aria-hidden="true" className="text-ink-3" />
+        <CameraIcon size={28} aria-hidden="true" className="mb-1 text-ink-3" />
         <span className="type-body-s font-semibold text-ink-1">Dodaj fotografiju</span>
-        <span className="type-caption font-normal text-ink-3">
+        <span className="max-w-[44ch] type-caption font-normal text-ink-3">
           Stari deo, pločica sa brojem ili saobraćajna · do 5 · JPG, PNG, WebP do 8 MB
         </span>
         <input
@@ -170,7 +171,7 @@ export function PhotoPicker({
           {photos.map((p) => (
             <li
               key={p.id}
-              className="relative aspect-square overflow-hidden rounded-sm border border-line bg-surface-2"
+              className="relative aspect-square overflow-hidden rounded-md border border-line bg-surface-2"
               data-status={p.status}
               data-testid="inquiry-photo"
             >
@@ -193,7 +194,7 @@ export function PhotoPicker({
                   URL.revokeObjectURL(p.preview);
                   onChange((prev) => prev.filter((x) => x.id !== p.id));
                 }}
-                className="absolute top-1 right-1 inline-flex size-8 cursor-pointer items-center justify-center rounded-xs bg-bg/80 text-ink-1 transition-control hover:bg-surface-3"
+                className="absolute top-1 right-1 inline-flex size-9 cursor-pointer items-center justify-center rounded-xs bg-bg/80 text-ink-1 transition-control hover:bg-surface-3"
               >
                 <XIcon size={16} aria-hidden="true" />
               </button>

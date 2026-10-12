@@ -1,14 +1,11 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
-import {
-  CarIcon,
-  ChatCircleTextIcon,
-  ListMagnifyingGlassIcon,
-} from "@phosphor-icons/react/dist/ssr";
+import { CarIcon, ChatCircleTextIcon } from "@phosphor-icons/react/dist/ssr";
 
 import type { Id } from "@/convex/_generated/dataModel";
 import { catalogQuery, type CatalogFilters } from "@/lib/catalog/filters";
-import type { CategoryDetail, ProductCardData } from "@/lib/catalog/types";
+import { categoryImage, type CategoryDetail, type ProductCardData } from "@/lib/catalog/types";
 import { breadcrumbJsonLd, itemListJsonLd, type JsonLd as JsonLdData } from "@/lib/seo/jsonld";
 import { getCategoryListing, getManufacturers, resolveVehicle } from "@/lib/server/catalog-cache";
 import { Breadcrumbs, type Crumb } from "@/components/ui/Breadcrumbs";
@@ -178,20 +175,29 @@ export function CategoryListingView({
       />
       <Breadcrumbs items={crumbs} />
       <header className="mt-4 grid gap-4 lg:grid-cols-12 lg:gap-x-(--gutter)">
-        <div className="flex flex-col gap-4 lg:col-span-8">
+        {/* Phones: with more to read behind „Više o kategoriji“ the lead is held to two lines
+            until that is opened, so the first part is on the first screen (UI-BOOST §7.3). */}
+        <div className="group/intro flex flex-col gap-3 sm:gap-4 lg:col-span-8">
           <RevealText as="h1" className="type-display-l text-ink-1 uppercase">
             {title}
           </RevealText>
           {lead ? (
             lead
           ) : introLead ? (
-            <RevealText as="p" className="max-w-[72ch] type-lead text-ink-2">
+            <RevealText
+              as="p"
+              className={
+                introRest
+                  ? "max-w-[72ch] type-lead text-ink-2 max-sm:line-clamp-2 max-sm:group-has-[details[open]]/intro:line-clamp-none"
+                  : "max-w-[72ch] type-lead text-ink-2"
+              }
+            >
               {introLead}
             </RevealText>
           ) : null}
           {!lead && introRest ? (
             <Disclosure
-              className="group max-w-[72ch]"
+              className="group max-w-[72ch] max-sm:-mt-2"
               summaryClassName="inline-flex min-h-11 items-center gap-1 type-body-s font-semibold text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent"
               summary={
                 <>
@@ -208,7 +214,7 @@ export function CategoryListingView({
 
       <CatalogShell navigateBase={categoryPath}>
         <VehicleUrlSync filters={filters} />
-        <div className="mt-8 grid gap-8 lg:grid-cols-[17.5rem_minmax(0,1fr)] lg:gap-(--gutter)">
+        <div className="mt-5 grid gap-5 sm:mt-8 sm:gap-8 lg:grid-cols-[17.5rem_minmax(0,1fr)] lg:gap-(--gutter)">
           <FilterRail filters={filters} facets={facets} vehicleLabel={resolved?.label ?? null} />
           <div className="flex min-w-0 flex-col gap-5">
             <CatalogToolbar
@@ -244,7 +250,17 @@ export function CategoryListingView({
                 </>
               ) : (
                 <EmptyState
-                  icon={<ListMagnifyingGlassIcon size={44} />}
+                  align="start"
+                  className="pt-2"
+                  icon={
+                    <Image
+                      src={categoryImage(category.category.slug)}
+                      alt=""
+                      width={112}
+                      height={112}
+                      className="size-24 object-contain opacity-70 grayscale sm:size-28"
+                    />
+                  }
                   as="h2"
                   title={
                     vehicleName ? `Nema delova za ${vehicleName}` : "Nema artikala za ovaj izbor"
@@ -286,10 +302,10 @@ export function CategoryListingView({
           <h2 id="related-title" className="type-h3 text-ink-1">
             Povezani delovi
           </h2>
-          <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+          <ul className="mt-4 flex flex-wrap gap-2">
             {category.related.map((r) => (
               <li key={r.slug}>
-                <Link href={ROUTES.category(r.slug)} variant="standalone">
+                <Link href={ROUTES.category(r.slug)} variant="unstyled" className="chip-link">
                   {r.name}
                 </Link>
               </li>

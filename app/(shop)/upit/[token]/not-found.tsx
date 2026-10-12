@@ -1,8 +1,7 @@
 import { LinkBreakIcon } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 
-import { NotFoundContent } from "@/components/shell/NotFoundContent";
-import { Link } from "@/components/ui/Link";
+import { NotFoundContent, StateLinks } from "@/components/shell/NotFoundContent";
 import { ROUTES } from "@/constants/routes";
 import { privateMetadata } from "@/lib/seo/metadata";
 
@@ -15,21 +14,18 @@ export default function InquiryLinkNotFound() {
   return (
     <NotFoundContent
       icon={<LinkBreakIcon size={40} aria-hidden="true" className="text-ink-3" />}
+      code="404"
       title={TITLE}
       lead="Link je možda nepotpun ili ga je program za poštu prelomio. Otvorite ga ponovo iz e-pošte koju ste dobili posle slanja upita, ili nas kontaktirajte i navedite broj upita (UP-…)."
       aside={
-        <ul className="flex flex-col gap-2">
-          <li>
-            <Link href={ROUTES.contact} variant="standalone">
-              Kontakt
-            </Link>
-          </li>
-          <li>
-            <Link href={ROUTES.inquiry} variant="standalone">
-              Pošaljite nov upit
-            </Link>
-          </li>
-        </ul>
+        <StateLinks
+          id="inquiry-link-next"
+          title="Kuda dalje"
+          links={[
+            { href: ROUTES.contact, label: "Kontakt" },
+            { href: ROUTES.inquiry, label: "Pošaljite nov upit" },
+          ]}
+        />
       }
     />
   );

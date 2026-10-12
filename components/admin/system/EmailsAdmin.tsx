@@ -130,7 +130,11 @@ export function EmailsAdmin() {
             label: row.original.status,
             tone: "neutral" as const,
           };
-          return <Badge tone={s.tone}>{s.label}</Badge>;
+          return (
+            <Badge size="text" tone={s.tone}>
+              {s.label}
+            </Badge>
+          );
         },
       },
     ],
@@ -260,7 +264,9 @@ function EmailView({ id, onResent }: { id: Id<"emailLog">; onResent: (id: string
         <dt className="text-ink-3">Način · status</dt>
         <dd className="flex flex-wrap items-center gap-2">
           {EMAIL_MODE_LABEL[m.mode as keyof typeof EMAIL_MODE_LABEL] ?? m.mode}
-          <Badge tone={status.tone}>{status.label}</Badge>
+          <Badge size="text" tone={status.tone}>
+            {status.label}
+          </Badge>
         </dd>
         {m.error ? (
           <>
@@ -305,7 +311,7 @@ function EmailView({ id, onResent }: { id: Id<"emailLog">; onResent: (id: string
             value: "text",
             label: "Običan tekst",
             content: (
-              <pre className="mt-3 max-h-[60dvh] overflow-auto whitespace-pre-wrap rounded-md border border-line bg-surface-2 p-3 type-code [overflow-wrap:anywhere]">
+              <pre className="mt-3 max-h-[60dvh] overflow-auto whitespace-pre-wrap panel-inset p-3 type-code [overflow-wrap:anywhere]">
                 {m.text}
               </pre>
             ),

@@ -73,7 +73,9 @@ function MobileNav({
               <IconButton
                 label="Zatvori meni"
                 icon={<XIcon size={20} />}
-                className="absolute right-2 top-2 z-raised"
+                // `absolute!`: IconButton is `relative` itself and `cn` only joins, so a plain `absolute`
+                // lost and the button sat in the flow above the logo.
+                className="absolute! right-1.5 top-1.5 z-raised"
               />
             </DialogPrimitive.Close>
             <AdminSidebar isOwner={isOwner} variant="full" onNavigate={() => setOpen(false)} />

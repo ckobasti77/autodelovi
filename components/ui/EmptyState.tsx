@@ -13,6 +13,12 @@ export type EmptyStateProps = {
   action?: ReactNode;
   /** Heading level for the title (keeps the outline correct). */
   as?: "h1" | "h2" | "h3" | "p";
+  /**
+   * `start` on a left-aligned page (search results, lists, portal): the frame, the sentence
+   * and the action sit on the page's left edge instead of floating in the middle of a wide
+   * column. `center` (default) for dialogs, drawers and narrow columns.
+   */
+  align?: "center" | "start";
   className?: string;
 };
 
@@ -26,10 +32,18 @@ export function EmptyState({
   children,
   action,
   as: TitleTag = "h3",
+  align = "center",
   className,
 }: EmptyStateProps) {
+  const start = align === "start";
   return (
-    <div className={cn("flex flex-col items-center gap-4 px-4 py-10 text-center", className)}>
+    <div
+      className={cn(
+        "flex flex-col gap-4 py-10",
+        start ? "items-start text-left" : "items-center px-4 text-center",
+        className,
+      )}
+    >
       <div
         aria-hidden="true"
         className="corner-ticks flex h-28 w-full max-w-60 items-center justify-center text-ink-3 sm:h-40"
@@ -41,7 +55,9 @@ export function EmptyState({
         <p className="type-body text-ink-2">{children}</p>
       </div>
       {action ? (
-        <div className="flex flex-wrap items-center justify-center gap-3">{action}</div>
+        <div className={cn("flex flex-wrap items-center gap-3", !start && "justify-center")}>
+          {action}
+        </div>
       ) : null}
     </div>
   );

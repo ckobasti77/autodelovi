@@ -8,5 +8,5 @@ export function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Page() {
-  return <ContentPageView slug="o-nama" path={ROUTES.about} />;
+  return <ContentPageView slug="o-nama" path={ROUTES.about} kind="place" />;
 }

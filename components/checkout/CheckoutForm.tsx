@@ -7,7 +7,7 @@
  */
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "convex/react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { Controller, useForm, useWatch, type FieldErrors } from "react-hook-form";
 import {
   ArrowLeftIcon,
@@ -389,14 +389,33 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
   // ------------------------------------------------------------------ states
   if (cart === undefined) {
     return (
-      <SkeletonRegion label="Učitava se porudžbina" className="grid gap-8 lg:grid-cols-12">
-        <div className="flex flex-col gap-4 lg:col-span-8">
-          <Skeleton className="h-12 w-full" />
+      // The form's own geometry: stepper, the step panel with a title and two rows of fields,
+      // the summary panel beside it from lg.
+      <SkeletonRegion
+        label="Učitava se porudžbina"
+        className="grid max-w-[76rem] gap-6 lg:grid-cols-12 lg:gap-x-(--gutter)"
+      >
+        <div className="flex flex-col gap-6 lg:col-span-8">
           <Skeleton className="h-11 w-full" />
-          <Skeleton className="h-11 w-full" />
-          <Skeleton className="h-11 w-2/3" />
+          <div className="flex flex-col gap-5 panel p-4 sm:p-6">
+            <Skeleton className="h-7 w-40" />
+            <div className="grid gap-5 sm:grid-cols-2">
+              {Array.from({ length: 4 }, (_, i) => (
+                <div key={i} className="flex flex-col gap-2">
+                  <Skeleton className="h-3.5 w-24" />
+                  <Skeleton className="h-11 w-full" />
+                </div>
+              ))}
+            </div>
+            <Skeleton className="h-13 w-full sm:ml-auto sm:w-32" />
+          </div>
         </div>
-        <Skeleton className="h-64 lg:col-span-4" />
+        <div className="hidden flex-col gap-4 panel p-5 lg:col-span-4 lg:flex lg:self-start">
+          <Skeleton className="h-5 w-40" />
+          <Skeleton className="h-4 w-full" />
+          <Skeleton className="h-4 w-4/5" />
+          <Skeleton className="h-8 w-full" />
+        </div>
       </SkeletonRegion>
     );
   }
@@ -498,7 +517,7 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
         if (step < 3) void nextStep();
         else void onSubmit();
       }}
-      className="relative grid gap-8 lg:grid-cols-12 lg:gap-x-(--gutter)"
+      className="relative grid max-w-[76rem] gap-6 lg:grid-cols-12 lg:gap-x-(--gutter)"
       data-reveal="off"
     >
       <Honeypot value={honeypot} onChange={setHoneypot} />
@@ -529,10 +548,14 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
             <div className="border-t border-line p-4">{renderSummary(false)}</div>
           </Disclosure>
 
+          {/* The step is one form group: a panel that arrives with the form (it renders after
+              the cart has loaded) and stays put while its fields change from step to step. */}
           <section
             data-testid={TEST_IDS.checkoutStep(stepName)}
             aria-labelledby="step-title"
-            className="flex flex-col gap-5"
+            className="flex flex-col gap-5 panel p-4 sm:p-6"
+            data-reveal="block"
+            data-reveal-eager=""
           >
             <h2
               id="step-title"
@@ -661,7 +684,7 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
                   )}
                 />
                 {values.deliveryMethod === "pickup" && config.store ? (
-                  <p className="panel p-4 type-body-s text-ink-2">
+                  <p className="panel-inset p-4 type-body-s text-ink-2">
                     Preuzimanje: {config.store.address}
                     {config.store.hours ? ` · ${config.store.hours}` : ""}
                   </p>
@@ -756,7 +779,7 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
 
             {step === 3 ? (
               <div className="flex flex-col gap-6">
-                <dl className="grid gap-4 panel p-4 type-body-s sm:grid-cols-3">
+                <dl className="grid gap-4 panel-inset p-4 type-body-s sm:grid-cols-3">
                   <div>
                     <dt className="type-label uppercase text-ink-3">Kontakt</dt>
                     <dd className="mt-1 text-ink-1">
@@ -875,7 +898,8 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
               </p>
             ) : null}
 
-            <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line pt-5">
+            {/* Phones: the next step is a full-width button, the way back sits under it. */}
+            <div className="flex flex-col-reverse gap-3 border-t border-line pt-5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
               {step > 0 ? (
                 <Button
                   type="button"
@@ -899,6 +923,7 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
                   size="lg"
                   trailingIcon={<ArrowRightIcon size={16} />}
                   data-testid="checkout-next"
+                  className="max-sm:w-full"
                 >
                   Dalje
                 </Button>
@@ -910,7 +935,7 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
                   icon={<PaperPlaneTiltIcon size={20} />}
                   loading={submitting}
                   data-testid={TEST_IDS.checkoutSubmit}
-                  className={cn("sm:min-w-[16rem]")}
+                  className={cn("max-sm:w-full sm:min-w-[16rem]")}
                 >
                   Pošalji porudžbinu
                 </Button>
@@ -921,7 +946,12 @@ export function CheckoutForm({ config }: { config: CheckoutConfig }) {
       </RequiredUnlessOptional>
 
       <aside aria-label="Pregled porudžbine" className="hidden lg:col-span-4 lg:block">
-        <div className="sticky top-[calc(var(--header-h)+1.5rem)] panel p-5">
+        <div
+          className="sticky top-[calc(var(--header-h)+1.5rem)] panel-raised p-5"
+          data-reveal="block"
+          data-reveal-eager=""
+          style={{ "--rv-d": "50ms" } as CSSProperties}
+        >
           <h2 className="mb-4 type-h4 text-ink-1">Vaša porudžbina</h2>
           {renderSummary(true)}
         </div>

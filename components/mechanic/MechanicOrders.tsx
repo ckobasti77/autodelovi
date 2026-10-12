@@ -1,8 +1,10 @@
 "use client";
 
 /**
- * `/majstor/porudzbine`: own orders with status, payment (deferred → due date) and an
- * inline „Poruči ponovo“; filter chips for open / completed / cancelled.
+ * `/majstor/porudzbine`: own orders as rows of one panel — number, one status chip in a fixed
+ * column, date · pieces · payment (deferred → due date), total and a quiet „Poruči ponovo“.
+ * The status filter is one track that scrolls with an edge fade instead of wrapping its last
+ * segment onto a second line on phones.
  */
 import { useQuery } from "convex/react";
 import { useMemo, useState } from "react";
@@ -13,6 +15,8 @@ import { cn } from "@/lib/cn";
 import { formatDate } from "@/lib/format/date";
 import { formatRSD } from "@/lib/format/money";
 import { ORDER_STATUS_LABEL, ORDER_STATUS_TONE, PAYMENT_LABEL } from "@/lib/i18n/sr/shop";
+import { useEdgeFade } from "@/components/account/useEdgeFade";
+import { Reveal } from "@/components/reveal/Reveal";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { EmptyState } from "@/components/ui/EmptyState";
@@ -34,6 +38,57 @@ const FILTERS: { value: Filter; label: string }[] = [
   { value: "cancelled", label: "Otkazane" },
 ];
 
+/** Row geometry shared with the skeleton: one line from 44 rem of panel width. */
+const ROW =
+  "grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-2 px-4 py-3.5 sm:px-5 @3xl:grid-cols-[10rem_11rem_minmax(0,1fr)_7rem_auto]";
+
+/** Status filter: one track (8 px) with 4 px segments; pressed = the raised segment. */
+function FilterTrack({
+  value,
+  counts,
+  onChange,
+}: {
+  value: Filter;
+  counts: Record<Filter, number>;
+  onChange: (value: Filter) => void;
+}) {
+  const { ref, style } = useEdgeFade<HTMLDivElement>();
+  return (
+    <div
+      ref={ref}
+      style={style}
+      role="group"
+      aria-label="Filter porudžbina"
+      className="flex max-w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+    >
+      <div className="flex gap-1 panel p-1">
+        {FILTERS.map((f) => {
+          const active = value === f.value;
+          return (
+            <button
+              key={f.value}
+              type="button"
+              aria-pressed={active}
+              onClick={() => onChange(f.value)}
+              className={cn(
+                "inline-flex h-11 shrink-0 cursor-pointer items-center gap-2 whitespace-nowrap rounded-xs px-3 type-body-s font-semibold transition-control focus-ring-inset lg:h-9",
+                active
+                  ? "bg-surface-3 text-ink-1 shadow-rest"
+                  : "text-ink-2 hover:bg-surface-2 hover:text-ink-1",
+              )}
+            >
+              {f.label}
+              <span className="font-normal tabular-nums text-ink-3" data-reveal="off">
+                {counts[f.value]}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export function MechanicOrders() {
   const orders = useQuery(api.orders.myOrders, {});
   const { run, busy } = useReorder();
@@ -51,11 +106,20 @@ export function MechanicOrders() {
 
   if (orders === undefined) {
     return (
-      <SkeletonRegion>
-        <div className="flex flex-col gap-2">
-          {[0, 1, 2, 3].map((i) => (
-            <Skeleton key={i} className="h-16 w-full" />
-          ))}
+      <SkeletonRegion className="flex flex-col gap-4">
+        <Skeleton className="h-[3.25rem] w-80 max-w-full rounded-md lg:h-[2.75rem]" />
+        <div className="@container panel">
+          <div className="flex flex-col divide-y divide-line">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <div key={i} className={ROW}>
+                <Skeleton className="h-5 w-36" />
+                <Skeleton className="h-6 w-24 @max-3xl:row-start-2" />
+                <Skeleton className="hidden h-4 w-64 @3xl:block" />
+                <Skeleton className="h-5 w-20 justify-self-end @max-3xl:col-start-2 @max-3xl:row-start-1" />
+                <Skeleton className="h-11 w-36 lg:h-9" />
+              </div>
+            ))}
+          </div>
         </div>
       </SkeletonRegion>
     );
@@ -63,6 +127,7 @@ export function MechanicOrders() {
   if (orders.length === 0) {
     return (
       <EmptyState
+        align="start"
         icon={<ReceiptIcon size={40} />}
         action={
           <Button asChild>
@@ -88,66 +153,67 @@ export function MechanicOrders() {
 
   return (
     <div className="flex flex-col gap-4" data-reveal="off">
-      <div role="group" aria-label="Filter porudžbina" className="flex flex-wrap gap-2">
-        {FILTERS.map((f) => (
-          <button
-            key={f.value}
-            type="button"
-            aria-pressed={filter === f.value}
-            onClick={() => setFilter(f.value)}
-            className={cn(
-              "inline-flex h-11 cursor-pointer items-center gap-2 rounded-sm border px-3 type-body-s transition-control",
-              filter === f.value
-                ? "border-accent bg-accent-subtle text-ink-1"
-                : "border-line-strong text-ink-2 hover:border-ink-3 hover:text-ink-1",
-            )}
-          >
-            {f.label}
-            <span className="tabular-nums text-ink-3">{counts[f.value]}</span>
-          </button>
-        ))}
-      </div>
-      {shown.length === 0 ? (
-        <p className="py-6 type-body text-ink-2">Nema porudžbina sa ovim statusom.</p>
-      ) : (
-        <ul className="flex flex-col divide-y divide-line border-y border-line">
-          {shown.map((o) => (
-            <li
-              key={o.number}
-              className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-2 py-4 md:grid-cols-[11rem_minmax(0,1fr)_auto_auto]"
+      <FilterTrack value={filter} counts={counts} onChange={setFilter} />
+      <Reveal eager className="@container panel">
+        {shown.length === 0 ? (
+          <div className="flex flex-col items-start gap-3 p-5">
+            <p className="type-body text-ink-2">Nema porudžbina sa ovim statusom.</p>
+            <Button
+              variant="quiet"
+              size="sm"
+              className="max-lg:h-11"
+              onClick={() => setFilter("all")}
             >
-              <RouteLink
-                href={ROUTES.mechanicOrder(o.number)}
-                className="type-code text-ink-1 underline decoration-line-strong underline-offset-4 hover:decoration-accent"
-              >
-                {o.number}
-              </RouteLink>
-              <span className="flex flex-wrap items-center gap-x-3 gap-y-1 max-md:col-span-2 max-md:row-start-2">
-                <Badge tone={ORDER_STATUS_TONE[o.status]} size="text">
-                  {ORDER_STATUS_LABEL[o.status]}
-                </Badge>
-                <span className="type-caption tabular-nums text-ink-3">
-                  {formatDate(o.createdAt)} · {o.itemCount} kom. · {PAYMENT_LABEL[o.paymentMethod]}
-                  {o.paymentMethod === "deferred" && o.dueAt && o.paymentStatus === "unpaid" && o.status !== "otkazana"
-                    ? ` do ${formatDate(o.dueAt)}`
-                    : ""}
+              Prikaži sve porudžbine
+            </Button>
+          </div>
+        ) : (
+          <ul className="flex flex-col divide-y divide-line">
+            {shown.map((o) => (
+              <li key={o.number} className={ROW}>
+                <RouteLink
+                  href={ROUTES.mechanicOrder(o.number)}
+                  className="justify-self-start rounded-xs type-code text-ink-1 link-underline"
+                >
+                  {o.number}
+                </RouteLink>
+                <span className="flex flex-wrap items-center gap-x-3 gap-y-1.5 @max-3xl:col-span-2 @max-3xl:row-start-2 @3xl:contents">
+                  <Badge
+                    tone={ORDER_STATUS_TONE[o.status]}
+                    size="text"
+                    className="justify-self-start"
+                  >
+                    {ORDER_STATUS_LABEL[o.status]}
+                  </Badge>
+                  <span className="type-caption font-normal tabular-nums text-ink-3">
+                    {formatDate(o.createdAt)} · {o.itemCount} kom. ·{" "}
+                    {PAYMENT_LABEL[o.paymentMethod]}
+                    {o.paymentMethod === "deferred" &&
+                    o.dueAt &&
+                    o.paymentStatus === "unpaid" &&
+                    o.status !== "otkazana"
+                      ? ` do ${formatDate(o.dueAt)}`
+                      : ""}
+                  </span>
                 </span>
-              </span>
-              <span className="text-right type-numeral-s tabular-nums text-ink-1">{formatRSD(o.totalPara)}</span>
-              <Button
-                variant="secondary"
-                size="sm"
-                icon={<ArrowCounterClockwiseIcon size={16} />}
-                loading={busy === o.number}
-                onClick={() => void run(o.number)}
-                className="max-md:col-start-2 max-md:row-start-3 max-md:justify-self-end"
-              >
-                Poruči ponovo
-              </Button>
-            </li>
-          ))}
-        </ul>
-      )}
+                <span className="text-right type-numeral-s tabular-nums text-ink-1 @max-3xl:col-start-2 @max-3xl:row-start-1">
+                  {formatRSD(o.totalPara)}
+                </span>
+                <Button
+                  variant="quiet"
+                  size="sm"
+                  icon={<ArrowCounterClockwiseIcon size={16} />}
+                  loading={busy === o.number}
+                  onClick={() => void run(o.number)}
+                  className="justify-self-start max-lg:h-11 @max-3xl:col-span-2 @3xl:justify-self-end"
+                >
+                  Poruči ponovo<span className="sr-only"> {o.number}</span>
+                </Button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </Reveal>
     </div>
   );
 }

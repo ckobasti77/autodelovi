@@ -6,6 +6,7 @@
  */
 import { useQuery } from "convex/react";
 import type { FunctionReturnType } from "convex/server";
+import type { CSSProperties } from "react";
 import { PrinterIcon, TruckIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { api } from "@/convex/_generated/api";
@@ -26,6 +27,18 @@ import { TEST_IDS } from "@/constants/testIds";
 
 export type OrderView = NonNullable<FunctionReturnType<typeof api.orders.getByToken>>;
 
+/**
+ * The record's panels arrive with the page, one after another (the page is one screen at
+ * 1440 px, so they are eager: a CSS-only entrance from a visible frame).
+ */
+function entrance(index: number) {
+  return {
+    "data-reveal": "block",
+    "data-reveal-eager": "",
+    style: { "--rv-d": `${Math.min(index * 50, 200)}ms` } as CSSProperties,
+  };
+}
+
 export function OrderStatusView({
   token,
   initial,
@@ -38,8 +51,8 @@ export function OrderStatusView({
   const live = useQuery(api.orders.getByToken, { token });
   const o = live ?? initial;
   return (
-    <div className="grid gap-10 lg:grid-cols-12 lg:gap-x-(--gutter)" data-reveal="off">
-      <div className="flex flex-col gap-8 lg:col-span-7">
+    <div className="grid gap-6 lg:grid-cols-12 lg:gap-x-(--gutter)" data-reveal="off">
+      <div className="flex flex-col gap-6 lg:col-span-7">
         <div className="flex flex-wrap items-center gap-3">
           <span className="type-code-l text-ink-1" data-testid={TEST_IDS.orderNumber}>
             {o.number}
@@ -50,8 +63,8 @@ export function OrderStatusView({
           <span className="type-caption font-normal text-ink-3">{formatDateTime(o.createdAt)}</span>
         </div>
         {children}
-        <section aria-labelledby="tl-title">
-          <h2 id="tl-title" className="type-h3 text-ink-1">
+        <section aria-labelledby="tl-title" className="panel p-5" {...entrance(0)}>
+          <h2 id="tl-title" className="type-h4 text-ink-1">
             Tok porudžbine
           </h2>
           <div className="mt-4">
@@ -66,11 +79,11 @@ export function OrderStatusView({
             <p className="mt-4 type-body-s text-ink-2">Razlog otkazivanja: {o.cancelReason}</p>
           ) : null}
         </section>
-        <section aria-labelledby="items-title">
-          <h2 id="items-title" className="type-h3 text-ink-1">
+        <section aria-labelledby="items-title" className="panel p-5" {...entrance(1)}>
+          <h2 id="items-title" className="type-h4 text-ink-1">
             Stavke
           </h2>
-          <ul className="mt-3 flex flex-col divide-y divide-line border-y border-line">
+          <ul className="mt-2 flex flex-col divide-y divide-line border-b border-line">
             {o.items.map((item, i) => (
               <li key={`${item.sku}-${i}`} className="flex justify-between gap-4 py-3 type-body-s">
                 <span className="min-w-0">
@@ -114,8 +127,8 @@ export function OrderStatusView({
           </p>
         </section>
       </div>
-      <aside className="flex flex-col gap-6 lg:col-span-5">
-        <section className="panel p-5">
+      <aside className="flex flex-col gap-4 lg:col-span-5">
+        <section className="panel p-5" {...entrance(1)}>
           <h2 className="type-h4 text-ink-1">Dostava</h2>
           <p className="mt-2 type-body-s text-ink-2">
             {DELIVERY_LABEL[o.delivery.method]}
@@ -137,7 +150,7 @@ export function OrderStatusView({
             </p>
           ) : null}
         </section>
-        <section className="panel p-5">
+        <section className="panel p-5" {...entrance(2)}>
           <h2 className="type-h4 text-ink-1">Plaćanje</h2>
           <p className="mt-2 type-body-s text-ink-2">
             {PAYMENT_LABEL[o.payment.method]}
@@ -156,7 +169,7 @@ export function OrderStatusView({
           ) : null}
         </section>
         <OrderNotices order={o} />
-        <section className="panel p-5">
+        <section className="panel p-5" {...entrance(4)}>
           <h2 className="type-h4 text-ink-1">Kupac</h2>
           <p className="mt-2 type-body-s text-ink-2">
             {o.contact.firstName} {o.contact.lastName}
@@ -191,6 +204,7 @@ function OrderNotices({ order }: { order: OrderView }) {
       className="panel p-5"
       aria-labelledby="notices-title"
       data-testid="order-notices"
+      {...entrance(3)}
     >
       <h2 id="notices-title" className="type-h4 text-ink-1">
         Obaveštenja

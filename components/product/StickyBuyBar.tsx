@@ -1,8 +1,10 @@
 "use client";
 
 /**
- * Phones (< 1024 px): once the inline buy box has scrolled out of view, a 64 px bar with the
- * price and „Dodaj u korpu“ rises from the bottom edge (§10.3) and leaves the way it came.
+ * Phones (< 1024 px): whenever the inline „Dodaj u korpu“ is not on screen — above it on
+ * arrival, below it after scrolling on — a 64 px bar with the price and the same action is
+ * docked at the bottom edge (§10.3, UI-BOOST §7.1); it leaves the way it came once the inline
+ * button is in view, so the two are never offered at once.
  *
  * GSAP owns the transform. The server markup is hidden with `visibility` only: an inline
  * `translateY(110%)` is parsed by GSAP into a pixel `y` that a `yPercent` tween never clears,
@@ -16,6 +18,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap, prefersReducedMotion, useGSAP } from "@/lib/gsap/client";
 import { useBottomInset } from "@/lib/dom/bottomInset";
 import { MEDIA } from "@/constants/motion";
+import { TEST_IDS } from "@/constants/testIds";
 import { AddToCartButton, type CartProduct } from "@/components/catalog/AddToCartButton";
 import { ProductPrice } from "@/components/catalog/ProductPrice";
 
@@ -29,11 +32,13 @@ export function StickyBuyBar({ product, targetId }: { product: CartProduct; targ
   useBottomInset(bar, shown);
 
   useEffect(() => {
-    const target = document.getElementById(targetId);
+    const box = document.getElementById(targetId);
+    // The inline action itself; the box as a whole when the product cannot be added.
+    const target = box?.querySelector(`[data-testid="${TEST_IDS.productAddToCart}"]`) ?? box;
     if (!target) return;
     const mq = window.matchMedia(MEDIA.mobile);
     const io = new IntersectionObserver(
-      ([entry]) => setShown(mq.matches && !entry.isIntersecting && entry.boundingClientRect.top < 0),
+      ([entry]) => setShown(mq.matches && !entry.isIntersecting),
       { threshold: 0 },
     );
     io.observe(target);
@@ -62,7 +67,9 @@ export function StickyBuyBar({ product, targetId }: { product: CartProduct; targ
         return;
       }
       gsap.to(el, {
-        ...(reduced ? { opacity: 0, duration: 0.16 } : { yPercent: 110, duration: 0.24, ease: "sk.in" }),
+        ...(reduced
+          ? { opacity: 0, duration: 0.16 }
+          : { yPercent: 110, duration: 0.24, ease: "sk.in" }),
         overwrite: true,
         onComplete: () => {
           gsap.set(el, HIDDEN);
@@ -83,7 +90,12 @@ export function StickyBuyBar({ product, targetId }: { product: CartProduct; targ
       className="fixed inset-x-0 bottom-0 z-sticky border-t border-line-strong bg-bg-raised px-page pt-2.5 pb-[max(0.625rem,env(safe-area-inset-bottom))] lg:hidden"
     >
       <div className="flex items-center gap-3">
-        <ProductPrice productId={product._id} retailPricePara={product.retailPricePara} size="s" className="shrink-0" />
+        <ProductPrice
+          productId={product._id}
+          retailPricePara={product.retailPricePara}
+          size="s"
+          className="shrink-0"
+        />
         <div className="min-w-0 flex-1">
           <AddToCartButton product={product} emphasis />
         </div>

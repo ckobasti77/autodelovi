@@ -15,6 +15,7 @@ import { formatRSD } from "@/lib/format/money";
 import { STOCK_STATE_LABEL } from "@/lib/i18n/sr/admin";
 
 import { useDebouncedValue } from "./hooks";
+import { CompactInput } from "./ui";
 
 export type PickedProduct = FunctionReturnType<typeof api.catalog.productsAdmin.pick>[number];
 
@@ -47,52 +48,49 @@ export function ProductPicker({
       <label htmlFor={`${id}-input`} className="mb-1 block type-caption font-medium text-ink-2">
         {label}
       </label>
-      <div className="flex h-10 items-center gap-2 rounded-sm border border-control bg-surface-1 px-3 focus-within:border-focus focus-within:shadow-[inset_0_0_0_1px_var(--color-focus)]">
-        <MagnifyingGlassIcon size={16} className="shrink-0 text-ink-3" aria-hidden="true" />
-        <input
-          id={`${id}-input`}
-          role="combobox"
-          aria-expanded={open}
-          aria-controls={`${id}-list`}
-          aria-activedescendant={open && list[active] ? `${id}-${active}` : undefined}
-          autoComplete="off"
-          autoFocus={autoFocus}
-          value={q}
-          placeholder="OEM, šifra ili naziv…"
-          onChange={(e) => {
-            setQ(e.target.value);
-            setActive(0);
-          }}
-          onKeyDown={(e) => {
-            if (e.key === "ArrowDown") {
-              e.preventDefault();
-              setActive((a) => Math.min(list.length - 1, a + 1));
-            } else if (e.key === "ArrowUp") {
-              e.preventDefault();
-              setActive((a) => Math.max(0, a - 1));
-            } else if (e.key === "Enter") {
-              e.preventDefault();
-              pick(list[active]);
-            } else if (e.key === "Escape") {
-              setQ("");
-            }
-          }}
-          className="h-full min-w-0 flex-1 bg-transparent type-body-s text-ink-1 outline-none placeholder:text-ink-3"
-        />
-      </div>
+      <CompactInput
+        prefix={<MagnifyingGlassIcon size={16} />}
+        id={`${id}-input`}
+        role="combobox"
+        aria-expanded={open}
+        aria-controls={`${id}-list`}
+        aria-activedescendant={open && list[active] ? `${id}-${active}` : undefined}
+        autoComplete="off"
+        autoFocus={autoFocus}
+        value={q}
+        placeholder="OEM, šifra ili naziv…"
+        onChange={(e) => {
+          setQ(e.target.value);
+          setActive(0);
+        }}
+        onKeyDown={(e) => {
+          if (e.key === "ArrowDown") {
+            e.preventDefault();
+            setActive((a) => Math.min(list.length - 1, a + 1));
+          } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            setActive((a) => Math.max(0, a - 1));
+          } else if (e.key === "Enter") {
+            e.preventDefault();
+            pick(list[active]);
+          } else if (e.key === "Escape") {
+            setQ("");
+          }
+        }}
+      />
       {open ? (
         <ul
           id={`${id}-list`}
           role="listbox"
           aria-label="Artikli"
-          className="absolute inset-x-0 top-full z-dropdown mt-1 max-h-80 overflow-y-auto rounded-md bg-surface-3 py-1 shadow-overlay"
+          className="absolute inset-x-0 top-full z-dropdown mt-1 max-h-80 overflow-y-auto rounded-md bg-surface-3 p-1 shadow-overlay"
         >
           {results === undefined ? (
-            <li className="px-3 py-3 type-body-s text-ink-3" role="presentation">
+            <li className="px-2 py-3 type-body-s text-ink-3" role="presentation">
               Traži se…
             </li>
           ) : list.length === 0 ? (
-            <li className="px-3 py-3 type-body-s text-ink-2" role="presentation">
+            <li className="px-2 py-3 type-body-s text-ink-2" role="presentation">
               Nema artikla za „{term}“. Dodajte slobodnu stavku.
             </li>
           ) : (
@@ -106,7 +104,8 @@ export function ProductPicker({
                 onMouseDown={(e) => e.preventDefault()}
                 onClick={() => pick(p)}
                 className={cn(
-                  "flex cursor-pointer items-center gap-3 px-3 py-2 type-body-s",
+                  // Menu geometry: 8 px list, 4 px rows at 4 px padding (concentric).
+                  "flex cursor-pointer items-center gap-3 rounded-xs px-2 py-2 type-body-s",
                   i === active && "bg-selected",
                 )}
               >

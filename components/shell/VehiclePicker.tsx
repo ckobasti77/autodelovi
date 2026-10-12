@@ -30,7 +30,7 @@ export function VehicleField({ vehicle, onOpen, onClear, className }: TriggerPro
   const labelId = `vf${useId().replace(/:/g, "")}`;
   return (
     <div className={cn("flex flex-col gap-2", className)} data-reveal="off">
-      <span className="type-caption text-ink-2" id={labelId}>
+      <span className="type-caption text-ink-2 max-sm:sr-only" id={labelId}>
         Vaše vozilo
       </span>
       <div className="flex h-13 items-stretch rounded-sm border border-control bg-surface-2 transition-control hover:border-ink-3">

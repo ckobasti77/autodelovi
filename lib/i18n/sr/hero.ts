@@ -41,6 +41,10 @@ export const HERO_COPY = {
   holdHintPointer: "Kliknite na deo",
   holdHintTouch: "Dodirnite deo",
   holdHintSub: "ili otvorite listu delova",
+  /** After the live count in the hover callout: „12 artikala · kliknite na deo“. */
+  calloutHint: "kliknite na deo",
+  /** Parts list: a category that exists in the catalogue but has no mesh on the car. */
+  noMesh: "bez 3D prikaza",
   stageNavLabel: "Faze rasklapanja",
   prevStage: "Prethodna faza",
   nextStage: "Sledeća faza",
@@ -62,7 +66,11 @@ export const PANEL_COPY = {
   error: "Artikli trenutno nisu dostupni. Pokušajte ponovo ili nas pozovite.",
   retry: "Pokušaj ponovo",
   allParts: "Svi delovi",
+  inStock: (count: number) => `${count} na stanju`,
+  listLabel: (category: string) => `Artikli: ${category}`,
   addToCart: "Dodaj u korpu",
+  /** Visible label of a row button (the storefront card says the same). */
+  addShort: "U korpu",
   backorder: "Poruči",
   added: "Dodato",
   addedToast: (name: string) => `Dodato u korpu: ${name}.`,

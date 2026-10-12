@@ -196,7 +196,10 @@ export async function LandingPage({
           <h2 id="generations-title" className="type-h3 text-ink-1">
             {model ? `${category.category.name} po generaciji` : `Najviše delova za modele`}
           </h2>
-          <ul className="mt-4 grid gap-x-(--gutter) gap-y-1 sm:grid-cols-2 lg:grid-cols-3">
+          <ul
+            className="mt-4 grid gap-x-(--gutter) panel px-4 sm:grid-cols-2 lg:grid-cols-3"
+            data-reveal="block"
+          >
             {stats.generations.slice(0, 12).map((g) => {
               const href = model
                 ? `${basePath}${catalogQuery({ ...filters, vehicle: { brand: marka, model, generation: g.slug }, page: 1 })}`
@@ -204,7 +207,7 @@ export async function LandingPage({
               return (
                 <li
                   key={`${g.modelSlug}-${g.slug}`}
-                  className="flex items-baseline justify-between gap-3 border-b border-line py-2.5"
+                  className="flex min-h-11 items-baseline justify-between gap-3 border-b border-line py-2.5"
                 >
                   <Link href={href} variant="standalone">
                     {g.name}
@@ -247,10 +250,10 @@ export async function LandingPage({
           {stats.siblings.length > 0 ? (
             <div>
               <h2 className="type-h3 text-ink-1">{category.category.name} za druge modele</h2>
-              <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+              <ul className="mt-4 flex flex-wrap gap-2">
                 {stats.siblings.map((l) => (
                   <li key={landingHref(l)}>
-                    <Link href={landingHref(l)} variant="standalone">
+                    <Link href={landingHref(l)} variant="unstyled" className="chip-link">
                       {landingVehicle(l)}
                     </Link>
                   </li>
@@ -261,10 +264,15 @@ export async function LandingPage({
           {stats.otherCategories.length > 0 ? (
             <div>
               <h2 className="type-h3 text-ink-1">Drugi delovi za {vehicleName}</h2>
-              <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+              <ul className="mt-4 flex flex-wrap gap-2">
                 {stats.otherCategories.map((l) => (
                   <li key={landingHref(l)}>
-                    <Link href={landingHref(l)} variant="standalone" aria-label={landingLabel(l)}>
+                    <Link
+                      href={landingHref(l)}
+                      variant="unstyled"
+                      className="chip-link"
+                      aria-label={landingLabel(l)}
+                    >
                       {l.categoryName}
                     </Link>
                   </li>

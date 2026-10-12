@@ -9,6 +9,7 @@ import { Link } from "@/components/ui/Link";
 import { RevealText } from "@/components/text-reveal/RevealText";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { CategoryTile } from "@/components/catalog/CategoryTile";
+import { RevealGroup, RevealItem } from "@/components/reveal/Reveal";
 import { ROUTES } from "@/constants/routes";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -36,11 +37,12 @@ export default async function PartsIndexPage() {
           Delovi po sistemima
         </RevealText>
         <RevealText as="p" className="max-w-[60ch] type-lead text-ink-2 lg:col-span-5 lg:self-end">
-          Izaberite sistem i kategoriju, pa suzite izbor po vozilu i motoru. Broj dela upišite u pretragu kako god ga imate.
+          Izaberite sistem i kategoriju, pa suzite izbor po vozilu i motoru. Broj dela upišite u
+          pretragu kako god ga imate.
         </RevealText>
       </div>
-      <div className="mt-12 flex flex-col gap-14">
-        {tree.systems.map((system) => {
+      <div className="mt-block flex flex-col gap-14">
+        {tree.systems.map((system, systemIndex) => {
           const categories = tree.categories
             .filter((c) => c.parentId === system._id)
             .sort((a, b) => a.sortOrder - b.sortOrder);
@@ -51,17 +53,25 @@ export default async function PartsIndexPage() {
                 <h2 id={`sys-${system.slug}`} className="type-display-m uppercase text-ink-1">
                   {system.name}
                 </h2>
-                <Link href={ROUTES.category(system.slug)} variant="standalone" className="type-body-s">
+                <Link
+                  href={ROUTES.category(system.slug)}
+                  variant="standalone"
+                  className="type-body-s"
+                >
                   Ceo sistem
                 </Link>
               </div>
-              <ul className="mt-5 grid grid-cols-2 gap-3 sm:gap-(--gutter) md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 3xl:grid-cols-6">
-                {categories.map((c) => (
-                  <li key={c.slug}>
+              {/* The first system's first row is on the first screen: it enters with the page. */}
+              <RevealGroup
+                as="ul"
+                className="mt-5 grid grid-cols-2 gap-3 sm:gap-(--gutter) md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 3xl:grid-cols-6"
+              >
+                {categories.map((c, i) => (
+                  <RevealItem as="li" key={c.slug} eager={systemIndex === 0 && i < 6} index={i}>
                     <CategoryTile category={c} count={categoryProductCount(tree, c)} size="s" />
-                  </li>
+                  </RevealItem>
                 ))}
-              </ul>
+              </RevealGroup>
             </section>
           );
         })}

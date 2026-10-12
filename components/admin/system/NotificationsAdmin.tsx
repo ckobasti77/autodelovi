@@ -49,7 +49,7 @@ export function NotificationsAdmin() {
           ) : null
         }
       />
-      <div className="panel">
+      <div className="panel" data-reveal="block">
         {status === "LoadingFirstPage" ? (
           <Skeleton className="m-4 h-60" />
         ) : results.length === 0 ? (

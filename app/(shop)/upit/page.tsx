@@ -22,7 +22,9 @@ import {
   type InquiryPrefill,
   type InquiryVehicleTree,
 } from "@/components/inquiry/InquiryForm";
+import { InquirySteps } from "@/components/inquiry/InquirySteps";
 import { VinLocator } from "@/components/inquiry/VinLocator";
+import { Reveal } from "@/components/reveal/Reveal";
 import { ROUTES } from "@/constants/routes";
 import type { VehicleTree } from "@/lib/catalog/types";
 
@@ -112,9 +114,10 @@ export default async function InquiryPage({ searchParams }: PageProps<"/upit">) 
           Pošaljite broj šasije i šta vam treba — javljamo se sa ponudom u toku radnog dana.
         </RevealText>
       </div>
-      <div className="mt-10 grid gap-12 lg:grid-cols-12 lg:gap-x-(--gutter)">
-        <div className="lg:col-span-8">
+      <div className="mt-block grid gap-y-10 lg:grid-cols-12 lg:gap-x-(--gutter)">
+        <div className="min-w-0 lg:col-span-8">
           <InquiryForm
+            vinHelp={<VinLocator />}
             config={{
               tree: inquiryTree(tree),
               categories: [...categoryTree.categories, ...categoryTree.subcategories]
@@ -132,16 +135,21 @@ export default async function InquiryPage({ searchParams }: PageProps<"/upit">) 
             }}
           />
         </div>
-        <aside className="flex flex-col gap-8 lg:col-span-4" aria-label="Pomoć">
-          <section className="panel p-5">
+        <aside className="flex min-w-0 flex-col gap-4 lg:col-span-4" aria-label="Pomoć">
+          {/* Beside the VIN field from lg; on phones the form opens the same help under it. */}
+          <Reveal as="section" eager className="panel p-5 max-lg:hidden">
             <h2 className="mb-4 type-h4 text-ink-1">Gde je broj šasije?</h2>
             <VinLocator />
-          </section>
+          </Reveal>
+          <Reveal as="section" eager index={1} className="panel p-5">
+            <h2 className="mb-4 type-h4 text-ink-1">Šta dalje</h2>
+            <InquirySteps />
+          </Reveal>
           {contacts.length ? (
-            <section className="flex flex-col gap-3">
+            <Reveal as="section" className="flex flex-col gap-3 panel p-5">
               <h2 className="type-h4 text-ink-1">Brže je telefonom?</h2>
               <ContactActions links={contacts} location="inquiry" variant="buttons" />
-            </section>
+            </Reveal>
           ) : null}
         </aside>
       </div>
