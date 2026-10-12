@@ -31,7 +31,8 @@ import {
   type ImportBatchStatus,
   type RowActionKey,
 } from "@/lib/i18n/sr/import";
-import { Badge } from "@/components/ui/Badge";
+
+import { Chip } from "../ui";
 
 const STATUS_ICON: Record<ImportBatchStatus, ReactNode> = {
   staging: <CircleDashedIcon size={14} weight="bold" />,
@@ -47,9 +48,9 @@ const STATUS_ICON: Record<ImportBatchStatus, ReactNode> = {
 export function ImportStatusBadge({ status }: { status: ImportBatchStatus }) {
   const s = IMPORT_STATUS[status];
   return (
-    <Badge size="text" tone={s.tone} icon={STATUS_ICON[status]}>
+    <Chip tone={s.tone} icon={STATUS_ICON[status]}>
       {s.label}
-    </Badge>
+    </Chip>
   );
 }
 
@@ -64,9 +65,9 @@ const ACTION_ICON: Record<RowActionKey, ReactNode> = {
 export function RowActionBadge({ action }: { action: RowActionKey }) {
   const a = ROW_ACTION[action];
   return (
-    <Badge size="text" tone={a.tone} icon={ACTION_ICON[action]}>
+    <Chip tone={a.tone} icon={ACTION_ICON[action]}>
       {a.label}
-    </Badge>
+    </Chip>
   );
 }
 

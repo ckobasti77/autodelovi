@@ -14,7 +14,6 @@ import type { Id } from "@/convex/_generated/dataModel";
 import { compactDate, compactDateTime } from "@/lib/admin/format";
 import { ADMIN_COPY, ROLE_LABEL } from "@/lib/i18n/sr/admin";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { CopyButton } from "@/components/ui/CopyButton";
 import { Dialog } from "@/components/ui/Dialog";
@@ -29,7 +28,7 @@ import { ConfirmDialog, useConfirm } from "../ConfirmDialog";
 import { useNowMinute } from "../hooks";
 import { useAdminShell } from "../shell/context";
 import { NotificationPrefsMatrix } from "../settings/NotificationPrefsMatrix";
-import { PageHeader, Section } from "../ui";
+import { Chip, PageHeader, Section } from "../ui";
 
 const INVITE_STATUS = {
   pending: { label: "Čeka prihvatanje", tone: "info" },
@@ -208,9 +207,7 @@ export function UsersAdmin() {
                       : ""}
                   </span>
                 </span>
-                <Badge size="text" tone={INVITE_STATUS[i.status].tone}>
-                  {INVITE_STATUS[i.status].label}
-                </Badge>
+                <Chip tone={INVITE_STATUS[i.status].tone}>{INVITE_STATUS[i.status].label}</Chip>
                 {i.status === "pending" ? (
                   <Button
                     size="sm"

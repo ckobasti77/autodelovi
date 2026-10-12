@@ -18,7 +18,6 @@ import { resolveUnitPrice } from "@/lib/domain/pricing";
 import { formatRSD } from "@/lib/format/money";
 import { ADMIN_COPY } from "@/lib/i18n/sr/admin";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Field } from "@/components/ui/Field";
 import { IconButton } from "@/components/ui/IconButton";
@@ -30,7 +29,7 @@ import { Textarea } from "@/components/ui/Textarea";
 import { toast } from "@/components/ui/Toast";
 
 import { useAdminShell } from "../shell/context";
-import { CompactInput, PageHeader, SaveBar, Section } from "../ui";
+import { Chip, CompactInput, PageHeader, SaveBar, Section } from "../ui";
 
 type Tier = FunctionReturnType<typeof api.pricing.listTiers>[number];
 type Rule = { id: string; percent: string };
@@ -183,11 +182,7 @@ export function TiersAdmin() {
                     >
                       {t.name}
                     </span>
-                    {t.isDefault ? (
-                      <Badge size="text" tone="info">
-                        Podrazumevan
-                      </Badge>
-                    ) : null}
+                    {t.isDefault ? <Chip tone="info">Podrazumevan</Chip> : null}
                     <span className="tabular-nums">{formatBp(t.defaultDiscountBp)}</span>
                   </button>
                 </li>
@@ -483,11 +478,7 @@ function TierEditor({
                   {formatRSD(editing.unitPricePara)}
                 </span>
                 <span className="type-body-s text-ink-2">−{formatBp(editing.discountBp)}</span>
-                {editing.marginGuardApplied ? (
-                  <Badge size="text" tone="warning">
-                    Zaštita marže
-                  </Badge>
-                ) : null}
+                {editing.marginGuardApplied ? <Chip tone="warning">Zaštita marže</Chip> : null}
               </p>
             ) : (
               <p className="type-body-s text-ink-3">Upišite cenu i rabat.</p>

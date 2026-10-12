@@ -21,7 +21,6 @@ import {
 } from "@/lib/email/catalog";
 import { EMAIL_MODE_LABEL, EMAIL_STATUS_LABEL } from "@/lib/i18n/sr/admin";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { DataTable, type ColumnDef } from "@/components/ui/DataTable";
 import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
@@ -32,7 +31,7 @@ import { Tabs } from "@/components/ui/Tabs";
 import { toast } from "@/components/ui/Toast";
 
 import { useNowMinute } from "../hooks";
-import { DemoTag, LoadMoreFooter, PageHeader } from "../ui";
+import { Chip, DemoTag, LoadMoreFooter, ON_PAGE_FIELD, PageHeader, SegmentedFilter } from "../ui";
 import { useUrlFilters } from "../useUrlFilters";
 import { emailPreviewHtml } from "@/lib/email/preview";
 import { DeliveryBanner, EmailsNav } from "./EmailDelivery";
@@ -130,11 +129,7 @@ export function EmailsAdmin() {
             label: row.original.status,
             tone: "neutral" as const,
           };
-          return (
-            <Badge size="text" tone={s.tone}>
-              {s.label}
-            </Badge>
-          );
+          return <Chip tone={s.tone}>{s.label}</Chip>;
         },
       },
     ],
@@ -148,23 +143,21 @@ export function EmailsAdmin() {
       />
       <EmailsNav />
       <DeliveryBanner />
+      {/* Status is the segmented track, as in every other list; the template stays a select. */}
+      <SegmentedFilter
+        label="Status poruke"
+        value={filters.status}
+        onChange={(status) => setFilters({ status })}
+        options={[
+          { value: "", label: "Svi" },
+          ...Object.entries(EMAIL_STATUS_LABEL).map(([value, s]) => ({ value, label: s.label })),
+        ]}
+      />
       <div className="flex flex-wrap items-end gap-3">
-        <div className="w-52">
-          <Select
-            size="sm"
-            aria-label="Status poruke"
-            placeholder="Svi statusi"
-            value={filters.status}
-            onChange={(e) => setFilters({ status: e.target.value })}
-            options={Object.entries(EMAIL_STATUS_LABEL).map(([value, s]) => ({
-              value,
-              label: s.label,
-            }))}
-          />
-        </div>
         <div className="w-80 max-w-full">
           <Select
             size="sm"
+            className={ON_PAGE_FIELD}
             aria-label="Šablon"
             placeholder="Svi šabloni"
             value={filters.sablon}
@@ -264,9 +257,7 @@ function EmailView({ id, onResent }: { id: Id<"emailLog">; onResent: (id: string
         <dt className="text-ink-3">Način · status</dt>
         <dd className="flex flex-wrap items-center gap-2">
           {EMAIL_MODE_LABEL[m.mode as keyof typeof EMAIL_MODE_LABEL] ?? m.mode}
-          <Badge size="text" tone={status.tone}>
-            {status.label}
-          </Badge>
+          <Chip tone={status.tone}>{status.label}</Chip>
         </dd>
         {m.error ? (
           <>

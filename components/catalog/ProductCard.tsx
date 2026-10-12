@@ -62,8 +62,8 @@ const SIZES = {
  * Product card (§9.7, UI-BOOST §7.2). Three rows of one grid: picture, facts, footer.
  *
  * Grid (from 480 px): the 4:3 render fills its frame (a category render is a square with air
- * around the part, so it is drawn slightly larger than the frame is high and the quality chip
- * sits on the empty corner), maker, name (the whole card is one link via the name's `::after`,
+ * around the part, so it takes the whole height and the quality chip sits on its empty
+ * corner), maker, name (the whole card is one link via the name's `::after`,
  * focus ring around the card; two lines are reserved so the rows of a grid line up, a third is
  * allowed), OEM (wraps, never truncated), fitment, stock, then the footer rule with the price
  * and the action. The facts row takes the slack, so footers line up along a row of cards.
@@ -112,13 +112,12 @@ export function ProductCard({
         : "aspect-[4/3]";
   const chipVisible =
     variant === "grid" ? "flex" : variant === "responsive" ? "hidden sm:flex" : "hidden";
-  // A category render is drawn a little larger than its frame is high; a client photo is not.
-  const renderScale = card.imageUrl
-    ? "hover-hover:group-hover:scale-[1.03]"
-    : variant === "list"
-      ? "scale-[1.1]"
+  // Fine pointers: the picture steps 4 % closer inside its mask (grid layouts only).
+  const renderScale =
+    variant === "list"
+      ? ""
       : variant === "responsive"
-        ? "max-sm:scale-[1.1] hover-hover:sm:group-hover:scale-[1.04]"
+        ? "hover-hover:sm:group-hover:scale-[1.04]"
         : "hover-hover:group-hover:scale-[1.04]";
   const nameClamp =
     variant === "grid" ? "line-clamp-3" : variant === "responsive" ? "sm:line-clamp-3" : "";
@@ -150,7 +149,8 @@ export function ProductCard({
           sizes={SIZES[variant]}
           preload={preloadImage}
           className={thumb}
-          imageClassName={cn(!card.imageUrl && "p-0", renderScale)}
+          bleed
+          imageClassName={renderScale}
         />
         <span
           className={cn(

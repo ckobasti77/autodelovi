@@ -22,12 +22,11 @@ import { parseMoney, type FormatEvidence, type NumberFormat } from "@/lib/import
 import type { CellValue } from "@/lib/import/row";
 import { formatRSD } from "@/lib/format/money";
 import { CELLS, CONFIDENCE_LABEL, IMPORT_MODE_LABEL, countImport } from "@/lib/i18n/sr/import";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { RadioGroup } from "@/components/ui/Radio";
 import { Select } from "@/components/ui/Select";
 
-import { CompactInput, Section, sentenceCase } from "../ui";
+import { Chip, CompactInput, Section, sentenceCase } from "../ui";
 
 export type Preset = { _id: string; name: string; score: number };
 
@@ -215,8 +214,7 @@ export function MappingStep({
                   </td>
                   <td className="py-2">
                     {m.field !== "ignore" && m.confidence ? (
-                      <Badge
-                        size="text"
+                      <Chip
                         tone={
                           m.confidence === "exact" || m.confidence === "alias"
                             ? "success"
@@ -224,7 +222,7 @@ export function MappingStep({
                         }
                       >
                         {sentenceCase(CONFIDENCE_LABEL[m.confidence])}
-                      </Badge>
+                      </Chip>
                     ) : m.field !== "ignore" ? (
                       <span className="type-caption text-ink-3">ručno</span>
                     ) : (

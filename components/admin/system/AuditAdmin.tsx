@@ -22,7 +22,7 @@ import { Skeleton } from "@/components/ui/Skeleton";
 import { ADMIN } from "@/constants/routes";
 
 import { useNowMinute } from "../hooks";
-import { CompactInput, ActorLabel, LoadMoreFooter, PageHeader } from "../ui";
+import { CompactInput, ActorLabel, LoadMoreFooter, PageHeader, ON_PAGE_FIELD } from "../ui";
 import { useUrlFilters } from "../useUrlFilters";
 
 type Row = FunctionReturnType<typeof api.audit.list>["page"][number];
@@ -86,6 +86,7 @@ export function AuditAdmin() {
         <Field label="Ko">
           <Select
             size="sm"
+            className={ON_PAGE_FIELD}
             placeholder="Svi"
             value={f.ko}
             onChange={(e) => setF({ ko: e.target.value })}
@@ -95,6 +96,7 @@ export function AuditAdmin() {
         <Field label="Šta">
           <Select
             size="sm"
+            className={ON_PAGE_FIELD}
             placeholder="Sve"
             value={f.vrsta}
             onChange={(e) => setF({ vrsta: e.target.value })}
@@ -106,6 +108,7 @@ export function AuditAdmin() {
         <Field label="Radnja">
           <Select
             size="sm"
+            className={ON_PAGE_FIELD}
             placeholder="Sve"
             value={f.radnja}
             onChange={(e) => setF({ radnja: e.target.value })}
@@ -113,10 +116,20 @@ export function AuditAdmin() {
           />
         </Field>
         <Field label="Od">
-          <CompactInput type="date" value={f.od} onChange={(e) => setF({ od: e.target.value })} />
+          <CompactInput
+            type="date"
+            className={ON_PAGE_FIELD}
+            value={f.od}
+            onChange={(e) => setF({ od: e.target.value })}
+          />
         </Field>
         <Field label="Do">
-          <CompactInput type="date" value={f.do} onChange={(e) => setF({ do: e.target.value })} />
+          <CompactInput
+            type="date"
+            className={ON_PAGE_FIELD}
+            value={f.do}
+            onChange={(e) => setF({ do: e.target.value })}
+          />
         </Field>
       </div>
       <div className="panel" data-reveal="block">

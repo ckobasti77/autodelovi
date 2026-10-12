@@ -109,7 +109,7 @@ const FORMAT_EXAMPLES: [string, string][] = [
  * the article as one line and „Ukloni“ sits in the row's top right corner (icon only).
  */
 const ROW =
-  "relative grid grid-cols-[1.5rem_minmax(0,1fr)] gap-x-3 gap-y-3 px-4 py-4 sm:px-5 @xl:grid-cols-[1.5rem_minmax(0,1fr)_9rem_auto] @xl:gap-x-4";
+  "relative grid grid-cols-[1.5rem_minmax(0,1fr)] gap-x-3 gap-y-3 px-4 py-4 sm:px-5 @xl:grid-cols-[1.5rem_minmax(0,1fr)_minmax(9rem,auto)_auto] @xl:gap-x-4";
 
 function rowsFromParse(parsed: QuickOrderParse): Row[] {
   return parsed.items.map((item) => ({
@@ -865,7 +865,7 @@ export function QuickOrder({
                               <span className="sr-only"> red {row.code}</span>
                             </Button>
                           </div>
-                          <div className="ml-auto flex justify-end @xl:col-start-3 @xl:row-start-1 @xl:pt-0.5">
+                          <div className="ml-auto flex justify-end @xl:col-start-3 @xl:row-start-1 @xl:ml-0 @xl:pt-0.5">
                             {row.status === "pending" ? (
                               <Skeleton className="h-6 w-20" />
                             ) : row.status === "exact" && option ? (

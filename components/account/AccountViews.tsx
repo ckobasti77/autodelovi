@@ -297,7 +297,6 @@ export function AccountOrderDetail({ number }: { number: string }) {
             <span className="type-caption font-normal tabular-nums text-ink-3">
               Poručeno {formatDate(order.createdAt)}
             </span>
-            <span className="ml-auto type-code text-ink-2">{order.number}</span>
           </div>
           <ul className="flex flex-col divide-y divide-line">
             {order.items.map((i, idx) => (

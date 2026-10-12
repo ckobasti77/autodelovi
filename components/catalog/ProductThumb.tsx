@@ -20,6 +20,7 @@ export function ProductThumb({
   alt,
   sizes,
   preload = false,
+  bleed = false,
   className,
   imageClassName,
 }: {
@@ -28,6 +29,8 @@ export function ProductThumb({
   alt: string;
   sizes: string;
   preload?: boolean;
+  /** Category render without the 4 % air around it (small frames: cards, rows). */
+  bleed?: boolean;
   className?: string;
   imageClassName?: string;
 }) {
@@ -40,7 +43,7 @@ export function ProductThumb({
     quality: 75,
     className: cn(
       "object-contain transition-transform duration-[600ms] ease-sk-out",
-      imageUrl ? "p-0" : "p-[4%]",
+      imageUrl || bleed ? "p-0" : "p-[4%]",
       imageClassName,
     ),
   });

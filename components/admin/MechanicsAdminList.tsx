@@ -24,11 +24,10 @@ import {
   type MechanicStatus,
 } from "@/lib/i18n/sr/mechanic";
 import { CHANNEL_LABEL } from "@/lib/i18n/sr/admin";
-import { Badge } from "@/components/ui/Badge";
 import { DataTable, type ColumnDef } from "@/components/ui/DataTable";
 import { Select } from "@/components/ui/Select";
 import { ROUTES } from "@/constants/routes";
-import { SegmentedFilter } from "@/components/admin/ui";
+import { Chip, SegmentedFilter, ON_PAGE_FIELD } from "@/components/admin/ui";
 import { TEST_IDS } from "@/constants/testIds";
 
 type Row = FunctionReturnType<typeof api.mechanicsAdmin.list>[number];
@@ -130,13 +129,12 @@ export function MechanicsAdminList() {
         header: "Status",
         enableSorting: false,
         cell: ({ row }) => (
-          <Badge
-            size="text"
+          <Chip
             tone={MECHANIC_STATUS_TONE[row.original.status]}
             icon={MECHANIC_STATUS_ICON[row.original.status]}
           >
             {MECHANIC_STATUS_LABEL[row.original.status]}
-          </Badge>
+          </Chip>
         ),
       },
     ],
@@ -162,6 +160,7 @@ export function MechanicsAdminList() {
       <div className="w-48">
         <Select
           size="sm"
+          className={ON_PAGE_FIELD}
           aria-label="Izvor registracije"
           placeholder="Svi izvori"
           value={source}

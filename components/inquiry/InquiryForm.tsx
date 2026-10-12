@@ -479,7 +479,8 @@ export function InquiryForm({
           </fieldset>
         </Reveal>
 
-        <Reveal className={GROUP}>
+        {/* Its top is on the first screen at 1440: eager, like the first group. */}
+        <Reveal eager index={1} className={GROUP}>
           <fieldset className="flex min-w-0 flex-col gap-5">
             <legend className={LEGEND}>Šta vam treba?</legend>
             {config.prefill.productName ? (

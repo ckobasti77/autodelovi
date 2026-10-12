@@ -39,7 +39,6 @@ import {
   DELIVERY_LABEL,
   PAYMENT_LABEL,
 } from "@/lib/i18n/sr/shop";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Checkbox } from "@/components/ui/Checkbox";
 import { Dialog } from "@/components/ui/Dialog";
@@ -68,6 +67,7 @@ import {
   OrderStatusBadge,
   Section,
   CompactInput,
+  Chip,
 } from "../ui";
 
 type Detail = NonNullable<FunctionReturnType<typeof api.ordersAdmin.get>>;
@@ -200,9 +200,9 @@ function OrderView({ data }: { data: Detail }) {
                       {compactDateTime(m.at, nowMinute)}
                     </span>
                     <span className="min-w-0 flex-1 truncate">{m.subject}</span>
-                    <Badge size="text" tone={EMAIL_STATUS_LABEL[m.status]?.tone ?? "neutral"}>
+                    <Chip tone={EMAIL_STATUS_LABEL[m.status]?.tone ?? "neutral"}>
                       {EMAIL_STATUS_LABEL[m.status]?.label ?? m.status}
-                    </Badge>
+                    </Chip>
                   </li>
                 ))}
               </ul>
@@ -1069,9 +1069,9 @@ function PaymentSection({ order: o }: { order: Order }) {
           {
             label: "Status",
             value: (
-              <Badge size="text" tone={paid ? "success" : "neutral"}>
+              <Chip tone={paid ? "success" : "neutral"}>
                 {PAYMENT_STATUS_LABEL[o.paymentStatus]}
-              </Badge>
+              </Chip>
             ),
           },
           { label: "Plaćeno", value: o.paidAt ? compactDateTime(o.paidAt) : "", hidden: !o.paidAt },

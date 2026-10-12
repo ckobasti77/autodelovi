@@ -27,7 +27,6 @@ import { isValidBankAccount } from "@/lib/domain/company";
 import { normalizeMb, normalizePib } from "@/lib/domain/identifiers";
 import { mbProblem, pibProblem } from "@/lib/validation/identifiers";
 import { placeholderValues } from "@/lib/settings/public";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Checkbox } from "@/components/ui/Checkbox";
 import { Field } from "@/components/ui/Field";
@@ -46,7 +45,7 @@ import { AdLandingsTab } from "./AdLandingsTab";
 import { NotificationPrefsMatrix } from "./NotificationPrefsMatrix";
 import { LandingOverview, TrackingStatus } from "./SeoPanels";
 import { UnsavedProvider, useUnsavedFlag, useUnsavedRegistry } from "./unsaved";
-import { CompactInput, PageHeader, SaveBar, Section } from "../ui";
+import { Chip, CompactInput, PageHeader, SaveBar, Section } from "../ui";
 import { useUrlFilters } from "../useUrlFilters";
 
 type Settings = FunctionReturnType<typeof api.settings.getAdmin>;
@@ -1667,9 +1666,9 @@ function PageEditor({
     <Section
       title={page.title}
       actions={
-        <Badge size="text" tone={f.needsLegalReview ? "warning" : "success"}>
+        <Chip tone={f.needsLegalReview ? "warning" : "success"}>
           {f.needsLegalReview ? "Čeka pregled pravnika" : "Pregledano"}
-        </Badge>
+        </Chip>
       }
     >
       <fieldset disabled={!can} className="flex flex-col gap-4">

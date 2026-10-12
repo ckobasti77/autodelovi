@@ -26,7 +26,6 @@ import { slugifySr } from "@/lib/domain/slug";
 import { formatRSD } from "@/lib/format/money";
 import { QUALITY_LABEL } from "@/lib/i18n/sr/catalog";
 import { convexErrorCode, convexErrorField, convexErrorMessage } from "@/lib/i18n/sr/shop";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Field } from "@/components/ui/Field";
 import { IconButton } from "@/components/ui/IconButton";
@@ -41,7 +40,7 @@ import { ADMIN, ROUTES } from "@/constants/routes";
 
 import { useNowMinute } from "../hooks";
 import { useAdminCrumb } from "../shell/context";
-import { CompactInput, DemoTag, PageHeader, SaveBar, Section, StockStateBadge } from "../ui";
+import { Chip, CompactInput, DemoTag, PageHeader, SaveBar, Section, StockStateBadge } from "../ui";
 import { CodesEditor, type CrossRow, type OemRow } from "./CodesEditor";
 import { FitmentEditor, type FitmentRow } from "./FitmentEditor";
 import { ImagesEditor } from "./ImagesEditor";
@@ -501,9 +500,9 @@ function EditorForm({ full }: { full: Full | null }) {
         meta={
           full ? (
             <>
-              <Badge size="text" tone={full.active ? "success" : "neutral"}>
+              <Chip tone={full.active ? "success" : "neutral"}>
                 {full.active ? "Aktivan" : "Neaktivan"}
-              </Badge>
+              </Chip>
               <StockStateBadge state={full.stockState} />
               {full.isDemo ? <DemoTag /> : null}
             </>
@@ -910,14 +909,14 @@ function EditorForm({ full }: { full: Full | null }) {
                 {margin === null ? (
                   <span className="text-ink-3">upišite nabavnu cenu</span>
                 ) : (
-                  <Badge tone={marginTone} size="text">
+                  <Chip tone={marginTone}>
                     {String(Math.round(margin) / 100).replace(".", ",")} %
                     {marginTone === "warning"
                       ? " — ispod minimuma"
                       : marginTone === "danger"
                         ? " — gubitak"
                         : ""}
-                  </Badge>
+                  </Chip>
                 )}
               </div>
               {price !== undefined && !Number.isNaN(price) ? (

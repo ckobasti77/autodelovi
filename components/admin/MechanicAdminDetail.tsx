@@ -28,7 +28,6 @@ import {
   SERVICE_TYPE_LABEL,
 } from "@/lib/i18n/sr/mechanic";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Field } from "@/components/ui/Field";
 import { IconButton } from "@/components/ui/IconButton";
@@ -44,7 +43,8 @@ import { MECHANIC_STATUS_ICON } from "@/components/admin/MechanicsAdminList";
 import { ROUTES } from "@/constants/routes";
 import { TEST_IDS } from "@/constants/testIds";
 
-import { CompactInput } from "./ui";
+import { useAdminCrumb } from "./shell/context";
+import { Chip, CompactInput } from "./ui";
 
 type Option = { id: string; name: string };
 
@@ -164,6 +164,8 @@ export function MechanicAdminDetail({
 }) {
   const data = useQuery(api.mechanicsAdmin.get, { profileId: profileId as Id<"mechanicProfiles"> });
   const tiers = useQuery(api.pricing.listTiers, {});
+  // The breadcrumb names the workshop, not the record id of the URL.
+  useAdminCrumb(data?.profile.companyName ?? null);
   if (data === undefined || tiers === undefined) {
     return (
       <SkeletonRegion>
@@ -327,18 +329,10 @@ function DetailView({
         <h1 className="text-[1.375rem] font-[650] leading-tight tracking-[-0.01em] text-ink-1">
           {p.companyName}
         </h1>
-        <Badge
-          tone={MECHANIC_STATUS_TONE[p.status]}
-          icon={MECHANIC_STATUS_ICON[p.status]}
-          size="text"
-        >
+        <Chip tone={MECHANIC_STATUS_TONE[p.status]} icon={MECHANIC_STATUS_ICON[p.status]}>
           {MECHANIC_STATUS_LABEL[p.status]}
-        </Badge>
-        {p.isDemo ? (
-          <Badge size="text" tone="outline">
-            Demo
-          </Badge>
-        ) : null}
+        </Chip>
+        {p.isDemo ? <Chip tone="outline">Demo</Chip> : null}
       </div>
 
       <div className="grid gap-8 lg:grid-cols-12 lg:gap-x-(--gutter)">

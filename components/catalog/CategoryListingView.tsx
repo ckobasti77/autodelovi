@@ -258,7 +258,7 @@ export function CategoryListingView({
                       alt=""
                       width={112}
                       height={112}
-                      className="size-24 object-contain opacity-70 grayscale sm:size-28"
+                      className="size-24 rounded-lg object-contain opacity-70 grayscale sm:size-28"
                     />
                   }
                   as="h2"

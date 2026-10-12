@@ -18,7 +18,6 @@ import { formatRSD } from "@/lib/format/money";
 import { formatPhone } from "@/lib/format/phone";
 import { MECHANIC_STATUS_LABEL, MECHANIC_STATUS_TONE } from "@/lib/i18n/sr/mechanic";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { DataTable, type ColumnDef } from "@/components/ui/DataTable";
 import { RouteLink } from "@/components/ui/RouteLink";
@@ -31,6 +30,7 @@ import { ConfirmDialog, useConfirm } from "../ConfirmDialog";
 import { useNowMinute } from "../hooks";
 import { useAdminCrumb, useAdminShell } from "../shell/context";
 import {
+  Chip,
   ActorLabel,
   DefinitionList,
   DemoTag,
@@ -89,17 +89,13 @@ export function CustomersList() {
         cell: ({ row }) => (
           <span className="flex items-center gap-1.5">
             {row.original.mechanicStatus !== "none" ? (
-              <Badge size="text" tone={MECHANIC_STATUS_TONE[row.original.mechanicStatus]}>
+              <Chip tone={MECHANIC_STATUS_TONE[row.original.mechanicStatus]}>
                 Majstor · {MECHANIC_STATUS_LABEL[row.original.mechanicStatus]}
-              </Badge>
+              </Chip>
             ) : (
               <span className="text-ink-2">Kupac</span>
             )}
-            {row.original.blocked ? (
-              <Badge size="text" tone="danger">
-                Blokiran
-              </Badge>
-            ) : null}
+            {row.original.blocked ? <Chip tone="danger">Blokiran</Chip> : null}
           </span>
         ),
       },
@@ -194,11 +190,7 @@ export function CustomerDetail({ userId }: { userId: Id<"users"> }) {
         description={`Nalog od ${compactDate(u.createdAt, nowMinute)}${u.lastSeenAt ? ` · poslednja aktivnost ${compactDateTime(u.lastSeenAt, nowMinute)}` : ""}`}
         meta={
           <>
-            {u.blocked ? (
-              <Badge size="text" tone="danger">
-                Blokiran
-              </Badge>
-            ) : null}
+            {u.blocked ? <Chip tone="danger">Blokiran</Chip> : null}
             {u.isDemo ? <DemoTag /> : null}
           </>
         }
@@ -364,9 +356,9 @@ export function CustomerDetail({ userId }: { userId: Id<"users"> }) {
                   {
                     label: "Status",
                     value: (
-                      <Badge size="text" tone={MECHANIC_STATUS_TONE[data.mechanic.status]}>
+                      <Chip tone={MECHANIC_STATUS_TONE[data.mechanic.status]}>
                         {MECHANIC_STATUS_LABEL[data.mechanic.status]}
-                      </Badge>
+                      </Chip>
                     ),
                   },
                   { label: "Nivo", value: data.mechanic.tierName ?? "—" },

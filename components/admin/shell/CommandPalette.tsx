@@ -25,13 +25,14 @@ import { cn } from "@/lib/cn";
 import { foldForSearch } from "@/lib/domain/search";
 import { countSr } from "@/lib/format/plural";
 import { ADMIN_INQUIRY_STATUS, ADMIN_ORDER_STATUS } from "@/lib/i18n/sr/admin";
-import { Badge } from "@/components/ui/Badge";
 import { Dialog } from "@/components/ui/Dialog";
 import { Kbd } from "@/components/ui/Kbd";
 import { Spinner } from "@/components/ui/Spinner";
 import { ADMIN } from "@/constants/routes";
 
 import type { AdminNavItem } from "./nav";
+
+import { Chip } from "../ui";
 
 type Option = {
   id: string;
@@ -139,11 +140,7 @@ function PaletteBody({
         meta: h.meta,
         mono: h.kind === "order" || h.kind === "inquiry",
         icon: KIND_ICON[h.kind],
-        badge: status ? (
-          <Badge size="text" tone={status.tone}>
-            {status.label}
-          </Badge>
-        ) : undefined,
+        badge: status ? <Chip tone={status.tone}>{status.label}</Chip> : undefined,
         run: go(h.href),
       });
     }

@@ -138,7 +138,7 @@ export function StateLinks({
         <ul className="flex flex-wrap gap-x-6 gap-y-1 border-t border-line px-4 py-2 sm:px-5">
           {more.map((l) => (
             <li key={l.href}>
-              <Link href={l.href} variant="standalone" className="min-h-11">
+              <Link href={l.href} variant="standalone" className="min-h-11 type-body-s">
                 {l.label}
               </Link>
             </li>

@@ -43,6 +43,9 @@ export async function generateMetadata({
   });
 }
 
+/** Two rows of model panels are on the first screen at 1440 × 900: they enter eagerly. */
+const EAGER_MODELS = 6;
+
 export default async function VehicleBrandPage({ params }: PageProps<"/vozila/[marka]">) {
   const { marka } = await params;
   const [tree, landings] = await Promise.all([getVehicleTree(), getVehicleLandings(marka)]);
@@ -77,7 +80,7 @@ export default async function VehicleBrandPage({ params }: PageProps<"/vozila/[m
           <RevealItem
             as="section"
             key={model.slug}
-            eager={i < 3}
+            eager={i < EAGER_MODELS}
             index={i}
             aria-labelledby={`m-${model.slug}`}
             className="overflow-hidden panel"

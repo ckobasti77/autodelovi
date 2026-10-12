@@ -8,7 +8,7 @@ type Block = ReturnType<typeof parseMarkdown>[number];
 const MEASURE = "max-w-[68ch]";
 
 /** A table this early in the body is on the first screen: it gets the eager entrance. */
-const EAGER_TABLE_WITHIN = 4;
+const EAGER_TABLE_WITHIN = 5;
 
 /**
  * Body of a content page as parsed blocks, in two parts: what stands before the first heading

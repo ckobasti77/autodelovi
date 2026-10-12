@@ -25,7 +25,7 @@ import { ADMIN } from "@/constants/routes";
 
 import { useNowMinute } from "../hooks";
 import { StockDialog } from "../products/StockDialog";
-import { ActorLabel, LoadMoreFooter, PageHeader, StockStateBadge } from "../ui";
+import { ActorLabel, LoadMoreFooter, PageHeader, StockStateBadge, ON_PAGE_FIELD } from "../ui";
 
 type Low = FunctionReturnType<typeof api.stock.lowStock>[number];
 type Movement = FunctionReturnType<typeof api.stock.movements>["page"][number];
@@ -240,6 +240,7 @@ export function StockAdmin() {
                 <div className="w-60">
                   <Select
                     size="sm"
+                    className={ON_PAGE_FIELD}
                     aria-label="Razlog promene"
                     placeholder="Svi razlozi"
                     value={reason}

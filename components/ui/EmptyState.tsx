@@ -39,8 +39,10 @@ export function EmptyState({
   return (
     <div
       className={cn(
-        "flex flex-col gap-4 py-10",
-        start ? "items-start text-left" : "items-center px-4 text-center",
+        // No block padding in `start`: the page's own rhythm places it (class lists are joined,
+        // not merged, so a caller could not take a default away).
+        "flex flex-col gap-4",
+        start ? "items-start text-left" : "items-center px-4 py-10 text-center",
         className,
       )}
     >

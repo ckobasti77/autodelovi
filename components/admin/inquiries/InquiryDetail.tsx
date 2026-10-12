@@ -26,7 +26,6 @@ import {
   PAYMENT_LABEL,
   PREFERRED_CHANNEL_LABEL,
 } from "@/lib/i18n/sr/shop";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Checkbox } from "@/components/ui/Checkbox";
 import { CopyButton } from "@/components/ui/CopyButton";
@@ -52,6 +51,7 @@ import {
   DocNumber,
   InquiryStatusBadge,
   Section,
+  Chip,
 } from "../ui";
 import { QuoteComposer } from "./QuoteComposer";
 
@@ -133,11 +133,7 @@ function InquiryView({ data }: { data: Detail }) {
               <DocNumber number={i.number} className="type-code-l" />
             </h1>
             <InquiryStatusBadge status={i.status} />
-            {i.mechanic ? (
-              <Badge size="text" tone="info">
-                Majstor — prioritet
-              </Badge>
-            ) : null}
+            {i.mechanic ? <Chip tone="info">Majstor — prioritet</Chip> : null}
             {i.isDemo ? <DemoTag /> : null}
           </div>
           <p className="type-body-s text-ink-3">

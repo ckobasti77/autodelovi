@@ -16,7 +16,6 @@ import { engineLabel } from "@/lib/admin/format";
 import { cn } from "@/lib/cn";
 import { FUEL_LABEL } from "@/lib/i18n/sr/admin";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Dialog } from "@/components/ui/Dialog";
 import { Field } from "@/components/ui/Field";
@@ -28,7 +27,7 @@ import { Switch } from "@/components/ui/Switch";
 import { Tabs } from "@/components/ui/Tabs";
 import { toast } from "@/components/ui/Toast";
 
-import { PageHeader, Section } from "../ui";
+import { Chip, PageHeader, Section } from "../ui";
 
 type Tree = FunctionReturnType<typeof api.catalog.vehiclesAdmin.tree>;
 type Generation = FunctionReturnType<typeof api.catalog.vehiclesAdmin.generations>[number];
@@ -112,7 +111,7 @@ export function VehiclesAdmin() {
             content: !tree ? (
               <Skeleton className="mt-4 h-96 w-full" />
             ) : (
-              <div className="mt-4 grid gap-4 lg:grid-cols-[220px_260px_minmax(0,1fr)]">
+              <div className="mt-4 grid items-start gap-4 lg:grid-cols-[220px_260px_minmax(0,1fr)]">
                 <Column
                   title="Marke"
                   action={
@@ -319,11 +318,7 @@ function GenerationRow({
         <span className="type-body-s tabular-nums text-ink-2">
           {g.yearFrom}–{g.yearTo ?? "danas"}
         </span>
-        {g.platform ? (
-          <Badge size="text" tone="outline">
-            {g.platform}
-          </Badge>
-        ) : null}
+        {g.platform ? <Chip tone="outline">{g.platform}</Chip> : null}
         {g.vinModelCodes.length ? (
           <span className="type-caption text-ink-3">
             VIN: <span className="type-code-s">{g.vinModelCodes.join(", ")}</span>

@@ -21,7 +21,6 @@ import type { Id } from "@/convex/_generated/dataModel";
 import { CATEGORIES, partNodeName } from "@/lib/catalog/taxonomy";
 import { cn } from "@/lib/cn";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Dialog } from "@/components/ui/Dialog";
 import { Field } from "@/components/ui/Field";
@@ -32,7 +31,7 @@ import { Switch } from "@/components/ui/Switch";
 import { Textarea } from "@/components/ui/Textarea";
 import { toast } from "@/components/ui/Toast";
 
-import { CharCount, IconAction, PageHeader, SaveBar, Section } from "../ui";
+import { Chip, CharCount, IconAction, PageHeader, SaveBar, Section } from "../ui";
 
 type Node = FunctionReturnType<typeof api.catalog.categoriesAdmin.tree>[number];
 
@@ -235,9 +234,9 @@ function CategoryForm({ node }: { node: Node }) {
         actions={
           <span className="flex items-center gap-2 type-caption text-ink-3">
             <span className="type-code-s normal-case">/{node.slug}</span>
-            <Badge size="text" tone="neutral">
+            <Chip tone="neutral">
               {node.productCount} art. · {node.inStockCount} na stanju
-            </Badge>
+            </Chip>
           </span>
         }
       >

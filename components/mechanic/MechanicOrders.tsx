@@ -38,7 +38,10 @@ const FILTERS: { value: Filter; label: string }[] = [
   { value: "cancelled", label: "Otkazane" },
 ];
 
-/** Row geometry shared with the skeleton: one line from 44 rem of panel width. */
+/**
+ * Row geometry shared with the skeleton: one line from 48 rem of panel width; below it three
+ * lines — number and total, the chip with the action beside it, then the facts.
+ */
 const ROW =
   "grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-2 px-4 py-3.5 sm:px-5 @3xl:grid-cols-[10rem_11rem_minmax(0,1fr)_7rem_auto]";
 
@@ -61,7 +64,7 @@ function FilterTrack({
       aria-label="Filter porudžbina"
       className="flex max-w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
     >
-      <div className="flex gap-1 panel p-1">
+      <div className="flex gap-0.5 panel p-1 sm:gap-1">
         {FILTERS.map((f) => {
           const active = value === f.value;
           return (
@@ -71,7 +74,7 @@ function FilterTrack({
               aria-pressed={active}
               onClick={() => onChange(f.value)}
               className={cn(
-                "inline-flex h-11 shrink-0 cursor-pointer items-center gap-2 whitespace-nowrap rounded-xs px-3 type-body-s font-semibold transition-control focus-ring-inset lg:h-9",
+                "inline-flex h-11 shrink-0 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-xs px-2 type-body-s font-semibold transition-control focus-ring-inset sm:gap-2 sm:px-3 lg:h-9",
                 active
                   ? "bg-surface-3 text-ink-1 shadow-rest"
                   : "text-ink-2 hover:bg-surface-2 hover:text-ink-1",
@@ -114,9 +117,9 @@ export function MechanicOrders() {
               <div key={i} className={ROW}>
                 <Skeleton className="h-5 w-36" />
                 <Skeleton className="h-6 w-24 @max-3xl:row-start-2" />
-                <Skeleton className="hidden h-4 w-64 @3xl:block" />
+                <Skeleton className="h-4 w-64 max-w-full @max-3xl:col-span-2 @max-3xl:row-start-3" />
                 <Skeleton className="h-5 w-20 justify-self-end @max-3xl:col-start-2 @max-3xl:row-start-1" />
-                <Skeleton className="h-11 w-36 lg:h-9" />
+                <Skeleton className="h-11 w-36 justify-self-end lg:h-9 @max-3xl:col-start-2 @max-3xl:row-start-2" />
               </div>
             ))}
           </div>
@@ -177,15 +180,15 @@ export function MechanicOrders() {
                 >
                   {o.number}
                 </RouteLink>
-                <span className="flex flex-wrap items-center gap-x-3 gap-y-1.5 @max-3xl:col-span-2 @max-3xl:row-start-2 @3xl:contents">
+                <span className="contents">
                   <Badge
                     tone={ORDER_STATUS_TONE[o.status]}
                     size="text"
-                    className="justify-self-start"
+                    className="justify-self-start @max-3xl:row-start-2"
                   >
                     {ORDER_STATUS_LABEL[o.status]}
                   </Badge>
-                  <span className="type-caption font-normal tabular-nums text-ink-3">
+                  <span className="type-caption font-normal tabular-nums text-ink-3 @max-3xl:col-span-2 @max-3xl:row-start-3">
                     {formatDate(o.createdAt)} · {o.itemCount} kom. ·{" "}
                     {PAYMENT_LABEL[o.paymentMethod]}
                     {o.paymentMethod === "deferred" &&
@@ -205,7 +208,7 @@ export function MechanicOrders() {
                   icon={<ArrowCounterClockwiseIcon size={16} />}
                   loading={busy === o.number}
                   onClick={() => void run(o.number)}
-                  className="justify-self-start max-lg:h-11 @max-3xl:col-span-2 @3xl:justify-self-end"
+                  className="justify-self-end max-lg:h-11 @max-3xl:col-start-2 @max-3xl:row-start-2"
                 >
                   Poruči ponovo<span className="sr-only"> {o.number}</span>
                 </Button>

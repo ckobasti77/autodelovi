@@ -10,7 +10,6 @@ import { api } from "@/convex/_generated/api";
 import { foldForSearch } from "@/lib/domain/search";
 import { QUALITY_LABEL } from "@/lib/i18n/sr/catalog";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { DataTable, type ColumnDef } from "@/components/ui/DataTable";
 import { Dialog } from "@/components/ui/Dialog";
@@ -20,7 +19,7 @@ import { Select } from "@/components/ui/Select";
 import { Switch } from "@/components/ui/Switch";
 import { toast } from "@/components/ui/Toast";
 
-import { PageHeader, SearchField } from "../ui";
+import { Chip, PageHeader, SearchField } from "../ui";
 
 type Row = FunctionReturnType<typeof api.catalog.manufacturersAdmin.list>[number];
 
@@ -46,11 +45,7 @@ export function ManufacturersAdmin() {
             >
               {row.original.name}
             </span>
-            {row.original.isVagGenuine ? (
-              <Badge size="text" tone="info">
-                Original VAG
-              </Badge>
-            ) : null}
+            {row.original.isVagGenuine ? <Chip tone="info">Original VAG</Chip> : null}
           </span>
         ),
       },

@@ -168,7 +168,16 @@ const ORDER_ICON: Record<OrderStatus, ReactNode> = {
  * its row taller than the 48 px grid. The `!` sizes win over the Badge defaults (`cn` only joins).
  */
 export function Chip({ dense = false, className, ...rest }: BadgeProps & { dense?: boolean }) {
-  return <Badge size="text" className={cn(dense && "h-5! px-1.5!", className)} {...rest} />;
+  // A neutral chip is surface-2 on a page that is almost the same grey: without an edge it reads
+  // as loose text beside a title. The tinted tones carry their own shape.
+  const neutral = rest.tone === undefined || rest.tone === "neutral";
+  return (
+    <Badge
+      size="text"
+      className={cn(dense && "h-5! px-1.5!", neutral && "border border-line", className)}
+      {...rest}
+    />
+  );
 }
 
 export function OrderStatusBadge({ status }: { status: OrderStatus }) {

@@ -243,7 +243,7 @@ export default async function SearchPage({ searchParams }: PageProps<"/pretraga"
         <div className="mt-6 grid gap-8 lg:grid-cols-12 lg:gap-x-(--gutter)">
           <EmptyState
             align="start"
-            className="py-0 lg:col-span-6"
+            className="lg:col-span-6"
             icon={<GearSixIcon size={44} />}
             as="h2"
             title={normalized ? "Ovaj broj nije u katalogu" : "Ovaj deo nije u katalogu"}

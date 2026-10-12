@@ -14,7 +14,6 @@ import { api } from "@/convex/_generated/api";
 import type { Id } from "@/convex/_generated/dataModel";
 import { ADMIN_COPY } from "@/lib/i18n/sr/admin";
 import { convexErrorMessage } from "@/lib/i18n/sr/shop";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Field } from "@/components/ui/Field";
 import { IconButton } from "@/components/ui/IconButton";
@@ -28,7 +27,7 @@ import { toast } from "@/components/ui/Toast";
 import { ConfirmDialog, useConfirm } from "../ConfirmDialog";
 import { useUnsavedFlag } from "./unsaved";
 import { ProductPicker } from "../ProductPicker";
-import { Section } from "../ui";
+import { Chip, Section } from "../ui";
 
 type Row = FunctionReturnType<typeof api.seoAdmin.adLandings>[number];
 
@@ -119,18 +118,8 @@ export function AdLandingsTab() {
                     {r.vehicleLabel ? ` · ${r.vehicleLabel}` : ""}
                   </span>
                 </div>
-                {r.active ? (
-                  <Badge size="text" tone="success">
-                    Aktivna
-                  </Badge>
-                ) : (
-                  <Badge size="text">Isključena</Badge>
-                )}
-                {r.indexable ? (
-                  <Badge size="text" tone="info">
-                    U pretrazi
-                  </Badge>
-                ) : null}
+                {r.active ? <Chip tone="success">Aktivna</Chip> : <Chip>Isključena</Chip>}
+                {r.indexable ? <Chip tone="info">U pretrazi</Chip> : null}
                 <a
                   href={`/ponuda/${r.slug}`}
                   target="_blank"

@@ -21,7 +21,12 @@ import {
   type FormEvent,
   type ReactNode,
 } from "react";
-import { ArrowRightIcon, MagnifyingGlassIcon, XIcon } from "@phosphor-icons/react/dist/ssr";
+import {
+  ArrowRightIcon,
+  CarIcon,
+  MagnifyingGlassIcon,
+  XIcon,
+} from "@phosphor-icons/react/dist/ssr";
 
 import { cn } from "@/lib/cn";
 import { parsePastedOemList } from "@/lib/domain/codes";
@@ -33,6 +38,8 @@ import { ROUTES } from "@/constants/routes";
 import { TERMS } from "@/lib/i18n/sr/shop";
 import { api } from "@/convex/_generated/api";
 import { formatNumber } from "@/lib/format/number";
+import { useSelectedVehicle, vehicleShortName } from "@/lib/vehicle/store";
+import { vehicleSearchParam } from "@/components/search/SearchVehicleScope";
 
 export type SearchSuggestion = ComboboxItem & { href: string };
 
@@ -131,6 +138,13 @@ export function SearchBox({
   const [recent, setRecent] = useState<string[]>([]);
   const inputWrap = useRef<HTMLDivElement>(null);
   const wide = useMediaQuery("(min-width: 48rem)");
+  // The chosen vehicle narrows the results page (FLOW-03): the link carries it, so the server
+  // renders the narrowed list at once, and the dialog says so before the visitor submits.
+  const vehicle = useSelectedVehicle();
+  const resultsHref = (q: string) =>
+    vehicle
+      ? `${ROUTES.searchFor(q)}&vozilo=${encodeURIComponent(vehicleSearchParam(vehicle))}`
+      : ROUTES.searchFor(q);
 
   // A code typed into the server-rendered field before hydration (XB-01): hydration leaves the
   // DOM value alone, but the controlled input would be reset to `query` on its next update.
@@ -197,7 +211,7 @@ export function SearchBox({
     }
     saveRecent(q);
     setRecent(readRecent());
-    go(ROUTES.searchFor(q));
+    go(resultsHref(q));
   };
 
   const items: SearchSuggestion[] = useMemo(() => {
@@ -206,7 +220,7 @@ export function SearchBox({
         id: `recent-${q}`,
         label: q,
         group: "Nedavne pretrage",
-        href: ROUTES.searchFor(q),
+        href: resultsHref(q),
       }));
     }
     if (isList) {
@@ -220,7 +234,9 @@ export function SearchBox({
       ];
     }
     return shownSuggestions;
-  }, [trimmed, recent, isList, codes, shownSuggestions]);
+    // resultsHref depends on the vehicle only.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [trimmed, recent, isList, codes, shownSuggestions, vehicle]);
 
   const footer: ReactNode = trimmed ? (
     <button
@@ -299,6 +315,19 @@ export function SearchBox({
           </Button>
         ) : null}
       </div>
+      {!hero && vehicle ? (
+        <p
+          className="flex items-center gap-1.5 type-caption font-normal text-ink-3"
+          data-reveal="off"
+          data-testid="search-scope"
+        >
+          <CarIcon size={16} aria-hidden="true" className="shrink-0 text-accent" />
+          <span>
+            Rezultate sužavamo na{" "}
+            <span className="font-semibold text-ink-1">{vehicleShortName(vehicle)}</span>.
+          </span>
+        </p>
+      ) : null}
       {hero ? (
         <p className="type-caption font-normal text-ink-3 max-sm:sr-only" data-reveal="off">
           Broj upišite kako god ga imate&nbsp;— razmaci, tačke i crtice ne smetaju.

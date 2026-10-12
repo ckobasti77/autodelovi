@@ -48,7 +48,9 @@ function OfflineNotice() {
   return (
     <div role="status" aria-live="polite" data-reveal="off">
       {offline ? (
-        <div className="fixed inset-x-0 bottom-bar-offset z-toast flex items-center justify-center gap-2 border-t border-line-strong bg-surface-3 px-4 py-3 type-body-s text-ink-1 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+        // Phones: a strip docked on the action bar (it meets the screen edges, so it is square).
+        // From 480 px: a floating notice, bottom centre, with the overlay edge and shadow.
+        <div className="fixed inset-x-0 bottom-bar-offset z-toast flex items-center justify-center gap-2 border-t border-line-strong bg-surface-3 px-4 py-3 type-body-s text-ink-1 max-sm:pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:inset-x-auto sm:left-1/2 sm:mb-6 sm:w-max sm:max-w-[calc(100vw-3rem)] sm:-translate-x-1/2 sm:rounded-md sm:border sm:px-5 sm:shadow-overlay">
           <WifiSlashIcon size={18} aria-hidden="true" className="text-warning" />
           Nema veze — pokušavamo ponovo. Korpa i uneti podaci ostaju sačuvani.
         </div>

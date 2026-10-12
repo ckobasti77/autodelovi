@@ -1003,7 +1003,9 @@
   min-height: 2.5rem;
   align-items: center;
   gap: 0.375rem;
-  border-radius: var(--radius-xs);
+  /* A chip that is a link is pressed: the press radius, which is also what Link sets for its
+     focus ring (class lists are joined, not merged, so the two must agree). */
+  border-radius: var(--radius-sm);
   background-color: var(--color-surface-2);
   padding-inline: 0.75rem;
   font-size: 0.875rem;

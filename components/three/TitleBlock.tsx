@@ -21,7 +21,8 @@ export function TitleBlock({ className }: { className?: string }) {
     <dl
       data-reveal="off"
       className={cn(
-        "grid grid-cols-[auto_auto] overflow-hidden rounded-md border border-line bg-bg/80 text-[0.75rem] reduced-transparency:bg-bg",
+        // A sheet's title block is a resting surface like any other: 8 px, hairline, lit edge.
+        "grid grid-cols-[auto_auto] overflow-hidden rounded-md border border-line bg-bg/80 text-[0.75rem] shadow-rest reduced-transparency:bg-bg",
         className,
       )}
     >
