@@ -60,10 +60,13 @@ export function ColumnChart({
   const [showTable, setShowTable] = useState(false);
   const tableId = useId();
   const padL = 32;
+  // Room for the value label of the last bar: on a phone a slot is 10 px wide and a two-digit
+  // label 16 px, so half of it hung over the right edge and was cut (step 28).
+  const padR = 10;
   const padB = 24;
   const padT = 18;
   const max = niceMax(Math.max(0, ...data.map((d) => d.value)));
-  const plotW = Math.max(0, width - padL);
+  const plotW = Math.max(0, width - padL - padR);
   const plotH = height - padB - padT;
   const slot = data.length ? plotW / data.length : 0;
   const barW = Math.max(3, Math.min(28, slot - 2));
@@ -108,6 +111,9 @@ export function ColumnChart({
               const x = padL + i * slot + (slot - barW) / 2;
               const h = Math.max(d.value > 0 ? 2 : 0, padT + plotH - y(d.value));
               const showValue = d.value > 0 && (d.highlight || i === peak);
+              // Centred on its bar and never outside the drawing.
+              const half = String(d.value).length * 4 + 2;
+              const labelX = Math.min(width - half, Math.max(padL + half, x + barW / 2));
               return (
                 <g key={d.key} onMouseEnter={() => setHover(i)}>
                   <rect
@@ -131,9 +137,15 @@ export function ColumnChart({
                   />
                   {showValue ? (
                     <text
-                      x={x + barW / 2}
+                      x={labelX}
                       y={y(d.value) - 5}
                       textAnchor="middle"
+                      // A halo in the panel colour: on narrow plots the label is wider than
+                      // its slot and would otherwise sink into a taller neighbouring bar.
+                      stroke="var(--color-surface-1)"
+                      strokeWidth={3}
+                      strokeLinejoin="round"
+                      paintOrder="stroke"
                       className="fill-ink-1 text-[0.75rem] font-semibold tabular-nums"
                     >
                       {d.value}

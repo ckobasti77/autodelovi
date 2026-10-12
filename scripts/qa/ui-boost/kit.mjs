@@ -103,6 +103,42 @@ export const VIEWPORTS = [
   { tag: "390", width: 390, height: 844, mobile: true },
 ];
 
+/** Step 28: the widths of the final review (`sheets.mjs --widths=390,768,1440,1920`). */
+export const ALL_VIEWPORTS = [
+  { tag: "390", width: 390, height: 844, mobile: true },
+  { tag: "768", width: 768, height: 1024, mobile: true },
+  { tag: "1440", width: 1440, height: 900, mobile: false },
+  { tag: "1920", width: 1920, height: 1080, mobile: false },
+];
+
+/** One page per main template (`--main`): storefront, portal, account, admin. */
+export const MAIN_TEMPLATES = [
+  "home",
+  "parts",
+  "category",
+  "product",
+  "search",
+  "cart",
+  "checkout",
+  "inquiry",
+  "mechanics",
+  "vehicle-generation",
+  "contact",
+  "delivery",
+  "signin",
+  "notfound",
+  "portal",
+  "portal-quick",
+  "portal-orders",
+  "account",
+  "admin",
+  "admin-orders",
+  "admin-order",
+  "admin-products",
+  "admin-product",
+  "admin-settings",
+];
+
 export function parseArgs(argv = process.argv.slice(2)) {
   const flag = (name) =>
     argv
@@ -115,7 +151,7 @@ export function parseArgs(argv = process.argv.slice(2)) {
     flag,
     has: (name) => argv.includes(`--${name}`),
     base: flag("base") ?? "http://localhost:3000",
-    only: flag("only")?.split(","),
+    only: flag("only")?.split(",") ?? (argv.includes("--main") ? MAIN_TEMPLATES : undefined),
   };
 }
 

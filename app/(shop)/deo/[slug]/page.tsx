@@ -504,7 +504,7 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
                 </Link>
               </div>
               <div className="mt-5">
-                <ProductGrid items={relatedCards} headingLevel="h3" />
+                <ProductGrid items={relatedCards} headingLevel="h3" maxColumns={4} />
               </div>
             </section>
           ) : null}

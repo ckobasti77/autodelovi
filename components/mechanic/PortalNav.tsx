@@ -3,6 +3,7 @@
 import {
   CarIcon,
   ChatCircleTextIcon,
+  FileXlsIcon,
   StarIcon,
   UserCircleIcon,
 } from "@phosphor-icons/react/dist/ssr";
@@ -16,7 +17,14 @@ const PRIMARY: SectionNavItem[] = [
   { href: ROUTES.mechanicPortal, label: "Pregled", exact: true },
   { href: ROUTES.mechanicQuickOrderPage, label: "Brza porudžbina" },
   { href: ROUTES.mechanicOrders, label: "Porudžbine" },
-  { href: ROUTES.mechanicPriceList, label: "Cenovnik" },
+  // Four tabs and „Još“ need 407 px; a phone has 360. The price list is the one a mechanic
+  // opens least often from a phone, so it waits in „Još“ there.
+  {
+    href: ROUTES.mechanicPriceList,
+    label: "Cenovnik",
+    icon: <FileXlsIcon size={16} />,
+    phoneOverflow: true,
+  },
 ];
 
 /** The rest sits behind „Još“ (and as tiles on the overview). */

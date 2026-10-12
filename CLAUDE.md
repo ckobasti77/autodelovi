@@ -32,7 +32,7 @@ Convex agent skills for common tasks can be installed by running
 
 **Motion:** GSAP only for overlays and authored moments (`useGSAP` with scope, `gsap.matchMedia` for reduced motion). Never write your own entrance — the site-wide reveal covers copy (word by word) and blocks (`<Reveal>`, `<RevealGroup>` + `<RevealItem>` / `data-reveal="block"`, `data-reveal-group` > `data-reveal="item"`); above the fold copy uses `RevealText` and blocks use `eager` (LCP-safe). Opt out only with `data-reveal="off"` (see `.claude/rules/architecture.md` / text-reveal skill).
 
-**Shape and surfaces:** radius by role — `rounded-xs` 4 tag · `sm` 6 press · `md` 8 read · `lg` 10 picture · `xl` 12 float · `2xl` 14 sheet; no square boxes (`node scripts/qa/ui-boost/corners.mjs`). New boxes use `panel` / `panel-raised` / `panel-inset` (+ `card-interactive`); repeated actions use the `quiet` button. Work list for pages: `docs/design/UI-BOOST.md` §7–§8.
+**Shape and surfaces:** radius by role — `rounded-xs` 4 tag · `sm` 6 press · `md` 8 read · `lg` 10 picture · `xl` 12 float · `2xl` 14 sheet; no square boxes (`npx playwright test tests/e2e/corners.spec.ts`; allowlist: DESIGN-SYSTEM §5.3). New boxes use `panel` / `panel-raised` / `panel-inset` (+ `card-interactive`); repeated actions use the `quiet` button. Work list for pages: `docs/design/UI-BOOST.md` §7–§8.
 
 **3D:** follow `docs/3D-CONTRACT.md` (frozen slugs, `part__<category>__<instance>`, glTF +Y up / +Z front / +X left, manifest schema, budgets). Blender only via scripts (blender-pipeline skill).
 

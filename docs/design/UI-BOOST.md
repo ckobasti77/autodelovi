@@ -1,10 +1,10 @@
 # UI boost — critique, target and plan (steps 26–27)
 
 > Part of the Euromotors Plus docs — index: [../README.md](../README.md). Design system: [DESIGN-SYSTEM.md](DESIGN-SYSTEM.md). Decisions: D317–D331 in [../DECISIONS.md](../DECISIONS.md).
-> Step 26 (2026-10-11) built **the system**: tokens, shared components, the shell and the site-wide reveal. Step 27 applies it to every page — its work list is §7 and §8.
+> Step 26 (2026-10-11) built **the system**: tokens, shared components, the shell and the site-wide reveal. Step 27 applies it to every page — its work list is §7 and §8. Step 28 (2026-10-12) verified both independently and fixed what it found — §12.
 > The owner asked for a site that feels much more modern, polished and premium („brutalno“ = outstanding, not the brutalist style), with three fixed requirements: small soft corners on every box, staggered reveals on scroll, a modern look that stays „Rendgen“.
 
-**Contents** — 1 How the critique was run · 2 Scores · 3 Problems · 4 Target · 5 What step 26 changed · 6 Components: done and open · 7 Templates: the work list for step 27 · 8 How to apply the system · 9 Performance: measured, fixed, open · 10 How to check · 11 What step 27 built, per template
+**Contents** — 1 How the critique was run · 2 Scores · 3 Problems · 4 Target · 5 What step 26 changed · 6 Components: done and open · 7 Templates: the work list for step 27 · 8 How to apply the system · 9 Performance: measured, fixed, open · 10 How to check · 11 What step 27 built, per template · 12 Independent verification (step 28)
 
 ---
 
@@ -240,6 +240,14 @@ node scripts/qa/ui-boost/montage.mjs <out.webp> <files…>                      
 MSYS_NO_PATHCONV=1 node scripts/qa/ui-boost/lh-compare.mjs --rounds=5 / /delovi/…          # old build (3200) against new (3100), interleaved
 ```
 
+Added in step 28 (the first two are part of `npm run e2e`):
+
+```
+npx playwright test tests/e2e/corners.spec.ts          # no sharp box on any main route or overlay, 1440 + 390; allowlist: DESIGN-SYSTEM §5.3
+npx playwright test tests/e2e/reveal-routes.spec.ts    # the reveal rule on real pages, every main route, reduced motion, deep links, back
+node scripts/qa/ui-boost/sheets.mjs docs/qa/screens/step-28 --main --widths=390,768,1440,1920 --max=16   # one page per main template, four widths
+```
+
 `kit.mjs` now covers 80 pages (every storefront, portal, account and admin template; `firstLink` opens the first record of a storefront list). Screenshots of step 27: `docs/qa/screens/step-27/` — `before/` and `after/` (storefront core), `checkout/`, `overlays/`, and per worker `admin-*`, `portal-*`, `content-*`.
 
 ## 11. What step 27 built, per template
@@ -269,3 +277,76 @@ Decisions D332–D349. The step ran as one orchestrating session and four worker
 - Blocks that are eager because they are on the first screen at 1440 px do not scroll-reveal on phones (portal tiles, price-list panels, order status panels).
 - States not seen in a browser: mechanic status screens „pending“ / „rejected“ / „suspended“, `app/error.tsx` and `global-error.tsx` (styled from the code).
 - The text-reveal skill files still describe the old trigger (unchanged from step 26: `.agents/` is off limits).
+
+## 12. Independent verification (step 28)
+
+A session with no memory of steps 26–27 read their reports and then checked the claims again on the final code, with its own tools. Decisions D350–D353. Everything below was produced in that session on 2026-10-12.
+
+### 12.1 Corners — `tests/e2e/corners.spec.ts`
+
+The audit (`cornerAuditInPage` in `tests/e2e/helpers/uiBoost.ts`) runs in the page after it has been scrolled end to end. Every element that draws a visible box is judged — a fill that differs from what is behind it, a border on three sides (or two that meet), an opaque gradient, a box shadow, a picture, a form control — and so is every dialog, menu, toast and tooltip. A box is **sharp** when all four computed corner radii are 0 and at least one corner is free; the five ways a corner is not free are the allowlist of DESIGN-SYSTEM §5.3. It is stricter than `corners.mjs` in three ways: colours are resolved through a canvas (computed colours come back as `oklab()` or `color(srgb …)` wherever a `color-mix()` or an opacity modifier is used, and a parser that only knows `rgb()` reads those fills as transparent); corners are judged one by one (touching one side of a rounded box no longer excuses the other three corners); overlays are opened.
+
+| Area | Main routes | Boxes audited at 1440 | at 390 | Sharp |
+|---|---|---|---|---|
+| Storefront | 20 | 989 | 968 | 0 |
+| Mechanics portal | 5 | 198 | 193 | 0 |
+| Account | 3 | 39 | 45 | 0 |
+| Admin | 11 | 1,085 | 762 | 0 |
+| **Total** | **39** | **2,311** | **1,968** | **0** |
+
+Overlays, each audited while open, at both widths where they exist (28 states, 0 sharp): the search dialog with suggestions, the vehicle picker, the filter sheet, the mobile menu and the cart drawer on the storefront; an alert dialog, a sheet, a row menu, a checkbox menu, a tooltip and all five toast variants on `/styleguide`; the command palette, the notifications panel and a row menu in the admin. The contact sheet is not in the list: with no contact channel in the settings „Kontakt“ is a link, not a sheet (it opens once the owner enters a phone or Viber number).
+
+What the first run found, all three allowlisted after a look at the page, none a defect: the admin top bar (its lower left corner ends on the sidebar's edge), the six KPI cells of the admin dashboard on a phone (cells of one rounded, clipped panel, divided by hairlines) — both „joined to a neighbour“ — and controls that paint nothing at rest.
+
+### 12.2 Reveal — `tests/e2e/reveal-routes.spec.ts` (with `reveal.spec.ts` on the lab)
+
+| Claim | How it is proved | Result |
+|---|---|---|
+| A block reveals only after its centre crosses the line (18 % above the bottom edge) | On `/`, `/delovi` and a category page: the first pending block below the fold is placed with its centre 24 px below the line — top already above it — and is still `pending` at opacity 0; 6 px above the line it starts and ends at opacity 1. Positions are layout positions (a running block is lifted by a transform) | holds at 1440 (line at 738 px of 900) and 390 (692 px of 844) |
+| Grid items reveal one after another, in order | Every `data-reveal-state="running"` flip is logged during a steady scroll. Inside a batch each later item is later in the document and waits longer, within the 180 ms budget; a regular grid (rows of equal height) starts in document order from first card to last | 93 items in 20 groups on three pages; 14 regular grids at 1440, 11 at 390 |
+| Scrolling to the bottom of every main route leaves nothing hidden | 39 routes × 2 widths, signed in where needed: after the scroll no element with text at opacity 0, no `pending`, no `running`, no leftover word span | 0 on all 78 |
+| Reduced motion shows everything immediately | The same routes with `prefers-reduced-motion: reduce`, without scrolling: nothing hidden, pending or animating | 0 on all 78 |
+| Deep links show content without waiting | (a) every route opened directly: everything whose centre is above the line is showing as soon as the engine has started, and the 3.5 s failsafe never fired; (b) with every external script blocked the `h1` and the eager blocks of each storefront route are already visible; (c) an anchor far down `/`, `/delovi` and a product page lands on visible content | (a) 0 owed on all 78; (b) 18 routes × 2; (c) 473–637 ms after the navigation started |
+| Back navigation shows content without waiting | Half way down `/` and a category page → a product → back; an admin list → a record → back. Everything above the line at the restored position is visible, by the engine | 328–570 ms after going back |
+
+Two things the first version of these tests got wrong, and what they taught (D351): a running block is lifted 16 px, so its rectangle is not where the rule looks — measure the layout position; and „document order“ is true of a batch, not of a group — in CSS columns (the systems panels) and in rows of unequal height a short block crosses the line before a tall one that precedes it. By design, first-screen copy that is not `RevealText` is revealed by the engine after hydration; the heading and the eager blocks do not wait for it.
+
+### 12.3 Screenshots — `docs/qa/screens/step-28/`
+
+24 main templates × 390, 768, 1440 and 1920 px, taken after scrolling each page end to end, as contact sheets of viewport tiles (106 files; `sheets.mjs --main --widths=390,768,1440,1920`): home, parts, category, product, search, cart, checkout, inquiry, mechanics landing, vehicle generation, contact, delivery, sign-in, 404, portal overview / quick order / orders, account, admin dashboard / orders / order / products / product / settings. Reveal contract on all 96 page × width captures: hidden 0, pending 0, leftover words 0, horizontal overflow 0, console errors 0 (the 404 page logs its own 404). Every sheet was opened. Three things looked wrong and were fixed (D352); the set in the repository is from the final build.
+
+| Where | What was wrong | Fix |
+|---|---|---|
+| Portal tab row, 390 px | Four tabs and „Još“ need 407 px, a phone has 360: the row showed a sliver of „Cenovnik“ under the edge fade, which read as a stray bracket | `SectionNav`: a tab marked `phoneOverflow` leaves the row below 640 px and is listed first in „Još“ |
+| Admin dashboard chart, 390 px | The value label of the last (today's) bar hung over the right edge of the drawing and was cut | `ColumnChart`: 10 px of room on the right, the label kept inside the plot, and a halo in the panel colour so it stays readable beside a taller bar |
+| Home „Izdvojeno sa stanja“ and product „Povezani delovi“, 1920 px | Four cards in a five-column grid: an empty fifth column | `ProductGrid maxColumns={4}` for rows that never hold more than four cards |
+
+Looked at and left: a product grid of nine ends in a lone card (known, §11); 3D title blocks caught mid-change in the hero tiles are a capture artifact (the script jumps the scroll).
+
+### 12.4 Checks on the final code
+
+| Check | Result |
+|---|---|
+| `npm run build` (with `NEXT_PUBLIC_TEST_HOOKS=1 REVALIDATE_SECRET=e2e-revalidate-secret`) | exit 0 |
+| `npx tsc --noEmit` | exit 0 |
+| `npm run lint` | exit 0 — 0 errors, 13 warnings, all in git-ignored scratch scripts under `.playwright/` |
+| `npm test` (unit + convex-test) | 71 files passed + 1 skipped, 1,306 tests passed + 4 skipped |
+| `npx playwright test` on that build | 188 passed, 32 skipped by design, 0 failed (24.7m) |
+
+Lighthouse, mobile, applied throttling (`tests/lighthouse/run.mjs --throttling devtools --runs 5`), final build, medians:
+
+| Page | Performance | Accessibility | Best practices | SEO | LCP | CLS | TBT | First-load JS |
+|---|---|---|---|---|---|---|---|---|
+| Home (`/`) | **95** (runs 93–97) | **100** | 100 | **100** | 2229 ms | 0.001 | 152 ms | 311 KB |
+| Category (`/delovi/kocioni-diskovi`) | **98** (runs 95–98) | **100** | 100 | **100** | 1942 ms | 0.000 | 77 ms | 296 KB |
+| Product (`/deo/…`) | **97** (runs 95–97) | **100** | 100 | **100** | 2132 ms | 0.000 | 57 ms | 284 KB |
+
+The gate of this step (performance ≥ 90, accessibility ≥ 95, SEO ≥ 95) is met on all three. The script's own, older budgets are not all met and it still exits 1: first-load JS on all three pages (a miss since before step 26), and whichever of category TBT (150 ms) and catalog LCP (2.0 s) a given run lands above — they stay in the open list below.
+
+### 12.5 Left open after step 28
+
+- First-load JS above its budget; category TBT and catalog LCP around their lab budgets (§9).
+- First-screen copy that is not `RevealText` is revealed after hydration (D351) — by design, and the largest element is never among it; making every first-screen paragraph `RevealText` is possible page by page.
+- A product grid can still end in a lone card; blocks that are eager for 1440 px do not scroll-reveal on phones (§11).
+- `scripts/qa/ui-boost/corners.mjs` keeps its looser rules (it reads `oklab()` fills as transparent); the spec is the check that counts.
+- The text-reveal skill files still describe the old trigger (`.agents/` is off limits to a step).

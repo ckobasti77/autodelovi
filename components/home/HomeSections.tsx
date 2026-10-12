@@ -160,6 +160,7 @@ export function HomeFeatured({ items }: { items: ProductCardData[] }) {
       </div>
       <ProductGrid
         items={items.slice(0, 4)}
+        maxColumns={4}
         className="mt-block lg:max-xl:[&>li:nth-child(n+4)]:hidden"
       />
     </section>

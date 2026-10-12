@@ -6,7 +6,9 @@
  *
  * `SectionNav` shows at most four primary tabs as links; everything else, and „Odjavi se“, sits
  * in the „Još“ menu, so the row never offers more than five choices. The tabs scroll with an
- * edge fade when the row is narrower than they are; „Još“ stays pinned beside them.
+ * edge fade when the row is narrower than they are; „Još“ stays pinned beside them. A tab
+ * marked `phoneOverflow` leaves the row below 640 px and is listed first in „Još“ instead — a
+ * row that cannot fit at 390 px showed a sliver of its last tab under the fade (step 28).
  * `SectionHeading` names the open view in the H1 — with half of the views behind „Još“ the tab
  * row alone no longer says where you are.
  */
@@ -19,6 +21,7 @@ import { cn } from "@/lib/cn";
 import { Menu, type MenuItem } from "@/components/ui/Menu";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { useEdgeFade } from "@/components/account/useEdgeFade";
+import { useMediaQuery } from "@/lib/hooks/useMediaQuery";
 
 export type SectionNavItem = {
   href: string;
@@ -27,7 +30,12 @@ export type SectionNavItem = {
   exact?: boolean;
   /** Glyph shown in the „Još“ menu (16 px). */
   icon?: ReactNode;
+  /** Primary tabs only: below 640 px this tab sits in „Još“ instead of the row. */
+  phoneOverflow?: boolean;
 };
+
+/** Below Tailwind's `sm` (40 rem) — the same edge as the `max-sm:` variant on the tab. */
+const PHONE = "(max-width: 39.99rem)";
 
 function isActive(pathname: string, item: SectionNavItem): boolean {
   if (item.exact) return pathname === item.href;
@@ -57,7 +65,10 @@ export function SectionNav({
   const router = useRouter();
   const { signOut } = useAuthActions();
   const { ref: listRef, style: fadeStyle } = useEdgeFade<HTMLUListElement>();
-  const current = more.find((item) => isActive(pathname, item));
+  const phone = useMediaQuery(PHONE);
+  // CSS hides the tab at once (no sliver before hydration); the menu follows the same query.
+  const inMenu = phone ? [...primary.filter((item) => item.phoneOverflow), ...more] : more;
+  const current = inMenu.find((item) => isActive(pathname, item));
 
   // Phones: the open tab is never left outside the visible part of the row.
   useEffect(() => {
@@ -73,7 +84,7 @@ export function SectionNav({
   }, [pathname, listRef]);
 
   const menu: MenuItem[] = [
-    ...more.map((item): MenuItem => {
+    ...inMenu.map((item): MenuItem => {
       const active = item === current;
       return {
         label: (
@@ -112,7 +123,7 @@ export function SectionNav({
           {primary.map((item) => {
             const active = isActive(pathname, item);
             return (
-              <li key={item.href} className="shrink-0">
+              <li key={item.href} className={cn("shrink-0", item.phoneOverflow && "max-sm:hidden")}>
                 <RouteLink
                   href={item.href}
                   aria-current={active ? "page" : undefined}

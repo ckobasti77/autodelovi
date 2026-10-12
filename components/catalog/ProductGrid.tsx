@@ -25,6 +25,7 @@ export function ProductGrid({
   withRail = false,
   preloadFirst = false,
   headingLevel = "h3",
+  maxColumns = 5,
   className,
   after,
 }: {
@@ -37,6 +38,11 @@ export function ProductGrid({
    */
   preloadFirst?: boolean;
   headingLevel?: "h2" | "h3";
+  /**
+   * 4 for a row that never holds more than four cards (featured parts, related parts): at
+   * 1920 px the fifth column would stay empty beside them.
+   */
+  maxColumns?: 4 | 5;
   className?: string;
   after?: ReactNode;
 }) {
@@ -48,7 +54,9 @@ export function ProductGrid({
           "grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-(--gutter)",
           withRail
             ? "lg:grid-cols-[repeat(auto-fill,minmax(15rem,1fr))]"
-            : "lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5",
+            : maxColumns === 4
+              ? "lg:grid-cols-3 xl:grid-cols-4"
+              : "lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5",
           className,
         )}
       >

@@ -1,12 +1,13 @@
 /**
  * UI boost contact sheets (step 27, docs/design/UI-BOOST.md §10):
  *   node scripts/qa/ui-boost/sheets.mjs <outDir> [--base=http://localhost:3000] [--only=home,cart]
- *                                       [--max=12] [--widths=390,1440] [--reduced]
+ *                                       [--max=12] [--widths=390,768,1440,1920] [--main] [--reduced]
  *
  * A full-page capture of a long page is unreadable when it is scaled to fit a screen. This
  * script scrolls every page of kit.mjs end to end (so the reveals have run), then captures it
  * as viewport-sized tiles and lays them out as contact sheets a reviewer can actually read:
- * 1440 px tiles at 780 px, two per row; 390 px tiles at 360 px, four per row. Tiles follow the
+ * 1440 and 1920 px tiles at 780 px, two per row; 390 and 768 px tiles at 360 / 380 px, four per
+ * row (default widths: 390 and 1440; `--main` = one page per main template). Tiles follow the
  * scroll order, left to right, top to bottom. Prints the reveal contract per page (hidden /
  * pending / leftover words), horizontal overflow and console errors, like shots.mjs.
  */
@@ -15,18 +16,20 @@ import path from "node:path";
 
 import sharp from "sharp";
 
-import { VIEWPORTS, forEachPage, launch, parseArgs, scrollThrough } from "./kit.mjs";
+import { ALL_VIEWPORTS, VIEWPORTS, forEachPage, launch, parseArgs, scrollThrough } from "./kit.mjs";
 
 const args = parseArgs();
 const outDir = path.resolve(args.positional[0] ?? "docs/qa/screens/step-27");
 const maxTiles = Number(args.flag("max") ?? "12");
 const widths = args.flag("widths")?.split(",");
-const viewports = VIEWPORTS.filter((v) => !widths || widths.includes(v.tag));
+const viewports = widths ? ALL_VIEWPORTS.filter((v) => widths.includes(v.tag)) : VIEWPORTS;
 mkdirSync(outDir, { recursive: true });
 
 const LAYOUT = {
   1440: { tileWidth: 780, columns: 2, rows: 3 },
   390: { tileWidth: 360, columns: 4, rows: 2 },
+  768: { tileWidth: 380, columns: 4, rows: 2 },
+  1920: { tileWidth: 780, columns: 2, rows: 3 },
 };
 const GAP = 6;
 const GROUND = { r: 60, g: 20, b: 80, alpha: 1 };
