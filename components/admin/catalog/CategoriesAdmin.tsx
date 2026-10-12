@@ -31,7 +31,7 @@ import { Switch } from "@/components/ui/Switch";
 import { Textarea } from "@/components/ui/Textarea";
 import { toast } from "@/components/ui/Toast";
 
-import { Chip, CharCount, IconAction, PageHeader, SaveBar, Section } from "../ui";
+import { Chip, CharCount, IconAction, PageHeader, SaveBar, Section, PANEL_LIST } from "../ui";
 
 type Node = FunctionReturnType<typeof api.catalog.categoriesAdmin.tree>[number];
 
@@ -56,10 +56,7 @@ export function CategoriesAdmin() {
           {!tree ? (
             <Skeleton className="h-96 w-full" />
           ) : (
-            <ul
-              className="-mx-4 -my-2 max-h-[calc(100dvh-14rem)] overflow-y-auto"
-              aria-label="Kategorije"
-            >
+            <ul className={cn(PANEL_LIST, "max-h-[calc(100dvh-14rem)]")} aria-label="Kategorije">
               {tree.map((n) => {
                 const siblings = tree.filter((s) => s.parentId === n.parentId && s.kind === n.kind);
                 const pos = siblings.findIndex((s) => s._id === n._id);
@@ -68,7 +65,7 @@ export function CategoriesAdmin() {
                   <li
                     key={n._id}
                     className={cn(
-                      "group flex items-center gap-2 border-b border-line-faint pr-2",
+                      "group flex items-center gap-2 border-b border-line-faint pr-2 last:border-b-0",
                       n.kind === "system"
                         ? "bg-surface-2 pl-4"
                         : n.kind === "category"

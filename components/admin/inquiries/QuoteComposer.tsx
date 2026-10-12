@@ -386,6 +386,7 @@ export function QuoteComposer({
         />
         <Button
           variant="secondary"
+          size="sm"
           icon={<PlusIcon size={16} />}
           onClick={() => setLines([...lines, emptyLine()])}
         >

@@ -29,7 +29,7 @@ import { Textarea } from "@/components/ui/Textarea";
 import { toast } from "@/components/ui/Toast";
 
 import { useAdminShell } from "../shell/context";
-import { Chip, CompactInput, PageHeader, SaveBar, Section } from "../ui";
+import { Chip, CompactInput, PANEL_LIST, PageHeader, SaveBar, Section } from "../ui";
 
 type Tier = FunctionReturnType<typeof api.pricing.listTiers>[number];
 type Rule = { id: string; percent: string };
@@ -166,7 +166,7 @@ export function TiersAdmin() {
       ) : (
         <div className="grid items-start gap-6 xl:grid-cols-[280px_minmax(0,1fr)]">
           <Section title="Razredi">
-            <ul className="-mx-4 -my-2">
+            <ul className={`${PANEL_LIST} [&>li:last-child>button]:border-b-0`}>
               {tiers.map((t) => (
                 <li key={t._id}>
                   <button

@@ -27,7 +27,7 @@ import { Switch } from "@/components/ui/Switch";
 import { Tabs } from "@/components/ui/Tabs";
 import { toast } from "@/components/ui/Toast";
 
-import { Chip, PageHeader, Section } from "../ui";
+import { Chip, PANEL_LIST, PageHeader, Section } from "../ui";
 
 type Tree = FunctionReturnType<typeof api.catalog.vehiclesAdmin.tree>;
 type Generation = FunctionReturnType<typeof api.catalog.vehiclesAdmin.generations>[number];
@@ -51,7 +51,7 @@ function Column({
 }) {
   return (
     <Section title={title} actions={action}>
-      <div className="-mx-4 -my-2 max-h-[calc(100dvh-18rem)] overflow-y-auto">{children}</div>
+      <div className={cn(PANEL_LIST, "max-h-[calc(100dvh-18rem)]")}>{children}</div>
     </Section>
   );
 }
@@ -73,7 +73,7 @@ function RowButton({
       onClick={onClick}
       aria-current={active ? "true" : undefined}
       className={cn(
-        "flex min-h-10 w-full cursor-pointer items-center gap-2 border-b border-line-faint px-4 text-left type-body-s transition-control focus-ring-inset",
+        "flex min-h-10 w-full cursor-pointer items-center gap-2 border-b border-line-faint px-4 text-left type-body-s transition-control last:border-b-0 focus-ring-inset",
         active ? "bg-selected font-semibold text-ink-1" : "text-ink-1 hover:bg-surface-2",
         muted && "text-ink-3",
       )}
@@ -309,7 +309,8 @@ function GenerationRow({
   const [adding, setAdding] = useState("");
   const linked = new Set(g.engines.map((e) => e.engineId));
   return (
-    <li className="rounded-md border border-line">
+    // overflow-hidden: the filled header band takes the card's rounded top corners.
+    <li className="overflow-hidden rounded-md border border-line">
       <div className="flex flex-wrap items-center gap-2 border-b border-line-faint bg-surface-2 px-3 py-2">
         <span className={cn("font-semibold", !g.active && "text-ink-3 line-through")}>
           {g.name}

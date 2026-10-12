@@ -160,7 +160,8 @@ function TemplatePreview({
         )}
         <TestSendForm templateKey={templateKey} />
       </div>
-      <div className="overflow-x-auto bg-surface-2 p-4 sm:p-6">
+      {/* The stage is the last block of the panel: it takes the panel's bottom corners. */}
+      <div className="overflow-x-auto rounded-b-md bg-surface-2 p-4 sm:p-6">
         {preview === undefined ? (
           <Skeleton className="mx-auto h-[600px] w-full max-w-[680px]" />
         ) : preview === null ? (

@@ -324,6 +324,14 @@ export function sentenceCase(text: string): string {
   return text.charAt(0).toLocaleUpperCase("sr-Latn") + text.slice(1);
 }
 
+/**
+ * A selectable list that fills its `Section panel` edge to edge (category tree, brands and models,
+ * price tiers): flush under the panel header and down to the panel's rounded bottom, which clips
+ * the last row. A full-width row fill used to end in square corners inside a rounded panel.
+ * Rows carry `border-b border-line-faint last:border-b-0`.
+ */
+export const PANEL_LIST = "-m-4 overflow-y-auto rounded-b-md";
+
 /** Surface for a control that sits on the page field, not in a panel: white, so it reads as a field. */
 export const ON_PAGE_FIELD = "bg-surface-1!";
 

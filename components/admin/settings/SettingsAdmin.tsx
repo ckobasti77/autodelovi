@@ -679,7 +679,7 @@ function HoursTab({ s, can }: { s: Settings; can: boolean }) {
                       disabled={h.closed || !can}
                       value={h.open}
                       onChange={(e) => setDay(h.day, { open: e.target.value })}
-                      className="w-28! px-2!"
+                      className="w-36! px-2!"
                       inputClassName="tabular-nums"
                     />
                     <span aria-hidden="true">–</span>
@@ -689,7 +689,7 @@ function HoursTab({ s, can }: { s: Settings; can: boolean }) {
                       disabled={h.closed || !can}
                       value={h.close}
                       onChange={(e) => setDay(h.day, { close: e.target.value })}
-                      className="w-28! px-2!"
+                      className="w-36! px-2!"
                       inputClassName="tabular-nums"
                     />
                   </span>

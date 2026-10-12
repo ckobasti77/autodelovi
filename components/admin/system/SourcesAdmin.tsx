@@ -243,7 +243,7 @@ export function SourcesAdmin() {
                 </span>
               </p>
             ) : null}
-            <dl className="grid grid-cols-3 gap-px border-y border-line bg-line type-body-s">
+            <dl className="grid grid-cols-3 gap-px overflow-hidden rounded-md border border-line bg-line type-body-s">
               {[
                 ["Sa gclid", offline.gclid.length],
                 ["Sa gbraid/wbraid", offline.braid.length],
