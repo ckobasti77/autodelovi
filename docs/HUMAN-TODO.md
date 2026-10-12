@@ -212,3 +212,16 @@ U koraku 26 urađen je sistem: zaobljeni uglovi na svim kutijama, pojavljivanje 
 - [ ] **[P1] Pogledajte uglove.** Čipovi 4, dugmad i polja 6, kartice 8, slike 10, dijalozi 12, donji paneli 14 piksela. Ako želite mekše ili oštrije, menja se šest brojeva na jednom mestu (`app/globals.css`).
 - [ ] **[P2] Donja traka na telefonu.** Pretraga, Vozilo, Korpa, Kontakt. „Kontakt“ otvara spisak kanala iz Podešavanja → Firma (telefon, Viber, WhatsApp, e-pošta); dok ti podaci nisu upisani, na tom mestu stoji „Upit“. Upišite kontakt podatke da bi traka nudila poziv i Viber.
 - [ ] **[P2] Prelaz između strana i zaglavlje koje se skuplja** rade u pregledačima Chrome, Edge i Safari. U Firefoxu se strana menja bez prelaza, a zaglavlje je odmah u skupljenom obliku. To je predviđeno ponašanje, ne greška.
+
+## 17. Novi izgled na svim stranama (korak 27)
+
+U koraku 27 novi sistem je primenjen na svaku stranu: početnu, katalog, stranu artikla, pretragu, korpu i porudžbinu, upit, portal za majstore, nalog, prijavu, tekstualne strane, administraciju, e-poruke i 3D prikaz. Slike „pre“ i „posle“ su u `docs/qa/screens/step-27/`, pregled po stranama u `docs/design/UI-BOOST.md` §11.
+
+- [ ] **[P1] Pogledajte početnu na telefonu.** Auto se sada vidi na prvom ekranu, a polje za pretragu i dugme su u jednom redu. Nova sekcija „Izdvojeno sa stanja“ prikazuje po jedan najtraženiji deo na stanju iz kategorija kočione pločice, kočioni diskovi, amortizeri i filteri. Ako želite druge kategorije, menja se jedan spisak (`FEATURED_PART_CATEGORIES` u `app/(shop)/page.tsx`).
+- [ ] **[P1] Pogledajte stranu artikla.** Cena, stanje i „Dodaj u korpu“ su u jednoj kutiji koja na računaru prati skrolovanje; na telefonu traka sa cenom i dugmetom stoji na dnu dok se glavno dugme ne vidi.
+- [ ] **[P1] Pošaljite sebi probne e-poruke.** Administracija → E-pošta → Šabloni → probno slanje. Pogledajte potvrdu porudžbine i ponudu u Gmailu i Outlooku, na telefonu i u tamnom režimu. Izgled poruka je nov (obaveštenja, dugme, stavke u dva reda, podaci za uplatu u kutiji).
+- [ ] **[P2] Pročitajte nove tekstove.** Pretraga bez rezultata („Šta još možete“), prijava i registracija (tekst pored obrasca), portal (objašnjenje oznaka kod brze porudžbine, „Odjava“), završni poziv na strani `/za-majstore`, koraci „Šta dalje“ kod upita. Sve je pisano u istom tonu; ispravite šta vam ne odgovara.
+- [ ] **[P2] Upišite kontakt podatke.** Dok u Podešavanja → Firma nema telefona, Vibera i adrese, strana `/kontakt` prikazuje samo upit i radno vreme, a u donjoj traci na telefonu umesto „Kontakt“ stoji „Upit“.
+- [ ] **[P2] Administracija, spisak porudžbina.** Status se sada menja iz reda: klik na oznaku statusa otvara dozvoljene sledeće korake (svaki se potvrđuje). Vreme čekanja ima četiri stepena: u roku, rok ističe, kasni, dugo kasni. Recite ako želite druge granice.
+- [ ] **[P3] Portal za majstore.** U traci su četiri kartice (Pregled, Brza porudžbina, Porudžbine, Cenovnik), ostalo je pod „Još“. Ako majstori najčešće traže nešto drugo, redosled se menja na jednom mestu.
+- [ ] **[P3] Probni podaci u razvojnoj bazi.** Testovi su ostavili kampanje sa veoma dugim nazivima; na strani Administracija → Izvori link ka takvoj kampanji ne radi (adresa je preduga). U pravoj bazi takvih naziva nema; razvojnu bazu očistite pre pokazivanja.

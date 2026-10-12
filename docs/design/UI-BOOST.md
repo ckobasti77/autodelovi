@@ -4,7 +4,7 @@
 > Step 26 (2026-10-11) built **the system**: tokens, shared components, the shell and the site-wide reveal. Step 27 applies it to every page — its work list is §7 and §8.
 > The owner asked for a site that feels much more modern, polished and premium („brutalno“ = outstanding, not the brutalist style), with three fixed requirements: small soft corners on every box, staggered reveals on scroll, a modern look that stays „Rendgen“.
 
-**Contents** — 1 How the critique was run · 2 Scores · 3 Problems · 4 Target · 5 What step 26 changed · 6 Components: done and open · 7 Templates: the work list for step 27 · 8 How to apply the system · 9 Performance: measured, fixed, open · 10 How to check
+**Contents** — 1 How the critique was run · 2 Scores · 3 Problems · 4 Target · 5 What step 26 changed · 6 Components: done and open · 7 Templates: the work list for step 27 · 8 How to apply the system · 9 Performance: measured, fixed, open · 10 How to check · 11 What step 27 built, per template
 
 ---
 
@@ -151,7 +151,7 @@ One engine (`components/TextRevealGlobal.tsx`), one observer, one line.
 
 ## 7. Templates: the work list for step 27, by impact
 
-> **Status after step 27 (2026-10-12): all ten items done** — what was built per template is in §11; decisions D332–D350.
+> **Status after step 27 (2026-10-12): all ten items done** — what was built per template is in §11; decisions D332–D349.
 
 1. **Product (`/deo/[slug]`)** — phone: price, stock and the add-to-cart row above the codes; cap the image height; the buy bar visible until the inline button is on screen. Desktop: a real buy box (`panel-raised`: price, stock, stepper, primary, inquiry), sticky, which also removes the dead column. Gallery and drawing frames 10 px. Reveal: gallery and buy box eager, everything below as blocks and groups.
 2. **Product card and the grids that use it** — render at about 70 % of its frame; phone list card with an 88 px thumbnail, about 170 px tall, price and action on one row; two name lines reserved so rows align. Every grid of category tiles, car models and brands becomes a `RevealGroup`.
@@ -205,6 +205,17 @@ After the fixes the trace shows no pass above 330 elements, and style, layout, p
 
 **Open.** The category page's TBT median is still 298 ms (runs 149–350 ms) against 135 ms in the control (runs 21–153 ms) and a 150 ms budget; home is 194 ms against 112 ms. In the traces what remains is not new work but where it falls: the layout of the streamed chunks (120–190 ms each, as before) lands just after first paint more often than before it. **Step 27, first thing, on an idle machine:** re-run the gate on home, category and product with five runs; if the category is still over 150 ms, compare a trace of it with the control (`git stash`-free: build `0df64d0` in place, as this step did) and look at the first paint — the eager cards and the action bar paint in the first chunk now, which may be what moved FCP ahead of the second layout task.
 
+**Step 27 re-measure (2026-10-12).** The machine was shared again, so the two builds were measured against each other instead of against the clock: the step-26 build served from a side directory on port 3200, the step-27 build on 3100, one Lighthouse run each in turn, five rounds (`scripts/qa/ui-boost/lh-compare.mjs`; mobile, applied throttling, medians):
+
+| Build | Home | Category | Product |
+|---|---|---|---|
+| Step 26 (old) | perf 90 · TBT 194 ms · LCP 2601 ms · JS 303 KB | perf 93 · TBT 161 ms · LCP 2285 ms · JS 295 KB | perf 94 · TBT 40 ms · LCP 2343 ms · JS 284 KB |
+| **Step 27 (new)** | **perf 91 · TBT 179 ms · LCP 2505 ms · JS 311 KB** | **perf 92 · TBT 169 ms · LCP 2229 ms · JS 296 KB** | **perf 96 · TBT 47 ms · LCP 2230 ms · JS 284 KB** |
+
+A second comparison on the final build, with the workers finished and the machine quieter (five rounds again): home 93 / TBT 150 ms old against 93 / 186 ms new; category 96 / TBT 42 ms (runs 21–216) old against 92 / 165 ms (runs 81–436) new; product 96 / 51 ms old against 96 / 53 ms new. One traced run per build of the category page (`lh-trace.mjs`) shows the same work on both — style 256 ms old against 225 ms new, layout 478 against 425 ms, script 1629 against 1535 ms, TBT 144 against 139 ms.
+
+Read: step 27 changed nothing measurable in the work the three templates do (first comparison: differences inside the spread of the runs — category TBT runs 126–538 ms old, 91–225 ms new). In the second comparison the category page's median TBT is higher on the new build while the trace totals are equal: as in step 26, what moves is which layout task falls after first paint. It stays open. The home page carries 8 KB more first-load JS for the four product cards of „Izdvojeno sa stanja“. The category page's TBT is about 160–170 ms on both builds — the 298 ms recorded in step 26 was load on the machine, not the page; it is still above the 150 ms budget and the pre-step-26 control (135 ms) can no longer be rebuilt next to it. Accessibility, best practices and SEO are 100 on all three in every run. LCP reads above the 2.0 s lab budget on this loaded machine for both builds alike.
+
 **The lesson, as a rule** (also in `.claude/rules/architecture.md`): never let the whole document depend on one thing — no `:root:has(…)`, no rule with a universal subject (`> *`, `*`) that hangs on a class of `<html>`, no custom property written on the root after first paint.
 
 ## 10. How to check
@@ -218,3 +229,43 @@ npx playwright test tests/e2e/reveal.spec.ts                          # the reve
 ```
 
 Page set, viewports and sign-ins are in `scripts/qa/ui-boost/kit.mjs`. Screenshots: `docs/qa/screens/step-26/before/` and `after/`; the reveal lab is `/styleguide/otkrivanje`.
+
+Added in step 27:
+
+```
+node scripts/qa/ui-boost/sheets.mjs <outDir> [--only=…] [--max=18] [--widths=390,1440]   # contact sheets of viewport tiles: readable, unlike a scaled full page
+node scripts/qa/ui-boost/checkout-walk.mjs <outDir>                                        # every delivery × payment, thank-you, order status
+node scripts/qa/ui-boost/overlays.mjs <outDir>                                             # search dialog, vehicle picker, cart drawer, mobile menu, offline notice
+node scripts/qa/ui-boost/montage.mjs <out.webp> <files…>                                   # several captures side by side
+MSYS_NO_PATHCONV=1 node scripts/qa/ui-boost/lh-compare.mjs --rounds=5 / /delovi/…          # old build (3200) against new (3100), interleaved
+```
+
+`kit.mjs` now covers 80 pages (every storefront, portal, account and admin template; `firstLink` opens the first record of a storefront list). Screenshots of step 27: `docs/qa/screens/step-27/` — `before/` and `after/` (storefront core), `checkout/`, `overlays/`, and per worker `admin-*`, `portal-*`, `content-*`.
+
+## 11. What step 27 built, per template
+
+Decisions D332–D349. The step ran as one orchestrating session and four workers on disjoint folders (D332).
+
+| Template | What changed | Decision |
+|---|---|---|
+| Home | Phone hero keeps the car on the first screen (field and submit on one row); featured parts in stock; systems as nine panels with chips instead of a 44-link list; tiers in a raised panel; make tiles; every grid and list a reveal group | D334–D336 |
+| Product card and grids | Three rows of one grid; render at full frame height; phone card 88 px thumbnail with price and action on one row (≈ 190 px, was 250); two name lines reserved; category tiles, `/delovi`, system hubs and vehicle hubs as reveal groups | D333 |
+| Category and search | Phone: clamped lead, one sticky toolbar with the count, first product at y ≈ 355 (was 470); rail as a panel with readable group titles; link clouds as chips; left-aligned empty states with the category render; search zero results end in the VIN inquiry plus two ways on; the search dialog says when the vehicle narrows results | D337, D338, D340, D342 |
+| Product | One order for every width; raised sticky buy box; phone first screen shows name, OEM, fitment, price and stock; buy bar docked whenever the inline button is not in view; codes and specifications as panels | D339 |
+| Cart and checkout | Lines in one panel, raised sticky summary, no doubled subtotal on phones, real skeleton geometry; checkout step as one panel, full-width primary on phones; all four delivery × payment combinations walked; order status and thank-you in one panel language | D341 |
+| VIN inquiry | Three panels; VIN help beside the field (under it on phones); live decode readout; status page with the quote as one panel | D346 |
+| Mechanics portal, account, auth | Four tabs + „Još“, sign-out out of the tab row; one panel language; quick-order rows as system rows; two-column account; split auth with a 12 px form panel | D347 |
+| Content, vehicle hubs, 404 / 500 | Reading measure with a sticky aside; two-column contact that hides empty blocks; tile grids without a lone last card; one composition for every status page | D346 |
+| Admin | See D348 | D348 |
+| E-mails | Blocks rebuilt on the new shapes (notice, button, wells, two-line items, ledger, footer), dark-mode safe; all 25 templates inherit | D344 |
+| 3D explorer UI | Panel rows as wells with a labelled button; callout entrance; stage controls with one outline; parts list with renders | D345 |
+
+**Left open after step 27**
+- Category TBT is about 160–170 ms against a 150 ms budget (§9); first-load JS is still above its budget (pre-existing).
+- A product grid can still end in a lone card (9 items in 4 columns); pagination pages of 24 do not.
+- Instant search suggestions are not filtered by the chosen vehicle (D340); the results page is.
+- `cn` joins class lists without merging: a component's own classes cannot be overridden by a caller's conflicting utility (D338). Worth a decision before the next large UI change.
+- Shared components the workers asked for and did not get: `Menu` items as route links with a current state; `Button size="sm"` at 44 px on touch screens by default; a 12 px panel utility (`panel rounded-xl` works today by stylesheet order); a taller drag handle on `Sheet`.
+- Blocks that are eager because they are on the first screen at 1440 px do not scroll-reveal on phones (portal tiles, price-list panels, order status panels).
+- States not seen in a browser: mechanic status screens „pending“ / „rejected“ / „suspended“, `app/error.tsx` and `global-error.tsx` (styled from the code).
+- The text-reveal skill files still describe the old trigger (unchanged from step 26: `.agents/` is off limits).
