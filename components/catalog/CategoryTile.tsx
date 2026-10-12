@@ -33,7 +33,8 @@ export function CategoryTile({
     >
       <div
         className={cn(
-          "relative bg-[radial-gradient(circle_at_50%_45%,var(--color-surface-3),var(--color-surface-1)_70%)]",
+          // Concentric with the tile (8 px − its 1 px edge): the ground has corners of its own.
+          "relative rounded-t-[calc(var(--radius-md)-1px)] bg-[radial-gradient(circle_at_50%_45%,var(--color-surface-3),var(--color-surface-1)_70%)]",
           size === "s" ? "aspect-[5/4]" : "aspect-[4/3]",
         )}
       >
@@ -41,8 +42,12 @@ export function CategoryTile({
           src={categoryImage(category.slug)}
           alt=""
           fill
-          sizes={size === "s" ? "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw" : "(min-width: 1280px) 22vw, (min-width: 768px) 33vw, 50vw"}
-          className="object-contain p-[2%] transition-transform duration-[600ms] ease-sk-out hover-hover:group-hover:scale-[1.04]"
+          sizes={
+            size === "s"
+              ? "(min-width: 1280px) 16vw, (min-width: 768px) 25vw, 50vw"
+              : "(min-width: 1280px) 22vw, (min-width: 768px) 33vw, 50vw"
+          }
+          className="rounded-[inherit] object-contain p-[2%] transition-transform duration-[600ms] ease-sk-out hover-hover:group-hover:scale-[1.04]"
         />
       </div>
       <div className="flex flex-1 flex-col gap-1 border-t border-line p-3 sm:p-4">

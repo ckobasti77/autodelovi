@@ -460,7 +460,7 @@ Print ramp (predračun, otpremnica — fixed sizes, because the fluid clamps dep
 - Dense rhythm (admin, mechanic portal): 16 / 24 between blocks; tables 44 px rows (36 px compact density toggle).
 - Touch: primary touch targets ≥ 44 × 44 px, any target ≥ 24 × 24 px, 8 px minimum between adjacent targets.
 
-### 5.3 Radii (step 26, D317; allowlist and test: step 28, D350)
+### 5.3 Radii (step 26, D317; allowlist and test: step 28, D350 and D354)
 Small soft corners on every visible box — storefront, portal, admin, e-mails, the 3D explorer UI. No box has 90° corners.
 
 | Token | Value | Role |
@@ -474,15 +474,15 @@ Small soft corners on every visible box — storefront, portal, admin, e-mails, 
 | `--radius-full` | 999 px | what is semantically a pill: counts, switches, radios, progress |
 
 - **Concentric nesting**: inner radius = outer radius − the padding between them, never below 4 px (menu 8 / rows 4 at 4 px padding; segmented track 8 / segments 4; admin segmented filter 8 / segments 6 at 2 px; input 6 / inner button 4). When the padding is at least the outer radius, the inner element takes the radius of its own role.
-- **Allowlist — the only boxes that may have a computed radius of 0** (D350; `tests/e2e/corners.spec.ts` fails on anything else):
-  1. **Full-bleed and docked** — every corner lies on an edge of the viewport or of the document: full-bleed bands, the header, the mobile action bar, drawers and sheets on their docked side, the admin sidebar, the e-mail panel on phones.
-  2. **Clipped by a rounded box** — the corner is cut round by an ancestor (the same corner, `overflow` not visible, radius > 0), or it ends on a straight edge of an ancestor that clips or draws a box: a strip across a card, a picture that fills one end of it. That is a T-junction, not a corner.
-  3. **Joined to a neighbour** — a painted box continues the edge right beside the corner: the cells of a grid divided by hairlines inside one rounded panel (the admin KPI strip on a phone), the admin top bar against the sidebar.
-  4. **Drawings** — `.corner-ticks`, `[data-corner-audit="skip"]` (the transparent stage poster), anything inside an SVG, dimension and leader lines; and hairline rules (a border on one side or on two opposite sides).
-  5. **Transparent artwork** — a picture whose four corner pixels are transparent (logos, part renders): there is no box to round.
-  A control that paints nothing at rest (a text button, the `<input>` inside a framed field) is not a box; its frame carries the radius and its focus ring follows the rule below.
+- **The only allowlist: full-bleed elements** — boxes whose edges meet the viewport (D354; `tests/e2e/corners.spec.ts` fails on any other card, button, input, select, image, badge, dialog, menu, toast or tooltip with a computed radius of 0). A box is full-bleed when every corner lies on an edge of the viewport or of the document — full-bleed bands, the footer, drawers and sheets on their docked side, the admin sidebar, the e-mail panel on phones — or when it is itself fixed or sticky and flush with a viewport edge along a whole side: the header, the admin top bar, the mobile action bar, the buy bar, a docked summary or save bar.
+- **Everything else carries a radius of its own**, also where nobody could see a square corner:
+  - **Defaults in the base layer**: `button, input, select, textarea, summary, [role="button"]` 6 px and `img, video, canvas, iframe` 4 px. A control that paints nothing at rest — the `<input>` inside a framed field, a text button, a `summary` row — still has a focus ring and a hover fill, and they follow this shape. A utility always wins over the default.
+  - **A box that fills one end of a rounded container** takes the container's inner radius on the corners it shares: the picture area of a card is `rounded-t-[calc(var(--radius-md)-1px)]` (the tile's 8 px minus its 1 px edge), a frame that fills a 10 px gallery frame is 9 px all round, and the picture inside is `rounded-[inherit]`.
+  - **A control that draws a rule on one side** rounds only the corners away from it — a tab is `rounded-t-sm rounded-b-none`, the clear button at the end of a field `rounded-r-[calc(var(--radius-sm)-1px)] rounded-l-none` — because a rule on a rounded box curls. For the same reason the dividers inside the quantity stepper are 1 px elements, not borders of the field.
+  - **Cells are tiles**: a row of figures is a grid of `panel`s (the admin KPI row), not one ruled strip of square cells.
+- **Not boxes, so not audited**: table rows and cells (the table's container is the box), shapes inside an SVG, hairline rules (a border on one or two sides) and marks drawn with fixed-size, non-repeating gradients — corner ticks, dimension and leader lines. They draw lines, and lines stay square.
 - **Focus rings follow the shape**: the outline traces the border box; a bare link, `summary` or `[tabindex]` gets 4 px instead of square corners.
-- New boxes use the surface utilities of §5.5 (`panel`, `panel-raised`, `panel-inset`), which carry the radius with the edge. Check: `npx playwright test tests/e2e/corners.spec.ts` — every main route of the storefront, the portal, the account and the admin at 1440 and 390 px, plus open dialogs, sheets, menus, tooltips and all toast variants: 0 sharp boxes (step 28). `node scripts/qa/ui-boost/corners.mjs` runs an older, looser version of the audit over the whole page set.
+- New boxes use the surface utilities of §5.5 (`panel`, `panel-raised`, `panel-inset`), which carry the radius with the edge. Check: `npx playwright test tests/e2e/corners.spec.ts` — every main route of the storefront, the portal, the account and the admin at 1440 and 390 px, plus open dialogs, sheets, menus, tooltips and all toast variants: 0 sharp, and the run prints the full-bleed elements it let through by name (step 28). `node scripts/qa/ui-boost/corners.mjs` is the older, looser audit of step 26.
 
 ### 5.4 Hairlines and borders
 1 px everywhere (`line`, `line-strong`, `control`); 2 px only for the focus ring and active indicators (stage bar, tab underline). Never a coloured `border-left`/`border-right` above 1 px (craft floor); the callout's 1 px accent edge is the maximum.

@@ -140,10 +140,14 @@ export function ImagesEditor({
                 dragIndex === i ? "border-focus opacity-60" : "border-line",
               )}
             >
-              <div className="relative aspect-[4/3] bg-surface-2">
+              <div className="relative aspect-[4/3] rounded-t-[calc(var(--radius-md)-1px)] bg-surface-2">
                 {img.url ? (
                   // eslint-disable-next-line @next/next/no-img-element -- signed Convex storage URL in the editor
-                  <img src={img.url} alt={img.alt} className="size-full object-contain" />
+                  <img
+                    src={img.url}
+                    alt={img.alt}
+                    className="size-full rounded-[inherit] object-contain"
+                  />
                 ) : null}
                 {i === 0 ? (
                   <span className="absolute left-2 top-2 rounded-xs bg-ink-1 px-1.5 py-0.5 type-label text-bg-raised">

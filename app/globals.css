@@ -196,8 +196,7 @@
   --shadow-overlay:
     inset 0 1px 0 0 rgb(241 236 227 / 0.07), 0 2px 6px rgb(0 0 0 / 0.4),
     0 18px 40px -18px rgb(0 0 0 / 0.75);
-  --shadow-drawer:
-    inset 0 1px 0 0 rgb(241 236 227 / 0.07), 0 28px 64px -24px rgb(0 0 0 / 0.8);
+  --shadow-drawer: inset 0 1px 0 0 rgb(241 236 227 / 0.07), 0 28px 64px -24px rgb(0 0 0 / 0.8);
   --shadow-paper-2: 0 1px 2px rgb(18 21 24 / 0.08), 0 6px 16px -10px rgb(18 21 24 / 0.2);
   --shadow-paper-3: 0 1px 2px rgb(18 21 24 / 0.1), 0 8px 24px -6px rgb(18 21 24 / 0.18);
   --shadow-paper-4: 0 24px 64px -16px rgb(18 21 24 / 0.28);
@@ -376,8 +375,7 @@
   --shadow-overlay:
     inset 0 1px 0 0 rgb(241 236 227 / 0.07), 0 2px 6px rgb(0 0 0 / 0.4),
     0 18px 40px -18px rgb(0 0 0 / 0.75);
-  --shadow-drawer:
-    inset 0 1px 0 0 rgb(241 236 227 / 0.07), 0 28px 64px -24px rgb(0 0 0 / 0.8);
+  --shadow-drawer: inset 0 1px 0 0 rgb(241 236 227 / 0.07), 0 28px 64px -24px rgb(0 0 0 / 0.8);
   color: var(--color-ink-1);
 }
 
@@ -786,6 +784,28 @@
   @media (prefers-reduced-motion: reduce) {
     animation: none;
     background-image: none;
+  }
+}
+
+/* Step 28 (D354): no control and no picture is square, even one that paints nothing at rest
+   (the <input> inside a framed field, a text button, a summary row) or is clipped by its
+   frame: its focus ring and hover fill follow this shape. Components set their own radius —
+   a utility always wins over this layer. A control that draws a rule on one side (a tab's
+   underline, a divider) must round only the corners away from it, or the rule curls. */
+@layer base {
+  button,
+  input,
+  select,
+  textarea,
+  summary,
+  [role="button"] {
+    border-radius: var(--radius-sm);
+  }
+  img,
+  video,
+  canvas,
+  iframe {
+    border-radius: var(--radius-xs);
   }
 }
 

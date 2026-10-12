@@ -42,7 +42,7 @@ export function ProductThumb({
     preload,
     quality: 75,
     className: cn(
-      "object-contain transition-transform duration-[600ms] ease-sk-out",
+      "rounded-[inherit] object-contain transition-transform duration-[600ms] ease-sk-out",
       imageUrl || bleed ? "p-0" : "p-[4%]",
       imageClassName,
     ),

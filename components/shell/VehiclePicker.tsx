@@ -64,7 +64,7 @@ export function VehicleField({ vehicle, onOpen, onClear, className }: TriggerPro
             type="button"
             onClick={onClear}
             aria-label="Ukloni izabrano vozilo"
-            className="inline-flex w-12 shrink-0 cursor-pointer items-center justify-center border-l border-line text-ink-2 transition-control hover:bg-surface-3 hover:text-ink-1"
+            className="inline-flex w-12 shrink-0 cursor-pointer items-center justify-center rounded-l-none rounded-r-[calc(var(--radius-sm)-1px)] border-l border-line text-ink-2 transition-control hover:bg-surface-3 hover:text-ink-1"
           >
             <XIcon size={18} aria-hidden="true" />
           </button>

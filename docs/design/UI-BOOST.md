@@ -280,23 +280,52 @@ Decisions D332–D349. The step ran as one orchestrating session and four worker
 
 ## 12. Independent verification (step 28)
 
-A session with no memory of steps 26–27 read their reports and then checked the claims again on the final code, with its own tools. Decisions D350–D353. Everything below was produced in that session on 2026-10-12.
+A session with no memory of steps 26–27 read their reports and then checked the claims again on the final code, with its own tools. Decisions D350–D354. Everything below was produced in that session on 2026-10-12.
 
 ### 12.1 Corners — `tests/e2e/corners.spec.ts`
 
-The audit (`cornerAuditInPage` in `tests/e2e/helpers/uiBoost.ts`) runs in the page after it has been scrolled end to end. Every element that draws a visible box is judged — a fill that differs from what is behind it, a border on three sides (or two that meet), an opaque gradient, a box shadow, a picture, a form control — and so is every dialog, menu, toast and tooltip. A box is **sharp** when all four computed corner radii are 0 and at least one corner is free; the five ways a corner is not free are the allowlist of DESIGN-SYSTEM §5.3. It is stricter than `corners.mjs` in three ways: colours are resolved through a canvas (computed colours come back as `oklab()` or `color(srgb …)` wherever a `color-mix()` or an opacity modifier is used, and a parser that only knows `rgb()` reads those fills as transparent); corners are judged one by one (touching one side of a rounded box no longer excuses the other three corners); overlays are opened.
+**The rule.** No card, button, input, select, image, badge, dialog, menu, toast or tooltip has a computed border radius of 0 on all four corners, **apart from one allowlist: full-bleed elements**, whose edges meet the viewport (DESIGN-SYSTEM §5.3). Nothing else is excused — not a picture clipped by its rounded frame, not a strip across a card, not a button that paints nothing at rest.
 
-| Area | Main routes | Boxes audited at 1440 | at 390 | Sharp |
+**What is audited** (`cornerAuditInPage` in `tests/e2e/helpers/uiBoost.ts`, run in the page after it has been scrolled end to end): every `button`, `input`, `select`, `textarea`, `summary` and `[role="button"]`; every `img`, `video`, `canvas`, `iframe` and `background-image: url()`; every dialog, menu, listbox, toast and tooltip; and every other element that draws a box — a fill that differs from what is behind it (colours resolved through a canvas, because computed colours come back as `oklab()` or `color(srgb …)` wherever a `color-mix()` or an opacity modifier is used), a border on three or four sides, a box shadow, or a gradient that fills it. Small ones without controls inside count as badges, the rest as cards.
+
+**Full-bleed** means: every corner of the box lies on an edge of the viewport or of the document, or the box is itself fixed or sticky and flush with a viewport edge along a whole side.
+
+| Area | Main routes | Elements audited at 1440 | at 390 | Sharp |
 |---|---|---|---|---|
-| Storefront | 20 | 989 | 968 | 0 |
-| Mechanics portal | 5 | 198 | 193 | 0 |
-| Account | 3 | 39 | 45 | 0 |
-| Admin | 11 | 1,085 | 762 | 0 |
-| **Total** | **39** | **2,311** | **1,968** | **0** |
+| Storefront | 20 | 1,056 | 1,039 | 0 |
+| Mechanics portal | 5 | 214 | 209 | 0 |
+| Account | 3 | 49 | 55 | 0 |
+| Admin | 11 | 1,153 | 824 | 0 |
+| **Total** | **39** | **2,472** | **2,127** | **0** |
 
-Overlays, each audited while open, at both widths where they exist (28 states, 0 sharp): the search dialog with suggestions, the vehicle picker, the filter sheet, the mobile menu and the cart drawer on the storefront; an alert dialog, a sheet, a row menu, a checkbox menu, a tooltip and all five toast variants on `/styleguide`; the command palette, the notifications panel and a row menu in the admin. The contact sheet is not in the list: with no contact channel in the settings „Kontakt“ is a link, not a sheet (it opens once the owner enters a phone or Viber number).
+The allowlist as the run used it — every element with a radius of 0 that was let through, all 8 of them full-bleed:
 
-What the first run found, all three allowlisted after a look at the page, none a defect: the admin top bar (its lower left corner ends on the sidebar's edge), the six KPI cells of the admin dashboard on a phone (cells of one rounded, clipped panel, divided by hairlines) — both „joined to a neighbour“ — and controls that paint nothing at rest.
+| What | Element | Times seen (routes × widths) |
+|---|---|---|
+| the storefront header's surface | `div.site-header-surface` | 54 |
+| the footer | `footer.cv-auto.border-t.border-line.bg-bg-raised.print:hidden` · `site-footer` | 54 |
+| the admin top bar | `header.sticky.top-0.z-sticky.h-14.shrink-0` | 22 |
+| the mobile action bar | `nav.fixed.inset-x-0.bottom-0.z-sticky.border-t` · `bottom-action-bar` | 19 |
+| the admin sidebar | `aside.hidden.border-r.border-line.bg-bg.text-ink-1` | 11 |
+| a full-width section band (the contact strip above the footer) | `section.cv-auto.border-t.border-line.bg-bg-raised.px-page` | 6 |
+| the product buy bar on phones | `div.fixed.inset-x-0.bottom-0.z-sticky.border-t` · `sticky-buy-bar` | 1 |
+| a bar docked to the bottom edge (cart / checkout summary on phones) | `div.sticky.bottom-0.z-sticky.-mx-page.-mt-4` | 1 |
+
+Overlays, each audited while open, at both widths where they exist (28 states, 0 sharp): the search dialog with suggestions, the vehicle picker, the filter sheet, the mobile menu and the cart drawer on the storefront; an alert dialog, a sheet, a row menu, a checkbox menu, a tooltip and all five toast variants on `/styleguide`; the command palette, the notifications panel and a row menu in the admin. The contact sheet is not among them: with no contact channel in the settings „Kontakt“ is a link, not a sheet (it opens once the owner enters a phone or Viber number).
+
+**What had a radius of 0 and now has its own (D354).** The first version of this check passed with four more allowlist entries — clipped by a rounded box, joined to a neighbour, drawings, transparent artwork — and a count of „bare“ controls. They are gone; the elements were changed instead:
+
+| Was | Elements | Now |
+|---|---|---|
+| A control that paints nothing at rest | the `<input>` / `<select>` / `<textarea>` inside every framed field, underline tabs, text buttons, `summary` rows, the buttons of the quantity stepper (about 30 kinds, some 650 instances on the audited routes and overlays at both widths) | 6 px from the base layer; the focus ring and hover fill follow it |
+| A picture — transparent to its corners, or clipped by its frame | part renders, logos, the stage poster, admin thumbnails | 4 px from the base layer; `rounded-[inherit]` inside a frame |
+| The picture area of a card (clipped by the card) | category tile, product card from 480 px, gallery frame, admin image tile | the container's inner radius on the corners it shares |
+| A control with a rule on one side | section tabs („Još“), the clear button of the vehicle field, the stepper's field | rounded on the corners away from the rule; the stepper's dividers are elements |
+| A list inside a rounded frame or a dialog | combobox list, command-palette results | `rounded-[inherit]` / 8 px |
+| Cells of a ruled strip | the six KPI cells of the admin dashboard | six `panel` tiles |
+| The admin top bar | — | unchanged: sticky and flush with the top edge — full-bleed |
+
+Marks that draw lines and not a box — corner ticks (fixed-size, non-repeating gradients), shapes inside an SVG, table rows and cells, hairline rules — are not audited; that is scope, written down in DESIGN-SYSTEM §5.3, not an exemption from the rule.
 
 ### 12.2 Reveal — `tests/e2e/reveal-routes.spec.ts` (with `reveal.spec.ts` on the lab)
 
@@ -306,20 +335,22 @@ What the first run found, all three allowlisted after a look at the page, none a
 | Grid items reveal one after another, in order | Every `data-reveal-state="running"` flip is logged during a steady scroll. Inside a batch each later item is later in the document and waits longer, within the 180 ms budget; a regular grid (rows of equal height) starts in document order from first card to last | 93 items in 20 groups on three pages; 14 regular grids at 1440, 11 at 390 |
 | Scrolling to the bottom of every main route leaves nothing hidden | 39 routes × 2 widths, signed in where needed: after the scroll no element with text at opacity 0, no `pending`, no `running`, no leftover word span | 0 on all 78 |
 | Reduced motion shows everything immediately | The same routes with `prefers-reduced-motion: reduce`, without scrolling: nothing hidden, pending or animating | 0 on all 78 |
-| Deep links show content without waiting | (a) every route opened directly: everything whose centre is above the line is showing as soon as the engine has started, and the 3.5 s failsafe never fired; (b) with every external script blocked the `h1` and the eager blocks of each storefront route are already visible; (c) an anchor far down `/`, `/delovi` and a product page lands on visible content | (a) 0 owed on all 78; (b) 18 routes × 2; (c) 473–637 ms after the navigation started |
-| Back navigation shows content without waiting | Half way down `/` and a category page → a product → back; an admin list → a record → back. Everything above the line at the restored position is visible, by the engine | 328–570 ms after going back |
+| Deep links show content without waiting | (a) every route opened directly: everything whose centre is above the line is showing as soon as the engine has started, and the 3.5 s failsafe never fired; (b) with every external script blocked the `h1` and the eager blocks of each storefront route are already visible; (c) an anchor far down `/`, `/delovi` and a product page lands on visible content | (a) 0 owed on all 78; (b) 18 routes × 2; (c) 474–628 ms after the navigation started |
+| Back navigation shows content without waiting | Half way down `/` and a category page → a product → back; an admin list → a record → back. Everything above the line at the restored position is visible, by the engine | 320–477 ms after going back |
 
 Two things the first version of these tests got wrong, and what they taught (D351): a running block is lifted 16 px, so its rectangle is not where the rule looks — measure the layout position; and „document order“ is true of a batch, not of a group — in CSS columns (the systems panels) and in rows of unequal height a short block crosses the line before a tall one that precedes it. By design, first-screen copy that is not `RevealText` is revealed by the engine after hydration; the heading and the eager blocks do not wait for it.
 
 ### 12.3 Screenshots — `docs/qa/screens/step-28/`
 
-24 main templates × 390, 768, 1440 and 1920 px, taken after scrolling each page end to end, as contact sheets of viewport tiles (106 files; `sheets.mjs --main --widths=390,768,1440,1920`): home, parts, category, product, search, cart, checkout, inquiry, mechanics landing, vehicle generation, contact, delivery, sign-in, 404, portal overview / quick order / orders, account, admin dashboard / orders / order / products / product / settings. Reveal contract on all 96 page × width captures: hidden 0, pending 0, leftover words 0, horizontal overflow 0, console errors 0 (the 404 page logs its own 404). Every sheet was opened. Three things looked wrong and were fixed (D352); the set in the repository is from the final build.
+24 main templates × 390, 768, 1440 and 1920 px, taken after scrolling each page end to end, as contact sheets of viewport tiles (106 files; `sheets.mjs --main --widths=390,768,1440,1920`): home, parts, category, product, search, cart, checkout, inquiry, mechanics landing, vehicle generation, contact, delivery, sign-in, 404, portal overview / quick order / orders, account, admin dashboard / orders / order / products / product / settings. Reveal contract on all 96 page × width captures: hidden 0, pending 0, leftover words 0, horizontal overflow 0, console errors 0 (the 404 page logs its own 404). Every sheet was opened. What looked wrong and was fixed (D352); the set in the repository is from the final build.
 
 | Where | What was wrong | Fix |
 |---|---|---|
 | Portal tab row, 390 px | Four tabs and „Još“ need 407 px, a phone has 360: the row showed a sliver of „Cenovnik“ under the edge fade, which read as a stray bracket | `SectionNav`: a tab marked `phoneOverflow` leaves the row below 640 px and is listed first in „Još“ |
 | Admin dashboard chart, 390 px | The value label of the last (today's) bar hung over the right edge of the drawing and was cut | `ColumnChart`: 10 px of room on the right, the label kept inside the plot, and a halo in the panel colour so it stays readable beside a taller bar |
 | Home „Izdvojeno sa stanja“ and product „Povezani delovi“, 1920 px | Four cards in a five-column grid: an empty fifth column | `ProductGrid maxColumns={4}` for rows that never hold more than four cards |
+
+The radius changes of §12.1 came after that review, so the whole set was captured again on the final build and compared, sheet by sheet, with the reviewed one. Of the 106 sheets, 102 differ from the reviewed ones by at most 0.05 % of their pixels (frames of the 3D hero, the cart count in the header); the four that differ more are the admin dashboard with its new KPI tiles (0.5–9.5 %), and those were opened again at all four widths.
 
 Looked at and left: a product grid of nine ends in a lone card (known, §11); 3D title blocks caught mid-change in the hero tiles are a capture artifact (the script jumps the scroll).
 
@@ -331,22 +362,22 @@ Looked at and left: a product grid of nine ends in a lone card (known, §11); 3D
 | `npx tsc --noEmit` | exit 0 |
 | `npm run lint` | exit 0 — 0 errors, 13 warnings, all in git-ignored scratch scripts under `.playwright/` |
 | `npm test` (unit + convex-test) | 71 files passed + 1 skipped, 1,306 tests passed + 4 skipped |
-| `npx playwright test` on that build | 188 passed, 32 skipped by design, 0 failed (24.7m) |
+| `npx playwright test` on that build | 188 passed, 32 skipped by design, 0 failed (24.9m) |
 
 Lighthouse, mobile, applied throttling (`tests/lighthouse/run.mjs --throttling devtools --runs 5`), final build, medians:
 
 | Page | Performance | Accessibility | Best practices | SEO | LCP | CLS | TBT | First-load JS |
 |---|---|---|---|---|---|---|---|---|
-| Home (`/`) | **95** (runs 93–97) | **100** | 100 | **100** | 2229 ms | 0.001 | 152 ms | 311 KB |
-| Category (`/delovi/kocioni-diskovi`) | **98** (runs 95–98) | **100** | 100 | **100** | 1942 ms | 0.000 | 77 ms | 296 KB |
-| Product (`/deo/…`) | **97** (runs 95–97) | **100** | 100 | **100** | 2132 ms | 0.000 | 57 ms | 284 KB |
+| Home (`/`) | **96** (runs 94–97) | **100** | 100 | **100** | 2289 ms | 0.001 | 86 ms | 311 KB |
+| Category (`/delovi/kocioni-diskovi`) | **97** (runs 93–98) | **100** | 100 | **100** | 1933 ms | 0.000 | 137 ms | 296 KB |
+| Product (`/deo/…`) | **97** (runs 96–98) | **100** | 100 | **100** | 2057 ms | 0.000 | 23 ms | 284 KB |
 
-The gate of this step (performance ≥ 90, accessibility ≥ 95, SEO ≥ 95) is met on all three. The script's own, older budgets are not all met and it still exits 1: first-load JS on all three pages (a miss since before step 26), and whichever of category TBT (150 ms) and catalog LCP (2.0 s) a given run lands above — they stay in the open list below.
+The gate of this step (performance ≥ 90, accessibility ≥ 95, SEO ≥ 95) is met on all three. The script's own, older budgets are not all met and it still exits 1 — in this run: first-load JS 311 KB > 180 KB; first-load JS 296 KB > 160 KB; LCP 2057 > 2000, first-load JS 284 KB > 160 KB. First-load JS has been above its budget since before step 26; category TBT (150 ms) and catalog LCP (2.0 s) sit around their lab limits and land on either side from run to run.
 
 ### 12.5 Left open after step 28
 
 - First-load JS above its budget; category TBT and catalog LCP around their lab budgets (§9).
 - First-screen copy that is not `RevealText` is revealed after hydration (D351) — by design, and the largest element is never among it; making every first-screen paragraph `RevealText` is possible page by page.
 - A product grid can still end in a lone card; blocks that are eager for 1440 px do not scroll-reveal on phones (§11).
-- `scripts/qa/ui-boost/corners.mjs` keeps its looser rules (it reads `oklab()` fills as transparent); the spec is the check that counts.
+- `scripts/qa/ui-boost/corners.mjs` keeps the rules of step 26 (it reads `oklab()` fills as transparent and excuses more than full-bleed); the spec is the check that counts.
 - The text-reveal skill files still describe the old trigger (`.agents/` is off limits to a step).

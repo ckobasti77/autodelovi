@@ -4,11 +4,12 @@
  * On every main route of the storefront, the mechanics portal, the account and the admin, at
  * both project widths (1440 and 390), after scrolling the page end to end: no card, button,
  * input, select, image, badge, dialog, menu, toast or tooltip has a computed border radius of
- * 0 on all four corners, apart from the documented allowlist (DESIGN-SYSTEM §5.3: edges that
- * meet the viewport, boxes clipped by a rounded ancestor, drawings, transparent artwork).
- * Overlays are opened and audited too — a page capture never shows them.
+ * 0 on all four corners — apart from the one documented allowlist, full-bleed elements, whose
+ * edges meet the viewport (DESIGN-SYSTEM §5.3). Overlays are opened and audited too: a page
+ * capture never shows them.
  *
- * The audit itself is `cornerAuditInPage` in helpers/uiBoost.ts; one line per route is printed.
+ * The audit is `cornerAuditInPage` in helpers/uiBoost.ts. One line per route is printed, and
+ * per run the full-bleed elements that were let through, by name.
  */
 import { expect, test, type Page } from "@playwright/test";
 
@@ -31,13 +32,31 @@ import {
 } from "./helpers/uiBoost";
 
 const describeFindings = (label: string, report: CornerReport) =>
-  report.sharp.map((item) => `${label}: ${item.kind} ${item.sig} ${item.size} „${item.text}“`);
+  report.sharp.map(
+    (item) => `${label}: ${item.kind} ${item.sig} ${item.size} „${item.text}“ in ${item.within}`,
+  );
+
+/** The allowlist as it was used: each full-bleed element once, with how often it was seen. */
+function fullBleedSummary(seen: Map<string, number>): string {
+  return [...seen.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .map(([sig, count]) => `${sig} ×${count}`)
+    .join(" · ");
+}
+
+function noteFullBleed(seen: Map<string, number>, report: CornerReport) {
+  for (const item of report.fullBleed) {
+    const key = `${item.kind} ${item.sig}`;
+    seen.set(key, (seen.get(key) ?? 0) + 1);
+  }
+}
 
 async function auditRoutes(page: Page, role: Role, width: string): Promise<string[]> {
   await signInAs(page, role);
   const findings: string[] = [];
   const state = { cartReady: false };
   let boxes = 0;
+  const allowed = new Map<string, number>();
   const routes = routesFor(role);
   for (const route of routes) {
     await openRoute(page, route, state);
@@ -46,11 +65,13 @@ async function auditRoutes(page: Page, role: Role, width: string): Promise<strin
     const label = `${route.name}@${width}`;
     console.log(cornerLine(label, report));
     boxes += Object.values(report.checked).reduce((sum, count) => sum + count, 0);
+    noteFullBleed(allowed, report);
     findings.push(...describeFindings(label, report));
   }
   console.log(
-    `corners ${role}@${width}: ${routes.length} routes, ${boxes} boxes audited, ${findings.length} sharp`,
+    `corners ${role}@${width}: ${routes.length} routes, ${boxes} elements audited, ${findings.length} sharp`,
   );
+  console.log(`corners ${role}@${width} full-bleed allowlist used: ${fullBleedSummary(allowed)}`);
   return findings;
 }
 

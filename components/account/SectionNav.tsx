@@ -43,7 +43,7 @@ function isActive(pathname: string, item: SectionNavItem): boolean {
 }
 
 const tab =
-  "inline-flex h-11 shrink-0 cursor-pointer items-center whitespace-nowrap border-b-2 type-body-s font-medium transition-control focus-ring-inset";
+  "inline-flex h-11 shrink-0 cursor-pointer items-center whitespace-nowrap rounded-t-sm rounded-b-none border-b-2 type-body-s font-medium transition-control focus-ring-inset";
 const tabOn = "border-accent text-ink-1";
 const tabOff = "border-transparent text-ink-2 hover:text-ink-1";
 

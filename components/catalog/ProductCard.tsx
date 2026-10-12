@@ -108,7 +108,7 @@ export function ProductCard({
     variant === "list"
       ? LIST_THUMB
       : variant === "responsive"
-        ? `${LIST_THUMB} sm:aspect-[4/3] sm:size-auto sm:rounded-none`
+        ? `${LIST_THUMB} sm:aspect-[4/3] sm:size-auto sm:rounded-t-[calc(var(--radius-md)-1px)] sm:rounded-b-none`
         : "aspect-[4/3]";
   const chipVisible =
     variant === "grid" ? "flex" : variant === "responsive" ? "hidden sm:flex" : "hidden";

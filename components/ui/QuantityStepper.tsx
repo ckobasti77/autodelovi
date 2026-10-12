@@ -104,10 +104,12 @@ export function QuantityStepper({
           // Keyboard and assistive-technology activation (pointer presses are handled above).
           if (event.detail === 0) step(-1);
         }}
-        className={buttonClasses}
+        className={cn(buttonClasses, "rounded-l-[calc(var(--radius-sm)-1px)] rounded-r-none")}
       >
         <MinusIcon size={18} aria-hidden="true" />
       </button>
+      {/* Dividers are elements, not borders of the field: a rule on a rounded box curls. */}
+      <span aria-hidden="true" className="w-px shrink-0 bg-control" />
       <input
         type="number"
         inputMode="numeric"
@@ -120,8 +122,9 @@ export function QuantityStepper({
           const parsed = Number.parseInt(event.target.value, 10);
           if (Number.isFinite(parsed)) onChange(clamp(parsed));
         }}
-        className="w-14 border-x border-control bg-transparent text-center text-[1rem] tabular-nums text-ink-1 outline-none [appearance:textfield] focus-visible:shadow-[inset_0_0_0_2px_var(--color-focus)] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+        className="w-[calc(3.5rem-2px)] rounded-xs bg-transparent text-center text-[1rem] tabular-nums text-ink-1 outline-none [appearance:textfield] focus-visible:shadow-[inset_0_0_0_2px_var(--color-focus)] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
       />
+      <span aria-hidden="true" className="w-px shrink-0 bg-control" />
       <button
         type="button"
         aria-label="Povećaj količinu"
@@ -136,7 +139,7 @@ export function QuantityStepper({
           // Keyboard and assistive-technology activation (pointer presses are handled above).
           if (event.detail === 0) step(1);
         }}
-        className={buttonClasses}
+        className={cn(buttonClasses, "rounded-r-[calc(var(--radius-sm)-1px)] rounded-l-none")}
       >
         <PlusIcon size={18} aria-hidden="true" />
       </button>

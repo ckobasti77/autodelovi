@@ -278,49 +278,50 @@ export const CORNER_KINDS = [
 ] as const;
 export type CornerKind = (typeof CORNER_KINDS)[number];
 
-export type CornerFinding = { kind: CornerKind; sig: string; size: string; text: string };
+export type CornerFinding = {
+  kind: CornerKind;
+  sig: string;
+  size: string;
+  text: string;
+  /** The parent, to find the element in the code. */
+  within: string;
+};
 
 export type CornerReport = {
-  /** Visible boxes audited, by kind (rounded, allowlisted and sharp together). */
+  /** Elements audited, by kind. */
   checked: Record<CornerKind, number>;
-  /** Boxes with a computed border radius of 0 on all four corners and at least one free corner. */
+  /** A computed border radius of 0 on all four corners, and not full-bleed. */
   sharp: CornerFinding[];
-  /** Radius 0, not sharp — the documented allowlist, by reason. */
-  allowed: {
-    fullBleed: number;
-    clipped: number;
-    joined: number;
-    drawing: number;
-    artwork: number;
-  };
-  /** Controls with radius 0 that paint nothing at rest (text buttons, inputs inside a frame). */
-  bare: number;
+  /** A computed border radius of 0 on all four corners, full-bleed: the only allowlist. */
+  fullBleed: CornerFinding[];
 };
 
 /**
- * Runs in the page. Every element that draws a visible box — a fill that differs from what is
- * behind it, a border on three sides (or two that meet), an opaque gradient, a box shadow, a
- * picture, a form control — is audited; so is every dialog, menu, toast and tooltip. A box is
- * **sharp** when all four computed corner radii are 0 and one of its corners is free, i.e. not:
+ * Runs in the page. Audited: every button, input, select and textarea, every picture (`img`,
+ * `video`, `canvas`, `iframe`, a `background-image: url()`), every dialog, menu, listbox,
+ * toast and tooltip, and every other element that draws a box — a fill that differs from what
+ * is behind it, a border on three or four sides, a box shadow, or a gradient that fills it.
+ * Small boxes without controls inside count as badges, the rest as cards.
  *
- * - on an edge of the viewport or of the document (full-bleed bands, the header, docked bars,
- *   drawers and sheets on their docked side, a sidebar from top to bottom);
- * - clipped round by an ancestor (same corner, `overflow` not visible, radius > 0);
- * - ending on a straight edge of an ancestor that clips or draws a box (a strip across a card,
- *   a picture that fills one end of it) — a T-junction, not a corner;
- * - continued by a neighbouring box that is painted right beside it (cells of a grid divided
- *   by hairlines inside one rounded panel, the admin top bar against the sidebar).
+ * An audited element is **sharp** when its computed border radius is 0 on all four corners
+ * and it is not full-bleed. Nothing else is excused: a picture inside a rounded frame, a strip
+ * across a card and a button that paints nothing at rest all carry a radius of their own.
  *
- * Also allowed: drawings (`.corner-ticks`, `[data-corner-audit="skip"]`, anything inside an
- * SVG) and pictures whose four corner pixels are transparent (logos, part renders, the
- * stage poster) — there is no box to round.
+ * **Full-bleed** (DESIGN-SYSTEM §5.3, the only allowlist) is a box whose edges meet the
+ * viewport: every corner lies on an edge of the viewport or of the document (bands, the
+ * footer, drawers and sheets on their docked side, a sidebar from top to bottom), or the box
+ * is itself fixed or sticky and flush with a viewport edge along a whole side (the header, the
+ * admin top bar, the mobile action bar, a docked save bar).
+ *
+ * Not audited, because they are none of these things: table rows and cells (the table's
+ * container is the box), shapes inside an SVG, and marks drawn with fixed-size, non-repeating
+ * gradients (corner ticks) — they draw lines, not a box.
  */
 export async function cornerAuditInPage(): Promise<CornerReport> {
   type RGBA = [number, number, number, number];
   const vw = document.documentElement.clientWidth;
   const vh = window.innerHeight;
   const docHeight = document.documentElement.scrollHeight;
-  const TOLERANCE = 2;
   const KINDS = [
     "card",
     "button",
@@ -371,14 +372,13 @@ export async function cornerAuditInPage(): Promise<CornerReport> {
       style.borderBottomRightRadius,
       style.borderBottomLeftRadius,
     ].map((value) => Number.parseFloat(value) || 0);
-  const SIDES = ["Top", "Right", "Bottom", "Left"] as const;
-  const borders = (style: CSSStyleDeclaration) =>
-    SIDES.map((side) => {
-      const width = Number.parseFloat(style.getPropertyValue(`border-${side.toLowerCase()}-width`));
-      const kind = style.getPropertyValue(`border-${side.toLowerCase()}-style`);
-      const colour = rgba(style.getPropertyValue(`border-${side.toLowerCase()}-color`));
-      return width > 0 && kind !== "none" && kind !== "hidden" && colour[3] > 0.05 ? width : 0;
-    });
+  const borderSides = (style: CSSStyleDeclaration) =>
+    ["top", "right", "bottom", "left"].filter((side) => {
+      const width = Number.parseFloat(style.getPropertyValue(`border-${side}-width`));
+      const kind = style.getPropertyValue(`border-${side}-style`);
+      const colour = rgba(style.getPropertyValue(`border-${side}-color`));
+      return width > 0 && kind !== "none" && kind !== "hidden" && colour[3] > 0.05;
+    }).length;
   const shadowShows = (value: string) => {
     if (!value || value === "none") return false;
     // Layers are separated by commas outside parentheses; each starts with its colour.
@@ -389,22 +389,23 @@ export async function cornerAuditInPage(): Promise<CornerReport> {
       return drawn && colour !== undefined && rgba(colour)[3] > 0.05;
     });
   };
-  /** What an element paints: a box, and whether a fill or border makes it one. */
+  /** What makes an element a box of its own. */
   const paintOf = (el: Element, style: CSSStyleDeclaration) => {
     const fill = rgba(style.backgroundColor);
     const filled = fill[3] >= 0.04 && !(fill[3] > 0.9 && near(fill, backdrop(el)));
-    const widths = borders(style);
-    const count = widths.filter((width) => width > 0).length;
-    const meet = widths.some((width, i) => width > 0 && (widths[(i + 1) % 4] ?? 0) > 0);
-    const bordered = count >= 3 || (count === 2 && meet);
+    const bordered = borderSides(style) >= 3;
     const image = style.backgroundImage;
     const picture = image.includes("url(");
-    const gradient = image.includes("gradient(") && !/rgba\(0, 0, 0, 0\)|transparent/.test(image);
+    // Fixed-size, non-repeating gradient layers are marks (corner ticks), not a fill.
+    const marks =
+      style.backgroundRepeat.split(", ").every((repeat) => repeat === "no-repeat") &&
+      style.backgroundSize
+        .split(", ")
+        .every((size) => /px/.test(size) && !/%|auto|cover|contain/.test(size));
+    const gradient =
+      image.includes("gradient(") && !/rgba\(0, 0, 0, 0\)|transparent/.test(image) && !marks;
     return {
-      filled,
-      bordered,
       picture,
-      widths,
       box: filled || bordered || picture || gradient || shadowShows(style.boxShadow),
     };
   };
@@ -435,151 +436,47 @@ export async function cornerAuditInPage(): Promise<CornerReport> {
     return "card";
   };
 
-  /** Every visible element that paints a fill or a border: what a corner can end against. */
-  const boxes: Element[] = [];
-  /** Boxes with a free corner so far; judged against their neighbours once `boxes` is whole. */
-  const undecided: { el: HTMLElement; kind: Kind; position: string }[] = [];
-
-  /** Free corners of a box whose own radii are all 0, and whether an edge excused any. */
-  const judge = (el: Element, rect: DOMRect, ownPosition: string, neighbours = false) => {
-    /**
-     * A painted box that is neither `el`, inside it nor around it covers this point. By
-     * geometry, not hit-testing: an open modal menu sets `pointer-events: none` on the body.
-     */
-    const painted = (px: number, py: number) =>
-      boxes.some((other) => {
-        if (other === el || el.contains(other) || other.contains(el)) return false;
-        const box = other.getBoundingClientRect();
-        return px >= box.left && px <= box.right && py >= box.top && py <= box.bottom;
-      });
-    const REACH = 4;
-    let anchored = ownPosition === "fixed" || ownPosition === "sticky";
-    const chain: {
-      rect: DOMRect;
-      radii: number[];
-      widths: number[];
-      clips: boolean;
-      draws: boolean;
-    }[] = [];
-    for (
-      let node = el.parentElement;
-      node && node !== document.documentElement;
-      node = node.parentElement
+  /** The one allowlist: edges that meet the viewport. */
+  const isFullBleed = (el: Element, rect: DOMRect, position: string) => {
+    const self = position === "fixed" || position === "sticky";
+    // Docked chrome: flush with a viewport edge along a whole side.
+    if (
+      self &&
+      (rect.top <= 1 || rect.bottom >= vh - 1 || rect.left <= 1 || rect.right >= vw - 1)
     ) {
-      const style = getComputedStyle(node);
-      if (style.position === "fixed" || style.position === "sticky") anchored = true;
-      const paint = paintOf(node, style);
-      const clips = style.overflowX !== "visible" || style.overflowY !== "visible";
-      const draws = paint.filled || paint.bordered;
-      if (clips || draws) {
-        chain.push({
-          rect: node.getBoundingClientRect(),
-          radii: radiiOf(style),
-          widths: paint.widths,
-          clips,
-          draws,
-        });
-      }
+      return true;
     }
-    const points: [number, number][] = [
+    let anchored = self;
+    for (let node = el.parentElement; node && !anchored; node = node.parentElement) {
+      const value = getComputedStyle(node).position;
+      anchored = value === "fixed" || value === "sticky";
+    }
+    const corners: [number, number][] = [
       [rect.left, rect.top],
       [rect.right, rect.top],
       [rect.right, rect.bottom],
       [rect.left, rect.bottom],
     ];
-    let free = 0;
-    let onEdge = false;
-    let joined = false;
-    for (const [i, [x, y]] of points.entries()) {
+    return corners.every(([x, y]) => {
       const docY = y + window.scrollY;
-      if (
+      return (
         x <= 1 ||
         x >= vw - 1 ||
         docY <= 1 ||
         docY >= docHeight - 1 ||
         (anchored && (y <= 1 || y >= vh - 1))
-      ) {
-        onEdge = true;
-        continue;
-      }
-      let soft = false;
-      for (const outer of chain) {
-        const [top = 0, right = 0, bottom = 0, left = 0] = outer.widths;
-        const box = outer.rect;
-        const outside =
-          x < box.left - TOLERANCE ||
-          x > box.right + TOLERANCE ||
-          y < box.top - TOLERANCE ||
-          y > box.bottom + TOLERANCE;
-        if (outside) {
-          // Cut off by a clipping ancestor: the visible edge is the ancestor's.
-          if (outer.clips) soft = true;
-          if (soft) break;
-          continue;
-        }
-        const onLeft = Math.abs(x - box.left) <= TOLERANCE + left;
-        const onRight = Math.abs(x - box.right) <= TOLERANCE + right;
-        const onTop = Math.abs(y - box.top) <= TOLERANCE + top;
-        const onBottom = Math.abs(y - box.bottom) <= TOLERANCE + bottom;
-        const [tl = 0, tr = 0, br = 0, bl = 0] = outer.radii;
-        if ((onLeft || onRight) && (onTop || onBottom)) {
-          // The ancestor's own corner: soft only when the ancestor clips it round.
-          const radius = onTop ? (onLeft ? tl : tr) : onRight ? br : bl;
-          if (outer.clips && radius > 0) soft = true;
-        } else if (onLeft || onRight) {
-          const above = onLeft ? tl : tr;
-          const below = onLeft ? bl : br;
-          if (outer.clips || (y - box.top >= above && box.bottom - y >= below)) soft = true;
-        } else if (onTop || onBottom) {
-          const before = onTop ? tl : bl;
-          const after = onTop ? tr : br;
-          if (outer.clips || (x - box.left >= before && box.right - x >= after)) soft = true;
-        }
-        if (soft) break;
-      }
-      if (!soft && neighbours) {
-        // Outwards from this corner: left for the left corners, up for the top ones.
-        const dx = i === 0 || i === 3 ? -REACH : REACH;
-        const dy = i <= 1 ? -REACH : REACH;
-        if (painted(x + dx, y - dy) || painted(x - dx, y + dy)) {
-          soft = true;
-          joined = true;
-        }
-      }
-      if (!soft) free += 1;
-    }
-    return { free, onEdge, joined };
+      );
+    });
   };
 
-  /** A picture whose four corner pixels are transparent draws no box. */
-  const transparentCorners = (img: HTMLImageElement) => {
-    try {
-      if (!img.complete || img.naturalWidth === 0) return true;
-      const canvas = document.createElement("canvas");
-      canvas.width = canvas.height = 48;
-      const context = canvas.getContext("2d", { willReadFrequently: true });
-      if (!context) return false;
-      context.drawImage(img, 0, 0, 48, 48);
-      const alpha = (x: number, y: number) => context.getImageData(x, y, 1, 1).data[3] ?? 255;
-      return [alpha(1, 1), alpha(46, 1), alpha(46, 46), alpha(1, 46)].every((a) => a < 24);
-    } catch {
-      return false;
-    }
-  };
-
-  await Promise.race([
-    Promise.all(
-      [...document.images]
-        .filter((img) => !img.complete)
-        .map((img) => img.decode().catch(() => undefined)),
-    ),
-    new Promise((resolve) => setTimeout(resolve, 4000)),
-  ]);
+  const signature = (el: Element) =>
+    `${el.tagName.toLowerCase()}.${[...el.classList].slice(0, 5).join(".")}${
+      el.getAttribute("data-testid") ? ` [${el.getAttribute("data-testid")}]` : ""
+    }`;
 
   const checked = Object.fromEntries(KINDS.map((kind) => [kind, 0])) as Record<Kind, number>;
-  const allowed = { fullBleed: 0, clipped: 0, joined: 0, drawing: 0, artwork: 0 };
-  const sharp: { kind: Kind; sig: string; size: string; text: string }[] = [];
-  let bare = 0;
+  const sharp: { kind: Kind; sig: string; size: string; text: string; within: string }[] = [];
+  const fullBleed: typeof sharp = [];
   const SKIP = new Set([
     "script",
     "style",
@@ -588,15 +485,19 @@ export async function cornerAuditInPage(): Promise<CornerReport> {
     "br",
     "option",
     "optgroup",
+    "source",
+    "track",
+    "picture",
+    "thead",
+    "tbody",
+    "tfoot",
+    "tr",
     "td",
     "th",
     "col",
     "colgroup",
-    "source",
-    "track",
-    "picture",
   ]);
-  const CONTROLS = new Set(["button", "input", "select", "textarea"]);
+  const CONTROLS = new Set(["button", "input", "select", "textarea", "summary"]);
   const MEDIA = new Set(["img", "video", "canvas", "iframe"]);
 
   for (const el of document.querySelectorAll<HTMLElement>("body *")) {
@@ -606,79 +507,34 @@ export async function cornerAuditInPage(): Promise<CornerReport> {
     const rect = el.getBoundingClientRect();
     if (rect.width < 12 || rect.height < 12) continue;
     if (rect.right <= 0 || rect.left >= vw) continue;
-    const style = getComputedStyle(el);
     if (tag === "input" && ["hidden", "file", "range"].includes(el.getAttribute("type") ?? "")) {
       continue;
     }
-
+    const style = getComputedStyle(el);
     const paint = paintOf(el, style);
-    if (paint.filled || paint.bordered) boxes.push(el);
     const role = el.getAttribute("role") ?? "";
     const control = CONTROLS.has(tag) || role === "button" || role === "combobox";
-    const media = MEDIA.has(tag);
     const overlay =
       el.matches(
-        'li[data-swipe-direction], [role="dialog"], [role="alertdialog"], [role="menu"], [role="listbox"]',
+        'li[data-swipe-direction], [role="dialog"], [role="alertdialog"], [role="menu"], [role="listbox"], [role="tooltip"]',
       ) || el.parentElement?.hasAttribute("data-radix-popper-content-wrapper") === true;
-    if (!(paint.box || control || media || overlay)) continue;
+    if (!(paint.box || control || MEDIA.has(tag) || overlay)) continue;
 
     const kind = kindOf(el, rect, paint.picture);
-    const radii = radiiOf(style);
-    if (radii.some((radius) => radius > 0)) {
-      checked[kind] += 1;
-      continue;
-    }
-    if (control && !paint.box) {
-      bare += 1;
-      continue;
-    }
-    if (el.closest('.corner-ticks, [data-corner-audit="skip"]')) {
-      checked[kind] += 1;
-      allowed.drawing += 1;
-      continue;
-    }
-    if (tag === "img" && !paint.filled && !paint.bordered) {
-      const img = el as HTMLImageElement;
-      const fit = style.objectFit;
-      const letterboxed =
-        (fit === "contain" || fit === "scale-down") &&
-        img.naturalWidth > 0 &&
-        Math.abs(img.naturalWidth / img.naturalHeight - rect.width / rect.height) > 0.03;
-      if (letterboxed || transparentCorners(img)) {
-        checked[kind] += 1;
-        allowed.artwork += 1;
-        continue;
-      }
-    }
     checked[kind] += 1;
-    const verdict = judge(el, rect, style.position);
-    if (verdict.free === 0) {
-      if (verdict.onEdge) allowed.fullBleed += 1;
-      else allowed.clipped += 1;
-      continue;
-    }
-    undecided.push({ el, kind, position: style.position });
-  }
+    if (radiiOf(style).some((radius) => radius > 0)) continue;
 
-  for (const { el, kind, position } of undecided) {
-    const tag = el.tagName.toLowerCase();
-    const rect = el.getBoundingClientRect();
-    if (judge(el, rect, position, true).free === 0) {
-      allowed.joined += 1;
-      continue;
-    }
-    sharp.push({
+    const finding = {
       kind,
-      sig: `${tag}.${[...el.classList].slice(0, 4).join(".")}${
-        el.closest("[data-testid]")
-          ? ` [${el.closest("[data-testid]")?.getAttribute("data-testid")}]`
-          : ""
-      }`,
+      sig: signature(el),
       size: `${Math.round(rect.width)}×${Math.round(rect.height)}`,
       text: (el.textContent ?? "").trim().replace(/\s+/g, " ").slice(0, 32),
-    });
+      within: el.parentElement ? signature(el.parentElement) : "",
+    };
+    if (isFullBleed(el, rect, style.position)) fullBleed.push(finding);
+    else sharp.push(finding);
   }
-  return { checked, sharp, allowed, bare };
+  return { checked, sharp, fullBleed };
 }
 
 /** Audits the page as it stands (overlays included). Call after the reveals have run. */
@@ -693,6 +549,5 @@ export function cornerLine(label: string, report: CornerReport): string {
   const kinds = CORNER_KINDS.filter((kind) => report.checked[kind] > 0)
     .map((kind) => `${kind} ${report.checked[kind]}`)
     .join(" · ");
-  const { fullBleed, clipped, joined, drawing, artwork } = report.allowed;
-  return `corners ${label}: sharp ${report.sharp.length} | ${kinds || "nothing audited"} | allowlist: full-bleed ${fullBleed} · clipped by a rounded box ${clipped} · joined to a neighbour ${joined} · drawing ${drawing} · transparent artwork ${artwork} | bare controls ${report.bare}`;
+  return `corners ${label}: radius 0 → ${report.sharp.length} sharp, ${report.fullBleed.length} full-bleed (allowlist) | audited: ${kinds || "nothing"}`;
 }

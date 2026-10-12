@@ -238,7 +238,7 @@ function PaletteBody({
         id={listId}
         role="listbox"
         aria-label="Rezultati"
-        className="max-h-[min(60dvh,480px)] overflow-y-auto py-2"
+        className="max-h-[min(60dvh,480px)] overflow-y-auto rounded-md py-2"
       >
         {options.length === 0 ? (
           <li className="px-6 py-6 type-body-s text-ink-2" role="presentation">

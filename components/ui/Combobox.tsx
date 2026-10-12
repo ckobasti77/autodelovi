@@ -305,7 +305,7 @@ export function Combobox({
           ref={listRef}
           role="listbox"
           aria-label={ariaLabel ?? "Predlozi"}
-          className="max-h-[360px] overflow-y-auto py-1"
+          className="max-h-[360px] overflow-y-auto rounded-[inherit] py-1"
         >
           {rows}
         </ul>

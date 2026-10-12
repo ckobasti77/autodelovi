@@ -231,7 +231,7 @@ export default async function ProductPage({ params }: PageProps<"/deo/[slug]">) 
                   }
                   sizes="(min-width: 1024px) 56vw, 100vw"
                   preload
-                  className="aspect-[3/2] sm:aspect-[4/3]"
+                  className="aspect-[3/2] rounded-[calc(var(--radius-lg)-1px)] sm:aspect-[4/3]"
                 />
               </div>
               {!images.length ? (

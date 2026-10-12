@@ -32,7 +32,8 @@ import { ActorLabel, Chip, CompanySetupNotice, DocNumber, PageHeader, Section } 
 import { WAIT_HINT, WAIT_LEVELS, WaitMark, waitLevel } from "../waiting";
 
 /**
- * One KPI cell: a link to the list filtered to exactly what the figure counts. The figure stays
+ * One KPI tile (a `panel` of its own since step 28 — the ruled strip had square cells): a
+ * link to the list filtered to exactly what the figure counts. The figure stays
  * neutral ink — a state (late, low) is said in the line under it, with an icon and a word.
  */
 function Kpi({
@@ -49,7 +50,7 @@ function Kpi({
   return (
     <RouteLink
       href={href}
-      className="group relative flex min-w-0 flex-col gap-1 bg-surface-1 px-4 py-3.5 transition-control hover:bg-surface-2 focus-ring-inset sm:px-5 sm:py-4"
+      className="group relative flex min-w-0 flex-col gap-1 panel px-4 py-3.5 transition-control hover:bg-surface-2 focus-ring-inset sm:px-5 sm:py-4"
     >
       <span className="flex items-center justify-between gap-2 type-caption text-ink-3 group-hover:text-ink-2">
         {label}
@@ -158,7 +159,7 @@ export function Dashboard() {
       {kpis ? <CompanySetupNotice missing={kpis.missingCompany} /> : null}
 
       <div
-        className="grid grid-cols-2 gap-px overflow-hidden rounded-md border border-line bg-line md:grid-cols-3 xl:grid-cols-6"
+        className="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3 xl:grid-cols-6"
         data-reveal="block"
       >
         {kpis ? (
@@ -215,7 +216,7 @@ export function Dashboard() {
           </>
         ) : (
           Array.from({ length: 6 }, (_, i) => (
-            <div key={i} className="flex flex-col gap-2 bg-surface-1 px-4 py-3.5 sm:px-5 sm:py-4">
+            <div key={i} className="flex flex-col gap-2 panel px-4 py-3.5 sm:px-5 sm:py-4">
               <Skeleton className="h-3 w-24" />
               <Skeleton className="h-9 w-16" />
               <Skeleton className="h-3 w-28" />
