@@ -7,6 +7,8 @@
 
 Redosled je bitan: domen i Resend traže vreme (DNS, provera domena), pa njih treba pokrenuti prvo; produkciona baza i sajt dolaze posle; mejlovi „Uživo“ i oglasi tek na kraju.
 
+**Stanje 12.10.2026.** Tri stvari drže objavu i sve tri čekaju klijenta: **odobrenje znaka**, **pravi domen sa adresom pošiljaoca e-pošte** i **pravi podaci firme**. Sve tri su u odeljku A, označene sa [P0]. Šta je novo na sajtu od prve predaje: [`PREDAJA.md` §12](PREDAJA.md#12-šta-je-novo); snimci: [`showcase/index.html`](showcase/index.html).
+
 ---
 
 ## A. Šta treba od klijenta (skupiti odmah)
@@ -15,7 +17,7 @@ Redosled je bitan: domen i Resend traže vreme (DNS, provera domena), pa njih tr
 - [ ] **[P0] (K)** **Pravi domen** (npr. `www.vas-domen.rs`) i pristup nalogu kod registrara. U kodu i na sajtu nema privremenog domena: adresa sajta dolazi iz `NEXT_PUBLIC_SITE_URL` i `SITE_URL` (§D i §E), pa se bez nje u slici za deljenje ne ispisuje domen, a linkovi u mejlovima vode na adresu razvojnog računara.
 - [ ] **[P0] (K)** **Adresa pošiljaoca e-pošte** na tom domenu (npr. `prodaja@vas-domen.rs`) i adresa na koju stižu odgovori kupaca. Ime pošiljaoca je „Euromotors Plus“ i menja se u Podešavanja → Obaveštenja → Slanje e-pošte. Do tada se poruke samo beleže i ne šalju (§F).
 - [ ] **[P0] (K)** Pravni podaci firme: pun naziv, sedište, PIB, matični broj, registar (APR). Obavezno po Zakonu o elektronskoj trgovini.
-- [ ] **[P0] (K)** Adresa radnje za lično preuzimanje i link ka mapi; telefoni, Viber i WhatsApp broj, e-pošta za kupce; radno vreme i neradni dani.
+- [ ] **[P0] (K)** Adresa radnje za lično preuzimanje i link ka mapi; telefoni, Viber i WhatsApp broj, e-pošta za kupce; radno vreme i neradni dani. **Radno vreme koje sajt sada prikazuje u podnožju i na strani Kontakt („Pon–pet 8–17, sub 8–14“) je početna vrednost iz podešavanja, a ne podatak radnje**: ispraviti u Podešavanja → Radno vreme pre objave.
 - [ ] **[P0] (K)** Tekući račun i banka za predračun (18 cifara sa kontrolnim brojem, npr. `160-0000000123456-78`).
 - [ ] **[P0] (K)** Kurirske službe sa kojima radite (D Express, BEX, AKS, Post Express…) i linkovi za praćenje pošiljke. Do tada se broj pošiljke prikazuje bez linka.
 - [ ] **[P0] (K)** Pravnik za pregled tekstova (§7).
@@ -29,14 +31,26 @@ Redosled je bitan: domen i Resend traže vreme (DNS, provera domena), pa njih tr
 
 ### Znak i ime (koraci 24 i 25)
 
-- [ ] **[P0] (K)** **Odobriti znak na sajtu.** Znak „Euromotors Plus by OEM Parts“ je od koraka 25 ugrađen u zaglavlje i podnožje sajta, admin, mejlove, predračun i otpremnicu, ikonicu u kartici pregledača, ikonicu aplikacije i sliku koja se vidi kad se link podeli. Pregledati ga na sajtu ili na slikama u `docs/brand/site/` i javiti da li je odobren. Dok ne stigne odobrenje, sajt se ne objavljuje pod ovim znakom.
-- [ ] **[P2] (K)** Brojevi porudžbina i dalje počinju sa „SK“ (npr. `SK-2026-000187`), što je ostatak radnog naziva. Ako želite drugi početak (npr. „EM“), promenite ga u Podešavanja → Firma → „Prefiks porudžbine“ pre prve prave porudžbine; već izdati brojevi se ne menjaju.
-
-- [ ] **[P0] (K)** Potvrditi novi znak „Euromotors Plus by OEM Parts“. Tabla za pregled: `docs/brand/BRAND-BOARD.html` (ili `.png`); uputstvo: `docs/brand/LOGO.md`; ostali predlozi: `docs/brand/concepts/`.
-- [ ] **[P0] (K)** Potvrditi reč „by“ u potpisu („Euromotors Plus by OEM Parts“). Ako ne opisuje dobro odnos firme i radnje, osnovni može da postane dvojni znak (`logo-dual`), u kojem oba imena stoje ravnopravno i bez „by“.
+- [ ] **[P0] (K)** **Odobriti znak „Euromotors Plus by OEM Parts“.** Znak je ugrađen u zaglavlje i podnožje sajta, admin, mejlove, predračun i otpremnicu, ikonicu u kartici pregledača, ikonicu aplikacije i sliku koja se vidi kad se link podeli. Gde ga pogledati: tabla [`brand/BRAND-BOARD.html`](brand/BRAND-BOARD.html) (ili [`.png`](brand/BRAND-BOARD.png)), znak na sajtu u [`showcase/index.html`](showcase/index.html) i na slikama u [`brand/site/`](brand/site/); ostali predlozi su u [`brand/concepts/README.md`](brand/concepts/README.md). Javiti „odobreno“ ili šta treba drugačije. **Dok ne stigne odobrenje, sajt se ne objavljuje pod ovim znakom.**
+- [ ] **[P0] (K)** Potvrditi reč „by“ u potpisu. Ako ne opisuje dobro odnos firme i radnje, osnovni može da postane dvojni znak (`logo-dual`), u kojem oba imena stoje ravnopravno i bez „by“.
 - [ ] **[P1] (K)** Provera žiga pre registracije i pre izrade table i oslikavanja vozila: pretraga sličnih znakova u Zavodu za intelektualnu svojinu Republike Srbije i u bazi TMview, najbolje preko zastupnika za žigove. Ova provera nije urađena.
-- [ ] **[P1] (K)** Boje za štampu (Pantone / CMYK za narandžastu `#FF6B1A` i tamnu `#0D0F11`) izabrati sa štamparom, sa probnim otiskom. U kompletu su namerno samo ekranske vrednosti.
+- [ ] **[P1] (K)** Boje za štampu (Pantone / CMYK za narandžastu `#FF6B1A` i tamnu `#0D0F11`) izabrati sa štamparom, sa probnim otiskom. U kompletu su namerno samo ekranske vrednosti. Komplet znaka i kome se šta šalje: [`PREDAJA.md` §11](PREDAJA.md#11-ime-i-znak).
+- [ ] **[P2] (K)** Brojevi porudžbina i dalje počinju sa „SK“ (npr. `SK-2026-000187`), što je ostatak radnog naziva. Ako želite drugi početak (npr. „EM“), promenite ga u Podešavanja → Firma → „Prefiks porudžbine“ pre prve prave porudžbine; već izdati brojevi se ne menjaju.
+- [ ] **[P2] (K)** Kad kupac doda sajt na početni ekran telefona, ispod ikonice piše „Euromotors“ (telefoni prikazuju najviše 12 znakova). Ako želite „OEM Parts“, javite.
 - [ ] **[P2] (K)** Ako postoje vektorske datoteke dosadašnjih znakova (Euromotors Plus, OEM Parts), sačuvati ih u `docs/brand/source/`.
+
+### Novi izgled (koraci 26 do 28)
+
+Šta je promenjeno: [`PREDAJA.md` §12](PREDAJA.md#12-šta-je-novo). Ništa odavde ne drži objavu; treba pogledati i javiti ako nešto ne odgovara.
+
+- [ ] **[P1] (K)** Pogledati pojavljivanje sadržaja na strani `/styleguide/otkrivanje`, na računaru i na telefonu. Linija je na 18 % visine ekrana od donje ivice (tražili ste 15 %, uz dozvolu da ide više: na telefonu donja traka pokriva donjih 60 piksela). Druga vrednost je jedan broj, `REVEAL_LINE` u `constants/revealConfig.ts`; postupak je u [`PREDAJA.md` §13](PREDAJA.md#13-linija-pojavljivanja-sadržaja).
+- [ ] **[P1] (K)** Pogledati uglove: oznake 4, dugmad i polja 6, kartice 8, slike 10, dijalozi 12, donji paneli 14 piksela. Mekše ili oštrije je šest brojeva na jednom mestu (`app/globals.css`).
+- [ ] **[P1] (K)** Pogledati početnu i stranu artikla na telefonu (auto na prvom ekranu, „Izdvojeno sa stanja“, kutija sa cenom i dugmetom).
+- [ ] **[P1] (K)** Poslati sebi probne e-poruke u novom izgledu (Admin → E-pošta → Šabloni → „Pošalji probnu poruku“) i pogledati ih u Gmailu i Outlooku, na telefonu i u tamnom režimu. Moguće tek kad je Resend povezan (§5).
+- [ ] **[P2] (K)** Pročitati nove tekstove: pretraga bez rezultata („Šta još možete“), prijava i registracija, portal za majstore (objašnjenje oznaka kod brze porudžbine), završni poziv na `/za-majstore`, koraci „Šta dalje“ kod upita.
+- [ ] **[P2] (K)** Donja traka na telefonu nudi „Kontakt“ (telefon, Viber, WhatsApp, e-pošta) tek kad se ti podaci upišu u Podešavanja → Firma; do tada na tom mestu stoji „Upit“.
+- [ ] **[P2] (K)** Admin, spisak porudžbina: vreme čekanja ima četiri stepena (u roku, rok ističe, kasni, dugo kasni). Javiti ako želite druge granice.
+- [ ] **[P2] (K)** U Firefoxu se strana menja bez prelaza, a zaglavlje je odmah u skupljenom obliku. To je predviđeno ponašanje.
 
 ## B. Poslovna pravila — potvrditi sa klijentom
 
@@ -222,7 +236,7 @@ Postupak: [`BACKUPS.md`](BACKUPS.md).
 
 - [ ] **[P1] (P)** Praćenje rada: prijaviti `https://www.domen.rs/api/zdravlje` u UptimeRobot ili Better Stack (besplatan plan), provera na 5 minuta, obaveštenje na mejl ili telefon. Odgovor 503 znači da baza ne odgovara.
 - [ ] **[P2] (P)** Praćenje grešaka: Convex → Settings → Integrations (log stream) ili Sentry, i Vercel → Observability.
-- [ ] **[P2] (K)** Brzina: [PageSpeed Insights](https://pagespeed.web.dev) za početnu, jednu kategoriju i jedan artikal, na telefonu. Cilj 85+ i LCP ispod 2,5 s. Lokalna laboratorijska merenja (97/98/97) nisu isto što i pravi saobraćaj.
+- [ ] **[P2] (K)** Brzina: [PageSpeed Insights](https://pagespeed.web.dev) za početnu, jednu kategoriju i jedan artikal, na telefonu. Cilj 85+ i LCP ispod 2,5 s. Lokalna laboratorijska merenja (96/97/97 posle dorade izgleda) nisu isto što i pravi saobraćaj.
 - [ ] **[P2] (K)** Upozorenja u zvoncu „Neuobičajeno mnogo porudžbina“ (preko 300 na sat) ili „… novih naloga“ (preko 60 na sat): pregledati poslednje unose; prijem porudžbina se ne zaustavlja. Javiti ako se javlja pri normalnom radu, da pomerimo prag.
 - [ ] **[P2] (K)** Kupci bez e-pošte (pitali telefonom, Viberom): posle slanja ponude koristiti „Link za kupca“ (Viber, WhatsApp, SMS). Takav kupac ne dobija mejlove; o promenama ga obaveštavate telefonom.
 
@@ -234,7 +248,8 @@ Postupak: [`BACKUPS.md`](BACKUPS.md).
 - [ ] **[P1] (P)** Ekran za izmenu čestih pitanja u adminu. Sada se menjaju u `convex/seedData/content.ts` i puštaju na bazu.
 - [ ] **[P2] (P)** Napomena „Cena je promenjena“ kad se cena artikla u korpi promeni pre slanja porudžbine (nalaz FLOW-10). Server već računa konačnu cenu pri slanju.
 - [ ] **[P2] (P)** Strane 404/403 koje baci sama stranica dobijaju od Next 16.3.6 prazan HTML na serveru (status, naslov i noindex su tačni; sadržaj se prikaže kad se učita JavaScript). Nalaz FLOW-05, odluke D266/D289. Ponovo proveriti posle nadogradnje Next-a.
-- [ ] **[P2] (P)** Lab budžet za JavaScript prvog učitavanja: 279–298 KB naspram cilja 160–180 KB (nije uslov; Lighthouse ocene su 97/98/97).
+- [ ] **[P2] (P)** Lab budžet za JavaScript prvog učitavanja: 284–311 KB naspram cilja 160–180 KB, i LCP strane artikla 2057 ms naspram 2000 ms (nije uslov; Lighthouse ocene su 96/97/97).
+- [ ] **[P3] (P)** Mreža artikala može da se završi jednom karticom u poslednjem redu (npr. 9 artikala u 4 kolone). Predlozi u pretrazi dok se kuca ne suze se po izabranom vozilu; strana sa rezultatima se suzi.
 - [ ] **[P3] (P)** 28 manjih P3 nalaza iz `docs/qa/AUDIT.md` (spisak u odeljku „Step 22 — resolution“).
-- [ ] **[P3] (P)** `.claude/rules/architecture.md` i `.claude/skills/text-reveal/SKILL.md` još opisuju staro otkrivanje teksta preko GSAP-a i kažu da `@/lib/gsap/client` registruje ScrollTrigger. Sada otkrivanje teksta radi preko CSS animacija (`tr-word`, `tr-word-lite`, `tr-block`), a ScrollTrigger se učitava samo uz 3D na početnoj (`@/lib/gsap/scroll`). Agenti nisu smeli da menjaju `.claude/**`, pa to treba ispraviti ručno.
+- [ ] **[P3] (P)** `.claude/skills/text-reveal/SKILL.md` (i njegova kopija pod `.agents/`) još opisuje staro pravilo pojavljivanja („15 % u ekran“) i ne pominje blokove. Tačno pravilo je u `.claude/rules/architecture.md`, koji je usklađen u koracima 26 i 28: sredina elementa prelazi liniju `REVEAL_LINE` (18 %), jedan mehanizam za tekst i blokove, CSS animacije. Agenti nisu smeli da menjaju `.agents/`, pa obe kopije treba ispraviti ručno.
 - [ ] **[P3] (P)** Opis strane `/kontakt` za Google kad su kontakt podaci prazni (sada nema opisa dok se ne unese telefon ili Viber).

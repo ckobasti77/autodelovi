@@ -7,7 +7,7 @@
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0D0F11">
 <title>Euromotors Plus by OEM Parts · prikaz radne verzije</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='7' y='2.5' width='10' height='5' rx='.75' fill='%23FF6B1A'/%3E%3Cpath d='M3 14h4v2.5h10V14h4v7H3z' fill='%23F1ECE3'/%3E%3C/svg%3E">
+<link rel="icon" href="{{favicon}}">
 <style>
 {{fonts}}
 :root {
@@ -23,6 +23,7 @@
   --pad: max(var(--margin), calc((100% - 1440px) / 2));
   --section: clamp(4rem, 2.667rem + 5.926vw, 8rem);
   --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --r-tag: 4px; --r-press: 6px; --r-read: 8px; --r-picture: 10px; --r-float: 12px;
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { background: var(--field); color: var(--ink); scrollbar-color: var(--hairline-strong) var(--field); -webkit-text-size-adjust: 100%; }
@@ -32,7 +33,7 @@ body { margin: 0; font: 400 1rem/1.55 var(--ui); font-feature-settings: "tnum" 0
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .22em; }
 a:hover { color: var(--accent-hover); }
 img { display: block; max-width: 100%; height: auto; }
-.skip { position: absolute; left: var(--margin); top: -60px; z-index: 30; background: var(--accent); color: var(--field); padding: 10px 14px; font-weight: 600; border-radius: 2px; }
+.skip { position: absolute; left: var(--margin); top: -60px; z-index: 30; background: var(--accent); color: var(--field); padding: 10px 14px; font-weight: 600; border-radius: var(--r-press); }
 .skip:focus { top: 12px; }
 .mono { font-family: var(--mono); font-size: .8125rem; letter-spacing: .01em; }
 
@@ -43,7 +44,7 @@ img { display: block; max-width: 100%; height: auto; }
 .logo svg { display: block; height: 32px; width: auto; }
 .logo .mark { display: none; }
 .bar nav { display: flex; gap: 4px; margin-left: auto; overflow-x: auto; scrollbar-width: none; }
-.bar nav a { position: relative; padding: 10px 12px; font-size: 15px; font-weight: 500; color: var(--ink-2); text-decoration: none; white-space: nowrap; }
+.bar nav a { position: relative; padding: 10px 12px; font-size: 15px; font-weight: 500; color: var(--ink-2); text-decoration: none; white-space: nowrap; border-radius: var(--r-press); }
 .bar nav a:hover { color: var(--ink); }
 .bar nav a[aria-current="true"] { color: var(--ink); }
 .bar nav a[aria-current="true"]::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 2px; height: 2px; background: var(--accent); }
@@ -52,7 +53,7 @@ img { display: block; max-width: 100%; height: auto; }
 .intro { padding: clamp(48px, 7vw, 104px) var(--pad) 0; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 4vw, 64px); align-items: end; }
 h1 { margin: 0; font: 700 clamp(2.5rem, 1.6rem + 3.8vw, 5.25rem)/.98 var(--display); letter-spacing: .005em; text-transform: uppercase; text-wrap: balance; }
 .lead { margin: 28px 0 0; max-width: 60ch; font-size: clamp(1.125rem, 1.083rem + .185vw, 1.25rem); line-height: 1.5; color: var(--ink-2); }
-.titleblock { border: 1px solid var(--hairline-strong); display: grid; grid-template-columns: 1fr 1fr; font-size: 14px; }
+.titleblock { border: 1px solid var(--hairline-strong); border-radius: var(--r-read); background: var(--raised); display: grid; grid-template-columns: 1fr 1fr; font-size: 14px; }
 .titleblock div { padding: 12px 14px; border-top: 1px solid var(--hairline); }
 .titleblock div:nth-child(-n+2) { border-top: 0; }
 .titleblock div:nth-child(odd) { border-right: 1px solid var(--hairline); }
@@ -62,12 +63,12 @@ h1 { margin: 0; font: 700 clamp(2.5rem, 1.6rem + 3.8vw, 5.25rem)/.98 var(--displ
 
 /* Stage (assembled ↔ exploded) ---------------------------------------------------------- */
 .stage { padding: clamp(40px, 5vw, 72px) var(--pad) 0; }
-.compare { position: relative; border: 1px solid var(--hairline); background: var(--field); overflow: hidden; touch-action: pan-y; }
+.compare { position: relative; border: 1px solid var(--hairline); border-radius: var(--r-picture); background: var(--field); overflow: hidden; touch-action: pan-y; }
 .compare img { width: 100%; }
 .compare .top { position: absolute; inset: 0; clip-path: inset(0 0 0 var(--split, 50%)); }
 .compare .seam { position: absolute; top: 0; bottom: 0; left: var(--split, 50%); width: 2px; margin-left: -1px; background: var(--accent); pointer-events: none; }
-.compare .knob { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 44px; height: 44px; border-radius: 2px; background: var(--accent); color: var(--field); }
-.compare .tag { position: absolute; top: 16px; padding: 6px 10px; font: 600 .6875rem/1.2 var(--ui); letter-spacing: .06em; text-transform: uppercase; background: rgb(13 15 17 / .85); border: 1px solid var(--hairline-strong); pointer-events: none; }
+.compare .knob { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 44px; height: 44px; border-radius: var(--r-press); background: var(--accent); color: var(--field); }
+.compare .tag { position: absolute; top: 16px; padding: 6px 10px; font: 600 .6875rem/1.2 var(--ui); letter-spacing: .06em; text-transform: uppercase; background: rgb(13 15 17 / .85); border: 1px solid var(--hairline-strong); border-radius: var(--r-tag); pointer-events: none; }
 .compare .tag.l { left: 16px; } .compare .tag.r { right: 16px; }
 .compare input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; }
 .compare:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 3px; }
@@ -91,13 +92,35 @@ h3 { margin: 0; font: 600 1.125rem/1.3 var(--ui); letter-spacing: -.005em; }
 .row.mail { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); align-items: start; }
 
 figure { margin: 0; min-width: 0; }
-.frame { position: relative; display: block; width: 100%; padding: 0; border: 1px solid var(--hairline); background: var(--card); cursor: zoom-in; color: inherit; font: inherit; border-radius: 0; }
+.frame { position: relative; display: block; width: 100%; padding: 0; border: 1px solid var(--hairline); background: var(--card); cursor: zoom-in; color: inherit; font: inherit; border-radius: var(--r-picture); box-shadow: inset 0 1px 0 rgb(241 236 227 / .04); transition: border-color 80ms linear; }
+.frame:hover { border-color: var(--hairline-strong); }
+.frame img { width: 100%; border-radius: calc(var(--r-picture) - 1px); }
+.frame.paper { background: #FFFFFF; }
 .frame::before, .frame::after { content: ""; position: absolute; width: 14px; height: 14px; border-color: var(--edge); border-style: solid; pointer-events: none; transition: border-color 80ms linear; }
 .frame::before { top: -7px; left: -7px; border-width: 1px 0 0 1px; }
 .frame::after { bottom: -7px; right: -7px; border-width: 0 1px 1px 0; }
 .frame:hover::before, .frame:hover::after { border-color: var(--accent); }
 .frame.tall { max-height: 720px; overflow: hidden; }
-.frame.tall img { object-fit: cover; object-position: top; }
+.frame.tall img { height: 720px; object-fit: cover; object-position: top; }
+.frame.tall::marker { content: none; }
+.more { position: absolute; right: 12px; bottom: 12px; padding: 6px 10px; font: 600 .6875rem/1.2 var(--ui); letter-spacing: .06em; text-transform: uppercase; background: rgb(13 15 17 / .9); border: 1px solid var(--hairline-strong); border-radius: var(--r-tag); color: var(--ink); pointer-events: none; }
+
+/* What is new ---------------------------------------------------------------------------- */
+.news { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 1.4vw, 20px); margin: 0 0 clamp(48px, 6vw, 88px); padding: 0; list-style: none; }
+.news li { padding: 20px; border: 1px solid var(--hairline); border-radius: var(--r-read); background: var(--raised); box-shadow: inset 0 1px 0 rgb(241 236 227 / .04); }
+.news h3 { margin-bottom: 8px; }
+.news p { margin: 0; color: var(--ink-2); font-size: 15px; line-height: 1.5; }
+.news .mono { display: block; margin-bottom: 14px; color: var(--accent); }
+.radii { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(8px, 1.2vw, 16px); margin: 0 0 clamp(48px, 6vw, 88px); padding: 0; list-style: none; }
+.radii li { display: grid; gap: 10px; }
+.radii .sw { height: 56px; border: 1px solid var(--edge); border-radius: var(--r); background: var(--input); box-shadow: inset 0 1px 0 rgb(241 236 227 / .06); }
+.radii strong { font: 600 1.25rem/1 var(--condensed); font-feature-settings: "tnum"; }
+.radii span { color: var(--ink-2); font-size: 13px; line-height: 1.35; }
+.kit { margin-bottom: clamp(48px, 6vw, 88px); }
+.kit .titleblock { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.kit .titleblock div { border-top: 0; border-right: 1px solid var(--hairline); }
+.kit .titleblock div:last-child { border-right: 0; }
+.kit .titleblock dd.num { margin-top: 8px; font-size: 1.625rem; }
 figcaption { display: grid; grid-template-columns: auto 1fr; gap: 2px 14px; margin-top: 14px; }
 figcaption .mono { grid-row: span 2; color: var(--ink-meta); padding-top: 2px; }
 figcaption strong { font-weight: 600; }
@@ -117,7 +140,7 @@ ul.plain li { padding: 12px 0 12px 22px; border-top: 1px solid var(--hairline); 
 ul.plain li::before { content: ""; position: absolute; left: 0; top: 21px; width: 10px; height: 1px; background: var(--edge); }
 ul.plain li strong { color: var(--ink); font-weight: 600; }
 .docs { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
-.btn { display: inline-flex; align-items: center; gap: 10px; height: 44px; padding: 0 18px; border-radius: 2px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid var(--edge); background: var(--input); color: var(--ink); }
+.btn { display: inline-flex; align-items: center; gap: 10px; height: 44px; padding: 0 18px; border-radius: var(--r-press); font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid var(--edge); background: var(--input); color: var(--ink); }
 .btn:hover { background: var(--overlay); color: var(--ink); }
 .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--field); }
 .btn.primary:hover { background: var(--accent-hover); color: var(--field); }
@@ -132,10 +155,10 @@ dialog::backdrop { background: transparent; }
 .lb-bar { display: flex; align-items: center; gap: 12px; padding: 12px var(--margin); border-bottom: 1px solid var(--hairline); }
 .lb-bar p { margin: 0 auto 0 0; font-size: 15px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .lb-bar .mono { color: var(--ink-meta); margin-right: 12px; }
-.icon-btn { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--edge); border-radius: 2px; background: var(--input); color: var(--ink); cursor: pointer; }
+.icon-btn { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--edge); border-radius: var(--r-press); background: var(--input); color: var(--ink); cursor: pointer; }
 .icon-btn:hover { background: var(--overlay); }
 .lb-body { overflow: auto; padding: clamp(12px, 3vw, 40px); overscroll-behavior: contain; }
-.lb-body img { margin-inline: auto; max-width: min(100%, 1600px); border: 1px solid var(--hairline); }
+.lb-body img { margin-inline: auto; max-width: min(100%, 1600px); border: 1px solid var(--hairline); border-radius: var(--r-picture); }
 
 @media (max-width: 1023px) {
   .intro, .chapter-head, .facts, .stage-grid { grid-template-columns: 1fr; }
@@ -144,6 +167,13 @@ dialog::backdrop { background: transparent; }
   .row.pair > figure:last-child, .row.mail > figure:last-child { max-width: 360px; }
   .row.phones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .row.trio { grid-template-columns: 1fr; }
+  .news { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .radii { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .kit .titleblock { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kit .titleblock div { border-top: 1px solid var(--hairline); }
+  .kit .titleblock div:nth-child(-n+2) { border-top: 0; }
+  .kit .titleblock div:nth-child(even) { border-right: 0; }
+  .kit .titleblock div:last-child { grid-column: 1 / -1; }
   .bar nav a { padding-inline: 8px; }
   .bar nav a[aria-current="true"]::after { left: 8px; right: 8px; }
 }
@@ -152,6 +182,7 @@ dialog::backdrop { background: transparent; }
   .logo .lockup { display: none; }
   .logo .mark { display: block; }
   .row.two { grid-template-columns: 1fr; }
+  .news { grid-template-columns: 1fr; }
   .compare .tag { top: 8px; font-size: .625rem; } .compare .tag.l { left: 8px; } .compare .tag.r { right: 8px; }
   .intro .titleblock { grid-template-columns: 1fr; }
   .intro .titleblock div { border-right: 0 !important; border-top: 1px solid var(--hairline) !important; }
@@ -170,7 +201,9 @@ dialog::backdrop { background: transparent; }
       {{logo-mark}}
     </a>
     <nav aria-label="Delovi prikaza">
+      <a href="#znak">Znak</a>
       <a href="#pocetna">3D auto</a>
+      <a href="#novo">Šta je novo</a>
       <a href="#kupac">Kupac</a>
       <a href="#majstor">Majstor</a>
       <a href="#radnja">Radnja</a>
@@ -183,15 +216,67 @@ dialog::backdrop { background: transparent; }
 <section class="intro" id="vrh" aria-labelledby="naslov">
   <div>
     <h1 id="naslov">Rasklopi auto. Nađi deo.</h1>
-    <p class="lead">Prodavnica, portal za majstore i admin za prodavca delova za Volkswagen, Audi, Škodu, SEAT i Cupru. Na snimcima je radna verzija sa demo artiklima: tako će izgledati kad se unesu pravi podaci.</p>
+    <p class="lead">Euromotors Plus, radnja koju kupci znaju kao OEM Parts: prodavnica, portal za majstore i admin za prodavca delova za Volkswagen, Audi, Škodu, SEAT i Cupru. Sajt ima novo ime, nov znak i dorađen izgled svake strane. Na snimcima je radna verzija sa demo artiklima: tako će izgledati kad se unesu pravi podaci.</p>
   </div>
   <dl class="titleblock">
     <div><dt>Projekat</dt><dd>Euromotors Plus by OEM Parts</dd></div>
     <div><dt>Snimljeno</dt><dd>{{date}}</dd></div>
-    <div><dt>Ekrani</dt><dd>1440 px i telefon 390 px</dd></div>
+    <div><dt>Ekrani</dt><dd>1440 px i telefon 390 px, posle skrolovanja cele strane</dd></div>
     <div><dt>Plaćanje</dt><dd>Pouzećem, pri preuzimanju ili po predračunu</dd></div>
+    <div class="wide"><dt>Čeka klijenta</dt><dd>Odobrenje znaka, pravi domen sa adresom pošiljaoca e-pošte i podaci firme.</dd></div>
     <div class="wide"><dt>Podaci</dt><dd>Demo artikli sa šiframa <span class="mono">DEMO-…</span> i izmišljenim kataloškim brojevima. Brišu se jednim klikom pre objave.</dd></div>
   </dl>
+</section>
+
+<section class="chapter" id="znak" aria-labelledby="znak-naslov">
+  <div class="chapter-head">
+    <h2 id="znak-naslov">Ime i znak</h2>
+    <p>Firma se zove Euromotors Plus, a kupci i majstori radnju znaju kao OEM Parts. Znak nosi oba imena: slovo E nacrtano kao ležište, narandžast plus kao deo u njemu, i potpis radnje precrtan sa dosadašnjeg znaka. Znak čeka odobrenje klijenta.</p>
+  </div>
+  <div class="row two">
+    <figure>
+      <button class="frame tall" type="button">{{img brand-board.webp "Tabla znaka Euromotors Plus by OEM Parts: ideja, oblici, boje, pravila i primena"}}<span class="more">Cela tabla</span></button>
+      <figcaption><span class="mono">Z1</span><strong>Tabla znaka</strong><span>Od starih znakova do novog, svi oblici, boje, najmanje veličine, pravila i primena. Klik otvara celu tablu; ista tabla je i zaseban dokument.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img brand-system-night.webp "Sedam oblika znaka na tamnoj podlozi"}}</button>
+      <figcaption><span class="mono">Z2</span><strong>Sedam oblika</strong><span>Osnovni, za zaglavlje, dvojni za tablu i vozilo, uspravni, samo ime, znak i potpis radnje. Bira se prema prostoru; potpis se ne smanjuje ispod čitljivosti, nego se izostavlja.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row two">
+    <figure>
+      <button class="frame paper" type="button">{{img brand-system-paper.webp "Isti oblici na beloj podlozi"}}</button>
+      <figcaption><span class="mono">Z3</span><strong>Na beloj</strong><span>Za e-poštu, admin i dokumenta. Narandžast je uvek samo plus.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img brand-one-colour.webp "Jednobojne varijante znaka: crna, bela i narandžasta"}}</button>
+      <figcaption><span class="mono">Z4</span><strong>U jednoj boji</strong><span>Za jednobojnu štampu, pečat i graviranje.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row two">
+    <figure>
+      <button class="frame" type="button">{{img brand-footer.webp "Znak sa potpisom radnje u podnožju sajta"}}</button>
+      <figcaption><span class="mono">Z5</span><strong>Na sajtu</strong><span>U zaglavlju stoji oblik bez potpisa, u podnožju pun znak. Isti znak je u adminu, mejlovima, na predračunu i otpremnici.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img brand-small-sizes.webp "Znak u malim veličinama i ikonice"}}</button>
+      <figcaption><span class="mono">Z6</span><strong>Male veličine</strong><span>Ikonica u kartici pregledača crtana je piksel po piksel za 16, 32 i 48 px.</span></figcaption>
+    </figure>
+  </div>
+  <div class="kit">
+    <dl class="titleblock">
+      <div><dt>Oblika</dt><dd class="num">7</dd></div>
+      <div><dt>Boja</dt><dd class="num">5</dd></div>
+      <div><dt>SVG i PDF</dt><dd class="num">35 + 35</dd></div>
+      <div><dt>PNG</dt><dd class="num">105</dd></div>
+      <div><dt>Komplet</dt><dd>Fascikla <span class="mono">docs/brand/export</span>. Štamparu ide PDF ili SVG, nikad PNG.</dd></div>
+    </dl>
+    <div class="docs">
+      <a class="btn primary" href="../brand/BRAND-BOARD.html">Otvori tablu znaka</a>
+      <a class="btn" href="../brand/LOGO.md">Uputstvo za znak</a>
+      <a class="btn" href="../brand/export/manifest.json">Spisak datoteka u kompletu</a>
+    </div>
+  </div>
 </section>
 
 <section class="stage" id="pocetna" aria-labelledby="pocetna-naslov">
@@ -242,9 +327,102 @@ dialog::backdrop { background: transparent; }
       <button class="frame" type="button">{{img home-exploded-mobile.webp "Početna na telefonu, auto rasklopljen"}}</button>
       <figcaption><span class="mono">02</span><strong>Rasklopljeno na telefonu</strong><span>Isti auto, iste faze, kadar prilagođen uspravnom ekranu.</span></figcaption>
     </figure>
-    <figure style="grid-column: span 3">
-      <button class="frame tall" type="button">{{img home-page-desktop.webp "Cela početna strana ispod 3D prikaza"}}</button>
-      <figcaption><span class="mono">03</span><strong>Ostatak početne</strong><span>Kako se poručuje, kategorije sa renderima delova, deo za majstore, marke, česta pitanja i kontakt. Kontakt i podaci firme se prikazuju tek kad se unesu u podešavanjima.</span></figcaption>
+    <figure>
+      <button class="frame tall" type="button">{{img home-page-mobile.webp "Cela početna strana na telefonu"}}<span class="more">Cela strana</span></button>
+      <figcaption><span class="mono">03</span><strong>Cela početna, telefon</strong><span>Na prvom ekranu su naslov, pretraga sa dugmetom u jednom redu i auto. Dalje isti redosled u jednoj koloni.</span></figcaption>
+    </figure>
+    <figure style="grid-column: span 2">
+      <button class="frame tall" type="button">{{img home-page-desktop.webp "Cela početna strana ispod 3D prikaza"}}<span class="more">Cela strana</span></button>
+      <figcaption><span class="mono">03</span><strong>Ostatak početne</strong><span>Kako se poručuje, izdvojeni delovi sa stanja, devet sistema sa kategorijama, deo za majstore, marke, česta pitanja i kontakt. Kontakt i podaci firme se prikazuju tek kad se unesu u podešavanjima.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="chapter" id="novo" aria-labelledby="novo-naslov">
+  <div class="chapter-head">
+    <h2 id="novo-naslov">Šta je novo</h2>
+    <p>Posle prve predaje dorađen je izgled svake strane. Tokovi porudžbine i upita, cene i admin funkcije su isti; promenjeno je kako sajt izgleda i kako se ponaša pod rukom.</p>
+  </div>
+  <ul class="news">
+    <li><span class="mono">N1</span><h3>Meki uglovi</h3><p>Nijedna kutija više nema oštre uglove. Zaobljenje zavisi od uloge: dugme manje, kartica više, dijalog najviše.</p></li>
+    <li><span class="mono">N2</span><h3>Sadržaj stiže pri skrolovanju</h3><p>Tekst stiže reč po reč, kartice i paneli jedan za drugim, jednom. Prvi ekran je vidljiv odmah.</p></li>
+    <li><span class="mono">N3</span><h3>Novo zaglavlje</h3><p>Pretraga je glavna radnja na svakoj širini. Pri skrolovanju se zaglavlje skupi i dobije podlogu.</p></li>
+    <li><span class="mono">N4</span><h3>Donja traka na telefonu</h3><p>Pretraga, Vozilo, Korpa i Kontakt su uvek pod palcem.</p></li>
+  </ul>
+  <ul class="radii" aria-label="Zaobljenja po ulozi">
+    <li><span class="sw" style="--r: 4px"></span><strong>4 px</strong><span>Oznake, čipovi</span></li>
+    <li><span class="sw" style="--r: 6px"></span><strong>6 px</strong><span>Dugmad, polja</span></li>
+    <li><span class="sw" style="--r: 8px"></span><strong>8 px</strong><span>Kartice, paneli, tabele</span></li>
+    <li><span class="sw" style="--r: 10px"></span><strong>10 px</strong><span>Slike</span></li>
+    <li><span class="sw" style="--r: 12px"></span><strong>12 px</strong><span>Dijalozi</span></li>
+    <li><span class="sw" style="--r: 14px"></span><strong>14 px</strong><span>Paneli odozdo</span></li>
+  </ul>
+  <div class="row pair">
+    <figure>
+      <button class="frame" type="button">{{img category-scrolled-desktop.webp "Kategorija posle skrolovanja: skupljeno zaglavlje sa pretragom i izborom vozila, kartice artikala sa zaobljenim uglovima"}}</button>
+      <figcaption><span class="mono">N3</span><strong>Zaglavlje koje se skuplja</strong><span>Na vrhu strane je više i providno. U prvih 96 px skrolovanja skupi se na 64 px i dobije poluprovidnu podlogu. Kartice, polja i dugmad imaju zaobljenje po ulozi.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img category-scrolled-mobile.webp "Kategorija na telefonu: traka sa filterima na vrhu i donja traka Pretraga, Vozilo, Korpa, Upit"}}</button>
+      <figcaption><span class="mono">N4</span><strong>Donja traka</strong><span>Dok kontakt podaci nisu upisani, na mestu „Kontakt“ stoji „Upit“.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row phones">
+    <figure>
+      <button class="frame" type="button">{{img parts-mobile.webp "Delovi po sistemima na telefonu: zaglavlje sa poljem za pretragu i donja traka"}}</button>
+      <figcaption><span class="mono">N3</span><strong>Vrh strane</strong><span>Polje za pretragu je u zaglavlju i na telefonu; ranije je bila ikonica.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img search-open-mobile.webp "Pretraga na telefonu sa predlozima kategorija i artikala"}}</button>
+      <figcaption><span class="mono">N5</span><strong>Pretraga</strong><span>Predlozi kategorija i artikala dok se kuca.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img menu-mobile.webp "Meni na telefonu"}}</button>
+      <figcaption><span class="mono">N6</span><strong>Meni</strong><span>Redovi su meke mete za prst.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img search-empty-mobile.webp "Pretraga bez rezultata na telefonu: upit i šta još možete"}}</button>
+      <figcaption><span class="mono">N7</span><strong>Nema rezultata</strong><span>Pretraga bez rezultata vodi na upit po broju šasije.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row pair">
+    <figure>
+      <button class="frame" type="button">{{img reveal-desktop.webp "Probna strana pojavljivanja: mreža kartica u trenutku dok stiže, kartica po kartica"}}</button>
+      <figcaption><span class="mono">N2</span><strong>Pojavljivanje, uhvaćeno u pokretu</strong><span>Snimak je napravljen dok mreža stiže: prve kartice su tu, treća još dolazi, a tekst iznad stiže reč po reč. Element kreće kad mu sredina pređe liniju na 18 % visine ekrana od donje ivice. Linija je jedan broj u kodu.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img reveal-mobile.webp "Ista probna strana na telefonu"}}</button>
+      <figcaption><span class="mono">N2</span><strong>Telefon</strong><span>Isto pravilo, kraće podizanje.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row pair">
+    <figure>
+      <button class="frame" type="button">{{img home-featured-desktop.webp "Početna: sekcija Izdvojeno sa stanja sa četiri artikla"}}</button>
+      <figcaption><span class="mono">N8</span><strong>Izdvojeno sa stanja</strong><span>Nova sekcija na početnoj: po jedan tražen deo na stanju iz četiri kategorije. Slika popunjava okvir kartice, a dugme za korpu je uvek vidljivo.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img home-featured-mobile.webp "Izdvojeno sa stanja na telefonu"}}</button>
+      <figcaption><span class="mono">N8</span><strong>Telefon</strong><span>Niža kartica: cena i dugme u jednom redu.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row pair">
+    <figure>
+      <button class="frame" type="button">{{img home-systems-desktop.webp "Početna: sistemi automobila kao paneli sa kategorijama"}}</button>
+      <figcaption><span class="mono">N9</span><strong>Sistemi umesto spiska linkova</strong><span>Spisak od 44 linka zamenjen je sa devet panela po sistemima, sa kategorijama kao čipovima.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img home-systems-mobile.webp "Sistemi na telefonu"}}</button>
+      <figcaption><span class="mono">N9</span><strong>Telefon</strong><span>Paneli u jednoj koloni.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row two">
+    <figure>
+      <button class="frame" type="button">{{img search-open-desktop.webp "Pretraga iz zaglavlja sa predlozima"}}</button>
+      <figcaption><span class="mono">N5</span><strong>Pretraga iz zaglavlja</strong><span>Otvara se i tasterom „/“. Dijalozi imaju najveće zaobljenje i senku.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img search-empty-desktop.webp "Pretraga bez rezultata: upit po broju šasije i šta još možete"}}</button>
+      <figcaption><span class="mono">N7</span><strong>Pretraga bez rezultata</strong><span>Umesto prazne strane: upit po broju šasije i još dva puta dalje. Svaka takva pretraga se beleži u adminu.</span></figcaption>
     </figure>
   </div>
 </section>
@@ -254,6 +432,16 @@ dialog::backdrop { background: transparent; }
     <h2 id="kupac-naslov">Kupac sa oglasa</h2>
     <p>Dolazi sa Google ili Meta oglasa sa jednim pitanjem: imate li deo za moj auto, koliko košta i kada stiže. Na svakom koraku vidi cenu sa PDV-om, stanje i rok, a poručuje bez plaćanja na sajtu.</p>
   </div>
+  <div class="row two">
+    <figure>
+      <button class="frame" type="button">{{img parts-desktop.webp "Delovi po sistemima: pločice kategorija sa renderima delova"}}</button>
+      <figcaption><span class="mono">04</span><strong>Delovi po sistemima</strong><span>Sve 44 kategorije po sistemima, svaka sa renderom dela iz 3D modela i brojem artikala.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img search-desktop.webp "Rezultati pretrage za disk"}}</button>
+      <figcaption><span class="mono">04</span><strong>Pretraga</strong><span>Po kataloškom broju, zamenskom broju ili nazivu. Razmaci, tačke i crtice u broju ne smetaju.</span></figcaption>
+    </figure>
+  </div>
   <div class="row pair">
     <figure>
       <button class="frame" type="button">{{img category-desktop.webp "Kategorija kočioni diskovi sa filterima po vozilu, proizvođaču, kvalitetu i stanju"}}</button>
@@ -261,51 +449,85 @@ dialog::backdrop { background: transparent; }
     </figure>
     <figure>
       <button class="frame" type="button">{{img category-mobile.webp "Kategorija na telefonu"}}</button>
-      <figcaption><span class="mono">05</span><strong>Telefon</strong><span>Filteri u donjem listu.</span></figcaption>
+      <figcaption><span class="mono">05</span><strong>Telefon</strong><span>Filteri u panelu koji izlazi odozdo.</span></figcaption>
     </figure>
   </div>
   <div class="row pair">
     <figure>
       <button class="frame" type="button">{{img product-desktop.webp "Strana artikla: kataloški broj, cena sa PDV-om, stanje, dugme za korpu i upit"}}</button>
-      <figcaption><span class="mono">06</span><strong>Artikal</strong><span>Kataloški i zamenski brojevi sa dugmetom za kopiranje, tabela vozila, cena sa PDV-om, stanje i rok, korpa, upit, poziv i Viber.</span></figcaption>
+      <figcaption><span class="mono">06</span><strong>Artikal</strong><span>Kataloški i zamenski brojevi sa dugmetom za kopiranje, tabela vozila, upit, poziv i Viber. Cena sa PDV-om, stanje i dugme za korpu su u jednoj kutiji koja prati skrolovanje.</span></figcaption>
     </figure>
     <figure>
       <button class="frame" type="button">{{img product-mobile.webp "Strana artikla na telefonu"}}</button>
-      <figcaption><span class="mono">06</span><strong>Telefon</strong><span>Dugme za korpu ostaje pri dnu ekrana.</span></figcaption>
+      <figcaption><span class="mono">06</span><strong>Telefon</strong><span>Naziv, broj, vozilo, cena i stanje su na prvom ekranu.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row pair">
+    <figure>
+      <button class="frame" type="button">{{img cart-desktop.webp "Korpa: stavke u jednom panelu i zbir sa strane"}}</button>
+      <figcaption><span class="mono">07</span><strong>Korpa</strong><span>Stavke u jednom panelu, zbir u kutiji koja prati skrolovanje. Dostava se računa po pravilima iz podešavanja.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img cart-mobile.webp "Korpa na telefonu"}}</button>
+      <figcaption><span class="mono">07</span><strong>Telefon</strong><span>Zbir i dugme stoje na dnu.</span></figcaption>
     </figure>
   </div>
   <div class="row two">
     <figure>
       <button class="frame" type="button">{{img checkout-contact-desktop.webp "Porudžbina, korak 1: kontakt"}}</button>
-      <figcaption><span class="mono">07</span><strong>Porudžbina, korak 1 od 4</strong><span>Može i bez naloga. Firma može da upiše PIB i matični broj; PIB se proverava kontrolnom cifrom.</span></figcaption>
+      <figcaption><span class="mono">08</span><strong>Porudžbina, korak 1 od 4</strong><span>Može i bez naloga. Firma može da upiše PIB i matični broj; PIB se proverava kontrolnom cifrom.</span></figcaption>
     </figure>
     <figure>
       <button class="frame" type="button">{{img checkout-review-desktop.webp "Porudžbina, korak 4: pregled pre slanja"}}</button>
-      <figcaption><span class="mono">08</span><strong>Pregled pre slanja</strong><span>Dostava i plaćanje se biraju iz podešavanja: lično preuzimanje ili kurir, pouzeće, gotovina ili kartica u radnji, predračun za firme.</span></figcaption>
+      <figcaption><span class="mono">09</span><strong>Pregled pre slanja</strong><span>Dostava i plaćanje se biraju iz podešavanja: lično preuzimanje ili kurir, pouzeće, gotovina ili kartica u radnji, predračun za firme.</span></figcaption>
     </figure>
   </div>
   <div class="row pair">
     <figure>
       <button class="frame" type="button">{{img inquiry-desktop.webp "Upit po broju šasije sa prepoznatom markom i modelom"}}</button>
-      <figcaption><span class="mono">09</span><strong>Ne nalazite deo?</strong><span>Upit po broju šasije: iz VIN-a se prepoznaju marka i godina, može do 5 fotografija. Kupac dobija link na kom vidi ponudu i prihvata je jednim klikom, a ponuda postaje porudžbina.</span></figcaption>
+      <figcaption><span class="mono">10</span><strong>Ne nalazite deo?</strong><span>Upit po broju šasije: iz VIN-a se prepoznaju marka i godina, može do 5 fotografija. Kupac dobija link na kom vidi ponudu i prihvata je jednim klikom, a ponuda postaje porudžbina.</span></figcaption>
     </figure>
     <figure>
       <button class="frame" type="button">{{img inquiry-mobile.webp "Upit na telefonu"}}</button>
-      <figcaption><span class="mono">09</span><strong>Telefon</strong><span>Isti obrazac, jedna kolona.</span></figcaption>
+      <figcaption><span class="mono">10</span><strong>Telefon</strong><span>Isti obrazac, jedna kolona.</span></figcaption>
     </figure>
   </div>
   <div class="row phones">
     <figure>
       <button class="frame" type="button">{{img checkout-contact-mobile.webp "Porudžbina na telefonu, kontakt"}}</button>
-      <figcaption><span class="mono">07</span><strong>Kontakt</strong><span>Iznos je uvek vidljiv na vrhu.</span></figcaption>
+      <figcaption><span class="mono">08</span><strong>Kontakt</strong><span>Iznos je uvek vidljiv na vrhu.</span></figcaption>
     </figure>
     <figure>
       <button class="frame" type="button">{{img checkout-review-mobile.webp "Porudžbina na telefonu, pregled"}}</button>
-      <figcaption><span class="mono">08</span><strong>Pregled</strong><span>Broj šasije je opcija, za proveru pre slanja.</span></figcaption>
+      <figcaption><span class="mono">09</span><strong>Pregled</strong><span>Broj šasije je opcija, za proveru pre slanja.</span></figcaption>
     </figure>
     <figure>
       <button class="frame" type="button">{{img email-order-confirmed-mobile.webp "E-pošta: porudžbina je potvrđena, na telefonu"}}</button>
-      <figcaption><span class="mono">10</span><strong>Potvrda e-poštom</strong><span>Kad radnja potvrdi porudžbinu, kupac dobija mejl sa podacima za uplatu.</span></figcaption>
+      <figcaption><span class="mono">11</span><strong>Potvrda e-poštom</strong><span>Kad radnja potvrdi porudžbinu, kupac dobija mejl sa podacima za uplatu.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img signin-mobile.webp "Prijava na telefonu"}}</button>
+      <figcaption><span class="mono">12</span><strong>Prijava</strong><span>Nalog nije obavezan za kupovinu.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row pair">
+    <figure>
+      <button class="frame" type="button">{{img account-desktop.webp "Nalog kupca: poslednje porudžbine, upiti, vozila i profil"}}</button>
+      <figcaption><span class="mono">13</span><strong>Nalog kupca</strong><span>Porudžbine sa „Poruči ponovo“, upiti, sačuvana vozila i profil.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img account-mobile.webp "Nalog kupca na telefonu"}}</button>
+      <figcaption><span class="mono">13</span><strong>Telefon</strong><span>Iste kartice u jednoj koloni.</span></figcaption>
+    </figure>
+  </div>
+  <div class="row two">
+    <figure>
+      <button class="frame" type="button">{{img signin-desktop.webp "Prijava: objašnjenje čemu nalog služi pored obrasca"}}</button>
+      <figcaption><span class="mono">12</span><strong>Prijava</strong><span>Pored obrasca piše čemu nalog služi. Servisi odavde idu na majstorski nalog.</span></figcaption>
+    </figure>
+    <figure>
+      <button class="frame" type="button">{{img search-mobile.webp "Rezultati pretrage na telefonu"}}</button>
+      <figcaption><span class="mono">04</span><strong>Pretraga na telefonu</strong><span>Kartica artikla na telefonu: slika, broj, stanje, cena i dugme u dva reda.</span></figcaption>
     </figure>
   </div>
 </section>
@@ -318,31 +540,31 @@ dialog::backdrop { background: transparent; }
   <div class="row pair">
     <figure>
       <button class="frame" type="button">{{img mechanic-quick-order-desktop.webp "Brza porudžbina: nalepljeni brojevi, tačno poklapanje, više opcija i nepronađen broj"}}</button>
-      <figcaption><span class="mono">11</span><strong>Brza porudžbina</strong><span>Majstor nalepi spisak kao što mu je stigao na Viber. Sistem prepozna brojeve bez obzira na razmake i crtice. Ono čega nema postaje upit jednim klikom.</span></figcaption>
+      <figcaption><span class="mono">14</span><strong>Brza porudžbina</strong><span>Majstor nalepi spisak kao što mu je stigao na Viber. Sistem prepozna brojeve bez obzira na razmake i crtice. Ono čega nema postaje upit jednim klikom.</span></figcaption>
     </figure>
     <figure>
       <button class="frame" type="button">{{img mechanic-quick-order-mobile.webp "Brza porudžbina na telefonu"}}</button>
-      <figcaption><span class="mono">11</span><strong>Telefon</strong><span>Za radionicu, sa telefona.</span></figcaption>
+      <figcaption><span class="mono">14</span><strong>Telefon</strong><span>Za radionicu, sa telefona.</span></figcaption>
     </figure>
   </div>
   <div class="row pair">
     <figure>
       <button class="frame" type="button">{{img mechanic-price-desktop.webp "Artikal kako ga vidi majstor: precrtana maloprodajna i njegova cena"}}</button>
-      <figcaption><span class="mono">12</span><strong>Vaša cena</strong><span>Maloprodajna cena je precrtana, ispod je cena sa rabatom. Rabat može da se razlikuje po kategoriji i proizvođaču, i nikad ne ide ispod nabavne cene i minimalne marže.</span></figcaption>
+      <figcaption><span class="mono">15</span><strong>Vaša cena</strong><span>Maloprodajna cena je precrtana, ispod je cena sa rabatom. Rabat može da se razlikuje po kategoriji i proizvođaču, i nikad ne ide ispod nabavne cene i minimalne marže.</span></figcaption>
     </figure>
     <figure>
       <button class="frame" type="button">{{img mechanic-price-mobile.webp "Cena za majstora na telefonu"}}</button>
-      <figcaption><span class="mono">12</span><strong>Telefon</strong><span>Ista cena na svakom ekranu.</span></figcaption>
+      <figcaption><span class="mono">15</span><strong>Telefon</strong><span>Ista cena na svakom ekranu.</span></figcaption>
     </figure>
   </div>
   <div class="row pair">
     <figure>
       <button class="frame" type="button">{{img mechanic-dashboard-desktop.webp "Majstorski portal: pregled, nivo rabata, odloženo plaćanje"}}</button>
-      <figcaption><span class="mono">13</span><strong>Majstorski portal</strong><span>Istorija porudžbina sa ponovnim poručivanjem, omiljeni artikli, vozila mušterija, cenovnik u Excelu i odloženo plaćanje kada ga radnja odobri.</span></figcaption>
+      <figcaption><span class="mono">16</span><strong>Majstorski portal</strong><span>Četiri kartice: Pregled, Brza porudžbina, Porudžbine i Cenovnik; ostalo je pod „Još“. Istorija sa ponovnim poručivanjem, omiljeni artikli, vozila mušterija, cenovnik u Excelu i odloženo plaćanje kada ga radnja odobri.</span></figcaption>
     </figure>
     <figure>
       <button class="frame" type="button">{{img mechanic-dashboard-mobile.webp "Majstorski portal na telefonu"}}</button>
-      <figcaption><span class="mono">13</span><strong>Telefon</strong><span>Portal ima iste kartice i na telefonu.</span></figcaption>
+      <figcaption><span class="mono">16</span><strong>Telefon</strong><span>Na telefonu tri kartice i „Još“.</span></figcaption>
     </figure>
   </div>
 </section>
@@ -355,65 +577,65 @@ dialog::backdrop { background: transparent; }
   <div class="row two">
     <figure>
       <button class="frame" type="button">{{img admin-dashboard-desktop.webp "Admin pregled: porudžbine danas, upiti bez odgovora, red čekanja i aktivnost"}}</button>
-      <figcaption><span class="mono">14</span><strong>Pregled</strong><span>Porudžbine i promet danas, upiti koji čekaju odgovor sa vremenom čekanja u radnom vremenu, majstori na odobrenju i artikli bez zaliha.</span></figcaption>
+      <figcaption><span class="mono">17</span><strong>Pregled</strong><span>Šest pločica: porudžbine i promet danas, upiti koji čekaju odgovor sa vremenom čekanja u radnom vremenu, majstori na odobrenju i artikli bez zaliha.</span></figcaption>
     </figure>
     <figure>
       <button class="frame" type="button">{{img admin-orders-desktop.webp "Lista porudžbina sa filterima i izvozom u Excel"}}</button>
-      <figcaption><span class="mono">15</span><strong>Porudžbine</strong><span>Pretraga po broju, imenu, telefonu ili PIB-u, filteri po statusu i izvoru posete.</span></figcaption>
+      <figcaption><span class="mono">18</span><strong>Porudžbine</strong><span>Pretraga po broju, imenu, telefonu ili PIB-u, filteri po statusu i izvoru posete. Status se menja iz reda, a vreme čekanja ima četiri stepena.</span></figcaption>
     </figure>
   </div>
   <div class="row two">
     <figure>
       <button class="frame" type="button">{{img admin-order-detail-desktop.webp "Detalj porudžbine: stavke, kupac, dostava, plaćanje, predračun i otpremnica"}}</button>
-      <figcaption><span class="mono">16</span><strong>Detalj porudžbine</strong><span>Promena statusa šalje mejl kupcu. Predračun i otpremnica se štampaju iz pregledača.</span></figcaption>
+      <figcaption><span class="mono">19</span><strong>Detalj porudžbine</strong><span>Promena statusa šalje mejl kupcu. Predračun i otpremnica se štampaju iz pregledača.</span></figcaption>
     </figure>
     <figure>
       <button class="frame" type="button">{{img admin-inquiry-detail-desktop.webp "Detalj upita sa fotografijom i kontaktom kupca"}}</button>
-      <figcaption><span class="mono">17</span><strong>Upit i ponuda</strong><span>Odgovor je ponuda sa artiklima iz kataloga ili slobodnim stavkama, cenom, rokom i važenjem. Kupac je prihvata preko linka.</span></figcaption>
+      <figcaption><span class="mono">20</span><strong>Upit i ponuda</strong><span>Odgovor je ponuda sa artiklima iz kataloga ili slobodnim stavkama, cenom, rokom i važenjem. Kupac je prihvata preko linka.</span></figcaption>
     </figure>
   </div>
   <div class="row trio steps">
     <figure>
       <button class="frame" type="button">{{img admin-import-file-desktop.webp "Uvoz iz Excela, korak 1: fajl sa 500 redova"}}</button>
-      <figcaption><span class="mono">18</span><strong>Uvoz iz Excela: fajl</strong><span>xlsx, xls ili csv, i Windows-1250 iz starijih knjigovodstvenih programa.</span></figcaption>
+      <figcaption><span class="mono">21</span><strong>Uvoz iz Excela: fajl</strong><span>xlsx, xls ili csv, i Windows-1250 iz starijih knjigovodstvenih programa.</span></figcaption>
     </figure>
     <figure>
       <button class="frame" type="button">{{img admin-import-mapping-desktop.webp "Uvoz iz Excela, korak 2: kolone prepoznate same"}}</button>
-      <figcaption><span class="mono">19</span><strong>Kolone</strong><span>Kolone se prepoznaju po nazivu, na srpskom ili engleskom. Mapiranje se čuva za sledeći put.</span></figcaption>
+      <figcaption><span class="mono">22</span><strong>Kolone</strong><span>Kolone se prepoznaju po nazivu, na srpskom ili engleskom. Mapiranje se čuva za sledeći put.</span></figcaption>
     </figure>
     <figure>
       <button class="frame" type="button">{{img admin-import-check-desktop.webp "Uvoz iz Excela, korak 3: provera sa greškama po redu"}}</button>
-      <figcaption><span class="mono">20</span><strong>Provera</strong><span>Greške i upozorenja po redu pre upisa, zatim probni uvoz. Ceo uvoz može da se poništi.</span></figcaption>
+      <figcaption><span class="mono">23</span><strong>Provera</strong><span>Greške i upozorenja po redu pre upisa, zatim probni uvoz. Ceo uvoz može da se poništi.</span></figcaption>
     </figure>
   </div>
   <div class="row mail">
     <figure>
       <button class="frame" type="button">{{img email-order-confirmed-desktop.webp "Primer mejla: porudžbina je potvrđena, sa podacima za uplatu i stavkama"}}</button>
-      <figcaption><span class="mono">21</span><strong>Primer mejla</strong><span>25 šablona na srpskom, svaki i kao običan tekst. Dok se ne poveže Resend, mejlovi se samo beleže u adminu i ništa ne odlazi.</span></figcaption>
+      <figcaption><span class="mono">24</span><strong>Primer mejla</strong><span>25 šablona na srpskom u novom izgledu, sa znakom u zaglavlju, svaki i kao običan tekst. Dok se ne poveže Resend, mejlovi se samo beleže u adminu i ništa ne odlazi.</span></figcaption>
     </figure>
     <figure>
       <button class="frame" type="button">{{img email-quote-ready-desktop.webp "Primer mejla: ponuda je spremna, sa dugmetom za prihvatanje"}}</button>
-      <figcaption><span class="mono">22</span><strong>Ponuda je spremna</strong><span>Kupac otvara ponudu i prihvata je sa linka iz mejla.</span></figcaption>
+      <figcaption><span class="mono">25</span><strong>Ponuda je spremna</strong><span>Kupac otvara ponudu i prihvata je sa linka iz mejla.</span></figcaption>
     </figure>
   </div>
   <div class="row two">
     <figure>
       <button class="frame" type="button">{{img admin-settings-desktop.webp "Podešavanja: podaci o firmi"}}</button>
-      <figcaption><span class="mono">23</span><strong>Podešavanja</strong><span>Podaci firme, radno vreme, dostava i plaćanje, obaveštenja, SEO, ID-jevi za Google i Metu, pravni tekstovi.</span></figcaption>
+      <figcaption><span class="mono">26</span><strong>Podešavanja</strong><span>Podaci firme, radno vreme, dostava i plaćanje, obaveštenja, SEO, ID-jevi za Google i Metu, pravni tekstovi.</span></figcaption>
     </figure>
     <figure>
       <button class="frame" type="button">{{img admin-searches-desktop.webp "Pretrage: šta su ljudi tražili, a nismo imali"}}</button>
-      <figcaption><span class="mono">24</span><strong>Traženo, a nemamo</strong><span>Svaka pretraga bez rezultata se beleži. To je spisak šta vredi nabaviti.</span></figcaption>
+      <figcaption><span class="mono">27</span><strong>Traženo, a nemamo</strong><span>Svaka pretraga bez rezultata se beleži. To je spisak šta vredi nabaviti.</span></figcaption>
     </figure>
   </div>
   <div class="row phones">
     <figure>
       <button class="frame" type="button">{{img admin-dashboard-mobile.webp "Admin pregled na telefonu"}}</button>
-      <figcaption><span class="mono">14</span><strong>Admin na telefonu</strong><span>Za brzu proveru van radnje.</span></figcaption>
+      <figcaption><span class="mono">17</span><strong>Admin na telefonu</strong><span>Za brzu proveru van radnje.</span></figcaption>
     </figure>
     <figure>
       <button class="frame" type="button">{{img admin-orders-mobile.webp "Porudžbine na telefonu"}}</button>
-      <figcaption><span class="mono">15</span><strong>Porudžbine</strong><span>Lista i pretraga rade i na telefonu.</span></figcaption>
+      <figcaption><span class="mono">18</span><strong>Porudžbine</strong><span>Lista i pretraga rade i na telefonu.</span></figcaption>
     </figure>
   </div>
 </section>
@@ -421,7 +643,7 @@ dialog::backdrop { background: transparent; }
 <section class="chapter" id="objava" aria-labelledby="objava-naslov">
   <div class="chapter-head">
     <h2 id="objava-naslov">Pre objave</h2>
-    <p>Sajt radi na razvojnoj bazi. Za objavu treba domen, nalog na Vercelu, produkciona Convex baza, Resend za mejlove i podaci firme. Ceo spisak je u dokumentu GO-LIVE.</p>
+    <p>Sajt radi na razvojnoj bazi. Tri stvari čekaju klijenta: odobrenje znaka, pravi domen sa adresom pošiljaoca e-pošte i podaci firme. Za objavu zatim treba nalog na Vercelu, produkciona Convex baza i Resend za mejlove. Ceo spisak je u dokumentu GO-LIVE.</p>
   </div>
   <div class="facts">
     <table>
@@ -433,8 +655,10 @@ dialog::backdrop { background: transparent; }
     <div>
       <h3 style="padding-bottom:12px">Šta je još privremeno</h3>
       <ul class="plain">
+        <li><strong>Znak.</strong> Ugrađen je svuda na sajtu i čeka odobrenje klijenta, uključujući reč „by“ u potpisu.</li>
+        <li><strong>Domen i pošiljalac e-pošte.</strong> Na sajtu nema privremenog domena; adresa sajta i adresa pošiljaoca se upisuju kad ih klijent javi.</li>
         <li><strong>Demo artikli, porudžbine i upiti.</strong> Šifre počinju sa <span class="mono">DEMO-</span>. Brišu se u Podešavanja → Opasna zona.</li>
-        <li><strong>Podaci firme i kontakt.</strong> Polja su prazna i sajt ih ne prikazuje dok se ne unesu.</li>
+        <li><strong>Podaci firme i kontakt.</strong> Polja su prazna i sajt ih ne prikazuje dok se ne unesu; do tada donja traka na telefonu nudi „Upit“ umesto „Kontakt“.</li>
         <li><strong>Mejlovi.</strong> Režim „Samo zapis“: sve se vidi u adminu, ništa ne odlazi do povezivanja Resend-a.</li>
         <li><strong>Pravni tekstovi.</strong> Šabloni po srpskim zakonima, čekaju pregled pravnika.</li>
         <li><strong>Oglasi i analitika.</strong> Polja za GA4, Google Ads i Meta Pixel su prazna, pa sajt ne učitava nijedan kod za praćenje.</li>
@@ -443,6 +667,7 @@ dialog::backdrop { background: transparent; }
       <div class="docs">
         <a class="btn primary" href="../GO-LIVE.md">Spisak za objavu</a>
         <a class="btn" href="../PREDAJA.md">Uputstvo za predaju</a>
+        <a class="btn" href="../HUMAN-TODO.md">Šta treba od klijenta</a>
       </div>
     </div>
   </div>

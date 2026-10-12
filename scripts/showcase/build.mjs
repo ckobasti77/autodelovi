@@ -1,10 +1,14 @@
-// Builds docs/showcase/index.html from scripts/showcase/template.html (step 23).
+// Builds docs/showcase/index.html from scripts/showcase/template.html (steps 23 and 29).
 //
 //   node scripts/showcase/build.mjs
 //
 // The page is self-contained apart from the screenshots next to it: fonts are inlined as base64
 // (Archivo, Public Sans and Martian Mono, all SIL OFL), every <img> gets its real width/height so
-// nothing shifts while loading. Screenshots come from `node scripts/showcase/shots.mjs`.
+// nothing shifts while loading. Screenshots come from `node scripts/showcase/shots.mjs`; the brand
+// board and the logo sheets are converted here from docs/brand (`scripts/brand/logo/board.mjs`,
+// `renders.mjs`, `scripts/brand/site/shots.mjs`), so the page never reaches outside its folder
+// for a picture. Nothing is requested from the network: the links to the other documents
+// (GO-LIVE, PREDAJA, the brand board) are relative paths to local files.
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 import sharp from "sharp";
@@ -30,9 +34,11 @@ const FONTS = [
 /** Verified results shown in the „Šta je provereno“ table (update when the gates are re-run). */
 const FACTS = [
   ["Build, TypeScript, ESLint", "bez grešaka"],
-  ["Automatski testovi (logika i baza)", "<span class=\"num\">1.261</span> prolazi"],
-  ["Testovi u pregledaču (ceo tok)", "<span class=\"num\">118</span> prolazi, 0 pada"],
-  ["Brzina na telefonu, Lighthouse", "početna <span class=\"num\">95</span> · kategorija <span class=\"num\">95</span> · artikal <span class=\"num\">96</span>"],
+  ["Automatski testovi (logika i baza)", "<span class=\"num\">1.306</span> prolazi"],
+  ["Testovi u pregledaču (ceo tok)", "<span class=\"num\">188</span> prolazi, 0 pada"],
+  ["Uglovi", "<span class=\"num\">4.599</span> elemenata na 39 strana, nijedan oštar"],
+  ["Pojavljivanje sadržaja", "<span class=\"num\">78</span> poseta, ništa ne ostaje skriveno"],
+  ["Brzina na telefonu, Lighthouse", "početna <span class=\"num\">96</span> · kategorija <span class=\"num\">97</span> · artikal <span class=\"num\">97</span>"],
   ["Pristupačnost i SEO, Lighthouse", "<span class=\"num\">100</span> / <span class=\"num\">100</span> na sve tri strane"],
   ["Bezbednosni pregled", "23 nalaza ispravljena, cene se ne vide preko uloga"],
   ["Nezavisni QA pregled", "180 nalaza; ispravljeno svih 18 važnih i 85 od 87 srednjih"],
@@ -42,6 +48,30 @@ const fontCss = FONTS.map(({ family, weight, file, range }) => {
   const data = readFileSync(resolve(DIR, "fonts", file)).toString("base64");
   return `@font-face{font-family:"${family}";font-style:normal;font-weight:${weight};font-display:swap;src:url(data:font/woff2;base64,${data}) format("woff2")${range ? `;unicode-range:${range}` : ""}}`;
 }).join("\n");
+
+/** Brand pictures shown in the „Ime i znak“ chapter: source under docs/brand → file in docs/showcase. */
+const BRAND = [
+  ["BRAND-BOARD.png", "brand-board.webp"],
+  ["renders/logo-system-night.png", "brand-system-night.webp"],
+  ["renders/logo-system-paper.png", "brand-system-paper.webp"],
+  ["renders/logo-one-colour.png", "brand-one-colour.webp"],
+  ["renders/logo-small-sizes.png", "brand-small-sizes.webp"],
+  ["site/footer-night-1440.png", "brand-footer.webp"],
+];
+for (const [source, target] of BRAND) {
+  await sharp(resolve("docs/brand", source)).webp({ quality: 86 }).toFile(resolve(OUT, target));
+}
+
+// The compare slider shows the car alone, assembled and exploded from the same camera: the two
+// poster renders the home page itself starts from (3d/scripts, public/images/hero), cropped to
+// the car. A crop of a page screenshot would move with every change of the hero layout.
+for (const state of ["assembled", "exploded"]) {
+  await sharp(resolve(`public/images/hero/car-${state}.webp`))
+    .extract({ left: 900, top: 160, width: 1600, height: 1200 })
+    .resize({ width: 1200 })
+    .webp({ quality: 84 })
+    .toFile(resolve(OUT, `home-stage-${state}.webp`));
+}
 
 let html = readFileSync(resolve(DIR, "template.html"), "utf8");
 const escape = (s) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
@@ -75,8 +105,14 @@ const logo = (file, cls) => {
 const date = new Intl.DateTimeFormat("sr-Latn-RS", { day: "2-digit", month: "2-digit", year: "numeric" })
   .format(new Date())
   .replace(/\s/g, "");
+/** The site's own icon as a data URI, so the tab shows the new mark without a request. */
+const favicon = `data:image/svg+xml,${encodeURIComponent(
+  readFileSync(resolve("public/brand/icon.svg"), "utf8").replace(/<title>[^<]*<\/title>/, ""),
+)}`;
+
 html = html
   .replace("{{fonts}}", fontCss)
+  .replace("{{favicon}}", favicon)
   .replace("{{logo-header}}", logo("logo-header-night.svg", "lockup"))
   .replace("{{logo-mark}}", logo("mark-night.svg", "mark"))
   .replaceAll("{{date}}", date.endsWith(".") ? date : `${date}.`)

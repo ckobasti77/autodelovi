@@ -2,7 +2,9 @@
 
 > Za programera i za klijenta. Tehničko uputstvo za programere je u [`README.md`](../README.md), spisak za objavu u [`GO-LIVE.md`](GO-LIVE.md), a prikaz sa snimcima ekrana u [`showcase/index.html`](showcase/index.html) (otvara se dvoklikom, radi bez interneta).
 >
-> Stanje: 01.10.2026. Sajt radi na razvojnoj bazi sa demo podacima. Ništa još nije objavljeno.
+> Stanje: 12.10.2026. Sajt radi na razvojnoj bazi sa demo podacima. Ništa još nije objavljeno.
+>
+> **Novo od prve predaje (01.10.2026.):** sajt se zove „Euromotors Plus“ i ima nov znak ([§11](#11-ime-i-znak)), ceo izgled je dorađen ([§12](#12-šta-je-novo)), a pojavljivanje sadržaja pri skrolovanju se podešava jednim brojem ([§13](#13-linija-pojavljivanja-sadržaja)).
 
 ## Sadržaj
 
@@ -16,6 +18,9 @@
 8. [Šta je privremeno](#8-šta-je-privremeno)
 9. [Brisanje demo podataka](#9-brisanje-demo-podataka)
 10. [Demo za klijenta: redosled](#10-demo-za-klijenta-redosled)
+11. [Ime i znak](#11-ime-i-znak)
+12. [Šta je novo](#12-šta-je-novo)
+13. [Linija pojavljivanja sadržaja](#13-linija-pojavljivanja-sadržaja)
 
 ---
 
@@ -25,7 +30,8 @@
 
 | Deo | Šta radi |
 |---|---|
-| **Početna strana** | 3D auto u rendgen prikazu. Dok se stranica skroluje, auto se rasklapa u 7 faza; klik na neki od 91 dela otvara artikle te kategorije koji su na stanju, sa cenom i dugmetom za korpu. Ispod: pretraga po broju dela, izbor vozila, kako se poručuje, kategorije, deo za majstore, marke, česta pitanja i kontakt. Za tastaturu i čitače ekrana postoji „Lista delova“. |
+| **Početna strana** | 3D auto u rendgen prikazu. Dok se stranica skroluje, auto se rasklapa u 7 faza; klik na neki od 91 dela otvara artikle te kategorije koji su na stanju, sa cenom i dugmetom za korpu. Ispod: pretraga po broju dela, izbor vozila, kako se poručuje, „Izdvojeno sa stanja“ (po jedan tražen deo na stanju iz četiri kategorije), devet sistema sa kategorijama, deo za majstore, marke, česta pitanja i kontakt. Za tastaturu i čitače ekrana postoji „Lista delova“. |
+| **Zaglavlje i donja traka** | Zaglavlje sa znakom, pretragom kao glavnom radnjom i izborom vozila; pri skrolovanju se skuplja. Na telefonu je na dnu traka Pretraga · Vozilo · Korpa · Kontakt. Vidi [§12](#12-šta-je-novo). |
 | **Katalog** | `/delovi` sa svim kategorijama, strana kategorije sa filterima (vozilo, proizvođač, kvalitet, stanje, cena), strane vozila (`/vozila/marka/model/generacija`) i strane „kategorija × vozilo“ koje Google indeksira tek kad imaju dovoljno artikala. |
 | **Pretraga** | Prepoznaje kataloške (OEM) brojeve bez obzira na razmake, tačke, crtice i velika slova, pa zamenske brojeve, pa nazive. Pretraga bez rezultata nudi upit i beleži se u adminu („Traženo, a nemamo“). |
 | **Artikal** | Kataloški i zamenski brojevi sa dugmetom za kopiranje, tabela vozila kojima odgovara, cena sa PDV-om (majstor vidi svoju), stanje i rok, korpa, upit, poziv, Viber i WhatsApp, „Javi mi kad stigne“. |
@@ -45,7 +51,7 @@ Registracija servisa (`/za-majstore/registracija`), odobrenje u adminu, cena sa 
 | Ekran | Šta radi |
 |---|---|
 | Pregled | Porudžbine i promet danas i za 7 dana, upiti bez odgovora (vreme čekanja u radnom vremenu), majstori na odobrenju, artikli bez zaliha, red čekanja, aktivnost. |
-| Porudžbine | Lista sa pretragom i filterima, detalj, promena statusa, izmena stavki pre potvrde, broj pošiljke, napomene, predračun i otpremnica za štampu, izvoz. |
+| Porudžbine | Lista sa pretragom i filterima, detalj, promena statusa (i iz reda u listi: klik na oznaku statusa nudi dozvoljene sledeće korake), vreme čekanja u četiri stepena, izmena stavki pre potvrde, broj pošiljke, napomene, predračun i otpremnica za štampu, izvoz. |
 | Upiti | Lista i detalj sa fotografijama, ponuda, pretvaranje u porudžbinu. Upiti majstora su označeni. |
 | Kupci, Majstori | Kupci sa porudžbinama i beleškama, blokiranje; majstori sa odobrenjem, nivoom rabata, izuzecima i odloženim plaćanjem. |
 | Proizvodi | Tabela sa pretragom i grupnim izmenama (sa poništavanjem), uređivač artikla: slike, brojevi, vozila, stanje, cene, nabavna cena, SEO, istorija izmena. |
@@ -260,7 +266,8 @@ Zaposleni koji je i majstor ne može sam sebi da odobri profil niti da menja svo
 
 | Šta | Gde se menja |
 |---|---|
-| **Naziv i znak** | Sajt nosi naziv „Euromotors Plus“ i znak „Euromotors Plus by OEM Parts“ (koraci 24 i 25). Naziv i poznati naziv radnje: Podešavanja → Firma; pravila pisanja: `lib/domain/brand.ts`. Znak je crtež: menja se u `scripts/brand/logo/logo.mjs`, pa `node scripts/brand/logo/build.mjs` i `node scripts/brand/logo/site.mjs`. Čeka se odobrenje klijenta (GO-LIVE §A). |
+| **Naziv i znak** | Sajt nosi naziv „Euromotors Plus“ i znak „Euromotors Plus by OEM Parts“. Naziv nije privremen, ali znak čeka odobrenje klijenta (GO-LIVE §A). Gde se šta menja i gde je komplet znaka: [§11](#11-ime-i-znak). |
+| **Početak broja porudžbine „SK“** | Ostatak radnog naziva. Podešavanja → Firma → „Prefiks porudžbine“, pre prve prave porudžbine. |
 | **Demo artikli** `DEMO-0001`…`DEMO-0150` i zamene `DEMO-E001`…`DEMO-E007` (izmišljeni kataloški brojevi, označeni „VAG (demo)“), demo majstor, 8 demo porudžbina, 4 demo upita | [§9](#9-brisanje-demo-podataka) |
 | **Probni zapisi iz automatskih testova** na razvojnoj bazi (porudžbine i upiti od „Admin Test…“, „Auto servis E2E“, adrese `@primer.rs`) | Ostaju na razvojnoj bazi. Produkciona baza počinje prazna, pa ih tamo nema. |
 | **Demo oglasna strana** `/ponuda/kocione-plocice-golf` | Podešavanja → Oglasne strane |
@@ -295,7 +302,8 @@ Na produkciji je jednostavnije: nova baza se napuni referentnim podacima i demo 
 
 Otvorite [`showcase/index.html`](showcase/index.html) za pregled sa snimcima, ili pokrenite sajt lokalno (README → Setup) i idite ovim redom (oko 15 minuta):
 
-1. **Početna:** skrolujte da se auto rasklopi, kliknite na turbinu, pokažite panel sa cenom i stanjem. Dugme „Lista delova“ za istu stvar bez 3D-a.
+0. **Znak:** otvorite [`brand/BRAND-BOARD.html`](brand/BRAND-BOARD.html) i pokažite znak, njegove oblike i primenu. Ovo je prva stvar koju klijent treba da odobri.
+1. **Početna:** skrolujte da se auto rasklopi, kliknite na turbinu, pokažite panel sa cenom i stanjem. Dugme „Lista delova“ za istu stvar bez 3D-a. Skrolujte dalje polako, da se vidi kako sadržaj stiže; isto pokažite na telefonu, sa donjom trakom.
 2. **Pretraga:** u polje upišite `5q0-615-666-a` (namerno sa crticama i malim slovima), pokažite da nađe disk.
 3. **Kategorija** `/delovi/kocioni-diskovi`: izaberite vozilo (Volkswagen → Golf → Golf VII), filteri se suze.
 4. **Artikal → Dodaj u korpu → Porudžbina:** prođite korake do pregleda (bez plaćanja na sajtu).
@@ -305,3 +313,228 @@ Otvorite [`showcase/index.html`](showcase/index.html) za pregled sa snimcima, il
 8. **Pre objave:** šta treba od klijenta (GO-LIVE §A).
 
 Pristupni podaci za razvojnu bazu nisu u ovom dokumentu: vlasnik je u `pipeline/env/ADMIN-CREDENTIALS.txt` (nije u gitu), demo majstor i kupac iz testova u `.playwright/audit-accounts.json`.
+
+---
+
+## 11. Ime i znak
+
+### 11.1 Ime
+
+| Šta | Kako se piše | Gde se vidi |
+|---|---|---|
+| Ime firme i sajta | **Euromotors Plus** (ne „Euromotors+“) | Zaglavlje, podnožje, naslovi strana, mejlovi (ime pošiljaoca), predračun, otpremnica, ikonica. |
+| Poznati naziv radnje | **OEM Parts** | Kraj naslova strana („ \| Euromotors Plus · OEM Parts“), podaci za Google, potpis u znaku. |
+| Naziv crteža znaka | „Euromotors Plus by OEM Parts“ | Samo kao ime znaka. U tekstu se „by“ ne piše. |
+
+Gde se menja, bez programera:
+
+- **Podešavanja → Firma → „Brend i brojevi dokumenata“:** naziv, „Poznati naziv radnje“, slogan, „Prefiks porudžbine“.
+- **Podešavanja → SEO → „Dodatak naslovu“:** šta stoji na kraju naslova strana. Kad je naslov dugačak, sajt sam ostavlja samo „ | Euromotors Plus“, a kod najdužih naziva artikala ništa.
+- **Podešavanja → Obaveštenja → Slanje e-pošte → „Ime pošiljaoca“:** prazno polje znači „Euromotors Plus“.
+
+Od radnog naziva „SKLOP“ ostalo je samo ovo, namerno: brojevi porudžbina počinju sa „SK“ (menja se prefiksom iznad, pre prve prave porudžbine), slogan „Rasklopi auto. Nađi deo.“ (menja se u istom odeljku) i ime „Euromotors“ ispod ikonice kad kupac doda sajt na početni ekran telefona (telefoni prikazuju najviše 12 znakova). Pravila pisanja za programera su u `lib/domain/brand.ts`.
+
+### 11.2 Gde je komplet znaka
+
+![Oblici znaka na tamnoj podlozi](brand/renders/logo-system-night.png)
+
+| Šta | Gde | Za koga |
+|---|---|---|
+| **Tabla za klijenta** | [`brand/BRAND-BOARD.html`](brand/BRAND-BOARD.html) (dvoklik, radi bez interneta) i slika [`brand/BRAND-BOARD.png`](brand/BRAND-BOARD.png) | Prikazivanje i odobrenje znaka. |
+| **Uputstvo za znak** | [`brand/LOGO.md`](brand/LOGO.md) | Svi oblici, boje, pravila, pisma i licence. |
+| **Vektori (SVG)** | `docs/brand/export/svg/`, 35 datoteka | Dizajner, štampar, firma koja pravi tablu. |
+| **Vektori (PDF)** | `docs/brand/export/pdf/`, 35 datoteka | Štampa. Svetle varijante su na tamnoj podlozi da se vide kad se otvore. |
+| **Slike (PNG)** | `docs/brand/export/png/`, 105 datoteka: svaka u tri veličine (osnovna, `@2x`, `@4x`), providna podloga | Word, Excel, Viber, društvene mreže. |
+| **Ikonice i gotovi formati** | `docs/brand/export/icons/`: `favicon.ico`, ikonice aplikacije, `email-header@2x.png`, `social-avatar.png` | Profilna slika, potpis u e-pošti. |
+| **Spisak svih datoteka** | `docs/brand/export/manifest.json` | Dimenzije svake datoteke. |
+| **Znak na sajtu, slike** | [`brand/site/`](brand/site/) | Kako znak stoji u zaglavlju, podnožju, adminu, mejlu i na slici za deljenje. |
+| **Datoteke koje koristi sajt** | `public/brand/` | Programer. Ne menjaju se ručno. |
+
+Datoteke se zovu `oblik-boja`, na primer `logo-horizontal-night.svg` ili `mark-black@2x.png`.
+
+### 11.3 Kako se koristi
+
+**Koji oblik:**
+
+| Oblik | Datoteka | Kada | Najmanja visina |
+|---|---|---|---|
+| Osnovni (znak, ime, potpis) | `logo-horizontal-*` | E-pošta, dokumenta, ponude, oglasi, društvene mreže. | 56 px · 14 mm |
+| Za zaglavlje (bez potpisa) | `logo-header-*` | Mali formati; zaglavlje sajta i admin ga već koriste. | 28 px · 8 mm |
+| Dvojni (oba imena iste visine) | `logo-dual-*` | Tabla iznad radnje, vozilo, baner. | 48 px · 14 mm |
+| Uspravni | `logo-stacked-*` | Nalepnica, kutija, uski prostori. | 120 px · 30 mm |
+| Samo ime | `logo-wordmark-*` | Kad znak već stoji pored. | 48 px · 12 mm |
+| Znak | `mark-*` | Ikonica, profilna slika, pečat. | 16 px · 5 mm |
+| Potpis radnje | `oem-parts-*` | Mesta gde stoji samo „OEM Parts“. | 40 px · 12 mm |
+
+Ako oblik ne staje u visinu iz tabele, uzima se sledeći manji. Znak se ne sužava da bi stao.
+
+**Koja boja:** `-night` (svetao znak, narandžast plus) za tamne podloge · `-paper` (grafitni znak, narandžast plus) za bele podloge · `-black` i `-white` za jednobojnu štampu, pečat, graviranje · `-orange` samo na tamnoj podlozi, kad je znak jedini element.
+
+**Kome šta poslati:**
+
+- **Štamparu i firmi koja pravi tablu ili oslikava vozilo:** PDF ili SVG, nikad PNG. Boje za štampu (Pantone, CMYK) nisu u kompletu; biraju se sa štamparom, sa probnog otiska, prema `#FF6B1A` i `#0D0F11`.
+- **Za Word, Excel, ponudu, Viber:** PNG `@2x` u varijanti `-paper` (bela podloga) ili `-night` (tamna).
+- **Profilna slika na mrežama i Viberu:** `icons/social-avatar.png` (1000 × 1000; mreže je same seku u krug).
+- **Potpis u e-pošti:** `icons/email-header@2x.png`, prikazan u veličini 477 × 88.
+
+**Pravila ukratko:**
+
+- Oko znaka ostaje prazan prostor širine jednog plusa (kod osnovnog znaka oko 40 % njegove visine).
+- Ne razvlači se, ne naginje, ne boji drugačije, bez senke, sjaja i okvira.
+- Narandžast je samo plus.
+- Ne stavlja se na narandžastu, šarenu ili fotografsku podlogu bez dovoljnog kontrasta.
+- Ne stoji uz znakove proizvođača vozila tako da izgleda kao da je radnja njihov ovlašćeni partner.
+
+Ceo spisak pravila je u [`brand/LOGO.md`](brand/LOGO.md) §4.
+
+### 11.4 Ako znak treba izmeniti (programer)
+
+Znak se ne crta ručno. Geometrija i sve mere su u `scripts/brand/logo/logo.mjs`; posle izmene:
+
+```bash
+node scripts/brand/logo/build.mjs     # public/brand i docs/brand/export
+node scripts/brand/logo/site.mjs      # ono što sajt koristi: components/brand/logoPaths.ts, ikonice
+node scripts/brand/logo/verify.mjs    # 11 provera
+node scripts/brand/logo/board.mjs     # tabla za klijenta
+```
+
+Na sajtu se znak koristi samo preko komponenti u `components/brand/`. Koji oblik stoji gde: `docs/design/DESIGN-SYSTEM.md` §2.4.
+
+### 11.5 Šta čeka klijenta
+
+Odobrenje znaka i reči „by“, provera žiga i boje za štampu. Stavke su u [GO-LIVE §A](GO-LIVE.md#znak-i-ime-koraci-24-i-25).
+
+---
+
+## 12. Šta je novo
+
+Posle prve predaje sajt je dobio novo ime i znak (koraci 24 i 25) i dorađen izgled svake strane (koraci 26 do 28). Poslovna logika, tokovi porudžbine i upita, cene i admin funkcije su isti; promenjeno je kako sajt izgleda i kako se ponaša pod rukom. Svi snimci su u [`showcase/index.html`](showcase/index.html), odeljak „Šta je novo“.
+
+### 12.1 Meki uglovi
+
+Nijedna kutija na sajtu više nema oštre uglove. Zaobljenje zavisi od uloge elementa:
+
+| Element | Zaobljenje |
+|---|---|
+| Oznake, čipovi, polja za potvrdu | 4 px |
+| Dugmad, polja za unos, padajuće liste | 6 px |
+| Kartice, paneli, tabele, obaveštenja, meniji | 8 px |
+| Slike i okviri crteža | 10 px |
+| Dijalozi, veliki paneli | 12 px |
+| Paneli koji izlaze odozdo (gornji uglovi) | 14 px |
+
+Ravni ostaju samo elementi koji idu od ivice do ivice ekrana: zaglavlje, podnožje, donja traka na telefonu, bočna traka admina. Isto važi u adminu i u mejlovima.
+
+Ako želite mekše ili oštrije: šest brojeva na jednom mestu, `--radius-xs` do `--radius-2xl` u `app/globals.css`. Automatski test (`tests/e2e/corners.spec.ts`) pada ako se na sajtu pojavi kutija sa oštrim uglom.
+
+### 12.2 Pojavljivanje sadržaja
+
+![Mreža kartica u trenutku pojavljivanja](showcase/reveal-desktop.webp)
+
+Sve na strani stiže jednom, dok se skroluje:
+
+- **Tekst** (naslovi, pasusi, stavke liste) stiže reč po reč.
+- **Blokovi** (kartice, slike, paneli, redovi, tabele) stižu kao celina: iz providnog u vidljivo, uz podizanje od 16 px (12 px na telefonu), za oko pola sekunde.
+- **Mreža kartica** stiže red po red, kartica za karticom, sa razmakom od 60 ms.
+- Svaki element se pojavi jednom i ne nestaje kad se skroluje nazad.
+- **Prvi ekran** je vidljiv odmah, pa strana ne čeka na animaciju.
+- **U adminu** se ništa ne pomera: paneli i tabele samo postanu vidljivi, da dugme ostane tamo gde se pojavilo.
+- Posetiocu koji je u sistemu uključio „smanji pokrete“ sve je odmah vidljivo. Bez JavaScript-a takođe.
+
+Probna strana na kojoj se sve ovo vidi: `/styleguide/otkrivanje`. Kada sadržaj kreće, podešava se jednim brojem: [§13](#13-linija-pojavljivanja-sadržaja).
+
+### 12.3 Novo zaglavlje i donja traka na telefonu
+
+![Kategorija na telefonu: skupljeno zaglavlje, traka sa filterima i donja traka](showcase/category-scrolled-mobile.webp)
+
+**Zaglavlje.** Na vrhu strane je više i providno, sa nešto većim znakom. U prvih 96 px skrolovanja skupi se na 64 px (56 px na telefonu) i dobije poluprovidnu podlogu. Pretraga je glavna radnja: najšire polje, na svakoj širini ekrana (ranije je na telefonu bila samo ikonica). Dugme za vozilo postaje narandžasto kad je vozilo izabrano. Na stranama koje počinju sopstvenim poljem za pretragu (početna, pretraga) polje u zaglavlju se pojavi tek kad se strana skroluje.
+
+**Donja traka na telefonu:** Pretraga · Vozilo · Korpa · Kontakt, uvek pod palcem. Izabrano vozilo i puna korpa su narandžasti. „Kontakt“ otvara spisak kanala iz Podešavanja → Firma (telefon, Viber, WhatsApp, e-pošta), pa upit. **Dok ti podaci nisu upisani, na tom mestu stoji „Upit“**, kao na snimku. Strana artikla, korpa, porudžbina i portal za majstore imaju svoju donju traku (cena i dugme), pa se ova tamo ne prikazuje.
+
+**Prelaz između strana.** Pri kliku na link nova strana se pojavi uz kratak prelaz (280 ms). Zaglavlje i donja traka se pri tome ne pomeraju.
+
+U Firefoxu se strana menja bez prelaza, a zaglavlje je odmah u skupljenom obliku. To je predviđeno ponašanje, a ne greška: Chrome, Edge i Safari imaju oba.
+
+### 12.4 Glavna poboljšanja po stranama
+
+![Početna: izdvojeni delovi sa stanja](showcase/home-featured-desktop.webp)
+
+| Strana | Šta je novo |
+|---|---|
+| **Početna** | Na telefonu se auto vidi na prvom ekranu, a polje za pretragu i dugme su u jednom redu. Nova sekcija „Izdvojeno sa stanja“ prikazuje po jedan tražen deo na stanju iz kategorija kočione pločice, kočioni diskovi, amortizeri i filteri. Spisak od 44 linka zamenjen je sa devet panela po sistemima. |
+| **Kartica artikla** | Slika popunjava okvir. Na telefonu je kartica niža (oko 190 px umesto 250), sa cenom i dugmetom u jednom redu, pa na ekran staje više artikala. Dugme za korpu je uvek vidljivo. |
+| **Kategorija i pretraga** | Na telefonu jedna traka sa filterima, sortiranjem i brojem artikala koja ostaje na vrhu; prvi artikal je bliže vrhu ekrana. Filteri sa strane su u jednom panelu. Pretraga bez rezultata vodi na upit po broju šasije i nudi još dva puta dalje. |
+| **Artikal** | Cena, stanje i „Dodaj u korpu“ su u jednoj izdignutoj kutiji koja na računaru prati skrolovanje. Na telefonu su naziv, kataloški broj, vozilo, cena i stanje na prvom ekranu, a traka sa cenom i dugmetom stoji na dnu dok se glavno dugme ne vidi. |
+| **Korpa i porudžbina** | Stavke u jednom panelu, zbir u izdignutoj kutiji koja prati skrolovanje, bez dvostrukog međuzbira na telefonu. Svaki korak porudžbine je jedan panel. |
+| **Upit po broju šasije** | Tri panela; pomoć za broj šasije stoji pored polja; ono što je iz broja prepoznato vidi se odmah. |
+| **Portal za majstore, nalog, prijava** | U portalu četiri kartice (Pregled, Brza porudžbina, Porudžbine, Cenovnik), ostalo pod „Još“. Nalog u dve kolone. Prijava i registracija sa objašnjenjem pored obrasca. |
+| **Tekstualne strane, 404** | Uža kolona za čitanje sa sadržajem sa strane. Kontakt u dve kolone, bez praznih blokova. Jedan izgled za sve strane grešaka. |
+| **Admin** | Status porudžbine se menja iz reda u listi (svaki korak se potvrđuje). Vreme čekanja ima četiri stepena: u roku, rok ističe, kasni, dugo kasni. Redovi su visoki 48 px, a na dnu liste piše „50 od N“. Kartice na pregledu su šest zasebnih pločica. |
+| **E-poruke** | Nov izgled sva 25 šablona: obaveštenje, dugme, stavke u dva reda, podaci za uplatu u kutiji. Čitljive i u tamnom režimu. |
+| **3D prikaz** | Redovi u panelu dela imaju dugme sa natpisom; lista delova prikazuje i slike delova. |
+
+Spisak gde se šta menja ako nešto ne odgovara:
+
+- **Kategorije u „Izdvojeno sa stanja“:** jedan spisak, `FEATURED_PART_CATEGORIES` u `app/(shop)/page.tsx` (programer).
+- **Kanali u donjoj traci i na strani Kontakt:** Podešavanja → Firma.
+- **Redosled kartica u portalu za majstore** i **granice za vreme čekanja u adminu:** javite programeru; oba su na jednom mestu u kodu.
+
+### 12.5 Šta je provereno
+
+Posle dorade izgleda sve provere su ponovljene na konačnom kodu (12.10.2026.):
+
+| Provera | Rezultat |
+|---|---|
+| Build, TypeScript, ESLint | bez grešaka |
+| Automatski testovi (logika i baza) | 1.306 prolazi |
+| Testovi u pregledaču | 188 prolazi, 0 pada |
+| Uglovi | 2.472 elementa na 1440 px i 2.127 na 390 px, na 39 strana i 28 otvorenih dijaloga i menija: nijedan oštar |
+| Pojavljivanje sadržaja | 78 poseta (strana × širina): ništa ne ostaje skriveno |
+| Brzina na telefonu (Lighthouse) | početna 96 · kategorija 97 · artikal 97 |
+| Pristupačnost i SEO (Lighthouse) | 100 / 100 na sve tri strane |
+
+Brzina je merena na lokalnom računaru; posle objave je treba proveriti na pravoj adresi (GO-LIVE §14).
+
+---
+
+## 13. Linija pojavljivanja sadržaja
+
+**Pravilo.** Element se pojavi kad njegova **sredina** pređe zamišljenu vodoravnu liniju na ekranu. Linija je na 18 % visine ekrana iznad donje ivice. Element viši od 60 % ekrana kreće kad mu **gornja ivica** pređe istu liniju, da ne bi stajao skriven dok je na ekranu. Isto pravilo važi za tekst i za blokove.
+
+**Jedan broj.**
+
+| | |
+|---|---|
+| Konstanta | `REVEAL_LINE` |
+| Datoteka | `constants/revealConfig.ts` |
+| Podrazumevana vrednost | `0.18` (18 % visine ekrana iznad donje ivice) |
+
+**Kako se menja (programer):**
+
+1. U `constants/revealConfig.ts` promenite broj, na primer `export const REVEAL_LINE = 0.15;` za 15 %.
+2. Ponovo napravite sajt (`npm run build`), odnosno objavite novu verziju.
+
+Ništa drugo se ne dira: posmatrač koji pokreće animacije, probna strana i automatski testovi čitaju isti broj.
+
+**Šta broj znači:**
+
+- **Veći broj** (npr. `0.22`): sadržaj kreće kasnije, više na ekranu. Pojavljivanje se bolje vidi, ali ispod mreže kartica ostaje šira prazna traka.
+- **Manji broj** (npr. `0.12`): sadržaj kreće ranije, bliže donjoj ivici. Na telefonu tada kreće tik uz donju traku i lako promakne.
+- Razuman raspon je od `0.12` do `0.25`.
+
+**Zašto 18 %, a ne 15 %.** Tražili ste 15 %, uz dozvolu da linija ide više gde se pojavljivanje ne primećuje. Na telefonu donja traka pokriva donjih 60 piksela ekrana, pa je na 15 % linija samo 67 piksela iznad onoga što se vidi i red teksta je kretao tik uz traku. Na 18 % linija je 92 piksela iznad trake. Na računaru svaki korak naviše širi praznu traku ispod mreže kartica, pa linija nije išla više nego što telefon traži.
+
+**Kako pogledati pre odluke:**
+
+- Strana `/styleguide/otkrivanje` na računaru i na telefonu: ispisuje trenutnu liniju i ima primer za svaki slučaj (jedan blok, mreža kartica, visok blok, admin).
+- Poređenje vrednosti bez izmene koda, na pokrenutom sajtu:
+
+  ```bash
+  node scripts/qa/ui-boost/reveal-frames.mjs /delovi/kocioni-diskovi --base=http://localhost:3000 --line=0.15
+  ```
+
+  Skripta skroluje stranu na 390 i 1440 px i čuva slike u trenutku kad mreža kreće.
+
+**Posle izmene** pokrenite `npm test` i `npx playwright test tests/e2e/reveal.spec.ts tests/e2e/reveal-routes.spec.ts`.
+
+U istoj datoteci su i ostale mere pojavljivanja, koje obično ne treba dirati: `REVEAL_TALL_RATIO` (`0.6`, od koje visine se gleda gornja ivica) i `BLOCK_REVEAL` (trajanje 520 ms, podizanje 16 px, razmak 60 ms između kartica). Brzina teksta reč po reč je u `constants/textRevealConfig.ts`.

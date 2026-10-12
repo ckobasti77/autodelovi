@@ -1,10 +1,45 @@
 # Euromotors Plus · OEM Parts — Šta mora da obezbedi vlasnik / klijent
 
-> **Spojeno u [`GO-LIVE.md`](GO-LIVE.md) (korak 23, 01.10.2026.).** Tamo je ista lista bez duplikata, poređana po redosledu rada, sa oznakom ko šta radi. Ovaj fajl ostaje kao istorija po koracima (npr. §9 sa punim spiskom podataka o vozilima za proveru); nove stavke upisujte u GO-LIVE.
+> **Spojeno u [`GO-LIVE.md`](GO-LIVE.md) (korak 23, 01.10.2026.).** Tamo je ista lista bez duplikata, poređana po redosledu rada, sa oznakom ko šta radi. Ovaj fajl ostaje kao istorija po koracima (npr. §9 sa punim spiskom podataka o vozilima za proveru); nove stavke upisujte u GO-LIVE. Izuzetak je [§0](#0-tri-stvari-bez-kojih-sajt-ne-može-da-se-objavi-stanje-12102026) na vrhu: tri stvari koje drže objavu, ažurirane 12.10.2026.
 
 > Deo dokumentacije sajta Euromotors Plus — indeks: [README](README.md). Ova lista se dopunjuje u svakom koraku; na kraju (korak 23) spaja se u `docs/GO-LIVE.md`. Ništa odavde se ne prikazuje na sajtu kao „TODO" — sajt sakriva prazna polja dok se ne popune u podešavanjima.
 
 Oznake: **[P0]** potrebno pre puštanja uživo · **[P1]** potrebno u prvim nedeljama · **[P2]** kada bude vremena.
+
+## 0. Tri stvari bez kojih sajt ne može da se objavi (stanje 12.10.2026.)
+
+Sve ostalo u ovom spisku može da sačeka ili može da se uradi bez vas. Ove tri stvari ne mogu. Iste stavke su u [`GO-LIVE.md`](GO-LIVE.md) §A.
+
+### 0.1 Odobrenje znaka od klijenta
+
+- [ ] **[P0]** Klijent treba da odobri znak „Euromotors Plus by OEM Parts“.
+  - **Šta pogledati:** tablu [`brand/BRAND-BOARD.html`](brand/BRAND-BOARD.html) (dvoklik, radi bez interneta; ista stvar kao slika: [`brand/BRAND-BOARD.png`](brand/BRAND-BOARD.png)) i znak na samom sajtu: [`showcase/index.html`](showcase/index.html), odeljak „Znak“, i slike u [`brand/site/`](brand/site/) (zaglavlje, podnožje, admin, mejl, slika za deljenje, ikonica).
+  - **Šta javiti:** „odobreno“, ili šta treba drugačije.
+  - **Posebno potvrditi reč „by“** u potpisu. Ako ne opisuje dobro odnos firme i radnje, osnovni može da postane dvojni znak, u kojem oba imena stoje ravnopravno i bez „by“.
+  - **Dok odobrenje ne stigne, sajt se ne objavljuje pod ovim znakom.** Izmena znaka se radi u `scripts/brand/logo/` i ugrađuje u sajt jednom naredbom ([`PREDAJA.md` §11.4](PREDAJA.md#114-ako-znak-treba-izmeniti-programer)).
+- [ ] **[P1]** Pre registracije žiga, izrade table i oslikavanja vozila: provera sličnih znakova (Zavod za intelektualnu svojinu RS, baza TMview), najbolje preko zastupnika. Ova provera nije urađena.
+
+### 0.2 Pravi domen i adresa pošiljaoca e-pošte
+
+- [ ] **[P0] Domen.** Javite adresu sajta (npr. `www.vas-domen.rs`) i da li je glavna adresa sa `www` ili bez. Dajte pristup nalogu kod registrara domena, jer se tamo upisuju DNS zapisi za sajt (Vercel) i za e-poštu (Resend).
+  - Na sajtu i u kodu nema privremenog domena. Dok adresa nije upisana, linkovi u mejlovima vode na adresu razvojnog računara, a na slici za deljenje nema domena.
+- [ ] **[P0] Adresa pošiljaoca.** Javite:
+  - adresu sa koje sajt šalje poruke kupcima, na tom domenu (npr. `prodaja@vas-domen.rs`);
+  - adresu na koju stižu odgovori kupaca;
+  - da li ime pošiljaoca ostaje „Euromotors Plus“.
+  - Dok adresa nije upisana i domen proveren kod Resend-a, poruke se samo beleže u Admin → E-pošta i ne odlaze. Provera domena ume da traje, pa ovo treba pokrenuti prvo (GO-LIVE §1 i §5).
+
+### 0.3 Pravi podaci firme
+
+- [ ] **[P0]** Pošaljite ili sami upišite u Admin → Podešavanja:
+  - **Firma:** pun pravni naziv, sedište, PIB, matični broj, registar (APR). Obavezno po Zakonu o elektronskoj trgovini. PIB i matični broj se proveravaju kontrolnom cifrom.
+  - **Radnja:** adresa za lično preuzimanje i link ka mapi.
+  - **Kontakt za kupce:** telefoni, Viber broj, WhatsApp broj, e-pošta.
+  - **Tekući račun i banka** za predračun (18 cifara sa kontrolnim brojem, npr. `160-0000000123456-78`).
+  - **Radno vreme i neradni dani** (Podešavanja → Radno vreme). **Pažnja:** sajt već prikazuje radno vreme „Pon–pet 8–17, sub 8–14“ u podnožju i na strani Kontakt. To je početna vrednost iz podešavanja (po njoj se računaju podsetnici), a ne podatak vaše radnje. Ispravite je pre objave.
+  - **Kurirske službe** sa kojima radite i linkovi za praćenje pošiljke (Podešavanja → Dostava i plaćanje).
+  - Potvrdite i da su nazivi tačno napisani: „Euromotors Plus“ i „OEM Parts“ (Podešavanja → Firma → „Brend i brojevi dokumenata“).
+- Dok ovi podaci nisu upisani: sajt ne prikazuje kontakt, u donjoj traci na telefonu umesto „Kontakt“ stoji „Upit“, a pregled u adminu, predračun i otpremnica prikazuju žuto upozorenje sa spiskom onoga što nedostaje. Ništa na sajtu nije izmišljeno umesto ovih podataka.
 
 ## 1. Podaci firme (Admin → Podešavanja → Firma)
 - [x] **[P0]** Naziv prodavnice: od koraka 25 sajt nosi naziv „Euromotors Plus“ (poznati naziv radnje „OEM Parts“); radni naziv „SKLOP“ je uklonjen. Slogan „Rasklopi auto. Nađi deo.“ ostaje dok ga ne potvrdite ili zamenite (Podešavanja → Firma).
@@ -225,3 +260,11 @@ U koraku 27 novi sistem je primenjen na svaku stranu: početnu, katalog, stranu 
 - [ ] **[P2] Administracija, spisak porudžbina.** Status se sada menja iz reda: klik na oznaku statusa otvara dozvoljene sledeće korake (svaki se potvrđuje). Vreme čekanja ima četiri stepena: u roku, rok ističe, kasni, dugo kasni. Recite ako želite druge granice.
 - [ ] **[P3] Portal za majstore.** U traci su četiri kartice (Pregled, Brza porudžbina, Porudžbine, Cenovnik), ostalo je pod „Još“. Ako majstori najčešće traže nešto drugo, redosled se menja na jednom mestu.
 - [ ] **[P3] Probni podaci u razvojnoj bazi.** Testovi su ostavili kampanje sa veoma dugim nazivima; na strani Administracija → Izvori link ka takvoj kampanji ne radi (adresa je preduga). U pravoj bazi takvih naziva nema; razvojnu bazu očistite pre pokazivanja.
+
+## 18. Predaja posle novog imena i izgleda (korak 29)
+
+Dokumenti za predaju su dopunjeni: [`PREDAJA.md`](PREDAJA.md) §11 (ime i znak, komplet znaka), §12 (šta je novo), §13 (linija pojavljivanja sadržaja); [`showcase/index.html`](showcase/index.html) ima nove snimke na 390 i 1440 px i tablu znaka.
+
+- [ ] **[P0] Tri stvari iz [§0](#0-tri-stvari-bez-kojih-sajt-ne-može-da-se-objavi-stanje-12102026)**: odobrenje znaka, pravi domen sa adresom pošiljaoca e-pošte, pravi podaci firme.
+- [ ] **[P1] Pokažite klijentu prikaz.** Otvorite `docs/showcase/index.html` (dvoklik, radi bez interneta) i prođite redom: znak, 3D auto, šta je novo, kupac, majstor, radnja, pre objave. Redosled za živi demo je u `PREDAJA.md` §10.
+- [ ] **[P2] Komplet znaka za štampu i saradnike** je u `docs/brand/export/` (SVG, PDF, PNG, ikonice). Štamparu i firmi koja pravi tablu šaljite PDF ili SVG, nikad PNG; boje za štampu izaberite sa štamparom (`PREDAJA.md` §11.3).

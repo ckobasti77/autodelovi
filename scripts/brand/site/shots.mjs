@@ -86,21 +86,35 @@ if (want("footer")) {
     const { context, page } = await open(width, 900, scale);
     await page.goto(`${BASE}/delovi`, { waitUntil: "networkidle" });
     const footer = page.locator("footer").last();
-    await footer.scrollIntoViewIfNeeded();
-    await page.waitForTimeout(1200);
-    // Clipped from the full page: an element shot would have the sticky header lying over it.
-    const clip = await footer.evaluate((el) => {
+    // The footer is a `content-visibility: auto` section: off screen it is not painted, so a
+    // clip of the full page comes out empty (the step-25 pictures did). It is captured in view,
+    // in a viewport tall enough to hold it under the sticky header, after its reveal has ended.
+    // Its height is only an estimate until it has been drawn once: go to the end, measure,
+    // make room, and repeat until the page stops growing.
+    for (let pass = 0, last = -1; pass < 6; pass += 1) {
+      await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+      await page.waitForTimeout(350);
+      const measured = await footer.evaluate((el) => Math.ceil(el.getBoundingClientRect().height));
+      await page.setViewportSize({ width, height: Math.max(900, measured + 120) });
+      const total = await page.evaluate(() => document.documentElement.scrollHeight);
+      if (total === last) break;
+      last = total;
+    }
+    await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+    await page.waitForFunction(
+      () => {
+        const f = [...document.querySelectorAll("footer")].pop();
+        return f && !f.querySelector('[data-reveal-state="pending"], [data-reveal-state="running"]');
+      },
+      null,
+      { timeout: 15_000 },
+    );
+    await page.waitForTimeout(600);
+    const box = await footer.evaluate((el) => {
       const r = el.getBoundingClientRect();
-      const box = { x: 0, y: r.top + window.scrollY, width: r.width, height: r.height };
-      window.scrollTo(0, 0);
-      return box;
+      return { x: 0, y: Math.max(0, r.top), width: r.width, height: Math.min(r.height, window.innerHeight - Math.max(0, r.top)) };
     });
-    await page.waitForTimeout(300);
-    await page.screenshot({
-      path: path.join(OUT, `footer-night-${width}.png`),
-      fullPage: true,
-      clip,
-    });
+    await page.screenshot({ path: path.join(OUT, `footer-night-${width}.png`), clip: box });
     const fit = await page.evaluate(() => {
       const f = [...document.querySelectorAll("footer")].pop();
       const art = [...f.querySelectorAll("a[aria-label$='početna'] svg")].find(

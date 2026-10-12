@@ -1,6 +1,10 @@
-// Showcase screenshots for the client demo (step 23): docs/showcase/*.webp.
+// Showcase screenshots for the client demo (steps 23 and 29): docs/showcase/*.webp.
 //
 //   node scripts/showcase/shots.mjs [--base http://localhost:3100] [--only home,catalog,...]
+//
+// Every page is scrolled end to end before it is captured, so the site-wide reveal has finished
+// and no block is caught mid-entrance; a capture that still shows a pending element is reported.
+// The one deliberate exception is `reveal-*`, a frame taken while a grid is arriving.
 //
 // Needs a production build with NEXT_PUBLIC_TEST_HOOKS=1 (the 3D hero hooks drive the explode),
 // SEED_ADMIN_EMAIL / SEED_ADMIN_PASSWORD for the admin, and .playwright/audit-accounts.json for the
@@ -84,10 +88,59 @@ async function revealAll(page, y = 0) {
   await settle(page, 1200);
 }
 
-async function shot(page, name, { fullPage = false, clip } = {}) {
+/** WebP stores at most 16383 px a side; a full-page phone capture at 2× can be taller. */
+const WEBP_MAX = 16000;
+
+async function shot(page, name, { fullPage = false, clip, owed = true } = {}) {
+  if (owed) {
+    // Nothing on the captured area may still be waiting for its entrance.
+    const pending = await page.evaluate((whole) => {
+      const vh = window.innerHeight;
+      return [...document.querySelectorAll('[data-reveal-state="pending"]')].filter((el) => {
+        const r = el.getBoundingClientRect();
+        return r.width > 0 && r.height > 0 && (whole || (r.bottom > 0 && r.top < vh));
+      }).length;
+    }, fullPage);
+    if (pending) problems.push(`${name}: ${pending} element(s) still pending at capture`);
+  }
   const png = await page.screenshot({ fullPage, clip });
-  await sharp(png).webp({ quality: 82 }).toFile(`${OUT}/${name}.webp`);
+  const { height } = await sharp(png).metadata();
+  const image = height > WEBP_MAX ? sharp(png).resize({ height: WEBP_MAX }) : sharp(png);
+  await image.webp({ quality: 82 }).toFile(`${OUT}/${name}.webp`);
   console.log(`  ${name}.webp`);
+}
+
+/** Scroll-through, back to `y`, capture: what every still of a page goes through. */
+async function capture(page, name, { y = 0, ...options } = {}) {
+  await revealAll(page, y);
+  await shot(page, name, options);
+}
+
+/** Scrolls so that `selector` sits `offset` px under the top edge; returns the scroll position. */
+async function scrollToElement(page, selector, offset = 96) {
+  return page.evaluate(
+    ([sel, off]) => {
+      const el = document.querySelector(sel);
+      if (!el) return 0;
+      const y = Math.max(0, Math.round(el.getBoundingClientRect().top + window.scrollY - off));
+      window.scrollTo(0, y);
+      return y;
+    },
+    [selector, offset],
+  );
+}
+
+async function addToCart(page) {
+  await page.goto(`${BASE}${PRODUCT}`, { waitUntil: "networkidle" });
+  await page.locator("#buy-box").getByTestId("product-add-to-cart").click();
+  await page.waitForFunction(
+    () =>
+      document
+        .querySelector('#buy-box [data-testid="product-add-to-cart"]')
+        ?.textContent?.includes("Dodato"),
+    null,
+    { timeout: 20_000 },
+  );
 }
 
 async function signIn(page, email, password, next) {
@@ -113,30 +166,30 @@ const jobs = {
       await page.mouse.move(1000, 450);
       await page.evaluate(() => window.scrollTo(0, 80));
       await page.waitForFunction(() => window.__sklop3d?.ready === true, null, { timeout: 180_000 });
-      await page.evaluate(() => window.scrollTo(0, 0));
+      await revealAll(page, 0);
       await settle(page, 1600);
       if (tag === "mobile") {
         await page.evaluate(() => {
           const track = document.querySelector('[data-testid="hero-track"]');
-          if (track) window.scrollTo(0, track.getBoundingClientRect().top + window.scrollY - 56);
+          // 48 px into the track: the frame is pinned under the header by then, and the last line
+          // of the copy above it is no longer showing through the translucent header.
+          if (track) window.scrollTo(0, track.getBoundingClientRect().top + window.scrollY - 56 + 48);
         });
         await settle(page, 1400);
       }
       await page.evaluate(() => window.__sklop3d.explode(0));
       await settle(page, 1400);
+      if (tag === "mobile") {
+        // explode(0) returns to the very start of the track, where the last line of the copy
+        // above still shows through the translucent header. 48 px on, the frame is pinned and
+        // the stage is still 00.
+        await page.evaluate(() => window.scrollBy(0, 48));
+        await settle(page, 900);
+      }
       await shot(page, `home-assembled-${tag}`);
       await page.evaluate(() => window.__sklop3d.explode(1));
       await settle(page, 1600);
       await shot(page, `home-exploded-${tag}`);
-      if (tag === "desktop") {
-        // The 3D stage alone (inside its corner ticks) for the showcase's compare slider.
-        for (const state of ["assembled", "exploded"]) {
-          await sharp(`${OUT}/home-${state}-desktop.webp`)
-            .extract({ left: 605, top: 72, width: 800, height: 746 })
-            .webp({ quality: 85 })
-            .toFile(`${OUT}/home-stage-${state}.webp`);
-        }
-      }
       await page.evaluate(() => window.__sklop3d.selectPart("turbina"));
       await page.waitForSelector('[data-testid="part-panel"]', { timeout: 20_000 });
       await page
@@ -147,11 +200,26 @@ const jobs = {
       await context.close();
     }
     // The rest of the home page below the hero (desktop, one tall frame).
-    const { context, page } = await newPage(DESKTOP, "home-page");
-    await page.goto(`${BASE}/`, { waitUntil: "load" });
-    await revealAll(page, 0);
-    await shot(page, "home-page-desktop", { fullPage: true });
-    await context.close();
+    for (const [tag, device] of [
+      ["desktop", DESKTOP],
+      ["mobile", MOBILE],
+    ]) {
+      const { context, page } = await newPage(device, `home-page-${tag}`);
+      await page.goto(`${BASE}/`, { waitUntil: "load" });
+      await capture(page, `home-page-${tag}`, { fullPage: true });
+      // The two sections step 27 added to the home page, as the visitor meets them.
+      for (const [name, selector] of [
+        ["home-featured", "#featured-title"],
+        ["home-systems", "#systems-title"],
+      ]) {
+        const y = await scrollToElement(page, selector, tag === "desktop" ? 120 : 84);
+        await settle(page, 900);
+        await page.evaluate((top) => window.scrollTo(0, top), y);
+        await settle(page, 500);
+        await shot(page, `${name}-${tag}`);
+      }
+      await context.close();
+    }
   },
 
   async catalog() {
@@ -161,11 +229,9 @@ const jobs = {
     ]) {
       const { context, page } = await newPage(device, `category-${tag}`);
       await page.goto(`${BASE}${CATEGORY}`, { waitUntil: "networkidle" });
-      await revealAll(page, 0);
-      await shot(page, `category-${tag}`);
+      await capture(page, `category-${tag}`);
       await page.goto(`${BASE}${PRODUCT}`, { waitUntil: "networkidle" });
-      await revealAll(page, 0);
-      await shot(page, `product-${tag}`);
+      await capture(page, `product-${tag}`);
       await context.close();
     }
   },
@@ -176,22 +242,17 @@ const jobs = {
       ["mobile", MOBILE],
     ]) {
       const { context, page } = await newPage(device, `checkout-${tag}`);
-      await page.goto(`${BASE}${PRODUCT}`, { waitUntil: "networkidle" });
-      const add = page.locator("#buy-box").getByTestId("product-add-to-cart");
-      await add.click();
-      await page.waitForFunction(
-        () => document.querySelector('#buy-box [data-testid="product-add-to-cart"]')?.textContent?.includes("Dodato"),
-        null,
-        { timeout: 20_000 },
-      );
+      await addToCart(page);
+      await page.goto(`${BASE}/korpa`, { waitUntil: "networkidle" });
+      await settle(page, 1200);
+      await capture(page, `cart-${tag}`);
       await page.goto(`${BASE}/porudzbina`, { waitUntil: "networkidle" });
       await page.getByTestId("checkout-step-contact").waitFor({ timeout: 20_000 });
       await page.getByLabel("Ime", { exact: true }).fill("Nikola");
       await page.getByLabel("Prezime").fill("Stanković");
       await page.getByLabel("Telefon", { exact: true }).fill("064 123 4567");
       await page.getByLabel("E-pošta").fill("nikola.stankovic@primer.rs");
-      await settle(page, 600);
-      await shot(page, `checkout-contact-${tag}`);
+      await capture(page, `checkout-contact-${tag}`);
       await page.getByTestId("checkout-next").click();
       await page.getByTestId("checkout-step-delivery").waitFor();
       await page.getByRole("radio", { name: /Kurirska služba/ }).click();
@@ -202,9 +263,7 @@ const jobs = {
       await page.getByTestId("checkout-step-payment").waitFor();
       await page.getByTestId("checkout-next").click();
       await page.getByTestId("checkout-step-review").waitFor();
-      await page.evaluate(() => window.scrollTo(0, 0));
-      await settle(page, 1200);
-      await shot(page, `checkout-review-${tag}`);
+      await capture(page, `checkout-review-${tag}`);
       await context.close();
     }
   },
@@ -219,9 +278,7 @@ const jobs = {
       await page.getByTestId("inquiry-vin-input").fill("WVWZZZ1KZ8W123456");
       await page.getByTestId("inquiry-vin-input").blur();
       await settle(page, 1500);
-      await page.evaluate(() => window.scrollTo(0, 0));
-      await settle(page, 600);
-      await shot(page, `inquiry-${tag}`);
+      await capture(page, `inquiry-${tag}`);
       await context.close();
     }
   },
@@ -235,8 +292,8 @@ const jobs = {
       const { context, page } = await newPage(device, `mechanic-${tag}`);
       await signIn(page, accounts.mechanic.email, accounts.mechanic.password, "/majstor");
       await page.goto(`${BASE}/majstor`, { waitUntil: "networkidle" });
-      await settle(page, 1800);
-      await shot(page, `mechanic-dashboard-${tag}`);
+      await settle(page, 1200);
+      await capture(page, `mechanic-dashboard-${tag}`);
       await page.goto(`${BASE}/majstor/brza-porudzbina`, { waitUntil: "networkidle" });
       await page.getByTestId("mechanic-quick-order-input").fill(QUICK_LINES);
       await page.getByTestId("mechanic-quick-order-check").click();
@@ -244,11 +301,9 @@ const jobs = {
         .getByTestId("mechanic-quick-order-row")
         .nth(2)
         .waitFor({ timeout: 20_000 });
-      await settle(page, 1200);
-      await shot(page, `mechanic-quick-order-${tag}`);
+      await capture(page, `mechanic-quick-order-${tag}`);
       await page.goto(`${BASE}${PRODUCT}`, { waitUntil: "networkidle" });
-      await revealAll(page, 0);
-      await shot(page, `mechanic-price-${tag}`);
+      await capture(page, `mechanic-price-${tag}`);
       await context.close();
     }
   },
@@ -268,8 +323,8 @@ const jobs = {
     ];
     for (const [name, path] of pages) {
       await page.goto(`${BASE}${path}`, { waitUntil: "networkidle" });
-      await settle(page, 1800);
-      await shot(page, `${name}-desktop`);
+      await settle(page, 1200);
+      await capture(page, `${name}-desktop`);
     }
     // Newest order detail.
     await page.goto(`${BASE}/admin/porudzbine`, { waitUntil: "networkidle" });
@@ -277,8 +332,8 @@ const jobs = {
     const number = (await page.locator("table").first().innerText()).match(/SK-\d{4}-\d{6}/)?.[0];
     if (number) {
       await page.goto(`${BASE}/admin/porudzbine/${number}`, { waitUntil: "networkidle" });
-      await settle(page, 2000);
-      await shot(page, "admin-order-detail-desktop");
+      await settle(page, 1400);
+      await capture(page, "admin-order-detail-desktop");
     } else {
       problems.push("admin: no order number found in the orders table");
     }
@@ -289,15 +344,15 @@ const jobs = {
       .setInputFiles(resolve("tests/fixtures/import/proizvodi-500.xlsx"));
     await page.getByTestId("import-row-count").waitFor({ timeout: 30_000 });
     await settle(page, 1000);
-    await shot(page, "admin-import-file-desktop");
+    await capture(page, "admin-import-file-desktop");
     await page.getByTestId("import-to-mapping").click();
     await page.getByTestId("import-mapping").waitFor();
     await settle(page, 1200);
-    await shot(page, "admin-import-mapping-desktop");
+    await capture(page, "admin-import-mapping-desktop");
     await page.getByTestId("import-to-check").click();
     await page.getByTestId("import-problems").waitFor({ timeout: 30_000 });
     await settle(page, 1200);
-    await shot(page, "admin-import-check-desktop");
+    await capture(page, "admin-import-check-desktop");
     // E-mail sample: the „order confirmed“ template, desktop and phone preview.
     for (const [query, name] of [
       ["sablon=order_confirmed", "email-order-confirmed-desktop"],
@@ -308,7 +363,7 @@ const jobs = {
       const preview = page.getByTestId("template-preview");
       await preview.waitFor({ timeout: 30_000 });
       await settle(page, 1500);
-      await shot(page, `${name}-admin`);
+      await capture(page, `${name}-admin`);
       const frame = preview.locator("iframe").first();
       if (await frame.count()) {
         await frame.screenshot().then((png) =>
@@ -327,8 +382,8 @@ const jobs = {
       ["admin-orders", "/admin/porudzbine"],
     ]) {
       await phone.page.goto(`${BASE}${path}`, { waitUntil: "networkidle" });
-      await settle(phone.page, 1800);
-      await shot(phone.page, `${name}-mobile`);
+      await settle(phone.page, 1200);
+      await capture(phone.page, `${name}-mobile`);
     }
     await phone.context.close();
   },
@@ -349,26 +404,111 @@ jobs.adminExtra = async () => {
     ["admin-export", "/admin/izvoz"],
   ]) {
     await page.goto(`${BASE}${path}`, { waitUntil: "networkidle" });
-    await settle(page, 1800);
-    await shot(page, `${name}-desktop`);
+    await settle(page, 1200);
+    await capture(page, `${name}-desktop`);
   }
   await page.goto(`${BASE}/admin/upiti`, { waitUntil: "networkidle" });
   await settle(page, 1500);
   const number = (await page.locator("table").first().innerText()).match(/UP-\d{4}-\d{6}/)?.[0];
   if (number) {
     await page.goto(`${BASE}/admin/upiti/${number}`, { waitUntil: "networkidle" });
-    await settle(page, 2000);
-    await shot(page, "admin-inquiry-detail-desktop");
+    await settle(page, 1400);
+    await capture(page, "admin-inquiry-detail-desktop");
   }
   await page.goto(`${BASE}/admin/proizvodi`, { waitUntil: "networkidle" });
   await settle(page, 1500);
   const productLink = page.locator('a[href^="/admin/proizvodi/"]:not([href$="/novi"])').first();
   if (await productLink.count()) {
     await page.goto(`${BASE}${await productLink.getAttribute("href")}`, { waitUntil: "networkidle" });
-    await settle(page, 2000);
-    await shot(page, "admin-product-editor-desktop");
+    await settle(page, 1400);
+    await capture(page, "admin-product-editor-desktop");
   }
   await context.close();
+};
+
+/**
+ * What steps 26–28 added (step 29): the shell (header, mobile action bar, menu, search), the
+ * catalog index, search with and without results, sign-in, the account, and one frame of a grid
+ * while it is arriving.
+ */
+jobs.whatsNew = async () => {
+  for (const [tag, device] of [
+    ["desktop", DESKTOP],
+    ["mobile", MOBILE],
+  ]) {
+    const { context, page } = await newPage(device, `new-${tag}`);
+    // Catalog index: the header at the top of a page (tall, no surface) and, on the phone, the
+    // action bar.
+    await page.goto(`${BASE}/delovi`, { waitUntil: "networkidle" });
+    await capture(page, `parts-${tag}`);
+    // Scrolled: the header condensed onto its surface.
+    await page.goto(`${BASE}${CATEGORY}`, { waitUntil: "networkidle" });
+    await capture(page, `category-scrolled-${tag}`, { y: tag === "desktop" ? 520 : 460 });
+    // Search from the header.
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await settle(page, 400);
+    await page.getByTestId("header-search-trigger").first().click();
+    // The test id is on the field's wrapper; the control inside is the input.
+    const input = page.getByTestId("header-search-input").first().locator("input");
+    await input.waitFor({ timeout: 20_000 });
+    await input.fill("disk");
+    await settle(page, 2200);
+    await shot(page, `search-open-${tag}`, { owed: false });
+    await page.keyboard.press("Escape");
+    for (const [name, query] of [
+      ["search", "disk"],
+      ["search-empty", "zzzz-nema"],
+    ]) {
+      await page.goto(`${BASE}/pretraga?q=${query}`, { waitUntil: "networkidle" });
+      await capture(page, `${name}-${tag}`);
+    }
+    await page.goto(`${BASE}/prijava`, { waitUntil: "networkidle" });
+    await capture(page, `signin-${tag}`);
+    if (tag === "mobile") {
+      await page.goto(`${BASE}/delovi`, { waitUntil: "networkidle" });
+      await revealAll(page, 0);
+      await page.getByTestId("mobile-menu-trigger").click();
+      await page.getByRole("dialog").first().waitFor({ timeout: 20_000 });
+      await settle(page, 1200);
+      await shot(page, "menu-mobile", { owed: false });
+    }
+    await context.close();
+  }
+
+  // The customer's account (two columns on a desktop, section tabs on a phone).
+  const accounts = JSON.parse(readFileSync(".playwright/audit-accounts.json", "utf8"));
+  for (const [tag, device] of [
+    ["desktop", DESKTOP],
+    ["mobile", MOBILE],
+  ]) {
+    const { context, page } = await newPage(device, `account-${tag}`);
+    await signIn(page, accounts.customer.email, accounts.customer.password, "/nalog");
+    await page.goto(`${BASE}/nalog`, { waitUntil: "networkidle" });
+    await settle(page, 1200);
+    await capture(page, `account-${tag}`);
+    await context.close();
+  }
+
+  // One frame of the reveal: the lab grid 140 ms after its first card started.
+  for (const [tag, device] of [
+    ["desktop", DESKTOP],
+    ["mobile", MOBILE],
+  ]) {
+    const { context, page } = await newPage(device, `reveal-${tag}`);
+    await page.goto(`${BASE}/styleguide/otkrivanje`, { waitUntil: "networkidle" });
+    await settle(page, 1500);
+    const running = '[data-testid="reveal-grid"] [data-reveal-state="running"]';
+    let caught = false;
+    for (let i = 0; i < 400 && !caught; i += 1) {
+      await page.mouse.wheel(0, 36);
+      await page.waitForTimeout(16);
+      caught = (await page.locator(running).count()) > 0;
+    }
+    if (!caught) problems.push(`reveal-${tag}: the grid never started`);
+    await page.waitForTimeout(140);
+    await shot(page, `reveal-${tag}`, { owed: false });
+    await context.close();
+  }
 };
 
 try {

@@ -8,7 +8,7 @@ Euromotors Plus by OEM Parts („Rasklopi auto. Nađi deo.“) is an online shop
 
 Brand: **Euromotors Plus**, known to customers as **OEM Parts** (naming rules in `lib/domain/brand.ts`, DECISIONS D307; the working name „SKLOP“ was retired in step 25 and survives only in internal identifiers such as `window.__sklop3d`). The logo is built by `scripts/brand/logo/` and reaches the site through `components/brand/`. Contact and company data come from Admin → Podešavanja; empty fields are hidden on the site.
 
-Client-facing documents are in Serbian: [`docs/PREDAJA.md`](docs/PREDAJA.md) (handoff and admin guide), [`docs/GO-LIVE.md`](docs/GO-LIVE.md) (launch checklist), [`docs/showcase/index.html`](docs/showcase/index.html) (screenshot tour for the demo). The build history is in [`pipeline/REPORT.md`](pipeline/REPORT.md).
+Client-facing documents are in Serbian: [`docs/PREDAJA.md`](docs/PREDAJA.md) (handoff and admin guide; §11 name and logo kit, §12 what changed in the UI boost, §13 the reveal trigger line), [`docs/GO-LIVE.md`](docs/GO-LIVE.md) (launch checklist), [`docs/HUMAN-TODO.md`](docs/HUMAN-TODO.md) §0 (the three things only the client can supply: logo approval, the real domain and e-mail sender, the real company data), [`docs/brand/LOGO.md`](docs/brand/LOGO.md) (logo guide; the kit is in `docs/brand/export/`), [`docs/showcase/index.html`](docs/showcase/index.html) (brand board and screenshot tour for the demo). The build history is in [`pipeline/REPORT.md`](pipeline/REPORT.md) for steps 01–23 and in [`docs/PROGRESS.md`](docs/PROGRESS.md) for the rebrand and the UI boost (steps 24–29).
 
 ---
 
@@ -19,7 +19,7 @@ Client-facing documents are in Serbian: [`docs/PREDAJA.md`](docs/PREDAJA.md) (ha
 | Framework | Next.js **16.3.6** App Router (Turbopack), React 19.2.8, TypeScript 5 (strict), Tailwind CSS v4 |
 | Backend | Convex ^1.46 (database, functions, crons, file storage), Convex Auth 0.0.95 (e-mail + password), `@convex-dev/rate-limiter`, `@convex-dev/resend` |
 | 3D | three 0.186, @react-three/fiber 9, three-mesh-bvh; assets built headless in **Blender 5.1** from Python scripts, optimized with glTF-Transform + meshopt |
-| Motion | GSAP 3.15 + @gsap/react (the only animation library); a site-wide CSS text reveal |
+| Motion | GSAP 3.15 + @gsap/react (the only animation library); a site-wide CSS reveal for copy (word by word) and blocks, one trigger line (`REVEAL_LINE` in `constants/revealConfig.ts`, default 0.18) |
 | UI | radix-ui, TanStack Table v8, react-hook-form + zod 4, Phosphor icons, zustand |
 | Excel | SheetJS CE 0.20.3 from the official CDN tarball (parsing runs in a Web Worker) |
 | Tests | Vitest 5 (unit + convex-test), Playwright 1.63, axe-core, Lighthouse 13 |
@@ -128,7 +128,10 @@ Tracking IDs (GA4, Google Ads, Meta Pixel) are **not** env vars: they live in Ad
 | `npm run seed` / `npm run seed:stats` | seed + owner / row counts |
 | `npm run 3d` / `3d:validate` / `3d:preview` | rebuild the 3D assets / check budgets and names / load both GLBs in headless Chromium |
 | `npm run format` | Prettier |
-| `node scripts/showcase/shots.mjs` + `node scripts/showcase/build.mjs` | re-capture the showcase screenshots (needs a test-hooks build on :3100) and rebuild `docs/showcase/index.html` |
+| `node scripts/showcase/shots.mjs` + `node scripts/showcase/build.mjs` | re-capture the showcase screenshots at 1440 and 390 px after a scroll-through (needs a test-hooks build on :3100) and rebuild `docs/showcase/index.html` with the brand board from `docs/brand/` |
+| `node scripts/showcase/check.mjs` | open the showcase from disk at 1440 and 390 px: no external request, no console message, every image and link resolves, lightbox works |
+| `node scripts/docs/check-links.mjs` | every link, image and repository path in the handoff documents resolves (anchors included) |
+| `node scripts/brand/logo/build.mjs` → `site.mjs` → `verify.mjs` | rebuild the logo kit, the files the site uses, and run its 11 checks (`docs/brand/LOGO.md` §9) |
 
 ---
 
@@ -167,10 +170,12 @@ Rules that are easy to break:
 - **Convex:** every public function declares `args` + `returns` validators and authorizes through the builders in `convex/lib/functions.ts` (`publicQuery`, `userMutation`, `staffMutation`, `ownerMutation`, …). Identity never comes from args. Products are written only through `productWriter`; staff writes go through `audit()`; business events through `emitEvent`. Public queries never return cost or another role's price.
 - **Prices** are integer *para* (1/100 RSD). Mechanic prices are computed server-side by `resolveUnitPrice` (`lib/domain/pricing.ts`): tier default, category/manufacturer overrides, personal override, margin guard.
 - **Notifications:** domain events outbox → dispatcher (`convex/events.ts`) → channels (in-app, e-mail via Resend, Meta CAPI, cache revalidation). E-mail modes `log` / `test` / `live`; demo and test orders are never sent.
-- **Text reveal:** every heading/paragraph arrives word by word through one global system. Never write a text entrance animation; above-the-fold copy uses `RevealText`. See `.claude/rules/architecture.md`.
+- **Reveal:** copy arrives word by word and everything else (cards, images, panels, rows, tables) as blocks, once, through one global system: an element starts when its centre crosses the line `REVEAL_LINE` (18 % of the viewport height above the bottom edge). Never write an entrance animation; mark blocks with `Reveal` / `RevealGroup` + `RevealItem`; above the fold copy uses `RevealText` and blocks use `eager`. See `.claude/rules/architecture.md`.
+- **Shape:** radius by role (4 / 6 / 8 / 10 / 12 / 14 px); the only elements with square corners are full-bleed ones. `tests/e2e/corners.spec.ts` fails on any other. New boxes use `panel` / `panel-raised` / `panel-inset`.
+- **Brand:** names come from `lib/domain/brand.ts` / settings and the logo from `components/brand/`; `tests/e2e/rebrand.spec.ts` fails on a rendered „SKLOP“.
 - **Security:** nonce CSP in `proxy.ts`, static headers in `next.config.ts`, rate limits on every public write, status pages reached by HMAC tokens (only hashes stored). Details: [`docs/SECURITY.md`](docs/SECURITY.md), [`docs/SECURITY-AUDIT.md`](docs/SECURITY-AUDIT.md).
 
-Detailed docs: [`docs/README.md`](docs/README.md) (index), [ARCHITECTURE](docs/ARCHITECTURE.md), [ROUTES](docs/ROUTES.md), [DATA-MODEL](docs/DATA-MODEL.md), [NOTIFICATIONS](docs/NOTIFICATIONS.md), [SEO-ADS](docs/SEO-ADS.md), [IMPORT](docs/IMPORT.md), [design system](docs/design/DESIGN-SYSTEM.md), [DECISIONS](docs/DECISIONS.md) (D1–D298).
+Detailed docs: [`docs/README.md`](docs/README.md) (index), [ARCHITECTURE](docs/ARCHITECTURE.md), [ROUTES](docs/ROUTES.md), [DATA-MODEL](docs/DATA-MODEL.md), [NOTIFICATIONS](docs/NOTIFICATIONS.md), [SEO-ADS](docs/SEO-ADS.md), [IMPORT](docs/IMPORT.md), [design system](docs/design/DESIGN-SYSTEM.md), [UI boost](docs/design/UI-BOOST.md), [DECISIONS](docs/DECISIONS.md) (D1–D357).
 
 ---
 
@@ -213,7 +218,7 @@ Selected stages run in order: `node 3d/scripts/run.mjs build export optimize val
 
 **Swap a part for a purchased model** (BUILD-NOTES §3): the runtime relies only on the part node (name, pivot, extras), so the geometry below it can change. Check the licence, put the file in `3d/assets/purchased/<slug>/` with its `LICENSE.txt`, replace that node's builder in `3d/blender/parts/<system>.py` with an import parented as the single child `mesh__<category>__<instance>__0`, map materials to the contract slots, keep the triangle budget, then rebuild the module and run `explode export optimize thumbs images validate`.
 
-**Add a category or clickable part** (BUILD-NOTES §4): add it to `lib/catalog/taxonomy.ts` (slugs are frozen once live) and a hover note in `lib/catalog/partNotes.ts`; run `node 3d/scripts/taxonomy-json.mjs`; model it in the right `parts/<system>.py`; add its explode intent in `3d/blender/config/explode.py` (and a thumbnail composition in `config/thumbs.py` if needed); run `npm run 3d`, fix what `explode.py` reports, and map the category to the part key in Admin → Kategorije.
+**Add a category or clickable part** (BUILD-NOTES §4): add it to `lib/catalog/taxonomy.ts` (slugs are frozen once live) and a hover note in `lib/catalog/partNotes.ts`; run `node 3d/scripts/taxonomy-json.mjs`; model it in the right `parts/<system>.py`; add its explode intent in `3d/blender/config/explode.py` (and a thumbnail composition in `3d/blender/config/thumbs.py` if needed); run `npm run 3d`, fix what `explode.py` reports, and map the category to the part key in Admin → Kategorije.
 
 The X-ray values live twice (`3d/blender/config/xray.py` for posters, `constants/xray.ts` for the runtime) and a unit test fails when they drift. A camera change needs new posters, or the poster → canvas crossfade jumps.
 
@@ -223,8 +228,8 @@ The X-ray values live twice (`3d/blender/config/xray.py` for posters, `constants
 
 ```bash
 npm run typecheck && npm run lint
-npm test                                   # 1,223 tests (unit + Convex), 4 skipped (backup drill without a snapshot)
-npm run e2e                                # builds with test hooks, serves :3100, runs desktop-1440 and mobile-390
+npm test                                   # 1,306 tests (unit + Convex), 4 skipped (backup drill without a snapshot)
+npm run e2e                                # builds with test hooks, serves :3100, runs desktop-1440 and mobile-390 (188 passed, 32 skipped by design)
 E2E_BASE_URL=http://localhost:3000 npm run e2e   # reuse a running server instead
 node tests/lighthouse/run.mjs --throttling devtools --runs 3 /     # against `npm run start -- -p 3100`
 ```
@@ -256,6 +261,6 @@ Production is Vercel (Next.js) + Convex cloud (EU region). Nothing has been depl
 | The 3D car never loads in headless tests | The device tier is low under SwiftShader; build with `NEXT_PUBLIC_TEST_HOOKS=1` and add `?3d=high`. On real devices it starts on the first scroll or touch. |
 | e2e fails with „E2E_TEST_HELPERS“ | `npx convex env set E2E_TEST_HELPERS 1` on the **dev** deployment (never on production). |
 | Lighthouse in Git Bash only measures `/` | Run it with `MSYS_NO_PATHCONV=1`, otherwise `/delovi/…` is rewritten to a Windows path. |
-| Lint errors about `next/link` or `gsap` imports | Use `RouteLink` (`components/ui/RouteLink`) and `@/lib/gsap/client`; new routes must be added to `LIVE_ROUTES` in `constants/routes.ts` or their links won't prefetch. |
+| Lint errors about `next/link` or `gsap` imports | Use `RouteLink` (`components/ui/RouteLink.tsx`) and `@/lib/gsap/client`; new routes must be added to `LIVE_ROUTES` in `constants/routes.ts` or their links won't prefetch. |
 | Copy stays invisible | Something hides text outside the text-reveal system, or splits it without restoring. See `.claude/rules/architecture.md` → „Checking your work“. |
 | Import shows broken characters (č, ć, ž, š, đ) | The CSV is Windows-1250; the importer detects it, but a file saved as „ANSI“ in another code page will not. Save as UTF-8 or xlsx. |
