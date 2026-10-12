@@ -859,10 +859,10 @@ export function QuickOrder({
                               size="sm"
                               icon={<XIcon size={16} />}
                               onClick={() => remove(row.key)}
+                              aria-label={`Ukloni red ${row.code}`}
                               className="max-lg:h-11 @max-xl:absolute @max-xl:right-1.5 @max-xl:top-1.5 @max-xl:w-11 @max-xl:px-0"
                             >
                               <span className="sr-only @xl:not-sr-only">Ukloni</span>
-                              <span className="sr-only"> red {row.code}</span>
                             </Button>
                           </div>
                           <div className="ml-auto flex justify-end @xl:col-start-3 @xl:row-start-1 @xl:ml-0 @xl:pt-0.5">

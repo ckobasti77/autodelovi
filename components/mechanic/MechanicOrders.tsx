@@ -207,10 +207,11 @@ export function MechanicOrders() {
                   size="sm"
                   icon={<ArrowCounterClockwiseIcon size={16} />}
                   loading={busy === o.number}
+                  aria-label={`Poruči ponovo ${o.number}`}
                   onClick={() => void run(o.number)}
                   className="justify-self-end max-lg:h-11 @max-3xl:col-start-2 @max-3xl:row-start-2"
                 >
-                  Poruči ponovo<span className="sr-only"> {o.number}</span>
+                  Poruči ponovo
                 </Button>
               </li>
             ))}

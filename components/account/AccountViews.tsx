@@ -77,9 +77,13 @@ export function PanelHeader({
         {title}
       </h2>
       {href ? (
-        <Link href={href} variant="standalone" className="min-h-11 px-1 type-body-s">
+        <Link
+          href={href}
+          variant="standalone"
+          aria-label={`${linkLabel}: ${title}`}
+          className="min-h-11 px-1 type-body-s"
+        >
           {linkLabel}
-          <span className="sr-only">: {title}</span>
         </Link>
       ) : null}
     </div>
@@ -595,6 +599,7 @@ function VehicleRows({ className }: { className?: string }) {
                   variant="quiet"
                   size="sm"
                   className="max-lg:h-11"
+                  aria-label={`Izaberi ${v.label ?? label}`}
                   onClick={() =>
                     setVehicle({
                       brand: { slug: v.brandSlug!, name: v.brandName! },
@@ -615,12 +620,17 @@ function VehicleRows({ className }: { className?: string }) {
                     })
                   }
                 >
-                  Izaberi<span className="sr-only"> {v.label ?? label}</span>
+                  Izaberi
                 </Button>
               ) : null}
               {href ? (
-                <Link href={href} variant="standalone" className="min-h-11 px-1 type-body-s">
-                  Delovi<span className="sr-only"> za {v.label ?? label}</span>
+                <Link
+                  href={href}
+                  variant="standalone"
+                  aria-label={`Delovi za ${v.label ?? label}`}
+                  className="min-h-11 px-1 type-body-s"
+                >
+                  Delovi
                 </Link>
               ) : null}
               <IconButton

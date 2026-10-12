@@ -195,10 +195,11 @@ function RecentOrders() {
             size="sm"
             icon={<ArrowCounterClockwiseIcon size={16} />}
             loading={busy === o.number}
+            aria-label={`Poruči ponovo ${o.number}`}
             onClick={() => void run(o.number)}
             className="justify-self-end max-lg:h-11"
           >
-            Poruči ponovo<span className="sr-only"> {o.number}</span>
+            Poruči ponovo
           </Button>
         </li>
       ))}

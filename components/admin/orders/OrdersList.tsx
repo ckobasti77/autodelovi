@@ -339,15 +339,24 @@ export function OrdersList() {
         enableSorting: false,
         meta: { label: "Plaćanje i dostava" },
         cell: ({ row }) => (
-          // Wraps instead of widening the table: „Gotovinom pri preuzimanju · Plaćeno“ (VIS-15).
-          <span className="flex min-w-[9rem] flex-col">
-            <span className="text-ink-1">
+          // Capped and cut on one line each (the full text is the tooltip): a long method such as
+          // „Gotovinom pri preuzimanju · Plaćeno“ neither widens the table (VIS-15) nor wraps into
+          // a third line that would make its row taller than the rest.
+          <span
+            className="flex min-w-[9rem] max-w-[14rem] flex-col"
+            title={`${PAYMENT_LABEL[row.original.paymentMethod]}${
+              row.original.paymentStatus === "paid" ? ` · ${PAYMENT_STATUS_LABEL.paid}` : ""
+            } · ${DELIVERY_LABEL[row.original.deliveryMethod]}${
+              row.original.trackingNumber ? ` · ${row.original.trackingNumber}` : ""
+            }`}
+          >
+            <span className="truncate text-ink-1">
               {PAYMENT_LABEL[row.original.paymentMethod]}
               {row.original.paymentStatus === "paid" ? (
                 <span className="text-success"> · {PAYMENT_STATUS_LABEL.paid}</span>
               ) : null}
             </span>
-            <span className="type-caption text-ink-3">
+            <span className="truncate type-caption text-ink-3">
               {DELIVERY_LABEL[row.original.deliveryMethod]}
               {row.original.trackingNumber ? ` · ${row.original.trackingNumber}` : ""}
             </span>

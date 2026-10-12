@@ -364,8 +364,9 @@ function VehicleRow({ v }: { v: SavedVehicle }) {
           <Link
             href={ROUTES.inquiryWith({ q: [v.vin, vehicle].filter(Boolean).join(" · ") })}
             variant="unstyled"
+            aria-label={`Upit za ${v.label ?? vehicle}`}
           >
-            Upit<span className="sr-only"> za {v.label ?? vehicle}</span>
+            Upit
           </Link>
         </Button>
         <IconButton

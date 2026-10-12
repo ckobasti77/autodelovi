@@ -83,7 +83,8 @@ export function StockAdmin() {
         cell: ({ row }) => (
           <RouteLink
             href={ADMIN.product(row.original.productId)}
-            className="flex flex-col hover:underline"
+            // Wide enough that a part name takes two lines at most on a phone.
+            className="flex min-w-[13rem] flex-col hover:underline"
           >
             <span className="text-ink-1">{row.original.name}</span>
             <span className="type-code-s text-ink-3">{row.original.sku}</span>

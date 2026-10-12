@@ -219,8 +219,8 @@ export function MechanicRegistrationForm({ config }: { config: RegistrationConfi
       const userData = await googleUserData({
         email: needsAccount ? values.email : null,
         phone: values.phone,
-        firstName: values.contactPerson.trim().split(/s+/)[0],
-        lastName: values.contactPerson.trim().split(/s+/).slice(1).join(" "),
+        firstName: values.contactPerson.trim().split(/\s+/)[0],
+        lastName: values.contactPerson.trim().split(/\s+/).slice(1).join(" "),
         city: values.city,
       }).catch(() => null);
       track(

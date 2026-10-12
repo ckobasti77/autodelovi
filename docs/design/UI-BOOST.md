@@ -151,6 +151,8 @@ One engine (`components/TextRevealGlobal.tsx`), one observer, one line.
 
 ## 7. Templates: the work list for step 27, by impact
 
+> **Status after step 27 (2026-10-12): all ten items done** — what was built per template is in §11; decisions D332–D350.
+
 1. **Product (`/deo/[slug]`)** — phone: price, stock and the add-to-cart row above the codes; cap the image height; the buy bar visible until the inline button is on screen. Desktop: a real buy box (`panel-raised`: price, stock, stepper, primary, inquiry), sticky, which also removes the dead column. Gallery and drawing frames 10 px. Reveal: gallery and buy box eager, everything below as blocks and groups.
 2. **Product card and the grids that use it** — render at about 70 % of its frame; phone list card with an 88 px thumbnail, about 170 px tall, price and action on one row; two name lines reserved so rows align. Every grid of category tiles, car models and brands becomes a `RevealGroup`.
 3. **Category and search** — phone: clamp the lead to two lines, one sticky toolbar under the header (vehicle chip, Filteri, sort), first product by y ≈ 300. Desktop: stronger filter group titles, SEO link clouds as chips, no orphaned last card. Search: the button merged into the field on phones; the empty state left-aligned.

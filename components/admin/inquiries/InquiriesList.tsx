@@ -158,7 +158,7 @@ export function InquiriesList() {
         accessorKey: "contactName",
         header: "Kontakt",
         cell: ({ row }) => (
-          <span className="flex flex-col">
+          <span className="flex flex-col whitespace-nowrap">
             <span className="font-medium text-ink-1">{row.original.contactName}</span>
             <span className="type-caption text-ink-3">
               {row.original.phone ? `${formatPhone(row.original.phone)} · ` : ""}

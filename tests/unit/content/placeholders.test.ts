@@ -40,6 +40,28 @@ describe("sentence-level placeholders (COPY-03, COPY-04, D233)", () => {
   });
 });
 
+describe("a placeholder that is a sentence by itself", () => {
+  const md = "{{kontakt.najbrze}} Ako ne znate broj dela, pošaljite broj šasije.";
+
+  it("takes only itself away when it is empty", () => {
+    expect(fillPlaceholders(md, { "kontakt.najbrze": "" })).toBe(
+      "Ako ne znate broj dela, pošaljite broj šasije.",
+    );
+  });
+
+  it("stays in front of the next sentence when it has a value", () => {
+    expect(fillPlaceholders(md, { "kontakt.najbrze": "Najbrže je da nas pozovete." })).toBe(
+      "Najbrže je da nas pozovete. Ako ne znate broj dela, pošaljite broj šasije.",
+    );
+  });
+
+  it("leaves a placeholder inside a sentence to the sentence rule", () => {
+    expect(
+      fillPlaceholders("Porudžbine do {{rok}} šaljemo istog dana. Ostale sutradan.", { rok: "" }),
+    ).toBe("Ostale sutradan.");
+  });
+});
+
 describe("settings-driven values", () => {
   it("formats the cut-off and refuses malformed values", () => {
     expect(cutoffLabel("14:00")).toBe("14 časova");

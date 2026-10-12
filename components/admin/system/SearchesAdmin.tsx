@@ -125,8 +125,62 @@ export function SearchesAdmin() {
                   Nema pretraga bez rezultata u ovom periodu.
                 </p>
               ) : (
+                <div className="overflow-x-auto">
+                  {/* A wide table scrolls inside its panel, never the page (390 px). */}
+                  <table className="w-full border-collapse text-cell">
+                    <caption className="sr-only">Najčešće pretrage bez rezultata</caption>
+                    <thead>
+                      <tr className="border-b border-line text-left type-label uppercase text-ink-3">
+                        <th scope="col" className="py-1.5">
+                          Upit
+                        </th>
+                        <th scope="col" className="py-1.5 text-right">
+                          Puta
+                        </th>
+                        <th scope="col" className="py-1.5 text-right">
+                          Poslednji put
+                        </th>
+                        <th scope="col" className="py-1.5">
+                          <span className="sr-only">Radnje</span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {data.misses.map((m) => (
+                        <tr key={m.normalized} className="border-b border-line-faint">
+                          <td className="max-w-[16rem] truncate py-1.5 type-code-s normal-case">
+                            {m.sample}
+                          </td>
+                          <td className="py-1.5 text-right tabular-nums">{m.zeroCount}</td>
+                          <td className="py-1.5 text-right tabular-nums text-ink-3">
+                            {compactDateTime(m.lastAt, nowMinute)}
+                          </td>
+                          <td className="py-1.5 text-right">
+                            <span className="inline-flex gap-1">
+                              <Button asChild size="sm" variant="ghost">
+                                <RouteLink
+                                  href={`${ADMIN.products}?q=${encodeURIComponent(m.sample)}`}
+                                >
+                                  U katalogu
+                                </RouteLink>
+                              </Button>
+                              <Button asChild size="sm" variant="ghost">
+                                <RouteLink href={ADMIN.productNew}>Dodaj artikal</RouteLink>
+                              </Button>
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </Section>
+            <Section title="Najčešće pretrage">
+              <div className="overflow-x-auto">
+                {/* A wide table scrolls inside its panel, never the page (390 px). */}
                 <table className="w-full border-collapse text-cell">
-                  <caption className="sr-only">Najčešće pretrage bez rezultata</caption>
+                  <caption className="sr-only">Najčešće pretrage</caption>
                   <thead>
                     <tr className="border-b border-line text-left type-label uppercase text-ink-3">
                       <th scope="col" className="py-1.5">
@@ -136,80 +190,32 @@ export function SearchesAdmin() {
                         Puta
                       </th>
                       <th scope="col" className="py-1.5 text-right">
-                        Poslednji put
-                      </th>
-                      <th scope="col" className="py-1.5">
-                        <span className="sr-only">Radnje</span>
+                        Bez rezultata
                       </th>
                     </tr>
                   </thead>
                   <tbody>
-                    {data.misses.map((m) => (
+                    {data.top.map((m) => (
                       <tr key={m.normalized} className="border-b border-line-faint">
-                        <td className="max-w-[16rem] truncate py-1.5 type-code-s normal-case">
-                          {m.sample}
+                        <td className="max-w-[18rem] truncate py-1.5">
+                          <a
+                            href={ROUTES.searchFor(m.sample)}
+                            target="_blank"
+                            rel="noopener"
+                            className="type-code-s normal-case hover:underline"
+                          >
+                            {m.sample}
+                          </a>
                         </td>
-                        <td className="py-1.5 text-right tabular-nums">{m.zeroCount}</td>
+                        <td className="py-1.5 text-right tabular-nums">{m.count}</td>
                         <td className="py-1.5 text-right tabular-nums text-ink-3">
-                          {compactDateTime(m.lastAt, nowMinute)}
-                        </td>
-                        <td className="py-1.5 text-right">
-                          <span className="inline-flex gap-1">
-                            <Button asChild size="sm" variant="ghost">
-                              <RouteLink
-                                href={`${ADMIN.products}?q=${encodeURIComponent(m.sample)}`}
-                              >
-                                U katalogu
-                              </RouteLink>
-                            </Button>
-                            <Button asChild size="sm" variant="ghost">
-                              <RouteLink href={ADMIN.productNew}>Dodaj artikal</RouteLink>
-                            </Button>
-                          </span>
+                          {m.zeroCount || "—"}
                         </td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
-              )}
-            </Section>
-            <Section title="Najčešće pretrage">
-              <table className="w-full border-collapse text-cell">
-                <caption className="sr-only">Najčešće pretrage</caption>
-                <thead>
-                  <tr className="border-b border-line text-left type-label uppercase text-ink-3">
-                    <th scope="col" className="py-1.5">
-                      Upit
-                    </th>
-                    <th scope="col" className="py-1.5 text-right">
-                      Puta
-                    </th>
-                    <th scope="col" className="py-1.5 text-right">
-                      Bez rezultata
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.top.map((m) => (
-                    <tr key={m.normalized} className="border-b border-line-faint">
-                      <td className="max-w-[18rem] truncate py-1.5">
-                        <a
-                          href={ROUTES.searchFor(m.sample)}
-                          target="_blank"
-                          rel="noopener"
-                          className="type-code-s normal-case hover:underline"
-                        >
-                          {m.sample}
-                        </a>
-                      </td>
-                      <td className="py-1.5 text-right tabular-nums">{m.count}</td>
-                      <td className="py-1.5 text-right tabular-nums text-ink-3">
-                        {m.zeroCount || "—"}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              </div>
             </Section>
           </div>
           <Section title="Poslednje pretrage bez rezultata">

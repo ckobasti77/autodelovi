@@ -65,7 +65,7 @@ export function MechanicsAdminList() {
         accessorKey: "companyName",
         header: "Servis",
         cell: ({ row }) => (
-          <span className="flex flex-col" data-testid={TEST_IDS.adminMechanicRow}>
+          <span className="flex flex-col whitespace-nowrap" data-testid={TEST_IDS.adminMechanicRow}>
             <span className="font-semibold text-ink-1">{row.original.companyName}</span>
             <span className="type-caption text-ink-3">{row.original.city}</span>
           </span>
@@ -81,7 +81,7 @@ export function MechanicsAdminList() {
         header: "Kontakt",
         enableSorting: false,
         cell: ({ row }) => (
-          <span className="flex flex-col">
+          <span className="flex flex-col whitespace-nowrap">
             <span>{row.original.contactPerson}</span>
             <span className="type-caption tabular-nums text-ink-3">
               {formatPhone(row.original.phone)}
@@ -93,7 +93,9 @@ export function MechanicsAdminList() {
         accessorKey: "createdAt",
         header: "Registrovan",
         cell: ({ getValue }) => (
-          <span className="tabular-nums text-ink-2">{formatDateShort(Number(getValue()))}</span>
+          <span className="whitespace-nowrap tabular-nums text-ink-2">
+            {formatDateShort(Number(getValue()))}
+          </span>
         ),
       },
       {
@@ -101,7 +103,7 @@ export function MechanicsAdminList() {
         header: "Nivo",
         enableSorting: false,
         cell: ({ row }) => (
-          <span className="text-ink-2">
+          <span className="whitespace-nowrap text-ink-2">
             {row.original.tierId ? (tierName.get(row.original.tierId) ?? "—") : "—"}
             {row.original.creditEnabled ? " · odloženo" : ""}
           </span>

@@ -14,6 +14,18 @@ const LINE_PREFIX = /^\s*(?:[-*+]\s+|\d+\.\s+|#{1,6}\s+|>\s*)?/;
 /** Sentence end: . ! ? … followed by whitespace and the start of a new sentence. */
 const SENTENCE_BREAK = /(?<=[.!?…])\s+(?=[„"(*[A-ZČĆŽŠĐ0-9])/u;
 
+/**
+ * A placeholder that is a whole sentence by itself, written before the next one without a full
+ * stop of its own („{{kontakt.najbrze}} Ako ne znate broj dela…“ — the value ends in one). Empty,
+ * it must take only itself away, not the sentence that follows it.
+ */
+const LEADING_TOKEN = /^(\{\{[^}]+\}\})\s+(?=[„"(*[A-ZČĆŽŠĐ])/u;
+
+function splitLeadingToken(sentence: string): string[] {
+  const match = LEADING_TOKEN.exec(sentence);
+  return match ? [match[1], sentence.slice(match[0].length)] : [sentence];
+}
+
 function fillSentence(sentence: string, values: Record<string, string>): string | null {
   let drop = false;
   const filled = sentence.replace(TOKEN, (_, key: string, fallback: string | undefined) => {
@@ -37,6 +49,7 @@ export function fillPlaceholders(md: string, values: Record<string, string>): st
     const kept = line
       .slice(prefix.length)
       .split(SENTENCE_BREAK)
+      .flatMap(splitLeadingToken)
       .map((sentence) => fillSentence(sentence, values))
       .filter((sentence): sentence is string => sentence !== null && sentence.trim() !== "");
     if (kept.length > 0) out.push(prefix + kept.join(" "));

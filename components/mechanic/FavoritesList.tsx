@@ -128,10 +128,10 @@ function Row({ fav }: { fav: Favorite }) {
                 loading={state === "busy"}
                 disabled={!check.ok}
                 onClick={() => void onAdd()}
+                aria-label={`${state === "done" ? "Dodato" : "U korpu"}: ${card.name}`}
                 className="max-lg:h-11"
               >
                 {state === "done" ? "Dodato" : "U korpu"}
-                <span className="sr-only">: {card.name}</span>
               </Button>
             </>
           ) : null}

@@ -267,8 +267,8 @@ export function InquiryForm({
       await storeLeadUserData(result.number, {
         email: v.email,
         phone: v.phone,
-        firstName: v.name.split(/s+/)[0],
-        lastName: v.name.split(/s+/).slice(1).join(" "),
+        firstName: v.name.trim().split(/\s+/)[0],
+        lastName: v.name.trim().split(/\s+/).slice(1).join(" "),
       });
       // Full load: analytics must only see the token page through its redacted URL.
       window.location.assign(ROUTES.inquiryThanks(result.token));

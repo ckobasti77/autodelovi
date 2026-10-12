@@ -63,7 +63,7 @@ export function CustomersList() {
         accessorKey: "name",
         header: "Kupac",
         cell: ({ row }) => (
-          <span className="flex flex-col">
+          <span className="flex flex-col whitespace-nowrap">
             <span className="flex items-center gap-2 font-medium text-ink-1">
               {row.original.name}
               {row.original.isDemo ? <DemoTag /> : null}

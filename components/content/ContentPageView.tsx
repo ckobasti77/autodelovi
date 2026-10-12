@@ -98,10 +98,11 @@ export async function ContentPageView({
             offset={intro.length}
             className={cn((intro.length > 0 || Boolean(before)) && "mt-12")}
           />
-          {place ? <div className="mt-10">{updated}</div> : null}
         </div>
         {side ? <div className="min-w-0 lg:col-span-4">{side}</div> : null}
       </div>
+      {/* On a place page the date closes the page (after the aside on phones), not the title. */}
+      {place ? <div className="mt-10">{updated}</div> : null}
     </div>
   );
 }
