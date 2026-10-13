@@ -268,3 +268,19 @@ Dokumenti za predaju su dopunjeni: [`PREDAJA.md`](PREDAJA.md) §11 (ime i znak, 
 - [ ] **[P0] Tri stvari iz [§0](#0-tri-stvari-bez-kojih-sajt-ne-može-da-se-objavi-stanje-12102026)**: odobrenje znaka, pravi domen sa adresom pošiljaoca e-pošte, pravi podaci firme.
 - [ ] **[P1] Pokažite klijentu prikaz.** Otvorite `docs/showcase/index.html` (dvoklik, radi bez interneta) i prođite redom: znak, 3D auto, šta je novo, kupac, majstor, radnja, pre objave. Redosled za živi demo je u `PREDAJA.md` §10.
 - [ ] **[P2] Komplet znaka za štampu i saradnike** je u `docs/brand/export/` (SVG, PDF, PNG, ikonice). Štamparu i firmi koja pravi tablu šaljite PDF ili SVG, nikad PNG; boje za štampu izaberite sa štamparom (`PREDAJA.md` §11.3).
+
+## 19. Novi 3D prikaz na početnoj strani — plan (korak 30)
+
+Urađen je plan, ništa na sajtu još nije promenjeno. Ceo plan je u [`3d/HERO-V2.md`](3d/HERO-V2.md) (na engleskom, za programera). Slike probnog prikaza: [`3d/hero-v2/lab/sizes-desktop.webp`](3d/hero-v2/lab/sizes-desktop.webp) (računar) i [`3d/hero-v2/lab/sizes-mobile.webp`](3d/hero-v2/lab/sizes-mobile.webp) (telefon).
+
+Ukratko: dok skrolujete, delovi izlaze iz auta i ređaju se u mrežu, svaki iznad svog naziva, bez okvira. Mreža prikazuje jednu grupu sistema odjednom (najviše devet delova). Kad naiđe sledeća grupa, prethodna se sklanja u traku na dnu, a brojač pokazuje koliko je delova pronađeno.
+
+- [ ] **[P1] Potvrdite šest stvari pre izrade:**
+  1. **Položaj mreže.** Na računaru je mreža iznad auta, na telefonu ispod. Tako auto ostaje na svom mestu i samo se smanji.
+  2. **Traka na dnu.** Umesto osam brojeva faza, deset sistema po nazivu (Karoserija, Elektrika, Točkovi, Kočnice, Vešanje, Hlađenje, Motor, Transmisija, Izduv, Servis), sa brojem delova.
+  3. **Klik na deo u mreži** otvara stranu te kategorije. Klik na deo koji je još na autu i dalje otvara panel sa artiklima.
+  4. **Limarija u mreži** (hauba, vrata, branici, blatobrani) prikazana je u sivoj osnovnoj boji, a ne kao staklo. Kao staklo se u mreži ne vidi.
+  5. **Dužina skrola.** Na računaru malo kraća nego sada, na telefonu nešto duža: jedan potez prstom je jedna grupa delova.
+  6. **Tekstovi:** „Pronađeno 23/44“ i, na kraju, „Ceo auto rastavljen“ sa dugmadima „Izaberite vozilo“, „Svi delovi“ i „Sklopi auto“.
+- [ ] **[P1] Greška nađena usput, nije ispravljena:** kad posetilac na prvom dolasku odbije kolačiće („Odbij sve“), strana skoči na dno. Provereno na razvojnoj verziji, na računaru i telefonu. Treba je ispraviti pre objave, nezavisno od novog 3D prikaza.
+- [ ] **[P2] Provera na pravom telefonu.** Brzina novog prikaza izmerena je samo na računaru. Pre objave treba je proveriti na jednom telefonu srednje klase.
