@@ -19,7 +19,7 @@
  *   and keeps `?deo=` in the URL; the camera frames the part in the space the panel leaves.
  */
 import dynamic from "next/dynamic";
-import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap/scroll";
 import { requestScrollTriggerRefresh } from "@/lib/gsap/refresh";
@@ -149,7 +149,9 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
     (status === "loading" || status === "ready" || status === "lost");
 
   // ---------------------------------------------------------------- DOM registry
-  useEffect(() => {
+  // A layout effect: the grid's and the navigator's observers deliver right after this commit
+  // and read the frame through this registry.
+  useLayoutEffect(() => {
     heroDom.stage = mediaRef.current;
     heroDom.media = mediaRef.current;
     heroDom.main = mainRef.current;
@@ -463,7 +465,7 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
       const t = posterDock(framing.crop, frame, local, SLOT.bandFill[framing.crop], k);
       posterEl.style.transform = `translate3d(${t.x}px, ${t.y}px, 0) scale(${t.scale})`;
     };
-    read();
+    // The observer's first delivery is the first read (clean layout, nothing forced).
     const observer = new ResizeObserver(read);
     observer.observe(main);
     const unsubscribe = heroStore.subscribe((state, prev) => {
@@ -482,11 +484,18 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
     () => {
       const title = titleRef.current;
       if (!title) return;
+      const show = page === 0 && !hasSelection;
+      // Out of the layout once it has faded: an element left at opacity 0 with text in it is
+      // hidden copy (the reveal contract checks for exactly that).
+      if (show) title.hidden = false;
       gsap.to(title, {
-        opacity: page === 0 && !hasSelection ? 1 : 0,
+        opacity: show ? 1 : 0,
         duration: reduced ? 0 : DUR.base,
         ease: EASE.inOut,
         overwrite: true,
+        onComplete: () => {
+          title.hidden = !show;
+        },
       });
     },
     { dependencies: [page, hasSelection, reduced] },

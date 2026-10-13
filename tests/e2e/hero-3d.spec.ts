@@ -151,8 +151,9 @@ test.describe("3D hero", () => {
 
     await startAndWaitFor3d(page);
     await expect(page.getByTestId(TEST_IDS.heroCanvas).locator("canvas")).toHaveCount(1);
+    // 600 ms on a GPU; the software renderer of this run composites the full-frame canvas slowly.
     await expect(page.getByTestId(TEST_IDS.heroCanvas)).toHaveCSS("opacity", "1", {
-      timeout: 5_000,
+      timeout: 20_000,
     });
     await expect(page.getByTestId(TEST_IDS.heroPoster)).toHaveCSS("opacity", "0");
     const after = await state(page);
@@ -346,6 +347,15 @@ test.describe("3D hero", () => {
       expect(await focusedSlot()).toBe(slug);
       expect(await focusRing(page), `${slug} shows focus`).toBe(true);
       expect((await state(page)).focusedSlot).toBe(slug);
+    }
+    if (!testInfo.project.name.startsWith("mobile")) {
+      // The leader line joins the focused slot and the part's place on the car.
+      await expect
+        .poll(
+          () => page.locator("[data-hero-leader]").evaluate((el) => (el as HTMLElement).style.visibility),
+          { timeout: 30_000 },
+        )
+        .toBe("visible");
     }
     const last = page.locator(`[data-slot="${slugs[slugs.length - 1]}"]`);
     await expect(last).toHaveAttribute("href", `/delovi/${slugs[slugs.length - 1]}`);

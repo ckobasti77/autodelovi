@@ -174,14 +174,21 @@ export function SystemNav({
       });
       heroStore.setState({ chipPoints: points });
     };
-    measure();
+    // No read at mount: the observer delivers once on its own, when the layout is clean (a
+    // read here would force one during hydration, and nothing leaves the grid before page 2).
     const observer = new ResizeObserver(measure);
     if (scroller.current) observer.observe(scroller.current);
     return () => observer.disconnect();
   }, []);
 
   // Phones: keep the active cluster in the middle of the scrolling row.
+  const centred = useRef(false);
   useEffect(() => {
+    // The assembled car at mount: the row is at its start already, nothing to read.
+    if (!centred.current) {
+      centred.current = true;
+      if (page === 0) return;
+    }
     const row = scroller.current;
     const index = CLUSTERS.findIndex((c) => c.pages.includes(page));
     const item = clusters.current[index];

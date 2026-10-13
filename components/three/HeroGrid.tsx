@@ -109,16 +109,26 @@ export function HeroGrid({ className }: { className?: string }) {
   }, []);
 
   // Layout source of the scene: read on resize, on a page change and when the fonts arrive.
+  // A page needs its cells in the frame it appears, so that read is synchronous. The assembled
+  // car needs nothing yet: its first read rides the observer's own first delivery, where the
+  // layout is already clean — a read here would force a layout of the whole page in the middle
+  // of hydration.
   useLayoutEffect(() => {
     const root = rootRef.current;
     if (!root) return;
     const run = () => measure(root);
-    run();
+    if (page > 0) run();
     const observer = new ResizeObserver(run);
     observer.observe(root);
     if (heroDom.main) observer.observe(heroDom.main);
-    void document.fonts?.ready.then(run);
-    return () => observer.disconnect();
+    let frame = 0;
+    void document.fonts?.ready.then(() => {
+      frame = requestAnimationFrame(run);
+    });
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+    };
   }, [page]);
 
   // A name arrives word by word when its part seats (≤ 300 ms), and the tick under the cell
