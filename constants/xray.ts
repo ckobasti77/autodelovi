@@ -85,7 +85,7 @@ export const DOCK = {
   glassAlpha: 0.46,
   glassTint: "#7FBFD6",
   /** Emissive floor added to PBR parts, shaded by a camera-locked half-Lambert. */
-  lift: 0.2,
+  lift: 0.24,
   liftColor: "#9AA3AB",
   /** View-space direction of that fill (up and to the left of the camera). */
   fill: [-0.35, 0.55, 0.76],
