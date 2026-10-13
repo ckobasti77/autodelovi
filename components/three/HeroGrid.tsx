@@ -108,8 +108,8 @@ export function HeroGrid({ className }: { className?: string }) {
     });
   }, []);
 
-  // Layout source of the scene: read on resize, on a page change and when the fonts arrive.
-  // A page needs its cells in the frame it appears, so that read is synchronous. The assembled
+  // Layout source of the scene: read on resize and on a page change (cells and rows have fixed
+  // sizes, so a late font moves nothing the observer would not report). A page needs its cells in the frame it appears, so that read is synchronous. The assembled
   // car needs nothing yet: its first read rides the observer's own first delivery, where the
   // layout is already clean — a read here would force a layout of the whole page in the middle
   // of hydration.
@@ -121,14 +121,7 @@ export function HeroGrid({ className }: { className?: string }) {
     const observer = new ResizeObserver(run);
     observer.observe(root);
     if (heroDom.main) observer.observe(heroDom.main);
-    let frame = 0;
-    void document.fonts?.ready.then(() => {
-      frame = requestAnimationFrame(run);
-    });
-    return () => {
-      cancelAnimationFrame(frame);
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, [page]);
 
   // A name arrives word by word when its part seats (≤ 300 ms), and the tick under the cell
@@ -326,14 +319,18 @@ const Slot = memo(function Slot({
     const state = heroStore.getState();
     if (address && address.page !== state.page) state.controller?.goToPage(address.page, { instant: true });
   };
+  // A page that is not in view is a plain list of links for the accessibility tree: the name
+  // as text, no cell, no label box. Five such pages (all six at the assembled car) cost every
+  // layout and style pass of the document next to nothing; the full slot is built when its
+  // page comes up, on the same <a>, so a link that had focus keeps it.
   return (
-    <li className="flex min-w-0 justify-center">
+    <li className={active ? "flex min-w-0 justify-center" : undefined}>
       <RouteLink
         href={href}
         prefetch={false}
         data-slot={category.slug}
         data-seated={seated ? "" : undefined}
-        aria-label={category.labelSr}
+        aria-label={active ? category.labelSr : undefined}
         tabIndex={active ? 0 : -1}
         onFocus={focus}
         onBlur={() => setFocusedSlot(null)}
@@ -341,43 +338,53 @@ const Slot = memo(function Slot({
           if (event.pointerType === "mouse") setFocusedSlot(category.slug);
         }}
         onPointerLeave={() => setFocusedSlot(null)}
-        className="group pointer-events-auto flex w-full min-w-0 cursor-pointer flex-col items-center gap-1.5 rounded-sm pb-1 text-ink-1 focus-ring-inset hover-hover:hover:text-accent-hover"
+        className={
+          active
+            ? "group pointer-events-auto flex w-full min-w-0 cursor-pointer flex-col items-center gap-1.5 rounded-sm pb-1 text-ink-1 focus-ring-inset hover-hover:hover:text-accent-hover"
+            : undefined
+        }
       >
-        <span data-cell={category.slug} className="relative block size-(--slot-cell) shrink-0">
-          {active && seated && image ? (
-            <Image
-              src={categoryImage(category.slug)}
-              alt=""
-              fill
-              sizes="(min-width: 48rem) 124px, 76px"
-              className="object-contain"
-            />
-          ) : null}
-          <span
-            data-tick=""
-            aria-hidden="true"
-            className={cn(
-              "absolute inset-x-[34%] -bottom-1 h-px origin-center bg-line-strong",
-              !seated && "hidden",
-            )}
-          />
-        </span>
-        <span className="flex h-[2lh] w-full items-start justify-center text-center">
-          <span data-label="" className={seated ? "text-balance" : "sr-only"}>
-            {short ? (
-              <>
-                <span data-name="short" className="min-[90rem]:hidden">
-                  {short}
-                </span>
-                <span data-name="full" className="hidden min-[90rem]:inline">
-                  {category.labelSr}
-                </span>
-              </>
-            ) : (
-              category.labelSr
-            )}
-          </span>
-        </span>
+        {active ? (
+          <>
+            <span data-cell={category.slug} className="relative block size-(--slot-cell) shrink-0">
+              {seated && image ? (
+                <Image
+                  src={categoryImage(category.slug)}
+                  alt=""
+                  fill
+                  sizes="(min-width: 48rem) 124px, 76px"
+                  className="object-contain"
+                />
+              ) : null}
+              <span
+                data-tick=""
+                aria-hidden="true"
+                className={cn(
+                  "absolute inset-x-[34%] -bottom-1 h-px origin-center bg-line-strong",
+                  !seated && "hidden",
+                )}
+              />
+            </span>
+            <span className="flex h-[2lh] w-full items-start justify-center text-center">
+              <span data-label="" className={seated ? "text-balance" : "sr-only"}>
+                {short ? (
+                  <>
+                    <span data-name="short" className="min-[90rem]:hidden">
+                      {short}
+                    </span>
+                    <span data-name="full" className="hidden min-[90rem]:inline">
+                      {category.labelSr}
+                    </span>
+                  </>
+                ) : (
+                  category.labelSr
+                )}
+              </span>
+            </span>
+          </>
+        ) : (
+          category.labelSr
+        )}
       </RouteLink>
     </li>
   );
