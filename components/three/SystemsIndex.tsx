@@ -27,7 +27,15 @@ export function SystemsIndex({
   counts?: Readonly<Record<string, number>>;
 }) {
   return (
-    <section aria-labelledby="systems-title" className="border-t border-line px-page py-section">
+    <section
+      aria-labelledby="systems-title"
+      // 44 links in ten panels, thousands of pixels under the hero: like every other section
+      // of home below the fold it skips style, layout and paint until it nears the viewport.
+      // It was the one that did not, and its first layout fell on either side of the first
+      // paint — a third of home's blocking time when it fell after (D384). The intrinsic size
+      // is its measured height per column count; the skip link's jump into it still works.
+      className="cv-auto border-t border-line px-page py-section [contain-intrinsic-size:auto_2550px] md:[contain-intrinsic-size:auto_1560px] xl:[contain-intrinsic-size:auto_1220px]"
+    >
       <h2 id="systems-title" className="type-display-l text-ink-1">
         {HERO_COPY.systemsSection}
       </h2>
