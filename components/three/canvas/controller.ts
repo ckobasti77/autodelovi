@@ -19,6 +19,7 @@ import {
   Box3,
   Color,
   Group,
+  Matrix4,
   Mesh,
   MeshBasicMaterial,
   Raycaster,
@@ -95,6 +96,7 @@ const tmpBox = new Box3();
 const tmpVec = new Vector3();
 const tmpVec2 = new Vector3();
 const forward = new Vector3();
+const ghostInverse = new Matrix4();
 const ndc = new Vector2();
 
 export class HeroScene3D {
@@ -504,7 +506,12 @@ export class HeroScene3D {
     const next = slug && this.car.categories.get(slug)?.parts.length ? slug : null;
     if (next === this.origin) return;
     const previous = this.origin ? this.ghosts.get(this.origin) : null;
-    if (previous) previous.visible = false;
+    if (previous) for (const holder of previous.children) holder.visible = false;
+    // The docked part itself takes the hover tint while its slot is pointed at.
+    const before = this.origin ? this.car.categories.get(this.origin) : null;
+    if (before && this.origin !== this.hovered) this.tweenUniform(before.highlight.hover, 0, DUR.quick);
+    const after = next ? this.car.categories.get(next) : null;
+    if (after) this.tweenUniform(after.highlight.hover, 1, DUR.quick);
     this.origin = next;
     gsap.killTweensOf(this.ghostMaterial);
     if (!next) {
@@ -516,9 +523,8 @@ export class HeroScene3D {
     if (!ghost) {
       ghost = this.buildGhost(next);
       this.ghosts.set(next, ghost);
-      this.car.root.add(ghost);
     }
-    ghost.visible = true;
+    for (const holder of ghost.children) holder.visible = true;
     if (this.reduced) {
       this.ghostMaterial.opacity = GHOST_OPACITY;
       this.invalidate();
@@ -533,24 +539,33 @@ export class HeroScene3D {
     }
   }
 
+  /**
+   * One holder per instance, a sibling of the part node at the node's assembled place; every
+   * mesh keeps its transform relative to the part node (a multi-material mesh is a group whose
+   * own node carries the dequantisation scale, so the mesh's local transform alone is not it).
+   */
   private buildGhost(slug: string): Group {
     const group = new Group();
     group.name = `ghost__${slug}`;
     const category = this.car.categories.get(slug);
     for (const part of category?.parts ?? []) {
+      const parent = part.node.parent;
+      if (!parent) continue;
       const holder = new Group();
       holder.position.copy(part.pivot);
+      part.node.updateWorldMatrix(true, true);
+      ghostInverse.copy(part.node.matrixWorld).invert();
       for (const mesh of part.meshes) {
         const copy = new Mesh(mesh.geometry, this.ghostMaterial);
-        copy.position.copy(mesh.position);
-        copy.quaternion.copy(mesh.quaternion);
-        copy.scale.copy(mesh.scale);
+        copy.matrixAutoUpdate = false;
+        copy.matrix.multiplyMatrices(ghostInverse, mesh.matrixWorld);
         copy.layers.set(OVERLAY_LAYER);
         copy.renderOrder = 20;
         copy.raycast = () => {};
         holder.add(copy);
       }
-      group.add(holder);
+      parent.add(holder);
+      group.children.push(holder);
     }
     return group;
   }
@@ -629,7 +644,9 @@ export class HeroScene3D {
       gsap.killTweensOf([c.highlight.hover, c.highlight.select, c.highlight.dim]);
     }
     gsap.killTweensOf([this.car.staticHighlight.dim, this.car.shared.selectFade]);
-    for (const ghost of this.ghosts.values()) this.car.root.remove(ghost);
+    for (const ghost of this.ghosts.values()) {
+      for (const holder of ghost.children) holder.removeFromParent();
+    }
     this.ghosts.clear();
     this.ghostMaterial.dispose();
   }

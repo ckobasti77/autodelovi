@@ -3,18 +3,15 @@
 /**
  * Pointer interaction on the canvas (contract F8): hover (fine pointers only) raycasts once
  * per animation frame at most; a click or tap (≤ 6 px travel, ≤ 600 ms) selects the category
- * under the pointer, or clears the selection on empty space. Vertical page scrolling stays
- * native (`touch-action: pan-y` on the canvas), so a scroll gesture never selects.
+ * under the pointer. A click that misses does nothing — on a phone a part is a small target,
+ * and losing the open panel to a near miss is worse than an extra tap on its close button
+ * (docs/3d/HERO-V2.md §8). Vertical page scrolling stays native (`touch-action: pan-y` on the
+ * canvas), so a scroll gesture never selects.
  */
 import { useThree } from "@react-three/fiber";
 import { useEffect, type RefObject } from "react";
 
-import {
-  clearSelection,
-  heroStore,
-  selectCategory,
-  setHovered,
-} from "@/components/three/heroStore";
+import { heroStore, selectCategory, setHovered } from "@/components/three/heroStore";
 import type { HeroScene3D } from "@/components/three/canvas/controller";
 
 const CLICK_SLOP_PX = 6;
@@ -76,7 +73,6 @@ export function usePointerPicking(controller: RefObject<HeroScene3D | null>, ena
       if (!c) return;
       const slug = c.pick(p.x, p.y);
       if (slug) selectCategory(slug, "canvas");
-      else if (heroStore.getState().selected) clearSelection();
     };
 
     const onCancel = () => {
