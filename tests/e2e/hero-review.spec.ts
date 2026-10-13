@@ -139,16 +139,20 @@ const drift = (page: Page) =>
     return { cell, name, drawn, count };
   });
 
-/** Polls until the page's meshes are docked on the cells the DOM has now. */
-async function expectDocked(page: Page, meshes: number, what: string) {
+/**
+ * Polls until the meshes of grid page `stage` are docked on the cells the DOM has now. The page
+ * is asked for again while the store is anywhere else (see goToStage): a part in flight, or
+ * another page after a late refresh, is not drift.
+ */
+async function expectDocked(page: Page, stage: number, what: string) {
+  const meshes = PAGES[stage - 1].meshes;
   await expect
     .poll(
       async () => {
-        // Still at the page's rest (see goToStage): otherwise a part is in flight, not adrift.
         const now = await state(page);
-        if (now.page >= 1 && now.found !== FOUND[now.page - 1]) {
-          await page.evaluate((n) => window.__sklop3d!.page(n), now.page);
-          return `page ${now.page} is not at rest`;
+        if (now.page !== stage || now.found !== FOUND[stage - 1] || now.ended) {
+          await page.evaluate((n) => window.__sklop3d!.page(n), stage);
+          return `at page ${now.page} with ${now.found} found, not at the rest of page ${stage}`;
         }
         const d = await drift(page);
         if (d.count !== meshes) return `${d.count} docked`;
@@ -204,7 +208,7 @@ test.describe("3D hero — owner review", () => {
     for (const [number, slugs] of Object.entries(NAMED)) {
       const stage = Number(number);
       await goToStage(page, stage);
-      await expectDocked(page, PAGES[stage - 1].meshes, `page ${stage}`);
+      await expectDocked(page, stage, `page ${stage}`);
       // The names arrive over 300 ms; a thumbnail slot waits for its picture.
       await expect
         .poll(() =>
@@ -532,7 +536,7 @@ test.describe("3D hero — owner review", () => {
     expect(await webFontsLoaded()).toBe(0);
 
     await goToStage(page, 2);
-    await expectDocked(page, 9, "page 2 with the fallback fonts");
+    await expectDocked(page, 2, "page 2 with the fallback fonts");
 
     // A resize (the same layout class, another size) and back.
     // (The track's length follows the viewport: ScrollTrigger measures again 200 ms after the
@@ -541,27 +545,27 @@ test.describe("3D hero — owner review", () => {
     await page.setViewportSize(mobile ? { width: 430, height: 932 } : { width: 1280, height: 800 });
     await page.waitForTimeout(600);
     await goToStage(page, 2);
-    await expectDocked(page, 9, "after a resize");
+    await expectDocked(page, 2, "after a resize");
     await page.setViewportSize(original);
     await page.waitForTimeout(600);
     await goToStage(page, 2);
-    await expectDocked(page, 9, "after the resize back");
+    await expectDocked(page, 2, "after the resize back");
 
     // The fonts arrive late.
     holding = false;
     await Promise.all(held.map((route) => route.continue()));
     await expect.poll(webFontsLoaded, { timeout: 30_000 }).toBeGreaterThan(0);
     await page.evaluate(() => document.fonts.ready.then(() => undefined));
-    await expectDocked(page, 9, "after the fonts loaded");
+    await expectDocked(page, 2, "after the fonts loaded");
 
     // A modal dialog over the grid: the parts stay on their cells behind it.
     await page.getByTestId(TEST_IDS.partsListTrigger).click();
     const dialog = page.getByRole("dialog", { name: "Lista delova po sistemima" });
     await expect(dialog).toBeVisible();
-    await expectDocked(page, 9, "with the parts list open");
+    await expectDocked(page, 2, "with the parts list open");
     await page.keyboard.press("Escape");
     await expect(dialog).toBeHidden();
-    await expectDocked(page, 9, "after the parts list closed");
+    await expectDocked(page, 2, "after the parts list closed");
 
     // The part panel (a drawer from 1024 px, a sheet on phones) opens and closes; the page that
     // comes back is on its cells again.
@@ -572,9 +576,9 @@ test.describe("3D hero — owner review", () => {
     await page.keyboard.press("Escape");
     await expect(panel).toBeHidden();
     await goToStage(page, 2);
-    await expectDocked(page, 9, "after the part panel closed");
+    await expectDocked(page, 2, "after the part panel closed");
     await goToStage(page, 3);
-    await expectDocked(page, 8, "the next page after all of it");
+    await expectDocked(page, 3, "the next page after all of it");
     expect(errors).toEqual([]);
   });
 
@@ -681,7 +685,7 @@ test.describe("3D hero — owner review", () => {
     expect(await state(page)).toMatchObject({ slotMode: "mesh", page: 2, found: 16 });
     // The meshes are where the thumbnails were, and the thumbnails are gone.
     await expect(active.locator("[data-cell] img")).toHaveCount(0);
-    await expectDocked(page, 9, "meshes in the thumbnails' cells");
+    await expectDocked(page, 2, "meshes in the thumbnails' cells");
     const sizes = await page.evaluate(() => {
       const cell = document.querySelector("[data-page-active] [data-cell]")!.getBoundingClientRect();
       return { cell: cell.width, slots: window.__sklop3d!.slots().map((slot) => Math.max(slot.w, slot.h)) };
@@ -704,7 +708,7 @@ test.describe("3D hero — owner review", () => {
 
     // With the 3D running the grid asks for no more thumbnails of its meshes.
     await goToStage(page, 3);
-    await expectDocked(page, 8, "page 3");
+    await expectDocked(page, 3, "page 3");
     await page.waitForTimeout(500);
     expect(thumbnails.length).toBe(thumbnailsBefore);
 

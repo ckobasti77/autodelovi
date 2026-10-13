@@ -113,6 +113,8 @@ function headerHeight(): number {
 }
 
 const FINE_POINTER = "(hover: hover) and (pointer: fine)";
+/** Where the skip link lands: the heading of the section after the track (`SystemsIndex`). */
+const SKIP_TARGET = "systems-title";
 const INTENT_SCROLL_PX = 40;
 const IDLE_AFTER_LOAD_MS = 4000;
 
@@ -646,11 +648,27 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
     if (next) controller?.goToPage(next);
   }, []);
   const onOpenList = useCallback(() => setListOpen(true), []);
+  // A browser drops its pending jump to a fragment when something else scrolls first, and the
+  // navigator row moving to its active cluster is such a scroll: activated in that moment, the
+  // skip link changed the URL and went nowhere. The navigation stays the browser's (the URL,
+  // where Tab continues from); if the heading is not on screen two frames later, the jump is
+  // made here.
+  const onSkip = useCallback(() => {
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        const target = document.getElementById(SKIP_TARGET);
+        if (!target) return;
+        const { top, bottom } = target.getBoundingClientRect();
+        if (bottom <= 0 || top >= window.innerHeight) target.scrollIntoView({ block: "start" });
+      }),
+    );
+  }, []);
 
   return (
     <>
       <a
-        href="#systems-title"
+        href={`#${SKIP_TARGET}`}
+        onClick={onSkip}
         data-testid={TEST_IDS.heroSkip}
         className="fixed left-3 top-3 z-skip -translate-y-[200%] rounded-sm bg-accent px-4 py-3 type-button text-on-accent focus-ring-inverse focus:translate-y-0"
       >
