@@ -2,7 +2,10 @@
  * Pose evaluator of the hero v2 grid (docs/3d/HERO-V2.md §4.2, §6): where every part node is at
  * scroll progress `p`. A part lifts out along its explode direction, is carried on an arc to
  * its category's slot while it scales and turns to the thumbnail's angle, seats, and floats;
- * when the next page starts it shrinks toward its navigator chip and is hidden.
+ * when the next page starts it shrinks toward its navigator chip and is hidden. The flight is
+ * composed as the camera sees it — the arc is a share of the path on screen and the size on
+ * screen goes straight from the car's to the slot's — because a slot is metres nearer than the
+ * car: in world units the same arc and the same blend of scale throw a part out of the frame.
  *
  * The pose is a pure function of (p, camera, slot rectangles) — no stored motion state — so
  * scrolling back plays the same frames in reverse. The float is time-based, zero-mean and
@@ -75,14 +78,67 @@ const tmp = new Vector3();
 const rotW = new Quaternion();
 const qYaw = new Quaternion();
 const camUp = new Vector3();
+const camRight = new Vector3();
 const chip = new Vector3();
+
+/** View depth of a world point (metres in front of the camera, never less than a hand's width). */
+function depthOf(point: Vector3, eye: Vector3, forward: Vector3): number {
+  return Math.max((point.x - eye.x) * forward.x + (point.y - eye.y) * forward.y + (point.z - eye.z) * forward.z, 0.1);
+}
+
+/**
+ * How far apart two world points are on screen, in units of view depth (multiply by a depth for
+ * metres across at that depth). The flight's arc is a share of this, so it is the same share of
+ * the path on screen whether the slot is beside the car or metres in front of it.
+ */
+function screenSpan(a: Vector3, b: Vector3, eye: Vector3, forward: Vector3, right: Vector3, up: Vector3): number {
+  const da = depthOf(a, eye, forward);
+  const db = depthOf(b, eye, forward);
+  const ax = ((a.x - eye.x) * right.x + (a.y - eye.y) * right.y + (a.z - eye.z) * right.z) / da;
+  const ay = ((a.x - eye.x) * up.x + (a.y - eye.y) * up.y + (a.z - eye.z) * up.z) / da;
+  const bx = ((b.x - eye.x) * right.x + (b.y - eye.y) * right.y + (b.z - eye.z) * right.z) / db;
+  const by = ((b.x - eye.x) * up.x + (b.y - eye.y) * up.y + (b.z - eye.z) * up.z) / db;
+  return Math.hypot(bx - ax, by - ay);
+}
+
+/**
+ * Scale of a part on its way from the car (scale 1 at depth `d0`) to its slot (scale `end` at
+ * depth `d1`), now at depth `d`: the size on screen goes from one to the other and never past
+ * either. A straight blend of the scale itself lets a panel balloon on its way toward the
+ * camera — on a phone, out of the top of the frame.
+ */
+function carriedScale(end: number, carry: number, d: number, d0: number, d1: number): number {
+  const a = 1 / d0;
+  const b = end / d1;
+  // A part that ends larger than it left (a small car, a short phone) grows late, once it has
+  // moved clear of the car and of the frame's edge.
+  const k = b > a ? carry * carry : carry;
+  return d * (a + (b - a) * k);
+}
 
 function rankOf(part: PartEntry): number {
   const index = SLOT_PREFERRED.indexOf(part.instance);
   return index < 0 ? SLOT_PREFERRED.length : index;
 }
 
-export type SlotReport = { slug: string; w: number; h: number; dx: number; dy: number; angle: number };
+/**
+ * A docked slot as the scene draws it (canvas px). `dx`, `dy`: the drawn box's centre against
+ * the cell the scene was given. `cx`, `cy`: that centre itself, float included. `rx`, `ry`: where
+ * the composition rests (no float) — compare it with the cell the DOM has now to see whether the
+ * scene still follows the layout.
+ */
+export type SlotReport = {
+  slug: string;
+  w: number;
+  h: number;
+  dx: number;
+  dy: number;
+  cx: number;
+  cy: number;
+  rx: number;
+  ry: number;
+  angle: number;
+};
 
 export class DockPoses {
   private readonly slots: Slot[] = [];
@@ -242,7 +298,11 @@ export class DockPoses {
     const relayout = this.cameraChanged() || this.dirty;
     this.dirty = false;
     camUp.setFromMatrixColumn(this.camera.matrixWorld, 1);
+    camRight.setFromMatrixColumn(this.camera.matrixWorld, 0);
+    const eye = this.camera.position;
     const bobPx = this.touch ? SLOT.bobPxTouch : SLOT.bobPx;
+    const hop = this.touch ? SLOT.hopTouch : SLOT.hop;
+    const arcShare = this.touch ? SLOT.arcTouch : SLOT.arc;
     const yawMax = (SLOT.yawDeg * Math.PI) / 180;
     let anySeated = false;
 
@@ -294,7 +354,7 @@ export class DockPoses {
         const { part, boxCentre } = slot.shown[i];
         const node = part.node;
         node.visible = true;
-        from.copy(part.pivot).addScaledVector(part.dir, Math.min(part.distance, SLOT.hop) * lift);
+        from.copy(part.pivot).addScaledVector(part.dir, Math.min(part.distance, hop) * lift);
         if (carry <= 0) {
           node.position.copy(from);
           node.quaternion.copy(IDENTITY);
@@ -309,10 +369,12 @@ export class DockPoses {
           .addScaledVector(up, offset.y * scale + bob)
           .addScaledVector(toCamera, offset.z * scale)
           .sub(tmp);
-        const arc = from.distanceTo(to) * SLOT.arc * Math.sin(Math.PI * carry);
-        node.position.lerpVectors(from, to, carry).addScaledVector(camUp, arc);
+        node.position.lerpVectors(from, to, carry);
+        const depth = depthOf(node.position, eye, forward);
+        const span = screenSpan(from, to, eye, forward, camRight, camUp);
+        node.position.addScaledVector(camUp, span * depth * arcShare * Math.sin(Math.PI * carry));
         node.quaternion.copy(IDENTITY).slerp(rotW, carry);
-        let size = 1 + (own - 1) * carry;
+        let size = carriedScale(own, carry, depth, depthOf(from, eye, forward), depthOf(to, eye, forward));
         if (leave > 0) {
           node.position.lerp(chip, leave);
           size *= 1 - leave;
@@ -330,7 +392,7 @@ export class DockPoses {
           continue;
         }
         node.visible = true;
-        from.copy(part.pivot).addScaledVector(part.dir, Math.min(part.distance, SLOT.hop) * lift);
+        from.copy(part.pivot).addScaledVector(part.dir, Math.min(part.distance, hop) * lift);
         if (carry <= 0) {
           node.position.copy(from);
           node.quaternion.copy(IDENTITY);
@@ -339,10 +401,13 @@ export class DockPoses {
         }
         tmp.copy(boxCentre).applyQuaternion(rotW).multiplyScalar(scale);
         to.copy(slot.centre).addScaledVector(toCamera, -0.02).sub(tmp);
-        const arc = from.distanceTo(to) * SLOT.arc * Math.sin(Math.PI * carry);
-        node.position.lerpVectors(from, to, carry).addScaledVector(camUp, arc);
+        node.position.lerpVectors(from, to, carry);
+        const depth = depthOf(node.position, eye, forward);
+        const span = screenSpan(from, to, eye, forward, camRight, camUp);
+        node.position.addScaledVector(camUp, span * depth * arcShare * Math.sin(Math.PI * carry));
         node.quaternion.copy(IDENTITY).slerp(rotW, carry);
-        node.scale.setScalar(Math.max((1 + (scale - 1) * carry) * tuck, 1e-4));
+        const size = carriedScale(scale, carry, depth, depthOf(from, eye, forward), depthOf(to, eye, forward));
+        node.scale.setScalar(Math.max(size * tuck, 1e-4));
       }
 
       slot.state = 1;
@@ -393,12 +458,17 @@ export class DockPoses {
           y1 = Math.max(y1, y);
         }
       }
+      v.copy(slot.centre).project(this.camera);
       out.push({
         slug: slot.slug,
         w: Math.round(x1 - x0),
         h: Math.round(y1 - y0),
         dx: Math.round((x0 + x1) / 2 - (slot.rect.x + slot.rect.w / 2)),
         dy: Math.round((y0 + y1) / 2 - (slot.rect.y + slot.rect.h / 2)),
+        cx: Math.round(((x0 + x1) / 2) * 10) / 10,
+        cy: Math.round(((y0 + y1) / 2) * 10) / 10,
+        rx: Math.round(((v.x + 1) / 2) * this.width * 10) / 10,
+        ry: Math.round(((1 - v.y) / 2) * this.height * 10) / 10,
         angle: Math.round(offAxisDeg(forward, slot.basis) * 10) / 10,
       });
     }

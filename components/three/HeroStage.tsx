@@ -27,7 +27,7 @@ import { useMotionMedia } from "@/lib/gsap/useMotionMedia";
 import { findSystem, type SystemSlug } from "@/lib/catalog/taxonomy";
 import { onModelProgress, prefetchModel } from "@/lib/three/assets";
 import { clamp01, progressPerPixel, scrollTargetFor } from "@/lib/three/explode";
-import { POSTER_ASPECT, currentFraming, posterDock, posterFrame } from "@/lib/three/framing";
+import { POSTER_ASPECT, carBand, currentFraming, posterDock, posterFrame } from "@/lib/three/framing";
 import {
   HERO_PAGES,
   PAGE_FIRST,
@@ -313,6 +313,18 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
       ScrollTrigger.addEventListener("refresh", sync);
       triggerRef.current = trigger;
       syncRef.current = sync;
+      // The track's own size is the trigger's range. ScrollTrigger measures again on a window
+      // resize, but on a touch-only device it skips a resize that lands on the dimensions it
+      // saw at load (it is guarding against the URL bar) — after another size in between, the
+      // range it holds is that other size's, and the scene shows the wrong page for the scroll
+      // position. The first delivery is the size the trigger was created with.
+      let trackSize = "";
+      const resize = new ResizeObserver(([entry]) => {
+        const next = `${Math.round(entry.contentRect.width)}x${Math.round(entry.contentRect.height)}`;
+        if (trackSize !== "" && next !== trackSize) requestScrollTriggerRefresh();
+        trackSize = next;
+      });
+      resize.observe(track);
       // Next resets the scroll of a client navigation after this layout effect, so the first
       // measurement waits for a frame with the final position (and does not depend on a global
       // refresh): publishing now could flash the previous page's offset as a page of parts.
@@ -325,6 +337,7 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
       });
       return () => {
         cancelAnimationFrame(frame);
+        resize.disconnect();
         ScrollTrigger.removeEventListener("refresh", sync);
         follow?.kill();
         trigger.kill();
@@ -461,7 +474,8 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
       }
       const framing = currentFraming();
       const frame = posterFrame(POSTER_ASPECT[framing.crop], stage.w, stage.h, framing);
-      const local = { x: band.x - stage.x, y: band.y - stage.y, w: band.w, h: band.h };
+      const fitted = carBand(band, SLOT.bandInset[framing.crop]);
+      const local = { x: fitted.x - stage.x, y: fitted.y - stage.y, w: fitted.w, h: fitted.h };
       const t = posterDock(framing.crop, frame, local, SLOT.bandFill[framing.crop], k);
       posterEl.style.transform = `translate3d(${t.x}px, ${t.y}px, 0) scale(${t.scale})`;
     };
@@ -723,10 +737,14 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
                 <HeroGrid className="relative z-[1] shrink-0 px-page pb-2 pt-1 lg:px-6 lg:pb-0 lg:pt-6" />
                 <div data-hero-band="" className="relative min-h-0 flex-1">
                   <HeroEnd className="absolute inset-0 z-[1]" />
-                  {page > 0 ? (
-                    <HonestyLine className="absolute inset-x-(--pad) bottom-1 truncate lg:inset-x-4 lg:bottom-2 lg:text-right" />
-                  ) : null}
                 </div>
+                {/* Docked: on phones the note has a line of its own above the car (last in this
+                    reversed column). The car is fitted into the band under it and its parts
+                    leave downward, to the grid, so nothing is ever drawn under the text. From
+                    1024 px it sits in the band's bottom corner, clear of the car. */}
+                {page > 0 ? (
+                  <HonestyLine className="relative z-[1] shrink-0 truncate px-page pt-1.5 lg:absolute lg:inset-x-4 lg:bottom-2 lg:px-0 lg:pt-0 lg:text-right" />
+                ) : null}
                 {/* Assembled: the note sits under the drawing, as the poster has it. */}
                 {page === 0 ? (
                   <HonestyLine className="absolute inset-x-(--pad) bottom-2 truncate lg:inset-x-4 lg:text-right min-[90rem]:hidden" />

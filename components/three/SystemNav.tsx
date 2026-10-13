@@ -10,6 +10,11 @@
  * phones the row scrolls sideways and keeps the active cluster centred. The chips are also where
  * a page's parts go when it leaves the grid, so their centres are reported to the scene.
  *
+ * A chip never changes width: its count is drawn over an invisible copy of its widest reading
+ * („13/13“), so the row is laid out once. From 1280 px the ten chips fit the row whole; where
+ * they do not (phones, a narrow laptop, the row beside the open part panel) the row scrolls and
+ * fades only on a side that still has chips to show.
+ *
  * Per progress change this writes at most the one hairline that moved; a seat re-renders the
  * counter and the chip that counts it (`Chip` is memoised), not the row.
  */
@@ -75,7 +80,7 @@ const Chip = memo(function Chip({
         state === "active" ? HERO_COPY.chipShown : state === "done" ? HERO_COPY.chipDone : "",
       )}
       className={cn(
-        "inline-flex h-11 shrink-0 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-sm px-3 type-caption transition-control focus-ring-inset active:translate-y-px hover-hover:h-10",
+        "inline-flex h-11 shrink-0 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-sm px-3 type-caption transition-control focus-ring-inset active:translate-y-px hover-hover:h-10 lg:gap-1 lg:px-2 min-[96rem]:px-2.5",
         state === "active" && "bg-accent-subtle text-accent",
         state === "done" && "bg-surface-3 text-ink-2 hover-hover:hover:text-ink-1",
         state === "next" &&
@@ -83,14 +88,18 @@ const Chip = memo(function Chip({
       )}
     >
       {SYSTEM_SHORT[system]}
-      <span aria-hidden="true" className="inline-flex items-center tabular-nums text-ink-3">
-        {state === "done" ? (
-          <CheckIcon size={14} weight="bold" />
-        ) : state === "active" ? (
-          `${seated}/${count}`
-        ) : (
-          count
-        )}
+      {/* The widest reading holds the place; the current one is drawn over it. */}
+      <span aria-hidden="true" className="steady-count text-ink-3">
+        <span>{`${count}/${count}`}</span>
+        <span className="inline-flex">
+          {state === "done" ? (
+            <CheckIcon size={14} weight="bold" />
+          ) : state === "active" ? (
+            `${seated}/${count}`
+          ) : (
+            count
+          )}
+        </span>
       </span>
     </button>
   );
@@ -155,9 +164,24 @@ export function SystemNav({
     });
   }, []);
 
-  // Where each page's parts go when it leaves: the centre of its cluster (canvas px).
+  // Where each page's parts go when it leaves: the centre of its cluster (canvas px). The same
+  // delivery says whether the row scrolls at all, and the scroll says which side still hides
+  // chips: an edge fades only then, so no chip of a row that fits is ever under a fade.
   useLayoutEffect(() => {
+    const row = scroller.current;
+    let fade = "";
+    const edges = () => {
+      if (!row) return;
+      const room = row.scrollWidth - row.clientWidth;
+      const start = room > 1 && row.scrollLeft > 1;
+      const end = room > 1 && row.scrollLeft < room - 1;
+      const next = start && end ? "both" : start ? "start" : end ? "end" : "none";
+      if (next === fade) return;
+      fade = next;
+      row.dataset.fade = next;
+    };
     const measure = () => {
+      edges();
       const main = heroDom.main?.getBoundingClientRect();
       if (!main) return;
       const points: ({ x: number; y: number } | null)[] = [null];
@@ -177,11 +201,16 @@ export function SystemNav({
     // No read at mount: the observer delivers once on its own, when the layout is clean (a
     // read here would force one during hydration, and nothing leaves the grid before page 2).
     const observer = new ResizeObserver(measure);
-    if (scroller.current) observer.observe(scroller.current);
-    return () => observer.disconnect();
+    if (row) observer.observe(row);
+    row?.addEventListener("scroll", edges, { passive: true });
+    return () => {
+      observer.disconnect();
+      row?.removeEventListener("scroll", edges);
+    };
   }, []);
 
-  // Phones: keep the active cluster in the middle of the scrolling row.
+  // Phones: keep the active cluster in the middle of the scrolling row — or, when it is wider
+  // than the row, at its start, so the first of its chips is always whole.
   const centred = useRef(false);
   useEffect(() => {
     // The assembled car at mount: the row is at its start already, nothing to read.
@@ -196,7 +225,7 @@ export function SystemNav({
     const box = item?.getBoundingClientRect();
     row.scrollTo({
       left: box
-        ? row.scrollLeft + box.left - row.getBoundingClientRect().left - (row.clientWidth - box.width) / 2
+        ? row.scrollLeft + box.left - row.getBoundingClientRect().left - Math.max(0, (row.clientWidth - box.width) / 2)
         : 0,
       behavior: reduced ? "auto" : "smooth",
     });
@@ -224,9 +253,9 @@ export function SystemNav({
   const activeSystem = NAV_SYSTEMS.find((s) => s.pages.includes(page))?.system ?? NAV_SYSTEMS[0].system;
 
   return (
-    <div data-reveal="off" className="flex items-center gap-3 lg:gap-5">
+    <div data-reveal="off" className="flex items-center gap-3 lg:gap-4">
       <p className="shrink-0 whitespace-nowrap" data-hero-counter="">
-        <span className="sr-only type-label text-ink-3 lg:not-sr-only lg:mr-2">
+        <span className="sr-only type-label text-ink-3 min-[96rem]:not-sr-only min-[96rem]:mr-2">
           {HERO_COPY.found}
         </span>
         <span className="type-numeral-s tabular-nums text-ink-1">{pad(found)}</span>
@@ -237,7 +266,7 @@ export function SystemNav({
         <ol
           ref={scroller}
           onKeyDown={onKeyDown}
-          className="flex gap-3 overflow-x-auto scroll-fade-x [scrollbar-width:none] lg:gap-4"
+          className="flex gap-3 scroll-fade-edges lg:justify-between lg:gap-2.5"
         >
           {CLUSTERS.map((cluster, index) => {
             const clusterState = stateOf(cluster.pages, page, ended);
@@ -289,9 +318,9 @@ export function SystemNav({
         onClick={onOpenList}
         data-testid={TEST_IDS.partsListTrigger}
         aria-haspopup="dialog"
-        className="shrink-0 max-lg:w-11 max-lg:px-0"
+        className="shrink-0 max-[89.999rem]:w-11 max-[89.999rem]:px-0"
       >
-        <span className="sr-only lg:not-sr-only">{HERO_COPY.partsList}</span>
+        <span className="sr-only min-[90rem]:not-sr-only">{HERO_COPY.partsList}</span>
       </Button>
     </div>
   );

@@ -102,6 +102,20 @@ export const CAR_IN_POSTER: Readonly<
   mobile: { left: -0.1395, right: 1.0757, top: 0.1759, bottom: 1.0311 },
 };
 
+/**
+ * The part of the band the car is fitted into: the band less the room it leaves free (`inset`
+ * in shares of the band's height). Shared by the camera's solve and the poster's stand-in; it
+ * lives here, not with the slot maths, because the stage imports it and this module has no
+ * three.js in it (the stage is first-load JS).
+ */
+export function carBand(
+  band: { x: number; y: number; w: number; h: number },
+  inset: { top: number; bottom: number },
+): { x: number; y: number; w: number; h: number } {
+  const h = Math.max(band.h * (1 - inset.top - inset.bottom), 1);
+  return { x: band.x, y: band.y + band.h * inset.top, w: band.w, h };
+}
+
 export type PosterDock = { scale: number; x: number; y: number };
 
 /**

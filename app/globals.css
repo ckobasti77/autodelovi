@@ -865,6 +865,39 @@
     display: none;
   }
 }
+/* The same scroller where a row may also fit whole (the hero's system navigator): an edge fades
+   only on a side that still hides content. `data-fade` is written from the scroll position
+   (start | end | both | none); with nothing written there is no fade. */
+@utility scroll-fade-edges {
+  overflow-x: auto;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &[data-fade="start"] {
+    mask-image: linear-gradient(90deg, transparent, #000 20px);
+  }
+  &[data-fade="end"] {
+    mask-image: linear-gradient(270deg, transparent, #000 20px);
+  }
+  &[data-fade="both"] {
+    mask-image: linear-gradient(90deg, transparent, #000 20px, #000 calc(100% - 20px), transparent);
+  }
+}
+/* A count that never changes its box: the widest reading (first child, invisible) holds the
+   place, the current one (second child) is drawn over it. */
+@utility steady-count {
+  display: inline-grid;
+  justify-items: center;
+  align-items: center;
+  font-variant-numeric: tabular-nums;
+  & > span {
+    grid-area: 1 / 1;
+  }
+  & > span:first-child {
+    visibility: hidden;
+  }
+}
 
 /* ── 3D hero (docs/3D-CONTRACT.md §F7.1, DESIGN-SYSTEM §10.1) ─────────────────────────────
    The scroll track is reserved by CSS from the first paint, so nothing shifts when the 3D

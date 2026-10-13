@@ -216,7 +216,10 @@ function HeroScene({ tier }: HeroCanvasProps) {
     controller.setSelected(last.selected);
     controller.setFreeArea(last.freeArea);
     controller.setOrigin(last.focusedSlot);
-    heroStore.setState({ probe: () => controller.report() });
+    heroStore.setState({
+      probe: () => controller.report(),
+      probeOutline: () => controller.outline(),
+    });
     const unsubscribe = heroStore.subscribe((state) => {
       if (state.progress !== last.progress) controller.setProgress(state.progress);
       if (state.band !== last.band) controller.setBand(state.band);
@@ -247,7 +250,7 @@ function HeroScene({ tier }: HeroCanvasProps) {
     document.addEventListener("visibilitychange", onVisible);
     return () => {
       unsubscribe();
-      heroStore.setState({ probe: null, origin: null });
+      heroStore.setState({ probe: null, probeOutline: null, origin: null });
       window.removeEventListener("pointermove", wake);
       window.removeEventListener("keydown", wake);
       window.removeEventListener("touchstart", wake);

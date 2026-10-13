@@ -207,6 +207,8 @@ export function HeroGrid({ className }: { className?: string }) {
       )}
       style={{ "--slot-cols-wide": cols } as CSSProperties}
     >
+      {/* Only a page of the grid can show a thumbnail; the assembled car ships without it. */}
+      {page > 0 ? <SlotTone /> : null}
       <p aria-hidden="true" className="min-h-5 truncate type-label-l text-ink-2">
         {active ? (
           <>
@@ -233,6 +235,29 @@ export function HeroGrid({ className }: { className?: string }) {
         ))}
       </div>
     </section>
+  );
+}
+
+/**
+ * Tone of a slot's thumbnail on the night field. The thumbnails are rendered for the catalog's
+ * cards: mid-grey parts over a soft black contact shadow. In a slot that shadow is a dark box
+ * behind the part and the part is dimmer than its docked mesh, so the filter drops what is black
+ * and translucent (alpha follows the colour) and lifts the rest — no frame, no background, the
+ * same picture. Colours in sRGB, as the numbers were tuned.
+ */
+function SlotTone() {
+  return (
+    <svg aria-hidden="true" focusable="false" width="0" height="0" className="absolute">
+      <filter id="hero-slot-tone" colorInterpolationFilters="sRGB">
+        <feColorMatrix
+          type="matrix"
+          values="1.18 0 0 0 0.05  0 1.18 0 0 0.05  0 0 1.18 0 0.06  1.5 1.5 1.5 1 -1"
+          result="tone"
+        />
+        {/* Never more opaque than the picture was: an all but transparent pixel has no colour to trust. */}
+        <feComposite in="tone" in2="SourceGraphic" operator="in" />
+      </filter>
+    </svg>
   );
 }
 
@@ -353,7 +378,7 @@ const Slot = memo(function Slot({
                   alt=""
                   fill
                   sizes="(min-width: 48rem) 124px, 76px"
-                  className="object-contain"
+                  className="object-contain [filter:url(#hero-slot-tone)]"
                 />
               ) : null}
               <span

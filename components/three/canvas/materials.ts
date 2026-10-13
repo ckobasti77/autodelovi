@@ -177,6 +177,7 @@ function injectHighlight(
     uHiRimPower: { value: HIGHLIGHT.rimPower },
     uHiDock: highlight.dock,
     uHiDockColor: { value: new Color(DOCK.liftColor) },
+    uHiDockRim: { value: new Color(DOCK.rimColor) },
   };
   material.onBeforeCompile = (shader: WebGLProgramParametersWithUniforms) => {
     Object.assign(shader.uniforms, uniforms);
@@ -190,7 +191,8 @@ uniform float uHiSelect;
 uniform float uHiDim;
 uniform float uHiRimPower;
 uniform float uHiDock;
-uniform vec3 uHiDockColor;`,
+uniform vec3 uHiDockColor;
+uniform vec3 uHiDockRim;`,
       )
       .replace(
         "#include <emissivemap_fragment>",
@@ -200,9 +202,15 @@ uniform vec3 uHiDockColor;`,
   float hiRimAmt = min( uHiHover * ${HIGHLIGHT.hoverRim.toFixed(2)} + uHiSelect * ${HIGHLIGHT.selectedRim.toFixed(2)}, 1.0 );
   float hiEmi = uHiHover * ${HIGHLIGHT.hoverEmissive.toFixed(2)} + uHiSelect * ${HIGHLIGHT.selectedEmissive.toFixed(2)};
   totalEmissiveRadiance += uHiColor * ( hiRim * hiRimAmt + hiEmi );
-  // Docked in a grid slot: an exposure floor, so black rubber and plastic read on the night field.
+  // Docked in a grid slot: an exposure floor — higher the darker the base colour — shaded by a
+  // camera-locked fill, and a cool edge light: black rubber and plastic keep their form and get
+  // an outline on the night field.
+  float hiNdv = saturate( dot( normal, normalize( vViewPosition ) ) );
   float hiLam = 0.5 + 0.5 * dot( normal, normalize( ${DOCK_FILL} ) );
-  totalEmissiveRadiance += uHiDockColor * ( uHiDock * ${DOCK.lift.toFixed(2)} * ( 0.35 + 0.65 * hiLam ) );
+  float hiDark = 1.0 - smoothstep( ${DOCK.darkFrom.toFixed(2)}, ${DOCK.darkTo.toFixed(2)}, dot( diffuseColor.rgb, vec3( 0.2126, 0.7152, 0.0722 ) ) );
+  float hiFloor = ${DOCK.lift.toFixed(2)} + ${DOCK.liftDark.toFixed(2)} * hiDark;
+  totalEmissiveRadiance += uHiDockColor * ( uHiDock * hiFloor * ( ${DOCK.liftShade.toFixed(2)} + ${(1 - DOCK.liftShade).toFixed(2)} * hiLam * hiLam ) );
+  totalEmissiveRadiance += uHiDockRim * ( uHiDock * ${DOCK.rim.toFixed(2)} * pow( 1.0 - hiNdv, ${DOCK.rimPower.toFixed(1)} ) );
 }`,
       )
       .replace(

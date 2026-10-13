@@ -19,7 +19,6 @@ import { ROUTES } from "@/constants/routes";
 import { TEST_IDS } from "@/constants/testIds";
 import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
-import { IconButton } from "@/components/ui/IconButton";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { clearSelection, heroStore, useHeroStore } from "@/components/three/heroStore";
 
@@ -121,18 +120,26 @@ export function HeroEnd({ className }: { className?: string }) {
       <p className="type-display-m text-ink-1">{HERO_COPY.endTitle}</p>
       <p className="hidden max-w-[36ch] type-body-s text-ink-2 sm:block">{HERO_COPY.endSentence}</p>
       <div className="pointer-events-auto mt-1 flex items-center justify-center gap-2">
-        <Button variant="secondary" size="md" onClick={openVehiclePicker}>
+        {/* The end of the track is a region of its own: its one next step is the primary. */}
+        <Button variant="primary" size="md" onClick={openVehiclePicker}>
           {HERO_COPY.endVehicle}
         </Button>
-        <Button variant="quiet" size="md" asChild>
+        <Button variant="secondary" size="md" asChild>
           <RouteLink href={ROUTES.parts}>{HERO_COPY.endAll}</RouteLink>
         </Button>
-        <IconButton
-          label={HERO_COPY.endAssemble}
+        {/* Three names do not fit one row of a phone: there the quiet button keeps its icon and
+            its accessible name. */}
+        <Button
+          variant="quiet"
+          size="md"
           icon={<ArrowCounterClockwiseIcon size={20} />}
           onClick={assemble}
           data-testid={TEST_IDS.heroAssemble}
-        />
+          aria-label={HERO_COPY.endAssemble}
+          className="max-sm:w-11 max-sm:px-0"
+        >
+          <span className="max-sm:sr-only">{HERO_COPY.endAssemble}</span>
+        </Button>
       </div>
     </div>
   );

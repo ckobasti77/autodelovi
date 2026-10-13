@@ -73,8 +73,12 @@ export const SLOT = {
   depth: 3.2,
   /** Lift leg along the part's explode direction is capped at this distance (m). */
   hop: 0.3,
-  /** The arc rises by this share of the path, toward camera-up. */
+  /** The same where the grid is under the car (phones, tablets): the lift goes up, the slot is down. */
+  hopTouch: 0.15,
+  /** The arc rises by this share of the path on screen, toward camera-up. */
   arc: 0.1,
+  /** Where the grid is under the car the path is straight: a rise would start by leaving the frame. */
+  arcTouch: 0,
   /** Share of the flight spent on the lift leg; the carry starts at `carryFrom`. */
   liftSpan: 0.35,
   carryFrom: 0.2,
@@ -100,6 +104,17 @@ export const SLOT = {
   bandFill: {
     desktop: { width: 0.94, height: 0.9 },
     tablet: { width: 1.08, height: 1 },
-    mobile: { width: 1.3, height: 1.22 },
+    mobile: { width: 1.3, height: 1.24 },
+  } as const,
+  /**
+   * Room the car leaves free at the top and the bottom of its band (shares of the band's
+   * height). On phones the band starts under the header, so the roof — and a panel lifting off
+   * it — needs headroom there; the car's outline sits above the centre of its bounding box,
+   * hence the uneven pair.
+   */
+  bandInset: {
+    desktop: { top: 0, bottom: 0 },
+    tablet: { top: 0.04, bottom: 0 },
+    mobile: { top: 0.07, bottom: 0 },
   } as const,
 } as const;

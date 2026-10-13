@@ -39,7 +39,7 @@ import {
   type ViewOffset,
 } from "@/lib/three/camera";
 import { clamp01, power2InOut } from "@/lib/three/explode";
-import { POSTER_ASPECT, posterFrame, type Crop } from "@/lib/three/framing";
+import { POSTER_ASPECT, carBand, posterFrame, type Crop } from "@/lib/three/framing";
 import { PAGE_FIRST, PAGE_LAST, dockBlend, pageLocal } from "@/lib/three/pages";
 import { solveDock, type DockSolution, type Rect } from "@/lib/three/slots";
 import { SLOT } from "@/constants/heroSlots";
@@ -92,6 +92,16 @@ const SHADOW_FLOOR = 0.15;
 const GHOST_OPACITY = 0.42;
 
 export type Anchor = { x: number; y: number; visible: boolean };
+
+/** A box on the canvas (CSS px). */
+export type ScreenBox = { left: number; top: number; right: number; bottom: number };
+/**
+ * What is still on the car, what is on its way to a slot, and the car's assembled bounding box
+ * as the camera frames it now — the box `CAR_IN_POSTER` places in the poster (QA hook).
+ */
+export type Outline = { car: ScreenBox | null; flight: ScreenBox | null; box: ScreenBox };
+/** Vertices sampled per mesh for the outline. */
+const OUTLINE_SAMPLES = 400;
 
 const tmpBox = new Box3();
 const tmpVec = new Vector3();
@@ -320,7 +330,7 @@ export class HeroScene3D {
       bbox.min,
       bbox.max,
       this.frame,
-      this.band,
+      carBand(this.band, SLOT.bandInset[this.layout.crop]),
       SLOT.bandFill[this.layout.crop],
       this.solution,
     );
@@ -650,10 +660,74 @@ export class HeroScene3D {
     return out;
   }
 
+  /**
+   * Camera and parts at the current progress, now: the QA hooks answer for the state the store
+   * is in, without waiting for the frame that would draw it (a pose is a pure function of it).
+   */
+  private settle(): void {
+    this.updateCamera();
+    this.updateParts(performance.now() / 1000);
+  }
+
   /** Docked slots with their projected size and distance from the cell (QA hook). */
   report(): SlotReport[] {
+    this.settle();
     this.camera.getWorldDirection(forward);
     return this.poses.report(forward);
+  }
+
+  /**
+   * Outline of the car as drawn (QA hook): sampled vertices of every visible mesh that is not
+   * docked, projected to the canvas. A part that has lifted but not left counts as the car.
+   */
+  outline(): Outline {
+    this.settle();
+    const out: Outline = {
+      car: null,
+      flight: null,
+      box: { left: Infinity, top: Infinity, right: -Infinity, bottom: -Infinity },
+    };
+    const grow = (key: "car" | "flight", x: number, y: number) => {
+      const box = (out[key] ??= { left: x, top: y, right: x, bottom: y });
+      box.left = Math.min(box.left, x);
+      box.right = Math.max(box.right, x);
+      box.top = Math.min(box.top, y);
+      box.bottom = Math.max(box.bottom, y);
+    };
+    const { min, max } = this.car.manifest.bbox;
+    for (let i = 0; i < 8; i += 1) {
+      tmpVec.set(i & 1 ? max[0] : min[0], i & 2 ? max[1] : min[1], i & 4 ? max[2] : min[2]).project(this.camera);
+      const x = ((tmpVec.x + 1) / 2) * this.layout.width;
+      const y = ((1 - tmpVec.y) / 2) * this.layout.height;
+      out.box.left = Math.min(out.box.left, x);
+      out.box.right = Math.max(out.box.right, x);
+      out.box.top = Math.min(out.box.top, y);
+      out.box.bottom = Math.max(out.box.bottom, y);
+    }
+    this.car.root.updateMatrixWorld(true);
+    this.car.root.traverseVisible((object) => {
+      const mesh = object as Mesh;
+      if (!mesh.isMesh || mesh === this.car.floor.mesh || !mesh.layers.isEnabled(0)) return;
+      // A front-pass twin (loadCar) and a depth-only edge mask (enhance) are their parent's
+      // geometry again, without its category.
+      if (mesh.parent && (mesh.parent as Mesh).userData.frontPass === mesh) return;
+      if (!Array.isArray(mesh.material) && mesh.material.colorWrite === false) return;
+      const slug = mesh.userData.category as string | undefined;
+      const dock = slug ? this.poses.dockOf(slug) : 0;
+      if (dock >= 1) return;
+      const position = mesh.geometry.getAttribute("position");
+      if (!position) return;
+      const step = Math.max(1, Math.floor(position.count / OUTLINE_SAMPLES));
+      for (let i = 0; i < position.count; i += step) {
+        tmpVec.fromBufferAttribute(position, i).applyMatrix4(mesh.matrixWorld).project(this.camera);
+        grow(
+          dock > 0 ? "flight" : "car",
+          ((tmpVec.x + 1) / 2) * this.layout.width,
+          ((1 - tmpVec.y) / 2) * this.layout.height,
+        );
+      }
+    });
+    return out;
   }
 
   dispose(): void {

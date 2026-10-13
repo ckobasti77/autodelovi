@@ -80,13 +80,26 @@ export const FLOOR = {
  * web counterpart of the floor the thumbnails were rendered with (D241).
  */
 export const DOCK = {
-  primer: "#59626C",
+  primer: "#8B959F",
   bodyAlpha: 0.94,
-  glassAlpha: 0.46,
+  glassAlpha: 0.54,
   glassTint: "#7FBFD6",
   /** Emissive floor added to PBR parts, shaded by a camera-locked half-Lambert. */
-  lift: 0.24,
-  liftColor: "#9AA3AB",
+  lift: 0.28,
+  /**
+   * More of the same floor for a dark base colour (battery case, pads, hoses, tyres, graphite
+   * castings): full below `darkFrom` of base luminance, none above `darkTo`.
+   */
+  liftDark: 0.5,
+  darkFrom: 0.04,
+  darkTo: 0.3,
+  liftColor: "#A3ACB4",
+  /** Share of the floor a face turned away from the fill keeps (the rest follows the fill). */
+  liftShade: 0.2,
+  /** A cool edge light on the silhouette, so a dark part has an outline on the night field. */
+  rim: 0.2,
+  rimColor: "#BCD9E8",
+  rimPower: 2.4,
   /** View-space direction of that fill (up and to the left of the camera). */
   fill: [-0.35, 0.55, 0.76],
 } as const;

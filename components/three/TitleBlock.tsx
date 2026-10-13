@@ -15,6 +15,7 @@ export function TitleBlock({ className }: { className?: string }) {
   return (
     <dl
       data-reveal="off"
+      data-hero-title-block=""
       className={cn(
         // A sheet's title block is a resting surface like any other: 8 px, hairline, lit edge.
         "grid grid-cols-[auto_auto] overflow-hidden rounded-md border border-line bg-bg/80 text-[0.75rem] shadow-rest reduced-transparency:bg-bg",
@@ -52,7 +53,7 @@ export function TitleBlock({ className }: { className?: string }) {
 /** The honesty note as one line (below 1440 px). */
 export function HonestyLine({ className }: { className?: string }) {
   return (
-    <p className={cn("type-caption-s text-ink-3", className)}>
+    <p data-hero-honesty="" className={cn("type-caption-s text-ink-3", className)}>
       <RevealText as="span">{HERO_COPY.honesty}</RevealText>
     </p>
   );

@@ -8,6 +8,7 @@
 import {
   heroStore,
   selectCategory,
+  type OutlineProbe,
   type SelectSource,
   type SlotProbe,
 } from "@/components/three/heroStore";
@@ -35,6 +36,8 @@ export type Sklop3dHooks = {
   page: (page: number) => void;
   /** Docked slots as the scene draws them: projected size and distance from the cell. */
   slots: () => SlotProbe[];
+  /** Outline (canvas px) of what is on the car and of what is in flight; null without a canvas. */
+  car: () => OutlineProbe | null;
   getState: () => {
     ready: boolean;
     tier: string | null;
@@ -79,6 +82,9 @@ export function installTestHooks(): (() => void) | undefined {
     },
     slots() {
       return heroStore.getState().probe?.() ?? [];
+    },
+    car() {
+      return heroStore.getState().probeOutline?.() ?? null;
     },
     getState() {
       const s = heroStore.getState();

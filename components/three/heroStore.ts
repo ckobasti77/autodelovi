@@ -39,8 +39,31 @@ export type SlotMode = "mesh" | "image";
 
 export type SlotRect = { slug: string; rect: Rect };
 
-/** One docked slot as the scene sees it (QA hook): projected size and distance from its cell. */
-export type SlotProbe = { slug: string; w: number; h: number; dx: number; dy: number; angle: number };
+/**
+ * One docked slot as the scene sees it (QA hook, canvas px): projected size, distance from the
+ * cell it was given, the drawn centre (`cx`, `cy`) and the resting centre without the float
+ * (`rx`, `ry`).
+ */
+export type SlotProbe = {
+  slug: string;
+  w: number;
+  h: number;
+  dx: number;
+  dy: number;
+  cx: number;
+  cy: number;
+  rx: number;
+  ry: number;
+  angle: number;
+};
+
+/** A box on the canvas (CSS px). */
+export type ScreenBox = { left: number; top: number; right: number; bottom: number };
+/**
+ * Outline of what is on the car and of what is flying to a slot, and the car's assembled
+ * bounding box as the camera frames it (QA hook).
+ */
+export type OutlineProbe = { car: ScreenBox | null; flight: ScreenBox | null; box: ScreenBox };
 
 type HeroState = {
   tier: Tier | null;
@@ -67,6 +90,8 @@ type HeroState = {
   origin: HeroAnchor | null;
   /** Docked slots as the scene sees them (QA hook; null without a canvas). */
   probe: (() => SlotProbe[]) | null;
+  /** Outline of the car as the scene draws it (QA hook; null without a canvas). */
+  probeOutline: (() => OutlineProbe) | null;
   hovered: string | null;
   selected: string | null;
   selectSource: SelectSource | null;
@@ -99,6 +124,7 @@ export const useHeroStore = create<HeroState>(() => ({
   focusedSlot: null,
   origin: null,
   probe: null,
+  probeOutline: null,
   hovered: null,
   selected: null,
   selectSource: null,
