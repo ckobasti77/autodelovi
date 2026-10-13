@@ -284,3 +284,15 @@ Ukratko: dok skrolujete, delovi izlaze iz auta i ređaju se u mrežu, svaki izna
   6. **Tekstovi:** „Pronađeno 23/44“ i, na kraju, „Ceo auto rastavljen“ sa dugmadima „Izaberite vozilo“, „Svi delovi“ i „Sklopi auto“.
 - [ ] **[P1] Greška nađena usput, nije ispravljena:** kad posetilac na prvom dolasku odbije kolačiće („Odbij sve“), strana skoči na dno. Provereno na razvojnoj verziji, na računaru i telefonu. Treba je ispraviti pre objave, nezavisno od novog 3D prikaza.
 - [ ] **[P2] Provera na pravom telefonu.** Brzina novog prikaza izmerena je samo na računaru. Pre objave treba je proveriti na jednom telefonu srednje klase.
+
+## 20. Novi 3D prikaz na početnoj strani — urađeno (korak 31)
+
+Plan iz tačke 19 je sproveden. Dok skrolujete, delovi izlaze iz auta i ređaju se u mrežu po sistemima; traka na dnu pokazuje sisteme i brojač „Pronađeno“. Slike svake grupe, na računaru i na telefonu: [`qa/screens/hero-v2/`](qa/screens/hero-v2/) (`desktop-…` i `mobile-…`; `reduced-…` je prikaz za posetioce koji su isključili animacije, `low-…` za uređaje bez 3D prikaza).
+
+Šest stvari iz tačke 19 urađeno je onako kako je predloženo. Ako nešto od toga želite drugačije, javite.
+
+- [ ] **[P1] Pogledajte početnu stranu na svom računaru i telefonu** i javite da li vam odgovaraju veličina delova u mreži, brzina kojom izlaze iz auta i završni tekst „Ceo auto rastavljen“.
+- [ ] **[P1] Provera na telefonu srednje klase.** Brzina je izmerena samo na računaru. Ako telefon ne može da prati lagano lebdenje delova, sajt ga sam isključi i delovi miruju; sve ostalo radi isto. Pre objave vredi proveriti na jednom stvarnom telefonu.
+- [ ] **[P2] Dugme na kraju.** „Izaberite vozilo“ je namerno mirnije dugme, jer je glavno dugme u tom delu strane „Pretraži“. Ako želite da bude narandžasto, javite.
+- [ ] **[P2] Skraćeni nazivi.** Na ekranima užim od 1440 px jedanaest dugih naziva je skraćeno (na primer „Poluosovine“ umesto „Poluosovine i homokinetički zglobovi“). Pun naziv ostaje na strani kategorije i čita ga čitač ekrana. Spisak je u `lib/i18n/sr/hero.ts`.
+- Greška sa kolačićima iz tačke 19 („Odbij sve“ pomeri stranu na dno) i dalje nije ispravljena; nije deo 3D prikaza.

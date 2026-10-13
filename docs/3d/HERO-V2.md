@@ -1,5 +1,7 @@
 # Hero v2 — the car sets its parts down in a grid
 
+> **Built in step 31 (2026-10-13): §18 says what was built, where it differs from this plan and what was measured.** The sections before it are the plan as written.
+>
 > Step 30 (2026-10-13). **Plan only: no production code changed.** Index: [docs/README.md](../README.md). Contract this plan amends when it is built: [3D-CONTRACT.md](../3D-CONTRACT.md) §F6–F9. Evidence: [`hero-v2/current/`](hero-v2/current/) (the hero as it is today) and [`hero-v2/lab/`](hero-v2/lab/) (a throwaway prototype on the real model, deleted after the captures).
 
 The owner likes the idea and the behaviour of the 3D hero. He does not like its accessibility, its UX, or how hard the parts are to see. He wants the parts to leave the car on scroll and line up in a grid, each floating over its name with no frame of any kind, and the bottom bar turned into a nicer system navigator. Everything outside the hero is final.
@@ -412,6 +414,91 @@ Written in Serbian in [HUMAN-TODO.md](../HUMAN-TODO.md) §19.
 4. Body panels shown in grey primer in the grid, not as glass.
 5. Scroll length: slightly shorter on a computer, somewhat longer on a phone.
 6. Wording: „Pronađeno 23/44“, „Ceo auto rastavljen“.
+
+## 18. As built (step 31)
+
+Built in seven blocks, one commit each — `330b641` layout and the make-room move · `ccd214a` the grid · `4f42178` labels · `300f957` interaction · `a232b4b` navigator · `97872ab` accessibility and fallbacks · `57ff98b` performance — then the tests and what they found (`e02e6bb`, `b3b0f53`, `88e8176`). After each block the hero was captured at 1440×900 and 390×844 on every page, looked at and corrected before the next one. The final set, from the production build: [`../qa/screens/hero-v2/`](../qa/screens/hero-v2/) (`desktop-*`, `mobile-*`; `reduced-*` for reduced motion; `low-*` for the tier without a canvas). Contract: [3D-CONTRACT.md](../3D-CONTRACT.md) §F6–F8 (step 31 notes) and §F10. Decisions D366–D373.
+
+### 18.1 Where the build differs from the plan
+
+| Plan | Built | Why |
+|---|---|---|
+| §4.2 the previous page leaves over 12 % of a page; arrivals 0–55 %, starts spread over 25 % | Leaves over 10 %; arrivals start when it has left, 10–58 %, starts spread over 18 % | No part arrives in a slot another part is still leaving (D366) |
+| §5 fixed cells: 124 px, 80 px on phones, a step to 64 px on short phones | One fluid cell: 84–124 px from 768 px, 64–76 px below, from the grid's own width and the screen's height | Names ran to 3–4 lines at 1024–1366 px and at 360 px, and the car's band collapsed on short screens (D367) |
+| §7 ten short names, at 390 px | Eleven, used below 1440 px | the same |
+| §6.5 phone lens „about 20°“, not verified | Docked lens 24° from 768 px, 22° on phones: every slot within 19.1° / 20.9° of the optical axis | The plan's open item, now a unit-tested bound (D366) |
+| §9 „Izaberite vozilo“ primary, „Svi delovi“ secondary, „Sklopi auto“ quiet | secondary · quiet · an icon button; the sentence hides below 640 px | The hero already has its one primary, the search button; on a phone the block has to fit the car's band (D368) |
+| §9 the name arrives word by word (a tween on the word spans) | One clock tween per slot that writes opacity and a 4 px lift itself, no blur | The CSS plugin read every word's computed style and measured the em lift, in the frames where the parts fly (D370) |
+| §12 low tier: the poster moves into its band | It also dims, to 28 % at the end of the track | A lit, assembled car under „Ceo auto rastavljen“ contradicted the copy (D369) |
+| §12 a per-slot crossfade from thumbnail to mesh when the canvas is ready | The stage's own poster → canvas crossfade covers the slots | One transition instead of two overlapping ones |
+| §12 reduced motion: chips cut between pages | The same; the last chip also shows the end state, and a jump brings the one-screen frame under the header | With no track there was no other way to the end (D369) |
+| §13.1 slot tables and origin ghosts built in idle slices | The slot table is built with the scene (91 nodes, no geometry); a ghost is built on the first hover of its slot | Neither is long enough to slice |
+| §13.1 the float stops after 6 s idle, off-screen, hidden, selected | The same, and for good where most float frames are slower than 45 ms | Decoration must not keep the main thread busy (D371) |
+| §11 six lists of full slots, five clipped | A page out of view is a list of plain links; the slot is built when its page comes up | The grid's markup made every layout and style pass of the home page dearer (D372) |
+
+The brief of the build step asked for instancing or merged draws „where it helps“. They do not help here: every category has its own highlight and dock uniforms and its own transform, and draw calls already fall with every page (§18.2). What did help is in D370.
+
+### 18.2 Measured
+
+Production build (`NEXT_PUBLIC_TEST_HOOKS=1`), this PC (Intel UHD through ANGLE/D3D11), 1440×900 on the high tier and 390×844 on the mid tier.
+
+| | 1440×900 | 390×844 |
+|---|---|---|
+| Docked part, longer side (`hero-v2-shots.mjs`) | 91–106 px | 55–65 px |
+| Part ↔ cell drift at rest | ≤ 3 px | ≤ 3 px |
+| Largest off-axis angle of a slot | 19.1° | 20.9° |
+| Name lines | ≤ 2 | ≤ 2 |
+| First live frame against the poster (mean difference of 255) | 2.4, no shift | 4.6, no shift (one capture is mid-reveal of the caption) |
+| Draw calls per frame: assembled → pages 1…6 (`hero-v2-perf.mjs`) | 290 → 248 · 169 · 118 · 89 · 72 · 39 | 176 → 159 · 111 · 77 · 55 · 44 · 26 |
+| Triangles per frame | 416 k → 65 k | 260 k → 36 k |
+| Float frames drawn | every frame (50–60 /s) | every second frame (30 /s) |
+| Frames drawn 8.5 s after the last input · with the hero off-screen | 0 · 0 | 0 · 0 |
+| Drawing buffer ratio | 1 (device 1) | 1.5 (device 3) |
+| Garbage per drawn frame, float (dev build, before → after block 7) | 132 → 79 KB | 105 → 55 KB |
+| Garbage per drawn frame, production: float · scrub | 97 KB · 103 KB | 68 KB · 117 KB |
+| Scroll through the track at 4× CPU (`hero-frames.mjs --gpu`): median · p95 · frames over 33 ms | 16.7 ms · 33.4 ms · 6.1 % | 16.7 ms · 33.3 ms · 2.8 % |
+| The same on the build before v2, same session | 16.7 · 33.4 · 3.4 % | 16.7 · 33.3 · 4.0 % |
+
+What is left of the per-frame garbage is three's own uniform cache (`setValueM4`, `setValueV3f`, `setValueM3`); the hero's code is not among the first fourteen allocators. 290 draw calls for the assembled car is the audited figure of the previous hero ([`../qa/audit/perf-3d/3d.md`](../qa/audit/perf-3d/3d.md)).
+
+**Lighthouse, home** (`tests/lighthouse/run.mjs --runs 5 --throttling devtools`, medians):
+
+| | Performance | Accessibility | Best practices | SEO | LCP | CLS | TBT |
+|---|---|---|---|---|---|---|---|
+| Mobile | 95 | 100 | 100 | 100 | 2196 ms | 0.000 | 138 ms (runs 90–528) |
+| Desktop | 92 | 100 | 100 | 100 | 314 ms | 0.000 | 220 ms (runs 135–997) |
+
+- The mobile gate of D364 (90 and 150 ms) is met in this run, with one run of five far outside it. The machine was not quiet on the day: the build before v2 measured 70 to 166 ms in the same sessions (86 ms in step 28).
+- Desktop: the 3D starts by itself 4 s after `load` where the pointer is fine, so its start falls inside the audit. The build before v2 measured 81 and TBT 435 ms in the same session; the script has no TBT gate for the desktop preset.
+- First-load JS is 317 KB by Lighthouse (311 before; the 180 KB budget was missed before this work, and the plan's „not above 311“ is missed by 6 KB). Canvas chunks 287.2 KB gzip (281.8 before; budget 350, plan ≤ +10 KB).
+
+**The cost of the grid at load** was found by Lighthouse and fixed in two commits (D372). Old build against new, interleaved (`scripts/qa/ui-boost/lh-compare.mjs`), mobile, medians:
+
+| | Old | New |
+|---|---|---|
+| Before the fixes, 5 rounds | 96 · TBT 110 ms | 87 · TBT 378 ms |
+| After both, 9 rounds | 92 · TBT 166 ms (104–424) | 90 · TBT 285 ms (105–516) |
+| After both, a trace of the same load in system Chrome, 4× CPU, slow 4G, 7 interleaved rounds: blocking · layout · style · script | 164 · 416 · 194 · 1151 ms | 169 · 321 · 218 · 1216 ms |
+
+The trace is the comparison to trust: it runs both builds under one load and measures the main thread itself. Lighthouse's own medians still differ on this machine, with overlapping ranges.
+
+**Tests.** Unit: `tests/unit/three/` — pages and clock, slot maths and thumbnail parity, pose reversal, float, copy rules, the float governor. e2e: `tests/e2e/hero-3d.spec.ts`, 15 tests on two viewports — the grid count after each page, reverse scroll, keyboard, mirrored lists with the live region, the skip link and axe, reduced motion, no WebGL, the software renderer, context loss; the panel, parts list and deep-link tests keep their intent.
+
+### 18.3 Found by the tests, fixed
+
+- Under reduced motion the end state had no user path (D369).
+- On a renderer too slow for the float, a link activation waited behind float frames — over 10 s under the software renderer of the test run (D371).
+- The title block of the assembled car faded to opacity 0 and stayed in the layout: hidden copy by the reveal contract; five failures in three other specs. An overlay that fades out now leaves the layout (D373).
+- The grid's markup and three layout reads at mount cost the home page its Lighthouse score (D372).
+- `scripts/qa/hero-bundle.mjs` had not reached „ready“ since the software renderer became the low tier (PERF-23); it forces the tier now.
+
+### 18.4 Not verified, remains
+
+- Frame time on a real phone. Everything above is this PC's GPU; the float governor is the guard, not a measurement.
+- Part ↔ name drift after a font load and a drawer open/close is covered by the observers but has no e2e of its own; the plan's e2e for a throttled model request (thumbnails while the model downloads) was not written.
+- At 1440 px the navigator row scrolls once a count like „13/13“ widens a chip, and the first chip then sits under the fade.
+- The idle start of the 3D on desktop costs main-thread time inside a Lighthouse audit (before v2 as well).
+- The cookie banner's scroll jump (D365) is still open; it is outside the hero.
 
 ## Appendix A — slots by page
 

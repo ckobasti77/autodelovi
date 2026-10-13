@@ -28,7 +28,8 @@ page.on("response", async (res) => {
     /* redirects */
   }
 });
-await page.goto(`${BASE}/`, { waitUntil: "networkidle" });
+// A software renderer gets the posters only (PERF-23): force the tier (test-hook builds).
+await page.goto(`${BASE}/?3d=high`, { waitUntil: "networkidle" });
 phase = "3d";
 await page.evaluate(() => window.scrollTo(0, 80));
 await page.waitForFunction(
