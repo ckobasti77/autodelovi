@@ -1,5 +1,6 @@
 // Independent check of the hero v2 (docs/3d/HERO-V2.md §18.5) on the real GPU: one real wheel
-// scroll through the whole track and back, then every stage at rest, at 1440×900 and 390×844.
+// scroll through the whole track and back in 40 px notches (every notch checked once the scene
+// has caught up), then every stage at rest, at 1440×900 and 390×844.
 //
 //   node scripts/qa/hero-v2-verify.mjs [--base http://localhost:3100] [--out .playwright/hero-verify]
 //        [--only desktop|mobile] [--shots docs/qa/screens/hero-v2/final]
@@ -238,17 +239,39 @@ for (const vp of VIEWPORTS) {
       for (const word of [...layout.captionWords, ...layout.introWords]) under += lit(image, word, field).count;
       top = layout.canvas ? lit(image, { ...layout.canvas, h: 2 }, field, 18).count : 0;
     }
-    where[label] = { p: +layout.state.progress.toFixed(4), page: layout.state.page, captionPx: under, topPx: top, pinned: layout.pinned, checked: layout.pinned && same };
-    return { layout, image, under, top };
+    const checked = layout.pinned && same;
+    where[label] = { p: +layout.state.progress.toFixed(4), page: layout.state.page, captionPx: under, topPx: top, pinned: layout.pinned, checked };
+    return { layout, image, under, top, checked };
   };
+
+  /** Waits until the scene has caught up with the scroll: the store's progress stands still. */
+  const settle = async () => {
+    let last = -1;
+    for (let i = 0; i < 40; i += 1) {
+      const now = await page.evaluate(() => window.__sklop3d.getState().progress);
+      if (Math.abs(now - last) < 1e-4) return now;
+      last = now;
+      await sleep(80);
+    }
+    return last;
+  };
+  const pinned = () =>
+    page.evaluate(() => {
+      const frame = document.querySelector(".hero-frame").getBoundingClientRect();
+      const header = Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-h")) || 64;
+      return Math.abs(frame.top - header) < 1.5;
+    });
 
   // ---------------------------------------------------------------- real scroll, forward and back
   const distance = await page.evaluate(() => {
     const track = document.querySelector('[data-testid="hero-track"]');
     return track.offsetHeight - track.querySelector(".hero-frame").offsetHeight;
   });
-  // 60 px a notch: a part's flight is about 120 px of scroll on both widths, so every flight is seen.
-  const step = 60;
+  // 40 px a notch: a part's flight is about 120 px of scroll on both widths, so every flight is
+  // seen at three points or more. After each notch the scene is left to catch up, so a sample is
+  // the picture of one progress — a pose is a pure function of it — and every sample is checked.
+  const step = 40;
+  let unchecked = 0;
   let worstCaption = 0;
   let worstTop = 0;
   const walk = async (direction) => {
@@ -263,11 +286,21 @@ for (const vp of VIEWPORTS) {
       const now = await page.evaluate(() => ({ y: window.scrollY, p: window.__sklop3d.getState().progress }));
       const past = direction > 0 ? now.p >= 0.9999 : now.p <= 0.0001;
       done = past || now.y === before ? done + 1 : 0;
-      {
-        const { under, top } = await sceneChecks(`${direction > 0 ? "f" : "b"}${String(i).padStart(3, "0")}`, samples);
-        worstCaption = Math.max(worstCaption, under);
-        worstTop = Math.max(worstTop, top);
+      await settle();
+      // Past the end of the track the frame scrolls away with the page: that is not a stage.
+      if (!(await pinned())) continue;
+      const label = `${direction > 0 ? "f" : "b"}${String(i).padStart(3, "0")}`;
+      let result = await sceneChecks(label, samples);
+      for (let attempt = 0; attempt < 3 && !result.checked; attempt += 1) {
+        await settle();
+        result = await sceneChecks(label, samples);
       }
+      if (!result.checked) {
+        unchecked += 1;
+        fail(`scroll sample ${label} could not be checked`);
+      }
+      worstCaption = Math.max(worstCaption, result.under);
+      worstTop = Math.max(worstTop, result.top);
     }
     await sleep(900);
     return samples;
@@ -279,6 +312,11 @@ for (const vp of VIEWPORTS) {
   const atStart = await page.evaluate(() => window.__sklop3d.getState());
   if (atStart.page !== 0 || atStart.found !== 0) fail(`backward scroll ended at ${JSON.stringify(atStart)}`);
   out.scroll.worst = { captionPx: worstCaption, topPx: worstTop };
+  out.scroll.samples = {
+    forward: Object.keys(out.scroll.forward).length,
+    back: Object.keys(out.scroll.back).length,
+    unchecked,
+  };
   if (worstTop > 0) fail(`the car reaches the top edge of the canvas during the scroll (${worstTop} px lit)`);
   if (worstCaption > 0) fail(`${worstCaption} px of the car or a part under the caption or the intro during the scroll`);
 
@@ -380,7 +418,10 @@ await browser.close();
 writeFileSync(join(OUT, "report.json"), JSON.stringify(report, null, 1));
 
 for (const [name, vp] of Object.entries(report)) {
-  console.log(`\n== ${name}: scroll worst caption ${vp.scroll.worst.captionPx} px, top ${vp.scroll.worst.topPx} px`);
+  console.log(
+    `\n== ${name}: scroll ${vp.scroll.samples.forward} samples forward + ${vp.scroll.samples.back} back, ${vp.scroll.samples.unchecked} not checked · ` +
+      `worst under the note or the intro ${vp.scroll.worst.captionPx} px · worst on the top rows ${vp.scroll.worst.topPx} px · console errors ${vp.errors.length}`,
+  );
   for (const [stage, s] of Object.entries(vp.stages)) {
     const parts = Object.entries(s.parts ?? {});
     const low = parts.filter(([, p]) => p.contrast < MIN_CONTRAST).map(([slug, p]) => `${slug} ${p.contrast}`);

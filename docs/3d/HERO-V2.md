@@ -505,7 +505,7 @@ As of step 32 (the drift and slow-download tests are written and the navigator f
 
 ### 18.5 The owner's review, verified independently (step 32)
 
-The hero was checked again from the outside, without the build's own numbers. `scripts/qa/hero-v2-verify.mjs` drives a real browser on the real GPU at 1440×900 and 390×844: one wheel scroll through the whole track and back in 60 px notches, then every stage at rest. It reads the page's pixels — the tone of every docked part against the field, anything of the scene under a word of text, lit pixels on the first rows of the canvas (a cut car) — and the DOM (navigator, names). Decisions D374–D384. The final screens of every stage at both widths: [`../qa/screens/hero-v2/final/`](../qa/screens/hero-v2/final/).
+The hero was checked again from the outside, without the build's own numbers. `scripts/qa/hero-v2-verify.mjs` drives a real browser on the real GPU at 1440×900 and 390×844: one wheel scroll through the whole track and back in 40 px notches — every notch checked once the scene has caught up — then every stage at rest. It reads the page's pixels — the tone of every docked part against the field, anything of the scene under a word of text, lit pixels on the first rows of the canvas (a cut car) — and the DOM (navigator, names). Decisions D374–D384. The final screens of every stage at both widths: [`../qa/screens/hero-v2/final/`](../qa/screens/hero-v2/final/).
 
 **Found on the build of step 31**
 
@@ -538,13 +538,14 @@ The hero was checked again from the outside, without the build's own numbers. `s
 | Docked part, longer side | 88–104 px | 55–64 px |
 | Part ↔ cell at rest (the cell the DOM has now) · with the float | 0.1 px · ≤ 3.9 px | 0.1 px · ≤ 2.8 px |
 | Scene pixels under a word of the note, the intro, a name or the page heading, at rest | 0 at all 8 stages | 0 at all 8 stages |
-| The same for the note and the intro during the scroll (samples checked of taken) | 0 (85 of 101) | 0 (58 of 87) |
+| The same for the note and the intro during the scroll, every sample checked | 0 in 134 samples (67 forward, 67 back) | 0 in 100 samples (50 forward, 50 back) |
+| Console errors: 3D · reduced motion · no canvas | 0 · 0 · 0 | 0 · 0 · 0 |
 | Lit pixels on the first two rows of the canvas, rest and scroll | 0 | 0 |
 | The car's outline, docked | 459–680 px of an 824 px canvas | 38–224 px of a 652 px canvas, the note above it at 6–22 px |
 | Navigator: scroll · fade · chips outside the row, 8 stages | 0 px · none · 0 (also at 1280, 1366, 1536, 1920) | scrolls; the active cluster's first chip whole |
 | End state | orange fill · outline · filled surface | the same, the third as an icon |
 
-*Samples not checked: the frame had left its sticky place past the end of the track, or the note changed place between reading the layout and capturing it.*
+*A sample is taken every 40 px of scroll, once the scene has caught up with it (a pose is a pure function of the progress, so each is the picture of one progress — a flight is seen at three points or more). Past the end of the track the frame scrolls away with the page and nothing is sampled.*
 
 Frame time, the CPU throttled four times (`hero-frames.mjs --gpu --cpu 4`, a wheel scroll through the whole track; the second column is Chromium's phone emulation, not a phone):
 
@@ -562,12 +563,12 @@ The GPU is a laptop's discrete card and was never the limit; the throttle slows 
 
 | | Performance | Accessibility | Best practices | SEO | LCP | CLS | TBT |
 |---|---|---|---|---|---|---|---|
-| Mobile, the final build, four batches | 98 · 98 · 98 · 98 | 100 | 100 | 100 | 1985 · 2006 · 2030 · 2019 ms | 0.000 | **23 · 29 · 36 · 26 ms** (all 20 runs: 13–87) |
-| Desktop, the final build | 100 | 100 | 100 | 100 | 160 ms | 0.000 | 23 ms (runs 18–147) |
+| Mobile, the final build, nine batches of five | 98 · 98 · 98 · 98 · 95 · 97 · 97 · 97 · 97 | 100 | 100 | 100 | 1985–2093 ms | 0.000 | **23 · 29 · 36 · 26 · 157 · 48 · 63 · 44 · 35 ms** |
+| Desktop, the final build, two batches | 100 · 99 | 100 | 100 | 100 | 160 · 231 ms | 0.000 | 23 · 95 ms |
 | Mobile before D384, five batches | 97 · 94 · 92 · 97 · 96 | 100 | 100 | 100 | 2105–2345 ms | 0.000 | 19 · 136 · 264 · 71 · 132 ms |
 
-- LCP is the poster image at both widths (`car-assembled-m-828.avif`, `car-assembled-1440.avif`). First-load JS 317 KB, as in step 31.
-- **TBT was two-valued, and the cause is removed.** Before: single mobile runs fell in two groups, about 16–135 ms and about 220–415 ms, and one gate batch of five missed the bar of 150 ms (the build of step 31 did the same: 19–824 ms; the hero's own changes added nothing — ten interleaved throttled loads 133 against 130 ms, equal main-thread totals, D381). A long task of 80–115 ms sat within 100 ms of the first paint on either side, and it is blocking time only when it lands after. It was the first layout of „Delovi po sistemima“ — 220 nodes in ten multi-column panels, 7,000 px down a phone's page, the one section of home below the fold that did not skip its layout. It does now (`cv-auto`, D384): four batches of five, every run between 13 and 87 ms.
+- LCP is the poster image at both widths (`car-assembled-m-828.avif`, `car-assembled-1440.avif`). First-load JS 317 KB, as in step 31 — the script also prints its own older budget of 180 KB for it, missed since before v2 (§13.1); it is not one of the category scores and this step did not change it.
+- **TBT was two-valued, and the cause is removed.** Before: single mobile runs fell in two groups, about 16–135 ms and about 220–415 ms, and one gate batch of five missed the bar of 150 ms (the build of step 31 did the same: 19–824 ms; the hero's own changes added nothing — ten interleaved throttled loads 133 against 130 ms, equal main-thread totals, D381). A long task of 80–115 ms sat within 100 ms of the first paint on either side, and it is blocking time only when it lands after. It was the first layout of „Delovi po sistemima“ — 220 nodes in ten multi-column panels, 7,000 px down a phone's page, the one section of home below the fold that did not skip its layout. It does now (`cv-auto`, D384): eight of nine batches of five between 23 and 63 ms. The ninth, 157 ms, was taken right after the GPU captures with the machine still busy (Lighthouse's benchmark index 2900–3800 against 4000 in the others; its runs were 1062, 27, 12, 157 and 162 ms). What is left in a run is one task of hydration and one React render about 3 s after first paint, 70–125 ms each at 4× CPU; neither is the hero's.
 - One real regression was caught on the way and removed: a helper imported from the slot maths put three.js into the first chunk (418 KB, TBT 286 ms). A unit test now guards the boundary (D380).
 
 **Found by the new tests, fixed.** The drift test resizes the phone layout and back. After the way back the scene showed the wrong page for the scroll position: on a touch-only device ScrollTrigger does not measure again when a resize lands on the dimensions it saw at load, so it kept the range of the size in between. The stage now asks for a refresh whenever its own track changes size (D382). And the full suite on the phone layout: the skip link changed the URL and went nowhere when it was activated while the navigator row was still moving to its active cluster — a browser drops a pending jump to a fragment when anything else scrolls first. The link now makes the jump itself if the heading is not on screen two frames later (D383).
