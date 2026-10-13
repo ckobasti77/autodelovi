@@ -38,7 +38,8 @@ describe("3D hero copy", () => {
   });
 
   test("the hero's own sentences keep the voice: ekavian, no exclamation marks", () => {
-    const strings = Object.values(HERO_COPY).filter((v): v is string => typeof v === "string");
+    const values: unknown[] = Object.values(HERO_COPY);
+    const strings = values.filter((v): v is string => typeof v === "string");
     for (const s of strings) {
       expect(s).not.toMatch(EKAVIAN_TRAPS);
       expect(s).not.toContain("!");

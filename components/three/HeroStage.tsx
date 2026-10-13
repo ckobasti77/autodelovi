@@ -19,7 +19,7 @@
  *   and keeps `?deo=` in the URL; the camera frames the part in the space the panel leaves.
  */
 import dynamic from "next/dynamic";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap/scroll";
 import { requestScrollTriggerRefresh } from "@/lib/gsap/refresh";
@@ -509,8 +509,17 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
   // the scroll is scrubbing through pages.
   useEffect(() => {
     let timer = 0;
+    let moved = 0;
     let announced = heroStore.getState().page;
     const settle = () => {
+      // One timer for a whole scrub: it re-arms for the time still missing instead of being
+      // cleared and set again on every progress change.
+      const wait = ANNOUNCE_MS - (performance.now() - moved);
+      if (wait > 1) {
+        timer = window.setTimeout(settle, wait);
+        return;
+      }
+      timer = 0;
       const current = heroStore.getState().page;
       if (current === announced) return;
       announced = current;
@@ -526,8 +535,8 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
     };
     const unsubscribe = heroStore.subscribe((state, prev) => {
       if (state.progress === prev.progress) return;
-      window.clearTimeout(timer);
-      timer = window.setTimeout(settle, ANNOUNCE_MS);
+      moved = performance.now();
+      if (timer === 0) timer = window.setTimeout(settle, ANNOUNCE_MS);
     });
     return () => {
       window.clearTimeout(timer);
@@ -603,13 +612,14 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
   // ---------------------------------------------------------------- test hooks
   useEffect(() => installTestHooks(), []);
 
-  const onSystem = (system: SystemSlug) => {
+  const onSystem = useCallback((system: SystemSlug) => {
     const { controller, page: current } = heroStore.getState();
     const pages = pagesOfSystem(system);
     // A system on two pages: its chip steps from the first to the second.
     const next = pages.length > 1 && current === pages[0] ? pages[1] : pages[0];
     if (next) controller?.goToPage(next);
-  };
+  }, []);
+  const onOpenList = useCallback(() => setListOpen(true), []);
 
   return (
     <>
@@ -636,7 +646,7 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
               hasSelection && "lg:pr-[calc(440px+var(--margin))] xl:pr-[calc(480px+var(--margin))]",
             )}
           >
-            <SystemNav onSystem={onSystem} onOpenList={() => setListOpen(true)} />
+            <SystemNav onSystem={onSystem} onOpenList={onOpenList} />
           </div>
           {/* The area the canvas covers: the whole frame from 1024 px, above the navigator below
               that. The stage box inside it is where the poster is framed (MOT-01, D279): the

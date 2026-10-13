@@ -14,15 +14,19 @@
  * shared splitter (this grid owns its copy's opacity, so the root opts out of the site-wide
  * pass). In `image` mode (reduced motion, low tier, model still loading, context lost) a seated
  * cell shows the category's thumbnail instead of a mesh.
+ *
+ * A seat re-renders one slot, not the grid (`Slot` is memoised): the seats of a page come a few
+ * frames apart while its parts are still flying.
  */
 import Image from "next/image";
-import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from "react";
+import { memo, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from "react";
 
 import { gsap, useGSAP } from "@/lib/gsap/client";
 import { cn } from "@/lib/cn";
 import { findSystem, type TaxonomyCategory } from "@/lib/catalog/taxonomy";
 import { categoryImage } from "@/lib/catalog/types";
 import { restoreWords, splitWords } from "@/lib/textReveal";
+import { clamp01 } from "@/lib/three/explode";
 import { HERO_PAGES, isSeated, slotOf } from "@/lib/three/pages";
 import { useSelectedVehicle } from "@/lib/vehicle/store";
 import { HERO_COPY, SLOT_LABEL_SHORT, SYSTEM_SHORT } from "@/lib/i18n/sr/hero";
@@ -31,15 +35,33 @@ import { RouteLink } from "@/components/ui/RouteLink";
 import { heroStore, setFocusedSlot, useHeroStore, type SlotRect } from "@/components/three/heroStore";
 import { heroDom } from "@/components/three/heroDom";
 
+/** Runs on every progress change: no closure, no array. */
 function seatedMask(progress: number, page: number): number {
   const entry = HERO_PAGES[page - 1];
   if (!entry) return 0;
   let mask = 0;
-  entry.categories.forEach((c, index) => {
-    const address = slotOf(c.slug);
+  for (let index = 0; index < entry.categories.length; index += 1) {
+    const address = slotOf(entry.categories[index].slug);
     if (address && isSeated(progress, address)) mask |= 1 << index;
-  });
+  }
   return mask;
+}
+
+/** The seat beat (HERO-V2 §9): seconds, and the lift of a word in px. */
+const SEAT = { word: 0.25, tick: 0.18, stagger: 0.03, spread: 0.12, lift: 4 } as const;
+/** From this width a slot shows the category's full name (`min-[90rem]` below). */
+const FULL_NAMES = "(min-width: 90rem)";
+
+type SeatReveal = { tween: gsap.core.Tween; copy: HTMLElement; tick: HTMLElement | null };
+
+/** Ends a slot's reveal: the words go back into one text node, the tick drops its inline style. */
+function settle(reveals: Map<HTMLElement, SeatReveal>, link: HTMLElement): void {
+  const reveal = reveals.get(link);
+  if (!reveal) return;
+  reveals.delete(link);
+  reveal.tween.kill();
+  restoreWords(reveal.copy);
+  if (reveal.tick) reveal.tick.style.transform = "";
 }
 
 /** Cells of the active page and the car's band, relative to the canvas. Called on resize only. */
@@ -70,6 +92,7 @@ export function HeroGrid({ className }: { className?: string }) {
   const vehicle = useSelectedVehicle();
   const rootRef = useRef<HTMLElement>(null);
   const previous = useRef({ page: 0, mask: 0 });
+  const reveals = useRef(new Map<HTMLElement, SeatReveal>());
   const [seated, setSeated] = useState(0);
 
   // Progress → which slots of the page are seated (state changes a few times per page).
@@ -98,7 +121,11 @@ export function HeroGrid({ className }: { className?: string }) {
   }, [page]);
 
   // A name arrives word by word when its part seats (≤ 300 ms), and the tick under the cell
-  // draws. Reduced motion: both simply appear.
+  // draws. One tween per slot runs a clock and writes opacity and transform itself: tweening
+  // the words through GSAP's CSS plugin reads every word's computed style and converts an em
+  // lift with a measured probe — a style pass and a forced layout per word, in the very frames
+  // where the parts are flying. A reveal runs to its end (the next seat does not cut it).
+  // Reduced motion: both simply appear.
   useGSAP(
     () => {
       const root = rootRef.current;
@@ -106,35 +133,52 @@ export function HeroGrid({ className }: { className?: string }) {
       const fresh = last.page === page ? seated & ~last.mask : seated;
       previous.current = { page, mask: seated };
       if (!root || fresh === 0 || reduced) return;
-      const links = Array.from(root.querySelectorAll<HTMLElement>("[data-page-active] [data-slot]"));
-      const lines: HTMLElement[] = [];
-      links.forEach((link, index) => {
-        if (!(fresh & (1 << index))) return;
+      const ease = gsap.parseEase("sk.out");
+      const full = window.matchMedia(FULL_NAMES).matches;
+      const running = reveals.current;
+      const links = root.querySelectorAll<HTMLElement>("[data-page-active] [data-slot]");
+      for (let index = 0; index < links.length; index += 1) {
+        const link = links[index];
+        if (!(fresh & (1 << index)) || running.has(link)) continue;
         const label = link.querySelector<HTMLElement>("[data-label]");
+        if (!label) continue;
+        // Only the name on screen is split (the other width's name is not displayed).
+        const copy =
+          label.querySelector<HTMLElement>(full ? '[data-name="full"]' : '[data-name="short"]') ?? label;
         const tick = link.querySelector<HTMLElement>("[data-tick]");
-        if (tick) gsap.fromTo(tick, { scaleX: 0 }, { scaleX: 1, duration: 0.18, ease: "sk.out" });
-        if (!label) return;
-        const words = splitWords(label);
-        if (words.length === 0) return;
-        lines.push(label);
-        gsap.fromTo(
-          words,
-          { opacity: 0, filter: "blur(6px)", y: "0.35em" },
-          {
-            opacity: 1,
-            filter: "blur(0px)",
-            y: 0,
-            duration: 0.25,
-            ease: "sk.out",
-            stagger: Math.min(0.03, 0.12 / words.length),
-            onComplete: () => restoreWords(label),
-          },
-        );
-      });
-      return () => lines.forEach((line) => restoreWords(line));
+        const words = splitWords(copy);
+        const stagger = words.length > 1 ? Math.min(SEAT.stagger, SEAT.spread / words.length) : 0;
+        const total = Math.max(SEAT.tick, SEAT.word + stagger * (words.length - 1));
+        const clock = { t: 0 };
+        const render = () => {
+          for (let i = 0; i < words.length; i += 1) {
+            const k = ease(clamp01((clock.t - i * stagger) / SEAT.word));
+            const style = words[i].style;
+            style.opacity = k.toFixed(3);
+            style.transform = `translateY(${((1 - k) * SEAT.lift).toFixed(2)}px)`;
+          }
+          if (tick) tick.style.transform = `scaleX(${ease(clamp01(clock.t / SEAT.tick)).toFixed(3)})`;
+        };
+        render();
+        const tween = gsap.to(clock, {
+          t: total,
+          duration: total,
+          ease: "none",
+          onUpdate: render,
+          onComplete: () => settle(running, link),
+        });
+        running.set(link, { tween, copy, tick });
+      }
     },
-    { dependencies: [seated, page, reduced], scope: rootRef, revertOnUpdate: true },
+    { dependencies: [seated, page, reduced], scope: rootRef },
   );
+
+  useEffect(() => {
+    const running = reveals.current;
+    return () => {
+      for (const link of Array.from(running.keys())) settle(running, link);
+    };
+  }, []);
 
   const active = HERO_PAGES[page - 1];
   const cols = active && active.categories.length <= 8 ? 4 : 5;
@@ -171,37 +215,60 @@ export function HeroGrid({ className }: { className?: string }) {
 
       {/* Height of the fullest page is reserved, so the car's band never changes between pages. */}
       <div className="relative type-caption [--slot-row:calc(var(--slot-cell)_+_0.375rem_+_2lh_+_0.25rem)] min-h-[calc(var(--slot-rows)_*_var(--slot-row)_+_(var(--slot-rows)_-_1)_*_0.5rem)]">
-        {HERO_PAGES.map((entry) => {
-          const isActive = entry.page === page;
-          return (
-            <ul
-              key={entry.page}
-              data-page={entry.page}
-              data-page-active={isActive ? "" : undefined}
-              aria-label={listName(entry.page)}
-              className={
-                isActive
-                  ? "grid auto-rows-(--slot-row) grid-cols-[repeat(var(--slot-cols),minmax(0,1fr))] gap-x-2 gap-y-2 md:grid-cols-[repeat(var(--slot-cols-wide),minmax(0,1fr))] md:gap-x-3"
-                  : "sr-only"
-              }
-            >
-              {entry.categories.map((category, index) => (
-                <Slot
-                  key={category.slug}
-                  category={category}
-                  active={isActive}
-                  seated={isActive && (seated & (1 << index)) !== 0}
-                  image={mode === "image" || category.instances.length === 0}
-                  href={categoryHref(category.slug, vehicle)}
-                />
-              ))}
-            </ul>
-          );
-        })}
+        {HERO_PAGES.map((entry) => (
+          <Page
+            key={entry.page}
+            entry={entry}
+            active={entry.page === page}
+            // The pages out of view keep their props across seats and re-render on a page change only.
+            seated={entry.page === page ? seated : 0}
+            image={mode === "image"}
+            vehicle={vehicle}
+          />
+        ))}
       </div>
     </section>
   );
 }
+
+/** One page of the grid: the list in view is laid out, the others are clipped. */
+const Page = memo(function Page({
+  entry,
+  active,
+  seated,
+  image,
+  vehicle,
+}: {
+  entry: (typeof HERO_PAGES)[number];
+  active: boolean;
+  seated: number;
+  image: boolean;
+  vehicle: Vehicle;
+}) {
+  return (
+    <ul
+      data-page={entry.page}
+      data-page-active={active ? "" : undefined}
+      aria-label={listName(entry.page)}
+      className={
+        active
+          ? "grid auto-rows-(--slot-row) grid-cols-[repeat(var(--slot-cols),minmax(0,1fr))] gap-x-2 gap-y-2 md:grid-cols-[repeat(var(--slot-cols-wide),minmax(0,1fr))] md:gap-x-3"
+          : "sr-only"
+      }
+    >
+      {entry.categories.map((category, index) => (
+        <Slot
+          key={category.slug}
+          category={category}
+          active={active}
+          seated={active && (seated & (1 << index)) !== 0}
+          image={image || category.instances.length === 0}
+          href={categoryHref(category.slug, vehicle)}
+        />
+      ))}
+    </ul>
+  );
+});
 
 /** Accessible name of a page's list; a system on two pages says which part it is. */
 function listName(page: number): string {
@@ -226,7 +293,7 @@ function categoryHref(slug: string, vehicle: Vehicle): string {
   return query ? `${ROUTES.category(slug)}?${query}` : ROUTES.category(slug);
 }
 
-function Slot({
+const Slot = memo(function Slot({
   category,
   active,
   seated,
@@ -287,8 +354,12 @@ function Slot({
           <span data-label="" className={seated ? "text-balance" : "sr-only"}>
             {short ? (
               <>
-                <span className="min-[90rem]:hidden">{short}</span>
-                <span className="hidden min-[90rem]:inline">{category.labelSr}</span>
+                <span data-name="short" className="min-[90rem]:hidden">
+                  {short}
+                </span>
+                <span data-name="full" className="hidden min-[90rem]:inline">
+                  {category.labelSr}
+                </span>
               </>
             ) : (
               category.labelSr
@@ -298,4 +369,4 @@ function Slot({
       </RouteLink>
     </li>
   );
-}
+});

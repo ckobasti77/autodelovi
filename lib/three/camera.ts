@@ -89,21 +89,24 @@ export function focusPose(
  * contain-framed poster into the whole canvas, optionally shifted (CSS px; positive moves the
  * picture left/up).
  */
+export type ViewOffset = [number, number, number, number, number, number];
+
 export function viewOffsetFor(
   frame: ContainFrame,
   width: number,
   height: number,
   shiftX = 0,
   shiftY = 0,
-): [number, number, number, number, number, number] {
-  return [
-    frame.imageWidth,
-    frame.imageHeight,
-    -frame.offsetX + shiftX,
-    -frame.offsetY + shiftY,
-    width,
-    height,
-  ];
+  /** Written and returned when given (the frame loop passes one tuple for the life of the scene). */
+  out: ViewOffset = [0, 0, 0, 0, 0, 0],
+): ViewOffset {
+  out[0] = frame.imageWidth;
+  out[1] = frame.imageHeight;
+  out[2] = -frame.offsetX + shiftX;
+  out[3] = -frame.offsetY + shiftY;
+  out[4] = width;
+  out[5] = height;
+  return out;
 }
 
 /**

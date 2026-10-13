@@ -6,8 +6,11 @@
  * environment and contact shadows.
  */
 import {
+  BackSide,
   Box3,
   CubeUVReflectionMapping,
+  DoubleSide,
+  FrontSide,
   Group,
   LinearFilter,
   Mesh,
@@ -174,23 +177,69 @@ export async function loadCarScene(options: {
   const materials = new Set<Material>();
   const cache = new Map<string, Material>();
 
+  /**
+   * Back-face material → its front-face twin. three draws a transparent double-sided material
+   * in two passes by flipping `material.side` and setting `needsUpdate` twice per object and
+   * frame, and every such draw rebuilds the program parameters and their cache key (about 3 KB
+   * of garbage each; 44 draws a frame with the car assembled). The same two passes as two
+   * materials cost nothing: see `splitPasses`.
+   */
+  const frontPass = new Map<Material, Material>();
+  const twoPassMeshes: Mesh[] = [];
+
   const materialFor = (source: Material, key: string, highlight: HighlightUniforms): Material => {
     const cacheKey = `${key}|${source.uuid}`;
     const hit = cache.get(cacheKey);
     if (hit) return hit;
     const kind = isXraySlot(source.name);
-    const material = kind
-      ? createXrayMaterial({ kind, mobile, envMap: environment, shared, highlight })
-      : createPartMaterial(source, shared, highlight);
+    const make = () =>
+      kind
+        ? createXrayMaterial({ kind, mobile, envMap: environment, shared, highlight })
+        : createPartMaterial(source, shared, highlight);
+    const material = make();
+    if (material.transparent && material.side === DoubleSide && !material.forceSinglePass) {
+      // Same uniforms (shared and highlight objects are passed by reference), other face.
+      const front = make();
+      front.side = FrontSide;
+      material.side = BackSide;
+      frontPass.set(material, front);
+      materials.add(front);
+    }
     cache.set(cacheKey, material);
     materials.add(material);
     return material;
+  };
+
+  /**
+   * The mesh keeps the back faces; a child with the same geometry and world matrix draws the
+   * front faces right after it — same render order and depth, higher id, which is exactly the
+   * order of three's own two passes. Picking still answers with both faces.
+   */
+  const splitPasses = (mesh: Mesh, pickable: boolean) => {
+    const back = mesh.material as Material;
+    const front = frontPass.get(back);
+    if (!front) return;
+    const twin = new Mesh(mesh.geometry, front);
+    twin.name = `${mesh.name}__front`;
+    twin.renderOrder = mesh.renderOrder;
+    twin.raycast = () => {};
+    mesh.add(twin);
+    mesh.userData.frontPass = twin;
+    if (!pickable) return;
+    mesh.raycast = function raycastBothFaces(raycaster, intersects) {
+      back.side = DoubleSide;
+      // The prototype's raycast at call time: three-mesh-bvh replaces it once it has loaded.
+      Mesh.prototype.raycast.call(this, raycaster, intersects);
+      back.side = BackSide;
+    };
   };
 
   const applyMaterials = (mesh: Mesh, key: string, highlight: HighlightUniforms) => {
     const list = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
     const next = list.map((m) => materialFor(m, key, highlight));
     mesh.material = Array.isArray(mesh.material) ? next : next[0];
+    // GLTFLoader gives every primitive its own mesh, so a two-pass material is never in an array.
+    if (!Array.isArray(mesh.material) && frontPass.has(mesh.material)) twoPassMeshes.push(mesh);
     const kinds = list.map((m) => isXraySlot(m.name));
     if (kinds.includes("glass")) mesh.renderOrder = 11;
     else if (kinds.includes("body")) mesh.renderOrder = 10;
@@ -259,6 +308,10 @@ export async function loadCarScene(options: {
     if (shell && !mobile) shellMeshes.push(mesh);
     mesh.raycast = () => {};
   });
+
+  // After both walks, so a front-pass twin is never mistaken for a part of the model.
+  const clickable = new Set(pickables);
+  for (const mesh of twoPassMeshes) splitPasses(mesh, clickable.has(mesh));
 
   const floor = createFloor(shadowA, shadowB);
   root.add(floor.mesh);

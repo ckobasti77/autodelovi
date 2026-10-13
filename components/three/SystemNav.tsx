@@ -9,8 +9,11 @@
  * One tab stop: a roving tabindex with Left/Right, Home/End; Enter or Space activates. On
  * phones the row scrolls sideways and keeps the active cluster centred. The chips are also where
  * a page's parts go when it leaves the grid, so their centres are reported to the scene.
+ *
+ * Per progress change this writes at most the one hairline that moved; a seat re-renders the
+ * counter and the chip that counts it (`Chip` is memoised), not the row.
  */
-import { useEffect, useLayoutEffect, useRef, useState, type KeyboardEvent } from "react";
+import { memo, useEffect, useLayoutEffect, useRef, useState, type KeyboardEvent } from "react";
 import { CheckIcon, ListBulletsIcon } from "@phosphor-icons/react/dist/ssr";
 
 import { cn } from "@/lib/cn";
@@ -44,6 +47,55 @@ const pad = (n: number) => String(n).padStart(2, "0");
 
 type ChipState = "next" | "active" | "done";
 
+const Chip = memo(function Chip({
+  system,
+  count,
+  state,
+  seated,
+  tabStop,
+  onSystem,
+}: {
+  system: SystemSlug;
+  count: number;
+  state: ChipState;
+  seated: number;
+  tabStop: boolean;
+  onSystem: (system: SystemSlug) => void;
+}) {
+  return (
+    <button
+      type="button"
+      data-system={system}
+      data-state={state}
+      tabIndex={tabStop ? 0 : -1}
+      onClick={() => onSystem(system)}
+      aria-label={HERO_COPY.chipName(
+        findSystem(system)?.labelSr ?? system,
+        count,
+        state === "active" ? HERO_COPY.chipShown : state === "done" ? HERO_COPY.chipDone : "",
+      )}
+      className={cn(
+        "inline-flex h-11 shrink-0 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-sm px-3 type-caption transition-control focus-ring-inset active:translate-y-px hover-hover:h-10",
+        state === "active" && "bg-accent-subtle text-accent",
+        state === "done" && "bg-surface-3 text-ink-2 hover-hover:hover:text-ink-1",
+        state === "next" &&
+          "bg-surface-2 text-ink-2 hover-hover:hover:bg-surface-3 hover-hover:hover:text-ink-1",
+      )}
+    >
+      {SYSTEM_SHORT[system]}
+      <span aria-hidden="true" className="inline-flex items-center tabular-nums text-ink-3">
+        {state === "done" ? (
+          <CheckIcon size={14} weight="bold" />
+        ) : state === "active" ? (
+          `${seated}/${count}`
+        ) : (
+          count
+        )}
+      </span>
+    </button>
+  );
+});
+
 function stateOf(pages: readonly number[], page: number, ended: boolean): ChipState {
   if (ended || page > pages[pages.length - 1]) return "done";
   return pages.includes(page) ? "active" : "next";
@@ -63,6 +115,8 @@ export function SystemNav({
   const scroller = useRef<HTMLOListElement>(null);
   const listRef = useRef<HTMLButtonElement | null>(null);
   const bars = useRef<Array<HTMLSpanElement | null>>([]);
+  /** Fill each hairline was last drawn at (-1: never). */
+  const drawn = useRef<number[]>(CLUSTERS.map(() => -1));
   const clusters = useRef<Array<HTMLLIElement | null>>([]);
 
   useEffect(() => {
@@ -76,9 +130,10 @@ export function SystemNav({
   useEffect(() => {
     const apply = () => {
       const { progress, page: current, ended: over } = heroStore.getState();
-      CLUSTERS.forEach((cluster, index) => {
+      for (let index = 0; index < CLUSTERS.length; index += 1) {
+        const cluster = CLUSTERS[index];
         const bar = bars.current[index];
-        if (!bar) return;
+        if (!bar) continue;
         const first = cluster.pages[0];
         const last = cluster.pages[cluster.pages.length - 1];
         const value =
@@ -87,9 +142,11 @@ export function SystemNav({
             : current < first
               ? 0
               : (current - first + pageLocal(progress, current)) / cluster.pages.length;
+        if (drawn.current[index] === value) continue;
+        drawn.current[index] = value;
         bar.style.transform = `scaleX(${value})`;
         bar.dataset.state = value >= 1 ? "done" : "active";
-      });
+      }
       setFound(foundCount(progress));
     };
     apply();
@@ -198,40 +255,17 @@ export function SystemNav({
                   const entry = NAV_SYSTEMS.find((s) => s.system === system);
                   if (!entry) return null;
                   const state = stateOf(entry.pages, page, ended);
-                  const label = findSystem(system)?.labelSr ?? system;
-                  const seated = foundInSystem(progress, system);
                   return (
-                    <button
+                    <Chip
                       key={system}
-                      type="button"
-                      data-system={system}
-                      data-state={state}
-                      tabIndex={system === activeSystem ? 0 : -1}
-                      onClick={() => onSystem(system)}
-                      aria-label={HERO_COPY.chipName(
-                        label,
-                        entry.count,
-                        state === "active" ? HERO_COPY.chipShown : state === "done" ? HERO_COPY.chipDone : "",
-                      )}
-                      className={cn(
-                        "inline-flex h-11 shrink-0 cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-sm px-3 type-caption transition-control focus-ring-inset active:translate-y-px hover-hover:h-10",
-                        state === "active" && "bg-accent-subtle text-accent",
-                        state === "done" && "bg-surface-3 text-ink-2 hover-hover:hover:text-ink-1",
-                        state === "next" &&
-                          "bg-surface-2 text-ink-2 hover-hover:hover:bg-surface-3 hover-hover:hover:text-ink-1",
-                      )}
-                    >
-                      {SYSTEM_SHORT[system]}
-                      <span aria-hidden="true" className="inline-flex items-center tabular-nums text-ink-3">
-                        {state === "done" ? (
-                          <CheckIcon size={14} weight="bold" />
-                        ) : state === "active" ? (
-                          `${seated}/${entry.count}`
-                        ) : (
-                          entry.count
-                        )}
-                      </span>
-                    </button>
+                      system={system}
+                      count={entry.count}
+                      state={state}
+                      // Only the chip in view counts; the others keep their props across seats.
+                      seated={state === "active" ? foundInSystem(progress, system) : 0}
+                      tabStop={system === activeSystem}
+                      onSystem={onSystem}
+                    />
                   );
                 })}
               </li>

@@ -36,6 +36,7 @@ import {
   viewOffsetFor,
   type CameraPose,
   type ContainFrame,
+  type ViewOffset,
 } from "@/lib/three/camera";
 import { clamp01, power2InOut } from "@/lib/three/explode";
 import { POSTER_ASPECT, posterFrame, type Crop } from "@/lib/three/framing";
@@ -97,6 +98,7 @@ const tmpVec = new Vector3();
 const tmpVec2 = new Vector3();
 const forward = new Vector3();
 const ghostInverse = new Matrix4();
+const viewOffset: ViewOffset = [1, 1, 0, 0, 1, 1];
 const ndc = new Vector2();
 
 export class HeroScene3D {
@@ -352,9 +354,8 @@ export class HeroScene3D {
     cam.position.copy(pose.position);
     cam.up.set(0, 1, 0);
     cam.lookAt(pose.target);
-    cam.setViewOffset(
-      ...viewOffsetFor(this.live, this.layout.width, this.layout.height, shiftX, shiftY),
-    );
+    viewOffsetFor(this.live, this.layout.width, this.layout.height, shiftX, shiftY, viewOffset);
+    cam.setViewOffset(...viewOffset);
     cam.updateProjectionMatrix();
     cam.updateMatrixWorld();
   }
@@ -492,8 +493,15 @@ export class HeroScene3D {
     if (!category) return;
     for (const part of category.parts) {
       for (const mesh of part.meshes) {
-        if (on) mesh.layers.enable(OVERLAY_LAYER);
-        else mesh.layers.disable(OVERLAY_LAYER);
+        // An X-ray panel is two meshes: the back faces and their front-pass twin (loadCar).
+        const front = mesh.userData.frontPass as Mesh | undefined;
+        if (on) {
+          mesh.layers.enable(OVERLAY_LAYER);
+          front?.layers.enable(OVERLAY_LAYER);
+        } else {
+          mesh.layers.disable(OVERLAY_LAYER);
+          front?.layers.disable(OVERLAY_LAYER);
+        }
       }
     }
   }
