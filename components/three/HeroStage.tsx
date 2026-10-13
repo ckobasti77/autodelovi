@@ -30,6 +30,8 @@ import { clamp01, progressPerPixel, scrollTargetFor } from "@/lib/three/explode"
 import { POSTER_ASPECT, currentFraming, posterDock, posterFrame } from "@/lib/three/framing";
 import {
   HERO_PAGES,
+  PAGE_FIRST,
+  PAGE_LAST,
   dockBlend,
   flightOf,
   isEnded,
@@ -347,6 +349,12 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
         if (!trigger) {
           publishProgress(target);
           dipCanvas();
+          // No track to scroll (reduced motion): the frame is one screen tall, so bring all of
+          // it into view — the car's band, the grid and the navigator that was just used.
+          const frame = trackRef.current?.getBoundingClientRect();
+          if (frame && target > 0 && (frame.top < headerHeight() - 1 || frame.bottom > window.innerHeight + 1)) {
+            window.scrollTo({ top: window.scrollY + frame.top - headerHeight() });
+          }
           return;
         }
         // Whole pixel, rounded down: a target must not land in the next page (MOT-03).
@@ -378,7 +386,7 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
         // On the car means: the layers above are off and its own flight has not started.
         const onCar = pageAt(progress) === address.page && flightOf(progress, address) <= 0;
         if (!onCar) controller.goToProgress(pageReveal(address.page), opts);
-        if (reducedMotion || !triggerRef.current) {
+        else if (reducedMotion || !triggerRef.current) {
           trackRef.current?.scrollIntoView({ block: "nearest" });
         }
       },
@@ -433,9 +441,15 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
       stage = { w: s.width, h: s.height, x: s.left - m.left, y: s.top - m.top };
       apply();
     };
+    const dim = posterEl.firstElementChild as HTMLElement | null;
     const apply = () => {
       const { progress, band } = heroStore.getState();
       const k = band ? dockBlend(progress) : 0;
+      // A picture cannot lose its parts: it dims as they are taken off instead.
+      if (dim) {
+        const gone = clamp01((progress - PAGE_FIRST) / (PAGE_LAST - PAGE_FIRST));
+        dim.style.opacity = gone > 0 ? String(1 - 0.72 * gone) : "";
+      }
       if (k <= 0 || !band || stage.w === 0) {
         posterEl.style.transform = "";
         return;
@@ -456,6 +470,7 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
       observer.disconnect();
       unsubscribe();
       posterEl.style.transform = "";
+      if (dim) dim.style.opacity = "";
     };
   }, [posterMode]);
 
@@ -646,7 +661,7 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
                   // A transparent drawing on the page field inside the corner ticks: no box to round.
                   data-corner-audit="skip"
                 >
-                  {poster}
+                  <div className="absolute inset-0">{poster}</div>
                 </div>
               </div>
             </div>

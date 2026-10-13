@@ -178,7 +178,7 @@ export function HeroGrid({ className }: { className?: string }) {
               key={entry.page}
               data-page={entry.page}
               data-page-active={isActive ? "" : undefined}
-              aria-label={entry.systems.map((s) => findSystem(s)?.labelSr ?? s).join(", ")}
+              aria-label={listName(entry.page)}
               className={
                 isActive
                   ? "grid auto-rows-(--slot-row) grid-cols-[repeat(var(--slot-cols),minmax(0,1fr))] gap-x-2 gap-y-2 md:grid-cols-[repeat(var(--slot-cols-wide),minmax(0,1fr))] md:gap-x-3"
@@ -201,6 +201,14 @@ export function HeroGrid({ className }: { className?: string }) {
       </div>
     </section>
   );
+}
+
+/** Accessible name of a page's list; a system on two pages says which part it is. */
+function listName(page: number): string {
+  const entry = HERO_PAGES[page - 1];
+  const names = entry.systems.map((s) => findSystem(s)?.labelSr ?? s).join(", ");
+  const same = HERO_PAGES.filter((p) => p.systems.join() === entry.systems.join());
+  return same.length > 1 ? `${names}, ${same.indexOf(entry) + 1}. deo` : names;
 }
 
 type Vehicle = ReturnType<typeof useSelectedVehicle>;
