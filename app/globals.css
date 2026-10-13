@@ -869,8 +869,9 @@
 /* ── 3D hero (docs/3D-CONTRACT.md §F7.1, DESIGN-SYSTEM §10.1) ─────────────────────────────
    The scroll track is reserved by CSS from the first paint, so nothing shifts when the 3D
    arrives: the sticky frame is one screen under the header (the taller header of the page top,
-   and above the mobile action bar); the track adds the explode distance (200 vh below
-   1024 px, 320 vh above; none under reduced motion). */
+   and above the mobile action bar); the track adds the scroll distance of the parts grid —
+   six pages of systems: 240 vh below 1024 px (one swipe per page), 300 vh above (four wheel
+   notches per page); none under reduced motion (docs/3d/HERO-V2.md §13.2). */
 @utility hero-frame {
   height: calc(100svh - var(--header-h) - var(--header-rest) - var(--bottom-bar-h));
   min-height: 26rem;
@@ -880,10 +881,10 @@
   height: calc(100svh - var(--header-h) - var(--header-rest) - var(--bottom-bar-h));
   min-height: 26rem;
   @media (prefers-reduced-motion: no-preference) {
-    height: calc(100svh - var(--header-h) - var(--header-rest) - var(--bottom-bar-h) + 200vh);
+    height: calc(100svh - var(--header-h) - var(--header-rest) - var(--bottom-bar-h) + 240vh);
   }
   @media (prefers-reduced-motion: no-preference) and (width >= 64rem) {
-    height: calc(100svh - var(--header-h) - var(--header-rest) + 320vh);
+    height: calc(100svh - var(--header-h) - var(--header-rest) + 300vh);
   }
 }
 

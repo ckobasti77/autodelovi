@@ -1,12 +1,14 @@
 "use client";
 
 /**
- * The live 3D stage (dynamically imported by HeroExperience — never part of the first load).
+ * The live 3D stage (dynamically imported by HeroStage — never part of the first load).
  *
  * R3F `<Canvas frameloop="demand">`: a frame renders only when something changed (scroll
- * progress, hover/selection tweens, resize), nothing renders while the hero is off-screen.
- * DPR is clamped per tier and lowered when continuous animation runs below ~45 fps. Context
- * loss hands the stage back to the posters (one restore attempt).
+ * progress, hover/selection tweens, resize) or while docked parts float; the float asks for
+ * its own next frame (every second one on the mid tier), stops after a few idle seconds, and
+ * nothing renders while the hero is off-screen or the tab is hidden. DPR is clamped per tier
+ * and lowered when continuous animation runs below ~45 fps. Context loss hands the stage back
+ * to the poster (one restore attempt).
  */
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
@@ -26,6 +28,7 @@ import { LIGHT_RIG } from "@/constants/xray";
 import { MEDIA_CROP_MOBILE, MEDIA_STAGE_OVERLAY, currentFraming } from "@/lib/three/framing";
 import { TIER_MAX_DPR, msaaFor } from "@/lib/three/tier";
 import { heroStore, type HeroAnchor } from "@/components/three/heroStore";
+import { heroDom } from "@/components/three/heroDom";
 import { HeroScene3D, OVERLAY_LAYER } from "@/components/three/canvas/controller";
 import {
   buildBvhInIdle,
@@ -71,6 +74,17 @@ function lightDirection(azimuth: number, elevation: number): Vector3 {
 
 const KEY_POSITION = lightDirection(LIGHT_RIG.key.azimuth, LIGHT_RIG.key.elevation).multiplyScalar(10);
 const RIM_POSITION = lightDirection(LIGHT_RIG.rim.azimuth, LIGHT_RIG.rim.elevation).multiplyScalar(10);
+
+/** Canvas size and the poster stage box in canvas coordinates (read on resize only). */
+function stageRect(canvas: HTMLCanvasElement) {
+  const c = canvas.getBoundingClientRect();
+  const s = heroDom.stageBox?.getBoundingClientRect() ?? c;
+  return {
+    width: c.width,
+    height: c.height,
+    stage: { x: s.left - c.left, y: s.top - c.top, w: s.width, h: s.height },
+  };
+}
 
 export default function HeroCanvas({ tier }: HeroCanvasProps) {
   return (
@@ -144,11 +158,14 @@ function HeroScene({ tier }: HeroCanvasProps) {
         await yieldToMain();
         if (cancelled) return;
         scene.add(result.root);
-        const { width, height } = gl.domElement.getBoundingClientRect();
-        controller.setLayout({ width, height, ...currentFraming() });
-        controller.buildExplode(heroStore.getState().timeline);
-        controller.setProgress(heroStore.getState().progress);
+        const state = heroStore.getState();
+        controller.setLayout({ ...stageRect(gl.domElement), ...currentFraming() });
+        controller.setBand(state.band);
+        controller.setSlots(state.slotRects);
+        controller.setChips(state.chipPoints);
+        controller.setProgress(state.progress);
         controller.updateCamera();
+        controller.updateParts(performance.now() / 1000);
         await yieldToMain();
         if (cancelled) return;
         await gl.compileAsync(scene, camera);
@@ -196,12 +213,14 @@ function HeroScene({ tier }: HeroCanvasProps) {
     controller.setHovered(last.hovered);
     controller.setSelected(last.selected);
     controller.setFreeArea(last.freeArea);
+    controller.setOrigin(last.focusedSlot);
+    heroStore.setState({ probe: () => controller.report() });
     const unsubscribe = heroStore.subscribe((state) => {
       if (state.progress !== last.progress) controller.setProgress(state.progress);
-      if (state.timeline !== last.timeline) {
-        controller.buildExplode(state.timeline);
-        invalidate();
-      }
+      if (state.band !== last.band) controller.setBand(state.band);
+      if (state.slotRects !== last.slotRects) controller.setSlots(state.slotRects);
+      if (state.chipPoints !== last.chipPoints) controller.setChips(state.chipPoints);
+      if (state.focusedSlot !== last.focusedSlot) controller.setOrigin(state.focusedSlot);
       if (state.freeArea !== last.freeArea) controller.setFreeArea(state.freeArea);
       if (state.hovered !== last.hovered) controller.setHovered(state.hovered);
       if (state.selected !== last.selected) controller.setSelected(state.selected);
@@ -212,7 +231,26 @@ function HeroScene({ tier }: HeroCanvasProps) {
       }
       last = state;
     });
-    return unsubscribe;
+    // Input wakes the idle float (it rests after a few seconds without any).
+    const wake = () => {
+      controller.wake();
+      invalidate();
+    };
+    const onVisible = () => {
+      if (!document.hidden) wake();
+    };
+    window.addEventListener("pointermove", wake, { passive: true });
+    window.addEventListener("keydown", wake, { passive: true });
+    window.addEventListener("touchstart", wake, { passive: true });
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      unsubscribe();
+      heroStore.setState({ probe: null, origin: null });
+      window.removeEventListener("pointermove", wake);
+      window.removeEventListener("keydown", wake);
+      window.removeEventListener("touchstart", wake);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
   }, [car, invalidate, setFrameloop]);
 
   // ---------------------------------------------------------------- layout
@@ -220,8 +258,8 @@ function HeroScene({ tier }: HeroCanvasProps) {
   useEffect(() => {
     const controller = controllerRef.current;
     if (!controller || !car) return;
-    controller.setLayout({ width: size.width, height: size.height, ...currentFraming() });
-  }, [size.width, size.height, car]);
+    controller.setLayout({ ...stageRect(gl.domElement), ...currentFraming() });
+  }, [size.width, size.height, car, gl]);
 
   useEffect(() => {
     controllerRef.current?.setPixelRatio(viewportDpr);
@@ -231,8 +269,7 @@ function HeroScene({ tier }: HeroCanvasProps) {
     if (!car) return;
     const queries = [MEDIA_CROP_MOBILE, MEDIA_STAGE_OVERLAY].map((q) => window.matchMedia(q));
     const onChange = () => {
-      const { width, height } = gl.domElement.getBoundingClientRect();
-      controllerRef.current?.setLayout({ width, height, ...currentFraming() });
+      controllerRef.current?.setLayout({ ...stageRect(gl.domElement), ...currentFraming() });
     };
     for (const q of queries) q.addEventListener("change", onChange);
     return () => {
@@ -324,7 +361,10 @@ function HeroScene({ tier }: HeroCanvasProps) {
 
   // ---------------------------------------------------------------- frame
   const anchor = useRef<HeroAnchor>({ slug: "", x: 0, y: 0, visible: false });
-  const perf = useRef({ last: 0, sum: 0, count: 0 });
+  const originAnchor = useRef<HeroAnchor>({ slug: "", x: 0, y: 0, visible: false });
+  const perf = useRef({ last: 0, sum: 0, count: 0, paced: false });
+  // One stable callback for the paced float frame (no closure per frame).
+  const floatFrame = useRef(() => invalidate()).current;
 
   // Priority 1: this callback renders the frame itself (normal pass + the selected on-top pass).
   useFrame(({ gl: renderer, scene: frameScene }) => {
@@ -333,7 +373,9 @@ function HeroScene({ tier }: HeroCanvasProps) {
       renderer.render(frameScene, camera);
       return;
     }
+    const nowS = performance.now() / 1000;
     controller.updateCamera();
+    controller.updateParts(nowS);
     renderer.render(frameScene, camera);
     if (controller.hasOverlay) {
       const autoClear = renderer.autoClear;
@@ -357,13 +399,28 @@ function HeroScene({ tier }: HeroCanvasProps) {
     } else if (heroStore.getState().anchor) {
       heroStore.setState({ anchor: null });
     }
+    // Origin of the focused grid slot on the car: the far end of the leader line.
+    const focusedSlot = heroStore.getState().focusedSlot;
+    if (focusedSlot) {
+      controller.originAnchorOf(focusedSlot, originAnchor.current);
+      const o = originAnchor.current;
+      const prev = heroStore.getState().origin;
+      if (!prev || prev.slug !== focusedSlot || prev.x !== o.x || prev.y !== o.y || prev.visible !== o.visible) {
+        heroStore.setState({ origin: { slug: focusedSlot, x: o.x, y: o.y, visible: o.visible } });
+      }
+    } else if (heroStore.getState().origin) {
+      heroStore.setState({ origin: null });
+    }
 
     // Adaptive DPR: only continuous runs count (demand rendering has idle gaps).
     const now = performance.now();
     const p = perf.current;
     const gap = now - p.last;
     p.last = now;
-    if (gap > 0 && gap < 100) {
+    // A frame the float pacing spaced out on purpose says nothing about the GPU.
+    const paced = p.paced;
+    p.paced = false;
+    if (!paced && gap > 0 && gap < 100) {
       p.sum += gap;
       p.count += 1;
       if (p.count >= 90) {
@@ -375,6 +432,15 @@ function HeroScene({ tier }: HeroCanvasProps) {
         const current = renderer.getPixelRatio();
         if (average > 22 && current > 1) setDpr(Math.max(1, current - 0.25));
       }
+    }
+
+    // The idle float keeps itself going: every frame on the high tier, every second one on
+    // the mid tier. `invalidate` does nothing while the frame loop is off (hero off-screen).
+    if (controller.wantsFrames(nowS) && !document.hidden) {
+      if (tier === "mid") {
+        p.paced = true;
+        requestAnimationFrame(floatFrame);
+      } else invalidate();
     }
 
     if (!firstFrame.current && edgesReady.current) {

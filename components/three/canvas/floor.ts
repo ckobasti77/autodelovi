@@ -22,6 +22,8 @@ export type FloorUniforms = {
   uShadowA: { value: Texture | null };
   uShadowB: { value: Texture | null };
   uShadowMix: { value: number };
+  /** 1 with every part on the car … 0 with the car stripped (hero v2). */
+  uShadowGain: { value: number };
   uReveal: { value: number };
 };
 
@@ -33,6 +35,7 @@ export function createFloor(shadowA: Texture | null, shadowB: Texture | null) {
     uShadowA: { value: shadowA },
     uShadowB: { value: shadowB },
     uShadowMix: { value: 0 },
+    uShadowGain: { value: 1 },
     uReveal: { value: 0 },
     uSizeA: { value: FLOOR.shadowAssembledSize },
     uSizeB: { value: FLOOR.shadowExplodedSize },
@@ -63,6 +66,7 @@ export function createFloor(shadowA: Texture | null, shadowB: Texture | null) {
       uniform sampler2D uShadowA;
       uniform sampler2D uShadowB;
       uniform float uShadowMix;
+      uniform float uShadowGain;
       uniform float uReveal;
       uniform float uSizeA;
       uniform float uSizeB;
@@ -103,7 +107,7 @@ export function createFloor(shadowA: Texture | null, shadowB: Texture | null) {
         float fade = 1.0 - smoothstep( uFadeFrom, uRadius, r );
         float lines = max( gridLine( vGround, uMinor ) * uMinorOpacity,
                            gridLine( vGround, uMajor ) * uMajorOpacity ) * fade * uReveal;
-        float shadow = mix( shadowAt( uShadowA, uSizeA ), shadowAt( uShadowB, uSizeB ), uShadowMix );
+        float shadow = mix( shadowAt( uShadowA, uSizeA ), shadowAt( uShadowB, uSizeB ), uShadowMix ) * uShadowGain;
 
         vec4 c = vec4( uCentre, disc );
         c = over( c, uLine, lines );

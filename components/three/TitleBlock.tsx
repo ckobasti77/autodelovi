@@ -1,22 +1,17 @@
-"use client";
-
 /**
  * Title block (DESIGN-SYSTEM §5.7): the drawing's honest facts — „Prikaz: Generički kompaktni
- * hečbek, nije konkretan model“, the live stage „Faza 03 / 07“ and „Kategorije 44“. A cell
- * grid on the stage frame's top-right from 1440 px; below that one line under the drawing (the
- * honesty note is never hidden). Static copy uses the LCP-safe RevealText (it is on the first
- * screen); the stage value is live and never animated.
+ * hečbek, nije konkretan model“, „Sistemi 10“ and „Kategorije 44“. A cell grid on the
+ * stage frame's top-right from 1440 px while the car is assembled; once the grid takes that
+ * place, and below 1440 px, the note is one line under the drawing (it is never hidden).
+ * Static copy uses the LCP-safe RevealText (it is on the first screen).
  */
 import { cn } from "@/lib/cn";
-import { CATEGORY_COUNT, LAST_STAGE_INDEX } from "@/lib/three/stages";
+import { SYSTEMS } from "@/lib/catalog/taxonomy";
+import { CATEGORY_COUNT } from "@/lib/three/stages";
 import { HERO_COPY } from "@/lib/i18n/sr/hero";
 import { RevealText } from "@/components/text-reveal/RevealText";
-import { useHeroStore } from "@/components/three/heroStore";
-
-const pad = (n: number) => String(n).padStart(2, "0");
 
 export function TitleBlock({ className }: { className?: string }) {
-  const stage = useHeroStore((s) => s.stage);
   return (
     <dl
       data-reveal="off"
@@ -36,10 +31,10 @@ export function TitleBlock({ className }: { className?: string }) {
       </div>
       <div className="flex flex-col gap-1 border-r border-line px-3 py-2">
         <dt className="type-code-s uppercase text-ink-3">
-          <RevealText as="span">{HERO_COPY.titleBlockStage}</RevealText>
+          <RevealText as="span">{HERO_COPY.titleBlockSystems}</RevealText>
         </dt>
         <dd className="type-code text-ink-1 tabular-nums">
-          {pad(stage)} / {pad(LAST_STAGE_INDEX)}
+          {SYSTEMS.length}
         </dd>
       </div>
       <div className="flex flex-col gap-1 px-3 py-2">

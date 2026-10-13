@@ -20,7 +20,7 @@
  * `object-position: 50% 50%`, and from `lg` `left: 8%; width: 92%` +
  * `object-position: 100% 100%`.
  */
-import { containFrame, type ContainFrame } from "@/lib/three/camera";
+import { containFrame, type ContainFrame } from "@/lib/three/contain";
 
 export const MEDIA_CROP_MOBILE = "(max-width: 47.999rem)";
 export const MEDIA_STAGE_OVERLAY = "(min-width: 64rem)";
@@ -87,4 +87,46 @@ export function posterFrame(
   const inset = framing.insetLeft * boxWidth;
   const frame = containFrame(aspect, boxWidth - inset, height, framing.anchorX, framing.anchorY);
   return { ...frame, offsetX: frame.offsetX + boxLeft + inset };
+}
+
+/**
+ * Where the assembled car's bounding box sits inside each poster (fractions of the image; the
+ * far corners of the box fall outside the portrait crops). Projected from the manifest's hero
+ * cameras — `tests/unit/three/slots.test.ts` recomputes it.
+ */
+export const CAR_IN_POSTER: Readonly<
+  Record<Crop, { left: number; right: number; top: number; bottom: number }>
+> = {
+  desktop: { left: 0.3292, right: 0.9597, top: 0.1943, bottom: 0.9294 },
+  tablet: { left: -0.073, right: 1.0384, top: 0.1888, bottom: 1.0084 },
+  mobile: { left: -0.1395, right: 1.0757, top: 0.1759, bottom: 1.0311 },
+};
+
+export type PosterDock = { scale: number; x: number; y: number };
+
+/**
+ * Transform (origin top left) that moves the poster so its car fills `band` the way the docked
+ * camera shows it — the poster's stand-in for the dolly while there is no canvas (low tier,
+ * model still downloading, context lost). `frame` is the poster image inside the stage box and
+ * `band` is in the same coordinates; `k` is the dock blend 0 … 1.
+ */
+export function posterDock(
+  crop: Crop,
+  frame: ContainFrame,
+  band: { x: number; y: number; w: number; h: number },
+  fill: { width: number; height: number },
+  k: number,
+): PosterDock {
+  const car = CAR_IN_POSTER[crop];
+  const carW = (car.right - car.left) * frame.imageWidth;
+  const carH = (car.bottom - car.top) * frame.imageHeight;
+  const scale = Math.min((band.w * fill.width) / carW, (band.h * fill.height) / carH);
+  const cx = frame.offsetX + ((car.left + car.right) / 2) * frame.imageWidth;
+  const cy = frame.offsetY + ((car.top + car.bottom) / 2) * frame.imageHeight;
+  const s = 1 + (scale - 1) * k;
+  return {
+    scale: s,
+    x: (band.x + band.w / 2 - scale * cx) * k,
+    y: (band.y + band.h / 2 - scale * cy) * k,
+  };
 }

@@ -11,7 +11,7 @@
 import { create } from "zustand";
 
 import type { Tier } from "@/lib/three/tier";
-import type { Timeline } from "@/lib/three/explode";
+import type { Rect } from "@/lib/three/slots";
 
 /**
  * idle → loading (chunk + model) → ready (first frame drawn) · lost (WebGL context lost, the
@@ -26,23 +26,47 @@ export type HeroAnchor = { slug: string; x: number; y: number; visible: boolean 
 export type SelectSource = "canvas" | "list" | "deeplink" | "hook" | "stage";
 
 export type HeroController = {
-  /** Scroll (or, without scrubbing, jump) so the explode reaches `p`. */
+  /** Scroll (or, without scrubbing, jump) so the progress reaches `p`. */
   goToProgress: (p: number, opts?: { instant?: boolean }) => void;
-  /** Explode just enough to show a category (its stage end) — no-op when already past it. */
+  /** Open the car up to a category's layer: its page's parts are still on the car. */
   revealCategory: (slug: string, opts?: { instant?: boolean }) => void;
+  /** Show a page with every part docked (chips, a focused slot link). */
+  goToPage: (page: number, opts?: { instant?: boolean }) => void;
 };
+
+/** What a grid slot shows: the docked mesh (the canvas draws it) or the category's image. */
+export type SlotMode = "mesh" | "image";
+
+export type SlotRect = { slug: string; rect: Rect };
+
+/** One docked slot as the scene sees it (QA hook): projected size and distance from its cell. */
+export type SlotProbe = { slug: string; w: number; h: number; dx: number; dy: number; angle: number };
 
 type HeroState = {
   tier: Tier | null;
-  timeline: Timeline;
   reducedMotion: boolean;
   status: HeroStatus;
   /** Bytes loaded / expected (0 … 1) while status is „loading“. */
   loadProgress: number;
-  /** Explode progress 0 … 1 (transient: subscribe, do not select). */
+  /** Scroll progress 0 … 1 (transient: subscribe, do not select). */
   progress: number;
-  /** Stage shown by the index (0 … 7). */
-  stage: number;
+  /** Page of the grid (0 = the assembled car, 1 … 6). */
+  page: number;
+  /** The end state: every part taken off. */
+  ended: boolean;
+  slotMode: SlotMode;
+  /** Cells of the page in the grid (canvas px), read on resize only. */
+  slotRects: readonly SlotRect[];
+  /** Where the docked car sits (canvas px). */
+  band: Rect | null;
+  /** Centre of each page's navigator cluster (canvas px; index = page). */
+  chipPoints: readonly ({ x: number; y: number } | null)[];
+  /** Slot under the pointer or the keyboard focus: its origin lights up on the car. */
+  focusedSlot: string | null;
+  /** Origin of the focused slot on the car (canvas px; transient, written by the canvas). */
+  origin: HeroAnchor | null;
+  /** Docked slots as the scene sees them (QA hook; null without a canvas). */
+  probe: (() => SlotProbe[]) | null;
   hovered: string | null;
   selected: string | null;
   selectSource: SelectSource | null;
@@ -53,7 +77,7 @@ type HeroState = {
   inView: boolean;
   /** Pointer can hover (fine pointer) — hover callouts only then. */
   finePointer: boolean;
-  /** Label anchor for the callout (transient, written by the canvas every frame). */
+  /** Label anchor for the callout (canvas px; transient, written by the canvas every frame). */
   anchor: HeroAnchor | null;
   /** Where a focused part should land (stage box px, centre + height of the free area). */
   freeArea: { x: number; y: number; h: number } | null;
@@ -62,12 +86,19 @@ type HeroState = {
 
 export const useHeroStore = create<HeroState>(() => ({
   tier: null,
-  timeline: "desktop",
   reducedMotion: false,
   status: "idle",
   loadProgress: 0,
   progress: 0,
-  stage: 0,
+  page: 0,
+  ended: false,
+  slotMode: "image",
+  slotRects: [],
+  band: null,
+  chipPoints: [],
+  focusedSlot: null,
+  origin: null,
+  probe: null,
   hovered: null,
   selected: null,
   selectSource: null,
@@ -105,4 +136,9 @@ export function clearSelection(): void {
 
 export function setHovered(slug: string | null): void {
   if (heroStore.getState().hovered !== slug) heroStore.setState({ hovered: slug });
+}
+
+/** A grid slot under the pointer or the keyboard focus (null when it leaves). */
+export function setFocusedSlot(slug: string | null): void {
+  if (heroStore.getState().focusedSlot !== slug) heroStore.setState({ focusedSlot: slug });
 }

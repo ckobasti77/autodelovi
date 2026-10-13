@@ -5,7 +5,13 @@
  * production build made with `NEXT_PUBLIC_TEST_HOOKS=1` (the e2e server). Never shipped to
  * real visitors.
  */
-import { heroStore, selectCategory, type SelectSource } from "@/components/three/heroStore";
+import {
+  heroStore,
+  selectCategory,
+  type SelectSource,
+  type SlotProbe,
+} from "@/components/three/heroStore";
+import { foundCount, pageRest } from "@/lib/three/pages";
 import { isPanelSlug } from "@/lib/three/stages";
 import type { Tier } from "@/lib/three/tier";
 
@@ -23,16 +29,24 @@ export type Sklop3dHooks = {
   readonly ready: boolean;
   readonly tier: string | null;
   selectPart: (slug: string) => boolean;
+  /** Jump the scroll progress (0 … 1). */
   explode: (progress: number) => void;
+  /** Jump to a page of the grid with every part docked (1 … 6). */
+  page: (page: number) => void;
+  /** Docked slots as the scene draws them: projected size and distance from the cell. */
+  slots: () => SlotProbe[];
   getState: () => {
     ready: boolean;
     tier: string | null;
     status: string;
     progress: number;
-    stage: number;
+    page: number;
+    ended: boolean;
+    found: number;
+    slotMode: string;
     selected: string | null;
     hovered: string | null;
-    timeline: string;
+    focusedSlot: string | null;
     reducedMotion: boolean;
   };
 };
@@ -60,6 +74,12 @@ export function installTestHooks(): (() => void) | undefined {
     explode(progress: number) {
       heroStore.getState().controller?.goToProgress(progress, { instant: true });
     },
+    page(page: number) {
+      heroStore.getState().controller?.goToProgress(pageRest(page), { instant: true });
+    },
+    slots() {
+      return heroStore.getState().probe?.() ?? [];
+    },
     getState() {
       const s = heroStore.getState();
       return {
@@ -67,10 +87,13 @@ export function installTestHooks(): (() => void) | undefined {
         tier: s.tier,
         status: s.status,
         progress: s.progress,
-        stage: s.stage,
+        page: s.page,
+        ended: s.ended,
+        found: foundCount(s.progress),
+        slotMode: s.slotMode,
         selected: s.selected,
         hovered: s.hovered,
-        timeline: s.timeline,
+        focusedSlot: s.focusedSlot,
         reducedMotion: s.reducedMotion,
       };
     },

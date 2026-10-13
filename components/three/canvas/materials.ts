@@ -26,7 +26,7 @@ import {
   type WebGLProgramParametersWithUniforms,
 } from "three";
 
-import { HIGHLIGHT, LIGHT_RIG, XRAY, XRAY_RUNTIME } from "@/constants/xray";
+import { DOCK, HIGHLIGHT, LIGHT_RIG, XRAY, XRAY_RUNTIME } from "@/constants/xray";
 
 type Uniform<T> = { value: T };
 
@@ -52,11 +52,15 @@ export type HighlightUniforms = {
   hover: Uniform<number>;
   select: Uniform<number>;
   dim: Uniform<number>;
+  /** 0 on the car … 1 seated in a grid slot (HERO-V2 §6.3). */
+  dock: Uniform<number>;
 };
 
 export function createHighlightUniforms(): HighlightUniforms {
-  return { hover: { value: 0 }, select: { value: 0 }, dim: { value: 0 } };
+  return { hover: { value: 0 }, select: { value: 0 }, dim: { value: 0 }, dock: { value: 0 } };
 }
+
+const DOCK_FILL = `vec3( ${DOCK.fill.map((v) => v.toFixed(2)).join(", ")} )`;
 
 export type XrayKind = "body" | "glass";
 
@@ -97,6 +101,9 @@ export function createXrayMaterial(o: XrayOptions): MeshBasicMaterial {
     uHiColor: o.shared.highlightColor,
     uHiHover: o.highlight.hover,
     uHiSelect: o.highlight.select,
+    uXrDock: o.highlight.dock,
+    uXrDockColor: { value: new Color(o.kind === "body" ? DOCK.primer : DOCK.glassTint) },
+    uXrDockAlpha: { value: o.kind === "body" ? DOCK.bodyAlpha : DOCK.glassAlpha },
   };
   material.onBeforeCompile = (shader: WebGLProgramParametersWithUniforms) => {
     Object.assign(shader.uniforms, uniforms);
@@ -127,7 +134,10 @@ uniform float uXrBackAlpha;
 uniform float uXrEnv;
 uniform vec3 uHiColor;
 uniform float uHiHover;
-uniform float uHiSelect;`,
+uniform float uHiSelect;
+uniform float uXrDock;
+uniform vec3 uXrDockColor;
+uniform float uXrDockAlpha;`,
       )
       .replace(
         "vec4 diffuseColor = vec4( diffuse, opacity );",
@@ -140,7 +150,13 @@ float xrBase = mix( uXrBaseAlpha, min( uXrBaseAlpha, uXrSelectedAlpha ), uXrSele
 float xrAlpha = mix( xrBase, uXrRimAlpha, xrRim );
 xrAlpha *= gl_FrontFacing ? 1.0 : uXrBackAlpha;
 // Blender: only env·α of the pixel is opaque; the straight colour is E / env (+ G below).
-vec4 diffuseColor = vec4( xrCol / uXrEnv, xrAlpha * uXrEnv * opacity );`,
+vec4 diffuseColor = vec4( xrCol / uXrEnv, xrAlpha * uXrEnv * opacity );
+// Docked in a grid slot: a solid primer panel under a camera-locked half-Lambert.
+vec3 xrN = normalize( vXrN ) * ( gl_FrontFacing ? 1.0 : -1.0 );
+float xrLam = 0.5 + 0.5 * dot( xrN, normalize( ${DOCK_FILL} ) );
+vec3 xrDocked = uXrDockColor * ( 0.3 + 0.95 * xrLam * xrLam ) + uXrRim * xrRim * 0.18;
+xrDocked = mix( xrDocked, uHiColor, xrRim * xrHi );
+diffuseColor = mix( diffuseColor, vec4( xrDocked, uXrDockAlpha * opacity ), uXrDock );`,
       );
   };
   material.customProgramCacheKey = () => `sk-xray-${o.kind}`;
@@ -159,6 +175,8 @@ function injectHighlight(
     uHiSelect: highlight.select,
     uHiDim: highlight.dim,
     uHiRimPower: { value: HIGHLIGHT.rimPower },
+    uHiDock: highlight.dock,
+    uHiDockColor: { value: new Color(DOCK.liftColor) },
   };
   material.onBeforeCompile = (shader: WebGLProgramParametersWithUniforms) => {
     Object.assign(shader.uniforms, uniforms);
@@ -170,7 +188,9 @@ uniform vec3 uHiColor;
 uniform float uHiHover;
 uniform float uHiSelect;
 uniform float uHiDim;
-uniform float uHiRimPower;`,
+uniform float uHiRimPower;
+uniform float uHiDock;
+uniform vec3 uHiDockColor;`,
       )
       .replace(
         "#include <emissivemap_fragment>",
@@ -180,6 +200,9 @@ uniform float uHiRimPower;`,
   float hiRimAmt = min( uHiHover * ${HIGHLIGHT.hoverRim.toFixed(2)} + uHiSelect * ${HIGHLIGHT.selectedRim.toFixed(2)}, 1.0 );
   float hiEmi = uHiHover * ${HIGHLIGHT.hoverEmissive.toFixed(2)} + uHiSelect * ${HIGHLIGHT.selectedEmissive.toFixed(2)};
   totalEmissiveRadiance += uHiColor * ( hiRim * hiRimAmt + hiEmi );
+  // Docked in a grid slot: an exposure floor, so black rubber and plastic read on the night field.
+  float hiLam = 0.5 + 0.5 * dot( normal, normalize( ${DOCK_FILL} ) );
+  totalEmissiveRadiance += uHiDockColor * ( uHiDock * ${DOCK.lift.toFixed(2)} * ( 0.35 + 0.65 * hiLam ) );
 }`,
       )
       .replace(

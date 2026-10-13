@@ -72,3 +72,21 @@ export const FLOOR = {
   shadowAssembledSize: 5.2,
   shadowExplodedSize: 6.4,
 } as const;
+
+/**
+ * Docked parts in the hero v2 grid (docs/3d/HERO-V2.md §6.3). Runtime only — the posters never
+ * show a docked part. Ghost-glass panels are an outline in a slot, so the `dock` uniform blends
+ * them to a mid primer grey (body panels ship in primer); dark parts get an exposure floor, the
+ * web counterpart of the floor the thumbnails were rendered with (D241).
+ */
+export const DOCK = {
+  primer: "#59626C",
+  bodyAlpha: 0.94,
+  glassAlpha: 0.46,
+  glassTint: "#7FBFD6",
+  /** Emissive floor added to PBR parts, shaded by a camera-locked half-Lambert. */
+  lift: 0.2,
+  liftColor: "#9AA3AB",
+  /** View-space direction of that fill (up and to the left of the camera). */
+  fill: [-0.35, 0.55, 0.76],
+} as const;

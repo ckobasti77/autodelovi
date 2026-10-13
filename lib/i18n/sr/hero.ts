@@ -3,56 +3,87 @@
  * a second locale can replace it later. Stage keys match `lib/catalog/taxonomy.ts` STAGES.
  */
 
-/** Short stage names for the stage index (00–07); captions use the full taxonomy label. */
-export const STAGE_SHORT: Readonly<Record<string, string>> = {
-  sklopljeno: "Sklopljeno",
-  karoserija: "Karoserija i svetla",
+import type { SystemSlug } from "@/lib/catalog/taxonomy";
+
+/** Short system names for the navigator chips (the full name stays the accessible name). */
+export const SYSTEM_SHORT: Readonly<Record<SystemSlug, string>> = {
+  karoserija: "Karoserija",
+  "elektrika-i-svetla": "Elektrika",
   tockovi: "Točkovi",
-  "kocnice-vesanje": "Kočnice i vešanje",
-  agregati: "Agregati i hlađenje",
-  motor: "Motor i turbina",
-  transmisija: "Menjač i kvačilo",
-  izduvni: "Izduvni sistem",
+  kocnice: "Kočnice",
+  "vesanje-i-upravljanje": "Vešanje",
+  "hladjenje-i-klima": "Hlađenje",
+  "motor-i-usis": "Motor",
+  transmisija: "Transmisija",
+  "izduvni-sistem": "Izduv",
+  servis: "Servis",
 };
 
-/** One sentence per stage caption (body-s, ink-2). */
-export const STAGE_SENTENCE: Readonly<Record<string, string>> = {
-  sklopljeno: "Skrolujte i auto se rasklapa po sistemima.",
-  karoserija: "Prvo se skidaju limarija, stakla i svetla.",
-  tockovi: "Točkovi se skidaju sa glavčina.",
-  "kocnice-vesanje": "Ispod su diskovi, čeljusti, pločice, amortizeri, ramena i letva volana.",
-  agregati: "Hladnjak, interkuler, klima, alternator, anlaser i akumulator.",
-  motor: "Motor sa turbinom, brizgaljkama, paljenjem i setom zupčastog kaiša.",
-  transmisija: "Menjač, kvačilo sa zamajcem i poluosovine.",
-  izduvni: "Na kraju izduvni sistem: DPF, katalizator, lonci i cevi.",
+/**
+ * Slot names that do not fit two lines at 390 px. Each is the start of the category's full
+ * name (WCAG 2.5.3 — the full name stays the link's accessible name); a unit test checks it.
+ */
+export const SLOT_LABEL_SHORT: Readonly<Record<string, string>> = {
+  senzori: "Senzori",
+  "usisna-grana": "Usisna grana",
+  "kais-alternatora": "Kaiš alternatora",
+  turbina: "Turbina",
+  "brizgaljke-pumpa-goriva": "Brizgaljke",
+  "zupcasti-kais-vodena-pumpa": "Set zupčastog kaiša",
+  "karter-dihtunzi": "Karter, pumpa ulja",
+  "termostat-creva": "Termostat i creva",
+  poluosovine: "Poluosovine",
+  auspuh: "Auspuh",
+};
+
+const kategorija = (n: number) => {
+  const last = n % 10;
+  const tens = n % 100;
+  if (last === 1 && tens !== 11) return "kategorija";
+  if (last >= 2 && last <= 4 && (tens < 12 || tens > 14)) return "kategorije";
+  return "kategorija";
 };
 
 export const HERO_COPY = {
   honesty: "Generički kompaktni hečbek, nije konkretan model",
   canvasLabel:
-    "Interaktivni 3D prikaz automobila u rendgen stilu. Delove birate mišem, dodirom ili iz liste delova.",
+    "Interaktivni 3D prikaz automobila u rendgen stilu. Delovi su nabrojani u mreži pored prikaza.",
   loading: "Učitava se 3D prikaz",
   loaded: "3D prikaz je spreman",
-  explode: "Rasklopi",
-  assemble: "Sklopi",
   partsList: "Lista delova",
   partsListTitle: "Lista delova po sistemima",
   partsListDescription: "Izaberite kategoriju — otvara se ista lista artikala kao klikom na deo.",
-  holdHintPointer: "Kliknite na deo",
-  holdHintTouch: "Dodirnite deo",
-  holdHintSub: "ili otvorite listu delova",
   /** After the live count in the hover callout: „12 artikala · kliknite na deo“. */
   calloutHint: "kliknite na deo",
   /** Parts list: a category that exists in the catalogue but has no mesh on the car. */
   noMesh: "bez 3D prikaza",
-  stageNavLabel: "Faze rasklapanja",
-  prevStage: "Prethodna faza",
-  nextStage: "Sledeća faza",
   titleBlockView: "Prikaz",
-  titleBlockStage: "Faza",
+  titleBlockSystems: "Sistemi",
   titleBlockCategories: "Kategorije",
-  titleBlockUnits: "Mere",
   systemsSection: "Delovi po sistemima",
+  /** The assembled car, before the first page. */
+  introTitle: "Sklopljen automobil",
+  introCounts: (systems: number, categories: number) =>
+    `${systems} sistema · ${categories} ${kategorija(categories)}`,
+  introSentence: "Skrolujte: delovi izlaze iz auta i ređaju se po sistemima.",
+  introSentenceStatic: "Izaberite sistem ispod: delovi se ređaju u mrežu.",
+  /** Grid and navigator. */
+  skip: "Preskoči 3D prikaz",
+  gridLabel: "Delovi automobila po sistemima",
+  navLabel: "Sistemi vozila",
+  found: "Pronađeno",
+  chipShown: "prikazano",
+  chipDone: "pronađeno",
+  chipName: (system: string, count: number, state: string) =>
+    [system, `${count} ${kategorija(count)}`, state].filter(Boolean).join(", "),
+  pageAnnounce: (systems: readonly string[], count: number) =>
+    `${systems.join(", ")} — ${count} ${kategorija(count)}`,
+  /** End state. */
+  endTitle: "Ceo auto rastavljen",
+  endSentence: "Sve kategorije su na stolu. Izaberite vozilo i videćete delove koji mu odgovaraju.",
+  endVehicle: "Izaberite vozilo",
+  endAll: "Svi delovi",
+  endAssemble: "Sklopi auto",
 } as const;
 
 export const PANEL_COPY = {

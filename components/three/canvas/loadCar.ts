@@ -149,12 +149,14 @@ export async function loadCarScene(options: {
   startDecoderWorkers();
   const manifest = readCarManifest(manifestJson);
 
-  const [buffer, environment, shadowA, shadowB] = await Promise.all([
+  // One contact shadow: the car is never an exploded cloud any more (hero v2), so the
+  // exploded shadow is not fetched.
+  const [buffer, environment, shadowA] = await Promise.all([
     prefetchModel(tier),
     loadEnvironment(),
     loadShadow(SHADOW_URL.assembled, renderer),
-    loadShadow(SHADOW_URL.exploded, renderer),
   ]);
+  const shadowB: Texture | null = null;
 
   const loader = new GLTFLoader();
   loader.setMeshoptDecoder(MeshoptDecoder);
@@ -263,7 +265,6 @@ export async function loadCarScene(options: {
 
   const textures: Texture[] = [environment];
   if (shadowA) textures.push(shadowA);
-  if (shadowB) textures.push(shadowB);
   // Every texture any material samples, so the canvas uploads them all (one per task) before
   // compileAsync and the first frame never pays a texImage2D.
   for (const m of materials) {

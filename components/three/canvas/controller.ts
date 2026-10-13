@@ -1,53 +1,55 @@
 /**
  * Imperative core of the 3D hero — everything that changes per frame lives here, outside
- * React (refs-not-state, 3d-scrollytelling rules):
+ * React (refs-not-state, 3d-scrollytelling rules; docs/3d/HERO-V2.md §4, §6):
  *
- * - explode: one GSAP timeline built from the manifest (a `power2.inOut` tween per part node
- *   at its stage slot, contract F3/F6); its progress follows the scroll progress;
- * - camera: the poster cameras with contain framing (`setViewOffset`), dolly + orbit across
- *   0.08–0.92, and a focus glide (0.9 s power3.inOut) to the selected category;
- * - X-ray: shell alpha 0.22 → 0.10 in stage 1, edge opacity, contact-shadow crossfade;
- * - highlight: hover / selected / dimmed uniforms per category (§7.5);
- * - picking: BVH raycasts, opaque parts win over an assembled X-ray panel in front of them.
+ * - parts: `DockPoses` writes every part node from the scroll progress — lift, carry to the
+ *   grid slot, seat, float, leave (a pure function of progress, camera and slot rectangles);
+ * - camera: the poster camera with contain framing (`setViewOffset`); from progress 0.01 it
+ *   backs away along its view line into the car's band (a dolly and a longer lens — never a
+ *   smaller projection frame), plus a focus glide (0.9 s power3.inOut) to a selected category
+ *   that is still on the car;
+ * - X-ray: shell alpha 0.22 → 0.10 while page 1 leaves, edge opacity, contact shadow fading
+ *   with the share of parts gone;
+ * - highlight: hover / selected / dimmed uniforms per category (§7.5), and a ghost of a docked
+ *   category at its origin on the car;
+ * - picking: BVH raycasts; parts that are docked or gone never answer (their slot is a link),
+ *   opaque parts win over an assembled X-ray panel in front of them.
  */
 import {
   Box3,
+  Color,
+  Group,
+  Mesh,
+  MeshBasicMaterial,
   Raycaster,
   Vector2,
   Vector3,
-  type Mesh,
   type PerspectiveCamera,
 } from "three";
 
 import { gsap } from "@/lib/gsap/client";
 import {
   clonePose,
-  containFrame,
   lerpPose,
-  orbitBlend,
   poseFrom,
   viewOffsetFor,
   type CameraPose,
   type ContainFrame,
 } from "@/lib/three/camera";
-import {
-  cameraBlend,
-  partFactor,
-  partSlot,
-  shellFade,
-  stageWindows,
-  type StageWindow,
-  type Timeline,
-} from "@/lib/three/explode";
+import { clamp01, power2InOut } from "@/lib/three/explode";
 import { POSTER_ASPECT, posterFrame, type Crop } from "@/lib/three/framing";
+import { PAGE_FIRST, PAGE_LAST, dockBlend, pageLocal } from "@/lib/three/pages";
+import { solveDock, type DockSolution, type Rect } from "@/lib/three/slots";
+import { SLOT } from "@/constants/heroSlots";
 import { DUR, EASE } from "@/constants/motion";
 import { XRAY, XRAY_RUNTIME } from "@/constants/xray";
 import type { CarScene, CategoryEntry } from "@/components/three/canvas/loadCar";
 import type { EdgeMaterials } from "@/components/three/canvas/enhance";
+import { DockPoses, type SlotReport } from "@/components/three/canvas/poses";
 
 export type { Crop };
 
-/** Stage size plus the poster framing (object-fit: contain; anchors mirror the poster CSS). */
+/** Canvas size, the poster framing and the poster (stage) box inside the canvas. */
 export type Layout = {
   width: number;
   height: number;
@@ -56,6 +58,8 @@ export type Layout = {
   anchorY: number;
   insetLeft: number;
   maxWidth: number;
+  /** The stage box the poster is framed in (CSS px, canvas coordinates). */
+  stage: Rect;
 };
 
 /** Free area of the canvas for a focused part (CSS px, canvas coordinates): centre + height. */
@@ -66,11 +70,14 @@ const FOCUS_FILL: Readonly<Record<Crop, number>> = { desktop: 0.42, tablet: 0.46
 /** How far the focus glide dollies toward the part (the rest is a lens zoom). */
 const FOCUS_DOLLY = 0.2;
 const FOCUS_MIN_FOV = 5;
+/** A category docked past this is a grid slot: no camera glide, no picking. */
+const DOCKED_FOCUS = 0.5;
+const DOCKED_PICK = 0.1;
 
 /**
- * Layer of the selected category's on-top pass: after the normal frame the depth buffer is
- * cleared and only this layer (plus the lights) renders again, so the selected part reads
- * through anything the explode left in front of it — the X-ray idea applied to one part.
+ * Layer of the on-top pass: after the normal frame the depth buffer is cleared and only this
+ * layer (plus the lights) renders again, so the selected part — and the ghost of a docked
+ * category at its origin — reads through anything in front of it.
  */
 export const OVERLAY_LAYER = 1;
 
@@ -78,23 +85,24 @@ export const OVERLAY_LAYER = 1;
 const POSTER_MASTER_WIDTH = 2560;
 /** Hidden (behind the near shell surface) edges keep this share of the line strength. */
 const HIDDEN_EDGE_SHARE = 0.3;
+/** The contact shadow keeps this much with the car stripped. */
+const SHADOW_FLOOR = 0.15;
+const GHOST_OPACITY = 0.42;
 
 export type Anchor = { x: number; y: number; visible: boolean };
 
 const tmpBox = new Box3();
 const tmpVec = new Vector3();
 const tmpVec2 = new Vector3();
+const forward = new Vector3();
 const ndc = new Vector2();
 
 export class HeroScene3D {
   readonly car: CarScene;
   readonly camera: PerspectiveCamera;
+  private readonly poses: DockPoses;
   private invalidate: () => void;
   private reduced: boolean;
-
-  private timeline: Timeline = "desktop";
-  private windows: Map<number, StageWindow> = stageWindows("desktop");
-  private explode: gsap.core.Timeline | null = null;
   private progress = 0;
 
   private layout: Layout = {
@@ -105,24 +113,40 @@ export class HeroScene3D {
     anchorY: 1,
     insetLeft: 0,
     maxWidth: Infinity,
+    stage: { x: 0, y: 0, w: 1, h: 1 },
   };
-  private frame: ContainFrame = containFrame(16 / 9, 1, 1, 1, 1);
+  /** Poster frame at progress 0 and the live frame (same size, offset blended to the dock). */
+  private frame: ContainFrame = { imageWidth: 1, imageHeight: 1, offsetX: 0, offsetY: 0 };
+  private live: ContainFrame = { imageWidth: 1, imageHeight: 1, offsetX: 0, offsetY: 0 };
+  private band: Rect | null = null;
+  private dock: DockSolution | null = null;
+  private readonly solution: DockSolution = { distance: 1, fov: 28, offsetX: 0, offsetY: 0 };
   private hero: CameraPose;
-  private exploded: CameraPose;
   private base: CameraPose;
   private focus: CameraPose;
   private pose: CameraPose;
   /** 0 = scroll camera, 1 = focus camera (tweened). */
-  private focusMix = { value: 0, shiftX: 0, shiftY: 0 };
+  private focusMix = { value: 0 };
   private focusShift = { x: 0, y: 0 };
+  private readonly focusBox = new Box3();
   private freeArea: FreeArea | null = null;
 
   private hovered: string | null = null;
   private selected: string | null = null;
+  private origin: string | null = null;
+  private readonly ghosts = new Map<string, Group>();
+  private readonly ghostMaterial = new MeshBasicMaterial({
+    color: new Color(XRAY.body.rim),
+    transparent: true,
+    opacity: 0,
+    depthWrite: false,
+  });
   private edges: EdgeMaterials | null = null;
   /** Renderer pixel ratio (edge opacity follows the poster's line weight, D99). */
   private pixelRatio = 1;
   private raycaster = new Raycaster();
+  /** Seconds (performance clock) of the last input: the float idles out after SLOT.floatIdle. */
+  private lastInput = 0;
 
   constructor(options: {
     car: CarScene;
@@ -135,18 +159,22 @@ export class HeroScene3D {
     this.invalidate = options.invalidate;
     this.reduced = options.reducedMotion;
     this.hero = poseFrom(this.car.manifest.cameras.hero.desktop);
-    this.exploded = poseFrom(this.car.manifest.cameras.exploded.desktop);
     this.base = clonePose(this.hero);
     this.focus = clonePose(this.hero);
     this.pose = clonePose(this.hero);
+    this.poses = new DockPoses(this.car, this.camera);
+    this.poses.reduced = this.reduced;
     (this.raycaster as Raycaster & { firstHitOnly?: boolean }).firstHitOnly = true;
     this.camera.near = 0.05;
     this.camera.far = 60;
-    this.buildExplode("desktop");
+    this.ghostMaterial.name = "sk_origin_ghost";
+    this.wake();
   }
 
   setReducedMotion(reduced: boolean): void {
     this.reduced = reduced;
+    this.poses.reduced = reduced;
+    this.invalidate();
   }
 
   setEdgeMaterials(materials: EdgeMaterials): void {
@@ -159,44 +187,19 @@ export class HeroScene3D {
     this.applyProgressUniforms();
   }
 
-  // ------------------------------------------------------------------ explode
-
-  /** (Re)builds the explode timeline for a stage timeline (desktop or grouped mobile). */
-  buildExplode(timeline: Timeline): void {
-    if (this.explode && this.timeline === timeline) return;
-    this.explode?.kill();
-    this.timeline = timeline;
-    this.windows = stageWindows(timeline);
-    const tl = gsap.timeline({ paused: true, defaults: { ease: EASE.explode } });
-    for (const part of this.car.parts.values()) {
-      const window = this.windows.get(part.stage);
-      if (!window) continue;
-      const { start, duration } = partSlot(window, part.order);
-      const to = tmpVec.copy(part.pivot).addScaledVector(part.dir, part.distance);
-      tl.fromTo(
-        part.node.position,
-        { x: part.pivot.x, y: part.pivot.y, z: part.pivot.z },
-        { x: to.x, y: to.y, z: to.z, duration, immediateRender: false },
-        start,
-      );
-    }
-    tl.set({}, {}, 1);
-    this.explode = tl;
-    tl.progress(this.progress);
-    this.applyProgressUniforms();
-  }
+  // ------------------------------------------------------------------ progress
 
   setProgress(p: number): void {
     const next = Math.min(Math.max(p, 0), 1);
     if (Math.abs(next - this.progress) < 1e-5) return;
     this.progress = next;
-    this.explode?.progress(next);
     this.applyProgressUniforms();
+    this.wake();
     this.invalidate();
   }
 
   private applyProgressUniforms(): void {
-    const fade = shellFade(this.progress, this.windows);
+    const fade = power2InOut(pageLocal(this.progress, 1));
     const { body } = XRAY;
     this.car.shared.bodyBaseAlpha.value =
       body.baseAlpha + (body.baseAlphaExploded - body.baseAlpha) * fade;
@@ -215,48 +218,128 @@ export class HeroScene3D {
       // Visible edges draw in both passes: 1 - (1 - hidden)(1 - visible) = total.
       this.edges.visible.opacity = 1 - (1 - total) / (1 - hidden);
     }
-    this.car.floor.uniforms.uShadowMix.value = cameraBlend(this.progress);
+    // One contact shadow (the assembled one); it thins out as the parts leave the car.
+    const gone = clamp01((this.progress - PAGE_FIRST) / (PAGE_LAST - PAGE_FIRST));
+    this.car.floor.uniforms.uShadowMix.value = 0;
+    this.car.floor.uniforms.uShadowGain.value = 1 - (1 - SHADOW_FLOOR) * gone;
   }
 
-  /** Current eased explode factor of a part (0 assembled … 1 exploded). */
-  private factorOf(nodeName: string): number {
-    const part = this.car.parts.get(nodeName);
-    if (!part) return 0;
-    const window = this.windows.get(part.stage);
-    return window ? partFactor(this.progress, window, part.order) : 0;
+  // ------------------------------------------------------------------ float
+
+  /** Input happened: the idle float runs again. */
+  wake(): void {
+    this.lastInput = performance.now() / 1000;
   }
 
-  // ------------------------------------------------------------------ camera
+  /** Idle envelope of the float at `now` (seconds): 1 while in use, eased out after an idle. */
+  floatGain(now: number): number {
+    if (this.reduced) return 0;
+    const idle = now - this.lastInput;
+    return 1 - clamp01((idle - SLOT.floatIdle) / SLOT.floatFade);
+  }
+
+  /** True while the float needs another frame (something is seated and the idle is not over). */
+  wantsFrames(now: number): boolean {
+    return this.poses.anySeated && this.selected === null && this.floatGain(now) > 0;
+  }
+
+  /** Called every rendered frame after `updateCamera`: writes the part nodes. */
+  updateParts(now: number): void {
+    this.camera.getWorldDirection(forward);
+    this.poses.update(this.progress, now, this.selected === null ? this.floatGain(now) : 0, forward);
+  }
+
+  // ------------------------------------------------------------------ layout
 
   setLayout(layout: Layout): void {
     const cropChanged = layout.crop !== this.layout.crop;
     this.layout = layout;
-    this.frame = posterFrame(POSTER_ASPECT[layout.crop], layout.width, layout.height, layout);
+    const frame = posterFrame(POSTER_ASPECT[layout.crop], layout.stage.w, layout.stage.h, layout);
+    this.frame = {
+      ...frame,
+      offsetX: frame.offsetX + layout.stage.x,
+      offsetY: frame.offsetY + layout.stage.y,
+    };
+    this.live.imageWidth = this.frame.imageWidth;
+    this.live.imageHeight = this.frame.imageHeight;
     if (cropChanged || !this.hero) {
-      const cams = this.car.manifest.cameras;
-      this.hero = poseFrom(cams.hero[layout.crop]);
-      this.exploded = poseFrom(cams.exploded[layout.crop]);
+      this.hero = poseFrom(this.car.manifest.cameras.hero[layout.crop]);
     }
+    this.poses.setCanvas(layout.width, layout.height);
+    this.poses.touch = layout.crop !== "desktop";
+    this.solve();
     if (this.selected) this.updateFocusShift();
     this.applyProgressUniforms();
     this.invalidate();
   }
 
+  /** Where the docked car sits (CSS px, canvas coordinates); null keeps the poster framing. */
+  setBand(band: Rect | null): void {
+    this.band = band && band.w > 8 && band.h > 8 ? band : null;
+    this.solve();
+    this.invalidate();
+  }
+
+  setSlots(rects: ReadonlyArray<{ slug: string; rect: Rect }>): void {
+    this.poses.setRects(rects);
+    this.invalidate();
+  }
+
+  setChips(points: ReadonlyArray<{ x: number; y: number } | null>): void {
+    points.forEach((point, page) => {
+      if (point) this.poses.setChip(page, point.x, point.y);
+    });
+  }
+
+  private solve(): void {
+    if (!this.band || this.layout.width <= 1) {
+      this.dock = null;
+      return;
+    }
+    const { bbox } = this.car.manifest;
+    this.dock = solveDock(
+      this.camera,
+      this.hero,
+      POSTER_ASPECT[this.layout.crop],
+      SLOT.dockFov[this.layout.crop],
+      bbox.min,
+      bbox.max,
+      this.frame,
+      this.band,
+      SLOT.bandFill[this.layout.crop],
+      this.solution,
+    );
+  }
+
+  // ------------------------------------------------------------------ camera
+
   /** Called every rendered frame before the render. */
   updateCamera(): void {
-    orbitBlend(this.hero, this.exploded, cameraBlend(this.progress), this.base);
-    let pose = this.base;
+    const dock = this.dock;
+    const k = dock ? dockBlend(this.progress) : 0;
+    const base = this.base;
+    base.target.copy(this.hero.target);
+    base.position
+      .copy(this.hero.position)
+      .sub(this.hero.target)
+      .multiplyScalar(dock ? Math.exp(Math.log(dock.distance) * k) : 1)
+      .add(this.hero.target);
+    base.fov = dock ? this.hero.fov + (dock.fov - this.hero.fov) * k : this.hero.fov;
+    this.live.offsetX = dock ? this.frame.offsetX + (dock.offsetX - this.frame.offsetX) * k : this.frame.offsetX;
+    this.live.offsetY = dock ? this.frame.offsetY + (dock.offsetY - this.frame.offsetY) * k : this.frame.offsetY;
+
+    let pose = base;
     let shiftX = 0;
     let shiftY = 0;
-    if (this.focusMix.value > 0 && this.selected) {
-      this.computeFocus(this.selected);
-      lerpPose(this.base, this.focus, this.focusMix.value, this.pose);
-      pose = this.pose;
-      shiftX = this.focusShift.x * this.focusMix.value;
-      shiftY = this.focusShift.y * this.focusMix.value;
-    } else if (this.focusMix.value > 0) {
-      // returning from a cleared selection: glide from the last focus back to the base
-      lerpPose(this.base, this.focus, this.focusMix.value, this.pose);
+    if (this.focusMix.value > 0) {
+      // with a selection: glide to it; after a cleared one: glide from the last focus back.
+      // The frame moves with the dock, so the shift that keeps the part in the free area is
+      // taken from the live frame every time.
+      if (this.selected) {
+        this.computeFocus(this.selected);
+        this.updateFocusShift();
+      }
+      lerpPose(base, this.focus, this.focusMix.value, this.pose);
       pose = this.pose;
       shiftX = this.focusShift.x * this.focusMix.value;
       shiftY = this.focusShift.y * this.focusMix.value;
@@ -268,34 +351,38 @@ export class HeroScene3D {
     cam.up.set(0, 1, 0);
     cam.lookAt(pose.target);
     cam.setViewOffset(
-      ...viewOffsetFor(this.frame, this.layout.width, this.layout.height, shiftX, shiftY),
+      ...viewOffsetFor(this.live, this.layout.width, this.layout.height, shiftX, shiftY),
     );
     cam.updateProjectionMatrix();
     cam.updateMatrixWorld();
   }
 
-  /** World bbox of a category's focus nodes at the current explode state. */
+  /** World bbox of a category's focus nodes at their current transforms. */
   private categoryBox(category: CategoryEntry, target: Box3): Box3 {
     target.makeEmpty();
     for (const part of category.focusParts) {
-      tmpBox.copy(part.localBox).translate(part.node.getWorldPosition(tmpVec2));
+      part.node.updateWorldMatrix(true, false);
+      tmpBox.copy(part.localBox).applyMatrix4(part.node.matrixWorld);
       target.union(tmpBox);
     }
     return target;
+  }
+
+  /** True while the category sits in (or is on its way into) a grid slot. */
+  private isDocked(slug: string, threshold: number): boolean {
+    return this.poses.dockOf(slug) > threshold;
   }
 
   /**
    * Focus preset (contract F8, D101): a telephoto glide from the current viewpoint. The target
    * moves to the category's current bbox centre, the camera dollies only FOCUS_DOLLY of the
    * way in and the FOV narrows until the part's bounding sphere fills FOCUS_FILL of the free
-   * area. The viewpoint the part was picked from (or the exploded camera, whose visibility the
-   * Blender audit guarantees) keeps it unobstructed — a free-flying preset along the manifest
-   * `focus.dir` ended behind other exploded parts. `focus.minDistance` stays a floor.
+   * area. `focus.minDistance` stays a floor.
    */
   private computeFocus(slug: string): void {
     const category = this.car.categories.get(slug);
     if (!category || category.parts.length === 0) return;
-    const box = this.categoryBox(category, new Box3());
+    const box = this.categoryBox(category, this.focusBox);
     const center = box.getCenter(tmpVec);
     const radius = Math.max(box.getSize(tmpVec2).length() / 2, 0.05);
     const focus = this.focus;
@@ -326,9 +413,9 @@ export class HeroScene3D {
       this.focusShift.y = 0;
       return;
     }
-    // The target projects to the poster centre; shift the view so it lands on the free area.
-    this.focusShift.x = this.frame.offsetX + this.frame.imageWidth / 2 - this.freeArea.x;
-    this.focusShift.y = this.frame.offsetY + this.frame.imageHeight / 2 - this.freeArea.y;
+    // The target projects to the frame centre; shift the view so it lands on the free area.
+    this.focusShift.x = this.live.offsetX + this.live.imageWidth / 2 - this.freeArea.x;
+    this.focusShift.y = this.live.offsetY + this.live.imageHeight / 2 - this.freeArea.y;
   }
 
   // ------------------------------------------------------------------ highlight
@@ -372,12 +459,14 @@ export class HeroScene3D {
     this.tweenUniform(this.car.staticHighlight.dim, this.selected ? 1 : 0, 0.3);
     this.tweenUniform(this.car.shared.selectFade, this.selected ? 1 : 0, 0.3);
 
-    // camera glide (0.9 s power3.inOut, contract F8); cuts under reduced motion
-    if (this.selected) {
+    // camera glide (0.9 s power3.inOut, contract F8) to a part that is still on the car; a
+    // docked one stays in its slot. Cuts under reduced motion.
+    const glide = this.selected !== null && !this.isDocked(this.selected, DOCKED_FOCUS);
+    if (glide && this.selected) {
       this.computeFocus(this.selected);
       this.updateFocusShift();
     }
-    const target = this.selected ? 1 : 0;
+    const target = glide ? 1 : 0;
     if (this.reduced) {
       gsap.killTweensOf(this.focusMix);
       this.focusMix.value = target;
@@ -391,6 +480,7 @@ export class HeroScene3D {
         onUpdate: this.invalidate,
       });
     }
+    this.wake();
   }
 
   /** The selected category also renders on OVERLAY_LAYER, drawn on top of everything. */
@@ -406,58 +496,141 @@ export class HeroScene3D {
     }
   }
 
-  /** True while a selected category needs the on-top pass. */
-  get hasOverlay(): boolean {
-    return this.selected !== null;
+  /**
+   * Ghost of a category at its place on the car (hover / focus on its grid slot): every
+   * instance, shared geometry, one flat rim-tone material on the on-top layer.
+   */
+  setOrigin(slug: string | null): void {
+    const next = slug && this.car.categories.get(slug)?.parts.length ? slug : null;
+    if (next === this.origin) return;
+    const previous = this.origin ? this.ghosts.get(this.origin) : null;
+    if (previous) previous.visible = false;
+    this.origin = next;
+    gsap.killTweensOf(this.ghostMaterial);
+    if (!next) {
+      this.ghostMaterial.opacity = 0;
+      this.invalidate();
+      return;
+    }
+    let ghost = this.ghosts.get(next);
+    if (!ghost) {
+      ghost = this.buildGhost(next);
+      this.ghosts.set(next, ghost);
+      this.car.root.add(ghost);
+    }
+    ghost.visible = true;
+    if (this.reduced) {
+      this.ghostMaterial.opacity = GHOST_OPACITY;
+      this.invalidate();
+    } else {
+      this.ghostMaterial.opacity = 0;
+      gsap.to(this.ghostMaterial, {
+        opacity: GHOST_OPACITY,
+        duration: DUR.base,
+        ease: EASE.out,
+        onUpdate: this.invalidate,
+      });
+    }
   }
 
-  get isAnimatingCamera(): boolean {
-    return gsap.isTweening(this.focusMix);
+  private buildGhost(slug: string): Group {
+    const group = new Group();
+    group.name = `ghost__${slug}`;
+    const category = this.car.categories.get(slug);
+    for (const part of category?.parts ?? []) {
+      const holder = new Group();
+      holder.position.copy(part.pivot);
+      for (const mesh of part.meshes) {
+        const copy = new Mesh(mesh.geometry, this.ghostMaterial);
+        copy.position.copy(mesh.position);
+        copy.quaternion.copy(mesh.quaternion);
+        copy.scale.copy(mesh.scale);
+        copy.layers.set(OVERLAY_LAYER);
+        copy.renderOrder = 20;
+        copy.raycast = () => {};
+        holder.add(copy);
+      }
+      group.add(holder);
+    }
+    return group;
+  }
+
+  /** True while something needs the on-top pass. */
+  get hasOverlay(): boolean {
+    return this.selected !== null || this.origin !== null;
   }
 
   // ------------------------------------------------------------------ picking
 
-  /** Category under a canvas point (CSS px), or null. */
+  /** Category under a canvas point (CSS px), or null. Docked and hidden parts never answer. */
   pick(x: number, y: number): string | null {
     ndc.set((x / this.layout.width) * 2 - 1, -(y / this.layout.height) * 2 + 1);
     this.raycaster.setFromCamera(ndc, this.camera);
     const hits = this.raycaster.intersectObjects(this.car.pickables, false);
-    if (hits.length === 0) return null;
-    const first = hits[0].object as Mesh;
-    const firstCategory = first.userData.category as string | undefined;
-    if (!first.userData.xray) return firstCategory ?? null;
-    // An X-ray panel still on the car is glass to the eye: prefer the opaque part behind it.
-    if (this.factorOf(first.userData.partNode as string) < 0.25) {
-      const opaque = hits.find((h) => !(h.object as Mesh).userData.xray);
-      if (opaque) return ((opaque.object as Mesh).userData.category as string) ?? null;
+    let glass: string | null = null;
+    for (let i = 0; i < hits.length; i += 1) {
+      const mesh = hits[i].object as Mesh;
+      const slug = mesh.userData.category as string | undefined;
+      if (!slug || mesh.parent?.visible === false || this.isDocked(slug, DOCKED_PICK)) continue;
+      // An X-ray panel still on the car is glass to the eye: prefer the opaque part behind it.
+      if (mesh.userData.xray) {
+        glass ??= slug;
+        continue;
+      }
+      return slug;
     }
-    return firstCategory ?? null;
+    return glass;
   }
 
-  // ------------------------------------------------------------------ callout anchor
+  // ------------------------------------------------------------------ anchors
 
-  /** Screen position (canvas px) of a category's label anchor. */
+  /** Screen position (canvas px) of a category's label anchor at its current place. */
   anchorOf(slug: string, out: Anchor): Anchor {
+    const category = this.car.categories.get(slug);
+    const part = category?.focusParts[0];
+    if (!part || part.node.visible === false) {
+      out.visible = false;
+      return out;
+    }
+    part.node.updateWorldMatrix(true, false);
+    part.node.localToWorld(tmpVec.copy(part.labelAnchor));
+    return this.toCanvas(tmpVec, out);
+  }
+
+  /** Screen position (canvas px) of a category's place on the assembled car. */
+  originAnchorOf(slug: string, out: Anchor): Anchor {
     const category = this.car.categories.get(slug);
     const part = category?.focusParts[0];
     if (!part) {
       out.visible = false;
       return out;
     }
-    part.node.getWorldPosition(tmpVec).add(part.labelAnchor);
-    tmpVec.project(this.camera);
-    out.x = ((tmpVec.x + 1) / 2) * this.layout.width;
-    out.y = ((1 - tmpVec.y) / 2) * this.layout.height;
-    out.visible = tmpVec.z < 1 && Math.abs(tmpVec.x) <= 1.05 && Math.abs(tmpVec.y) <= 1.05;
+    return this.toCanvas(tmpVec.copy(part.pivot).add(part.labelAnchor), out);
+  }
+
+  private toCanvas(world: Vector3, out: Anchor): Anchor {
+    world.project(this.camera);
+    out.x = ((world.x + 1) / 2) * this.layout.width;
+    out.y = ((1 - world.y) / 2) * this.layout.height;
+    out.visible = world.z < 1 && Math.abs(world.x) <= 1.05 && Math.abs(world.y) <= 1.05;
     return out;
   }
 
+  /** Docked slots with their projected size and distance from the cell (QA hook). */
+  report(): SlotReport[] {
+    this.camera.getWorldDirection(forward);
+    return this.poses.report(forward);
+  }
+
   dispose(): void {
-    this.explode?.kill();
     gsap.killTweensOf(this.focusMix);
+    gsap.killTweensOf(this.ghostMaterial);
     for (const c of this.car.categories.values()) {
       gsap.killTweensOf([c.highlight.hover, c.highlight.select, c.highlight.dim]);
     }
     gsap.killTweensOf([this.car.staticHighlight.dim, this.car.shared.selectFade]);
+    for (const ghost of this.ghosts.values()) this.car.root.remove(ghost);
+    this.ghosts.clear();
+    this.ghostMaterial.dispose();
   }
 }

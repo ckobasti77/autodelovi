@@ -7,12 +7,18 @@
 export const heroDom: {
   stage: HTMLElement | null;
   media: HTMLElement | null;
+  /** The area the canvas covers (the whole sticky frame; above the navigator on phones). */
+  main: HTMLElement | null;
+  /** The box the poster is framed in. */
+  stageBox: HTMLElement | null;
   copy: HTMLElement | null;
   strip: HTMLElement | null;
   listTrigger: HTMLButtonElement | null;
 } = {
   stage: null,
   media: null,
+  main: null,
+  stageBox: null,
   copy: null,
   strip: null,
   listTrigger: null,

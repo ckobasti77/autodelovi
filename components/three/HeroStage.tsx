@@ -2,17 +2,20 @@
 
 /**
  * The 3D hero stage — orchestrates everything around the lazily loaded canvas
- * (docs/3D-CONTRACT.md §F6–F8, DESIGN-SYSTEM §7.7–7.10, §10.1):
+ * (docs/3d/HERO-V2.md, docs/3D-CONTRACT.md §F6–F8, DESIGN-SYSTEM §7.7–7.10, §10.1):
  *
  * - the SSR poster stays the LCP; after hydration the device tier is read, and the canvas
  *   chunk + GLB start on first intent (pointer over the hero, scroll > 40 px, touch, focus) or
  *   4 s after `load` in idle time; a 2 px hairline shows real download progress;
- * - one ScrollTrigger scrubs the explode progress across the reserved track (CSS sticky, no
- *   pin spacer → no layout shift); stage index, caption, title block and the canvas follow;
- * - first frame ready → 600 ms crossfade poster → canvas (the poster stays underneath for
- *   context loss); the low tier crossfades the assembled/exploded posters instead;
- * - reduced motion: no track, „Rasklopi / Sklopi“ and the stage index cut between states;
- * - selection from the canvas, the parts list, `?deo=` or the test hook opens the part panel
+ * - one ScrollTrigger scrubs the progress across the reserved track (CSS sticky, no pin spacer
+ *   → no layout shift): the car backs into its band, then its parts dock in the grid one page
+ *   of systems at a time; grid, navigator, counter and the canvas follow;
+ * - the canvas covers the whole frame (parts dock outside the poster box); the poster box keeps
+ *   the poster's aspect, so the crossfade poster → canvas never moves the car;
+ * - without a canvas (low tier, model still downloading, context lost) the poster takes the
+ *   docked transform and the grid shows the categories' images instead of meshes;
+ * - reduced motion: no track; the navigator cuts between pages of images;
+ * - a selection from the car, the parts list, `?deo=` or the test hook opens the part panel
  *   and keeps `?deo=` in the URL; the camera frames the part in the space the panel leaves.
  */
 import dynamic from "next/dynamic";
@@ -21,34 +24,39 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap/scroll";
 import { requestScrollTriggerRefresh } from "@/lib/gsap/refresh";
 import { useMotionMedia } from "@/lib/gsap/useMotionMedia";
+import { findSystem, type SystemSlug } from "@/lib/catalog/taxonomy";
 import { onModelProgress, prefetchModel } from "@/lib/three/assets";
+import { clamp01, progressPerPixel, scrollTargetFor } from "@/lib/three/explode";
+import { POSTER_ASPECT, currentFraming, posterDock, posterFrame } from "@/lib/three/framing";
 import {
-  cameraBlend,
-  clamp01,
-  currentStage,
-  progressPerPixel,
-  scrollTargetFor,
-  stageEnd,
-  stageWindows,
-  type Timeline,
-} from "@/lib/three/explode";
-import { categoryRevealStage, isPanelSlug } from "@/lib/three/stages";
+  HERO_PAGES,
+  dockBlend,
+  flightOf,
+  isEnded,
+  pageAt,
+  pageRest,
+  pageReveal,
+  pagesOfSystem,
+  slotOf,
+} from "@/lib/three/pages";
+import { isPanelSlug } from "@/lib/three/stages";
 import { detectTier, quickTier } from "@/lib/three/tier";
 import { HERO_COPY } from "@/lib/i18n/sr/hero";
+import { SLOT } from "@/constants/heroSlots";
 import { DUR, EASE, MEDIA, SHEET } from "@/constants/motion";
 import { TEST_IDS } from "@/constants/testIds";
 import {
-  clearSelection,
   heroStore,
   selectCategory,
   useHeroStore,
   type HeroController,
 } from "@/components/three/heroStore";
 import { heroDom } from "@/components/three/heroDom";
-import { HeroPicture } from "@/components/three/HeroPicture";
-import { StageLegend, StageStrip } from "@/components/three/StageStrip";
+import { HeroGrid } from "@/components/three/HeroGrid";
+import { HeroIntro } from "@/components/three/HeroIntro";
+import { HeroEnd, HeroLeader } from "@/components/three/HeroOverlays";
+import { SystemNav } from "@/components/three/SystemNav";
 import { cn } from "@/lib/cn";
-import { StageCaption } from "@/components/three/StageCaption";
 import { HonestyLine, TitleBlock } from "@/components/three/TitleBlock";
 import { installTestHooks, tierOverride } from "@/components/three/testHooks";
 import { useLatched } from "@/lib/hooks/useLatched";
@@ -73,27 +81,24 @@ const HeroCallout = dynamic(
   },
 );
 
-const windowsCache = new Map<Timeline, ReturnType<typeof stageWindows>>();
-function windowsFor(timeline: Timeline) {
-  let w = windowsCache.get(timeline);
-  if (!w) {
-    w = stageWindows(timeline);
-    windowsCache.set(timeline, w);
-  }
-  return w;
-}
-
 /** One scroll pixel of the live track in progress units (MOT-03; 1e-6 without a track). */
-let stageTolerance = 1e-6;
+let pageTolerance = 1e-6;
 
 function publishProgress(p: number) {
-  const { timeline, stage } = heroStore.getState();
-  const next = currentStage(p, windowsFor(timeline), stageTolerance);
-  heroStore.setState(next !== stage ? { progress: p, stage: next } : { progress: p });
+  const { page, ended } = heroStore.getState();
+  const nextPage = pageAt(p, pageTolerance);
+  const nextEnded = isEnded(p, pageTolerance);
+  heroStore.setState(
+    nextPage !== page || nextEnded !== ended
+      ? { progress: p, page: nextPage, ended: nextEnded }
+      : { progress: p },
+  );
 }
 
-/** Seconds the explode needs to catch up with the scroll (ScrollTrigger's `scrub: 0.6`). */
+/** Seconds the scene needs to catch up with the scroll (ScrollTrigger's `scrub: 0.6`). */
 const SCRUB_S = 0.6;
+/** A page is announced once the progress has been still for this long. */
+const ANNOUNCE_MS = 400;
 
 /** ScrollTrigger's own refresh flag (set by `_refreshAll` in 3.15; missing from its typings). */
 function isRefreshing(): boolean {
@@ -111,13 +116,15 @@ const IDLE_AFTER_LOAD_MS = 4000;
 
 export function HeroStage({ poster }: { poster: ReactNode }) {
   const trackRef = useRef<HTMLDivElement>(null);
+  const mainRef = useRef<HTMLDivElement>(null);
+  const stageBoxRef = useRef<HTMLDivElement>(null);
   const mediaRef = useRef<HTMLDivElement>(null);
   const posterRef = useRef<HTMLDivElement>(null);
-  const explodedRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLDivElement>(null);
   const hairlineRef = useRef<HTMLSpanElement>(null);
   const stripRef = useRef<HTMLDivElement>(null);
   const scrimRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<ScrollTrigger | null>(null);
   const syncRef = useRef<(() => void) | null>(null);
   const [listOpen, setListOpen] = useState(false);
@@ -126,16 +133,15 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
   const tier = useHeroStore((s) => s.tier);
   const status = useHeroStore((s) => s.status);
   const reduced = useHeroStore((s) => s.reducedMotion);
+  const page = useHeroStore((s) => s.page);
   const hasSelection = useHeroStore((s) => s.selected !== null);
   const panelMounted = useLatched(hasSelection);
   const listMounted = useLatched(listOpen);
   const calloutMounted = useLatched(status === "ready");
-  // Posters carry the explode whenever the canvas cannot: the low tier, context loss, and the
-  // seconds while the model downloads (the exploded poster follows the scroll progress).
+  // The poster carries the car whenever the canvas cannot: the low tier, context loss, and the
+  // seconds while the model downloads.
   const posterMode =
-    tier === "low" || status === "loading" || status === "lost" || status === "failed";
-  const explodedWanted = useHeroStore((s) => s.progress > 0.01);
-  const explodedMounted = useLatched(posterMode && explodedWanted);
+    tier === "low" || status === "idle" || status === "loading" || status === "lost" || status === "failed";
   const showCanvas =
     (tier === "high" || tier === "mid") &&
     (status === "loading" || status === "ready" || status === "lost");
@@ -144,11 +150,15 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
   useEffect(() => {
     heroDom.stage = mediaRef.current;
     heroDom.media = mediaRef.current;
+    heroDom.main = mainRef.current;
+    heroDom.stageBox = stageBoxRef.current;
     heroDom.strip = stripRef.current;
     heroDom.copy = document.getElementById("hero-copy");
     return () => {
       heroDom.stage = null;
       heroDom.media = null;
+      heroDom.main = null;
+      heroDom.stageBox = null;
       heroDom.strip = null;
       heroDom.copy = null;
     };
@@ -167,6 +177,11 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
     fine.addEventListener("change", onPointer);
     return () => fine.removeEventListener("change", onPointer);
   }, []);
+
+  // A slot shows the docked mesh only while the canvas draws it with motion.
+  useEffect(() => {
+    heroStore.setState({ slotMode: status === "ready" && !reduced ? "mesh" : "image" });
+  }, [status, reduced]);
 
   // ---------------------------------------------------------------- start on intent / idle
   useEffect(() => {
@@ -241,21 +256,18 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
   }, [status]);
 
   // ---------------------------------------------------------------- scroll → progress
-  // The explode follows the scroll through our own catch-up tween instead of ScrollTrigger's
+  // The scene follows the scroll through our own catch-up tween instead of ScrollTrigger's
   // internal scrub, so it can be cut straight to the measured position whenever the scroll is
   // known to have jumped (MOT-05): a refresh interrupts an in-flight scrub and never resumes it
-  // when the progress did not change across the refresh — after a client navigation to „/“
-  // (trigger created while the previous page's offset still applied, then reset to 0) the
-  // hero stayed on „01“ over an assembled car until the user scrolled.
+  // when the progress did not change across the refresh.
   useMotionMedia(
-    ({ motionOk, desktop }) => {
-      const timeline: Timeline = desktop ? "desktop" : "mobile";
-      heroStore.setState({ timeline, reducedMotion: !motionOk });
+    ({ motionOk }) => {
+      heroStore.setState({ reducedMotion: !motionOk });
       const track = trackRef.current;
       if (!track || !motionOk) {
         triggerRef.current = null;
         syncRef.current = null;
-        stageTolerance = 1e-6;
+        pageTolerance = 1e-6;
         publishProgress(heroStore.getState().progress);
         return;
       }
@@ -285,11 +297,11 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
           });
         },
       });
-      /** Cut the explode to the current scroll position (no catch-up). */
+      /** Cut the scene to the current scroll position (no catch-up). */
       const sync = () => {
         follow?.kill();
         follow = null;
-        stageTolerance = progressPerPixel(trigger.start, trigger.end);
+        pageTolerance = progressPerPixel(trigger.start, trigger.end);
         proxy.p = measured(trigger);
         settled = true;
         publishProgress(proxy.p);
@@ -299,7 +311,7 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
       syncRef.current = sync;
       // Next resets the scroll of a client navigation after this layout effect, so the first
       // measurement waits for a frame with the final position (and does not depend on a global
-      // refresh): publishing now could flash the previous page's offset as an explode stage.
+      // refresh): publishing now could flash the previous page's offset as a page of parts.
       let frame = requestAnimationFrame(() => {
         frame = requestAnimationFrame(() => {
           frame = 0;
@@ -314,7 +326,7 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
         trigger.kill();
         triggerRef.current = null;
         syncRef.current = null;
-        stageTolerance = 1e-6;
+        pageTolerance = 1e-6;
       };
     },
     { scope: trackRef },
@@ -337,7 +349,7 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
           dipCanvas();
           return;
         }
-        // Whole pixel, rounded down: a stage-end detent must not land in the next stage (MOT-03).
+        // Whole pixel, rounded down: a target must not land in the next page (MOT-03).
         const y = scrollTargetFor(target, trigger.start, trigger.end);
         if (opts?.instant || heroStore.getState().reducedMotion) {
           gsap.killTweensOf(window, "scrollTo");
@@ -356,12 +368,16 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
           overwrite: true,
         });
       },
+      goToPage(target, opts) {
+        controller.goToProgress(pageRest(target), opts);
+      },
       revealCategory(slug, opts) {
-        const stage = categoryRevealStage(slug);
-        if (stage === null) return;
-        const { timeline, progress, reducedMotion } = heroStore.getState();
-        const end = stageEnd(stage, windowsFor(timeline));
-        if (progress < end - 1e-3) controller.goToProgress(end, opts);
+        const address = slotOf(slug);
+        if (!address) return;
+        const { progress, reducedMotion } = heroStore.getState();
+        // On the car means: the layers above are off and its own flight has not started.
+        const onCar = pageAt(progress) === address.page && flightOf(progress, address) <= 0;
+        if (!onCar) controller.goToProgress(pageReveal(address.page), opts);
         if (reducedMotion || !triggerRef.current) {
           trackRef.current?.scrollIntoView({ block: "nearest" });
         }
@@ -391,7 +407,7 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
           ease: EASE.inOut,
           onComplete: () => requestScrollTriggerRefresh(),
         });
-        setAnnounce("");
+        setAnnounce(HERO_COPY.loaded);
       } else if (status === "lost" || status === "failed") {
         gsap.to(canvas, { opacity: 0, duration: 0.2, ease: "none" });
         gsap.to(posterEl, { opacity: 1, duration: 0.2, ease: "none" });
@@ -402,18 +418,61 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
     { dependencies: [status, reduced] },
   );
 
-  // Poster mode: the exploded poster crossfades with the explode progress.
+  // Without a canvas the poster makes room for the grid itself: the same move the camera's
+  // dolly makes, as a transform. Reads layout on resize only.
   useEffect(() => {
-    if (!posterMode || !explodedMounted) return;
-    const apply = () => {
-      const el = explodedRef.current;
-      if (el) el.style.opacity = String(cameraBlend(heroStore.getState().progress));
+    if (!posterMode) return;
+    const posterEl = posterRef.current;
+    const stageBox = stageBoxRef.current;
+    const main = mainRef.current;
+    if (!posterEl || !stageBox || !main) return;
+    let stage = { w: 0, h: 0, x: 0, y: 0 };
+    const read = () => {
+      const m = main.getBoundingClientRect();
+      const s = stageBox.getBoundingClientRect();
+      stage = { w: s.width, h: s.height, x: s.left - m.left, y: s.top - m.top };
+      apply();
     };
-    apply();
-    return heroStore.subscribe((state, prev) => {
-      if (state.progress !== prev.progress) apply();
+    const apply = () => {
+      const { progress, band } = heroStore.getState();
+      const k = band ? dockBlend(progress) : 0;
+      if (k <= 0 || !band || stage.w === 0) {
+        posterEl.style.transform = "";
+        return;
+      }
+      const framing = currentFraming();
+      const frame = posterFrame(POSTER_ASPECT[framing.crop], stage.w, stage.h, framing);
+      const local = { x: band.x - stage.x, y: band.y - stage.y, w: band.w, h: band.h };
+      const t = posterDock(framing.crop, frame, local, SLOT.bandFill[framing.crop], k);
+      posterEl.style.transform = `translate3d(${t.x}px, ${t.y}px, 0) scale(${t.scale})`;
+    };
+    read();
+    const observer = new ResizeObserver(read);
+    observer.observe(main);
+    const unsubscribe = heroStore.subscribe((state, prev) => {
+      if (state.progress !== prev.progress || state.band !== prev.band) apply();
     });
-  }, [posterMode, explodedMounted]);
+    return () => {
+      observer.disconnect();
+      unsubscribe();
+      posterEl.style.transform = "";
+    };
+  }, [posterMode]);
+
+  // The title block gives its place to the grid once the first page starts.
+  useGSAP(
+    () => {
+      const title = titleRef.current;
+      if (!title) return;
+      gsap.to(title, {
+        opacity: page === 0 && !hasSelection ? 1 : 0,
+        duration: reduced ? 0 : DUR.base,
+        ease: EASE.inOut,
+        overwrite: true,
+      });
+    },
+    { dependencies: [page, hasSelection, reduced] },
+  );
 
   // Scrim behind the copy while a part is selected (desktop).
   useEffect(() => {
@@ -428,6 +487,37 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
         overwrite: true,
       });
     });
+  }, []);
+
+  // ---------------------------------------------------------------- announcements
+  // One polite sentence per page, once the progress has been still for a moment — never while
+  // the scroll is scrubbing through pages.
+  useEffect(() => {
+    let timer = 0;
+    let announced = heroStore.getState().page;
+    const settle = () => {
+      const current = heroStore.getState().page;
+      if (current === announced) return;
+      announced = current;
+      const entry = HERO_PAGES[current - 1];
+      setAnnounce(
+        entry
+          ? HERO_COPY.pageAnnounce(
+              entry.systems.map((s) => findSystem(s)?.labelSr ?? s),
+              entry.categories.length,
+            )
+          : HERO_COPY.introTitle,
+      );
+    };
+    const unsubscribe = heroStore.subscribe((state, prev) => {
+      if (state.progress === prev.progress) return;
+      window.clearTimeout(timer);
+      timer = window.setTimeout(settle, ANNOUNCE_MS);
+    });
+    return () => {
+      window.clearTimeout(timer);
+      unsubscribe();
+    };
   }, []);
 
   // ---------------------------------------------------------------- in view
@@ -445,9 +535,9 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
   // ---------------------------------------------------------------- selection: URL + framing
   useEffect(() => {
     const freeArea = () => {
-      const media = mediaRef.current;
-      if (!media) return null;
-      const rect = media.getBoundingClientRect();
+      const main = mainRef.current;
+      if (!main) return null;
+      const rect = main.getBoundingClientRect();
       if (window.matchMedia(MEDIA.desktop).matches) {
         const copy = heroDom.copy?.getBoundingClientRect();
         const left = copy ? Math.max(0, copy.right - rect.left) : rect.width * 0.4;
@@ -498,61 +588,63 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
   // ---------------------------------------------------------------- test hooks
   useEffect(() => installTestHooks(), []);
 
-  const onStage = (stage: number) => {
-    const { controller, timeline } = heroStore.getState();
-    controller?.goToProgress(stageEnd(stage, windowsFor(timeline)));
-  };
-  const onToggle = () => {
-    const { controller, progress } = heroStore.getState();
-    if (progress >= 0.5) clearSelection();
-    controller?.goToProgress(progress >= 0.5 ? 0 : 1);
+  const onSystem = (system: SystemSlug) => {
+    const { controller, page: current } = heroStore.getState();
+    const pages = pagesOfSystem(system);
+    // A system on two pages: its chip steps from the first to the second.
+    const next = pages.length > 1 && current === pages[0] ? pages[1] : pages[0];
+    if (next) controller?.goToPage(next);
   };
 
   return (
     <>
+      <a
+        href="#systems-title"
+        data-testid={TEST_IDS.heroSkip}
+        className="fixed left-3 top-3 z-skip -translate-y-[200%] rounded-sm bg-accent px-4 py-3 type-button text-on-accent focus-ring-inverse focus:translate-y-0"
+      >
+        {HERO_COPY.skip}
+      </a>
       <div ref={trackRef} className="hero-track relative" data-testid="hero-track">
         <div className="hero-frame sticky top-header flex flex-col overflow-hidden">
-          {/* Below 1024 px the stage takes the poster's aspect (4:5 phones, 1:1 tablets) so the
-              car fills it instead of floating in a screen-tall box; it shrinks (contain) when the
-              screen is shorter than that, and spare height opens between it and the strip, which
-              stays docked at the bottom (MOT-01, D279). ≥ 1024 px: the whole frame. */}
-          <div className="relative aspect-[4/5] min-h-0 w-full shrink md:aspect-square lg:absolute lg:inset-0 lg:aspect-auto">
+          {/* The area the canvas covers: the whole frame from 1024 px, above the navigator below
+              that. The stage box inside it is where the poster is framed (MOT-01, D279): the
+              poster's aspect on phones and tablets, the whole area from 1024 px. */}
+          <div ref={mainRef} className="relative min-h-0 flex-1">
             <div
-              ref={mediaRef}
-              role="img"
-              aria-label={HERO_COPY.canvasLabel}
-              tabIndex={-1}
-              // Focus lands here when a panel opened from the car closes; a keyboard user sees it.
-              className="absolute inset-0 focus-ring-inset"
+              ref={stageBoxRef}
+              className="relative aspect-[4/5] max-h-full w-full md:aspect-square lg:absolute lg:inset-0 lg:aspect-auto lg:max-h-none"
             >
               <div
-                ref={posterRef}
-                className="absolute inset-0"
-                data-testid={TEST_IDS.heroPoster}
-                // A transparent drawing on the page field inside the corner ticks: no box to round.
-                data-corner-audit="skip"
+                ref={mediaRef}
+                role="img"
+                aria-label={HERO_COPY.canvasLabel}
+                tabIndex={-1}
+                // Focus lands here when a panel opened from the car closes; a keyboard user sees it.
+                className="absolute inset-0 focus-ring-inset"
               >
-                {poster}
-                {/* Stays mounted once used, so the poster → canvas crossfade never flashes the
-                    assembled car under an exploded scene. */}
-                {explodedMounted ? (
-                  <div ref={explodedRef} className="absolute inset-0" style={{ opacity: 0 }}>
-                    <HeroPicture state="exploded" />
-                  </div>
-                ) : null}
+                <div
+                  ref={posterRef}
+                  className="absolute inset-0 origin-top-left"
+                  data-testid={TEST_IDS.heroPoster}
+                  // A transparent drawing on the page field inside the corner ticks: no box to round.
+                  data-corner-audit="skip"
+                >
+                  {poster}
+                </div>
               </div>
-              <div
-                ref={canvasRef}
-                aria-hidden="true"
-                data-testid={TEST_IDS.heroCanvas}
-                data-status={status}
-                className="absolute inset-0"
-                style={{ opacity: 0 }}
-              >
-                {showCanvas && (tier === "high" || tier === "mid") ? (
-                  <HeroCanvas tier={tier} />
-                ) : null}
-              </div>
+            </div>
+            <div
+              ref={canvasRef}
+              aria-hidden="true"
+              data-testid={TEST_IDS.heroCanvas}
+              data-status={status}
+              className="absolute inset-0"
+              style={{ opacity: 0 }}
+            >
+              {showCanvas && (tier === "high" || tier === "mid") ? (
+                <HeroCanvas tier={tier} />
+              ) : null}
             </div>
 
             {/* Selection zooms the scene under the copy column: keep the copy legible. */}
@@ -563,19 +655,38 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
               style={{ opacity: 0 }}
             />
             {calloutMounted ? <HeroCallout /> : null}
+            <HeroLeader />
 
-            {/* Drawing furniture — phones: caption on top, honesty line at the bottom;
-                ≥ 1024 px: a 12-column overlay, the stage frame on columns 6–12. */}
-            <div className="pointer-events-none absolute inset-0 px-page lg:grid lg:grid-cols-12 lg:grid-rows-1 lg:gap-x-(--gutter)">
+            {/* Drawing furniture and the grid. Phones: the car's band on top, the grid under it.
+                ≥ 1024 px: a 12-column overlay, the stage frame on columns 6–12 with the grid at
+                its top and the band below — on each width the grid takes the space the car frees
+                when it shrinks about its poster anchor. */}
+            <div className="pointer-events-none absolute inset-0 lg:grid lg:grid-cols-12 lg:grid-rows-1 lg:gap-x-(--gutter) lg:px-page">
               <div
-                aria-hidden="true"
-                className="hidden corner-ticks lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:mb-[5.5rem] lg:mt-4 lg:block"
-              />
-              <StageCaption className="relative z-[1] pt-4 lg:col-span-4 lg:col-start-6 lg:row-start-1 lg:self-start lg:pl-6 lg:pt-8" />
-              <div className="hidden lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:self-start lg:justify-self-end lg:pr-4 lg:pt-8 min-[90rem]:block">
-                <TitleBlock className="w-[22rem]" />
+                data-hero-region=""
+                className="relative flex h-full flex-col-reverse lg:col-span-7 lg:col-start-6 lg:mb-[5.5rem] lg:mt-4 lg:h-auto lg:flex-col"
+              >
+                <div aria-hidden="true" className="absolute inset-0 hidden corner-ticks lg:block" />
+                <HeroGrid className="relative z-[1] shrink-0 px-page pb-2 pt-1 lg:px-6 lg:pb-0 lg:pt-6" />
+                <div data-hero-band="" className="relative min-h-0 flex-1">
+                  <HeroEnd className="absolute inset-0 z-[1]" />
+                  {page > 0 ? (
+                    <HonestyLine className="absolute inset-x-(--pad) bottom-1 truncate lg:inset-x-4 lg:bottom-2 lg:text-right" />
+                  ) : null}
+                </div>
+                {/* Assembled: the note sits under the drawing, as the poster has it. */}
+                {page === 0 ? (
+                  <HonestyLine className="absolute inset-x-(--pad) bottom-2 truncate lg:inset-x-4 lg:text-right min-[90rem]:hidden" />
+                ) : null}
+                <HeroIntro className="absolute left-0 top-0 z-[1] max-w-[21rem] px-page pt-4 lg:pl-6 lg:pr-0 lg:pt-8" />
+                <div
+                  ref={titleRef}
+                  className="absolute right-4 top-8 hidden min-[90rem]:block"
+                  aria-hidden={page === 0 ? undefined : true}
+                >
+                  <TitleBlock className="w-[22rem]" />
+                </div>
               </div>
-              <HonestyLine className="absolute inset-x-(--pad) bottom-2 truncate lg:static lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:mb-[6.25rem] lg:self-end lg:pr-4 lg:text-right min-[90rem]:hidden" />
             </div>
 
             <span
@@ -585,27 +696,19 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
             />
           </div>
 
-          {/* Spare height below the poster-aspect stage (tall phones, tablets): the legend. */}
-          <div className="min-h-0 flex-1 px-page [container-type:size] lg:hidden">
-            <StageLegend onStage={onStage} />
-          </div>
-
           <div
             ref={stripRef}
             data-stage-strip=""
+            data-testid={TEST_IDS.heroNav}
             className={cn(
-              "relative z-[4] bg-bg px-page pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-1 lg:absolute lg:inset-x-0 lg:bottom-0 lg:bg-transparent lg:pb-2",
+              "relative z-[4] bg-bg px-page pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 lg:absolute lg:inset-x-0 lg:bottom-0 lg:bg-transparent lg:pb-3",
               // The part panel is a non-modal right drawer (440 / 480 px, Sheet size md): the
-              // index and actions reflow into the space left of it, so nothing focusable sits
-              // under the drawer (MOT-04, WCAG 2.4.11).
+              // navigator reflows into the space left of it, so nothing focusable sits under
+              // the drawer (MOT-04, WCAG 2.4.11).
               hasSelection && "lg:pr-[calc(440px+var(--margin))] xl:pr-[calc(480px+var(--margin))]",
             )}
           >
-            <StageStrip
-              onStage={onStage}
-              onToggle={onToggle}
-              onOpenList={() => setListOpen(true)}
-            />
+            <SystemNav onSystem={onSystem} onOpenList={() => setListOpen(true)} />
           </div>
         </div>
       </div>

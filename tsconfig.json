@@ -30,5 +30,5 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules", "scripts/qa/audit"]
+  "exclude": ["node_modules", "scripts/qa/audit", "scripts/qa/fix"]
 }
