@@ -6,8 +6,8 @@ import { describe, expect, test } from "vitest";
 import { SLOT, SLOT_PREFERRED, SLOT_VIEWS, SLOT_VIEW_DEFAULT } from "@/constants/heroSlots";
 import { CATEGORIES } from "@/lib/catalog/taxonomy";
 import { poseFrom } from "@/lib/three/camera";
-import { CAR_IN_POSTER, POSTER_ASPECT, posterDock, posterFrame, type Crop } from "@/lib/three/framing";
-import { HERO_PAGES, pageRest, pageReveal, slotOf } from "@/lib/three/pages";
+import { CAR_IN_POSTER, POSTER_ASPECT, carBand, posterDock, posterFrame, type Crop } from "@/lib/three/framing";
+import { HERO_PAGES, PAGE_LENGTH, pageRest, pageReveal, pageStart, slotOf } from "@/lib/three/pages";
 import {
   compose,
   createBasis,
@@ -152,6 +152,21 @@ describe("the car in its poster and in its band", () => {
     expect(worst).toBeLessThan(24);
   });
 
+  test("the car is fitted into its band less the room it leaves free", () => {
+    const band = { x: 0, y: 22, w: 390, h: 200 };
+    expect(carBand(band, SLOT.bandInset.desktop)).toEqual(band);
+    const phone = carBand(band, SLOT.bandInset.mobile);
+    expect(phone.x).toBe(0);
+    expect(phone.w).toBe(390);
+    expect(phone.y).toBeCloseTo(22 + 200 * SLOT.bandInset.mobile.top, 9);
+    expect(phone.y + phone.h).toBeCloseTo(222 - 200 * SLOT.bandInset.mobile.bottom, 9);
+    // headroom under the header on every layout with the grid under the car
+    expect(SLOT.bandInset.mobile.top).toBeGreaterThan(0);
+    expect(SLOT.bandInset.tablet.top).toBeGreaterThan(0);
+    // a band too small to inset still has a size
+    expect(carBand({ x: 0, y: 0, w: 10, h: 0 }, SLOT.bandInset.mobile).h).toBeGreaterThan(0);
+  });
+
   test("the poster's stand-in for the dolly lands the car on the same band", () => {
     const frame = posterFrame(POSTER_ASPECT.desktop, 1440, 824, { anchorX: 1, anchorY: 1, insetLeft: 0.08, maxWidth: 1680 });
     const band = { x: 618, y: 398, w: 774, h: 338 };
@@ -294,7 +309,7 @@ function setup() {
     );
     poses.setChip(page.page, 700 + page.page * 90, 800);
   }
-  return { car, poses, forward };
+  return { car, poses, forward, camera };
 }
 
 describe("pose evaluator (HERO-V2 §4.2)", () => {
@@ -368,6 +383,70 @@ describe("pose evaluator (HERO-V2 §4.2)", () => {
       poses.update(p, 0, 0, forward);
       expect(snapshot(car), `jump to ${p}`).toBe(forwardRun.get(steps.find((s) => Math.abs(s - p) < 1e-9)!));
     }
+  });
+
+  test("in flight a part's size on screen goes from the car's to the slot's, never past either", () => {
+    const { car, poses, forward, camera } = setup();
+    // scale over view depth is the size on screen; large panels shrink into a slot, small parts grow
+    for (const slug of ["hauba", "vrata", "branici", "egr-ventil", "kocione-plocice", "auspuh"]) {
+      const address = slotOf(slug)!;
+      const sizes: number[] = [];
+      poses.update(pageRest(address.page), 0, 0, forward);
+      const shown = car.categories.get(slug)!.parts.find((part) => part.node.visible);
+      expect(shown, slug).toBeDefined();
+      for (let i = 0; i <= 200; i += 1) {
+        poses.update(pageStart(address.page) + (i / 200) * 0.8 * PAGE_LENGTH, 0, 0, forward);
+        const node = shown!.node;
+        const depth = node.position.clone().sub(camera.position).dot(forward);
+        sizes.push(node.scale.x / depth);
+      }
+      const start = sizes[0];
+      const end = sizes[sizes.length - 1];
+      // 6 %: the lift along the part's own direction (≤ 0.3 m at 5 m and more) changes its
+      // distance, at full size
+      const low = Math.min(start, end) * 0.94;
+      const high = Math.max(start, end) * 1.06;
+      for (const size of sizes) {
+        expect(size, slug).toBeGreaterThanOrEqual(low);
+        expect(size, slug).toBeLessThanOrEqual(high);
+      }
+    }
+  });
+
+  test("the flight's arc is a share of the path on screen, however far the slot is in depth", () => {
+    const { car, poses, forward, camera } = setup();
+    const screenY = (v: Vector3) => ((1 - v.clone().project(camera).y) / 2) * 824;
+    const screenX = (v: Vector3) => ((v.clone().project(camera).x + 1) / 2) * 1440;
+    for (const slug of ["hauba", "vrata", "kocioni-diskovi", "auspuh"]) {
+      const address = slotOf(slug)!;
+      poses.update(pageRest(address.page), 0, 0, forward);
+      const shown = car.categories.get(slug)!.parts.find((part) => part.node.visible)!;
+      const end = shown.node.position.clone();
+      const start = shown.pivot;
+      const path = Math.hypot(screenX(end) - screenX(start), screenY(end) - screenY(start));
+      let top = Infinity;
+      for (let i = 0; i <= 200; i += 1) {
+        poses.update(pageStart(address.page) + (i / 200) * 0.8 * PAGE_LENGTH, 0, 0, forward);
+        top = Math.min(top, screenY(shown.node.position));
+      }
+      // never higher than the higher end by more than the arc's share (and the lift, ≤ 0.3 m)
+      const highest = Math.min(screenY(start), screenY(end));
+      expect(highest - top, slug).toBeLessThan(SLOT.arc * path * 1.3 + 40);
+    }
+  });
+
+  test("where the grid is under the car a part takes the straight way and a shorter lift", () => {
+    const { car, poses, forward } = setup();
+    const address = slotOf("hauba")!;
+    const mid = pageStart(address.page) + 0.3 * PAGE_LENGTH;
+    poses.update(mid, 0, 0, forward);
+    const arched = car.categories.get("hauba")!.parts[0].node.position.clone();
+    poses.touch = true;
+    poses.update(mid, 0, 0, forward);
+    const straight = car.categories.get("hauba")!.parts[0].node.position.clone();
+    expect(arched.distanceTo(straight)).toBeGreaterThan(1e-3);
+    expect(SLOT.hopTouch).toBeLessThan(SLOT.hop);
+    expect(SLOT.arcTouch).toBe(0);
   });
 
   test("the float is zero-mean: it moves a seated part and leaves the car alone", () => {
