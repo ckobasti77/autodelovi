@@ -377,7 +377,10 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
         });
       },
       goToPage(target, opts) {
-        controller.goToProgress(pageRest(target), opts);
+        // Without a track (reduced motion) nothing scrolls past the last page, so its chip is
+        // also the way to the end state.
+        const end = !triggerRef.current && target >= HERO_PAGES.length;
+        controller.goToProgress(end ? 1 : pageRest(target), opts);
       },
       revealCategory(slug, opts) {
         const address = slotOf(slug);

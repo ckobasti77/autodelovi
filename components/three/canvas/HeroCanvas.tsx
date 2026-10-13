@@ -5,8 +5,9 @@
  *
  * R3F `<Canvas frameloop="demand">`: a frame renders only when something changed (scroll
  * progress, hover/selection tweens, resize) or while docked parts float; the float asks for
- * its own next frame (every second one on the mid tier), stops after a few idle seconds, and
- * nothing renders while the hero is off-screen or the tab is hidden. DPR is clamped per tier
+ * its own next frame (every second one on the mid tier), stops after a few idle seconds — and
+ * for good on a device that cannot hold it (`lib/three/floatGovernor.ts`) — and nothing renders
+ * while the hero is off-screen or the tab is hidden. DPR is clamped per tier
  * and lowered when continuous animation runs below ~45 fps. Context loss hands the stage back
  * to the poster (one restore attempt).
  */
@@ -26,6 +27,7 @@ import {
 
 import { LIGHT_RIG } from "@/constants/xray";
 import { MEDIA_CROP_MOBILE, MEDIA_STAGE_OVERLAY, currentFraming } from "@/lib/three/framing";
+import { createFloatGovernor } from "@/lib/three/floatGovernor";
 import { TIER_MAX_DPR, msaaFor } from "@/lib/three/tier";
 import { heroStore, type HeroAnchor } from "@/components/three/heroStore";
 import { heroDom } from "@/components/three/heroDom";
@@ -362,7 +364,8 @@ function HeroScene({ tier }: HeroCanvasProps) {
   // ---------------------------------------------------------------- frame
   const anchor = useRef<HeroAnchor>({ slug: "", x: 0, y: 0, visible: false });
   const originAnchor = useRef<HeroAnchor>({ slug: "", x: 0, y: 0, visible: false });
-  const perf = useRef({ last: 0, sum: 0, count: 0, paced: false });
+  const perf = useRef({ last: 0, sum: 0, count: 0, paced: false, floating: false });
+  const governor = useRef(createFloatGovernor()).current;
   // One stable callback for the paced float frame (no closure per frame).
   const floatFrame = useRef(() => invalidate()).current;
 
@@ -434,9 +437,16 @@ function HeroScene({ tier }: HeroCanvasProps) {
       }
     }
 
+    // The float is decoration: when the gaps between its own frames say the device cannot
+    // hold it, it fades out and stays off (the parts rest still; nothing else changes).
+    if (p.floating) {
+      if (governor.sample(gap)) controller.stopFloat();
+    } else governor.reset();
+
     // The idle float keeps itself going: every frame on the high tier, every second one on
     // the mid tier. `invalidate` does nothing while the frame loop is off (hero off-screen).
-    if (controller.wantsFrames(nowS) && !document.hidden) {
+    p.floating = controller.wantsFrames(nowS) && !document.hidden;
+    if (p.floating) {
       if (tier === "mid") {
         p.paced = true;
         requestAnimationFrame(floatFrame);

@@ -31,6 +31,7 @@ import { HERO_PAGES, isSeated, slotOf } from "@/lib/three/pages";
 import { useSelectedVehicle } from "@/lib/vehicle/store";
 import { HERO_COPY, SLOT_LABEL_SHORT, SYSTEM_SHORT } from "@/lib/i18n/sr/hero";
 import { ROUTES } from "@/constants/routes";
+import { TEST_IDS } from "@/constants/testIds";
 import { RouteLink } from "@/components/ui/RouteLink";
 import { heroStore, setFocusedSlot, useHeroStore, type SlotRect } from "@/components/three/heroStore";
 import { heroDom } from "@/components/three/heroDom";
@@ -188,6 +189,7 @@ export function HeroGrid({ className }: { className?: string }) {
       ref={rootRef}
       aria-label={HERO_COPY.gridLabel}
       data-hero-grid=""
+      data-testid={TEST_IDS.heroGrid}
       data-reveal="off"
       inert={blocked}
       className={cn(

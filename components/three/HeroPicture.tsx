@@ -7,8 +7,9 @@
  * `STAGE_FRAME_MAX` and centred; `object-fit: contain`, centred below 1024 px; from 1024 px an
  * 8 % left inset, bottom-right.
  *
- * No hooks — renders on the server (assembled poster, LCP) and on the client (exploded poster
- * for the low tier and the context-loss fallback).
+ * No hooks — renders on the server. The hero shows the assembled poster only (since v2 the
+ * fallbacks move and dim that one picture, docs/3d/HERO-V2.md §12); the exploded files remain
+ * a state of this component for pages that show the old spread.
  *
  * Priority is split by viewport: from 768 px the poster is the LCP element and gets a
  * media-scoped high-priority preload per crop; on phones the headline is the LCP and the

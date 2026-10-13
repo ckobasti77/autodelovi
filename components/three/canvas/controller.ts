@@ -151,6 +151,8 @@ export class HeroScene3D {
   private raycaster = new Raycaster();
   /** Seconds (performance clock) of the last input: the float idles out after SLOT.floatIdle. */
   private lastInput = 0;
+  /** The device could not hold the float (floatGovernor): input no longer starts it. */
+  private floatStopped = false;
 
   constructor(options: {
     car: CarScene;
@@ -232,7 +234,16 @@ export class HeroScene3D {
 
   /** Input happened: the idle float runs again. */
   wake(): void {
+    if (this.floatStopped) return;
     this.lastInput = performance.now() / 1000;
+  }
+
+  /** The float costs more than it is worth here: it fades out now and stays off. */
+  stopFloat(): void {
+    if (this.floatStopped) return;
+    this.floatStopped = true;
+    this.lastInput = Math.min(this.lastInput, performance.now() / 1000 - SLOT.floatIdle);
+    this.invalidate();
   }
 
   /** Idle envelope of the float at `now` (seconds): 1 while in use, eased out after an idle. */

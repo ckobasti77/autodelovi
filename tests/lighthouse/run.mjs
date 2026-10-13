@@ -63,7 +63,8 @@ mkdirSync(OUT, { recursive: true });
 // script transfer size (requested before the load event, so the lazy 3D chunk is excluded), KB.
 const CATEGORY_MIN = { accessibility: 0.95, bestPractices: 0.95, seo: 0.95 };
 const TEMPLATES = [
-  { name: "home", match: (p) => p === "/", performance: 0.85, lcp: 2500, cls: 0.05, tbt: 200, jsKb: 180 },
+  // Home: the hero v2 gate (docs/3d/HERO-V2.md §13, D364) — the brief's 90 and TBT < 150 ms.
+  { name: "home", match: (p) => p === "/", performance: 0.9, lcp: 2500, cls: 0.05, tbt: 150, jsKb: 180 },
   {
     name: "catalog",
     match: (p) => /^\/(delovi|deo|ponuda)(\/|$)/.test(p),
