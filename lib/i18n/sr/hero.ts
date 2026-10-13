@@ -20,8 +20,9 @@ export const SYSTEM_SHORT: Readonly<Record<SystemSlug, string>> = {
 };
 
 /**
- * Slot names that do not fit two lines at 390 px. Each is the start of the category's full
- * name (WCAG 2.5.3 — the full name stays the link's accessible name); a unit test checks it.
+ * Slot names that do not fit two lines in a narrow column (below 1440 px). Each is the start
+ * of the category's full name (WCAG 2.5.3 — the full name stays the link's accessible name);
+ * a unit test checks it.
  */
 export const SLOT_LABEL_SHORT: Readonly<Record<string, string>> = {
   senzori: "Senzori",
@@ -34,6 +35,7 @@ export const SLOT_LABEL_SHORT: Readonly<Record<string, string>> = {
   "termostat-creva": "Termostat i creva",
   poluosovine: "Poluosovine",
   auspuh: "Auspuh",
+  klima: "Kompresor i kondenzator",
 };
 
 const kategorija = (n: number) => {

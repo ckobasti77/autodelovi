@@ -147,7 +147,12 @@ export function HeroGrid({ className }: { className?: string }) {
       data-reveal="off"
       inert={blocked}
       className={cn(
-        "flex flex-col gap-2 transition-opacity duration-(--dur-base) [--slot-cell:4.75rem] [--slot-cols:3] [--slot-rows:3] lg:gap-3 lg:[--slot-cell:7.75rem] lg:[--slot-rows:2]",
+        // The cell follows the room there is: a third (a fifth from 768 px) of the grid's own
+        // width, and the screen's height — so two-line names fit and the car keeps a band on
+        // short laptops and phones. Never smaller than a part needs to read.
+        "flex flex-col gap-2 transition-opacity duration-(--dur-base) [container-type:inline-size] [--slot-cols:3] [--slot-rows:3] md:gap-3 md:[--slot-rows:2]",
+        "[--slot-cell:max(4rem,min(4.75rem,calc((100cqw_-_1rem)_/_3_-_0.75rem),calc((100svh_-_36.5rem)_/_3)))]",
+        "md:[--slot-cell:max(5.25rem,min(7.75rem,calc((100cqw_-_3rem)_/_5_-_0.5rem),calc((100svh_-_35rem)_/_2)))]",
         blocked && "opacity-30",
         className,
       )}
@@ -176,7 +181,7 @@ export function HeroGrid({ className }: { className?: string }) {
               aria-label={entry.systems.map((s) => findSystem(s)?.labelSr ?? s).join(", ")}
               className={
                 isActive
-                  ? "grid auto-rows-(--slot-row) grid-cols-[repeat(var(--slot-cols),minmax(0,1fr))] gap-x-2 gap-y-2 lg:grid-cols-[repeat(var(--slot-cols-wide),minmax(0,1fr))] lg:gap-x-3"
+                  ? "grid auto-rows-(--slot-row) grid-cols-[repeat(var(--slot-cols),minmax(0,1fr))] gap-x-2 gap-y-2 md:grid-cols-[repeat(var(--slot-cols-wide),minmax(0,1fr))] md:gap-x-3"
                   : "sr-only"
               }
             >
@@ -257,7 +262,7 @@ function Slot({
               src={categoryImage(category.slug)}
               alt=""
               fill
-              sizes="(min-width: 64rem) 124px, 76px"
+              sizes="(min-width: 48rem) 124px, 76px"
               className="object-contain"
             />
           ) : null}
@@ -274,8 +279,8 @@ function Slot({
           <span data-label="" className={seated ? "text-balance" : "sr-only"}>
             {short ? (
               <>
-                <span className="md:hidden">{short}</span>
-                <span className="hidden md:inline">{category.labelSr}</span>
+                <span className="min-[90rem]:hidden">{short}</span>
+                <span className="hidden min-[90rem]:inline">{category.labelSr}</span>
               </>
             ) : (
               category.labelSr
