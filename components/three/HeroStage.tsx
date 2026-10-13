@@ -607,6 +607,22 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
       </a>
       <div ref={trackRef} className="hero-track relative" data-testid="hero-track">
         <div className="hero-frame sticky top-header flex flex-col overflow-hidden">
+          <div
+            ref={stripRef}
+            data-stage-strip=""
+            data-testid={TEST_IDS.heroNav}
+            className={cn(
+              // First in the DOM, last on screen: the keyboard reaches the navigator before the
+              // grid's links (pick a system, then walk its parts), the eye finds it at the bottom.
+              "relative z-[4] order-last bg-bg px-page pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 lg:absolute lg:inset-x-0 lg:bottom-0 lg:bg-transparent lg:pb-3",
+              // The part panel is a non-modal right drawer (440 / 480 px, Sheet size md): the
+              // navigator reflows into the space left of it, so nothing focusable sits under
+              // the drawer (MOT-04, WCAG 2.4.11).
+              hasSelection && "lg:pr-[calc(440px+var(--margin))] xl:pr-[calc(480px+var(--margin))]",
+            )}
+          >
+            <SystemNav onSystem={onSystem} onOpenList={() => setListOpen(true)} />
+          </div>
           {/* The area the canvas covers: the whole frame from 1024 px, above the navigator below
               that. The stage box inside it is where the poster is framed (MOT-01, D279): the
               poster's aspect on phones and tablets, the whole area from 1024 px. */}
@@ -696,20 +712,6 @@ export function HeroStage({ poster }: { poster: ReactNode }) {
             />
           </div>
 
-          <div
-            ref={stripRef}
-            data-stage-strip=""
-            data-testid={TEST_IDS.heroNav}
-            className={cn(
-              "relative z-[4] bg-bg px-page pb-[max(0.5rem,env(safe-area-inset-bottom))] pt-2 lg:absolute lg:inset-x-0 lg:bottom-0 lg:bg-transparent lg:pb-3",
-              // The part panel is a non-modal right drawer (440 / 480 px, Sheet size md): the
-              // navigator reflows into the space left of it, so nothing focusable sits under
-              // the drawer (MOT-04, WCAG 2.4.11).
-              hasSelection && "lg:pr-[calc(440px+var(--margin))] xl:pr-[calc(480px+var(--margin))]",
-            )}
-          >
-            <SystemNav onSystem={onSystem} onOpenList={() => setListOpen(true)} />
-          </div>
         </div>
       </div>
 
