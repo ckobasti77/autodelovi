@@ -293,6 +293,24 @@ Plan iz tačke 19 je sproveden. Dok skrolujete, delovi izlaze iz auta i ređaju 
 
 - [ ] **[P1] Pogledajte početnu stranu na svom računaru i telefonu** i javite da li vam odgovaraju veličina delova u mreži, brzina kojom izlaze iz auta i završni tekst „Ceo auto rastavljen“.
 - [ ] **[P1] Provera na telefonu srednje klase.** Brzina je izmerena samo na računaru. Ako telefon ne može da prati lagano lebdenje delova, sajt ga sam isključi i delovi miruju; sve ostalo radi isto. Pre objave vredi proveriti na jednom stvarnom telefonu.
-- [ ] **[P2] Dugme na kraju.** „Izaberite vozilo“ je namerno mirnije dugme, jer je glavno dugme u tom delu strane „Pretraži“. Ako želite da bude narandžasto, javite.
+- [x] **[P2] Dugme na kraju.** Urađeno u koraku 32: „Izaberite vozilo“ je narandžasto glavno dugme (tačka 21).
 - [ ] **[P2] Skraćeni nazivi.** Na ekranima užim od 1440 px jedanaest dugih naziva je skraćeno (na primer „Poluosovine“ umesto „Poluosovine i homokinetički zglobovi“). Pun naziv ostaje na strani kategorije i čita ga čitač ekrana. Spisak je u `lib/i18n/sr/hero.ts`.
+- Greška sa kolačićima iz tačke 19 („Odbij sve“ pomeri stranu na dno) i dalje nije ispravljena; nije deo 3D prikaza.
+
+## 21. 3D prikaz na početnoj strani — ispravke posle vašeg pregleda (korak 32)
+
+Pet stvari koje ste tražili je urađeno i provereno u pravom pregledaču, na računaru (1440×900) i na telefonu (390×844). Slike svake grupe posle ispravki: [`qa/screens/hero-v2/final/`](qa/screens/hero-v2/final/).
+
+1. **Tamni delovi se vide.** Akumulator, kočione pločice, termostat i creva, kočione čeljusti i ulja i tečnosti sada su jasno osvetljeni, bez okvira i bez pozadine. Isto važi za sve ostale delove u mreži.
+2. **Telefon.** Natpis „Generički kompaktni hečbek, nije konkretan model“ ima svoj red iznad auta i više ne prelazi preko auta ni delova. Krov auta se više ne seče ni u jednoj grupi.
+3. **Traka sa sistemima.** Od širine 1280 px vidi se svih deset sistema, cela, bez skrolovanja i bez zamagljenih ivica, i kad brojač pokazuje „13/13“.
+4. **Kraj.** „Izaberite vozilo“ je narandžasto glavno dugme, „Svi delovi“ je sporedno, „Sklopi auto“ je mirno dugme.
+5. **Provere koje su nedostajale** su napisane: da deo ostaje tačno iznad svog naziva posle promene veličine prozora, kasnog učitavanja fonta i otvaranja panela, i da pri sporom preuzimanju 3D modela prvo stoje slike, a zatim na ista mesta dođu 3D delovi, bez pomeranja.
+
+Ostaje za vas:
+
+- [ ] **[P1] Pogledajte početnu stranu na svom računaru i telefonu** i javite da li su delovi sada dovoljno svetli i da li vam odgovara natpis iznad auta na telefonu.
+- [ ] **[P1] Provera na pravom telefonu srednje klase.** Brzina je i dalje izmerena samo na računaru, sa usporenim procesorom. Pravi telefon nije izmeren.
+- [ ] **[P2] Mali telefoni.** Na telefonima sa niskim ekranom (visina oko 650 px) auto je vrlo mali iznad mreže delova. Ništa se ne seče i ne preklapa. Ako želite da auto tamo bude veći, mreža mora da bude manja; javite šta vam je važnije.
+- [ ] **[P2] Brzina učitavanja početne strane.** Merenje „blokiranja“ strane na telefonu je na završnoj verziji ispod granice od 150 ms (71 i 132 ms u dve serije merenja), ali pojedinačna merenja padaju u dve grupe: oko 20 do 130 ms ili oko 220 do 400 ms, zavisno od toga kada se strana prvi put iscrta. Uzrok nije 3D prikaz, nego veličina cele početne strane. Ovaj korak to nije promenio (izmereno poređenjem sa prethodnom verzijom). Ako želite da rezultat bude stabilno nizak, to je poseban posao na početnoj strani.
 - Greška sa kolačićima iz tačke 19 („Odbij sve“ pomeri stranu na dno) i dalje nije ispravljena; nije deo 3D prikaza.

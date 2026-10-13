@@ -1,6 +1,6 @@
 # Hero v2 — the car sets its parts down in a grid
 
-> **Built in step 31 (2026-10-13): §18 says what was built, where it differs from this plan and what was measured.** The sections before it are the plan as written.
+> **Built in step 31 (2026-10-13): §18 says what was built, where it differs from this plan and what was measured.** The sections before it are the plan as written. **§18.5 (step 32)** is the owner's review, verified independently: what was found, what changed and what was measured after.
 >
 > Step 30 (2026-10-13). **Plan only: no production code changed.** Index: [docs/README.md](../README.md). Contract this plan amends when it is built: [3D-CONTRACT.md](../3D-CONTRACT.md) §F6–F9. Evidence: [`hero-v2/current/`](hero-v2/current/) (the hero as it is today) and [`hero-v2/lab/`](hero-v2/lab/) (a throwaway prototype on the real model, deleted after the captures).
 
@@ -427,7 +427,7 @@ Built in seven blocks, one commit each — `330b641` layout and the make-room mo
 | §5 fixed cells: 124 px, 80 px on phones, a step to 64 px on short phones | One fluid cell: 84–124 px from 768 px, 64–76 px below, from the grid's own width and the screen's height | Names ran to 3–4 lines at 1024–1366 px and at 360 px, and the car's band collapsed on short screens (D367) |
 | §7 ten short names, at 390 px | Eleven, used below 1440 px | the same |
 | §6.5 phone lens „about 20°“, not verified | Docked lens 24° from 768 px, 22° on phones: every slot within 19.1° / 20.9° of the optical axis | The plan's open item, now a unit-tested bound (D366) |
-| §9 „Izaberite vozilo“ primary, „Svi delovi“ secondary, „Sklopi auto“ quiet | secondary · quiet · an icon button; the sentence hides below 640 px | The hero already has its one primary, the search button; on a phone the block has to fit the car's band (D368) |
+| §9 „Izaberite vozilo“ primary, „Svi delovi“ secondary, „Sklopi auto“ quiet | secondary · quiet · an icon button; the sentence hides below 640 px. **Step 32: as planned — primary · secondary · quiet (D378)** | The hero already has its one primary, the search button; on a phone the block has to fit the car's band (D368). The owner chose the plan's order |
 | §9 the name arrives word by word (a tween on the word spans) | One clock tween per slot that writes opacity and a 4 px lift itself, no blur | The CSS plugin read every word's computed style and measured the em lift, in the frames where the parts fly (D370) |
 | §12 low tier: the poster moves into its band | It also dims, to 28 % at the end of the track | A lit, assembled car under „Ceo auto rastavljen“ contradicted the copy (D369) |
 | §12 a per-slot crossfade from thumbnail to mesh when the canvas is ready | The stage's own poster → canvas crossfade covers the slots | One transition instead of two overlapping ones |
@@ -494,11 +494,86 @@ The trace is the comparison to trust: it runs both builds under one load and mea
 
 ### 18.4 Not verified, remains
 
-- Frame time on a real phone. Everything above is this PC's GPU; the float governor is the guard, not a measurement.
-- Part ↔ name drift after a font load and a drawer open/close is covered by the observers but has no e2e of its own; the plan's e2e for a throttled model request (thumbnails while the model downloads) was not written.
-- At 1440 px the navigator row scrolls once a count like „13/13“ widens a chip, and the first chip then sits under the fade.
+As of step 32 (the drift and slow-download tests are written and the navigator fits: §18.5):
+
+- Frame time on a real phone. Every number here is this PC's GPU with the CPU throttled four times; the float governor is the guard, not a measurement.
+- Home TBT in Lighthouse is under 150 ms in both gate batches on the final build, but single runs still fall in two groups (§18.5, D381): a batch on a busier machine can miss the bar. The cause is the size of the home document, outside the hero.
+- Short phones: at 390×664 the car's band is 63 px tall and at 360×640 it is 39 px (the car 56 and 35 px) — the car is a miniature there. Nothing is cut or overlapped; it is small.
+- On phones a part in flight passes under the page heading for a few frames: the grid is under the car and the heading is the grid's first row. At rest nothing of the scene is under any text.
+- With the model arriving after the visitor has scrolled, the scene's car and the poster's differ by up to 7 % in width at 1440 px (the docked lens is longer than the poster's). At the assembled car, where the 3D normally arrives, they match.
 - The idle start of the 3D on desktop costs main-thread time inside a Lighthouse audit (before v2 as well).
 - The cookie banner's scroll jump (D365) is still open; it is outside the hero.
+
+### 18.5 The owner's review, verified independently (step 32)
+
+The hero was checked again from the outside, without the build's own numbers. `scripts/qa/hero-v2-verify.mjs` drives a real browser on the real GPU at 1440×900 and 390×844: one wheel scroll through the whole track and back in 60 px notches, then every stage at rest. It reads the page's pixels — the tone of every docked part against the field, anything of the scene under a word of text, lit pixels on the first rows of the canvas (a cut car) — and the DOM (navigator, names). Decisions D374–D383. The final screens of every stage at both widths: [`../qa/screens/hero-v2/final/`](../qa/screens/hero-v2/final/).
+
+**Found on the build of step 31**
+
+| | 1440×900 | 390×844 |
+|---|---|---|
+| Docked parts whose median tone is under 3:1 against the field | 35 of 44 (1.5–6.0) | 29 of 44 (1.6–5.5) |
+| Battery · brake pads · calipers · thermostat · fluids | 1.7 · 1.9 · 2.2 · 2.5 · 2.9 | 1.9 · 1.9 · 2.2 · 2.7 · 2.9 |
+| The note „Generički kompaktni hečbek…“ | clear of the car | on the car on pages 1–3, 12–15 px into it |
+| The car's roof | clear | 2 px from the top of the frame, cut by the header; panels in flight up to 102 px above it |
+| The intro paragraph | clear | crossed by the car as it backs into its band |
+| Navigator row | scrolls by 3–22 px on four of eight stages; both ends under a 16 px fade at every stage | scrolls, as designed; the first chip of a wide cluster cut |
+| End state | secondary · quiet · icon | the same |
+
+**Changed**
+
+| Owner's point | Change | Decision |
+|---|---|---|
+| 1. Dark parts | The docked exposure floor follows the base colour (0.28, plus 0.5 for a dark one), with a deeper shading and a cool edge light; lighter primer for body panels; thumbnails in a slot lose their black contact shadow and are lifted by an SVG filter. No frame, no background, no new light or draw call | D374 |
+| 2. Phone: the note and the roof | The note has a line of its own above the car; the car is fitted into its band with 7 % headroom; the intro leaves when the car starts to move; a flight is composed on screen — straight and with half the lift where the grid is under the car | D375, D376 |
+| 3. Navigator | A chip never changes width (its count sits over an invisible „13/13“); compact chips from 1024 px; the row fits whole from 1280 px; an edge fades only on a side that hides chips | D377 |
+| 4. End state | Primary · secondary · quiet; the quiet button keeps its icon alone below 640 px | D378 |
+| 5. The gaps of §18.4 | `tests/e2e/hero-review.spec.ts`: drift after a resize, a late font, a dialog and the part panel; a slow model download; and the four points above | D379 |
+
+**Measured after** — production build (`NEXT_PUBLIC_TEST_HOOKS=1`), this PC: NVIDIA GeForce RTX 4060 Laptop through ANGLE/D3D11.
+
+| | 1440×900 (high) | 390×844 (mid) |
+|---|---|---|
+| Median tone of a docked part against the field, all 44 slots | 3.28–8.24 : 1 | 3.33–8.52 : 1 |
+| Battery · brake pads · calipers · thermostat · fluids | 4.2 · 3.3 · 4.0 · 5.0 · 4.4 | 5.1 · 3.6 · 5.0 · 5.8 · 4.5 |
+| Docked part, longer side | 88–104 px | 55–64 px |
+| Part ↔ cell at rest (the cell the DOM has now) · with the float | 0.1 px · ≤ 3.9 px | 0.1 px · ≤ 2.8 px |
+| Scene pixels under a word of the note, the intro, a name or the page heading, at rest | 0 at all 8 stages | 0 at all 8 stages |
+| The same for the note and the intro during the scroll (samples checked of taken) | 0 (85 of 101) | 0 (58 of 87) |
+| Lit pixels on the first two rows of the canvas, rest and scroll | 0 | 0 |
+| The car's outline, docked | 459–680 px of an 824 px canvas | 38–224 px of a 652 px canvas, the note above it at 6–22 px |
+| Navigator: scroll · fade · chips outside the row, 8 stages | 0 px · none · 0 (also at 1280, 1366, 1536, 1920) | scrolls; the active cluster's first chip whole |
+| End state | orange fill · outline · filled surface | the same, the third as an icon |
+
+*Samples not checked: the frame had left its sticky place past the end of the track, or the note changed place between reading the layout and capturing it.*
+
+Frame time, the CPU throttled four times (`hero-frames.mjs --gpu --cpu 4`, a wheel scroll through the whole track; the second column is Chromium's phone emulation, not a phone):
+
+| | 1440×900 | 390×844 emulated |
+|---|---|---|
+| Frames · median · p95 · worst | 545 · 16.7 ms · 33.3 ms · 50 ms | 548 · 16.7 ms · 16.8 ms · 50 ms |
+| Frames over 33 ms · long tasks (worst) | 3.1 % · 1 (53 ms) | 1.3 % · 1 (50 ms) |
+| Script per drawn frame: float · scrub (`hero-v2-perf.mjs --cpu 4`) | 12.0 ms · 12.9 ms | 9.7 ms · 14.4 ms |
+| Draw calls per frame: assembled → last page | 290 → 39 | 176 → 26 |
+| Float frames drawn · after 8.5 s idle · hero off-screen | 60 /s · 0 · 0 | 30 /s · 0 · 0 |
+
+The GPU is a laptop's discrete card and was never the limit; the throttle slows the main thread only. A phone's GPU is not measured by any of this (§18.4).
+
+**Lighthouse, home** (`tests/lighthouse/run.mjs --runs 5 --throttling devtools`, medians):
+
+| | Performance | Accessibility | Best practices | SEO | LCP | CLS | TBT |
+|---|---|---|---|---|---|---|---|
+| Mobile, the final build, two batches | 97 · 96 | 100 | 100 | 100 | 2105 · 2263 ms | 0.000 | **71 · 132 ms** (runs 57–97 and 112–304) |
+| Mobile, three batches earlier in the session | 97 · 94 · 92 | 100 | 100 | 100 | 2130 · 2345 · 2247 ms | 0.000 | 19 · 136 · 264 ms |
+| Desktop, the final build | 100 | 100 | 100 | 100 | 168 ms | 0.000 | 33 ms (runs 22–191) |
+
+- LCP is the poster image at both widths (`car-assembled-m-828.avif`, `car-assembled-1440.avif`). First-load JS 317 KB, as in step 31.
+- **TBT: the bar of 150 ms is met in both gate batches on the final build (71 and 132 ms) and in four of the session's five (the three earlier ones were on a build that differs by D382 and D383 only); the median of all 25 runs is 116 ms.** It is a noisy number on this page: single runs fall in two groups, about 16–135 ms and about 220–415 ms. The document is 443 KB and its layout takes about 280 ms at 4× CPU: all of it before the first paint is no blocking time, part of it after is. The build of step 31 does the same in the same sessions (19–824 ms). This step against step 31, interleaved under one load: ten throttled loads, TBT 133 against 130 ms; main-thread totals of six loads — layout 322 / 321 ms, style 236 / 229 ms, script 793 / 806 ms (D381).
+- One real regression was caught on the way and removed: a helper imported from the slot maths put three.js into the first chunk (418 KB, TBT 286 ms). A unit test now guards the boundary (D380).
+
+**Found by the new tests, fixed.** The drift test resizes the phone layout and back. After the way back the scene showed the wrong page for the scroll position: on a touch-only device ScrollTrigger does not measure again when a resize lands on the dimensions it saw at load, so it kept the range of the size in between. The stage now asks for a refresh whenever its own track changes size (D382). And the full suite on the phone layout: the skip link changed the URL and went nowhere when it was activated while the navigator row was still moving to its active cluster — a browser drops a pending jump to a fragment when anything else scrolls first. The link now makes the jump itself if the heading is not on screen two frames later (D383).
+
+**Tests.** Unit: `tests/unit/three/` — 89 tests; new are the band inset, the size on screen in flight, the arc as a share of the path on screen, the straight path where the grid is under the car, and the first-load boundary. e2e: `tests/e2e/hero-review.spec.ts`, 7 tests on two viewports — the five named parts from the pixels (≥ 3:1, no box around the cell); the note and the car's top at 8 rests, 48 points of flight and 4 of the dock, by the scene's outline; the navigator at five widths and eight stages; the end state's ranks, its axe pass and its actions; drift within 4 px after a resize and back (which found D382), web fonts held and then released, the parts list open and closed, the part panel open and closed; a model held back — nine thumbnails first, then nine meshes in the same cells with zero layout shift and the same boxes, no more thumbnail requests, the car's box within 3 px of the poster's; keyboard and touch on all ten chips and all 44 slots.
 
 ## Appendix A — slots by page
 
