@@ -58,6 +58,8 @@ import { MEDIA } from "@/constants/motion";
 declare global {
   interface Window {
     __trFailsafe?: number;
+    /** `content-visibility: auto` boxes and whether the browser skips their content (boot script). */
+    __trCv?: WeakMap<Element, boolean>;
   }
 }
 
@@ -74,6 +76,12 @@ const END_SLACK_MS = 60;
 const SCROLL_IDLE_MS = 150;
 /** An element that can never reach the line starts this far into the viewport instead. */
 const UNREACHABLE_ENTER_PX = 48;
+/**
+ * The end of a page stays „the end“ this long after it was reached, while the scroll position
+ * has not moved: a `cv-auto` section drawn on arrival has its real height, the page grows under
+ * the reader, and what is on screen there still starts — as it did when it was measured early.
+ */
+const END_GRACE_MS = 1500;
 
 function getState(el: Element): RevealState | null {
   return el.getAttribute(attrs.state) as RevealState | null;
@@ -117,8 +125,34 @@ function whenIdle(callback: () => void, timeout: number): () => void {
  */
 function isSkippedByContentVisibility(el: Element): boolean {
   if (typeof el.checkVisibility !== "function") return false;
-  return el.checkVisibility() && !el.checkVisibility({ contentVisibilityAuto: true });
+  // What the browser said about the box, not a question about the element. Asking about an
+  // element inside a skipped subtree makes the browser resolve the style of that whole subtree
+  // — the work `content-visibility` exists to put off — and the observer's first delivery asked
+  // for every section below the fold: 150 ms in one task on home at 4× CPU, a third of its
+  // blocking time (D385). The boot script has been collecting the browser's own state changes
+  // since before the first paint.
+  const box = el.closest(CV_AUTO);
+  if (box && box !== el) {
+    const told = window.__trCv?.get(box);
+    if (told !== undefined) return told;
+    // No word from the browser (no such event, or a box inside a skipped box): ask, once a pass.
+    const known = cvSkipped.get(box);
+    if (known && performance.now() - known.at < CV_FRESH_MS) return known.skipped;
+    const skipped = askSkipped(el);
+    cvSkipped.set(box, { skipped, at: performance.now() });
+    return skipped;
+  }
+  return askSkipped(el);
 }
+
+const askSkipped = (el: Element) =>
+  el.checkVisibility() && !el.checkVisibility({ contentVisibilityAuto: true });
+
+/** `content-visibility: auto` is only ever applied through this utility (`app/globals.css`). */
+const CV_AUTO = ".cv-auto";
+/** An answer that had to be asked for is trusted for one pass only. */
+const cvSkipped = new WeakMap<Element, { skipped: boolean; at: number }>();
+const CV_FRESH_MS = 100;
 
 /** The trigger rule (REVEAL_LINE): centre past the line; top for tall elements. */
 function hasCrossed(box: Box, lineY: number, viewportHeight: number): boolean {
@@ -152,6 +186,9 @@ export function TextRevealGlobal(): null {
     let io: IntersectionObserver | null = null;
     let mo: MutationObserver | null = null;
     let frame = 0;
+    /** Where and when the end of the page was last reached (see END_GRACE_MS). */
+    let endY = -1;
+    let endAt = 0;
     let waitTimer = 0;
     let idleTimer = 0;
     let disposed = false;
@@ -275,6 +312,14 @@ export function TextRevealGlobal(): null {
      * `content-visibility: auto` skips it — the nearest ancestor that has a box.
      */
     const measure = (el: Element): Box | null => {
+      // Inside a box the browser says it is skipping: judged by the box, as below. Measuring
+      // the element itself makes the browser lay the skipped subtree out there and then — the
+      // work `content-visibility` puts off, 120 ms in one task on home at 4× CPU (D385).
+      const box = el.closest(CV_AUTO);
+      if (box && box !== el && window.__trCv?.get(box) === true) {
+        const rect = box.getBoundingClientRect();
+        return { top: rect.top, bottom: rect.bottom, height: 0 };
+      }
       let node: Element | null = el;
       while (node) {
         const rect = node.getBoundingClientRect();
@@ -306,7 +351,12 @@ export function TextRevealGlobal(): null {
       const viewportHeight = window.innerHeight;
       const scrollY = window.scrollY;
       const maxScroll = document.documentElement.scrollHeight - viewportHeight;
-      const scrolledToEnd = scrollY >= maxScroll - 4;
+      const now = performance.now();
+      if (scrollY >= maxScroll - 4) {
+        endY = scrollY;
+        endAt = now;
+      }
+      const scrolledToEnd = scrollY >= maxScroll - 4 || (scrollY === endY && now - endAt < END_GRACE_MS);
       const batch: Element[] = [];
 
       if (!settled) {
@@ -434,6 +484,13 @@ export function TextRevealGlobal(): null {
 
     const onLoad = () => releaseBootRule();
 
+    // The browser has drawn a `cv-auto` box it was skipping: what is pending in it has boxes of
+    // its own from now on, so it is looked at again (a skipped element is judged by its box and
+    // can neither cross the line nor get a place on the last screen until then).
+    const onContentDrawn = (event: Event) => {
+      if ((event as Event & { skipped?: boolean }).skipped === false) onScroll();
+    };
+
     const onIntersect: IntersectionObserverCallback = (entries) => {
       const viewportHeight = window.innerHeight;
       const batch: Element[] = [];
@@ -493,6 +550,7 @@ export function TextRevealGlobal(): null {
       window.addEventListener("resize", onScroll, { passive: true });
       window.addEventListener("load", onLoad);
       document.addEventListener("focusin", onFocusIn);
+      document.addEventListener("contentvisibilityautostatechange", onContentDrawn, true);
       reducedQuery.addEventListener("change", onReducedChange);
       onScroll();
       releaseBootRule();
@@ -513,6 +571,7 @@ export function TextRevealGlobal(): null {
       window.removeEventListener("resize", onScroll);
       window.removeEventListener("load", onLoad);
       document.removeEventListener("focusin", onFocusIn);
+      document.removeEventListener("contentvisibilityautostatechange", onContentDrawn, true);
       reducedQuery.removeEventListener("change", onReducedChange);
       for (const el of Array.from(running.keys())) finish(el);
       for (const el of Array.from(pending.keys())) finish(el);

@@ -131,11 +131,16 @@ export function buildTextRevealNoscriptCss(): string {
  * Boot script: marks <html> as JS-capable (enables hiding: `tr-js` + the boot rule `tr-hide`)
  * and arms the failsafe that reveals everything if TextRevealGlobal has not taken over within
  * `failsafeMs`. Once the failsafe has fired, TextRevealGlobal never hides anything again.
+ *
+ * It also starts listening for `contentvisibilityautostatechange` and keeps what the browser
+ * says about every `content-visibility: auto` box in `window.__trCv` (element → skipped). The
+ * first of those events fire around the first paint, long before hydration; the engine reads
+ * the map instead of asking the browser about each element (D385).
  */
 export function buildTextRevealBootScript(): string {
   return `(function(){var d=document.documentElement;d.classList.add(${JSON.stringify(
     classes.js,
   )},${JSON.stringify(classes.boot)});window.__trFailsafe=window.setTimeout(function(){d.classList.add(${JSON.stringify(
     classes.failsafe,
-  )})},${TEXT_REVEAL.failsafeMs})})();`;
+  )})},${TEXT_REVEAL.failsafeMs});try{var m=new WeakMap();window.__trCv=m;document.addEventListener("contentvisibilityautostatechange",function(e){m.set(e.target,!!e.skipped)},true)}catch(e){}})();`;
 }
