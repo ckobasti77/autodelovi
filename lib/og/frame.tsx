@@ -2,7 +2,7 @@ import "server-only";
 
 /**
  * OG image frame (DESIGN-SYSTEM §2.7, SEO-ADS §J1): 1200 × 630, graphite ground, 1 px frame
- * with corner ticks, the logo with the „by OEM Parts“ signature, a caps title in Archivo Expanded, a mono meta line, a count
+ * with corner ticks, the horizontal logo (star ring, EUROMOTORS / PLUS — OEM Parts), a caps title in Archivo Expanded, a mono meta line, a count
  * line, the render/photo in a 440 px drawing box and a ruler with the domain and the tagline.
  * Never shows a price. Rendered with `next/og` (Node runtime; WebP inputs are converted to
  * PNG with sharp because the renderer cannot decode WebP).
@@ -12,7 +12,7 @@ import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import sharp from "sharp";
 
-import { LOGO_LAYOUT, LOGO_MARK, LOGO_WORDMARK } from "@/components/brand/logoPaths";
+import { LOGO_HORIZONTAL } from "@/components/brand/logoPaths";
 import { site } from "@/config/site";
 
 export const OG_SIZE = { width: 1200, height: 630 } as const;
@@ -23,7 +23,6 @@ const INK_2 = "#C4BEB4";
 const INK_3 = "#969088";
 const LINE = "#2C3238";
 const LINE_STRONG = "#434A52";
-const ACCENT = "#FF6B1A";
 const BG = "#0D0F11";
 
 type Font = { name: string; data: Buffer; weight: 400 | 600 | 700; style: "normal" };
@@ -147,22 +146,16 @@ export function glueUnits(text: string): string {
     .replace(/(\d)\s+(mm|cm|m|kW|KS|V|Ah|A|W|l|kg|Nm|°)(?=$|[\s,.;)])/g, `$1${NBSP}$2`);
 }
 
-/** Height of the logo in the frame: the minimum for the lockup with the signature (§2.2). */
-const LOGO_HEIGHT = 56;
+/** Height of the logo in the frame (§2.7): the second line „PLUS — OEM Parts“ still reads. */
+const LOGO_HEIGHT = 64;
 
-/** The primary lockup (night variant), drawn from the same outlines as the site's logo. */
+/** The horizontal lockup (night variant), drawn from the same outlines as the site's logo. */
 function Logo() {
-  const l = LOGO_LAYOUT.horizontal;
+  const l = LOGO_HORIZONTAL;
   const width = Math.round((l.w / l.h) * LOGO_HEIGHT);
   return (
     <svg width={width} height={LOGO_HEIGHT} viewBox={`0 0 ${l.w} ${l.h}`}>
-      <g transform={`translate(${l.mark.x} ${l.mark.y})`}>
-        <path fill={INK_1} fillRule="evenodd" d={LOGO_MARK.ink} />
-        <path fill={ACCENT} fillRule="evenodd" d={LOGO_MARK.accent} />
-      </g>
-      <g transform={`translate(${l.wordmark.x} ${l.wordmark.y})`}>
-        <path fill={INK_1} fillRule="evenodd" d={LOGO_WORDMARK.ink} />
-      </g>
+      <path fill={INK_1} fillRule="evenodd" d={l.d} />
     </svg>
   );
 }

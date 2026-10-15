@@ -6,20 +6,20 @@
  *   `name`, the From name of e-mails.
  * - `BRAND_ALTERNATE_NAME` is the shop name people know. It is the JSON-LD `alternateName` and
  *   closes SEO titles where there is room; it never replaces the brand name.
- * - `BRAND_LOCKUP_NAME` is what the logo with the signature says — its accessible name and alt
- *   text. The word „by“ belongs to the lockup only; running copy uses the two names apart.
+ * - `BRAND_LOCKUP_NAME` is what a logo that shows both names says (EUROMOTORS PLUS over OEM
+ *   Parts) — its accessible name and alt text, and the manifest `name`.
  *
  * Admin → Podešavanja overrides the name and the alternate name at runtime; the legal name,
  * address and contact data always come from settings.
  */
 export const BRAND_NAME = "Euromotors Plus";
 export const BRAND_ALTERNATE_NAME = "OEM Parts";
-export const BRAND_LOCKUP_NAME = `${BRAND_NAME} by ${BRAND_ALTERNATE_NAME}`;
 /** Home-screen label (web manifest `short_name`): at most 12 characters are shown. */
 export const BRAND_SHORT_NAME = "Euromotors";
 
 /** Separator between the brand name and the alternate name in a title suffix. */
 export const TITLE_ALTERNATE_SEPARATOR = " · ";
+export const BRAND_LOCKUP_NAME = `${BRAND_NAME}${TITLE_ALTERNATE_SEPARATOR}${BRAND_ALTERNATE_NAME}`;
 
 /** „ | Euromotors Plus · OEM Parts“ — the part after the separator is dropped first when a title is long. */
 export function titleSuffixFor(name: string, alternateName?: string | null): string {

@@ -4,12 +4,12 @@ import { cn } from "@/lib/cn";
 import { site } from "@/config/site";
 import { ROUTES } from "@/constants/routes";
 
-import { LogoHeader, LogoMark } from "./Logo";
+import { LogoHorizontal, LogoMark } from "./Logo";
 
 /**
- * The logo as the way home (DESIGN-SYSTEM §2.4): the header lockup, or the compact mark where
- * the lockup would fall under its 28 px minimum. The link carries the accessible name, so the
- * artwork inside is hidden from assistive technology.
+ * The logo as the way home (DESIGN-SYSTEM §2.4): the horizontal lockup, or the five-star mark
+ * where the lockup would not fit beside the controls. The link carries the accessible name, so
+ * the artwork inside is hidden from assistive technology.
  *
  * - `compact="phone"`: mark below 640 px, lockup from there — bars that share the row with
  *   several controls (shop header, landing header).
@@ -26,21 +26,24 @@ export function BrandLink({
   href?: string | null;
   label?: string;
   compact?: "never" | "phone" | "always";
-  /** `bar`: 28 px, 32 px from `lg` (site bars). `fixed`: 28 px (admin sidebar, cards). */
+  /**
+   * `bar`: 44 px, 48 px from `xl` (site bars: 56 / 64 px). `fixed`: 44 px (admin sidebar,
+   * cards — 236 px wide).
+   */
   size?: "bar" | "fixed";
   className?: string;
 }) {
-  const lockupSize = size === "bar" ? "h-7 w-auto lg:h-8" : "h-7 w-auto";
+  const lockupSize = size === "bar" ? "h-11 w-auto xl:h-12" : "h-11 w-auto";
   const art =
     compact === "always" ? (
       <LogoMark label={null} className="h-7 w-auto" />
     ) : compact === "phone" ? (
       <>
         <LogoMark label={null} className="h-8 w-auto min-[40rem]:hidden" />
-        <LogoHeader label={null} className={cn("hidden min-[40rem]:block", lockupSize)} />
+        <LogoHorizontal label={null} className={cn("hidden min-[40rem]:block", lockupSize)} />
       </>
     ) : (
-      <LogoHeader label={null} className={lockupSize} />
+      <LogoHorizontal label={null} className={lockupSize} />
     );
   if (!href) {
     return (

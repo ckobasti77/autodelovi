@@ -44,7 +44,9 @@ export function AdminSidebar({
           rail && "max-[1365px]:justify-center max-[1365px]:px-0",
         )}
       >
-        <span className={cn(rail && "max-[1365px]:hidden")}>
+        {/* A flex wrapper, so the 44 px lockup centres in the 56 px row instead of sitting on
+            an inline baseline. */}
+        <span className={cn("flex", rail && "max-[1365px]:hidden")}>
           <BrandLink
             href={ADMIN.home}
             label={`${site.brand.name} — pregled administracije`}

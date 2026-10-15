@@ -78,6 +78,8 @@
   --color-focus: #ff6b1a;
   --color-focus-inverse: #f1ece3;
   --color-edge-overlay: #434a52;
+  /* The heritage navy of the company's original logo: the logo on printed documents only (§2.2). */
+  --color-heritage: #1b2a6b;
 
   /* ── Fonts (next/font variables are --nf-*; see lib/fonts.ts) ── */
   --font-sans: var(--nf-ui), "Public Sans", Arial, sans-serif;

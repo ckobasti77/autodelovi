@@ -1,9 +1,10 @@
-// Step 24 — builds the Euromotors Plus by OEM Parts logo kit from scripts/brand/logo/logo.mjs.
+// Builds the Euromotors Plus · OEM Parts logo kit from scripts/brand/logo/logo.mjs (step 33: the
+// star arc, concept A).
 //
 // Usage: node scripts/brand/logo/build.mjs
 // Output:
 //   public/brand/                 web assets: SVG lockups in every colour variant, favicon set, PWA icons,
-//                                 e-mail header, social avatar
+//                                 e-mail header (light and dark), social avatar
 //   docs/brand/export/svg|png|pdf the owner's kit: optimised SVG, PNG at 1× / 2× / 4×, vector PDF
 //   docs/brand/export/icons       the same icon set as public/brand, for handing over
 //   docs/brand/export/manifest.json   every file with its size in px and bytes
@@ -13,33 +14,38 @@ import sharp from "sharp";
 import { assertClean, ico, optimizeSvg } from "./lib/export.mjs";
 import { fill, svgDoc } from "./lib/parts.mjs";
 import { closeBrowser, svgToPdf, svgToPng } from "./lib/render.mjs";
-import { CLEAR, ICON, LOCKUPS, MIN, THEMES, hintedIconSvg, iconSvg, lockupSvg } from "./logo.mjs";
+import { CLEAR, ICON, LOCKUPS, THEMES, hintedIconSvg, iconSvg, lockupSvg } from "./logo.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "../../..");
 const PUBLIC = path.join(ROOT, "public/brand");
 const EXPORT = path.join(ROOT, "docs/brand/export");
-const NAME = "Euromotors Plus by OEM Parts";
+const NAME = "Euromotors Plus · OEM Parts";
 
-const KINDS = ["horizontal", "header", "stacked", "wordmark", "mark", "dual", "oemParts"];
-const FILE = { mark: "mark", oemParts: "oem-parts" };
-const VARIANTS = ["night", "paper", "black", "white", "orange"];
-/** PNG height at 1× per lockup (px): the smallest size at which every element of it holds. */
+const KINDS = ["stacked", "horizontal", "wordmark", "mark", "markSmall", "oemParts"];
+const FILE = {
+  stacked: "logo-stacked",
+  horizontal: "logo-horizontal",
+  wordmark: "logo-wordmark",
+  mark: "mark",
+  markSmall: "mark-small",
+  oemParts: "oem-parts",
+};
+const VARIANTS = ["night", "paper", "navy", "black", "white"];
+/** PNG height at 1× per lockup (px): a size at which every element of it holds. */
 const BASE_HEIGHT = {
-  horizontal: MIN.horizontal.px,
-  header: 40,
   stacked: 160,
-  wordmark: 56,
+  horizontal: 48,
+  wordmark: 40,
   mark: 64,
-  dual: 56,
+  markSmall: 32,
   oemParts: 56,
 };
 const TITLES = {
-  horizontal: NAME,
-  header: "Euromotors Plus",
   stacked: NAME,
+  horizontal: NAME,
   wordmark: NAME,
   mark: "Euromotors Plus",
-  dual: "Euromotors Plus | OEM Parts",
+  markSmall: "Euromotors Plus",
   oemParts: "OEM Parts",
 };
 
@@ -63,7 +69,7 @@ for (const dir of [PUBLIC, EXPORT]) await rm(dir, { recursive: true, force: true
 for (const kind of KINDS) {
   for (const variant of VARIANTS) {
     const theme = THEMES[variant];
-    const base = `${FILE[kind] ?? `logo-${kind}`}-${variant}`;
+    const base = `${FILE[kind]}-${variant}`;
     const { svg, w, h } = lockupSvg(kind, theme, { title: TITLES[kind] });
     const optimised = optimizeSvg(svg);
     assertClean(optimised, base);
@@ -82,14 +88,15 @@ for (const kind of KINDS) {
     }
 
     // PDF: light-ground variants on a transparent page at artwork size; dark-ground variants on the
-    // night field with clear space, so the file can be opened and proofed as it is.
-    const onDark = variant === "night" || variant === "white" || variant === "orange";
+    // night field with their clear space, so the file can be opened and proofed as it is.
+    const onDark = variant === "night" || variant === "white";
     const pdfArt = lockupSvg(kind, theme, {
       bg: onDark,
-      pad: onDark ? CLEAR : 0,
+      pad: onDark ? CLEAR[kind] : 0,
       title: TITLES[kind],
     });
-    const k = 0.5; // 1 unit = 0.5 px = 0.375 pt; vector, so the size only sets the default page
+    // 1 unit = 0.5 px; vector, so the size only sets the default page (marks are drawn small)
+    const k = kind === "mark" || kind === "markSmall" ? 1 : 0.5;
     await svgToPdf(
       pdfArt.svg.replace(/ width="[\d.]+" height="[\d.]+"/, ""),
       path.join(EXPORT, "pdf", `${base}.pdf`),
@@ -137,30 +144,37 @@ await icons(PUBLIC);
 await icons(path.join(EXPORT, "icons"));
 
 // ---------------------------------------------------------------------------------------------
-// E-mail header (2×, on white) and social avatar (1000 × 1000)
+// E-mail header (2×): the horizontal lockup in heritage navy on white, and the dark-mode copy in
+// warm ink on a transparent ground (swapped in by lib/email/html.ts). Social avatar 1000 × 1000.
 // ---------------------------------------------------------------------------------------------
+const EMAIL = { width: 336, height: 56, pad: 16 };
 {
   const art = LOCKUPS.horizontal();
-  const displayH = MIN.horizontal.px; // 56 px tall in the e-mail
-  const pad = 16; // px of white around it at 1×
-  const k = (displayH * 2) / art.h;
-  const w = Math.round(art.w * k) + pad * 4;
-  const h = displayH * 2 + pad * 4;
-  const t = THEMES.paper;
-  const svg = svgDoc({
-    w,
-    h,
-    bg: "#FFFFFF",
-    body: `<g transform="translate(${pad * 2} ${pad * 2}) scale(${k})">${fill(art.ink, t.ink)}${fill(art.accent, t.accent)}</g>`,
-  });
-  const png = await sharp(svgToPng(svg, w)).flatten({ background: "#FFFFFF" }).png().toBuffer();
+  const k = (EMAIL.height * 2) / art.h;
+  // a fixed canvas (lib/email/html.ts states its size); the logo sits at the top left
+  const w = EMAIL.width * 2;
+  const h = EMAIL.height * 2 + EMAIL.pad * 4;
+  if (art.w * k + EMAIL.pad * 4 > w) throw new Error("e-mail header: the logo does not fit");
+  const doc = (ink, bg) =>
+    svgDoc({
+      w,
+      h,
+      bg,
+      body: `<g transform="translate(${EMAIL.pad * 2} ${EMAIL.pad * 2}) scale(${k})">${fill(art.ink, ink)}</g>`,
+    });
+  const light = await sharp(svgToPng(doc(THEMES.navy.ink, "#FFFFFF"), w))
+    .flatten({ background: "#FFFFFF" })
+    .png()
+    .toBuffer();
+  const dark = svgToPng(doc(THEMES.night.ink), w);
   for (const dir of [PUBLIC, path.join(EXPORT, "icons")]) {
-    await put(dir, "email-header@2x.png", png, { w, h, display: `${w / 2} × ${h / 2}` });
+    await put(dir, "email-header@2x.png", light, { w, h, display: `${w / 2} × ${h / 2}` });
+    await put(dir, "email-header-dark@2x.png", dark, { w, h, display: `${w / 2} × ${h / 2}` });
   }
 }
 {
-  // The platform crops to a circle: the mark sits inside the inscribed circle with room to spare.
-  const avatar = iconSvg({ rounded: false, markHeight: 0.44 });
+  // The platform crops to a circle: the ring sits inside the inscribed circle with room to spare.
+  const avatar = iconSvg({ rounded: false, markHeight: 0.62 });
   const png = await sharp(svgToPng(avatar, 1000))
     .flatten({ background: THEMES.night.bg })
     .png()
@@ -188,7 +202,9 @@ const count = async (dir) =>
 console.log(
   `public/brand: ${await count(PUBLIC)} files · docs/brand/export: ${await count(EXPORT)} files`,
 );
-const svgs = manifest.filter((m) => m.file.startsWith("public/brand") && m.file.endsWith(".svg"));
+const svgs = manifest.filter(
+  (m) => m.file.startsWith("public/brand") && m.file.endsWith("-night.svg"),
+);
 console.log(
   `SVG sizes: ${svgs.map((m) => `${path.basename(m.file)} ${(m.bytes / 1024).toFixed(1)} KB`).join(", ")}`,
 );

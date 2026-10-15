@@ -57,6 +57,9 @@ export const NIGHT = {
   infoBg: "#1E2328",
 } as const;
 
+/** The heritage navy of the logo on white (DS §2.2): the header image's alt text when blocked. */
+const HERITAGE_NAVY = "#1B2A6B";
+
 /** Radius by role (DS §5.3): press 6 · read 8 · float 12. */
 const RADIUS = { press: 6, read: 8, float: 12 } as const;
 
@@ -474,7 +477,7 @@ export type RenderedEmail = {
  * Night colours, one list for both ways a client asks for them: `prefers-color-scheme` (Apple
  * Mail, iOS, Outlook for Mac, Thunderbird) and Outlook.com / the Outlook apps, which rewrite
  * colours themselves and only keep ours behind `[data-ogsc]` (text) and `[data-ogsb]` (ground).
- * The logo band stays white in both: its PNG is drawn on white (DS §2.6).
+ * The logo band turns night too and shows the warm-ink copy of the header image (DS §2.6).
  */
 const NIGHT_RULES: readonly (readonly [selector: string, declarations: string])[] = [
   [".sk-body, .sk-outer", `background: ${NIGHT.bg} !important;`],
@@ -490,6 +493,9 @@ const NIGHT_RULES: readonly (readonly [selector: string, declarations: string])[
   [".sk-line, .sk-rule", `border-color: ${NIGHT.line} !important;`],
   [".sk-link", `color: ${NIGHT.accentText} !important;`],
   [".sk-notice", `border-color: ${NIGHT.line} !important;`],
+  [".sk-logo", `background: ${NIGHT.panel} !important;`],
+  [".sk-logo-light", "display: none !important;"],
+  [".sk-logo-dark", "display: block !important;"],
   [".sk-n-info", `background: ${NIGHT.infoBg} !important;`],
   [".sk-n-success", `background: ${NIGHT.successBg} !important;`],
   [".sk-n-warning", `background: ${NIGHT.warningBg} !important;`],
@@ -535,13 +541,17 @@ ${nightCss(["[data-ogsc]", "[data-ogsb]"], "  ")}
 `;
 
 /**
- * The logo in the header (DS §2.6): the kit's PNG on white — SVG is stripped by several clients.
- * 954 × 176 px shown at 477 × 88, with 16 px of white around the artwork, so the header band is
- * white in both colour schemes. The file is served by the site (`public/brand/`).
+ * The logo in the header (DS §2.6): the kit's horizontal lockup as PNG — SVG is stripped by
+ * several clients, Outlook for Windows among them. 672 × 176 px shown at 336 × 88, 56 px of logo
+ * with 16 px around it. Light: heritage navy on white. Dark: the same artwork in warm ink on a
+ * transparent ground, swapped in by the night rules (`prefers-color-scheme` and Outlook.com's
+ * `[data-ogsc]`); Outlook for Windows never sees it (`<!--[if !mso]>`). Both files are served by
+ * the site (`public/brand/`).
  */
 export const EMAIL_LOGO = {
   path: "/brand/email-header@2x.png",
-  width: 477,
+  darkPath: "/brand/email-header-dark@2x.png",
+  width: 336,
   height: 88,
   alt: BRAND_LOCKUP_NAME,
 } as const;
@@ -555,12 +565,19 @@ function preheaderHtml(value: string): string {
 
 export function layout(input: LayoutInput): RenderedEmail {
   const home = escapeHtml(safeHref(input.siteUrl));
-  const logoSrc = escapeHtml(safeHref(`${input.siteUrl.replace(/\/$/, "")}${EMAIL_LOGO.path}`));
+  const site = input.siteUrl.replace(/\/$/, "");
+  const logoSrc = escapeHtml(safeHref(`${site}${EMAIL_LOGO.path}`));
+  const logoDarkSrc = escapeHtml(safeHref(`${site}${EMAIL_LOGO.darkPath}`));
   // The alt text is styled: with images blocked it stands in for the logo.
-  const logo = `<a href="${home}" style="display:block;text-decoration:none;"><img src="${logoSrc}" width="${EMAIL_LOGO.width}" height="${EMAIL_LOGO.height}" alt="${escapeHtml(EMAIL_LOGO.alt)}" style="display:block;width:100%;max-width:${EMAIL_LOGO.width}px;height:auto;border:0;outline:none;text-decoration:none;font-family:${FONT_DISPLAY};font-size:18px;line-height:24px;font-weight:900;color:${PAPER.ink1};"></a>`;
-  // On the white band in both schemes, so its colour is fixed (no dark-mode class).
+  const img = (src: string, cls: string, display: string, color: string, extra = "") =>
+    `<img class="${cls}" src="${src}" width="${EMAIL_LOGO.width}" height="${EMAIL_LOGO.height}" alt="${escapeHtml(EMAIL_LOGO.alt)}" style="display:${display};width:100%;max-width:${EMAIL_LOGO.width}px;height:auto;border:0;outline:none;text-decoration:none;font-family:${FONT_DISPLAY};font-size:18px;line-height:24px;font-weight:900;color:${color};${extra}">`;
+  const logo =
+    `<a href="${home}" style="display:block;text-decoration:none;">` +
+    img(logoSrc, "sk-logo-light", "block", HERITAGE_NAVY) +
+    `<!--[if !mso]><!-->${img(logoDarkSrc, "sk-logo-dark", "none", NIGHT.ink1, "mso-hide:all;")}<!--<![endif]-->` +
+    `</a>`;
   const reference = input.reference
-    ? `<div class="sk-ref" style="padding:0 0 6px 16px;font-family:${FONT_MONO};font-size:13px;line-height:20px;color:${PAPER.ink3};white-space:nowrap;">${escapeHtml(input.reference)}</div>`
+    ? `<div class="sk-ref sk-ink3" style="padding:0 0 6px 16px;font-family:${FONT_MONO};font-size:13px;line-height:20px;color:${PAPER.ink3};white-space:nowrap;">${escapeHtml(input.reference)}</div>`
     : "";
   const company = input.companyLines.filter((l) => l.trim() !== "");
   const [companyName = input.brandName, ...companyRest] = company;

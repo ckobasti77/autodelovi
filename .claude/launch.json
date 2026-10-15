@@ -6,6 +6,12 @@
       "runtimeExecutable": "node",
       "runtimeArgs": [".playwright/start-3100.mjs"],
       "port": 3100
+    },
+    {
+      "name": "dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000
     }
   ]
 }

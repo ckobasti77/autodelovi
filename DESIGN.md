@@ -1,5 +1,5 @@
 ---
-name: Euromotors Plus by OEM Parts
+name: Euromotors Plus · OEM Parts
 description: „Rasklopi auto. Nađi deo.“ — VAG parts shop, mechanic portal and back office in the „Rendgen“ world
 colors:
   night-field: "#0D0F11"
@@ -215,7 +215,7 @@ components:
     height: "36px"
 ---
 
-# Design System: Euromotors Plus by OEM Parts
+# Design System: Euromotors Plus · OEM Parts
 
 > Portable summary for design tools. The authoritative, complete specification (every token, contrast table, motion, 3D art direction, components, blueprints, microcopy) is **[docs/design/DESIGN-SYSTEM.md](docs/design/DESIGN-SYSTEM.md)**; colour tokens and contrast pairs live in `docs/design/tokens.json`. Recorded from the step-03 concept build (`app/lab/koncept/`); re-run the documenter after step 04 builds the real foundation.
 
@@ -307,7 +307,7 @@ Small soft corners on every box, by role: 4 px on chips and badges, 6 px on butt
 - Graphite card (`panel`), 1 px hairline, 8 px radius, lit top edge, 16 px padding; hover steps the surface up and lifts 1 px; 4:3 render; maker → name (whole-card link) → OEM (mono) → fitment line → stock line → price (condensed, „sa PDV-om“) + quiet action.
 
 ### Navigation
-- 64 px sticky header: wordmark (the lifted-part mark + name in Archivo Expanded), four text links, „Pozovite“/„Viber“ (from settings), account, cart with an orange count.
+- 64 px sticky header: the logo (a ring of ten stars + EUROMOTORS / PLUS — OEM Parts, one warm ink, never orange; five stars alone on phones), four text links, „Pozovite“/„Viber“ (from settings), account, cart with an orange count.
 
 ### X-ray Callout (signature)
 - Orange 1 px leader from the part straight up to an annotation lane, then a shelf; label box graphite-overlay with a 1 px strong hairline, category name, one mechanic note, a live count link with an arrow icon.

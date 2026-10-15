@@ -20,7 +20,7 @@ export function NavLinks({
 }) {
   const pathname = usePathname();
   return (
-    <ul className={cn(layout === "row" ? "flex items-center gap-1" : "flex flex-col")}>
+    <ul className={cn(layout === "row" ? "flex items-center xl:gap-1" : "flex flex-col")}>
       {PRIMARY_NAV.map((item) => {
         const active = isActive(pathname, item.href);
         return (
@@ -33,7 +33,7 @@ export function NavLinks({
               className={cn(
                 "relative flex items-center rounded-sm transition-control",
                 layout === "row"
-                  ? "h-11 px-3 text-[0.9375rem] font-medium text-ink-2 hover:text-ink-1 aria-[current=page]:text-ink-1 aria-[current=page]:after:absolute aria-[current=page]:after:inset-x-3 aria-[current=page]:after:bottom-1 aria-[current=page]:after:h-0.5 aria-[current=page]:after:bg-accent"
+                  ? "h-11 px-2 text-[0.9375rem] font-medium text-ink-2 hover:text-ink-1 aria-[current=page]:text-ink-1 aria-[current=page]:after:absolute aria-[current=page]:after:inset-x-2 aria-[current=page]:after:bottom-1 aria-[current=page]:after:h-0.5 aria-[current=page]:after:bg-accent 2xl:px-3 2xl:aria-[current=page]:after:inset-x-3"
                   : "-mx-2 min-h-13 px-2 text-[1.0625rem] font-semibold text-ink-1 active:bg-surface-4 aria-[current=page]:text-accent-text",
               )}
             >

@@ -26,9 +26,10 @@ function isTypingTarget(target: EventTarget | null): boolean {
 
 /**
  * Header search entry — the primary action of the header at every width: a field-like button
- * (it takes the free space on phones, a fixed width from 1024 px) that opens the OEM search in
- * a top-anchored dialog. „/“ opens it from anywhere outside a text field; the mobile action
- * bar opens the same dialog through `useSearchPanel`.
+ * that takes the free space (at most 256 / 288 / 320 px from 1024 / 1280 / 1536 px, so the bar
+ * fits beside the logo and the nav, D387) and opens the OEM search in a top-anchored dialog.
+ * „/“ opens it from anywhere outside a text field (the key hint shows from 1280 px); the mobile
+ * action bar opens the same dialog through `useSearchPanel`.
  *
  * On a page that opens with its own search field (`OWN_SEARCH_ROUTES`: home, search) the header
  * field steps back while the page is at its top (`site-header-search`, a CSS scroll timeline).
@@ -76,7 +77,7 @@ export function HeaderSearch({ className }: { className?: string }) {
       >
         <MagnifyingGlassIcon size={18} aria-hidden="true" className="shrink-0 text-ink-2" />
         <span className="min-w-0 flex-1 truncate">Broj dela ili naziv</span>
-        <span aria-hidden="true" className="hidden lg:inline-flex">
+        <span aria-hidden="true" className="hidden xl:inline-flex">
           <Kbd>/</Kbd>
         </span>
       </button>

@@ -1,4 +1,4 @@
-// Builds docs/showcase/index.html from scripts/showcase/template.html (steps 23 and 29).
+// Builds docs/showcase/index.html from scripts/showcase/template.html (steps 23, 29 and 33).
 //
 //   node scripts/showcase/build.mjs
 //
@@ -53,7 +53,7 @@ const fontCss = FONTS.map(({ family, weight, file, range }) => {
 const BRAND = [
   ["BRAND-BOARD.png", "brand-board.webp"],
   ["renders/logo-system-night.png", "brand-system-night.webp"],
-  ["renders/logo-system-paper.png", "brand-system-paper.webp"],
+  ["renders/logo-system-navy.png", "brand-system-navy.webp"],
   ["renders/logo-one-colour.png", "brand-one-colour.webp"],
   ["renders/logo-small-sizes.png", "brand-small-sizes.webp"],
   ["site/footer-night-1440.png", "brand-footer.webp"],
@@ -113,8 +113,8 @@ const favicon = `data:image/svg+xml,${encodeURIComponent(
 html = html
   .replace("{{fonts}}", fontCss)
   .replace("{{favicon}}", favicon)
-  .replace("{{logo-header}}", logo("logo-header-night.svg", "lockup"))
-  .replace("{{logo-mark}}", logo("mark-night.svg", "mark"))
+  .replace("{{logo-header}}", logo("logo-horizontal-night.svg", "lockup"))
+  .replace("{{logo-mark}}", logo("mark-small-night.svg", "mark"))
   .replaceAll("{{date}}", date.endsWith(".") ? date : `${date}.`)
   .replace(
     "{{facts}}",

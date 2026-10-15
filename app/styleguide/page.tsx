@@ -31,7 +31,7 @@ import {
 
 import { site } from "@/config/site";
 import { SiteShell } from "@/components/shell/SiteShell";
-import { LogoHeader, LogoLockup, LogoMark } from "@/components/brand/Logo";
+import { LogoHorizontal, LogoMark, LogoStacked } from "@/components/brand/Logo";
 import { RevealText } from "@/components/text-reveal/RevealText";
 import { Group, Section } from "./_components/Section";
 import { Tokens } from "./_components/Tokens";
@@ -130,30 +130,34 @@ export default function StyleguidePage() {
             <Section
               id="marka"
               title="Marka"
-              intro="Znak: slovo E nacrtano kao zagrada koja drži plus, uz ime i potpis radnje. Narandžast je samo plus."
+              intro="Znak: otvoren luk od zvezda oko imena, kao na prvom logu firme. Zvezde rastu niz luk, pa se čita pokret. Logo je u jednoj boji; narandžasta ostaje boja sajta."
             >
+              <div className="flex justify-center overflow-hidden rounded-md border border-line bg-bg-raised px-6 py-10 text-ink-1">
+                <LogoStacked className="h-auto w-full max-w-[24rem]" />
+              </div>
               <div className="grid gap-6 md:grid-cols-3">
-                <div className="flex aspect-[4/3] items-center justify-center corner-ticks text-ink-1">
-                  <LogoMark className="h-28 w-auto" />
+                {/* The five-star mark is drawn for 32 px and below: shown at its own sizes. */}
+                <div className="flex aspect-[4/3] items-center justify-center gap-6 corner-ticks text-ink-1">
+                  <LogoMark className="h-8 w-auto" />
+                  <LogoMark className="h-6 w-auto" />
+                  <LogoMark className="h-4 w-auto" />
                 </div>
                 <div className="flex aspect-[4/3] items-center justify-center rounded-md border border-line bg-bg-raised px-6 text-ink-1">
-                  <LogoHeader className="h-auto w-full max-w-[17rem]" />
+                  <LogoHorizontal className="h-auto w-full max-w-[16rem]" />
                 </div>
+                {/* The heritage navy sits on the logo itself: the theme sets the cell's own colour. */}
                 <div
                   data-theme="paper"
-                  className="flex aspect-[4/3] items-center justify-center rounded-md px-6 text-ink-1"
+                  className="flex aspect-[4/3] items-center justify-center rounded-md px-6"
                 >
-                  <LogoHeader className="h-auto w-full max-w-[17rem]" />
+                  <LogoHorizontal className="h-auto w-full max-w-[16rem] text-heritage" />
                 </div>
               </div>
-              <div className="flex justify-center overflow-hidden rounded-md border border-line bg-bg-raised px-6 py-10 text-ink-1">
-                <LogoLockup variant="stacked" className="h-auto w-full max-w-[21.5rem] md:hidden" />
-                <LogoLockup className="hidden h-14 w-auto md:block" />
-              </div>
               <p className="type-body-s text-ink-3">
-                Oblik sa potpisom „by OEM Parts“ traži najmanje 56&nbsp;px visine; ispod toga ide
-                oblik za zaglavlje (najmanje 28&nbsp;px), a u najmanjem prostoru samo znak. U tekstu
-                se ime piše „{site.brand.name}“, a radnja „{site.brand.alternateName}“.
+                Uspravni oblik sa lukom od dvanaest zvezda traži najmanje 128&nbsp;px visine; ispod
+                toga ide vodoravni oblik (najmanje 44&nbsp;px), a na 32&nbsp;px i manje samo znak od
+                pet zvezda. Na dokumentima i u e-pošti na beloj logo je tamnoplav, kao prvi logo
+                firme. U tekstu se ime piše „{site.brand.name}“, a radnja „{site.brand.alternateName}“.
               </p>
             </Section>
 

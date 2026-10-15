@@ -200,14 +200,27 @@ describe("content rules", () => {
   });
 });
 
-describe("brand in every message (step 25)", () => {
+describe("brand in every message (steps 25, 33)", () => {
   it.each(TEMPLATE_KEYS)("%s: logo image with alt text, no trace of the working name", (key) => {
     const r = renderSample(key, ctx);
+    // Light: heritage navy on white, for every client.
     expect(r.html).toContain(
-      '<img src="https://primer.test/brand/email-header@2x.png" width="477" height="88" alt="Euromotors Plus by OEM Parts"',
+      '<img class="sk-logo-light" src="https://primer.test/brand/email-header@2x.png" width="336" height="88" alt="Euromotors Plus · OEM Parts" style="display:block;',
     );
-    // The logo sits on white in both colour schemes, and links home.
+    // Dark: warm ink, hidden until a night rule shows it; Outlook for Windows never gets it.
+    expect(r.html).toContain(
+      '<!--[if !mso]><!--><img class="sk-logo-dark" src="https://primer.test/brand/email-header-dark@2x.png" width="336" height="88" alt="Euromotors Plus · OEM Parts" style="display:none;',
+    );
+    expect(r.html).toMatch(/mso-hide:all;"><!--<!\[endif\]--><\/a>/);
+    for (const rule of [
+      ".sk-logo-light { display: none !important; }",
+      ".sk-logo-dark { display: block !important; }",
+      "[data-ogsc] .sk-logo-light, [data-ogsb] .sk-logo-light { display: none !important; }",
+    ])
+      expect(r.html).toContain(rule);
+    // The band is white by day and turns night with the rest; the logo links home.
     expect(r.html).toMatch(/<td class="sk-logo sk-line" bgcolor="#FFFFFF"/);
+    expect(r.html).toContain(".sk-logo { background: #16191D !important; }");
     expect(r.html).toContain('<a href="https://primer.test" style="display:block;');
     for (const part of [r.subject, r.preheader, r.html, r.text]) {
       expect(part).not.toMatch(/sklop/i);
@@ -217,11 +230,12 @@ describe("brand in every message (step 25)", () => {
   it("admin previews take the logo from their own origin; the message itself is not changed", () => {
     const sent = renderSample("order_received", ctx).html;
     const shown = emailPreviewHtml(sent);
-    expect(shown).toContain('<img src="/brand/email-header@2x.png" width="477"');
+    expect(shown).toContain('src="/brand/email-header@2x.png" width="336"');
+    expect(shown).toContain('src="/brand/email-header-dark@2x.png" width="336"');
     expect(shown).not.toContain("https://primer.test/brand/");
-    // Links keep the public address — only the image source is local.
+    // Links keep the public address — only the image sources are local.
     expect(shown).toContain('<a href="https://primer.test" style="display:block;');
-    expect(shown.length).toBe(sent.length - "https://primer.test".length);
+    expect(shown.length).toBe(sent.length - 2 * "https://primer.test".length);
     expect(emailPreviewHtml("<p>bez slike</p>")).toBe("<p>bez slike</p>");
   });
 

@@ -1,6 +1,7 @@
-// Step 25 — renders a sample e-mail with the new header and screenshots it (docs/brand/site/).
+// Steps 25 and 33 — renders a sample e-mail with its header and screenshots it (docs/brand/site/).
 // Usage: node scripts/brand/site/email.mjs <baseUrl>
-// The logo is loaded from <baseUrl>/brand/email-header@2x.png, so a server must be running.
+// The logo is loaded from <baseUrl>/brand/email-header@2x.png (and -dark@2x.png), so a server
+// must be running.
 import { chromium } from "@playwright/test";
 import { build } from "esbuild";
 import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
@@ -71,9 +72,12 @@ for (const key of ["order_confirmed", "password_reset_code"]) {
     if (blockImages) await page.route("**/*.png", (route) => route.abort());
     await page.setContent(mail.html, { waitUntil: "networkidle" });
     const logo = await page.evaluate(() => {
-      const img = document.querySelector("img");
+      // The header holds a light and a dark-mode image; report the one the scheme shows.
+      const imgs = [...document.querySelectorAll("img")];
+      const img = imgs.find((i) => i.getBoundingClientRect().width > 0) ?? imgs[0];
       const r = img.getBoundingClientRect();
       return {
+        src: img.getAttribute("src").replace(/^.*\/brand\//, ""),
         loaded: img.complete && img.naturalWidth > 0,
         natural: `${img.naturalWidth}x${img.naturalHeight}`,
         shown: `${Math.round(r.width)}x${Math.round(r.height)}`,

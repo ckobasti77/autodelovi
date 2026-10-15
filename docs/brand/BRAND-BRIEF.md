@@ -1,5 +1,7 @@
 # Brand brief — Euromotors Plus by OEM Parts
 
+> **Historical (step 24).** The logo designed from this brief (the bracket-E with an orange plus) was rejected by the owner and replaced in step 33 by the star arc, concept A in [`v3-zvezde/`](v3-zvezde/) (D385). The facts about the business below still hold; the logo directions and the „by“ do not.
+>
 > Step 24 (2026-10-11). Input for the logo work in `docs/brand/`. Sources: `pipeline/BRIEF.md`, `docs/design/DESIGN-SYSTEM.md` („Rendgen“), the two current logos in `docs/brand/source/`. Owner-facing summary (Serbian): [LOGO.md](LOGO.md). Decisions: `docs/DECISIONS.md` D299–D306.
 
 ## 1. Who they are
@@ -76,7 +78,7 @@ Each concept gets 1–5 on six criteria (weights in brackets):
 5. Memorability (×2)
 6. How clearly it carries both names (×3)
 
-The best two or three then go through a design critique before one is chosen (`docs/brand/concepts/README.md`).
+The best two or three then go through a design critique before one is chosen (the concept sheets, removed in step 33; git history).
 
 ## 7. Deliverables
 

@@ -1,6 +1,6 @@
 # Euromotors Plus · OEM Parts — VAG parts shop, mechanic portal and back office
 
-Euromotors Plus by OEM Parts („Rasklopi auto. Nađi deo.“) is an online shop for a Serbian dealer of Volkswagen Group parts (VW, Audi, Škoda, SEAT, Cupra). It has three parts:
+Euromotors Plus · OEM Parts („Rasklopi auto. Nađi deo.“) is an online shop for a Serbian dealer of Volkswagen Group parts (VW, Audi, Škoda, SEAT, Cupra). It has three parts:
 
 - **Storefront** (Serbian, RSD, prices incl. 20 % PDV): a 3D X-ray car on the home page that explodes on scroll, where every part opens the in-stock products of its category; OEM-aware search; catalog with vehicle filters; product pages; a 4-step checkout with **no online payment** (cash on delivery, pay at pickup, bank transfer against a pro-forma invoice); VIN inquiries with quotes the customer accepts online.
 - **Mechanic portal** (B2B): registration and approval, discount tiers computed server-side, quick order from pasted OEM lists, reorder, favorites, customer vehicles, an XLSX price list, deferred payment for approved accounts.

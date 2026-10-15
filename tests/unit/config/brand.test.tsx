@@ -6,17 +6,12 @@ import { describe, expect, it } from "vitest";
 import manifest from "@/app/manifest";
 import { site } from "@/config/site";
 import {
-  LogoHeader,
-  LogoLockup,
-  LogoLockupResponsive,
+  LogoDocument,
+  LogoHorizontal,
   LogoMark,
+  LogoStacked,
 } from "@/components/brand/Logo";
-import {
-  LOGO_HEADER,
-  LOGO_LAYOUT,
-  LOGO_MARK,
-  LOGO_WORDMARK,
-} from "@/components/brand/logoPaths";
+import { LOGO_HORIZONTAL, LOGO_MARK, LOGO_STACKED } from "@/components/brand/logoPaths";
 import {
   BRAND_ALTERNATE_NAME,
   BRAND_LOCKUP_NAME,
@@ -35,7 +30,7 @@ describe("naming rules (D307)", () => {
   it("brand, known shop name and the lockup", () => {
     expect(BRAND_NAME).toBe("Euromotors Plus");
     expect(BRAND_ALTERNATE_NAME).toBe("OEM Parts");
-    expect(BRAND_LOCKUP_NAME).toBe("Euromotors Plus by OEM Parts");
+    expect(BRAND_LOCKUP_NAME).toBe("Euromotors Plus · OEM Parts");
     expect(BRAND_SHORT_NAME.length).toBeLessThanOrEqual(12);
     expect(site.brand).toMatchObject({
       name: BRAND_NAME,
@@ -74,7 +69,7 @@ describe("web manifest and icons", () => {
   const m = manifest();
 
   it("names and colours", () => {
-    expect(m.name).toBe("Euromotors Plus by OEM Parts");
+    expect(m.name).toBe("Euromotors Plus · OEM Parts");
     expect(m.short_name).toBe("Euromotors");
     expect(m.theme_color).toBe("#0D0F11");
     expect(m.background_color).toBe("#0D0F11");
@@ -107,44 +102,59 @@ describe("web manifest and icons", () => {
 
 describe("inline logo", () => {
   it("accessible name by default, hidden from assistive technology on request", () => {
-    expect(renderToStaticMarkup(<LogoHeader />)).toMatch(
-      /^<svg[^>]* role="img" aria-label="Euromotors Plus"/,
+    expect(renderToStaticMarkup(<LogoHorizontal />)).toMatch(
+      /^<svg[^>]* role="img" aria-label="Euromotors Plus · OEM Parts"/,
     );
     expect(renderToStaticMarkup(<LogoMark />)).toContain('aria-label="Euromotors Plus"');
-    expect(renderToStaticMarkup(<LogoLockup />)).toContain(
-      'aria-label="Euromotors Plus by OEM Parts"',
+    expect(renderToStaticMarkup(<LogoStacked />)).toContain(
+      'aria-label="Euromotors Plus · OEM Parts"',
     );
-    const hidden = renderToStaticMarkup(<LogoHeader label={null} />);
+    const hidden = renderToStaticMarkup(<LogoHorizontal label={null} />);
     expect(hidden).toContain('aria-hidden="true"');
     expect(hidden).not.toContain("role=");
   });
 
-  it("ink follows the text colour, only the plus is the accent", () => {
-    const html = renderToStaticMarkup(<LogoLockup variant="stacked" />);
-    expect(html.match(/fill="currentColor"/g)).toHaveLength(2);
-    expect(html.match(/class="fill-accent"/g)).toHaveLength(1);
-    expect(html).not.toMatch(/#[0-9a-f]{6}/i);
-    expect(html).toContain(`viewBox="0 0 ${LOGO_LAYOUT.stacked.w} ${LOGO_LAYOUT.stacked.h}"`);
+  it("one ink that follows the text colour, no accent", () => {
+    for (const html of [
+      renderToStaticMarkup(<LogoStacked />),
+      renderToStaticMarkup(<LogoHorizontal />),
+      renderToStaticMarkup(<LogoMark />),
+    ]) {
+      expect(html.match(/<path /g)).toHaveLength(1);
+      expect(html).toContain('fill="currentColor"');
+      expect(html).not.toContain("accent");
+      expect(html).not.toMatch(/#[0-9a-f]{6}/i);
+    }
+    expect(renderToStaticMarkup(<LogoStacked />)).toContain(
+      `viewBox="0 0 ${LOGO_STACKED.w} ${LOGO_STACKED.h}"`,
+    );
   });
 
-  it("the responsive lockup carries the outlines once and one name", () => {
-    const html = renderToStaticMarkup(<LogoLockupResponsive />);
-    expect(html.split(LOGO_WORDMARK.ink)).toHaveLength(2);
-    expect(html.match(/<use /g)).toHaveLength(4);
-    expect(html.match(/aria-label=/g)).toHaveLength(1);
-    expect(html).toMatch(/^<span role="img" aria-label="Euromotors Plus by OEM Parts"/);
+  it("documents print the heritage navy", () => {
+    expect(renderToStaticMarkup(<LogoDocument />)).toMatch(/^<span class="[^"]*\btext-heritage\b/);
+    expect(read("app/globals.css")).toContain("--color-heritage: #1b2a6b;");
   });
 
   it("generated paths match the kit files they were read from", () => {
-    const d = (file: string, fill: string) =>
-      new RegExp(`<path fill="${fill}"[^>]*? d="([^"]+)"`).exec(read(`public/brand/${file}`))?.[1];
-    expect(LOGO_HEADER.ink).toBe(d("logo-header-night.svg", "#f1ece3"));
-    expect(LOGO_HEADER.accent).toBe(d("logo-header-night.svg", "#ff6b1a"));
-    expect(LOGO_MARK.ink).toBe(d("mark-night.svg", "#f1ece3"));
-    expect(LOGO_MARK.accent).toBe(d("mark-night.svg", "#ff6b1a"));
-    expect(LOGO_WORDMARK.ink).toBe(d("logo-wordmark-night.svg", "#f1ece3"));
-    // Header lockup: 28 px minimum → 236 px wide; with the signature: 56 px → 445 px.
-    expect(Math.round((LOGO_HEADER.w / LOGO_HEADER.h) * 28)).toBe(236);
-    expect(Math.round((LOGO_LAYOUT.horizontal.w / LOGO_LAYOUT.horizontal.h) * 56)).toBe(445);
+    const d = (file: string) =>
+      /<path fill="#f1ece3"[^>]*? d="([^"]+)"/.exec(read(`public/brand/${file}`))?.[1];
+    expect(LOGO_HORIZONTAL.d).toBe(d("logo-horizontal-night.svg"));
+    expect(LOGO_STACKED.d).toBe(d("logo-stacked-night.svg"));
+    expect(LOGO_MARK.d).toBe(d("mark-small-night.svg"));
+    // Header lockup: 44 px → 236 px wide (the admin sidebar has 236), 48 px → 258 px; the
+    // stacked logo is 1.55 : 1.
+    expect(Math.round((LOGO_HORIZONTAL.w / LOGO_HORIZONTAL.h) * 44)).toBe(236);
+    expect(Math.round((LOGO_HORIZONTAL.w / LOGO_HORIZONTAL.h) * 48)).toBe(258);
+    expect(LOGO_STACKED.w / LOGO_STACKED.h).toBeCloseTo(1.551, 2);
+  });
+
+  it("the retired bracket mark and its orange plus are gone from the kit", () => {
+    for (const file of ["logo-horizontal-night.svg", "logo-stacked-night.svg", "mark-night.svg"]) {
+      const svg = read(`public/brand/${file}`);
+      expect(svg).not.toMatch(/#ff6b1a/i);
+      expect(svg.match(/<path /g)).toHaveLength(1);
+    }
+    expect(existsSync(join(ROOT, "public/brand/logo-header-night.svg"))).toBe(false);
+    expect(existsSync(join(ROOT, "public/brand/logo-dual-night.svg"))).toBe(false);
   });
 });

@@ -32,11 +32,11 @@ export default function GlobalError({
               logo outlines would add 3 KB of script to all of them. */}
           {/* eslint-disable-next-line @next/next/no-img-element -- static SVG; next/image adds nothing here and this page must not depend on the image optimizer */}
           <img
-            src="/brand/logo-header-night.svg"
-            alt={site.brand.name}
-            width={270}
-            height={32}
-            className="mb-6 h-8 w-auto self-start"
+            src="/brand/logo-horizontal-night.svg"
+            alt={site.brand.lockupName}
+            width={236}
+            height={44}
+            className="mb-6 h-11 w-auto self-start"
           />
           <div aria-hidden="true" className="corner-ticks flex h-28 w-full max-w-60 items-center justify-center gap-4">
             <span className="font-mono text-[1.75rem] leading-none font-medium tracking-[0.04em] text-ink-2 tabular-nums">500</span>

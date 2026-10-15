@@ -1,4 +1,4 @@
-// Step 25 — screenshots of the rebranded surfaces for review (docs/brand/site/).
+// Steps 25 and 33 — screenshots of the branded surfaces for review (docs/brand/site/).
 // Usage: node scripts/brand/site/shots.mjs <baseUrl> [group ...]
 // Groups: header, footer, pages, og, admin. Admin shots need SEED_ADMIN_EMAIL / SEED_ADMIN_PASSWORD.
 import { chromium } from "@playwright/test";
@@ -61,7 +61,9 @@ const measure = (page, scope) =>
     };
   }, scope);
 
-// The header strip at every width where the lockup must fit or give way to the mark.
+// The header strip at every width where the lockup must fit or give way to the mark. Reduced
+// motion shows the condensed sticky bar (the scroll timeline is off); the `rest` shots show the
+// taller bar at the top of the page with the logo 8 % larger.
 if (want("header")) {
   for (const width of [360, 390, 480, 640, 768, 1024, 1280, 1440, 1920]) {
     const { context, page } = await open(width, 700, width < 768 ? 2 : 1);
@@ -70,6 +72,18 @@ if (want("header")) {
       path: path.join(OUT, `header-night-${width}.png`),
     });
     console.log(`header ${width}:`, JSON.stringify(await measure(page, "[data-sticky-header]")));
+    await context.close();
+  }
+  for (const width of [390, 768, 1024, 1440]) {
+    const { context, page } = await open(width, 700, width < 768 ? 2 : 1, {
+      reducedMotion: "no-preference",
+    });
+    await page.goto(`${BASE}/delovi`, { waitUntil: "networkidle" });
+    await page.waitForTimeout(600);
+    await page.locator("[data-sticky-header]").screenshot({
+      path: path.join(OUT, `header-rest-${width}.png`),
+    });
+    console.log(`header rest ${width}:`, JSON.stringify(await measure(page, "[data-sticky-header]")));
     await context.close();
   }
 }
@@ -117,7 +131,7 @@ if (want("footer")) {
     await page.screenshot({ path: path.join(OUT, `footer-night-${width}.png`), clip: box });
     const fit = await page.evaluate(() => {
       const f = [...document.querySelectorAll("footer")].pop();
-      const art = [...f.querySelectorAll("a[aria-label$='početna'] svg")].find(
+      const art = [...f.querySelectorAll("a[aria-label$='početna'] :is(svg, img)")].find(
         (s) => s.getBoundingClientRect().width > 1,
       );
       const r = art.getBoundingClientRect();
@@ -221,8 +235,12 @@ if (want("admin")) {
           await frame.first().waitFor({ state: "visible", timeout: 30_000 });
           await page.waitForTimeout(1500);
           const logo = await frame.first().evaluate((el) => {
-            const img = el.contentDocument?.querySelector("img");
-            return img ? { src: img.getAttribute("src"), loaded: img.complete && img.naturalWidth > 0 } : null;
+            const imgs = [...(el.contentDocument?.querySelectorAll("img") ?? [])];
+            return imgs.map((img) => ({
+              src: img.getAttribute("src"),
+              loaded: img.complete && img.naturalWidth > 0,
+              shown: img.getBoundingClientRect().width > 0,
+            }));
           });
           console.log("admin e-mail preview logo:", JSON.stringify(logo));
           await page.screenshot({ path: path.join(OUT, "admin-email-preview-1440.png") });

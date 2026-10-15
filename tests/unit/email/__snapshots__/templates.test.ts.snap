@@ -40,6 +40,9 @@ exports[`snapshots > back_in_stock HTML 1`] = `
     .sk-line, .sk-rule { border-color: #2C3238 !important; }
     .sk-link { color: #FF8A4A !important; }
     .sk-notice { border-color: #2C3238 !important; }
+    .sk-logo { background: #16191D !important; }
+    .sk-logo-light { display: none !important; }
+    .sk-logo-dark { display: block !important; }
     .sk-n-info { background: #1E2328 !important; }
     .sk-n-success { background: #152620 !important; }
     .sk-n-warning { background: #292418 !important; }
@@ -59,6 +62,9 @@ exports[`snapshots > back_in_stock HTML 1`] = `
   [data-ogsc] .sk-line, [data-ogsb] .sk-line, [data-ogsc] .sk-rule, [data-ogsb] .sk-rule { border-color: #2C3238 !important; }
   [data-ogsc] .sk-link, [data-ogsb] .sk-link { color: #FF8A4A !important; }
   [data-ogsc] .sk-notice, [data-ogsb] .sk-notice { border-color: #2C3238 !important; }
+  [data-ogsc] .sk-logo, [data-ogsb] .sk-logo { background: #16191D !important; }
+  [data-ogsc] .sk-logo-light, [data-ogsb] .sk-logo-light { display: none !important; }
+  [data-ogsc] .sk-logo-dark, [data-ogsb] .sk-logo-dark { display: block !important; }
   [data-ogsc] .sk-n-info, [data-ogsb] .sk-n-info { background: #1E2328 !important; }
   [data-ogsc] .sk-n-success, [data-ogsb] .sk-n-success { background: #152620 !important; }
   [data-ogsc] .sk-n-warning, [data-ogsb] .sk-n-warning { background: #292418 !important; }
@@ -78,7 +84,7 @@ exports[`snapshots > back_in_stock HTML 1`] = `
 <tr><td class="sk-panel" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #DADDE1;border-radius:12px;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr><td class="sk-logo sk-line" bgcolor="#FFFFFF" style="padding:6px 16px;border-bottom:1px solid #DADDE1;background:#FFFFFF;border-radius:11px 11px 0 0;">
-<a href="https://primer.test" style="display:block;text-decoration:none;"><img src="https://primer.test/brand/email-header@2x.png" width="477" height="88" alt="Euromotors Plus by OEM Parts" style="display:block;width:100%;max-width:477px;height:auto;border:0;outline:none;text-decoration:none;font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:18px;line-height:24px;font-weight:900;color:#121518;"></a>
+<a href="https://primer.test" style="display:block;text-decoration:none;"><img class="sk-logo-light" src="https://primer.test/brand/email-header@2x.png" width="336" height="88" alt="Euromotors Plus · OEM Parts" style="display:block;width:100%;max-width:336px;height:auto;border:0;outline:none;text-decoration:none;font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:18px;line-height:24px;font-weight:900;color:#1B2A6B;"><!--[if !mso]><!--><img class="sk-logo-dark" src="https://primer.test/brand/email-header-dark@2x.png" width="336" height="88" alt="Euromotors Plus · OEM Parts" style="display:none;width:100%;max-width:336px;height:auto;border:0;outline:none;text-decoration:none;font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:18px;line-height:24px;font-weight:900;color:#F1ECE3;mso-hide:all;"><!--<![endif]--></a>
 
 </td></tr>
 <tr><td class="sk-pad" style="padding:28px 32px 14px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
@@ -402,6 +408,9 @@ exports[`snapshots > order_confirmed HTML 1`] = `
     .sk-line, .sk-rule { border-color: #2C3238 !important; }
     .sk-link { color: #FF8A4A !important; }
     .sk-notice { border-color: #2C3238 !important; }
+    .sk-logo { background: #16191D !important; }
+    .sk-logo-light { display: none !important; }
+    .sk-logo-dark { display: block !important; }
     .sk-n-info { background: #1E2328 !important; }
     .sk-n-success { background: #152620 !important; }
     .sk-n-warning { background: #292418 !important; }
@@ -421,6 +430,9 @@ exports[`snapshots > order_confirmed HTML 1`] = `
   [data-ogsc] .sk-line, [data-ogsb] .sk-line, [data-ogsc] .sk-rule, [data-ogsb] .sk-rule { border-color: #2C3238 !important; }
   [data-ogsc] .sk-link, [data-ogsb] .sk-link { color: #FF8A4A !important; }
   [data-ogsc] .sk-notice, [data-ogsb] .sk-notice { border-color: #2C3238 !important; }
+  [data-ogsc] .sk-logo, [data-ogsb] .sk-logo { background: #16191D !important; }
+  [data-ogsc] .sk-logo-light, [data-ogsb] .sk-logo-light { display: none !important; }
+  [data-ogsc] .sk-logo-dark, [data-ogsb] .sk-logo-dark { display: block !important; }
   [data-ogsc] .sk-n-info, [data-ogsb] .sk-n-info { background: #1E2328 !important; }
   [data-ogsc] .sk-n-success, [data-ogsb] .sk-n-success { background: #152620 !important; }
   [data-ogsc] .sk-n-warning, [data-ogsb] .sk-n-warning { background: #292418 !important; }
@@ -440,8 +452,8 @@ exports[`snapshots > order_confirmed HTML 1`] = `
 <tr><td class="sk-panel" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #DADDE1;border-radius:12px;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr><td class="sk-logo sk-line" bgcolor="#FFFFFF" style="padding:6px 16px;border-bottom:1px solid #DADDE1;background:#FFFFFF;border-radius:11px 11px 0 0;">
-<a href="https://primer.test" style="display:block;text-decoration:none;"><img src="https://primer.test/brand/email-header@2x.png" width="477" height="88" alt="Euromotors Plus by OEM Parts" style="display:block;width:100%;max-width:477px;height:auto;border:0;outline:none;text-decoration:none;font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:18px;line-height:24px;font-weight:900;color:#121518;"></a>
-<div class="sk-ref" style="padding:0 0 6px 16px;font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:13px;line-height:20px;color:#5D6570;white-space:nowrap;">SK-2026-000187</div>
+<a href="https://primer.test" style="display:block;text-decoration:none;"><img class="sk-logo-light" src="https://primer.test/brand/email-header@2x.png" width="336" height="88" alt="Euromotors Plus · OEM Parts" style="display:block;width:100%;max-width:336px;height:auto;border:0;outline:none;text-decoration:none;font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:18px;line-height:24px;font-weight:900;color:#1B2A6B;"><!--[if !mso]><!--><img class="sk-logo-dark" src="https://primer.test/brand/email-header-dark@2x.png" width="336" height="88" alt="Euromotors Plus · OEM Parts" style="display:none;width:100%;max-width:336px;height:auto;border:0;outline:none;text-decoration:none;font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:18px;line-height:24px;font-weight:900;color:#F1ECE3;mso-hide:all;"><!--<![endif]--></a>
+<div class="sk-ref sk-ink3" style="padding:0 0 6px 16px;font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:13px;line-height:20px;color:#5D6570;white-space:nowrap;">SK-2026-000187</div>
 </td></tr>
 <tr><td class="sk-pad" style="padding:28px 32px 14px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 <h1 class="sk-ink1" style="margin:0 0 12px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:#121518;letter-spacing:-0.01em;">Porudžbina je potvrđena.</h1>
@@ -648,6 +660,9 @@ exports[`snapshots > order_received HTML 1`] = `
     .sk-line, .sk-rule { border-color: #2C3238 !important; }
     .sk-link { color: #FF8A4A !important; }
     .sk-notice { border-color: #2C3238 !important; }
+    .sk-logo { background: #16191D !important; }
+    .sk-logo-light { display: none !important; }
+    .sk-logo-dark { display: block !important; }
     .sk-n-info { background: #1E2328 !important; }
     .sk-n-success { background: #152620 !important; }
     .sk-n-warning { background: #292418 !important; }
@@ -667,6 +682,9 @@ exports[`snapshots > order_received HTML 1`] = `
   [data-ogsc] .sk-line, [data-ogsb] .sk-line, [data-ogsc] .sk-rule, [data-ogsb] .sk-rule { border-color: #2C3238 !important; }
   [data-ogsc] .sk-link, [data-ogsb] .sk-link { color: #FF8A4A !important; }
   [data-ogsc] .sk-notice, [data-ogsb] .sk-notice { border-color: #2C3238 !important; }
+  [data-ogsc] .sk-logo, [data-ogsb] .sk-logo { background: #16191D !important; }
+  [data-ogsc] .sk-logo-light, [data-ogsb] .sk-logo-light { display: none !important; }
+  [data-ogsc] .sk-logo-dark, [data-ogsb] .sk-logo-dark { display: block !important; }
   [data-ogsc] .sk-n-info, [data-ogsb] .sk-n-info { background: #1E2328 !important; }
   [data-ogsc] .sk-n-success, [data-ogsb] .sk-n-success { background: #152620 !important; }
   [data-ogsc] .sk-n-warning, [data-ogsb] .sk-n-warning { background: #292418 !important; }
@@ -686,8 +704,8 @@ exports[`snapshots > order_received HTML 1`] = `
 <tr><td class="sk-panel" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #DADDE1;border-radius:12px;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr><td class="sk-logo sk-line" bgcolor="#FFFFFF" style="padding:6px 16px;border-bottom:1px solid #DADDE1;background:#FFFFFF;border-radius:11px 11px 0 0;">
-<a href="https://primer.test" style="display:block;text-decoration:none;"><img src="https://primer.test/brand/email-header@2x.png" width="477" height="88" alt="Euromotors Plus by OEM Parts" style="display:block;width:100%;max-width:477px;height:auto;border:0;outline:none;text-decoration:none;font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:18px;line-height:24px;font-weight:900;color:#121518;"></a>
-<div class="sk-ref" style="padding:0 0 6px 16px;font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:13px;line-height:20px;color:#5D6570;white-space:nowrap;">SK-2026-000187</div>
+<a href="https://primer.test" style="display:block;text-decoration:none;"><img class="sk-logo-light" src="https://primer.test/brand/email-header@2x.png" width="336" height="88" alt="Euromotors Plus · OEM Parts" style="display:block;width:100%;max-width:336px;height:auto;border:0;outline:none;text-decoration:none;font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:18px;line-height:24px;font-weight:900;color:#1B2A6B;"><!--[if !mso]><!--><img class="sk-logo-dark" src="https://primer.test/brand/email-header-dark@2x.png" width="336" height="88" alt="Euromotors Plus · OEM Parts" style="display:none;width:100%;max-width:336px;height:auto;border:0;outline:none;text-decoration:none;font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:18px;line-height:24px;font-weight:900;color:#F1ECE3;mso-hide:all;"><!--<![endif]--></a>
+<div class="sk-ref sk-ink3" style="padding:0 0 6px 16px;font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:13px;line-height:20px;color:#5D6570;white-space:nowrap;">SK-2026-000187</div>
 </td></tr>
 <tr><td class="sk-pad" style="padding:28px 32px 14px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 <h1 class="sk-ink1" style="margin:0 0 12px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:#121518;letter-spacing:-0.01em;">Porudžbina je primljena.</h1>
@@ -1117,6 +1135,9 @@ exports[`snapshots > staff_order_new HTML 1`] = `
     .sk-line, .sk-rule { border-color: #2C3238 !important; }
     .sk-link { color: #FF8A4A !important; }
     .sk-notice { border-color: #2C3238 !important; }
+    .sk-logo { background: #16191D !important; }
+    .sk-logo-light { display: none !important; }
+    .sk-logo-dark { display: block !important; }
     .sk-n-info { background: #1E2328 !important; }
     .sk-n-success { background: #152620 !important; }
     .sk-n-warning { background: #292418 !important; }
@@ -1136,6 +1157,9 @@ exports[`snapshots > staff_order_new HTML 1`] = `
   [data-ogsc] .sk-line, [data-ogsb] .sk-line, [data-ogsc] .sk-rule, [data-ogsb] .sk-rule { border-color: #2C3238 !important; }
   [data-ogsc] .sk-link, [data-ogsb] .sk-link { color: #FF8A4A !important; }
   [data-ogsc] .sk-notice, [data-ogsb] .sk-notice { border-color: #2C3238 !important; }
+  [data-ogsc] .sk-logo, [data-ogsb] .sk-logo { background: #16191D !important; }
+  [data-ogsc] .sk-logo-light, [data-ogsb] .sk-logo-light { display: none !important; }
+  [data-ogsc] .sk-logo-dark, [data-ogsb] .sk-logo-dark { display: block !important; }
   [data-ogsc] .sk-n-info, [data-ogsb] .sk-n-info { background: #1E2328 !important; }
   [data-ogsc] .sk-n-success, [data-ogsb] .sk-n-success { background: #152620 !important; }
   [data-ogsc] .sk-n-warning, [data-ogsb] .sk-n-warning { background: #292418 !important; }
@@ -1155,8 +1179,8 @@ exports[`snapshots > staff_order_new HTML 1`] = `
 <tr><td class="sk-panel" bgcolor="#FFFFFF" style="background:#FFFFFF;border:1px solid #DADDE1;border-radius:12px;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr><td class="sk-logo sk-line" bgcolor="#FFFFFF" style="padding:6px 16px;border-bottom:1px solid #DADDE1;background:#FFFFFF;border-radius:11px 11px 0 0;">
-<a href="https://primer.test" style="display:block;text-decoration:none;"><img src="https://primer.test/brand/email-header@2x.png" width="477" height="88" alt="Euromotors Plus by OEM Parts" style="display:block;width:100%;max-width:477px;height:auto;border:0;outline:none;text-decoration:none;font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:18px;line-height:24px;font-weight:900;color:#121518;"></a>
-<div class="sk-ref" style="padding:0 0 6px 16px;font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:13px;line-height:20px;color:#5D6570;white-space:nowrap;">SK-2026-000187</div>
+<a href="https://primer.test" style="display:block;text-decoration:none;"><img class="sk-logo-light" src="https://primer.test/brand/email-header@2x.png" width="336" height="88" alt="Euromotors Plus · OEM Parts" style="display:block;width:100%;max-width:336px;height:auto;border:0;outline:none;text-decoration:none;font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:18px;line-height:24px;font-weight:900;color:#1B2A6B;"><!--[if !mso]><!--><img class="sk-logo-dark" src="https://primer.test/brand/email-header-dark@2x.png" width="336" height="88" alt="Euromotors Plus · OEM Parts" style="display:none;width:100%;max-width:336px;height:auto;border:0;outline:none;text-decoration:none;font-family:'Arial Black', Arial, Helvetica, sans-serif;font-size:18px;line-height:24px;font-weight:900;color:#F1ECE3;mso-hide:all;"><!--<![endif]--></a>
+<div class="sk-ref sk-ink3" style="padding:0 0 6px 16px;font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:13px;line-height:20px;color:#5D6570;white-space:nowrap;">SK-2026-000187</div>
 </td></tr>
 <tr><td class="sk-pad" style="padding:28px 32px 14px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
 <h1 class="sk-ink1" style="margin:0 0 12px;font-family:'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;font-size:24px;line-height:1.25;font-weight:700;color:#121518;letter-spacing:-0.01em;">Nova porudžbina <span style="white-space:nowrap;font-family:'Martian Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;font-size:0.92em;">SK-2026-000187</span></h1>

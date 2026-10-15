@@ -266,7 +266,7 @@ Zaposleni koji je i majstor ne može sam sebi da odobri profil niti da menja svo
 
 | Šta | Gde se menja |
 |---|---|
-| **Naziv i znak** | Sajt nosi naziv „Euromotors Plus“ i znak „Euromotors Plus by OEM Parts“. Naziv nije privremen, ali znak čeka odobrenje klijenta (GO-LIVE §A). Gde se šta menja i gde je komplet znaka: [§11](#11-ime-i-znak). |
+| **Naziv i znak** | Sajt nosi naziv „Euromotors Plus“ i znak sa lukom od zvezda „Euromotors Plus · OEM Parts“ (korak 33, pravac koji je vlasnik izabrao). Naziv nije privremen; znak čeka potvrdu klijenta i proveru žiga (GO-LIVE §A). Gde se šta menja i gde je komplet znaka: [§11](#11-ime-i-znak). |
 | **Početak broja porudžbine „SK“** | Ostatak radnog naziva. Podešavanja → Firma → „Prefiks porudžbine“, pre prve prave porudžbine. |
 | **Demo artikli** `DEMO-0001`…`DEMO-0150` i zamene `DEMO-E001`…`DEMO-E007` (izmišljeni kataloški brojevi, označeni „VAG (demo)“), demo majstor, 8 demo porudžbina, 4 demo upita | [§9](#9-brisanje-demo-podataka) |
 | **Probni zapisi iz automatskih testova** na razvojnoj bazi (porudžbine i upiti od „Admin Test…“, „Auto servis E2E“, adrese `@primer.rs`) | Ostaju na razvojnoj bazi. Produkciona baza počinje prazna, pa ih tamo nema. |
@@ -323,8 +323,8 @@ Pristupni podaci za razvojnu bazu nisu u ovom dokumentu: vlasnik je u `pipeline/
 | Šta | Kako se piše | Gde se vidi |
 |---|---|---|
 | Ime firme i sajta | **Euromotors Plus** (ne „Euromotors+“) | Zaglavlje, podnožje, naslovi strana, mejlovi (ime pošiljaoca), predračun, otpremnica, ikonica. |
-| Poznati naziv radnje | **OEM Parts** | Kraj naslova strana („ \| Euromotors Plus · OEM Parts“), podaci za Google, potpis u znaku. |
-| Naziv crteža znaka | „Euromotors Plus by OEM Parts“ | Samo kao ime znaka. U tekstu se „by“ ne piše. |
+| Poznati naziv radnje | **OEM Parts** | Kraj naslova strana („ \| Euromotors Plus · OEM Parts“), podaci za Google, ispod imena u znaku. |
+| Naziv crteža znaka | „Euromotors Plus · OEM Parts“ | Ime znaka (opis slike za čitače ekrana, naziv aplikacije na telefonu). Reč „by“ se više ne koristi. |
 
 Gde se menja, bez programera:
 
@@ -336,21 +336,23 @@ Od radnog naziva „SKLOP“ ostalo je samo ovo, namerno: brojevi porudžbina po
 
 ### 11.2 Gde je komplet znaka
 
+Znak je luk od dvanaest zvezda sa prvog loga firme, nacrtan iznova (korak 33, pravac koji je vlasnik izabrao). Zamenio je znak sa slovom E i narandžastim plusom iz koraka 24.
+
 ![Oblici znaka na tamnoj podlozi](brand/renders/logo-system-night.png)
 
 | Šta | Gde | Za koga |
 |---|---|---|
 | **Tabla za klijenta** | [`brand/BRAND-BOARD.html`](brand/BRAND-BOARD.html) (dvoklik, radi bez interneta) i slika [`brand/BRAND-BOARD.png`](brand/BRAND-BOARD.png) | Prikazivanje i odobrenje znaka. |
 | **Uputstvo za znak** | [`brand/LOGO.md`](brand/LOGO.md) | Svi oblici, boje, pravila, pisma i licence. |
-| **Vektori (SVG)** | `docs/brand/export/svg/`, 35 datoteka | Dizajner, štampar, firma koja pravi tablu. |
-| **Vektori (PDF)** | `docs/brand/export/pdf/`, 35 datoteka | Štampa. Svetle varijante su na tamnoj podlozi da se vide kad se otvore. |
-| **Slike (PNG)** | `docs/brand/export/png/`, 105 datoteka: svaka u tri veličine (osnovna, `@2x`, `@4x`), providna podloga | Word, Excel, Viber, društvene mreže. |
-| **Ikonice i gotovi formati** | `docs/brand/export/icons/`: `favicon.ico`, ikonice aplikacije, `email-header@2x.png`, `social-avatar.png` | Profilna slika, potpis u e-pošti. |
+| **Vektori (SVG)** | `docs/brand/export/svg/`, 30 datoteka | Dizajner, štampar, firma koja pravi tablu. |
+| **Vektori (PDF)** | `docs/brand/export/pdf/`, 30 datoteka | Štampa. Svetle varijante su na tamnoj podlozi da se vide kad se otvore. |
+| **Slike (PNG)** | `docs/brand/export/png/`, 90 datoteka: svaka u tri veličine (osnovna, `@2x`, `@4x`), providna podloga | Word, Excel, Viber, društvene mreže. |
+| **Ikonice i gotovi formati** | `docs/brand/export/icons/`: `favicon.ico`, ikonice aplikacije, `email-header@2x.png` i `email-header-dark@2x.png`, `social-avatar.png` | Profilna slika, potpis u e-pošti. |
 | **Spisak svih datoteka** | `docs/brand/export/manifest.json` | Dimenzije svake datoteke. |
-| **Znak na sajtu, slike** | [`brand/site/`](brand/site/) | Kako znak stoji u zaglavlju, podnožju, adminu, mejlu i na slici za deljenje. |
+| **Znak na sajtu, slike** | [`brand/site/`](brand/site/) | Kako znak stoji u zaglavlju, podnožju, adminu, mejlu, na predračunu, na slici za deljenje i u kartici pregledača. |
 | **Datoteke koje koristi sajt** | `public/brand/` | Programer. Ne menjaju se ručno. |
 
-Datoteke se zovu `oblik-boja`, na primer `logo-horizontal-night.svg` ili `mark-black@2x.png`.
+Datoteke se zovu `oblik-boja`, na primer `logo-stacked-navy.svg` ili `mark-black@2x.png`.
 
 ### 11.3 Kako se koristi
 
@@ -358,31 +360,30 @@ Datoteke se zovu `oblik-boja`, na primer `logo-horizontal-night.svg` ili `mark-b
 
 | Oblik | Datoteka | Kada | Najmanja visina |
 |---|---|---|---|
-| Osnovni (znak, ime, potpis) | `logo-horizontal-*` | E-pošta, dokumenta, ponude, oglasi, društvene mreže. | 56 px · 14 mm |
-| Za zaglavlje (bez potpisa) | `logo-header-*` | Mali formati; zaglavlje sajta i admin ga već koriste. | 28 px · 8 mm |
-| Dvojni (oba imena iste visine) | `logo-dual-*` | Tabla iznad radnje, vozilo, baner. | 48 px · 14 mm |
-| Uspravni | `logo-stacked-*` | Nalepnica, kutija, uski prostori. | 120 px · 30 mm |
-| Samo ime | `logo-wordmark-*` | Kad znak već stoji pored. | 48 px · 12 mm |
-| Znak | `mark-*` | Ikonica, profilna slika, pečat. | 16 px · 5 mm |
-| Potpis radnje | `oem-parts-*` | Mesta gde stoji samo „OEM Parts“. | 40 px · 12 mm |
+| Uspravni (osnovni: luk od 12 zvezda oko imena) | `logo-stacked-*` | Tabla iznad radnje, vozilo, nalepnica, naslovna strana ponude, podnožje sajta. | 128 px · 32 mm |
+| Vodoravni (prsten od 10 zvezda, ime desno) | `logo-horizontal-*` | Zaglavlje sajta, admin, e-pošta, predračun, otpremnica, slika za deljenje. | 44 px · 12 mm |
+| Znak (10 zvezda) | `mark-*` | Ikonica aplikacije, profilna slika, pečat. | 48 px · 12 mm |
+| Mali znak (5 zvezda) | `mark-small-*` | 32 px i manje: kartica pregledača, zaglavlje na telefonu. | 16 px · 4 mm |
+| Samo ime | `logo-wordmark-*` | Kad znak već stoji pored. | 28 px · 8 mm |
+| OEM Parts | `oem-parts-*` | Mesta gde stoji samo „OEM Parts“. | 40 px · 12 mm |
 
 Ako oblik ne staje u visinu iz tabele, uzima se sledeći manji. Znak se ne sužava da bi stao.
 
-**Koja boja:** `-night` (svetao znak, narandžast plus) za tamne podloge · `-paper` (grafitni znak, narandžast plus) za bele podloge · `-black` i `-white` za jednobojnu štampu, pečat, graviranje · `-orange` samo na tamnoj podlozi, kad je znak jedini element.
+**Koja boja:** znak je uvek u jednoj boji. `-night` (topla bela) za tamne podloge · `-navy` (tamnoplava prvog znaka firme) za štampu, dokumenta i e-poštu na beloj · `-paper` (grafit) za belu podlogu na ekranu · `-black` i `-white` za jednobojnu štampu, pečat, graviranje. Narandžasta nije u znaku.
 
 **Kome šta poslati:**
 
-- **Štamparu i firmi koja pravi tablu ili oslikava vozilo:** PDF ili SVG, nikad PNG. Boje za štampu (Pantone, CMYK) nisu u kompletu; biraju se sa štamparom, sa probnog otiska, prema `#FF6B1A` i `#0D0F11`.
-- **Za Word, Excel, ponudu, Viber:** PNG `@2x` u varijanti `-paper` (bela podloga) ili `-night` (tamna).
+- **Štamparu i firmi koja pravi tablu ili oslikava vozilo:** PDF ili SVG, nikad PNG. Boje za štampu (Pantone, CMYK) nisu u kompletu; biraju se sa štamparom, sa probnog otiska, prema `#1B2A6B` (tamnoplava) i `#0D0F11` (tamna podloga).
+- **Za Word, Excel, ponudu, Viber:** PNG `@2x` u varijanti `-navy` (bela podloga) ili `-night` (tamna).
 - **Profilna slika na mrežama i Viberu:** `icons/social-avatar.png` (1000 × 1000; mreže je same seku u krug).
-- **Potpis u e-pošti:** `icons/email-header@2x.png`, prikazan u veličini 477 × 88.
+- **Potpis u e-pošti:** `icons/email-header@2x.png`, prikazan u veličini 336 × 88.
 
 **Pravila ukratko:**
 
-- Oko znaka ostaje prazan prostor širine jednog plusa (kod osnovnog znaka oko 40 % njegove visine).
-- Ne razvlači se, ne naginje, ne boji drugačije, bez senke, sjaja i okvira.
-- Narandžast je samo plus.
-- Ne stavlja se na narandžastu, šarenu ili fotografsku podlogu bez dovoljnog kontrasta.
+- Oko znaka ostaje prazan prostor visine najveće zvezde.
+- Luk se ne zatvara, zvezde se ne izjednačavaju i ne ispravljaju (dvanaest jednakih zvezda u krugu je amblem Evropske unije), luk se ne okreće: otvor je uvek desno.
+- Ne razvlači se, ne naginje, ne boji narandžasto ni u više boja, bez senke, sjaja i okvira.
+- Ne stavlja se na šarenu ili fotografsku podlogu bez dovoljnog kontrasta.
 - Ne stoji uz znakove proizvođača vozila tako da izgleda kao da je radnja njihov ovlašćeni partner.
 
 Ceo spisak pravila je u [`brand/LOGO.md`](brand/LOGO.md) §4.
@@ -394,15 +395,16 @@ Znak se ne crta ručno. Geometrija i sve mere su u `scripts/brand/logo/logo.mjs`
 ```bash
 node scripts/brand/logo/build.mjs     # public/brand i docs/brand/export
 node scripts/brand/logo/site.mjs      # ono što sajt koristi: components/brand/logoPaths.ts, ikonice
-node scripts/brand/logo/verify.mjs    # 11 provera
+node scripts/brand/logo/verify.mjs    # 12 provera
+node scripts/brand/logo/renders.mjs   # pregledi u docs/brand/renders
 node scripts/brand/logo/board.mjs     # tabla za klijenta
 ```
 
-Na sajtu se znak koristi samo preko komponenti u `components/brand/`. Koji oblik stoji gde: `docs/design/DESIGN-SYSTEM.md` §2.4.
+Na sajtu se znak koristi samo preko komponenti u `components/brand/` i gotovih datoteka iz `public/brand/`. Koji oblik stoji gde: `docs/design/DESIGN-SYSTEM.md` §2.4.
 
 ### 11.5 Šta čeka klijenta
 
-Odobrenje znaka i reči „by“, provera žiga i boje za štampu. Stavke su u [GO-LIVE §A](GO-LIVE.md#znak-i-ime-koraci-24-i-25).
+Potvrda znaka, provera žiga (posebno zbog zvezda, videti [`brand/LOGO.md`](brand/LOGO.md) §8) i boje za štampu. Stavke su u [GO-LIVE §A](GO-LIVE.md#znak-i-ime-koraci-24-25-i-33).
 
 ---
 

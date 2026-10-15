@@ -10,14 +10,13 @@ Oznake: **[P0]** potrebno pre puštanja uživo · **[P1]** potrebno u prvim nede
 
 Sve ostalo u ovom spisku može da sačeka ili može da se uradi bez vas. Ove tri stvari ne mogu. Iste stavke su u [`GO-LIVE.md`](GO-LIVE.md) §A.
 
-### 0.1 Odobrenje znaka od klijenta
+### 0.1 Potvrda znaka od klijenta
 
-- [ ] **[P0]** Klijent treba da odobri znak „Euromotors Plus by OEM Parts“.
-  - **Šta pogledati:** tablu [`brand/BRAND-BOARD.html`](brand/BRAND-BOARD.html) (dvoklik, radi bez interneta; ista stvar kao slika: [`brand/BRAND-BOARD.png`](brand/BRAND-BOARD.png)) i znak na samom sajtu: [`showcase/index.html`](showcase/index.html), odeljak „Znak“, i slike u [`brand/site/`](brand/site/) (zaglavlje, podnožje, admin, mejl, slika za deljenje, ikonica).
+- [ ] **[P0]** Klijent treba da potvrdi znak sa lukom od zvezda „Euromotors Plus · OEM Parts“ (korak 33; pravac A koji ste izabrali, videti §22).
+  - **Šta pogledati:** tablu [`brand/BRAND-BOARD.html`](brand/BRAND-BOARD.html) (dvoklik, radi bez interneta; ista stvar kao slika: [`brand/BRAND-BOARD.png`](brand/BRAND-BOARD.png)) i znak na samom sajtu: [`showcase/index.html`](showcase/index.html), odeljak „Ime i znak“, i slike u [`brand/site/`](brand/site/) (zaglavlje, podnožje, admin, mejl u svetlom i tamnom režimu, predračun, slika za deljenje, ikonica).
   - **Šta javiti:** „odobreno“, ili šta treba drugačije.
-  - **Posebno potvrditi reč „by“** u potpisu. Ako ne opisuje dobro odnos firme i radnje, osnovni može da postane dvojni znak, u kojem oba imena stoje ravnopravno i bez „by“.
-  - **Dok odobrenje ne stigne, sajt se ne objavljuje pod ovim znakom.** Izmena znaka se radi u `scripts/brand/logo/` i ugrađuje u sajt jednom naredbom ([`PREDAJA.md` §11.4](PREDAJA.md#114-ako-znak-treba-izmeniti-programer)).
-- [ ] **[P1]** Pre registracije žiga, izrade table i oslikavanja vozila: provera sličnih znakova (Zavod za intelektualnu svojinu RS, baza TMview), najbolje preko zastupnika. Ova provera nije urađena.
+  - **Dok potvrda ne stigne, sajt se ne objavljuje pod ovim znakom.** Izmena znaka se radi u `scripts/brand/logo/` i ugrađuje u sajt jednom naredbom ([`PREDAJA.md` §11.4](PREDAJA.md#114-ako-znak-treba-izmeniti-programer)).
+- [ ] **[P0]** Provera žiga pre objave, registracije, izrade table i oslikavanja vozila — za znak sa zvezdama obavezna (krug od dvanaest zvezda je amblem Evropske unije; videti §22 i [`brand/LOGO.md`](brand/LOGO.md) §8). Zavod za intelektualnu svojinu RS, baza TMview, najbolje preko zastupnika. Ova provera nije urađena.
 
 ### 0.2 Pravi domen i adresa pošiljaoca e-pošte
 
@@ -314,3 +313,21 @@ Ostaje za vas:
 - [ ] **[P2] Mali telefoni.** Na telefonima sa niskim ekranom (visina oko 650 px) auto je vrlo mali iznad mreže delova. Ništa se ne seče i ne preklapa. Ako želite da auto tamo bude veći, mreža mora da bude manja; javite šta vam je važnije.
 - Brzina učitavanja početne strane na telefonu je popravljena usput: merenje „blokiranja“ strane je ranije davalo čas oko 50 ms, čas oko 300 ms (granica je 150 ms). Uzrok je bio odeljak „Delovi po sistemima“ ispod 3D prikaza, koji se računao odmah pri učitavanju iako je daleko ispod ekrana. Sada je u osam od devet serija merenja između 23 i 63 ms (jedna serija, merena dok je računar bio zauzet, dala je 157 ms). Ništa se ne vidi drugačije.
 - Greška sa kolačićima iz tačke 19 („Odbij sve“ pomeri stranu na dno) i dalje nije ispravljena; nije deo 3D prikaza.
+
+## 22. Novi znak: luk od zvezda (korak 33)
+
+Znak sa slovom E i narandžastim plusom (korak 24) je povučen. Umesto njega je pravac A koji ste izabrali iz [`brand/v3-zvezde/`](brand/v3-zvezde/): luk od dvanaest zvezda sa prvog loga firme, nacrtan iznova. Zvezde rastu niz luk, ispod imena je PLUS između dve linije i OEM Parts kao na znaku radnje. Znak je u jednoj boji; na papiru i u e-pošti je tamnoplav kao prvi znak firme, a narandžasta ostaje samo boja sajta.
+
+Šta je urađeno:
+
+- Znak je zamenjen svuda: zaglavlje sajta (na telefonu mali znak od pet zvezda), podnožje, admin, stranice 404 i greške, prijava, predračun i otpremnica, mejlovi (sa posebnom slikom za tamni režim), ikonica u kartici pregledača, ikonica na telefonu, slike za deljenje na mrežama, podaci za Google, tabla znaka, komplet za štampu i prikaz za klijenta.
+- Ikonica u kartici pregledača (16 piksela) je nacrtana piksel po piksel, tako da se svaka zvezda vidi kao zvezda, a ne kao tačka.
+- Zaglavlje sajta je usput popravljeno: na širinama od 1024 do oko 1400 px polje za pretragu je prelazilo preko menija (to je postojalo i sa starim znakom). Sada staje na svakoj širini.
+- Uputstvo: [`brand/LOGO.md`](brand/LOGO.md). Tabla: [`brand/BRAND-BOARD.html`](brand/BRAND-BOARD.html). Slike znaka na sajtu: [`brand/site/`](brand/site/).
+
+Ostaje za vas:
+
+- [ ] **[P0] Potvrda klijenta** (§0.1).
+- [ ] **[P0] Provera žiga — važno za ovaj znak.** Zvezde u krugu podsećaju na amblem Evropske unije, koji je zaštićen. Naš znak se razlikuje (otvoren luk, zvezde različite veličine i okrenute), ali to mora da potvrdi zastupnik za žigove pre registracije i pre izrade table. Ako zastupnik traži izmenu, najlakše je smanjiti broj zvezda u luku ili ih još više razlikovati po veličini; to je jedna promena u skripti.
+- [ ] **[P1] Tamnoplava boja za štampu** (`#1B2A6B`): izabrati Pantone i CMYK sa štamparom, sa probnim otiskom.
+- [ ] **[P2]** Ako postoje vektorske datoteke prvog znaka firme ili znaka radnje, sačuvati ih u `docs/brand/source/`.

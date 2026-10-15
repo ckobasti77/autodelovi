@@ -1,7 +1,9 @@
 import { EMAIL_LOGO } from "./html";
 
+const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+/** The light and the dark-mode header image. */
 const LOGO_SRC = new RegExp(
-  `src="[^"]*?${EMAIL_LOGO.path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"`,
+  `src="[^"]*?(${escape(EMAIL_LOGO.path)}|${escape(EMAIL_LOGO.darkPath)})"`,
   "g",
 );
 
@@ -14,5 +16,5 @@ const LOGO_SRC = new RegExp(
  * clients need.
  */
 export function emailPreviewHtml(html: string): string {
-  return html.replace(LOGO_SRC, `src="${EMAIL_LOGO.path}"`);
+  return html.replace(LOGO_SRC, (_, path: string) => `src="${path}"`);
 }

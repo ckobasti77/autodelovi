@@ -1,5 +1,5 @@
 /**
- * Step 25 — the rebrand, checked on the production build.
+ * Steps 25 and 33 — the rebrand and the star-arc logo, checked on the production build.
  *
  * Crawls the main routes and the machine-readable files and asserts that
  * - nothing a visitor, a crawler or a preview card can read carries the working name „SKLOP“
@@ -8,7 +8,7 @@
  * - `og:site_name` and `application-name` are „Euromotors Plus“, titles end with both names
  *   where they fit and stay within 60 characters;
  * - the favicon, SVG icon, Apple icon and manifest icons that pages link are the logo kit's
- *   files, and the OG frame carries the new mark;
+ *   files, and the OG frame carries the logo in one ink (no orange, step 33);
  * - JSON-LD names the business „Euromotors Plus“ with „OEM Parts“ as `alternateName`, while a
  *   part's brand stays its maker.
  *
@@ -191,10 +191,12 @@ test.describe("server HTML of the main routes", () => {
 
     const svg = await get(request, href(/<link rel="icon" href="(\/icon\.svg[^"]*)"/));
     expect(svg).toContain("<title>Euromotors Plus</title>");
-    // The bracket of the 16 px mark — and nothing of the retired „izvučen deo“.
+    // The pixel-drawn 16 px stars, warm ink on the night tile — and nothing of the retired marks:
+    // no orange plus (step 24), no „izvučen deo“ (step 03).
     expect(svg).toContain('class="h16"');
+    expect(svg).toMatch(/fill="#f1ece3"/i);
+    expect(svg).not.toMatch(/#ff6b1a/i);
     expect(svg).not.toContain("M3 14h4v2.5h10V14h4v7H3z");
-    expect(svg).toContain("#FF6B1A");
 
     const manifest = JSON.parse(await get(request, "/manifest.webmanifest")) as {
       name: string;
@@ -267,7 +269,7 @@ test.describe("server HTML of the main routes", () => {
     }
   });
 
-  test("OG image: 1200 × 630 with the new mark in the frame", async ({ page, request }) => {
+  test("OG image: 1200 × 630 with the logo in the frame, in one ink", async ({ page, request }) => {
     const h = await get(request, "/");
     const og = first(h, /<meta property="og:image" content="([^"]*)"/)!;
     expect(first(h, /<meta property="og:image:alt" content="([^"]*)"/)).toContain(BRAND_NAME);
@@ -282,19 +284,28 @@ test.describe("server HTML of the main routes", () => {
       const ctx = canvas.getContext("2d")!;
       ctx.drawImage(img, 0, 0);
       const at = (x: number, y: number) => [...ctx.getImageData(x, y, 1, 1).data.slice(0, 3)];
+      // The logo's box in the frame: 64 px high from (72, 64), about 344 px wide.
+      const box = ctx.getImageData(72, 64, 344, 64).data;
+      let ink = 0;
+      let orange = 0;
+      for (let i = 0; i < box.length; i += 4) {
+        const [r, g, b] = [box[i]!, box[i + 1]!, box[i + 2]!];
+        if (r > 235 && g > 230 && b > 220) ink++;
+        if (r > 200 && g < 150 && b < 90) orange++;
+      }
       return {
         width: img.naturalWidth,
         height: img.naturalHeight,
-        // Centre of the plus, the spine of the bracket, the ground left of the logo.
-        plus: at(95, 90),
-        spine: at(76, 90),
+        ink,
+        orange,
         ground: at(60, 90),
       };
     }, pathOf(og));
     expect(probe.width).toBe(1200);
     expect(probe.height).toBe(630);
-    expect(probe.plus).toEqual([255, 107, 26]);
-    expect(probe.spine).toEqual([241, 236, 227]);
+    // Stars and letters paint in warm ink; the accent is not in the logo.
+    expect(probe.ink).toBeGreaterThan(1500);
+    expect(probe.orange).toBe(0);
     expect(probe.ground).toEqual([13, 15, 17]);
   });
 });
@@ -330,9 +341,9 @@ test.describe("rendered pages", () => {
     });
     expect(art.count, "exactly one form of the logo is shown").toBe(1);
     const lockup = art.w / art.h > 4;
-    // Lockup from 640 px (≥ 28 px tall), the compact mark below (≥ 16 px).
+    // Horizontal lockup from 640 px (≥ 44 px tall), the five-star mark below (≥ 16 px).
     expect(lockup).toBe((page.viewportSize()?.width ?? 0) >= 640);
-    expect(art.h).toBeGreaterThanOrEqual(lockup ? 28 : 16);
+    expect(art.h).toBeGreaterThanOrEqual(lockup ? 44 : 16);
     expect(art.ink).toBe("rgb(241, 236, 227)");
     // The target stays at least 44 × 44 px.
     const target = (await home.boundingBox())!;
@@ -345,25 +356,18 @@ test.describe("rendered pages", () => {
       exact: true,
     });
     await expect(footerLink).toBeVisible();
-    const signed = await footerLink.evaluate((link) => {
-      const shown = [...link.querySelectorAll("svg")].filter((s) => s.getBoundingClientRect().height > 1);
-      const r = shown[0]!.getBoundingClientRect();
-      const plus = shown[0]!.querySelector("use")!;
-      return {
-        count: shown.length,
-        w: r.width,
-        h: r.height,
-        // The referenced outlines really paint: the mark occupies its place in the artwork.
-        markWidth: plus.getBoundingClientRect().width,
-      };
+    // The stacked logo, as the kit's night file (lazy; the footer is always night).
+    const img = footerLink.locator("img");
+    await expect(img).toHaveAttribute("src", "/brand/logo-stacked-night.svg");
+    await expect.poll(() => img.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0)).toBe(true);
+    const signed = await img.evaluate((el) => {
+      const r = el.getBoundingClientRect();
+      return { w: r.width, h: r.height, alt: el.getAttribute("alt") };
     });
-    expect(signed.count).toBe(1);
-    const stacked = signed.w / signed.h < 4;
-    expect(stacked).toBe((page.viewportSize()?.width ?? 0) < 480);
-    // 56 px for the horizontal form; the stacked form fills the column (343 px wide = 120 px).
-    if (stacked) expect(signed.w).toBeGreaterThanOrEqual(328);
-    else expect(signed.h).toBeGreaterThanOrEqual(56);
-    expect(signed.markWidth).toBeGreaterThan(20);
+    expect(signed.alt).toBe("");
+    expect(signed.w / signed.h).toBeCloseTo(1.55, 1);
+    // Never under the stacked minimum of 128 px.
+    expect(signed.h).toBeGreaterThanOrEqual(128);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(
       true,
     );
@@ -424,8 +428,8 @@ test.describe("admin shell", () => {
       const r = s.getBoundingClientRect();
       return { w: r.width, h: r.height, ink: getComputedStyle(s).color };
     });
-    expect(art.h).toBeGreaterThanOrEqual(28);
-    expect(art.w / art.h).toBeGreaterThan(8);
+    expect(art.h).toBeGreaterThanOrEqual(44);
+    expect(art.w / art.h).toBeGreaterThan(5);
     // The sidebar pins the night theme inside the paper workspace.
     expect(art.ink).toBe("rgb(241, 236, 227)");
     expect(await page.title()).not.toMatch(OLD_NAME);

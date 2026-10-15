@@ -19,8 +19,15 @@ import {
 } from "@/config/site";
 import { ROUTES } from "@/constants/routes";
 import { TEST_IDS } from "@/constants/testIds";
-import { LogoLockupResponsive } from "@/components/brand/Logo";
+import { LOGO_STACKED } from "@/components/brand/logoPaths";
 import { ConsentSettingsButton } from "@/components/consent/ConsentSettingsButton";
+
+/** The stacked logo, night variant (`public/brand/`, built by scripts/brand/logo/build.mjs). */
+const FOOTER_LOGO = {
+  src: "/brand/logo-stacked-night.svg",
+  width: Math.round(LOGO_STACKED.w),
+  height: Math.round(LOGO_STACKED.h),
+} as const;
 
 const CHANNEL = {
   phone: { label: "Telefon", Icon: PhoneIcon },
@@ -110,23 +117,28 @@ export function Footer({ contact, company }: FooterProps) {
       data-testid={TEST_IDS.footer}
       className="cv-auto border-t border-line bg-bg-raised print:hidden [contain-intrinsic-size:auto_1040px] md:[contain-intrinsic-size:auto_700px] lg:[contain-intrinsic-size:auto_440px]"
     >
-      {/* A reveal group: the logo row and the three columns (items) rise one after another. */}
+      {/* A reveal group: the brand column and the three columns (items) rise one after another. */}
       <div
         data-reveal-group=""
-        className="grid gap-10 px-page py-14 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1.3fr] lg:gap-8"
+        className="grid gap-10 px-page py-14 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1.3fr] lg:gap-8"
       >
-        {/* The lockup with the signature needs 56 px of height (445 px wide): its own row. */}
-        <div data-reveal="item" className="flex flex-col gap-5 md:col-span-2 lg:col-span-3">
+        {/* The primary logo, stacked. The footer is always night and below the fold, so the
+            kit file is lazy-loaded and cached instead of 12 KB of outlines in every page (D386). */}
+        <div data-reveal="item" className="flex flex-col gap-5 md:col-span-2 lg:col-span-1">
           <NextLink
             href={ROUTES.home}
             aria-label={`${site.brand.lockupName} — početna`}
             className="inline-flex self-start rounded-sm"
           >
-            <LogoLockupResponsive
-              label={null}
-              stackedClassName="h-auto w-[min(100%,343px)]"
-              horizontalClassName="h-14 w-auto"
-              className="max-sm:w-full"
+            {/* eslint-disable-next-line @next/next/no-img-element -- static SVG from the kit; next/image refuses SVG and adds nothing for a vector */}
+            <img
+              src={FOOTER_LOGO.src}
+              width={FOOTER_LOGO.width}
+              height={FOOTER_LOGO.height}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              className="block h-auto w-[min(100%,15rem)]"
             />
           </NextLink>
           <p className="max-w-[52ch] type-body-s text-ink-2">{site.brand.description}</p>

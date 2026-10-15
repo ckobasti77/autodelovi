@@ -58,12 +58,12 @@ export function Header({ vehicleSlot, cartCount, contact }: HeaderProps) {
     >
       <div aria-hidden="true" className="site-header-surface" />
       <div className="site-header-row relative flex items-center gap-2 px-page lg:gap-3">
-        <BrandLink compact="phone" className="site-header-logo lg:mr-8" />
+        <BrandLink compact="phone" className="site-header-logo mr-4 lg:mr-6" />
         <nav aria-label="Glavna navigacija" className="hidden lg:block">
           <NavLinks />
         </nav>
-        <div className="ml-auto flex min-w-0 flex-1 items-center justify-end gap-1 lg:gap-2">
-          <HeaderSearch className="flex-1 lg:w-64 lg:flex-none xl:w-72 2xl:w-80" />
+        <div className="ml-auto flex min-w-0 flex-1 items-center justify-end gap-1 xl:gap-2">
+          <HeaderSearch className="flex-1 lg:max-w-64 xl:max-w-72 2xl:max-w-80" />
           {vehicleSlot ? <div className="hidden xl:block">{vehicleSlot}</div> : null}
           {phone ? (
             <>
